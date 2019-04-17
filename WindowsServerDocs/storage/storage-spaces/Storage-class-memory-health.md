@@ -1,0 +1,149 @@
+---
+ms.assetid: 2bab6bf6-90e7-46a7-b917-14a7a8f55366
+title: Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows
+ms.prod: windows-server-threshold
+ms.author: jgerend
+ms.manager: dongill
+ms.technology: storage-spaces
+ms.topic: article
+author: JasonGerend
+ms.date: 08/24/2016
+ms.localizationpriority: medium
+ms.openlocfilehash: 0c39d704056c4ae6935f3be9c521c12ca1014820
+ms.sourcegitcommit: 9db0d8b328a286b9a40fe3ab1890703ab025a0f3
+ms.translationtype: MT
+ms.contentlocale: es-ES
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "5014068"
+---
+# Administración de estado de la memoria de clase de almacenamiento (NVDIMM-N) en Windows
+> Se aplica a: Windows Server 2016, Windows 10 (versión 1607)
+
+En este artículo se ofrece información sobre el control de errores y la administración de estados específicos de dispositivos de memoria de clase de almacenamiento (NVDIMM-N) en Windows destinada a administradores de sistemas y profesionales de TI, destacando las diferencias entre la memoria de clase de almacenamiento y los dispositivos de almacenamiento tradicionales.
+
+Si no estás familiarizado con la compatibilidad de Windows con los dispositivos de memoria de clase de almacenamiento, estos breves vídeos proporcionan una visión global al respecto:
+- [Uso de memoria no volátil (NVDIMM-N) como almacenamiento en bloque en Windows Server 2016](https://channel9.msdn.com/Events/Build/2016/P466)
+- [Uso de memoria no volátil (NVDIMM-N) como almacenamiento direccionable por bytes en Windows Server 2016](https://channel9.msdn.com/Events/Build/2016/P470)
+- [Acelerar el rendimiento de SQL Server 2016 con memoria persistente en Windows Server 2016](https://channel9.msdn.com/Shows/Data-Exposed/SQL-Server-2016-and-Windows-Server-2016-SCM--FAST)
+
+Los dispositivos de memoria de clase de almacenamiento NVDIMM-N compatibles con JEDEC se admiten en Windows con controladores nativos, a partir de Windows Server 2016 y Windows 10 (versión 1607). Aunque estos dispositivos se comportan de manera similar a otros discos (HDD y SSD), existen algunas diferencias.
+
+Todas las condiciones que se muestran aquí se esperan que ocurran muy rara vez, aunque esto depende de las condiciones en las que se utilice el hardware.
+
+Los distintos casos siguientes pueden hacer referencia a las configuraciones de Espacios de almacenamiento. La configuración específica de interés es aquella en la que se utilizan dos dispositivos NVDIMM-N como una caché con reescritura reflejada en un espacio de almacenamiento. Para establecer este tipo de configuración, consulte [Configuración de espacios de almacenamiento con una caché con reescritura de NVDIMM-N](https://msdn.microsoft.com/library/mt650885.aspx).
+
+En WindowsServer2016, la GUI de Espacios de almacenamiento muestra el tipo de busNVDIMM-N como DESCONOCIDO. No tiene ninguna incapacidad ni pérdida de funcionalidad de creación de grupo, VD de almacenamiento. Puedes comprobar el tipo de bus si ejecutas el siguiente comando:
+
+```powershell
+PS C:\>Get-PhysicalDisk | fl
+```
+El BusType del parámetro de salida de cmdlet mostrará correctamente el tipo de bus como "SCM"
+
+## Comprobación del estado de la memoria de la clase de almacenamiento
+Para consultar el estado de la memoria de la clase de almacenamiento, utilice los siguientes comandos en una sesión de Windows PowerShell.
+
+```powershell
+PS C:\> Get-PhysicalDisk | where BusType -eq "SCM" | select SerialNumber, HealthStatus, OperationalStatus, OperationalDetails
+```
+
+Al hacerlo, se obtiene este resultado de ejemplo:
+
+|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
+|---|---|---|---|
+|802c-01-1602-117cb5fc|Correcto|Aceptar||
+|802c-01-1602-117cb64f|Advertencia|Error predictivo|{Umbral superado,NVDIMM\_N Error}|
+
+> [!NOTE]
+> Para encontrar la ubicación física de un dispositivo NVDIMM-N especificado en un evento, en la pestaña **Detalles** del evento en el Visor de eventos, ve a **EventData** > **Ubicación**. Ten en cuenta que Windows Server 2016 enumera los dispositivos NVDIMM-N de una ubicación incorrecta, pero este valor es fijo en Windows Server, versión 1709.
+
+Para obtener ayuda sobre las distintas condiciones de estado, consulta las secciones siguientes.
+
+## Estado de mantenimiento "Advertencia"
+
+Esta situación se produce cuando comprueba el estado de un dispositivo de memoria de clase de almacenamiento y ve que su estado de mantenimiento aparece como **Advertencia**, como se muestra en este resultado de ejemplo:
+
+|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
+|---|---|---|---|
+|802c-01-1602-117cb5fc|Correcto|Aceptar||
+|802c-01-1602-117cb64f|Advertencia|Error predictivo|{Umbral superado,NVDIMM\_N Error}|
+
+La tabla siguiente muestra información acerca de esta condición.
+
+||Descripción|
+|---|---|
+|Condición probable|Infracción del umbral de advertencia de NVDIMM-N|
+|Causa principal|Los dispositivos NVDIMM-N supervisan varios umbrales, como la temperatura, la duración de NVM y la duración de la fuente de energía. Cuando se supera uno de estos umbrales, se envía una notificación al sistema operativo.|
+|Comportamiento general|El dispositivo sigue siendo totalmente operativo. Se trata de una advertencia, no de un error.|
+|Comportamiento de Espacios de almacenamiento|El dispositivo sigue siendo totalmente operativo. Se trata de una advertencia, no de un error.|
+|Más información|Campo OperationalStatus del objeto PhysicalDisk. Registro de eventos: Microsoft-Windows-ScmDisk0101/Operational|
+|Qué hacer|Dependiendo de la infracción del umbral de advertencia, puede ser recomendable considerar el reemplazo de la totalidad de NVDIMM-N o de determinadas partes. Por ejemplo, si se supera el umbral de duración NVM, puede ser buena idea el reemplazo de NVDIMM-N.|
+
+## Error en la escritura de NVDIMM-N
+
+Esta situación se da al comprobar el estado de un dispositivo de memoria de clase de almacenamiento y ver que el estado de mantenimiento aparece como **Incorrecto**, y el estado operativo es de tipo **Error de E/S**, como se muestra en este resultado de ejemplo:
+
+|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
+|---|---|---|---|
+|802c-01-1602-117cb5fc|Correcto|Aceptar||
+|802c-01-1602-117cb64f|Incorrecto|{Metadatos obsoletas, Error de E/S, Error transitorio}|{Pérdida de persistencia de datos, Pérdida de datos, NV...}|
+
+La tabla siguiente muestra información acerca de esta condición.
+
+||Descripción|
+|---|---|
+|Condición probable|Pérdida de persistencia / alimentación de copia de seguridad|
+|Causa principal|Los dispositivos NVDIMM-N dependen de una fuente de alimentación de copia de seguridad para su persistencia (generalmente una batería o supercondensador). Si esta fuente de alimentación de copia de seguridad no está disponible o el dispositivo no puede realizar una copia de seguridad por algún motivo (error de controlador/flash), los datos están en peligro y Windows impedirá escrituras adicionales en los dispositivos afectados. Las lecturas siguen siendo posibles para evacuar datos.|
+|Comportamiento general|El volumen NTFS se desmontará.<br>El campo de estado de mantenimiento de PhysicalDisk mostrará "Incorrecto" para todos los dispositivos NVDIMM-N afectados.|
+|Comportamiento de Espacios de almacenamiento|Espacios de almacenamiento seguirá funcionando si solo hay un NVDIMM-N afectado. Si se ven afectados varios dispositivos, se producirá un error de escritura en el Espacio de almacenamiento. <br>El campo de estado de mantenimiento de PhysicalDisk mostrará "Incorrecto" para todos los dispositivos NVDIMM-N afectados.|
+|Más información|Campo OperationalStatus del objeto PhysicalDisk.<br>Registro de eventos: Microsoft-Windows-ScmDisk0101/Operational|
+|Qué hacer|Se recomienda realizar copias de seguridad de los datos afectados de NVDIMM-N. Para obtener acceso de lectura, puedes conectar el disco manualmente (aparecerá como un volumen NTFS de solo lectura).<br><br>Para borrar completamente esta condición, se debe resolver la causa principal (es decir, reparar la fuente de alimentación o sustituir NVDIMM-N, según el problema) y el volumen de NVDIMM-N debe desconectarse y conectarse de nuevo, o se debe reiniciar el sistema.<br><br>Para permitir el uso de NVDIMM-N en Espacios de almacenamiento de nuevo, usa el cmdlet **Reset-PhysicalDisk**, que vuelve a integrar el dispositivo e inicia el proceso de reparación.|
+
+## NVDIMM-N aparece con una capacidad de "0" bytes o como "Disco físico genérico".
+
+Esta condición se da cuando un dispositivo de memoria de clase de almacenamiento se muestra con una capacidad de 0 bytes y no se puede inicializar, o se expone como un objeto de "Disco físico genérico" con un estado operativo de **Pérdida de comunicación**, como se muestra en este resultado de ejemplo:
+
+|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
+|---|---|---|---|
+|802c-01-1602-117cb5fc|Correcto|Aceptar||
+||Advertencia|Pérdida de comunicación||
+
+La tabla siguiente muestra información acerca de esta condición.
+
+||Descripción|
+|---|---|
+|Condición probable|BIOS no expuso NVDIMM-N al sistema operativo|
+|Causa principal|Los dispositivos NVDIMM-N se basan en DRAM. Cuando se hace referencia a una dirección DRAM dañada, la mayoría de CPU se iniciarán en una comprobación de la máquina y reiniciarán el servidor. Algunas plataformas de servidor entonces eliminan la asignación de NVDIMM, evitando que el sistema operativo tenga acceso a ella y causando potencialmente otra comprobación de máquina. Esto también puede ocurrir si el BIOS detecta que se ha producido un error en NVDIMM-N y necesita reemplazarse.|
+|Comportamiento general|NVDIMM-N se muestra como no inicializado, con una capacidad de 0 bytes y no se puede leer o escribir.|
+|Comportamiento de Espacios de almacenamiento|Espacios de almacenamiento permanece en funcionamiento (siempre que se vea afectado solo un NVDIMM-N).<br>El objeto PhysicalDisk de NVDIMM-N aparece con un estado de mantenimiento de Advertencia y como "Disco físico general"|
+|Más información|Campo OperationalStatus del objeto PhysicalDisk. <br>Registro de eventos: Microsoft-Windows-ScmDisk0101/Operational|
+|Qué hacer|El dispositivo NVDIMM-N debe reemplazarse o sanearse, de modo que la plataforma de servidor lo exponga al sistema operativo host de nuevo. Se recomienda la sustitución del dispositivo, ya que pueden producirse otros errores que no se pueden corregir. Se puede conseguir la incorporación de un dispositivo de reemplazo para una configuración de Espacios de almacenamiento con el cmdlet **Add-Physicaldisk**.|
+
+## NVDIMM-N aparece como disco sin procesar o vacío tras un reinicio
+
+Esta situación se da al comprobar el estado de un dispositivo de memoria de clase de almacenamiento y ve que el estado de mantenimiento aparece como **Incorrecto**, y el estado operativo es de tipo **Metadatos no reconocidos**, como se muestra en este resultado de ejemplo:
+
+|SerialNumber|HealthStatus|OperationalStatus|OperationalDetails|
+|---|---|---|---|
+|802c-01-1602-117cb5fc|Correcto|Aceptar|{Desconocido}|
+|802c-01-1602-117cb64f|Incorrecto|{Metadatos no reconocidos, metadatos obsoletos}|{Desconocido}|
+
+La tabla siguiente muestra información acerca de esta condición.
+
+||Descripción|
+|---|---|
+|Condición probable|Error de copia de seguridad y restauración|
+|Causa principal|Un error en el procedimiento de copia de seguridad o restauración probablemente tendrá como resultado que se pierdan todos los datos en NVDIMM-N. Cuando se carga el sistema operativo, aparecerá como un nuevo NVDIMM-N sin una partición o sistema de archivos y la superficie como sin formato, lo que significa que no tiene un sistema de archivos.|
+|Comportamiento general|NVDIMM-N estará en modo de solo lectura. Se requiere una acción explícita del usuario para empezar a utilizarlo de nuevo.|
+|Comportamiento de Espacios de almacenamiento|Espacios de almacenamiento permanece operativo si solo se ve afectado un NVDIMM.<br>El objeto de disco físico NVDIMM-N se mostrará con el estado de mantenimiento "Incorrecto" y Espacios de almacenamiento no lo usa.|
+|Más información|Campo OperationalStatus del objeto PhysicalDisk.<br>Registro de eventos: Microsoft-Windows-ScmDisk0101/Operational|
+|Qué hacer|Si el usuario no desea reemplazar el dispositivo afectado, puede utilizar el cmdlet **Reset-PhysicalDisk** para borrar la condición de solo lectura en el NVDIMM-N afectado. En entornos de Espacios de almacenamiento, también intentará volver a integrar el NVDIMM-N en el Espacio de almacenamiento e iniciar el proceso de reparación.|
+
+## Conjuntos de intercalado
+
+A menudo pueden crearse conjuntos de intercalado en el BIOS de una plataforma para que varios dispositivos NVDIMM-N aparezcan como uno solo en el sistema operativo host.
+
+Windows Server 2016 y Windows 10 Anniversary Edition no admiten conjuntos de intercalados de NVDIMM-N.
+
+En el momento de redactar este artículo, no hay ningún mecanismo para el sistema operativo de host que permita identificar correctamente los NVDIMM-N individuales en un conjunto de este tipo y comunicar claramente al usuario qué dispositivo concreto ha provocado un error o necesita mantenimiento.
+
+

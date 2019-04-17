@@ -1,0 +1,38 @@
+---
+ms.assetid: 503733f8-be0c-429c-81f0-cd4205e8b118
+title: "Lista de comprobación: crear reglas de notificación para un proveedor de notificaciones de confianza"
+description: 
+author: billmath
+manager: femila
+ms.date: 05/31/2017
+ms.topic: article
+ms.prod: windows-server-threshold
+ms.technology: identity-adfs
+ms.author: billmath
+ms.openlocfilehash: 6b0ece3274b0e0a2a0d5e18e3c0ebf10ded67ebe
+ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.translationtype: MT
+ms.contentlocale: es-ES
+ms.lasthandoff: 07/03/2017
+---
+# <a name="checklist-creating-claim-rules-for-a-claims-provider-trust"></a>Lista de comprobación: Crear reglas de notificación para un proveedor de notificaciones de confianza
+
+>Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+
+Esta lista de comprobación incluye tareas para planear, diseñar e implementar las reglas de notificación que se asocian con una relación de confianza del proveedor de notificaciones en los servicios de federación de Active Directory \(AD FS\).  
+  
+> [!NOTE]  
+> Completar las tareas en esta lista de comprobación en orden. Cuando un vínculo de referencia tiene un procedimiento, vuelve a este tema después de completar los pasos de este procedimiento para que se puede continuar con las tareas restantes en esta lista de comprobación.  
+  
+![creación de reglas de notificación](media/2b05dce3-938f-4168-9b8f-1f4398cbdb9b.gif)**lista de comprobación: crear una regla de Reclamación establecido para una confianza de proveedor de notificaciones**  
+  
+||Tarea|Referencia|  
+|-|--------|-------------|  
+|![creación de reglas de notificación](media/icon_checkboxo.gif)|Revisar los conceptos sobre reclamaciones, reclamar reglas, los conjuntos de reglas de notificación y reclamar plantillas de regla y cómo se asocian a confianzas federadas.|![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[el rol de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)<br /><br />![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[el rol de reclamar las reglas](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)|  
+|![creación de reglas de notificación](media/icon_checkboxo.gif)|Revisa los conceptos acerca de cómo una reclamación fluye a través de todas las etapas del proceso de emisión reclamaciones y cómo las reglas se procesan por el motor de emisión de reclamaciones.|![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[el rol de la canalización de notificaciones](../../ad-fs/technical-reference/The-Role-of-the-Claims-Pipeline.md)<br /><br />![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[el rol del motor de notificaciones](../../ad-fs/technical-reference/The-Role-of-the-Claims-Engine.md)|  
+|![creación de reglas de notificación](media/icon_checkboxo.gif)|Para planear e implementar las notificaciones de salida que se emitirá sobre esta confianza de proveedor de reclamaciones eficazmente, determina si se necesitan uno o más reglas de notificación y que las reglas que se debe usar con esta confianza de proveedor de reclamaciones de notificación.|![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[determinar el tipo de notificación regla plantilla uso](../../ad-fs/technical-reference/Determine-the-Type-of-Claim-Rule-Template-to-Use.md)|  
+|![creación de reglas de notificación](media/icon_checkboxo.gif)|Revisar conceptos al crear una notificación regla sobre otra y cómo puedes usar el lenguaje de regla de notificación para proporcionar lógica más compleja que reglas estándar para proporcionar un resultado deseado en el resultado ideal conjunto de notificaciones.|![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[cuándo usar un paso a través o una regla de notificación de filtro](../../ad-fs/technical-reference/When-to-Use-a-Pass-Through-or-Filter-Claim-Rule.md)<br /><br />![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[cuándo usar una regla de notificación de transformación](../../ad-fs/technical-reference/When-to-Use-a-Transform-Claim-Rule.md)<br /><br />![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[cuándo usar atributos LDAP enviar como reclamaciones regla](../../ad-fs/technical-reference/When-to-Use-a-Send-LDAP-Attributes-as-Claims-Rule.md)<br /><br />![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[cuándo usar una pertenencia al grupo de enviar como una regla de notificación](../../ad-fs/technical-reference/When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md)<br /><br />![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[cuándo usar una regla de notificación personalizada](../../ad-fs/technical-reference/When-to-Use-a-Custom-Claim-Rule.md)<br /><br />![creación de reglas de notificación](media/faa393df-4856-4431-9eda-4f4e5be72a90.gif)[el rol del lenguaje de regla de notificación](../../ad-fs/technical-reference/The-Role-of-the-Claim-Rule-Language.md)|  
+|![creación de reglas de notificación](media/icon_checkboxo.gif)|Debe crearse una descripción de la reclamación si no existe uno ya que cumplen las necesidades de la organización. Incluye un conjunto predeterminado de las descripciones de notificación que se exponen en la administración de AD FS snap\ en AD FS.|![creación de reglas de notificación](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[agregar una descripción de la notificación](../../ad-fs/operations/Add-a-Claim-Description.md)|  
+|![creación de reglas de notificación](media/icon_checkboxo.gif)|Según las necesidades de la organización, crear una o varias reglas de notificación para el conjunto de reglas de transformación de aceptación que está asociado con esta confianza de proveedor de notificaciones para que las notificaciones se emitirá correctamente.|![creación de reglas de notificación](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[filtrar una notificación entrante o crear una regla para pasar a través de](../../ad-fs/operations/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim.md)<br /><br />![creación de reglas de notificación](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[crear una regla para enviar atributos LDAP como notificaciones](../../ad-fs/operations/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims.md)<br /><br />![creación de reglas de notificación](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[crear una regla para enviar pertenencia a grupos como una notificación](../../ad-fs/operations/Create-a-Rule-to-Send-Group-Membership-as-a-Claim.md)<br /><br />![creación de reglas de notificación](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[crear una regla para transformar una notificación entrante](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md)<br /><br />![creación de reglas de notificación](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[crear una regla para enviar una notificación de método de autenticación](../../ad-fs/operations/Create-a-Rule-to-Send-an-Authentication-Method-Claim.md)<br /><br />![creación de reglas de notificación](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[crear una regla para enviar un AD FS 1.x reclamar Compatible](../../ad-fs/operations/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim.md)<br /><br />![creación de reglas de notificación](media/15dd35b6-6cc6-421f-93f8-7109920e7144.gif)[crear una regla para enviar notificaciones mediante una regla personalizada](../../ad-fs/operations/Create-a-Rule-to-Send-Claims-Using-a-Custom-Rule.md)|  
+  
+
