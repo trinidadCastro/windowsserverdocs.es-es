@@ -1,6 +1,6 @@
 ---
 title: Crear un filtro de archivos
-description: "En este artículo se describe cómo crear un filtro de archivos"
+description: En este artículo se describe cómo crear un filtro de archivos
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: c1f261eb926eca3ead58b87aeb00a5060b9d957c
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59815926"
 ---
 # <a name="create-a-file-screen"></a>Crear un filtro de archivos
 
@@ -38,7 +39,7 @@ Al crear un nuevo filtro de archivos, puedes elegir guardar una plantilla de fil
 
 7.  En **Grupos de archivos**, selecciona cada grupo de archivos que quieres incluir en el filtro de archivos. (Para seleccionar la casilla de verificación del grupo de archivos, haz doble clic en la etiqueta de grupo de archivos).
 
-    Si quieres ver los tipos de archivo que un grupo de archivos incluye y excluye, haz clic en la etiqueta de grupo de archivos y luego haz clic en **Editar**. Para crear un nuevo grupo de archivos, haz clic en **Crear**.
+    Si desea ver los tipos de archivo incluye y excluidos de un grupo de archivos, haga clic en la etiqueta de grupo de archivos y, a continuación, haga clic en **editar**. Para crear un nuevo grupo de archivos, haga clic en **crear**.
 
 8.  También puedes configurar el **Administrador de recursos del servidor de archivos** para generar una o varias notificaciones si estableces las opciones de las pestañas **Mensaje de correo electrónico**, **Registro de eventos**, **Comando** e **Informe**. Para obtener más información sobre las opciones de notificación de filtros de archivos, consulta [Crear una plantilla de filtro de archivos](create-file-screen-template.md).
 
@@ -51,13 +52,13 @@ Al crear un nuevo filtro de archivos, puedes elegir guardar una plantilla de fil
     -   Para guardar una plantilla que se base en estas propiedades personalizadas (recomendado), haz clic en **Guardar las propiedades personalizadas como plantilla** y escribe un nombre para la plantilla. Esta opción aplicará la plantilla al nuevo filtro de archivos y puedes usar la plantilla para crear filtros de archivos adicionales en el futuro. Esto te permitirá actualizar automáticamente más adelante los filtros de archivos mediante la actualización de la plantilla.
     -   Si no quieres guardar una plantilla al guardar el filtro de archivos, haz clic en **Guardar el filtro de archivos personalizado sin crear una plantilla**.
 
-12. Haz clic en **Aceptar**.
+12. Haga clic en **Aceptar**.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Administración del filtrado de archivos](file-screening-management.md)
--   [Definir grupos de archivos para el filtrado](define-file-groups-for-screening.md)
--   [Crear una plantilla de filtro de archivos](create-file-screen-template.md)
--   [Editar las propiedades de la plantilla de filtro de archivos](edit-file-screen-template-properties.md)
+-   [Definir grupos de archivos para la selección](define-file-groups-for-screening.md)
+-   [Crear una plantilla de pantalla de archivo](create-file-screen-template.md)
+-   [Editar propiedades de plantilla de filtro de archivos](edit-file-screen-template-properties.md)
 
 

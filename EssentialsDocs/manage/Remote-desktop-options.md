@@ -1,6 +1,6 @@
 ---
-title: Opciones de escritorio remotos
-description: "Describe cómo usar Windows Server Essentials"
+title: Opciones de escritorio remoto
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.reviewer: na
@@ -12,37 +12,38 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: bbf7f258b2904732ab2e605d1eb3ea6bd2d306be
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59818316"
 ---
-# <a name="remote-desktop-options"></a>Opciones de escritorio remotos
+# <a name="remote-desktop-options"></a>Opciones de escritorio remoto
  
   
 ## <a name="connection-speed"></a>Velocidad de conexión  
- La velocidad de la conexión a un equipo de red mediante el acceso Web remoto determina las opciones de escritorio que están disponibles en el equipo host. La siguiente tabla indica qué opciones de escritorio están disponibles para la velocidad con que se conecta al equipo remoto a través de acceso Web remoto.  
+ La velocidad de la conexión a un equipo de red mediante el Acceso web remoto determina las opciones de escritorio que están disponibles en el equipo host. La siguiente tabla indica qué opciones de escritorio están disponibles para la velocidad con la que se conecta al equipo remoto mediante el Acceso web remoto.  
   
 ||||||  
 |-|-|-|-|-|  
-||Módem lento (28,8 Kbps)|Módem rápido (56 Kbps) (predeterminado)|Banda ancha (128 Kbps - 1,5 Mbps)|Red de área local (1,5 Mbps o superior)|  
-|Fondo de escritorio|No|No|No|Sí|  
-|El suavizado de fuentes|No|No|No|Sí|  
-|Composición de escritorio|No|No|Sí|Sí|  
-|Mostrar el contenido de la ventana mientras se arrastra|No|No|Sí|Sí|  
-|Animación de menús y la ventana|No|No|Sí|Sí|  
+||Módem lento (28,8 Kbps)|Módem rápido (56 Kbps) (valor predeterminado)|Banda ancha (128 Kbps - 1,5 Mbps)|Red de área local (1,5 Mbps o superior)|  
+|Fondo de pantalla|No|No|No|Sí|  
+|Suavizado de fuentes|No|No|No|Sí|  
+|Composición del escritorio|No|No|Sí|Sí|  
+|Mostrar contenido de ventana al arrastrar|No|No|Sí|Sí|  
+|Animaciones de menús y ventanas|No|No|Sí|Sí|  
 |Temas|No|Sí|Sí|Sí|  
-|Almacenamiento en caché de mapas de bits|Sí|Sí|Sí|Sí|  
+|Almacenar mapas de bits en caché|Sí|Sí|Sí|Sí|  
   
-## <a name="screen-size"></a>Tamaño de pantalla  
- Esta opción determina el tamaño de ventana que se abre en el equipo local cuando te conectas a un equipo remoto en el sitio Web acceso remoto. Tamaño de la ventana se expresa en píxeles.  
+## <a name="screen-size"></a>Tamaño de la pantalla  
+ Esta opción determina el tamaño de la ventana que se abre en el equipo local cuando se conecte a un equipo remoto a través del sitio web de acceso remoto. El tamaño de ventana se expresa en píxeles.  
   
 > [!NOTE]
->  Cuando se conecta al servidor, se abre el panel. El tamaño predeterminado del panel es 1024 x 741 y redimensionable.  
+>  Cuando se conecta al servidor, se abre el panel. El tamaño predeterminado del panel es de 1024 x 741 y puede cambiarse el tamaño.  
   
 -   Pantalla completa (varios monitores)  
   
--   1280 x 720.  
+-   1280 x 720  
   
 -   1024 x 768  
   
@@ -50,20 +51,20 @@ ms.lasthandoff: 07/03/2017
   
 -   640 x 480  
   
-## <a name="enable-the-remote-computer-to-print-to-my-local-printer"></a>Habilitar el equipo remoto para imprimir en mi impresora local  
- Habilitado de manera predeterminada. Esta opción permite imprimir a la impresora que está conectada al equipo local desde el equipo remoto.  
+## <a name="enable-the-remote-computer-to-print-to-my-local-printer"></a>Habilitar el equipo remoto para imprimir en la impresora local  
+ Opción habilitada de forma predeterminada. Esta opción permite imprimir en la impresora que está conectada al equipo local desde el equipo remoto.  
   
 ## <a name="play-sounds-from-the-remote-computer"></a>Reproducir sonidos desde el equipo remoto  
- Habilitado de manera predeterminada. Esta opción te permite reproducir sonidos, como los sonidos del sistema, en el equipo local desde el equipo remoto.  
+ Opción habilitada de forma predeterminada. Estas opciones permiten reproducir sonidos, como los sonidos del sistema, en el equipo local desde el equipo remoto.  
   
-## <a name="enable-copy-and-paste-between-the-remote-computer-and-the-local-computer"></a>Permitir copiar y pegar entre el equipo remoto y el equipo local  
- No está habilitado de manera predeterminada. Esta opción permite copiar y pegar los archivos entre el equipo remoto y el equipo local en la misma manera copiar y pegar archivos desde una ubicación a otra en el equipo local.  
+## <a name="enable-copy-and-paste-between-the-remote-computer-and-the-local-computer"></a>Habilitar copiar y pegar entre el equipo remoto y el equipo local  
+ Esta opción no está habilitada de forma predeterminada. Esta opción permite copiar y pegar los archivos entre el equipo remoto y el equipo local de la misma manera en la que copiaría y pegaría archivos desde una ubicación a otra en el equipo local.  
   
-## <a name="enable-the-remote-computer-to-access-drives-on-my-local-computer"></a>Habilitar el equipo remoto obtener acceso a unidades de disco en el equipo local  
- No está habilitado de manera predeterminada. Esta opción te permite acceder a los archivos y carpetas en las unidades de disco duro que está conectadas al equipo local desde el equipo remoto.  
+## <a name="enable-the-remote-computer-to-access-drives-on-my-local-computer"></a>Habilitar el equipo remoto para que tenga acceso a las unidades del equipo local  
+ Esta opción no está habilitada de forma predeterminada. Esta opción permite tener acceso a los archivos y carpetas en las unidades de disco duro que están conectadas al equipo local desde el equipo remoto.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
--   [Administrar el acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Usar el acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)
+-   [Usar acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)

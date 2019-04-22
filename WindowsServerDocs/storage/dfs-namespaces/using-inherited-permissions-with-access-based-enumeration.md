@@ -1,6 +1,6 @@
 ---
-title: "Usar permisos heredados con la enumeración basada en el acceso"
-description: "En este artículo se describe cómo usar permisos heredados con la enumeración basada en el acceso"
+title: Usar permisos heredados con la enumeración basada en el acceso
+description: En este artículo se describe cómo usar permisos heredados con la enumeración basada en el acceso
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,17 +8,18 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e8210a6abede3a8ee5317e5b6b2a90bd17013fc4
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: e6bd7a018a7f3a245581b5a9c63494048c7187a2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812136"
 ---
 # <a name="using-inherited-permissions-with-access-based-enumeration"></a>Usar permisos heredados con la enumeración basada en el acceso
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
-De manera predeterminada, los permisos que se usan para una carpeta DFS se heredan de sistema de archivos local del servidor de espacio de nombres. Los permisos se heredan desde el directorio raíz de la unidad del sistema y conceden los permisos de lectura del grupo DOMAIN\\Users. Como resultado, incluso después de habilitar la enumeración basada en el acceso, todas las carpetas del espacio de nombres permanecen visibles para todos los usuarios del dominio.
+De manera predeterminada, los permisos que se usan para una carpeta DFS se heredan de sistema de archivos local del servidor de espacio de nombres. Los permisos se heredan en el directorio raíz de la unidad del sistema y conceda al dominio\\permisos de lectura de grupo de usuarios. Como resultado, incluso después de habilitar la enumeración basada en el acceso, todas las carpetas del espacio de nombres permanecen visibles para todos los usuarios del dominio.
 
 ## <a name="advantages-and-limitations-of-inherited-permissions"></a>Ventajas y limitaciones de los permisos heredados
 
@@ -41,7 +42,7 @@ A pesar de las ventajas, los permisos heredados de espacios de nombres DFS tiene
 
 Para limitar qué usuarios pueden ver una carpeta DFS, debes realizar una de las siguientes tareas:
 
--   **Establecer permisos explícitos para la carpeta, deshabilitando la herencia.** Para establecer permisos explícitos en una carpeta con destinos (un vínculo) mediante la opción de administración de DFS o el comando **Dfsutil**, consulta [Habilitar la enumeración basada en el acceso en un espacio de nombres](enable-access-based-enumeration-on-a-namespace.md).
+-   **Establecer permisos explícitos para la carpeta, deshabilitar la herencia.** Para establecer permisos explícitos en una carpeta con destinos (un vínculo) mediante la opción de administración de DFS o el comando **Dfsutil**, consulta [Habilitar la enumeración basada en el acceso en un espacio de nombres](enable-access-based-enumeration-on-a-namespace.md).
 -   **Modificar permisos heredados en el elemento principal del sistema de archivos local**. Para modificar los permisos heredados por una carpeta con destinos, si ya has establecido permisos explícitos en la carpeta, cambia a los permisos heredados de permisos explícitos, tal y como se explica en el siguiente procedimiento. Luego usa el Explorador de Windows o el comando **Icacls** para modificar los permisos de la carpeta desde la que la carpeta con destinos hereda sus permisos.
 
 > [!NOTE]
@@ -51,12 +52,12 @@ Para limitar qué usuarios pueden ver una carpeta DFS, debes realizar una de las
 
 1.  En el árbol de consola, en el nodo **Espacios de nombres**, busca la carpeta con destinos cuya visibilidad deseas controlar, haz clic en la carpeta y luego haz clic en **Propiedades**.
 
-2.  Haz clic en la pestaña **Opciones avanzadas**.
+2.  Haga clic en la ficha **Opciones avanzadas**.
 
 3.  Haz clic en **Usar permisos heredados del sistema de archivos local** y luego haz clic en **Aceptar** en el cuadro de diálogo **Confirmar uso de permisos heredados**. Esto también quita todos los permisos establecidos de forma explícita en esta carpeta, restaurando los permisos NTFS heredados del sistema de archivos local del servidor de espacio de nombres.
 
 4.  Para cambiar los permisos heredados de carpetas o raíces de espacio de nombres de un espacio de nombres DFS, usa el Explorador de Windows o el comando **ICacls**.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
--   [Crear un espacio de nombres DFS](create-a-dfs-namespace.md)
+-   [Crear un Namespace DFS](create-a-dfs-namespace.md)

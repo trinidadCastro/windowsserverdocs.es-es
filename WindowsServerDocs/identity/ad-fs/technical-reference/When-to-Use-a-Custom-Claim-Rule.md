@@ -1,7 +1,7 @@
 ---
 ms.assetid: 20d183f0-ef94-44bb-9dfc-ed93799dd1a6
-title: "Cuándo usar una regla de notificación personalizada"
-description: 
+title: Cuándo usar una regla de notificación personalizada
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,69 +9,70 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f5398f0b10d9e62548145fdde0354a3d047eb0ae
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: b08622cd9eefa153e2fe8403fbe85077644182f4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59813116"
 ---
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 # <a name="when-to-use-a-custom-claim-rule"></a>Cuándo usar una regla de notificación personalizada
-Puedes escribir una regla de notificación personalizada en \(AD FS\) los servicios de federación de Active Directory mediante el lenguaje de regla de notificación, que es el marco de trabajo que el motor de emisión de notificaciones que se usa para generar mediante programación, transformar, pasar y filtrar notificaciones. Al usar una regla personalizada, puedes crear reglas con una lógica compleja más que una plantilla de regla estándar. Considera la posibilidad de usar una regla personalizada cuando quieras:  
+Escribir una regla de notificación personalizada en Active Directory Federation Services \(AD FS\) mediante el lenguaje de reglas de notificación, que es el marco de trabajo que utiliza el motor de emisión de notificaciones para generar mediante programación, transformar, pasar a través y filtrar las notificaciones. Mediante el uso de una regla personalizada, puedes crear reglas con una lógica más compleja que una plantilla de regla estándar. Considera el uso de una regla personalizada cuando quieras:  
   
--   Enviar notificaciones basadas en valores que se extraen de un almacén de atributo de lenguaje de consulta estructurado \(SQL\).  
+-   Enviar notificaciones basadas en valores extraídos de un lenguaje de consulta estructurado \(SQL\) almacén de atributos.  
   
--   Enviar notificaciones basadas en valores que se extraen de un almacén de atributo de protocolo ligero de acceso a directorios \(LDAP\) con un filtro personalizado de LDAP.  
+-   Enviar notificaciones basadas en valores extraídos de un Lightweight Directory Access Protocol \(LDAP\) almacén de atributos con un filtro LDAP personalizado.  
   
--   Enviar notificaciones basadas en valores que se extraen de un almacén de atributo personalizado.  
+-   Enviar notificaciones basadas en valores extraídos de un almacén de atributos personalizado.  
   
 -   Enviar notificaciones solo cuando están presentes dos o más notificaciones entrantes.  
   
--   Enviar notificaciones solo cuando un entrante reclamar valor coincide con un patrón complejo.  
+-   Enviar notificaciones solo cuando un valor de notificación entrante coincida con un patrón complejo.  
   
--   Enviar notificaciones con cambios complejas para un entrante el valor de notificación.  
+-   Enviar notificaciones con cambios complejos a un valor de notificación entrante.  
   
--   Crear notificaciones para su uso solo en las reglas posteriores, sin necesidad de enviar realmente las notificaciones.  
+-   Crear notificaciones para usarlas solo en reglas más adelante, sin enviar las notificaciones realmente.  
   
--   Crear una notificación saliente del contenido de más de una notificación entrante.  
+-   Construir una notificación saliente desde el contenido de más de una notificación entrante.  
   
-También puedes usar una regla personalizada cuando el valor de la notificación de la solicitud saliente debe basarse en el valor de la notificación entrante, pero también debe incluir contenido adicional.  
+También puedes usar una regla personalizada cuando el valor de notificación de la notificación saliente tenga que estar basado en el valor de la solicitud entrante, pero también tenga que incluir contenido adicional.  
   
-El idioma de la regla de notificaciones es regla basada. Tiene una parte de la condición y una parte de ejecución. Puedes usar la sintaxis de lenguaje de regla de notificación para enumerar, agregar, eliminar o modificar las reclamaciones para satisfacer las necesidades de la organización. Para obtener más información acerca de cómo cada uno de estos elementos funciona, consulta [el rol del lenguaje de regla reclamación](The-Role-of-the-Claim-Rule-Language.md).  
+El lenguaje de reglas de notificación se basa en reglas. Tiene una parte de condición y una parte de ejecución. Puedes usar la sintaxis del lenguaje de reglas de notificación para enumerar, agregar, eliminar o modificar notificaciones para satisfacer las necesidades de tu organización. Para obtener más información acerca de cómo cada uno de estos elementos funcionan, consulte [The Role of the Claim Rule Language](The-Role-of-the-Claim-Rule-Language.md).  
   
-Las siguientes secciones proporcionan una introducción básica reglas de notificación. También ofrecen detalles sobre cuándo usar una regla de notificación personalizada.  
+Las secciones siguientes ofrecen una introducción básica a las reglas de notificación. También proporcionan detalles sobre cuándo usar una regla de notificación personalizada.  
   
-## <a name="about-claim-rules"></a>Acerca de las reglas de notificación  
-Una regla de Reclamación representa una instancia de la lógica de negocios que toma una notificación entrante, aplicar una condición a ella \ (si está x, a continuación, y\) y generar una notificación saliente basándose en los parámetros de la condición.  
+## <a name="about-claim-rules"></a>Sobre las reglas de notificación  
+Una regla de notificación representa una instancia de la lógica de negocios que toma una notificación entrante, se aplicará una condición \(if x, entonces y\) y generará una notificación saliente basándose en los parámetros de condición.  
   
 > [!IMPORTANT]  
-> -   En la administración de FS anuncios en snap\, reclamar se pueden crear reglas solo con plantillas de regla de notificación  
-> -   Proceso de reglas de notificación entrante dice directamente desde un proveedor de notificaciones \ (como Active Directory u otro Service\ federación) o desde la salida de la aceptación, transforman las reglas en una relación de confianza del proveedor de notificaciones.  
-> -   Reglas de notificación se procesan el motor de emisión de notificaciones en orden cronológico dentro de un conjunto de reglas determinado. Al establecer la prioridad en las reglas, puedes aún más refinar o filtrar notificaciones que se generan mediante reglas anteriores dentro de un conjunto de reglas determinado.  
-> -   Plantillas de regla de Reclamación siempre requieren que especifiques un tipo de notificación entrante. Sin embargo, puede procesar varios valores de las notificaciones con el mismo tipo de notificación mediante el uso de una sola regla.  
+> -   En el complemento Administración de AD FS\-en, notificaciones de las reglas se pueden crear sólo con las plantillas de regla de notificación  
+> -   El proceso de reglas de notificación entrante de notificaciones directamente desde un proveedor de notificaciones \(como Active Directory u otro servicio de federación\) o desde la salida de la aceptación de las reglas en una confianza de proveedor de notificaciones de transformación.  
+> -   El motor de emisión de notificaciones procesa las reglas de notificación en orden cronológico dentro de un conjunto determinado de reglas. Al establecer una prioridad en las reglas puedes afinar o filtrar aún más las notificaciones generadas por las reglas anteriores dentro de un conjunto determinado de reglas.  
+> -   Siempre tienes que especificar un tipo de notificación entrante para las plantillas de regla de notificaciones. Sin embargo, puedes procesar varios valores de notificación con el mismo tipo de notificación usando una sola regla.  
   
-Para obtener más información sobre la reclamación y reclamación conjuntos de reglas, consulta [el rol reclamar las reglas de](The-Role-of-Claim-Rules.md). Para obtener más información acerca de cómo se procesan las reglas, consulta [el rol del motor reclamaciones](The-Role-of-the-Claims-Engine.md). Para obtener más información, cómo se procesan los conjuntos de reglas de notificación, consulta [el rol de la canalización de reclamaciones](The-Role-of-the-Claims-Pipeline.md).  
+Para obtener más información sobre las reglas de notificación y conjuntos de reglas de notificación, consulte [The Role of Claim Rules](The-Role-of-Claim-Rules.md). Para obtener más información acerca de cómo se procesan las reglas, consulte [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md). Para obtener más información cómo se procesan los conjuntos de reglas de notificación, consulte [The Role of the Claims Pipeline](The-Role-of-the-Claims-Pipeline.md).  
   
 ## <a name="how-to-create-this-rule"></a>Cómo crear esta regla  
-Se crea esta regla mediante la creación de la sintaxis que necesitas para la operación con el lenguaje de regla de la reclamación y, a continuación, pegando el resultado en el cuadro de texto que se proporciona en el envío un notificaciones usando una plantilla de regla personalizada de las propiedades de un proveedor de notificaciones de confianza o confiar en un usuario de confianza en la administración de AD FS snap\ en primera.  
+Cree esta regla creando primero la sintaxis que necesita para la operación utilizando el lenguaje de reglas de notificación y, a continuación, pegar el resultado en el texto del cuadro que es proporciona en el envío de notificaciones mediante una plantilla de regla personalizada en las propiedades de un proveedor de notificaciones tr ust o un usuario de confianza confiar en el complemento Administración de AD FS\-en.  
   
-Esta plantilla de regla proporciona las siguientes opciones:  
+Esta plantilla de reglas proporciona las siguientes opciones:  
   
--   Especificar un nombre de regla de notificación  
+-   Especificar un nombre de regla de notificación.  
   
--   Escribe una o más condiciones opcionales y una instrucción de emisión con la de AD FS reclamar el idioma de la regla  
+-   Escriba uno o más condiciones opcionales y una declaración de emisión mediante AD FS de lenguaje de reglas de notificación  
   
-Para obtener más instrucciones para crear una regla personalizada mediante esta plantilla, consulta [crear una regla para enviar notificaciones mediante una regla personalizada](https://technet.microsoft.com/library/dd807049.aspx) en la Guía de implementación de AD FS.  
+Para obtener más instrucciones para crear una regla personalizada mediante esta plantilla, consulte [crear una regla para enviar notificaciones mediante una regla personalizada](https://technet.microsoft.com/library/dd807049.aspx) en la Guía de implementación de AD FS.  
   
-Para comprender mejor cómo funciona el idioma de la regla de notificación, ver la sintaxis de lenguaje de regla de Reclamación de las demás reglas que ya existen en el snap\ haciendo clic en el **Ver regla idioma** ficha en las propiedades para dicha regla. Usar la información de esta sección y la información de sintaxis en esta pestaña, puede proporcionar información sobre cómo crear sus propias reglas personalizadas.  
+Para entender mejor cómo funciona el lenguaje de reglas de notificación, ver la sintaxis de lenguaje de reglas de notificación de otras reglas que ya existen en el complemento\-en haciendo clic en el **ver lenguaje de reglas** ficha en las propiedades de esa regla. La información de esta sección y la información de la sintaxis de esta ficha pueden proporcionar información sobre cómo construir tus propias reglas personalizadas.  
   
-Para obtener más información sobre cómo usar el lenguaje de regla de notificación, consulta [el rol del lenguaje de regla reclamar](The-Role-of-the-Claim-Rule-Language.md).  
+Para obtener más información sobre cómo usar el lenguaje de reglas de notificación, consulte [The Role of el lenguaje de reglas de notificación](The-Role-of-the-Claim-Rule-Language.md).  
   
-## <a name="using-the-claim-rule-language"></a>Con el lenguaje de regla de notificación  
+## <a name="using-the-claim-rule-language"></a>Uso del lenguaje de las reglas de notificación  
   
-### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>Ejemplo: Cómo combinar los nombres y los apellidos basados en valores de atributo de nombre de un usuario  
-La siguiente sintaxis de regla combina los nombres y los apellidos de valores de atributo en un almacén de atributo determinado. El motor de directiva constituye un producto cartesiano de las coincidencias para cada condición. Por ejemplo, el resultado para {"Frank", "Alan"} nombre y apellidos {"Miller", "García"} es {"Frank Miller", "Frank Shen", "Alan Miller", "Bernardo García"}:  
+### <a name="example-how-to-combine-first-and-last-names-based-on-a-users-name-attribute-values"></a>Por ejemplo: Cómo combinar los nombres y apellidos en función de los valores de atributo de nombre de un usuario  
+La sintaxis de regla siguiente combina los nombres y apellidos de los valores de atributo en un almacén de atributos especificado. El motor de directiva forma un producto cartesiano de las coincidencias de todas las condiciones. Por ejemplo, el resultado para el nombre {"Frank", "Alan"} y los apellidos {"Miller", "Shen"} es {"Frank Miller", "Frank Shen", "Alan Miller", "Alan Shen"}:  
   
 ```  
 c1:[type == "http://exampleschema/firstname" ]  
@@ -79,28 +80,28 @@ c1:[type == "http://exampleschema/firstname" ]
 => issue(type = "http://exampleschema/name", value = c1.value + “  “ + c2.value);  
 ```  
   
-### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>Ejemplo: Procedimiento para emitir una reclamación de administrador en función de si los usuarios tienen informes directos  
-La siguiente regla emite una reclamación de administrador solo si el usuario tiene informes directos:  
+### <a name="example-how-to-issue-a-manager-claim-based-on-whether-users-have-direct-reports"></a>Por ejemplo: Cómo emitir una notificación de administrador en función de si los usuarios disponen de informes directos  
+La regla siguiente emite una notificación de administrador solo si el usuario tiene informes directos:  
   
 ```  
 c:[type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] => add(store = "SQL Store", types = ("http://schemas.xmlsoap.org/claims/Reports"), query = "SELECT Reports FROM dbo.DirectReports WHERE UserName = {0}", param = c.value );  
 count([type == “http://schemas.xmlsoap.org/claims/Reports“] ) > 0 => issue(= "http://schemas.xmlsoap.org/claims/ismanager", value = "true");  
 ```  
   
-### <a name="example-how-to-issue-a-ppid-claim-based-on-an-ldap-attribute"></a>Ejemplo: Procedimiento para emitir una reclamación de p pid basándose en un atributo LDAP  
-La siguiente regla emite una reclamación de identificador de Personal privada \(PPID\) en función de la **windowsaccountname** y **originalissuer** atributos de los usuarios en un almacén de atributo LDAP:  
+### <a name="example-how-to-issue-a-ppid-claim-based-on-an-ldap-attribute"></a>Por ejemplo: Cómo emitir una notificación PPID basada en un atributo LDAP  
+La siguiente regla emite un identificador de Personal privada \(PPID\) notificación según la **windowsaccountname** y **originalissuer** atributos de usuarios en un atributo LDAP tienda:  
   
 ```  
-c:[Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]  
+c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"]  
  => issue(store = "_OpaqueIdStore", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier"), query = "{0};{1};{2}", param = "ppid", param = c.Value, param = c.OriginalIssuer);  
 ```  
   
-Atributos comunes que pueden usarse para identificar al usuario para esta consulta incluyen lo siguiente:  
+Los atributos comunes que se pueden usar para identificar de forma única al usuario para esta consulta incluyen lo siguiente:  
   
--   **SID del usuario**  
+-   **SID de usuario**  
   
 -   **windowsaccountname**  
   
--   **sAMAccountName**  
+-   **samaccountname**  
   
 

@@ -1,52 +1,54 @@
 ---
 ms.assetid: 8890ccc9-068d-4da2-bd51-8a2964173ff1
-title: "Federación granja de servidores con WID y servidores proxy"
-description: 
+title: Granja de servidores de federación con WID y servidores proxy
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 02/21/2017
+ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c0d911b6b12e72a0dc066abc3d6418f5b6e70738
-ms.sourcegitcommit: 000db22340f6b076c20d9d040f666fb2732bbc32
-ms.translationtype: HT
+ms.openlocfilehash: 4bd815daccdd72a8c612b9b728ce12378c1926e7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59817626"
 ---
-# <a name="federation-server-farm-using-wid-and-proxies"></a>Federación granja de servidores con WID y servidores proxy
+# <a name="federation-server-farm-using-wid-and-proxies"></a>Granja de servidores de federación con WID y servidores proxy
 
 >Se aplica a: Windows Server 2012
 
-Esta topología de implementación para los servicios de federación de Active Directory \(AD FS\) es idéntica a la granja de servidores de federación con topología \(WID\) base de datos interna de Windows, pero agrega a proxies de servidor de federación a la red perimetral para admitir los usuarios externos. Los proxy de federación servidor redirigen las solicitudes de autenticación de cliente que provienen de fuera de la red corporativa a los servidores de federación.  
+Esta topología de implementación para los servicios de federación de Active Directory \(AD FS\) es idéntica a la granja de servidores de federación con Windows Internal Database \(WID\) topología, pero agrega servidores proxy de federación a la red perimetral para admitir usuarios externos. Los servidores proxy de federación redirigen las solicitudes de autenticación de cliente que proceden de fuera de la red corporativa a la granja de servidores de federación.  
   
-## <a name="deployment-considerations"></a>Consideraciones de implementación  
-Esta sección describe diversas consideraciones acerca de la audiencia de destino, ventajas y limitaciones que están asociadas con esta topología de implementación.  
+## <a name="deployment-considerations"></a>Consideraciones acerca de la implementación  
+Esta sección describen diversas consideraciones acerca de los destinatarios, ventajas y limitaciones asociadas con esta topología de implementación.  
   
 ### <a name="who-should-use-this-topology"></a>¿Quién debe usar esta topología?  
   
--   Las organizaciones con 100 configurado las relaciones de confianza que se deben proporcionar tanto sus usuarios internos y externos a los usuarios \ (que se iniciaron sesión en equipos que se encuentran físicamente fuera el red\ corporativa) con solo sign\ \(SSO\) acceso a los servicios o aplicaciones federadas  
+-   Las organizaciones con 100 o menos relaciones de confianza configurado que deben proporcionar a sus usuarios internos y externos a los usuarios \(que están conectados a los equipos que se encuentran físicamente fuera de la red corporativa\) con solo inicio de sesión\-en \(SSO\) acceso a aplicaciones federadas o servicios  
   
--   Organizaciones que necesitan proporcionar tanto sus usuarios internos y externos a los usuarios con acceso de inicio de sesión ÚNICO a Microsoft Office 365  
+-   Organizaciones que necesitan para proporcionar a sus usuarios internos y externos a los usuarios con acceso de inicio de sesión único con Microsoft Office 365  
   
--   Organizaciones pequeñas que tienen los usuarios externos y requieren servicios redundantes, escalables  
+-   Organizaciones más pequeñas que tienen los usuarios externos y requieren servicios redundantes, escalables  
   
 ### <a name="what-are-the-benefits-of-using-this-topology"></a>¿Cuáles son las ventajas de usar esta topología?  
   
--   Las mismas ventajas, como se muestra para la [federación servidor granja usando WID](Federation-Server-Farm-Using-WID-2012.md) topología, además de la ventaja de proporcionar acceso adicional para los usuarios externos  
+-   Las mismas ventajas, como se muestra para el [granja de servidores de federación con WID](Federation-Server-Farm-Using-WID-2012.md) topología, además de la ventaja de proporcionar acceso adicional para los usuarios externos  
   
 ### <a name="what-are-the-limitations-of-using-this-topology"></a>¿Cuáles son las limitaciones del uso de esta topología?  
   
--   Las mismas limitaciones según se indiquen para la [federación servidor granja usando WID](Federation-Server-Farm-Using-WID-2012.md) topología  
+-   Las mismas limitaciones que enumeradas para el [granja de servidores de federación con WID](Federation-Server-Farm-Using-WID-2012.md) topología  
   
-## <a name="server-placement-and-network-layout-recommendations"></a>Recomendaciones de diseño de red y la ubicación de servidor  
-Para implementar esta topología, además de agregar dos proxies de servidor de federación, debe asegurarse de que la red perimetral también puede proporcionar acceso a un servidor de sistema de nombres de dominio \(DNS\) y a un segundo host \(NLB\) equilibrio de carga de red. El segundo host NLB debe estar configurado con un clúster NLB que use una dirección IP de clúster Internet\ accesible y debe usar la misma configuración de nombre de clúster DNS como el clúster NLB anterior que configuraste en el \(fs.fabrikam.com\) red corporativa. Los servidores proxy de servidor de federación también deben estar configurados con direcciones IP Internet\ accesible.  
+## <a name="server-placement-and-network-layout-recommendations"></a>Recomendaciones de diseño de selección de ubicación y la red de servidor  
+Para implementar esta topología, además de agregar dos servidores proxy de federación, debe asegurarse de que la red perimetral también puede proporcionar acceso a un sistema de nombres de dominio \(DNS\) server y a un segundo Network Load Balancing \(NLB\) host. El segundo host NLB debe configurarse con un clúster NLB que usa un Internet\-dirección IP del clúster sea accesible y deben usar la misma configuración de nombre DNS de clúster que el clúster NLB anterior que configuró en la red corporativa \( FS.fabrikam.com\). También se deben configurar los servidores proxy de federación con Internet\-direcciones IP accesibles.  
   
-La siguiente ilustración muestra la granja de servidores de federación existente con topología WID que se ha descrito anteriormente, y cómo la empresa ficticia de Fabrikam, Inc., proporciona acceso a un servidor DNS perímetro, agrega un segundo host NLB con la misma clúster DNS nombre \(fs.fabrikam.com\) y agrega dos proxies de servidor de federación \(fsp1 and fsp2\) a la red de perímetro.  
+La siguiente ilustración muestra la granja de servidores de federación existente con topología WID que se ha descrito anteriormente y cómo la empresa ficticia de Fabrikam, Inc., proporciona acceso a un servidor DNS perimetral, agrega un segundo host NLB con el mismo nombre DNS del clúster \(fs.fabrikam.com\), y agrega dos servidores proxy de federación \(fsp1 y fsp2\) a la red perimetral.  
   
-![Granja de servidores con WID](media/FarmWIDProxies.gif)  
+![granja de servidores con WID](media/FarmWIDProxies.gif)  
   
-Para obtener más información sobre cómo configurar el entorno de red para su uso con los servidores de federación o servidores proxy de servidor de federación, consulta uno [requisitos de resolución de nombres para los servidores de federación](Name-Resolution-Requirements-for-Federation-Servers.md) o [requisitos de resolución de nombre de Proxies de servidor de federación](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
+Para obtener más información sobre cómo configurar el entorno de red para su uso con los servidores de federación o servidores proxy de federación, consulte [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md) o [nombre Requisitos de resolución para los servidores proxy de federación](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
   
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

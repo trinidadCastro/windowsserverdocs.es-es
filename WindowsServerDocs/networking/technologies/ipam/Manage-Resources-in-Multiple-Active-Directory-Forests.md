@@ -1,6 +1,6 @@
 ---
-title: Administrar recursos en varios bosques de Active Directory
-description: Este tema es parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
+title: Administración de recursos en varios bosques de Active Directory
+description: Este tema forma parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,37 +13,38 @@ ms.topic: article
 ms.assetid: 82f8f382-246e-4164-8306-437f7a019e0f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b01680d4b35461ff85965781ebc60e7a613d1cb8
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: c6752d87be2e689e517b287092a2570e27943c18
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59815976"
 ---
-# <a name="manage-resources-in-multiple-active-directory-forests"></a>Administrar recursos en varios bosques de Active Directory
+# <a name="manage-resources-in-multiple-active-directory-forests"></a>Administración de recursos en varios bosques de Active Directory
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para obtener información sobre cómo usar IPAM para administrar controladores de dominio, servidores DHCP y servidores DNS en varios bosques de Active Directory.  
+Puede utilizar este tema para aprender a usar IPAM para administrar controladores de dominio, servidores DHCP y servidores DNS en varios bosques de Active Directory.  
   
-Para usar IPAM para administrar recursos remotos bosques de Active Directory, cada bosque que quieres administrar debe tener dos forma de confianza con el bosque donde está instalado IPAM.  
+Para usar IPAM para administrar recursos de bosques de Active Directory remotos, cada bosque que desea administrar debe tener dos de confianza bidireccional con el bosque donde se instala IPAM.  
   
-Para iniciar el proceso de detección de bosques de Active Directory diferentes, abra el administrador del servidor y pulse IPAM. En la consola del cliente IPAM, haz clic en **configurar la detección de servidor**y, a continuación, haz clic en **obtener bosques**. Esta opción inicia una tarea en segundo plano que haya detectado sus dominios y bosques de confianza. Una vez completado el proceso de detección, haz clic en **configurar la detección de servidor**, que abre el cuadro de diálogo siguiente.  
+Para iniciar el proceso de detección de bosques de Active Directory diferentes, abra Administrador del servidor y haga clic en IPAM. En la consola de cliente IPAM, haga clic en **Configurar detección de servidor**y, a continuación, haga clic en **obtener bosques**. Esto inicia una tarea en segundo plano que detecta sus dominios y bosques de confianza. Al finalizar el proceso de detección, haga clic en **Configurar detección de servidor**, que abre el cuadro de diálogo siguiente.  
   
-![Configurar la detección de servidor](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)  
+![Configurar la detección de servidores](../../media/Manage-Resources-in-Multiple-Active-Directory-Forests/ipam_serverdiscovery.jpg)  
 
 >[!NOTE]
->Para el aprovisionamiento de basados en grupo contraseña\ para un escenario de bosque de Active Directory entre, asegúrate de que ejecutes el siguiente cmdlet de Windows PowerShell en el servidor IPAM y no en lo controladores de dominio del dominio que confía. Por ejemplo, si el servidor IPAM es parte del bosque corp.contoso.com y el bosque de confianza es fabrikam.com, puedes ejecutar el siguiente cmdlet de Windows PowerShell en el servidor IPAM corp.contoso.com basados en grupo contraseña\ aprovisionamiento en el bosque fabrikam.com. Para ejecutar este cmdlet, debe ser miembro del grupo Administradores de dominio del bosque fabrikam.com.
+>La directiva de grupo\-en función de aprovisionamiento para un escenario entre bosques de Active Directory, asegúrese de ejecutar el siguiente cmdlet de Windows PowerShell en el servidor IPAM y no en lo controladores de dominio del dominio que confía. Por ejemplo, si el servidor IPAM está unido al bosque de Corp.contoso.com y el bosque que confía es fabrikam.com, puede ejecutar el siguiente cmdlet de Windows PowerShell en el servidor IPAM en corp.contoso.com la directiva de grupo\-de aprovisionamiento en la bosque de Fabrikam.com. Para ejecutar este cmdlet, debe ser miembro del grupo Admins. del dominio del bosque de fabrikam.com.
 
     
     Invoke-IpamGpoProvisioning -Domain fabrikam.COM -GpoPrefixName IPAMSERVER -IpamServerFqdn IPAM.CORP.CONTOSO.COM
     
 
-En la **configurar la detección de servidor** cuadro de diálogo, haz clic en **selecciona del bosque**y, a continuación, elige el bosque que desee administrar con IPAM. También seleccionar los dominios que quieras administrar y, a continuación, haz clic en **agregar**.
+En el **Configurar detección de servidor** cuadro de diálogo, haga clic en **seleccione el bosque**y, a continuación, elija el bosque que desea administrar con IPAM. Seleccione también los dominios que desea administrar y, a continuación, haga clic en **agregar**.
 
-En **selecciona los roles de servidor para descubrir**, para cada dominio que quieras administrar, especificar el tipo de servidores para detectar. Las opciones son **controlador de dominio**, **servidor DHCP**, y **servidor DNS**.
+En **seleccionar los roles de servidor para detectar**, para cada dominio que desea administrar, especifique el tipo de servidores que quieres detectar. Las opciones son **controlador de dominio**, **servidor DHCP**, y **servidor DNS**.
 
-De manera predeterminada, se detectan los controladores de dominio, servidores DHCP y servidores DNS, por lo tanto, si no quieres descubrir uno de estos tipos de servidores, asegúrate de que se anule la selección de la casilla de verificación para esta opción.
+De forma predeterminada, se detectan controladores de dominio, servidores DHCP y servidores DNS: por lo que si no desea detectar uno de estos tipos de servidores, asegúrese de que anule la selección de la casilla de verificación para esa opción.
 
-En la ilustración de ejemplo anterior, el servidor IPAM está instalado en el bosque contoso.com y se agrega el dominio raíz del bosque fabrikam.com para la administración de IPAM. Los roles de servidor seleccionado permiten IPAM detectar y administrar controladores de dominio, servidores DHCP y servidores DNS en el dominio raíz del fabrikam.com y el dominio de raíz contoso.com.
+En la ilustración del ejemplo anterior, el servidor IPAM se instala en el bosque contoso.com y se agrega el dominio raíz del bosque fabrikam.com para la administración de IPAM. Los roles de servidor seleccionado que IPAM pueda detectar y administrar controladores de dominio, servidores DHCP y servidores DNS en el dominio raíz de fabrikam.com y el dominio raíz de contoso.com.
 
-Después de haber especificado roles de servidor, dominios y bosques, haz clic en **Aceptar**. IPAM realiza la detección y, cuando se complete la detección, puede administrar recursos en el bosque local y remoto.
+Después de haber especificado los bosques, dominios y roles de servidor, haga clic en **Aceptar**. IPAM realiza la detección y, cuando se completa la detección, puede administrar los recursos del bosque local y remota.

@@ -1,36 +1,36 @@
 ---
-title: Historial de rendimiento de los clústeres
+title: Historial de rendimiento para los clústeres
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 02/02/2018
-Keywords: Storage Spaces Direct
+Keywords: Espacios de almacenamiento directo
 ms.localizationpriority: medium
 ms.openlocfilehash: 68596cbdcf8593cd3017c8ae5d0836891c78229c
-ms.sourcegitcommit: 1533d994a6ddea54ac189ceb316b7d3c074307db
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "1894324"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59818776"
 ---
-# <a name="performance-history-for-clusters"></a>Historial de rendimiento de los clústeres
+# <a name="performance-history-for-clusters"></a>Historial de rendimiento para los clústeres
 
-> Se aplica a: Vista previa de Windows Server información confidencial
+> Se aplica a: Windows Server Insider Preview
 
-Este tema subcaracterística de [historial de rendimiento de almacenamiento espacios directa](performance-history.md) describe el historial de rendimiento recopilado para los clústeres.
+Este subtema de [historial de rendimiento de espacios de almacenamiento directo](performance-history.md) describe el historial de rendimiento recopilado para los clústeres.
 
-No hay ninguna serie que se originan en el nivel de clúster. En su lugar, serie de servidor, tales como `clusternode.cpu.usage`, se agregan para todos los servidores del clúster. Serie de volumen, como `volume.iops.total`, se agregan para todos los volúmenes del clúster. Y unidad serie, tales como `physicaldisk.size.total`, se agregan para todas las unidades del clúster.
+No hay ninguna serie que se originan en el nivel de clúster. En su lugar, la serie de servidor, como `clusternode.cpu.usage`, se agregan para todos los servidores del clúster. Serie de volumen, como `volume.iops.total`, se agregan para todos los volúmenes en el clúster. E impulsar la serie, como `physicaldisk.size.total`, se agregan para todas las unidades en el clúster.
 
-## <a name="usage-in-powershell"></a>Uso de PowerShell
+## <a name="usage-in-powershell"></a>Uso en PowerShell
 
-Use el cmdlet [Get-clúster](https://docs.microsoft.com/powershell/module/failoverclusters/get-cluster) :
+Use la [Get-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/get-cluster) cmdlet:
 
 ```PowerShell
 Get-Cluster | Get-ClusterPerf
 ```
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
-- [Historial de rendimiento de almacenamiento espacios directa](performance-history.md)
+- [Historial de rendimiento de espacios de almacenamiento directo](performance-history.md)

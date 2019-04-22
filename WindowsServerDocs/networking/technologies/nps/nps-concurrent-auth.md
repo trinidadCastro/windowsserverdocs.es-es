@@ -1,6 +1,6 @@
 ---
-title: Aumentar autenticaciones simultáneas procesados por NPS
-description: Este tema proporciona instrucciones sobre cómo configurar autenticaciones simultáneas de servidor de directivas de red en Windows Server 2016.
+title: Aumentar las autenticaciones simultáneas procesadas por NPS
+description: Este tema proporciona instrucciones sobre la configuración de autenticaciones simultáneas del servidor de directivas de red en Windows Server 2016.
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,29 +8,30 @@ ms.topic: article
 ms.assetid: 2d9cdada-0625-41c8-8248-a32259b03e47
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: aa70c1a26e2c22d26545e1b46a6151d71a2b4095
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: fd930e34a4adf6c55812385b691df3e3575a4280
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59818266"
 ---
-# <a name="increase-concurrent-authentications-processed-by-nps"></a>Aumentar autenticaciones simultáneas procesados por NPS
+# <a name="increase-concurrent-authentications-processed-by-nps"></a>Aumentar las autenticaciones simultáneas procesadas por NPS
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para obtener instrucciones sobre cómo configurar autenticaciones simultáneas de servidor de directivas de red.
+Puede usar este tema para obtener instrucciones sobre la configuración de autenticaciones simultáneas del servidor de directivas de red.
 
-Si instalaste \(NPS\) el servidor de directivas de red en un equipo que no sea un controlador de dominio y el servidor NPS recibe un gran número de solicitudes de autenticación por segundo, puede mejorar el rendimiento de NPS aumentando el número de autenticaciones simultáneas que se permiten entre el servidor NPS y el controlador de dominio.
+Si ha instalado el servidor de directivas de red \(NPS\) en un equipo que no sea un dominio de controlador y el NPS recibe un gran número de solicitudes de autenticación por segundo, puede mejorar el rendimiento de NPS si aumenta el número de autenticaciones simultáneas permitidas entre el NPS y el controlador de dominio.
 
-Para ello, debes editar la siguiente clave del registro: 
+Para ello, debe editar la clave del registro siguiente: 
 
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters`
 
-Agrega un nuevo valor denominado **MaxConcurrentApi** y asignar un valor comprendido entre 2 y 5. 
+Agregar un nuevo valor llamado **MaxConcurrentApi** y asígnele un valor entre 2 y 5. 
 
 >[!CAUTION]
->Si se asigna un valor para **MaxConcurrentApi** que es demasiado alto, el servidor NPS puede colocar una carga excesiva en el controlador de dominio.
+>Si asigna un valor a **MaxConcurrentApi** que es demasiado alto, el NPS podría suponer una carga excesiva en el controlador de dominio.
 
-Para obtener más información acerca de cómo administrar NPS, consulta [administrar el servidor de directivas de red](nps-manage-top.md).
+Para obtener más información sobre la administración de NPS, consulte [administrar un servidor de directivas de redes](nps-manage-top.md).
 
-Para obtener más información acerca de NPS, consulta [servidor de directivas de redes (NPS)](nps-top.md).
+Para obtener más información acerca de NPS, consulte [servidor de directivas de redes (NPS)](nps-top.md).

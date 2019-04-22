@@ -1,0 +1,53 @@
+---
+title: Supervisar el estado de distribución de la configuración del servidor de acceso remoto
+description: Este tema forma parte de la Guía de supervisión de acceso remoto y las cuentas en Windows Server 2016.
+manager: brianlic
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology:
+- networking-ras
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: de285d13-9e54-4c46-88f0-607182e5e3dc
+ms.author: pashort
+author: shortpatti
+ms.openlocfilehash: 3171eb9e9c90d0688fa413b80d9dbbf162e77fe8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: es-ES
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59818426"
+---
+# <a name="monitor-the-configuration-distribution-status-of-the-remote-access-server"></a>Supervisar el estado de distribución de la configuración del servidor de acceso remoto
+
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
+
+**Nota:** Windows Server 2012 combina DirectAccess y el servicio de acceso remoto (RAS) en un solo rol de acceso remoto.  
+  
+La Consola de administración de acceso remoto compara las versiones de configuración de todos los servidores supervisados para verificar que coinciden y que utilizan la versión de configuración más reciente. De este modo se comprueba si la versión de configuración más reciente (que está especificada en los Objetos de directiva de grupo o GPO) se distribuyó en todos los servidores y si se aplicó correctamente en ellos.  
+  
+### <a name="to-use-the-monitoring-dashboard-to-monitor-the-configuration-distribution"></a>Cómo usar el panel de supervisión para comprobar la distribución de la configuración  
+  
+1.  En **Administrador del servidor**, haz clic en **Herramientas** y, a continuación, haz clic en **Administración de acceso remoto**.  
+  
+2.  Haz clic en **PANEL** para ir a **Panel de acceso remoto** en la **Consola de administración de acceso remoto**.  
+  
+3.  En el panel de supervisión, fíjate en el icono **Estado de configuración** que aparece en el centro de la parte superior. Este icono muestra el estado actual de la distribución de la configuración.  
+  
+La siguiente tabla muestras los mensajes que genera el icono **Estado de configuración**, su significado y las acciones necesarias (si las hay).  
+  
+|||||  
+|-|-|-|-|  
+|Severity|Mensaje|Significado|¿Qué hacer?|  
+|Correcto|La configuración se distribuyó correctamente.|La configuración en el GPO se aplicó correctamente al servidor.|No es necesaria ninguna acción.|  
+|Advertencia|No se recuperó la configuración para el servidor [*nombre del servidor*] desde el controlador de dominio. El GPO no está vinculado.|La configuración en el GPO todavía no ha llegado al servidor. Esto podría deberse a que el GPO no está vinculado al servidor.|Vincula el GPO a un ámbito de administración que esté aplicado al servidor, o en un escenario de GPO de almacenamiento provisional, exporta manualmente la configuración desde el GPO de almacenamiento provisional e impórtala al GPO de producción. Para obtener más información acerca de los GPO de almacenamiento provisional, consulte **administrar GPO de acceso remoto con permisos limitados** en [Step-1-Plan-the-DirectAccess-Infrastructure](../../directaccess/single-server-advanced/Step-1-Plan-the-DirectAccess-Infrastructure.md). Para GPO pasos de almacenamiento provisional, consulte **configuración de GPO de acceso remoto con permisos limitados** en [paso 1: Configurar la infraestructura de DirectAccess](../../directaccess/single-server-advanced/Step-1-Configuring-DirectAccess-Infrastructure.md).|  
+|Advertencia|No se recuperó aún la configuración para el servidor [*nombre del servidor*] del controlador de dominio.|La configuración en el GPO todavía no ha llegado al servidor.<br /><br />La propagación de una configuración nueva podría tardar hasta 10 minutos.|Espera un poco más para que las directivas se actualicen en el servidor.|  
+|Error|No se puede recuperar la configuración para el servidor [*nombre del servidor*] del controlador de dominio.|La configuración en el GPO no ha llegado al servidor, y han pasado más de 10 minutos desde que se cambió la configuración.|Esto podría pasar en uno de los siguientes casos:<br /><br />-El servidor no tiene conectividad con el dominio para actualizar las directivas. Puede ejecutar "gpupdate /force" en el servidor para forzar una actualización de directiva.<br />-Replicación de GPO podría requerirse para recuperar la configuración actualizada.<br />-No hay ningún controlador de dominio de escritura en el sitio de Active Directory del servidor de acceso remoto.<br /><br />Espera a que los GPO se repliquen en todos los controladores de dominio, y después utiliza el cmdlet **Set-DAEntryPointDC** de Windows PowerShell para asociar el punto de entrada con un controlador de dominio de escritura en Active Directory en el servidor de remoto acceso.|  
+|Advertencia|Se recuperó la configuración para el servidor [*nombre del servidor*] desde el controlador de dominio pero no se aplicó todavía.|La configuración en el GPO ha llegado al servidor pero todavía no se ha aplicado.<br /><br />La configuración puede tardar hasta 15 minutos en aplicarse.|Espera un poco más para que la configuración se aplique por completo en el servidor.|  
+|Error|No puede aplicarse la configuración para el servidor [*nombre del servidor*] recuperado desde el controlador de dominio.|La configuración en el GPO ha llegado al servidor pero no se ha aplicado correctamente, y han pasado más de 15 minutos desde que se cambió la configuración.|Esto podría pasar en uno de los siguientes casos:<br /><br />1.  La configuración está aplicándose actualmente. Se muestra como error porque la recuperación de la configuración desde el GPO podría haber tardado mucho tiempo.<br />    Para comprobar si este es el motivo, utiliza el **Programador de tareas** para ir a Microsoft\Windows\RemoteAccess y comprueba si **RAConfigTask** se está ejecutando actualmente.<br />2.  Si **RAConfigTask** no se está ejecutando, podría no haber aplicado correctamente la configuración en el servidor.<br />    Comprueba los errores en el **Visor de eventos** en el canal de operaciones del servidor de acceso remoto, que se localiza en \Applications and Services Logs\Microsoft\Windows\RemoteAccess-RemoteAccessServer.<br />    Comprueba los errores en **ESTADO DE LAS OPERACIONES** en la Consola de administración de acceso remoto. Para obtener más información, consulta [Supervisar el estado de las operaciones del servidor de acceso remoto y sus componentes](Monitor-the-operations-status-of-the-Remote-Access-server-and-its-components.md).|  
+|Error|Se recuperó la configuración para todos los servidores de multisitio del controlador de dominio. La configuración no coincide en todos los servidores.|Hay una incoherencia entre las versiones de configuración de los GPO de servidor en la implementación multisitio.<br /><br />Lo ideal es que todos los GPO de servidor de todos los puntos de entrada tengan la misma configuración global, pero por alguna razón no están sincronizados.|Esto puede ocurrir cuando un cambio en la configuración generó un error y no se revertió correctamente.<br /><br />Deberías restaurar los GPO desde un estado de copia de seguridad en el que todos los GPO de servidor estén sincronizados. Para obtener información acerca de una secuencia de comandos que puede usar, vea [copia de seguridad y restaurar la configuración de acceso remoto](https://gallery.technet.microsoft.com/Back-up-and-Restore-Remote-e157e6a6).|  
+  
+
+

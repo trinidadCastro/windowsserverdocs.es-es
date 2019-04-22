@@ -1,6 +1,6 @@
 ---
-title: Habilitar la publicación de Hash no del dominio miembro servidores de archivos
-description: En este tema es parte de la BranchCache implementación Guía para Windows Server 2016, que se muestra cómo implementar BranchCache en modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN en sucursales
+title: Habilitar la publicación de hash para servidores de archivos que no son miembros del dominio
+description: En este tema forma parte de BranchCache Deployment Guide para Windows Server 2016, que demuestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN de sucursales
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,48 +8,49 @@ ms.topic: get-started-article
 ms.assetid: 11584b73-f9e2-4530-afa5-b8df970e6b24
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4cb3d217115cff3a9b30ee11acb7ba0de6672b24
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 00be97abbd583e4c5e762775ea563ba0720d5142
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814956"
 ---
-# <a name="enable-hash-publication-for-non-domain-member-file-servers"></a>Habilitar la publicación de Hash no del dominio miembro servidores de archivos
+# <a name="enable-hash-publication-for-non-domain-member-file-servers"></a>Habilitar la publicación de hash para servidores de archivos que no son miembros del dominio
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este procedimiento para configurar la publicación de hash para BranchCache mediante Directiva de grupo del equipo local en un servidor de archivos que se ejecuta Windows Server 2016 con la **BranchCache para archivos de red** servicio de rol de instalado el rol de servidor de servicios de archivo.  
+Puede usar este procedimiento para configurar la publicación de hash para BranchCache mediante Directiva de grupo del equipo local en un servidor de archivos que se está ejecutando Windows Server 2016 con la **BranchCache para archivos de red** servicio de rol de los servicios de archivos rol de servidor instalado.  
   
-Este procedimiento está pensado para usarse en un servidor de archivos no del dominio miembro. Si realizan este procedimiento en un servidor de archivos de miembro de dominio y configura también BranchCache mediante la directiva de grupo de dominio, configuración de directiva de grupo de dominio invalida la configuración de directiva de grupo local.  
+Este procedimiento está previsto para su uso en un servidor de archivos que no sea miembro del dominio. Si realiza este procedimiento en un servidor de archivos que es miembro del dominio y también configura BranchCache utilizando la directiva de grupo de dominio, la configuración de esta directiva invalida la configuración de la directiva de grupo local.  
   
-Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para realizar este procedimiento.  
+El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o un grupo equivalente.  
   
 > [!NOTE]  
-> Si tienes uno o varios servidores de archivos de miembro de dominio, puede agregarlos a una unidad organizativa (OU) en los servicios de dominio de Active Directory y, a continuación, usar la directiva de grupo para configurar la publicación de hash de todos los servidores de archivos al mismo tiempo, en lugar de configurar individualmente cada servidor de archivos. Para obtener más información, consulta [habilitar Hash de publicación para servidores de archivos de miembro de dominio](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md).  
+> Si tiene uno o más servidores de archivos que son miembros del dominio, puede agregarlos a una unidad organizativa (OU) en Servicios de dominio de Active Directory y utilizar después la directiva de grupo para configurar de una vez la publicación de hash para todos los servidores de archivos, en lugar de configurar individualmente cada servidor de archivos. Para obtener más información, consulte [habilitar la publicación de Hash para servidores de archivos del miembro de dominio](../../branchcache/deploy/Enable-Hash-Publication-for-Domain-Member-File-Servers.md).  
   
-### <a name="to-enable-hash-publication-for-one-file-server"></a>Para habilitar la publicación de hash de un servidor de archivos  
+### <a name="to-enable-hash-publication-for-one-file-server"></a>Para habilitar la publicación de hash para un servidor de archivos  
   
-1.  Abre Windows PowerShell, escribe **mmc**, y, a continuación, presione ENTRAR. Abre Microsoft Management Console (MMC).  
+1.  Abra Windows PowerShell, escriba **mmc**y presione ENTRAR. Se abrirá Microsoft Management Console (MMC).  
   
-2.  En la consola de MMC, en la **archivo** menú, haz clic en **agregar o quitar complemento**. La **agregar o quitar complementos** abre el cuadro de diálogo.  
+2.  En MMC, en el menú **Archivo**, haga clic en **Agregar o quitar complemento**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.  
   
-3.  En **agregar o quitar complementos**, en **complementos disponibles**, haz doble clic en **el Editor de objetos de directiva de grupo**. Abre el Asistente para la directiva de grupo con el objeto de equipo Local seleccionado. Haz clic en **finalizar**y, a continuación, haz clic en **Aceptar**.  
+3.  En **Agregar o quitar complementos**, en **Complementos disponibles**, haga doble clic en **Editor de objetos de directiva de grupo**. Se abre el Asistente para directivas de grupo con el objeto Equipo local seleccionado. Haga clic en **Finalizar**y, a continuación, en **Aceptar**.  
   
-4.  En el Editor de directivas de grupo Local de MMC, expande la ruta de acceso siguiente: **directiva de equipo Local**, **configuración del equipo**, **plantillas administrativas**, **red**, **Lanman Server**. Haz clic en **Lanman Server**.  
+4.  En MMC, en el Editor de directivas de grupo local, expanda la siguiente ruta de acceso: **Directiva de equipo local**, **configuración del equipo**, **plantillas administrativas**, **red**, **servidor Lanman**. Haga clic en **Servidor Lanman**.  
   
-5.  En el panel de detalles, haz doble clic en **Hash de publicación para BranchCache**. La **Hash de publicación para BranchCache** abre el cuadro de diálogo.  
+5.  En el panel de detalles, haga doble clic en **Publicación de hash para BranchCache**. Se abre el cuadro de diálogo **Publicación de hash para BranchCache**.  
   
-6.  En la **Hash de publicación para BranchCache** cuadro de diálogo, haz clic en **habilitado**.  
+6.  En el cuadro de diálogo **Publicación de hash para BranchCache**, haga clic en **Habilitado**.  
   
-7.  En **opciones**, haz clic en **permitir la publicación de hash para todas las carpetas compartidas**y, a continuación, haz clic en uno de los siguientes:  
+7.  En **opciones**, haga clic en **permitir la publicación de hash para todas las carpetas compartidas**y, a continuación, haga clic en uno de los siguientes:  
   
-    1.  Para habilitar la publicación de hash para todas las carpetas compartidas en este equipo, haz clic en **permitir la publicación de hash para todas las carpetas compartidas**.  
+    1.  Para habilitar la publicación de hash para todas las carpetas compartidas en este equipo, haga clic en **permitir la publicación de hash para todas las carpetas compartidas**.  
   
-    2.  Para habilitar la publicación de hash solo para carpetas compartidas que BranchCache está habilitado, haz clic en **permitir la publicación de hash solo para carpetas compartidas en el que está habilitada BranchCache**.  
+    2.  Para habilitar la publicación de hash solamente para las carpetas compartidas para las que se ha habilitado BranchCache, haga clic en **Permitir la publicación de hash solo para carpetas compartidas en las que BranchCache está habilitado**.  
   
-    3.  Para impedir la publicación de hash para todas las carpetas compartirán en el equipo incluso si BranchCache está habilitado en recursos compartidos de archivos, haz clic en **no permitir la publicación de hash en todas las carpetas compartidas**.  
+    3.  Para no permitir la publicación de hash para todas las carpetas compartidas del equipo aunque se haya habilitado BranchCache en los recursos compartidos de archivos, haga clic en **No permitir la publicación de hash en ninguna carpeta compartida**.  
   
-8.  Haz clic en **Aceptar**.  
+8.  Haga clic en **Aceptar**.  
   
 
 

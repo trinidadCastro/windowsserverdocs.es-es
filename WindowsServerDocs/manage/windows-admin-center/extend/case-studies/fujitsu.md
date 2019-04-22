@@ -1,6 +1,6 @@
 ---
-title: Centro de administración de Windows SDK caso práctico - Fujitsu
-description: Centro de administración de Windows SDK caso práctico - Fujitsu
+title: Caso práctico de Windows Admin Center SDK - Fujitsu
+description: Caso práctico de Windows Admin Center SDK - Fujitsu
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
@@ -9,26 +9,26 @@ ms.date: 05/23/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 6d916920b187dd3c637644a0f40ae9f9cca72b66
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2052379"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59814996"
 ---
-# <a name="fujitsu-serverview-health-and-raid-extensions"></a>Extensiones de RAID y el mantenimiento de ServerView de Fujitsu
+# <a name="fujitsu-serverview-health-and-raid-extensions"></a>Extensiones de Fujitsu ServerView salud y RAID
 
-## <a name="bringing-end-to-end-visibility-from-operating-system-to-hardware-into-windows-admin-center"></a>Incorporación de visibilidad end-to-end, desde el hardware, sistema operativo en el centro de administración de Windows
+## <a name="bringing-end-to-end-visibility-from-operating-system-to-hardware-into-windows-admin-center"></a>Permite incorporar visibilidad de extremo a otro, de hardware, sistema operativo a Windows Admin Center
 
-Fujitsu es una información líderes en japonés y empresa de tecnología de comunicación y un fabricante de productos de servidor [PRIMERGY](http://www.fujitsu.com/fts/products/computing/servers/primergy/) y [PRIMEQUEST](http://www.fujitsu.com/fts/products/computing/servers/mission-critical/) . El [conjunto de aplicaciones de administración de Fujitsu ServerView](http://www.fujitsu.com/fts/products/computing/servers/primergy/management/) proporciona un completo conjunto de herramientas para el servidor de administración de ciclo de vida incluye a un agente del lado del servidor que proporciona una interfaz de CIM y PowerShell para la administración de hardware.
+Fujitsu es una empresa líder en japonés información y la comunicación tecnología y un fabricante de [PRIMERGY](http://www.fujitsu.com/fts/products/computing/servers/primergy/) y [PRIMEQUEST](http://www.fujitsu.com/fts/products/computing/servers/mission-critical/) productos de servidor. El [suite de administración de Fujitsu ServerView](http://www.fujitsu.com/fts/products/computing/servers/primergy/management/) proporciona un conjunto completo de herramientas para el servidor de administración de ciclo de vida, incluidos un agente de servidor que proporciona una interfaz CIM y PowerShell para administración de hardware.
 
-Fujitsu vio una oportunidad para integrar fácilmente con el centro de administración de Windows, tal y como proporcionan interfaces CIM y PowerShell que podrían comunicarse con los agentes del servidor. El equipo de desarrollo de Fujitsu pudo fácilmente las llamadas CIM fueran familiarizados con al agente de implementar y ver la información en el centro de administración de Windows con los componentes de la interfaz de usuario disponibles.
+Fujitsu vio la oportunidad para integrar fácilmente con Windows Admin Center como proporcionan las interfaces CIM y de PowerShell que se podrían comunicar con los agentes de servidor. El equipo de desarrollo de Fujitsu fue capaz de implementar las llamadas CIM que estaban familiarizados con el agente y visualizar la información dentro de Windows Admin Center mediante los componentes de interfaz de usuario disponibles fácilmente.
 
-![Extensión de Fujitsu - vista de árbol de mantenimiento](../../media/extend-case-study-fujitsu/health-tree.png)
+![Extensión de Fujitsu: vista de árbol de estado](../../media/extend-case-study-fujitsu/health-tree.png)
 
-Una vez que el equipo se convirtió en familiarizado con el SDK del centro de administración de Windows, adición de la interfaz de usuario para exponer información de hardware adicional a menudo era simplemente unas pocas líneas más de código HTML y podían rápidamente expandirse desde una sola herramienta para mostrar una vista de resumen de componente de hardware mantenimiento, vistas detalladas para registros de eventos del sistema, el monitor de controlador, separe las vistas para procesador, memoria, abanicos, fuentes de alimentación, temperaturas y voltajes e incluso una herramienta adicional para la administración de RAID. Uso de controles de la interfaz de usuario disponibles en el SDK como el árbol, controles del panel de cuadrícula y detalle habilitado para el equipo para crear rápidamente la interfaz de usuario y también lograr un diseño visual y la interacción muy similar al resto del centro de administración de Windows.
+Una vez que se convirtió en el equipo está familiarizado con el SDK de Windows Admin Center, agregar la interfaz de usuario para exponer información de hardware adicionales a menudo era simplemente unas pocas líneas más de código HTML y ellos pudieron rápidamente expandir desde una única herramienta para mostrar una vista de resumen de componente de hardware mantenimiento, vistas detalladas para registros de eventos del sistema, el monitor de controlador, separe las vistas de procesador, memoria, ventiladores, fuentes de alimentación, las temperaturas y voltajes e incluso una herramienta adicional para la administración de RAID. Usar controles de interfaz de usuario disponibles en el SDK como el árbol, controles del panel de cuadrícula y los detalles permitieron al equipo crear rápidamente la interfaz de usuario y para conseguir un diseño visual e interacción muy similar al resto de Windows Admin Center.
 
-![Extensión de Fujitsu - vista de árbol RAID](../../media/extend-case-study-fujitsu/raid-tree.png)
+![Extensión de Fujitsu: vista de árbol RAID](../../media/extend-case-study-fujitsu/raid-tree.png)
 
-![Extensión de Fujitsu - volúmenes RAID ver](../../media/extend-case-study-fujitsu/raid-volumes.png)
+![Ver volúmenes RAID de extensión de Fujitsu:](../../media/extend-case-study-fujitsu/raid-volumes.png)
 
-La asociación entre el equipo del centro de administración de Windows y de Fujitsu claramente muestra el valor de la integración de dentro del centro de administración de Windows, permitiendo a los clientes tienen una visión de end-to-end de roles de servidor y servicios, en el sistema operativo y a la administración de hardware .
+La asociación entre Fujitsu y el equipo de Windows Admin Center muestra claramente el valor de la integración en Windows Admin Center, permite a los clientes tengan una visión general de extremo a otro en roles de servidor y servicios, para el sistema operativo y administración de hardware .

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 606df285-259c-4c6b-8583-9aca1d614c43
-title: "Cuándo usar uno de paso o la regla de filtro de notificación"
-description: 
+title: Cuándo usar una regla de Pasar a través o filtrar una notificación
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,117 +10,118 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: aa205c46bf67dc25a55232b799bdd39fee4ac3c6
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812216"
 ---
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-# <a name="when-to-use-a-pass-through-or-filter-claim-rule"></a>Cuándo usar uno de paso o la regla de filtro de notificación
-Puedes usar esta regla en servicios de federación de Active Directory \(AD FS\) cuando debas tomar un tipo de notificación entrante específico y, a continuación, aplicar una acción que puede determinar qué resultado debería ocurrir en función de los valores de la notificación entrante. Cuando usas esta regla, puedes pasan o filtrar cualquier reclamación que coincidan con la lógica de la regla en la tabla siguiente, en función de cualquiera de las opciones que se configura en la regla.  
+# <a name="when-to-use-a-pass-through-or-filter-claim-rule"></a>Cuándo usar una regla de Pasar a través o filtrar una notificación
+Puede usar esta regla en Active Directory Federation Services \(AD FS\) cuando necesite tomar un tipo de notificación entrante específica y, a continuación, aplicar una acción que determine qué resultado se debe producir en función de los valores de la notificación entrante. Cuando usas esta regla, pasas a través o filtras cualquier notificación que coincide con la lógica de la regla de la tabla siguiente, según cualquiera de las opciones que configures en la regla.  
   
-|Opción de regla|Lógica de la regla|  
+|Opción de regla|Lógica de regla|  
 |---------------|--------------|  
-|Pasar por todos los valores de las notificaciones|Si el tipo de notificación entrante es igual a *especifica el tipo de notificación* y el valor es igual a *cualquier valor*, a continuación, pasa la solicitud a través de|  
-|Pasar solo un determinado valor de notificación|Si el tipo de notificación entrante es igual a *especifica el tipo de notificación* y el valor es igual a *especifica el valor de notificación*, a continuación, pasa la solicitud a través de|  
-|Pasar solo valores de las notificaciones que coinciden con un valor de sufijo correo e\ específico|Si el tipo de notificación entrante es igual a *especifica el tipo de notificación* y el valor es igual a *especifica el valor de sufijo*, a continuación, pasa la solicitud a través de|  
-|Pasar a través de los valores de notificación que comienzan con un valor específico|Si el tipo de notificación entrante es igual a *especifica el tipo de notificación* y valor comienza con *especifica el valor de notificación*, a continuación, pasa la solicitud a través de|  
+|Pasar a través todos los valores de notificaciones|Si el tipo de notificación entrante es igual a *tipo de notificación determinado* y el valor es igual a *cualquier valor*, pasa a través la notificación|  
+|Pasar a través solo un valor de notificación determinado|Si el tipo de notificación entrante es igual a *tipo de notificación determinado* y el valor es igual a *valor de notificación determinado*, pasa a través la notificación|  
+|Pasar a través de los valores de notificación que coincidan con un determinado e\-valor de sufijo de correo|Si el tipo de notificación entrante es igual a *tipo de notificación determinado* y el valor es igual a *valor de sufijo determinado*, pasa a través la notificación|  
+|Pasar a través solo valores de notificación que empiecen con un valor determinado|Si el tipo de notificación entrante es igual a *tipo de notificación determinado* y el valor empieza por *valor de notificación determinado*, pasa a través la notificación|  
   
-Las siguientes secciones proporcionan una introducción básica para reclamar reglas y proporcionar más detalles sobre cuándo usar esta regla.  
+Las secciones siguientes ofrecen una introducción básica a las reglas de notificación y proporcionan más detalles sobre cuándo utilizar esta regla.  
   
-## <a name="about-claim-rules"></a>Acerca de las reglas de notificación  
-Una regla de Reclamación representa una instancia de la lógica de negocios que tomar una notificación entrante, aplicar una condición a ella \ (si está x después y\) y generar una notificación saliente basándose en los parámetros de la condición. La siguiente lista describe sugerencias que debes conocer reclamar reglas antes de leer más en este tema:  
+## <a name="about-claim-rules"></a>Sobre las reglas de notificación  
+Una regla de notificación representa una instancia de la lógica de negocios que se tomará una notificación entrante, se aplicará una condición \(if x, entonces y\) y generará una notificación saliente basándose en los parámetros de condición. La lista siguiente destaca las sugerencias importantes que deberías conocer sobre las reglas de notificaciones antes de seguir leyendo este tema:  
   
--   En la administración de FS anuncios en snap\, reglas de notificación solo se pueden crear mediante plantillas de notificación de regla  
+-   En el complemento Administración de AD FS\-, notificación solo se pueden crear reglas mediante las plantillas de regla de notificación  
   
--   Proceso de reglas de notificación entrante dice directamente desde un proveedor de notificaciones \ (como Active Directory u otro Service\ federación) o desde la salida de la aceptación, transforman las reglas en una relación de confianza del proveedor de notificaciones.  
+-   El proceso de reglas de notificación entrante de notificaciones directamente desde un proveedor de notificaciones \(como Active Directory u otro servicio de federación\) o desde la salida de la aceptación de las reglas en una confianza de proveedor de notificaciones de transformación.  
   
--   Reglas de notificación se procesan el motor de emisión de notificaciones en orden cronológico dentro de un conjunto de reglas determinado. Estableciendo la prioridad de las reglas de aún más puede restringir o filtrar notificaciones que se generan mediante reglas anteriores dentro de un conjunto de reglas determinado.  
+-   El motor de emisión de notificaciones procesa las reglas de notificación en orden cronológico dentro de un conjunto determinado de reglas. Al establecer una precedencia en las reglas, puedes perfeccionar o filtrar aún más las notificaciones que generan las reglas anteriores dentro de un conjunto determinado de reglas.  
   
--   Plantillas de notificación de regla siempre requieren que especifiques un tipo de notificación entrante. Sin embargo, puede procesar varios valores de las notificaciones con el mismo tipo de notificación con una sola regla.  
+-   Siempre tendrás que especificar un tipo de notificación entrante para las plantillas de regla de notificaciones. Sin embargo, puedes procesar varios valores de notificación con el mismo tipo de notificación con una sola regla.  
   
-Para obtener más información sobre la reclamación y reclamación conjuntos de reglas, consulta [el rol reclamar las reglas de](The-Role-of-Claim-Rules.md). Para obtener más información acerca de cómo se procesan las reglas, consulta [el rol del motor reclamaciones](The-Role-of-the-Claims-Engine.md). Para obtener más información, cómo se procesan los conjuntos de reglas de notificación, consulta [el rol de la canalización de reclamaciones](The-Role-of-the-Claims-Pipeline.md).  
+Para obtener más información sobre las reglas de notificación y conjuntos de reglas de notificación, consulte [The Role of Claim Rules](The-Role-of-Claim-Rules.md). Para obtener más información acerca de cómo se procesan las reglas, consulte [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md). Para obtener más información cómo se procesan los conjuntos de reglas de notificación, consulte [The Role of the Claims Pipeline](The-Role-of-the-Claims-Pipeline.md).  
   
-## <a name="pass-through-all-claim-values"></a>Pasar por todos los valores de las notificaciones  
-Al usar esta acción, todos los valores de notificación entrante para el tipo de notificación especificada se pasan como notificaciones salientes. Por ejemplo, cuando se especifica el tipo de notificación entrante como el tipo de notificación de rol, todos los valores de las notificaciones entrantes se copian individualmente en notificaciones salientes nuevo con el tipo de notificación saliente de función.  
+## <a name="pass-through-all-claim-values"></a>Pasar a través todos los valores de notificaciones  
+Cuando se usa esta acción, todos los valores de notificación entrante del tipo de notificación determinado se pasan a través como notificaciones salientes. Por ejemplo, cuando se especifica el tipo de notificación entrante como el tipo de notificación de rol, todos los valores de notificación entrante se copian individualmente en nuevas notificaciones salientes con el tipo de notificación saliente del rol.  
   
-## <a name="filtering-a-claim"></a>Filtrado de una reclamación  
-En AD FS, el término *dice filtrado* medio para filtrar o restringir entrante valores de notificaciones para que solo determinados valores se pasan o se envían a través de como notificaciones salientes. Es el **paso a través o una notificación entrante de filtro** plantilla de regla que permite esta función. Dentro de las propiedades de esta regla, puedes establecer condiciones para filtrar los valores de entrada para que solo los valores que cumplen tus criterios especificados se pasan sin.  
+## <a name="filtering-a-claim"></a>Filtrado de una notificación  
+En AD FS, el término *filtrado de notificaciones* valores de notificación de medios para filtrar o restringir entrantes para que solo ciertos valores se pasan o se envían a través como notificaciones salientes. Lo que hace posible esta función es la plantilla de reglas **Pasar a través o filtrar una notificación entrante**. Dentro de las propiedades de esta regla, puedes establecer condiciones para filtrar los valores de entrada para que solo se pasen a través los valores que cumplen los criterios especificados.  
   
-Por ejemplo, puedes usar esta regla solo pase a través de notificaciones que coincidan con el valor de Reclamación de comprador cuando entrante reclamar coincidencias de tipo el tipo de notificación de función o quiera emitir solo notificaciones sobre el nombre del usuario, pero no las reclamaciones que contiene el número de la seguridad social del usuario.  
+Por ejemplo, puedes usar esta regla para solo pasar a través de notificaciones que coinciden con el valor de notificación del comprador cuando el tipo de notificación entrante coincide con tipo de notificación de rol o también puede que quieras emitir solo las notificaciones sobre el nombre del usuario, pero no las notificaciones que contienen el número de seguridad social del usuario.  
   
-Cuando usas una condición de filtro con esta regla, se examinan todas las notificaciones entrantes para determinar qué notificaciones coinciden con los criterios establecidos por la regla. Para que solo los valores de notificación especificada que coinciden con un tipo de notificación seleccionado se pasarán, se omiten todas las demás reclamaciones.  
+Cuando usas una condición de filtro con esta regla, se examinan todas las notificaciones entrantes para determinar qué notificaciones coinciden con los criterios establecidos por la regla. Se omiten todas las demás notificaciones para que solo se pasen a través los valores de notificación determinados que coinciden con un tipo de notificación en concreto.  
   
-Por ejemplo, como se muestra en la ilustración siguiente, cuando se establece una regla con la condición para filtrar notificaciones entrantes solo adaptadas al UPN tipo de notificación y también de terminar con @fabrikam.com, se omiten todas las demás reclamaciones entrantes a menos que cumplan estos criterios. Esto incluye la notificación entrante con el tipo de notificación de dirección de correo de E\ incluso si su valor reclamación termina en @fabrikam.com. En este caso, solo la reclamación que contiene el valor de Nick@fabrikam.com se envía al usuario de confianza.  
+Por ejemplo, como se muestra en la siguiente ilustración, cuando se establece una regla con la condición para filtrar las notificaciones solo entrantes que están organizadas en el UPN tipo de notificación y terminar también con @fabrikam.com, se omiten todas las demás solicitudes entrantes a menos que cumplan este criterio. Esto incluye la notificación entrante con el tipo de notificación de E\-dirección de correo electrónico incluso después de que su valor de notificación termina en @fabrikam.com. En este caso, solo la notificación que contiene el valor de Nick@fabrikam.com se envía al usuario autenticado.  
   
-![Cuándo usar pasada a través de](media/adfs2_filter.gif)  
+![Cuándo usar pase a través de](media/adfs2_filter.gif)  
   
-## <a name="configuring-this-rule-on-a-claims-provider-trust"></a>Configuración de esta regla en una relación de confianza del proveedor de notificaciones  
-Cuando usas una confianza de proveedor de reclamaciones, esta regla puede configurarse para atravesar entrante solo notificaciones desde el proveedor de notificaciones que coinciden con ciertas limitaciones. Por ejemplo, es posible que quieres Aceptar sólo reclamaciones e\ correo desde el proveedor de notificaciones; por lo tanto, deberías usar esta plantilla de regla para aceptar los tipos de notificación e\ correo que terminan en sistema de nombres de dominio \(DNS\) nombre del proveedor de notificaciones.  
+## <a name="configuring-this-rule-on-a-claims-provider-trust"></a>Configurar esta regla en una confianza de proveedor de notificaciones  
+Cuando usas una confianza de proveedores de notificaciones, esta regla se puede configurar para pasar a través solo notificaciones entrantes del proveedor de notificaciones que coincidan con determinadas restricciones. Por ejemplo, desea aceptar sólo e\-notificaciones de correo electrónico del proveedor de notificaciones; por lo tanto, podría usar esta plantilla de regla para aceptar e\-tipos de notificación que terminan en el sistema de nombres de dominio del proveedor de notificaciones de correo \(DNS\) nombre.  
   
-## <a name="configuring-this-rule-on-a-relying-party-trust"></a>Configuración de esta regla en una confianza de terceros de confianza  
-Cuando usas una confianza de terceros de confianza, esta regla puede configurarse para atravesar o filtrar notificaciones salientes que se enviarán a la parte del usuario de confianza. Algunas partes de usuario de confianza quizás no comprenden determinados tipos de notificación o ciertas notificaciones pueden contener información confidencial que no debe enviarse a determinadas partes de usuario de confianza. Esta plantilla de regla puede ayudar a aplicar las directivas para una confianza de terceros de confianza particular.  
+## <a name="configuring-this-rule-on-a-relying-party-trust"></a>Configurar esta regla en una relación de confianza para usuario autenticado  
+Cuando usas una relación de confianza para usuario autenticado, esta regla se puede configurar para pasar a través o filtrar las notificaciones salientes que se enviarán al usuario de confianza. Es posible que algunos usuarios de confianza no entiendan ciertos tipos de notificación o que ciertas notificaciones contengan información confidencial que no se deba enviar a ciertos usuarios de confianza. Esta plantilla de reglas puede ayudar a aplicar esas directivas a una determinada entidad de confianza.  
   
 ## <a name="how-to-create-this-rule"></a>Cómo crear esta regla  
-Puedes crear esta regla ya sea con el idioma de la regla de reclamación o mediante la pasa a través de o filtrar una plantilla de regla de notificación entrante en la administración de AD FS en snap\. Esta plantilla de regla proporciona las siguientes opciones de configuración:  
+Crear esta regla mediante el lenguaje de reglas de notificación o con el paso a través o filtrar una plantilla de regla de notificación entrante en el complemento Administración de AD FS\-en. Esta plantilla de regla permite las siguientes opciones de configuración:  
   
--   Especificar un nombre de regla de notificación  
+-   Especificar un nombre de regla de notificación.  
   
 -   Especificar un tipo de notificación entrante  
   
--   Pasar por todos los valores de las notificaciones  
+-   Pasar a través todos los valores de notificaciones  
   
--   Pasar solo un determinado valor de notificación  
+-   Pasar a través solo un valor de notificación determinado  
   
--   Pasar solo valores de las notificaciones que coinciden con un valor de sufijo correo e\ específico  
+-   Pasar a través de los valores de notificación que coincidan con un determinado e\-valor de sufijo de correo  
   
--   Pasar a través de los valores de notificación que comienzan con un valor específico  
+-   Pasar a través solo valores de notificación que empiecen con un valor determinado  
   
-Para obtener más instrucciones sobre cómo crear esta plantilla, consulta [filtrar una notificación entrante o crear una regla para pasar a través de](https://technet.microsoft.com/library/dd807060.aspx) en la Guía de implementación de AD FS.  
+Para obtener más instrucciones sobre cómo crear esta plantilla, consulte [cree una regla de paso a través o filtrar una notificación entrante](https://technet.microsoft.com/library/dd807060.aspx) en la Guía de implementación de AD FS.  
   
-## <a name="using-the-claim-rule-language"></a>Con el lenguaje de regla de notificación  
-Si solo cuando el valor de notificación coincide con un patrón personalizado, se debe enviar una reclamación, debes usar una regla personalizada. Para obtener más información, consulta cuándo usar una regla personalizada.  
+## <a name="using-the-claim-rule-language"></a>Uso del lenguaje de las reglas de notificación  
+Si solo se debe enviar una notificación cuando el valor de notificación coincida con un patrón personalizado, tienes que usar una regla personalizada. Para obtener más información, consulta «Cuándo usar una regla personalizada».  
   
-### <a name="examples-of-how-to-construct-a-pass-through-or-filter-rule-syntax"></a>Ejemplos de cómo crear uno de paso o sintaxis de regla de filtro  
-Una regla de filtrado simple podría filtrar reclamaciones basadas en una de las propiedades descritas anteriormente. Por ejemplo, la siguiente regla se pasa a través de todas las reclamaciones e\ correo:  
+### <a name="examples-of-how-to-construct-a-pass-through-or-filter-rule-syntax"></a>Ejemplos de cómo crear una sintaxis de regla para Pasar a través o filtrar  
+Una regla de filtrado sencilla podría filtrar notificaciones basadas en una de las propiedades descritas anteriormente. Por ejemplo, la regla siguiente pasará a través de todos los e\-notificaciones de correo:  
   
 ```  
 c:[type == “http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress”]  => issue(claim  = c);  
 ```  
   
-Filtros pueden ser lógicamente y\ ed juntos. Por ejemplo, la siguiente regla aceptará todas las reclamaciones e\ correo con valorjohndoe@fabrikam.com:  
+Los filtros pueden ser lógicamente AND\-ed juntos. Por ejemplo, la siguiente regla aceptará todas\-notificaciones con el valor de correo johndoe@fabrikam.com:  
   
 ```  
 c:[type == “http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress”, value == “johndoe@fabrikam.com “]  => issue(claim  = c);  
 ```  
   
-En los ejemplos anteriores, los filtros siempre usan un operador de igualdad. El idioma de la regla de notificación es compatible con los operadores siguientes:  
+En los ejemplos anteriores, los filtros siempre usan un operador de igualdad. El lenguaje de reglas de notificación admite los operadores siguientes:  
   
--   \ = \ = \-es igual a \(case\-sensitive\)  
+-   \=\= \- es igual a \(caso\-confidenciales\)  
   
--   \! \ = \-no es igual a \(case\-sensitive\)  
+-   \!\= \- no es igual a \(caso\-confidenciales\)  
   
--   \ = ~ \-coincidencia de expresión regular  
+-   \=~\- coincidencia de expresión regular  
   
--   \! ~ \-coincidencia non\ de expresión regular  
+-   \!~ \- expresión regular no\-coincide con  
   
-Por ejemplo, la siguiente regla aceptará todas las reclamaciones e\ correo no emitidas por el servidor de federación locales que tienen un sufijo de boeing.com:  
+Por ejemplo, la siguiente regla aceptará todas\-correo electrónico no emitidas por el servidor de federación local de notificaciones que tienen un sufijo de boeing.com:  
   
 ```  
 c:[type == “http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress”, value =~ “^.*@boeing\.com$” , issuer != “LOCAL AUTHORITY”]  => issue(claim  = c);  
 ```  
   
 ### <a name="best-practices-for-creating-custom-rules"></a>Procedimientos recomendados para crear reglas personalizadas  
-Un filtro puede aplicarse a una o varias de las propiedades de cada solicitud, como se describe en la siguiente tabla.  
+Se puede aplicar un filtro a una o varias de las propiedades de cada notificación, tal y como se describe en la tabla siguiente.  
   
-|Reclama la propiedad|Descripción|  
+|Propiedad de notificación|Descripción|  
 |------------------|---------------|  
-|Tipo|El tipo de notificación \ (normalmente se representa como una Uri\) refleja el acuerdo implícito entre partners en una federación acerca de qué tipo de información se transmite en la notificación. Por ejemplo, reclamaciones de tipo http:///\/schemas.xmlsoap.org\/ws\/2005\/05\/identity\/claims\/emailaddress contendrá la dirección de correo de e\ del usuario.|  
-|Valor|El valor de dicha reclamación. Por ejemplo, una reclamación de tipo http:///\/schemas.xmlsoap.org\/ws\/2005\/05\/identity\/claims\/emailaddress puede tener un valor dejohndoe@fabrikam.com|  
-|Tipo de valor|El tipo de valor representa cómo es interpretar la información contenida en un valor de la notificación. Normalmente se establece el tipo de valor en http:///\/ www.w3.org \/2001\/XMLSchema\#string, pero el valor de notificación puede contener datos Base64Binary codificado \ (por ejemplo, una image\) o una fecha, booleano y así sucesivamente.|  
-|Emisor|El emisor representa la parte que emitió última las notificaciones sobre el usuario. Si se obtienen las notificaciones en un servidor de federación de proveedor de reclamaciones el emisor de todas las reclamaciones que se va a establecerse en "Autoridad LOCAL". Si se recibieron los créditos por un servidor de federación de proveedor de federación, el emisor de las notificaciones se va a establecerse en el identificador de proveedor de reclamaciones del proveedor de notificaciones que firmar el token. Por lo tanto, cuando se procesan las reglas en reclamaciones recibidos de un proveedor de notificaciones el emisor de todas las reclamaciones que se va a establecer en el mismo valor. Al crear reglas para un usuario de confianza, la propiedad emisor puede usarse para distinguir entre solicitudes procedentes de proveedores de notificaciones diferentes.|  
-|OriginalIssuer|Esta propiedad reclamación está pensada para transmitir qué servidor de federación emitió la reclamación. Dado que se establece la propiedad emisor de una reclamación a la última servidor de federación que firmar el token, el emisor original es útil en escenarios donde se ajusta una reclamación a través de más de un servidor de federación \ (por ejemplo, un usuario de confianza que recibe un token de un servidor de federación de proveedor de federación podría interesarte qué particular reclamaciones de servidor de federación de proveedor de autentica la user\)|  
-|Propiedades|Además de las propiedades de cinco descritas anteriormente, cada notificación también tiene un contenedor de propiedades que se pueden almacenar propiedades con nombre. Estas propiedades no se serializan en el token y solo tienen sentido para pasar información entre los componentes de la canalización de emisión de notificaciones en el ámbito de un servidor de federación único. Por ejemplo, para establecer una propiedad durante las notificaciones de las reglas del proveedor de procesamiento y, a continuación, hacer referencia a ella en las reglas de terceros de confianza.|  
+|Tipo|El tipo de notificación \(normalmente se representa como un Uri\) refleja un acuerdo implícito entre los asociados de una federación sobre qué tipo de información se muestra en la notificación. Por ejemplo, notificaciones de tipo http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/identidad\/notificaciones\/emailaddress contendrá la e\-dirección del usuario de correo.|  
+|Valor|El valor de la notificación. Por ejemplo, una notificación de tipo http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/identidad\/notificaciones\/emailaddress puede tener un valor de johndoe@fabrikam.com|  
+|ValueType|El tipo de valor representa cómo hay que interpretar la información contenida en el valor de la notificación. Normalmente, el tipo de valor se establecerá en http:\/\/www.w3.org\/2001\/XMLSchema\#cadena, pero el valor de notificación podría contener datos codificados de Base64Binary \(por ejemplo, una imagen \) o fecha, Boolean y así sucesivamente.|  
+|Emisor|El emisor representa la entidad que emitió por última vez las notificaciones sobre el usuario. Si las notificaciones se obtienen del servidor de federación del emisor de notificaciones, el proveedor de todas las notificaciones se establecerá como "Autoridad local". Si un servidor de federación Proveedor de notificaciones recibió las notificaciones, se establecerá el emisor de las notificaciones para el identificador de proveedor de notificaciones del proveedor de notificaciones que firmó el token. Por lo tanto, al procesar las reglas de las notificaciones que recibieron por parte de un proveedor de notificaciones, el emisor de todas las notificaciones se establecerá en el mismo valor. Al crear reglas para un usuario de confianza, se puede usar la propiedad emisora para distinguir entre notificaciones procedentes de proveedores de notificaciones diferentes.|  
+|Emisor original|Esta propiedad de notificación está destinada a transmitir qué servidor de federación emitió originalmente la notificación. Puesto que la propiedad del emisor de notificaciones se establece en el último servidor de federación que firmó el token, emisor original es útil en escenarios donde ha fluido una notificación a través de más de un servidor de federación \(por ejemplo, un usuario de confianza que recibe un token un proveedor de federación de servidor de federación podría estar interesado qué servidor de federación del proveedor de notificaciones autentican al usuario\)|  
+|Propiedades|Además de las cinco propiedades descritas anteriormente, todas las notificaciones tienen también una bolsa de propiedades donde se pueden almacenar propiedades con nombre. Estas propiedades no se encuentran en serie en el token y solo tienen sentido para pasar información entre los componentes de la canalización de emisión de notificaciones dentro del ámbito de un servidor de federación único. Por ejemplo, establecer una propiedad durante el procesamiento de las reglas del proveedor de notificaciones y después hacer referencia a ella en las reglas del usuario de confianza.|  
   
 

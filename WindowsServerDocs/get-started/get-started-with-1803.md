@@ -10,25 +10,25 @@ ms.date: 05/02/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9cf87597-b15d-4f43-8aa1-91e60367f011
-ms.openlocfilehash: c5cd8fbcf8424fa158ad31ca64e3eabe426240a6
-ms.sourcegitcommit: 8e2903c9b58646840eedd63b47a9bba6c6a06bf7
-ms.translationtype: HT
+ms.openlocfilehash: c0a4917d0fdb3e911204601d6137d8c8a296e57a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "1859883"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812286"
 ---
 # <a name="introducing-windows-server-version-1803"></a>Introducción a Windows Server, versión 1803
 
->Se aplica a: WindowsServer (canal semianual)
+>Se aplica a: Windows Server (Canal semianual)
 
-**Windows Server, versión 1803 es la versión actual en el nuevo Canal semianual**
+**Windows Server, versión 1803 es la versión actual en el nuevo canal semianual**
 
 
 ## <a name="what-the-semi-annual-channel-is--and-isnt"></a>Qué es el Canal semianual y qué no es
 Windows Server, versión 1803 *no* es una "actualización" o "service pack" para Windows Server 2016. Es la versión de servidor actual bianual en la pista de versiones diseñada para los clientes que se mueven en una "cadencia de nube", como aquellos con ciclos de desarrollo rápidos. Esta pista es ideal para escenarios de innovación y aplicaciones modernas como contenedores y microservicios. Cada versión de esta pista tendrá soporte técnico durante 18 meses desde el lanzamiento inicial. Para más información sobre el canal semianual y **sugerencias para decidir a qué canal unirse** (o permanecer en el mismo) consulta [Información general del canal semianual](semi-annual-channel-overview.md).
 
 
-**Windows Server 2016 es el producto de canal de servicio a largo plazo (LTSC) actual.**. El LTSC es mejor si necesitas estabilidad a largo plazo y previsibilidad en el sistema operativo del servidor para admitir aplicaciones y cargas de trabajo tradicionales. Si quieres mantenerte en el LTSC, debes instalar (o seguir usando) Windows Server 2016, que puede instalarse en el modo Server Core o en el modo servidor con modo Experiencia de escritorio. Consulta [Introducción a Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics) para obtener más información.
+**Windows Server 2016 es el producto de canal de mantenimiento a largo plazo (LTSC) actual.** El LTSC es mejor si necesitas estabilidad a largo plazo y previsibilidad en el sistema operativo del servidor para admitir aplicaciones y cargas de trabajo tradicionales. Si quieres mantenerte en el LTSC, debes instalar (o seguir usando) Windows Server 2016, que puede instalarse en el modo Server Core o en el modo servidor con modo Experiencia de escritorio. Consulta [Introducción a Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics) para obtener más información.
 
 
 ## <a name="whats-different-about-windows-server-version-1803"></a>¿Cuál es la diferente acerca de Windows Server, versión 1803?
@@ -57,11 +57,11 @@ Para obtener una vista completa de los principales datos sobre Windows Server, v
 
 Esta versión debe instalarse como una instalación limpia.
 
-- Centro del servicio de licencias por volumen (VLSC): los clientes de licencia por volumen con [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) pueden obtener esta versión yendo al [Centro de servicio de licencias por volumen](https://www.microsoft.com/Licensing/servicecenter/default.aspx) y haciendo clic en **Inicio de sesión**. Luego haz clic en **Descargas y claves** y busca esta versión. 
+- Volume Licensing Service Center (VLSC): Los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) puede obtener esta versión, vaya a la [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx) y haga clic en **sesión**. Luego haz clic en **Descargas y claves** y busca esta versión. 
 
 - Windows Server, versión 1803, también está disponible en [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview).
 
-- Suscripciones de Visual Studio: los suscriptores de Visual Studio pueden obtener Windows Server, versión 1803 descargándola desde la [página de descargas de suscriptores de Visual Studio](https://my.visualstudio.com/downloads?pid=2347). Si ya no eres un suscriptor, dirígete a [Suscripciones de Visual Studio](https://www.visualstudio.com/subscriptions/) para registrarte y luego visita la [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347) tal y como se indica anteriormente. Las versiones obtenidas a través de suscripciones de Visual Studio son solo para desarrollo y pruebas.
+- Suscripciones de Visual Studio: Suscriptores de Visual Studio puede obtener Windows Server, versión 1803 descargándolo desde el [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347). Si ya no eres un suscriptor, dirígete a [Suscripciones de Visual Studio](https://www.visualstudio.com/subscriptions/) para registrarte y luego visita la [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347) tal y como se indica anteriormente. Las versiones obtenidas a través de suscripciones de Visual Studio son solo para desarrollo y pruebas.
 
 
 

@@ -1,42 +1,42 @@
 ---
 ms.assetid: 64142026-07b5-4601-840a-c8dcf6ab9814
-title: "Creación de un diseño de puente"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+title: Crear un diseño de puente de vínculos a sitios
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 58dda7c1f56fa3799b902ab5458e71323047ec73
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 4a194aa2fe2594c518d310cd86549945487d101e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59813996"
 ---
-# <a name="creating-a-site-link-bridge-design"></a>Creación de un diseño de puente
+# <a name="creating-a-site-link-bridge-design"></a>Crear un diseño de puente de vínculos a sitios
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Un puente conecta a dos o vínculos a sitios más y permite transitividad entre los vínculos. Cada vínculo del sitio de un puente debe tener un sitio en común con otro vínculo del sitio en el puente. El Comprobador de coherencia de la información (KCC) usa la información sobre cada vínculo al sitio para calcular el coste de replicación entre sitios en un vínculo del sitio y en los vínculos a otros sitios del puente. Sin la presencia de un sitio común entre vínculos a sitios, el KCC también no puede establecer conexiones directas entre controladores de dominio en los sitios que están conectados por el mismo puente.  
+Un puente de vínculos de sitio conecta dos o más sitio vincula y habilita la transitividad entre los vínculos a sitios. Cada vínculo de sitio de un puente debe tener un sitio en común con otro vínculo de sitio en el puente. El Comprobador de coherencia de la información (KCC) utiliza la información de cada vínculo de sitio para calcular el costo de la replicación entre sitios en un vínculo de sitio y en los vínculos a otros sitios del puente. Sin la presencia de un sitio común entre los vínculos a sitios, el KCC también no puede establecer conexiones directas entre los controladores de dominio en los sitios que están conectados mediante el mismo puente de vínculo de sitio.  
   
-De manera predeterminada, todos los vínculos son transitivos. Te recomendamos que mantengas transitividad habilitada si no cambia el valor predeterminado de **enlazar todos los vínculos a sitios** (habilitado de manera predeterminada). Sin embargo, debes deshabilitar **enlazar todos los vínculos a sitios** y completar un diseño de puente de vínculo de sitio si:  
-  
--   La red IP no se enruta completamente. Al deshabilitar **enlazar todos los vínculos a sitios**, todos los vínculos se consideran intransitivas y puede crear y configurar objetos puente vínculos a sitios para modelar el comportamiento de enrutamiento real de la red.  
-  
--   Debes controlar el flujo de replicación de los cambios realizados en los servicios de dominio de Active Directory (AD DS). Al deshabilitar **enlazar todos los vínculos a sitios** para el transporte IP del vínculo de sitio y configurar un puente, el puente es el equivalente de una red inconexa. Todos los vínculos en el puente pueden enrutar transitivamente, pero no se enrutan fuera el puente.  
-  
-Para obtener más información acerca de cómo usar el complemento Servicios y sitios de Active Directory para deshabilitar la **enlazar todos los vínculos a sitios** configuración, vea Habilitar o deshabilitar puentes ([https://go.microsoft.com/fwlink/?LinkId=107073](https://go.microsoft.com/fwlink/?LinkId=107073)).  
-  
-## <a name="controlling-ad-ds-replication-flow"></a>Controlar el flujo de replicación de AD DS  
-Dos escenarios en los que necesita un diseño de sitio vínculo puente para controlar el flujo de replicación incluyen permite controlar la conmutación por error de replicación y replicación a través de un firewall.  
-  
-### <a name="controlling-replication-failover"></a>Controlar la conmutación por error de replicación  
-Si tu organización tiene una topología de red de concentrador y radio, por lo general, no desea que los sitios de TV por satélite para crear conexiones de replicación a otros sitios de satélite si no todos los controladores de dominio en el sitio de concentrador. En estos casos, debes deshabilitar **enlazar todos los vínculos a sitios** y crear puentes para que se crean las conexiones de replicación entre el sitio de satélite y otro sitio de concentrador es solo uno o dos saltos fuera del sitio de satélite.  
-  
-### <a name="controlling-replication-through-a-firewall"></a>Controlar la replicación a través de un firewall  
-Si dos controladores de dominio que representa el mismo dominio en dos lugares diferentes se hayan permitido específicamente para comunicarse entre ellos solo a través de un firewall, puedes deshabilitar **enlazar todos los vínculos a sitios** y crear puentes de sitios en el mismo lado del servidor de seguridad. Por lo tanto, si la red es separada por firewalls, te recomendamos que deshabilitar transitividad de vínculos a sitios y crear puentes de la red en un lado del servidor de seguridad. Para obtener información sobre la administración de replicación a través del firewall, vea en redes segmentados los servidores de seguridad de Active Directory ([https://go.microsoft.com/fwlink/?LinkId=107074](https://go.microsoft.com/fwlink/?LinkId=107074)).  
-  
+De forma predeterminada, todos los vínculos a sitios son transitivos. Se recomienda que mantenga habilitada, no cambie el valor predeterminado de la transitividad **enlazar todos los vínculos a sitios** (habilitado de forma predeterminada). Sin embargo, deberá deshabilitar **enlazar todos los vínculos a sitios** y completar un diseño de puente de vínculo de sitio si:  
 
+- La red IP no se enruta por completo. Cuando deshabilite **enlazar todos los vínculos a sitios**, todos los vínculos a sitios se consideran no transitivas y puede crear y configurar objetos de puente de vínculo de sitio para modelar el comportamiento de enrutamiento real de la red.  
+- Necesario controlar el flujo de replicación de los cambios realizados en los servicios de dominio de Active Directory (AD DS). Deshabilitando **enlazar todos los vínculos a sitios** para el transporte IP de vínculo de sitio y configurar un puente de vínculos de sitio, el puente de vínculo de sitio, se convierte en el equivalente de una red separado. Todos los vínculos a sitios dentro del puente de vínculo de sitio pueden enrutar de manera transitiva, pero no se enrutan fuera el puente de vínculos de sitio.  
 
+Para obtener más información sobre cómo usar el complemento Servicios y sitios de Active Directory para deshabilitar la **enlazar todos los vínculos a sitios** establecer, consulte el artículo [habilitar o deshabilitar los puentes de vínculos](https://go.microsoft.com/fwlink/?LinkId=107073).  
+  
+## <a name="controlling-ad-ds-replication-flow"></a>Controlar el flujo de replicación de AD DS
+
+Dos escenarios en que necesite un diseño de puente de vínculo de sitio para controlar el flujo de replicación incluyen controlar la conmutación por error de replicación y controlar la replicación a través de un firewall.  
+  
+### <a name="controlling-replication-failover"></a>Controlar la conmutación por error de replicación
+
+Si su organización tiene una topología de red de concentrador y radio, generalmente no desea que los sitios de satélite para crear conexiones de replicación a otros sitios de satélite si se producen errores en todos los controladores de dominio en el sitio concentrador. En estos escenarios, se debe deshabilitar **enlazar todos los vínculos a sitios** y crear puentes de vínculos de sitio para que se crean las conexiones de replicación entre el sitio satélite y otro sitio del concentrador que es sólo una o dos saltos fuera del sitio satélite.  
+  
+### <a name="controlling-replication-through-a-firewall"></a>Controlar la replicación a través de un firewall
+
+Si dos controladores de dominio que representa el mismo dominio en dos sitios distintos se permitan específicamente para comunicarse entre sí únicamente a través de un firewall, puede deshabilitar **enlazar todos los vínculos a sitios** y crear puentes de vínculos de sitio para sitios en el mismo lado del servidor de seguridad. Por lo tanto, si la red está separada por los servidores de seguridad, se recomienda que deshabilite la transitividad de vínculos a sitios y crear puentes de vínculos de sitio para la red en un lado del servidor de seguridad. Para obtener información acerca de cómo administrar la replicación a través de firewalls, consulte el artículo [Active Directory en redes segmentadas por Firewalls](https://go.microsoft.com/fwlink/?LinkId=107074).

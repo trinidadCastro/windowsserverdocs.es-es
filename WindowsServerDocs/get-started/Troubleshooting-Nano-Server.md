@@ -13,11 +13,11 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 0f5d3e352cd022853a1602c67c3aaf2530cfc696
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082666"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59813646"
 ---
 # <a name="troubleshooting-nano-server"></a>Solución de problemas de Nano Server
 
@@ -26,7 +26,7 @@ ms.locfileid: "2082666"
 > [!IMPORTANT]
 > A partir de Windows Server, versión 1709, Nano Server estará disponible solo como una [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para obtener más información. 
 
-Este tema incluye información acerca de las herramientas que puedes usar para conectarse para diagnosticar y reparar las instalaciones de Nano Server.  
+Este tema incluye información acerca de las herramientas que puede usar para conectarse para diagnosticar y reparar las instalaciones de Nano Server.  
   
 ## <a name="using-the-nano-server-recovery-console"></a>Uso de la Consola de recuperación de Nano Server 
  
