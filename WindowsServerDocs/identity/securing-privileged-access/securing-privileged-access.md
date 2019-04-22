@@ -1,215 +1,174 @@
 ---
-title: Proteger el acceso con privilegios
-description: Seguridad de Windows Server
-ms.custom: na
+title: Protección del acceso con privilegios
+description: Enfoque por fases para proteger el acceso con privilegios
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
+ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
-author: coreyp-at-msft
-ms.author: coreyp
-manager: dongill
-ms.date: 10/12/2016
-ms.openlocfilehash: eb83903204b00ef6c1eb116554ec54bc2211a399
-ms.sourcegitcommit: 7b01b54032ec56432116626e08fbd92508c3a7d5
+ms.date: 02/25/2019
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: daveba
+ms.reviewer: mas
+ms.openlocfilehash: 0d54a94d51a4d1e0a1d28f78ec39bf16bc3d9100
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59822016"
 ---
-# <a name="securing-privileged-access"></a>Proteger el acceso con privilegios
+# <a name="securing-privileged-access"></a>Protección del acceso con privilegios
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server
 
-Protección con privilegios acceso es un primer paso para establecer las garantías de seguridad para los activos de negocio en una organización moderna fundamental. La seguridad de la mayoría o todos los activos de negocio en una organización depende de la integridad de las cuentas con privilegios que administrar y administrar los sistemas de TI. Los atacantes cibernéticos están dirigido a estas cuentas y otros elementos de acceso con privilegios para acceder rápidamente a los datos de destino y sistemas mediante ataques de robo de credenciales como [Pass-the-Hash y Pass-the-Ticket](https://www.microsoft.com/pth).
+La protección del acceso con privilegios es un primer paso crítico para establecer controles de seguridad para los recursos empresariales de una organización moderna. La seguridad de la mayoría o todos los recursos empresariales en una organización de TI depende de la integridad de las cuentas con privilegios que se utiliza para administrar, administrar y desarrollar. Los Ciberatacantes de destino a menudo estas cuentas y otros elementos de acceso con privilegios para tener acceso a datos y sistemas mediante ataques de robo de credenciales como [Pass-the-Hash y Pass-the-Ticket](https://www.microsoft.com/pth).
 
-Proteger el acceso administrativo contra determinado adversarios requieren que tome un enfoque esmerado y completo para aislar estos sistemas de riesgos. Esta figura muestra las tres fases de recomendaciones para separar y proteger la administración en esta guía básica:
+La protección del acceso con privilegios frente a determinados adversarios requiere adoptar un enfoque completo y meditado para aislar estos sistemas frente a riesgos.
 
-![Diagrama de las tres fases de recomendaciones para separar y proteger la administración en esta guía básica](../media/securing-privileged-access/PAW_LP_Fig1.JPG)
+## <a name="what-are-privileged-accounts"></a>¿Cuáles son las cuentas con privilegios?
 
-Guía básica objetivos:
+Antes de hablar acerca de cómo protegerlos permite definir las cuentas con privilegios.
 
--   **Planear la semana 2 y 4**: rápidamente mitigar las técnicas de ataque usados con más frecuencia
+Las cuentas con privilegios, como los administradores de servicios de dominio de Active Directory tienen acceso directo o indirecto a la mayoría o todos los recursos en una organización de TI, lo un riesgo de estas cuentas un riesgo importante actividad empresarial.
 
--   **plan de 1 a 3 meses**: compilar visibilidad y control de actividad de administrador
+## <a name="why-securing-privileged-access-is-important"></a>¿Por qué es importante proteger el acceso con privilegios?
 
--   **plan mensual de 6 +**: seguir compilando defensas a un nivel de seguridad más proactivo
+Foco de los Ciberatacantes acceso con privilegios a sistemas como Active Directory (AD) para obtener acceso a todos los de las organizaciones rápidamente datos de destino. Enfoques de seguridad tradicionales se han centrado en la red y los servidores de seguridad como el perímetro de seguridad principal, pero la eficacia de la seguridad de red se ha reducido considerablemente a dos tendencias:
 
-Microsoft recomienda que sigue esta guía básica para proteger el acceso con privilegios contra determinados adversarios. Se puede ajustar esta guía básica para dar cabida a las capacidades de existentes y los requisitos específicos en sus organizaciones.
+* Las organizaciones que hospedan datos y los recursos fuera del límite de red tradicionales en enterprise mobile PC, dispositivos como teléfonos móviles y tabletas, servicios en la nube y traen sus propios dispositivos (BYOD)
+* Los adversarios han demostrado una habilidad constante y sistemática para obtener acceso a estaciones de trabajo dentro de los límites de red por medio de ataques de suplantación de identidad (phishing) y otros ataques web y de correo electrónico.
 
-> [!NOTE]
-> Proteger con privilegios acceso requiere una amplia variedad de elementos, incluidos componentes técnicos (las defensas de host, protecciones de cuenta, administración de identidades, etc.), así como cambios en procesos y las prácticas administrativas y conocimientos.
-
-## <a name="why-is-securing-privileged-access-important"></a>¿Por qué es importante proteger el acceso a privilegios?
-En la mayoría de las organizaciones, la seguridad de la mayoría o todos los activos de negocio depende de la integridad de las cuentas con privilegios que administrar y administrar los sistemas de TI. Los atacantes cibernéticos se centran en el acceso a sistemas con privilegios como datos de destino de Active Directory para tener rápidamente acceso a todas las organizaciones.
-
-Enfoques de seguridad tradicionales han centrado sobre el uso de los puntos de entrada y salida de una red de las organizaciones como el perímetro de la seguridad principal, pero la eficacia de seguridad de red se ha reducido significativamente las tendencias dos:
-
--   Las organizaciones tienen datos y recursos fuera de los límites de red tradicional en móviles de empresa de equipos, dispositivos como tabletas y teléfonos móviles, así como los servicios de nube y dispositivos BYOD
-
--   Adversarios han demostrado que una capacidad en curso y coherente para obtener acceso en estaciones de trabajo dentro de los límites de red a través de suplantación de identidad y otros ataques web y correo electrónico.
-
-El reemplazo natural para el perímetro de la seguridad de red en una empresa moderno compleja es los controles de autenticación y autorización de capa de identidad de la organización. Las cuentas con privilegios administrativas son efectivamente en un control de esta nueva "perímetro de seguridad" por lo que es esencial proteger con privilegios de acceso:
+Estos factores exigen la generación de un perímetro de seguridad modernas fuera de la autenticación y autorización de controles de identidad además de la estrategia de perímetro de red tradicional. Aquí un perímetro de seguridad se define como un conjunto coherente de los controles entre los activos y las amenazas a ellos. Las cuentas con privilegios son eficazmente en el control de este nuevo perímetro de seguridad, por lo que es fundamental para proteger el acceso con privilegios.
 
 ![Diagrama que muestra la capa de identidad de la organización](../media/securing-privileged-access/PAW_LP_Fig2.JPG)
 
-Un adversario que toma el control de una cuenta de administrador puede usar esos privilegios para ejercer su ganancia a costa de la organización de destino, como se muestra a continuación:
+Un atacante que toma el control de una cuenta administrativa puede usar esos privilegios para aumentar su impacto en la organización de destino, como se muestra a continuación:
 
-![Diagrama que muestra cómo un adversario que toma el control de una cuenta de administrador puede usar esos privilegios para ejercer su ganancia a costa de la organización de destino](../media/securing-privileged-access/PAW_LP_Fig3.JPG)
+![Diagrama que muestra cómo un adversario que toma el control de una cuenta administrativa puede usar esos privilegios para perseguir su beneficio a costa de la organización objetivo](../media/securing-privileged-access/PAW_LP_Fig3.JPG)
 
-Para obtener más información sobre los tipos de ataques que normalmente llevan a los atacantes en control de cuentas administrativas, visita el [sitio web de pasar el Hash](https://www.microsoft.com/pth) informativos notas del producto, vídeos y mucho más.
+La siguiente ilustración muestra dos rutas de acceso:
 
-Esta figura muestra "canal" independiente para la administración que establece la guía básica para aislar tareas con privilegios de acceso de tareas de usuario estándar de riesgo alto como web exploración y el acceso a correo electrónico.
+* Se completa una ruta de acceso "azul", donde se usa una cuenta de usuario estándar para el acceso sin privilegios a los recursos como correo electrónico y exploración web y el trabajo diario.
 
-![Diagrama que muestra "canal" independiente para la administración que establece la guía básica para aislar tareas con privilegios de acceso de tareas de usuario estándar de riesgo alto como web exploración y el acceso a correo electrónico](../media/securing-privileged-access/PAW_LP_Fig4.JPG)
+   > [!NOTE]
+   > Los elementos de ruta azul se describe más adelante indican amplio protecciones del entorno que van más allá de las cuentas administrativas.
 
-Porque el adversario puede tener un control de acceso con privilegios mediante una variedad de métodos, mitigar este riesgo requiere un enfoque holístico y detallado técnico, como se describe en esta guía básica. La guía básica se aislar y proteger los elementos en el entorno que permiten con privilegios de acceso mediante la creación de mitigaciones en cada área de la columna de defensa en esta ilustración:
+* Una ruta de acceso "rojo" donde se produce el acceso con privilegios en un dispositivo protegido para reducir el riesgo de "phishing" y otros ataques web y correo electrónico.
 
-![Tabla donde se muestran las columnas de ataque y defensa](../media/securing-privileged-access/PAW_LP_Fig5.JPG)
+![Diagrama que muestra la ruta"independiente" para la administración que establece el mapa de ruta para aislar las tareas de acceso con privilegios de las tareas de usuario estándar de alto riesgo, como exploración web y acceso al correo electrónico](../media/securing-privileged-access/PAW_LP_Fig4.JPG)
 
-## <a name="security-privileged-access-roadmap"></a>Guía básica de acceso con privilegios de seguridad
-La guía básica está diseñada para maximizar el uso de tecnologías que puede que ya esté implementado, sacar provecho de las tecnologías de clave de seguridad actuales y futuras y se integran las herramientas de seguridad de terceros 3 que ya han implementado.
+## <a name="securing-privileged-access-roadmap"></a>Protección de mapa de ruta de acceso con privilegios
 
-La guía básica de las recomendaciones de Microsoft se divide en 3 fases:
+El mapa de ruta está diseñado para maximizar el uso de tecnologías de Microsoft que ya han implementado, aprovechar las ventajas de las tecnologías de nube para mejorar la seguridad e integrar cualquier 3rd herramientas de seguridad de terceros que ya han implementado.
 
--   Planear la semana 2-4 - rápidamente mitigar las técnicas de ataque usados con más frecuencia
+El mapa de ruta de recomendaciones de Microsoft se divide en 3 fases:
 
--   plan de 1 a 3 meses: construir la visibilidad y control de actividad de administrador
+* [Fase 1: Primeros 30 días]()
+   * Wins rápido con un impacto positivo significativo.
+* [Fase 2: 90 días]()
+   * Mejoras incrementales importantes.
+* [Fase 3: En curso]()
+   * Mejora de seguridad y sustainment.
 
--   6 + mes planear - seguir compilando defensas a un nivel de seguridad más proactivo
+El mapa de ruta está clasificado en orden de prioridad para programar las implementaciones más rápidas y efectivas primero en función de nuestras experiencias con estos ataques y la implementación de soluciones. 
 
-Cada fase de la guía básica está diseñado para generar el costo y la dificultad para adversarios a los ataques de acceso con privilegios para su local y activos en la nube. Se da prioridad a la guía básica para programar la más eficaz y las implementaciones más rápidas en primer lugar en función de la experiencia con estos ataques y la implementación de la solución.
+Microsoft recomienda seguir este plan de ruta para proteger el acceso con privilegios frente a determinados adversarios. Este plan se puede ajustar para adaptarlo a las funcionalidades existentes y los requisitos específicos de su organización.
 
 > [!NOTE]
-> Las escalas de tiempo para la guía básica son aproximados y se basan en nuestra experiencia con las implementaciones del cliente. La duración variará en la organización según la complejidad de su entorno y los procesos de administración de cambio.
+> Para proteger el acceso con privilegios se requiere una amplia variedad de elementos, como componentes técnicos (defensas de host, protecciones de cuentas, administración de identidades, etc.), así como cambios en los procesos, las prácticas y el conocimiento en materia de administración. Las escalas de tiempo del mapa de ruta son aproximadas y se basan en nuestra experiencia con las implementaciones de clientes. La duración variará en cada organización según la complejidad del entorno y los procesos de administración de cambios.
 
-### <a name="security-privileged-access-roadmap-stage-1"></a>Seguridad privilegiadas guía básica de acceso: Etapa 1
-Etapa 1 de la guía básica se centra en rápidamente mitigar las técnicas de ataque usados con más frecuencia de robo de credenciales y el abuso. Etapa 1 está diseñada para implementarse en aproximadamente 2 a 4 semanas y se muestra en este diagrama:
+## <a name="phase-1-quick-wins-with-minimal-operational-complexity"></a>Fase 1: Wins rápidos con complejidad operativa mínima
 
-![Ilustración que muestra esa fase 1 está diseñada para implementarse en aproximadamente 2 a 4 semanas](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
+Fase 1 del mapa de ruta se centra en mitigar rápidamente las técnicas de ataque usadas con más frecuencia de robo de credenciales y el uso indebido. Fase 1 está diseñada para implementarse en aproximadamente 30 días y se describe en este diagrama:
 
-Etapa 1 de la guía básica de acceso con privilegios de seguridad incluye los siguientes componentes:
+![Diagrama de la fase 1: 1. Administración y el usuario cuenta independiente, 2. Just-in-contraseñas de administrador local del tiempo, 3. Fase de estación de trabajo administración 1, 4. Detección de ataques de identidad](../media/securing-privileged-access/PAW_LP_Fig6.JPG)
 
-**1. separar la cuenta de administrador de tareas de administración**
+### <a name="1-separate-accounts"></a>1. Cuentas independientes
 
-Para ayudar a separar los riesgos de internet (ataques de suplantación de identidad, exploración web) privilegios administrativos, crear una cuenta dedicada para todas las personas con privilegios administrativos. Directrices adicionales sobre este se incluyen en las instrucciones de PATA publicadas [aquí](http://Aka.ms/CyberPAW).
+Para ayudar a separar los riesgos de internet (ataques de phishing, exploración web) de privilegios acceder a las cuentas, cree una cuenta dedicada para todo el personal con acceso con privilegios. Los administradores deben no se explora la web, comprobando su correo electrónico y realizar tareas de productividad diarias con cuentas con privilegios elevados. Encontrará más información sobre esto en la sección [cuentas administrativas separadas](securing-privileged-access-reference-material.md#separate-administrative-accounts) del documento de referencia.
 
-**2. privilegiadas acceso estaciones de trabajo (garras) en la fase 1: Los administradores de Active Directory**
+Siga las instrucciones del artículo [administrar cuentas de acceso de emergencia en Azure AD](/azure/active-directory/users-groups-roles/directory-emergency-access) para crear el acceso de emergencia al menos dos cuentas, con derechos de administrador asignados de forma permanente, en sus locales AD y Azure AD entornos . Estas cuentas son solo para su uso cuando las cuentas de administrador tradicionales no pueden realizar las tareas necesarias como en un caso de un desastre.
 
-Para ayudar a separar los riesgos de internet (ataques de suplantación de identidad, exploración web) de privilegios de administrador de dominio, crear estaciones de trabajo de acceso con privilegios dedicado (garras) para el personal con privilegios administrativos de AD. Este es el primer paso de un programa PATA y es la fase 1 de la guía publicada [aquí](http://Aka.ms/CyberPAW).
+### <a name="2-just-in-time-local-admin-passwords"></a>2. Just-in-contraseñas de administrador local de tiempo
 
-**3. las contraseñas de administrador Local único para estaciones de trabajo**
+Para mitigar el riesgo de que un adversario robar un hash de contraseña de cuenta de administrador local de la base de datos SAM local y lo use para atacar a otros equipos, las organizaciones deben asegurarse de que cada máquina tiene una contraseña de administrador local única. La herramienta de solución de contraseña de administrador Local (LAP) puede configurar contraseñas aleatorias únicas en cada estación de trabajo y servidor almacenarlas en Active Directory (AD) protegidos por una ACL. Solo los usuarios autorizados aptos pueden leer o solicitar el restablecimiento de estas contraseñas de cuenta de administrador local. Puede obtener el LAPS para su uso en las estaciones de trabajo y servidores de [Microsoft Download Center](http://Aka.ms/LAPS).
 
-**4. contraseñas de administrador Local único para servidores**
+Instrucciones adicionales para trabajar en un entorno con LAPS y Paw pueden encontrarse en la sección [estándares operativos según el principio de origen limpio](securing-privileged-access-reference-material.md#operational-standards-based-on-clean-source-principle).
 
-Para mitigar el riesgo de que un adversario roban un hash de contraseña de cuenta de administrador local desde la base de datos de SAM local y se abusa para atacar otros equipos, debes usar la herramienta PARCIALES configurar contraseñas aleatorias únicas en cada estación de trabajo y el servidor y registrar las contraseñas en Active Directory. Puedes obtener la solución de contraseña de administrador Local para su uso en los servidores y estaciones de trabajo [aquí](http://Aka.ms/LAPS).
+### <a name="3-administrative-workstations"></a>3. Estaciones de trabajo administrativas
 
-Pueden encontrarse directrices adicionales para trabajar en un entorno con tiempos PARCIALES y tiempos garras [aquí](http://aka.ms/securitystandards).
+Como medida de seguridad inicial para los usuarios con Azure Active Directory y privilegios de administrador de Active Directory locales tradicionales, asegúrese de que usan los dispositivos de Windows 10 configurados con la [estándares para una alta seguridad Windows dispositivo 10](/windows-hardware/design/device-experiences/oem-highly-secure). 
 
-### <a name="security-privileged-access-roadmap-stage-2"></a>Seguridad privilegiadas guía básica de acceso: Fase 2
-Fase 2 se basa en las mitigaciones de fase 1 y está diseñada para implementarse en meses, aproximadamente 1-3. En este diagrama se representan los pasos de esta fase:
+### <a name="4-identity-attack-detection"></a>4. Detección de ataques de identidad
 
-![Diagrama que muestra los pasos de la fase 2](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
+[Azure protección de amenazas avanzada (ATP)](/azure-advanced-threat-protection/what-is-atp) es una solución de seguridad basada en la nube que identifica, detecta y le ayuda a investigar amenazas avanzadas, las identidades en peligro y acciones infiltrado malintencionado dirigidas a su activo en el entorno local Entorno de directorio.
 
-**1. PATA fases 2 y 3: todos los administradores y seguridad adicionales**
+## <a name="phase-2-significant-incremental-improvements"></a>Fase 2: Importantes mejoras incrementales
 
-Para separar los riesgos de internet de las cuentas administrativas con privilegios, continuar con la pata iniciar en la fase 1 e implementar las estaciones de trabajo dedicados para todas las personas con acceso con privilegios. Este se asigna a la fase 2 y 3 de la guía publicado [aquí](http://Aka.ms/CyberPAW).
+Fase 2 se basa en el trabajo realizado en la fase 1 y está diseñada para completarse en 90 días aproximadamente. Los pasos de esta fase se representan en este diagrama:
 
-**2. controlado por tiempo privilegios (no administradores permanente)**
+![Diagrama de la fase 2: 1. Windows Hello para empresas / MFA, 2. Implementación PAW, 3. Justo a tiempo privilegios, 4. Credential Guard, 5. Credenciales filtradas, 6. Detección de vulnerabilidades de desplazamiento lateral](../media/securing-privileged-access/PAW_LP_Fig7.JPG)
 
-Para reducir el tiempo de exposición de privilegios y aumentar la visibilidad de su uso, proporcionan privilegios solo en time (JIT) con una solución apropiada como los siguientes:
+### <a name="1-require-windows-hello-for-business-and-mfa"></a>1. Requiere Windows Hello para empresas y MFA
 
--   Para los servicios de dominio de Active Directory (AD DS), usa Microsoft Identity Manager (MIM) del [Manager con privilegios de acceso (PAM)](https://technet.microsoft.com/en-us/library/mt150258.aspx) funcionalidad.
+Los administradores pueden beneficiarse de la facilidad de uso asociado con Windows Hello para empresas. Los administradores pueden reemplazar sus contraseñas complejas con autenticación de dos factores segura en sus equipos. Un atacante debe tener el dispositivo y la información biométrica o PIN, es mucho más difícil obtener acceso sin conocimiento del empleado. Se puede encontrar más información acerca de Windows Hello para empresas y la ruta de acceso para la implementación en el artículo [Windows Hello para información general del negocio](/windows/security/identity-protection/hello-for-business/hello-overview)
 
--   Para Azure Active Directory, usa [administración con privilegios de identidad (PIM) de Azure AD](http://aka.ms/AzurePIM) funcionalidad.
+Habilitar autenticación multifactor (MFA) para las cuentas de administrador en Azure AD con Azure MFA. Al habilitar mínimo el [directiva de acceso condicional de protección de línea base](/azure/active-directory/conditional-access/baseline-protection#require-mfa-for-admins) se puede encontrar más información sobre Azure Multi-factor Authentication en el artículo [implementar en la nube Azure Multi-factor Authentication](/azure/active-directory/authentication/howto-mfa-getstarted)
 
-**3. multifactor de elevación controlado por tiempo**
+### <a name="2-deploy-paw-to-all-privileged-identity-access-account-holders"></a>2. Implementar PAW a todos los titulares de cuentas de acceso de identidades con privilegios
 
-Para aumentar el nivel de seguridad de autenticación de administrador, deberías requerir la autenticación multifactor antes de conceder privilegios.
-Esto se puede lograr con MIM PAM y Azure AD PIM con Azure la autenticación multifactor (AMF).
+Continuando el proceso de separar las cuentas con privilegios frente a amenazas de correo electrónico, exploración web y otras tareas no administrativas, debe implementar estaciones de trabajo dedicado de acceso con privilegios (PAW) para todo el personal con acceso con privilegios a su sistemas de información de la organización. Encontrará instrucciones adicionales para la implementación de PAW en el artículo [estaciones de trabajo de acceso con privilegios](privileged-access-workstations.md#paw-phased-implementation).
 
-**4. suficientes administrador (JEA) para el mantenimiento de DC**
+### <a name="3-just-in-time-privileges"></a>3. Just-in-privilegios de tiempo
 
-Para reducir la cantidad de cuentas con privilegios de administración del dominio y la exposición de riesgo asociado, usa la característica solo lo suficientemente administración (JEA) en PowerShell para realizar operaciones comunes de mantenimiento en controladores de dominio. La tecnología JEA permite a usuarios específicos realizar determinadas tareas administrativas en los servidores (como controladores de dominio) sin tener que darle derechos de administrador. Descarga esta guía de [TechNet](http://aka.ms/JEA).
+Para reducir el tiempo de exposición de los privilegios y aumentar la visibilidad sobre su uso, proporcione privilegios just-in-time (JIT) con otras soluciones de terceros o de una solución adecuada, como los siguientes:
 
-**5. menor superficie expuesta a ataques de dominio y controladores de dominio**
+* Para Servicios de dominio de Active Directory (AD DS), use la funcionalidad [Privileged Access Manager (PAM)](/microsoft-identity-manager/pam/privileged-identity-management-for-active-directory-domain-services) de Microsoft Identity Manager (MIM).
+* Para Azure Active Directory, use la funcionalidad [Azure AD Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan).
 
-Para reducir las oportunidades de adversarios a tomar el control de un bosque, debe reducir las rutas de que un atacante puede seguir para obtener el control de los controladores de dominio o los objetos de control del dominio. Sigue las instrucciones para reducir este riesgo publicado [aquí](http://aka.ms/HardenAD).
+### <a name="4-enable-windows-defender-credential-guard"></a>4. Habilitar Credential Guard de Windows Defender
 
-**6. detección de ataques de**
+Habilitar Credential Guard ayuda a proteger los hash de contraseña NTLM, concesión de vales de Kerberos y credenciales almacenadas por aplicaciones como las credenciales de dominio. Esta funcionalidad ayuda a evitar ataques de robo de credenciales, como Pass-the-Hash o Pass-The-Ticket aumentando la dificultad de dinamizar en el entorno con credenciales robadas. Se puede encontrar información sobre cómo funciona Credential Guard y cómo se implementa en el artículo [derivados de proteger las credenciales de dominio con Credential Guard de Windows Defender](/windows/security/identity-protection/credential-guard/credential-guard).
 
-Para obtener la visibilidad en el robo de credenciales activo e identidad de ataques para que pueda responder rápidamente a los eventos y contener daños, implementar y configurar [análisis de amenazas avanzada de Microsoft (ATA)](https://www.microsoft.com/ata).
+### <a name="5-leaked-credentials-reporting"></a>5. Informes de credenciales perdidas
 
-Antes de instalar ATA, debes asegurarte de que tienes un proceso en el lugar para controlar un incidente de seguridad más importantes que puede detectar ATA.
+"Cada día, Microsoft analiza las señales en billones de 6.5 con el fin de identificar las amenazas emergentes y proteger a los clientes" - [Microsoft por números](https://news.microsoft.com/bythenumbers/cyber-attacks)
 
--   Para obtener más información sobre cómo configurar un proceso de respuesta a incidentes, consulta [responder a incidentes de seguridad de TI](https://aka.ms/irr) y la "responder a la actividad sospechosa" y "Recuperar de una infracción" secciones de [Mitigating Pass-the-Hash y otros robo de credenciales](https://www.microsoft.com/pth), versión 2.
+Habilitar la protección de identidad de Microsoft Azure AD informar sobre los usuarios con credenciales perdidas, por lo que puede corregirlas. [Azure AD Identity Protection](/azure/active-directory/identity-protection/index) puede aprovecharse para ayudar a su organización proteger entornos de nube y híbridos frente a amenazas.
 
--   Para obtener más información sobre un atractivo ayudan a preparar el proceso de infrarrojos ATA genera eventos y ATA de implementación de los servicios de Microsoft, póngase en contacto con tu representante de Microsoft mediante el acceso a [esta página](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx).
+### <a name="6-azure-atp-lateral-movement-paths"></a>6. Rutas de desplazamiento Lateral de ATP de Azure
 
--   Acceso [esta página](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx) para obtener más información sobre sus servicios de Microsoft para ayudar con la investigación y la recuperación de un incidente
+Asegúrese de privilegios acceder a la cuenta marcadores están usando su PAW para la administración solo para que una cuenta sin privilegios en peligro no puede obtener acceso a una cuenta con privilegios mediante ataques de robo de credenciales, como Pass-the-Hash o Pass-The-Ticket. [Rutas de desplazamiento Lateral con ATP de Azure (LMPs)](/azure-advanced-threat-protection/use-case-lateral-movement-path) proporciona fácil comprensión de informes para identificar las cuentas con privilegios donde esté abiertas para poner en peligro.
 
--   Para implementar ATA, sigue la Guía de implementación disponible [aquí](http://aka.ms/ata).
+## <a name="phase-3-security-improvement-and-sustainment"></a>Fase 3: Sustainment y mejora la seguridad
 
-### <a name="security-privileged-access-roadmap-stage-3"></a>Seguridad privilegiadas guía básica de acceso: Etapa 3
-Etapa 3 de la guía básica se basa en las mitigaciones de las fases 1 y 2 para reforzar y agregar mitigaciones en todo el espectro. Este diagrama muestra la fase 3 visualmente:
+Fase 3 de la hoja de ruta se basa en los pasos realizados en las fases 1 y 2 para Refuerce su seguridad. Este diagrama representa visualmente la fase 3:
 
-![Diagrama que muestra la fase 3](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
+![Fase 3: 1. Revisión de RBAC, 2. Reducir las superficies de ataque, 3. Integración de registros con SEIM, 4. Automatización de credenciales perdidas](../media/securing-privileged-access/PAW_LP_Fig8.JPG)
 
-Estas funcionalidades se compila en las mitigaciones de fases anteriores y mover las defensas a una más proactiva postura.
+Estas capacidades se compile en los pasos de fases anteriores y trasladarán sus defensas a una postura más proactiva. Esta fase no tiene ninguna escala de tiempo específico y puede tardar más tiempo en implementar en función de su organización individual.
 
-**1. moderniza Roles y modelo de delegación**
+### <a name="1-review-role-based-access-control"></a>1. Revise el control de acceso basado en roles
 
-Para reducir el riesgo de seguridad, debes rediseñar todos los aspectos de sus funciones y el modelo de delegación para que sea compatible con las reglas del modelo de nivel, dar cabida a roles administrativos de servicio de nube e incorporar la facilidad de uso del administrador como uno de los principios clave. Este modelo debe sacar provecho de las funcionalidades JIT y JEA implementadas en las fases anteriores, así como la tecnología de automatización de la tarea para alcanzar estos objetivos.
+Mediante el modelo en niveles tres descritas en el artículo [modelo de nivel administrativo de Active Directory](securing-privileged-access-reference-material.md), revise y asegúrese de que los administradores de nivel inferior no tienen acceso administrativo a los recursos de nivel superior (pertenencia al grupo, las ACL en cuentas de usuario, etcetera...).
 
-**2. autenticación de Passport para todos los administradores o tarjeta inteligente**
+### <a name="2-reduce-attack-surfaces"></a>2. Reducir las superficies de ataque
 
-Para aumentar el nivel de seguridad y facilidad de uso de autenticación de administrador, deberías requerir la autenticación firme para todas las cuentas administrativas hospedadas en Azure Active Directory y en Windows Server Active Directory (incluidas las cuentas de federados a un servicio de nube).
+Proteger las cargas de trabajo de identidad incluidos los dominios, los controladores de dominio, AD FS y Azure AD Connect en poner en peligro alguno de estos sistemas podrían poner en peligro otros sistemas de su organización. Los artículos [lo que reduce la superficie de ataque de Active Directory](../ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface.md) y [cinco pasos para proteger la infraestructura de identidad](/azure/security/azure-ad-secure-steps) proporcionan instrucciones para proteger híbrida local y entornos de identidad.
 
-**3. administrador bosque para los administradores de Active Directory**
+### <a name="3-integrate-logs-with-siem"></a>3. Integración de registros con SIEM
 
-Para ofrecer la máxima protección para los administradores de Active Directory, configurar un entorno que no tiene ninguna dependencia de seguridad de tu Active Directory de producción y está aislado, pero los ataques de todos los sistemas de más confianza en el entorno de producción. Para obtener más información sobre la arquitectura ESAE visita [esta página](http://aka.ms/esae).
+Integración de registro en una herramienta SIEM centralizada puede ayudar a su organización para analizar, detectar y responder a eventos de seguridad. Los artículos [supervisión de Active Directory para signos de peligro](../ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise.md) y [Apéndice L: Eventos para supervisar](../ad-ds/plan/appendix-l--events-to-monitor.md) ofrecen orientación sobre los eventos que deben supervisarse en su entorno.
 
-**4. directiva de integridad de código para controladores de dominio (servidor de 2016)**
+Esto forma parte de la más allá de lo previsto porque la agregación, crear y ajustar alertas en una seguridad información y administración de eventos (SIEM) requiere cualificados analistas (a diferencia de ATP de Azure en el plan de 30 días que incluye fuera del cuadro de alerta)
 
-Para limitar el riesgo de programas no autorizados en los controladores de dominio de las operaciones de ataque de adversario e involuntarios errores administrativos, configurar la integridad de código de Windows Server 2016 kernel (controladores) y el modo de usuario (aplicaciones) para permitir solamente los archivos ejecutables autorizados para ejecutarse en el equipo.
+### <a name="4-leaked-credentials---force-password-reset"></a>4. Credenciales filtradas: restablecimiento de contraseña Force
 
-**5. blindadas máquinas virtuales para controladores de dominio virtuales (estructura de servidor 2016 Hyper-V)**
+Seguir mejorando la postura de seguridad al habilitar Azure AD Identity Protection automáticamente forzar los restablecimientos de contraseña cuando las contraseñas se sospecha de peligro. Las instrucciones que encontrará en el artículo [usar eventos de riesgo para la autenticación multifactor de desencadenador y los cambios de contraseña](/azure/active-directory/authentication/tutorial-risk-based-sspr-mfa) se explica cómo habilitar esta opción mediante una directiva de acceso condicional.
 
-Para proteger los controladores de dominio virtualizada de vectores de ataque que aprovechan la pérdida inherente de la máquina virtual de seguridad física, usa esta nueva funcionalidad de 2016 Hyper-V Server para ayudar a evitar el robo de los secretos de Active Directory de DC Virtual. Con esta solución, puede cifrar las máquinas virtuales de generación 2 para proteger los datos de la máquina virtual con inspección, el robo y la alteración por los administradores de red y almacenamiento, así como para reforzar el acceso a la máquina virtual contra los ataques de los administradores de host de Hyper-V.
+## <a name="am-i-done"></a>¿Ya he terminado?
 
-## <a name="am-i-done"></a>¿He terminado?
-Completar esta guía básica, se obtendrán protecciones de acceso con privilegios segura para los ataques que están actualmente adversarios conocidos y estará disponibles para hoy. Por desgracia, las amenazas de seguridad constantemente evolucionan y MAYÚS, por lo que recomendamos que ver seguridad como un proceso continuo centrado en generar el costo y reducir la tasa de éxito de adversarios destinados a tu entorno.
+La respuesta corta es no.
 
-Protección con privilegios acceso es un primer paso para establecer las garantías de seguridad para los activos de negocio en una organización moderna fundamental, pero no es la única parte de un programa de seguridad completa que incluye elementos como directiva, las operaciones, seguridad de la información, servidores, aplicaciones, equipos, dispositivos, fabric de nube y otros componentes proporcionan las garantías de seguridad que necesites.
+Los tipos malos nunca detenga, por lo que no puede. Este plan puede ayudar a su organización a protegerse frente a conocido amenazas como constantemente los atacantes evolucionará y MAYÚS. Le recomendamos que visualice seguridad como un proceso continuado centrado en aumentar el costo y reducir la tasa de éxito de los adversarios hacia su entorno.
 
-Para obtener más información sobre la creación de un plan de seguridad completa, consulta la sección "las responsabilidades del cliente y guía básica" de la seguridad de la nube de Microsoft de documento arquitectos disponible [aquí](http://aka.ms/securecustomer).
-
-Para obtener más información sobre sus servicios de Microsoft para ayudar con cualquiera de estos temas, ponte en contacto con tu representante de Microsoft o visite [esta página](https://www.microsoft.com/en-us/microsoftservices/campaigns/cybersecurity-protection.aspx).
-
-### <a name="related-topics"></a>Temas relacionados
-[Probar Premier: cómo mitigar los Pass-the-Hash y otras formas de robo de credenciales](https://channel9.msdn.com/Blogs/Taste-of-Premier/Taste-of-Premier-How-to-Mitigate-Pass-the-Hash-and-Other-Forms-of-Credential-Theft)
-
-[Microsoft avanzado de análisis de amenazas](http://aka.ms/ata)
-
-[Proteger las credenciales de dominio derivadas con Credential Guard](https://technet.microsoft.com/en-us/library/mt483740%28v=vs.85%29.aspx)
-
-[Device Guard Overview](https://technet.microsoft.com/en-us/library/dn986865(v=vs.85).aspx)
-
-[Proteger activos de gran valor con estaciones de trabajo de administración segura](https://msdn.microsoft.com/en-us/library/mt186538.aspx)
-
-[Modo de usuario aislado de Windows 10 con David Probert (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-in-Windows-10-with-Dave-Probert)
-
-[Aísla los procesos de modo usuario y las características de Windows 10 con Logan Gabriel (Channel 9)](http://channel9.msdn.com/Blogs/Seth-Juarez/Isolated-User-Mode-Processes-and-Features-in-Windows-10-with-Logan-Gabriel)
-
-[Más en procesos y características en modo de usuario aislado de Windows 10 con David Probert (Channel 9)](https://channel9.msdn.com/Blogs/Seth-Juarez/More-on-Processes-and-Features-in-Windows-10-Isolated-User-Mode-with-Dave-Probert)
-
-[Mitigación de robo de credenciales mediante el modo de usuario aislado (Channel 9) de Windows 10](https://channel9.msdn.com/Blogs/Seth-Juarez/Mitigating-Credential-Theft-using-the-Windows-10-Isolated-User-Mode)
-
-[Habilitar validación KDC estricta en Windows Kerberos](https://www.microsoft.com/en-us/download/details.aspx?id=6382)
-
-[Novedades en la autenticación Kerberos para Windows Server 2012](https://technet.microsoft.com/library/hh831747.aspx)
-
-[Mecanismo de autenticación de AD DS en la Guía paso a paso de Windows Server 2008 R2](https://technet.microsoft.com/library/dd378897(v=ws.10).aspx)
-
-[Módulo de plataforma segura](https://docs.microsoft.com/en-us/windows/device-security/tpm/trusted-platform-module-overview)
+Aunque no es la única parte del programa de seguridad de su organización la protección del acceso con privilegios es un componente esencial de su estrategia de seguridad.

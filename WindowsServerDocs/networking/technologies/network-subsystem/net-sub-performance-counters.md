@@ -1,6 +1,6 @@
 ---
 title: Contadores de rendimiento relacionados con la red
-description: Este tema es parte de la Guía de optimización del rendimiento de red subsistema de Windows Server 2016.
+description: En este tema forma parte de la Guía de ajuste de rendimiento del subsistema de red para Windows Server 2016.
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,83 +8,84 @@ ms.assetid: 7ebaa271-2557-4c24-a679-c3d863e6bf9e
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 33551dfd4f76bc13ba69863b782ddae279e0ad16
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: e5e8abbc19482bcd0dd5670065cde59d5be3169a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824356"
 ---
 # <a name="network-related-performance-counters"></a>Contadores de rendimiento relacionados con la red
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Este tema enumeran los contadores que sean relevantes para administrar el rendimiento de red y con las siguientes secciones.  
+En este tema se enumera los contadores que son relevantes para la administración del rendimiento de red y contiene las siguientes secciones.  
   
 -   [Utilización de recursos](#bkmk_ru)  
   
 -   [Posibles problemas de red](#bkmk_np)  
   
--   [Obtener un rendimiento del lado fusión (RSC)](#bkmk_rsc)  
+-   [Obtener un rendimiento Side Coalescing (RSC)](#bkmk_rsc)  
   
-##  <a name="bkmk_ru"></a>Utilización de recursos  
+##  <a name="bkmk_ru"></a> Utilización de recursos  
 
 Los siguientes contadores de rendimiento son relevantes para el uso de recursos de red.  
   
 -   IPv4, IPv6  
   
-    -   Datagramas recibidos por segundo  
+    -   Datagramas recibidos/seg.  
   
-    -   Datagramas enviados por segundo  
+    -   Datagramas enviados/seg.  
   
 -   TCPv4, TCPv6  
   
-    -   Segmentos recibidos por segundo  
+    -   Segmentos recibidos/seg.  
   
-    -   Segmentos enviados por segundo  
+    -   Segmentos enviados/seg.  
   
-    -   Segmentos s.  
+    -   Segmentos retransmitidos/seg.  
   
--   Redes Interface(*), Adapter(\*) de red  
+-   Red Interface(*), adaptador de red (\*)  
   
-    -   / Seg.  
+    -   Bytes recibidos/seg.  
   
-    -   / Seg.  
+    -   Bytes enviados/seg.  
   
-    -   Paquetes recibidos por segundo  
+    -   Paquetes recibidos/seg.  
   
-    -   Paquetes enviados por segundo  
+    -   Paquetes enviados/seg.  
   
     -   Longitud de la cola de salida  
   
-     Este contador es la longitud de la salida paquetes cola \(in packets\). Si es mayor que 2, producen retrasos. Debes buscar el cuello de botella y eliminarlo si es posible. Dado que NDIS pone en cola las solicitudes, este valor de longitud debe ser siempre 0.  
+     Este contador es la longitud de la cola de paquetes de salida \(en paquetes\). Si es superior a 2, se producen retrasos. Debe encontrar el cuello de botella y eliminarlo si es posible. Dado que NDIS pone en cola las solicitudes, esta longitud debe ser siempre 0.  
   
 -   Información del procesador  
   
-    -   % De tiempo de procesador  
+    -   % Processor Time  
   
-    -   Interrupciones por segundo  
+    -   Interrupts/sec  
   
-    -   DPC en cola/s.  
+    -   Las DPC en cola/seg.  
   
-     Este contador es una velocidad promedio en el que se agregaron DPC a la cola DPC del procesador lógico. Cada procesador lógico tiene su propia cola DPC. Este contador mide la velocidad a la que las DPC se agregan a la cola, no el número de DPC en la cola. Muestra la diferencia entre los valores que se han observado en los dos últimos ejemplos, divididos por la duración del intervalo de muestra.  
+     Este contador es una velocidad media a la que las DPC se agregaron a la cola DPC del procesador lógico. Cada procesador lógico tiene su propia cola DPC. Este contador mide la velocidad a la que las DPC se agregan a la cola, no el número de DPC en la cola. Muestra la diferencia entre los valores que se han observado en las dos últimas muestras divididos entre la duración del intervalo de muestra.  
   
-##  <a name="bkmk_np"></a>Posibles problemas de red  
+##  <a name="bkmk_np"></a> Posibles problemas de red  
 
-Los siguientes contadores de rendimiento son relevantes a posibles problemas de red.  
+Los siguientes contadores de rendimiento son relevantes a los posibles problemas de red.  
   
--   Redes Interface(*), Adapter(\*) de red  
+-   Red Interface(*), adaptador de red (\*)  
   
     -   Paquetes recibidos descartados  
   
     -   Paquetes recibidos con errores  
   
-    -   Salida de paquetes descartados  
+    -   Paquetes salientes descartados  
   
-    -   Paquetes de salida con errores  
+    -   Paquetes salientes con errores  
   
 -   WFPv4, WFPv6  
   
-    -   Paquetes descartados/s
+    -   Paquetes descartados/seg.
 
 -   UDPv4, UDPv6
 
@@ -98,38 +99,38 @@ Los siguientes contadores de rendimiento son relevantes a posibles problemas de 
   
 -   Directiva de QoS de red  
   
-    -   Paquetes descartados  
+    -   Paquetes entrantes descartados  
   
-    -   Paquetes descartados por segundo  
+    -   Quita de paquetes/seg.  
   
--   Por actividad de tarjeta de interfaz de red de procesador  
+-   Por Processor Network Interface Card Activity  
   
-    -   Pocos recursos recibir indicaciones por segundo  
+    -   Recursos insuficientes recibir indicaciones/seg.  
   
-    -   Pocos recursos recibe paquetes por segundo  
+    -   Recursos insuficientes reciben paquetes/seg.  
   
 -   Microsoft Winsock BSP  
   
-    -   Datagramas colocados  
+    -   Datagramas quitados  
   
-    -   Datagramas perdidos por segundo  
+    -   Datagramas quitados/s  
   
     -   Conexiones rechazadas  
   
-    -   Conexiones/s rechazado  
+    -   Conexiones rechazada/seg  
   
-##  <a name="bkmk_rsc"></a>Obtener un rendimiento del lado fusión (RSC)  
+##  <a name="bkmk_rsc"></a> Obtener un rendimiento Side Coalescing (RSC)  
 
 Los siguientes contadores de rendimiento son relevantes para el rendimiento de RSC.  
   
--   Adapter(*) de red  
+-   Adaptador de red  
   
-    -   Conexiones TCP RSC activo  
+    -   Conexiones de TCP RSC activo  
   
-    -   Tamaño de los paquetes promedio RSC TCP  
+    -   Tamaño promedio de paquetes de RSC TCP  
   
-    -   TCP RSC fusionan paquetes por segundo  
+    -   RSC TCP fusionadas paquetes/seg.  
   
-    -   Excepciones de TCP RSC por segundo
+    -   Excepciones de RSC TCP/seg.
 
-Para obtener vínculos a todos los temas de esta guía, consulte [optimización del rendimiento de red subsistema](net-sub-performance-top.md).
+Para obtener vínculos a todos los temas de esta guía, consulte [ajuste de rendimiento del subsistema de red](net-sub-performance-top.md).

@@ -1,7 +1,7 @@
 ---
 ms.assetid: da035189-e87f-4597-9933-49bf391a8d5d
-title: "Agregar un vínculo principal"
-description: 
+title: Adición del vínculo a la página principal
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,26 +10,27 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: fb903c62e717e36099934e64e1c939a502f691a3
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823016"
 ---
-# <a name="add-home-link"></a>Agregar un vínculo principal 
+# <a name="add-home-link"></a>Adición del vínculo a la página principal 
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-Para agregar el vínculo principal que se muestra en la página de sign\, usa el siguiente cmdlet de PowerShell de Windows y la sintaxis. 
+Para agregar el vínculo principal que se muestra en el inicio de sesión\-en la página, use el siguiente cmdlet de Windows PowerShell y la sintaxis. 
 
 
-![Agregar un vínculo principal](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
+![Agregar vínculo principal](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png) 
   
 
 `Set-AdfsGlobalWebContent -HomeLink https://fs1.contoso.com/home/ -HomeLinkText Home ` 
  
   
 > [!IMPORTANT]  
-> La `linkText`parámetro en este cmdlet no es necesario a menos que use otro valor que el valor predeterminado, que es *Home*. La ventaja de usar el valor predeterminado es que están localizadas para todas las configuraciones regionales de cliente. Una vez la página de sign\ personalizada, la personalización tiene prioridad; por lo tanto, deberías personalizar para todos los idiomas que quieras admitir.
+> El parámetro `linkText` de este cmdlet solo es obligatorio si usa un valor distinto del predeterminado, que es *Home*. La ventaja de usar el valor predeterminado es que las páginas están localizadas para todas las configuraciones regionales de los clientes. después del signo\-en la página es personalizado, la personalización tendrá precedencia; por lo tanto, que deberás personalizarla para todos los idiomas que desea admitir.
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[Personalización de inicio de sesión del usuario FS de anuncios](AD-FS-user-sign-in-customization.md)  
+[AD FS Sign-personalización de usuario](AD-FS-user-sign-in-customization.md)  

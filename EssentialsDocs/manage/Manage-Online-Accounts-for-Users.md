@@ -1,6 +1,6 @@
 ---
-title: "Administrar cuentas en línea para los usuarios de Windows Server Essentials"
-description: "Describe cómo usar Windows Server Essentials"
+title: Administrar cuentas en línea para usuarios de Windows Server Essentials
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,23 +13,24 @@ ms.assetid: c09f4cf6-4d12-49fe-9ae4-e6cb14027b9d
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 95f401bbec9bb503d19e2d9918a05851c04f7ef4
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824096"
 ---
-# <a name="manage-online-accounts-for-windows-server-essentials-users"></a>Administrar cuentas en línea para los usuarios de Windows Server Essentials
+# <a name="manage-online-accounts-for-windows-server-essentials-users"></a>Administrar cuentas en línea para usuarios de Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Al integrar tu servidor de Windows Server Essentials con Microsoft Office 365, puedes administrar tus cuentas en línea junto con las cuentas de usuario desde el panel. En este tema, todo se descubre lo que se obtiene mediante la administración de los usuarios de cuentas de Microsoft Online Services en el panel, cómo crear y administrar cuentas en línea desde el panel y cómo administrar direcciones de correo electrónico y los grupos de distribución de Exchange Online en el panel.  
+Al integrar su servidor Windows Server Essentials con Microsoft Office 365, puede administrar sus cuentas en línea junto con las cuentas de usuario desde el panel. En este tema, ll averiguar cómo administrar direcciones de correo electrónico y grupos de distribución para Exchange Online, cómo crear y administrar cuentas en línea desde el panel y lo que puede obtener mediante la administración de los usuarios de cuentas de Microsoft Online Services desde el panel desde el panel.  
 
   
 > [!NOTE]
->  Para administrar tus cuentas de Microsoft Online Services en Windows Server Essentials, debes integrar el servidor con Office 365. Para obtener instrucciones, consulta [administrar Office 365](Manage-Office-365-in-Windows-Server-Essentials.md).  
+>  Para administrar las cuentas de Microsoft Online Services en Windows Server Essentials, debe integrar su servidor con Office 365. Para obtener instrucciones, consulte [administrar Office 365](Manage-Office-365-in-Windows-Server-Essentials.md).  
   
 > [!IMPORTANT]
->  Si puedes administrar las cuentas en línea en Windows Server Essentials, acostumbrados a ver las cuentas de Microsoft Online Services denominadas *cuentas de Office 365*. En el panel en Windows Server Essentials, las etiquetas se han cambiado a *cuentas de Microsoft Online Services*, o *cuentas en línea de Microsoft* para abreviar. Las cuentas y los procedimientos son los mismos; solo las etiquetas cambiadas. La mayoría de los procedimientos de este tema usan el término *cuenta en línea*.  
+>  Si usted administra cuentas en línea en Windows Server Essentials, están acostumbrados a ver las cuentas de Microsoft Online Services como *cuentas de Office 365*. En el panel en Windows Server Essentials, las etiquetas se llaman ahora *cuentas de Microsoft Online Services*, o *cuentas de Microsoft online* para abreviar. Las cuentas y los procedimientos son iguales, salvo las etiquetas. En la mayoría de los procedimientos de este tema se usa el término *cuenta en línea*.  
   
 ## <a name="in-this-topic"></a>En este tema  
   
@@ -41,189 +42,189 @@ Al integrar tu servidor de Windows Server Essentials con Microsoft Office 365, p
   
 -   [Administrar direcciones de correo electrónico de Exchange Online](#BKMK_SECTION_ManageEmailAddresses)  
   
--   [Administrar grupos de distribución de Exchange Online](#BKMK_SECTION_ManageDistributionGroups)  
+-   [Administrar grupos de distribución para Exchange Online](#BKMK_SECTION_ManageDistributionGroups)  
   
-##  <a name="BKMK_WhyManageOnlineAccounts"></a>¿Por qué debo administrar Mis cuentas en línea desde el panel?  
- Al usar el panel para asignar una cuenta de Microsoft Online Services para una cuenta de usuario, las contraseñas de cuenta se sincronizan automáticamente, y puede mantener las dos cuentas juntos durante el ciclo de vida de s de cuenta de usuario.  
+##  <a name="BKMK_WhyManageOnlineAccounts"></a> ¿Por qué debo administrar Mis cuentas en línea desde el panel?  
+ Cuando se usa el panel para asignar una cuenta de Microsoft Online Services a una cuenta de usuario, las contraseñas de cuenta se sincronizan automáticamente y puede mantener las dos cuentas juntas a lo largo del ciclo de vida de s de cuenta de usuario.  
   
- Es conveniente para el usuario, que puede utilizar la misma contraseña para acceder a los recursos en el servidor y en Office 365. Y puedes aplicar los mismos requisitos de contraseña para acceder a los recursos en Office 365 que necesite para los recursos internos.  
+ Lo s cómoda para el usuario, que puede usar la misma contraseña para acceder a recursos en el servidor y en Office 365. Y puede aplicar los mismos requisitos de contraseña para el acceso a los recursos de Office 365 que necesite para sus recursos internos.  
   
-### <a name="how-does-password-synchronization-work"></a>¿Cómo funciona la sincronización de contraseñas  
- Al usar el panel para asignar una cuenta de Microsoft Online Services para una cuenta de usuario, la contraseña de cuenta de usuario se sincroniza automáticamente con la cuenta en línea de s de usuario. Esto significa que un usuario solo necesita una sola contraseña para acceder a los recursos en el servidor y en Office 365. Además, puedes usar el mismo nombre para la cuenta de usuario y el identificador de usuario s en línea.  
+### <a name="how-does-password-synchronization-work"></a>¿Cómo funciona la sincronización de contraseña?  
+ Cuando se usa el panel para asignar una cuenta de Microsoft Online Services a una cuenta de usuario, contraseña de la cuenta de usuario se sincroniza automáticamente con la cuenta de usuario s en línea. Esto significa que un usuario solo necesita una contraseña para acceder a los recursos en el servidor y en Office 365. Además, puede usar el mismo nombre para la cuenta de usuario y el identificador de usuario s en línea.  
   
- Sincronización de contraseña se produce inmediatamente y automáticamente cuando un usuario cambia la contraseña de su cuenta de usuario desde un equipo unido al dominio o mediante acceso Web remoto.  
+ La sincronización de contraseñas tiene lugar inmediata y automáticamente cuando un usuario cambia la contraseña de su cuenta de usuario desde un equipo unido a un dominio o mediante el acceso web remoto.  
   
 > [!IMPORTANT]
->  Si Office 365 está integrado en Windows Server Essentials, los usuarios no deben cambiar la contraseña de su cuenta de Microsoft en línea desde el portal de Office 365. Si lo haces, se interrumpirá la sincronización de contraseñas.  
+>  Si se integra Office 365 con Windows Server Essentials, los usuarios no deben cambiar la contraseña de su cuenta en línea de Microsoft desde el portal de Office 365. Al hacerlo, se interrumpirá la sincronización de la contraseña.  
   
 ### <a name="simplified-account-creation"></a>Creación de cuentas simplificada  
- Hay otra ventaja cuando crees tus cuentas en línea iniciales desde el panel. Puedes crear cuentas en línea para todos los usuarios con una única acción. Por otro lado, si los empleados usar Office 365 ya y puedes configurar un servidor de Windows Server Essentials de nuevo, puedes crear todas tus cuentas de usuario de las cuentas en línea con una única acción. Para obtener más información, consulta [crear cuentas en línea](#BKMK_SECTION_CreateOnlineAccounts).  
+ Allí s otra ventaja al crear sus cuentas en línea iniciales desde el panel. Puede crear cuentas en línea para todos los usuarios con una sola acción. Por otro lado, si los empleados ya usan Office 365 y configuración de un nuevo servidor de Windows Server Essentials, puede crear todas las cuentas de usuario de las cuentas en línea con una sola acción. Para obtener más información, consulte [Crear cuentas en línea](#BKMK_SECTION_CreateOnlineAccounts).  
   
-### <a name="manage-email-addresses-and-distribution-groups-from-the-dashboard"></a>Administrar direcciones de correo electrónico y los grupos de distribución desde el panel  
- Podrás administrar tus direcciones de correo electrónico y los grupos de distribución de Exchange Online en el panel. Y puedes usar el dominio de Internet de s de organización en las direcciones de correo electrónico. Puedes hacerlo todo esto desde el panel, sin iniciar sesión en Office 365. (Puedes tendrá que usar Windows Server Essentials para administrar los grupos de distribución desde el panel. Esta característica no se admite en Windows Server Essentials.) Para obtener más información, consulta [administrar direcciones de correo electrónico de Exchange Online](#BKMK_SECTION_ManageEmailAddresses) y [administrar grupos de distribución de Exchange Online](#BKMK_SECTION_ManageDistributionGroups).  
+### <a name="manage-email-addresses-and-distribution-groups-from-the-dashboard"></a>Administrar direcciones de correo electrónico y grupos de distribución desde el panel  
+ Podrá administrar sus direcciones de correo electrónico y grupos de distribución de Exchange Online desde el panel. Y puede usar su dominio de Internet de s de organización en las direcciones de correo electrónico. Puede hacer todo esto desde el panel, sin iniciar sesión en Office 365. (Ll debe usar Windows Server Essentials para administrar grupos de distribución desde el panel. Esta característica no se admite en Windows Server Essentials.) Para obtener más información, vea cómo [administrar direcciones de correo electrónico para Exchange Online](#BKMK_SECTION_ManageEmailAddresses) y [administrar grupos de distribución para Exchange Online](#BKMK_SECTION_ManageDistributionGroups).  
   
-### <a name="manage-the-user-account-and-online-account-together"></a>Administrar la cuenta de usuario y la cuenta en línea juntos  
- Y puedes administrar una cuenta en línea junto con la cuenta de usuario durante el ciclo de vida de s de cuenta. Si desactiva la cuenta de usuario, también se desactiva la cuenta en línea de Microsoft Online Services. Si quitas una cuenta de usuario, también se quita la cuenta en línea. Para obtener más información, consulta [administrar cuentas en línea](#BKMK_SECTION_ManageOnlineAccounts).  
+### <a name="manage-the-user-account-and-online-account-together"></a>Administrar la cuenta de usuario y la cuenta en línea de forma conjunta  
+ Y puede administrar una cuenta en línea junto con la cuenta de usuario durante el ciclo de vida de s de cuenta. Si desactiva la cuenta de usuario, también se desactiva la cuenta en línea de Microsoft Online Services. Si quita una cuenta de usuario, también se quita la cuenta en línea. Para obtener más información, vea cómo [administrar cuentas en línea](#BKMK_SECTION_ManageOnlineAccounts).  
   
-##  <a name="BKMK_SECTION_CreateOnlineAccounts"></a>Crear cuentas en línea  
- Después de integrar el servidor con Office 365, es la ventaja de crear cuentas de Microsoft Online Services para los usuarios desde el panel. Tiene mucha flexibilidad en la creación de las cuentas en línea. Si tienes una nueva suscripción a Office 365, puedes masiva-crear cuentas en línea para todos los usuarios. Si ya has creado tus cuentas en línea en Office 365, no te preocupes. Si puedes configurar un servidor nuevo, puedes crear tus cuentas de usuario en el servidor mediante la importación de las cuentas en línea. Y puedes asignar un nuevo o una cuenta en línea cuando creas una cuenta de usuario o cuando agregas una cuenta en línea a una cuenta de usuario.  
+##  <a name="BKMK_SECTION_CreateOnlineAccounts"></a> Crear cuentas en línea  
+ Después de integrar su servidor con Office 365, lo cuentas s aprovechar para crear Microsoft Online Services para los usuarios desde el panel. Ll tiene mucha flexibilidad para crear las cuentas en línea. Si tiene una nueva suscripción de Office 365, puede bulk-crear cuentas en línea para todos los usuarios. Si ya ha creado sus cuentas en línea en Office 365, no se preocupe de t. Si la configuración de un servidor nuevo, se pueden crear las cuentas de usuario en el servidor importando las cuentas en línea. Y puede asignar una nueva o una cuenta en línea existente al crear una cuenta de usuario individual o al agregar una cuenta en línea a una cuenta de usuario existente.  
   
- **Requisitos de licencia** necesitarás una licencia de usuario para cada cuenta en línea que crees. Comprobar la **Office 365** página en el panel para ver cuántas licencias de usuario están disponibles a través de tu suscripción a Office 365. Si es necesario agregar más licencias de usuario, todo se podrá abrir tu suscripción a Office 365 en Office 365 para hacerlo.  
+ **Requisitos de licencia** necesitará una licencia de usuario para cada cuenta en línea que cree. Compruebe el **Office 365** página en el panel para ver cuántas licencias de usuario están disponibles a través de su suscripción de Office 365. Si necesita agregar más licencias de usuario, ll, podrá abrir su suscripción de Office 365 en Office 365 para hacerlo.  
   
- **Seguimiento de los usuarios** después de agregar una cuenta en línea para una cuenta de usuario, el usuario debe cambiar la contraseña de su cuenta de usuario la próxima vez que inicien sesión. La nueva contraseña se sincroniza inmediatamente con su cuenta en línea. Después, pueden usar la contraseña para iniciar sesión en Office 365 con su identificador en línea.  
+ **Seguimiento de los usuarios** después de agregar una cuenta en línea para una cuenta de usuario, el usuario debe cambiar la contraseña de su cuenta de usuario la próxima vez que inicien sesión. La nueva contraseña se sincroniza inmediatamente con su cuenta en línea. Después de eso, puede usar la contraseña para iniciar sesión en Office 365 con su identificador en línea.  
   
 > [!IMPORTANT]
->  Resalte a los usuarios que nunca deben cambiar su contraseña de cuenta en línea en Office 365. La contraseña se cambiará automáticamente cada vez que cambie la contraseña de su cuenta de usuario. Si cambia la contraseña en línea en Office 365, se interrumpirá la sincronización de contraseñas.  
+>  Advierta a los usuarios que nunca deben cambiar su contraseña de cuenta en línea en Office 365. La contraseña se cambiará automáticamente cada vez que cambie la contraseña de su cuenta de usuario. Si cambia la contraseña en línea en Office 365, se interrumpirá la sincronización de contraseña.  
   
- Usa los procedimientos descritos en esta sección para:  
+ Use los procedimientos de esta sección para:  
   
--   [Crear de forma masiva cuentas en línea para las cuentas de usuario existentes](#BKMK_ToBulkCreateOnlineAccounts)  
+-   [Crear cuentas en línea para las cuentas de usuario de forma masiva](#BKMK_ToBulkCreateOnlineAccounts)  
   
--   [Importar cuentas de usuario de tus cuentas de Microsoft Online Services](#BKMK_ToImportUserAccounts)  
+-   [Importar cuentas de usuario de las cuentas de Microsoft Online Services](#BKMK_ToImportUserAccounts)  
   
--   [Crear una nueva cuenta de usuario con una cuenta en línea que asigna a](#BKMK_ToCreateaNewUserAccount)  
+-   [Crear una nueva cuenta de usuario con una cuenta en línea asignada](#BKMK_ToCreateaNewUserAccount)  
   
 -   [Asignar una cuenta en línea a una cuenta de usuario](#BKMK_ToAssignAnOnlineAccount)  
   
 > [!NOTE]
->  Si se utiliza Windows Server Essentials, verá *cuenta de Office 365* en lugar de *cuenta de Microsoft Online Services* a lo largo de estos procedimientos. El proceso es el mismo, pero la terminología cambiado en Windows Server Essentials.  
+>  Si se utiliza Windows Server Essentials, verá *cuenta de Office 365* en lugar de *cuenta de Microsoft Online Services* a lo largo de estos procedimientos. El proceso es el mismo, pero la terminología ha cambiado en Windows Server Essentials.  
   
-###  <a name="BKMK_ToBulkCreateOnlineAccounts"></a>Para crear cuentas en línea para las cuentas de usuario existentes masiva  
+###  <a name="BKMK_ToBulkCreateOnlineAccounts"></a> Para crear cuentas en línea para las cuentas de usuario de forma masiva  
   
-1.  Inicia sesión en el servidor como administrador y abre el escritorio de Windows Server Essentials.  
+1.  Inicie sesión en el servidor como administrador y abra el panel de Windows Server Essentials.  
   
-2.  En el panel, abre el **usuarios** página.  
+2.  En el panel, abra la página **Usuarios**.  
   
-3.  En **tareas de los usuarios**, haz clic en **cuentas en línea de Microsoft agregar**.  
+3.  En **Tareas de los usuarios**, haga clic en **Agregar cuentas en línea de Microsoft**.  
   
-     La **cuentas agregar Microsoft Online Services** página del asistente muestra todas las cuentas de usuario que no tengan una cuenta de Microsoft en línea. Todas las cuentas se seleccionan de forma predeterminada y se sugiere el nombre de usuario para el identificador de Microsoft en línea. Si un dominio de Internet personalizado que has vinculado a tu suscripción a Office 365, ese dominio se usará de manera predeterminada.  
+     La página **Agregar cuentas de Microsoft Online Services** del asistente muestra todas las cuentas de usuario que no tienen una cuenta en línea de Microsoft. Todas las cuentas están seleccionadas de forma predeterminada y se sugiere el nombre de usuario para el identificador en línea de Microsoft. Si ha vinculado un dominio de Internet personalizado a su suscripción de Office 365, se usará ese dominio de forma predeterminada.  
   
-4.  En la **cuentas agregar Microsoft Online Services** página, revisa las cuentas que se crearán. Por ejemplo, se comprueba para los usuarios que ya tienen una cuenta en línea con un identificador en línea diferente y asegúrate de que el dominio que quieras usar direcciones de correo electrónico está seleccionado. Cuando termines de realizar cualquiera los cambios necesarios, haz clic en **siguiente**.  
+4.  En la página **Agregar cuentas de Microsoft Online Services** , revise las cuentas que va a crear. Por ejemplo, compruebe los usuarios que ya tienen una cuenta con un identificador en línea distinto y asegúrese de que el dominio que quiere usar en las direcciones de correo electrónico esté seleccionado. Cuando termine de hacer los cambios necesarios, haga clic en **Siguiente**.  
   
-5.  En la **licencias asignar Microsoft Online Services** página, los usuarios usarán seleccionados servicios de Office 365. Al hacer clic en **siguiente**, empezará a la creación de cuentas.  
+5.  En el **licencias asignar Microsoft Online Services** página, seleccionados servicios de Office 365 que usarán los usuarios. Al hacer clic en **Siguiente**, se iniciará la creación de cuentas.  
   
     > [!NOTE]
-    >  Debes tener una licencia de servicio en Office 365 para cada cuenta en línea. Puedes comprobar las licencias disponibles y, si es necesario, abre tu suscripción para agregar licencias de la **Office 365** página en el panel.  
+    >  Debe tener una licencia de servicio de Office 365 para cada cuenta en línea. Puede consultar las licencias disponibles y, si fuera necesario, abrir la suscripción para agregar licencias desde la página **Office 365** del panel.  
   
-6.  Notificar a los usuarios que ya tienen una cuenta de Microsoft en línea. Deben cambiar su contraseña de cuenta de usuario de red antes de poder iniciar sesión Office 365. Para obtener instrucciones, consulta [a empezar a usar una nueva cuenta en línea de Microsoft](#BKMK_ToBeginUsingAnOnlineAccount).  
+6.  Notifique a los usuarios que ya tienen una cuenta en línea de Microsoft. Debe cambiar la contraseña de su cuenta de usuario de red antes de iniciar sesión en Office 365. Para obtener instrucciones, consulte cómo [empezar a usar una nueva cuenta en línea de Microsoft](#BKMK_ToBeginUsingAnOnlineAccount).  
   
-###  <a name="BKMK_ToBeginUsingAnOnlineAccount"></a>Para empezar a usar una nueva cuenta en línea de Microsoft  
+###  <a name="BKMK_ToBeginUsingAnOnlineAccount"></a> Para empezar a usar una nueva cuenta en línea de Microsoft  
   
-1.  Inicia sesión en el equipo con tu cuenta de usuario de la red.  
+1.  Inicie sesión en el equipo con la cuenta de usuario de red.  
   
-2.  Cambiar la contraseña de tu cuenta de usuario. Para empezar, presiona Ctrl + Alt + Supr y haz clic en **cambiar una contraseña**.  
+2.  Cambie la contraseña de la cuenta. Para empezar, presione Ctrl+Alt+Supr y, a continuación, haga clic en **Cambiar una contraseña**.  
   
-     Cuando cambias la contraseña, la contraseña se sincroniza con la nueva cuenta en línea. Ahora puedes usar la misma contraseña para iniciar sesión Office 365.  
+     Al cambiar la contraseña, esta se sincroniza con la nueva cuenta en línea. Ahora puede usar la misma contraseña para iniciar sesión en Office 365.  
   
-3.  [inicia sesión en Office 365](https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=3&ct=1398981834&rver=6.1.6206.0&wp=MBI_SSL&wreply=https:%2F%2Foutlook.office365.com%2Fowa%2F&id=260563&CBCXT=out) con el nuevo identificador en línea y la contraseña de tu cuenta de usuario.  
+3.  [Inicie sesión en Office 365](https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=3&ct=1398981834&rver=6.1.6206.0&wp=MBI_SSL&wreply=https:%2F%2Foutlook.office365.com%2Fowa%2F&id=260563&CBCXT=out) con su nuevo identificador en línea y su contraseña de cuenta de usuario.  
   
     > [!IMPORTANT]
-    >  No se cambia la contraseña de cuenta en línea en Office 365. Esto interrumpirá la sincronización de contraseñas. La contraseña en línea se actualizará cada vez que cambie la contraseña de tu cuenta de usuario de la red.  
+    >  No cambie la contraseña de su cuenta en línea en Office 365. ya que interrumpirá la sincronización de la contraseña. La contraseña en línea se actualizará cada vez que cambie la contraseña para la cuenta de usuario de red.  
   
-###  <a name="BKMK_ToImportUserAccounts"></a>Para importar cuentas de usuario de tus cuentas en línea existentes  
+###  <a name="BKMK_ToImportUserAccounts"></a> Para importar las cuentas de usuario de sus cuentas en línea existentes  
   
-1.  En el panel, abre el **usuarios** página.  
+1.  En el panel, abra la página **Usuarios**.  
   
-2.  En **tareas de los usuarios**, haz clic en **importar cuentas de Office 365**.  
+2.  En **Tareas de los usuarios**, haga clic en **Importar cuentas de Office 365**.  
   
-     La siguiente página muestra todas las cuentas en línea para tu suscripción a Office 365 que no tengan una cuenta de usuario en el servidor. Todas las cuentas se seleccionan de forma predeterminada, y el identificador en línea se sugiere el nombre de usuario.  
+     La siguiente página muestra todas las cuentas en línea para la suscripción de Office 365 que no tienen una cuenta de usuario en el servidor. Todas las cuentas están seleccionadas de forma predeterminada y se sugiere el identificador en línea para el nombre de usuario.  
   
 3.  Para crear las cuentas de usuario:  
   
-    1.  Realiza los cambios que son necesarios para las cuentas de usuario propuesto.  
+    1.  Realice los cambios necesarios para las cuentas de usuario propuestas.  
   
-    2.  Opcionalmente, haz clic en el vínculo para ver las contraseñas temporales que se asignará a las cuentas de usuario. Debes ofrecer a los usuarios su contraseña temporal junto con su nuevo nombre de cuenta.  
+    2.  También puede hacer clic en el vínculo para ver las contraseñas temporales que se asignarán a las cuentas de usuario. Tendrá que darle a los usuarios su contraseña temporal junto con su nuevo nombre de cuenta.  
   
-         (Después de crear las cuentas, todo puedes encontrar estas contraseñas enumeradas en este archivo: *SystemDrive*\Users\\*Office365admin*\\*NewServerUser*.txt donde *Office365admin* es la cuenta de red que se usa para administrar Office 365 en el servidor y *NewServerUser* es el nuevo nombre de cuenta de usuario.)  
+         (Después de crear las cuentas, se encontrará estas contraseñas enumeradas en este archivo: *SystemDrive*\Users\\*Office365admin*\\*NewServerUser*.txt donde *Office365admin* es la cuenta de red que se utiliza para administrar Office 365 en el servidor y *NewServerUser* es el nuevo nombre de cuenta de usuario.)  
   
-    3.  Haz clic en **siguiente** para crear las cuentas de usuario.  
+    3.  Haga clic en **Siguiente** para crear las cuentas de usuario.  
   
-4.  Permite que los usuarios a saber sus nuevas cuentas de usuario y las contraseñas temporales se usan para iniciar sesión en el servidor para la primera œ tiempo y que tendrán que cambiar la contraseña después de iniciar sesión. Para obtener instrucciones para los usuarios, consulta [a empezar a usar una nueva cuenta en línea de Microsoft](#BKMK_ToBeginUsingAnOnlineAccount).  
+4.  Informar a los usuarios sus nuevas cuentas de usuario y las contraseñas temporales usará para iniciar sesión en el servidor para el primer œ tiempo y que tendrá que cambiar la contraseña después de iniciar sesión. Para obtener instrucciones para los usuarios, consulte [Para empezar a usar una nueva cuenta en línea de Microsoft](#BKMK_ToBeginUsingAnOnlineAccount).  
   
-     Asegúrate de que sabe que las contraseñas de su cuenta en línea se sincronizarán con su cuenta de usuario en el futuro, y no deben cambiar su contraseña en línea en Office 365.  
+     Asegúrese de que sepan que las contraseñas de su cuenta en línea se sincronizarán con su cuenta de usuario en el futuro, y que no deben cambiar su contraseña en línea en Office 365.  
   
-###  <a name="BKMK_ToCreateaNewUserAccount"></a>Para crear una nueva cuenta de usuario con una cuenta en línea que asigna a  
+###  <a name="BKMK_ToCreateaNewUserAccount"></a> Para crear una nueva cuenta de usuario con una cuenta en línea asignada  
   
-1.  En el panel, haz clic en **usuarios**.  
+1.  En el panel, haga clic en **Usuarios**.  
   
-2.  En **tareas de los usuarios**, haz clic en **agregar una cuenta de usuario**. La adición de que aparece un asistente de cuenta de usuario.  
+2.  En **Tareas de los usuarios**, haga clic en **Agregar una cuenta de usuario**. Se abrirá el asistente para agregar una cuenta de usuario.  
   
-3.  Sigue las instrucciones para crear la cuenta de usuario.  
+3.  Siga las instrucciones que se indican.  
   
-4.  En la **asignar una cuenta de Microsoft Online Services** página, crear un nuevo en línea de la cuenta del usuario o asignar una cuenta en línea:  
+4.  En la página **Asignar una cuenta de Microsoft Online Services**, cree una cuenta en línea para el usuario o asigne una cuenta en línea existente:  
   
-    -   Para crear una nueva cuenta en línea, haz clic en **crear una nueva cuenta de Microsoft Online Services y asigna a esta cuenta de usuario**y escribe un nombre para la cuenta de Microsoft Online Services (de manera predeterminada, el nombre de usuario se usa para el identificador en línea). A continuación, haz clic en **siguiente**.  
+    -   Para crear una cuenta en línea, haga clic en **Crear una cuenta de Microsoft Online Services y asignarla a esta cuenta de usuario**y escriba un nombre para la cuenta de Microsoft Online Services (de forma predeterminada, el nombre de usuario se usa para el identificador en línea). Haga clic en **Siguiente**.  
   
-    -   Para asignar una cuenta en línea de Microsoft existente, haz clic en **asignar una cuenta de Microsoft Online Services existente a esta cuenta de usuario**y selecciona una cuenta existente en la lista desplegable. A continuación, haz clic en **siguiente**.  
+    -   Para asignar una cuenta de Microsoft en línea existente, haga clic en **Asignar una cuenta de Microsoft Online Services existente a esta cuenta de usuario**y seleccione una cuenta existente en la lista desplegable. Haga clic en **Siguiente**.  
   
     > [!NOTE]
-    >  En Windows Server Essentials, cuentas de Microsoft Online Services se conocen como cuentas de Office 365 en asistentes y las etiquetas del panel.  
+    >  En Windows Server Essentials, las cuentas de Microsoft Online Services se conocen como cuentas de Office 365 en los asistentes y las etiquetas del panel.  
   
-5.  Sigue las instrucciones para completar al asistente.  
+5.  Siga las instrucciones para completar el asistente.  
   
-6.  Notificar al usuario que se necesitan para cambiar la contraseña de su cuenta de usuario antes de que puede iniciar sesión en Office 365 con su nueva cuenta en línea. Para obtener instrucciones, consulta [a empezar a usar una nueva cuenta en línea de Microsoft](#BKMK_ToBeginUsingAnOnlineAccount).  
+6.  Notifique al usuario que debe cambiar su contraseña de cuenta de usuario para iniciar sesión en Office 365 con su cuenta en línea. Para obtener instrucciones, consulte cómo [empezar a usar una nueva cuenta en línea de Microsoft](#BKMK_ToBeginUsingAnOnlineAccount).  
   
 #### <a name="BKMK_ToAssignAnOnlineAccount"></a>Para asignar una cuenta en línea a una cuenta de usuario  
   
-1.  En el panel, haz clic en **usuarios**.  
+1.  En el panel, haga clic en **Usuarios**.  
   
-2.  Haz clic en la cuenta de usuario en la lista y, a continuación, haz clic en **asignar una cuenta de Microsoft en línea**. Aparece de la asignar un asistente de cuenta de servicios en línea de Microsoft.  
+2.  Haga clic con el botón secundario en la cuenta de usuario de la lista y, a continuación, haga clic en **Asignar una cuenta en línea de Microsoft**. Se abrirá el asistente para asignar una cuenta de Microsoft Online Services.  
   
-3.  Asignar una cuenta en línea existente o crear uno nuevo para el usuario. El identificador en línea predeterminado para una nueva cuenta es el nombre de usuario. A continuación, haz clic en **siguiente** para agregar la cuenta en línea a la cuenta de usuario.  
+3.  Asigne una cuenta en línea existente o crear una nueva para el usuario. El identificador en línea predeterminado para una nueva cuenta es el nombre de usuario. Después, haga clic en **Siguiente** para agregar la cuenta en línea a la cuenta de usuario.  
   
-4.  Revisa la información de la última página del asistente y, a continuación, haz clic en **cerrar**.  
+4.  Revise la información en la última página del asistente y, a continuación, haga clic en **Cerrar**.  
   
-5.  Notificar al usuario que se necesitan para cambiar la contraseña de su cuenta de usuario antes de que puede iniciar sesión en Office 365 con su nueva cuenta en línea. Para obtener instrucciones, consulta [a empezar a usar una nueva cuenta en línea de Microsoft](#BKMK_ToBeginUsingAnOnlineAccount).  
+5.  Notifique al usuario que debe cambiar su contraseña de cuenta de usuario para iniciar sesión en Office 365 con su cuenta en línea. Para obtener instrucciones, consulte cómo [empezar a usar una nueva cuenta en línea de Microsoft](#BKMK_ToBeginUsingAnOnlineAccount).  
   
-##  <a name="BKMK_SECTION_ManageOnlineAccounts"></a>Administrar cuentas en línea  
- Cuando agregas una cuenta en línea a una cuenta de usuario en Windows Server Essentials, puedes administrar ambas cuentas juntos durante el ciclo de vida de la cuenta s.  
+##  <a name="BKMK_SECTION_ManageOnlineAccounts"></a> Administrar cuentas en línea  
+ Al agregar una cuenta en línea a una cuenta de usuario en Windows Server Essentials, puede administrar ambas cuentas juntas a lo largo del ciclo de vida de la cuenta s.  
   
-###  <a name="BKMK_UnderstandingAccountStatus"></a>Descripción del estado de la cuenta en línea  
- Al asignar una cuenta de Microsoft Online Services para una cuenta de usuario, la dirección de correo electrónico de la cuenta aparece en la **cuenta en línea de Microsoft** columna en la **usuarios** página del panel. (En Windows Server Essentials, la etiqueta de columna es **cuenta de Office 365**.)  
+###  <a name="BKMK_UnderstandingAccountStatus"></a> Descripción del estado de la cuenta en línea  
+ Al asignar una cuenta de Microsoft Online Services a una cuenta de usuario, la dirección de correo electrónico de la cuenta aparece en la columna **Cuenta en línea de Microsoft**, en la página **Usuarios** del panel. (En Windows Server Essentials, la etiqueta de columna es **cuenta de Office 365**.)  
   
--   Un icono azul junto a una dirección de correo electrónico indica que la cuenta en línea está activa. Es decir, la cuenta tiene una licencia de Office 365 actual y el usuario puede usar el identificador en línea para iniciar sesión Office 365.  
+-   El icono azul que hay junto a la dirección de correo electrónico indica que la cuenta en línea está activa. Es decir, la cuenta tiene una licencia de Office 365, y el usuario puede utilizar el identificador en línea para iniciar sesión en Office 365.  
   
--   Un icono junto a la dirección de correo electrónico sombreado indica la cuenta en línea está inactivo œ porque ya no está activa la licencia o la cuenta en línea se ha sin asignar. Al anular la asignación de una cuenta en línea de s de usuario, se quita la licencia y el usuario podrá iniciar sesión en Office 365 con la cuenta. Sin embargo, el servidor mantiene la asignación entre el nombre de cuenta de usuario y la dirección de correo electrónico de Office 365.  
+-   Junto a la dirección de correo electrónico el icono atenuado indica que la cuenta en línea está inactiva œ porque ya no está activa la licencia o la cuenta en línea se ha anulado la asignación. Al anular la asignación de una cuenta de usuario s en línea, se quita la licencia y el usuario no podrá iniciar sesión en Office 365 con la cuenta. Sin embargo, el servidor mantiene la asignación entre el nombre de cuenta de usuario y la dirección de correo electrónico de Office 365.  
   
-###  <a name="BKMK_UnassignOnlineAccount"></a>Restringir el acceso a una cuenta en línea  
- ¿Qué hacer si un usuario sale de la organización, o quieres restringir el acceso de usuario s a los servicios de Office 365? Si puedes administrar tus cuentas de usuarios en línea junto con sus cuentas de usuario en Windows Server Essentials, tienes tres opciones:  
+###  <a name="BKMK_UnassignOnlineAccount"></a> Restringir el acceso a una cuenta en línea  
+ ¿Qué hacer si un usuario deja la organización o desea restringir el acceso de usuario s a los servicios de Office 365? Si usted administrar las cuentas de usuarios en línea junto con sus cuentas de usuario en Windows Server Essentials, tiene tres opciones:  
   
--   **¿Anular la asignación de la cuenta en línea** ? Si quieres impedir que un usuario mediante Office 365 sin impedir el acceso a los recursos en el servidor, debe anular la asignación de la cuenta en línea. Se lanzará la licencia de Office 365 y el usuario podrá iniciar sesión en Office 365. Sin embargo, el servidor mantiene la asignación entre el nombre de cuenta de usuario y la dirección de correo electrónico de Office 365. Para obtener instrucciones, consulta [para anular la asignación de una cuenta en línea desde una cuenta de usuario](#BKMK_ToUnassignAnOnlineAccount).  
+-   **¿Anular la asignación de la cuenta en línea** ? Si desea impedir que un usuario usa Office 365 sin impedir el acceso a los recursos del servidor, debe quitar la asignación de la cuenta en línea. Se publicará la licencia de Office 365, y el usuario no podrá iniciar sesión en Office 365. Sin embargo, el servidor mantiene la asignación entre el nombre de cuenta de usuario y la dirección de correo electrónico de Office 365. Para obtener instrucciones, consulte [desasignar una cuenta en línea de una cuenta de usuario](#BKMK_ToUnassignAnOnlineAccount).  
   
--   **¿Desactivar la cuenta de usuario** ? Si desactiva una cuenta de usuario porque un empleado abandona, temporal o permanente, también se desactiva la cuenta en línea de s de usuario. No se puede usar la cuenta en línea, pero se conservan los datos de usuario, incluido el correo electrónico, en Microsoft Online Services. Para obtener instrucciones, consulta [desactivar una cuenta de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage6) en [administrar cuentas de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md).  
+-   **¿Desactivar la cuenta de usuario** ? Si desactiva una cuenta de usuario porque un empleado deja la empresa temporal o permanentemente, también se desactiva la cuenta de usuario s en línea. No se puede usar la cuenta en línea, pero los datos del usuario, incluido el correo electrónico, se conservan en Microsoft Online Services. Para obtener instrucciones, consulte [desactivar una cuenta de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage6) en [administrar cuentas de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
--   **¿Quitar la cuenta de usuario** ? Si quitas una cuenta de usuario, se quita la cuenta en línea de Microsoft Online Services también. Para obtener instrucciones, consulta [quitar una cuenta de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Remove) en [administrar cuentas de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md).  
+-   **¿Quitar la cuenta de usuario** ? Si quita una cuenta de usuario, la cuenta en línea se quita también de Microsoft Online Services. Para obtener instrucciones, consulte [quitar una cuenta de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Remove) en [administrar cuentas de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
     > [!WARNING]
-    >  Ten en cuenta que cuando se quita una cuenta en línea, los datos de usuario están sujeta a los datos de directivas de retención de Microsoft Online Services. Si necesitas conservar los datos de usuario de la persona s después de un empleado abandona, desactivar la cuenta de usuario en lugar de quitarla.  
+    >  Tenga en cuenta que, cuando se elimina una cuenta en línea, los datos del usuario dependen de las directivas de retención de Microsoft Online Services. Si necesita conservar los datos de usuario de persona s después de un empleado deja la empresa, desactive la cuenta de usuario en lugar de quitarla.  
   
-####  <a name="BKMK_ToUnassignAnOnlineAccount"></a>Para anular la asignación de una cuenta en línea desde una cuenta de usuario  
+####  <a name="BKMK_ToUnassignAnOnlineAccount"></a> Para desasignar una cuenta en línea de una cuenta de usuario  
   
-1.  En el panel, haz clic en **usuarios**.  
+1.  En el panel, haga clic en **Usuarios**.  
   
-2.  Haz clic en la cuenta de usuario en la lista y, a continuación, haz clic en **anular la asignación de una cuenta de Microsoft en línea** (en Windows Server Essentials, haz clic en **anular la asignación de una cuenta de Office 365**).  
+2.  Haga clic en la cuenta de usuario en la lista y, a continuación, haga clic en **anular la asignación de una cuenta de Microsoft online** (en Windows Server Essentials, haga clic en **anular la asignación de una cuenta de Office 365**).  
   
-3.  En el aviso de confirmación, haz clic en **Sí**.  
+3.  En el mensaje de confirmación, haga clic en **Sí**.  
   
-##  <a name="BKMK_SECTION_ManageEmailAddresses"></a>Administrar direcciones de correo electrónico de Exchange Online  
- Al agregar direcciones de correo electrónico a la cuenta de usuario s en línea en Windows Server Essentials, puede permitir al usuario recibir correo electrónico en varias direcciones de correo electrónico de Exchange en línea.  
+##  <a name="BKMK_SECTION_ManageEmailAddresses"></a> Administrar direcciones de correo electrónico de Exchange Online  
+ Al agregar direcciones de correo electrónico a la cuenta de usuario s en línea en Windows Server Essentials, puede permitir que el usuario reciba correo electrónico en varias direcciones de correo electrónico en Exchange Online.  
   
-###  <a name="BKMK_PROC_AddEmailAliases"></a>Para agregar direcciones de correo electrónico adicional a un usuario s cuenta en línea de Microsoft  
+###  <a name="BKMK_PROC_AddEmailAliases"></a> Para agregar direcciones de correo electrónico adicionales a un usuario s cuenta de Microsoft online  
   
-1.  En el panel de Windows Server Essentials, haz clic en **usuarios**.  
+1.  En el panel de Windows Server Essentials, haga clic en **usuarios**.  
   
-2.  Haz clic en la cuenta de usuario en la lista y, a continuación, haz clic en **ver las propiedades de la cuenta**.  
+2.  Haga clic con el botón secundario en la cuenta de usuario en la lista y, a continuación, haga clic en **Ver las propiedades de la cuenta**.  
   
-3.  En la **Microsoft online** ficha de las propiedades de la cuenta (o la **Office 365** ficha en Windows Server Essentials), haz clic en **agregar**.  
+3.  En el **en línea de Microsoft** ficha de propiedades de la cuenta (o el **Office 365** ficha en Windows Server Essentials), haga clic en **agregar**.  
   
-4.  Escribe el nuevo alias de correo electrónico y, a continuación, seleccione el dominio de correo electrónico.  
+4.  Escriba el nuevo alias de correo electrónico y, a continuación, seleccione el dominio de correo electrónico.  
   
-5.  Haz clic en **Aceptar** dos veces.  
+5.  Haga clic en **Aceptar** dos veces.  
   
-##  <a name="BKMK_SECTION_ManageDistributionGroups"></a>Administrar grupos de distribución de Exchange Online (solo Windows Server Essentials)  
- Después de integrar el servidor de Windows Server Essentials con Office 365, puedes crear y administrar grupos de distribución de Exchange Online desde el escritorio de Windows Server Essentials. Hacer todo esto en la **grupos de distribución** pestaña que se agrega a la **usuarios** página. Solo verás esta pestaña si tienes una suscripción a Exchange Online. Esta característica no está disponible en Windows Server Essentials.  
+##  <a name="BKMK_SECTION_ManageDistributionGroups"></a> Administrar grupos de distribución para Exchange Online (solo Windows Server Essentials)  
+ Después de integrar su servidor Windows Server Essentials con Office 365, puede crear y administrar grupos de distribución de Exchange Online desde el panel de Windows Server Essentials. Ll puede hacer esto en el **grupos de distribución** ficha que se agrega a la **usuarios** página. Esta pestaña solo se ve si tiene una suscripción a Exchange Online. Esta característica no está disponible en Windows Server Essentials.  
   
- Usa los siguientes procedimientos para:  
+ Use los siguientes procedimientos para:  
   
 -   [Agregar un grupo de distribución](#BKMK_PROCEDURE_AddDistGroup)  
   
@@ -233,58 +234,58 @@ Al integrar tu servidor de Windows Server Essentials con Microsoft Office 365, p
   
 -   [Quitar un grupo de distribución](#BKMK_RemoveDistributionGroup)  
   
-###  <a name="BKMK_PROCEDURE_AddDistGroup"></a>Para agregar un grupo de distribución  
+###  <a name="BKMK_PROCEDURE_AddDistGroup"></a> Para agregar un grupo de distribución  
   
-1.  En el panel en Windows Server Essentials, haz clic en **usuarios**y, a continuación, haz clic en el **grupos de distribución** pestaña.  
+1.  En el panel de Windows Server Essentials, haga clic en **usuarios**y, a continuación, haga clic en el **grupos de distribución** ficha.  
   
-2.  En **tareas de grupo de distribución**, haz clic en **agregar un grupo de distribución**.  
+2.  En **Tareas de los grupos de distribución**, haga clic en **Agregar un grupo de distribución**.  
   
-     Agregar un Asistente para nuevo grupo de distribución aparece.  
+     Se abrirá el asistente para agregar un nuevo grupo de distribución.  
   
-3.  En la **agregar un nuevo grupo de distribución** página, escribe la información siguiente y, a continuación, haz clic en **siguiente**:  
+3.  En la página **Agregar un nuevo grupo de distribución** , escriba la información siguiente y, a continuación, haga clic en **Siguiente**:  
   
-    -   Escribe un nombre de grupo, la descripción opcional y el alias de correo electrónico para el nuevo grupo de distribución.  
+    -   Escriba un nombre de grupo, una descripción opcional y un alias de correo electrónico para el nuevo grupo de distribución.  
   
-    -   De manera predeterminada, el grupo de distribución puede recibir correo electrónico de las personas fuera de tu organización. Si no desea permitirlo, desactive la opción.  
+    -   De forma predeterminada, el grupo de distribución puede recibir correo electrónico de usuarios fuera de su organización. Si no desea permitir esto, desactive la opción.  
   
-4.  En la **agregar miembros del grupo** página, usa el **agregar** botón para agregar cuentas de usuario activa que tienen una cuenta en línea asignada a ellos, y los grupos de distribución de otro, al nuevo grupo de distribución. A continuación, haz clic en **siguiente**.  
+4.  En la página **Agregar miembros de grupo**, use el botón **Agregar** para agregar cuentas de usuario activas que tengan una cuenta en línea asignada a ellos, y a otros grupos de distribución, al nuevo grupo de distribución. Haga clic en **Siguiente**.  
   
      El nuevo grupo de distribución se crea en Exchange Online.  
   
-###  <a name="BKMK_ChangeGroupMembers"></a>Para cambiar a los miembros de un grupo de distribución  
+###  <a name="BKMK_ChangeGroupMembers"></a> Para cambiar a los miembros de un grupo de distribución  
   
-1.  En el panel, haz clic en **usuarios**y, a continuación, haz clic en el **grupos de distribución** pestaña.  
+1.  En el panel, haga clic en **Configuración**y, a continuación, en la pestaña **Grupos de distribución** .  
   
-2.  Haz clic en el grupo de distribución en la lista y, a continuación, haz clic en **cambiar la pertenencia al grupo**.  
+2.  Haga clic con el botón derecho en el grupo de distribución de la lista y, a continuación, haga clic en **Cambiar pertenencia a grupos**.  
   
-3.  Usa el **agregar** y **quitar** botones para agregar o quitar cuentas en línea activas desde el grupo de distribución. A continuación, haz clic en **siguiente** para actualizar la pertenencia al grupo de distribución en Exchange Online.  
+3.  Use los botones **Agregar** y **Quitar** para agregar o quitar cuentas en línea activas desde el grupo de distribución. Luego haga clic en **Siguiente** para actualizar la pertenencia a grupos de distribución de Exchange Online.  
   
-###  <a name="BKMK_EditUserMemberships"></a>Para cambiar la pertenencia a grupos de distribución un usuario s  
+###  <a name="BKMK_EditUserMemberships"></a> Para cambiar la pertenencia a un grupo de distribución de usuario s  
   
-1.  En el panel, haz clic en **usuarios**.  
+1.  En el panel, haga clic en **Usuarios**.  
   
-2.  Haz clic en la cuenta de usuario en la lista y, a continuación, haz clic en **ver las propiedades de la cuenta**.  
+2.  Haga clic con el botón secundario en la cuenta de usuario en la lista y, a continuación, haga clic en **Ver las propiedades de la cuenta**.  
   
-3.  En las propiedades de la cuenta de usuario, haz clic en el **grupos de distribución** pestaña y, a continuación, haz clic en **editar**.  
+3.  En las propiedades de cuenta de usuario, haga clic en el **Grupos de distribución** y, a continuación, en **Editar**.  
   
-4.  En la **pertenencia al grupo de editar** cuadro, usa el **agregar** y **quitar** botones para agregar o quitar grupos de distribución de la cuenta de usuario y, a continuación, haz clic en **cerrar**.  
+4.  En el cuadro **Editar pertenencia a grupos** , use los botones **Agregar** y **Quitar** para agregar o quitar grupos de distribución de la cuenta de usuario y, a continuación, haga clic en **Cerrar**.  
   
-5.  Haz clic en **Aceptar** ahorrar al usuario actualizado propiedades de la cuenta.  
+5.  Haga clic en **Aceptar** para guardar las propiedades actualizadas de la cuenta de usuario.  
   
-###  <a name="BKMK_RemoveDistributionGroup"></a>Para quitar un grupo de distribución  
+###  <a name="BKMK_RemoveDistributionGroup"></a> Para quitar un grupo de distribución  
   
-1.  En el panel, haz clic en **usuarios**y, a continuación, haz clic en el **grupos de distribución** pestaña.  
+1.  En el panel, haga clic en **Configuración**y, a continuación, en la pestaña **Grupos de distribución** .  
   
-2.  Haz clic en el grupo de distribución en la lista y, a continuación, haz clic en **quitar el grupo**.  
+2.  Haga clic con el botón secundario en el grupo de distribución de la lista y, a continuación, en **Quitar el grupo**.  
   
-3.  En el aviso de confirmación, haz clic en **eliminación de un grupo**.  
+3.  En el mensaje de confirmación, haga clic en **Eliminar grupo**.  
   
-     Se quita el grupo de distribución de Exchange Online.  
+     Se quitará el grupo de distribución de Exchange Online.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
 -   [Administrar cuentas de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md)  
   
--   [Administrar Office 365](Manage-Office-365-in-Windows-Server-Essentials.md)  
+-   [Administración de Office 365](Manage-Office-365-in-Windows-Server-Essentials.md)  
   
 -   [Administrar Microsoft Online Services](Manage-Microsoft-Online-Services-in-Windows-Server-Essentials.md)

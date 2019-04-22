@@ -1,6 +1,6 @@
 ---
-title: Crear el archivo Cfg.ini
-description: "Describe cómo usar Windows Server Essentials"
+title: Cree el archivo Cfg.ini
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,27 +13,28 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 967db5f36ea27fb04eab9a6682a106ba0072d45d
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59820126"
 ---
-# <a name="create-the-cfgini-file"></a>Crear el archivo Cfg.ini
+# <a name="create-the-cfgini-file"></a>Cree el archivo Cfg.ini
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-El archivo cfg.ini se usa para automatizar la instalación del sistema operativo en el siguiente escenario:  
+El archivo cfg.ini se usa para automatizar una instalación del sistema operativo en el siguiente escenario:  
   
--   Al probar la experiencia del usuario final con una imagen preinstalado en el equipo de destino, la sección de la configuración inicial se usa para recorrer la instalación en un modo de instalación desatendida o atendida. Para ello, consulta [crear la sección de la configuración inicial](Create-the-Cfg.ini-File.md#BKMK_CreateInit2).  
+-   Al comprobar la experiencia del usuario final con una imagen preinstalada en un equipo de destino, la sección Configuración inicial se utiliza para guiar al usuario en la instalación, ya sea en modo atendido o desatendido. Para ello, consulte [Create the Initial Configuration section](Create-the-Cfg.ini-File.md#BKMK_CreateInit2).  
   
-##  <a name="BKMK_CreateInit2"></a>Crear la sección de la configuración inicial  
- Usa la sección de la configuración inicial en el archivo cfg.ini para recorrer la instalación en un modo de instalación desatendida o atendida.  
+##  <a name="BKMK_CreateInit2"></a> Creación de la sección de configuración inicial  
+ Use la sección Configuración inicial del archivo cfg.ini para recibir asistencia durante la instalación, ya sea en modo atendido o desatendido.  
   
-#### <a name="to-define-the-initial-configuration-section"></a>Para definir la sección de la configuración inicial  
+#### <a name="to-define-the-initial-configuration-section"></a>Para definir la sección de Configuración inicial  
   
-1.  Abre el archivo de cfg.ini en el Bloc de notas, si existe; de lo contrario, se crea un nuevo archivo.  
+1.  Si existe, abra el archivo cfg.ini en el Bloc de notas; en caso contrario, cree un archivo nuevo.  
   
-2.  Agrega el siguiente texto para crear una sección InitialConfiguration.  
+2.  Agregue el texto siguiente para crear la sección ConfiguraciónInicial.  
   
     ```  
   
@@ -97,66 +98,66 @@ El archivo cfg.ini se usa para automatizar la instalación del sistema operativo
     ```  
   
     > [!NOTE]
-    >  No se proporciona una opción para seleccionar un idioma diferente durante la configuración inicial. Si se restableció el sistema, el idioma del sistema operativo será aquella que se haya instalado originalmente.  
+    >  No se proporcionan opciones para seleccionar otro idioma en la configuración inicial. Si se restablece el sistema, el idioma del sistema operativo será el que se instaló originalmente.  
   
-    |Nombre del parámetro|Descripción del parámetro|  
+    |Nombre de parámetro|Descripción de parámetro|  
     |--------------------|---------------------------|  
-    |*/ACCEPTEULA*|Indica que el usuario acepta los términos de licencia del Software de Microsoft. El valor puede ser igual a verdadero o falso, pero la instalación se realiza solo si se establece en True.|  
-    |*AcceptOEMEula*|(Opcional) Indica que el usuario acepta el contrato de licencia del partner. El valor puede ser igual a True o False. Este campo es necesario solo si el servidor se ha comprado un partner que proporcionan un contrato de licencia independientes.|  
-    |*CompanyName*|(Opcional) Nombre de la empresa. Nombre de tu empresa se usa para personalizar los informes de empresa y asociar el servidor de tu empresa. Puede tener hasta 254 caracteres.|  
-    |*País*|(Opcional) Cadena que representa el país o región deseado. Ejemplo: Nosotros para Estados Unidos.|  
-    |*Nombre de servidor*|El nombre del servidor identifica el servidor en la red. El nombre del servidor debe cumplir los siguientes criterios:<br /><br /> -Puede tener hasta 15 caracteres.<br /><br /> -Puede contener letras, números y guiones (-).<br /><br /> -No debe empezar con un guión.<br /><br /> -No se debe contener espacios.<br /><br /> -No se debe contener sólo números.<br /><br /> Ejemplo: ContosoServer.|  
-    |*DNSName*|Un dominio interno agrupa los equipos servidor y cliente juntos para compartir una base de datos de nombres de usuario, las contraseñas y otra información común. Los usuarios verán este nombre cuando inician sesión en sus equipos, pero se usa interno solo y no es el mismo que un nombre de dominio de Internet. El nombre de dominio interno debe cumplir con los mismos criterios especificados para el *nombreDeServidor*.<br /><br /> Ejemplo: contoso.local.|  
-    |*NombreNetBIOS*|Un nombre NetBIOS se usa para identificar los recursos que se ejecutan en el servidor. Puede ser un máximo de 15 caracteres. Ejemplo: Contoso.|  
-    |*Idioma*|(Opcional) Especifica el idioma para mostrar. Solo puede ser uno de los idiomas instalados. Ejemplo: en-us para el inglés de Estados Unidos.|  
-    |*Configuración regional*|(Opcional) Especifica el formato de hora y moneda mediante un *LocaleID* formato. Ejemplo: en-para la moneda y la hora mostrar en inglés y se da formato según los estándares que se usan en los Estados Unidos.|  
-    |*Teclado*|El teclado puede estar en los dos formatos siguientes:<br /><br /> - **diseño de entrada de teclado: idioma.** Por ejemplo, 0409: 00000409, donde 0409 antes **:** es el idioma de entrada, y **00000409** es la distribución del teclado. Puedes encontrar la lista de distribución del teclado en la clave del registro **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard diseños**.<br /><br /> - **idioma de entrada: el identificador IME.** A continuación te mostramos una lista completa de los identificadores IME.<br /><br /> -Método de entrada Amárico {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{8F96574E-C86C-4bd6-9666-3F7327D4CBE8}<br /><br /> -{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e}{FA550B04-5AD7-411F-A5AC-CA038EC515D7} Pinyin de Microsoft - rápido Simple (chino simplificado)<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{B2F9C502-1742-11D4-9790-0080C882687E} chino (tradicional) - nuevo fonético<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{4BDF9F03-C7D3-11D4-B2AB-0080C882687E} chino (tradicional) - ChangJie<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{6024B45F-5C54-11D4-B921-0080C882687E} chino (tradicional) - rápida<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{D38EFF65-AA46-4FD5-91A7-67845FB02F5B} matriz tradicional chino<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{037B2C25-480C-4D7F-B027-D6CA6B69788A} chino tradicional DaYi<br /><br /> -{03B5835F-F03C-411B-9CE2-AA23E1171E36}{A76C93D9-5523-4E90-AAFA-4DB112F9AC76} Microsoft IME (japonés)<br /><br /> -{A028AE76-01B1-46C2-99C4-ACD9858AE02F}{B5FE1F02-D5F2-4445-9C03-C568F23C99A1} Microsoft IME (coreano)<br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F}{B60AF051-257A-46BC-B9D3-84DAD819BAFB} IME de Hangul antiguo (coreano)<br /><br /> -Método de entrada de Yi {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{409C8376-007B-4357-AE8E-26316EE3FB0D}<br /><br /> -Método de entrada Tigriña {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{3CAB88B7-CC3E-46A6-9765-B772AD7761FF}|  
-    |*Configuración*|Establece la selección del usuario para las actualizaciones. Usa uno de los siguientes valores:<br /><br /> **-Todo** equivale a usar la configuración recomendada.<br /><br /> **: Actualiza** es igual a instalar las actualizaciones importantes. solo<br /><br /> **-Ninguno** igual no buscar actualizaciones.|  
-    |*Nombre de usuario*|-El nombre de la nueva cuenta de administrador que se crea durante la instalación. El administrador y los nombres de cuenta de usuario estándar deben cumplir los siguientes criterios:<br /><br /> -Puede tener hasta 19 caracteres.<br /><br /> -No puede contener / \ [] & #124; < > + =;, ? *<br /><br /> -No debe iniciar o terminar con un punto.<br /><br /> -No se debe contener dos puntos seguidos.<br /><br /> -No se debe ser el mismo que el nombre del servidor o el nombre de dominio interno.<br /><br /> -No se debe ser el mismo que un nombre de usuario predefinida como administrador o invitado.|  
-    |*PlainTextPassword*|Esta es la contraseña para la nueva cuenta de administrador que se crea durante la instalación.<br /><br /> -Debe ser al menos ocho caracteres.<br /><br /> -Debe contener al menos tres de las cuatro categorías siguientes:<br /><br /> -Mayúsculas.<br /><br /> -Minúsculas.<br /><br /> -Números.<br /><br /> -Símbolos.|  
-    |*StdUserName*|El nombre de la nueva cuenta de usuario estándar que se crea durante la instalación. Consulta la *UserName* parámetro para conocer los requisitos.|  
-    |*StdUserPlainTextPassword*|La contraseña de la cuenta de usuario estándar que se crea durante la instalación.|  
-    |WebDomainName|(Opcional) Configurar el nombre de dominio de Internet del servidor. Este archivo te permite configurar el nombre de dominio similar al método usado para la configuración manual en el Asistente para configuración de nombre de dominio.|  
-    |TrustedCertFileName|(Opcional) Configurar el certificado de confianza para el nombre de dominio. Esto te permite poner una. Certificado PFX, que contiene la clave privada.|  
-    |TrustedCertPassword|(Opcional) La contraseña para importar el. PFX.|  
-    |EnableVPN|(Opcional) Activar la VPN de manera predeterminada.|  
-    |VpnIPv4StartAddress|(Opcional) Establecer la dirección de inicio de la VPN.|  
-    |VpnIPv4EndAddress|(Opcional) Establecer la dirección de final de la VPN.|  
-    |VpnBaseIPv6Address|(Opcional) Establecer la dirección IPV6 base para VPN.|  
-    |VpnIPv6PrefixLength|(Opcional) Establece la longitud del prefijo de dirección IPv6 de VPN.|  
-    |IsHosted|(Opcional) Valor predeterminado es "false" Si no se especifica. Establece este valor si configuras esto en el entorno de host. Se deshabilitará la configuración del enrutador.|  
-    |StaticIPv4Address|(Opcional) Especificar la dirección IP estática si quieres configurar una dirección IP estática en lugar de una dirección dinámica.|  
-    |StaticIPv4Gateway|(Opcional) Especificar la dirección de puerta de enlace predeterminada si quieres configurar una dirección IP estática en lugar de una dirección dinámica.|  
-    |StaticIPv4SubnetMask|(Opcional) Especifica la máscara de subred si quieres configurar una dirección IP estática en lugar de una dirección dinámica.|  
-    |StaticIPv6Address|(Opcional) Especificar la dirección IP predeterminada si quieres configurar una dirección IP estática en lugar de una dirección dinámica.|  
-    |StaticIPv6SubnetPrefixLength|(Opcional) Especificar de forma predeterminada, la longitud de prefijo de subred IPV6 si quieres configurar una dirección IP estática en lugar de una dirección dinámica.|  
-    |StaticIPv6Gateway|(Opcional) Especificar la dirección de puerta de enlace predeterminada si quieres configurar una dirección IP estática en lugar de uno dinámico.|  
-    |ClientBackupOn|(Opcional) Desactivar cliente copia de seguridad predeterminada cuando el servidor de unido a nuevos clientes.|  
-    |FileHistoryOn|(Opcional) Desactivar historial de archivos copia de seguridad predeterminada cuando el servidor de unido a nuevos clientes que ejecutan Windows 8 Consumer Preview.|  
-    |EnableRWA|Permitirá el acceso Web remoto cuando se instala Windows Server Essentials, pero se omitirá la configuración del enrutador. Esto solo se admite en una instalación limpia del producto. El valor predeterminado es "false".|  
-    |IPv4DNSForwarder|Establecer IPv4 reenviador DNS.|  
-    |IPv6DNSForwarder|Establecer reenviador DNS IPv6.|  
-    |LaunchPadHiddenTasks|-(Opcional) puedes ocultar la entrada de copia de seguridad o / y la entrada del panel de administración en el Launchpad.<br /><br /> -Para deshabilitar el panel: LaunchPadHiddenTasks=Microsoft.LaunchPad.AdminDashboard<br /><br /> -Para deshabilitar la copia de seguridad: LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup<br /><br /> -Para deshabilitar la copia de seguridad y el panel: LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup,Microsoft.LaunchPad.AdminDashboard|  
+    |*AcceptEula*|Indica que el usuario acepta los Términos de licencia de software de Microsoft. El valor puede ser verdadero o falso, pero la instalación solo se realizará cuando se especifica verdadero.|  
+    |*AcceptOEMEula*|(Opcional) Indica que el usuario acepta el contrato de licencia del asociado. El valor puede ser verdadero o falso. Este campo solo se requiere si el servidor se adquirió a través de un asociado que proporciona un contrato de licencia aparte.|  
+    |*CompanyName*|(Opcional) Nombre de la empresa. El nombre de la empresa se usa para asociar el servidor con la empresa y personalizar los informes de la empresa. Puede tener hasta 254 caracteres|  
+    |*País*|(Opcional) Cadena que representa la región/país deseado. Por ejemplo: US para Estados Unidos.|  
+    |*ServerName*|El nombre del servidor identifica de forma única el servidor en la red. El nombre del servidor debe cumplir los criterios siguientes:<br /><br /> -Puede tener hasta 15 caracteres.<br /><br /> -Puede contener letras, números y guiones (-).<br /><br /> -No debe empezar con un guión.<br /><br /> -No puede contener espacios en blanco.<br /><br /> -No puede contener solo números.<br /><br /> Por ejemplo: ContosoServer.|  
+    |*DNSName*|Un dominio interno agrupa el servidor y los equipos cliente para compartir una base de datos común de nombres de usuario, contraseñas y otros datos comunes. Los usuarios ven este nombre al iniciar sesión en sus equipos, pero solo se usa internamente y no coincide con el nombre de dominio de Internet. El nombre de dominio interno debe cumplir los mismos criterios especificados para *ServerName*.<br /><br /> Ejemplo: contoso.local.|  
+    |*NetbiosName*|Un nombre NetBIOS se usa para identificar recursos que se ejecutan en el servidor. Puede tener hasta 15 caracteres Por ejemplo: Contoso.|  
+    |*Idioma*|(Opcional) Especifica el idioma que se mostrará. Solo puede ser uno de los idiomas instalados. Ejemplo: en-us para la variedad de inglés de los Estados Unidos.|  
+    |*Locale*|(Opcional) Especifica el formato de hora y moneda con el formato *LocaleID* . Ejemplo: en-us para el formato de hora y moneda mostrado en inglés según los estándares usados en los Estados Unidos.|  
+    |*Teclado*|El teclado debe tener uno de los dos formatos siguientes:<br /><br /> - **diseño de teclado: idioma de entrada.** Por ejemplo, 0409:00000409, donde 0409 antes de **:** es el idioma de entrada y **00000409** es la disposición de teclado. Puede encontrar la lista de disposiciones de teclado en la clave del Registro **HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Keyboard Layouts**.<br /><br /> - **idioma de entrada: el identificador IME.** Abajo se muestra una lista completa de identificadores IME.<br /><br /> -Método de entrada Amárico {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{8F96574E-C86C-4bd6-9666-3F7327D4CBE8}<br /><br /> -{81d4e9c9-1d3b-41bc-9e6c-4b40bf79e35e}{FA550B04-5AD7-411F-A5AC-CA038EC515D7} Microsoft Pinyin - Simple rápido (chino simplificado)<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{B2F9C502-1742-11D4-9790-0080C882687E} chino (tradicional) - nuevo fonético<br /><br /> -{531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{4BDF9F03-C7D3-11D4-B2AB-0080C882687E} chino (tradicional) - ChangJie<br /><br /> Quick - {531FDEBF-9B4C-4A43-A2AA-960E8FCDC732}{6024B45F-5C54-11D4-B921-0080C882687E} chino (tradicional)-<br /><br /> -Matriz tradicional de chino {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{D38EFF65-AA46-4FD5-91A7-67845FB02F5B}<br /><br /> -{E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{037B2C25-480C-4D7F-B027-D6CA6B69788A} DaYi tradicional chino<br /><br /> -{03B5835F-F03C-411B-9CE2-AA23E1171E36}{A76C93D9-5523-4E90-AAFA-4DB112F9AC76} Microsoft IME (japonés)<br /><br /> - {A028AE76-01B1-46C2-99C4-ACD9858AE02F}{B5FE1F02-D5F2-4445-9C03-C568F23C99A1}             Microsoft IME (Korean)<br /><br /> -{A1E2B86B-924A-4D43-80F6-8A820DF7190F}{B60AF051-257A-46BC-B9D3-84DAD819BAFB} IME antiguo de Hangul (coreano)<br /><br /> -Método de entrada Yi {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{409C8376-007B-4357-AE8E-26316EE3FB0D}<br /><br /> -Método de entrada Tigriña {E429B25A-E5D3-4D1F-9BE3-0C608477E3A1}{3CAB88B7-CC3E-46A6-9765-B772AD7761FF}|  
+    |*Configuración*|Especifica la selección del usuario para las actualizaciones. Use uno de los siguientes valores:<br /><br /> **-Todas** equivale a usar la configuración recomendada.<br /><br /> **-Actualiza** equivale a instala las actualizaciones importantes. Solo<br /><br /> **-None** equals no buscar actualizaciones.|  
+    |*UserName*|-El nombre de la nueva cuenta de administrador que se crea durante la instalación. El nombre de su cuenta de administrador y usuario estándar debe satisfacer los criterios siguientes:<br /><br /> -Puede tener hasta 19 caracteres.<br /><br /> -No puede contener / \ [] &#124; < > + =; , ? *<br /><br /> -No se debe empezar ni terminar con un punto.<br /><br /> -No puede contener dos puntos consecutivos.<br /><br /> -No se debe ser el mismo que el nombre del servidor o el nombre de dominio interno.<br /><br /> -No se debe ser el mismo que el nombre de usuario predefinido como administrador o invitado.|  
+    |*PlainTextPassword*|Se trata de la contraseña de la nueva cuenta de administrador que se creó durante la instalación.<br /><br /> -Debe ser al menos ocho caracteres de longitud.<br /><br /> -Debe contener al menos tres de las cuatro categorías siguientes:<br /><br /> -Caracteres en mayúsculas.<br /><br /> -Caracteres en minúsculas.<br /><br /> -Números.<br /><br /> -Los símbolos.|  
+    |*StdUserName*|El nombre de la nueva cuenta de usuario estándar que se creó durante la instalación. Consulte el parámetro *UserName* para conocer los requisitos.|  
+    |*StdUserPlainTextPassword*|La contraseña de la cuenta de usuario estándar que se creó durante la instalación.|  
+    |WebDomainName|(Opcional) Configure el nombre de dominio de Internet del servidor. Este archivo le permite configurar el nombre de dominio de forma similar al método utilizado para la configuración manual en el asistente de configuración de nombre de dominio.|  
+    |TrustedCertFileName|(Opcional) Configure un certificado de confianza para el nombre de dominio. Esto le permite añadir una certificación .PFX, que contiene la clave privada.|  
+    |TrustedCertPassword|(Opcional) Contraseña para importar el .PFX.|  
+    |EnableVPN|(Opcional) Activar la VPN de forma predeterminada.|  
+    |VpnIPv4StartAddress|(Opcional) Defina la dirección inicial de VPN.|  
+    |VpnIPv4EndAddress|(Opcional) Defina la dirección final de VPN.|  
+    |VpnBaseIPv6Address|(Opcional) Defina la dirección IPV6 de base para VPN.|  
+    |VpnIPv6PrefixLength|(Opcional) Defina la longitud del prefijo de la dirección IPv6 de VPN.|  
+    |IsHosted|(Opcional) El valor predeterminado es falso si no se ha especificado. Defina este valor si lo configura en un entorno administrado. Se deshabilitará la configuración del enrutador.|  
+    |StaticIPv4Address|(Opcional) Especifique la dirección IP estática si desea configurar una dirección IP estática en lugar de una dirección dinámica.|  
+    |StaticIPv4Gateway|(Opcional) Especifique la dirección de puerta de enlace predeterminada si desea configurar una dirección IP estática en lugar de una dirección dinámica.|  
+    |StaticIPv4SubnetMask|(Opcional) Especifique la máscara de subred si quiere configurar una dirección IP estática en lugar de una dirección dinámica.|  
+    |StaticIPv6Address|(Opcional) Especifique la dirección IP predeterminada si desea configurar una dirección IP estática en lugar de una dirección dinámica.|  
+    |StaticIPv6SubnetPrefixLength|(Opcional) Especifique la longitud predeterminada del prefijo de subred IPV6 si desea configurar una dirección IP estática en lugar de una dirección dinámica.|  
+    |StaticIPv6Gateway|(Opcional) Especifique una dirección predeterminada de la puerta de enlace si desea configurar una dirección IP estática en lugar de una dinámica.|  
+    |ClientBackupOn|(Opcional) Desactivar la copia de seguridad de servidor de forma predeterminada cuando nuevos clientes se unen al servidor.|  
+    |FileHistoryOn|(Opcional) Desactivar la copia de seguridad del historial de archivos cuando nuevos clientes con Windows 8 Consumer Preview se unen al servidor.|  
+    |EnableRWA|Permitirá el acceso Web remoto al instalar Windows Server Essentials, pero se omitirá la configuración del enrutador. Esto solo se admite en una instalación limpia del producto. El valor predeterminado es falso.|  
+    |IPv4DNSForwarder|Define el reenviador de DNS de las direcciones IPv4.|  
+    |IPv6DNSForwarder|Define el reenviador de DNS de las direcciones IPv6.|  
+    |LaunchPadHiddenTasks|-(Opcional) puede ocultar la entrada de copia de seguridad o / entrada de panel en Launchpad.<br /><br /> -Para deshabilitar el panel: LaunchPadHiddenTasks=Microsoft.LaunchPad.AdminDashboard<br /><br /> -Para deshabilitar la copia de seguridad: LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup<br /><br /> -Para deshabilitar la copia de seguridad y el panel: LaunchPadHiddenTasks=Microsoft.LaunchPad.Backup,Microsoft.LaunchPad.AdminDashboard|  
   
-3.  Guarda el archivo. Asegúrate de guardar el archivo como cfg.ini, no cfg.ini.txt.  
+3.  Guarde el archivo. Asegúrese de guardar el archivo como cfg.ini, y no como cfg.ini.txt.  
   
     > [!NOTE]
-    >  Puede guardar el archivo en una unidad flash USB, que puede usarse para las fases específicas de la instalación, o el archivo cfg.ini puede encontrarse en la raíz de cualquier unidad de disco duro en el servidor de destino. Debes asegurarte de que la codificación para el archivo se establece como ANSI o Unicode, no se admite la codificación UTF-8.  
+    >  Puede guardar el archivo en una unidad flash USB, que puede utilizarse para fases específicas de la instalación, o bien copiar el archivo cfg.ini en el directorio raíz de cualquier disco duro en el servidor de destino. Debe asegurarse de que la codificación para el archivo se haya establecido como ANSI o Unicode, dado que la codificación UTF-8 no está admitida.  
   
 > [!IMPORTANT]
->  La sección de la configuración inicial de la cfg.ini solo debe usarse el usuario final para personalizar el servidor o para un socio probar la experiencia de usuario del servidor mediante un archivo de respuesta para instalación desatendida. En esta sección del archivo no está pensada para usarse para crear la imagen.  
+>  La sección Configuración inicial del archivo cfg.ini solo debe ser usada por el usuario final para personalizar el servidor o para que un asociado compruebe la experiencia del usuario del servidor al utilizar un archivo de respuestas desatendido. Esta sección del archivo no se utiliza para crear la imagen.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 
- [Tareas iniciales con el ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introducción al ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
 
- [Tareas iniciales con el ADK de Windows Server Essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introducción al ADK de Windows Server Essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

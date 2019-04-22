@@ -1,6 +1,6 @@
 ---
 title: Roles, servicios de rol y características no incluidas en Windows Server - Server Core
-description: Obtenga información sobre las funciones y características no incluidas en la opción de instalación Server Core de Windows Server.
+description: Obtenga información sobre los roles y características no incluidas en la opción de instalación Server Core de Windows Server.
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
@@ -8,85 +8,85 @@ author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
 ms.openlocfilehash: 308bc8a5d25e2ec67438f0ee03cbfce6f7411ca2
-ms.sourcegitcommit: 4b9b21ca1f366388a78ead7413cb581f2b23d4c6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "2604793"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59825536"
 ---
-# Roles, servicios de rol y características no incluidas en Windows Server - Server Core
+# <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>Roles, servicios de rol y características no incluidas en Windows Server - Server Core
 
-> Se aplica a: (delimitadas anuales del canal) de Windows Server y Windows Server 2016
+> Se aplica a: Windows Server (canal semianual) y Windows Server 2016
 
-Se han quitado las siguientes funciones, servicios de rol y características de la opción de instalación Server Core de Windows Server. Use esta información para ayudar a averiguar si la opción Server Core funciona para su entorno.
+Se quitaron los siguientes roles, servicios de rol y características de la opción de instalación Server Core de Windows Server. Utilice esta información para ayudar a averiguar si la opción Server Core funciona para su entorno.
 
 > [!NOTE]
-> También puede ver una lista de los roles, servicios de rol y características que [se incluyen en Server Core](server-core-roles-and-services.md). Es una lista muy grande, por lo que para obtener los mejores resultados, busque esa lista para el rol específico o una característica que le interesa.
+> También puede ver una lista de los roles, servicios de rol y características que [se incluyen en Server Core](server-core-roles-and-services.md). Es una lista muy grande, de modo que para obtener mejores resultados, busque esa lista para el rol o característica específicos que le interesa.
 
-## Funciones no en Server Core
+## <a name="roles-not-in-server-core"></a>Funciones no en Server Core
 
 - Fax
 - MultiPointServerRole
 - NPAS
 - WDS
 
-## Servicios de rol no está en Server Core
-Tenga en cuenta que algunos servicios de rol de escritorio remoto se incluyen en Server Core (agente de conexión, administración de licencias, Host de virtualización), pero otros no lo están (puerta de enlace, Host de sesión de escritorio remoto, Web Access).
+## <a name="role-services-not-in-server-core"></a>Servicios de rol no está en Server Core
+Tenga en cuenta que algunos servicios de rol de escritorio remoto se incluyen en Server Core (agente de conexión, las licencias, Host de virtualización), pero otros no lo están (puerta de enlace, Host de sesión de RD Web Access).
 
-- Servidor de análisis de impresión
-- Imprimir Internet
-- Puerta de enlace de RDS
+- Servidor de digitalización de impresión
+- Print-Internet
+- RDS-Gateway
 - Servidor de escritorio remoto de RDS
-- Acceso de Web de RDS
-- Consola de administración de Web
-- Consola-Web-Lgcy-Mgmt
+- RDS-Web-Access
+- Web-Mgmt-Console
+- Web-Lgcy-Mgmt-Console
 - Implementación de WDS
-- Transporte de WDS *(antes de Windows Server versión 1803)*
+- Transporte de WDS *(antes de la versión 1803 de Windows Server)*
 
-## Características no incluidas en Server Core
+## <a name="features-not-in-server-core"></a>Características no incluidas en Server Core
 
 - BITS-IIS-Ext
-- NetworkUnlock de BitLocker
-- Direct Play
-- Cliente de impresión de Internet
-- Monitor de puerto LPR
-- Multidifusión de MSMQ
+- BitLocker-NetworkUnlock
+- Direct-Play
+- Internet-Print-Client
+- LPR-Port-Monitor
+- MSMQ-Multicasting
 - CMAK
-- Asistencia remota de
-- RSAT SMTP
+- Asistencia remota
+- RSAT-SMTP
 - RSAT-Feature-Tools-BitLocker-RemoteAdminTool
-- Servidor de RSAT-Bits
-- RSAT NLB
-- RSAT SNMP
+- Servidor de Bits de RSAT
+- RSAT-NLB
+- RSAT-SNMP
 - RSAT WINS
 - Hyper-V-Tools
-- Herramientas de RDS RSAT
-- RSAT-RDS-puerta de enlace
-- RSAT-RDS-licencias-diagnóstico-la interfaz de usuario
-- RDS licencias-la interfaz de usuario
-- Interfaz de usuario de UpdateServices
-- RSAT ADC
-- RSAT-ADC-Mgmt
-- RSAT Respondedor en línea
+- RSAT de RDS
+- RSAT-RDS-Gateway
+- RSAT RDS-licencias-diagnóstico de la interfaz de usuario
+- UI licencias de RDS
+- UpdateServices-UI
+- RSAT-ADCS
+- RSAT-ADCS-Mgmt
+- RSAT-Online-Responder
 - RSAT-ADRMS
 - RSAT-Fax
-- RSAT-archivo-servicios
+- RSAT-File-Services
 - RSAT-DFS-Mgmt-Con
 - RSAT-FSRM-Mgmt
-- RSAT-NFS-Admin
-- RSAT NPAS
-- Servicios de impresión de RSAT
-- Herramientas de RSAT VA
-- WDS AdminPack
-- Servidor SMTP
-- Cliente de TFTP
-- Redirector de WebDAV
-- Biométrica Framework
-- Gui de Windows Defender
+- Administración de RSAT-NFS
+- RSAT-NPAS
+- RSAT-Print-Services
+- Herramientas de evaluación de vulnerabilidad de RSAT
+- WDS-AdminPack
+- SMTP-Server
+- Cliente TFTP
+- WebDAV-Redirector
+- Biometric-Framework
+- Windows-Defender-Gui
 - Windows-Identity-Foundation
-- PowerShell ISE
+- PowerShell-ISE
 - Servicio de búsqueda
-- IFilter de TIFF de Windows
-- Redes inalámbricas
-- Visor de XPS
+- Windows-TIFF-IFilter
+- Acceso a la red inalámbrica
+- XPS-Viewer
 

@@ -1,6 +1,6 @@
 ---
-title: "Configurar Auditoría de filtrado de archivos"
-description: "En este artículo se describe cómo configurar la opción Auditoría de filtrado de archivos para generar el informe de Auditoría de filtrado de archivos"
+title: Configurar Auditoría de filtrado de archivos
+description: En este artículo se describe cómo configurar la opción Auditoría de filtrado de archivos para generar el informe de Auditoría de filtrado de archivos
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 89592a9e1f61374d2d909678a91dc4a06e0b1972
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824476"
 ---
 # <a name="configure-file-screen-audit"></a>Configurar Auditoría de filtrado de archivos
 
@@ -29,9 +30,9 @@ Al usar el Administrador de recursos del servidor de archivos, puedes registrar 
 
 2.  En la pestaña **Auditoría de filtro de archivos**, selecciona la casilla de verificación **Registrar la actividad de filtrado de archivos en la base de datos de auditoría**.
 
-3.  Haz clic en **Aceptar**. Toda la actividad de filtrado de archivos ahora se almacenará en la base de datos de auditoría y se puede ver mediante la ejecución de un informe de Auditoría de filtrado de archivos.
+3.  Haga clic en **Aceptar**. Toda la actividad de filtrado de archivos ahora se almacenará en la base de datos de auditoría y se puede ver mediante la ejecución de un informe de Auditoría de filtrado de archivos.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
--   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
+-   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
 -   [Administración de informes de almacenamiento](storage-reports-management.md)

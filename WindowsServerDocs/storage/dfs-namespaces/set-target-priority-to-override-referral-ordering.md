@@ -1,6 +1,6 @@
 ---
 title: Establecer la prioridad de destino para anular el orden de referencias
-description: "En este artículo se describe cómo establecer la prioridad de destino para anular el orden de referencias"
+description: En este artículo se describe cómo establecer la prioridad de destino para anular el orden de referencias
 ms.date: 6/5/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 10f5e8979ae2f6390da76276dfa193226019e5d3
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 59db08d5ef46b696f550a5fa0738c5c1f9375fda
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826366"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>Establecer la prioridad de destino para anular el orden de referencias
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
 Una referencia es una lista ordenada de destinos que un equipo cliente recibe de un controlador de dominio o un servidor de espacio de nombres cuando el usuario tiene acceso a una carpeta o raíz de espacio de nombres con destinos en el espacio de nombres. Cada destino de una referencia se ordena según el método de ordenación para la carpeta o raíz de espacio de nombres. 
 
@@ -26,7 +27,7 @@ Para definir con más detalle el modo en que se ordenan los destinos, puedes est
 
 Para establecer una prioridad de destinos en un destino de raíz para un espacio de nombres basado en dominio, utiliza el siguiente procedimiento:
 
-1.  Haz clic sucesivamente en **Inicio**, **Herramientas administrativas** y **Administración de DFS**.
+1.  Haga clic sucesivamente en **Inicio**, **Herramientas administrativas** y **Administración de DFS**.
 
 2.  En el árbol de la consola, en el nodo **Espacios de nombres**, haz clic en el espacio de nombres basado en dominio a cuyos destinos de raíz deseas asignar una prioridad.
 
@@ -43,7 +44,7 @@ Para establecer una prioridad de destinos en un destino de raíz para un espacio
 
 Para establecer la prioridad de destinos en un destino de carpeta, utilice el siguiente procedimiento:
 
-1.  Haz clic sucesivamente en **Inicio**, **Herramientas administrativas** y **Administración de DFS**.
+1.  Haga clic sucesivamente en **Inicio**, **Herramientas administrativas** y **Administración de DFS**.
 
 2.  En el árbol de consola, en el nodo **Espacios de nombres**, haz clic en la carpeta a cuyos destinos deseas asignar una prioridad.
 
@@ -52,9 +53,9 @@ Para establecer la prioridad de destinos en un destino de carpeta, utilice el si
 4.  En la pestaña **Opciones avanzadas**, haz clic en **Invalidar orden de referencia** y luego haz clic en la prioridad que desees.
 
 > [!NOTE]
-> Para establecer prioridades de destino mediante Windows PowerShell, usa los cmdlets [Set-DfsnRootTarget](https://technet.microsoft.com/library/jj884266.aspx) y [Set-DfsnFolderTarget](https://technet.microsoft.com/library/jj884264.aspx) con los parámetros **ReferralPriorityClass** y **ReferralPriorityRank**. Estos cmdlets se introdujeron en WindowsServer2012.
+> Para establecer prioridades de destino mediante Windows PowerShell, usa los cmdlets [Set-DfsnRootTarget](https://technet.microsoft.com/library/jj884266.aspx) y [Set-DfsnFolderTarget](https://technet.microsoft.com/library/jj884264.aspx) con los parámetros **ReferralPriorityClass** y **ReferralPriorityRank**. Estos cmdlets se introdujeron en Windows Server 2012.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
--   [Ajustar espacios de nombres DFS](tuning-dfs-namespaces.md)
+-   [Optimización de espacios de nombres DFS](tuning-dfs-namespaces.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)

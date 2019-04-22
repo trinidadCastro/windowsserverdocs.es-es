@@ -1,7 +1,7 @@
 ---
 ms.assetid: a8558c9d-0606-4881-93b2-f2d2716b18e7
-title: "Guía de diseño de AD FS en Windows Server 2012 R2"
-description: 
+title: Guía de diseño de AD FS en Windows Server 2012 R2
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,23 +10,24 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 498b399818fb8c9e463f9990fa13c87648c0a33d
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59822156"
 ---
 # <a name="ad-fs-design-guide-in-windows-server-2012-r2"></a>Guía de diseño de AD FS en Windows Server 2012 R2
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-Active \(AD FS\) servicios de federación Directory proporciona federación de identidades simplificada, protegido y Web solo en sign\ \(SSO\) funcionalidades para los usuarios finales que quieran tener acceso a aplicaciones dentro de una empresa protege FS\ anuncios, en las organizaciones asociadas de federación o en la nube.  
+Servicios de federación de Active Directory \(AD FS\) proporciona la federación de identidades simplificada y protegida e inicio de sesión único Web\-en \(SSO\) capacidades para los usuarios finales que desean tener acceso a las aplicaciones dentro de AD FS\-protege la empresa, en organizaciones de asociados de federación o en la nube.  
   
-En Windows Server® 2012 R2, AD FS incluye un servicio de rol de servicios de federación que actúa como un proveedor de identidad \ (autentica a los usuarios para proporcionar los tokens de seguridad a las aplicaciones que confía FS\ AD) o como un proveedor de federación \ (consume tokens de otros proveedores de identidad y, a continuación, proporciona los tokens de seguridad a las aplicaciones que confía en AD FS\).  
+En Windows Server® 2012 R2, AD FS incluye un servicio de rol Servicio de federación que actúa como proveedor de identidades \(autentica a los usuarios para proporcionar tokens de seguridad a las aplicaciones que confían en AD FS\) o como un proveedor de federación \( consume tokens de otros proveedores de identidades y, a continuación, proporciona tokens de seguridad a las aplicaciones que confían en AD FS\).  
   
-La función de proporcionar acceso a la extranet a aplicaciones y servicios que están protegidos por AD FS en Windows Server 2012 R2 realiza ahora un nuevo servicio de rol de acceso remoto denominado a Proxy de aplicación Web. Este es un cambio respecto a las versiones anteriores de Windows Server en el que esta función se controla por un proxy de servidor de federación de AD FS. Proxy de aplicación Web está diseñado para proporcionar acceso para el escenario de extranet relacionados con AD FS\ y otros escenarios extranet un rol de servidor. Para obtener más información sobre el Proxy de aplicación Web, consulta [Proxy tutorial guía de aplicaciones de Web](https://technet.microsoft.com/library/dn280944.aspx).  
+La función de proporcionar acceso a extranet para aplicaciones y servicios que están protegidos por AD FS en Windows Server 2012 R2 ahora se realiza mediante un nuevo servicio de rol de acceso remoto denominado Proxy de aplicación web. Se trata de un cambio respecto a las versiones anteriores de Windows Server en el que esta función se controlaba mediante un servidor proxy de federación de AD FS. Proxy de aplicación Web es un rol de servidor diseñado para proporcionar acceso a la instancia de AD FS\-relacionados con el escenario de extranet y otros escenarios de extranet. Para obtener más información sobre el Proxy de aplicación Web, consulte [Guía de tutorial de Proxy de aplicación Web](https://technet.microsoft.com/library/dn280944.aspx).  
   
 ## <a name="about-this-guide"></a>Acerca de esta guía  
-Esta guía proporciona recomendaciones que te ayudarán a planear una implementación de AD FS, en función de los requisitos de la organización. Esta guía está destinada al arquitecto especialista o el sistema de infraestructura. Resalta los puntos de principal decisiones al planear la implementación de AD FS. Antes de leer a esta guía, debe tener una buena comprensión de cómo funciona la AD FS en un nivel funcional. Para obtener más información, consulta [comprensión clave AD FS conceptos](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md).  
+Esta guía proporciona recomendaciones para ayudarle a planear una nueva implementación de AD FS, según los requisitos de su organización. Esta guía está pensada para especialistas en infraestructura o arquitectos de sistemas. Resalta sus puntos de decisión principales cuando planee la implementación de AD FS. Antes de leer a esta guía, debe tener una buena comprensión del funcionamiento de AD FS en un nivel funcional. Para obtener más información, consulte [Understanding Key AD FS Concepts](../../ad-fs/technical-reference/Understanding-Key-AD-FS-Concepts.md).  
   
 ## <a name="in-this-guide"></a>En esta guía  
   
@@ -37,7 +38,7 @@ Esta guía proporciona recomendaciones que te ayudarán a planear una implementa
 -   [Requisitos de AD FS](AD-FS-Requirements.md)  
   
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 [Diseño de AD FS](../../ad-fs/AD-FS-Design.md)  
   
 

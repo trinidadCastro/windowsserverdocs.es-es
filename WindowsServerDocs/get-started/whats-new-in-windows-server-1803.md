@@ -9,15 +9,15 @@ ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
 ms.openlocfilehash: c4f80b668b91e65b6c8bc528e14f52a1d117a3c9
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2061475"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823096"
 ---
 # <a name="whats-new-in-windows-server-version-1803"></a>Novedades de Windows Server, versión 1803
 
->Se aplica a: WindowsServer (canal semianual)
+>Se aplica a: Windows Server (Canal semianual)
 
 <img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;El contenido de esta sección describe las novedades y los cambios de Windows Server, versión 1803. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión. Consulta también [Actualización del Canal semianual de Windows Server](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/).
 
@@ -50,12 +50,12 @@ Los escenarios específicos para el Canal semianual y el Canal de mantenimiento 
 
 ## <a name="application-platform-and-containers"></a>Contenedores y plataforma de aplicaciones
 
-- Optimización
+- Optimization
     - La imagen de contenedor base de Server Core se reduce en un 30 % con respecto a Windows Server, versión 1709. 
     - La compatibilidad de aplicaciones también se ha mejorado para ayudar con la introducción en contenedores de las aplicaciones tradicionales.
     - El rendimiento de inicio del contenedor y el rendimiento de tiempo de ejecución se han mejorado también gracias a varias revisiones y optimizaciones.
-- Redes de contenedores: se ha agregado compatibilidad con el proxy Localhost y http, y se ha mejorado el tiempo de inicio y la escalabilidad de contenedor.
-- Herramientas: se ha mejorado la compatibilidad con Curl.exe, Tar.exe y SSH para complementar PowerShell para escenarios de compilación depuración.
+- Redes de contenedor: Se ha agregado compatibilidad con el proxy http y el host local y se ha mejorado el tiempo de inicio y la escalabilidad del contenedor.
+- Herramientas: Se ha mejorado la compatibilidad con Curl.exe, Tar.exe y SSH a fin de complementar PowerShell para generar y depurar los escenarios.
 
 ### <a name="server-core-container-image"></a>Imagen de contenedor de Server Core
 
@@ -75,9 +75,9 @@ WSL permite a los administradores de servidores usar las herramientas existentes
 Kubernetes (normalmente denominado K8s) es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones incluidas en contenedor desarrollados bajo la protección de la [Cloud Native Computing Foundation](https://www.cncf.io). 
 
 En Windows Server, los usuarios de la versión 1709 podían aprovechar Kubernetes en características de redes de Windows, que incluye:
-- Compartimentos de pods compartidos: los pods de infraestructura y trabajadores ahora comparten un compartimiento de red (similar a un espacio de nombres de Linux).
-- Optimización de punto de conexión: gracias al uso compartido de compartimiento, los servicios de contenedor necesitan realizar un seguimiento de al menos la mitad de los muchos puntos de conexión.
-- Optimización de la ruta de datos: mejoras en la plataforma de filtrado de virtual y el servicio de redes de hosts permiten equilibrio de carga basada en kernel.
+- Compartido compartimientos pod: Los pods de infraestructura y de trabajo comparten ahora un compartimento de red (de manera similar a un espacio de nombres de Linux).
+- Optimización de punto de conexión: Gracias al uso compartido de compartimiento, servicios de contenedor deben realizar un seguimiento de al menos la mitad tantos puntos de conexión.
+- Optimización de la ruta de acceso de datos: Mejoras en la plataforma de filtrado Virtual y el servicio de red de Host que basada en kernel-equilibrio de carga.
 
 Con el lanzamiento de Windows Server, versión 1803, estará disponibles más características en las próximas versiones de kubernetes: 
 - [Complementos de almacenamiento](https://github.com/Microsoft/K8s-Storage-Plugins) para los contenedores de Windows organizados por Kubernetes.
@@ -108,7 +108,7 @@ Puedes usar el siguiente comando de Windows PowerShell para habilitar el servici
 Install-WindowsFeature -Name WDS
 ```
 
-## <a name="see-also"></a>Puedes ver también
+## <a name="see-also"></a>Vea también
 
 [Información de versión de Windows Server](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
-[Novedades de Windows 10, contenido profesional de TI de la versión 1803](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)
+[Novedades de Windows 10, el contenido para profesionales de TI de versión 1803](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

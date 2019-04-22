@@ -1,7 +1,7 @@
 ---
 ms.assetid: 95e82190-68c5-4e40-87b1-f1bd816ef4e9
-title: Certificados de comunicaciones de servicio
-description: 
+title: Certificados de comunicaciones de servicios
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,38 +10,39 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 32e60f2c2d9e4fced04061ace44882b792e1a3bc
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59825656"
 ---
-# <a name="service-communications-certificates"></a>Certificados de comunicaciones de servicio
+# <a name="service-communications-certificates"></a>Certificados de comunicaciones de servicios
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Un servidor de federación requiere el uso de certificados de comunicación de servicio para escenarios en que se utiliza la seguridad de mensajes WCF.  
+Un servidor de federación, requiere el uso de certificados de comunicación de servicio para escenarios en los que se utiliza la seguridad de mensaje WCF.  
   
 ## <a name="service-communication-certificate-requirements"></a>Requisitos de certificado de comunicación de servicio  
 Certificados de comunicación de servicio deben cumplir los siguientes requisitos para que funcione con AD FS:  
   
--   El certificado de comunicación de servicio debe incluir la extensión \(EKU\) de uso de la clave de autenticación mejorada de servidor.  
+-   El certificado de comunicación de servicio debe incluir el uso de claves de autenticación mejorado servidor \(EKU\) extensión.  
   
--   El certificado revocación listas \(CRLs\) debe ser accesible para todos los certificados de la cadena desde el certificado de comunicación de servicio para el certificado de CA de raíz. La CA de raíz también debe ser de confianza por cualquier proxies de servidor de federación y los servidores Web este servidor de federación de confianza.  
+-   Las listas de revocación de certificados \(CRL\) debe ser accesible para todos los certificados de la cadena desde el certificado de comunicación de servicio para el certificado de CA raíz. La entidad emisora raíz también debe ser de confianza por los servidores proxy de federación y los servidores Web que confiar en este servidor de federación.  
   
--   El nombre del sujeto que se usa en el certificado de comunicación de servicio debe coincidir con el nombre de servicios de federación de las propiedades de los servicios de federación.  
+-   El nombre de sujeto que se usa en el certificado de comunicación de servicio debe coincidir con el nombre del servicio de federación en las propiedades del servicio de federación.  
   
-## <a name="deployment-considerations-for-service-communication-certificates"></a>Consideraciones de implementación de certificados del servicio de comunicación  
-Configura los certificados de comunicación de servicio para que todos los servidores de federación usan el mismo certificado. Si vas a implementar el diseño federados Web Single\-Sign\-On \(SSO\), te recomendamos que el certificado de comunicación de servicio se emitido por una CA pública. Puedes solicitar e instalar estos certificados a través del Administrador de IIS snap\.  
+## <a name="deployment-considerations-for-service-communication-certificates"></a>Consideraciones de implementación de certificados de comunicación de servicio  
+Configurar certificados de comunicación de servicio para que todos los servidores de federación usen el mismo certificado. Si está implementando Federated Web único\-sesión\-en \(SSO\) diseño, se recomienda que el certificado de comunicación de servicio emitirlo una CA pública. Puede solicitar e instalar estos certificados mediante el complemento Administrador de IIS\-en.  
   
-Puedes usar la firma self\, comunicación del servicio de certificados correctamente en los servidores de federación en un entorno de laboratorio de prueba. Sin embargo, para un entorno de producción, te recomendamos que obtengas certificados del servicio de comunicación de una CA pública. Estos son los motivos por qué debería no usa self\, servicio comunicación certificados firmados para una implementación dinámico:  
+Puede usar self\-firmado, certificados de comunicación correctamente en los servidores de federación en un entorno de laboratorio de pruebas de servicio. Sin embargo, para un entorno de producción, recomendamos que obtenga certificados de comunicación de servicio de una entidad de certificación pública. Los siguientes son los motivos de por qué no debe usar self\-firmado, certificados de comunicación para una implementación en vivo de servicio:  
   
--   Una firma self\, certificado SSL debe agregarse a la tienda de la raíz de confianza en cada uno de los servidores de federación de la organización de partner de recurso. Aunque esto solo no permite que un atacante poner en peligro un servidor de federación de recursos, confiar en certificados firmados self\ aumentar la superficie de ataque de un equipo, y puede provocar vulnerabilidades de seguridad si el firmante del certificado no es de confianza.  
+-   Un autoservicio\-firmado, certificado SSL debe agregarse al almacén raíz de confianza en cada uno de los servidores de federación en la organización del asociado de recurso. Si bien esto por sí solo no permite que un atacante poner en peligro un servidor de federación de recursos, confiar en self\-certificados autofirmados aumenta la superficie de ataque de un equipo y que puede dar lugar a vulnerabilidades de seguridad si el firmante del certificado no es Trustworthy.  
   
--   Crea una experiencia del usuario deficiente. Los clientes recibirán alerta de seguridad de mensajes que aparecen cuando intentan acceder a los recursos federados que muestran el siguiente mensaje: "el certificado de seguridad fue emitido por una compañía que decidió no confiar". Este es el comportamiento esperado, porque el certificado de firma de self\ no es de confianza.  
+-   Crea una mala experiencia del usuario. Los clientes recibirán mensajes de alerta de seguridad cuando intenten obtener acceso a los recursos federados que aparezca el mensaje siguiente: "El certificado de seguridad fue emitido por una compañía que no ha depositado su confianza." Este es el comportamiento esperado, porque el valor self\-certificado firmado no es de confianza.  
   
     > [!NOTE]  
-    > Si es necesario, puede evitar esta condición mediante la directiva de grupo para insertar manualmente el certificado de firma de self\ en la tienda de la raíz de confianza en cada equipo cliente que intenta acceder a un sitio de AD FS.  
+    > Si es necesario, puede solucionar esta condición mediante Directiva de grupo para insertar manualmente el autoservicio\-firmó el certificado al almacén raíz de confianza en cada equipo cliente que intente obtener acceso a un sitio de AD FS.  
   
--   Entidades emisoras de certificados proporcionan basado en certificate\ características adicionales, como archivo de clave privada, renovación y revocación, que no se encuentren en certificados firmados self\.  
+-   Entidades emisoras de certificados proporcione certificados adicionales\-características que no se proporcionan por sí mismo, como archivo de claves privadas, renovación y revocación, basada en\-certificados autofirmados.  
   
 

@@ -1,7 +1,7 @@
 ---
-title: Configurar el equilibrado de carga de Software de equilibrio de carga y de red (NAT) de traducción de direcciones
-description: Este tema es parte de la guía definido redes Software sobre cómo administrar cargas de trabajo de inquilino y redes virtuales en Windows Server 2016.
-manager: brianlic
+title: Configuración del equilibrador de carga de software para el equilibrio de carga y la traducción de direcciones de red (NAT)
+description: En este tema forma parte de la Guía de redes definidas por Software acerca de cómo administrar las cargas de trabajo de inquilinos y redes virtuales en Windows Server 2016.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,242 +12,291 @@ ms.topic: article
 ms.assetid: 73bff8ba-939d-40d8-b1e5-3ba3ed5439c3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7f0393db564061caa0bc8f18b1d623f24749b46c
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/23/2018
+ms.openlocfilehash: 55847bfbc0362887497514009f6efe1312d79906
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819356"
 ---
-# <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>Configurar el equilibrado de carga de Software de equilibrio de carga y de red (NAT) de traducción de direcciones
+# <a name="configure-the-software-load-balancer-for-load-balancing-and-network-address-translation-nat"></a>Configuración del equilibrador de carga de software para el equilibrio de carga y la traducción de direcciones de red (NAT)
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para obtener información sobre cómo usar el equilibrado de carga de software \(SDN\) definido redes Software \(SLB\) para proporcionar la traducción de direcciones de red saliente NAT, NAT entrante, o para cargar el equilibrio entre varias instancias de una aplicación.
+Puede usar este tema para aprender a usar las redes de definidas por Software \(SDN\) equilibrador de carga de software \(SLB\) para proporcionar la traducción de direcciones de red saliente \(NAT\), NAT de entrada o equilibrio de carga entre varias instancias de una aplicación.
 
-Este tema contiene las siguientes secciones.
+## <a name="software-load-balancer-overview"></a>Información general del equilibrador de carga de software
 
-- [Información general de equilibrado de carga de software](#bkmk_slbover)
-- [Ejemplo: Crear a una VIP pública de un grupo de máquinas dos virtuales en una red virtual de equilibrio de carga](#bkmk_publicvip)
-- [Ejemplo: Usar SLB para NAT saliente](#bkmk_obnat)
-- [Ejemplo: Agregar interfaces de red al grupo de fondo](#bkmk_backend)
-- [Ejemplo: Usar el equilibrado de carga de Software para reenviar el tráfico](#bkmk_forward)
+El equilibrador de carga de Software de SDN \(SLB\) proporciona alta disponibilidad y rendimiento de red para sus aplicaciones. Es una capa 4 \(TCP, UDP\) equilibrador que distribuye el tráfico entrante entre instancias de servicio en buen estado en servicios en la nube o máquinas virtuales definidas en un conjunto de equilibrador de carga de carga.
 
-## <a name="bkmk_slbover"></a>Información general de equilibrado de carga de software
+Configurar el SLB para hacer lo siguiente:
 
-La \(SLB\) SDN Software carga equilibrado proporciona alto rendimiento de red y la disponibilidad de las aplicaciones. Es un nivel 4 \ (TCP, UDP\) cargar equilibrado que distribuye el tráfico entrante entre instancias de servicio correcto en servicios en la nube o máquinas virtuales definidos en un conjunto de carga equilibrado.
-
-Puedes configurar SLB para hacer lo siguiente.
-
-* Carga tráfico entrante de equilibrio externo a una red virtual para \(VMs\) máquinas virtuales. Esto se denomina equilibrio de carga de VIP pública.
-* Carga tráfico entrante de equilibrio entre máquinas virtuales en una red virtual, entre las máquinas virtuales en servicios en la nube o entre los equipos locales y máquinas virtuales en una red virtual de entre local. 
-* Reenviar el tráfico de red VM desde la red virtual a destinos externos con la traducción de direcciones de red (NAT).  Esto se denomina NAT de salida.
-* Reenviar tráfico externo a una máquina virtual específica.  Esto se denomina entrante de NAT.
-
->[!IMPORTANT]
->Un problema conocido impide que los objetos de equilibrado de carga en el módulo de PowerShell de NetworkController Windows funciona correctamente en Windows Server 2016 5. La solución alternativa es usar tablas dinámicas hash e Invoke-WebRequest en su lugar. Este método se muestra en los siguientes ejemplos.
+- Equilibrar la carga entrante externo a una red virtual a las máquinas virtuales \(máquinas virtuales\), también denominada equilibrio de carga de VIP pública.
+- Carga equilibrar el tráfico entrante entre las máquinas virtuales en una red virtual, entre las máquinas virtuales en servicios en la nube o entre equipos locales y máquinas virtuales en una red virtual entre locales. 
+- Reenviar el tráfico de red de máquina virtual desde la red virtual a destinos externos mediante la traducción de direcciones de red (NAT), que también se denomina NAT de salida.
+- Reenviar el tráfico externo a una máquina virtual específica, también se denomina NAT de entrada.
 
 
-## <a name="bkmk_publicvip"></a>Ejemplo: Crear a una VIP pública de un grupo de máquinas dos virtuales en una red virtual de equilibrio de carga
 
-Puedes usar este ejemplo para crear un objeto de carga equilibrado con VIP pública y dos máquinas virtuales como miembros del grupo para atender solicitudes a la dirección VIP.  Este código de ejemplo también agrega un sondeo del estado HTTP para detectar si uno de los miembros del grupo se convierte en no responde.
 
-###<a name="step-1-prepare-the-load-balancer-object"></a>Paso 1: Preparar el objeto de carga equilibrado
-Puedes usar el siguiente ejemplo para preparar el objeto de carga equilibrado.
+## <a name="example-create-a-public-vip-for-load-balancing-a-pool-of-two-vms-on-a-virtual-network"></a>Por ejemplo: Crear a una VIP pública para un grupo de dos máquinas virtuales en una red virtual de equilibrio de carga
 
-    $lbresourceId = "LB2"
+En este ejemplo, cree un objeto de equilibrador de carga con una VIP pública y dos máquinas virtuales como miembros del grupo para atender las solicitudes a la dirección VIP. Este código de ejemplo también agrega un sondeo de estado HTTP para detectar si uno de los miembros del grupo deja de responder.
 
-    $lbproperties = @{}
-    $lbproperties.frontendipconfigurations = @()
-    $lbproperties.backendAddressPools = @()
-    $lbproperties.probes = @()
-    $lbproperties.loadbalancingRules = @()
-    $lbproperties.OutboundNatRules = @()
+1. Prepare el objeto de equilibrador de carga.
 
-###<a name="step-2-assign-a-front-end-ip"></a>Paso 2: Asignar un front-end IP
-La dirección IP front-end se conoce comúnmente como IP Virtual (VIP).  La dirección VIP debe tomarse desde una dirección IP no utilizada en uno de la red lógica grupo IP proporcionado anteriormente en el Administrador de equilibrado de carga.
+   ```PowerShell
+    import-module NetworkController
 
-Puedes usar el siguiente ejemplo para asignar una dirección IP front-end.
+    $URI = "https://sdn.contoso.com"
 
-    $vipip = "10.127.132.5"
-    $vipln = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "f8f67956-3906-4303-94c5-09cf91e7e311"
+    $LBResourceId = "LB2"
 
-    $fe = @{}
-    $fe.resourceId = "FE1"
-    $fe.resourceRef = "/loadBalancers/$lbresourceId/frontendIPConfigurations/$($fe.resourceId)"
-    $fe.properties = @{}
-    $fe.properties.subnet = @{}
-    $fe.properties.subnet.ResourceRef = $vipln.properties.Subnets[0].ResourceRef
-    $fe.properties.privateIPAddress = $vipip
-    $fe.properties.privateIPAllocationMethod = "Static"
-    $lbproperties.frontendipconfigurations += $fe
+    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+   ```
 
-###<a name="step-3-allocate-a-backend-address-pool"></a>Paso 3: Asignar un conjunto de direcciones de back-end
-El conjunto de direcciones de back-end contiene las direcciones IP dinámica (DIP) que conforman los miembros del conjunto de equilibrio de carga de máquinas virtuales. En este paso solo se asigne el grupo; las configuraciones de IP se agregan en un paso posterior.
+2. Asigne una dirección IP front-end, que se conoce comúnmente como una IP Virtual (VIP).<p>Debe ser la dirección VIP desde una dirección IP sin usar en uno de los grupos de IP de red lógica proporcionados para el administrador del equilibrador de carga. 
 
-Puedes usar el siguiente ejemplo para asignar un conjunto de direcciones de back-end.
- 
-    $backend = @{}
-    $backend.resourceId = "BE1"
-    $backend.resourceRef = "/loadBalancers/$lbresourceId/backendAddressPools/$($backend.resourceId)"
-    $lbproperties.backendAddressPools += $backend
-
-###<a name="step-4-define-a-health-probe"></a>Paso 4: Define un sondeo del estado
-Comprobaciones de estado se usan por el equilibrado de carga para determinar el estado de los miembros del grupo de back-end. Con este ejemplo, definen un sondeo HTTP que consulta a la RequestPath de "/ health.htm".  La consulta se realiza cada 5 segundos, como se especifica por la propiedad IntervalInSeconds.
-
-El sondeo del estado debe recibir un código de respuesta HTTP 200 para realizar consultas consecutivas 11 para el sondeo a tener en cuenta la dirección IP de back-end para estar en buen estado. Si la dirección IP de back-end no es correcto, el equilibrado de carga no enviará el tráfico a la dirección IP.
-
->[!Note]
->Es importante que las listas de Control de acceso que se aplican a la dirección IP de back-end no bloquee el tráfico a o desde la primera dirección IP de la subred, ya que es el punto de origen para los sondeos.
-
-Puedes usar el siguiente ejemplo para definir un sondeo del estado.
- 
-    $lbprobe = @{}
-    $lbprobe.ResourceId = "Probe1"
-    $lbprobe.resourceRef = "/loadBalancers/$lbresourceId/Probes/$($lbprobe.resourceId)"
-    $lbprobe.properties = @{}
-    $lbprobe.properties.protocol = "HTTP"
-    $lbprobe.properties.port = "80"
-    $lbprobe.properties.RequestPath = "/health.htm"
-    $lbprobe.properties.IntervalInSeconds = 5
-    $lbprobe.properties.NumberOfProbes = 11
-    $lbproperties.probes += $lbprobe
-
-###<a name="step-5-define-a-load-balancing-rule"></a>Paso 5: Definir una regla de equilibrio de carga
-Esta regla de equilibrio de carga define cómo está el tráfico que llega a la dirección IP front-end que se enviará a la dirección IP de back-end.  En este ejemplo, el tráfico TCP con el puerto 80 se envía al grupo de back-end.
-
-Puedes usar el siguiente ejemplo para definir una regla de equilibrio de carga.
-
-    $lbrule = @{}
-    $lbrule.ResourceId = "webserver1"
-    $lbrule.properties = @{}
-    $lbrule.properties.FrontEndIPConfigurations = @()
-    $lbrule.properties.FrontEndIPConfigurations += $fe
-    $lbrule.properties.backendaddresspool = $backend 
-    $lbrule.properties.protocol = "TCP"
-    $lbrule.properties.frontendPort = 80
-    $lbrule.properties.Probe = $lbprobe
-    $lbproperties.loadbalancingRules += $lbrule
-
-###<a name="step-6-add-the-load-balancer-configuration-to-network-controller"></a>Paso 6: Agregar la configuración de carga equilibrado al controlador de red
-Hasta ahora en este ejemplo, son todos los objetos creados en la memoria de la sesión de Windows PowerShell. Este paso agrega los objetos al controlador de red.
-
-Puedes usar el siguiente ejemplo para agregar la configuración de carga equilibrado al controlador de red.
-
-    $lb = @{}
-    $lb.ResourceId = $lbresourceid
-    $lb.properties = $lbproperties
-
-    $body = convertto-json $lb -Depth 100
-
-    Invoke-WebRequest -Headers @{"Accept"="application/json"} -ContentType "application/json; charset=UTF-8" -Method "Put" -Uri "$uri/Networking/v1/loadbalancers/$lbresourceid" -Body $body -DisableKeepAlive -UseBasicParsing
-
-Después de este paso, deberás seguir el ejemplo siguiente para agregar las interfaces de red a este grupo de back-end.
-
-## <a name="bkmk_obnat"></a>Ejemplo: Usar SLB para NAT saliente
-
-Puedes usar este ejemplo para configurar SLB con un grupo de back-end para proporcionar funcionalidad NAT saliente para que una máquina virtual en el espacio de direcciones privadas de una red virtual llegar a saliente a internet.
-
-###<a name="step-1-create-the-loadbalancer-properties-front-end-ip-and-backend-pool"></a>Paso 1: Crear las propiedades de dirección, front-end IP y grupo de back-end.
-Puedes usar el siguiente ejemplo para crear las propiedades de dirección, front-end IP y grupo de back-end.
-
-    $lbresourceId = "OutboundNATMembers"
-    $vipip = "10.127.132.7"
-
-    $vipln = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "f8f67956-3906-4303-94c5-09cf91e7e311"
-
-    $lbproperties = @{}
-    $lbproperties.frontendipconfigurations = @()
-    $lbproperties.backendAddressPools = @()
-    $lbproperties.probes = @()
-    $lbproperties.loadbalancingRules = @()
-    $lbproperties.OutboundNatRules = @()
-
-    $fe = @{}
-    $fe.resourceId = "FE1"
-    $fe.resourceRef = "/loadBalancers/$lbresourceId/frontendIPConfigurations/$($fe.resourceId)"
-    $fe.properties = @{}
-    $fe.properties.subnet = @{}
-    $fe.properties.subnet.ResourceRef = $vipln.properties.Subnets[0].ResourceRef
-    $fe.properties.privateIPAddress = $vipip
-    $fe.properties.privateIPAllocationMethod = "Static"
-    $lbproperties.frontendipconfigurations += $fe
-
-    $backend = @{}
-    $backend.resourceId = "BE1"
-    $backend.resourceRef = "/loadBalancers/$lbresourceId/backendAddressPools/$($backend.resourceId)"
-    $lbproperties.backendAddressPools += $backend
-
-###<a name="step-2-define-the-outbound-nat-rule"></a>Paso 2: Definir la regla NAT saliente
-Puedes usar el siguiente ejemplo para definir la regla NAT saliente. 
-
-    $onat = @{}
-    $onat.ResourceId = "onat1"
-    $onat.properties = @{}
-    $onat.properties.frontendipconfigurations = @()
-    $onat.properties.frontendipconfigurations += $fe
-    $onat.properties.backendaddresspool = $backend
-    $onat.properties.protocol = "ALL"
-    $lbproperties.OutboundNatRules += $onat
-
-###<a name="step-3-add-the-load-balancer-object-in-network-controller"></a>Paso 3: Agregar el objeto de equilibrado de carga en el controlador de red
-Puedes usar el siguiente ejemplo para agregar el objeto de equilibrado de carga en el controlador de red.
-
-    $lb = @{}
-    $lb.ResourceId = $lbresourceid
-    $lb.properties = $lbproperties
-
-    $body = convertto-json $lb -Depth 100
-
-    Invoke-WebRequest -Headers @{"Accept"="application/json"} -ContentType "application/json; charset=UTF-8" -Method "Put" -Uri "$uri/Networking/v1/loadbalancers/$lbresourceid" -Body $body -DisableKeepAlive -UseBasicParsing
-
-En el siguiente paso, puedes agregar las interfaces de red al que quieres proporcionar acceso a internet.
-
-## <a name="bkmk_backend"></a>Ejemplo: Agregar interfaces de red al grupo de fondo
-Puedes usar este ejemplo para agregar las interfaces de red al grupo de back-end.
-
-Debe repetir este paso para cada interfaz de red que puede procesar las solicitudes que se realizan en la dirección VIP. También puedes repetir este proceso en una única interfaz de red para agregarla a varios objetos de equilibrado de carga. Por ejemplo, si tienes un objeto de equilibrado de carga para un servidor Web VIP y un objeto de equilibrado de carga independientes para proporcionar NAT de salida.
+   ```PowerShell
+    $VIPIP = "10.127.134.5"
+    $VIPLogicalNetwork = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "PublicVIP" -PassInnerException
     
-### <a name="step-1-get-the-load-balancer-object-containing-the-back-end-pool-to-which-you-will-add-a-network-interface"></a>Paso 1: Obtener el objeto de equilibrado de carga que contiene el grupo de back-end al que agregar una interfaz de red
-Puedes usar el siguiente ejemplo para recuperar el objeto de carga equilibrado.
+    $FrontEndIPConfig = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
+    $FrontEndIPConfig.ResourceId = "FE1"
+    $FrontEndIPConfig.ResourceRef = "/loadBalancers/$LBResourceId/frontendIPConfigurations/$($FrontEndIPConfig.ResourceId)"
 
-    $lbresourceid = "LB2"
-    $lb = (Invoke-WebRequest -Headers @{"Accept"="application/json"} -ContentType "application/json; charset=UTF-8" -Method "Get" -Uri "$uri/Networking/v1/loadbalancers/$lbresourceid" -DisableKeepAlive -UseBasicParsing).content | convertfrom-json 
+    $FrontEndIPConfig.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
+    $FrontEndIPConfig.Properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
+    $FrontEndIPConfig.Properties.Subnet.ResourceRef = $VIPLogicalNetwork.Properties.Subnets[0].ResourceRef
+    $FrontEndIPConfig.Properties.PrivateIPAddress = $VIPIP
+    $FrontEndIPConfig.Properties.PrivateIPAllocationMethod = "Static"
+      
+    $LoadBalancerProperties.FrontEndIPConfigurations += $FrontEndIPConfig
+   ```
 
-### <a name="step-2-get-the-network-interface-and-add-the-backendaddress-pool-to-the-loadbalancerbackendaddresspools-array"></a>Paso 2: Obtener la interfaz de red y agrega el grupo de backendaddress a la matriz de loadbalancerbackendaddresspools.
-Para obtener la interfaz de red y agrega el grupo de backendaddress a la matriz de loadbalancerbackendaddresspools puedes usar el siguiente ejemplo.
+3. Asignar un grupo de direcciones de back-end, que contiene las direcciones IP dinámicas (DIP) que constituyen los miembros del conjunto con equilibrio de carga de máquinas virtuales. 
 
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
-    $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   ```PowerShell 
+    $BackEndAddressPool = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
+    $BackEndAddressPool.ResourceId = "BE1"
+    $BackEndAddressPool.ResourceRef = "/loadBalancers/$LBResourceId/backendAddressPools/$($BackEndAddressPool.ResourceId)"
+
+    $BackEndAddressPool.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
+
+    $LoadBalancerProperties.backendAddressPools += $BackEndAddressPool
+   ```
+
+4. Definir un sondeo de estado que el equilibrador de carga se usa para determinar el estado de mantenimiento de los miembros del grupo de back-end.<p>En este ejemplo, definir un sondeo HTTP que consulta a RequestPath de "/ health.htm."  La consulta se ejecuta cada 5 segundos, según lo especificado por la propiedad IntervalInSeconds.<p>El sondeo de estado debe recibir un código de respuesta HTTP 200 para 11 consultas consecutivas para el sondeo a tener en cuenta la dirección IP de back-end sea correcto. Si la dirección IP de back-end no es correcta, no recibe tráfico del equilibrador de carga.
+
+   >[!IMPORTANT]
+   >No bloquee el tráfico hacia o desde la primera dirección IP en la subred de cualquier Control de listas de acceso (ACL) que se aplican a la dirección IP de back-end, ya que es el punto de origen para los sondeos.
+
+   Use el siguiente ejemplo para definir un sondeo de estado.
+
+   ```PowerShell
+    $Probe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
+    $Probe.ResourceId = "Probe1"
+    $Probe.ResourceRef = "/loadBalancers/$LBResourceId/Probes/$($Probe.ResourceId)"
+
+    $Probe.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerProbeProperties
+    $Probe.properties.Protocol = "HTTP"
+    $Probe.properties.Port = "80"
+    $Probe.properties.RequestPath = "/health.htm"
+    $Probe.properties.IntervalInSeconds = 5
+    $Probe.properties.NumberOfProbes = 11
+
+    $LoadBalancerProperties.Probes += $Probe
+   ```
+
+5.  Definir una regla para enviar el tráfico que llega a la dirección IP de front-end a la dirección IP de back-end de equilibrio de carga.  En este ejemplo, el grupo de back-end recibe el tráfico TCP al puerto 80.<p>Use el siguiente ejemplo para definir una regla de equilibrio de carga:
+
+   ```PowerShell
+    $Rule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
+    $Rule.ResourceId = "webserver1"
+
+    $Rule.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancingRuleProperties
+    $Rule.Properties.FrontEndIPConfigurations += $FrontEndIPConfig
+    $Rule.Properties.backendaddresspool = $BackEndAddressPool 
+    $Rule.Properties.protocol = "TCP"
+    $Rule.Properties.FrontEndPort = 80
+    $Rule.Properties.BackEndPort = 80
+    $Rule.Properties.IdleTimeoutInMinutes = 4
+    $Rule.Properties.Probe = $Probe
+
+    $LoadBalancerProperties.loadbalancingRules += $Rule
+   ```
+
+6. Agregue la configuración del equilibrador de carga a la controladora de red.<p>Use el ejemplo siguiente para agregar la configuración del equilibrador de carga a la controladora de red:
+
+   ```PowerShell
+    $LoadBalancerResource = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $LBResourceId -Properties $LoadBalancerProperties -Force -PassInnerException
+   ```
+
+7. Siga el ejemplo siguiente para agregar las interfaces de red a este grupo de back-end.
+
+
+## <a name="example-use-slb-for-outbound-nat"></a>Por ejemplo: Usar SLB para NAT saliente
+
+En este ejemplo, configura el SLB con un grupo de back-end para proporcionar capacidad saliente de NAT para que una máquina virtual en el espacio de direcciones privadas de una red virtual llegar a saliente a internet. 
+
+1. Crear las propiedades del equilibrador de carga, IP de front-end y grupo back-end.
+
+   ```PowerShell
+    import-module NetworkController
+    $URI = "https://sdn.contoso.com"
+
+    $LBResourceId = "OutboundNATMMembers"
+    $VIPIP = "10.127.134.6"
+
+    $VIPLogicalNetwork = get-networkcontrollerlogicalnetwork -ConnectionUri $uri -resourceid "PublicVIP" -PassInnerException
+
+    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+
+    $FrontEndIPConfig = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
+    $FrontEndIPConfig.ResourceId = "FE1"
+    $FrontEndIPConfig.ResourceRef = "/loadBalancers/$LBResourceId/frontendIPConfigurations/$($FrontEndIPConfig.ResourceId)"
+
+    $FrontEndIPConfig.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
+    $FrontEndIPConfig.Properties.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
+    $FrontEndIPConfig.Properties.Subnet.ResourceRef = $VIPLogicalNetwork.Properties.Subnets[0].ResourceRef
+    $FrontEndIPConfig.Properties.PrivateIPAddress = $VIPIP
+    $FrontEndIPConfig.Properties.PrivateIPAllocationMethod = "Static"
+
+    $LoadBalancerProperties.FrontEndIPConfigurations += $FrontEndIPConfig
+
+    $BackEndAddressPool = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
+    $BackEndAddressPool.ResourceId = "BE1"
+    $BackEndAddressPool.ResourceRef = "/loadBalancers/$LBResourceId/backendAddressPools/$($BackEndAddressPool.ResourceId)"
+    $BackEndAddressPool.Properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
+
+    $LoadBalancerProperties.backendAddressPools += $BackEndAddressPool
+   ```
+
+2. Definir la regla NAT saliente.
+
+   ```PowerShell
+    $OutboundNAT = new-object Microsoft.Windows.NetworkController.LoadBalancerOutboundNatRule
+    $OutboundNAT.ResourceId = "onat1"
     
-### <a name="step-3-put-the-network-interface-to-apply-the-change"></a>Paso 3: Coloca la interfaz de red para aplicar el cambio
-Puedes usar el siguiente ejemplo de poner la interfaz de red para aplicar el cambio.
+    $OutboundNAT.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerOutboundNatRuleProperties
+    $OutboundNAT.properties.frontendipconfigurations += $FrontEndIPConfig
+    $OutboundNAT.properties.backendaddresspool = $BackEndAddressPool
+    $OutboundNAT.properties.protocol = "ALL"
 
-    new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06 -properties $nic.properties -force
- 
-## <a name="bkmk_forward"></a>Ejemplo: Usar el equilibrado de carga de Software para reenviar el tráfico
-Si es necesario asignar una dirección IP Virtual a una única interfaz de red en una red virtual sin definir puertos individuales, puedes crear una regla de reenvío L3.  Esta regla reenvía todo el tráfico de la máquina virtual a través de la dirección VIP asignada, que debe estar incluida en un objeto PublicIPAddress.
+    $LoadBalancerProperties.OutboundNatRules += $OutboundNAT
+   ```
 
-Si la VIP y DIP se definen como la misma subred, a continuación, esto equivale a realizar L3 reenvío sin NAT.
+3. Agregue el objeto de equilibrador de carga en la controladora de red.
+
+   ```PowerShell
+    $LoadBalancerResource = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $LBResourceId -Properties $LoadBalancerProperties -Force -PassInnerException
+   ```
+
+4. Siga el ejemplo siguiente para agregar las interfaces de red a la que desea proporcionar acceso a internet.
+
+## <a name="example-add-network-interfaces-to-the-back-end-pool"></a>Por ejemplo: Agregar interfaces de red para el grupo de back-end
+En este ejemplo, agregar interfaces de red para el grupo de back-end.  Debe repetir este paso para cada interfaz de red que puede procesar las solicitudes realizadas a la dirección VIP. 
+
+También puede repetir este proceso en una única interfaz de red para agregarlo a varios objetos de equilibrador de carga. Por ejemplo, si tiene un objeto de equilibrador de carga para una VIP de servidor web y un objeto de equilibrador de carga independiente para proporcionar NAT de salida.
+    
+1. Obtenga el objeto de equilibrador de carga que contiene el grupo de back-end para agregar una interfaz de red.
+
+   ```PowerShell
+   $lbresourceid = "LB2"
+   $lb = get-networkcontrollerloadbalancer -connectionuri $uri -resourceID $LBResourceId -PassInnerException
+  ```
+
+2. Obtenga la interfaz de red y agregue el grupo de backendaddress a la matriz loadbalancerbackendaddresspools.
+
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06 -PassInnerException
+   $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   ```  
+
+3. Colocar la interfaz de red para aplicar el cambio. 
+
+   ```PowerShell
+   new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06 -properties $nic.properties -force -PassInnerException
+   ``` 
+
+
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic"></a>Por ejemplo: Utilice el equilibrador de carga de Software para reenviar el tráfico
+Si necesita asignar una dirección IP Virtual a una sola interfaz de red en una red virtual sin definir puertos individuales, puede crear una regla de reenvío L3.  Esta regla reenvía todo el tráfico hacia y desde la máquina virtual a través de la VIP asignada contenida en un objeto de PublicIPAddress.
+
+Si se ha definido la VIP y DIP como la misma subred, a continuación, esto es equivalente a la realización de reenvío L3 sin NAT.
 
 >[!NOTE]
->Este proceso no requiere que crear un objeto de carga equilibrado.  Asignar la PublicIPAddress a la interfaz de red es suficiente información para que el equilibrado de carga de Software para llevar a cabo su configuración.
+>Este proceso no requiere crear un objeto de equilibrador de carga.  Asignación de PublicIPAddress a la interfaz de red es suficiente información para el equilibrador de carga de Software realizar su configuración.
 
-###<a name="step-1-create-a-public-ip-object-to-contain-the-vip"></a>Paso 1: Crear un objeto IP público para que contenga la dirección VIP
-Puedes usar el siguiente ejemplo para crear un objeto IP público.
 
-    $publicIPProperties = new-object Microsoft.Windows.NetworkController.PublicIpAddressProperties
-    $publicIPProperties.ipaddress = "10.127.132.6"
-    $publicIPProperties.PublicIPAllocationMethod = "static"
-    $publicIPProperties.IdleTimeoutInMinutes = 4
-    $publicIP = New-NetworkControllerPublicIpAddress -ResourceId "MyPIP" -Properties $publicIPProperties -ConnectionUri $uri
+1. Crear un objeto IP pública para que contenga a la dirección VIP.
 
-####<a name="step-2-assign-the-publicipaddress-to-a-network-interface"></a>Paso 2: Asignar el PublicIPAddress a una interfaz de red
-Puedes usar el siguiente ejemplo para asignar el PublicIPAddress a una interfaz de red.
+   ```PowerShell
+   $publicIPProperties = new-object Microsoft.Windows.NetworkController.PublicIpAddressProperties
+   $publicIPProperties.ipaddress = "10.127.134.7"
+   $publicIPProperties.PublicIPAllocationMethod = "static"
+   $publicIPProperties.IdleTimeoutInMinutes = 4
+   $publicIP = New-NetworkControllerPublicIpAddress -ResourceId "MyPIP" -Properties $publicIPProperties -ConnectionUri $uri -Force -PassInnerException
+   ```
 
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
-    $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
-    New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties
+2. Asignar PublicIPAddress a una interfaz de red.
 
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
+   $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
+   New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
+   ```
+
+## <a name="example-use-the-software-load-balancer-for-forwarding-traffic-with-a-dynamically-allocated-vip"></a>Por ejemplo: Utilice el equilibrador de carga de Software para reenviar el tráfico con una dirección VIP asignada dinámicamente
+En este ejemplo se repite la misma acción que el ejemplo anterior, pero lo asigna automáticamente la dirección VIP del grupo de direcciones VIP disponible en el equilibrador de carga en lugar de especificar una dirección IP específica. 
+
+1. Crear un objeto IP pública para que contenga a la dirección VIP.
+
+   ```PowerShell
+   $publicIPProperties = new-object Microsoft.Windows.NetworkController.PublicIpAddressProperties
+   $publicIPProperties.PublicIPAllocationMethod = "dynamic"
+   $publicIPProperties.IdleTimeoutInMinutes = 4
+   $publicIP = New-NetworkControllerPublicIpAddress -ResourceId "MyPIP" -Properties $publicIPProperties -ConnectionUri $uri -Force -PassInnerException
+   ```
+
+2. Consultar el recurso de PublicIPAddress para determinar qué dirección IP se asignó.
+
+   ```PowerShell
+    (Get-NetworkControllerPublicIpAddress -ConnectionUri $uri -ResourceId "MyPIP").properties
+   ```
+
+   La propiedad IpAddress contiene la dirección asignada.  El resultado tendrá un aspecto similar al siguiente:
+   ```
+    Counters                 : {}
+    ConfigurationState       :
+    IpAddress                : 10.127.134.2
+    PublicIPAddressVersion   : IPv4
+    PublicIPAllocationMethod : Dynamic
+    IdleTimeoutInMinutes     : 4
+    DnsSettings              :
+    ProvisioningState        : Succeeded
+    IpConfiguration          :
+    PreviousIpConfiguration  :
+   ```
+ 
+1. Asignar PublicIPAddress a una interfaz de red.
+
+   ```PowerShell
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid 6daca142-7d94-0000-1111-c38c0141be06
+   $nic.properties.IpConfigurations[0].Properties.PublicIPAddress = $publicIP
+   New-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId $nic.ResourceId -Properties $nic.properties -PassInnerException
+   ```
+## <a name="example-remove-a-publicip-address-that-is-being-used-for-forwarding-traffic-and-return-it-to-the-vip-pool"></a>Por ejemplo: Quitar una dirección PublicIP que se utiliza para reenviar el tráfico y devolverlo al grupo de VIP
+En este ejemplo se quita el recurso de PublicIPAddress creados por los ejemplos anteriores.  Una vez que se quita el elemento PublicIPAddress, automáticamente se quitará la referencia a PublicIPAddress de la interfaz de red, detendrá el tráfico que se reenvían y se devolverá la dirección IP para el grupo de VIP públicas para su reutilización.  
+
+1. Quitar la PublicIP
+
+   ```PowerShell
+   Remove-NetworkControllerPublicIPAddress -ConnectionURI $uri -ResourceId "MyPIP"
+   ```
+
+---
 
 
  

@@ -1,6 +1,6 @@
 ---
-title: "Configurar límites de notificación"
-description: "En este artículo se describe cómo agregar límites de tiempo a diversos tipos de notificación"
+title: Configurar límites de notificación
+description: En este artículo se describe cómo agregar límites de tiempo a diversos tipos de notificación
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: dba5b3b3c8b651935ec3c69695583d04087b7f2d
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59826316"
 ---
 # <a name="configure-notification-limits"></a>Configurar límites de notificación
 
@@ -35,12 +36,12 @@ Se establece un límite predeterminado de 60 minutos para cada tipo de notificac
 
 2.  En la pestaña **Límites de notificación**, escribe un valor en minutos para cada tipo de notificación que se muestra.
 
-3.  Haz clic en **Aceptar**.
+3.  Haga clic en **Aceptar**.
 
 > [!Note]
 > Para personalizar los límites de tiempo que están asociados a las notificaciones de una cuota o filtro de archivos específicos, puedes usar las herramientas de línea de comandos del Administrador de recursos del servidor de archivos **Dirquota.exe** y **Filescrn.exe**, o usar los cmdlets [Administrador de recursos del servidor de archivos](https://technet.microsoft.com/itpro/powershell/windows/fileserverresourcemanager/fileserverresourcemanager).
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
--   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
+-   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
 -   [Herramientas de línea de comandos](command-line-tools.md)

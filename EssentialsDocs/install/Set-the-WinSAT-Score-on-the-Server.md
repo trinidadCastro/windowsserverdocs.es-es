@@ -1,6 +1,6 @@
 ---
-title: "Establece la puntuación de WinSAT en el servidor"
-description: "Describe cómo usar Windows Server Essentials"
+title: Configurar los resultados de WinSAT en el servidor
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,35 +13,36 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 77866acccac13ac48da8779700c8654f2c7f3277
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59819956"
 ---
-# <a name="set-the-winsat-score-on-the-server"></a>Establece la puntuación de WinSAT en el servidor
+# <a name="set-the-winsat-score-on-the-server"></a>Configurar los resultados de WinSAT en el servidor
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Debes establecer la puntuación de CPU de WinSAT para un servidor que ejecuta el sistema operativo de Windows Server Essentials para optimizar la resolución de transmisión por secuencias de vídeo. Para hacer esto, crear e instalar el archivo .xml que contiene la información de puntuaciones de WinSAT.  
+Debe establecer la puntuación de la CPU de WinSAT para un servidor que se está ejecutando el sistema operativo Windows Server Essentials para optimizar la resolución del vídeo de transmisión por secuencias. Para ello, cree e instale el archivo .xml que contiene la información de los resultados de WinSAT.  
   
-## <a name="obtain-the-winsat-cpu-score"></a>Obtener la puntuación de CPU de WinSAT  
- Se proporcionan un programa con el OPK llamado WinServerSAT.exe que detecta la puntuación de CPU de WinSAT y coloca esa información en el archivo WinServerSAT.xml que lee el sistema operativo.  
+## <a name="obtain-the-winsat-cpu-score"></a>Obtener el resultado de la CPU de WinSAT  
+ Dispone de un programa con OPK llamado WinServerSAT.exe que descubre los resultados de la CPU de WinSAT y coloca los datos en el archivo WinServerSAT.xml que el sistema operativo puede interpretar.  
   
-#### <a name="to-obtain-the-winsat-cpu-score"></a>Para obtener la puntuación de CPU de WinSAT  
+#### <a name="to-obtain-the-winsat-cpu-score"></a>Para obtener el resultado de la CPU de WinSAT  
   
-1.  Copia Resources\WinServerSAT\\ * en medios ADK en el equipo de referencia.  
+1.  Copie el Resources\WinServerSAT\\* del medio de ADK en el equipo de referencia.  
   
-2.  En el equipo de referencia, abre una ventana de símbolo del sistema con privilegios elevados.  
+2.  En el equipo de referencia, abra una ventana de símbolo del sistema con privilegios elevados.  
   
-3.  Si no existe la carpeta de %ProgramFiles%\Windows Server\Bin\OEM, escribe el siguiente comando y, a continuación, presione ENTRAR.  
+3.  Si la carpeta %ProgramFiles%\Windows Server\Bin\OEM no existe, escriba el siguiente comando y, a continuación, presione Entrar.  
   
      **mkdir "%ProgramFiles%\Windows Server\Bin\OEM"**  
   
-4.  Escribe el siguiente comando y, a continuación, presione ENTRAR.  
+4.  Escriba el siguiente comando y, a continuación, presione Entrar.  
   
      **WinServerSAT.exe "%ProgramFiles%\Windows Server\Bin\OEM\WinServerSAT.xml"**  
   
- El siguiente ejemplo muestra el contenido XML del archivo WinServerSAT.xml que se crea.  
+ En el ejemplo siguiente se muestra el contenido del archivo WinServerSAT.xml que se ha creado.  
   
 ```  
   
@@ -51,7 +52,7 @@ Debes establecer la puntuación de CPU de WinSAT para un servidor que ejecuta el
 </WinSAT>  
 ```  
   
- Donde *WinSAT_Score* se reemplaza con el valor que se detecta en el servidor.  
+ Donde *WinSAT_Score* se sustituye por el valor detectado en el servidor.  
   
 > [!IMPORTANT]
->  Debes quitar WinServerSAT.exe, winsat.prx, winsat.wmv y WinSATEncode.wmv archivos desde el equipo de referencia antes de capturar la imagen.
+>  Elimine los archivos WinServerSAT.exe, winsat.prx, winsat.wmv y WinSATEncode.wmv del equipo de referencia antes de capturar la imagen.

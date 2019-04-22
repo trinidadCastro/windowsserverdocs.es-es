@@ -1,6 +1,6 @@
 ---
 title: Habilitar BranchCache en un recurso compartido de archivos (opcional)
-description: En este tema es parte de la BranchCache implementación Guía para Windows Server 2016, que se muestra cómo implementar BranchCache en modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN en sucursales
+description: En este tema forma parte de BranchCache Deployment Guide para Windows Server 2016, que demuestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN de sucursales
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,39 +13,40 @@ ms.topic: get-started-article
 ms.assetid: 9c465a9e-c504-44ec-9ebc-4e06ba54db30
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 33ed40ef91d9389bb7940dcf928cba43f0c9dbd2
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 36d8379378529a94874c82e0aa90a6440f0281b2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59822236"
 ---
 # <a name="enable-branchcache-on-a-file-share-optional"></a>Habilitar BranchCache en un recurso compartido de archivos (opcional)
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este procedimiento para habilitar BranchCache en un recurso compartido de archivos.  
+Puede utilizar este procedimiento para habilitar BranchCache en un recurso compartido de archivos.  
   
 > [!IMPORTANT]  
-> No es necesario realizar este procedimiento si configuras la configuración de publicación de hash con el valor **permitir la publicación de hash para todas las carpetas compartidas**.  
+> No es necesario realizar este procedimiento si configura la configuración de publicación de hash con el valor **permitir la publicación de hash para todas las carpetas compartidas**.  
   
-Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para realizar este procedimiento.  
+El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o un grupo equivalente.  
   
 ### <a name="to-enable-branchcache-on-a-file-share"></a>Para habilitar BranchCache en un recurso compartido de archivos  
   
-1.  Abre Windows PowerShell, escribe **mmc**, y, a continuación, presione ENTRAR. Abre Microsoft Management Console (MMC).  
+1.  Abra Windows PowerShell, escriba **mmc**y presione ENTRAR. Se abrirá Microsoft Management Console (MMC).  
   
-2.  En la consola de MMC, en la **archivo** menú, haz clic en **agregar o quitar complemento**. La **agregar o quitar complementos** abre el cuadro de diálogo.  
+2.  En MMC, en el menú **Archivo**, haga clic en **Agregar o quitar complemento**. Se abre el cuadro de diálogo **Agregar o quitar complementos**.  
   
-3.  En **agregar o quitar complementos**, en **complementos disponibles**, haz doble clic en **carpetas compartidas**. Se abrirá el Asistente de carpetas compartidas con el objeto de equipo Local seleccionado. Configurar la vista que prefieras, haz clic en **finalizar**y, a continuación, haz clic en **Aceptar**.  
+3.  En **agregar o quitar complementos**, en **complementos disponibles**, haga doble clic en **carpetas compartidas**. Se abre el Asistente de carpetas compartidas con el objeto de equipo Local seleccionado. Configurar la vista que prefiera, haga clic en **finalizar**y, a continuación, haga clic en **Aceptar**.  
   
-4.  Haz doble clic en **carpetas compartidas (locales)**y, a continuación, haz clic en **recursos compartidos**.  
+4.  Haga doble clic en **(Local) para carpetas compartidas**y, a continuación, haga clic en **recursos compartidos**.  
   
-5.  En el panel de detalles, haz clic en un recurso compartido y, a continuación, haz clic en **propiedades**. La cuota **propiedades** abre el cuadro de diálogo.  
+5.  En el panel de detalles, haga clic en un recurso compartido y, a continuación, haga clic en **propiedades**. Del recurso compartido **propiedades** abre el cuadro de diálogo.  
   
-6.  En la **propiedades** cuadro de diálogo, en la **General**, haga clic **configuración sin conexión**. La **configuración sin conexión** abre el cuadro de diálogo.  
+6.  En el **propiedades** cuadro de diálogo el **General** , haga clic **configuración sin conexión**. El **configuración sin conexión** abre el cuadro de diálogo.  
   
-7.  Asegúrate de que **solo los archivos y programas que los usuarios especificar están disponibles sin conexión** está seleccionado y, a continuación, haz clic en **habilitar BranchCache**.  
+7.  Asegúrese de que **solo los archivos y programas especificados por los usuarios estarán disponibles sin conexión** está seleccionada y, a continuación, haga clic en **habilitar BranchCache**.  
   
-8.  Haz clic en **Aceptar** dos veces.  
+8.  Haga clic en **Aceptar** dos veces.  
   
 

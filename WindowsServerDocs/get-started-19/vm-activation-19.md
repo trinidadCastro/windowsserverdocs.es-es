@@ -1,7 +1,7 @@
 ---
-title: Activación de la máquina virtual automática
+title: Activación automática de máquina virtual
 TOCTitle: Automatic VM Activation
-description: Para activar las máquinas virtuales en Windows Server 2019, Windows Server 2016 y Windows Server 2012 R2
+description: Cómo activar las máquinas virtuales en Windows Server 2012 R2, Windows Server 2016 y Windows Server 2019
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,120 +13,120 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.openlocfilehash: 62873140c8e114ba537dc4fd3ff7c44868c33243
-ms.sourcegitcommit: ca5c80bdb903b282e292488172a7cc92546574c0
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "4375492"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59822096"
 ---
-# Activación de la máquina virtual automática
+# <a name="automatic-virtual-machine-activation"></a>Activación automática de máquina virtual
 
 > Se aplica a: Windows Server 2019, canal semianual de Windows Server, Windows Server 2016, Windows Server 2012 R2
 
-Activación de máquina Virtual automática (AVMA) actúa como un mecanismo de prueba de compra, lo que ayuda a garantizar que los productos de Windows se usan con arreglo a los derechos de uso del producto y los términos de licencia del Software de Microsoft.
+La activación automática de máquina virtual (AVMA) actúa como un mecanismo de prueba de compra y ayuda a garantizar que los productos Windows se utilicen en conformidad con los Derechos de uso del producto y los Términos de licencia del software de Microsoft.
 
-AVMA te permite instalar las máquinas virtuales en un servidor de Windows activado correctamente sin tener que administrar claves de producto para cada máquina virtual individual, incluso en entornos desconectados. AVMA enlaza la activación de la máquina virtual con el servidor de virtualización con licencia y activa la máquina virtual cuando se inicia. AVMA también proporciona informes en tiempo real en uso y los datos históricos sobre el estado de licencia de la máquina virtual. Informes y los datos de seguimiento está disponible en el servidor de virtualización.
+AVMA permite instalar máquinas virtuales en un servidor Windows que esté correctamente activado sin tener que administrar las claves de producto de cada máquina virtual individual, incluso en entornos desconectados. AVMA enlaza la activación de la máquina virtual con el servidor de virtualización con licencia y activa la máquina virtual cuando se inicia. AVMA también ofrece informes en tiempo real sobre el uso y datos históricos sobre el estado de licencia de la máquina virtual. Los datos de informes y seguimiento están disponibles en el servidor de virtualización.
 
-## Aplicaciones prácticas
+## <a name="practical-applications"></a>Aplicaciones prácticas
 
-En los servidores de virtualización que se activan mediante licencias por volumen o OEM licencias, AVMA ofrece varias ventajas.
+En los servidores de virtualización que están activados con licencias por volumen o con licencias OEM, AVMA ofrece varias ventajas.
 
-Los administradores de centros de datos de servidor pueden utilizar AVMA para hacer lo siguiente:
+Los administradores de centros de datos de servidores pueden usar AVMA para hacer lo siguiente:
 
   - Activar máquinas virtuales en ubicaciones remotas
 
-  - Activar las máquinas virtuales con o sin una conexión a internet
+  - Activar máquinas virtuales con o sin conexión a Internet
 
-  - Realizar un seguimiento de uso de la máquina virtual y las licencias desde el servidor de virtualización, sin necesidad de los derechos de acceso en los sistemas virtualizados
+  - Hacer un seguimiento del uso y las licencias de las máquinas virtuales desde el servidor de virtualización, sin requerir derechos de acceso en los sistemas virtualizados
 
-Hay sin claves de producto para administrar y no hay etiquetas en los servidores de leer. La máquina virtual se activa y continúa trabajando incluso cuando se migra a través de una matriz de servidores de virtualización.
+No hay que administrar claves de producto ni leer adhesivos en los servidores. La máquina virtual se activa y sigue funcionando incluso cuando se migra entre una matriz de servidores de virtualización.
 
-Los partners de contrato de licencia de proveedor de servicio (SPLA) y otros proveedores de hospedaje no tienen que compartir las claves de producto con inquilinos o acceder a la máquina virtual del inquilino para activarlo. Activación de la máquina virtual es transparente para el inquilino cuando se usa AVMA. Alojamiento de proveedores de usar los registros del servidor para comprobar el cumplimiento de licencia y realizar un seguimiento de historial de uso de cliente.
+Los partners de Contrato de licencia de proveedor de servicios (SPLA) y otros proveedores de hospedaje no tienen que compartir claves de producto con inquilinos ni tener acceso a la máquina virtual de un inquilino para activarla. La activación de máquinas virtuales es transparente para el inquilino cuando se usa AVMA. Los proveedores de hospedaje pueden usar los registros del servidor para comprobar el cumplimiento de las licencias y hacer un seguimiento del historial de uso de clientes.
 
-## Requisitos del sistema
+## <a name="system-requirements"></a>Requisitos del sistema
 
-AVMA requiere un servidor de virtualización de Microsoft que ejecutan Windows Server 2019 Datacenter, Windows Server 2016 Datacenter o Windows Server 2012 R2. 
+AVMA requiere un servidor de virtualización de Microsoft que ejecutan Windows Server 2012 R2, Windows Server 2016 Datacenter o Windows Server Datacenter de 2019. 
 
-Estos son los invitados que se pueden activar los hosts de versión diferente:
+Estos son los invitados que pueden activar los hosts de versión diferentes:
 
-|Versión de host del servidor|Windows Server 2019|WindowsServer2016|Windows Server2012R2|
+|Versión del servidor host|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
 |-|-|-|-|
 |Windows Server 2019|X|X|X|
-|WindowsServer2016| |X|X|
-|Windows Server2012R2| ||X|
+|Windows Server 2016| |X|X|
+|Windows Server 2012 R2| ||X|
 
-Ten en cuenta que estos activen todas las ediciones (Datacenter, Standard o Essentials).
+Tenga en cuenta que estos activación todas las ediciones (Essentials, Standard o Datacenter).
 
 Esta herramienta no funciona con otras tecnologías de servidor de virtualización.
 
-## Cómo implementar AVMA
+## <a name="how-to-implement-avma"></a>Cómo implementar AVMA
 
-1.  En un servidor de virtualización de Windows Server Datacenter, instalar y configurar el rol de servidor de Hyper-V de Microsoft. Para obtener más información, consulta [Instalar Hyper-V Server](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md).
+1.  En un servidor de virtualización de Windows Server Datacenter, instale y configure el rol de servidor de Hyper-V de Microsoft. Para obtener más información, consulte [instalar Hyper-V Server](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md).
 
-2.  [Crear una máquina virtual](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md) e instalar un sistema operativo de servidor compatible en él.
+2.  [Crear una máquina virtual](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md) e instalar un sistema operativo de servidor admitidos en ella.
 
-3.  Instala la clave AVMA en la máquina virtual. Desde un símbolo del sistema con privilegios elevados, ejecuta el siguiente comando:
+3.  Instale la clave de AVMA en la máquina virtual. Desde un símbolo del sistema con privilegios elevados, ejecute el siguiente comando:
     
     ``` 
     slmgr /ipk <AVMA_key>  
     ```
 
-La máquina virtual se activará automáticamente la licencia en el servidor de virtualización.
+La máquina virtual activará automáticamente la licencia frente al servidor de virtualización.
 
 
 > [!TIP]
-> También puede emplear las claves AVMA en cualquier archivo de instalación Unattend.exe.
+> También puede emplear las claves de AVMA en cualquier archivo de configuración de tipo Unattend.exe.
 
 
-## Claves AVMA
+## <a name="avma-keys"></a>Claves de AVMA
 
-Las siguientes claves AVMA pueden usarse para Windows Server 2019.
+Las siguientes claves AVMA pueden utilizarse para Windows Server 2019.
 
-|Edición|   Clave AVMA|
+|Edición|   Clave de AVMA|
 |-|-|
-|Datacenter|    H3RNG 8C32Q Q8FRX 6TDXV WMBMW|
-|Standard|  TNK62-RXVTB-4P47B - 2D 623-4GF74|
-|Conceptos básicos|    2CTP7 NHT64 BP62M FV6GG HFV28|
+|Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
+|Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
+|Essentials|    2CTP7-NHT64-BP62M-FV6GG-HFV28|
  
-Las siguientes claves AVMA pueden usarse para Windows Server, versión 1809.
+Las siguientes claves AVMA pueden utilizarse para Windows Server, versión 1809.
 
-|Edición|   Clave AVMA|
+|Edición|   Clave de AVMA|
 |-|-|
-|Datacenter|    H3RNG 8C32Q Q8FRX 6TDXV WMBMW|
-|Standard|  TNK62-RXVTB-4P47B - 2D 623-4GF74|
+|Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
+|Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
 
-Las siguientes claves AVMA pueden usarse para Windows Server, versión 1803 y 1709.
+Las siguientes claves AVMA pueden utilizarse para Windows Server, versión 1803 y 1709.
 
-|Edición|Clave AVMA|
+|Edición|Clave de AVMA|
 |-|-|
-|Datacenter|TMJ3Y NTRTM FJYXT T22BY CWG3J|
-|Standard|C3RCX M6NRP 6CXC9 TW2F2 4RHYD|
+|Datacenter|TMJ3Y-NTRTM-FJYXT-T22BY-CWG3J|
+|Standard|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
 
 
-Las siguientes claves AVMA pueden usarse para Windows Server 2016.
+Las siguientes claves AVMA pueden utilizarse para Windows Server 2016.
 
-|Edición|Clave AVMA|
+|Edición|Clave de AVMA|
 |-|-|
-|Datacenter|TMJ3Y NTRTM FJYXT T22BY CWG3J|
-|Standard|C3RCX M6NRP 6CXC9 TW2F2 4RHYD|
-|Conceptos básicos|B4YNW 62DX9 W8V6M 82649 MHBKQ|
+|Datacenter|TMJ3Y-NTRTM-FJYXT-T22BY-CWG3J|
+|Standard|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
+|Essentials|B4YNW-62DX9-W8V6M-82649-MHBKQ|
 
 
-Las siguientes claves AVMA pueden usarse para Windows Server 2012 R2.
+Pueden utilizarse las siguientes claves de AVMA para Windows Server 2012 R2.
 
-|Edición|Clave AVMA|
+|Edición|Clave de AVMA|
 |-|-|
-|Datacenter|Y4TGP NPTV9 HTC2H 7MGQ3 DV4TW|
-|Standard|DBGBW NPF86 BJVTX K3WKJ MTB6V|
-|Conceptos básicos|K2XGM NMBT3 2R6Q8 WF2FK P36R2|
+|Datacenter|Y4TGP-NPTV9-HTC2H-7MGQ3-DV4TW|
+|Standard|DBGBW-NPF86-BJVTX-K3WKJ-MTB6V|
+|Essentials|K2XGM-NMBT3-2R6Q8-WF2FK-P36R2|
 
-## Informes y seguimiento
+## <a name="reporting-and-tracking"></a>Informes y seguimiento
 
-El registro (KVP) en el servidor de virtualización proporciona datos de seguimiento en tiempo real para los sistemas operativos invitados. Dado que la clave del registro se mueve con la máquina virtual, puedes obtener, así como información de licencia. De manera predeterminada la KVP devuelve información sobre la máquina virtual, incluyendo lo siguiente:
+El Registro (KVP) en el servidor de virtualización proporciona datos de seguimiento en tiempo real para los sistemas operativos invitados. Dado que la clave del Registro se mueve con la máquina virtual, puede obtener también información de la licencia. De forma predeterminada, KVP devuelve información acerca de la máquina virtual, incluyendo lo siguiente:
 
   - Nombre de dominio completo
 
-  - Sistema operativo y service packs instalados
+  - Sistema operativo y paquetes de servicio instalados
 
   - Arquitectura de procesador
 
@@ -134,26 +134,26 @@ El registro (KVP) en el servidor de virtualización proporciona datos de seguimi
 
   - Direcciones RDP
 
-Para obtener más información sobre cómo obtener esta información, consulta [Script de Hyper-V: mirando a KVP GuestIntrinsicExchangeItems](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx).
+Para obtener más información acerca de cómo obtener esta información, consulte [Hyper-V Script: Observación de GuestIntrinsicExchangeItems KVP en](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx).
 
 
 > [!NOTE]
-> No se protegen los datos KVP. Se puede modificar y no se supervisa los cambios.
+> Los datos de KVP no están protegidos. Pueden modificarse y no se supervisan ante posibles cambios.
 
 
 
 > [!IMPORTANT]
-> Datos KVP deben quitarse si la clave AVMA se reemplaza con otra clave de producto (clave licencia por volumen, OEM o comercial).
+> Los datos de KVP deben quitarse si la clave de AVMA se sustituye por otra clave de producto (clave OEM, de licencia por volumen o comercial).
 
 
-Datos históricos acerca de las solicitudes AVMA están disponibles en un archivo de registro en el servidor de virtualización (EventID 12310).
+Los datos históricos acerca de las solicitudes de AVMA están disponibles en un archivo de registro en el servidor de virtualización (id. de evento 12310).
 
-Dado que el proceso de activación AVMA es transparente, no se muestran los mensajes de error. Sin embargo, los siguientes eventos se capturan en un archivo de registro en las máquinas virtuales (EventID 12309).
+Dado que el proceso de activación de AVMA es transparente, los mensajes de error no se muestran. No obstante, los eventos siguientes se capturan en un archivo de registro en las máquinas virtuales (id. de evento 12309).
 
-|Notificación|Descripción|
+|Notification|Descripción|
 |-|-|
-|AVMA éxito|La máquina virtual se activó.|
-|Host no válido|El servidor de virtualización es que no responden. Esto puede suceder cuando el servidor no se está ejecutando una versión compatible de Windows.|
-|Datos no válidos|Esto suele ser debido a un error en la comunicación entre el servidor de virtualización y la máquina virtual, a menudo provocados por error de coincidencia de datos, cifrado o daños.|
-|Activación denegada|El servidor de virtualización no pudo activar el sistema operativo invitado porque no coincide con el identificador de AVMA.|
+|Éxito de AVMA|El equipo virtual se ha activado.|
+|Host no válido|El servidor de virtualización deja de responder. Esto puede suceder cuando el servidor no ejecuta una versión compatible de Windows.|
+|Datos no válidos|Esto normalmente es el resultado de un error de comunicación entre el servidor de virtualización y la máquina virtual, a menudo provocado por datos no coincidentes, dañados o cifrados.|
+|Activación denegada|El servidor de virtualización no ha podido activar el sistema operativo invitado porque el identificador de AVMA no coincide.|
 

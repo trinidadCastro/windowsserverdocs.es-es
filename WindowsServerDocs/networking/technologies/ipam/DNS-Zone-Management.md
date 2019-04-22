@@ -1,6 +1,6 @@
 ---
-title: Administración de zonas de DNS
-description: Este tema es parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
+title: Administración de zonas DNS
+description: Este tema forma parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,31 +13,32 @@ ms.topic: article
 ms.assetid: de3dc14b-164a-49f1-8a57-b9e788046c23
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4185dd07c56ae2f0949bcf076b7ca658a439acf4
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 188de3884a31e1da977257fde6c5f8be905891f2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59824896"
 ---
-# <a name="dns-zone-management"></a>Administración de zonas de DNS
+# <a name="dns-zone-management"></a>Administración de zonas DNS
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Este tema proporciona información sobre cómo administrar las zonas DNS mediante la consola IPAM cliente.  
+Este tema proporciona información sobre cómo administrar zonas DNS mediante la consola de cliente IPAM.  
   
 > [!NOTE]  
-> Además de este tema, los siguientes temas de administración de DNS IPAM zona están disponibles en esta sección.  
+> Además de este tema, los siguientes temas de administración de zona DNS IPAM están disponibles en esta sección.  
 >   
-> -   [Crea una zona de DNS](../../technologies/ipam/Create-a-DNS-Zone.md)  
-> -   [Editar una zona de DNS](../../technologies/ipam/Edit-a-DNS-Zone.md)  
-> -   [Ver registros de recursos DNS para una zona de DNS](../../technologies/ipam/View-DNS-Resource-Records-for-a-DNS-Zone.md)  
-> -   [Visualización de las zonas de DNS](../../technologies/ipam/View-DNS-Zones.md)  
+> -   [Crear una zona DNS](../../technologies/ipam/Create-a-DNS-Zone.md)  
+> -   [Editar una zona DNS](../../technologies/ipam/Edit-a-DNS-Zone.md)  
+> -   [Visualización de registros de recursos DNS para una zona DNS](../../technologies/ipam/View-DNS-Resource-Records-for-a-DNS-Zone.md)  
+> -   [Visualización de zonas DNS](../../technologies/ipam/View-DNS-Zones.md)  
   
-Cuando implementas IPAM en Windows Server 2016, puedes usar IPAM para administrar las zonas DNS.  
+Al implementar IPAM en Windows Server 2016, puede usar IPAM para administrar zonas DNS.  
   
-En la consola IPAM, puedes ver los registros de recursos DNS para una zona DNS específica y filtrar los registros en función de tipo, dirección IP, datos de registro de recursos y otras opciones de filtrado. Además, puedes editar los registros de recursos DNS para zonas específicas  
+En la consola IPAM, puede ver los registros de recursos DNS para una zona DNS específica y filtrar los registros en función de tipo, dirección IP, los datos de registro de recursos y otras opciones de filtrado. Además, puede editar los registros de recursos DNS para zonas específicas  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 [Administrar IPAM](Manage-IPAM.md)  
   
 

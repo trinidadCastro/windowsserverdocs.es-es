@@ -1,7 +1,7 @@
 ---
-title: Administrar cargas de trabajo de inquilino
-description: Este tema es parte de la guía definido redes Software sobre cómo administrar cargas de trabajo de inquilino y redes virtuales en Windows Server 2016.
-manager: brianlic
+title: Administración de cargas de trabajo de inquilinos
+description: En este tema forma parte de la Guía de redes definidas por Software acerca de cómo administrar las cargas de trabajo de inquilinos y redes virtuales en Windows Server 2016.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,23 +12,25 @@ ms.topic: article
 ms.assetid: 16359b15-a0e4-4f42-9d70-6ef0d851d219
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 95c4112c515ee3f2f6ec49129c11a57c2d24e45e
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/26/2018
+ms.openlocfilehash: 8db9e15a349dfe2b378d2fcbde6756209b79d664
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59823816"
 ---
-# <a name="manage-tenant-workloads"></a>Administrar cargas de trabajo de inquilino
+# <a name="manage-tenant-workloads"></a>Administración de cargas de trabajo de inquilinos
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Este tema contiene vínculos a documentación que te permite administrar las cargas de trabajo de inquilino agregando máquinas virtuales (VM) de inquilinos, usando red dispositivos virtuales, equilibrio de carga de software configuración y mucho más.
+Este tema contiene vínculos a la documentación que le permite administrar las cargas de trabajo de inquilino mediante la adición de máquinas virtuales (VM) de inquilinos, de uso de red aplicaciones virtuales, equilibrio de carga la configuración de software y mucho más.
 
-Esta sección incluye los siguientes temas.
+Esta sección incluye los temas siguientes.
 
-- [Crear una máquina virtual y conectarse a un inquilino Virtual VLAN o red](Create-a-Tenant-VM.md)
-- [Configurar la calidad de servicio (QoS) para un adaptador de red de la máquina virtual de inquilino](Configure-QoS-for-Tenant-VM-Network-Adapter.md)
+- [Crear una máquina virtual y conectarse a un inquilino de Virtual Network o VLAN](Create-a-Tenant-VM.md)
+- [Configuración de calidad de servicio (QoS) para un adaptador de red de máquina virtual de inquilino](Configure-QoS-for-Tenant-VM-Network-Adapter.md)
 - [Configurar listas de Control de acceso (ACL) de Datacenter Firewall](Configure-Datacenter-Firewall-ACLs.md)
-- [Configurar el equilibrado de carga de Software de equilibrio de carga y de red (NAT) de traducción de direcciones](Configure-SLB-and-NAT.md)
-- [Usar dispositivos de red Virtual en una red Virtual](Use-Network-Virtual-Appliances-on-a-VN.md)
-- [Invitado clústeres en una red Virtual](guest-clustering.md)
+- [Configurar el equilibrador de carga de Software para equilibrio de carga y traducción de direcciones (NAT) de red](Configure-SLB-and-NAT.md)
+- [Usar aplicaciones virtuales de red en una red Virtual](Use-Network-Virtual-Appliances-on-a-VN.md)
+- [Clústeres invitados en una red Virtual](guest-clustering.md)
