@@ -1,0 +1,1 @@
+**Quite los valores de configuración.** Quitar los GPO y la configuración de directiva de grupo de acceso remoto acceso remoto crea abriendo la consola de administración de acceso remoto y seleccionando quitar opciones de configuración, como se muestra en la imagen siguiente. Si quita el grupo antes de quitar la configuración, es probable que generarán errores.

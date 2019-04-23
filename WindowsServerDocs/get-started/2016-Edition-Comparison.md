@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "1534016"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882056"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Comparación de las ediciones Standard y Datacenter de Windows Server 2016
 
@@ -29,13 +29,13 @@ ms.locfileid: "1534016"
 |Bloqueos y límites|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  
 |-------------------|----------|---------------------------|  
 |Número máximo de usuarios|Según licencias CAL|Según licencias CAL|
-|Número máximo de conexiones SMB|16777216|16777216|
+|Número máximo de conexiones SMB|16 777 216|16 777 216|
 |Número máximo de conexiones RRAS|sin límite|sin límite|
-|Número máximo de conexiones IAS|2147483647|2147483647|
+|Número máximo de conexiones IAS|2 147 483 647|2 147 483 647|
 |Número máximo de conexiones RDS|65535|65535|
 |Número máximo de sockets de 64 bits|64|64|
 |Número máximo de núcleos|sin límite|sin límite|
-|RAM máxima|24TB|24TB|
+|RAM máxima|24 TB|24 TB|
 |Puede usarse como invitado de virtualización|Sí; 2 máquinas virtuales, más un host de Hyper-V por licencia|Sí; máquinas virtuales ilimitadas, más un host de Hyper-V por licencia|
 |El servidor puede unirse a un dominio|sí|sí|
 |Protección de red y firewall de Edge|no|no|
@@ -50,7 +50,7 @@ ms.locfileid: "1534016"
 |Servicios de federación de Active Directory (AD FS)| |Sí|Sí|
 |AD Lightweight Directory Services| |Sí|Sí|
 |AD Rights Management Services| |Sí|Sí|
-|Atestación de estado de dispositivo| |Sí|Sí|
+|Certificación de estado del dispositivo| |Sí|Sí|
 |Servidor DHCP| |Sí|Sí|
 |Servidor DNS| |Sí|Sí|
 |Servidor de fax| |Sí|Sí|
@@ -77,7 +77,7 @@ ms.locfileid: "1534016"
 |Volume Activation Services| |Sí|Sí|
 |Servicios web (IIS)| |Sí|Sí|
 |Servicios de implementación de Windows| |Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
-|Experiencia con WindowsServer Essentials| |Sí|Sí|
+|Experiencia con Windows Server Essentials| |Sí|Sí|
 |Windows Server Update Services| |Sí|Sí|
 
 ## <a name="features"></a>Características
@@ -119,7 +119,7 @@ ms.locfileid: "1534016"
 |Proxy RPC sobre HTTP|Sí|Sí|
 |Recopilación de eventos de configuración y arranque|Sí|Sí|
 |Servicios simples de TCP/IP|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
-|Compatibilidad con el protocolo para compartir archivos SMB 1.0/CIFS|Instalada|Instalada|
+|Compatibilidad con el protocolo para compartir archivos SMB 1.0/CIFS|Instaladas|Instaladas|
 |Límite de ancho de banda SMB|Sí|Sí|
 |Servidor SMTP|Sí|Sí|
 |Servicio SNMP|Sí|Sí|
@@ -133,7 +133,7 @@ ms.locfileid: "1534016"
 |Características de Windows Defender|Instaladas|Instaladas|
 |Windows Identity Foundation 3.5|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Windows Internal Database|Sí|Sí|
-|Windows PowerShell|Instalado|Instalado|
+|Windows PowerShell|Instaladas|Instaladas|
 |Servicio de activación de procesos de Windows|Sí|Sí|
 |Servicio de Windows Search|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Copias de seguridad de Windows Server|Sí|Sí|
@@ -143,7 +143,7 @@ ms.locfileid: "1534016"
 |Extensión IIS de WinRM|Sí|Sí|
 |Servidor WINS|Sí|Sí|
 |Servicio WLAN|Sí|Sí|
-|Compatibilidad con WoW64|Instalada|Instalada|
+|Compatibilidad con WoW64|Instaladas|Instaladas|
 |Visor de XPS|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 
 |Características que por lo general están disponibles|Windows Server 2016 Standard|Windows Server 2016 Datacenter|  

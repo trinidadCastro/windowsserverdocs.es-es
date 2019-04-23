@@ -1,6 +1,6 @@
 ---
-title: "Crear una propiedad de clasificación"
-description: "En este artículo se describen las propiedades de clasificación que se usan para asignar valores a los archivos de un volumen o carpeta especificados."
+title: Crear una propiedad de clasificación
+description: En este artículo se describen las propiedades de clasificación que se usan para asignar valores a los archivos de un volumen o carpeta especificados.
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: aa1f1a2ab4422f4bb36a737e47894b22b60160e1
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59880656"
 ---
 # <a name="create-a-classification-property"></a>Crear una propiedad de clasificación
 
@@ -20,7 +21,7 @@ ms.lasthandoff: 10/17/2017
 
 Las propiedades de clasificación se usan para asignar valores a los archivos de un volumen o carpeta especificados. Existen muchos tipos de propiedad entre los que puedes elegir, según tus necesidades. En la tabla siguiente se definen los tipos de propiedad disponibles.
 
-|Propiedad | Descripción |
+|Property | Descripción |
 | --- | --- |
 | Sí/No | Una propiedad booleana que puede ser **Sí** o **No**. Al combinar varios valores durante la clasificación o desde el contenido del archivo, un valor **No** reemplazará un valor **Sí**. |
 | Fecha-hora | Una propiedad sencilla de fecha y hora. Al combinar varios valores durante la clasificación o desde el contenido del archivo, los valores en conflicto impedirán una nueva clasificación. |
@@ -46,9 +47,9 @@ El siguiente procedimiento te guiará por el proceso de crear una propiedad de c
 
 5.  En el menú desplegable **Tipo de propiedad**, selecciona un tipo de propiedad de la lista.
 
-6.  Haz clic en **Aceptar**.
+6.  Haga clic en **Aceptar**.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Crear una regla de clasificación automática](create-automatic-classification-rule.md)
 -   [Administración de clasificaciones](classification-management.md)

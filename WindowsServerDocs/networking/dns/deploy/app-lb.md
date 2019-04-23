@@ -1,6 +1,6 @@
 ---
-title: Usar la directiva de DNS para equilibrio de carga de aplicación
-description: En este tema es parte de la DNS directiva escenario guía para Windows Server 2016
+title: Uso de la directiva de DNS para el equilibrio de carga de aplicación
+description: En este tema forma parte de las DNS directiva escenario guía para Windows Server 2016
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-dns
@@ -8,67 +8,68 @@ ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: d156c258b971c45bf1c4c20739440bd5cc9e239f
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 1bb3e6695a7ec8fc7d950873403df023b4def3d8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59881616"
 ---
-# <a name="use-dns-policy-for-application-load-balancing"></a>Usar la directiva de DNS para equilibrio de carga de aplicación
+# <a name="use-dns-policy-for-application-load-balancing"></a>Uso de la directiva de DNS para el equilibrio de carga de aplicación
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para aprender a configurar la directiva DNS para realizar el equilibrio de carga de la aplicación.
+Puede utilizar este tema para aprender a configurar la directiva DNS para realizar el equilibrio de carga de aplicaciones.
 
-Las versiones anteriores de Windows Server DNS proporcionan solo mediante el uso de las respuestas por turnos; de equilibrio de carga pero con DNS en Windows Server 2016, puedes configurar la directiva DNS equilibrio de carga en la aplicación.
+Las versiones anteriores de Windows Server DNS solo proporcionan equilibrio de carga mediante el uso de las respuestas de operación por turnos; pero con DNS en Windows Server 2016, puede configurar la directiva DNS para el equilibrio de carga de aplicaciones.
 
-Cuando se implementaron varias instancias de una aplicación, puedes usar la directiva de DNS para equilibrar la carga de tráfico entre las instancias de la aplicación diferente, asignar lo dinámicamente la carga de tráfico de la aplicación.
+Cuando implemente varias instancias de una aplicación, puede usar la directiva de DNS para equilibrar la carga de tráfico entre las instancias de aplicación diferente, asignar dinámicamente, por tanto, la carga de tráfico para la aplicación.
 
-## <a name="example-of-application-load-balancing"></a>Ejemplo de equilibrio de carga de la aplicación
+## <a name="example-of-application-load-balancing"></a>Ejemplo de equilibrio de carga de aplicación
 
-Siguiente es un ejemplo de cómo puedes usar la directiva DNS equilibrio de carga en la aplicación.
+La siguiente es un ejemplo de cómo puede usar Directiva de DNS para el equilibrio de carga de aplicación.
 
-Este ejemplo usa una empresa ficticia - servicios de regalo de Contoso - que proporciona servicios gifing en línea, y que tiene un sitio Web denominado **contosogiftservices.com**.
+Este ejemplo usa una compañía ficticia - servicios de regalo de Contoso - que proporciona servicios en línea gifing y que tiene un sitio Web denominado **contosogiftservices.com**.
 
-El sitio Web de contosogiftservices.com está hospedado en varios centros de datos que cada uno tiene diferentes direcciones IP.
+El sitio Web de contosogiftservices.com se hospeda en varios centros de datos que cada uno tiene distintas direcciones IP.
 
-En Estados Unidos, que es el mercado principal de servicios de regalo de Contoso, el sitio Web está hospedado en tres centros de datos: Chicago, IL, Dallas, transmisión y Seattle, Washington.
+En Norteamérica, que es el mercado principal de servicios de regalo de Contoso, el sitio Web se hospeda en tres centros de datos: Chicago, IL, Dallas, TX and Seattle, WA.
 
-El servidor Web de Seattle tiene la mejor configuración de hardware y puede controlar el doble de carga como los otros dos sitios. Servicios de regalos de Contoso quiere tráfico de la aplicación dirigido de la siguiente manera.
+El servidor Web de Seattle tiene la mejor configuración de hardware y puede controlar el doble de carga como los otros dos sitios. Servicios de regalos de Contoso quiere que el tráfico de aplicación dirigido de la siguiente manera.
 
-- Dado que el servidor Web de Seattle incluye más recursos, la mitad de los clientes de la aplicación se dirige a este servidor
-- Un cuarto de clientes de la aplicación se dirige al centro Dallas, transmisión de datos
-- Un cuarto de clientes de la aplicación se dirige al centro de datos de Chicago, IL,
+- Dado que el servidor Web de Seattle incluye más recursos, la mitad de los clientes de la aplicación se dirigen a este servidor
+- Un cuarto de los clientes de la aplicación se dirigen al centro de datos de Dallas, Texas
+- Un cuarto de los clientes de la aplicación se dirigen al centro de datos de Chicago, IL,
 
-La ilustración siguiente muestra este escenario.
+La siguiente ilustración muestra este escenario.
 
-![DNS aplicación equilibrio de carga con directiva DNS](../../media/Dns-App-Lb/dns-app-lb.jpg)
+![DNS aplicación equilibrio de carga con directiva de DNS](../../media/Dns-App-Lb/dns-app-lb.jpg)
 
 
-### <a name="how-application-load-balancing-works"></a>Funciona Equilibrio de carga de la aplicación
+### <a name="how-application-load-balancing-works"></a>Cómo la aplicación funciona Equilibrio de carga
 
-Después de haber configurado el servidor DNS con la directiva DNS para la aplicación carga usando equilibrado como ejemplo este escenario, el servidor DNS responde 50% del tiempo con la dirección del servidor Web de Seattle, 25% del tiempo con la dirección del servidor Web Dallas y 25% del tiempo con la dirección del servidor Web de Chicago.
+Después de haber configurado el servidor DNS con la directiva DNS para su aplicación cargue equilibrio con este escenario de ejemplo, el servidor DNS responde el 50% del tiempo con la dirección del servidor Web de Seattle, 25% del tiempo con la dirección del servidor Web de Dallas y el 25% del tiempo con la dirección del servidor Web de Chicago.
 
-Por lo tanto, para cada cuatro consultas que recibe el servidor DNS, responde con dos respuestas probables de Seattle y uno para Dallas y Chicago.
+Por lo tanto para cada cuatro consultas que recibe el servidor DNS, responde con las dos respuestas para Seattle y uno para cada uno de Dallas y Chicago.
 
-Uno de los posibles problemas con equilibrio de carga con la directiva DNS es el almacenamiento en caché de registros DNS, el cliente DNS y la resolución o LDNS, que puede interferir con el equilibrio de carga porque el cliente o la resolución de no enviar una consulta al servidor DNS.
+Un posible problema con equilibrio de carga con la directiva de DNS es el almacenamiento en caché de registros DNS por el cliente DNS y la resolución/LDNS, que puede interferir con equilibrio de carga porque el cliente o la resolución no enviar una consulta al servidor DNS.
 
-Puedes mitigar el efecto de este comportamiento mediante el uso de un valor bajo de Live para Time\ to\ \(TTL\) para los registros DNS que deberían estar equilibrada de carga.
+Puede mitigar el efecto de este comportamiento mediante el uso de un bajo tiempo\-a\-Live \(TTL\) el valor de los registros DNS que debe tener equilibrio de carga.
 
-### <a name="how-to-configure-application-load-balancing"></a>Cómo configurar el equilibrio de carga de la aplicación
+### <a name="how-to-configure-application-load-balancing"></a>Cómo configurar el equilibrio de carga de aplicación
 
-Las siguientes secciones muestran cómo configurar la directiva DNS equilibrio de carga en la aplicación.
+Las secciones siguientes muestran cómo configurar la directiva de DNS para el equilibrio de carga de aplicación.
 
-#### <a name="create-the-zone-scopes"></a>Crear los ámbitos zona
+#### <a name="create-the-zone-scopes"></a>Creación de los ámbitos de zona
 
-Primero debes crear los ámbitos de contosogiftservices.com de la zona de los centros de datos donde se hospedan.
+En primer lugar debe crear los ámbitos de la zona de contosogiftservices.com para los centros de datos donde estén hospedadas.
 
-Un ámbito de la zona es una instancia única de la zona. Una zona DNS puede tener varios ámbitos zona, con cada ámbito de la zona que contiene su propio conjunto de registros de DNS. El mismo registro puede encontrarse en varios ámbitos, con diferentes direcciones IP o las mismas direcciones IP.
+Un ámbito de la zona es una instancia única de la zona. Una zona DNS puede tener varios ámbitos de zona, con cada ámbito de la zona que contiene su propio conjunto de registros DNS. El mismo registro puede estar presente en varios ámbitos, con direcciones IP diferentes o las mismas direcciones IP.
 
 >[!NOTE]
->De manera predeterminada, existe un ámbito de la zona en las zonas DNS. El ámbito de esta zona tiene el mismo nombre que la zona y las operaciones de DNS heredadas funcionan en este ámbito.
+>De forma predeterminada, un ámbito de la zona existe en las zonas DNS. Este ámbito de la zona tiene el mismo nombre que la zona y las operaciones de DNS heredadas funcionan en este ámbito.
 
-Puedes usar los siguientes comandos de Windows PowerShell para crear ámbitos zona.
+Puede usar los siguientes comandos de Windows PowerShell para crear ámbitos de la zona.
     
     Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "SeattleZoneScope"
     
@@ -76,19 +77,19 @@ Puedes usar los siguientes comandos de Windows PowerShell para crear ámbitos zo
     
     Add-DnsServerZoneScope -ZoneName "contosogiftservices.com" -Name "ChicagoZoneScope"
 
-Para obtener más información, consulta [agregar DnsServerZoneScope](https://technet.microsoft.com/library/mt126267.aspx)
+Para obtener más información, consulte [agregar DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-####<a name="bkmk_records"></a>Agregar registros a los ámbitos zona
+####<a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
 
-Ahora debes agregar los registros que representa el host del servidor web en los ámbitos de la zona.
+Ahora debe agregar los registros que representa el host del servidor web en los ámbitos de la zona.
 
-En **SeattleZoneScope**, puedes agregar el registro www.contosogiftservices.com con la dirección IP 192.0.0.1, que se encuentra en el centro de datos de Seattle.
+En **SeattleZoneScope**, puede agregar el registro www.contosogiftservices.com con dirección IP 192.0.0.1, que se encuentra en el centro de datos de Seattle.
 
-En **ChicagoZoneScope**, puedes agregar la misma \(www.contosogiftservices.com\) registro con la dirección IP 182.0.0.1 en el centro de datos de Chicago.
+En **ChicagoZoneScope**, puede agregar el mismo registro \(www.contosogiftservices.com\) con dirección IP 182.0.0.1 en el centro de datos de Chicago.
 
-Del mismo modo en **DallasZoneScope**, puedes agregar un \(www.contosogiftservices.com\) registro con la dirección IP 162.0.0.1 en el centro de datos de Chicago.
+De forma similar en **DallasZoneScope**, puede agregar un registro \(www.contosogiftservices.com\) con dirección IP 162.0.0.1 en el centro de datos de Chicago.
 
-Puedes usar los siguientes comandos de Windows PowerShell para agregar registros a los ámbitos de la zona.
+Puede usar los siguientes comandos de Windows PowerShell para agregar registros a los ámbitos de la zona.
     
     Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "192.0.0.1" -ZoneScope "SeattleZoneScope
     
@@ -97,22 +98,22 @@ Puedes usar los siguientes comandos de Windows PowerShell para agregar registros
     Add-DnsServerResourceRecord -ZoneName "contosogiftservices.com" -A -Name "www" -IPv4Address "162.0.0.1" -ZoneScope "DallasZoneScope"
     
 
-Para obtener más información, consulta [agregar DnsServerResourceRecord](https://technet.microsoft.com/library/jj649925.aspx).
+Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-####<a name="bkmk_policies"></a>Crear las directivas DNS
+####<a name="bkmk_policies"></a>Cree las directivas DNS
 
-Una vez que hayas creado las particiones (ámbitos zona) y se han agregado registros, debes crear directivas DNS que distribuyen las consultas entrantes a través de estos ámbitos para que se ha respondido a 50% de consultas para contosogiftservices.com con la dirección IP del servidor Web del centro de datos de Seattle y el resto se distribuya de igual manera entre los centros de datos de Chicago y Dallas.
+Una vez que ha creado las particiones (ámbitos de zona) y se han agregado registros, debe crear las directivas DNS que distribución las consultas entrantes entre estos ámbitos para que el 50% de las consultas para contosogiftservices.com se responde con la dirección IP para la Web servidor en el centro de datos de Seattle y el resto se distribuyen equitativamente entre los centros de datos de Chicago y Dallas.
 
-Puedes usar los siguientes comandos de Windows PowerShell para crear una directiva DNS que equilibra el tráfico de la aplicación a través de estos tres centros de datos.
+Puede usar los siguientes comandos de Windows PowerShell para crear una directiva DNS que equilibra el tráfico de la aplicación en estas tres centros de datos.
 
 >[!NOTE]
->En el comando de ejemplo a continuación, la expresión: zonaámbito "SeattleZoneScope, 2; ChicagoZoneScope, 1; DallasZoneScope, 1" se configura el servidor DNS con una matriz que incluye la combinación de parámetro \ < ZoneScope\, > \ < weight\ >.
+>En el comando de ejemplo siguiente, la expresión – zonaámbito "SeattleZoneScope, 2; ChicagoZoneScope, 1; DallasZoneScope, 1" se configura el servidor DNS con una matriz que incluye la combinación de parámetros \<zonaámbito\>,\<peso\>.
     
-    Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW – -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
+    Add-DnsServerQueryResolutionPolicy -Name "AmericaPolicy" -Action ALLOW -ZoneScope "SeattleZoneScope,2;ChicagoZoneScope,1;DallasZoneScope,1" -ZoneName "contosogiftservices.com"
     
 
-Para obtener más información, consulta [agregar DnsServerQueryResolutionPolicy](https://technet.microsoft.com/library/mt126273.aspx).  
+Para obtener más información, consulte [agregar DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps).  
 
-Ahora se ha creado correctamente una directiva DNS que proporciona equilibrio entre servidores Web en los centros de datos distintos tres carga de la aplicación.
+Ya ha creado correctamente una directiva DNS que se proporciona a través de servidores Web en tres centros de datos diferentes de equilibrio de carga de aplicación.
 
-Puede crear miles de directivas DNS según el tráfico de requisitos de administración y todas las nuevas directivas se aplican de forma dinámica - sin reiniciar el servidor DNS, en las consultas entrantes.
+Puede crear miles de las directivas DNS según el tráfico de los requisitos de administración y todas las nuevas directivas se aplican dinámicamente - sin necesidad de reiniciar el servidor DNS, en las consultas entrantes.

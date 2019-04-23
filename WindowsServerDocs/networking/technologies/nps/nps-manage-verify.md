@@ -1,6 +1,6 @@
 ---
-title: Comprueba la configuración después de cambios en el servidor NPS
-description: Puedes usar este tema para comprobar la configuración del servidor de directivas de red de Windows Server 2016 después de cambiar una dirección IP o el nombre en el servidor.
+title: Comprobar la configuración después de realizar cambios NPS
+description: Puede utilizar este tema para comprobar la configuración de servidor de directivas de red de Windows Server 2016 después de cambiar una dirección IP o nombre para el servidor.
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,82 +8,83 @@ ms.topic: article
 ms.assetid: fc77450e-2af1-47ba-bb23-1fd36d9efdbf
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f4d7e003fb037d18c5e5f2036a419383885eaf9e
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 144e414e32d413e4863b90ada671753155bc96d7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59880676"
 ---
-# <a name="verify-configuration-after-nps-server-changes"></a>Comprueba la configuración después de cambios en el servidor NPS
+# <a name="verify-configuration-after-nps-changes"></a>Comprobar la configuración después de realizar cambios NPS
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para comprobar la configuración del servidor NPS después de cambiar una dirección IP o el nombre en el servidor.
+Puede utilizar este tema para comprobar la configuración de NPS después de cambiar una dirección IP o nombre para el servidor.
 
-## <a name="verify-configuration-after-an-nps-server-ip-address-change"></a>Comprueba la configuración después de un cambio de dirección IP de servidor NPS
+## <a name="verify-configuration-after-an-nps-ip-address-change"></a>Compruebe la configuración después de un cambio de dirección IP de NPS
 
-Pueden darse circunstancias donde necesites cambiar la dirección IP de un servidor NPS o el servidor proxy, como cuando mueves el servidor a una subred IP diferente. 
+Puede haber circunstancias donde tiene que cambiar la dirección IP de un proxy, como cuando mueve el servidor a una subred IP diferente o NPS. 
 
-Si cambias un servidor NPS o la dirección IP del proxy, es necesario volver a configurar las partes de la implementación de NPS. 
+Si cambia una dirección IP de proxy o NPS, es necesario volver a configurar partes de la implementación de NPS. 
 
-Usa las siguientes directrices generales para ayudarle a comprobar que cambia la dirección IP no interrumpe la autenticación de acceso de red, autorización o cuentas de la red para los servidores RADIUS NPS y servidores proxy RADIUS.
+Utilice las siguientes directrices generales para ayudarle a comprobar que un cambio de dirección IP no interrumpe la autenticación de acceso de red, autorización o cuentas en la red para servidores NPS RADIUS y servidores proxy RADIUS.
 
-Debe ser miembro del **administradores**, o equivalente, para realizar estos procedimientos.
+Debe ser miembro del **administradores**, o equivalente, al realizar estos procedimientos.
 
-### <a name="to-verify-configuration-after-an-nps-server-ip-address-change"></a>Para comprobar la configuración de NPS después de la dirección IP del servidor dirección cambiar
+### <a name="to-verify-configuration-after-an-nps-ip-address-change"></a>Para comprobar la configuración después de un cambio de dirección IP NPS
 
-1. Volver a configurar a todos los clientes RADIUS, como los puntos de acceso inalámbrico y servidores VPN, con la nueva dirección IP del servidor NPS.
+1. Volver a configurar a todos los clientes RADIUS, como los puntos de acceso inalámbrico y los servidores VPN, con la nueva dirección IP de NPS.
 
-2. Si el servidor NPS es un miembro de un grupo de servidores RADIUS remotos, volver a configurar al proxy NPS con la nueva dirección IP del servidor NPS.
+2. Si el NPS es miembro de un grupo de servidores RADIUS remotos, vuelva a configurar al proxy NPS con la nueva dirección IP de NPS.
 
-3. Si has configurado el servidor NPS para usar el registro de SQL Server, compruebe que la conectividad entre el equipo que ejecuta SQL Server y el servidor NPS sigue funcionando correctamente.
+3. Si ha configurado el NPS para usar el registro de SQL Server, compruebe que la conectividad entre el equipo que ejecuta SQL Server y el NPS sigue funcionando correctamente.
 
-4. Si ha implementado IPsec para proteger el tráfico entre el servidor NPS y un proxy NPS u otros servidores o dispositivos, volver a configurar la directiva IPsec o la regla de seguridad de conexión en Firewall de Windows con seguridad avanzada para usar la nueva dirección IP del servidor NPS.
+4. Si ha implementado IPsec para proteger el tráfico RADIUS entre el NPS y un proxy NPS u otros servidores o dispositivos, volver a configurar la directiva de IPsec o la regla de seguridad de conexión en el Firewall de Windows con seguridad avanzada para usar la nueva dirección IP de NPS.
 
-5. Si el servidor NPS es múltiple y que has configurado el servidor para enlazar a un adaptador de red específica, reconfigurar NPS puerto con la nueva dirección IP.
+5. Si el NPS es un host múltiple y ha configurado el servidor para enlazar a un adaptador de red específico, cambiar la configuración de puerto NPS con la nueva dirección IP.
 
 ### <a name="to-verify-configuration-after-an-nps-proxy-ip-address-change"></a>Para comprobar la configuración después de NPS de cambio de direcciones IP de proxy
 
-1. Volver a configurar a todos los clientes RADIUS, como los puntos de acceso inalámbrico y servidores VPN, con la nueva dirección IP del servidor proxy NPS.
+1. Volver a configurar a todos los clientes RADIUS, como los puntos de acceso inalámbrico y los servidores VPN, con la nueva dirección IP del proxy NPS.
 
-2. Si el proxy NPS es múltiple y has configurado el proxy para enlazar a un adaptador de red específica, reconfigurar NPS puerto con la nueva dirección IP.
+2. Si el proxy NPS es un host múltiple y ha configurado el servidor proxy para enlazar a un adaptador de red específico, cambiar la configuración de puerto NPS con la nueva dirección IP.
 
-3. Volver a configurar a todos los miembros de todos los grupos de servidores RADIUS remotos con la dirección IP del servidor proxy. Para realizar esta tarea, en cada servidor NPS que tiene el proxy NPS configurado como un cliente RADIUS:
+3. Volver a configurar a todos los miembros de todos los grupos de servidores RADIUS remotos con la dirección IP del servidor proxy. Para realizar esta tarea, en cada NPS con el proxy NPS configurado como cliente RADIUS:
 
-    Un archivo. Haz doble clic en **NPS (Local)**, haz doble clic en **clientes y servidores RADIUS**, haz clic en **clientes RADIUS**y, a continuación, en el panel de detalles, haz doble clic en el cliente RADIUS que desea cambiar.
+    a. Haga doble clic en **NPS (Local)**, haga doble clic en **clientes y servidores RADIUS**, haga clic en **clientes RADIUS**y, a continuación, en el panel de detalles, haga doble clic en el cliente RADIUS que ¿desea cambiar.
 
-    b. En el cliente RADIUS **propiedades**, en **dirección \(IP or DNS\)**, escribe la nueva dirección IP del servidor proxy NPS.
+    b. En el cliente RADIUS **propiedades**, en **dirección \(IP o DNS\)**, escriba la nueva dirección IP del proxy NPS.
 
-4. Si has configurado el proxy NPS para usar el registro de SQL Server, compruebe que la conectividad entre el equipo que ejecuta SQL Server y el proxy NPS sigue funcionando correctamente.
+4. Si ha configurado el proxy NPS para usar el registro de SQL Server, compruebe que la conectividad entre el equipo que ejecuta SQL Server y el proxy NPS sigue funcionando correctamente.
 
-## <a name="verify-configuration-after-renaming-an-nps-server"></a>Comprueba la configuración después de cambiar el nombre de un servidor NPS
+## <a name="verify-configuration-after-renaming-an-nps"></a>Compruebe la configuración después de cambiar el nombre de NPS
 
-Cuando se necesita cambiar el nombre de un servidor NPS o el servidor proxy, como cuando se vuelva a diseñar las convenciones de nomenclatura para los servidores, pueden darse circunstancias.
+Puede haber circunstancias cuando deba cambiar el nombre de un proxy, por ejemplo, al diseñar las convenciones de nomenclatura para los servidores o NPS.
 
-Si cambias un nombre de proxy o servidor NPS, es necesario volver a configurar las partes de la implementación de NPS. 
+Si cambia el nombre de un proxy o NPS, es necesario volver a configurar partes de la implementación de NPS. 
 
-Usa las siguientes directrices generales para ayudarle a comprobar que un cambio de nombre de servidor no interrumpe la autenticación de acceso de red, autorización o contabilidad.
+Utilice las siguientes directrices generales para ayudarle a comprobar que un cambio de nombre de servidor no interrumpe las cuentas, autorización o autenticación de acceso de red.
 
-Debe ser miembro del **administradores**, o equivalente, para realizar este procedimiento.
+Debe ser miembro del **administradores**, o equivalente, al llevar a cabo este procedimiento.
 
-### <a name="to-verify-configuration-after-an-nps-server-or-proxy-name-change"></a>Para comprobar la configuración después de un cambio de nombre del proxy o servidor NPS
+### <a name="to-verify-configuration-after-an-nps-or-proxy-name-change"></a>Para comprobar la configuración después de un cambio de nombre de NPS o proxy
 
-1. Si el servidor NPS es un miembro de un grupo de servidores RADIUS remotos, y el grupo está configurado con nombres de equipo en lugar de direcciones IP, volver a configurar el grupo de servidores RADIUS remoto con el nuevo nombre del servidor NPS.
+1. Si el NPS es miembro de un grupo de servidores RADIUS remotos y el grupo está configurado con los nombres de equipo en lugar de direcciones IP, volver a configurar el grupo de servidores RADIUS remotos con el nuevo nombre NPS.
 
-2. Si se implementan los métodos de autenticación basada en certificados en el servidor NPS, el cambio de nombre invalida el certificado de servidor. Puedes solicitar un nuevo certificado desde el Administrador de la entidad de (certificación CA) de certificación, o bien, si el equipo está un equipo miembro del dominio e inscribir automáticamente los certificados a los miembros de dominio, puede actualizar la directiva de grupo para obtener un nuevo certificado a través de la inscripción automática. Para actualizar la directiva de grupo:
+2. Si se implementan los métodos de autenticación basada en certificados en el NPS, el cambio de nombre invalida el certificado de servidor. Puede solicitar un nuevo certificado desde el Administrador de certificación emisora (CA) o, si el equipo es un equipo miembro del dominio y que los certificados de inscripción automática a los miembros de dominio, puede actualizar la directiva de grupo para obtener un certificado nuevo a través de la inscripción automática . Para actualizar la directiva de grupo:
 
-    Un archivo. Abre Windows PowerShell o el símbolo del sistema.
+    a. Abra el símbolo del sistema o Windows PowerShell.
 
-    b. Tipo **gpupdate**, y, a continuación, presione ENTRAR.
+    b. Escriba **gpupdate** y presione ENTRAR.
 
 
-3. Una vez que tengas un nuevo certificado de servidor, solicitar que el Administrador de CA revocar el antiguo certificado. 
+3. Una vez que un nuevo certificado de servidor, solicitar que el Administrador de CA revocar el certificado antiguo. 
 
-     Una vez se revoca el antiguo certificado NPS continúa usarlo hasta que expira el antiguo certificado. De manera predeterminada, el antiguo certificado sigue siendo válido durante un tiempo máximo de una semana y 10 horas. Este período de tiempo puede ser diferente dependiendo de si la expiración de la lista de revocación de certificados (CRL) y la expiración de tiempo de caché de seguridad de la capa de transporte (TLS) se modificaron sus valores predeterminados. La expiración CRL predeterminado es una semana; el valor predeterminado TLS caché tiempo transcurrido es 10 horas. 
+     Una vez que se revoca el certificado antiguo, NPS continúa usando hasta que expire el certificado antiguo. De forma predeterminada, el certificado antiguo sigue siendo válido durante un tiempo máximo de una semana y 10 horas. Este período de tiempo puede ser diferente dependiendo de si la expiración de la lista de revocación de certificados (CRL) y la caducidad de tiempo de caché de capa de transporte (TLS) se han modificado de sus valores predeterminados. La expiración de la CRL predeterminado es una semana; tiempo de expiración es de 10 horas en caché el valor predeterminado TLS. 
 
-     Sin embargo, si quieres configurar NPS para usar el nuevo certificado inmediatamente, puedes configurar manualmente las directivas de red con el nuevo certificado.
+     Sin embargo, si desea configurar NPS para usar el nuevo certificado de forma inmediata, puede reconfigurar manualmente las directivas de red con el nuevo certificado.
 
-4. Cuando expira el antiguo certificado, NPS comienza automáticamente con el nuevo certificado. 
+4. Después de que expire el certificado antiguo, NPS comienza automáticamente con el nuevo certificado. 
 
-5. Si has configurado el servidor NPS para usar el registro de SQL Server, compruebe que la conectividad entre el equipo que ejecuta SQL Server y el servidor NPS sigue funcionando correctamente.
+5. Si ha configurado el NPS para usar el registro de SQL Server, compruebe que la conectividad entre el equipo que ejecuta SQL Server y el NPS sigue funcionando correctamente.
 

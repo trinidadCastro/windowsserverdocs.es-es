@@ -1,7 +1,7 @@
 ---
 ms.assetid: 38bbc002-a8fa-4211-9328-4ef67fca0acf
-title: "Personalización de la localización"
-description: 
+title: Personalización para la localización
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,20 +10,21 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: ac206d5aa8af970b65a014955ac66a8cf2835eb6
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59882036"
 ---
-# <a name="customization-for-localization"></a>Personalización de la localización 
+# <a name="customization-for-localization"></a>Personalización para la localización 
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-Es posible localizar el contenido web a otros idiomas. Ten en cuenta las siguientes consideraciones cuando localizar.  
+El contenido web se puede localizar a idiomas distintos del inglés. Al localizarlo, ten en cuenta las siguientes consideraciones.  
   
-Una vez el contenido personalizado, la personalización tiene prioridad; por lo tanto, deberías personalizar para todos los idiomas que quieras admitir. Todo el contenido personalizado toma un parámetro de configuración regional. Al configurar el contenido localizado, configurarlo con una configuración regional de country\ menos en primer lugar, por ejemplo, "en", antes de configurar un país y la configuración regional específica region\ como "en\-us".  
+Después de personalizar el contenido, la personalización tendrá precedencia, así que deberás personalizarla para todos los idiomas que quieras admitir. Todo el contenido personalizado toma un parámetro de configuración regional. Al configurar contenido localizado, configurarlo con un país\-menos configuración regional en primer lugar, por ejemplo, "es-es", antes de configurar un país y región\-configuración regional específica, como "en\-nos".  
   
-El siguiente muestra algunos ejemplos de código adicional.  
+A continuación se muestran varios ejemplos de código adicionales.  
   
     
     Set-AdfsWebTheme -TargetName default -Logo @{Locale="";Path="c:\contoso.png"}  
@@ -31,7 +32,7 @@ El siguiente muestra algunos ejemplos de código adicional.
     Set-AdfsWebTheme -TargetName default -Illustration @{Locale="";Path="c:\illustration.png"}  
 
   
-El siguiente muestra algunos ejemplos de código adicional.  
+A continuación se muestran varios ejemplos de código adicionales.  
   
  
     Set-AdfsGlobalWebContent -ErrorPageDescriptionText "This is Contoso's error page description" –locale "en"  
@@ -41,7 +42,7 @@ El siguiente muestra algunos ejemplos de código adicional.
     Set-AdfsGlobalWebContent -ErrorPageDescriptionText "Il s'agit de description de page erreur de Contoso" –locale "fr"  
  
   
-Si quieres personalizar el contenido web en idiomas distintos del inglés que requiere la entrada de Unicode, te recomendamos que uses Windows PowerShell ISE. Para obtener más información, consulta [Introducción a Windows PowerShell ISE](https://technet.microsoft.com/library/dd315244.aspx).  
+Si desea personalizar el contenido web a idiomas distintos del inglés que requieran Unicode, se recomienda que use Windows PowerShell ISE. Para obtener más información, consulte [Introducción a Windows PowerShell ISE](https://technet.microsoft.com/library/dd315244.aspx).  
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[Personalización de inicio de sesión del usuario FS de anuncios](AD-FS-user-sign-in-customization.md) 
+[AD FS Sign-personalización de usuario](AD-FS-user-sign-in-customization.md) 
