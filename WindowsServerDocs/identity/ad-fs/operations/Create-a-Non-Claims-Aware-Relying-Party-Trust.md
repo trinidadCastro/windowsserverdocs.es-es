@@ -1,7 +1,7 @@
 ---
 ms.assetid: 7b7ae389-5032-44f7-9c0a-94398c3e4d88
-title: Crear un no reclamaciones con reconocimiento de usuario de confianza
-description: 
+title: Creación de una relación de confianza para usuario autenticado que no sea para notificaciones
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,46 +10,47 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: f46675ff4c471af743fd8782c1e3036e7c546256
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839346"
 ---
-# <a name="create-a-non-claims-aware-relying-party-trust"></a>Crear una confianza de terceros no notificaciones confiar
+# <a name="create-a-non-claims-aware-relying-party-trust"></a>Creación de una confianza de usuario de confianza que no es compatible con notificaciones
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-En la en snap\, non\ claims\-reconocimiento confiar confianzas de terceros de administración de AD FS son objetos que se crean para representar la confianza entre el servicio de federación y una aplicación basada en web\ único que no es compatible con claims\ y que se tiene acceso a través del Proxy de aplicación Web.  
+En el complemento Administración de AD FS\-en, no\-notificaciones\-consciente autenticado son objetos que se crean para representar la confianza entre el servicio de federación y un único sitio web\-aplicación que no está basada en notificaciones\-tenga en cuenta que se obtiene acceso a través del Proxy de aplicación Web.  
   
-Una cuenta non\ claims\ confianza terceros confianza es usuario de confianza terceros que consta de reglas para la autenticación y autorización, nombres y los identificadores cuando se accede a la confianza de terceros de confianza a través del Proxy de aplicación Web. Estas aplicaciones basadas en web\ que no dependen de reclamaciones, en otras palabras, estas aplicaciones basadas en Authentication\ integrado de Windows, puede tener las reglas de autorización que aplicar el acceso a la que se basa en notificaciones cuando el acceso no pertenece a la red corporativa a través del Proxy de aplicación Web.  
+Sin\-notificaciones\-conscientes de confianza es una entidad de confianza que consta de los identificadores, nombres y reglas para la autenticación y autorización cuando se tiene acceso a la relación de confianza para usuario autenticado a través del Proxy de aplicación Web. Estas web\-en función de las aplicaciones no basadas en notificaciones, en otras palabras, estos autenticación integrada de Windows\-aplicaciones basadas en, puede tener reglas de autorización que se aplican el acceso basado en notificaciones cuando el acceso externo a la red corporativa a través del Proxy de aplicación Web.  
   
-Para agregar una nueva cuenta non\ claims\ confianza terceros confianza, mediante la administración de AD FS en snap\, realizar el siguiente procedimiento.  
+Para agregar un nuevo no\-notificaciones\-compatible con confianza, utilizando el complemento Administración de AD FS\-, realice el procedimiento siguiente.  
   
-Pertenencia a **administradores**, o equivalente, en el equipo local es lo mínimo necesario para completar este procedimiento.  Revisar detalles sobre el uso de las cuentas adecuadas y agrupar pertenencias a [Local y dominio predeterminada grupos](https://go.microsoft.com/fwlink/?LinkId=83477).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-##<a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>Crear una no reclamaciones cuenta confiar terceros confianza manualmente 
-1. En el administrador del servidor, haz clic en **herramientas**y, a continuación, selecciona **AD FS administración**.  
+##<a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>Crear manualmente un no basada en notificaciones compatible con confianza 
+1. En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
   
-2.  En **acciones**, haz clic en **agregar confiar terceros de confianza **.  
-![Usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
+2.  En **acciones**, haga clic en **agregar confianza**.  
+![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust1.PNG)   
 
-3.  En la **bienvenida** página, elige **no reclamaciones cuenta** y haz clic en **inicio**.  
-![Usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG) 
+3.  En el **bienvenida** página, elija **notificaciones no** y haga clic en **iniciar**.  
+![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon1.PNG) 
   
-4.  En la **especificar nombre para mostrar**, escriba un nombre en **nombre para mostrar**, en **notas** escribe una descripción para esta confianza de terceros de confianza y, a continuación, haz clic en **siguiente**.  
-![Usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
+4.  En el **especificar nombre para mostrar** página, escriba un nombre en **nombre para mostrar**, en **notas** escriba una descripción para esta relación de confianza y, a continuación, haga clic en **siguiente** .  
+![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon2.PNG)
 
-5. En la **configurar identificadores** página, especifica uno o más identificadores para este usuario de confianza, haz clic en **agregar** para agregarlos a la lista y, a continuación, haz clic en **siguiente**.  
-![Usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
+5. En la página **Configurar identificadores**, especifica uno o varios identificadores para este usuario de confianza, haz clic en **Agregar** para agregarlos a la lista y haz clic en **Siguiente**.  
+![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon3.PNG)
 
-6.  En la **elegir la directiva de Control de acceso** selecciona una directiva y haz clic en **siguiente**.  Para obtener más información acerca de las directivas de Control de acceso, consulta [directivas de Control de acceso de AD FS](Access-Control-Policies-in-AD-FS.md). 
-![Usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
+6.  En el **elegir directiva de Control de acceso** seleccione una directiva y haga clic en **siguiente**.  Para obtener más información acerca de las directivas de Control de acceso, consulte [las directivas de Control de acceso en AD FS](Access-Control-Policies-in-AD-FS.md). 
+![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon4.PNG)
 
-7. En la **listo para agregar confianza** página, revisa la configuración y, a continuación, haz clic en **siguiente** para el usuario de confianza de guardar información de confianza.  
-   ![Usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) 
+7. En la página **Listo para agregar confianza** , revisa la configuración y haz clic en **Siguiente** para guardar la información de la relación de confianza para usuario autenticado.  
+   ![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon5.PNG) 
 
-8. En la **finalizar** página, haz clic en **cerrar**. Esta acción se muestra automáticamente el **editar reglas de notificación** cuadro de diálogo.  
-![Usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)  
+8. En la página **Finalizar**, haga clic en **Cerrar**. Esta acción muestra automáticamente el cuadro de diálogo **Editar reglas de notificaciones**.  
+![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)  
   
-## <a name="see-also"></a>Consulta también  
-[AD FS operaciones](../../ad-fs/AD-FS-2016-Operations.md) 
+## <a name="see-also"></a>Vea también  
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 

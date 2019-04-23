@@ -11,13 +11,13 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
 ms.openlocfilehash: 1ae36a2e1be1559094dd55dba41fa9a468118260
-ms.sourcegitcommit: 9ed4c9fe04ebf3ef488170503c9a354c992b6fde
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "4339463"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59840066"
 ---
-# Virtualización
+# <a name="virtualization"></a>Virtualización
 
 >[!TIP]
 > ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
@@ -39,9 +39,9 @@ Virtualización en Windows Server es una de las tecnologías fundamentales neces
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>VM de tejido protegido y blindadas</h3>
+                        <h3>Máquinas virtuales blindadas y tejido protegido</h3>
 <HR />
-                        <p>Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de un Servicio de protección de host \(HGS\), por lo general un clúster de tres nodos, además de uno o más hosts protegidos y un conjunto de VM blindadas.</p>
+                        <p>Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de un servicio guardián de Host \(HGS\) -normalmente, un clúster de tres nodos: más de uno o más hosts protegidos y un conjunto de máquinas virtuales blindadas.</p>
                      </div>
                   </div>
               </div>
@@ -99,7 +99,7 @@ Virtualización en Windows Server es una de las tecnologías fundamentales neces
                         </div>
                     </div>
                     <div class="cardText">
-                       <h3>Windows 10 para empresas: formas de usar los dispositivos para el trabajo</h3>
+                       <h3>Windows 10 para empresa: Formas de usar dispositivos para trabajar</h3>
 <HR />
                        <p>La tecnología Hyper-V proporciona recursos informáticos mediante la virtualización de hardware. Hyper-V crea una versión de software de un equipo, denominada máquina virtual, que usas para ejecutar un sistema operativo y las aplicaciones. Puedes ejecutar varias máquinas virtuales al mismo tiempo y puedes crearlas y eliminarlas según sea necesario.</p>
                      </div>
@@ -127,7 +127,7 @@ Virtualización en Windows Server es una de las tecnologías fundamentales neces
 <HR />
                         <p>En el conmutador virtual de Hyper-V se incluyen funcionalidades extensibles y administradas mediante programación que te permiten conectar máquinas virtuales tanto a la red física como a las redes virtuales.</p>
 <HR />
-                        <p>Además, el conmutador virtual de Hyper-V exige la aplicación de la directiva en los niveles de servicio, aislamiento y seguridad.</p>
+                        <p>Además el conmutador virtual de Hyper-V exige la aplicación de la directiva en los niveles de servicio, aislamiento y seguridad.</p>
                      </div>
                   </div>
               </div>
@@ -138,7 +138,7 @@ Virtualización en Windows Server es una de las tecnologías fundamentales neces
 
 ---
 
-### Relacionados
+### <a name="related"></a>Relacionados
 
 - Hyper-V requiere hardware específico para crear el entorno de virtualización. Para obtener detalles, consulta [Requisitos del sistema para Hyper-V en Windows Server 2016](./hyper-v/system-requirements-for-hyper-v-on-windows.md). 
 

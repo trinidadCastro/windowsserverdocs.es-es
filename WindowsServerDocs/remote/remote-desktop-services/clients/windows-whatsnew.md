@@ -1,6 +1,6 @@
 ---
-title: Novedades para escritorio remoto en Windows
-description: Obtén información sobre los cambios recientes en el cliente de escritorio remoto para Windows
+title: Novedades de escritorio remoto en Windows
+description: Obtenga información sobre los cambios recientes en el cliente de escritorio remoto para Windows
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -11,54 +11,45 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 03/19/2019
+ms.date: 11/06/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 18c14da5b5b16ed20005515fde46235e4cf27331
-ms.sourcegitcommit: f56f608013ddfcc412949a478e620f04f0548d40
-ms.translationtype: MT
+ms.openlocfilehash: 8fb66d3578156eb0d0d37edeee02cd2b4d4288c8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "9257501"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839556"
 ---
-# ¿Novedades del cliente de escritorio remoto en Windows?
+# <a name="whats-new-for-the-remote-desktop-client-on-windows"></a>¿Novedades del cliente de escritorio remoto en Windows?
 
-Periódicamente actualizamos el [cliente de escritorio remoto para Windows](windows.md), agregando nuevas funcionalidades y corregir los problemas. Echa un vistazo a las actualizaciones más recientes a continuación.
+Se actualiza con regularidad el [cliente de escritorio remoto para Windows](windows.md), agregar nuevas características y solución de problemas. Consulte las actualizaciones más recientes a continuación.
 
-## Actualizaciones de versión 10.1.1098
-*Fecha de publicación: 15/03/2019*
+## <a name="updates-for-version-1011088"></a>Actualizaciones de versión 10.1.1088
+*Fecha de publicación: 11/06/2018*
 
-- Ahora puede establecer un nombre para mostrar para las cuentas de usuario para que puedas guardar el mismo nombre de usuario con las contraseñas diferentes.
-- Ahora es posible seleccionar una cuenta de usuario existente al agregar recursos remotos.
-- Corregido un problema donde el cliente no se finalice correctamente.
-- El cliente ahora controla correctamente suspender cuando se abran ventanas secundarias.
+- Nombre para mostrar conexión ahora es más reconocible.
+- Se ha corregido un bloqueo al cerrar la ventana del cliente mientras está activa una conexión.
+- Corregido un bloqueo al volver a conectarse después de que se minimiza el cliente.
+- Permitir arrastrar en cualquier parte de un grupo de equipos de escritorio.
+- Asegúrese de iniciar una conexión de los resultados de jumplist en una ventana independiente cuando sea necesario.
 - Correcciones de errores adicionales.
 
-## Actualizaciones de versión 10.1.1088
-*Fecha de publicación: 06/11/2018*
+## <a name="updates-for-version-1011060"></a>Actualizaciones de versión 10.1.1060
+*Fecha de publicación: 09/14/2018*
 
-- Nombre de la pantalla de conexión ahora es detectar más fácilmente.
-- Corregido un bloqueo cuando se cierra la ventana del cliente mientras está activa una conexión.
-- Corregir un bloqueo al conectarse de nuevo después de que el cliente está minimizado.
-- Permiten arrastrar en cualquier parte de un grupo de equipos de escritorio.
-- Asegúrate de iniciar una conexión desde los resultados de accesos directos en una ventana independiente cuando sea necesario.
-- Correcciones de errores adicionales.
-
-## Actualizaciones de versión 10.1.1060
-*Fecha de publicación: 14/09/2018*
-
-- Resuelve un problema donde haciendo doble clic en una conexión a escritorio causado dos sesiones se inicie.
-- Corregido un bloqueo al cambiar entre los escritorios virtuales localmente.
-- Mover una sesión a un monitor diferente ahora también actualiza el factor de escala de sesión. 
+- Se ha resuelto un problema donde haga doble clic en una conexión a escritorio produjo dos sesiones que se iniciará.
+- Se ha corregido un bloqueo al cambiar entre los escritorios virtuales localmente.
+- Mover una sesión a otro monitor ahora también actualiza el factor de escala de la sesión. 
 - Administrar las claves del sistema adicionales como AltGr.
 - Correcciones de errores adicionales.
 
-## Actualizaciones de versión 10.1.1046
-*Fecha de publicación: 20/06/2018*
+## <a name="updates-for-version-1011046"></a>Actualizaciones de versión 10.1.1046
+*Fecha de publicación: 06/20/2018*
 
 - Correcciones de errores.
 
-## Actualizaciones de versión 10.1.1042
+## <a name="updates-for-version-1011042"></a>Actualizaciones de versión 10.1.1042
 *Fecha de publicación: 04/02/2018*
 
-- Actualizaciones para tratar la corrección oracle CredSSP cifrado que se describe en CVE-2018-0886.
+- Actualizaciones para tratar la corrección de oracle cifrado CredSSP que se describe en CVE-2018-0886.
 - Correcciones de errores adicionales.

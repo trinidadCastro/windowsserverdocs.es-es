@@ -1,6 +1,6 @@
 ---
-title: Usar Windows PowerShell para configurar los equipos cliente no del dominio miembro
-description: En este tema es parte de la BranchCache implementación Guía para Windows Server 2016, que se muestra cómo implementar BranchCache en modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN en sucursales
+title: Usar Windows PowerShell para configurar equipos cliente miembros que no sea de dominio
+description: En este tema forma parte de BranchCache Deployment Guide para Windows Server 2016, que demuestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN de sucursales
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,37 +8,38 @@ ms.topic: get-started-article
 ms.assetid: 1b511e1a-686d-441f-a1c7-d4d029e1a061
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a5415d9fa5a4af806f23a1af9c907b1f02e9627b
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 9abb77e573d7b3f144ab831c655c81370a4a6af1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839956"
 ---
-# <a name="use-windows-powershell-to-configure-non-domain-member-client-computers"></a>Usar Windows PowerShell para configurar los equipos cliente no del dominio miembro
+# <a name="use-windows-powershell-to-configure-non-domain-member-client-computers"></a>Usar Windows PowerShell para configurar equipos cliente miembros que no sea de dominio
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este procedimiento para configurar manualmente un equipo de cliente BranchCache para el modo de caché distribuida u hospedado en modo de caché.  
+Puede usar este procedimiento para configurar manualmente un equipo cliente de BranchCache para el modo caché distribuida o modo caché hospedada.  
   
 > [!NOTE]  
-> Si has configurado BranchCache los equipos cliente mediante Directiva de grupo, la configuración de directiva de grupo invalida cualquier configuración manual de los equipos cliente a la que se aplican las directivas.  
+> Si ha configurado equipos cliente de BranchCache utilizando la directiva de grupo, la configuración de la directiva de grupo invalida cualquier configuración manual de equipos cliente a los que se aplican las directivas.  
   
-Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para realizar este procedimiento.  
+El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o un grupo equivalente.  
   
-### <a name="to-enable-branchcache-distributed-or-hosted-cache-mode"></a>Para habilitar el modo de caché hospedada o distribuido BranchCache  
+### <a name="to-enable-branchcache-distributed-or-hosted-cache-mode"></a>Para habilitar el modo caché distribuida u hospedada de BranchCache  
   
-1.  En el equipo de cliente BranchCache que desea configurar, ejecutar Windows PowerShell como administrador y, a continuación, realiza una de las siguientes acciones.  
+1.  En el equipo cliente de BranchCache que desea configurar, ejecutar Windows PowerShell como administrador y, a continuación, realice una de las siguientes acciones.  
   
-    -   Para configurar el equipo cliente para el modo de caché distribuida BranchCache, escribe el siguiente comando y, a continuación, presione ENTRAR.  
+    -   Para configurar el equipo cliente para el modo caché distribuida de BranchCache, escriba el siguiente comando y, a continuación, presione ENTRAR.  
   
         `Enable-BCDistributed`  
   
-    -   Para configurar el equipo cliente para el modo de caché BranchCache hospedado, escribe el siguiente comando y, a continuación, presione ENTRAR.  
+    -   Para configurar el equipo cliente para el modo de caché hospedada de BranchCache, escriba el siguiente comando y, a continuación, presione ENTRAR.  
   
         `Enable-BCHostedClient`  
   
         > [!TIP]  
-        > Si quieres especificar los servidores de la memoria caché hospedada disponible, usa el `-ServerNames` parámetro con una coma lista separada de los servidores de la memoria caché hospedada como el valor del parámetro. Por ejemplo, si tienes dos servidores de memoria caché hospedada denominados HCS1 y HCS2, configurar el equipo cliente para el modo de la memoria caché hospedada con el siguiente comando.  
+        > Si desea especificar los servidores de caché hospedada disponibles, utilice el `-ServerNames` lista de los servidores de caché hospedada como el valor del parámetro separados por el parámetro con una coma. Por ejemplo, si tiene dos servidores de caché hospedada denominados HCS1 y HCS2, configurar el equipo cliente para el modo caché hospedada con el siguiente comando.  
         >   
         > `Enable-BCHostedClient -ServerNames HCS1,HCS2`  
   

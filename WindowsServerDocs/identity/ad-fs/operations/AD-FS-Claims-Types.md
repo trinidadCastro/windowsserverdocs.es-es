@@ -1,7 +1,7 @@
 ---
-ms.assetid: 
-title: "Tipos de AD FS de notificación de acceso de cliente"
-description: 
+ms.assetid: ''
+title: Acceso de cliente de tipos de notificación de AD FS
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,46 +10,47 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 1e37aded450555d293806d1ed8903a51e3df9424
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839146"
 ---
-#<a name="client-access-policy-claim-types-in-ad-fs"></a>Tipos de AD FS de notificación de la directiva de acceso de cliente
+#<a name="client-access-policy-claim-types-in-ad-fs"></a>Directiva de acceso de cliente tipos de notificación de AD FS
 
-Para proporcionar información de contexto de la solicitud adicional, las directivas de acceso de cliente usa los siguientes tipos de notificación, que genera AD FS de la información de encabezado de solicitud para el procesamiento.  Para obtener más información, consulta [el rol del motor reclamaciones](../technical-reference/the-role-of-the-claims-engine.md).
+Para proporcionar información de contexto de solicitud adicionales, las directivas de acceso de cliente use los siguientes tipos de notificación, que AD FS genera a partir de la información de encabezado de solicitud de procesamiento.  Para obtener más información, consulte [el rol del motor de notificaciones de](../technical-reference/the-role-of-the-claims-engine.md).
 
-##<a name="x-ms-forwarded-client-ip"></a>X-MS-reenvía-IP del cliente
+##<a name="x-ms-forwarded-client-ip"></a>X-MS-Forwarded-Client-IP
 
 Tipo de notificación: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
 
-Esta notificación de AD FS representa un "mejor intento" determinar la dirección IP del usuario (por ejemplo, el cliente de Outlook) que realiza la solicitud. Esta notificación puede contener varias direcciones IP, incluida la dirección de cada proxy que reenvía la solicitud.  Esta notificación se rellena con un encabezado HTTP que se encuentra actualmente solo se establece mediante Exchange Online, que rellena el encabezado al pasar la solicitud de autenticación de AD FS. El valor de la notificación puede ser una de las siguientes acciones:
+Esta notificación de AD FS representa un "mejor intento" en determinar la dirección IP del usuario (por ejemplo, el cliente de Outlook) que realiza la solicitud. Esta notificación puede contener varias direcciones IP, incluida la dirección de cada servidor proxy que reenvía la solicitud.  Esta notificación se rellena a partir de un encabezado HTTP que está actualmente establecido sólo por Exchange Online, que llena el encabezado al pasar la solicitud de autenticación para AD FS. El valor de la notificación puede ser uno de los siguientes:
 
 
-- Una sola dirección IP: la dirección IP del cliente que está conectada directamente al Exchange Online
+- Una única dirección IP: dirección IP del cliente que está conectado directamente a Exchange Online
 
-    >! [Nota] La dirección IP de un cliente en la red corporativa aparecerá como la dirección IP de interfaz externa del servidor proxy de salida de la organización o puerta de enlace.
+    >! [Nota] La dirección IP de un cliente en la red corporativa aparecerá como la dirección IP de interfaz externa de la puerta de enlace o proxy de salida de la organización.
 
 - Una o varias direcciones IP
-    - Si no puede determinar la dirección IP del cliente Exchange Online, establecerá el valor en función del valor de encabezado x reenvía para solicitudes de un encabezado estándar que puede incluirse en basados en HTTP y es compatible con muchos de los clientes, equilibradores de carga y servidores proxy en el mercado.
-    - Varias direcciones IP que indica la dirección IP del cliente y la dirección de cada servidor proxy que pasa la solicitud se se separados por comas.
+    - Si no se puede determinar la dirección IP del cliente de conexión de Exchange Online, establecerá el valor según el valor del encabezado x-forwarded-for, las solicitudes de un encabezado no estándar que puede incluirse en basado en HTTP y es compatible con muchos clientes, equilibradores de carga, y servidores proxy en el mercado.
+    - Varias direcciones IP que indica la dirección IP del cliente y la dirección de cada servidor proxy que pasa la solicitud estarán separadas por una coma.
 
-    >! [Nota] Direcciones IP relacionadas con la infraestructura de Exchange Online no estarán presentes en la lista.
-
-
->! [Advertencia] Exchange Online actualmente admite solo las direcciones IPV4; no admite las direcciones IPV6. 
+    >! [Nota] Las direcciones IP relacionadas con la infraestructura de Exchange Online no estará presentes en la lista.
 
 
-## <a name="x-ms-client-application"></a>X-MS-aplicación de cliente
+>! [Advertencia] Exchange Online actualmente admite solo las direcciones IPV4; no admite direcciones IPV6. 
+
+
+## <a name="x-ms-client-application"></a>X-MS-Client-Application
 
 Tipo de notificación: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`
 
-Esta notificación de AD FS representa el protocolo usado por el cliente final, que corresponde ligeramente a la aplicación usada.  Esta notificación se rellena con un encabezado HTTP que se encuentra actualmente solo se establece mediante Exchange Online, que rellena el encabezado al pasar la solicitud de autenticación de AD FS. Dependiendo de la aplicación, el valor de esta notificación será uno de los siguientes:
+Esta notificación de AD FS representa el protocolo utilizado por el cliente final, que imprecisa corresponde a la aplicación que se va a usar.  Esta notificación se rellena a partir de un encabezado HTTP que está actualmente establecido sólo por Exchange Online, que llena el encabezado al pasar la solicitud de autenticación para AD FS. Dependiendo de la aplicación, el valor de esta notificación será uno de los siguientes:
 
 
 
-- En el caso de dispositivos que usan Exchange Active Sync, el valor es Microsoft.Exchange.ActiveSync. 
-- Uso del cliente de Microsoft Outlook podría resultar en cualquiera de los siguientes valores:
+- En el caso de los dispositivos que usan Exchange Active Sync, el valor es Microsoft.Exchange.ActiveSync. 
+- Uso del cliente Microsoft Outlook puede producir en cualquiera de los siguientes valores:
     - Microsoft.Exchange.Autodiscover
     - Microsoft.Exchange.OfflineAddressBook
     - Microsoft.Exchange.RPC
@@ -62,14 +63,14 @@ Esta notificación de AD FS representa el protocolo usado por el cliente final, 
     - Microsoft.Exchange.Pop
     - Microsoft.Exchange.Imap
 
-## <a name="x-ms-client-user-agent"></a>X-MS-cliente de agente de usuario
+## <a name="x-ms-client-user-agent"></a>X-MS-Client-User-Agent
 
 Tipo de notificación: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
 
-Esta notificación de AD FS proporciona una cadena que represente el tipo de dispositivo que el cliente está usando para acceder al servicio. Esto se puede usar cuando los clientes le gustaría impedir el acceso para ciertos dispositivos (por ejemplo, determinados tipos de teléfonos inteligentes).  Esta notificación se rellena con un encabezado HTTP que se encuentra actualmente solo se establece mediante Exchange Online, que rellena el encabezado al pasar la solicitud de autenticación de AD FS. Ejemplos de valores para esta notificación incluyen (pero no se limitan a) los siguientes valores.
->! [Nota] El a continuación se muestran algunos ejemplos de lo que puede contener el valor de x-ms-agente de usuario para un cliente cuya x-ms-aplicación de cliente es "Microsoft.Exchange.ActiveSync"
+Esta notificación de AD FS proporciona una cadena que represente el tipo de dispositivo que usa el cliente para tener acceso al servicio. Esto se puede usar cuando los clientes deseen evitar el acceso a determinados dispositivos (por ejemplo, determinados tipos de teléfonos inteligentes).  Esta notificación se rellena a partir de un encabezado HTTP que está actualmente establecido sólo por Exchange Online, que llena el encabezado al pasar la solicitud de autenticación para AD FS. Los valores de esta notificación de ejemplo incluyen (pero no están limitados a) los siguientes valores.
+>! [Nota] El a continuación se muestran algunos ejemplos de lo que podría contener el valor de x-ms-user-agent para un cliente cuyo x-ms-client-application es "Microsoft.Exchange.ActiveSync"
 
-- Vórtice/1.0
+- Vortex/1.0
 - Apple-iPad1C1/812.1
 - Apple-iPhone3C1/811.2
 - Apple-iPhone/704.11
@@ -84,14 +85,14 @@ Esta notificación de AD FS proporciona una cadena que represente el tipo de dis
 
 Tipo de notificación: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
 
-Esta notificación de AD FS indica que la solicitud se ha pasado a través del proxy del servidor de federación.  Esta notificación se rellena mediante el proxy de servidor de federación que rellena el encabezado al pasar el back-end de servicios de federación de la solicitud de autenticación. AD FS después convierte en una reclamación. 
+Esta notificación de AD FS indica que la solicitud se pasa a través del proxy de servidor de federación.  Esta notificación se rellena con el proxy de servidor de federación, que llena el encabezado al pasar la solicitud de autenticación para el back-end del servicio de federación. AD FS, a continuación, lo convierte en una notificación. 
 
-El valor de la notificación es el nombre DNS del proxy del servidor de federación que pasa la solicitud.
+El valor de la notificación es el nombre DNS del servidor proxy de federación que pasa la solicitud.
 
-## <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-extremo-absoluta-ruta de acceso (Active vs pasivo)
+## <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-Endpoint-absoluto-Path (activa o pasiva)
 
 Tipo de notificación: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
 
-Este tipo de notificación puede usarse para determinar las solicitudes procedentes de los clientes (enriquecidos) "activos" frente a los clientes "pasivos" (explorador basado en web). Esto permite que las solicitudes externas desde aplicaciones basadas en el explorador, como Outlook Web Access, SharePoint Online o el portal de Office 365 para poder mientras se bloquean las solicitudes procedentes de los clientes enriquecidos, como Microsoft Outlook.
+Este tipo de notificación puede utilizarse para determinar las solicitudes procedentes de clientes (avanzados) "activos" frente a los clientes "pasivos" (explorador basadas en web). Esto permite que las solicitudes externas desde aplicaciones basadas en explorador como Outlook Web Access, SharePoint Online o el portal de Office 365 se permite mientras se bloquean las solicitudes procedentes de clientes enriquecidos, como Microsoft Outlook.
 
-El valor de la notificación es el nombre del servicio de AD FS que recibe la solicitud.
+El valor de la notificación es el nombre del servicio AD FS que recibió la solicitud.

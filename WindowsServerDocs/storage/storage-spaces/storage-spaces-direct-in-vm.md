@@ -1,5 +1,5 @@
 ---
-title: Con espacios de almacenamiento directo en una máquina virtual
+title: Uso de espacios de almacenamiento directo en una máquina virtual
 ms.prod: windows-server-threshold
 ms.author: eldenc
 ms.manager: eldenc
@@ -10,75 +10,75 @@ ms.date: 10/25/2017
 description: Cómo implementar espacios de almacenamiento directo en un clúster de invitado de máquina virtual, por ejemplo, en Microsoft Azure.
 ms.localizationpriority: medium
 ms.openlocfilehash: a741475d09ab7f7ab29f158ef55378ca9a37beac
-ms.sourcegitcommit: 52883945fd6e6bb5c24bd81944ca4bc0c5e6a216
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "8964617"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59841026"
 ---
-# Con espacios de almacenamiento directo en clústeres de máquina virtual de invitado
+# <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>Uso de espacios de almacenamiento directo en clústeres invitados de máquina virtual
 
 > Se aplica a: Windows Server 2019, Windows Server 2016
 
-Puedes implementar espacios de almacenamiento directo en un clúster de servidores físicos o en clústeres de invitados de máquina virtual como se explica en este tema. Este tipo de implementación ofrece almacenamiento compartido virtual a través de un conjunto de máquinas virtuales encima de una nube pública o privada para que las soluciones de alta disponibilidad de la aplicación pueden usarse para aumentar la disponibilidad de las aplicaciones.
+Puede implementar espacios de almacenamiento directo en un clúster de servidores físicos o en clústeres de invitados de máquina virtual como se describe en este tema. Este tipo de implementación ofrece almacenamiento compartido virtual en un conjunto de máquinas virtuales en una nube privada o pública para que se pueden usar soluciones de alta disponibilidad de la aplicación para aumentar la disponibilidad de aplicaciones.
 
 ![](media/storage-spaces-direct-in-vm/storage-spaces-direct-in-vm.png)
 
-## Implementación en clústeres de invitados de Iaas VM de Azure
+## <a name="deploying-in-azure-iaas-vm-guest-clusters"></a>Implementación de clústeres de invitados de máquina virtual de Iaas de Azure
 
-[Plantillas de Azure](https://github.com/robotechredmond/301-storage-spaces-direct-md) han sido publicado reducir la complejidad, configurar mejor recomendados y la velocidad de las implementaciones de espacios de almacenamiento directo en una VM de Iaas de Azure. Se trata de la solución recomendada para la implementación en Azure.
+[Las plantillas de Azure](https://github.com/robotechredmond/301-storage-spaces-direct-md) ha sido publicado disminuir la complejidad, configure mejores prácticas y la velocidad de las implementaciones de espacios de almacenamiento directo en una máquina virtual de Iaas de Azure. Se trata de la solución recomendada para implementar en Azure.
 
 <iframe src="https://channel9.msdn.com/Series/Microsoft-Hybrid-Cloud-Best-Practices-for-IT-Pros/Step-by-Step-Deploy-Windows-Server-2016-Storage-Spaces-Direct-S2D-Cluster-in-Microsoft-Azure/player" width="960" height="540" allowfullscreen></iframe>
 
-## Requisitos
+## <a name="requirements"></a>Requisitos
 
-Las consideraciones siguientes se aplican al implementar espacios de almacenamiento directo en un entorno virtualizado.
+Se aplican las consideraciones siguientes al implementar espacios de almacenamiento directo en un entorno virtualizado.
 
 > [!TIP]
-> Plantillas de Azure configurará automáticamente las siguientes consideraciones para usted y son la solución recomendada al implementar en máquinas virtuales de IaaS de Azure.
+> Las plantillas de Azure configurará automáticamente la debajo de las consideraciones para usted y son la solución recomendada cuando se implementa en máquinas virtuales de IaaS de Azure.
 
 -   Mínimo de 2 nodos y un máximo de 3 nodos
 
--   las implementaciones de 2 nodos deben configurar a un testigo (testigo en la nube o un testigo de recurso compartido de archivo)
+-   implementaciones de nodo 2 deben configurar a un testigo (testigo en la nube o el testigo del recurso compartido de archivos)
 
--   las implementaciones de 3 nodos pueden tolerar 1 nodo hacia abajo y la pérdida de 1 o más discos en otro nodo.  Si 2 nodos están apagado, los discos virtuales se ser sin conexión hasta que uno de los nodos devuelve.  
+-   las implementaciones de 3 nodos pueden tolerar 1 nodo hacia abajo y la pérdida de 1 o más discos en otro nodo.  Si los 2 nodos están cerrados, a continuación, los discos virtuales se estar sin conexión hasta que uno de los nodos devuelve.  
 
--   Configurar las máquinas virtuales implementarse en todos los dominios de error
+-   Configurar las máquinas virtuales se implementaran en dominios de error
 
-    -   Azure: configurar el conjunto de disponibilidad
+    -   Azure: configurar un conjunto de disponibilidad
 
-    -   Hyper-V: configurar AntiAffinityClassNames en las máquinas virtuales para separar las máquinas virtuales en todos los nodos
+    -   Hyper-V – AntiAffinityClassNames configurar en las máquinas virtuales para separar las máquinas virtuales entre nodos
 
-    -   VMware: regla de configurar una máquina virtual otra anti afinidad mediante la creación de una Rule DRS de tipo ' máquinas virtuales independientes "para separar las máquinas virtuales entre hosts ESX. Los discos que se presentan para su uso con espacios de almacenamiento directo deben usar el adaptador de Paravirtual SCSI (PVSCSI). Para obtener soporte PVSCSI con Windows Server, consulte https://kb.vmware.com/s/article/1010398.
+    -   VMware: regla configurar Antiafinidad de VM de la máquina virtual mediante la creación de un tipo de DRS Rule ' máquinas virtuales independientes "para separar las máquinas virtuales en hosts ESX. Discos presentados para su uso con espacios de almacenamiento directo debe usar el adaptador Paravirtual SCSI (PVSCSI). Para obtener soporte PVSCSI con Windows Server, consulte https://kb.vmware.com/s/article/1010398.
 
--   Sacar provecho de baja latencia / almacenamiento de información de alto rendimiento - almacenamiento Premium de Azure administrada se necesitan discos
+-   Aprovechar latencia baja y administra el almacenamiento de alto rendimiento: Azure Premium Storage se necesitan discos
 
--   Implementar un diseño de almacenamiento plana con ningún dispositivo de almacenamiento en caché configurado
+-   Implementar un diseño de almacenamiento sin formato con ningún dispositivo de almacenamiento en caché configurado
 
--   Mínimo de 2 discos de datos virtual presentados a cada máquina virtual (VHD / VHDX / VMDK)
+-   Mínimo de 2 discos de datos virtuales presentados para cada máquina virtual (VHD / VHDX y VMDK)
 
-    Este número es diferente a las implementaciones de reconstrucción completa porque los discos virtuales pueden implementarse como archivos que no son susceptibles de sufrir errores físicos.
+    Este número es diferente de las implementaciones sin sistema operativo porque los discos virtuales se pueden implementar como archivos que no son susceptibles a errores físicos.
 
--   Deshabilitar las funcionalidades de reemplazo de la unidad automática en el servicio de mantenimiento ejecutando el siguiente cmdlet de PowerShell:
+-   Deshabilitar las funcionalidades de sustitución automática de unidad en el servicio de mantenimiento, ejecute el cmdlet de PowerShell siguiente:
 
     ```powershell
     Get-storagesubsystem clus* | set-storagehealthsetting -name “System.Storage.PhysicalDisk.AutoReplace.Enabled” -value “False”
     ```
 
--   No se admite: hospedar instantánea y restaurar el nivel de disco virtual
+-   No compatible: Nivel de disco virtual de host/restauración de instantáneas
 
-    En su lugar, usa las soluciones de copia de seguridad nivel de invitado tradicionales de copia de seguridad y restaurar los datos en los volúmenes espacios de almacenamiento directo.
+    En su lugar, use las soluciones de copia de seguridad nivel de invitado tradicionales de copia de seguridad y restaurar los datos en los volúmenes de espacios de almacenamiento directo.
 
--   Para proporcionar mayor resistencia a posible VHD / VHDX o aumentar la latencia de almacenamiento VMDK en clústeres de invitados, el valor de tiempo de espera de E/S de espacios de almacenamiento:
+-   Para dar mayor resistencia a posibles VHD / VHDX / latencia de almacenamiento VMDK en clústeres de invitados, aumente el valor de tiempo de espera de E/S de espacios de almacenamiento:
 
     `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\spaceport\\Parameters\\HwTimeout`
 
     `dword: 00007530`
 
-    El equivalente decimal de 7530 Hexadecimal es 30000, que es de 30 segundos. Ten en cuenta que el valor predeterminado es Decimal de 1770 hexadecimales o 6000, que es de 6 segundos.
+    El valor decimal equivalente Hexadecimal 7530 es 30000, lo que es de 30 segundos. Tenga en cuenta que el valor predeterminado es Decimal, Hexadecimal o 6000 del 1770, que es de 6 segundos.
 
-## Ver también
+## <a name="see-also"></a>Vea también
 
-[Plantillas de Iaas VM de Azure para implementar espacios de almacenamiento, vídeos y guías paso a paso](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/).
+[Plantillas de máquina virtual de Iaas de Azure adicionales para implementar espacios de almacenamiento directo, vídeos y guías paso a paso](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/).
 
 [Espacios de almacenamiento adicionales directo Overview] (https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

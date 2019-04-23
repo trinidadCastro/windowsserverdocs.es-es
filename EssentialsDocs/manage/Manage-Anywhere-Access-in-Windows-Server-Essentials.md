@@ -1,6 +1,6 @@
 ---
-title: Administrar el acceso en Windows Server Essentials en cualquier lugar
-description: "Describe cómo usar Windows Server Essentials"
+title: Administrar Acceso desde cualquier lugar en Windows Server Essentials
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,29 +13,30 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: c9857cc6dd056e36133736c4888b46505ec8c3c7
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59838616"
 ---
-# <a name="manage-anywhere-access-in-windows-server-essentials"></a>Administrar el acceso en Windows Server Essentials en cualquier lugar
+# <a name="manage-anywhere-access-in-windows-server-essentials"></a>Administrar Acceso desde cualquier lugar en Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Cuando activas las funcionalidades de acceso desde cualquier lugar, acceso Web remoto, red privada virtual y DirectAccess en Windows Server Essentials o en Windows Server 2012 R2 con el rol de Windows Server Essentials Experience instalado, permitir que los usuarios de red tener acceso a recursos del servidor desde cualquier lugar con una conexión a Internet, en cualquier momento y en cualquier dispositivo. Los temas siguientes describen las características de DirectAccess, red privada virtual (VPN) y configurar acceso Web remoto en el servidor.  
+Al activar la funcionalidades de acceso desde cualquier lugar, el acceso Web remoto, red privada virtual y DirectAccess en Windows Server Essentials, o en Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado, permiten a la red usuarios accedan a los recursos del servidor desde cualquier ubicación con una conexión a Internet, en cualquier momento y en cualquier dispositivo. En los temas siguientes se describe cómo configurar las características Acceso web remoto, red privada virtual (VPN) y DirectAccess en su servidor.  
   
--   [Administrar el acceso Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar acceso Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
-     Acceso Web remoto proporciona una experiencia del navegador para pantallas táctiles, rodeada de secuencia para acceder a las aplicaciones y datos desde prácticamente cualquier lugar que tienes una conexión a Internet y mediante el uso de casi cualquier dispositivo.  
+     Acceso web remoto proporciona una experiencia de explorador optimizada y apta para tecnología táctil que permite acceder a aplicaciones y datos desde prácticamente cualquier lugar donde tenga una conexión a Internet y usando casi cualquier dispositivo.  
   
 -   [Administrar VPN](Manage-VPN-in-Windows-Server-Essentials.md)  
   
-     Conexiones de red privada virtual (VPN) permiten a los usuarios que trabajan en casa o en la carretera acceder a un servidor en una red privada mediante la infraestructura proporcionada por una red pública, como Internet.  
+     Las conexiones de red privada virtual (VPN) permiten a los usuarios móviles o que trabajan en casa acceder a un servidor en una red privada usando la infraestructura proporcionada por una red pública, por ejemplo, Internet.  
   
 -   [Configurar DirectAccess](Configure-DirectAccess-in-Windows-Server-Essentials.md)  
   
-     DirectAccess permite conectarse fácilmente a la organización "red de ¢ s desde cualquier ubicación remota equipado con Internet sin tener que establecer una conexión de red privada virtual (VPN). DirectAccess proporciona una mayor productividad para la organización "¢ s movilidad, ya que ofrecen la misma experiencia de conectividad dentro y fuera de la oficina.  
+     DirectAccess le permite conectarse sin problemas a su organización "red de s™ desde cualquier ubicación remota equipada con Internet sin tener que establecer una conexión de red privada virtual (VPN). DirectAccess proporciona mayor productividad para su organización "™ s trabajadores móviles, ofreciendo la misma experiencia de conectividad dentro y fuera de la oficina.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 
 -   [Administrar Windows Server Essentials](Manage-Windows-Server-Essentials.md)

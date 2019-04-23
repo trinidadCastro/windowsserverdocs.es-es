@@ -1,6 +1,6 @@
 ---
-title: Planear NPS como un servidor de radio
-description: Este tema proporciona información sobre la implementación de servidores RADIUS de servidor de directivas de red planificación en Windows Server 2016.
+title: Planear NPS como servidor RADIUS
+description: En este tema se proporciona información acerca de la implementación de servidor RADIUS de servidor de directivas de red planeación en Windows Server 2016.
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,219 +8,220 @@ ms.topic: article
 ms.assetid: 2900dd2c-0f70-4f8d-9650-ed83d51d509a
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e9bb95428c17e5d7bde588693e84288ddfe64531
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 5fd89ef8d95735b8cbe1334ba51ed0059595dbc3
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59839176"
 ---
-# <a name="plan-nps-as-a-radius-server"></a>Planear NPS como un servidor de radio
+# <a name="plan-nps-as-a-radius-server"></a>Planear NPS como servidor RADIUS
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Cuando implementas \(NPS\) el servidor de directivas de red como un servidor de servicio de autenticación remota telefónica de usuario (RADIUS), NPS realiza la autenticación, autorización y contabilidad solicitudes de conexión para el dominio local y en los dominios que confían en el dominio local. Puedes usar estas directrices de diseño para simplificar la implementación de RADIUS.
+Al implementar el servidor de directivas de red \(NPS\) como un servidor de servicio de autenticación remota telefónica de usuario (RADIUS), NPS realiza la autenticación, autorización y contabilidad para las solicitudes de conexión para el dominio local y para dominios que confiar en el dominio local. Puede utilizar estas directrices de planeamiento para simplificar la implementación de RADIUS.
 
-Estas directrices de diseño no incluyen circunstancias en que quieres implementar NPS como un proxy RADIUS. Cuando implementas NPS como proxy RADIUS, NPS reenvía solicitudes de conexión a un servidor que ejecute NPS u otros servidores RADIUS en dominios remotos, dominios de confianza o ambas cosas. 
+Estas instrucciones para la planeación no incluyen circunstancias en que desea implementar NPS como proxy RADIUS. Al implementar NPS como proxy RADIUS, NPS reenvía las solicitudes de conexión a un servidor que ejecuta NPS u otros servidores RADIUS en dominios remotos, dominios sin confianza o ambos. 
 
-Antes de implementar NPS como un servidor RADIUS de la red, usa las directrices siguientes para planear la implementación.
+Antes de implementar NPS como servidor RADIUS en la red, utilice las siguientes directrices para planear la implementación.
 
-- Planear la configuración del servidor NPS.
+- Planear la configuración de NPS.
 
-- Planea a los clientes RADIUS.
+- Planear a los clientes RADIUS.
 
 - Planear el uso de métodos de autenticación.
 
-- Planear las directivas de red.
+- Planeación de las directivas de red.
 
-- Planear la administración de cuentas de NPS.
+- Plan de contabilidad de NPS.
 
-## <a name="plan-nps-server-configuration"></a>Planear la configuración del servidor NPS
+## <a name="plan-nps-configuration"></a>Planear la configuración de NPS
 
-Debes decidir en qué dominio del servidor NPS es un miembro. Para entornos de varios dominios, un servidor NPS puede autenticar las credenciales para cuentas de usuario en el dominio del que es un miembro y para todos los dominios que confían en el dominio local del servidor NPS. Para permitir que el servidor NPS leer las propiedades de marcado de cuentas de usuario durante el proceso de autorización, debes agregar la cuenta de equipo del servidor NPS al grupo de servidores RAS y NPS para cada dominio.
+Debe decidir en qué dominio, NPS es miembro. Para entornos de varios dominios, NPS puede autenticar las credenciales de cuentas de usuario en el dominio del que es miembro y para todos los dominios que confían en el dominio local de NPS. Para permitir que el NPS leer las propiedades de marcado de cuentas de usuario durante el proceso de autorización, debe agregar la cuenta de equipo de NPS para el grupo de RAS y NPSs para cada dominio.
 
-Después de determinar la pertenencia a dominio del servidor NPS, el servidor debe configurarse para comunicarse con los clientes RADIUS, también denominados servidores de acceso de red mediante el protocolo RADIUS. Además, puedes configurar los tipos de eventos que grabe NPS en el caso de registro y escribir una descripción para el servidor.
+Después de determinar la pertenencia al dominio de NPS, el servidor debe configurarse para comunicarse con los clientes RADIUS, también denominados servidores de acceso de red, mediante el protocolo RADIUS. Además, puede configurar los tipos de eventos que registra NPS en el registro y se puede escribir una descripción para el servidor de eventos.
 
 ### <a name="key-steps"></a>Pasos clave
 
-Durante la planificación de la configuración del servidor NPS, puedes usar los siguientes pasos.
+Durante el planeamiento de la configuración de NPS, puede usar los pasos siguientes.
 
-- Determinar los puertos de radio que use el servidor NPS para recibir mensajes de radio de clientes de RADIUS. Los puertos predeterminados son los puertos UDP 1812 y 1645 para los mensajes de autenticación de RADIUS y puertos 1813 y 1646 para los mensajes RADIUS.
+- Determinar los puertos RADIUS que usa NPS para recibir mensajes RADIUS de los clientes RADIUS. Los puertos predeterminados son los puertos UDP 1812 y 1645 para los mensajes de autenticación RADIUS y los puertos 1813 y 1646 para los mensajes de cuentas RADIUS.
 
-- Si el servidor NPS está configurado con varios adaptadores de red, determina los adaptadores sobre la que quieres que el tráfico de radio para poder.
+- Si el NPS se configura con varios adaptadores de red, determinar los adaptadores a través de la que desea que se permite el tráfico RADIUS.
 
-- Determinar los tipos de eventos que desee NPS para grabar en el registro de eventos. Puede iniciar solicitudes de autenticación rechazadas, solicitudes de autenticación correcta o ambos tipos de solicitudes.
+- Determinar los tipos de eventos que desea que NPS registre en el registro de eventos. Puede registrar las solicitudes de autenticación rechazados, solicitudes de autenticación correctas o ambos tipos de solicitudes.
 
-- Determinar si vas a implementar más de un servidor NPS. Para proporcionar tolerancia a errores para la autenticación basada en RADIUS y cuentas, usar al menos dos servidores NPS. Un servidor NPS se usa como el servidor RADIUS principal y el otro se usa como una copia de seguridad. Cada cliente RADIUS, a continuación, se configura en los servidores NPS. Si el servidor NPS principal no está disponible, los clientes RADIUS, a continuación, enviar mensajes de solicitud de acceso en el servidor NPS alternativo.
+- Determine si va a implementar más de un servidor NPS. Para proporcionar tolerancia a errores para la autenticación basada en RADIUS y cuentas, use al menos dos NPSs. Se usa un NPS como servidor RADIUS principal y la otra se usa como una copia de seguridad. Cada cliente RADIUS, a continuación, se configura en ambos NPSs. Si el NPS principal deja de estar disponible, los clientes RADIUS, envían mensajes de solicitud de acceso a NPS alternativo.
 
-- Planear el script que se usa para copiar una configuración del servidor NPS a otros servidores NPS guardar en la sobrecarga administrativa y para evitar que la configuración incorrecta de un servidor. NPS proporciona los comandos Netsh que le permitan copiar todo o parte de una configuración del servidor NPS para importarlos en otro servidor NPS. Puedes ejecutar los comandos manualmente en el símbolo del sistema de Netsh. Sin embargo, si guardas la secuencia de comandos como un script, puede ejecutar el script en una fecha posterior si decides cambiar la configuración del servidor.
+- Planee la secuencia de comandos que se usa para copiar una configuración de NPS en otros NPSs para guardar en la sobrecarga administrativa y evitar que la configuración incorrecta de un servidor. NPS proporciona los comandos Netsh que le permitan copiar todo o parte de una configuración de NPS para importarlos en otro NPS. Puede ejecutar los comandos manualmente en el símbolo del sistema de Netsh. Sin embargo, si guarda la secuencia de comandos como una secuencia de comandos, puede ejecutar el script en una fecha posterior si decide cambiar las configuraciones de servidor.
 
-## <a name="plan-radius-clients"></a>Clientes RADIUS de plan
+## <a name="plan-radius-clients"></a>Planear a los clientes RADIUS
 
-Clientes de RADIUS son servidores de acceso de red, como puntos de acceso inalámbrico, servidores de red privada virtual (VPN), 802.1X conmutadores compatible con X y los servidores de acceso telefónico. Servidores proxy de radio, que reenviar mensajes de solicitud a servidores RADIUS de conexión, también son clientes de RADIUS. NPS es compatible con todos los servidores de acceso de red y servidores proxy de radio que cumplan con el radio de protocolo como se describe en la RFC 2865, "Servicio autenticación remota telefónica de usuario (RADIUS)," y RFC 2866, "Cuentas RADIUS".
+Los clientes RADIUS son servidores de acceso de red, como puntos de acceso inalámbricos, servidores de red privada virtual (VPN), 802.1X conmutadores compatibles con X y los servidores de acceso telefónico. Proxy RADIUS que reenvían los mensajes de solicitud a servidores RADIUS de conexión, también son clientes RADIUS. NPS es compatible con todos los servidores de acceso de red y proxy RADIUS que cumplen con el radio del protocolo como se describe en RFC 2865, "Servicio autenticación remota telefónica de usuario (RADIUS)," y RFC 2866, "Contabilidad de RADIUS".
 
 >[!IMPORTANT]
->Los clientes de acceso, como los equipos cliente, no son clientes de RADIUS. Solo los servidores de acceso de red y los servidores proxy que admiten el protocolo RADIUS son clientes de RADIUS.
+>Los clientes de acceso, como los equipos cliente, no son clientes RADIUS. Solo los servidores de acceso de red y servidores proxy que admiten el protocolo RADIUS son clientes RADIUS.
 
-Además, los puntos de acceso inalámbrico y cambia debe ser capaz de autenticación 802.1X. Si quieres implementar el protocolo de autenticación Extensible \(EAP\) o el protocolo de autenticación Extensible protegido \(PEAP\), puntos de acceso y modificadores deben admitir el uso de EAP.
+Además, los puntos de acceso inalámbrico y conmutadores deben ser capaces de autenticación 802.1X. Si desea implementar el protocolo de autenticación Extensible \(EAP\) o protocolo de autenticación Extensible protegido \(PEAP\), conmutadores y puntos de acceso deben admitir el uso de EAP.
 
-Para probar la interoperabilidad básica para las conexiones de PPP para puntos de acceso inalámbrico, configurar el punto de acceso y el cliente de acceso para usar el protocolo de autenticación de contraseña (PAP). Usa protocolos de autenticación adicional basado en PPP, como PEAP, hasta que haya probado las que vayas a usar para el acceso a la red.
+Para probar la interoperabilidad básica para las conexiones PPP para puntos de acceso inalámbrico, configure el punto de acceso y el cliente de acceso para usar el protocolo de autenticación de contraseña (PAP). Usar protocolos de autenticación adicionales basadas en PPP, como PEAP, hasta que haya probado los que se va a utilizar para el acceso a la red.
 
 ### <a name="key-steps"></a>Pasos clave
 
-Durante la planeación para clientes RADIUS, puedes usar los siguientes pasos.
+Durante el planeamiento de clientes RADIUS, puede usar los pasos siguientes.
 
-- Atributos de documento específico del proveedor (VSA) debe configurar en NPS. Si los servidores de acceso de red necesitan VSA, registrar la información de VSA para su uso posterior al configurar las directivas de red en NPS. 
+- Documente los atributos específicos del proveedor (VSA), debe configurar en NPS. Si los servidores de acceso de red requieren VSA, registrar la información de VSA para su uso posterior cuando configura las directivas de red en NPS. 
 
-- Documentar las direcciones IP de los clientes RADIUS y el servidor NPS para simplificar la configuración de todos los dispositivos. Cuando implementas los clientes RADIUS, debes configurar para usar el protocolo RADIUS, con la dirección IP del servidor NPS escrita como el servidor de autenticación. Y cuando se configura NPS para comunicarse con los clientes RADIUS, tienes que escribir las direcciones IP de cliente RADIUS en el complemento de NPS.
+- Documente las direcciones IP de clientes RADIUS y el NPS para simplificar la configuración de todos los dispositivos. Al implementar los clientes RADIUS, debe configurar para que usen el protocolo RADIUS, con la dirección IP de NPS especificada como el servidor de autenticación. Y cuando se configura NPS para comunicarse con los clientes RADIUS, debe especificar las direcciones IP del cliente RADIUS en el complemento NPS.
 
-- Crear secretos compartidos para la configuración de los clientes RADIUS y en el complemento NPS. Debes configurar a clientes RADIUS con un secreto compartido o la contraseña, que también se especifica en el complemento NPS durante la configuración de clientes de RADIUS en NPS.
+- Cree los secretos compartidos para la configuración de los clientes RADIUS y en el complemento NPS. Debe configurar a clientes RADIUS con un secreto compartido, o la contraseña, que también va a escribir en el complemento NPS al configurar clientes RADIUS en NPS.
 
 ## <a name="plan-the-use-of-authentication-methods"></a>Planear el uso de métodos de autenticación
 
-NPS es compatible con ambos métodos de autenticación basada en contraseña y basada en certificados. Sin embargo, no todos los servidores de acceso de red admiten los mismos métodos de autenticación. En algunos casos, es posible que quieras implementar un método de autenticación diferentes en función del tipo de acceso de red.
+NPS es compatible con ambos métodos de autenticación basada en contraseña y basada en certificados. Sin embargo, no todos los servidores de acceso de red admiten los mismos métodos de autenticación. En algunos casos, es posible que desea implementar un método de autenticación diferente según el tipo de acceso de red.
 
-Por ejemplo, es posible que quieras implementar conexión inalámbrica y el acceso VPN para la organización, pero utilizar un método de autenticación diferentes para cada tipo de acceso: EAP-TLS para las conexiones VPN, debido a la seguridad sólida que proporciona EAP con seguridad de la capa de transporte (EAP-TLS) y PEAP-MS-CHAPv2 para conexiones inalámbricas 802.1X.
+Por ejemplo, es posible que desee implementar inalámbrico y el acceso VPN para su organización, pero use un método de autenticación diferente para cada tipo de acceso: EAP-TLS para las conexiones VPN, debido a la seguridad sólida que proporciona EAP con seguridad de la capa de transporte (EAP-TLS) y PEAP-MS-CHAP v2 para conexiones inalámbricas 802.1X.
 
-Vuelve a conectar PEAP con Microsoft protocolo de autenticación versión 2 (PEAP-MS-CHAPv2) proporciona una característica denominada rápida que está diseñado específicamente para su uso con equipos portátiles y otros dispositivos inalámbricos. Permite a los clientes inalámbricos moverse entre puntos de acceso inalámbrico en la misma red sin necesidad de autenticarse cada vez que se asocian a un nuevo punto de acceso de la reconexión rápida. Esto proporciona una mejor experiencia para los usuarios inalámbricos y les permite moverse entre puntos de acceso sin tener que introducir sus credenciales.
-Debido a rápido vuelve a conectar y la seguridad que proporciona PEAP-MS-CHAPv2, PEAP-MS-CHAPv2 es una opción lógica como método de autenticación para conexiones inalámbricas.
+PEAP con protocolo de autenticación de Microsoft desafío mutuo versión 2 (PEAP-MS-CHAP v2) proporciona una característica denominada fast volver a conectar que está diseñado específicamente para su uso con equipos portátiles y otros dispositivos inalámbricos. Reconexión rápida permite a los clientes inalámbricos moverse entre puntos de acceso inalámbrico en la misma red sin que se va a volver a autenticarse cada vez que se asocian a un nuevo punto de acceso. Esto proporciona una mejor experiencia para usuarios inalámbricos y les permite para moverse entre puntos de acceso sin tener que volver a escribir sus credenciales.
+Debido a fast volver a conectarse y la seguridad que proporciona PEAP-MS-CHAP v2, PEAP-MS-CHAP v2 es una elección lógica como método de autenticación para conexiones inalámbricas.
 
-Para las conexiones VPN, EAP-TLS es un método de autenticación basada en certificados que ofrece una seguridad sólida que protege el tráfico de red, incluso cuando se transmite a través de Internet desde casa o móvil equipos a los servidores VPN de la organización.
+Para las conexiones VPN, EAP-TLS es un método de autenticación basada en certificados que proporciona seguridad sólida que protege el tráfico de red, incluso cuando se transmiten a través de Internet desde los equipos móviles o de inicio para los servidores VPN de la organización.
 
 ### <a name="certificate-based-authentication-methods"></a>Métodos de autenticación basada en certificados
 
-Métodos de autenticación basada en certificados tienen la ventaja de proporcionar seguridad sólida; y tienen la desventaja de ser más difíciles de implementar que métodos de autenticación basada en contraseña.
+Métodos de autenticación basada en certificados tienen la ventaja de proporcionar seguridad sólida; y tienen la desventaja de ser más difícil de implementar que los métodos de autenticación basado en contraseña.
 
-PEAP-MS-CHAPv2 y EAP-TLS son métodos de autenticación basada en certificados, pero hay muchas diferencias entre ellos y la forma en que se implementan.
+PEAP-MS-CHAP v2 y EAP-TLS son métodos de autenticación basada en certificados, pero existen muchas diferencias entre ellas y la manera en que se implementan.
 
 ### <a name="eap-tls"></a>EAP-TLS
 
-EAP-TLS usa certificados para la autenticación de cliente y servidor y requiere que implementar una infraestructura de clave pública (PKI) de la organización. Implementar una PKI pueden ser compleja y requiere una fase de diseño que es independiente de diseño para el uso de NPS como un servidor RADIUS.
+EAP-TLS usa certificados para la autenticación de cliente y servidor y requiere que se implemente una infraestructura de clave pública (PKI) de su organización. Implementar una PKI puede ser compleja y requiere una fase de planeación que es independiente de la planeación para el uso de NPS como servidor RADIUS.
 
-Con EAP-TLS, el servidor NPS inscribe un certificado de servidor de una entidad de certificación \(CA\) y el certificado se guarda en el equipo local en el almacén de certificados. Durante el proceso de autenticación, autenticación de servidor se produce cuando el servidor NPS envía su certificado de servidor al cliente acceso para probar su identidad al cliente de acceso. El cliente de acceso examina diversas propiedades de certificado para determinar si el certificado es válido y es adecuado para su uso durante la autenticación de servidor. Si el certificado de servidor cumple los requisitos de certificado de servidor mínimo y emitido por una entidad de certificación que confíe en el cliente de acceso, el cliente correctamente autentica el servidor NPS.
+Con EAP-TLS, el NPS inscribe un certificado de servidor de una entidad de certificación \(CA\), y el certificado se guarda en el equipo local en el almacén de certificados. Durante el proceso de autenticación, autenticación de servidor se produce cuando el NPS envía su certificado de servidor al cliente de acceso para demostrar su identidad al cliente de acceso. El cliente de acceso examina diversas propiedades del certificado para determinar si el certificado es válido y es adecuado para su uso durante la autenticación de servidor. Si el certificado de servidor cumple los requisitos de certificado de servidor mínima y emitido por una CA que confía en el cliente de acceso, NPS se autentica correctamente con el cliente.
 
-Del mismo modo, autenticación de cliente se produce durante el proceso de autenticación cuando el cliente envía su certificado de cliente en el servidor NPS para probar su identidad en el servidor NPS. El servidor NPS examina el certificado y, si el certificado de cliente cumple los requisitos de certificado de cliente mínimo y emitido por una entidad de certificación que confíe en el servidor NPS, el cliente de acceso se autenticó correctamente por el servidor NPS.
+De forma similar, autenticación de cliente se produce durante el proceso de autenticación cuando el cliente envía su certificado de cliente a NPS para demostrar su identidad a NPS. NPS examina el certificado y, si el certificado de cliente cumple los requisitos de certificado de cliente mínima y emitido por una CA que confía en el NPS, NPS autentica correctamente el cliente de acceso.
 
-Si bien es necesario que el certificado de servidor se almacena en el almacén de certificados en el servidor NPS, el certificado de cliente o usuario puede almacenarse en el almacén de certificados en el cliente o en una tarjeta inteligente.
+Aunque es necesario que el certificado de servidor se almacena en el almacén de certificados en el NPS, se puede almacenar el certificado de cliente o usuario en el almacén de certificados en el cliente o en una tarjeta inteligente.
 
-Para que este proceso de autenticación correctamente, es necesario que todos los equipos tienen el certificado de CA de la organización en el almacén de certificados de entidades de certificación raíz de confianza para el equipo Local y el usuario actual.
+Este proceso de autenticación se realice correctamente, se requiere que todos los equipos tienen el certificado de entidad de certificación de su organización en el almacén de certificados entidades emisoras raíz de confianza para el equipo Local y el usuario actual.
 
-### <a name="peap-ms-chap-v2"></a>PEAP-MS-CHAPv2
+### <a name="peap-ms-chap-v2"></a>PEAP-MS-CHAP v2
 
-PEAP-MS-CHAPv2 usa un certificado de autenticación de servidores y credenciales basadas en contraseña para la autenticación de usuario. Como los certificados se usan solo para la autenticación de servidor, no son necesarios para implementar una PKI para poder usar PEAP-MS-CHAPv2. Al implementar PEAP-MS-CHAPv2, puede obtener un certificado de servidor para el servidor NPS en una de las siguientes dos maneras:
+PEAP-MS-CHAP v2 usa un certificado para la autenticación de servidor y credenciales basadas en contraseña para la autenticación de usuario. Dado que los certificados se usan solo para la autenticación de servidor, no son necesarios para implementar una PKI para poder usar PEAP-MS-CHAP v2. Al implementar PEAP-MS-CHAP v2, puede obtener un certificado de servidor de NPS en una de las dos maneras siguientes:
 
-- Puedes instalar servicios de certificados de Active Directory (AD CS) y, a continuación, los certificados de inscripción automática en servidores NPS. Si usas este método, también debe inscribir el certificado de CA en los equipos cliente conectarse a la red para que confiar en el certificado emitido para el servidor NPS.
+- Puede instalar servicios de certificados de Active Directory (AD CS) y, a continuación, inscribir automáticamente certificados en NPSs. Si utiliza este método, también debe inscribir el certificado de CA a equipos cliente se conectan a la red para que confíen en el certificado emitido a NPS.
 
-- Puedes comprar un certificado de servidor de una CA pública, como VeriSign. Si usas este método, asegúrate de que seleccionar una entidad de certificación que ya sea de confianza para los equipos cliente. Para determinar si los equipos cliente confían en una entidad de certificación, abre el complemento Microsoft Management Console (MMC) de certificados en un equipo cliente y, a continuación, ver el almacén de entidades de certificación raíz de confianza para el equipo Local y para el usuario actual. Si hay un certificado de la CA en estos almacenes de certificados, el equipo cliente confía en la CA y, por tanto, confíe en cualquier certificado emitido por la CA.
+- Puede adquirir un certificado de servidor de una CA pública, como VeriSign. Si utiliza este método, asegúrese de que seleccionar una entidad de certificación que ya sea de confianza para los equipos cliente. Para determinar si los equipos cliente confiarán en una entidad de certificación, abra el complemento Microsoft Management Console (MMC) de certificados en un equipo cliente y, a continuación, ver el almacén entidades emisoras raíz de confianza para el equipo Local y para el usuario actual. Si hay un certificado de la CA en estos almacenes de certificados, el equipo cliente confía en la CA y, por tanto, confíe en cualquier certificado emitido por la entidad de certificación.
 
-Durante el proceso de autenticación con PEAP-MS-CHAPv2, autenticación de servidor se produce cuando el servidor NPS envía su certificado de servidor en el equipo cliente. El cliente de acceso examina diversas propiedades de certificado para determinar si el certificado es válido y es adecuado para su uso durante la autenticación de servidor. Si el certificado de servidor cumple los requisitos de certificado de servidor mínimo y emitido por una entidad de certificación que confíe en el cliente de acceso, el cliente correctamente autentica el servidor NPS.
+Durante el proceso de autenticación con PEAP-MS-CHAP v2, autenticación de servidor se produce cuando el NPS envía su certificado de servidor en el equipo cliente. El cliente de acceso examina diversas propiedades del certificado para determinar si el certificado es válido y es adecuado para su uso durante la autenticación de servidor. Si el certificado de servidor cumple los requisitos de certificado de servidor mínima y emitido por una CA que confía en el cliente de acceso, NPS se autentica correctamente con el cliente.
 
-Autenticación de usuario se produce cuando un usuario intenta conectarse a las credenciales de red tipos basada en contraseña e intenta iniciar sesión. NPS recibe las credenciales y realiza la autenticación y autorización. Si el usuario está autenticado y autorizado correctamente, y si el equipo cliente correctamente autentica el servidor NPS, se concede la solicitud de conexión.
-
-### <a name="key-steps"></a>Pasos clave
-
-Durante la planeación para el uso de métodos de autenticación, puedes usar los siguientes pasos.
-
-- Identificar los tipos de acceso a la red que estás pensando ofrecer, por ejemplo, inalámbrico, VPN, 802.1X modificador compatible con X y acceso telefónico.
-
-- Determinar el método de autenticación o métodos que quieres usar para cada tipo de acceso. Se recomienda que puedes usar los métodos de autenticación basada en certificados que proporcionan una seguridad eficaz; Sin embargo, no sería práctico para implementar una PKI, por lo que otros métodos de autenticación podrían proporcionar un equilibrio mejor de lo que necesitas para la red.
-
-- Si vas a implementar EAP-TLS, planear la implementación de infraestructura de clave pública. Esto incluye la planeación de las plantillas de certificado que se va a usar para certificados de servidor y certificados de equipo cliente. También incluye determinar cómo inscribirse certificados a determinar si quieres usar tarjetas inteligentes, miembro de dominio y equipos miembro no del dominio.
-
-- Si vas a implementar PEAP-MS-CHAPv2, determinar si desea instalar AD CS para emitir certificados de servidor a los servidores NPS o si quieres comprar certificados de servidor de una CA pública, como VeriSign.
-
-### <a name="plan-network-policies"></a>Plan de directivas de red
-
-Las directivas de red se usan por NPS para determinar si las solicitudes de conexión recibidas de los clientes RADIUS están autorizadas. NPS también usa las propiedades de marcado de la cuenta de usuario para realizar una determinación de autorización.
-
-Dado que se procesan las directivas de red en el orden en que aparecen en el complemento NPS, planea colocar las directivas más restrictivas primero en la lista de directivas. Para cada solicitud de conexión, NPS se intenta hacer coincidir las condiciones de la directiva con las propiedades de solicitud de conexión. NPS examina cada directiva de red en orden hasta que encuentra a una coincidencia. Si no encuentra a una coincidencia, se rechaza la solicitud de conexión.
+Autenticación de usuario se produce cuando un usuario intenta conectarse a las credenciales de red tipos basado en contraseña y se intenta iniciar sesión. NPS recibe las credenciales y realiza la autenticación y autorización. Si el usuario está autenticado y autorizado correctamente y si el equipo cliente autentica correctamente el NPS, se concede la solicitud de conexión.
 
 ### <a name="key-steps"></a>Pasos clave
 
-Durante el diseño de directivas de red, puedes usar los siguientes pasos.
+Al planear el uso de métodos de autenticación, puede usar los pasos siguientes.
 
-- Determinar el orden de procesamiento de NPS preferido de directivas de red, desde la más restrictiva a menos restrictiva.
+- Identifique los tipos de acceso de red que se va a ofrecer, como inalámbricas, 802.1X, VPN, conmutador compatible con X y acceso telefónico.
 
-- Determinar el estado de la directiva. El estado de directiva puede tener el valor de habilitado o deshabilitado. Si la directiva está habilitada, NPS evalúa la directiva al realizar la autorización. Si no se habilita la directiva, no se evalúa.
+- Determinar el método de autenticación o los métodos que se va a usar para cada tipo de acceso. Se recomienda que utilice los métodos de autenticación basada en certificados que proporcionan una gran seguridad; Sin embargo, no sería práctico para implementar una PKI, por lo que otros métodos de autenticación pueden proporcionar un mejor equilibrio de lo que necesita para la red.
 
-- Determinar el tipo de directiva. Debes determinar si la directiva está diseñada para conceder acceso cuando se cumplen las condiciones de la directiva de la solicitud de conexión o si la directiva está diseñada para denegar el acceso cuando se cumplen las condiciones de la directiva de la solicitud de conexión. Por ejemplo, si quieres explícitamente denegar acceso inalámbrico a los miembros de un grupo de Windows, puedes crear una directiva de red que especifica el grupo, el método de conexión inalámbrica y que tiene una directiva de configuración de denegar el acceso de tipo.
+- Si va a implementar que EAP-TLS, planee la implementación de PKI. Esto incluye la planificación de las plantillas de certificado que se va a usar para los certificados de servidor y certificados de equipo cliente. También incluye la determinación de cómo inscribir certificados para el miembro de dominio y equipos miembro que no sea de dominio y determinar si desea usar tarjetas inteligentes.
 
-- Determinar si se desea NPS pasar por alto las propiedades de marcado de cuentas de usuario que son miembros del grupo en el que se basa la directiva. Cuando no se habilita esta configuración, las propiedades de marcado de cuentas de usuario invalidación la configuración de directivas de red. Por ejemplo, si se configura una directiva de red que concede acceso a un usuario, pero se establecen las propiedades de marcado de la cuenta de usuario para ese usuario para denegar el acceso, el usuario se deniega el acceso. Sin embargo, si habilitas las propiedades de configuración telefónica de cuenta de usuario de omitir del tipo de directiva, el mismo usuario se concede acceso a la red.
+- Si implementas PEAP-MS-CHAP v2, determine si desea instalar AD CS para emitir certificados de servidor a sus NPSs o si desea adquirir certificados de servidor de una CA pública, como VeriSign.
 
-- Determinar si la directiva usa la configuración de directiva de origen. Esta configuración permite fácilmente especificar un origen para todas las solicitudes de acceso. Orígenes posibles son una puerta de enlace de servicios de Terminal (TS Gateway), un servidor de acceso remoto (telefónico o VPN), un servidor DHCP, un punto de acceso inalámbrico y un servidor de la entidad de registro de estado. Como alternativa, puedes especificar un origen de específicos del proveedor.
+### <a name="plan-network-policies"></a>Planeación de las directivas de red
 
-- Determinar las condiciones que deben cumplirse en orden para que se aplica la directiva de red.
+Se usan las directivas de red NPS para determinar si están autorizadas las solicitudes de conexión procedentes de clientes RADIUS. NPS también usa las propiedades de acceso telefónico de la cuenta de usuario para tomar una decisión de autorización.
 
-- Determinar la configuración que se aplica si se cumplen las condiciones de la directiva de red por la solicitud de conexión.
-
-- Determinar si desea usar, modificar o eliminar las directivas de red de forma predeterminada.
-
-## <a name="plan-nps-accounting"></a>Planear la administración de cuentas de NPS
-
-NPS proporciona la capacidad para registrar los datos de cuentas de RADIUS, como la autenticación de usuario y solicitudes de cuentas, en tres formatos: formato IAS, formato compatible con la base de datos y el registro de Microsoft SQL Server. 
-
-Formato de IAS y base de datos compatible crean archivos de registro en el servidor NPS local en formato de archivo de texto. 
-
-Registro de SQL Server proporciona la capacidad de iniciar la sesión SQL Server 2000 o base de datos compatible con SQL Server 2005 XML, ampliación de cuentas de RADIUS para aprovechar las ventajas de inicio de sesión en una base de datos relacional.
+Dado que las directivas de red se procesan en el orden en que aparecen en el complemento NPS, planea colocar las directivas más restrictivas en primer lugar en la lista de directivas. Para cada solicitud de conexión, NPS intenta hacer coincidir las condiciones de la directiva con las propiedades de la solicitud de conexión. NPS examina cada directiva de red en orden hasta que encuentra a una coincidencia. Si no encuentra a una coincidencia, se rechaza la solicitud de conexión.
 
 ### <a name="key-steps"></a>Pasos clave
 
-Durante la planeación para las cuentas de NPS, puedes usar los siguientes pasos.
+Durante el planeamiento de directivas de red, puede usar los pasos siguientes.
 
-- Determinar si desea almacenar datos de cuentas de NPS en archivos de registro o en una base de datos de SQL Server.
+- Determinar el orden de procesamiento de NPS preferido de las directivas de red, desde el más restrictivo al menos restrictivo.
 
-### <a name="nps-accounting-using-local-log-files"></a>Contabilidad NPS con archivos de registro local
+- Determinar el estado de la directiva. El estado de la directiva puede tener el valor de habilitado o deshabilitado. Si está habilitada la directiva, NPS evalúa la directiva al realizar la autorización. Si no está habilitada la directiva, no se evalúa.
 
-Solicitudes de autenticación y cuentas de usuario de grabación en archivos de registro se usa principalmente para fines de análisis y la facturación de conexión y también es útiles como una herramienta de investigación de seguridad, proporcionar un método para realizar el seguimiento de la actividad de un usuario malintencionado después de un ataque.
+- Determinar el tipo de directiva. Debe determinar si la directiva está diseñada para conceder acceso cuando se cumplan las condiciones de la directiva de la solicitud de conexión o si la directiva está diseñada para denegar el acceso cuando se cumplan las condiciones de la directiva de la solicitud de conexión. Por ejemplo, si desea denegar explícitamente el acceso inalámbrico a los miembros de un grupo de Windows, puede crear una directiva de red que especifica el grupo, el método de conexión inalámbrica y que tiene una directiva de un tipo de configuración de denegar el acceso.
 
-### <a name="key-steps"></a>Pasos clave
+- Determine si desea que NPS para que omita las propiedades de marcado de cuentas de usuario que son miembros del grupo en el que se basa la directiva. Cuando esta opción no está habilitada, las propiedades de marcado de cuentas de usuario reemplazan valores configurados en las directivas de red. Por ejemplo, si se configura una directiva de red que se concede acceso a un usuario, pero las propiedades de acceso telefónico de la cuenta de usuario para que el usuario se configuran para denegar el acceso, el usuario se deniega el acceso. Pero si habilita las propiedades de configuración de acceso telefónico de cuenta de usuario de omitir del tipo de directiva, el mismo usuario se concede acceso a la red.
 
-Durante la planeación para las cuentas de NPS con archivos de registro local, puedes usar los siguientes pasos.
+- Determine si la directiva utiliza la configuración de directiva de origen. Esta configuración le permite especificar fácilmente una fuente para todas las solicitudes de acceso. Posibles orígenes son una puerta de enlace de Terminal Services (puerta de enlace de TS), un servidor de acceso remoto (VPN o telefónico), un servidor DHCP, un punto de acceso inalámbrico y un servidor de autoridad de registro de mantenimiento. Como alternativa, puede especificar un origen específico del proveedor.
 
-- Determinar el formato de archivo de texto que quieras usar para los archivos de registro NPS.
+- Determinar las condiciones que deben cumplirse en orden para que se aplicará la directiva de red.
 
-- Elegir el tipo de información que quieres iniciar sesión. Puede iniciar solicitudes de cuentas, las solicitudes de autenticación y estado periódico.
+- Determine la configuración que se aplica si se cumplen las condiciones de la directiva de red por la solicitud de conexión.
 
-- Determinar la ubicación de disco duro donde quieres almacenar los archivos de registro.
+- Determine si desea utilizar, modificar o eliminar las directivas de red predeterminada.
 
-- Diseña la solución de copia de seguridad de archivos de registro. La ubicación de disco duro en las que almacenar los archivos de registro debe ser una ubicación que permite hacer copias de seguridad de los datos. Además, la ubicación de disco duro debe estar protegida mediante la configuración de la lista de control de acceso (ACL) de la carpeta donde se almacenan los archivos de registro.
+## <a name="plan-nps-accounting"></a>Plan de contabilidad de NPS
 
-- Determinar la frecuencia que desee crear nuevos archivos de registro. Si quieres que los archivos de registro se crean basándose en el tamaño del archivo, determinar el tamaño máximo permitido antes de que se crea un nuevo archivo de registro NPS.
+NPS proporciona la capacidad de registrar los datos de cuentas de RADIUS, como la autenticación de usuario y las solicitudes de cuentas, en tres formatos: Formato IAS, formato compatible con la base de datos y registro de Microsoft SQL Server. 
 
-- Determinar si se desea NPS para eliminar archivos de registro anteriores si el disco duro se quede sin espacio de almacenamiento.
+Formato IAS y formato compatible con la base de datos crean archivos de registro en el NPS local en formato de archivo de texto. 
 
-- Determinar la aplicación o aplicaciones que quieras usar para ver los datos de cuentas y generar informes.
-
-### <a name="nps-sql-server-logging"></a>Registro de NPS SQL Server
-
-Se usa el registro de NPS SQL Server cuando necesitas información de estado de sesión, para fines de análisis de datos y creación de informes y centralizar y simplificar la administración de los datos de contabilidad.
-
-NPS proporciona la capacidad de usar SQL Server registro hasta la autenticación de usuario del registro y cuentas de las solicitudes que reciben de uno o varios servidores de acceso de red con un origen de datos en un equipo que ejecute el \(MSDE 2000\) motor de escritorio de Microsoft SQL Server, o cualquier versión de SQL Server posterior a SQL Server 2000.
-
-Datos de cuentas se pasan de NPS en formato XML a un procedimiento almacenado en la base de datos, que es compatible con ambas lenguaje de consulta estructurado \(SQL\) y \(SQLXML\) XML. Grabación de autenticación de usuario y solicitudes en una base de datos de SQL Server compatible con XML de cuentas permiten que varios servidores NPS tener un origen de datos.
+Registro de SQL Server proporciona la capacidad de iniciar en un SQL Server 2000 o una base de datos compatibles con SQL Server 2005 XML, extender las cuentas RADIUS para aprovechar las ventajas del registro en una base de datos relacional.
 
 ### <a name="key-steps"></a>Pasos clave
 
-Durante la planificación para las cuentas de NPS mediante el registro de NPS SQL Server, puedes usar los siguientes pasos.
+Durante la planificación para la contabilidad de NPS, puede usar los pasos siguientes.
 
-- Determinar si puedes u otro miembro de tu organización tiene experiencia de desarrollo de bases de datos relacionales de SQL Server 2000 o SQL Server 2005 y comprender cómo usar estos productos para crear, modificar, administrar y administrar las bases de datos de SQL Server.
+- Determine si desea almacenar los datos de cuentas NPS en los archivos de registro o en una base de datos de SQL Server.
 
-- Determinar si está instalado SQL Server en el servidor NPS o en un equipo remoto.
+### <a name="nps-accounting-using-local-log-files"></a>Contabilidad de NPS mediante archivos de registro local
 
-- Diseña el procedimiento que se usará en la base de datos de SQL Server para procesar los archivos XML entrantes que contienen datos de cuentas de NPS.
+Grabación de autenticación de usuarios y solicitudes en los archivos de registro de cuentas se usa principalmente para fines de facturación y análisis de la conexión y también es útil como herramienta de investigación de seguridad, proporcionar un método para realizar el seguimiento de la actividad de un usuario malintencionado después de un ataque.
 
-- Diseñar la estructura de replicación de base de datos de SQL Server y el flujo.
+### <a name="key-steps"></a>Pasos clave
 
-- Determinar la aplicación o aplicaciones que quieras usar para ver los datos de cuentas y generar informes.
+Durante la planificación para la contabilidad de NPS mediante archivos de registro local, puede usar los pasos siguientes.
 
-- Va a utilizar los servidores de acceso de red que enviar el atributo de clase en todas las solicitudes de cuentas. El atributo de clase se envía al cliente RADIUS en un mensaje de aceptación de acceso y es útil para la correspondencia con las sesiones de autenticación de mensajes de solicitud de contabilidad. Si el servidor de acceso de red en los mensajes de la solicitud de contabilidad envía el atributo de clase, se puede usar para que coincida con los registros de autenticación y cuentas. La combinación de los atributos único--número de serie, hora de reinicio de servicio y la dirección del servidor debe ser un identificador único para cada autenticación que acepta el servidor.
+- Determinar el formato de archivo de texto que desea usar para los archivos de registro NPS.
 
-- Va a utilizar los servidores de acceso de red que admiten cuentas temporales.
+- Elija el tipo de información que desea registrar. Puede registrar las solicitudes de cuentas, las solicitudes de autenticación y estado periódico.
 
-- Va a utilizar los servidores de acceso de red que envían mensajes y las cuentas desactivación.
+- Determinar la ubicación de disco duro donde desea almacenar los archivos de registro.
 
-- Planea usar servidores de acceso de red que admiten el almacenamiento y reenvío de datos de cuentas. Servidores de acceso de red que admiten esta característica pueden almacenar datos de cuentas cuando el servidor de acceso de red no puede comunicarse con el servidor NPS. Cuando el servidor NPS está disponible, el servidor de acceso de red reenvía los registros almacenados en el servidor NPS, proporcionar una mayor fiabilidad en la administración de cuentas en los servidores de acceso de red que no proporcionas esta característica.
+- Diseñe su solución de copia de seguridad de archivos de registro. La ubicación del disco duro donde se almacenan los archivos de registro debe ser una ubicación que permite realizar fácilmente una copia de seguridad de los datos. Además, la ubicación del disco duro debe protegerse mediante la configuración de la lista de control de acceso (ACL) para la carpeta donde se almacenan los archivos de registro.
 
-- Planear siempre configurar el atributo de intervalo de provisionales de cuenta en las directivas de red. El atributo de intervalo de provisionales de cuenta establece el intervalo (en segundos) entre cada actualización intermedia que envía el servidor de acceso de red. Según RFC 2869, el valor del atributo de intervalo de provisionales de cuenta no debe ser inferior a 60 segundos o un minuto y no debe ser inferior a 600 segundos o 10 minutos. Para obtener más información, consulta RFC 2869, "RADIUS extensiones".
+- Determine la frecuencia a la que desea crear nuevos archivos de registro. Si desea que los archivos de registro se crean según el tamaño del archivo, determinar el tamaño de archivo máximo permitido antes de que se crea un nuevo archivo de registro NPS.
 
-- Asegúrate de que el registro de estado periódico esté habilitado en los servidores NPS.
+- Determine si desea que NPS para eliminar los archivos de registro antiguos si el disco duro se queda sin espacio de almacenamiento.
+
+- Determine la aplicación o aplicaciones que desea usar para ver los datos de cuentas y producir informes.
+
+### <a name="nps-sql-server-logging"></a>Registro del servidor SQL de NPS
+
+Registro del servidor SQL de NPS se usa cuando se necesita información de estado de sesión, con fines de análisis de datos, y creación de informes y para centralizar y simplificar la administración de los datos de cuentas.
+
+NPS ofrece la posibilidad de usar SQL Server, inicio de sesión autenticación de usuario del registro y teniendo en cuenta las solicitudes recibidas desde uno o varios servidores de acceso de red a un origen de datos en un equipo que ejecuta Microsoft SQL Server Desktop Engine \(MSDE 2000\), o cualquier versión de SQL Server posterior a SQL Server 2000.
+
+Se pasan los datos de cuentas de NPS en formato XML a un procedimiento almacenado en la base de datos, que es compatible con ambos lenguaje de consulta estructurado \(SQL\) y XML \(SQLXML\). Grabación de autenticación de usuario y teniendo en cuenta las solicitudes en una base de datos de SQL Server compatible con XML permiten varios NPSs tener un origen de datos.
+
+### <a name="key-steps"></a>Pasos clave
+
+Durante la planificación para la contabilidad de NPS mediante el registro de SQL Server de NPS, puede usar los pasos siguientes.
+
+- Determinar si usted o a otro miembro de su organización tiene experiencia de desarrollo de base de datos relacional de SQL Server 2000 o SQL Server 2005 y comprender cómo usar estos productos para crear, modificar, administrar y administrar bases de datos de SQL Server.
+
+- Determinar si SQL Server está instalado en el NPS o en un equipo remoto.
+
+- Diseñe el procedimiento almacenado que se usará en la base de datos de SQL Server para procesar archivos XML entrantes que contienen datos de contabilidad de NPS.
+
+- Diseñar la estructura de la replicación de base de datos de SQL Server y el flujo.
+
+- Determine la aplicación o aplicaciones que desea usar para ver los datos de cuentas y producir informes.
+
+- Plan para usar servidores de acceso de red que enviar el atributo de clase en todas las solicitudes de cuentas. El atributo de clase se envía al cliente RADIUS en un mensaje de aceptación de acceso y es útil para correlacionar los mensajes de solicitud de cuentas con las sesiones de autenticación. Si el atributo de clase se envía mediante el servidor de acceso de red en los mensajes de solicitud de contabilidad, se puede usar para que coincida con los registros de autenticación y cuentas. La combinación de los atributos Unique-: número de serie, hora de reinicio de servicio y dirección del servidor debe ser una identificación única para cada autenticación que acepta el servidor.
+
+- Considere usar servidores de acceso de red que admitan cuentas temporales.
+
+- Considere usar servidores de acceso de red que envían mensajes y las cuentas o desactivadas.
+
+- Considere usar servidores de acceso de red que admiten el almacenamiento y reenvío de datos de cuentas. Servidores de acceso de red que admitan esta característica pueden almacenar los datos de cuentas cuando el servidor de acceso de red no puede comunicarse con el NPS. Cuando NPS está disponible, el servidor de acceso de red reenvía los registros almacenados en NPS, que proporciona una mayor confiabilidad en administración de cuentas a través de servidores de acceso de red que no proporcionen esta característica.
+
+- Plan para configurar siempre el atributo Acct-Interim-Interval en las directivas de red. El atributo Acct-Interim-Interval establece el intervalo (en segundos) entre cada actualización intermedia que envía el servidor de acceso de red. Según RFC 2869, el valor del atributo Acct-Interim-Interval no debe ser menor que 60 segundos o de un minuto y no debe ser inferior a 600 segundos o 10 minutos. Para obtener más información, consulte RFC 2869, "Extensiones RADIUS".
+
+- Asegúrese de que está habilitado el registro de estado periódico en sus NPSs.
 
