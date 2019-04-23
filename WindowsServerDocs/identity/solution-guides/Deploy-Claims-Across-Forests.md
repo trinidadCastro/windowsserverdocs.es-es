@@ -1,59 +1,61 @@
 ---
 ms.assetid: ceb9ce18-5a94-4166-9edd-2685b81fc15f
-title: Implementar notificaciones entre bosques
-description: 
+title: Implementación de notificaciones en bosques
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 02/09/2017
+ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e47804b9e194706d3b30787a1d6ae4b907467af1
-ms.sourcegitcommit: 877a50cd8d6e727048cdfac9b614a98ac3220876
-ms.translationtype: HT
+ms.openlocfilehash: 7d78258d8f1db9889b6d2db8c497780940ed35a1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890656"
 ---
-# <a name="deploy-claims-across-forests"></a>Implementar notificaciones entre bosques
+# <a name="deploy-claims-across-forests"></a>Implementación de notificaciones en bosques
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En Windows Server 2012, un tipo de notificación es una aserción sobre el objeto con el que está asociado. Los tipos de notificación se definen por bosque de Active Directory. Existen muchos escenarios donde una entidad de seguridad posible que tengas que recorrer un límite de confianza para acceder a recursos en un bosque de confianza. Transformación entre bosques notificaciones en Windows Server 2012 le permite transformar reclamaciones de salida y entrada que recorren bosques para que las notificaciones reconoce y acepta en los bosques de confianza y que confían. Algunos de los escenarios reales de transformación de una reclamación son:  
+En Windows Server 2012, un tipo de notificación es una aserción sobre el objeto con el que está asociada. Los tipos de notificación se definen por cada bosque en Active Directory. Hay muchos escenarios en los que puede ser necesario que una entidad de seguridad atraviese un límite de confianza para tener acceso a los recursos de un bosque de confianza. Transformación de notificaciones entre bosques en Windows Server 2012 le permite transformar las notificaciones de entrada y salida que atraviesan bosques para que las notificaciones se ha reconocido y aceptadas en los bosques que confían y de confianza. Algunos de los escenarios reales para la transformación de notificaciones son:  
   
--   Bosques de confianza pueden utilizar reclamación transformación como una protección contra ataques de elevación de privilegios filtrando las notificaciones entrantes con valores específicos.  
+-   Los bosques que confían pueden usar la transformación de notificaciones como una protección frente a la elevación de privilegios mediante el filtrado de las notificaciones entrantes con valores específicos.  
   
-    Bosques de confianza, también pueden emitir reclamaciones por entidades próximamente sobre un límite de confianza si el bosque de confianza no admite o emitir cualquier reclamación.  
+    Los bosques que confían también pueden emitir notificaciones para las entidades de seguridad que llegan a un límite de confianza si el bosque de confianza no admite ni emite las notificaciones.  
   
--   Bosques de confianza pueden utilizar la transformación de notificación para evitar determinados tipos de notificaciones y notificaciones con ciertos valores de destinada al bosque de confianza.  
+-   Los bosques de confianza pueden usar la transformación de notificaciones para evitar que determinados tipos de notificaciones y notificaciones con ciertos valores salgan del bosque que confía.  
   
--   También puedes usar la solicitud de notificación de transformación para asignar diferentes tipos entre bosques de confianza y que confían. Esto puede usarse para generalizar el tipo de notificación, el valor de notificación o ambos. Sin esto, debes normalizar los datos entre los bosques antes de poder usar las notificaciones. Generalización de reclamaciones entre los bosques de confianza y que confían reduce los costos de TI.  
+-   También puedes usar la transformación de notificaciones para asignar tipos diferentes de notificaciones entre bosques que confían y de confianza. Esto puede servir para generalizar el tipo de notificación, el valor de la notificación o ambos aspectos. Sin esto, tendrás que normalizar los datos entre los bosques antes de poder usar las notificaciones. Generalizar las notificaciones entre los bosques que confían y de confianza reduce los costos de TI.  
   
-## <a name="claim-transformation-rules"></a>Reglas de transformación de notificación  
-La sintaxis de lenguaje de transformación regla divide una sola regla en dos partes principales: una serie de instrucciones condicionales y la declaración del problema. Cada instrucción condicional tiene dos subcomponentes: el identificador de solicitud y la condición. La declaración del problema contiene palabras clave, delimitadores y una expresión del problema. La instrucción condicional, opcionalmente, comienza con una variable de identificador de notificación, que representa la solicitud de entrada coincidente. Comprueba la condición de la expresión. Si la solicitud de entrada no coincide con la condición, el motor de transformación omite la declaración del problema y evalúa la siguiente solicitud de entrada con la regla de transformación. Si todas las condiciones coincide con la solicitud de entrada, se procesa la declaración del problema.  
+## <a name="claim-transformation-rules"></a>Reglas de transformación de notificaciones  
+La sintaxis del lenguaje de las reglas de transformación divide una sola regla en dos partes principales: una serie de instrucciones de condición y la instrucción del problema. Cada instrucción de condición tiene dos subcomponentes: el identificador de notificaciones y la condición. La instrucción del problema contiene palabras clave, delimitadores y una expresión de problema. Opcionalmente, la instrucción de condición comienza con una variable de identificador de notificación, que representa la notificación de entrada coincidente. La condición comprueba la expresión. Si la notificación de entrada no coincide con la condición, el motor de transformación omite la instrucción del problema y evalúa la siguiente notificación de entrada con la regla de transformación. Si todas las condiciones coinciden con la notificación de entrada, procesará la instrucción del problema.  
   
-Para obtener información detallada sobre el lenguaje de reglas de notificación, consulta [reglas de lenguaje de transformación de reclamaciones](Claims-Transformation-Rules-Language.md).  
+Para obtener información detallada sobre el lenguaje de reglas de notificación, consulta [Claims Transformation Rules Language](Claims-Transformation-Rules-Language.md).  
   
-## <a name="linking-claim-transformation-policies-to-forests"></a>Vinculación de directivas de transformación de notificación a los bosques  
-Hay dos componentes implicados en la configuración de directivas de la transformación de Reclamación: reclamar objetos de directiva de transformación y el vínculo de transformación. Los objetos de directiva live en el contexto de nomenclatura de configuración en un bosque y contienen información de asignación para las notificaciones. Especifica el vínculo que confiar y bosques de confianza se aplica la asignación.  
+## <a name="linking-claim-transformation-policies-to-forests"></a>Vinculación de las directivas de transformación de notificaciones a los bosques  
+Hay dos componentes implicados en la configuración de directivas de transformación de notificaciones: los objetos de directiva de transformación de notificaciones y el enlace de la transformación. Los objetos de directiva residen en el contexto de nomenclatura de configuración en un bosque y contienen información de asignación para las notificaciones. El vínculo especifica a qué bosques que confían y de confianza se aplica la asignación.  
   
-Es importante determinar si el bosque es el bosque de confianza o que confían porque se trata de base para vincular objetos de directiva de transformación. Por ejemplo, el bosque de confianza es el bosque que contiene las cuentas de usuario que requieren acceso. El bosque de confianza es el bosque que contiene los recursos que quieras dar a los usuarios acceso a. Reclamaciones de viajes en la misma dirección que la entidad de seguridad que requiere acceso a la seguridad. Por ejemplo, si hay una confianza unidireccional del bosque contoso.com al bosque adatum.com, las notificaciones fluya de adatum.com a contoso.com, que permite a los usuarios de adatum.com acceder a recursos en contoso.com.  
+Es importante comprender si el bosque es el bosque que confía o de confianza, porque esto es la base para vincular objetos de directiva de transformación. Por ejemplo, el bosque de confianza es el bosque que contiene las cuentas de usuario que requieren acceso. El bosque que confía es el bosque que contiene los recursos a los que quieres dar acceso a los usuarios. Las notificaciones viajan en la misma dirección que la entidad de seguridad que requiere acceso. Por ejemplo, si hay una confianza unidireccional desde el bosque contoso.com al bosque adatum.com, las notificaciones se desplazarán desde adatum.com hasta contoso.com, lo que permite a los usuarios de adatum.com tener acceso a los recursos de contoso.com.  
   
-De manera predeterminada, un bosque de confianza permite todas las notificaciones salientes a pasar y un bosque de confianza quita todas las notificaciones entrantes que recibe.  
+De forma predeterminada, un bosque de confianza permite a todas las notificaciones salientes que pasen y un bosque que confía coloca todas las notificaciones entrantes que recibe.  
   
 ## <a name="in-this-scenario"></a>En este escenario  
-La siguiente guía está disponible para este escenario:  
+Para este escenario está disponible la guía siguiente:  
   
--   [Implementar notificaciones entre bosques & #40; pasos de demostración & #41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
+-   [Implementar notificaciones en bosques &#40;pasos de demostración&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
   
--   [Lenguaje de las reglas de transformación de notificaciones](Claims-Transformation-Rules-Language.md)  
+-   [Lenguaje de reglas de transformación de notificaciones](Claims-Transformation-Rules-Language.md)  
   
-## <a name="BKMK_NEW"></a>Roles y características incluidas en este escenario  
-La siguiente tabla enumera los roles y características que forman parte de este escenario y describe cómo apoyan.  
+## <a name="BKMK_NEW"></a>Roles y características que se incluyen en este escenario  
+En la tabla siguiente, se enumeran los roles y las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
-|Rol o característica|¿Cómo admite este escenario|  
+|Rol/característica|Compatibilidad con este escenario|  
 |-----------------|---------------------------------|  
-|Servicios de dominio de Active Directory|En este escenario, debe configurar dos bosques de Active Directory con confianza bidireccional. Tienes notificaciones en ambos bosques. También establecen directivas de acceso central en el bosque de confianza donde residen los recursos.|  
-|Rol de servicios de archivos y almacenamiento|En este escenario, la clasificación de datos se aplica a los recursos en los servidores de archivos. Se aplica la directiva de acceso central en la carpeta donde quieres conceder acceso de usuario. Tras la transformación, la reclamación concede acceso de usuario a los recursos en función de la directiva de acceso central que se aplica a la carpeta en el servidor de archivos.|  
+|Active Directory Domain Services|En este escenario, tienes que configurar dos bosques de Active Directory con una confianza bidireccional. Tienes notificaciones en ambos bosques. También puedes establecer directivas de acceso central en el bosque que confía en el que residen los recursos.|  
+|Rol de servicios de archivos y almacenamiento|En este escenario, se aplica la clasificación de datos a los recursos de los servidores de archivos. La directiva de acceso central se aplica a la carpeta donde quieres conceder el acceso al usuario. Después de la transformación, la notificación concede acceso de usuario a los recursos basándose en la directiva de acceso central que se aplica a la carpeta del servidor de archivos.|  
   
 
 

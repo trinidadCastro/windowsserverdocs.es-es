@@ -11,19 +11,19 @@ description: Cómo quitar servidores de un clúster de Espacios de almacenamient
 ms.date: 2/5/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 9fcb67b3c5fbcff0ca2a48ee9a1d2e109af3e9a8
-ms.sourcegitcommit: bb626d8626ef47426b781925ea588755dbe2e403
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "7871608"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890786"
 ---
-# Quitar servidores en Espacios de almacenamiento directo
+# <a name="removing-servers-in-storage-spaces-direct"></a>Quitar servidores en Espacios de almacenamiento directo
 
 >Se aplica a: Windows Server 2019, Windows Server 2016
 
 En este tema se describe cómo quitar servidores en [Espacios de almacenamiento directo](storage-spaces-direct-overview.md) mediante PowerShell.
 
-## Quitar un servidor, pero dejar las unidades
+## <a name="remove-a-server-but-leave-its-drives"></a>Quitar un servidor, pero dejar las unidades
 
 Si tienes pensado volver a agregar el servidor al clúster pronto, o si quieres mover las unidades a otro servidor para mantenerlas, puedes quitar el servidor del clúster *sin* quitar sus unidades del grupo de almacenamiento. Este es el comportamiento predeterminado, si usas el Administrador de clústeres de conmutación por error para quitar el servidor.
 
@@ -40,7 +40,7 @@ Cuando vuelvan las unidades, se detectarán y volverán a asociarse con el grupo
    >[!WARNING]
    > No distribuyas las unidades con datos agrupados de un servidor a otros varios servidores. Por ejemplo, si se produce un error en un servidor con diez unidades (por ejemplo, por un problema en la placa base o en la unidad de arranque), **puedes** mover las diez unidades a un nuevo servidor, pero **no** puedes mover cada una por separado a varios servidores distintos.
 
-## Quitar un servidor y las unidades
+## <a name="remove-a-server-and-its-drives"></a>Quitar un servidor y las unidades
 
 Si quieres quitar un servidor del clúster de forma permanente (a veces denominado "escalado"), puedes quitar el servidor del clúster *y* quitar las unidades del grupo de almacenamiento.
 
@@ -52,17 +52,17 @@ Remove-ClusterNode <Name> -CleanUpDisks
 
 Este cmdlet puede tardar mucho tiempo (en ocasiones, muchas horas) en ejecutarse porque Windows debe mover todos los datos almacenados en ese servidor a otros servidores del clúster. Una vez que se completa esto, las unidades se quitan de manera permanente del grupo de almacenamiento, lo que devuelve los volúmenes afectados a un estado correcto.
 
-### Requisitos
+### <a name="requirements"></a>Requisitos
 
 Para escalar (quitar un servidor *y* sus unidades) de manera permanente, el clúster debe cumplir los siguientes dos requisitos. Si no es así, el cmdlet **Remove-ClusterNode -CleanUpDisks** devolverá un error de inmediato, antes de que comience cualquier movimiento de datos, para minimizar las interrupciones.
 
-#### Capacidad suficiente
+#### <a name="enough-capacity"></a>Capacidad suficiente
 
-En primer lugar, debes tener suficiente capacidad de almacenamiento en los servidores restantes para dar cabida a todos los volúmenes.
+En primer lugar, debe tener suficiente capacidad de almacenamiento en los servidores restantes para dar cabida a todos los volúmenes.
 
-Por ejemplo, si tienes cuatro servidores, cada uno con 10unidades de 1TB, tienes 40TB de capacidad de almacenamiento físico total. Después de quitar un servidor y todas sus unidades, quedarás con 30TB de capacidad. Si las superficies de los volúmenes son de más de 30TB en conjunto, no cabrán en los servidores restantes, por lo que el cmdlet devolverá un error y no moverá ningún dato.
+Por ejemplo, si tienes cuatro servidores, cada uno con 10 unidades de 1 TB, tienes 40 TB de capacidad de almacenamiento físico total. Después de quitar un servidor y todas sus unidades, quedarás con 30 TB de capacidad. Si las superficies de los volúmenes son de más de 30 TB en conjunto, no cabrán en los servidores restantes, por lo que el cmdlet devolverá un error y no moverá ningún dato.
 
-#### Dominios de error suficientes
+#### <a name="enough-fault-domains"></a>Dominios de error suficientes
 
 En segundo lugar, debes tener suficientes dominios de error (por lo general, servidores) para proporcionar la resistencia de los volúmenes.
 
@@ -74,11 +74,11 @@ En esta tabla se muestra el número mínimo de dominios de error necesario para 
 |------------------------|-------------------------------------|
 |    Reflejo doble      |    2                                |
 |    Reflejo triple    |    3                                |
-|    Paridad dual         |    4                                |
+|    Paridad doble         |    4                                |
 
    >[!NOTE]
    > No hay problemas si tienes menos servidores por un momento, como durante errores o mantenimiento. Sin embargo, para que los volúmenes vuelvan a un buen estado por completo, debes tener el número mínimo de servidores que se indica anteriormente.
 
-## Consulta también
+## <a name="see-also"></a>Vea también
 
-- [Información general de Espacios de almacenamiento directos](storage-spaces-direct-overview.md)
+- [Información general de espacios directo de almacenamiento](storage-spaces-direct-overview.md)

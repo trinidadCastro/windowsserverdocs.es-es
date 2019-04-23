@@ -1,6 +1,6 @@
 ---
-title: "Generar informes a petición"
-description: "En este artículo se describe cómo generar informes a petición para analizar el uso del disco en el servidor"
+title: Generar informes a petición
+description: En este artículo se describe cómo generar informes a petición para analizar el uso del disco en el servidor
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: e91bfbc306d1d2712f7b35ec48114b3a8a84ec83
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890996"
 ---
 # <a name="generate-reports-on-demand"></a>Generar informes a petición
 
@@ -49,7 +50,7 @@ Cuando se generan informes a petición, los informes se guardan en la ubicación
  
 5.  Para especificar los formatos para guardar los informes:
 
-    -  En **Formatos de informes**, selecciona uno o varios formatos para los informes programados. De forma predeterminada, los informes se generan en DynamicHTML (DHTML). También puedes seleccionar HTML, XML, CSV y formatos de texto. Los informes se guardan en la ubicación predeterminada para los informes a petición.
+    -  En **Formatos de informes**, selecciona uno o varios formatos para los informes programados. De forma predeterminada, los informes se generan en Dynamic HTML (DHTML). También puedes seleccionar HTML, XML, CSV y formatos de texto. Los informes se guardan en la ubicación predeterminada para los informes a petición.
 
 6.  Para enviar copias de los informes a los administradores por correo electrónico:
 
@@ -65,8 +66,8 @@ Cuando se generan informes a petición, los informes se guardan en la ubicación
 
     Ambas opciones guardan los informes y, si habilitaste la entrega por correo electrónico, envían los informes a los administradores en los formatos que has seleccionado.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Administración de informes de almacenamiento](storage-reports-management.md)
--   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
+-   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
 

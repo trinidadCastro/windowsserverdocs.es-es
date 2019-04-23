@@ -1,7 +1,7 @@
 ---
 ms.assetid: 222e9f93-7c41-4527-8a98-8f7fbc7a58af
-title: "Implementar el proxy de servidor de federación"
-description: 
+title: Implementación de servidores proxy de federación
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,38 +10,39 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: dc49d8f4b656fdbb92083aa3c60bc4ce81091e9b
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890826"
 ---
-# <a name="deploying-federation-server-proxies"></a>Implementar el proxy de servidor de federación
+# <a name="deploying-federation-server-proxies"></a>Implementación de servidores proxy de federación
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-En los servicios de federación de Active Directory \(AD FS\) en Windows Server 2012 R2, el rol de un proxy de servidor de federación está administrado por un nuevo servicio de rol de acceso remoto denominado a Proxy de aplicación Web. Para habilitar la AD FS de accesibilidad desde fuera de la red corporativa, que era el propósito de la implementación de un proxy de servidor de federación en versiones heredadas de AD FS, por ejemplo, AD FS 2.0 y AD FS en Windows Server 2012, puedes implementar a uno o más proxy de aplicación web de AD FS en Windows Server 2012 R2.  
+En Active Directory Federation Services \(AD FS\) en Windows Server 2012 R2, el rol de un servidor proxy de federación se gestiona mediante un nuevo servicio de rol acceso remoto denominado Web Application Proxy. Para habilitar AD FS para el acceso desde fuera de la red corporativa, lo que era el propósito de la implementación de un servidor proxy de federación en versiones heredadas de AD FS, como AD FS 2.0 y AD FS en Windows Server 2012, puede implementar a uno o varios web application proxy para un D FS en Windows Server 2012 R2.  
   
-En el contexto de AD FS, Proxy de aplicación Web funciona como un proxy de servidor de federación de AD FS. Además, el Proxy de aplicación Web proporciona funcionalidad de proxy inverso para aplicaciones web dentro de la red corporativa permitir que los usuarios en cualquier dispositivo acceder a ellos desde fuera de la red corporativa. Para obtener más información sobre el servicio de rol Proxy de aplicación Web, consulta la información general sobre el Proxy de aplicación Web.  
+En el contexto de AD FS, Proxy de aplicación Web funciona como un servidor proxy de federación de AD FS. Además, el servicio Proxy de aplicación web ofrece funcionalidad de proxy inverso para las aplicaciones web dentro de la red corporativa para permitir a los usuarios de cualquier dispositivo acceso a estas desde fuera de la red corporativa. Para obtener información general sobre el servicio de rol Proxy de aplicación web, consulte la introducción a Proxy de aplicación web.  
   
-Para planear la implementación de proxy de aplicación Web, puedes revisar la información en los siguientes temas:  
+Para planear la implementación de Proxy de aplicación web, puede consultar la información de los temas siguientes:  
   
--   [Planear la infraestructura de Proxy de aplicación Web (WAP)](https://technet.microsoft.com/library/dn383648.aspx)  
+-   [Planear la infraestructura del Proxy de aplicación Web (WAP)](https://technet.microsoft.com/library/dn383648.aspx)  
   
 -   [Planear el servidor de Proxy de aplicación Web](https://technet.microsoft.com/library/dn383647.aspx)  
   
-Para implementar el proxy de aplicación Web, puedes seguir los procedimientos descritos en los siguientes temas:  
+Para implementar Web Application Proxy, puede seguir los procedimientos de los temas siguientes:  
   
--   [Configurar la infraestructura de Proxy de aplicación Web](https://technet.microsoft.com/library/dn383644.aspx)  
+-   [Configurar la infraestructura del Proxy de aplicación Web](https://technet.microsoft.com/library/dn383644.aspx)  
   
 -   [Instalar y configurar el servidor de Proxy de aplicación Web](https://technet.microsoft.com/library/dn383662.aspx)  
   
  
-## <a name="see-also"></a>Consulta también 
+## <a name="see-also"></a>Vea también 
 
 [Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
 
 [Guía de implementación de Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  
-[Implementar un conjunto de servidor de federación](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
+[Implementar una granja de servidores de federación](../../ad-fs/deployment/Deploying-a-Federation-Server-Farm.md)  
   
 
