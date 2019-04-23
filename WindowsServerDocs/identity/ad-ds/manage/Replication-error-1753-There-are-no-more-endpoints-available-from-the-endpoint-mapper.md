@@ -1,40 +1,55 @@
 ---
 ms.assetid: 0f21951c-b1bf-43bb-a329-bbb40c58c876
-title: "Error de replicación 1753 allí son no hay más extremos disponibles desde el asignador de extremo"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: 'Error de replicación 1753: no hay más puntos de conexión disponibles desde el asignador de puntos de conexión'
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 0e7412f5edc6c206888551fdc250883b5c0ced3e
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: e429c87a2194ecfaf02c3d6c579eda75293250d4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59827516"
 ---
-# <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Error de replicación 1753 allí son no hay más extremos disponibles desde el asignador de extremo
+# <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Error de replicación 1753: no hay más puntos de conexión disponibles desde el asignador de puntos de conexión
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-<developerConceptualDocument xmlns="https://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ddue.schemas.microsoft.com/authoring/2003/5 http://clixdevr3.blob.core.windows.net/ddueschema/developer.xsd">
-  <introduction>
-    <para>Este tema explica los síntomas, las causas y cómo resolver Active Directory replicación error 8524 DSA la operación es no se puede continuar debido a un error de búsqueda DNS.</para>
+<developerConceptualDocument xmlns="https://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="https://www.w3.org/1999/xlink" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ddue.schemas.microsoft.com/authoring/2003/5 http://clixdevr3.blob.core.windows.net/ddueschema/developer.xsd"> <introduction>
+    <para>Este tema explica los síntomas, causas y cómo resolver Active Directory replication error 8524 la operación DSA no puede continuar debido a un error de búsqueda DNS.</para>
     <list class="bullet">
-      <listItem><para><link xlink:href="f7022f0d-0099-410c-8178-c654e624bc42#BKMK_Symptoms">Síntomas</link></para></listItem><listItem><para><link xlink:href="f7022f0d-0099-410c-8178-c654e624bc42#BKMK_Cause">causa</link></para></listItem><listItem><para><link xlink:href="f7022f0d-0099-410c-8178-c654e624bc42#BKMK_Resolutions">resoluciones</link></para></listItem><listItem><para><link xlink:href="f7022f0d-0099-410c-8178-c654e624bc42#BKMK_MoreInfo">obtener más información</link></para></listItem>
+      <listItem>
+        <para>
+          <link xlink:href="f7022f0d-0099-410c-8178-c654e624bc42#BKMK_Symptoms">Síntomas</link>
+        </para>
+      </listItem> <listItem>
+        <para>
+          <link xlink:href="f7022f0d-0099-410c-8178-c654e624bc42#BKMK_Cause">Causa</link>
+        </para>
+      </listItem> <listItem>
+        <para>
+          <link xlink:href="f7022f0d-0099-410c-8178-c654e624bc42#BKMK_Resolutions">Soluciones</link>
+        </para>
+      </listItem> <listItem>
+        <para>
+          <link xlink:href="f7022f0d-0099-410c-8178-c654e624bc42#BKMK_MoreInfo">Obtener más información</link>
+        </para>
+      </listItem>
     </list>
   </introduction>
   <section address="BKMK_Symptoms">
-              
-    <title>Symptoms</title>
+    <title>Síntomas</title>
     <content>
-      <para>This article describes symptoms, cause and resolution steps for Active Directory operations that fail with Win32 error 1753: "There are no more endpoints available from the endpoint mapper."</para>
+      <para>En este artículo se describe los síntomas, causa y resolución de los pasos para las operaciones de Active Directory que generan el error de Win32 1753: "No hay no hay más extremos disponibles desde el endpoint mapper."</para>
       <list class="ordered">
         <listItem>
-          <para>DCDIAG reports that the Connectivity test, Active Directory Replications test or KnowsOfRoleHolders test has failed with error 1753: "There are no more endpoints available from the endpoint mapper."</para>
+          <para>DCDIAG informes que ha fallado la prueba de conectividad, prueba de replicaciones de Active Directory o KnowsOfRoleHolders Error 1753: "No hay no hay más extremos disponibles desde el endpoint mapper."</para>
           <code>Testing server: &lt;site&gt;&lt;DC Name&gt;
 Starting test: Connectivity
 * Active Directory LDAP Services Check
@@ -70,7 +85,7 @@ of starting up or shutting down, and is not available.
 Verify machine is not hung during boot.
 </code>
         </listItem>
-<listItem><para>REPADMIN.EXE reports that replication attempt has failed with status 1753.</para><para>REPADMIN commands that commonly cite the 1753 status include but are not limited to:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><tbody><tr><TD><list class="bullet"><listItem><para>/ Replsum REPADMIN</para></listItem><listItem><para>REPADMIN /SHOWREPL</para></listItem></list></TD><TD><list class="bullet"><listItem><para>REPADMIN /SHOWREPS</para></listItem><listItem><para>REPADMIN/SyncAll</para></listItem></list></TD></tr></tbody></table><para>Sample output from "REPADMIN /SHOWREPS" depicting inbound replication from CONTOSO-DC2 to CONTOSO-DC1 failing with the "replication access was denied" error is shown below:</para><code>Default-First-Site-NameCONTOSO-DC1
+<listItem><para>REPADMIN. EXE notifica que ese error de duplicación con estado 1753.</para><para>REPADMIN comandos que aparecen normalmente con el estado 1753 pueden incluir, pero no se limitan a:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><tbody><tr><TD><list class="bullet"><listItem><para>REPADMIN/REPLSUM.</para></listItem><listItem><para>REPADMIN /SHOWREPL</para></listItem></list></TD><TD><list class="bullet"><listItem><para>REPADMIN /SHOWREPS</para></listItem><listItem><para>REPADMIN /SYNCALL</para></listItem></list></TD></tr></tbody></table><para>Salida de ejemplo de "REPADMIN /SHOWREPS" que representan la replicación de entrada desde CONTOSO-DC2 a CONTOSO-DC1 produzca el error "se denegó el acceso de replicación" se muestra a continuación:</para><code>Default-First-Site-NameCONTOSO-DC1
 DSA Options: IS_GC 
 Site Options: (none)
 DSA object GUID: b6dc8589-7e00-4a5d-b688-045aef63ec01
@@ -84,117 +99,118 @@ There are no more endpoints available from the endpoint mapper.</codeFeaturedEle
 &lt;#&gt; consecutive failure(s).
 Last success @ &lt;date&gt; &lt;time&gt;.
 
-</code></listItem><listItem><para>The <ui>Check Replication Topology</ui> command in Active Directory Sites and Services returns "There are no more endpoints available from the endpoint mapper."</para><para>Right-clicking on the connection object from a source DC and choosing <ui>Check Replication Topology</ui> fails with "There are no more endpoints available from the endpoint mapper." The on-screen error message is shown below:</para><para>Dialog title text: Check Replication Topology</para><para>Dialog message text: </para><para>The following error occurred during the attempt to contact the domain controller: There are no more endpoints available from the endpoint mapper.</para></listItem><listItem><para>The <ui>Replicate now</ui> command in Active Directory Sites and Services returns "there are no more endpoints available from the endpoint mapper."</para><para>Right-clicking on the connection object from a source DC and choosing <ui>Replicate now</ui> fails with "There are no more endpoints available from the endpoint mapper." The on-screen error message is shown below:</para><para>Dialog title text: Replicate Now</para><para>Dialog message text: The following error occurred during the attempt to synchronize naming context &lt;%directory partition name%&gt; from Domain Controller &lt;Source DC&gt; to Domain Controller &lt;Destination DC&gt;:</para><para>
+</code></listItem><listItem><para>El <ui>comprobar la topología de replicación</ui> comando en sitios de Active Directory y servicios devuelve "No hay no hay más extremos disponibles desde el endpoint mapper."</para><para>Con el botón secundario en el objeto de conexión de un controlador de dominio de origen y elegir <ui>comprobar la topología de replicación</ui> se produce un error con "No hay no hay más extremos disponibles desde el endpoint mapper." El que aparecen en pantalla se muestra el mensaje de error siguiente:</para><para>Texto de título del cuadro de diálogo: Comprobar la topología de replicación</para><para>Texto de mensaje del cuadro de diálogo: </para><para>Se produjo el error siguiente durante el intento de ponerse en contacto con el controlador de dominio: No hay no hay más extremos disponibles desde el endpoint mapper.</para></listItem><listItem><para>El <ui>Replicar ahora</ui> comando en sitios de Active Directory y servicios devuelve "no hay no hay más extremos disponibles desde el endpoint mapper."</para><para>Con el botón secundario en el objeto de conexión de un controlador de dominio de origen y elegir <ui>Replicar ahora</ui> se produce un error con "No hay no hay más extremos disponibles desde el endpoint mapper." El que aparecen en pantalla se muestra el mensaje de error siguiente:</para><para>Texto de título del cuadro de diálogo: Replicar ahora</para><para>Texto de mensaje del cuadro de diálogo: Se produjo el error siguiente durante el intento de sincronizar el contexto de nomenclatura &lt;% nombre de partición de directorio %&gt; del controlador de dominio &lt;DC de origen&gt; al controlador de dominio &lt;deDCdedestino&gt;:</para><para>
 
-No hay ninguna más extremos disponibles desde el asignador. </para><para>La operación no continuará</para></listItem><listItem><para>NTDS KCC generales de NTDS o Microsoft-Windows-ActiveDirectory_DomainService eventos con el estado de-2146893022 se registran en el registro de servicios de directorio en el Visor de eventos. </para><para>Eventos de active Directory que citan normalmente el estado de-2146893022 incluyen pero no se limitan a:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><thead><tr><TD><para>Identificador de evento</para></TD><TD><para>Origen del evento</para></TD><TD><para>Cadena de evento</para></TD></tr></thead><tbody><tr><TD><para>1655</para></TD><TD><para>NTDS General</para></TD><TD><para>Active Directory intentó comunicarse con el catálogo global siguiente y los intentos no tuvieron éxito.</para></TD></tr><tr><TD><para>1925</para></TD><TD><para>NTDS KCC</para></TD><TD><para>Error al intentar establecer un vínculo de replicación de la partición de directorio grabable siguiente.</para></TD></tr><tr><TD><para>1265</para></TD><TD><para>NTDS KCC</para></TD><TD><para>El Comprobador de coherencia de conocimientos (KCC) para agregar un acuerdo de replicación siguiente directorio partición y el origen de controlador de dominio de error.</para></TD></tr></tbody></table></listItem>
+No hay no hay más extremos disponibles desde el endpoint mapper.</para><para>La operación no continuará.</para></listItem><listItem><para>NTDS KCC NTDS generales o Microsoft-Windows-ActiveDirectory_DomainService eventos con el estado-2146893022 se registran en el registro de servicios de directorio en el Visor de eventos.</para><para>Eventos de Active Directory que se suelen citan el estado-2146893022 incluyen, pero no se limitan a:</para><table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11"><thead><tr><TD><para>Id. de evento</para></TD><TD><para>Origen del evento</para></TD><TD><para>Cadena de eventos</para></TD></tr></thead><tbody><tr><TD><para>1655</para></TD><TD><para>NTDS General</para></TD><TD><para>Active Directory intentó comunicarse con el siguiente catálogo global y los intentos no tuvieron éxito.</para></TD></tr><tr><TD><para>1925</para></TD><TD><para>NTDS KCC</para></TD><TD><para>Error al intentar establecer un vínculo de replicación para la siguiente partición de directorio de escritura.</para></TD></tr><tr><TD><para>1265</para></TD><TD><para>NTDS KCC</para></TD><TD><para>Error en un intento por Comprobador de coherencia de información (KCC) para agregar un acuerdo de replicación para el siguiente directorio partición y el origen de controlador de dominio.</para></TD></tr></tbody></table></listItem>
 </list>
     </content>
   </section>
   <section address="BKMK_Cause">
     <title>Causa</title>
     <content>
-      <para>el siguiente diagrama muestra el flujo de trabajo RPC inicio con el registro de la aplicación del servidor con asignador de extremo de RPC (EPM) en el paso 1 para la transferencia de datos desde el cliente RPC a la aplicación cliente en el paso 7. </para>
+      <para>El diagrama siguiente muestra el flujo de trabajo RPC empezando con el registro de la aplicación de servidor con el asignador de punto de conexión de RPC (EPM) en el paso 1 para la transferencia de datos desde el cliente RPC a la aplicación cliente en el paso 7. </para>
       <para>&lt;ADDS_RPCWorkflow&gt;</para>
-      <para>pasos 1a 7 se asignan a las siguientes operaciones:</para>
+      <para>Pasos 1 a 7 mapa a las siguientes operaciones:</para>
       <list class="ordered">
         <listItem>
-          <para>servidor aplicación registra sus extremos con asignador de extremo de RPC (EPM) </para>
+          <para>Aplicación de servidor registra sus puntos de conexión con el asignador de punto de conexión de RPC (EPM) </para>
         </listItem>
         <listItem>
-          <para>cliente realiza una llamada RPC (en el nombre de un usuario, sistema operativo o la aplicación inicia operación) </para>
+          <para>Cliente realiza una llamada RPC (nombre del usuario, sistema operativo o aplicación iniciado un funcionamiento) </para>
         </listItem>
         <listItem>
-          <para>cliente lateral RPC contactos los equipos de destino EPM y solicitar el extremo completar la llamada del cliente </para>
+          <para>RPC del cliente se pone en contacto con los equipos de destino EPM y pedir el punto de conexión completar la llamada de cliente </para>
         </listItem>
         <listItem>
-          <para>EPM del equipo servidor responde con un extremo de </para>
+          <para>Responde EPM del equipo servidor con un punto de conexión </para>
         </listItem>
         <listItem>
-          <para>RPC del cliente que pone en contacto con la aplicación del servidor </para>
+          <para>RPC del cliente que pone en contacto con la aplicación de servidor </para>
         </listItem>
         <listItem>
-          <para>aplicación del servidor ejecuta la llamada, devuelve el resultado al cliente RPC </para>
+          <para>Aplicación de servidor se ejecuta la llamada, devuelve el resultado al cliente RPC </para>
         </listItem>
         <listItem>
-          <para>RPC del cliente, pasa el resultado a la aplicación cliente</para>
+          <para>RPC del cliente pasa el resultado a la aplicación cliente</para>
         </listItem>
       </list>
-      <para>Error 1753 genera un error entre los pasos #3 y 4 #. Específicamente, error 1753 significa que el cliente RPC (controlador de dominio de destino) se puede establecer contacto con el servidor RPC (origen DC) a través del puerto 135 la EPM en el servidor RPC (origen DC) no pudo encontrar la aplicación de RPC de interés y devuelve el error en el servidor 1753. La presencia del error 1753 indica que el cliente RPC (controlador de dominio de destino) recibe la respuesta de error del lado servidor desde el servidor RPC (origen de replicación de AD DC) a través de la red. </para>
-      <para>Causas específicos para el error 1753 incluyen: </para>
+      <para>Error 1753 genera un error de entre los pasos 3 # y #4. En concreto, el error 1753 significa que el cliente RPC (controlador de dominio de destino) fue capaz de ponerse en contacto con el servidor de RPC (controlador de dominio de origen) a través del puerto 135, pero el EPM en el servidor de RPC (controlador de dominio de origen) no pudo encontrar la aplicación de RPC de interés y devuelve el error en el servidor de 1753. La presencia del error 1753 indica que el cliente RPC (controlador de dominio de destino) recibió la respuesta de error del lado servidor desde el servidor de RPC (origen de replicación de AD DC) a través de la red. </para>
+      <para>Causas raíz específica del error 1753 son: </para>
       <list class="ordered">
         <listItem>
-          <para>nunca se inicia la aplicación del servidor (es decir, nunca se intentó el paso 1 en el diagrama de "más información" que se encuentre encima). </para>
+          <para>La aplicación de servidor se ha iniciado nunca (es decir, nunca se intentó el paso 1 en el diagrama "más información" situado encima de).</para>
         </listItem>
         <listItem>
-          <para>Inicia la aplicación de servidor, pero se produjo algún error durante la inicialización que impidió que realizara registrándose asignador de extremos RPC (es decir, paso 1 en el diagrama de "más información" anterior se intentó pero no se pudo). </para>
+          <para>Inicia la aplicación de servidor, pero se produjo algún error durante la inicialización que impidió su registro con el Endpoint Mapper de RPC (es decir, paso 1 en el diagrama "más información" anterior se intentó pero no se pudo).</para>
         </listItem>
         <listItem>
-          <para>Comenzado pero muerto posteriormente la aplicación del servidor. (es decir, paso 1 en el diagrama de "más información" anterior se realizó correctamente, pero se deshacer más adelante, porque el servidor muerto). </para>
+          <para>La aplicación de servidor se inició, pero posteriormente muerto. (es decir, paso 1 en el diagrama "más información" anterior se completó correctamente, pero se deshizo más adelante, porque el servidor muerto).</para>
         </listItem>
         <listItem>
-          <para>La aplicación del servidor no manualmente registrado sus extremos (similares a 3, pero de forma intencionada. Pero no es probable incluidas para ser más exactos). </para>
+          <para>La aplicación de servidor anulado su registro manualmente sus puntos de conexión (similares a 3, pero intencionado. Pero es probable que no se incluye por integridad.)</para>
         </listItem>
         <listItem>
-          <para>Un servidor RPC diferente de lo previsto debido a un nombre al error de asignación de IP en el archivo DNS, WINS o host o Lmhosts contactar con el cliente de la RPC (controlador de dominio de destino). </para>
+          <para>El cliente RPC (controlador de dominio de destino) puede establecer contacto con un servidor RPC diferente que el previsto debido a un nombre para el error de asignación de IP en DNS, WINS o archivo Lmhosts/host.</para>
         </listItem>
       </list>
       <para>Error 1753 no está causado por: </para>
       <list class="bullet">
         <listItem>
-          <para>una falta de conectividad de red entre el cliente RPC (controlador de dominio de destino) y el servidor RPC (origen DC) a través del puerto 135</para>
+          <para>Una falta de conectividad de red entre el cliente RPC (controlador de dominio de destino) y el servidor de RPC (controlador de dominio de origen) a través del puerto 135</para>
         </listItem>
         <listItem>
-          <para>una falta de conectividad de red entre el servidor RPC (origen DC) con el puerto 135 y el cliente RPC (controlador de dominio de destino) en el puerto efímero. </para>
+          <para>Una falta de conectividad de red entre el servidor RPC (controlador de dominio de origen) mediante el puerto 135 y el cliente RPC (controlador de dominio de destino) a través del puerto efímero. </para>
         </listItem>
         <listItem>
-          <para>Una falta de coincidencia de contraseña o la incapacidad por el origen de controlador de dominio para descifrar un paquete cifrado Kerberos</para>
+          <para>Un error de coincidencia de contraseña o la imposibilidad por el controlador de dominio de origen para descifrar un paquete cifrado de Kerberos </para>
         </listItem>
       </list>
-      <para></para>
+      <para> </para>
     </content>
   </section>
   <section address="BKMK_Resolutions">
-    <title>Resolutions</title>
+    <title>Soluciones</title>
     <content>
       <list class="ordered">
         <listItem>
           <para>
-            <embeddedLabel>Verify that the service registering its service with the endpoint mapper has started</embeddedLabel>
+            <embeddedLabel>Compruebe que se ha iniciado el servicio de registro de su servicio con el asignador de extremos</embeddedLabel>
           </para>
-          <para>For Windows 2000 and Windows Server 2003 DCs: ensure that the source DC is booted into normal mode. </para>
-          <para> For Windows Server 2008 or Windows Server 2008 R2: from the console of the source DC, start Services Manager (services.msc) and verify that the <embeddedLabel>Active Directory Domain Services</embeddedLabel> service is running. </para>
+          <para>Para Windows 2000 y controladores de dominio de Windows Server 2003: asegúrese de que el DC de origen se arranca en modo normal. </para>
+          <para>
+Para Windows Server 2008 o Windows Server 2008 R2: desde la consola del controlador de dominio de origen, inicie el Administrador de servicios (services.msc) y compruebe que la <embeddedLabel>Active Directory Domain Services</embeddedLabel> servicio se está ejecutando. </para>
         </listItem>
         <listItem>
           <para>
-            <embeddedLabel>Verify that RPC client (destination DC) connected to the intended RPC Server (source DC)</embeddedLabel>
+            <embeddedLabel>Compruebe que ese cliente RPC (controlador de dominio de destino) conectado al servidor RPC adecuado (controlador de dominio de origen)</embeddedLabel>
           </para>
-          <para>All DCs in a common Active Directory forest register a domain controller CNAME record in the _msdcs.&lt;forest root domain&gt; DNS zone regardless of what domain they reside in within the forest. The DC CNAME record is derived from the <embeddedLabel>objectGUID</embeddedLabel> attribute of the NTDS Settings object for each domain controller. </para>
-          <para>When performing replication-based operations, a destination DC queries DNS for the source DCs CNAME record. The CNAME record contains the source DC fully qualified computer name which is used to derive the source DCs IP address via DNS client cache lookup, Host / LMHost file lookup, host A / AAAA record in DNS, or WINS. </para>
-          <para>Stale NTDS Settings objects and bad name-to-IP mappings in DNS, WINS, Host and LMHOST files may cause the RPC client (destination DC) to connect to the wrong RPC Server (Source DC). Furthermore, the bad name-to-IP mapping may cause the RPC client (destination DC) to connect to a computer that does not even have the RPC Server Application of interest (the Active Directory role in this case) installed. (Example: a stale host record for DC2 contains the IP address of DC3 or a member computer). </para>
-          <para>Verify that the objectGUID for the source DC that exists in the destination DCs copy of Active Directory matches the source DC objectGUID stored in the source DCs copy of Active Directory. If there is a discrepancy, use repadmin /showobjmeta on the ntds settings object to see which one corresponds to last promotion of the source DC (hint: compare date stamps for the NTDS Settings object create date from /showobjmeta against the last promotion date in the source DCs dcpromo.log file. You may have to use the last modify / create date of the DCPROMO.LOG file itself). If the object GUIDs are not identical, the destination DC likely has a stale NTDS Settings object for the source DC whose CNAME record refers to a host record with a bad name to IP mapping. </para>
-          <para>On the destination DC, run IPCONFIG /ALL to determine which DNS Servers the destination DC is using for name resolution:</para>
+          <para>Todos los controladores de dominio en un bosque de Active Directory registrarán un registro CNAME de controlador de dominio en la zona _msdcs. &lt;dominio raíz del bosque&gt; zona DNS con independencia de los dominios que residen en el bosque. El registro CNAME de controlador de dominio se deriva el <embeddedLabel>objectGUID</embeddedLabel> atributo del objeto configuración NTDS para cada controlador de dominio. </para>
+          <para>Al realizar operaciones basadas en replicación, un controlador de dominio de destino consulta DNS para el registro CNAME de controladores de dominio de origen. El registro CNAME contiene el nombre completo del equipo de DC de origen que se usa para derivar la dirección IP de los controladores de dominio de origen a través de la búsqueda en caché de cliente DNS de Host / LMHost archivo lookup, un host / registro AAAA de DNS o WINS. </para>
+          <para>Obsoleto objetos de configuración NTDS y asignaciones de nombre a IP incorrectas en DNS, WINS, Host y LMHOST archivos pueden hacer que el cliente RPC (controlador de dominio de destino) para conectarse al servidor RPC incorrecto (controlador de dominio de origen). Además, la asignación de nombre a IP incorrecta puede hacer que el cliente RPC (controlador de dominio de destino) para conectarse a un equipo que aún no tiene la aplicación de servidor de RPC de interés (el rol de Active Directory en este caso) instalado. (Ejemplo: un registro de host antiguos para DC2 contiene la dirección IP del equipo miembro o DC3). </para>
+          <para>Compruebe que el objectGUID para el controlador de dominio de origen que existe en el destino de copia de los controladores de dominio de Active Directory coincide con el objectGUID de DC de origen almacenado en el origen de copia de los controladores de dominio de Active Directory. Si hay una discrepancia, utilice repadmin /showobjmeta en el objeto de configuración ntds para ver cuál corresponde al último promoción del controlador de dominio de origen (Sugerencia: comparar las marcas de fecha para el objeto configuración NTDS fecha de creación de /showobjmeta frente a la última fecha de promoción en el archivo de dcpromo.log de controladores de dominio de origen. Es posible que deba usar la última modificación / creación de la fecha de la DCPROMO. Archivo de registro). Si los GUID de objeto no son idéntico, el destino es probable que el controlador de dominio tiene un objeto de configuración NTDS obsoleto para el DC de origen cuyo registro CNAME hace referencia a un registro de host con un nombre incorrecto para la asignación de direcciones IP. </para>
+          <para>En el controlador de dominio de destino, ejecute IPCONFIG /ALL para determinar qué servidores DNS el DC está usando para la resolución de destino:</para>
           <code>c:&gt;ipconfig /all</code>
-          <para>On the destination DC, run NSLOOKUP against the source DCs fully qualified DC CNAME record:</para>
+          <para>En el controlador de dominio de destino, ejecute NSLOOKUP en el registro CNAME de controlador de dominio completo de los controladores de dominio de origen:</para>
           <code>c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs primary DNS Server IP &gt;
 c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs secondary DNS Server IP&gt;</code>
-          <para>Verify that the IP address returned by NSLOOKUP "owns" the host name / security identity of the source DC:</para>
+          <para>Comprobar que la dirección IP devuelta por NSLOOKUP "posee" el nombre de host / identidad de seguridad de lo DC de origen:</para>
 
           <code>C:&gt;NBTSTAT -A &lt;IP address returned by NSLOOKUP in the step above&gt;</code>
-          <para>or</para>
-          <para>Log onto the console of the source DC, run "IPCONFIG" from the CMD prompt and verify that the source DC owns the IP address returned by the NSLOOKUP command above</para>
-          <para>Check for stale / duplicate host to IP mappings in DNS</para>
+          <para>o bien</para>
+          <para>Inicie sesión en la consola del controlador de dominio de origen, ejecute "IPCONFIG" desde el símbolo del sistema y compruebe que el DC de origen pertenece a la dirección IP devuelta por el comando NSLOOKUP anterior</para>
+          <para>Busque el host obsoleto o duplicado para las asignaciones de IP en DNS</para>
           <code>NSLOOKUP -type=hostname &lt;single label hostname of source DC&gt; &lt;primary DNS Server IP on destination DC&gt;
 NSLOOKUP -type=hostname &lt;single label hostname of source DC&gt; &lt;secondary DNS Server IP on destination DC&gt;
 
 NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;primary DNS Server IP on destination DC&gt;
 NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;secondary DNS Server IP on dest. DC&gt;</code>
-<para>If invalid IP addresses exist in host records, investigate whether DNS scavenging is enabled and properly configured. </para><para>If the tests above or a network trace doesn't show a name query returning an invalid IP address, consider stale entries in HOST files, LMHOSTS files and WINS Servers. Note that DNS Servers can also be configured to perform WINS fallback name resolution.</para>
+<para>Si hay direcciones IP no válidas en los registros de host, investigue si está habilitada y configurada correctamente la limpieza de DNS. </para><para>Si las pruebas por encima o a un seguimiento de red no muestra una consulta con nombre devuelve una dirección IP válida, considere la posibilidad de las entradas obsoletas en los archivos del HOST, archivos LMHOSTS y servidores WINS. Tenga en cuenta que los servidores DNS también puede configurarse para realizar la resolución de reserva de WINS.</para>
 </listItem>
         <listItem>
           <para>
-            <embeddedLabel>Verify that the server application (Active Directory et al) has registered with the endpoint mapper on the RPC server (source DC)</embeddedLabel>
+            <embeddedLabel>Compruebe que la aplicación de servidor (Active Directory etc) se ha registrado con el asignador de extremos en el servidor RPC (controlador de dominio de origen)</embeddedLabel>
           </para>
-          <para>Active Directory uses a mix of well-known and dynamically registered ports. This table lists well known ports and protocols used by Active Directory domain controllers.</para>
+          <para>Active Directory utiliza una combinación de los puertos conocidos y dinámicamente registrados. Esta tabla enumeran los conocidos puertos y protocolos usados por los controladores de dominio de Active Directory.</para>
           <table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11">
             <thead>
               <tr>
@@ -257,7 +273,7 @@ NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;s
               </tr>
               <tr>
                 <TD>
-                  <para>Microsoft DS</para>
+                  <para>Microsoft-DS</para>
                 </TD>
                 <TD>
                   <para>445</para>
@@ -271,7 +287,7 @@ NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;s
               </tr>
               <tr>
                 <TD>
-                  <para>SSL LDAP</para>
+                  <para>SSL DE LDAP</para>
                 </TD>
                 <TD>
                   <para>636</para>
@@ -285,7 +301,7 @@ NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;s
               </tr>
               <tr>
                 <TD>
-                  <para>Servidor de catálogo global</para>
+                  <para>Servidor del catálogo global (GC)</para>
                 </TD>
                 <TD>
                   <para>3268</para>
@@ -299,7 +315,7 @@ NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;s
               </tr>
               <tr>
                 <TD>
-                  <para>Servidor de catálogo global</para>
+                  <para>Servidor del catálogo global (GC)</para>
                 </TD>
                 <TD>
                   <para>3269</para>
@@ -313,12 +329,12 @@ NSLOOKUP -type=hostname &lt;fully qualified computer name of source DC&gt; &lt;s
               </tr>
             </tbody>
           </table>
-          <para>Los puertos conocidos no están registrados con el asignador de extremos. </para>
-          <para>Active Directory y otras aplicaciones también registran servicios que reciben de puertos asignados dinámicamente en el intervalo de puerto efímero RPC. Estas aplicaciones de servidor RPC se asignan dinámicamente los puertos TCP entre 1024 y 5000 en equipos con Windows 2000 y Windows Server 2003 y entre 49152 y 65535 intervalo en equipos con Windows Server 2008 y Windows Server 2008 R2. El puerto RPC usado la replicación puede ser codificado de forma rígida en el registro con los pasos documentados en <externalLink><linkText>artículo de Knowledge Base 224196</linkText><linkUri>https://support.microsoft.com/kb/224196</linkUri></externalLink>. Active Directory continúa registrarse con el EPM cuando se configura para utilizar un puerto codificado de forma rígida. </para>
-          <para>Comprueba que la aplicación de servidor RPC de interés se ha registrado con el asignador RPC en el servidor RPC (el origen de controlador de dominio en el caso de replicación de AD). </para>
-          <para>Hay varias formas de realizar esta tarea pero uno es instalar y ejecutar PORTQRY desde un símbolo del sistema con privilegios de administrador en la consola del origen de controlador de dominio mediante la sintaxis: </para>
+          <para>Los puertos conocidos no se registran con el asignador de extremos. </para>
+          <para>Active Directory y otras aplicaciones también registran servicios que reciben los puertos asignados dinámicamente en el intervalo de puerto efímero de RPC. Estas aplicaciones de servidor RPC se asignan dinámicamente puertos entre 49152 y 65535 intervalo en los equipos de Windows Server 2008 y Windows Server 2008 R2 y los puertos TCP entre 1024 y 5000 en equipos con Windows 2000 y Windows Server 2003. El puerto RPC usado por la replicación puede ser codificada de forma rígida en el registro mediante los pasos documentados en <externalLink> <linkText>artículo de KB 224196</linkText><linkUri>https://support.microsoft.com/kb/224196</linkUri></externalLink>. Active Directory se sigue para registrarse en el EPM cuando se configura para utilizar un puerto codificado. </para>
+          <para>Compruebe que la aplicación de servidor RPC de interés se ha registrado con el endpoint mapper de RPC en el servidor de RPC (el DC de origen en el caso de la replicación de AD). </para>
+          <para>Hay varias maneras de realizar esta tarea, pero uno consiste en instalar y ejecutar PORTQRY desde un símbolo del sistema con privilegios de administrador en la consola del origen de controlador de dominio mediante la sintaxis: </para>
           <code>c:\&gt;portquery -n &lt;source DC&gt; -e 135 &gt;file.txt</code>
-          <para>en el resultado portqry, ten en cuenta los números de puerto dinámicamente registrados por "MS NT directorio DRS interfaz" (UUID = 351...) para el <embeddedLabel>protocolo ncacn_ip_tcp</embeddedLabel>. El siguiente fragmento muestra la salida portquery desde un controlador de dominio de Windows Server 2008 R2 y el UUID / par de protocolo que se usan específicamente Active Directory resaltados en <embeddedLabel>negrita</embeddedLabel>: </para>
+          <para>En la salida de portqry, tenga en cuenta los números de puerto registrados dinámicamente por "MS NT directorio DRS interfaz" (UUID =... 351) para el <embeddedLabel>protocolo ncacn_ip_tcp</embeddedLabel>. El fragmento de código siguiente muestra la salida portquery desde un controlador de dominio de Windows Server 2008 R2 y el UUID / par del protocolo que se utiliza específicamente en Active Directory se resalta en <embeddedLabel>negrita</embeddedLabel>: </para>
           <code>UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
 ncacn_np:CONTOSO-DC01[\pipe\lsass] 
 UUID: e3514235-4b06-11d1-ab04-00c04fc2dcd2 MS NT Directory DRS Interface
@@ -332,17 +348,17 @@ ncacn_http:CONTOSO-DC01[6004]</code>
           <para />
         </listItem>
         <listItem>
-          <para>otras maneras posibles para resolver este error:</para>
+          <para>Otras formas de resolver este error:</para>
           <list class="ordered">
             <listItem>
-              <para>comprueba que el origen de controlador de dominio se arranca en modo normal y que la función de controlador de dominio y sistema operativo en el origen de controlador de dominio ha iniciado completamente. </para>
+              <para>Compruebe que el DC de origen se ha reiniciado en modo normal y que el rol de sistema operativo y el controlador de dominio en el DC de origen ha iniciado completamente.</para>
             </listItem>
             <listItem>
-              <para>Comprobar que se está ejecutando el servicio de dominio de Active Directory. Si el servicio actualmente se detiene o no se ha configurado con los valores de inicio predeterminados, restablecer los valores de inicio predeterminados, reinicie el controlador de dominio modificada, a continuación, vuelva a intentar la operación. </para>
+              <para>Compruebe que se está ejecutando el servicio de dominio de Active Directory. Si el servicio está detenido o no se ha configurado con valores de inicio de forma predeterminada, restablecer los valores de inicio predeterminada, reinicie el controlador de dominio modificada, a continuación, vuelva a intentar la operación.</para>
             </listItem>
             <listItem>
-              <para>Comprueba que el estado de servicio y el valor de inicio de servicio RPC y ubicador de RPC es correcto para la versión del sistema operativo del cliente de RPC (controlador de dominio de destino) y el servidor RPC (origen de controlador de dominio). Si el servicio actualmente se detiene o no se ha configurado con los valores de inicio predeterminados, restablecer los valores de inicio predeterminados, reinicie el controlador de dominio modificada, a continuación, vuelva a intentar la operación. </para>
-              <para>Además, asegúrate de que el contexto del servicio coincida con valores de configuración de forma predeterminada en la siguiente tabla.</para>
+              <para>Compruebe que el estado de valor y el servicio de inicio para el servicio RPC y ubicación de RPC es correcto para la versión del sistema operativo del cliente de RPC (controlador de dominio de destino) y el servidor de RPC (controlador de dominio de origen). Si el servicio está detenido o no se ha configurado con valores de inicio de forma predeterminada, restablecer los valores de inicio predeterminada, reinicie el controlador de dominio modificada, a continuación, vuelva a intentar la operación.</para>
+              <para>Además, asegúrese de que el contexto de servicio coincide con los valores predeterminados aparecen en la tabla siguiente.</para>
               <table xmlns:caps="https://schemas.microsoft.com/build/caps/2013/11">
                 <thead>
                   <tr>
@@ -350,7 +366,7 @@ ncacn_http:CONTOSO-DC01[6004]</code>
                       <para>Servicio</para>
                     </TD>
                     <TD>
-                      <para>Estado predeterminado (tipo de inicio) en Windows Server 2003 y posteriores </para>
+                      <para>Estado predeterminado (tipo de inicio) en Windows Server 2003 y versiones posteriores </para>
                     </TD>
                     <TD>
                       <para>Estado predeterminado (tipo de inicio) en Windows Server 2000</para>
@@ -363,39 +379,39 @@ ncacn_http:CONTOSO-DC01[6004]</code>
                       <para>Llamada a procedimiento remoto</para>
                     </TD>
                     <TD>
-                      <para>Inicia (automática)</para>
+                      <para>Inicia (automático)</para>
                     </TD>
                     <TD>
-                      <para>Inicia (automática)</para>
+                      <para>Inicia (automático)</para>
                     </TD>
                   </tr>
                   <tr>
                     <TD>
-                      <para>Localizador de llamada a procedimiento remoto</para>
+                      <para>Localizador de llamadas a procedimiento remoto</para>
                     </TD>
                     <TD>
-                      <para>Null o se detuvo (Manual)</para>
+                      <para>Null o detenido (Manual)</para>
                     </TD>
                     <TD>
-                      <para>Inicia (automática)</para>
+                      <para>Inicia (automático)</para>
                     </TD>
                   </tr>
                 </tbody>
               </table>
             </listItem>
             <listItem>
-              <para>Comprueba que el tamaño del intervalo de puertos dinámicos no se ha restringido. A continuación se muestra la sintaxis de Windows Server 2008 y Windows Server 2008 R2 NETSH para enumerar el intervalo de puertos RPC:</para>
+              <para>Compruebe que no se ha restringido el tamaño del intervalo de puertos dinámicos. A continuación, se muestra la sintaxis de Windows Server 2008 y Windows Server 2008 R2 NETSH para enumerar el intervalo de puertos RPC:</para>
               <code>&gt;netsh int ipv4 show dynamicport tcp
 &gt;netsh int ipv4 show dynamicport udp
 &gt;netsh int ipv6 show dynamicport tcp
 &gt;netsh int ipv6 show dynamicport udp</code>
             </listItem>
             <listItem>
-              <para>comprueba que las definiciones de puerto codificado de forma rígida definidas en KB 224196 están dentro del intervalo de dinámica de puertos para la versión de SO de controladores de dominio de origen. </para>
-              <para>Revisión <externalLink><linkText>artículo de Knowledge Base 224196</linkText><linkUri>https://support.microsoft.com/kb/224196</linkUri></externalLink> y asegurarse de que el puerto codificado de forma rígida esté dentro del intervalo de puerto efímero para la versión del sistema operativo el origen del controlador de dominio. </para>
+              <para>Compruebe que las definiciones de puerto rígida definidas en KB 224196 están dentro del intervalo de puertos dinámicos para la versión de sistema operativo de los controladores de dominio de origen.</para>
+              <para>Revisión <externalLink> <linkText>artículo de KB 224196</linkText> <linkUri> https://support.microsoft.com/kb/224196 </linkUri> </externalLink> y asegúrese de que el puerto codificado se encuentra dentro del intervalo de puertos efímeros para la versión del sistema operativo del controlador de dominio de origen.</para>
             </listItem>
             <listItem>
-              <para>Comprueba que la clave ClientProtocols existe en HKLM\Software\Microsoft\Rpc y contiene los siguientes valores predeterminados de 5:</para>
+              <para>Compruebe que la clave ClientProtocols existe bajo HKLM\Software\Microsoft\Rpc y contiene los siguientes valores predeterminados de 5:</para>
               <code>ncacn_http REG_SZ rpcrt4.dll
 ncacn_ip_tcp REG_SZ rpcrt4.dll
 <codeFeaturedElement>ncacn_nb_tcp REG_SZ rpcrt4.dll</codeFeaturedElement>
@@ -408,12 +424,12 @@ ncacn_ip_udp REG_SZ rpcrt4.dll</code>
     </content>
   </section>
   <section address="BKMK_MoreInfo">
-    <title>More information</title>
+    <title>Obtener más información</title>
     <content>
       <para>
-        <embeddedLabel>Example of a bad name to IP mapping causing RPC error 1753 vs. -2146893022: the target principal name is incorrect</embeddedLabel>
+        <embeddedLabel>Ejemplo de un nombre incorrecto al error RPC que causan 1753 frente a-2146893022 de asignación de IP: el nombre de entidad de seguridad de destino es incorrecto</embeddedLabel>
       </para>
-      <para>The contoso.com domain consists of DC1 and DC2 with IP addresses x.x.1.1 and x.x.1.2. The host "A" / "AAAA" records for DC2 are correctly registered on all of the DNS Servers configured for DC1. In addition, the HOSTS file on DC1 contains an entry mapping DC2s fully qualified hostname to IP address x.x.1.2. Later, DC2's IP address changes from X.X.1.2 to X.X.1.3 and a new member computer is joined to the domain with IP address x.x.1.2. AD Replication attempts triggered by the <ui>Replicate now</ui> command in Active Directory Sites and Services snap-in fails with error 1753 as shown in the trace below:</para>
+      <para>El dominio contoso.com consta de DC1 y DC2 con x.x.1.1 de direcciones IP y x.x.1.2. El host "A" / registros "AAAA" para DC2 se registran correctamente en todos los servidores DNS configurados para DC1. Además, el archivo de HOSTS en DC1 contiene una entrada de asignación de nombre de host DC2s completo a x.x.1.2 de dirección IP. Más adelante, cambia la dirección IP de DC2 de X.X.1.2 X.X.1.3 y un nuevo equipo miembro está unido al dominio con x.x.1.2 de dirección IP. La replicación de AD intentos desencadenan por la <ui>Replicar ahora</ui> comando en el complemento Servicios y sitios de Active Directory produce error 1753 tal como se muestra en el siguiente mensaje de seguimiento:</para>
       <code>F# SRC    DEST    Operation 
 1 x.x.1.1 x.x.1.2 ARP:Request, x.x.1.1 asks for x.x.1.2
 2 x.x.1.2 x.x.1.1 ARP:Response, x.x.1.2 at 00-13-72-28-C8-5E
@@ -427,23 +443,23 @@ ncacn_ip_udp REG_SZ rpcrt4.dll</code>
 <codeFeaturedElement>10</codeFeaturedElement> x.x.1.1 x.x.1.2 EPM:Request: ept_map: NDR, DRSR(DRSR) {E3514235-4B06-11D1-AB04-00C04FC2DCD2} [DCE endpoint resolution(135)]
 <codeFeaturedElement>11</codeFeaturedElement> x.x.1.2 x.x.1.1 EPM:Response: ept_map: 0x16C9A0D6 - EP_S_NOT_REGISTERED
 </code>
-      <para>At frame <embeddedLabel>10</embeddedLabel>, the destination DC queries the source DCs end point mapper over port 135 for the Active Directory replication service class UUID E351... </para>
-      <para>In frame <embeddedLabel>11</embeddedLabel>, the source DC, in this case a member computer that does not yet host the DC role and therefore has not registered the E351... UUID for the Replication service with its local EPM responds with symbolic error EP_S_NOT_REGISTERED which maps to decimal error 1753, hex error 0x6d9 and friendly error "there are no more endpoints available from the endpoint mapper".</para>
-      <para>Later, the member computer with IP address x.x.1.2 gets promoted as a replica "MayberryDC" in the contoso.com domain. Again, the <ui>Replicate now</ui> command is used to trigger replication but this time fails with the on-screen error "The target principal name is incorrect." The computer whose network adapter is assigned the IP address x.x.1.2 <placeholder>is</placeholder> a domain controller, is currently booted into normal mode and has registered the E351... replication service UUID with its local EPM but it does not own the name or security identity of DC2 and cannot decrypt the Kerberos request from DC1 so the request now fails with error "The target principal name is incorrect." The error maps to decimal error -2146893022 / hex error 0x80090322. </para>
-      <para>Such invalid host-to-IP mappings could be caused by stale entries in host / lmhost files, host A / AAAA registrations in DNS, or WINS. </para>
-      <para>Summary: This example failed because an invalid host-to-IP mapping (in the HOST file in this case) caused the destination DC to resolve to a "source" DC that did not have the Active Directory Domain Services service running (or even installed for that matter) so the replication SPN was not yet registered and the source DC returned error 1753. In the second case, an invalid host-to-IP mapping (again in the HOST file) caused the destination DC to connect to a DC that had registered the E351... replication SPN but that source had a different hostname and security identity than the intended source DC so the attempts failed with error -2146893022: The target principal name is incorrect.</para>
+      <para>En el marco <embeddedLabel>10</embeddedLabel>, el asignador de puntos finales de los controladores de dominio de origen de las consultas del DC de destino a través del puerto 135 para la clase de servicio de replicación de Active Directory UUID E351... </para>
+      <para>En el marco <embeddedLabel>11</embeddedLabel>, el origen de controlador de dominio, en este caso, un equipo miembro que no hospede aún el rol de controlador de dominio y, por tanto, no se ha registrado el E351... UUID para el servicio de replicación con su EPM local responde con el error simbólico EP_S_NOT_REGISTERED que se asigna a 1753 de error decimal, hexadecimal error 0x6d9 y error descriptivo "hay no hay más extremos disponibles desde el endpoint mapper".</para>
+      <para>Más adelante, se promociona el equipo de miembro con x.x.1.2 de dirección IP como una réplica "MayberryDC" en el dominio contoso.com. Nuevamente, el <ui>Replicar ahora</ui> comando se usa para desencadenar la replicación, pero se produce un error en este momento con el que aparecen en pantalla error "el nombre principal de destino es incorrecto." El equipo cuyo adaptador de red se asigna la dirección IP dirección x.x.1.2 <placeholder>es</placeholder> un controlador de dominio, actualmente se arranca en modo normal y se ha registrado el E351... servicio de replicación UUID con su EPM local pero no es el propietario de la identidad de seguridad o nombre de DC2 y no puede descifrar la solicitud de Kerberos de DC1, por lo que la solicitud falla ahora con el error "el nombre principal de destino es correcto". El error se asigna a-2146893022 de error decimal o hexadecimal error 0x80090322. </para>
+      <para>Estas asignaciones de IP de host no válidas podrían deberse a entradas obsoletas de host / archivos Lmhosts, alojar un / registros AAAA en DNS o WINS. </para>
+      <para>Resumen: En este ejemplo no se pudo porque una asignación de IP de host no válido (en el archivo HOST en este caso) ocasionó que el controlador de dominio de destino resolver a un "origen" controlador de dominio que no tenía los servicios de dominio de Active Directory servicio se está ejecutando (o incluso instalados con este propósito), por lo que la replicación SPN no se ha registrado y el DC de origen ha devuelto el error 1753. En el segundo caso, una asignación de IP de host no válido (nuevo en el archivo HOST) provocó el controlador de dominio para conectarse a un controlador de dominio que se había registrado el E351 destino... SPN de replicación, pero ese origen tenía una identidad diferente del nombre de host y la seguridad del controlador de dominio de origen deseada por lo que no se pudo los intentos con error-2146893022: El nombre principal de destino es incorrecto.</para>
     </content>
   </section>
   <relatedTopics>
     <externalLink>
-      <linkText>Solución de problemas de operaciones de Active Directory que con el error 1753: no hay ningún extremo más disponible desde el asignador de extremos. </linkText> 
-      <linkUri>https://support.microsoft.com/kb/2089874</linkUri>
-    </externalLink>
-<externalLink><linkText>839880 errores de solución de problemas de asignador de RPC con las herramientas de soporte técnico de Windows Server 2003 desde el CD del producto del artículo KB</linkText><linkUri>https://support.microsoft.com/kb/839880</linkUri></externalLink>
-<externalLink><linkText>KB artículo 832017 servicio información general y red puerto requisitos para el sistema de Windows Server</linkText><linkUri>https://support.microsoft.com/kb/832017/</linkUri></externalLink>
-<externalLink><linkText>224196 tráfico de replicación de restricción de Active Directory y el tráfico RPC de cliente a un puerto específico del artículo KB</linkText><linkUri>https://support.microsoft.com/kb/224196/</linkUri></externalLink>
-<externalLink><linkText>KB artículo 154596 cómo configurar la asignación dinámica de puertos RPC para trabajar con firewalls</linkText><linkUri>https://support.microsoft.com/kb/154596</linkUri></externalLink><externalLink><linkText>funcionamiento de RPC</linkText><linkUri>https://msdn.microsoft.com/library/aa373935(VS.85).aspx</linkUri> </externalLink> <externalLink> <linkText>Cómo el servidor prepara para una conexión</linkText><linkUri>https://msdn.microsoft.com/library/aa373938(VS.85).aspx</linkUri></externalLink>
-<externalLink><linkText>cómo el cliente establece una conexión</linkText><linkUri>https://msdn.microsoft.com/library/aa373937(VS.85).aspx</linkUri></externalLink><externalLink><linkText>registrar la interfaz</linkText><linkUri>https://msdn.microsoft.com/library/aa375357(VS.85).aspx</linkUri></externalLink><externalLink><linkText>distribuyendo el servidor en la red</linkText><linkUri>https://msdn.microsoft.com/library/aa373974(VS.85).aspx</linkUri></externalLink><externalLink><linkText>registrar extremos</linkText><linkUri>https://msdn.microsoft.com/library/aa375255(VS.85).aspx</linkUri></externalLink><externalLink><linkText>escuchar llamadas</linkText><linkUri>https://msdn.microsoft.com/library/aa373966(VS.85).aspx</linkUri></externalLink><externalLink><linkText>cómo el cliente establece una conexión</linkText><linkUri>https://msdn.microsoft.com/library/aa373937(VS.85).aspx</linkUri> </externalLink> <externalLink> <linkText>Tráfico de replicación de restricción de Active Directory y cliente RPC el tráfico a un puerto específico</linkText><linkUri>https://support.microsoft.com/kb/224196</linkUri></externalLink><externalLink><linkText>SPN de un controlador de dominio de destino en AD DS</linkText><linkUri>https://msdn.microsoft.com/library/dd207688(PROT.13).aspx</linkUri></externalLink></relatedTopics>
+      <linkText>Solución de problemas de operaciones de Active Directory que generan el error 1753: No hay no hay más extremos disponibles desde el endpoint mapper. </linkText> 
+      <linkUri> https://support.microsoft.com/kb/2089874 </linkUri> 
+    </externalLink> 
+<externalLink> <linkText>839880 errores Endpoint Mapper de RPC de solución de problemas mediante las herramientas de soporte técnico de Windows Server 2003 desde el CD del productodeartículodeKB</linkText> <linkUri> https://support.microsoft.com/kb/839880 </linkUri> </externalLink> 
+<externalLink> <linkText>832017 servicio red y la información general sobre requisitos de puerto para el sistema de Windows Server de artículo de KB</linkText> <linkUri> https://support.microsoft.com/kb/832017/ </linkUri> </externalLink> 
+<externalLink> <linkText>224196 tráfico de replicación de Active Directory restringe y tráfico de RPC de cliente a un puerto específico del artículo de KB</linkText> <linkUri> https://support.microsoft.com/kb/224196/ </linkUri> </externalLink> 
+<externalLink> <linkText>154596 artículo de KB sobre cómo configurar la asignación de puertos dinámicos RPC para trabajar con firewalls</linkText> <linkUri> https://support.microsoft.com/kb/154596 </linkUri> </externalLink> <externalLink> <linkText>Cómo funciona la RPC</linkText><linkUri>https://msdn.microsoft.com/library/aa373935(VS.85).aspx</linkUri></externalLink><externalLink><linkText>cómo prepara el servidor para una conexión</linkText> <linkUri> https://msdn.microsoft.com/library/aa373938(VS.85).aspx </linkUri> </externalLink> 
+<externalLink> <linkText>Cómo el cliente establece una conexión</linkText> <linkUri> https://msdn.microsoft.com/library/aa373937(VS.85).aspx </linkUri> </externalLink> <externalLink> <linkText>Registrar la interfaz</linkText><linkUri>https://msdn.microsoft.com/library/aa375357(VS.85).aspx</linkUri></externalLink><externalLink><linkText>hacer que el servidor Disponible en la red</linkText><linkUri>https://msdn.microsoft.com/library/aa373974(VS.85).aspx</linkUri></externalLink><externalLink><linkText>extremos registrados</linkText> <linkUri> https://msdn.microsoft.com/library/aa375255(VS.85).aspx </linkUri> </externalLink> <externalLink> <linkText>Escuchar las llamadas al cliente</linkText> <linkUri> https://msdn.microsoft.com/library/aa373966(VS.85).aspx </linkUri> </externalLink> <externalLink> <linkText>Cómo el cliente establece una conexión</linkText><linkUri>https://msdn.microsoft.com/library/aa373937(VS.85).aspx</linkUri></externalLink><externalLink><linkText>restringir A un puerto específico de tráfico RPC del cliente y tráfico de replicación del directorio de Active</linkText><linkUri>https://support.microsoft.com/kb/224196</linkUri></externalLink><externalLink><linkText>SPN para un controlador de dominio de destino en AD DS</linkText><linkUri>https://msdn.microsoft.com/library/dd207688(PROT.13).aspx</linkUri></externalLink></relatedTopics>
 </developerConceptualDocument>
 
 

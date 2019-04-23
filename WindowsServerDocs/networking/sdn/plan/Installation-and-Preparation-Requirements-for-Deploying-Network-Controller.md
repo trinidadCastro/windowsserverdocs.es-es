@@ -1,120 +1,142 @@
 ---
-title: Instalación y requisitos de preparación para implementar el controlador de red
-description: Puedes usar este tema para preparar su centro de datos para la implementación de controlador de red.
-manager: brianlic
+title: Requisitos para implementar la controladora de red
+description: Prepare su centro de datos para la implementación de controladora de red, lo que requiere uno o varios equipos o máquinas virtuales y un equipo o máquina virtual. Antes de poder implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de archivo de registro (si es necesario) y el registro DNS dinámico.
+manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-sdn
 ms.topic: get-started-article
 ms.assetid: 7f899e62-6e5b-4fca-9a59-130d4766ee2f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c50a2167a894871ea76fb96523c19531100648ce
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/10/2018
+ms.openlocfilehash: 9db7609f6f1273c46cba1dd29f81c297bb26f94b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829866"
 ---
-# <a name="installation-and-preparation-requirements-for-deploying-network-controller"></a>Instalación y requisitos de preparación para implementar el controlador de red
+# <a name="requirements-for-deploying-network-controller"></a>Requisitos para implementar la controladora de red
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para preparar su centro de datos para la implementación de controlador de red.  
+Prepare su centro de datos para la implementación de controladora de red, lo que requiere uno o varios equipos o máquinas virtuales y un equipo o máquina virtual. Antes de poder implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de archivo de registro (si es necesario) y el registro DNS dinámico.
+
+
+## <a name="network-controller-requirements"></a>Requisitos del controlador de red
+
+Implementación de la controladora de red requiere uno o varios equipos o máquinas virtuales que actúan como la controladora de red y un equipo o máquina virtual para que actúe como un cliente de administración de controladora de red. 
+
+- Todas las máquinas virtuales y equipos planificados como nodos de controladora de red deben ejecutar Windows Server 2016 Datacenter edition. 
+- Cualquier equipo o máquina virtual (VM) en el que se instala el controlador de red debe estar ejecutando la edición Datacenter de Windows Server 2016. 
+- El equipo cliente de administración o la máquina virtual de controladora de red debe estar ejecutando Windows 10. 
+
   
-> [!NOTE]  
-> Además de este tema, la siguiente documentación de controlador de red está disponible.  
-> 
-> - [Controlador de red](../technologies/network-controller/Network-Controller.md)
-> - [Alta disponibilidad del controlador de red](../technologies/network-controller/network-controller-high-availability.md)
-> - [Implementar el controlador de red mediante Windows PowerShell](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)  
-> - [Instalar el rol de servidor de controlador de red mediante el administrador del servidor](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)  
+## <a name="configuration-requirements"></a>Requisitos de configuración
 
-Siguiente es los pasos de instalación, el software y otros requisitos y preparación que debe seguir antes de implementar el controlador de red.
-
-## <a name="installation-requirements"></a>Requisitos de instalación
-
-Siguiente es los requisitos de instalación de controlador de red.
-
-- Para las implementaciones de Windows Server 2016, puedes implementar el controlador de red en uno o más equipos, uno o más de máquinas virtuales o una combinación de equipos y máquinas virtuales. Todas las máquinas virtuales y equipos planificados como nodos de controlador de red deben ejecutar Windows Server 2016 Datacenter edition.
-
-## <a name="software-requirements"></a>Requisitos de software
-
-Implementación de controladores de red requiere uno o más equipos o máquinas virtuales que actúan como el controlador de red y un equipo o máquina virtual para que actúe como un cliente de administración para el controlador de red. Estos equipos o máquinas virtuales deben ejecutar los siguientes sistemas operativos.  
-
-- Cualquier equipo o máquina virtual (VM) en el que se instala el controlador de red debe estar ejecutando Datacenter edition de Windows Server 2016.  
+Antes de implementar la controladora de red, debe configurar los grupos de seguridad, las ubicaciones de archivo de registro (si es necesario) y el registro DNS dinámico.
   
-- El equipo de cliente de administración o máquina virtual para el controlador de red debe estar ejecutándose Windows 8, Windows 8.1 o Windows 10.  
+### <a name="step-1-configure-your-security-groups"></a>Paso 1. Configurar los grupos de seguridad
   
-## <a name="additional-requirements"></a>Requisitos adicionales
+Lo primero que desea hacer es crear dos grupos de seguridad para la autenticación Kerberos. 
 
-A continuación se muestran pasos adicionales que debe seguir antes de implementar el controlador de red.
-  
-### <a name="configure-security-groups"></a>Configurar grupos de seguridad
-  
-Si los equipos o máquinas virtuales de controlador de red y el cliente de administración están unidos a un dominio, configurar los siguientes grupos de seguridad para la autenticación de Kerberos.
+Crear grupos para los usuarios que tienen permiso para: 
 
-- Crea un grupo de seguridad y agrega todos los usuarios que tienen permiso para configurar el controlador de red. Por ejemplo, crear un grupo llamado **administradores de controlador de red **. Todos los usuarios que agregues a este grupo también deben ser miembros de la **los usuarios del dominio** grupo de equipos y usuarios de Active Directory.  
-  
-    > [!NOTE]  
-    > Para obtener más información sobre cómo crear un grupo de equipos y usuarios de Active Directory, consulte [crear un nuevo grupo ](https://technet.microsoft.com/en-us/library/cc783256(v=ws.10).aspx).  
-
-- Crea un grupo de seguridad y agrega todos los usuarios que tienen permiso para configurar y administrar la red mediante el controlador de red.  Por ejemplo, crear un nuevo grupo denominado **los usuarios de controlador de red **. Todos los usuarios que agregas al nuevo grupo también deben ser miembros de la **los usuarios del dominio** grupo de equipos y usuarios de Active Directory. Configuración del controlador de red y la gestión se realiza mediante la transferencia de estado representacional \(REST\).
-
-### <a name="configure-log-file-locations-if-needed"></a>Configurar las ubicaciones de archivo de registro si es necesario
-
-Puedes almacenar los registros de depuración de controlador de red en el equipo de controlador de red o máquina virtual o en un recurso compartido de archivos. Si quieres almacenar los registros en un recurso compartido de archivos, asegúrate de que el recurso compartido es accesible desde el controlador de red.
-
-### <a name="configure-dynamic-dns-registration-for-network-controller"></a>Configurar el registro DNS dinámico para el controlador de red
-  
-Puedes implementar nodos del clúster de controlador de red en la misma subred o en subredes diferentes. 
+1. Configurar la controladora de red<p>Puede asignar este grupo de administradores de la controladora de red, por ejemplo. 
+2.  Configurar y administrar la red mediante el uso de la controladora de red<p>Puede asignar los usuarios este controlador de red de grupo, por ejemplo. Use Representational State Transfer (REST) para configurar y administrar la controladora de red.
 
 >[!NOTE]
->Si los nodos de controlador de red se encuentran en la misma subred, debes proporcionar la dirección IP de REST de controlador de red al configurar el registro DNS dinámico para el controlador de red. Si los nodos que se encuentran en diferentes subredes, debes proporcionar el nombre DNS de REST de controlador de red cuando se configura el registro DNS dinámico.
+>Todos los usuarios que agregue deben ser miembros del grupo usuarios del dominio en los equipos y usuarios de Active Directory.
 
-Si los nodos de controlador de red se encuentran en diferentes subredes, debes realizar la siguiente configuración de DNS adicional:
+### <a name="step-2-configure-log-file-locations-if-needed"></a>Paso 2. Configurar ubicaciones de archivos de registro si es necesario
 
-- Crear un nombre DNS para el controlador de red durante el proceso de implementación
+Lo que desea hacer es configurar las ubicaciones de archivo para almacenar los registros de depuración de controladora de red en el equipo de la controladora de red o la máquina virtual o en un recurso compartido de archivos remoto. 
 
-- Configurar las actualizaciones dinámicas de DNS para el nombre DNS de controlador de red en el servidor DNS
+>[!NOTE]
+>Si almacena los registros en un recurso compartido remoto, asegúrese de que el recurso compartido es accesible desde la controladora de red.
 
-- Restringir las actualizaciones dinámicas de DNS a solo los nodos de controlador de red
 
-Puedes usar los siguientes procedimientos para configurar las actualizaciones dinámicas y para restringir la actualización dinámica de registro de nombres de controlador de red.
+### <a name="step-3-configure-dynamic-dns-registration-for-network-controller"></a>Paso 3. Configurar el registro DNS dinámico para la controladora de red
+  
+Por último, lo que desea hacer es implementar nodos de clúster de la controladora de red en la misma subred o en subredes diferentes. 
+
+|Si...  |En ese caso...  |
+|---------|---------|
+|En la misma subred, |Debe proporcionar la dirección IP de REST de controladora de red. |
+|En subredes diferentes, |Debe proporcionar el nombre DNS de REST de controladora de red, que se crea durante el proceso de implementación. También debe hacer lo siguiente:<ul><li>Configurar las actualizaciones dinámicas de DNS para el nombre DNS del controlador de red en el servidor DNS.</li><li>Restringir las actualizaciones dinámicas de DNS a solo los nodos de controladora de red.</li></ul> |
+---
 
 > [!NOTE]
-> Pertenencia a **administradores de dominio**, o equivalente, es lo mínimo necesario para realizar estos procedimientos.
+> Pertenencia a **Admins. del dominio**, o equivalente, es lo mínimo necesario para realizar estos procedimientos.
   
-#### <a name="to-allow-dns-dynamic-updates-for-a-zone"></a>Para permitir que las actualizaciones dinámicas de DNS para una zona
+1. Permitir actualizaciones dinámicas de DNS para una zona.
 
-1. Abre el Administrador de DNS.
+   a. Abra el Administrador de DNS y en el árbol de consola, haga clic en la zona correspondiente y, a continuación, haga clic en **propiedades**. 
+      
+   b. En el **General** , compruebe que el tipo de zona es **principal** o **integrado en Active Directory**.
 
-2. En el árbol de consola, haz clic en la zona correspondiente y, a continuación, haz clic en **propiedades **. La zona **propiedades** abre el cuadro de diálogo.
+   c. En **actualizaciones dinámicas**, compruebe que **solo Secure** está seleccionada y, a continuación, haga clic en **Aceptar**.
 
-3. En la **General**, compruebe que el tipo de zona es **principal** o **integrado en Active Directory**.
+2. Configurar permisos de seguridad de la zona de DNS para los nodos de controladora de red
 
-4. En **actualizaciones dinámicas**, comprueba que **seguro solo** está seleccionado. Si no está seleccionada, cambia el valor de **actualizaciones dinámicas** a **seguro solo**y, a continuación, haz clic en **Aceptar**.
+   a.  Haga clic en la pestaña **Seguridad** y, a continuación, en **Opciones avanzadas**. 
 
-#### <a name="to-configure-dns-zone-security-permissions-for-network-controller-nodes"></a>Para configurar los permisos de seguridad de zona DNS para los nodos de controlador de red
-
-1.  Abre el Administrador de DNS.
-
-2.  En el árbol de consola, haz clic en la zona correspondiente y, a continuación, haz clic en **propiedades **. La zona **propiedades** abre el cuadro de diálogo.
-
-3.  Haz clic en el **seguridad** pestaña y, a continuación, haz clic en **avanzadas**. La **configuración de seguridad avanzada** abre el cuadro de diálogo.
-
-4. En **configuración de seguridad avanzada**, haz clic en **agregar**. La **entrada de permiso** abre el cuadro de diálogo.
+   b. En **configuración de seguridad avanzada**, haga clic en **agregar**. 
   
-5. Haz clic en **seleccionar una entidad de seguridad**. La **Seleccionar usuarios, equipo, cuenta de servicio o grupo** abre el cuadro de diálogo.
+   c. Haz clic en **Seleccionar una entidad de seguridad**. 
 
-6. En la **Seleccionar usuarios, equipo, cuenta de servicio o grupo** cuadro de diálogo, haz clic en **tipos de objeto**. La **tipos de objeto** abre el cuadro de diálogo. 
+   d. En el **Seleccionar usuario, equipo, cuenta de servicio o grupo** cuadro de diálogo, haga clic en **tipos de objeto**. 
 
-7. En **tipos de objeto**, selecciona **equipos**y, a continuación, haz clic en **Aceptar**.
+   e. En **tipos de objeto**, seleccione **equipos**y, a continuación, haga clic en **Aceptar**.
 
-8. En la **Seleccionar usuarios, equipo, cuenta de servicio o grupo** cuadro de diálogo, escribe el nombre NetBIOS de uno de los nodos de controlador de red en la implementación y, a continuación, haz clic en **Aceptar**.
+   f. En el **Seleccionar usuario, equipo, cuenta de servicio o grupo** cuadro de diálogo, escriba el nombre de NetBIOS de uno de los nodos de controladora de red en la implementación y, a continuación, haga clic en **Aceptar**.
 
-9. En **entrada de permiso**, asegúrate de que el valor de **tipo** es **permitir**y el valor de **se aplica a** es **este objeto y todos los descendientes**.
+   g. En **entrada de permiso**, compruebe los siguientes valores:
+
+      - **Tipo** = permitir
+      - **Se aplica a** = este objeto y todos los descendientes
   
-10. En permisos, seleccione **escribir todas las propiedades** y **eliminar**y, a continuación, haz clic en **Aceptar**.
+   h. En **permisos**, seleccione **escribir todas las propiedades** y **eliminar**y, a continuación, haga clic en **Aceptar**.
 
-11. Repite los pasos **5** a través de **10** para todos los equipos y máquinas virtuales en el clúster de controlador de red.
+3. Repita para todos los equipos y máquinas virtuales en el clúster de controladora de red.
 
-Para obtener más información, consulta [planear una infraestructura de red definido de Software](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure).
+### <a name="step-4-configure-service-principal-name-if-using-kerberos-based-authentication"></a>Paso 4. Configurar el nombre de entidad de servicio si la autenticación mediante Kerberos basada en
+
+Si la controladora de red usa autenticación basada en Kerberos para la comunicación con clientes de administración, debe configurar un nombre Principal de servicio (SPN) para la controladora de red en Active Directory. La controladora de red se configura automáticamente el SPN. Todo lo que necesita hacer es proporcionar permisos para las máquinas de controladora de red registrar y modificar el SPN. Para obtener más información, consulte [configurar entidad de seguridad nombres servicio (SPN)](https://docs.microsoft.com/windows-server/networking/sdn/security/kerberos-with-spn#configure-service-principal-names-spn).
+
+## <a name="deployment-options"></a>Opciones de implementación
+
+### <a name="network-controller-deployment"></a>Implementación de la controladora de red
+
+El programa de instalación es de alta disponibilidad con tres nodos de controladora de red configurados en máquinas virtuales. También se muestra es dos inquilinos con red virtual del inquilino 2 dividida en dos subredes virtuales para simular un nivel web y un nivel de base de datos.  
+
+![Planeación de controladora de red de SDN](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-NC-Planning.png)
+
+### <a name="network-controller-and-software-load-balancer-deployment"></a>Implementación de equilibrador de carga de software y la controladora de red
+
+Para alta disponibilidad, hay dos o más nodos SLB/MUX.
+   
+![Planeación de controladora de red de SDN](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-SLB-Deployment.png)
+  
+### <a name="network-controller-software-load-balancer-and-ras-gateway-deployment"></a>Implementación de controladora de red, equilibrador de carga de Software y puerta de enlace RAS
+
+Hay tres máquinas virtuales de puerta de enlace; dos están activas y uno es redundante.
+
+![Planeación de controladora de red de SDN](../../media/Plan-a-Software-Defined-Network-Infrastructure/SDN-GW-Deployment.png)  
+  
+  
+  
+Para la automatización de la implementación basada en TP5, Active Directory debe estar disponible y accesible desde estas subredes. Para obtener más información acerca de Active Directory, consulte [Introducción a servicios de dominio de Active Directory](https://docs.microsoft.com/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview).  
+  
+>[!IMPORTANT] 
+>Si implementa con VMM, asegúrese de las máquinas virtuales de infraestructura (servidor VMM, AD/DNS, SQL Server, etc.) no están hospedados en cualquiera de los cuatro hosts que se muestra en los diagramas.  
+
+
+## <a name="next-steps"></a>Pasos siguientes
+[Plan de infraestructura de red definidas por un Software](https://technet.microsoft.com/windows-server-docs/networking/sdn/plan/plan-a-software-defined-network-infrastructure).
+
+## <a name="related-topics"></a>Temas relacionados
+- [Controladora de red](../technologies/network-controller/Network-Controller.md) 
+- [Alta disponibilidad del controlador de red](../technologies/network-controller/network-controller-high-availability.md) 
+- [Implementar la controladora de red mediante Windows PowerShell](../deploy/Deploy-Network-Controller-using-Windows-PowerShell.md)   
+- [Instalar el rol de servidor de controladora de red con el administrador del servidor](../technologies/network-controller/Install-the-Network-Controller-server-role-using-Server-Manager.md)   

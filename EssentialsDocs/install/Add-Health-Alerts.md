@@ -1,6 +1,6 @@
 ---
-title: Agregar alertas de estado
-description: "Describe cómo usar Windows Server Essentials"
+title: Agregue Alertas de estado
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,43 +13,44 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: cf0c062b92c687f5f7b33b419eafdca2dd3bbbfc
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59828516"
 ---
-# <a name="add-health-alerts"></a>Agregar alertas de estado
+# <a name="add-health-alerts"></a>Agregue Alertas de estado
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Un complemento de estado proporciona definiciones de alertas, comprobaciones de estado y reparaciones para problemas de red. Un complemento de estado consta de los archivos xml que anotan código o datos que se usan para evaluar la información de estado de una característica específica. Complementos de estado se crean los desarrolladores y administradores los instalan en los equipos servidor y cliente.  
+Los complementos de estado ofrecen definiciones para alertas, comprobaciones de estado y reparaciones de problemas de red. Los complementos de estado están formados por archivos xml que anotan el código o los datos utilizados para evaluar la información del estado de una función específica. Los complementos de estado son creados por desarrolladores e instalados en el servidor y en el cliente por el administrador.  
   
- Consulte la [SDK de soluciones de Windows Server](https://go.microsoft.com/fwlink/?LinkID=248648) para obtener más información sobre cómo crear un complemento de estado.  
+ Consulte el [SDK de Soluciones de Windows Server](https://go.microsoft.com/fwlink/?LinkID=248648) para obtener más información acerca de cómo crear un complemento de estado.  
   
-## <a name="installing-health-add-in-files"></a>Instalar archivos de complemento de estado  
- Después de que el desarrollador haya creado los archivos xml, debes colocar una copia de los archivos en la ubicación adecuada en los equipos servidor y cliente.  
+## <a name="installing-health-add-in-files"></a>Instalación de archivos de complementos de estado  
+ Una vez el desarrollador ha creado los archivos XML, debe copiarlos en la ubicación correspondiente del servidor y los equipos cliente.  
   
 #### <a name="to-install-the-xml-files-on-the-server"></a>Para instalar los archivos xml en el servidor  
   
-1.  En la **%ProgramFiles%\Windows Server\Bin\Feature Definitions** carpeta, crear una nueva carpeta llamada **MyHealthAddIn**. Esta carpeta se puede dar cualquier nombre. Se recomienda que el nombre de la carpeta sea el mismo que el nombre de la característica.  
+1.  En la carpeta **%ProgramFiles%\Windows Server\Bin\Feature Definitions** , cree una nueva carpeta llamada **MyHealthAddIn**. Puede utilizar cualquier nombre para esta carpeta. Se recomienda que el nombre de la carpeta sea el mismo que el nombre de la función.  
   
-2.  Copia el Definition.xml y los archivos de config Definition.xml en la nueva carpeta.  
+2.  Copie los archivo Definition.xml y Definition.xml.config en la nueva carpeta.  
   
-3.  Si has creado archivos binarios para condiciones o acciones, también deberá copiar los archivos en **%ProgramFiles%\Windows Server\Bin**.  
+3.  Si ha creado archivos binarios para estados o acciones, debería copiar estos archivos en **%ProgramFiles%\Windows Server\Bin**.  
   
- Equipos cliente ejecutan una tarea programada cada seis horas que extrae los archivos XML en la ubicación adecuada. Puedes forzar la sincronización entre el equipo cliente y el servidor al ejecutar la tarea de forma manual.  
+ Los equipos cliente ejecutan una tarea programada cada 6 horas que copia los archivos XML en la ubicación correspondiente. Puede forzar la sincronización entre el equipo cliente y el servidor ejecutando la tarea de forma manual.  
   
-#### <a name="to-install-the-xml-files-on-the-client-computer"></a>Para instalar los archivos xml en el equipo cliente  
+#### <a name="to-install-the-xml-files-on-the-client-computer"></a>Para instalar los achivos XML en el equipo cliente  
   
-1.  Abre el programador de tareas.  
+1.  Abra el Programador de tareas.  
   
-2.  Ejecutar el **HealthDefintionUpdateTask** en el programador de tareas.  
+2.  Ejecute **HealthDefintionUpdateTask** en el Programador de tareas.  
   
     > [!NOTE]
-    >  Esta tarea no instala archivos binarios. Debes copiar manualmente los archivos binarios en la **%ProgramFiles%\Windows Server\Bin** carpeta en el equipo cliente.  
+    >  Esta tarea no instala archivos binarios. Copie manualmente los archivos binarios en la carpeta **%ProgramFiles%\Windows Server\Bin** del equipo cliente.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

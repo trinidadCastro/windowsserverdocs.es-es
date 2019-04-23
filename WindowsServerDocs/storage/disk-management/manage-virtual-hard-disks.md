@@ -1,6 +1,6 @@
 ---
 title: Administrar discos duros virtuales (VHD)
-description: "En este artículo se describe cómo administrar discos duros virtuales"
+description: En este artículo se describe cómo administrar discos duros virtuales
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 2e371710752d59ebc7a1f8aa2dad3d9189872c47
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59827116"
 ---
 # <a name="manage-virtual-hard-disks-vhd"></a>Administrar discos duros virtuales (VHD)
 
@@ -45,11 +46,11 @@ Para tener un disco duro virtual disponible para su uso (uno que acabas de crear
 
 2. Especifica la ubicación del VHD, mediante una ruta de acceso completo.
 
-Para ocultar el disco duro virtual, que no está disponible: haz clic con el botón derecho en el disco, selecciona **Ocultar VHD**y luego haz clic en **Aceptar**. Ocultar un VHD no elimina el disco duro virtual ni todos los datos almacenados en él.
+Para desasociar el disco duro virtual, lo que no está disponible: Haga clic en el disco, seleccione **ocultar VHD**y, a continuación, haga clic en **Aceptar**. Ocultar un VHD no elimina el disco duro virtual ni todos los datos almacenados en él.
 
 ## <a name="additional-considerations"></a>Consideraciones adicionales
 
--   La ruta de acceso que especifica la ubicación del VHD debe estar completa y no puede estar en el directorio \\Windows.
+-   La ruta de acceso especifica la ubicación para el disco duro virtual debe ser completo y no puede estar en el \\directorio de Windows.
 -   El tamaño mínimo para un VHD es 3 megabytes (MB).
 -   Un VHD solo puede ser un disco básico.
 -   Dado que un VHD se inicializa cuando se crea, crear un disco duro virtual de tamaño fijo grande puede tardar algún tiempo.

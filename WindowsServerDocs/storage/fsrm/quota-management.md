@@ -1,6 +1,6 @@
 ---
-title: "Administración de cuotas"
-description: "En este artículo se describe cómo crear y administrar cuotas"
+title: Administración de cuotas
+description: En este artículo se describe cómo crear y administrar cuotas
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,15 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 60436f12e07b8a3f16312829d53a2885c98f30ed
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: febcd6ab0744a7fddd024e1f0afdb93711e8939a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829546"
 ---
 # <a name="quota-management"></a>Administración de cuotas
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 En el nodo **Administración de cuotas** del Complemento de la consola de administración de Microsoft<sup>®</sup> (MMC) del Administrador de recursos del servidor de archivos, puedes realizar las siguientes tareas:
 
@@ -26,23 +27,23 @@ En el nodo **Administración de cuotas** del Complemento de la consola de admini
 
 Por ejemplo, puedes:
 
--   Establecer un límite de 200megabytes (MB) en las carpetas personales del servidor de los usuarios; se os enviará una notificación por correo electrónico a ti y al usuario cuando se hayan superado los 180MB de almacenamiento.
--   Establecer una cuota de 500MB flexible en la carpeta compartida de un grupo. Cuando se alcance este límite de almacenamiento, todos los usuarios del grupo recibirán por correo electrónico una notificación en la que se les informará que la cuota de almacenamiento se ha ampliado temporalmente a 520MB para que puedan eliminar los archivos que no necesiten y poder cumplir la directiva de cuota predefinida de 500MB.
--   Recibir una notificación cuando una carpeta temporal alcance los 2gigabytes (GB) de uso, pero no limitar la cuota de la carpeta, porque es necesaria para un servicio que se ejecuta en el servidor.
+-   Pone un límite de 200 megabytes (MB) en las carpetas del servidor personal de los usuarios, con una notificación por correo electrónico que se enviará a usted y el usuario cuando se ha superado los 180 MB de almacenamiento.
+-   Establecer una cuota flexible de 500 MB en la carpeta compartida de un grupo. Cuando se alcanza este límite de almacenamiento, todos los usuarios en el grupo se notificación por correo electrónico que la cuota de almacenamiento se ha ampliado temporalmente a 520 MB para que puedan eliminar archivos innecesarios y cumplir con la directiva de cuota de 500 MB preestablecido.
+-   Recibir una notificación cuando una carpeta temporal alcance los 2 gigabytes (GB) de uso, pero no limitar la cuota de la carpeta, porque es necesaria para un servicio que se ejecuta en el servidor.
 
-Esta sección incluye los siguientes temas:
+Esta sección incluye los temas siguientes:
 
 -   [Crear una cuota](create-quota.md)
--   [Crear una cuota automática](create-auto-apply-quota.md)
+-   [Crear un automáticamente una cuota de aplicación](create-auto-apply-quota.md)
 -   [Crear una plantilla de cuota](create-quota-template.md)
--   [Editar propiedades de plantillas de cuotas](edit-quota-template-properties.md)
--   [Editar propiedades de cuota automática](edit-auto-apply-quota-properties.md)
+-   [Editar propiedades de la plantilla de cuota](edit-quota-template-properties.md)
+-   [Automática de editar propiedades de cuota](edit-auto-apply-quota-properties.md)
 
 > [!Note]
 > Para establecer notificaciones por correo electrónico y funcionalidades de informes, debes configurar primero las opciones generales del Administrador de recursos del servidor de archivos.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
--   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
+-   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
 
 

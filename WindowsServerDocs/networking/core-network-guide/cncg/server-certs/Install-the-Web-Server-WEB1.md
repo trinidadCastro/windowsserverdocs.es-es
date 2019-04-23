@@ -1,6 +1,6 @@
 ---
-title: Instalar el WEB1 de servidor Web
-description: Este tema es parte de la Guía de certificados de servidor de implementación para implementaciones de conexión inalámbrica y cableadas 802.1X
+title: Instalar la WEB1 de servidor web
+description: Este tema forma parte de la Guía de implementación de servidores de certificados para las implementaciones inalámbricas y cableadas 802.1X
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,39 +8,40 @@ ms.topic: article
 ms.assetid: f51c9e38-98bb-49c1-9d39-427d07021499
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e818eac49719b394a2c73cc125a2e7ba9ea80c82
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: ef4f10a6ac1998850758f2c9db86bfd950c1ad70
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833286"
 ---
-# <a name="install-the-web-server-web1"></a>Instalar el WEB1 de servidor Web
+# <a name="install-the-web-server-web1"></a>Instalar la WEB1 de servidor web
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-El rol de servidor Web (IIS) en Windows Server 2016, proporciona una plataforma segura, fácil de administrar, modular y extensible para hospedar los sitios Web, servicios y aplicaciones de forma segura. Con IIS, puede compartir información con los usuarios en Internet, intranet o una extranet. IIS es una plataforma web unificado que se integra IIS, ASP.NET, servicios FTP, PHP y Windows Communication Foundation (WCF).  
+El rol de servidor Web (IIS) en Windows Server 2016 proporciona una plataforma segura, fácil de administrar, modular y extensible para hospedar sitios Web, servicios y aplicaciones de forma confiable. Con IIS, puede compartir información con usuarios en Internet, una intranet o extranet. IIS es una plataforma web unificada que integra IIS, ASP.NET, servicios FTP, PHP y Windows Communication Foundation (WCF).  
 
-Cuando implementas certificados de servidor, el servidor Web proporciona una ubicación donde puede publicar la lista de revocación de certificados (CRL) para la entidad de certificación (CA). Tras la publicación, la CRL es accesible para todos los equipos de la red para que puedan usar esta lista durante el proceso de autenticación para comprobar que no se revoquen certificados presentados por otros equipos.   
+Al implementar los certificados de servidor, el servidor Web proporciona una ubicación donde puede publicar la lista de revocación de certificados (CRL) para la entidad de certificación (CA). Después de la publicación, la CRL es accesible para todos los equipos de la red para que puede usar esta lista durante el proceso de autenticación para comprobar que no se revoquen los certificados presentados por otros equipos.   
 
-Si es un certificado en la CRL como revocado, el esfuerzo de autenticación se produce un error y el equipo queda protegido frente al confiar en una entidad que tiene un certificado que ya no es válido.  
+Si un certificado se encuentra en la CRL como revocado, se produce un error en el esfuerzo de autenticación y el equipo está protegido de confiar en una entidad que tiene un certificado que ya no es válido.  
 
-Antes de instalar el rol de servidor Web (IIS), asegúrate de que has configurado el nombre del servidor y la dirección IP y hayan unido el equipo al dominio.  
+Antes de instalar el rol servidor Web (IIS), asegúrese de que ha configurado la dirección IP y el nombre del servidor y se han unido el equipo al dominio.  
 
-## <a name="to-install-the-web-server-iis-server-role"></a>Para instalar el rol de servidor Web Server (IIS)  
-Para completar este procedimiento, debe ser miembro de la **administradores** grupo.  
+## <a name="to-install-the-web-server-iis-server-role"></a>Para instalar el rol de servidor web (IIS)  
+Para completar este procedimiento, debe pertenecer al grupo **Administradores**.  
 
 >[!NOTE]  
->Para realizar este procedimiento mediante Windows PowerShell, abre PowerShell, escribe el siguiente comando y, a continuación, presione ENTRAR.  
+>Para llevar a cabo este procedimiento con Windows PowerShell, abra PowerShell, escriba el siguiente comando y, a continuación, presione ENTRAR.  
 `Install-WindowsFeature Web-Server -IncludeManagementTools`  
 
-1.  En el administrador del servidor, haz clic en **administrar**y, a continuación, haz clic en **agregar Roles y características**. Abre el agregar Roles and Features Wizard.  
-2.  En **antes de comenzar**, haz clic en **siguiente**.  
+1.  En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el Asistente para agregar roles y características.  
+2.  En **Antes de comenzar**, haga clic en **Siguiente**.  
 
-**Ten en cuenta**   
-La **antes de comenzar** no se muestra la página del agregar Roles y características de asistente si ejecutado previamente el agregar Roles y características de asistente y ha seleccionado **omitir esta página predeterminada** en ese momento.  
+**Nota**   
+El **antes de comenzar** no se muestra la página del Asistente de las características y agregar Roles si ya ha ejecutado el agregar Roles y características Asistente y seleccionó **omitir esta página predeterminada** en ese momento.  
 
-3.  En la **tipo de instalación** página, haz clic en **siguiente**.  
-4.  En la **selección de servidor** página, haz clic en **siguiente**.  
-5.  En la **roles de servidor** página, seleccione **servidor Web (IIS)**y, a continuación, haz clic en **siguiente**.  
-6.  Haz clic en **siguiente** hasta que haya aceptado el valor todas las de configuración del servidor web y, a continuación, haz clic en **instalar**.  
-7.  Comprueba que todas las instalaciones tuvieron éxito y, a continuación, haz clic en **cerrar**.
+3.  En la página **Tipo de instalación**, haga clic en **Siguiente**.  
+4.  En el **selección de servidor** página, haga clic en **siguiente**.  
+5.  En el **roles de servidor** página, seleccione **servidor Web (IIS)** y, a continuación, haga clic en **siguiente**.  
+6.  Haga clic en **Siguiente** hasta haber aceptado todas las configuraciones predeterminadas del servidor web y, a continuación, haga clic en **Instalar**.  
+7.  Compruebe que todas las instalaciones se realizaron correctamente y, a continuación, haga clic en **Cerrar**.

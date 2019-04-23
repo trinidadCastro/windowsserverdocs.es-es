@@ -1,6 +1,6 @@
 ---
 title: Antes de instalar Windows Server Essentials
-description: "Describe cómo usar Windows Server Essentials"
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,51 +13,52 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: e7eb1b7bed780b41f1a87589add4ab015f41624a
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59828726"
 ---
 # <a name="before-you-install-windows-server-essentials"></a>Antes de instalar Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_BeforeYouBegin"></a>Antes de comenzar la instalación de Windows Server Essentials, realizar las siguientes tareas:  
+##  <a name="BKMK_BeforeYouBegin"></a> Antes de comenzar la instalación de Windows Server Essentials, realice las siguientes tareas:  
 
--   **Asegúrate de que tu equipo cumple los requisitos mínimos de hardware**. Esto incluye determinar si es necesario hardware adicional y comprobar que los controladores para el hardware son compatibles con Windows Server Essentials. Para obtener más información, consulta [requisitos del sistema para Windows Server Essentials](../get-started/system-requirements.md).   
+-   **Asegúrese de que su equipo cumpla los requisitos mínimos de hardware**. Esto incluye determinar si necesita hardware adicional y comprobar que los controladores del hardware son compatibles con Windows Server Essentials. Para obtener más información, consulte [requisitos del sistema para Windows Server Essentials](../get-started/system-requirements.md).   
 
   
     > [!IMPORTANT]
-    >  Antes de instalar Windows Server Essentials en un equipo ya existente, te recomendamos que completamente dar formato y, a continuación, volver a particionar los discos duros del equipo ya existente. Al formatear y volver a particionar los discos duros, quitar la posibilidad de que permanecen ocultas particiones en los discos duros.  
+    >  Antes de instalar Windows Server Essentials en un equipo preexistente, se recomienda formatear completamente y, a continuación, volver a particionar los discos duros del equipo ya existente. De esta manera, se elimina la posibilidad de que permanezcan particiones ocultas en los discos duros.  
   
--   **Preparar la red** para preparar la red para instalar Windows Server Essentials, haz lo siguiente:  
+-   **Preparar la red** para preparar la red para instalar Windows Server Essentials, haga lo siguiente:  
     
   
-    -   **Actualizar el sistema operativo en los equipos cliente** Windows Server Essentials admite los siguientes sistemas operativos: Windows 8, Windows 7, Windows 10 y Macintosh OS X Lion o superior. Estos sistemas operativos proporcionan la funcionalidad de la red local, el rendimiento, la confiabilidad y la características de seguridad necesario.  
+    -   **Actualizar sistema operativo en los equipos cliente** Windows Server Essentials admite los siguientes sistemas operativos:  Windows 8, Windows 7, Windows 10 y Macintosh OS X Lion o superior. Estos sistemas operativos proporcionan las características de seguridad, la confiabilidad, el rendimiento y la funcionalidad que son necesarios para la red local.  
   
-    -   **Configurar el enrutador** comprobar que el enrutador está configurado como sigue:  
+    -   **Configure el enrutador** Compruebe que el enrutador esté configurado de la manera siguiente:  
   
-        -   El marco UPnP está habilitado en el enrutador.  
+        -   El entorno UPnP está habilitado en el enrutador.  
   
-        -   El servicio de servidor de protocolo de configuración dinámica de Host (DHCP) para la LAN puede estar habilitado o deshabilitado.  ¿Windows Server Essentials garantiza que DHCP no se está ejecutando en el servidor y el enrutador? Cuando DHCP está habilitado en el enrutador, DHCP no está habilitado en el servidor durante la instalación.  
+        -   El servicio del servidor del Protocolo de configuración dinámica de host (DHCP) de la LAN puede estar habilitado o deshabilitado.  ¿Windows Server Essentials garantiza que DHCP no se está ejecutando en el servidor y el enrutador? Si se habilita en el enrutador, DHCP no está habilitado en el servidor durante la instalación.  
   
-        -   Tienes una dirección IP para la interfaz externa del enrutador, que es proporcionada por el proveedor de servicios de Internet (ISP). El servicio de servidor DHCP en el ISP puede asignarse dinámicamente la dirección IP o debe configurar manualmente una dirección IP estática mediante la consola de administración del enrutador.  
+        -   Tiene una dirección IP para la interfaz externa del enrutador, que le ha suministrado el proveedor de acceso a Internet (ISP). La dirección IP puede asignarla dinámicamente el servicio del servidor DHCP en el ISP, o usted deberá configurar manualmente una dirección IP estática mediante la consola de administración del enrutador.  
   
-        -   Si la conexión a Internet requiere un nombre de usuario y contraseña, también denominada Protocolo punto a punto en Ethernet (PPPoE), estas opciones se configuran en el enrutador, incluso si el dispositivo admite el marco UPnP.  
+        -   Si su conexión a Internet precisa de un nombre de usuario y una contraseña, lo que se conoce también como Protocolo punto a punto en Ethernet (PPPoE), estos valores están configurados en el enrutador, incluso si el dispositivo admite el entorno UPnP.  
   
-        -   El enrutador está conectado a la LAN y a Internet, se activa y funciona correctamente.  
+        -   El enrutador está conectado a la LAN y a Internet, está encendido y funciona correctamente.  
   
-     Si el enrutador no admite el marco UPnP, o si el enrutador no se puede configurar durante la instalación, debes configurarlo manualmente con la configuración de la red. Asegúrate de que los siguientes puertos admitirán y se dirigen a la dirección IP del servidor de destino:  
+     Si el enrutador no es compatible con el entorno UPnP o no se puede configurar durante la instalación, deberá configurarlo manualmente con los valores de la red. Asegúrese de que los siguientes puertos estén abiertos y de que estén dirigidos a la dirección IP del servidor de destino:  
   
-    |Número de puerto|Aplicación|  
+    |Número de puerto|Application|  
     |-----------------|-----------------|  
-    |Puerto 80|Tráfico HTTP Web|  
-    |Puerto 443|Tráfico Web HTTPS|  
+    |Puerto 80|Tráfico web HTTP|  
+    |Puerto 443|Tráfico web HTTPS|  
   
 
--   **Leer la documentación de la versión de la Windows Server Essentials**. La documentación de la versión contiene la información más reciente que puede ser esencial para instalar y configurar Windows Server Essentials correctamente. Para ver o imprimir la documentación de la versión, consulta [publicar documentación para Windows Server Essentials](../get-started/release-notes.md).  
+-   **Lea la documentación de la versión de Windows Server Essentials**. La documentación de la versión contiene la información más reciente que puede resultar fundamental para instalar y configurar Windows Server Essentials correctamente. Para ver o imprimir la documentación de la versión, consulte [Release Documentation for Windows Server Essentials](../get-started/release-notes.md).  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
 -   [Instalar Windows Server Essentials](Install-Windows-Server-Essentials.md)
 

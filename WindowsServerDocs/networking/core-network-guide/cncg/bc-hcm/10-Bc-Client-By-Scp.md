@@ -1,6 +1,6 @@
 ---
-title: Configurar cliente la detección automática de memoria caché hospedada por punto de conexión de servicio
-description: Esta guía brinda instrucciones sobre cómo implementar BranchCache en modo de memoria caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10
+title: Configurar la detección automática de caché hospedada de cliente mediante el punto de conexión de servicio
+description: Esta guía proporciona instrucciones sobre cómo implementar BranchCache en modo de caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,62 +8,63 @@ ms.topic: article
 ms.assetid: ea1c34fd-5a33-4228-9437-9bb3d44230eb
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b12fa6f9e11c8816d74c9013dd80b3fa38d0a478
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: bd77fc76a999517cb8372aec8dfad25b4dd5be3b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829726"
 ---
-#  <a name="configure-client-automatic-hosted-cache-discovery-by-service-connection-point"></a>Configurar cliente la detección automática de memoria caché hospedada por punto de conexión de servicio
+#  <a name="configure-client-automatic-hosted-cache-discovery-by-service-connection-point"></a>Configurar la detección automática de caché hospedada de cliente mediante el punto de conexión de servicio
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Con este procedimiento, puedes usar directivas de grupo para habilitar y configurar el modo de caché BranchCache hospedado en equipos unidos a un domain\ que se ejecutan los siguientes sistemas operativos de Windows compatibles con BranchCache\.
+Con este procedimiento puede utilizar Directiva de grupo para habilitar y configurar el modo caché hospedada de BranchCache en el dominio\-unido los equipos que ejecutan la siguiente BranchCache\-compatibles con sistemas operativos de Windows.
 
-- Windows 10 Enterprise
-- Windows 10 Education
+- Windows 10 Enterprise
+- Windows 10 Education
 - Windows 8.1 Enterprise
 - Windows 8 Enterprise
 
 > [!NOTE]  
-> Para configurar los equipos unidos a un dominio que ejecutan Windows Server 2008 R2 o Windows 7, consulta el tema de Windows Server 2008 R2 [Guía de implementación de BranchCache](https://technet.microsoft.com/library/ee649232.aspx).
+> Para configurar equipos unidos a un dominio que ejecutan Windows Server 2008 R2 o Windows 7, vea Windows Server 2008 R2 [BranchCache Deployment Guide](https://technet.microsoft.com/library/ee649232.aspx).
 
-Pertenencia a **administradores de dominio**, o equivalente, es lo mínimo necesario para realizar este procedimiento.
+El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Admins. del dominio** o grupo equivalente.
 
-### <a name="to-use-group-policy-to-configure-clients-for-hosted-cache-mode"></a>Usar la directiva de grupo para configurar a los clientes para el modo de la memoria caché hospedada
+### <a name="to-use-group-policy-to-configure-clients-for-hosted-cache-mode"></a>Para usar la directiva de grupo para configurar a clientes para el modo caché hospedada
 
-1. En un equipo en el que está instalado el rol de servidor de servicios de dominio de Active Directory, abre el administrador del servidor, seleccionar el servidor Local, haz clic en **herramientas**y, a continuación, haz clic en **Group Policy Management**. Abre la consola de administración de directivas de grupo.
+1. En un equipo en el que está instalado el rol de servidor Servicios de dominio de Active Directory, abra Administrador del servidor, seleccione el servidor Local, haga clic en **herramientas**y, a continuación, haga clic en **Group Policy Management**. Se abre la consola de administración de directivas de grupo.
 
-2. En la consola de administración de directivas de grupo, expanda la siguiente ruta de acceso: **bosque:***corp.contoso.com*, **dominios**, *corp.contoso.com*, **objetos de directiva de grupo**, donde *corp.contoso.com* es el nombre del dominio donde se encuentran las cuentas de equipo del cliente BranchCache que quieras configurar.
+2. En la consola de administración de directivas de grupo, expanda la ruta de acceso siguiente: **Bosque:** *corp.contoso.com*, **dominios**, *corp.contoso.com*, **objetos de directiva de grupo**, donde *corp.contoso.com* es el nombre del dominio donde se encuentran las cuentas de equipo del cliente de BranchCache que desea configurar.
 
-3. Clic Right\ **objetos de directiva de grupo**y, a continuación, haz clic en **nueva**. La **nuevo GPO** abre el cuadro de diálogo. En **nombre**, escribe un nombre para la nueva directiva de grupo objeto \(GPO\). Por ejemplo, si quieres nombrar el objeto BranchCache los equipos cliente, escribe **los equipos cliente BranchCache**. Haz clic en **Aceptar**.
+3. Derecha\-haga clic en **Group Policy Objects**y, a continuación, haga clic en **New**. Se abre el cuadro de diálogo **Nuevo GPO**. En **nombre**, escriba un nombre para el nuevo objeto de directiva de grupo \(GPO\). Por ejemplo, si desea asignar al objeto el nombre Equipos cliente de BranchCache, escriba **Equipos cliente de BranchCache**. Haga clic en **Aceptar**.
 
-4. En la consola de administración de directivas de grupo, asegúrate de que **objetos de directiva de grupo** están seleccionado y en los detalles panel right\-haga clic en el GPO que has creado. Por ejemplo, si denominado los equipos de cliente BranchCache de GPO, right\ clic **los equipos cliente BranchCache**. Haz clic en **editar**. Abre la consola del Editor de administración de directivas de grupo.
+4. En la consola de administración de directivas de grupo, asegúrese de que **Group Policy Objects** está seleccionado y en la derecha del panel de detalles\-haga clic en el GPO que acaba de crear. Por ejemplo, si el nombre de los equipos cliente de BranchCache de GPO secundario\-haga clic en **equipos cliente de BranchCache**. Haga clic en **Editar**. Se abre la consola del Editor de administración de directivas de grupo.
 
-5. En la consola del Editor de administración de directivas de grupo, expanda la siguiente ruta de acceso: **configuración del equipo**, **directivas**, **plantillas administrativas: directiva definiciones \(ADMX files\) recuperado desde el equipo local**, **red**, **BranchCache**.
+5. En la consola Editor de administración de directivas de grupo, expanda la ruta de acceso siguiente: **Configuración del equipo**, **Directivas**, **Plantillas administrativas: Las definiciones de directiva \(archivos ADMX\) recuperado desde el equipo local**, **red**, **BranchCache**.
 
-6. Haz clic en **BranchCache**y, después, en el panel de detalles, double\ clic **activar BranchCache**. La **activar BranchCache** abre el cuadro de diálogo.
+6. Haga clic en **BranchCache**y, a continuación, en el panel de detalles, haga doble\-haga clic en **activar BranchCache**. Se abre el cuadro de diálogo **Activar BranchCache**.
   
-7.  En la **activar BranchCache** cuadro de diálogo, haz clic en **habilitado**y, a continuación, haz clic en **Aceptar**.
+7.  En el cuadro de diálogo **Activar BranchCache**, haga clic en **Habilitado** y, a continuación, en **Aceptar**.
 
-8. En la consola del Editor de administración de directivas de grupo, asegúrate de que **BranchCache** sigue estando seleccionado y, a continuación, en el panel de detalles double\ clic **habilitar hospedadas caché la detección automática al punto de conexión de servicio**. Abre el cuadro de diálogo de configuración de directiva.
+8. En la consola Editor de administración de directivas de grupo, asegúrese de que **BranchCache** es aún seleccionada y, a continuación, en el panel de detalles tipo double\-haga clic en **habilitar hospedado caché de la detección automática mediante la conexión de servicio Punto**. Se abre el cuadro de diálogo de configuración de directiva.
 
-9. En la **habilitar hospedadas caché la detección automática al punto de conexión de servicio** cuadro de diálogo, haz clic en **habilitado**y, a continuación, haz clic en **Aceptar**.
+9. En el **habilitar hospedado caché de la detección automática mediante el punto de conexión de servicio** cuadro de diálogo, haga clic en **habilitado**y, a continuación, haga clic en **Aceptar**.
 
-10. Para permitir que los equipos cliente descargar y almacenar en caché contenido de BranchCache servidores server\ contenidos del archivo: en la consola del Editor de administración de directivas de grupo, asegúrate de que **BranchCache** sigue estando seleccionado y, a continuación, en el panel de detalles double\ clic **BranchCache para archivos de red**. La **configurar BranchCache para archivos de red** abre el cuadro de diálogo. 
-11. En la **configurar BranchCache para archivos de red** cuadro de diálogo, haz clic en **habilitado**. En **opciones**, escribe un valor numérico, en milisegundos, para el tiempo de latencia de red máximo ida y vuelta y, a continuación, haz clic en **Aceptar**.
+10. Para habilitar los equipos cliente para descargar y contenido de la caché del servidor de archivos de BranchCache\-en función de los servidores de contenido: En la consola Editor de administración de directivas de grupo, asegúrese de que **BranchCache** es aún seleccionada y, a continuación, en el panel de detalles tipo double\-haga clic en **BranchCache para archivos de red**. Se abre el cuadro de diálogo **Configurar BranchCache para archivos de red**. 
+11. En el cuadro de diálogo **Configurar BranchCache para archivos de red**, haga clic en **Habilitado**. En **Opciones**, escriba un valor numérico, en milisegundos, para el tiempo máximo de latencia de red de ida y vuelta y, a continuación, haga clic en **Aceptar**.
   
     > [!NOTE]
-    > De manera predeterminada, los equipos cliente almacena en caché contenido de los servidores de archivos si la latencia de red de ida y vuelta tiene más de 80 milisegundos.
+    > De forma predeterminada, los equipos cliente almacenar en caché el contenido de los servidores de archivos si la latencia de ida y vuelta de red es mayor que 80 milisegundos.
   
-12. Para configurar la cantidad de espacio de disco duro asignado en cada equipo cliente para la caché BranchCache: en la consola del Editor de administración de directivas de grupo, asegúrate de que **BranchCache** sigue estando seleccionado y, a continuación, en el panel de detalles double\ clic **establecer el porcentaje de espacio en disco usado para la memoria caché del equipo cliente**. La **establecer el porcentaje de espacio en disco usado para la memoria caché del equipo cliente** abre el cuadro de diálogo. Haz clic en **habilitado**y, a continuación, en **opciones** escribe un valor numérico que representa el porcentaje de espacio en disco utilizado en cada equipo cliente para la caché BranchCache. Haz clic en **Aceptar**.
+12. Para configurar la cantidad de espacio en disco duro asignada en cada equipo cliente para la memoria caché de BranchCache: En la consola Editor de administración de directivas de grupo, asegúrese de que **BranchCache** es aún seleccionada y, a continuación, en el panel de detalles tipo double\-haga clic en **establecer el porcentaje de espacio en disco usado para la caché del equipo cliente**. Se abre el cuadro de diálogo **Establecer el porcentaje de espacio en disco usado por la memoria caché del equipo cliente**. Haga clic en **Habilitado** y, a continuación, en **Opciones** escriba un valor numérico que represente el porcentaje de espacio en disco duro utilizado en cada equipo cliente para la memoria caché de BranchCache. Haga clic en **Aceptar**.
 
-13. Para especificar la antigüedad de forma predeterminada, en días, para que los segmentos son válidos en la memoria caché de datos de BranchCache en los equipos cliente: en la consola del Editor de administración de directivas de grupo, asegúrate de que **BranchCache** sigue estando seleccionado y, a continuación, en el panel de detalles double\ clic **establece la edad de los segmentos en la memoria caché de datos**. La **establece la edad de los segmentos en la memoria caché de datos** abre el cuadro de diálogo. Haz clic en **habilitado**y, a continuación, en el panel de detalles, escribe el número de días que prefieras. Haz clic en **Aceptar**.
+13. Para especificar la antigüedad de forma predeterminada, en días, para que los segmentos son válidos en la caché de datos de BranchCache en los equipos cliente: En la consola Editor de administración de directivas de grupo, asegúrese de que **BranchCache** es aún seleccionada y, a continuación, en el panel de detalles tipo double\-haga clic en **establecer la duración para segmentos en la caché de datos**. El **establecer la duración para segmentos en la caché de datos** abre el cuadro de diálogo. Haga clic en **habilitado**y, a continuación, en el panel de detalles, escriba el número de días que prefiera. Haga clic en **Aceptar**.
 
-14. Configurar la configuración de directiva BranchCache adicional para los equipos cliente según corresponda para su implementación.
+14. Configurar opciones adicionales de directiva de BranchCache para los equipos cliente según corresponda para su implementación.
 
-15. Actualizar la directiva de grupo en los equipos de cliente de office rama ejecutando el comando **comando gpupdate/force**, o los equipos cliente se reinició.
+15. Actualizar directiva de grupo en los equipos cliente la sucursal, ejecute el comando **gpupdate /force**, o bien, reinicie el equipo de los equipos cliente.
 
-La implementación de modo de la memoria caché hospedada de BranchCache ahora está completa.
+La implementación en modo caché hospedada de BranchCache está completa ahora.
 
 Para obtener más información sobre las tecnologías en esta guía, consulte [recursos adicionales](11-Bc-Hcm-additional-resources.md).

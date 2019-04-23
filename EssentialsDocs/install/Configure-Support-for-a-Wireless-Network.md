@@ -1,6 +1,6 @@
 ---
-title: "Configurar la compatibilidad con una red inalámbrica"
-description: "Describe cómo usar Windows Server Essentials"
+title: Configure la asistencia para un red inalámbrica
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,43 +13,44 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: c5c98727b81bf37fdb3f90c612270462a51908c8
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833116"
 ---
-# <a name="configure-support-for-a-wireless-network"></a>Configurar la compatibilidad con una red inalámbrica
+# <a name="configure-support-for-a-wireless-network"></a>Configure la asistencia para un red inalámbrica
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Puedes configurar el sistema operativo para admitir una red inalámbrica. Deben cumplirse los siguientes requisitos para habilitar la compatibilidad con inalámbrica en el servidor:  
+Puede configurar el sistema operativo para que sea compatible con redes inalámbricas. El servidor debe cumplir con los siguientes requisitos para que sea compatible con redes inalámbricas:  
   
--   El servidor debe tener un adaptador de red inalámbrica instalado.  
+-   El servidor debe tener instalado un adaptador de red por cable.  
   
--   El controlador correcto del adaptador de red inalámbrica debe estar instalado previamente si el adaptador de red no es compatible con el sistema operativo.  
+-   Es necesario preinstalar el controlador adecuado para el adaptador de red inalámbrica si no es compatible con el sistema operativo.  
   
--   La capacidad de habilitar y deshabilitar al adaptador de red inalámbrica debe estar disponible. Para hacer esto puede incluir un botón físico en el servidor o una interfaz de usuario personalizada en el panel. El manual del producto debe proporcionar los pasos para habilitar y deshabilitar al adaptador de red inalámbrica.  
+-   Es necesario poder habilitar y deshabilitar el adaptador de red inalámbrica. Los métodos para ello pueden ser un botón físico en el servidor o una interfaz de usuario personalizada en el Panel. El manual del producto debe indicar los pasos para habilitar y deshabilitar el adaptador de red inalámbrica.  
   
--   La capacidad de seleccionar una red inalámbrica y conectarse a ella debe estar disponible. Esto debe hacerse agregando una interfaz de usuario personalizada al panel. El manual del producto debe proporcionar los pasos para seleccionar y conectarse a una red inalámbrica.  
+-   Es necesario que se pueda seleccionar una red inalámbrica y conectarse a esta. Para ello debería agregarse una interfaz de usuario personalizada al Panel. El manual del producto debe indicar los pasos para seleccionar y conectarse a una red inalámbrica.  
   
--   Si es necesaria la capacidad de admitir una red inalámbrica ad-hoc, debe proporcionarse una interfaz de usuario ampliada en el panel. La interfaz de usuario puede ser un botón o un vínculo que se inicia la configuración de un asistente de red inalámbrica Ad-hoc en el panel de control en Windows Server 2008 R2.  
+-   Si fuera necesario conectarse a una red inalámbrica ad hoc, deberá configurarse una ampliación de la interfaz de usuario en el Panel. La interfaz de usuario puede ser un botón o un enlace que inicie el Asistente de configuración de red inalámbrica ad hoc en el panel de control de Windows Server 2008 R2.  
   
 ## <a name="additional-considerations"></a>Consideraciones adicionales  
- La siguiente información también debe tenerse en cuenta al configurar la compatibilidad con una red inalámbrica:  
+ También es importante tener en cuenta la información que aparece a continuación para configurar una red inalámbrica:  
   
--   El servidor debe estar conectado a la red mediante un cable para ejecutar el programa de instalación.  
+-   El servidor debe estar conectado a la red mediante cable para poder ejecutar la configuración.  
   
--   Un equipo de red en el que se realice una reconstrucción completa debe estar conectado a la red mediante un cable.  
+-   Es necesario conectar a la red mediante cable un equipo de red en el que se haya ejecutado una recuperación completa.  
   
--   El servidor debe estar conectado a la red mediante un cable para realizar una restauración de reconstrucción completa del servidor.  
+-   El servidor ha de estar conectado a la red mediante cable para ejecutar la recuperación completa del servidor.  
   
--   Si se crea una red ad-hoc en el servidor, el adaptador de red inalámbrica está dedicado para la red ad-hoc, por lo que el usuario siempre debe conectar el cable de red en el servidor para obtener una conexión a Internet.  
+-   Si se crea una red ad hoc en el servidor, el adaptador de red inalámbrica será exclusivo de la red ad hoc, de forma que el usuario deberá siempre conectar el cable de red en el servidor para conectarse a Internet.  
   
 > [!NOTE]
->  Para obtener más información acerca de cómo configurar las conexiones de red, consulta [preconfigurar un enrutador](Preconfiguring-a-Router.md).  
+>  Para obtener más información acerca de cómo configurar conexiones de red, consulte [Configuración previa del enrutador](Preconfiguring-a-Router.md).  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

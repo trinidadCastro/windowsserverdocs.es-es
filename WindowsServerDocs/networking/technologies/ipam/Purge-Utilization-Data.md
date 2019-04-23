@@ -1,6 +1,6 @@
 ---
-title: Depurar los datos de uso
-description: Este tema es parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
+title: Purgado de datos de utilización
+description: Este tema forma parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,24 +13,25 @@ ms.topic: article
 ms.assetid: 45cada9e-69b9-43df-b6f5-6d3942435809
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c41be119099aed4867df1bae1a55e2fbaa5c9064
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 7b471417d4c44c22f115443f1f2dcca6f351e6f4
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59827946"
 ---
-# <a name="purge-utilization-data"></a>Depurar los datos de uso
+# <a name="purge-utilization-data"></a>Purgado de datos de utilización
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para aprender a eliminar los datos de uso de la base de datos IPAM.  
+Puede utilizar este tema para obtener información sobre cómo eliminar datos de uso de la base de datos IPAM.  
 
-Debe ser miembro del **los administradores de IPAM**, el equipo local **administradores** o un grupo equivalente, para realizar este procedimiento.
+Debe ser miembro del **administradores IPAM**, el equipo local **administradores** , o un grupo equivalente para realizar este procedimiento.
 
 ## <a name="to-purge-the-ipam-database"></a>Para purgar la base de datos IPAM  
-1. Abre el administrador del servidor y, a continuación, busca la interfaz del cliente IPAM.
-2. Vaya a una de las siguientes ubicaciones: **bloques de direcciones IP**, **inventario de dirección IP**, o **grupos de intervalo de direcciones IP**.  
-3. Haz clic en **tareas**y, a continuación, haz clic en **purgar datos de uso**. La **purgar datos de uso** abre el cuadro de diálogo.
-4. En **purgar la utilización de todos los datos o antes**, haz clic en **seleccionar una fecha**.
-5. Elige la fecha en que quieres eliminar todos los registros de base de datos en y antes de esa fecha.
-6. Haz clic en **Aceptar**. IPAM elimina todos los registros que hayas especificado.
+1. Abra el administrador del servidor y, a continuación, vaya a la interfaz de cliente IPAM.
+2. Examine una de las siguientes ubicaciones: **Bloques de direcciones IP**, **inventario de direcciones IP**, o **grupos de intervalos de direcciones IP**.  
+3. Haga clic en **tareas**y, a continuación, haga clic en **purgar datos de uso**. El **purgar datos de uso** abre el cuadro de diálogo.
+4. En **purgar la utilización de todos los datos en o antes de**, haga clic en **seleccionar una fecha**.
+5. Elija la fecha para el que desea eliminar todos los registros de base de datos en y antes de esa fecha.
+6. Haga clic en **Aceptar**. IPAM elimina todos los registros que ha especificado.

@@ -1,6 +1,6 @@
 ---
-title: Ejecutar el recolector de registro de Windows Server Essentials
-description: "Describe cómo usar Windows Server Essentials"
+title: Ejecución del compilador de registros de Windows Server Essentials
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,78 +13,79 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 6b49fee7ca4a19d5a501cf96c1ce356f8242c81f
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59830926"
 ---
-# <a name="run-the-windows-server-essentials-log-collector"></a>Ejecutar el recolector de registro de Windows Server Essentials
-Puedes ejecutar el recolector de registro de Windows Server Essentials desde el servidor o un equipo en la red. Si ejecutas el recolector de registro del servidor, solo puede recopilar registros del servidor. Si ejecutas el recolector de registro de un equipo de red, puedes recopilar registros desde el servidor, además de los registros de ese equipo.  
+# <a name="run-the-windows-server-essentials-log-collector"></a>Ejecución del compilador de registros de Windows Server Essentials
+Puede ejecutar el recopilador de registros de Windows Server Essentials desde el servidor o en un equipo en la red. Si ejecuta el Compilador de registros desde el servidor, solo podrá recopilar registros del servidor. Si ejecuta el Compilador de registros desde un equipo de red, puede recopilar registros del servidor además de los registros de ese equipo.  
   
- Debes tener privilegios administrativos adecuados para ejecutar el recolector de registro. Si estás Recopilando archivos de registro de un servidor, debe ser un administrador del servidor; Si estás Recopilando archivos de registro en un equipo de red, debe ser un administrador de cliente para ese equipo.  
+ Debe tener los privilegios administrativos necesarios para ejecutar el Compilador de registros. Si va a recopilar archivos de registro de un servidor, debe ser administrador del servidor. Si va a recopilar archivos de registro en un equipo de red, debe ser administrador de cliente de ese equipo.  
   
-#### <a name="to-run-the-log-collector-on-the-server-by-using-the-wizard"></a>Para ejecutar el recolector de registro en el servidor mediante el Asistente  
+#### <a name="to-run-the-log-collector-on-the-server-by-using-the-wizard"></a>Para ejecutar el Compilador de registros en el servidor usando el asistente  
   
-1.  En la **inicio** página del servidor, haz clic en **recopilador de registro de Windows Server Essentials**.  
-  
-    > [!NOTE]
-    >  -   Si el programa de selector de registro no aparece en la **inicio** página, busca **%system%\Program archivos (x86) \Windows recolector de registro del servidor Essentials**y, a continuación, haz doble clic en **LogCollector**.  
-    > -   Si no ha iniciado sesión el servidor con privilegios administrativos, el recolector de registro pide que escribas las credenciales.  
-  
-2.  Cuando se te pide una ubicación para guardar los archivos de registro recopilados, puedes elegir la ubicación predeterminada, **\\\ < ServerName\ > \logs**, o especificar otra ubicación. Para aceptar la ubicación predeterminada, haz clic en **siguiente**. Para cambiar la ubicación, haz clic en **examinar**, navega hasta la carpeta donde quieres guardar los archivos de registro y, a continuación, haz clic en **guardar**.  
+1.  En el **iniciar** página del servidor, haga clic en **Windows Server Essentials Log Collector**.  
   
     > [!NOTE]
-    >  No es necesario proporcionar nombres de archivo para los archivos de registro. El selector de registro de nombres de la colección de archivos zip concatenando el nombre del equipo y la marca de tiempo del archivo.  
+    >  -   Si el programa de recopilador de registros no aparece en el **iniciar** página, vaya a **%system%\Program Files (x86) \Windows Server Essentials Log Collector**y, a continuación, haga doble clic en **LogCollector** .  
+    > -   Si no ha iniciado sesión en el servidor con privilegios administrativos, el Compilador de registros le pide que escriba sus credenciales.  
   
-3.  Se muestra una barra de progreso mientras los registros se recopilan.  
-  
-4.  Para ver el contenido del archivo de registro de la colección, selecciona el **abrir la ubicación del archivo donde se guardaron los registros** casilla de verificación y haz clic en **cerrar** para cerrar el asistente y abrir el archivo de registro de la colección.  
-  
-#### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>Para ejecutar el recolector de registro en un equipo de red mediante el Asistente  
-  
-1.  Busca **%system%\Program archivos (x86) \Windows recolector de registro del servidor Essentials**y, a continuación, haz doble clic en el archivo **LogCollector.exe**.  
+2.  Cuando se le pida una ubicación guardar los archivos de registro recopilados, puede elegir la ubicación predeterminada,  **\\ \\< ServerName\>\logs**, o especificar otra ubicación. Para aceptar la ubicación predeterminada, haga clic en **Siguiente**. Para cambiar la ubicación, haga clic en **Examinar**, vaya hasta la carpeta donde desea guardar los archivos de registro y, a continuación, haga clic en **Guardar**.  
   
     > [!NOTE]
-    >  Si no ha iniciado sesión el equipo de red con privilegios administrativos, escribe tu nombre de usuario y contraseña cuando aparezca el mensaje y, a continuación, haz clic en **siguiente**.  
+    >  No es necesario que proporcione los nombres de archivo de los archivos de registro. El recopilador de registros nombres de la colección de archivos .zip concatenando el nombre del equipo y la marca de tiempo del archivo.  
   
-2.  Selecciona qué registros que quieras recopilar, como sigue:  
+3.  Se muestra una barra de progreso mientras se recopilan los registros.  
   
-    1.  Selecciona el **archivos de registro de servidor** casilla de verificación para recopilar archivos de registro en el servidor.  
+4.  Para ver el contenido del archivo de recopilación de registros, seleccione la casilla **Abrir la ubicación del archivo donde se han guardado los registros** y, a continuación, haga clic en **Cerrar** para cerrar el asistente y abrir el archivo de recopilación de registros.  
   
-    2.  La **archivos de registro del equipo de cliente (este equipo)** casilla está activada de manera predeterminada, que indica que el recolector de registro recopilará los registros desde el equipo de red que está ejecutando el. Si solo quieres recopilar registros del servidor, desactive la **archivos de registro del equipo de cliente (este equipo)** casilla de verificación.  
+#### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>Para ejecutar el Compilador de registros en un equipo de la red usando el asistente  
   
-    3.  Haz clic en **siguiente**.  
-  
-3.  Cuando se te pida, escribe el nombre de usuario y contraseña para un administrador del servidor y, a continuación, haz clic en **siguiente**.  
-  
-4.  Escribe o busca la ubicación donde quieres guardar los archivos de registro y, a continuación, haz clic en **siguiente**.  
+1.  Vaya a **%system%\Program Files (x86) \Windows Server Essentials Log Collector**y, a continuación, haga doble clic en el archivo **LogCollector.exe**.  
   
     > [!NOTE]
-    >  No es necesario proporcionar nombres de archivo para los archivos de registro. El selector de registro de nombres de la colección de archivos zip concatenando el nombre del equipo y la marca de tiempo del archivo.  
+    >  Si no ha iniciado una sesión en el equipo de red con privilegios de administrador, escriba el nombre de usuario y la contraseña cuando se le pida y, a continuación, haga clic en **Siguiente**.  
   
-5.  Se muestra una barra de progreso mientras los registros se recopilan.  
+2.  Seleccione los registros que quiera recopilar de la siguiente manera:  
   
-6.  Para ver el contenido del archivo de registro de la colección, selecciona el **abrir la ubicación del archivo donde se guardaron los registros** casilla de verificación y haz clic en **cerrar** para cerrar el asistente y abrir el archivo de registro de la colección.  
+    1.  Seleccione la casilla **Archivos de registros del servidor** para recopilar los archivos de registros en el servidor.  
   
-### <a name="running-the-log-collector-manually"></a>Ejecuta el selector de registro manualmente  
- Después de instalar el selector de registro, se crea una tarea programada para ejecutar la herramienta. Posteriormente se puede ejecutar el recolector de registro de la **Administrador de tareas programadas** sin usar el asistente, si existen problemas para iniciar el asistente.  
+    2.  La casilla **Archivos de registros del equipo cliente (este equipo)** está activada de forma predeterminada e indica que el Compilador de registros recopilará los registros desde el equipo de red que está ejecutando Si solo desea recopilar registros del servidor, desactive la casilla **Archivos de registros del equipo cliente (este equipo)** .  
   
-##### <a name="to-manually-run-the-log-collector-on-the-server"></a>Para ejecutar manualmente el recolector de registro en el servidor  
+    3.  Haz clic en **Siguiente**.  
   
-1.  Iniciar sesión directamente o remotamente en el servidor.  
+3.  Cuando se le pida, escriba el nombre de usuario y la contraseña de un administrador del servidor y, a continuación, haga clic en **Siguiente**.  
   
-2.  Abre el **programador de tareas**.  
+4.  Escriba o busque la ubicación donde quiera guardar los archivos de registros y, a continuación, haga clic en **Siguiente**.  
   
-3.  En la raíz de la **biblioteca del programador de tareas**, vaya a la tarea programada denominada **LogCollector**.  
+    > [!NOTE]
+    >  No es necesario que proporcione los nombres de archivo de los archivos de registro. El recopilador de registros nombres de la colección de archivos .zip concatenando el nombre del equipo y la marca de tiempo del archivo.  
   
-4.  Haz clic en **LogCollector**y, a continuación, haz clic en **ejecutar**. El recolector de registro coloca los registros en la carpeta predeterminada en el servidor, **\\\ < ServerName\ > \Logs**. Si no tienes permiso de escritura para la carpeta o la carpeta no existe, los registros se colocan en la **< temp\ >** subdirectorio.  
+5.  Se muestra una barra de progreso mientras se recopilan los registros.  
   
-##### <a name="to-manually-run-the-log-collector-on-a-network-computer"></a>Para ejecutar manualmente el recolector de registro en un equipo de red  
+6.  Para ver el contenido del archivo de recopilación de registros, seleccione la casilla **Abrir la ubicación del archivo donde se han guardado los registros** y, a continuación, haga clic en **Cerrar** para cerrar el asistente y abrir el archivo de recopilación de registros.  
   
-1.  Iniciar sesión directamente o remotamente en el equipo de red.  
+### <a name="running-the-log-collector-manually"></a>Ejecutar el Compilador de registros manualmente  
+ Una vez instalado el Compilador de registros, se crea una tarea programada para ejecutar la herramienta. Posteriormente, puede ejecutar el Compilador de registros del **Administrador de tareas programadas** sin usar el asistente, en caso de que haya problemas para iniciar el asistente.  
   
-2.  Abre el **programador de tareas**.  
+##### <a name="to-manually-run-the-log-collector-on-the-server"></a>Para ejecutar manualmente el Compilador de registros en el servidor  
   
-3.  En la raíz de la **biblioteca del programador de tareas**, vaya a la tarea programada denominada **LogCollector**.  
+1.  Inicie sesión directamente o de forma remota en el servidor.  
   
-4.  Haz clic en **LogCollector**y, a continuación, haz clic en **ejecutar**. El recolector de registro coloca los registros en la **< temp\ >** carpeta en el equipo de red.
+2.  Abra el **Programador de tareas**.  
+  
+3.  En la raíz de la **Biblioteca del programador de tareas**, vaya a la tarea programada **LogCollector**.  
+  
+4.  Haga clic con el botón secundario en **LogCollector** y, a continuación, haga clic en **Ejecutar**. El recopilador de registros coloca los registros en la carpeta predeterminada en el servidor,  **\\ \\< ServerName\>\Logs**. Si no tiene permiso de escritura para la carpeta o la carpeta no existe, los registros se colocan en el **< temp\>**  subdirectorio.  
+  
+##### <a name="to-manually-run-the-log-collector-on-a-network-computer"></a>Para ejecutar manualmente el Compilador de registros en un equipo de red  
+  
+1.  Inicie sesión directamente o de forma remota en el equipo de red.  
+  
+2.  Abra el **Programador de tareas**.  
+  
+3.  En la raíz de la **Biblioteca del programador de tareas**, vaya a la tarea programada **LogCollector**.  
+  
+4.  Haga clic con el botón secundario en **LogCollector** y, a continuación, haga clic en **Ejecutar**. El recopilador de registros coloca los registros en el **< temp\>**  carpeta en el equipo de red.

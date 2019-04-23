@@ -1,6 +1,6 @@
 ---
-title: Configurar o personalizar copias de seguridad del servidor
-description: "Describe cómo usar Windows Server Essentials"
+title: Configurar o personalizar la copia de seguridad del servidor
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,130 +13,131 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 727dd74e4bddc52f735969f216914b9d76d1f413
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59831936"
 ---
-# <a name="set-up-or-customize-server-backup"></a>Configurar o personalizar copias de seguridad del servidor
+# <a name="set-up-or-customize-server-backup"></a>Configurar o personalizar la copia de seguridad del servidor
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
   
- Copia de seguridad del servidor no se configura automáticamente durante la instalación. Debes proteger el servidor y sus datos automáticamente programando copias de seguridad diarias. Se recomienda mantener un plan de copia de seguridad diario porque la mayoría de las organizaciones no puede permitirse perder los datos que se ha creado durante varios días.  
+ La copia de seguridad del servidor no se configura automáticamente durante la instalación. Debe proteger el servidor y sus datos de forma automática programando copias de seguridad diarias. Se recomienda mantener un plan de copias de seguridad diario porque la mayoría de las empresas no puede permitirse perder los datos creados durante varios días.  
   
- Consulta las siguientes secciones para configurar o personalizar copias de seguridad del servidor:  
+ Vea las secciones siguientes para configurar o personalizar la copia de seguridad del servidor:  
   
--   [Establecer o cambiar la configuración de copia de seguridad del servidor](Set-up-or-customize-server-backup.md#BKMK_1)  
+-   [Configurar o cambiar la configuración de copia de seguridad de servidor](Set-up-or-customize-server-backup.md#BKMK_1)  
   
--   [Programación de copia de seguridad del servidor](Set-up-or-customize-server-backup.md#BKMK_2)  
+-   [Programación de copia de seguridad de servidor](Set-up-or-customize-server-backup.md#BKMK_2)  
   
 -   [Unidad de destino de copia de seguridad](Set-up-or-customize-server-backup.md#BKMK_Target)  
   
 -   [Elementos de una copia de seguridad](Set-up-or-customize-server-backup.md#BKMK_4)  
   
-##  <a name="BKMK_1"></a>Establecer o cambiar la configuración de copia de seguridad del servidor  
+##  <a name="BKMK_1"></a> Configurar o cambiar la configuración de copia de seguridad de servidor  
   
-#### <a name="to-set-up-or-change-server-backup-settings"></a>Para establecer o cambiar la configuración de copia de seguridad del servidor  
+#### <a name="to-set-up-or-change-server-backup-settings"></a>Para configurar o cambiar la configuración de copia de seguridad del servidor  
   
-1.  Abre el **panel**y, a continuación, haz clic en el **dispositivos** pestaña.  
+1.  Abra el **Panel**y, a continuación, haga clic en la pestaña **Dispositivos** .  
   
-2.  En la vista de lista, haz clic en el servidor para seleccionarlo.  
+2.  En la vista de lista, haga clic en el servidor para seleccionarlo.  
   
-3.  En el panel de tareas, haz clic en **Configurar copia de seguridad del servidor**.  
-  
-    > [!NOTE]
-    >  Si quieres cambiar la configuración de copia de seguridad existente, haz clic en **personalizar copias de seguridad del servidor**.  
-  
-4.  Sigue las instrucciones del asistente.  
+3.  En el panel de tareas, haga clic en **Configurar copias de seguridad de este servidor**.  
   
     > [!NOTE]
-    >  Si se inicia el asistente antes de adjuntarlos al disco duro externo al servidor, haz clic en **lista actualización** en la **seleccionar el destino de copia de seguridad** página después de asociar el disco duro.  
+    >  Si quiere cambiar la configuración de copia de seguridad existente, haga clic en **Personalizar la copia de seguridad para el servidor**.  
+  
+4.  Siga las instrucciones del asistente.  
+  
+    > [!NOTE]
+    >  Si inicia el asistente antes de adjuntar el disco duro externo al servidor, haga clic en **Actualizar lista** en la página **Seleccione el destino de la copia de seguridad** después de adjuntar el disco duro.  
   
 > [!NOTE]
->  En la instalación predeterminada de Windows Server Essentials, el servidor está configurado para realizar automáticamente una vez a la semana de desfragmentación. Si utiliza el software de creación de imágenes no son de Microsoft, esto puede hacer en más de copias de seguridad normales. Si no es necesario desfragmentar el servidor de forma regular, puedes seguir estos pasos para desactivar la programación de desfragmentación:  
+>  En la instalación predeterminada de Windows Server Essentials, el servidor está configurado para llevar a cabo automáticamente una vez a la semana de desfragmentación. Esto podría comportar que se hicieran más copias de seguridad de las habituales si usa software de creación de imágenes que no sea de Microsoft. Si no es necesario desfragmentar el servidor con regularidad puede seguir estos pasos para desactivar el programa de desfragmentación:  
 >   
->  1.  Presiona la tecla Windows + W para abrir **búsqueda**.  
-> 2.  En el cuadro de texto de búsqueda, escribe **desfragmentar**.  
-> 3.  En la sección de resultados, haz clic en **desfragmentar y optimizar unidades su**.  
-> 4.  En la **optimizar unidades** página, selecciona una unidad y, a continuación, haz clic en **cambiar la configuración de**.  
-> 5.  En la **programación de optimización** ventana, desactiva la **ejecutar según una programación (recomendada)** y, a continuación, haz clic en **Aceptar** para guardar el cambio.  
+>  1.  Presione la tecla de Windows + W para abrir **Buscar**.  
+> 2.  En el cuadro de texto Buscar, escriba **Defragment**.  
+> 3.  En la sección de resultados, haga clic en **Desfragmentar y optimizar las unidades**.  
+> 4.  En la página **Optimizar unidades**, seleccione una unidad y haga clic en **Cambiar la configuración**.  
+> 5.  En la ventana **Programación de la optimización** , desactive la casilla **Ejecución programada (recomendado)** y, a continuación, haga clic en **Aceptar** para guardar el cambio.  
   
-##  <a name="BKMK_2"></a>Programación de copia de seguridad del servidor  
- Cuando usas el asistente Configurar copia de seguridad de servidor o el Asistente para personalizar la copia de seguridad de servidor, puedes hacer la copia de seguridad de datos del servidor en varias veces durante el día. Debido a los asistentes programación incremental copias de seguridad, las copias de seguridad se ejecuten rápidamente y no se ha afectada significativamente el rendimiento del servidor. De manera predeterminada, los asistentes para programación una copia de seguridad para ejecutar todos los días en 12:00 PM y 11:00 PM. Sin embargo, puedes ajustar la programación de copia de seguridad según las necesidades de la organización. En ocasiones, debe evaluar la eficacia de tu plan de copia de seguridad y cambiar el plan según sea necesario.  
+##  <a name="BKMK_2"></a> Programación de copia de seguridad de servidor  
+ Al usar el asistente Configurar copias de seguridad del servidor o el Asistente Personalizar copias de seguridad del servidor, puede optar por hacer una copia de seguridad de los datos del servidor varias veces durante el día. Dado que los asistentes programan copias de seguridad incrementales, las copias de seguridad se ejecutan rápidamente y el rendimiento del servidor apenas se ve afectado. De manera predeterminada, los asistentes programan una copia de seguridad para que se ejecute cada día a las 12:00 y las 23:00. Sin embargo, puede ajustar la programación de copias de seguridad según las necesidades de su organización. De vez en cuando debe evaluar la eficacia de su plan de copia de seguridad y cambiar el plan si es necesario.  
   
-##  <a name="BKMK_Target"></a>Unidad de destino de copia de seguridad  
- Puedes usar varias unidades de almacenamiento externo para las copias de seguridad, y puedes girar las unidades entre las ubicaciones de almacenamiento en el sitio y fuera del sitio. Esto puede mejorar la preparación ante desastres planeación al ayudar a recuperar los datos si se producen daños físicos para el hardware de las instalaciones.  
+##  <a name="BKMK_Target"></a> Unidad de destino de copia de seguridad  
+ Puede usar varias unidades de almacenamiento externo para efectuar las copias de seguridad y puede rotar las unidades entre ubicaciones de almacenamiento en el sitio y fuera del sitio. Esto puede mejorar la planificación de preparación ante desastres ayudando a recuperar los datos si se producen daños físicos en el hardware de las instalaciones.  
   
- Al elegir una unidad de almacenamiento para la copia de seguridad del servidor, ten en cuenta lo siguiente:  
+ Al elegir una unidad de almacenamiento para la copia de seguridad del servidor, tenga en cuenta los siguientes aspectos:  
   
--   Elegir una unidad que contiene espacio suficiente para almacenar los datos. Las unidades de almacenamiento deben contener al menos 2,5 veces la capacidad de almacenamiento de los datos que quieres hacer copia de seguridad. Las unidades de disco también deben ser lo suficientemente grandes como para acomodar el crecimiento en el futuro de los datos del servidor.  
+-   Elija una unidad que contenga espacio suficiente para almacenar los datos. Las unidades de almacenamiento deben contener al menos 2,5 veces la capacidad de almacenamiento de los datos de los que quiere hacer una copia de seguridad. Las unidades también deben ser suficientemente grandes para alojar el crecimiento futuro de los datos del servidor.  
   
--   Al usar una unidad de almacenamiento externo, asegúrate de que la unidad está vacía o si solo contiene datos que no es necesario.  
-  
-    > [!CAUTION]
-    >  El servidor de copia de seguridad Asistente Configurar da formato a las unidades de almacenamiento cuando se configura para la copia de seguridad.  
-  
--   Si la unidad de copia de seguridad de destino contiene unidades sin conexión, la configuración de copia de seguridad no funcionarán correctamente. Para completar la configuración, al seleccionar el destino de copia de seguridad, desactiva la casilla de verificación para excluir las unidades que están sin conexión.  
-  
--   Si eliges una unidad que contiene las copias de seguridad anteriores como el destino de copia de seguridad, el asistente permite que elegir si quieres mantener las copias de seguridad anteriores. Si guardas copias de seguridad, el asistente no formatees la unidad.  
-  
--   Conviene que visites el sitio Web para el fabricante de la unidad de almacenamiento externo para asegurarse de que la unidad de copia de seguridad se admite en equipos que ejecutan Windows Server Essentials.  
-  
--   La unidad no puede contener una partición del sistema de Extensible Firmware Interface (EFI). Si hay una partición EFI en una unidad USB, se da por hecho que el disco es un disco de inicio. Si estás seguro de que no necesitas t los datos en el disco, puedes volver a formatear el disco y Úsalo para las copias de seguridad.  
+-   Cuando se use una unidad de almacenamiento externo, asegúrese de que la unidad esté vacía o que solo contenga los datos que no necesita.  
   
     > [!CAUTION]
-    >  Al formatear el disco, se eliminarán todos los datos.  
+    >  El asistente Configurar copias de seguridad del servidor da formato a las unidades de almacenamiento cuando las configura para la copia de seguridad.  
   
-    #### <a name="to-remove-an-efi-system-partition-from-a-usb-disk"></a>Para quitar una partición del sistema EFI desde un disco USB  
+-   Si la unidad de destino de copia de seguridad contiene unidades sin conexión, la configuración de copia de seguridad no se llevará a cabo correctamente. Para completar la configuración, al seleccionar el destino de copia de seguridad, desactive la casilla para excluir las unidades sin conexión.  
   
-    1.  En el Panel de Control, abre **seguridad y sistemas**.  
+-   Si elige una unidad que contiene copias de seguridad anteriores como destino de copia de seguridad, el asistente le permite elegir si quiere mantener las copias de seguridad anteriores. Si mantiene las copias de seguridad, el asistente no formateará la unidad.  
   
-    2.  En **herramientas administrativas**, haz clic en **crear y formatear particiones de disco duro**.  
+-   Visite el sitio Web de su fabricante de la unidad de almacenamiento externo para asegurarse de que la unidad de copia de seguridad es compatible con equipos que ejecutan Windows Server Essentials.  
   
-    3.  Eliminar todos los volúmenes en el disco USB, o simplemente eliminar la partición EFI. El asistente Configurar copia de seguridad de servidor, se eliminarán todos los volúmenes.  
+-   La unidad no puede contener una partición del sistema Extensible Firmware Interface (EFI). Si hay una partición EFI en una unidad USB se supone que el disco es un disco de inicio. Si está seguro de que no necesita los datos en el disco de t, puede volver a formatear el disco y usarlo para copias de seguridad.  
   
--   La unidad no puede contener las carpetas de servidor compartido. Antes de poder usar el disco como una unidad de destino de copia de seguridad, debe dejar de compartir en las carpetas de servidor compartido. Puedes dejar de compartir desde el panel o en el Explorador de archivos.  
+    > [!CAUTION]
+    >  Al formatear el disco se eliminarán todos los datos.  
   
-    #### <a name="to-stop-sharing-on-a-server-folder-from-the-dashboard"></a>Para dejar de compartir en una carpeta del servidor desde el panel  
+    #### <a name="to-remove-an-efi-system-partition-from-a-usb-disk"></a>Para quitar una partición del sistema EFI de un disco USB  
   
-    1.  En el panel, haz clic en **almacenamiento**y, a continuación, haz clic en **carpetas del servidor**.  
+    1.  En el Panel de Control, abra **Sistemas y seguridad**.  
   
-    2.  Selecciona la carpeta que desea dejar de compartir y, a continuación, en el panel de tareas, haz clic en **detener**.  
+    2.  En **Herramientas administrativas**, haga clic en **Crear y formatear particiones del disco duro**.  
+  
+    3.  Elimine todos los volúmenes del disco USB o elimine la partición EFI. El asistente Configurar copias de seguridad del servidor eliminará todos los volúmenes.  
+  
+-   La unidad no puede contener ninguna carpeta compartida del servidor. Para poder usar el disco como unidad de destino de copia de seguridad debe detener el uso compartido de todas las carpetas compartidas del servidor. Puede detener el uso compartido desde el panel o el Explorador de archivos.  
+  
+    #### <a name="to-stop-sharing-on-a-server-folder-from-the-dashboard"></a>Para detener el uso compartido de una carpeta de servidor desde el panel  
+  
+    1.  En el panel, haga clic en **Almacenamiento** y, a continuación, haga clic en **Carpetas de servidor**.  
+  
+    2.  Seleccione la carpeta que quiera dejar de compartir y, a continuación, en el panel de tareas, haga clic en **Detener**.  
   
 > [!NOTE]
->  Si una copia de seguridad se realiza correctamente debido a la unidad de copia de seguridad tenido espacio suficiente, se quita la letra de unidad de la unidad de destino de copia de seguridad de la base de datos de Windows Server Essentials y el panel no muestra la unidad. Si quieres usar la unidad en futuras copias de seguridad, deberá reasignar la letra de unidad mediante una herramienta nativa.  
+>  Si una copia de seguridad se realiza correctamente porque la unidad de copia de seguridad tenía suficiente espacio, se quita la letra de unidad para la unidad de destino de copia de seguridad de la base de datos de Windows Server Essentials y el panel no muestra la unidad. Si quiere usar la unidad en futuras copias de seguridad deberá reasignar la letra de unidad con una herramienta nativa.  
 >   
->  **Volver a asignar una letra de unidad para un volumen existente**  
+>  **Para reasignar una letra de unidad para un volumen existente**  
 >   
->  1.  En el Panel de Control, abre **seguridad y sistemas**.  
-> 2.  En **herramientas administrativas**, haz clic en **crear y formatear particiones de disco duro**.  
-> 3.  Haz clic en la unidad y haz clic en **cambiar la letra de unidad y rutas de acceso**.  
-> 4.  Haz clic en **agregar**.  
-> 5.  En el cuadro de diálogo Agregar letra de unidad o ruta de acceso, selecciona para asignar una letra de unidad. (Puede reasignar la misma letra de unidad.) A continuación, haz clic en **Aceptar**.  
+>  1.  En el Panel de Control, abra **Sistemas y seguridad**.  
+> 2.  En **Herramientas administrativas**, haga clic en **Crear y formatear particiones del disco duro**.  
+> 3.  Haga clic con el botón derecho en la unidad y, a continuación, haga clic en **Cambiar la letra y rutas de acceso de unidad**.  
+> 4.  Haz clic en **Agregar**.  
+> 5.  En el cuadro de diálogo Agregar letra o ruta de acceso de unidad, seleccione una letra de unidad para asignarla (puede reasignar la misma letra de unidad). A continuación, haga clic en **Aceptar**.  
 >   
->      La unidad aparecerá en el panel inmediatamente.  
+>      La unidad aparecerá inmediatamente en el panel.  
   
-##  <a name="BKMK_4"></a>Elementos de una copia de seguridad  
- Puedes elegir copia todas las unidades, archivos y carpetas en el servidor o seleccionar solo unidades individuales, archivos o carpetas a la copia de seguridad.  
+##  <a name="BKMK_4"></a> Elementos de una copia de seguridad  
+ Puede elegir hacer una copia de seguridad de todas las unidades, archivos y carpetas del servidor, o seleccionar únicamente determinadas unidades, archivos o carpetas para la copia de seguridad.  
   
- Cuando, agregan o quitar una unidad, o agregar o quitarán archivos y carpetas compartidos, debe revisar la configuración de copia de seguridad del servidor para asegurarse de que estos elementos se agregan o se quita de la configuración de copia de seguridad. Para agregar o quitar elementos de la copia de seguridad, realiza una de las siguientes acciones:  
+ Al agregar o quitar una unidad, o agregar o quitar carpetas y archivos compartidos, debe revisar la configuración de copia de seguridad del servidor para asegurarse de que se han agregado o quitado estos elementos de la configuración de copia de seguridad. Para agregar o quitar elementos de la copia de seguridad, realice una de las acciones siguientes:  
   
--   Para incluir una unidad de datos en la copia de seguridad del servidor, selecciona la casilla de verificación adyacentes  
+-   Para incluir una unidad de datos en la copia de seguridad del servidor, active la casilla adyacente.  
   
--   Para excluir una unidad de datos de la copia de seguridad del servidor, desactive la casilla de verificación adyacentes  
+-   Para excluir una unidad de datos de la copia de seguridad del servidor, desactive la casilla adyacente.  
   
     > [!NOTE]
-    >  Si quieres excluir la **sistema operativo** elemento de la copia de seguridad, primero debe borrar el **sistema copia de seguridad (recomendado)** casilla de verificación.  
+    >  Si quiere excluir el elemento **Sistema operativo** de la copia de seguridad, primero debe desactivar la casilla **Copia de seguridad del sistema (recomendado)** .  
   
- Para minimizar la cantidad de almacenamiento del servidor que usan las copias de seguridad del servidor, querer excluir todas las carpetas que contienen los archivos que se considere valioso o especialmente importante.  
+ Para reducir la cantidad de almacenamiento del servidor que usan las copias de seguridad del servidor, es posible que quiera excluir las carpetas que contienen archivos que no considere valiosos o muy importantes.  
   
- Por ejemplo, puede tener una carpeta que contiene los programas de televisión grabados que usa una gran cantidad de espacio en disco duro. Puede elegir no hacer una copia de estos archivos porque normalmente se eliminan después de visualización de todos modos. O bien, puede que una carpeta que contiene los archivos temporales que no vayas a mantener.  
+ Por ejemplo, es posible que tenga una carpeta que contiene programas de televisión grabados que emplea una gran cantidad de espacio de disco duro. Puede elegir no hacer una copia de estos archivos porque normalmente los elimina después de verlos. También es posible que tenga una carpeta que contiene archivos temporales que no quiere conservar.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
--   [Administrar la copia de seguridad del servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md)  
+-   [Administrar copias de seguridad de servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md)  
   
--   [Administrar la copia de seguridad y restauración](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
+-   [Administrar copias de seguridad y restauración](Manage-Backup-and-Restore-in-Windows-Server-Essentials.md)  
   
 -   [Administrar Windows Server Essentials](Manage-Windows-Server-Essentials.md)  
   

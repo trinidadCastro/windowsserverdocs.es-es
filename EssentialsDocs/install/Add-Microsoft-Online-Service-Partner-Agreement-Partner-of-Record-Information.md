@@ -1,6 +1,6 @@
 ---
-title: "Agregar información de Partner de registro del acuerdo de Partner de Microsoft servicio en línea"
-description: "Describe cómo usar Windows Server Essentials"
+title: Agregar información de socio de registro del contrato de socio del servicio en línea de Microsoft
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,53 +13,54 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 39ce43228cd7392bcc86de4a410c52676ce15047
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59833046"
 ---
-# <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>Agregar información de Partner de registro del acuerdo de Partner de Microsoft servicio en línea
+# <a name="add-microsoft-online-service-partner-agreement-partner-of-record-information"></a>Agregar información de socio de registro del contrato de socio del servicio en línea de Microsoft
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_3rdLevelDomanNames"></a>   
- Si eres un partner de Microsoft Online Service Partner contrato (MOSPA) para Office 365, para asegurarte de que recibes una compensación correcta cuando una solicitud de suscripción se origina desde Windows Server Essentials a través del módulo de integración de Office 365, debes crear una clave del registro que contenga tu identificación de socio de registro (POR ID). La siguiente información se lee y se pasa al proveedor de servicio a través de las direcciones URL de suscripción de Office 365.  
+ Si es un socio de Microsoft Online Service asociado contrato (MOSPA) para Office 365, para asegurarse de que se compensan correctamente cuando se origina una solicitud de suscripción de Windows Server Essentials a través del módulo de integración de Office 365, deberá crear un clave del registro que contenga su identificación de socio de registro (ID POR). La siguiente información se lee y se pasa al proveedor de servicios a través de las direcciones URL de suscripción a Office 365.  
   
--   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows server\mso\  
+-   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\MSO  
   
--   Tipo = valor de cadena  
+-   Tipo = Valor de cadena  
   
 -   Nombre de clave = Partner  
   
--   Valor = xxxxx, donde xxxxx es tu POR ID  
+-   Valor = xxxxx, donde xxxxx es su ID de POR  
   
-#### <a name="to-add-the-por-id-key-to-the-registry"></a>Para agregar la clave de POR ID al registro  
+#### <a name="to-add-the-por-id-key-to-the-registry"></a>Para agregar la clave ID POR al Registro  
   
-1.  En el equipo de referencia, haz clic en **inicio**, tipo **regedit**, y, a continuación, presione ENTRAR.  
+1.  En el equipo de referencia, haga clic en **Inicio**, escriba **regedit** y después presione ENTRAR.  
   
-2.  En el panel izquierdo, expande **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**y después expande **Windows Server**.  
+2.  En el panel izquierdo, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE**, **Microsoft** y finalmente **Windows Server**.  
   
-3.  Haz clic en **Windows Server**, elija **nueva**y, a continuación, haz clic en **clave**.  
+3.  Haga clic con el botón secundario en **Windows Server**, seleccione **Nuevo** y a continuación haga clic en **Clave**.  
   
-4.  Tipo **MSO** para el nombre de la clave.  
+4.  Escriba **MSO** como nombre de la clave.  
   
-5.  Haz clic en la clave que has creado y, a continuación, haz clic en **valor de cadena**.  
+5.  Haga clic con el botón secundario en la clave que acaba de crear y a continuación haga clic en **Valor de cadena**.  
   
-6.  Tipo **Partner** el nombre de la cadena y presiona ENTRAR.  
+6.  Escriba **Partner** como nombre de la cadena y después presione ENTRAR.  
   
-7.  Haz clic en el nuevo **Partner** de cadena en el panel derecho y, a continuación, haz clic en **modificar**.  
+7.  Haga clic con el botón secundario en la nueva cadena, **Partner**, en el panel derecho y, a continuación, haga clic en **Modificar**.  
   
-8.  Escribe tu POR ID en el **información del valor** cuadro de texto y, a continuación, haz clic en **Aceptar**.  
+8.  Escriba su ID POR en el cuadro de texto **Información del valor** y haga clic en **Aceptar**.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
 
  [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 

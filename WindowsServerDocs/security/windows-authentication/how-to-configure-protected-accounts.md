@@ -1,5 +1,5 @@
 ---
-title: "Cómo configurar cuentas protegidas"
+title: Cómo configurar cuentas protegidas
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,430 +12,431 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: a42ca489737ac33489a19e25008b43391f5a59e8
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 5dab9ff9924d8afe05bd6b033ca513172d9aaeff
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829506"
 ---
 # <a name="how-to-configure-protected-accounts"></a>Cómo configurar cuentas protegidas
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-A través de ataques Pass-the-hash (PtH), un atacante puede autenticar a un servicio o un servidor remoto mediante el hash NTLM subyacente de una contraseña de usuario (o demás derivados de la caja). Microsoft ha anteriormente [publicado instrucciones](https://www.microsoft.com/download/details.aspx?id=36036) para mitigar los ataques pass-the-hash.  Windows Server 2012 R2 incluye nuevas características para ayudar a mitigar estos ataques aún más. Para obtener más información sobre otras características de seguridad que ayudan a proteger contra el robo de credenciales, consulta [protección de credenciales y administración](https://technet.microsoft.com/library/dn408190.aspx). En este tema se explica cómo configurar las siguientes características nuevas:  
+En los ataques del tipo "pasar el hash" (PtH), un atacante puede autenticarse en un servidor o servicio remoto usando el hash de NTLM subyacente de la contraseña de un usuario (u otros derivados de las credenciales). Microsoft ya ha [publicado instrucciones](https://www.microsoft.com/download/details.aspx?id=36036) para mitigar los ataques pass-the-hash.  Windows Server 2012 R2 incluye nuevas características para ayudar a mitigar aún más estos ataques. Para obtener más información sobre otras características de seguridad que ayudan a proteger contra el robo de credenciales, consulte [Protección y administración de credenciales](https://technet.microsoft.com/library/dn408190.aspx). En este tema se explica cómo configurar las siguientes características nuevas:  
   
 -   [Usuarios protegidos](how-to-configure-protected-accounts.md#BKMK_AddtoProtectedUsers)  
   
 -   [Directivas de autenticación](how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicies)  
   
--   [Silos de directiva de autenticación](how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicySilos)  
+-   [Silos de directivas de autenticación](how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicySilos)  
   
-Hay mitigaciones adicionales integradas en Windows 8.1 y Windows Server 2012 R2 para ayudar a proteger contra el robo de credenciales, que se tratan en los siguientes temas:  
+Hay otras soluciones integradas en Windows 8.1 y Windows Server 2012 R2 para ayudar a proteger contra el robo de credenciales, que se tratan en los siguientes temas:  
   
--   [Modo de administrador restringido para escritorio remoto](http://blogs.technet.com/b/kfalde/archive/20../restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)  
+-   [Modo de administración restringida para escritorio remoto](http://blogs.technet.com/b/kfalde/archive/20../restricted-admin-mode-for-rdp-in-windows-8-1-2012-r2.aspx)  
   
--   [Protección de LSA](https://technet.microsoft.com/library/dn408187)  
+-   [Protección LSA](https://technet.microsoft.com/library/dn408187)  
   
 ## <a name="BKMK_AddtoProtectedUsers"></a>Usuarios protegidos  
-Los usuarios protegidos es un nuevo grupo de seguridad global a los que puedes agregar usuarios nuevos o existentes. Dispositivos de Windows 8.1 y Windows Server 2012 R2 hosts tienen un comportamiento especial con miembros de este grupo para proporcionar una mejor protección contra el robo de credenciales. Para un miembro del grupo, un dispositivo de Windows 8.1 o un host de Windows Server 2012 R2 no almacena en caché las credenciales que no se admiten para los usuarios protegido. Los miembros de este grupo tienen protección adicional si inician sesión en un dispositivo que ejecuta una versión de Windows anteriores a Windows 8.1.  
+Usuarios protegidos es un nuevo grupo de seguridad global al que puedes agregar usuarios nuevos o existentes. Dispositivos Windows 8.1 y Windows Server 2012 R2 hosts tienen un comportamiento especial con los miembros de este grupo para proporcionar una mejor protección contra el robo de credenciales. Para un miembro del grupo, un dispositivo Windows 8.1 o un host de Windows Server 2012 R2 no almacena en caché las credenciales que no son compatibles para usuarios protegidos. Los miembros de este grupo no tienen protección adicional si ha iniciado sesión en un dispositivo que ejecuta una versión de Windows anteriores a Windows 8.1.  
   
-Miembros de los usuarios protegido de grupo que están firmados en dispositivos de Windows 8.1 y Windows Server 2012 R2 hosts pueden *ya no* usar:  
+Agrupar miembros de usuarios protegidos que se inicien sesión en dispositivos Windows 8.1 y Windows Server 2012 R2 hosts pueden *ya no* utilizar:  
   
--   Valor predeterminado de la delegación de credenciales (CredSSP) - texto no cifrado no se almacenan en caché las credenciales incluso cuando la **Permitir delegación de credenciales predeterminadas** directiva está habilitada  
+-   Delegación de credenciales predeterminada (CredSSP): las credenciales de texto sin formato no se almacenan en caché aunque la directiva **Permitir delegación de credenciales predeterminadas** esté habilitada.  
   
--   Resumen de Windows - texto no cifrado credenciales no están almacenados en caché incluso cuando están habilitados  
+-   Autenticación implícita de Windows: las credenciales de texto sin formato no se almacenan en caché aunque estén habilitadas.  
   
--   No se almacena en caché de NTLM - NTOWF  
+-   NTLM: NTOWF no se almacena en caché.  
   
--   Teclas de Kerberos a largo plazo - Kerberos vale de concesión de vales (TGT) se adquieren al inicio de sesión y no se vuelva a adquirir automáticamente  
+-   Claves a largo plazo de Kerberos: el vale de concesión de vales (TGT) de Kerberos se adquiere al iniciar sesión y no se puede volver a adquirir automáticamente.  
   
--   Inicio de sesión sin conexión: el Comprobador de inicio de sesión almacenada en caché no se ha creado  
+-   Inicio de sesión sin conexión: no se crea el comprobador de inicio de sesión en caché.  
   
-Si el nivel funcional del dominio es Windows Server 2012 R2, los miembros del grupo no pueden:  
+Si el nivel funcional del dominio es Windows Server 2012 R2, los miembros del grupo ya no lo puede:  
   
--   Autenticar mediante la autenticación NTLM  
+-   Autenticarse mediante autenticación NTLM.  
   
--   Usa el estándar de cifrado de datos (DES) o RC4 conjuntos de cifrado en la autenticación previa de Kerberos  
+-   Usar los conjuntos de cifrado Estándar de cifrado de datos (DES) o RC4 en la autenticación previa de Kerberos.  
   
--   Delegarse mediante el uso de la delegación restringida o sin restricciones  
+-   Ser delegados mediante delegación limitada o sin limitar.  
   
--   Renovación de vales (TGT) de usuario más allá de la duración de 4 horas inicial  
+-   Renovar los vales de usuario (TGT) más allá de las 4 horas de vigencia inicial.  
   
-Para agregar usuarios al grupo, puedes usar [herramientas de interfaz de usuario](https://technet.microsoft.com/library/cc753515.aspx) como Active Directory administrativas centro (ADAC) o los usuarios de Active Directory y los equipos o una herramienta de línea de comandos, como [Dsmod group](https://technet.microsoft.com/library/cc732423.aspx), o el de Windows PowerShell[agregar ADGroupMember](https://technet.microsoft.com/library/ee617210.aspx) cmdlet. Cuentas de servicios y equipos *no debería* sean miembros del grupo usuarios protegido. Pertenencia a esas cuentas no proporciona ninguna protecciones locales porque la contraseña o certificado siempre está disponible en el equipo host.  
+Para agregar usuarios al grupo, puede usar [herramientas de interfaz de usuario](https://technet.microsoft.com/library/cc753515.aspx) como centro de administración de Active Directory (ADAC) o usuarios de Active Directory y los equipos o una herramienta de línea de comandos como [Dsmod group](https://technet.microsoft.com/library/cc732423.aspx), o el de Windows PowerShell[Add-ADGroupMember](https://technet.microsoft.com/library/ee617210.aspx) cmdlet. Las cuentas de servicio y de equipo *no deben* ser miembros del grupo Usuarios protegidos. En estas cuentas, la pertenencia no proporciona protección local porque la contraseña o el certificado siempre están disponibles en el host.  
   
 > [!WARNING]  
-> Las restricciones de autenticación no tienen ninguna solución alternativa, lo que significa que los miembros de grupos con privilegios elevados como el grupo de administradores de empresa o el grupo de administradores de dominio están sujetas a las mismas restricciones de los otros miembros del grupo usuarios protegido. Si todos los miembros de dichos grupos se agregan al grupo usuarios protegidos, es posible para todas las cuentas se bloquee. Nunca debes agregar todas las cuentas con privilegios elevados al grupo usuarios protegida hasta que has probado exhaustivamente los posibles efectos.  
+> Las restricciones de autenticación no tienen solución alternativa, lo que significa que los miembros de los grupos de privilegios elevados, como el grupo Administradores de organización o el grupo Admins. del dominio están sujetos a las mismas restricciones que los demás miembros del grupo Usuarios protegidos. Si se agregan todos los miembros de estos grupos al grupo Usuarios protegidos, es posible que todas esas cuentas se bloqueen. No agregues nunca cuentas con privilegios elevados al grupo Usuarios protegidos hasta que hayas probado exhaustivamente sus posibles efectos.  
   
-Los miembros del grupo usuarios protegido deben poder autenticarse con Kerberos con los estándares de cifrado avanzado (AES). Este método requiere claves AES de la cuenta en Active Directory. El Administrador integrado no tiene una clave AES a menos que la contraseña se ha cambiado en un controlador de dominio que ejecute Windows Server 2008 o posterior. Además, cualquier cuenta, que tiene una contraseña que se ha cambiado en un controlador de dominio que se ejecuta una versión anterior de Windows Server, está bloqueada. Por lo tanto, sigue estos procedimientos recomendados:  
+Los miembros del grupo Usuarios protegidos deben poder autenticarse mediante Kerberos con Estándar de cifrado avanzado (AES). Este método requiere claves de AES para la cuenta en Active Directory. El Administrador integrado no tiene una clave AES a menos que la contraseña se ha cambiado en un controlador de dominio que ejecute Windows Server 2008 o posterior. Además, se bloquean todas las cuentas que tengan una contraseña que se cambió en un controlador de dominio que ejecute una versión anterior de Windows Server. Por lo tanto, sigue estos procedimientos recomendados:  
   
--   No probar en dominios, a menos que **todos los controladores de dominio ejecutan Windows Server 2008 o posterior**.  
+-   No realice pruebas en dominios a menos que **todos los controladores de dominio ejecutan Windows Server 2008 o posterior**.  
   
--   **Cambiar contraseña** para todas las cuentas de dominio que se crearon *antes* creó el dominio. De lo contrario, no se puede autenticar estas cuentas.  
+-   Usa**Cambiar contraseña** para todas las cuentas de dominio que se crearon *antes* de crear el dominio. De lo contrario, estas cuentas no se podrán autenticar.  
   
--   **Cambiar contraseña** para cada usuario antes de agregar la cuenta a los usuarios protegido de grupo o asegurarse de que la contraseña se ha modificado recientemente en un controlador de dominio que ejecute Windows Server 2008 o posterior.  
+-   **Cambiar contraseña** para cada usuario antes de agregar la cuenta de usuarios protegidos, grupo o asegúrese de que la contraseña ha cambiado recientemente en un controlador de dominio que ejecute Windows Server 2008 o posterior.  
   
 ### <a name="BKMK_Prereq"></a>Requisitos para usar cuentas protegidas  
-Cuentas protegidas tienen los siguientes requisitos de implementación:  
+Las cuentas protegidas tienen los siguientes requisitos de implementación:  
   
--   Para proporcionar las restricciones de cliente para que los usuarios protegido, hosts deben ejecutar Windows 8.1 o Windows Server 2012 R2. Un usuario solo se tiene que iniciar sesión con una cuenta que es un miembro de un grupo de usuarios protegido. En este caso, puede crearse el grupo usuarios protegido por [transferir el rol de emulador de dominio principal (PDC) del controlador](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx) a un controlador de dominio que ejecute Windows Server 2012 R2. Después de ese objeto de grupo se replica en otros controladores de dominio, el rol de emulador PDC puede estar alojado en un controlador de dominio que ejecute una versión anterior de Windows Server.  
+-   Para proporcionar restricciones del lado cliente para usuarios protegidos, los hosts deben ejecutar Windows 8.1 o Windows Server 2012 R2. Un usuario solo tiene que iniciar sesión con una cuenta que sea miembro del grupo Usuarios protegidos. En este caso, se puede crear el grupo de usuarios protegidos por [transfiriendo el rol de emulador de controlador (PDC) de dominio principal](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx) a un controlador de dominio que ejecute Windows Server 2012 R2. Una vez replicado ese grupo a otros controladores de dominio, el rol de emulador de PDC se puede hospedar en un controlador de dominio que ejecuta una versión anterior de Windows Server.  
   
--   Para proporcionar restricciones del lado del controlador de dominio para los usuarios protegidos, es decir restringir el uso de autenticación NTLM, y otras restricciones, el nivel funcional del dominio debe ser Windows Server 2012 R2. Para obtener más información sobre niveles funcionales, consulta [niveles funcionales de conocimiento Active Directory Domain Services (AD DS)](../../identity/ad-ds/active-directory-functional-levels.md).  
+-   Para proporcionar restricciones de lado del controlador de dominio para los usuarios protegidos, es decir restringir el uso de la autenticación NTLM, y otras restricciones, el nivel funcional del dominio debe ser Windows Server 2012 R2. Para obtener más información sobre los niveles funcionales inferiores, consulte [Descripción de los niveles funcionales de Servicios de dominio de Active Directory (AD DS)](../../identity/ad-ds/active-directory-functional-levels.md).  
   
-### <a name="BKMK_TrubleshootingEvents"></a>Solucionar problemas de eventos relacionados con los usuarios protegido  
-Esta sección tratan los registros de nuevo para ayudar a solucionar los eventos que están relacionados con los usuarios protegido y cómo pueden afectar a los usuarios protegido cambios para solucionar cualquier problemas de expiración o delegación de vales (TGT) de concesión de vales.  
+### <a name="BKMK_TrubleshootingEvents"></a>Solucionar problemas de eventos relacionados a usuarios protegidos  
+En esta sección se describen los nuevos registros que ayudan a solucionar problemas de eventos relativos a los usuarios protegidos, y cómo los usuarios protegidos pueden afectar a los cambios para solucionar problemas como la expiración de los vales de concesión de vales (TGT) o los problemas de delegación.  
   
-#### <a name="new-logs-for-protected-users"></a>Registros de nuevo para los usuarios protegido  
-Dos nuevas administrativas los registros operativos están disponibles para ayudar a solucionar los eventos que están relacionados con los usuarios protegido: registro de controlador de dominio de usuario protegido (registro del cliente y protegido errores del usuario). Estos registros nuevas se encuentran en el Visor de eventos y están deshabilitados de manera predeterminada. Para habilitar un registro, haz clic en **registros de aplicaciones y servicios**, haz clic en **Microsoft**, haz clic en **Windows**, haz clic en **autenticación**y, a continuación, haz clic en el nombre del registro y haga clic en **acción** (o haz clic en el registro) y haz clic en **Habilitar registro**.  
+#### <a name="new-logs-for-protected-users"></a>Nuevos registros para usuarios protegidos  
+Hay dos nuevos registros administrativos operativos para ayudar a solucionar problemas de eventos que están relacionados con los usuarios operativos: Registro de controladores de dominio de usuario protegido (registro de cliente y errores de usuarios protegidos). Estos nuevos registros están ubicados en el Visor de eventos y están deshabilitados de forma predeterminada. Para habilitar un registro, haz clic en **Registros de aplicaciones y servicios**, en **Microsoft**, en **Windows**, en **Autenticación**y haz clic en el nombre del registro, en **Acción** (o haz clic con el botón derecho en el registro) y en **Habilitar registro**.  
   
-Para obtener más información acerca de estos registros de eventos, consulta [Silos de directiva de autenticación y directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).  
+Para obtener más información acerca de los eventos de estos registros, consulte [Directivas de autenticación y silos de directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).  
   
-#### <a name="troubleshoot-tgt-expiration"></a>Solucionar problemas de expiración TGT  
-Normalmente, el controlador de dominio establece la duración TGT y renovación en función de la directiva de dominio, como se muestra en la siguiente ventana del Editor de administración de directivas de grupo.  
+#### <a name="troubleshoot-tgt-expiration"></a>Solucionar problemas de expiración de TGT  
+Normalmente, el controlador de dominio establece la vigencia del TGT y su renovación según la directiva del dominio, tal y como se muestra en la siguiente ventana del Editor de administración de directivas de grupo.  
   
-![Captura de pantalla de la ventana del Editor de administración de directivas de grupo que muestra cómo el controlador de dominio establece la duración TGT y renovación en función de la directiva de dominio](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TGTExpiration.png)  
+![Captura de pantalla de la ventana del Editor de administración de directivas de grupo que muestra cómo el controlador de dominio establece la vigencia de TGT y renovación según la directiva de dominio](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TGTExpiration.png)  
   
-Para **protegido usuarios**, las siguientes opciones están codificadas:  
+Para los **Usuarios protegidos**, las siguientes opciones se codifican de forma rígida:  
   
 -   Vigencia máxima del vale de usuario: 240 minutos  
   
 -   Vigencia máxima de renovación de vales de usuario: 240 minutos  
   
 #### <a name="troubleshoot-delegation-issues"></a>Solucionar problemas de delegación  
-Anteriormente, si se presenta una tecnología que utiliza la delegación Kerberos, la cuenta del cliente se comprueba para ver si **cuenta es confidencial y no se puede delegar** se estableció. Sin embargo, si la cuenta es miembro de **protegido usuarios**, no podría tener este valor configurado en Active Directory administrativas centro (ADAC). Como resultado, compruebe la configuración y la pertenencia al grupo para solucionar problemas de la delegación.  
+Anteriormente, si una tecnología que usa delegación de Kerberos producía un error, se comprobaba la cuenta de cliente para ver si la opción **La cuenta es importante y no se puede delegar** estaba establecida. Sin embargo, si la cuenta es miembro de **Usuarios protegidos**, quizás no tenga esta opción configurada en el Centro de administración de Active Directory (ADAC). Por lo tanto, comprueba la opción y la pertenencia al grupo cuando soluciones problemas de delegación.  
   
-![Captura de pantalla muestra la ubicación comprobar ** cuenta es confidencial y no se puede delegar ** elemento de interfaz de usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
+![Captura de pantalla que muestra dónde debe comprobar ** cuenta es importante y no se puede delegar ** de interfaz de usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
   
 ### <a name="BKMK_AuditAuthNattempts"></a>Auditar los intentos de autenticación  
-Para auditar los intentos de autenticación de forma explícita para los miembros de la **protegido usuarios** grupo, puedes seguir recopilar eventos de auditoría de registro de seguridad o recopilar los datos en los nuevos registros operativos administrativos. Para obtener más información sobre estos eventos, consulta [Silos de directiva de autenticación y directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx)  
+Para auditar los intentos de autenticación explícitamente para los miembros del grupo **Usuarios protegidos**, puedes continuar recopilando eventos de auditoría del registro de seguridad o puedes recopilar los datos de los nuevos registros administrativos operativos. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).  
   
-### <a name="BKMK_ProvidePUdcProtections"></a>Proporcionar protecciones de DC lado para equipos y servicios  
-Cuentas de servicios y equipos no pueden ser miembros de **protegido usuarios**. Esta sección explica qué protecciones basado en el controlador de dominio pueden comprarse por estas cuentas:  
+### <a name="BKMK_ProvidePUdcProtections"></a>Proporcionan protecciones de lado del controlador de dominio de servicios y equipos  
+Las cuentas de servicios y equipos no pueden ser miembros de **Usuarios protegidos**. En esta sección se explica qué protecciones de controlador de dominio se pueden ofrecer para estas cuentas:  
   
--   Rechazar la autenticación NTLM: solo puede configurarse mediante [directivas de bloqueo NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)  
+-   Rechazar la autenticación NTLM: Solo se puede configurar a través de [directivas de bloqueo de NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)  
   
--   Rechazar estándar de cifrado de datos (DES) en la autenticación previa de Kerberos: controladores de dominio de Windows Server 2012 R2 no los acepta DES para las cuentas de equipo a menos que están configurados para DES solo porque cada versión de Windows con Kerberos también admite el cifrado RC4.  
+-   Rechazar el Estándar de cifrado de datos (DES) en la autenticación previa de Kerberos:  Los controladores de dominio de Windows Server 2012 R2 no aceptan DES para cuentas de equipo a menos que se configuren para DES sólo porque todas las versiones de Windows lanzadas con Kerberos también admiten RC4.  
   
--   Rechazar RC4 en la autenticación previa de Kerberos: no se puede configurar.  
+-   Rechazar RC4 en la autenticación previa de Kerberos: no configurable.  
   
     > [!NOTE]  
-    > Aunque es posible [cambiar la configuración de tipos de cifrado compatibles](http://blogs.msdn.com/b/openspecification/archive/20../windows-configurations-for-kerberos-supported-encryption-type.aspx), no se recomienda cambiar esta configuración de cuentas de equipo sin realizar pruebas en el entorno de destino.  
+    > Aunque se puede [cambiar la configuración de los tipos de cifrado admitidos](http://blogs.msdn.com/b/openspecification/archive/20../windows-configurations-for-kerberos-supported-encryption-type.aspx), no se recomienda cambiar esta configuración para las cuentas de equipo sin probarla en el entorno de destino.  
   
--   Restringir los vales (TGT) de usuario a una duración de 4 horas inicial: directivas de autenticación de uso.  
+-   Restringir los vales de usuario (TGT) a las 4 horas de vigencia inicial: usa directivas de autenticación.  
   
--   Denegar delegación con la delegación restringida o sin restricciones: para restringir una cuenta, abre el centro de administración de directorio Active (ADAC) y selecciona la **cuenta es confidencial y no se puede delegar** casilla de verificación.  
+-   Denegar la delegación con delegación limitada o no limitada: Para restringir una cuenta, abre el Centro de administración de Active Directory (ADAC) y activa la casilla **La cuenta es importante y no se puede delegar**.  
   
-    ![Captura de pantalla muestra la ubicación de restringir una cuenta](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
+    ![Captura de pantalla que muestra dónde debe restringir una cuenta](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
   
 ## <a name="BKMK_CreateAuthNPolicies"></a>Directivas de autenticación  
-Directivas de autenticación es un contenedor nuevo en AD DS que contiene los objetos de directiva de autenticación. Especifican opciones de configuración que ayudan a reducir la exposición a robo de credenciales, como la restricción de vigencia TGT de cuentas o agregar otras condiciones reclamación relacionada con directivas de autenticación.  
+Directivas de autenticación es un nuevo contenedor de AD DS que contiene objetos de directiva de autenticación. Las directivas de autenticación pueden especificar configuraciones que ayuden a mitigar la exposición a robos de credenciales, como restringir la vigencia de los TGT para las cuentas o agregar otras condiciones relativas a notificaciones.  
   
-En Windows Server 2012, Control de acceso dinámico incorporó una clase de objeto de ámbito del bosque de Active Directory llamada la directiva de acceso Central para proporcionar una forma fácil de configurar los servidores de archivos a través de una organización. En Windows Server 2012 R2, una nueva clase de objeto denominada directiva de autenticación (objectClass msDS-AuthNPolicies) puede usarse para aplicar la configuración de autenticación a las clases de la cuenta en los dominios de Windows Server 2012 R2. Clases de cuenta de Active Directory son:  
+En Windows Server 2012, Control de acceso dinámico presentó una clase de objeto de ámbito del bosque de Active Directory llamada directiva de acceso Central para proporcionar una manera fácil de configurar los servidores de archivos de una organización. En Windows Server 2012 R2, se puede usar una nueva clase de objeto llamada directiva de autenticación (objectClass msDS-AuthNPolicies) para aplicar la configuración de autenticación a clases de cuentas en dominios de Windows Server 2012 R2. Las clases de cuentas de Active Directory son las siguientes:  
   
 -   Usuario  
   
--   Equipo  
+-   Computer  
   
--   Cuenta de servicio administrada y grupo de cuenta de servicio administrada (GMSA)  
+-   Cuenta de servicio administrada y cuenta de servicio administrada de grupo (GMSA)  
   
-### <a name="quick-kerberos-refresher"></a>Rápido repaso de Kerberos  
-El protocolo de autenticación de Kerberos consta de tres tipos de intercambios, también conocidos como subprotocols:  
+### <a name="quick-kerberos-refresher"></a>Actualizador de Kerberos rápido  
+El protocolo de autenticación Kerberos consiste en tres tipos de intercambios, también conocidos como subprotocolos:  
   
-![Captura de pantalla que muestra a los tres tipos de autenticación Kerberos intercambios de protocolo, también conocidos como subprotocols](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_KerbRefresher.gif)  
+![Captura de pantalla muestra a los tres tipos de autenticación de Kerberos intercambios del protocolo, también conocidos como subprotocolos](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_KerbRefresher.gif)  
   
--   El intercambio de autenticación (AS) de servicio (KRB_AS_ *)  
+-   Intercambio del servicio de autenticación (AS) (KRB_AS_*)  
   
--   El intercambio de servicio (TGS) concesión de vales (KRB_TGS_ *)  
+-   Intercambio del servicio de concesión de vales (TGS) (KRB_TGS_*)  
   
--   El intercambio de cliente/servidor (AP) (KRB_AP_ *)  
+-   Intercambio cliente/servidor (AP) (KRB_AP_*)  
   
-El intercambio de AS es que el cliente usa la contraseña o la clave privada de la cuenta para crear un autenticador previo para solicitar un vale de concesión de vales (TGT). Esto sucede en el inicio de sesión de usuario o la primera vez que se necesita un vale de servicio.  
+El intercambio AS es donde el cliente usa la contraseña de la cuenta o la clave privada para crear un autenticador previo para solicitar un vale de concesión de vales (TGT). Esto sucede durante el inicio de sesión o la primera vez que se necesita un vale de servicio.  
   
-El intercambio TGS es donde TGT de la cuenta se usa para crear un autenticador para solicitar un vale de servicio. Esto sucede cuando se necesita una conexión autenticada.  
+El intercambio TGS es donde se usa el TGT de una cuenta para crear un autenticador para solicitar un vale de servicio. Esto sucede cuando se necesita una conexión autenticada.  
   
-El intercambio de punto de acceso se produce como normalmente como datos de protocolo de aplicación y no se ve afectado por las directivas de autenticación.  
+El intercambio AP se produce con la misma frecuencia que los datos dentro del protocolo de la aplicación, y no se ve afectado por las directivas de autenticación.  
   
-Para obtener más información, consulta [Kerberos versión 5 autenticación protocolo funcionamiento del] (https://technet.microsoft.com/library/cc772815(v=WS.10.aspx.  
+Para obtener más información, consulte [cómo funciona el Kerberos versión 5 autenticación protocolo] (https://technet.microsoft.com/library/cc772815(v=WS.10.aspx.  
   
-### <a name="overview"></a>Introducción  
-Directivas de autenticación complementan protegido usuarios proporcionando una manera para aplicar restricciones configurables a las cuentas y proporcionando restricciones para las cuentas de servicios y equipos. Se aplican directivas de autenticación durante el intercambio de AS o de TGS exchange.  
+### <a name="overview"></a>Información general  
+Las directivas de autenticación complementan el grupo de usuarios protegidos porque proporcionan una manera de aplicar restricciones configurables a las cuentas, además de restricciones a las cuentas de servicios y equipos. Las directivas de autenticación se aplican durante el intercambio AS o el intercambio TGS.  
   
-Puedes restringir la autenticación inicial o el intercambio como mediante la configuración de:  
+Puedes configura lo siguiente para limitar la autenticación inicial o el intercambio AS:  
   
--   Una duración TGT  
+-   Una vigencia de TGT.  
   
--   Condiciones de control de acceso para restringir el usuario inicio de sesión único, que debe cumplirse por dispositivos desde el que proviene el intercambio como  
+-   Condiciones de control de acceso para restringir el inicio de sesión de usuarios, que deben cumplir los dispositivos desde los que procede el intercambio AS.  
   
-![Captura de pantalla que muestra cómo restringir la autenticación inicial configurando un TGT ciclo de vida y el acceso a las condiciones de control para restringir el inicio de sesión de usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_RestrictAS.gif)  
+![Captura de pantalla que muestra cómo restringir la autenticación inicial mediante la configuración de condiciones de control de una duración y el acceso TGT para restringir el inicio de sesión de usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_RestrictAS.gif)  
   
-Puedes restringir las solicitudes de vales de servicio a través de un intercambio concesión de vales de servicio (TGS) mediante la configuración:  
+Puedes configurar lo siguiente para restringir las solicitudes de vales de servicio mediante un intercambio de servicio de concesión de vales (TGS):  
   
--   Condiciones de control de acceso que deben cumplirse por el cliente (usuario, servicio, equipo) o el dispositivo del que proviene el intercambio TGS  
+-   Condiciones de control de acceso que deben cumplir el cliente (usuario, servicio, equipo) o los dispositivos desde los que procede el intercambio TGS.  
   
-### <a name="BKMK_ReqForAuthnPolicies"></a>Requisitos para usar directivas de autenticación  
+### <a name="BKMK_ReqForAuthnPolicies"></a>Requisitos para usar las directivas de autenticación  
   
 |Directiva|Requisitos|  
 |-----|--------|  
-|Proporcionar duraciones TGT personalizados| Dominios de cuentas de nivel funcional de dominio de Windows Server 2012 R2|  
-|Restringir el inicio de sesión de usuario|-Dominios de cuenta nivel funcional de dominio Windows Server 2012 R2 con soporte técnico de Control de acceso dinámico<br />-Admitan Windows 8, Windows 8.1, Windows Server 2012 o dispositivos de Windows Server 2012 R2 con Control de acceso dinámico|  
-|Restringir emisión de vales de servicio que se basa en los grupos de seguridad y la cuenta de usuario| Dominios de recursos en el nivel funcional de dominio de Windows Server 2012 R2|  
-|Restringir emisión de vale de servicio en función de notificaciones de usuario o la cuenta del dispositivo, grupos de seguridad o reclamaciones| Dominios de recursos en el nivel funcional de dominio de Windows Server 2012 R2 con el soporte técnico de Control de acceso dinámico|  
+|Proporcionar vigencias de TGT personalizadas| Dominios de cuentas con nivel funcional de dominio de Windows Server 2012 R2|  
+|Restringir el inicio de sesión de usuarios|: Compatibilidad con dominios de cuentas con nivel funcional de dominio Windows Server 2012 R2 con el Control de acceso dinámico<br />-Compatibilidad con dispositivos Windows 8, Windows 8.1, Windows Server 2012 o Windows Server 2012 R2 con el Control de acceso dinámico|  
+|Restringir la emisión de vales de servicio en función de cuentas de usuario o grupos de seguridad| Dominios de recursos con nivel funcional de dominio de Windows Server 2012 R2|  
+|Restringir la emisión de vales de servicio en función de notificaciones de usuario o cuentas de dispositivo, grupos de seguridad o notificaciones| Compatibilidad con dominios de recursos con nivel funcional de dominio de Windows Server 2012 R2 con el Control de acceso dinámico|  
   
-### <a name="restrict-a-user-account-to-specific-devices-and-hosts"></a>Restringir una cuenta de usuario para dispositivos específicos y los hosts  
-Una cuenta de gran valor con privilegios administrativos debe ser un miembro de la **protegido usuarios** grupo. De manera predeterminada, no hay cuentas son miembros de la **protegido usuarios** grupo. Antes de agregar cuentas al grupo, configurar la compatibilidad con controladores de dominio y crear una directiva de auditoría para garantizar que no haya ningún problemas de bloqueo.  
+### <a name="restrict-a-user-account-to-specific-devices-and-hosts"></a>Restringir una cuenta de usuario a dispositivos y hosts específicos  
+Una cuenta de gran valor con privilegios administrativos debe ser miembro del grupo **Usuarios protegidos** . De forma predeterminada, ninguna cuenta es miembro del grupo **Usuarios protegidos** . Antes de agregar cuentas al grupo, configura la compatibilidad del controlador de dominio y crea una directiva de auditoría para asegurarte de que no haya problemas de bloqueo.  
   
-#### <a name="configure-domain-controller-support"></a>Configurar la compatibilidad de controlador de dominio  
-Dominio de la cuenta del usuario debe estar en el nivel funcional del dominio de Windows Server 2012 R2 (DFL). Asegúrese de todos los controladores de dominio son Windows Server 2012 R2 y, a continuación, usan dominios de Active Directory y relaciones de confianza [generar el DFL](https://technet.microsoft.com/library/cc753104.aspx) a Windows Server 2012 R2.  
+#### <a name="configure-domain-controller-support"></a>Configurar la compatibilidad del controlador de dominio  
+Dominio de la cuenta del usuario debe estar en el nivel funcional del dominio de Windows Server 2012 R2 (DFL). Asegúrese de todos los controladores de dominio son Windows Server 2012 R2 y, a continuación, usar dominios de Active Directory y las confianzas para [elevar el nivel funcional](https://technet.microsoft.com/library/cc753104.aspx) a Windows Server 2012 R2.  
   
 **Para configurar la compatibilidad con Control de acceso dinámico**  
   
-1.  En la directiva de controladores de dominio predeterminada, haz clic en **habilitado** para habilitar **centro de distribución de claves (KDC) compatibilidad del cliente con reclamaciones, autenticación compuesta y protección de Kerberos** en configuración del equipo | Plantillas administrativas | Sistema | KDC.  
+1.  En la Directiva predeterminada de controladores de dominio, haz clic en **Habilitada** para habilitar **Compatibilidad del cliente Kerberos con notificaciones, autenticación compuesta y protección de Kerberos** en Configuración del equipo | Plantillas administrativas | Sistema | KDC.  
   
-    ![En la directiva de controladores de dominio predeterminada, haz clic en ** habilitado ** habilitar ** centro de distribución de claves (KDC) compatibilidad del cliente con reclamaciones, autenticación compuesta y protección de Kerberos ** en configuración del equipo | Plantillas administrativas | Sistema | KDC](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)  
+    ![En la directiva de controladores de dominio predeterminado, haga clic en ** activado ** Habilitar ** soporte de cliente de centro de distribución de claves (KDC) para notificaciones, autenticación compuesta y protección de Kerberos ** en la configuración del equipo | Plantillas administrativas | Sistema | KDC](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_EnableKDCClaims.gif)  
   
-2.  En **opciones**, en el cuadro de lista desplegable, selecciona **siempre proporcionar notificaciones**.  
+2.  En **Opciones**, en el cuadro de lista desplegable, selecciona **Proporcionar notificaciones siempre**.  
   
     > [!NOTE]  
-    > **Admite** también pueden configurarse, pero debido a que el dominio es en Windows Server 2012 R2 DFL, tener los controladores de dominio siempre proporcionar notificaciones permitirá hospeda para conectarse a servicios de notificaciones y protege producirse cuando se usan los dispositivos no reclamaciones de acceso de usuario basada en notificaciones.  
+    > **Admite** también se puede configurar, pero dado que es el dominio en Windows Server 2012 R2 DFL, tener los controladores de dominio siempre proporcionar notificaciones permitirá el acceso de usuario basada en notificaciones comprueba que se produzca cuando se usa dispositivos compatibles con no basada en notificaciones y los hosts para conectarse a Servicios de notificaciones.  
   
-    ![En ** Opciones **, en el cuadro de lista desplegable, selecciona ** siempre proporcionar notificaciones](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)  
+    ![En ** Opciones **, en el cuadro de lista desplegable, seleccione ** proporcionar notificaciones siempre](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AlwaysProvideClaims.png)  
   
     > [!WARNING]  
-    > Configurar **producirá un error en las solicitudes de autenticación unarmored** dará como resultado errores de autenticación desde cualquier sistema operativo que no es compatible con la protección de Kerberos, como Windows 7 y sistemas operativos anteriores, o sistemas operativos a partir de Windows 8, que no se ha configurado explícitamente para que lo admiten.  
+    > Configurar **producirá un error en las solicitudes de autenticación sin blindar** se producirán errores de autenticación desde cualquier sistema operativo que no admite la protección, como Windows 7 y sistemas operativos anteriores, ni el funcionamiento de Kerberos sistemas a partir de Windows 8, que no hayan sido configurados explícitamente para admitirla.  
   
-#### <a name="create-a-user-account-audit-for-authentication-policy-with-adac"></a>Crear una auditoría de la cuenta de usuario para la directiva de autenticación con ADAC  
+#### <a name="create-a-user-account-audit-for-authentication-policy-with-adac"></a>Crear una auditoría de cuenta de usuario para directiva de autenticación con ADAC  
   
-1.  Abre el centro de administración de Active Directory (ADAC).  
+1.  Abre el Centro de administración de Active Directory (ADAC).  
   
-    ![Captura de pantalla que muestra el centro de administración de Active Directory](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_OpenADAC.gif)  
+    ![Captura de pantalla con el centro de administración de Active Directory](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_OpenADAC.gif)  
   
     > [!NOTE]  
-    > El texto seleccionado **autenticación** nodo está visible para los dominios que están en Windows Server 2012 R2 DFL. Si el nodo no aparece, vuelve a intentarlo con una cuenta de administrador de dominio de un dominio que está en Windows Server 2012 R2 DFL.  
+    > Seleccionado **autenticación** nodo es visible para los dominios que están en el nivel funcional de dominio de Windows Server 2012 R2. Si el nodo no aparece, vuelva a intentarlo con una cuenta de administrador de dominio desde un dominio que se encuentra en el nivel funcional de dominio de Windows Server 2012 R2.  
   
-2.  Haz clic en **directivas de autenticación**y, a continuación, haz clic en **nueva** para crear una nueva directiva.  
+2.  Haz clic en **Directivas de autenticación** y, después, haz clic en **Nueva** para crear una nueva directiva.  
   
-    ![Directivas de autenticación](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)  
+    ![Authentication Policies](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicy.gif)  
   
-    Las directivas de autenticaciones deben tener un nombre para mostrar y se aplican de manera predeterminada.  
+    Las directivas de autenticación deben tener un nombre para mostrar y se aplican de forma predeterminada.  
   
-3.  Para crear una directiva de auditoría, haz clic en **restricciones de directiva de auditoría solo**.  
+3.  Para crear una directiva solo de auditoría, haz clic en **Solo restricciones de directiva de auditoría**.  
   
-    ![Solo las restricciones de directiva de auditoría](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicyAuditOnly.gif)  
+    ![Solo las restricciones de directivas de auditoría](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicyAuditOnly.gif)  
   
-    Las directivas de autenticación se aplican según el tipo de cuenta de Active Directory. Una única directiva puede aplicar a los tres tipos de cuenta mediante la configuración de configuración para cada tipo. Tipos de cuenta son:  
+    Las directivas de autenticación se aplican en función del tipo de cuenta de Active Directory. Una única directiva se puede aplicar a los tres tipos de cuentas configurando las opciones de cada tipo. Los tipos de cuentas son:  
   
     -   Usuario  
   
-    -   Equipo  
+    -   Computer  
   
-    -   Cuenta de servicio administran por grupos y cuentas de servicio administradas  
+    -   Cuenta de servicio administrada y cuenta de servicio administrada de grupo  
   
-    Si se ha ampliado el esquema con nuevos principales que se puede usar el centro de distribución de claves (KDC), el nuevo tipo de cuenta se clasifica desde el tipo de cuenta derivada más cercano.  
+    Si has extendido el esquema con nuevas entidades de seguridad que el Centro de distribución de claves (KDC) pueda usar, el nuevo tipo de cuenta se clasifica a partir del tipo de cuenta derivado más próximo.  
   
-4.  Para configurar una duración TGT de cuentas de usuario, seleccione la **especificar una duración de vale para cuentas de usuario** casilla de verificación y especifique la hora en minutos.  
+4.  Para configurar una vigencia de TGT para cuentas de usuario, activa la casilla **Especifique la duración de un vale de concesión de vales para las cuentas de usuario** y especifica el tiempo en minutos.  
   
-    ![Especificar una duración de vale para cuentas de usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TGTLifetime.gif)  
+    ![Especificar una duración de vale de concesión de vales para las cuentas de usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TGTLifetime.gif)  
   
-    Por ejemplo, si quieres una vigencia máxima del vale de 10 horas, escribe **600** como se muestra. Si no se configura ninguna duración TGT, a continuación, si la cuenta es miembro de la **protegido usuarios** de grupo, la duración TGT y renovación 4 horas. De lo contrario, renovación y la duración TGT se basan en la directiva de dominio como se muestra en la siguiente ventana del Editor de administración de directivas de grupo para un dominio con la configuración predeterminada.  
+    Por ejemplo, si quieres una vigencia máxima de TGT de 10 horas, especifica **600** tal y como se indica. Si no hay configurada una vigencia de TGT, si la cuenta es miembro del grupo **Protected Users** , la vigencia y la renovación del TGT es de 4 horas. De lo contrario, la vigencia y la renovación del TGT se basan en la directiva de dominio tal y como se observa en la siguiente ventana del Editor de administración de directivas de grupo para un dominio con configuración predeterminada.  
   
-    ![Ventana Editor de administración de directivas de grupo para un dominio con la configuración predeterminada](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TGTExpiration.png)  
+    ![Ventana del Editor de administración de directivas de grupo para un dominio con la configuración predeterminada](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TGTExpiration.png)  
   
-5.  Para restringir la cuenta de usuario para seleccionar los dispositivos, haz clic en **editar** para definir las condiciones necesarias para el dispositivo.  
+5.  Para restringir la cuenta de usuario a los dispositivos seleccionados, haz clic en **Editar** para definir las condiciones necesarias para el dispositivo.  
   
-    ![Para restringir la cuenta de usuario para seleccionar los dispositivos, haz clic en ** edición **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_EditAuthNPolicy.gif)  
+    ![Para restringir la cuenta de usuario para seleccionar los dispositivos, haga clic en ** edición **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_EditAuthNPolicy.gif)  
   
-6.  En la **editar las condiciones de Control de acceso** ventana, haz clic en **agregar una condición**.  
+6.  En la ventana **Editar condiciones del control de acceso** , haz clic en **Agregar una condición**.  
   
     ![Editar las condiciones de Control de acceso](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AddCondition.png)  
   
-##### <a name="add-computer-account-or-group-conditions"></a>Agregar las condiciones de grupo o cuenta de equipo  
+##### <a name="add-computer-account-or-group-conditions"></a>Agregar condiciones para cuentas de equipo o grupos  
   
-1.  Para configurar cuentas de equipo o grupos, en la lista desplegable, selecciona el cuadro de lista desplegable **miembro de cada** y cambia a **miembro de cualquier**.  
+1.  Para configurar cuentas de equipo o grupos, en la lista desplegable, selecciona el cuadro de lista desplegable **Miembro de cada** y cámbialo a **Miembro de cualquiera**.  
   
     ![Configurar cuentas de equipo o grupos](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AddCompMember.png)  
   
     > [!NOTE]  
-    > Este control de acceso define las condiciones del dispositivo o desde el que el usuario inicia sesión en el host. En la terminología de control de acceso, la cuenta del dispositivo o el host es el usuario, que es la razón por **usuario** es la única opción.  
+    > Este control de acceso define las condiciones del servicio o host desde el que el usuario inicia sesión. En la terminología del control de acceso, la cuenta de equipo para el dispositivo o host es el usuario, motivo por el que **Usuario** es la única opción.  
   
-2.  Haz clic en **agregar elementos**.  
+2.  Haz clic en **Agregar elementos**.  
   
     ![Agregar elementos](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AddCompAddItems.png)  
   
-3.  Para cambiar los tipos de objeto, haz clic en **tipos de objeto**.  
+3.  Para cambiar los tipos de objeto, haz clic en **Tipos de objeto**.  
   
     ![Tipos de objeto](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_ChangeObjects.gif)  
   
-4.  Para seleccionar objetos de equipo en Active Directory, haga clic en **equipos**y, a continuación, haz clic en **Aceptar**.  
+4.  Para seleccionar objetos de equipo en Active Directory, haz clic en **Equipos** y, después, haz clic en **Aceptar**.  
   
     ![Equipos](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_ChangeObjectsComputers.gif)  
   
-5.  Escribe el nombre de los equipos para restringir el usuario y, a continuación, haz clic en **comprobar nombres**.  
+5.  Escribe el nombre de los equipos para restringir el usuario y haz clic en **Comprobar nombres**.  
   
-    ![Haz clic en Comprobar nombres](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_ChangeObjectsCompName.gif)  
+    ![Haga clic en Comprobar nombres](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_ChangeObjectsCompName.gif)  
   
-6.  Haz clic en Aceptar y crear todas las demás condiciones de la cuenta de equipo.  
+6.  Haz clic en Aceptar y crea otras condiciones para la cuenta de equipo.  
   
-    ![Haz clic en Aceptar y crear todas las demás condiciones de la cuenta de equipo](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AddCompAddConditions.png)  
+    ![Haga clic en Aceptar y crear otras condiciones para la cuenta de equipo](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AddCompAddConditions.png)  
   
-7.  Cuando termine, a continuación, haz clic en **Aceptar** y se mostrarán las condiciones definidas para la cuenta de equipo.  
+7.  Una vez hecho, haz clic en **Aceptar** y las condiciones definidas aparecerán para la cuenta de equipo.  
   
-    ![Cuando termine, haz clic en ** Aceptar **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AddCompDone.png)  
+    ![Cuando haya terminado, haga clic en ** Aceptar **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AddCompDone.png)  
   
-##### <a name="add-computer-claim-conditions"></a>Agregar las condiciones de notificación del equipo  
+##### <a name="add-computer-claim-conditions"></a>Agregar condiciones de notificaciones de equipo  
   
-1.  Para configurar el equipo reclamaciones, lista desplegable grupo para seleccionar la reclamación.  
+1.  Para configurar notificaciones de equipo, abre la lista desplegable Grupo para seleccionar la notificación.  
   
-    ![Para configurar el equipo reclamaciones, lista desplegable grupo para seleccionar la notificación](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_CompClaim.gif)  
+    ![Para configurar notificaciones de equipo, lista desplegable grupo para seleccionar la notificación](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_CompClaim.gif)  
   
-    Reclamaciones solo están disponibles si ya se suministran en el bosque.  
+    Las notificaciones solo están disponibles si ya se han aprovisionado en el bosque.  
   
-2.  Escribe el nombre de la unidad organizativa, la cuenta de usuario deben limitarse al inicio de sesión.  
+2.  Escribe el nombre de la OU; la cuenta de usuario debe restringirse al inicio de sesión.  
   
-    ![Escribe el nombre de la unidad organizativa, la cuenta de usuario deben limitarse al inicio de sesión.](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_CompClaimOUName.gif)  
+    ![Escribe el nombre de la OU; la cuenta de usuario debe restringirse al inicio de sesión.](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_CompClaimOUName.gif)  
   
-3.  Cuando termine, a continuación, haz clic en Aceptar y mostrará las condiciones definidas en el cuadro.  
+3.  Una vez hecho, haz clic en Aceptar y el cuadro mostrará las condiciones definidas.  
   
-    ![Cuando finalice el clic de Aceptar](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_CompClaimComplete.gif)  
+    ![Cuando haya finalizado la haga clic en Aceptar](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_CompClaimComplete.gif)  
   
-##### <a name="troubleshoot-missing-computer-claims"></a>Solucionar problemas de falta de equipo de notificaciones  
-Si la notificación se ha aprovisionado, pero no está disponible, solo se puede configurar para **equipo** clases.  
+##### <a name="troubleshoot-missing-computer-claims"></a>Solucionar problemas de notificaciones de equipo que faltan  
+Si la notificación se ha aprovisionado pero no está disponible, quizás solo se ha configurado para las clases **Equipo**.  
   
-Supongamos que quieres restringir la autenticación basada en la unidad organizativa (OU) del equipo, que ya se ha configurado, pero solo para **equipo** clases.  
+Supongamos que querías restringir la autenticación basada en la unidad organizativa (OU) del equipo, que ya estaba configurado, pero solo para **equipo** clases.  
   
-![Captura de pantalla que muestra cómo restringir la autenticación basada en la unidad organizativa (OU) del equipo](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_RestrictComputers.gif)  
+![Captura de pantalla muestra cómo restringir la autenticación basada en la unidad organizativa (OU) del equipo](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_RestrictComputers.gif)  
   
-Para que la reclamación esté disponible para restringir en el inicio de sesión de usuario en el dispositivo, selecciona el **usuario** casilla de verificación.  
+Para que la notificación esté disponible para restringir el inicio de usuarios en el dispositivo, activa la casilla **Usuario**.  
   
-![Captura de pantalla que muestra cómo restringir el usuario inicia sesión en el dispositivo comprobando el Seleccionar ** usuario ** casilla.  ](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_RestrictUsersComputers.gif)  
+![Captura de pantalla muestra cómo restringir el usuario inicie sesión en el dispositivo comprobando el, seleccione ** casilla de verificación de usuario **.  ](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_RestrictUsersComputers.gif)  
   
 #### <a name="provision-a-user-account-with-an-authentication-policy-with-adac"></a>Aprovisionar una cuenta de usuario con una directiva de autenticación con ADAC  
   
-1.  Desde el **usuario** cuenta y, a continuación, haz clic en **directiva**.  
+1.  En la cuenta **Usuario** , haz clic en **Directiva**.  
   
-    ![Desde el ** usuario ** cuenta, haz clic en ** Directiva **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_UserPolicy.gif)  
+    ![Desde el ** cuenta de usuario **, haga clic en ** Directiva **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_UserPolicy.gif)  
   
-2.  Selecciona el **asignar una directiva de autenticación a esta cuenta** casilla de verificación.  
+2.  Activa la casilla **Asigne una directiva de autenticación a esta cuenta**.  
   
-    ![Selecciona el ** asignar una directiva de autenticación a esta casilla de verificación de cuenta **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_UserPolicyAssign.gif)  
+    ![Seleccione el ** asignar una directiva de autenticación a esta casilla de verificación de cuenta **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_UserPolicyAssign.gif)  
   
-3.  A continuación, selecciona la directiva de autenticación para aplicar al usuario.  
+3.  Después, selecciona la directiva de autenticación que se aplicará al usuario.  
   
-    ![Selecciona la directiva de autenticación para aplicar al usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_UserPolicySelect.png)  
+    ![Seleccione la directiva de autenticación que se aplicará al usuario](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_UserPolicySelect.png)  
   
-#### <a name="configure-dynamic-access-control-support-on-devices-and-hosts"></a>Configurar la compatibilidad de Control de acceso dinámico en dispositivos y hosts  
-Puedes configurar duraciones TGT sin configurar el Control de acceso dinámico (DAC). DAC solo se necesita para comprobar AllowedToAuthenticateFrom y AllowedToAuthenticateTo.  
+#### <a name="configure-dynamic-access-control-support-on-devices-and-hosts"></a>Configurar la compatibilidad con el control de acceso dinámico en dispositivos y hosts  
+Puedes configurar la vigencia de los TGT sin configurar el control de acceso dinámico (DAC). DAC solo se necesita para comprobar AllowedToAuthenticateFrom y AllowedToAuthenticateTo.  
   
-Mediante la directiva de grupo o Editor de directivas de grupo Local, habilitar **compatibilidad del cliente Kerberos con reclamaciones, autenticación compuesta y protección de Kerberos** en configuración del equipo | Plantillas administrativas | Sistema | Kerberos:  
+Usa el Editor de directivas de grupo o el Editor de directivas de grupo local para habilitar **Compatibilidad del cliente Kerberos con notificaciones, autenticación compuesta y protección de Kerberos** en Configuración del equipo | Plantillas administrativas | Sistema | Kerberos:  
   
-![Captura de pantalla que muestra cómo usar el Editor de directivas de grupo Local o de directiva de grupo para habilitar ** compatibilidad del cliente Kerberos con reclamaciones, autenticación compuesta y protección de Kerberos **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)  
+![Captura de pantalla que muestra cómo usar la directiva de grupo o el Editor de directivas de grupo Local para habilitar ** soporte técnico del cliente Kerberos para notificaciones, autenticación compuesta y protección de Kerberos **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)  
   
 ### <a name="BKMK_TroubleshootAuthnPolicies"></a>Solucionar problemas de directivas de autenticación  
   
-#### <a name="determine-the-accounts-that-are-directly-assigned-an-authentication-policy"></a>Determinar las cuentas que se asignan directamente a una directiva de autenticación  
-La sección de cuentas en la directiva de autenticación muestra las cuentas que directamente aplicar la directiva.  
+#### <a name="determine-the-accounts-that-are-directly-assigned-an-authentication-policy"></a>Determina las cuentas que están directamente asignadas a una directiva de autenticación  
+La sección de cuentas de la directiva de autenticación muestra las cuentas a las que se ha aplicado directamente la directiva.  
   
-![Captura de pantalla de la sección de cuentas en la directiva de autenticación que muestra las cuentas que directamente aplicar la directiva](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AccountsAssigned.gif)  
+![Captura de pantalla de la sección cuentas en la directiva de autenticación que muestra las cuentas que se han aplicado directamente la directiva](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_AccountsAssigned.gif)  
   
-#### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>Usar los errores de la directiva de autenticación - registro administrativa del controlador de dominio  
-Un nuevo **errores de la directiva de autenticación - controlador de dominio** administrativa registro bajo **registros de aplicaciones y servicios** > **Microsoft** > **Windows** > **autenticación** se ha creado para que sea más fácil descubrir errores debido a directivas de autenticación. El registro está deshabilitado de manera predeterminada. Para habilitarlo, haz clic en el nombre del registro y haga clic en **Habilitar registro**. Los nuevos eventos son muy similares en el contenido a la existente TGT y Kerberos vale de servicio eventos de auditoría. Para obtener más información sobre estos eventos, consulta [Silos de directiva de autenticación y directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).  
+#### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>Uso de los errores de directiva de autenticación - registro administrativo del controlador de dominio  
+Un nuevo **errores de directiva de autenticación: controlador de dominio** registro administrativo en **registros de aplicaciones y servicios** > **Microsoft**  >  **Windows** > **autenticación** se ha creado para que sea más fácil detectar errores debidos a directivas de autenticación. El registro está deshabilitado de forma predeterminada. Para habilitarlo, haz clic con el botón derecho en el nombre del registro y haz clic en **Habilitar registro**. El contenido de los nuevos eventos es muy similar al de los eventos de auditoría de TGT y de vales de servicio de Kerberos existentes. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).  
   
 ### <a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>Administrar directivas de autenticación mediante Windows PowerShell  
-Este comando crea una directiva de autenticación denominada **TestAuthenticationPolicy**. La **UserAllowedToAuthenticateFrom** parámetro especifica los dispositivos desde el que los usuarios puedan autenticarse con una cadena SDDL en el archivo denominado someFile.txt.  
+Este comando crea una directiva de autenticación llamada **TestAuthenticationPolicy**. El parámetro **UserAllowedToAuthenticateFrom** especifica los dispositivos desde los que los usuarios pueden autenticarse mediante una cadena SDDL en el archivo someFile.txt.  
   
 ```  
 PS C:\> New-ADAuthenticationPolicy testAuthenticationPolicy -UserAllowedToAuthenticateFrom (Get-Acl .\someFile.txt).sddl  
 ```  
   
-Este comando obtiene todas las directivas de autenticación que coincidan con el filtro que la **filtro** parámetro especifica.  
+Este comando obtiene todas las directivas de autenticación que coinciden con el filtro especificado por el parámetro **Filter**.  
   
 ```  
 PS C:\> Get-ADAuthenticationPolicy -Filter "Name -like 'testADAuthenticationPolicy*'" -Server Server02.Contoso.com  
   
 ```  
   
-Este comando modifica la descripción y la **UserTGTLifetimeMins** propiedades de la directiva de autenticación especificado.  
+Este comando modifica la descripción y las propiedades de **UserTGTLifetimeMins** de la directiva de autenticación especificada.  
   
 ```  
 PS C:\> Set-ADAuthenticationPolicy -Identity ADAuthenticationPolicy1 -Description "Description" -UserTGTLifetimeMins 45  
 ```  
   
-Este comando quita la directiva de autenticación que la **identidad** parámetro especifica.  
+Este comando quita la directiva de autenticación especificada por el parámetro **Identity** .  
   
 ```  
 PS C:\> Remove-ADAuthenticationPolicy -Identity ADAuthenticationPolicy1  
 ```  
   
-Este comando usa el **Get ADAuthenticationPolicy** cmdlet con la **filtro** parámetro para obtener todas las directivas de autenticación que no se aplican. El conjunto de resultados se transfiere a la **quitar ADAuthenticationPolicy** cmdlet.  
+Este comando usa el cmdlet **Get-ADAuthenticationPolicy** con el parámetro **Filter** para obtener todas las directivas de autenticación que no se aplican. El conjunto resultante se canaliza al cmdlet **Remove-ADAuthenticationPolicy**.  
   
 ```  
 PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthenticationPolicy  
 ```  
   
-## <a name="BKMK_CreateAuthNPolicySilos"></a>Silos de directiva de autenticación  
-Silos de directiva de autenticación es un contenedor nuevo (objectClass msDS-AuthNPolicySilos) en AD DS para las cuentas de usuario, equipo y servicio. Ayudan a proteger cuentas de gran valor. Mientras que todas las organizaciones necesitan proteger a miembros de grupos de administradores de empresa, los administradores de dominio y administradores de esquema, ya que un atacante podrían usar esas cuentas para acceder a cualquier elemento en el bosque, otras cuentas podrán necesitar también protección.  
+## <a name="BKMK_CreateAuthNPolicySilos"></a>Silos de directivas de autenticación  
+Silos de directivas de autenticación es un nuevo contenedor (objectClass msDS-AuthNPolicySilos) de AD DS para cuentas de usuario, equipo y servicio. Ayudan a proteger las cuentas de gran valor. Aunque todas las organizaciones necesitan proteger a los miembros de los grupos Administradores de organización, Admins. del dominio y Administradores de esquema porque esas cuentas podrían ser usadas por un atacante para acceder al bosque, otras cuentas también pueden necesitar protección.  
   
-Algunas organizaciones aislar las cargas de trabajo mediante la creación de cuentas que son únicas para ellos y aplicando la configuración de directiva de grupo para limitar el inicio de sesión interactivo local y remoto y privilegios administrativos. Silos de directiva de autenticación complementan este trabajo mediante la creación de una forma de definir una relación entre el usuario, el equipo y las cuentas de servicio administradas. Cuentas sólo pueden pertenecer a un silo. Puedes configurar la directiva de autenticación para cada tipo de cuenta para controlar:  
+Algunas organizaciones aíslan las cargas de trabajo; para ello, crean cuentas únicas para ellas y aplican configuraciones de directiva de grupo para limitar el inicio de sesión interactivo local y remoto, y los privilegios administrativos. Los silos de directivas de autenticación complementan este trabajo y crean una manera de definir una relación entre las cuentas de usuario, de equipo y de servicio administradas. Las cuentas solo pueden pertenecer a un silo. Puedes configurar la directiva de autenticación para cada tipo de cuenta para controlar lo siguiente:  
   
-1.  Ciclo de vida TGT no renovables  
+1.  Una vigencia de TGT no renovable.  
   
-2.  Acceder a las condiciones de control para devolver TGT (Nota: no se puede aplicar a sistemas porque es necesaria la protección de Kerberos)  
+2.  Las condiciones de control de acceso para devolver TGT. (Nota: no se puede aplicar a sistemas porque se necesita la protección de Kerberos).  
   
-3.  Condiciones de control de acceso para devolver el vale de servicio  
+3.  Las condiciones de control de acceso para devolver vales de servicio.  
   
-Además, las cuentas de un silo de directiva de autenticación tienen una reclamación silo, que puede usarse en los recursos de notificaciones, como los servidores de archivos para controlar el acceso.  
+Además, las cuentas de un silo de directivas de autenticación tienen una notificación de silo, que los recursos habilitados para notificaciones, como los servidores de archivos, pueden usar para controlar el acceso.  
   
-Un descriptor de seguridad nuevas puede configurarse para emitir el vale de servicio basado en el control:  
+Se puede configurar un nuevo descriptor de seguridad para controlar la emisión de vales de servicio en función de lo siguiente:  
   
--   Usuario, grupos de seguridad del usuario o reclamaciones de usuario  
+-   Usuario, grupos de seguridad del usuario y notificaciones del usuario  
   
--   Dispositivo, el grupo de seguridad del dispositivo o reclamaciones del dispositivo  
+-   Dispositivo, grupos de seguridad y notificaciones del dispositivo  
   
-Obtener esta información a los controladores de dominio del recurso requiere el Control de acceso dinámico:  
+Obtener esta información para los controladores de dominio del recurso requiere el Control de acceso dinámico:  
   
 -   Notificaciones de usuario:  
   
-    -   Windows 8 y versiones posteriores clientes compatibilidad con el Control de acceso dinámico  
+    -   Los clientes de Windows 8 y versiones posteriores admiten control de acceso dinámico.  
   
-    -   Dominio de la cuenta admite el Control de acceso dinámico y notificaciones  
+    -   Los dominios de cuenta admiten control de acceso dinámico y notificaciones  
   
 -   Dispositivo o grupo de seguridad del dispositivo:  
   
-    -   Windows 8 y versiones posteriores clientes compatibilidad con el Control de acceso dinámico  
+    -   Los clientes de Windows 8 y versiones posteriores admiten control de acceso dinámico.  
   
-    -   Recursos configurados para la autenticación compuesta  
+    -   Recurso configurado para autenticación compuesta  
   
 -   Notificaciones de dispositivo:  
   
-    -   Windows 8 y versiones posteriores clientes compatibilidad con el Control de acceso dinámico  
+    -   Los clientes de Windows 8 y versiones posteriores admiten control de acceso dinámico.  
   
-    -   Dominio de dispositivo es compatible con el Control de acceso dinámico y notificaciones  
+    -   Los dominios de dispositivo admiten control de acceso dinámico y notificaciones  
   
-    -   Recursos configurados para la autenticación compuesta  
+    -   Recurso configurado para autenticación compuesta  
   
-Directivas de autenticación pueden aplicarse a todos los miembros de un silo de directiva de autenticación en lugar de a las cuentas individuales o las directivas de autenticación independiente pueden aplicarse a los diferentes tipos de cuentas dentro de un silo. Por ejemplo, una directiva de autenticación puede aplicarse a cuentas de usuario con privilegios elevados y otra directiva puede aplicarse a cuentas de servicios. Directiva de autenticación al menos un debe crearse antes de poder crear una silo de directiva de autenticación.  
+Las directivas de autenticación se pueden aplicar a todos los miembros de un silo de directivas de autenticación en lugar de a cuentas individuales, o se pueden aplicar directivas de autenticación diferentes a los distintos tipos de cuentas de un silo. Por ejemplo, se puede aplicar una directiva de autenticación a cuentas de usuario con privilegios elevados, y se puede aplicar una directiva diferente a las cuentas de servicios. Se debe crear al menos una directiva de autenticación antes de poder crear un silo de directivas de autenticación.  
   
 > [!NOTE]  
-> Se puede aplicar una directiva de autenticación a los miembros de un silo de directiva de autenticación o se puede aplicar independientemente silos para restringir el ámbito de la cuenta específica. Por ejemplo, para proteger una sola cuenta o un pequeño conjunto de cuentas, se puede establecer una directiva en esas cuentas sin agregar las cuentas a un silo.  
+> Se puede aplicar una directiva de autenticación a los miembros de un silo de directivas de autenticación, o se puede aplicar de forma independiente de los silos para restringir el ámbito de cuenta específico. Por ejemplo, para proteger una sola cuenta o un conjunto pequeño de cuentas, se puede establecer una directiva para esas cuentas sin agregar las cuentas a un silo.  
   
-Puedes crear un silo de directiva de autenticación mediante el centro de administración de Active Directory o Windows PowerShell. De manera predeterminada, un silo de directiva de autenticación solo las auditorías de errores silo directivas, que es el equivalente a especificar la **WhatIf** parámetro de cmdlets de Windows PowerShell. En este caso, no se aplican las restricciones de directiva silo, pero se generan auditorías para indicar si se produce un error si se aplican las restricciones.  
+Puede crear un silo de directivas de autenticación mediante el centro de administración de Active Directory o Windows PowerShell. De forma predeterminada, un silo de directivas de autenticación solo audita directivas de silo, lo que equivale a especificar la **WhatIf** parámetros en cmdlets de Windows PowerShell. En este caso, no se aplican restricciones de silo de directivas, pero se generan auditorías para indicar si se producirán errores si se aplican las restricciones.  
   
-#### <a name="to-create-an-authentication-policy-silo-by-using-active-directory-administrative-center"></a>Para crear un silo de directiva de autenticación mediante el centro de administración de Active Directory  
+#### <a name="to-create-an-authentication-policy-silo-by-using-active-directory-administrative-center"></a>Para crear un silo de directivas de autenticación usando el Centro de administración de Active Directory  
   
-1.  Abre **centro de administración de Active Directory**, haz clic en **autenticación**, haz clic en **Silos de directiva de autenticación**, haz clic en **nueva**y, a continuación, haz clic en **Silo de directiva de autenticación**.  
+1.  Abre el **Centro de administración de Active Directory**, haz clic en **Autenticación**, haz clic con el botón derecho en **Silos de directivas de autenticación**, haz clic en **Nuevo**y, después, en **Silo de directivas de autenticación**.  
   
-    ![Abre ** Active Directory administrativo centro **, haz clic en ** Authentication **, haz clic en ** autenticación directiva Silos **, haz clic en ** nuevo ** y, a continuación, haz clic en ** Silo directiva Authentication **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_CreateNewAuthNPolicySilo.gif)  
+    ![Abra ** Active Directory administrativo Center **, haga clic en ** autenticación **, haga clic en ** autenticación directiva Silos **, haga clic en ** New ** y, a continuación, haga clic en ** Silo de directivas de autenticación **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_CreateNewAuthNPolicySilo.gif)  
   
-2.  En **nombre para mostrar**, escribe un nombre para del sitio. En **permitido cuentas**, haz clic en **agregar**, escriba los nombres de las cuentas y, a continuación, haz clic en **Aceptar**. Puedes especificar usuarios, equipos o cuentas de servicio. A continuación, especificar si se usa una sola directiva para todos los principales o una directiva independiente para cada tipo de entidad de seguridad y el nombre de la directiva o directivas.  
+2.  En **Nombre para mostrar**, escribe un nombre para el silo. En **Cuentas permitidas**, haz clic en **Agregar**, escribe el nombre de las cuentas y, después, haz clic en **Aceptar**. Puedes especificar cuentas de usuario, de equipo o de servicio. Después, especifica si se usará una única directiva para todas las entidades de seguridad, o una directiva diferente para cada tipo de entidad de seguridad, y el nombre de la directiva o directivas.  
   
-    ![En ** Mostrar nombre **, escribe un nombre para del sitio. En ** permitido cuentas **, haz clic en ** Agregar **, escriba los nombres de las cuentas y, a continuación, haz clic en ** Aceptar **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)  
+    ![En ** ** nombre para mostrar, escriba un nombre para el silo. En ** permiten cuentas **, haga clic en ** Agregar **, escriba los nombres de las cuentas y, a continuación, haga clic en ** Aceptar **](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)  
   
-### <a name="BKMK_ManageAuthnSilosUsingPSH"></a>Administrar silos de directiva de autenticación mediante Windows PowerShell  
-Este comando crea un objeto de silo de directiva de autenticación y aplica.  
+### <a name="BKMK_ManageAuthnSilosUsingPSH"></a>Administrar silos de directivas de autenticación mediante Windows PowerShell  
+Este comando crea un objeto de silo de directivas de autenticación y lo aplica.  
   
 ```  
 PS C:\>New-ADAuthenticationPolicySilo -Name newSilo -Enforce  
 ```  
   
-Este comando obtiene las de autenticación silos de directiva que coincidan con el filtro especificado por el **filtro** parámetro. El resultado se pasa a la **formato de tabla** cmdlet para mostrar el nombre de la directiva y el valor de **aplicar** en cada directiva.  
+Este comando obtiene todos los silos de directivas de autenticación que coinciden con el filtro especificado por el parámetro **Filter** . Después, el resultado se pasa al cmdlet **Format-Table** para mostrar el nombre de la directiva y el valor de **Enforce** en cada directiva.  
   
 ```  
 PS C:\>Get-ADAuthenticationPolicySilo -Filter 'Name -like "*silo*"' | Format-Table Name, Enforce -AutoSize  
@@ -447,25 +448,25 @@ silos   False
   
 ```  
   
-Usa este comando la **Get ADAuthenticationPolicySilo** cmdlet con la **filtro** parámetro para obtener las silos de directiva de autenticación que no se aplican y canalización el resultado del filtro a la **quitar ADAuthenticationPolicySilo** cmdlet.  
+Este comando usa el cmdlet **Get-ADAuthenticationPolicySilo** con el parámetro **Filter** para obtener todos los silos de directiva de autenticación que no se aplican y canalizar el resultado del filtro al cmdlet **Remove-ADAuthenticationPolicySilo** .  
   
 ```  
 PS C:\>Get-ADAuthenticationPolicySilo -Filter 'Enforce -eq $False' | Remove-ADAuthenticationPolicySilo  
 ```  
   
-Este comando concede acceso a del sitio de la directiva de autenticación denominado *Silo* para la cuenta de usuario denominado *usuario01*.  
+Este comando concede al silo de directivas de autenticación *Silo* el acceso a la cuenta de usuario *User01*.  
   
 ```  
 PS C:\>Grant-ADAuthenticationPolicySiloAccess -Identity Silo -Account User01  
 ```  
   
-Este comando revoque el acceso a del sitio de la directiva de autenticación denominado *Silo* para la cuenta de usuario denominado *usuario01*. Dado que la **confirmar** parámetro se establece en **$False**, no aparece ningún mensaje de confirmación.  
+Este comando revoca al silo de directivas de autenticación *Silo* el acceso a la cuenta de usuario *User01*. Como el parámetro **Confirm** está establecido en **$False**, no aparece ningún mensaje de confirmación.  
   
 ```  
 PS C:\>Revoke-ADAuthenticationPolicySiloAccess -Identity Silo -Account User01 -Confirm:$False  
 ```  
   
-Este ejemplo se usa primero la **Get ADComputer** cmdlet para obtener todas las cuentas de equipo que coinciden con el filtro que la **filtro** parámetro especifica. El resultado de este comando se pasa a **conjunto ADAccountAuthenticatinPolicySilo** para asignar del sitio de la directiva de autenticación denominado *Silo* y la directiva de autenticación denominado *AuthenticationPolicy02* a ellos.  
+Este ejemplo usa primero el cmdlet **Get-ADComputer** para obtener todas las cuentas de equipo que coinciden con el filtro especificado por el parámetro **Filter**. El resultado de este comando se pasa a **Set-ADAccountAuthenticatinPolicySilo** para asignarles el silo de directivas de autenticación *Silo* y la directiva de autenticación *AuthenticationPolicy02* .  
   
 ```  
 PS C:\>Get-ADComputer -Filter 'Name -like "newComputer*"' | Set-ADAccountAuthenticationPolicySilo -AuthenticationPolicySilo Silo -AuthenticationPolicy AuthenticationPolicy02  

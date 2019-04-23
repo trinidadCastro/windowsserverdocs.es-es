@@ -1,6 +1,6 @@
 ---
 title: Configurar el servidor de acceso remoto para VPN de Always On
-description: RRAS está diseñado para funcionar bien como un enrutador y un servidor de acceso remoto. por lo tanto, admite una amplia variedad de características.
+description: RRAS está diseñado para realizar bien como un enrutador y un servidor de acceso remoto. por lo tanto, admite una amplia gama de características.
 ms.prod: windows-server-threshold
 ms.technology: networking-ras
 ms.topic: article
@@ -11,205 +11,205 @@ author: shortpatti
 ms.date: 08/30/2018
 ms.reviewer: deverette
 ms.openlocfilehash: a338ddfec1ed5cd0e9198f64dc4952eb591cdc1b
-ms.sourcegitcommit: 4893d79345cea85db427224bb106fc1bf88ffdbc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6067519"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59829676"
 ---
-# Paso 3. Configurar el servidor de acceso remoto para VPN de Always On
+# <a name="step-3-configure-the-remote-access-server-for-always-on-vpn"></a>Paso 3. Configurar el servidor de acceso remoto para VPN de Always On
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-& #171;  [ **Anterior:** paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md)<br>
-& #187;  [ **Anterior:** paso 4. Instalar y configurar el servidor de directivas de redes (NPS)](vpn-deploy-nps.md)
+&#171;  [**Anterior:** Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md)<br>
+&#187;  [**Anterior:** Paso 4. Instalar y configurar el servidor de directivas de redes (NPS)](vpn-deploy-nps.md)
 
 
-RRAS está diseñado para realizar así como un enrutador y un servidor de acceso remoto porque admite una amplia variedad de características. Para los fines de esta implementación, se requiere solo un pequeño subconjunto de estas características: compatibilidad con conexiones VPN IKEv2 y el enrutamiento de LAN.
+RRAS está diseñado para realizar bien como un enrutador y un servidor de acceso remoto, ya que admite una amplia gama de características. Para los fines de esta implementación, necesita solo un pequeño subconjunto de estas características: compatibilidad con conexiones VPN de IKEv2 y enrutamiento LAN.
 
-IKEv2 es una VPN se describe en la solicitud de grupo de trabajo de ingeniería de Internet para 7296 de comentarios de protocolo de túnel. La principal ventaja de IKEv2 es que tolera interrupciones en la conexión de red subyacente. Por ejemplo, si se pierde temporalmente la conexión o si un usuario desplaza un equipo cliente desde una red a otro, IKEv2 restaura automáticamente la conexión VPN cuando se restablece la conexión de red, todo ello sin intervención del usuario.
+IKEv2 es una protocolo que se describe en la solicitud de Internet Engineering Task Force para comentarios 7296 de túnel de VPN. La ventaja principal de IKEv2 es que tolera interrupciones en la conexión de red subyacente. Por ejemplo, si se pierde temporalmente la conexión o si un usuario mueve un equipo cliente de una red a otra, IKEv2 restaura automáticamente la conexión VPN cuando se restablece la conexión de red, todo ello sin intervención del usuario.
 
-Configurar el servidor RRAS para admitir conexiones IKEv2 mientras deshabilitar protocolos no utilizadas, lo que reduce la superficie de seguridad del servidor. Además, configurar el servidor para asignar direcciones a los clientes VPN de un grupo de dirección estática. Factible puede asignar direcciones de un grupo o un servidor DHCP. Sin embargo, con un servidor DHCP agrega complejidad en el diseño y ofrece beneficios mínimas.
+Configurar el servidor RRAS para admitir las conexiones IKEv2 al deshabilitar protocolos no utilizados, lo que reduce la superficie de seguridad del servidor. Además, configurar el servidor para asignar direcciones a los clientes VPN desde un grupo de direcciones estáticas. Factible, puede asignar direcciones desde un grupo o un servidor DHCP. Sin embargo, con un servidor DHCP agrega complejidad al diseño y ofrece beneficios mínima.
 
 
 >[!Important]
 >Es importante:
->- Instalar a dos adaptadores de red Ethernet en el servidor físico. Si vas a instalar al servidor VPN en una máquina virtual, debes crear dos modificadores virtuales externos, uno para cada adaptador de red física; y, a continuación, crear dos adaptadores de red virtual para la máquina virtual, a cada adaptador de red conectada a un conmutador virtual.
+>- Instalar a dos adaptadores de red Ethernet en el servidor físico. Si va a instalar al servidor VPN en una máquina virtual, debe crear dos conmutadores virtuales externos, uno para cada adaptador de red físico; y, a continuación, cree dos adaptadores de red virtual para la máquina virtual, con cada adaptador de red conectado a un conmutador virtual.
 >
->- Instalar al servidor de la red perimetral entre el borde y firewalls internos, con un adaptador de red conectado a la red perimetral externa y un adaptador de red conectado a la red perimetral interna.
+>- Instalar al servidor de la red perimetral entre el borde y firewalls internos, con un adaptador de red conectado a la red de perímetro externo y un adaptador de red conectado a la red de perímetro interno.
 
 
 >[!Warning]
->Antes de comenzar, asegúrate de habilitar IPv6 en el servidor VPN. De lo contrario, no se puede establecer una conexión y muestra un mensaje de error.
+>Antes de comenzar, asegúrese de habilitar IPv6 en el servidor VPN. En caso contrario, no se puede establecer una conexión y muestra un mensaje de error.
 
-## Instalar el acceso remoto como un servidor VPN de puerta de enlace RAS
+## <a name="install-remote-access-as-a-ras-gateway-vpn-server"></a>Instalar el acceso remoto como un servidor VPN de puerta de enlace RAS
 
-En este procedimiento, puedes instalar el rol de acceso remoto como un servidor de VPN de puerta de enlace de RAS solo inquilino. Para obtener más información, consulta [Acceso remoto](../../../Remote-Access.md).
+En este procedimiento, se instala el rol de acceso remoto como un servidor VPN de puerta de enlace de RAS de inquilino único. Para obtener más información, consulta [Acceso remoto](../../../Remote-Access.md).
 
 
-### Instalar el rol de acceso remoto con Windows PowerShell
+### <a name="install-the-remote-access-role-by-using-windows-powershell"></a>Instalar el rol de acceso remoto mediante Windows PowerShell
 
-1. Abre Windows PowerShell como **Administrador**.
+1. Abra Windows PowerShell como **administrador**.
 
-2. Escribe el siguiente comando y presiona **ENTRAR**:
+2. Escriba el siguiente comando y presione **ENTRAR**:
 
    `Install-WindowsFeature DirectAccess-VPN -IncludeManagementTools`
 
-   Una vez completada la instalación, aparece el mensaje siguiente en Windows PowerShell.
+   Una vez finalizada la instalación, aparece el mensaje siguiente en Windows PowerShell.
     
-   | Correcto | Reinicio necesario | Código de salida | Resultado de la característica                             |
+   | Correcto | Se requiere un reinicio | Código de salida | Resultado de la característica                             |
    |---------|----------------|-----------|--------------------------------------------|
-   | Verdadero    | No             | Correcto   | {Kit de administración de Connection Manager de RAS |
+   | True    | No             | Correcto   | {RAS Connection Manager Administration Kit |
    ---
 
-### Instalar el rol de acceso remoto mediante el administrador del servidor
+### <a name="install-the-remote-access-role-by-using-server-manager"></a>Instalar el rol de acceso remoto mediante el administrador del servidor
 
-Puedes usar el siguiente procedimiento para instalar el rol de acceso remoto con el administrador del servidor.
+Puede usar el procedimiento siguiente para instalar el rol de acceso remoto mediante el administrador del servidor.
 
-1.  En el servidor VPN, en el Administrador de servidores, haga clic en **Administrar** y haz clic en **Agregar Roles y características**. <p>Abre el agregar Roles and Features Wizard.
+1.  En el servidor VPN, en el administrador del servidor, haga clic en **administrar** y haga clic en **agregar Roles y características**. <p>Se abre el Asistente para agregar roles y características.
 
-2.  En el antes de empezar a la página, haz clic en**siguiente**.
+2.  En el antes de comenzar la página, haga clic en **siguiente**.
 
-3.  En la página Seleccionar el tipo de instalación, seleccione la opción de **instalación basado en roles o basada en características** y haz clic en **siguiente**.
+3.  En la página Seleccionar tipo de instalación, seleccione el **instalación basada en roles o basada en características** opción y haga clic en **siguiente**.
 
-4.  En la página de servidor Select destination, selecciona la opción de **Seleccionar un servidor de grupo de servidores** .
+4.  En la página Seleccionar destino servidor, seleccione el **seleccionar un servidor del grupo de servidores** opción.
 
-5.  En el grupo de servidores, selecciona el equipo local y haga clic en **siguiente**.
+5.  En el grupo de servidores, seleccione el equipo local y haga clic en **siguiente**.
 
-6.  En la página de roles de servidor selecciona en **Roles**, haz clic en el **Acceso remoto**y, a continuación, **siguiente**.
+6.  En el, seleccione la página roles de servidor, en **Roles**, haga clic en **acceso remoto**y, a continuación, **siguiente**.
 
-7.  En la página Selección de características, haz clic en **siguiente**.
+7.  En la página Seleccionar características, haga clic en **Siguiente**.
 
-8.  En la página de acceso remoto, haz clic en **siguiente**.
+8.  En la página de acceso remoto, haga clic en **siguiente**.
 
-9.  En la página de servicio de rol selecciona en los **Servicios de rol**, haga clic en**DirectAccess y VPN (RAS)**.<p>Se abrirá el cuadro de diálogo **Agregar Roles and Features Wizard** .
+9.  En la página de servicio de rol seleccione, en **servicios de rol**, haga clic en **DirectAccess y VPN (RAS)**.<p>El **agregar Roles y características Asistente** abre el cuadro de diálogo.
 
-10. En la agregar Roles y el cuadro de diálogo de características, haz clic en **Agregar características** y haz clic en **siguiente**.
+10. En el cuadro de diálogo Agregar Roles y características, haga clic en **agregar características** y haga clic en **siguiente**.
 
-11. En la página de rol de servidor Web (IIS), haz clic en **siguiente**.
+11. En la página de rol de servidor Web (IIS), haga clic en **siguiente**.
 
-12. En la página de servicios de rol de selección, haz clic en **siguiente**.
+12. En la página Seleccionar rol Servicios, haga clic en **siguiente**.
 
-13. En la página de las selecciones de instalación de confirmar, revisar las opciones y haga clic en **instalar**.
+13. En la página Confirmar selecciones de instalación, revise las opciones seleccionadas y haga clic en **instalar**.
 
-14. Una vez completada la instalación, haz clic en **Cerrar**.
+14. Cuando se complete la instalación, haga clic en **Cerrar**.
 
-## Configurar el acceso remoto como un servidor VPN
+## <a name="configure-remote-access-as-a-vpn-server"></a>Configurar el acceso remoto como un servidor VPN
 
-En esta sección, puedes configurar VPN de acceso remoto para permitir conexiones VPN IKEv2, denegar conexiones desde otros protocolos VPN y asignar un conjunto de direcciones IP estáticas para la emisión de direcciones IP a los clientes VPN autorizados que se conectan.
+En esta sección, puede configurar una VPN de acceso remoto para permitir conexiones VPN de IKEv2, denegar las conexiones desde otros protocolos VPN y asignar un grupo de direcciones IP estáticas para la emisión de direcciones IP a la conexión de los clientes VPN autorizados.
 
-1.  En el servidor VPN, en el Administrador de servidores, haz clic en la marca de **notificaciones** .
+1.  En el servidor VPN, en el administrador del servidor, haga clic en el **notificaciones** marca.
 
-2.  En el menú de **tareas** , haz clic en **Abrir el Asistente de inicio**.<p>Abre el Asistente de configuración de acceso remoto. 
+2.  En el **tareas** menú, haga clic en **abrir el Asistente para introducción**.<p>Abre el Asistente de configuración del acceso remoto. 
 
     >[!NOTE] 
-    >El Asistente para la configuración de acceso remoto podría abrir detrás del Administrador de servidores. Si crees que tarda demasiado tiempo para abrir el asistente, mover o minimizar el Administrador de servidores para saber si el Asistente está detrás de ella. Si no es así, espera a que el Asistente inicializar.
+    >El Asistente de configuración del acceso remoto podría abrir detrás de administrador del servidor. Si piensa que el Asistente está tardando demasiado tiempo en Abrir, mover o minimizar el administrador del servidor para averiguar si el Asistente está detrás de él. Si no es así, espere a que el Asistente inicializar.
 
-3.  Haz clic en **implementar una VPN solo**.<p>Abre el enrutamiento y Microsoft Management Console (MMC) de acceso remoto.
+3.  Haga clic en **solo implementar VPN**.<p>Se abrirá Microsoft Management Console (MMC) de acceso remoto y de enrutamiento.
 
-4.  Haz clic en el servidor VPN y haga clic en **configurar y habilitar el enrutamiento y acceso remoto**.<p>Abre el Asistente para instalación de servidor de acceso remoto y de enrutamiento.
+4.  Haga clic en el servidor VPN y haga clic en **configurar y habilitar enrutamiento y acceso remoto**.<p>Abre el Asistente para la instalación del servidor de acceso remoto y de enrutamiento.
 
-5.  En la bienvenida al enrutamiento y el Asistente para instalación de servidor de acceso remoto, haz clic en **siguiente**.
+5.  En la página para el enrutamiento y el Asistente para la instalación del servidor de acceso remoto, haga clic en **siguiente**.
 
-6.  En **configuración**, haz clic en la **Configuración personalizada**y, a continuación, haz clic en **siguiente**.
+6.  En **configuración**, haga clic en **configuración personalizada**y, a continuación, haga clic en **siguiente**.
 
-7.  En **Configuración personalizada**, haz clic en el **acceso a la VPN**y, a continuación, haz clic en **siguiente**.<p>La finalización se abrirá el Asistente para instalación de servidor de acceso remoto y de enrutamiento.
+7.  En **configuración personalizada**, haga clic en **acceso VPN**y, a continuación, haga clic en **siguiente**.<p>La finalización se abre el Asistente para la instalación del servidor de acceso remoto y de enrutamiento.
 
-8.  Haga clic en **Finalizar** para cerrar al asistente y haz clic en **Aceptar** para cerrar el cuadro de diálogo de enrutamiento y acceso remoto.
+8.  Haga clic en **finalizar** para cerrar el asistente y haga clic en **Aceptar** para cerrar el cuadro de diálogo enrutamiento y acceso remoto.
 
-9.  Haz clic en **iniciar el servicio** para iniciar el acceso remoto.
+9.  Haga clic en **iniciar servicio** para iniciar el acceso remoto.
 
-10. En la consola de MMC de acceso remoto, haz clic en el servidor VPN y haga clic en **Propiedades**.
+10. En el acceso remoto de MMC, haga clic en el servidor VPN y haga clic en **propiedades**.
 
-11. En las propiedades, haz clic en la pestaña de **seguridad** y realice:
+11. En Propiedades, haga clic en el **seguridad** y a hacer:
 
-    a. Haga clic en el **proveedor de autenticación** y **Autenticación RADIUS**.
+    a. Haga clic en **proveedor de autenticación** y haga clic en **autenticación RADIUS**.
     
-    b. Haz clic en **Configurar**.<p>Se abrirá el cuadro de diálogo de autenticación RADIUS.
+    b. Haga clic en **configurar**.<p>Se abre el cuadro de diálogo de autenticación RADIUS.
     
-    c. Haz clic en **Agregar**.<p>Abre el cuadro de diálogo Agregar servidor RADIUS.
+    c. Haz clic en **Agregar**.<p>Se abre el cuadro de diálogo Agregar servidor RADIUS.
     
-    d. En el **nombre del servidor**, escribe el nombre de dominio completo (FQDN) del servidor NPS en la red corporativa o de organización.<p>Por ejemplo, si el nombre NetBIOS de tu servidor NPS es NPS1 y el nombre de dominio es corp.contoso.com, escriba **NPS1.corp.contoso.com**.
+    d. En **nombre del servidor**, escriba el nombre de dominio completo (FQDN) del servidor NPS de la red corporativa o de organización.<p>Por ejemplo, si el nombre de NetBIOS del servidor NPS es NPS1 y el nombre de dominio es corp.contoso.com, escriba **NPS1.corp.contoso.com**.
     
-    e. En **secreto compartido**, haz clic en el **cambio**.<p>Abre el cuadro de diálogo Cambiar secreto.
+    e. En **secreto compartido**, haga clic en **cambio**.<p>Se abre el cuadro de diálogo Cambiar secreto.
     
-    f. En el **nuevo secreto**, escribe una cadena de texto.
+    f. En **secreto nuevo**, escriba una cadena de texto.
     
-    g. **Confirmar el nuevo secreto**, escriba la misma cadena de texto y haz clic en **Aceptar**.
+    g. En **confirmar el nuevo secreto**, escriba la misma cadena de texto y haga clic en **Aceptar**.
 
     >[!IMPORTANT] 
-    >Guarda esta cadena de texto. Al configurar el servidor NPS en la red corporativa o de organización, agregarás este servidor VPN como un cliente de radio. Durante la configuración de control, usarás este mismo secreto compartido para que puedan comunicar la NPS y los servidores VPN.
+    >Guarde esta cadena de texto. Al configurar el servidor NPS de la red de la organización corporativo, agregará este servidor VPN como cliente RADIUS. Durante esa configuración, usará este mismo secreto compartido para que puedan comunicarse el NPS y los servidores VPN.
 
-12. **Agregar servidor RADIUS**, revisa la configuración predeterminada para:
+12. En **Agregar servidor RADIUS**, revise la configuración predeterminada para:
 
-    - **Tiempo de espera**
+    - **Time-out**
     
     - **Puntuación inicial**
     
-    - **Port**
+    - **Puerto**
 
-13. Si es necesario, cambiar los valores para que coincida con los requisitos para el entorno y haz clic en **Aceptar**.<p>Un NAS es un dispositivo que proporciona cierto nivel de acceso a una red más grande. Un NAS con una infraestructura de RADIUS también es un cliente RADIUS, enviar solicitudes de conexión y mensajes de cuentas a un servidor RADIUS para la autenticación, autorización y cuentas.
+13. Si es necesario, cambie los valores para que coincida con los requisitos para su entorno y haga clic en **Aceptar**.<p>Un servidor NAS es un dispositivo que proporciona cierto nivel de acceso a una red más grande. Un NAS que usa una infraestructura RADIUS también es un cliente RADIUS, enviar las solicitudes de conexión y mensajes de cuentas a un servidor RADIUS para autenticación, autorización y contabilidad.
 
-14. Revisar la configuración de **proveedor de cuentas**:
+14. Revise la configuración de **proveedor de cuentas**:
 
-    | Si quieres que el …  | En ese caso…             |
+    | Si desea que el...  | En ese caso…             |
     |---------------------|-------------------|
-    | Actividad de acceso remota ha iniciado sesión en el servidor de acceso remoto | Asegúrate de que está activada la **Explicación de Windows** .      |
-    | NPS para prestar servicios de administración de cuentas de VPN   | Cambie el **proveedor de administración de cuentas** a **Cuentas RADIUS** y, a continuación, configura el NPS como el proveedor de cuentas. |
+    | Actividad de acceso remota registrada en el servidor de acceso remoto | Asegúrese de que **Windows Accounting** está seleccionada.      |
+    | NPS para realizar servicios de administración de cuentas para VPN   | Cambio **proveedor de cuentas** a **cuentas RADIUS** y, a continuación, configure el NPS como el proveedor de cuentas. |
     ---
 
-15. Haz clic en la pestaña **IPv4** y realice:
+15. Haga clic en el **IPv4** y a hacer:
 
-    a. Haz clic en **el grupo de dirección estática**.
+    a. Haga clic en **grupo de direcciones estáticas**.
     
-    b. Haz clic en **Agregar** para configurar un grupo de direcciones IP.<p>El conjunto de direcciones estáticas debe contener las direcciones de la red perimetral interno. Estas direcciones están en la conexión de red interna en el servidor VPN, no a la red corporativa.
+    b. Haga clic en **agregar** para configurar un grupo de direcciones IP.<p>El grupo de direcciones estáticas debe contener las direcciones de la red de perímetro interno. Estas direcciones se encuentran en la conexión de red interna en el servidor VPN, no en la red corporativa.
     
-    c. En la **dirección IP de inicio**, escribe la dirección IP inicial en el intervalo que quieres asignar a los clientes VPN.
+    c. En **dirección IP inicial**, escriba la dirección IP inicial del intervalo que desea asignar a los clientes VPN.
     
-    d. En la **dirección IP final**, escribe la dirección IP final en el intervalo que quieres asignar a los clientes VPN o en el **número de direcciones**, escribe el número de la dirección que quieres que esté disponible. Si estás usando DHCP para la subred, asegúrate de que puedes configurar una exclusión de dirección correspondiente en tus servidores DHCP.
+    d. En **dirección IP final**, escriba la dirección IP final del intervalo que desea asignar a los clientes VPN o en **número de direcciones**, escriba el número de la dirección que desea que estén disponibles. Si usa DHCP para esta subred, asegúrese de configurar una exclusión de dirección correspondiente en los servidores DHCP.
     
-    e. (Opcional) Si estás usando DHCP, haz clic en el **adaptador**y en la lista de resultados, haz clic en el adaptador Ethernet conectado a la red perimetral interno.
+    e. (Opcional) Si usa DHCP, haga clic en **adaptador**y en la lista de resultados, haga clic en el adaptador de Ethernet conectado a la red de perímetro interno.
 
-16. (Opcional) *Si estás configurando el acceso condicional para la conectividad de VPN*, en la lista desplegable de **certificado** , en el **Enlace de certificado SSL**, seleccione la autenticación del servidor VPN.
+16. (Opcional) *Si va a configurar el acceso condicional para la conectividad VPN*, desde el **certificado** desplegable lista, en **enlace de certificado SSL**, seleccione el servidor VPN autenticación.
 
-17. (Opcional) *Si estás configurando el acceso condicional para la conectividad de VPN*, en el NPS en MMC, expanda **Policies\\Network directivas** y realice: 
+17. (Opcional) *Si va a configurar el acceso condicional para la conectividad VPN*, en la MMC de NPS, expanda **directivas\\las directivas de red** y hacer: 
 
-    a. Derecha, la directiva de red de **conexiones de enrutamiento de Microsoft y el servidor de acceso remoto** y selecciona **Propiedades**.
+    a. El derecho **las conexiones al servidor de acceso remoto y de Microsoft Routing** directiva de red y seleccione **propiedades**.
     
-    b. Selecciona el **conceder acceso. Conceder acceso si la solicitud de conexión coincide con esta directiva** opción.
+    b. Seleccione el **conceder acceso. Conceder acceso si la solicitud de conexión coincide con esta directiva** opción.
     
-    c. En tipo de servidor de acceso de red, selecciona **El servidor de acceso remoto (VPN de acceso telefónico)** de la lista desplegable.
+    c. En el tipo de servidor de acceso de red, seleccione **el servidor de acceso remoto (VPN de acceso telefónico)** en la lista desplegable.
 
-3.  En el enrutamiento y acceso remoto de MMC, haz clic en **puertos** y, a continuación, haga clic en **Propiedades**. <p>Abre el cuadro de diálogo de propiedades de puertos.
+3.  En el enrutamiento y acceso remoto de MMC, haga clic en **puertos,** y, a continuación, haga clic en **propiedades**. <p>Se abre el cuadro de diálogo Propiedades de puertos.
 
-4.  Haz clic en **Minipuerto WAN (SSTP)** y haga clic en **Configurar**. Configurar dispositivo - se abrirá el cuadro de diálogo de minipuerto WAN (SSTP).
+4.  Haga clic en **minipuerto WAN (SSTP)** y haga clic en **configurar**. Configurar dispositivo - abre el cuadro de diálogo de minipuerto WAN (SSTP).
 
-    a. Desactiva las casillas de verificación **conexiones de acceso remoto (solo de entrada)** y **conexiones de enrutamiento de marcado a petición (entrantes y salientes)** .
+    a. Desactive el **conexiones de acceso remoto (sólo de entrada)** y **conexiones de enrutamiento de marcado a petición (de entrada y salidas)** casillas de verificación.
     
-    b. Haz clic en **Aceptar**.
+    b. Haga clic en **Aceptar**.
 
-5.  Haz clic en **Minipuerto WAN (L2TP)** y haga clic en **Configurar**. Configurar dispositivo - se abrirá el cuadro de diálogo de minipuerto WAN (L2TP).
+5.  Haga clic en **minipuerto WAN (L2TP)** y haga clic en **configurar**. Configurar dispositivo - abre el cuadro de diálogo de minipuerto WAN (L2TP).
 
-    a. En el **número máximo de puertos**, escribe el número de puertos para que coincida con el número máximo de conexiones VPN simultáneas que quieres admitir.
+    a. En **número máximo de puertos**, escriba el número de puertos para que coincida con el número máximo de conexiones VPN simultáneas que desee admitir.
     
-    b. Haz clic en **Aceptar**.
+    b. Haga clic en **Aceptar**.
 
-6.  Haz clic en **Minipuerto WAN (PPTP)** y haga clic en **Configurar**. Configurar dispositivo - se abrirá el cuadro de diálogo de minipuerto WAN (PPTP).
+6.  Haga clic en **minipuerto WAN (PPTP)** y haga clic en **configurar**. Configurar dispositivo - abre el cuadro de diálogo de minipuerto WAN (PPTP).
 
-    a. En el **número máximo de puertos**, escribe el número de puertos para que coincida con el número máximo de conexiones VPN simultáneas que quieres admitir.
+    a. En **número máximo de puertos**, escriba el número de puertos para que coincida con el número máximo de conexiones VPN simultáneas que desee admitir.
     
-    b. Haz clic en **Aceptar**.
+    b. Haga clic en **Aceptar**.
     
-7. Haz clic en **Minipuerto WAN (IKEv2)** y haga clic en **Configurar**. Configurar dispositivo - se abrirá el cuadro de diálogo de minipuerto WAN (IKEv2).
+7. Haga clic en **minipuerto WAN (IKEv2)** y haga clic en **configurar**. Configurar dispositivo - abre el cuadro de diálogo de minipuerto WAN (IKEv2).
 
-    a. En el **número máximo de puertos**, escribe el número de puertos para que coincida con el número máximo de conexiones VPN simultáneas que quieres admitir.
+    a. En **número máximo de puertos**, escriba el número de puertos para que coincida con el número máximo de conexiones VPN simultáneas que desee admitir.
     
-    b. Haz clic en **Aceptar**.
+    b. Haga clic en **Aceptar**.
 
-7.  Si se te solicite, haz clic en **Sí** para confirmar reiniciar el servidor y haz clic en **Cerrar** para reiniciar el servidor.
+7.  Si se le solicite, haga clic en **Sí** para confirmar reiniciar el servidor y haga clic en **cerrar** para reiniciar el servidor.
 
-## Paso siguiente
-[Paso 4. Instalar y configurar el servidor de directivas de redes (NPS)](vpn-deploy-nps.md): en este paso, instala servidor de directivas de redes (NPS) mediante Windows PowerShell o el administrador agregar Roles de servidor y Features Wizard. También configuración NPS para controlar todos los derechos de administración de cuentas de conexión, autorización y autenticación las solicitudes que recibe desde el servidor VPN.
+## <a name="next-step"></a>Paso siguiente
+[Paso 4. Instalar y configurar el servidor de directivas de redes (NPS)](vpn-deploy-nps.md): En este paso, se instala el servidor de directivas de redes (NPS) mediante Windows PowerShell o el Server Manager agregar Roles y características Asistente. También configura NPS para controlar la autenticación, autorización y los derechos de administración de cuentas de conexión todos los solicitudes que recibe desde el servidor VPN.
 
 
 

@@ -1,0 +1,1 @@
+**Retirar el servidor de DirectAccess.** Cuando haya quitado correctamente los valores de configuración y los registros DNS, está listo para eliminar el servidor de DirectAccess. Para ello, quite el rol de administrador del servidor o retirar el servidor y quitarlo de AD DS.

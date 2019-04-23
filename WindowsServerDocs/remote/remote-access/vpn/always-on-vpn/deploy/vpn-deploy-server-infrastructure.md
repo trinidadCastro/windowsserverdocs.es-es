@@ -1,6 +1,6 @@
 ---
 title: Configurar la infraestructura de servidor
-description: En este paso, instalar y configurar los componentes del lado servidor necesarios para admitir la VPN. Los componentes del lado servidor incluyen la configuración de PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.
+description: En este paso, instale y configure los componentes de servidor necesarios para admitir la VPN. Los componentes de servidor incluyen la configuración de PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.
 ms.prod: windows-server-threshold
 ms.technology: networking-ras
 ms.topic: article
@@ -11,121 +11,121 @@ author: shortpatti
 ms.date: 08/30/2018
 ms.reviewer: deverette
 ms.openlocfilehash: 21b494bea1990fb8424537205db483d977331465
-ms.sourcegitcommit: 4893d79345cea85db427224bb106fc1bf88ffdbc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6067528"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59832936"
 ---
-# Paso 2. Configurar la infraestructura de servidor
+# <a name="step-2-configure-the-server-infrastructure"></a>Paso 2. Configurar la infraestructura de servidor
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-& #171;  [ **Anterior:** paso 1. Planear la implementación de VPN siempre activada](always-on-vpn-deploy-planning.md)<br>
-& #187;  [ **Siguiente:** paso 3. Configurar el servidor de acceso remoto para siempre en VPN](vpn-deploy-ras.md)
+&#171;  [**Anterior:** Paso 1. Planear la implementación de VPN de Always On](always-on-vpn-deploy-planning.md)<br>
+&#187;  [**Siguiente:** Paso 3. Configurar el servidor de acceso remoto para siempre en VPN](vpn-deploy-ras.md)
 
 
-En este paso, instalar y configurar los componentes del lado servidor necesarios para admitir la VPN. Los componentes del lado servidor incluyen la configuración de PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.  También configurar RRAS para admitir las conexiones IKEv2 y el servidor NPS para realizar la autorización para las conexiones de VPN.
+En este paso, instale y configure los componentes de servidor necesarios para admitir la VPN. Los componentes de servidor incluyen la configuración de PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.  También configurar RRAS para admitir las conexiones IKEv2 y el servidor NPS para realizar la autorización para las conexiones VPN.
 
-## Configurar la inscripción automática de certificados en la directiva de grupo
-En este procedimiento, se configura la directiva de grupo en el controlador de dominio para que los miembros del dominio solicitan automáticamente los certificados de usuario y de equipo. Esto permite que los usuarios VPN solicitar y recuperar certificados de usuario para autentican las conexiones VPN automáticamente. De igual modo, esta directiva permite servidores NPS para solicitar el servidor de certificados de autenticación automáticamente. 
+## <a name="configure-certificate-autoenrollment-in-group-policy"></a>Configurar la inscripción automática de certificados en la directiva de grupo
+En este procedimiento, configurar Directiva de grupo en el controlador de dominio para que los miembros del dominio solicitar automáticamente certificados de usuario y equipo. Esto permite que los usuarios VPN solicitar y recuperar certificados de usuario que se autentican automáticamente las conexiones VPN. Del mismo modo, esta directiva permite servidores NPS para solicitar el servidor de certificados de autenticación automáticamente. 
 
-Inscribir manualmente certificados en servidores VPN.
+Inscribe manualmente certificados en servidores VPN.
 
 >[!TIP]
->Para los equipos unidos no domained, consulta a continuación la [configuración de la entidad de certificación para que no son de dominio unido a los equipos](#ca-configuration-for-non-domain-joined-computers) . Dado que el servidor RRAS no está unido a un dominio, la inscripción automática no puede usarse para inscribir el certificado de puerta de enlace VPN.  Por lo tanto, usa un procedimiento de solicitud de certificado sin conexión. 
+>Para los equipos combinados que no son dominio, consulte [equipos unidos a un configuración de CA para que no sea de dominio](#ca-configuration-for-non-domain-joined-computers) a continuación. Puesto que el servidor RRAS no está unido al dominio, la inscripción automática no se puede usar para inscribir el certificado de puerta de enlace VPN.  Por lo tanto, utilizar un procedimiento de solicitud de certificados sin conexión. 
 
 
-1.  En un controlador de dominio, abre Administración de directivas de grupo.
+1.  En un controlador de dominio, abra Administración de directivas de grupo.
 
-2.  En el panel de navegación, haz clic en el dominio (por ejemplo, corp.contoso.com) y haz clic en**crear un GPO en este dominio y vincularlo aquí**.
+2.  En el panel de navegación, haga clic en el dominio (por ejemplo, corp.contoso.com) y haga clic en **crear un GPO en este dominio y vincularlo aquí**.
 
-3.  En el cuadro de diálogo nuevo GPO, escriba la **Directiva de inscripción automática**y haga clic en **Aceptar**.
+3.  En el cuadro de diálogo nuevo GPO, escriba **directiva de inscripción automática**y haga clic en **Aceptar**.
 
-4.  En el panel de navegación, haz clic en la **Directiva de inscripción automática**y haz clic en **Editar**.
+4.  En el panel de navegación, haga clic en **directiva de inscripción automática**y haga clic en **editar**.
 
-5.  En el Editor de administración de directivas de grupo, realiza los siguientes pasos para configurar la inscripción automática de certificados de equipo:
+5.  En el Editor de administración de directivas de grupo, complete los pasos siguientes para configurar la inscripción automática de certificados de equipo:
 
-    1.  En el panel de navegación, haz clic en **Directivas de equipo Configuration\\Policies\\Windows seguridad Settings\\Public clave**.
+    1.  En el panel de navegación, haga clic en **configuración del equipo\\directivas\\Windows configuración\\configuración de seguridad\\directivas de clave pública**.
 
-    2.  En el panel de detalles, haz clic en**Servicios de cliente: inscripción automática de certificados**y haga clic en **Propiedades**.
+    2.  En el panel de detalles, haga clic en **cliente de servicios de certificados-inscripción automática**y haga clic en **propiedades**.
 
-    3.  En el cliente de servicios de certificado: cuadro de diálogo de propiedades de la inscripción automática en el **Modelo de configuración**, haz clic en **habilitado**.
+    3.  En el cliente de servicios de certificados-inscripción automática cuadro de diálogo Propiedades, en **modelo de configuración**, haga clic en **habilitado**.
 
-    4.  Seleccione**Renovar certificados expirados, actualizar certificados pendientes y quitar certificados revocados**y**Actualizar certificados que usan plantillas de certificado**.
+    4.  Seleccione **renovar certificados expirados, actualizar certificados pendientes y quitar certificados revocados** y **actualizar certificados que usan plantillas de certificado**.
 
-    5.  Haz clic en**Aceptar**.
+    5.  Haga clic en **Aceptar**.
 
-6.  En el Editor de administración de directivas de grupo, realiza los siguientes pasos para la inscripción automática de certificados de usuario de configurar:
+6.  En el Editor de administración de directivas de grupo, complete los pasos siguientes para configurar inscripción automática de certificados:
 
-    1.  En el panel de navegación, haz clic en **Directivas de clave de usuario Configuration\\Policies\\Windows seguridad Settings\\Public**.
+    1.  En el panel de navegación, haga clic en **configuración de usuario\\directivas\\Windows configuración\\configuración de seguridad\\directivas de clave pública**.
 
-    2.  En el panel de detalles, haz clic en**Servicios de cliente: inscripción automática de certificados**y haga clic en **Propiedades**.
+    2.  En el panel de detalles, haga clic en **cliente de servicios de certificados-inscripción automática**y haga clic en **propiedades**.
 
-    3.  En el cliente de servicios de certificado: cuadro de diálogo de propiedades de la inscripción automática en el **Modelo de configuración**, haz clic en **habilitado**.
+    3.  En el cliente de servicios de certificados-inscripción automática cuadro de diálogo Propiedades, en **modelo de configuración**, haga clic en **habilitado**.
 
-    4.  Seleccione**Renovar certificados expirados, actualizar certificados pendientes y quitar certificados revocados**y**Actualizar certificados que usan plantillas de certificado**.
+    4.  Seleccione **renovar certificados expirados, actualizar certificados pendientes y quitar certificados revocados** y **actualizar certificados que usan plantillas de certificado**.
 
-    5.  Haz clic en**Aceptar**.
+    5.  Haga clic en **Aceptar**.
 
     6.  Cierra el Editor de administración de directivas de grupo.
 
-7.  Administración de directivas de grupo de cerrar.
+7.  Cierre Administración de directivas de grupo.
 
-### Configuración de la entidad de certificación para los equipos de dominio no se hayan unido
+### <a name="ca-configuration-for-non-domain-joined-computers"></a>Configuración de entidad emisora de certificados para equipos combinados que no sea de dominio
 
-Dado que el servidor RRAS no está unido a un dominio, la inscripción automática no puede usarse para inscribir el certificado de puerta de enlace VPN.  Por lo tanto, usa un procedimiento de solicitud de certificado sin conexión. 
+Puesto que el servidor RRAS no está unido al dominio, la inscripción automática no se puede usar para inscribir el certificado de puerta de enlace VPN.  Por lo tanto, utilizar un procedimiento de solicitud de certificados sin conexión. 
 
-1. En el servidor RRAS, generar un archivo llamado **VPNGateway.inf** en función de la directiva de certificado de ejemplo solicitar proporcionado en el apéndice (sección 0) y personalizar las siguientes entradas: 
+1. En el servidor RRAS, generar un archivo denominado **VPNGateway.inf** en función de la solicitud de directiva de certificado de ejemplo proporcionada en el apéndice (sección 0) y personalizar las siguientes entradas: 
 
-   - En la sección [NewRequest], reemplaza vpn.contoso.com que se usa para el nombre del firmante con el punto de conexión de [_cliente_] VPN FQDN elegida.
+   - En la sección [NewRequest], reemplazar vpn.contoso.com utilizado para el nombre de asunto con el elegido [_cliente_] FQDN del punto de conexión de VPN.
 
-   - En la sección [Extensions], reemplaza vpn.contoso.com que se usa para el nombre alternativo del sujeto con el punto de conexión [_cliente_] VPN elegido FQDN.
+   - En la sección [Extensions], reemplazar vpn.contoso.com usa el nombre de sujeto alternativo con el elegido [_cliente_] FQDN del punto de conexión de VPN.
 
-2. Guardar o copiar el archivo **VPNGateway.inf** a una ubicación elegida.
+2. Guardar o copiar el **VPNGateway.inf** archivo en una ubicación especificada.
 
-3. Desde un símbolo del sistema con privilegios elevados, navega hasta la carpeta que contiene el archivo **VPNGateway.inf** y el tipo:
+3. Desde un símbolo del sistema con privilegios elevados, navegue hasta la carpeta que contiene el **VPNGateway.inf** archivo y escriba:
 
    ```
    certreq -new VPNGateway.inf VPNGateway.req
    ```
 
-4. Copia el archivo de salida **VPNGateway.req** recién creado en un servidor de entidad de certificación o la estación de trabajo con privilegios de acceso (PATA). 
+4. Copie el recién creado **VPNGateway.req** archivo de salida a un servidor de la entidad de certificación o estación de trabajo de acceso con privilegios (PAW). 
 
-5. Guardar o copiar el archivo **VPNGateway.req** en una ubicación seleccionada en el servidor de entidad de certificación, o la estación de trabajo con privilegios de acceso (PATA).
+5. Guardar o copiar el **VPNGateway.req** archivo en una ubicación especificada en el servidor de la entidad de certificación, o la estación de trabajo de acceso con privilegios (PAW).
 
-6. Desde un símbolo del sistema con privilegios elevados, navega hasta la carpeta que contiene el archivo VPNGateway.req creado en el paso anterior y el tipo: 
+6. Desde un símbolo del sistema con privilegios elevados, navegue hasta la carpeta que contiene el archivo VPNGateway.req creado en el paso anterior y escriba: 
 
    ```
    certreq -attrib “CertificateTemplate:[Customer]VPNGateway” -submit VPNgateway.req VPNgateway.cer
    ```
 
-7. Si se te solicite por la ventana de la lista de la entidad de certificación, selecciona la CA de empresa adecuado para satisfacer la solicitud de certificado.
+7. Si se lo solicite la ventana Lista de la entidad de certificación, seleccione la CA de empresa apropiada para atender la solicitud de certificado.
 
-8. Copia el archivo de salida **VPNGateway.cer** recién creado en el servidor RRAS. 
+8. Copie el recién creado **VPNGateway.cer** archivo de salida en el servidor RRAS. 
 
-9. Guardar o copiar el archivo **VPNGateway.cer** a una ubicación en el servidor RRAS elegida.
+9. Guardar o copiar el **VPNGateway.cer** archivo en una ubicación especificada en el servidor RRAS.
 
-10. Desde un símbolo del sistema con privilegios elevados, navega hasta la carpeta que contiene el archivo VPNGateway.cer creado en el paso anterior y el tipo:
+10. Desde un símbolo del sistema con privilegios elevados, navegue hasta la carpeta que contiene el archivo VPNGateway.cer creado en el paso anterior y escriba:
    
    ```
    certreq -accept VPNGateway.cer
    ```
 
-11. Ejecuta el complemento MMC de certificados como se describe [aquí](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) seleccionando la opción de **cuenta de equipo** .
+11. Ejecute el complemento MMC certificados, como se describe [aquí](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) seleccionando el **cuenta de equipo** opción.
 
-12. Asegúrate de que existe un certificado válido para el servidor RRAS con las siguientes propiedades:
+12. Asegúrese de que existe un certificado válido para el servidor RRAS con las siguientes propiedades:
 
-   - **Destinada a fines:** Autenticación de servidor, seguridad IP IKE intermedia 
+   - **Fines previstos:** Autenticación de servidor, seguridad IP IKE intermedia 
 
-   - **Plantilla de certificado:** [El_cliente_] Servidor VPN
+   - **Plantilla de certificado:** [_cliente_] servidor VPN
 
-#### Ejemplo: Script VPNGateway.inf
+#### <a name="example-vpngatewayinf-script"></a>Por ejemplo: Secuencia de comandos VPNGateway.inf
 
-Aquí puedes ver un script de ejemplo de una directiva de solicitud de certificado usado para solicitar un certificado de puerta de enlace VPN mediante un proceso de fuera de banda.
+Aquí puede ver un script de ejemplo de una directiva de solicitud de certificado que usa para solicitar un certificado de puerta de enlace VPN mediante un proceso fuera de banda.
 
 >[!TIP]
->Puedes encontrar una copia de la secuencia de comandos VPNGateway.inf en el Kit IP ofrecer VPN en la carpeta de directivas de solicitud de certificado. Solo se actualiza el 'Asunto' y '\_continue\_' con valores específicos de cliente.
+>Puede encontrar una copia de la secuencia de comandos VPNGateway.inf en el Kit IP ofrece VPN en la carpeta de directivas de solicitud de certificado. Actualizar solo el 'Asunto' y '\_continuar\_' con valores específicos del cliente.
 
 ```
 [Version] 
@@ -148,316 +148,316 @@ _continue_ = "dns=vpn.contoso.com&"
 
 ```
 
-## Crear los usuarios de VPN, servidores VPN y grupos de servidores NPS
+## <a name="create-the-vpn-users-vpn-servers-and-nps-servers-groups"></a>Crear los usuarios de VPN, servidores VPN y grupos de servidores NPS
 
-En este procedimiento, puedes agregar un nuevo grupo de Active Directory (AD) que contiene los usuarios puedos usar la conexión VPN para conectarse a la red de la organización.
+En este procedimiento, puede agregar un nuevo grupo de Active Directory (AD) que contenga los usuarios con permiso para usar la VPN para conectarse a la red de su organización.
 
-Este grupo tiene dos funciones:
+Este grupo tiene dos propósitos:
 
--   Define qué usuarios pueden inscribir automáticamente para los certificados de usuario que requiere que la VPN.
+-   Define qué usuarios tienen permiso para la inscripción automática para los certificados de usuario que requiere la VPN.
 
--   Define qué usuarios NPS autoriza acceso a la VPN.
+-   Define los usuarios que autoriza el NPS para acceso VPN.
 
-Mediante el uso de un grupo personalizado, si quieres revocar el acceso VPN de un usuario, puedes quitar ese usuario del grupo.
+Mediante el uso de un grupo personalizado, si desea revocar el acceso VPN de un usuario, puede quitar ese usuario del grupo.
 
-También puedes agregar un grupo que contiene servidores VPN y otro grupo que contiene servidores NPS. Usa estos grupos para restringir las solicitudes de certificados a sus miembros.
+También agrega un grupo que contiene los servidores VPN y otro grupo que contiene los servidores NPS. Use estos grupos para restringir las solicitudes de certificado a sus miembros.
 
 >[!NOTE] 
->Te recomendamos VPN servidores que se encuentran en el perímetro de DMA no estar unidos al dominio. Sin embargo, si prefieres que los servidores VPN unido al dominio para facilitar la tarea (directivas de grupo, el agente de copia de seguridad y supervisión, ningún usuario local para administrar etc.), a continuación, agregar un grupo de AD para la plantilla de certificado de servidor VPN.
+>Se recomienda VPN servidores que residen en el perímetro de DMA no estar unido al dominio. Sin embargo, si prefiere que los servidores VPN unido al dominio para una administración mejorada (directivas de grupo, el agente de copia de seguridad y supervisión, ningún usuario local para administrar y así sucesivamente), a continuación, agregar un grupo de AD a la plantilla de certificado de servidor VPN.
 
-### Configurar el grupo de usuarios de VPN
+### <a name="configure-the-vpn-users-group"></a>Configurar el grupo de usuarios de VPN
 
-1.  En un controlador de dominio, abre equipos y usuarios de Active Directory.
+1.  En un controlador de dominio, abra usuarios y equipos de usuarios de Active Directory.
 
-2.  Haz clic en un contenedor o la unidad organizativa, haga clic en **nuevo** y haz clic en el **grupo**.
+2.  Haga clic en un contenedor o unidad organizativa, haga clic en **New** y haga clic en **grupo**.
 
-3.  En **nombre de grupo**, escribe **Los usuarios de VPN**y haz clic en **Aceptar**.
+3.  En **conmutaciónporerror**, tipo **usuarios de VPN**y haga clic en **Aceptar**.
 
-4.  Haz clic en **Los usuarios de VPN**y haga clic en **Propiedades**.
+4.  Haga clic en **usuarios de VPN**y haga clic en **propiedades**.
 
-5.  En la pestaña **miembros** del cuadro de diálogo de propiedades de los usuarios de VPN, haz clic en **Agregar**.
+5.  En el **miembros** ficha del cuadro de diálogo Propiedades de los usuarios de VPN, haga clic en **agregar**.
 
-6.  En el cuadro de diálogo Seleccionar usuarios, agregar todos los usuarios que necesiten VPN acceder y haz clic en **Aceptar**.
+6.  En el cuadro de diálogo Seleccionar usuarios, agregar todos los usuarios que necesitan acceso a VPN y haga clic en **Aceptar**.
 
-7.  Cierra los equipos y usuarios de Active Directory.
+7.  Cierre Usuarios y equipos de Active Directory.
 
-### Configurar los grupos de servidores VPN y servidores NPS
+### <a name="configure-the-vpn-servers-and-nps-servers-groups"></a>Configurar los grupos de servidores VPN y servidores NPS
 
-1.  En un controlador de dominio, abre equipos y usuarios de Active Directory.
+1.  En un controlador de dominio, abra usuarios y equipos de usuarios de Active Directory.
 
-2.  Haz clic en un contenedor o la unidad organizativa, haga clic en **nuevo** y haz clic en el **grupo**.
+2.  Haga clic en un contenedor o unidad organizativa, haga clic en **New** y haga clic en **grupo**.
 
-3.  En **nombre de grupo**, escribe **Los servidores VPN**y haz clic en **Aceptar**.
+3.  En **conmutaciónporerror**, tipo **servidores VPN**y haga clic en **Aceptar**.
 
-4.  Haz clic en **Los servidores VPN**y haga clic en **Propiedades**.
+4.  Haga clic en **servidores VPN**y haga clic en **propiedades**.
 
-5.  En la pestaña **miembros** del cuadro de diálogo de propiedades de servidores VPN, haz clic en **Agregar**.
+5.  En el **miembros** ficha del cuadro de diálogo Propiedades de los servidores VPN, haga clic en **agregar**.
 
-6.  Haz clic en **Los tipos de objeto**, selecciona la casilla de verificación de **equipos** y haz clic en **Aceptar**.
+6.  Haga clic en **tipos de objeto**, seleccione el **equipos** casilla de verificación y haga clic en **Aceptar**.
 
-7.  En **Escriba los nombres de objeto que desea seleccionar**, escriba los nombres de los servidores VPN y haz clic en **Aceptar**.
+7.  En **escriba los nombres de objeto para seleccionar**, escriba los nombres de los servidores VPN y haga clic en **Aceptar**.
 
-8.  Haz clic en **Aceptar** para cerrar el cuadro de diálogo de propiedades de servidores VPN.
+8.  Haga clic en **Aceptar** para cerrar el cuadro de diálogo Propiedades del servidor VPN.
 
-9.  Repite los pasos anteriores para el grupo de servidores NPS.
+9.  Repita los pasos anteriores para el grupo de servidores NPS.
 
-10. Cierra los equipos y usuarios de Active Directory.
+10. Cierre Usuarios y equipos de Active Directory.
 
-## Crear la plantilla de autenticación de usuario
+## <a name="create-the-user-authentication-template"></a>Crear la plantilla de autenticación de usuario
 
-En este procedimiento, se configura una plantilla de autenticación de servidor de cliente personalizada. Esta plantilla es necesaria porque para mejorar la seguridad general del certificado seleccionando niveles de compatibilidad actualizada y eligiendo el proveedor criptográfico de plataforma de Microsoft. Este último cambio te permite usar el TPM en los equipos cliente para proteger el certificado. Para obtener información general del TPM, vea la [Descripción de la tecnología del módulo de plataforma de confianza](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview).
+En este procedimiento, configure una plantilla de autenticación de cliente / servidor personalizadas. Esta plantilla es necesaria porque desea mejorar la seguridad general del certificado mediante la selección de niveles de compatibilidad actualizada y elegir el proveedor criptográfico de plataforma de Microsoft. Este último cambio le permite usar el TPM en los equipos cliente para proteger el certificado. Para obtener información general de TPM, consulte [Trusted Platform Module Technology Overview](https://docs.microsoft.com/windows/device-security/tpm/trusted-platform-module-overview).
 
 **Procedimiento:**
 
-1.  En la entidad de certificación, abre la entidad de certificación.
+1.  En la CA, abra la entidad de certificación.
 
-2.  En el panel de navegación, haz clic en**Las plantillas de certificado**y haga clic en**Administrar**.
+2.  En el panel de navegación, haga clic en **plantillas de certificado**y haga clic en **administrar**.
 
-3.  En la consola de plantillas de certificado, haz clic en el**usuario**y haz clic en la**Plantilla duplicada**.
+3.  En la consola de plantillas de certificado, haga clic en **usuario**y haga clic en **Duplicar plantilla**.
 
     >[!WARNING]
-    >No hagas clic en **Aplicar** o **Aceptar** en cualquier momento antes de paso 10.  Si haces clic en estos botones antes de entrar en todos los parámetros, muchas opciones quedan fijo y ya no modificable. Por ejemplo, en la pestaña de **criptografía** , si el _Proveedor de almacenamiento criptográfico heredado_ se muestra en el campo de categoría del proveedor, se convierte en disabled, evitando que cualquier otro cambio. La única alternativa es eliminar la plantilla y volver a crearla.  
+    >Haga clic en no **aplicar** o **Aceptar** en cualquier momento antes del paso 10.  Si hace clic en estos botones antes de entrar en todos los parámetros, muchas opciones se convierten en fijo y ya no es editable. Por ejemplo, en el **criptografía** pestaña si _proveedor de almacenamiento criptográfico heredado_ se muestra en el campo de categoría del proveedor, se deshabilita, ninguna prevención del cambio. La única alternativa consiste en eliminar la plantilla y volver a crearla.  
 
-4.  En el cuadro de diálogo de propiedades de plantilla nueva, en**General**pestaña, realiza los siguientes pasos:
+4.  En el cuadro de diálogo Propiedades de plantilla nueva, en el **General** ficha, realice los pasos siguientes:
 
-    1.  En el **nombre para mostrar plantilla**, escriba la **Autenticación de usuario de VPN**.
+    1.  En **nombre para mostrar plantilla**, tipo **autenticación de usuario de VPN**.
 
-    2.  Desactiva la casilla de verificación **Publicar certificado en Active Directory** .
+    2.  Desactive el **Publicar certificado en Active Directory** casilla de verificación.
 
-5.  En la**seguridad**pestaña, realiza los siguientes pasos:
+5.  En el **seguridad** ficha, realice los pasos siguientes:
 
     1.  Haz clic en **Agregar**.
 
-    2.  En el seleccionar usuarios, equipos, cuentas de servicio o cuadro de diálogo de grupos, escribe **Los usuarios de VPN**y haz clic en **Aceptar**.
+    2.  En Seleccionar usuarios, equipos, cuentas de servicio o cuadro de diálogo grupos, escriba **usuarios de VPN**y haga clic en **Aceptar**.
 
-    3.  En los **nombres de usuario o grupo**, haz clic en **Los usuarios de VPN**.
+    3.  En **los nombres de usuario o grupo**, haga clic en **usuarios de VPN**.
 
-    4.  En los **permisos para usuarios de VPN**, selecciona las casillas de verificación de **inscripción** e **inscripción automática** en la columna **Permitir** .
+    4.  En **permisos para los usuarios de VPN**, seleccione el **inscribir** y **inscripción automática** casillas de verificación en la **permitir** columna.
 
        >[!TIP]
-       >Asegúrese de que mantenga activada la casilla de verificación de lectura. En otras palabras, necesitas los permisos de lectura para la inscripción. 
+       >Asegúrese de mantener activada la casilla de verificación de lectura. En otras palabras, necesita los permisos de lectura para la inscripción. 
 
-    5.  En **los nombres de usuario o grupo**, haz clic en **Los usuarios del dominio**y haz clic en **Eliminar**.
+    5.  En **los nombres de usuario o grupo**, haga clic en **los usuarios del dominio**y haga clic en **quitar**.
 
-6.  En la pestaña de la **compatibilidad** , realiza los siguientes pasos:
+6.  En el **compatibilidad** ficha, realice los pasos siguientes:
 
-    1.  En la **Entidad de certificación**, haz clic en **Server2012R2 de Windows**.
+    1.  En **entidad de certificación**, haga clic en **Windows Server 2012 R2**.
 
-    2.  En el cuadro de diálogo **resultante cambios** , haz clic en **Aceptar**.
+    2.  En el **cambios resultantes** cuadro de diálogo, haga clic en **Aceptar**.
 
-    3.  En el **destinatario del certificado**, haz clic en **Server2012R2 Windows8.1/Windows**.
+    3.  En **destinatario del certificado**, haga clic en **Windows 8.1 / Windows Server 2012 R2**.
 
-    4.  En el cuadro de diálogo **resultante cambios** , haz clic en **Aceptar**.
+    4.  En el **cambios resultantes** cuadro de diálogo, haga clic en **Aceptar**.
 
-7.  En la ficha **Tratamiento de la solicitud** , desactiva la casilla de verificación de **Permitir que la clave privada se pueda exportar** .
+7.  En el **tratamiento de la solicitud** ficha, desactive la **permitir que la clave privada se pueda exportar** casilla de verificación.
 
-8.  En la pestaña de **criptografía** , realiza los siguientes pasos:
+8.  En el **criptografía** ficha, realice los pasos siguientes:
 
-    1.  En la **Categoría del proveedor**, haz clic en **El proveedor de almacenamiento de claves**.
+    1.  En **categoría del proveedor**, haga clic en **Key Storage Provider**.
 
-    2.  Haz clic en **las solicitudes deben usar uno de los siguientes proveedores**.
+    2.  Haga clic en **las solicitudes deben usar uno de los siguientes proveedores**.
 
-    3.  Selecciona la casilla de verificación de **Proveedor a criptográfico de plataforma de Microsoft** .
+    3.  Seleccione el **proveedor criptográfico de plataforma de Microsoft** casilla de verificación.
 
-9.  En la pestaña de **Nombre de sujeto** , si no tienes una dirección de correo electrónico que aparece en todas las cuentas de usuario, desactiva las casillas de verificación de **incluir el nombre de correo electrónico en nombre de sujeto** y el **nombre de correo electrónico** .
+9.  En el **nombre de sujeto** ficha, si no tiene una dirección de correo electrónico que aparece en todas las cuentas de usuario, desactive la **incluir el nombre de correo electrónico en nombre de sujeto** y **nombre de correo electrónico** casillas de verificación.
 
-10. Haz clic en**Aceptar** para guardar la plantilla de certificado de autenticación de usuario de VPN.
+10. Haga clic en **Aceptar** para guardar la plantilla de certificado de autenticación de usuarios de VPN.
 
-11. Consola de plantillas de certificado cerrar.
+11. Cierre la consola de plantillas de certificado.
 
-12. En el panel de navegación de theCertification Authoritysnap-, haz clic en**Plantillas de certificado**, haz clic en **nuevo** y, a continuación, haz clic en**La plantilla de certificado para emitir**.
+12. En el panel de navegación del complemento entidad de certificación, haga clic en **plantillas de certificado**, haga clic en **New** y, a continuación, haga clic en **plantilla de certificado para emitir**.
 
-13. Haz clic en**La autenticación de usuario de VPN**y haz clic en**Aceptar**.
+13. Haga clic en **autenticación de usuario de VPN**y haga clic en **Aceptar**.
 
-14. Cierra el complemento theCertification entidad.
+14. Cierre el complemento entidad de certificación.
 
-## Crear la plantilla de autenticación de servidor VPN
+## <a name="create-the-vpn-server-authentication-template"></a>Crear la plantilla de autenticación de servidor VPN
 
-En este procedimiento, puedes configurar una nueva plantilla de autenticación de servidor para el servidor VPN. Agregar que la directiva de aplicación de seguridad IP (IPsec) IKE Intermediate permite que el servidor de certificados de filtro si hay más de un certificado con la autenticación de servidor extiende el uso de la clave.
+En este procedimiento, puede configurar una nueva plantilla de autenticación de servidor para el servidor VPN. Adición de que la directiva de seguridad IP (IPsec) IKE Intermediate aplicación permite al servidor filtro certificados si hay más de un certificado con la autenticación de servidor de uso mejorado de clave.
 
 >[!IMPORTANT] 
->Dado que los clientes VPN acceder a este servidor desde Internet pública, el asunto y los nombres alternativos son distintos del nombre de servidor interno. Como resultado, no puedes inscribir automáticamente este certificado en servidores VPN.
+>Dado que los clientes VPN de acceso a este servidor desde Internet público, el asunto y nombres alternativos son distintos del nombre interno del servidor. Como resultado, no puede inscribir automáticamente este certificado en servidores VPN.
 
 **Requisitos previos:**<p>
 Servidores VPN unido al dominio
 
 **Procedimiento:** 
 
-1.  En la entidad de certificación, abre la entidad de certificación.
+1.  En la CA, abra la entidad de certificación.
 
-2.  En el panel de navegación, haz clic en **Las plantillas de certificado**y haga clic en**Administrar**.
+2.  En el panel de navegación, haga clic en **plantillas de certificado**y haga clic en **administrar**.
 
-3.  En la consola de plantillas de certificado, haz clic en el**servidor RAS e IAS**y haga clic en la**Plantilla duplicada**.
+3.  En la consola de plantillas de certificado, haga clic en **servidor RAS e IAS**y haga clic en **Duplicar plantilla**.
 
-4.  En el cuadro de diálogo de propiedades de plantilla nueva, en**General**ficha, en el **nombre para mostrar plantilla**, escribe un nombre descriptivo para el servidor VPN, por ejemplo, **Autenticación de servidor VPN** o **Servidor RADIUS**.
+4.  En el cuadro de diálogo Propiedades de plantilla nueva, en el **General** ficha **nombre para mostrar plantilla**, escriba un nombre descriptivo para el servidor VPN, por ejemplo, **servidor VPN Autenticación** o **servidor RADIUS**.
 
-5.  En las**extensiones**pestaña, realiza los siguientes pasos:
+5.  En el **extensiones** ficha, realice los pasos siguientes:
 
-    1.  Haz clic en**Las directivas de aplicación**y haz clic en**Editar**.
+    1.  Haga clic en **las directivas de aplicación**y haga clic en **editar**.
 
-    2.  En el cuadro de diálogo **Editar extensión de directivas de aplicación** , haz clic en**Agregar**.
+    2.  En el **Editar extensión de directivas de aplicación** cuadro de diálogo, haga clic en **agregar**.
 
-    3.  En el cuadro de diálogo **Agregar directivas de aplicación** , haz clic en **seguridad IP IKE intermedia**y haz clic en **Aceptar**.<p>Agregar IP seguridad IKE intermedio para el EKU ayuda en escenarios donde existe más de un certificado de autenticación de servidor en el servidor VPN. Cuando está presente seguridad IP IKE intermedia, IPSec solo usa el certificado con ambas opciones EKU. Sin esta, podría producirse un error de autenticación IKEv2 con Error 13801: las credenciales de autenticación de IKE son inaceptables.
+    3.  En el **agregar directivas de aplicación** cuadro de diálogo, haga clic en **seguridad IP IKE intermedia**y haga clic en **Aceptar**.<p>Agregando la IP IKE intermedia para el EKU de seguridad ayuda a en escenarios donde existe más de un certificado de autenticación de servidor en el servidor VPN. Cuando está presente la seguridad IP IKE intermedia, IPSec usa solo el certificado con las opciones de EKU. Sin esto, podría producirse un error de autenticación de IKEv2 con Error 13801: Las credenciales de autenticación de IKE son inaceptables.
 
-    4.  Haz clic en **Aceptar** para volver a las**Propiedades de la nueva plantilla**cuadro de diálogo.
+    4.  Haga clic en **Aceptar** para volver a la **propiedades de plantilla nueva** cuadro de diálogo.
 
-6.  En la**seguridad**pestaña, realiza los siguientes pasos:
-
-    1.  Haz clic en **Agregar**.
-
-    2.  En el cuadro de diálogo **Seleccionar usuarios, equipos, cuentas de servicio o grupos** , escriba **Servidores VPN**y haz clic en **Aceptar**.
-
-    3.  En los **nombres de usuario o grupo**, haz clic en **Los servidores VPN**.
-
-    4.  En los **permisos de servidores VPN**, selecciona la casilla de verificación **inscribirse** en la columna **Permitir** .
-
-    5.  En los **nombres de usuario o grupo**, haz clic en **servidores RAS e IAS**y haz clic en **Eliminar**.
-
-7.  En la pestaña de **Nombre de sujeto** , realiza los siguientes pasos:
-
-    1.  Haz clic en **proporcionado por el solicitante**.
-
-    2.  En el cuadro de diálogo de advertencia de **Plantillas de certificado** , haz clic en **Aceptar**.
-
-8.  (Opcional) *Si va a configurar el acceso condicional para la conectividad de VPN*, haz clic en la pestaña de **Tratamiento de la solicitud** y haga clic en **Permitir que la clave privada se pueda exportar** para seleccionarlo.
-
-9.  Haz clic en**Aceptar** para guardar la plantilla de certificado de servidor VPN.
-
-10. Consola de plantillas de certificado cerrar.
-
-11. En el panel de navegación de la certificación en Authoritysnap, haz clic en**Las plantillas de certificado**, haz clic en **nuevo** y, a continuación, haz clic en**La plantilla de certificado para emitir**.
-
-12. Reinicie los servicios de la entidad de certificación.
-
-13. Selecciona el nombre que has elegido en el paso 4 anterior y haz clic en**Aceptar**.
-
-14. Cierra el complemento theCertification entidad.
-
-## Crear la plantilla de autenticación de servidor NPS
-
-La plantilla de certificado terceros y el último para crear es la plantilla de autenticación de servidor NPS. La plantilla de autenticación de servidor NPS es una copia simple de la plantilla de servidor RAS e IAS protegida en el grupo de servidor NPS que creaste anteriormente en esta sección. 
-
-Configurará este certificado para la inscripción automática.
-
-**Procedimiento:**
-
-1.  En la entidad de certificación, abre la entidad de certificación.
-
-2.  En el panel de navegación, haz clic en **Las plantillas de certificado**y haga clic en**Administrar**.
-
-3.  En la consola de plantillas de certificado, haz clic en el**servidor RAS e IAS**y selecciona la **Plantilla duplicada**.
-
-4.  En el cuadro de diálogo de propiedades de plantilla nueva, en**General**pestaña, en el **nombre para mostrar de plantilla**, tipo de **Autenticación de servidor NPS**.
-
-5.  En la**seguridad**pestaña, realiza los siguientes pasos:
+6.  En el **seguridad** ficha, realice los pasos siguientes:
 
     1.  Haz clic en **Agregar**.
 
-    2.  En el cuadro de diálogo **Seleccionar usuarios, equipos, cuentas de servicio o grupos** , escriba **Servidores NPS**y haz clic en **Aceptar**.
+    2.  En el **Seleccionar usuarios, equipos, cuentas de servicio o grupos** cuadro de diálogo, escriba **servidores VPN**y haga clic en **Aceptar**.
 
-    3.  En los **nombres de usuario o grupo**, haz clic en **Servidores NPS**.
+    3.  En **los nombres de usuario o grupo**, haga clic en **servidores VPN**.
 
-    4.  En los **permisos para servidores NPS**, selecciona las casillas de verificación de **inscripción** e **inscripción automática** en la columna **Permitir** .
+    4.  En **permisos para los servidores VPN**, seleccione el **inscribir** casilla de verificación en la **permitir** columna.
 
-    5.  En los **nombres de usuario o grupo**, haz clic en **servidores RAS e IAS**y haz clic en **Eliminar**.
+    5.  En **los nombres de usuario o grupo**, haga clic en **servidores RAS e IAS**y haga clic en **quitar**.
 
-6.  Haz clic en**Aceptar** para guardar la plantilla de certificado de servidor NPS.
+7.  En el **nombre de sujeto** ficha, realice los pasos siguientes:
 
-7.  Consola de plantillas de certificado cerrar.
+    1.  Haga clic en **proporcionado por el solicitante**.
 
-8.  En el panel de navegación de la certificación en Authoritysnap, haz clic en**Las plantillas de certificado**, haz clic en **nuevo** y, a continuación, haz clic en**La plantilla de certificado para emitir**.
+    2.  En el **plantillas de certificado** advertencia cuadro de diálogo, haga clic en **Aceptar**.
 
-9.  Haz clic en**La autenticación de servidor NPS**y haz clic en**Aceptar**.
+8.  (Opcional) *Si va a configurar el acceso condicional para la conectividad VPN*, haga clic en el **tratamiento de la solicitud** ficha y haga clic en **permitir que la clave privada se pueda exportar** para seleccionarlo.
 
-10. Cierra el complemento theCertification entidad.
+9.  Haga clic en **Aceptar** para guardar la plantilla de certificado de servidor VPN.
 
-## Inscribir y validar el certificado de usuario
+10. Cierre la consola de plantillas de certificado.
 
-Dado que estás usando la directiva de grupo para inscribir automáticamente los certificados de usuario, sólo necesita actualizar la directiva y Windows 10 se inscribirá automáticamente la cuenta de usuario para el certificado correcto. A continuación, se puede validar el certificado en la consola de certificados.
+11. En el panel de navegación del complemento entidad de certificación, haga clic en **plantillas de certificado**, haga clic en **New** y, a continuación, haga clic en **plantilla de certificado para emitir**.
+
+12. Reinicie los servicios de entidad emisora de certificados.
+
+13. Seleccione el nombre que eligió en el paso 4 anterior y haga clic en **Aceptar**.
+
+14. Cierre el complemento entidad de certificación.
+
+## <a name="create-the-nps-server-authentication-template"></a>Crear la plantilla de autenticación de servidor NPS
+
+Cree la plantilla de certificado de la tercera y última es la plantilla de autenticación del servidor NPS. La plantilla de autenticación del servidor NPS es una simple copia de la plantilla de servidor RAS e IAS protegida al grupo de servidores de NPS que creó anteriormente en esta sección. 
+
+Va a configurar este certificado para la inscripción automática.
 
 **Procedimiento:**
 
-1.  Inicia sesión como un miembro del grupo de **Usuarios de VPN** en un equipo cliente unido al dominio.
+1.  En la CA, abra la entidad de certificación.
 
-2.  Presiona la tecla Windows + R, **escriba/Force gpupdate**y presiona ENTRAR.
+2.  En el panel de navegación, haga clic en **plantillas de certificado**y haga clic en **administrar**.
 
-3.  En el menú Inicio, escriba **certmgr.msc**y presiona ENTRAR.
+3.  En la consola de plantillas de certificado, haga clic en **servidor RAS e IAS**y seleccione **Duplicar plantilla**.
 
-4.  En el complemento de certificados **Personal**, haga clic en **certificados**. Los certificados aparecen en el panel de detalles.
+4.  En el cuadro de diálogo Propiedades de plantilla nueva, en el **General** ficha **nombre para mostrar plantilla**, tipo **autenticación del servidor NPS**.
 
-5.  Haz clic en el certificado que tiene el nombre de usuario de dominio actual y, a continuación, haga clic en **Abrir**.
+5.  En el **seguridad** ficha, realice los pasos siguientes:
 
-6.  En la pestaña **General** , confirma que la fecha que aparece bajo **válido desde** es la fecha actual. Si no es así, es posible que hayas seleccionado el certificado incorrecto.
+    1.  Haz clic en **Agregar**.
 
-7.  Haz clic en **Aceptar**y cierra el complemento de certificados.
+    2.  En el **Seleccionar usuarios, equipos, cuentas de servicio o grupos** cuadro de diálogo, escriba **servidores NPS**y haga clic en **Aceptar**.
 
-## Inscribir y validar los certificados de servidor
+    3.  En **los nombres de usuario o grupo**, haga clic en **servidores NPS**.
 
-A diferencia de los certificados de usuario, deben inscribir manualmente el certificado del servidor VPN. Después de haber inscrito, validar mediante el mismo proceso que usaste para el certificado de usuario. Al igual que el certificado de usuario, el servidor NPS inscribe automáticamente su certificado de autenticación, por lo que todo lo que necesitas hacer es validar.
+    4.  En **permisos para los servidores NPS**, seleccione el **inscribir** y **inscripción automática** casillas de verificación en la **permitir** columna.
+
+    5.  En **los nombres de usuario o grupo**, haga clic en **servidores RAS e IAS**y haga clic en **quitar**.
+
+6.  Haga clic en **Aceptar** para guardar la plantilla de certificado de servidor NPS.
+
+7.  Cierre la consola de plantillas de certificado.
+
+8.  En el panel de navegación del complemento entidad de certificación, haga clic en **plantillas de certificado**, haga clic en **New** y, a continuación, haga clic en **plantilla de certificado para emitir**.
+
+9.  Haga clic en **autenticación del servidor NPS**y haga clic en **Aceptar**.
+
+10. Cierre el complemento entidad de certificación.
+
+## <a name="enroll-and-validate-the-user-certificate"></a>Inscribir y validar el certificado de usuario
+
+Dado que usa directiva de grupo para inscribir automáticamente certificados de usuario, solo se necesita actualizar la directiva y Windows 10 se inscribirá automáticamente la cuenta de usuario para el certificado correcto. A continuación, puede validar el certificado en la consola de certificados.
+
+**Procedimiento:**
+
+1.  Inicie sesión en un equipo cliente unido al dominio como un miembro de la **usuarios de VPN** grupo.
+
+2.  Presione la tecla Windows + R, escriba **gpupdate /force**, y presione ENTRAR.
+
+3.  En el menú Inicio, escriba **certmgr.msc**, y presione ENTRAR.
+
+4.  En el complemento certificados, en **Personal**, haga clic en **certificados**. Los certificados aparecen en el panel de detalles.
+
+5.  Haga clic en el certificado que tenga el nombre de usuario de dominio actual y, a continuación, haga clic en **abierto**.
+
+6.  En el **General** , confirme que la fecha aparece en **válido desde** es la fecha de hoy. Si no lo está, es posible que ha seleccionado el certificado incorrecto.
+
+7.  Haga clic en **Aceptar**y cierre el complemento certificados.
+
+## <a name="enroll-and-validate-the-server-certificates"></a>Inscribir y validar los certificados de servidor
+
+A diferencia de los certificados de usuario, debe inscribir manualmente certificados del servidor VPN. Una vez que haya inscrito, validar utilizando el mismo proceso que usó para el certificado de usuario. Al igual que el certificado de usuario, el servidor NPS inscribe automáticamente su certificado de autenticación, por lo que todo lo que necesita hacer es validarla.
 
 >[!NOTE] 
->Debes reiniciar los servidores VPN y NPS para que puedan actualizar su pertenencia a grupos para poder completar estos pasos.
+>Es posible que deba reiniciar los servidores VPN y NPS para que puedan actualizar su pertenencia a grupos para poder completar estos pasos.
 
-### Inscribir y validar el certificado del servidor VPN
+### <a name="enroll-and-validate-the-vpn-server-certificate"></a>Inscribir y validar el certificado del servidor VPN
 
-1.  En el menú de inicio del servidor VPN, escriba **certlm.msc**y presiona ENTRAR.
+1.  En el menú de inicio del servidor VPN, escriba **certlm.msc**, y presione ENTRAR.
 
-2.  Haz clic en **Personal**, haz clic en **Todas las tareas** y, a continuación, haz clic en **Solicitar un nuevo certificado** para iniciar al Asistente para la inscripción de certificados.
+2.  Haga clic en **Personal**, haga clic en **todas las tareas** y, a continuación, haga clic en **solicitar un nuevo certificado** para iniciar el Asistente para inscripción de certificados.
 
-3.  En la página Antes de comenzar, haz clic en **Siguiente**.
+3.  En la página antes de comenzar, haga clic en **siguiente**.
 
-4.  En la página Seleccionar directiva de inscripción de certificado, haz clic en **siguiente**.
+4.  En la página Seleccionar directiva de inscripción de certificados, haga clic en **siguiente**.
 
-5.  En la página solicitar certificados, haz clic en la casilla de verificación junto al servidor VPN para seleccionarlo.
+5.  En la página de solicitud de certificados, haga clic en la casilla de verificación junto al servidor VPN para seleccionarlo.
 
-6.  En la casilla de verificación del servidor VPN, haz clic en **que se necesita más información** para abrir el cuadro de diálogo de propiedades de certificado y realiza los siguientes pasos:
+6.  En la casilla de verificación del servidor VPN, haga clic en **se necesita más información** para abrir el cuadro de diálogo Propiedades del certificado y complete los pasos siguientes:
 
-    1.  Haga clic en la pestaña de **asunto** , **Nombre común** en **nombre de sujeto**, en **tipo**.
+    1.  Haga clic en el **asunto** , haga clic **nombre común** en **nombre de sujeto**, en **tipo**.
 
-    2.  En **nombre de sujeto**, en un **valor**, escribe el nombre de los clientes de dominio externo que se usan para conectarse a la VPN, por ejemplo, vpn.contoso.com y haz clic en **Agregar**.
+    2.  En **nombre de sujeto**, en **valor**, escriba el nombre de los clientes de dominio externo que se usa para conectarse a la VPN, por ejemplo, vpn.contoso.com y haga clic en **agregar**.
 
-    3.  **Nombre alternativo**, en **tipo**, haz clic en **DNS**.
+    3.  En **nombre alternativo**, en **tipo**, haga clic en **DNS**.
 
-    4.  **Nombre alternativo**, en un **valor**, escribe todos el servidor de los clientes de nombres que se usan para conectarse a la VPN, por ejemplo, vpn.contoso.com, vpn, 132.64.86.2.
+    4.  En **nombre alternativo**, en **valor**, escriba todos los nombres de servidor, los clientes usan para conectarse a la VPN, por ejemplo, vpn.contoso.com, vpn, 132.64.86.2.
 
-    5.  Después de escribir cada nombre, haz clic en **Agregar** .
+    5.  Haga clic en **agregar** después de escribir cada nombre.
 
     6.  Al finalizar, haz clic en **Aceptar**.
 
 7.  Haz clic en **Inscribir.**
 
-8.  Haz clic en **Finalizar**.
+8.  Haga clic en **Finalizar**.
 
-9.  En el complemento de certificados **Personal**, haga clic en **certificados**.<p>Los certificados que se enumeran aparecen en el panel de detalles.
+9.  En el complemento certificados, en **Personal**, haga clic en **certificados**.<p>Los certificados de la lista aparecen en el panel de detalles.
 
-10. Haz clic en el certificado que tiene el nombre del servidor VPN y, a continuación, haga clic en **Abrir**.
+10. Haga clic en el certificado con el servidor VPN asigne un nombre y, a continuación, haga clic en **abierto**.
 
-11. En la pestaña **General** , confirma que la fecha que aparece bajo **válido desde** es la fecha actual. Si no es así, es posible que hayas seleccionado el certificado correcto.
+11. En el **General** , confirme que la fecha aparece en **válido desde** es la fecha de hoy. Si no lo está, es posible que ha seleccionado un certificado incorrecto.
 
-12. En la pestaña **Detalles** , haz clic en **Uso mejorado de claves**y comprobar que la **Autenticación de servidor** y **seguridad IP IKE intermedia** se muestran en la lista.
+12. En el **detalles** , haga clic **uso mejorado de clave**y compruebe que **seguridad IP IKE intermedia** y **autenticación de servidor** mostrar en la lista.
 
-13. Haz clic en **Aceptar** para cerrar el certificado.
+13. Haga clic en **Aceptar** para cerrar el certificado.
 
-14. Cierra el complemento de certificados.
+14. Cierre el complemento certificados.
 
-### Validar el certificado de servidor NPS
+### <a name="validate-the-nps-server-certificate"></a>Validar el certificado de servidor NPS
 
-1.  Reinicia el servidor NPS.
+1.  Reinicie el servidor NPS.
 
-2.  En el menú de inicio del servidor NPS, escriba **certlm.msc**y presiona ENTRAR.
+2.  En el menú de inicio del servidor NPS, escriba **certlm.msc**, y presione ENTRAR.
 
-3.  En el complemento de certificados **Personal**, haga clic en **certificados**.<p>Los certificados que se enumeran aparecen en el panel de detalles.
+3.  En el complemento certificados, en **Personal**, haga clic en **certificados**.<p>Los certificados de la lista aparecen en el panel de detalles.
 
-4.  Haz clic en el certificado que tiene el nombre del servidor NPS y, a continuación, haga clic en **Abrir**.
+4.  Haga clic en el certificado que tiene el servidor NPS asigne un nombre y, a continuación, haga clic en **abierto**.
 
-5.  En la pestaña **General** , confirma que la fecha que aparece bajo **válido desde** es la fecha actual. Si no es así, es posible que hayas seleccionado el certificado correcto.
+5.  En el **General** , confirme que la fecha aparece en **válido desde** es la fecha de hoy. Si no lo está, es posible que ha seleccionado un certificado incorrecto.
 
-6.  Haz clic en **Aceptar** para cerrar el certificado.
+6.  Haga clic en **Aceptar** para cerrar el certificado.
 
-7.  Cierra el complemento de certificados.
+7.  Cierre el complemento certificados.
 
-## Paso siguiente
-Paso 3 de [. Configurar el servidor de acceso remoto para VPN siempre activada](vpn-deploy-ras.md): en este paso, configuren VPN de acceso remoto para permitir conexiones VPN IKEv2, denegar conexiones desde otros protocolos VPN y asignar un conjunto de direcciones IP estáticas para su emisión de direcciones IP a la conexión clientes VPN autorizados.
+## <a name="next-step"></a>Paso siguiente
+[Paso 3. Configurar el servidor de acceso remoto para siempre en VPN](vpn-deploy-ras.md): En este paso, configure una VPN de acceso remoto para permitir conexiones VPN de IKEv2, denegar las conexiones desde otros protocolos VPN y asignar un grupo de direcciones IP estáticas para la emisión de direcciones IP a la conexión de los clientes VPN autorizados.
 
 
 
