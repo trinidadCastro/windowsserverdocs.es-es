@@ -1,7 +1,7 @@
 ---
 ms.assetid: cea6011d-3753-4b95-aaa5-38d4e97d6e42
-title: Preparar los equipos cliente en la cuenta de Partner
-description: 
+title: Preparar los equipos cliente en el asociado de cuenta
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,27 +10,28 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 0c5bdcb0a80b15a1905109229ddd20ee642a8dd7
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868526"
 ---
-# <a name="prepare-client-computers-in-the-account-partner"></a>Preparar los equipos cliente en la cuenta de Partner
+# <a name="prepare-client-computers-in-the-account-partner"></a>Preparar los equipos cliente en el asociado de cuenta
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-La forma más sencilla para que un administrador de una organización de partner de la cuenta para preparar los equipos cliente para obtener acceso a los servicios de federación de Active Directory \(AD FS\) federados aplicaciones es usar la directiva de grupo. Directiva de grupo ofrece una manera cómoda para insertar los certificados específicos y opciones de configuración necesarias para federación a todos los equipos cliente que se usará para acceder a aplicaciones federadas.  
+La manera más fácil para que un administrador en una cuenta de organización preparar los equipos cliente para tener acceso a los servicios de federación de Active Directory asociado \(AD FS\) aplicaciones federadas es usar la directiva de grupo. La directiva de grupo proporciona una manera cómoda para insertar certificados y valores de configuración específicos que son necesarios para la federación a todos los equipos cliente que se usarán para el acceso a las aplicaciones federadas.  
   
-Para que los equipos cliente puedan acceder fácilmente aplicaciones federadas sin peticiones de certificado o mensajes de relacionados con el sitio de confianza, recomendamos que primero preparar cada equipo cliente antes de implementar AD FS ampliamente en la organización. Considera la posibilidad de usar la directiva de grupo para automáticamente:  
+Para que los equipos cliente puedan acceder sin problemas las aplicaciones federadas sin solicitudes de certificado o preguntas relacionados con el sitio de confianza, se recomienda preparar cada equipo cliente antes de implementar AD FS ampliamente en su organización. Considere usar la directiva de grupo para realizar automáticamente las siguientes acciones:  
   
--   Configura Internet Explorer en cada equipo cliente para confiar en el servidor de federación de cuenta.  
+-   Configurar Internet Explorer en cada equipo cliente debe confiar en el servidor de federación de cuenta.  
   
-    Para obtener más información, consulta [configurar equipos cliente para confiar en el servidor de federación de cuenta](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md).  
+    Para obtener más información, consulte [Configure Client Computers to Trust the Account Federation Server](../../ad-fs/deployment/Configure-Client-Computers-to-Trust-the-Account-Federation-Server.md).  
   
--   Instalar el servidor de federación de cuenta adecuado, servidor de federación de recursos y certificados de capa de Sockets seguros \(SSL\) del servidor Web \ (o equivalente certificados que se encadenan a una confianza root\) en cada equipo cliente.  
+-   Instalar el servidor de federación de cuenta correspondiente, el servidor de federación de recursos y el servidor Web Secure Sockets Layer \(SSL\) certificados \(o equivalente en los certificados vinculados a una raíz de confianza\) en cada uno equipo cliente.  
   
-    Para obtener más información, consulta [distribuir certificados en los equipos cliente mediante la directiva de grupo](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md).  
+    Para obtener más información, consulte [distribuir certificados a los equipos cliente mediante la directiva de grupo](../../ad-fs/deployment/Distribute-Certificates-to-Client-Computers-by-Using-Group-Policy.md).  
   
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

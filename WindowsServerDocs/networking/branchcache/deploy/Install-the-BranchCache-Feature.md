@@ -1,6 +1,6 @@
 ---
 title: Instalar la característica BranchCache
-description: En este tema es parte de la BranchCache implementación Guía para Windows Server 2016, que se muestra cómo implementar BranchCache en modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN en sucursales
+description: En este tema forma parte de BranchCache Deployment Guide para Windows Server 2016, que demuestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN de sucursales
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,24 +8,25 @@ ms.topic: get-started-article
 ms.assetid: 4f31dc61-2dbe-4c7e-b3f9-85ae49a45049
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a69848536b56521da9b5ef07689aba7f8690e888
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 8b4aecd9e9355a6c2d5ac485ac77c76428fe295f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59872196"
 ---
 # <a name="install-the-branchcache-feature"></a>Instalar la característica BranchCache
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este procedimiento para instalar la característica BranchCache e iniciar el servicio de BranchCache en un equipo que ejecute Windows Server&reg; de 2016, Windows Server 2012 R2 o Windows Server 2012.  
+Puede usar este procedimiento para instalar la característica BranchCache e iniciar el servicio de BranchCache en un equipo que ejecuta Windows Server&reg; 2016, Windows Server 2012 R2 o Windows Server 2012.  
   
-Pertenencia a **administradores** o equivalente, es lo mínimo necesario para realizar este procedimiento.  
+El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o un grupo equivalente.  
   
-Antes de realizar este procedimiento, se recomienda que instala y configura tu servidor Web o aplicación basada en BITS.  
+Antes de realizar este procedimiento, se recomienda que instale y configure su aplicación basada en BITS o el servidor Web.  
   
 > [!NOTE]  
-> Para realizar este procedimiento mediante Windows PowerShell, ejecuta Windows PowerShell como administrador, escribe los siguientes comandos en el símbolo del sistema de Windows PowerShell y, a continuación, presione ENTRAR.  
+> Para llevar a cabo este procedimiento con Windows PowerShell, ejecute Windows PowerShell como administrador, escriba los siguientes comandos en el símbolo del sistema de Windows PowerShell y, a continuación, presione ENTRAR.  
 >   
 > `Install-WindowsFeature BranchCache`  
 >   
@@ -33,19 +34,19 @@ Antes de realizar este procedimiento, se recomienda que instala y configura tu s
   
 ### <a name="to-install-and-enable-the-branchcache-feature"></a>Para instalar y habilitar la característica BranchCache  
   
-1.  En el administrador del servidor, haz clic en **administrar**y, a continuación, haz clic en **agregar Roles y características**. Abre el Asistente para agregar Roles y características. Haz clic en **siguiente**.  
+1.  En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el Asistente para agregar Roles y características. Haz clic en **Siguiente**.  
   
-2.  En **selecciona el tipo de instalación**, asegúrate de que **instalación basada en rol o característica** está seleccionado y, a continuación, haz clic en **siguiente**.  
+2.  En **Seleccionar tipo de instalación**, asegúrese de que **instalación basada en roles o basada en características** está seleccionada y, a continuación, haga clic en **siguiente**.  
   
-3.  En **servidor de destino selecciona**, asegúrate de que el servidor correcto está seleccionado y, a continuación, haz clic en **siguiente**.  
+3.  En **Seleccionar servidor de destino**, asegúrese de que el servidor correcto está seleccionado y, a continuación, haga clic en **siguiente**.  
   
-4.  En **seleccionar roles de servidor**, haz clic en **siguiente**.  
+4.  En **Seleccionar roles de servidor**, haz clic en **Siguiente**.  
   
-5.  En **Select features**, haz clic en **BranchCache**y, a continuación, haz clic en **siguiente**.  
+5.  En **seleccionar características**, haga clic en **BranchCache**y, a continuación, haga clic en **siguiente**.  
   
-6.  En **Confirmar selecciones de instalación**, haz clic en **instalar**. En **progreso de la instalación**, la instalación de la característica BranchCache continuará. Una vez finalizada la instalación, haz clic en **cerrar**.  
+6.  En **Confirmar selecciones de instalación**, haga clic en **Instalar**. En **progreso de la instalación**, continúa la instalación de la característica BranchCache. Cuando se complete la instalación, haga clic en **cerrar**.  
   
-Después de instalar la característica BranchCache, el servicio BranchCache - también se denomina la PeerDistSvc - está habilitado y el tipo de inicio es automático.  
+Después de instalar la característica BranchCache, el servicio BranchCache - también se denomina el PeerDistSvc - está habilitado y el tipo de inicio es automático.  
   
 
 

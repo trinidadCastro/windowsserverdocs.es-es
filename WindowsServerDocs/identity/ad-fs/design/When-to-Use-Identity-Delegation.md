@@ -1,7 +1,7 @@
 ---
 ms.assetid: 6e711a96-9055-4508-b6d4-318d6aa95fd1
-title: "Cuándo usar la delegación de identidad"
-description: 
+title: Cuándo se debe usar la delegación de identidad
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,54 +10,55 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: af227d9e87ddb73f194dd46c8ce45fcdf12a34cf
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59872556"
 ---
-# <a name="when-to-use-identity-delegation"></a>Cuándo usar la delegación de identidad
+# <a name="when-to-use-identity-delegation"></a>Cuándo se debe usar la delegación de identidad
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
   
 ## <a name="what-is-identity-delegation"></a>¿Qué es la delegación de identidad?  
-Delegación de identidad es una característica de \(AD FS\) los servicios de federación de Active Directory que permite a las cuentas especificado administrator\ suplantar a los usuarios. Se llama a la cuenta que representa al usuario la *delegado*. Esta funcionalidad de delegación es fundamental para muchas aplicaciones distribuidas para que hay una serie de acceso comprobaciones de control que deben realizarse de forma secuencial para cada aplicación, la base de datos o el servicio que está en la cadena de autorización para la solicitud de origen. Muchos real\-world escenarios en que una aplicación "front-end Web" debe recuperar los datos de una más segura "back-end", como un servicio Web que está conectado a una base de datos de Microsoft SQL Server.  
+Delegación de identidad es una característica de Active Directory Federation Services \(AD FS\) que permite administrador\-especificó cuentas para suplantar a los usuarios. La cuenta que suplanta al usuario se denomina *delegada*. Esta capacidad de delegación es fundamental para muchas aplicaciones distribuidas para las que hay una serie de comprobaciones de control de acceso que deben realizarse de forma secuencial para cada aplicación, base de datos o servicio que está en la cadena de autorización para la solicitud original. Muchos real\-existen situaciones del mundo en el que una aplicación Web "front-end" debe recuperar datos de un "back-end" más seguro, como un servicio Web que está conectado a una base de datos de Microsoft SQL Server.  
   
-Por ejemplo, un sitio Web existente de ordenación parts\ pueden mejorarse mediante programación para que permita las organizaciones ver su propio estado compra, historial y cuenta de partner. Por motivos de seguridad, datos financieros de todos los partners se almacena en una base de datos segura en un servidor de lenguaje de consulta estructurado \(SQL\) dedicado. En esta situación, el código de la aplicación front\ final sabe nada datos financieros en de la organización de partner. Por lo tanto, deben recuperar los datos desde otro equipo en otra parte de la red que hospeda \ (en este case\) el servicio Web para la base de datos de partes \(the back end\).  
+Por ejemplo, los elementos existentes\-ordenación sitio Web puede mejorarse mediante programación para que permita asociado a las organizaciones ver su propio estado de historial y la cuenta de compra. Por motivos de seguridad, todos los datos financieros de socios comerciales se almacena en una base de datos segura en un lenguaje de consulta estructurado dedicado \(SQL\) server. En esta situación, el código en la parte delantera\-aplicación end no sabe nada acerca de los datos financieros de la organización del asociado. Por lo tanto, deben recuperar los datos desde otro equipo en otro lugar de la red que hospeda \(en este caso\) el servicio Web para la base de datos de partes \(el back-end\).  
   
-Para que este proceso de recuperación de data\ correctamente, algunas sucesión de autorización "sacudida hand\" debe tener se coloca entre la aplicación Web y el servicio Web para la base de datos de elementos, como se muestra en la siguiente ilustración.  
+Para estos datos\-proceso de recuperación se realice correctamente, alguna sucesión de autorización "mano\-agita" debe tener lugar entre la aplicación Web y el servicio Web para la base de datos de partes, como se muestra en la siguiente ilustración.  
   
 ![delegación de identidad](media/adfs2_identitydelegationconcept.gif)  
   
-Dado que el propio servidor Web, que es probable que se encuentra en una organización completamente distinta de la organización del usuario que intenta obtener acceso al servidor Web, se realizó la solicitud original el token de seguridad que se envía junto con la solicitud no cumple los criterios de autorización necesarios para acceder a cualquier otro equipo, además del servidor Web. Por lo tanto, la única manera de que se puede cumplir la solicitud de usuario de origen es colocar un servidor de federación intermedio en la organización de partner de recurso para ayudar con volver a emitir un token de seguridad que tienen los privilegios necesarios.  
+Dado que la solicitud original se realizó en el propio servidor web, que es probable que se encuentre en una organización completamente diferente de la organización del usuario que está intentando tener acceso al servidor web, el token de seguridad que se envía con la solicitud no cumple los criterios de autorización necesarios para tener acceso a cualquier otro equipo además del servidor web. Por lo tanto, la única manera en que se puede cumplir la solicitud del usuario original es colocando un servidor de federación intermedio en la organización del asociado de recursos para ayudar a volver a emitir un token de seguridad que tenga los privilegios de acceso necesarios.  
   
-## <a name="how-does-identity-delegation-work"></a>¿Cómo funciona la delegación de identidad?  
-Aplicaciones Web en arquitecturas de varios niveles de aplicaciones a menudo llamar a servicios Web para acceder a datos o funciones comunes. Es importante para estos servicios Web saber la identidad del usuario original para que el servicio pueda tomar decisiones de autorización y facilitar la auditoría. En este caso, la aplicación Web front\ representa al usuario al servicio Web como una función delegada. AD FS facilita este escenario al permitir que las cuentas de Active Directory para que actúe como un usuario a otro usuario de confianza. Se muestra un escenario de delegación de identidad en la siguiente ilustración.  
+## <a name="how-does-identity-delegation-work"></a>¿Cómo funciona la delegación de identidades?  
+Las aplicaciones web de arquitecturas de aplicación de varios niveles a menudo llaman a servicios web para tener acceso a funcionalidades o datos comunes. Es importante para estos servicios web conocer la identidad del usuario original para que el servicio pueda tomar decisiones de autorización y facilitar la auditoría. En este caso, la parte delantera\-end de aplicación Web representa al usuario al servicio Web como un delegado. AD FS facilita este escenario permitiendo que las cuentas de Active Directory para que actúe como un usuario a otro usuario de confianza. En la siguiente ilustración, se muestra un escenario de delegación de identidad.  
   
 ![delegación de identidad](media/adfs2_identitydelegationsteps.gif)  
   
-1.  Francisco intenta obtener acceso a historial de pedidos part\ desde una aplicación Web en otra organización. Su equipo cliente solicita y recibe un token de AD FS para la aplicación Web para solicitar part\ front\-end.  
+1.  Frank intenta obtener acceso a parte\-ordenación historial desde una aplicación Web en otra organización. Su equipo cliente solicita y recibe un token de AD FS para la parte delantera\-finalizar parte\-aplicación Web de pedidos.  
   
-2.  El equipo cliente envía una solicitud a la aplicación Web, incluido el token obtenido en el paso 1, para demostrar la identidad del cliente.  
+2.  El equipo cliente envía una solicitud a la aplicación web, incluido el token obtenido en el paso 1, para demostrar la identidad del cliente.  
   
-3.  La aplicación Web necesita comunicarse con el servicio Web para completar la transacción para el cliente. La aplicación Web pone en contacto con AD FS para obtener un token de delegación para interactuar con el servicio Web. Los tokens de delegación son tokens de seguridad que se emiten en un delegado para que actúe como un usuario. AD FS devuelve un token de delegación con solicitudes acerca del cliente, de destino para el servicio Web.  
+3.  La aplicación web necesita comunicarse con el servicio web para completar su transacción para el cliente. La aplicación Web pone en contacto con AD FS para obtener un token de delegación para interactuar con el servicio Web. Los tokens de delegación son tokens de seguridad que se emiten a un delegado para que actúen como un usuario. AD FS devuelve un token de delegación con notificaciones sobre el cliente, destinadas al servicio Web.  
   
-4.  La aplicación Web usa el token que se ha obtenido de AD FS en el paso 3 para acceder al servicio Web que actúa como el cliente. Examina el token de delegación, el servicio Web puede determinar que la aplicación Web actúa como el cliente. El servicio Web ejecuta su directiva de autorización, inicia la solicitud y proporciona datos del historial que se solicitó originalmente por Frank a la aplicación Web de los elementos necesarios y, por lo tanto a Tomás.  
+4.  La aplicación Web usa el token obtenido de AD FS en el paso 3 para tener acceso al servicio Web que actúa como el cliente. Al examinar el token de delegación, el servicio web puede determinar que la aplicación web actúa como el cliente. El servicio web ejecuta su directiva de autorización, registra la solicitud y proporciona los datos del historial de elementos necesarios solicitados originalmente por Frank a la aplicación web y, por tanto a Frank.  
   
-Para un delegado particular, AD FS puede limitar los servicios Web para que la aplicación Web puede solicitar un token de la delegación. El equipo cliente no tengan una cuenta de Active Directory para realizar esta operación correctamente. Por último, como se mencionó anteriormente, el servicio Web puede determinar fácilmente la identidad del delegado que actúa como el usuario. Esto permite a los servicios Web un comportamiento diferente en función de si están hablando directamente en el equipo cliente o a través de un delegado.  
+Para un determinado delegado, AD FS puede limitar los servicios Web para que la aplicación Web puede solicitar un token de delegación. El equipo cliente no tiene ninguna cuenta de Active Directory para realizar esta operación correctamente. Por último, como se indicó anteriormente, el servicio web puede determinar fácilmente la identidad del delegado que actúa como usuario. Esto permite a los servicios web mostrar un comportamiento diferente en función de si están hablando directamente con el equipo cliente o a través de un delegado.  
   
-## <a name="configuring-ad-fs-for-identity-delegation"></a>Configurar AD FS para la delegación de identidad  
-Puedes usar la administración de AD FS snap\ en configurar AD FS para la delegación de identidad siempre que necesitas facilitar el proceso de recuperación de datos. Después de configurarlo, AD FS puede generar nuevos tokens de seguridad que se incluyen el contexto de autorización que puede requerir el servicio back\-end para que pueda proporcionar acceso a los datos protegidos.  
+## <a name="configuring-ad-fs-for-identity-delegation"></a>Configuración de AD FS para la delegación de identidad  
+Puede usar el complemento Administración de AD FS\-en para configurar AD FS para la delegación de identidad cuando necesite facilitar el proceso de recuperación de datos. Después de configurarlo, AD FS puede generar nuevos tokens de seguridad que incluyen el contexto de autorización que la parte trasera\-puede requerir el servicio de extremo para que pueda proporcionar acceso a los datos protegidos.  
   
-AD FS no restringe los usuarios que puedan representar. Después de configurar AD FS para la delegación de identidad, realiza lo siguiente:  
+AD FS no restringe qué usuarios se pueden suplantar. Después de configurar AD FS para la delegación de identidad, ocurre lo siguiente:  
   
--   Determina qué servidores pueden delegar la entidad de solicitud tokens para suplantar a un usuario.  
+-   Determina a qué servidores se puede delegar la autoridad para solicitar a los tokens que suplanten a un usuario.  
   
--   Establece y mantiene separados el contexto de identidad para la cuenta del cliente que se delega y el servidor que actúa como una función delegada.  
+-   Establece y mantiene separados el contexto de identidad para la cuenta de cliente que se delega y el servidor que actúa como delegado.  
   
-Puede configurar la delegación de identidad agregando las reglas de autorización de la delegación a una usuario de confianza confianza de terceros en la administración de AD FS snap\ en. Para obtener más información sobre cómo hacerlo, consulta [lista de comprobación: crear reglas de notificación para una confianza de terceros confiar](../../ad-fs/deployment/Checklist--Creating-Claim-Rules-for-a-Relying-Party-Trust.md).  
+Puede configurar la delegación de identidad mediante la adición de reglas de autorización de delegación para un usuario de confianza confiar en el complemento Administración de AD FS\-en. Para obtener más información acerca de cómo hacerlo, consulte [lista de comprobación: Creación de reglas de notificación para una relación de confianza para usuario autenticado](../../ad-fs/deployment/Checklist--Creating-Claim-Rules-for-a-Relying-Party-Trust.md).  
   
-## <a name="configuring-the-front-end-web-application-for-identity-delegation"></a>Configuración de la aplicación de Web front\ final para la delegación de identidad  
-Los desarrolladores tienen varias opciones que se pueden usar para programar correctamente el final de front\ aplicación o servicio Web para redirigir las solicitudes de delegación a un equipo de AD FS. Para obtener más información sobre cómo personalizar una aplicación Web para que funcione con la delegación de identidad, consulta el [SDK de identidad de Windows Foundation](https://go.microsoft.com/fwlink/?LinkId=122266).  
+## <a name="configuring-the-front-end-web-application-for-identity-delegation"></a>Configuración de la parte delantera\-finalizar la aplicación Web para la delegación de identidad  
+Los desarrolladores tienen varias opciones que pueden usar para programar correctamente la parte delantera de la Web\-finalizar la aplicación o servicio para redirigir las solicitudes de delegación en un equipo de AD FS. Para obtener más información sobre cómo personalizar una aplicación web para que funcione con la delegación de identidad, consulte el [SDK de Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=122266).  
   
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

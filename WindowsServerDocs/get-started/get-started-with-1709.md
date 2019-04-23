@@ -10,20 +10,20 @@ ms.date: 12/5/2017
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 9cf87597-b15d-4f43-8aa1-91e60367f011
-ms.openlocfilehash: a2da7b8437a9dc7f44fc83837e3ebad93b7fe3ab
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
-ms.translationtype: HT
+ms.openlocfilehash: 96f098457b9bac4541421c7889aefb030e3d8804
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "1410407"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868806"
 ---
 # <a name="introducing-windows-server-version-1709"></a>Introducción a Windows Server, versión 1709
 
->Se aplica a: WindowsServer (canal semianual)
+>Se aplica a: Windows Server (Canal semianual)
 
-**Windows Server, versión 1709 es el primer lanzamiento en el nuevo canal semianual.** 
+**Windows Server, versión 1709 es la primera versión en el nuevo canal semianual.** 
 
-## <a name="what-the-semi-annual-channel-is--and-isnt"></a>Qué es el canal semianual y qué no
+## <a name="what-the-semi-annual-channel-is--and-isnt"></a>Qué es el Canal semianual y qué no es
 Al ser la primera versión en este nuevo canal, Windows Server, versión 1709 *no* es una "actualización" o "service pack" para Windows Server 2016. Es la primera de las dos versiones anuales de servidor en una **nueva pista de versiones** que está diseñada para los clientes que se mueven con una "cadencia de la nube", como por ejemplo, aquellos con ciclos de desarrollo rápidos o proveedores de servicios de alojamiento que se mantienen al día en las últimas inversiones en Hyper-V. Cada versión de esta pista tendrá soporte técnico durante 18 meses desde el lanzamiento inicial. Para más información sobre el canal semianual y **sugerencias para decidir a qué canal unirse** (o permanecer en el mismo) consulta [Información general del canal semianual](semi-annual-channel-overview.md).
 
 
@@ -56,11 +56,11 @@ Para obtener una vista completa de los principales datos sobre Windows Server, v
 
 Esta versión debe instalarse como una instalación limpia.
 
-- VLSC: los clientes de licencias por volumen [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) pueden obtener esta versión si se dirigen al [Centro de servicios de licencias por volumen](https://www.microsoft.com/Licensing/servicecenter/default.aspx) y haces clic en **Inicio de sesión**. Luego haz clic en **Descargas y claves** y busca esta versión. 
+- VLSC: Los clientes de licencias por volumen con [Software Assurance](https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx) puede obtener esta versión, vaya a la [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx) y haga clic en **sesión**. Luego haz clic en **Descargas y claves** y busca esta versión. 
 
 - Windows Server, versión 1709, también está disponible en  [Microsoft Azure](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.WindowsServer?tab=Overview).
 
-- En el caso de participantes de **Suscripciones de Visual Studio:** si ya participas en Suscripciones de Visual Studio, puedes obtener Windows Server, versión 1709 si te diriges a la [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347) y realizas la descarga disponible. Si ya no eres un suscriptor, dirígete a [Suscripciones de Visual Studio](https://www.visualstudio.com/subscriptions/) para registrarte y luego visita la [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347) tal y como se indica anteriormente. Las versiones obtenidas a través de suscripciones de Visual Studio son solo para desarrollo y pruebas.
+- Los participantes en **suscripciones de Visual Studio:** Si ya participa en suscripciones de Visual Studio, puede obtener Windows Server, versión 1709, vaya a la [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347) y completar la descarga disponible allí. Si ya no eres un suscriptor, dirígete a [Suscripciones de Visual Studio](https://www.visualstudio.com/subscriptions/) para registrarte y luego visita la [página de descarga de suscriptor de Visual Studio](https://my.visualstudio.com/downloads?pid=2347) tal y como se indica anteriormente. Las versiones obtenidas a través de suscripciones de Visual Studio son solo para desarrollo y pruebas.
 
 
 

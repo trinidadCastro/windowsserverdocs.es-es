@@ -1,66 +1,67 @@
 ---
 ms.assetid: aac117a7-aa7a-4322-96ae-e3cc22ada036
-title: "Administración de emisión RID"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Administrar la emisión de RID
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: f84bcc1aa32e9993903e094fc43feffcbe16a05b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 49798f785fe02b5a97fd8bd979c327b86c9ddef2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59874226"
 ---
-# <a name="managing-rid-issuance"></a>Administración de emisión RID
+# <a name="managing-rid-issuance"></a>Administrar la emisión de RID
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En este tema se explica el cambio el maestro FSMO RID, incluida la emisión nuevo y supervisar la funcionalidad en el maestro RID y cómo analizar y solucionar problemas de emisión RID.  
+En este tema, se explica el cambio al rol FSMO del maestro de RID. Incluye la nueva funcionalidad de emisión y supervisión del maestro de RID y explica cómo analizar la emisión de RID y solucionar los problemas de la emisión de RID.  
   
--   [Administración de emisión RID](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Manage)  
+-   [Administración de la emisión de RID](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Manage)  
   
--   [Solución de problemas de emisión RID](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Tshoot)  
+-   [Solución de problemas de emisión de RID](../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_Tshoot)  
   
-Más información está disponible en la [AskDS Blog](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx).  
+Hay disponible más información en el [AskDS Blog](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx).  
   
-## <a name="BKMK_Manage"></a>Administración de emisión RID  
-De forma predeterminada, un dominio tiene capacidad de entidades de seguridad de aproximadamente mil millones, como los usuarios, grupos y equipos. Naturalmente, no hay ningún dominio con ese muchos objetos que se usaba activamente. Sin embargo, la asistencia al cliente de Microsoft ha encontrado casos donde:  
+## <a name="BKMK_Manage"></a>Administración de la emisión de RID  
+De forma predeterminada, cada dominio tiene capacidad para, aproximadamente, mil millones de entidades de seguridad, como usuarios, grupos y equipos. Obviamente, no hay ningún dominio en el que se utilicen activamente tantos objetos. Sin embargo, el servicio de asistencia al cliente de Microsoft encontró casos en los que:  
   
--   Aprovisionamiento de software o scripts administrativos accidentalmente masiva había creado a los usuarios, grupos y equipos.  
+-   El software de aprovisionamiento o los scripts administrativos acumulan accidentalmente los usuarios, grupos y equipos creados.  
   
--   Muchos de seguridad no usados y grupos de distribución creados por los usuarios delegados  
+-   Los usuarios delegados crearon muchos grupos de distribución y seguridad que no se utilizan.  
   
--   Muchos controladores de dominio se degradarán, restaurando, o metadatos limpiar  
+-   Se disminuyeron de nivel o se restauraron muchos controladores de dominio, o se limpiaron sus metadatos.  
   
--   Se realizaron recuperaciones del bosque  
+-   Se realizaron recuperaciones de bosques.  
   
--   Se realizó la operación de InvalidateRidPool con frecuencia  
+-   La operación InvalidateRidPool se llevó a cabo con frecuencia.  
   
--   El valor del registro de tamaño de bloque LIBRARSE aumentaba incorrectamente  
+-   El valor del Registro correspondiente al tamaño de los bloques de RID se incrementó de forma incorrecta.  
   
-Todas estas situaciones usan RID innecesariamente, a menudo por error. Durante muchos años, unas pocos entornos no tiene suficiente RID y esto fuerza a migrar a un dominio nuevo o realizar recuperaciones bosque.  
+Todas estas situaciones consumen RID innecesariamente, a menudo por error. Tras muchos años, algunos entornos se quedaron sin RID y esto los obligó a migrar a un nuevo dominio o realizar recuperaciones de bosques.  
   
-Windows Server 2012 tratan problemas relacionados con la asignación de RID que han quedado solo problemáticas con la edad y universalidad de Active Directory. Estos incluyen un mejor registro de eventos, límites más apropiados y la capacidad de - de emergencia - para duplicar el tamaño general del espacio de RID global para un dominio.  
+Windows Server 2012 se ocupa de los problemas relacionados con la asignación de RID que aparecieron con los años y la extensión de Active Directory. Estos incluyen el registro de eventos mejorado, límites más apropiados y la capacidad para: en una emergencia - duplicar el tamaño total del espacio global de RID para un dominio.  
   
-### <a name="periodic-consumption-warnings"></a>Advertencias de consumo periódicas  
-Windows Server 2012 agrega global que seguimiento de eventos de espacio RID proporciona advertencias tempranas cuando se cruzan hitos principales. El modelo calcula el porcentaje de diez (10), utiliza la marca en el grupo global y registra un evento cuando llega. A continuación, calcula el porcentaje de diez siguiente utilizado pendiente de y sigue el ciclo de evento. Como se ha agotado el espacio global de RID, eventos acelerará como diez por ciento aciertos con mayor rapidez en un grupo decreciente (pero atenuación de registro de eventos impedirá más de una entrada por hora). El registro de eventos del sistema en cada controlador de dominio escribe eventos de advertencia de servicios de directorio de SAM 16658.  
+### <a name="periodic-consumption-warnings"></a>Advertencias periódicas de consumo  
+Windows Server 2012 agrega un seguimiento de eventos relacionados con el espacio global de RID que proporciona advertencias anticipadas cuando se alcanzan los hitos principales. El modelo calcula la marca del diez (10) por ciento utilizado del grupo global y, cuando se llega a esa marca, registra un evento. Luego, calcula el siguiente diez por ciento utilizado del resto y el ciclo de eventos continúa. A medida que se agote el espacio global de RID, los eventos se producirán cada vez con más frecuencia, dado que el diez por ciento se alcanza antes en el grupo si este va disminuyendo (pero la limitación del registro de eventos impedirá que haya más de una entrada por hora). El registro de eventos del sistema de cada controlador de dominio escribirá el evento de advertencia de Directory-Services-SAM 16658.  
   
-Suponiendo que un predeterminado 30 bits RID espacio global, la primera registros de eventos al asignar el grupo que contiene la 107,374,182<sup>p:</sup> RID. El tipo de evento naturalmente acelera hasta el último punto de control de 100.000, con 110 eventos generados en total. El comportamiento es similar para un espacio RID global de 31 bits desbloqueado: empezando por 214,748,365 y completar de 117 eventos.  
+En un espacio global de RID de 30 bits predeterminado, el primer evento se registrará al asignar el grupo que contenga el RID número 107.374.182<sup></sup>. La frecuencia de los eventos se acelerará, como es natural, hasta el último punto de control, de 100.000, con 110 eventos generados en total. El comportamiento es similar con un espacio global de RID de 31 bits desbloqueado: se inicia en el número 214.748.365 y finaliza en 117 eventos.  
   
 > [!IMPORTANT]  
-> Este evento no se espera que; investiga el usuario, el equipo y los procesos de creación de grupo inmediatamente en el dominio. Crear objetos de AD DS de más de 100 millones es bastante fuera de lo normal.  
+> No se espera que aparezca este evento: si se produce, investiga enseguida los procesos de creación de usuarios, equipos y grupos del dominio. No es muy normal que se creen más de cien millones de objetos de AD DS.  
   
-![DESHACERSE de emisión](media/Managing-RID-Issuance/ADDS_RID_TR_EventWaypoints2.png)  
+![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_EventWaypoints2.png)  
   
-### <a name="rid-pool-invalidation-events"></a>ELIMINAR eventos de invalidación de grupo  
-Hay nuevos eventos avisa de que se descartó un grupo local de eliminar el controlador de dominio. Estas son informativo y se podrían esperar, especialmente debido a la nueva funcionalidad v CC. Consulta la lista de eventos a continuación para obtener más información sobre el evento.  
+### <a name="rid-pool-invalidation-events"></a>Eventos de invalidación de grupos de RID  
+Hay nuevas alertas de eventos que indican que se descartó un grupo de RID del controlador de dominio local. Son informativas y no es raro que aparezcan, especialmente con la nueva funcionalidad de controladores de dominio virtuales. Para ver los detalles del evento, consulta la lista de eventos que se incluye a continuación.  
   
-### <a name="BKMK_RIDBlockMaxSize"></a>ELIMINAR el límite de tamaño de bloque  
-Normalmente, un controlador de dominio solicita RID asignaciones en bloques de 500 RID al mismo tiempo. Puedes invalidar este valor predeterminado mediante el siguiente valor REG_DWORD del registro en un controlador de dominio:  
+### <a name="BKMK_RIDBlockMaxSize"></a>Límite de tamaño de bloque de RID  
+Generalmente, los controladores de dominio solicitan asignaciones de RID en bloques de 500 RID cada uno. Puedes reemplazar esta configuración predeterminada con el siguiente valor de REG_DWORD del Registro de un controlador de dominio:  
   
 ```  
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\RID Values  
@@ -68,68 +69,68 @@ RID Block Size
   
 ```  
   
-Antes de Windows Server 2012, no había ningún valor máximo que se aplican en esa clave del registro, excepto el máximo de DWORD implícito (que tiene un valor de 0xffffffff o 4294967295). Este valor es mucho mayor que el espacio total de RID global. Los administradores a veces incorrectamente accidentalmente configuraron o eliminar el tamaño de bloque con valores que agotado RID global a una gran velocidad.  
+En las versiones anteriores a Windows Server 2012, no se exigía ningún valor máximo en esa clave del Registro, excepto el máximo implícito de DWORD (que tiene el valor 0xffffffff o 4294967295). Este valor es considerablemente mayor que el espacio global de RID total. A veces, los administradores configuraban por error el tamaño de los bloques de RID con valores que agotaban el espacio global de RID a una velocidad desmesurada.  
   
-En Windows Server 2012, no puedes establecer este valor del registro superior 15000 (0x3A98 hexadecimal). Esto impide que massive asignación RID no intencionado.  
+En Windows Server 2012, no se puede configurar este valor del Registro con un valor mayor de 15.000 decimal (0x3A98 hexadecimal). Así, se evita que se asignen muchos RID sin querer.  
   
-Si estableces el valor *mayor* de 15.000, el valor se trata como 15.000 y el controlador de dominio registra el evento 16653 en el registro de eventos de servicios de directorio en cada reinicio hasta que se corrija el valor.  
+Si defines un valor *superior* a 15.000, el valor se tratará como si fuera 15.000 y el controlador de dominio registrará el evento 16653 en el registro de eventos de los Servicios de directorio con cada reinicio hasta que se corrija el valor.  
   
-### <a name="BKMK_GlobalRidSpaceUnlock"></a>Desbloquear RID global Space Size  
-Antes de Windows Server 2012, se limitan a 2 en el espacio global de RID<sup>30</sup> (o 1.073.741.823) total RID. Una vez alcanzado, solo una dominio migración o bosque de recuperación en un período de tiempo anterior permite la creación de SID nuevas - recuperación ante desastres, por cualquier medida. A partir de Windows Server 2012, el 2<sup>31</sup> bits puede desbloquear con el fin de aumentar el grupo global para 2.147.483.648 RID.  
+### <a name="BKMK_GlobalRidSpaceUnlock"></a>Desbloqueo del tamaño del espacio global de RID  
+En las versiones anteriores a Windows Server 2012, el espacio global de RID estaba limitado a 2<sup>30</sup> (o 1.073.741.823) RID en total. Cuando se alcanzaba esta cifra, solo se podían crear más SID con una migración del dominio o una recuperación del bosque a un período de tiempo anterior: una recuperación ante desastres, fuera como fuera. Desde Windows Server 2012, se puede desbloquear el bit 2<sup>31</sup> para aumentar el grupo global a 2.147.483.648 RID.  
   
-AD DS almacena esta configuración en un atributo oculto especial llamado **SidCompatibilityVersion** en el contexto de RootDSE de todos los controladores de dominio. Este atributo no es legible con ADSIEdit, LDP u otras herramientas. Para ver un aumento en el espacio global de RID, examina el registro de eventos del sistema para el evento de advertencia 16655 de SAM de servicios de directorio o usa el siguiente comando Dcdiag:  
+AD DS almacena esta configuración en un atributo especial oculto llamado **SidCompatibilityVersion** del contexto RootDSE de todos los controladores de dominio. Este atributo no se puede leer con ADSIEdit, LDP ni otras herramientas. Para ver un aumento del espacio global de RID, examina el registro de eventos del sistema hasta encontrar el evento de advertencia 16655 de Directory-Services-SAM o utiliza el siguiente comando de Dcdiag:  
   
 ```  
 Dcdiag.exe /TEST:RidManager /v | find /i "Available RID Pool for the Domain"  
   
 ```  
   
-Si aumentas el conjunto global de RID, el grupo disponible cambiará a 2.147.483.647 en lugar del predeterminado 1.073.741.823. Por ejemplo:  
+Si incrementas el grupo global de RID, el grupo disponible cambiará a 2.147.483.647 en lugar de al valor predeterminado de 1.073.741.823. Por ejemplo:  
   
-![DESHACERSE de emisión](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)  
+![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_Dcdiag.png)  
   
 > [!WARNING]  
-> Este desbloqueo pretende *solo* para evitar que te quedes sin RID y debe usarse *solo* junto con la aplicación de techo LIBRARSE (consulta la sección siguiente). No "manera preferente" establecer en entornos que tienen millones de restante RID y el crecimiento bajo, como problemas de compatibilidad de aplicaciones potencialmente existen con SID generados desde el conjunto de RID desbloqueado.  
+> Este desbloqueo se diseñó *únicamente* para evitar que se agoten los RID y se debe utilizar *únicamente* si también se exige un límite superior de RID (consulta la siguiente sección). No lo configures “para prevenir” en los entornos en los que queden millones de RID y donde el crecimiento sea lento: podrían aparecer problemas de compatibilidad de aplicaciones con los SID generados desde el grupo de RID desbloqueado.  
 >   
-> Esto desbloquear operación no se puede revertir o eliminado, excepto por parte de una recuperación completa del bosque para las copias de seguridad anteriores.  
+> Esta operación de desbloqueo no se puede revertir ni quitar, excepto si el bosque se recupera por completo a copias de seguridad anteriores.  
   
 #### <a name="important-caveats"></a>Advertencias importantes  
-Windows Server 2003 y controladores de dominio de Windows Server 2008 no pueden emitir RID cuando RID global grupo 31<sup>st</sup> bits se desbloquea. Controladores de dominio de Windows Server 2008 R2 *puede* usar 31<sup>st</sup> bit RID *pero solo si* tienen revisiones [KB 2642658](https://support.microsoft.com/kb/2642658) instalado. Controladores de dominio no compatible y tratan el conjunto global de RID agotado cuando desbloquea.  
+Los controladores de dominio de Windows Server 2003 y Windows Server 2008 no pueden emitir RID cuando está desbloqueado el 31.º bit del grupo global de RID<sup></sup>. Los controladores de dominio de Windows Server 2008 R2 *puede* usar 31<sup>st</sup> bit RID *pero solo si* tienen revisión [KB 2642658](https://support.microsoft.com/kb/2642658) instalado. Los controladores de dominio no admitidos y sin la revisión consideran que el grupo global de RID está agotado cuando está desbloqueado.  
   
-Esta característica no se aplica por cualquier nivel funcional del dominio; Tenga cuidado excelente que existe solo Windows Server 2012 o controladores de dominio de Windows Server 2008 R2 actualizados en el dominio.  
+Ningún nivel funcional del dominio exige esta característica: ten mucho cuidado y asegúrate de que el dominio solo contiene controladores de dominio de Windows Server 2012 o Windows Server 2008 R2 actualizados.  
   
-#### <a name="implementing-unlocked-global-rid-space"></a>Implementar espacio LIBRARSE Global desbloqueado  
-Para desbloquear el conjunto de RID el 31<sup>st</sup> poco después de recibir el aviso de techo RID (consulta más adelante) realiza los siguientes pasos:  
+#### <a name="implementing-unlocked-global-rid-space"></a>Implementación del espacio global de RID desbloqueado  
+Para desbloquear el grupo de RID con el 31.º bit<sup></sup> después de recibir la alerta de límite superior de RID (más información, a continuación), sigue estos pasos:  
   
-1.  Asegúrate de que el maestro LIBRARSE función se ejecuta en un controlador de dominio de Windows Server 2012. De lo contrario, transferirlo a un controlador de dominio de Windows Server 2012.  
+1.  Comprueba que el rol de maestro de RID se está ejecutando en un controlador de dominio de Windows Server 2012. Si no es así, transfiérelo a un controlador de dominio de Windows Server 2012.  
   
-2.  Ejecute LDP.exe  
+2.  Ejecuta LDP.exe.  
   
-3.  Haz clic en el **conexión** menú y haz clic en **conectar** para el patrón de LIBRARSE de Windows Server 2012 en portar 389 y, a continuación, haz clic en **enlazar** como un administrador de dominio.  
+3.  Haz clic en el menú **Conexión** y, luego, haz clic en **Conectar** en el maestro de RID de Windows Server 2012 en el puerto 389. Después, haz clic en **Enlazar** como administrador de dominio.  
   
-4.  Haz clic en el **examinar** menú y haz clic en **modificar**.  
+4.  Haz clic en el menú **Examinar** y en **Modificar**.  
   
-5.  Asegúrate de que **DN** está en blanco.  
+5.  Asegúrate de que **DN** está vacío.  
   
-6.  En **editar el atributo de entrada**, escribe:  
+6.  En **Editar atributo de entrada**, tipo:  
   
     ```  
     SidCompatibilityVersion  
     ```  
   
-7.  En **valores**, escribe:  
+7.  En **Valores**, escribe:  
   
     ```  
     1  
     ```  
   
-8.  Asegúrate de que **agregar** esté seleccionado en **operación** y haz clic en **ENTRAR**. Esto actualiza la **lista de entradas**.  
+8.  Comprueba que está seleccionado **Agregar** en **Operación** y haz clic en **Introducir**. Se actualizará la **Lista de entradas**.  
   
-9. Selecciona el **sincrónico** y **Extended** opciones, a continuación, haz clic en **ejecutar**.  
+9. Activa las opciones **Sincrónico** y **Extendido** y, luego, haz clic en **Ejecutar**.  
   
-    ![DESHACERSE de emisión](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)  
+    ![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModify.png)  
   
-10. Si se realiza correctamente, la LDP había salida ventana de muestra:  
+10. Si finaliza correctamente, la ventana de salida de LDP mostrará:  
   
     ```  
     ***Call Modify...  
@@ -138,59 +139,59 @@ Para desbloquear el conjunto de RID el 31<sup>st</sup> poco después de recibir 
   
     ```  
   
-    ![DESHACERSE de emisión](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModifySuccess.png)  
+    ![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_LDPModifySuccess.png)  
   
-11. Confirma el conjunto global de RID aumentado examinando el registro de eventos del sistema en el controlador de dominio para el evento Informational de servicios de directorio de SAM 16655.  
+11. Confirma que se aumentó el grupo global de RID: examina el registro de eventos del sistema de ese controlador de dominio y busca en él el evento informativo de Directory-Services-SAM 16655.  
   
-### <a name="rid-ceiling-enforcement"></a>ELIMINAR la aplicación techo  
-Para permitir una medida de protección y elevar reconocimiento administrativa, Windows Server 2012 presenta un límite máximo artificial en el rango RID global a diez (10) % restante RID en el espacio global. Dentro de uno (1) % del límite máximo artificial, controladores de dominio solicitar grupos RID escriben eventos de advertencia de servicios de directorio de SAM 16656 su registro de eventos del sistema. Cuando se alcance el límite máximo de diez por ciento en el FSMO maestro LIBRARSE, escribe eventos SAM de servicios de directorio 16657 su registro de eventos del sistema y no asignará más grupos RID hasta el límite máximo de invalidación. Esto obliga a evaluar el estado de maestro de RID en el dominio y solucionar los posible asignación RID descontrolado; También se protege dominios de agotar todo el espacio RID.  
+### <a name="rid-ceiling-enforcement"></a>Cumplimiento del límite superior de RID  
+Para poder aplicar una medida de protección e informar mejor a los administradores, Windows Server 2012 incorpora un límite superior artificial en el intervalo global de RID: un diez (10) por ciento de RID restantes en el espacio global. Cuando se esté en el uno (1) por ciento del límite superior artificial, los controladores de dominio que soliciten grupos de RID escribirán el evento de advertencia de Directory-Services-SAM 16656 en su registro de eventos del sistema. Al alcanzar el límite superior del diez por ciento en el FSMO del maestro de RID, este escribirá el evento de Directory-Services-SAM 16657 en su registro de eventos del sistema y no asignará más grupos de RID hasta que se invalide el límite superior. Así, tendrás que evaluar el estado del maestro de RID del dominio y solucionar la posible asignación descontrolada de RID. Además, esto protege a los dominios para que no agoten todo el espacio de RID.  
   
-Este límite está codificado de forma rígida en 10% restante del RID espacio disponible. Es decir, el techo activa cuando el maestro RID asigna un conjunto que incluya el RID correspondientes a noventa (90) por ciento del espacio de RID global.  
+El límite superior está codificado de forma rígida en el diez por ciento restante del espacio de RID disponible. Es decir, el límite superior se activa cuando el maestro de RID asigna un grupo que incluye el RID correspondiente al noventa (90) por ciento del espacio global de RID.  
   
--   Para los dominios de manera predeterminada, el primer punto de desencadenador es 2<sup>30</sup>-1 * 0,90 = 966,367,640 (o 107,374,183 RID restante).  
+-   En los dominios predeterminados, el primer punto en el que se desencadena es 2<sup>30</sup>–1 * 0,90 = 966.367.640 (o 107.374.183 RID restantes).  
   
--   Para los dominios con un espacio RID 31 bits desbloqueado, el punto de desencadenador es 2<sup>31</sup>-1 * 0,90 = 1,932,735,282 RID (o 214,748,365 RID restante).  
+-   En los dominios con espacio de RID desbloqueado de 31 bits, el punto en el que se desencadena es 2<sup>31</sup>–1 * 0,90 = 1.932.735.282 RID (o 214.748.365 RID restantes).  
   
-Cuando se active, el maestro RID establece el atributo de Active Directory **msDS RIDPoolAllocationEnabled** (nombre común **ms-DS-RID-Pool-Allocation-Enabled**) "false" en el objeto:  
+Cuando se desencadena, el maestro de RID configura el atributo de Active Directory **msDS-RIDPoolAllocationEnabled** (nombre común: **ms-DS-RID-Pool-Allocation-Enabled**) como FALSE en el objeto:  
   
-CN = Administrador RID $, CN = sistema, DC =*<domain>*  
+CN = RID Manager$, CN = System, DC =*<domain>*  
   
-Esto escribe el evento 16657 y se impide que la emisión de bloque RID en todos los controladores de dominio. Controladores de dominio seguirán consumiendo cualquier grupos RID pendientes ya emitidos a ellos.  
+De este modo, se escribe el evento 16657 y se impide que se emitan más bloques de RID a todos los controladores de dominio. Los controladores de dominio seguirán consumiendo los grupos de RID pendientes que ya se emitieron para ellos.  
   
-Para quitar el bloque y permitir que la asignación de bloque RID continuar, establece ese valor en TRUE. En la siguiente asignación RID realizada el maestro RID, el atributo volverá a su valor predeterminado no conjunto valor. Después, no hay ninguna límites más y más adelante, en el espacio global de RID acabe, la necesidad de migración de recuperación o dominio del bosque.  
+Para quitar el bloque y permitir que continúe la asignación de grupos de RID, configura ese valor como TRUE. En la siguiente asignación de RID que lleve a cabo el maestro de RID, el atributo volverá al valor predeterminado de NOT SET. Después de esto, no habrá más límites superiores y, finalmente, el espacio global de RID se agotará y será necesario realizar una recuperación del bosque o una migración del dominio.  
   
-#### <a name="removing-the-ceiling-block"></a>Quitar el límite máximo bloque  
-Para quitar el bloque de una vez que alcanzan el techo artificial, realiza los siguientes pasos:  
+#### <a name="removing-the-ceiling-block"></a>Eliminación del bloque del límite superior  
+Para quitar el bloque después de alcanzar el límite superior artificial, sigue estos pasos:  
   
-1.  Asegúrate de que el maestro LIBRARSE función se ejecuta en un controlador de dominio de Windows Server 2012. De lo contrario, transferirlo a un controlador de dominio de Windows Server 2012.  
+1.  Comprueba que el rol de maestro de RID se está ejecutando en un controlador de dominio de Windows Server 2012. Si no es así, transfiérelo a un controlador de dominio de Windows Server 2012.  
   
-2.  Ejecute LDP.exe.  
+2.  Ejecuta LDP.exe.  
   
-3.  Haz clic en el **conexión** menú y haz clic en *conectar* para el patrón de LIBRARSE de Windows Server 2012 en portar 389 y, a continuación, haz clic en **enlazar** como un administrador de dominio.  
+3.  Haz clic en el menú **Conexión** y, luego, haz clic en *Conectar* en el maestro de RID de Windows Server 2012 en el puerto 389. Después, haz clic en **Enlazar** como administrador de dominio.  
   
-4.  Haz clic en el **vista** menú y haz clic en **árbol**, después de la **DN Base** seleccionar el contexto de nomenclatura de eliminar del patrón propio dominio. Haz clic en **Aceptar**.  
+4.  Haz clic en el menú **Ver** y, luego, haz clic en **Árbol**. Después, en **DN base**, selecciona el contexto de nomenclatura del dominio propio del maestro de RID. Haga clic en **Aceptar**.  
   
-5.  En el panel de navegación, profundizar en el **CN = sistema** contenedor y haz clic en el **CN = Administrador RID $** objeto. Derecho haz clic en ella y haz clic en **modificar**.  
+5.  En el panel de navegación, explora en profundidad hasta entrar en el contenedor **CN=System** y haz clic en el objeto **CN=RID Manager$**. Haz clic con el botón secundario en él y, luego, haz clic en **Modificar**.  
   
-6.  En el atributo de entrada editar, escribe:  
+6.  En Editar atributo de entrada, escribe:  
   
     ```  
     MsDS-RidPoolAllocationEnabled  
     ```  
   
-7.  En **valores**, tipo (en mayúsculas):  
+7.  En **Valores**, escribe (en mayúsculas):  
   
     ```  
     TRUE  
     ```  
   
-8.  Selecciona **reemplazar** en **operación** y haz clic en **ENTRAR**. Esto actualiza la **lista de entradas**.  
+8.  Selecciona **Reemplazar** en **Operación** y haz clic en **Introducir**. Se actualizará la **Lista de entradas**.  
   
-9. Habilitar la **sincrónico** y **Extended** opciones, a continuación, haz clic en **ejecutar**:  
+9. Habilita las opciones **Sincrónico** y **Extendido** y, luego, haz clic en **Ejecutar**:  
   
-    ![DESHACERSE de emisión](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)  
+    ![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeiling.png)  
   
-10. Si se realiza correctamente, la LDP había salida ventana de muestra:  
+10. Si finaliza correctamente, la ventana de salida de LDP mostrará:  
   
     ```  
     ***Call Modify...  
@@ -199,109 +200,109 @@ Para quitar el bloque de una vez que alcanzan el techo artificial, realiza los s
   
     ```  
   
-    ![DESHACERSE de emisión](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeilingSuccess.png)  
+    ![Emisión de RID](media/Managing-RID-Issuance/ADDS_RID_TR_LDPRaiseCeilingSuccess.png)  
   
-### <a name="other-rid-fixes"></a>Otras correcciones RID  
-Sistemas operativos de servidor de Windows anteriores tenía un conjunto de RID perder cuando falta el atributo rIDSetReferences. Para resolver este problema en los controladores de dominio que ejecutan Windows Server 2008 R2, instalar la revisión de [KB 2618669](https://support.microsoft.com/kb/2618669).  
+### <a name="other-rid-fixes"></a>Otras correcciones de RID  
+Los sistemas operativos de Windows Server anteriores tenían una pérdida de grupos de RID cuando faltaba el atributo rIDSetReferences. Para resolver este problema en los controladores de dominio que ejecutan Windows Server 2008 R2, instale la revisión de [KB 2618669](https://support.microsoft.com/kb/2618669).  
   
-### <a name="unfixed-rid-issues"></a>Problemas de tipo unfixed RID  
-Históricamente ha habido una pérdida de RID en caso de error de creación de cuenta; al crear una cuenta, error todavía usa arriba un RID. El ejemplo común es crear un usuario con una contraseña que no se cumpla la complejidad.  
+### <a name="unfixed-rid-issues"></a>Problemas de RID sin corregir  
+Desde hace tiempo, hay una pérdida de RID cuando se produce un error al crear una cuenta: al crear la cuenta, el error sigue consumiendo un RID. El ejemplo habitual consiste en crear un usuario con una contraseña que no cumple los requisitos de complejidad.  
   
-### <a name="rid-fixes-for-earlier-versions-of-windows-server"></a>ELIMINAR correcciones para versiones anteriores de Windows Server  
-Todas las correcciones y cambios anteriores tienen las revisiones de Windows Server 2008 R2 publicadas. Actualmente no hay ninguna revisión de Windows Server 2008 planeada o en curso.  
+### <a name="rid-fixes-for-earlier-versions-of-windows-server"></a>Correcciones de RID para versiones anteriores de Windows Server  
+Para todos los cambios y las correcciones que indicamos, se publicaron revisiones de Windows Server 2008 R2. Actualmente no hay ninguna revisión de Windows Server 2008 planeada ni en curso.  
   
-## <a name="BKMK_Tshoot"></a>Solución de problemas de emisión RID  
+## <a name="BKMK_Tshoot"></a>Solución de problemas de emisión de RID  
   
 ### <a name="introduction-to-troubleshooting"></a>Introducción a la solución de problemas  
-Solución de problemas de emisión DESHACERSE requiere un método lógico y lineal. A menos que se están supervisando los registros de eventos cuidadosamente para errores y advertencias RID desencadenadas, las primera indicaciones de un problema tienen probabilidades de ser creaciones de cuentas error. La clave para solucionar problemas de emisión RID es comprender cuándo se esperan que los síntomas o no. muchos problemas de emisión RID pueden afectar a un único controlador de dominio y tienen nada que ver con las mejoras de componente. Este diagrama simple siguiente te ayuda a tomar las decisiones más clara:  
+La solución de problemas de emisión de RID requiere un método lógico y lineal. A menos que estés supervisando atentamente los registros de eventos de las advertencias y los errores desencadenados por RID, lo más probable es que los primeros indicios que observes de que existe un problema sean errores en la creación de cuentas. La clave para solucionar problemas de emisión de RID es comprender en qué situaciones se espera o no que aparezca un síntoma. Muchos problemas de emisión de RID pueden afectar solamente a un controlador de dominio y no tener nada que ver con las mejoras en los componentes. Este sencillo diagrama sirve para aclarar las decisiones:  
   
-![DESHACERSE de emisión](media/Managing-RID-Issuance/adds_rid_issuance_troubleshooting.png)  
+![Emisión de RID](media/Managing-RID-Issuance/adds_rid_issuance_troubleshooting.png)  
   
 ### <a name="troubleshooting-options"></a>Opciones de solución de problemas  
   
 #### <a name="logging-options"></a>Opciones de registro  
-Inicien sesión RID emisión se produce en el registro de eventos de sistema en SAM de servicios de directorio de origen. Registro está habilitado y configurado para el máximo nivel de detalle, de manera predeterminada. Si no hay entradas se registran para que los cambios de componente de nuevo en Windows Server 2012, considera el problema como un clásico (también conocido como heredados, anteriores a Windows Server 2012) problema de emisión RID visto en Windows 2008 R2 o sistemas operativos anteriores.  
+Todo el registro de la emisión de RID se produce en el registro de eventos del sistema, en el origen Directory-Services-SAM. De forma predeterminada, el registro está habilitado y configurado con el máximo nivel de detalle. Si no hay entradas registradas correspondientes a los cambios de componentes nuevos de Windows Server 2012, trata el problema como un problema de emisión clásico (es decir, heredado, anterior a Windows Server 2012) observado en Windows 2008 R2 o sistemas operativos anteriores.  
   
-#### <a name="utilities-and-commands-for-troubleshooting"></a>Utilidades y los comandos para la solución de problemas  
-Para solucionar problemas que no se explica en los registros mencionados anteriormente - problemas de emisión RID especialmente anteriores - usa la siguiente lista de herramientas como punto de partida:  
+#### <a name="utilities-and-commands-for-troubleshooting"></a>Utilidades y comandos para la solución de problemas  
+Para solucionar los problemas que no se expliquen en los registros indicados más arriba (especialmente, los problemas de emisión de RID anteriores), utiliza esta lista de herramientas como punto de partida:  
   
 -   Dcdiag.exe  
   
 -   Repadmin.exe  
   
--   3.4 del Monitor de red  
+-   Monitor de red 3.4  
   
-### <a name="general-methodology-for-troubleshooting-domain-controller-configuration"></a>Metodología general para solucionar problemas de configuración del controlador de dominio  
+### <a name="general-methodology-for-troubleshooting-domain-controller-configuration"></a>Metodología general para la solución de problemas de configuración de controladores de dominio  
   
-1.  ¿Es el error causado por un simple problema de disponibilidad del controlador de dominio o de permisos?  
+1.  ¿La causa del error es un problema sencillo de permisos o disponibilidad de los controladores de dominio?  
   
-    1.  ¿Se intenta crear una seguridad principal sin los permisos necesarios? Examina la salida de errores de acceso denegado.  
+    1.  ¿Estás tratando de crear una entidad de seguridad sin los permisos necesarios? Examina la salida y busca en ella errores de acceso denegado.  
   
-    2.  ¿Es un controlador de dominio disponible? Examine los mensajes de disponibilidad de controlador de dominio o LDAP y error devueltos.  
+    2.  ¿Está disponible un controlador de dominio? Examina los mensajes de disponibilidad del controlador de dominio, LDAP o el error devuelto.  
   
-2.  ¿El error devuelto específicamente mencionar RID y es lo suficientemente específico para usar como guía? Si es así, sigue las instrucciones.  
+2.  ¿El error devuelto menciona expresamente los RID y es lo suficientemente específico como para poder usarlo de guía? Si es así, sigue las indicaciones.  
   
-3.  ¿El error devuelto específicamente menciona RID pero es lo contrario no específico? Por ejemplo, "Windows no puede crear el objeto porque el servicio de directorio no pudo asignar un identificador relativo".  
+3.  ¿El error devuelto menciona expresamente los RID pero no es específico? Por ejemplo, “Windows no puede crear el objeto porque el servicio de directorio no pudo asignar un identificador relativo”.  
   
-    1.  Examina el registro de eventos de sistema en el controlador de dominio para "heredado" (anterior a Windows Server 2012) RID eventos detallan en [LIBRARSE grupo solicitar](https://technet.microsoft.com/en-us/library/ee406152(WS.10).aspx) (16642, 16643, 16644, 16645, 16656).  
+    1.  Examine el registro de eventos del sistema en el controlador de dominio "heredados" (anteriores a Windows Server 2012) eventos RID se detallan en [solicitud de grupos de RID](https://technet.microsoft.com/library/ee406152(WS.10).aspx) (16642, 16643, 16644, 16645 y 16656).  
   
-    2.  Examina el evento del sistema en el controlador de dominio y el patrón de LIBRARSE de nuevos eventos que indica el bloque que se detallan a continuación, en este tema (16655, 16656, 16657).  
+    2.  Examina el evento del sistema del controlador de dominio y el maestro de RID para buscar en él los eventos que indican nuevos bloques y que se detallan más adelante en este tema (16655, 16656 y 16657).  
   
-    3.  Validar el estado de replicación de Active Directory Repadmin.exe y maestro eliminar disponibilidad con **Dcdiag.exe /test:ridmanager /v**. Habilitar capturas de red a doble cara entre el controlador de dominio y el maestro eliminar si estas pruebas son muy concretos.  
+    3.  Valida el mantenimiento de la replicación de Active Directory con Repadmin.exe y la disponibilidad del maestro de RID con **Dcdiag.exe /test:ridmanager /v**. Si estas pruebas no son concluyentes, habilita las capturas de red de doble cara entre el controlador de dominio y el maestro de RID.  
   
 ### <a name="troubleshooting-specific-problems"></a>Solucionar problemas específicos  
-Los siguientes mensajes nuevos iniciar sesión en el registro de eventos del sistema en los controladores de dominio de Windows Server 2012. Automatizadas salud de AD sistemas, por ejemplo, System Center Operations Manager, de seguimiento debe controlar estos eventos; todos son más importantes, y otros indicadores de problemas críticos de dominio.  
+En los controladores de dominio de Windows Server 2012, se registran los siguientes mensajes nuevos en el registro de eventos del sistema. Los sistemas de seguimiento del mantenimiento automatizados de AD, como System Center Operations Manager, deben supervisar estos eventos. Todos son destacables y algunos de ellos señalan problemas críticos en los dominios.  
   
 |||  
 |-|-|  
-|Identificador de evento|16653|  
-|Origen|Servicios de directorio de SAM|  
-|Gravedad|Advertencia|  
-|Mensaje|Un tamaño de un grupo de identificadores de cuenta (RID) que se ha configurado un administrador es mayor que el máximo admitido. El valor máximo de %1 se usará cuando el controlador de dominio es el maestro RID.<br /><br />Para obtener más información, consulta [eliminar el límite de tamaño de bloque](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize).|  
-|Notas y resolución|El valor máximo para el tamaño de bloque LIBRARSE ahora es 15000 decimal (3A98 hexadecimal). Un controlador de dominio no puede solicitar más de 15.000 RID. Este registros de eventos en cada inicio hasta que el valor se establece en un valor igual o inferior a este máximo.|  
+|Id. de evento|16653|  
+|Source|Directory-Services-SAM|  
+|Severity|Advertencia|  
+|Mensaje|Un tamaño de grupo para los identificadores de la cuenta (RID) configurado por un administrador es mayor que el máximo admitido. Se usará el valor máximo de %1 cuando el controlador del dominio sea el maestro RID.<br /><br />Para obtener más información, vea el tema sobre [límite de tamaño de los bloques de RID](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_RIDBlockMaxSize).|  
+|Notas y resolución|Ahora, el valor máximo del tamaño de los bloques de RID es 15000 decimal (3A98 hexadecimal). Un solo controlador de dominio no puede solicitar más de 15.000 RID. Este evento se registra con cada arranque hasta que el valor se configura con un valor que no supere este máximo.|  
   
 |||  
 |-|-|  
-|Identificador de evento|16654|  
-|Origen|Servicios de directorio de SAM|  
-|Gravedad|Informativo|  
-|Mensaje|Se ha invalidado un conjunto de identificadores de cuenta (RID). Esto puede ocurrir en los siguientes casos esperados:<br /><br />1. un controlador de dominio se restaura desde la copia de seguridad.<br /><br />2. un controlador de dominio que se ejecuta en una máquina virtual se restaura desde la instantánea.<br /><br />3. un administrador ha invalidado manualmente el grupo.<br /><br />Consulta https://go.microsoft.com/fwlink/?LinkId=226247 para obtener más información.|  
-|Notas y resolución|Si este evento es inesperado, ponte en contacto con todos los administradores de dominio y determinar cuál de ellos realiza la acción. El registro de eventos de servicios de directorio también contiene más información sobre cuando alguno de estos pasos se realizó.|  
+|Id. de evento|16654|  
+|Source|Directory-Services-SAM|  
+|Severity|Informativo|  
+|Mensaje|Se invalidó un grupo de identificadores de cuenta (RID). Esto puede suceder en los siguientes casos previstos:<br /><br />1. Se restaura un controlador de dominio desde una copia de seguridad.<br /><br />2. Un controlador de dominio que se ejecuta en una máquina virtual se restaura desde una instantánea.<br /><br />3. Un administrador invalidó el grupo manualmente.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=226247 para obtener más información.|  
+|Notas y resolución|Si este evento no se esperaba, ponte en contacto con los administradores de todos los dominios y averigua cuál de ellos llevó a cabo esta acción. El registro de eventos de los Servicios de directorio también contiene información adicional sobre el momento en el que se realizó uno de estos pasos.|  
   
 |||  
 |-|-|  
-|Identificador de evento|16655|  
-|Origen|Servicios de directorio de SAM|  
-|Gravedad|Informativo|  
-|Mensaje|El número de máximo global para identificadores de cuenta (RID) se ha aumentado a %1.|  
-|Notas y resolución|Si este evento es inesperado, ponte en contacto con todos los administradores de dominio y determinar cuál de ellos realiza la acción. Este evento notas aumenta el número de RID general tamaño máximo predeterminado de 2 de grupo<sup>30</sup>y no se realizará automáticamente; solo por las acciones administrativas.|  
+|Id. de evento|16655|  
+|Source|Directory-Services-SAM|  
+|Severity|Informativo|  
+|Mensaje|El máximo global para identificadores de cuenta (RID) se ha incrementado a %1.|  
+|Notas y resolución|Si este evento no se esperaba, ponte en contacto con los administradores de todos los dominios y averigua cuál de ellos llevó a cabo esta acción. Este evento indica que el tamaño total del grupo de RID aumentó hasta superar el valor predeterminado de 2<sup>30</sup>. No aparece de forma automática: solamente por una acción administrativa.|  
   
 |||  
 |-|-|  
-|Identificador de evento|16656|  
-|Origen|Servicios de directorio de SAM|  
-|Gravedad|Advertencia|  
-|Mensaje|El número de máximo global para identificadores de cuenta (RID) se ha aumentado a %1.|  
-|Notas y resolución|¡Acción necesaria! Este controlador de dominio se ha asignado un grupo de identificador de cuenta (RID). El valor de grupo se indica en este dominio ha consumido una parte importante de los identificadores de cuenta disponibles totales.<br /><br />Un mecanismo de protección se activará cuando el dominio alcanza el umbral siguiente del totales disponibles-identificadores de cuenta restante: %1.  El mecanismo de protección impedirá la creación de cuentas hasta manualmente volver a habilitar la asignación de identificadores de cuenta en el controlador de dominio principal RID.<br /><br />Consulta https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información.|  
+|Id. de evento|16656|  
+|Source|Directory-Services-SAM|  
+|Severity|Advertencia|  
+|Mensaje|El máximo global para identificadores de cuenta (RID) se ha incrementado a %1.|  
+|Notas y resolución|Acción requerida. Se asignó un grupo de identificadores de cuenta (RID) a este controlador de dominio. El valor del grupo indica que este dominio consumió una parte considerable del total de identificadores de cuenta disponibles.<br /><br />Un mecanismo de protección se activará cuando el dominio llegue al siguiente umbral de total identificadores de cuenta disponibles restantes: %1.  El mecanismo de protección impedirá que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información.|  
   
 |||  
 |-|-|  
-|Identificador de evento|16657|  
-|Origen|Servicios de directorio de SAM|  
-|Gravedad|Error|  
-|Mensaje|¡Acción necesaria! En este dominio ha consumido una parte importante de la cuenta-identificadores disponibles totales (RID). Un mecanismo de protección se ha activado porque es el totales disponibles-identificadores de cuenta restante inferior: X % [argumento techo artificial].<br /><br />El mecanismo de protección impide la creación de cuenta hasta que vuelva a habilita manualmente asignación de identificadores de cuenta en el controlador de dominio principal RID.<br /><br />Es muy importante que se llevan a cabo ciertas diagnósticos antes de volver a habilitar la cuenta de creación para asegurarte de este dominio no está consumiendo identificadores de cuenta a una velocidad excesiva. Cualquier problema identificado debe resolverse antes de volver a habilitar la creación de cuentas.<br /><br />Agotamiento de identificador de la cuenta en el dominio después de que la creación de cuentas se deshabilitará permanentemente en este dominio pueden provocar errores para diagnosticar y solucionar cualquier problema subyacente causando una excesiva tasa de consumo de identificadores de cuenta.<br /><br />Consulta https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información.|  
-|Notas y resolución|Ponte en contacto con todos los administradores de dominio e informarles de que no se pueden crear ningún entidades de seguridad adicionales en este dominio hasta que se reemplaza esta protección. Para obtener más información acerca de cómo invalidar la protección y posiblemente aumentar el RID general del grupo, consulta [Global LIBRARSE espacio tamaño de desbloqueo](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock).|  
+|Id. de evento|16657|  
+|Source|Directory-Services-SAM|  
+|Severity|Error|  
+|Mensaje|Acción requerida. Este dominio consumió una parte considerable del total de identificadores de cuenta (RID) disponibles. Se activó un mecanismo de protección porque el número total de identificadores de cuenta disponibles restantes es menor que: X% [argumento del límite superior artificial].<br /><br />El mecanismo de protección impide que se creen más cuentas hasta que vuelvas a habilitar manualmente la asignación de identificadores de cuenta en el controlador de dominio del maestro de RID.<br /><br />Es extremadamente importante que se realicen determinados diagnósticos antes de volver a habilitar la creación de cuentas, para comprobar que este dominio no está consumiendo identificadores de cuenta con una frecuencia inusualmente alta. Todos los problemas que se identifiquen se deben resolver antes de volver a habilitar la creación de cuentas.<br /><br />Si no se diagnostican y se corrigen los problemas subyacentes que provocan el consumo de identificadores de cuenta a una frecuencia inusualmente alta, es posible que se agoten los identificadores de cuenta del dominio. Si esto ocurre, la creación de cuentas quedará deshabilitada permanentemente en este dominio.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=228610 para obtener más información.|  
+|Notas y resolución|Ponte en contacto con los administradores de todos los dominios e infórmales de que no se pueden crear más entidades de seguridad en este dominio hasta que se invalide esta protección. Para más información sobre cómo invalidar la protección y, posiblemente, incrementar el grupo de RID en general, consulta [Desbloqueo del tamaño del espacio global de RID](../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/../../ad-ds/manage/Managing-RID-Issuance.md#BKMK_GlobalRidSpaceUnlock).|  
   
 |||  
 |-|-|  
-|Identificador de evento|16658|  
-|Origen|Servicios de directorio de SAM|  
-|Gravedad|Advertencia|  
-|Mensaje|Este evento es una actualización periódica en la cantidad total restante de identificadores de cuenta disponibles (RID). El número de identificadores de cuenta restantes es aproximadamente: %1.<br /><br />Identificadores de cuenta se usan cuando se crean cuentas, cuando estén agotados ninguna cuenta nueva que puede crearse en el dominio.<br /><br />Consulta https://go.microsoft.com/fwlink/?LinkId=228745 para obtener más información.|  
-|Notas y resolución|Ponte en contacto con todos los administradores de dominio e informarles de que el consumo de RID ha cruzado un hito importante; determinar si este es el comportamiento esperado o no revisando patrones de creación de confianza de seguridad. Para alguna vez ves este evento sería muy poco común, ya que significa que al menos ~ 100 millones RID se han asignado.|  
+|Id. de evento|16658|  
+|Source|Directory-Services-SAM|  
+|Severity|Advertencia|  
+|Mensaje|Este evento es una actualización periódica sobre la cantidad total restante de identificadores de cuenta disponibles (RID). El número de identificadores de cuenta restantes es aproximadamente: %1.<br /><br />Los identificadores de cuenta se usan a medida que se crean cuentas, cuando se agotan, no se pueden crear nuevas cuentas en el dominio.<br /><br />Consulte https://go.microsoft.com/fwlink/?LinkId=228745 para obtener más información.|  
+|Notas y resolución|Ponte en contacto con los administradores de todos los dominios e infórmales de que el consumo de RID alcanzó un hito principal. Para averiguar si este comportamiento se esperaba o no, revisa los patrones de creación de elementos de confianza de seguridad. Es muy poco habitual que aparezca este evento: significa que se asignaron, al menos, unos 100 millones de RID.|  
   
-## <a name="see-also"></a>Consulta también  
-[Administración de emisión RID en Windows Server 2012](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)  
+## <a name="see-also"></a>Vea también  
+[Administración de la emisión de RID en Windows Server 2012](http://blogs.technet.com/b/askds/archive/2012/08/10/managing-rid-issuance-in-windows-server-2012.aspx)  
   
 
 

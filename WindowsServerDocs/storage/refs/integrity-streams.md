@@ -1,32 +1,33 @@
 ---
-title: Secuencias de integridad de ReFS
-description: 
+title: Flujos de integridad de ReFS
+description: ''
 author: gawatu
 ms.author: jgerend
 manager: dmoss
-ms.date: 11/14/2016
+ms.date: 10/16/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.assetid: 1f1215cd-404f-42f2-b55f-3888294d8a1f
-ms.openlocfilehash: d9e14e74591b341048316e9c2e69a312062c3304
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 11f0a696fb843f5cd8b4a7ff3318c28d6c1adeb8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59871346"
 ---
-# <a name="refs-integrity-streams"></a>Secuencias de integridad de ReFS
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10
+# <a name="refs-integrity-streams"></a>Flujos de integridad de ReFS
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server (canal semianual), Windows 10
 
 Las secuencias de integridad son una característica opcional en ReFS que valida y mantiene la integridad de datos usando sumas de comprobación. Mientras ReFS siempre usa sumas de comprobación para los metadatos, de forma predeterminada, ReFS no genera ni valida dichas sumas para los datos de archivos. Las secuencias de integridad son una característica opcional que permite a los usuarios utilizar sumas de comprobación para los datos de archivos. Cuando las secuencias de integridad se habilitan, ReFS puede determinar claramente si los datos son válidos o están dañados. Además, los espacios de almacenamiento y ReFS pueden arreglar datos y metadatos dañados automáticamente y de manera conjunta.
 
-## <a name="how-it-works"></a>Así es cómo funciona 
+## <a name="how-it-works"></a>Cómo funciona 
 
 Las secuencias de integridad pueden habilitarse para archivos individuales, directorios o un volumen completo y la configuración de las secuencias de integridad puede cambiarse en cualquier momento. Además, la configuración de la secuencia de integridad de archivos y directorios se hereda de sus directorios principales. 
 
 Una vez que las secuencias de integridad se han habilitado, ReFS creará y mantendrá una suma de comprobación para los archivos especificados en los metadatos del archivo. Esta suma comprobación permite a ReFS validar la integridad de los datos antes de acceder a él. Antes de devolver cualquier dato que tenga secuencias integridad habilitadas, ReFS calculará, en primer lugar, la suma de comprobación:
 
-<img src=media/compute-checksum.gif alt="Compute checksum for file data"/>
+![Calcular la suma de comprobación de datos de archivos](media/compute-checksum.gif)
 
 A continuación, esta suma de comprobación se compara con la que se incluye en los metadatos de archivo. Si las sumas de comprobación coinciden, los datos se marcan como válidos y se devuelven al usuario. Si las sumas de comprobación no coinciden, los datos están dañados. La resistencia del volumen determina cómo responde ReFS a los daños:
 
@@ -37,7 +38,7 @@ A continuación, esta suma de comprobación se compara con la que se incluye en 
 
 ReFS registrará todos los daños en el registro de eventos del sistema y aquí se reflejarán si los daños se han solucionados. 
 
-<img src=media/corrective-write.gif alt="Corrective write restores data integrity."/>
+![Escritura corrección restaura la integridad de los datos](media/corrective-write.gif)
 
 ## <a name="performance"></a>Rendimiento 
 
@@ -92,8 +93,8 @@ PS C:\> Set-FileIntegrity H:\ -Enable $True
 PS C:\> Set-FileIntegrity H:\Docs -Enable $True
 ```
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
--   [Información general de ReFS](refs-overview.md)
--   [Clonación de bloques de ReFS](block-cloning.md)
--   [Información general de Espacios de almacenamiento directos](../storage-spaces/storage-spaces-direct-overview.md)
+-   [Información general de reFS](refs-overview.md)
+-   [Clonación de bloques de reFS](block-cloning.md)
+-   [Información general de espacios directo de almacenamiento](../storage-spaces/storage-spaces-direct-overview.md)

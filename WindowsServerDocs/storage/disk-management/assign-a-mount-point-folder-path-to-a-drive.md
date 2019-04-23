@@ -1,7 +1,7 @@
 ---
 title: Asignar una ruta de acceso de carpeta de punto de montaje a una unidad
-description: "En este artículo se describe cómo asignar una ruta de acceso de carpeta de punto de montaje (en lugar de una letra de unidad) a una unidad."
-keywords: "virtualización, seguridad, malware"
+description: En este artículo se describe cómo asignar una ruta de acceso de carpeta de punto de montaje (en lugar de una letra de unidad) a una unidad.
+keywords: virtualización, seguridad, malware
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,11 +9,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 01aaf73f694a6a7a9c516e4358f22dec0d1b4bc4
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: a25dac6e49d6e9aee2efa043999162262c5bb791
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870876"
 ---
 # <a name="assign-a-mount-point-folder-path-to-a-drive"></a>Asignar una ruta de acceso de carpeta de punto de montaje a una unidad
 
@@ -23,8 +24,8 @@ Puedes usar la Administración de discos para asignar una ruta de acceso de carp
 
 ## <a name="assigning-a-mount-point-folder-path-to-a-drive"></a>Asignar una ruta de acceso de carpeta de punto de montaje a una unidad
 
--   [Usar la interfaz de Windows](#BKMK_WINUI)
--   [Usar una línea de comandos](#BKMK_CMD)
+-   [Mediante la interfaz de Windows](#BKMK_WINUI)
+-   [Línea de comandos](#BKMK_CMD)
 
 > [!NOTE]
 > Debes ser miembro del grupo **Operadores de copia de seguridad** o **Administradores**, como mínimo, para completar estos pasos.
@@ -39,7 +40,7 @@ Puedes usar la Administración de discos para asignar una ruta de acceso de carp
 
 <a id="BKMK_CMD"></a>
 #### <a name="to-assign-a-mount-point-folder-path-to-a-drive-using-a-command-line"></a>Para asignar una ruta de acceso de carpeta de punto de montaje a una unidad con una línea de comandos
-1.  Abre un símbolo del sistema y escribe `diskpart`.
+1.  Abra un símbolo del sistema y escriba `diskpart`.
 
 2.  En el símbolo de sistema **DISKPART**, escribe `list volume`, tomando nota del número de volumen al que quieres asignar la ruta de acceso.
 
@@ -57,8 +58,8 @@ Puedes usar la Administración de discos para asignar una ruta de acceso de carp
 
 | Valor | Descripción |
 | --- | --- |
-| <p>**list volume**</p> | <p>Muestra una lista de volúmenes básicos y dinámicos en todos los discos.</p> |
-| <p>**select volume**</p>        | <p>Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de carpeta de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.</p>|
+| <p>**volumen de la lista**</p> | <p>Muestra una lista de volúmenes básicos y dinámicos en todos los discos.</p> |
+| <p>**Seleccione el volumen**</p>        | <p>Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de carpeta de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.</p>|
 | <p>**assign**</p> | <p><ul><li> Asigna una letra de unidad o una ruta de acceso de carpeta de punto de montaje al volumen con foco. Si no se especifica ninguna ruta de acceso de carpeta de punto de montaje o letra de unidad, se le asigna la siguiente letra de unidad disponible. Si la ruta de acceso de carpeta de punto de montaje o unidad letra ya está en uso, se genera un error.</li> </p> <p><li>Con el comando **assign**, puedes cambiar la letra de unidad asociada a una unidad extraíble.</li> </p><p><li> No puedes asignar letras de unidad a volúmenes de arranque ni a volúmenes que incluyan el archivo de paginación. Además, no puedes asignar una letra de unidad a una partición del fabricante de equipos originales (OEM), partición del sistema EFI o una partición GPT que no sea una partición de datos básica.</p></li></ul> |
 | <p>**mount=** <em>path</em></p> | <p>Especifica una carpeta NTFS vacía y existente donde residirá la unidad montada.</p>  |
 
@@ -68,9 +69,9 @@ Puedes usar la Administración de discos para asignar una ruta de acceso de carp
 -   Las rutas de acceso de carpeta de punto de montaje solo están disponibles en carpetas vacías en volúmenes NTFS básicos o dinámicos.
 -   Para modificar una ruta de acceso de carpeta de punto de montaje, quítala y luego crea una nueva ruta de acceso de carpeta en la nueva ubicación. No se puede modificar la ruta de acceso de carpeta de punto de montaje directamente.
 -   Al asignar una ruta de acceso de carpeta de punto de montaje a una unidad, usa el **Visor de eventos** para comprobar el registro del sistema en busca de errores o advertencias del servicio de clúster que indiquen errores en la ruta de acceso de carpeta de punto de montaje. Estos errores aparecerían como **ClusSvc** en la columna **Origen** y **Recurso de disco físico** en la columna **Categoría**.
--   También puedes crear una unidad montada usando el comando [mountvol](http://go.microsoft.com/fwlink/?linkid=64111).
+-   También puedes crear una unidad montada usando el comando [mountvol](https://go.microsoft.com/fwlink/?linkid=64111).
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 -   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
 
 

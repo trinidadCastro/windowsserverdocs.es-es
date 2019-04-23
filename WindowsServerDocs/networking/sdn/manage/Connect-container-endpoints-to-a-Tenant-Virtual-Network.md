@@ -1,6 +1,6 @@
 ---
-title: Contenedores de conectarse a una red Virtual
-description: Este tema es parte de la guía definido redes Software sobre cómo administrar cargas de trabajo de inquilino y redes virtuales en Windows Server 2016.
+title: Conexión de puntos de conexión de contenedor a una red virtual de inquilino
+description: En este tema, se muestra cómo conectar los puntos de conexión de contenedor a una red virtual existente de inquilino creada a través de SDN. Utilice la l2bridge (y opcionalmente l2tunnel) controlador de red disponible con el complemento de Windows libnetwork para Docker crear una red de contenedor en la máquina virtual del inquilino.
 manager: ravirao
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,55 +12,63 @@ ms.topic: article
 ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: pashort
 author: jmesser81
-ms.openlocfilehash: 801cf4b8f71935eb72d820d47e523a310fa64562
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/24/2018
+ms.openlocfilehash: 1968a4db9231459fe5858d9a0f3ba5e8f317ed1b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59872746"
 ---
-# <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conectar los extremos de contenedor a una red virtual del inquilino
+# <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conexión de puntos de conexión de contenedor a una red virtual de inquilino
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Este tema muestra cómo conectarse a extremos de contenedor a una red virtual existente de inquilino creada a través de la pila de Microsoft Software definido de redes (SDN). Usaremos la *l2bridge* (y, opcionalmente, *l2tunnel*) disponibles con el complemento de libnetwork de Windows para Docker crear una red de contenedores en la máquina virtual de host (inquilino) de contenedor de controladores de red.
+En este tema, se muestra cómo conectar los puntos de conexión de contenedor a una red virtual existente de inquilino creada a través de SDN. Usa el *l2bridge* (y, opcionalmente, *l2tunnel*) controlador de red disponible con el complemento de Windows libnetwork para Docker crear una red de contenedor en la máquina virtual del inquilino.
 
-Como se indica en la [contenedor redes](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/management/container_networking) tema en MSDN, existen varios controladores de red mediante Docker en Windows. Son los controladores más adecuados para SDN *l2bridge* y *l2tunnel *. Ambos controladores, cada extremo del contenedor se está en la misma subred virtual que la máquina virtual de host (inquilino) de contenedor. Las direcciones IP para los extremos de contenedor se asignan dinámicamente mediante el Host de red servicio (SNP) mediante el complemento de nube privada. Los extremos de contenedor tienen direcciones IP únicas pero comparten la misma dirección MAC del equipo host (inquilino) virtual contenedor debido a la traducción de direcciones de nivel 2. Directiva de red (por ejemplo: ACL, encapsulación y QoS) para estos extremos de contenedor se aplican en el host de Hyper-V físico como recibidos por el controlador de red y se definen en sistemas de administración de nivel superior. Hay una ligera diferencia entre el *l2bridge* y *l2tunnel* controladores que se explica a continuación.
+En el [controladores de red de contenedor](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/network-drivers-topologies) tema, analizamos varios controladores de red están disponibles a través de Docker en Windows. Para SDN, use el *l2bridge* y *l2tunnel* controladores. Para ambos controladores, cada punto de conexión de contenedor está en la misma subred virtual que la máquina virtual de host (inquilino) de contenedor. 
 
-- **Puente de L2** -extremos de contenedor que residen en la misma máquina virtual de host de contenedor y se encuentran en la misma subred tienen todo el tráfico de red en el conmutador de Hyper-V virtual. Extremos de contenedor que residen en el host de contenedor diferentes máquinas virtuales o que están en diferentes subredes tienen el tráfico que se reenvía al host de Hyper-V físico. Dado que el tráfico de red entre contenedores en el mismo host y en la misma subred no fluyan hacia el host físico, se aplicará ninguna directiva de red. Solo se aplica la directiva para el tráfico de red de contenedor entre hosts o entre subred.  
- 
-- **Túnel L2** - *todos los* el tráfico de red entre dos extremos de contenedor se reenvía al host de Hyper-V física independientemente de host o subred. Se aplica la directiva de red para el tráfico de red entre subred y entre hosts.   
+El Host a redes servicio (SNP), mediante el complemento de nube privada, se asigna dinámicamente las direcciones IP para los puntos de conexión de contenedor. Los puntos de conexión de contenedor tienen direcciones IP únicas, pero comparten la misma dirección MAC de la máquina de virtual de host (inquilino) contenedor debido a la traducción de direcciones de nivel 2. 
+
+Directiva de red (ACL, encapsulación y QoS) para estos puntos de conexión de contenedor se aplica en el host de Hyper-V físico como recibidos por la controladora de red y se definen en sistemas de administración de la capa superior. 
+
+La diferencia entre el *l2bridge* y *l2tunnel* controladores son:
+
+| l2bridge | l2tunnel |
+| --- | --- |
+|Puntos de conexión de contenedor que residen en: <ul><li>El mismo contenedor host de máquina virtual y en la misma subred que tiene todo el tráfico de red con puente en el conmutador virtual de Hyper-V. </li><li>Contenedor diferente hospedar las máquinas virtuales o en subredes diferentes tiene su tráfico reenviado para el host de Hyper-V físico. </li></ul>No obtener aplica la directiva de red puesto que el tráfico de red entre contenedores en el mismo host y en la misma subred no pasan el host físico. Directiva de red aplica el tráfico de red de contenedor solo a entre hosts o entre subredes. | *Todos los* se reenvía el tráfico de red entre dos puntos de conexión de contenedor para el host de Hyper-V físico independientemente de host o la subred. Directiva de red se aplica al tráfico de red entre subredes y entre hosts. |
+---
 
 >[!NOTE]
->Estos modos de red no funcionan para conectar extremos del contenedor de windows a una red virtual de inquilino en la nube pública de Azure
+>Estos modos de redes no funcionan para conectar puntos de conexión de contenedor de windows a una red virtual de inquilino en la nube pública de Azure.
 
-## <a name="prerequistes"></a>Requisitos previos
- * Se ha implementado una infraestructura SDN con el controlador de red
- * Se ha creado una red virtual del inquilino
- * Se ha implementado una máquina virtual de inquilino con la característica de contenedor de Windows habilitada, el Docker instalado y la característica de Hyper-V habilitado
+
+## <a name="prerequisites"></a>Requisitos previos
+-  Una infraestructura de SDN implementada con la controladora de red.
+-  Se ha creado una red virtual del inquilino.
+-  Una máquina virtual de inquilino implementado con la característica de contenedor de Windows habilitado, Docker instalado y la característica de Hyper-V habilitado. La característica de Hyper-V es necesaria para instalar varios archivos binarios para redes l2bridge y l2tunnel.
+
+   ```powershell
+   # To install HyperV feature without checks for nested virtualization
+   dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All 
+   ```
 
 >[!Note]
->[Virtualización anidada](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/nesting) y exponer extensiones de virtualización no es necesario a menos que es necesario utilizar HyperV de Hyper-V contenedores la característica para instalar archivos binarios de varias redes l2bridge y l2tunnel
+>[Virtualización anidada](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/nesting) y exponer las extensiones de virtualización no es necesario a menos que el uso de contenedores de Hyper-V. 
 
-```powershell
-# To install HyperV feature without checks for nested virtualization
-dism /Online /Enable-Feature /FeatureName:Microsoft-Hyper-V /All 
-```
-
- 
 
 ## <a name="workflow"></a>Flujo de trabajo
 
-1. [Agregar varias configuraciones de IP a un recurso existente de VM NIC a través de controlador de red](#Add) (Host Hyper-V)
-2. [Habilitar el proxy de red en el equipo host para asignar direcciones IP de entidad emisora de certificados para los extremos de contenedor](#Enable) (Host Hyper-V) 
-3. [Instalar el complemento para asignar direcciones IP de entidad emisora de certificados a los extremos del contenedor de nube privada](#Install) (contenedor de máquinas virtuales) 
-4. [Crear un *l2bridge* o *l2tunnel* red con docker](#Create) (contenedor de máquinas virtuales) 
+[1. Agregar varias configuraciones de IP a un recurso de NIC de VM existente a través de la controladora de red (Host de Hyper-V)](#1-add-multiple-ip-configurations)
+[2. Habilitar el proxy de red en el host para asignar direcciones IP de entidad emisora de certificados para puntos de conexión de contenedor (Host de Hyper-V) ](#2-enable-the-network-proxy) 
+ [3. Instalar el complemento para asignar direcciones IP de la entidad emisora de certificados para puntos de conexión de contenedor (contenedor Host de VM) de nube privada ](#3-install-the-private-cloud-plug-in) 
+ [4. Crear un *l2bridge* o *l2tunnel* red mediante docker (máquina virtual de Host de contenedor) ](#4-create-an-l2bridge-container-network)
  
 >[!NOTE]
->No se admiten varias configuraciones de IP en recursos de VM NIC creados a través de System Center Virtual Machine Manager. Se recomienda para estos tipos de implementaciones que crees el recurso de VM NIC fuera de banda mediante PowerShell del controlador de red.
+>No se admite varias configuraciones de IP en recursos de VM NIC creados a través de System Center Virtual Machine Manager. Se recomienda para estos tipos de implementaciones que cree el recurso de NIC de VM fuera de banda mediante PowerShell de controlador de red.
 
-### <a name="Add"></a>1. agregar varias configuraciones de IP
-
-Para este ejemplo, suponemos que ya tiene una configuración IP con la dirección IP de 192.168.1.9 la NIC VM de la máquina virtual de inquilino y está unida a un identificador de recurso VNet de 'VNet1' y recursos de subred de máquina virtual de 'Subred1' en la subred IP 192.168.1.0/24. Agregaremos 10 direcciones IP para contenedores de 192.168.1.101 - 192.168.1.110.
+### <a name="1-add-multiple-ip-configurations"></a>1. Agregar varias configuraciones de IP
+En este paso, se supone la NIC de VM de la máquina virtual de inquilino tiene una configuración de IP con la dirección IP de 192.168.1.9 y se adjunta a un identificador de recurso de red virtual de "VNet1" y el recurso de subred de máquina virtual de 'Subnet1' en la subred IP 192.168.1.0/24. Agregamos 10 direcciones IP para los contenedores de 192.168.1.101 - 192.168.1.110.
 
 ```powershell
 Import-Module NetworkController
@@ -110,29 +118,27 @@ foreach ($i in 1..10)
 New-NetworkControllerNetworkInterface -ResourceId $vmnic.ResourceId -Properties $vmnic.Properties -ConnectionUri $uri
 ```
 
-### <a name="Enable"></a>2. activar al Proxy de red
+### <a name="2-enable-the-network-proxy"></a>2. Habilitar al proxy de red
+En este paso, se habilita el proxy de red asignar varias direcciones IP para la máquina virtual de host de contenedor. 
 
-[ConfigureMCNP.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1>)
-
-Ejecutar este script el **Host Hyper-V** que hospeda la máquina de contenedor host (inquilino) virtual para habilitar el proxy de red asignar varias direcciones IP para la máquina virtual de host de contenedor.
+Para habilitar el proxy de red, ejecute el [ConfigureMCNP.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/ConfigureMCNP.ps1) de script en el **Host de Hyper-V** hospeda la máquina virtual de host (inquilino) de contenedor.
 
 ```powershell
 PS C:\> ConfigureMCNP.ps1
 ```
 
-### <a name="Install"></a>3. instala el complemento de nube privada
+### <a name="3-install-the-private-cloud-plug-in"></a>3. Instalar el complemento de nube privada
+En este paso, se instala un complemento para permitir el SNP para comunicarse con el proxy de red en el Host de Hyper-V.
 
-[InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1)
+Para instalar el complemento, ejecute el [InstallPrivateCloudPlugin.ps1](https://github.com/Microsoft/SDN/blob/master/Containers/InstallPrivateCloudPlugin.ps1) script dentro de la **máquina virtual del host (inquilino) contenedor**.
 
-Ejecutar este script dentro de la **máquina virtual de host (inquilino) de contenedor** para permitir que el Host de red servicio (SNP) para comunicarse con el proxy de red en el Host de Hyper-V.
 
 ```powershell
 PS C:\> InstallPrivateCloudPlugin.ps1
 ```
 
-### <a name="Create"></a>4. crear una *l2bridge* contenedor red
-
-En la **máquina virtual de host (inquilino) de contenedor** usar la `docker network create`comando para crear una red l2bridge
+### <a name="4-create-an-l2bridge-container-network"></a>4. Crear un *l2bridge* red de contenedor
+En este paso, utilizará el `docker network create` comando el **máquina virtual del host (inquilino) contenedor** para crear una red l2bridge. 
 
 ```powershell
 # Create the container network
@@ -143,8 +149,8 @@ C:\> docker run -it --network=MyContainerOverlayNetwork <image> <cmd>
 ```
 
 >[!NOTE]
->Asignación de IP estáticas no es compatible con *l2bridge* o *l2tunnel* contenedor redes cuando se usa con la pila de SDN de Microsoft.
+>No se admite la asignación de IP estática con *l2bridge* o *l2tunnel* redes de contenedor cuando se usa con la pila de SDN de Microsoft.
 
-## <a name="more-information"></a>Obtener más información
-Para obtener infortation más acerca de cómo implementar una infraestructura SDN, consulta [implementar una infraestructura de red definido de Software](https://technet.microsoft.com/en-us/windows-server-docs/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure).
+## <a name="more-information"></a>Más información
+Para obtener más información sobre cómo implementar una infraestructura de SDN, consulte [implementar una infraestructura de red definida por Software](https://docs.microsoft.com/windows-server/networking/sdn/deploy/deploy-a-software-defined-network-infrastructure).
 

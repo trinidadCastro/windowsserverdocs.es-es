@@ -1,7 +1,7 @@
 ---
 ms.assetid: ee008835-7d3b-4977-adcb-7084c40e5918
-title: "Implementar la implementación de retención de la información en los servidores de archivos (pasos de demostración)"
-description: 
+title: Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,22 +10,23 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: e0f79dd72190888340144bc5c109ee31fa301937
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870806"
 ---
-# <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Implementar la implementación de retención de la información en los servidores de archivos (pasos de demostración)
+# <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Puedes establecer períodos de retención de carpetas y colocar archivos legalmente mediante la infraestructura de clasificación de archivo y el Administrador de recursos del servidor de archivos.  
+Puedes establecer períodos de retención para carpetas e imponer una retención legal a un archivo mediante la Infraestructura de clasificación de archivos y el Administrador de recursos del servidor de archivos.  
   
 **En este documento**  
   
 -   [Requisitos previos](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)  
   
--   [Paso 1: Crear recurso de definiciones de propiedad](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
+-   [Paso 1: Crear definiciones de propiedad de recurso](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
   
 -   [Paso 2: Configurar notificaciones](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step2)  
   
@@ -34,31 +35,31 @@ Puedes establecer períodos de retención de carpetas y colocar archivos legalme
 -   [Paso 4: Clasificar un archivo manualmente](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step4)  
   
 > [!NOTE]  
-> Este tema incluye cmdlets de Windows PowerShell de muestra que puedes usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulta [uso de Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
 ## <a name="prerequisites"></a>Requisitos previos  
-Los pasos de este tema suponen que tiene un servidor SMTP configurado para notificaciones de expiración de archivo.  
+Los pasos de este tema dan por supuesto que tienes un servidor SMTP configurado para notificaciones de expiración de archivos.  
   
-## <a name="BKMK_Step1"></a>Paso 1: Crear recurso de definiciones de propiedad  
-En este paso, permitimos que las propiedades del recurso período de retención y detectabilidad para que la infraestructura de clasificación de archivo pueda usar estas propiedades de recurso para etiquetar los archivos que se analizan en una carpeta compartida de red.  
+## <a name="BKMK_Step1"></a>Paso 1: crear definiciones de propiedad de recurso  
+En este paso, se habilitan las propiedades de recurso Período de retención y Detectabilidad, de modo que la Infraestructura de clasificación de archivos utilice estas propiedades de recurso para etiquetar los archivos que se analizan en una carpeta compartida en red.  
   
-[Este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
-#### <a name="to-create-resource-property-definitions"></a>Crear recurso de definiciones de propiedad  
+#### <a name="to-create-resource-property-definitions"></a>Para crear definiciones de propiedad de recurso  
   
-1.  En el controlador de dominio, inicie sesión en el servidor como miembro del grupo Administradores de dominio.  
+1.  En el controlador de dominio, inicia sesión en el servidor como miembro del grupo de seguridad Admins. del dominio.  
   
-2.  Abre el centro de administración de Active Directory. En el administrador del servidor, haz clic en **herramientas**y, a continuación, haz clic en **centro de administración de Active Directory**.  
+2.  Abre el Centro de administración de Active Directory. En Administrador del servidor, haz clic en **Herramientas** y, después, en **Centro de administración de Active Directory**.  
   
-3.  Expande **Control de acceso dinámico**y, a continuación, haz clic en **propiedades de recurso**.  
+3.  Expande **Control de acceso dinámico** y, luego, haz clic en **Propiedades de recurso**.  
   
-4.  Haz clic en **período de retención**y, a continuación, haz clic en **habilitar**.  
+4.  Haz clic con el botón secundario en **Período de retención** y, después, haz clic en **Habilitar**.  
   
-5.  Haz clic en **detectabilidad**y, a continuación, haz clic en **habilitar**.  
+5.  Haz clic con el botón secundario en **Detectabilidad**y, después, haz clic en **Habilitar**.  
   
-![guías de solución](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
   
-El siguiente cmdlet de Windows PowerShell o cmdlets de realizar la misma función que el procedimiento anterior. Especifique cada cmdlet en una sola línea, aunque pueden aparecer ajustados en varias líneas debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 ```  
 Set-ADResourceProperty -Enabled:$true -Identity:'CN=RetentionPeriod_MS,CN=Resource Properties,CN=Claims Configuration,CN=Services,CN=Configuration,DC=contoso,DC=com'  
@@ -66,84 +67,84 @@ Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resour
 ```  
   
 ## <a name="BKMK_Step2"></a>Paso 2: Configurar notificaciones  
-En este paso, usamos la consola del Administrador de recursos del servidor de archivos para configurar el servidor SMTP, la dirección de correo electrónico de administrador predeterminada y la dirección de correo electrónico predeterminada que los informes se envían desde.  
+En este paso, se utiliza la consola del Administrador de recursos del servidor de archivos para configurar el servidor SMTP, la dirección de correo electrónico del administrador predeterminado y la dirección de correo electrónico predeterminada desde la que se envían los informes.  
   
-[Este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
-#### <a name="to-configure-notifications"></a>Para configurar las notificaciones  
+#### <a name="to-configure-notifications"></a>Cómo configurar notificaciones  
   
-1.  Iniciar sesión como miembro del grupo de seguridad de los administradores el servidor de archivos.  
+1.  Inicia sesión en el servidor de archivos como miembro del grupo de seguridad Administradores.  
   
-2.  En el símbolo del sistema de Windows PowerShell, escribe **actualización FsrmClassificationPropertyDefinition**, y, a continuación, presione ENTRAR. Esto sincronizará las definiciones de propiedad que se crean en el controlador de dominio al servidor de archivos.  
+2.  En el símbolo del sistema de Windows PowerShell, escribe **Update-FsrmClassificationPropertyDefinition** y presiona ENTRAR. Esto hará que las definiciones de propiedades creadas en el controlador de dominio se sincronicen en el servidor de archivos.  
   
-3.  Abre el Administrador de recursos del servidor de archivos. En el administrador del servidor, haz clic en **herramientas**y, a continuación, haz clic en **Administrador de recursos del servidor de archivos**.  
+3.  Abra el Administrador de recursos del servidor de archivos. En el Administrador del servidor, haz clic en **Herramientas** y, luego, en **Administrador de recursos del servidor de archivos**.  
   
-4.  Haz clic en **Administrador de recursos del servidor de archivos (locales)**y, a continuación, haz clic en **configurar opciones**.  
+4.  Haz clic con el botón secundario en **Administrador de recursos del servidor de archivos (local)** y, después, haz clic en **Configurar opciones**.  
   
-5.  En la **notificaciones por correo electrónico** pestaña, configura lo siguiente:  
+5.  En la pestaña **Notificaciones de correo electrónico**, configura lo siguiente:  
   
-    -   En la **SMTP servidor nombre o dirección IP**, escriba el nombre del servidor SMTP de la red.  
+    -   En el cuadro **Nombre del servidor SMTP o dirección IP** , escribe el nombre del servidor SMTP de la red.  
   
-    -   En la **Administradores receptores predeterminados** cuadro, escribe la dirección de correo electrónico del administrador que debe acceder a la notificación.  
+    -   En el cuadro **Administradores receptores predeterminados** , escribe la dirección de correo electrónico del administrador que debe recibir la notificación.  
   
-    -   En la **predeterminado "Desde" dirección de correo electrónico**, escriba la dirección de correo electrónico que debe usarse para enviar las notificaciones.  
+    -   En el **predeterminado "De" dirección de correo electrónico** , escriba la dirección de correo electrónico que debe usarse para enviar las notificaciones.  
   
-6.  Haz clic en **Aceptar**.  
+6.  Haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
   
-El siguiente cmdlet de Windows PowerShell o cmdlets de realizar la misma función que el procedimiento anterior. Especifique cada cmdlet en una sola línea, aunque pueden aparecer ajustados en varias líneas debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 ```  
 Set-FsrmSetting -SmtpServer IP address of SMTP server -FromEmailAddress "FromEmailAddress" -AdminEmailAddress "AdministratorEmailAddress"  
 ```  
   
 ## <a name="BKMK_Step3"></a>Paso 3: Crear una tarea de administración de archivos  
-En este paso, usamos la consola del Administrador de recursos del servidor de archivos para crear una tarea de administración de archivos que se ejecutan en el último día del mes y expiran ningún archivo con los siguientes criterios:  
+En este paso, se utiliza la consola del Administrador de recursos del servidor de archivos para crear una tarea de administración de archivos que se ejecutará el último día del mes y que hará que expiren los archivos que cumplan los siguientes criterios:  
   
--   El archivo no está clasificado como está en espera legal.  
+-   El archivo no está clasificado con el estado de retención legal.  
   
--   El archivo se clasifica como si tuvieran un período de retención a largo plazo.  
+-   El archivo está clasificado con un período de retención a largo plazo.  
   
--   El archivo no se modificó en los últimos 10 años.  
+-   El archivo no se ha modificado en los últimos 10 años.  
   
-[Este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
+[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
   
 #### <a name="to-create-a-file-management-task"></a>Para crear una tarea de administración de archivos  
   
-1.  Iniciar sesión como miembro del grupo de seguridad de los administradores el servidor de archivos.  
+1.  Inicia sesión en el servidor de archivos como miembro del grupo de seguridad Administradores.  
   
-2.  Abre el Administrador de recursos del servidor de archivos. En el administrador del servidor, haz clic en **herramientas**y, a continuación, haz clic en **Administrador de recursos del servidor de archivos**.  
+2.  Abra el Administrador de recursos del servidor de archivos. En el Administrador del servidor, haz clic en **Herramientas** y, luego, en **Administrador de recursos del servidor de archivos**.  
   
-3.  Haz clic en **tareas de administración de archivos**y, a continuación, haz clic en **crear la tarea de administración de archivos**.  
+3.  Haga clic con el botón secundario en **Tarea de administración de archivos**y, a continuación, en **Crear tarea de administración de archivos**.  
   
-4.  En la **General** pestaña la **nombre de la tarea**, escriba un nombre para la tarea de administración de archivos, como tarea de retención.  
+4.  En la pestaña **General**, en el cuadro **Nombre de tarea**, escribe un nombre para la tarea de administración de archivos, como Tarea de retención.  
   
-5.  En la **ámbito**, haga clic **agregar**y elige las carpetas que deberían estar incluidas en esta regla, como documentos D:\Finance.  
+5.  En la pestaña **Ámbito**, haz clic en **Agregar** y elige las carpetas que deben incluirse en esta regla (por ejemplo, D:\Finance Documents).  
   
-6.  En la **acción** pestaña la **tipo** cuadro, haz clic en **expiración del archivo**. En la **directorio de expiración**, escriba una ruta de acceso a una carpeta en el servidor de archivos local que se moverán los archivos que ha expirado. Esta carpeta debe tener una lista de control de acceso que concede acceso de solo los administradores de servidor de archivos.  
+6.  En la pestaña **Acción**, en el cuadro **Tipo**, haz clic en **Expiración de archivos**. En el cuadro **Directorio de expiración** , escribe una ruta de acceso a una carpeta del servidor de archivos local adonde se moverán los archivos expirados. Esta carpeta debe tener una lista de control de acceso que solo conceda acceso a los administradores del servidor de archivos.  
   
-7.  En la **notificación**, haga clic **agregar**.  
+7.  En la pestaña **Notificación**, haz clic en **Agregar**.  
   
-    -   Selecciona el **enviar correo electrónico a los administradores de los siguientes** casilla de verificación.  
+    -   Activa la casilla **Enviar correo electrónico a los siguientes administradores**.  
   
-    -   Selecciona el **envía un correo electrónico a los usuarios con los archivos afectados** y, a continuación, haz clic en **Aceptar**.  
+    -   Activa la casilla **Enviar un mensaje de correo electrónico a los usuarios con archivos afectados** y haz clic en **Aceptar**.  
   
-8.  En la **condición**, haga clic **agregar**y agrega las siguientes propiedades:  
+8.  En la pestaña **Condición**, haz clic en **Agregar** y agrega las siguientes propiedades:  
   
-    -   En la **propiedad** la lista, haz clic en **detectabilidad**. En la **operador** la lista, haz clic en **no es igual**. En la **valor** la lista, haz clic en **mantenga**.  
+    -   En la lista **Propiedad** , haz clic en **Detectabilidad**. En la lista **Operador** , haz clic en **Distinto de**. En la lista **Valor**, haz clic en **Retener**.  
   
-    -   En la **propiedad** la lista, haz clic en **período de retención**. En la **operador** la lista, haz clic en **igual**. En la **valor** la lista, haz clic en **a largo plazo**.  
+    -   En la lista **Propiedad**, haz clic en **Período de retención**. En la lista **Operador**, haz clic en **Igual**. En la lista **Valor** , haz clic en **Largo plazo**.  
   
-9. En la **condición**, selecciona el **días desde la última modificación del archivo** y, a continuación, Establece el valor en **3650**.  
+9. En la pestaña **Condición** , activa la casilla **Días desde la última modificación en el archivo** y establece el valor en **3650**.  
   
-10. En la **programación** pestaña, haz clic en el **mensual** opción y, a continuación, selecciona el **última** casilla de verificación.  
+10. En la pestaña **Programar** , haz clic en la opción **Mensualmente** y activa la casilla **Último** .  
   
-11. Haz clic en **Aceptar**.  
+11. Haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
   
-El siguiente cmdlet de Windows PowerShell o cmdlets de realizar la misma función que el procedimiento anterior. Especifique cada cmdlet en una sola línea, aunque pueden aparecer ajustados en varias líneas debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 ```  
 $fmjexpiration = New-FSRMFmjAction -Type 'Expiration' -ExpirationFolder folder  
@@ -158,35 +159,35 @@ $fmj1=New-FSRMFileManagementJob -Name "Retention Task" -Namespace @('D:\Finance 
 ```  
   
 ## <a name="BKMK_Step4"></a>Paso 4: Clasificar un archivo manualmente  
-En este paso, clasificamos manualmente un archivo para estar en espera legal. La carpeta primaria de este archivo se clasifica con un período de retención a largo plazo.  
+En este paso, se clasifica manualmente un archivo con el estado de retención legal. La carpeta principal de este archivo se clasificará con un período de retención a largo plazo.  
   
-#### <a name="to-manually-classify-a-file"></a>Para clasificar manualmente un archivo  
+#### <a name="to-manually-classify-a-file"></a>Cómo clasificar manualmente un archivo  
   
-1.  Iniciar sesión como miembro del grupo de seguridad de los administradores el servidor de archivos.  
+1.  Inicia sesión en el servidor de archivos como miembro del grupo de seguridad Administradores.  
   
-2.  Navega a la carpeta que se ha configurado en el ámbito de la tarea de administración de archivo creado en el paso 3.  
+2.  Navega a la carpeta que se configuró en el ámbito de la tarea de administración de archivos creada en el Paso 3.  
   
-3.  Haz clic en la carpeta y, a continuación, haz clic en **propiedades**.  
+3.  Haga clic con el botón secundario en la carpeta y, a continuación, haga clic en **Propiedades**.  
   
-4.  En la **clasificación**, haga clic **período de retención**, haz clic en **a largo plazo**y, a continuación, haz clic en **Aceptar**.  
+4.  En la pestaña **Clasificación** , haz clic en **Período de retención**, en **Largo plazo**y en **Aceptar**.  
   
-5.  Haz clic en un archivo dentro de esa carpeta y, a continuación, haz clic en **propiedades**.  
+5.  Haz clic con el botón secundario en un archivo de esa carpeta y, después, haz clic en **Propiedades**.  
   
-6.  En la **clasificación**, haga clic **detectabilidad**, haz clic en **mantenga**, haz clic en **aplicar**y, a continuación, haz clic en **Aceptar**.  
+6.  En la pestaña **Clasificación** , haz clic en **Detectabilidad**, en **Retener**, en **Aplicar**y en **Aceptar**.  
   
-7.  En el servidor de archivos, ejecuta la tarea de administración de archivos mediante la consola del Administrador de recursos del servidor de archivos. Una vez completada la tarea de administración de archivos, comprueba la carpeta y asegurarse de que el archivo no se movió al directorio de expiración.  
+7.  En el servidor de archivos, ejecuta la tarea de administración de archivos mediante la consola del Administrador de recursos del servidor de archivos. Cuando la tarea de administración de archivos se haya completado, comprueba la carpeta y asegúrate de que el archivo no se ha movido al directorio de expiración.  
   
-8.  Haz clic en el mismo archivo dentro de esa carpeta y, a continuación, haz clic en **propiedades**.  
+8.  Haz clic con el botón secundario en el mismo archivo de esa carpeta y, después, haz clic en **Propiedades**.  
   
-9. En la **clasificación**, haga clic **detectabilidad**, haz clic en **no es aplicable**, haz clic en **aplicar**y, a continuación, haz clic en **Aceptar**.  
+9. En la pestaña **Clasificación** , haz clic en **Detectabilidad**, en **No aplicable**, en **Aplicar**y en **Aceptar**.  
   
-10. En el servidor de archivos, vuelve a ejecutar la tarea de administración de archivos mediante la consola del Administrador de recursos del servidor de archivos. Una vez completada la tarea de administración de archivos, comprueba la carpeta y asegurarse de que ese archivo se ha movido al directorio de expiración.  
+10. En el servidor de archivos, vuelve a ejecutar la tarea de administración de archivos mediante la consola del Administrador de recursos del servidor de archivos. Cuando la tarea de administración de archivos se haya completado, comprueba la carpeta y asegúrate de que el archivo se ha movido al directorio de expiración.  
   
-## <a name="BKMK_Links"></a>Consulta también  
+## <a name="BKMK_Links"></a>Vea también  
   
 -   [Escenario: Implementar la retención de información en servidores de archivos](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
   
--   [Planear la retención de información en los servidores de archivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
+-   [Planificar la retención de información en servidores de archivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
   
 -   [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 7f285c9f-c3e8-4aae-9ff4-a9123815114e
-title: Directiva de acceso Central de escenario
-description: 
+title: Directiva de acceso Central del escenario
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,88 +10,89 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 1ec4165209b726609b1f9b2caeab02fb5072c756
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59873416"
 ---
-# <a name="scenario-central-access-policy"></a>Escenario: Directiva de acceso Central
+# <a name="scenario-central-access-policy"></a>Escenario: Directiva de acceso central
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Directivas de acceso central para archivos permiten a las organizaciones a implementar y administrar directivas de autorización que incluyen expresiones condicionales que usan los grupos de usuarios, las notificaciones de usuario, notificaciones de dispositivo y propiedades de recurso de forma centralizada. (Las notificaciones son las aserciones acerca de los atributos del objeto con el que se asocian). Por ejemplo, para acceder a datos de gran impacto en la empresa (Repercusión), un usuario debe ser un empleado a tiempo completo, obtener acceso desde un dispositivo administrado e iniciar sesión con una tarjeta inteligente. Estas directivas se definen y hospedadas en los servicios de dominio de Active Directory (AD DS).  
+Las directivas de acceso central para los archivos permiten a las organizaciones implementar y administrar de manera centralizada las directivas de autorización que incluyen expresiones condicionales que usan grupos e usuarios, notificaciones de usuario, notificaciones de dispositivo y propiedades de recursos. (Las notificaciones son aserciones sobre los atributos del objeto al que están asociadas). Por ejemplo, para tener acceso a datos de alto impacto de negocio (HBI), un usuario tiene que ser un empleado a tiempo completo, obtener acceso desde un dispositivo administrado e iniciar sesión con una tarjeta inteligente. Estas directivas se definen y se hospedan en Servicios de dominio de Active Directory (AD DS).  
   
-Las directivas de acceso organizativas se controlan mediante el cumplimiento y requisitos normativos de empresas. Por ejemplo, si una organización tiene un requisito de negocio para restringir el acceso a información personalmente identificable (PII) en archivos solo el propietario del archivo y los miembros del departamento de recursos humanos (HR) que tienen permiso para ver información PII, esta directiva se aplica a los archivos PII siempre que se encuentran en servidores de archivos en toda la organización. En este ejemplo, debe poder:  
+El cumplimiento de normas y los requisitos de las normas empresariales controlan las directivas de acceso organizativas. Por ejemplo, si una organización tiene un requisito empresarial para restringir el acceso a información personal identificable (PII) en archivos a solo el propietario del archivo y los miembros del departamento de recursos humanos (HR) que tienen permiso para ver información PII, se aplica esta directiva Para información de identificación personal, los archivos que estén en servidores de archivos en toda la organización. En este ejemplo, tienes que ser capaz de:  
   
--   Identificar y marcar los archivos que contengan PII.  
+-   Identificar y marcar los archivos que contienen PII.  
   
--   Identifica el grupo de miembros HR quién tiene permiso para ver información PII.  
+-   Identificar el grupo de los miembros de RR.HH. que están autorizados para ver información PII.  
   
--   Crear una directiva de acceso central que se aplica a todos los archivos que contienen PII siempre que se encuentran en servidores de archivos en toda la organización.  
+-   Crear una directiva de acceso central que se aplique a todos los archivos que contengan PII ubicados en servidores de archivos en toda la organización.  
   
-La iniciativa para implementar y aplicar una directiva de autorización puede proceder por muchas razones y aplicar a varios niveles de la organización. Estos son algunos tipos de directivas de ejemplo:  
+La iniciativa de implementar y exigir una directiva de autorización puede provenir por distintos motivos y se puede aplicar a distintos niveles de la organización. A continuación se muestran algunos ejemplos de tipos de directivas:  
   
--   **Directiva de autorización de toda la organización.** Normalmente se inicia desde la oficina de seguridad de información, esta directiva de autorización se realiza a través de cumplimiento o los requisitos de una organización de alto nivel y que sea relevante en toda la organización. Por ejemplo, archivos de Repercusión son accesibles para los empleados solo.  
+-   **Directiva de autorización para toda la organización.** Esta directiva de autorización, que se suele iniciar desde la oficina de seguridad de la información, la derivan los requisitos de cumplimiento o de una organización de nivel muy alto y es relevante para toda la organización. Por ejemplo, solo los empleados a tiempo completo tienen acceso a los archivos HBI.  
   
--   **Directiva de autorización departamento.** Cada departamento de una organización tiene algunos requisitos especiales de administración de datos que quiere aplicar. Por ejemplo, el departamento de finanzas desea limitar el acceso a servidores de finanzas a los empleados de finanzas.  
+-   **Directiva de autorización departamental.** Cada departamento de una organización tiene algunos requisitos especiales de tratamiento de datos que quiere exigir. Por ejemplo: es posible que el Departamento de Finanzas quiera limitar por completo el acceso a los servidores de finanzas a los empleados de ese departamento.  
   
--   **Directiva de administración de datos específica.** Esta directiva generalmente está relacionado con los requisitos empresariales y cumplimiento, y está dirigido a proteger el acceso a la información que se está administrando correcto. Por ejemplo, las instituciones financieras podrían implementar las paredes de la información para que analistas no tienen acceso a información de corretaje y agentes no tienen acceso a información de análisis.  
+-   **Directiva de administración de datos específicos.** Esta directiva suele estar relacionada con el cumplimiento y los requisitos empresariales y su finalidad es proteger el acceso correcto a la información que se administra. Por ejemplo, las instituciones financieras pueden implementar los muros informativos para que los analistas no tengan acceso a información de corretaje y los corredores de bolsa no puedan acceder a información de análisis.  
   
--   **Necesidad de conocer la directiva.** Por lo general, este tipo de directiva de autorización se usa en combinación con los tipos de directiva anterior. Por ejemplo, los proveedores podrán tener acceso y modificar solo los archivos que pertenecen a un proyecto que están trabajando.  
+-   **Directiva de necesidad de conocimiento de la información.** Este tipo de directiva de autorización se usa normalmente junto con los tipos de directiva anterior. Por ejemplo, los proveedores solo deben poder acceder y editar los archivos que pertenecen a un proyecto en el que trabajen.  
   
-Entornos de la vida real nos enseñan que todas las directivas de autorización debe tener las excepciones para que las organizaciones pueden reaccionar rápidamente cuando surjan de necesidades empresariales importantes. Por ejemplo, ejecutivos que no pueden encontrar sus tarjetas inteligentes y necesitas acceso rápido a información Repercusión pueden llamar el servicio de asistencia para obtener una excepción temporal para tener acceso a esa información.  
+Los entornos de la vida real también nos enseñan que cada directiva de autorización tiene que tener excepciones para que las organizaciones pueden reaccionar rápidamente cuando surjan necesidades empresariales importantes. Por ejemplo, los ejecutivos que no encuentran su tarjeta inteligente y necesitan un acceso rápido a la información HBI pueden llamar al departamento de soporte técnico para obtener una excepción temporal para tener acceso a esa información.  
   
-Directivas de acceso central actúan como paraguas de seguridad que se aplica una organización a través de sus servidores. Estas directivas mejorarán (pero no reemplazan) las directivas de acceso local o listas de control de acceso discrecional (DACL) que se aplican a archivos y carpetas. Por ejemplo, si una DACL en un archivo permite el acceso a un usuario específico, pero una directiva central que se aplica al archivo restringe el acceso al mismo usuario, el usuario no puede obtener acceso al archivo. Si la directiva de acceso central permite el acceso, pero la DACL no permite el acceso, el usuario no puede obtener acceso al archivo.  
+Las directivas de acceso central actúan como paraguas de seguridad que una organización aplica entre los servidores. Estas directivas mejoran (pero no sustituyen) las directivas de acceso local o a las listas de control de acceso discrecional (DACL) que se aplican a archivos y carpetas. Por ejemplo, si una DACL de un archivo permite el acceso a un usuario específico, pero una directiva central que se aplica al archivo restringe el acceso al mismo usuario, el usuario no puede tener acceso al archivo. Si la directiva de acceso central permite el acceso, pero la DACL no permite el acceso, el usuario no puede tener acceso al archivo.  
   
-Una regla de directiva de acceso central tiene las siguientes partes lógicas:  
+Una regla de directiva de acceso central tiene las partes lógicas siguientes:  
   
--   **Aplicabilidad.** Una condición que define los datos de la directiva se aplica, como Resource.BusinessImpact=High.  
+-   **Aplicabilidad.** Una condición que define los datos a los que se aplica la directiva, como Resource.BusinessImpact=High.  
   
--   **Condiciones de acceso.** Una lista de uno o más entradas control de acceso (ACE) que definen quién tiene acceso a los datos, como permitir | Control total | User.EmployeeType=FTE.  
+-   **Condiciones de acceso.** Una lista de una o más entradas de control de acceso (ACE) que definen quién puede acceder a los datos, como Permitir | Control total| User.EmployeeType=FTE.  
   
--   **Excepciones.** Una lista más de uno o más ACE que definen una excepción para la directiva, como MemberOf(HBIExceptionGroup).  
+-   **Excepciones.** Una lista adicional de una o varias entradas de ACE que definen una excepción de la directiva, como MemberOf(HBIExceptionGroup).  
   
-Las siguientes dos figuras mostrar el flujo de trabajo de acceso central y las directivas de auditoría.  
+Las dos ilustraciones siguientes muestran el flujo de trabajo en el acceso central y las directivas de auditoría.  
   
-![guías de solución](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide.JPG)  
+![guías de soluciones](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide.JPG)  
   
-**Figura 1** conceptos de directiva de acceso y auditoría Central  
+**Figura 1** Conceptos de acceso central y directiva de auditoría  
   
-![guías de solución](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide_2.JPG)  
+![guías de soluciones](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide_2.JPG)  
   
-**Figura 2** flujo de trabajo de directiva de acceso Central  
+**Figura 2** Flujo de trabajo de directiva de acceso central  
   
-La directiva de autorización central combina los siguientes componentes:  
+La directiva de autorización central combina los componentes siguientes:  
   
--   Una lista de reglas de acceso definidas centralmente destinadas a determinados tipos de información, como Repercusión o PII.  
+-   Una lista de reglas de acceso definidas centralmente destinadas a determinados tipos de información, como HBI o PII.  
   
--   Una directiva de forma centralizada definida que contiene una lista de reglas.  
+-   Una directiva definida centralmente que contiene una lista de reglas.  
   
--   Un identificador de directiva que se asigna a cada archivo en los servidores de archivos para apuntar a una directiva de acceso central específicos que debe aplicarse durante la autorización de acceso.  
+-   Un identificador de directiva que se asigna a cada archivo de los servidores de archivos para que señale a una directiva de acceso central específica que se debe aplicar durante la autorización de acceso.  
   
-La siguiente ilustración muestra cómo se pueden combinar directivas en listas de directiva para controlar forma centralizada el acceso a archivos.  
+En la ilustración siguiente se muestra cómo puedes combinar las directivas en listas de directiva para controlar centralmente el acceso a archivos.  
   
-![guías de solución](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide3.JPG)  
+![guías de soluciones](media/Scenario--Central-Access-Policy/DynamicAccessControl_RevGuide3.JPG)  
   
-**Figura 3** combinar directivas  
+**Figura 3** Combinación de directivas  
   
 ## <a name="in-this-scenario"></a>En este escenario  
-La siguiente guía está disponible para las directivas de acceso central:  
+La orientación siguiente está disponible para las directivas de acceso central:  
   
 -   [Planear una implementación de directiva de acceso Central](assetId:///0311a76d-d66c-4ddb-ade6-af586a2ad82f)  
   
--   [Implementar una directiva de acceso Central & #40; pasos de demostración & #41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)  
+-   [Implementar una directiva de acceso Central &#40;pasos de demostración&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md)  
   
 -   [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>Roles y características incluidas en este escenario  
-La siguiente tabla enumera los roles y características que forman parte de este escenario y describe cómo apoyan.  
+## <a name="BKMK_NEW"></a>Roles y características que se incluyen en este escenario  
+En la tabla siguiente, se enumeran los roles y las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
-|Rol o característica|¿Cómo admite este escenario|  
+|Rol/característica|Compatibilidad con este escenario|  
 |-----------------|---------------------------------|  
-|Rol de servicios de dominio de directorio activo|AD DS en Windows Server 2012 presenta una plataforma de notificaciones de autorización que permite la creación de notificaciones de usuario y reclamaciones de dispositivo, identidad compuesto, (usuario más notificaciones de dispositivo), nuevos modelos de acceso central (PAC) de la directiva y el uso de información de clasificación de archivos en las decisiones de autorización.|  
-|Rol de servidor de servicios de almacenamiento y de archivo|Servicios de archivos y almacenamiento proporciona tecnologías que te ayudarán a configuración y administran uno o varios servidores de archivos que proporcionan ubicaciones centrales de la red donde puedes almacenar archivos y compartirlos con los usuarios. Si los usuarios de red necesitan acceso a los mismos archivos y las aplicaciones, o si centralizada copia de seguridad y administración de archivos es importante para la organización, debe configurar uno o más equipos como un servidor de archivos agregando la función File and Storage Services y los servicios de rol adecuado a los equipos.|  
-|Equipo de cliente de Windows|Los usuarios pueden acceder a archivos y carpetas en la red a través del equipo cliente.|  
+|Rol de Servicios de dominio de Active Directory|AD DS en Windows Server 2012 presenta una plataforma de autorización basada en notificaciones que permite la creación de notificaciones de usuario y notificaciones de dispositivo, identidad compuesta, (usuario más notificaciones de dispositivo), nuevos modelos de acceso central (CAP) de la directiva y el uso de clasificación de archivos información de las decisiones de autorización.|  
+|Rol del servidor de servicios de archivos y almacenamiento|Los servicios de archivos y almacenamiento incluyen tecnologías que te permiten configurar y administrar uno o más servidores de archivos que proporcionan ubicaciones centrales en tu red donde puedes almacenar archivos y compartirlos con los usuarios. Si los usuarios de la red necesitan tener acceso a los mismos archivos y aplicaciones, o si la administración centralizada de archivos y copias de seguridad es importante en su organización, deberá configurar uno o más equipos como servidor de archivos. Para ello, debe agregar a los equipos el rol Servicios de archivos y almacenamiento y los servicios de rol pertinentes.|  
+|Equipo cliente de Windows|Los usuarios pueden acceder a archivos y carpetas de la red a través del equipo cliente.|  
   
 
 

@@ -1,5 +1,5 @@
 ---
-title: E/S de múltiples rutas en Nano Server
+title: MPIO en Nano Server
 description: Configuración de MPIO en Nano
 ms.prod: windows-server-threshold
 ms.service: na
@@ -13,13 +13,13 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 15d9ebfe72744ed26239587ef297b06361233425
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082661"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59874046"
 ---
-# <a name="mpio-on-nano-server"></a>E/S de múltiples rutas en Nano Server
+# <a name="mpio-on-nano-server"></a>MPIO en Nano Server
 
 >Se aplica a: Windows Server 2016
 

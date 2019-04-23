@@ -1,0 +1,1 @@
+## <a name="powershell-installation-script-issues"></a>Problemas de script de instalación de PowerShell

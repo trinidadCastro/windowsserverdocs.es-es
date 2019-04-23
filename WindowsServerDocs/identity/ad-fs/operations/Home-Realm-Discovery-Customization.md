@@ -1,59 +1,68 @@
 ---
 ms.assetid: 626e33fc-4ac2-4d38-9ac9-addaa4c8d9bb
-title: "Personalización del detección de dominio de inicio"
-description: 
+title: Personalización de detección del dominio de inicio
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 02/09/2017
+ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 14b19e2774cf1eac2f5f23ea6737219611886b4c
-ms.sourcegitcommit: 877a50cd8d6e727048cdfac9b614a98ac3220876
-ms.translationtype: HT
+ms.openlocfilehash: 1198d8b76f2ecdad728e2de6ce7a5c0d053f779f
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868936"
 ---
-# <a name="home-realm-discovery-customization"></a>Personalización del detección de dominio de inicio
+# <a name="home-realm-discovery-customization"></a>Personalización de detección del dominio de inicio
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-Cuando el cliente de AD FS primero solicita un recurso, el servidor de federación de recursos no tiene información sobre el ámbito del cliente. El servidor de federación de recursos responde al cliente de AD FS con un **detección del cliente territorio** página, donde el usuario selecciona el dominio de inicio de una lista. Se rellenan los valores de lista de la propiedad de nombre de la pantalla en el proveedor de reclamaciones confía. Usa los siguientes cmdlets de Windows PowerShell para modificar y personalizar la experiencia del detección de AD FS Home territorio.  
+Cuando el cliente de AD FS primero solicita un recurso, el servidor de federación de recursos no tiene información sobre el dominio Kerberos del cliente. El servidor de federación de recursos responde al cliente de AD FS con un **detección de cliente del dominio** página, donde el usuario selecciona el dominio de inicio de una lista. Los valores de la lista se rellenar a partir de la propiedad del nombre para mostrar de las relaciones de confianza para proveedor de notificaciones. Use los siguientes cmdlets de Windows PowerShell para modificar y personalizar la experiencia de AD FS Home Realm Discovery.  
   
-![Dominio de inicio](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom4.png)  
+![dominio de inicio](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom4.png)  
   
 > [!WARNING]  
-> Ten en cuenta que el nombre de proveedor de notificaciones que se muestra para Active Directory local es el nombre para mostrar federación servicio.  
+> Ten en cuenta que el nombre del proveedor de notificaciones de Active Directory local que se muestra es el nombre para mostrar del servicio de federación.  
   
-## <a name="configure-identity-provider-to-use-certain-email-suffixes"></a>Configurar el proveedor de identidad para usar determinados sufijos de correo electrónico  
-Una organización puede federarse con varios proveedores de reclamaciones. AD FS ahora proporciona la capacidad de in\ cuadro para los administradores enumerar los sufijos, por ejemplo, @us.contoso.com, @eu.contoso.com, que es compatible con un proveedor de notificaciones y habilitarlo para la detección basada en suffix\. Con esta configuración, los usuarios finales escribir en su cuenta corporativa y AD FS selecciona automáticamente el proveedor de notificaciones correspondientes.  
+
+
+
+## <a name="configure-identity-provider-to-use-certain-email-suffixes"></a>Configuración del proveedor de identidades para utilizar ciertos sufijos de correo electrónico  
+Cada organización se puede federar con varios proveedores de notificaciones. AD FS proporciona ahora la en\-cuadro capacidad para los administradores de la lista de sufijos, por ejemplo, @us.contoso.com, @eu.contoso.com, que son admitidos por un proveedor de notificaciones y habilitarlos para el sufijo\-detección basada en. Con esta configuración, los usuarios finales pueden escribir en su cuenta profesional y AD FS selecciona automáticamente el proveedor de notificaciones correspondiente.  
   
-Para configurar un proveedor de identidad \(IDP\), como `fabrikam`, para usar determinados sufijos de correo electrónico, usa el cmdlet de Windows PowerShell y la sintaxis siguiente.  
+Para configurar un proveedor de identidades \(IDP\), tales como `fabrikam`, para utilizar ciertos sufijos de correo electrónico, utilice el cmdlet de Windows PowerShell y la sintaxis siguiente.  
   
 
 `Set-AdfsClaimsProviderTrust -TargetName fabrikam -OrganizationalAccountSuffix @("fabrikam.com";"fabrikam2.com") ` 
  
+>[!NOTE]
+> Al federarse entre dos servidores de AD FS, establecer propiedad PromptLoginFederation en la confianza de proveedor de notificaciones para ForwardPromptAndHintsOverWsFederation.  Esto es para que AD FS reenviará el login_hint y el parámetro de símbolo del sistema para el proveedor de Identidades.  Esto puede hacerse mediante la ejecución del siguiente cmdlet de PowerShell:
+>
+>`Set-AdfsclaimsProviderTrust -PromptLoginFederation ForwardPromptAndHintsOverWsFederation`
+
+## <a name="configure-an-identity-provider-list-per-relying-party"></a>Configuración de una lista de proveedores de identidades por usuarios de confianza  
+En algunos escenarios, es posible que una organización quiera que los usuarios finales vean solamente los proveedores de notificaciones específicos de una aplicación, de manera que, en la página de detección del dominio de inicio, solo se muestre un subconjunto de los proveedores de notificaciones.  
   
-## <a name="configure-an-identity-provider-list-per-relying-party"></a>Configurar una lista de proveedores de identidad por confiar terceros  
-Para algunos escenarios, las organizaciones sería mejor a los usuarios finales ver solo los proveedores de notificaciones que son específicos de una aplicación para que solo un subconjunto de proveedor de notificaciones se muestren en la página de detección de dominio de inicio.  
-  
-Para configurar una lista de IDP por confiar \(RP\) de terceros, usa el siguiente cmdlet de PowerShell de Windows y la sintaxis.  
+Para configurar una lista de IDP por usuarios de confianza entidad \(RP\), use el siguiente cmdlet de Windows PowerShell y la sintaxis.  
   
  
 `Set-AdfsRelyingPartyTrust -TargetName claimapp -ClaimsProviderName @("Fabrikam","Active Directory") ` 
 
   
-## <a name="bypass-home-realm-discovery-for-the-intranet"></a>Pasar por alto Home territorio detección de la intranet  
-La mayoría de las organizaciones solo admiten sus Active Directory local para cualquier usuario que accede desde dentro de su firewall. En esos casos, los administradores pueden configurar AD FS para omitir la detección de dominio de inicio de la intranet.  
+## <a name="bypass-home-realm-discovery-for-the-intranet"></a>Omisión de la detección del dominio de inicio para la intranet  
+La mayoría de las organizaciones solo ofrece su Active Directory local a los usuarios que acceden desde dentro del firewall. En esos casos, los administradores pueden configurar AD FS para que omita la detección del dominio de inicio para la intranet.  
   
-Para omitir HRD para la intranet, usa el siguiente cmdlet de PowerShell de Windows y la sintaxis.  
+Para omitir la HRD para la intranet, use el siguiente cmdlet de Windows PowerShell y la sintaxis.  
   
 
 `Set-AdfsProperties -IntranetUseLocalClaimsProvider $true ` 
  
   
 > [!IMPORTANT]  
-> Por favor, ten en cuenta que si una lista de proveedores de identidad de un confiar parte se ha configurado, incluso aunque se ha habilitado la configuración anterior y los accesos de usuario de la intranet, AD FS aún muestra la página \(HRD\) de detección de dominio de inicio. Para omitir HRD en este caso, tienes que asegurarte de que "Active Directory" también se agregará a la lista de IDP para este usuario de confianza.  
+> Tenga en cuenta que si se ha configurado una lista de proveedores de identidad para un usuario de confianza, aunque la configuración anterior se ha habilitado y el usuario acceda desde la intranet, AD FS sigue mostrando la detección del dominio de inicio \(HRD\) página. Para omitir la HRD en este caso, tendrás que asegurarte de que se agregue también “Active Directory” a la lista de IDP del usuario de confianza.  
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[Personalización de inicio de sesión del usuario FS de anuncios](AD-FS-user-sign-in-customization.md)  
+[AD FS Sign-personalización de usuario](AD-FS-user-sign-in-customization.md)  

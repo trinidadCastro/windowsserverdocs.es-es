@@ -1,7 +1,7 @@
 ---
 ms.assetid: 1b3a03c0-5558-4177-9b2f-e9d6ce3271cd
-title: "Revisa el rol del servidor Proxy Server federación del asociado de cuenta"
-description: 
+title: Revisar el rol del servidor proxy de federación en el asociado de cuenta
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,28 +10,29 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: d2b60ce593c2ca7eb902595ee6a42850cb7605d9
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870846"
 ---
-# <a name="review-the-role-of-the-federation-server-proxy-in-the-account-partner"></a>Revisa el rol del servidor Proxy Server federación del asociado de cuenta
+# <a name="review-the-role-of-the-federation-server-proxy-in-the-account-partner"></a>Revisar el rol del servidor proxy de federación en el asociado de cuenta
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-La función principal del servidor proxy de servidor de federación de la red del perímetro de la organización de partner de la cuenta en los servicios de federación de Active Directory \(AD FS\) es para recopilar las credenciales de autenticación de un equipo cliente que inicie sesión a través de Internet y para pasar las credenciales al servidor de federación, que se encuentra dentro de la red corporativa de la organización de partner de la cuenta. La cuenta para el equipo cliente se almacena en la tienda de atributo del partner de la cuenta.  
+La función principal del servidor proxy de federación en la red perimetral de la organización del asociado de cuenta en Active Directory Federation Services \(AD FS\) consiste en recopilar las credenciales de autenticación de un equipo cliente que inicia sesión a través de Internet y pasar esas credenciales para el servidor de federación, que se encuentra dentro de la red corporativa de la organización del asociado de cuenta. La cuenta para el equipo cliente se almacena en el almacén de atributos del asociado de cuenta.  
   
-Un proxy de servidor de federación también puede funcionar en una o varias de las siguientes funciones, dependiendo de la configuración para satisfacer las necesidades de la organización de partner de la cuenta:  
+Un servidor proxy de federación también puede funcionar en uno o varios de los roles siguientes, dependiendo de cómo se configura para satisfacer las necesidades de la organización del asociado de cuenta:  
   
--   Transmitir Tokens de seguridad, el servidor de federación emite un token de seguridad para el proxy de servidor de federación, que, a continuación, pasa el token en el equipo cliente. El token de seguridad se usa para proporcionar acceso a ese equipo cliente a un usuario de confianza específicas.  
+-   Los Tokens de seguridad de retransmisión, el servidor de federación emite un token de seguridad para el proxy de servidor de federación, que luego retransmite el token en el equipo cliente. El token de seguridad se usa para proporcionar acceso a dicho equipo cliente a un usuario de confianza específico.  
   
--   Recopilar las credenciales, el proxy de servidor de federación usa un \(clientlogon.aspx\) predeterminado cliente inicio de sesión Web formulario para recopilar las credenciales basadas en password\ a través de la autenticación basada en forms\. Sin embargo, puedes personalizar este formulario para aceptar otros tipos de autenticación, como la autenticación de cliente de capa de Sockets seguros \(SSL\) admitidos. ¿Para obtener más información sobre cómo personalizar esta página, consulta personalizar inicio de sesión del cliente y páginas de detección de territorio Home \ ([http:///\/go.microsoft.com\/fwlink\/? LinkId\ = 104275](https://go.microsoft.com/fwlink/?LinkId=104275)\). Un proxy de servidor de federación no acepta credenciales mediante la autenticación integrada de Windows.  
+-   Recopilar las credenciales, el servidor proxy de federación utiliza un inicio de sesión de cliente predeterminada formulario Web Forms \(clientlogon.aspx\) para recopilar la contraseña\-credenciales a través de formularios basadas en\-autenticación basada en. Sin embargo, puede personalizar este formulario para aceptar otros tipos admitidos de autenticación, como Secure Sockets Layer \(SSL\) autenticación del cliente. ¿Para obtener más información sobre cómo personalizar esta página, consulte Personalizar el inicio de sesión de cliente y páginas de detección del territorio inicio \( [http:\/\/go.microsoft.com\/fwlink\/? LinkId\=104275](https://go.microsoft.com/fwlink/?LinkId=104275)\). Un servidor proxy de federación no acepta credenciales mediante la autenticación integrada de Windows.  
   
-Para resumir, un proxy de servidor de federación de asociado de cuenta actúa como proxy para los inicios de sesión del cliente a un servidor de federación que se encuentra en la red corporativa. El proxy de servidor de federación también facilita la distribución de tokens de seguridad a los clientes de Internet que están destinados a usuarios de confianza.  
+En resumen, un servidor proxy de federación del asociado de cuenta actúa como un proxy para los inicios de sesión de cliente a un servidor de federación que se encuentra en la red corporativa. El servidor proxy de federación también facilita la distribución de los tokens de seguridad a los clientes de Internet que están destinados a usuarios de confianza.  
   
 > [!CAUTION]  
-> Exponer a un proxy de federación de servidor en la extranet de asociado de cuenta el inicio de sesión del cliente un formulario Web accesible cualquier persona con Internet accederá. Esto puede potencialmente vulnerable tu organización a algunos ataques basados en password\, como los ataques de diccionario o los ataques de fuerza bruta que puedan desencadenar bloqueos de cuenta para cuentas de usuario que se almacenan en la empresa \(AD DS\) los servicios de dominio de Active Directory.  
+> Exponer a un servidor proxy de federación en la extranet del asociado de cuenta tendrá el formulario Web accesibles por cualquier persona con Internet de inicio de sesión de cliente acceso a. Posiblemente esto puede hacer su organización sea vulnerable a algunos contraseña\-en función de los ataques, como los ataques de diccionario o ataques de fuerza bruta que pueden desencadenar bloqueos de cuentas para las cuentas de usuario que se almacenan en el dominio de Active Directory corporativo Servicios \(AD DS\).  
   
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -1,52 +1,54 @@
 ---
-title: Copia el certificado de CA y CRL en el directorio Virtual
-description: Este tema es parte de la Guía de certificados de servidor de implementación para implementaciones de conexión inalámbrica y cableadas 802.1X
-manager: brianlic
+title: Copie el certificado de CA y la CRL en el directorio Virtual
+description: Este tema forma parte de la Guía de implementación de servidores de certificados para las implementaciones inalámbricas y cableadas 802.1X
+manager: dougkim
 ms.topic: article
 ms.assetid: a1b5fa23-9cb1-4c32-916f-2d75f48b42c7
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e37bfce7f8cf33fd7fcb5e6227d783c28bd29d35
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 07/19/2018
+ms.openlocfilehash: 15cc807db805e1be0349ea51119663e515c7e551
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59874036"
 ---
-# <a name="copy-the-ca-certificate-and-crl-to-the-virtual-directory"></a>Copia el certificado de CA y CRL en el directorio Virtual
+# <a name="copy-the-ca-certificate-and-crl-to-the-virtual-directory"></a>Copie el certificado de CA y la CRL en el directorio Virtual
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este procedimiento para copiar el certificado de CA de empresa y la lista de revocación de certificados raíz de la entidad de certificación a un directorio virtual en el servidor Web y para garantizar que los AD CS está correctamente configurado. Antes de ejecutar los comandos a continuación, asegúrate de que reemplaza los nombres de directorio y server con los que son adecuados para la implementación.  
+Puede usar este procedimiento para copiar el certificado de CA raíz de la lista de revocación de certificados y Enterprise de la entidad de certificación a un directorio virtual en el servidor Web y para asegurarse de que AD CS esté configurado correctamente. Antes de ejecutar los comandos siguientes, asegúrese de sustituir los nombres de directorio y el servidor con aquéllos que sean adecuados para su implementación.  
   
-Para realizar este procedimiento debe ser miembro del **administradores de dominio**.  
+Para realizar este procedimiento debe ser miembro de **Admins. del dominio**.  
   
-#### <a name="to-copy-the-certificate-revocation-list-from-ca1-to-web1"></a>Para copiar la lista de revocación de certificados de CA1a WEB1  
+#### <a name="to-copy-the-certificate-revocation-list-from-ca1-to-web1"></a>Para copiar la lista de revocación de certificados de CA1 a WEB1  
   
-1.  En CA1, ejecutar Windows PowerShell como administrador y, a continuación, publicar la CRL con el siguiente comando:  
+1.  En CA1, ejecute Windows PowerShell como administrador y, a continuación, publicar la CRL con el siguiente comando:  
   
-    - Tipo `certutil -crl`, y, a continuación, presione ENTRAR.  
-  
-    - Para copiar el certificado de CA en el recurso compartido de archivos en el servidor Web, escriba `copy C:\Windows\system32\certsrv\certenroll\*.crt \\WEB1\pki`, y, a continuación, presione ENTRAR.  
+    - Escriba `certutil -crl` y presione ENTRAR.  
+
     - Para copiar las listas de revocación de certificados en el recurso compartido de archivos en el servidor Web, escriba `copy C:\Windows\system32\certsrv\certenroll\*.crl \\WEB1\pki`, y, a continuación, presione ENTRAR.  
   
-2. Para reiniciar los AD CS, escriba `Restart-Service certsvc`, y, a continuación, presione ENTRAR.  
+2.  Para comprobar que las ubicaciones de CDP y AIA extensión están configuradas correctamente, escriba `pkiview.msc`, y, a continuación, presione ENTRAR. Pkiview se abre MMC de PKI de empresa.  
   
-2.  Para comprobar que las ubicaciones de extensión CDP y AIA están configuradas correctamente, escriba `pkiview.msc`, y, a continuación, presione ENTRAR. Pkiview se abre MMC de PKI de empresa.  
+3.  En el panel izquierdo, haga clic en el nombre de CA.<p>Por ejemplo, si el nombre de entidad de certificación es corp-CA1-CA, haga clic en **CA de corp-CA1**. 
+
+4. En la columna de estado del panel de resultados, compruebe que se muestran los valores de la siguiente **Aceptar**:
+
+    - **Certificado de CA**
+    - **Ubicación de AIA #1**
+    - **Ubicación de CDP #1**   
   
-3.  Haz clic en el nombre de entidad emisora de certificados. Por ejemplo, si el nombre de entidad emisora de certificados es corp-CA1-CA, haz clic en **corp-CA1-CA**. En el panel de detalles, compruebe que la **estado** valor para la **certificado de CA**, **AIA ubicación #1**, y **CDP ubicación #1** son todas **Aceptar **.  
   
-La siguiente ilustración muestra el panel de resultados de pkiview con un estado correcto para todos los elementos.  
-  
-! [adcs_pkiviewmedia/adcs_pkiview.png)  
-  
-> [!IMPORTANT]  
-> Si **estado** para cualquier elemento no es **Aceptar**, haz lo siguiente:  
-> -   Abre el recurso compartido en tu servidor Web para comprobar que se copiaron correctamente el certificado y los archivos de lista de revocación de certificados en el recurso compartido. Si no se copian correctamente en el recurso compartido, modificar los comandos de copiar con el origen de archivo correcta y compartir destino y volver a ejecutar los comandos.  
-> -   Comprueba que has introducido las ubicaciones correctas para CDP y AIA en la ficha Extensiones de CA Asegúrate de que hay ningún espacio adicional u otros caracteres en las ubicaciones que ha proporcionado.  
-> -   Comprueba que has copiado el certificado de CA y de CRL a la ubicación correcta en el servidor Web, y que la ubicación coincide con la ubicación que proporcionaste para las ubicaciones de CDP y AIA de la CA.  
-> -   Comprueba que has configurado correctamente permisos para la carpeta virtual donde se almacenan el certificado de CA y CRL.  
+> [!TIP]  
+> Si **estado** para cualquier elemento no es **Aceptar**, realice lo siguiente:  
+> -   Abra el recurso compartido en el servidor Web para comprobar que el certificado y los archivos de lista de revocación de certificados se han copiado correctamente en el recurso compartido. Si no se copiaron correctamente en el recurso compartido, modifique los comandos de copia con el origen de archivo correcto y compartir destino y vuelva a ejecutar los comandos.  
+> -   Compruebe que ha escrito las ubicaciones de CDP y AIA correctas en la pestaña Extensiones de CA. Asegúrese de que no hay ningún espacio adicional u otros caracteres en las ubicaciones que ha proporcionado.  
+> -   Compruebe que copió el certificado de CA y de CRL en la ubicación correcta en el servidor Web, y que la ubicación coincida con la ubicación que ha proporcionado para las ubicaciones de CDP y AIA en la CA.  
+> -   Compruebe que ha configurado correctamente los permisos para la carpeta virtual donde se almacenan el certificado de CA y CRL.  
   
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 5; configurar clientes"
+title: 'Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 5; configurar clientes'
 ms.prod: windows-server-threshold
 ms.technology: storage-work-folders
 ms.topic: article
@@ -9,26 +9,27 @@ author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: f168292b-0dbc-44b9-965f-d480e5134a0c
 ms.openlocfilehash: fa8b2b15ff411a59b28308a329d7ca2341ef0886
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59871946"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: Paso 5; configurar clientes
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 5, los clientes de la instalación
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 En este tema se describe el quinto paso para implementar Carpetas de trabajo con los Servicios de federación de Active Directory (AD FS) y el Proxy de aplicación web. Puedes encontrar el resto de pasos de este proceso en estos temas:  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web (WAP): información general](deploy-work-folders-adfs-overview.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Información general](deploy-work-folders-adfs-overview.md)  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 1; configurar AD FS](deploy-work-folders-adfs-step1.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 1: configuración de AD FS](deploy-work-folders-adfs-step1.md)  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 2; trabajo posterior a la configuración de AD FS](deploy-work-folders-adfs-step2.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 2, trabajo posterior a la configuración de AD FS](deploy-work-folders-adfs-step2.md)  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 3; configurar Carpetas de trabajo](deploy-work-folders-adfs-step3.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 3, configurar carpetas de trabajo](deploy-work-folders-adfs-step3.md)  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 4; configurar el Proxy de aplicación web](deploy-work-folders-adfs-step4.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 4: configurar el Proxy de aplicación Web](deploy-work-folders-adfs-step4.md)  
   
 Usa los siguientes procedimientos para configurar los clientes de Windows que estén unidos (o no) a un dominio. Puedes usar a estos clientes para comprobar si los archivos de tus clientes se sincronizan correctamente en Carpetas de trabajo.  
   
@@ -41,21 +42,21 @@ Como estás instalando certificados autofirmados cuyo origen no se puede rastrea
   
 Para instalar los certificados, sigue estos pasos:  
   
-1.  Haz clic en **Inicio**y, a continuación, en **Ejecutar**.  
+1.  Haga clic en **Inicio** y, a continuación, en **Ejecutar**.  
   
 2.  Escribe **MMC**.  
   
-3.  En el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
+3.  En el menú **Archivo**, haga clic en **Agregar o quitar complemento**.  
   
-4.  En la lista **Complementos disponibles**, selecciona **Certificados** y, a continuación, haz clic en **Agregar**. Se iniciará el asistente para el complemento de certificados.  
+4.  En la lista **Complementos disponibles**, selecciona **Certificados** y, a continuación, haz clic en **Agregar**. Se iniciará el asistente del complemento\- de certificados.  
   
-5.  Selecciona **Cuenta de equipo** y, a continuación, haz clic en **Siguiente**.  
+5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.  
   
 6.  Selecciona **Equipo local: (el equipo en el que se ejecuta la consola)** y haz clic en **Finalizar**.  
   
-7.  Haz clic en **Aceptar**.  
+7.  Haga clic en **Aceptar**.  
   
-8.  Expande la carpeta Console Root\Certificates\(Equipo local)\Personal\Certificates.  
+8.  Expande la carpeta Raíz de consola\Certificados\(equipo local)\Personal\Certificados.  
   
 9. Haz clic con el botón derecho en **Certificados**, haz clic en **Todas las tareas** y, a continuación, haz clic en **Importar**.  
   
@@ -63,7 +64,7 @@ Para instalar los certificados, sigue estos pasos:
   
 11. Repite los pasos 9 y 10, y esta vez busca el certificado de Carpetas de trabajo e impórtalo.  
   
-12. Expande la carpeta Console Root\Certificates\(Equipo local)\Trusted Root Certification Authorities\Certificates.  
+12. Expande la carpeta Raíz de consola\Certificados\(equipo local)\Entidades de certificación raíz de confianza\Certificados.  
   
 13. Haz clic con el botón derecho en **Certificados**, haz clic en **Todas las tareas** y, a continuación, haz clic en **Importar**.  
   
@@ -78,7 +79,7 @@ Para configurar Carpetas de trabajo en el equipo cliente, sigue estos pasos:
   
 2.  Haz clic en **Configurar Carpetas de trabajo**.  
   
-3.  En la página **Escribe la dirección de correo electrónico del trabajo**, escribe la dirección de correo electrónico del usuario (por ejemplo, user@contoso.com) o la dirección URL de Carpetas de trabajo (en el ejemplo de prueba sería https://workfolders.contoso.com) y, a continuación, haz clic en **Siguiente**.  
+3.  En el **escriba su dirección de correo electrónico** , escriba la dirección de correo electrónico del usuario (por ejemplo, user@contoso.com) o la dirección URL de carpetas de trabajo (en el ejemplo de prueba, https://workfolders.contoso.com)y, a continuación, haga clic en **siguiente**.  
   
 4.  Si el usuario está conectado a la red corporativa, la autenticación se realiza mediante la autenticación integrada de Windows. Si el usuario no está conectado a la red corporativa, la autenticación se realiza mediante ADFS (OAuth); asimismo, se le pedirán al usuario las credenciales. Escribe las credenciales y haz clic en **Aceptar**.  
   
@@ -86,7 +87,7 @@ Para configurar Carpetas de trabajo en el equipo cliente, sigue estos pasos:
   
 6.  En la página **Directivas de seguridad** se indican las directivas de seguridad de Carpetas de trabajo que configuraste. Haz clic en **Siguiente**.  
   
-7.  Se mostrará un mensaje que indica que Carpetas de trabajo comenzó la sincronización del equipo. Haz clic en **Cerrar**.  
+7.  Se mostrará un mensaje que indica que Carpetas de trabajo comenzó la sincronización del equipo. Haga clic en **Cerrar**.  
   
 8.  En la página **Administrar Carpetas de trabajo**, se muestra la cantidad de espacio disponible que hay en el servidor, el estado de la sincronización, etcétera. Si fuera necesario, puedes volver a escribir las credenciales aquí. Cierra la ventana  
   
@@ -123,7 +124,7 @@ Cuando se abra la nueva carpeta de Carpetas de trabajo en este cliente, podrás 
   
 Así concluye el procedimiento para implementar Carpetas de trabajo, AD FS y el Proxy de aplicación web mediante la interfaz de usuario de Windows Server.  
   
-## <a name="see-also"></a>Consulta también  
-[Introducción a Carpetas de trabajo](Work-Folders-Overview.md)  
+## <a name="see-also"></a>Vea también  
+[Introducción a las carpetas de trabajo](Work-Folders-Overview.md)  
   
 

@@ -1,6 +1,6 @@
 ---
-title: Ver registros de recursos DNS para una zona de DNS
-description: Este tema es parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
+title: Visualización de registros de recursos DNS para una zona DNS
+description: Este tema forma parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,45 +13,46 @@ ms.topic: article
 ms.assetid: 375feefc-949e-47c3-9e61-35b79e021966
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 786c1ee8fd673bd17465ab9586dd1e0bcfd7971c
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 9cd1184c9f9d603b82ac43829d4c8f7946f26561
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59867986"
 ---
-# <a name="view-dns-resource-records-for-a-dns-zone"></a>Ver registros de recursos DNS para una zona de DNS
+# <a name="view-dns-resource-records-for-a-dns-zone"></a>Visualización de registros de recursos DNS para una zona DNS
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para ver los registros de recursos DNS para una zona DNS en la consola IPAM del cliente.  
+Puede utilizar este tema para ver los registros de recursos DNS para una zona DNS en la consola de cliente IPAM.  
   
-Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para realizar este procedimiento.  
+El requisito mínimo para realizar este procedimiento es la pertenencia al grupo **Administradores** o grupo equivalente.  
   
 ### <a name="to-view-dns-resource-records-for-a-zone"></a>Para ver los registros de recursos DNS para una zona  
   
-1.  En el administrador del servidor, haz clic en **IPAM**. Aparece la consola IPAM del cliente.  
+1.  En el administrador del servidor, haga clic en **IPAM**. Aparece la consola de cliente IPAM.  
   
-2.  En el panel de navegación, en **controlar y administrar**, haz clic en **zonas DNS**.  El panel de navegación se divide en un panel de navegación superior y un panel de navegación inferior.  
+2.  En el panel de navegación en **supervisión y administración**, haga clic en **zonas DNS**.  El panel de navegación se divide en un panel de navegación superior y un panel de navegación inferior.  
   
-3.  En el panel de navegación inferior, haga clic en **búsqueda directa**y, a continuación, expande la lista de dominio y zona para buscar y seleccionar la zona que deseas ver. Por ejemplo, si tienes una zona denominada Dublín, haz clic en **dublin**.  
+3.  En el panel de navegación inferior, haga clic en **búsqueda directa**y, a continuación, expanda la lista de dominio y zona para buscar y seleccionar la zona que desea ver. Por ejemplo, si tiene una zona denominada Dublín, haga clic en **Dublín**.  
   
-    ![Selecciona la zona que deseas ver](../../media/View-DNS-Resource-Records-for-a-DNS-Zone/ipam_DNSzones_01a.jpg)  
+    ![Seleccione la zona que desea ver](../../media/View-DNS-Resource-Records-for-a-DNS-Zone/ipam_DNSzones_01a.jpg)  
 
   
-4.  En el panel de la pantalla, la vista predeterminada es de los servidores DNS para la zona. Para cambiar la vista, haz clic en **vista actual**y, a continuación, haz clic en **registros de recursos**.  
+4.  En el panel de información, la vista predeterminada es de los servidores DNS de la zona. Para cambiar la vista, haga clic en **vista actual**y, a continuación, haga clic en **registros de recursos**.  
   
     ![Cambiar la vista a los registros de recursos](../../media/View-DNS-Resource-Records-for-a-DNS-Zone/ipam_Zone_RR_02.jpg)  
   
-5.  Se muestran los registros de recursos DNS para la zona. Para filtrar los registros, escribe el texto que quieres buscar en **filtro**.  
+5.  Se muestran los registros de recursos DNS para la zona. Para filtrar los registros, escriba el texto que desea buscar en **filtro**.  
   
-    ![Escribe texto para filtrar registros](../../media/View-DNS-Resource-Records-for-a-DNS-Zone/ipam_DNSzones_01c.jpg)  
+    ![Escriba el texto para filtrar registros](../../media/View-DNS-Resource-Records-for-a-DNS-Zone/ipam_DNSzones_01c.jpg)  
   
-6.  Para filtrar los registros de recursos por tipo de registro, el ámbito de acceso u otros criterios, haz clic en **agregar criterios**y, a continuación, realice las selecciones de la lista de criterios y haz clic en **agregar**.  
+6.  Para filtrar los registros de recursos por tipo de registro, el ámbito de acceso u otros criterios, haga clic en **agregar criterios**y, a continuación, realice las selecciones en la lista de criterios y haga clic en **agregar**.  
   
-    ![Usa criterios para filtrar registros](../../media/View-DNS-Resource-Records-for-a-DNS-Zone/ipam_DNSzones_01d.jpg)  
+    ![Utilizar criterios para filtrar registros](../../media/View-DNS-Resource-Records-for-a-DNS-Zone/ipam_DNSzones_01d.jpg)  
   
-## <a name="see-also"></a>Consulta también  
-[Administración de zonas de DNS](DNS-Zone-Management.md)  
+## <a name="see-also"></a>Vea también  
+[Administración de zonas DNS](DNS-Zone-Management.md)  
 [Administrar IPAM](Manage-IPAM.md)  
   
 
