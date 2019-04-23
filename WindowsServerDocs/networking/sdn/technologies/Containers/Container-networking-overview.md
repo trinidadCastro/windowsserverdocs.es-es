@@ -1,6 +1,6 @@
 ---
-title: Introducción a las redes contenedor
-description: En este tema es una descripción general de la pila de red para contenedores de Windows e incluye vínculos a instrucciones adicionales sobre cómo crear, configurar y administrar redes de contenedor.
+title: Introducción a las redes de contenedores
+description: En este tema es una introducción a la pila de red para contenedores de Windows e incluye vínculos a guías adicionales sobre cómo crear, configurar y administrar redes de contenedor.
 manager: ravirao
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,24 +12,33 @@ ms.topic: article
 ms.assetid: 318659e5-e4a5-4e46-99d6-211dfc46f6b8
 ms.author: pashort
 author: jmesser81
-ms.openlocfilehash: fd2f022948208d4aacce2994ff053e77384b28fc
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 09/04/2018
+ms.openlocfilehash: 72b1ac739d9012ac7b90e97abe22e5f321ddba63
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886146"
 ---
-# <a name="container-networking-overview"></a>Introducción a las redes contenedor
+# <a name="container-networking-overview"></a>Introducción a las redes de contenedores
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema es una descripción general de la pila de red para contenedores de Windows e incluye vínculos a instrucciones adicionales sobre cómo crear, configurar y administrar redes de contenedor.
+En este tema, se ofrece información general de la pila de red para contenedores de Windows y se incluyen vínculos a instrucciones adicionales sobre cómo crear, configurar y administrar redes de contenedor.
 
-Windows Server contenedores son un método de virtualización de sistema operativo ligero usado para separar los servicios o aplicaciones de otros servicios que se ejecutan en el mismo host de contenedor. Para habilitar esto, cada contenedor tiene su propia vista del sistema operativo, procesos, sistema de archivos, registro y direcciones IP.
+Contenedores de Windows Server son un método de virtualización del sistema operativo ligero separar las aplicaciones o servicios de otros servicios que se ejecutan en el mismo host de contenedor. Función de los contenedores de Windows de forma similar a las máquinas virtuales. Cuando se habilita, cada contenedor tiene una vista independiente del sistema operativo, los procesos, sistema de archivos, el registro y las direcciones IP, que puede conectarse a redes virtuales. 
 
-Función de contenedores de Windows de forma similar a máquinas virtuales en lo que respecta a la red. Cada contenedor tiene un adaptador de red virtual que está conectado a un conmutador virtual, que se reenvía el tráfico entrante y saliente. Para aplicar el aislamiento entre contenedores en el mismo host, se crea un compartimento de la red para cada Windows Server y el contenedor de Hyper-V en la que está instalado el adaptador de red para el contenedor. Contenedores de servidor de Windows usan un vNIC Host para adjuntar al conmutador virtual. Contenedores de Hyper-V se usa una sintéticos NIC de máquina virtual (no se expone a la máquina virtual de utilidad) para adjuntar el conmutador virtual. 
+Un contenedor de Windows comparte el kernel con el host de contenedor y todos los contenedores que se ejecutan en el host. Dado el espacio de kernel compartido, estos contenedores requieren la misma configuración y versión de kernel. Los contenedores proporcionan aislamiento de aplicaciones mediante tecnología de aislamiento de proceso y espacio de nombres.
 
-Los extremos de contenedor pueden asociarse a una red de host local (por ejemplo, NAT), la red física o una red virtual superposición creados a través de la pila de Microsoft Software definido de redes (SDN). 
+>[!IMPORTANT]
+>Contenedores de Windows no proporcionan un límite de seguridad hostil y no deben usarse para aislar código no seguro. 
 
-Para obtener más información sobre cómo crear y administrar redes de contenedor para las implementaciones de superposición o SDN, consulte la [Windows contenedor redes](https://msdn.microsoft.com/en-us/virtualization/windowscontainers/management/container_networking) guía en MSDN.
+Contenedores de Windows, puede implementar un host de Hyper-V, donde crear uno o más máquinas virtuales en los hosts de máquina virtual. Dentro de los hosts de máquina virtual, se crean contenedores y el acceso de red es a través de un conmutador virtual que se ejecuta dentro de la máquina virtual. Puede usar reutilizables imágenes almacenadas en un repositorio para implementar el sistema operativo y servicios en contenedores. Cada contenedor tiene un adaptador de red virtual que se conecta a un conmutador virtual, reenviar el tráfico entrante y saliente. Puede asociar los puntos de conexión de contenedor a una red de host local (por ejemplo, NAT), la red física o la red virtual superpuesta creadas a través de la pila de SDN.
 
-Para obtener más información sobre cómo crear y administrar redes de contenedor para las redes virtuales con SDN superposición, consulte [conectar extremos de contenedor a una red virtual del inquilino ](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md). 
+Para aplicar el aislamiento entre contenedores en el mismo host, cree un compartimento de red para cada contenedor de Hyper-V y Windows Server. Los contenedores de Windows Server usan una vNIC de host para conectarse al conmutador virtual. Los contenedores de Hyper-V usan una NIC de máquina virtual sintética (no expuesta a la máquina virtual de utilidad) para conectarse al conmutador virtual. 
+
+## <a name="related-topics"></a>Temas relacionados 
+
+- [Las redes de contenedor de Windows](https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture): Aprenda a crear y administrar redes de contenedor para las implementaciones de superposición/SDN.
+
+- [Conectar los puntos de conexión de contenedor a una red virtual de inquilino](../../manage/Connect-container-endpoints-to-a-Tenant-Virtual-Network.md): Aprenda a crear y administrar redes de contenedor para las redes virtuales de superposición con SDN. 

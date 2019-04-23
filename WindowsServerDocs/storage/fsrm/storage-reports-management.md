@@ -1,6 +1,6 @@
 ---
-title: "Administración de informes de almacenamiento"
-description: "En este artículo se describe cómo generar, programar y supervisar informes de almacenamiento"
+title: Administración de informes de almacenamiento
+description: En este artículo se describe cómo generar, programar y supervisar informes de almacenamiento
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: c0d750fd139865daa92319c1d1926dc5d36669b2
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885776"
 ---
 # <a name="storage-reports-management"></a>Administración de informes de almacenamiento
 
@@ -31,7 +32,7 @@ Por ejemplo, puedes:
 -   Ejecutar un informe Archivos por grupo de archivos para identificar cómo los recursos de almacenamiento se segmentan en distintos grupos de archivos. 
 -   Ejecutar un informe Archivos por propietario para analizar cómo los usuarios individuales usan los recursos de almacenamiento compartidos.
 
-Esta sección incluye los siguientes temas:
+Esta sección incluye los temas siguientes:
 
 -   [Programar un conjunto de informes](schedule-set-of-reports.md)
 -   [Generar informes a petición](generate-reports-on-demand.md)
@@ -39,8 +40,8 @@ Esta sección incluye los siguientes temas:
 > [!Note]
 > Para establecer notificaciones por correo electrónico y ciertas funcionalidades de informes, debes configurar primero las opciones generales del Administrador de recursos del servidor de archivos.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
--   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
+-   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
 
 

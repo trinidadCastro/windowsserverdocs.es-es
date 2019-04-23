@@ -1,0 +1,76 @@
+---
+title: Servermanagercmd
+description: 'Tema de los comandos de Windows para ***- '
+ms.custom: na
+ms.prod: windows-server-threshold
+ms.reviewer: na
+ms.suite: na
+ms.technology: manage-windows-commands
+ms.tgt_pltfrm: na
+ms.topic: article
+ms.assetid: 507c4b87-8e13-4872-8b34-0c7508eecbc1
+author: coreyp-at-msft
+ms.author: coreyp
+manager: dongill
+ms.date: 07/11/2018
+ms.openlocfilehash: ba0b85814d942323b12e1874b852fcf28b8ac068
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
+ms.contentlocale: es-ES
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883246"
+---
+# <a name="servermanagercmd"></a>Servermanagercmd
+
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+
+> [!IMPORTANT]
+> Este comando está disponible únicamente en servidores que ejecutan Windows Server 2008 o Windows Server 2008 R2. **ServerManagerCmd.exe** ha quedado desusado y no está disponible en Windows Server 2012. Para obtener información acerca de cómo instalar o quitar roles, servicios de rol y características en Windows Server 2012, consulte [instalar o desinstalar roles, servicios de rol y características](https://go.microsoft.com/fwlink/?LinkID=239563) en Microsoft TechNet.
+
+Instala y quita los roles, servicios de rol y características. También muestra la lista de todos los roles, servicios de rol y características disponibles y muestra que están instalados en este equipo. Para obtener más información acerca de los roles, servicios de rol y características que se pueden especificar mediante el uso de esta herramienta, consulte el [ayuda del administrador del servidor](https://go.microsoft.com/fwlink/?LinkID=137387). Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+
+## <a name="syntax"></a>Sintaxis
+```
+servermanagercmd -query [[[<Drive>:]<path>]<query.xml>] [-logpath   [[<Drive>:]<path>]<log.txt>]
+servermanagercmd -inputpath  [[<Drive>:]<path>]<answer.xml> [-resultpath <result.xml> [-restart] | -whatif] [-logpath [[<Drive>:]<path>]<log.txt>]
+servermanagercmd -install <Id> [-allSubFeatures] [-resultpath   [[<Drive>:]<path>]<result.xml> [-restart] | -whatif] [-logpath   [[<Drive>:]<path>]<log.txt>]
+servermanagercmd -remove <Id> [-resultpath    <result.xml> [-restart] | -whatif] [-logpath  [[<Drive>:]<path>]<log.txt>]
+servermanagercmd [-help | -?]
+servermanagercmd -version
+```
+
+## <a name="parameters"></a>Parámetros
+|Parámetro|Descripción|
+|-------|--------|
+|-consulta [[[\<unidad >:]\<ruta de acceso >]\<*consulta.XML*>]|Muestra una lista de todos los roles, servicios de rol y características instaladas y disponibles para la instalación en el servidor. También puede usar la forma abreviada de este parámetro, **- q**. Si desea que los resultados de consulta guardados en un archivo XML, especifique un archivo XML para reemplazar *consulta.XML*.|
+|-inputpath < [[\<unidad >:]\<ruta de acceso >]*respuesta.Xml*>|Instala o quita los roles, servicios de rol y características especificadas en un archivo de respuesta XML representado por *respuesta.XML*. También puede usar la forma abreviada de este parámetro, **- p.**|
+|-instalar \< *Id.*>|Instala el rol, servicio de rol o característica especificados por *Id*. Los identificadores distinguen mayúsculas de minúsculas. Varios roles, servicios de rol y características deben estar separadas por espacios. Los siguientes parámetros opcionales se usan con el **-instalar** parámetro.<br /><br />-   **-establecer** \< *SettingName*>=\<*SettingValue*> especifica la configuración necesaria para la instalación.<br />-   **-allSubFeatures** especifica la instalación de todos los servicios y características subordinados junto con el rol principal, el servicio de rol o característica denominada en el *Id* valor. **Nota:**     Algunos contenedores de rol no tiene un identificador de la línea de comandos para permitir la instalación de todos los servicios de rol. Esto sucede cuando no se puede instalar servicios de rol en la misma instancia del comando del administrador del servidor. Por ejemplo, no se puede instalar el servicio de rol Servicio de federación de servicios de federación de Active Directory y el servicio de rol Proxy de servicio de federación mediante el uso de la misma instancia de comando del administrador del servidor.<br />-   **-resultpath** \< *result.xml > guarda los resultados de la instalación en un archivo XML representado por *result.xml*. También puede usar la forma abreviada de este parámetro, **- r**. **Nota:**     No se puede ejecutar **servermanagercmd** con ambos el **- resultpath** parámetro y el **- whatif** los parámetros especificados.<br /> -    **-reiniciar** el equipo se reinicia automáticamente cuando la instalación esté completa (si se debe reiniciar las funciones o características instaladas).<br /> -    **- whatif** muestra todas las operaciones especificadas para el **-instalar** parámetro. También puede usar la forma abreviada de la **- whatif** parámetro, **-w**. No se puede ejecutar **servermanagercmd** con ambos el **- resultpath** parámetro y el **- whatif** los parámetros especificados.<br /> -    **- logpath** \<[[\<unidad >:]\<ruta de acceso >]* log.txt* > especifica el nombre y la ubicación del archivo de registro, distinto del predeterminado, **%windir%\temp\servermanager.log**.|
+|-quitar \< *Id.*>|Quita el rol, servicio de rol o característica especificados por *Id*. Los identificadores distinguen mayúsculas de minúsculas. Varios roles, servicios de rol y características deben estar separadas por espacios. Los siguientes parámetros opcionales se usan con el **-quitar** parámetro.<br /><br />-   **-resultpath** \<[[\<unidad >:]\<ruta de acceso >]*resultado.XML*> guarda los resultados de la eliminación en un archivo XML representado por *result.xml*. También puede usar la forma abreviada de este parámetro, **- r**. **Nota:**     No se puede ejecutar **servermanagercmd** con ambos el **- resultpath** parámetro y el **- whatif** los parámetros especificados.<br />-   **-reinicio** reinicia el equipo automáticamente cuando la eliminación completa (si se debe reiniciar restantes funciones o características).<br />-   **-whatif** muestra todas las operaciones especificadas para el **-quitar** parámetro. También puede usar la forma abreviada de la **- whatif** parámetro, **-w**. No se puede ejecutar **servermanagercmd** con ambos el **- resultpath** parámetro y el **- whatif** los parámetros especificados.<br />-   **-logpath**\<[[\<unidad >:]\<ruta de acceso >]*log.txt*> especifica el nombre y la ubicación del archivo de registro, distinto del predeterminado, **%windir%\temp\ ServerManager.log**.|
+|-Ayuda|Muestra la Ayuda en la ventana de símbolo del sistema. También puede usar la forma abreviada, **-?**.|
+|-versión|Muestra el número de versión del administrador del servidor. También puede usar la forma abreviada, **- v**.|
+
+## <a name="remarks"></a>Comentarios
+**ServerManagerCmd** está en desuso y no se garantiza que se admiten en versiones futuras de Windows. Se recomienda que, si el administrador del servidor se ejecuta en equipos que ejecutan Windows Server 2008 R2, use los cmdlets de Windows PowerShell que están disponibles para el administrador del servidor. Para obtener más información, consulte [cmdlets del administrador del servidor](https://go.microsoft.com/fwlink/?LinkID=137653).
+ServerManagerCmd se puede ejecutar desde cualquier directorio en unidades locales del servidor. Debe ser miembro del grupo Administradores en el servidor en el que desea instalar o quitar software.
+
+> [!IMPORTANT]
+> Debido a restricciones de seguridad impuestas por Control de cuentas de usuario en Windows Server 2008 R2, debe ejecutar **Servermanagercmd** en una ventana del símbolo del sistema abierto con permisos elevados. Para ello, haga clic en la línea de comandos ejecutable, o la **símbolo** objeto en el **iniciar** menú y, a continuación, haga clic en **ejecutar como administrador**.
+
+## <a name="BKMK_examples"></a>Ejemplos
+El ejemplo siguiente muestra cómo usar **servermanagercmd** para mostrar una lista de todos los roles, servicios de rol y características disponibles y qué roles, servicios de rol y características instaladas en el equipo.
+```
+servermanagercmd -query
+```
+El ejemplo siguiente muestra cómo usar **servermanagercmd** para instalar el rol servidor Web (IIS) y guardar los resultados de la instalación en un archivo XML representado por *installResult.xml*.
+```
+servermanagercmd -install Web-Server -resultpath installResult.xml
+```
+El ejemplo siguiente muestra cómo usar la ** parámetro whatif ** con **servermanagercmd** mostrar información detallada acerca de los roles, servicios de rol y características que se deben instalarse o quitarse, según las instrucciones que se especifican en un archivo de respuesta XML representado por *install.xml*.
+```
+servermanagercmd -inputpath install.xml -whatif
+```
+
+#### <a name="additional-references"></a>Referencias adicionales
+-   Para obtener una lista completa de la función, servicio de rol o identificadores de características puede especificar para el *Id* parámetro, o para obtener más información sobre el uso de un archivo de respuesta XML con **Servermanagercmd**, consulte el [Ayuda del administrador del servidor](https://go.microsoft.com/fwlink/?LinkID=137387). (https://go.microsoft.com/fwlink/?LinkID=137387).
+-   Consulte [cmdlets del administrador del servidor](https://go.microsoft.com/fwlink/?LinkID=137653) para obtener una lista de cmdlets de Windows PowerShell que están disponibles para el administrador del servidor.
+-   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

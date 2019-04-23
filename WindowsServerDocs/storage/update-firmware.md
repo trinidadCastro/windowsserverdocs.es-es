@@ -1,6 +1,6 @@
 ---
 ms.assetid: e5945bae-4a33-487c-a019-92a69db8cf6c
-title: "Actualización del firmware de la unidad en Windows Server 2016"
+title: Actualización del firmware de la unidad en Windows Server 2016
 ms.prod: windows-server-threshold
 ms.author: toklima
 ms.manager: dmoss
@@ -8,11 +8,12 @@ ms.technology: storage-spaces
 ms.topic: article
 author: toklima
 ms.date: 10/04/2016
-ms.openlocfilehash: 90019ed8425d72d30059be5d47458785cac34c73
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 50291bd4da05d9c2736c84443b444b9a43f46344
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884786"
 ---
 # <a name="updating-drive-firmware-in-windows-server-2016"></a>Actualización del firmware de la unidad en Windows Server 2016
 >Se aplica a: Windows 10, Windows Server (canal semianual), Windows Server 2016
@@ -29,11 +30,11 @@ Para usar Windows Server para actualizar el firmware de la unidad, debe tener un
 Para obtener información sobre si su hardware admite que Windows actualice el firmware de la unidad, póngase en contacto con su proveedor de soluciones.
 A continuación se enumeran vínculos a los distintos requisitos:
 
--   SATA: [Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata); en la sección **Descarga y activación del firmware (si está implementado)**.
+-   SATA: [Device.Storage.Hd.Sata](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsata) : en el **[Si implementa\] Firmware descarga y activación** sección
     
--   SAS: [Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas); en la sección **Descarga y activación del firmware (si está implementado)**.
+-   SAS: [Device.Storage.Hd.Sas](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragehdsas) : en el **[Si implementa\] Firmware descarga y activación** sección
 
--   NVMe: [Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) (en las secciones **5.7** y **5.8)**.
+-   NVMe: [Device.Storage.ControllerDrive.NVMe](https://msdn.microsoft.com/windows/hardware/commercialize/design/compatibility/device-storage#devicestoragecontrollerdrivenvme) : en las secciones **5.7** y **5.8**.
 
 ## <a name="powershell-cmdlets"></a>Cmdlets de PowerShell
 
@@ -42,7 +43,7 @@ Los dos cmdlets agregados a Windows son:
 -   Get-StorageFirmwareInformation
 -   Update-StorageFirmware
 
-El primer cmdlet proporciona información detallada sobre las capacidades del dispositivo, las imágenes de firmware y las revisiones. En este caso, la máquina solo contiene una única SSD SATA con 1 ranura de firmware. A continuación te mostramos un ejemplo:
+El primer cmdlet proporciona información detallada sobre las capacidades del dispositivo, las imágenes de firmware y las revisiones. En este caso, la máquina solo contiene una sola SATA SSD con una ranura de firmware. Por ejemplo:
 
    ```powershell
    Get-PhysicalDisk | Get-StorageFirmwareInformation
@@ -62,7 +63,7 @@ El segundo cmdlet, Update-StorageFirmware, permite a los administradores actuali
   > [!Note]
   > Antes de actualizar cualquier hardware de producción, pruebe la imagen de firmware concreta en un hardware idéntico en un entorno de laboratorio.
 
-La unidad cargará en primer lugar la nueva imagen de firmware en un área de ensayo interna. Mientras esto sucede, E/S continúa normalmente. La imagen se activa después de la descarga. Durante este tiempo, la unidad no podrá responder a comandos de E/S, ya que, de lo contrario, se producirá una reinicialización interna. Esto significa que esta unidad no proporciona datos durante la activación. Una aplicación que tuviera acceso a los datos de esta unidad tendría que esperar una respuesta hasta que la activación del firmware se completase. A continuación se muestra un ejemplo del cmdlet en acción:
+La unidad cargará en primer lugar la nueva imagen de firmware en un área de ensayo interna. Mientras esto sucede, E/S continúa normalmente. La imagen se activa después de la descarga. Durante este tiempo, la unidad no podrá responder a comandos de E/S, ya que, de lo contrario, se producirá una reinicialización interna. Esto significa que esta unidad no proporciona datos durante la activación. Una aplicación que tuviera acceso a los datos de esta unidad tendría que esperar una respuesta hasta que la activación de firmware se completase. A continuación se muestra un ejemplo del cmdlet en acción:
 
    ```powershell 
    $pd | Update-StorageFirmware -ImagePath C:\Firmware\J3E160@3.enc -SlotNumber 0
@@ -104,7 +105,7 @@ Una vez que el servidor esté en producción, se recomienda hacer los mínimos c
 
 1. Revisa las notas de la versión del firmware y confirma tanto que la actualización aborda los problemas que podrían afectar a tu entorno como que el firmware no entraña ningún problema conocido que podría afectarte negativamente.
 
-2. Instale el firmware en un servidor de su laboratorio que tenga unidades idénticas (incluida la revisión de la unidad si hay varias revisiones de la misma unidad) y pruebe la unidad bajo carga con el nuevo firmware. Para obtener información sobre cómo realizar pruebas de carga sintética, consulte [Rendimiento de Espacios de almacenamiento de prueba con cargas de trabajo sintéticas en Windows Server](https://technet.microsoft.com/en-us/library/dn894707.aspx).
+2. Instale el firmware en un servidor de su laboratorio que tenga unidades idénticas (incluida la revisión de la unidad si hay varias revisiones de la misma unidad) y pruebe la unidad bajo carga con el nuevo firmware. Para obtener información sobre cómo realizar pruebas de carga sintética, consulte [Rendimiento de Espacios de almacenamiento de prueba con cargas de trabajo sintéticas en Windows Server](https://technet.microsoft.com/library/dn894707.aspx).
 
 ## <a name="automated-firmware-updates-with-storage-spaces-direct"></a>Actualizaciones de firmware automatizadas con Espacios de almacenamiento directo
 
@@ -150,7 +151,7 @@ Para obtener la implementación del nuevo firmware iniciado en este clúster de 
 ```powershell
 $SpacesDirect = Get-StorageSubSystem Clus*
 
-$CurrentDoc = $SpacesDirect | Get-StorageHealtHealth Service etting -Name "System.Storage.SupportedComponents.Document"
+$CurrentDoc = $SpacesDirect | Get-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document"
 
 $CurrentDoc.Value | Out-File <Path>
 ```
@@ -163,9 +164,9 @@ $NewDoc = Get-Content <Path> | Out-String
 $SpacesDirect | Set-StorageHealthSetting -Name "System.Storage.SupportedComponents.Document" -Value $NewDoc
 ```
 
-Si desea ver el Servicio de mantenimiento en acción y obtener más información sobre su mecanismo de implementación, eche un vistazo a este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct.
+Si desea ver el servicio de mantenimiento en acción y obtener más información sobre su mecanismo de puesta en servicio, eche un vistazo a este vídeo: https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct
 
-## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas frecuentes
 
 Consulta también [Solución de problemas de las actualizaciones de firmware de unidad](troubleshoot-firmware-update.md).
 
@@ -173,7 +174,7 @@ Consulta también [Solución de problemas de las actualizaciones de firmware de 
 
 Funcionará en dispositivos de almacenamiento que implementen los comandos correctos en su firmware. El cmdlet Get-StorageFirmwareInformation mostrará si el firmware de una unidad es compatible con los comandos correctos (para SATA/NVMe) y la prueba de HLK permite a los proveedores y los OEM probar este comportamiento.
 
-### <a name="after-i-update-a-sata-drive-it-reports-to-no-longer-support-the-update-mechanism-is-something-wrong-with-the-drive"></a>Después de actualizar una unidad SATA, informa de que el mecanismo de actualización ya no es compatible. ¿Hay algún problema en la unidad?
+### <a name="after-i-update-a-sata-drive-it-reports-to-no-longer-support-the-update-mechanism-is-something-wrong-with-the-drive"></a>Después de actualizar una unidad SATA, informa de que el mecanismo de actualización ya no es compatible. ¿Hay algún problema con la unidad?
 
 No, la unidad está bien, a menos que el nuevo firmware ya no permita realizar actualizaciones. Estás experimentando un problema conocido por el que una versión en caché de las capacidades de la unidad no es correcta. Si se ejecuta "Update-StorageProviderCache -DiscoveryLevel Full", se volverán a mostrar las capacidades de la unidad y se actualizará la copia en caché. Como solución alternativa, se recomienda ejecutar el comando anterior una vez antes de iniciar una actualización de firmware o completar la implementación en un clúster de Espacios de almacenamiento directo.
 
@@ -194,9 +195,9 @@ En Windows Server 2016 con el Servicio de mantenimiento implementado en Espacios
 
 ### <a name="what-happens-if-the-update-fails"></a>¿Qué ocurre si se produce un error en la actualización?
 
-La actualización podría provocar un error por varias razones como: 1) La unidad no es compatible con los comandos correctos para que Windows actualice su firmware. En este caso, la nueva imagen de firmware nunca se activa y la unidad sigue funcionando con la imagen anterior. (2) La imagen no se puede descargar en esta unidad ni aplicar a ella (error de coincidencia de versiones, imagen dañada, etc.). En este caso, la unidad provoca un error en el comando Activate. De nuevo, la imagen de firmware anterior seguirá funcionando.
+La actualización podría producir un error por diversos motivos, algunos de ellos son: (1) la unidad no es compatible con los comandos correctos para Windows actualizar su firmware. En este caso, la nueva imagen de firmware nunca se activa y la unidad sigue funcionando con la imagen anterior. (2) La imagen no se puede descargar en esta unidad ni aplicar a ella (error de coincidencia de versiones, imagen dañada, etc.). En este caso, la unidad provoca un error en el comando Activate. De nuevo, la imagen de firmware anterior seguirá funcionando.
 
-Si la unidad no responde después de una actualización de firmware, probablemente está experimentando un error en el propio firmware de la unidad. Pruebe todas las actualizaciones de firmware en un entorno de laboratorio antes de ponerlas en producción. Puede que la única solución sea reemplazar la unidad.
+Si la unidad no responde después de una actualización de firmware, probablemente está experimentando un error en el propio firmware de la unidad. Pruebe todas las actualizaciones de firmware en un entorno de laboratorio antes de ponerlas en producción. Puede que la única corrección sea reemplazar la unidad.
 
 Para obtener más información, consulta [Solución de problemas de las actualizaciones de firmware de unidad](troubleshoot-firmware-update.md).
 
@@ -207,6 +208,6 @@ Deshabilite la implementación en PowerShell mediante:
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.Enabled" -Value false
 ```
 
-### <a name="i-am-seeing-an-access-denied-or-path-not-found-error-during-roll-out-how-do-i-fix-this"></a>Obtengo un acceso denegado o un error de ruta de acceso no encontrada durante la implementación. Cómo lo corrijo
+### <a name="i-am-seeing-an-access-denied-or-path-not-found-error-during-roll-out-how-do-i-fix-this"></a>Obtengo un acceso denegado o un error de ruta de acceso no encontrada durante la implementación. ¿Cómo lo corrijo?
 
 Asegúrese de que todos los nodos del clúster tienen acceso a la imagen de firmware que desea usar para la actualización. La forma más sencilla de asegurarse de esto es colocar la imagen en un volumen compartido de clúster.

@@ -1,63 +1,61 @@
 ---
 ms.assetid: 8b900c2b-35b1-4c95-a73d-e5f2e9cf0adb
-title: "Recursos adicionales para el diseño de la estructura lógica de"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Búsqueda de recursos adicionales para el diseño de la estructura lógica
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: a09b3e23b378b2d217f68ae3029e9436af8ddb1e
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 56b49993d2bc58381bfb3ad4d8f54b9d95ed5dd0
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883896"
 ---
-# <a name="finding-additional-resources-for-logical-structure-design"></a>Recursos adicionales para el diseño de la estructura lógica de
+# <a name="finding-additional-resources-for-logical-structure-design"></a>Búsqueda de recursos adicionales para el diseño de la estructura lógica
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Puedes encontrar la siguiente documentación sobre los servicios de dominio de Active Directory (AD DS) en el Windows Server 2003 y los sitios Web de TechCenter de Windows Server 2008:  
+Puede encontrar recursos adicionales para el diseño de la estructura lógica en la siguiente documentación sobre servicios de dominio de Active Directory (AD DS):  
   
--   Para obtener más información sobre el diseño de la topología de sitios, consulta [diseñar el sitio topología para Windows Server 2008 AD DS](Designing-the-Site-Topology.md).  
-  
--   Para que las hojas de cálculo que le ayudarán a documentar el bosque propuesto, dominio, la infraestructura de sistema de nombres de dominio (DNS) y el diseño de la unidad organizativa (OU), descarga Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de trabajo Aid para Windows Server 2003 Deployment Kit ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)).  
-  
--   Para obtener más información sobre la autenticación delegada y delegación restringida, consulta la delegación de autenticación ([https://go.microsoft.com/fwlink/?LinkID=106614](https://go.microsoft.com/fwlink/?LinkID=106614)).  
-  
--   Para obtener más información sobre la configuración de Firewall para su uso con AD DS, vea en redes segmentados los servidores de seguridad de Active Directory ([https://go.microsoft.com/fwlink/?LinkId=37928](https://go.microsoft.com/fwlink/?LinkId=37928)).  
-  
--   Para obtener más información acerca de cómo actualizar los dominios de Active Directory para Windows Server 2008, consulta [actualizar dominios de Microsoft Active Directory para Windows Server 2008 y Windows Server 2008 R2 AD DS dominios](https://technet.microsoft.com/library/cc731188.aspx).  
-  
--   Para obtener más información sobre reestructuración de dominios de AD DS dentro y entre bosques, consulta la versión de la herramienta de migración Active Directory 3.1 Guía de migración ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)).  
-  
--   Para obtener más información acerca de la implementación de un dominio raíz del bosque, consulta [implementar Windows Server 2008 dominio raíz del bosque](https://technet.microsoft.com/library/cc731174.aspx).  
-  
--   Para obtener más información acerca de cómo implementar DNS, consulta implementar el sistema de nombres de dominio (DNS) ([https://go.microsoft.com/fwlink/?LinkId=93656](https://go.microsoft.com/fwlink/?LinkId=93656)).  
-  
--   Para obtener más información sobre el proceso de resolución de jerarquía y el nombre DNS, consulta la referencia técnica de DNS ([https://go.microsoft.com/fwlink/?LinkId=106636](https://go.microsoft.com/fwlink/?LinkId=106636)). Para obtener más información acerca de cómo DNS es compatible con AD DS, consulta la compatibilidad de DNS para la referencia técnica de Active Directory ([https://go.microsoft.com/fwlink/?LinkId=106660](https://go.microsoft.com/fwlink/?LinkId=106660)).  
-  
--   Para obtener más información acerca de WINS, consulta la referencia técnica de WINS ([https://go.microsoft.com/fwlink/?LinkId=106661](https://go.microsoft.com/fwlink/?LinkId=106661)).  
-  
--   Para obtener más información sobre cómo crear un espacio de nombres discontinuo, consulta crear una desligadas Namespace ([https://go.microsoft.com/fwlink/?LinkID=106638](https://go.microsoft.com/fwlink/?LinkID=106638)).  
-  
--   Para obtener más información sobre la configuración de nombres principales de servicio (SPN), consulta servicio inicios de sesión de un error debido a establecer SPN incorrectamente ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304)).  
-  
--   Para obtener más información sobre cómo delegar permisos para modificar el SPN para subordinadas los administradores, consulta delegar autoridad para modificar SPN ([https://go.microsoft.com/fwlink/?LinkID=106639](https://go.microsoft.com/fwlink/?LinkID=106639)).  
-  
--   Para obtener más información sobre los requisitos de certificado de controlador de dominio, consulta el artículo 321051 en Microsoft Knowledge Base ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)).  
-  
--   Para obtener más información sobre el protocolo ligero de acceso a directorios (LDAP) sobre la autenticación de capa de Sockets seguros (SSL) (LDAPS) y una actualización relacionada de Windows Server 2003, consulte el artículo 932834 en Microsoft Knowledge Base ([https://go.microsoft.com/fwlink/?LinkId=102308](https://go.microsoft.com/fwlink/?LinkId=102308)).  
-  
--   Para obtener más información sobre la infraestructura de directiva de grupo, consulta el diseño de una infraestructura de directiva de grupo ([https://go.microsoft.com/fwlink/?LinkID=106655](https://go.microsoft.com/fwlink/?LinkID=106655)).  
-  
--   Para obtener más información acerca de los controladores de dominio de solo lectura (RODC), consulta el tema de AD DS: Read-Only controladores de dominio ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616)).  
-  
--   Para obtener más información sobre las directivas de bloqueo de cuenta y de contraseña muy específicas, consulta el Step-by-Step Guía de configuración de directiva de bloqueo de cuenta y contraseñas específicas ([https://go.microsoft.com/fwlink/?LinkID=91477](https://go.microsoft.com/fwlink/?LinkID=91477)).  
-  
--   Para obtener más información acerca de las convenciones de nomenclatura en AD DS, consulta el artículo 909264 en Microsoft Knowledge Base ([https://go.microsoft.com/fwlink/?LinkID=106629](https://go.microsoft.com/fwlink/?LinkID=106629)).  
-  
+- Para obtener más información sobre cómo diseñar la topología del sitio, consulte [diseñar el sitio de topología para Windows Server 2008 AD DS](Designing-the-Site-Topology.md).  
 
-
+- Para que las hojas de cálculo que le ayudarán a documentar la propuesta bosque, dominio, infraestructura de sistema de nombres de dominio (DNS) y diseño de unidad organizativa (OU), descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip de ayudas de trabajo para Kit de implementación de Windows Server 2003 ([https://go.microsoft.com/fwlink/?LinkID=102558](https://go.microsoft.com/fwlink/?LinkID=102558)).  
+  
+- Para obtener más información acerca de la autenticación delegada y la delegación restringida, vea la delegación de autenticación ([https://go.microsoft.com/fwlink/?LinkID=106614](https://go.microsoft.com/fwlink/?LinkID=106614)).  
+  
+- Para obtener más información acerca de cómo configurar los firewalls para su uso con AD DS, consulte Active Directory en redes segmentadas por Firewalls ([https://go.microsoft.com/fwlink/?LinkId=37928](https://go.microsoft.com/fwlink/?LinkId=37928)).  
+  
+- Para obtener más información acerca de cómo actualizar los dominios de Active Directory para Windows Server 2008, consulte [actualizar dominios de Active Directory para Windows Server 2008 y Windows Server 2008 R2 AD DS dominios](https://technet.microsoft.com/library/cc731188.aspx).  
+  
+- Para obtener más información sobre la reestructuración de dominios de AD DS dentro y entre bosques, consulte la herramienta de migración de Active Directory versión 3.1 Guía de migración ([https://go.microsoft.com/fwlink/?LinkId=93678](https://go.microsoft.com/fwlink/?LinkId=93678)).  
+  
+- Para obtener más información sobre cómo implementar un dominio raíz del bosque, consulte [implementar un dominio raíz del bosque de Windows Server 2008](https://technet.microsoft.com/library/cc731174.aspx).  
+  
+- Para obtener más información sobre la implementación de DNS, consulte la implementación del sistema de nombres de dominio (DNS) ([https://go.microsoft.com/fwlink/?LinkId=93656](https://go.microsoft.com/fwlink/?LinkId=93656)).  
+  
+- Para obtener más información sobre el proceso de resolución de jerarquía y el nombre DNS, consulte la referencia técnica de DNS ([https://go.microsoft.com/fwlink/?LinkId=106636](https://go.microsoft.com/fwlink/?LinkId=106636)). Para obtener más información sobre la compatibilidad de DNS con AD DS, consulte la compatibilidad de DNS para la referencia técnica de Active Directory ([https://go.microsoft.com/fwlink/?LinkId=106660](https://go.microsoft.com/fwlink/?LinkId=106660)).  
+  
+- Para obtener más información acerca de WINS, consulte la referencia técnica de WINS ([https://go.microsoft.com/fwlink/?LinkId=106661](https://go.microsoft.com/fwlink/?LinkId=106661)).  
+  
+- Para obtener más información acerca de cómo crear un espacio de nombres no contiguo, consulte Crear un Namespace no contiguo ([https://go.microsoft.com/fwlink/?LinkID=106638](https://go.microsoft.com/fwlink/?LinkID=106638)).  
+  
+- Para obtener más información acerca de cómo establecer nombres de entidad de servicio (SPN), consulte servicio inicios de sesión de un error debido a Incorrectly Set SPNs ([https://go.microsoft.com/fwlink/?LinkId=102304](https://go.microsoft.com/fwlink/?LinkId=102304)).  
+  
+- Para obtener más información acerca de cómo delegar permisos para modificar los SPN subordinadas administradores, vea delegar la autoridad para modificar los SPN ([https://go.microsoft.com/fwlink/?LinkID=106639](https://go.microsoft.com/fwlink/?LinkID=106639)).  
+  
+- Para obtener más información sobre los requisitos de certificado de controlador de dominio, consulte el artículo 321051 de Microsoft Knowledge Base ([https://go.microsoft.com/fwlink/?LinkId=102307](https://go.microsoft.com/fwlink/?LinkId=102307)).  
+  
+- Para obtener más información acerca de protocolo de acceso a directorios de ligero (LDAP) sobre la autenticación de capa de Sockets seguros (SSL) (LDAPS) y una actualización relacionada para Windows Server 2003, consulte el artículo 932834 en Microsoft Knowledge Base ([ https://go.microsoft.com/fwlink/?LinkId=102308 ](https://go.microsoft.com/fwlink/?LinkId=102308)).  
+  
+- Para obtener más información sobre la infraestructura de directiva de grupo, vea Diseñar una infraestructura de directiva de grupo ([https://go.microsoft.com/fwlink/?LinkID=106655](https://go.microsoft.com/fwlink/?LinkID=106655)).  
+  
+- Para obtener más información acerca de los controladores de dominio de solo lectura (RODC), consulte AD DS: Los controladores de dominio de solo lectura ([https://go.microsoft.com/fwlink/?LinkID=106616](https://go.microsoft.com/fwlink/?LinkID=106616)).  
+  
+- Para obtener más información sobre las directivas de bloqueo de cuenta y contraseña específica, consulte la Guía paso a paso de configuración de directiva de bloqueo de cuentas y contraseñas específicas ([https://go.microsoft.com/fwlink/?LinkID=91477](https://go.microsoft.com/fwlink/?LinkID=91477)).  
+  
+- Para obtener más información sobre las convenciones de nomenclatura en AD DS, consulte el artículo 909264 en Microsoft Knowledge Base ([https://go.microsoft.com/fwlink/?LinkID=106629](https://go.microsoft.com/fwlink/?LinkID=106629)).  

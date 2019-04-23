@@ -1,6 +1,6 @@
 ---
 title: Configurar informes de almacenamiento
-description: "En este artículo se describe cómo configurar los parámetros predeterminados de los informes de almacenamiento"
+description: En este artículo se describe cómo configurar los parámetros predeterminados de los informes de almacenamiento
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: f62109a8d3ea3e4e6386956789d276f9aa911e80
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885236"
 ---
 # <a name="configure-storage-reports"></a>Configurar informes de almacenamiento
 
@@ -33,13 +34,13 @@ Puedes configurar los parámetros predeterminados de los informes de almacenamie
 
 4. En función del tipo de informe que selecciones, estarán disponibles distintos parámetros de informe para su edición. Realiza todas las modificaciones necesarias y luego haz clic en **Aceptar** para guardarlas como los parámetros predeterminados de ese tipo de informe.
 
-5.  Repite los pasos del 2al4 para cada tipo de informe que deseas editar.
+5.  Repite los pasos del 2 al 4 para cada tipo de informe que deseas editar.
 
-6. Para ver una lista de los parámetros predeterminados de todos los informes, haz clic en **Revisar informes**. Luego haz clic en **Cerrar**.
+6. Para ver una lista de los parámetros predeterminados de todos los informes, haz clic en **Revisar informes**. A continuación, haga clic en **Cerrar**.
 
-7.  Haz clic en **Aceptar**.
+7.  Haga clic en **Aceptar**.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
--   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
+-   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
 -   [Administración de informes de almacenamiento](storage-reports-management.md)

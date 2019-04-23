@@ -1,6 +1,6 @@
 ---
-title: "Automatizar la instalación de Add-Ins durante la instalación"
-description: "Describe cómo usar Windows Server Essentials"
+title: Automatizar la instalación de complementos durante la instalación
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,30 +13,31 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d4c547c2fec8e2b11e5c1d9bde46e55e91c9d6fa
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884626"
 ---
-# <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar la instalación de Add-Ins durante la instalación
+# <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar la instalación de complementos durante la instalación
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-##  <a name="BKMK_AddIns"></a>Automatizar instalar complementos durante la instalación  
- Para instalar complementos durante la instalación, usa el método PostIC.cmd descrito en el [crear el archivo PostIC.cmd para ejecutar tareas de configuración inicial de Post](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) sección de este documento.  
+##  <a name="BKMK_AddIns"></a> Automatizar instalar complementos durante la instalación  
+ Para instalar complementos durante la instalación, utilice el método PostIC.cmd que se describe en la sección [Create the PostIC.cmd File for Running Post Initial Configuration Tasks](Create-the-PostIC.cmd-File-for-Running-Post-Initial-Configuration-Tasks.md) de este documento.  
   
- Agrega la siguiente entrada a tu PostIC.cmd:  
+ Agregue la siguiente entrada al archivo PostIC.cmd:  
   
 ```  
 C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q  
 ```  
   
- El complemento ahora admite pasos de preinstalación y desinstalación personalizados.  
+ El complemento es compatible ahora con los pasos de preinstalación y de desinstalación personalizada.  
   
- El paso de preinstalación se ejecuta antes de todos los instalar **.msi** archivos especificados en addin.xml. Cuando se ejecuta en el modo interactivo, el cuadro de diálogo de progreso será mostrará pero sin cambiar el progreso. Durante la fase de preinstalación, se deshabilita el botón de cancelación. Para implementar un paso de preinstalación, agrega el siguiente contenido addin.xml (directamente debajo de Package):  
+ El paso de preinstalación se ejecuta antes de instalar los archivos **.msi** especificados en addin.xml. Cuando se ejecuta en modo interactivo, el cuadro de diálogo de progreso se muestra sin cambiar el progreso. El botón de cancelación está deshabilitado durante la fase de preinstalación. Para implementar un paso de preinstalación, agregue el contenido siguiente en addin.xml (directamente bajo Package):  
   
 > [!NOTE]
->  El esquema xml debe seguir exactamente lo siguiente:  
+>  El esquema xml debe seguir exactamente el siguiente:  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -64,17 +65,17 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 <¦>  
 ```  
   
- Donde **exefile** es el archivo ejecutable en el paquete de complementos para realizar el paso de preinstalación y debe especificarse. **NormalArgs** especifica argumentos para pasar a exefile en modo de línea de comandos cuando interactivo se usa. En este modo, exefile puede mostrar algunos cuadros de diálogo de interacción del usuario. **SilentArgs** especifica argumentos para pasar a exefile en modo de línea de comandos cuando silenciosa se usa (-q se especifica al invocar installaddin.exe). Exefile no debería cualquier ventana emergente en este modo. Si **IgnoreExitCode** se especifica como true, el paso de preinstalación siempre se considera correcto, de lo contrario, el código de salida 0 indica éxito, 1 indica la cancelación y otros valores indican un error. Etiquetas **NormalArgs**, **SilentArgs**, y **IgnoreExitCode** son todas opcionales.  
+ Donde **exefile** es el archivo ejecutable del paquete de complemento para realizar el paso de preinstalación y se debe especificar. **NormalArgs** especifica argumentos que se pasarán a exefile en la línea de comandos cuando se utiliza el modo interactivo. En este modo, el exefile puede mostrar algunos diálogos emergentes para la interacción del usuario. **SilentArgs** especifica argumentos que se pasarán a exefile en la línea de comandos cuando se utiliza el modo silencioso (-q se especifica al invocar installaddin.exe). El exefile no debe mostrar ninguna ventana emergente en este modo. Si se especifica **IgnoreExitCode** como verdadero, el paso de preinstalación se considera siempre correcto; en caso contrario, el código de salida 0 indica éxito, 1 indica cancelación y otros valores indican fallo. Las etiquetas **NormalArgs**, **SilentArgs** y **IgnoreExitCode** son todas opcionales.  
   
- Un paso de desinstalación personalizado puede usarse para cualquiera de las siguientes acciones:  
+ Un paso de desinstalación personalizado se puede utilizar para cualquiera de las acciones siguientes:  
   
--   Reemplazar el cuadro de diálogo de confirmación integrado.  
+-   Sustituir el cuadro de diálogo de confirmación integrado.  
   
--   Rellenar diálogos personalizados antes de la desinstalación.  
+-   Rellenar cuadros de diálogo personalizados antes de la desinstalación.  
   
--   Realizar ciertas tareas antes de la desinstalación.  
+-   Realizar determinadas tareas antes de la desinstalación.  
   
- Para implementar un paso de desinstalación, agrega el siguiente contenido addin.xml (directamente debajo de Package):  
+ Para implementar un paso de desinstalación, agregue el contenido siguiente en addin.xml (directamente bajo Package):  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -98,26 +99,26 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
 </Package>  
 ```  
   
- Donde **completa-path-to-exefile** especifica el exefile ya instalado en el sistema. **Argumentos** es opcional y especifica los argumentos de línea de comandos para exefile. Exefile se invoca antes de confirmación de desinstalación integrado cuadro de diálogo.  
+ Donde **full-path-to-exefile** especifica el exefile que ya está instalado en el sistema. **Argumentos** es opcional y especifica los argumentos de la línea de comandos para el exefile. El archivo exefile se invoca antes de que se abra el cuadro de diálogo integrado para confirmación de la desinstalación.  
   
- Exefile puede realizar las siguientes tareas en esta fase:  
+ En esta fase, el exefile puede realizar las siguientes tareas:  
   
--   Muestra varios diálogos emergentes para interacción del usuario.  
+-   Muestra algunos cuadros de diálogo emergentes para la interacción con el usuario.  
   
--   Realiza algunas tareas en segundo plano.  
+-   Realizar algunas tareas de fondo.  
   
- El código de salida de este archivo exe determina cómo el proceso de desinstalación:  
+ El código de salida de este archivo exe determina cómo avanza el proceso de desinstalación:  
   
--   0: el proceso de desinstalación continúa sin rellenar el cuadro de diálogo de confirmación integrado, como ya ha confirmado el usuario. (este enfoque se puede usar para reemplazar el cuadro de diálogo de confirmación integrado).  
+-   0: el proceso de desinstalación continúa sin rellenar el cuadro de diálogo de confirmación integrado, porque el usuario ya lo ha confirmado. (este enfoque se puede utilizar para sustituir el cuadro de diálogo de confirmación integrado);  
   
--   1: el proceso de desinstalación se cancela y finalmente se muestra un mensaje de cancelación al usuario. Todo permanece sin cambios;  
+-   1: el proceso de desinstalación se cancela y, por último, se muestra un mensaje de cancelación al usuario. Todo permanece intacto;  
   
--   Other: el proceso de desinstalación continúa con el cuadro de diálogo de confirmación integrado, como el paso de desinstalación personalizado no está presente.  
+-   Otro: el proceso de desinstalación continúa con el diálogo de confirmación integrado, ya que el paso de desinstalación personalizado no está presente.  
   
- Cualquier error al invocar exefile conducirá al mismo comportamiento que si exefile devuelve un código distinto de 0 o 1.  
+ Cualquier fallo que invoque exefile llevará al mismo comportamiento, ya que exefile devuelve un código diferente de 0 o 1.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

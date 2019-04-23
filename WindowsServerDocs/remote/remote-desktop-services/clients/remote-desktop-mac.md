@@ -1,6 +1,6 @@
 ---
 title: Introducción a Escritorio remoto en Mac
-description: Obtén información sobre cómo configurar el cliente de escritorio remoto para Mac
+description: Obtenga información sobre cómo configurar el cliente de escritorio remoto para Mac
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,163 +15,163 @@ ms.author: elizapo
 ms.date: 10/09/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e8c5da1960d0e3129b5520e65c2d5ecf45eef778
-ms.sourcegitcommit: 6dc14d4315793132488494b5543ee83e3f562f09
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "4555722"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886956"
 ---
-# Introducción a Escritorio remoto en Mac
+# <a name="get-started-with-remote-desktop-on-mac"></a>Introducción a Escritorio remoto en Mac
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2012 R2 y Windows Server 2016
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
 
-Puedes usar al cliente de escritorio remoto para Mac para trabajar con las aplicaciones, los recursos y los equipos de escritorio de Windows desde un equipo Mac. Usa la siguiente información para empezar a trabajar y echa un vistazo a las [preguntas más frecuentes sobre](remote-desktop-client-faq.md) si tienes preguntas.
+Puede usar al cliente de escritorio remoto para Mac para trabajar con aplicaciones, recursos y equipos de escritorio de Windows desde el equipo Mac. Use la siguiente información para comenzar - y desproteger la [preguntas más frecuentes sobre](remote-desktop-client-faq.md) si tiene alguna pregunta.
 
 >[!Note]
-> - ¿Curiosidad acerca de las nuevas versiones de cliente de macOS? Echa un vistazo a [Novedades para escritorio remoto en Mac?](mac-whatsnew.md)
-> - El cliente de Mac se ejecuta en los equipos que ejecutan macOS 10.10 y versiones más recientes.
-> - La información de este artículo se aplica principalmente a la versión completa de cliente de Mac - la versión disponible en la AppStore Mac. Pruebe las nuevas características mediante la descarga de nuestra aplicación de vista previa aquí: [notas de la versión de cliente de la versión beta](https://go.microsoft.com/fwlink/?LinkID=619698&clcid=0x409).
+> - ¿Tiene curiosidad acerca de las nuevas versiones para el cliente de macOS? ¿Consulte [Novedades de escritorio remoto en Mac?](mac-whatsnew.md)
+> - Se ejecuta el cliente Mac en equipos que ejecutan macOS 10.10 y versiones más recientes.
+> - La información de este artículo se aplica principalmente a la versión completa del cliente Mac - la versión disponible en el App Store de Mac. Pruebe las nuevas características mediante la descarga aquí nuestra aplicación de vista previa: [notas de la versión beta cliente](https://go.microsoft.com/fwlink/?LinkID=619698&clcid=0x409).
 
-## Obtener al cliente de escritorio remoto
-Sigue estos pasos para empezar a trabajar con Escritorio remoto en un Mac:
+## <a name="get-the-remote-desktop-client"></a>Obtener al cliente de escritorio remoto
+Siga estos pasos para empezar a trabajar con Escritorio remoto en el equipo Mac:
 
-1. Descargar al cliente de escritorio remoto de Microsoft de la [Tienda de la aplicación de Mac](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12).
-2. [Configurar tu PC para que acepte las conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop). (Si se omite este paso, no puedes conectarte a tu PC.)
-3. Agregar una conexión a Escritorio remoto o un recurso remoto. Usar una conexión para conectarse directamente a un equipo con Windows y un recurso remoto para usar un programa de RemoteApp, basada en la sesión de escritorio o un equipo de escritorio virtual publicado local con conexión de RemoteApp y escritorio. Esta característica es suele estar disponible en entornos corporativos.
+1. Descargue el cliente de escritorio remoto de Microsoft desde el [Mac App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12).
+2. [Configuración de su PC para aceptar conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop). (Si se omite este paso, no se puede conectar a su equipo.)
+3. Agregar una conexión a Escritorio remoto o un recurso remoto. Usar una conexión para conectarse directamente a un equipo de Windows y un recurso remoto para utilizar un programa RemoteApp, basados en sesión de escritorio o un escritorio virtual publicada en el entorno local mediante la conexión de RemoteApp y escritorio. Esta característica está disponible normalmente en entornos corporativos.
 
-## ¿Qué sucede con el cliente de la versión beta de Mac?
-Estamos probando nuevas características en nuestro canal de vista previa en HockeyApp. ¿Quieres echa un vistazo a? Ve a [Escritorio remoto de Microsoft para Mac](https://go.microsoft.com/fwlink/?LinkID=619698) y haz clic en **Descargar**. No tienes que crear una cuenta o el inicio de sesión en HockeyApp para descargar al cliente de la versión beta.
+## <a name="what-about-the-mac-beta-client"></a>¿Qué sucede con el cliente de Mac beta?
+Vamos a probar las nuevas características en nuestro canal de versión preliminar en HockeyApp. ¿Desea echarle un vistazo? Vaya a [escritorio remoto de Microsoft para Mac](https://go.microsoft.com/fwlink/?LinkID=619698) y haga clic en **descargar**. No es necesario crear una cuenta o inicio de sesión en HockeyApp para descargar al cliente de la versión beta.
 
-Si ya tienes el cliente, puedes comprobar las actualizaciones de asegurarte de que tener la versión más reciente. En el cliente de la versión beta, haz clic en la **Versión Beta de escritorio remoto de Microsoft** en la parte superior y, a continuación, haz clic en **Buscar actualizaciones**. 
+Si ya tiene el cliente, puede comprobar las actualizaciones para asegurarse de que tiene la versión más reciente. En el cliente de la versión beta, haga clic en **Microsoft Remote Desktop Beta** en la parte superior y, a continuación, haga clic en **buscar actualizaciones**. 
 
-## Agregar una conexión a Escritorio remoto
-Para crear una conexión a Escritorio remoto:
+## <a name="add-a-remote-desktop-connection"></a>Agregar una conexión a Escritorio remoto
+Para crear una conexión a escritorio remota:
 
-1. En el centro de conexión, haz clic en **+** y, a continuación, haz clic en el **escritorio**.
-2. Escribe la siguiente información:
-   - **Nombre de equipo** : el nombre del equipo.
-      - Esto puede ser un nombre de equipo de Windows (que se encuentra en la configuración **del sistema** ), un nombre de dominio o una dirección IP.
-      - También puedes agregar información de puerto al final de este nombre, como *MyDesktop:3389*.
-   - **Cuenta de usuario** : agregar la cuenta de usuario que usas para acceder al equipo remoto.
-      - Para los equipos o cuentas locales, Unidos a Active Directory (AD), usa uno de estos formatos: *nombre de usuario*, *DOMINIO\nombre_usuario*o *user_name@domain.com*.
-      - Para los equipos unidos a la Azure Active Directory (AAD), usa uno de estos formatos: *AzureAD\user_name* o *AzureAD\ user_name@domain.com*.
-      - También puedes elegir si se requiere una contraseña.
-      - Al administrar varias cuentas de usuario con el mismo nombre de usuario, establece un nombre descriptivo para diferenciar las cuentas.
-      - Administrar las cuentas de usuario guardado en las preferencias de la aplicación. 
+1. En el centro de conexiones, haga clic en **+** y, a continuación, haga clic en **Desktop**.
+2. Escriba la siguiente información:
+   - **Nombre de equipo** -el nombre del equipo.
+      - Esto puede ser un nombre de equipo de Windows (se encuentra en la **sistema** configuración), un nombre de dominio o una dirección IP.
+      - También puede agregar información de puerto al final de este nombre, como *MyDesktop:3389*.
+   - **Cuenta de usuario** -agregar la cuenta de usuario que usa para obtener acceso al equipo remoto.
+      - Los equipos o cuentas locales, Unidos a Active Directory (AD), use uno de estos formatos: *user_name*, *DOMINIO\nombre_de_usuario*, o *user_name@domain.com*.
+      - Para Azure Active Directory (AAD) unido los equipos, use uno de estos formatos: *AzureAD\user_name* o *AzureAD\user_name@domain.com*.
+      - También puede elegir si se requiere una contraseña.
+      - Al administrar varias cuentas de usuario con el mismo nombre de usuario, establezca un nombre descriptivo para diferenciar las cuentas.
+      - Administrar sus cuentas de usuario guardadas en las preferencias de la aplicación. 
 
-3. También puedes establecer estas opciones de configuración opcionales para la conexión:
-   - Establece un nombre descriptivo 
+3. También puede establecer estos valores opcionales para la conexión:
+   - Establezca un nombre descriptivo 
    - Agregar una puerta de enlace
-   - Establece la salida de sonido
-   - Botones del mouse de intercambio
+   - Establezca la salida de sonido
+   - Intercambiar botones del mouse
    - Habilitar el modo de administrador
    - Redirección de carpetas locales en una sesión remota
    - Impresoras locales hacia delante
-   - Tarjetas inteligentes adelantada
-4. Haz clic en **Guardar**.
+   - Tarjetas inteligentes hacia delante
+4. Haga clic en **Guardar**.
 
-Para iniciar la conexión, doble clic en él. El mismo es true para recursos remotos.
+Para iniciar la conexión, doble clic en él. Lo mismo puede decirse de los recursos remotos.
 
-### Exportar e importar las conexiones
-Puede exportar una definición de la conexión a Escritorio remoto y usar en otro dispositivo. Equipos de escritorio remotos se guardan en diferentes. Archivos RDP.
+### <a name="export-and-import-connections"></a>Exportar e importar las conexiones
+Puede exportar una definición de conexión a Escritorio remoto y usarla en un dispositivo diferente. Escritorios remotos se guardan de forma independiente. Archivos RDP.
 
-1. En el centro de conexión, haz clic en el escritorio remoto.
-2. Haz clic en **Exportar**.
-3. Busca la ubicación donde quieres guardar el escritorio remoto. Archivo RDP.
-4. Haz clic en **Aceptar**.
+1. En el centro de conexiones, haga clic en el escritorio remoto.
+2. Haga clic en **Exportar**.
+3. Vaya a la ubicación donde desea guardar el escritorio remoto. Archivo RDP.
+4. Haga clic en **Aceptar**.
 
-Usar los siguientes pasos para importar un escritorio remoto. Archivo RDP.
+Siga estos pasos para importar un escritorio remoto. Archivo RDP.
 
-1. En la barra de menús, haz clic en **archivo > Importar**.
-2. Busca el. Archivo RDP.
-3. Haz clic en **Abrir**.
+1. En la barra de menús, haga clic en **archivo > Importar**.
+2. Vaya a la. Archivo RDP.
+3. Haga clic en **Abrir**.
 
-## Agregar un recurso remoto
-Recursos remotos son los programas de RemoteApp, equipos de escritorio basada en la sesión y escritorios virtuales publicados con RemoteApp y escritorio.
+## <a name="add-a-remote-resource"></a>Agregar un recurso remoto
+Los recursos remotos son programas RemoteApp, escritorios basados en sesión y escritorios virtuales publicados utilizando la conexión de RemoteApp y escritorio.
 
-- La dirección URL muestra el vínculo en el servidor de acceso Web de escritorio remoto que proporciona acceso a RemoteApp y escritorio.
-- Se enumeran las conexiones de escritorio y RemoteApp configurado.
+- La dirección URL muestra el vínculo en el servidor de acceso Web de escritorio remoto que proporciona acceso a conexión de RemoteApp y escritorio.
+- Se enumeran los configurado conexiones de RemoteApp y escritorio.
 
 Para agregar un recurso remoto:
 
-1. En haga clic en el centro de conexión **+** y, a continuación, haz clic en **Agregar recursos remotos**. 
-2. Escribe la información de los recursos remotos:
-   - **Dirección URL de fuente** - la dirección URL del servidor de acceso Web de escritorio remoto. También puedes escribir tu cuenta de correo electrónico corporativos en este campo, esto indica que el cliente para buscar el servidor de acceso Web de escritorio remoto asociado con la dirección de correo electrónico.
-   - **Nombre de usuario** : el nombre de usuario que se usará para el servidor de acceso Web de escritorio remoto a que se conecta.
-   - **Contraseña** : la contraseña que se usará para el servidor de acceso Web de escritorio remoto a que se conecta.
-3. Haz clic en **Guardar**.
+1. Haga clic en Centro de conexiones **+** y, a continuación, haga clic en **agregar recursos remotos**. 
+2. Escriba la información para el recurso remoto:
+   - **Dirección URL de fuente** -la dirección URL del servidor de acceso Web de escritorio remoto. También puede especificar la cuenta de correo electrónico corporativo en este campo: Esto indica al cliente para buscar el servidor de acceso Web de escritorio remoto asociado con su dirección de correo electrónico.
+   - **Nombre de usuario** -el nombre de usuario que se usará para el servidor de acceso Web de escritorio remoto que se conecta.
+   - **Contraseña** -la contraseña que se usará para el servidor de acceso Web de escritorio remoto que se conecta.
+3. Haga clic en **Guardar**.
 
 
-Los recursos remotos se mostrará en el centro de conexión.
+Los recursos remotos se mostrará en el centro de conexiones.
 
 
-## Conectarse a una puerta de enlace de escritorio remoto para acceder a recursos internos
+## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>Conectarse a una puerta de enlace de escritorio remoto para tener acceso a recursos internos
 
-Una puerta de enlace de escritorio remoto (puerta de enlace de escritorio remoto) te permite conectarse a un equipo remoto en una red corporativa desde cualquier lugar en Internet. Puedes crear y administrar las puertas de enlace en las preferencias de la aplicación o al configurar una nueva conexión de escritorio.
+Una puerta de enlace de escritorio remoto (puerta de enlace de RD) le permite conectarse a un equipo remoto en una red corporativa desde cualquier lugar en Internet. Puede crear y administrar las puertas de enlace en las preferencias de la aplicación o al configurar una nueva conexión de escritorio.
 
-Para configurar una puerta de enlace nuevo en las preferencias:
+Para configurar una puerta de enlace en Preferencias:
 
-1. En el centro de conexión, haz clic en **Preferencias > puertas de enlace**. 
-2. Haz clic en el **+** botón en la parte inferior de la tabla entrar la siguiente información:
-  - **Nombre del servidor** : el nombre del equipo que quieras usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puedes agregar información de puerto para el nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
-  - **Nombre de usuario** : el nombre de usuario y contraseña que se usará para la puerta de enlace de escritorio remoto a que se conecta. También puedes seleccionar **Usar credenciales de conexión** para usar el mismo nombre de usuario y la contraseña como los que se usan para la conexión a Escritorio remoto.
+1. En el centro de conexiones, haga clic en **Preferencias > puertas de enlace**. 
+2. Haga clic en el **+** situado en la parte inferior de la tabla, escriba la siguiente información:
+  - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
+  - **Nombre de usuario** -el nombre de usuario y la contraseña que se usará para la puerta de enlace de escritorio remoto que se conecta. También puede seleccionar **usar las credenciales de conexión** para usar el mismo nombre de usuario y la contraseña que se utilizaron para la conexión a escritorio remota.
 
 
-## Administrar las cuentas de usuario
+## <a name="manage-your-user-accounts"></a>Administrar las cuentas de usuario
 
-Cuando se conecta a recursos de escritorio o control remoto, puedes guardar las cuentas de usuario se selecciona de nuevo. Puedes administrar las cuentas de usuario mediante el cliente de escritorio remoto.
+Cuando se conecta a un recursos remotos o de escritorio, puede guardar las cuentas de usuario para seleccionar de nuevo. Puede administrar sus cuentas de usuario mediante el cliente de escritorio remoto.
 
 Para crear una nueva cuenta de usuario:
 
-1. En el centro de conexión, haz clic en **configuración** > **cuentas**.
-2. Haz clic en **Agregar cuenta de usuario**.
-3. Escribe la siguiente información:
-   - **Nombre de usuario** : el nombre del usuario para guardar para su uso con una conexión remota. Puedes escribir el nombre de usuario en cualquiera de los siguientes formatos: nombre de usuario, DOMINIO\nombre_usuario, o user_name@domain.com.
-   - **Contraseña** : la contraseña para el usuario especificado. Cada cuenta de usuario que quieres guardar para usar para las conexiones remotas debe tener una contraseña asociada con ella.
-   - **Nombre descriptivo** : Si estás usando la misma cuenta de usuario con diferentes contraseñas, establece un nombre descriptivo para distinguir las cuentas de usuario.
-4. Pulsa **Guardar**y, a continuación, pulsa **Opciones de configuración**.
+1. En el centro de conexiones, haga clic en **configuración** > **cuentas**.
+2. Haga clic en **Agregar cuenta de usuario**.
+3. Escriba la siguiente información:
+   - **Nombre de usuario** -el nombre del usuario para guardar para su uso con una conexión remota. Puede escribir el nombre de usuario en cualquiera de los siguientes formatos: user_name, DOMINIO\nombre_de_usuario, o user_name@domain.com.
+   - **Contraseña** -la contraseña para el usuario especificado. Cada cuenta de usuario que desea guardar si desea para utilizar para las conexiones remotas debe tener una contraseña asociada con él.
+   - **Nombre descriptivo** : si usa la misma cuenta de usuario con contraseñas diferentes, establezca un nombre descriptivo para distinguir las cuentas de usuario.
+4. Pulse **guardar**y, a continuación, puntee en **configuración**.
 
-## Personalizar la resolución de pantalla
-Puedes especificar la resolución de pantalla de la sesión de escritorio remota.
+## <a name="customize-your-display-resolution"></a>Personalizar la resolución de pantalla
+Puede especificar la resolución de pantalla de la sesión de escritorio remota.
 
-1. En el centro de conexión, haz clic en **las preferencias**.
-2. Haz clic en **resolución**. 
-3. Haz clic en **+**.
-4. Escribe un alto de resolución y el ancho y, a continuación, haz clic en **Aceptar.**
+1. En el centro de conexiones, haga clic en **preferencias**.
+2. Haga clic en **resolución**. 
+3. Haga clic en **+**.
+4. Escriba una altura de resolución y el ancho y, a continuación, haga clic en **Aceptar.**
 
-Para eliminar la resolución, selecciónalo y, a continuación, haz clic en **-**.
+Para eliminar la resolución, selecciónelo y, a continuación, haga clic en **-**.
 
-**Las pantallas tienen espacios independientes** Si estás ejecutando Mac OS X 10.9 y deshabilitado **las pantallas tienen espacios independientes** en Mavericks (**Preferencias del sistema > Control de misiones**), debes configurar esta configuración en el cliente de escritorio remoto con la opción de la misma.
+**Las pantallas tienen espacios separados** si está ejecutando Mac OS X 10.9 y deshabilitado **pantallas tienen espacios separados** en Mavericks (**preferencias del sistema > Centro de Control**), deberá configurar Esta configuración en el cliente de escritorio remoto con la misma opción.
 
-### Redirección de unidad para recursos remotos
-Redirección de la unidad es compatible con recursos remotos, por lo que puedes guardar los archivos creados con una aplicación remota localmente tu Mac. La carpeta redirigida siempre es el directorio principal que se muestra como una unidad de red en la sesión remota.
+### <a name="drive-redirection-for-remote-resources"></a>Redirección de unidad para los recursos remotos
+Se admite redirección de unidad para los recursos remotos, para que pueda guardar los archivos creados con una aplicación remota localmente en el equipo Mac. La carpeta redirigida siempre es el directorio principal que se muestra como una unidad de red en la sesión remota.
 
 > [!NOTE]
-> Para poder usar esta característica, el administrador necesita establecer la configuración adecuada en el servidor.
+> Para poder usar esta característica, el administrador debe establecer la configuración adecuada en el servidor.
 
 
-## Usar un teclado en una sesión remota
+## <a name="use-a-keyboard-in-a-remote-session"></a>Usar un teclado en una sesión remota
 
-Diseños de teclado de Mac difieren de los diseños de teclado de Windows. 
+Distribuciones de teclado de Mac difieren de las distribuciones de teclado de Windows. 
 
-- Las teclas de comando del teclado de Mac es igual a la clave de Windows.
-- Para realizar acciones que usan el botón de comando en el Mac, tendrás que usar el botón de control de Windows (por ejemplo: copia = Ctrl + C).
-- Se pueden activar las teclas de función en la sesión, además presionando la tecla FN (p. ej.: FN + F1).
-- La tecla Alt a la derecha de la barra espaciadora en el teclado de Mac es igual a la tecla Alt Alt Gr/derecha en Windows.
+- La tecla de comando en el teclado de Mac es igual a la clave de Windows.
+- Para llevar a cabo las acciones que use el botón de comando en el equipo Mac, deberá usar el botón de control de Windows (p. ej.: Copiar = Ctrl + C).
+- Las teclas de función se pueden activar en la sesión además la tecla FN (p. ej.: FN + F1).
+- La tecla Alt a la derecha de la barra espaciadora en el teclado de Mac es igual a la tecla Alt derecha/Gr de Alt en Windows.
 
-De manera predeterminada, la sesión remota usará como el sistema operativo que estás ejecutando al cliente en la misma configuración regional de teclado. (Si tu Mac se está ejecutando una en-us del sistema operativo, que se usará para las sesiones de remoto. Si no se usa la configuración regional de teclado de sistema operativo, comprueba el teclado, la configuración en el equipo remoto y cambiar la configuración de forma manual. Consulta las [Preguntas frecuentes de cliente de escritorio remoto](remote-desktop-client-faq.md) para obtener más información acerca de los teclados y configuraciones regionales.
+De forma predeterminada, la sesión remota usará la misma configuración regional de teclado como el sistema operativo que se ejecuta en el cliente. (Si el equipo Mac se está ejecutando un en-us del sistema operativo, que se usará para las sesiones remotas, así. Si no se usa la configuración regional de teclado de sistema operativo, compruebe el teclado, establecer en el equipo remoto y cambiar la configuración manualmente. Consulte la [P+F del cliente de escritorio remoto](remote-desktop-client-faq.md) para obtener más información acerca de teclados y configuraciones regionales.
 
 
-## Compatibilidad con autorización y autenticación conectable de puerta de enlace de escritorio remoto
+## <a name="support-for-remote-desktop-gateway-pluggable-authentication-and-authorization"></a>Compatibilidad para la autorización y autenticación acoplable de puerta de enlace de escritorio remoto
 
-Windows Server 2012 R2 introdujo compatibilidad para un nuevo método de autenticación, autenticación conectables de puerta de enlace de escritorio remoto y autorización, que proporciona más flexibilidad para las rutinas de autenticación personalizada. Ahora puedes este modelo de autenticación con el cliente de Mac. 
+Windows Server 2012 R2 introdujo la compatibilidad con un nuevo método de autenticación, autenticación acoplable de puerta de enlace de escritorio remoto y la autorización, que proporciona más flexibilidad para las rutinas de autenticación personalizada. Ahora puede este modelo de autenticación con el cliente de Mac. 
 
 > [!IMPORTANT]
-> No se admiten los modelos de autenticación y autorización personalizados antes de Windows 8.1, aunque el artículo anterior se describe cómo les.
+> No se admiten modelos personalizados de autenticación y autorización antes de Windows 8.1, aunque la información de este artículo se describe cómo ellos.
 
-Para obtener más información acerca de esta característica, echa un vistazo a [http://aka.ms/paa-sample](http://aka.ms/paa-sample).
+Para obtener más información sobre esta característica, consulte [ http://aka.ms/paa-sample ](http://aka.ms/paa-sample).
 
 
 > [!TIP]
-> Preguntas y comentarios siempre son inicio de sesión. Sin embargo, no envíe una solicitud de ayuda para solucionar problemas mediante el uso de la característica de comentarios al final de este artículo. En su lugar, ve al [foro de cliente de escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e iniciar un nuevo subproceso. ¿Tiene una sugerencia de la característica? Nos indicará en el [foro de voz del usuario de cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Preguntas y comentarios siempre son bienvenidos. Sin embargo, no publique una solicitud de ayuda para solucionar problemas con la característica de comentario al final de este artículo. En su lugar, vaya a la [foro de cliente de escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e iniciar un nuevo subproceso. ¿Tiene alguna sugerencia de característica? Díganos en el [foro de uservoice cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
 

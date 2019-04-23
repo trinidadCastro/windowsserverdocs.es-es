@@ -1,6 +1,6 @@
 ---
 ms.assetid: 13210461-1e92-48a1-91a2-c251957ba256
-title: "Solución de problemas de las actualizaciones de firmware de unidad"
+title: Solución de problemas de las actualizaciones de firmware de unidad
 ms.prod: windows-server-threshold
 ms.author: toklima
 ms.manager: masriniv
@@ -9,10 +9,11 @@ ms.topic: article
 author: toklima
 ms.date: 04/18/2017
 ms.openlocfilehash: 7ee5c57839f32d71053e983fc14f76c481236779
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59884166"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>Solución de problemas de las actualizaciones de firmware de unidad
 
@@ -22,8 +23,8 @@ Windows 10, versión 1703 y versiones más recientes, y Windows Server (canal se
 
 Puedes encontrar más información acerca de esta característica aquí:
 
-- [Actualización del firmware de la unidad en Windows Server 2016](update-firmware.md)
-- [Actualización del firmware de la unidad sin tiempo de inactividad en espacios de almacenamiento directo](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [Actualización de firmware de la unidad en Windows Server 2016](update-firmware.md)
+- [Actualizar el Firmware de unidad sin tiempo de inactividad en espacios de almacenamiento directo](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 Las actualizaciones de firmware pueden sufrir errores por varias razones. La finalidad de este artículo es ayudar en la solución avanzada de problemas.
 
@@ -40,7 +41,7 @@ Desde el punto de vista de la arquitectura, esta nueva funcionalidad depende de 
 Las siguientes secciones proporcionan información sobre solución de problemas, dependiendo de si se usan controladores de Microsoft o de terceros.
 
 ## <a name="identifying-inappropriate-hardware"></a>Identificación del hardware inapropiado
-La forma más rápida de identificar si un dispositivo admite el conjunto de comandos correcto es simplemente iniciar PowerShell y pasar un objeto PhysicalDisk que represente al disco en el cmdlet Get-StorageFirmwareInfo. A continuación mostramos un ejemplo:
+La forma más rápida de identificar si un dispositivo admite el conjunto de comandos correcto es simplemente iniciar PowerShell y pasar un objeto PhysicalDisk que represente al disco en el cmdlet Get-StorageFirmwareInfo. A continuación, se muestra un ejemplo:
 
 ```powershell
 Get-PhysicalDisk -SerialNumber 15140F55976D | Get-StorageFirmwareInformation
@@ -63,7 +64,7 @@ El campo SupportsUpdate siempre notificará "True" para los dispositivos conecta
 
 Para validar si un dispositivo SAS admite el conjunto de comandos necesarios, existen dos opciones:
 1.  Probarlo mediante el cmdlet Update-StorageFirmware con una imagen del firmware adecuada.
-2.  O consultar el catálogo de Windows Server para identificar qué dispositivos SAS han conseguido el AQ de actualización de FW (https://www.windowsservercatalog.com/).
+2.  Consulte el catálogo de servidor de Windows para identificar qué dispositivos SAS han obtenido correctamente el (FW actualización AQ https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>Opciones de corrección
 Si un dispositivo determinado que se está probando no admite el conjunto de comandos adecuado, consulta con el proveedor para ver si hay disponible un firmware actualizado que proporcione el conjunto de comandos necesarios, o consulte el catálogo de Windows Server para identificar los dispositivos que implementan dicho conjunto de comando adecuado.
@@ -141,7 +142,7 @@ Los registros de diagnóstico no se muestran de forma predeterminada; si quieres
 
 Para recopilar estas entradas del registro avanzadas, habilita el registro, reproduce el error de actualización del firmware y guarda el registro de diagnóstico.
 
-Este es un ejemplo de una actualización del firmware en un dispositivo SATA que sufre errores porque la imagen que se ha de descargar no era válida (identificador de evento: 258):
+Este es un ejemplo de una actualización de firmware en un error de dispositivo SATA, porque la imagen que se descargan no era válida (Id. de evento: 258):
 
 ``` 
 EventData
@@ -173,11 +174,11 @@ Parameter8Value 0
 ```
 
 El evento anterior contiene información detallada del dispositivo en los valores de parámetro del 2 al 6. Aquí podemos observar distintos valores de registro de ATA. La especificación ATA ACS puede usarse para descodificar los siguientes de valores correspondientes a errores de un comando Download Microcode:
-- Código de retorno: 0 (0000 0000) (N/A: no significa nada, ya que no se ha transferido ninguna carga)
-- Características: 15 (0000 1111) (Bit 1 establecido en "1" e indica "cancelar")
-- SectorCount: 0 (0000 0000) (N/A)
-- DriveHead: 160 (1010 0000) (N/A: solo se establecen bits obsoletos)
-- Comando: 146 (1001 0010) (Bit 1 establecido en "1", lo que indica la disponibilidad de los datos de detección)
+- Código de retorno: 0 (0000 0000) (N/D: no tiene sentido ya que se ha transferido no carga)
+- Características: 15 (0000 1111) (1 bit se establece en '1' e indica "Anular")
+- SectorCount: 0 (0000 0000) (N/D)
+- DriveHead: 160 (1010 0000) (N/D: solo obsoletos bits se establecen)
+- Comando: 146 (1001 0010) (1 bit se establece en '1', que indica la disponibilidad de datos de detección)
 
 Esto nos indica que el dispositivo ha cancelado la operación de actualización del firmware.
 

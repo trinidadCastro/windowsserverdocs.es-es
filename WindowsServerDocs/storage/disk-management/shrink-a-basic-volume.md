@@ -1,6 +1,6 @@
 ---
-title: "Reducir un volumen básico"
-description: "En este artículo se describe cómo reducir un volumen básico"
+title: Reducir un volumen básico
+description: En este artículo se describe cómo reducir un volumen básico
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: e54632b78fd67a65b51147323565130881d8d81b
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885336"
 ---
 # <a name="shrink-a-basic-volume"></a>Reducir un volumen básico
 
@@ -27,8 +28,8 @@ Al reducir una partición, todos los archivos normales se reubican automáticame
 
 ## <a name="shrinking-a-basic-volume"></a>Reducir un volumen básico
 
--   [Usar la interfaz de Windows](#BKMK_WINUI)
--   [Usar una línea de comandos](#BKMK_CMD)
+-   [Mediante la interfaz de Windows](#BKMK_WINUI)
+-   [Línea de comandos](#BKMK_CMD)
 
 > [!NOTE]
 > Debes ser miembro del grupo **Operadores de copia de seguridad** o **Administradores**, como mínimo, para completar estos pasos.
@@ -50,7 +51,7 @@ Al reducir una partición, todos los archivos normales se reubican automáticame
 <a id="BKMK_CMD"></a>
 #### <a name="to-shrink-a-basic-volume-using-a-command-line"></a>Para reducir un volumen básico mediante una línea de comandos
 
-1.  Abre un símbolo del sistema y escribe `diskpart`.
+1.  Abra un símbolo del sistema y escriba `diskpart`.
 
 2.  En el símbolo del sistema **DISKPART**, escribe `list volume`. Ten en cuenta el número del volumen sencillo que quieres reducir.
 
@@ -62,11 +63,11 @@ Al reducir una partición, todos los archivos normales se reubican automáticame
 
 | Valor | Descripción|
 |---|---|
-| <p>**list volume**</p> | <p>Muestra una lista de volúmenes básicos y dinámicos en todos los discos.</p>|
-| <p>**select volume**</p> | <p>Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.</p> |
+| <p>**volumen de la lista**</p> | <p>Muestra una lista de volúmenes básicos y dinámicos en todos los discos.</p>|
+| <p>**Seleccione el volumen**</p> | <p>Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.</p> |
 | <p>**shrink**</p> | <p>Reduce el volumen con el foco para crear un espacio sin asignar. No se produce ninguna pérdida de datos. Si la partición incluye archivos que no pueden moverse (por ejemplo, el archivo de página o el área de almacenamiento de instantáneas), el volumen se reducirá hasta el punto donde se encuentran los archivos que no pueden moverse. |
 | <p>**desired=** <em>desiredsize</em></p> | <p>La cantidad de espacio, en megabytes, para recuperarse en la partición actual.</p> |
-| <p>**minimum=** <em>minimumsize</em></p> | <p>La cantidad mínima de espacio, en megabytes, para recuperarse en la partición actual. Si no se especifica un tamaño mínimo o deseado, el comando reclamará la cantidad máxima de espacio posible.</p> 
+| <p>**mínimo =** <em>minimumsize</em></p> | <p>La cantidad mínima de espacio, en megabytes, para recuperarse en la partición actual. Si no se especifica un tamaño mínimo o deseado, el comando reclamará la cantidad máxima de espacio posible.</p> 
 
 <a id="addcon"></a>
 
@@ -79,6 +80,6 @@ En algunos casos, se puede cambiar la ubicación del archivo temporalmente. Por 
 
 -   Puedes reducir particiones principales y unidades lógicas en particiones sin procesar (las que no disponen de un sistema de archivos) o particiones con el sistema de archivos NTFS.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Administrar volúmenes básicos](manage-basic-volumes.md)

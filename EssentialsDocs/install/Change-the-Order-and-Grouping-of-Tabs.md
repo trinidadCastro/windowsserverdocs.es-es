@@ -1,6 +1,6 @@
 ---
-title: "Cambiar el orden y el agrupamiento de las pestañas"
-description: "Describe cómo usar Windows Server Essentials"
+title: Cambiar el orden y la agrupación de las fichas
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,67 +13,68 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 578c5619cfdf076bb2735254494f393d56d35713
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59887766"
 ---
-# <a name="change-the-order-and-grouping-of-tabs"></a>Cambiar el orden y el agrupamiento de las pestañas
+# <a name="change-the-order-and-grouping-of-tabs"></a>Cambiar el orden y la agrupación de las fichas
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Puedes cambiar el orden de las pestañas en el panel para que tu pestaña sea la primera (en la izquierda) en la fila de pestañas. Para ello, debes agregar una entrada en el registro. También puede afectar a la agrupación de las pestañas agregando entradas al registro. El orden de las pestañas puede ser tu pestaña principal seguida de Microsoft integradas las pestañas, seguida de cualquiera de tus pestañas adicionales y, a continuación, seguido de las pestañas de terceros.  
+Puede cambiar el orden de las pestañas del Panel para que la suya sea la primera (a la izquierda) de la fila de pestañas. Para ello necesitará agregar una entrada al registro. También puede modificar la agrupación de las pestañas agregando entradas al registro. El orden de las pestañas puede ser su pestaña principal seguida de las pestañas integradas de Microsoft, después sus otras pestañas y finalmente las pestañas de terceros.  
   
-## <a name="change-the-order-of-the-tabs-in-the-dashboard"></a>Cambiar el orden de las pestañas en el panel  
- Debes agregar el identificador del complemento que muestra la pestaña en el registro para definir el orden.  
+## <a name="change-the-order-of-the-tabs-in-the-dashboard"></a>Cambiar el orden de las pestañas en el Panel  
+ Es necesario que agregue el identificador del complemento que se muestre en su pestaña para que el registro defina el orden.  
   
-#### <a name="to-display-your-tab-first-in-the-list-of-tabs"></a>Para tu pestaña aparezca en primer lugar en la lista de pestañas  
+#### <a name="to-display-your-tab-first-in-the-list-of-tabs"></a>Para que su pestaña aparezca la primera de la lista  
   
-1.  En el equipo de referencia, haz clic en **inicio**, escribe **regedit**y, a continuación, presiona **ENTRAR**.  
+1.  En el equipo de referencia. haga clic en **Inicio**, escriba **regedit**y después presione **Entrar**.  
   
-2.  En el panel izquierdo, expande **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**y después expande **Windows Server**. Si la **OEM** clave no existe, debes completar los siguientes pasos para crearla:  
+2.  En el panel izquierdo, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE**, **Microsoft** y finalmente **Windows Server**. Si la clave **OEM** no existe, siga los pasos que se indican a continuación para crearla:  
   
-    1.  Haz clic en **Windows Server**, elija **nueva**y, a continuación, haz clic en **clave**.  
+    1.  Haga clic con el botón secundario en **Windows Server**, seleccione **Nuevo** y a continuación haga clic en **Clave**.  
   
-    2.  Tipo **OEM** para el nombre de la clave.  
+    2.  Escriba **OEM** como nombre de la clave.  
   
-3.  Haz clic en **OEM**, elija **nueva**y, a continuación, haz clic en **valor de cadena**.  
+3.  Haga clic con el botón secundario en **OEM**, seleccione **Nuevo**y a continuación haga clic en **Valor de cadena**.  
   
-4.  Tipo **DashboardMainTabID** como el nombre de cadena y después presiona **ENTRAR**.  
+4.  Escriba **DashboardMainTabID** como el nombre de la clave y a continuación pulse **Entrar**.  
   
-5.  Haz clic en la nueva cadena en el panel derecho y, a continuación, haz clic en **modificar**.  
+5.  Haga clic con el botón secundario sobre la nueva cadena en el panel derecho y a continuación haga clic en **Modificar**.  
   
-6.  Escribe el GUID que se definió para la pestaña de nivel superior y, a continuación, presione **ENTRAR**.  
+6.  Escriba el GUID que se haya definido para la pestaña de nivel superior y pulse **Entrar**.  
   
-     Para obtener más información sobre cómo crear e identificar pestañas de nivel superior, consulta [crear una pestaña de nivel superior](https://msdn.microsoft.com/library/gg513957) en el SDK de soluciones de Windows Server.  
+     Para obtener más información acerca de la creación e identificación de pestañas de nivel superior, consulte [Cómo crear una pestaña de nivel superior](https://msdn.microsoft.com/library/gg513957) en el SDK de Soluciones de Windows Server.  
   
-7.  Guarda los cambios en el registro.  
+7.  Guarde los cambios realizados en el registro.  
   
-8.  También debes incluir el GUID para tu pestaña de nivel superior principal en la lista de identificadores para agrupar pestañas. Para ello, siga los pasos enumerados en **cambiar el agrupamiento de las pestañas en el panel**.  
+8.  También deberá incluir el GUID de la pestaña principal de nivel superior en la lista de identificadores de agrupaciones de pestañas. Para ello, siga los pasos indicados en **Cómo cambiar la agrupación de las pestañas en el Panel**.  
   
-## <a name="change-the-grouping-of-tabs-in-the-dashboard"></a>Cambiar el agrupamiento de las pestañas en el panel  
- Puedes asegurarte de que tus pestañas se agrupan juntas e incluidas en la lista de pestañas de Microsoft integradas, agregando los identificadores al registro.  
+## <a name="change-the-grouping-of-tabs-in-the-dashboard"></a>Cómo cambiar la agrupación de las pestañas en el Panel  
+ Para asegurarse de que las pestañas estén agrupadas y aparezcan en la lista de pestañas integradas de Microsoft, agregue los identificadores al registro.  
   
-#### <a name="to-change-the-grouping-of-tabs"></a>Para cambiar el agrupamiento de las pestañas  
+#### <a name="to-change-the-grouping-of-tabs"></a>Para cambiar la agrupación de las pestañas  
   
-1.  Si regedit no está abierto, haz clic en **inicio**, escribe **regedit**y, a continuación, presiona **ENTRAR**.  
+1.  Si regedit no se abre, haga clic en **Inicio**, escriba **regedit** y después presione **Entrar**.  
   
-2.  En el panel izquierdo, expande **HKEY_LOCAL_MACHINE**, expanda **SOFTWARE**, expanda **Microsoft**y después expande **Windows Server**.  
+2.  En el panel izquierdo, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE**, **Microsoft** y finalmente **Windows Server**.  
   
-3.  Haz clic en **OEM**, elija **nueva**y, a continuación, haz clic en **clave**.  
+3.  Haga clic con el botón secundario en **OEM**, seleccione **Nuevo** y haga clic en **Clave**.  
   
-4.  Tipo **DashboardAddins** como el nombre de clave y después presiona **ENTRAR**.  
+4.  Escriba **DashboardAddins** como el nombre de la clave y a continuación pulse **Entrar**.  
   
-5.  Haz clic en **DashboardAddins**, elija **nueva**y, a continuación, haz clic en **valor de cadena**.  
+5.  Haga clic con el botón secundario en **DashboardAddins**, seleccione **Nuevo**y a continuación haga clic en **Valor de cadena**.  
   
-6.  Escribe el identificador de GUID para tu pestaña como nombre de la cadena. No se necesita ningún valor.  
+6.  Escriba el identificador GUID de la pestaña como el nombre de la cadena. No es necesario ningún valor.  
   
-7.  Repite los pasos 5 y 6 para cada pestaña y subpestaña.  
+7.  Repita los pasos 5 y 6 para cada una de las pestañas y subpestañas.  
   
-8.  Guarda los cambios del registro.  
+8.  Guarde los cambios realizados en el registro.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

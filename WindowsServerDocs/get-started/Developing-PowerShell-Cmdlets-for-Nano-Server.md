@@ -13,11 +13,11 @@ ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 4c669db414c4f12b6145a26a75b83449f43e8918
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082687"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59887686"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Desarrollo de cmdlets de PowerShell para Nano Server
 
@@ -26,7 +26,7 @@ ms.locfileid: "2082687"
 > [!IMPORTANT]
 > A partir de Windows Server, versión 1709, Nano Server estará disponible solo como una [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para obtener más información. 
   
-## <a name="overview"></a>Introducción  
+## <a name="overview"></a>Información general  
 Nano Server incluye PowerShell Core de forma predeterminada en todas las instalaciones de Nano Server. PowerShell Core es una edición de superficie reducida de PowerShell que se basa en .NET Core y se ejecuta en las ediciones de superficie reducida de Windows, como Nano Server y Windows IoT Core. PowerShell Core funciona de la misma manera que otras ediciones de PowerShell, como Windows PowerShell se ejecutan en Windows Server 2016. Sin embargo, la superficie reducida de Nano Server significa que no todas las características de PowerShell de Windows Server 2016 están disponibles en PowerShell Core en Nano Server.  
   
 Si dispone de los cmdlets de PowerShell existentes que desea ejecutar en Nano Server o está desarrollando nuevos para ese propósito, este tema incluye consejos y sugerencias que deben facilitar el proceso.  
@@ -36,8 +36,8 @@ Si dispone de los cmdlets de PowerShell existentes que desea ejecutar en Nano Se
   
 A partir de la versión 5.1, PowerShell está disponible en diferentes ediciones que denotan distintos conjuntos de características y compatibilidad de la plataforma.  
   
-- **Desktop Edition:** se basa en .NET Framework y proporciona compatibilidad con scripts y módulos destinados a versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows, como Server Core y el escritorio de Windows.  
-- **Core Edition:** se basa en .NET Core y proporciona compatibilidad con scripts y módulos destinados a versiones de PowerShell que se ejecutan en las ediciones de superficie reducida de Windows, como Nano Server y Windows IoT.  
+- **Edición de escritorio:** Basado en .NET Framework y proporciona compatibilidad con scripts y módulos destinados a versiones de PowerShell que se ejecutan en las ediciones de superficie completa de Windows como Server Core y el escritorio de Windows.  
+- **Core Edition:** Basado en .NET Core y proporciona compatibilidad con scripts y módulos destinados a versiones de PowerShell que se ejecutan en las ediciones de superficie reducida de Windows como Nano Server y Windows IoT.  
   
 La edición de ejecución de PowerShell se muestra en la propiedad PSEdition de $PSVersionTable.  
 ```powershell  
@@ -125,9 +125,9 @@ Si no está seguro de qué implementación ha usado para los cmdlets existentes 
 * %windir%\system32\WindowsPowerShell\v1.0\Modules   
 * %ProgramFiles%\WindowsPowerShell\Modules   
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
-* \<la ubicación de la instalación del producto>   
+* \<la ubicación de instalación del producto >   
     
- Comprueba en estas ubicaciones estos detalles:  
+ Compruebe en estas ubicaciones estos detalles:  
  * Los cmdlets CIM tienen extensiones de archivo .cdxml.  
  * Los cmdlets de .NET tienen extensiones de archivo .dll o tienen ensamblados instalados en la GAC que aparecen en el archivo. psd1 en los campos RootModule, ModuleToProcess o NestedModules.  
 * Los cmdlets de script de PowerShell tienen las extensiones de archivo .psm1 o .ps1.   
@@ -160,11 +160,11 @@ El módulo de SDK también depende de la característica siguiente que se va a i
 Revise la instalación de Visual Studio antes de utilizar el módulo de SDK para garantizar que se satisfacen estos requisitos previos. Asegúrese de que se selecciona instalar la característica anterior durante la instalación de Visual Studio, o modifique la instalación existente de Visual Studio 2015 para instalarla.  
   
 El módulo de SDK de PowerShell Core incluye los siguientes cmdlets:  
-- New-NanoCSharpProject: crea un nuevo proyecto de Visual Studio en C# para CoreCLR y PowerShell Core incluido en la versión de Windows Server 2016 de Nano Server.  
-- Show-SdkSetupReadMe: abre la carpeta raíz del SDK en el Explorador de archivos y abre el archivo Léame.txt para la instalación manual.  
-- Install-RemoteDebugger: instala y configura al depurador remoto de Visual Studio en un equipo Nano Server.  
-- Start-RemoteDebugger: inicia el depurador remoto en un equipo remoto que ejecuta Nano Server.  
-- Stop-RemoteDebugger: detiene el depurador remoto en un equipo remoto que ejecuta Nano Server.  
+- New-NanoCSharpProject: Crea un nuevo Visual Studio C# proyecto destinado a CoreCLR y PowerShell Core incluido en la versión de Windows Server 2016 de Nano Server.  
+- Show-SdkSetupReadMe: Se abre la carpeta raíz del SDK en el Explorador de archivos y abre el archivo Léame.txt para la instalación manual.  
+- Install-RemoteDebugger: Instala y configura al depurador remoto de Visual Studio en un equipo de Nano Server.  
+- Start-RemoteDebugger: Inicia al depurador remoto en un equipo remoto que ejecuta Nano Server.  
+- Stop-RemoteDebugger: Detiene al depurador remoto en un equipo remoto que ejecuta Nano Server.  
   
 Para obtener información detallada sobre cómo usar los cmdlets, ejecute Get-Help en cada cmdlet después de instalar e importar el módulo como sigue:  
   
@@ -242,7 +242,7 @@ Para depurar un script de forma remota, conéctese al equipo remoto utilizando `
   
 ### <a name="migrating-from-wmi-net-to-mi-net"></a>Migración de WMI .NET a MI .NET  
   
-[WMI .NET](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx) no es compatible, por lo que se deben migrar todos los cmdlets que usan la API anterior a la API de WMI admitida: [MI .NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx). Puede acceder a MI .NET directamente a través de C# o a través de los cmdlets en el módulo CimCmdlets.   
+[WMI .NET](https://msdn.microsoft.com/library/mt481551(v=vs.110).aspx) no es compatible, por lo que debe migrar todos los cmdlets que usan la API anterior a la API de WMI admitida: [MI. .NET](https://msdn.microsoft.com/library/dn387184(v=vs.85).aspx). Puede acceder a MI .NET directamente a través de C# o a través de los cmdlets en el módulo CimCmdlets.   
   
 ### <a name="cimcmdlets-module"></a>Módulo CimCmdlets  
   

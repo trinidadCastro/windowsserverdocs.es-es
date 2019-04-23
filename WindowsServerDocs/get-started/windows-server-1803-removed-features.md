@@ -9,13 +9,13 @@ author: lizap
 ms.author: elizapo
 ms.date: 05/10/2018
 ms.openlocfilehash: c80738fe7ceda43a1a73adb0a8b1061bbb24319f
-ms.sourcegitcommit: 4b9b21ca1f366388a78ead7413cb581f2b23d4c6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "2712230"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59886206"
 ---
-# Características eliminadas o planificadas para su reemplazo a partir de Windows Server, versión 1803
+# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>Características eliminadas o planificadas para su reemplazo a partir de Windows Server, versión 1803
 
 > Se aplica a: Windows Server, versión 1803
 
@@ -25,9 +25,9 @@ Cada versión de Windows Server agrega nuevas características y funciones; ocas
 > - Puedes obtener acceso rápido a las versiones de Windows Server uniéndote al [Programa Windows Insider](https://insider.windows.com): esta es una excelente manera de probar los cambios de características.
 > - ¿Tienes preguntas acerca de otras versiones? Revisa la información de [Windows Server 2016](deprecated-features.md)y [Windows Server, versión 1709](removed-features-1709.md).
 
-**La lista está sujeta a cambios y podría no incluir todas las características o funciones afectadas.** 
+**La lista está sujeta a cambios y puede no incluir todas las características afectadas o funcionalidad.** 
 
-## Características que hemos eliminado en esta versión
+## <a name="features-we-removed-in-this-release"></a>Características que hemos eliminado en esta versión
 
 Hemos eliminado las siguientes características y funcionalidades de la imagen del producto instalado en Windows Server, versión 1803. Las aplicaciones o código que dependen de estas características no funcionarán en esta versión a menos que uses un método alternativo.   
 
@@ -36,7 +36,7 @@ Hemos eliminado las siguientes características y funcionalidades de la imagen d
 |[Servicio de replicación de archivos](https://support.microsoft.com/en-us/help/4025991/windows-server-version-1709-no-longer-supports-frs)|Servicios de replicación de archivos, introducida en Windows Server 2003 R2, se ha sustituido por la replicación de DFS. Es necesario [migrar cualquier controlador de dominio que usa FRS a replicación de DFS con SYSVOL](https://blogs.technet.microsoft.com/filecab/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol/).|
 |Virtualización de red de Hyper-V (HNV)|[Virtualización de la red](../networking/sdn/technologies/hyper-v-network-virtualization/whats-new-hyperv-network-virtualization-windows-server.md) ahora se incluye en Windows Server como parte de la solución de [Redes definidas por software ](../networking/sdn/software-defined-networking.md) (SDN), que también incluye Controlador de red, Equilibrio de carga de software, Enrutamiento definido por el usuario y Listas de control de acceso.|
 
-## Características que ya no se estamos desarrollando
+## <a name="features-were-no-longer-developing"></a>Características que ya no se estamos desarrollando
 
 Ya no estamos desarrollando activamente estas características y se pueden quitar de una futura actualización. Algunas características se han reemplazado por otras características o funciones, mientras que otras están ahora disponibles de diferentes orígenes. 
 
@@ -55,5 +55,5 @@ Si tienes algún comentario acerca de la sustitución propuesta de cualquiera de
 |[RemoteFX vGPU](../remote/remote-desktop-services/rds-remotefx-vgpu.md)|Estamos desarrollando nuevas opciones de aceleración de gráficos para entornos virtualizados. También puedes usar la [Asignación de dispositivos discretos (DDA)](../virtualization/hyper-v/plan/plan-for-deploying-devices-using-discrete-device-assignment.md) como alternativa.|
 |[Directivas de restricción de software](../identity/software-restriction-policies/software-restriction-policies.md) en Directiva de grupo|En lugar de usar las directivas de restricción de software a través de Directiva de grupo, puedes usar [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/applocker/applocker-overview) o [Control de aplicaciones de Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control) para controlar las aplicaciones a las que los usuarios pueden acceder y el código que puede ejecutarse en el kernel.|
 |Espacios de almacenamiento en una configuración compartida con un tejido de SAS|Implementación de [Espacios de almacenamiento directo](../storage/storage-spaces/storage-spaces-direct-overview.md) en su lugar. Espacios de almacenamiento directo admite el uso de caracteres de contenedores SAS con certificación HLK, pero en una configuración no compartida, tal como se describe en los [requisitos de hardware de espacios de almacenamiento directo](../storage/storage-spaces/storage-spaces-direct-hardware-requirements.md).|
-|Experiencia con WindowsServer Essentials|El rol de Essentials Experience ya no la estamos desarrollando para Windows Server Standard o SKU de Centro de datos de Windows Server. Si necesitas una solución de servidor fácil de usar para pequeñas y medianas empresas, comprueba nuestra nueva solución de [Microsoft 365 para la empresa](https://www.microsoft.com/microsoft-365/business) o usa [Windows Server 2016 Essentials](https://docs.microsoft.com/windows-server-essentials/get-started/get-started).|
+|Experiencia con Windows Server Essentials|El rol de Essentials Experience ya no la estamos desarrollando para Windows Server Standard o SKU de Centro de datos de Windows Server. Si necesitas una solución de servidor fácil de usar para pequeñas y medianas empresas, comprueba nuestra nueva solución de [Microsoft 365 para la empresa](https://www.microsoft.com/microsoft-365/business) o usa [Windows Server 2016 Essentials](https://docs.microsoft.com/windows-server-essentials/get-started/get-started).|
 

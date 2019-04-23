@@ -1,7 +1,7 @@
 ---
 ms.assetid: e33673ff-ea1c-4476-a549-3bf5899a47dd
-title: "Instalar el servicio de rol de servicios de federación"
-description: 
+title: Instalar el servicio de rol Servicio de federación
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,56 +10,57 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: c520cbe22739f2bde263e133c7feb681d824d251
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883716"
 ---
-# <a name="install-the-federation-service-role-service"></a>Instalar el servicio de rol de servicios de federación
+# <a name="install-the-federation-service-role-service"></a>Instalar el servicio de rol Servicio de federación
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Ahora que has configurado correctamente un equipo con las aplicaciones de requisitos previos y los certificados, estás listo para instalar el servicio de rol de servicios de federación de los servicios de federación de Active Directory \(AD FS\). Cuando se instala el servicio de federación en un equipo, dicho equipo se convierte en un servidor de federación.  
+Ahora que ha configurado correctamente un equipo con las aplicaciones de requisitos previos y los certificados, está listo para instalar el servicio de rol Servicio de federación de Active Directory Federation Services \(AD FS\). Cuando se instala el servicio de federación en un equipo, ese equipo se convierte en un servidor de federación.  
   
 > [!NOTE]  
-> Para el diseño federados Web Single\-Sign\-On \(SSO\), debes tener al menos un servidor de federación de la organización de partner de la cuenta y al menos un servidor de federación de la organización de partner de recurso. Para obtener más información, consulta [dónde colocar un servidor de federación](https://technet.microsoft.com/library/dd807127.aspx).  
+> Para Federated Web único\-sesión\-en \(SSO\) diseño, debe tener al menos un servidor de federación en la organización del asociado de cuenta y al menos un servidor de federación en la organización del asociado de recurso . Para obtener más información, consulte [Where to Place a Federation Server](https://technet.microsoft.com/library/dd807127.aspx).  
   
-Puedes usar el siguiente procedimiento para instalar el servicio de rol de servicios de federación de AD FS en un equipo que se convertirá en el primer servidor de federación o en un equipo que se convertirán en un servidor de federación de un conjunto de servidor de federación existente.  
+Puede usar el procedimiento siguiente para instalar el servicio de rol Servicio de federación de AD FS en un equipo que se convertirá en el primer servidor de federación o en un equipo que se convertirá en un servidor de federación para una granja de servidores de federación existente.  
   
 ## <a name="prerequisites"></a>Requisitos previos  
-Comprueba que un certificado SSL con la clave privada ya se ha instalado o importado en la \(Personal store\) almacén de certificados local antes de iniciar este procedimiento. Si vas a usar un certificado de firma token\ emitido por una entidad de certificación \(CA\), comprobar que un certificado de firma token\ con la clave privada ya se ha instalado o importado en la \(Personal store\) almacén de certificados local antes de iniciar este procedimiento. Como alternativa, puedes crear un certificado de firma self\, firma token\ mediante el Asistente para agregar Roles, como se describe en este procedimiento. Para obtener más información acerca de los certificados de firma de token\, consulta [requisitos de certificado para los servidores de federación](https://technet.microsoft.com/library/dd807040.aspx).  
+Compruebe que un certificado SSL con la clave privada ya se ha instalado o se haya importado en el almacén de certificados local \(almacén Personal\) antes de iniciar este procedimiento. Si va a usar un token\-certificado emitido por una entidad de certificación de firma \(CA\), compruebe que un token\-certificado de firma con la clave privada ya se ha instalado o importado en el almacén de certificados local \(almacén Personal\) antes de iniciar este procedimiento. Como alternativa, puede crear un autoservicio\-firmado, token\-firma de certificado mediante el Asistente para agregar funciones, como se describe en este procedimiento. Para obtener más información sobre el token\-certificados de firma, vea [requisitos de certificados para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx).  
   
-Pertenencia a **administradores**, o equivalente, en el equipo local es lo mínimo necesario para completar este procedimiento.  ¿Revisar detalles sobre el uso de las cuentas adecuadas y agrupar pertenencias a [Local y dominio predeterminada grupos](https://go.microsoft.com/fwlink/?LinkId=83477) \ (http:///\/ go.microsoft.com\/fwlink\ /? LinkId\ = 83477\).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  ¿Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477) \(http:\/\/go.microsoft.com\/fwlink\/? LinkId\=83477\).   
   
-#### <a name="to-install-the-federation-service-role-service"></a>Para instalar el servicio de rol de servicios de federación  
+#### <a name="to-install-the-federation-service-role-service"></a>Cómo instalar el servicio de rol de servicio de federación  
   
-1.  En la **inicio**, escriba**administrador del servidor**, y, a continuación, presione ENTRAR.  
+1.  En el **iniciar** , escriba**administrador del servidor**, y, a continuación, presione ENTRAR.  
   
-2.  Haz clic en **administrar**y, a continuación, haz clic en **agregar Roles y características** para iniciar el agregar Roles y características de asistente.  
+2.  Haga clic en **administrar**y, a continuación, haga clic en **agregar Roles y características** para iniciar el Asistente de las características y agregar Roles.  
   
-3.  En la **antes de comenzar** página, haz clic en **siguiente**.  
+3.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
   
-4.  En la **selecciona el tipo de instalación** página, haz clic en **instalación basado en Feature\ o Role\**y haz clic en **siguiente**.  
+4.  En el **Seleccionar tipo de instalación** página, haga clic en **rol\-características o en\-instalación basada en**y haga clic en **siguiente**.  
   
-5.  En la **servidor de destino selecciona** página, haz clic en **seleccionar un servidor desde el grupo de servidores**, comprueba que el equipo de destino se resalta y, a continuación, haz clic en **siguiente**.  
+5.  En el **Seleccionar servidor de destino** página, haga clic en **seleccionar un servidor del grupo de servidores**, compruebe que el equipo de destino está resaltado y, a continuación, haga clic en **siguiente**.  
   
-6.  En la **seleccionar roles de servidor** página, haz clic en **los servicios de federación de Active Directory**y, a continuación, haz clic en siguiente.  
+6.  En el **seleccionar roles de servidor** página, haga clic en **Active Directory Federation Services**y, a continuación, haga clic en siguiente.  
   
     > [!NOTE]  
-    > Si se le pide instalar características adicionales de .NET Framework o servicio de activación de procesos de Windows, haz clic en **agregar características** para su instalación.  
+    > Si se le solicite instalar características adicionales de .NET Framework o Windows Process Activation Service, haga clic en **agregar características** para instalarlos.  
   
-7.  En la **Select features** página, comprueba que se establecen las características y, a continuación, haz clic en **siguiente**.  
+7.  En el **seleccionar características** , comprueba que se establecen las características y, a continuación, haga clic en **siguiente**.  
   
-8.  En la **servicios de federación de Active Directory \(AD FS\)** página, haz clic en **siguiente**.  
+8.  En el **servicio de federación de Active Directory \(AD FS\)**  página, haga clic en **siguiente**.  
   
-9. En la **seleccione los servicios de rol**, seleccione la **servicios de federación de** y, a continuación, haz clic en **siguiente**.  
+9. En el **seleccionar servicios de rol** , seleccione el **servicio de federación** casilla de verificación y, a continuación, haga clic en **siguiente**.  
   
-10. En la **rol de servidor Web \(IIS\)** página, haz clic en **siguiente**.  
+10. En el **rol de servidor Web \(IIS\)**  página, haga clic en **siguiente**.  
   
-11. En la **seleccione los servicios de rol** página, haz clic en **siguiente**.  
+11. En la página **Seleccionar servicios de rol**, haga clic en **Siguiente**.  
   
-12. Después de comprobar la información en la **Confirmar selecciones de instalación** página, seleccione la **reiniciar automáticamente el servidor de destino en caso necesario** y, a continuación, haz clic en **instalar**.  
+12. Después de comprobar la información de la página **Confirmar selecciones de instalación** , selecciona la casilla **Reiniciar automáticamente el servidor de destino en caso necesario** y haz clic en **Instalar**.  
   
-13. En la **progreso de la instalación** página, comprueba que todo lo que ha instalado correctamente y, a continuación, haz clic en **cerrar**.  
+13. En la página **Progreso de la instalación** , comprueba que todo se ha instalado correctamente y haz clic en **Cerrar**.  
   
 

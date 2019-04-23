@@ -1,6 +1,6 @@
 ---
-title: Introducción a directiva QoS
-description: En este tema proporciona vínculos a temas de introducción para que la directiva de calidad de servicio (QoS), que permite usar la directiva de grupo para establecer prioridades de ancho de banda de tráfico de red de determinadas aplicaciones y servicios en Windows Server 2016.
+title: Introducción a directiva de QoS
+description: Este tema proporciona vínculos a temas de información general de la directiva de calidad de servicio (QoS), que permite usar la directiva de grupo para priorizar el ancho de banda de tráfico de red de determinadas aplicaciones y servicios en Windows Server 2016.
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,21 +8,22 @@ ms.assetid: a37398a4-fe46-464f-8a33-829ef3c6db55
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6db2947253635673721438fde84d9d97f8ff9e24
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 28419bcf29276c0f919231a602faa0711478e224
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59889416"
 ---
-# <a name="getting-started-with-qos-policy"></a>Introducción a directiva QoS
+# <a name="getting-started-with-qos-policy"></a>Introducción a directiva de QoS
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar los siguientes temas para comenzar con la calidad de servicio \(QoS\) Directiva.
+Puede usar los siguientes temas para empezar a trabajar con calidad de servicio \(QoS\) directiva.
 
 - [Cómo funciona la directiva de QoS](qos-policy-works.md)
 - [Arquitectura de la directiva de QoS](qos-policy-architecture.md)
-- [Escenarios de la directiva de QoS](qos-policy-scenarios.md)
+- [Escenarios de directiva de QoS](qos-policy-scenarios.md)
 
 
-El primer tema de esta guía, encontrarás [directiva de calidad de servicio (QoS)](qos-policy-top.md).
+Para el primer tema de esta guía, consulte [directiva de calidad de servicio (QoS)](qos-policy-top.md).

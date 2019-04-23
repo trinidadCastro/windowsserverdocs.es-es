@@ -1,6 +1,6 @@
 ---
 title: Editar propiedades de plantillas de cuotas
-description: "En este artículo se describe cómo editar las propiedades de plantillas de cuotas para ampliar los cambios en las cuotas creadas a partir de la plantilla original de la cuota"
+description: En este artículo se describe cómo editar las propiedades de plantillas de cuotas para ampliar los cambios en las cuotas creadas a partir de la plantilla original de la cuota
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 0362b30e16dacb354220c770899195240f3e19ee
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59885786"
 ---
 # <a name="edit-quota-template-properties"></a>Editar propiedades de plantillas de cuotas
 
@@ -39,9 +40,9 @@ Al realizar cambios en una plantilla de cuota, tienes la opción de ampliar esto
     -   Si quieres modificar todas las cuotas existentes que se crearon a partir de la plantilla original, selecciona **Aplicar plantilla a todas las cuotas derivadas**.
     -   Si quieres mantener las cuotas existentes sin modificar, selecciona **No aplicar la plantilla a las cuotas derivadas**.
 
-6.  Haz clic en **Aceptar**.
+6.  Haga clic en **Aceptar**.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Administración de cuotas](quota-management.md)
 -   [Crear una plantilla de cuota](create-quota-template.md)

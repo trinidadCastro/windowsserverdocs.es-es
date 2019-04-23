@@ -1,7 +1,7 @@
 ---
 ms.assetid: 66664b80-2590-46c0-bfca-82402088e42c
 title: Crear una regla para enviar atributos LDAP como notificaciones
-description: 
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,79 +10,80 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: e9762e4bc50a1c2b862999af5269a0da376ec9a1
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59887616"
 ---
 # <a name="create-a-rule-to-send-ldap-attributes-as-claims"></a>Crear una regla para enviar atributos LDAP como notificaciones
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-Con los atributos de LDAP enviar como plantilla de regla de notificaciones en los servicios de federación de Active Directory \(AD FS\), puedes crear una regla que se seleccione atributos de un almacén de atributo de protocolo ligero de acceso a directorios \(LDAP\), como Active Directory, para enviar como notificaciones para el usuario de confianza. Por ejemplo, puedes usar esta plantilla de regla para crear atributos LDAP enviar como reclamaciones de regla que extrae los valores de atributo para usuarios autenticados desde el **displayName** y **telephoneNumber** atributos de Active Directory y, a continuación, enviar esos valores como dos notificaciones salientes diferentes.  
+Mediante el envío de atributos LDAP como plantilla de reglas de notificaciones en servicios de federación de Active Directory \(AD FS\), puede crear una regla que seleccionará los atributos de un Lightweight Directory Access Protocol \(LDAP\)almacén de atributos, como Active Directory, que se envían como notificaciones al usuario autenticado. Por ejemplo, puede usar esta plantilla de regla para crear un enviar atributos LDAP como notificaciones de regla que extraerá los valores de atributo para los usuarios autenticados de los **displayName** y **telephoneNumber** activo Directorio de los atributos y, a continuación, enviar esos valores como dos notificaciones salientes diferentes.  
   
-También puedes usar esta regla para enviar la pertenencia a grupos de todos los del usuario. Si quieres enviar solo pertenencias a grupos individuales, usa la pertenencia al grupo de enviar como una plantilla de regla de notificación. Puedes usar el siguiente procedimiento para crear una regla de notificación con la administración de AD FS en snap\.  
+También puede utilizar esta regla para enviar todas las pertenencias a grupos del usuario. Si desea enviar solo pertenencias a grupos individuales, use la plantilla de regla de envío de pertenencia a grupos como una notificación. Puede usar el procedimiento siguiente para crear una regla de notificación con el complemento Administración de AD FS\-en.  
   
-Pertenencia a **administradores**, o equivalente, en el equipo local es lo mínimo necesario para completar este procedimiento.  Revisar detalles sobre el uso de las cuentas adecuadas y agrupar pertenencias a [Local y dominio predeterminada grupos](https://go.microsoft.com/fwlink/?LinkId=83477).  
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).  
 
-## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para enviar atributos LDAP como reclamaciones por un confiar terceros de confianza en Windows Server 2016 
+## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para enviar atributos LDAP como notificaciones para una confianza de Windows Server 2016 
 
-1.  En el administrador del servidor, haz clic en **herramientas**y, a continuación, selecciona **AD FS administración**.  
+1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
   
-2.  En el árbol de consola, en **AD FS**, haz clic en **confiar confía en las partes **. 
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
+2.  En el árbol de consola, bajo **AD FS**, haga clic en **autenticado**. 
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  Right\ y haga clic en la confianza seleccionada y, a continuación, haz clic en **Editar directiva de emisión de Reclamación **.
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **Editar directiva de emisión de notificación**.
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
-4.  En la **Editar directiva de emisión de Reclamación** cuadro de diálogo **reglas de transformación de emisión** haga clic en **Agregar regla** para iniciar el Asistente para la regla. 
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+4.  En el **Editar directiva de emisión de notificación** cuadro de diálogo **reglas de transformación de emisión** haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  En la **Seleccionar plantilla de regla** página, debajo **plantilla de regla de Reclamación**, selecciona **enviar atributos LDAP como notificaciones** en la lista y, a continuación, haz clic en **siguiente **.  
-![Crear la regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)    
+5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar atributos LDAP como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.  
+![Crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)    
 
-6.  En la **configurar regla** página en **nombre de la regla de Reclamación** escribe el nombre para mostrar para esta regla, selecciona el **atributo tienda**y, a continuación, selecciona el atributo LDAP y se asigna al tipo de notificación saliente. 
-![Crear la regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)    
+6.  En el **configurar regla** página **nombre de la regla de notificación** escriba el nombre para mostrar para esta regla, seleccione el **atributo Store**y, a continuación, seleccione el atributo LDAP y asígnelo a la tipo de notificación saliente. 
+![Crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)    
 
-7.  Haz clic en el **finalizar** botón.  
+7.  Haga clic en el **finalizar** botón.  
   
-8.  En la **editar reglas de notificación** cuadro de diálogo, haz clic en **Aceptar** guardar la regla.
+8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.
   
-## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-a-claims-provider-trust-in-windows-server-2016"></a>Para crear una regla para enviar atributos LDAP como reclamaciones por un proveedor de notificaciones de confianza en Windows Server 2016 
+## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-a-claims-provider-trust-in-windows-server-2016"></a>Para crear una regla para enviar atributos LDAP como notificaciones para una confianza de proveedor de notificaciones en Windows Server 2016 
   
-1.  En el administrador del servidor, haz clic en **herramientas**y, a continuación, selecciona **AD FS administración**.  
+1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
   
-2.  En el árbol de consola, en **AD FS**, haz clic en **reclamaciones proveedor confía **. 
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
+2.  En el árbol de consola, bajo **AD FS**, haga clic en **confianzas de proveedor de notificaciones**. 
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  Right\ y haga clic en la confianza seleccionada y, a continuación, haz clic en **editar reglas de notificación **.
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
+3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **editar reglas de notificación**.
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
-4.  En la **editar reglas de notificación** cuadro de diálogo **aceptación transformar reglas** haga clic en **Agregar regla** para iniciar el Asistente para la regla.
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
+4.  En el **editar reglas de notificación** cuadro de diálogo **reglas de transformación de aceptación** haga clic en **Agregar regla** para iniciar el Asistente para reglas.
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  En la **Seleccionar plantilla de regla** página, debajo **plantilla de regla de Reclamación**, selecciona **enviar atributos LDAP como notificaciones** en la lista y, a continuación, haz clic en **siguiente **.  
-![Crear la regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)       
+5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar atributos LDAP como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.  
+![Crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap1.PNG)       
 
-6.  En la **configurar regla** página en **nombre de la regla de Reclamación** escribe el nombre para mostrar para esta regla, selecciona el **atributo tienda**y, a continuación, selecciona el atributo LDAP y se asigna al tipo de notificación saliente. 
-![Crear la regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)      
+6.  En el **configurar regla** página **nombre de la regla de notificación** escriba el nombre para mostrar para esta regla, seleccione el **atributo Store**y, a continuación, seleccione el atributo LDAP y asígnelo a la tipo de notificación saliente. 
+![Crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap2.PNG)      
 
-7.  Haz clic en el **finalizar** botón.  
+7.  Haga clic en el **finalizar** botón.  
   
-8.  En la **editar reglas de notificación** cuadro de diálogo, haz clic en **Aceptar** guardar la regla.  
+8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
 
  
   
 ## <a name="to-create-a-rule-to-send-ldap-attributes-as-claims-for-windows-server-2012-r2"></a>Para crear una regla para enviar atributos LDAP como notificaciones de Windows Server 2012 R2  
   
-1.  En el administrador del servidor, haz clic en **herramientas**y, a continuación, selecciona **AD FS administración**.  
+1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
   
-2.  En el árbol de consola, en **AD FSAD FS\\Trust relaciones**, haz clic en **reclamaciones proveedor confía** o **confiar confía en las partes**y, a continuación, haz clic en una relación de confianza específicas en la lista que quieras para crear esta regla.  
+2.  En el árbol de consola, bajo **FSAD de AD FS\\relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o **autenticado**y, a continuación, haga clic en un confianza específicos en la lista donde desea crear esta regla.  
   
-3.  Right\ y haga clic en la confianza seleccionada y, a continuación, haz clic en **editar reglas de notificación **.
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
+3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **editar reglas de notificación**.
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
   
-4.  En la **editar reglas de notificación** cuadro de diálogo, selecciona una de las siguientes pestañas, según la confianza de que vas a editar y establece qué regla quieras crear esta regla en y, a continuación, haz clic en **Agregar regla** para iniciar el Asistente de regla que está asociado con ese conjunto de reglas:  
+4.  En el **editar reglas de notificación** cuadro de diálogo, seleccione una de las fichas siguientes, dependiendo de la relación de confianza que va a editar y establezca la regla a la desea crear esta regla en y, a continuación, haga clic en **Agregar regla** para iniciar la regla Asistente para la que está asociado con ese conjunto de reglas:  
   
     -   **Reglas de transformación de aceptación**  
   
@@ -91,28 +92,28 @@ Pertenencia a **administradores**, o equivalente, en el equipo local es lo míni
     -   **Reglas de autorización de emisión**  
   
     -   **Reglas de autorización de delegación**  
-![Crear la regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG) 
+![Crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG) 
   
-5.  En la **Seleccionar plantilla de regla** página, debajo **plantilla de regla de Reclamación**, selecciona **enviar atributos LDAP como notificaciones** en la lista y, a continuación, haz clic en **siguiente **.  
-![Crear la regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap3.PNG)  
+5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar atributos LDAP como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.  
+![Crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap3.PNG)  
   
-6.  En la **configurar regla** página en **nombre de la regla de Reclamación** escribe el nombre para mostrar para esta regla, en **tienda atributo** selecciona **Active Directory**y, en **atributos de asignación de LDAP a salientes los tipos de notificación** seleccionar el deseado **atributo LDAP** y correspondiente **el tipo de notificación saliente** tipos de las listas de drop\.  
+6.  En el **configurar regla** página **nombre de la regla de notificación** escriba el nombre para mostrar para esta regla, en **almacén de atributos** seleccione **Active Directory**y en **tipos de notificación de asignación de atributos LDAP a salientes** seleccione deseado **atributo LDAP** y correspondiente **tipo de notificación saliente** tipos en la lista\-listas desplegables.  
   
-    Tienes que seleccionar un nuevo atributo LDAP y un par de tipo de Reclamación saliente en una fila diferente para cada atributo de Active Directory que quieras para emitir una reclamación de como parte de esta regla.  
-![Crear la regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap4.PNG)    
-7.  Haz clic en el **finalizar** botón.  
+    Debe seleccionar un nuevo atributo LDAP y el par de tipo de notificación saliente de una fila diferente para cada atributo de Active Directory que desea emitir una notificación para como parte de esta regla.  
+![Crear regla](media/Create-a-Rule-to-Send-LDAP-Attributes-as-Claims/ldap4.PNG)    
+7.  Haga clic en el **finalizar** botón.  
   
-8.  En la **editar reglas de notificación** cuadro de diálogo, haz clic en **Aceptar** guardar la regla.  
+8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
 
 ## <a name="additional-references"></a>Referencias adicionales 
 [Configurar reglas de notificación](Configure-Claim-Rules.md)  
  
-[Lista de comprobación: Crear reglas de notificación para un usuario de confianza](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de comprobación: Creación de reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
 
 [Lista de comprobación: Crear reglas de notificación para un proveedor de notificaciones de confianza](https://technet.microsoft.com/library/ee913564.aspx)  
   
-[Cuándo usar una regla de solicitud de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
+[Cuándo usar una regla de notificación de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
-[La función de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
+[El rol de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
 [La función de reglas de notificación](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  

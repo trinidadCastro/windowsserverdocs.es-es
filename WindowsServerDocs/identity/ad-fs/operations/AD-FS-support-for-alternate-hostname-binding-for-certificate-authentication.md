@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4b71b212-7e5b-4fad-81ee-75b3d1f27869
-title: "AD FS soporte técnico para el enlace de nombre de host alternativo para la autenticación de certificado"
-description: 
+title: Compatibilidad de AD FS con el enlace de nombre de host alternativo para la autenticación de certificado
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,35 +10,36 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 553ff059693c7b0c0e6f0364d82c1adbca661097
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59887256"
 ---
-# <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>AD FS soporte técnico para el enlace de nombre de host alternativo para la autenticación de certificado
+# <a name="ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication"></a>Compatibilidad de AD FS con el enlace de nombre de host alternativo para la autenticación de certificado
 
 >Se aplica a: Windows Server 2016
 
-En todas las redes de las directivas de firewall local no pueden permitir el tráfico a través de los puertos no estándares como 49443. Esto se convirtió en un problema al intentar realizar la autenticación de certificado con AD FS antes de AD FS en Windows Server 2016. Esto es porque no podría tener diferentes enlaces para la autenticación de dispositivo y autenticación de certificado de usuario en el mismo host. El puerto 443 predeterminado está enlazado a recibir certificados de dispositivo y no se puede modificar para admitir varios enlace en el mismo canal. Fueron los resultados que no funcionaba la autenticación con tarjeta inteligente y los usuarios ya estaban constancia de qué ha ocurrido ya que no hay ninguna indicación de lo que realmente ocurrió.  
+En muchas redes de las directivas de firewall local no es posible que permitir el tráfico a través de puertos no estándares, como 49443. Esto se convirtió en un problema al intentar realizar la autenticación de certificados con AD FS antes de AD FS en Windows Server 2016. Esto es porque no podría tener enlaces diferentes para la autenticación de dispositivo y la autenticación de certificados de usuario en el mismo host. El puerto predeterminado 443 está enlazado a recibir certificados de dispositivo y no se puede modificar para admitir el enlace de varios en el mismo canal. El resultado fue que no funcionará la autenticación mediante tarjeta inteligente y los usuarios eran conscientes de lo que sucedió porque no hay ninguna indicación de lo que realmente sucedió.  
   
-Con AD FS en Windows Server 2016 para ello.
+Con AD FS en Windows Server 2016 Esto puede realizarse.
   
-En AD FS en Windows Server 2016 ha cambiado. Ahora se admiten dos modos, el primero usa el mismo host (es decir, adfs.contoso.com) con diferentes puertos (443, 49443). El segundo usa distintos hosts (adfs.contoso.com y certauth.adfs.contoso.com) con el mismo puerto (443). Esto requiere un certificado SSL para admitir la "certauth. < nombre de servicio adfs >" como nombre de sujeto alternativo. Esto puede hacerse en el momento de la creación de granja o más adelante mediante PowerShell.  
+En AD FS en Windows Server 2016 ha cambiado. Ahora se admiten dos modos, el primero usa el mismo host (es decir, adfs.contoso.com) con puertos diferentes (443, 49443). El segundo usa distintos hosts (adfs.contoso.com y certauth.adfs.contoso.com) con el mismo puerto (443). Esto requerirá un certificado SSL para admitir "certauth. < adfs-service-name >" como nombre de sujeto alternativo. Esto puede hacerse en el momento de la creación de la granja de servidores o más adelante a través de PowerShell.  
   
-## <a name="how-to-configure-alternate-host-name-binding-for-certificate-authentication"></a>Cómo configurar el enlace de nombre de host alternativo para la autenticación de certificado  
-Existen dos formas que puedes agregar el enlace de nombre de host alternativo para la autenticación de certificado. La primera es al configurar un nuevo conjunto de AD FS con AD FS de Windows Server 2016, si el certificado contiene un nombre alternativo del firmante (SAN), se colocará automáticamente el programa de instalación usa el segundo método mencionado anteriormente. Es decir, realizará automáticamente la instalación de dos hosts diferentes (sts.contoso.com y certauth.sts.contoso.com con el mismo puerto. Si el certificado contiene un SAN, verá una advertencia que indica que los nombres alternativos de firmante de certificado no admite certauth.*. Consulta las capturas de pantalla siguiente. La primera que muestra una instalación donde el certificado tenía un SAN y el segundo un certificado que no se muestra.  
+## <a name="how-to-configure-alternate-host-name-binding-for-certificate-authentication"></a>Cómo configurar el enlace del nombre de host alternativo para la autenticación de certificado  
+Hay dos formas que puede agregar el enlace del nombre de host alternativo para la autenticación de certificado. La primera es al configurar una nueva granja de AD FS con AD FS para Windows Server 2016, si el certificado contiene un nombre alternativo del sujeto (SAN), a continuación, éste será automáticamente para que use el segundo método mencionado anteriormente. Es decir, realizará automáticamente la instalación de dos hosts distintos (sts.contoso.com y certauth.sts.contoso.com con el mismo puerto. Si el certificado no contiene una SAN, verá una advertencia indicando que los nombres alternativos del sujeto de certificado no admite certauth.*. Vea las capturas de pantalla siguiente. La primera de ellas muestra una instalación donde el certificado tuviera una SAN y el segundo muestra un certificado que no lo hizo.  
   
 ![enlace de nombre de host alternativo](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_1.png)  
   
 ![enlace de nombre de host alternativo](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_2.png)  
   
-De igual modo, cuando se haya implementado AD FS en Windows Server 2016 puedes usar el cmdlet de PowerShell: conjunto AdfsAlternateTlsClientBinding.
+Del mismo modo, una vez que se ha implementado AD FS en Windows Server 2016 puede usar el cmdlet de PowerShell: Set-AdfsAlternateTlsClientBinding.
   
 ```powershell
 Set-AdfsAlternateTlsClientBinding -Member DC1.contoso.com -Thumbprint '<thumbprint of cert>'
 ```
 
-Cuando aparezca el mensaje, haz clic en Sí para confirmar.  Y que debe.
+Cuando se le solicite, haga clic en Sí para confirmar.  Y eso sería.
 
 ![enlace de nombre de host alternativo](media/AD-FS-support-for-alternate-hostname-binding-for-certificate-authentication/ADFS_CA_3.png)
 

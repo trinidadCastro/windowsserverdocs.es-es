@@ -1,6 +1,6 @@
 ---
 title: Crear una cuota
-description: "En este artículo se describe cómo crear una cuota en base a una plantilla"
+description: En este artículo se describe cómo crear una cuota en base a una plantilla
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: f3c677f5ebf7dda44f4b99a64d0fbf8d2c72b92e
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59883196"
 ---
 # <a name="create-a-quota"></a>Crear una cuota
 
@@ -31,7 +32,7 @@ Cuando creas una cuota, elige una ruta de acceso de cuota, que es un volumen o c
 
 ## <a name="to-create-a-quota-that-is-based-on-a-template"></a>Para crear una cuota que se basa en una plantilla
 
-1.  En **Administración de cuotas**, haz clic en el nodo **Plantillas de cuota**.
+1.  En **Administración de cuotas** haga clic en el nodo **Plantillas de cuota**.
 
 2.  En el panel de resultados, selecciona la plantilla en la que basarás tu nueva cuota.
 
@@ -44,14 +45,14 @@ Cuando creas una cuota, elige una ruta de acceso de cuota, que es un volumen o c
      > [!Note]
      > Para crear una cuota automática, haz clic en la opción **Aplicar plantilla automáticamente para crear cuotas en subcarpetas nuevas y existentes**. Para obtener más información sobre cuotas automáticas, consulta [Crear una cuota automática](create-auto-apply-quota.md)
 
-6.  En **Derivar propiedades de esta plantilla de cuota**, la plantilla que usaste en el paso2 para crear tu nueva cuota está preseleccionada (o puedes seleccionar otra plantilla de la lista). Ten en cuenta que las propiedades de la plantilla se muestran en **Resumen de las propiedades de la cuota**.
+6.  En **Derivar propiedades de esta plantilla de cuota**, la plantilla que usaste en el paso 2 para crear tu nueva cuota está preseleccionada (o puedes seleccionar otra plantilla de la lista). Ten en cuenta que las propiedades de la plantilla se muestran en **Resumen de las propiedades de la cuota**.
 
-7.  Haz clic en **Crear**.
+7.  Haga clic en **Crear**.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Administración de cuotas](quota-management.md)
--   [Crear una cuota automática](create-auto-apply-quota.md)
+-   [Crear un automáticamente una cuota de aplicación](create-auto-apply-quota.md)
 -   [Crear una plantilla de cuota](create-quota-template.md)
 
 
