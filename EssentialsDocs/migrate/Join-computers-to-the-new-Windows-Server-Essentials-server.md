@@ -1,6 +1,6 @@
 ---
-title: Unir equipos a en el servidor de Windows Server Essentials nuevo 1
-description: "Describe cómo usar Windows Server Essentials"
+title: Unir equipos a la nueva server1 Windows Server Essentials
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,40 +13,41 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 1a67cda9e4b04e8d861232b48f45915fb2b460d1
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59836416"
 ---
-# <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>Unir equipos a en el servidor de Windows Server Essentials nuevo 1
+# <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>Unir equipos a la nueva server1 Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_JoinComputers"></a>   
- El siguiente paso del proceso de migración es unirse a los equipos cliente a la red de Windows Server Essentials de nuevo y actualizar la configuración de directiva de grupo.  
+ El siguiente paso del proceso de migración es unir equipos cliente a la nueva red de Windows Server Essentials y actualizar la configuración de directiva de grupo.  
   
 > [!NOTE]
->  Si un equipo cliente ya esté unido al servidor de origen, primero debes desinstalar el software del conector en el equipo cliente antes de conectar el equipo al servidor de destino.  
+>  Si un equipo cliente ya está unido al servidor de origen, debe desinstalar el software del conector en el equipo cliente para que el equipo pueda conectarse al servidor de destino.  
   
- El proceso de conectar un equipo cliente con el servidor es el mismo para los equipos unidos a un dominio o no unidos a un dominio.  
+ El proceso de conectar un equipo cliente al servidor es el mismo tanto si los equipos están unidos a un dominio como si no.  
   
--   Busca **http://***destino nombreDeServidor***/ conecten** e instalar el software del conector de servidor de Windows como si se trata de un equipo nuevo.  
-  
-> [!NOTE]
->  El software del conector de servidor de Windows no es compatible con equipos que ejecutan Windows XP o Windows Vista. Si tienes equipos que ejecutan Windows XP o Windows Vista que ya están unidos al dominio, puedes omitir este paso.  
-  
-### <a name="ensure-that-group-policy-has-updated"></a>Asegúrate de que se ha actualizado la directiva de grupo  
+-   Vaya a **http://***destino-nombreDeServidor***/ conectar** e instale el software del conector de Windows Server como si fuera un nuevo equipo.  
   
 > [!NOTE]
->  Este es un paso opcional y sólo es necesario si el servidor de origen se configuró con una configuración personalizada de directiva de grupo, como la redirección de carpetas.  
+>  El software del Conector de Windows Server no admite equipos que ejecuten Windows XP o Windows Vista. Si ya se han unido al dominio equipos con estos sistemas operativos, puede omitir este paso.  
   
- Mientras el servidor de origen y el servidor de destino aún están en línea, debes asegurarte de que la directiva de grupo se replica configuración desde el servidor de destino en los equipos cliente. Realiza los siguientes pasos en cada equipo cliente:  
+### <a name="ensure-that-group-policy-has-updated"></a>Comprobación de actualización de la directiva de grupo  
   
-1.  Abre una ventana de símbolo del sistema.  
+> [!NOTE]
+>  Este paso es opcional y solo es necesario si se estableció una directiva de grupo personalizada en el servidor de origen, como la de redirección de carpetas.  
   
-2.  En el símbolo del sistema, escribe **GPRESULT /R**, y, a continuación, presione ENTRAR.  
+ Mientras el servidor de origen y de destino aún estén en línea, debe asegurarse de que se haya aplicado la configuración de la directiva de grupo del servidor de destino a los equipos cliente. Haga lo siguiente en cada equipo cliente:  
   
-3.  Revisa el resultado de la sección de directiva de grupo se aplicó desde: y asegurarse de el servidor de destino, enumera como **DestinationSrv.Domain.local**. Por ejemplo:  
+1.  Abra una ventana del símbolo del sistema.  
+  
+2.  En el símbolo del sistema, escriba **GPRESULT /R** y presione INTRO.  
+  
+3.  Revise el resultado de la sección Directiva de grupo aplicada desde: y asegúrese de que el servidor de destino, como **DestinationSrv.Domain.local**. Por ejemplo:  
   
     ```  
     USER SETTINGS  
@@ -60,12 +61,12 @@ ms.lasthandoff: 07/03/2017
   
     ```  
   
-4.  Si no aparece el servidor de destino, en un símbolo del sistema, escriba **comando gpupdate/force**, y, a continuación, presiona ENTRAR para actualizar la configuración de directiva de grupo. A continuación, volver a realizar el procedimiento anterior.  
+4.  Si no aparece el servidor de destino, escriba **gpupdate /force**en el símbolo del sistema, y, a continuación, presione INTRO para actualizar la configuración de directiva de grupo. Vuelva a realizar el procedimiento anterior.  
   
-5.  Si el servidor de destino no aparece, puede haber un error en la configuración de directiva de grupo o un error en la aplicación a este equipo cliente específico. Si el servidor de destino no aparece, realiza los siguientes pasos:  
+5.  Si aún no aparece el servidor de destino, puede haber un error en la configuración de directiva de grupo o que esta no se haya aplicado correctamente en el equipo cliente en cuestión. Si no aparece el servidor de destino, siga los pasos siguientes:  
   
-    1.  Haz clic en **inicio**, haz clic en **ejecutar**, tipo **rsop.msc** (conjunto resultante de directivas), y, a continuación, presione ENTRAR.  
+    1.  Haga clic en **Inicio** y luego en **Ejecutar**. Escriba **rsop.msc** (conjunto resultante de directivas) y, a continuación, presione INTRO.  
   
-    2.  Expande el árbol con la X hasta que llegues a un nodo.  
+    2.  Expanda el árbol con la X hasta llegar a un nodo.  
   
-    3.  Haz clic en el nodo y haz clic en **ver Error** para obtener información acerca de por qué se producen errores en la configuración de directiva de grupo en el equipo mostrado.
+    3.  Haga clic en el nodo y, luego, en **Ver error** para saber por qué se producen errores en la configuración de directiva de grupo en el equipo que se muestra.

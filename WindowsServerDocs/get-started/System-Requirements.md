@@ -15,13 +15,13 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 29183c62830cbe9e26cce4e0ce4543b554f0ed65
-ms.sourcegitcommit: 3883eebbba70bfea0221e510863ee1a724a5f926
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "5783747"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59837316"
 ---
-# Requisitos del sistema
+# <a name="system-requirements"></a>Requisitos del sistema
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016 
 
@@ -36,7 +36,7 @@ En este tema se tratan los requisitos mínimos del sistema para ejecutar Windows
 > Si en el momento de la instalación opta por la opción Server Core, debe tener en cuenta que no se instala ningún componente de la interfaz gráfica de usuario y que no podrá instalarlos o desinstalarlos con el Administrador del servidor. Si necesita características de la interfaz gráfica de usuario, asegúrese de elegir la opción "Servidor con Experiencia de escritorio" al instalar Windows Server 2016. Para obtener más información, consulte [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).  
 
 
-## Repasar los requisitos del sistema  
+## <a name="review-system-requirements"></a>Repasar los requisitos del sistema  
 A continuación se incluyen los requisitos del sistema aproximados para Windows Server 2016. Si su equipo no cumple con los requisitos mínimos, no podrá instalar el producto correctamente. Los requisitos reales variarán según la configuración del sistema y las aplicaciones y características que instale.
 
 A menos que se especifique lo contrario, estos requisitos mínimos del sistema se aplican a todas las opciones de instalación (Server Core, Server con Experiencia de escritorio y Nano Server) y a las ediciones Standard y Datacenter.  
@@ -45,7 +45,7 @@ A menos que se especifique lo contrario, estos requisitos mínimos del sistema s
 > Dado a la gran diversidad de implementaciones posibles, sería irreal que se declararan requisitos del sistema "recomendados" de aplicación general. Consulte la documentación específica de los roles de servidor que intenta implementar para obtener más detalles sobre los recursos que se necesitan para cada uno de ellos. Podrá obtener mejores resultados con implementaciones de prueba que le ayuden a determinar los requisitos del sistema apropiados para sus propios escenarios.  
 
 
-## Procesador  
+## <a name="processor"></a>Procesador  
 El rendimiento del procesador depende no solo de su frecuencia de reloj, sino también de su número de núcleos y tamaño de la caché. A continuación, se detallan los requisitos relativos al procesador para este producto:  
 
 **Mínimo**:  
@@ -55,9 +55,9 @@ El rendimiento del procesador depende no solo de su frecuencia de reloj, sino ta
 - Admite CMPXCHG16b, LAHF/SAHF y PrefetchW  
 - Admite la traducción de direcciones de segundo nivel (EPT o NPT)  
 
-[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) es una herramienta que puedes usar para confirmar cuáles de estas funciones tiene tu CPU.
+[Coreinfo](https://technet.microsoft.com/sysinternals/cc835722.aspx) es una herramienta que puede usar para confirmar cuáles de estas funciones tiene su CPU.
 
-## RAM  
+## <a name="ram"></a>RAM  
 A continuación, se detallan los requisitos estimados relativos a la memoria RAM para este producto:  
 
 **Mínimo**:  
@@ -65,14 +65,14 @@ A continuación, se detallan los requisitos estimados relativos a la memoria RAM
 - Tipo ECC (código de corrección de errores) o tecnología similar  
 
 > [!IMPORTANT]  
-> El programa de instalación dará error si ha creado una máquina virtual con el mínimo de parámetros de hardware admitidos (procesador de 1núcleo y 512MB de memoria RAM) y, luego, trata de instalar esta versión en dicha máquina virtual.  
+> El programa de instalación dará error si ha creado una máquina virtual con el mínimo de parámetros de hardware admitidos (procesador de 1 núcleo y 512 MB de memoria RAM) y, luego, trata de instalar esta versión en dicha máquina virtual.  
 >   
 > Para evitarlo, realice una de las acciones siguientes:  
 >   
 > -   Asigne más de 800 MB de memoria RAM a la máquina virtual en la que quiera instalar esta versión. Cuando el programa de instalación se haya completado, podrá cambiar la asignación de nuevo a 512 MB de RAM, según cuál sea la configuración de servidor real.  
 > -   Interrumpa el proceso de arranque de esta versión en la máquina virtual usando MAYÚS+F10. En el símbolo del sistema que se abre, use Diskpart.exe para crear una partición de instalación y darle formato. Ejecute **Wpeutil createpagefile /path=C:\pf.sys** (si es que la partición de instalación se ha creado en C:). Cierre el símbolo del sistema y continúe con el programa de instalación.  
 
-## Requisitos de espacio en disco y del controlador de almacenamiento  
+## <a name="storage-controller-and-disk-space-requirements"></a>Requisitos de espacio en disco y del controlador de almacenamiento  
 Los equipos que ejecutan Windows Server 2016 deben incluir un adaptador de almacenamiento que sea compatible con la especificación de arquitectura PCI Express. Los dispositivos de almacenamiento persistente en servidores clasificados como unidades de disco duro no deben ser PATA. Windows Server 2016 no admite ATA, PATA, IDE y EIDE para unidades de arranque, página o datos.  
 
 A continuación se detallan los requisitos **mínimos** de espacio en disco estimados para la partición del sistema.  
@@ -87,7 +87,7 @@ A continuación se detallan los requisitos **mínimos** de espacio en disco esti
     > -   Si se instala el sistema en una red.  
     > -   Los equipos con más de 16 GB de RAM necesitarán más espacio en disco para los archivos de paginación, hibernación y volcado.  
 
-## Requisitos del adaptador de red  
+## <a name="network-adapter-requirements"></a>Requisitos del adaptador de red  
 
 Los adaptadores de red utilizados con esta versión deberían incluir estas características:  
 
@@ -100,7 +100,7 @@ Un adaptador de red que admite la depuración de red (KDNet) es útil, pero no e
 
 
 
-## Otros requisitos  
+## <a name="other-requirements"></a>Otros requisitos  
 Los equipos que ejecutan esta versión también deben tener lo siguiente:  
 
 
@@ -125,11 +125,11 @@ Los siguientes elementos no son estrictamente obligatorios, pero sí necesarios 
 >- Los TPM que implementan la versión 2.0 deben suministrarse con bancos SHA-256 PCR e implementar PCR de 0 a 23 para SHA-256. Es aceptable suministrar los TPM con un solo banco PCR intercambiable que se puede usar para las mediciones de SHA-1 y SHA-256.  
 >- La opción de UEFI para desactivar TPM no es un requisito.  
 
-## Instalación de Nano Server  
-Para obtener instrucciones detalladas para instalar Windows Server 2016 como Nano Server, consulta [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).
+## <a name="installation-of-nano-server"></a>Instalación de Nano Server  
+Para obtener instrucciones detalladas para instalar Windows Server 2016 como Nano Server, vea [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 - [Requisitos de procesador de Windows](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
 - [Comparación de las ediciones Standard y Datacenter de Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
 - [Requisitos del sistema de Windows 10 ](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
-- [Descargar la hoja de datos de licencias de Windows Server 2016](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)
+- [Descargue la hoja de datos de licencias de Windows Server 2016](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

@@ -16,56 +16,56 @@ author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
 ms.openlocfilehash: 210540846f5d62dfc74a2e629a6b7675ccf9894d
-ms.sourcegitcommit: 4893d79345cea85db427224bb106fc1bf88ffdbc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "6067479"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59837376"
 ---
-# Paso 7.4. Implementar certificados raíz de acceso condicional en local de AD
+# <a name="step-74-deploy-conditional-access-root-certificates-to-on-premises-ad"></a>Paso 7.4. Implementar certificados de raíz de acceso condicional en local AD
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-En este paso, se implementa el certificado raíz de acceso condicional como certificado raíz de confianza para la autenticación de VPN en tus locales AD.
+En este paso, implementará el certificado raíz de acceso condicional como certificado raíz de confianza para la autenticación de VPN a sus instalaciones en AD.
 
-& #171;  [ **Anterior:** paso 7.3. Configurar la directiva de acceso condicional](vpn-config-conditional-access-policy.md)<br>
-& #187; [ **Siguiente:** paso 7.5. Crear OMA DM en función de los perfiles de VPNv2 a dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md)
+&#171;  [**Anterior:** Paso 7.3. Configurar la directiva de acceso condicional](vpn-config-conditional-access-policy.md)<br>
+&#187;[ **Siguiente:** Paso 7.5. Creación de OMA-DM basado VPNv2 perfiles para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md)
 
-1. En la página de **conectividad VPN** , haz clic en **Descargar certificado**. 
+1. En el **conectividad VPN** página, haga clic en **Descargar certificado**. 
    
-    ![Descarga el certificado para el acceso condicional](../../media/Always-On-Vpn/06.png)
+    ![Descargar el certificado para el acceso condicional](../../media/Always-On-Vpn/06.png)
 
     >[!NOTE]
-    >La opción de **Descargar base64 certificado** está disponible para algunas configuraciones que requieren base64 certificados para la implementación. 
+    >El **descargar base64 certificado** opción está disponible para algunas configuraciones que requieren certificados de base64 para la implementación. 
 
-2. Inicia sesión en un equipo unido al dominio con derechos de administrador y ejecuta estos comandos desde un símbolo del sistema de administrador para agregar los certificados raíz de la nube en el almacén *NTauth de empresa* :
+2. Inicie sesión en un equipo unido al dominio con derechos de administrador de empresa y ejecute estos comandos desde un símbolo del sistema de administrador para agregar a la nube raíz o los certificados en el *Enterprise NTauth* almacenar:
 
     >[!NOTE]
-    >Para entornos donde el servidor VPN no está unido al dominio de Active Directory, los certificados raíz de la nube deben agregarse manualmente en el almacén de _Entidades de certificación raíz de confianza_ .
+    >Para entornos donde el servidor VPN no está unido al dominio de Active Directory, los certificados de raíz en la nube deben agregarse a la _entidades emisoras raíz de confianza_ almacenar de forma manual.
 
     |Comando  |Descripción  |  
     |---------|-------------| 
-    |`certutil -dspublish -f VpnCert.cer RootCA`     |Crea dos contenedores de **raíz generación 1 de entidad emisora de certificados de VPN de Microsoft** en la **CN = AIA** y **CN = entidades de certificación** contenedores y publica cada certificado raíz como un valor en el atributo _cACertificate_ de ambos raíz **VPN de Microsoft Generación de CA 1** contenedores.|  
-    |`certutil -dspublish -f VpnCert.cer NTAuthCA`   |Crea un **CN = NTAuthCertificates** contenedor bajo el **CN = AIA** y **CN = entidades de certificación** contenedores y publica cada certificado raíz como un valor en el atributo _cACertificate_ el **CN = NTAuthCertificates** contenedor. |  
+    |`certutil -dspublish -f VpnCert.cer RootCA`     |Crea dos **gen. 1 de entidad de certificación raíz de VPN de Microsoft** contenedores en el **CN = AIA** y **CN = entidades de certificación** contenedores y se publica cada certificado raíz como un valor en el _el certificado de CA_ atributo de ambos **gen. 1 de entidad de certificación raíz de VPN de Microsoft** contenedores.|  
+    |`certutil -dspublish -f VpnCert.cer NTAuthCA`   |Crea una **CN = NTAuthCertificates** contenedor bajo el **CN = AIA** y **CN = entidades de certificación** contenedores y se publica cada certificado raíz como un valor en el _el certificado de CA_ atributo de la **CN = NTAuthCertificates** contenedor. |  
     |`gpupdate /force`     |Acelera la adición de los certificados raíz para los equipos cliente y servidor de Windows.  |
 
-3.  Comprueba que los certificados raíz están presentes en el almacén Enterprise NTAuth y mostrar como de confianza:
+3.  Compruebe que los certificados raíz están presentes en el almacén NTauth de empresa y mostrar como de confianza:
 
-    a.  Inicia sesión en un servidor con derechos de administrador que tenga instaladas las **Herramientas de administración de entidad de certificado** .
+    a.  Inicie sesión en un servidor con derechos de administrador de empresa que tiene el **las herramientas de administración de autoridad de certificado** instalado.
 
     >[!NOTE]
-    >De manera predeterminada, las **Herramientas de administración de entidad de certificado** son los servidores de entidad emisora de certificados instalados. Puede instalarse en otros servidores miembros como parte de las **Herramientas de administración de roles** en el administrador del servidor.
+    >De forma predeterminada el **las herramientas de administración de autoridad de certificado** son servidores de entidad emisora de certificados instalados. Puede instalarse en otros servidores miembros como parte de la **herramientas de administración de roles** en Administrador del servidor.
 
-    b.  En el servidor VPN, en el menú Inicio, escribe **pkiview.msc** para abrir el cuadro de diálogo de PKI de empresa.
+    b.  En el servidor VPN, en el menú Inicio, escriba **pkiview.msc** para abrir el cuadro de diálogo de PKI de empresa.
 
-    c.  En el menú Inicio, escribe **pkiview.msc** para abrir el cuadro de diálogo de PKI de empresa.
+    c.  En el menú Inicio, escriba **pkiview.msc** para abrir el cuadro de diálogo de PKI de empresa.
 
-    d.  Haz clic en **PKI de empresa** y selecciona **Administrar contenedores de AD**.
+    d.  Haga clic en **Enterprise PKI** y seleccione **administrar AD contenedores**.
 
-    d.  Comprueba que cada certificado de generación 1 de entidad de certificación raíz de VPN de Microsoft está presente en:<ul><li>NTAuthCertificates</li><li>Contenedor AIA</li><li>Contenedor de entidades de certificación</li></ul>
+    d.  Compruebe que está presente en cada certificado de gen. 1 entidad de certificación raíz de VPN de Microsoft:<ul><li>NTAuthCertificates</li><li>Contenedor AIA</li><li>Contenedor de entidades emisoras de certificados</li></ul>
 
     
-## Paso siguiente
-Paso [7.5. Crear OMA DM en función de los perfiles de VPNv2 a dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md): en este paso, puedes crear OMA DM en función de los perfiles de VPNv2 usar Intune para implementar una directiva de configuración del dispositivo VPN. Si quieres SCCM o Script de PowerShell para crear perfiles de VPNv2, consulta la [configuración de VPNv2 CSP](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obtener más detalles.
+## <a name="next-step"></a>Paso siguiente
+[Paso 7.5. Creación de OMA-DM basado VPNv2 perfiles para dispositivos Windows 10](vpn-create-oma-dm-based-vpnv2-profiles.md): En este paso, puede crear configuración de OMA-DM en función de los perfiles de VPNv2 mediante Intune para implementar una directiva de configuración del dispositivo VPN. Si desea SCCM o la secuencia de comandos de PowerShell para crear perfiles de VPNv2, consulte [configuración de CSP de VPNv2](https://docs.microsoft.com/windows/client-management/mdm/vpnv2-csp) para obtener más detalles.
 
 ---

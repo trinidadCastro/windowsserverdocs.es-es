@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f05bcffa7c8c4f9e74f3699b9838b8a627af1b1
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082663"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59837726"
 ---
 # <a name="whats-new-in-the-windows-console-in-windows-server-2016"></a>Novedades en la consola de Windows en Windows Server 2016
 >Se aplica a: Windows Server 2016
@@ -38,7 +38,7 @@ La nueva funcionalidad está habilitada de forma predeterminada, pero puede acti
 |CtrlKeyShortcutsDisabled|0 habilita los nuevos accesos directos; 1 los deshabilita.|  
 |Claves de ExtendedEdit|1 habilita el conjunto completo de teclas de selección de teclado; 0 lo deshabilita.|  
 |TrimLeadingZeros|1 recorta los ceros iniciales en las selecciones realizadas haciendo doble clic; 0 mantiene los ceros iniciales.|  
-|WindowsAlpha|Establece el valor de opacidad entre 30% y 100%. Especifique un valor entre 0x4C y 0xFF o entre 76 y 255.|  
+|WindowsAlpha|Establece el valor de opacidad entre 30 % y 100 %. Especifique un valor entre 0x4C y 0xFF o entre 76 y 255.|  
 |WordDelimiters|Define el carácter que se utiliza para delimitar al seleccionar una palabra completa de texto a la vez con CTRL+MAYÚS+FLECHA (el valor predeterminado es el carácter de espacio). Establezca este valor REG_SZ para contener todos los caracteres que desea que se traten como delimitadores. Nota: Este valor no se almacena en los accesos directos, sino solo en esta clave del Registro.|  
 
 Estos valores se almacenan por cada título de la ventana en el Registro bajo HKCU\Console. Las ventanas de la consola que se abren con un acceso directo tienen estos valores almacenados en el acceso directo; si el acceso directo se copia a otro equipo, los ajustes se trasladan con él al nuevo equipo. La configuración de accesos directos invalida todas las demás opciones, incluida la configuración global y los valores predeterminados. Sin embargo, si revierte a la consola original por medio de **Use legacy console** (Usar consola heredada) en la pestaña **Opciones**, esta configuración es global y se mantiene para todas las ventanas después, incluso después de reiniciar el equipo.  
@@ -55,7 +55,7 @@ Ahora puede cambiar el tamaño de la ventana de la consola a voluntad con solo a
 
 La nueva ventana de la consola ahora es compatible con el ajuste automático de línea. Sin embargo, si utiliza las API de consola para cambiar el texto de un búfer, la consola deja el texto tal y como se insertó originalmente.  
 
-Las ventanas de consola ahora pueden ser semitransparentes (el valor de transparencia mínima es del 30%). Puede ajustar la transparencia en el menú de propiedades o con estos comandos de teclado:  
+Las ventanas de consola ahora pueden ser semitransparentes (el valor de transparencia mínima es del 30 %). Puede ajustar la transparencia en el menú de propiedades o con estos comandos de teclado:  
 
 |Para ello:|Utilice esta combinación de teclas:|  
 |---------------|-----------------------------|  
@@ -66,7 +66,7 @@ Las ventanas de consola ahora pueden ser semitransparentes (el valor de transpar
 ## <a name="selection"></a>Selección  
 Hay muchas opciones nuevas para la selección de texto y líneas, así como para marcar el texto y utilizar el historial del búfer. La consola intenta evitar conflictos con las aplicaciones que puedan estar usando las mismas teclas.  
 
-**Para los desarrolladores:** si se produce un conflicto, normalmente puede controlar el comportamiento del uso de entrada de línea, la entrada procesada y los modos de entrada de eco de la aplicación con la API etConsoleMode(). Si se ejecuta en modo de entrada procesada, se aplican los siguientes métodos abreviados; sin embargo, en otros modos, la aplicación los debe controlar. Las combinaciones de teclas que no aparecen aquí funcionan igual que en las versiones anteriores de la consola. También puedes intentar resolver los conflictos con distintas opciones en la pestaña **Opciones**. Si todo lo demás falla, siempre puedes volver a la consola original.  
+**Para los desarrolladores:** Si se produce un conflicto, normalmente puede controlar el comportamiento de uso de la aplicación de línea de entrada, entrada procesada y modos de eco de entrada con la API Etconsolemode(). Si se ejecuta en modo de entrada procesada, se aplican los siguientes métodos abreviados; sin embargo, en otros modos, la aplicación los debe controlar. Las combinaciones de teclas que no aparecen aquí funcionan igual que en las versiones anteriores de la consola. También puede intentar resolver conflictos con distintas configuraciones en la pestaña **Opciones**. Si todo lo demás provoca error, siempre puede revertir a la consola original.  
 
 Ahora puede usar la selección "hacer clic y arrastrar" fuera del modo de Edición rápida, y así puede seleccionar texto en líneas como en el Bloc de notas, en lugar de obtener simplemente un bloque rectangular. Las operaciones de copia ya no requieren que quite los saltos de línea. Además de la selección de "hacer clic y arrastrar", tiene a su disposición estas combinaciones de teclas:  
 
@@ -101,7 +101,7 @@ Puede copiar y pegar texto en la consola mediante comandos de teclado. CTRL+C ah
 |Copiar el texto seleccionado en el Portapapeles; enviar BREAK.|CTRL+C|  
 |Pegar el texto en la línea de comandos.|MAYÚS+INS|  
 
-**Modo de marcado**  
+**Modo Marcar**  
 
 Para entrar en el modo de marcado en cualquier momento, haga clic con el botón derecho en cualquier parte en la barra de título de la consola, seleccione **Editar**, y seleccione **Marcar** en el menú que se abre. También puede utilizar CTRL+M. En el modo de marcado, utilice la tecla ALT para identificar el inicio de una selección de ajuste de línea. (Si está deshabilitada la opción **Habilitar la selección de ajuste de línea** el modo de marcado selecciona texto en un bloque). En el modo de marcado, CTRL+MAYÚS+FLECHA selecciona por carácter y no por palabra como en el modo normal. Además de las teclas de selección de la sección **Modificar texto**, estas combinaciones están disponibles en el modo de marcado:  
 
@@ -114,7 +114,7 @@ Para entrar en el modo de marcado en cualquier momento, haga clic con el botón 
 |Mover el cursor al principio del búfer.|CTRL+INICIO|  
 |Mover el cursor al final del búfer.|CTRL+FIN|  
 
-**Historial de navegación**  
+**Navegar por historial**  
 
 |Para ello:|Utilice esta combinación de teclas:|  
 |---------------|-----------------------------|  

@@ -1,7 +1,7 @@
 ---
 ms.assetid: b035e9f8-517f-432a-8dfb-40bfc215bee5
-title: "Implementar la asistencia de acceso denegado (pasos de demostración)"
-description: 
+title: Deploy Access-Denied Assistance (Demonstration Steps)
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,68 +10,69 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 5201441ba884fe4658b917919e60c7d20530341b
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59835586"
 ---
-# <a name="deploy-access-denied-assistance-demonstration-steps"></a>Implementar la asistencia de acceso denegado (pasos de demostración)
+# <a name="deploy-access-denied-assistance-demonstration-steps"></a>Deploy Access-Denied Assistance (Demonstration Steps)
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tema explica cómo configurar acceso denegado asistencia y comprobar que funciona correctamente.  
+En este tema se explica cómo configurar la asistencia para acceso denegado y cómo comprobar que funciona correctamente.  
   
 **En este documento**  
   
--   [Paso 1: Configurar acceso denegado asistencia](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
+-   [Paso 1: Configurar la asistencia para acceso denegado](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_1)  
   
--   [Paso 2: Configurar la configuración de notificaciones de correo electrónico](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_2)  
+-   [Paso 2: Configurar las opciones de notificación de correo electrónico](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_2)  
   
--   [Paso 3: Comprobar que asistencia acceso denegado está correctamente configurado](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
+-   [Paso 3: Compruebe que la asistencia para acceso denegado esté configurada correctamente](Deploy-Access-Denied-Assistance--Demonstration-Steps-.md#BKMK_3)  
   
 > [!NOTE]  
-> Este tema incluye cmdlets de Windows PowerShell de muestra que puedes usar para automatizar algunos de los procedimientos descritos. Para obtener más información, consulta [uso de Cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
+> Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_1"></a>Paso 1: Configurar acceso denegado asistencia  
-Puede configurar acceso denegado asistencia dentro de un dominio mediante la directiva de grupo, o puedes configurar la asistencia individualmente en cada servidor de archivos mediante la consola del Administrador de recursos del servidor de archivos. También puedes cambiar el mensaje de acceso denegado para una carpeta compartida específica en un servidor de archivos.  
+## <a name="BKMK_1"></a>Paso 1: Configurar la asistencia para acceso denegado  
+Puedes configurar la asistencia para acceso denegado en un dominio mediante la Directiva de grupo, o bien puedes configurar la asistencia individualmente en cada servidor de archivos mediante la consola del Administrador de recursos del servidor de archivos. Asimismo, puedes cambiar el mensaje de acceso denegado para una carpeta compartida específica en un servidor de archivos.  
   
-Puedes configurar acceso denegado asistencia para el dominio mediante la directiva de grupo como sigue:  
+Puedes configurar la asistencia para acceso denegado para el domino mediante la Directiva de grupo de la siguiente manera:  
   
-[Este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
-#### <a name="to-configure-access-denied-assistance-by-using-group-policy"></a>Para configurar acceso denegado asistencia mediante la directiva de grupo  
+#### <a name="to-configure-access-denied-assistance-by-using-group-policy"></a>Cómo configurar la asistencia para acceso denegado mediante la Directiva de grupo  
   
-1.  Administración de directivas de grupo abierto. En el administrador del servidor, haz clic en **herramientas**y, a continuación, haz clic en **Group Policy Management**.  
+1.  Abra Administración de directivas de grupo. En Administrador del servidor, haga clic en **Herramientas** y, a continuación, haga clic en **Administración de directivas de grupo**.  
   
-2.  Haz clic en la directiva de grupo correspondiente y, a continuación, haz clic en **editar**.  
+2.  Haz clic con el botón secundario en la Directiva de grupo adecuada y, después, haz clic en **Editar**.  
   
-3.  Haz clic en **configuración del equipo**, haz clic en **directivas**, haz clic en **plantillas administrativas**, haz clic en **sistema**y, a continuación, haz clic en **Access-Denied asistencia**.  
+3.  Haz clic en **Configuración del equipo**, en **Directivas**, en **Plantillas administrativas**, en **Sistema** y en **Asistencia para acceso denegado**.  
   
-4.  Haz clic en **Personalizar mensaje para los errores de acceso denegado**y, a continuación, haz clic en **editar**.  
+4.  Haz clic con el botón secundario en **Personalizar el mensaje de error de acceso denegado**y, después, haz clic en **Editar**.  
   
-5.  Selecciona el **habilitado** opción.  
+5.  Seleccione la opción **Habilitado**.  
   
-6.  Configurar las opciones siguientes:  
+6.  Configure las siguientes opciones:  
   
-    1.  En la **mostrará el mensaje siguiente a los usuarios que se deniegan el acceso** cuadro, escribe un mensaje que verán los usuarios cuando se les deniega el acceso a un archivo o carpeta.  
+    1.  En el cuadro **Mostrar el siguiente mensaje a usuarios a los que se deniegue el acceso** , escribe el mensaje que verán los usuarios cuando no se les permita el acceso a un archivo o carpeta.  
   
-        Puedes agregar macros hasta el mensaje que se insertará texto personalizado. Las macros incluyen:  
+        Puedes agregar macros al mensaje para insertar texto personalizado. Las macros incluyen:  
   
-        -   **[Ruta del archivo original] **La ruta de acceso del archivo original que se tuvo acceso por parte del usuario.  
+        -   **[Ruta de acceso del archivo original]** La ruta de acceso del archivo original a la que accedió el usuario.  
   
-        -   **[Carpeta de ruta de acceso de archivo original] **La carpeta primaria de la ruta de acceso del archivo original que se tuvo acceso por parte del usuario.  
+        -   **[Carpeta de la ruta de acceso del archivo original]** La carpeta principal de la ruta de acceso del archivo original a la que accedió el usuario.  
   
-        -   **[Correo electrónico de administrador] **La lista de destinatarios del correo electrónico de administrador.  
+        -   **[Correo electrónico de admin.]** La lista de destinatarios de correos electrónicos del administrador.  
   
-        -   **[Datos propietario, correo electrónico] **La lista de destinatarios del correo electrónico de propietario de datos.  
+        -   **[Correo electrónico del propietario de los datos]** La lista de destinatarios de correos electrónicos del propietario de los datos.  
   
-    2.  Selecciona el **permitir que los usuarios para solicitar asistencia** casilla de verificación.  
+    2.  Selecciona el cuadro de texto **Permitir que los usuarios soliciten asistencia** .  
   
-    3.  Deja los valores predeterminados restantes.  
+    3.  Deja los demás ajustes de la configuración predeterminada.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
   
-El siguiente cmdlet de Windows PowerShell o cmdlets de realizar la misma función que el procedimiento anterior. Especifique cada cmdlet en una sola línea, aunque pueden aparecer ajustados en varias líneas debido a restricciones de formato.  
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
 ```  
 Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\Windows\ADR\AccessDenied" -ValueName AllowEmailRequests -Type DWORD -value 1  
@@ -85,149 +86,149 @@ Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\Software\Policies\Microsoft\W
   
 ```  
   
-Como alternativa, puedes configurar acceso denegado asistencia individualmente en cada servidor de archivos mediante la consola del Administrador de recursos del servidor de archivos.  
+También se puede configurar la asistencia para acceso denegado individualmente en cada servidor de archivos mediante la consola del Administrador de recursos del servidor de archivos.  
   
-[Este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1a)  
+[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1a)  
   
-#### <a name="to-configure-access-denied-assistance-by-using-file-server-resource-manager"></a>Para configurar acceso denegado asistencia mediante el Administrador de recursos del servidor de archivos  
+#### <a name="to-configure-access-denied-assistance-by-using-file-server-resource-manager"></a>Cómo configurar la asistencia para acceso denegado mediante el Administrador de recursos del servidor de archivos  
   
-1.  Abre el Administrador de recursos del servidor de archivos. En el administrador del servidor, haz clic en **herramientas**y, a continuación, haz clic en **Administrador de recursos del servidor de archivos**.  
+1.  Abra el Administrador de recursos del servidor de archivos. En el Administrador del servidor, haz clic en **Herramientas** y, luego, en **Administrador de recursos del servidor de archivos**.  
   
-2.  Haz clic en **Administrador de recursos del servidor de archivos (locales)**y, a continuación, haz clic en **configurar opciones**.  
+2.  Haz clic con el botón secundario en **Administrador de recursos del servidor de archivos (local)** y, después, haz clic en **Configurar opciones**.  
   
-3.  Haz clic en el **Access-Denied asistencia** pestaña.  
+3.  Haz clic en la pestaña **Asistencia para acceso denegado** .  
   
-4.  Selecciona el **habilitar acceso denegado asistencia** casilla de verificación.  
+4.  Selecciona el cuadro de texto **Habilitar asistencia para acceso denegado** .  
   
-5.  En la **mostrará el mensaje siguiente a los usuarios que se deniegan el acceso a un archivo o carpeta** cuadro, escribe un mensaje que verán los usuarios cuando se les deniega el acceso a un archivo o carpeta.  
+5.  En el cuadro **Mostrar el siguiente mensaje a usuarios a los que se deniegue el acceso a una carpeta o archivo**, escribe el mensaje que verán los usuarios cuando no se les permita el acceso a un archivo o carpeta.  
   
-    Puedes agregar macros hasta el mensaje que se insertará texto personalizado. Las macros incluyen:  
+    Puedes agregar macros al mensaje para insertar texto personalizado. Las macros incluyen:  
   
-    -   **[Ruta del archivo original] **La ruta de acceso del archivo original que se tuvo acceso por parte del usuario.  
+    -   **[Ruta de acceso del archivo original]** La ruta de acceso del archivo original a la que accedió el usuario.  
   
-    -   **[Carpeta de ruta de acceso de archivo original] **La carpeta primaria de la ruta de acceso del archivo original que se tuvo acceso por parte del usuario.  
+    -   **[Carpeta de la ruta de acceso del archivo original]** La carpeta principal de la ruta de acceso del archivo original a la que accedió el usuario.  
   
-    -   **[Correo electrónico de administrador] **La lista de destinatarios del correo electrónico de administrador.  
+    -   **[Correo electrónico de admin.]** La lista de destinatarios de correos electrónicos del administrador.  
   
-    -   **[Datos propietario, correo electrónico] **La lista de destinatarios del correo electrónico de propietario de datos.  
+    -   **[Correo electrónico del propietario de los datos]** La lista de destinatarios de correos electrónicos del propietario de los datos.  
   
-6.  Haz clic en **solicitudes de correo electrónico configurar**, selecciona el **permitir que los usuarios para solicitar asistencia** y, a continuación, haz clic en **Aceptar**.  
+6.  Haz clic en **Configurar solicitudes de correo electrónico**, selecciona el cuadro de diálogo **Permitir que los usuarios soliciten asistencia** y haz clic en **Aceptar**.  
   
-7.  Haz clic en **Preview** si quieres ver el aspecto que tendrá el mensaje de error al usuario.  
+7.  Haz clic en **Vista previa** si deseas comprobar cómo verá el usuario el mensaje de error.  
   
-8.  Haz clic en **Aceptar**.  
+8.  Haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
   
-El siguiente cmdlet de Windows PowerShell o cmdlets de realizar la misma función que el procedimiento anterior. Especifique cada cmdlet en una sola línea, aunque pueden aparecer ajustados en varias líneas debido a restricciones de formato.
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
   
 ```  
 Set-FSRMAdrSetting -Event "AccessDenied" -DisplayMessage "Type the text that the user will see in the error message dialog box." -Enabled:$true -AllowRequests:$true  
 ```  
   
-Después de configurar la Ayuda de acceso denegado, debes habilitar para todos los tipos de archivo mediante la directiva de grupo.  
+Después de configurar la asistencia para acceso denegado, debes habilitarla para todos los tipos de archivos mediante la Directiva de grupo.  
   
-[Este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1c)  
+[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1c)  
   
-#### <a name="to-configure-access-denied-assistance-for-all-file-types-by-using-group-policy"></a>Configurar acceso denegado asistencia para todos los tipos de archivo mediante la directiva de grupo  
+#### <a name="to-configure-access-denied-assistance-for-all-file-types-by-using-group-policy"></a>Cómo configurar la asistencia para acceso denegado para todos los tipos de archivos mediante la Directiva de grupo  
   
-1.  Administración de directivas de grupo abierto. En el administrador del servidor, haz clic en **herramientas**y, a continuación, haz clic en **Group Policy Management**.  
+1.  Abra Administración de directivas de grupo. En Administrador del servidor, haga clic en **Herramientas** y, a continuación, haga clic en **Administración de directivas de grupo**.  
   
-2.  Haz clic en la directiva de grupo correspondiente y, a continuación, haz clic en **editar**.  
+2.  Haz clic con el botón secundario en la Directiva de grupo adecuada y, después, haz clic en **Editar**.  
   
-3.  Haz clic en **configuración del equipo**, haz clic en **directivas**, haz clic en **plantillas administrativas**, haz clic en **sistema**y, a continuación, haz clic en **Access-Denied asistencia**.  
+3.  Haz clic en **Configuración del equipo**, en **Directivas**, en **Plantillas administrativas**, en **Sistema** y en **Asistencia para acceso denegado**.  
   
-4.  Haz clic en **habilitar asistencia deniega el acceso de cliente para todos los tipos de archivo**y, a continuación, haz clic en **editar**.  
+4.  Haz clic con el botón secundario en **Habilitar la asistencia para acceso denegado en cliente para todos los tipos de archivos**y, después, haz clic en **Editar**.  
   
-5.  Haz clic en **habilitado**y, a continuación, haz clic en **Aceptar**.  
+5.  Haga clic en **Habilitada**y, a continuación, haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
   
-El siguiente cmdlet de Windows PowerShell o cmdlets de realizar la misma función que el procedimiento anterior. Especifique cada cmdlet en una sola línea, aunque pueden aparecer ajustados en varias líneas debido a restricciones de formato. 
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato. 
   
 ```  
 Set-GPRegistryValue -Name "Name of GPO" -key "HKLM\SOFTWARE\Policies\Microsoft\Windows\Explore" -ValueName EnableShellExecuteFileStreamCheck -Type DWORD -value 1  
   
 ```  
   
-También puedes especificar un mensaje de acceso denegado independiente para cada carpeta compartida en un servidor de archivos mediante la consola del Administrador de recursos del servidor de archivos.  
+También puede especificarse un mensaje de acceso denegado diferente para cada carpeta compartida en un servidor de archivos mediante la consola del Administrador de recursos del servidor de archivos.  
   
-[Este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1b)  
+[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1b)  
   
-#### <a name="to-specify-a-separate-access-denied-message-for-a-shared-folder-by-using-file-server-resource-manager"></a>Para especificar un mensaje de acceso denegado independiente para una carpeta compartida mediante el Administrador de recursos del servidor de archivos  
+#### <a name="to-specify-a-separate-access-denied-message-for-a-shared-folder-by-using-file-server-resource-manager"></a>Cómo especificar un mensaje de acceso denegado diferente para cada carpeta compartida mediante el Administrador de recursos del servidor de archivos  
   
-1.  Abre el Administrador de recursos del servidor de archivos. En el administrador del servidor, haz clic en **herramientas**y, a continuación, haz clic en **Administrador de recursos del servidor de archivos**.  
+1.  Abra el Administrador de recursos del servidor de archivos. En el Administrador del servidor, haz clic en **Herramientas** y, luego, en **Administrador de recursos del servidor de archivos**.  
   
-2.  Expande **Administrador de recursos del servidor de archivos (locales)**y, a continuación, haz clic en **administración de clasificaciones**.  
+2.  Expande **Administrador de recursos del servidor de archivos (local)** y haz clic en **Administración de clasificaciones**.  
   
-3.  Haz clic en **propiedades de la clasificación**y, a continuación, haz clic en **establecer propiedades de administración de la carpeta**.  
+3.  Haz clic con el botón secundario en **Propiedades de clasificación** y, después, haz clic en **Establecer propiedades de administración de carpetas**.  
   
-4.  En la **propiedad** cuadro, haz clic en **Access-Denied asistencia mensaje**y, a continuación, haz clic en **agregar**.  
+4.  En el cuadro **Propiedad**, haz clic en **Mensaje de asistencia para acceso denegado** y, después, haz clic en **Agregar**.  
   
-5.  Haz clic en **examinar**y, a continuación, elige la carpeta que debería tener el mensaje personalizado de acceso denegado.  
+5.  Haz clic en **Examinar** y elige la carpeta que debe tener el mensaje personalizado para el acceso denegado.  
   
-6.  En la **valor** cuadro, escribe el mensaje que se debe presentar a los usuarios cuando pueden acceder a un recurso de esa carpeta.  
+6.  En el cuadro **Valor**, escribe el mensaje que verán los usuarios cuando no puedan acceder a un recurso dentro de esa carpeta.  
   
-    Puedes agregar macros hasta el mensaje que se insertará texto personalizado. Las macros incluyen:  
+    Puedes agregar macros al mensaje para insertar texto personalizado. Las macros incluyen:  
   
-    -   **[Ruta del archivo original] **La ruta de acceso del archivo original que se tuvo acceso por parte del usuario.  
+    -   **[Ruta de acceso del archivo original]** La ruta de acceso del archivo original a la que accedió el usuario.  
   
-    -   **[Carpeta de ruta de acceso de archivo original] **La carpeta primaria de la ruta de acceso del archivo original que se tuvo acceso por parte del usuario.  
+    -   **[Carpeta de la ruta de acceso del archivo original]** La carpeta principal de la ruta de acceso del archivo original a la que accedió el usuario.  
   
-    -   **[Correo electrónico de administrador] **La lista de destinatarios del correo electrónico de administrador.  
+    -   **[Correo electrónico de admin.]** La lista de destinatarios de correos electrónicos del administrador.  
   
-    -   **[Datos propietario, correo electrónico] **La lista de destinatarios del correo electrónico de propietario de datos.  
+    -   **[Correo electrónico del propietario de los datos]** La lista de destinatarios de correos electrónicos del propietario de los datos.  
   
-7.  Haz clic en **Aceptar**y, a continuación, haz clic en **cerrar**.  
+7.  Haga clic en **Aceptar** y, a continuación, en **Cerrar**.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
   
-El siguiente cmdlet de Windows PowerShell o cmdlets de realizar la misma función que el procedimiento anterior. Especifique cada cmdlet en una sola línea, aunque pueden aparecer ajustados en varias líneas debido a restricciones de formato. 
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato. 
   
 ```  
 Set-FSRMMgmtProperty -Namespace "folder path" -Name "AccessDeniedMessage_MS" -Value "Type the text that the user will see in the error message dialog box."  
 ```  
   
-## <a name="BKMK_2"></a>Paso 2: Configurar la configuración de notificaciones de correo electrónico  
-Debes configurar la configuración de notificaciones de correo electrónico en cada servidor de archivos que se envía los mensajes de acceso denegado asistencia.  
+## <a name="BKMK_2"></a>Paso 2: Configurar las notificaciones de correo electrónico  
+Debes configurar las notificaciones de correo electrónico en cada servidor de archivos que enviará los mensajes de asistencia para acceso denegado.  
   
-[Este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
-1.  Abre el Administrador de recursos del servidor de archivos. En el administrador del servidor, haz clic en **herramientas**y, a continuación, haz clic en **Administrador de recursos del servidor de archivos**.  
+1.  Abra el Administrador de recursos del servidor de archivos. En el Administrador del servidor, haz clic en **Herramientas** y, luego, en **Administrador de recursos del servidor de archivos**.  
   
-2.  Haz clic en **Administrador de recursos del servidor de archivos (locales)**y, a continuación, haz clic en **configurar opciones**.  
+2.  Haz clic con el botón secundario en **Administrador de recursos del servidor de archivos (local)** y, después, haz clic en **Configurar opciones**.  
   
-3.  Haz clic en el **notificaciones por correo electrónico** pestaña.  
+3.  Haz clic en la pestaña **Notificaciones de correo electrónico**.  
   
-4.  Configura las opciones siguientes:  
+4.  Configura los siguientes ajustes:  
   
-    -   En la **SMTP servidor nombre o dirección IP**, escriba el nombre de la dirección IP del servidor SMTP en la organización.  
+    -   En el cuadro **Nombre del servidor SMTP o dirección IP** , escribe el nombre de la dirección IP del servidor SMTP de tu organización.  
   
-    -   En la **Administradores receptores predeterminados** y **predeterminado 'De' dirección de correo electrónico** cuadros, escribe la dirección de correo electrónico del administrador del servidor de archivos.  
+    -   En el **Administradores receptores predeterminados** y **predeterminado 'From' dirección de correo electrónico** , escriba la dirección de correo electrónico del administrador del servidor de archivos.  
   
-5.  Haz clic en **enviar correo electrónico de prueba** para garantizar que las notificaciones de correo electrónico están configuradas correctamente.  
+5.  Haz clic en **Enviar correo electrónico de prueba** para asegurarte de que las notificaciones de correo electrónico están configuradas correctamente.  
   
-6.  Haz clic en **Aceptar**.  
+6.  Haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
   
-El siguiente cmdlet de Windows PowerShell o cmdlets de realizar la misma función que el procedimiento anterior. Especifique cada cmdlet en una sola línea, aunque pueden aparecer ajustados en varias líneas debido a restricciones de formato.
+Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
   
 ```  
 set-FSRMSetting -SMTPServer "server1" -AdminEmailAddress "fileadmin@contoso.com" -FromEmailAddress "fileadmin@contoso.com"  
 ```  
   
-## <a name="BKMK_3"></a>Paso 3: Comprobar que asistencia acceso denegado está correctamente configurado  
-Para comprobar que la Ayuda de acceso denegado está configurada correctamente al disponer de un usuario que ejecuta Windows 8 intenta obtener acceso a un recurso compartido o un archivo en que comparten que no tienen acceso a. Cuando aparezca el mensaje de acceso denegado, el usuario debe ver un **solicitar asistencia** botón. Después de hacer clic en el botón de la solicitud de asistencia, el usuario puede especificar un motivo de acceso y, a continuación, enviar un correo electrónico al propietario de la carpeta o el administrador del servidor de archivos. El propietario de la carpeta o el administrador del servidor de archivos puede comprobar que el correo electrónico llegado y contiene los detalles correspondientes.  
+## <a name="BKMK_3"></a>Paso 3: Comprobar que la asistencia para acceso denegado se ha configurado correctamente  
+Puede comprobar que la asistencia de acceso denegado esté configurada correctamente solicitándole a un usuario se está ejecutando Windows 8 intenta tener acceso a un recurso compartido o un archivo en que comparten que no tienen acceso a. Cuando aparezca el mensaje de acceso denegado, el usuario debería ver el botón **Solicitar asistencia** . Después de hacer clic en el botón Solicitar asistencia, el usuario podrá especificar la razón del acceso y enviar un correo electrónico al propietario de la carpeta o al administrador del servidor de archivos. El propietario de la carpeta o el administrador del servidor de archivos podrán informarte de que han recibido el correo electrónico y de que contiene los detalles adecuados.  
   
 > [!IMPORTANT]  
-> Si quieres comprobar la asistencia de acceso denegado al disponer de un usuario que ejecuta Windows Server 2012, debes instalar la experiencia de escritorio antes de conectar el recurso compartido de archivos.  
+> Si desea comprobar la asistencia para acceso denegado al tener un usuario que ejecuta Windows Server 2012, debe instalar la experiencia de escritorio antes de conectarse al recurso compartido de archivos.  
   
-## <a name="BKMK_Links"></a>Consulta también  
+## <a name="BKMK_Links"></a>Vea también  
   
--   [Escenario: Acceso denegado asistencia](Scenario--Access-Denied-Assistance.md)  
+-   [Escenario: Asistencia para acceso denegado](Scenario--Access-Denied-Assistance.md)  
   
--   [Plan para obtener ayuda de acceso denegado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
+-   [Plan para la asistencia para acceso denegado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
   
 -   [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   

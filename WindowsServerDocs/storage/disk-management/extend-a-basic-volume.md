@@ -1,6 +1,6 @@
 ---
-title: "Extender un volumen básico"
-description: "En este artículo se describe cómo agregar espacio en unidades principales y lógicas para extender un volumen básico"
+title: Extender un volumen básico
+description: En este artículo se describe cómo agregar espacio en unidades principales y lógicas para extender un volumen básico
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 29b7b61f7edc20edda7bc18b82db17447badc0f2
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834256"
 ---
 # <a name="extend-a-basic-volume"></a>Extender un volumen básico
 
@@ -24,8 +25,8 @@ En lo que respecta a unidades lógicas y volúmenes de arranque o de sistema, pu
 
 ## <a name="extending-a-basic-volume"></a>Extender un volumen básico
 
--   [Usar la interfaz de Windows](#BKMK_WINUI)
--   [Usar una línea de comandos](#BKMK_CMD)
+-   [Mediante la interfaz de Windows](#BKMK_WINUI)
+-   [Línea de comandos](#BKMK_CMD)
 
 <a href="" id="BKMK_WINUI"></a>
 #### <a name="to-extend-a-basic-volume-using-the-windows-interface"></a>Para extender un volumen básico mediante la interfaz de Windows
@@ -39,7 +40,7 @@ En lo que respecta a unidades lógicas y volúmenes de arranque o de sistema, pu
 <a href="" id="BKMK_CMD"></a>
 #### <a name="to-extend-a-basic-volume-using-a-command-line"></a>Para extender un volumen básico mediante la línea de comandos
 
-1.  Abre un símbolo del sistema y escribe `diskpart`.
+1.  Abra un símbolo del sistema y escriba `diskpart`.
 
 2.  En el símbolo del sistema **DISKPART**, escribe `list volume`. Anota el volumen básico que quieres extender.
 
@@ -51,8 +52,8 @@ En lo que respecta a unidades lógicas y volúmenes de arranque o de sistema, pu
 
 | Valor | Descripción |
 | --- | --- |
-| <p>**list volume**</p> | <p>Muestra una lista de volúmenes básicos y dinámicos en todos los discos.</p> |
-| <p>**select volume**</p> | <p>Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.</p> |
+| <p>**volumen de la lista**</p> | <p>Muestra una lista de volúmenes básicos y dinámicos en todos los discos.</p> |
+| <p>**Seleccione el volumen**</p> | <p>Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.</p> |
 | <p>**extend**</p> | <p><ul><li>Extiende el volumen con el foco en el espacio contiguo sin asignar. En cuanto los volúmenes básicos, el espacio sin asignar debe estar en el mismo disco que la partición con el foco, así como seguirla (o estar en un desplazamiento de sector superior). Un volumen simple o distribuido dinámico puede extenderse a cualquier espacio vacío de un disco dinámico. Al usar este comando, puedes extender un volumen existente en un espacio recientemente creado.</p></li ><p><li>Si la partición se ha formateado previamente con el sistema de archivos NTFS, el sistema de archivos se extiende automáticamente para ocupar la partición de mayor tamaño. No se produce ninguna pérdida de datos. Si la partición se ha formateado anteriormente con cualquier formato de sistema de archivos que no sea NTFS, se producirá un error en el comando sin cambios en la partición.</p></li></ul>|
 | <p>**size=** <em>size</em></p> | <p>La cantidad de espacio, en megabytes (MB), para agregar a la partición actual. Si no se especifica un tamaño, el disco se extiende para ocupar todo el espacio contiguo sin asignar.</p> |
 
@@ -60,7 +61,7 @@ En lo que respecta a unidades lógicas y volúmenes de arranque o de sistema, pu
 
 -   Si el disco no incluye particiones de arranque o de sistema, puedes extender el volumen en otros discos sin arranque o sin sistema, pero el disco se convertirá en un disco dinámico (si se puede actualizar).
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
 
