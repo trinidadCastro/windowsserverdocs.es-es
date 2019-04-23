@@ -1,6 +1,6 @@
 ---
 ms.assetid: e22d84a5-113d-4bec-b484-036ed29f0c28
-title: Unir al área de trabajo desde cualquier dispositivo para SSO y transparente segundo Factor de autenticación entre las aplicaciones de empresa
+title: unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,58 +9,59 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4926eb32a0bbffb092ec02ca2508fe97d52d1466
-ms.sourcegitcommit: 46439194e5deb0fa5f338b428f95dd6b5b799337
+ms.openlocfilehash: 0ee22afd6fdec96ab69d915e4730bb834d2ab8ad
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/21/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855526"
 ---
-# <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>Unir al área de trabajo desde cualquier dispositivo para SSO y transparente segundo Factor de autenticación entre las aplicaciones de empresa
+# <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía
 
->Se aplica a: Windows Server 2012 R2
+>Se aplica a: Windows Server 2012 R2
 
-El rápido incremento en el número de dispositivos de consumidor y acceso a la información ubicuas está cambiando la forma que personas perciben su tecnología. El uso de constante de tecnología de la información durante todo el día junto con acceso fácil de obtener información, borrosa tradicionales límites entre trabajo y la duración de la casa. Estos límites de desplazamiento van acompañados de una creencia ese personal seleccionado a la tecnología y personalizada para ajustarse a los usuarios personalidades, actividades y planes-debes ampliar en el área de trabajo. Para adaptarse al requisito creciente de dispositivos personales estar conectado a redes de empresa, presentamos las propuestas de valor siguientes:
+El rápido aumento en el número de dispositivos de consumo y el acceso a la información desde cualquier lugar está cambiando la manera en que las personas perciben su tecnología. El uso constante de tecnologías de la información durante todo el día, junto con el fácil acceso a la información, está difuminando los límites tradicionales entre trabajo y vida privada. Estos límites cambiantes están acompañados por la creencia ese personal seleccionado a la tecnología y personalizada para ajustarse a los usuarios personalidades, actividades y programaciones-debe extenderse al área de trabajo. Para satisfacer la creciente demanda de que los dispositivos de consumo personal se conecten a las redes empresariales, estamos incorporando las siguientes propuestas:
 
--   Los administradores pueden controlar quién tiene acceso a recursos de la compañía que se basan en la aplicación, el usuario, el dispositivo y ubicación.
+-   Los administradores pueden controlar quién tiene acceso a los recursos de la compañía según la aplicación, el usuario, el dispositivo y la ubicación.
 
--   Los empleados pueden acceder a aplicaciones y los datos en todas partes, en cualquier dispositivo. Los empleados pueden usar el inicio de sesión único en aplicaciones de explorador o de las aplicaciones de empresa.
+-   Los empleados pueden acceder a aplicaciones y datos en cualquier lugar, en cualquier dispositivo. Los empleados pueden usar el inicio de sesión único en aplicaciones de explorador o en aplicaciones empresariales.
 
-## <a name="key-concepts-introduced-in-the-solution"></a>Conceptos clave que se introdujo en la solución
+## <a name="key-concepts-introduced-in-the-solution"></a>Principales conceptos que incorpora la solución
 
-### <a name="workplace-join"></a>Unirse a un área de trabajo
-Mediante el uso de unión a un área de trabajo, los trabajadores de información pueden unirse a sus dispositivos personales con los equipos de área de trabajo de la empresa para obtener acceso a servicios y recursos de la compañía. Cuando te unes a su dispositivo personal para tu empresa, se convierte en un dispositivo conocido y proporciona sin problemas segundo factor de autenticación e inicio de sesión único para acceder a los recursos y las aplicaciones. Cuando un dispositivo se une al área de trabajo, se pueden recuperar atributos del dispositivo desde el directorio a acceso condicional a la unidad con el fin de autorizar la emisión de tokens de seguridad para las aplicaciones. Windows 8.1 y dispositivos iOS 6.0 + y Android 4.0 + pueden estar Unidos usando al área de trabajo.
+### <a name="workplace-join"></a>Unión al área de trabajo
+Con la unión al área de trabajo, los trabajadores de la información pueden unir sus dispositivos personales con sus equipos de trabajo de la compañía para acceder a los recursos y servicios de la compañía. Cuando unas tu dispositivo personal al área de trabajo, se convertirá en un dispositivo conocido y proporciona autenticación de segundo factor sin problemas e inicio de sesión único para las aplicaciones y los recursos del área de trabajo. Cuando un dispositivo se une mediante unión al área de trabajo, los atributos del dispositivo se pueden recuperar del directorio para controlar el acceso condicional con el fin de autorizar la emisión de tokens de seguridad para las aplicaciones. Los dispositivos Windows 8.1, iOS 6.0+ y Android 4.0+ se pueden unir mediante unión al área de trabajo.
 
 ### <a name="BKMK_DRS"></a>Servicio de registro de dispositivo de Active Directory de Azure
-Unirse a un área de trabajo se realiza mediante el servicio de registro del dispositivo de Azure Active Directory. Cuando un dispositivo se une al unirse a la empresa, el servicio aprovisiona un objeto de dispositivo en Azure Active Directory y, a continuación, Establece una clave en el dispositivo local que se usa para representar la identidad del dispositivo. La identidad del dispositivo puede usarse con las reglas de control de acceso para las aplicaciones que están hospedadas en la nube y local.
+Unión al área de trabajo se realiza mediante el servicio de registro de dispositivo de Azure Active Directory. Cuando un dispositivo se une mediante unión al área de trabajo, el servicio aprovisiona un objeto de dispositivo en Active Directory y establece una clave en el dispositivo local que se usa para representar la identidad del dispositivo. Esta identidad de dispositivo puede usarse con las reglas de control de acceso para las aplicaciones que se hospedan en la nube y localmente.
 
-Para obtener más información acerca de cómo habilitar el servicio de registro de dispositivo de Azure Active Directory, consulte [Introducción a Azure Active Directory dispositivo registro servicio](https://msdn.microsoft.com/6a14cb1f-a058-4453-8ede-d9f4a66a7073.aspx).
+Para obtener más información, consulte [Introducción a la administración de dispositivos en Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-introduction).
 
-### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>Unirse a un área de trabajo como un segundo sin problemas autenticación multifactor
-Las empresas pueden administrar el riesgo de que está relacionada con acceso a la información y control de la unidad y cumplimiento al conceder acceso a los dispositivos a los recursos corporativos de consumidor. Unirse a un área de trabajo en dispositivos proporciona las siguientes capacidades a los administradores:
+### <a name="workplace-join-as-a-seamless-second-factor-authentication"></a>La unión al área de trabajo como autenticación de segundo factor sin problemas
+Las empresas pueden controlar el riesgo que supone el acceso a la información, así como el gobierno y el cumplimiento normativo, al conceder a los dispositivos de consumo acceso a los recursos corporativos. La unión de dispositivos al área de trabajo ofrece las siguientes funcionalidades a los administradores:
 
--   Identifica los dispositivos conocidos con la autenticación de dispositivo. Los administradores pueden usar esta información para controlar el acceso condicional y controlar el acceso a los recursos.
+-   Identifica los dispositivos conocidos mediante la identificación de dispositivos. Los administradores pueden usar esta información para controlar el acceso condicional así como el acceso a los recursos.
 
--   Proporciona una experiencia de inicio de sesión más transparente para que los usuarios acceder a recursos de empresa desde dispositivos de confianza.
+-   Proporciona una experiencia de inicio de sesión sin problemas para que los usuarios accedan a los recursos de la compañía desde dispositivos de confianza.
 
 ### <a name="single-sign-on"></a>Inicio de sesión único
-Único inicio de sesión único (SSO) en el contexto de este escenario es la funcionalidad que reduce el número de solicitudes de contraseña que el usuario final tiene que escribir para acceder a los recursos de empresa desde dispositivos conocidos. Esta funcionalidad implica que se pide a los usuarios solo una vez durante la vigencia de SSO para aplicaciones de la compañía de acceso y el recurso de este dispositivo. Si usa un dispositivo al área de trabajo, el usuario que esté registrado para usar este dispositivo obtiene SSO persistente, de manera predeterminada para siete días. Este usuario tiene una inicio de sesión experiencia en la misma sesión o en las sesiones de nuevo.
+En el contexto de este escenario, el inicio de sesión único (SSO) es la funcionalidad que reduce el número de peticiones de contraseña que el usuario tiene que escribir para acceder a los recursos de la compañía desde dispositivos conocidos. El resultado de esta funcionalidad es que solo se pregunta una vez a los usuarios durante todo el inicio de sesión único para acceder a las aplicaciones y recursos de la compañía desde ese dispositivo. Si un dispositivo usa la unión al área de trabajo, el usuario que está registrado para este dispositivo obtiene un inicio de sesión único persistente para siete días de forma predeterminada. Este usuario tiene una experiencia de inicio de sesión sin problemas en la misma sesión o en sesiones nuevas.
 
-## <a name="solution-overview"></a>Información general de la solución
-Como parte de esta solución, aprende a usar al área de trabajo en un dispositivo compatible y experiencia de inicio de sesión único a un recurso de empresa.
+## <a name="solution-overview"></a>Introducción a la solución
+Como parte de esta solución, aprenderá a usar la unión al área de trabajo en un dispositivo compatible y experimentará un inicio de sesión único en un recurso de la compañía.
 
 > [!NOTE]
-> Compatibilidad con Windows 8.1, los dispositivos iOS 6.0 + y Android 4.0 +, debes configurar el registro de dispositivo de Azure Active Directory junto con el objeto de dispositivo reescritura, consulta [guía paso a paso para acceso condicional local mediante el servicio de registro de Azure Active Directory dispositivo](https://msdn.microsoft.com/library/azure/dn788908.aspx)
+> Para disponer de compatibilidad con dispositivos Windows 8.1, iOS 6.0+ y Android 4.0+, debe configurar el registro de dispositivo de Azure Active Directory junto con la reescritura de objetos de dispositivo. Consulte [Guía paso a paso para el acceso condicional local con el servicio de registro de dispositivo de Azure Active Directory](https://msdn.microsoft.com/library/azure/dn788908.aspx)
 
-Esta solución te guía toma te guiará por los siguientes pasos Tutorial:
+Esta solución te lleva por los siguientes pasos del tutorial:
 
-1.  [Tutorial: Unión a un área de trabajo con un dispositivo de Windows](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [Tutorial: Unión con un dispositivo Windows](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [Tutorial: Unirse un área de trabajo con un dispositivo iOS](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [Tutorial: Unión con un dispositivo iOS](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [Tutorial: Unión a un área de trabajo con un dispositivo Android](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [Tutorial: Unión con un dispositivo Android](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
-## <a name="see-also"></a>Consulta también
-[Configurar un servidor de federación con el servicio de registro de dispositivo](../deployment/configure-a-federation-server-with-device-registration-service.md)
+## <a name="see-also"></a>Vea también
+[Configurar un servidor de federación con el servicio de registro de dispositivos](../deployment/configure-a-federation-server-with-device-registration-service.md)
 
 
 

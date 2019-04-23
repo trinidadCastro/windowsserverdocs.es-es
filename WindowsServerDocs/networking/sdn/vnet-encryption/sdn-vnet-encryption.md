@@ -1,33 +1,38 @@
 ---
 title: Cifrado de red virtual
-description: Este tema proporciona información acerca del cifrado de red Virtual para Software definido a redes en Windows Server
-manager: brianlic
+description: Cifrado de red virtual permite el cifrado de tráfico de red virtual entre las máquinas virtuales que se comunican entre sí dentro de las subredes marcadas como 'El cifrado habilitado'.
+manager: dougkim
 ms.prod: windows-server-threshold
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: 7da0f509-7b02-4a0f-90fb-d97c83a2bc4e
 ms.author: pashort
-author: grcusanz
-ms.openlocfilehash: 425cc1cff8c7241aeec7764b60c89b4586fd323b
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+author: shortpatti
+ms.date: 08/08/2018
+ms.openlocfilehash: f2f50ae3146854e2ef6081b0c400a474b53dcf66
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851086"
 ---
 # <a name="virtual-network-encryption"></a>Cifrado de red virtual
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
-Cifrado de red virtual proporciona la capacidad para el tráfico de red virtual se cifren entre las máquinas virtuales que se comunican entre sí dentro de subredes que están marcadas como "Cifrado habilitado".
+Cifrado de red virtual permite el cifrado de tráfico de red virtual entre las máquinas virtuales que se comunican entre sí dentro de las subredes marcadas como 'El cifrado habilitado'. También utiliza la Seguridad de la capa de transporte de datagrama (DTLS) en la subred virtual para cifrar los paquetes. DTLS protege frente a las interceptaciones, alteraciones y falsificaciones realizadas por cualquier persona con acceso a la red física.
 
-Esta característica utiliza la seguridad de capa de transporte de datagramas (DTLS) en la subred virtual para cifrar los paquetes.  DTLS proporciona protección contra interceptaciones, alteraciones y falsificación cualquier persona con acceso a la red física.
+Se requiere el cifrado de red virtual:
+- Certificados de cifrado en cada uno de los hosts de Hyper-V habilitado SDN.
+- Un objeto de credencial en la controladora de red que hacen referencia a la huella digital del certificado.
+- La configuración en cada una de las redes virtuales contiene subredes que requieren cifrado.
 
-Requries de cifrado de red virtual un certificado de cifrado para instalarse en cada uno de lo SDN habilitado hosts de Hyper-V, un objeto de credenciales en el controlador de red que hacen referencia a la huella digital de ese certificado y la configuración de cada una de las redes virtuales que contienen subredes requerir cifrado.
+Una vez que habilite el cifrado en una subred, todo el tráfico de red dentro de esa subred se cifra automáticamente, además de cualquier cifrado de nivel de aplicación que también puede tener lugar.  El tráfico que cruza entre subredes, incluso si marcada como cifrada, se envía sin cifrar automáticamente. Todo el tráfico que cruza el límite de red virtual también se envía sin cifrar.
 
-Una vez que el cifrado está habilitado en una subred, todo el tráfico de red dentro de subred se cifra automáticamente.  Esto hará que además de cualquier cifrado a nivel de aplicación que también puede tener lugar.  El tráfico que cruza entre subredes y aunque ambos las subredes se marcan como cifra automáticamente se envía sin cifrar.  Todo el tráfico que cruza los límites de red virtual también se envía sin cifrar.
+>[!TIP]
+>Si debe restringir las aplicaciones se comuniquen solo en la subred cifrada, puede usar listas de Control de acceso (ACL) sólo para permitir la comunicación dentro de la subred actual. Para obtener más información, consulte [usar Access Control Lists (ACL) para el flujo de tráfico de red de centro de datos de administrar](https://docs.microsoft.com/windows-server/networking/sdn/manage/use-acls-for-traffic-flow).
 
-Para obtener información sobre la configuración de cifrado de red Virtual, vea [configurar el cifrado para una red Virtual](sdn-config-vnet-encryption.md).
+### <a name="next-steps"></a>Pasos siguientes
 
-Si se debe restringir aplicaciones se comuniquen solo en la subred cifrada.  Puedes usar listas de Control de acceso (ACL) para permitir solamente la comunicación dentro de la subred actual.  
+[Configurar el cifrado de una red virtual](https://docs.microsoft.com/windows-server/networking/sdn/vnet-encryption/sdn-config-vnet-encryption)
 
-Para obtener información sobre cómo configurar listas de Control de acceso, consulta [usa acceso listas de Control (ACL) para hacer fluir el tráfico de red de Datacenter administrar](../manage/use-acls-for-traffic-flow.md).

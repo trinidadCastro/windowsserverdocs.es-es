@@ -1,6 +1,6 @@
 ---
-title: "Migrar un servidor de federación de AD FS independiente o una granja de servidores de AD FS de nodo único"
-description: "Proporciona información sobre cómo migrar un independiente o un nodo único AD FS 2.0 server para Windows Server 2012"
+title: Migrar un servidor de federación de AD FS independiente o una granja de AD FS de nodo único
+description: Proporciona información sobre cómo migrar un servidor de espera por sí solo o nodo único de AD FS 2.0 para Windows Server 2012
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,88 +9,89 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 10371349fe19be92fb997c9c28f19def0ecad7e9
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851936"
 ---
-# <a name="migrate-a-stand-alone-ad-fs-federation-server-or-a-single-node-ad-fs-farm"></a>Migrar un servidor de federación de AD FS independiente o una granja de servidores de AD FS de nodo único  
-Este documento proporciona información detallada sobre cómo migrar un servidor de AD FS 2.0 independiente para Windows Server 2012.
+# <a name="migrate-a-stand-alone-ad-fs-federation-server-or-a-single-node-ad-fs-farm"></a>Migrar un servidor de federación de AD FS independiente o una granja de AD FS de nodo único  
+Este documento proporciona información detallada sobre cómo migrar un servidor independiente de AD FS 2.0 independiente para Windows Server 2012.
 
-## <a name="migrate-a-stand-alone-ad-fs-20-server"></a>Migrar un anuncio independiente servidor FS 2.0
+## <a name="migrate-a-stand-alone-ad-fs-20-server"></a>Migrar una independiente AD FS 2.0 server
 
-Usa el siguiente procedimiento para migrar a AD FS 2.0 servidor para Windows Server 2012.
+Utilice el procedimiento siguiente para migrar de AD FS 2.0 server a Windows Server 2012.
   
-1.  Revisar y realizar los procedimientos descritos en [preparación para migrar un servidor de federación de AD FS independiente o una granja de servidores de AD FS nodo único](prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md).  
+1.  Revise y complete los procedimientos de [preparación para migrar un servidor de federación de AD FS independiente o una granja de servidores de AD FS de nodo único](prepare-to-migrate-a-stand-alone-ad-fs-federation-server.md).  
   
-2.  Realizar una actualización en contexto del sistema operativo en el servidor de Windows Server 2008 R2 o Windows Server 2008a Windows Server 2012. Para obtener más información, consulta [instalar Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx).  
+2.  Realizar una actualización en contexto del sistema operativo del servidor de Windows Server 2008 R2 o Windows Server 2008 a Windows Server 2012. Para obtener más información, consulte [Installing Windows Server 2012](https://technet.microsoft.com/library/jj134246.aspx).  
   
 > [!IMPORTANT]
->  Como resultado de la actualización del sistema operativo, se pierde la configuración de AD FS de este servidor y se quita el rol de servidor 2.0 de AD FS. El rol de servidor de AD FS de Windows Server 2012 se instala en su lugar, pero no está configurado. Debes crear la configuración de AD FS original y restaurar la configuración de AD FS restante para completar la migración de servidor de federación manualmente.  
+>  Como resultado de la actualización del sistema operativo, se perderá la configuración de AD FS en el servidor y se eliminará el rol del servidor de AD FS 2.0. El rol de servidor de AD FS en Windows Server 2012 está instalado en su lugar, pero no está configurado. Es necesario crear de forma manual la configuración de AD FS original y restaurar la configuración de AD FS restante para completar la migración del servidor de federación.  
   
-3.  Crear la configuración de AD FS original. Puedes crear la configuración original de AD FS mediante uno de los siguientes métodos:  
+3.  Crea la configuración de AD FS original. La configuración de AD FS original se puede crear con uno de los métodos siguientes:  
   
--   Usa el **Asistente de configuración del servidor de AD FS federación** para crear un servidor de federación de nuevo. Para obtener más información, consulta [crea el primer servidor de federación en una granja de servidores de federación](Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md).  
+-   Usa el **Asistente para configuración de servidor de federación de AD FS** para crear un nuevo servidor de federación. Para obtener más información, consulta [Crear el primer servidor de federación de una granja de servidores de federación](Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md).  
   
-Medida que avances por el asistente, usa la información recopilada durante la preparación para migrar el servidor de federación de AD FS como sigue:  
+A medida que avances en el asistente, usa la información que has recopilado al preparar la migración del servidor de federación de AD FS, como se indica a continuación:  
   
- |**Asistente para configuración del servidor de federación de opción de entrada**|**Usa el siguiente valor**| 
+ |**Opción de entrada del Asistente para configuración de servidor de federación**|**Utilice el siguiente valor**| 
 |-----|-----| 
-|**Certificado SSL** en la **especifique el nombre de servicio de federación** página|Selecciona el certificado SSL cuyo nombre de asunto y la huella digital registra durante la preparación para la migración de servidor de federación de AD FS.|  
-|**Cuenta de servicio** y **contraseña** en la **especificar una cuenta de servicio** página|Escribe la información de cuenta de servicio que registraron durante la preparación para la migración de servidor de federación de AD FS. **Nota:** si seleccionas el servidor de federación independiente en la segunda página del asistente, el servicio de red se usa automáticamente como la cuenta de servicio.|  
+|**Certificado SSL** en la página **Especificar el nombre del Servicio de federación**|Selecciona el certificado SSL cuyo nombre de sujeto y huella digital hayas registrado al preparar la migración del servidor de federación de AD FS.|  
+|**Cuenta de servicio** y **Contraseña** en la página **Especificar una cuenta de servicio**|Especifica la información de la cuenta de servicio que registraste al preparar la migración del servidor de federación de AD FS. **Nota:**  Si seleccionas la opción de servidor de federación independiente en la segunda página del asistente, se usará automáticamente SERVICIO DE RED como la cuenta de servicio.|  
   
 > [!IMPORTANT] 
-> Puede usar este método solo si estás usando Windows Internal Database (WID) para almacenar la base de datos de configuración de AD FS para el servidor de federación independiente o una granja de servidores de AD FS nodo único.  
+> Este método solo es válido si usas Windows Internal Database (WID) para almacenar la base de datos de configuración de AD FS para el servidor de federación independiente o para una granja de AD FS de nodo único.  
 >
->  Si estás usando SQL Server para almacenar la base de datos de configuración de AD FS de la granja de servidores de AD FS nodo único, debes usar Windows PowerShell para crear la configuración de AD FS original en el servidor de federación.  
+>  Si usas SQL Server para almacenar la base de datos de configuración de AD FS para la granja de AD FS de nodo único, tendrás que usar Windows PowerShell para crear la configuración de AD FS original en el servidor de federación.  
   
--   Usar Windows PowerShell  
+-   Utilice Windows PowerShell  
   
 > [!IMPORTANT]
->  Debes usar Windows PowerShell si estás usando SQL Server para almacenar la base de datos de configuración de AD FS para el servidor de federación independiente o una granja de servidores de AD FS nodo único.  
+>  Deberás usar Windows PowerShell si usas SQL Server para almacenar la base de datos de configuración de AD FS para el servidor de federación independiente o para una granja de AD FS de nodo único.  
   
-El siguiente es un ejemplo de cómo usar Windows PowerShell para crear la configuración de AD FS original en un servidor de federación de un conjunto de SQL Server nodo único.  Abra el módulo de Windows PowerShell y ejecuta el siguiente comando:`$fscredential = Get-Credential`. Escribe el nombre y la contraseña de la cuenta de servicio que registraron durante la preparación de la granja de servidores SQL para la migración. A continuación, ejecuta el siguiente comando: `C:\PS> Add-AdfsFarmNode -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<Data Source>;Integrated Security=True"`donde `Data Source`es el valor de origen de datos en el valor de cadena de conexión de almacén de directivas en el siguiente archivo:`%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config`.  
+A continuación verás un ejemplo de cómo usar Windows PowerShell para crear la configuración de AD FS original en un servidor de federación de una granja de SQL Server de nodo único.  Abra el módulo de Windows PowerShell y ejecute el comando siguiente: `$fscredential = Get-Credential` Escribe el nombre y la contraseña de la cuenta de servicio que registraste al preparar la migración de la granja de SQL Server. A continuación, ejecute el siguiente comando: `C:\PS> Add-AdfsFarmNode -ServiceAccountCredential $fscredential -SQLConnectionString "Data Source=<Data Source>;Integrated Security=True"` , donde `Data Source` es el valor del origen de datos del valor de cadena de conexión de almacén de directivas en el siguiente archivo: `%programfiles%\Active Directory Federation Services 2.0\Microsoft.IdentityServer.Servicehost.exe.config`.  
   
-4.  Restaurar la configuración de servicio de AD FS restante y relaciones de confianza. Este es un paso manual durante el que puedes usar los archivos que se exportó y los valores que recopilan durante la preparación para la migración de AD FS. Para obtener instrucciones detalladas, consulta restaurar la configuración de granja restante AD FS.  
+4.  Restaura la configuración del servicio de AD FS y las relaciones de confianza restantes. Este es un paso manual en el que puedes usar los archivos que hayas exportado y los valores que hayas recopilado al preparar la migración de AD FS. Consulta las instrucciones detalladas en Restaurar la configuración restante de la granja de AD FS.  
   
 > [!NOTE]
->  Este paso solo es necesario si vas a migrar un servidor de federación independiente o una granja WID nodo único.  Si el servidor de federación usa una base de datos de SQL Server que el almacén de configuración, la configuración del servicio y relaciones de confianza se conservan en la base de datos.  
+>  Este paso solo es obligatorio si vas a migrar un servidor de federación independiente o una granja WID de nodo único.  Si el servidor de federación usa una base de datos de SQL Server como el almacén de configuración, la configuración del servicio y las relaciones de confianza se preservarán en la base de datos.  
   
-5.  Actualiza las páginas Web de AD FS. Este es un paso manual. Si copias de tus páginas Web de AD FS personalizada durante la preparación para la migración, usa los datos de copia de seguridad para sobrescribir el valor predeterminado de las páginas Web de AD FS que se crearon de manera predeterminada en la **%systemdrive%\inetpub\adfs\ls** directorio como resultado de la configuración de AD FS en Windows Server 2012.  
+5.  Actualiza las páginas web de AD FS. Este paso es manual. Si la copia de sus páginas Web personalizadas de AD FS al preparar la migración, usar los datos de copia de seguridad para sobrescribir el valor predeterminado de páginas Web de AD FS que se crearon de forma predeterminada en el **%systemdrive%\inetpub\adfs\ls** directorio como resultado de la configuración de AD FS en Windows Server 2012.  
   
-6.  Restaurar las personalizaciones de AD FS restantes, como el atributo personalizado tiendas.  
+6.  Restaure el resto de las personalizaciones de AD FS, como los almacenes de atributos personalizados.  
   
-## <a name="restoring-the-remaining-ad-fs-farm-configuration"></a>Restaurar la configuración de granja FS AD restante  
+## <a name="restoring-the-remaining-ad-fs-farm-configuration"></a>Restaurar la configuración restante de la granja de AD FS  
   
--   Restaurar la siguiente configuración de servicio de AD FS a un conjunto de nodo único WID o servicios de federación independiente como sigue:  
+-   Sigue estos pasos para restaurar la siguiente configuración del servicio de AD FS a una granja WID de nodo único o a un servicio de federación independiente:  
   
-    -   En la consola de administración de AD FS, selecciona **servicio** y haz clic en **servicios de federación de editar...**. Comprueba la configuración de servicios de federación comprobando cada uno de los valores en los valores exportado en el archivo properties.txt durante la preparación para la migración:  
+    -   En la consola de administración de AD FS, selecciona **Servicios** y haz clic en **Editar servicio de federación…**. Para comprobar la configuración del servicio de federación, compara los valores con los que exportaste al archivo properties.txt al preparar la migración:  
   
     
-|**Nombre de la propiedad de servicios de federación según lo informado por Get-ADFSProperties**|**Nombre de la propiedad de servicios de federación en la consola de administración de AD FS**|  
+|**Nombre de propiedad del servicio de federación devuelto por Get-ADFSProperties**|**Nombre de propiedad del servicio de federación en la consola de administración de AD FS**|  
 |-----|-----|
-|DisplayName|Nombre de servicio federación|  
-|Nombre de host|Nombre de servicio de federación|  
-|Identificador|Identificador de servicios de federación|  
+|DisplayName|Nombre para mostrar del Servicio de federación|  
+|HostName|Nombre del Servicio de federación|  
+|Identificador|Identificador del Servicio de federación|  
   
--   En la consola de administración de AD FS, selecciona **certificados**. Compruebe las comunicaciones de servicio, los certificados de descifrado de token y la firma de token comprobando cada uno con los valores exportado en el archivo certificates.txt durante la preparación para la migración.  
+-   En la consola de administración de AD FS, seleccione **Certificados**. Para comprobar los certificados de comunicaciones de servicios, descifrado de tokens y firma de tokens, compáralos con los valores que exportaste al archivo certificates.txt al preparar la migración.  
   
-Para cambiar los certificados de descifrado de token o la firma de tokens de los certificados autofirmados predeterminado a certificados externos, primero debes deshabilitar la característica de sustitución de certificados automática está habilitada de manera predeterminada.  Para ello, puedes usar el siguiente comando de Windows PowerShell:`PSH: Set-ADFSProperties –AutoCertificateRollover $false`.  
+Para cambiar los certificados de descifrado o de firma de tokens de los valores autofirmados predeterminados a certificados externos, primero debe deshabilitar la característica de sustitución automática de certificados habilitada de manera predeterminada.  Para ello, puede utilizar el siguiente comando de Windows PowerShell: `PSH: Set-ADFSProperties –AutoCertificateRollover $false`  
   
--   En la consola de administración de AD FS, seleccione **extremos**. Comprueba los extremos de AD FS habilitados con la lista de los extremos de AD FS habilitados que exportar a un archivo durante la preparación para la migración de AD FS.  
+-   En la consola de administración de AD FS, seleccione **Extremos**. Compare los extremos de AD FS habilitados con la lista de extremos de AD FS habilitados que exportó a un archivo mientras preparaba la migración de AD FS.  
   
--   En la consola de administración de AD FS, seleccione **descripciones de Reclamación**. Compruebe la lista de descripciones de notificación de AD FS con la lista de descripciones de notificación que exportación a un archivo durante la preparación para la migración de AD FS. Agrega las descripciones de notificación personalizada incluir en el archivo pero no incluido en la lista predeterminada de AD FS.  Ten en cuenta que el identificador de la notificación en la consola de administración se asigna a ClaimType en el archivo.  Para obtener más información sobre cómo agregar descripciones de notificación, consulta [agregar una descripción reclamar](../operations/add-a-claim-description.md). Para obtener más información, consulta la sección de "Paso 1 – Exportar configuración del servicio" en preparación para migrar AD FS servidor de federación de 2.0.  
+-   En la Consola de administración de AD FS, seleccione **Descripciones de notificaciones**. Compara la lista de descripciones de notificaciones de AD FS con la lista de descripciones de notificaciones que exportaste a un archivo al preparar la migración de AD FS. Agregue las descripciones de notificaciones personalizadas incluidas en el archivo que no se estén incluidas en la lista predeterminada de AD FS.  Tenga en cuenta que el identificador de la notificación en la consola de administración corresponde a ClaimType en el archivo.  Para obtener más información sobre cómo agregar descripciones de notificaciones, consulta [Agregar una descripción de notificaciones](../operations/add-a-claim-description.md). Para obtener más información, consulta la sección “Paso 1: configuración del servicio de exportación” en Preparación para migrar el servidor de federación de AD FS 2.0.  
   
--   En la consola de administración de AD FS, seleccione **reclamaciones proveedor confía**. Debes volver a crear cada confianza de proveedor de notificaciones manualmente a través de la **Asistente para agregar notificaciones de proveedor de confianza para**.  Usa la lista de confianzas de proveedor de notificaciones que exportado y se registran durante la preparación para la migración de AD FS. Puede pasar por alto la confianza del proveedor de notificaciones con el identificador "AD autoridad" en el archivo porque es la confianza del proveedor de notificaciones "Active Directory" que forma parte de la configuración de AD FS predeterminada.  Sin embargo, comprueba las reglas de notificación personalizada que agregaste a la confianza de Active Directory antes de la migración. Para obtener más información sobre la creación de notificaciones de confianzas de proveedor, consulta [crear un reclamaciones proveedor confianza usando federación metadatos](../operations/create-a-claims-provider-trust.md#to-create-a-claims-provider-trust-using-federation-metadata) o [crear un reclamaciones proveedor confianza manualmente](../operations/create-a-claims-provider-trust.md#to-create-a-claims-provider-trust-manually).  
+-   En la Consola de administración de AD FS, selecciona **Confianzas de proveedores de notificaciones**. Debes recrear de forma manual todas las confianzas del proveedor de notificaciones mediante el **Asistente para agregar confianza del proveedor de notificaciones**.  Usa la lista de confianzas de proveedores de notificaciones que exportaste y registraste al preparar la migración de AD FS. Puedes ignorar la confianza de proveedor de notificaciones con el identificador “AD AUTHORITY” en el archivo, ya que esta es la confianza del proveedor de notificaciones de “Active Directory” que forma parte de la configuración predeterminada de AD FS.  Pero debes comprobar las reglas de notificaciones personalizadas que puedas haber agregado a la confianza de Active Directory antes de la migración. Para obtener más información sobre cómo crear confianzas de proveedores de notificaciones, consulta [Crear una confianza de proveedor de notificaciones con metadatos de federación](../operations/create-a-claims-provider-trust.md#to-create-a-claims-provider-trust-using-federation-metadata) o [Crear una confianza de proveedor de notificaciones de forma manual](../operations/create-a-claims-provider-trust.md#to-create-a-claims-provider-trust-manually).  
   
--   En la consola de administración de AD FS, **selecciona confiar confía en las partes**. Debes volver a crear cada confianza del usuario de confianza manualmente a través de la **confiar terceros confianza Asistente para agregar**. Usa la lista de usuarios de confianza confianzas de terceros que exportado y se registran durante la preparación para la migración de AD FS. Para obtener más información sobre la creación de confianzas de terceros de confianza, consulta [crear un confiar terceros de confianza usando federación metadatos](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-using-federation-metadata) o [crear un confiar terceros de confianza manualmente](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-manually). 
+-   En la consola de administración de AD FS, selecciona **Relaciones de confianza para usuarios autenticados**. Debes recrear de forma manual todas las relaciones de confianza para usuario autenticado mediante el **Asistente para agregar relación de confianza para usuario autenticado**. Usa la lista de relaciones de confianza para usuarios autenticados que exportaste y registraste al preparar la migración de AD FS. Para obtener más información sobre cómo crear relaciones de confianza para usuarios autenticados, consulta [Crear una relación de confianza para usuario autenticado con metadatos de federación](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-using-federation-metadata) o [Crear una relación de confianza para usuario autenticado de forma manual](../operations/create-a-relying-party-trust.md#to-create-a-claims-aware-relying-party-trust-manually). 
 
 ## <a name="next-steps"></a>Pasos siguientes
- [Preparación para migrar el servidor de AD FS federación 2.0](prepare-to-migrate-ad-fs-fed-server.md)   
- [Preparación para migrar al Proxy de servidor de AD FS federación 2.0](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [Migrar el servidor de AD FS federación 2.0](migrate-the-ad-fs-fed-server.md)   
- [Migrar al Proxy de servidor de AD FS federación 2.0](migrate-the-ad-fs-2-fed-server-proxy.md)   
- [Migrar a los agentes de AD FS Web 1.1](migrate-the-ad-fs-web-agent.md)
+ [Preparar la migración del servidor de AD FS 2.0 Federation](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Preparar la migración del servidor Proxy de AD FS 2.0 Federation](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [Migrar el servidor de AD FS 2.0 Federation](migrate-the-ad-fs-fed-server.md)   
+ [Migrar al servidor Proxy de AD FS 2.0 Federation](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [Migrar a los agentes de AD FS 1.1 de Web](migrate-the-ad-fs-web-agent.md)
 
 
 

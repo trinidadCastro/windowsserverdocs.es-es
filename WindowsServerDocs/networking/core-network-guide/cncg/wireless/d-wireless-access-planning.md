@@ -1,6 +1,6 @@
 ---
-title: Acceso inalámbrico planeación de implementación
-description: Este tema es parte de la Guía de redes de Windows Server 2016 "Implementar basada en contraseña 802.1X X autenticados Wireless Access"
+title: Planificación de la implementación de acceso inalámbrico
+description: Este tema forma parte de la Guía de redes de Windows Server 2016 "Implementar mediante 802.1X basado en contraseña X Authenticated Wireless Access"
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,215 +8,216 @@ ms.topic: article
 ms.assetid: 8c632d02-2270-4a82-8fc4-74ea3747f079
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a1aa7d9fa66c480988ec7e3a97447157bd3eab9c
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: a2571f509fbbca8384e626ad3c8c13f1c0a50400
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855466"
 ---
-# <a name="wireless-access-deployment-planning"></a>Acceso inalámbrico planeación de implementación
+# <a name="wireless-access-deployment-planning"></a>Planificación de la implementación de acceso inalámbrico
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Antes de implementar acceso inalámbrico, debes planear los siguientes elementos:
+Antes de implementar acceso inalámbrico, debe planear los siguientes elementos:
 
-- Instalación de acceso inalámbrico puntos \(APs\) en la red
+- Instalación de puntos de acceso inalámbrico \(APs\) en la red
 
-- Acceso y configuración de cliente inalámbrico
+- Configuración del cliente inalámbrico y acceso
 
-Las siguientes secciones proporcionan detalles sobre estos pasos.
+Las secciones siguientes proporcionan detalles sobre estos pasos de planeación.
 
-## <a name="planning-wireless-ap-installations"></a>Planeación de las instalaciones de punto de acceso inalámbricas
-Al diseñar la solución de acceso de red inalámbrica, deben hacer lo siguiente:
+## <a name="planning-wireless-ap-installations"></a>Planear instalaciones de AP inalámbricas
+Al diseñar la solución de acceso de red inalámbrica, debe hacer lo siguiente:
 
-1. Determinar qué estándares deben ser compatible con los puntos de acceso inalámbricos
+1. Determinar qué estándares debe ser compatible con tus AP inalámbricos
 2. Determinar las áreas de cobertura donde desea proporcionar servicios inalámbricos
-3. Determinar que quieras buscar puntos de acceso inalámbricos
+3. Determine dónde desea ubicar AP inalámbricos
 
-Además, debes planear un esquema de dirección IP de su punto de acceso inalámbrico e inalámbricas los clientes. Consulta la sección **planear la configuración del punto de acceso inalámbrico en NPS** debajo de información para relacionados.
+Además, debe planear un esquema de direcciones IP de tu AP inalámbrico y los clientes inalámbricos. Consulte la sección **planificar la configuración de AP inalámbrico en NPS** a continuación para obtener información relacionada.
 
-### <a name="verify-wireless-ap-support-for-standards"></a>Compruebe la compatibilidad de punto de acceso inalámbrico estándares
-Para los fines de coherencia y facilidad de implementación y administración de punto de acceso, se recomienda implementar puntos de acceso inalámbricos de la misma marca y modelo.
+### <a name="verify-wireless-ap-support-for-standards"></a>Comprobar la compatibilidad de AP inalámbrico para estándares
+Para los fines de coherencia y la facilidad de implementación y administración de AP, se recomienda implementar AP inalámbricos de la misma marca y modelo.
 
-Los puntos de acceso inalámbricos que implementas deben admitir lo siguiente:
+Los AP inalámbricos que implemente deben admitir lo siguiente:
 
-- **IEEE 802.1X X**
+- **IEEE 802.1X**
 
-- **Autenticación de radio**
+- **Autenticación RADIUS**
 
-- **Autenticación inalámbrica y cifrado.** Se enumeran en orden de mayor a menor preferencia:
+- **La autenticación inalámbrica y cifrado.** Se muestran en orden de mayor a menor preferencia:
 
-    1.  Empresa WPA2\ con AES
+    1.  WPA2\-Enterprise con AES
 
-    2.  Empresa WPA2\ con TKIP
+    2.  WPA2\-Enterprise con TKIP
 
-    3.  Empresa WPA\ con AES
+    3.  WPA\-Enterprise con AES
 
-    4.  Empresa WPA\ con TKIP
+    4.  WPA\-Enterprise con TKIP
 
 >[!NOTE]
->Para implementar WPA2, debes usar adaptadores de red inalámbrica y puntos de acceso inalámbricos que sean compatibles con WPA2. De lo contrario, usa WPA\ Enterprise.
+>Para implementar WPA2, debe usar adaptadores de red inalámbrica y AP inalámbricos compatibles con WPA2. En caso contrario, usar WPA\-Enterprise.
 
-Además, para proporcionar seguridad mejorada para la red, los puntos de acceso inalámbricos deben admitir las siguientes opciones de seguridad:
+Además, para proporcionar mayor seguridad para la red, la AP inalámbricos deben admitir las siguientes opciones de seguridad:
 
-- **Filtrado de DHCP.** El punto de acceso inalámbrico debe filtrar en puertos IP para evitar la transmisión de mensajes de difusión DHCP en aquellos casos en que el cliente inalámbrico está configurado como un servidor DHCP. El punto de acceso inalámbrico debe bloquear al cliente envíe paquetes IP de puerto UDP 68a la red.
+- **Filtros DHCP.** El AP inalámbrico debe filtrar en puertos IP para evitar la transmisión de mensajes de difusión DHCP en esos casos en que el cliente inalámbrico está configurado como un servidor DHCP. El AP inalámbrico debe bloquear al cliente en el envío de paquetes IP del puerto UDP 68 a la red.
 
-- **Filtrado de DNS.** El punto de acceso inalámbrico debe filtrar en puertos IP para evitar que a un cliente realizar como un servidor DNS. El punto de acceso inalámbrico debe bloquear al cliente envíe paquetes IP de TCP o UDP puerto 53a la red.
+- **Filtros DNS.** El AP inalámbrico debe filtrar en puertos IP para evitar que a un cliente actúe como un servidor DNS. El AP inalámbrico debe bloquear al cliente en el envío de paquetes IP de TCP o UDP puerto 53 a la red.
 
-- **El aislamiento de cliente** si el punto de acceso inalámbrico proporciona funcionalidades de aislamiento de cliente, debe habilitar la característica evitar posibles protocolo de resolución de direcciones \(ARP\) ataques de suplantación de identidad.
+- **Aislamiento de clientes** si su punto de acceso inalámbrico proporciona capacidades de aislamiento de cliente, debe habilitar la característica evitar posibles direcciones de protocolo de resolución \(ARP\) ataques de suplantación de identidad.
 
-### <a name="identify-areas-of-coverage-for-wireless-users"></a>Identificar las áreas de la cobertura de los usuarios inalámbricos
-Usa los dibujos arquitectónicos de cada planta de cada edificio para identificar las áreas donde desea proporcionar cobertura inalámbrica. Por ejemplo, identifica las oficinas apropiadas, salas de conferencias, vestíbulos, cafeterías o courtyards.
+### <a name="identify-areas-of-coverage-for-wireless-users"></a>Identificar las áreas de cobertura para usuarios inalámbricos
+Utilice los planos de cada planta para cada edificio para identificar las áreas donde desee proporcionar cobertura inalámbrica. Por ejemplo, identificar las oficinas adecuadas, salas de conferencias, vestíbulos, cafeterías o jardines.
 
-En los dibujos, se indican los dispositivos que interfieran con las señales inalámbricas, como equipos médicos, videocámaras inalámbricas, teléfonos inalámbricos que funcionan en la 2.4a 2,5 GHz Industrial, científica y medicina \(ISM\) gama y los dispositivos habilitados para Bluetooth\.
+En los dibujos, indica a los dispositivos que interfieran con las señales inalámbricas, como equipos médicos, cámaras de vídeo inalámbricas, teléfonos inalámbricos que operan en el 2.4 a 2,5 GHz Industrial, científico y médico \(ISM\) intervalo y Bluetooth\-dispositivos habilitados.
 
-En el plano, marcar los aspectos de la compilación que podrían interferir con señales inalámbricas; objetos de metal usados en la construcción de un edificio pueden afectar a la señal inalámbrica. Por ejemplo, los siguientes objetos comunes pueden interferir con la propagación de señal: ascensores, lleven calentamiento y configuración air\ y vigas concretos de soporte técnico.
+En el dibujo, marcar los aspectos de la compilación que podrían interferir con las señales inalámbricas; objetos metálicos usados en la construcción de un edificio pueden afectar a la señal inalámbrica. Por ejemplo, los siguientes objetos comunes pueden interferir con la propagación de señal: Ascensores, calefacción y aire\-acondicionamiento conductos y vigas de soporte técnico concreto.
 
-Consulta al fabricante de su punto de acceso para obtener información sobre las fuentes que podría provocar la atenuación de radiofrecuencia de punto de acceso inalámbrico. La mayoría de puntos de acceso proporcionan software de prueba que puedes usar para comprobar la intensidad de señal, la tasa de errores y el rendimiento de datos.
+Consulte el fabricante del punto de acceso para obtener información acerca de los orígenes que pueden provocar la atenuación de radiofrecuencia AP inalámbrico. La mayoría de APs proporcionan software de prueba que puede usar para comprobar la intensidad de señal, tasa de errores y rendimiento de los datos.
 
-### <a name="determine-where-to-install-wireless-aps"></a>Determina dónde quieres instalar los puntos de acceso inalámbricos
-En los dibujos arquitectónicos, busque los puntos de acceso inalámbricos cerca lo suficientemente juntos para proporcionar un amplio cobertura inalámbrica pero lo que sea necesario intervalos que no interfieran con entre sí.
+### <a name="determine-where-to-install-wireless-aps"></a>Determinar dónde instalar AP inalámbricos
+En los planos, busque tus AP inalámbricos cierre suficientemente juntos para proporcionar una distancia suficiente cobertura inalámbrica, pero lo que sea necesario que no interfieren entre sí.
 
-La distancia entre puntos de acceso necesaria depende del tipo de punto de acceso y antena PA, aspectos de la compilación que bloquear inalámbrica señales, así como otros orígenes de interferencia. Puedes marcar posiciones de punto de acceso inalámbricos para que cada punto de acceso inalámbrico no más de 300 pies desde cualquier punto de acceso inalámbrico adyacentes. Consulta la documentación del fabricante de punto de acceso inalámbrico para especificaciones de punto de acceso y las directrices para la colocación.
+La distancia entre puntos de acceso necesaria depende del tipo de punto de acceso y antena de Asia Pacífico, aspectos de la compilación que bloquean inalámbricas señales y otras fuentes de interferencias. Puede marcar las selecciones de ubicación de AP inalámbricos para que cada AP inalámbrico no es de más de 300 pies desde cualquier punto de acceso inalámbrico adyacente. Consulte la documentación del fabricante de AP inalámbricos para las especificaciones de Asia Pacífico y directrices para la selección de ubicación.
 
-Instale temporalmente los puntos de acceso inalámbricos en las ubicaciones especificadas en tus dibujos arquitectónicos. A continuación, usa un equipo portátil equipado con un adaptador inalámbrico 802.11 y el software de la encuesta de sitio que normalmente se suministra con adaptadores inalámbricos, determinar la intensidad de señal dentro de cada área de cobertura.
+Instalar temporalmente AP inalámbricos en las ubicaciones especificadas en los planos de arquitectura. A continuación, usa un equipo portátil equipado con un adaptador inalámbrico 802.11 y software del sitio de encuesta que habitualmente se suministra con los adaptadores inalámbricos, determine la intensidad de señal dentro de cada área de cobertura.
 
-En las áreas de cobertura donde la intensidad de señal es baja, coloca el punto de acceso para mejorar la intensidad de señal de la zona de cobertura, instalar los puntos de acceso inalámbricos adicionales para proporcionar la cobertura necesaria, reubicar o quitar orígenes de interferencia de señal.  
+En las áreas de cobertura que la intensidad de la señal es baja, coloque el punto de acceso para mejorar la intensidad de señal para el área de cobertura, instale AP inalámbricos adicionales para proporcionar la cobertura es necesaria, reubicar o eliminar las fuentes de interferencias de señales.  
 
-Actualizar los dibujos arquitectónicos para indicar la ubicación final de todos los puntos de acceso inalámbricos. Tener un mapa de colocación AP precisa ayudará más tarde durante las operaciones de solución de problemas o cuando quieres actualizar o reemplazar los puntos de acceso.
+Actualice los planos de arquitectura para indicar la posición final de todos los puntos de acceso inalámbricos. Tener una asignación de selección de ubicación de AP precisa ayudará posteriormente durante la solución de problemas de operaciones o cuando desea actualizar o reemplazar los puntos de acceso.
 
-### <a name="plan-wireless-ap-and-nps-radius-client-configuration"></a>Planear la configuración inalámbrica de punto de acceso y el cliente de RADIUS NPS
-Puedes usar NPS para configurar puntos de acceso inalámbricos individualmente o en grupos.
+### <a name="plan-wireless-ap-and-nps-radius-client-configuration"></a>Planear la configuración de cliente de RADIUS NPS y AP inalámbrica
+Puede usar NPS para configurar puntos de acceso inalámbricos individualmente o en grupos.
 
-Si estás implementando una red inalámbrica grande que incluye muchos puntos de acceso, es mucho más fácil de configurar puntos de acceso en grupos. Para agregar los puntos de acceso como grupos de clientes RADIUS en NPS, debes configurar los puntos de acceso con estas propiedades.
+Si va a implementar una red inalámbrica de gran tamaño que incluye muchos puntos de acceso, es mucho más fácil configurar puntos de acceso en grupos. Para agregar los puntos de acceso como grupos de clientes RADIUS en NPS, debe configurar los puntos de acceso con estas propiedades.
 
 - Los puntos de acceso inalámbricos están configurados con direcciones IP desde el mismo intervalo de direcciones IP.
 
-- Todos los puntos de acceso inalámbricos están configurados con el mismo secreto compartido.
+- Los AP inalámbricos se configuran con el mismo secreto compartido.
 
-### <a name="plan-the-use-of-peap-fast-reconnect"></a>Planear el uso de PEAP reconexión rápida
-En una infraestructura de 802.1X, puntos de acceso inalámbrico están configurados como clientes RADIUS de servidores RADIUS. Se implementa cuando reconexión rápida de PEAP, no es necesario para autenticarse con cada nueva asociación de un cliente inalámbrico que se transfieren entre dos o más puntos de acceso.
+### <a name="plan-the-use-of-peap-fast-reconnect"></a>Planear el uso de la reconexión rápida PEAP
+En una infraestructura de 802.1X, los puntos de acceso inalámbrico están configurados como clientes RADIUS a servidores RADIUS. Se implementa cuando reconexión rápida de PEAP, un cliente inalámbrico que se desplaza entre dos o más puntos de acceso no es necesario para autenticarse con cada nueva asociación.
 
-Reconexión rápida de PEAP reduce el tiempo de respuesta para la autenticación entre el cliente y el autenticador porque la solicitud de autenticación se habrá reenviada desde los puntos de acceso al servidor NPS que originalmente se realizó la autenticación y autorización para la solicitud de conexión de cliente.
+Reconexión rápida de PEAP reduce el tiempo de respuesta para la autenticación entre cliente y autenticador porque la solicitud de autenticación se reenvía desde el nuevo punto de acceso a NPS que originalmente realizó la autenticación y autorización para el cliente solicitud de conexión.
 
-Dado que el cliente PEAP y el servidor NPS ambos usan anteriormente en caché las propiedades de conexión de seguridad de la capa de transporte \(TLS\) \ (la colección de los cuales se denomina la handle\ TLS), el servidor NPS puede determinar rápidamente lo que el cliente está autorizado para el restablecimiento de la conexión.
+Dado que tanto el cliente PEAP y NPS usan previamente en caché Transport Layer Security \(TLS\) las propiedades de conexión \(la recopilación de los cuales se denomina identificador de TLS\), NPS puede determinar rápidamente que el cliente está autorizado para una reconexión.
 
 >[!IMPORTANT]
->Para obtener rápida a conectar para que funcione correctamente, los puntos de acceso deben estar configurados como los clientes RADIUS del mismo servidor NPS.
+>Para obtener rápida volver a conectarse para poder funcionar correctamente, los puntos de acceso deben estar configurados como clientes RADIUS de la mismo NPS.
 
-Si el servidor NPS original no está disponible, o si el cliente se mueve a un punto de acceso que esté configurado como un cliente RADIUS a un servidor RADIUS diferentes, se debe producir autenticación completa entre el cliente y el autenticador de nuevo.
+Si el NPS original no está disponible, o si el cliente se mueve a un punto de acceso que está configurado como un cliente RADIUS a otro servidor RADIUS, debe producirse la autenticación completa entre el cliente y el nuevo autenticador.
 
-### <a name="wireless-ap-configuration"></a>Configuración de punto de acceso inalámbrica
-La siguiente lista resume los elementos que normalmente se configuran en 802.1X\-puntos de acceso inalámbricos compatible con:
+### <a name="wireless-ap-configuration"></a>Configuración de AP inalámbricos
+En la lista siguiente resume los elementos que se define comúnmente en 802.1X\-AP inalámbricos compatibles con:
 
 > [!NOTE]
-> Los nombres de elementos pueden variar según la marca y modelo y pueden ser diferentes de las que están en la siguiente lista. Consulte la documentación de punto de acceso inalámbrica para detalles específicos del configuration\.
+> Los nombres de elementos pueden variar según la marca y el modelo y pueden diferir de las de la lista siguiente. Consulte la documentación de AP inalámbrica para la configuración\-detalles específicos.
 
-- **Identificador de \(SSID\)**. Este es el nombre de la red inalámbrica \ (por ejemplo, ExampleWlan\) y el nombre que se anuncia a los clientes inalámbricos. Para reducir la confusión, el SSID que elijas para anunciar no debe coincidir con el SSID difundida por las redes inalámbricas que están dentro del alcance de su red inalámbrica.
+- **Identificador de red \(SSID\)**. Éste es el nombre de la red inalámbrica \(por ejemplo, ExampleWlan\)y el nombre que se anuncia a los clientes inalámbricos. Para reducir la confusión, el SSID que elija para anunciar no debería coincidir con el SSID que se difunde por las redes inalámbricas que están dentro del alcance de su red inalámbrica.
 
-    En casos en que se implementan varios puntos de acceso inalámbricos como parte de la misma red inalámbrica, configurar cada punto de acceso inalámbrico con el mismo SSID. En casos en que se implementan varios puntos de acceso inalámbricos como parte de la misma red inalámbrica, configurar cada punto de acceso inalámbrico con el mismo SSID.  
+    En los casos en que se implementan varios puntos de acceso inalámbricos como parte de la misma red inalámbrica, configure cada AP inalámbrico con el mismo SSID. En los casos en que se implementan varios puntos de acceso inalámbricos como parte de la misma red inalámbrica, configure cada AP inalámbrico con el mismo SSID.  
 
-    En casos donde haya una necesidad para implementar diferentes redes inalámbricas para satisfacer las necesidades de negocios específico, el punto de acceso inalámbrico en una red debería difusión otro SSID que el SSID tu otros network\(s\). Por ejemplo, si necesitas una red inalámbrica independiente para los empleados e invitados, podría configurar los puntos de acceso inalámbricos para la red de empresa con la difusión de SSID **ExampleWLAN**. Para la red de invitado, a continuación, puede establecer SSID de cada punto de acceso inalámbrico para difundir **GuestWLAN**. De este modo los empleados e invitados pueden conectarse a la red prevista sin confusiones innecesarios.  
+    En casos donde haya una necesidad de implementar distintas redes inalámbricas para satisfacer las necesidades empresariales específicas, su en una red la AP inalámbrico debe difundir un SSID diferente que el SSID sus otras redes\(s\). Por ejemplo, si tiene una red inalámbrica independiente para los empleados y los invitados, puede configurar tus AP inalámbricos para red de la empresa con el SSID establecido para difundir **ExampleWLAN**. Para la red de invitado, entonces podría establecer SSID de cada AP inalámbrico para difundir **GuestWLAN**. De esta manera los empleados y los invitados pueden conectarse a la red deseada sin confusión innecesario.  
 
     > [!TIP]  
-    > Algunos punto de acceso inalámbrico tiene la capacidad de difusión de SSID varios para dar cabida a las implementaciones de multi\ red. Punto de acceso inalámbrico que puede difusión de SSID varios puede reducir costos de implementación y mantenimiento operativa.  
+    > Algunos AP inalámbrico tiene la posibilidad de difundir varios SSID para dar cabida a varios\-las implementaciones de red. AP inalámbrico que se puede difundir de varios SSID puede reducir costos de implementación y mantenimiento.  
 
 - **Autenticación y cifrado inalámbrico**.
 
-    Autenticación inalámbrica es la autenticación de seguridad que se usa cuando el cliente inalámbrico se asocia con un punto de acceso inalámbrico.  
+    Autenticación inalámbrica es la autenticación de seguridad que se usa cuando el cliente inalámbrico lo asocia con un punto de acceso inalámbrico.  
 
-    Cifrado inalámbrico es el cifrado de seguridad que se usa con autenticación inalámbrica para proteger las comunicaciones que se envían entre el punto de acceso inalámbrico y el cliente inalámbrico.  
+    Cifrado inalámbrico es el cifrado de seguridad que se usa con la autenticación inalámbrica para proteger las comunicaciones que se envían entre el cliente inalámbrico y el AP inalámbrico.  
 
-- **Inalámbrica AP IP dirección \(static\)**. En cada punto de acceso inalámbrico, configurar una dirección IP estática. Si la subred es mantenida por un servidor DHCP, asegúrate de que todas las direcciones IP AP entran dentro de un intervalo de exclusión de DHCP para que el servidor DHCP no intenta emitir la misma dirección IP en otro equipo o dispositivo. Los intervalos de exclusión se documentan en el procedimiento "para crear y activar un nuevo ámbito DHCP" en la [guía básica de red](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide). Si vas a configurar puntos de acceso como clientes RADIUS por grupo en NPS, cada punto de acceso en el grupo debe tener una dirección IP desde el mismo intervalo de direcciones IP.
+- **Inalámbrica de la dirección IP PA \(estático\)**. En cada AP inalámbrico, configure una única dirección IP estática. Si la subred es atendida por un servidor DHCP, asegúrese de que todas las direcciones IP PA se encuentran dentro de un intervalo de exclusión de DHCP para que el servidor DHCP no vuelva a emitir la misma dirección IP a otro equipo o dispositivo. Los intervalos de exclusión se documentan en el procedimiento "para crear y activar un nuevo ámbito DHCP" en el [Guía de red principal](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide). Si va a configurar puntos de acceso como clientes RADIUS por grupo en NPS, cada punto de acceso en el grupo debe tener una dirección IP desde el mismo intervalo de direcciones IP.
 
-- **El nombre DNS**. Algunos puntos de acceso inalámbricos pueden configurarse con un nombre DNS. Configurar cada punto de acceso inalámbrico con un nombre único. Por ejemplo, si tienes un puntos de acceso inalámbricos implementados en un edificio multi\ historia, podría denominar primero tres puntos de acceso inalámbricos se implementan en el tercer suelo AP3\-01, AP3\-02 y AP3\-03.
+- **Nombre DNS**. Algunos puntos de acceso inalámbricos pueden configurarse con un nombre DNS. Configure cada AP inalámbrico con un nombre único. Por ejemplo, si tiene un AP inalámbricos implementados en un multi\-historia edificio, podría denominar los tres primeros AP inalámbricos que se implementan en el tercer piso AP3\-01, AP3\-02 y AP3\-03.
 
-- **Máscara de subred de punto de acceso inalámbrica**. Configurar la máscara para designar qué parte de la dirección IP dirección es el identificador de red y qué parte de la dirección IP del host.
+- **Máscara de subred de AP inalámbrica**. Configurar la máscara para designar qué parte de la dirección IP dirección es el identificador de red y qué parte de la dirección IP es el host.
 
-- **Servicio DHCP AP**. Si el punto de acceso inalámbrico tiene un servicio DHCP built\, deshabilitarlo.
+- **Servicio DHCP AP**. Si tu AP inalámbrico tiene integradas\-en el servicio DHCP, deshabilitarla.
 
-- **Secreto compartido**. Usa un único radio la clave compartida para cada punto de acceso inalámbrico, a menos que vas a configurar a los clientes de RADIUS NPS en grupos - en qué circunstancia debe configurar todos los puntos de acceso en el grupo con el mismo secreto compartido. Secretos compartidos deben ser una secuencia aleatoria de al menos 22 caracteres, con las mayúsculas y minúsculas, números y signos de puntuación. Para garantizar la selección aleatoria, puedes usar un programa de generación de carácter aleatorias para crear tus secretos compartidos. Se recomienda que registre el secreto compartido para cada punto de acceso inalámbrico y guardarla en una ubicación segura, como una oficina segura. Cuando se configura clientes RADIUS en la consola NPS creará una versión virtual de cada punto de acceso. El secreto compartido que se configura en cada punto de acceso virtual en NPS debe coincidir con la clave secreta compartida en el punto de acceso real, físico.
+- **Secreto compartido**. Usar un radio único compartido secreto cada AP inalámbrico, a menos que se va a configurar a clientes RADIUS NPS en grupos - en qué circunstancias deben configurar todos los puntos de acceso en el grupo con el mismo secreto compartido. Secretos compartidos deben ser una secuencia aleatoria de al menos de 22 caracteres, con las mayúsculas y minúsculas, números y signos de puntuación. Para asegurarse de aleatoriedad, puede usar un programa de generación de caracteres aleatorios para crear los secretos compartidos. Se recomienda que registre el secreto compartido para cada AP inalámbrico y almacenarlo en una ubicación segura, como una oficina segura. Al configurar clientes RADIUS en la consola de NPS creará una versión virtual de cada punto de acceso. El secreto compartido que se configura en cada punto de acceso virtual en NPS debe coincidir con el secreto compartido en el punto de acceso real, físico.
 
-- **Dirección IP del servidor RADIUS**. Escribe la dirección IP del servidor NPS que quieres usar para autenticar y autorizar solicitudes de conexión a este punto de acceso.
+- **Dirección IP del servidor RADIUS**. Escriba la dirección IP de NPS que desea usar para autenticar y autorizar las solicitudes de conexión a este punto de acceso.
 
-- **UDP port\(s\)**. De manera predeterminada, NPS usa los puertos UDP 1812 y 1645 para mensajes de autenticación RADIUS y puertos UDP 1813 y 1646 para los mensajes RADIUS. Se recomienda que no cambia la configuración predeterminada de puertos UDP de RADIUS.
+- **El puerto UDP\(s\)**. De forma predeterminada, NPS usa los puertos UDP 1812 y 1645 para los mensajes de autenticación RADIUS y los puertos UDP 1813 y 1646 para los mensajes de cuentas RADIUS. Se recomienda que no cambie la configuración de puertos UDP de RADIUS de forma predeterminada.
 
-- **VSA**. Algunos puntos de acceso inalámbricos requieren atributos específicos vendor\ \(VSAs\) para proporcionar la funcionalidad de punto de acceso inalámbrica completo.
+- **Los VSA**. Algunos puntos de acceso inalámbricos requieren proveedor\-atributos específicos \(VSA\) para proporcionar funcionalidad de AP inalámbrica completa.
 
-- **Filtrado de DHCP**. Configurar puntos de acceso inalámbricos para bloquear a los clientes inalámbricos envíe paquetes IP de puerto UDP 68a la red. Consulta la documentación de su punto de acceso inalámbrico configurar el filtrado de DHCP.
+- **Filtros DHCP**. Configurar puntos de acceso inalámbricos para bloquear a clientes inalámbricos en el envío de paquetes IP del puerto UDP 68 a la red. Consulte la documentación de tu AP inalámbrico configurar el filtrado de DHCP.
 
-- **Filtrado de DNS**. Configurar puntos de acceso inalámbricos para bloquear a los clientes inalámbricos envíe paquetes IP de puerto TCP o UDP 53a la red. Consulta la documentación de su punto de acceso inalámbrico configurar el filtrado de DNS.
+- **Filtrado de DNS**. Configurar puntos de acceso inalámbricos para bloquear a clientes inalámbricos en el envío de paquetes IP del puerto TCP o UDP 53 a la red. Consulte la documentación de tu AP inalámbrico configurar el filtrado de DNS.
 
-## <a name="planning-wireless-client-configuration-and-access"></a>Planeación de acceso y la configuración del cliente inalámbrico
+## <a name="planning-wireless-client-configuration-and-access"></a>Planeación de acceso y la configuración de cliente inalámbrico
 
-Al planear la implementación de 802.1X\-inalámbrica acceso autenticado, debes tener en cuenta varios factores client\ específicos:
+Al planear la implementación de 802.1X\-autentica el acceso inalámbrico, debe tener en cuenta varios cliente\-determinados factores:
 
-- **Planeación de soporte para estándares de varios**.
+- **Planear la compatibilidad con varios estándares**.
 
-    Determinar si los equipos inalámbricos todos utilizan la misma versión de Windows o si son una mezcla de equipos que ejecutan distintos sistemas operativos. Si son diferentes, asegúrate de que comprenden las diferencias en los estándares compatibles con los sistemas operativos.
+    Determinar si los equipos inalámbricos todos usan la misma versión de Windows o si son una combinación de los equipos que ejecutan sistemas operativos diferentes. Si son diferentes, asegúrese de que comprende las diferencias en los estándares compatibles con los sistemas operativos.
 
-    Determinar si todos los adaptadores de red inalámbrica en todos los equipos cliente inalámbrico compatible con los mismos estándares inalámbricos, o si necesitas admitir distintos estándares. Por ejemplo, determinar si algunos controladores de hardware de adaptador de red compatibles con WPA2\ Enterprise y AES, mientras que otros admiten solo TKIP y WPA\ de empresa.
+    Determine si todos los adaptadores de red inalámbrica en todos los equipos cliente inalámbricos compatibles con los mismos estándares inalámbricos, o si necesita admitir diversos estándares. Por ejemplo, determinar si algunos controladores de hardware del adaptador de red compatibles con WPA2\-Enterprise y AES, mientras que otros admiten solo WPA\-Enterprise y TKIP.
 
-- **Modo de autenticación de cliente planeación**. Modos de autenticación definen cómo los clientes de Windows procesan las credenciales de dominio. Puedes seleccionar entre los modos de autenticación de tres red siguientes en las directivas de red inalámbrica.  
+- **Modo de autenticación de cliente planeamiento**. Modos de autenticación definen cómo los clientes de Windows procesan las credenciales de dominio. Puede seleccionar desde los siguientes modos de autenticación de tres red en las directivas de red inalámbrica.  
 
-    1. **Autenticación del usuario re\**. Este modo se especifica que la autenticación siempre se realiza mediante el uso de credenciales de seguridad basadas en el estado actual del equipo. Cuando no los usuarios inician sesión el equipo, la autenticación se realiza mediante las credenciales del equipo. Cuando un usuario haya iniciado sesión el equipo, la autenticación se realiza siempre con las credenciales de usuario.  
+    1. **Usuario re\-autenticación**. Este modo, se especifica que la autenticación siempre se realiza mediante las credenciales de seguridad según el estado actual del equipo. Cuando no los usuarios inician sesión el equipo, la autenticación se realiza utilizando las credenciales del equipo. Cuando un usuario haya iniciado sesión en el equipo, la autenticación se realiza siempre con las credenciales de usuario.  
 
-    2. **Equipo solo**. Equipo solo modo especifica que la autenticación se realiza siempre usando solamente las credenciales del equipo.  
+    2. **Solo equipo**. Equipo solo modo especifica que la autenticación se realiza siempre utilizando sólo las credenciales del equipo.  
 
-    3.  **Autenticación de usuario**. Modo de autenticación de usuario especifica que la autenticación solo se realiza cuando el usuario haya iniciado sesión en el equipo. Cuando no hay ningún usuario que inició sesión en el equipo, no se realizan intentos de autenticación.  
+    3.  **Autenticación de usuario**. Modo de autenticación de usuario especifica que la autenticación se realiza solo cuando el usuario haya iniciado sesión en el equipo. Cuando no hay ningún usuario ha iniciado sesión el equipo, no se realizan los intentos de autenticación.  
 
-- **Planeación restricciones inalámbricas**. Determinar si desea proporcionar todos los usuarios inalámbricos con el mismo nivel de acceso a la red inalámbrica, o si quieres restringir el acceso de algunos de los usuarios inalámbricos. Puedes aplicar restricciones en NPS frente a determinados grupos de usuarios inalámbricos.  Por ejemplo, puedes definir específico días y horas que determinados grupos se permiten el acceso a la red inalámbrica.  
+- **Planeación restricciones inalámbricas**. Determine si desea proporcionar a todos los usuarios inalámbricos con el mismo nivel de acceso a la red inalámbrica, o si desea restringir el acceso para algunos de los usuarios inalámbricos. Puede aplicar las restricciones en NPS en grupos específicos de usuarios de telefonía móvil.  Por ejemplo, puede definir específico días y horas que ciertos grupos tienen permiso de acceso a la red inalámbrica.  
 
-- **Planeación de métodos para agregar nuevos equipos inalámbricos**. Para equipos compatibles con wireless\ que están unidos al dominio antes de implementar la red inalámbrica, si el equipo está conectado a un segmento de la red por cable que no está protegido con 802.1X, las opciones de configuración inalámbrica se aplican automáticamente después de configurar la red inalámbrica \ (IEEE 802.11\) directivas en el controlador de dominio y después se actualiza la directiva de grupo en el cliente inalámbrico.  
+- **Planeación de métodos para agregar nuevos equipos inalámbricos**. Para conexiones inalámbricas\-compatibles con equipos que están unidos al dominio antes de implementar una red inalámbrica, si el equipo está conectado a un segmento de la red con cable que no está protegido con 802.1X, los valores de configuración inalámbrica son se aplica automáticamente después de configurar la red inalámbrica \(IEEE 802.11\) directivas en el controlador de dominio y después se actualiza la directiva de grupo en el cliente inalámbrico.  
 
-    Para equipos que ya no unidos a tu dominio, sin embargo, debes planear un método para aplicar la configuración que sea necesaria para 802.1X\-acceso autenticado. Por ejemplo, determinar si va a unir el equipo al dominio mediante uno de los siguientes métodos.
+    Para los equipos que ya no están combinados a su dominio, sin embargo, debe planear un método para aplicar la configuración que son necesaria para 802.1X\-acceso autenticado. Por ejemplo, determine si desea unir el equipo al dominio mediante uno de los métodos siguientes.
 
-    1.  Conecta el equipo a un segmento de la red por cable que no está protegido con 802.1X, a continuación, unir el equipo al dominio.
+    1.  Conectar el equipo a un segmento de la red con cable que no está protegido con 802.1X y, a continuación, unir el equipo al dominio.
 
-    2.  Proporcionar a los usuarios inalámbricos con los pasos y la configuración que necesitan para agregar su propio perfil inalámbrico de arranque que les permite unir el equipo al dominio.
+    2.  Proporcionar a los usuarios inalámbricos con los pasos y la configuración que necesitan para agregar su propio perfil inalámbrico de bootstrap, lo que permite unir el equipo al dominio.
 
-    3.  Asignar personal de TI a unirse a los clientes inalámbricos al dominio.
+    3.  Asignar personal de TI para los clientes inalámbricos de unir al dominio.
 
-### <a name="planning-support-for-multiple-standards"></a>Planeación de soporte para estándares de varios
+### <a name="planning-support-for-multiple-standards"></a>Planear la compatibilidad con varios estándares
 
-La red inalámbrica \ (IEEE 802.11\) extensión de directivas de la directiva de grupo proporciona una amplia gama de opciones de configuración para admitir una variedad de opciones de implementación.
+La red inalámbrica \(IEEE 802.11\) extensión de directivas en la directiva de grupo proporciona una amplia gama de opciones de configuración para admitir una variedad de opciones de implementación.
 
-Puedes implementar los puntos de acceso inalámbricos que están configurados con los estándares que quieres admitir y, a continuación, configurar varios perfiles inalámbricos en la red inalámbrica \ (IEEE 802.11\) las directivas, con cada perfil de especificar un conjunto de estándares que necesitas.
+Puede implementar AP inalámbricos que se configura con los estándares que desea admitir y, a continuación, configure varios perfiles inalámbricos en la red inalámbrica \(IEEE 802.11\) directivas, con cada perfil especifique un conjunto de estándares que requieren.
 
-Por ejemplo, si dispone de la red inalámbricos equipos que admiten WPA2\ Enterprise y AES, otros equipos que admiten WPA\ Enterprise y AES y otros equipos que admitan solo WPA\ Enterprise y TKIP, debes determinar si quieres:
+Por ejemplo, si la red tiene equipos inalámbricos compatibles con WPA2\-Enterprise y AES, otros equipos que son compatibles con WPA\-Enterprise y AES y otros equipos que son compatibles con WPA solo\-Enterprise y TKIP, debe Determine si desea:
 
-- Configurar un único perfil para admitir todos los equipos inalámbricos mediante el método de cifrado más débil que todos los equipos admiten - en este caso, WPA\ Enterprise TKIP.  
-- Configurar dos perfiles para proporcionar la mayor seguridad posible que es compatible con todos los equipos inalámbrico. En este caso debe configurar un perfil que especifica el cifrado más seguro \ (WPA2\ Enterprise y AES\) y un perfil que usa el cifrado WPA\ Enterprise y TKIP más débil. En este ejemplo, es esencial que realices el perfil que usa AES más altos en el orden de preferencia y WPA2\ de empresa. Los equipos que no son capaces de utilizar WPA2\ Enterprise y AES omitir en el perfil siguiente en el orden de preferencia y procesar el perfil que especifica WPA\ Enterprise y TKIP automáticamente.
+- Configurar un perfil único para admitir todos los equipos inalámbricos mediante el método de cifrado más débil que todos los equipos de soporte técnico: en este caso, WPA\-Enterprise y TKIP.  
+- Configurar dos perfiles para ofrecer la máxima seguridad posible que sea compatible con todos los equipos inalámbricos. En este caso podría configurar un perfil que especifica el cifrado más seguro \(WPA2\-Enterprise y AES\)y un perfil que usa la más débil WPA\-Enterprise y TKIP cifrado. En este ejemplo, es esencial que colocar el perfil que use WPA2\-Enterprise y AES más alto en el orden de preferencia. Los equipos que no son capaces de usar WPA2\-Enterprise y AES se omita al siguiente perfil en el orden de preferencia y procesar automáticamente el perfil que especifica WPA\-Enterprise y TKIP.
 
 > [!IMPORTANT]
-> Debes colocar el perfil con los estándares más seguros superior en la lista ordenada de perfiles, porque la conexión de los equipos usa el primer perfil que son capaces de usar.
+> Debe colocar el perfil con los estándares más seguros superior en la lista ordenada de perfiles, como conexión de equipos utiliza el primer perfil que son capaces de usar.
 
 ### <a name="planning-restricted-access-to-the-wireless-network"></a>Planeación de acceso restringido a la red inalámbrica
 
-En muchos casos, es posible que quieres proporcionar a los usuarios inalámbricos con distintos niveles de acceso a la red inalámbrica. Por ejemplo, es posible que desee permitir el acceso sin restricciones a los usuarios, las horas del día, todos los días de la semana. Para otros usuarios, es posible que solo quieres permitir el acceso durante las horas normales, lunes al viernes y denegar el acceso en el sábado y el domingo.
+En muchos casos, puede proporcionar a los usuarios inalámbricos con diferentes niveles de acceso a la red inalámbrica. Por ejemplo, es posible que desee permitir el acceso sin restricciones a los usuarios, las horas del día, cada día de la semana. Para otros usuarios, es posible que solo desea permitir el acceso durante las principales horas, de lunes al viernes y denegar el acceso en el sábado y el domingo.
 
-Esta guía brinda instrucciones para crear un entorno de acceso que coloca todos los usuarios inalámbricos en un grupo comunes acceso a recursos inalámbricos. Puedes crear un grupo de seguridad de los usuarios inalámbricos en los equipos y usuarios de Active Directory en snap\ y, a continuación, hacer que todos los usuarios que quieres conceder acceso inalámbrico un miembro de ese grupo.
+Esta guía proporciona instrucciones para crear un entorno de acceso que coloca todos los usuarios inalámbricos en un grupo de acceso común a los recursos para servicios inalámbricos. Crear un grupo de seguridad de usuarios de tecnología inalámbrica en los usuarios de Active Directory y ajustar los equipos\-en y, a continuación, realizar todos los usuarios para los que desea conceder acceso inalámbrico a un miembro de ese grupo.
 
-Al configurar las directivas de red NPS, especificar el grupo de seguridad de los usuarios inalámbricos como el objeto que NPS procesa al determinar la autorización.
+Al configurar las directivas de red NPS, especifique el grupo de seguridad usuarios inalámbricos como el objeto que NPS procesa la hora de determinar la autorización.
 
-Sin embargo, si la implementación requiere compatibilidad con varios niveles de acceso, necesitas solo hacer lo siguiente:  
+Sin embargo, si su implementación requiere compatibilidad con distintos niveles de acceso sólo necesita lo siguiente:  
 
-1. Crea más de un grupo de seguridad de los usuarios inalámbrica para crear grupos de seguridad adicional de inalámbrica en equipos y usuarios de Active Directory. Por ejemplo, puedes crear un grupo que contiene los usuarios que tienen acceso completo, un grupo para aquellos que solo tengan acceso durante el horario de trabajo y otros grupos que cumplan con otros criterios que coincidan con los requisitos.
+1. Crear más de un grupo de seguridad inalámbrica de usuarios para crear grupos de seguridad inalámbrica adicionales en equipos y usuarios de Active Directory. Por ejemplo, puede crear un grupo que contenga los usuarios que tienen acceso completo, un grupo para los usuarios que solo tengan acceso durante el horario de trabajo y otros grupos que se ajusten a los otros criterios que se ajuste a sus requisitos.
 
-2. Agregar usuarios a los grupos de seguridad apropiados que creaste.
+2. Agregar usuarios a los grupos de seguridad adecuado que ha creado.
 
-3. Configurar las directivas de red NPS adicionales para cada grupo de seguridad inalámbrica adicional y configurar las directivas para aplicar las condiciones y restricciones que requieren para cada grupo.
+3. Configurar directivas de red NPS adicionales para cada grupo de seguridad inalámbrica adicional y configurar las directivas para aplicar las condiciones y restricciones que requieren para cada grupo.
 
-### <a name="planning-methods-for-adding-new-wireless-computers"></a>Planeación de métodos para agregar nuevos equipos inalámbricos
+### <a name="planning-methods-for-adding-new-wireless-computers"></a>Métodos de planeamiento para agregar nuevos equipos inalámbricos
 
-El método preferido para unirte a equipos inalámbricos nuevos al dominio y, a continuación, inicie sesión en el dominio es mediante una conexión a un segmento de la red LAN que tiene acceso a controladores de dominio y no está protegido por una autenticación 802.1X conmutador Ethernet por cable.
+Es el método preferido para unir equipos inalámbricos nuevo para el dominio y, a continuación, inicie sesión en el dominio mediante el uso de una conexión a un segmento de la LAN que tiene acceso a los controladores de dominio y no está protegido por un conmutador Ethernet de autenticación 802.1X con cable.
 
-En algunos casos, sin embargo, no sería práctico usar una conexión por cable para unirte a equipos al dominio, o bien, un usuario puede usar una conexión por cable para su primer inicio de sesión mediante el uso de equipos que ya están unidos al dominio.
+En algunos casos, sin embargo, no sería práctico utilizar una conexión con cable para unir equipos al dominio, o bien, para un usuario usar una conexión con cable para su primer inicio de sesión mediante el uso de los equipos que ya se ha unido al dominio.
 
-Para unir un equipo al dominio mediante una conexión inalámbrica o para los usuarios iniciar sesión en el dominio de la primera vez mediante un equipo unido a domain\ y una conexión inalámbrica, los clientes inalámbricos primero deben establecer una conexión a la red inalámbrica en un segmento que tiene acceso a los controladores de dominio de red mediante uno de los siguientes métodos.
+Para unir un equipo al dominio mediante el uso de una conexión inalámbrica o para los usuarios iniciar sesión en el momento de la primera de dominio mediante el uso de un dominio\-equipo unido a un y una conexión inalámbrica, los clientes inalámbricos en primer lugar deben establecer una conexión a la red inalámbrica en un segmento que se tiene acceso a los controladores de dominio de red mediante uno de los métodos siguientes.
 
-1. **Un miembro del personal de TI se une a un equipo inalámbrico al dominio y, a continuación, configura un inicio de sesión único arrancar perfil inalámbrico.** Con este método, un administrador de TI conecta el equipo inalámbrico a la red Ethernet por cable y después une el equipo al dominio. A continuación, el administrador distribuye el equipo al usuario. Cuando el usuario inicie el equipo, las credenciales de dominio especifican manualmente para el proceso de inicio de sesión de usuario se usan para establecer una conexión a la red inalámbrica tanto iniciar sesión en el dominio.  
+1. **Un miembro del personal de TI une un equipo inalámbrico al dominio y, a continuación, configura un inicio de sesión único perfil inalámbrico de bootstrap.** Con este método, un administrador de TI conecta el equipo inalámbrico a la red Ethernet con cable y, a continuación, une el equipo al dominio. A continuación, el administrador distribuye el equipo al usuario. Cuando el usuario arranca el equipo, se usan las credenciales de dominio especificadas de manera manual para el proceso de inicio de sesión de usuario a iniciar sesión en el dominio y establecer una conexión a la red inalámbrica.  
 
-2. **El usuario configura manualmente equipo inalámbrico con perfil inalámbrico de inicio y, a continuación, une al dominio.** Con este método, los usuarios configurar manualmente sus equipos inalámbricas con un perfil inalámbrico arranque siguiendo las instrucciones del Administrador de TI. El perfil inalámbrico arrancar permite a los usuarios establecer una conexión inalámbrica y, a continuación, unir el equipo al dominio. Después de unir el equipo al dominio y reiniciar el equipo, el usuario puede iniciar sesión en el dominio mediante una conexión inalámbrica y sus credenciales de cuenta de dominio.
+2. **El usuario configura de forma manual el equipo inalámbrico con el perfil inalámbrico de bootstrap y, a continuación, une al dominio.** Con este método, los usuarios configurar manualmente sus equipos inalámbricos con un perfil inalámbrico de bootstrap según las instrucciones de un administrador de TI. El perfil inalámbrico de bootstrap permite a los usuarios establecer una conexión inalámbrica y, a continuación, unir el equipo al dominio. Después de unir el equipo al dominio y reiniciar el equipo, el usuario puede iniciar sesión en el dominio mediante una conexión inalámbrica y sus credenciales de cuenta de dominio.
 
-Para implementar acceso inalámbrico, consulta [implementación de acceso inalámbrico](e-wireless-access-deployment.md).
+Para implementar acceso inalámbrico, consulte [implementación de acceso inalámbrico](e-wireless-access-deployment.md).

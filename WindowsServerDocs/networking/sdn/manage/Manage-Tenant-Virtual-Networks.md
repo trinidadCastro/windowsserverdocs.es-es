@@ -1,6 +1,6 @@
 ---
-title: Administrar las redes virtuales inquilino
-description: Este tema es parte de la guía definido redes Software sobre cómo administrar cargas de trabajo de inquilino y redes virtuales en Windows Server 2016.
+title: Administración de redes virtuales de inquilinos
+description: En este tema forma parte de la Guía de redes definidas por Software acerca de cómo administrar las cargas de trabajo de inquilinos y redes virtuales en Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,24 +12,25 @@ ms.topic: article
 ms.assetid: 5905532b-626d-4b35-99a3-72a063e25809
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 05007c3a0aecd086ea3285dee4d6bead09537832
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 078fc880ea324a26b6c94abe1bffeff9feca5847
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59852376"
 ---
-# <a name="manage-tenant-virtual-networks"></a>Administrar las redes virtuales inquilino
+# <a name="manage-tenant-virtual-networks"></a>Administración de redes virtuales de inquilinos
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar los temas de esta sección para administrar el inquilino de redes virtuales de Hyper-V red virtualización después de implementar Software definido redes usando el tema [implementar una infraestructura de red definido de Software mediante scripts](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).  
+Puede usar los temas de esta sección para administrar redes virtuales de inquilinos Hyper-V Network Virtualization después de haber implementado redes definidas por Software mediante el uso del tema [implementar una infraestructura de red definida por Software con scripts](../../sdn/deploy/Deploy-a-Software-Defined-Network-infrastructure-using-scripts.md).  
   
-Esta sección contiene los siguientes temas.  
+Esta sección contiene los temas siguientes.  
   
-- [Descripción del uso de redes virtuales y VLAN](Understanding-Usage-of-Virtual-Networks-and-VLANs.md)  
-- [Usar listas de Control de acceso (ACL) para administrar el flujo de tráfico de red de centros de datos](use-acls-for-traffic-flow.md)  
-- [Crear, eliminar o actualizar el inquilino de redes virtuales](Create,-Delete,-or-Update-Tenant-Virtual-Networks.md)  
-- [Agregar una puerta de enlace Virtual a una red Virtual del inquilino](Add-a-Virtual-Gateway-to-a-Tenant-Virtual-Network.md)
-- [Conectar los extremos de contenedor a una red virtual del inquilino](Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)
+- [Descripción del uso de las redes virtuales y VLAN](Understanding-Usage-of-Virtual-Networks-and-VLANs.md)  
+- [Usar listas de Control de acceso (ACL) para administrar el flujo de tráfico de red del centro de datos](use-acls-for-traffic-flow.md)  
+- [Crear, eliminar o actualizar las redes virtuales de inquilinos](Create,-Delete,-or-Update-Tenant-Virtual-Networks.md)  
+- [Agregar una puerta de enlace Virtual a una red Virtual de inquilino](Add-a-Virtual-Gateway-to-a-Tenant-Virtual-Network.md)
+- [Conectar los puntos de conexión de contenedor a una red virtual de inquilino](Connect-container-endpoints-to-a-Tenant-Virtual-Network.md)
 
 

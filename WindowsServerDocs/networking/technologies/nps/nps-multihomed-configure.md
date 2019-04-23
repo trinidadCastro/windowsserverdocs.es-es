@@ -1,5 +1,5 @@
 ---
-title: Configuración de NPS en un equipo host múltiple
+title: Configurar NPS en un equipo de host múltiple
 description: Este tema proporciona instrucciones sobre cómo configurar un servidor con varios adaptadores de red que se ejecuta el servidor de directivas de red en Windows Server 2016.
 manager: brianlic
 ms.prod: windows-server-threshold
@@ -8,73 +8,74 @@ ms.topic: article
 ms.assetid: d9d9e9ac-4859-4522-89ed-a23092c9e12a
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f80e83a4d79036729b6b442e6362d52fbda12edd
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 55eccf3afc649e84c5b6f5ce7932ed97617ddca9
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59856806"
 ---
-# <a name="configure-nps-on-a-multihomed-computer"></a>Configuración de NPS en un equipo host múltiple
+# <a name="configure-nps-on-a-multihomed-computer"></a>Configurar NPS en un equipo de host múltiple
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para configurar un servidor NPS con varios adaptadores de red.
+Puede utilizar este tema para configurar NPS con varios adaptadores de red.
 
-Cuando usas varios adaptadores de red en un servidor que ejecuta el servidor de directivas de redes (NPS), puedes configurar lo siguiente:
+Cuando se usa varios adaptadores de red en un servidor que ejecuta el servidor de directivas de redes (NPS), puede configurar lo siguiente:
 
-- Los adaptadores de red que no y enviar y recibir tráfico \(RADIUS\) servicio autenticación remota telefónica de usuario.
-- Si en una base de adaptador de red, NPS supervisa el tráfico de radio en el protocolo de Internet versión 4 \(IPv4\), IPv6, o direcciones IPv4 e IPv6.
-- Los números de puerto UDP sobre qué RADIUS tráfico se envía y recibe en función del protocolo \ (IPv4 o IPv6\), cada de adaptador de red.
+- Los adaptadores de red que no y enviar y recibir Remote Authentication Dial-in User Service \(RADIUS\) tráfico.
+- En una base de adaptador de red, si NPS supervisa el tráfico RADIUS en el protocolo de Internet versión 4 \(IPv4\), IPv6 o IPv4 e IPv6.
+- Los números de puerto UDP a través de qué RADIUS tráfico enviado y recibido en un protocolo por \(IPv4 o IPv6\), cada adaptador de red.
 
-De manera predeterminada, NPS escucha el tráfico RADIUS en puertos 1812, 1813, 1645 y 1646 IPv6 e IPv4 para todos los adaptadores de red instalados. Como NPS usa automáticamente todos los adaptadores de red para el tráfico RADIUS, solo deberás especificar los adaptadores de red que quieras que use NPS para RADIUS tráfico cuando quieras impedir que NPS usando un adaptador de red específica.
+De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 para IPv6 e IPv4 para todos los adaptadores de red instalados. Dado que NPS usa automáticamente todos los adaptadores de red para el tráfico RADIUS, solo deberá especificar los adaptadores de red que desea que NPS use para RADIUS cuando desee impedir que NPS use un adaptador de red específico de tráfico.
 
 >[!NOTE]
->Si desinstala IPv4 o IPv6 en un adaptador de red, NPS no supervisa el tráfico RADIUS para el protocolo desinstalado.
+>Si desinstala IPv4 o IPv6 en un adaptador de red, NPS no supervisará el tráfico RADIUS para el protocolo desinstalado.
 
-En un servidor NPS que tiene varios adaptadores de red instalados, es posible que quieras configurar NPS para enviar y recibir tráfico RADIUS solo en los adaptadores que especifique.
+En NPS que tiene varios adaptadores de red instalados, puede configurar NPS para enviar y recibir tráfico RADIUS sólo en los adaptadores que especifique.
 
-Por ejemplo, un adaptador de red instalado en el servidor NPS podría provocar un segmento de red que no contenga clientes RADIUS, mientras que proporciona un segundo adaptador de red NPS con una ruta de acceso de red a la ha configurado los clientes RADIUS. En este escenario, es importante dirigir NPS para que use el segundo adaptador de red para todo el tráfico RADIUS.
+Por ejemplo, un adaptador de red instalado en el NPS podría conducir a un segmento de red que no contiene a clientes RADIUS, mientras que un segundo adaptador de red proporciona a NPS una ruta de acceso de red a sus clientes RADIUS configurados. En este escenario, es importante dirigir NPS para usar el segundo adaptador de red para todo el tráfico RADIUS.
 
-En otro ejemplo, si el servidor NPS tiene tres adaptadores de red instalados, pero solo quieres NPS usar dos de los adaptadores para el tráfico RADIUS, puedes configurar información de puerto para los dos adaptadores. Mediante la exclusión de configuración de puerto para el adaptador de terceros, evita que NPS usando el adaptador para el tráfico RADIUS.
+En otro ejemplo, si el NPS tiene tres adaptadores de red instalados, pero sólo desea que NPS use dos de los adaptadores para el tráfico RADIUS, puede configurar información de puerto para los dos adaptadores. Si se excluye la configuración de puerto para el tercer adaptador, evita que NPS mediante el adaptador para el tráfico RADIUS.
 
-## <a name="using-a-network-adapter"></a>Usar un adaptador de red
+## <a name="using-a-network-adapter"></a>Uso de un adaptador de red
 
-Para configurar NPS para escuchar y enviar el tráfico de radio en un adaptador de red, usa la siguiente sintaxis en el cuadro de diálogo Propiedades del servidor de directivas de red en la consola NPS:
+Para configurar NPS para escuchar y enviar tráfico RADIUS en un adaptador de red, use la sintaxis siguiente en el cuadro de diálogo Propiedades del servidor de directivas de red en la consola de NPS:
 
-- Sintaxis de tráfico IPv4: IPAddress: UDPport, donde IPAddress es la dirección IPv4 que está configurada en el adaptador de red que quieres enviar tráfico RADIUS y UDPport es el número de puerto de radio que quieras usar para el tráfico de contabilidad o autenticación RADIUS.
-- Sintaxis de tráfico IPv6: [IPv6Address]: UDPport, donde la IPv6Address entre corchetes son necesarios, IPv6Address es la dirección IPv6 que está configurada en el adaptador de red que quieres enviar tráfico RADIUS y UDPport es el número de puerto de radio que quieras usar para el tráfico de contabilidad o autenticación RADIUS.
+- Sintaxis de tráfico de IPv4: DirecciónIP: puertoUDP, donde direcciónIP es la dirección IPv4 que está configurada en el adaptador de red en la que desea enviar tráfico RADIUS y puertoUDP es el número de puerto RADIUS que desea usar para el tráfico de administración de cuentas y autenticación RADIUS.
+- Sintaxis de tráfico de IPv6: [IPv6Address]: PuertoUDP, donde son necesarios los corchetes que encierran IPv6Address, IPv6Address es la dirección IPv6 que está configurada en el adaptador de red en la que desea enviar tráfico RADIUS y puertoUDP es el número de puerto RADIUS que desea usar para la autenticación de RADIUS o tráfico de cuentas.
 
-Los caracteres siguientes pueden usarse como delimitadores para configurar la dirección IP y puerto UDP:
+Los caracteres siguientes pueden usarse como delimitadores para configurar la dirección IP y la información del puerto UDP:
 
-- Dirección y puerto delimitador: dos puntos (:)
-- El delimitador de puerto: coma (,)
-- Interfaz delimitador: punto y coma (;)
+- Delimitador de dirección/puerto: dos puntos (:)
+- Delimitador de puertos: coma (,)
+- Delimitador de interfaces: punto y coma (;)
 
 ## <a name="configuring-network-access-servers"></a>Configuración de los servidores de acceso de red
 
-Asegúrate de que los servidores de acceso de red están configurados con los mismos números de puerto UDP de radio que configuran en los servidores NPS. Puertos UDP estándar RADIUS definidos en RFC 2865 y 2866 son 1812 para la autenticación y 1813 para cuentas; Sin embargo, algunos servidores de acceso se configuran de forma predeterminada para usar el puerto UDP 1645 para solicitudes de autenticación y el puerto UDP 1646 para las solicitudes de contabilidad.
+Asegúrese de que los servidores de acceso de red están configurados con los mismos números de puerto UDP de RADIUS que configure en sus NPSs. Los puertos UDP estándar de RADIUS definidos en las RFC 2865 y 2866 son 1812 para autenticación y 1813 para cuentas; Sin embargo, algunos servidores de acceso se configuran de forma predeterminada para usar el puerto UDP 1645 para las solicitudes de autenticación y el puerto UDP 1646 para las solicitudes de cuentas.
 
 >[!IMPORTANT]
->Si no usas los números de puerto de radio de forma predeterminada, debes configurar excepciones en el firewall para el equipo local permitir el tráfico de radio en los puertos nuevo. Para obtener más información, consulta [configurar el firewall para el tráfico RADIUS](nps-firewalls-configure.md).
+>Si no usa los números de puerto RADIUS predeterminados, debe configurar las excepciones del firewall para el equipo local permitir el tráfico RADIUS en los nuevos puertos. Para obtener más información, consulte [configurar Firewalls para el tráfico RADIUS](nps-firewalls-configure.md).
 
-## <a name="configure-the-multihomed-nps-server"></a>Configurar el servidor NPS múltiple
+## <a name="configure-the-multihomed-nps"></a>Configurar el NPS de host múltiple
 
-Puedes usar el siguiente procedimiento para configurar el servidor NPS de múltiple.
+Puede usar el procedimiento siguiente para configurar el NPS de host múltiple.
 
-Pertenencia a **administradores de dominio**, o equivalente, es lo mínimo necesario para completar este procedimiento.
+Para completar este procedimiento, se requiere como mínimo la pertenencia a **Admins. del dominio** o equivalente.
 
 ### <a name="to-specify-the-network-adapter-and-udp-ports-that-nps-uses-for-radius-traffic"></a>Para especificar el adaptador de red y puertos UDP que usa NPS para el tráfico RADIUS
 
-1. En el administrador del servidor, haz clic en **herramientas**y, a continuación, haz clic en **el servidor de directivas de red** para abrir la consola NPS.
+1. En el administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de red** para abrir la consola de NPS.
 
-2. Haz clic en **el servidor de directivas de red**y, a continuación, haz clic en **propiedades**.
+2. Haga clic en **servidor de directivas de red**y, a continuación, haga clic en **propiedades**.
 
-3. Haz clic en el **puertos** pestaña y anteponer la dirección IP para el adaptador de red que quieras usar para el tráfico RADIUS a los números de puerto existente. Por ejemplo, si quieres usar la dirección IP 192.168.1.2 puertos y RADIUS 1812 y 1645 para solicitudes de autenticación, cambiar la configuración del puerto de **1812,1645** a **192.168.1.2:1812,1645**. Si la autenticación RADIUS RADIUS puertos UDP y cuentas son diferentes de los valores predeterminados, cambiar la configuración del puerto según corresponda.
+3. Haga clic en el **puertos** pestaña y anteponga la dirección IP del adaptador de red que desea usar para el tráfico RADIUS a los números de puerto existente. Por ejemplo, si desea usar la dirección IP 192.168.1.2 y los puertos RADIUS 1812 y 1645 para las solicitudes de autenticación, cambie la configuración de puerto de **1812,1645** a **192.168.1.2:1812,1645**. Si la autenticación RADIUS y los puertos UDP de cuentas RADIUS son distintos de los valores predeterminados, cambie la configuración de puerto según corresponda.
 
-4. Para usar varias configuraciones de puerto para la autenticación o las solicitudes de cuentas, separe los números de puerto con comas.
+4. Para utilizar varias configuraciones de puerto para la autenticación o las solicitudes de cuentas, separe los números de puerto con comas.
 
-Para obtener más información acerca de los puertos UDP NPS, consulta [configurar información del puerto UDP NPS](nps-udp-ports-configure.md)
+Para obtener más información acerca de los puertos UDP de NPS, consulte [configurar información de puertos UDP de NPS](nps-udp-ports-configure.md)
 
 
-Para obtener más información acerca de NPS, consulta [el servidor de directivas de red](nps-top.md)
+Para obtener más información acerca de NPS, consulte [servidor de directivas de red](nps-top.md)
 

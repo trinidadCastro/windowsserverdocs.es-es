@@ -1,5 +1,5 @@
 ---
-title: "Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 3; configurar Carpetas de trabajo"
+title: 'Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 3; configurar Carpetas de trabajo'
 ms.prod: windows-server-threshold
 ms.technology: storage-work-folders
 ms.topic: article
@@ -9,39 +9,40 @@ author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: 5a43b104-4d02-4d73-a385-da1cfb67e341
 ms.openlocfilehash: 81f30a7a4d50423a68719343fec3032cc6a1602e
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854716"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: Paso 3; configurar Carpetas de trabajo
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 3, configurar carpetas de trabajo
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 En este tema se describe el tercer paso para implementar Carpetas de trabajo con los Servicios de federación de Active Directory (AD FS) y el Proxy de aplicación web. Puedes encontrar el resto de pasos de este proceso en estos temas:  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web (WAP): información general](deploy-work-folders-adfs-overview.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Información general](deploy-work-folders-adfs-overview.md)  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 1; configurar AD FS](deploy-work-folders-adfs-step1.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 1: configuración de AD FS](deploy-work-folders-adfs-step1.md)  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 2; trabajo posterior a la configuración de AD FS](deploy-work-folders-adfs-step2.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 2, trabajo posterior a la configuración de AD FS](deploy-work-folders-adfs-step2.md)  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 4; configurar el Proxy de aplicación web](deploy-work-folders-adfs-step4.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 4: configurar el Proxy de aplicación Web](deploy-work-folders-adfs-step4.md)  
   
--   [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: Paso 5; configurar clientes](deploy-work-folders-adfs-step5.md)  
+-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: El paso 5, configure los clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
 >   Las instrucciones incluidas en esta sección toman como referencia un entorno de Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
 
 Para configurar Carpetas de trabajo, usa los siguientes procedimientos.  
   
-## <a name="pre-installment-work"></a>Trabajo previo a la instalación  
+## <a name="pre-installment-work"></a>Trabajo previo de\-instalación  
 Para instalar Carpetas de trabajo, debes tener un servidor unido al dominio y que ejecute Windows Server 2016. El servidor debe tener una configuración de red válida.  
   
 En el ejemplo de prueba, debes unir el equipo que ejecute Carpetas de trabajo al dominio de Contoso y configurar la interfaz de red tal como se describe en las siguientes secciones. 
 
 ### <a name="set-the-server-ip-address"></a>Establecer la dirección IP del servidor  
-Cambia la dirección IP del servidor a una dirección IP estática. En el ejemplo prueba, usa la clase IP A, que es 192.168.0.170 / máscara de subred: 255.255.0.0 / puerta de enlace predeterminada: 192.168.0.1 / DNS preferido: 192.168.0.150 (es la dirección IP del controlador de dominio). 
+Cambia la dirección IP del servidor a una dirección IP estática. Por ejemplo, prueba, utilice la clase IP A, que es 192.168.0.170 / máscara de subred: 255.255.0.0 / puerta de enlace predeterminada: 192.168.0.1 / preferido DNS: 192.168.0.150 (la dirección IP del controlador de dominio). 
   
 ### <a name="create-the-cname-record-for-work-folders"></a>Crear el registro CNAME de Carpetas de trabajo  
 Para crear el registro CNAME de Carpetas de trabajo, sigue estos pasos:  
@@ -56,7 +57,7 @@ Para crear el registro CNAME de Carpetas de trabajo, sigue estos pasos:
   
 5.  En el campo **Nombre de dominio completo del host de destino**, escribe el nombre de dominio completo (FQDN) del servidor de Carpetas de trabajo. En el ejemplo de prueba, este nombre es **2016-WF.contoso.com**.  
   
-6.  Haz clic en **Aceptar**.  
+6.  Haga clic en **Aceptar**.  
   
 Para realizar estos mismos pasos mediante Windows PowerShell, usa el siguiente comando. El comando debe ejecutarse en el controlador de dominio.  
   
@@ -67,27 +68,27 @@ Add-DnsServerResourceRecord  -ZoneName "contoso.com" -Name workfolders -CName  -
 ### <a name="install-the-ad-fs-certificate"></a>Instalar el certificado de AD FS  
 Para instalar el certificado de AD FS que se creó durante la instalación de AD FS en el almacén de certificados del equipo local, sigue estos pasos:  
   
-1.  Haz clic en **Inicio**y, a continuación, en **Ejecutar**.  
+1.  Haga clic en **Inicio** y, a continuación, en **Ejecutar**.  
   
 2.  Escribe **MMC**.  
   
-3.  En el menú **Archivo**, haz clic en **Agregar o quitar complemento**.  
+3.  En el menú **Archivo**, haga clic en **Agregar o quitar complemento**.  
   
 4.  En la lista **Complementos disponibles**, selecciona **Certificados** y, a continuación, haz clic en **Agregar**. Se iniciará el asistente del complemento de certificados.  
   
-5.  Selecciona **Cuenta de equipo** y, a continuación, haz clic en **Siguiente**.  
+5.  Seleccione **Cuenta de equipo** y, a continuación, haga clic en **Siguiente**.  
   
 6.  Selecciona **Equipo local: (el equipo en el que se ejecuta la consola)** y haz clic en **Finalizar**.  
   
-7.  Haz clic en **Aceptar**.  
+7.  Haga clic en **Aceptar**.  
   
-8.  Expande la carpeta **Console Root\Certificates\(Equipo local)\Personal\Certificates**..  
+8.  Expande la carpeta **Raíz de consola\Certificados\(equipo local) \Personal\Certificados**.  
   
 9. Haz clic con el botón derecho en **Certificados**, haz clic en **Todas las tareas** y, a continuación, haz clic en **Importar**.  
   
 10. Busca la carpeta que contiene el certificado de AD FS y sigue las instrucciones del asistente para importar el archivo; a continuación, colócalo en el almacén de certificados.
 
-11. Expande la carpeta **Console Root\Certificates\(Equipo local)\Trusted Root Certification Authorities\Certificates**.  
+11. Expande la carpeta **Raíz de consola\Certificados\(equipo local) \Entidades de certificación raíz de confianza\Certificados**.  
   
 12. Haz clic con el botón derecho en **Certificados**, haz clic en **Todas las tareas** y, a continuación, haz clic en **Importar**.  
   
@@ -164,7 +165,7 @@ Para configurar Carpetas de trabajo, sigue estos pasos:
   
 4.  En la página **Ruta de acceso y servidor**, selecciona el servidor donde se crearán los recursos compartidos de sincronización, escribe la ruta de acceso local donde se almacenarán los datos de Carpetas de trabajo y haz clic en **Siguiente**.  
   
-    Si no existe la ruta de acceso, deberás crear una. Haz clic en **Aceptar**.  
+    Si no existe la ruta de acceso, deberás crear una. Haga clic en **Aceptar**.  
   
 5.  En la página **Estructura de carpetas de usuario**, selecciona **Alias del usuario** y, a continuación, haz clic en **Siguiente**.  
   
@@ -188,7 +189,7 @@ Para finalizar la configuración de Carpetas de trabajo, sigue estos pasos adici
 ### <a name="bind-the-certificate"></a>Enlazar el certificado  
 Carpetas de trabajo se comunica solo a través de SSL y debe tener el certificado autofirmado que creaste anteriormente (o el certificado que emitió la entidad de certificación) enlazado al puerto.  
   
-Existen dos métodos que puedes usar para enlazar el certificado al puerto mediante Windows PowerShell: cmdlets de IIS y netsh.  
+Hay dos métodos que puede usar para enlazar el certificado al puerto a través de Windows PowerShell: Cmdlets IIS y netsh.  
   
 #### <a name="bind-the-certificate-by-using-netsh"></a>Enlazar el certificado mediante netsh  
 Para usar la utilidad de scripting de línea de comandos netsh en Windows PowerShell, debes canalizar el comando netsh. El siguiente script de ejemplo busca el certificado con el firmante **workfolders.contoso.com** y lo enlaza al puerto 443 mediante netsh:  
@@ -198,7 +199,7 @@ $subject = "workfolders.contoso.com"
 Try  
 {  
 #In case there are multiple certificates with the same subject, get the latest version   
-$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match $subject} | sort $_.NotAfter -Descending | select -first 1    
+$cert = Get-ChildItem CERT:\LocalMachine\My |where {$_.Subject -match $subject} | sort $_.NotAfter -Descending | select -first 1    
 $thumbprint = $cert.Thumbprint  
 $Command = "http add sslcert ipport=0.0.0.0:443 certhash=$thumbprint appid={CE66697B-3AA0-49D1-BDBD-A25C8359FD5D} certstorename=MY"  
 $Command | netsh  
@@ -247,7 +248,7 @@ Para configurar Carpetas de trabajo y así poder usar AD FS para la autenticaci�
   
 3.  Haz clic con el botón derecho en el nombre del servidor y haz clic en **Configuración de Carpetas de trabajo**.  
   
-4.  En la ventana **Configuración de Carpetas de trabajo**, selecciona **Servicios de federación de Active Directory** y escribe la dirección URL del Servicio de federación. Haz clic en **Aplicar**.  
+4.  En la ventana **Configuración de Carpetas de trabajo**, selecciona **Servicios de federación de Active Directory** y escribe la dirección URL del Servicio de federación. Haga clic en **Aplicar**.  
   
     En el ejemplo de prueba, la dirección URL es **https://blueadfs.contoso.com**.  
   
@@ -270,11 +271,11 @@ Debes exportar el certificado autofirmado de Carpetas de trabajo, para que despu
   
 -   El cliente de Windows que no está unido a un dominio  
   
-Para exportar el certificado, sigue los mismos pasos que usaste para exportar el certificado de AD FS, tal como se describe en [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 2; trabajo posterior a la configuración de AD FS](deploy-work-folders-adfs-step2.md) y Exportar el certificado de AD FS.  
+Para exportar el certificado, siga los mismos pasos utilizados para exportar el certificado de AD FS en versiones anteriores, como se describe en [implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 2, trabajo posterior a la configuración de AD FS](deploy-work-folders-adfs-step2.md), exporte el certificado de AD FS.  
   
-Siguiente paso: [Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 4; configurar el Proxy de aplicación web](deploy-work-folders-adfs-step4.md)  
+Paso siguiente: [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 4: configurar el Proxy de aplicación Web](deploy-work-folders-adfs-step4.md)  
   
-## <a name="see-also"></a>Consulta también  
-[Introducción a Carpetas de trabajo](Work-Folders-Overview.md)  
+## <a name="see-also"></a>Vea también  
+[Introducción a las carpetas de trabajo](Work-Folders-Overview.md)  
   
 

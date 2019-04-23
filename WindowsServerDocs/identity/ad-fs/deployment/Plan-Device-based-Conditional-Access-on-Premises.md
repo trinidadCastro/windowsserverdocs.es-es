@@ -1,7 +1,7 @@
 ---
 ms.assetid: c5eb3fa0-550c-4a2f-a0bc-698b690c4199
-title: Planear el acceso condicional basadas en el dispositivo local
-description: 
+title: Planeación del acceso condicional basado en dispositivos a nivel local
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,97 +9,98 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6303bba92ce4f4f99ae8e5095060b06885e427d6
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: d878134824ea14a511ad59520d8f6522a14693b3
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854246"
 ---
-# <a name="plan-device-based-conditional-access-on-premises"></a>Planear el acceso condicional basadas en el dispositivo local
+# <a name="plan-device-based-conditional-access-on-premises"></a>Planeación del acceso condicional basado en dispositivos a nivel local
 
 >Se aplica a: Windows Server 2016
 
-Este documento describen las directivas de acceso condicional basadas en dispositivos en un escenario híbrido donde los directorios locales están conectados a Azure AD con Azure AD Connect.     
+Este documento describe las directivas de acceso condicional basadas en dispositivos en un escenario híbrido que se conectan los directorios locales a Azure AD con Azure AD Connect.     
 
-## <a name="ad-fs-and-hybrid-conditional-access"></a>AD FS y híbrido acceso condicional  
+## <a name="ad-fs-and-hybrid-conditional-access"></a>Acceso condicional de AD FS y híbridas  
 
-AD FS proporciona el componente de local en de directivas de acceso condicional en un escenario de híbrido.  Cuando te registras dispositivos con Azure AD para acceso condicional a recursos de nube, el dispositivo de Azure AD Connect reescribir funcionalidad hace que sea información de registro de dispositivo disponible en locales para consumir y aplicar las directivas de AD FS.  De esta forma, tienes un enfoque coherente para acceder a las directivas de control para ambos en locales y en la nube.  
+AD FS proporciona el componente de entorno local en directivas de acceso condicional de un escenario híbrido.  Al registrar los dispositivos con Azure AD para el acceso condicional a los recursos en la nube, el dispositivo de Azure AD Connect escritura diferida de funcionalidad hace que información de registro del dispositivo esté disponible en el entorno local para consumir y aplicar las directivas de AD FS.  De este modo, tiene un enfoque coherente para tener acceso a las directivas de control para ambos en el entorno local y los recursos de nube.  
 
 ![Acceso condicional](media/Plan-Device-based-Conditional-Access-on-Premises/ADFS_ITPRO4.png)  
 
 ### <a name="types-of-registered-devices"></a>Tipos de dispositivos registrados  
-Existen tres tipos de dispositivos registrados, que se representan como objetos de dispositivo en Azure AD y puede usarse para acceso condicional con AD FS local, así como.  
+Hay tres tipos de dispositivos registrados, todos los cuales se representan como objetos de dispositivo en Azure AD y se pueden usar para el acceso condicional con AD FS como local.  
 
-| |Agregar el trabajo o colegio cuenta  |Unión a Azure AD  |Combinación de Domian de Windows 10    
+| |Agregar trabajo o educativa  |Unión a Azure AD  |Combinación Domian Windows 10    
 | --- | --- |--- | --- |
-|Descripción    |  Los usuarios agregar su trabajo o centro docente cuenta para sus dispositivos BYOD de forma interactiva.  **Nota:** Agregar cuenta profesional o educativa es la sustitución de al área de trabajo en Windows 8 y 8.1       | Los usuarios unir el dispositivo de trabajo de Windows 10 a Azure AD.|Dispositivos Unidos a un dominio de Windows 10 automáticamente registra con Azure AD.|           
-|Cómo los usuarios iniciar sesión en el dispositivo     |  No inicia sesión en Windows como la cuenta profesional o educativa.  Inicia sesión con una cuenta de Microsoft.       |   Inicia sesión en Windows como la cuenta (profesional o educativa) que registra el dispositivo.      |     Inicia sesión con la cuenta de AD.|      
-|¿Cómo se administran dispositivos    |      Directivas de MDM (con la inscripción de Intune adicional)   | Directivas de MDM (con la inscripción de Intune adicional)        |   Directiva de grupo, System Center Configuration Manager (SCCM) |
-|Tipo de confianza de AD Azure|Área de trabajo unido|Azure AD unido|Unido a un dominio  |     
-|Ubicación de la configuración de W10    | Configuración > cuentas > tu cuenta > Agregar una cuenta profesional o educativa        | Configuración > sistema > acerca de > unirte a Azure AD       |   Configuración > sistema > acerca de > unirse a un dominio |       
-|¿También disponible para dispositivos iOS y Android?   |    Sí     |       No  |   No   |   
+|Descripción    |  Los usuarios agregar su trabajo o educativa a su dispositivo BYOD interactivamente.  **Nota:** Agregar cuenta profesional o educativa es el reemplazo de Workplace Join en Windows 8/8.1       | Los usuarios inscribir sus dispositivos de trabajo de Windows 10 en Azure AD.|Dispositivos de Windows 10 Unidos a un dominio se registrarán automáticamente con Azure AD.|           
+|Cómo los usuarios iniciar sesión en el dispositivo     |  Sin inicio de sesión de Windows como la cuenta profesional o educativa.  Inicio de sesión con una cuenta Microsoft.       |   Inicie sesión en Windows como la cuenta (profesional o educativa) que registra el dispositivo.      |     Inicio de sesión con cuenta de AD.|      
+|¿Cómo se administran los dispositivos    |      Directivas de MDM (con la inscripción de Intune adicional)   | Directivas de MDM (con la inscripción de Intune adicional)        |   Directiva de grupo, System Center Configuration Manager (SCCM) |
+|Tipo de confianza de AD de Azure|Espacio de trabajo unido|Unidos a Azure AD|Pertenencia a un dominio  |     
+|Ubicación de la configuración con 10    | Configuración > cuentas > su cuenta > Agregar una cuenta profesional o educativa        | Configuración > sistema > acerca de > unirse a Azure AD       |   Configuración > sistema > acerca de > unirse a un dominio |       
+|¿También está disponible para dispositivos iOS y Android?   |    Sí     |       No  |   No   |   
 
   
 
-Para obtener más información sobre las diferentes formas para registrar los dispositivos, consulta también:  
-* [Uso de dispositivos de Windows 10 en tu empresa](https://azure.microsoft.com/en-us/documentation/articles/active-directory-azureadjoin-windows10-devices/)  
-* [Configuración de dispositivos de Windows 10 para el trabajo](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
-[Unir Windows 10 Mobile a Azure Active Directory](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)  
+Para obtener más información sobre las diferentes maneras para registrar dispositivos, vea también:  
+* [Uso de dispositivos de Windows 10 en el área de trabajo](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices/)  
+* [Configuración de dispositivos Windows 10 para el trabajo](https://jairocadena.com/2016/01/18/setting-up-windows-10-devices-for-work-domain-join-azure-ad-join-and-add-work-or-school-account/)  
+[Únase a Windows 10 Mobile a Azure Active Directory](https://technet.microsoft.com/itpro/windows/manage/join-windows-10-mobile-to-azure-active-directory)  
 
-### <a name="how-windows-10-user-and-device-sign-on-is-different-from-previous-versions"></a>Cómo los usuarios de Windows 10 y dispositivo de inicio de sesión es diferente de versiones anteriores  
-Para Windows 10 y hay algunos nuevos aspectos de registro del dispositivo y la autenticación de AD FS 2016 debes conocer (especialmente si estás familiarizado con el registro del dispositivo y "al área de trabajo" en versiones anteriores).  
+### <a name="how-windows-10-user-and-device-sign-on-is-different-from-previous-versions"></a>Cómo Windows 10 usuario y dispositivo de inicio de sesión es diferente de las versiones anteriores  
+Para Windows 10 y AD FS 2016, hay algunos aspectos de autenticación y registro de dispositivo nuevo que debe conocer (especialmente si está muy familiarizado con el registro de dispositivos y "unión" en versiones anteriores).  
 
-En primer lugar, en Windows 10 y AD FS en Windows Server 2016, autenticación y el registro del dispositivo ya no reside únicamente en un X509 certificado de usuario.  Hay un protocolo nuevo y más sólido que proporciona mayor seguridad y una experiencia de usuario más sencilla.  Las principales diferencias son que, para la unión de dominios de Windows 10 y unión a Azure AD, hay un X509 certificado de equipo y una nueva credencial llama a un Imp.  Puedes leer todo sobre ella [aquí](https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/) y [aquí](https://jairocadena.com/2016/02/01/azure-ad-join-what-happens-behind-the-scenes/).  
+En primer lugar, en Windows 10 y AD FS en Windows Server 2016, autenticación y registro de dispositivo ya no se basan únicamente en un X509 certificado de usuario.  Hay un protocolo nuevo y más eficaz que proporciona una mejor seguridad y una experiencia de usuario más sencilla.  Las principales diferencias son que, para la unión de dominios de Windows 10 y Azure AD Join, hay un X509 certificado de equipo y una nueva credencial denominan una PRT.  Puede leer toda la información [aquí](https://jairocadena.com/2016/01/18/how-domain-join-is-different-in-windows-10-with-azure-ad/) y [aquí](https://jairocadena.com/2016/02/01/azure-ad-join-what-happens-behind-the-scenes/).  
 
-En segundo lugar, Windows 10 y AD FS 2016 admiten la autenticación de usuario con Microsoft Passport for Work, que puede leer sobre [aquí](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/) y [aquí](https://azure.microsoft.com/en-us/documentation/articles/active-directory-azureadjoin-passport-deployment/).  
+En segundo lugar, Windows 10 y AD FS 2016 admiten la autenticación de usuario con Microsoft Passport for Work, que puede leer sobre [aquí](https://jairocadena.com/2016/03/09/azure-ad-and-microsoft-passport-for-work-in-windows-10/) y [aquí](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-passport-deployment/).  
 
-AD FS 2016 proporciona un dispositivo sin problemas y SSO basado en Imp y Passport credenciales de usuario.  Siguiendo los pasos de este documento, puedes habilitar estas funcionalidades y verlos a trabajar.  
+AD FS 2016 proporciona SSO basado en PRT y Passport credenciales de usuario y dispositivo sin problemas.  Siguiendo los pasos de este documento, puede habilitar estas funcionalidades y verlos en el trabajo.  
 
 ### <a name="device-access-control-policies"></a>Directivas de Control de acceso de dispositivo  
-Dispositivos pueden usarse en las reglas de control de acceso de AD FS simples, como:  
+Como se pueden usar dispositivos de reglas de control de acceso de AD FS sencillas:  
 
 - permitir el acceso solo desde un dispositivo registrado   
-- requerir la autenticación de factor de multi cuando un dispositivo no está registrado  
+- requerir autenticación multifactor cuando un dispositivo no está registrado  
 
-Estas reglas, a continuación, se pueden combinar con otros factores como la ubicación de acceso de red y autenticación de factor de multi, la creación de directivas de acceso condicional enriquecido, como:  
+Estas reglas, a continuación, se pueden combinar con otros factores como la ubicación de acceso de red y autenticación multifactor, creación de directivas de acceso condicional enriquecido, como:  
 
 
-- requerir la autenticación de factor de multi para dispositivos sin registrar acceso desde fuera de la red corporativa, excepto para los miembros de un determinado grupo o grupos  
+- requerir autenticación multifactor para obtener acceso desde fuera de la red corporativa, excepto para los miembros de un grupo determinado o grupos de dispositivos no registrados  
 
-Con AD FS de 2016, estas directivas pueden configurarse específicamente para requerir un nivel de confianza de dispositivo en particular: cualquier **autenticado**, **administrado**, o **compatible con**.  
+Con AD FS 2016, se pueden configurar estas directivas específicamente para requieren un nivel de confianza de dispositivo en particular: cualquier **autenticado**, **administrada**, o **conforme**.  
 
-Para obtener más información sobre cómo configurar AD FS las directivas de control de acceso, consulta [directivas de control de acceso de AD FS](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md).  
+Para obtener más información sobre la configuración de AD FS directivas de control de acceso, consulte [las directivas de control de acceso en AD FS](../../ad-fs/operations/Access-Control-Policies-in-AD-FS.md).  
 
 #### <a name="authenticated-devices"></a>Dispositivos autenticados  
-Dispositivos autenticados son los dispositivos registrados que no están inscritos en MDM (Intune y terceros 3 MDM para Windows 10, Intune solo para iOS y Android).   
+Dispositivos autenticados son dispositivos registrados que no están inscritos en MDM (Intune y 3ª parte MDMs para Windows 10, Intune solo para iOS y Android).   
 
-Dispositivos autenticados tendrán la **isManaged** AD FS reclamar con valor **FALSE**. (Mientras que los dispositivos que no estén registrados en absoluto carecerá de esta notificación.) Dispositivos autenticados (y todos los dispositivos) tendrá la isKnown AD FS reclamar con valor **TRUE**.  
+Dispositivos autenticados tendrán el **isManaged** de notificaciones de AD FS con valor **FALSE**. (Mientras que los dispositivos que no están registrados en absoluto carecerá de esta notificación.)  Dispositivos autenticados (y todos los dispositivos registrados) tendrá el isKnown AD FS una notificación con un valor **TRUE**.  
 
 #### <a name="managed-devices"></a>Dispositivos administrados:   
 
-Dispositivos administrados son los dispositivos registrados inscritos con MDM.  
+Los dispositivos administrados son dispositivos registrados que están inscritos con MDM.  
 
-Dispositivos administrados tendrá la isManaged AD FS reclamar con valor **TRUE**.  
+Los dispositivos administrados tendrá el isManaged AD FS una notificación con un valor **TRUE**.  
 
-#### <a name="devices-compliant-with-mdm-or-group-policies"></a>Dispositivos compatibles (con directivas de grupo o MDM)  
-Compatible con dispositivos son los dispositivos registrados que no están inscritos solo con MDM pero cumple con las directivas MDM. (Información de cumplimiento se origina con MDM y se escribe en Azure AD).  
+#### <a name="devices-compliant-with-mdm-or-group-policies"></a>Dispositivos compatibles (con MDM o las directivas de grupo)  
+Dispositivos compatibles son los dispositivos registrados que no están inscritos solo con MDM, pero cumplir con las directivas MDM. (Información de cumplimiento se origina con el MDM y se escribe en Azure AD).  
 
-Dispositivos compatibles con tendrá la **isCompliant** AD FS reclamar con valor **TRUE**.    
+Dispositivos compatibles tendrán el **isCompliant** de notificaciones de AD FS con valor **TRUE**.    
 
-Para una lista completa de dispositivo de AD FS 2016 y reclamaciones de acceso condicional, consulta [referencia](#reference).  
+Para obtener una lista completa de dispositivos de AD FS 2016 y notificaciones de acceso condicional, consulte [referencia](#reference).  
 
 
 ## <a name="reference"></a>Referencia  
-#### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>Lista completa de nuevo reclamaciones de 2016 FS y dispositivos de anuncios  
+#### <a name="complete-list-of-new-ad-fs-2016-and-device-claims"></a>Lista completa de nuevas notificaciones de AD FS 2016 y dispositivo  
 
 * https://schemas.microsoft.com/ws/2014/01/identity/claims/anchorclaimtype  
-* http://schemas.xmlsoap.org/ws/2005/05/Identity/Claims/implicitupn  
+* http://schemas.xmlsoap.org/ws/2005/05/identity/claims/implicitupn  
 * https://schemas.microsoft.com/2014/03/psso  
 * https://schemas.microsoft.com/2015/09/prt  
-* http://schemas.xmlsoap.org/ws/2005/05/Identity/Claims/UPN  
+* http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn  
 * https://schemas.microsoft.com/ws/2008/06/identity/claims/primarygroupsid  
 * https://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid  
-* http://schemas.xmlsoap.org/ws/2005/05/Identity/Claims/Name  
+* http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name  
 * https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname  
 * https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid  
 * https://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid  

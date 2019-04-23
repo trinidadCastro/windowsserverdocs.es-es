@@ -1,5 +1,5 @@
 ---
-title: "Configuración de la protección de LSA adicionales"
+title: Configuración de protección LSA adicional
 description: Seguridad de Windows Server
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,181 +13,192 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: fcfb0dab10d28413cf4ad06dd583274f217c91fa
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: bd5863a46f77fd4ac53c8559ff17279271dc5c46
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849696"
 ---
-# <a name="configuring-additional-lsa-protection"></a>Configuración de la protección de LSA adicionales
+# <a name="configuring-additional-lsa-protection"></a>Configuración de protección LSA adicional
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema para profesionales de TI se explica cómo configurar la protección adicional para el proceso de autoridad de seguridad Local (LSA) evitar la inserción de código que podría poner en peligro las credenciales.
+En este tema dedicado a los profesionales de TI se explica cómo configurar la protección adicional para el proceso de autoridad de seguridad local (LSA) de cara a evitar una inserción de código que podría poner en peligro las credenciales.
 
-LSA, que incluye el proceso de servicio de servidor de autoridad de seguridad Local (LSASS), valida los usuarios para inicios de sesión locales y remotos y aplica directivas de seguridad local. El sistema operativo de Windows 8.1 proporciona protección adicional para la LSA inyección de código no protegidas procesos y evitar que la memoria de lectura. Esto proporciona mayor seguridad de las credenciales que la LSA almacena y administra. Se pueden configurar la configuración de proceso protegido de LSA en Windows 8.1, pero no puede configurarse en Windows RT 8.1. Cuando esta configuración se usa en combinación con el arranque seguro, se logra una protección adicional porque deshabilitar la clave del registro HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa no tiene ningún efecto.
+El proceso LSA, que incluye el proceso del Servicio de servidor de autoridad de seguridad local (LSASS), valida a los usuarios para los inicios de sesión locales y remotos y exige la aplicación de directivas de seguridad local. El sistema operativo de Windows 8.1 proporciona protección adicional para LSA de cara a evitar la lectura de memoria y la inserción de código por parte de procesos no protegidos. Esto proporciona seguridad adicional para las credenciales que LSA almacena y administra. La configuración del proceso protegido para LSA puede configurarse en Windows 8.1, pero no se puede configurar en Windows RT 8.1. Cuando esta configuración se utiliza conjuntamente con el arranque seguro, la protección adicional se consigue porque deshabilitar la clave del Registro HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa no tiene ninguna consecuencia.
 
-### <a name="protected-process-requirements-for-plug-ins-or-drivers"></a>Requisitos de proceso protegido para complementos o controladores
-Para que un controlador o LSA complemento cargar correctamente como un proceso protegido, debe cumplir los siguientes criterios:
+### <a name="protected-process-requirements-for-plug-ins-or-drivers"></a>Requisitos de acceso protegido para complementos o controladores
+Para que un complemento o un controlador de LSA se cargue correctamente como proceso protegido, debe cumplir los criterios siguientes:
 
-1.  Comprobación de firmas
+1.  Verificación de firmas
 
-    El modo protegido requiere que los complementos que se carga en la LSA está firmado digitalmente con una firma de Microsoft. Por lo tanto, los complementos que están firmados o no estén firmados con una firma de Microsoft no se cargará de LSA. Ejemplos de estos complementos son los controladores de tarjeta inteligente, complementos criptográficos y filtros de contraseña.
+    El modo protegido requiere que todos los complementos que se carguen en LSA estén firmados digitalmente mediante una firma de Microsoft. Por consiguiente, todos los complementos no firmados o que no tengan una firma de Microsoft no se cargarán en LSA. Algunos ejemplos de estos complementos son los controladores de tarjetas inteligentes, los complementos de cifrado y los filtros de contraseña.
 
-    Complementos LSA que son los controladores, como tarjetas inteligentes, se deben firmar mediante el uso de la certificación de WHQL. Para obtener más información, consulta [firma de versión de WHQL (controladores de Windows)](https://msdn.microsoft.com/library/windows/hardware/ff553976%28v=vs.85%29.aspx).
+    Los complementos de LSA que sean controladores, como los controladores de tarjetas inteligentes, tienen que estar firmados con la certificación de WHQL. Para obtener más información, consulte [firma de lanzamiento de WHQL](https://msdn.microsoft.com/library/windows/hardware/ff553976%28v=vs.85%29.aspx).
 
-    Complementos LSA que no tienen un proceso de certificación de WHQL, deben estar firmados mediante el uso de la [servicio LSA de firma de archivos](https://go.microsoft.com/fwlink/?LinkId=392590).
+    Complementos LSA que no tienen un proceso de certificación de WHQL deben estar firmados con la [archivo de servicio de firma para LSA](https://go.microsoft.com/fwlink/?LinkId=392590).
 
-2.  Cumplimiento de la orientación del proceso de ciclo de vida de desarrollo de seguridad de Microsoft (SDL)
+2.  Adhesión a la orientación del proceso de ciclo de vida de desarrollo de seguridad (SDL) de Microsoft
 
-    Todos los complementos deben cumplir con la orientación del proceso SDL aplicable. Para obtener más información, consulta el [apéndice del ciclo de vida de desarrollo de seguridad de Microsoft (SDL)](https://msdn.microsoft.com/library/windows/desktop/cc307891.aspx).
+    Todos los complementos deben estar en conformidad con la orientación del proceso SDL aplicable. Para obtener más información, consulte el [apéndice del ciclo de vida de desarrollo de seguridad (SDL) de Microsoft](https://msdn.microsoft.com/library/windows/desktop/cc307891.aspx).
 
-    Aunque los complementos están firmados correctamente con una firma de Microsoft, puede provocar incumplimiento con el proceso SDL error al cargar un complemento.
+    Incluso aunque los complementos estén debidamente firmados con una firma de Microsoft, la no conformidad con el proceso SDL puede generar errores al cargar un complemento.
 
-#### <a name="recommended-practices"></a>Procedimientos recomendados
-Usa la lista siguiente para probar exhaustivamente esa protección LSA está habilitada antes de implementar la característica ampliamente:
+#### <a name="recommended-practices"></a>Prácticas recomendadas
+Utilice la lista siguiente para probar exhaustivamente que la protección LSA esté habilitada antes de implementar la característica de forma generalizada:
 
--   Identificar todos los complementos LSA y controladores que están en uso dentro de la organización. 
-    Esto incluye los controladores no son de Microsoft o complementos como controladores de tarjetas inteligentes y complementos criptográficos y cualquier desarrolladas internamente software que se usa para aplicar filtros de contraseña o las notificaciones de cambio de contraseña.
+-   Identifique todos los complementos y controladores de LSA que se están utilizando dentro de su organización. 
+    Esto incluye los controladores o complementos que no son de Microsoft, como los controladores de tarjetas inteligentes, los complementos de cifrado y cualquier software desarrollado internamente que se utilice para exigir la aplicación de los filtros de contraseña o las notificaciones de cambio de contraseña.
 
--   Asegúrate de que todos los complementos LSA se firman digitalmente con un certificado de Microsoft para que el complemento no no se cargará.
+-   Asegúrese de que todos los complementos de LSA estén firmados digitalmente con un certificado de Microsoft para que no falle la carga del complemento.
 
--   Asegúrate de que todos los complementos firmados correctamente pueden cargar correctamente en LSA y que funcionan según lo esperado.
+-   Asegúrese de que todos los complementos firmados correctamente puedan cargarse adecuadamente en LSA y que tengan el rendimiento esperado.
 
--   Usar los registros de auditoría para identificar los complementos LSA y controladores que no se ejecuta como un proceso protegido.
+-   Utilice los registros de auditoría para identificar los complementos y controladores de LSA que no se hayan ejecutado correctamente como proceso protegido.
 
-## <a name="how-to-identify-lsa-plug-ins-and-drivers-that-fail-to-run-as-a-protected-process"></a>Cómo identificar los complementos LSA y controladores que no se ejecuta como un proceso protegido
-Los eventos descritos en esta sección se encuentran en el funcionamiento del registro en aplicaciones y servicios Logs\Microsoft\Windows\CodeIntegrity. Puede ayudar a identificar los complementos LSA y controladores que no se pueden cargar debido a la firma motivos. Para administrar estos eventos, puedes usar la **wevtutil** herramienta de línea de comandos. Para obtener información acerca de esta herramienta, consulta [Wevtutil](../../administration/windows-commands/Wevtutil.md).
+#### <a name="limitations-introduced-with-enabled-lsa-protection"></a>Limitaciones introducidas con la protección LSA habilitada
 
-### <a name="before-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>Si optas por antes de: cómo identificar los complementos y controladores cargados por el lsass.exe
-Puedes usar el modo auditoría para identificar los complementos LSA y controladores que no se cargará en modo de protección de LSA. En el modo de auditoría, el sistema generará registros de eventos, identifica todos los complementos y controladores que no se cargará en LSA si se habilita la protección de LSA. Se registran los mensajes sin bloquear los controladores o los complementos.
+Si está habilitada la protección LSA, no puede depurar un complemento personalizado de la LSA.
+No se puede adjuntar a un depurador a LSASS cuando es un proceso protegido.
+En general, no hay ninguna manera compatible para depurar un proceso protegido en ejecución.
 
-##### <a name="to-enable-the-audit-mode-for-lsassexe-on-a-single-computer-by-editing-the-registry"></a>Para habilitar el modo auditoría para Lsass.exe en un solo equipo modificando el registro
+## <a name="how-to-identify-lsa-plug-ins-and-drivers-that-fail-to-run-as-a-protected-process"></a>Cómo identificar los complementos y controladores de LSA que no se hayan ejecutado correctamente como proceso protegido
+Los eventos descritos en esta sección están ubicados en el registro operativo, bajo Registros de aplicaciones y servicios\Microsoft\Windows\CodeIntegrity. Pueden ayudarlo a identificar los complementos y controladores de LSA que no se han cargado correctamente debido a problemas relacionados con firmas. Para administrar estos eventos, utiliza la herramienta de línea de comandos **wevtutil**. Para obtener más información sobre esta herramienta, consulte [Wevtutil](../../administration/windows-commands/Wevtutil.md).
 
-1.  Abre el Editor del registro de (RegEdit.exe) y navegar a la clave del registro que se encuentra en: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image archivo ejecución Options\LSASS.exe.
+### <a name="before-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>Antes de participar: Cómo identificar los complementos y controladores cargados por lsass.exe
+Puede utilizar el modo de auditoría para identificar los complementos y controladores de LSA que no se cargarán correctamente en modo de protección LSA. Mientras esté en modo de auditoría, el sistema generará registros de eventos e identificará todos los complementos y controladores que no se cargarán correctamente bajo LSA si se ha habilitado la protección LSA. Los mensajes se registran sin bloquear los complementos o controladores.
 
-2.  Establece el valor de la clave del registro **AuditLevel = DWORD: 00000008**.
+##### <a name="to-enable-the-audit-mode-for-lsassexe-on-a-single-computer-by-editing-the-registry"></a>Para habilitar el modo de auditoría para Lsass.exe en un único equipo mediante la edición del Registro
 
-3.  Reinicia el equipo.
+1.  Abre el Editor del Registro (RegEdit.exe) y desplázate a la clave del Registro que se encuentra en: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
 
-Analizar los resultados del evento 3065 y evento 3066.
+2.  Establece el valor de la clave del Registro en **AuditLevel=dword:00000008**.
 
--   **Evento 3065**: este evento se registra la integridad de código comprobar determina que intentó cargar un controlador determinado que no cumplían los requisitos de seguridad para las secciones compartidas de un proceso (normalmente lsass.exe). Sin embargo, debido a la directiva del sistema que está establecida, se permitió la imagen para cargar.
+3.  Reinicie el equipo.
 
--   **Evento 3066**: este evento se registra la integridad de código comprobar determina que un proceso (normalmente lsass.exe) intentó cargar un controlador determinado que no cumplían lo requisitos de nivel de firma de Microsoft. Sin embargo, debido a la directiva del sistema que está establecida, se permitió la imagen para cargar.
+Analice los resultados del evento 3065 y el evento 3066.
+
+Una vez hecho esto, puede ver estos eventos en el Visor de eventos: Microsoft-Windows-Codeintegrity/Operational:
+
+-   **Evento 3065**: este evento registra que una comprobación de integridad de código ha determinado que un proceso (normalmente lsass.exe) ha intentado cargar un controlador específico que no ha cumplido los requisitos de seguridad para las secciones compartidas. No obstante, a causa de la directiva del sistema establecida, se ha permitido la carga de la imagen.
+
+-   **Evento 3066**: este evento registra que una comprobación de integridad de código ha determinado que un proceso (normalmente lsass.exe) ha intentado cargar un controlador específico que no ha cumplido los requisitos de nivel de firma de Microsoft. No obstante, a causa de la directiva del sistema establecida, se ha permitido la carga de la imagen.
 
 > [!IMPORTANT]
-> Estos eventos operativos no se generan cuando un depurador de kernel está conectado y habilitado en un sistema.
+> Estos eventos operativos no se generan cuando un depurador de kernel se adjunta y se habilita en un sistema.
 > 
-> Si un complemento o controlador contiene secciones compartidas, se registra el evento 3066 con eventos 3065. Quitar las secciones compartidas debe impedir que ambos eventos que se producen a menos que el complemento no cumple lo requisitos de nivel de firma de Microsoft.
+> Si un complemento o un controlador contiene secciones compartidas, el evento 3066 se registra con el evento 3065. La eliminación de las secciones compartidas evitará que se produzcan ambos eventos, a menos que el complemento no cumpla los requisitos de nivel de firma de Microsoft.
 
-Para habilitar el modo de auditoría para varios equipos en un dominio, puedes usar la extensión del lado cliente del registro para la directiva de grupo para distribuir el valor del registro de nivel de auditoría de Lsass.exe. Debes modificar la clave del Registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image archivo ejecución Options\LSASS.exe.
+Para habilitar el modo de auditoría para varios equipos en un dominio, puede utilizar la extensión del lado cliente de directiva de grupo del Registro para implementar el valor del Registro de nivel de auditoría. Deberá modificar la clave del Registro HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe.
 
-##### <a name="to-create-the-auditlevel-value-setting-in-a-gpo"></a>Para crear el valor AuditLevel en un GPO
+##### <a name="to-create-the-auditlevel-value-setting-in-a-gpo"></a>Para crear la configuración del valor AuditLevel en un GPO
 
-1.  Abre la consola de administración de directivas de grupo (GPMC).
+1.  Abra la Consola de administración de directivas de grupo (GPMC).
 
-2.  Crear una nueva directiva objeto grupo (GPO) que está vinculada en el nivel de dominio o que está vinculado a la unidad organizativa que contiene tus cuentas de equipo. O bien, puedes seleccionar un GPO que ya se ha implementado.
+2.  Cree un nuevo objeto de directiva de grupo (GPO) que esté vinculado a la unidad organizativa que contiene las cuentas de su equipo. O puede seleccionar un GPO que ya esté implementado.
 
-3.  Haz clic en el GPO y, a continuación, haz clic en **editar** para abrir el Editor de administración de directivas de grupo.
+3.  Haga clic con el botón derecho en el GPO y posteriormente haga clic en **Editar** para abrir el Editor de administración de directivas de grupo.
 
-4.  Expande **configuración del equipo**, expanda **preferencias**y después expande **configuración de Windows**.
+4.  Expande **Configuración del equipo**, expande **Preferencias** y, a continuación, expande **Configuración de Windows**.
 
-5.  Haz clic en **registro**, elija **nueva**y, a continuación, haz clic en **elemento del registro**. La **nuevas propiedades del registro** aparece el cuadro de diálogo.
+5.  Haga clic con el botón derecho en **Registro**, seleccione **Nuevo** y, a continuación, haga clic en **Elemento del Registro**. Aparece el cuadro de diálogo **Nuevas propiedades de Registro**.
 
-6.  En la **subárbol** la lista, haz clic en **HKEY_LOCAL_MACHINE.**
+6.  En el **Hive** lista, haga clic en **HKEY_LOCAL_MACHINE.**
 
-7.  En la **ruta de acceso Key** la lista, busca **SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image archivo ejecución Options\LSASS.exe**.
+7.  En la lista **Ruta de la clave**, busca **SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\LSASS.exe**.
 
-8.  En la **nombre de valor**, escriba **AuditLevel**.
+8.  En el cuadro **Nombre del valor**, escribe **AuditLevel**.
 
-9. En la **tipo de valor** cuadro, haga clic para seleccionar la **REG_DWORD**.
+9. En el cuadro **Tipo de valor**, haga clic para seleccionar **REG_DWORD**.
 
-10. En la **información del valor**, escriba **00000008**.
+10. En el cuadro **Datos del valor**, escribe **00000008**.
 
-11. Haz clic en **Aceptar**.
+11. Haga clic en **Aceptar**.
 
 > [!NOTE]
-> Para el GPO surta efecto, el cambio de GPO se debe replicar en todos los controladores de dominio del dominio.
+> Para que se aplique el GPO, el cambio del GPO debe replicarse a todos los controladores de dominio en el dominio.
 
-Para participar de protección adicional de LSA en varios equipos, puedes usar la extensión del lado cliente del registro para la directiva de grupo mediante la modificación HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa. Para conocer los pasos necesarios hacer esto, vea [cómo configurar una protección de credenciales LSA adicional](#BKMK_HowToConfigure) en este tema.
+Para participar en la protección LSA adicional en varios equipos, puede utilizar la extensión del lado cliente de directiva de grupo del Registro modificando HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa. Para conocer los pasos necesarios para llevarlo a cabo, consulte la información acerca de [cómo configurar la protección LSA adicional de credenciales](#BKMK_HowToConfigure) en este tema.
 
-### <a name="after-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>Después Si optas por: cómo identificar los complementos y controladores cargados por el lsass.exe
-Puedes usar el registro de eventos para identificar los complementos LSA y controladores que no se pudo cargar en modo de protección de LSA. Cuando se habilita el proceso de LSA protegido, el sistema genera los registros de eventos que identificar todos los complementos y controladores que no se pudo cargar en LSA.
+### <a name="after-opting-in-how-to-identify-plug-ins-and-drivers-loaded-by-the-lsassexe"></a>Tras la participación: Cómo identificar los complementos y controladores cargados por lsass.exe
+Puede utilizar el registro de eventos para identificar los complementos y controladores de LSA que no se han cargado correctamente en modo de protección LSA. Cuando el proceso protegido de LSA está habilitado, el sistema genera registros de eventos que identifican todos los complementos y controladores que no se han podido cargar bajo LSA.
 
-Analizar los resultados de 3033 eventos y eventos 3063.
+Analice los resultados del evento 3033 y el evento 3063.
 
--   **Evento 3033**: este evento se registra la integridad de código comprobar determina que un proceso (normalmente lsass.exe) intentó cargar un controlador que no cumplían lo requisitos de nivel de firma de Microsoft.
+Una vez hecho esto, puede ver estos eventos en el Visor de eventos: Microsoft-Windows-Codeintegrity/Operational:
 
--   **Evento 3063**: este evento se registra la integridad de código comprobar determina que intentó cargar un controlador que no cumplían los requisitos de seguridad para las secciones compartidas de un proceso (normalmente lsass.exe).
+-   **Evento 3033**: este evento registra que una comprobación de integridad de código ha determinado que un proceso (normalmente lsass.exe) ha intentado cargar un controlador que no ha cumplido los requisitos de nivel de firma de Microsoft.
 
-Secciones compartidas suelen ser el resultado de técnicas de programación que permiten interactuar con otros procesos que usan el mismo contexto de seguridad de los datos de instancia. Esto puede crear vulnerabilidades de seguridad.
+-   **Evento 3063**: este evento registra que una comprobación de integridad de código ha determinado que un proceso (normalmente lsass.exe) ha intentado cargar un controlador que no ha cumplido los requisitos de seguridad para las secciones compartidas.
 
-## <a name="BKMK_HowToConfigure"></a>Cómo configurar la protección de LSA adicional de credenciales
-En dispositivos que ejecutan Windows 8.1 (con o sin el arranque seguro o UEFI), es posible de configuración siguiendo los procedimientos descritos en esta sección. Para los dispositivos que ejecutan Windows RT 8.1, protección frente a lsass.exe siempre está habilitado y no se podrá desactivar.
+Las secciones compartidas normalmente son el resultado de técnicas de programación que permiten que los datos de instancia interactúen con otros procesos que utilizan el mismo contexto de seguridad. Esto puede crear vulnerabilidades de seguridad.
 
-### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>En los dispositivos basados en x86 o x64 64 con UEFI y arranque seguro o no
-En los dispositivos basados en x86 o x64 64 que usan el arranque seguro y UEFI, una variable UEFI está establecida en el firmware UEFI cuando protección de LSA se habilita mediante la clave del registro. Cuando la configuración se almacena en el firmware, la variable UEFI no pueden eliminarse ni cambiar la clave del registro. La variable UEFI debe restablecerse.
+## <a name="BKMK_HowToConfigure"></a>Cómo configurar la protección LSA adicional de credenciales
+En dispositivos que ejecutan Windows 8.1 (con o sin arranque de seguridad o UEFI), la configuración es posible mediante la realización de los procedimientos descritos en esta sección. Para dispositivos que ejecutan Windows RT 8.1, protección de lsass.exe siempre está habilitada y no se puede desactivar.
 
-Se deshabilitan basado en x86 o x64 64 dispositivos que no son compatibles con UEFI o el arranque seguro, no puedes almacenar la configuración de protección de LSA en el firmware y confíe únicamente en la presencia de la clave del registro. En este escenario, es posible deshabilitar la protección de LSA mediante el acceso remoto al dispositivo.
+### <a name="on-x86-based-or-x64-based-devices-using-secure-boot-and-uefi-or-not"></a>En los dispositivos basados en x86 o x64 con o sin arranque seguro y UEFI
+En los dispositivos basados en x86 y x64 que utilizan arranque seguro y UEFI, se establece una variable UEFI en el firmware UEFI cuando se habilita la protección LSA con la clave del Registro. Cuando la configuración se almacena en el firmware, la variable UEFI no puede suprimirse ni cambiarse en la clave del Registro. La variable UEFI debe restablecerse.
 
-Puedes usar los siguientes procedimientos para habilitar o deshabilitar la protección de LSA:
+Los dispositivos basados en x86 o x64 que no admiten UEFI o en los que el arranque seguro está deshabilitado no pueden almacenar la configuración para la protección LSA en el firmware y únicamente dependen de la presencia de la clave del Registro. En este escenario, es posible deshabilitar la protección LSA con el acceso remoto al dispositivo.
 
-##### <a name="to-enable-lsa-protection-on-a-single-computer"></a>Para habilitar la protección de LSA en un solo equipo
+Puede utilizar los procedimientos siguientes para habilitar o deshabilitar la protección LSA:
 
-1.  Abre el Editor del registro de (RegEdit.exe) y navegar a la clave del registro que se encuentra en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
+##### <a name="to-enable-lsa-protection-on-a-single-computer"></a>Para habilitar la protección LSA en un único equipo
 
-2.  Establece el valor de la clave del registro: "RunAsPPL" = dword: 00000001.
+1.  Abre el Editor del Registro (RegEdit.exe) y desplázate a la clave del Registro que se encuentra en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
 
-3.  Reinicia el equipo.
+2.  Establece el valor de la clave del Registro en: "RunAsPPL"=dword:00000001.
 
-##### <a name="to-enable-lsa-protection-using-group-policy"></a>Para habilitar la protección de LSA mediante Directiva de grupo
+3.  Reinicie el equipo.
 
-1.  Abre la consola de administración de directivas de grupo (GPMC).
+##### <a name="to-enable-lsa-protection-using-group-policy"></a>Para habilitar la protección LSA con la directiva de grupo
 
-2.  Crear un nuevo GPO que está vinculada en el nivel de dominio o que está vinculado a la unidad organizativa que contiene tus cuentas de equipo. O bien, puedes seleccionar un GPO que ya se ha implementado.
+1.  Abra la Consola de administración de directivas de grupo (GPMC).
 
-3.  Haz clic en el GPO y, a continuación, haz clic en **editar** para abrir el Editor de administración de directivas de grupo.
+2.  Cree un nuevo GPO que esté vinculado a la unidad organizativa que contenga las cuentas de su equipo. O puede seleccionar un GPO que ya esté implementado.
 
-4.  Expande **configuración del equipo**, expanda **preferencias**y después expande **configuración de Windows**.
+3.  Haga clic con el botón derecho en el GPO y posteriormente haga clic en **Editar** para abrir el Editor de administración de directivas de grupo.
 
-5.  Haz clic en **registro**, elija **nueva**y, a continuación, haz clic en **elemento del registro**. La **nuevas propiedades del registro** aparece el cuadro de diálogo.
+4.  Expande **Configuración del equipo**, expande **Preferencias** y, a continuación, expande **Configuración de Windows**.
 
-6.  En la **subárbol** la lista, haz clic en **HKEY_LOCAL_MACHINE**.
+5.  Haga clic con el botón derecho en **Registro**, seleccione **Nuevo** y, a continuación, haga clic en **Elemento del Registro**. Aparece el cuadro de diálogo **Nuevas propiedades de Registro**.
 
-7.  En la **ruta de acceso Key** la lista, busca **SYSTEM\CurrentControlSet\Control\Lsa**.
+6.  En la lista **Subárbol**, haz clic en **HKEY_LOCAL_MACHINE**.
 
-8.  En la **nombre de valor**, escriba **RunAsPPL**.
+7.  En el **Key Path** enumerar, examinar **SYSTEM\CurrentControlSet\Control\Lsa**.
 
-9. En la **tipo de valor** cuadro, haz clic en el **REG_DWORD**.
+8.  En el **nombre del valor** , escriba **RunAsPPL**.
 
-10. En la **información del valor**, escriba **00000001**.
+9. En el cuadro **Tipo de valor**, haga clic en **REG_DWORD**.
 
-11. Haz clic en **Aceptar**.
+10. En el **datos del valor** , escriba **00000001**.
 
-##### <a name="to-disable-lsa-protection"></a>Para deshabilitar la protección de LSA
+11. Haga clic en **Aceptar**.
 
-1.  Abre el Editor del registro de (RegEdit.exe) y navegar a la clave del registro que se encuentra en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
+##### <a name="to-disable-lsa-protection"></a>Para deshabilitar la protección LSA
 
-2.  Eliminar el siguiente valor de la clave del registro: "RunAsPPL" = dword: 00000001.
+1.  Abre el Editor del Registro (RegEdit.exe) y desplázate a la clave del Registro que se encuentra en: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa.
 
-3.  Usar la herramienta de exclusión de proceso protegido autoridad de seguridad Local (LSA) para eliminar la variable UEFI si el dispositivo está usando el arranque seguro.
+2.  Elimina el siguiente valor de la clave del Registro: "RunAsPPL"=dword:00000001.
 
-    Para obtener más información sobre la herramienta de exclusión, consulta [autoridad de seguridad Local (LSA) Descargar proceso protegido exclusión desde el centro de descarga de Microsoft oficiales](https://www.microsoft.com/download/details.aspx?id=40897).
+3.  Utiliza la herramienta de cancelación de procesos protegidos de autoridad de seguridad local (LSA) para suprimir la variable UEFI si el dispositivo está utilizando el arranque de seguridad.
 
-    Para obtener más información sobre la administración de arranque seguro, consulta [Firmware UEFI](https://technet.microsoft.com/library/hh824898.aspx).
+    Para obtener más información acerca de la herramienta de participación, vea [autoridad de seguridad Local (LSA) descargar procesos protegidos para participar en el centro de descarga de Microsoft oficial](https://www.microsoft.com/download/details.aspx?id=40897).
+
+    Para obtener más información acerca de cómo administrar el arranque seguro, consulte [Firmware UEFI](https://technet.microsoft.com/library/hh824898.aspx).
 
     > [!WARNING]
-    > Cuando el arranque seguro está desactivado, se restablecen todas las configuraciones relacionadas con UEFI y arranque seguro. Deberías desactivar el arranque seguro solo cuando no se hayan podido todos los otros medios, para desactivar la protección de LSA.
+    > Cuando el arranque seguro está desactivado, todas las configuraciones relacionadas con el arranque seguro y UEFI se restablecen. Debe desactivar el arranque seguro únicamente cuando hayan fallado todos los demás medios de deshabilitación de la protección LSA.
 
-### <a name="verifying-lsa-protection"></a>Comprobar la protección de LSA
-Para detectar si se inició LSA en el modo protegido cuando Windows inicia, busca el siguiente evento de WinInit en la **sistema** el registro en **registros de Windows**:
+### <a name="verifying-lsa-protection"></a>Verificar la protección LSA
+Para descubrir si LSA se ha iniciado en modo protegido cuando se ha iniciado Windows, busque el evento WinInit siguiente en el registro **Sistema** bajo **Registros de Windows**:
 
 -   12: LSASS.exe se inició como un proceso protegido con nivel: 4
 
 ## <a name="additional-resources"></a>Recursos adicionales
-[Administración y protección de credenciales](credentials-protection-and-management.md)
+[Protección y administración de credenciales](credentials-protection-and-management.md)
 
-[Servicio de firmas de LSA del archivo](https://go.microsoft.com/fwlink/?LinkId=392590)
+[Archivo de servicio de firma para LSA](https://go.microsoft.com/fwlink/?LinkId=392590)
 
 

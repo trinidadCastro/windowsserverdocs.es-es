@@ -1,6 +1,6 @@
 ---
-title: "Agregar una pestaña a configuración"
-description: "Describe cómo usar Windows Server Essentials"
+title: Agregar una pestaña a Configuración
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,53 +13,54 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 9eaa1aa5a9c5e8d4c2e36f2000e0adecc83245d9
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854986"
 ---
-# <a name="add-a-tab-to-settings"></a>Agregar una pestaña a configuración
+# <a name="add-a-tab-to-settings"></a>Agregar una pestaña a Configuración
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Puedes agregar una pestaña a configuración en el panel por crear e instalar a un ensamblado de código que se usa el Administrador de configuración en el sistema operativo.  
+Puede agregar una ficha a Configuración en el Panel; para ello, cree e instale un ensamblado de código usado por el Administrador de configuración en el sistema operativo.  
   
-## <a name="add-a-tab-to-settings"></a>Agregar una pestaña a configuración  
- Agregar una pestaña a configuración mediante la realización de las siguientes tareas:  
+## <a name="add-a-tab-to-settings"></a>Agregar una ficha a Configuración  
+ Complete las tareas siguientes para agregar una ficha a Configuración:  
   
--   [Agregar una implementación de la interfaz ISettingsData al ensamblado](Add-a-Tab-to-Settings.md#BKMK_ISettingsData).  
+-   [Agregue una implementación de la interfaz de ISettingsData al ensamblado](Add-a-Tab-to-Settings.md#BKMK_ISettingsData).  
   
--   [Firmar el ensamblado con una firma Authenticode](Add-a-Tab-to-Settings.md#BKMK_SignAssembly).  
+-   [Sign the assembly with an Authenticode signature](Add-a-Tab-to-Settings.md#BKMK_SignAssembly).  
   
--   [Instalar el ensamblado en el equipo de referencia](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly).  
+-   [Install the assembly on the reference computer](Add-a-Tab-to-Settings.md#BKMK_InstallAssembly).  
   
-###  <a name="BKMK_ISettingsData"></a>Agregar una implementación de la interfaz ISettingsData al ensamblado  
- La interfaz ISettingsData se incluye en el espacio de nombres Microsoft.WindowsServerSolutions.Settings del ensamblado AdminCommon.dll, que se encuentra en Files\Windows Server\Bin.  
+###  <a name="BKMK_ISettingsData"></a> Agregue una implementación de la interfaz de ISettingsData al ensamblado  
+ La interfaz de ISettingsData está incluida en el espacio de nombres de Microsoft.WindowsServerSolutions.Settings del ensamblado AdminCommon.dll que se encuentra en \Archivos de programa\Windows Server\Bin.  
   
 ##### <a name="to-add-the-isettingsdata-code-to-the-assembly"></a>Para agregar el código ISettingsData al ensamblado  
   
-1.  Abre Visual Studio 2010 como administrador haciendo clic en el programa en el **inicio** menú y seleccionando **ejecutar como administrador**.  
+1.  Abra Visual Studio 2010 como administrador; para ello, haga clic con el botón secundario en el menú **Inicio** y seleccione **Ejecutar como administrador**.  
   
-2.  Haz clic en **archivo**, haz clic en **nueva**y, a continuación, haz clic en **proyecto**.  
+2.  Haga clic en **Archivo**, **Nuevo**y a continuación haga clic en **Proyecto**.  
   
-3.  En la **nuevo proyecto** cuadro de diálogo, haz clic en **Visual C#**, haz clic en **biblioteca de clases**, escribe **DashboardSettingsPage** para el nombre de la solución y, a continuación, haz clic en **Aceptar**.  
+3.  En el cuadro de diálogo **Nuevo proyecto** , haga clic en **Visual C#**, en **Biblioteca de clases**, escriba **DashboardSettingsPage** como el nombre de la solución y después haga clic en **Aceptar**.  
   
     > [!IMPORTANT]
-    >  El ensamblado instalado en el servidor debe llamarse DashboardSettingsPage.dll y, a continuación, copia el archivo dll en %ProgramFiles%\Windows Server\Bin\OEM.  
+    >  El conjunto que se instala en el servidor debe nombrarse DashboardSettingsPage.dll y, a continuación, copiar la dll a %ProgramFiles%\Windows Server\Bin\OEM.  
   
-4.  Crea el control que quieras que se usará en la pestaña. En este ejemplo, el control de configuración se llama MySettingsControl.  
+4.  Cree el control que desee utilizar en la pestaña. En el ejemplo siguiente, el nombre del control de configuración es MySettingsControl.  
   
-5.  Cambia el nombre del archivo Class1.cs. Por ejemplo, MySettingTab.cs.  
+5.  Cambie el nombre del archivo Class1.cs. Por ejemplo, MySettingTab.cs.  
   
-6.  Agrega una referencia al archivo AdminCommon.dll.  
+6.  Agregue una referencia al archivo AdminCommon.dll.  
   
-7.  Agrega la siguiente instrucción using:  
+7.  Agregue lo siguiente mediante la declaración:  
   
     ```c#  
     using Microsoft.WindowsServerSolutions.Settings;  
     ```  
   
-8.  Cambia el espacio de nombres y el encabezado de clase para que coincida con el siguiente ejemplo:  
+8.  Cambie el espacio de nombres y el encabezado de la clase para que coincida con el ejemplo siguiente:  
   
     ```  
   
@@ -72,13 +73,13 @@ Puedes agregar una pestaña a configuración en el panel por crear e instalar a 
   
     ```  
   
-9. Crea una instancia del control que creaste para la pestaña. Por ejemplo:  
+9. Cree una instancia del control que haya creado para la pestaña. Por ejemplo:  
   
     ```c#  
     private MySettingsControl tab;  
     ```  
   
-10. Agregar el constructor de la clase. El siguiente ejemplo de código muestra el constructor:  
+10. Agregue el constructor de la clase. En el siguiente ejemplo de código se muestra el constructor:  
   
     ```  
   
@@ -88,7 +89,7 @@ Puedes agregar una pestaña a configuración en el panel por crear e instalar a 
     }  
     ```  
   
-11. Agrega el método Commit, que envía los cambios de configuración. El siguiente ejemplo de código muestra el método Commit:  
+11. Agregue el método Commit, que envía los cambios en la configuración. En el siguiente ejemplo de código se muestra el método Commit:  
   
     ```  
   
@@ -98,7 +99,7 @@ Puedes agregar una pestaña a configuración en el panel por crear e instalar a 
     }  
     ```  
   
-12. Agrega el método TabControl, que identifica el control de la pestaña. El siguiente ejemplo de código muestra el método TabControl:  
+12. Agregue el método TabControl, que identifica el control de la pestaña. En el siguiente ejemplo de código se muestra el método TabControl:  
   
     ```  
   
@@ -108,7 +109,7 @@ Puedes agregar una pestaña a configuración en el panel por crear e instalar a 
     }  
     ```  
   
-13. Agrega el método TabId, que proporciona un identificador único para la pestaña. El siguiente ejemplo de código muestra el método TabId:  
+13. Agregue el método TabId, que proporciona un identificador único a la pestaña. En el siguiente ejemplo de código se muestra el método TabId:  
   
     ```  
   
@@ -120,7 +121,7 @@ Puedes agregar una pestaña a configuración en el panel por crear e instalar a 
     }  
     ```  
   
-14. Agrega el método TabOrder, que devuelve el orden de la pestaña. El siguiente ejemplo de código muestra el método TabOrder:  
+14. Agregue el método TabOrder, que da como resultado el orden de la pestaña. En el siguiente ejemplo de código se muestra el método TabOrder:  
   
     ```  
   
@@ -131,9 +132,9 @@ Puedes agregar una pestaña a configuración en el panel por crear e instalar a 
     ```  
   
     > [!NOTE]
-    >  El orden de tabulación se define usando números a partir del 0. Las pestañas de configuración integradas de Microsoft se muestran primero y, a continuación, se muestran tus pestañas, según el orden de tabulación que definas. Por ejemplo, si tienes tres pestañas de configuración, especifican el orden de tabulación como 0, 1 y 2 en función del orden en que quieres que aparezcan las pestañas.  
+    >  El orden de las fichas se define utilizando números a partir de 0. Las pestañas integradas de configuración de Microsoft se muestran primero y a continuación las pestañas del usuario en función del orden establecido. Por ejemplo, si dispone de tres pestañas de configuración, puede especificar el orden como 0, 1 y 2, dependiendo del orden en que desee que aparezcan.  
   
-15. Agrega el método TabTitle, que proporciona el título de la pestaña. El siguiente ejemplo de código muestra el método TabTitle:  
+15. Agregue el método TabTitle, que ofrece el título de la pestaña. En el siguiente ejemplo de código se muestra el método TabTitle:  
   
     ```  
   
@@ -144,20 +145,20 @@ Puedes agregar una pestaña a configuración en el panel por crear e instalar a 
     ```  
   
     > [!NOTE]
-    >  El texto del título también puede proceder de un archivo de recursos para satisfacer las necesidades de localización.  
+    >  El texto del título también puede proceder de un archivo de recursos que se adapte a sus necesidades de localización.  
   
-16. Guarda y compila la solución.  
+16. Guarde y genere la solución.  
   
-###  <a name="BKMK_SignAssembly"></a>Firmar el ensamblado con una firma Authenticode  
- Es necesario que el ensamblado tenga una firma Authenticode para que se use en el sistema operativo. Para obtener más información sobre cómo firmar el ensamblado, consulta [firma y comprobación de código con Authenticode](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).  
+###  <a name="BKMK_SignAssembly"></a> Firmar el ensamblado con una firma Authenticode  
+ Para poder utilizar el ensamblado en el sistema operativo es necesario firmarlo mediante Authenticode. Para obtener más información acerca de cómo firmar el ensamblado, consulte [Signing and Checking Code with Authenticode (Firma y comprobación de código con Authenticode)](https://msdn.microsoft.com/library/ms537364\(VS.85\).aspx#SignCode).  
   
-###  <a name="BKMK_InstallAssembly"></a>Instalar al ensamblado en el equipo de referencia  
- Después de compilar correctamente la solución, coloca una copia del archivo DashboardSettingsPage.dll en la siguiente carpeta del equipo de referencia:  
+###  <a name="BKMK_InstallAssembly"></a> Instale al ensamblado en el equipo de referencia  
+ Después de crear correctamente la solución, coloque una copia del archivo DashboardSettingsPage.dll en la siguiente carpeta del equipo de referencia:  
   
- **%ProgramFiles%\Windows Server\Bin\OEM**  
+ **%Programfiles%\Windows Server\Bin\OEM**  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

@@ -1,6 +1,6 @@
 ---
 title: Configuración de control de acceso de usuario y permisos
-description: Obtén información sobre cómo configurar el control de acceso de usuario y permisos mediante Active Directory o Azure AD (proyecto Honolulu)
+description: Aprenda a configurar el control de acceso de usuario y permisos con Active Directory o Azure AD (proyecto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: haley-rowland
@@ -9,109 +9,109 @@ ms.date: 03/19/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: b19657f4ce1a1a2cfb94f7234f07805ba0abd42c
-ms.sourcegitcommit: 4961576f2891600ef9a760ca7df650d14332e057
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/09/2019
-ms.locfileid: "9152050"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59850576"
 ---
-# Configurar los permisos y Control de acceso de usuario
+# <a name="configure-user-access-control-and-permissions"></a>Configurar permisos y Control de acceso de usuario
 
->Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
 
-Si no lo has hecho ya, familiarizarte con las [Opciones de control de acceso de usuario en Windows Admin Center](../plan/user-access-options.md)
+Si no lo ha hecho ya, familiarícese con el [opciones de control de acceso de usuario en Windows Admin Center](../plan/user-access-options.md)
 
 >[!NOTE]
-> Acceso de grupo basado en Windows Admin Center no se admite en entornos de grupo de trabajo o en varios dominios que no son de confianza.
+> Acceso de grupo basado en Windows Admin Center no se admite en entornos de grupo de trabajo o dominios que no son de confianza.
 
-## Definiciones de función de acceso de puerta de enlace
+## <a name="gateway-access-role-definitions"></a>Definiciones de roles de acceso de puerta de enlace
 
-Hay dos funciones para acceder al servicio de puerta de enlace de Windows Admin Center:
+Hay dos roles para el acceso al servicio de puerta de enlace de Windows Admin Center:
 
-**Los usuarios de la puerta de enlace** puede conectarse al servicio de puerta de enlace de Windows Admin Center para administrar servidores a través de dicha puerta de enlace, pero no pueden cambiar los permisos de acceso ni el mecanismo de autenticación que se usan para autenticar a la puerta de enlace.
+**Los usuarios de la puerta de enlace** puede conectarse al servicio de puerta de enlace de Windows Admin Center para administrar los servidores a través de esa puerta de enlace, pero no pueden cambiar los permisos de acceso ni el mecanismo de autenticación usada para autenticarse en la puerta de enlace.
 
-**Los administradores de puerta de enlace** puede configurar quién obtiene acceso, así como el comportamiento de los usuarios autenticarse en la puerta de enlace. Solo los administradores de puerta de enlace pueden ver y configurar la configuración de acceso en Windows Admin Center. Los administradores locales en el equipo de puerta de enlace siempre sean administradores del servicio de puerta de enlace de Windows Admin Center.
-
-> [!NOTE]
-> Acceso a la puerta de enlace no implica el acceso a los servidores administrados visible la puerta de enlace. Para administrar un servidor de destino, el usuario que se conecta debe usar las credenciales (ya sea a través de su credencial de Windows pasan o las credenciales proporcionadas en la sesión de Windows Admin Center con la acción de **administrar como** ) que tienen acceso administrativo en ese servidor de destino.
-
-## Active Directory o grupos de equipo local
-
-De manera predeterminada, Active Directory o grupos de equipo local se usan para controlar el acceso de puerta de enlace. Si tienes un dominio de Active Directory, puedes administrar el usuario de la puerta de enlace y administrador acceder desde dentro de la interfaz de Windows Admin Center.
-
-En la pestaña de **los usuarios** puede controlar quién tiene acceso a Windows Admin Center como un usuario de la puerta de enlace. De manera predeterminada, y si no se especifica un grupo de seguridad, cualquier usuario que tiene acceso a la dirección URL de la puerta de enlace tiene acceso. Una vez que agregar uno o varios grupos de seguridad a la lista de usuarios, el acceso está restringido a los miembros de esos grupos.
-
-Si no usas un dominio de Active Directory en su entorno, acceso está controlado por el ```Users``` y ```Administrators``` grupos locales en el equipo de puerta de enlace de Windows Admin Center.
-
-### Autenticación de tarjeta inteligente
-
-Puede aplicar la **autenticación con tarjeta inteligente** mediante la especificación de un grupo adicionales _necesarios_ para los grupos de seguridad basada en la tarjeta inteligente. Una vez que se ha agregado un grupo de seguridad basada en la tarjeta inteligente, un usuario solo puede acceder a los servicios de Windows Admin Center si son un miembro de cualquier grupo de seguridad y un grupo de tarjeta inteligente que se incluye en la lista de usuarios.
-
-En la pestaña **administradores** puede controlar quién tiene acceso a Windows Admin Center como un administrador de puerta de enlace. El grupo de administradores locales en el equipo siempre tendrá acceso de administrador completo y no se puede quitar de la lista. Al agregar grupos de seguridad, se definen en los miembros de esos privilegios de grupos para cambiar la configuración de la puerta de enlace de Windows Admin Center. La lista de los administradores admite la autenticación con tarjeta inteligente de la misma forma que la lista de usuarios: con la condición y para un grupo de seguridad y un grupo de tarjeta inteligente.
-
-## Azure Active Directory
-
-Si tu organización usa Azure Active Directory (Azure AD), puedes agregar una capa de seguridad **adicional** para Windows Admin Center al exigir autenticación de Azure AD para acceder a la puerta de enlace. Con el fin de obtener acceso a Windows Admin Center, la del usuario **cuenta de Windows** también debe tener acceso al servidor de puerta de enlace (incluso si se usa la autenticación de Azure AD). Cuando usas Azure AD, tendrás administrar los permisos de acceso de usuario y del Administrador de Windows Admin Center desde el Portal de Azure, en lugar de desde la interfaz de usuario del centro de administración de Windows.
-
-### Acceso a Windows Admin Center cuando se habilita la autenticación de Azure AD
-
-Dependiendo del explorador que se utiliza, algunos usuarios obtener acceso a Windows Admin Center con autenticación de Azure AD configurada recibirá un símbolo del sistema adicionales **desde el navegador** dónde deben proporcionar su Windows credenciales de cuenta de la máquina en el que Se instala Windows Admin Center. Después de escribir esa información, los usuarios recibirán el símbolo de autenticación de Azure Active Directory adicional, lo que requiere las credenciales de una cuenta de Azure que se ha concedido acceso en la aplicación de Azure AD en Azure.
+**Los administradores de la puerta de enlace** puede configurar quién tiene acceso, así como la forma a los usuarios autentican en la puerta de enlace. Solo los administradores de la puerta de enlace pueden ver y configurar el acceso en Windows Admin Center. Los administradores locales en el equipo de puerta de enlace siempre son administradores del servicio de puerta de enlace de Windows Admin Center.
 
 > [!NOTE]
-> Usuarios que cuenta de Windows tiene **derechos de administrador** en la usará de máquina de puerta de enlace no se le pida la autenticación de Azure AD.
+> Acceso a la puerta de enlace no implica el acceso a los servidores administrados visible la puerta de enlace. Para administrar un servidor de destino, el usuario que se conecta debe utilizar credenciales (mediante sus credenciales de Windows se pasan o mediante las credenciales proporcionadas en la sesión de Windows Admin Center mediante el **administrar como** acción) que tienen acceso administrativo a ese servidor de destino.
 
-### Configurar la autenticación de Azure Active Directory para la versión preliminar de Windows Admin Center
+## <a name="active-directory-or-local-machine-groups"></a>Active Directory o grupos de equipo local
 
-Ve a la **configuración**de Windows Admin Center > **acceso** y usa el modificador para alternar para activar "usar Azure Active Directory para agregar una capa de seguridad a la puerta de enlace". Si no te has registrado la puerta de enlace a Azure, se le guiará para ello en este momento.
+De forma predeterminada, los grupos de equipo local o de Active Directory se usan para controlar el acceso de puerta de enlace. Si tiene un dominio de Active Directory, puede administrar el usuario de puerta de enlace y el Administrador de acceso desde dentro de la interfaz de Windows Admin Center.
 
-De manera predeterminada, todos los miembros del inquilino de Azure AD tienen acceso de usuario para el servicio de puerta de enlace de Windows Admin Center. Solo los administradores locales en el equipo de puerta de enlace tienen acceso de administrador a la puerta de enlace de Windows Admin Center. Ten en cuenta que no pueden restringirse los derechos de administradores locales en el equipo de puerta de enlace, los administradores locales pueden hacer nada, independientemente de si se usa Azure AD para la autenticación.
+En el **usuarios** ficha puede controlar quién puede acceder a Windows Admin Center como un usuario de la puerta de enlace. De forma predeterminada, y si no especifica un grupo de seguridad, cualquier usuario que tiene acceso a la dirección URL de puerta de enlace tenga acceso. Una vez que agregue uno o varios grupos de seguridad a la lista de usuarios, el acceso está restringido a los miembros de esos grupos.
 
-Si quieres dar Azure AD específica a los usuarios o usuario de la puerta de enlace de grupos o acceso de administrador de puerta de enlace para el servicio de Windows Admin Center, debes hacer lo siguiente:
+Si no usa un dominio de Active Directory en su entorno, el acceso se controla mediante el ```Users``` y ```Administrators``` grupos locales en la máquina de puerta de enlace de Windows Admin Center.
 
-1.  Ve a la aplicación de Windows Admin Center Azure AD en el portal de Azure utilizando el hipervínculo proporcionado en la configuración de acceso. Ten en cuenta que este hipervínculo solo está disponible cuando está habilitada la autenticación de Azure Active Directory. 
-    -   También puede encontrar la aplicación en el portal de Azure yendo a **Azure Active Directory** > **aplicaciones empresariales** > **todas las aplicaciones** y búsqueda **WindowsAdminCenter** (la aplicación de Azure AD se denominará WindowsAdminCenter-<gateway name>). Si no obtener los resultados de búsqueda, asegúrate de **Mostrar** se establece en **todas las aplicaciones**, **estado de la aplicación** se establece en **cualquier** y haga clic en aplicar, vuelva a intentar la búsqueda. Una vez que hayas encontrado la aplicación, ve a **los usuarios y grupos**
-2.  En la pestaña Propiedades, Establece la **asignación de usuario necesario** en Sí.
-    Una vez que hayas hecho esto, solo los miembros que aparece en la pestaña **usuarios y grupos** podrán tener acceso a la puerta de enlace de Windows Admin Center.
-3.  En la ficha usuarios y grupos, selecciona **Agregar usuario**. Debes asignar un usuario de la puerta de enlace o el rol de administrador de puerta de enlace para cada usuario o grupo agregado.
+### <a name="smartcard-authentication"></a>Autenticación de tarjeta inteligente
 
-Una vez que se activa la autenticación de Azure AD, se reinicia el servicio de puerta de enlace y se debe actualizar el explorador. Puedes actualizar acceso de usuario de la aplicación de SME Azure AD en el portal de Azure en cualquier momento.
+Puede aplicar **autenticación de tarjeta inteligente** especificando adicional _requiere_ para grupos de seguridad basada en tarjeta inteligente. Una vez haya agregado un grupo de seguridad basada en tarjeta inteligente, un usuario solo pueda acceder el servicio de Windows Admin Center si son miembros de cualquier grupo de seguridad y un grupo de tarjeta inteligente se incluye en la lista de usuarios.
 
-Se pedirá a los usuarios inicien sesión con su identidad de Azure Active Directory al intentar acceder a la dirección URL de puerta de enlace de Windows Admin Center. Recuerda que los usuarios también deben ser un miembro de los usuarios locales en el servidor de puerta de enlace para tener acceso a Windows Admin Center.
+En el **administradores** ficha puede controlar quién puede acceder a Windows Admin Center como un administrador de puerta de enlace. El grupo de administradores locales en el equipo siempre tendrá acceso de administrador completo y no se puede quitar de la lista. Mediante la adición de grupos de seguridad, asigne a los miembros de esos privilegios grupos para cambiar la configuración de puerta de enlace de Windows Admin Center. La lista de administradores admite la autenticación de tarjeta inteligente en la misma manera que la lista de usuarios: con la condición AND para un grupo de seguridad y un grupo de tarjeta inteligente.
 
-Los usuarios y administradores pueden ver su cuenta inició sesión actualmente y, así como cerrar sesión de este Azure AD configuración de la cuenta de la pestaña de la **cuenta** de Windows Admin Center.
+## <a name="azure-active-directory"></a>Azure Active Directory
 
-### Configurar la autenticación de Azure Active Directory para Windows Admin Center
+Si su organización usa Azure Active Directory (Azure AD), puede agregar un **adicionales** capa de seguridad para Windows Admin Center al requerir autenticación de Azure AD para tener acceso a la puerta de enlace. Para tener acceso a Windows Admin Center, el usuario **cuenta Windows** también debe tener acceso al servidor de puerta de enlace (incluso si se usa la autenticación de Azure AD). Cuando se usa Azure AD, podrá administrar los permisos de acceso de usuario y Administrador de Windows Admin Center desde el Portal de Azure, en lugar de desde la interfaz de usuario de Windows Admin Center.
 
-[Para configurar la autenticación de Azure AD, primero debe registrar la puerta de enlace con Azure](azure-integration.md) (solo debes hacer esto una vez para la puerta de enlace de Windows Admin Center). Este paso crea una aplicación de Azure AD desde el que puedes administrar usuarios de puerta de enlace y acceso de administrador de puerta de enlace.
+### <a name="accessing-windows-admin-center-when-azure-ad-authentication-is-enabled"></a>Obtener acceso a Windows Admin Center cuando está habilitada la autenticación de Azure AD
 
-Si quieres dar Azure AD específica a los usuarios o usuario de la puerta de enlace de grupos o acceso de administrador de puerta de enlace para el servicio de Windows Admin Center, debes hacer lo siguiente:
+Dependiendo del explorador que usa, algunos usuarios tienen acceso a Windows Admin Center con la autenticación de Azure AD configurada recibirán un símbolo del sistema adicional **desde el explorador** donde deben proporcionar sus credenciales de cuenta de Windows la máquina donde está instalado Windows Admin Center. Después de escribir esa información, los usuarios obtendrán el aviso de autenticación de Azure Active Directory adicional, que requiere las credenciales de una cuenta de Azure que se ha concedido acceso en la aplicación de Azure AD en Azure.
 
-1.  Ve a la aplicación de SME Azure AD en el portal de Azure. 
-    -   Cuando se haga clic en el **control de acceso de cambio** y, a continuación, selecciona **Azure Active Directory** de la configuración de acceso al centro de administración de Windows, puedes usar el hipervínculo proporcionado en la interfaz de usuario para tener acceso a la aplicación de Azure AD en el portal de Azure. Este hipervínculo también está disponible en la configuración de acceso después haz clic en Guardar y has seleccionado Azure AD como el proveedor de identidad de control de acceso.
-    -   También puede encontrar la aplicación en el portal de Azure yendo a **Azure Active Directory** > **aplicaciones empresariales** > **todas las aplicaciones** y búsqueda **SME** (la aplicación de Azure AD se denominará SME -<gateway>). Si no obtener los resultados de búsqueda, asegúrate de **Mostrar** se establece en **todas las aplicaciones**, **estado de la aplicación** se establece en **cualquier** y haga clic en aplicar, vuelva a intentar la búsqueda. Una vez que hayas encontrado la aplicación, ve a **los usuarios y grupos**
-2.  En la pestaña Propiedades, Establece la **asignación de usuario necesario** en Sí.
-    Una vez que hayas hecho esto, solo los miembros que aparece en la pestaña **usuarios y grupos** podrán tener acceso a la puerta de enlace de Windows Admin Center.
-3.  En la ficha usuarios y grupos, selecciona **Agregar usuario**. Debes asignar un usuario de la puerta de enlace o el rol de administrador de puerta de enlace para cada usuario o grupo agregado.
+> [!NOTE]
+> Los usuarios que Windows de la cuenta tiene **derechos de administrador** en la puerta de enlace máquina no se solicitará la autenticación de Azure AD.
 
-Una vez que guarda el control de acceso de Azure AD en el panel de **control de acceso de cambio** , se reinicia el servicio de puerta de enlace y se debe actualizar el explorador. Puedes actualizar acceso de usuario de la aplicación de Windows Admin Center Azure AD en el portal de Azure en cualquier momento. 
+### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center-preview"></a>Configurar la autenticación de Azure Active Directory para Windows Admin Center Preview
 
-Se pedirá a los usuarios inicien sesión con su identidad de Azure Active Directory al intentar acceder a la dirección URL de puerta de enlace de Windows Admin Center. Recuerda que los usuarios también deben ser un miembro de los usuarios locales en el servidor de puerta de enlace para tener acceso a Windows Admin Center. 
+Vaya a Windows Admin Center **configuración** > **acceso** y utilice el conmutador para activar "usar Azure Active Directory para agregar una capa de seguridad a la puerta de enlace". Si no ha registrado la puerta de enlace de Azure, se le guiará para hacerlo en este momento.
 
-Mediante la pestaña de **Azure** de configuración general de Windows Admin Center, los usuarios y administradores pueden ver su cuenta ha iniciado la sesión actual y, así como cerrar sesión de esta cuenta de Azure AD.
+De forma predeterminada, todos los miembros del inquilino de Azure AD tienen acceso de usuario para el servicio de puerta de enlace de Windows Admin Center. Solo los administradores locales en el equipo de puerta de enlace tienen acceso de administrador a la puerta de enlace de Windows Admin Center. Tenga en cuenta que los derechos de administradores locales en la máquina de puerta de enlace no pueden ser restringidos, los administradores locales pueden hacer cualquier cosa, independientemente de si se usa Azure AD para la autenticación.
 
-### Acceso condicional y la autenticación multifactor
+Si desea que Azure AD específico a los usuarios, los usuarios de la puerta de enlace de grupos o acceso de administrador de puerta de enlace para el servicio de Windows Admin Center, debe hacer lo siguiente:
 
-Una de las ventajas de usar Azure AD como una capa de seguridad adicional para controlar el acceso a la puerta de enlace de Windows Admin Center es que puede aprovechar las características de seguridad eficaz de Azure AD como acceso condicional y la autenticación multifactor. 
+1.  Vaya a la aplicación de Windows Admin Center de Azure AD en Azure portal mediante el hipervínculo proporcionado en la configuración de acceso. Tenga en cuenta que este hipervínculo solo está disponible cuando está habilitada la autenticación de Azure Active Directory. 
+    -   También puede encontrar la aplicación en Azure portal, vaya a **Azure Active Directory** > **aplicaciones empresariales** > **detodaslasaplicaciones** y buscar **WindowsAdminCenter** (la aplicación de Azure AD se denominará WindowsAdminCenter -<gateway name>). Si no obtiene los resultados de búsqueda, asegúrese de **mostrar** está establecido en **todas las aplicaciones**, **estado de la aplicación** está establecido en **cualquier** y haga clic en aplicar, Vuelva a intentar la búsqueda. Una vez que haya encontrado la aplicación, vaya a **usuarios y grupos**
+2.  En la pestaña Propiedades, establezca **asignación de usuarios necesaria** en Sí.
+    Una vez hecho esto, solo los miembros se muestran en el **usuarios y grupos** ficha podrán tener acceso a la puerta de enlace de Windows Admin Center.
+3.  En la pestaña usuarios y grupos, seleccione **Agregar usuario**. Debe asignar un usuario de la puerta de enlace o el rol de administrador de puerta de enlace para cada usuario o grupo agregado.
+
+Después de activar la autenticación de Azure AD, se reinicia el servicio de puerta de enlace y se debe actualizar el explorador. Puede actualizar el acceso de usuario para la aplicación de PYME Azure AD en Azure portal en cualquier momento.
+
+Los usuarios le pedirá que inicie sesión con su identidad de Azure Active Directory cuando intentan obtener acceso a la dirección URL de puerta de enlace de Windows Admin Center. Recuerde que los usuarios también deben ser un miembro de los usuarios locales en el servidor de puerta de enlace para tener acceso a Windows Admin Center.
+
+Los usuarios y administradores pueden ver su cuenta ha iniciado sesión actualmente y, así como de cierre de esta cuenta de Azure AD desde el **cuenta** ficha de configuración de Windows Admin Center.
+
+### <a name="configuring-azure-active-directory-authentication-for-windows-admin-center"></a>Configurar la autenticación de Azure Active Directory para Windows Admin Center
+
+[Para configurar la autenticación de Azure AD, primero debe registrar la puerta de enlace con Azure](azure-integration.md) (basta con hacerlo una vez para la puerta de enlace de Windows Admin Center). Este paso crea una aplicación de Azure AD desde el que puede administrar el acceso de administrador de puerta de enlace y de usuario de la puerta de enlace.
+
+Si desea que Azure AD específico a los usuarios, los usuarios de la puerta de enlace de grupos o acceso de administrador de puerta de enlace para el servicio de Windows Admin Center, debe hacer lo siguiente:
+
+1.  Vaya a la aplicación de PYME Azure AD en Azure portal. 
+    -   Al hacer clic en **Cambiar control de acceso** y, a continuación, seleccione **Azure Active Directory** desde la configuración de acceso de Windows Admin Center, puede usar el hipervínculo proporcionado en la interfaz de usuario para tener acceso a Azure AD aplicación en Azure portal. Este hipervínculo también está disponible en la configuración de acceso después de que haga clic en Guardar y ha seleccionado Azure AD como proveedor de identidades de control de acceso.
+    -   También puede encontrar la aplicación en Azure portal, vaya a **Azure Active Directory** > **aplicaciones empresariales** > **detodaslasaplicaciones** y buscar **SME** (la aplicación de Azure AD se denominará SME -<gateway>). Si no obtiene los resultados de búsqueda, asegúrese de **mostrar** está establecido en **todas las aplicaciones**, **estado de la aplicación** está establecido en **cualquier** y haga clic en aplicar, Vuelva a intentar la búsqueda. Una vez que haya encontrado la aplicación, vaya a **usuarios y grupos**
+2.  En la pestaña Propiedades, establezca **asignación de usuarios necesaria** en Sí.
+    Una vez hecho esto, solo los miembros se muestran en el **usuarios y grupos** ficha podrán tener acceso a la puerta de enlace de Windows Admin Center.
+3.  En la pestaña usuarios y grupos, seleccione **Agregar usuario**. Debe asignar un usuario de la puerta de enlace o el rol de administrador de puerta de enlace para cada usuario o grupo agregado.
+
+Una vez que guarde el de Azure AD control de acceso en el **Cambiar control de acceso** se reinicia el servicio de puerta de enlace de panel, y debe actualizar el explorador. Puede actualizar el acceso de usuario para la aplicación de Windows Admin Center de Azure AD en Azure portal en cualquier momento. 
+
+Los usuarios le pedirá que inicie sesión con su identidad de Azure Active Directory cuando intentan obtener acceso a la dirección URL de puerta de enlace de Windows Admin Center. Recuerde que los usuarios también deben ser un miembro de los usuarios locales en el servidor de puerta de enlace para tener acceso a Windows Admin Center. 
+
+Mediante el **Azure** pestaña de configuración general de Windows Admin Center, los usuarios y administradores puede ver su cuenta ha iniciado sesión actualmente y, así como de cierre de esta cuenta de Azure AD.
+
+### <a name="conditional-access-and-multi-factor-authentication"></a>Acceso condicional y Multi-factor authentication
+
+Una de las ventajas de usar Azure AD como una capa adicional de seguridad para controlar el acceso a la puerta de enlace de Windows Admin Center es que puede aprovechar las características de seguridad muy eficaces de Azure AD como el acceso condicional y la autenticación multifactor. 
 
 [Más información sobre cómo configurar el acceso condicional con Azure Active Directory.](https://docs.microsoft.com/azure/active-directory/active-directory-conditional-access-azure-portal-get-started)
 
-## Configurar el inicio de sesión único
+## <a name="configure-single-sign-on"></a>Configurar el inicio de sesión único
 
-**Sesión único cuando se implementa como un servicio en Windows Server**
+**De sesión único cuando se implementa como un servicio de Windows Server**
 
-Cuando instalas Windows Admin Center en Windows 10, está listo para usar el inicio de sesión único. Sin embargo, si vas a usar Windows Admin Center en Windows Server, tendrás que configurar alguna forma de delegación de Kerberos en el entorno antes de poder usar el inicio de sesión único. La delegación configura el equipo de puerta de enlace como de confianza para delegar en el nodo de destino. 
+Cuando se instala Windows Admin Center en Windows 10, está listo para usar el inicio de sesión único. Sin embargo, si va a usar Windows Admin Center en Windows Server, deberá configurar algún tipo de delegación de Kerberos en su entorno antes de poder usar el inicio de sesión único. La delegación configura el equipo de puerta de enlace como de confianza para delegar en el nodo de destino. 
 
-Para configurar [basada en recursos de la delegación restringida](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) en su entorno, ejecute los siguientes cmdlets de PowerShell. (Estar tenga en cuenta que esto requiere un controlador de dominio que ejecute Windows Server 2012 o posterior).
+Para configurar [la delegación restringida basada en recursos](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) en su entorno, ejecute los siguientes cmdlets de PowerShell. (Puede tener en cuenta que esto requiere un controlador de dominio que ejecutan Windows Server 2012 o posterior).
 
 ```powershell
      $gateway = "WindowsAdminCenterGW" # Machine where Windows Admin Center is installed
@@ -121,116 +121,116 @@ Para configurar [basada en recursos de la delegación restringida](http://window
      Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $gatewayObject
 ```
 
-En este ejemplo, la puerta de enlace de Windows Admin Center está instalado en el servidor **WindowsAdminCenterGW**y el nombre de nodo de destino es **ManagedNode**.
+En este ejemplo, la puerta de enlace de Windows Admin Center está instalado en servidor **WindowsAdminCenterGW**, y el nombre de nodo de destino es **ManagedNode**.
 
-Para quitar esta relación, ejecuta el siguiente cmdlet:
+Para quitar esta relación, ejecute el siguiente cmdlet:
 
 ```powershell
 Set-ADComputer -Identity $nodeObject -PrincipalsAllowedToDelegateToAccount $null
 ```
 
-## Control de acceso basado en roles
+## <a name="role-based-access-control"></a>Control de acceso basado en roles
 
-Control de acceso basado en roles permite proporcionar a los usuarios con acceso limitado a la máquina en lugar de hacer que los administradores locales completa.
-[Más información acerca de los roles disponibles y el control de acceso basado en roles.](../plan/user-access-options.md#role-based-access-control)
+Control de acceso basado en roles permite proporcionar a los usuarios con acceso limitado a la máquina en lugar de realizar los administradores locales completa de ellos.
+[Más información sobre el control de acceso basado en roles y los roles disponibles.](../plan/user-access-options.md#role-based-access-control)
 
-Configuración de RBAC consta de los 2 pasos: habilitar la compatibilidad en los equipos de destino y asignar usuarios a las funciones relevantes.
+Configuración de RBAC consta de 2 pasos: habilitar la compatibilidad en los equipos de destino y asignar usuarios a los roles pertinentes.
 
 > [!TIP]
-> Asegúrate de que tienes privilegios de administrador local en los equipos que estás configurando la compatibilidad para control de acceso basado en roles.
+> Asegúrese de que tener privilegios de administrador local en los equipos donde va a configurar la compatibilidad con el control de acceso basado en roles.
 
-### Control de acceso basado en roles se aplican a un solo equipo
+### <a name="apply-role-based-access-control-to-a-single-machine"></a>Control de acceso basado en roles se aplican a un único equipo
 
-El modelo de implementación de la misma máquina es ideal para entornos simples con solo unos pocos equipos para administrar.
-Configuración de una máquina con compatibilidad para control de acceso basado en roles, se producirá en los siguientes cambios:
--   Los módulos de PowerShell con funciones requeridos por Windows Admin Center, se instalará en la unidad del sistema, en `C:\Program Files\WindowsPowerShell\Modules`. Todos los módulos se iniciarán con **Microsoft.Sme**
--   Configuración de estado deseado se ejecutará una configuración única para configurar un punto de conexión de Just Enough Administration en la máquina, denominada **Microsoft.Sme.PowerShell**. Este punto de conexión define las funciones de 3 usadas por Windows Admin Center y se ejecutará como administrador local temporal cuando un usuario se conecta a ella.
--   3 nuevos grupos locales se creará para controlar qué usuarios se les asignan acceso a qué funciones:
-    -   Administradores de TI de Windows Admin Center
+El modelo de implementación de máquina única es ideal para entornos simples con solo unos pocos equipos para administrar.
+Configuración de una máquina con compatibilidad para control de acceso basado en roles dará como resultado los siguientes cambios:
+-   Módulos de PowerShell con las funciones requeridas por Windows Admin Center se instalará en la unidad del sistema, en `C:\Program Files\WindowsPowerShell\Modules`. Todos los módulos se iniciarán con **Microsoft.Sme**
+-   Desired State Configuration se ejecutará una única configuración para configurar un punto de conexión de Just Enough Administration en la máquina, denominada **Microsoft.Sme.PowerShell**. Este punto de conexión define los 3 roles usando Windows Admin Center y se ejecutará como administrador local temporal cuando un usuario se conecta a él.
+-   se crearán 3 nuevos grupos locales a los usuarios que tengan concedidos acceso a los roles de control:
+    -   Administradores de Windows Admin Center
     -   Administradores de Hyper-V de Windows Admin Center
-    -   Lectores de Windows Admin Center
+    -   Windows Admin Center Readers
 
-Para habilitar la compatibilidad con control de acceso basado en roles en un solo equipo, sigue estos pasos:
+Para habilitar la compatibilidad con el control de acceso basado en roles en un solo equipo, siga estos pasos:
 
-1.  Abre Windows Admin Center y conectar con el equipo que deseas configurar con el control de acceso basado en roles con una cuenta con privilegios de administrador local en el equipo de destino.
-2.  En la herramienta de **información general** , haz clic en **configuración** > **control de acceso basado en roles**.
-3.  Haz clic en **Aplicar** en la parte inferior de la página para habilitar la compatibilidad con control de acceso basado en roles en el equipo de destino. El proceso de aplicación implica copiar scripts de PowerShell e invocar una configuración (con la configuración de estado deseado de PowerShell) en el equipo de destino. Puede tardar hasta 10 minutos en completarse y dará como resultado WinRM reiniciar. Esto desconectará temporalmente a los usuarios de Windows Admin Center, PowerShell y WMI.
-4.  Actualizar la página para comprobar el estado del control de acceso basado en roles. Cuando esté listo para su uso, el estado cambiará a **aplicado**.
+1.  Abra Windows Admin Center y conéctese a la máquina que desea configurar con el control de acceso basado en rol con una cuenta con privilegios de administrador local en el equipo de destino.
+2.  En el **Introducción** de herramientas, haga clic en **configuración** > **control de acceso basado en roles**.
+3.  Haga clic en **aplicar** en la parte inferior de la página para habilitar la compatibilidad con control de acceso basado en roles en el equipo de destino. El proceso de aplicación implica copiar los scripts de PowerShell y la llamada a una configuración (con Desired State Configuration de PowerShell) en el equipo de destino. Puede tardar hasta 10 minutos en completarse y dará como resultado reiniciar WinRM. Esto desconectará temporalmente a los usuarios de Windows Admin Center, PowerShell y WMI.
+4.  Actualice la página para comprobar el estado de control de acceso basado en roles. Cuando esté listo para su uso, el estado cambiará a **aplicado**.
 
-Una vez que se aplique la configuración, puedes asignar a usuarios a las funciones:
+Una vez que se aplica la configuración, puede asignar a usuarios a los roles:
 
-1.  Abrir la herramienta de **usuarios y grupos locales** y navega a la ficha **grupos** .
-2.  Selecciona el grupo de **Windows Admin Center lectores** .
-3.  En el panel de *Detalles* en la parte inferior, haz clic en **Agregar usuario** y escribe el nombre de un usuario o grupo de seguridad que debe tener acceso de solo lectura al servidor a través de Windows Admin Center. Los usuarios y grupos pueden proceder de la máquina local o el dominio de Active Directory.
-4.  Repite los pasos 2 y 3 para los grupos de **Administradores de Hyper-V de Windows Admin Center** y **Los administradores de Windows Admin Center** .
+1.  Abra el **usuarios y grupos locales** herramienta y vaya a la **grupos** ficha.
+2.  Seleccione el **Windows Admin Center lectores** grupo.
+3.  En el *detalles* panel en la parte inferior, haga clic en **Agregar usuario** y escriba el nombre de un usuario o grupo de seguridad que debe tener acceso de solo lectura en el servidor a través de Windows Admin Center. Los usuarios y grupos pueden proceder de la máquina local o dominio de Active Directory.
+4.  Repita los pasos 2 y 3 para el **administradores de Hyper-V de Windows Admin Center** y **Windows Admin Center administradores** grupos.
 
-También puede rellenar estos grupos de forma coherente en todo el dominio mediante la configuración de un objeto de directiva de grupo con la [Configuración de directiva de grupos restringidos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29).
+También puede rellenar estos grupos de forma coherente a través de su dominio mediante la configuración de un objeto de directiva de grupo con el [configuración de directiva de grupos restringidos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc756802%28v=ws.10%29).
 
-### Aplicar el control de acceso basado en roles en varios equipos
+### <a name="apply-role-based-access-control-to-multiple-machines"></a>Control de acceso basado en roles se aplican a varias máquinas
 
-En una implementación de grandes empresas, puedes usar las herramientas existentes de automatización para insertar un vistazo a la función de control de acceso basado en roles en los equipos, descarga el paquete de configuración de la puerta de enlace de Windows Admin Center.
-El paquete de configuración está diseñado para usarse con la configuración de estado deseado de PowerShell, pero puedes adaptar que funcione con la solución de automatización preferido.
+En una implementación de empresa de gran tamaño, puede usar las herramientas de automatización existente para insertar la característica de control de acceso basado en roles en los equipos mediante la descarga del paquete de configuración de la puerta de enlace de Windows Admin Center.
+El paquete de configuración está diseñado para usarse con Desired State Configuration de PowerShell, pero puede adaptar para que funcione con la solución de automatización preferido.
 
-#### Descargar la configuración de control de acceso basado en roles
+#### <a name="download-the-role-based-access-control-configuration"></a>Descargar la configuración de control de acceso basado en roles
 
-Para descargar el paquete de configuración de control de acceso basado en roles, tendrás que tener acceso a Windows Admin Center y un símbolo del sistema de PowerShell.
+Para descargar el paquete de configuración de control de acceso basado en roles, necesita tener acceso a Windows Admin Center y un símbolo del sistema de PowerShell.
 
-Si estás ejecutando la puerta de enlace de Windows Admin Center en modo de servicio en Windows Server, usa el siguiente comando para descargar el paquete de configuración.
-Asegúrate de actualizar la dirección de puerta de enlace con el correcto para tu entorno.
+Si está ejecutando la puerta de enlace de Windows Admin Center en modo de servicio en Windows Server, use el comando siguiente para descargar el paquete de configuración.
+Asegúrese de actualizar la dirección de puerta de enlace con el correcto para su entorno.
 
 ```powershell
 $WindowsAdminCenterGateway = 'https://windowsadmincenter.contoso.com'
 Invoke-RestMethod -Uri "$WindowsAdminCenterGateway/api/nodes/all/features/jea/endpoint/export" -Method POST -UseDefaultCredentials -OutFile "~\Desktop\WindowsAdminCenter_RBAC.zip"
 ```
 
-Si estás ejecutando la puerta de enlace de Windows Admin Center en la máquina de Windows 10, ejecute el siguiente comando en su lugar:
+Si está ejecutando la puerta de enlace de Windows Admin Center en el equipo de Windows 10, ejecute el siguiente comando:
 
 ```powershell
 $cert = Get-ChildItem Cert:\CurrentUser\My | Where-Object Subject -eq 'CN=Windows Admin Center Client' | Select-Object -First 1
 Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoint/export" -Method POST -Certificate $cert -OutFile "~\Desktop\WindowsAdminCenter_RBAC.zip"
 ```
 
-Cuando se expande el archivo zip, verás la estructura de carpetas siguiente:
+Al expandir el archivo zip, verá la siguiente estructura de carpetas:
 - InstallJeaFeatures.ps1
 - JustEnoughAdministration (directorio)
 - Módulos (directorio)
-    - Microsoft.SME.\* (directorios)
-    - WindowsAdminCenter.Jea (directorio)
+    - Microsoft.SME. \* (directorios)
+    - WindowsAdminCenter.Jea (directory)
 
-Para configurar la compatibilidad para control de acceso basado en roles en un nodo, debes realizar las siguientes acciones:
-1.  Copia los módulos JustEnoughAdministration, Microsoft.SME.\* y WindowsAdminCenter.Jea en el directorio de módulo de PowerShell en el equipo de destino. Por lo general, esto se encuentra en `C:\Program Files\WindowsPowerShell\Modules`.
-2.  Actualizar el archivo de **InstallJeaFeature.ps1** para que coincidan con la configuración deseada para el punto de conexión RBAC.
-3.  Ejecutar InstallJeaFeature.ps1 para compilar el recurso de DSC.
-4.  Implementar la configuración de DSC en todos los equipos para aplicar la configuración.
+Para configurar la compatibilidad con el control de acceso basado en roles en un nodo, debe realizar las siguientes acciones:
+1.  Copie el JustEnoughAdministration, Microsoft.SME. \*y los módulos de WindowsAdminCenter.Jea en el directorio de módulo de PowerShell en el equipo de destino. Normalmente, esto se encuentra en `C:\Program Files\WindowsPowerShell\Modules`.
+2.  Actualización **InstallJeaFeature.ps1** archivo para que coincida con la configuración deseada para el punto de conexión RBAC.
+3.  Ejecute InstallJeaFeature.ps1 para compilar el recurso de DSC.
+4.  Implementar la configuración de DSC en todas las máquinas para aplicar la configuración.
 
-En la siguiente sección se explica cómo hacerlo mediante la comunicación remota de PowerShell.
+La siguiente sección explica cómo hacer esto mediante la comunicación remota de PowerShell.
 
-#### Implementar en varios equipos
+#### <a name="deploy-on-multiple-machines"></a>Implementar en varios equipos
 
-Para implementar la configuración que has descargado en varios equipos, tendrás que actualizar el script **InstallJeaFeatures.ps1** para incluir los grupos de seguridad adecuados para tu entorno, copia los archivos en cada uno de los equipos e invocar el scripts de configuración.
-Puedes usar el conjunto de herramientas de automatización preferido para lograr esto, sin embargo, en este artículo se centrará en un enfoque basado en PowerShell puro.
+Para implementar la configuración que descargó en varios equipos, deberá actualizar el **InstallJeaFeatures.ps1** script para incluir los grupos de seguridad adecuados para su entorno, copie los archivos en cada uno de los equipos, e invocar los scripts de configuración.
+Puede usar las herramientas de automatización preferida para lograr esto, sin embargo, en este artículo se centrará en un enfoque puro basada en PowerShell.
 
-De manera predeterminada, el script de configuración creará los grupos de seguridad local en el equipo para controlar el acceso a cada uno de los roles.
-Esto es apropiado para el grupo de trabajo y dominio unido a máquinas, pero si estás realizando la implementación en un entorno de dominio de solo es posible que desees directamente asociar un grupo de seguridad de dominio a cada rol.
-Para actualizar la configuración para usar grupos de seguridad de dominio, abre **InstallJeaFeatures.ps1** y realiza los siguientes cambios:
+De forma predeterminada, el script de configuración creará grupos de seguridad locales en el equipo para controlar el acceso a cada uno de los roles.
+Esto es adecuado para el grupo de trabajo y equipos unidos a dominio, pero si va a implementar en un entorno de dominio de sólo puede desear directamente asociar un grupo de seguridad de dominio a cada rol.
+Para actualizar la configuración para usar grupos de seguridad de dominio, abra **InstallJeaFeatures.ps1** y realice los cambios siguientes:
 
-1.  Quitar los recursos del **grupo** 3 del archivo:
-    1.  "Grupo de lectores de grupo MS"
-    2.  "Grupo MS-Hyper-V--grupo Administradores"
-    3.  "Grupo de administradores de grupo MS"
-2.  Quitar los recursos del grupo 3 de la propiedad JeaEndpoint **DependsOn**
-    1.  "["Grupo] MS-lectores-Group
-    2.  "["Grupo] MS-Hyper-V--grupo de administradores
-    3.  "["Grupo] MS grupo de administradores
-3.  Cambiar los nombres de grupo en la propiedad JeaEndpoint **RoleDefinitions** a los grupos de seguridad deseado. Por ejemplo, si tienes un grupo de seguridad *CONTOSO\MyTrustedAdmins* que deben asignarse de acceso a la función de los administradores de TI de Windows Admin Center, cambiar `'$env:COMPUTERNAME\Windows Admin Center Administrators'` a `'CONTOSO\MyTrustedAdmins'`. Las tres cadenas que tengas que actualizar son:
-    1.  ' $env: los administradores del centro de administración COMPUTERNAME\Windows
-    2.  ' $env: administradores de Hyper-V de COMPUTERNAME\Windows Admin Center
-    3.  ' $env: lectores de COMPUTERNAME\Windows Admin Center
+1.  Quitar los 3 **grupo** recursos desde el archivo:
+    1.  "Grupo de lectores de MS de grupo"
+    2.  "Grupo de MS-Hyper-V-administradores-Group"
+    3.  "Grupo de administradores de MS de grupo"
+2.  Quitar los recursos del grupo 3 de la JeaEndpoint **DependsOn** propiedad
+    1.  "[Group] grupo de lectores de MS"
+    2.  "[Group]MS-Hyper-V-Administrators-Group"
+    3.  "[Group] grupo de administradores de MS"
+3.  Cambiar los nombres de grupo en el JeaEndpoint **RoleDefinitions** propiedad a los grupos de seguridad deseado. Por ejemplo, si tiene un grupo de seguridad *CONTOSO\MyTrustedAdmins* que debe asignarse acceso a la función de los administradores de Windows Admin Center, cambio `'$env:COMPUTERNAME\Windows Admin Center Administrators'` a `'CONTOSO\MyTrustedAdmins'`. Las tres cadenas que deba actualizar son:
+    1.  '$env:COMPUTERNAME\Windows Admin Center Administrators'
+    2.  '$env:COMPUTERNAME\Windows Admin Center Hyper-V Administrators'
+    3.  '$env:COMPUTERNAME\Windows Admin Center Readers'
 
 > [!NOTE]
-> Asegúrate de usar grupos de seguridad únicos para cada rol. Se producirá un error en la configuración si el mismo grupo de seguridad está asignado a varias funciones.
+> Asegúrese de usar grupos de seguridad únicos para cada rol. Se producirá un error en la configuración si se asigna el mismo grupo de seguridad a varios roles.
 
-A continuación, al final del archivo **InstallJeaFeatures.ps1** , agrega las siguientes líneas de PowerShell en la parte inferior de la secuencia de comandos:
+A continuación, al final de la **InstallJeaFeatures.ps1** , agregue las siguientes líneas de PowerShell en la parte inferior de la secuencia de comandos:
 
 ```powershell
 Copy-Item "$PSScriptRoot\JustEnoughAdministration" "$env:ProgramFiles\WindowsPowerShell\Modules" -Recurse -Force
@@ -245,8 +245,8 @@ InstallJeaFeature -ConfigurationData $ConfigData | Out-Null
 Start-DscConfiguration -Path "$PSScriptRoot\InstallJeaFeature" -JobName "Installing JEA for Windows Admin Center" -Force
 ```
 
-Por último, puedes copiar la carpeta que contiene los módulos, recursos de DSC y configuraciones a cada nodo de destino y ejecutar el script **InstallJeaFeature.ps1** .
-Para ello de forma remota la estación de trabajo de administración, puedes ejecutar los siguientes comandos:
+Por último, puede copiar la carpeta que contiene los módulos, recursos de DSC y configuración para cada nodo de destino y ejecute el **InstallJeaFeature.ps1** secuencia de comandos.
+Para hacerlo de forma remota desde su estación de trabajo de administrador, puede ejecutar los comandos siguientes:
 
 ```powershell
 $ComputersToConfigure = 'MyServer01', 'MyServer02'

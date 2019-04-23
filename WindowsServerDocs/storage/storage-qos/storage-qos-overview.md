@@ -8,11 +8,12 @@ ms.topic: get-started-article
 ms.assetid: 8dcb8cf9-0e08-4fdd-9d7e-ec577ce8d8a0
 author: kumudd
 ms.date: 10/10/2016
-ms.openlocfilehash: 83954552b50f5f89c8b192405744836c53581d23
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 159ed05717cbd0743e5b96215515293025352569
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59849636"
 ---
 # <a name="storage-quality-of-service"></a>Calidad de servicio de almacenamiento
 
@@ -22,7 +23,7 @@ La calidad de servicio (QoS) de almacenamiento en Windows Server 2016 ofrece un 
 
 Puede utilizar la calidad de servicio de almacenamiento en Windows Server 2016 para realizar lo siguiente:  
 
--   **Mitigar los problemas de «vecino ruidoso».** De forma predeterminada, la calidad de servicio de almacenamiento garantiza que una sola máquina virtual no puede consumir todos los recursos de almacenamiento y privar a otras máquinas virtuales del ancho de banda de almacenamiento.  
+-   **Mitigar los problemas de vecino ruidoso.** De forma predeterminada, la calidad de servicio de almacenamiento garantiza que una sola máquina virtual no puede consumir todos los recursos de almacenamiento y privar a otras máquinas virtuales del ancho de banda de almacenamiento.  
 
 -   **Supervisar el rendimiento del almacenamiento de extremo a extremo.** En cuanto se inician las máquinas virtuales almacenadas en un servidor de archivos de escalabilidad horizontal, se comienza a supervisar su rendimiento. Es posible visualizar los detalles de rendimiento de todas las máquinas virtuales en ejecución y la configuración del clúster de servidores de archivos de escalabilidad horizontal desde una sola ubicación.  
 
@@ -30,10 +31,10 @@ Puede utilizar la calidad de servicio de almacenamiento en Windows Server 2016 p
 
 En este documento se describe cómo se puede beneficiar su negocio de la nueva funcionalidad de calidad de servicio de almacenamiento. Para seguirlo, se supone que tiene conocimientos prácticos anteriores de Windows Server, clústeres de conmutación por error de Windows Server, el servidor de archivos de escalabilidad horizontal, Hyper-V y Windows PowerShell.
 
-## <a name="BKMK_Overview"></a>Introducción  
+## <a name="BKMK_Overview"></a>Información general  
 En esta sección se describen los requisitos para usar la calidad de servicio de almacenamiento y, además, se incluye información general de una solución definida por software que usa calidad de servicio de almacenamiento y una lista de términos relacionados con la calidad de servicio de almacenamiento.  
 
-### <a name="BKMK_Requirements"></a>Requisitos de la calidad de servicio de almacenamiento  
+### <a name="BKMK_Requirements"></a>Requisitos de QoS de almacenamiento  
 La calidad de servicio de almacenamiento admite dos escenarios de implementación:  
 
 -   **Hyper-V con un servidor de archivos de escalabilidad horizontal**. Este escenario requiere lo siguiente:  
@@ -44,7 +45,7 @@ La calidad de servicio de almacenamiento admite dos escenarios de implementació
 
     En el caso de la calidad de servicio de almacenamiento, el clúster de conmutación por error es necesario en los servidores de almacenamiento, pero no es obligatorio que los servidores de proceso estén en un clúster de conmutación por error. Todos los servidores (que se usan para Almacenamiento y Proceso) deben estar ejecutando Windows Server 2016.  
 
-    Si no tiene un clúster de servidores de archivos de escalabilidad horizontal implementado con fines de evaluación, compile uno usando los servidores o las máquinas virtuales existentes; para ello, siga las instrucciones detalladas contenidas en [Windows Server 2012 R2 Storage: Step-by-step with Storage Spaces, SMB Scale-Out and Shared VHDX (Physical)](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx) (Almacenamiento de Windows Server 2012 R2: paso a paso con espacios de almacenamiento, Escala horizontal SMB y VHDX compartido [físico]).  
+    Si no tiene un clúster de servidor de archivos de escalabilidad horizontal implementado para fines de evaluación, para que obtener instrucciones paso a paso crear uno mediante servidores existentes o máquinas virtuales, consulte [almacenamiento de Windows Server 2012 R2: Paso a paso con espacios de almacenamiento, VHDX compartido y de escalabilidad horizontal SMB (físico)](http://blogs.technet.com/b/josebda/archive/2013/07/31/windows-server-2012-r2-storage-step-by-step-with-storage-spaces-smb-scale-out-and-shared-vhdx-physical.aspx).  
 
 -   **Hyper-V con volúmenes compartidos de clúster.** Este escenario presenta dos requisitos:  
 
@@ -54,18 +55,18 @@ La calidad de servicio de almacenamiento admite dos escenarios de implementació
 
 El clúster de conmutación por error es necesario. Todos los servidores deben ejecutar la misma versión de Windows Server 2016.  
 
-### <a name="BKMK_SolutionOverview"></a>Uso de la calidad de servicio de almacenamiento en una solución de almacenamiento definida por software  
+### <a name="BKMK_SolutionOverview"></a>Uso de QoS de almacenamiento en una solución de almacenamiento definidas mediante software  
 La calidad de servicio de almacenamiento está integrada en la solución de almacenamiento definida por software de Microsoft que proporcionan el servidor de archivos de escalabilidad horizontal e Hyper-V. El servidor de archivos de escalabilidad horizontal expone recursos compartidos de archivos a los servidores de Hyper-V mediante el protocolo SMB3. Se ha agregado un nuevo Administrador de directivas para el clúster de servidor de archivos, que proporciona supervisión de rendimiento para el almacenamiento central.  
 
 ![Servidor de archivos de escalabilidad horizontal y QoS de almacenamiento](media/overview-Clustering_SOFSStorageQoS.png)  
 
-**Ilustración 1: uso de la calidad de servicio de almacenamiento en una solución de almacenamiento definida por software en un servidor de archivos de escalabilidad horizontal**  
+**Figura 1: Uso de QoS de almacenamiento en una solución de almacenamiento definidas mediante software en el servidor de archivos de escalabilidad horizontal**  
 
 En cuanto los servidores de Hyper-V inician las máquinas virtuales, estas empiezan a supervisarse por el Administrador de directivas. El Administrador de directivas comunica la directiva de calidad de servicio de almacenamiento y los límites o reservas sobre el servidor de Hyper-V, que controla el rendimiento de la máquina virtual según corresponda.  
 
 Cuando hay cambios en las directivas de calidad de servicio de almacenamiento o en las demandas de rendimiento de las máquinas virtuales, el Administrador de directivas se lo notifica a los servidores de Hyper-V para ajustar su comportamiento. Este bucle de retroalimentación garantiza que todos los discos duros virtuales de las máquinas virtuales tengan un rendimiento constante de acuerdo con la definición de las directivas de calidad de servicio de almacenamiento.  
 
-### <a name="BKMK_Glossary"></a>glosario  
+### <a name="BKMK_Glossary"></a>Glosario  
 
 |Término|Descripción|  
 |--------|---------------|  
@@ -73,17 +74,17 @@ Cuando hay cambios en las directivas de calidad de servicio de almacenamiento o 
 |Flujo|Cada identificador de archivos abierto por un servidor de Hyper-V en un archivo VHD o VHDX se considera un "flujo". Si una máquina virtual tiene dos discos duros virtuales conectados, tendrá 1 flujo al clúster de servidores de archivos por archivo. Si se comparte un VHDX con varias máquinas virtuales, este tendrá un 1 flujo por cada máquina virtual.|  
 |InitiatorName|Nombre de la máquina virtual que se notifica al servidor de archivos de escalabilidad horizontal para cada flujo.|  
 |InitiatorID|Un identificador que coincide con el identificador de la máquina virtual.  Siempre puede utilizarse para identificar de manera única máquinas virtuales de flujos individuales, incluso si las máquinas virtuales tienen el mismo valor en InitiatorName.|  
-|Directiva de|Las directivas de calidad de servicio de almacenamiento se almacenan en la base de datos del clúster y tienen las siguientes propiedades: PolicyId, MinimumIOPS, MaximumIOPS, ParentPolicy y PolicyType.|  
+|Directiva|Las directivas de QoS de almacenamiento se almacenan en la base de datos del clúster y tienen las siguientes propiedades: PolicyId, MinimumIOPS, MaximumIOPS, ParentPolicy y PolicyType.|  
 |PolicyId|Identificador único de una directiva.  Se genera de forma predeterminada, pero puede especificarse si se desea.|  
 |MinimumIOPS|La E/S por segundo mínima normalizada que ofrecerá una directiva.  También conocido como "Reserva".|  
 |MaximumIOPS|La E/S por segundo máxima normalizada que estará limitada por una directiva.  También se conoce como "Límite".|  
 |Agregado |Tipo de directiva donde los valores MinimumIOPS y MaximumIOPS y el ancho de banda se comparten entre todos los flujos asignados a la directiva. Los VHD asignados a la directiva en ese sistema de almacenamiento tienen una sola asignación de ancho de banda de E/S para compartir entre todos.|  
 |Dedicado|Tipo de directiva donde los valores MinimumIOPS y MaximumIOPS y el ancho de banda se administran para VHD/VHDx individuales.|  
 
-## <a name="BKMK_SetUpQoS"></a>Configuración de la calidad de servicio de almacenamiento y supervisión del rendimiento básico  
+## <a name="BKMK_SetUpQoS"></a>Cómo configurar la QoS de almacenamiento y supervisar el rendimiento básico  
 En esta sección se describe cómo habilitar la nueva característica de calidad de servicio de almacenamiento y cómo supervisar el rendimiento de almacenamiento sin aplicar las directivas personalizadas.  
 
-### <a name="BKMK_SetupStorageQoSonStorageCluster"></a>Configuración de la calidad de servicio de almacenamiento en un clúster de almacenamiento  
+### <a name="BKMK_SetupStorageQoSonStorageCluster"></a>Configurar la QoS de almacenamiento en un clúster de almacenamiento  
 En esta sección se describe cómo habilitar la calidad de servicio de almacenamiento en un clúster de conmutación por error o un servidor de archivos de escalabilidad horizontal nuevo o existente que ejecuta Windows Server 2016.  
 
 #### <a name="set-up-storage-qos-on-a-new-installation"></a>Configuración de la calidad de servicio de almacenamiento en una instalación nueva  
@@ -94,7 +95,7 @@ Después de haber creado un clúster de conmutación por error y configurado un 
 
 ![El recurso de QoS de almacenamiento aparece en Recursos principales de clúster](media/overview-Clustering_StorageQoSFCM.png)  
 
-**Ilustración 2: recurso de calidad de servicio de almacenamiento como recurso de clúster principal en el Administrador de clústeres de conmutación por error**  
+**Figura 2: Recursos de QoS de almacenamiento se muestra como un recurso de clúster principal en el Administrador de clústeres de conmutación por error**  
 
 Utilice el siguiente cmdlet de PowerShell para ver el estado del recurso de la calidad de servicio de almacenamiento.  
 
@@ -106,7 +107,7 @@ Name                   State      OwnerGroup        ResourceType
 Storage Qos Resource   Online     Cluster Group     Storage QoS Policy Manager  
 ```  
 
-### <a name="BKMK_SetupStorageQoSonComputeCluster"></a>Configuración de la calidad de servicio de almacenamiento en un clúster de proceso  
+### <a name="BKMK_SetupStorageQoSonComputeCluster"></a>Configurar la QoS de almacenamiento en un clúster de proceso  
 El rol de Hyper-V en Windows Server 2016 tiene compatibilidad integrada para la calidad de servicio de almacenamiento y se configura de forma predeterminada.  
 
 #### <a name="install-remote-administration-tools-to-manage-storage-qos-policies-from-remote-computers"></a>Instalación de las herramientas de administración remota para administrar las directivas de calidad de servicio de almacenamiento de los equipos remotos  
@@ -118,10 +119,10 @@ La característica opcional **RSAT-Clustering** incluye el módulo de Windows Po
 
 La característica opcional **RSAT-Hyper-V-Tools** incluye el módulo de Windows PowerShell para la administración remota de Hyper-V.  
 
--   Windows PowerShell: Add-WindowsFeature RSAT-Hyper-V-Tools  
+-   Windows PowerShell: Agregar-WindowsFeature RSAT-Hyper-V-Tools  
 
 #### <a name="deploy-virtual-machines-to-run-workloads-for-testing"></a>Implementación de máquinas virtuales para ejecutar cargas de trabajo con fines de prueba  
-Necesitará algunas máquinas virtuales almacenadas en el servidor de archivos de escalabilidad horizontal con cargas de trabajo relevantes.  Si desea obtener algunas sugerencias acerca de cómo simular la carga y realizar pruebas de esfuerzo, vea la página siguiente de una herramienta recomendada (DiskSpd) y algunos ejemplos de su uso: [DiskSpd, PowerShell and storage performance: measuring IOPs, throughput and latency for both local disks and SMB file shares](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx) (DiskSpd, PowerShell y rendimiento del almacenamiento: medir E/S por segundo, rendimiento y latencia para discos locales y recursos compartidos de archivos de SMB).  
+Necesitará algunas máquinas virtuales almacenadas en el servidor de archivos de escalabilidad horizontal con cargas de trabajo relevantes.  Para obtener sugerencias sobre cómo simular la carga y hacer algunas pruebas de esfuerzo, vea la página siguiente de una herramienta recomendada (DiskSpd) y algunos ejemplos del uso: [DiskSpd, PowerShell y rendimiento de almacenamiento: medir IOPs, rendimiento y latencia para discos locales y SMB recursos compartidos de archivos.](http://blogs.technet.com/b/josebda/archive/2014/10/13/diskspd-powershell-and-storage-performance-measuring-iops-throughput-and-latency-for-both-local-disks-and-smb-file-shares.aspx)  
 
 Los escenarios de ejemplo que se incluyen en esta guía contienen cinco máquinas virtuales. BuildVM1, BuildVM2, BuildVM3 y BuildVM4 están ejecutando una carga de trabajo de escritorio con demandas de almacenamiento de bajas a moderadas. TestVm1 está ejecutando una prueba comparativa de procesamiento de transacciones en línea con una demanda de almacenamiento alta.  
 
@@ -288,24 +289,26 @@ MaximumIops    : 0
 MinimumIops    : 781  
 ```  
 
-## <a name="BKMK_CreateQoSPolicies"></a>Creación y supervisión de directivas de calidad de servicio de almacenamiento  
+## <a name="BKMK_CreateQoSPolicies"></a>Cómo crear y supervisar las directivas de QoS de almacenamiento  
 En esta sección se describe cómo crear directivas de calidad de servicio de almacenamiento, aplicar estas directivas a máquinas virtuales y supervisar un clúster de almacenamiento una vez aplicadas.  
 
 ### <a name="create-storage-qos-policies"></a>Creación de directivas de calidad de servicio de almacenamiento  
-Las directivas de calidad de servicio de almacenamiento se definen y administran en el clúster de servidores de archivos de escalabilidad horizontal.  Puede crear tantas directivas como sea necesario para las implementaciones flexibles (hasta 10000 por clúster de almacenamiento).  
+Las directivas de calidad de servicio de almacenamiento se definen y administran en el clúster de servidores de archivos de escalabilidad horizontal.  Puede crear tantas directivas como sea necesario para las implementaciones flexibles (hasta 10 000 por clúster de almacenamiento).  
 
 Cada archivo VHD/VHDX asignado a una máquina virtual puede configurarse con una directiva. Los diferentes archivos y máquinas virtuales pueden usar la misma directiva, o bien cada uno se puede configurar con directivas independientes.  Si se configuran varios archivos VHD/VHDX o varias máquinas virtuales con la misma directiva, estos se agregarán juntos y compartirán en gran medida los valores MinimumIOPS y MaximumIOPS. Si utiliza directivas independientes para varios archivos VHD/VHDX o máquinas virtuales, los valores mínimo y máximo se supervisan por separado en cada caso.  
 
 Si crea varias directivas similares para diferentes máquinas virtuales y las máquinas virtuales tienen una igual demanda de almacenamiento, estas recibirán una cuota similar de E/S por segundo.  Si una máquina virtual requiere más y otra menos, la E/S por segundo se ajustará a esa demanda.  
 
 ### <a name="types-of-storage-qos-policies"></a>Tipos de directivas de calidad de servicio de almacenamiento  
-Hay dos tipos de directivas: "Agregado" (anteriormente conocido como "Instancia única") y "Dedicado" (anteriormente conocido como "Instancias múltiples"). Las directivas de tipo agregado aplican valores máximos y mínimos para el conjunto combinado de archivos VHD/VHDX y máquinas virtuales al que se aplican. En efecto, comparten un conjunto especificado de E/S por segundo y ancho de banda. Las directivas de tipo dedicado aplican los valores mínimo y máximo para cada VHD/VHDx por separado. Esto facilita la creación de una única directiva que aplica límites similares a varios archivos VHD/VHDx.  
+Hay dos tipos de directivas: Agregados (anteriormente conocido como SingleInstance) y dedicado (anteriormente conocido como instancias múltiples). Las directivas de tipo agregado aplican valores máximos y mínimos para el conjunto combinado de archivos VHD/VHDX y máquinas virtuales al que se aplican. En efecto, comparten un conjunto especificado de E/S por segundo y ancho de banda. Las directivas de tipo dedicado aplican los valores mínimo y máximo para cada VHD/VHDx por separado. Esto facilita la creación de una única directiva que aplica límites similares a varios archivos VHD/VHDx.  
 
 Por ejemplo, si crea una directiva de tipo agregado con un mínimo de 300 E/S por segundo y un máximo de 500 E/S por segundo. Si se aplica esta directiva a 5 distintos archivos VHD/VHDx diferentes, se asegura de que los 5 archivos VHD/VHDx combinados tendrán al menos 300 E/S por segundo (si existe demanda y el sistema de almacenamiento puede proporcionar ese rendimiento) y no más de 500 E/S por segundo. Si los archivos VHD/VHDx tienen una demanda alta similar de E/S por segundo y el sistema de almacenamiento puede soportarla, cada archivo VHD/VHDx obtendrá sobre 100 E/S por segundo.  
 
 Sin embargo, si crea una directiva de tipo dedicado con límites similares y la aplica a los archivos VHD/VHDx en 5 máquinas virtuales diferentes, cada máquina virtual obtendrá por lo menos 300 E/S por segundo y no más de 500 E/S por segundo. Si las máquinas virtuales tienen una demanda alta similar de E/S por segundo y el sistema de almacenamiento puede soportarla, cada máquina virtual obtendrá sobre 500 E/S por segundo. .  Si una de las máquinas virtuales tiene varios archivos VHD/VHDx con la misma directiva de varias instancias configurada, estas compartirán el límite para que el total de E/S de la máquina virtual de archivos con esa directiva no supere los límites.  
 
-Por lo tanto, si tiene un grupo de archivos VHD/VHDx que desea que presenten las mismas características de rendimiento y no desea tener que crear varias directivas similares, puede utilizar una única directiva de tipo dedicado y aplicarla a los archivos de cada máquina virtual.  
+Por lo tanto, si tiene un grupo de archivos VHD/VHDx que desea que presenten las mismas características de rendimiento y no desea tener que crear varias directivas similares, puede utilizar una única directiva de tipo dedicado y aplicarla a los archivos de cada máquina virtual.
+
+Mantenga el número de archivos VHD/VHDx asignado a una sola directiva agregado a 20 o menos.  Este tipo de directiva pretendía realizar agregaciones con algunas máquinas virtuales en un clúster.
 
 ### <a name="create-and-apply-a-dedicated-policy"></a>Creación y aplicación de una directiva de tipo dedicado  
 En primer lugar, utilice el cmdlet `New-StorageQosPolicy` para crear una directiva en el servidor de archivos de escalabilidad horizontal tal como se muestra en el ejemplo siguiente:  
@@ -383,7 +386,7 @@ IsDeleted                     : False
 ```  
 
 ### <a name="query-for-storage-qos-policies"></a>Consulta de directivas de calidad de servicio de almacenamiento  
-`Get-StorageQosPolicy` enumera todas las directivas configuradas y su estado en un servidor de archivos de escalabilidad horizontal.  
+`Get-StorageQosPolicy` Enumera todas las directivas configuradas y su estado en un servidor de archivos de escalabilidad horizontal.  
 
 ```PowerShell
 PS C:\> Get-StorageQosPolicy  
@@ -528,10 +531,10 @@ WinOltp1      7e2f3e73-1ae4-4710-8219-0769a4aba072        1500         250      
 WinOltp1      7e2f3e73-1ae4-4710-8219-0769a4aba072        6000        1000            4507  
 ```  
 
-## <a name="BKMK_KnownIssues"></a>Identificación y resolución de problemas habituales  
+## <a name="BKMK_KnownIssues"></a>Cómo identificar y solucionar problemas comunes  
 En esta sección se describe cómo detectar las máquinas virtuales con directivas de calidad de servicio de almacenamiento no válidas, cómo volver a crear una directiva coincidente, cómo quitar una directiva de una máquina virtual y cómo identificar las máquinas virtuales que no cumplen los requisitos de la directiva de calidad de servicio de almacenamiento.  
 
-### <a name="BKMK_FindingVMsWithInvalidPolicies"></a>Identificación de máquinas virtuales con directivas no válidas  
+### <a name="BKMK_FindingVMsWithInvalidPolicies"></a>Identificar las máquinas virtuales con directivas no válidas  
 
 Si se elimina una directiva desde el servidor de archivos antes de quitarla de una máquina virtual, la máquina virtual se seguirá ejecutando como si no se hubiera aplicado ninguna directiva.  
 
@@ -575,7 +578,7 @@ WinOltp1      UnknownPolicyId           0           0            4926 UnknownPol
 WinOltp1      UnknownPolicyId           0           0               0 UnknownPolicyId BOO...  
 ```  
 
-#### <a name="BKMK_RecreateMatchingPolicy"></a>Nueva creación de una directiva de calidad de servicio de almacenamiento coincidente  
+#### <a name="BKMK_RecreateMatchingPolicy"></a>Volver a crear una directiva de QoS de almacenamiento coincidente  
 Si se eliminó por error una directiva, puede crear una nueva utilizando el valor PolicyId anterior.  En primer lugar, obtenga el valor PolicyId necesario.  
 
 ```PowerShell
@@ -626,7 +629,7 @@ TR20-VMM          Ok          33         666              10     Ok BOOT.VHDX
 WinOltp1          Ok          25         500               0     Ok 9914.0.AMD64FRE.WINMA...  
 ```  
 
-#### <a name="BKMK_RemovePolicyFromVM"></a>Eliminación de directivas de calidad de servicio de almacenamiento  
+#### <a name="BKMK_RemovePolicyFromVM"></a>Quitar directivas QoS de almacenamiento  
 
 Si la directiva se ha quitado de forma intencionada, o si se ha importado una máquina virtual con una directiva que no necesita, puede quitarla.  
 
@@ -664,7 +667,7 @@ WinOltp1                0           0            1811     Ok IOMETER.VHDX
 WinOltp1                0           0               0     Ok BOOT.VHDX  
 ```  
 
-### <a name="BKMK_VMsThatDoNotMeetStorageQoSPoilicies"></a>Búsqueda de máquinas virtuales que no cumplen las directivas de calidad de servicio de almacenamiento  
+### <a name="BKMK_VMsThatDoNotMeetStorageQoSPoilicies"></a>Busque las máquinas virtuales que no cumplen las directivas de QoS de almacenamiento  
 El estado **InsufficientThroughput** se asigna a los flujos que cumplen estos requisitos:  
 
 -   Tienen una cantidad mínima de E/S por segundo definida por directiva.  
@@ -726,7 +729,7 @@ MaximumIops        : 20000
 MinimumIops        : 15000  
 ```  
 
-## <a name="BKMK_Health"></a>Supervisión del estado con la calidad de servicio de almacenamiento  
+## <a name="BKMK_Health"></a>Supervisión del estado con QoS de almacenamiento  
 El nuevo servicio de mantenimiento simplifica la supervisión del clúster de almacenamiento, proporcionando un único lugar para buscar eventos accionables en cualquiera de los nodos. En esta sección se describe cómo supervisar el estado de su clúster de almacenamiento con el cmdlet `debug-storagesubsystem`.  
 
 ### <a name="view-storage-status-with-debug-storagesubsystem"></a>Visualización del estado de almacenamiento con Debug-StorageSubSystem  
@@ -820,7 +823,7 @@ System Center Virtual Machine Manager puede utilizarse para aplicar directivas e
 
 Si tiene un flujo que llega al máximo de una directiva y cambia la directiva para establecer un límite inferior o superior y, a continuación, determina de inmediato la latencia/la E/S por segundo/el ancho de banda de los flujos que usan los cmdlets de PowerShell, transcurrirán hasta 5 minutos hasta que surtan efecto total los cambios de la directiva en los flujos.  Los nuevos límites entrarán en vigor en pocos segundos, pero el cmdlet **Get-StorgeQoSFlow** de PowerShell utiliza un promedio de cada contador con una ventana deslizante de 5 minutos.  De no ser así, si se mostrase un valor actual y se ejecutara el cmdlet de PowerShell varias veces consecutivas, podrían aparecer valores muy diferentes porque los valores de E/S por segundo y las latencias pueden fluctuar considerablemente de un segundo a otro.
 
-### <a name="BKMK_Updates"></a>¿Qué nueva funcionalidad se ha agregado en Windows Server 2016?
+### <a name="BKMK_Updates"></a>¿Qué nueva funcionalidad se agregó en Windows Server 2016
 
 En Windows Server 2016, se ha cambiado el nombre del tipo de directiva de calidad de servicio de almacenamiento.  El tipo de directiva **Instancias múltiples** se denomina ahora **Dedicado** y el tipo **Instancia única** se denomina **Agregado**. También se ha modificado el comportamiento de administración de las directivas dedicadas: los archivos VHD/VHDX dentro de la misma máquina virtual que tienen aplicada la misma directiva de tipo **Dedicado** no compartirán las asignaciones de E/S.  
 
@@ -831,14 +834,14 @@ Hay dos nuevas características de QoS de almacenamiento en Windows Server 2016:
     La calidad de servicio de almacenamiento de Windows Server 2016 introduce la posibilidad de especificar el ancho de banda máximo que pueden consumir los flujos asignados a la directiva.  El parámetro cuando se especifica en los cmdlets **StorageQosPolicy** es **MaximumIOBandwidth** y el resultado se expresa en bytes por segundo.  
     Si se establecen en una directiva los valores **MaximimIops** y **MaximumIOBandwidth**, los dos estarán en vigor y aquel que sea el primero al que lleguen los flujos limitará la E/S de estos.  
 
--   **La normalización de E/S por segundo es configurable.**  
+-   **Normalización de e/s por segundo es configurable**  
 
     La calidad de servicio de almacenamiento utiliza la normalización de E/S por segundo.  Como valor predeterminado, se usa un tamaño de normalización de 8K.  La calidad de servicio de almacenamiento de Windows Server 2016 introduce la posibilidad de especificar un tamaño de normalización diferente para el clúster de almacenamiento.  Este tamaño de normalización afecta a todos los flujos del clúster de almacenamiento y surte efecto de inmediato (a los pocos segundos) una vez que se cambia.  El valor mínimo es 1 KB y el máximo es 4 GB (se recomienda no establecer más de 4 MB, ya que no es habitual tener más de 4 MB de E/S).  
 
     Debe tener en cuenta que el mismo rendimiento/patrón de E/S muestra diferentes números de E/S por segundo en el resultado de la calidad de servicio de almacenamiento cuando se cambia la normalización de E/S por segundo debido al cambio en el cálculo de la normalización.  Si se comparan las E/S por segundo entre grupos de almacenamiento, también puede comprobar qué valor de normalización está usando cada uno, ya que esto afectará a la E/S por segundo normalizada que se notifica.    
 
-#### <a name="example-1-creating-a-new-policy-and-viewing-the-maximum-bandwidth-on-the-storage-cluster"></a>Ejemplo 1: creación de una nueva directiva y visualización del ancho de banda máximo en el clúster de almacenamiento  
-En PowerShell, puede especificar las unidades en que se expresa una cantidad.  En el ejemplo siguiente, 10 MB es el valor de ancho de banda máximo.  La calidad de servicio de almacenamiento lo convertirá y lo guardará como bytes por segundo. De este modo, 10 MB se convierten en 10485760 bytes por segundo.  
+#### <a name="example-1-creating-a-new-policy-and-viewing-the-maximum-bandwidth-on-the-storage-cluster"></a>Ejemplo 1: Crear una nueva directiva y ver el ancho de banda máximo en el clúster de almacenamiento  
+En PowerShell, puede especificar las unidades en que se expresa una cantidad.  En el ejemplo siguiente, 10 MB es el valor de ancho de banda máximo.  La calidad de servicio de almacenamiento lo convertirá y lo guardará como bytes por segundo. De este modo, 10 MB se convierten en 10 485 760 bytes por segundo.  
 
 ```PowerShell
 PS C:\Windows\system32> New-StorageQosPolicy -Name HR_VMs -MaximumIops 1000 -MinimumIops 20 -MaximumIOBandwidth 10MB  
@@ -863,7 +866,7 @@ InitiatorLatency   : 1.5455
 InitiatorBandwidth : 37888  
 ```  
 
-#### <a name="example-2-get-iops-normalization-settings-and-specify--a-new-value"></a>Ejemplo 2: obtención de la configuración de la normalización de E/S por segundo y especificación de un valor nuevo  
+#### <a name="example-2-get-iops-normalization-settings-and-specify--a-new-value"></a>Ejemplo 2: Obtener configuración de la normalización de e/s por segundo y especifique un valor nuevo  
 
 En el ejemplo siguiente se muestra cómo obtener la configuración de la normalización de E/S por segundo de los clústeres de almacenamiento (valor predeterminado de 8 KB), luego establecerlo en 32 KB y, finalmente, mostrarlo de nuevo.  Tenga en cuenta que, en este ejemplo, se especifica "32 KB", ya que PowerShell permite especificar la unidad en lugar de requerir la conversión a bytes.   El resultado muestra el valor en bytes por segundo.  
 
@@ -882,7 +885,7 @@ IOPSNormalizationSize
 32768  
 ```    
 
-## <a name="see-also"></a>Consulte también  
+## <a name="see-also"></a>Vea también  
 - [Windows Server 2016](../../get-started/windows-server-2016.md)  
 - [Réplica de almacenamiento en Windows Server 2016](../storage-replica/storage-replica-overview.md)  
 - [Espacios de almacenamiento directo en Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md)  
