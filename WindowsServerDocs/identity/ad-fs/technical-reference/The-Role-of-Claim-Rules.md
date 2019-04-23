@@ -1,7 +1,7 @@
 ---
 ms.assetid: 65e474b5-3076-4ba3-809d-a09160f7c2bd
-title: "La función de reglas de notificación"
-description: 
+title: El papel de las reglas de notificaciones
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,103 +10,104 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: e47dbecdeee620d3a237ad8d8c41a550d3ef069c
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860786"
 ---
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-# <a name="the-role-of-claim-rules"></a>La función de reglas de notificación
-La función general de los servicios de federación de los servicios de federación de Active Directory \(AD FS\) es emitir un token que contiene un conjunto de notificaciones. La decisión sobre qué notificaciones AD FS acepta y, a continuación, emite se rige por las reglas de notificación.  
+# <a name="the-role-of-claim-rules"></a>El papel de las reglas de notificaciones
+La función general del servicio de federación de Active Directory Federation Services \(AD FS\) es emitir un token que contenga un conjunto de notificaciones. La decisión con respecto a qué notificaciones de AD FS acepta y luego emite se rige por reglas de notificación.  
   
-## <a name="what-are-claim-rules"></a>¿Cuáles son las reglas de notificación?  
-Una regla de Reclamación representa una instancia de la lógica de negocios que va a realizar una o más notificaciones entrantes, aplicar condiciones a ellos \ (si está x después y\) y generar notificaciones salientes basados en los parámetros de la condición. Para obtener más información acerca de las notificaciones entrantes y salientes, consulta [el rol de reclamaciones](The-Role-of-Claims.md).  
+## <a name="what-are-claim-rules"></a>¿Qué son las reglas de notificación?  
+Una regla de notificación representa una instancia de la lógica de negocios que va a realizar una o más notificaciones entrantes, les aplicará condiciones \(if x, entonces y\) y generar notificaciones salientes según los parámetros de condición. Para obtener más información acerca de las notificaciones entrantes y salientes, consulte [The Role of Claims](The-Role-of-Claims.md).  
   
-Usar reglas de notificación cuando se necesita implementar la lógica de negocios que va a controlar el flujo de una reclamación a través de la canalización de reclamaciones. Mientras la canalización de notificaciones es más lógico concepto de notificaciones el proceso de end\-to\-end para hacer fluir reglas de notificación son un elemento administrativo real que puedes usar para personalizar el flujo de una reclamación a través del proceso de emisión de reclamaciones.  
+Usará reglas de notificación cuando necesite implementar lógica de negocios que controle el flujo de notificaciones a través de la canalización de notificaciones. Mientras que la canalización de notificaciones es más un concepto lógico del extremo\-a\-terminar el proceso de flujo de notificaciones, las reglas son un elemento administrativo real que se puede usar para personalizar el flujo de notificaciones a través del proceso de emisión de notificaciones de notificación.  
   
-Para obtener más información acerca de la canalización de notificaciones, consulta [el rol del motor reclamaciones](The-Role-of-the-Claims-Engine.md).  
+Para obtener más información acerca de la canalización de notificaciones, consulte [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md).  
   
-Reglas de notificación proporcionan las siguientes ventajas:  
+Las reglas de notificación ofrecen las siguientes ventajas:  
   
--   Proporcionar un mecanismo para los administradores a aplicar la lógica de negocios run\ tiempo para que confía reclamaciones de proveedores de notificaciones  
+-   Proporcionar un mecanismo para que los administradores apliquen ejecución\-lógica de negocios de tiempo para confiar en las notificaciones de proveedores de notificaciones  
   
--   Proporcionar un mecanismo para que los administradores definir qué notificaciones se publican a los usuarios de confianza  
+-   Proporcionan un mecanismo para que los administradores definan las notificaciones que se publicarán para los usuarios autenticados.  
   
--   Proporcionar funcionalidades detallada y sofisticada claims\ de autorización a los administradores que deseen para permitir o denegar el acceso a usuarios específicos  
+-   Proporcionar notificaciones detalladas y eficaces\-en función de las capacidades de autorización a los administradores que desean permitir o denegar el acceso a usuarios específicos  
   
 ### <a name="how-claim-rules-are-processed"></a>Cómo se procesan las reglas de notificación  
-Reglas de notificación se procesan a través de la canalización de notificaciones con la *motor reclamaciones*. El motor de notificaciones es un componente lógico de los servicios de federación que examina el conjunto de notificaciones entrantes presentado por un usuario y, a continuación, en función de la lógica en cada regla, se produce un conjunto de resultados de una reclamación.  
+Las reglas de notificación se procesan a través de la canalización de notificaciones con el *motor de notificaciones*. El motor de notificaciones es un componente lógico del Servicio de federación que examina el conjunto de notificaciones entrantes que presenta un usuario y, después, según la lógica de cada regla, generará un conjunto de resultados de notificaciones.  
   
-Juntos, las notificaciones de regla motor y el conjunto de reglas asociadas a una determinada confianza federada determinan si notificaciones entrantes deben pasan son, filtrados para cumplir con los criterios de la condición específica o transforma en un nuevo conjunto de notificaciones antes de que se emiten como notificaciones salientes por el servicio de federación de notificación.  
+Juntos, el motor de reglas de notificaciones y el conjunto de reglas de notificación asociado a una relación de confianza federada concreta determinan si las notificaciones entrantes deben pasarse tal y como están, si se deben filtrar para cumplir criterios de una condición específica o si se deben transformar en un conjunto de notificaciones completamente nuevo antes de que el Servicio de federación las emita.  
   
-Para obtener más información sobre este proceso, consulta [el rol del motor reclamaciones](The-Role-of-the-Claims-Engine.md).  
+Para obtener más información sobre este proceso, consulte [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md).  
   
-## <a name="what-are-claim-rule-templates"></a>¿Cuáles son las plantillas de reglas de notificación?  
-AD FS incluye un conjunto predefinido de regla de notificación de plantillas que están diseñadas para que resulte fácil seleccionar y crean las reglas de notificación más adecuadas para la necesidad de negocio. Reclama regla plantillas solo se usan durante el proceso de creación de reglas de notificación.  
+## <a name="what-are-claim-rule-templates"></a>¿Qué son las plantillas de reglas de notificación?  
+AD FS incluye un conjunto predefinido de regla de notificación de las plantillas que están diseñadas para ayudarle a fácilmente seleccionar y crean las reglas de notificación más adecuadas para sus necesidades de negocio concretas. Las plantillas de reglas de notificaciones solo se usan durante el proceso de creación de reglas de notificación.  
   
-En la administración de FS anuncios en snap\, reglas sólo pueden crearse mediante plantillas de regla de notificación. Una vez que usas en snap\ para seleccionar una plantilla de regla de notificación, los datos necesarios para la lógica de la regla de entrada y guardarlos en la base de datos de configuración, estará \ (desde ese forward\ punto) contempladas en la interfaz de usuario como una regla de notificación.  
+En el complemento Administración de AD FS\-, las reglas solo pueden crearse mediante las plantillas de regla de notificación. Después de usar el complemento\-en para seleccionar una plantilla de regla de notificación, los datos necesarios para la lógica de la regla de entrada y guárdelo en la base de datos de configuración, será \(desde ese punto en adelante\) hace referencia en la interfaz de usuario como una regla de notificación.  
   
-### <a name="how-claim-rule-templates-work"></a>Cómo solicitar trabajo de plantillas de regla  
-A primera vista, plantillas de regla de Reclamación parecen ser formularios de entrada solo proporcionados por snap\ para recopilar datos y procesos lógica específica de notificaciones entrantes. Sin embargo, en un nivel mucho más detallado, reclamar el almacén de plantillas de reglas marco de lenguaje de regla que conforman la lógica de base necesarios crear rápidamente una regla sin tener que saber el idioma muy de notificación de la necesaria.  
+### <a name="how-claim-rule-templates-work"></a>Cómo funcionan las plantillas de reglas de notificación  
+A primera vista, parecen ser simplemente formularios de entrada proporcionados por el complemento Plantillas de regla de notificación\-para recopilar datos y procesar lógica específica en las notificaciones entrantes. Sin embargo, en un nivel mucho más detallado, las plantillas de reglas de notificación almacenan el marco del lenguaje de reglas de notificación necesario que constituye la lógica de base necesaria para que pueda crear rápidamente una regla sin necesidad de conocer el lenguaje en detalle.  
   
-Cada plantilla que se proporciona en la interfaz de usuario \(UI\) representa una sintaxis de lenguaje de la regla de Reclamación previamente, en función de las tareas administrativas requeridas con más frecuencia. Hay una plantilla de regla sin embargo, es decir, la excepción. Esta plantilla se conoce como la plantilla de regla personalizada. Con esta plantilla, sintaxis no se rellenaron previamente. En su lugar, debe modificar directamente la sintaxis del lenguaje de regla de notificación en el cuerpo de la forma de plantilla de regla de reclamación mediante la sintaxis de lenguaje de regla de notificación.  
+Cada plantilla que se proporciona en la interfaz de usuario \(UI\) representa una sintaxis de lenguaje de la regla de notificación rellenada previamente, basándose en las tareas administrativas requeridas con más frecuencia. Sin embargo, existe una plantilla de reglas que es la excepción. Esta plantilla se conoce como la plantilla de reglas personalizada. Con esta plantilla, no se rellena previamente ninguna sintaxis. En su lugar, debe crear directamente la sintaxis del lenguaje de reglas de notificación en el cuerpo del formulario de la plantilla de reglas de notificación mediante la sintaxis del lenguaje de reglas de notificación.  
   
-Para obtener más información sobre cómo usar la sintaxis de lenguaje de regla de notificación, consulta [el rol del lenguaje de regla reclamar](The-Role-of-the-Claim-Rule-Language.md) en la Guía de implementación de AD FS.  
+Para obtener más información sobre cómo usar la sintaxis de lenguaje de reglas de notificación, consulte [The Role of el lenguaje de reglas de notificación](The-Role-of-the-Claim-Rule-Language.md) en la Guía de implementación de AD FS.  
   
 > [!TIP]  
-> Puedes ver el idioma de la regla de Reclamación asociado con una regla en cualquier momento haciendo clic en el **Ver regla idioma** botón en las propiedades de una regla de notificación.  
+> Puede ver el lenguaje de reglas de notificación asociado a una regla en cualquier momento si hace clic en el botón **Ver lenguaje de la regla** de las propiedades de una regla de notificación.  
   
 ### <a name="how-to-create-a-claim-rule"></a>Cómo crear una regla de notificación  
-Reglas de notificación se crean por separado para cada relación de confianza federada dentro de los servicios de federación de y no se comparten entre varias relaciones de confianza. Puede crear una regla de una plantilla de regla de reclamación, empezar desde cero creando la regla usando el lenguaje de regla de reclamación o usar Windows PowerShell para personalizar una regla.  
+Las reglas de notificación se crean por separado para cada relación de confianza federada dentro del Servicio de federación y no se comparten entre varias relaciones de confianza. Puede crear una regla desde una plantilla de regla de notificación, empezar desde cero mediante la creación de la regla con el lenguaje de reglas de notificación o usar Windows PowerShell para personalizar una regla.  
   
-Todas estas opciones coexistan para proporcionarte la flexibilidad de elegir el método adecuado para un escenario dado. Para obtener más información sobre cómo crear una regla de notificación, consulta [configurar reglas reclamar](https://technet.microsoft.com/library/ee913571.aspx) en la Guía de FSDeployment anuncios.  
+Todas estas opciones coexisten para ofrecerle la flexibilidad de elegir el método adecuado para un escenario determinado. Para obtener más información sobre cómo crear una regla de notificación, consulte [configurar reglas de notificación](https://technet.microsoft.com/library/ee913571.aspx) en la Guía de AD FSDeployment.  
   
-#### <a name="using-claim-rule-templates"></a>Uso de plantillas de notificación de regla  
-Reclama regla plantillas solo se usan durante el proceso de creación de reglas de notificación. Puedes usar cualquiera de las siguientes plantillas para crear una regla de notificación:  
+#### <a name="using-claim-rule-templates"></a>Uso de plantillas de regla de notificación  
+Las plantillas de reglas de notificaciones solo se usan durante el proceso de creación de reglas de notificación. Puede usar cualquiera de las plantillas siguientes para crear una regla de notificación:  
   
--   Atravesar o filtrar una notificación entrante  
+-   Pasar o filtrar una notificación entrante  
   
 -   Transformar una notificación entrante  
   
 -   Enviar atributos LDAP como notificaciones  
   
--   Enviar la pertenencia al grupo como notificación  
+-   Enviar la pertenencia a grupo como una notificación  
   
--   Enviar notificaciones usando una regla personalizada  
+-   Enviar notificaciones mediante una regla personalizada  
   
--   Permitir o denegar a los usuarios en función de una notificación entrante  
+-   Permitir o denegar a los usuarios en función una notificación entrante  
   
--   Permitir que todos los usuarios  
+-   Permitir a todos los usuarios  
   
-Para obtener más información que describe cada una de estas plantillas de reglas de notificación, consulta [determinar el tipo de notificación regla plantilla uso](Determine-the-Type-of-Claim-Rule-Template-to-Use.md).  
+Para obtener más información que describe cada una de estas plantillas de regla de notificación, consulte [determinar el tipo de notificación de plantilla de regla para uso](Determine-the-Type-of-Claim-Rule-Template-to-Use.md).  
   
-#### <a name="using-the-claim-rule-language"></a>Con el lenguaje de regla de notificación  
-Reglas de negocio que están fuera del ámbito de plantillas de regla de reclamación estándar, puedes usar una plantilla de regla personalizada para expresar una serie de condiciones de una lógica compleja con el lenguaje de regla de notificación. Para obtener más información sobre cómo usar una regla personalizada, consulta [cuándo usar una regla personalizada de Reclamación](When-to-Use-a-Custom-Claim-Rule.md).  
+#### <a name="using-the-claim-rule-language"></a>Uso del lenguaje de las reglas de notificación  
+Para las reglas de negocio que escapan del ámbito de las plantillas de reglas de notificación estándares, puede usar una plantilla de reglas personalizada para expresar una serie de condiciones lógicas complejas con el lenguaje de reglas de notificación. Para obtener más información sobre el uso de una regla personalizada, vea [cuándo se debe usar una regla de notificación personalizada](When-to-Use-a-Custom-Claim-Rule.md).  
   
-#### <a name="using-windows-powershell"></a>Uso de Windows PowerShell  
-También puedes usar el objeto de cmdlet ADFSClaimRuleSet con Windows PowerShell para crear o administrar reglas en AD FS. Para obtener más información acerca de cómo puedes usar Windows PowerShell con este cmdlet, consulta [AD FS administración con Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=179634).  
+#### <a name="using-windowspowershell"></a>Uso de Windows PowerShell  
+También puede utilizar el objeto de cmdlet ADFSClaimRuleSet con Windows PowerShell para crear o administrar las reglas de AD FS. Para obtener más información acerca de cómo usar Windows PowerShell con este cmdlet, consulte [administración de AD FS con Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=179634).  
   
 ## <a name="what-is-a-claim-rule-set"></a>¿Qué es un conjunto de reglas de notificación?  
-Como se muestra en la siguiente ilustración, un conjunto de reglas de notificación es una agrupación de una o varias reglas para una determinada confianza federada que vas a definir cómo se procesará reclamaciones por el motor de reglas de reclamaciones. Cuando se recibe una notificación entrante en el servicio de federación el motor de reglas de Reclamación aplica la lógica de especificado por el conjunto de reglas de notificación adecuado. Es la suma final de la lógica de cada regla en el conjunto de que se determina cómo se emitirán notificaciones para una determinado confianza en su totalidad.  
+Como se muestra en la ilustración siguiente, un conjunto de reglas de notificación es una agrupación de una o varias reglas para una relación de confianza federada determinada que define la forma en que el motor de reglas de notificación procesará las notificaciones. Cuando se recibe una notificación entrante en el Servicio de federación, el motor de reglas de notificación aplica la lógica que especifica el conjunto de reglas de notificación adecuado. Es la suma final de la lógica de cada regla del conjunto la que determina cómo se emiten las notificaciones para una relación de confianza determinada en su totalidad.  
   
 ![Roles de AD FS](media/adfs2_claimruleset.gif)  
   
-Reglas de notificación se procesan el motor de notificaciones en orden cronológico dentro de un conjunto de reglas determinado. Este orden es importante, porque el resultado de una regla que puede usarse como la entrada a la siguiente regla del conjunto.  
+El motor de notificaciones procesa las reglas de notificación en orden cronológico, dentro de un conjunto determinado de reglas. Este orden es importante, ya que el resultado de una regla puede usarse como entrada de la siguiente regla del conjunto.  
   
-## <a name="what-are-claim-rule-set-types"></a>¿Cuáles son las reglas de notificación configura tipos?  
-Una regla de Reclamación establecida tipo es un segmento lógico de una confianza federada que clasificada por categorías identifica si el conjunto de reglas de Reclamación asociado con la relación de confianza se usará para la emisión de reclamaciones, aceptación o autorización. Cada confianza federada puede tener uno o más de Reclamación de regla establece tipos asociados, según el tipo de confianza que se usa.  
+## <a name="what-are-claim-rule-set-types"></a>¿Qué son los tipos de conjuntos de reglas de notificación?  
+Un tipo de conjunto de reglas de notificación es un segmento lógico de una relación de confianza federada que identifica de manera categórica si el conjunto de reglas de notificación asociado a la relación de confianza se usará para la emisión, autorización o aceptación de notificaciones. Cada relación de confianza federada puede tener uno o varios tipos de reglas de notificación asociados, según el tipo de relación de confianza que se use.  
   
-La siguiente tabla describe los distintos tipos de conjuntos de reglas de notificación y explica a su relación con un usuario de confianza de terceros de confianza o de confianza de proveedor de notificaciones.  
+En la tabla siguiente se describen los distintos tipos de conjuntos de reglas de notificación y se explica su relación con una relación de confianza del proveedor de notificaciones o con una relación de confianza para usuario autenticado.  
   
-|Tipo de conjunto de reglas de notificación|Descripción|Usado en|  
+|Tipo de conjunto de reglas de notificación|Descripción|Se usa en|  
 |-----------------------|---------------|-----------|  
-|Conjunto de reglas de transformación de aceptación|Un conjunto de reglas de notificación que usas en un determinado notificaciones de confianza de proveedor para especificar las notificaciones entrantes que se aceptarán de la organización de proveedor de notificaciones y las notificaciones salientes que se enviarán a la confianza de terceros de confianza.<br /><br />Las notificaciones entrantes que se usará para tomar como origen de este conjunto de reglas, serán las notificaciones salida por la regla de transformación de emisión establecida como se especifica en la organización de proveedor de notificaciones.<br /><br />De manera predeterminada, el nodo de confianza del proveedor de reclamaciones contiene una confianza de proveedor de Reclamación denominada **Active Directory** que se usa para representar el almacén de atributo de origen para el conjunto de reglas de transformación de aceptación. Este objeto de confianza se usa para representar la conexión de los servicios de federación de a una base de datos de Active Directory de la red. Esta confianza predeterminado es lo que procesa notificaciones para los usuarios que han sido autenticados Active Directory y no se puede eliminar.|Relaciones de confianza de proveedor de notificaciones|  
-|Conjunto de reglas de transformación de emisión|Un conjunto de reglas de notificación que se usan en una confianza de terceros de confianza para especificar las notificaciones que se emitirá al usuario de confianza.<br /><br />Las notificaciones entrantes que se usará para tomar como origen de este conjunto de reglas, será inicialmente las notificaciones que obtiene las reglas de transformación de aceptación.|Confiar confianzas de terceros|  
-|Conjunto de reglas de autorización de emisión|Un conjunto de reglas de notificación que usas en una confianza de terceros de confianza para especificar los usuarios que pueden recibir un token para el usuario de confianza.<br /><br />Estas reglas determinar si un usuario puede recibir notificaciones para un usuario de confianza y, por lo tanto, acceso a la parte del usuario de confianza.<br /><br />A menos que especifiques una regla de autorización de emisión, todos los usuarios se denegará el acceso de manera predeterminada.|Confiar confianzas de terceros|  
-|Conjunto de reglas de autorización de delegación|Un conjunto de reglas de notificación que usas en una confianza de terceros de confianza para especificar los usuarios que pueden actuar como delegados de otros usuarios para que el usuario de confianza.<br /><br />Estas reglas determinan si se permite que el solicitante suplantar a un usuario mientras se sigue identifican a solicitante en el token que se envía al usuario de confianza.<br /><br />A menos que especifiques una regla de autorización de emisión, ningún usuario puede actuar como delegados de manera predeterminada.|Confiar confianzas de terceros|  
-|Conjunto de reglas de autorización de representación|Un conjunto de reglas que se configuran mediante Windows PowerShell para determinar si un usuario pueden totalmente de Reclamación suplantar a otro usuario para el usuario de confianza.<br /><br />Estas reglas determinan si se permite que el solicitante suplantar a un usuario sin identificar al solicitante en el token que se envía al usuario de confianza.<br /><br />Suplantan la identidad de otro usuario de esta forma es una funcionalidad muy eficaz, porque el usuario de confianza no sabrá que el usuario se suplanta.|Usa la confianza de terceros|  
+|Conjunto de reglas de transformación de aceptación|Un conjunto de reglas de notificación que usa en una relación de proveedor de notificaciones concreta para especificar las notificaciones entrantes que se aceptarán desde la organización del proveedor de notificaciones y las notificaciones salientes que se enviarán a la relación de confianza para usuario autenticado.<br /><br />Las notificaciones entrantes que se usarán como origen de este conjunto de reglas serán las notificaciones de salida del conjunto de reglas de transformación de emisión, como se especifica en la organización del proveedor de notificaciones.<br /><br />De forma predeterminada, el nodo de confianza del proveedor de notificaciones contiene una relación de confianza de proveedor de notificaciones denominada **Active Directory**, que se usa para representar el almacén de atributos de origen para el conjunto de reglas de transformación de aceptación. Este objeto de confianza se usa para representar la conexión desde el Servicio de federación a una base de datos de Active Directory en la red. Esta relación de confianza predeterminada es la que procesa las notificaciones para los usuarios que Active Directory ha autenticado y no se puede eliminar.|Relaciones de confianza de proveedor de notificaciones|  
+|Conjunto de reglas de transformación de emisión|Un conjunto de reglas de notificación que se usan en una relación de confianza para usuario autenticado a fin de especificar las notificaciones que se emitirán al usuario autenticado.<br /><br />Las notificaciones entrantes que se usarán como origen para este conjunto de reglas serán inicialmente las notificaciones de salida de las reglas de transformación de aceptación.|Relaciones de confianza para usuario autenticado|  
+|Conjunto de reglas de autorización de emisión|Un conjunto de reglas de notificación que se usa en una relación de confianza para usuario autenticado a fin de especificar los usuarios a los que se les permitirá recibir un token para el usuario autenticado.<br /><br />Estas reglas determinan si un usuario puede recibir notificaciones para un usuario autenticado y, por lo tanto, obtener acceso al usuario autenticado.<br /><br />A menos que especifique una regla de autorización de emisión, se denegará el acceso a todos los usuarios de forma predeterminada.|Relaciones de confianza para usuario autenticado|  
+|Conjunto de reglas de autorización de delegación|Un conjunto de reglas de notificación que se usa en una relación de confianza para usuario autenticado a fin de especificar los usuarios que tendrán permiso para actuar como delegados de otros usuarios para el usuario autenticado.<br /><br />Estas reglas determinan si se permite que el solicitante pueda suplantar a un usuario mientras se sigue identificando al solicitante en el token que se envía al usuario autenticado.<br /><br />A menos que especifique una regla de autorización de emisión, ningún usuario puede actuar como delegado de manera predeterminada.|Relaciones de confianza para usuario autenticado|  
+|Conjunto de reglas de autorización de suplantación|Un conjunto de reglas de notificación que se configura mediante Windows PowerShell para determinar si un usuario puede suplantar a otro para el usuario autenticado.<br /><br />Estas reglas determinan si se permite que el solicitante pueda suplantar a un usuario sin identificar al solicitante en el token que se envía al usuario autenticado.<br /><br />La suplantación de otro usuario de esta manera es una capacidad muy eficaz, ya que el usuario autenticado no sabrá que se está suplantando al usuario.|Confianza para usuario autenticado|  
   
-Para obtener más información sobre cómo seleccionar las reglas de notificación adecuado para usar en tu organización, consulta [determinar el tipo de notificación regla plantilla uso](Determine-the-Type-of-Claim-Rule-Template-to-Use.md).  
+Para obtener más información sobre cómo seleccionar las reglas de notificación adecuado para usarla en su organización, consulte [determinar el tipo de notificación de plantilla de regla para uso](Determine-the-Type-of-Claim-Rule-Template-to-Use.md).  
   
 

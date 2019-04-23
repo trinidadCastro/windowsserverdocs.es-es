@@ -1,6 +1,6 @@
 ---
 ms.assetid: 01c8cece-66ce-4a83-a81e-aa6cc98e51fc
-title: "Configuración avanzada de Desduplicación de datos"
+title: Configuración avanzada de Desduplicación de datos
 ms.prod: windows-server-threshold
 ms.technology: storage-deduplication
 ms.topic: article
@@ -9,10 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 15cfc054810a2cab85aae9a04d6195c3ae6fe0b9
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59861216"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configuración avanzada de Desduplicación de datos
 
@@ -20,15 +21,15 @@ ms.lasthandoff: 10/17/2017
 
 En este documento se describe cómo modificar la configuración avanzada de [Desduplicación de datos](overview.md). Para las [cargas de trabajo recomendadas](install-enable.md#enable-dedup-candidate-workloads), la configuración predeterminada debería ser suficiente. La razón principal para modificar esta configuración es mejorar el rendimiento de Desduplicación de datos con otros tipos de cargas de trabajo.
 
-## <a id="modifying-job-schedules"></a>Modificación de programaciones de trabajos de Desduplicación de datos
+## <a id="modifying-job-schedules"></a>Modificar las programaciones de trabajos de desduplicación de datos
 Las [programaciones predeterminadas de trabajos de Desduplicación de datos](understand.md#job-info) están diseñadas para funcionar bien con las cargas de trabajo recomendadas y ser lo menos intrusivas como sea posible (sin incluir el trabajo *Optimización de prioridad* que está habilitado para el tipo de uso [**Copia de seguridad**](understand.md#usage-type-backup)). Cuando las cargas de trabajo tienen muchos requisitos de recursos, es posible garantizar que los trabajos se ejecuten solo durante las horas de inactividad, o bien reducir o aumentar la cantidad de recursos del sistema que un trabajo de Desduplicación de datos puede consumir.
 
-### <a id="modifying-job-schedules-change-schedule"></a>Modificación de una programación de Desduplicación de datos
+### <a id="modifying-job-schedules-change-schedule"></a>Cambiar una programación de desduplicación de datos
 Los trabajos de Desduplicación de datos se programan a través del programador de tareas de Windows y pueden verse y modificarse en la ruta de acceso Microsoft\Windows\Deduplication. Desduplicación de datos incluye varios cmdlets que facilitan la programación.
-* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) muestra los trabajos programados actuales.
+* [`Get-DedupSchedule`](https://technet.microsoft.com/library/hh848446.aspx) Muestra los trabajos programados actuales.
 * [`New-DedupSchedule`](https://technet.microsoft.com/library/hh848445.aspx) crea un nuevo trabajo programado.
 * [`Set-DedupSchedule`](https://technet.microsoft.com/library/hh848447.aspx) modifica un trabajo programado existente.
-* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) quita un trabajo programado.
+* [`Remove-DedupSchedule`](https://technet.microsoft.com/library/hh848451.aspx) Quita un trabajo programado.
 
 La razón más común para cambiar cuando se ejecutan los trabajos de Desduplicación de datos es asegurarse de que los trabajos se ejecutan fuera del horario laboral. En el siguiente ejemplo paso a paso muestra cómo modificar la programación de Desduplicación de datos para un escenario de *día soleado*: un host de Hyper-V hiperconvergido que está inactivo los fines de semana y después de las 19:00. Para cambiar la programación, ejecute los siguientes cmdlets de PowerShell en un contexto de administrador.
 
@@ -61,7 +62,7 @@ La razón más común para cambiar cuando se ejecutan los trabajos de Desduplica
     New-DedupSchedule -Name "WeeklyIntegrityScrubbing" -Type Scrubbing -DurationHours 23 -Memory 100 -Cores 100 -Priority High -Days @(0) -Start (Get-Date "2016-08-14 07:00:00")
     ```
 
-### <a id="modifying-job-schedules-available-settings"></a>Configuración para todo el trabajo disponible
+### <a id="modifying-job-schedules-available-settings"></a>Opciones de configuración disponibles en todo el trabajo
 Puede alternar la siguiente configuración para los trabajos de Desduplicación de datos nuevos o programados:
 
 <table>
@@ -81,7 +82,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
                 <ul>
                     <li>Optimization</li>
                     <li>GarbageCollection</li>
-                    <li>Scrubbing</li>
+                    <li>Arrastrar</li>
                 </ul>
             </td>
             <td>Este valor es necesario porque es el tipo de trabajo que quiere programar. No se puede cambiar este valor después una vez programada la tarea.</td>
@@ -93,7 +94,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
                 <ul>
                     <li>Alto</li>
                     <li>Medio</li>
-                    <li>Baja</li>
+                    <li>Bajo</li>
                 </ul>
             </td>
             <td>Este valor ayuda a que el sistema determinar cómo asignar el tiempo de CPU. *High* utilizará más tiempo de CPU, *Low* utilizará menos.</td>
@@ -125,13 +126,13 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Para evitar que un trabajo se ejecute en horas de inactividad de la carga de trabajo</td>
         </tr>
         <tr>
-            <td>Habilitada</td>
+            <td>Enabled</td>
             <td>Si el trabajo se ejecuta</td>
             <td>Verdadero o falso</td>
             <td>Para deshabilitar un trabajo sin quitarlo</td>
         </tr>
         <tr>
-            <td>Todas</td>
+            <td>Completo</td>
             <td>Para programar un trabajo de recolección completa de elementos no utilizados</td>
             <td>Modificador (verdadero/falso)</td>
             <td>De forma predeterminada, cada cuarto trabajo es un trabajo de recolección completa de elementos no utilizados. Con este modificador, puede programar la recolección completa de elementos no utilizados con más frecuencia.</td>
@@ -143,7 +144,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>La limitación garantiza que los trabajos no interfieren con otros procesos intensivos de entrada y salida.</td>
         </tr>
         <tr>
-            <td>Memory</td>
+            <td>Memoria</td>
             <td>El porcentaje de memoria en el sistema que debe usar un trabajo</td>
             <td>Enteros de 0 a 100 (indica un porcentaje)</td>
             <td>Para controlar qué nivel de impacto tendrá un trabajo en los recursos de memoria del sistema</td>
@@ -161,7 +162,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>Quiere restaurar manualmente los archivos que residen en las secciones defectuosas del disco.</td>
         </tr>
         <tr>
-            <td>Inicie</td>
+            <td>Comienzo</td>
             <td>Especifica la hora en la que se debe iniciar un trabajo.</td>
             <td>`System.DateTime`</td>
             <td>La parte de *fecha* de `System.Datetime` proporcionada en *Start* es irrelevante (mientras esté en el pasado), pero la parte de *hora* especifica cuándo debe comenzar el trabajo.</td>
@@ -175,8 +176,8 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
     </tbody>
 </table>
 
-## <a id="modifying-volume-settings"></a>Modificación de la configuración para todo el volumen de Desduplicación de datos
-### <a id="modifying-volume-settings-how-to-toggle"></a>Alternancia de la configuración del volumen
+## <a id="modifying-volume-settings"></a>Modificar la configuración de todo el volumen de desduplicación de datos
+### <a id="modifying-volume-settings-how-to-toggle"></a>Si activa o desactiva la configuración de volumen
 Puede establecer la configuración predeterminada para todo el volumen para Desduplicación de datos a través del [tipo de uso](understand.md#usage-type) que se selecciona cuando se habilita la desduplicación para un volumen. Desduplicación de datos incluye cmdlets que facilitan la modificación de la configuración para todos los volúmenes:
 
 * [`Get-DedupVolume`](https://technet.microsoft.com/library/hh848448.aspx)
@@ -194,7 +195,7 @@ Las razones principales para modificar la configuración de volumen desde el tip
     Set-DedupVolume -Volume C:\ClusterStorage\Volume1 -OptimizePartialFiles
     ```
 
-### <a id="modifying-volume-settings-available-settings"></a>Configuración para todo el volumen disponible
+### <a id="modifying-volume-settings-available-settings"></a>Configuración de todo el volumen disponible
 <table>
     <thead>
         <tr>
@@ -274,7 +275,7 @@ Las razones principales para modificar la configuración de volumen desde el tip
     </tbody>
 </table>
 
-## <a id="modifying-dedup-system-settings"></a>Modificación de la configuración para todo el sistema de Desduplicación de datos
+## <a id="modifying-dedup-system-settings"></a>Modificar la configuración de todo el sistema de desduplicación de datos
 Desduplicación de datos tiene opciones adicionales para todo el sistema que se pueden configurar a través del [Registro](https://technet.microsoft.com/library/cc755256(v=ws.11).aspx). Esta configuración se aplica a todos los trabajos y volúmenes que se ejecutan en el sistema. Deben extremarse las precauciones siempre que se modifique el Registro.
 
 Por ejemplo, puede querer deshabilitar la recolección de elementos no utilizados completa. Para más información acerca de por qué puede resultar útil para el escenario, consulte las [preguntas más frecuentes](#faq-why-disable-full-gc). Para editar el Registro con PowerShell:
@@ -290,7 +291,7 @@ Por ejemplo, puede querer deshabilitar la recolección de elementos no utilizado
     Set-ItemProperty -Path HKLM:\System\CurrentControlSet\Services\ddpsvc\Settings -Name DeepGCInterval -Type DWord -Value 0xFFFFFFFF
     ```
 
-### <a id="modifying-dedup-system-settings-available-settings"></a>Configuración para todo el sistema disponible
+### <a id="modifying-dedup-system-settings-available-settings"></a>Configuración de todo el sistema disponible
 <table>
     <thead>
         <tr>
@@ -309,26 +310,26 @@ Por ejemplo, puede querer deshabilitar la recolección de elementos no utilizado
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>Esta opción configura el intervalo en el que trabajos de recolección normal de elementos no utilizados se convierten en [trabajos de recolección completa de elementos no utilizados](advanced-settings.md#faq-full-v-regular-gc). Un valor de n significa que cada n<sup></sup> trabajos había un trabajo de recolección completa de elementos no utilizados. Ten en cuenta que la colección completa de elementos no utilizados siempre está deshabilitada (independientemente del valor del Registro) para volúmenes con el [tipo de Uso de copia de seguridad](understand.md#usage-type-backup). `Start-DedupJob -Type GarbageCollection -Full` puede usarse si se desea la recolección completa de elementos no utilizados en un volumen de copia de seguridad.</td>
+            <td>Esta opción configura el intervalo en el que trabajos de recolección normal de elementos no utilizados se convierten en [trabajos de recolección completa de elementos no utilizados](advanced-settings.md#faq-full-v-regular-gc). Un valor de n significa que cada n<sup></sup> trabajos había un trabajo de recolección completa de elementos no utilizados. Ten en cuenta que la colección completa de elementos no utilizados siempre está deshabilitada (independientemente del valor del Registro) para volúmenes con el [tipo de Uso de copia de seguridad](understand.md#usage-type-backup). `Start-DedupJob -Type GarbageCollection -Full` se pueden utilizar si se desea la recolección de elementos no utilizados completa en un volumen de copia de seguridad.</td>
             <td>Enteros (-1 indica deshabilitado)</td>
-            <td>Consulta [esta pregunta frecuente](advanced-settings.md#faq-why-disable-full-gc)</td>
+            <td>Consulte [esta pregunta frecuente](advanced-settings.md#faq-why-disable-full-gc)</td>
         </tr>
     </tbody>
 </table>
 
 ## <a id="faq"></a>Preguntas más frecuentes
-<a id="faq-use-responsibly"></a>**Se ha cambiado una configuración de Desduplicación de datos y ahora los trabajos van lentos o no finalizan, o el rendimiento de la carga de trabajo ha disminuido. ¿Por qué sucede esto?**  
+<a id="faq-use-responsibly"></a>**Cambiar la configuración de desduplicación de datos y ahora los trabajos son lentos o no finalizan o ha disminuido el rendimiento de mi carga de trabajo. ¿Por qué?**  
 Esta configuración le permiten controlar cómo se ejecuta Desduplicación de datos. Úselos de forma responsable y [supervise el rendimiento](run.md#monitoring-dedup).
 
-<a id="faq-running-dedup-jobs-manually"></a>**Quiero ejecutar un trabajo de Desduplicación de datos ahora, pero no quiero crear una nueva programación. ¿Se puede hacer esto?**  
+<a id="faq-running-dedup-jobs-manually"></a>**Quiero ejecutar un trabajo de desduplicación de datos ahora mismo, pero no quiero crear una nueva programación--¿puedo hacer esto?**  
 Sí, [todos los trabajos se pueden ejecutar manualmente](run.md#running-dedup-jobs-manually).
 
-<a id="faq-full-v-regular-gc"></a>**¿Cuál es la diferencia entre la recolección de elementos no utilizados completa y normal?**  
+<a id="faq-full-v-regular-gc"></a>**¿Cuál es la diferencia entre la recopilación de elementos no utilizados completa y normal?**  
 Hay dos tipos de [recolección de elementos no deseados](understand.md#job-info-gc):
 
 - *Recolección normal de elementos no utilizados*: utiliza un algoritmo estadístico para buscar grandes fragmentos sin referencia que cumplen unos criterios determinados (bajo en memoria e IOPs). La recolección normal de elementos no utilizados compacta un contenedor de almacenamiento de fragmentos solo si un porcentaje mínimo de los fragmentos están sin referencia. Este tipo de recolección de elementos no utilizados se ejecuta más rápido y consume menos recursos que la recolección completa de elementos no utilizados. La programación predeterminada del trabajo de recolección normal de elementos no utilizados es ejecutarlo una vez por semana.
 - La *recolección completa de elementos no utilizados* hace un trabajo mucho más profundo de búsqueda de fragmentos sin referencia y de liberación de más espacio en disco. La recolección completa de elementos no utilizados compacta cada contenedor, incluso si solo un único fragmento del contenedor no tiene referencia. La recolección de elementos no utilizados completa también liberará espacio que haya estado en uso si se produjo un error de alimentación o un bloqueo durante un trabajo de optimización. Los trabajos de recolección completa de elementos no utilizados recuperarán el 100 por ciento del espacio disponible que se puede recuperar en un volumen desduplicado a costa de requerir más tiempo y recursos del sistema en comparación con un trabajo de recolección normal de elementos no utilizados. El trabajo de recolección completa de elementos no utilizados normalmente encontrará y liberará hasta un 5 por ciento más de datos sin referencia que un trabajo de recolección normal de elementos no utilizados. La programación predeterminada del trabajo de recolección completa de elementos no utilizados consiste en ejecutarse cada cuarta vez que está programada la recolección de elementos no utilizados.
 
-<a id="faq-why-disable-full-gc"></a>**¿Por qué podría ser necesario deshabilitar la recolección completa de elementos no utilizados?**  
+<a id="faq-why-disable-full-gc"></a>**¿Por qué podría ser necesario deshabilitar la recolección de elementos no utilizados completa?**  
 - La recolección de elementos no utilizados podría afectar negativamente a las instantáneas del tiempo de vida del volumen y al tamaño de la copia de seguridad incremental. Las cargas de trabajo con una E/S intensiva o con una elevada renovación de código pueden ver una degradación del rendimiento en los trabajos de recolección completa de elementos no utilizados.           
 - Puede ejecutar manualmente un trabajo de recolección completa de elementos no utilizados desde PowerShell para limpiar las fugas si sabe que se bloqueó el sistema.

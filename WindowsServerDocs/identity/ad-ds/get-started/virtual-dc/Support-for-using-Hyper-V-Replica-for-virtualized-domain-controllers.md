@@ -1,75 +1,77 @@
 ---
 ms.assetid: 45a65504-70b5-46ea-b2e0-db45263fabaa
-title: "Compatibilidad de réplica de Hyper-V para controladores de dominio virtualizada"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Compatibilidad de la réplica de Hyper-V con controladores de dominio virtualizados
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 0444198196ed08a22aba92a0f59cc6e7a2518a2e
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 0203c6de55a4e691d7c484351a3280c49891f317
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59866286"
 ---
-# <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>Compatibilidad de réplica de Hyper-V para controladores de dominio virtualizada
+# <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>Compatibilidad de la réplica de Hyper-V con controladores de dominio virtualizados
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tema explica la compatibilidad del uso de réplica de Hyper-V para replicar una máquina virtual (VM) que se ejecuta como un controlador de dominio (corriente continua). Réplica de Hyper-V es una nueva funcionalidad de Windows Server 2012 que proporciona un mecanismo de replicación integrado en un nivel de la máquina virtual a partir de Hyper-V.  
+En este tema se explica la compatibilidad para usar Réplica de Hyper-V con objeto de replicar una máquina virtual (VM) que se ejecuta como un controlador de dominio (DC). Réplica de Hyper-V es una nueva capacidad de Hyper-V incluida a partir de Windows Server 2012 que proporciona un mecanismo integrado de replicación en el nivel de una VM.  
   
-Hyper-V réplica replica asincrónicamente máquinas virtuales seleccionadas desde un host de Hyper-V principal a un host de Hyper-V réplica a través de LAN o vínculos WAN. Una vez completada la replicación inicial, los cambios subsiguientes se replicarán en un intervalo definido por el administrador.  
+Las VM seleccionadas se replican asincrónicamente desde un host de Hyper-V principal con un host de Hyper-V de réplica mediante vínculos LAN o WAN. Una vez completada la replicación inicial, los cambios posteriores se replican según el intervalo que el administrador haya definido.  
   
-Puede ser la conmutación por error planeada o no. Se inicia una conmutación por error planeada por un administrador en la máquina virtual principal, y los cambios no replicados se copiarán a la réplica de VM para evitar la pérdida de datos. En la máquina virtual de réplica en respuesta a un error inesperado de la máquina virtual principal, se inicia una conmutación por error imprevisto. Pérdida de datos es posible porque hay una oportunidad para transmitir los cambios en la máquina virtual principal es posible que no replicados aún.  
+La conmutación por error puede ser planeada o no planeada. Una conmutación por error planeada debe iniciarla un administrador en la VM principal, y todos los cambios que no se hayan replicado se copian en la VM de réplica para no perder datos, mientras que una conmutación por error no planeada se inicia en la VM de réplica como respuesta a un error inesperado que ha tenido lugar en la VM principal. En este caso sí se pueden perder datos, ya que no existe la posibilidad de transmitir los cambios en la VM principal que no hayan podido replicarse aún.  
   
-Para obtener más información acerca de réplica de Hyper-V, consulta [información general de réplica de Hyper-V](https://technet.microsoft.com/library/jj134172.aspx) y [implementar réplica de Hyper-V](https://technet.microsoft.com/library/jj134207.aspx).  
-  
-> [!NOTE]  
-> Réplica de Hyper-V se puede ejecutar solo en Windows Server Hyper-V, no a la versión de Hyper-V que se ejecuta en Windows 8.  
-  
-## <a name="windows-server-2012-domain-controllers-required"></a>Controladores de dominio de Windows Server 2012 necesarios  
-Windows Server 2012 Hyper-V también presenta VM-GenerationID (VMGenID). VMGenID proporciona una forma de que el hipervisor para comunicarse con el SO invitado cuando se han producido cambios significativos. Por ejemplo, el hipervisor puede comunicar a un controlador de dominio virtualizada que una restauración de instantánea se ha producido (tecnología de restauración de Hyper-V instantánea, restaurar copia de seguridad no). AD DS en Windows Server 2012 es consciente de tecnología de VM VMGenID y lo usa para detectar cuándo se realizan operaciones de hipervisor, tales como la restauración de instantánea, lo cual te permite proteger mejor a sí mismo.  
+Para obtener información adicional sobre la Réplica de Hyper-V, consulte [Introducción a Réplica de Hyper-V](https://technet.microsoft.com/library/jj134172.aspx) y [Implementar la réplica de Hyper-V](https://technet.microsoft.com/library/jj134207.aspx).  
   
 > [!NOTE]  
-> Para reforzar el punto, solo AD DS en controladores de dominio de Windows Server 2012 ofrece estas medidas de seguridad resultantes de VMGenID; Controladores de dominio que se ejecuten todas las versiones anteriores de Windows Server están sujetos a problemas como la reversión de USN que puede ocurrir cuando un controlador de dominio virtualizada se restaura mediante un mecanismo no compatible, como restaurar instantánea. Para obtener más información sobre estas medidas de seguridad y cuando se desencadenen, consulta [virtualizados arquitectura de controlador de dominio](https://technet.microsoft.com/library/jj574118.aspx).  
+> Réplica de Hyper-V solo se puede ejecutar en Windows Server Hyper-V, y no en la versión de Hyper-V que se ejecuta en Windows 8.  
   
-Cuando (planeada o no), se produce un error de réplica de Hyper-V, Windows Server 2012 virtualizados DC detecta un restablecimiento VMGenID, desencadenar las características de seguridad mencionados anteriormente. Operaciones de Active Directory, a continuación, continúe forma normal. La réplica VM que se ejecuta en lugar de la máquina virtual principal.  
+## <a name="windows-server-2012-or-newer-domain-controllers-required"></a>Windows Server 2012 o versiones más recientes controladores de dominio requeridos
+
+Windows Server 2012 Hyper-V introdujo VM-GenerationID (VMGenID). VMGenID constituye una forma por parte del hipervisor de comunicarse con el SO invitado cuando han tenido lugar cambios reseñables. Por ejemplo, el hipervisor se puede comunicar con un DC virtualizado donde ha tenido lugar una restauración desde una instantánea (tecnología de restauración de instantánea de Hyper-V, no restauración de copia de seguridad). AD DS en Windows Server 2012 y versiones más recientes es compatible con tecnología de VM VMGenID y lo usa para detectar cuándo se realizan operaciones de hipervisor, tales como la restauración instantánea, lo que le permite protegerse mejor.  
   
-> [!NOTE]  
-> Dado que ahora ahora hay dos instancias de la misma identidad de controlador de dominio, es posible para la instancia principal y la instancia replicada para ejecutarse. Mientras réplica de Hyper-V tiene mecanismos de control para garantizar el principal y máquinas virtuales de réplica no se ejecutan al mismo tiempo, es posible que se ejecuten al mismo tiempo en el caso de que se produce un error en el vínculo entre ellas después de la replicación de la máquina virtual. En caso de que este improbable, virtualizadas controladores de dominio que ejecutan Windows Server 2012 tienen medidas de seguridad para ayudar a proteger los AD DS, mientras que virtualizan los controladores de dominio que ejecutan versiones anteriores de Windows Server no.  
+> [!NOTE]
+> Solo AD DS en controladores de dominio de Windows Server 2012 o versiones más recientes proporcionan estas medidas de seguridad resultante de VMGenID; Los controladores de dominio que se ejecutan todas las versiones anteriores de Windows Server están sujetos a problemas, como la reversión de USN que pueden producirse cuando se restaura un controlador de dominio virtualizado con un mecanismo no admitido, como la restauración de instantáneas. Para obtener más información acerca de estas medidas de seguridad y cuándo se activan, consulte [arquitectura virtualizada de controlador de dominio](https://technet.microsoft.com/library/jj574118.aspx).  
   
-Cuando uses réplica de Hyper-V, asegúrate de que sigas los procedimientos recomendados para [ejecutan controladores de dominio virtual en Hyper-V](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(v=WS.10).aspx). Esto describe, por ejemplo, recomendaciones para almacenar archivos de Active Directory en discos SCSI virtuales, que proporciona más sólidas garantías de duración de datos.  
-  
-## <a name="supported-and-unsupported-scenarios"></a>Escenarios admitidos y no admitidos  
-Solo máquinas virtuales que ejecutan Windows Server 2012 se admiten para la conmutación por error imprevisto y para las pruebas de conmutación por error. Incluso para conmutación por error planeada, Windows Server 2012 se recomienda para el controlador de dominio virtualizada para mitigar los riesgos en caso de que un administrador accidentalmente inicia la máquina virtual principal y la máquina virtual replicada al mismo tiempo.  
-  
-Máquinas virtuales que ejecutan versiones anteriores de Windows Server son compatibles con planeada conmutación por error, pero no compatible para la conmutación por error imprevisto debido a la posibilidad de reversión de USN. Para obtener más información sobre la reversión de USN, consulta [USN y reversión de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).  
+Cuando se produce una conmutación por error de réplica de Hyper-V (planeada o no), el controlador de dominio virtualizado detecta un restablecimiento de VMGenID, activar las características de seguridad arriba mencionadas. Tras esto, Active Directory prosigue con su funcionamiento habitual. La VM de réplica se ejecuta como la VM principal.  
   
 > [!NOTE]  
-> Existen requisitos de nivel funcionales del dominio o bosque; Existen requisitos del sistema operativo solo para los controladores de dominio que se ejecutan como máquinas virtuales que se replican con Hyper-V réplica. En un bosque que contiene otros controladores de dominio físicas o virtuales que ejecutan versiones anteriores de Windows Server y puede o no también se replique con réplica de Hyper-V, se pueden implementar las máquinas virtuales.  
+> Ahora que hay dos instancias de la misma identidad de DC, existe la posibilidad de que tanto la instancia principal como la replicada se ejecuten. Si bien Réplica de Hyper-V está dotado de mecanismos de control para garantizar que las VM principal y de réplica no se ejecutan al mismo tiempo, esto puede suceder si se produce un error en el vínculo entre ambas después de la replicación de la VM. En el improbable caso de que esto ocurra, los controles de dominio virtualizados que ejecutan Windows Server 2012 cuentan con medidas de seguridad para proteger AD DS, pero no así los controles de dominio virtualizados que ejecutan versiones anteriores de Windows Server.  
   
-Esta declaración de soporte técnico se basa en pruebas realizadas en un bosque de dominio único, aunque también se admiten las configuraciones de bosque de varios dominios. Para estas pruebas, controladores de dominio virtualizada DC1 y DC2 son asociados de replicación de Active Directory en el mismo sitio, hospedados en un servidor que ejecuta Hyper-V en Windows Server 2012. El Invitado VM que se ejecuta DC2 tiene réplica de Hyper-V habilitado. El servidor de réplica está hospedado en otro datacenter distante. Para ayudar a explicar los procesos de caso de prueba que se describen a continuación, la máquina virtual que se ejecuta en el servidor de réplica se conoce como DC2 Rec (aunque en la práctica se reserva el mismo nombre que la máquina virtual original).  
+Al utilizar la réplica de Hyper-V, asegúrese de seguir las prácticas recomendadas para [ejecutar controladores de dominio virtuales en Hyper-V](https://technet.microsoft.com/library/virtual_active_directory_domain_controller_virtualization_hyperv(v=WS.10).aspx). Este artículo incluye recomendaciones para, por ejemplo, almacenar archivos de Active Directory en discos SCSI virtuales, lo que constituye una mayor garantía de durabilidad de los datos.  
   
-### <a name="windows-server-2012"></a>Windows Server 2012  
-La siguiente tabla explica la compatibilidad para virtualizada controladores de dominio que ejecutan Windows Server 2012 y casos de prueba.  
+## <a name="supported-and-unsupported-scenarios"></a>Escenarios admitidos y no admitidos
+
+Solo las máquinas virtuales que ejecute Windows Server 2012 o versiones más reciente son compatibles para la conmutación por error imprevista y para probar la conmutación por error. Incluso para la conmutación por error planeada, se recomienda Windows Server 2012 o versiones más reciente para el controlador de dominio virtualizado con el fin de mitigar los riesgos en caso de que un administrador inicie inintencionadamente la VM principal y la VM replicada al mismo tiempo.  
+  
+Las VM que ejecutan versiones anteriores de Windows Server se pueden usar en las conmutaciones por error planeadas, pero no en las no planeadas, dadas las probabilidades de que se produzca una reversión de USN. Para obtener más información acerca de la reversión de USN, vea [USN y reversión de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).  
+  
+> [!NOTE]  
+> No existen requisitos de nivel funcional de dominio o bosque, sino únicamente requisitos de sistema operativo para los controladores de dominio que se ejecutan como VM y que se replican mediante Réplica de Hyper-V. Las VM se pueden implementar en un bosque que contenga otros controladores de dominio físicos o virtuales donde se ejecute una versión anterior de Windows Server y que pueden o no replicarse a través de Réplica de Hyper-V.  
+  
+Esta afirmación de compatibilidad se sustenta en diversas pruebas que se han realizado en un bosque con un solo dominio, si bien también se admiten configuraciones de bosque multidominio. En dichas pruebas, los controladores de dominio virtualizados DC1 y DC2 son asociados de replicación de Active Directory hospedados en el mismo sitio y en un servidor que ejecuta Hyper-V en Windows Server 2012. Réplica de Hyper-V está habilitado en el invitado de VM. El servidor Réplica está hospedado en un centro de datos alejado geográficamente. Para poder entender mejor los procesos del caso de prueba que vamos a explicar a continuación, haremos referencia a la VM que ejecuta el servidor Réplica como DC2-Rec (aunque su nombre sea de facto el mismo que el de la VM original).  
+  
+### <a name="windows-server-2012"></a>Windows Server 2012
+
+En la siguiente tabla se detalla la compatibilidad de los controladores de dominio virtualizados que ejecutan Windows Server 2012, así como los casos de prueba.  
   
 |||  
 |-|-|  
-|Planeada de conmutación por error|Conmutación por error imprevisto|  
-|Admite|Admite|  
-|Caso de prueba:<br /><br />-DC1 y DC2 ejecutan Windows Server 2012.<br /><br />-DC2 se apaga y se realiza una conmutación por error en DC2 Rec. Puede ser la conmutación por error planeada o no.<br /><br />-Cuando se inicie el DC2 Rec, comprueba si el valor de VMGenID que tiene en su base de datos es igual al valor desde el controlador de máquina virtual guardado en el servidor de réplica de Hyper-V.<br /><br />-Como resultado, DC2 Rec desencadena medidas de seguridad de virtualización; en otras palabras, restablece el Id. de invocación, descarta su grupo RID y establece un requisito de sincronización inicial antes de supone un rol de maestro de operaciones. Para obtener más información sobre el requisito de sincronización inicial, consulta.<br /><br />-DC2-Rec, a continuación, guarda el nuevo valor de VMGenID en su base de datos y confirma las actualizaciones subsiguientes en el contexto de la invocación nuevo.<br /><br />-Como resultado de este restablecimiento de invocación, DC1 se convergen en todos los cambios que AD introducidos DC2 Rec incluso si se ha deshecho en el tiempo, lo que significa que las actualizaciones de anuncios se realizan en DC2 Rec después de forma segura se converge la conmutación por error|El caso de prueba es el mismo que planeada conmutación por error, con las siguientes excepciones:<br /><br />-Un anuncio actualiza DC2 recibidos en, pero aún no replica por AD en un duplicador antes de que el evento de conmutación por error, se perderán.<br /><br />-Actualizaciones de AD recibidas en DC2 después de que el tiempo del punto de recuperación que se replicaron por AD DC1 DC1 se replicarán volver a DC2 Rec.|  
+|Conmutación por error planeada|Conmutación por error no planeada|  
+|Se admite|Se admite|  
+|Caso de prueba:<br /><br />-DC1 y DC2 ejecutan Windows Server 2012.<br /><br />-DC2 se apaga y se realiza una conmutación por error en DC2-Rec. La conmutación por error puede ser planeada o no planeada.<br /><br />-Una vez que se inicia DC2-Rec, comprueba si el valor de VMGenID que tiene en su base de datos es el mismo que el valor desde el controlador de máquina virtual guardado por el servidor de réplica de Hyper-V.<br /><br />-Como resultado, DC2-Rec desencadena las medidas de seguridad de virtualización; en otras palabras, restablece su InvocationID, descarta su grupo de RID y establece un requisito de sincronización inicial antes de asumir un rol de maestro de operaciones. Para obtener más información sobre el requisito de sincronización inicial, consulta .<br /><br />-DC2-Rec, a continuación, guarda el nuevo valor de VMGenID en su base de datos y confirma las actualizaciones subsiguientes en el contexto del nuevo InvocationID.<br /><br />-Como resultado de restablecimiento de InvocationID, DC1 converge todos los cambios de AD introducidos por DC2-Rec, incluso si se ha deshecho en el tiempo, lo que significa que cualquier actualización de AD efectuada en DC2-Rec después de la conmutación por error convergerá sin problema.|El caso de prueba es el mismo que el de una conmutación por error planeada, salvo por las siguientes excepciones:<br /><br />-Cualquier AD actualizaciones de software recibidas en DC2, pero no ha replicado por AD a un asociado de replicación antes de que el evento de conmutación por error se perderá.<br /><br />-Las actualizaciones de AD recibidas en DC2 tras la hora del punto de recuperación que se replicaron AD a DC1 se replicarán desde DC1 a DC2-Rec.|  
   
-### <a name="windows-server-2008-r2-and-earlier-versions"></a>Windows Server 2008 R2 y versiones anteriores  
-La siguiente tabla explica la compatibilidad para virtualizada controladores de dominio que ejecutan Windows Server 2008 R2 y versiones anteriores.  
+### <a name="windows-server-2008-r2-and-earlier-versions"></a>Windows Server 2008 R2 y versiones anteriores
+
+En la siguiente tabla se refleja la compatibilidad de los controladores de dominio virtualizados que ejecutan Windows Server 2008 R2 y versiones anteriores.  
   
 |||  
 |-|-|  
-|Planeada de conmutación por error|Conmutación por error imprevisto|  
-|Compatible pero no se recomienda porque los controladores de dominio que se ejecutan estas versiones de Windows Server no admiten VMGenID o usar medidas de seguridad de virtualización asociado. Esto coloca corriendo el riesgo de reversión de USN. Para obtener más información, consulta [USN y reversión de USN](https://technet.microsoft.com/en-us/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).|No admite **Nota:** la conmutación por error imprevisto admitiría donde la reversión de USN no es un riesgo, como un único controlador de dominio del bosque (es decir, una configuración que no se recomienda).|  
-|Caso de prueba:<br /><br />-DC1 y DC2 ejecutan Windows Server 2008 R2.<br /><br />-DC2 se apaga y se realiza una conmutación por error planeada en DC2 Rec. Todos los datos de DC2 se replica en DC2 Rec antes de que el apagado.<br /><br />-Después DC2 Rec se inicia, se reanuda replicación con DC1 usando el mismo Id. de invocación como DC2.|N/D|  
-  
-
-
+|Conmutación por error planeada|Conmutación por error no planeada|  
+|Compatible, pero no recomendable, ya que los controladores de dominio que ejecutan estas versiones de Windows Server no admiten VMGenID y carecen de medidas de seguridad de virtualización asociadas. Esto supone un riesgo de reversión de USN. Para obtener más información, vea [USN y reversión de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).|No admite **Nota:** La conmutación por error no planeada podría ser compatible si la reversión de USN no supusiera un riesgo, como un único controlador de dominio en el bosque (configuración que no se recomienda).|  
+|Caso de prueba:<br /><br />-DC1 y DC2 ejecutan Windows Server 2008 R2.<br /><br />-DC2 se apaga y se realiza una conmutación por error planeada en DC2-Rec. Todos los datos en DC2 se replican en DC2-Rec antes de que el apagado finalice.<br /><br />-Después de que DC2-Rec se inicia, reanuda la replicación con DC1 usando el mismo invocationID como DC2.|N/D|  

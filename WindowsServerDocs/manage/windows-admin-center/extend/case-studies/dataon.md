@@ -1,6 +1,6 @@
 ---
-title: Caso práctico de Windows Admin Center SDK - DataON
-description: Caso práctico de Windows Admin Center SDK - DataON
+title: Caso práctico de Windows Admin Center SDK - datos
+description: Caso práctico de Windows Admin Center SDK - datos
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
@@ -9,40 +9,40 @@ ms.date: 01/11/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 1adf538792763bf05a43d431d9751d275a6fcd04
-ms.sourcegitcommit: e544f5c50e023e263540e4b1b1deb4cc81df5472
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083833"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858226"
 ---
-# DataON MUST extensión
+# <a name="dataon-must-extension"></a>Datos deben extensión
 
-## Integrada de supervisión y administración de una infraestructura hiperconvergida de Microsoft
+## <a name="integrated-monitoring-and-management-for-microsoft-hyper-converged-infrastructure"></a>Integra la administración y supervisión de infraestructuras hiperconvergidas de Microsoft
 
-[DataON](http://www.dataonstorage.com/) es el proveedor de líderes del sector de almacenamiento y la infraestructura de sistemas hiperconvergidos optimizado para entornos de Microsoft Windows Server. Centra exclusivamente en la entrega de aplicaciones de Microsoft, virtualización, protección de datos y servicios en la nube híbrida, tiene más 650 las implementaciones de empresa y 120PB más de las implementaciones de espacios de almacenamiento directo.
+[Datos](http://www.dataonstorage.com/) es el proveedor líder del sector del almacenamiento y la infraestructura de sistemas hiperconvergidos optimizado para entornos de Microsoft Windows Server. Se centra exclusivamente en la entrega de aplicaciones de Microsoft, virtualización, protección de datos y servicios de nube híbrida, tiene más de 650 implementaciones empresariales y 120PB a través de las implementaciones de espacios de almacenamiento directo.
 
-Extensión [DataON MUST](http://www.dataonstorage.com/must) para Windows Admin Center es un buen ejemplo de valor que integrar dos productos complementarios puede ofrecer a los clientes, llevar juntos a través de la administración y supervisión y una perspectiva de principio a fin de hardware y software todo un clúster en una experiencia unificada.
+[Datos deben](http://www.dataonstorage.com/must) extensión de Windows Admin Center es un buen ejemplo del valor que la integración de dos productos complementarios puede ofrecer a los clientes, poner la información de supervisión, administración y to-end en hardware y software juntos en todo un clúster en una experiencia unificada.
 
-> <cite>"Hemos tomado de la herramienta de visibilidad, la supervisión y administración de debe independiente y habilitado para que funcione en Windows Admin Center. Los clientes se beneficiarán de las funcionalidades ampliadas que debe proporciona, y la combinación de debe y Windows Admin Center desde una única consola que proporcionará la experiencia de administración ultimate para infraestructura basada en Windows Server."</cite>
+> <cite>"Hemos tomado nuestra herramienta de administración, supervisión y visibilidad de debe independiente y habilitado para que funcione en Windows Admin Center. Los clientes se beneficiarán de las capacidades ampliadas que debe proporciona, y la combinación de debe y Windows Admin Center desde una sola consola proporcionará la experiencia de administración ultimate para infraestructuras basadas en Windows Server".</cite>
 >
-> --Howard Lo, vicepresidente vicepresidente de ventas y Marketing, DataON
+> --Howard de Lo, vo vicepresidente de ventas y Marketing, datos
 
-La extensión debe amplía la funcionalidad de Windows Admin Center, ya que ofrece funciones, como:
-- **Informes de datos históricos** , proporciona paneles mensuales y en tiempo real de los datos de rendimiento del sistema, incluida la e/s por segundo, latencia, rendimiento en el clúster, grupo de almacenamiento, volumen y nodos.
-- **Asignación de disco** : debe muestra los tipos de dispositivos y componentes en cada uno de los nodos, proporcionando un mapa de disco clara de todo el nodo. Muestra el número de discos, tipo de disco, ubicación y ranura de cada unidad y el estado del disco.
-- **Alertas del sistema** : errores de servicio de mantenimiento de Windows aprovecha para identificar los errores de hardware, problemas de configuración y la saturación de recursos. También proporciona una evaluación de varios nivel de ubicaciones específicas, tolerancia descripciones y las acciones de recuperación. También puede aprovechar SNMP de terceros supervisión capturas para alertar cuando necesites reemplazos de disco o hardware.
-- **SAN como servicio llamada a casa** : lo solicite alertas del sistema, los administradores pueden tener automatizada de alertas de correo electrónico enviadas a los contactos clave.
+La extensión debe amplía la funcionalidad de Windows Admin Center proporcionando características tales como:
+- **Creación de informes de datos históricos** – proporciona paneles en tiempo real y mensuales de los datos de rendimiento del sistema, incluidos IOPS, latencia y rendimiento en el clúster, bloque de almacenamiento, volumen y los nodos.
+- **Asignación de disco** – debe muestra los tipos de dispositivos y componentes en cada uno de los nodos, que proporciona una asignación de disco no cifrado de todo el nodo. Muestra el número de discos, tipo de disco, ubicación y la ranura de cada unidad y el estado de mantenimiento de disco.
+- **Las alertas del sistema** : errores de servicio de mantenimiento de Windows aprovecha para identificar los errores de hardware, problemas de configuración y saturación de recursos. También proporciona una evaluación de varios nivel de ubicaciones específicas, las descripciones de error y las acciones de recuperación. También puede aprovechar los terceros SNMP capturas de supervisión para generar una alerta cuando necesite los reemplazos de disco o de hardware.
+- **Similar a SAN servicio llamada a casa** : las alertas del sistema se lo solicite, los administradores pueden haber automatizado alertas por correo electrónico enviadas a contactos de clave.
 
-![DataON Extensión](../../media/extend-case-study-dataon/dataon-1.png)
-*asignación de disco en la extensión DataON MUST para Windows Admin Center*
+![Extensión de datos](../../media/extend-case-study-dataon/dataon-1.png)
+*asignación de disco en la extensión de datos debe para Windows Admin Center*
 
-> <cite>"Es excelente que Windows Admin Center permite extensiones como DataON MUST por lo que podemos usar ambas herramientas dentro de la misma consola y puedo como esa integración transparente cómo es. Windows Admin Center y DataON MUST juntos realmente nos permiten a ser más eficiente y guarda nuestro equipo multitud de tiempo. Esto nos permite lograr nuestro mucho más rápidas que teníamos antes de tareas del administrador."</cite>
+> <cite>"Es genial que Windows Admin Center permite extensiones como datos debe puedo usar ambas herramientas dentro de la misma consola y yo como es de que la integración de forma transparente. Windows Admin Center y datos debe juntos realmente nos permiten ser más eficaz y guarda una gran cantidad de nuestro equipo de tiempo. Nos permite lograr las tareas de administrador mucho más rápidas que teníamos antes."</cite>
 >
-> --Matt Roper, facilitador de servicios de soporte técnico de tecnología, Cheroqui County (GA) School District
+> --Matt Roper, responsable de tecnología de servicios de soporte, condado Cheroqui (GA) School District
 
-![DataON Extensión](../../media/extend-case-study-dataon/dataon-2.png)
-*Servicios de alerta en la extensión DataON MUST para Windows Admin Center*
+![Extensión de datos](../../media/extend-case-study-dataon/dataon-2.png)
+*servicios de alerta en la extensión de datos debe para Windows Admin Center*
 
-> <cite>"Debe ha sido muy valioso y era un punto de venta grande. Para nosotros, muestra un compromiso de DataON para admitir la infraestructura hiperconvergida de Microsoft. La inclusión de debe con su dispositivo S2D es lo que complete la solución con espacios de almacenamiento directo como reemplazo SAN viable." </cite>
+> <cite>"Debe ha sido muy valioso y era un gran punto de venta. Para nosotros, se ha demostrado un compromiso de datos para admitir las infraestructuras hiperconvergidas de Microsoft. La inclusión de debe con su dispositivo S2D es lo que completa la solución con espacios de almacenamiento directo como un sustituto de SAN viable." </cite>
 >
-> --Benjamin Clements, presidente, estratégica en línea Systems, Inc.
+> --Benjamin Clements, presidente, estratégicos en línea Systems, Inc.

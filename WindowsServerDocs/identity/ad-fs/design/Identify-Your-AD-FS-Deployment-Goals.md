@@ -1,7 +1,7 @@
 ---
 ms.assetid: c81b8291-fba5-4b30-a43d-7feb2f4b66be
-title: "Guía de diseño de AD FS en Windows Server 2012 R2"
-description: 
+title: Guía de diseño de AD FS en Windows Server 2012 R2
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,88 +10,89 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: f618add4c4803142b3bd7278908834a412f30999
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59862576"
 ---
-# <a name="identify-your-ad-fs-deployment-goals"></a>Identificar los objetivos de implementación de AD FS
+# <a name="identify-your-ad-fs-deployment-goals"></a>Identificar los objetivos de implementación de AD FS
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-Es fundamental para el éxito de tu proyecto de diseño de AD FS correctamente identificar los objetivos de implementación de servicios de federación de Active Directory \(AD FS\). Establecer prioridades y, posiblemente, combina los objetivos de implementación para que puedes diseñar e implementar AD FS mediante el uso de un enfoque iterativo. Puedes aprovechar existente, documentado y predefinidos objetivos de la implementación de AD FS que sean relevantes para los diseños de AD FS y desarrollar una solución que funcione para su situación.  
+Identificar correctamente los servicios de federación de Active Directory \(AD FS\) objetivos de implementación es esencial para el éxito de su proyecto de diseño de AD FS. Establecer prioridades y, posiblemente, combine los objetivos de implementación para que puede diseñar e implementar AD FS mediante el uso de un enfoque iterativo. Puede aprovechar las ventajas de las existentes, documenta y predefinidos objetivos de implementación de AD FS que son relevantes para los diseños AD FS y desarrollar una solución que funcione para su situación.  
   
-Las versiones anteriores de AD FS normalmente se implementaron para lograr lo siguiente:  
+Las versiones anteriores de AD FS se implementaron con más frecuencia para lograr lo siguiente:  
   
--   Proporcionar a tus empleados o clientes basados en web\, experiencia SSO al obtener acceso a aplicaciones basadas en claims\ dentro de tu empresa.  
+-   Proporcionar a los empleados o clientes una web\-basado, la experiencia de SSO al tener acceso a las notificaciones\-en función de las aplicaciones dentro de su empresa.  
   
--   Proporcionar a tus empleados o clientes una experiencia de inicio de sesión único basada en web\, acceder a los recursos de cualquier organización de partner de federación.  
+-   Proporcionar a los empleados o clientes una web\-basado, experiencia de inicio de sesión único para acceder a recursos en cualquier organización del asociado de federación.  
   
--   Proporcionar a tus empleados o clientes basados en Web\, experiencia SSO internamente el acceso remoto hospedados los sitios Web o servicios.  
+-   Proporcionar a los empleados o clientes una Web\-basado, la experiencia de SSO cuando acceso remoto internamente hospeda sitios Web o servicios.  
   
--   Proporcionar a tus empleados o clientes una experiencia SSO basado en web\ al acceder a recursos o servicios en la nube.  
+-   Proporcionar a los empleados o clientes una web\-basado, la experiencia de SSO al acceder a recursos o servicios en la nube.  
   
-Además, AD FS en Windows Server® 2012 R2 agrega funciones que pueden ayudarte a lograr lo siguiente:  
+Además, AD FS en Windows Server® 2012 R2 agrega una funcionalidad que puede ayudarle a lograr lo siguiente:  
   
--   Unirse a un área de trabajo para SSO y transparente segundo dispositivo autenticación multifactor. Esto permite a las organizaciones permitir el acceso desde los dispositivos personales del usuario y administrar el riesgo al proporcionar este acceso.  
+-   Unión al área de trabajo de un dispositivo para la autenticación SSO y de segundo factor sin problemas Esto permite a las organizaciones permitir el acceso desde dispositivos personales del usuario y administrar el riesgo al proporcionar este acceso.  
   
--   Administración de riesgos con el control de acceso multi\ factor. AD FS proporciona un nivel de autorización enriquecido que controla quién tiene acceso a las aplicaciones. Esto puede basarse en los atributos de usuario \ (UPN, correo electrónico, pertenencia al grupo de seguridad, intensidad de la autenticación, etc. \), los atributos del dispositivo \ (si el dispositivo es el área de trabajo joined\) o solicitar atributos \ (ubicación, dirección IP o usuario agente\ de red).  
+-   Administración de riesgos con múltiples\-factorizar el control de acceso. AD FS proporciona un nivel mayor de autorización que controla quién tiene acceso a determinadas aplicaciones. Esto puede basarse en atributos de usuario \(UPN, correo electrónico, pertenencia al grupo de seguridad, seguridad de la autenticación, etc.\), atributos del dispositivo \(si el dispositivo está unido\) o solicitar atributos \(ubicación de red, la dirección IP o el agente de usuario\).  
   
--   Administración de riesgo con la autenticación de factor de multi\ adicional para aplicaciones con información confidencial. AD FS le permite controlar las directivas para potencialmente requerir la autenticación de factor de multi\ globalmente o en según la aplicación. Además, AD FS proporciona puntos de extensibilidad para cualquier proveedor multi\ factor integre estrechamente para ofrecer una experiencia multi\ fases segura y transparente para los usuarios finales.  
+-   Administración de riesgos con múltiples adicionales\-autenticación de factor para aplicaciones confidenciales. AD FS le permite controlar las directivas para requerir potencialmente multi\-factor de autenticación global o según una función de la aplicación. Además, AD FS ofrece puntos de extensibilidad para cualquier multi\-proveedor factor integre profundamente para un seguro y sin problemas de varios\-factor experiencia para los usuarios finales.  
   
--   Proporcionar funcionalidades de autenticación y autorización para acceder a recursos web desde la extranet que están protegidos por el Proxy de aplicación Web.  
+-   Que proporciona capacidades de autenticación y autorización para acceder a recursos web desde la extranet que están protegidos por el Proxy de aplicación Web.  
   
-En resumen, se puede implementar AD FS en Windows Server 2012 R2 para lograr los siguientes objetivos de la organización:  
+En resumen, se puede implementar AD FS en Windows Server 2012 R2 para lograr los objetivos siguientes en su organización:  
   
-### <a name="enable-your-users-to-access-resources-on-their-personal-devices-from-anywhere"></a>Permitir a los usuarios acceder a recursos en sus dispositivos personales desde cualquier lugar  
+### <a name="enable-your-users-to-access-resources-on-their-personal-devices-from-anywhere"></a>Permitir que los usuarios tener acceso a recursos en sus dispositivos personales desde cualquier lugar  
   
--   Unirse a un área de trabajo que los usuarios pueden unirse a sus dispositivos personales en Active Directory corporativa y así obtener acceso y experiencias sin problemas al obtener acceso a recursos corporativos de estos dispositivos.  
+-   Unión al área de trabajo que permite a los usuarios unir sus dispositivos personales con Active Directory corporativo y así tener acceso y experiencias sin problemas al obtener acceso a recursos corporativos desde estos dispositivos.  
   
--   Autenticación de Pre\ de recursos dentro de la red corporativa que estén protegidos mediante el proxy de aplicación Web y acceder a él desde internet.  
+-   Pre\-autenticación de los recursos dentro de la red corporativa que están protegidos por el proxy de aplicación Web y accesibles desde internet.  
   
--   Cambio de contraseña para permitir que los usuarios pueden cambiar su contraseña desde cualquier dispositivo de estén unidos a un área de trabajo cuando ha caducado su contraseña para que pueda continuar acceder a recursos.  
+-   Cambio de contraseña que habilita a los usuarios para cambiar su contraseña desde cualquier dispositivo unido al área de trabajo cuando ha expirado su contraseña, de manera que puedan seguir teniendo acceso a recursos.  
   
-### <a name="enhance-your-access-control-risk-management-tools"></a>Mejorar las herramientas de administración de riesgo de control de acceso  
-Administración de riesgo es un aspecto importante de la compatibilidad de cada organización de TI y control. Hay el control de acceso numerosas mejoras de administración de riesgo de AD FS en Windows Server® 2012 R2, incluido lo siguiente:  
+### <a name="enhance-your-access-control-risk-management-tools"></a>Mejorar las herramientas de administración de riesgos de control de acceso  
+La administración de riesgos es un aspecto importante del control y el cumplimiento en cada organización de TI. Hay control de acceso a numerosas mejoras de administración de riesgos de AD FS en Windows Server® 2012 R2, incluido lo siguiente:  
   
--   Según la ubicación de red para controlar cómo se autentica un usuario para acceder a una aplicación protegida por AD FS\ de controles flexibles.  
+-   Controles flexibles en función de la ubicación de red para controlar cómo se autentica un usuario para tener acceso a AD FS\-aplicación protegida.  
   
--   Directiva flexible para determinar si un usuario necesita realizar la autenticación de factor de multi\ basándose en los datos del usuario, datos de dispositivo y ubicación de red.  
+-   Directivas flexibles para determinar si un usuario tiene que realizar varias\-autenticación multifactor en función de los datos del usuario, datos del dispositivo y ubicación de red.  
   
--   Control de Per\ aplicación omita SSO y exigir al usuario que proporcione las credenciales cada vez que acceden a una aplicación con información confidencial.  
+-   Por\-control de la aplicación para omitir el SSO y forzar al usuario que proporcione credenciales cada vez que accede a una aplicación confidencial.  
   
--   Directiva de acceso flexible de per\ aplicación basada en datos de usuario, datos de dispositivo o ubicación de red.  
+-   Flexible por\-basada en directivas de acceso de aplicación en los datos de usuario, datos del dispositivo o ubicación de red.  
   
--   AD FS Extranet bloqueo, que permite a los administradores proteger cuentas de Active Directory contra ataques de fuerza bruta de internet.  
+-   Bloqueo de la extranet de AD FS, que permite que los administradores puedan proteger las cuentas de Active Directory contra los ataques por fuerza bruta desde Internet.  
   
--   Revocación de acceso para todos los dispositivos estén unidos a un área de trabajo que está deshabilitado o eliminado en Active Directory.  
+-   Revocación de acceso para cualquier dispositivo unido al área de trabajo que esté deshabilitado o eliminado en Active Directory.  
   
-### <a name="use-ad-fs-to-enhance-the-sign-in-experience"></a>Usar AD FS para mejorar la experiencia de sign\  
-Estos son nuevas capacidades de AD FS de Windows Server® 2012 R2 que permiten personalizar y mejorar la experiencia de sign\ administrador:  
+### <a name="use-ad-fs-to-enhance-the-sign-in-experience"></a>Usar AD FS para mejorar el inicio de sesión\-experiencia  
+Los siguientes son nuevas capacidades de AD FS en Windows Server® 2012 R2 que permiten al administrador personalizar y mejorar el inicio de sesión\-experiencia:  
   
--   Personalización de los servicios de AD FS, donde los cambios se realizan una vez y, a continuación, se propagan automáticamente al resto de los servidores de federación de AD FS en un determinado conjunto de unificado.  
+-   Personalización unificada del servicio AD FS, donde los cambios se realizan una vez y después se propagan automáticamente al resto de los servidores de federación de AD FS en una granja de servidores determinada.  
   
--   Sign\ en páginas actualizadas aspecto moderno y atender a todos los diferentes factores de forma automáticamente.  
+-   Actualiza el inicio de sesión\-en las páginas que tienen un aspecto moderno y abastecen los distintos factores de forma automáticamente.  
   
--   Compatibilidad de reserva automática autenticación basada en forms\ para los dispositivos que no están unidos al dominio corporativo pero aún se usan en generar solicitudes de acceso desde dentro de la \(intranet\) red corporativa.  
+-   Compatibilidad con la reserva automática para formularios\-basados en la autenticación para dispositivos que no están unidos al dominio corporativo pero que todavía se utilizan generan solicitudes de acceso desde dentro de la red corporativa \(intranet\).  
   
--   Controles simples para personalizar el logotipo de la compañía, imagen de ilustración, vínculos estándar de soporte técnico, página principal, privacidad, etcetera.  
+-   Controles simples para personalizar el logotipo de la compañía, la imagen de ilustración, los vínculos estándar para el soporte técnico de TI, la página principal, la privacidad, etc.  
   
--   Personalización de mensajes de la descripción de las páginas de sign\.  
+-   Personalización de descripción de los mensajes en el inicio de sesión\-en páginas.  
   
--   Personalización de temas de la web.  
+-   Personalización de temas web.  
   
--   Casa \(HRD\) territorio detección en función de sufijo organizativa del usuario para privacidad mejorada de socios de la empresa.  
+-   Detección del dominio de inicio \(HRD\) según sufijo organizativa del usuario para mejorar la privacidad de los socios de la empresa.  
   
--   HRD filtrado de forma per\ desde la aplicación para seleccionar automáticamente un territorio en función de la aplicación.  
+-   Filtro de HRD un por\-según la aplicación para seleccionar automáticamente un dominio Kerberos basado en la aplicación.  
   
--   Informe de forma más fácil de errores de One\ y haga clic en TI solución de problemas.  
+-   Una\-haga clic en informes de errores para sea más fácil TI solución de problemas.  
   
 -   Mensajes de error personalizables.  
   
--   Elección de autenticación de usuario cuando hay más de un proveedor de autenticación.  
+-   Elección de autenticación del usuario cuando hay más de un proveedor de autenticación disponible.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 [Guía de diseño de AD FS en Windows Server 2012 R2](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

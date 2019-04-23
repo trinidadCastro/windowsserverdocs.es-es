@@ -1,6 +1,6 @@
 ---
 title: Configurar el cliente de web de Escritorio remoto para los usuarios
-description: Describe cómo un administrador puede configurar el cliente de web de escritorio remoto.
+description: Describe cómo un administrador puede configurar el cliente web de escritorio remoto.
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
@@ -9,118 +9,118 @@ ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
 ms.openlocfilehash: 2cb819a7f91646c61b84c3ee70550af6033ba340
-ms.sourcegitcommit: 491c94b25501732c4a4abda533cc62b8bd278ed2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "9099188"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59865976"
 ---
-# Configurar el cliente de web de Escritorio remoto para los usuarios
+# <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configurar el cliente de web de Escritorio remoto para los usuarios
 
-El cliente de web de escritorio remoto permite a los usuarios acceder a la infraestructura de escritorio remoto de la organización a través de un explorador web compatible. Podrán interactuar con aplicaciones remotas o equipos de escritorio al igual que lo harían con un equipo local, independientemente de dónde se encuentran. Una vez configurado el cliente de web de escritorio remoto, todo lo que necesitan los usuarios para empezar a trabajar es la dirección URL dónde pueden tener acceso al cliente, sus credenciales y un explorador web compatible.
+El cliente web de escritorio remoto permite a los usuarios tener acceso a la infraestructura de escritorio remoto de su organización a través de un explorador web compatible. Podrán interactuar con aplicaciones remotas o escritorios como harían con un equipo local independientemente de donde estén. Una vez configurado el cliente web de escritorio remoto, todos los usuarios necesitan para comenzar es la dirección URL donde puede acceder a un explorador web compatible, sus credenciales y el cliente.
 
 >[!IMPORTANT]
->El cliente web no admite actualmente con el Proxy de aplicación de Azure y no es compatible con Proxy de aplicación Web en absoluto. Para obtener más información, consulte [Utilizar RDS con servicios de proxy de aplicación](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services) .
+>El cliente web no admite actualmente mediante el Proxy de aplicación de Azure y no es compatible con Proxy de aplicación Web en absoluto. Consulte [utilizar RDS con servicios de proxy de aplicación](../rds-supported-config.md#using-remote-desktop-services-with-application-proxy-services) para obtener más información.
 
-## Lo que tendrás que configurar el cliente web
+## <a name="what-youll-need-to-set-up-the-web-client"></a>Lo que necesitará configurar el cliente web
 
-Antes de comenzar, ten en cuenta lo siguiente:
+Antes de comenzar, tenga en cuenta lo siguiente:
 
-* Asegúrese de que la [implementación de escritorio remoto](../rds-deploy-infrastructure.md) tiene una puerta de enlace de escritorio remoto, un agente de conexión a Escritorio remoto y acceso Web de RD que se ejecutan en Windows Server 2016 o 2019.
-* Asegúrese de que la implementación se configura para [licencias de acceso de cliente por usuario](../rds-client-access-license.md) (CAL) en lugar de cada dispositivo, en caso contrario que se consume todas las licencias.
-* Instalar la [actualización de Windows 10 KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) en la puerta de enlace de escritorio remoto. Actualizaciones acumulativas más adelante ya es posible que contiene este artículo de KB.
-* Comprueba que los certificados de confianza públicos están configurados para las funciones de puerta de enlace de escritorio remoto y acceso Web de RD.
-* Asegúrate de que todos los usuarios se conectan a los equipos están ejecutando una de las siguientes versiones de sistema operativo:
+* Asegúrese de que su [implementación de escritorio remoto](../rds-deploy-infrastructure.md) tiene una puerta de enlace de escritorio remoto, un agente de conexión a Escritorio remoto y acceso Web de escritorio remoto que se ejecutan en Windows Server 2016 o de 2019.
+* Asegúrese de que la implementación está configurada para [licencias de acceso de cliente por usuario](../rds-client-access-license.md) (CAL) en lugar de por dispositivo, en caso contrario, todas las licencias se consumirán.
+* Instalar el [actualización Windows 10 KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) en la puerta de enlace de escritorio remoto. Más adelante las actualizaciones acumulativas ya es posible que contiene este artículo de KB.
+* Asegúrese de que se configuran los certificados de confianza públicos para las funciones de puerta de enlace de escritorio remoto y acceso Web de escritorio remoto.
+* Asegúrese de que todos los equipos que se conectarán los usuarios que ejecutan una de las siguientes versiones de sistema operativo:
   * Windows 10
   * Windows Server 2008 R2 o posterior
 
-Los usuarios verán un mejor rendimiento conectarse a Windows Server 2016 (o posterior) y Windows 10 (versión 1611 o posterior).
+Los usuarios verán un mejor rendimiento que se conecta a Windows Server 2016 (o posterior) y Windows 10 (versión 1611 o posterior).
 
 >[!IMPORTANT]
->Si se usa al cliente web durante el período de vista previa y había instalado una versión anterior de la versión 1.0.0, primero debe desinstalar al cliente antiguo antes de pasar a la nueva versión. Si recibes un error que dice "el cliente web se instaló con una versión anterior de RDWebClientManagement y primero debe quitarse antes de implementar la nueva versión", sigue estos pasos:
+>Si usa al cliente web durante el período de vista previa y había instalada una versión anterior a 1.0.0, primero debe desinstalar al cliente anterior antes de pasar a la nueva versión. Si recibe un error que dice "el cliente web se instaló con una versión anterior de RDWebClientManagement y debe quitarse primero antes de implementar la nueva versión", siga estos pasos:
 >
->1. Abre un símbolo del sistema con privilegios elevados de PowerShell.
->2. Ejecutar **RDWebClientManagement de módulo de desinstalación** para desinstalar el módulo de nuevo.
->3. Cierra y vuelve a abrir el símbolo del sistema con privilegios elevados de PowerShell.
->4. Ejecutar **version> de \<old parámetros-RequiredVersion RDWebClientManagement del módulo de instalación para instalar el módulo antiguo.**
->5. Ejecutar **RDWebClient de desinstalación** para desinstalar al cliente de web antiguos.
->6. Ejecutar **RDWebClientManagement de módulo de desinstalación** para desinstalar el módulo anterior.
->7. Cierra y vuelve a abrir el símbolo del sistema con privilegios elevados de PowerShell.
->8. Continúe con los pasos de instalación normal como sigue:
+>1. Abra un símbolo del sistema con privilegios elevados de PowerShell.
+>2. Ejecute **RDWebClientManagement Uninstall-Module** para desinstalar el módulo nuevo.
+>3. Cierre y vuelva a abrir el símbolo del sistema con privilegios elevados de PowerShell.
+>4. Ejecute **RDWebClientManagement Install-Module - RequiredVersion \<versión antigua > para instalar el módulo anterior.**
+>5. Ejecute **desinstalar RDWebClient** para desinstalar el cliente web anterior.
+>6. Ejecute **RDWebClientManagement Uninstall-Module** para desinstalar el módulo anterior.
+>7. Cierre y vuelva a abrir el símbolo del sistema con privilegios elevados de PowerShell.
+>8. Haga lo siguiente con los pasos de instalación normal.
 
-## Cómo publicar al cliente de web de escritorio remoto
+## <a name="how-to-publish-the-remote-desktop-web-client"></a>Cómo publicar al cliente web de escritorio remoto
 
-Para instalar al cliente web por primera vez, sigue estos pasos:
+Para instalar al cliente web por primera vez, siga estos pasos:
 
-1. En el servidor de agente de conexión a Escritorio remoto, obtener el certificado usado para conexiones a Escritorio remoto y exportarla como un archivo .cer. Copia el archivo .cer desde el agente de conexión a Escritorio remoto en el servidor que ejecuta el rol de Web de escritorio remoto.
-2. En el servidor de acceso Web de RD, abre un símbolo del sistema con privilegios elevados de PowerShell.
-3. En Windows Server 2016, actualiza el módulo PowerShellGet dado que la versión de la Bandeja de entrada no admite la instalación del módulo de administración de cliente web. Para actualizar PowerShellGet, ejecuta el siguiente cmdlet:
+1. En el servidor de agente de conexión a Escritorio remoto, obtenga el certificado usado para las conexiones de escritorio remoto y expórtelo como archivo .cer. Copie el archivo .cer desde el agente de conexión a Escritorio remoto en el servidor que ejecuta el rol Web de escritorio remoto.
+2. En el servidor de acceso Web de RD, abra un símbolo del sistema con privilegios elevados de PowerShell.
+3. En Windows Server 2016, actualice el módulo PowerShellGet, ya que la versión de la Bandeja de entrada no admite la instalación del módulo de administración de cliente web. Para actualizar PowerShellGet, ejecute el siguiente cmdlet:
     ```PowerShell
     Install-Module -Name PowerShellGet -Force
     ```
 
     >[!IMPORTANT]
-    >Tendrás que reiniciar PowerShell para que surta efecto, de lo contrario de que no funcionen el módulo la actualización.
+    >Deberá reiniciar PowerShell para que la actualización surta efecto, en caso contrario, que el módulo no funcionen.
 
-4. Instalar el módulo de PowerShell de administración de cliente de escritorio remoto web desde la Galería de PowerShell con este cmdlet:
+4. Instalar el módulo de PowerShell de administración del cliente de web de escritorio remoto desde la Galería de PowerShell con este cmdlet:
     ```PowerShell
     Install-Module -Name RDWebClientManagement
     ```
 
-5. Después, ejecuta el siguiente cmdlet para descargar la versión más reciente del cliente de web de escritorio remoto:
+5. Después, ejecute el siguiente cmdlet para descargar la versión más reciente del cliente web de escritorio remoto:
     ```PowerShell
     Install-RDWebClientPackage
     ```
 
-6. A continuación, ejecuta este cmdlet con el valor entre corchetes reemplazado por la ruta de acceso del archivo .cer que copió desde el agente de escritorio remoto:
+6. A continuación, ejecute este cmdlet con el valor entre corchetes reemplazado por la ruta de acceso del archivo .cer que ha copiado en el agente de escritorio remoto:
     ```PowerShell
     Import-RDWebClientBrokerCert <.cer file path>
     ```
 
-7. Por último, ejecuta este cmdlet para publicar al cliente de web de escritorio remoto:
+7. Por último, ejecute este cmdlet para publicar al cliente web de escritorio remoto:
     ```PowerShell
     Publish-RDWebClientPackage -Type Production -Latest
     ```
-    Asegúrese de que puede tener acceso al cliente web en la dirección URL de cliente de web con el nombre del servidor, como el formato <https://server_FQDN/RDWeb/webclient/index.html>. Es importante usar el nombre del servidor que coincida con el certificado público de acceso Web de RD en la dirección URL (por lo general, el FQDN del servidor).
+    Asegúrese de que se puede acceder el cliente web en la dirección URL del cliente web con el nombre del servidor, con el formato <https://server_FQDN/RDWeb/webclient/index.html>. Es importante usar el nombre del servidor que coincida con el certificado público del acceso Web de escritorio remoto en la dirección URL (normalmente el FQDN del servidor).
 
     >[!NOTE]
-    >Cuando se ejecuta el cmdlet **Publicar RDWebClientPackage** , verás una advertencia que dice CAL por dispositivo no se admiten, incluso si la implementación se configura para CAL por usuario. Si la implementación usa CAL por usuario, puede omitir esta advertencia. Lo mostramos para asegurarse de que eres consciente de la limitación de configuración.
-8. Cuando estés listo para que los usuarios acceso al cliente web, simplemente enviarles la dirección URL de cliente de web que creaste.
+    >Cuando se ejecuta el **publicar RDWebClientPackage** cmdlet, puede ver una advertencia que dice CAL por dispositivo no se admiten, incluso si la implementación está configurada para CAL por usuario. Si la implementación usa CAL por usuario, puede omitir esta advertencia. Lo mostramos para asegurarnos de que tener en cuenta la limitación de la configuración.
+8. Cuando esté listo para que los usuarios tener acceso al cliente web, envíelos a la dirección URL del cliente web que creó.
 
 >[!NOTE]
->Para ver una lista de todos los cmdlets admitidos para el módulo RDWebClientManagement, ejecuta el siguiente cmdlet de PowerShell:
+>Para ver una lista de todos los cmdlets compatibles para el módulo RDWebClientManagement, ejecute el siguiente cmdlet de PowerShell:
 >```PowerShell
 >Get-Command -Module RDWebClientManagement
 >```
 
-## Cómo actualizar al cliente de web de escritorio remoto
+## <a name="how-to-update-the-remote-desktop-web-client"></a>Cómo actualizar al cliente web de escritorio remoto
 
-Cuando está disponible una nueva versión del cliente de web de escritorio remoto, sigue estos pasos para actualizar la implementación con el nuevo cliente:
+Cuando hay disponible una versión nueva del cliente web de escritorio remoto, siga estos pasos para actualizar la implementación con el nuevo cliente:
 
-1. Abre un símbolo de PowerShell con privilegios elevados en el servidor de acceso Web de RD y ejecuta el siguiente cmdlet para descargar la versión más reciente del cliente web:
+1. Abra un símbolo de PowerShell con privilegios elevados en el servidor de acceso Web de escritorio remoto y ejecute el siguiente cmdlet para descargar la última versión disponible del cliente web:
     ```PowerShell
     Install-RDWebClientPackage
     ```
 
-2. Opcionalmente, puedes publicar al cliente para las pruebas antes de su lanzamiento oficial, ejecuta este cmdlet:
+2. Si lo desea, puede publicar al cliente antes del lanzamiento oficial de prueba, ejecute este cmdlet:
     ```PowerShell
     Publish-RDWebClientPackage -Type Test -Latest
     ```
 
-    El cliente debe aparecer en la dirección URL de prueba que corresponde a la dirección URL del cliente web (por ejemplo, <https://server_FQDN/RDWeb/webclient-test/index.html>).
-3. Publicar al cliente para los usuarios, ejecuta el siguiente cmdlet:
+    El cliente debe aparecer en la dirección URL de prueba que se corresponde con la dirección URL del cliente web (por ejemplo, <https://server_FQDN/RDWeb/webclient-test/index.html>).
+3. Publicar al cliente para los usuarios, ejecute el siguiente cmdlet:
     ```PowerShell
     Publish-RDWebClientPackage -Type Production -Latest
     ```
 
-    Esto reemplazará al cliente para todos los usuarios cuando se vuelve a iniciar la página web.
+    Esto reemplazará al cliente para todos los usuarios cuando vuelva a iniciar la página web.
 
-## Cómo desinstalar al cliente de web de escritorio remoto
+## <a name="how-to-uninstall-the-remote-desktop-web-client"></a>Cómo desinstalar al cliente web de escritorio remoto
 
-Para quitar todas las trazas del cliente web, sigue estos pasos:
+Para quitar todos los seguimientos del cliente web, siga estos pasos:
 
-1. En el servidor de acceso Web de RD, abre un símbolo del sistema con privilegios elevados de PowerShell.
-2. Anular la publicación de los clientes de prueba y producción, desinstalar todos los paquetes locales y quitar la configuración de cliente de web:
+1. En el servidor de acceso Web de RD, abra un símbolo del sistema con privilegios elevados de PowerShell.
+2. Cancelar la publicación de los clientes de prueba y producción, desinstale todos los paquetes locales y quitar la configuración de cliente web:
 
    ```PowerShell
    Uninstall-RDWebClient
@@ -132,76 +132,76 @@ Para quitar todas las trazas del cliente web, sigue estos pasos:
    Uninstall-Module -Name RDWebClientManagement
    ```
 
-## Cómo instalar al cliente de web de escritorio remoto sin una conexión a internet
+## <a name="how-to-install-the-remote-desktop-web-client-without-an-internet-connection"></a>Cómo instalar al cliente web de escritorio remoto sin una conexión a internet
 
-Sigue estos pasos para implementar al cliente de web a un servidor de acceso Web de RD que no tiene una conexión a internet.
-
-> [!NOTE]
-> Instalación sin conexión a internet está disponible en la versión 1.0.1 y versiones posteriores del módulo de RDWebClientManagement PowerShell.
+Siga estos pasos para implementar al cliente web en un servidor de acceso Web de escritorio remoto que no tiene una conexión a internet.
 
 > [!NOTE]
-> Todavía tienes un equipo de administrador con acceso a internet para descargar los archivos necesarios antes de transferirlos al servidor sin conexión.
+> Instalación sin conexión a internet está disponible en la versión 1.0.1 y versiones posteriores del módulo RDWebClientManagement PowerShell.
 
 > [!NOTE]
-> El equipo del usuario final, necesita una conexión a internet por ahora. Esto se resolverá en una versión futura del cliente para proporcionar un escenario sin conexión completo.
+> Necesita un administrador de equipo con acceso a internet para descargar los archivos necesarios antes de transferirlos al servidor sin conexión.
 
-### Desde un dispositivo con acceso a internet
+> [!NOTE]
+> El equipo del usuario final necesita una conexión a internet por ahora. Esto se solucionará en una versión futura del cliente para proporcionar un escenario completo sin conexión.
 
-1. Abre un símbolo del sistema de PowerShell.
+### <a name="from-a-device-with-internet-access"></a>Desde un dispositivo con acceso a internet
 
-2. Importar el módulo de PowerShell de administración del cliente de web de escritorio remoto de la Galería de PowerShell:
+1. Abra un símbolo del sistema de PowerShell.
+
+2. Importar el módulo de PowerShell de administración del cliente de web de escritorio remoto desde la Galería de PowerShell:
     ```PowerShell
     Import-Module -Name RDWebClientManagement
     ```
 
-3. Descarga la última versión del cliente de web de escritorio remoto para la instalación en otro dispositivo:
+3. Descargue la versión más reciente del cliente web de escritorio remoto para su instalación en un dispositivo diferente:
     ```PowerShell
     Save-RDWebClientPackage "C:\WebClient\"
     ```
 
-4. Descargar la versión más reciente del módulo de RDWebClientManagement PowerShell:
+4. Descargue la versión más reciente del módulo RDWebClientManagement PowerShell:
     ```PowerShell
     Find-Module -Name "RDWebClientManagement" -Repository "PSGallery" | Save-Module -Path "C:\WebClient\"
     ```
 
-5. Copia el contenido de "C:\WebClient\" en el servidor de acceso Web de RD.
+5. Copie el contenido de "C:\WebClient\" al servidor de acceso Web de escritorio remoto.
 
-### Desde el servidor de acceso Web de RD
+### <a name="from-the-rd-web-access-server"></a>Desde el servidor de acceso Web de RD
 
-Sigue las instrucciones en [cómo publicar al cliente de web de escritorio remoto](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client), sustituyendo los pasos 4 y 5 con lo siguiente.
+Siga las instrucciones de [cómo publicar el cliente web de escritorio remoto](remote-desktop-web-client-admin.md#how-to-publish-the-remote-desktop-web-client), reemplazando los pasos 4 y 5, por lo siguiente.
 
-4. Importar el módulo de PowerShell de administración de cliente de escritorio remoto web desde la carpeta local:
+4. Importar el módulo de PowerShell de administración del cliente de web de escritorio remoto desde la carpeta local:
     ```PowerShell
     Import-Module -Name "C:\WebClient\"
     ```
 
-5. Implementar la versión más reciente del cliente de web de escritorio remoto de la carpeta local (reemplaza con el archivo zip adecuado):
+5. Implementar la versión más reciente del cliente de web de escritorio remoto desde la carpeta local (reemplazar por el archivo zip adecuado):
     ```PowerShell
     Install-RDWebClientPackage -Source "C:\WebClient\rdwebclient-1.0.1.zip"
     ```
 
-## Conexión a Escritorio remoto agente sin puerta de enlace de escritorio remoto en Windows Server 2019
-En esta sección se describe cómo habilitar una conexión de cliente de web a un agente de escritorio remoto sin una puerta de enlace de escritorio remoto en Windows Server 2019.
+## <a name="connecting-to-rd-broker-without-rd-gateway-in-windows-server-2019"></a>Conectarse al agente de escritorio remoto sin puerta de enlace de escritorio remoto en Windows Server de 2019
+En esta sección se describe cómo habilitar una conexión de cliente web a un agente de escritorio remoto sin una puerta de enlace de escritorio remoto en Windows Server 2019.
 
-### Configurar el servidor de agente de escritorio remoto
+### <a name="setting-up-the-rd-broker-server"></a>Configurar el servidor de agente de escritorio remoto
 
-#### Sigue estos pasos si no hay ningún certificado enlazado con el servidor de agente de escritorio remoto
+#### <a name="follow-these-steps-if-there-is-no-certificate-bound-to-the-rd-broker-server"></a>Siga estos pasos si no hay ningún certificado enlazado con el servidor de agente de escritorio remoto
 
-1. Abre el **Administrador del servidor** > **Servicios de escritorio remoto**.
+1. Abra **administrador del servidor** > **servicios de escritorio remoto**.
 
-2. En la sección **Introducción a la implementación** , selecciona el menú desplegable de **tareas** .
+2. En **Deployment Overview** sección, seleccione el **tareas** menú desplegable.
 
-3. Se abrirá selecciona **Editar las propiedades de implementación**, una nueva ventana titulada **Las propiedades de implementación** .
+3. Seleccione **editar las propiedades de implementación**, una nueva ventana titulada **las propiedades de implementación** se abrirá.
 
-4. En la ventana de **Propiedades de implementación** , selecciona **los certificados** en el menú izquierdo.
+4. En el **las propiedades de implementación** ventana, seleccione **certificados** en el menú izquierdo.
 
-5. En la lista de niveles de certificados, seleccione **Agente de conexión a Escritorio remoto - habilitar inicio de sesión único en**. Tienes dos opciones: (1) crea un nuevo certificado o (2) un certificado existente.
+5. En la lista de niveles de certificados, seleccione **RD Connection Broker - habilitar el inicio de sesión único**. Tiene dos opciones: (1) crear un nuevo certificado o (2) un certificado existente.
 
-#### Sigue estos pasos si hay un certificado enlazado previamente en el servidor de agente a Escritorio remoto
+#### <a name="follow-these-steps-if-there-is-a-certificate-previously-bound-to-the-rd-broker-server"></a>Siga estos pasos si hay un certificado enlazado anteriormente al servidor de agente de escritorio remoto
 
-1. Abre el certificado enlazado con el agente de y copia el valor de **huella digital** .
+1. Abra el certificado enlazado al agente y copia el **huella digital** valor.
 
-2. Para enlazar este certificado al puerto seguro 3392, abre una ventana de PowerShell con privilegios elevados y ejecuta el siguiente comando, sustituyendo **"< huella digital >"** con el valor copiado del paso anterior:
+2. Para enlazar este certificado al puerto seguro 3392, abra una ventana de PowerShell con privilegios elevados y ejecute el siguiente comando, reemplazando **"< thumbprint >"** con el valor copiado en el paso anterior:
 
     ```PowerShell
     netsh http add sslcert ipport=0.0.0.0:3392 certhash="<thumbprint>" certstorename="Remote Desktop" appid="{00000000-0000-0000-0000-000000000000}"
@@ -214,16 +214,16 @@ En esta sección se describe cómo habilitar una conexión de cliente de web a u
     > netsh http show sslcert
     > ```
     >
-    > En la lista de enlaces de certificado SSL, asegúrate de que el certificado correcto está enlazado al puerto 3392.
+    > En la lista de los enlaces de certificados SSL, asegúrese de que el certificado correcto está enlazado al puerto 3392.
 
-3. Abrir el registro de Windows (regedit) y nagivate a ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` y busca la clave **WebSocketURI**. El valor debe establecerse en **https://+:3392/rdp/**.
+3. Abra el registro de Windows (regedit) y nagivate a ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` y busque la clave **WebSocketURI**. El valor debe establecerse en **https://+:3392/rdp/**.
 
-### Configurar el Host de sesión de escritorio remoto
-Si el servidor Host RD es diferente del servidor de agente de escritorio remoto, sigue estos pasos:
+### <a name="setting-up-the-rd-session-host"></a>Configurar el Host de sesión de escritorio remoto
+Si el servidor Host de sesión de escritorio remoto es diferente del servidor de agente de escritorio remoto, siga estos pasos:
 
-1. Crear un certificado para el equipo Host de sesión de escritorio remoto, ábrelo y copia el valor de **huella digital** .
+1. Crear un certificado para la máquina Host de sesión de escritorio remoto, ábralo y copie el **huella digital** valor.
 
-2. Para enlazar este certificado al puerto seguro 3392, abre una ventana de PowerShell con privilegios elevados y ejecuta el siguiente comando, sustituyendo **"< huella digital >"** con el valor copiado del paso anterior:
+2. Para enlazar este certificado al puerto seguro 3392, abra una ventana de PowerShell con privilegios elevados y ejecute el siguiente comando, reemplazando **"< thumbprint >"** con el valor copiado en el paso anterior:
 
     ```PowerShell
     netsh http add sslcert ipport=0.0.0.0:3392 certhash="<thumbprint>" appid="{00000000-0000-0000-0000-000000000000}"
@@ -236,55 +236,55 @@ Si el servidor Host RD es diferente del servidor de agente de escritorio remoto,
     > netsh http show sslcert
     > ```
     >
-    > En la lista de enlaces de certificado SSL, asegúrate de que el certificado correcto está enlazado al puerto 3392.
+    > En la lista de los enlaces de certificados SSL, asegúrese de que el certificado correcto está enlazado al puerto 3392.
 
-3. Abrir el registro de Windows (regedit) y nagivate a ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` y busca la clave **WebSocketURI**. El valor debe establecerse en **https://+:3392/rdp/**.
+3. Abra el registro de Windows (regedit) y nagivate a ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` y busque la clave **WebSocketURI**. El valor debe establecerse en **https://+:3392/rdp/**.
 
-### Observaciones generales
+### <a name="general-observations"></a>Observaciones generales
 
-* Asegúrate de que el Host de sesión de escritorio remoto y el agente a Escritorio remoto de servidor están ejecutando Windows Server 2019.
+* Asegúrese de que el Host de sesión de escritorio remoto y el agente a Escritorio remoto de servidor ejecutan Windows Server 2019.
 
-* Asegúrate de que esa pública de confianza se configuran los certificados de servidor la Host de sesión de escritorio remoto y el agente a Escritorio remoto.
+* Asegúrese de que ese público de confianza se configuran los certificados de servidor del Host de sesión de escritorio remoto y el agente a Escritorio remoto.
     > [!NOTE]
-    > Si el Host de sesión de escritorio remoto y el servidor de agente de RD comparten la misma máquina, establecer únicamente el certificado de servidor de agente a Escritorio remoto. Si el servidor Host de sesión de escritorio remoto y agente a Escritorio remoto usa diferentes máquinas, ambos deben configurarse con certificados únicos.
+    > Si el Host de sesión de escritorio remoto y el servidor de agente de escritorio remoto comparten el mismo equipo, establezca solo el certificado de servidor de agente a Escritorio remoto. Si el servidor Host de sesión de escritorio remoto y el agente a Escritorio remoto utiliza equipos diferentes, debe configurar con certificados únicos.
 
-* El **Nombre de alternativa de firmante (SAN)** para cada certificado debe establecerse en **Nombre de dominio completo (FQDN)** de la máquina. El **Nombre común (CN)** debe coincidir con el SAN para cada certificado.
+* El **nombre alternativo de sujeto (SAN)** para cada certificado debe estar establecido en la máquina **nombre de dominio completo (FQDN)**. El **nombre común (CN)** debe coincidir con la SAN para cada certificado.
 
-## Solución de problemas
+## <a name="troubleshooting"></a>Solución de problemas
 
-Si un usuario informa de cualquiera de los siguientes problemas al abrir al cliente web por primera vez, las siguientes secciones te indicará qué debe hacer para solucionarlos.
+Si un usuario informa de cualquiera de los siguientes problemas al abrir al cliente web por primera vez, las siguientes secciones le indicará qué hacer para solucionarlos.
 
-### Qué hacer si el explorador del usuario muestra una advertencia de seguridad al intentar acceder al cliente web
+### <a name="what-to-do-if-the-users-browser-shows-a-security-warning-when-they-try-to-access-the-web-client"></a>Qué hacer si el explorador del usuario muestra una advertencia de seguridad cuando intenten tener acceso al cliente web
 
-El rol de acceso Web de RD no es posible que se usa un certificado de confianza. Asegúrese de que el rol de acceso Web de RD está configurado con un certificado de confianza pública.
+El rol de acceso Web de escritorio remoto no es posible que esté utilizando un certificado de confianza. Asegúrese de que el rol acceso Web de escritorio remoto se configura con un certificado de confianza pública.
 
-Si esto no funciona, el nombre del servidor del sitio Web dirección URL del cliente puede no coincidir con el nombre proporcionado por el certificado de Web de escritorio remoto. Asegúrate de que la dirección URL usa el FQDN del servidor que aloja el rol de Web de escritorio remoto.
+Si esto no funciona, el nombre del servidor en la web cliente URL podría no coincidir con el nombre proporcionado por el certificado Web de escritorio remoto. Asegúrese de que la dirección URL usa el FQDN del servidor que hospeda el rol Web de escritorio remoto.
 
-### Qué hacer si el usuario no se puede conectar a un recurso con el cliente de web, aunque pueden ver los elementos en todos los recursos
+### <a name="what-to-do-if-the-user-cant-connect-to-a-resource-with-the-web-client-even-though-they-can-see-the-items-under-all-resources"></a>Qué hacer si el usuario no se puede conectar a un recurso con el cliente web, aunque pueden ver los elementos en todos los recursos
 
-Si el usuario informa de que no se puede conectar con el cliente de web, aunque pueden ver los recursos que aparecen, comprueba lo siguiente:
+Si el usuario informa de que no se puede conectar con el cliente web, aunque pueden ver los recursos enumerados, compruebe lo siguiente:
 
 * ¿Está configurado correctamente el rol de puerta de enlace de escritorio remoto para usar un certificado de confianza público?
-* ¿Tiene el servidor de puerta de enlace de escritorio remoto las actualizaciones necesarias instaladas? Asegúrate de que el servidor tiene [la KB4025334 actualizar](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) instalado.
+* ¿El servidor de puerta de enlace de escritorio remoto tiene instaladas las actualizaciones necesarias? Asegúrese de que el servidor tiene [la actualización KB4025334](https://support.microsoft.com/en-us/help/4025334/windows-10-update-kb4025334) instalado.
 
-Si el usuario recibe un error "se ha recibido el certificado de autenticación de servidor inesperado" mensaje cuando intenten conectarse, a continuación, el mensaje muestra la huella digital del certificado. Buscar el Administrador de certificados del servidor de agente de escritorio remoto con esa huella digital para encontrar el certificado correcto. Comprueba que el certificado está configurado para usarse para la función de agente a Escritorio remoto en la página de propiedades de la implementación de escritorio remoto. Después de asegurarse de que el certificado no ha expirado, copiar el certificado en formato de archivo .cer en el servidor de acceso Web de RD y ejecuta el siguiente comando en el servidor de acceso Web de RD con el valor entre corchetes reemplazado por la ruta de acceso de archivo del certificado:
+Si el usuario recibe un error "se ha recibido el certificado de autenticación de servidor inesperado" del mensaje cuando intenten conectarse, a continuación, el mensaje mostrará la huella digital del certificado. Buscar el Administrador de certificados del servidor de agente de escritorio remoto con ese huella digital para buscar el certificado correcto. Compruebe que el certificado está configurado para usarse para el rol de agente a Escritorio remoto en la página de propiedades de implementación de escritorio remoto. Después de asegurarse de que el certificado no ha expirado, copie el certificado en formato de archivo .cer en el servidor de acceso Web de escritorio remoto y ejecute el siguiente comando en el servidor de acceso Web de escritorio remoto con el valor entre corchetes reemplazado por la ruta de acceso de archivo del certificado:
 
 ```PowerShell
 Import-RDWebClientBrokerCert <certificate file path>
 ```
 
-### Diagnosticar problemas con el registro de la consola
+### <a name="diagnose-issues-with-the-console-log"></a>Diagnosticar problemas con el registro de consola
 
-Si no se puede resolver el problema en función de las instrucciones de solución de problemas de este artículo, puedes intentar diagnosticar el origen del problema al mirar la consola de iniciar sesión en el explorador. El cliente de web proporciona un método para registrar la actividad de registro de la consola de explorador mientras se usa al cliente de web para ayudar a diagnosticar problemas.
+Si no se puede resolver el problema según las instrucciones de solución de problemas en este artículo, puede intentar diagnosticar la causa del problema a través de la consola de registro en el explorador. El cliente web proporciona un método para registrar la actividad de registro de la consola de explorador mientras se usa al cliente web para ayudar a diagnosticar problemas.
 
-* Selecciona los puntos suspensivos en la esquina superior derecha y navegar a la página **sobre** en el menú desplegable.
-* En la **información de soporte técnico de captura** selecciona el botón para **iniciar la grabación** .
-* Realizar las operaciones en el cliente de web que generó el problema que estás intentando diagnosticar.
-* Ve a la página **acerca de** y seleccione **Detener la grabación**.
-* El explorador descargará automáticamente un archivo .txt **Logs.txt de la consola de escritorio remoto**. Este archivo contendrá la actividad de registro de consola completa generada durante la reproducción el problema de destino.
+* Seleccione los puntos suspensivos en la esquina superior derecha y navegue hasta la **sobre** página en el menú desplegable.
+* En **captura información de soporte técnico** seleccione la **iniciar la grabación** botón.
+* Realizar las operaciones en el cliente web que produjo el problema que intenta diagnosticar.
+* Navegue hasta la **sobre** página y seleccione **Detener grabación**.
+* El explorador descargará automáticamente un archivo .txt titulado **Logs.txt de la consola de escritorio remoto**. Este archivo contendrá la actividad de registro de consola completa generada mientras se reproduce el problema de destino.
 
-También puede tener acceso a la consola directamente a través del explorador. Por lo general, la consola se encuentra en las herramientas de desarrollo. Por ejemplo, puede tener acceso el inicio de sesión en Microsoft Edge presionando la tecla **F12** o seleccionando los puntos suspensivos y navegar a **más herramientas** > **Herramientas de desarrollo**.
+También puede tener acceso a la consola directamente a través del explorador. La consola generalmente se encuentra en las herramientas de desarrollo. Por ejemplo, puede tener acceso al registro en Microsoft Edge presionando el **F12** clave o seleccionando el botón de puntos suspensivos, a continuación, vaya a **más herramientas** > **deherramientasdedesarrollo**.
 
-## Obtén ayuda con el cliente web
+## <a name="get-help-with-the-web-client"></a>Obtener ayuda con el cliente web
 
-Si se ha encontrado un problema que no se resuelve mediante la información de este artículo, puedes [envíanos un correo electrónico](mailto:rdwbclnt@microsoft.com) para informar de él. También puede solicitar o votar las nuevas características en el [cuadro de sugerencias](https://aka.ms/rdwebfbk).
+Si se ha encontrado un problema que no puede resolverse mediante la información de este artículo, puede [envíenos un correo electrónico](mailto:rdwbclnt@microsoft.com) para notificarlo. También puede solicitar o votar nuevas características en nuestras [sugerencias](https://aka.ms/rdwebfbk).

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 73542e1c-53ef-4ddb-89b1-bc563b2bfb49
-title: "Escenario clasificación cifrado para documentos de Office"
-description: 
+title: Escenario basado en la clasificación de cifrado para los documentos de Office
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,45 +10,46 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 38e058f36522ba6a2c81694cb883d0946b04adda
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59865186"
 ---
-# <a name="scenario-classification-based-encryption-for-office-documents"></a>Escenario: El cifrado basado en la clasificación para documentos de Office
+# <a name="scenario-classification-based-encryption-for-office-documents"></a>Escenario: Cifrado de documentos de Office basado en la clasificación
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Protección de información confidencial es principalmente acerca de cómo mitigar el riesgo de la organización. Las normativas de cumplimiento distintos, por ejemplo, la portabilidad seguros de salud y responsabilidad (HIPAA) y pago tarjeta Industry Data Security Standard (PCI DSS), dictan cifrado de información, y existen muchos motivos comerciales para cifrar la información confidencial de la empresa. Sin embargo, cifrado de la información es muy costoso y perjudique de productividad empresarial. Por lo tanto, las organizaciones suelen tener diferentes enfoques y prioridades para cifrar su información.  
+La protección de la información confidencial se centra principalmente en mitigar el riesgo para la organización. Diversas normas de cumplimiento, como la HIPAA (Health Insurance Portability and Accountability Act) o el estándar de seguridad de datos para la industria de tarjetas de pago (PCI-DSS), dictan el cifrado de la información y hay numerosos motivos empresariales para cifrar la información empresarial confidencial. Sin embargo, cifrar la información resulta costoso y podría afectar a la productividad empresarial. Por lo tanto, las organizaciones tienden a adoptar distintos enfoques y prioridades para cifrar su información.  
   
 ## <a name="BKMK_OVER"></a>Descripción del escenario  
- Windows Server 2012 proporciona la capacidad de cifrar archivos con información confidencial de Microsoft Office, en función de su clasificación de forma automática. Esto se logra con tareas de administración de archivos que invocar la protección de Active Directory Rights Management Services (AD RMS) para los documentos con información confidencial unos pocos segundos después de que el archivo se identifica como un archivo con información confidencial en el servidor de archivos. Esto se facilita las tareas de administración de archivos continua en el servidor de archivos.  
+ Windows Server 2012 proporciona la capacidad de cifrar automáticamente los archivos de Microsoft Office confidenciales, según su clasificación. Esto se realiza a través de tareas de administración de archivos que invocan la protección mediante Active Directory Rights Management Services (AD RMS) de los documentos confidenciales unos pocos segundos después de haber identificado el archivo como confidencial en el servidor de archivos. Esto se realiza mediante las tareas continuas de administración de archivos en el servidor de archivos.  
   
-Cifrado de AD RMS proporciona otra capa de protección de archivos. Incluso si una persona con acceso a un archivo con información confidencial involuntariamente envía ese archivo a través de correo electrónico, el archivo está protegido mediante el cifrado de AD RMS. Los usuarios que quieran tener acceso al archivo deben autenticarse primero a un servidor de AD RMS para recibir la clave de descifrado. La figura siguiente muestra este proceso.  
+El cifrado de AD RMS proporciona otra capa de protección para los archivos. Aunque una persona con acceso a un archivo confidencial lo envíe sin querer por correo electrónico, el archivo está protegido por el cifrado de AD RMS. Los usuarios que quieran acceder al archivo deben autenticarse primero en un servidor de AD RMS para recibir la clave de descifrado. En la ilustración siguiente se muestra este proceso.  
   
-![guías de solución](media/Scenario--Classification-Based-Encryption-for-Office-Documents/DynamicAccessControl_RevGuide_6.JPG)  
+![guías de soluciones](media/Scenario--Classification-Based-Encryption-for-Office-Documents/DynamicAccessControl_RevGuide_6.JPG)  
   
-**Figura 6** protección basada en la clasificación de RMS  
+**Figura 6** Protección de RMS basada en la clasificación  
   
-Compatibilidad con formatos de archivo no son de Microsoft está disponible a través de los proveedores no son de Microsoft. Después de un archivo se ha protegido mediante el cifrado de AD RMS, funciones de administración de datos como la clasificación en función de búsqueda o contenido ya no están disponibles para ese archivo.  
+La compatibilidad con formatos de archivo que no son de Microsoft está disponible a través de terceros. Una vez protegido un archivo con el cifrado de AD RMS, las características de administración de datos como la clasificación basada en búsquedas o en contenido ya no están disponibles para ese archivo.  
   
 ## <a name="in-this-scenario"></a>En este escenario  
-El siguiente es la orientación que está disponible para este escenario:  
+La siguiente es información que está disponible para este escenario:  
   
--   [Consideraciones de diseño para el cifrado de documentos de Office](assetId:///14714ba6-d6a2-45e4-aae5-d3318817e52a)  
+-   [Consideraciones de planeación para el cifrado de documentos de Office](assetId:///14714ba6-d6a2-45e4-aae5-d3318817e52a)  
   
--   [Implementar el cifrado de archivos de Office & #40; pasos de demostración & #41;](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md)  
+-   [Implementar el cifrado de archivos de Office &#40;pasos de demostración&#41;](Deploy-Encryption-of-Office-Files--Demonstration-Steps-.md)  
   
 -   [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
-## <a name="BKMK_NEW"></a>Roles y características incluidas en este escenario  
-La siguiente tabla enumera los roles y características que forman parte de este escenario y describe cómo apoyan.  
+## <a name="BKMK_NEW"></a>Roles y características que se incluyen en este escenario  
+En la tabla siguiente, se enumeran los roles y las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
-|Rol o característica|¿Cómo admite este escenario|  
+|Rol/característica|Compatibilidad con este escenario|  
 |-----------------|---------------------------------|  
-|Rol de Active Directory los servicios de dominio (AD DS)|AD DS proporciona una base de datos distribuida que almacena y administra la información sobre recursos de red y datos específicos de la aplicación desde aplicaciones habilitadas para directorio. En este escenario, AD DS en Windows Server 2012 presenta una plataforma de notificaciones de autorización que permite la creación de notificaciones de usuario y reclamaciones de dispositivo, identidad compuesto (usuario más notificaciones de dispositivo), un nuevo modelo de directivas de acceso central y el uso de información de clasificación de archivos en las decisiones de autorización.|  
-|Rol de servicios de archivos y almacenamiento<br /><br />Administrador de recursos del servidor de archivos|Servicios de archivos y almacenamiento proporciona tecnologías para ayudar a configurar y administrar uno o varios servidores de archivos que proporcionan ubicaciones centrales de la red donde puedes almacenar archivos y compartirlos con los usuarios. Si los usuarios de red necesitan acceso a los mismos archivos y las aplicaciones, o si centralizada copia de seguridad y administración de archivos es importante para la organización, debe configurar uno o más equipos como un servidor de archivos agregando la función File and Storage Services y los servicios de rol adecuado a los equipos. En este escenario, los administradores de servidor de archivos pueden configurar las tareas de administración de archivos que invocar la protección de AD RMS para los documentos con información confidencial unos pocos segundos después de que el archivo se identifica como un archivo con información confidencial en el servidor de archivos (tareas de administración de archivos continua en el servidor de archivos).|  
-|Rol de Active Directory Rights Management Services (AD RMS)|AD RMS permite a usuarios y administradores (a través de directivas de Information Rights Management (IRM)) para especificar los permisos de acceso a documentos, libros y presentaciones. Esto ayuda a evitar que información confidencial impriman, reenviar o copien personas no autorizadas. Después de que se ha restringido permiso para un archivo mediante el uso de IRM, se aplican las restricciones de acceso y el uso sea cual sea la información, porque el permiso a un archivo se almacena en el propio archivo de documento. En este escenario, el cifrado de AD RMS proporciona otra capa de protección de archivos. Incluso si una persona con acceso a un archivo con información confidencial involuntariamente envía ese archivo a través de correo electrónico, el archivo está protegido mediante el cifrado de AD RMS. Los usuarios que quieran tener acceso al archivo deben autenticarse primero a un servidor de AD RMS para recibir la clave de descifrado.|  
+|Rol Servicio de dominio de Active Directory (AD DS)|AD DS proporciona una base de datos distribuida que almacena y administra información acerca de los recursos de red y datos específicos de las aplicaciones habilitadas para el uso de directorios. En este escenario, AD DS en Windows Server 2012 presenta una plataforma de autorización basada en notificaciones que permite la creación de notificaciones de usuario y notificaciones de dispositivo, identidad compuesta (notificaciones de usuario + dispositivo), un nuevo modelo de directivas de acceso central y el uso de información de clasificación de archivos en decisiones de autorización.|  
+|Rol de servicios de archivos y almacenamiento<br /><br />Administrador de recursos del servidor de archivos|Servicios de archivos y almacenamiento incluye tecnologías que permiten configurar y administrar uno o más servidores de archivos que proporcionan ubicaciones centrales en la red para almacenar archivos y compartirlos con los usuarios. Si los usuarios de la red necesitan tener acceso a los mismos archivos y aplicaciones, o si la administración centralizada de archivos y copias de seguridad es importante en su organización, deberá configurar uno o más equipos como servidor de archivos. Para ello, debe agregar a los equipos el rol Servicios de archivos y almacenamiento y los servicios de rol pertinentes. En este escenario, los administradores de servidores de archivo pueden configurar las tareas de administración de archivos que invocan la protección mediante AD RMS de los documentos confidenciales unos pocos segundos después de haber identificado el archivo como confidencial en el servidor de archivos (tareas continuas de administración de archivos en el servidor de archivos).|  
+|Rol Active Directory Rights Management Services (AD RMS)|AD RMS permite que personas y administradores especifiquen permisos de acceso a documentos, libros y presentaciones a través de las directivas de Information Rights Management (IRM). Esto ayuda a impedir que personas no autorizadas impriman, reenvíen o copien la información confidencial. Después de que ha restringido el permiso para un archivo mediante IRM, se aplican las restricciones de acceso y uso sin importar dónde se encuentre la información, ya que el permiso para un archivo se almacena en el archivo de documento mismo. En este escenario, el cifrado de AD RMS proporciona otra capa de protección para los archivos. Aunque una persona con acceso a un archivo confidencial lo envíe sin querer por correo electrónico, el archivo está protegido por el cifrado de AD RMS. Los usuarios que quieran acceder al archivo deben autenticarse primero en un servidor de AD RMS para recibir la clave de descifrado.|  
   
 
 

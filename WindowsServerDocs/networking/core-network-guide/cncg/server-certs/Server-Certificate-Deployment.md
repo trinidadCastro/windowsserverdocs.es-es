@@ -1,6 +1,6 @@
 ---
 title: Implementación de certificados de servidor
-description: Este tema es parte de la Guía de certificados de servidor de implementación para implementaciones de conexión inalámbrica y cableadas 802.1X
+description: Este tema forma parte de la Guía de implementación de servidores de certificados para las implementaciones inalámbricas y cableadas 802.1X
 manager: brianlic
 ms.topic: article
 ms.assetid: 1ae4384b-f4e4-41e8-bc5f-9ac41953bca4
@@ -8,20 +8,21 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4a10a9bafa6a8c9fddecac799ec8e837bf339d0e
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 751c5c5958b3d06ae0f4b701e4d6e10a7fef19dc
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858496"
 ---
 # <a name="server-certificate-deployment"></a>Implementación de certificados de servidor
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Sigue estos pasos para instalar una entidad de certificación de raíz (CA) de empresa y para implementar certificados de servidor para su uso con PEAP y EAP.  
+Siga estos pasos para instalar una entidad de certificación de raíz (CA) empresarial e implementar certificados de servidor para su uso con PEAP y EAP.  
   
 > [!IMPORTANT]  
-> Antes de instalar servicios de certificados de Active Directory, debes nombre al equipo, configurar el equipo con una dirección IP estática y unir el equipo al dominio. Después de instalar AD CS, no puedes cambiar el nombre del equipo o la pertenencia a dominio del equipo, sin embargo, puedes cambiar la dirección IP si es necesario. Para obtener más información sobre cómo realizar estas tareas, consulta el servidor de Windows&reg; 2016 [guía básica de red](../../Core-Network-Guide.md).  
+> Antes de instalar servicios de certificados de Active Directory, debe el nombre del equipo, configure el equipo con una dirección IP estática y unir el equipo al dominio. Después de instalar AD CS, no se puede cambiar el nombre del equipo o la pertenencia al dominio del equipo, sin embargo, puede cambiar la dirección IP si es necesario. Para obtener más información sobre cómo realizar estas tareas, vea Windows Server&reg; 2016 [Guía de red principal](../../Core-Network-Guide.md).  
 
   
 -   [Instalar el WEB1 de servidor Web](../../../core-network-guide/cncg/server-certs/Install-the-Web-Server-WEB1.md)  
@@ -36,18 +37,18 @@ Sigue estos pasos para instalar una entidad de certificación de raíz (CA) de e
   
 -   [Configurar las extensiones CDP y AIA en CA1](../../../core-network-guide/cncg/server-certs/Configure-the-CDP-and-AIA-Extensions-on-CA1.md)  
   
--   [Copia el certificado de CA y CRL en el directorio virtual](../../../core-network-guide/cncg/server-certs/Copy-the-CA-Certificate-and-CRL-to-the-Virtual-Directory.md)  
+-   [Copie el certificado de CA y la CRL en el directorio virtual](../../../core-network-guide/cncg/server-certs/Copy-the-CA-Certificate-and-CRL-to-the-Virtual-Directory.md)  
   
 -   [Configurar la plantilla de certificado de servidor](../../../core-network-guide/cncg/server-certs/Configure-the-Server-Certificate-Template.md)  
   
 -   [Configurar la inscripción automática de certificado de servidor](../../../core-network-guide/cncg/server-certs/Configure-Server-Certificate-Autoenrollment.md)  
   
--   [Directiva de grupo de actualización](../../../core-network-guide/cncg/server-certs/Refresh-Group-Policy.md)  
+-   [Actualizar directiva de grupo](../../../core-network-guide/cncg/server-certs/Refresh-Group-Policy.md)  
   
--   [Comprobar el servidor de inscripción de un certificado de servidor](../../../core-network-guide/cncg/server-certs/Verify-Server-Enrollment-of-a-Server-Certificate.md)  
+-   [Compruebe el servidor de inscripción de un certificado de servidor](../../../core-network-guide/cncg/server-certs/Verify-Server-Enrollment-of-a-Server-Certificate.md)  
   
 > [!NOTE]  
-> Los procedimientos descritos en esta guía no incluyen instrucciones para casos en que la **Control de cuentas de usuario** abre el cuadro de diálogo para solicitar su permiso para continuar. Si se abre este cuadro de diálogo mientras realizan los procedimientos descritos en esta guía y si el cuadro de diálogo se abrió en respuesta a las acciones, haz clic en **continuar**.  
+> Los procedimientos de esta guía no incluyen instrucciones para los casos en que se abre el cuadro de diálogo **Control de cuentas de usuario** para solicitar permiso para continuar. Si aparece este cuadro de diálogo en respuesta a sus acciones mientras realiza los procedimientos de esta guía, haga clic en **Continuar**.  
   
 
 

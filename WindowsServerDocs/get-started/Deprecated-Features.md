@@ -15,26 +15,26 @@ ms.author: jaimeo
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: 20178a3be14c076623f647fa139e013528de9a69
-ms.sourcegitcommit: e84e328c13a701e8039b16a4824a6e58a6e59b0b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4133891"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858166"
 ---
-# Características eliminadas o en desuso en Windows Server 2016
+# <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Características eliminadas o en desuso en Windows Server 2016
 
 >Se aplica a: Windows Server 2016
 
-A continuación se enumeran las características y funcionalidades de Windows Server 2016 que se quitaron del producto en la versión actual o cuya eliminación se planea para las siguientes versiones (en desuso). Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. Esta lista está sujeta a cambios en versiones posteriores y es posible que no incluya todas las características o funcionalidades desusadas. Para obtener más detalles sobre una característica o funcionalidad en concreto y su reemplazo, consulte la documentación relativa a la característica en cuestión.  
+A continuación se enumeran las características y funcionalidades de Windows Server 2016 que se quitaron del producto en la versión actual o cuya eliminación se planea para las siguientes versiones (en desuso). Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. Esta lista está sujeta a cambios en versiones posteriores y es posible que no incluya todas las características o funcionalidades desusadas. Para obtener más detalles sobre una característica o funcionalidad en concreto y su reemplazo, consulte la documentación relativa a la característica en cuestión.  
 
-## Características quitadas de Windows Server 2016 
+## <a name="features-removed-from-windows-server-2016"></a>Características quitadas de Windows Server 2016 
 Las siguientes características y funcionalidades se quitaron de esta versión de Windows Server 2016. Las aplicaciones, el código o el uso que dependen de estas características no funcionarán en esta versión, a menos que se emplee un método alternativo.  
 
 > [!NOTE]  
 > Si va a pasar a Windows Server 2016 desde una versión de servidor anterior a Windows Server 2012 R2 o Windows Server 2012, también debe consultar [Características quitadas o desusadas en Windows Server 2012 R2](https://technet.microsoft.com/library/dn303411.aspx) y [Características o funcionalidades desusadas en Windows Server 2012](https://technet.microsoft.com/library/hh831568.aspx).  
 
 
-### Servidor de archivos  
+### <a name="file-server"></a>Servidor de archivos  
 El complemento de administración de almacenamiento y recursos compartidos para Microsoft Management Console se ha quitado. En su lugar, lleve a cabo cualquiera de las siguientes acciones:  
 
 -   Si el equipo que desea administrar está ejecutando un sistema operativo anterior a Windows Server 2016, conéctese a él con Escritorio remoto y use la versión local del complemento de administración de almacenamiento y recursos compartidos.  
@@ -43,16 +43,16 @@ El complemento de administración de almacenamiento y recursos compartidos para 
 
 -   Utilice Hyper-V en un equipo cliente para ejecutar una máquina virtual con Windows 7, Windows 8 o Windows 8.1 con el complemento de administración de almacenamiento y recursos compartidos de RSAT.  
 
-### Journal.dll  
+### <a name="journaldll"></a>Journal.dll  
 El archivo Journal.dll se ha suprimido en Windows Server 2016. No hay sustitución.  
 
-### Asistente para configuración de seguridad  
-El Asistente para configuración de seguridad se ha quitado. En su lugar, se protegen las características de forma predeterminada. Si necesita controlar la configuración de seguridad específica, puede usar una directiva de grupo o el [Administrador de cumplimiento de normas de seguridad de Microsoft](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx).  
+### <a name="security-configuration-wizard"></a>Asistente para configuración de seguridad  
+El Asistente para configuración de seguridad se ha quitado. En su lugar, se protegen las características de forma predeterminada. Si necesitas controlar la configuración de seguridad específica, puedes usar una Directiva de grupo o el [Administrador de cumplimiento de normas de seguridad de Microsoft](https://technet.microsoft.com/solutionaccelerators/cc835245.aspx).  
 
-### SQM  
+### <a name="sqm"></a>SQM  
 Se han quitado los componentes de participación que administran la participación en el Programa para la mejora de la experiencia del usuario. 
 
-### Windows Update
+### <a name="windows-update"></a>Windows Update
 Se ha quitado el comando **wuauclt.exe /detectnow** y ya no se admite. Para desencadenar una búsqueda de actualizaciones, realiza una de las siguientes acciones:
 
 - Ejecuta estos comandos de PowerShell:
@@ -67,20 +67,20 @@ Se ha quitado el comando **wuauclt.exe /detectnow** y ya no se admite. Para dese
     automaticUpdates.DetectNow()
     ````
 
-## Características en desuso a partir de Windows Server 2016 
+## <a name="features-deprecated-starting-with-windows-server-2016"></a>Características desusadas a partir de Windows Server 2016 
 Las siguientes características y funcionalidades quedarán en desuso a partir de esta versión. Con el tiempo, se quitarán completamente del producto, pero aún están disponibles en esta versión (en algunos casos, se les ha quitado cierta funcionalidad). Debe comenzar a planear el empleo de métodos alternativos para cualquier aplicación, código o uso que dependa de estas características.  
 
-### Herramientas de configuración  
+### <a name="configuration-tools"></a>Herramientas de configuración  
 
 -   **Scregedit.exe** está en desuso. Si tiene scripts que dependen de Scregedit.exe, ajústelos para que utilicen los métodos Reg.exe o de Windows PowerShell.  
 
 -   **Sconfig.exe** está en desuso. Utilice Windows PowerShell en su lugar.  
 
-### API personalizadas de NetCfg  
+### <a name="netcfg-custom-apis"></a>API personalizadas de NetCfg  
 La instalación de PrintProvider, NetClient e ISDN mediante las API personalizadas de NetCfg está en desuso.  
 
-### Administración remota  
+### <a name="remote-management"></a>Administración remota  
 WinRM.vbs está en desuso. En su lugar, utilice la funcionalidad del proveedor de WinRM de Windows PowerShell.  
 
-### SMB  
-SMB 2+ en NetBT está en desuso. En su lugar, implementa SMB sobre TCP o RDMA. 
+### <a name="smb"></a>SMB  
+SMB 2+ en NetBT está en desuso. En su lugar, implemente SMB sobre TCP o RDMA. 

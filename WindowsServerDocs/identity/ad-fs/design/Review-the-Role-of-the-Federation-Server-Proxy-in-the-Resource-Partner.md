@@ -1,7 +1,7 @@
 ---
 ms.assetid: 14aa112d-ae31-4181-97e4-92623b5c9270
-title: "Revisa el rol del servidor Proxy de servidor de federación en el Partner de recursos"
-description: 
+title: Revisar el rol del servidor proxy de federación en el asociado de recurso
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,26 +10,27 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 31e285e863e4316a8e0a65f9b68c27442290927d
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59862896"
 ---
-# <a name="review-the-role-of-the-federation-server-proxy-in-the-resource-partner"></a>Revisa el rol del servidor Proxy de servidor de federación en el Partner de recursos
+# <a name="review-the-role-of-the-federation-server-proxy-in-the-resource-partner"></a>Revisar el rol del servidor proxy de federación en el asociado de recurso
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Un proxy de federación de servidor en servicios de federación de Active Directory \(AD FS\) puede funcionar en una o varias de las siguientes funciones, dependiendo de cómo configurar el servidor para satisfacer las necesidades de la organización de partner de recursos:  
+Un servidor proxy de federación de Active Directory Federation Services \(AD FS\) puede funcionar en uno o varios de los roles siguientes, dependiendo de cómo configure el servidor para satisfacer las necesidades de la organización del asociado de recurso:  
   
--   **Detección de asociado de cuenta**: equipo del cliente Internet debe identificar qué cuenta de partner, autenticará de él. El cliente encuentra al asociado de cuenta mediante el uso de una cuenta partner detección Web formulario \(discoverclientrealm.aspx\), que se almacena en el servidor proxy de servidor de federación del asociado de recurso. Si hay más de un partner de cuenta se configura en la administración de AD FS snap\ en, que aparece un menú desplegable drop\ al cliente con todos los asociados de cuenta disponible que son visibles para los equipos de cliente de Internet que tienen acceso a la detección de asociado de cuenta formulario Web. Puedes cambiar cómo se presenta la detección de asociado de cuenta formulario Web a los equipos cliente personalizando el archivo discoverclientrealm.aspx.  
+-   **Detección de asociados de cuenta**: Un equipo cliente de Internet tiene que identificar qué asociado de cuenta lo autenticará. El cliente busca el asociado de cuenta mediante el uso de un asociado de cuenta formulario Web de detección \(discoverclientrealm.aspx\), que está almacenado en el servidor proxy de federación del asociado de recurso. Si se configura más de un asociado de cuenta en el complemento Administración de AD FS\-en un descenso\-menú desplegable que aparece al cliente con todos los asociados de cuenta disponibles que son visibles para los equipos de cliente de Internet que el asociado de cuenta de acceso formulario Web de detección. Puedes cambiar cómo se muestra el formulario web de detección de asociados de cuenta a los equipos cliente personalizando el archivo discoverclientrealm.aspx.  
   
--   **Redireccionamiento de token de seguridad**: el proxy de servidor de federación de asociado de cuenta envía los tokens de seguridad para el asociado de recurso. El proxy de servidor de federación de recursos acepta estos tokens y pasa el servidor de federación de asociado de recurso. El servidor de federación de recursos, a continuación, emite un token de seguridad que está enlazado a un servidor Web de recurso específico. El proxy de servidor de federación de recursos, a continuación, redirige el token al cliente.  
+-   **Redireccionamiento del token de seguridad**: El servidor proxy de federación del asociado de cuenta envía los tokens de seguridad al asociado de recurso. El servidor proxy de federación de recursos acepta estos tokens y los pasa a la del servidor de federación del asociado de recurso. El servidor de federación de recursos, a continuación, emite un token de seguridad que está limitado por un servidor Web de recursos específico. El servidor proxy de federación de recursos, a continuación, redirige el token al cliente.  
   
-Para resumir, un proxy de servidor de federación de recursos facilita el proceso de inicio de sesión federado redirigiendo los equipos cliente a un servidor de federación que puede autenticar a los clientes. Un proxy de servidor de federación de recursos también actúa como proxy para tokens de seguridad de cliente en servidores de federación de recursos.  
+En resumen, un servidor proxy de federación de recursos facilita el proceso de inicio de sesión federado redirigiendo los equipos cliente a un servidor de federación que puede autenticar a los clientes. Un servidor proxy de federación de recursos también actúa como un proxy para los tokens de seguridad de cliente en servidores de federación de recursos.  
   
 > [!NOTE]  
-> Cuando sea necesario ayudar a reducir la cantidad de hardware y el número de certificados obligatorios, el proxy de servidor de federación puede encontrarse en el mismo equipo que el servidor Web.  
+> Cuando es necesario ayudar a reducir la cantidad de hardware y el número de certificados necesarios, el servidor proxy de federación puede encontrarse en el mismo equipo que el servidor Web.  
   
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

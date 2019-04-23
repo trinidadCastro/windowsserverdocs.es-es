@@ -1,7 +1,7 @@
 ---
 ms.assetid: bb9b9e18-bf2f-4115-be77-9a165944db41
-title: "Planear la implementación"
-description: 
+title: Planear la implementación
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,39 +10,40 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 5c7cec9ad92605f3dc98f8ce8fb7853a7ae61299
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59863696"
 ---
 # <a name="planning-your-deployment"></a>Planear la implementación
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Al planear para la colaboración de \(federation\-based\) cross\ organizativa mediante los servicios de federación de Active Directory \(AD FS\), determinar si la organización hospedará un recurso Web para tener acceso a otras organizaciones a través de Internet o si vas a proporcionar acceso al recurso Web para los empleados de la organización. Esta decisión afecta a cómo implementar AD FS y es fundamental en el diseño de la infraestructura de AD FS.  
+Al planear cross\-organizativa \(federación\-basado\) colaboración mediante servicios de federación de Active Directory \(AD FS\), primero deberá determinar si su organización va a hospedar un recurso Web al tener acceso a otras organizaciones a través de Internet o si va a proporcionar acceso al recurso Web para los empleados de su organización. Esta determinación influye en cómo implementar AD FS y es fundamental en el planeamiento de la infraestructura de AD FS.  
   
 > [!NOTE]  
-> Asegúrate de que el papel que desempeña en la organización en el acuerdo de federación claramente se entiende por todas partes.  
+> Asegúrese de que todos los participantes comprenden claramente el papel que desempeña de organización en el acuerdo de federación.  
   
-Para la [federados Web SSO diseño](Federated-Web-SSO-Design.md), AD FS utiliza términos como *asociado de cuenta* \ (también conocida como *proveedor de identidad* en la administración de AD FS snap\-in\) y *asociado de recurso* \ (también denominados *usuario de confianza* en la administración de AD FS snap\-in\) para ayudar a diferenciar la organización que hospeda las cuentas \(the account partner\) de la organización que hospeda los recursos basados en Web\ \(the resource partner\).  
+Para el [Federated Web SSO Design](Federated-Web-SSO-Design.md), AD FS usa términos como *asociado de cuenta* \(también se denomina *proveedor de identidades* en el complemento de administración de AD FS\-en\) y *asociado de recurso* \(también se denomina *confianza* en el complemento Administración de AD FS\-en\) a ayudar a diferenciar la organización que hospeda las cuentas \(el asociado de cuenta\) de la organización que hospeda la Web\-recursos basados en \(el asociado de recurso\).  
   
-En la [Web SSO diseño](Web-SSO-Design.md), la organización actúa en ambas las cuenta partner y recursos partner funciones porque proporciona a los usuarios con acceso a sus aplicaciones.  
+En el [Web SSO Design](Web-SSO-Design.md), la organización actúa en los dos roles de asociado de cuenta y asociado de recurso porque ofrece a sus usuarios acceso a sus aplicaciones.  
   
-Los temas siguientes explican que algunos de la AD FS conceptos de la organización de partner. También contienen vínculos a temas de la Guía de implementación de AD FS que contienen información sobre cómo instalar y configurar las organizaciones asociadas de cuenta y las organizaciones asociadas de recursos en función de los objetivos de la implementación de AD FS.  
+Los siguientes temas se explican que algunos de AD FS conceptos de organización de asociado. También contienen vínculos a temas en la Guía de implementación de AD FS que contienen información acerca de cómo instalar y configurar las organizaciones de asociado de cuenta y las organizaciones asociadas en función de los objetivos de implementación de AD FS.  
   
 ## <a name="in-this-section"></a>En esta sección  
   
--   [Los procedimientos recomendados para el diseño seguro y la implementación de AD FS](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)  
+-   [Procedimientos recomendados para segura de planeación e implementación de AD FS](Best-Practices-for-Secure-Planning-and-Deployment-of-AD-FS.md)  
   
--   [Planear para la interoperabilidad con AD FS 1.x](Planning-for-Interoperability-with-AD-FS-1.x.md)  
+-   [Planeamiento de la interoperabilidad con AD FS 1.x](Planning-for-Interoperability-with-AD-FS-1.x.md)  
   
 -   [Cuándo usar la delegación de identidad](When-to-Use-Identity-Delegation.md)  
   
--   [Implementación de AD FS en la organización de Partner de cuenta](Deploying-AD-FS-in-the-Account-Partner-Organization-2012.md)  
+-   [Implementación de AD FS en la organización del asociado de cuenta](Deploying-AD-FS-in-the-Account-Partner-Organization-2012.md)  
   
--   [Implementación de AD FS en la organización de Partner de recurso](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
+-   [Implementación de AD FS en la organización del asociado de recurso](Deploying-AD-FS-in-the-Resource-Partner-Organization-2012.md)  
   
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 
 

@@ -8,94 +8,94 @@ ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: a0062230dd3d9e9c52aa317f87e06b0e84507dc4
-ms.sourcegitcommit: 802a7bd537cab22893abb7e6657c4be90346ef88
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "9025037"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59861066"
 ---
-# Implementar Windows Admin Center con alta disponibilidad
+# <a name="deploy-windows-admin-center-with-high-availability"></a>Implementar Windows Admin Center con alta disponibilidad
 
->Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
 
-Puedes implementar Windows Admin Center en un clúster de conmutación por error para ofrecer una alta disponibilidad para el servicio de puerta de enlace de Windows Admin Center. La solución que proporcionan es una solución de activo / pasivo, donde solo una instancia de Windows Admin Center está activa. Si se produce un error en uno de los nodos del clúster, Windows Admin Center correctamente conmutar por error a otro nodo, lo que te permite continuar con la administración de servidores en su entorno sin problemas. 
+Puede implementar Windows Admin Center en un clúster de conmutación por error para proporcionar alta disponibilidad para el servicio de puerta de enlace de Windows Admin Center. La solución proporcionada es una solución activo / pasivo, donde solo una instancia de Windows Admin Center está activa. Si se produce un error en uno de los nodos del clúster, Windows Admin Center correctamente conmuta por error a otro nodo, lo que le permite seguir administrando los servidores en su entorno sin problemas. 
 
-[Obtén información sobre otras opciones de implementación de Windows Admin Center.](../plan/installation-options.md)
+[Obtenga información sobre otras opciones de implementación de Windows Admin Center.](../plan/installation-options.md)
 
-## Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
-- Un clúster de conmutación por error de 2 o más nodos en Windows Server 2016 o 2019. [Más información sobre cómo implementar un clúster de conmutación por error](../../../failover-clustering/failover-clustering-overview.md).
-- Un clúster de volumen compartido (CSV para Windows Admin Center almacenar datos persistentes que pueden tener acceso a todos los nodos del clúster). 10 GB será suficiente para tu CSV.
-- Script de implementación de alta disponibilidad del [archivo zip de alta disponibilidad Script de Windows Admin Center](https://aka.ms/WACHAScript). Descargar el archivo .zip que contiene la secuencia de comandos en el equipo local y, a continuación, copia el script, según sea necesario según las instrucciones siguientes.
-- Recomendado, pero opcional: una contraseña de certificado .pfx &. No tienes que ya se ha instalado el certificado en los nodos del clúster, para el script lo hará. Si no proporcionas uno, el script de instalación genera un certificado autofirmado que expire después de 60 días.
+- Un clúster de conmutación por error de 2 o más nodos en Windows Server 2016 o de 2019. [Más información sobre cómo implementar un clúster de conmutación por error](../../../failover-clustering/failover-clustering-overview.md).
+- Un clúster compartido (CSV) de volumen para Windows Admin Center almacenar datos persistentes que pueden tener acceso a todos los nodos del clúster. 10 GB será suficiente para el archivo CSV.
+- Script de implementación de alta disponibilidad [archivo zip de alta disponibilidad de Script de Windows Admin Center](https://aka.ms/WACHAScript). Descargue el archivo .zip que contiene el script en el equipo local y, a continuación, copie el script según sea necesario según las instrucciones siguientes.
+- Opcional pero recomendable: un certificado firmado .pfx & contraseña. No es necesario ya se ha instalado el certificado en los nodos del clúster: el script hará eso por usted. Si no especifica ninguno, el script de instalación genera un certificado autofirmado, que expira después de 60 días.
 
-## Instalar Windows Admin Center en un clúster de conmutación por error
+## <a name="install-windows-admin-center-on-a-failover-cluster"></a>Instalar Windows Admin Center en un clúster de conmutación por error
 
-1. Copia el ```Install-WindowsAdminCenterHA.ps1``` script a un nodo en el clúster. Descargar o copiar el archivo .msi de Windows Admin Center en el mismo nodo.
-2. Conectar con el nodo a través de RDP y ejecuta el ```Install-WindowsAdminCenterHA.ps1``` script desde ese nodo con los siguientes parámetros:
-    - `-clusterStorage`: la ruta de acceso local del volumen compartido de clúster para almacenar los datos de Windows Admin Center.
-    - `-clientAccessPoint`: elige un nombre que usarás para acceder al centro de administración de Windows. Por ejemplo, si ejecuta el script con el parámetro `-clientAccessPoint contosoWindowsAdminCenter`, tendrá acceso a los servicios de Windows Admin Center visitando `https://contosoWindowsAdminCenter.<domain>.com`
-    - `-staticAddress`: Opcional. Una o varias direcciones estáticas para el servicio de clúster genérico. 
+1. Copia el ```Install-WindowsAdminCenterHA.ps1``` script a un nodo del clúster. Descargue o copie el archivo .msi de Windows Admin Center al mismo nodo.
+2. Conéctese al nodo a través de RDP y ejecute el ```Install-WindowsAdminCenterHA.ps1``` secuencia de comandos de ese nodo con los siguientes parámetros:
+    - `-clusterStorage`: la ruta de acceso local del volumen compartido en clúster para almacenar los datos de Windows Admin Center.
+    - `-clientAccessPoint`: elija un nombre que va a utilizar para tener acceso a Windows Admin Center. Por ejemplo, si ejecuta la secuencia de comandos con el parámetro `-clientAccessPoint contosoWindowsAdminCenter`, tendrá acceso al servicio de Windows Admin Center, visite `https://contosoWindowsAdminCenter.<domain>.com`
+    - `-staticAddress`: Opcional. Uno o más direcciones estáticas para el servicio de clúster genérico. 
     - `-msiPath`: La ruta de acceso del archivo .msi de Windows Admin Center.
-    - `-certPath`: Opcional. La ruta de acceso de un archivo de certificado pfx.
-    - `-certPassword`: Opcional. Una contraseña SecureString para el .pfx certificado proporcionado en `-certPath`
-    - `-generateSslCert`: Opcional. Si no quieres proporcionar un certificado firmado, incluir esta marca de parámetro para generar un certificado autofirmado. Ten en cuenta que el certificado autofirmado expirará en 60 días.
-    - `-portNumber`: Opcional. Si no se especifica un puerto, el servicio de puerta de enlace se implementa en el puerto 443 (HTTPS). Para usar un puerto diferente se especifica en este parámetro. Ten en cuenta que si usas un puerto personalizado (nada además 443), tendrá acceso a la Windows Admin Center yendo a https://\<clientAccessPoint\>:\<port\>.
+    - `-certPath`: Opcional. La ruta de acceso para un archivo .pfx del certificado.
+    - `-certPassword`: Opcional. Contraseña para el archivo .pfx de certificado proporcionado en SecureString `-certPath`
+    - `-generateSslCert`: Opcional. Si no desea proporcionar un certificado autofirmado, incluya este marcador de parámetro para generar un certificado autofirmado. Tenga en cuenta que el certificado autofirmado expirará en 60 días.
+    - `-portNumber`: Opcional. Si no especifica un puerto, el servicio de puerta de enlace se implementa en el puerto 443 (HTTPS). Para utilizar un puerto diferente se especifique en este parámetro. Tenga en cuenta que si usa un puerto personalizado (nada además de 443), tendrá acceso a la de Windows Admin Center, vaya a https://\<clientAccessPoint\>:\<puerto\>.
 
 > [!NOTE]
-> El ```Install-WindowsAdminCenterHA.ps1``` admite la secuencia de comandos ```-WhatIf ``` y ```-Verbose``` parámetros
+> El ```Install-WindowsAdminCenterHA.ps1``` script admite ```-WhatIf ``` y ```-Verbose``` parámetros
 
-### Ejemplos
+### <a name="examples"></a>Ejemplos
 
-#### Instalar con un certificado de firma:
+#### <a name="install-with-a-signed-certificate"></a>Instalar con un certificado de firma:
 
 ```powershell
 $certPassword = Read-Host -AsSecureString
 .\Install-WindowsAdminCenterHA.ps1 -clusterStorage "C:\ClusterStorage\Volume1" -clientAccessPoint "contoso-ha-gateway" -msiPath ".\WindowsAdminCenter.msi" -certPath "cert.pfx" -certPassword $certPassword -Verbose
 ```
 
-#### Instalar con un certificado autofirmado:
+#### <a name="install-with-a-self-signed-certificate"></a>Instalar con un certificado autofirmado:
 
 ```powershell
 .\Install-WindowsAdminCenterHA.ps1 -clusterStorage "C:\ClusterStorage\Volume1" -clientAccessPoint "contoso-ha-gateway" -msiPath ".\WindowsAdminCenter.msi" -generateSslCert -Verbose
 ```
 
-## Actualizar una instalación existente de alta disponibilidad
+## <a name="update-an-existing-high-availability-installation"></a>Actualizar una instalación existente de alta disponibilidad
 
-Usar el mismo ```Install-WindowsAdminCenterHA.ps1``` script para actualizar la implementación de alta disponibilidad, sin pérdida de datos de la conexión.
+Usar el mismo ```Install-WindowsAdminCenterHA.ps1``` script para actualizar la implementación de alta disponibilidad, sin perder los datos de conexión.
 
-### Actualizar a una nueva versión de Windows Admin Center
+### <a name="update-to-a-new-version-of-windows-admin-center"></a>Actualizar a una nueva versión de Windows Admin Center
 
-Cuando se publique una nueva versión de Windows Admin Center, solo tienes que ejecutar el ```Install-WindowsAdminCenterHA.ps1``` nuevo script con solo la ```msiPath``` parámetro:
+Cuando se lanza una nueva versión de Windows Admin Center, simplemente ejecute el ```Install-WindowsAdminCenterHA.ps1``` script de nuevo con solo el ```msiPath``` parámetro:
 
 ```powershell
 .\Install-WindowsAdminCenterHA.ps1 -msiPath '.\WindowsAdminCenter.msi' -Verbose
 ```
 
-### Actualizar el certificado usado por Windows Admin Center
+### <a name="update-the-certificate-used-by-windows-admin-center"></a>Actualizar el certificado utilizado por Windows Admin Center
 
-Puedes actualizar el certificado utilizado por una implementación de alta disponibilidad de Windows Admin Center en cualquier momento mediante .pfx archivo el nuevo certificado y y la contraseña.
+Puede actualizar el certificado utilizado por una implementación de alta disponibilidad de Windows Admin Center en cualquier momento, ya que proporciona el archivo .pfx del certificado nuevo y y la contraseña.
 
 ```powershell
 $certPassword = Read-Host -AsSecureString
 .\Install-WindowsAdminCenterHA.ps1 -certPath "cert.pfx" -certPassword $certPassword -Verbose
 ```
 
-También puede actualizar el certificado al mismo tiempo que actualice la plataforma de Windows Admin Center con un nuevo archivo MSI.
+También puede actualizar el certificado a la vez que actualice la plataforma Windows Admin Center con un nuevo archivo .msi.
 
 ```powershell
 $certPassword = Read-Host -AsSecureString
 .\Install-WindowsAdminCenterHA.ps1 -msiPath ".\WindowsAdminCenter.msi" -certPath "cert.pfx" -certPassword $certPassword -Verbose
 ``` 
 
-## Desinstalar
+## <a name="uninstall"></a>Desinstalar
 
-Para desinstalar la implementación de alta disponibilidad de Windows Admin Center desde el clúster de conmutación por error, pasar el ```-Uninstall``` parámetro a la ```Install-WindowsAdminCenterHA.ps1``` script.
+Para desinstalar la implementación de alta disponibilidad de Windows Admin Center desde el clúster de conmutación por error, pasar la ```-Uninstall``` parámetro para el ```Install-WindowsAdminCenterHA.ps1``` secuencia de comandos.
 
 ```powershell
 .\Install-WindowsAdminCenterHA.ps1 -Uninstall -Verbose
 ```
 
-## Solución de problemas
+## <a name="troubleshooting"></a>Solución de problemas
 
-Los registros se guardan en la carpeta temporal de la CSV (por ejemplo, C:\ClusterStorage\Volume1\temp).
+Los registros se guardan en la carpeta temporal del archivo CSV (por ejemplo, C:\ClusterStorage\Volume1\temp).

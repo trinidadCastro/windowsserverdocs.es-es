@@ -1,29 +1,30 @@
 ---
-title: "Configuración del servicio de estado"
+title: Configuración del servicio de mantenimiento
 ms.prod: windows-server-threshold
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: 
+ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
 ms.openlocfilehash: 569cf7ba30fd3f993394efd3735a56d116c067e0
-ms.sourcegitcommit: 30fcae929ce7b611f5d3a5f8fee64b0299272110
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/15/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858336"
 ---
-# <a name="health-service-settings"></a>Configuración del servicio de estado
+# <a name="health-service-settings"></a>Configuración del servicio de mantenimiento
 > Se aplica a Windows Server 2016
 
-El servicio de estado es una nueva característica de Windows Server 2016 que mejora la supervisión diarias y de la experiencia operativa clústeres ejecutan directa de los espacios de almacenamiento.
+El servicio de mantenimiento es una característica nueva en Windows Server 2016 que mejora la supervisión diaria y la experiencia operativa para los clústeres que ejecutan espacios de almacenamiento directo.
 
-Muchos de los parámetros que controlan el comportamiento del servicio de estado se exponen como opciones de configuración. Puedes modificar estos para ajustar la agresividad de errores o acciones, activa ciertos comportamientos de encendido/apagado y mucho más.
+Muchos de los parámetros que controlan el comportamiento del servicio de mantenimiento se exponen como configuración. Puede modificar estos para ajustar la intensidad de los errores o acciones, activar o desactivar ciertos comportamientos de y mucho más.
 
-Usa el siguiente cmdlet de PowerShell para establecer o modificar la configuración.
+Use el siguiente cmdlet de PowerShell para establecer o modificar la configuración.
 
-### <a name="usage"></a>Uso de
+### <a name="usage"></a>Uso
 
 ```PowerShell
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name <SettingName> -Value <Value>  
@@ -35,11 +36,11 @@ Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name <SettingName> -Va
 Get-StorageSubSystem Cluster* | Set-StorageHealthSetting -Name "System.Storage.Volume.CapacityThreshold.Warning" -Value 70
 ```
 
-### <a name="common-settings"></a>Opciones de configuración comunes
+### <a name="common-settings"></a>Configuración común
 
-Algunas opciones de configuración modificadas normalmente se enumeran a continuación, junto con sus valores predeterminados.
+Algunas configuraciones que suelen modificarse aparecen a continuación, junto con sus valores predeterminados.
 
-#### <a name="volume-capacity-threshold"></a>Umbral de capacidad de volumen
+#### <a name="volume-capacity-threshold"></a>Umbral del volumen de capacidad
 
 ```
 "System.Storage.Volume.CapacityThreshold.Enabled"  = True
@@ -53,7 +54,7 @@ Algunas opciones de configuración modificadas normalmente se enumeran a continu
 "System.Storage.StoragePool.CheckPoolReserveCapacity.Enabled" = True
 ```
 
-#### <a name="physical-disk-lifecycle"></a>Ciclo de vida de disco físico
+#### <a name="physical-disk-lifecycle"></a>Ciclo de vida del disco físico
 
 ```
 "System.Storage.PhysicalDisk.AutoPool.Enabled"                             = True
@@ -66,7 +67,7 @@ Algunas opciones de configuración modificadas normalmente se enumeran a continu
 
 #### <a name="supported-components-document"></a>Documento de componentes compatibles
 
-Consulta la sección anterior.
+Consulte la sección anterior.
 
 #### <a name="firmware-rollout"></a>Implementación de firmware
 
@@ -79,7 +80,7 @@ Consulta la sección anterior.
 "System.Storage.PhysicalDisk.AutoFirmwareUpdate.RollOut.FailureTolerance"  = 3
 ```
 
-#### <a name="platform--quiescence"></a>Plataforma / o inactividad
+#### <a name="platform--quiescence"></a>Plataforma / inactividad
 
 ```
 "Platform.Quiescence.MinDelaySeconds" = 120 (i.e. 2 minutes)
@@ -98,7 +99,7 @@ Consulta la sección anterior.
 "System.LogLevel" = 4
 ```
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
-- [Servicio de estado en Windows Server 2016](health-service-overview.md)
-- [Espacios de almacenamiento dirigen en Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md)
+- [Servicio de mantenimiento de Windows Server 2016](health-service-overview.md)
+- [Espacios de almacenamiento directo en Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md)

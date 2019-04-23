@@ -1,6 +1,6 @@
 ---
 title: Instalar la entidad de certificación
-description: Este tema es parte de la Guía de certificados de servidor de implementación para implementaciones de conexión inalámbrica y cableadas 802.1X
+description: Este tema forma parte de la Guía de implementación de servidores de certificados para las implementaciones inalámbricas y cableadas 802.1X
 manager: brianlic
 ms.topic: article
 ms.assetid: 4acdc3ad-078e-45cc-b54c-e9456e0c90f5
@@ -8,73 +8,77 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 17a887ab32570b739d5ca99611ee0d496a966d1b
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 84e4b2fe0b59820b9e51229335f3539bcbeeec90
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860746"
 ---
 # <a name="install-the-certification-authority"></a>Instalar la entidad de certificación
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este procedimiento para instalar servicios de certificados de Active Directory (AD CS) para que se puede inscribir un certificado de servidor a servidores que ejecutan el servidor de directivas de redes (NPS), enrutamiento y acceso remoto (RRAS) o ambos.  
+Puede usar este procedimiento para instalar servicios de certificados de Active Directory (AD CS) para que puedan inscribir un certificado de servidor para los servidores que ejecutan el servidor de directivas de redes (NPS), enrutamiento y acceso remoto (RRAS) o ambos.  
   
 > [!IMPORTANT]  
-> -   Antes de instalar servicios de certificados de Active Directory, debes nombre al equipo, configurar el equipo con una dirección IP estática y unir el equipo al dominio. Para obtener más información sobre cómo realizar estas tareas, consulta el Windows Server 2016 [guía básica de red](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide).  
-> -   Para realizar este procedimiento, el equipo en el que vas a instalar AD CS debe estar unido a un dominio donde está instalado servicios de dominio de Active Directory (AD DS).  
+> -   Antes de instalar servicios de certificados de Active Directory, debe el nombre del equipo, configure el equipo con una dirección IP estática y unir el equipo al dominio. Para obtener más información sobre cómo realizar estas tareas, vea Windows Server 2016 [Guía de red principal](https://technet.microsoft.com/windows-server-docs/networking/core-network-guide/core-network-guide).  
+> -   Para llevar a cabo este procedimiento, el equipo en el que va a instalar AD CS debe estar unido a un dominio donde está instalado servicios de dominio de Active Directory (AD DS).  
   
-Pertenencia a ambos **administradores** y el dominio raíz **administradores de dominio** grupo es lo mínimo necesario para completar este procedimiento.  
+El requisito mínimo para completar este procedimiento es la pertenencia al grupo **Administradores de empresas** y al grupo **Admins. del dominio** del dominio raíz.  
   
 > [!NOTE]  
-> Para realizar este procedimiento mediante Windows PowerShell, abre Windows PowerShell y escribe el siguiente comando y, a continuación, presione ENTRAR.   
+> Para llevar a cabo este procedimiento con Windows PowerShell, abra Windows PowerShell y escriba el siguiente comando y, a continuación, presione ENTRAR.   
 >   
 > `Add-WindowsFeature Adcs-Cert-Authority -IncludeManagementTools`  
 >   
-> Después de instalar AD CS, escribe el siguiente comando y presione ENTRAR.  
+> Después de instalar AD CS, escriba el siguiente comando y presione ENTRAR.  
 >   
 > `Install-AdcsCertificationAuthority -CAType EnterpriseRootCA`  
   
-### <a name="to-install-active-directory-certificate-services"></a>Para instalar servicios de certificados de Active Directory  
+### <a name="to-install-active-directory-certificate-services"></a>Para instalar los Servicios de certificados de Active Directory  
+
+>[!TIP]
+>Si desea usar Windows PowerShell para instalar servicios de certificados de Active Directory, consulte [Install-AdcsCertificationAuthority](https://docs.microsoft.com/powershell/module/adcsdeployment/install-adcscertificationauthority?view=win10-ps) cmdlets y parámetros opcionales.
   
-1.  Inicia sesión como miembro del grupo Administradores de empresa y grupo de administradores de dominio del dominio raíz.  
+1.  Inicie sesión como miembro del grupo Administradores de empresas y del grupo Admins. del dominio del dominio raíz.  
   
-2.  En el administrador del servidor, haz clic en **administrar**y, a continuación, haz clic en **agregar Roles y características**. Abre el agregar Roles and Features Wizard.  
+2.  En el Administrador del servidor, haga clic en **Administrar** y en **Agregar roles y características**. Se abre el Asistente para agregar roles y características.  
   
-3.  En **antes de comenzar**, haz clic en **siguiente**.  
+3.  En **Antes de comenzar**, haga clic en **Siguiente**.  
   
     > [!NOTE]  
-    > La **antes de comenzar** no se muestra la página del agregar Roles y características de asistente si anteriormente seleccionaste **omitir esta página predeterminada** cuando se ejecutó el agregar Roles y características de asistente.  
+    > La página **Antes de comenzar** del Asistente para agregar roles y características no se muestra si ha seleccionado anteriormente **Omitir esta página de forma predeterminada** al ejecutar el asistente.  
   
-4.  En **seleccionar el tipo de instalación**, asegúrate de que **instalación basada en rol o característica** está seleccionado y, a continuación, haz clic en **siguiente**.  
+4.  En **Seleccionar tipo de instalación**, asegúrese de que la opción **Instalación basada en características o en roles** está seleccionada y, a continuación, haga clic en **Siguiente**.  
   
-5.  En **servidor de destino selecciona**, asegúrate de que **seleccionar un servidor desde el grupo de servidores** está seleccionado. En **grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haz clic en **siguiente**.  
+5.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haz clic en **Siguiente**.  
   
-6.  En **seleccionar Roles de servidor**, en **Roles**, selecciona **servicios de certificados de Active Directory**. Cuando se te pida para agregar características necesarias, haz clic en **agregar características**y, a continuación, haz clic en **siguiente**.  
+6.  En **seleccionar Roles de servidor**, en **Roles**, seleccione **Active Directory Certificate Services**. Cuando se le pida que agregue las características necesarias, haga clic en **agregar características**y, a continuación, haga clic en **siguiente**.  
   
-7.  En **Select features**, haz clic en **siguiente**.  
+7.  En **seleccionar características**, haga clic en **siguiente**.  
   
-8.  En **servicios de certificados de Active Directory**, leer la información proporcionada y, a continuación, haz clic en **siguiente**.  
+8.  En **Active Directory Certificate Services**, lea la información proporcionada y, a continuación, haga clic en **siguiente**.  
   
-9. En **Confirmar selecciones de instalación**, haz clic en **instalar**. No se cerrará al asistente durante el proceso de instalación. Una vez finalizada la instalación, haz clic en **configurar certificado de servicios de Active Directory en el servidor de destino**. Abre el Asistente para configuración de AD CS. Leer la información de credenciales y, si es necesario, proporciona las credenciales de una cuenta que es un miembro del grupo Administradores de empresa. Haz clic en **siguiente**.  
+9. En **Confirmar selecciones de instalación**, haga clic en **Instalar**. No cierre al asistente durante el proceso de instalación. Cuando se complete la instalación, haga clic en **configurar Active Directory Certificate Services en el servidor de destino**. Abre el Asistente de configuración de AD CS. Lea la información de credenciales y, si es necesario, proporcione las credenciales de una cuenta que sea miembro del grupo Administradores de empresa. Haz clic en **Siguiente**.  
   
-10. En **servicios de rol**, haz clic en **entidad de certificación**y, a continuación, haz clic en **siguiente**.  
+10. En **servicios de rol**, haga clic en **entidad de certificación**y, a continuación, haga clic en **siguiente**.  
   
-11. En la **tipo de instalación** página, comprueba que **CA de empresa** está seleccionado y, a continuación, haz clic en **siguiente**.  
+11. En el **el tipo de instalación** , comprueba que **CA empresarial** está seleccionada y, a continuación, haga clic en **siguiente**.  
   
-12. En la **especificar el tipo de la CA** página, comprueba que **CA de raíz** está seleccionado y, a continuación, haz clic en **siguiente**.  
+12. En el **especificar el tipo de la entidad de certificación** , comprueba que **CA raíz** está seleccionada y, a continuación, haga clic en **siguiente**.  
   
-13. En la **especificar el tipo de la clave privada** página, comprueba que **crear una nueva clave privada** está seleccionado y, a continuación, haz clic en **siguiente**.  
+13. En el **especificar el tipo de la clave privada** , comprueba que **crear una nueva clave privada** está seleccionada y, a continuación, haga clic en **siguiente**.  
   
-14. En la **criptografía para CA** página, mantén la configuración predeterminada de CSP (**proveedor de almacenamiento de claves de RSA #Microsoft Software**) y algoritmo hash (**SHA1**) y determinar la longitud de clave de carácter recomendada para la implementación. Longitudes de caracteres clave grandes proporcionan seguridad óptima; Sin embargo, se puede afectar al rendimiento del servidor y podrían no ser compatibles con aplicaciones heredadas. Se recomienda que mantenga la configuración predeterminada de 2048. Haz clic en **siguiente**.  
+14. En el **criptografía para CA** página, mantenga la configuración predeterminada para CSP (**RSA #Microsoft Software Key Storage Provider**) y el algoritmo hash (**SHA2**) y determinar la mejor longitud de caracteres de la clave para la implementación. Clave extensa ofrece una seguridad óptima; Sin embargo, se puede afectar al rendimiento del servidor y no pueden ser compatibles con las aplicaciones heredadas. Se recomienda que mantenga la configuración predeterminada de 2048. Haz clic en **Siguiente**.  
   
-15. En la **nombre de entidad emisora** página, mantener el nombre común sugerido para la entidad de certificación o cambiar el nombre de acuerdo con los requisitos. Asegúrate de que estás seguro del que nombre de entidad emisora de certificados es compatible con tu convenciones de nomenclatura y efectos, porque no puedes cambiar el nombre de entidad emisora de certificados después de haber instalado AD CS. Haz clic en **siguiente**.  
+15. En el **nombre de CA** página, mantenga el nombre común sugerido para la CA o cambie el nombre según sus requisitos. Asegúrese de que está seguro de que el nombre de entidad emisora de certificados es compatible con sus fines y las convenciones de nomenclatura porque no se puede cambiar el nombre de entidad emisora de certificados después de haber instalado AD CS. Haz clic en **Siguiente**.  
   
-16. En la **período de validez** página, en **especificar el período de validez**, escribe el número y selecciona un valor de hora (años, meses, días o semanas). Se recomienda el valor predeterminado de cinco años. Haz clic en **siguiente**.  
+16. En el **período de validez** página **especificar el período de validez**, escriba el número y seleccione un valor de tiempo (años, meses, semanas o días). Se recomienda el valor predeterminado de cinco años. Haz clic en **Siguiente**.  
   
-17. En la **base de datos de CA** página, en **especificar las ubicaciones de la base de datos**, especifica la ubicación de carpeta para la base de datos de certificado y el registro de la base de datos de certificados. Si especificas ubicaciones distintas de las ubicaciones predeterminadas, asegúrate de que las carpetas están protegidas con listas de control de acceso (ACL) que impiden que los usuarios no autorizados o equipos tengan acceso a los archivos de base de datos y el registro de la CA. Haz clic en **siguiente**.  
+17. En el **base de datos de CA** página **especifique las ubicaciones de la base de datos**, especifique la ubicación de carpeta para la base de datos de certificado y el registro de base de datos de certificado. Si especifica ubicaciones distintas de las ubicaciones predeterminadas, asegúrese de que las carpetas estén protegidas mediante listas de control de acceso (ACL) que impidan que usuarios o equipos no autorizados tengan acceso a los archivos de registro y la base de datos de la entidad de certificación. Haz clic en **Siguiente**.  
   
-18. En **confirmación**, haz clic en **configurar** para aplicar las opciones seleccionadas y, a continuación, haz clic en **cerrar**.  
+18. En **confirmación**, haga clic en **configurar** para aplicar sus selecciones y, a continuación, haga clic en **cerrar**.  
   
 
 
