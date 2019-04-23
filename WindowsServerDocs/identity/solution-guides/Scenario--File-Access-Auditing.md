@@ -1,7 +1,7 @@
 ---
 ms.assetid: 7be1f2cb-02d5-4209-ba79-edf496a88f47
-title: "Escenario de auditoría de acceso del archivo"
-description: 
+title: Auditoría de acceso de archivos de escenario
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,73 +10,74 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 93d78bbefce38173198f991543fb3a06d145b373
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59867686"
 ---
-# <a name="scenario-file-access-auditing"></a>Escenario: Auditoría de acceso del archivo
+# <a name="scenario-file-access-auditing"></a>Escenario: auditoría de acceso a archivos
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Auditoría de seguridad es una de las herramientas más eficaces para ayudar a mantener la seguridad de una empresa. Uno de los principales objetivos de auditoría de seguridad es el cumplimiento normativo. Los estándares del sector, como Sarbanes Oxley, seguros de salud portabilidad y responsabilidad (HIPAA) y del sector de la tarjeta de pago (PCI) requieren que las empresas sigue un estricto conjunto de reglas relacionadas con la privacidad y seguridad de los datos. Ayuda de auditorías de seguridad de establecer la presencia de estas directivas y comprobar el cumplimiento de estos estándares. Además, las auditorías de seguridad ayudan a detectar el comportamiento anómalo, identificar y mitigar lagunas en las directivas de seguridad y disuadir irresponsable comportamiento mediante la creación de una pista de actividad de usuario que puede usarse para realizar análisis detallado.  
+La auditoría de seguridad es una de las herramientas más eficaces para mantener la seguridad de una empresa. Uno de los principales objetivos de las auditorías de seguridad es el cumplimiento de las normas. Estándares de la industria como Sarbanes Oxley, Health Insurance Portability and Accountability Act (HIPPA) y Payment Card Industry (PCI) exigen que las empresas sigan un estricto conjunto de reglas relacionadas con la seguridad y la privacidad de los datos. Las auditorías de seguridad ayudan a establecer la presencia de dichas directivas y demuestran el cumplimiento de esos estándares. Además, las auditorías de seguridad ayudan a detectar comportamientos anómalos, a identificar y mitigar brechas en las directivas de seguridad y a impedir el comportamiento irresponsable mediante la creación de un registro de la actividad del usuario que puede utilizarse para un análisis forense.  
   
-Por lo general, los requisitos de directivas de auditoría se controlan en los siguientes niveles:  
+Los requisitos de directiva de auditoría generalmente se impulsan en los siguientes niveles:  
   
--   **Seguridad de la información.** Registros de auditoría de acceso de archivo se suelen usar para la detección de intrusiones y análisis detallada. Poder recibir eventos dirigidos acerca del acceso a la información de gran valor vamos a las organizaciones mejoran considerablemente su precisión de investigación y de tiempo de respuesta.  
+-   **Seguridad de la información.** Los seguimientos de auditoría de acceso a archivos a menudo se utilizan para análisis forenses y detección de intrusión. Poder obtener eventos concretos sobre el acceso a información de alto nivel permite a las organizaciones mejorar notablemente su tiempo de respuesta y la exactitud de la investigación.  
   
--   **Directiva de la organización.** Por ejemplo, las organizaciones reguladas por los estándares PCI podrían tener una directiva central para controlar el acceso a todos los archivos que están marcados como que contiene información de la tarjeta de crédito e información personalmente identificable (PII).  
+-   **Directiva organizativa.** Por ejemplo, las organizaciones reguladas por los estándares PCI podrían contar con una directiva central para supervisar el acceso a todos los archivos que están marcados como archivos que contienen información de tarjeta de crédito e información personal identificable (PII).  
   
--   **Directiva de departamento.** Por ejemplo, el departamento de finanzas puede requerir que la capacidad de modificar algunos documentos de finanzas (por ejemplo, un informe de ganancias trimestrales) restringirse al departamento de finanzas y, por consiguiente, el departamento de quiera supervisar todos los otros intentos para cambiar estos documentos.  
+-   **Directiva departamental.** Por ejemplo, es posible que el departamento de finanzas exija que la posibilidad de modificar ciertos documentos de finanzas (como informes de ganancias trimestrales) se restrinja al departamento de finanzas y, por consiguiente, el departamento desearía supervisar todos los demás intentos de modificar estos documentos.  
   
--   **Directiva de empresa.** Por ejemplo, los propietarios de negocios quiera supervisar todos los intentos no autorizados para ver los datos que pertenecen a sus proyectos.  
+-   **Directiva empresarial.** Por ejemplo, es posible que los propietarios de empresas deseen supervisar todos los intentos no autorizados de ver datos que pertenecen a sus proyectos.  
   
-Además, el departamento de cumplimiento quiera supervisar los cambios en todas las directivas de autorización central y construcciones de directiva como usuario, el equipo y atributos de los recursos.  
+Además, quizás el departamento de cumplimiento desee supervisar todos los cambios realizados en las directivas de autorización central y los constructos de la directiva como atributos de usuario, equipo y recurso.  
   
-Una de las principales consideraciones de auditoría de seguridad es el costo de recopilar, almacenar y analizar los eventos de auditoría. Si las directivas de auditoría son demasiado amplias, sube el volumen de eventos de auditoría que se recopila y aumenta los costos. Si las directivas de auditoría son demasiado estrechas, corre el riesgo de falta de eventos importantes.  
+Una de las principales consideraciones de las auditorías de seguridad es el costo de recopilar, almacenar y analizar los eventos de auditoría. Si las directivas de auditoría son demasiado amplias, aumenta el volumen de los eventos de auditoría recopilados y esto aumenta los costos. Si las directivas de auditoría son demasiado minuciosas, se corre el riesgo de pasar por alto eventos importantes.  
   
-Con Windows Server 2012, puedes crear directivas de auditoría mediante el uso de notificaciones y las propiedades de recurso. Esto se lleva a las directivas de auditoría más enriquecida, más específico y más fácil de administrar. Es viable en escenarios que, hasta ahora, no era posible eran muy difíciles de realizar. Los siguientes son ejemplos de directivas de auditoría que los administradores pueden crear:  
+Con Windows Server 2012, puede crear directivas de auditoría utilizando notificaciones y propiedades de recursos. Esto genera directivas de auditoría más avanzadas, más concretas y más fáciles de administrar. Habilita escenarios que, hasta el momento, eran imposibles o demasiado difíciles de llevar a cabo. A continuación se muestran ejemplos de directivas de auditoría que los administradores pueden crear:  
   
--   Auditar todos los usuarios que no tiene una distancia de alta seguridad e intenta obtener acceso a un documento Repercusión. Por ejemplo, la auditoría | Todo el mundo | Todo acceso | Resource.BusinessImpact=HBI y User.SecurityClearance!=High.  
+-   Auditar a todos los que no tienen permiso de alta seguridad e intentan obtener acceso a un documento HBI. Por ejemplo, Audit | Everyone | All-Access | Resource.BusinessImpact=HBI AND User.SecurityClearance!=High.  
   
--   Todos los proveedores de auditoría cuando intentan acceder a los documentos que están relacionados con los proyectos que no están trabajando. Por ejemplo, la auditoría | Todo el mundo | Todo acceso | User.EmploymentStatus=Vendor y User.Project Not_AnyOf Resource.Project.  
+-   Auditar a todos los proveedores cuando intenten obtener acceso a documentos que están relacionados con proyectos en los que están trabajando. Por ejemplo, Audit | Everyone | All-Access | User.EmploymentStatus=Vendor AND User.Project Not_AnyOf Resource.Project.  
   
-Estas directivas ayudan a regular el volumen de eventos de auditoría y limitarlos a solo los datos más relevantes o los usuarios.  
+Estas directivas ayudan a regular el volumen de los eventos de auditoría y los limitan a la mayoría de los datos o usuarios relevantes.  
   
-Después de que los administradores crear y aplicar las directivas de auditoría, la siguiente consideración para ellos gleaning información significativa de los eventos de auditoría que recopilan. Eventos de auditoría basadas en expresión ayudan a reducir el volumen de auditorías. Sin embargo, los usuarios necesitan una forma de consultar estos eventos para información significativa y pregunta, como "que tiene acceso a Mis datos Repercusión?" O "¿Hubo un intento no autorizado para acceder a datos confidenciales?"  
+Una vez que los administradores crearon y aplicaron las directivas de auditoría, deben tener en cuenta la recolección de información importante de los eventos de auditoría que recopilan. Las eventos de auditoría basados en expresiones pueden ayudar a reducir el volumen de auditorías. Sin embargo, los usuarios necesitan una manera de consultar esos eventos para obtener información importante y hacer preguntas como, "¿quién tiene acceso a Mis datos HBI?" o "¿Hubo un intento no autorizado para tener acceso a datos confidenciales?"  
   
- Windows Server 2012 mejora eventos de acceso a datos existentes a las reclamaciones de usuario, el equipo y el recurso. Estos eventos se generan en por servidor. Para proporcionar una vista completa de los eventos en toda la organización, Microsoft está trabajando con nuestros asociados para proporcionar la recopilación de eventos y las herramientas de análisis, como los servicios de recopilación de auditorías en System Center operación Manager.  
+ Windows Server 2012 mejora los eventos de acceso de datos existentes con notificaciones de usuario, equipo y recursos. Estos eventos se generan por servidor. Para proporcionar una vista completa de los eventos de la organización, Microsoft está trabajando con asociados que proporcionan herramientas de recopilación y análisis de eventos, como los Servicios de recopilación de auditorías de System Center Operations Manager.  
   
-Figura 4 se muestra una descripción general de una directiva de auditoría central.  
+La figura 4 muestra información general de una directiva de auditoría central.  
   
-![guías de solución](media/Scenario--File-Access-Auditing/DynamicAccessControl_RevGuide_4.JPG)  
+![guías de soluciones](media/Scenario--File-Access-Auditing/DynamicAccessControl_RevGuide_4.JPG)  
   
-**Figura 4** experiencias de auditoría Central  
+**Figura 4** Experiencias de auditoría central  
   
-Configurar y consumir auditorías de seguridad normalmente implican los siguientes pasos generales:  
+Configurar y utilizar auditorías de seguridad suele implicar los siguientes pasos generales:  
   
-1.  Identificar el conjunto correcto de los datos y los usuarios a supervisar  
+1.  Identificar el conjunto correcto de datos y usuarios que se deben supervisar  
   
-2.  Crear y aplicar directivas de auditoría adecuado  
+2.  Crear y aplicar las directivas de auditoría apropiadas  
   
 3.  Recopilar y analizar los eventos de auditoría  
   
 4.  Administrar y supervisar las directivas que se crearon  
   
 ## <a name="in-this-scenario"></a>En este escenario  
-Los temas siguientes proporcionan instrucciones adicionales para este escenario:  
+Los siguientes temas proporcionan más información para este escenario:  
   
--   [Planear el archivo de auditoría de acceso](Plan-for-File-Access-Auditing.md)  
+-   [Plan para el archivo de auditoría de acceso](Plan-for-File-Access-Auditing.md)  
   
--   [Implementar la auditoría de seguridad con directivas de auditoría Central & #40; pasos de demostración & #41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
+-   [Implementar la auditoría de seguridad con directivas de auditoría Central &#40;pasos de demostración&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
   
-## <a name="BKMK_NEW"></a>Roles y características incluidas en este escenario  
-La siguiente tabla enumera los roles y características que forman parte de este escenario y describe cómo apoyan.  
+## <a name="BKMK_NEW"></a>Roles y características que se incluyen en este escenario  
+En la tabla siguiente, se enumeran los roles y las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
-|Rol o característica|¿Cómo admite este escenario|  
+|Rol/característica|Compatibilidad con este escenario|  
 |-----------------|---------------------------------|  
-|Rol de servicios de dominio Directory activo|AD DS en Windows Server 2012 presenta una plataforma de notificaciones de autorización que permite la creación de notificaciones de usuario y reclamaciones de dispositivo, identidad compuesto, (usuario más notificaciones de dispositivo), nuevo modelo de acceso central (PAC) de directivas y el uso de información de clasificación de archivo en las decisiones de autorización.|  
-|Rol de servicios de archivos y almacenamiento|Servidores de archivos en Windows Server 2012 proporcionan una interfaz de usuario donde los administradores pueden ver los permisos eficaces para los usuarios de un archivo o carpeta y solucionar problemas de acceso y conceder acceso según sea necesario.|  
+|Rol de Servicios de dominio de Active Directory|AD DS en Windows Server 2012 presenta una plataforma de autorización basada en notificaciones que permite crear notificaciones de usuario y notificaciones de dispositivo, identidad compuesta, (usuario + notificaciones de dispositivo), nuevo modelo de acceso central (CAP) de las directivas y el uso de clasificación de archivos información de las decisiones de autorización.|  
+|Rol de servicios de archivos y almacenamiento|Servidores de archivos en Windows Server 2012 proporcionan una interfaz de usuario donde los administradores pueden ver los permisos vigentes para los usuarios de un archivo o carpeta y solucionar problemas de acceso y conceder acceso según sea necesario.|  
   
 
 

@@ -1,6 +1,6 @@
 ---
 title: Modificar el comportamiento de navegación raíz
-description: Desarrollar una extensión de la solución SDK de Windows Admin Center (proyecto Honolulu) - modificar el comportamiento de navegación de raíz
+description: 'Desarrollar una extensión de la solución Windows Admin Center SDK (proyecto Honolulu): modificar el comportamiento de navegación de raíz'
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -9,27 +9,27 @@ ms.date: 08/07/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.openlocfilehash: 4a5cba228aa3a0afed99c0d853c3720a5b46f650
-ms.sourcegitcommit: 546229d6b5fa7e16f725c6c35f4dcc272711b811
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "4905045"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59861736"
 ---
-# Modificar el comportamiento de navegación de raíz para una extensión de la solución
+# <a name="modify-root-navigation-behavior-for-a-solution-extension"></a>Modificar el comportamiento de navegación de raíz para una extensión de la solución
 
->Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
 
-En esta guía te obtendrás información sobre cómo modificar el comportamiento de navegación de la raíz de la solución para que el comportamiento de la lista de conexiones diferentes, así como cómo mostrar u ocultar la lista de herramientas.
+En esta guía, obtendrá información sobre cómo modificar el comportamiento de navegación de la raíz para que su solución tiene el comportamiento de la lista de conexión diferentes, así como cómo ocultar o mostrar la lista de herramientas.
 
-## Modificar el comportamiento de navegación de raíz
+## <a name="modifying-root-navigation-behavior"></a>Modificar el comportamiento de navegación de raíz
 
-Abre el archivo de manifest.json en {raíz de la extensión} \src y busca la propiedad "rootNavigationBehavior". Esta propiedad tiene dos valores válidos: "conexiones" o "path". El comportamiento de "conexiones" se detallará más adelante en la documentación.
+Abra el archivo manifest.json en \src {raíz de la extensión} y busque la propiedad "rootNavigationBehavior". Esta propiedad tiene dos valores válidos: "conexiones" o "path". El comportamiento de "conexiones" se detalla más adelante en la documentación.
 
-### Ruta de acceso de configuración como un rootNavigationBehavior
+### <a name="setting-path-as-a-rootnavigationbehavior"></a>Ruta de acceso de configuración como un rootNavigationBehavior
 
-Establece el valor de ```rootNavigationBehavior``` a ```path```y, a continuación, elimina el ```requirements``` propiedad y deja el ```path``` propiedad como una cadena vacía. Has completado la configuración mínima necesaria para crear una extensión de la solución. Guarda el archivo y gulp compilación -> gulp servir como lo harían una herramienta y, a continuación, lado cargar la extensión en la extensión de Windows Admin Center local.
+Establezca el valor de ```rootNavigationBehavior``` a ```path```y, a continuación, elimine el ```requirements``` propiedad y deje el ```path``` propiedad como una cadena vacía. Ha completado la configuración mínima necesaria para crear una extensión de la solución. Guarde el archivo y compilación de gulp -> gulp servir como una herramienta y, a continuación, lado cargaría la extensión en la extensión de Windows Admin Center local.
 
-Una matriz de puntos de entrada válidos manifiesto tiene este aspecto:
+Una matriz de puntos de entrada de manifiesto válido tiene este aspecto:
 ```
     "entryPoints": [
         {
@@ -45,13 +45,13 @@ Una matriz de puntos de entrada válidos manifiesto tiene este aspecto:
     ],
 ```
 
-Herramientas integradas con este tipo de estructura le conexiones no se requiere para cargar, pero no tienen funcionalidad de conectividad de nodo ya sea.
+Las herramientas integradas con este tipo de estructura le no requiere conexiones para cargar, pero no tendrá la funcionalidad de conectividad de nodo bien.
 
-### Conexiones de configuración como un rootNavigationBehavior
+### <a name="setting-connections-as-a-rootnavigationbehavior"></a>Configuración de conexiones como una rootNavigationBehavior
 
-Cuando se establece la ```rootNavigationBehavior``` propiedad ```connections```, se indica que el Shell de Windows Admin Center que haya un nodo conectado (siempre un servidor de algún tipo) que se debe conectar, y comprueba el estado de conexión. Teniendo esto, hay 2 pasos en la comprobación de conexión. 1) Windows Admin Center intentará realizar un intento de iniciar sesión en el nodo con sus credenciales (para establecer la sesión remota de PowerShell) y 2) se ejecutará el script de PowerShell que proporciones para identificar si el nodo se encuentra en un estado conectable.
+Al establecer el ```rootNavigationBehavior``` propiedad ```connections```, está indicando que el Shell de Windows Admin Center que habrá un nodo conectado (siempre un servidor de algún tipo) que se debe conectar y compruebe el estado de la conexión. Con esto, hay 2 pasos en la comprobación de conexión. (1) Windows Admin Center intentará realizar un intento de iniciar sesión en el nodo con sus credenciales (para establecer la sesión remota de PowerShell) y (2) que ejecutará el script de PowerShell que proporcione para identificar si el nodo está en un estado conectable.
 
-Una definición de la solución válido con conexiones tendrá este aspecto:
+Una definición de solución válido con conexiones tendrá este aspecto:
 
 ``` json
         {
@@ -75,8 +75,8 @@ Una definición de la solución válido con conexiones tendrá este aspecto:
         },
 ```
 
-Cuando el rootNavigationBehavior se establece en "conexiones" son necesarios para crear la definición de conexiones en el manifiesto. Esto incluye la propiedad "encabezado" (se usará para mostrar en el encabezado de la solución cuando un usuario lo selecciona en el menú), una matriz de connectionTypes (Esto permitirá especificar qué connectionTypes se usan en la solución. Obtener más información sobre esto en la documentación de connectionProvider.).
+Cuando se establece la rootNavigationBehavior "conexiones" son necesarios para elaborar la definición de las conexiones en el manifiesto. Esto incluye la propiedad "header" (se utilizará para mostrar en el encabezado de la solución cuando un usuario lo selecciona en el menú), una matriz de connectionTypes (Esto especificará qué connectionTypes se usan en la solución. Más información en la documentación de connectionProvider.).
 
-## Habilitar y deshabilitar el menú Herramientas ##
+## <a name="enabling-and-disabling-the-tools-menu"></a>Habilitar y deshabilitar el menú Herramientas ##
 
-Otra propiedad disponible en la definición de la solución es la propiedad "herramientas". Esto determinará si se muestra el menú Herramientas, así como la herramienta que se cargará. Cuando está habilitada, Windows Admin Center representará el menú de herramientas de la izquierda. Con defaultTool, es necesario que agregues un punto de entrada de la herramienta en el manifiesto para cargar los recursos adecuados. El valor de "defaultTool" debe ser la propiedad "name" de la herramienta, tal como se define en el manifiesto.
+Otra propiedad disponible en la definición de la solución es la propiedad "herramientas". Esto determinará si se muestra el menú Herramientas, así como la herramienta que se van a cargar. Cuando se habilita, Windows Admin Center presentará el menú Herramientas izquierdo. Con defaultTool, es necesario agregar un punto de entrada de la herramienta en el manifiesto con el fin de cargar los recursos adecuados. El valor de "defaultTool" debe ser la propiedad "name" de la herramienta, como se define en el manifiesto.

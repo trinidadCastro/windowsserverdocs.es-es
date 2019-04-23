@@ -1,7 +1,7 @@
 ---
 ms.assetid: 61b6c115-1082-45d5-b0b1-ed24d06fcdce
-title: "Personalización de inicio de sesión del usuario de FS AD"
-description: 
+title: Personalización de inicio de sesión del usuario de AD FS
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,16 +10,17 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 709bb8ae7135126b53ce426c981ee16705234cd9
-ms.sourcegitcommit: d351cdbb0bf2533d6db35626ebbc4924b3834309
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59862536"
 ---
-# <a name="ad-fs-user-sign-in-customization"></a>Personalización de inicio de sesión del usuario de FS AD
+# <a name="ad-fs-user-sign-in-customization"></a>Personalización de inicio de sesión del usuario de AD FS
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-AD FS proporciona una serie de opciones para los administradores personalizar y adaptar la experiencia del usuario final para satisfacer sus corporativa necesita.  La siguiente página servirá como una ubicación central para la personalización.  Puedes usar la siguiente tabla para encontrar rápidamente la opción de personalización.
+AD FS proporciona una serie de opciones para los administradores personalizar y adaptar la experiencia del usuario final para adaptarlas a su empresa necesita.  La siguiente página le servirá como una ubicación central para la personalización.  Puede usar la tabla siguiente para encontrar rápidamente la opción de personalización.
 
 
 
@@ -35,22 +36,22 @@ AD FS proporciona una serie de opciones para los administradores personalizar y 
 
 Tema|Descripción|
 -----|-----|
-[AD FS personalización en Windows Server 2016](AD-FS-Customization-in-Windows-Server-2016.md)|Nuevas opciones de personalización de AD FS en Windows Server 2016|
-[Cambiar el nombre de empresa](Change-the-company-name-on-the-AD-FS-sign-in-page.md)|Pasos para mostrar el nombre de empresas en la página de inicio de sesión|
-[Cambiar el logotipo de la empresa](Change-the-company-logo-on-the-AD-FS-sign-in-page.md)|Pasos para cambiar el logotipo que aparece en el inicio de sesión en la página|
+[Personalización de AD FS en Windows Server 2016](AD-FS-Customization-in-Windows-Server-2016.md)|Nuevas opciones de personalización disponibles para AD FS en Windows Server 2016|
+[Cambiar el nombre de la empresa](Change-the-company-name-on-the-AD-FS-sign-in-page.md)|Pasos para mostrar el nombre de las empresas en la página de inicio de sesión|
+[Cambiar el logotipo de empresa](Change-the-company-logo-on-the-AD-FS-sign-in-page.md)|Pasos para cambiar el logotipo que aparece en el inicio de sesión en la página|
 [Cambiar la ilustración](Change-the-illustration-on-the-AD-FS-sign-in-page.md)|Pasos para cambiar la ilustración que aparece en la página de inicio de sesión|
-[Agregar la descripción del inicio de sesión](Add-sign-in-page-description.md)|Pasos para agregar una descripción a la página de inicio de sesión|
-[Agregar el vínculo de Ayuda de asistencia al cliente](Add-Help-Desk-Link.md)|Pasos para agregar un vínculo de Ayuda de asistencia al cliente|
-[Agregar un vínculo principal](Add-Home-Link.md)|Pasos para agregar un vínculo de casa|
-[Agregar el vínculo de privacidad](Add-Privacy-Link.md)|Pasos para agregar un vínculo de privacidad|
-[Temas de web personalizados](Custom-Web-Themes-in-AD-FS.md)|Información sobre cómo usar temas personalizados web
-[Mensajes de error personalizados](Custom-error-messages-for-AD-FS-sign-in-page.md)|Pasos para la personalización de mensajes de error
-[Detección de dominio de inicio](Home-Realm-Discovery-Customization.md)|Pasos para personalizar la detección del territorio Home|
-[Personalización de la contraseña de actualización](Update-password-customization.md)|Pasos para habilitar y personalizar la página de la contraseña de actualización|
-[La autenticación multifactor y la personalización de proveedores de autenticación externo](Multi-factor-authentication-and-external-auth-providers-customization.md)|Información sobre cómo usar MFA y los proveedores de autenticación externo|
-[Personalización de la localización](Customization-for-Localization.md)|Información sobre las consideraciones de localización
-[Quitar los derechos de autor de Microsoft](Remove-the-Microsoft-copyright.md)|Pasos sobre la eliminación de los derechos de autor de Microsoft
-[Personalizar los nombres para mostrar y descripciones para métodos de autenticación](Customize-the-display-names-and-descriptions-for-authentication-methods.md)|Pasos sobre la personalización de mostrar los nombres y las descripciones de los métodos de autenticación
+[Agregar descripción de inicio de sesión](Add-sign-in-page-description.md)|Pasos para agregar una descripción a la página de inicio de sesión|
+[Agregar vínculo de Ayuda del servicio de asistencia](Add-Help-Desk-Link.md)|Pasos para agregar un vínculo de Ayuda del servicio de asistencia|
+[Agregar vínculo principal](Add-Home-Link.md)|Pasos para agregar un vínculo de inicio|
+[Agregar vínculo de privacidad](Add-Privacy-Link.md)|Pasos para agregar un vínculo de privacidad|
+[Temas web personalizados](Custom-Web-Themes-in-AD-FS.md)|Información sobre el uso de temas web personalizados
+[Mensajes de error personalizados](Custom-error-messages-for-AD-FS-sign-in-page.md)|Pasos para personalizar los mensajes de error
+[Detección del dominio de inicio](Home-Realm-Discovery-Customization.md)|Pasos para personalizar Home Realm Discovery|
+[Personalización de la contraseña de actualización](Update-password-customization.md)|Pasos para habilitar y personalizar la página de actualización de contraseña|
+[Autenticación multifactor y personalización de los proveedores de autenticación externa](Multi-factor-authentication-and-external-auth-providers-customization.md)|Información sobre el uso de MFA y proveedores de autenticación externos|
+[Personalización para la localización](Customization-for-Localization.md)|Información sobre las consideraciones de localización
+[Quitar el copyright de Microsoft](Remove-the-Microsoft-copyright.md)|Pasos acerca de cómo quitar el copyright de Microsoft
+[Personalizar los nombres para mostrar y las descripciones de los métodos de autenticación](Customize-the-display-names-and-descriptions-for-authentication-methods.md)|Los pasos sobre la personalización de mostrar los nombres y descripciones de los métodos de autenticación
 [Personalización avanzada](Advanced-Customization-of-AD-FS-Sign-in-Pages.md)|Opciones de personalización avanzada mediante el archivo onload.js.
 
 

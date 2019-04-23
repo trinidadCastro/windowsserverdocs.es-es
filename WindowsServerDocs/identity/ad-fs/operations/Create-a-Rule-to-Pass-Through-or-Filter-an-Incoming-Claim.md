@@ -1,7 +1,7 @@
 ---
 ms.assetid: 6127963f-71b2-4d8f-8b53-7c525bf06521
-title: "Crear una regla para atravesar o filtrar una notificación entrante"
-description: 
+title: Crear una regla para pasar a través o filtrar una notificación entrante
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,93 +10,94 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 50f50cd4e096b107a2b58ac05328ff8ed413f2dc
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860276"
 ---
-# <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>Crear una regla para atravesar o filtrar una notificación entrante
+# <a name="create-a-rule-to-pass-through-or-filter-an-incoming-claim"></a>Crear una regla para pasar a través o filtrar una notificación entrante
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
-Con el paso a través o una plantilla de notificación entrante de regla de filtro en los servicios de federación de Active Directory \(AD FS\), se puede pasar a través de todas las solicitudes entrantes con un tipo de notificación seleccionado. También puedes filtrar los valores de notificaciones entrantes con un tipo de notificación seleccionado. Por ejemplo, puedes usar esta plantilla de regla para crear una regla que va a enviar todas las solicitudes entrantes de grupo. También puedes usar esta regla para enviar notificaciones de \(UPN\) de nombre de entidad de seguridad que terminan con usuario solo @fabrikam.  
+Mediante el paso a través o filtrar una plantilla de regla de notificación entrante en los servicios de federación de Active Directory \(AD FS\), puede pasar a través de todas las notificaciones entrantes con un tipo de notificación seleccionado. También puede filtrar los valores de las notificaciones entrantes con un tipo de notificación seleccionado. Por ejemplo, puede usar esta plantilla de regla para crear una regla que envíe todas las notificaciones de grupo entrantes. También puede usar esta regla para enviar solo nombre principal de usuario \(UPN\) notificaciones que terminan con @fabrikam.  
   
-Puedes usar el siguiente procedimiento para crear una regla de notificación con la administración de AD FS en snap\.  
+Puede usar el procedimiento siguiente para crear una regla de notificación con el complemento Administración de AD FS\-en.  
   
-Pertenencia a **administradores**, o equivalente, en el equipo local es lo mínimo necesario para completar este procedimiento.  Revisar detalles sobre el uso de las cuentas adecuadas y agrupar pertenencias a [Local y dominio predeterminada grupos](https://go.microsoft.com/fwlink/?LinkId=83477).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).   
 
-## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para atravesar o filtrar una notificación entrante en una confianza del fabricante de confiar en Windows Server 2016 
+## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para pasar a través o filtrar una notificación entrante en una confianza de Windows Server 2016 
 
-1.  En el administrador del servidor, haz clic en **herramientas**y, a continuación, selecciona **AD FS administración**.  
+1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
   
-2.  En el árbol de consola, en **AD FS**, haz clic en **confiar confía en las partes **. 
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
+2.  En el árbol de consola, bajo **AD FS**, haga clic en **autenticado**. 
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  Right\ y haga clic en la confianza seleccionada y, a continuación, haz clic en **Editar directiva de emisión de Reclamación **.
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **Editar directiva de emisión de notificación**.
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
-4.  En la **Editar directiva de emisión de Reclamación** cuadro de diálogo **reglas de transformación de emisión** haga clic en **Agregar regla** para iniciar el Asistente para la regla. 
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+4.  En el **Editar directiva de emisión de notificación** cuadro de diálogo **reglas de transformación de emisión** haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  En la **Seleccionar plantilla de regla** página, debajo **plantilla de regla de Reclamación**, selecciona **paso a través o una notificación entrante de filtro** en la lista y, a continuación, haz clic en **siguiente **.  
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
+5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **pasar o filtrar una notificación entrante** en la lista y, a continuación, haga clic en **siguiente** .  
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
-6.  En la **configurar regla** página en **nombre de la regla de Reclamación** escribe el nombre para mostrar para esta regla, **tipo de notificación entrante** selecciona un tipo de notificación de la lista y, a continuación, selecciona una de las siguientes opciones, según las necesidades de la organización:  
+6.  En el **configurar regla** página **nombre de la regla de notificación** escriba el nombre para mostrar para esta regla, en **tipo de notificación entrante** seleccione un tipo de notificación en la lista y, a continuación, seleccione uno de los las opciones siguientes, según las necesidades de su organización:  
   
-    -   **Pasar por todos los valores de las notificaciones**  
+    -   **Pasar a través de todos los valores de notificación**  
   
-    -   **Pasar solo un determinado valor de notificación**  
+    -   **Pasar a través solo un determinado valor de notificación**  
   
-    -   **Pasar solo valores de las notificaciones que coinciden con un valor de sufijo de correo electrónico específicas**  
+    -   **Pasar a través de los valores de notificación que coincidan con un valor de sufijo de correo electrónico específico**  
   
-    -   **Pasar a través de los valores de notificación que comienzan con un valor específico**  
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule5.PNG)    
+    -   **Pasar a través de los valores de notificación que empiezan con un valor específico**  
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule5.PNG)    
 
-7.  Haz clic en el **finalizar** botón.  
+7.  Haga clic en el **finalizar** botón.  
   
-8.  En la **editar reglas de notificación** cuadro de diálogo, haz clic en **Aceptar** guardar la regla.
+8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.
   
-## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-on-a-claims-provider-trust-in-windows-server-2016"></a>Para crear una regla para atravesar o filtrar una notificación entrante en un proveedor de notificaciones de confianza en Windows Server 2016 
+## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-on-a-claims-provider-trust-in-windows-server-2016"></a>Para crear una regla para pasar a través o filtrar una notificación entrante en una confianza del proveedor de notificaciones en Windows Server 2016 
   
-1.  En el administrador del servidor, haz clic en **herramientas**y, a continuación, selecciona **AD FS administración**.  
+1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
   
-2.  En el árbol de consola, en **AD FS**, haz clic en **reclamaciones proveedor confía **. 
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
+2.  En el árbol de consola, bajo **AD FS**, haga clic en **confianzas de proveedor de notificaciones**. 
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  Right\ y haga clic en la confianza seleccionada y, a continuación, haz clic en **editar reglas de notificación **.
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
+3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **editar reglas de notificación**.
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
-4.  En la **editar reglas de notificación** cuadro de diálogo **aceptación transformar reglas** haga clic en **Agregar regla** para iniciar el Asistente para la regla.
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
+4.  En el **editar reglas de notificación** cuadro de diálogo **reglas de transformación de aceptación** haga clic en **Agregar regla** para iniciar el Asistente para reglas.
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  En la **Seleccionar plantilla de regla** página, debajo **plantilla de regla de Reclamación**, selecciona **paso a través o una notificación entrante de filtro** en la lista y, a continuación, haz clic en **siguiente **.  
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
+5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **pasar o filtrar una notificación entrante** en la lista y, a continuación, haga clic en **siguiente** .  
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule4.PNG)    
 
-6.  En la **configurar regla** página en **nombre de la regla de Reclamación** escribe el nombre para mostrar para esta regla, **tipo de notificación entrante** selecciona un tipo de notificación de la lista y, a continuación, selecciona una de las siguientes opciones, según las necesidades de la organización:  
+6.  En el **configurar regla** página **nombre de la regla de notificación** escriba el nombre para mostrar para esta regla, en **tipo de notificación entrante** seleccione un tipo de notificación en la lista y, a continuación, seleccione uno de los las opciones siguientes, según las necesidades de su organización:  
   
-    -   **Pasar por todos los valores de las notificaciones**  
+    -   **Pasar a través de todos los valores de notificación**  
   
-    -   **Pasar solo un determinado valor de notificación**  
+    -   **Pasar a través solo un determinado valor de notificación**  
   
-    -   **Pasar solo valores de las notificaciones que coinciden con un valor de sufijo de correo electrónico específicas**  
+    -   **Pasar a través de los valores de notificación que coincidan con un valor de sufijo de correo electrónico específico**  
   
-    -   **Pasar a través de los valores de notificación que comienzan con un valor específico**  
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule5.PNG)    
+    -   **Pasar a través de los valores de notificación que empiezan con un valor específico**  
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule5.PNG)    
 
-7.  Haz clic en el **finalizar** botón.  
+7.  Haga clic en el **finalizar** botón.  
   
-8.  En la **editar reglas de notificación** cuadro de diálogo, haz clic en **Aceptar** guardar la regla.  
+8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
 
-## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-in-windows-server-2012-r2"></a>Para crear una regla para atravesar o filtrar una notificación entrante en Windows Server 2012 R2
+## <a name="to-create-a-rule-to-pass-through-or-filter-an-incoming-claim-in-windows-server-2012-r2"></a>Para crear una regla para pasar a través o filtrar una notificación entrante en Windows Server 2012 R2
 
-1.  En el administrador del servidor, haz clic en **herramientas**y, a continuación, selecciona **AD FS administración**.  
+1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
   
-2.  En el árbol de consola, en **AD FSAD FS\\Trust relaciones**, haz clic en **reclamaciones proveedor confía** o **confiar confía en las partes**y, a continuación, haz clic en una relación de confianza específicas en la lista que quieras para crear esta regla.  
+2.  En el árbol de consola, bajo **FSAD de AD FS\\relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o **autenticado**y, a continuación, haga clic en un confianza específicos en la lista donde desea crear esta regla.  
   
-3.  Right\ y haga clic en la confianza seleccionada y, a continuación, haz clic en **editar reglas de notificación **.
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)   
+3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **editar reglas de notificación**.
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)   
   
-4.  En la **editar reglas de notificación** cuadro de diálogo, selecciona una de las siguientes pestañas, según la confianza de que está editando y la regla que establece quieras crear esta regla en y, a continuación, haz clic en **Agregar regla** para iniciar el Asistente de regla que está asociado con ese conjunto de reglas:  
+4.  En el **editar reglas de notificación** cuadro de diálogo, seleccione una de las fichas siguientes, dependiendo de la confianza que va a editar y establezca la regla a la desea crear esta regla en y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas:  
   
     -   **Reglas de transformación de aceptación**  
   
@@ -105,25 +106,25 @@ Pertenencia a **administradores**, o equivalente, en el equipo local es lo míni
     -   **Reglas de autorización de emisión**  
   
     -   **Reglas de autorización de delegación**  
-![Crear la regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)    
+![Crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)    
 
-5.  En la **Seleccionar plantilla de regla** página, debajo **plantilla de regla de Reclamación**, selecciona **paso a través o una notificación entrante de filtro** en la lista y, a continuación, haz clic en **siguiente **.  
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)    
+5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **pasar o filtrar una notificación entrante** en la lista y, a continuación, haga clic en **siguiente** .  
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule7.PNG)    
 
-6.  En la **configurar regla** página en **nombre de la regla de Reclamación** escribe el nombre para mostrar para esta regla, **tipo de notificación entrante** selecciona un tipo de notificación de la lista y, a continuación, selecciona una de las siguientes opciones, según las necesidades de la organización:  
+6.  En el **configurar regla** página **nombre de la regla de notificación** escriba el nombre para mostrar para esta regla, en **tipo de notificación entrante** seleccione un tipo de notificación en la lista y, a continuación, seleccione uno de los las opciones siguientes, según las necesidades de su organización:  
   
-    -   **Pasar por todos los valores de las notificaciones**  
+    -   **Pasar a través de todos los valores de notificación**  
   
-    -   **Pasar solo un determinado valor de notificación**  
+    -   **Pasar a través solo un determinado valor de notificación**  
   
-    -   **Pasar solo valores de las notificaciones que coinciden con un valor de sufijo de correo electrónico específicas**  
+    -   **Pasar a través de los valores de notificación que coincidan con un valor de sufijo de correo electrónico específico**  
   
-    -   **Pasar a través de los valores de notificación que comienzan con un valor específico**  
-![Crear la regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule8.PNG)    
+    -   **Pasar a través de los valores de notificación que empiezan con un valor específico**  
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule8.PNG)    
 
-7.  Haz clic en el **finalizar** botón.  
+7.  Haga clic en el **finalizar** botón.  
   
-8.  En la **editar reglas de notificación** cuadro de diálogo, haz clic en **Aceptar** guardar la regla.  
+8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
 
 
 
@@ -131,9 +132,9 @@ Pertenencia a **administradores**, o equivalente, en el equipo local es lo míni
 ## <a name="additional-references"></a>Referencias adicionales  
 [Configurar reglas de notificación](Configure-Claim-Rules.md)  
   
-[Cuándo usar uno de paso o la regla de filtro de notificación](../../ad-fs/technical-reference/When-to-Use-a-Pass-Through-or-Filter-Claim-Rule.md)  
+[Cuándo se debe usar un paso a través o filtrar la regla de notificación](../../ad-fs/technical-reference/When-to-Use-a-Pass-Through-or-Filter-Claim-Rule.md)  
   
-[La función de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
+[El rol de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
 [La función de reglas de notificación](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  
   

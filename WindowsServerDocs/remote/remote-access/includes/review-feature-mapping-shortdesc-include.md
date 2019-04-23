@@ -1,0 +1,1 @@
+**[Obtenga información sobre la comparación de características de VPN de Always On y DirectAccess](../vpn/vpn-map-da.md).** Similar a DirectAccess, VPN de Always On tiene muchos de seguridad, conectividad, autenticación y otras opciones.

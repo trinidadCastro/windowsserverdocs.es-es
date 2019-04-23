@@ -1,6 +1,6 @@
 ---
-title: Administrar la función a partir del Control de acceso con Windows PowerShell
-description: Este tema es parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
+title: Administración del control de acceso basado en roles con Windows PowerShell
+description: Este tema forma parte de la Guía de administración de administración de direcciones IP (IPAM) en Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,34 +13,35 @@ ms.topic: article
 ms.assetid: 4f13f78e-0114-4e41-9a28-82a4feccecfc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: df6fa423a4ec891f1ad3faefad6c6054519542c4
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: e0318db1b2b1b2730ee6dc57b7b9df6d16fe57e8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59841476"
 ---
-# <a name="manage-role-based-access-control-with-windows-powershell"></a>Administrar la función a partir del Control de acceso con Windows PowerShell
+# <a name="manage-role-based-access-control-with-windows-powershell"></a>Administración del control de acceso basado en roles con Windows PowerShell
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para obtener información sobre cómo usar IPAM para administrar el control de acceso basado en roles con Windows PowerShell.  
+Puede utilizar este tema para aprender a usar IPAM para administrar el control de acceso basado en roles con Windows PowerShell.  
   
 >[!NOTE]
->Para la referencia de comandos de IPAM Windows PowerShell, consulta [Cmdlets del servidor de administración de direcciones IP (IPAM) en Windows PowerShell](https://technet.microsoft.com/library/jj553807.aspx).  
+>Para la referencia de comandos de IPAM de Windows PowerShell, consulte el [IpamServer cmdlets de Windows PowerShell](https://docs.microsoft.com/powershell/module/ipamserver/?view=win10-ps).  
   
-Los nuevos comandos de Windows PowerShell IPAM proporcionan la capacidad de recuperar y cambiar los ámbitos de acceso de objetos DNS y DHCP. La tabla siguiente muestra el comando que se usará para cada objeto IPAM correcto.  
+Los nuevos comandos de IPAM de Windows PowerShell proporcionan la capacidad de recuperar y cambiar los ámbitos de acceso de los objetos DNS y DHCP. En la tabla siguiente se muestra el comando correcto que se usará para cada objeto IPAM.  
   
 |Objeto IPAM|Comando|Descripción|  
 |---------------|-----------|---------------|  
-|Servidor DNS|Get-IpamDnsServer|Este cmdlet devuelve el objeto de servidor DNS de IPAM|  
-|Zona DNS|Get-IpamDnsZone|Este cmdlet devuelve el objeto de la zona DNS de IPAM|  
-|Registro de recursos DNS|Get-IpamResourceRecord|Este cmdlet devuelve el objeto de registro de recursos DNS de IPAM|  
+|Servidor DNS|Get-IpamDnsServer|Este cmdlet devuelve el objeto de servidor DNS en IPAM|  
+|Zona DNS|Get-IpamDnsZone|Este cmdlet devuelve el objeto de zona DNS en IPAM|  
+|Registro de recursos DNS|Get-IpamResourceRecord|Este cmdlet devuelve el objeto de registro de recursos DNS en IPAM|  
 |Reenviador condicional de DNS|Get-IpamDnsConditionalForwarder|Este cmdlet devuelve el objeto de reenviador condicional de DNS de IPAM|  
 |Servidor DHCP|Get-IpamDhcpServer|Este cmdlet devuelve el objeto de servidor DHCP de IPAM|  
-|Ámbito superior DHCP|Get-IpamDhcpSuperscope|Este cmdlet devuelve el objeto de ámbito superior DHCP de IPAM|  
+|Superámbito DHCP|Get-IpamDhcpSuperscope|Este cmdlet devuelve el objeto de superámbito DHCP en IPAM|  
 |Ámbito DHCP|Get-IpamDhcpScope|Este cmdlet devuelve el objeto de ámbito DHCP de IPAM|  
   
-En el siguiente ejemplo de salida del comando, la `Get-IpamDnsZone` cmdlet recupera la **dublin.contoso.com** zona DNS.  
+En el siguiente ejemplo de salida del comando, el `Get-IpamDnsZone` cmdlet recupera la **dublin.contoso.com** zona DNS.  
   
 ```  
 PS C:\Users\Administrator.CONTOSO> Get-IpamDnsZone -ZoneType Forward -ZoneName dublin.contoso.com  
@@ -54,13 +55,13 @@ ScavengeStaleRecords : False
 ```  
   
 ## <a name="setting-access-scopes-on-ipam-objects"></a>Definición de ámbitos de acceso en objetos IPAM  
-Puedes establecer los ámbitos de acceso en objetos IPAM mediante el uso de la `Set-IpamAccessScope` comando. Puedes usar este comando para establecer el ámbito de acceso a un valor específico para un objeto o para hacer que los objetos que heredan el ámbito de acceso de objetos primarios. Siguiente es los objetos que se pueden configurar con este comando.  
+Puede establecer ámbitos de acceso en objetos IPAM mediante el `Set-IpamAccessScope` comando. Puede usar este comando para establecer el ámbito de acceso a un valor específico para un objeto o para hacer que los objetos que se va a heredar ámbito de acceso de los objetos primarios. A continuación es los objetos que se pueden configurar con este comando.  
   
 -   Ámbito DHCP  
   
 -   Servidor DHCP  
   
--   Ámbito superior DHCP  
+-   Superámbito DHCP  
   
 -   Reenviador condicional de DNS  
   
@@ -70,15 +71,15 @@ Puedes establecer los ámbitos de acceso en objetos IPAM mediante el uso de la `
   
 -   Zona DNS  
   
--   Bloque de direcciones IP  
+-   IP Address Block  
   
 -   Intervalo de direcciones IP  
   
 -   Espacio de direcciones IP  
   
--   UNA subred de direcciones  
+-   Subred de direcciones IP  
   
-La siguiente es la sintaxis para la `Set-IpamAccessScope` comando.  
+Siguiente es la sintaxis para el `Set-IpamAccessScope` comando.  
   
 ```  
 NAME  
@@ -116,7 +117,7 @@ SYNTAX
     Set-IpamAccessScope [-IpamBlock] -InputObject <ciminstance[]> [-AccessScopePath <string>] [-IsInheritedAccessScope] [-PassThru] [-CimSession <CimSession[]>] [-ThrottleLimit <int>] [-AsJob] [-WhatIf] [-Confirm]  [<CommonParameters>]  
 ```  
   
-En el siguiente ejemplo, el ámbito de acceso de la zona DNS **dublin.contoso.com** cambia de **Dublin** a **Europa**.  
+En el ejemplo siguiente, el ámbito de acceso de la zona DNS **dublin.contoso.com** se cambia de **Dublín** a **Europa**.  
   
 ```  
 PS C:\Users\Administrator.CONTOSO> Get-IpamDnsZone -ZoneType Forward -ZoneName dublin.contoso.com  

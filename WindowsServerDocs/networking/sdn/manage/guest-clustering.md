@@ -1,7 +1,7 @@
 ---
-title: Invitado clústeres en una red Virtual
-description: Este tema es parte de la guía definido redes Software sobre cómo administrar cargas de trabajo de inquilino y redes virtuales en Windows Server 2016.
-manager: brianlic
+title: Clústeres invitados en una red virtual
+description: Las máquinas virtuales conectadas a una red virtual solo se pueden usar las direcciones IP que asignó controladora de red para comunicarse en la red.  Tecnologías de agrupación en clústeres que requieren una dirección IP flotante, como clústeres de conmutación por error de Microsoft, requieren algunos pasos adicionales para funcionar correctamente.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,165 +12,176 @@ ms.topic: article
 ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: shortpatti
-ms.openlocfilehash: 5cab7e7c0ca0af848b4b58362388701cc4357860
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/26/2018
+ms.openlocfilehash: fcd37ebb3739f1d7118ce41dfc61764486c920d3
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59844966"
 ---
-# <a name="guest-clustering-in-a-virtual-network"></a>Invitado clústeres en una red Virtual
+# <a name="guest-clustering-in-a-virtual-network"></a>Clústeres invitados en una red virtual
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Máquinas virtuales que están conectados a una red virtual solo tienen permiso para usar las direcciones IP que se le asigna el controlador de red con el fin de comunicar en la red.  Esto significa clústeres tecnologías que requieren una dirección IP flotante, como clústeres de conmutación por error de Microsoft, requieren algunos pasos adicionales para funcionar correctamente.
+Las máquinas virtuales conectadas a una red virtual solo se pueden usar las direcciones IP que asignó controladora de red para comunicarse en la red.  Tecnologías de agrupación en clústeres que requieren una dirección IP flotante, como clústeres de conmutación por error de Microsoft, requieren algunos pasos adicionales para funcionar correctamente.
 
-El método para hacer que la dirección IP flotante accesible es usar un \(SLB\) equilibrado de carga de Software virtual \(VIP\) IP.  El equilibrado de carga de software debe configurarse con un sondeo del estado en un puerto en esa dirección IP para que SLB dirige el tráfico a la máquina que actualmente tiene esa dirección IP.
+El método para hacer que la dirección IP flotante accesible consiste en usar un equilibrador de carga de Software \(SLB\) IP virtual \(VIP\).  El equilibrador de carga de software debe configurarse con un sondeo de estado en un puerto en esa dirección IP para que el SLB dirige el tráfico a la máquina que actualmente tiene esa dirección IP.
 
-## <a name="example-load-balancer-configuration"></a>Ejemplo: Configuración de equilibrado de carga
 
-En este ejemplo se da por hecho que ya has creado las máquinas virtuales que se convertirá en nodos del clúster y les asociadas a una red Virtual.  Para obtener instrucciones, consulta [crear una máquina virtual y conectarse a una red Virtual de inquilino o VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm).  
+## <a name="example-load-balancer-configuration"></a>Por ejemplo: Configuración del equilibrador de carga
 
-En este ejemplo se crea una dirección IP virtual (192.168.2.100) para representar la dirección IP flotante del clúster y configurar un sondeo del estado para controlar el puerto TCP 59999 para determinar qué nodo está activa.
+En este ejemplo se da por supuesto que ya ha creado las máquinas virtuales que se convertirán en nodos de clúster y les asociadas a una red Virtual.  Para obtener instrucciones, consulte [crear una máquina virtual y conectarse a una red Virtual del inquilino o VLAN](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create-a-tenant-vm).  
 
-### <a name="step-1-select-the-vip"></a>Paso 1: Selecciona la dirección VIP
-Preparar asignando una dirección IP VIP.  Esta dirección puede ser cualquier dirección reservado o no usado en la misma subred que los nodos del clúster.  La dirección VIP debe coincidir con la dirección flotante del clúster.
+En este ejemplo se crea una dirección IP virtual (192.168.2.100) para representar la dirección IP flotante del clúster y configurar un sondeo de estado para supervisar el puerto TCP 59999 para determinar qué nodo está activa.
 
-    $VIP = "192.168.2.100"
-    $subnet = "Subnet2"
-    $VirtualNetwork = "MyNetwork"
-    $ResourceId = "MyNetwork_InternalVIP"
+1. Seleccione a la dirección VIP.<p>Prepare asignando una dirección IP de VIP, que puede ser cualquier dirección reservada o no usado en la misma subred que los nodos del clúster.  La dirección VIP debe coincidir con la dirección del clúster de flotante.
 
-### <a name="step-2-create-the-load-balancer-properties-object"></a>Paso 2: Crear el objeto de propiedades de carga equilibrado
+   ```PowerShell
+   $VIP = "192.168.2.100"
+   $subnet = "Subnet2"
+   $VirtualNetwork = "MyNetwork"
+   $ResourceId = "MyNetwork_InternalVIP"
+   ```
 
-Puedes usar el siguiente comando de ejemplo para crear el objeto de propiedades de carga equilibrado.
+2. Cree el objeto de propiedades del equilibrador de carga.
 
-    $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+   ```PowerShell
+   $LoadBalancerProperties = new-object Microsoft.Windows.NetworkController.LoadBalancerProperties
+   ```
 
-### <a name="step-3-create-a-front-end-ip-address"></a>Paso 3: Crear una dirección IP de front\ final
+3. Crear un front\-dirección IP final.
 
-Puedes usar el siguiente comando de ejemplo para crear una dirección IP de front\-end.
+   ```PowerShell
+   $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
+   $FrontEnd.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
+   $FrontEnd.resourceId = "Frontend1"
+   $FrontEnd.resourceRef = "/loadBalancers/$ResourceId/frontendIPConfigurations/$($FrontEnd.resourceId)"
+   $FrontEnd.properties.subnet = new-object Microsoft.Windows.NetworkController.Subnet
+   $FrontEnd.properties.subnet.ResourceRef = "/VirtualNetworks/MyNetwork/Subnets/Subnet2"
+   $FrontEnd.properties.privateIPAddress = $VIP
+   $FrontEnd.properties.privateIPAllocationMethod = "Static"
+   ```
 
-    $LoadBalancerProperties.frontendipconfigurations += $FrontEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfiguration
-    $FrontEnd.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerFrontendIpConfigurationProperties
-    $FrontEnd.resourceId = "Frontend1"
-    $FrontEnd.resourceRef = "/loadBalancers/$ResourceId/frontendIPConfigurations/$($FrontEnd.resourceId)"
-    $FrontEnd.properties.subnet = new-object Microsoft.Windows.NetworkController.Subnet
-    $FrontEnd.properties.subnet.ResourceRef = "/VirtualNetworks/MyNetwork/Subnets/Subnet2"
-    $FrontEnd.properties.privateIPAddress = $VIP
-    $FrontEnd.properties.privateIPAllocationMethod = "Static"
+4. Crear una copia\-terminar el grupo que contiene los nodos del clúster.
 
-### <a name="step-4-create-a-back-end-pool-to-contain-the-cluster-nodes"></a>Paso 4: Crear un grupo de back\-end para contener los nodos del clúster
+   ```PowerShell
+   $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
+   $BackEnd.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
+   $BackEnd.resourceId = "Backend1"
+   $BackEnd.resourceRef = "/loadBalancers/$ResourceId/backendAddressPools/$($BackEnd.resourceId)"
+   $LoadBalancerProperties.backendAddressPools += $BackEnd
+   ```
 
-Puedes usar el siguiente comando de ejemplo para crear un grupo de back\ final
+5. Agregue un sondeo para detectar qué nodo de clúster está activa actualmente en la dirección de flotante. 
 
-    $BackEnd = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPool
-    $BackEnd.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerBackendAddressPoolProperties
-    $BackEnd.resourceId = "Backend1"
-    $BackEnd.resourceRef = "/loadBalancers/$ResourceId/backendAddressPools/$($BackEnd.resourceId)"
-    $LoadBalancerProperties.backendAddressPools += $BackEnd
+   >[!NOTE]
+   >La consulta de sondeo en la dirección permanente de la máquina virtual en el puerto que se definen a continuación.  El puerto solo debe responder en el nodo activo. 
 
-### <a name="step-5-add-a-probe"></a>Paso 5: Agregar un sondeo
-El sondeo es necesario para detectar qué nodo del clúster está activa actualmente en la dirección flotante.
+   ```PowerShell
+   $LoadBalancerProperties.probes += $lbprobe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
+   $lbprobe.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerProbeProperties
 
->[!NOTE]
->La consulta de sondeo en la dirección permanente de la máquina virtual en el puerto que se define a continuación.  Solo debes responder el puerto en el nodo activo. 
+   $lbprobe.ResourceId = "Probe1"
+   $lbprobe.resourceRef = "/loadBalancers/$ResourceId/Probes/$($lbprobe.resourceId)"
+   $lbprobe.properties.protocol = "TCP"
+   $lbprobe.properties.port = "59999"
+   $lbprobe.properties.IntervalInSeconds = 5
+   $lbprobe.properties.NumberOfProbes = 11
+   ```
 
-    $LoadBalancerProperties.probes += $lbprobe = new-object Microsoft.Windows.NetworkController.LoadBalancerProbe
-    $lbprobe.properties = new-object Microsoft.Windows.NetworkController.LoadBalancerProbeProperties
+6. Agregue las reglas para el puerto TCP 1433 de equilibrio de carga.<p>Puede modificar el protocolo y puerto según sea necesario.  También puede repetir este paso varias veces para puertos adicionales y protcols en esta dirección VIP.  Es importante que EnableFloatingIP está establecido en $true porque esto indica que el equilibrador de carga para enviar el paquete en el nodo con la dirección VIP original en su lugar.
 
-    $lbprobe.ResourceId = "Probe1"
-    $lbprobe.resourceRef = "/loadBalancers/$ResourceId/Probes/$($lbprobe.resourceId)"
-    $lbprobe.properties.protocol = "TCP"
-    $lbprobe.properties.port = "59999"
-    $lbprobe.properties.IntervalInSeconds = 5
-    $lbprobe.properties.NumberOfProbes = 11
+   ```PowerShell
+   $LoadBalancerProperties.loadbalancingRules += $lbrule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
+   $lbrule.properties = new-object Microsoft.Windows.NetworkController.LoadBalancingRuleProperties
+   $lbrule.ResourceId = "Rules1"
 
-### <a name="step-5-add-the-load-balancing-rules"></a>Paso 5: Agregar las reglas de equilibrio de carga
-Este paso crea una regla para el puerto TCP 1433 equilibrio de carga.  Puedes modificar el protocolo y el puerto según sea necesario.  También puede repetir este paso varias veces para puertos adicionales y los protocolos que en este VIP.  Es importante que EnableFloatingIP está establecido en $true porque esto indica la equilibrado de carga para enviar el paquete para el nodo con la dirección VIP original en su lugar.
+   $lbrule.properties.frontendipconfigurations += $FrontEnd
+   $lbrule.properties.backendaddresspool = $BackEnd 
+   $lbrule.properties.protocol = "TCP"
+   $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433 
+   $lbrule.properties.IdleTimeoutInMinutes = 4
+   $lbrule.properties.EnableFloatingIP = $true
+   $lbrule.properties.Probe = $lbprobe
+   ```
 
-    $LoadBalancerProperties.loadbalancingRules += $lbrule = new-object Microsoft.Windows.NetworkController.LoadBalancingRule
-    $lbrule.properties = new-object Microsoft.Windows.NetworkController.LoadBalancingRuleProperties
-    $lbrule.ResourceId = "Rules1"
+7. Cree el equilibrador de carga en la controladora de red.
 
-    $lbrule.properties.frontendipconfigurations += $FrontEnd
-    $lbrule.properties.backendaddresspool = $BackEnd 
-    $lbrule.properties.protocol = "TCP"
-    $lbrule.properties.frontendPort = $lbrule.properties.backendPort = 1433 
-    $lbrule.properties.IdleTimeoutInMinutes = 4
-    $lbrule.properties.EnableFloatingIP = $true
-    $lbrule.properties.Probe = $lbprobe
+   ```PowerShell
+   $lb = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $ResourceId -Properties $LoadBalancerProperties -Force
+   ```
 
-### <a name="step-5-create-the-load-balancer-in-network-controller"></a>Paso 5: Crear el equilibrado de carga en el controlador de red
+8. Agregue los nodos del clúster para el grupo de back-end.<p>Puede agregar tantos nodos al grupo como sea necesario para el clúster.
 
-Puedes usar el siguiente comando de ejemplo para crear el equilibrado de carga.
+   ```PowerShell
+   # Cluster Node 1
 
-    $lb = New-NetworkControllerLoadBalancer -ConnectionUri $URI -ResourceId $ResourceId -Properties $LoadBalancerProperties -Force
-
-### <a name="step-6-add-the-cluster-nodes-to-the-backend-pool"></a>Paso 6: Agregar los nodos del clúster al grupo de back-end
-
-Este ejemplo muestra cómo se agregan dos miembros del grupo, pero puedes agregar tantas nodos al grupo como sea necesario para el clúster.
-
-    # Cluster Node 1
-
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid "ClusterNode1_Network-Adapter"
-    $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
-    $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid "ClusterNode1_Network-Adapter"
+   $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
 
     # Cluster Node 2
 
-    $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid "ClusterNode2_Network-Adapter"
-    $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
-    $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
+   $nic = get-networkcontrollernetworkinterface  -connectionuri $uri -resourceid "ClusterNode2_Network-Adapter"
+   $nic.properties.IpConfigurations[0].properties.LoadBalancerBackendAddressPools += $lb.properties.backendaddresspools[0]
+   $nic = new-networkcontrollernetworkinterface  -connectionuri $uri -resourceid $nic.resourceid -properties $nic.properties -force
+   ```
 
-Una vez que hayas creado el equilibrado de carga y agregado las interfaces de red al grupo de back-end, estás listo para configurar el clúster.  Si estás usando un clúster Failover de Microsoft puede continuar con el siguiente ejemplo. 
+   Una vez que ha creado el equilibrador de carga y agregar las interfaces de red para el grupo de back-end, está listo para configurar el clúster.  
+
+9. (Opcional) Si utilizas a Microsoft Failover Cluster, continúe con el ejemplo siguiente. 
 
 ## <a name="example-2-configuring-a-microsoft-failover-cluster"></a>Ejemplo 2: Configurar un clúster de conmutación por error de Microsoft
 
-Puedes usar los siguientes pasos para configurar un clúster de conmutación por error.
+Puede usar los pasos siguientes para configurar un clúster de conmutación por error.
 
-### <a name="step-1-install-failover-clustering"></a>Paso 1: Instalar clústeres de conmutación por error
+1. Instalar y configurar las propiedades de un clúster de conmutación por error.
 
-Puedes usar los siguientes comandos de ejemplo para instalar y configurar las propiedades de un clúster de conmutación por error.
+   ```PowerShell
+   add-windowsfeature failover-clustering -IncludeManagementTools
+   Import-module failoverclusters
 
-    add-windowsfeature failover-clustering -IncludeManagementTools
-    Import-module failoverclusters
+   $ClusterName = "MyCluster"
+   
+   $ClusterNetworkName = "Cluster Network 1"
+   $IPResourceName =  
+   $ILBIP = “192.168.2.100” 
 
-    $ClusterName = "MyCluster"
-   
-    $ClusterNetworkName = "Cluster Network 1"
-    $IPResourceName =  
-    $ILBIP = “192.168.2.100” 
+   $nodes = @("DB1", "DB2")
+   ```
 
-    $nodes = @("DB1", "DB2")
+2. Cree el clúster en un nodo.
 
-### <a name="step-2-create-the-cluster-on-one-node"></a>Paso 2: Crear el clúster en un nodo
+   ```PowerShell
+   New-Cluster -Name $ClusterName -NoStorage -Node $nodes[0]
+   ```
 
-Puedes usar el siguiente comando de ejemplo para crear el clúster en un nodo.
+3. Detener el recurso de clúster.
 
-    New-Cluster -Name $ClusterName -NoStorage -Node $nodes[0]
+   ```PowerShell
+   Stop-ClusterResource "Cluster Name" 
+   ```
 
-### <a name="step-3-stop-the-cluster-resource"></a>Paso 3: Detener el recurso de clúster
+4. Establecer el clúster puerto IP y el sondeo.<p>La dirección IP debe coincidir con la dirección ip de front-end usada en el ejemplo anterior, y el puerto de sondeo debe coincidir con el puerto de sondeo en el ejemplo anterior.
 
-Puedes usar el siguiente comando de ejemplo para detener el recurso de clúster.
+   ```PowerShell
+   Get-ClusterResource "Cluster IP Address" | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+   ```
 
-    Stop-ClusterResource "Cluster Name" 
+5. Iniciar los recursos de clúster.
 
-### <a name="step-4-set-the-cluster-ip-and-probe-port"></a>Paso 4: Establecer el clúster puertos IP y sondeo
-La dirección IP debe coincidir con la dirección ip front-end utilizada en el ejemplo anterior, y el puerto de sondeo debe coincidir con el puerto de sondeo en el ejemplo anterior.
+   ```PowerShell
+    Start-ClusterResource "Cluster IP Address"  -Wait 60 
+    Start-ClusterResource "Cluster Name"  -Wait 60 
+   ```
 
-    Get-ClusterResource "Cluster IP Address" | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"="59999";"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+6. Agregue los nodos restantes.
 
-### <a name="step-5-start-the-cluster-resources"></a>Paso 5: Iniciar los recursos de clúster
+   ```PowerShell
+   Add-ClusterNode $nodes[1]
+   ```
 
-Puedes usar el siguiente comando de ejemplo para empezar a los recursos del clúster.
+_**El clúster está activo.**_ Se dirige el tráfico que va a la dirección VIP en el puerto especificado en el nodo activo.
 
-    Start-ClusterResource "Cluster IP Address"  -Wait 60 
-    Start-ClusterResource "Cluster Name"  -Wait 60 
-
-### <a name="step-6-add-the-remaining-nodes"></a>Paso 6: Agregar el resto de los nodos
-
-Puedes usar el siguiente comando de ejemplo para agregar nodos del clúster.
-
-    Add-ClusterNode $nodes[1]
-
-Una vez finalizado el último paso, el clúster está activo. Se dirige el tráfico que se va a la dirección VIP en el puerto especificado en el nodo activo.
+---

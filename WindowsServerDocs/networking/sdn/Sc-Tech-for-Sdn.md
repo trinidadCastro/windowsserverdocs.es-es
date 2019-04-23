@@ -1,6 +1,6 @@
 ---
 title: Tecnologías de System Center para SDN
-description: Puedes usar este tema para obtener información sobre las tecnologías de redes de definido de Software (SDN) que se proporcionan en System Center.
+description: Puede utilizar este tema para obtener información acerca de las tecnologías de redes definidas por Software (SDN) que se proporcionan en System Center.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,17 +12,18 @@ ms.topic: article
 ms.assetid: f66ee49a-1fd3-4927-a813-64a15017b63b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 61bdab90b112de62b34e9c0e7cb711d7d201b3ba
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: e9c06871b9c2299b659199cd8bdeb7c70f8be642
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59863006"
 ---
 # <a name="system-center-technologies-for-sdn"></a>Tecnologías de System Center para SDN
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-System Center incluye las siguientes tecnologías para su uso con Software definido de redes (SDN):  
+System Center incluye las siguientes tecnologías para su uso con Software Defined Networking (SDN):  
   
 -   [System Center Operations Manager](#bkmk_scom)  
   
@@ -30,22 +31,22 @@ System Center incluye las siguientes tecnologías para su uso con Software defin
   
   
 ## <a name="bkmk_scom"></a>System Center Operations Manager  
-2016 de System Center Operations Manager proporciona la infraestructura de supervisión que es flexible y rentable, ayuda a garantizar el rendimiento predecible y la disponibilidad de las aplicaciones esenciales y ofrece supervisión integral para el centro de datos y la nube pública y privada.  
+System Center 2016 Operations Manager proporciona supervisión de infraestructuras flexible y rentable, ayuda a garantizar el rendimiento predecible y la disponibilidad de aplicaciones vitales y ofrece una supervisión completa para el centro de datos y la nube , públicas y privadas.  
   
-Para obtener más información, consulta [Operations Manager](https://technet.microsoft.com/library/hh205987.aspx).  
+Para obtener más información, consulte [Operations Manager](https://technet.microsoft.com/library/hh205987.aspx).  
   
 ## <a name="bkmk_scvmm"></a>System Center Virtual Machine Manager  
-Con System Center 2016 Virtual Machine Manager (VMM), puedes:
+Con System Center 2016 Virtual Machine Manager (VMM), puede:
 
 - Aprovisionar y administrar redes virtuales a escala.
-- Implementar y administrar la infraestructura SDN, incluidos los controladores de red, equilibradores de carga de software y puertas de enlace. 
-- Definir y controlar las directivas de redes virtuales de forma centralizada y vincularlas a las aplicaciones o cargas de trabajo. 
+- Implementar y administrar la infraestructura SDN, incluidos los controladores de red, equilibradores de carga de software y las puertas de enlace. 
+- Definir y controlar de forma centralizada directivas de red virtual y vincularlas a las aplicaciones o cargas de trabajo. 
 
-  Cuando se implementa la carga de trabajo o se mueve, la configuración de red se ajusta automáticamente. Esto es importante porque se elimina la necesidad de reconfiguración manual de hardware de red, lo que reduce la complejidad operativa al guardar sus valiosos recursos para el trabajo de mayor impacto. 
-- Te ayuda a controlar el flujo de tráfico entre redes virtuales, como la capacidad para definir el ancho de banda garantizado para tus aplicaciones críticas y cargas de trabajo.  
+  Cuando se implementa o se mueve la carga de trabajo, la configuración de red se ajusta automáticamente. Esto es importante porque elimina la necesidad de reconfigurar manualmente el hardware de red, lo que reduce la complejidad operativa al guardar sus valiosos recursos para trabajo de mayor importancia. 
+- Le ayuda a controlar el flujo de tráfico entre redes virtuales, incluida la capacidad para definir el ancho de banda garantizado para sus aplicaciones críticas y las cargas de trabajo.  
   
 
-Para obtener más información, consulta [configurar una infraestructura de red de definido de Software (SDN) en la estructura VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview).  
+Para obtener más información, consulte [configurar una infraestructura de red definida por Software (SDN) en el tejido de VMM](https://technet.microsoft.com/system-center-docs/vmm/scenario/sdn-overview).  
     
 
   

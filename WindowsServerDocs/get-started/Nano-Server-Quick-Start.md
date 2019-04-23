@@ -12,11 +12,11 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 488d0bed661cf2078d20e491a8c68b2a29a42b73
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082662"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59859526"
 ---
 # <a name="nano-server-quick-start"></a>Inicio rápido de Nano Server
 
@@ -55,7 +55,7 @@ Siga estos pasos para crear un VHD de Nano Server que se ejecutará en una máqu
   
     **Ejemplo:** `New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1`  
   
-    Este ejemplo crea un VHD desde un archivo ISO montado como F:\\. Al crear el VHD, utiliza una carpeta denominada Base en el mismo directorio donde se ejecutó New-NanoServerImage; coloca el VHD (llamado Nano.vhd) en una carpeta denominada Nano1 en la carpeta desde donde se ejecuta el comando. El nombre de equipo será Nano1. El VHD resultante contendrá la edición Standard de Windows Server 2016 y será adecuado para la implementación de la máquina virtual de Hyper-V. Si desea una máquina virtual de generación 1, cree una imagen de VHD especificando una extensión **.vhd** para -TargetPath. Si desea una máquina virtual de generación 2, cree una imagen de VHDX especificando una extensión **.vhdx** para -TargetPath. También puede generar directamente un archivo WIM especificando una extensión **.wim** para -TargetPath.  
+    Este ejemplo crea un VHD de un archivo ISO montado como f:\\. Al crear el VHD, utiliza una carpeta denominada Base en el mismo directorio donde se ejecutó New-NanoServerImage; coloca el VHD (llamado Nano.vhd) en una carpeta denominada Nano1 en la carpeta desde donde se ejecuta el comando. El nombre de equipo será Nano1. El VHD resultante contendrá la edición Standard de Windows Server 2016 y será adecuado para la implementación de la máquina virtual de Hyper-V. Si desea una máquina virtual de generación 1, cree una imagen de VHD especificando una extensión **.vhd** para -TargetPath. Si desea una máquina virtual de generación 2, cree una imagen de VHDX especificando una extensión **.vhdx** para -TargetPath. También puede generar directamente un archivo WIM especificando una extensión **.wim** para -TargetPath.  
   
     > [!NOTE]  
     > New-NanoServerImage se admite en Windows 8.1, Windows 10, Windows Server 2012 R2 y Windows Server 2016.  
@@ -97,15 +97,15 @@ También puede crear un VHD que ejecutará Nano Server en un equipo físico, con
   
     **Ejemplo:**`New-NanoServerImage -Edition Standard -DeploymentType Host -MediaPath F:\ -BasePath .\Base -TargetPath .\Nano1\NanoServer.vhd -ComputerName Nano-srv1 -OEMDrivers -Compute -Clustering`  
   
-    Este ejemplo crea un VHD desde un archivo ISO montado como F:\\. Al crear el VHD, utiliza una carpeta denominada Base en el mismo directorio donde se ejecutó New-NanoServerImage; coloca el VHD en una carpeta denominada Nano1 en la carpeta desde donde se ejecuta el comando. El nombre del equipo será Nano-srv1 y tendrá controladores de OEM instalados para la mayoría del hardware habitual y tiene el rol de Hyper-V y la característica de agrupación en clústeres habilitados. Se usa la edición Standard Nano.  
+    Este ejemplo crea un VHD de un archivo ISO montado como F:\\. Al crear el VHD, utiliza una carpeta denominada Base en el mismo directorio donde se ejecutó New-NanoServerImage; coloca el VHD en una carpeta denominada Nano1 en la carpeta desde donde se ejecuta el comando. El nombre del equipo será Nano-srv1 y tendrá controladores de OEM instalados para la mayoría del hardware habitual y tiene el rol de Hyper-V y la característica de agrupación en clústeres habilitados. Se usa la edición Standard Nano.  
   
 4.  Inicie sesión como administrador en el servidor físico donde desea ejecutar el VHD de Nano Server.  
   
 5.  Copie el VHD que este script crea en el equipo físico y configúrelo para que arranque desde este nuevo VHD. Para ello, siga estos pasos:  
   
-    1.  Monta el VHD generado. En este ejemplo, se monta en D:\\.  
+    1.  Monte el VHD generado. En este ejemplo, se monta en D:\\.  
   
-    2.  Ejecuta **bcdboot d:\windows**.  
+    2.  Ejecute **bcdboot d:\windows**.  
   
     3.  Desmonte el VHD.  
   

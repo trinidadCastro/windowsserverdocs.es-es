@@ -1,6 +1,6 @@
 ---
-title: Administrar el centro de datos puente (DCB)
-description: En este tema proporciona instrucciones sobre cómo usar los comandos de Windows PowerShell para administrar el puente de centro de datos en Windows Server 2016.
+title: Administrar el centro de datos (DCB) de protocolo de puente
+description: Este tema proporciona instrucciones sobre cómo usar los comandos de Windows PowerShell para administrar el puente del centro de datos en Windows Server 2016.
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,50 +8,51 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: dbe9e5e4af2ddd834b5b8f38e9ffd1b403e92793
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 3912bb6048a06a4656b5b27ccec8f8fb3f5b114b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847416"
 ---
-# <a name="manage-data-center-bridging-dcb"></a>Administrar el centro de datos puente (DCB)
+# <a name="manage-data-center-bridging-dcb"></a>Administrar el centro de datos (DCB) de protocolo de puente
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema proporciona instrucciones sobre cómo usar los comandos de Windows PowerShell para configurar \(DCB\) puente de centro de datos en un adaptador de red compatibles con DCB\ que está instalado en un equipo que ejecute Windows Server 2016 o Windows 10.
+En este tema proporciona instrucciones sobre cómo usar los comandos de Windows PowerShell para configurar el protocolo de puente del centro de datos \(DCB\) en un DCB\-adaptador de red compatible que se instala en un equipo que ejecuta Windows Server 2016 o Windows 10.
 
 ## <a name="install-dcb-in-windows-server-2016-or-windows-10"></a>Instalar DCB en Windows Server 2016 o Windows 10
 
-Para obtener información sobre los requisitos previos para usar y cómo instalar DCB, consulta [instalar datos centro puente (DCB) en Windows Server 2016 o Windows 10](dcb-install.md).
+Para obtener información sobre los requisitos previos para utilizar y cómo instalar DCB, vea [instalar Data Center Bridging (DCB) en Windows Server 2016 o Windows 10](dcb-install.md).
 
 
 ## <a name="dcb-configurations"></a>Configuraciones de DCB 
 
-Antes de Windows Server 2016, toda la configuración DCB aplicó universalmente a todos los adaptadores de red que admiten DCB. 
+Antes de Windows Server 2016, toda la configuración de DCB se aplica universalmente a todos los adaptadores de red admiten DCB. 
 
-En Windows Server 2016, puedes aplicar configuraciones DCB a la tienda de la directiva Global o a Store\(s\) de directiva individuales. Cuando se aplican directivas individuales reemplaza toda la configuración de directiva Global.
+En Windows Server 2016, se pueden aplicar configuraciones de DCB al Store de la directiva Global o a Store individuales de directiva\(s\). Cuando se aplican las directivas individuales invalidan todas las configuraciones de directiva Global.
 
-Las configuraciones de asignación de prioridad de tráfico clase, PFC y la aplicación en el nivel del sistema no se aplica en adaptadores de red hasta que hagas lo siguiente.
+Las configuraciones de asignación de prioridad de tráfico PFC, clase y la aplicación en el nivel de sistema no se aplica en los adaptadores de red hasta que lo haga lo siguiente.
 
-1. Activa el bit dispuestos DCBX a "false"
+1. Activar el bit dispuesto DCBX en false
 
-2. Habilitar DCB en los adaptadores de red. Consulta [habilitar y mostrar la configuración de DCB en adaptadores de red](#bkmk_enabledcb).
+2. Habilite DCB en los adaptadores de red. Consulte [habilitar y mostrar la configuración de DCB en los adaptadores de red](#bkmk_enabledcb).
 
 >[!NOTE]
->Si quieres configurar DCB desde un conmutador a través de DCBX, consulta [configuración DCBX](#BKMK_DCBX_Settings)
+>Si desea configurar DCB desde un conmutador a través de DCBX, consulte [configuración DCBX](#BKMK_DCBX_Settings)
 
-El bit dispuestos DCBX se describe en la especificación de DCB. Si el bit dispuesto en un dispositivo se establece en true, el dispositivo está dispuesto a aceptar las configuraciones de un dispositivo remoto a través de DCBX. Si el bit dispuesto en un dispositivo se establece en "false", el dispositivo rechazar todos los intentos de configuración de dispositivos remotos y aplicar solo a la configuración local.
+El bit dispuesto DCBX se describe en la especificación de DCB. Si el bit dispuesto en un dispositivo se establece en true, el dispositivo está dispuesto a aceptar las configuraciones de un dispositivo remoto a través de DCBX. Si el bit dispuesto en un dispositivo se establece en false, el dispositivo rechazará todos los intentos de configuración de dispositivos remotos y aplicar solo a las configuraciones locales.
 
-Si DCB no está instalado en Windows Server 2016 el valor del bit dispuesto es irrelevante en cuanto el sistema operativo es porque el sistema operativo no tiene ninguna configuración local se aplican a los adaptadores de red. Después de instala DCB, el valor predeterminado del bit dispuesto es true. Este diseño permite adaptadores de red mantener cualquier configuraciones que haya recibido de sus colegas remotos.
+Si DCB no está instalado en Windows Server 2016 el valor del bit dispuesto es irrelevante en lo que se refiere el sistema operativo porque el sistema operativo no tiene ninguna configuración local se aplican a los adaptadores de red. Después de instala DCB, el valor predeterminado del bit dispuesto es true. Este diseño permite a los adaptadores de red mantener cualquier configuraciones recibieron de sus colegas remotos.
 
-Si un adaptador de red no admite DCBX, nunca recibirá configuraciones desde un dispositivo remoto. Recibe las configuraciones del sistema operativo, pero solo después el DCBX dispuestos bits se establece en false.
+Si un adaptador de red no es compatible con DCBX, nunca recibirá las configuraciones de un dispositivo remoto. Recibe las configuraciones del sistema operativo, pero solo después de la DCBX dispuesto bit se establece en false.
 
 ## <a name="set-the-willing-bit"></a>Establecer el bit dispuesto
 
-Para aplicar configuraciones del sistema operativo de clase de tráfico, PFC y asignación de prioridad de aplicaciones en adaptadores de red, o simplemente invalidar la configuración de dispositivos remotos \: si hay alguna \, puedes ejecutar el comando siguiente.
+Para aplicar configuraciones de sistema operativo de clase de tráfico, PFC y asignación de prioridad de la aplicación en los adaptadores de red, o simplemente reemplazar las configuraciones de dispositivos remotos \, si existe alguna \, puede ejecutar el comando siguiente.
 
 >[!NOTE]
->Los nombres de comandos de Windows PowerShell de DCB incluyen "QoS" en lugar de "DCB" en la cadena de nombre. Esto es porque QoS y DCB están integradas en Windows Server 2016 para proporcionar una experiencia de administración de QoS sin problemas.
+>Los nombres de comando de PowerShell de Windows de DCB incluyen "QoS" en lugar de "DCB" en la cadena de nombre. Esto es porque QoS y DCB están integrados en Windows Server 2016 para proporcionar una experiencia de administración de calidad de servicio.
 
     
     Set-NetQosDcbxSetting -Willing $FALSE
@@ -62,7 +63,7 @@ Para aplicar configuraciones del sistema operativo de clase de tráfico, PFC y a
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
     
 
-Para mostrar el estado del bit dispuesto configuración, puedes usar el siguiente comando:
+Para mostrar el estado del bit dispuesto configuración, puede usar el comando siguiente:
 
     
     Get-NetQosDcbxSetting
@@ -72,33 +73,33 @@ Para mostrar el estado del bit dispuesto configuración, puedes usar el siguient
     False   Global  
     
 
-## <a name="dcb-configuration-on-network-adapters"></a>Configuración de DCB en adaptadores de red
+## <a name="dcb-configuration-on-network-adapters"></a>Configuración de DCB en los adaptadores de red
 
-Habilitar DCB en un adaptador de red permite ver la configuración que se propagan desde un conmutador para el adaptador de red.
+Habilitación de DCB en un adaptador de red le permite ver la configuración que se propagan desde un conmutador para el adaptador de red.
 
-Las configuraciones de DCB incluyen los siguientes pasos.
+DCB, figuran los pasos siguientes.
 
-1.  Configurar DCB en el nivel de sistema, que incluye:
+1.  Configure las opciones de DCB en el nivel del sistema, que incluye:
 
-    Un archivo. Administración de la clase de tráfico
+    a. Administración de la clase de tráfico
     
     b. Configuración de Control (PFC) del flujo de prioridad
     
-    c. Asignación de prioridad de aplicaciones
+    c. Asignación de prioridad de aplicación
     
     d. Configuración de DCBX
 
-2. Configurar DCB en el adaptador de red.
+2. Configurar DCB del adaptador de red.
 
 
 
-##  <a name="dcb-traffic-class-management"></a>Administración de la clase de tráfico DCB
+##  <a name="dcb-traffic-class-management"></a>Administración de la clase de tráfico de DCB
 
-Siguientes son ejemplos de comandos de Windows PowerShell para la administración de la clase de tráfico.
+Estos son ejemplos de comandos de Windows PowerShell para administración de la clase de tráfico.
 
 ### <a name="create-a-traffic-class"></a>Crear una clase de tráfico
 
-Puedes usar la **nueva NetQosTrafficClass** comando para crear una clase de tráfico.
+Puede usar el **New-NetQosTrafficClass** comando para crear una clase de tráfico.
 
     
     New-NetQosTrafficClass -Name SMB -Priority 4 -BandwidthPercentage 30 -Algorithm ETS
@@ -108,15 +109,15 @@ Puedes usar la **nueva NetQosTrafficClass** comando para crear una clase de trá
     SMB  ETS   30   4Global
       
 
-De manera predeterminada, todos los valores de 802.1X p se asignan a una clase de tráfico predeterminado, que es 100% del ancho de banda de vínculo físico. La **nueva NetQosTrafficClass** comando crea una nueva clase de tráfico, se asigna a qué cualquier paquete que se etiqueta con prioridad p 802.1X valor 4. El algoritmo de selección de transmisión de \(TSA\) tiene NET y 30% del ancho de banda.
+De forma predeterminada, todos los valores de 802.1p se asignan a una clase de tráfico de forma predeterminada, que tiene el 100% del ancho de banda del vínculo físico. El **New-NetQosTrafficClass** comando crea una nueva clase de tráfico, se asigna para que cualquier paquete que esté etiquetada con la prioridad de 802.1p valor 4. El algoritmo de selección de transmisión \(TSA\) es ETS y tiene 30% del ancho de banda.
 
-Puedes crear hasta 7 nuevas clases de tráfico. Como la clase de tráfico de forma predeterminada, puede haber al menos 8 clases de tráfico en el sistema. Sin embargo, un adaptador de red compatibles con DCB podría no admitir el tráfico que muchas clases en el hardware. Si creas más clases de tráfico que se pueden aplicar en un adaptador de red y habilitar DCB en ese adaptador de red, el controlador de minipuerto notifica un error al sistema operativo. El error se registra en el registro de eventos.
+Puede crear hasta 7 nuevas clases de tráfico. Incluida la clase de tráfico de forma predeterminada, puede haber a lo sumo 8 clases de tráfico en el sistema. Sin embargo, un adaptador de red compatibles con DCB podría no admitir que muchas clases en el hardware de tráfico. Si crea más clases de tráfico que se puede incluir en un adaptador de red y habilite DCB en los que el adaptador de red, el controlador de minipuerto notifica un error en el sistema operativo. El error se registra en el registro de eventos.
 
-La suma de las reservas de ancho de banda para todas las clases de tráfico creado no puede exceder 99% del ancho de banda. La clase de tráfico predeterminado siempre tiene al menos un 1% del ancho de banda reservado por sí mismos.
+La suma de las reservas de ancho de banda para todas las clases de tráfico creados no puede tener más de 99% del ancho de banda. La clase de tráfico predeterminado siempre tiene al menos un 1% del ancho de banda reservado para sí mismo.
 
-### <a name="display-traffic-classes"></a>Mostrar clases de tráfico
+### <a name="display-traffic-classes"></a>Mostrar las clases de tráfico
 
-Puedes usar la **Get NetQosTrafficClass** comando para ver las clases de tráfico.
+Puede usar el **Get-NetQosTrafficClass** comando para ver las clases de tráfico.
 
     Get-NetQosTrafficClass
     
@@ -127,11 +128,11 @@ Puedes usar la **Get NetQosTrafficClass** comando para ver las clases de tráfic
     
 ### <a name="modify-a-traffic-class"></a>Modificar una clase de tráfico
 
-Puedes usar la **conjunto NetQosTrafficClass** comando para crear una clase de tráfico. 
+Puede usar el **Set-NetQosTrafficClass** comando para crear una clase de tráfico. 
 
     Set-NetQosTrafficClass -Name SMB -BandwidthPercentage 50
 
-Puedes usar la **Get NetQosTrafficClass** comando para ver la configuración.
+A continuación, puede usar el **Get-NetQosTrafficClass** comando para ver la configuración.
 
     Get-NetQosTrafficClass
     
@@ -141,17 +142,17 @@ Puedes usar la **Get NetQosTrafficClass** comando para ver la configuración.
     SMB ETS   50   4Global   
     
 
-Después de crear una clase de tráfico, puedes cambiar la configuración de forma independiente. La configuración que se puede cambiar incluye:
+Después de crear una clase de tráfico, puede cambiar su configuración de forma independiente. Los valores que puede cambiar se incluyen:
 
-1. Ancho de banda asignación \(-BandwidthPercentage\)
+1. Asignación de ancho de banda \(- BandwidthPercentage\)
 
-2. TSA (\-Algorithm\)
+2. TSA (\-algoritmo\)
 
-3. Prioridad asignación \(-Priority\)
+3. Asignación de prioridad \(-prioridad\)
 
 ### <a name="remove-a-traffic-class"></a>Quitar una clase de tráfico
 
-Puedes usar la **quitar NetQosTrafficClass** comando para eliminar una clase de tráfico.
+Puede usar el **Remove-NetQosTrafficClass** comando para eliminar una clase de tráfico.
 
 >[!IMPORTANT]
 >No se puede quitar la clase de tráfico de forma predeterminada.
@@ -159,7 +160,7 @@ Puedes usar la **quitar NetQosTrafficClass** comando para eliminar una clase de 
 
     Remove-NetQosTrafficClass -Name SMB
 
-Puedes usar la **Get NetQosTrafficClass** comando para ver la configuración.
+A continuación, puede usar el **Get-NetQosTrafficClass** comando para ver la configuración.
     
     Get-NetQosTrafficClass
     
@@ -168,13 +169,13 @@ Puedes usar la **Get NetQosTrafficClass** comando para ver la configuración.
     [Default]   ETS   100  0-7  Global
     
 
-Después de quitar una clase de tráfico, el valor de 802.1X p asignado para que la clase de tráfico se reasigna a la clase de tráfico de forma predeterminada. Cualquier ancho de banda que se ha reservado para una clase de tráfico se devuelve a la asignación de clase de tráfico predeterminada cuando se quita la clase de tráfico.
+Después de quitar una clase de tráfico, el valor de 802.1p se asigna a que la clase de tráfico se reasigna a la clase de tráfico de forma predeterminada. Ancho de banda que se ha reservado para una clase de tráfico se devuelve a la asignación de clase de tráfico de forma predeterminada cuando se quita la clase de tráfico.
 
 ## <a name="per-network-interface-policies"></a>Directivas de la interfaz de red
 
-Todos los ejemplos anteriores de establecen directivas Global. Siguientes son ejemplos de cómo puede establecer y obtener las directivas por NIC. 
+Todos los ejemplos anteriores establecen las directivas globales. Estos son algunos ejemplos de cómo puede establecer y obtener las directivas por NIC. 
 
-El campo "PolicySet" cambia de Global a AdapterSpecific. Cuando se muestran las directivas de AdapterSpecific, también se muestran los \(ifIndex\) índice de la interfaz y el nombre de la interfaz \(ifAlias\).
+El campo "PolicySet" cambia de Global a AdapterSpecific. Cuando se muestran las directivas de AdapterSpecific, el índice de interfaz \(ifIndex\) y nombre de la interfaz \(ifAlias\) también se muestran.
 
 ```
 PS C:\> Get-NetQosTrafficClass
@@ -226,9 +227,9 @@ SMBforM1    ETS       30           4                AdapterSpecific  4       M1
 
 ## <a name="priority-flow-control-settings"></a>Configuración de Control de flujo de prioridad:
 
-A continuación se muestran ejemplos de comandos de configuración de Control de flujo de prioridad. Estas opciones de configuración también se pueden especificar para adaptadores individuales.
+Estos son algunos ejemplos de comandos para la configuración de Control de flujo de prioridad. También se puede especificar esta configuración para adaptadores individuales.
 
-### <a name="enable-and-display-priority-flow-control-for-global-and-interface-specific-use-cases"></a>Habilitar y Control de flujo de prioridad de pantalla para globales e interfaz específicos de casos de uso
+### <a name="enable-and-display-priority-flow-control-for-global-and-interface-specific-use-cases"></a>Habilitar y Control de flujo de prioridad de visualización para globales y específicas de interfaz de casos de uso
 
 ```
 PS C:\> Enable-NetQosFlowControl -Priority 4
@@ -262,7 +263,7 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 ```
 
 
-### <a name="disable-priority-flow-control-global-and-interface-specific"></a>Deshabilitar el Control de flujo de la prioridad (Global y específicos de la interfaz)
+### <a name="disable-priority-flow-control-global-and-interface-specific"></a>Deshabilitar el Control de flujo de prioridad (globales y específicos de la interfaz)
 
 ```
 PS C:\> Disable-NetQosFlowControl -Priority 4
@@ -296,9 +297,9 @@ Priority   Enabled    PolicySet        IfIndex IfAlias
 
 ```
 
-##  <a name="application-priority-assignment"></a>Asignación de prioridad de aplicaciones
+##  <a name="application-priority-assignment"></a>Asignación de prioridad de aplicación
 
-Siguientes son ejemplos de asignación de prioridad.
+Estos son algunos ejemplos de asignación de prioridad.
 
 ### <a name="create-qos-policy"></a>Crear directiva QoS
 
@@ -314,13 +315,13 @@ PriorityValue  : 4
 
 ```
 
-El comando anterior, crea una nueva directiva de SMB. – SMB es un filtro de bandeja de entrada que coincida con el puerto TCP 445 (reservado para SMB). Si se envía un paquete para el puerto TCP 445 se etiquetarán por el sistema operativo con valor p 802.1X de 4 antes de que el paquete se pasa a un controlador de minipuerto de red.
+El comando anterior crea una nueva directiva para SMB. SMB: es un filtro de la Bandeja de entrada que coincide con el puerto TCP 445 (reservado para SMB). Si un paquete se envía al puerto TCP 445 se etiquetarán por el sistema operativo con el valor de 802.1p de 4 antes de que el paquete se pasa a un controlador de minipuerto de la red.
 
-Además – SMB, otros filtros predeterminados incluyen: iSCSI (coincidente el puerto TCP 3260), - NFS (coincidente el puerto TCP 2049), - LiveMigration (coincidente el puerto TCP 6600), - FCOE (coincidencia EtherType 0x8906) y – NetworkDirect.
+: SMB, además de otros filtros predeterminados incluyen: iSCSI (coincidencia el puerto TCP 3260), - NFS (coincidencia el puerto TCP 2049), - LiveMigration (búsqueda de coincidencias el puerto TCP 6600), - FCOE (coincidencia de EtherType 0x8906) y – NetworkDirect.
 
-NetworkDirect es un nivel abstracto que creamos sobre cualquier implementación RDMA en un adaptador de red. – NetworkDirect debe ir seguida de un puerto de red directa.
+NetworkDirect es una capa abstracta que creamos sobre cualquier implementación de RDMA en un adaptador de red. NetworkDirect – debe ir seguido por un puerto de red directo.
 
-Además de los filtros de forma predeterminada, puedes clasificar tráfico por nombre del archivo ejecutable de la aplicación (como en el primer ejemplo), o por la dirección IP, puerto o protocolo (como se muestra en el segundo ejemplo):
+Además de los filtros de forma predeterminada, se puede clasificar el tráfico por el nombre del archivo ejecutable de la aplicación (como en el primer ejemplo), o por dirección IP, puerto o protocolo (como se muestra en el segundo ejemplo):
 
 **Por el nombre del archivo ejecutable**
 
@@ -387,7 +388,7 @@ PriorityValue  : 4
 
 ### <a name="modify-qos-policy"></a>Modificar la directiva de QoS
 
-Puedes modificar las directivas de QoS tal como se muestra a continuación.
+Puede modificar las directivas de QoS, tal como se muestra a continuación.
 
 
 ```
@@ -407,7 +408,7 @@ PriorityValue  : 7
 
 ```
 
-### <a name="remove-qos-policy"></a>Quitar la directiva de QoS
+### <a name="remove-qos-policy"></a>Quitar directiva de QoS
 
 ```
 PS C:\> Remove-NetQosPolicy -Name "Network Management"
@@ -419,15 +420,15 @@ Remove-NetQosPolicy -Name "Network Management" -Store GPO:localhost
 
 ```
 
-## <a name="dcb-configuration-on-network-adapters"></a>Configuración de DCB en adaptadores de red
+## <a name="dcb-configuration-on-network-adapters"></a>Configuración de DCB en los adaptadores de red
 
-Configuración DCB en adaptadores de red es independiente de la configuración de DCB en el nivel de sistema que se describió anteriormente. 
+Configuración de DCB en los adaptadores de red es independiente de configuración de DCB a nivel de sistema que se ha descrito anteriormente. 
 
-Independientemente de si DCB está instalado en Windows Server 2016, siempre puede ejecutar los siguientes comandos. 
+Independientemente de si DCB está instalado en Windows Server 2016, siempre puede ejecutar los comandos siguientes. 
 
-Si configura DCB desde un conmutador y se basan en DCBX para propagar las configuraciones para adaptadores de red, puedes examinar qué configuraciones se reciben y se aplica en los adaptadores de red desde el lado del sistema operativo después de habilitar DCB en los adaptadores de red.
+Si configura DCB de un conmutador y se basan en DCBX para propagar las configuraciones de adaptadores de red, puede examinar qué configuraciones se reciben y se aplican en los adaptadores de red desde el lado del sistema operativo después de habilitar DCB en los adaptadores de red.
 
-###  <a name="bkmk_enabledcb"></a>Habilitar y mostrar la configuración de DCB en adaptadores de red
+###  <a name="bkmk_enabledcb"></a>Habilitar y mostrar la configuración de DCB en los adaptadores de red
 
 ```
 PS C:\> Enable-NetAdapterQos M1
@@ -454,7 +455,7 @@ OperationalClassifications : Protocol  Port/Type Priority
 
 ```
 
-### <a name="disable-dcb-on-network-adapters"></a>Deshabilitar DCB en adaptadores de red
+### <a name="disable-dcb-on-network-adapters"></a>Deshabilitar DCB en los adaptadores de red
 
 ```
 PS C:\> Disable-NetAdapterQos M1
@@ -471,16 +472,16 @@ Capabilities :                       Hardware     Current
 ```
 ## <a name="bkmk_wps"></a>Comandos de Windows PowerShell para DCB
 
-Hay comandos DCB Windows PowerShell para Windows Server 2016 y Windows Server 2012 R2. Puedes usar todos los comandos de Windows Server 2012 R2 en Windows Server 2016.
+Hay comandos DCB Windows PowerShell para Windows Server 2016 y Windows Server 2012 R2. Puede usar todos los comandos de Windows Server 2012 R2 en Windows Server 2016.
 
-### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>Comandos de PowerShell de Windows de Windows Server 2016 para DCB
+### <a name="windows-server-2016-windows-powershell-commands-for-dcb"></a>Comandos de Windows Server 2016 Windows PowerShell para DCB
 
-El siguiente tema para Windows Server 2016 proporciona descripciones de cmdlet de Windows PowerShell y la sintaxis para todos los \(DCB\) puente de centro de datos calidad de servicio \ (QoS\) \-specific cmdlets. Enumera los cmdlets en orden alfabético según el verbo al principio del cmdlet.
+El siguiente tema para Windows Server 2016 proporciona descripciones de cmdlet de Windows PowerShell y la sintaxis para todos los datos de puente del centro de \(DCB\) calidad de servicio \(QoS\)\-cmdlets específicos. Enumera los cmdlets por orden alfabético según el verbo que aparece al principio del cmdlet.
 
-- [Módulo DcbQoS](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
+- [DcbQoS Module](https://technet.microsoft.com/itpro/powershell/windows/dcbqos/dcbqos)
 
-### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>Comandos de Windows Server 2012 R2 Windows PowerShell para DCB
+### <a name="windows-server-2012-r2-windows-powershell-commands-for-dcb"></a>Windows PowerShell comandos de Windows Server 2012 R2 para DCB
 
-El siguiente tema para Windows Server 2012 R2 proporciona descripciones de cmdlet de Windows PowerShell y la sintaxis para todos los \(DCB\) puente de centro de datos calidad de servicio \ (QoS\) \-specific cmdlets. Enumera los cmdlets en orden alfabético según el verbo al principio del cmdlet.
+El siguiente tema para Windows Server 2012 R2 proporciona descripciones de cmdlet de Windows PowerShell y la sintaxis para todos los datos de puente del centro de \(DCB\) calidad de servicio \(QoS\)\-cmdlets específicos. Enumera los cmdlets por orden alfabético según el verbo que aparece al principio del cmdlet.
 
-- [Centro de datos de calidad (DCB) de los Cmdlets de servicio (QoS) en Windows PowerShell de puente](https://technet.microsoft.com/library/hh967440.aspx)
+- [Centro de datos (DCB) Cmdlets de calidad de servicio (QoS) en Windows PowerShell de protocolo de puente](https://technet.microsoft.com/library/hh967440.aspx)

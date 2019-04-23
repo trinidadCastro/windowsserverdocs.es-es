@@ -1,7 +1,7 @@
 ---
 ms.assetid: 2d62386c-b466-4a54-b6fa-5d16cda120d8
-title: Proporcionar el acceso a los usuarios de Active Directory para las aplicaciones y servicios de otras organizaciones
-description: 
+title: Proporcionar a los usuarios de Active Directory acceso a aplicaciones y servicios de otras organizaciones
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,40 +10,41 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: d50d26c5c654e5c91b82f6f209e21f257221c12d
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59843586"
 ---
-# <a name="provide-your-active-directory-users-access-to-the-applications-and-services-of-other-organizations"></a>Proporcionar el acceso a los usuarios de Active Directory para las aplicaciones y servicios de otras organizaciones
+# <a name="provide-your-active-directory-users-access-to-the-applications-and-services-of-other-organizations"></a>Proporcionar a los usuarios de Active Directory acceso a aplicaciones y servicios de otras organizaciones
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este objetivo de implementación de servicios de federación de Active Directory \(AD FS\) se basa en el objetivo de [proporcionar tu Active Directory a los usuarios acceso a tus aplicaciones para notificaciones y los servicios](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md).  
+Este Active Directory Federation Services \(AD FS\) objetivo de implementación se basa en el objetivo de [proporcionar Your Active Directory Users Access to Your Claims-Aware Applications and Services](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md).  
   
-Cuando es un administrador de la organización de partner de cuenta y tiene un objetivo de implementación para proporcionar acceso federado para los empleados hospedado recursos en otra organización:  
+Si es administrador en la organización del asociado de cuenta y tiene un objetivo de implementación para proporcionar acceso federado para los empleados a los recursos hospedados de otra organización:  
   
--   Los empleados que están conectados a un dominio de Active Directory en la red corporativa pueden usar single\ sign\ en \(SSO\) funcionalidad para acceder a varias aplicaciones basadas en Web\ o servicios, que están protegidos por AD FS, cuando las aplicaciones o servicios que se encuentren en otra organización. Para obtener más información, consulta [federados Web SSO diseño](Federated-Web-SSO-Design.md).  
+-   Los empleados que iniciaron sesión a un dominio de Active Directory en la red corporativa pueden usar solo\-sesión\-en \(SSO\) funcionalidad para tener acceso a varias Web\-en función de las aplicaciones o servicios, que están protegidas por AD FS, cuando las aplicaciones o servicios están en una organización diferente. Para obtener más información, consulte [Federated Web SSO Design](Federated-Web-SSO-Design.md).  
   
-    Por ejemplo, Fabrikam puede los empleados de la red corporativa tengan acceso a servicios Web que se hospedan en Contoso federado.  
+    Por ejemplo, es posible que Fabrikam desee que sus empleados de la red corporativa tengan acceso federado a servicios web que se hospedan en Contoso.  
   
--   Los empleados remotos que han iniciado sesión a un dominio de Active Directory pueden obtener tokens de AD FS desde el servidor de federación de la organización para obtener acceso federado a AD FS seguro Web\ aplicaciones o servicios que están hospedados en otra organización.  
+-   Los empleados remotos que iniciaron sesión a un dominio de Active Directory pueden obtener tokens de AD FS desde el servidor de federación de su organización para obtener acceso federado a AD FS protegida Web\-en función de las aplicaciones o servicios que se hospedan en otra organización.  
   
-    Por ejemplo, Fabrikam puede sus empleados tengan acceso a los servicios de AD FS seguro que se hospedan en Contoso, sin necesidad de que los empleados de Fabrikam esté en la red corporativa de Fabrikam federado remotos.  
+    Por ejemplo, es posible que Fabrikam desee que sus empleados remotos tengan acceso federado a servicios de AD FS protegida que se hospedan en Contoso, sin necesidad de que los empleados de Fabrikam estén en la red corporativa de Fabrikam.  
   
-Además de los componentes básicos que se describen en [proporcionar tu Active Directory a los usuarios acceso a tus aplicaciones para notificaciones y los servicios](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md) y que se sombreado en la siguiente ilustración, los siguientes componentes son necesarios para este objetivo de implementación:  
+Además de los componentes básicos que se describen en [Provide Your Active Directory Users Access to Your Claims-Aware Applications and Services](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md) y que aparecen sombreados en la siguiente ilustración, los siguientes componentes son necesarios para este objetivo de implementación:  
   
--   **Cuenta de proxy del servidor de federación de partner:** los empleados que tienen acceso a federados servicio o aplicación de Internet pueden usar este componente AD FS para realizar la autenticación. De manera predeterminada, este componente realiza la autenticación de formularios, pero también puede realizar la autenticación básica. También puedes configurar este componente para realizar la autenticación de cliente de capa de Sockets seguros \(SSL\) si los empleados de la organización tienen certificados para presentar. Para obtener más información, consulta [dónde colocar un Proxy de servidor de federación](Where-to-Place-a-Federation-Server-Proxy.md).  
+-   **Proxy de servidor de federación de cuentas asociado:** Los empleados que tienen acceso el servicio o aplicación federado desde Internet pueden usar este componente de AD FS para realizar la autenticación. De forma predeterminada, este componente realiza la autenticación de formularios, pero también puede realizar la autenticación básica. También puede configurar este componente para llevar a cabo Secure Sockets Layer \(SSL\) autenticación del cliente si los empleados de su organización tienen certificados para presentar. Para obtener más información, consulte [Where to Place a Federation Server Proxy](Where-to-Place-a-Federation-Server-Proxy.md).  
   
--   **Perimetral DNS:** esta implementación de sistema de nombres de dominio \(DNS\) proporciona los nombres de host de la red de perímetro. Para obtener más información sobre cómo configurar perímetro DNS para un proxy de federación de servidor, consulta [requisitos de resolución de nombre de Proxies de servidor de federación](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
+-   **DNS perimetral:** Esta implementación de sistema de nombres de dominio \(DNS\) proporciona los nombres de host de la red perimetral. Para obtener más información acerca de cómo configurar DNS perimetral para un servidor proxy de federación, consulte [Name Resolution Requirements for Federation Server Proxies](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
   
--   **Los empleados remotos:** el empleado remoto accede a una aplicación basada en Web\ \ (a través de un browser\ Web compatible) o un servicio basado en Web\ \ (a través de un application\), con las credenciales válidas de la red corporativa, mientras que el empleado es fuera del sitio con Internet. El equipo del empleado cliente en la ubicación remota se comunica directamente con el proxy de servidor de federación para generar un token y autenticarse en la aplicación o servicio.  
+-   **Empleado remoto:** El empleado remoto accede a un Web\-aplicación basada en \(a través de un explorador Web compatible\) o una Web\-servicio basado en \(a través de una aplicación\), con credenciales válidas de la red corporativa, mientras está fuera del sitio mediante Internet. Equipo de cliente del empleado en la ubicación remota se comunica directamente con el servidor proxy de federación para generar un token y autenticarse en la aplicación o servicio.  
   
-Después de revisar la información de los temas vinculados, puedes empezar a implementar este objetivo siguiendo los pasos de [lista de comprobación: implementar un diseño de inicio de sesión único Web federados](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md).  
+Después de revisar la información de los temas vinculados, puede empezar a implementar este objetivo siguiendo los pasos descritos en [lista de comprobación: Implementar un diseño de SSO Web federado](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md).  
   
 La siguiente ilustración muestra cada uno de los componentes necesarios para este objetivo de implementación de AD FS.  
   
-![Acceso a tus aplicaciones](media/50af4837-31e0-451f-a942-e705c2300065.gif)  
+![el acceso a las aplicaciones](media/50af4837-31e0-451f-a942-e705c2300065.gif)  
   
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

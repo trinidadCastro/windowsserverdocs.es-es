@@ -1,6 +1,6 @@
 ---
 title: Arquitectura de la directiva de QoS
-description: Este tema proporciona una visión general de la directiva de calidad de servicio (QoS), que permite usar la directiva de grupo para establecer prioridades de ancho de banda de tráfico de red de determinadas aplicaciones y servicios en Windows Server 2016.
+description: En este tema se proporciona información general de la directiva de calidad de servicio (QoS), que le permite usar la directiva de grupo para establecer prioridades de ancho de banda de tráfico de red de determinadas aplicaciones y servicios en Windows Server 2016.
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,41 +8,42 @@ ms.assetid: 25097cb8-b9b1-41c9-b3c7-3610a032e0d8
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 00d36604c57add6bf9f45b0166b08c1fb15be467
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: bad37ba3558137b02ae495fe8dd9be2c903cdd97
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59843146"
 ---
 # <a name="qos-policy-architecture"></a>Arquitectura de la directiva de QoS
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para obtener información sobre la arquitectura de directiva de QoS.
+Puede utilizar este tema para obtener información acerca de la arquitectura de directiva de QoS.
 
-La siguiente figura muestra la arquitectura de QoS basada en directivas.
+En la siguiente ilustración muestra la arquitectura de QoS basada en directivas.
 
 ![Arquitectura de directiva de QoS](../../media/QoS/QoS-Policy-Architecture.jpg)
 
 La arquitectura de QoS basada en directivas consta de los siguientes componentes:
 
-- **Servicio de cliente de directiva de grupo**. Un servicio de Windows que administra la configuración de directiva de grupo de configuración de usuario y del equipo.
+- **Servicio de cliente de directiva de grupo**. Un servicio de Windows que administra la configuración de directiva de grupo de configuración de usuario y equipo.
 
-- **Motor de directiva de grupo**. Un componente del servicio de cliente de directiva de grupo que recupera la configuración de directiva de grupo de configuración de usuarios y equipos de Active Directory durante el inicio busca cambios \ (de manera predeterminada, cada 90 minutes\). Si se detectan cambios, el motor de directiva de grupo recupera la nueva configuración de directiva de grupo. El motor de directiva de grupo procesa los GPO entrantes e informa la extensión del lado cliente QoS cuando se actualizan las directivas de QoS.
+- **Motor de directiva de grupo**. Un componente del servicio de cliente de directiva de grupo que recupera la configuración de directiva de grupo de configuración de usuario y equipo de Active Directory durante el inicio comprueba si hay cambios \(de forma predeterminada, cada 90 minutos\). Si se detectan cambios, el motor de directiva de grupo recupera la nueva configuración de directiva de grupo. El motor de directiva de grupo procesa los objetos GPO entrantes y le informa de la extensión del lado cliente de calidad de servicio cuando se actualizan las directivas de QoS.
 
-- **Extensión del lado cliente de QoS**. Un componente de servicio de cliente de directiva de grupo que espera una indicación del motor de directiva de grupo que han cambiado las directivas de QoS e informa al módulo de inspección de QoS.
+- **Extensión del lado cliente de QoS**. Un componente de servicio de cliente de directiva de grupo que espera las indicaciones del motor de directiva de grupo que han cambiado las directivas de QoS e informa al módulo de inspección de QoS.
 
 - **Pila TCP/IP**. La pila TCP/IP que incluye compatibilidad integrada para IPv4 e IPv6 y admite la plataforma de filtrado de Windows. 
 
-- **Inspección de QoS**. Componente de un módulo de la pila TCP/IP que espera indicaciones QoS de cambios de directiva de la extensión del lado cliente QoS, recupera la configuración de directiva de QoS e interactúa con la capa de transporte y Pacer.sys para marcar el tráfico que coincida con las directivas de QoS de forma interna.
+- **Inspección de QoS**. Componente de un módulo dentro de la pila de TCP/IP que espera indicaciones de cambios en la directiva QoS de la extensión del lado cliente de QoS, recupera la configuración de directiva de QoS e interactúa con la capa de transporte y Pacer.sys para marcar de forma interna el tráfico que coincide con la calidad de servicio directivas.
 
-- **NDIS 6.x**. Una interfaz estándar entre los controladores de red de modo kernel y el sistema operativo en sistemas operativos cliente y servidor de Windows. NDIS 6.x admite ligeros filtros, que es un modelo de controlador simplificada para controladores de minipuerto y controladores intermedios NDIS que proporciona un mejor rendimiento.
+- **NDIS 6.x**. Una interfaz estándar entre controladores de red de modo kernel y el sistema operativo en sistemas operativos Windows Server y cliente. NDIS 6.x admite filtros ligeros, que es un modelo de controladores simplificados para controladores intermedios de NDIS y controladores de minipuerto que proporciona un mejor rendimiento.
 
-- **Interfaz de proveedor de red de QoS \(NPI\)**. Una interfaz para controladores de modo kernel interactuar con Pacer.sys.
+- **Interfaz del proveedor de red de QoS \(NPI\)**. Una interfaz para controladores de modo de núcleo que interactúa con Pacer.sys.
 
-- **Pacer.sys**. Un controlador de filtro ligero 6.x NDIS que controla la programación de paquetes QoS basada en directivas y para el tráfico de las aplicaciones que usan el \(GQoS\) QoS genérico y el Control de tráfico \(TC\) API. Pacer.sys había reemplazado Psched.sys en Windows Server 2003 y Windows XP. Pacer.sys se instala con el componente de programador de paquetes QoS en las propiedades de una conexión de red o el adaptador.
+- **Pacer.sys**. Un controlador de filtro ligero de NDIS 6.x que controla la programación de paquetes QoS basada en directivas y para el tráfico de las aplicaciones que usan el genéricas de QoS \(GQoS\) y Control de tráfico \(TC\) API. Pacer.sys sustituye a Psched.sys en Windows Server 2003 y Windows XP. Pacer.sys se instala con el componente Programador de paquetes QoS desde las propiedades de una conexión de red o un adaptador.
 
-El siguiente tema en esta guía, encontrarás [escenarios de la directiva de QoS](qos-policy-scenarios.md).
+El siguiente tema en esta guía, consulte [escenarios de directiva de QoS](qos-policy-scenarios.md).
 
-El primer tema de esta guía, encontrarás [directiva de calidad de servicio (QoS)](qos-policy-top.md).
+Para el primer tema de esta guía, consulte [directiva de calidad de servicio (QoS)](qos-policy-top.md).
 

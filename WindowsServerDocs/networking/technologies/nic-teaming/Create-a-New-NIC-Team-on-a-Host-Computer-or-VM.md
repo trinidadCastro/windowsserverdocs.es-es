@@ -1,7 +1,7 @@
 ---
-title: Crear un nuevo equipo NIC en un equipo Host o máquina virtual
-description: En este tema proporciona información sobre la configuración del equipo NIC para que comprendan las selecciones que debe hacer cuando estés configurando un nuevo equipo NIC en Windows Server 2016.
-manager: brianlic
+title: Crear un nuevo equipo NIC en un equipo host o máquina virtual
+description: En este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual de Hyper-V (VM) que ejecuta Windows Server 2016.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,142 +13,196 @@ ms.topic: article
 ms.assetid: a4caaa86-5799-4580-8775-03ee213784a3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6a9866d1f4e72b3c77c3233b5e5582d250cfe6a2
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 09/13/2018
+ms.openlocfilehash: 3518436f08a0e7fe0ea8fed06724b11df6acccea
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864636"
 ---
-# <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>Crear un nuevo equipo NIC en un equipo Host o máquina virtual
+# <a name="create-a-new-nic-team-on-a-host-computer-or-vm"></a>Crear un nuevo equipo NIC en un equipo host o máquina virtual
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema proporciona información sobre la configuración del equipo NIC para que comprendan las selecciones que debe hacer cuando estés configurando un nuevo equipo NIC. Este tema contiene las siguientes secciones.  
+En este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual de Hyper-V (VM) que ejecuta Windows Server 2016.  
+
+## <a name="network-configuration-requirements"></a>Requisitos de configuración de red  
+Antes de poder crear un nuevo equipo NIC, debe implementar un host de Hyper-V con dos adaptadores de red que se conectan a diferentes conmutadores físicos. También debe configurar los adaptadores de red con direcciones IP que están en el mismo intervalo de direcciones IP.  
+
+El conmutador físico, el conmutador Virtual de Hyper-V, red de área local (LAN) y los requisitos de formación de equipos NIC para la creación de un equipo NIC en una máquina virtual son:  
   
--   [Elección de un modo de equipo](#bkmk_teaming)  
+-   El equipo que ejecuta Hyper-V debe tener dos o más adaptadores de red.  
   
--   [Elección de un modo de equilibrio de carga](#bkmk_lb)  
+-   Si los adaptadores de red se conecta a varios conmutadores físicos, deben ser los conmutadores físicos en la misma subred de nivel 2.  
   
--   [Elegir una opción de configuración del adaptador de reserva](#bkmk_standby)  
+-   Debe usar el Administrador de Hyper-V o Windows PowerShell para crear dos conmutadores virtuales de Hyper-V externo, cada uno conectado a un adaptador de red físico diferente.  
   
--   [Uso de la propiedad de la interfaz principal del equipo](#bkmk_primary)  
+-   La máquina virtual debe conectarse a dos conmutadores virtuales externos que cree.  
   
-> [!NOTE]  
-> Si ya conoces estos elementos de configuración, puedes usar los siguientes procedimientos para configurar el equipo NIC.  
->   
-> -   [Crear un nuevo equipo NIC en una máquina virtual](../../technologies/nic-teaming/Create-a-New-NIC-Team-in-a-VM.md)  
-> -   [Crear un nuevo equipo NIC](../../technologies/nic-teaming/Create-a-New-NIC-Team.md)  
+-   Formación de equipos NIC, en Windows Server 2016, es compatible con los equipos con dos miembros en las máquinas virtuales. Puede crear los equipos más grandes, pero no hay compatibilidad.
   
-Cuando creas un nuevo equipo NIC, debes configurar las siguientes propiedades de equipo NIC.  
+-   Si está configurando un equipo NIC en una máquina virtual, debe seleccionar un **modo de formación de equipos** de _independiente del conmutador_ y un **modo de equilibrio de carga** de _deHashdedirección_. 
+
+
+
+## <a name="step-1-configure-the-physical-and-virtual-network"></a>Paso 1. Configurar la red física y virtual  
+En este procedimiento, crea dos conmutadores virtuales de Hyper-V externo, conecte una máquina virtual con los conmutadores de y, a continuación, configurar las conexiones de máquina virtual a los conmutadores.  
+ 
+
+### <a name="prerequisites"></a>Requisitos previos
+  
+Debe tener pertenencia en **administradores**, o equivalente.  
+  
+### <a name="procedure"></a>Procedimiento
+  
+1.  En el host de Hyper-V, abra el Administrador de Hyper-V y en acciones, haga clic en **Administrador de conmutadores virtuales**.  
+  
+    ![Administrador de conmutadores virtuales](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hv.jpg)  
+  
+2.  En el Administrador de conmutadores virtuales, asegúrese de que **externo** está seleccionada y, a continuación, haga clic en **crear conmutador Virtual**.  
+  
+    ![Crear conmutador Virtual](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hv_02.jpg)  
+  
+3.  En las propiedades del conmutador Virtual, escriba un **nombre** para el conmutador virtual y, agregar **notas** según sea necesario.  
+  
+4.  En **tipo de conexión**, en **red externa**, seleccione el adaptador de red física a la que desea asociar el conmutador virtual.  
+  
+5.  Configurar propiedades del conmutador adicionales para la implementación y, a continuación, haga clic en **Aceptar**.  
+  
+6.  Cree un segundo conmutador virtual externo repitiendo los pasos anteriores. Conectar el segundo conmutador externo a un adaptador de red diferente.  
+  
+7.  En el Administrador de Hyper-V, en **máquinas virtuales**, haga clic en la máquina virtual que desea configurar y, a continuación, haga clic en **configuración**.<p>La máquina virtual **configuración** abre el cuadro de diálogo.  
+
+8.  Asegúrese de que la máquina virtual no se ha iniciado. Si se ha iniciado, realice un cierre antes de configurar la máquina virtual.  
+  
+8.  En **Hardware**, haga clic en **adaptador de red**.  
+  
+    ![Adaptador de red](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_01.jpg)  
+  
+9. En **adaptador de red** propiedades, seleccione uno de los conmutadores virtuales que creó en los pasos anteriores y, a continuación, haga clic en **aplicar**.  
+  
+    ![Seleccione un conmutador virtual](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_02.jpg)  
+  
+10. En **Hardware**, haga clic para expandir el signo más (+) junto a **adaptador de red**. 
+
+11. Haga clic en **características avanzadas** para habilitar la formación de equipos NIC mediante la interfaz gráfica de usuario. 
+
+    >[!TIP]
+    >También puede habilitar la formación de equipos NIC con un comando de Windows PowerShell: 
+    >
+    >```PowerShell
+    >Set-VMNetworkAdapter -VMName <VMname> -AllowTeaming On
+    >```
+   
+    a. Seleccione **dinámica** para la dirección MAC. 
+
+    b. Haga clic para seleccionar **red protegido**. 
+
+    c. Haga clic para seleccionar **habilitar este adaptador de red para formar parte de un equipo en el sistema operativo invitado**. 
+
+    d. Haga clic en **Aceptar**.  
+  
+    ![Agregar un adaptador de red a un equipo](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_05.jpg)  
+  
+13. Para agregar un segundo adaptador de red, en el Administrador de Hyper-V, en **máquinas virtuales**, haga clic en la misma máquina virtual y, a continuación, haga clic en **configuración**.<p>La máquina virtual **configuración** abre el cuadro de diálogo.  
+  
+14. En **agregar Hardware**, haga clic en **adaptador de red**y, a continuación, haga clic en **agregar**.  
+  
+    ![Agregar un adaptador de red](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_06.jpg)  
+  
+15. En **adaptador de red** propiedades, seleccione el segundo conmutador virtual que creó en los pasos anteriores y, a continuación, haga clic en **aplicar**.  
+  
+    ![Aplicar un conmutador virtual](../../media/Create-a-New-NIC-Team-in-a-VM/nict_hvs_07.jpg)  
+  
+16. En **Hardware**, haga clic para expandir el signo más (+) junto a **adaptador de red**. 
+
+17. Haga clic en **características avanzadas**, desplácese hacia abajo hasta **formación de equipos NIC**y haga clic para seleccionar **habilitar este adaptador de red para formar parte de un equipo en el sistema operativo invitado**. 
+
+18. Haga clic en **Aceptar**.  
+  
+_**¡Enhorabuena!**_  Ha configurado la red física y virtual.  Ahora puede continuar a la creación de un nuevo equipo NIC.  
+
+## <a name="step-2-create-a-new-nic-team"></a>Paso 2. Crear un nuevo equipo NIC
+  
+Cuando se crea un nuevo equipo NIC, debe configurar las propiedades del equipo NIC:  
   
 -   Nombre de equipo  
   
--   Adaptadores de miembro  
+-   Adaptadores de miembros  
   
--   Modo de equipo  
+-   Modo de formación de equipos  
   
 -   Modo de equilibrio de carga  
   
 -   Adaptador de reserva  
   
-Opcionalmente, también puedes configurar la interfaz principal del equipo y configurar un número de LAN (VLAN) virtual.  
+Opcionalmente, también puede configurar la interfaz principal del equipo y configurar un número virtual de LAN (VLAN).  
   
-Estas propiedades de equipo NIC se muestran en la siguiente ilustración, que contiene los valores de ejemplo para algunas propiedades de equipo NIC.  
-  
-![Propiedades de equipo NIC](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_06_properties.jpg)  
-  
-## <a name="bkmk_teaming"></a>Elección de un modo de equipo  
-Las opciones para el modo de equipos de adaptadores son **conmutador independientes**, **agrupación estático**, y **protocolo de Control de agregación de vínculo (LACP)**. Agrupación estáticos y LACP son modos conmutador dependientes. Para un mejor rendimiento del equipo NIC con los tres modos de equipos de adaptadores, se recomienda usar un modo de equilibrio de carga de distribución dinámica.  
-  
-**Modificador independiente**  
-  
-Con el modo de cambiar independientes, el conmutador o cambia a la que el equipo de NIC están conectados los miembros no son conscientes de la presencia del equipo NIC y no determinan cómo distribuir el tráfico de red NIC integrantes - en su lugar, el equipo NIC distribuye el tráfico de red entrantes a través de los miembros del equipo NIC.  
-  
-Cuando usas el modo independiente modificador con distribución dinámica, la carga de tráfico de red se distribuye según el hash de dirección de los puertos TCP modificado por el algoritmo de equilibrio de carga dinámica. El algoritmo de equilibrio de carga dinámica redistribuye flujos para optimizar el uso de ancho de banda de miembro de equipo para que las transmisiones de flujo individuales puedan moverse de un miembro del equipo activo a otro. El algoritmo tiene en cuenta la posibilidad pequeña que redistribuir tráfico podría provocar fuera de la secuencia distribución de paquetes, para que forme pasos para minimizar esta posibilidad.  
-  
-**Modificador dependientes**  
-  
-Con los modos de cambiar dependiente, el modificador para que los miembros del equipo de NIC están conectados determina cómo distribuir el tráfico de red entrantes entre los miembros del equipo NIC. El modificador tiene total independencia para determinar cómo distribuir el tráfico de red a través de los miembros del equipo NIC.  
-  
-> [!IMPORTANT]  
-> Modificador dependientes agrupación requiere que todos los miembros del equipo están conectados al mismo modificador físico o cambiar un chasis múltiples que comparte un identificador de cambiar entre varios chasis.  
-  
-Equipos de adaptadores estático requiere que configurar manualmente el conmutador y el host para identificar qué se vincula desde el equipo. Dado que es una solución configurada estáticamente, no hay ningún protocolo adicional para ayudar al conmutador y el host de identificar incorrectamente conectado cables u otros errores que pueden hacer que el equipo no se puedan realizar. Este modo normalmente es compatible con modificadores de la clase de servidor.  
-  
-A diferencia de la agrupación estático, el modo de agrupación LACP dinámicamente identifica vínculos que se conectan entre el host y el modificador. Esta conexión dinámica permite la creación automática de un equipo y, en teoría, pero rara vez aparecen en la práctica, la expansión y la reducción de un equipo simplemente por la transmisión o la recepción de los paquetes LACP de la entidad de sistema del mismo nivel. Todos los conmutadores de clase de servidor admiten LACP y requieren el operador de red habilitar administrativa LACP en el puerto del conmutador. Cuando se configura un modo de equipos de adaptadores de LACP, siempre equipo NIC funciona en modo activo de LACP con un temporizador corto.  Ninguna opción está disponible actualmente para modificar el temporizador o cambiar el modo LACP.  
-  
-Al usar modos conmutador dependientes con distribución dinámica, la carga de tráfico de red se distribuye según el hash de dirección TransportPorts modificado por el algoritmo de equilibrio de carga dinámica.  El algoritmo de equilibrio de carga dinámica redistribuye flujos para optimizar el uso de ancho de banda de miembro de equipo. Las transmisiones de flujo individuales pueden mover de un activo miembro del equipo a otro como parte de la distribución dinámica. El algoritmo tiene en cuenta la posibilidad pequeña que redistribuir tráfico podría provocar fuera de la secuencia distribución de paquetes, para que forme pasos para minimizar esta posibilidad.  
-  
-Con todas las configuraciones dependientes de cambio, el modificador determina cómo distribuir el tráfico entrante entre los miembros del equipo.  Se espera que el conmutador para realizar un trabajo razonable de distribuir el tráfico entre los miembros del equipo, pero tiene total independencia para determinar cómo lo hace.  
-  
-## <a name="bkmk_lb"></a>Elección de un modo de equilibrio de carga  
-Las opciones para el modo de distribución de equilibrio de carga son **Hash de dirección**, **puerto de Hyper-V**, y **dinámico**.  
-  
-**Hash de dirección**  
-  
-Este modo de equilibrio de carga crea un hash que se basa en componentes de la dirección del paquete. A continuación, asigna los paquetes que tienen ese valor de hash a uno de los adaptadores disponibles. Por lo general este mecanismo solo es suficiente para crear un equilibrio razonable a través de los adaptadores disponibles.  
-  
-Puedes usar Windows PowerShell para especificar valores para los siguientes componentes de la función hash.  
-  
--   Direcciones IP de origen y de destino y puertos TCP de origen y destino. Este es el valor predeterminado cuando se selecciona **Hash de dirección** como el modo de equilibrio de carga.  
-  
--   Origen y destino solo direcciones IP.  
-  
--   Origen y destino MAC direcciones solo.  
-  
-El hash de puertos TCP crea la distribución más granular de flujos de tráfico, lo que resulta en secuencias más pequeño que se pueden mover independientemente entre los miembros del equipo NIC. Sin embargo, no puedes usar el hash de puertos TCP para el tráfico que no sea TCP o UDP, o donde los puertos TCP y UDP están ocultos en la pila, como con tráfico protegido por IPsec. En estos casos, el hash automáticamente usa el hash de dirección IP o, si el tráfico no está el tráfico IP, se usa el hash de dirección MAC.  
-  
-**Puerto de Hyper-V**  
-  
-Hay una ventaja en usar el modo de puerto de Hyper-V para equipos NIC que están configurados en el host de Hyper-V. Dado que las máquinas virtuales tienen independientes direcciones MAC, dirección MAC de la máquina virtual - o bien el puerto de que la máquina virtual está conectada a en el conmutador Virtual de Hyper-V - puede ser la base sobre la que dividir el tráfico de red entre NIC integrantes.  
-  
-> [!IMPORTANT]  
-> No se puede configurar el NIC los equipos que se crea en máquinas virtuales con el modo de equilibrio de carga de Hyper-V puerto. Usa el Hash de dirección cargar modo equilibrio en su lugar.  
-  
-Dado que el modificador adyacentes siempre ve una dirección MAC determinada en un puerto, el modificador distribuye la carga de entrada (el tráfico desde el conmutador para el host) en varios vínculos en función de la dirección MAC (VM MAC) de destino. Esto es especialmente útil cuando se usan las colas de máquina Virtual (VMQs), porque una cola puede colocarse en la NIC específica donde el tráfico se espera a que llegue.  
-  
-Sin embargo, si el host tiene solo unos virtuales, este modo podría no ser lo suficientemente precisa para lograr una distribución equilibrada. Este modo también siempre limitará una sola máquina virtual (es decir, el tráfico de un puerto del conmutador) al ancho de banda que está disponible en una única interfaz. El equipo NIC usa el puerto del conmutador Virtual Hyper-V como identificador en lugar de usar la dirección MAC de origen porque, en algunos casos, una máquina virtual puede configurarse con más de una dirección MAC en un puerto del conmutador.  
-  
-**Dinámico**  
-  
-Este modo de equilibrio de carga en utiliza los mejores aspectos de cada uno de los otros dos modos y los combina en un modo de solo:  
-  
--   Carga de salida se distribuye en función de un hash de las direcciones IP y los puertos TCP.  Modo dinámico vuelve a equilibrar también se carga en tiempo real para que un determinado flujo de salida puede avanzar y retroceder entre los miembros del equipo.  
-  
--   En la misma manera que el modo de puerto de Hyper-V se distribuyen cargas entrantes.  
-  
-Carga de la salida de este modo se dinámicamente equilibrada basándose en el concepto de flowlets. Al igual que voz humana tiene saltos naturales de los extremos de palabras y frases, flujos TCP (secuencias de comunicación TCP) también tienen saltos naturales. La parte del flujo entre estos dos saltos TCP se conoce como un flowlet.  
-  
-Cuando el algoritmo de modo dinámico detecta que se ha detectado un límite flowlet - por ejemplo, cuando se produce un salto de longitud suficiente en el flujo TCP - el algoritmo automáticamente vuelve a equilibrar el flujo a otro miembro del equipo si es necesario.  En algunas circunstancias el algoritmo es posible que también periódicamente equilibrar los flujos que no contienen ningún flowlets. Por este motivo, la afinidad entre miembro TCP de flujo y el equipo puede cambiar en cualquier momento, como el algoritmo de equilibrio dinámico funciona para equilibrar la carga de trabajo de los miembros del equipo.  
-  
-Si el equipo está configurado con conmutador independientes o uno de los modos conmutador dependiente, se recomienda que puedes usar el modo de distribución dinámicas para un mejor rendimiento.  
-  
-Hay una excepción a esta regla cuando el equipo NIC tiene tan solo dos miembros del equipo, está configurado en el modo independiente del conmutador y tiene habilitado, con una NIC active el modo activo/en espera y el otro configurado para el modo de espera. Con esta configuración de equipo NIC, distribución de Hash de dirección proporciona un poco mejor rendimiento que dinámico distribución.  
-  
-## <a name="bkmk_standby"></a>Elegir una opción de configuración del adaptador de reserva  
-Las opciones de modo de espera adaptador son ninguno (todos los adaptadores activo) o la selección de un adaptador de red específica en el equipo NIC que actuará como un adaptador de modo de espera, mientras que otros miembros del equipo no seleccionado activo. Cuando se configura una NIC como un adaptador de modo de espera, el tráfico de red se envía o se procesa el adaptador, a menos que y hasta el momento en que cuando se produce un error en una NIC activo. Después de que se produce un error en una NIC activo, se activa la NIC de modo de espera y procesos del tráfico de red. Si todos los integrantes se restauran al servicio, el miembro del equipo en modo de espera se devuelve al estado de suspensión.  
-  
-Si tienes un equipo de dos NIC y decide configurar una NIC como un adaptador de modo de espera, perderás el ancho de banda ventajas de agregación que existen con dos NIC activas.  
-  
-> [!IMPORTANT]  
-> No es necesario designar un adaptador de modo de espera para lograr tolerancia a errores; siempre está presente cuando hay al menos dos adaptadores de red en un equipo NIC tolerancia a errores.  
-  
-## <a name="bkmk_primary"></a>Uso de la propiedad de la interfaz principal del equipo  
-Para tener acceso en el cuadro de diálogo de la interfaz principal de equipo, debe hacer clic en el vínculo que está resaltado en la ilustración siguiente.  
-  
-![Propiedad de la interfaz principal del equipo](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_10_primaryteaminterface.jpg)  
-  
-Después de hacer clic en el vínculo resaltado, el siguiente **nueva interfaz de equipo** abre el cuadro de diálogo.  
-  
-![Cuadro de diálogo interfaz equipo nuevo](../../media/Create-a-New-NIC-Team-on-a-Host-Computer-or-VM/nict_newteaminterface.jpg)  
-  
-Si estás usando VLAN, puedes usar este cuadro de diálogo para especificar un número VLAN.  
-  
-Si no estás usando VLAN, puede especificar un nombre de tNIC para el equipo NIC.  
-  
-## <a name="see-also"></a>Consulta también  
-[Crear un nuevo equipo NIC en una máquina virtual](../../technologies/nic-teaming/Create-a-New-NIC-Team-in-a-VM.md)  
-[El equipo NIC](NIC-Teaming.md)  
-  
+Para obtener más información sobre estas opciones, consulte [configuración de formación de equipos NIC](nic-teaming-settings.md).
 
+### <a name="prerequisites"></a>Requisitos previos
 
+Debe tener pertenencia en **administradores**, o equivalente.  
+  
+### <a name="procedure"></a>Procedimiento
+  
+1.  En el Administrador del servidor, haga clic en **Servidor local**.  
+  
+2.  En el **propiedades** panel, en la primera columna, busque **formación de equipos NIC**y, a continuación, haga clic en el **deshabilitado** vínculo.<p>El **formación de equipos NIC** abre el cuadro de diálogo.<p>![Cuadro de diálogo de formación de equipos NIC](../../media/Create-a-New-NIC-Team/nict_02_nicteaming.jpg)  
+  
+3.  En **adaptadores y las Interfaces**, seleccione los adaptadores de red de uno o más que desee agregar a un equipo NIC.  
+  
+4.  Haga clic en **tareas**y haga clic en **agregar al nuevo equipo**.<p>El **nuevo equipo** cuadro de diálogo se abre y muestra los adaptadores de red y los miembros del equipo.  
+  
+5.  En **nombre equipo**, escriba un nombre para el nuevo equipo NIC y, a continuación, haga clic en **propiedades adicionales**.  
+  
+6.  En **propiedades adicionales**, seleccione los valores para:
+
+    - **Modo de formación de equipos**. Las opciones de modo de formación de equipos son **independiente del conmutador** y **dependientes del conmutador**. Incluye el modo dependientes del conmutador **formación de equipos estática** y **protocolo de Control de agregación de vínculos (LACP)**. 
+      
+      - **Independiente de conmutador.** [!INCLUDE [switch-independent-shortdesc-include](../../includes/switch-independent-shortdesc-include.md)]
+      
+      - **Dependiente del conmutador.** [!INCLUDE [switch-dependent-shortdesc-include](../../includes/switch-dependent-shortdesc-include.md)] 
+      
+        | | |
+        |---|---|
+        |**Formación de equipos estática** | Requiere que configure manualmente el conmutador y el host para identificar qué vínculos forman el equipo. Se trata de una solución configurada estáticamente, no hay ningún protocolo adicional para ayudarle en el conmutador y el host para identificar de forma incorrecta conectado cables u otros errores que podrían provocar que el equipo no se pueda realizar. Este modo lo suelen ofrecer los conmutadores de clase de servidor. |
+        |**Protocolo de Control de agregación de vínculos (LACP)** |A diferencia de formación de equipos estática, modo de formación de equipos LACP dinámicamente identifica los vínculos que están conectados entre el host y el conmutador. Esta conexión dinámica permite la creación automática de un equipo y, en teoría, pero rara vez en la práctica, la expansión y reducción de un equipo simplemente mediante la transmisión o recepción de paquetes LACP de la entidad del mismo nivel. Todos los conmutadores de clase de servidor admiten LACP y todos requieren que el operador de red habilitar administrativamente LACP en el puerto del conmutador. Al configurar un modo de formación de equipos de LACP, formación de equipos NIC funciona siempre en modo activo del LACP con un temporizador corto.  Ninguna opción está actualmente disponible para modificar el temporizador o cambiar el modo LACP. |
+        ---
+    
+    - **Modo de equilibrio de carga**. Las opciones de equilibrio de carga de modo de distribución son **Hash de dirección**, **puerto Hyper-V**, y **dinámica**.
+    
+       - **Hash de dirección.** [!INCLUDE [address-hash-shortdesc-include](../../includes/address-hash-shortdesc-include.md)]
+       
+       - **Puerto de Hyper-V.** [!INCLUDE [hyper-v-port-shortdesc-include](../../includes/hyper-v-port-shortdesc-include.md)]
+       
+       - **Dinámica.** [!INCLUDE [dynamic-shortdesc-include](../../includes/dynamic-shortdesc-include.md)]
+    
+    - **Adaptador de reserva**. Las opciones de adaptador del modo de espera son **None (todos los adaptadores activos)** o la selección de un adaptador de red específico en el equipo NIC que actúa como un adaptador de modo de espera.
+   
+   > [!TIP]  
+   > Si está configurando un equipo NIC en una máquina virtual (VM), debe seleccionar un **modo de formación de equipos** de _independiente del conmutador_ y un **modo de equilibrio de carga** de  _Hash de direcciones_.  
+  
+7.  Si desea configurar el nombre de la interfaz principal del equipo o asignar un número de VLAN al equipo NIC, haga clic en el vínculo a la derecha del **interfaz de equipo principal**.<p>El **nueva interfaz de equipo** abre el cuadro de diálogo.<p>![Nueva interfaz de equipo](../../media/Create-a-New-NIC-Team/nict_newteaminterface.jpg)  
+  
+8.  Según sus requisitos, realice una de las siguientes acciones:  
+  
+    -   Proporcione un nombre de la interfaz tNIC.  
+  
+    -   Configurar la pertenencia a VLAN: haga clic en **VLAN específica** y escriba la información de VLAN. Por ejemplo, si desea agregar este equipo NIC a la VLAN de contabilidad número 44, tipo 44 contabilidad - VLAN.   
+  
+9. Haga clic en **Aceptar**.  
+
+_**¡Enhorabuena!**_  Ha creado un nuevo equipo NIC en un equipo host o máquina virtual.
+
+## <a name="related-topics"></a>Temas relacionados
+- [Formación de equipos NIC](NIC-Teaming.md): En este tema, le proporcionamos una visión general de formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. Formación de equipos NIC permite agrupar entre 1 y 32 adaptadores de red Ethernet físicos en uno o más adaptadores de red virtual basada en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.   
+
+- [Administración y uso de direcciones MAC de la formación de equipos NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Al configurar un equipo NIC con el modo independiente de conmutador y hash de dirección o distribución de carga dinámica, el equipo usa que la media access control dirección (MAC) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo desde el conjunto inicial de los miembros del equipo.
+
+- [Configuración de formación de equipos NIC](nic-teaming-settings.md): En este tema, nos ofrecerle una visión general de las propiedades del equipo NIC como formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles sobre la configuración del adaptador en espera y la propiedad de la interfaz principal del equipo. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador de modo de espera para tolerancia a errores.
+
+- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): En este tema, se describen formas de solucionar la formación de equipos NIC, como hardware, los valores de conmutador físico y habilitación o deshabilitación de los adaptadores de red mediante Windows PowerShell. 
+
+---

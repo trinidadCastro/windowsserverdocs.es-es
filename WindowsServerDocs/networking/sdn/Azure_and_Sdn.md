@@ -1,6 +1,6 @@
 ---
 title: Microsoft Azure y SDN
-description: Puedes usar este tema para obtener información sobre las tecnologías de redes de definido de Software (SDN) que se proporcionan en Microsoft Azure.
+description: Puede utilizar este tema para obtener información acerca de las tecnologías de redes definidas por Software (SDN) que se proporcionan en Microsoft Azure.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,20 +12,21 @@ ms.topic: article
 ms.assetid: 79e87013-7f27-4031-8383-288bcb291731
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5edca4e83fd919562e6864c18da1e01ac87879cb
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 4988285ab19d8d3a5e2880a75386ead7eef8b731
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59864836"
 ---
-# <a name="microsoft-azure-and-software-defined-networking"></a>Microsoft Azure y Software definen redes
+# <a name="microsoft-azure-and-software-defined-networking"></a>Microsoft Azure y redes definidas por software
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Microsoft Azure es la plataforma en la nube de Microsoft: una colección de servicios integrados - cálculo, almacenamiento, datos, redes y ayuda de la aplicación - que mueva más rápido, creciente hacer más cosas y ahorrar dinero.  
+Microsoft Azure es la plataforma de nube de Microsoft: una colección creciente de servicios integrados: proceso, almacenamiento, datos, redes y app - que ayudan a mover con mayor rapidez, llegar más alto y ahorrar dinero.  
   
-Enfoque de Microsoft para redes software definido incluye diseñar, crear y operativo redes datacenter escala global de servicios como Microsoft Azure. Centros de datos globales de Microsoft Azure realizan decenas de miles de cambios de red cada día, lo que es posible solo debido a las redes de software que se definen.  
+Enfoque de Microsoft para redes definidas por software incluye diseñar, crear y explotación de las redes de centro de datos de escala global para servicios como Microsoft Azure. Los centros de datos globales de Microsoft Azure realizan cada día decenas de miles de cambios en la red, lo cual solo es posible gracias a las redes definidas por software.  
   
-Microsoft Azure se ejecuta en el mismo servidor de Windows y la plataforma de Hyper-V que se incluyen en Windows Server. Windows Server y System Center incluyen mejoras y los procedimientos recomendados de experiencia de Microsoft en la explotación de las redes de centros de datos de escala global como Microsoft Azure para TI, lo que puede implementar las mismas tecnologías para la flexibilidad, automatización y control mediante software diseñadas tecnologías de redes.  
+Microsoft Azure se ejecuta en el mismo Windows Server y plataforma Hyper-V que la incluida en Windows Server. Windows Server y System Center incluyen mejoras y procedimientos recomendados de la experiencia de Microsoft en funcionamiento las redes de centro de datos de escala global como Microsoft Azure para usted para que pueda implementar las mismas tecnologías de flexibilidad, automatización y control Cuando las tecnologías de red diseñadas mediante software.  
   
-Para obtener más información, consulta [¿qué es Microsoft Azure? ](https://azure.microsoft.com/overview/what-is-azure/?WT.mc_id=azurebg_us_sem_bing_br_nontest_whatisazure_whatisazure&WT.srch=1).  
+Para obtener más información, consulte [¿qué es Microsoft Azure?](https://azure.microsoft.com/overview/what-is-azure/?WT.mc_id=azurebg_us_sem_bing_br_nontest_whatisazure_whatisazure&WT.srch=1).  

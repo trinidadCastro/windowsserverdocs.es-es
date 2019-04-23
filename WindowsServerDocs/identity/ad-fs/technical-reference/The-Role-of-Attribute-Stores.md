@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4ddb927d-d65e-491d-840a-16049c083d13
-title: El rol de tiendas de atributo
-description: 
+title: El papel de los almacenes de atributos
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,36 +10,37 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 730411ed7efbb9cf0db3d7e94a486cec4c363849
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59860416"
 ---
  >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-# <a name="the-role-of-attribute-stores"></a>El rol de tiendas de atributo
-Los servicios de federación de Active Directory usa el término "tiendas atributo" para hacer referencia a los directorios o bases de datos que una organización se usa para almacenar sus cuentas de usuario y sus valores de atributo asociado. Después de que se configura en una organización de proveedor de identidad, AD FS recupera estos valores de atributo de la tienda y crea reclamaciones basados en esa información para que una aplicación Web o servicio que está hospedado en una organización de terceros de confianza puede tomar las decisiones de autorización adecuada cada vez que un usuario federado \ (es decir, un usuario cuya cuenta se almacena en la organization\ del proveedor de identidad) intenta obtener acceso a la aplicación o servicio.  
+# <a name="the-role-of-attribute-stores"></a>El papel de los almacenes de atributos
+Servicios de federación de Active Directory usa el término "almacenes de atributos" para hacer referencia a directorios o bases de datos que una organización usa para almacenar sus cuentas de usuario y sus valores de atributo asociados. Una vez que se configura en una organización del proveedor de identidad, AD FS recupera estos valores de atributo en el almacén y crea notificaciones basadas en esa información para que una aplicación Web o servicio que se hospeda en una organización de usuario de confianza pueda tomar adecuado las decisiones de autorización cada vez que un usuario federado \(un usuario cuya cuenta se almacena en la organización del proveedor de identidades\) intenta obtener acceso a la aplicación o servicio.  
   
-Para obtener más información acerca de cómo se generan las notificaciones, consulta [el rol de reclamaciones](The-Role-of-Claims.md).  
+Para obtener más información sobre cómo se generan notificaciones, consulte [The Role of Claims](The-Role-of-Claims.md).  
   
-## <a name="how-attribute-stores-fit-in-with-your-ad-fs-deployment-goals"></a>¿Cómo se almacena atributo encaja en tus objetivos de la implementación de AD FS  
-La ubicación de la tienda de atributo de usuario y la ubicación desde el que los usuarios se autentican determinar el diseño de AD FS para admitir las identidades de usuario. Dependiendo de dónde se encuentra el almacén de atributo y donde los usuarios tendrán acceso a la aplicación \ (en una intranet o en la Internet\), puedes usar uno de los siguientes objetivos de implementación:  
+## <a name="how-attribute-stores-fit-in-with-your-ad-fs-deployment-goals"></a>Cómo se adaptan los almacenes de atributos a sus objetivos de implementación de AD FS  
+La ubicación del almacén de atributos de usuario y la ubicación desde la que los usuarios se autentican determinan el modo de diseño de AD FS para admitir las identidades de usuario. Dependiendo de dónde se encuentra el almacén de atributos y donde los usuarios tendrán acceso a la aplicación \(en una intranet o en Internet\), puede usar uno de los objetivos de implementación siguientes:  
   
--   [Proporcionar tu Active Directory a los usuarios acceso a tus aplicaciones para notificaciones y los servicios](https://technet.microsoft.com/library/dd807071.aspx): en este objetivo, los usuarios de tu organización, obtener acceso a una aplicación de AD FS seguro o servicio \ (tu propia aplicación o servicio o de un asociado aplicación o service\) cuando los usuarios han iniciado sesión en Active Directory en la intranet corporativa.  
+-   [Proporcionar su Active Directory Users Access a Your Claims-Aware Applications and Services](https://technet.microsoft.com/library/dd807071.aspx): en este objetivo, los usuarios de su organización acceso a una aplicación de AD FS protegida o servicio \(su propia aplicación o un servicio o un aplicación o el servicio del socio\) cuando los usuarios inician sesión Active Directory en la intranet corporativa.  
   
--   [Proporcionar tu Active Directory a los usuarios acceso a las aplicaciones y servicios de otras organizaciones](https://technet.microsoft.com/library/dd807123.aspx): en este objetivo, los usuarios de tu organización, obtener acceso a una aplicación de AD FS seguro o servicio \ (tu propia aplicación o servicio o de un asociado aplicación o service\) cuando los usuarios han iniciado sesión a un almacén de atributo en la intranet corporativa y cuando inicien sesión remotamente desde Internet.  
+-   [Proporcione su Active Directory Users Access a las aplicaciones y servicios de otras organizaciones](https://technet.microsoft.com/library/dd807123.aspx): en este objetivo, los usuarios de su organización acceso a una aplicación de AD FS protegida o servicio \(su propia aplicación o un servicio o un aplicación o el servicio del socio\) cuando los usuarios inician sesión un almacén de atributos en la intranet corporativa y cuando inician sesión remotamente desde Internet.  
   
--   [Proporcionar a los usuarios en otra organización acceso a tus aplicaciones para notificaciones y los servicios](https://technet.microsoft.com/library/dd807099.aspx): en este objetivo, cuentas de usuario en otra organización que se encuentran en un almacén de atributo de la intranet corporativa de la organización deben tener acceso a un AD FS seguro de la aplicación de la organización. Este objetivo también funciona cuando cuentas de usuario basada en consumer\ que se encuentran en un almacén de atributo en la red del perímetro de la organización deben proporcionarse con acceso a un AD FS seguro de la aplicación de la organización.  
+-   [Proporcionar a los usuarios de otra organización acceso a Your Claims-Aware Applications and Services](https://technet.microsoft.com/library/dd807099.aspx): en este objetivo, las cuentas de usuario de otra organización que se encuentran en un almacén de atributos en la intranet corporativa de la organización deben tener acceso a un servidor de AD FS: aplicación protegida en su organización. Este objetivo también funciona al consumidor\-las cuentas de usuario basada en que se encuentran en un almacén de atributos en la red perimetral de su organización deben proporcionarse con acceso a una instancia de AD FS: protege la aplicación en su organización.  
   
-Según la ubicación de la tienda de atributo y otros requisitos de la organización, puedes combinar varios de estos objetivos de implementación para completar el diseño de la implementación de AD FS.  
+Según la ubicación del almacén de atributos y otros requisitos de su organización, puede combinar varios de estos objetivos de implementación para completar el diseño de la implementación de AD FS.  
   
-## <a name="attribute-stores-that-are-supported-by-ad-fs"></a>Atributo tiendas que son compatibles con AD FS  
-Almacenes de base de datos que puedes usar para extraer los valores de atributo definido por el administrator\ y llenar reclamaciones con esos valores y AD FS admite una amplia gama de directorio. AD FS admite ninguno de los siguientes directorios o bases de datos como almacenes de atributo:  
+## <a name="attribute-stores-that-are-supported-by-ad-fs"></a>Almacenes de atributos compatibles con AD FS  
+AD FS admite una amplia gama de directorio y la base de datos almacena que puede usar para extraer el administrador\-define los valores de atributo y rellenar notificaciones con esos valores. AD FS es compatible con cualquiera de los siguientes directorios o bases de datos como almacenes de atributos:  
   
 -   Active Directory en Windows Server 2003, servicios de dominio de Active Directory \(AD DS\) en Windows Server 2008, AD DS en Windows Server 2012 y 2012 R2 y Windows Server 2016. 
   
 -   Todas las ediciones de Microsoft SQL Server 2005, SQL Server 2008, SQL Server 2012, SQL Server 2014 y SQL Server 2016  
   
--   Almacenes de atributo personalizado  
+-   Almacenes de atributos personalizados  
   
 

@@ -1,6 +1,6 @@
 ---
-title: ¿Novedades de cliente de web de escritorio remoto?
-description: Obtén información sobre los cambios recientes en el cliente de web de escritorio remoto
+title: ¿Novedades de cliente web de escritorio remoto?
+description: Obtenga información sobre los cambios recientes en el cliente web de escritorio remoto
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,79 +14,79 @@ ms.author: elizapo
 ms.date: 02/22/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 2746127c15753ac8f4f6067eef068fe97b425829
-ms.sourcegitcommit: 491c94b25501732c4a4abda533cc62b8bd278ed2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "9099168"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59844556"
 ---
-# ¿Novedades para el cliente de web de escritorio remoto?
+# <a name="whats-new-for-the-remote-desktop-web-client"></a>¿Novedades para el cliente web de escritorio remoto?
 
-Periódicamente actualizamos el [cliente de web de escritorio remoto](remote-desktop-web-client.md), agregando nuevas funcionalidades y corregir los problemas. Echa un vistazo a las actualizaciones más recientes a continuación.
+Se actualiza con regularidad el [cliente web de escritorio remoto](remote-desktop-web-client.md), agregar nuevas características y solución de problemas. Consulte las actualizaciones más recientes a continuación.
 
-## Actualizaciones de versión 1.0.11
-*Fecha de publicación: 22/2/2019*
+## <a name="updates-for-version-1011"></a>Actualizaciones de versión 1.0.11
+*Fecha de publicación: 2/22/2019*
 
-- Habilita la conexión a Escritorio remoto agente sin una puerta de enlace de escritorio remoto en Windows Server 2019.
-- Ordenados alfabéticamente fuentes (es decir, RemoteApps en primer lugar, equipos de escritorio segundo).
-- Corregido varios errores de accesibilidad mejora de la compatibilidad de lector de pantalla.
-- Actualizado nuestras herramientas de compilación.
+- Habilitar conexión a Escritorio remoto Broker sin una puerta de enlace de escritorio remoto en Windows Server 2019.
+- Ordena alfabéticamente las fuentes de distribución (es decir, RemoteApps en primer lugar, escritorios segundo).
+- Se han corregido varios errores de accesibilidad mejora de la compatibilidad de lector de pantalla.
+- Actualiza nuestras herramientas de compilación.
 - Varias correcciones de errores.
 
-## Actualizaciones de versión 1.0.7
-*Fecha de publicación: 24/1/2019*
+## <a name="updates-for-version-107"></a>Actualizaciones de versión 1.0.7
+*Fecha de publicación: 1/24/2019*
 
 - Ahora se admite el uso sin conexión en redes internas.
-- Mejora de la representación en los exploradores que no sean Microsoft Edge.
-- Límite de implementada para reintentar de recuperación de fuentes intenta evitar DoS.
-- Errores de accesibilidad fijo, permitiendo a los usuarios con discapacidades visuales use el cliente web.
-- Mejora de mensajes de error que se muestran al usuario para errores de fuente.
-- Se ha agregado Ctrl + Alt + final (Windows) y fn + control + opción + (Mac) de eliminar los accesos directos para invocar Ctrl + Alt + Supr en el equipo remoto.
-- Telemetría mejorada para los eventos de bloqueo. 
-- Se ha mejorado nuestra canalización de compilación y herramientas de generación.
+- Representación mejorada en los exploradores que no sea Microsoft Edge.
+- Límite implementado para reintento de fuente recuperación intenta evitar la denegación de servicio.
+- Errores de accesibilidad fijo, permitiendo a los usuarios con discapacidades visuales usar al cliente web.
+- Mejorado los mensajes de error que se muestra al usuario para los errores de fuente.
+- Se ha agregado Ctrl + Alt + final (Windows) y fn + control + opción + accesos directos de eliminación (Mac) para invocar Ctrl + Alt + Supr en el equipo remoto.
+- Telemetría mejorada para eventos de bloqueo. 
+- Mejorado nuestra canalización de compilación y las herramientas de compilación.
 - Varias correcciones de errores.
 
-## Actualizaciones de versión 1.0.1
+## <a name="updates-for-version-101"></a>Actualizaciones para la versión 1.0.1
 *Fecha de publicación: 10/29/2018*
 
-- Agrega una opción a **información de soporte técnico de captura** en la página About para diagnosticar problemas.
-- Ahora se admite en modo inPrivate.
-- Compatibilidad mejorada para teclados de distintos del inglés.
-- Corregido un problema donde se mostró incorrectamente información sobre herramientas con caracteres de distintos del inglés.
-- Problema de representación de gráficos fijo que los usuarios de Chrome afectados.
-- Redirección de zona horaria actualizadas con compatibilidad completa con el horario de verano.
-- Mejorar el mensaje de error de error de falta de memoria.
+- Se agregó una opción a **captura información de soporte técnico** en la página About para diagnosticar problemas.
+- Ahora se admite el modo inPrivate.
+- Compatibilidad mejorada para teclados no ingleses.
+- Se ha corregido un problema donde se mostraba incorrectamente información sobre herramientas con caracteres no válidos.
+- Problema de representación de gráficos fijo que Chrome usuarios afectados.
+- Actualiza la redirección de zona horaria con compatibilidad total con el horario de verano.
+- Ha mejorado el mensaje de error para errores de memoria insuficiente.
 - Varias correcciones de errores.
 
-## Actualizaciones para la versión 1.0.0
-*Fecha de publicación: 16/07/2018*
+## <a name="updates-for-version-100"></a>Actualizaciones de versión 1.0.0
+*Fecha de publicación: 07/16/2018*
 
-- Cliente de web de escritorio remoto está disponible para el público.
-- Los administradores pueden globalmente desactivar la telemetría para el cliente web.
+- Cliente web de escritorio remoto está disponible con carácter general.
+- Los administradores pueden desactivar globalmente telemetría para el cliente web.
 - Varias correcciones de errores.
 
-## Actualizaciones de versión 0.9.0
-*Fecha de publicación: 05/07/2018*
+## <a name="updates-for-version-090"></a>Actualizaciones de versión 0.9.0
+*Fecha de publicación: 07/05/2018*
 
-- Experiencia dentro del cliente web de inicio de sesión nuevo.
-- Ya no se le pedirán las credenciales al iniciar una conexión de escritorio o de aplicación (inicio de sesión único en).
-- Mueve al cliente de web a una nueva dirección URL:**https://server_FQDN/RDWeb/webclient/index.html**
-- Redirección de la zona horaria se ha agregado.
+- Inicio de sesión nueva experiencia en el cliente web.
+- Ya no se le solicite las credenciales al iniciar una conexión de escritorio o aplicación (inicio de sesión único).
+- Mover al cliente web a una nueva dirección URL: **https://server_FQDN/RDWeb/webclient/index.html**
+- Redirección de zona horaria se ha agregado.
 - Varias correcciones de errores.
 
-## Actualizaciones de versión 0.8.1
+## <a name="updates-for-version-081"></a>Actualizaciones de versión 0.8.1
 *Fecha de publicación: 05/17/2018*
 
-- Actualizaciones para tratar la corrección oracle CredSSP cifrado que se describe en CVE-2018-0886.
-- Corrige los errores de conexión para algunos idiomas cuando está habilitada la impresión.
-- Aparece un mensaje de error mejorado cuando una puerta de enlace no es parte de la implementación.
-- Se agregaron opciones de **Ayuda** y **comentarios** .
+- Actualizaciones para tratar la corrección de oracle cifrado CredSSP que se describe en CVE-2018-0886.
+- Se ha corregido los errores de conexión para algunos idiomas cuando está habilitada la impresión.
+- Mensaje de error mejorado cuando una puerta de enlace no forma parte de la implementación.
+- **Ayudar a** y **comentarios** se agregaron opciones.
 
-## Actualizaciones de versión 0.8.0
-*Fecha de publicación: 28/03/2018*
+## <a name="updates-for-version-080"></a>Actualizaciones de versión 0.8.0
+*Fecha de publicación: 03/28/2018*
 
-- Versión inicial de versión preliminar pública del cliente web.
-- Copiar y pegar texto a través del Portapapeles con **CTRL+c** y **CTRL+v**.
+- Versión preliminar pública inicial del cliente web.
+- Copiar y pegar texto mediante el Portapapeles con **CTRL + C** y **CTRL+V**.
 - Imprimir en un archivo PDF.
 - En 18 idiomas.
  

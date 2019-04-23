@@ -1,5 +1,5 @@
 ---
-title: "Crear la clave raíz de la distribución de claves servicios KDS"
+title: Crear la clave raíz del Servicio de distribución de claves (KDS)
 description: Seguridad de Windows Server
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,55 +13,56 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 30075e56f3ca8e90a0655508efeacfcf2aaa0337
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 3d5f7b46b28e6a2fbfafb664b69aebc8d34886fe
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59867216"
 ---
-# <a name="create-the-key-distribution-services-kds-root-key"></a>Crear la clave raíz de la distribución de claves servicios KDS
+# <a name="create-the-key-distribution-services-kds-root-key"></a>Crear la clave raíz del Servicio de distribución de claves (KDS)
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema para profesionales de TI describen cómo crear una clave raíz de (kdssvc.dll) de servicio de distribución de claves de Microsoft en el controlador de dominio mediante Windows PowerShell para generar grupo cuenta de servicio administrada contraseñas en Windows Server 2012.
+Este tema para profesionales de TI describe cómo crear una clave de raíz del servicio de distribución de claves (kdssvc.dll) de Microsoft en el controlador de dominio mediante Windows PowerShell para generar contraseñas de cuenta de servicio administrada de grupo en Windows Server 2012.
 
- Controladores de dominio de Windows Server 2012 (corriente continua) requieren una clave raíz para empezar a generar gMSA contraseñas. Los controladores de dominio esperará hasta 10 horas desde el momento de creación para permitir que todos los controladores de dominio convergen su replicación de AD antes de permitir la creación de un gMSA. Las 10 horas es una medida de seguridad para impedir la generación de contraseña antes de que todos los controladores de dominio en el entorno son capaces de responder a solicitudes de gMSA.  Si intentas usar un gMSA demasiado pronto la clave no es posible que se ha replicados a todos los controladores de Windows Server 2012 y, por tanto, la contraseña de recuperación puede producir un error cuando el host gMSA intenta recuperar la contraseña. También pueden producirse errores de recuperación de contraseña de gMSA al usar los controladores de dominio con programas de replicación limitada o si hay un problema de replicación.
+ Controladores de dominio (DC) de Windows Server 2012 requieren una clave raíz para comenzar a generar contraseñas gMSA. Antes de permitir la creación de una gMSA, todos los controladores de dominio esperarán hasta 10 horas desde el momento de la creación para que converjan sus replicaciones de AD. Las 10 horas son una medida de seguridad para evitar que la generación de contraseñas se produzca antes de que todos los controladores de dominio del entorno sean capaces de responder a las peticiones de gMSA.  Si intenta usar una gMSA demasiado pronto la clave podría no haberse replicada en todos los DC de Windows Server 2012 y, por tanto, la recuperación de contraseñas puede producir un error cuando el host de gMSA intente recuperar la contraseña. Los errores de recuperación de contraseña de gMSA también pueden ocurrir si se usan controladores de dominio con programaciones de replicación limitadas o si hay un problema de replicación.
 
-Pertenencia a la **administradores de dominio** o **administradores** grupos o equivalente, es lo mínimo necesario para completar este procedimiento. Para obtener más información sobre el uso de las cuentas y adecuadas pertenencias a grupos, [Local y dominio predeterminada grupos](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
+Para poder realizar este procedimiento, es necesario, como mínimo, pertenecer a **Admins. del dominio**, **Administradores de empresas** o a otro grupo equivalente. Para ver información detallada sobre el uso de las cuentas adecuadas y las pertenencias a grupos, consulte [Grupos predeterminados locales y de dominio](https://technet.microsoft.com/library/dd728026(WS.10).aspx).
 
 > [!NOTE]
-> Una arquitectura de 64 bits se necesita para ejecutar los comandos de Windows PowerShell que se usan para administrar las cuentas de servicio administradas de grupo.
+> Se necesita una arquitectura de 64 bits para ejecutar los comandos de Windows PowerShell que se usan para administrar cuentas de servicio administradas de grupo.
 
-#### <a name="to-create-the-kds-root-key-using-the-new-kdsrootkey-cmdlet"></a>Para crear la clave raíz KDS mediante el cmdlet New-KdsRootKey
+#### <a name="to-create-the-kds-root-key-using-the-add-kdsrootkey-cmdlet"></a>Para crear la clave raíz KDS con el cmdlet Add-KdsRootKey
 
-1.  En el controlador de dominio de Windows Server 2012, ejecutar Windows PowerShell desde la barra de tareas.
+1.  En el controlador de dominio de Windows Server 2012, ejecute Windows PowerShell desde la barra de tareas.
 
-2.  En el símbolo del sistema para el módulo de Active Directory de Windows PowerShell, escribe los siguientes comandos y, a continuación, presiona ENTRAR:
+2.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Add-KdsRootKey - EffectiveImmediately**
+    **Add-KdsRootKey -EffectiveImmediately**
 
     > [!TIP]
-    > El parámetro de tiempo eficaz puede usarse para dar tiempo para las claves se propague a todos los controladores de dominio antes de su uso. Usar Add-KdsRootKey - EffectiveImmediately agregará una clave raíz en el destino de controlador de dominio que se usará el servicio KDS inmediatamente. Sin embargo, otros controladores de dominio de Windows Server 2012 no podrán usar la clave raíz hasta replicación es correcta.
+    > El parámetro Effective time se puede usar para dar a las claves tiempo para que se propaguen a todos los controladores de dominio antes de su uso. Con Add-KdsRootKey - EffectiveImmediately agregará una clave raíz para el controlador de dominio que será utilizado por el servicio KDS inmediatamente de destino. Sin embargo, otros controladores de dominio de Windows Server 2012 no podrá usar la clave raíz hasta que la replicación sea correcta.
 
-Para entornos de prueba con solo un controlador de dominio, puedes crear una clave raíz KDS y establecer la hora de inicio en el pasado a evitar la espera de intervalo para generar claves mediante el siguiente procedimiento. Valida que un evento 4004 se ha registrado en el registro de eventos kds.
+Para los entornos de prueba con solo un controlador de dominio, puedes usar el procedimiento siguiente para crear una clave raíz de KDS y establecer la hora de inicio en el pasado para evitar el intervalo de espera. Comprueba que se haya registrado un evento 4004 en el registro de eventos de KDS.
 
-#### <a name="to-create-the-kds-root-key-in-a-test-environment-for-immediate-effectiveness"></a>Para crear la clave raíz KDS en un entorno de prueba de la eficacia de inmediato
+#### <a name="to-create-the-kds-root-key-in-a-test-environment-for-immediate-effectiveness"></a>Para crear la clave raíz de KDS en un entorno de pruebas para que sea efectivo de forma inmediata
 
-1.  En el controlador de dominio de Windows Server 2012, ejecutar Windows PowerShell desde la barra de tareas.
+1.  En el controlador de dominio de Windows Server 2012, ejecute Windows PowerShell desde la barra de tareas.
 
-2.  En el símbolo del sistema para el módulo de Active Directory de Windows PowerShell, escribe los siguientes comandos y, a continuación, presiona ENTRAR:
+2.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **$un = Get-Date**
+    **$a=Get-Date**
 
     **$b=$a.AddHours(-10)**
 
-    **Add-KdsRootKey - EffectiveTime $b**
+    **Add-KdsRootKey -EffectiveTime $b**
 
-    O bien usar un solo comando
+    O usa un solo comando
 
-    **((Get-date).addhours(-10)) Add-KdsRootKey - EffectiveTime**
+    **Add-KdsRootKey -EffectiveTime ((get-date).addhours(-10))**
 
-## <a name="see-also"></a>Consulta también
-[Introducción a grupo administra las cuentas de servicio](getting-started-with-group-managed-service-accounts.md)
+## <a name="see-also"></a>Vea también
+[Introducción a grupo de cuentas de servicio administradas](getting-started-with-group-managed-service-accounts.md)
 
 

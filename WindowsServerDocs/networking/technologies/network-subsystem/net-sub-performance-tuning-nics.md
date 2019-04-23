@@ -1,6 +1,6 @@
 ---
 title: Adaptadores de red de optimización de rendimiento
-description: Este tema es parte de la Guía de optimización del rendimiento de red subsistema de Windows Server 2016.
+description: En este tema forma parte de la Guía de ajuste de rendimiento del subsistema de red para Windows Server 2016.
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -8,121 +8,122 @@ ms.assetid: 0b9b0f80-415c-4f5e-8377-c09b51d9c5dd
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1c6d36966ce6e2d407b6568e16946745256ee69b
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: d6d54f33108d1cdb936b02fc556acca1e5518b9b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59861536"
 ---
 # <a name="performance-tuning-network-adapters"></a>Adaptadores de red de optimización de rendimiento
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar este tema para adaptadores de red de ajuste de rendimiento que están instalados en equipos que ejecutan Windows Server 2016.
+Puede utilizar este tema para adaptadores de red de optimización de rendimiento que se instalan en equipos que ejecutan Windows Server 2016.
 
-Determinar la configuración de ajuste correcta para el adaptador de red dependen de las siguientes variables:
+Determinar la configuración de ajuste correcta para un adaptador de red depende de las siguientes variables:
 
 - El adaptador de red y su conjunto de características  
 
-- El tipo de carga de trabajo realizada por el servidor  
+- El tipo de carga de trabajo que realiza el servidor  
 
-- Los recursos de hardware y software de servidor  
+- Los recursos de hardware y software del servidor  
 
 - Los objetivos de rendimiento para el servidor  
 
-Si el adaptador de red proporciona opciones de optimización, puede optimizar el uso de rendimiento y los recursos de red para lograr un rendimiento óptimo en función de los parámetros que se describió anteriormente.  
+Si el adaptador de red ofrece opciones de ajuste, puedes optimizar la capacidad de proceso de la red y el uso de los recursos para lograr una capacidad de proceso óptima en función de los parámetros indicados.  
 
-Las siguientes secciones describen algunas de las opciones de optimización del rendimiento.  
+En las siguientes secciones se describen algunas de las opciones de ajuste del rendimiento.  
 
-##  <a name="bkmk_offload"></a>Habilitación de características de descarga
+##  <a name="bkmk_offload"></a> Habilitar las características de descarga
 
-Activar características de descarga de adaptador de red es muy conveniente. A veces, sin embargo, el adaptador de red no es lo suficientemente eficaz para controlar las funcionalidades de la descarga con alto rendimiento.
+Activar las características de descarga del adaptador de red suele ser beneficioso. Sin embargo, algunas veces el adaptador de red no tiene suficiente capacidad para administrar las funcionalidades de descarga con una capacidad de proceso alta.
 
 >[!IMPORTANT]
->No uses las características de descarga **descarga de la tarea de IPsec** o **descarga Chimenea TCP **. Estas tecnologías están en desuso en Windows Server 2016 y podrían afectar negativamente a servidor y el rendimiento de la red. Además, estas tecnologías podrían no ser compatible con Microsoft en el futuro.
+>No utilice las características de descarga **la descarga de tareas de IPsec** o **descarga TCP Chimney**. Estas tecnologías están en desuso en Windows Server 2016 y pueden afectar negativamente a servidor y el rendimiento de la red. Además, estas tecnologías es posible que no se admite por Microsoft en el futuro.
 
-Por ejemplo, lo que permite la descarga de segmentación puede reducir el rendimiento máximo sostenible en algunos adaptadores de red debido a los recursos de hardware limitados. Sin embargo, si el rendimiento reducido no se espera que sea una limitación, debes habilitar funcionalidades de la descarga, incluso para este tipo de adaptador de red.
+Por ejemplo, habilitar la descarga de segmentación puede reducir la capacidad de proceso máxima sostenible en algunos adaptadores de red debido a la limitación de los recursos de hardware. Sin embargo, si no se espera que la reducción de la capacidad de proceso sea una limitación, debes habilitar las características de descarga, incluso para este tipo de adaptador de red.
 
 >[!NOTE]
-> Algunos adaptadores de red requieren características de descarga para habilitar por separado para enviar y recibir las rutas de acceso.
+> Algunos adaptadores de red necesitan que las características de descarga se habiliten de forma independiente para las rutas de envío y recepción.
 
-##  <a name="bkmk_rss_web"></a>Habilitar recibir lado ajuste de escala (RSS) para los servidores Web
+##  <a name="bkmk_rss_web"></a> Habilitación de escalado (RSS) para los servidores Web del lado de recepción
 
-RSS puede mejorar el rendimiento y la escalabilidad de web cuando haya menos adaptadores de red que los procesadores lógicos en el servidor. Cuando todo el tráfico de web va a través de los adaptadores de red compatibles con RSS, las solicitudes web entrantes de conexiones diferentes pueden procesarse simultáneamente a través de CPU diferentes.
+RSS puede mejorar la escalabilidad y el rendimiento web cuando hay menos adaptadores de red que procesadores lógicos en el servidor. Cuando todo el tráfico de la red pasa por adaptadores de red compatibles con RSS, las solicitudes web que llegan de diferentes conexiones se pueden procesar simultáneamente en diferentes CPU.
 
-Es importante tener en cuenta que debido a la lógica de RSS y transferencia de hipertexto protocolo \(HTTP\) para la distribución de carga, su rendimiento puede ser gravemente degradarse si un adaptador de red compatibles con RSS acepta el tráfico de la web en un servidor que tiene uno o varios adaptadores de red compatibles con RSS. En este caso, debes usar adaptadores de red compatibles con RSS o deshabilitar RSS en las propiedades del adaptador de red **propiedades avanzadas** pestaña. Para determinar si un adaptador de red es capaz de RSS, puede ver la información de RSS en las propiedades del adaptador de red **propiedades avanzadas** pestaña.
+Es importante tener en cuenta que debido a la lógica de RSS y protocolo de transferencia de hipertexto \(HTTP\) para la distribución de carga, rendimiento podría ser ver gravemente deteriorado si un adaptador de red compatibles con RSS acepta tráfico web en un servidor que tiene uno o varios adaptadores de red compatibles con RSS. En este caso, debes usar adaptadores de red compatibles con RSS o deshabilitar RSS en la pestaña **Propiedades avanzadas** de las propiedades del adaptador de red. Para determinar si un adaptador de red es compatible con RSS, puedes ver la información de RSS en la pestaña **Propiedades avanzadas** de las propiedades del adaptador de red.
 
 ### <a name="rss-profiles-and-rss-queues"></a>Perfiles RSS y colas RSS
 
-El perfil RSS predefinidos predeterminado es NUMA estático, lo que modifica el comportamiento predeterminado de las versiones anteriores del sistema operativo. Para comenzar con los perfiles de RSS, puedes revisar los perfiles disponibles para comprender cuando están útil y cómo se aplican a tu entorno de red y el hardware.
+El perfil RSS predefinidos predeterminado es NUMA Static, que cambia el comportamiento predeterminado de las versiones anteriores del sistema operativo. Para comenzar con los perfiles de RSS, puedes revisar los perfiles disponibles para saber cuándo son beneficiosos y cómo se aplican a tu entorno y hardware de red.
 
-Por ejemplo, si puedes abrir el Administrador de tareas y revisión los procesadores lógicos en el servidor y parecen estar infrautilizado para recibir tráfico, puede intentar aumentar el número de colas RSS del valor predeterminado de 2 en la medida en que es compatible con el adaptador de red. El adaptador de red podría tener opciones para cambiar el número de colas RSS como parte del controlador.
+Por ejemplo, si abres el Administrador de tareas, revisas los procesadores lógicos de tu servidor y parecen estar infrautilizados para la recepción de tráfico, puedes intentar aumentar el número de colas RSS de las 2 predeterminadas al máximo que admita tu adaptador de red. Quizás el adaptador de red tenga opciones para cambiar el número de colas RSS como parte del controlador.
 
-##  <a name="bkmk_resources"></a>Aumentar los recursos de adaptador de red
+##  <a name="bkmk_resources"></a> Aumentar los recursos de adaptador de red
 
-Para los adaptadores de red que permiten la configuración manual de recursos, por ejemplo, recibirán y enviar búferes, deberá aumentar los recursos asignados. 
+Para los adaptadores de red que permiten configurar los recursos manualmente, por ejemplo, los búferes de envío y recepción, debes aumentar los recursos asignados. 
 
-Algunos adaptadores de red establece los búferes de recepción bajo en conservar asignada memoria del host. El valor inferior resultado paquetes descartados y una disminución del rendimiento. Por lo tanto, para escenarios de uso intensivo recibir, te recomendamos que aumente el valor del búfer de recepción al máximo.
-
->[!NOTE]
->Si un adaptador de red no expone la configuración manual de recursos, ya sea dinámicamente configura los recursos o los recursos se establecen en un valor fijo que no se puede cambiar.
-
-### <a name="enabling-interrupt-moderation"></a>Habilitar moderación de interrupción
-
-Para controlar moderación de interrupción, algunos adaptadores de red exponer niveles de moderación de interrupción diferentes, parámetros de uso combinados de búfer (a veces por separado para enviar y recibir búferes), o ambos.
-
-Considera moderación de interrupción para cargas de trabajo de CPU enlazado y tener en cuenta el equilibrio entre el ahorro de CPU de host y la latencia en comparación con el host mayor ahorro de CPU debido a interrupciones de más y menor latencia. Si el adaptador de red no lleva a cabo moderación de interrupción, pero expone búfer fusión, aumentar el número de búferes fusionados permite búferes más por enviar o recibe, lo que mejora el rendimiento.
-
-##  <a name="bkmk_low"></a>Ajustes de procesamiento de paquetes de latencia baja de rendimiento
-
-Muchos adaptadores de red proporcionan opciones para optimizar la latencia provocado por el sistema operativo. Latencia es el tiempo transcurrido entre el controlador de red procesar un paquete entrante y enviar el paquete de nuevo el controlador de red. Normalmente, este tiempo se mide en microsegundos. Para fines de comparación, el tiempo de transmisión de transmisiones de paquetes largas distancias normalmente se mide en milisegundos \ (un orden de magnitud larger\). Este ajuste no reducirá el tiempo que pasa un paquete en tránsito.
-
-Los siguientes son algunas sugerencias para redes microsegundos confidenciales de optimización del rendimiento.
-
-- Establece el BIOS del equipo en **alto rendimiento**, con los Estados C deshabilitados. Sin embargo, ten en cuenta que se trata de sistema y el BIOS dependientes, y algunos sistemas proporcionará un rendimiento superior si la administración de energía de los controles del sistema operativo. Puedes comprobar y ajustar la configuración de administración de energía de **configuración** o mediante la **powercfg** comando. Para obtener más información, consulta [opciones de línea de comandos de Powercfg](https://technet.microsoft.com/library/cc748940.aspx)
-
-- Establece el perfil de administración de energía de sistema operativo en **sistema de alto rendimiento**. Ten en cuenta que esto no funcionará correctamente si se ha establecido el BIOS del sistema para deshabilitar el control del sistema operativo de administración de energía.
-
-- Habilitar la descarga estática, por ejemplo, sumas de comprobación de UDP, TCP sumas de comprobación y enviar grande que la descarga (también).
-
-- Habilitar RSS si el tráfico multi en secuencias, como la recepción de multidifusión de gran volumen.
-
--   Deshabilitar la **interrumpir moderación** configuración para que los controladores de tarjeta de red que requieren la menor latencia posible. Recuerda que esto puede usar más de tiempo de CPU y representa un equilibrio.
-
-- Controlar DPC e interrupciones del adaptador de red en un procesador de núcleo que comparte memoria caché de CPU con el principal que se está usando el programa (subproceso del usuario) que controla el paquete. Optimización de afinidad de CPU puede usarse para dirigir a un proceso para determinados procesadores lógicos junto con la configuración de RSS para lograr esto. Usar el mismo núcleo para el subproceso de modo de interrupción, DPC y usuario exhibe peor rendimiento a medida que aumenta la carga porque la ISR y DPC subprocesos compiten por el uso de las principales.
-
-##  <a name="bkmk_smi"></a>Interrupciones de administración del sistema
-
-Muchos sistemas de hardware usan \(SMI\) interrupciones de administración de sistema para una variedad de funciones de mantenimiento, incluidos los informes de errores de memoria \(ECC\) de código de corrección de errores, compatibilidad USB, control de ventilador y BIOS heredado controla la administración de energía. 
-
-La SMI es la interrupción de prioridad más alta en el sistema y coloca la CPU en un modo de administración, que se adelanta todas las otras actividades mientras se ejecuta una rutina de servicio de interrupción, suele estar contenida en el BIOS.
-
-Por desgracia, esto puede provocar picos de latencia de 100 microsegundos o más. 
-
-Si necesitas lograr la latencia más baja, debe solicitar una versión de BIOS del proveedor de hardware que reduce SMIs hasta el grado más baja posible. Con frecuencia se conocen como "baja latencia BIOS" o "SMI gratuito." En algunos casos, no es posible para una plataforma de hardware eliminar la actividad SMI por completo porque se usa para controlar las funciones esenciales (por ejemplo, ventiladores).
+Algunos adaptadores de red establecen un valor bajo para los búferes de recepción para conservar la memoria asignada del host. El valor bajo produce la pérdida de paquetes y un menor rendimiento. Por lo tanto, en escenarios con un alto volumen de recepción, te recomendamos que aumentes el valor del búfer de recepción al máximo.
 
 >[!NOTE]
->El sistema operativo no puede ejercer ningún control sobre SMIs porque el procesador lógico se está ejecutando en un modo especial de mantenimiento, lo que impide que la intervención del sistema operativo.
+>Si un adaptador de red no expone la configuración de recursos manual, configura los recursos dinámicamente o están establecidos en un valor fijo que no se puede cambiar.
 
-##  <a name="bkmk_tcp"></a>TCP de optimización del rendimiento
+### <a name="enabling-interrupt-moderation"></a>Habilitar la moderación de interrupciones
 
- Puedes optimizar el rendimiento TCP con los siguientes elementos.
+Para controlar la moderación de interrupciones, algunos adaptadores de red ofrecen diferentes niveles de moderación de interrupciones, parámetros de fusión de búferes (algunas veces por separado para los búferes de envío y recepción) o ambos.
 
-###  <a name="bkmk_tcp_params"></a>Ajuste automático de la ventana de recepción de TCP
+Debes considerar el uso de moderación de interrupciones para cargas de trabajo ligadas a la CPU, y tener en cuenta el equilibrio entre latencia y ahorro de CPU host frente al mayor ahorro de CPU host debido al mayor número de interrupciones y la menor latencia. Si el adaptador de red no realiza moderación de interrupciones, pero expone fusión de búferes, aumentar el número de búferes fusionados permite más búferes por envío o recepción, lo que mejora el rendimiento.
 
-Antes de Windows Server 2008, la pila de red usa una ventana de lado de recepción de tamaño fijo (65.535 bytes) que limita el rendimiento general posible para las conexiones. Uno de los cambios más importantes de la pila TCP es TCP recibir ajuste automático de la ventana. 
+##  <a name="bkmk_low"></a> Optimizar el rendimiento de procesamiento de paquetes de baja latencia
 
-Puede calcular el rendimiento de una única conexión total cuando usas un tamaño fijo TCP recibir ventana como:
+Muchos adaptadores de red ofrecen opciones para optimizar la latencia inducida por el sistema operativo. La latencia es el tiempo que transcurre desde que el controlador de red procesa un paquete de entrada hasta que lo envía de vuelta. Este tiempo suele medirse en microsegundos. Para la comparación, el tiempo de transmisión para transmisiones de paquetes en grandes distancias suele medirse en milisegundos \(un orden de magnitud mayor\). Este ajuste no reducirá el tiempo que un paquete está en tránsito.
 
-**Rendimiento posible total de bytes = TCP recibir el tamaño de ventana en bytes \ * (1 / latencia de conexión en segundos)**
+Las siguientes son algunas sugerencias de ajuste para redes con una sensibilidad de microsegundos.
 
-Por ejemplo, el rendimiento puede alcanzarse total es solo 51 Mbps en una conexión con la latencia de 10 ms \ (un valor razonable para infrastructure\ de una red corporativa grande). 
+- Establece el BIOS del equipo en **Alto rendimiento**, con C-states deshabilitado. Sin embargo, ten en cuenta que esto depende del BIOS y del sistema, y que algunos sistemas proporcionarán un rendimiento mayor si el sistema operativo controla la administración de la energía. Puede comprobar y ajustar la configuración de administración de energía de **configuración** o mediante el **powercfg** comando. Para obtener más información, consulte [opciones de línea de comandos de Powercfg](https://technet.microsoft.com/library/cc748940.aspx)
 
-Con el ajuste automático, sin embargo, la ventana de recepción ajustable, y puede crecer para satisfacer las necesidades del remitente. Es posible que una conexión lograr una velocidad de la línea completa de una conexión GB/s 1. Escenarios de uso de red que es posible que han estado limitados en el pasado por el rendimiento puede alcanzarse total de las conexiones TCP ahora pueden usar completamente la red.
+- Establece el perfil de administración de energía del sistema operativo en **Sistema de alto rendimiento**. Ten en cuenta que esto no funcionará correctamente si el BIOS del sistema se ha establecido para deshabilitar el control de la administración de energía en el sistema operativo.
 
-#### <a name="deprecated-tcp-parameters"></a>Parámetros TCP desusados
+- Habilita Static Offloads, por ejemplo, UDP Checksums, TCP Checksums y Send Large Offload (LSO).
 
-La siguiente configuración del registro de Windows Server 2003 ya no es compatibles y se omite en versiones posteriores.
+- Habilita RSS si el tráfico se transmite en múltiples secuencias, por ejemplo, en la recepción de multidifusión de gran volumen.
+
+-   Deshabilita la opción **Moderación de interrupciones** para los controladores de tarjetas de red que requieran la menor latencia posible. Recuerda que esto puede usar más tiempo de CPU y que supone una contrapartida.
+
+- Administra las interrupciones y DPC de los adaptadores de red en un procesador de núcleo que comparta la memoria caché de la CPU con el núcleo usado por el programa (subproceso de usuario) que está administrando el paquete. Para ello, se puede usar el ajuste de la afinidad de la CPU para dirigir un proceso a determinados procesadores lógicos junto con la configuración de RSS. Cuando se usa el mismo núcleo para la interrupción, el DPC y el subproceso del modo de usuario, el rendimiento es menor porque la carga aumenta debido a que el ISR, DPC y el subproceso luchan por usar el núcleo.
+
+##  <a name="bkmk_smi"></a> Interrupciones de administración del sistema
+
+Muchos sistemas de hardware usan interrupciones de administración del sistema \(SMI\) para una variedad de funciones de mantenimiento, incluidos informes de corrección código de error \(ECC\) errores de memoria, compatibilidad USB heredado, ventilador control y BIOS controlan la administración de energía. 
+
+La SMI es la interrupción de mayor prioridad en el sistema y pone la CPU en un modo de administración, que impide cualquier otra actividad mientras ejecuta una rutina de servicio de interrupción, normalmente contenida en el BIOS.
+
+Lamentablemente, esto puede producir picos de latencia de 100 microsegundos o más. 
+
+Si necesitas lograr la menor latencia, debes solicitar a tu proveedor de hardware una versión del BIOS que reduzca los SMI al mínimo posible. Estas suelen denominarse "BIOS de baja latencia" o "BIOS sin SMI". En algunos casos, en una plataforma de hardware no se puede eliminar la actividad de SMI por completo porque se usa para controlar funciones esenciales (por ejemplo, los ventiladores de refrigeración).
+
+>[!NOTE]
+>El sistema operativo puede no ejercer ningún control sobre las SMI porque el procesador lógico se está ejecutando en un modo de mantenimiento especial que impide la intervención del sistema operativo.
+
+##  <a name="bkmk_tcp"></a> TCP de optimización del rendimiento
+
+ Puedes ajustar el rendimiento de TCP usando los siguientes elementos.
+
+###  <a name="bkmk_tcp_params"></a>  Optimización automática de la ventana de recepción de TCP
+
+Antes de Windows Server 2008, la pila de red utiliza una ventana de recepción de tamaño fijo (65.535 bytes) que limita el rendimiento general posible para las conexiones. Uno de los cambios más significativos de la pila TCP es el ajuste automático de la ventana de recepción de TCP. 
+
+Puede calcular el rendimiento total de una sola conexión cuando se usa un tamaño fijo como ventana de recepción de TCP:
+
+**Capacidad de proceso total en bytes = TCP tamaño de la ventana de recepción de bytes \* (1 / latencia de conexión en segundos)**
+
+Por ejemplo, la capacidad de proceso total sólo está 51 Mbps en una conexión con 10 ms de latencia \(un valor razonable para una infraestructura de red corporativa grande\). 
+
+Sin embargo, con el ajuste automático, la ventana del lado de recepción es ajustable y puede crecer para atender las demandas del remitente. Es posible que una conexión lograr una velocidad de línea completa de una conexión de 1 Gbps. Los escenarios de uso de red que podrían haber estado limitados en el pasado por la capacidad de proceso total posible de las conexiones TCP, ahora pueden usar completamente la red.
+
+#### <a name="deprecated-tcp-parameters"></a>Parámetros TCP en desuso
+
+La siguiente configuración del registro de Windows Server 2003 ya no se admiten y se omite en versiones posteriores.
 
 Todas estas configuraciones tenían la ubicación del registro siguiente:
 
@@ -138,12 +139,12 @@ Todas estas configuraciones tenían la ubicación del registro siguiente:
 
 
 
-###  <a name="bkmk_wfp"></a>Plataforma de filtrado de Windows
+###  <a name="bkmk_wfp"></a> Plataforma de filtrado de Windows
 
-La plataforma de filtrado de Windows (WFP) que se introdujo en Windows Vista y Windows Server 2008 proporciona API a los proveedores no son de Microsoft de software independientes (ISV) para crear filtros de procesamiento de paquetes. Algunos ejemplos incluyen firewall y antivirus.
+La plataforma de filtrado de Windows (WFP) que se introdujo en Windows Vista y Windows Server 2008 proporciona las API a los proveedores de fabricantes independientes de software (ISV) para crear filtros de procesamiento de paquetes. Algunos ejemplos son firewall y software antivirus.
 
 >[!NOTE]
->Un filtro WFP mal escrito puede reducir considerablemente el rendimiento de red del servidor. Para obtener más información, consulta [procesamiento de paquetes de migración de controladores y aplicaciones WFP](https://msdn.microsoft.com/windows/hardware/gg463267.aspx) en el centro de desarrollo de Windows.
+>Un filtro de WFP escrito de forma deficiente puede reducir significativamente el rendimiento de red de un servidor. Para obtener más información, consulte [procesamiento de migración de paquetes de controladores y aplicaciones WFP](https://msdn.microsoft.com/windows/hardware/gg463267.aspx) en el centro de desarrollo de Windows.
 
 
-Para obtener vínculos a todos los temas de esta guía, consulte [optimización del rendimiento de red subsistema](net-sub-performance-top.md).
+Para obtener vínculos a todos los temas de esta guía, consulte [ajuste de rendimiento del subsistema de red](net-sub-performance-top.md).

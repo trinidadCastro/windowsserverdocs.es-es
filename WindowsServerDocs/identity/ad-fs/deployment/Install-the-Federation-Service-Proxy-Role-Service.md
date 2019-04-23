@@ -1,7 +1,7 @@
 ---
 ms.assetid: c50ecc6a-9504-4b4a-816f-e762dcf3a95e
-title: "Instalar el servicio de rol de Proxy de federación servicio"
-description: 
+title: Instalar el servicio de rol Proxy de Servicio de federación
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -9,54 +9,58 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: aea1ef335604aa18f0b1a1c22ef13f6fee1601b3
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: ed66800aa6bbfdf85816a992ee8eb39799efebb6
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59865236"
 ---
-# <a name="install-the-federation-service-proxy-role-service"></a>Instalar el servicio de rol de Proxy de federación servicio
+# <a name="install-the-federation-service-proxy-role-service"></a>Instalar el servicio de rol Proxy de Servicio de federación
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Después de configurar un equipo con las aplicaciones de requisitos previos y los certificados, estás listo para instalar el servicio de Proxy de servicios de federación rol de servicios de federación de Active Directory \(AD FS\). Puedes usar el siguiente procedimiento para instalar el servicio de rol de Proxy de federación de servicio. Cuando se instala el servicio de rol de Proxy de federación de servicio en un equipo, dicho equipo se convierte en un proxy de federación de servidor.  
+Después de configurar un equipo con las aplicaciones de requisitos previos y los certificados, está listo para instalar el servicio de rol Proxy de servicio de federación de Active Directory Federation Services \(AD FS\). Puede usar el procedimiento siguiente para instalar el servicio de rol Proxy de servicio de federación. Cuando se instala el servicio de rol Proxy de servicio de federación en un equipo, ese equipo se convierte en un servidor proxy de federación.  
   
-Pertenencia a **administradores**, o equivalente, en el equipo local es lo mínimo necesario para completar este procedimiento.  Revisar detalles sobre el uso de las cuentas adecuadas y agrupar pertenencias a [Local y dominio predeterminada grupos](https://go.microsoft.com/fwlink/?LinkId=83477).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-### <a name="to-install-the-federation-service-proxy-role-service"></a>Para instalar el servicio de rol de Proxy de federación de servicio  
+### <a name="to-install-the-federation-service-proxy-role-service-using-the-server-manager"></a>Para instalar el servicio de rol Proxy de servicio de federación con el administrador del servidor
   
-1.  En la **inicio**, escriba**administrador del servidor**, y, a continuación, presione ENTRAR.  
+1.  En el **iniciar** , escriba**administrador del servidor**, y, a continuación, presione ENTRAR.  
   
-2.  Haz clic en **administrar**y, a continuación, haz clic en **agregar Roles y características** para iniciar el agregar Roles y características de asistente.  
+2.  Haga clic en **administrar**y, a continuación, haga clic en **agregar Roles y características** para iniciar el Asistente de las características y agregar Roles.  
   
-3.  En la **antes de comenzar** página, haz clic en **siguiente**.  
+3.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
   
-4.  En la **selecciona el tipo de instalación** página, haz clic en **instalación basado en Feature\ o Role\**y haz clic en **siguiente**.  
+4.  En el **Seleccionar tipo de instalación** página, haga clic en **rol\-características o en\-instalación basada en**y haga clic en **siguiente**.  
   
-5.  En la **servidor de destino selecciona** página, haz clic en **seleccionar un servidor desde el grupo de servidores**, comprueba que el equipo de destino se resalta y, a continuación, haz clic en **siguiente**.  
+5.  En el **Seleccionar servidor de destino** página, haga clic en **seleccionar un servidor del grupo de servidores**, compruebe que el equipo de destino está resaltado y, a continuación, haga clic en **siguiente**.  
   
-6.  En la **seleccionar roles de servidor** página, haz clic en **los servicios de federación de Active Directory**y, a continuación, haz clic en siguiente.  
+6.  En el **seleccionar roles de servidor** página, haga clic en **acceso remoto**y, a continuación, haga clic en siguiente.  
   
     > [!NOTE]  
-    > Si se le pide instalar características adicionales de .NET Framework o servicio de activación de procesos de Windows, haz clic en **agregar características** para su instalación.  
+    > Si se le solicite instalar características adicionales de .NET Framework o Windows Process Activation Service, haga clic en **agregar características** para instalarlos.  
   
-7.  En la **Select features** página, comprueba que se establecen las características y, a continuación, haz clic en **siguiente**.  
+7. En el **seleccionar servicios de rol** , seleccione el **Proxy de servicio de federación** casilla de verificación y, a continuación, haga clic en **siguiente**.  
+
+8. Después de comprobar la información de la página **Confirmar selecciones de instalación** , selecciona la casilla **Reiniciar automáticamente el servidor de destino en caso necesario** y haz clic en **Instalar**.  
   
-8.  En la **servicios de federación de Active Directory \(AD FS\)** página, haz clic en **siguiente**.  
-  
-9. En la **seleccione los servicios de rol**, seleccione la **Proxy de servicios de federación** y, a continuación, haz clic en **siguiente**.  
-  
-10. En la **rol de servidor Web \(IIS\)** página, haz clic en **siguiente**.  
-  
-11. En la **seleccione los servicios de rol** página, haz clic en **siguiente**.  
-  
-12. Después de comprobar la información en la **Confirmar selecciones de instalación** página, seleccione la **reiniciar automáticamente el servidor de destino en caso necesario** y, a continuación, haz clic en **instalar**.  
-  
-13. En la **progreso de la instalación** página, comprueba que todo lo que ha instalado correctamente y, a continuación, haz clic en **cerrar**.  
+13. En la página **Progreso de la instalación** , comprueba que todo se ha instalado correctamente y haz clic en **Cerrar**.  
+
+### <a name="to-install-the-federation-service-proxy-role-service-using-powershell"></a>Para instalar el servicio de rol Proxy de servicio de federación mediante PowerShell
+
+1. Abra Windows PowerShell (ejecutar como administrador)
+
+2. Escriba el siguiente comando y presione **ENTRAR**:
+
+        Install-WindowsFeature Web-Application-Proxy -IncludeManagementTools
+
+
+
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: Cómo configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Lista de comprobación: Configurar un servidor Proxy Server federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de comprobación: Configurar un servidor Proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

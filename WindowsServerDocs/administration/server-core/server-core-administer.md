@@ -1,6 +1,6 @@
 ---
 title: Administrar Server Core
-description: Aprende a administrar una instalación Server Core de Windows Server
+description: Obtenga información sobre cómo administrar una instalación Server Core de Windows Server
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
@@ -9,198 +9,198 @@ ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
 ms.openlocfilehash: 39fbb92645d39a46613f2142d0258c78a6ba425b
-ms.sourcegitcommit: 4df1bc940338219316627ad03f0525462a05a606
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "8978002"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59842666"
 ---
-# Administrar un servidor Server Core
+# <a name="administer-a-server-core-server"></a>Administrar un servidor Server Core
 
 >Se aplica a: Windows Server (canal semianual) y Windows Server 2016
 
-Dado que Server Core no tiene una interfaz de usuario, debes usar los cmdlets de Windows PowerShell, las herramientas de línea de comandos o herramientas remotas para realizar tareas de administración básicas. Las siguientes secciones proporcionan los comandos que se usa para realizar tareas básicas y los cmdlets de PowerShell. También puedes usar [Windows Admin Center](../../manage/windows-admin-center/overview.md), un portal de administración unificada actualmente en la versión preliminar pública, para administrar la instalación. 
+Puesto que Server Core no tiene una interfaz de usuario, deberá usar cmdlets de Windows PowerShell, las herramientas de línea de comandos o herramientas remotas para realizar tareas de administración básicas. Las siguientes secciones describen los cmdlets de PowerShell y comandos que se usan para realizar tareas básicas. También puede usar [Windows Admin Center](../../manage/windows-admin-center/overview.md), un portal de administración unificada actualmente en versión preliminar pública, para administrar la instalación. 
 
-## Tareas administrativas mediante los cmdlets de PowerShell
-Usar la siguiente información para realizar tareas administrativas básicas con los cmdlets de Windows PowerShell.
+## <a name="administrative-tasks-using-powershell-cmdlets"></a>Tareas administrativas mediante los cmdlets de PowerShell
+Utilice la siguiente información para realizar tareas administrativas básicas con cmdlets de Windows PowerShell.
 
-### Establecer una dirección IP estática
-Cuando se instala un servidor de Server Core, de manera predeterminada tiene dirección A DHCP. Si necesitas una dirección IP estática, puedes establecer mediante los siguientes pasos.
+### <a name="set-a-static-ip-address"></a>Establecer una dirección IP estática
+Cuando se instala un servidor server Core, de forma predeterminada tiene dirección A DHCP. Si necesita una dirección IP estática, puede establecer mediante los pasos siguientes.
 
-Para ver la configuración de red actual, usa **Get-NetIPConfiguration**.
+Para ver la configuración de red actual, use **Get NetIPConfiguration**.
 
-Para ver las direcciones IP que ya usas, usar **Get-NetIPAddress**.
+Para ver las direcciones IP que ya está usando, use **Get-NetIPAddress**.
 
-Para establecer una dirección IP estática, hacer lo siguiente: 
+Para establecer una dirección IP estática, realice lo siguiente: 
 
-1. Ejecuta **Get-NetIPInterface**. 
-2. Ten en cuenta el número de la columna **IfIndex** para la interfaz IP o la cadena de **InterfaceDescription** . Si tienes más de un adaptador de red, ten en cuenta el número o la cadena que corresponde a la interfaz que quiere establecer la dirección IP estática.
-3. Ejecuta el siguiente cmdlet para establecer la dirección IP estática:
+1. Ejecute **Get-NetIPInterface**. 
+2. Tenga en cuenta el número en el **IfIndex** columna para la interfaz IP o el **InterfaceDescription** cadena. Si tiene más de un adaptador de red, tenga en cuenta el número o cadena correspondiente a la interfaz que desea establecer la dirección IP estática.
+3. Ejecute el siguiente cmdlet para establecer la dirección IP estática:
 
    ```powershell
    New-NetIPaddress -InterfaceIndex 12 -IPAddress 192.0.2.2 -PrefixLength 24 -DefaultGateway 192.0.2.1
    ```
 
-   donde:
+   Donde:
    - **InterfaceIndex** es el valor de **IfIndex** del paso 2. (En nuestro ejemplo, 12)
-   - **Dirección IP** es la dirección IP estática que deseas establecer. (En nuestro ejemplo, 191.0.2.2)
-   - **PrefixLength** es la longitud del prefijo (otra forma de la máscara de subred) para la dirección IP que establecer. (En nuestro ejemplo, 24)
-   - **DefaultGateway** es la dirección IP a la puerta de enlace predeterminada. (En nuestro ejemplo, 192.0.2.1)
-4. Para establecer la dirección del servidor del cliente DNS, ejecuta el siguiente cmdlet: 
+   - **IPAddress** es la dirección IP estática que desea establecer. (En nuestro ejemplo, 191.0.2.2)
+   - **PrefixLength** es la longitud del prefijo (otra forma de máscara de subred) para la dirección IP que está configurando. (Para nuestro ejemplo, 24)
+   - **DefaultGateway** es la dirección IP para la puerta de enlace predeterminada. (Para nuestro ejemplo, 192.0.2.1)
+4. Para configurar al cliente DNS de dirección del servidor, ejecute el siguiente cmdlet: 
 
    ```powershell
    Set-DNSClientServerAddress –InterfaceIndex 12 -ServerAddresses 192.0.2.4
    ```
    
-   donde:
+   Donde:
    - **InterfaceIndex** es el valor de IfIndex del paso 2.
    - **ServerAddresses** es la dirección IP del servidor DNS.
-5. Para agregar varios servidores DNS, ejecuta el siguiente cmdlet: 
+5. Para agregar varios servidores DNS, ejecute el siguiente cmdlet: 
 
    ```powershell
    Set-DNSClientServerAddress –InterfaceIndex 12 -ServerAddresses 192.0.2.4,192.0.2.5
    ```
 
-   donde, en este ejemplo, **192.0.2.4** y **192.0.2.5** son ambas direcciones IP de los servidores DNS.
+   WHERE, en este ejemplo, **tanto 192.0.2.4** y **como 192.0.2.5** son direcciones IP de servidores DNS.
 
-Si necesitas cambiar a DHCP, ejecutar **conjunto DnsClientServerAddress: InterfaceIndex 12: ResetServerAddresses**.
+Si tiene que cambiar para usar DHCP, ejecute **Set-DnsClientServerAddress – InterfaceIndex 12: ResetServerAddresses**.
 
-### Unirse a un dominio
-Usa los siguientes cmdlets para unir un equipo a un dominio.
+### <a name="join-a-domain"></a>Unirse a un dominio
+Use los siguientes cmdlets para unir un equipo a un dominio.
 
-1. Ejecutar **Agregar equipo**. Se te pedirá las credenciales unir el dominio y el nombre de dominio.
-2. Si necesitas agregar una cuenta de usuario de dominio al grupo de administradores locales, ejecuta el siguiente comando en un símbolo del sistema (no en la ventana de PowerShell):
+1. Ejecute **Add-Computer**. Se le pedirá tanto las credenciales para unirse al dominio y el nombre de dominio.
+2. Si tiene que agregar una cuenta de usuario de dominio al grupo de administradores local, ejecute el siguiente comando en un símbolo del sistema (no en la ventana de PowerShell):
 
    ```
    net localgroup administrators /add <DomainName>\<UserName>
    ```
-3. Reinicia el equipo. Puedes hacerlo mediante la ejecución de **Restart-Computer**.
+3. Reinicie el equipo. Puede hacerlo mediante la ejecución de **Restart-Computer**.
 
-### Cambiar el nombre del servidor
-Usa los siguientes pasos para cambiar el nombre del servidor.
+### <a name="rename-the-server"></a>Cambiar el nombre del servidor
+Siga estos pasos para cambiar el nombre del servidor.
 
-1. Determine el nombre actual del servidor con el comando **ipconfig** o **nombre de host** .
-2. Ejecutar **cambiar el nombre de equipo - ComputerName \<new_name\ >**.
-3. Reinicia el equipo.
+1. Determine el nombre actual del servidor con el **hostname** o **ipconfig** comando.
+2. Ejecute **Rename-Computer - ComputerName \<new_name\>**.
+3. Reinicie el equipo.
 
-### Activación del servidor
+### <a name="activate-the-server"></a>Activar el servidor
 
-Ejecutar **slmgr.vbs – ipk\<productkey\ >**. A continuación, ejecute **slmgr.vbs – /ato**. Si la activación se realiza correctamente, no obtendrá un mensaje.
+Ejecute **slmgr.vbs – ipk\<productkey\>**. A continuación, ejecute **slmgr.vbs – ato**. Si la activación se realiza correctamente, no obtendrá un mensaje.
 
 > [!NOTE]
-> También se puede activar el servidor por teléfono, mediante un [servidor de servicio de administración de claves (KMS)](../../get-started/server-2016-activation.md), o de forma remota. Para activar de forma remota, ejecute el siguiente cmdlet desde un equipo remoto: 
+> También puede activar el servidor por teléfono, mediante un [servidor del servicio de administración de claves (KMS)](../../get-started/server-2016-activation.md), o de forma remota. Para activar de forma remota, ejecute el siguiente cmdlet desde un equipo remoto: 
 
 >```powershell
 >**cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato**
 >```
  
-### Configurar el Firewall de Windows
+### <a name="configure-windows-firewall"></a>Configurar el Firewall de Windows
 
-Firewall de Windows puede configurar localmente en el equipo de Server Core con scripts y los cmdlets de Windows PowerShell. Consulta [NetSecurity](/powershell/module/netsecurity/?view=win10-ps) para los cmdlets que puedes usar para configurar el Firewall de Windows.
+Puede configurar el Firewall de Windows de forma local en el equipo Server Core mediante cmdlets y scripts de Windows PowerShell. Consulte [NetSecurity](/powershell/module/netsecurity/?view=win10-ps) para los cmdlets que puede usar para configurar el Firewall de Windows.
 
-### Habilitar la comunicación remota de Windows PowerShell
+### <a name="enable-windows-powershell-remoting"></a>Habilitar la comunicación remota de Windows PowerShell
 
-Puedes habilitar la comunicación remota de PowerShell de Windows, en la que se escriben los comandos de Windows PowerShell en un equipo que se ejecuta en otro equipo. Habilitar la comunicación remota de Windows PowerShell con **Enable-PSRemoting**.
+Puede habilitar la comunicación remota de Windows PowerShell, con la cual los comandos de Windows PowerShell escritos en un equipo se ejecutan en otro. Habilitar la comunicación remota de Windows PowerShell con **Enable-PSRemoting**.
 
-Para obtener más información, consulta [Sobre remoto preguntas más frecuentes](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1)
+Para obtener más información, consulte [sobre remoto preguntas más frecuentes](/powershell/module/microsoft.powershell.core/about/about_remote_faq?view=powershell-5.1)
 </br>
 
-## Tareas administrativas desde la línea de comandos
-Usa la siguiente información de referencia para realizar tareas administrativas desde la línea de comandos.
+## <a name="administrative-tasks-from-the-command-line"></a>Tareas administrativas desde la línea de comandos
+Utilice la siguiente información de referencia para realizar tareas administrativas desde la línea de comandos.
 
-### Instalación y configuración
+### <a name="configuration-and-installation"></a>Configuración e instalación
 |Tarea | Comando |
 |-----|-------|
-|Establecer la contraseña administrativa local| **Administrador de usuarios netos** \* |
-|Unir un equipo a un dominio| **netdom unión % computername %** **/domain:\<domain\ > /userd:\<domain\\username\ >/passwordd:**\* <br> Reinicia el equipo.|
-|Confirma que se ha cambiado el dominio| **set** |
-|Quitar un equipo de un dominio|**quitar de Netdom: \ < computername\ >**| 
-|Agregar un usuario al grupo Administradores local|**NET los administradores de grupo local / agregar \ < domain\\username\ >** |
-|Quitar un usuario del grupo de administradores locales|**NET grupo local Administradores /delete \ < domain\\username\ >** |
-|Agregar un usuario en el equipo local|**usuario neto \ < domain\username\ > * / Agregar** |
-|Agregar un grupo en el equipo local|**grupo local neto \ < grupo name\ > / Agregar**|
-|Cambiar el nombre de un equipo unido al dominio|**netdom renamecomputer % computername % /NewName:\<new equipo name\ > /userd:\<domain\\username\ >/passwordd:** * |
-|Confirma que el nuevo nombre de equipo|**set**| 
-|Cambiar el nombre de un equipo en un grupo de trabajo|**netdom renamecomputer \ / NewName < currentcomputername\ >: \ < newcomputername\ >** <br>Reinicia el equipo.|
-|Deshabilitar la administración de archivos de paginación|**sistema de equipo WMIC donde name = "\ < computername\ >" establecer AutomaticManagedPagefile = False**| 
-|Configurar el archivo de paginación|**WMIC pagefileset donde name = "\ < ruta de acceso/filename\ >" establecer Tamaño_inicial = \ < initialsize\ >, MaximumSize = \ < maxsize\ >** <br>Donde *ruta de acceso y nombre de archivo* es la ruta de acceso y el nombre del archivo de paginación, *tamaño_inicial* es el tamaño inicial del archivo de paginación, en bytes, y *maxsize* es el tamaño máximo del archivo de paginación, en bytes.|
-|Cambiar a una dirección IP estática|**ipconfig/all** <br>Registra la información pertinente o redirigir a un archivo de texto (**ipconfig/all > ipconfig.txt**).<br>**interfaces de presentación de ipv4 de interfaz de Netsh**<br>Comprueba que hay una lista de interfaces.<br>**netsh interface ipv4 establecer el nombre de la dirección \ origen < Id. de la interfaz list\ > = dirección estática = \ < preferido IP mailto:\[Email address\ > puerta de enlace = \ < puerta de enlace mailto:\[Email address\ >**<br>Ejecutar **ipconfig/all** a vierfy que **No**está establecido DHCP habilitado.|
-|Establece una dirección estática de DNS.|**netsh interface ipv4 agregar servidorDNS nombre = \<name o el Id. de la card\ de interfaz de red > dirección = \<IP dirección de la server\ DNS principal > índice = 1 <br> **netsh interface ipv4 agregar servidorDNS name = \<name de secundario server\ DNS > dirección = \<IP dirección de la secundaria server\ DNS > índice = 2 ** <br> Repite según corresponda agregar servidores adicionales.<br>Ejecutar **ipconfig/all** para comprobar que las direcciones son correctas.|
-|Cambiar a una dirección IP de DHCP proporcionado por el de una dirección IP estática|**nombre de la dirección del conjunto de netsh interface ipv4 = \ origen < dirección IP de FAT32\ local > = DHCP** <br>Ejecutar **Ipconfig/all** para comprobar que DHCP habilitado está establecida en **Sí**.|
-|Escribe una clave de producto|**slmgr.vbs – ipk \ < clave\ del producto >**| 
-|Activación del servidor de forma local|**slmgr.vbs - /ato**| 
-|Activación del servidor de forma remota|**cscript slmgr.vbs – ipk \ < clave\ producto > \ < servidor name\ > \ < username\ > \ < password\ >** <br>**cscript slmgr.vbs - /ato \ < servername\ > \ < username\ > \ < password\ >** <br>Obtener el GUID del equipo mediante la ejecución de **cscript slmgr.vbs-hiciste** <br> Ejecutar **cscript slmgr.vbs - dli \<GUID\ >** <br>Comprueba que el estado de la licencia se establece en **con licencia (activado)**.
+|Establecer la contraseña administrativa local| **Administrador de red del usuario** \* |
+|Unir un equipo a un dominio| **Netdom join % computername %** **/Domain:\<dominio\> /userd:\<dominio\\username \> /passwordd:**\* <br> Reinicie el equipo.|
+|Confirmar que el dominio ha cambiado| **set** |
+|Quitar un equipo de un dominio|**Netdom remove \<computername\>**| 
+|Agregar un usuario al grupo Administradores local|**net localgroup Administrators / agregar \<dominio\\nombre de usuario\>** |
+|Quitar un usuario del grupo Administradores local|**net localgroup administradores /delete \<dominio\\nombre de usuario\>** |
+|Agregar un usuario al equipo local|**usuario neto \<dominio\nombre de usuario\> * / agregar** |
+|Agregar un grupo al equipo local|**net localgroup \<group name\> /add**|
+|Cambiar el nombre de un equipo unido a un dominio|**netdom renamecomputer % computername % /NewName:\<nuevo nombre de equipo\> /userd:\<dominio\\username \> /passwordd:** * |
+|Confirmar el nuevo nombre de un equipo|**set**| 
+|Cambiar el nombre de un equipo en un grupo de trabajo|**netdom renamecomputer \<nombreDeEquipoActual\> /newname:\<nombreDeEquipoNuevo\>** <br>Reinicie el equipo.|
+|Deshabilitar la administración de archivos de paginación|**WMIC computersystem donde nombre = "\<computername\>" establecer AutomaticManagedPagefile = False**| 
+|Configurar el archivo de paginación|**WMIC pagefileset donde nombre = "\<path/filename\>" establecer InitialSize =\<initialsize\>, MaximumSize =\<maxsize\>** <br>Donde *path/filename* es la ruta de acceso y nombre del archivo de paginación, *initialsize* es el tamaño inicial del archivo de paginación, en bytes, y *maxsize* es el tamaño máximo de la archivo de paginación, en bytes.|
+|Cambiar a una dirección IP estática|**ipconfig /all** <br>Registre la información pertinente o redirigirla a un archivo de texto (**ipconfig/all > ipconfig.txt**).<br>**netsh interfaz ipv4 show interfaces**<br>Compruebe que hay una lista de interfaces.<br>**nombre de la dirección del conjunto de netsh interface ipv4 \<Id. de la lista de interfaces\> origen = dirección estática =\<preferido de la dirección IP\> puerta de enlace =\<dirección de puerta de enlace\>**<br>Ejecute **ipconfig/all** a vierfy que DHCP habilitado se establece en **No**.|
+|Establecer una dirección DNS estática.|**netsh interface ipv4 Agregar nombre dnsserver =\<nombre o Id. de la tarjeta de interfaz de red\> dirección =\<dirección IP del servidor DNS principal\> índice = 1 <br>** agregar netsh interface ipv4 nombre de DNSServer =\<nombre del servidor DNS secundario\> dirección =\<dirección IP del servidor DNS secundario\> index = 2 ** <br> Repita según corresponda agregar servidores adicionales.<br>Ejecute **ipconfig/all** para comprobar que las direcciones son correctas.|
+|Cambiar una dirección IP estática por una dirección IP proporcionada por DHCP|**nombre de la dirección del conjunto de netsh interface ipv4 =\<dirección IP del sistema local\> origen = DHCP** <br>Ejecute **Ipconfig/all** para comprobar que DHCP habilitado se establece en **Sí**.|
+|Escribir una clave de producto|**slmgr.vbs – ipk \<clave de producto\>**| 
+|Activar el servidor de forma local|**slmgr.vbs -ato**| 
+|Activar el servidor de forma remota|**cscript slmgr.vbs – ipk \<clave de producto\>\<nombre del servidor\>\<username\>\<contraseña\>** <br>**cscript slmgr.vbs - ato \<servername\> \<username\> \<contraseña\>** <br>Obtener el GUID del equipo ejecutando **cscript slmgr.vbs-hizo** <br> Run **cscript slmgr.vbs -dli \<GUID\>** <br>Compruebe que el estado de la licencia está establecido en **con licencia (activado)**.
 
 
-### Las redes y el firewall
+### <a name="networking-and-firewall"></a>Funciones de red y firewall
 
 |Tarea|Comando| 
 |----|-------|
-|Configurar el servidor para usar un servidor proxy|**netsh Winhttp establece el proxy \ < servername\ >: \ < puerto number\ >** <br>**Nota:** Las instalaciones de Server Core no pueden acceder a Internet a través de un proxy que requiera una contraseña para permitir conexiones.|
-|Configurar el servidor para utilizar al servidor proxy para direcciones de Internet|**netsh winttp establece el proxy \ < servername\ >: \ < puerto number\ > lista de omisión = "\ < local\ >"**| 
+|Configure el servidor para usar un servidor proxy|**establecimiento de proxy de Netsh Winhttp \<servername\>:\<número de puerto\>** <br>**Nota:** Las instalaciones Server Core no pueden acceder a Internet a través de un proxy que requiere una contraseña para permitir las conexiones.|
+|Configure el servidor para omitir al proxy para direcciones de Internet|**establecimiento de proxy de Netsh winttp \<servername\>:\<número de puerto\> lista de omisión = "\<local\>"**| 
 |Mostrar o modificar la configuración de IPSEC|**netsh ipsec**| 
 |Mostrar o modificar la configuración de NAP|**netsh nap**| 
-|Mostrar o modificar IP con traducción de direcciones físico|**arp**| 
-|Mostrar o configurar la tabla de enrutamiento local|**ruta**| 
-|Ver o configurar el servidor DNS|**nslookup**| 
-|Mostrar las estadísticas de protocolos y las conexiones de red TCP/IP actuales|**netstat**| 
-|Mostrar las estadísticas de protocolos y las conexiones de TCP/IP actuales mediante NetBIOS a través de TCP/IP (NBT)|**nbtstat**| 
-|Mostrar saltos para las conexiones de red|**pathping**| 
+|Mostrar o modificar la dirección IP a la traducción de dirección física|**arp**| 
+|Mostrar o configurar la tabla de enrutamiento local|**route**| 
+|Ver o configurar la configuración del servidor DNS|**nslookup**| 
+|Mostrar las estadísticas de protocolo y las conexiones de red TCP/IP actuales|**netstat**| 
+|Mostrar las estadísticas de protocolo y conexiones TCP/IP actuales con NetBIOS sobre TCP/IP (NBT)|**nbtstat**| 
+|Mostrar saltos en conexiones de red|**pathping**| 
 |Saltos de seguimiento para las conexiones de red|**tracert**| 
-|Mostrar la configuración de enrutador de multidifusión|**mrinfo**| 
-|Habilitar la administración remota del servidor de seguridad|**netsh advfirewall firewall establece el grupo de reglas = "Administración remota del Firewall de Windows" nuevo enable = yes**| 
+|Mostrar la configuración del router multidifusión|**mrinfo**| 
+|Habilitar la administración remota del servidor de seguridad|**netsh advfirewall firewall establece grupo de reglas = "Administración remota de Windows Firewall" nuevo enable = yes**| 
  
 
-### Las actualizaciones, el informe de errores y comentarios
+### <a name="updates-error-reporting-and-feedback"></a>Las actualizaciones, informes de errores y comentarios
 
 |Tarea|Comando| 
 |----|-------|
-|Instalar una actualización|**Wusa \ < update\ > .msu /quiet**| 
-|Actualizaciones de la lista instalada|**systeminfo**| 
-|Quitar una actualización|**expande /f:\* \ < update\ > .msu c:\test** <br>Ve a c:\test\ y abre \ < update\ > .xml en un editor de texto.<br>Reemplazar **instalar** con **Quitar** y guarda el archivo.<br>**pkgmgr /n:\ < update\ > .xml**|
-|Configurar las actualizaciones automáticas|Para comprobar la configuración actual: ** cscript %systemroot%\system32\scregedit.wsf/au /v **<br>Para habilitar las actualizaciones automáticas: **cscript scregedit.wsf/au 4** <br>Para desactivar las actualizaciones automáticas: **cscript %systemroot%\system32\scregedit.wsf/au 1**| 
-|Habilitar los informes de error|Para comprobar la configuración actual: **/query serverWerOptin** <br>Para enviar automáticamente informes detallados: **serverWerOptin / detallada** <br>Para enviar automáticamente los informes de resumen: **serverWerOptin /summary** <br>Para deshabilitar informe de errores: **/ Disable serverWerOptin**|
-|Participar en el programa para la mejora de experiencia (del usuario CEIP) de cliente|Para comprobar la configuración actual: **/query serverCEIPOptin** <br>Para habilitar el CEIP: **/ Enable serverCEIPOptin** <br>Para deshabilitar el CEIP: **/ Disable serverCEIPOptin**|
+|Instalar una actualización|**wusa \<update\>.msu /quiet**| 
+|Mostrar las actualizaciones instaladas|**systeminfo**| 
+|Quitar una actualización|**expand /f:\* \<update\>.msu c:\test** <br>Vaya a c:\test\ y abra \<actualizar\>.xml en un editor de texto.<br>Reemplace **instalar** con **quitar** y guarde el archivo.<br>**pkgmgr /n:\<update\>.xml**|
+|Configurar actualizaciones automáticas|Para comprobar la configuración actual: ** cscript %systemroot%\system32\scregedit.wsf/au /v **<br>Para habilitar las actualizaciones automáticas: **scregedit.wsf cscript/au 4** <br>Para deshabilitar las actualizaciones automáticas: **%systemroot%\system32\scregedit.wsf cscript/au 1**| 
+|Habilitar los informes de errores|Para comprobar la configuración actual: **serverWerOptin /query** <br>Para enviar automáticamente informes detallados: **serverWerOptin / detallada** <br>Para enviar automáticamente informes de resumen:   **/Summary serverWerOptin** <br>Para deshabilitar informe de errores: **serverWerOptin /disable**|
+|Participar en el Programa para la mejora de la experiencia del usuario (CEIP)|Para comprobar la configuración actual: **serverCEIPOptin /query** <br>Para habilitar el CEIP: **serverCEIPOptin /enable** <br>Para deshabilitar el CEIP: **serverCEIPOptin /disable**|
 
-### Servicios, procesos y rendimiento
-
-|Tarea|Comando| 
-|----|-------|
-|Lista de los servicios de ejecución|**consulta de SC** o el **comando net start**| 
-|Iniciar un servicio|**sc iniciar \<service name\ >** o **del comando net start \<service name\ >**| 
-|Detener un servicio|**sc stop \<service name\ >** o **net stop \<service name\ >**| 
-|Recuperar una lista de aplicaciones y los procesos asociados en ejecución|**tasklist**||Detener forzar un proceso|Ejecutar **tasklist** recuperar el identificador de proceso (PID) y luego ejecutar **taskkill /PID \<process ID\ >**|
-|Administrador de tareas de inicio|**Taskmgr**| 
-|Crear y administrar los registros de rendimiento y la sesión de seguimiento de eventos|Para crear un contador, seguimiento, recopilación de datos de configuración o API: **logman cree** <br>A las propiedades del recopilador de datos de consulta: **logman query** <br>Para iniciar o detener la recopilación de datos: **logman start\ | detener** <br>Para eliminar un selector: **logman delete** <br> Para actualizar las propiedades de un selector: **logman update** <br>Para importar un conjunto de recopilador de datos desde un archivo XML o exportar a un archivo XML: **logman import\ | exportar**|
-
-### Registros de eventos
+### <a name="services-processes-and-performance"></a>Servicios, procesos y rendimiento
 
 |Tarea|Comando| 
 |----|-------|
-|Registros de eventos de lista|**el wevtutil**| 
-|Eventos de consulta en un registro especificado|**wevtutil qe /f:text \ < registrar name\ >**| 
-|Exportar un registro de eventos|**wevtutil epl \ < registrar name\ >**| 
-|Borrar un registro de eventos|**wevtutil cl \ < registrar name\ >**| 
+|Lista de los servicios en ejecución|**consulta de SC** o **net start**| 
+|Iniciar un servicio|**inicio de SC \<nombre del servicio\>**  o **net start \<nombre del servicio\>**| 
+|Detener un servicio|**detención de SC \<nombre del servicio\>**  o **net stop \<nombre del servicio\>**| 
+|Recuperar una lista de las aplicaciones en ejecución y los procesos asociados|**tasklist**||Detener un proceso a la fuerza|Ejecute **tasklist** recuperar el identificador de proceso (PID) y luego ejecute **taskkill /PID \<Id. de proceso\>**|
+|Iniciar el Administrador de tareas|**taskmgr**| 
+|Crear y administrar registros de rendimiento y de sesión de seguimiento de eventos|Para crear un contador, seguimiento, recopilación de datos de configuración o API: **logman cree** <br>Al consultar las propiedades de recopilador de datos: **logman consulta** <br>Para iniciar o detener la recopilación de datos: **logman start\|detener** <br>Para eliminar un recopilador: **logman delete** <br> Para actualizar las propiedades de un recopilador: **logman update** <br>Para importar un conjunto de recopiladores de datos desde un archivo XML o exportarlo a un archivo XML: **logman import\|exportar**|
+
+### <a name="event-logs"></a>Registros de eventos
+
+|Tarea|Comando| 
+|----|-------|
+|Registros de eventos de lista|**wevtutil el**| 
+|Consultar eventos en un registro especificado|**wevtutil qe /f:text \<log name\>**| 
+|Exportar un registro de eventos|**wevtutil epl \<nombre del registro\>**| 
+|Borrar un registro de eventos|**wevtutil cl \<nombre del registro\>**| 
 
 
-### Sistema de archivos y de disco
+### <a name="disk-and-file-system"></a>Disco y sistema de archivos
 
 |Tarea|Comando|
 |----|-------|
-|Administrar las particiones de disco|Para obtener una lista completa de comandos, ejecutar **diskpart /?**|  
-|Administrar el software RAID|Para obtener una lista completa de comandos, ejecutar **diskraid /?**|  
-|Administrar los puntos de montaje|Para obtener una lista completa de comandos, ejecutar **mountvol /?**| 
-|Desfragmentar un volumen|Para obtener una lista completa de comandos, ejecutar **de desfragmentación /?**|  
-|Convertir un volumen al sistema de archivos NTFS|**convertir \ < volumen letter\ > NTFS**| 
-|Compacta un archivo|Para obtener una lista completa de comandos, ejecutar **compact /?**|  
-|Administrar archivos abiertos|Para obtener una lista completa de comandos, ejecutar **openfiles /?**|  
-|Administrar carpetas VSS|Para obtener una lista completa de comandos, ejecutar **vssadmin /?**| 
-|Administrar el sistema de archivos|Para obtener una lista completa de comandos, ejecutar **fsutil /?**||Comprobar la firma de un archivo|**¿Sigverif /?**| 
-|Tomar posesión de un archivo o carpeta|Para obtener una lista completa de comandos, ejecutar **icacls /?**| 
+|Administrar particiones de disco|¿Para obtener una lista completa de comandos, ejecute **diskpart /?**|  
+|Administrar RAID de software|¿Para obtener una lista completa de comandos, ejecute **diskraid /?**|  
+|Administrar puntos de montaje de volúmenes|¿Para obtener una lista completa de comandos, ejecute **mountvol /?**| 
+|Desfragmentar un volumen|¿Para obtener una lista completa de comandos, ejecute **defrag /?**|  
+|Convertir un volumen en un sistema de archivos NTFS|**convertir \<letra de volumen \> /FS: NTFS**| 
+|Compactar un archivo|¿Para obtener una lista completa de comandos, ejecute **compact /?**|  
+|Administrar archivos abiertos|¿Para obtener una lista completa de comandos, ejecute **openfiles /?**|  
+|Administrar carpetas VSS|¿Para obtener una lista completa de comandos, ejecute **vssadmin /?**| 
+|Administrar el sistema de archivos|¿Para obtener una lista completa de comandos, ejecute **fsutil /?**||Comprobar una firma de archivo|**sigverif /?**| 
+|Tomar posesión de un archivo o una carpeta|¿Para obtener una lista completa de comandos, ejecute **icacls /?**| 
  
-### Hardware
+### <a name="hardware"></a>Hardware
 
 |Tarea|Comando| 
 |----|-------|
-|Agregar un controlador para un dispositivo de hardware nuevo|Copia el controlador en una carpeta en %homedrive%\\\ < controlador folder\ >. Ejecutar **pnputil -i - un folder\ %homedrive%\\\<driver > \\\<driver\ > .inf**|
-|Quitar un controlador para un dispositivo de hardware|Para obtener una lista de controladores cargados, ejecutar **tipo de consulta sc = controlador**. A continuación, ejecute **sc eliminar \<service_name\ >**|
+|Agregar un controlador para un nuevo dispositivo de hardware|Copie el controlador en una carpeta en % homedrive %\\\<carpeta controlador\>. Ejecute **pnputil -i - a % homedrive %\\\<carpeta controlador\>\\\<controlador\>.inf**|
+|Quitar un controlador de un dispositivo de hardware|Para obtener una lista de los controladores cargados, ejecute **tipo de consulta de sc = driver**. A continuación, ejecute **sc delete \<service_name\>**|

@@ -1,6 +1,6 @@
 ---
-title: Guía básica de red para Windows Server
-description: Este tema proporciona una visión general de la guía básica de red, que permite a planear e implementar los componentes básicos necesarios para una red totalmente funcional y un nuevo dominio de Active Directory en un bosque nuevo con Windows Server 2016
+title: Orientación de red principal para Windows Server
+description: Este tema proporciona una visión general de la Guía de red principal, lo que permite a planear e implementar los componentes principales necesarios para una red plenamente funcional y un nuevo dominio de Active Directory en un nuevo bosque con Windows Server 2016
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -9,61 +9,62 @@ ms.date: ''
 ms.assetid: 9b3ef3eb-4246-4e0e-8bf1-53224ca5f2f9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 63e4cf8c5bf56ef5131e835163a5fcb5dfd98b55
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: a905fd0c11237edd3a408998f8f71aa25a054328
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847906"
 ---
-# <a name="core-network-guide-for-windows-server"></a>Guía básica de red para Windows Server
+# <a name="core-network-guidance-for-windows-server"></a>Orientación de red principal para Windows Server
 
 >Se aplica a: Windows Server, Windows Server 2016
 
-Este tema proporciona una visión general de la Guía de red principal para Windows Server&reg; de 2016 y contiene las siguientes secciones.  
+Este tema proporciona información general de la Guía de red principal para Windows Server&reg; 2016 y contiene las siguientes secciones.  
   
 -   [Introducción a la red de Windows Server Core](#bkmk_intro)  
   
--   [Guía básica de red para Windows Server](#bkmk_core)  
+-   [Guía de red principal para Windows Server](#bkmk_core)  
   
 ## <a name="bkmk_intro"></a>Introducción a la red de Windows Server Core
 
-Una red principal es una colección de hardware de red, dispositivos, y necesidades de software que proporciona los servicios fundamentales para la tecnología de la organización de la información (TI).
+Una red principal es una colección de hardware, dispositivos y software de red que proporciona los servicios fundamentales para satisfacer las necesidades de las tecnologías de la información (TI) de la organización.
 
-Una red de Windows Server core proporciona muchas ventajas, incluidas las siguientes acciones.
+Una red principal de Windows Server le ofrece muchas ventajas, entre las que se incluyen las siguientes.
 
-- Protocolos principales para la conectividad de red entre equipos y otros dispositivos compatibles con el protocolo o a Internet Protocol (TCP). TCP/IP es un conjunto de protocolos estándar para conectar equipos y crear redes. TCP/IP es un software de protocolo de red incluido con Microsoft&reg; Windows&reg; conjunto de protocolos de sistemas operativos que implementa y admite el TCP/IP.
+- Protocolos principales para la conexión de red entre equipos y otros dispositivos compatibles con Protocolo de control de transmisión/Protocolo de Internet (TCP/IP). TCP/IP es un conjunto de protocolos estándar pensado para conectar equipos y crear redes. TCP/IP es un software de protocolo de red que se valió Microsoft&reg; Windows&reg; conjunto de protocolos de los sistemas operativos que se implementa y es compatible con TCP/IP.
 
-- Protocolo de configuración de Host (DHCP) server automática direcciones IP dinámicas. Configuración manual de direcciones IP en todos los equipos de la red es lenta y menos flexible que proporcionar dinámicamente equipos y otros dispositivos con concesiones de direcciones IP de un servidor DHCP.
+- Direccionamiento IP automático de servidor de Protocolo de configuración dinámica de host (DHCP). La configuración manual de direcciones IP en todos los equipos de la red es una tarea que consume mucho tiempo y es menos flexible que la opción de proporcionar dinámicamente a equipos y otros dispositivos concesiones de direcciones IP desde un servidor DHCP.
 
-- Servicio de resolución de nombres de sistema de nombres de dominio (DNS). DNS permite a los usuarios, equipos, aplicaciones y servicios buscar las direcciones IP de equipos y dispositivos en la red mediante el nombre de dominio completo del equipo o dispositivo.
+- Servicio de resolución de nombres del Sistema de nombres de dominio (DNS). Con DNS, los usuarios, equipos, aplicaciones y servicios pueden usar el nombre de dominio completo de un equipo o un dispositivo para encontrar la dirección IP de dicho equipo o dispositivo.
 
-- Un bosque, que es uno o varios dominios de Active Directory que comparten la misma clase definiciones y atributos (esquema), información del sitio y de replicación (configuración) y capacidades de búsqueda para todo el bosque (catálogo global).
+- Un bosque, que es uno o más dominios de Active Directory que comparten las mismas definiciones de clase y atributo (esquema), información de sitio y replicación (configuración) y capacidades de búsqueda para todo el bosque (catálogo global).
 
-- Crea un dominio raíz del bosque, que es el primer dominio en un bosque nuevo. Los grupos Administradores de empresa y administradores de esquema, que son grupos administrativos de todo el bosque, se encuentran en el dominio raíz. Además, un dominio raíz del bosque, al igual que con otros dominios, es una colección de equipo, los usuarios y los objetos de grupo que están definidos por el Administrador de servicios de dominio de Active Directory (AD DS). Estos objetos comparten un directivas de seguridad y la base de datos de directorio comunes. También pueden compartir relaciones de seguridad con otros dominios si agregar dominios a medida que crece la organización. El servicio de directorio también almacena datos del directorio y permite que los equipos autorizados, aplicaciones y los usuarios acceder a los datos.
+- Un dominio raíz del bosque, que es el primer dominio creado en un nuevo bosque. Los grupos Administradores de empresas y Administradores de esquema, que son grupos administrativos para todo el bosque, se encuentran en el dominio raíz del bosque. Además, un dominio raíz del bosque, como los demás dominios, es una colección de objetos de equipo, usuario y grupo definidos por el administrador en Servicios de dominio de Active Directory (AD DS). Estos objetos comparten una base de datos de directorios común y directivas de seguridad. También comparten relaciones de seguridad con otros dominios, si se agregan dominios a medida que la organización crece. El servicio de directorio también almacena datos de directorio y permite que los equipos, aplicaciones y usuarios autorizados tengan acceso a los datos.
 
-- Un usuario y el equipo cuenta base de datos. El servicio de directorio proporciona una base de datos de cuentas de usuario centralizadas que te permite crear cuentas de usuario y del equipo para usuarios y equipos que están autorizados a conectarse a la red y la red de acceso a recursos, como aplicaciones, bases de datos, archivos compartidos y carpetas, impresoras y.
+- Una base de datos de cuentas de usuario y equipo. El servicio de directorio proporciona una base de datos de cuentas de usuario centralizada que le permite crear cuentas de usuario y equipo para las personas y equipos que están autorizados para conectarse a la red y tener acceso a recursos de red, como aplicaciones, bases de datos, carpetas y archivos compartidos e impresoras.
 
-Una red principal también te permite ampliar la red que la organización crece y cambios en los requisitos de TI. Por ejemplo, con una red principal puede agregar dominios, subredes IP, servicios de acceso remoto, servicios inalámbricos y otras características y los roles de servidor proporcionados por Windows Server 2016.
+Una red principal también le permite escalar la red a medida que crece la organización y cambian los requisitos de TI. Por ejemplo, con una red principal puede agregar dominios, subredes IP, servicios de acceso remoto, servicios inalámbricos y otras características y roles de servidor proporcionados por Windows Server 2016.
 
-## <a name="bkmk_core"></a>Guía básica de red para Windows Server
+## <a name="bkmk_core"></a>Guía de red principal para Windows Server
 
-La Guía de red de Windows Server 2016 Core proporciona instrucciones sobre cómo planear e implementar los componentes básicos necesarios para una red totalmente funcional y un nuevo Active Directory&reg; dominio en un bosque nuevo. Con esta guía, puedes implementar los equipos configurados con los siguientes componentes de servidor de Windows:
+La Guía de red de Windows Server 2016 Core proporciona instrucciones sobre cómo planear e implementar los componentes principales necesarios para una red plenamente funcional y un nuevo Active Directory&reg; dominio en un bosque nuevo. Por medio de esta guía, podrá implementar equipos configurados con los siguientes componentes de servidor de Windows:
 
-- El rol de servidor de servicios de dominio de Active Directory (AD DS)
+- El rol de servidor Active Directory Domain Services (AD DS)
 
-- El rol de servidor de sistema de nombres de dominio (DNS)
+- El rol de servidor Sistema de nombres de dominio (DNS)
 
-- El rol de servidor de protocolo de configuración dinámica de Host (DHCP)
+- El rol de servidor Protocolo de configuración dinámica de host (DHCP)
 
-- El servicio de rol de servidor de directivas de redes (NPS) del rol de servidor de servicios de acceso y directivas de redes
+- El servicio de rol Servidor de directivas de redes (NPS) del rol de servidor Servicios de acceso y directivas de redes
 
-- El rol de servidor Web Server (IIS)
+- Rol de servidor Servidor web (IIS)
 
-- Transmisión Control protocolo/protocolo de Internet versión 4 (TCP/IP) conexiones en servidores individuales
+- Conexiones de Protocolo de control de transmisión/Protocolo de Internet (TCP/IP) versión 4 en servidores individuales.
 
 Esta guía está disponible en la siguiente ubicación.
 
-- La [principales de la Guía de red](../core-network-guide/Core-Network-Guide.md) en la biblioteca técnica de Windows Server 2016.
+- El [Guía de red principal](../core-network-guide/Core-Network-Guide.md) en la biblioteca técnica de Windows Server 2016.
   
 
 
