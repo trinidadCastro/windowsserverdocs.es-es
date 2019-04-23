@@ -1,6 +1,6 @@
 ---
-title: "Migrar el servidor de AD FS federación 2.0"
-description: "Proporciona información sobre cómo migrar un servidor de AD FS a Windows Server 2012 R2."
+title: Migrar el servidor de federación 2.0 de AD FS
+description: Proporciona información sobre cómo migrar un servidor de AD FS a Windows Server 2012 R2.
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,30 +9,31 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.openlocfilehash: 0a3e8e444f715fe2ae0f0ccd858d90e8664be00c
-ms.sourcegitcommit: 03ce78a1624dbd7f4e6abf2ec1ef185b55de29a1
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59877776"
 ---
-# <a name="verify-the-ad-fs-20-migration-to-windows-server-2012-r2"></a>Comprueba la AD FS 2.0 migración a Windows Server 2012 R2
+# <a name="verify-the-ad-fs-20-migration-to-windows-server-2012-r2"></a>Compruebe el AD FS 2.0 migración a Windows Server 2012 R2
 
-Una vez que haya finalizado la migración de servidor mismo del conjunto de servicios de federación de Active Directory (AD FS) para Windows Server 2012 R2, puedes usar el siguiente procedimiento para comprobar que los servidores de federación de la granja operativos; es decir, que cualquier cliente en la misma red puede llegar a los servidores de federtation.  
+Cuando haya completado la migración del mismo servidor de la granja de servidores de servicio de federación de Active Directory (AD FS) a Windows Server 2012 R2, puede usar el procedimiento siguiente para comprobar que los servidores de federación en la granja de servidores están operativos; es decir, que cualquier cliente en la misma red puede llegar a los servidores federtation.  
   
-Pertenencia a **usuarios**, **operadores de copia de seguridad**, **usuarios avanzados**, **administradores** o equivalente, en el equipo local es lo mínimo necesario para completar este procedimiento.
+Para completar este procedimiento, se requiere como mínimo la pertenencia a **Usuarios**, **Operadores de copia de seguridad**, **Usuarios avanzados**, **Administradores** o equivalente.
   
-### <a name="to-verify-that-a-federation-server-is-operational"></a>Para comprobar que un servidor de federación está operativo  
+### <a name="to-verify-that-a-federation-server-is-operational"></a>Para comprobar que un servidor de federación sea operativo  
   
-1.  Abre una ventana del explorador y en la barra de direcciones, escribe el nombre de los servidores de federación y anexarlo con `federationmetadata/2007-06/federationmetadata.xml` para examinar el extremo de metadatos de servicio de federación. Por ejemplo, `https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml` .  
+1.  Abra una ventana del explorador y en la barra de direcciones, escriba el nombre de los servidores de federación y, a continuación, anexe `federationmetadata/2007-06/federationmetadata.xml` para ir al extremo de metadatos del servicio de federación. Por ejemplo, `https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml` .  
   
-Si puedes ver los metadatos de servidor de federación sin SSL errores ni advertencias en la ventana del explorador, el servidor de federación está operativo.  
+Si en la ventana del explorador puede ver los metadatos del servidor de federación sin errores ni advertencias de SSL, el servidor de federación es operativo.  
   
-2.  También puedes examinar a la página de inicio de sesión de AD FS (anexa tu nombre de servicio de federación con `adfs/ls/idpinitiatedsignon.htm`, por ejemplo, `https://fs.contoso.com/adfs/ls/idpinitiatedsignon.htm`).  Aparecerá la AD FS sesión página donde iniciar sesión con credenciales de administrador de dominio.  
+2.  También puede ir a la página de inicio de sesión de AD FS (nombre de su servicio de federación con `adfs/ls/idpinitiatedsignon.htm` anexado, por ejemplo, `https://fs.contoso.com/adfs/ls/idpinitiatedsignon.htm`).  Esto muestra la página de inicio de sesión de AD FS donde puede iniciar sesión con credenciales de administrador del dominio.  
   
 > [!IMPORTANT]
->  Asegúrate de que configurar la configuración del explorador para que confíe en el rol de servidor de federación agregando tu nombre de servicio de federación (por ejemplo, `https://fs.contoso.com`) a la zona de intranet local del explorador.  
+>  Asegúrese de configurar las opciones del explorador para que confíe en el rol del servidor de federación. Para ello, agregue el nombre del servicio de federación (por ejemplo, `https://fs.contoso.com`) a la zona de intranet local del explorador.  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Migrar los servicios de rol de servicios de federación de Active Directory para Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
- [Preparación para migrar el servidor de federación de AD FS](prepare-migrate-ad-fs-server-r2.md)  
+ [Migrar servicios de rol de servicios de federación de Active Directory a Windows Server 2012 R2](migrate-ad-fs-service-role-to-windows-server-r2.md)   
+ [Preparar la migración del servidor de federación de AD FS](prepare-migrate-ad-fs-server-r2.md)  
  [Migración del servidor de federación de AD FS](migrate-ad-fs-fed-server-r2.md)   
- [Migrar al Proxy de servidor de federación de AD FS](migrate-fed-server-proxy-r2.md)   
+ [Migración del servidor Proxy de federación de AD FS](migrate-fed-server-proxy-r2.md)   

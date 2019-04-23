@@ -1,6 +1,6 @@
 ---
-title: "Editar propiedades de cuota automática"
-description: "En este artículo se describe cómo editar propiedades de cuota automática"
+title: Editar propiedades de cuota automática
+description: En este artículo se describe cómo editar propiedades de cuota automática
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: aa2155268d42293ade925d53da5e29142d13aae4
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878066"
 ---
 # <a name="edit-auto-apply-quota-properties"></a>Editar propiedades de cuota automática
 
@@ -31,7 +32,7 @@ Al realizar cambios en una cuota automática, tienes la opción de ampliar estos
 
 3.  En **Derivar propiedades de esta plantilla de cuota**, selecciona la plantilla de cuota que quieres aplicar. Puede revisar las propiedades de cada plantilla de cuota en el cuadro de lista de resumen.
 
-4.  Haz clic en **Aceptar**. Se abrirá el cuadro de diálogo **Actualizar cuotas derivadas de la cuota automática**.
+4.  Haga clic en **Aceptar**. Se abrirá el cuadro de diálogo **Actualizar cuotas derivadas de la cuota automática**.
 
 5.  Selecciona el tipo de actualización que quieres aplicar:
 
@@ -39,11 +40,11 @@ Al realizar cambios en una cuota automática, tienes la opción de ampliar estos
     -   Si quieres modificar todas las cuotas existentes de la ruta de acceso de cuota automática, selecciona **Emplear la cuota automática en todas las cuotas derivadas**.
     -   Si quieres mantener las cuotas existentes sin modificar, pero que la cuota automática modificada tenga validez en las nuevas subcarpetas de la ruta de acceso de cuota automática, selecciona **No emplear la cuota automática en las cuotas derivadas**.
 
-6.  Haz clic en **Aceptar**.
+6.  Haga clic en **Aceptar**.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Administración de cuotas](quota-management.md)
--   [Crear una cuota automática](create-auto-apply-quota.md)
+-   [Crear un automáticamente una cuota de aplicación](create-auto-apply-quota.md)
 
 

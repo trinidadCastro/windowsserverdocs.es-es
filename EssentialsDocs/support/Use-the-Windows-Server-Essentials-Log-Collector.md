@@ -1,6 +1,6 @@
 ---
-title: Usar el recolector de registro de Windows Server Essentials
-description: "Describe cómo usar Windows Server Essentials"
+title: Uso del compilador de registros de Windows Server Essentials
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,109 +13,110 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: d003c6a45159548f7e34d86ca242f74868659d2f
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59877996"
 ---
-# <a name="use-the-windows-server-essentials-log-collector"></a>Usar el recolector de registro de Windows Server Essentials
+# <a name="use-the-windows-server-essentials-log-collector"></a>Uso del compilador de registros de Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Para solucionar problemas del equipo, puede solicitar un representante del servicio al cliente de Microsoft y soporte técnico para recopilar registros de servidores, equipos de la red, o ambos mediante el recolector de registro de Windows Server Essentials.  
+Al solucionar problemas del equipo, un representante del servicio al cliente de Microsoft y soporte técnico puede pedirle que recopile los registros de servidores, equipos de la red, o ambos mediante el uso de Windows Server Essentials Log Collector.  
   
- El recolector de registro copia los registros del programa, registros de eventos revisor e información del entorno relacionados en un solo archivo zip en una ubicación especificada. Puedes ejecutar el recolector de registro directamente desde el servidor o en cualquier equipo en la red, o mediante una conexión remota a los equipos.  
+ El Compilador de registros copia registros de programas, registros de revisión de eventos e información del entorno en cuestión en un solo archivo zip en una ubicación específica. Puede ejecutar el Compilador de registros directamente desde el servidor o cualquier equipo de la red, o mediante una conexión remota a los equipos.  
   
 > [!NOTE]
->  -   El recolector de registro no analizar los problemas de red o realizar cambios en cualquier equipo en la red o el servidor. Para obtener información acerca de cómo solucionar problemas de red, consulta la documentación de ayuda para el producto de servidor.  
-> -   En esta guía, los equipos de la red, que no sean de tu servidor, se denominan equipos de la red.  
-> -   [Descargar el paquete de instalación de Windows Server Essentials registro recopilador](https://go.microsoft.com/fwlink/?LinkID=266341).  
+>  -   El Compilador de registros no analiza los problemas de red ni realiza cambios en cualquier servidor o equipo de la red. Para obtener información sobre cómo solucionar problemas de red, consulte la documentación de ayuda del producto de su servidor.  
+> -   En esta guía, los equipos de la red, aparte de su servidor, se denominan equipos de la red.  
+> -   [Descargue el paquete de instalación de Windows Server Essentials Log Collector](https://go.microsoft.com/fwlink/?LinkID=266341).  
   
- Para instalar y ejecutar el recolector de registro, realiza los pasos en los siguientes temas:  
+ Para instalar y ejecutar el Compilador de registros, realice los pasos que se indican en los temas siguientes:  
   
 
-1.  [Instalar al selector de registro](Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1.  [Instalar al recopilador de registros](Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2.  [Ejecuta el selector de registro](Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2.  [Ejecute el recopilador de registros](Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
-1.  [Instalar al selector de registro](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
+1.  [Instalar al recopilador de registros](../support/Install-the-Windows-Server-Essentials-Log-Collector.md)  
   
-2.  [Ejecuta el selector de registro](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
+2.  [Ejecute el recopilador de registros](../support/Run-the-Windows-Server-Essentials-Log-Collector.md)  
 
   
-## <a name="environment-information-collected"></a>Recopilar información del entorno  
- Para cada equipo de la red o el servidor que especifique, el recolector de registro recopila la siguiente información de entorno y lo coloca en el archivo de registro de la colección.  
+## <a name="environment-information-collected"></a>Información del entorno recopilada  
+ Para cada equipo de la red o servidor que especifique, el Compilador de registros recopila la siguiente información sobre el entorno y la incluye en el archivo de compilación de registros.  
   
 -   Versión del sistema operativo  
   
--   Descripción y el fabricante de CPU  
+-   Descripción y fabricante de CPU  
   
--   Asignación y la cantidad de memoria  
+-   Asignación y cantidad de memoria  
   
 -   Adaptadores de red que están enlazados a TCP/IP  
   
--   Configuración regional  
+-   Locale  
   
 -   Procesos  
   
 -   Configuración de almacenamiento  
   
--   Información de archivo de host  
+-   Información de los archivos del host  
   
--   Registros de eventos como la aplicación, sistema, Windows Server y Media Center  
+-   Registros de eventos, incluidos los eventos de aplicación, sistema, Windows Server y Media Center  
   
--   Mensajes del Administrador de Control de servicio  
+-   Mensajes del Administrador de control de servicios  
   
--   Reiniciar eventos y eventos de Windows Update  
+-   Eventos de reinicio y de Windows Update  
   
--   Errores del sistema y los errores de la aplicación  
+-   Errores del sistema y errores de aplicación  
   
-## <a name="services-information-collected"></a>Información recopilada de servicios  
+## <a name="services-information-collected"></a>Información de servicios recopilada  
   
 ### <a name="server-services"></a>Servicios de servidor  
   
--   Servicio copia de seguridad del equipo de cliente de Windows Server  
+-   Servicio de copia de seguridad de equipos cliente de Windows Server  
   
--   Servicio de copia de seguridad del proveedor de equipo cliente de Windows Server  
+-   Servicio de proveedores de copia de seguridad de equipos cliente de Windows Server  
   
 -   Proveedor de dispositivos de Windows Server  
   
--   Administración del nombre de dominio de Windows Server  
+-   Administración de nombres de dominio de Windows Server  
   
--   Registro del proveedor de servicio de servidor de Windows  
+-   Registro de proveedores de servicios de Windows Server  
   
--   Proveedor de configuración del servidor de Windows  
+-   Proveedor de configuración de Windows Server  
   
--   Servicio de dispositivo UPnP de Windows Server  
+-   Servicio de dispositivos UPnP de Windows Server  
   
--   Proveedor de administración de acceso Web remoto de Windows Server  
+-   Proveedor de administración de Acceso web remoto de Windows Server  
   
--   Servicio de estado del servidor de Windows  
+-   Servicio de mantenimiento de Windows Server  
   
--   Servicio de almacenamiento del servidor de Windows  
+-   Servicio de almacenamiento de Windows Server  
   
--   Servicio de Windows Server SQM  
+-   Servicio de SQM de Windows Server  
   
-### <a name="network-computer-services"></a>Servicios del equipo de red  
+### <a name="network-computer-services"></a>Servicios de equipos de red  
   
--   Servicio de copia de seguridad del proveedor de equipo cliente de Windows Server  
+-   Servicio de proveedores de copia de seguridad de equipos cliente de Windows Server  
   
--   Servicio de estado del servidor de Windows  
+-   Servicio de mantenimiento de Windows Server  
   
--   Registro del proveedor de servicio de servidor de Windows  
+-   Registro de proveedores de servicios de Windows Server  
   
--   Servicio de Windows Server SQM  
+-   Servicio de SQM de Windows Server  
   
-## <a name="logs-and-registry-information-collected"></a>Registros y la información de registro recopilado  
- Para cada equipo de la red o un servidor especificado, el recolector de registro recopila información de registro y registro desde el servidor y equipo de la red como sigue.  
+## <a name="logs-and-registry-information-collected"></a>Registros e información del registro recopilada  
+ En cada equipo de la red o servidor especificado, el Compilador de registros recopila información del registro y del servidor y del equipo de red de la siguiente manera.  
   
-### <a name="server-logs-and-registry-information"></a>Registros de servidor y la información del registro  
+### <a name="server-logs-and-registry-information"></a>Registros e información del registro del servidor  
   
--   Registros de productos de servidor, desde \Microsoft\Windows Server\Logs < ProgramData\ >  
+-   Registros de productos de servidor, de < ProgramData\>\Microsoft\Windows Server\Logs  
   
 -   Tareas programadas  
   
--   Registros de la API de instalación  
+-   Registros del API de instalación  
   
 -   Registros de Windows Update  
   
@@ -123,13 +124,13 @@ Para solucionar problemas del equipo, puede solicitar un representante del servi
   
 -   Archivo de información de dispositivos  
   
--   Archivo de registro de copia de seguridad de servidor  
+-   Archivo de registro de copia de seguridad del servidor  
   
 -   Archivo de registro Panther  
   
 -   Servicios  
   
--   Claves del registro, desde  
+-   Claves del registro, de  
   
     -   \\\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\  
   
@@ -137,35 +138,35 @@ Para solucionar problemas del equipo, puede solicitar un representante del servi
   
     -   \\\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DomainManagerProviderSvc  
   
-### <a name="network-computer-logs-and-registry-information"></a>Registros de equipo de la red y la información del registro  
+### <a name="network-computer-logs-and-registry-information"></a>Registros y la información del registro del equipo de red  
   
--   Registros de producto de equipo de red en \Microsoft\Windows Server\Logs < ProgramData\ >  
+-   Los registros de producto del equipo de red en < ProgramData\>\Microsoft\Windows Server\Logs  
   
--   Archivo de alertas de estado en \Microsoft\Windows Server\Data < ProgramData\ >  
+-   Archivo de alertas de estado en < ProgramData\>\Microsoft\Windows Server\Data  
   
 -   Registros de Windows Update  
   
--   Registros de la API de instalación  
+-   Registros del API de instalación  
   
 -   Información de las tareas programadas  
   
--   Claves del registro de \\\HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows Server\  
+-   Las claves del registro de \\\HKEY_LOCAL_MACHINE \SOFTWARE\Microsoft\Windows Server\  
   
-## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>Registros para equipos que ejecuten una versión del sistema operativo Windows  
- El recolector de registro no recopilar archivos de registro de los equipos que ejecutan una versión del sistema operativo Windows. Para equipos no son de Windows, copiar manualmente los siguientes archivos de registro en la misma ubicación donde se almacenan los archivos de registro selector.  
+## <a name="logs-for-computers-that-do-not-run-a-version-of-the-windows-operating-system"></a>Registros para los equipos que no ejecutan una versión del sistema operativo Windows  
+ El Compilador de registros no recopilar archivos de registro de los equipos que no ejecutan una versión del sistema operativo Windows. Para los equipos que no ejecutan Windows, copie manualmente los siguientes archivos de registro en la misma ubicación donde se almacenan los archivos del Compilador de registros.  
   
--   System.log  
+-   Registro del sistema  
   
--   Server.log biblioteca/registros de Windows  
+-   Library/Logs/Windows Server.log  
   
--   Biblioteca/registros/CrashReporter/LaunchPad-< nnn\ > (copiar todos los archivos de .crash LaunchPad-< nnn\ >)  
+-   Library/Logs/CrashReporter/LaunchPad-< nnn\> (copiar todo el LaunchPad-< nnn\>archivos .crash)  
   
--   Biblioteca/registros/DiagnosticReports/LaunchPad-< nnn\ > (copiar todos los archivos de .crash LaunchPad-< nnn\ >)  
+-   Library/Logs/DiagnosticReports/LaunchPad-< nnn\> (copiar todo el LaunchPad-< nnn\>archivos .crash)  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
 
--   [Solucionar errores de selector de registro](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+-   [Solución de problemas de errores del compilador de registros](Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 
--   [Solucionar errores de selector de registro](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
+-   [Solución de problemas de errores del compilador de registros](../support/Troubleshoot-Windows-Server-Essentials-Log-Collector-Errors.md)
 

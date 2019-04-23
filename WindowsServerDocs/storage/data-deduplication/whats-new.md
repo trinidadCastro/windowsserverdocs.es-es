@@ -1,6 +1,6 @@
 ---
 ms.assetid: d11acbc2-40c6-4ab2-9514-2bc3ad81499a
-title: "Novedades de Desduplicación de datos"
+title: Novedades de Desduplicación de datos
 ms.technology: storage-deduplication
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -9,10 +9,11 @@ manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
 ms.openlocfilehash: 4a69221548d9defff5a45413ccfe824f9788755a
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59876456"
 ---
 # <a name="whats-new-in-data-deduplication"></a>Novedades de Desduplicación de datos
 
@@ -26,9 +27,9 @@ Desduplicación de datos presenta las siguientes mejoras en Windows Server 2016:
 |---------------|----------------|-------------|
 | [Compatibilidad con volúmenes grandes](whats-new.md#large-volume-support) | Actualizado | Antes de Windows Server 2016, los volúmenes debían tener un tamaño específico para la renovación esperada, y aquellos tamaños de volúmenes por encima de los 10 TB no eran buenos candidatos para la desduplicación. En Windows Server 2016, Desduplicación de datos admite tamaños de volúmenes de hasta 64 TB. |
 | [Compatibilidad con archivos de gran tamaño](whats-new.md#large-file-support) | Actualizado | Antes de Windows Server 2016, los archivos cuyo tamaño se aproximase a 1 TB no eran buenos candidatos para la desduplicación. En Windows Server 2016, los archivos de hasta 1 TB son totalmente compatibles. |
-| [Compatibilidad con Nano Server](whats-new.md#nano-server-support) | New | Desduplicación de datos está disponible y es totalmente compatible con la nueva opción de implementación de Nano Server para Windows Server 2016. |
-| [Compatibilidad con copia de seguridad simplificada](whats-new.md#simple-backup-support) | New | Las aplicaciones virtualizadas de copia de seguridad de Windows Server 2012 R2, como [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) de Microsoft, se admitían a través de una serie de pasos de configuración manual. En Windows Server 2016, se ha agregado un nuevo tipo de uso predeterminado (Copia de seguridad) para una implementación fluida de Desduplicación de datos para aplicaciones virtualizadas de copia de seguridad.|
-| [Compatibilidad con las actualizaciones graduales de sistema operativo de clúster](whats-new.md#cluster-upgrade-support) | New | Desduplicación de datos es totalmente compatible con la nueva característica [Actualización gradual de sistema operativo de clúster](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md) de Windows Server 2016. |
+| [Compatibilidad con Nano Server](whats-new.md#nano-server-support) | Nuevo | Desduplicación de datos está disponible y es totalmente compatible con la nueva opción de implementación de Nano Server para Windows Server 2016. |
+| [Compatibilidad con copia de seguridad simplificada](whats-new.md#simple-backup-support) | Nuevo | Las aplicaciones virtualizadas de copia de seguridad de Windows Server 2012 R2, como [Data Protection Manager](https://technet.microsoft.com/library/hh758173.aspx) de Microsoft, se admitían a través de una serie de pasos de configuración manual. En Windows Server 2016, se ha agregado un nuevo tipo de uso predeterminado (Copia de seguridad) para una implementación fluida de Desduplicación de datos para aplicaciones virtualizadas de copia de seguridad.|
+| [Compatibilidad con las actualizaciones graduales de sistema operativo de clúster](whats-new.md#cluster-upgrade-support) | Nuevo | Desduplicación de datos es totalmente compatible con la nueva característica [Actualización gradual de sistema operativo de clúster](../..//failover-clustering/cluster-operating-system-rolling-upgrade.md) de Windows Server 2016. |
 
 ## <a name="large-volume-support"></a>Compatibilidad con volúmenes grandes
 

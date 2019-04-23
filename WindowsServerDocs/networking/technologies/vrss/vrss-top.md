@@ -1,6 +1,6 @@
 ---
 title: Ajuste de escala en lado de recepción virtual (vRSS)
-description: Obtén información sobre Virtual escala de recepción (vRSS) en Windows Server y cómo configurar un adaptador de red virtual para cargar equilibrar el tráfico de red entrantes a través de varios núcleos lógicos en una máquina virtual. También puedes configurar varios de núcleos físicos para un host de tarjeta de interfaz de red virtual (vNIC).
+description: Obtenga información acerca de Virtual escala de recepción (vRSS) en Windows Server y cómo configurar un adaptador de red virtual para el tráfico de red entrante de equilibrio de carga entre varios núcleos de procesador lógico en una máquina virtual. También puede configurar múltiples de núcleos físicos para un host de tarjeta de interfaz de red virtual (vNIC).
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
@@ -11,82 +11,82 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 0c1cb11cb8ce69463a31cfa5061290f79d8dda91
-ms.sourcegitcommit: e84e328c13a701e8039b16a4824a6e58a6e59b0b
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "4133691"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875236"
 ---
-# Virtual recibir lado \(vRSS\) de ajuste de escala
+# <a name="virtual-receive-side-scaling-vrss"></a>Virtual escala de recepción \(vRSS\)
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema, encontrarás información sobre cómo configurar un adaptador de red virtual para cargar equilibrar el tráfico de red entrantes a través de varios núcleos lógicos en una máquina virtual y recibir lado del ajuste de escala Virtual (vRSS). También puedes usar vRSS para configurar varios núcleos físicos para un host virtual tarjeta de interfaz de red \(vNIC\).
+En este tema, obtendrá información sobre cómo configurar un adaptador de red virtual para el tráfico de red entrante de equilibrio de carga entre varios núcleos de procesador lógico en una máquina virtual y Virtual escala de recepción (vRSS). También puede usar vRSS para configurar varios núcleos físicos para un host de virtual Network Interface Card \(vNIC\).
 
-Esta configuración permite que la carga de un adaptador de red virtual a distribuirse a través de varios procesadores virtuales en una máquina virtual \(VM\), lo que permite a la máquina virtual procesar el tráfico de red más más rápidamente de lo que es posible con un único procesador lógico.
+Esta configuración permite la carga de un adaptador de red virtual se distribuyan entre varios procesadores virtuales en una máquina virtual \(VM\), lo que permite la máquina virtual procesar más rápidamente de lo que puede hacer con una sola más tráfico de red procesador lógico.
 
 >[!TIP]
->Puedes usar vRSS en las máquinas virtuales en hosts de Hyper\-V con varios procesadores, un único procesador de varios núcleos, o más de uno varios procesadores de núcleo instalado y configurado para su uso de la máquina virtual.
+>Puede usar vRSS en máquinas virtuales en Hyper\-hosts V que tienen varios procesadores, un único procesador de varios núcleos o más procesadores de varios núcleos instalado y configuran para su uso de la máquina virtual.
 
-vRSS es compatible con todas las otras tecnologías de redes de Hyper\-V. vRSS is dependent on Virtual Machine Queue \(VMQ\) in the Hyper\-V host and RSS in the VM or on the host vNIC.
+es compatible con todos los demás Hyper vRSS\-V las tecnologías de red. vRSS es dependiente de Virtual Machine Queue \(VMQ\) en Hyper\-host V y RSS en la máquina virtual o en la vNIC de host.
 
-De manera predeterminada, Windows Server permite vRSS, pero se puede deshabilitar en una máquina virtual mediante el uso de Windows PowerShell. For more information, see [Manage vRSS](vrss-manage.md) and [Windows PowerShell Commands for RSS and vRSS](vrss-wps.md).
+De forma predeterminada, Windows Server permite vRSS, pero puede deshabilitarlo en una máquina virtual mediante Windows PowerShell. Para obtener más información, consulte [administrar vRSS](vrss-manage.md) y [comandos de Windows PowerShell para RSS y vRSS](vrss-wps.md).
 
 
 
-## Compatibilidad del sistema operativo
+## <a name="operating-system-compatibility"></a>Compatibilidad con sistemas operativos
 
-You can use RSS on any multiprocessor or multicore computer - or vRSS on any multiprocessor or multicore VM - that is running Windows Server 2016.
+Puede usar RSS en cualquier equipo multiprocesador o multinúcleo - o vRSS en cualquier VM multiprocesador o multinúcleo - que se está ejecutando Windows Server 2016.
 
-Multiprocesador o multinúcleo máquinas virtuales que se ejecutan los siguientes sistemas operativos de Microsoft también admiten vRSS.
+Multiprocesador o multinúcleo máquinas virtuales que ejecutan los siguientes sistemas operativos de Microsoft también admite vRSS.
 
-- WindowsServer2016
+- Windows Server 2016
 - Windows 10 Pro o Enterprise
-- Windows Server2012R2
+- Windows Server 2012 R2
 - Windows 8.1 Pro o Enterprise
 - Windows Server 2012 con los componentes de integración de Windows Server 2012 R2 instalados.
-- Los componentes de integración de Windows Server 2012 R2 instalados de Windows 8.
+- Windows 8 con los componentes de integración de Windows Server 2012 R2 instalados.
 
-Para obtener información sobre la compatibilidad con vRSS para las máquinas virtuales que ejecutan FreeBSD o Linux, como un sistema operativo invitado en Hyper-V, consulte [las máquinas virtuales Linux y FreeBSD para Hyper-V en Windows](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows).
+Para obtener información sobre la compatibilidad de vRSS con máquinas virtuales que ejecutan FreeBSD o Linux como sistema operativo invitado en Hyper-V, consulte [Linux y FreeBSD máquinas virtuales de Hyper-V en Windows](https://docs.microsoft.com/windows-server/virtualization/hyper-v/Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows).
   
-## Requisitos de hardware
+## <a name="hardware-requirements"></a>Requisitos de hardware
 
-A continuación es los requisitos de hardware para vRSS.
+Siguientes son los requisitos de hardware para vRSS.
  
-- Adaptadores de red física deben ser compatible con la cola de máquina Virtual \(VMQ\). Si está deshabilitada o no admite VMQ, vRSS está deshabilitada para el host de Hyper\-V y las máquinas virtuales configuradas en el host.
+- Adaptadores de red físico deben admitir Virtual Machine Queue \(VMQ\). Si VMQ está deshabilitado o no admite, vRSS está deshabilitado para el Hyper\-host V y las máquinas virtuales configuradas en el host.
 - Adaptadores de red deben tener una velocidad de vínculo de 10 Gbps o más.
-- Hosts de Hyper\-V deben configurarse con varios procesadores o procesador de varios núcleos al menos un usar vRSS.
-- Las máquinas virtuales \(VMs\) deben configurarse para utilizar dos o más procesadores lógicos.
+- Hyper\-hosts V deben estar configurados con varios procesadores o varios al menos un\-procesador para usar vRSS core.
+- Las máquinas virtuales \(máquinas virtuales\) debe configurarse para usar dos o más procesadores lógicos.
 
 
-## Entre las situaciones de uso
+## <a name="use-case-scenarios"></a>Escenarios de casos de uso
 
-Los siguientes escenarios de casos de uso de dos representan uso común de vRSS equilibrio de carga del procesador y equilibrio de carga de software.
+Los siguientes escenarios de casos de uso de dos describen el uso común de vRSS para equilibrio de carga de procesador y de equilibrio de carga de software.
 
-### Equilibrio de carga de procesador
+### <a name="processor-load-balancing"></a>Equilibrado de la carga del procesador
   
-Anthony, un administrador de red, es configurar un nuevo host de Hyper-V con el adaptador de red dos que admite la virtualización de la entrada de raíz solo salida \(SR\-IOV\). Implementa Windows Server 2016 para hospedar un servidor de archivos de la máquina virtual.
+Antonio es un administrador de red, es la configuración de un nuevo host de Hyper-V con el adaptador de red de dos que admite la virtualización de entrada de raíz única salida \(SR\-IOV\). Implementa Windows Server 2016 para hospedar un servidor de archivos de máquina virtual.
 
-Después de instalar el hardware y software, Anthony configura una máquina virtual para usar ocho procesadores virtuales y 4096 MB de memoria. Por desgracia, Anthony no tiene la opción de activar SR\-IOV porque sus máquinas virtuales se basan en la aplicación de directivas a través del conmutador virtual que se creó con el Administrador de conmutador Virtual de Hyper\-V. Por este motivo, Anthony decide usar vRSS en lugar de SR\-IOV.
+Después de instalar el hardware y software, Antonio configura una máquina virtual con ocho procesadores virtuales y 4096 MB de memoria. Lamentablemente, Antonio no tiene la opción de activar SR\-IOV porque sus máquinas virtuales se basan en la aplicación de directivas a través del conmutador virtual que creó con Hyper\-V Virtual Switch manager. Por este motivo, Anthony decide usar vRSS en lugar de SR\-IOV.
 
-Inicialmente, Anthony asigna cuatro procesadores virtuales mediante el uso de Windows PowerShell que estarán disponibles para su uso con vRSS. El uso del servidor de archivos después de una semana apareció a ser bastante populares, por lo que Anthony comprueba el rendimiento de la máquina virtual.  Descubre uso completo de los cuatro procesadores virtuales.
+Inicialmente, Antonio asigna cuatro procesadores virtuales mediante el uso de Windows PowerShell esté disponible para su uso con vRSS. El uso del servidor de archivos después de una semana parecía ser bastante popular, por lo que Antonio comprueba el rendimiento de la máquina virtual.  Descubre utilización completa de los cuatro procesadores virtuales.
 
-Por este motivo, Anthony decide agregar procesadores a la máquina virtual para su uso por vRSS.  Dos procesadores virtuales más asigna a la máquina virtual, que están disponibles automáticamente para vRSS para ayudar a controlar la carga de red de gran tamaño. Su esfuerzo como resultado un mejor rendimiento para el servidor de archivos de la máquina virtual con los procesadores de seis controlar eficazmente la carga de tráfico de red.
-
-
-### Equilibrio de carga de software
-
-Sandra, un administrador de red, es configurar una sola máquina virtual de alto rendimiento en uno de sus sistemas para que actúe como un equilibrador de carga de software. Todos los procesadores lógicos disponibles ha asignado a esta máquina virtual único.
-
-Después de instalar Windows Server, utiliza vRSS para obtener el tráfico de red paralelo procesamiento en varios procesadores lógicos en la máquina virtual. Dado que Windows Server permite vRSS, Sandra no tiene que realizar los cambios de configuración.
+Por este motivo, Anthony decide agregar procesadores a la máquina virtual para su uso por vRSS.  Asigna dos procesadores virtuales más a la máquina virtual, que están disponibles automáticamente para vRSS para ayudar a controlar la carga de red de gran tamaño. Sus esfuerzos como resultado un mejor rendimiento para el servidor de archivos de máquina virtual con los procesadores de seis tratar la carga de tráfico de red de forma eficiente.
 
 
-## Temas relacionados
+### <a name="software-load-balancing"></a>Equilibrado de la carga de software
+
+Sandra es administradora de redes es la configuración de una sola máquina virtual de alto rendimiento en uno de sus sistemas para que actúe como un equilibrador de carga de software. Todos los procesadores lógicos disponibles ha asignado a esta máquina virtual única.
+
+Después de instalar Windows Server, usa vRSS para obtener el tráfico de red paralelas de procesamiento en varios procesadores lógicos en la máquina virtual. Dado que Windows Server permite vRSS, Sandra no tiene que realizar ningún cambio de configuración.
+
+
+## <a name="related-topics"></a>Temas relacionados
 
 - [Planear el uso de vRSS](vrss-plan.md)
-- [Habilitar vRSS en un adaptador de red Virtual](vrss-enable.md)
+- [Habilite vRSS en un adaptador de red Virtual](vrss-enable.md)
 - [Administrar vRSS](vrss-manage.md)
 - [vRSS preguntas más frecuentes](vrss-faq.md)
-- [Windows PowerShell Commands for RSS and vRSS](vrss-wps.md)
+- [Comandos de Windows PowerShell para RSS y vRSS](vrss-wps.md)
 
 ---

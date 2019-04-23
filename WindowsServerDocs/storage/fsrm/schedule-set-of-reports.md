@@ -1,6 +1,6 @@
 ---
 title: Programar un conjunto de informes
-description: "En este artículo se describe cómo generar un conjunto de informes con regularidad"
+description: En este artículo se describe cómo generar un conjunto de informes con regularidad
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 15b69e723af3a30375beae73782ab122c68f8880
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879726"
 ---
 # <a name="schedule-a-set-of-reports"></a>Programar un conjunto de informes
 
@@ -46,11 +47,11 @@ Los informes programados se guardan en una ubicación predeterminada, que puedes
     -   Haz clic en la etiqueta del informe y luego haz clic en **Editar parámetros**.
     -   En el cuadro de diálogo **Parámetros de informes**, edita los parámetros según sea necesario y luego haz clic en **Aceptar**.
 
-    -   Para ver una lista de los parámetros de todos los informes seleccionados, haz clic en **Revisar informes seleccionados**. Luego haz clic en **Cerrar**.
+    -   Para ver una lista de los parámetros de todos los informes seleccionados, haz clic en **Revisar informes seleccionados**. A continuación, haga clic en **Cerrar**.
 
 5.  Para especificar los formatos para guardar los informes:
 
-    -  En **Formatos de informes**, selecciona uno o varios formatos para los informes programados. De forma predeterminada, los informes se generan en DynamicHTML (DHTML). También puedes seleccionar HTML, XML, CSV y formatos de texto. Los informes se guardan en la ubicación predeterminada para los informes programados.
+    -  En **Formatos de informes**, selecciona uno o varios formatos para los informes programados. De forma predeterminada, los informes se generan en Dynamic HTML (DHTML). También puedes seleccionar HTML, XML, CSV y formatos de texto. Los informes se guardan en la ubicación predeterminada para los informes programados.
 
 6.  Para enviar copias de los informes a los administradores por correo electrónico:
 
@@ -59,7 +60,7 @@ Los informes programados se guardan en una ubicación predeterminada, que puedes
 
 7.  Para programar los informes:
 
-    En la pestaña **Programación**, haz clic en **Crear una programación** y luego en **Programación**, haz clic en **Nueva**. Se muestra una programación predeterminada para las 9:00a.m. todos los días, pero puedes modificar la programación predeterminada.
+    En la pestaña **Programación**, haz clic en **Crear una programación** y luego en **Programación**, haz clic en **Nueva**. Se muestra una programación predeterminada para las 9:00 a.m. todos los días, pero puedes modificar la programación predeterminada.
 
     -   Para especificar una frecuencia de generación de informes, selecciona un intervalo en la lista desplegable **Programar tarea**.
         Puedes programar informes diarios, semanales o mensuales o generar los informes una sola vez. También puedes generar informes en el inicio del sistema o en el inicio de sesión o cuando el equipo haya estado inactivo durante un tiempo determinado.
@@ -76,9 +77,9 @@ La tarea de informes se agrega al nodo **Administración de informes de almacena
 
 Además, puedes ver el estado actual del informe (sin importar si el informe se ejecuta o no), la última hora de ejecución, el resultado de dicha ejecución y la próxima hora de ejecución programada.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 -   [Administración de informes de almacenamiento](storage-reports-management.md)
--   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
+-   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
 
 

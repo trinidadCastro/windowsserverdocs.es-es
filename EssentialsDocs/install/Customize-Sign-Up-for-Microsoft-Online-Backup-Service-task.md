@@ -1,6 +1,6 @@
 ---
-title: "Personalizar el inicio de sesión para la tarea de servicio de copia de seguridad en línea de Microsoft"
-description: "Describe cómo usar Windows Server Essentials"
+title: Personalizar la tarea Suscribirse a Microsoft Online Backup Service
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,25 +13,26 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: cd148e0e58cd80dbff7f7884ead95dc1e46b6257
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879936"
 ---
-# <a name="customize-sign-up-for-microsoft-online-backup-service-task"></a>Personalizar el inicio de sesión para la tarea de servicio de copia de seguridad en línea de Microsoft
+# <a name="customize-sign-up-for-microsoft-online-backup-service-task"></a>Personalizar la tarea Suscribirse a Microsoft Online Backup Service
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-De manera predeterminada, la **registrarse para el servicio de copia de seguridad en línea de Microsoft** de tareas en la **dispositivos** ficha del panel abre el sitio Web de Microsoft Online Service de copia de seguridad. El sitio Web proporciona información sobre el servicio y ayuda a suscribirse al servicio y descargar el software necesario.  
+De forma predeterminada, la tarea **Suscribirse a Microsoft Online Backup Service** en la pestaña **DISPOSITIVOS** del panel abre el sitio web de Microsoft Online Backup Service. El sitio web proporciona información sobre el servicio y le ayuda a suscribirse al servicio y a descargar el software necesario.  
   
- Puedes personalizar la **registrarse para el servicio de copia de seguridad en línea de Microsoft** tarea de dos maneras:  
+ La tarea **Suscribirse a Microsoft Online Backup Service** se puede personalizar de dos formas:  
   
--   Puedes reemplazar la dirección URL del sitio Web predeterminado con una dirección URL que representa una experiencia de usuario personalizada. Para reemplazar la dirección URL predeterminada, abre el Editor del registro, crea la clave del registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\LinkUrl**y, a continuación, asigna la dirección URL personalizada como valor de la clave.  
+-   Puede sustituir la URL del sitio web predeterminado por una URL que represente una experiencia del cliente personalizada. Para reemplazar la dirección URL predeterminada, abra el Editor del registro, cree la clave del Registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\LinkUrl** y después asigne la dirección URL personalizada como valor de la clave.  
   
--   Puedes ocultar la tarea. Para ocultar la tarea, abre el Editor del registro y crear la clave del registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\OnlineBackupInstalled **.  
+-   Puede ocultar la tarea: Para ocultar la tarea, abra el Editor del registro y cree la clave del Registro: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Server\OnlineBackup\OnlineBackupInstalled**.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

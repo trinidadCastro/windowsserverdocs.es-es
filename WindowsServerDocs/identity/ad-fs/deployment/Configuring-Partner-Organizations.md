@@ -1,7 +1,7 @@
 ---
 ms.assetid: 4d002764-58b4-4137-9c86-1e55b02e07ce
-title: "Configuración de las organizaciones asociadas"
-description: 
+title: Configuración de las organizaciones asociadas
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,30 +10,31 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 5494f3bd8d012bf1ecc240439ff880d1bb52c280
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59875186"
 ---
 # <a name="configuring-partner-organizations"></a>Configuración de las organizaciones asociadas
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Para implementar una nueva organización de partner en los servicios de federación de Active Directory \(AD FS\), completar las tareas en cualquiera [lista de comprobación: configuración de la organización de Partner de recurso](Checklist--Configuring-the-Resource-Partner-Organization.md) o [lista de comprobación: configuración de la organización de Partner cuenta](Checklist--Configuring-the-Account-Partner-Organization.md), según el diseño de AD FS.  
+Para implementar una nueva organización de asociado en Active Directory Federation Services \(AD FS\), complete las tareas en alguna [lista de comprobación: Configuración de la organización del asociado de recurso](Checklist--Configuring-the-Resource-Partner-Organization.md) o [lista de comprobación: Configuración de la organización del asociado de cuenta](Checklist--Configuring-the-Account-Partner-Organization.md), según su diseño de AD FS.  
   
 > [!NOTE]  
-> Al usar cualquiera de estas listas de comprobación, te recomendamos leer primero las referencias a partner de la cuenta o el partner de recurso planeación instrucciones en el [Guía de diseño de AD FS en Windows Server 2012](https://technet.microsoft.com/library/dd807036.aspx) antes de seguir los procedimientos para configurar la organización de partner de nuevo. La lista de comprobación de esta forma te ayudará a comprender mejor la historia de diseño e implementación de AD FS completa para la organización de partner de partner o un recurso de cuenta.  
+> Al usar cualquiera de estas listas de comprobación, recomendamos encarecidamente que lea primero las referencias al asociado de cuenta o instrucciones de planeamiento de asociado de recurso el [Guía de diseño de AD FS en Windows Server 2012](https://technet.microsoft.com/library/dd807036.aspx) antes de continuar con la procedimientos para la configuración de la organización del asociado de nuevo. La lista de comprobación de esta forma le ayudará a proporcionar una mejor comprensión de la historia completa de diseño e implementación de AD FS para la organización de asociado de cuenta asociado o un recurso.  
   
-## <a name="about-account-partner-organizations"></a>Acerca de las organizaciones asociadas de cuenta  
-Un asociado de cuenta es la organización en la relación de confianza de federación que almacena físicamente cuentas de usuario en un almacén de AD FS: admite el atributo. El asociado de cuenta es responsable de recopilar y autenticar las credenciales del usuario, creación de notificaciones para ese usuario y empaquetar las notificaciones en los tokens de seguridad. Estos tokens se pueden representar, a continuación, en una confianza de federación para habilitar el acceso a recursos Web\ que se encuentran en la organización de partner de recurso.  
+## <a name="about-account-partner-organizations"></a>Acerca de las organizaciones de asociado de cuenta  
+Un asociado de cuenta es la organización en la relación de confianza de federación que almacena físicamente las cuentas de usuario en un almacén de AD FS: admite el atributo. El asociado de cuenta es responsable de recopilar y autenticar las credenciales del usuario, generar notificaciones para que el usuario y empaquetar las notificaciones en tokens de seguridad. Estos tokens se pueden presentar en una confianza de federación para permitir el acceso Web\-basadas en recursos que se encuentran en la organización del asociado de recurso.  
   
-En otras palabras, un asociado de cuenta representa la organización para cuyos usuarios el servidor de federación de lado account\ emite tokens de seguridad. El servidor de federación de la organización de partner de cuenta autentica a los usuarios locales y crea tokens de seguridad que usa el asociado de recurso de tomar decisiones de autorización.  
+En otras palabras, un asociado de cuenta representa la organización para cuyos usuarios a la cuenta\-servidor de federación de lado emite tokens de seguridad. El servidor de federación en la organización del asociado de cuenta autentica a los usuarios locales y crea tokens de seguridad que usa el asociado de recurso en decisiones de autorización.  
   
-Con respecto a los almacenes de atributo, el asociado de la cuenta en AD FS es conceptualmente equivalente a un único bosque de Active Directory cuyas cuentas necesitan tener acceso a recursos que se encuentren físicamente de otro bosque. Cuentas en este bosque pueden acceder a recursos en el bosque de recursos solo cuando una confianza externa o un bosque de confianza existe relación entre los dos bosques y se han establecido los recursos a la que están intentando acceder a los usuarios con los permisos de la autorización adecuada.  
+Con respecto a los almacenes de atributos, el asociado de cuenta de AD FS es conceptualmente equivalente a un único bosque de Active Directory cuyas cuentas necesitan tener acceso a los recursos que están ubicados físicamente en otro bosque. Las cuentas en este bosque pueden acceder a recursos en el bosque de recursos solo cuando una confianza externa o no existe relación entre los dos bosques y los recursos a la que están intentando obtener acceso a los usuarios se han establecido con la autorización apropiada de confianza de bosque permisos.  
   
-## <a name="about-resource-partner-organizations"></a>Acerca de las organizaciones asociadas de recursos  
-El asociado de recurso es la organización en una implementación de AD FS donde se encuentran los servidores Web. El asociado de recurso confía en el partner de cuenta para autenticar a los usuarios. Por lo tanto, para tomar decisiones de autorización, el asociado de recurso utiliza las notificaciones que se empaquetan en tokens de seguridad que provienen de usuarios en el asociado de cuenta.  
+## <a name="about-resource-partner-organizations"></a>Acerca de las organizaciones asociadas  
+El asociado de recurso es la organización en una implementación de AD FS donde se encuentran los servidores Web. El asociado de recurso confía el asociado de cuenta para autenticar a los usuarios. Por lo tanto, para tomar decisiones de autorización, el asociado de recurso utiliza las notificaciones empaquetadas en tokens de seguridad que proceden de los usuarios del asociado de cuenta.  
   
-En otras palabras, un partner de recurso representa la organización cuyos servidores Web están protegidos por el servidor de federación de resource\ lado. El servidor de federación en el partner de recursos usa los tokens de seguridad que se presentan con el asociado de cuenta para tomar decisiones de autorización para servidores Web en el partner de recursos.  
+En otras palabras, un asociado de recurso representa la organización cuyos servidores Web están protegidos por el recurso\-servidor de federación de lado. El servidor de federación en el asociado de recurso usa los tokens de seguridad generados por el asociado de cuenta para tomar decisiones de autorización para los servidores Web del asociado de recurso.  
   
-Para que funcione como un recurso de AD FS, servidores Web en la organización de partner de recursos debe tener Windows Identity Foundation \(WIF\) instalados o han instalado los servicios de rol de servicios de federación de Active Directory \(AD FS\) 1.x Claims\ cuenta agente de Web. Los servidores Web que funcionen como un recurso de AD FS pueden hospedar aplicaciones Web\ basados en browser\ o bien Web\ service\-basado.  
+Para que funcione como un recurso de AD FS, los servidores Web de la organización del asociado de recurso deben tener Windows Identity Foundation \(WIF\) instalado o tiene los servicios de federación de Active Directory \(AD FS\) 1.x Notificaciones\-servicios de rol del agente Web compatible con instalados. Los servidores que funcionan como recurso de AD FS puede hospedar cualquier Web Web\-explorador\-Web o en\-servicio\-aplicaciones basadas en.  

@@ -1,6 +1,6 @@
 ---
-title: Introducción
-description: 'Conceptos básicos de servidor: requisitos del sistema, notas de la versión'
+title: Comenzar
+description: 'Aspectos básicos de servidor: requisitos del sistema, notas de la versión'
 ms.prod: windows-server-threshold
 ms.service: na
 manager: jasgroce
@@ -11,13 +11,13 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.openlocfilehash: 5604edf201213f8758b697dc683717f312941e0f
-ms.sourcegitcommit: b69683f1485e1a87d41557e1765660da5dcf04be
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "4408691"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59878336"
 ---
-# Introducción a Windows Server 2019
+# <a name="get-started-with-windows-server-2019"></a>Introducción a Windows Server de 2019
 
 >Se aplica a: Windows Server 2019
 
@@ -36,7 +36,7 @@ ms.locfileid: "4408691"
                                         </div>
                                         <div class="cardText">
                                             <h3>Novedades</h3>
-                                            <p>Descubre lo que es nueva en Windows Server 2019</p>
+                                            <p>Descubra cuáles son las novedades en Windows Server 2019</p>
                                         </div>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@ ms.locfileid: "4408691"
                     </div>
                     <div class="cardText">
                         <h3>Ramas de mantenimiento</h3>
-                        <p>Mejor planear la implementación y la aplicación de revisiones programaciones mediante la comprensión que libera la diferencia entre nuestro canal de mantenimiento a largo plazo (LTSB) y el canal semianual (SAC).</p>
+                        <p>Planear mejor la implementación y las programaciones de aplicación de revisiones al comprender que la diferencia entre nuestro canal de mantenimiento a largo plazo (LTSB) y el canal semianual (SAC) libera.</p>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@ ms.locfileid: "4408691"
                     </div>
                     <div class="cardText">
                         <h3>Instalar | Actualizar | Migrar</h3>
-                        <p>Puedes mover a Windows Server 2019 de varias maneras. Si recién son instalación, actualización en contexto o migración de aplicaciones y los Roles de servidor, detectar el mejor enfoque.</p>
+                        <p>Puede mover a Windows Server 2019 de varias maneras. Si está instalando recién, en lugar de actualizar o migrar aplicaciones y los Roles de servidor, detectar el mejor enfoque.</p>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@ ms.locfileid: "4408691"
                     </div>
                     <div class="cardText">
                         <h3>Activación</h3>
-                        <p>Información básica sobre la activación de Windows Server 2019 sí mismo y otros sistemas operativos, mediante el uso de Windows Server 2019.</p>
+                        <p>Información básica sobre la activación de Windows Server 2019 propio y otros sistemas operativos, mediante el uso de Windows Server 2019.</p>
                     </div>
                 </div>
             </div>
@@ -151,8 +151,8 @@ ms.locfileid: "4408691"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Compatibilidad de aplicaciones de Windows Server 2019 y Microsoft Server</h3>
-                        <p>¿Necesitas obtener SQL trabajando en Windows Server 2019 o buscar los pasos para obtener la ejecución de Exchange? Este tema se vincula a documentación para aplicaciones de Microsoft compatibles.</p>                    </div>
+                        <h3>Compatibilidad de aplicaciones de Microsoft Server y de Windows Server 2019</h3>
+                        <p>¿Deberá obtener SQL funciona en Windows Server 2019 o encuentre los pasos necesarios para la ejecución de Exchange? Este tema contiene vínculos a documentación compatibles para aplicaciones de Microsoft.</p>                    </div>
                 </div>
             </div>
         </div>
@@ -170,7 +170,7 @@ ms.locfileid: "4408691"
                     </div>
                     <div class="cardText">
                         <h3>Características a petición</h3>
-                        <p>Características a petición (FOD) son los paquetes de características de Windows Server que se pueden agregar en cualquier momento. </p>
+                        <p>Las características a petición (FODs) son paquetes de características de Windows Server que se pueden agregar en cualquier momento. </p>
                     </div>
                 </div>
             </div>
@@ -188,8 +188,8 @@ ms.locfileid: "4408691"
                         </div>
                     </div>
                     <div class="cardText">
-                        <h3>Estándar | Comparación de ediciones Datacenter</h3>
-                        <p>Windows Server Datacenter las ediciones Standard y tienen capacidades diferentes. Averiguar cuál necesita.</p>
+                        <h3>Comparación de ediciones Estándar | Datacenter</h3>
+                        <p>Windows Server Standard y Datacenter Edition tienen diferentes capacidades. Averigüe cuál necesita.</p>
                     </div>
                 </div>
             </div>

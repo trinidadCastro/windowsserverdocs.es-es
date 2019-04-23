@@ -14,55 +14,55 @@ ms.technology: ''
 ms.localizationpriority:
 - high/medium/low
 ms.openlocfilehash: 4f885680426c0bfa55d5f73a7ef0c2143a8dd5a9
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082637"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879566"
 ---
-# <a name="metadata-and-markdown-template"></a>Metadatos y la plantilla de descuento
+# <a name="metadata-and-markdown-template"></a>Metadatos y plantilla Markdown
 
-Esta plantilla OPS contiene ejemplos de sintaxis de descuento, así como instrucciones sobre el establecimiento de los metadatos. Para obtener el máximo provecho de él, debe ver el [descuento sin procesar](https://raw.githubusercontent.com/Microsoft/WindowsServerDocs-pr/master/Contributor-guide/ws-template.md?token=AG1vEhARRHNLtPgKXP35BGjNZGajKOArks5YLNIwwA%3D%3D) y la [procesa la vista](https://github.com/Microsoft/WindowsServerDocs-pr/blob/master/Contributor-guide/ws-template.md). (El descuento sin procesar muestra el bloque de metadatos, mientras que la vista representada no).
+Esta plantilla OPS contiene ejemplos de sintaxis de Markdown, así como instrucciones sobre cómo establecer los metadatos. Para obtener el máximo provecho de él, debe ver el [Markdown sin formato](https://raw.githubusercontent.com/Microsoft/WindowsServerDocs-pr/master/Contributor-guide/ws-template.md?token=AG1vEhARRHNLtPgKXP35BGjNZGajKOArks5YLNIwwA%3D%3D) y [vista representada](https://github.com/Microsoft/WindowsServerDocs-pr/blob/master/Contributor-guide/ws-template.md). (El Markdown sin formato muestra el bloque de metadatos, mientras que la vista representada no).
 
-Al crear un archivo de descuento, debe copiar la plantilla en un archivo nuevo, rellene los metadatos como conjunto especificado a continuación, el encabezado H1 anteriormente para el título del artículo y eliminar el contenido. Cualquier cosa en mayúsculas en corchetes requiere su atención.
+Al crear un archivo de Markdown, debe copiar la plantilla en un archivo nuevo, rellenar los metadatos como se indica a continuación, Establece el encabezado H1 anterior para el título del artículo y eliminar el contenido. Cualquier cosa en mayúsculas en los corchetes que requiere su atención.
 
 
 ## <a name="metadata"></a>Metadatos 
 
-El bloque de metadatos completo está por encima. Algunas notas claves:
+El bloque de metadatos completo está por encima. Algunas notas importantes:
 
-- **Debe** tener un espacio entre los dos puntos (:) y el valor de un elemento de metadatos.
-- Dos puntos en un valor (por ejemplo, un título) interrumpen el analizador de metadatos. En su lugar, use la codificación HTML para un punto y coma de `&#58;` (por ejemplo, `"title: Azure Rights Management&#58; the basics | Azure RMS"`).
-- **título**: este título aparecerá en los resultados del motor de búsqueda. 
-- **autor**: el campo autor debe contener el **nombre de usuario de depósito** del autor, no sus alias.
-- **ms.prod**, **ms.technology**: usar "umbral de servidor de windows" de ms.prod (o con 10 si usa esta plantilla para crear contenido para Windows 10). Hablar con su contacto CX para obtener el valor de ms.technology.
+- Le **debe** tiene un espacio entre los dos puntos (:) y el valor de un elemento de metadatos.
+- Dos puntos en un valor (por ejemplo, un título) interrumpen el analizador de metadatos. En su lugar, utilice la codificación HTML de dos puntos de `&#58;` (por ejemplo, `"title: Azure Rights Management&#58; the basics | Azure RMS"`).
+- **title**: Este título aparecerá en los resultados del motor de búsqueda. 
+- **Autor**: El campo autor debe contener el **nombre de usuario de GitHub** del autor, no su alias.
+- **ms.prod**, **ms.technology**: Use "windows-server-threshold" ms.prod (o con 10 si usa esta plantilla para crear contenido para Windows 10). Hable con su contacto CX para obtener el valor de ms.technology.
 
-## <a name="basic-markdown-gfm-and-special-characters"></a>Descuento básico, GFM y caracteres especiales
+## <a name="basic-markdown-gfm-and-special-characters"></a>Markdown básico, GFM y caracteres especiales
 
-Es compatible con todos los descuentos básica y con sabor depósito. Para obtener más información, vea:
+Es compatible con todos los Markdown básicos y característico de GitHub. Para obtener más información, consulte:
 
-- [Sintaxis de descuento de línea base](https://daringfireball.net/projects/markdown/syntax)
-- [Documentación de descuento (GFM) con sabor depósito](https://guides.github.com/features/mastering-markdown)
+- [Sintaxis de Markdown de línea de base](https://daringfireball.net/projects/markdown/syntax)
+- [Documentación de Markdown (GFM) característico de GitHub](https://guides.github.com/features/mastering-markdown)
 
-Descuento usa caracteres especiales, como \ *, \', y \ # para aplicar el formato. Si desea incluir uno de los siguientes caracteres en el contenido, debe hacer dos cosas:
+Markdown utiliza caracteres especiales como \*, \`, y \# para dar formato. Si desea incluir uno de estos caracteres en el contenido, debe hacer dos cosas:
 
-- Colocar una barra diagonal inversa antes de que "escape" el carácter especial (por ejemplo, \\\ * para un \ *)
-- Use el [código de la entidad HTML](http://www.ascii.cl/htmlcodes.htm) para el carácter (por ejemplo, \ & \#42\; para un & #42;).
+- Escriba una barra diagonal inversa delante del carácter especial "escapar" (por ejemplo, \\ \* para un \*)
+- Use la [código de entidad HTML](http://www.ascii.cl/htmlcodes.htm) para el carácter (por ejemplo, \& \#42\; para un &#42;).
 
 ## <a name="headings"></a>Encabezados
 
-Los encabezados deben realizarse con el estilo de atx, es decir, utilice 1-6 caracteres de hash (#) al principio de la línea para indicar un encabezado, correspondiente a los niveles de los encabezados HTML H1 a H6. Ejemplos de encabezados de primer y segundo nivel se usan por encima. 
+Los encabezados deben realizarse con estilo de atx, es decir, usar caracteres de 1 a 6 hash (#) al principio de la línea para indicar un título, correspondientes a los niveles de encabezados HTML H1 a H6. Ejemplos de encabezados de primer y segundo nivel se utilizan anteriormente. 
 
-Existe **debe** ser sólo un título de primer nivel (H1) en el tema, que se mostrará como el título en la página.  
+Hay **debe** ser solo un encabezado de primer nivel (H1) en el tema, que se mostrará como título en la página.  
 
-Títulos de segundo nivel, generarán la tabla de contenido en la página que aparece en la sección "de este artículo" debajo del título en la página.
+Los encabezados de segundo nivel generarán la tabla de contenido en la página que aparece en la sección "en este artículo" debajo del título en la página.
 
 ### <a name="third-level-heading"></a>Encabezado de tercer nivel
-#### <a name="fourth-level-heading"></a>Título del cuarto nivel
-##### <a name="fifth-level-heading"></a>Título de nivel quinto
-###### <a name="sixth-level-heading"></a>Título del sexto nivel
+#### <a name="fourth-level-heading"></a>Encabezado de cuarto nivel
+##### <a name="fifth-level-heading"></a>Encabezado de quinto nivel
+###### <a name="sixth-level-heading"></a>Encabezado de sexto nivel
 
-## <a name="text-styling"></a>Estilo de texto
+## <a name="text-styling"></a>Estilo del texto
 
 *Cursiva* 
 
@@ -74,73 +74,73 @@ Títulos de segundo nivel, generarán la tabla de contenido en la página que ap
 
 ### <a name="internal-links"></a>Vínculos internos
 
-Para vincular un encabezado en el mismo archivo de descuento, ver el origen del artículo publicado, busque el identificador de la cabeza (por ejemplo, `id="blockquote"`) y vincular con # + identificador (por ejemplo, `#blockquote`).
+Para vincular a un encabezado en el mismo archivo de Markdown, vea el origen del artículo publicado, busque el identificador del encabezado (por ejemplo, `id="blockquote"`) y vincúlelo con # + identificador (por ejemplo, `#blockquote`).
 
-- Ejemplo: [Blockquotes](#blockquote)
+- Por ejemplo: [Blockquotes](#blockquote)
 
-Para vincular un archivo de descuento en el mismo repo, use [vínculos relativos](https://www.w3.org/TR/WD-html40-970917/htmlweb.html#h-5.1.2), incluida la ".md" al final del nombre de archivo.
+Para vincular a un archivo de Markdown en el mismo repositorio, utilice [vínculos relativos](https://www.w3.org/TR/WD-html40-970917/htmlweb.html#h-5.1.2), incluyendo el ".md" al final del nombre de archivo.
 
-- Ejemplo: [sugerencias y problemas comunes](tips-gotchas.md)
-- Ejemplo: [el programa de instalación para los colaboradores y herramientas](../readme.md)
+- Por ejemplo: [Sugerencias y trampas](tips-gotchas.md)
+- Por ejemplo: [Herramientas e instalación para los colaboradores](../readme.md)
 
-Para vincular un encabezado en un archivo de descuento en el mismo repo, utilice vinculación relativa + hashtag vinculación.
+Para vincular a un encabezado en un archivo de Markdown en el mismo repositorio, utilice la vinculación relativa + vinculación hashtag.
 
-- Ejemplo: [Eliminar archivos](tips-gotchas.md#deleting-files)
+- Por ejemplo: [Eliminación de archivos](tips-gotchas.md#deleting-files)
 
 ### <a name="external-links"></a>Vínculos externos
 
-Para vincular a un archivo externo, utilice la dirección URL completa como el vínculo.
+Para vincular a un archivo externo, use la dirección URL completa como vínculo.
 
-- Ejemplo: [depósito](http://www.github.com)
+- Por ejemplo: [GitHub](http://www.github.com)
 
-Si aparece una dirección URL en un archivo de descuento, se van a transformar en un vínculo.
+Si aparece una dirección URL en un archivo Markdown, se transformará en un vínculo.
 
-- Ejemplo:http://www.github.com
+- Ejemplo: http://www.github.com
 
 ## <a name="lists"></a>Listas
 
 ### <a name="ordered-lists"></a>Listas ordenadas
 
-1. Esto 
-1. Es
-1. Un
-1. Ordenados
+1. Este 
+1. Is
+1. Una
+1. Ordenada
 1. Lista  
 
 
-#### <a name="ordered-list-with-an-embedded-list"></a>Lista con una lista incrustada ordenada
+#### <a name="ordered-list-with-an-embedded-list"></a>Lista ordenada con una lista insertada
 
 1. Aquí
-1. viene
-1. un
-1. incrustado
+1. incluye
+1. Una
+1. embedded
     1. Error de Scarlett
-    1. Ciruela profesor
-1. ordenados
+    1. Profesor Plum
+1. Ordenada
 1. list
 
 
-### <a name="unordered-lists"></a>Listas no ordenadas
+### <a name="unordered-lists"></a>Listas sin ordenar
 
-- Esto
--  esté 
+- Este
+- estará
 - a
 - con viñetas
 - list
 
 
-##### <a name="unordered-list-with-an-embedded-list"></a>Lista no ordenada con una lista incrustada
+##### <a name="unordered-list-with-an-embedded-list"></a>Lista desordenada con una lista insertada
 
-- Esto 
+- Este 
 - con viñetas 
 - list
     - Pavo real Sra.
-    - Verde de d.
-- contiene  
-- otros
+    - El Sr. verde
+- Contiene  
+- otro
     1. Tanto mostaza
-    1. Notas del Sra.
-- listas
+    1. Notas de MRS.
+- Listas
 
 
 ## <a name="horizontal-rule"></a>Regla horizontal
@@ -149,20 +149,20 @@ Si aparece una dirección URL en un archivo de descuento, se van a transformar e
 
 ## <a name="tables"></a>Tablas
 
-En casi todas las instancias, usar MD en el formato de las tablas. Mientras que las tablas HTML proporcionan más flexibilidad no se use en nuestro contenido. Si tiene una tabla HTML en su artículo, no se va a combinar ese artículo.
+En casi todas las instancias, usar MD formato de tablas. Mientras que las tablas HTML proporcionan más flexibilidad no lo usamos en nuestro contenido. Si tiene una tabla HTML en el artículo, no se combinará ese artículo.
 
-| Tablas        | Son           | Luz fluorescente  |
+| Tablas        | Son           | Niveles de acceso esporádico  |
 | ------------- |:-------------:| -----:|
-| col 3 es      | alineada a la derecha | $1600 |
-| Col 2 es      | centrado      |   12$ |
-| Col 1 es el valor predeterminado | alineado a la izquierda     |    $1 |
+| la col. 3 está      | alineado a la derecha | $1600 |
+| la col. 2 está      | centrado      |   12 $ |
+| la col. 1 es el valor predeterminado | alineado a la izquierda     |    $1 |
 
 
 ## <a name="code"></a>Código
 
-### <a name="generic-codeblock"></a>Codeblock genérica
+### <a name="generic-codeblock"></a>Codeblock genérico
 
-Aplicar sangría a espacios de código cuatro para codificación codeblock genérica.
+Aplicar sangría a los espacios de cuatro del código para la codificación de codeblock genérico.
 
     function fancyAlert(arg) {
       if(arg) {
@@ -173,9 +173,9 @@ Aplicar sangría a espacios de código cuatro para codificación codeblock gené
 
 ### <a name="codeblocks-with-language-identifier"></a>Codeblocks con el identificador de idioma
 
-Usar tres backticks (& #96; & #96; & #96;) + codificación un bloque de código de un identificador de idioma que se debe aplicar el color específicos del idioma.  Aquí está toda la lista de [identificadores de idioma de depósito con sabor descuento (GFM)](https://github.com/jmm/gfm-lang-ids/wiki/GitHub-Flavored-Markdown-(GFM)-language-IDs).
+Utilice tres acentos graves (&#96;&#96;&#96;) + un identificador de idioma para aplicar colores específica del lenguaje de codificación para un bloque de código.  Esta es la lista completa de [identificadores de idioma de GitHub Flavored Markdown (GFM)](https://github.com/jmm/gfm-lang-ids/wiki/GitHub-Flavored-Markdown-(GFM)-language-IDs).
 
-##### <a name="c9839"></a>C & #9839;
+##### <a name="c9839"></a>C&AMP;#9839;
 
 ```c#
 using System;
@@ -212,21 +212,21 @@ $Files = Get-Childitem $Directory -recurse -Include *.log `
 
 ### <a name="inline-code"></a>Código en línea
 
-Utilice backticks (& #96;) para `inline code`.
+Use acentos graves (&#96;) para `inline code`.
 
 ## <a name="blockquotes"></a>Blockquotes
 
-> La sequía tenía duró ahora para millones de diez años, y el Reino de la lagartos terribles ya tenía finalizó. Aquí en el Ecuador, en el continente que sería un día conocido como África, la batalla existencia había alcanzado un nuevo climax de ferocity y el victor aún no estaba en la vista. En este land barren y desecado, solo la pequeña o swift o la feroz podría florido, o incluso esperamos sobrevivir.
+> La sequía había durado ya diez millones de años, y el reinado de los terribles saurios tiempo ha que había terminado. Aquí en el Ecuador, en el continente que podría ser conocido un día como África, la batalla por la existencia había alcanzado un nuevo clímax de ferocidad, y el victor aún no estaba a la vista. En este terreno estéril y desecado, sólo el pequeño raudo o lo feroz podría medrar, o aún esperar sobrevivir.
 
 ## <a name="images"></a>Imágenes
 
 ### <a name="static-image"></a>Imagen estática
 
-![Este es el texto alternativo](../windowsserverdocs/get-started/media/wsbanner.png)
+![Este es el texto alt](../windowsserverdocs/get-started/media/wsbanner.png)
 
 ### <a name="linked-image"></a>Imagen vinculada
 
-[![alt texto para la imagen vinculada](../windowsserverdocs/get-started/nano.png)](../windowsserverdocs/get-started/getting-started-with-nano-server.md) 
+[![texto alternativo para la imagen vinculada](../windowsserverdocs/get-started/nano.png)](../windowsserverdocs/get-started/getting-started-with-nano-server.md) 
 
 ## <a name="alerts"></a>Alertas
 

@@ -1,6 +1,6 @@
 ---
-title: ¿Novedades para escritorio remoto en iOS?
-description: Obtén información sobre los cambios recientes en el cliente de escritorio remoto para iOS
+title: ¿Novedades de escritorio remoto en iOS?
+description: Obtenga información sobre los cambios recientes en el cliente de escritorio remoto para iOS
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,35 +14,35 @@ ms.author: elizapo
 ms.date: 02/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 630287b10308d88a6040573035194f181ad8c859
-ms.sourcegitcommit: e544f5c50e023e263540e4b1b1deb4cc81df5472
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "9083783"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879246"
 ---
-# ¿Novedades del cliente de escritorio remoto en iOS?
+# <a name="whats-new-for-the-remote-desktop-client-on-ios"></a>¿Novedades del cliente de escritorio remoto en iOS?
 
-Periódicamente actualizamos el [cliente de escritorio remoto para iOS](remote-desktop-ios.md), agrega nuevas características y corregir los problemas. Echa un vistazo a las actualizaciones más recientes a continuación.
+Se actualiza con regularidad el [cliente de escritorio remoto para iOS](remote-desktop-ios.md), agregar nuevas características y solución de problemas. Consulte las actualizaciones más recientes a continuación.
 
-## Cliente de la versión Beta de iOS de escritorio remoto
-*Fecha de publicación: 20/02/2019*
+## <a name="remote-desktop-ios-beta-client"></a>Cliente de la versión Beta de iOS de escritorio remoto
+*Fecha de publicación: 02/20/2019*
 
-El [cliente de escritorio remoto iOS Beta](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client) ahora está disponible en TestFlight. Durante la prueba del cliente de la versión Beta de iOS, ten en cuenta que se trata de una versión preliminar del nuevo cliente de iOS y no se garantiza que las versiones de producción lo más estable. Seguiremos actualizar a este cliente periódicamente con nuevas características y correcciones. A continuación, se destacan varias características del cliente de iOS Beta de:
+El [de cliente de escritorio remoto iOS Beta](remote-desktop-ios.md#download-the-remote-desktop-ios-beta-client) ahora está disponible en TestFlight. Al probar al cliente de la versión Beta de iOS, tenga en cuenta que se trata de una versión de vista previa del nuevo cliente de iOS y no se garantiza para ser lo más estable como versiones de producción. Seguimos actualizar a este cliente regularmente con correcciones y nuevas características. Se resaltan varias características del cliente iOS Beta a continuación:
 
-- Mejor experiencia en los dispositivos iOS más recientes.
-- Compatibilidad con el mouse físico Swiftpoint GT y ProPoint. Ver la [lista de dispositivos de entrada admitidos](remote-desktop-ios.md#supported-input-devices) para el cliente de la versión Beta de iOS.
+- Experiencia mejorada en los últimos dispositivos iOS.
+- Compatibilidad con los ratones Swiftpoint GT y ProPoint físicos. Consulte la [lista de dispositivos compatibles de entrada](remote-desktop-ios.md#supported-input-devices) para el cliente de la versión Beta de iOS.
 - Compatibilidad con [Escritorio Virtual de Windows](https://aka.ms/wvd).
-- Micrófono y iPhone redirección de almacenamiento.
-- Soporte técnico AVC420 y AVC444.
-- Reconstrucción completa compatibilidad de aceleración de hardware.
+- Redirección de almacenamiento del micrófono y iPhone.
+- Compatibilidad con AVC420 y AVC444.
+- Compatibilidad de aceleración de hardware completa.
 
-## Actualizaciones de versión 8.1.42
-*Fecha de publicación: 20/06/2018*
+## <a name="updates-for-version-8142"></a>Actualizaciones de versión 8.1.42
+*Fecha de publicación: 06/20/2018*
 
 - Correcciones de errores y mejoras de rendimiento.
 
-## Actualizaciones de versión 8.1.41
-*Fecha de publicación: 28/03/2018*
+## <a name="updates-for-version-8141"></a>Actualizaciones de versión 8.1.41
+*Fecha de publicación: 03/28/2018*
 
-- Actualizaciones para tratar la corrección oracle CredSSP cifrado que se describe en CVE-2018-0886.
+- Actualizaciones para tratar la corrección de oracle cifrado CredSSP que se describe en CVE-2018-0886.
  

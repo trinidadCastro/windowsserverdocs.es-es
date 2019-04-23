@@ -1,7 +1,7 @@
 ---
 ms.assetid: ad61c586-ba8a-4534-8824-b45994d60c6b
-title: "Comprobar que un servidor de federación está operativo"
-description: 
+title: Comprobar que un servidor de federación está operativo
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,44 +10,45 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 2034b4c35061879a64004486395d0887c59087b2
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59877716"
 ---
 # <a name="verify-that-a-federation-server-is-operational"></a>Comprobar que un servidor de federación está operativo
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Puedes usar los siguientes procedimientos para comprobar que un servidor de federación está operativo; es decir, que cualquier cliente en la misma red puede llegar a un servidor de federación de nuevo.  
+Puede realizar los siguientes procedimientos para comprobar que un servidor de federación está operativo; es decir, que todos los clientes de la misma red pueden acceder a un nuevo servidor de federación.  
   
-Pertenencia a **usuarios**, **operadores de copia de seguridad**, **usuarios avanzados**, **administradores** o equivalente, en el equipo local es lo mínimo necesario para completar este procedimiento.  Revisar detalles sobre el uso de las cuentas adecuadas y agrupar pertenencias a [Local y dominio predeterminada grupos](https://go.microsoft.com/fwlink/?LinkId=83477).   
+Para completar este procedimiento, se requiere como mínimo la pertenencia a **Usuarios**, **Operadores de copia de seguridad**, **Usuarios avanzados**, **Administradores** o equivalente.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-### <a name="procedure-1-to-verify-that-a-federation-server-is-operational"></a>Procedimiento 1: Comprobar que un servidor de federación está operativo  
+### <a name="procedure-1-to-verify-that-a-federation-server-is-operational"></a>Procedimiento 1: Para comprobar que un servidor de federación sea operativo  
   
-1.  Para comprobar que Internet Information Services \(IIS\) está correctamente configurado en el servidor de federación, inicie sesión en un equipo cliente que se encuentra en el mismo bosque que el servidor de federación.  
+1.  Para comprobar que Internet Information Services \(IIS\) está configurado correctamente en el servidor de federación, inicie sesión en un equipo cliente que se encuentra en el mismo bosque que el servidor de federación.  
   
-2.  Abre una ventana del explorador, en el tipo de la barra de direcciones la federación de nombre de host DNS del servidor y luego anexa /adfs/fs/federationserverservice.asmx a ella para el servidor de federación de nuevo, por ejemplo:  
+2.  Abra una ventana del explorador, en el tipo de barra de dirección la federación de nombre de host DNS del servidor y luego anéxele /adfs/fs/federationserverservice.asmx para el nuevo servidor de federación, por ejemplo:  
   
-    **https://FS1.fabrikam.com/adfs/fs/federationserverservice.asmx**  
+    **https://fs1.fabrikam.com/adfs/fs/federationserverservice.asmx**  
   
-3.  Presione ENTRAR y, a continuación, se complete el procedimiento siguiente en el equipo de servidor de federación. Si aparece el mensaje **hay un problema con el certificado de seguridad del sitio Web**, haz clic en **continuar a este sitio Web**.  
+3.  Presione ENTRAR y complete el siguiente procedimiento en el equipo de servidor de federación. Si aparece el mensaje **Existe un problema con el certificado de seguridad de este sitio web**, haga clic en **Pasar a este sitio web**.  
   
-    El resultado esperado es una visualización de XML con el documento de descripción de servicio. Si aparece esta página, IIS en el servidor de federación está operativas y preparar para páginas correctamente.  
+    Se espera que aparezca un documento XML con la descripción del servicio. Si esta página aparece, significa que IIS del servidor de federación está operativo y que está sirviendo correctamente a las páginas.  
   
-Pertenencia a **administradores**, o equivalente, en el equipo local es lo mínimo necesario para completar este procedimiento.  Revisar detalles sobre el uso de las cuentas adecuadas y agrupar pertenencias a [Local y dominio predeterminada grupos](https://go.microsoft.com/fwlink/?LinkId=83477).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-### <a name="procedure-2-to-verify-that-a-federation-server-is-operational"></a>Procedimiento 2: Para comprobar que un servidor de federación está operativo  
+### <a name="procedure-2-to-verify-that-a-federation-server-is-operational"></a>Procedimiento 2: Para comprobar que un servidor de federación sea operativo  
   
-1.  Iniciar sesión como administrador el servidor de federación de nuevo.  
+1.  Inicie sesión en el nuevo servidor de federación como administrador.  
   
-2.  En la **inicio** , escriba **Visor de eventos**, y, a continuación, presione ENTRAR.  
+2.  En el **iniciar** , escriba **Visor de eventos**, y, a continuación, presione ENTRAR.  
   
-3.  En el panel de detalles, double\ clic **registros de aplicaciones y servicios**, double\ clic **AD FS eventos**y, a continuación, haz clic en **administrador**.  
+3.  En el panel de detalles, haga doble\-haga clic en **registros de aplicaciones y servicios**, double\-haga clic en **AD FS Eventing**y, a continuación, haga clic en **Admin**.  
   
-4.  En la **identificador de evento** columna, busque el identificador de 100. Si el servidor de federación está configurado correctamente, verás un nuevo evento, en el registro de aplicación de Visor de eventos, con el 100 de identificador de evento. Este evento se comprueba que el servidor de federación pudo comunicarse correctamente con el servicio de federación.  
+4.  En el **Id. de evento** columna, busque el identificador de evento 100. Si el servidor de federación está configurado correctamente, verá un nuevo evento, en el registro de aplicación del Visor de eventos, con el identificador de evento 100. Este evento comprueba que el servidor de federación fue capaz de comunicarse correctamente con el servicio de federación.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: Cómo configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

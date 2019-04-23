@@ -1,6 +1,6 @@
 ---
 title: Proceso de implementación de acceso inalámbrico
-description: Este tema es parte de la Guía de redes de Windows Server 2016 "Implementar basada en contraseña 802.1X X autenticados Wireless Access"
+description: Este tema forma parte de la Guía de redes de Windows Server 2016 "Implementar mediante 802.1X basado en contraseña X Authenticated Wireless Access"
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
@@ -8,61 +8,62 @@ ms.topic: article
 ms.assetid: 2555f238-926e-4b20-9bfb-9774831062da
 author: shortpatti
 ms.author: pashort
-ms.openlocfilehash: fcdbe796e4d530604dfec448e817eab877d34c4f
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: 6a286cf10e066043ee6f514bbf468bfb2b13f162
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879846"
 ---
 # <a name="wireless-access-deployment-process"></a>Proceso de implementación de acceso inalámbrico
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-El proceso que usan para implementar acceso inalámbrico se produce en estas fases:
+Se produce el proceso que se utiliza para implementar el acceso inalámbrico en estas fases:
 
-## <a name="stage-1--ap-deployment"></a>Escenario 1: implementación de punto de acceso
+## <a name="stage-1--ap-deployment"></a>Fase 1: implementación de Asia Pacífico
 
-Planear, implementar y configurar los puntos de acceso para la conectividad inalámbrica de cliente y para su uso con NPS. Según las dependencias de red y preferencias, puedes cualquier pre\-configurar las opciones en los puntos de acceso inalámbricos antes de instalarlos en la red o configurar remotamente tras la instalación.
+Planear, implementar y configurar los puntos de acceso para la conectividad de cliente inalámbrica y para su uso con NPS. Dependiendo de las dependencias de red y preferencias, podrá previamente\-establecer la configuración en tus AP inalámbricos antes de instalarlos en la red o puede configurarlos de forma remota después de la instalación.
 
-## <a name="stage-2--ad-ds-group-configuration"></a>Fase 2: configuración de grupo de AD DS
+## <a name="stage-2--adds-group-configuration"></a>Fase 2: configuración del grupo de AD DS
 
-En AD DS, debes crear uno o varios usuarios inalámbricos grupos de seguridad.
+En AD DS, debe crear grupos de seguridad de uno o varios usuarios inalámbricos.
 
-A continuación, identificar los usuarios que tienen permiso de acceso inalámbrico a la red.
+A continuación, identifique los usuarios que tienen permiso de acceso inalámbrico a la red.
 
-Por último, agrega los usuarios a los grupos de seguridad de los usuarios inalámbrica adecuados que creaste.
+Por último, agregue los usuarios a los grupos de seguridad usuarios inalámbricos adecuado que ha creado.
 
 >[!NOTE]
->De manera predeterminada, la **permiso de acceso de red** en Propiedades de marcado de la cuenta de usuario se establece con la opción **controlar el acceso a través de la directiva de red NPS**. A menos que tengas motivos específicos para cambiar esta configuración, se recomienda que mantengas el valor predeterminado. Esto te permite controlar el acceso de red a través de las directivas de red que se configura en NPS.
+>De forma predeterminada, el **permiso de acceso de red** en Propiedades de marcado de la cuenta de usuario se establece con la configuración de **controlar el acceso a través de la directiva de red NPS**. A menos que tenga razones específicas para cambiar esta configuración, se recomienda que mantenga el valor predeterminado. Esto le permite controlar el acceso de red a través de las directivas de red que se configuran en NPS.
 
-## <a name="stage-3--group-policy-configuration"></a>Escenario 3: configuración de directiva de grupo
+## <a name="stage-3--group-policy-configuration"></a>Fase 3: configuración de directiva de grupo
 
-Configurar la red inalámbrica \ (IEEE 802.11\) extensión de directivas de la directiva de grupo mediante el uso de la \(MMC\) el Editor de administración de directivas de grupo de Microsoft Management Console.
+Configurar la red inalámbrica \(IEEE 802.11\) extensión de directivas de directiva de grupo mediante el uso del Editor de administración de directivas de grupo de Microsoft Management Console \(MMC\).
 
-Para configurar los equipos miembro domain\ con la configuración de las directivas de red inalámbrica, debes aplicar la directiva de grupo. Cuando un equipo primero está unido al dominio, directiva de grupo se aplica automáticamente. Si se realizan cambios en la directiva de grupo, la nueva configuración se aplica automáticamente:
+Configurar dominio\-los equipos de miembros mediante la configuración de directivas de redes inalámbricas, debe aplicar la directiva de grupo. Cuando un equipo en primer lugar está unido al dominio, automáticamente se aplica la directiva de grupo. Si se realizan cambios en la directiva de grupo, se aplica automáticamente la nueva configuración:
 
-- Directiva de grupo a intervalos determinado pre\
+- Directiva de grupo en pre\-determina los intervalos
 
-- Si un usuario de dominio cierra y vuelva a la red
+- Si cierra la sesión de un usuario de dominio y, a continuación, hacer una copia de sesión en la red
 
-- Reiniciando el equipo cliente y iniciando sesión en el dominio
+- Al reiniciar el equipo cliente e iniciando sesión en el dominio
 
-También puede hacer que la directiva de grupo para actualizar al iniciar sesión un equipo ejecutando el comando **gpupdate** en el símbolo del sistema.
+También puede forzar la directiva de grupo para actualizar mientras esté conectado a un equipo, ejecute el comando **gpupdate** en el símbolo del sistema.
 
-## <a name="stage-4--nps-server-configuration"></a>Escenario 4: configuración del servidor NPS
+## <a name="stage-4--nps-configuration"></a>Fase 4: configuración de NPS
 
-Usar a un asistente de configuración de NPS para agregar puntos de acceso inalámbrico como clientes RADIUS y para crear las directivas de red que usa NPS al procesar las solicitudes de conexión.
+Usar a un Asistente para configuración de NPS para agregar puntos de acceso inalámbricos como clientes RADIUS y para crear las directivas de red que usa NPS al procesar las solicitudes de conexión.
 
-Al usar al Asistente para crear las directivas de red, especificar PEAP como el tipo de EAP y el grupo de seguridad de los usuarios inalámbricos que se creó en la segunda fase.
+Cuando se usa al Asistente para crear las directivas de red, especifique PEAP como el tipo de EAP y el grupo de seguridad de los usuarios inalámbricos que se creó en la segunda fase.
 
-## <a name="stage-5--deploy-wireless-clients"></a>Paso 5: implementar los clientes inalámbricos
+## <a name="stage-5--deploy-wireless-clients"></a>Fase 5: implementar a los clientes inalámbricos
 
-Usar los equipos cliente para conectarse a la red.
+Use los equipos cliente para conectarse a la red.
 
-Para equipos miembros del dominio que se pueden iniciar sesión en la LAN con cable, las opciones de configuración inalámbrica necesarios se aplican automáticamente cuando se actualiza la directiva de grupo.
+Para equipos miembros del dominio que se pueden iniciar sesión en la red LAN cableada, los valores de configuración inalámbrica necesarios se aplican automáticamente cuando se actualiza la directiva de grupo.
 
-Si has habilitado la configuración de red inalámbrica \ (IEEE 802.11\) directivas para conectarse automáticamente cuando el equipo esté dentro del alcance de difusión de la red inalámbrica, los equipos unidos a un domain\ inalámbrica tendrá automáticamente intentan conectarse a la LAN inalámbrica.
+Si ha habilitado la configuración de red inalámbrica \(IEEE 802.11\) directivas para conectarse automáticamente cuando el equipo está dentro de intervalo de la red inalámbrica, la inalámbrica, el dominio de difusión\-luego actuará de equipos combinados intenta automáticamente conectarse a la LAN inalámbrica.
 
-Para conectarse a la red inalámbrica, los usuarios solo necesitan proporcionar sus usuario nombre y la contraseña credenciales de dominio cuando se te pida por Windows.
+Para conectarse a la red inalámbrica, los usuarios sólo necesitan proporcionar sus credenciales usuario de dominio nombre y la contraseña cuando se le pida en Windows.
 
-Para planear la implementación de acceso inalámbrico, consulta [planeación de implementación de acceso inalámbrico](d-wireless-access-planning.md).
+Para planear la implementación de acceso inalámbrico, consulte [planeamiento de implementación de acceso inalámbrico](d-wireless-access-planning.md).

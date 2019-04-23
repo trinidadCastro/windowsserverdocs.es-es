@@ -1,7 +1,7 @@
 ---
 ms.assetid: 5e334c4e-75a7-453c-83e8-5ab4243cc685
-title: "Crear el primer servidor de federación en una granja de servidores de federación"
-description: 
+title: Crear el primer servidor de federación en una granja de servidores de federación
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,61 +10,62 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: af0aa61f0d16d4ca567b140c95d74445d09f1cf3
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59879306"
 ---
 # <a name="create-the-first-federation-server-in-a-federation-server-farm"></a>Crear el primer servidor de federación en una granja de servidores de federación
 
  >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Después de instalar el servicio de rol de servicios de federación y configurar los certificados necesarios en un equipo, estás listo para configurar el equipo para convertirse en un servidor de federación. Puedes usar el siguiente procedimiento para configurar el equipo para convertirse en el primer servidor de federación de un nuevo conjunto de servidor de federación mediante el Asistente para configuración del servidor de federación de AD FS.  
+Después de instalar el servicio de rol Servicio de federación y configurar los certificados necesarios en un equipo, está listo para configurar el equipo para convertirse en un servidor de federación. Puede usar el procedimiento siguiente para configurar el equipo para convertirse en el primer servidor de federación en una nueva granja de servidores de federación mediante el Asistente para configuración del servidor de federación de AD FS.  
   
-La acción de crear el primer servidor de federación de un conjunto de también crea un nuevo servicio de federación y hace que este equipo en el servidor de federación principal. Esto significa que este equipo se configurará con una copia de la base de datos de configuración de AD FS read\ y escritura. Todos los otros servidores de federación de este conjunto deben replicar los cambios realizados en el servidor de federación principal solo read\ copias de la base de datos de configuración de AD FS que se almacenan localmente. Para obtener más información sobre este proceso de replicación, consulta [el rol de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
+Al crear el primer servidor de federación de una granja, también se crea un nuevo servicio de federación y el equipo se convierte en el servidor de federación principal. Esto significa que este equipo se configurará con una lectura\/escribir la copia de la base de datos de configuración de AD FS. Todos los demás servidores de federación de la granja deben replicar los cambios realizados en el servidor de federación principal para su lectura\-solo copias de la base de datos de configuración de AD FS que almacenen localmente. Para obtener más información sobre el proceso de replicación, consulta [El rol de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
   
 > [!NOTE]  
-> Para el diseño federados Web Single\-Sign\-On \(SSO\), debes tener al menos un servidor de federación de la organización de partner de la cuenta y al menos un servidor de federación de la organización de partner de recurso. Para obtener más información, consulta [dónde colocar un servidor de federación](https://technet.microsoft.com/library/dd807127.aspx).  
+> Para Federated Web único\-sesión\-en \(SSO\) diseño, debe tener al menos un servidor de federación en la organización del asociado de cuenta y al menos un servidor de federación en la organización del asociado de recurso . Para obtener más información, consulte [Where to Place a Federation Server](https://technet.microsoft.com/library/dd807127.aspx).  
   
-Pertenencia al grupo Administradores de dominio o una cuenta de dominio delegado que se ha concedido acceso de escritura en el contenedor de datos de programa en Active Directory, es lo mínimo necesario para completar este procedimiento.  
+Para completar este procedimiento, lo mínimo que se necesita es pertenecer a Administradores del dominio, o a una cuenta de dominio delegada que disponga de acceso de escritura al contenedor Datos de programas en Active Directory.  
   
-### <a name="to-create-the-first-federation-server-in-a-federation-server-farm"></a>Para crear el primer servidor de federación en una granja de servidores de federación  
+### <a name="to-create-the-first-federation-server-in-a-federation-server-farm"></a>Cómo crear el primer servidor de federación en una granja de servidores de federación  
   
-1.  Hay dos formas de iniciar al Asistente para configuración del servidor de federación de AD FS. Para iniciar al asistente, realiza una de las siguientes acciones:  
+1.  Hay dos maneras de iniciar al Asistente para configuración del servidor de federación de AD FS. Para iniciar el asistente, realiza una de las acciones siguientes:  
   
-    -   Una vez completada la instalación del servicio de rol de servicios de federación, abre la administración de AD FS en snap\ y haz clic en el **Asistente de configuración del servidor de AD FS federación** vincular en la **Introducción** página o en la **acciones** panel.  
+    -   Una vez completada la instalación del servicio de rol Servicio de federación, abra el complemento Administración de AD FS\-en y haga clic en el **Asistente para configuración de AD FS Federation Server** vincular en el **Introducción** página o en el **acciones** panel.  
   
-    -   Cualquier momento después de que el Asistente para la instalación se completa, abre el Explorador de Windows, navega hasta la **C:\\Windows\\ADFS** carpeta y, a continuación, clic double\ **FsConfigWizard.exe**.  
+    -   Cuando el Asistente para la instalación haya finalizado, abre el Explorador de Windows, navegue hasta la **C:\\Windows\\ADFS** carpeta y, a continuación, doble\-haga clic en **FsConfigWizard.exe**.  
   
-2.  En la **bienvenida** página, comprueba que **crear un nuevo servicio de federación** está seleccionado y, a continuación, haz clic en **siguiente**.  
+2.  En la **Página principal**, comprueba que la opción **Crear un nuevo servicio de federación** esté seleccionada y, después, haz clic en **Siguiente**.  
   
-3.  En la **selecciona Stand\-por sí solo o la implementación de granja** página, haz clic en **nueva granja de servidores de federación**y, a continuación, haz clic en **siguiente**.  
+3.  En el **seleccione soporte\-Alone o implementación de granja de servidores** página, haga clic en **nueva granja de servidores de federación**y, a continuación, haga clic en **siguiente**.  
   
-4.  En la **especifique el nombre de servicio de federación** página, comprueba que la **certificado SSL** que se muestra es correcta. Si esto no es el certificado correcto, selecciona el certificado apropiado de la **certificado SSL** lista.  
+4.  En la página **Especificar el nombre del Servicio de federación**, comprueba que el **Certificado SSL** que se muestra es correcto. Si no es el certificado correcto, selecciona el adecuado en la lista **Certificado SSL**.  
   
-    Este certificado se genera desde la configuración de la capa de Sockets seguros \(SSL\) del sitio Web predeterminado. Si el sitio Web predeterminado tiene un único certificado SSL configurado, ese certificado se presenta y se selecciona automáticamente para su uso. Si se configuran varios certificados SSL para el sitio Web de forma predeterminada, todos los certificados se enumeran aquí y debe seleccionar entre ellos. Si no hay sin ninguna configuración de SSL para el sitio Web de forma predeterminada, se genera la lista de los certificados que están disponibles en el almacén de certificados personal en el equipo local.  
+    Este certificado se genera a partir de la capa de Sockets seguros \(SSL\) configuración para el sitio Web predeterminado. Si el sitio web predeterminado tiene un solo certificado SSL configurado, dicho certificado se mostrará y se seleccionará automáticamente para su uso. Si hay varios certificados SSL configurados para el sitio web predeterminado, se mostrarán todos los certificados en una lista y tendrás que elegir entre ellos. Si no hay ningún ajuste SSL configurado para el sitio web predeterminado, se generará una lista a partir de los certificados disponibles en el almacén de certificados personales del equipo local.  
   
     > [!NOTE]  
-    > El asistente no permitirá que invalidar el certificado si se configura un certificado SSL para IIS. Esto garantiza que cualquier se conserva la configuración anterior de IIS para los certificados SSL. Para evitar esta restricción, puedes quitar el certificado o volver a configurarla manualmente con la consola de administración de IIS.  
+    > El asistente no te permitirá invalidar el certificado si hay un certificado SSL configurado para IIS. Esto garantiza que se conserve cualquier configuración IIS anterior prevista para los certificados SSL. Para solucionar esta restricción, puedes quitar el certificado o reconfigurarlo manualmente con la consola de administración IIS.  
   
-5.  Si la base de datos de AD FS que seleccionaste ya existe, la **detecta de base de datos de configuración de existente AD FS** aparecerá la página. Si aparece esa página, haz clic en **base de datos de eliminar**y, a continuación, haz clic en **siguiente**.  
+5.  Si la base de datos de AD FS que seleccionó ya existe, el **existente de AD FS Configuration Database detectada** aparece la página. Si aparece dicha página, haz clic en **Eliminar base de datos**y, después, en **Siguiente**.  
   
     > [!CAUTION]  
-    > Selecciona esta opción solo cuando está seguro de que los datos de esta base de datos de AD FS no están importantes o que no se utiliza en una granja de servidores de federación de producción.  
+    > Seleccione esta opción solo cuando esté seguro de que los datos de esta base de datos de AD FS no son importantes o que no se utiliza en una granja de servidores de federación de producción.  
   
-6.  En la **especificar una cuenta de servicio** página, haz clic en **examinar**. En la **examinar** cuadro de diálogo, busque la cuenta de dominio que se usará como la cuenta del servicio de este conjunto de servidor de federación nueva y, a continuación, haz clic en **Aceptar**. Escribe la contraseña para esta cuenta, confirmarla y, a continuación, haz clic en **siguiente**.  
+6.  En la página **Especificar una cuenta de servicio** , haz clic en **Examinar**. En el cuadro de diálogo **Examinar** , localiza la cuenta de dominio que se utilizará como cuenta de servicio en esta nueva granja de servidores de federación y haz clic en **Aceptar**. Escribe la contraseña de la cuenta, confírmala y haz clic en **Siguiente**.  
   
     > [!NOTE]  
-    > Consulta [configurar manualmente una cuenta de servicio para una granja de servidores de federación](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md) para obtener más información acerca de cómo especificar una cuenta de servicio para una granja de servidores de federación. Cada servidor de federación de la granja de servidores de federación debe especificar la misma cuenta de servicio para el conjunto en funcionamiento. Por ejemplo, si la cuenta de servicio que se creó era contoso\\ADFS2SVC, cada equipo que se configura para el rol de servidor de federación y que participarán en la misma granja debe especificar contoso\\ADFS2SVC en este paso en el Asistente de configuración de servidor de federación de la granja de servidores en funcionamiento.  
+    > Consulte [configurar manualmente una cuenta de servicio para una granja de servidores de federación](Manually-Configure-a-Service-Account-for-a-Federation-Server-Farm.md) para obtener más información acerca de cómo especificar una cuenta de servicio para una granja de servidores de federación. Cada servidor de federación en la granja de servidores de federación debe especificar la misma cuenta de servicio para la granja de servidores sea operativa. Por ejemplo, si la cuenta de servicio que se creó es contoso\\ADFS2SVC, cada equipo que configura para el rol de servidor de federación y que participará en la misma granja debe especificar contoso\\ADFS2SVC en este paso el Asistente de configuración de servidor de federación para la granja de servidores sea operativa.  
   
-7.  En la **listo para aplicar configuración** página, revisa los detalles. Si aparece la configuración sea correcta, haz clic en **siguiente** para empezar a configurar AD FS con estas opciones de configuración.  
+7.  En la página **Listo para aplicar configuración**, comprueba los detalles. Si la configuración parece ser correcta, haga clic en **siguiente** para comenzar a configurar AD FS con esta configuración.  
   
-8.  En la **resultados de la configuración** página, revisar los resultados. Cuando haya terminado de todos los pasos de configuración, haz clic en **cerrar** para salir del asistente.  
+8.  En la página **Resultados de la configuración** , comprueba los resultados. Cuando haya finalizado todos los pasos de configuración, haga clic en **Cerrar**  para salir del asistente.  
   
     > [!IMPORTANT]  
-    > Para fines de implementación segura, detección de resolución y respuesta artefacto están deshabilitadas cuando usas el Asistente para configuración del servidor de federación de AD FS para configurar una granja de servidores de federación. Este asistente configura automáticamente la base de datos interna de Windows para almacenar datos de configuración del servicio. Es posible que, sin embargo, por error deshacer este cambio habilitando el extremo de resolución artefacto ya sea con la **extremos** nodo en la administración de AD FS en snap\ o el cmdlet Enable\ ADFSEndpoint en Windows PowerShell. Ten cuidado de no volver a configurar el valor predeterminado para que este extremo permanecerá deshabilitado cuando uses una granja de servidores de federación y la base de datos interna de Windows entre sí.  
+    > Para que la implementación sea segura, la resolución de artefactos y la detección de respuestas se deshabilitan cuando utilizas el asistente para la configuración del servidor de federación de AD FS a fin de configurar una granja de servidores de federación. Este asistente configura automáticamente Windows Internal Database para almacenar los datos de configuración del servicio. Es posible que, sin embargo, podrías deshacer este cambio si habilitas el extremo de la resolución de artefactos utilizando el **extremos** nodo en el complemento Administración de AD FS\-en o permitir\-cmdlet ADFSEndpoint en Windows PowerShell. Procura no reconfigurar la configuración predeterminada para que este extremo permanezca deshabilitado cuando utilices conjuntamente una granja de servidores de federación y Windows Internal Database.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: Cómo configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
 
