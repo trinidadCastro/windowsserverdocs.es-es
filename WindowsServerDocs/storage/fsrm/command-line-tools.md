@@ -1,6 +1,6 @@
 ---
-title: "Herramientas de línea de comandos del Administrador de recursos del servidor de archivos"
-description: "En este artículo se describen las herramientas de línea de comandos de WindowsServer2016"
+title: Herramientas de línea de comandos del Administrador de recursos del servidor de archivos
+description: En este artículo se describen las herramientas de línea de comandos de Windows Server 2016
 ms.date: 7/7/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -8,11 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7d36a30ca65ae88afdc11e516968c6f9900a5ae6
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.openlocfilehash: 9b31c133b0ee4382b5b9aeded9b3852c7230d2d8
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59858446"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>Herramientas de línea de comandos del Administrador de recursos del servidor de archivos
 
@@ -26,9 +27,9 @@ El Administrador de recursos del servidor de archivos instala los cmdlets de Pow
 
 Puedes usar estas herramientas para administrar recursos de almacenamiento en un equipo local o en un equipo remoto. Para obtener más información acerca de estas herramientas de línea de comandos, consulta las siguientes referencias:
 
--   **Dirquota**: <http://go.microsoft.com/fwlink/?LinkId=92741>
--   **Filescrn**: <http://go.microsoft.com/fwlink/?LinkId=92742>
--   **Storrept**: <http://go.microsoft.com/fwlink/?LinkId=92743>
+-   **Dirquota**: <https://go.microsoft.com/fwlink/?LinkId=92741>
+-   **Filescrn**: <https://go.microsoft.com/fwlink/?LinkId=92742>
+-   **Storrept**: <https://go.microsoft.com/fwlink/?LinkId=92743>
 
 
 > [!Note]
@@ -51,11 +52,11 @@ Por ejemplo,**Dirquota.exe** incluye un parámetro **template export** para escr
 Para administrar recursos remotos con las herramientas de línea de comandos:
 
 -   Debes iniciar sesión con una cuenta de dominio que forme parte del grupo de **Administradores** del equipo local y del equipo remoto.
--   Debes ejecutar las herramientas de línea de comandos desde una ventana del símbolo del sistema con privilegios elevados. Para abrir una ventana del símbolo del sistema con privilegios elevados, haz clic en **Inicio**, selecciona **Todos los programas**, haz clic en **Accesorios**, haz clic con el botón derecho en **Símbolo del sistema** y luego haz clic en **Ejecutar como administrador**.
--   El equipo remoto debe ejecutar WindowsServer y debe tener instalado el Administrador de recursos del servidor de archivos.
+-   Debes ejecutar las herramientas de línea de comandos desde una ventana del símbolo del sistema con privilegios elevados. Para abrir la ventana del símbolo del sistema con privilegios elevados, haga clic en **Inicio**, seleccione **Todos los programas**, **Accesorios**, haga clic con el botón secundario en **Símbolo del sistema** y, a continuación, haga clic en **Ejecutar como administrador**.
+-   El equipo remoto debe ejecutar Windows Server y debe tener instalado el Administrador de recursos del servidor de archivos.
 -   La excepción **Administración del Administrador de recursos del servidor de archivos remoto** del equipo remoto debe estar habilitada. Habilita esta excepción usando el Firewall de Windows en el Panel de control.
 
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
--   [Administrar recursos de almacenamiento remoto](managing-remote-storage-resources.md)
+-   [Administración de recursos de almacenamiento remoto](managing-remote-storage-resources.md)
