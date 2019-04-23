@@ -10,13 +10,13 @@ author: cosmosdarwin
 ms.date: 07/18/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 62fa33d08af25c424c786c10191fe6ae2b3d02bc
-ms.sourcegitcommit: dfd25348ea3587e09ea8c2224237a3e8078422ae
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "4678626"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59855516"
 ---
-# Descripción de la memoria caché de Espacios de almacenamiento directo
+# <a name="understanding-the-cache-in-storage-spaces-direct"></a>Descripción de la memoria caché de Espacios de almacenamiento directo
 
 >Se aplica a: Windows Server 2019, Windows Server 2016
 
@@ -25,10 +25,10 @@ El funcionamiento de la memoria caché depende de los tipos de unidades presente
 
 En el siguiente vídeo se explica detenidamente cómo el almacenamiento en caché funciona para Espacios de almacenamiento directo, así como otras consideraciones de diseño.
 
-<strong>Consideraciones de diseño de los Espacios de almacenamiento directo</strong><br>(20minutos)<br>
+<strong>Consideraciones de diseño de almacenamiento directo en espacios</strong><br>(20 minutos)<br>
 <iframe src="https://channel9.msdn.com/Blogs/windowsserver/Design-Considerations-for-Storage-Spaces-Direct/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
-## Tipos de unidades y opciones de implementación
+## <a name="drive-types-and-deployment-options"></a>Tipos de unidades y opciones de implementación
 
 La característica Espacios de almacenamiento directo actualmente funciona con tres tipos de dispositivos de almacenamiento:
 
@@ -61,19 +61,19 @@ La característica Espacios de almacenamiento directo actualmente funciona con t
 
 Estos dispositivos se pueden combinar de seis maneras, que se agrupan en dos categorías: "memoria flash" e "híbrida".
 
-### Posibilidades de implementación en memoria flash
+### <a name="all-flash-deployment-possibilities"></a>Posibilidades de implementación en memoria flash
 
 Las implementaciones en memoria flash están destinadas a maximizar el rendimiento del almacenamiento y no incluyen unidades de disco duro (HDD) rotacionales.
 
 ![All-Flash-Deployment-Possibilities](media/understand-the-cache/All-Flash-Deployment-Possibilities.png)
 
-### Posibilidades de implementación híbrida
+### <a name="hybrid-deployment-possibilities"></a>Posibilidades de implementación híbrida
 
 Las implementaciones híbridas tienen como objetivo equilibrar el rendimiento y la capacidad o maximizar la capacidad e incluyen unidades de disco duro (HDD) rotacionales.
 
 ![Hybrid-Deployment-Possibilities](media/understand-the-cache/Hybrid-Deployment-Possibilities.png)
 
-## Selección automática de las unidades de caché
+## <a name="cache-drives-are-selected-automatically"></a>Selección automática de las unidades de caché
 
 En las implementaciones con varios tipos de unidades, la característica Espacios de almacenamiento directo usa automáticamente todas las unidades del tipo "más rápido" para el almacenamiento en caché. Las unidades restantes se usan para capacidad.
 
@@ -93,13 +93,13 @@ Cuando todas las unidades son del mismo tipo, no se configura automáticamente n
    >[!TIP]
    > En el caso de implementaciones del tipo todo NVMe o todo SSD, en especial a escala muy pequeña, si no "dedicas" ninguna unidad a memoria caché, puedes mejorar significativamente la eficiencia del almacenamiento.
 
-## Establecimiento automático del comportamiento de la memoria caché
+## <a name="cache-behavior-is-set-automatically"></a>Establecimiento automático del comportamiento de la memoria caché
 
 El comportamiento de la caché se determina automáticamente en función de los tipos de unidades para las que se almacena en caché. Al almacenar en caché para unidades de estado sólido (como el almacenamiento en caché de NVMe para SSD), solo se almacenan en caché las escrituras. Al almacenar en caché para unidades de disco duro (por ejemplo, el almacenamiento en caché de SSD para HDD), se almacenan en caché las lecturas y las escrituras.
 
 ![Cache-Read-Write-Behavior](media/understand-the-cache/Cache-Read-Write-Behavior.png)
 
-### Almacenamiento en caché de solo escritura para implementaciones en memoria flash
+### <a name="write-only-caching-for-all-flash-deployments"></a>Almacenamiento en caché de solo escritura para implementaciones en memoria flash
 
 Al almacenar en caché para unidades de estado sólido (NVMe o SSD), solo se almacenan en caché las escrituras. Esto reduce el desgaste de las unidades de capacidad porque muchas escrituras y reescrituras pueden fusionarse en la memoria caché y luego se mueven según sea necesario, lo que reduce el tráfico acumulativo hacia las unidades de capacidad y prolonga su duración. Por este motivo, recomendamos seleccionar unidades de [mayor de resistencia, optimizadas para escritura](http://whatis.techtarget.com/definition/DWPD-device-drive-writes-per-day) para la memoria caché. Las unidades de capacidad pueden tener razonablemente una menor resistencia de escritura.
 
@@ -107,17 +107,17 @@ Dado que las lecturas no afectan significativamente a la vida útil de la memori
 
 Como resultado, las características de escritura, como la latencia de escritura, están determinadas por las unidades de caché, mientras que las características de lectura están determinadas por las unidades de capacidad. Ambos casos son coherentes, predecibles y uniformes.
 
-### Almacenamiento en caché de lecturas y escrituras para implementaciones híbridas
+### <a name="readwrite-caching-for-hybrid-deployments"></a>Almacenamiento en caché de lecturas y escrituras para implementaciones híbridas
 
-Al almacenar en caché para unidades de disco duro (HDD), las lecturas *y* las escrituras se almacenan en caché, con el propósito de ofrecer una latencia similar a la memoria flash (suele ser ~10 veces mejor) para ambas. La caché de lectura almacena datos tanto leídos recientemente como leídos con frecuencia para permitir un acceso rápido y minimizar el tráfico aleatorio hacia las unidades de disco duro. (Debido a los retrasos por búsqueda y rotación, la latencia y la pérdida de tiempo que provoca el acceso aleatorio a una unidad de disco duro es importante). Las escrituras se almacenan en caché para absorber las ráfagas y, al igual que antes, para fusionar las escrituras y las reescrituras y minimizar el tráfico acumulativo hacia las unidades de capacidad.
+Al almacenar en caché para unidades de disco duro (HDD), las lecturas *y* las escrituras se almacenan en caché, con el propósito de ofrecer una latencia similar a la memoria flash (suele ser ~10 veces mejor) para ambas. La caché de lectura almacena datos tanto leídos recientemente como leídos con frecuencia para permitir un acceso rápido y minimizar el tráfico aleatorio hacia las unidades de disco duro. (Debido a retrasos de rotación y búsqueda, la latencia y pérdida de tiempo que se incurre por el acceso aleatorio a un disco duro es significativo.) Escribe se almacenan en caché absorber ráfagas y, como antes, va a fusionar escribe y vuelve a escribir y minimizar el tráfico acumulativo en las unidades de capacidad.
 
 Espacios de almacenamiento directo implementa un algoritmo que elimina la aleatoriedad de las escrituras antes de moverlas, para emular un modelo de E/S en disco que parezca secuencial aunque la E/S real proveniente de la carga de trabajo (por ejemplo, máquinas virtuales) sea aleatoria. Esto maximiza la E/S por segundo (IOPS) y el rendimiento en las unidades de disco duro.
 
-### Almacenamiento en caché en implementaciones con unidades de los tres tipos
+### <a name="caching-in-deployments-with-drives-of-all-three-types"></a>Almacenamiento en caché en implementaciones con unidades de los tres tipos
 
 Cuando hay unidades de los tres tipos, las unidades NVMe proporcionan almacenamiento en caché para SSD y HDD. El comportamiento es tal como se describió anteriormente: para SSD, solo se almacenan en caché las escrituras y para HDD, se almacenan en caché las lecturas y las escrituras. La carga del almacenamiento en caché para las unidades de disco duro se distribuye uniformemente entre las unidades de caché. 
 
-## Resumen
+## <a name="summary"></a>Resumen
 
 En la siguiente tabla se resumen qué unidades se usan para almacenar en caché, cuáles se usan para capacidad y cuál es el comportamiento del almacenamiento en caché para cada posibilidad de implementación.
 
@@ -130,7 +130,7 @@ En la siguiente tabla se resumen qué unidades se usan para almacenar en caché,
 | SSD + HDD        | SSD                                 | HDD             | Lectura + escritura                              |
 | NVMe + SSD + HDD | NVMe                                | SSD + HDD       | Lectura + escritura para HDD, solo escritura para SSD  |
 
-## Arquitectura del lado del servidor
+## <a name="server-side-architecture"></a>Arquitectura del lado del servidor
 
 La memoria caché se implementa en el nivel de unidad: las unidades de caché individuales dentro de un servidor están enlazadas a una o varias unidades de capacidad en el mismo servidor.
 
@@ -142,7 +142,7 @@ Dado que la resistencia de la característica Espacios de almacenamiento directo
 
 Por ejemplo, al usar la creación de reflejo triple, se escriben tres copias de cualquier dato en diferentes servidores, en el lugar donde llegan en la caché. Independientemente de si más adelante se mueven o no, siempre existen tres copias.
 
-## Los enlaces de unidad son dinámicos
+## <a name="drive-bindings-are-dynamic"></a>Los enlaces de unidad son dinámicos
 
 El enlace entre las unidades de memoria caché y capacidad puede tener cualquier relación, desde 1:1 hasta 1:12 y más aún. Se ajusta dinámicamente siempre que se agregan o quitan unidades, por ejemplo, cuando se escala verticalmente o tras errores. Esto significa que puedes agregar unidades de caché o de capacidad de forma independiente, cuando quieras.
 
@@ -150,7 +150,7 @@ El enlace entre las unidades de memoria caché y capacidad puede tener cualquier
 
 Recomendamos hacer que el número de unidades de capacidad sea un múltiplo del número de unidades de caché por cuestiones de simetría. Por ejemplo, si tienes 4 unidades de caché, habrá un rendimiento más uniforme con 8 unidades de capacidad (relación 1:2) que con 7 o 9 unidades.
 
-## Controlar los errores de las unidades de caché
+## <a name="handling-cache-drive-failures"></a>Controlar los errores de las unidades de caché
 
 Cuando se produce un error en una unidad de caché, todas las escrituras que aún no se han movido se pierden *en el servidor local*, lo que significa que solo existen en las demás copias (en otros servidores). Al igual que después de un error de cualquier otra unidad, Espacios de almacenamiento puede (y efectivamente lo hace) recuperar automáticamente consultando las copias que quedan.
 
@@ -165,7 +165,7 @@ De este modo, se puede reemplazar la unidad de caché de la misma manera que cua
    >[!NOTE]
    > Tal vez tengas que apagar el equipo para reemplazar de forma segura la unidad NVMe que tiene un factor de forma M.2 o tarjeta de complemento (AIC).
 
-## Relación con otras memorias caché
+## <a name="relationship-to-other-caches"></a>Relación con otras memorias caché
 
 Hay varias memorias caché no relacionadas en la pila de almacenamiento definido por software de Windows. Algunos ejemplos incluyen la caché con reescritura de Espacios de almacenamiento, la caché de lectura en memoria de Volumen compartido de clúster (CSV).
 
@@ -177,7 +177,7 @@ Puedes optar por usar o no la caché de CSV según tus preferencias. Está desac
 
 Para la mayoría de las implementaciones, no se requiere de configuración manual. Si la necesitas, sigue leyendo este documento.
 
-### Especificar el modelo de unidad de caché
+### <a name="specify-cache-drive-model"></a>Especificar el modelo de unidad de caché
 
 En las implementaciones donde todas las unidades tienen el mismo tipo, como las implementaciones de todas unidades NVMe o SSD, no se configura ninguna memoria caché porque Windows no puede distinguir automáticamente las características (por ejemplo, la resistencia de escritura) entre las unidades del mismo tipo.
 
@@ -186,7 +186,7 @@ Si quieres usar unidades de mayor resistencia para almacenar en caché para unid
    >[!TIP]
    > Asegúrate de que coincida con la cadena de modelo tal y como aparece en la salida de **Get-PhysicalDisk**.
 
-####  Ejemplo
+####  <a name="example"></a>Ejemplo
 
 ```
 PS C:\> Get-PhysicalDisk | Group Model -NoElement
@@ -201,13 +201,13 @@ PS C:\> Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 
 Puedes comprobar que las unidades que propones están en uso para almacenamiento en caché al ejecutar **Get-PhysicalDisk** en PowerShell y comprobar que su propiedad **Usage** indica **"Journal"**.
 
-### Posibilidades de implementación manual
+### <a name="manual-deployment-possibilities"></a>Posibilidades de implementación manual
 
 La configuración manual ofrece las posibilidades de implementación siguientes:
 
 ![Exotic-Deployment-Possibilities](media/understand-the-cache/Exotic-Deployment-Possibilities.png)
 
-### Establecer el comportamiento de la memoria caché
+### <a name="set-cache-behavior"></a>Establecer el comportamiento de la memoria caché
 
 Es posible invalidar el comportamiento predeterminado de la memoria caché. Por ejemplo, puedes establecerlo para que almacene en caché las lecturas incluso en una implementación íntegramente en memoria flash. No es conveniente modificar el comportamiento a menos que estés seguro de que el valor predeterminado no es adecuado para la carga de trabajo.
 
@@ -215,7 +215,7 @@ Para invalidar el comportamiento, usa el cmdlet **Set-ClusterS2D** y sus paráme
 
 Puedes usar **Get-ClusterS2D** para comprobar que se ha establecido el comportamiento.
 
-#### Ejemplo
+#### <a name="example"></a>Ejemplo
 
 ```
 PS C:\> Get-ClusterS2D
@@ -233,7 +233,7 @@ CacheModeSSD : ReadWrite
 ...
 ```
 
-## Cambiar el tamaño de la memoria caché
+## <a name="sizing-the-cache"></a>Cambiar el tamaño de la memoria caché
 
 La memoria caché debe tener un tamaño que permita dar cabida al conjunto de trabajo (los datos que se leen o escriben activamente en un momento determinado) de las aplicaciones y las cargas de trabajo.
 
@@ -247,8 +247,8 @@ Por ejemplo, 2 unidades de caché enlazadas a 4 unidades de capacidad tienen com
 
 No hay ninguna regla universal, pero si faltan demasiadas lecturas en la memoria caché, es posible que el tamaño de la caché sea insuficiente y debas contemplar la posibilidad de agregar unidades de caché para ampliarla. Puedes agregar unidades de caché o de capacidad de forma independiente cuando quieras.
 
-## Consulta también
+## <a name="see-also"></a>Vea también
 
-- [Elegir tipos de unidades y de resistencia](choosing-drives.md)
-- [Tolerancia a errores y eficiencia del almacenamiento](storage-spaces-fault-tolerance.md)
-- [Requisitos de hardware de Espacios de almacenamiento directo](storage-spaces-direct-hardware-requirements.md)
+- [Elección de las unidades y tipos de resistencia](choosing-drives.md)
+- [Eficacia de almacenamiento y la tolerancia a errores](storage-spaces-fault-tolerance.md)
+- [Requisitos de hardware de almacenamiento directo en espacios](storage-spaces-direct-hardware-requirements.md)

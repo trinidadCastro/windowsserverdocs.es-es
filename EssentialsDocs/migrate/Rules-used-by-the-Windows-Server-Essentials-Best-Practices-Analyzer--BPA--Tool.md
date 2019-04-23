@@ -1,6 +1,6 @@
 ---
-title: Reglas que se utiliza la herramienta Best Practices Analyzer (BPA) de Windows Server Essentials
-description: "Describe cómo usar Windows Server Essentials"
+title: Reglas que usa la herramienta Analizador de procedimientos recomendados (BPA) de Windows Server Essentials
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,1197 +13,1198 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: c205bc8ff75bf64d4a13a7d799988c9d1ebe1a22
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59850696"
 ---
-# <a name="rules-used-by-the-windows-server-essentials-best-practices-analyzer-bpa-tool"></a>Reglas que se utiliza la herramienta Best Practices Analyzer (BPA) de Windows Server Essentials
+# <a name="rules-used-by-the-windows-server-essentials-best-practices-analyzer-bpa-tool"></a>Reglas que usa la herramienta Analizador de procedimientos recomendados (BPA) de Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Este artículo describen las reglas utilizadas por el Windows Server Essentials Best Practices Analyzer (BPA). El BPA examina un servidor que ejecuta Windows Server Essentials y presenta un informe que se describe problemas y proporciona recomendaciones para resolverlos problemas. Las recomendaciones están desarrolladas por la organización de soporte técnico de producto de Windows Server Essentials.  
+En este artículo se describe las reglas utilizadas por el Windows Server Essentials Best Practices Analyzer (BPA). El BPA examina un servidor que ejecuta Windows Server Essentials y presenta un informe que se describe los problemas y proporciona recomendaciones para resolverlos. Las recomendaciones las desarrolla la organización de soporte técnico para Windows Server Essentials.  
   
-## <a name="using-the-tool"></a>Con la herramienta  
- Es un procedimiento estándar, al migrar a Windows Server Essentials de Windows Server 2011 Essentials, Windows Small Business Server 2011 Essentials o Windows Home Server 2011, para ejecutar el BPA en el servidor de destino después de finalizar migrar configuraciones y datos. Puede ejecutar la herramienta desde el panel en cualquier momento.  
+## <a name="using-the-tool"></a>Uso de la herramienta  
+ Es una práctica estándar, al migrar a Windows Server Essentials desde Windows Server 2011 Essentials, Windows Small Business Server 2011 Essentials o Windows Home Server 2011, para ejecutar el BPA en el servidor de destino después de migrar su configuración y los datos. Puede ejecutar la herramienta desde el panel en cualquier momento.  
   
 #### <a name="to-run-the--windows-server-essentials-bpa-on-the-server"></a>Para ejecutar el BPA de Windows Server Essentials en el servidor  
   
-1.  Iniciar sesión en el servidor como administrador y, a continuación, abra el panel.  
+1.  Inicie sesión en el servidor como administrador y, después, abra el panel.  
   
-2.  En el panel, haz clic en el **dispositivos** pestaña.  
+2.  En el panel, haga clic en la pestaña **Dispositivos**.  
   
-3.  En la **tareas de servidor** panel, haz clic en **analizador de procedimientos recomendados**.  
+3.  En el panel **Tareas de servidor**, haga clic en **Analizador de procedimientos recomendados**.  
   
-4.  Revisa cada mensaje BPA y sigue las instrucciones para resolver problemas si es necesario.  
+4.  Revise cada mensaje del BPA y siga las instrucciones para resolver problemas si fuera necesario.  
   
-## <a name="rules-used-by-the-best-practices-analyzer"></a>Reglas utilizadas por el analizador de procedimientos recomendados  
+## <a name="rules-used-by-the-best-practices-analyzer"></a>Reglas usadas por el Analizador de procedimientos recomendados  
   
 ### <a name="disable-ip-filtering"></a>Deshabilitar el filtrado de IP  
- **Problema:** filtrado de IP está habilitado en el servidor. Debes deshabilitar el filtrado de IP.  
+ **Problema:** El filtrado de IP está habilitado actualmente en el servidor. Debe deshabilitar el filtrado de IP.  
   
- **Impacto:** si se habilita el filtrado de IP, el tráfico de red podría estar bloqueado.  
+ **Impacto:** Si está habilitado el filtrado de IP, el tráfico de red podría bloquearse.  
   
- **Resolución:**  
+ **Solución:**  
   
 ##### <a name="to-disable-ip-filtering"></a>Para deshabilitar el filtrado de IP  
   
-1.  Abre regedit.exe en el servidor.  
+1.  Abra regedit.exe en el servidor.  
   
-2.  Navegar a HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters.  
+2.  Vaya a HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters.  
   
-3.  Haz clic en **EnableSecurityFilters**y, a continuación, haz clic en **modificar**.  
+3.  Haga clic con el botón derecho en **EnableSecurityFilters** y, a continuación, haga clic en **Modificar**.  
   
-4.  En la **Editar valor DWORD (32 bits) valor** ventana, cambiar la **información del valor** campo a cero y, a continuación, haz clic en **Aceptar**.  
+4.  En la ventana **Editar valor DWORD (32 bits)**, cambie el campo **Datos del valor** a cero y, a continuación, haga clic en **Aceptar**.  
   
 5.  Para aplicar el cambio, reinicie el servidor.  
   
-### <a name="the-distributed-transaction-coordinator-msdtc-service-should-be-set-to-start-automatically-by-default"></a>El servicio del Coordinador de transacciones distribuidas (MSDTC) debe establecerse para iniciarse automáticamente de forma predeterminada  
- **Problema:** el servicio MSDTC no está configurado para iniciarse automáticamente  
+### <a name="the-distributed-transaction-coordinator-msdtc-service-should-be-set-to-start-automatically-by-default"></a>El servicio Coordinador de transacciones distribuidas (MSDTC) debe establecerse para que se inicie automáticamente de forma predeterminada  
+ **Problema:** El servicio MSDTC no está configurado para iniciarse automáticamente.  
   
- **Impacto:** el servicio MSDTC podría no iniciarse automáticamente cuando se inicia el servidor. Si se detiene el servicio, se pueden producir un error en algunas funciones de COM o SQL Server. Como resultado, las aplicaciones que usan las funciones de Microsoft SQL Server o COM no funcionen correctamente.  
+ **Impacto:** El servicio MSDTC podría no iniciarse automáticamente cuando se inicia el servidor. Si el servicio está detenido, algunas funciones de SQL Server o COM pueden producir un error. Como resultado, las aplicaciones que usan las funciones de Microsoft SQL Server o COM podrían no funcionar correctamente.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-msdtc-service-to-start-automatically"></a>Para configurar el servicio MSDTC que se inicie automáticamente  
+##### <a name="to-configure-the-msdtc-service-to-start-automatically"></a>Para configurar el servicio MSDTC de modo que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **Coordinador de transacciones distribuidas** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Coordinador de transacciones distribuidas** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automático (Inicio retrasado)**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General**, cambie **Tipo de inicio** a **Automático (inicio retrasado)** y haga clic en **Aceptar**.  
   
 ### <a name="the-netlogon-service-should-be-configured-to-start-automatically-by-default"></a>El servicio de Net Logon debe estar configurado para iniciarse automáticamente de forma predeterminada  
- **Problema:** el servicio de Net Logon no está configurado para iniciarse automáticamente.  
+ **Problema:** El servicio de Net Logon no está configurado para iniciarse automáticamente.  
   
- **Impacto:** el servicio de Net Logon podría no iniciarse automáticamente cuando se inicia el servidor. Si se detiene el servicio, el servidor no puede autenticar usuarios y servicios.  
+ **Impacto:**  El servicio de Net Logon podría no iniciarse automáticamente cuando se inicia el servidor. Si el servicio está detenido, el servidor podría no autenticar a los usuarios y los servicios.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-netlogon-service-to-start-automatically"></a>Para configurar el servicio de Netlogon que se inicie automáticamente  
+##### <a name="to-configure-the-netlogon-service-to-start-automatically"></a>Para configurar el servicio de Net Logon para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **Netlogon** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio de **Net Logon** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
   
-### <a name="the-dns-client-service-should-be-configured-to-start-automatically-by-default"></a>El servicio cliente DNS debe estar configurado para iniciarse automáticamente de forma predeterminada  
- **Problema:** el servicio cliente DNS no está configurado para iniciarse automáticamente.  
+### <a name="the-dns-client-service-should-be-configured-to-start-automatically-by-default"></a>El servicio Cliente DNS debe estar configurado para iniciarse automáticamente de forma predeterminada  
+ **Problema:**  El servicio Cliente DNS no está configurado para iniciarse automáticamente.  
   
- **Impacto:** el servicio cliente DNS podría no iniciarse automáticamente cuando se inicia el servidor. Si se detiene el servicio, el servidor no poder resolver los nombres DNS.  
+ **Impacto:**  El servicio Cliente DNS podría no iniciarse automáticamente cuando se inicia el servidor. Si este servicio está detenido, el servidor podría no resolver nombres DNS.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-dns-client-service-to-start-automatically"></a>Para configurar el servicio cliente DNS que se inicie automáticamente  
+##### <a name="to-configure-the-dns-client-service-to-start-automatically"></a>Para configurar el servicio Cliente DNS para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **cliente DNS** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Cliente DNS** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
   
-### <a name="the-dns-server-service-should-be-configured-to-start-automatically-by-default"></a>El servicio de servidor DNS debe estar configurado para iniciarse automáticamente de forma predeterminada  
- **Problema:** el servicio de servidor DNS no está configurado para iniciarse automáticamente.  
+### <a name="the-dns-server-service-should-be-configured-to-start-automatically-by-default"></a>El servicio Servidor DNS debe estar configurado para iniciarse automáticamente de forma predeterminada  
+ **Problema:**  El servicio Servidor DNS no está configurado para iniciarse automáticamente.  
   
- **Impacto:** el servicio de servidor DNS podría no iniciarse automáticamente cuando se inicia el servidor. Si se detiene el servicio, no se producirán actualizaciones de DNS.  
+ **Impacto:**  El servicio Servidor DNS podría no iniciarse automáticamente cuando se inicia el servidor. Si este servicio está detenido, no se producirán actualizaciones de DNS.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-dns-server-service-to-start-automatically"></a>Para configurar el servicio de servidor DNS que se inicie automáticamente  
+##### <a name="to-configure-the-dns-server-service-to-start-automatically"></a>Para configurar el servicio Servidor DNS para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **servidor DNS** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Servidor DNS** y seleccione **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
   
-### <a name="active-directory-web-services-is-not-set-to-the-default-start-mode"></a>Servicios Web de Active Directory no se establece en el modo de inicio predeterminado  
- **Problema:** servicios Web de Active Directory no se establece en el modo de inicio predeterminado de automático.  
+### <a name="active-directory-web-services-is-not-set-to-the-default-start-mode"></a>Servicios web de Active Directory no está establecido en el modo de inicio predeterminado  
+ **Problema:**  Servicios web de Active Directory no está establecido en el modo de inicio predeterminado automático.  
   
- **Impacto:** servicios de Web de Active Directory (ADWS) no está establecida en el modo de inicio predeterminado de automático. Si se detiene o se deshabilita, aplicaciones de cliente como el módulo de Active Directory para Windows PowerShell ADWS en el servidor o el centro de administración de Active Directory no puede tener acceso o administrar instancias de servicio de directorio que se ejecutan en el servidor. Para obtener más información, consulta [Novedades en AD DS: servicios Web de Active Directory](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) (https://technet.microsoft.com/library/dd391908(WS.10).aspx) en la biblioteca técnica de Windows Server.  
+ **Impacto:**  Servicios web de Active Directory (ADWS) no está establecido en el modo de inicio predeterminado automático. Si ADWS está detenido o deshabilitado en el servidor, las aplicaciones cliente, como el módulo de Active Directory para Windows PowerShell o el Centro de administración de Active Directory, no pueden acceder a las instancias del servicio de directorio que se ejecutan en este servidor, ni tampoco administrarlas. Para obtener más información, consulte [Novedades en AD DS: Servicios Web de Active Directory](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) (https://technet.microsoft.com/library/dd391908(WS.10).aspx) en la biblioteca técnica de Windows Server.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-active-directory-web-services-service-to-start-automatically"></a>Para configurar el servicio de servicios Web de Active Directory que se inicie automáticamente  
+##### <a name="to-configure-the-active-directory-web-services-service-to-start-automatically"></a>Para configurar Servicios web de Active Directory para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **servicios Web de Active Directory** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Servicios web de Active Directory** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
   
-### <a name="the-dhcp-client-service-should-be-configured-to-start-automatically-by-default"></a>El servicio cliente DHCP debe estar configurado para iniciarse automáticamente de forma predeterminada  
- **Problema:** el servicio cliente DHCP no está configurado para iniciarse automáticamente.  
+### <a name="the-dhcp-client-service-should-be-configured-to-start-automatically-by-default"></a>El servicio Cliente DHCP debe estar configurado para iniciarse automáticamente de forma predeterminada  
+ **Problema:**  El servicio Cliente DHCP no está configurado para iniciarse automáticamente.  
   
- **Impacto:** el servicio cliente DHCP no iniciará automáticamente cuando se inicia el servidor. Si este servicio se detiene, los equipos cliente no pueden recibir una dirección IP del servidor.  
+ **Impacto:**  El servicio Cliente DHCP no se iniciará automáticamente cuando se inicia el servidor. Si este servicio está detenido, los equipos cliente no pueden recibir una dirección IP del servidor.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-dhcp-client-service-to-start-automatically"></a>Para configurar el servicio cliente DHCP para iniciarse automáticamente  
+##### <a name="to-configure-the-dhcp-client-service-to-start-automatically"></a>Para configurar el servicio Cliente DHCP para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **cliente DHCP** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Cliente DHCP** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
   
-### <a name="the-iis-admin-service-should-be-configured-to-start-automatically-by-default"></a>El servicio de administración de IIS deben estar configurado para iniciarse automáticamente de forma predeterminada  
- **Problema:** el servicio de administración de IIS no está configurado para iniciarse automáticamente.  
+### <a name="the-iis-admin-service-should-be-configured-to-start-automatically-by-default"></a>El Servicio de administración IIS debe estar configurado para iniciarse automáticamente de forma predeterminada  
+ **Problema:** El Servicio de administración IIS no está configurado para iniciarse automáticamente.  
   
- **Impacto:** el servicio de administración de IIS no se iniciará automáticamente cuando se inicia el servidor. Si se detiene el servicio, es posible que no puede acceder a los sitios Web que se ejecutan en el servidor, como acceso Web remoto.  
+ **Impacto:** El Servicio de administración IIS no se iniciará automáticamente cuando se inicia el servidor. Si este servicio está detenido, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-iis-admin-service-to-start-automatically"></a>Para configurar el servicio de administración de IIS que se inicie automáticamente  
+##### <a name="to-configure-the-iis-admin-service-to-start-automatically"></a>Para configurar el Servicio de administración IIS para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en **servicio de administración de IIS**y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en **Servicio de administración IIS** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
   
-### <a name="the-world-wide-web-publishing-service-should-be-configured-to-start-automatically-by-default"></a>El servicio de publicación de World Wide Web debe configurarse para iniciarse automáticamente de forma predeterminada  
- **Problema:** el servicio de publicación de World Wide Web no está configurado para iniciarse automáticamente.  
+### <a name="the-world-wide-web-publishing-service-should-be-configured-to-start-automatically-by-default"></a>El servicio de publicación World Wide Web debe estar configurado para iniciarse automáticamente de forma predeterminada  
+ **Problema:**  El servicio de publicación World Wide Web no está configurado para iniciarse automáticamente.  
   
- **Impacto:** el servicio de publicación de World Wide Web podría no iniciarse automáticamente cuando se inicia el servidor. Si se detiene el servicio, es posible que no puede acceder a los sitios Web que se ejecutan en el servidor, como acceso Web remoto.  
+ **Impacto:**  El servicio de publicación World Wide Web podría no iniciarse automáticamente cuando se inicia el servidor. Si este servicio está detenido, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-world-wide-web-publishing-service-to-start-automatically"></a>Para configurar el servicio de publicación de World Wide Web que se inicie automáticamente  
+##### <a name="to-configure-the-world-wide-web-publishing-service-to-start-automatically"></a>Para configurar el servicio de publicación World Wide Web para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en **servicio de publicación de World Wide Web**y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en **Servicio de publicación World Wide Web** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
   
-### <a name="the-remote-registry-service-should-be-configured-to-start-automatically-by-default"></a>El servicio de registro remoto debe estar configurado para iniciarse automáticamente de manera predeterminada  
- **Problema:** el servicio de registro remoto no está configurado para iniciarse automáticamente.  
+### <a name="the-remote-registry-service-should-be-configured-to-start-automatically-by-default"></a>El servicio de Registro remoto debe estar configurado para iniciarse automáticamente de forma predeterminada  
+ **Problema:**  El servicio de Registro remoto no está configurado para iniciarse automáticamente.  
   
  **Impacto:**  
   
- El servicio de registro remoto podría no iniciarse automáticamente cuando se inicia el servidor. Si se detiene el servicio, es posible que no se puede realizar algunas operaciones de red de forma remota.  
+ El servicio de Registro remoto podría no iniciarse automáticamente cuando se inicia el servidor. Si este servicio está detenido, es posible que no pueda realizar algunas operaciones de red de forma remota.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-remote-registry-service-to-start-automatically"></a>Para configurar el servicio de registro remoto que se inicie automáticamente  
+##### <a name="to-configure-the-remote-registry-service-to-start-automatically"></a>Para configurar el servicio de Registro remoto para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **registro remoto** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio de **Registro remoto** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
   
-### <a name="the-remote-desktop-gateway-service-should-be-configured-to-start-automatically-by-default"></a>El servicio de puerta de enlace de escritorio remoto debe estar configurado para iniciarse automáticamente de manera predeterminada  
- **Problema:** el servicio de puerta de enlace de escritorio remoto no está configurado para iniciarse automáticamente.  
+### <a name="the-remote-desktop-gateway-service-should-be-configured-to-start-automatically-by-default"></a>El servicio Puerta de enlace de Escritorio remoto debe estar configurado para iniciarse automáticamente de forma predeterminada  
+ **Problema:**  El servicio Puerta de enlace de Escritorio remoto no está configurado para iniciarse automáticamente.  
   
- **Impacto:** si se detiene el servicio, es posible que usuarios no puedan acceder a equipos con acceso Web remoto.  
+ **Impacto:**  Si este servicio está detenido, los usuarios podrían no tener acceso a los equipos mediante el acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-remote-desktop-gateway-service-to-start-automatically"></a>Para configurar el servicio de puerta de enlace de escritorio remoto que se inicie automáticamente  
+##### <a name="to-configure-the-remote-desktop-gateway-service-to-start-automatically"></a>Para configurar el servicio Puerta de enlace de Escritorio remoto para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **puerta de enlace de escritorio remoto** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Puerta de enlace de Escritorio remoto** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automático (Inicio retrasado)**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General**, cambie **Tipo de inicio** a **Automático (inicio retrasado)** y haga clic en **Aceptar**.  
   
-### <a name="the-windows-time-service-should-be-configured-to-start-automatically-by-default"></a>El servicio hora de Windows debe estar configurado para iniciarse automáticamente de forma predeterminada  
- **Problema:** el servicio hora de Windows no está configurado para iniciarse automáticamente.  
+### <a name="the-windows-time-service-should-be-configured-to-start-automatically-by-default"></a>El servicio Hora de Windows debe estar configurado para iniciarse automáticamente de forma predeterminada  
+ **Problema:**  El servicio Hora de Windows no está configurado para iniciarse automáticamente.  
   
- **Impacto:** si se detiene el servicio, sincronización de datos y el tiempo no están disponibles.  
+ **Impacto:**  Si este servicio está detenido, la sincronización de fecha y hora no estará disponible.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-windows-time-service-to-start-automatically"></a>Para configurar el servicio hora de Windows se inicie automáticamente  
+##### <a name="to-configure-the-windows-time-service-to-start-automatically"></a>Para configurar el servicio Hora de Windows para que se inicie automáticamente  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **tiempo Windows** de servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Hora de Windows** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **General** pestaña, cambia la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **General** , cambie **Tipo de inicio** a **Automático**y haga clic en **Aceptar**.  
   
-### <a name="the-distributed-transaction-coordinator-msdtc-service-should-be-started"></a>Se debe iniciar el servicio del Coordinador de transacciones distribuidas (MSDTC)  
- **Problema:** el servicio MSDTC no se está ejecutando en el servidor.  
+### <a name="the-distributed-transaction-coordinator-msdtc-service-should-be-started"></a>Debe iniciarse el servicio Coordinador de transacciones distribuidas (MSDTC)  
+ **Problema:**  El servicio MSDTC no se está ejecutando en el servidor.  
   
- **Impacto:** si se detiene el servicio, algunas funciones de SQL Server o COM pueden producir un error. Como resultado, las aplicaciones que usan las funciones de Microsoft SQL Server o COM no funcionen correctamente.  
+ **Impacto:**  Si este servicio está detenido, algunas funciones de SQL Server o COM pueden producir un error. Como resultado, las aplicaciones que usan las funciones de Microsoft SQL Server o COM podrían no funcionar correctamente.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-distributed-transaction-coordinator-service"></a>Para iniciar el servicio del Coordinador de transacciones distribuidas  
+##### <a name="to-start-the-distributed-transaction-coordinator-service"></a>Para iniciar el servicio Coordinador de transacciones distribuidas  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **Coordinador de transacciones distribuidas** servicio y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en el servicio **Coordinador de transacciones distribuidas** y, a continuación, haga clic en **Inicio**.  
   
-### <a name="the-netlogon-service-should-be-started"></a>Se debe iniciar el servicio Netlogon  
- **Problema:** el servicio de Net Logon no se está ejecutando en el servidor.  
+### <a name="the-netlogon-service-should-be-started"></a>Debe iniciarse el servicio de Net Logon  
+ **Problema:**  El servicio de Net Logon no se está ejecutando en el servidor.  
   
- **Impacto:** si no se inicia este servicio, el servidor no puede autenticar usuarios y servicios.  
+ **Impacto:**  Si no se inicia el servicio, el servidor podría no autenticar a los usuarios y los servicios.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-netlogon-service"></a>Para iniciar el servicio de Netlogon  
+##### <a name="to-start-the-netlogon-service"></a>Para iniciar el servicio de Net Logon  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **Netlogon** servicio y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en el servicio de **Net Logon** y, a continuación, haga clic en **Inicio**.  
   
-### <a name="the-dns-client-service-should-be-started"></a>Se debe iniciar el servicio cliente DNS  
- **Problema:** no se está ejecutando el servicio cliente DNS en el servidor.  
+### <a name="the-dns-client-service-should-be-started"></a>Debe iniciarse el servicio Cliente DNS  
+ **Problema:**  El servicio Cliente DNS no se está ejecutando en el servidor.  
   
- **Impacto:** si no se inicia este servicio, el servidor es posible que pueda resolver los nombres DNS.  
+ **Impacto:**  Si no se inicia este servicio, el servidor podría no resolver nombres DNS.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-dns-client-service"></a>Para iniciar el servicio cliente DNS  
+##### <a name="to-start-the-dns-client-service"></a>Para iniciar el servicio Cliente DNS  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **cliente DNS** servicio y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en el servicio **Cliente DNS** y, a continuación, haga clic en **Inicio**.  
   
-### <a name="the-dns-server-service-should-be-started"></a>Se debe iniciar el servicio de servidor DNS  
- **Problema:** no se está ejecutando el servicio de servidor DNS en el servidor.  
+### <a name="the-dns-server-service-should-be-started"></a>Debe iniciarse el servicio Servidor DNS  
+ **Problema:**  El servicio Servidor DNS no se está ejecutando en el servidor.  
   
- **Impacto:** si no se inicia el servicio de servidor DNS, las actualizaciones de DNS podrían no producirse.  
+ **Impacto:**  Si no se inicia el servicio Servidor DNS, podrían no producirse las actualizaciones de DNS.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-dns-server-service"></a>Para iniciar el servicio de servidor DNS  
+##### <a name="to-start-the-dns-server-service"></a>Para iniciar el servicio Servidor DNS  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **servidor DNS** servicio y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en el servicio **Servidor DNS** y seleccione **Inicio**.  
   
-### <a name="active-directory-web-services-is-not-started"></a>No se inicia de servicios Web de Active Directory  
- **Problema:** servicios Web de Active Directory no se inicia.  
+### <a name="active-directory-web-services-is-not-started"></a>No se inició Servicios web de Active Directory  
+ **Problema:**  No se inició Servicios web de Active Directory.  
   
- **Impacto:** servicios de Web de Active Directory (ADWS) no se inicia. Si se detiene o se deshabilita, aplicaciones de cliente como el módulo de Active Directory para Windows PowerShell ADWS en el servidor o el centro de administración de Active Directory no puede tener acceso o administrar instancias de servicio de directorio que se ejecutan en el servidor. Para obtener más información, consulta [Novedades en AD DS: servicios Web de Active Directory](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) (https://technet.microsoft.com/library/dd391908(WS.10).aspx) en la biblioteca técnica de Windows Server.  
+ **Impacto:**  No se inició Servicios web de Active Directory (ADWS). Si ADWS está detenido o deshabilitado en el servidor, las aplicaciones cliente, como el módulo de Active Directory para Windows PowerShell o el Centro de administración de Active Directory, no pueden acceder a las instancias del servicio de directorio que se ejecutan en este servidor, ni tampoco administrarlas. Para obtener más información, consulte [Novedades en AD DS: Servicios Web de Active Directory](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) (https://technet.microsoft.com/library/dd391908(WS.10).aspx) en la biblioteca técnica de Windows Server.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-active-directory-web-services-service"></a>Para iniciar el servicio de servicios Web de Active Directory  
+##### <a name="to-start-the-active-directory-web-services-service"></a>Para iniciar el servicio Servicios web de Active Directory  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en **servicios Web de Active Directory**y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en **Servicios web de Active Directory** y, a continuación, haga clic en **Inicio**.  
   
-### <a name="the-dhcp-client-service-should-be-started"></a>Se debe iniciar el servicio cliente DHCP  
- **Problema:** el servicio cliente DHCP no se está ejecutando en el servidor.  
+### <a name="the-dhcp-client-service-should-be-started"></a>Debe iniciarse el servicio Cliente DHCP  
+ **Problema:**  El servicio Cliente DHCP no se está ejecutando en el servidor.  
   
- **Impacto:** si este servicio se detiene, los equipos cliente no pueden recibir una dirección IP del servidor.  
+ **Impacto:**  Si este servicio está detenido, los equipos cliente no pueden recibir una dirección IP del servidor.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-dhcp-client-service"></a>Para iniciar el servicio cliente DHCP  
+##### <a name="to-start-the-dhcp-client-service"></a>Para iniciar el servicio Cliente DHCP  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **cliente DHCP** servicio y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en el servicio **Cliente DHCP** y, a continuación, haga clic en **Inicio**.  
   
-### <a name="the-iis-admin-service-should-be-started"></a>Se debe iniciar el servicio de administración de IIS  
- **Problema:** el servicio de administración de IIS no se está ejecutando en el servidor.  
+### <a name="the-iis-admin-service-should-be-started"></a>Debe iniciarse el Servicio de administración IIS  
+ **Problema:**  El Servicio de administración IIS no se está ejecutando en el servidor.  
   
- **Impacto:** si se detiene el servicio, es posible que no puede acceder a los sitios Web que se ejecutan en el servidor, como acceso Web remoto.  
+ **Impacto:**  Si este servicio está detenido, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-iis-admin-service"></a>Para iniciar el servicio de administración de IIS  
+##### <a name="to-start-the-iis-admin-service"></a>Para iniciar el Servicio de administración IIS  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en **servicio de administración de IIS**y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en **Servicio de administración IIS** y, a continuación, haga clic en **Inicio**.  
   
-### <a name="the-world-wide-web-publishing-service-should-be-started"></a>Se debe iniciar el servicio de publicación de World Wide Web  
- **Problema:** el servicio de publicación de World Wide Web no se está ejecutando en el servidor.  
+### <a name="the-world-wide-web-publishing-service-should-be-started"></a>Debe iniciarse el servicio de publicación World Wide Web  
+ **Problema:**  El servicio de publicación World Wide Web no se está ejecutando en el servidor.  
   
- **Impacto:** si se detiene el servicio, es posible que no puede acceder a los sitios Web que se ejecutan en el servidor, como acceso Web remoto.  
+ **Impacto:**  Si este servicio está detenido, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-world-wide-web-publishing-service"></a>Para iniciar el servicio de publicación de World Wide Web  
+##### <a name="to-start-the-world-wide-web-publishing-service"></a>Para iniciar el servicio de publicación World Wide Web  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en **servicio de publicación de World Wide Web**y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en **Servicio de publicación World Wide Web** y, a continuación, haga clic en **Inicio**.  
   
-### <a name="the-remote-desktop-gateway-service-should-be-started"></a>Se debe iniciar el servicio de puerta de enlace de escritorio remoto  
- **Problema:** no se está ejecutando el servicio de puerta de enlace de escritorio remoto en el servidor.  
+### <a name="the-remote-desktop-gateway-service-should-be-started"></a>Debe iniciarse el servicio Puerta de enlace de Escritorio remoto  
+ **Problema:**  El servicio Puerta de enlace de Escritorio remoto no se está ejecutando en el servidor.  
   
- **Impacto:** si se detiene el servicio, es posible que usuarios no puedan acceder a equipos mediante el uso de acceso Web remoto.  
+ **Impacto:**  Si este servicio está detenido, los usuarios podrían no tener acceso a los equipos mediante el acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
 ##### <a name="to-start-the-remote-desktop-gateway-service"></a>Para iniciar el servicio de puerta de enlace de escritorio remoto  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **puerta de enlace de escritorio remoto** servicio y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en el servicio **Puerta de enlace de Escritorio remoto** y, a continuación, haga clic en **Inicio**.  
   
-### <a name="the-windows-time-service-should-be-started"></a>Se debe iniciar el servicio hora de Windows  
- **Problema:** el servicio hora de Windows no se está ejecutando en el servidor.  
+### <a name="the-windows-time-service-should-be-started"></a>Debe iniciarse el servicio Hora de Windows  
+ **Problema:**  El servicio Hora de Windows no se está ejecutando en el servidor.  
   
- **Impacto:** si se detiene el servicio, sincronización de datos y el tiempo no será disponible.  
+ **Impacto:**  Si este servicio está detenido, la sincronización de fecha y hora no estará disponible.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-windows-time-service"></a>Para iniciar el servicio hora de Windows  
+##### <a name="to-start-the-windows-time-service"></a>Para iniciar el servicio de hora de Windows  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **tiempo Windows** de servicio y, a continuación, haz clic en **inicio**.  
+2.  Haga clic con el botón derecho en el servicio **Hora de Windows** y, a continuación, haga clic en **Inicio**.  
   
-### <a name="the-distributed-transaction-coordinator-msdtc-service-logon-account-should-be-nt-authoritynetwork-service"></a>La cuenta de inicio de sesión de servicio del Coordinador de transacciones distribuidas (MSDTC) debe ser NT Authority\servicio  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio del Coordinador de transacciones distribuidas (MSDTC).  
+### <a name="the-distributed-transaction-coordinator-msdtc-service-logon-account-should-be-nt-authoritynetwork-service"></a>La cuenta de inicio de sesión del servicio Coordinador de transacciones distribuidas (MSDTC) debe ser NT AUTHORITY\Network Service  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del servicio Coordinador de transacciones distribuidas (MSDTC).  
   
- **Impacto:** el servicio no podría tener los permisos necesarios para que funcione según lo esperado. Como resultado, las aplicaciones que usan las funciones de SQL Server o COM no funcionen correctamente.  
+ **Impacto:**  El servicio podría no tener los permisos necesarios para que funcione según lo previsto. Como resultado, las aplicaciones que usan las funciones de SQL Server o COM no funcionen correctamente.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-logon-account-for-the-service"></a>Para cambiar la cuenta de inicio de sesión para el servicio  
+##### <a name="to-change-the-logon-account-for-the-service"></a>Para cambiar la cuenta de inicio de sesión del servicio  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **Coordinador de transacciones distribuidas** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Coordinador de transacciones distribuidas** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **iniciar sesión**, selecciona **esta cuenta**, tipo **NT Authority\servicio**y, a continuación, haz clic en **Aceptar**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Esta cuenta**, escriba **NT AUTHORITY\Network Service** y haga clic en **Aceptar**.  
   
-### <a name="the-netlogon-service-should-use-the-local-system-account-as-its-logon-account"></a>El servicio de Net Logon debe usar la cuenta de sistema Local como su cuenta de inicio de sesión  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio de Net Logon.  
+### <a name="the-netlogon-service-should-use-the-local-system-account-as-its-logon-account"></a>El servicio de Net Logon debe usar la cuenta de sistema local como cuenta de inicio de sesión  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del servicio de Net Logon.  
   
- **Impacto:** el servicio no podría tener los permisos necesarios para que funcione según lo esperado. Como resultado, el servidor no puede autenticar usuarios y servicios.  
+ **Impacto:**  El servicio podría no tener los permisos necesarios para que funcione según lo previsto. Como resultado, el servidor podría no autenticar a los usuarios y los servicios.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-netlogon-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de Netlogon  
+##### <a name="to-change-the-netlogon-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de Net Logon  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **Netlogon** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio de **Net Logon** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **iniciar sesión**, selecciona **cuenta de sistema Local**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Cuenta de sistema local**.  
   
-### <a name="the-dns-client-service-should-use-the-nt-authoritynetwork-service-account-as-its-logon-account"></a>El servicio cliente DNS debe usar la cuenta como su cuenta de inicio de sesión  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio cliente DNS.  
+### <a name="the-dns-client-service-should-use-the-nt-authoritynetwork-service-account-as-its-logon-account"></a>El servicio Cliente DNS debe usar la cuenta NT AUTHORITY\Network Service como cuenta de inicio de sesión  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del servicio Cliente DNS.  
   
- **Impacto:** el servicio no podría tener los permisos necesarios para que funcione según lo esperado. Como resultado, el servidor es posible que pueda resolver los nombres DNS.  
+ **Impacto:**  El servicio podría no tener los permisos necesarios para que funcione según lo previsto. Como resultado, el servidor podría no resolver nombres DNS.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-dns-client-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de cliente DNS  
+##### <a name="to-change-the-dns-client-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Cliente DNS  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **cliente DNS** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Cliente DNS** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **iniciar sesión**, selecciona **esta cuenta**y, a continuación, escribe **NT Authority\servicio**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Esta cuenta** y escriba **NT AUTHORITY\Network Service**.  
   
-### <a name="the-dns-server-service-should-use-the-local-system-account-as-its-logon-account"></a>El servicio de servidor DNS debe usar la cuenta de sistema Local como su cuenta de inicio de sesión  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio de servidor DNS.  
+### <a name="the-dns-server-service-should-use-the-local-system-account-as-its-logon-account"></a>El servicio servidor DNS debe usar la cuenta de sistema Local como cuenta de inicio de sesión  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del servicio Servidor DNS.  
   
- **Impacto:** el servicio no podría tener los permisos necesarios para que funcione según lo esperado. Como resultado, las actualizaciones de DNS podrían no producirse.  
+ **Impacto:**  El servicio podría no tener los permisos necesarios para que funcione según lo previsto. Como resultado, podrían no producirse las actualizaciones de DNS.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-dns-server-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de servidor DNS  
+##### <a name="to-change-the-dns-server-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Servidor DNS  
   
-1.  Abre services.msc en el servidor  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **servidor DNS** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Servidor DNS** y seleccione **Propiedades**.  
   
-3.  En la **iniciar sesión**, selecciona **cuenta de sistema Local**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Cuenta de sistema local**.  
   
-### <a name="active-directory-web-services-is-not-the-default-logon-account"></a>Servicios Web de Active Directory no es la cuenta de inicio de sesión de forma predeterminada  
- **Problema:** servicios Web de Active Directory no es la cuenta de inicio de sesión de forma predeterminada. De manera predeterminada, la cuenta de inicio de sesión se establece en **cuenta de sistema Local**.  
+### <a name="active-directory-web-services-is-not-the-default-logon-account"></a>Servicios web de Active Directory no es la cuenta de inicio de sesión predeterminada  
+ **Problema:**  Servicios web de Active Directory no es la cuenta de inicio de sesión predeterminada. De forma predeterminada, la cuenta de inicio de sesión se establece en **Cuenta de sistema local**.  
   
- **Impacto:** servicios de Web de Active Directory (ADWS) no se inicia. Si se detiene o se deshabilita, aplicaciones de cliente como el módulo de Active Directory para Windows PowerShell ADWS en el servidor o el centro de administración de Active Directory no puede tener acceso o administrar instancias de servicio de directorio que se ejecutan en el servidor. Para obtener más información, consulta [Novedades en AD DS: servicios Web de Active Directory](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) (https://technet.microsoft.com/library/dd391908(WS.10).aspx) en la biblioteca técnica de Windows Server.  
+ **Impacto:**  No se inició Servicios web de Active Directory (ADWS). Si ADWS está detenido o deshabilitado en el servidor, las aplicaciones cliente, como el módulo de Active Directory para Windows PowerShell o el Centro de administración de Active Directory, no pueden acceder a las instancias del servicio de directorio que se ejecutan en este servidor, ni tampoco administrarlas. Para obtener más información, consulte [Novedades en AD DS: Servicios Web de Active Directory](https://technet.microsoft.com/library/dd391908\(WS.10\).aspx) (https://technet.microsoft.com/library/dd391908(WS.10).aspx) en la biblioteca técnica de Windows Server.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-active-directory-web-services-logon-account"></a>Para cambiar la cuenta de inicio de sesión de servicios Web de Active Directory  
+##### <a name="to-change-the-active-directory-web-services-logon-account"></a>Para cambiar la cuenta de inicio de sesión de Servicios web de Active Directory  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en **servicios Web de Active Directory**y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en **Servicios web de Active Directory** y, a continuación, haga clic en **Propiedades**.  
   
-3.  Cambiar la **tipo de inicio** a **automática**y, a continuación, haz clic en **Aceptar**.  
+3.  Cambie **Tipo de inicio** a **Automático** y haga clic en **Aceptar**.  
   
-4.  Servicios de Active Directory Web **propiedades**, haz clic en el **iniciar sesión** pestaña.  
+4.  En **Propiedades** de Servicios web de Active Directory, haga clic en la pestaña **Iniciar sesión**.  
   
-5.  Selecciona el **cuenta de sistema Local** opción y, a continuación, haz clic en **Aceptar**.  
+5.  Seleccione la opción **Cuenta de sistema local** y haga clic en **Aceptar**.  
   
-### <a name="the-windows-update-service-should-use-the-local-system-account-as-its-logon-account"></a>El servicio de actualización de Windows debe usar la cuenta de sistema Local como su cuenta de inicio de sesión  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio de actualizaciones automáticas.  
+### <a name="the-windows-update-service-should-use-the-local-system-account-as-its-logon-account"></a>El servicio Windows Update debe usar la cuenta de sistema local como cuenta de inicio de sesión  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del servicio de Actualizaciones automáticas.  
   
- **Impacto:** el servicio no podría tener los permisos necesarios para que funcione según lo esperado. Como resultado, el servidor no puede recibir actualizaciones automáticas.  
+ **Impacto:**  El servicio podría no tener los permisos necesarios para que funcione según lo previsto. Como resultado, es posible que el servidor no reciba actualizaciones automáticas.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-windows-update-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de Windows Update  
+##### <a name="to-change-the-windows-update-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Windows Update  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **Windows Update** de servicio y, a continuación, haz clic en Propiedades.  
+2.  Haga clic con el botón derecho en el servicio **Windows Update** y, a continuación, haga clic en Propiedades.  
   
-3.  En la **iniciar sesión**, selecciona **cuenta de sistema Local**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Cuenta de sistema local**.  
   
-### <a name="the-dhcp-client-service-should-use-the-nt-authoritylocalservice-account-as-its-logon-account"></a>El servicio cliente DHCP debe usar la cuenta de NT AUTHORITY\LocalService como su cuenta de inicio de sesión  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio cliente DHCP.  
+### <a name="the-dhcp-client-service-should-use-the-nt-authoritylocalservice-account-as-its-logon-account"></a>El servicio Cliente DHCP debe usar la cuenta NT AUTHORITY\LocalService como cuenta de inicio de sesión  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del servicio Cliente DHCP.  
   
- **Impacto:** el servicio no podría tener los permisos necesarios para que funcione según lo esperado. Como resultado, el equipo cliente no recibirá direcciones IP del servidor.  
+ **Impacto:**  El servicio podría no tener los permisos necesarios para que funcione según lo previsto. Como resultado, el equipo cliente no recibirá direcciones IP del servidor.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-dhcp-client-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio cliente DHCP  
+##### <a name="to-change-the-dhcp-client-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Cliente DHCP  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **cliente DHCP** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Cliente DHCP** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **iniciar sesión**, selecciona **esta cuenta**y, a continuación, escribe **NT AUTHORITY\Local Service**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Esta cuenta** y escriba **NT AUTHORITY\Local Service**.  
   
-### <a name="the-iis-admin-service-should-use-the-local-system-account-as-its-logon-account"></a>El servicio de administración de IIS debe usar la cuenta de sistema Local como su cuenta de inicio de sesión  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio de administración de IIS.  
+### <a name="the-iis-admin-service-should-use-the-local-system-account-as-its-logon-account"></a>El Servicio de administración IIS debe usar la cuenta de sistema local como cuenta de inicio de sesión  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del Servicio de administración IIS.  
   
- **Impacto:** el servicio no podría tener los permisos necesarios que sean necesarios para el funcionamiento esperado. Como resultado, es posible que no puede acceder a los sitios Web que se ejecutan en el servidor, como acceso Web remoto.  
+ **Impacto:**  El servicio podría no tener los permisos necesarios para que funcione según lo previsto. Como resultado, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión de servicio  
+##### <a name="to-change-the-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en **el servicio de administración de IIS**y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en **Servicio de administración IIS** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **iniciar sesión**, selecciona **cuenta de sistema Local**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Cuenta de sistema local**.  
   
-### <a name="the-world-wide-web-publishing-service-should-use-the-local-system-account-as-its-logon-account"></a>El servicio de publicación de World Wide Web deben usar la cuenta de sistema Local como su cuenta de inicio de sesión  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio de publicación de World Wide Web.  
+### <a name="the-world-wide-web-publishing-service-should-use-the-local-system-account-as-its-logon-account"></a>El servicio de publicación World Wide Web debe usar la cuenta de sistema local como cuenta de inicio de sesión  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del servicio de publicación World Wide Web.  
   
- **Impacto:** el servicio no podría tener los permisos necesarios para que funcione según lo esperado. Como resultado, es posible que no puede acceder a los sitios Web que se ejecutan en el servidor, como acceso Web remoto.  
+ **Impacto:**  El servicio podría no tener los permisos necesarios para que funcione según lo previsto. Como resultado, podría no tener acceso a sitios web que se ejecutan en el servidor, como el acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-world-wide-web-publishing-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de publicación de World Wide Web  
+##### <a name="to-change-the-world-wide-web-publishing-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de publicación World Wide Web  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en **servicio de publicación de World Wide Web**y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en **Servicio de publicación World Wide Web** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **iniciar sesión**, selecciona **cuenta de sistema Local**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Cuenta de sistema local**.  
   
-### <a name="the-remote-desktop-gateway-service-should-use-the-nt-authoritynetwork-service-account-as-its-logon-account"></a>El servicio de puerta de enlace de escritorio remoto debe usar la cuenta como su cuenta de inicio de sesión  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio de puerta de enlace de escritorio remoto.  
+### <a name="the-remote-desktop-gateway-service-should-use-the-nt-authoritynetwork-service-account-as-its-logon-account"></a>El servicio Puerta de enlace de Escritorio remoto debe usar la cuenta NT AUTHORITY\Network Service como cuenta de inicio de sesión  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del servicio Puerta de enlace de Escritorio remoto.  
   
- **Impacto:** el servicio no podría tener los permisos adecuados para que funcione según lo esperado. Como resultado, es posible que los usuarios no puedan acceder a equipos mediante el uso de acceso Web remoto.  
+ **Impacto:**  El servicio podría no tener los permisos apropiados para que funcione según lo previsto. Como resultado, los usuarios podrían no tener acceso a los equipos mediante el acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-remote-desktop-gateway-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio de puerta de enlace de escritorio remoto  
+##### <a name="to-change-the-remote-desktop-gateway-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Puerta de enlace de Escritorio remoto  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **puerta de enlace de escritorio remoto** servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Puerta de enlace de Escritorio remoto** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **iniciar sesión**, selecciona **esta cuenta**y, a continuación, escribe **NT Authority\servicio**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Esta cuenta** y escriba **NT AUTHORITY\Network Service**.  
   
-### <a name="the-windows-time-service-should-use-the-nt-authoritynetwork-service-account-as-its-logon-account"></a>El servicio hora de Windows debe usar la cuenta como su cuenta de inicio de sesión  
- **Problema:** ha cambiado la cuenta de inicio de sesión de forma predeterminada para el servicio hora de Windows.  
+### <a name="the-windows-time-service-should-use-the-nt-authoritynetwork-service-account-as-its-logon-account"></a>El servicio Hora de Windows debe usar la cuenta NT AUTHORITY\Network Service como cuenta de inicio de sesión  
+ **Problema:**  Se cambió la cuenta de inicio de sesión predeterminada del servicio Hora de Windows.  
   
- **Impacto:** el servicio no podría tener los permisos adecuados para que funcione según lo esperado. Como resultado, sincronización de fecha y hora podría no estar disponible.  
+ **Impacto:**  El servicio podría no tener los permisos apropiados para que funcione según lo previsto. Como resultado, la sincronización de fecha y hora podría no estar disponible.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-windows-time-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio hora de Windows  
+##### <a name="to-change-the-windows-time-service-logon-account"></a>Para cambiar la cuenta de inicio de sesión del servicio Hora de Windows  
   
-1.  Abre services.msc en el servidor.  
+1.  Abra services.msc en el servidor.  
   
-2.  Haz clic en el **tiempo Windows** de servicio y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en el servicio **Hora de Windows** y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **iniciar sesión**, selecciona **esta cuenta**y, a continuación, escribe **NT AUTHORITY\Local Service**.  
+3.  En la pestaña **Iniciar sesión**, seleccione **Esta cuenta** y escriba **NT AUTHORITY\Local Service**.  
   
-### <a name="the-built-in-administrators-group-does-not-have-the-right-to-log-on-as-batch-job"></a>El grupo integrado Administradores no tiene el derecho de iniciar sesión como trabajo por lotes  
- **Problema:** grupo integrado Administradores no tiene el derecho de iniciar sesión como trabajo por lotes.  
+### <a name="the-built-in-administrators-group-does-not-have-the-right-to-log-on-as-batch-job"></a>El grupo Administradores integrado no tiene derecho a iniciar sesión como un trabajo por lotes  
+ **Problema:**  El grupo Administradores integrado no tiene derecho a iniciar sesión como un trabajo por lotes.  
   
- **Impacto:** si el administrador crea una alerta y configura la alerta para ejecutarse cuando el administrador no ha iniciado sesión, se producirá un error en la alerta con un código de error de 2147943785.  
+ **Impacto:**  Si el administrador crea una alerta y la configura para que se ejecute cuando el administrador no haya iniciado sesión, la alerta producirá un error con un código de error 2147943785.  
   
- **Resolución:** para obtener información sobre cómo proporcionar a los administradores integrados permiso de grupo para iniciar sesión como trabajo por lotes, consulta [dar el grupo Administrador integrado de la derecha para iniciar sesión como trabajo por lotes](https://technet.microsoft.com/library/jj635076) (https://technet.microsoft.com/library/jj635076).  
+ **Solución:**  Para obtener información acerca de cómo proporcionar a los administradores integrados grupo permiso para iniciar sesión como trabajo por lotes, vea [conceder al grupo Administradores integrado el derecho a iniciar sesión como trabajo por lotes](https://technet.microsoft.com/library/jj635076) (https://technet.microsoft.com/library/jj635076).  
   
-### <a name="the-windows-firewall-is-turned-off"></a>El Firewall de Windows está desactivado  
- **Problema:** Firewall de Windows está desactivado. El valor predeterminado está activada.  
+### <a name="the-windows-firewall-is-turned-off"></a>Firewall de Windows está desactivado  
+ **Problema:**  Firewall de Windows está desactivado. El valor predeterminado es activado.  
   
- **Impacto:** según la configuración del firewall, Firewall de Windows puede ayudar a proteger el servidor y la red de actividades malintencionadas bloqueando cierta información de pasar a través del servidor.  
+ **Impacto:**  En función de su configuración, Firewall de Windows puede ayudar a proteger el servidor y la red frente a actividades malintencionadas, al impedir que cierta información pase a través del servidor.  
   
- **Resolución:**  
+ **Solución:**  
   
 ##### <a name="to-turn-on-windows-firewall-on-the-server"></a>Para activar Firewall de Windows en el servidor  
   
-1.  Abre el Panel de Control en el servidor.  
+1.  Abra el Panel de control en el servidor.  
   
-2.  En el Panel de Control, haz clic en **sistema y seguridad**y, a continuación, haz clic en **Firewall de Windows**.  
+2.  En el Panel de control, haga clic en **Sistema y seguridad** y después haga clic en **Firewall de Windows**.  
   
-3.  En el Firewall de Windows, haz clic en **activar o desactivar Firewall de Windows**, selecciona el **activar Firewall de Windows** opción y, a continuación, haz clic en **Aceptar**.  
+3.  En Firewall de Windows, haga clic en **Activar o desactivar Firewall de Windows**, seleccione la opción **Activar Firewall de Windows** y, a continuación, haga clic en **Aceptar**.  
   
-### <a name="the-internal-network-adapter-is-not-configured-to-register-ip-address-in-dns"></a>Adaptador de red no está configurado para registrar la dirección IP en DNS  
- **Problema:** adaptador de red no está configurado para registrar su dirección IP en DNS.  
+### <a name="the-internal-network-adapter-is-not-configured-to-register-ip-address-in-dns"></a>El adaptador de red interno no está configurado para registrar la dirección IP en DNS  
+ **Problema:**  El adaptador de red interno no está configurado para registrar su dirección IP en DNS.  
   
- **Impacto:** si la dirección IP del adaptador de red no está registrada en DNS, no sería posible tener acceso al servidor con el nombre de equipo servidor s.  
+ **Impacto:**  Si la dirección IP del adaptador de red interno no está registrada en DNS, no sería posible tener acceso al servidor utilizando el nombre del equipo servidor.  
   
- **Resolución:** comprobar que el adaptador de red interna está configurado para registrar en DNS.  
+ **Solución:**  Compruebe que el adaptador de red interno está configurado para registrar en DNS.  
   
-### <a name="dns-the-values-for-the-dns-forwardingtimeout-and-recursiontimeout-registry-key-are-identical"></a>DNS: Los valores de la clave del registro de DNS ForwardingTimeout y RecursionTimeout son idénticos  
- **Problema:** el valor de la clave del registro de DNS ForwardingTimeout no debe ser el mismo que el valor de la clave del registro de RecursionTimeout.  
+### <a name="dns-the-values-for-the-dns-forwardingtimeout-and-recursiontimeout-registry-key-are-identical"></a>DNS: Los valores de la clave del Registro RecursionTimeout y ForwardingTimeout de DNS son idénticos  
+ **Problema:**  El valor de la clave del Registro ForwardingTimeout de DNS no debe ser igual al valor de la clave del Registro RecursionTimeout.  
   
- **Impacto:** no es posible que pueda obtener acceso a recursos de Internet, por su nombre.  
+ **Impacto:**  Podría no tener acceso a recursos de Internet por su nombre.  
   
- **Resolución:** establece el valor de la clave del registro RecursionTimeout sea mayor que el valor de la clave ForwardingTimeout, ubicado en el registro en HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters.  
+ **Solución:**  Establezca el valor de la clave del Registro RecursionTimeout para que sea mayor que el valor de la clave ForwardingTimeout, ubicada en el Registro en HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters.  
   
-### <a name="the-forward-dns-zone-for-your-active-directory-domain-does-not-allow-secure-updates"></a>La zona DNS hacia delante de tu dominio de Active Directory no permitir actualizaciones seguras  
- **Problema:** debes configurar la zona de búsqueda directa para permitir solamente actualizaciones dinámicas seguras.  
+### <a name="the-forward-dns-zone-for-your-active-directory-domain-does-not-allow-secure-updates"></a>La zona directa de DNS para su dominio de Active Directory no permite actualizaciones seguras  
+ **Problema:**  Debe configurar la zona de búsqueda directa para permitir solo actualizaciones dinámicas seguras.  
   
- **Impacto:** cuando habilitas las actualizaciones dinámicas seguras, solo los usuarios autorizados y hosts pueden realizar cambios en los registros.  
+ **Impacto:**  Al habilitar las actualizaciones dinámicas seguras, solo los usuarios y hosts autorizados pueden realizar cambios en los registros.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-forward-lookup-zone-for-your-active-directory-domain"></a>Para configurar la zona de búsqueda hacia delante de tu dominio de Active Directory  
+##### <a name="to-configure-the-forward-lookup-zone-for-your-active-directory-domain"></a>Para configurar la zona de búsqueda directa de su dominio de Active Directory  
   
-1.  Abre dnsmgmt.msc en el servidor.  
+1.  Abra dnsmgmt.msc en el servidor.  
   
-2.  Haz clic en la zona de búsqueda hacia delante de tu dominio de Active Directory y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en la zona de búsqueda directa de su dominio de Active Directory y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **actualizaciones dinámicas** lista desplegable, selecciona **seguro solo**y, a continuación, haz clic en **Aceptar**.  
+3.  En la lista desplegable **Actualizaciones dinámicas**, seleccione **Solo con seguridad** y haga clic en **Aceptar**.  
   
-### <a name="the-forward-dns-zone-does-not-allow-secure-updates"></a>Actualiza el reenvío no admite segura zona DNS  
- **Problema:** debes configurar la zona de búsqueda hacia delante de la zona de _msdcs.* para permitir solamente actualizaciones dinámicas seguras.  
+### <a name="the-forward-dns-zone-does-not-allow-secure-updates"></a>La zona directa de DNS no permite las actualizaciones seguras  
+ **Problema:**  Debe configurar la zona de búsqueda directa para que la zona _msdcs.* solo permita las actualizaciones dinámicas seguras.  
   
- **Impacto:** cuando habilitas las actualizaciones dinámicas seguras, solo los usuarios autorizados y hosts pueden realizar cambios en los registros en la zona msdcs.*.  
+ **Impacto:**  Al habilitar las actualizaciones dinámicas seguras, solo los usuarios y hosts autorizados pueden realizar cambios en los registros en la zona _msdcs.*.  
   
- **Resolución:**  
+ **Solución:**  
   
 ##### <a name="to-allow-secure-updates-in-the-msdcs-zone"></a>Para permitir actualizaciones seguras en la zona _msdcs  
   
-1.  Abre dnsmgmt.msc en el servidor.  
+1.  Abra dnsmgmt.msc en el servidor.  
   
-2.  Haz clic en la zona de la zona _msdcs búsqueda hacia delante y, a continuación, haz clic en **propiedades**.  
+2.  Haga clic con el botón derecho en la zona de búsqueda directa de la zona _msdcs y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **actualizaciones dinámicas** lista desplegable, selecciona **seguro solo**y, a continuación, haz clic en **Aceptar**.  
+3.  En la lista desplegable **Actualizaciones dinámicas**, seleccione **Solo con seguridad** y haga clic en **Aceptar**.  
   
-### <a name="internet-explorer-enhanced-security-configuration-is-not-enabled"></a>No está habilitada la configuración de seguridad mejorada de Internet Explorer  
- **Problema:** configuración de seguridad mejorada de Internet Explorer (IE ESC) actualmente no está habilitada para el grupo de administradores.  
+### <a name="internet-explorer-enhanced-security-configuration-is-not-enabled"></a>La Configuración de seguridad mejorada de Internet Explorer no está habilitada  
+ **Problema:**  Configuración de seguridad mejorada de Internet Explorer (IE ESC) no está habilitada actualmente para el grupo de administradores.  
   
- **Impacto:** si no está habilitada la configuración de seguridad mejorada de Internet Explorer para el grupo de administradores, el servidor e Internet Explorer han aumentado la exposición a los ataques malintencionados que se pueden producir contenido a través de la Web y scripts de la aplicación.  
+ **Impacto:**  Si la Configuración de seguridad mejorada de Internet Explorer no está habilitada para el grupo Administradores, su servidor e Internet Explorer estarán más expuestos a ataques malintencionados que pueden producirse a través de contenido web y scripts de aplicaciones.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-enable-internet-explorer-enhanced-security-configuration"></a>Para habilitar la configuración de seguridad mejorada de Internet Explorer  
+##### <a name="to-enable-internet-explorer-enhanced-security-configuration"></a>Para habilitar la Configuración de seguridad mejorada de Internet Explorer  
   
-1.  Abre **administrador del servidor** en el servidor y, a continuación, haz clic en **servidor Local**.  
+1.  Abra **Administrador del servidor** en el servidor y haga clic en **Servidor local**.  
   
-2.  En la **propiedades** panel, cambiar la configuración de **configuración de seguridad mejorada de Internet Explorer** a **en**y, a continuación, haz clic en **Aceptar**.  
+2.  En el panel **Propiedades**, cambie la configuración de **Configuración de seguridad mejorada de Internet Explorer** a **Activada** y haga clic en **Aceptar**.  
   
-### <a name="internet-explorer-enhanced-security-configuration-is-not-enabled"></a>No está habilitada la configuración de seguridad mejorada de Internet Explorer  
- **Problema:** configuración de seguridad mejorada de Internet Explorer (IE ESC) actualmente no está habilitada para el grupo de usuarios.  
+### <a name="internet-explorer-enhanced-security-configuration-is-not-enabled"></a>La Configuración de seguridad mejorada de Internet Explorer no está habilitada  
+ **Problema:**  Configuración de seguridad mejorada de Internet Explorer (IE ESC) no está habilitada actualmente para el grupo de usuarios.  
   
- **Impacto:** si no está habilitada la configuración de seguridad mejorada de Internet Explorer para el grupo de usuarios, tu servidor e Internet Explorer han aumentado la exposición a los ataques malintencionados que se pueden producir contenido a través de la Web y scripts de la aplicación.  
+ **Impacto:**  Si la Configuración de seguridad mejorada de Internet Explorer no está habilitada para el grupo Usuarios, su servidor e Internet Explorer estarán más expuestos a ataques malintencionados que pueden producirse a través de contenido web y scripts de aplicaciones.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-enable-internet-explorer-enhanced-security-configuration"></a>Para habilitar la configuración de seguridad mejorada de Internet Explorer  
+##### <a name="to-enable-internet-explorer-enhanced-security-configuration"></a>Para habilitar la Configuración de seguridad mejorada de Internet Explorer  
   
-1.  Abre **administrador del servidor**y, a continuación, haz clic en **servidor Local**.  
+1.  Abra **Administrador del servidor** y haga clic en **Servidor local**.  
   
-2.  En la **propiedades** panel, cambiar la configuración de **configuración de seguridad mejorada de Internet Explorer** a **en**y, a continuación, haz clic en **Aceptar**.  
+2.  En el panel **Propiedades**, cambie la configuración de **Configuración de seguridad mejorada de Internet Explorer** a **Activada** y haga clic en **Aceptar**.  
   
-### <a name="the-source-server-remains-in-active-directory-sites-and-services"></a>El servidor de origen permanece en servicios y sitios de Active Directory  
- **Problema:** el servidor de origen que ejecuta Windows Small Business Server aún existe en servicios y sitios de Active Directory en el Default-First-Site-Name.  
+### <a name="the-source-server-remains-in-active-directory-sites-and-services"></a>El servidor de origen permanece en Sitios y servicios de Active Directory  
+ **Problema:**  El servidor de origen que ejecuta Windows Small Business Server sigue existiendo en Sitios y servicios de Active Directory en Default-First-Site-Name.  
   
- **Impacto:** si el servidor de origen permanece en Active Director sitios y servicios, los equipos cliente pueden experimentar el problema de conectividad: s.  
+ **Impacto:**  Si el servidor de origen permanece en sitios de Active Directory y servicios, los equipos cliente pueden experimentar el problema de conectividad: s.  
   
- **Resolución:** debe degradar el servidor de origen, se quite del dominio y, a continuación, eliminar el servidor de origen de los sitios de Active Directory y servicios y usuarios de Active Directory y equipos.  
+ **Solución:**  Debe disminuir el nivel del servidor de origen, quitarlo del dominio, y eliminar el servidor de origen de Sitios y servicios de Active Directory y de Usuarios y equipos de Active Directory.  
   
-### <a name="source-server-remains-in-sbscomputer-ou"></a>Servidor de origen permanece en SBSComputer OU  
- **Problema:** el servidor de origen que ejecuta Windows Small Business Server aún existe en equipos y usuarios de Active Directory.  
+### <a name="source-server-remains-in-sbscomputer-ou"></a>El servidor de origen permanece en la unidad organizativa SBSComputer  
+ **Problema:**  El servidor de origen que ejecuta Windows Small Business Server sigue existiendo en Usuarios y equipos de Active Directory.  
   
- **Impacto:** si el servidor de origen permanece en Director de activo a los usuarios y equipos, los equipos cliente pueden experimentar el problema de conectividad: s.  
+ **Impacto:**  Si el servidor de origen permanece en equipos y usuarios de Active Directory, los equipos cliente pueden experimentar el problema de conectividad: s.  
   
- **Resolución:** debe degradar el servidor de origen, se quite del dominio y, a continuación, eliminar el servidor de origen de los sitios de Active Directory y servicios y usuarios de Active Directory y equipos.  
+ **Solución:**  Debe disminuir el nivel del servidor de origen, quitarlo del dominio, y eliminar el servidor de origen de Sitios y servicios de Active Directory y de Usuarios y equipos de Active Directory.  
   
-### <a name="a-group-policy-is-missing"></a>No existe una directiva de grupo  
- **Problema:** carece de la directiva de grupo de directiva de dominio predeterminada.  
+### <a name="a-group-policy-is-missing"></a>Falta una directiva de grupo  
+ **Problema:**  Falta la directiva de grupo Default Domain Policy.  
   
- **Impacto:** la directiva de dominio predeterminada es necesaria para funciones de dominio adecuados.  
+ **Impacto:**  Default Domain Policy es necesaria para las funciones de dominio adecuadas.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-restore-a-missing-group-policy"></a>Para restaurar una directiva de grupo que faltan  
+##### <a name="to-restore-a-missing-group-policy"></a>Para restaurar una directiva de grupo que falta  
   
-1.  Abre gpmc.msc en el servidor.  
+1.  Abra gpmc.msc en el servidor.  
   
-2.  En el Administrador de directivas de grupo, expanda el bosque de dominio y buscar en el árbol de consola para el **directiva de dominio predeterminada** objeto de directiva de grupo.  
+2.  En el Administrador de directivas de grupo, expanda el bosque de dominio y busque en el árbol de consola el objeto de directiva de grupo **Default Domain Policy**.  
   
-3.  Si la directiva no aparece en el árbol, restaurar una copia de seguridad de estado del sistema.  
+3.  Si la directiva no aparece en el árbol, restáurela a partir de una copia de seguridad del estado de sistema.  
   
-### <a name="no-dns-name-server-resource-records"></a>Sin DNS los registros de recursos de servidor de nombres  
- **Problema:** no hay ningún registros de recursos del servidor (NS) de nombre DNS en la zona de búsqueda hacia delante de tu servidor.  
+### <a name="no-dns-name-server-resource-records"></a>No hay registros de recursos del servidor de nombres DNS  
+ **Problema:**  No hay ningún registro de recursos del servidor de nombres (NS) DNS en la zona de búsqueda directa del servidor.  
   
- **Impacto:** si no registro de recursos del servidor (NS) de nombre DNS no existe en la zona de búsqueda hacia delante para el dominio de Active Directory, los usuarios no puede tener acceso a recursos de la red o en Internet.  
+ **Impacto:**  Si no existe ningún registro de recursos del servidor de nombres (NS) DNS en la zona de búsqueda directa del dominio de Active Directory, los usuarios podrían no tener acceso a recursos de la red o de Internet.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-restore-missing-dns-name-server-resource-records"></a>Para restaurar la falta de nombre DNS servidor registros de recursos  
+##### <a name="to-restore-missing-dns-name-server-resource-records"></a>Para restaurar los registros de recursos del servidor de nombres DNS que faltan  
   
-1.  Abre dnsmgmt.msc en el servidor.  
+1.  Abra dnsmgmt.msc en el servidor.  
   
-2.  En el Administrador de DNS, haz clic en la zona de búsqueda hacia delante para el dominio de Active Directory y, a continuación, haz clic en **propiedades**.  
+2.  En el Administrador de DNS, haga clic con el botón derecho en la zona de búsqueda directa de su dominio de Active Directory y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **servidores de nombres**, compruebe que la configuración sea correcta.  
+3.  En la pestaña **Servidores de nombres**, compruebe que la configuración sea correcta.  
   
-4.  Realiza los cambios necesarios y, a continuación, haz clic en **Aceptar** para guardar la configuración.  
+4.  Realice los cambios necesarios y haga clic en **Aceptar** para guardar la configuración.  
   
-### <a name="no-dns-name-server-records"></a>No hay registros de servidor de nombres DNS  
- **Problema:** no hay ningún servidor de nombres DNS (NS) registros de recursos en la zona _msdcs de tu servidor (por ejemplo: _msdcs.contoso.local).  
+### <a name="no-dns-name-server-records"></a>No hay registros del servidor de nombres DNS  
+ **Problema:**  No hay ningún registro de recursos del servidor de nombres (NS) DNS en la zona _msdcs del servidor (por ejemplo, _msdcs.contoso.local).  
   
- **Impacto:** si ningún registro de recursos del servidor (NS) de nombre DNS no existe en la zona _msdcs para el dominio de Active Directory, los usuarios no posible tener acceso a recursos de la red o en Internet.  
+ **Impacto:**  Si no existe ningún registro de recursos del servidor de nombres (NS) DNS en la zona _msdcs del dominio de Active Directory, los usuarios podrían no tener acceso a recursos de la red o de Internet.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-restore-missing-dns-name-server-records"></a>Para restaurar los registros de servidor de nombres DNS que faltan  
+##### <a name="to-restore-missing-dns-name-server-records"></a>Para restaurar los registros del servidor de nombres DNS que faltan  
   
-1.  Abre dnsmgmt.msc en el servidor.  
+1.  Abra dnsmgmt.msc en el servidor.  
   
-2.  En el Administrador de DNS, haz clic en la zona de búsqueda hacia delante para la zona _msdcs y, a continuación, haz clic en **propiedades**.  
+2.  En el Administrador de DNS, haga clic con el botón derecho en la zona de búsqueda directa de la zona _msdcs y, a continuación, haga clic en **Propiedades**.  
   
-3.  En la **servidores de nombres**, compruebe que la configuración sea correcta.  
+3.  En la pestaña **Servidores de nombres**, compruebe que la configuración sea correcta.  
   
-4.  Realiza los cambios necesarios y, a continuación, haz clic en **Aceptar** para guardar la configuración.  
+4.  Realice los cambios necesarios y haga clic en **Aceptar** para guardar la configuración.  
   
-### <a name="no-dns-name-server-records"></a>No hay registros de servidor de nombres DNS  
- **Problema:** no hay ningún servidor de nombres DNS (NS) registros de recursos para el delegado _msdcs reenviar zona de búsqueda.  
+### <a name="no-dns-name-server-records"></a>No hay registros del servidor de nombres DNS  
+ **Problema:**  No hay ningún registro de recursos del servidor de nombres (NS) DNS de la zona de búsqueda directa _msdcs delegada.  
   
- **Impacto:** si no existe ningún registro de recursos del servidor (NS) de nombre DNS para el delegado _msdcs reenviar zona de búsqueda, el servicio de servidor DNS no puede resolver los registros de recursos DNS del dominio y no podrán iniciarse.  
+ **Impacto:**  Si no hay ningún registro de recursos del servidor de nombres (NS) DNS de la zona de búsqueda directa _msdcs delegada, el servicio Servidor DNS no puede resolver los registros de recursos DNS del dominio y no se iniciará.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-reconfigure-missing-dns-name-server-records"></a>Para volver a configurar el servidor de nombres DNS falta registros  
+##### <a name="to-reconfigure-missing-dns-name-server-records"></a>Para reconfigurar los registros del servidor de nombres DNS que faltan  
   
-1.  Abre dnsmgmt.msc en el servidor.  
+1.  Abra dnsmgmt.msc en el servidor.  
   
-2.  En el Administrador de DNS, expande el nombre del servidor y, a continuación, expanda **zonas de búsqueda directa**.  
+2.  En el Administrador de DNS, expanda el nombre del servidor y, después, expanda **Zonas de búsqueda directa**.  
   
-3.  Haz clic en la zona de búsqueda hacia delante de tu dominio de Active Directory (por ejemplo: contoso.local).  
+3.  Haga clic en la zona de búsqueda directa de su dominio de Active Directory (por ejemplo, contoso.local).  
   
-4.  La zona _msdcs delegadas aparece como una carpeta atenuada. Haz clic en la zona _msdcs y, a continuación, haz clic en **propiedades**.  
+4.  La zona _msdcs delegada aparece como una carpeta atenuada. Haga clic con el botón derecho en la zona _msdcs y, a continuación, haga clic en **Propiedades**.  
   
-5.  En la **servidores de nombres**, compruebe que la configuración sea correcta.  
+5.  En la pestaña **Servidores de nombres**, compruebe que la configuración sea correcta.  
   
-6.  Realiza los cambios necesarios y, a continuación, haz clic en **Aceptar** para guardar la configuración.  
+6.  Realice los cambios necesarios y haga clic en **Aceptar** para guardar la configuración.  
   
-### <a name="authenticated-users-not-a-member-of-the-pre-windows-2000-compatible-access-group"></a>Usuarios autenticados no un miembro del grupo de acceso de compatible con versiones anteriores de Windows 2000  
- **Problema:** el grupo Usuarios autenticados no es un miembro del grupo de acceso de compatible con versiones anteriores de Windows 2000.  
+### <a name="authenticated-users-not-a-member-of-the-pre-windows-2000-compatible-access-group"></a>Usuarios autenticados no pertenece al grupo de acceso compatible con versiones anteriores a Windows 2000  
+ **Problema:**  El grupo Usuarios autenticados no pertenece al grupo de acceso compatible con versiones anteriores a Windows 2000.  
   
- **Impacto:** si el grupo Usuarios autenticados integrado no es un miembro del grupo de acceso de compatible con versiones anteriores de Windows 2000, los usuarios de red pueden producirse errores de "Acceso denegado".  
+ **Impacto:**  Si el grupo Usuarios autenticados integrado no pertenece al grupo de acceso compatible con versiones anteriores a Windows 2000, los usuarios de red pueden encontrarse con errores de tipo "Acceso denegado".  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-add-authenticated-users-to-the-pre-windows-2000-compatible-access-group"></a>Para agregar usuarios autenticados al grupo de acceso de compatible con versiones anteriores de Windows 2000  
+##### <a name="to-add-authenticated-users-to-the-pre-windows-2000-compatible-access-group"></a>Para agregar Usuarios autenticados al grupo de acceso compatible con versiones anteriores a Windows 2000  
   
-1.  Abre dsa.msc en el servidor.  
+1.  Abra dsa.msc en el servidor.  
   
-2.  En la **Builtin** carpeta, haz clic en **acceso de compatible con versiones anteriores de Windows 2000**y, a continuación, haz clic en **propiedades**.  
+2.  En la carpeta **Builtin**, haga clic con el botón derecho en **Acceso compatible con versiones anteriores a Windows 2000** y, a continuación, haga clic en **Propiedades**.  
   
-3.  Haz clic en **agregar**, tipo **usuarios autenticados**y, a continuación, haz clic en **Aceptar** dos veces.  
+3.  Haga clic en **Agregar**, escriba **Usuarios autenticados** y, después, haga clic en **Aceptar** dos veces.  
   
 ### <a name="dns-client-not-configured"></a>Cliente DNS no configurado  
- **Problema:** el cliente DNS no está configurado para apuntar solo a la dirección IP interna del servidor.  
+ **Problema:**  El cliente DNS no está configurado para que solo apunte a la dirección IP interna del servidor.  
   
- **Impacto:** si el cliente DNS no está configurado para que apunte solo a la dirección IP interna del servidor, se puede producir un error de resolución de nombres DNS.  
+ **Impacto:**  Si el cliente DNS no está configurado para apuntar solamente a la dirección IP interna del servidor, se puede producir un error en la resolución de nombres DNS.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-dns-to-point-only-to-the-server-s-internal-ip-address"></a>Configurar DNS para apuntar solo a la dirección IP de servidor s interna  
+##### <a name="to-configure-dns-to-point-only-to-the-server-s-internal-ip-address"></a>Para configurar DNS para que solo apunte a la dirección IP interna de servidor s  
   
-1.  En el equipo cliente, abra el **propiedades** página para la conexión de red.  
+1.  En el equipo cliente, abra la página **Propiedades** de la conexión de red.  
   
-2.  Asegúrate de que DNS está configurado para que apunte solo a la dirección IP interna del servidor.  
+2.  Asegúrese de que DNS esté configurado para que solo apunte a la dirección IP interna del servidor.  
   
-### <a name="default-application-pool-value-changed"></a>Ha cambiado el valor de grupo de aplicaciones predeterminadas  
- **Problema:** el número máximo de procesos de trabajo para el grupo de aplicaciones DefaultAppPool no se establece en el valor predeterminado de 1.  
+### <a name="default-application-pool-value-changed"></a>Se cambió el valor de grupo de aplicaciones predeterminado  
+ **Problema:**  El número máximo de procesos de trabajo del grupo de aplicaciones DefaultAppPool no está establecido en el valor predeterminado de 1.  
   
- **Impacto:** es posible que los usuarios no puedan conectarse a servicios basados en web de Windows Small Business Server.  
+ **Impacto:**  Es posible que los usuarios no puedan conectarse a los servicios basados en web de Windows Small Business Server.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-reset-maximum-worker-processes-for-the-default-application-pool"></a>Para restablecer el máximo procesos de trabajo para el grupo de aplicaciones predeterminadas  
+##### <a name="to-reset-maximum-worker-processes-for-the-default-application-pool"></a>Para restablecer el número máximo de procesos de trabajo del grupo de aplicaciones predeterminado  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, expanda el nombre del servidor y, a continuación, haz clic en **Application Pools**.  
+2.  En el Administrador de IIS, expanda el nombre del servidor y haga clic en **Grupos de aplicaciones**.  
   
-3.  En **Application Pools**, haz clic en **DefaultAppPool**y, a continuación, haz clic en **configuración avanzada**.  
+3.  En **Grupos de aplicaciones**, haga clic con el botón derecho en **DefaultAppPool** y, después, haga clic en **Configuración avanzada**.  
   
-4.  En **configuración avanzada**, cambiar el valor de **máximo procesos de trabajo** a 1 y, a continuación, haz clic en **Aceptar**.  
+4.  En **Configuración avanzada**, cambie el valor de **Número máximo de procesos de trabajo** a 1 y, a continuación, haga clic en **Aceptar**.  
   
-5.  Cerrar **configuración avanzada**, haz clic en **DefaultAppPool**y, a continuación, detener y reiniciar el grupo de aplicaciones.  
+5.  Cierre **Configuración avanzada**, haga clic con el botón derecho en **DefaultAppPool** y, después, detenga y vuelva a iniciar la aplicación.  
   
-### <a name="application-pool-for-remote-web-access-does-not-use-the-default-account"></a>Grupo de aplicaciones para el acceso Web remoto no usa la cuenta predeterminada  
- **Problema:** el grupo de aplicaciones RemoteAppPool no se está ejecutando con la cuenta predeterminada.  
+### <a name="application-pool-for-remote-web-access-does-not-use-the-default-account"></a>El grupo de aplicaciones para el acceso Web remoto no usa la cuenta predeterminada  
+ **Problema:**  El grupo de aplicaciones RemoteAppPool no se está ejecutando con la cuenta predeterminada.  
   
- **Impacto:** posible que los usuarios de red no pueda acceder al sitio Web de acceso Web remoto.  
+ **Impacto:**  Los usuarios de red podrían no tener acceso al sitio web de acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-reset-the-remote-application-pool-to-use-the-default-account"></a>Para restablecer el grupo de aplicaciones remoto para usar la cuenta predeterminada  
+##### <a name="to-reset-the-remote-application-pool-to-use-the-default-account"></a>Para restablecer el grupo de aplicaciones remotas para que use la cuenta predeterminada  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, expanda el nombre del servidor y, a continuación, haz clic en **Application Pools**.  
+2.  En el Administrador de IIS, expanda el nombre del servidor y haga clic en **Grupos de aplicaciones**.  
   
-3.  En **Application Pools**, haz clic en **RemoteAppPool**y, a continuación, haz clic en **configuración avanzada**.  
+3.  En **Grupos de aplicaciones**, haga clic con el botón derecho en **RemoteAppPool** y, después, haga clic en **Configuración avanzada**.  
   
-4.  En **configuración avanzada**, cambiar el **identidad** a **NetworkService**y, a continuación, haz clic en **Aceptar**.  
+4.  En **Configuración avanzada**, cambie la **Identidad** a **NetworkService** y, a continuación, haga clic en **Aceptar**.  
   
-5.  Cerrar **configuración avanzada**, haz clic en **RemoteAppPool**y, a continuación, detener y reiniciar el grupo de aplicaciones.  
+5.  Cierre **Configuración avanzada**, haga clic con el botón derecho en **RemoteAppPool** y, después, detenga y vuelva a iniciar la aplicación.  
   
-### <a name="application-pool-for-remote-web-access-does-not-use-the-default-net-framework-version"></a>Grupo de aplicaciones para el acceso Web remoto no utiliza la versión de .NET Framework predeterminada  
- **Problema:** el grupo de aplicaciones RemoteAppPool no se está ejecutando con la versión predeterminada de Microsoft .NET Framework.  
+### <a name="application-pool-for-remote-web-access-does-not-use-the-default-net-framework-version"></a>El grupo de aplicaciones para el acceso Web remoto no usa la versión predeterminada de .NET Framework  
+ **Problema:**  El grupo de aplicaciones RemoteAppPool no se está ejecutando con la versión predeterminada de Microsoft .NET Framework  
   
- **Impacto:** posible que los usuarios de red no pueda acceder al sitio Web de acceso Web remoto.  
+ **Impacto:**  Los usuarios de red podrían no tener acceso al sitio web de acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-change-the-net-framework-version-used-by-the-remoteapppool"></a>Para cambiar la versión de .NET Framework usada por la RemoteAppPool  
+##### <a name="to-change-the-net-framework-version-used-by-the-remoteapppool"></a>Para cambiar la versión de .NET Framework usada por RemoteAppPool  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, expanda el nombre del servidor y, a continuación, haz clic en **Application Pools**.  
+2.  En el Administrador de IIS, expanda el nombre del servidor y haga clic en **Grupos de aplicaciones**.  
   
-3.  En **Application Pools**, haz clic en **RemoteAppPool**y, a continuación, haz clic en **configuración avanzada**.  
+3.  En **Grupos de aplicaciones**, haga clic con el botón derecho en **RemoteAppPool** y, después, haga clic en **Configuración avanzada**.  
   
-4.  En **configuración avanzada**, cambiar el **versión de .NET Framework** v4.0 y, a continuación, haz clic en **Aceptar**.  
+4.  En **Configuración avanzada**, cambie la **Versión de .NET Framework** a v4.0 y haga clic en **Aceptar**.  
   
-5.  Cerrar **configuración avanzada**, haz clic en **RemoteAppPool**y, a continuación, detener y reiniciar el grupo de aplicaciones.  
+5.  Cierre **Configuración avanzada**, haga clic con el botón derecho en **RemoteAppPool** y, después, detenga y vuelva a iniciar la aplicación.  
   
-### <a name="the-remoteaccesslog-file-is-larger-than-1-gb-in-size"></a>El archivo RemoteAccess.log es mayor que 1 GB de tamaño  
- **Problema:** si el tamaño del archivo Remoteaccess.log supera 1 GB, pueden experimentar poco espacio en disco en la unidad del sistema.  
+### <a name="the-remoteaccesslog-file-is-larger-than-1-gb-in-size"></a>El archivo RemoteAccess.log tiene un tamaño mayor que 1 GB  
+ **Problema:**  Si el tamaño del archivo Remoteaccess.log supera 1 GB, puede experimentar errores por falta de espacio en disco en la unidad del sistema.  
   
- **Impacto:** si el archivo Remoteaccess.log es demasiado grande, podría provocar que el problema de espacio libre: s en la unidad C:.  
+ **Impacto:**  Si el archivo Remoteaccess.log es demasiado grande, podría hacer que el problema de espacio libre: s en la unidad C:.  
   
- **Resolución:** después de realizar la copia de seguridad del servidor, puede eliminar el archivo Remoteaccess.log, que se encuentra en la carpeta Server\Logs\WebApps %ProgramData%\Microsoft\Windows.  
+ **Solución:**  Después de realizar la copia de seguridad del servidor, puede eliminar el archivo Remoteaccess.log, que se encuentra en la carpeta %ProgramData%\Microsoft\Windows Server\Logs\WebApps.  
   
-### <a name="default-web-sites-log-directory-is-over-1-gb-in-size"></a>Directorio de registro del sitio Web predeterminado es más de 1 GB de tamaño  
- **Problema:** si el tamaño de la carpeta de registro del sitio Web de forma predeterminada es superior a 1 GB, pueden experimentar poco espacio en disco en la unidad del sistema.  
+### <a name="default-web-sites-log-directory-is-over-1-gb-in-size"></a>El directorio de registro del sitio web predeterminado tiene un tamaño superior a 1 GB  
+ **Problema:**  Si el tamaño de carpeta de registro del sitio Web de predeterminado supera 1 GB, puede experimentar errores por espacio en disco insuficiente en la unidad del sistema.  
   
- **Impacto:** si es demasiado grande la carpeta de registro del sitio Web de forma predeterminada, podría provocar que el problema de espacio libre: s en la unidad C:  
+ **Impacto:**  Si la carpeta de registro del sitio Web de forma predeterminada es demasiado grande, podría causar problema de espacio libre: s en la unidad C:  
   
- **Resolución:** después de hacer la copia de seguridad del servidor, y mientras se detiene el sitio Web predeterminado, puedes eliminar los archivos de registro en la carpeta C:\inetpub\logs\LogFiles\W3SVC1. A continuación, inicia el sitio Web predeterminado.  
+ **Solución:**  Después de realizar la copia de seguridad del servidor, y mientras el sitio web predeterminado esté detenido, puede eliminar los archivos de registro de la carpeta C:\inetpub\logs\LogFiles\W3SVC1. A continuación, inicie el sitio web predeterminado.  
   
-### <a name="no-binding-for-ssl-on-all-ip-addresses"></a>Ningún enlace SSL en todas las direcciones IP  
- **Problema:** hay ningún enlace para la capa de Sockets seguros (SSL) en todas las direcciones IP en el servidor.  
+### <a name="no-binding-for-ssl-on-all-ip-addresses"></a>No hay ningún enlace para SSL en ninguna de las direcciones IP  
+ **Problema:**  No hay ningún enlace para la Capa de sockets seguros (SSL) en ninguna de las direcciones IP del servidor.  
   
- **Impacto:** si SSL no está enlazado a todas las direcciones IP en el servidor, algunos sitios Web no estará disponible para los usuarios.  
+ **Impacto:**  Si SSL no está enlazado a todas las direcciones IP del servidor, algunos sitios web no estarán disponibles para los usuarios.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-bind-ssl-to-all-ip-addresses-on-the-server"></a>Para enlazar SSL a todas las direcciones IP en el servidor  
+##### <a name="to-bind-ssl-to-all-ip-addresses-on-the-server"></a>Para enlazar SSL a todas las direcciones IP del servidor  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, en la **conexiones** panel, expanda el servidor, **sitios**, haz clic en **sitio Web predeterminado**y, a continuación, haz clic en **Editar enlaces**.  
+2.  En el Administrador de ISS, en el panel **Conexiones**, expanda su servidor, expanda **Sitios**, haga clic con el botón derecho en **Sitio web predeterminado** y, a continuación, haga clic en **Modificar enlaces**.  
   
-3.  En **enlaces de sitios**, haz clic en **agregar**y, a continuación, selecciona la configuración siguiente:  
+3.  En **Enlaces de sitios**, haga clic en **Agregar** y, a continuación, seleccione la siguiente configuración:  
   
     -   **Tipo** = **https**  
   
-    -   **Dirección IP** = **todos sin asignar**  
+    -   **Dirección IP** = **todas sin asignar**  
   
     -   **Puerto** = 443  
   
-4.  Selecciona un certificado SSL y, a continuación, haz clic en **Aceptar** para guardar los cambios.  
+4.  Seleccione un certificado SSL y haga clic en **Aceptar** para guardar los cambios.  
   
-### <a name="no-binding-for-ssl-on-the-default-web-site"></a>Ningún enlace SSL en el sitio Web predeterminado  
- **Problema:** hay ningún enlace SSL en el sitio Web predeterminado.  
+### <a name="no-binding-for-ssl-on-the-default-web-site"></a>No hay enlaces para SSL en el sitio web predeterminado  
+ **Problema:**  No hay enlaces para SSL en el sitio web predeterminado.  
   
- **Impacto:** si no está enlazado SSL para el sitio Web predeterminado, algunos sitios Web no estén disponibles para los usuarios.  
+ **Impacto:**  Si SSL no está enlazado al sitio web predeterminado, es posible que algunos sitios web no estén disponibles para los usuarios.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-bind-ssl-to-the-default-website"></a>Para enlazar SSL para el sitio Web predeterminado  
+##### <a name="to-bind-ssl-to-the-default-website"></a>Para enlazar SSL al sitio web predeterminado  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, en la **conexiones** panel, expanda el servidor, **sitios**, haz clic en **sitio Web predeterminado**y, a continuación, haz clic en **Editar enlaces**.  
+2.  En el Administrador de ISS, en el panel **Conexiones**, expanda su servidor, expanda **Sitios**, haga clic con el botón derecho en **Sitio web predeterminado** y, a continuación, haga clic en **Modificar enlaces**.  
   
-3.  En **enlaces de sitios**, haz clic en **agregar**y, a continuación, selecciona las siguientes opciones:  
+3.  En **Enlaces de sitios**, haga clic en **Agregar** y, a continuación, seleccione las siguientes opciones:  
   
     -   **Tipo** = **https**  
   
-    -   **Dirección IP** = **todos sin asignar**  
+    -   **Dirección IP** = **todas sin asignar**  
   
     -   **Puerto** = 443  
   
     > [!NOTE]
-    >  Si hay un enlace de HTTPS para el puerto 443 para una dirección IP específica, cambiar el **dirección IP** atributo para que enlace a **todos sin asignar**. La excepción a esto es para la dirección IP 127.0.0.1. No cambies el enlace para 127.0.0.1.  
+    >  Si existe un enlace HTTPS para el puerto 443 para una dirección IP específica, cambie el atributo **Dirección IP** al que enlace a **Todas sin asignar**. La excepción es la dirección IP 127.0.0.1. No cambie el enlace de 127.0.0.1.  
   
-4.  Selecciona un certificado SSL y, a continuación, haz clic en **Aceptar** para guardar los cambios.  
+4.  Seleccione un certificado SSL y haga clic en **Aceptar** para guardar los cambios.  
   
-### <a name="a-certificate-expires-within-30-days"></a>Un certificado caduca en 30 días  
- **Problema:** el certificado de servidor se agotará antes de 30 días.  
+### <a name="a-certificate-expires-within-30-days"></a>Un certificado expira en los próximos 30 días  
+ **Problema:**  El certificado del servidor expirará en 30 días.  
   
- **Impacto:** el servidor no puede usar un certificado expirado. Si expira el certificado, los usuarios no podrán usar las funciones de acceso desde cualquier lugar.  
+ **Impacto:**  El servidor no puede usar un certificado expirado. Si el certificado expira, es posible que los usuarios no puedan usar las funciones de Acceso desde cualquier lugar.  
   
- **Resolución:** para impedir que el certificado que expira, renovar un certificado con la entidad de certificación de confianza.  
+ **Solución:**  Para evitar que el certificado expire, renuévelo con la entidad de certificación de confianza.  
   
-### <a name="certificate-subject-does-not-match-the-name-configured-by-domain-name-wizard"></a>Sujeto del certificado no coincide con el nombre configurado por el Asistente para el nombre de dominio  
- **Problema:** firmante del certificado no coincide con el nombre que se ha configurado por el Asistente para el nombre de dominio.  
+### <a name="certificate-subject-does-not-match-the-name-configured-by-domain-name-wizard"></a>El firmante del certificado no coincide con el nombre configurado por el Asistente para configurar el nombre de dominio  
+ **Problema:**  El firmante del certificado no coincide con el nombre que configuró el Asistente para configurar el nombre de dominio.  
   
- **Impacto:** si firmante del certificado no coincide con el nombre que se ha configurado por el Asistente para el nombre de dominio, algunos sitios Web no se inicializará. Otros sitios mostrarán el error "Hay un problema con el certificado de seguridad del sitio Web".  
+ **Impacto:**  Si el firmante del certificado no coincide con el nombre que configuró el Asistente para configurar el nombre de dominio, algunos sitios web no se inicializarán. Otros sitios mostrarán el error "Hay un problema con el certificado de seguridad del sitio Web".  
   
- **Resolución:** para resolver este problema:, vuelve a ejecutar el Asistente de acceso desde cualquier lugar de configurar y proporcione el nombre de dominio correcto para el certificado o comprar un nuevo certificado que coincida con el nombre de dominio que quieras usar.  
+ **Solución:**  Para resolver este problema:, vuelva a ejecutar el Asistente de acceso desde cualquier lugar de configurar y proporcione el nombre de dominio correcto para el certificado o comprar un nuevo certificado que coincida con el nombre de dominio que desea usar.  
   
-### <a name="one-or-more-user-accounts-have-duplicate-cn-names"></a>Uno o más cuentas de usuario tienen nombres CN duplicados  
- **Problema:** uno o más cuentas de usuario tengan dupliquen los nombres CN: {0}.  
+### <a name="one-or-more-user-accounts-have-duplicate-cn-names"></a>Una o varias cuentas de usuario tienen nombres CN duplicados  
+ **Problema:**  Una o varias cuentas de usuario tienen nombres CN duplicados: {0}.  
   
- **Impacto:** si cuentas de usuario tienen nombres CN duplicados, los usuarios podrían no podrá iniciar sesión en la red. Además, las búsquedas de Active Directory para los usuarios pueden devolver valores incorrectos.  
+ **Impacto:**  Si las cuentas de usuario tienen nombres CN duplicados, es posible que los usuarios no puedan iniciar sesión en la red. Además, las búsquedas de Active Directory para los usuarios pueden devolver valores incorrectos.  
   
- **Resolución:** para resolver este problema:, asegúrate de que las cuentas de usuario de la red no tienen duplicar "CN =" nombres. Para hacerlo más fácil, considera la posibilidad de exportación de contenido de Active Directory a un archivo de texto para su revisión. Para obtener información sobre cómo hacerlo, consulta [Using LDIFDE para importar y exportar objetos de directorio a Active Directory (artículo de Knowledge Base 237677)](https://support.microsoft.com/kb/237677) (https://support.microsoft.com/kb/237677).  
+ **Solución:**  Para resolver este problema:, asegúrese de que las cuentas de usuario de red no tienen duplicado "CN =" nombres. Para facilitar esta tarea, considere la posibilidad de exportar el contenido de Active Directory a un archivo de texto para su revisión. Para obtener información acerca de cómo hacerlo, consulte [utilización de LDIFDE para importar y exportar objetos de directorio a Active Directory (artículo 237677 de Knowledge Base)](https://support.microsoft.com/kb/237677) (https://support.microsoft.com/kb/237677).  
   
-### <a name="nt-backup-is-installed"></a>Copia de seguridad de NT está instalado  
- **Problema:** el programa copia de seguridad de Windows NT está instalado en el servidor.  
+### <a name="nt-backup-is-installed"></a>NT Backup está instalado  
+ **Problema:**  El programa Windows NT Backup está instalado en el servidor.  
   
- **Impacto:** Windows Server Essentials usa la copia de seguridad de Windows Server. Si el programa copia de seguridad de Windows NT también está instalado, pueden haber conflictos entre los dos programas de copia de seguridad. Esto puede provocar que el proceso de copia de seguridad de Windows Server que un error. Los conflictos también podrían impedir que usen una copia de seguridad para restaurar el servidor.  
+ **Impacto:**   Windows Server Essentials usa copias de seguridad de Windows Server. Si también está instalado el programa Windows NT Backup, puede haber conflictos entre los dos programas de copia de seguridad. Esto puede provocar un error del proceso de Copia de seguridad de Windows Server. Los conflictos también pueden impedirle usar una copia de seguridad para restaurar el servidor.  
   
- **Resolución:** para resolver este problema:, desinstalar el programa de copia de seguridad de NT desde el servidor.  
+ **Solución:** Para resolver este problema:, desinstale el programa NT Backup desde el servidor.  
   
-### <a name="iis-does-not-own-port-80-000080-or-port-443-0000443"></a>IIS no posee el puerto 80 (0.0.0.0:80) o el puerto 443 (0.0.0.0:443)  
- **Problema:** Internet Information Services (IIS) no posee el puerto 80 (0.0.0.0:80) o el puerto 443. Estos puertos actualmente están limitados por otras aplicaciones.  
+### <a name="iis-does-not-own-port-80-000080-or-port-443-0000443"></a>IIS no es propietario del puerto 80 (0.0.0.0:80) ni del puerto 443 (0.0.0.0:443)  
+ **Problema:**  Internet Information Services (IIS) no es propietario del puerto 80 (0.0.0.0:80) ni del puerto 443. Estos puertos están enlazados actualmente por otras aplicaciones.  
   
- **Impacto:** aplicaciones web de Windows Server Essentials requieren el uso de puerto 80 y 443 para disponer de los servicios a los usuarios de puerto. Si otro proceso o aplicación ya está usando el puerto 80 o 443, no se pueden ejecutar las aplicaciones web de Windows Server Essentials. Si esto ocurre, no están disponibles para los usuarios acceso Web remoto y otras aplicaciones.  
+ **Impacto:**   Las aplicaciones web de Windows Server Essentials requieren el uso de los puertos 80 y 443 para que los servicios disponibles para los usuarios. Si otro proceso o aplicación ya está usando el puerto 80 o 443, no se pueden ejecutar las aplicaciones web de Windows Server Essentials. Si esto ocurre, el acceso Web remoto y otras aplicaciones no estarán disponibles para los usuarios.  
   
- **Resolución:** para resolver este problema:, ya sea desinstalar la aplicación que ya está usando el puerto 80 o 443 o se asigna a un puerto diferente.  
+ **Solución:**  Para resolver este problema:, bien la desinstalarán la aplicación que ya está usando el puerto 80 o 443 o asigne esa aplicación a un puerto diferente.  
   
-### <a name="the-default-website-is-not-running"></a>No se está ejecutando el sitio Web predeterminado  
- **Problema:** del sitio Web predeterminado no se está ejecutando en el entorno de Windows Server Essentials.  
+### <a name="the-default-website-is-not-running"></a>No se está ejecutando el sitio web predeterminado  
+ **Problema:**  No se está ejecutando el sitio Web predeterminado en el entorno de Windows Server Essentials.  
   
- **Impacto:** aplicaciones web de Windows Server Essentials requieren el uso del sitio Web predeterminado. Si no se está ejecutando el sitio Web predeterminado, no están disponibles para los usuarios acceso Web remoto y otras aplicaciones.  
+ **Impacto:**   Las aplicaciones web de Windows Server Essentials requieren el uso del sitio Web predeterminado. Si no se está ejecutando el sitio web predeterminado, el acceso Web remoto y otras aplicaciones no estarán disponibles para los usuarios.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-default-website"></a>Para iniciar el sitio Web predeterminado  
+##### <a name="to-start-the-default-website"></a>Para iniciar el sitio web predeterminado  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, expanda el nombre del servidor y, a continuación, haz clic en **sitios**.  
+2.  En el Administrador de IIS, expanda el nombre del servidor y haga clic en **Sitios**.  
   
-3.  Haz clic en **sitio Web predeterminado**, elija **sitio Web de administrar**y, a continuación, haz clic en **inicio**.  
+3.  Haga clic con el botón derecho en **Sitio web predeterminado**, seleccione **Administrar sitio web** y haga clic en **Inicio**.  
   
-### <a name="read-and-script-permissions-for-the-remote-virtual-directory-are-incorrect"></a>Permisos de lectura y el Script para el directorio virtual /Remote son incorrectos  
- **Problema:** permisos de lectura y el Script no se asignan al directorio virtual /Remote.  
+### <a name="read-and-script-permissions-for-the-remote-virtual-directory-are-incorrect"></a>Los permisos Lectura y Script del directorio virtual /Remoto son incorrectos  
+ **Problema:**  No se asignaron permisos Lectura y Script al directorio virtual /Remoto.  
   
- **Impacto:** si los permisos de lectura y el Script para el directorio virtual /Remote son incorrectos, los usuarios no pueden usar acceso Web remoto. Al intentar usar el acceso Web remoto para navegar por Internet, que puedan encontrar el error "HTTP Error 403.1 prohibido".  
+ **Impacto:**  Si los permisos Lectura y Script del directorio virtual /Remoto son incorrectos, los usuarios no pueden usar el acceso Web remoto. Al intentar usar acceso Web remoto para explorar Internet, podrían encontrarse el error "HTTP Error 403.1 prohibido".  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-assign-read-and-script-permissions-to-the-remote-directory"></a>Para asignar permisos de lectura y el Script en el directorio /Remote  
+##### <a name="to-assign-read-and-script-permissions-to-the-remote-directory"></a>Para asignar permisos Lectura y Script al directorio /Remoto  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, expanda el nombre del servidor y, a continuación, haz clic en **sitios**.  
+2.  En el Administrador de IIS, expanda el nombre del servidor y haga clic en **Sitios**.  
   
-3.  Expande **sitio Web predeterminado**y después expande **remoto**.  
+3.  Expanda **Sitio web predeterminado** y, a continuación, expanda **Remoto**.  
   
-4.  En **vista características**, haz doble clic en **asignaciones de controlador**.  
+4.  En la vista **Características**, haga doble clic en **Asignaciones de controlador**.  
   
-5.  En la **acciones** panel, haz clic en **Editar permisos de característica**.  
+5.  En el panel **Acciones**, haga clic en **Editar permisos de característica**.  
   
-6.  Selecciona el **lectura** y **Script** casillas de verificación y, a continuación, haz clic en **Aceptar**.  
+6.  Active las casillas **Leer** y **Script** y, a continuación, haga clic en **Aceptar**.  
   
-### <a name="http-redirect-is-either-set-or-inherited-on-the-remote-virtual-directory"></a>Redirección HTTP se establece o se heredan en el directorio virtual /Remote  
- **Problema:** el atributo de redirección HTTP se establece o se heredan en el directorio virtual /Remote inesperadamente.  
+### <a name="http-redirect-is-either-set-or-inherited-on-the-remote-virtual-directory"></a>La Redirección HTTP se configuró o se heredó en el directorio virtual /Remoto  
+ **Problema:**  El atributo Redirección HTTP se configuró o se heredó en el directorio virtual /Remoto de forma inesperada.  
   
- **Impacto:** si se establece el atributo de redirección HTTP en el directorio virtual /Remote, área de trabajo Web remoto no funciona correctamente.  
+ **Impacto:**  Si el atributo Redirección HTTP está establecido en el directorio virtual /Remoto, Lugar de trabajo remoto en Web no funcionará correctamente.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-remove-the-http-redirect-attribute"></a>Para quitar el atributo de redirección HTTP  
+##### <a name="to-remove-the-http-redirect-attribute"></a>Para quitar el atributo Redirección HTTP  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, expanda el nombre del servidor y, a continuación, haz clic en **sitios**.  
+2.  En el Administrador de IIS, expanda el nombre del servidor y haga clic en **Sitios**.  
   
-3.  Expande **sitio Web predeterminado**y después expande **remoto**.  
+3.  Expanda **Sitio web predeterminado** y, a continuación, expanda **Remoto**.  
   
-4.  En **vista características**, haz doble clic en **redirección HTTP**.  
+4.  En la vista **Características**, haga doble clic en **Redirección HTTP**.  
   
-5.  Borrar la **redirigir las solicitudes a este destino** y, a continuación, haz clic en **aplicar** en la **acciones** panel.  
+5.  Desactive la casilla **Redirigir las solicitudes a este destino** y, a continuación, haga clic en **Aplicar** en el panel **Acciones**.  
   
-### <a name="a-host-name-exists-for-port-80-on-the-default-website"></a>Existe un nombre de host para el puerto 80 en el sitio Web predeterminado  
- **Problema:** se asigna un nombre de host para el puerto 80 en el sitio Web predeterminado.  
+### <a name="a-host-name-exists-for-port-80-on-the-default-website"></a>Existe un nombre de host para el puerto 80 en el sitio web predeterminado  
+ **Problema:**  Se asignó un nombre de host al puerto 80 en el sitio web predeterminado.  
   
- **Impacto:** si se asigna un nombre de host para el puerto 80 en el sitio Web de forma predeterminada, es posible que no podrás conectar con algunas aplicaciones web de Windows Server Essentials. Un nombre de host no es necesario y no se recomienda en esta situación  
+ **Impacto:**  Si se asigna un nombre de host para el puerto 80 en el sitio Web predeterminado, es posible que no pueda conectarse a algunas aplicaciones web de Windows Server Essentials. Un nombre de host no es necesario y no se recomienda en esta situación.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-clear-the-host-name-entry-for-port-80-on-the-default-website"></a>Para borrar la entrada de nombre de host para el puerto 80 en el sitio Web predeterminado  
+##### <a name="to-clear-the-host-name-entry-for-port-80-on-the-default-website"></a>Para borrar la entrada del nombre de host del puerto 80 en el sitio web predeterminado  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, expanda el nombre del servidor y, a continuación, haz clic en **sitios**.  
+2.  En el Administrador de IIS, expanda el nombre del servidor y haga clic en **Sitios**.  
   
-3.  En **vista características**, haz clic en **sitio Web predeterminado**y, a continuación, haz clic en **enlaces**.  
+3.  En la vista **Características**, haga clic con el botón derecho en **Sitio web predeterminado** y, a continuación, haga clic en **Enlaces**.  
   
-4.  En **enlaces de sitios**, selecciona el **http para el puerto 80** configuración y, a continuación, haz clic en **editar**.  
+4.  En **Enlaces de sitios**, seleccione la configuración **http para el puerto 80** y, a continuación, haga clic en **Editar**.  
   
-5.  En **editar sitio enlace**, desactiva la **nombre de Host** entrada y, a continuación, haz clic en **Aceptar**.  
+5.  En **Editar el enlace de sitio**, desactive la entrada **Nombre de host** y haga clic en **Aceptar**.  
   
-### <a name="backup-does-not-succeed-because-of-a-hidden-partition"></a>Copia de seguridad no se realiza correctamente debido a una partición oculta  
- **Problema:** una partición NTFS no se ha programado para copia de seguridad de la copia de Windows Server.  
+### <a name="backup-does-not-succeed-because-of-a-hidden-partition"></a>La copia de seguridad no se realiza correctamente debido a una partición oculta  
+ **Problema:**  Está programada la copia de seguridad de una partición que no es NTFS mediante Copias de seguridad de Windows Server.  
   
- **Impacto:** copias de seguridad de Windows Server solo hacer una copia de las particiones que son el formato NTFS.  
+ **Impacto:**  Copias de seguridad de Windows Server solo puede hacer copias de seguridad de particiones que tienen formato NTFS.  
   
- **Resolución:** no configure copias de seguridad de Windows Server para hacer copia de las particiones no son NTFS. Para obtener más información, consulta [12290 de identificadores de evento y 16387 se registran cuando se produce un error en la copia de seguridad en un equipo basado en Windows Server 2008 (artículo de Knowledge Base 968128)](https://support.microsoft.com/kb/968128) (https://support.microsoft.com/kb/968128).  
+ **Solución:**  No configure Copias de seguridad de Windows Server para realizar copias de seguridad de particiones que no son NTFS. Para obtener más información, consulte [se registran eventos identificadores 12290 y 16387 cuando se produce un error en la copia de seguridad de estado del sistema en un equipo basado en Windows Server 2008 (artículo 968128 de Knowledge Base)](https://support.microsoft.com/kb/968128) (https://support.microsoft.com/kb/968128).  
   
-### <a name="the-most-recent-backup-did-not-succeed"></a>No se pudo realizar la copia de seguridad más reciente  
- **Problema:** el último intento de copia de seguridad no se completó correctamente.  
+### <a name="the-most-recent-backup-did-not-succeed"></a>La copia de seguridad más reciente no se realizó correctamente  
+ **Problema:**  La copia de seguridad más reciente no se completó correctamente.  
   
- **Impacto:** el estado de copia de seguridad para el sistema no es correcto.  
+ **Impacto:**  El estado de copia de seguridad del sistema no es correcto.  
   
- **Resolución:** revisar los registros de eventos y registros de copia de seguridad para los errores que ocurrieron durante la copia de seguridad más reciente.  
+ **Solución:**  Revise los registros de eventos y los registros de copia de seguridad de los errores que se produjeron durante la copia de seguridad más reciente.  
   
-### <a name="the-startup-type-for-the-file-replication-service-is-not-set-to-automatic"></a>El tipo de inicio para el servicio de replicación de archivo no esté establecido como automático  
- **Problema:** el servicio de replicación de archivos (FRS) podría no iniciarse si el tipo de inicio no se establece en el valor predeterminado de automático.  
+### <a name="the-startup-type-for-the-file-replication-service-is-not-set-to-automatic"></a>El tipo de inicio del servicio de replicación de archivos no se estableció en Automático  
+ **Problema:**  El servicio de replicación de archivos (FRS) podría no iniciarse si el tipo de inicio no se establece en el valor predeterminado automático.  
   
- **Impacto:** si no se está ejecutando el servicio de replicación de archivo, el controlador de dominio podría dejar de sus servicios de publicidad. Esto puede conducir a otros problemas como errores de inicio de sesión y los errores de la directiva de grupo.  
+ **Impacto:**  Si el servicio de replicación de archivos no se está ejecutando, el controlador de dominio podría dejar de anunciar sus servicios. Esto puede provocar otros problemas, como errores de inicio de sesión y errores de directiva de grupo.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-file-replication-service-for-automatic-startup"></a>Para configurar el servicio de replicación de archivo para iniciarse automáticamente.  
+##### <a name="to-configure-the-file-replication-service-for-automatic-startup"></a>Para configurar el servicio de replicación de archivos para el inicio automático  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **archivo replicación**.  
+2.  En la lista de servicios, haga doble clic en **Replicación de archivos**.  
   
-3.  Para **tipo de inicio**, selecciona **automática**y, a continuación, haz clic en **aplicar**.  
+3.  En **Tipo de inicio**, seleccione **Automático** y, a continuación, haga clic en **Aplicar**.  
   
-### <a name="the-file-replication-service-is-not-running"></a>No se está ejecutando el servicio de replicación de archivos  
- **Problema:** no se está ejecutando el servicio de replicación de archivos.  
+### <a name="the-file-replication-service-is-not-running"></a>El servicio de replicación de archivos no se está ejecutando  
+ **Problema:**  El servicio de replicación de archivos no se está ejecutando.  
   
- **Impacto:** si no se está ejecutando el servicio de replicación de archivo, el controlador de dominio podría dejar de sus servicios de publicidad. Este comportamiento puede dar lugar a otros problemas como errores de inicio de sesión y los errores de la directiva de grupo.  
+ **Impacto:**  Si el servicio de replicación de archivos no se está ejecutando, el controlador de dominio podría dejar de anunciar sus servicios. Este comportamiento puede provocar otros problemas, como errores de inicio de sesión y errores de directiva de grupo.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-file-replication-service"></a>Para iniciar el servicio de replicación de archivo  
+##### <a name="to-start-the-file-replication-service"></a>Para iniciar el servicio de replicación de archivos  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **servicio de replicación**.  
+2.  En la lista de servicios, haga doble clic en **Servicio de replicación de archivos**.  
   
-3.  Haz clic en **inicio**.  
+3.  Haga clic en **Inicio**.  
   
-### <a name="the-logon-account-for-the-file-replication-service-is-not-set-to-use-the-local-system-account"></a>La cuenta de inicio de sesión para el servicio de replicación de archivos no está establecida para usar la cuenta de sistema Local  
- **Problema:** el servicio de replicación de archivo no está configurado para usar la cuenta de sistema Local como la cuenta de inicio de sesión de forma predeterminada.  
+### <a name="the-logon-account-for-the-file-replication-service-is-not-set-to-use-the-local-system-account"></a>La cuenta de inicio de sesión del servicio de replicación de archivos no está configurada para usar la cuenta de sistema local  
+ **Problema:**  El servicio de replicación de archivos no está configurado para usar la cuenta de sistema local como cuenta de inicio de sesión predeterminada.  
   
- **Impacto:** si el servicio de replicación de archivos no usa el sistema Local como la cuenta de inicio de sesión de forma predeterminada, pueden producirse errores relacionados con los permisos. Estos errores pueden desencadenar otros errores y pueden que el controlador de dominio dejar de sus servicios de publicidad en el futuro.  
+ **Impacto:**  Si el servicio de replicación de archivos no usa la cuenta de sistema local como cuenta de inicio de sesión predeterminada, pueden producirse errores relacionados con los permisos. Estos errores pueden desencadenar otros errores y podrían hacer que el controlador de dominio dejase de anunciar sus servicios.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-local-system-as-the-default-logon-account-for-file-replication"></a>Para configurar el sistema Local como la cuenta de inicio de sesión de forma predeterminada para la replicación de archivo  
+##### <a name="to-configure-local-system-as-the-default-logon-account-for-file-replication"></a>Para configurar la cuenta de sistema local como cuenta de inicio de sesión predeterminada para la replicación de archivos  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **archivo replicación**.  
+2.  En la lista de servicios, haga doble clic en **Replicación de archivos**.  
   
-3.  En la **propiedades del servicio** página, haz clic en el **iniciar sesión** pestaña.  
+3.  En la página **Propiedades del servicio**, haga clic en la pestaña **Iniciar sesión**.  
   
-4.  Selecciona el **cuenta de sistema Local** opción y, a continuación, haz clic en **aplicar**.  
+4.  Seleccione la opción **Cuenta de sistema local** y haga clic en **Aplicar**.  
   
-5.  Reiniciar el servicio.  
+5.  Reinicie el servicio.  
   
-### <a name="the-startup-type-for-the-dfs-replication-service-is-not-set-to-automatic"></a>El tipo de inicio para el servicio de replicación DFS no esté establecido como automático  
- **Problema:** el servicio de replicación de DFS podría no iniciarse si el tipo de inicio no se establece en el valor predeterminado de automático.  
+### <a name="the-startup-type-for-the-dfs-replication-service-is-not-set-to-automatic"></a>El tipo de inicio del servicio de replicación DFS no se estableció en automático  
+ **Problema:**  Puede que el servicio de replicación DFS no se pueda iniciar si no se estableció el tipo de inicio en el valor predeterminado de automático.  
   
- **Impacto:** si no se está ejecutando el servicio de replicación de DFS, el controlador de dominio podría dejar de sus servicios de publicidad. Esto puede conducir a otros problemas como errores de inicio de sesión y los errores de la directiva de grupo.  
+ **Impacto:**  Si el servicio de replicación DFS no se está ejecutando, el controlador de dominio podría dejar de anunciar sus servicios. Esto puede provocar otros problemas, como errores de inicio de sesión y errores de directiva de grupo.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-dfs-replication-service-for-automatic-startup"></a>Para configurar el servicio de replicación DFS para iniciarse automáticamente.  
+##### <a name="to-configure-the-dfs-replication-service-for-automatic-startup"></a>Para configurar el servicio de replicación DFS para el inicio automático  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **replicación DFS**.  
+2.  En la lista de servicios, haga doble clic en **Replicación DFS**.  
   
-3.  Para **tipo de inicio**, selecciona **automática**y, a continuación, haz clic en **aplicar**.  
+3.  En **Tipo de inicio**, seleccione **Automático** y, a continuación, haga clic en **Aplicar**.  
   
-### <a name="the-dfs-replication-service-is-not-running"></a>No se está ejecutando el servicio de replicación de DFS  
- **Problema:** no se está ejecutando el servicio de replicación de DFS.  
+### <a name="the-dfs-replication-service-is-not-running"></a>El servicio de replicación DFS no se está ejecutando  
+ **Problema:**  El servicio de replicación DFS no se está ejecutando actualmente.  
   
- **Impacto:** si no se está ejecutando el servicio de replicación de DFS, el controlador de dominio podría dejar de sus servicios de publicidad. Este comportamiento puede dar lugar a otros problemas como errores de inicio de sesión y los errores de la directiva de grupo.  
+ **Impacto:**  Si el servicio de replicación DFS no se está ejecutando, el controlador de dominio podría dejar de anunciar sus servicios. Este comportamiento puede provocar otros problemas, como errores de inicio de sesión y errores de directiva de grupo.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-start-the-dfs-replication-service"></a>Para iniciar el servicio de replicación de DFS  
+##### <a name="to-start-the-dfs-replication-service"></a>Para iniciar el servicio de replicación DFS  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **replicación DFS**.  
+2.  En la lista de servicios, haga doble clic en **Replicación DFS**.  
   
-3.  Haz clic en **inicio**.  
+3.  Haga clic en **Inicio**.  
   
-### <a name="the-dfs-replication-service-is-not-is-not-set-to-use-the-local-system-account"></a>La replicación de DFS no es el servicio no está establecida para usar la cuenta de sistema Local  
- **Problema:** el servicio de replicación de DFS no está establecido para usar la cuenta de sistema Local como la cuenta de inicio de sesión de forma predeterminada.  
+### <a name="the-dfs-replication-service-is-not-is-not-set-to-use-the-local-system-account"></a>El servicio de replicación DFS no está configurado para usar la cuenta de sistema local  
+ **Problema:**  El servicio de replicación DFS no está configurado para usar la cuenta de sistema local como cuenta de inicio de sesión predeterminada.  
   
- **Impacto:** si el servicio de replicación de DFS no usa el sistema Local como la cuenta de inicio de sesión de forma predeterminada, pueden producirse errores relacionados con los permisos. Estos errores pueden desencadenar otros errores y pueden que el controlador de dominio dejar de sus servicios de publicidad en el futuro.  
+ **Impacto:**  Si el servicio de replicación DFS no usa la cuenta de sistema local como cuenta de inicio de sesión predeterminada, pueden producirse errores relacionados con los permisos. Estos errores pueden desencadenar otros errores y podrían hacer que el controlador de dominio dejase de anunciar sus servicios.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-dfs-replication-to-use-local-system-as-the-default-logon-account"></a>Para configurar la replicación de DFS para usar el sistema Local como la cuenta de inicio de sesión predeterminada  
+##### <a name="to-configure-dfs-replication-to-use-local-system-as-the-default-logon-account"></a>Para configurar la replicación DFS para que use la cuenta de sistema local como cuenta de inicio de sesión predeterminada  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **replicación DFS**.  
+2.  En la lista de servicios, haga doble clic en **Replicación DFS**.  
   
-3.  En la **propiedades del servicio** página, haz clic en el **iniciar sesión** pestaña.  
+3.  En la página **Propiedades del servicio**, haga clic en la pestaña **Iniciar sesión**.  
   
-4.  Selecciona el **cuenta de sistema Local** opción y, a continuación, haz clic en **aplicar**.  
+4.  Seleccione la opción **Cuenta de sistema local** y haga clic en **Aplicar**.  
   
-5.  Reiniciar el servicio.  
+5.  Reinicie el servicio.  
   
-### <a name="the-windows-server-office-365-integration-service-is-not-set-to-use-the-local-system-account"></a>El servicio de integración de Windows Server Office 365 no está establecido para usar la cuenta de sistema Local  
- **Problema:** el servicio de integración de Windows Server Office 365 no está establecido para usar la cuenta de sistema Local como la cuenta de inicio de sesión de forma predeterminada.  
+### <a name="the-windows-server-office-365-integration-service-is-not-set-to-use-the-local-system-account"></a>El Servicio de integración de Windows Server Office 365 no está configurado para usar la cuenta de sistema local  
+ **Problema:**  El Servicio de integración de Windows Server Office 365 no está configurado para usar la cuenta de sistema local como cuenta de inicio de sesión predeterminada.  
   
- **Impacto:** si el servicio de integración de Windows Server Office 365 no usa el sistema Local como la cuenta de inicio de sesión de forma predeterminada, algunas características de Office 365 no funcionen correctamente. También pueden producirse errores relacionados con los permisos.  
+ **Impacto:**  Si el servicio de integración de Windows Server Office 365 no usa la cuenta de sistema local como cuenta de inicio de sesión predeterminada, algunas características de Office 365 podrían no funcionar correctamente. También podría encontrarse con errores relacionados con los permisos.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-office-365-integration-service-to-use-local-system-as-the-default-logon-account"></a>Para configurar el servicio de integración de Office 365 para usar el sistema Local como la cuenta de inicio de sesión de forma predeterminada  
+##### <a name="to-configure-the-office-365-integration-service-to-use-local-system-as-the-default-logon-account"></a>Para configurar el servicio de integración de Office 365 para que use la cuenta de sistema local como cuenta de inicio de sesión predeterminada  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **servicio de integración de Windows Server Office 365**.  
+2.  En la lista de servicios, haga doble clic en **Servicio de integración de Windows Server Office 365**.  
   
-3.  En la **propiedades del servicio** página, haz clic en el **iniciar sesión** pestaña.  
+3.  En la página **Propiedades del servicio**, haga clic en la pestaña **Iniciar sesión**.  
   
-4.  Selecciona el **cuenta de sistema Local** opción y, a continuación, haz clic en **aplicar**.  
+4.  Seleccione la opción **Cuenta de sistema local** y haga clic en **Aplicar**.  
   
-5.  Reiniciar el servicio.  
+5.  Reinicie el servicio.  
   
-### <a name="the-windows-server-office-365-integration-service-is-not-running"></a>No se está ejecutando el servicio de integración de Windows Server Office 365  
- **Problema:** no se está ejecutando el servicio de integración de Windows Server Office 365.  
+### <a name="the-windows-server-office-365-integration-service-is-not-running"></a>El servicio de integración de Windows Server Office 365 no se está ejecutando  
+ **Problema:**  El servicio de integración de Windows Server Office 365 no se está ejecutando actualmente.  
   
- **Impacto:** si no se está ejecutando el servicio de integración de Windows Server Office 365, las características en la nube de Office 365 no están disponibles.  
+ **Impacto:**  Si el servicio de integración de Windows Server Office 365 no se está ejecutando, no estarán disponibles las características basadas en la nube de Office 365.  
   
- **Resolución:**  
+ **Solución:**  
   
 ##### <a name="to-start-the-windows-server-office-365-integration-service"></a>Para iniciar el servicio de integración de Windows Server Office 365  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **servicio de integración de Windows Server Office 365**.  
+2.  En la lista de servicios, haga doble clic en **Servicio de integración de Windows Server Office 365**.  
   
-3.  Haz clic en **inicio**.  
+3.  Haga clic en **Inicio**.  
   
-### <a name="the-startup-type-for-the-windows-server-office-365-integration-service-is-not-set-to-automatic"></a>El tipo de inicio para el servicio de integración de Windows Server Office 365 no esté establecido como automático  
- **Problema:** el servicio de integración de Windows Server Office 365 podría no iniciarse si el tipo de inicio no se establece en el valor predeterminado de automático.  
+### <a name="the-startup-type-for-the-windows-server-office-365-integration-service-is-not-set-to-automatic"></a>El tipo de inicio del servicio de integración de Windows Server Office 365 no está establecido en automático  
+ **Problema:**  Puede que el servicio de integración de Windows Server Office 365 no se pueda iniciar si no se estableció el tipo de inicio en el valor predeterminado de automático.  
   
- **Impacto:** si no se está ejecutando el servicio de integración de Windows Server Office 365, las características en la nube de Office 365 no están disponibles.  
+ **Impacto:**  Si el servicio de integración de Windows Server Office 365 no se está ejecutando, no estarán disponibles las características basadas en la nube de Office 365.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-office-365-integration-service-for-automatic-startup"></a>Para configurar el servicio de integración de Office 365 para iniciarse automáticamente.  
+##### <a name="to-configure-the-office-365-integration-service-for-automatic-startup"></a>Para configurar el servicio de integración de Office 365 para el inicio automático  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **servicio de integración de Windows Server Office 365**.  
+2.  En la lista de servicios, haga doble clic en **Servicio de integración de Windows Server Office 365**.  
   
-3.  Para **tipo de inicio**, selecciona **automática**y, a continuación, haz clic en **aplicar**.  
+3.  En **Tipo de inicio**, seleccione **Automático** y, a continuación, haga clic en **Aplicar**.  
   
-### <a name="a-registry-value-is-missing-or-set-incorrectly"></a>Un valor del registro falta o está correctamente configurado  
- **Problema:** una clave del registro bajo HKEY_LOCAL_MACHINE \Software\Microsoft\Rpc\RpcProxy contiene valores incorrectos o no existe.  
+### <a name="a-registry-value-is-missing-or-set-incorrectly"></a>Falta un valor del Registro o no se estableció correctamente  
+ **Problema:**  Una clave del Registro en HKEY_LOCAL_MACHINE \Software\Microsoft\Rpc\RpcProxy no contiene valores correctos o no existe.  
   
- **Impacto:** si la clave del registro RPCProxy está configurada correctamente, es posible que recibes un mensaje de error similar al siguiente: "el equipo no se puede conectar al equipo remoto porque el servidor de puerta de enlace de escritorio remoto temporalmente no está disponible. Intenta conectarte de nuevo más tarde o ponte en contacto con el Administrador de red para obtener ayuda."  
+ **Impacto:**  Si la clave del Registro RPCProxy no se ha configurado correctamente, puede que reciba un mensaje de error similar al siguiente: "El equipo no se puede conectar al equipo remoto porque el servidor de la Puerta de enlace de Escritorio remoto está fuera de servicio temporalmente. Intente conectarse de nuevo más tarde o póngase en contacto con el administrador de red para obtener ayuda”.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-correct-the-registry-setting"></a>Para corregir la configuración del registro  
+##### <a name="to-correct-the-registry-setting"></a>Para corregir la configuración del Registro  
   
-1.  Abre el Editor del registro.  
+1.  Abre el Editor del Registro.  
   
-2.  Ve a la siguiente clave del registro:  
+2.  Desplácese hasta la siguiente clave del Registro:  
   
      HKEY_LOCAL_MACHINE\Software\Microsoft\Rpc\RpcProxy  
   
-3.  Asegúrate de que la cadena denominada "Sitio Web" tiene un valor de datos del sitio Web predeterminado:  
+3.  Asegúrese de que la cadena denominada "Sitio Web" tiene un valor de datos del sitio Web predeterminado:  
   
-    -   Si el valor de datos es incorrecto, modificar la cadena para usar el valor correcto.  
+    -   Si el valor de datos es incorrecto, modifique la cadena para usar el valor correcto.  
   
-    -   Si la cadena no existe, crear una nueva cadena denominada "Sitio Web" y establece el valor de datos en el sitio Web predeterminado."  
+    -   Si la cadena no existe, cree una nueva cadena denominada "Sitio Web" y establezca el valor de datos para el sitio Web predeterminado."  
   
-### <a name="the-startup-type-for-the-block-level-backup-engine-service-is-not-set-to-manual"></a>No se establece el tipo de inicio para el servicio de motor de copia de seguridad de nivel de bloque manual  
- **Problema:** el servicio de motor de copia de seguridad de nivel de bloque no está usando el tipo de inicio predeterminado de Manual.  
+### <a name="the-startup-type-for-the-block-level-backup-engine-service-is-not-set-to-manual"></a>El tipo de inicio del Servicio del módulo de copia de seguridad a nivel de bloque no se estableció en Manual  
+ **Problema:**  El Servicio del módulo de copia de seguridad a nivel de bloque no usa el tipo de inicio predeterminado de Manual.  
   
- **Impacto:** el servicio de motor de copia de seguridad de nivel de bloque podría no iniciarse si el tipo de inicio no se establece en Manual. Este problema: puede ocasionar trabajos de copia de seguridad de Windows Server un error.  
+ **Impacto:**  El Servicio del módulo de copia de seguridad a nivel de bloque podría no iniciarse si el tipo de inicio no se establece en Manual. Este problema: puede provocar errores de los trabajos de copia de seguridad de Windows Server.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-block-level-backup-engine-service-for-manual-startup"></a>Para configurar el servicio de motor de bloque de nivel de copia de seguridad para inicio manual  
+##### <a name="to-configure-the-block-level-backup-engine-service-for-manual-startup"></a>Para configurar el Servicio del módulo de copia de seguridad a nivel de bloque para que se inicie manualmente  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **servicio de motor de copia de seguridad de nivel de bloque**.  
+2.  En la lista de servicios, haga doble clic en **Servicio del módulo de copia de seguridad a nivel de bloque**.  
   
-3.  Para **tipo de inicio**, selecciona **Manual**y, a continuación, haz clic en **aplicar**.  
+3.  En **Tipo de inicio**, seleccione **Manual** y, a continuación, haga clic en **Aplicar**.  
   
-### <a name="the-logon-account-for-the-block-level-backup-engine-service-is-not-set-to-use-the-local-system-account"></a>La cuenta de inicio de sesión para el servicio de motor de copia de seguridad de nivel de bloque no está establecida para usar la cuenta de sistema Local  
- **Problema:** el servicio de motor de copia de seguridad de nivel de bloque no está establecido para usar la cuenta de sistema Local como la cuenta de inicio de sesión de forma predeterminada.  
+### <a name="the-logon-account-for-the-block-level-backup-engine-service-is-not-set-to-use-the-local-system-account"></a>La cuenta de inicio de sesión del Servicio del módulo de copia de seguridad a nivel de bloque no está configurada para usar la cuenta de sistema local  
+ **Problema:**  El Servicio del módulo de copia de seguridad a nivel de bloque no está configurado para usar la cuenta de sistema local como cuenta de inicio de sesión predeterminada.  
   
- **Impacto:** si el servicio de motor de copia de seguridad de nivel de bloqueo no usa el sistema Local como la cuenta de inicio de sesión de forma predeterminada, pueden producirse errores relacionados con los permisos. Estos errores pueden impedir que los trabajos de copia de seguridad de Windows Server se completó correctamente.  
+ **Impacto:**  Si el Servicio del módulo de copia de seguridad a nivel de bloque no usa la cuenta de sistema local como cuenta de inicio de sesión predeterminada, pueden producirse errores relacionados con los permisos. Estos errores pueden impedir que los trabajos de Copias de seguridad de Windows Server se completen correctamente.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-the-block-level-backup-engine-service-to-use-local-system-as-the-default-logon-account"></a>Para configurar el servicio de motor de copia de seguridad de nivel de bloque para usar el sistema Local como la cuenta de inicio de sesión de forma predeterminada  
+##### <a name="to-configure-the-block-level-backup-engine-service-to-use-local-system-as-the-default-logon-account"></a>Para configurar el Servicio del módulo de copia de seguridad a nivel de bloque para que use la cuenta de sistema local como cuenta de inicio de sesión predeterminada  
   
-1.  Abre la consola de servicios.  
+1.  Abra la consola Servicios.  
   
-2.  En la lista de servicios, haz doble clic en **servicio de motor de copia de seguridad de nivel de bloque**.  
+2.  En la lista de servicios, haga doble clic en **Servicio del módulo de copia de seguridad a nivel de bloque**.  
   
-3.  En la **propiedades del servicio** página, haz clic en el **iniciar sesión** pestaña.  
+3.  En la página **Propiedades del servicio**, haga clic en la pestaña **Iniciar sesión**.  
   
-4.  Selecciona el **cuenta de sistema Local** opción y, a continuación, haz clic en **aplicar**.  
+4.  Seleccione la opción **Cuenta de sistema local** y haga clic en **Aplicar**.  
   
-5.  Reiniciar el servicio.  
+5.  Reinicie el servicio.  
   
-### <a name="the-common-name-on-the-certificate-that-is-bound-to-the-wss-certificate-web-service-website-does-not-match-the-server-name"></a>El nombre común en el certificado que está enlazado al sitio Web de servicio Web de WSS certificado no coincide con el nombre del servidor  
- **Problema:** el sitio Web de servicio Web de WSS certificados en IIS depende de un certificado no sea válido. El nombre común en este certificado no coincide con el nombre del servidor.  
+### <a name="the-common-name-on-the-certificate-that-is-bound-to-the-wss-certificate-web-service-website-does-not-match-the-server-name"></a>El nombre común del certificado que está enlazado al sitio web de WSS Certificate Web Service no coincide con el nombre del servidor  
+ **Problema:**  Se enlazó un certificado no válido al sitio web de WSS Certificate Web Service en IIS. El nombre común de este certificado no coincide con el nombre del servidor.  
   
- **Impacto:** si enlazas un certificado no válida para el sitio Web del servicio Web de certificados WSS, el Asistente para conectarse no funcionen correctamente.  
+ **Impacto:**  Si enlaza un certificado no válido al sitio web de WSS Certificate Web Service, el Asistente para conectarse podría no funcionar correctamente.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-configure-a-valid-certificate-for-the-wss-certificate-web-service"></a>Para configurar un certificado válido para el servicio Web de certificados de WSS  
+##### <a name="to-configure-a-valid-certificate-for-the-wss-certificate-web-service"></a>Para configurar un certificado válido para el WSS Certificate Web Service  
   
-1.  Abre el Administrador de Internet Information Services (IIS) en el servidor.  
+1.  Abra el Administrador de Internet Information Services (IIS) en el servidor.  
   
-2.  En el Administrador de IIS, expanda el nombre del servidor y, a continuación, haz clic en **sitios**.  
+2.  En el Administrador de IIS, expanda el nombre del servidor y haga clic en **Sitios**.  
   
-3.  Haz clic en **servicio Web de certificados WSS**y, a continuación, haz clic en **Editar enlaces**.  
+3.  Haga clic con el botón derecho en **WSS Certificate Web Service** y, a continuación, haga clic en **Editar enlaces**.  
   
-4.  En **enlaces de sitios**, haz clic en **HTTPS**y, a continuación, haz clic en **editar**.  
+4.  En **Enlaces de sitios**, haga clic en **HTTPS** y, a continuación, haga clic en **Editar**.  
   
-5.  En **editar sitio enlace**, para **certificado SSL**, selecciona el certificado que tenga el mismo nombre que el servidor.  
+5.  En **Editar el enlace de sitio**, para el **Certificado SSL**, seleccione el certificado que tenga el mismo nombre que el servidor.  
   
-6.  Si más de una entrada de certificado tiene el mismo nombre que el servidor, haz clic en **vista** para determinar qué certificado es válido y, a continuación, selecciona el certificado apropiado.  
+6.  Si más de una entrada de certificado tiene el mismo nombre que el servidor, haga clic en **Ver** para determinar qué certificado es válido y, a continuación, seleccione el certificado adecuado.  
   
-### <a name="there-appears-to-be-a-problem-with-the-certificate-binding-for-the-remote-desktop-gateway-service"></a>Parece que es un problema con el enlace de certificado para el servicio de puerta de enlace de escritorio remoto  
- **Problema:** el certificado para el servicio de puerta de enlace de escritorio remoto parece estar vinculado incorrectamente.  
+### <a name="there-appears-to-be-a-problem-with-the-certificate-binding-for-the-remote-desktop-gateway-service"></a>Parece haber un problema con el enlace de certificado del servicio Puerta de enlace de Escritorio remoto  
+ **Problema:**  Parece que el certificado del servicio Puerta de enlace de Escritorio remoto no se enlazó correctamente.  
   
- **Impacto:** si el certificado para el servicio de puerta de enlace de escritorio remoto no está correctamente configurado, los usuarios no se pueden conectar al acceso Web remoto.  
+ **Impacto:**  Si el certificado del servicio de Puerta de enlace de Escritorio remoto no está configurado correctamente, los usuarios no pueden conectarse al acceso Web remoto.  
   
- **Resolución:**  
+ **Solución:**  
   
-##### <a name="to-fix-the-binding-for-the-remote-desktop-gateway-service"></a>Para corregir el enlace para el servicio de puerta de enlace de escritorio remoto  
+##### <a name="to-fix-the-binding-for-the-remote-desktop-gateway-service"></a>Para corregir el enlace del servicio de Puerta de enlace de Escritorio remoto  
   
--   Abre un símbolo del sistema como administrador y escribe los siguientes comandos:  
+-   Abra un símbolo del sistema como administrador y escriba los comandos siguientes:  
   
     ```  
     REG ADD HKLM\SYSTEM\CurrentControlSet\services\HTTP\Parameters\SslBindingInfo\0.0.0.0:443  /v DefaultFlags /t REG_DWORD /d 1 /f  
@@ -1211,4 +1212,4 @@ Este artículo describen las reglas utilizadas por el Windows Server Essentials 
     net start tsgateway  
     ```  
   
-     Para obtener más información, consulta [cómo administrar el servicio de puerta de enlace de escritorio remoto en Windows Server Essentials (artículo de Knowledge Base 2472211)](https://support.microsoft.com/kb/2472211) (https://support.microsoft.com/kb/2472211).
+     Para obtener más información, consulte [cómo administrar el servicio de puerta de enlace de escritorio remoto en Windows Server Essentials (artículo 2472211 de Knowledge Base)](https://support.microsoft.com/kb/2472211) (https://support.microsoft.com/kb/2472211).

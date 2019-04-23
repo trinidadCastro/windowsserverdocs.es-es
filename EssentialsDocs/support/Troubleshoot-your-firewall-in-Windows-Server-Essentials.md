@@ -1,6 +1,6 @@
 ---
-title: Solucionar problemas de su firewall de Windows Server Essentials
-description: "Describe cómo usar Windows Server Essentials"
+title: Solucionar problemas del firewall en Windows Server Essentials
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,42 +13,43 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 3c48d2abb7fd8431f40f76f8eece5c4142be4c75
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59846556"
 ---
-# <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>Solucionar problemas de su firewall de Windows Server Essentials
+# <a name="troubleshoot-your-firewall-in-windows-server-essentials"></a>Solucionar problemas del firewall en Windows Server Essentials
  
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
   
- Si tienes problemas con el acceso remoto, ejecuta al Asistente de acceso de reparación en cualquier lugar.  
+ Si experimenta problemas en el acceso remoto, ejecute el Asistente para reparación del Acceso desde cualquier lugar.  
   
-### <a name="to-run-the-repair-anywhere-access-wizard"></a>Para ejecutar al Asistente de acceso de reparación en cualquier lugar  
+### <a name="to-run-the-repair-anywhere-access-wizard"></a>Para ejecutar el Asistente para reparación del Acceso desde cualquier lugar  
   
-1.  Abra el panel.  
+1.  Abra el Panel.  
   
-2.  Haz clic en **configuración**, haz clic en el **acceso desde cualquier lugar** pestaña y, a continuación, haz clic en **reparación**.  
+2.  Haga clic en **Configuración**, en la pestaña **Acceso desde cualquier lugar** y en **Reparar**.  
   
-3.  Sigue las instrucciones del Asistente de acceso de reparación en cualquier lugar.  
+3.  Siga las instrucciones del Asistente para reparación del Acceso desde cualquier lugar.  
   
- Si estás usando una configuración de red avanzada o uso de un firewall no son de Microsoft, tienes que abrir puertos adicionales en el firewall. Los puertos en la siguiente tabla se registran con Internet asignados números entidad (IANA).  
+ Si está usando una configuración de red avanzada o un firewall que no es de Microsoft, puede que necesite abrir puertos adicionales en el firewall. Los puertos de la tabla siguiente están registrados en la Autoridad de asignación de números de Internet (IANA).  
   
 |Número de puerto|Descripción|  
 |-----------------|-----------------|  
 |65500|Servicio web de certificados|  
-|65510 y 65515|Sitio Web de implementación de equipo cliente|  
-|65520|Servicio Web para los equipos cliente Mac|  
-|65532|Marco de proveedor para las comunicaciones de bucle invertido de servidor|  
-|6602|Marco de proveedor para la comunicación entre los equipos servidor y cliente|  
+|65510 y 65515|Sitio web de implementación de equipos cliente|  
+|65520|Servicio web para equipos cliente Mac|  
+|65532|Marco de proveedores para las comunicaciones de bucle invertido de servidor|  
+|6602|Marco de proveedores para la comunicación entre los equipos cliente y servidor|  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
--   [Usar el acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Usar acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Administrar el acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
--   [Administrar el acceso desde cualquier lugar](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar acceso ilimitado](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md)  
   
 -   [Administrar Windows Server Essentials](../manage/Manage-Windows-Server-Essentials.md)  
   

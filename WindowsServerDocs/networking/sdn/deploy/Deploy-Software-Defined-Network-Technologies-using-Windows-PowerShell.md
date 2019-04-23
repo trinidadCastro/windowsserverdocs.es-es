@@ -1,7 +1,7 @@
 ---
-title: Implementar Software definido red tecnologías mediante Windows PowerShell
-description: Este tema proporciona vínculos a información sobre cómo implementar tecnologías SDN individuales mediante Windows PowerShell.
-manager: brianlic
+title: Implementación de tecnologías de red definidas por software con Windows PowerShell
+description: Este tema proporciona vínculos a información sobre cómo implementar las distintas tecnologías SDN mediante Windows PowerShell.
+manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,21 +12,23 @@ ms.topic: get-started-article
 ms.assetid: 842ed937-559a-4f30-86dc-c93475433b4e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 42699b4e77cd67d6a19fb453db5eb2c650e6b2f3
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.date: 08/23/2018
+ms.openlocfilehash: d7d0f86bdb508d28697f6b7976856516840d65af
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59841496"
 ---
-# <a name="deploy-software-defined-network-technologies-using-windows-powershell"></a>Implementar Software definido red tecnologías mediante Windows PowerShell
+# <a name="deploy-software-defined-network-technologies-using-windows-powershell"></a>Implementar las tecnologías de red definida por Software mediante Windows PowerShell
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar los temas de esta sección para implementar tecnologías SDN individuales mediante Windows PowerShell.  
+Puede usar los temas de esta sección para implementar las distintas tecnologías SDN mediante Windows PowerShell.  
   
-Esta sección contiene los siguientes temas.  
+Esta sección contiene los temas siguientes.  
   
--   [Implementar el controlador de red mediante Windows PowerShell](Deploy-Network-Controller-using-Windows-PowerShell.md)  
+-   [Implementar la controladora de red mediante Windows PowerShell](Deploy-Network-Controller-using-Windows-PowerShell.md)  
   
  
   

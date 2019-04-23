@@ -1,6 +1,6 @@
 ---
 title: Mover discos a otro equipo
-description: "En este artículo se describe cómo mover discos a otro equipo"
+description: En este artículo se describe cómo mover discos a otro equipo
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,10 +9,11 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 6b235ce8e5b936940629d5977a17bbc729efbe82
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854006"
 ---
 # <a name="move-disks-to-another-computer"></a>Mover discos a otro equipo
 
@@ -33,7 +34,7 @@ Para comprobar el estado del volumen, desde el menú **Vista**, comprueba la col
 
 Desinstala los discos que quieras mover con el Administrador de dispositivos.
 
-**Para desinstalar discos**
+**Para desinstalar los discos**
 
 1.  Abre el Administrador de dispositivos en la Administración de equipos.
 
@@ -41,7 +42,7 @@ Desinstala los discos que quieras mover con el Administrador de dispositivos.
 
 3.  Haz clic con el botón derecho en los discos que quieres desinstalar y luego haz clic en **Desinstalar**.
 
-4.  En el cuadro de diálogo **Confirmar la eliminación del dispositivo**, haz clic en **Aceptar**.
+4.  En el cuadro de diálogo **Confirmar la eliminación del dispositivo**, haga clic en **Aceptar**.
 
 ## <a name="remove-dynamic-disks"></a>Quitar discos dinámicos
 

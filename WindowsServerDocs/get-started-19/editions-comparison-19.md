@@ -12,35 +12,35 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: e94c88ab7fb4aede7554dd621843b613fa16b6dc
-ms.sourcegitcommit: 0b51cf8d0a1db31d6d2e2e45a145011311fbdf34
-ms.translationtype: MT
+ms.openlocfilehash: ba7487a7e063775219182645a273d49c473f52e2
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "9169939"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59854136"
 ---
-# Comparación de las ediciones Standard y Datacenter de Windows Server 2019
+# <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Comparación de las ediciones Standard y Datacenter de Windows Server 2019
 
-> Se aplica a: Windows Server2019
+> Se aplica a: Windows Server 2019
   
-## Bloqueos y límites
+## <a name="locks-and-limits"></a>Bloqueos y límites
 |Bloqueos y límites|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |Número máximo de usuarios|Según licencias CAL|Según licencias CAL|
-|Número máximo de conexiones SMB|16777216|16777216|
-|Número máximo de conexiones RRAS|Sin límite|Sin límite|
-|Número máximo de conexiones IAS|2147483647|2147483647|
+|Número máximo de conexiones SMB|16 777 216|16 777 216|
+|Número máximo de conexiones RRAS|sin límite|sin límite|
+|Número máximo de conexiones IAS|2 147 483 647|2 147 483 647|
 |Número máximo de conexiones RDS|65535|65535|
 |Número máximo de sockets de 64 bits|64|64|
-|Número máximo de núcleos|Sin límite|Sin límite|
-|RAM máxima|24TB|24TB|
+|Número máximo de núcleos|sin límite|sin límite|
+|RAM máxima|24 TB|24 TB|
 |Puede usarse como invitado de virtualización|Sí; 2 máquinas virtuales, más un host de Hyper-V por licencia|Sí; máquinas virtuales ilimitadas, más un host de Hyper-V por licencia|
 |El servidor puede unirse a un dominio|sí|sí|
 |Protección de red y firewall de Edge|no|no|
 |DirectAccess|sí|sí|
 |Códecs de DLNA y streaming de archivos multimedia web|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 
-## Roles del servidor
+## <a name="server-roles"></a>Roles del servidor
 |Roles de Windows Server disponibles|Servicios de rol|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|----------|---------------------------|  
 |Servicios de certificados de Active Directory| |Sí|Sí|
@@ -48,7 +48,7 @@ ms.locfileid: "9169939"
 |Servicios de federación de Active Directory (AD FS)| |Sí|Sí|
 |AD Lightweight Directory Services| |Sí|Sí|
 |AD Rights Management Services| |Sí|Sí|
-|Atestación de estado de dispositivo| |Sí|Sí|
+|Certificación de estado del dispositivo| |Sí|Sí|
 |Servidor DHCP| |Sí|Sí|
 |Servidor DNS| |Sí|Sí|
 |Servidor de fax| |Sí|Sí|
@@ -66,6 +66,7 @@ ms.locfileid: "9169939"
 |Servicios de archivos y almacenamiento|Servicios de almacenamiento|Sí|Sí|
 |Servicio de protección de host| |Sí|Sí|
 |Hyper-V| |Sí|Sí; incluye máquinas virtuales blindadas|
+|MultiPoint Services| |Sí|Sí|
 |Controladora de red| |No|Sí|
 |Servicios de acceso y directivas de redes| |Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Servicios de impresión y documentos| |Sí|Sí|
@@ -74,13 +75,13 @@ ms.locfileid: "9169939"
 |Volume Activation Services| |Sí|Sí|
 |Servicios web (IIS)| |Sí|Sí|
 |Servicios de implementación de Windows| |Sí*|Sí*|
-|Experiencia con WindowsServer Essentials| |Sí|Sí|
+|Experiencia con Windows Server Essentials| |Sí|Sí|
 |Windows Server Update Services| |Sí|Sí|
 
-* Servidor de transporte WDS es nueva en las instalaciones de Server Core de Windows Server 2019 (también en el canal semianual a partir de Windows Server, versión 1803)
+* Servidor de transporte WDS es nueva en las instalaciones Server Core en Windows Server 2019 (también en el canal semestral a partir de Windows Server, versión 1803)
 
 
-## Características
+## <a name="features"></a>Características
 
 |Características de Windows Server instalables con Administrador del servidor (o PowerShell)|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
@@ -119,7 +120,7 @@ ms.locfileid: "9169939"
 |Proxy RPC sobre HTTP|Sí|Sí|
 |Recopilación de eventos de configuración y arranque|Sí|Sí|
 |Servicios simples de TCP/IP|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
-|Compatibilidad con el protocolo para compartir archivos SMB 1.0/CIFS|Instalado|Instalada|
+|Compatibilidad con el protocolo para compartir archivos SMB 1.0/CIFS|Instaladas|Instaladas|
 |Límite de ancho de banda SMB|Sí|Sí|
 |Servidor SMTP|Sí|Sí|
 |Servicio SNMP|Sí|Sí|
@@ -130,10 +131,10 @@ ms.locfileid: "9169939"
 |Herramientas de blindaje de máquinas virtuales para la administración de tejidos|Sí|Sí|
 |Redirector WebDAV|Sí|Sí|
 |Plataforma de biometría de Windows|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
-|Características de Windows Defender|Instalada|Instaladas|
+|Características de Windows Defender|Instaladas|Instaladas|
 |Windows Identity Foundation 3.5|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Windows Internal Database|Sí|Sí|
-|Windows PowerShell|Instalada|Instalado|
+|Windows PowerShell|Instaladas|Instaladas|
 |Servicio de activación de procesos de Windows|Sí|Sí|
 |Servicio de Windows Search|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Copias de seguridad de Windows Server|Sí|Sí|
@@ -143,13 +144,13 @@ ms.locfileid: "9169939"
 |Extensión IIS de WinRM|Sí|Sí|
 |Servidor WINS|Sí|Sí|
 |Servicio WLAN|Sí|Sí|
-|Compatibilidad con WoW64|Instalada|Instalada|
+|Compatibilidad con WoW64|Instaladas|Instaladas|
 |Visor de XPS|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 
 |Características que por lo general están disponibles|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |Analizador de procedimientos recomendados|Sí|Sí|
-|Réplica de almacenamiento restringida|Sí, (1 asociación y 1 grupo de recursos con volúmenes de 2TB único)|Sí, ilimitado|
+|Réplica de almacenamiento restringida|Sí, (1 asociación y 1 grupo de recursos con el volumen de solo 2TB)|Sí, ilimitado|
 |Direct Access|Sí|Sí|
 |Memoria dinámica (en virtualización)|Sí|Sí|
 |RAM de agregado o reemplazo en caliente|Sí|Sí|

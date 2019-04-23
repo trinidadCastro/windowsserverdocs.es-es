@@ -1,6 +1,6 @@
 ---
 title: Instalar y configurar el servidor NPS
-description: Procesamiento del servidor NPS de solicitudes de conexión que se envían por el servidor VPN comprueba que el usuario tiene permiso para conectar la identidad del usuario y registra los aspectos de la solicitud de conexión que elegiste al configurar cuentas RADIUS en NPS.
+description: Procesamiento de solicitudes de conexión que se envían por el servidor VPN del servidor NPS comprueba que el usuario tiene permiso para conectarse, la identidad del usuario y registra los aspectos de la solicitud de conexión que eligió al configurar cuentas RADIUS en NPS.
 ms.prod: windows-server-threshold
 ms.technology: networking-ras
 ms.topic: article
@@ -10,211 +10,211 @@ ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
 ms.openlocfilehash: ca53ef28497a78f264c60ac1132f721fb6e01c15
-ms.sourcegitcommit: 9c142ad4d4321baf328707f29fa104247ff5149a
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "9035771"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890316"
 ---
-# Paso 4. Instalar y configurar el servidor de directivas de redes (NPS)
+# <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>Paso 4. Instalar y configurar el servidor de directivas de redes (NPS)
 
 >   Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
 
-& #171;  [ **Siguiente:** paso 3. Configurar el servidor de acceso remoto para Always On VPN](vpn-deploy-ras.md)<br>
-& #187;  [ **Siguiente:** paso 5. Configurar DNS y la configuración de Firewall](vpn-deploy-dns-firewall.md)
+&#171;  [**próximo:** Paso 3. Configurar el servidor de acceso remoto para siempre en VPN](vpn-deploy-ras.md)<br>
+&#187;  [**próximo:** Paso 5. Configurar DNS y configuración del Firewall](vpn-deploy-dns-firewall.md)
 
 
-En este paso, se instala el servidor de directivas de redes (NPS) para el procesamiento de solicitudes de conexión que se envían por el servidor VPN:
+En este paso, se instale el servidor de directivas de redes (NPS) para el procesamiento de solicitudes de conexión que se envían por el servidor VPN:
 
 - Realizar la autorización para comprobar que el usuario tiene permiso para conectarse.
 - Realizar la autenticación para comprobar la identidad del usuario.
-- La realización de cuentas para registrar los aspectos de la solicitud de conexión que elegiste al configurar cuentas RADIUS en NPS.
+- Realización de contabilidad para registrar los aspectos de la solicitud de conexión que eligió al configurar cuentas RADIUS en NPS.
 
-Los pasos descritos en esta sección te permiten realizar los siguientes elementos:
+Los pasos descritos en esta sección le permiten completar los siguientes elementos:
 
-1.  En el equipo o máquina virtual que prevista para el servidor NPS e instalado en tu organización o la red corporativa, puedes instalar NPS.
+1.  En el equipo o máquina virtual que planea para el servidor NPS e instalado en su organización o la red corporativa, puede instalar NPS.
 
    >[!TIP] 
-   >Si ya tienes uno o varios servidores NPS en la red, no es necesario realizar la instalación de servidor NPS: en su lugar, puedes usar este tema para actualizar la configuración de un servidor NPS existente.
+   >Si ya tiene uno o varios servidores NPS de la red, no es necesario realizar la instalación del servidor NPS: en su lugar, puede utilizar este tema para actualizar la configuración de un servidor existente de NPS.
 
 >[!NOTE]  
-No puedes instalar el servicio de servidor de directivas de red en Windows Server Core.
+No puede instalar el servicio servidor de directivas de red en Windows Server Core.
 
-2.  En el servidor NPS o corporativa de la organización, puedes configurar NPS para actuar como servidor RADIUS que procesa las solicitudes de conexión recibidas desde el servidor VPN.
+2.  En el servidor NPS o corporativas de la organización, puede configurar NPS para funcionar como servidor RADIUS que procesa las solicitudes de conexión recibidas desde el servidor VPN.
 
-## Instalar el Servidor de directivas de redes
+## <a name="install-network-policy-server"></a>Instalar el Servidor de directivas de redes
 
-En este procedimiento, puedes instalar NPS mediante Windows PowerShell o el administrador agregar Roles de servidor y Features Wizard. NPS es un servicio de rol del rol de servidor de servicios de acceso y directivas de red.
+En este procedimiento, instale NPS mediante el uso de Windows PowerShell o el Server Manager agregar Roles y características Asistente. NPS es un servicio de rol del rol de servidor Servicios de acceso y directivas de redes.
 
 >[!TIP] 
->De manera predeterminada, NPS escucha el tráfico RADIUS en puertos 1812, 1813, 1645 y 1646 en todos los adaptadores de red instalados. Cuando se instala NPS y habilitar Firewall de Windows con seguridad avanzada, excepciones de firewall para estos puertos se crean automáticamente para el tráfico de IPv4 e IPv6. Si los servidores de acceso de red están configurados para enviar tráfico RADIUS a través de los puertos que no sean de estos valores predeterminados, quitar las excepciones que se creó en Firewall de Windows con seguridad avanzada durante la instalación de NPS y crear excepciones para los puertos que usas para Tráfico RADIUS.
+>De forma predeterminada, NPS escucha el tráfico RADIUS en los puertos 1812, 1813, 1645 y 1646 en todos los adaptadores de red instalados. Al instalar NPS, y habilita el Firewall de Windows con seguridad avanzada, excepciones de firewall para estos puertos se crean automáticamente para el tráfico IPv4 e IPv6. Si los servidores de acceso de red están configurados para enviar tráfico RADIUS a través de puertos distintos de los predeterminados, quite las excepciones creadas en el Firewall de Windows con seguridad avanzada durante la instalación de NPS y cree excepciones para los puertos que usa para Tráfico RADIUS.
 
 **Procedimiento para Windows PowerShell:**
 
-Para realizar este procedimiento mediante Windows PowerShell, ejecuta Windows PowerShell como administrador, escribe el siguiente comando y, a continuación, presiona ENTRAR.
+Para llevar a cabo este procedimiento con Windows PowerShell, ejecute Windows PowerShell como administrador, escriba el siguiente comando y, a continuación, presione ENTRAR.
 
 `Install-WindowsFeature NPAS -IncludeManagementTools`
 
 **Procedimiento para el administrador del servidor:**
 
-1.  En el Administrador de servidores, haga clic en **Administrar**y haz clic en **Agregar Roles y características**. <p>Abre el agregar Roles and Features Wizard.
+1.  En el administrador del servidor, haga clic en **administrar**y haga clic en **agregar Roles y características**. <p>Se abre el Asistente para agregar roles y características.
 
-2.  Antes de comenzar, haga clic en **siguiente**.
+2.  En antes de comenzar, haga clic en **siguiente**.
 
     >[!NOTE] 
-    >No se muestra la página **Antes de comenzar** del Asistente de características y de agregar Roles si hubieras seleccionado previamente **Omitir esta página de manera predeterminada** cuando se ha ejecutado el agregar Roles y características de asistente.
+    >El **antes de comenzar** no se muestra la página del Asistente de las características y agregar Roles si había seleccionado anteriormente **omitir esta página predeterminada** cuando se ejecutaban el agregar Roles y características de asistente.
 
-1.  En Seleccionar el tipo de instalación, asegúrate de que esté seleccionado **instalación basada en características o basado en roles** y haga clic en **siguiente**.
+1.  En Seleccionar tipo de instalación, asegúrese de que **instalación basada en roles o basada en características** está seleccionada y haga clic en **siguiente**.
 
-2.  En Seleccionar servidor de destino, asegúrate de que **Seleccionar un servidor de grupo de servidores** está activada.
+2.  En Seleccionar servidor de destino, asegúrese de que **seleccionar un servidor del grupo de servidores** está seleccionada.
 
-3.  En el grupo de servidores, asegúrese de que el equipo local está seleccionado y haz clic en **siguiente**.
+3.  En el grupo de servidores, asegúrese de que el equipo local está seleccionado y haga clic en **siguiente**.
 
-4.  En Seleccionar Roles de servidor, en **Roles**, selecciona **la directiva de red y acceso a los servicios**. Un cuadro de diálogo abre que pregunta si deben agregar características necesarias para la directiva de red y acceso a los servicios.
+4.  En Seleccionar Roles de servidor, en **Roles**, seleccione **servicios de acceso y directivas de redes**. Abre un cuadro de diálogo que pregunta si se deben agregar características necesarias para servicios de acceso y directivas de redes.
 
-5.  Haz clic en **Agregar características**y haz clic en **siguiente**
+5.  Haga clic en **agregar características**y haga clic en **siguiente**
 
-6.  Características de selección, haz clic en **siguiente**, en la directiva de red y servicios de acceso, revisa la información proporcionada y haga clic en **siguiente**.
+6.  En Seleccionar características, haga clic en **siguiente**y en servicios de acceso y directivas de redes, revise la información proporcionada y haga clic en **siguiente**.
 
-7.  En los servicios de rol de selección, haz clic en **El servidor de directivas de red**.
+7.  En servicios de rol seleccione, haga clic en **servidor de directivas de red**.
 
-8.  Para las características necesarias para el servidor de directivas de red, haz clic en **Agregar características** y haz clic en **siguiente**.
+8.  Para las características necesarias para el servidor de directivas de red, haga clic en **agregar características** y haga clic en **siguiente**.
 
-9.  Confirmar selecciones de instalación, haga clic en **reiniciar el servidor de destino automáticamente si es necesario**.
+9.  En Confirmar selecciones de instalación, haga clic en **reiniciar automáticamente el servidor de destino si es necesario**.
 
-10. Haz clic en **Sí** para confirmar el seleccionado y, a continuación, haz clic en **instalar**. <p>La página de progreso de la instalación, muestra el estado durante el proceso de instalación. Cuando finalice el proceso, se muestra el mensaje "instalación se realizó correctamente en *nombreDeEquipo"*, donde *ComputerName* es el nombre del equipo en el que ha instalado el servidor de directivas de red.
+10. Haga clic en **Sí** para confirmar el texto seleccionado y, a continuación, haga clic en **instalar**. <p>La página de progreso de instalación muestra el estado durante el proceso de instalación. Cuando se completa el proceso, el mensaje "instalación correcta en *ComputerName*" se muestra, donde *ComputerName* es el nombre del equipo en el que instaló el servidor de directivas de red.
 
-11. Haz clic en **Cerrar**.
+11. Haga clic en **Cerrar**.
 
-## Configurar NPS
+## <a name="configure-nps"></a>Configuración de NPS
 
-Después de instalar NPS, configuración NPS para controlar toda la autenticación, la autorización, y los derechos de administración de cuentas de conexión solicitan recibe desde el servidor VPN.
+Después de instalar NPS, configurar NPS para administrar toda la autenticación, autorización, y lo solicitan los derechos de administración de cuentas de conexión se recibe desde el servidor VPN.
 
-### Registrar el servidor NPS en Active Directory
+### <a name="register-the-nps-server-in-active-directory"></a>Registrar el servidor NPS en Active Directory
 
-En este procedimiento, se registra el servidor en Active Directory para que tiene permiso para acceder a información de cuenta de usuario durante el procesamiento de solicitudes de conexión.
+En este procedimiento, registrar el servidor en Active Directory para que tenga permiso para acceder a información de cuenta de usuario durante el procesamiento de solicitudes de conexión.
 
 **Procedimiento:**
 
-1.  En el Administrador de servidores, haz clic en **las herramientas**y, a continuación, haz clic en **El servidor de directivas de red**. Abre la consola NPS.
+1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de red**. Se abre la consola de NPS.
 
-2.  En la consola NPS, haz clic en **NPS (Local)** y haz clic en **Registrar servidor en Active Directory** para seleccionarlo.<p>Se abrirá el cuadro de diálogo de servidor de directivas de red.
+2.  En la consola NPS, haga clic en **NPS (Local)** y haga clic en **registrar el servidor en Active Directory** para seleccionarlo.<p>Se abre el cuadro de diálogo servidor de directivas de red.
 
-3.  En el cuadro de diálogo del servidor de directivas de red, haz clic en **Aceptar** dos veces.
+3.  En el cuadro de diálogo servidor de directivas de red, haga clic en **Aceptar** dos veces.
 
-Para obtener métodos alternativos del registro de NPS, consulte [registrar un servidor NPS en un dominio de Active Directory](../../../../../networking/technologies/nps/nps-manage-register.md).
+Para conocer otros métodos de registro NPS, consulte [registrar un servidor NPS en un dominio de Active Directory](../../../../../networking/technologies/nps/nps-manage-register.md).
 
-### Configurar las cuentas de servidor de directivas de redes
+### <a name="configure-network-policy-server-accounting"></a>Configurar las cuentas de servidor de directivas de redes
 
-En este procedimiento, configura la red la directiva de servidor Contabilidad mediante uno de los siguientes tipos de registro:
+En este procedimiento, configure la directiva de servidor de cuentas de red mediante uno de los siguientes tipos de registro:
 
--   **El registro de eventos**. Se usa principalmente para la auditoría y solución de problemas de intentos de conexión. Puedes configurar registro mediante la obtención de las propiedades del servidor NPS en la consola de NPS de eventos NPS.
+-   **Registro de eventos**. Se utiliza principalmente para supervisar y solucionar los intentos de conexión. Puede configurar el registro mediante la obtención de las propiedades del servidor NPS en la consola de NPS de eventos NPS.
 
--   **Registro de autenticación de usuario y las solicitudes de cuentas en un archivo local**. Se usa principalmente para fines de análisis y la facturación de la conexión. También se usa como una herramienta de investigación de seguridad porque proporciona un método de seguimiento de la actividad de un usuario malintencionado después de un ataque. Puede configurar el registro de archivos local mediante el Asistente para configurar cuentas.
+-   **Registro de autenticación de usuario y las solicitudes de cuentas en un archivo local**. Se utiliza principalmente para fines de facturación y análisis de la conexión. También puede usar como una herramienta de investigación de seguridad porque proporciona un método de seguimiento de la actividad de un usuario malintencionado después de un ataque. Puede configurar el registro de archivos local mediante el Asistente para configuración de cuentas.
 
--   **Registro de autenticación de usuario y las solicitudes de cuentas a una base de datos compatible con XML de Microsoft SQL Server**. Usado para permitir que a varios servidores que ejecuten NPS tengan un origen de datos. También proporciona las ventajas de usar una base de datos relacional. Puede configurar el registro de SQL Server mediante el Asistente para la configuración de cuentas.
+-   **Registro de autenticación de usuario y las solicitudes de cuentas en una base de datos de Microsoft SQL Server compatible con XML**. Se usa para permitir que a varios servidores que ejecuten NPS tengan un origen de datos. También proporciona las ventajas de usar una base de datos relacional. Puede configurar el registro de SQL Server utilizando el Asistente para configuración de cuentas.
 
-Para configurar cuentas de servidor de directiva de red, consulta la [Explicación de configurar la red la directiva de servidor](../../../../../networking/technologies/nps/nps-accounting-configure.md).
+Para configurar cuentas de servidor de directivas de red, consulte [configurar red directiva de servidor de contabilidad](../../../../../networking/technologies/nps/nps-accounting-configure.md).
 
-### Agregue el servidor VPN como un cliente RADIUS
+### <a name="add-the-vpn-server-as-a-radius-client"></a>Agregue el servidor VPN como cliente RADIUS
 
-En la sección de [Configurar el servidor de acceso remoto para VPN de Always On](vpn-deploy-ras.md) , había instalado y había configurado el servidor VPN. Durante la configuración del servidor VPN, has agregado un secreto compartido en el servidor VPN. 
+En el [configurar el servidor de acceso remoto de VPN de Always On](vpn-deploy-ras.md) sección, ha instalado y configurado el servidor VPN. Durante la configuración del servidor VPN, se agrega un secreto compartido en el servidor VPN. 
 
-En este procedimiento, se usa la misma cadena de texto secreto compartido para configurar el servidor VPN como un cliente RADIUS en NPS. Usar la misma cadena de texto que usaste en el servidor VPN o se produce un error en la comunicación entre el servidor NPS y el servidor VPN.
+En este procedimiento, usará la misma cadena de texto secreto compartido para configurar el servidor VPN como cliente RADIUS en NPS. Utilice la misma cadena de texto que se utilizó en el servidor VPN, o se produce un error de comunicación entre el servidor NPS y el servidor VPN.
 
 >[!IMPORTANT] 
->Cuando agregas un servidor de acceso de red (servidor VPN, punto de acceso inalámbrico, conmutador de autenticación o servidor telefónico) a la red, debes agregar el servidor como un cliente RADIUS en NPS para que NPS es consciente de y puede comunicarse con el servidor de acceso de red.
+>Cuando se agrega un nuevo servidor de acceso de red (servidor VPN, punto de acceso inalámbrico, conmutador de autenticación o el servidor de acceso telefónico) a la red, debe agregar el servidor como un cliente RADIUS en NPS para que NPS reconozca y pueda comunicarse con el servidor de acceso de red.
 
 **Procedimiento:**
 
-1.  En el servidor NPS en la consola NPS, haz doble clic en **clientes y servidores RADIUS**.
+1.  En el servidor NPS, en la consola NPS, haga doble clic en **clientes y servidores RADIUS**.
 
-2.  Haz clic en **Clientes RADIUS** y haga clic en **nuevo**. Abre el cuadro de diálogo nuevo cliente RADIUS.
+2.  Haga clic en **clientes RADIUS** y haga clic en **New**. Se abre el cuadro de diálogo nuevo cliente RADIUS.
 
-3.  Comprueba que la casilla de verificación **Habilitar a este cliente RADIUS** está seleccionada.
+3.  Compruebe que la **habilitar este cliente RADIUS** casilla está activada.
 
-4.  En el **nombre descriptivo**, escribe un nombre para mostrar para el servidor VPN.
+4.  En **Nombre_descriptivo**, escriba un nombre para mostrar para el servidor VPN.
 
-5.  En la **dirección (IP o DNS)**, escribe la dirección IP de NAS o el FQDN.<p>Si escribes el FQDN, haz clic en **Comprobar** si quieres comprobar que el nombre es correcto y se asigna a una dirección IP.
+5.  En **dirección (IP o DNS)**, escriba el FQDN o la dirección IP de NAS.<p>Si especifica el FQDN, haga clic en **compruebe** si desea comprobar que el nombre es correcto y se asigna a una dirección IP válida.
 
-6.  En **secreto compartido**, llevar a cabo:
+6.  En **secreto compartido**, hacer:
 
-    1.  Asegúrate de que se selecciona **Manual** .
+    1.  Asegúrese de que **Manual** está seleccionada.
 
-    2.  Escribe la cadena de texto seguro que hayas especificado también en el servidor VPN.
+    2.  Escriba la cadena de texto seguro que también especificó en el servidor VPN.
 
     3.  Vuelva a escribir el secreto compartido en Confirmar secreto compartido.
 
-7.  Haz clic en **Aceptar**. El servidor VPN aparece en la lista de clientes RADIUS configurado en el servidor NPS.
+7.  Haga clic en **Aceptar**. El servidor VPN aparece en la lista de clientes RADIUS configurado en el servidor NPS.
 
-## Configurar NPS como un radio para las conexiones VPN
+## <a name="configure-nps-as-a-radius-for-vpn-connections"></a>Configure NPS como un radio para las conexiones VPN
 
-En este procedimiento, se configura NPS como servidor RADIUS en la red de la organización. En el NPS, debes definir una directiva que permite solo los usuarios en un grupo específico para tener acceso a la red de la organización o empresa a través del servidor VPN - y, después, únicamente cuando se usa un certificado de usuario válidas en una solicitud de autenticación de PEAP.
+En este procedimiento, configure NPS como servidor RADIUS en la red de su organización. En el NPS, debe definir una directiva que permita solo los usuarios en un grupo específico para tener acceso a la red de la organización corporativo a través del servidor VPN - y, a continuación, solo cuando se usa un certificado de usuario válido en una solicitud de autenticación PEAP.
 
 **Procedimiento:**
 
-1.  En la consola NPS en una configuración estándar, asegúrate de que el **servidor RADIUS para conexiones VPN o telefónico** está activada.
+1.  En la consola NPS, en la configuración estándar, asegúrese de que **servidor RADIUS para conexiones VPN o telefónico** está seleccionada.
 
-2.  Haz clic en **Configurar VPN o acceso telefónico**.<p>Abre el Asistente para configurar VPN o telefónico.
+2.  Haga clic en **configurar VPN o telefónico**.<p>Se abre el Asistente para configurar VPN o telefónico.
 
-3.  Haz clic en **conexiones de red privada Virtual (VPN)** y haz clic en **siguiente**.
+3.  Haga clic en **las conexiones de red privada Virtual (VPN)** y haga clic en **siguiente**.
 
-4.  En especificar telefónico o servidor de VPN, en clientes RADIUS, selecciona el nombre del servidor VPN que hayas agregado en el paso anterior.<p>Por ejemplo, si el nombre de NetBIOS del servidor VPN es RAS1, haz clic en **RAS1**.
+4.  En especificar telefónico o de servidor VPN, en los clientes RADIUS, seleccione el nombre del servidor VPN al que agregó en el paso anterior.<p>Por ejemplo, si el nombre de NetBIOS del servidor VPN es RAS1, haga clic en **RAS1**.
 
 5.  Haz clic en **Siguiente**.
 
-6.  En los métodos de autenticación de configurar, realiza los siguientes pasos:
+6.  En configurar métodos de autenticación, complete los pasos siguientes:
 
-    1.  Desactiva la casilla de verificación de **Autenticación cifrada de Microsoft versión 2 (MS-CHAPv2)** .
+    1.  Desactive el **Microsoft Encrypted Authentication versión 2 (MS-CHAPv2)** casilla de verificación.
 
-    2.  Haz clic en la casilla de verificación de **Protocolo de autenticación Extensible** para seleccionarlo.
+    2.  Haga clic en el **protocolo de autenticación Extensible** casilla de verificación para seleccionarlo.
 
-    3.  En tipo (según el método de configuración de acceso y la red), haz clic en **Microsoft: EAP protegido (PEAP)** y haz clic en **Configurar**.<p>Abre el cuadro de diálogo de editar propiedades de EAP protegido.
+    3.  En el tipo (según el método de acceso y configuración de red), haga clic en **Microsoft: EAP protegido (PEAP)** y haga clic en **configurar**.<p>Se abre el cuadro de diálogo Editar propiedades de EAP protegido.
 
-    4.  Haz clic en **Eliminar** para quitar el tipo de EAP de contraseña segura (EAP-MSCHAP v2).
+    4.  Haga clic en **quitar** para quitar el tipo EAP de contraseña segura (EAP-MSCHAP v2).
 
-    5.  Haz clic en **Agregar**. Abre el cuadro de diálogo Agregar EAP.
+    5.  Haz clic en **Agregar**. Se abre el cuadro de diálogo Agregar EAP.
 
-    6.  Haz clic en la **tarjeta inteligente u otro certificado**y haz clic en **Aceptar**.
+    6.  Haga clic en **tarjeta inteligente u otro certificado**y haga clic en **Aceptar**.
 
-    7.  Haz clic en **Aceptar** para cerrar Editar propiedades de EAP protegido.
+    7.  Haga clic en **Aceptar** para cerrar Editar propiedades de EAP protegido.
 
 7.  Haz clic en **Siguiente**.
 
-8.  Especificar grupos de usuario, realiza los siguientes pasos:
+8.  En especificar grupos de usuarios, complete los pasos siguientes:
 
-    1.  Haz clic en **Agregar**. Abre el cuadro de diálogo Seleccionar usuarios, equipos, cuentas de servicio o grupos.
+    1.  Haz clic en **Agregar**. Se abre el cuadro de diálogo Seleccionar usuarios, equipos, cuentas de servicio o grupos.
 
-    2.  Escribe **Los usuarios de VPN** y haz clic en **Aceptar**.
+    2.  Tipo **usuarios de VPN** y haga clic en **Aceptar**.
 
     3.  Haz clic en **Siguiente**.
 
-9.  Especificar filtros de IP, haga clic en **siguiente**.
+9.  En especificar filtros IP, haga clic en **siguiente**.
 
-10. En especificar la configuración de cifrado, haz clic en **siguiente**. No se realiza los cambios.<p>Estas opciones de configuración se aplican solo a las conexiones de cifrado de punto a punto de Microsoft (MPPE), que no es compatible con este escenario.
+10. En especificar la configuración de cifrado, haga clic en **siguiente**. No realice los cambios.<p>Esta configuración se aplica sólo a conexiones de punto a punto MPPE (cifrado), lo que no es compatible con este escenario.
 
-11. Especifica un nombre de dominio Kerberos, haga clic en **siguiente**.
+11. En especificar un nombre de dominio Kerberos, haga clic en **siguiente**.
 
-12. Haz clic en **Finalizar** para cerrar al asistente.
+12. Haga clic en **finalizar** para cerrar el asistente.
 
-## Inscribir un certificado del servidor NPS
+## <a name="autoenroll-the-nps-server-certificate"></a>Inscribir un certificado del servidor NPS
 
-En este procedimiento, actualización la directiva de grupo en el servidor NPS local manualmente. Cuando las actualizaciones de la directiva de grupo, si se ha configurado la inscripción automática de certificados y funciona correctamente, el equipo local está inscriban automáticamente un certificado por la entidad de certificación (CA).
+En este procedimiento, actualiza Directiva de grupo en el servidor NPS local manualmente. Cuando las actualizaciones de directiva de grupo, si está configurada la inscripción automática de certificados y funciona correctamente, el equipo local es inscriben automáticamente un certificado de entidad de certificación (CA).
 
 >[!NOTE]  
->La directiva de grupo se actualiza automáticamente cuando se reinicie el equipo de miembro de dominio o cuando un usuario inicia sesión en un equipo miembro del dominio. Además, la directiva de grupo se actualiza periódicamente. De manera predeterminada, esta actualización periódica se produce cada 90 minutos con un desplazamiento aleatorio de hasta 30 minutos.
+>Directiva de grupo se actualiza automáticamente al reiniciar el equipo miembro del dominio, o cuando un usuario inicia sesión en un equipo miembro del dominio. Además, directiva de grupo se actualiza periódicamente. De forma predeterminada, esta actualización periódica ocurre cada 90 minutos con un desplazamiento aleatorio de hasta 30 minutos.
 
-La suscripción a **los administradores de TI**, o equivalente, es la cantidad mínima requerida para completar este procedimiento.
+Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
 **Procedimiento:**
 
-1.  En el NPS, abre Windows PowerShell.
+1.  En NPS, abra Windows PowerShell.
 
-2.  En el símbolo de Windows PowerShell, escriba **gpupdate**y, a continuación, presiona ENTRAR.
+2.  En el símbolo del sistema de Windows PowerShell, escriba **gpupdate**, y, a continuación, presione ENTRAR.
 
-## Paso siguiente
-[Paso 5. Configurar DNS y firewall de VPN de Always On](vpn-deploy-dns-firewall.md): en este paso, se instala servidor de directivas de redes (NPS) mediante Windows PowerShell o el administrador agregar Roles de servidor y Features Wizard. También configuración NPS para controlar todos los derechos de administración de cuentas de conexión, autorización y autenticación las solicitudes que recibe desde el servidor VPN.
+## <a name="next-step"></a>Paso siguiente
+[Paso 5. Configuración DNS y del firewall para VPN de Always On](vpn-deploy-dns-firewall.md): En este paso, se instala el servidor de directivas de redes (NPS) mediante Windows PowerShell o el Server Manager agregar Roles y características Asistente. También configura NPS para controlar la autenticación, autorización y los derechos de administración de cuentas de conexión todos los solicitudes que recibe desde el servidor VPN.
 
 
 

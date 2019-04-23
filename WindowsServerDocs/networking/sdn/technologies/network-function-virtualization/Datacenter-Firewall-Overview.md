@@ -1,6 +1,6 @@
 ---
-title: Introducción a Datacenter Firewall
-description: Puedes usar este tema para obtener información sobre Firewall del centro de datos, que es un nivel de red, la tupla de 5 (los números de puerto de protocolo, origen y destino, direcciones IP de origen y destino), el firewall con estado y para varios inquilinos en Windows Server 2016.
+title: Información general de Datacenter Firewall
+description: Puede utilizar este tema para obtener información acerca de Firewall de centro de datos, que es una capa de red, 5-tupla (números de puerto de protocolo, origen y destino, direcciones IP de origen y destino), un firewall con estado, multiempresa en Windows Server 2016.
 manager: brianlic
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,43 +12,44 @@ ms.topic: article
 ms.assetid: 67576533-206b-428a-956c-ed8c53218d9b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0c9b9fb5b0fb9aa09ed783b2b66a8ad370a627c3
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
+ms.openlocfilehash: f1de50dc61639f4985c9d28fdde6072af650f42e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59890836"
 ---
-# <a name="datacenter-firewall-overview"></a>Introducción a Datacenter Firewall
+# <a name="datacenter-firewall-overview"></a>Información general de Datacenter Firewall
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Firewall de centros de datos es un nuevo servicio que se incluye con Windows Server 2016. Es un nivel de red, la tupla de 5 (protocolo, números de puerto de origen y destino, direcciones IP de origen y destino), el firewall con estado y para varios inquilinos. Cuando se implementa y ofrece como un servicio por el proveedor de servicios, los administradores de inquilino pueden instalar y configurar las directivas de firewall para ayudar a proteger sus redes virtuales de tráfico no deseado que se origina desde Internet y redes de intranet.  
+Datacenter Firewall es un nuevo servicio incluido con Windows Server 2016. Es una capa de red, 5-tupla (protocolo, números de puerto de origen y destino, direcciones IP de origen y destino), firewall con estado, para varios inquilinos. Cuando se implementa y se ofrecen como un servicio por el proveedor de servicios, los administradores de inquilinos pueden instalar y configurar las directivas de firewall para ayudar a proteger sus redes virtuales del tráfico no deseado que se origina en Internet y redes de intranet.  
   
-![Firewall de centros de datos en la pila de red](../../../media/Datacenter-Firewall-Overview/MultitenantFirewallOverview2.png)  
+![Datacenter Firewall en la pila de red](../../../media/Datacenter-Firewall-Overview/MultitenantFirewallOverview2.png)  
   
-El Administrador de proveedor de servicio o el Administrador de inquilinos puede administrar las directivas de Firewall del centro de datos a través de la API northbound y el controlador de red.  
+El administrador del proveedor de servicios o el Administrador de inquilinos puede administrar las directivas de Firewall de centro de datos a través de la controladora de red y las API de northbound.  
   
-El Firewall del centro de datos ofrece las siguientes ventajas para proveedores de servicios de nube:  
+El Firewall de centro de datos ofrece las siguientes ventajas para los proveedores de servicios en la nube:  
   
--   Una solución muy escalables, manejables y disturbio firewall basado en software que se puede ofrecer a los inquilinos  
+-   Una solución altamente escalable, administrable y disturbio firewall basada en software que se puede ofrecer a los inquilinos  
   
--   Libertad de movimiento de máquinas virtuales de inquilino a los hosts de cálculo diferentes sin interrumpir las directivas de firewall del inquilino  
+-   Libertad para mover máquinas virtuales de inquilinos a hosts diferentes de proceso sin interrumpir las directivas de firewall de inquilino  
   
-    -   Implementar como un firewall de agente de host de puerto vSwitch  
+    -   Implementado como un firewall de agente de host de puerto vSwitch  
   
-    -   Máquinas virtuales de inquilino obtener las directivas asignadas a su firewall de agente de host vSwitch  
+    -   Máquinas virtuales de inquilinos obtener las directivas asignadas a su servidor de seguridad de agente de host de vSwitch  
   
-    -   Las reglas de Firewall están configuradas en cada puerto vSwitch, independiente del host real ejecutando la máquina virtual  
+    -   Las reglas de Firewall se configuran en cada puerto vSwitch, independiente del host real que se ejecuta la máquina virtual  
   
--   Ofrece protección de máquinas virtuales independientes del sistema operativo de invitado de inquilino de inquilinos  
+-   Ofrece protección para máquinas virtuales independientes del sistema operativo de invitado de inquilino del inquilino  
   
-El Firewall del centro de datos ofrece las siguientes ventajas de inquilinos:  
+El Firewall de centro de datos ofrece las siguientes ventajas para inquilinos:  
   
--   Capacidad para definir las reglas del firewall para ayudar a proteger Internet hacia cargas de trabajo en las redes virtuales  
+-   Capacidad de definir las reglas de firewall para ayudar a proteger las cargas de trabajo en las redes virtuales de Internet.  
   
--   Capacidad para definir las reglas del firewall para ayudar a proteger el tráfico entre máquinas virtuales en la misma L2 virtual subred así entre máquinas virtuales en diferentes subredes virtuales de L2  
+-   Capacidad de definir las reglas de firewall para ayudar a proteger el tráfico entre máquinas virtuales en la misma L2 subred virtual, así como entre máquinas virtuales en diferentes subredes virtuales L2  
   
--   Capacidad para definir las reglas del firewall para ayudar a proteger y aislar el tráfico de red entre inquilino local redes y sus redes virtuales en el proveedor de servicio  
+-   Capacidad para definir las reglas de firewall para ayudar a proteger y aislar el tráfico de red entre el inquilino local las redes y sus redes virtuales en el proveedor de servicios  
   
 
 

@@ -13,11 +13,11 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 1461f3e3266d77d2510aba37208347253a8f78e7
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082686"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59851626"
 ---
 # <a name="iis-on-nano-server"></a>IIS en Nano Server
 
@@ -26,7 +26,7 @@ ms.locfileid: "2082686"
 > [!IMPORTANT]
 > A partir de Windows Server, versión 1709, Nano Server estará disponible solo como una [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para obtener más información. 
 
-Puedes instalar el rol de servidor de Internet Information Services (IIS) en Nano Server mediante el parámetro -Package con Microsoft-NanoServer-IIS-Package. Para obtener información sobre cómo configurar Nano Server, incluida la instalación de paquetes, vea [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).  
+Puede instalar el rol de servidor de Internet Information Services (IIS) en Nano Server mediante el parámetro -Package con Microsoft-NanoServer-IIS-Package. Para obtener información sobre cómo configurar Nano Server, incluida la instalación de paquetes, vea [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).  
 
 En esta versión de Nano Server, están disponibles las siguientes características de IIS:  
 
@@ -65,7 +65,7 @@ En esta versión de Nano Server, están disponibles las siguientes característi
 |**Herramientas de administración**||  
 |Módulo IISAdministration para Windows PowerShell|x|  
 
-Una serie de artículos en otros valores de configuración de IIS (por ejemplo, con ASP.NET, PHP y Java), así como otras relacionadas con el contenido se publica en [http://iis.net/learn](http://iis.net/learn).  
+Una serie de artículos sobre otras configuraciones de IIS (por ejemplo, con ASP.NET, PHP y Java), así como otros relacionados con el contenido se publique en [ http://iis.net/learn ](http://iis.net/learn).  
 
 ## <a name="installing-iis-on-nano-server"></a>Instalación de IIS en Nano Server  
 Puede instalar este rol de servidor sin conexión (con Nano Server desactivado) o en línea (con Nano Server activado); la instalación sin conexión es la opción recomendada.  
@@ -129,12 +129,12 @@ Aunque se recomienda la instalación sin conexión del rol de servidor, debe rea
 
     **dism /online /get-packages**  
 
-    Debe ver "Identidad del paquete: Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000" dos veces, una vez para Tipo de versión: Paquete de idioma, y otra para Tipo de versión: Feature Pack.  
+    Debería ver "identidad del paquete: Microsoft-NanoServer-IIS-Package ~ 31bf3856ad364e35 ~ amd64 ~ ~ 10.0.14393.1000" aparece dos veces, una vez para tipo de versión: Paquete de idioma y una vez para tipo de versión: Feature Pack.  
 
 6.  Inicie el servicio W3SVC con **net start w3svc** o reiniciando Nano Server.  
 
 ## <a name="starting-iis"></a>Inicio de IIS  
-Una vez que IIS está instalado y en ejecución, está listo para atender las solicitudes web. Comprueba que IIS está en ejecución; para ello, visita la página web predeterminada de IIS en http://\<dirección IP de Nano Server>. En un equipo físico, puedes determinar la dirección IP mediante la Consola de recuperación. En una máquina virtual, puede obtener la dirección IP mediante un símbolo del sistema de Windows PowerShell y ejecutando:  
+Una vez que IIS está instalado y en ejecución, está listo para atender las solicitudes web. Compruebe que IIS está en ejecución; para ello, examine la página web de IIS predeterminada en http://\<dirección IP de Nano Server>. En un equipo físico, puede determinar la dirección IP mediante la Consola de recuperación. En una máquina virtual, puede obtener la dirección IP mediante un símbolo del sistema de Windows PowerShell y ejecutando:  
 
 `Get-VM -name <VM name> | Select -ExpandProperty networkadapters | select IPAddresses`  
 
@@ -177,7 +177,7 @@ El conjunto completo de subcaracterísticas de IIS se encuentra en el Apéndice 
     ```
 
 ## <a name="other-common-iis-configuration-tasks"></a>Otras tareas comunes de configuración de IIS  
-**Creación de sitios web**  
+**Creación de sitios Web**  
 
 Use este cmdlet:  
 
@@ -189,7 +189,7 @@ Después puede ejecutar `Get-IISSite` para comprobar el estado del sitio (devuel
 
 Ejecute `Remove-IISSite -Name TestSite -Confirm:$false`.  
 
-**Creción de directorios virtuales**  
+**Creación de directorios virtuales**  
 
 Puede crear directorios virtuales mediante el objeto IISServerManager devuelto por Get-IISServerManager, que expone la API de .NET Microsoft.Web.Administration.ServerManager. En este ejemplo, estos comandos acceden al elemento “Sitio web predeterminado” de la colección de sitios y al elemento de aplicación raíz ("/") de la sección Aplicaciones. Luego llaman al método Add() de la colección VirtualDirectories para que ese elemento de la aplicación cree el nuevo directorio:  
 
@@ -225,7 +225,7 @@ Use la utilidad Certoc.exe para importar certificados, como en este ejemplo, que
 
 3.  En Nano Server, importe el certificado en el almacén "My" con este comando:  
 
-    **certoc.exe -ImportPFX -p YOUR_PFX_PASSWD My c:\temp\test.pfx**  
+    **certoc.exe - ImportPFX -p YOUR_PFX_PASSWD mi c:\temp\test.pfx**  
 
 4.  Recuperar la huella digital de este certificado nuevo (en este ejemplo, 61E71251294B2A7BB8259C2AC5CF7BA622777E73) con `Get-ChildItem Cert:\LocalMachine\my`.  
 
@@ -242,7 +242,7 @@ Use la utilidad Certoc.exe para importar certificados, como en este ejemplo, que
     $sm.CommitChanges()  
     ```  
 
-    También puede usar la Indicación de nombre de servidor (SNI) mediante un nombre de host específico con esta sintaxis: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    También podría usar indicación de nombre de servidor (SNI) con un nombre de host específico con esta sintaxis: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>Apéndice 1: Lista de subcaracterísticas de IIS
 
@@ -280,7 +280,7 @@ Use la utilidad Certoc.exe para importar certificados, como en este ejemplo, que
 - IIS-HttpTracing
 - IIS-CustomLogging
 
-## <a name="appendix-2-elements-of-http-features"></a>Apéndice 2: Elementos de características HTTP  
+## <a name="appendix-2-elements-of-http-features"></a>Apéndice 2: Elementos de las características HTTP  
 Cada característica de IIS existe como un conjunto de elementos de configuración. En este apéndice se enumeran los elementos de configuración de todas las características de esta versión de Nano Server  
 
 ### <a name="common-http-features"></a>Características HTTP comunes  
@@ -293,9 +293,9 @@ Cada característica de IIS existe como un conjunto de elementos de configuraci�
 |`<handlers>`|`<add name="StaticFile" path="*" verb="*" modules="DefaultDocumentModule" resourceType="EiSecther" requireAccess="Read" />`|  
 |`<defaultDocument>`|`<defaultDocument enabled="true"><br /><files><br /> <add value="Default.htm" /><br />        <add value="Default.asp" /><br />        <add value="index.htm" /><br />        <add value="index.html" /><br />        <add value="iisstart.htm" /><br />    </files><br /></defaultDocument>`|  
 
-La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agrega "DefaultDocumentModule" al atributo \<modules>, separado por una coma.  
+La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agregue "DefaultDocumentModule" al atributo \<modules>, separados por coma.  
 
-**Examen de directorios**  
+**examen de directorios**  
 
 |Sección|Elementos de configuración|  
 |----------------|--------------------------|   
@@ -303,7 +303,7 @@ La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agrega
 |`<modules>`|`<add name="DirectoryListingModule" lockItem="true" />`|  
 |`<handlers>`|`<add name="StaticFile" path="*" verb="*" modules="DirectoryListingModule" resourceType="Either" requireAccess="Read" />`|  
 
-La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agrega "DirectoryListingModule" al atributo \<modules>, separado por una coma.  
+La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agregue "DirectoryListingModule" al atributo \<modules>, separados por coma.  
 
 **Errores HTTP**  
 
@@ -321,7 +321,7 @@ La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agrega
 |`<modules>`|`<add name="StaticFileModule" lockItem="true" />`|  
 |`<handlers>`|`<add name="StaticFile" path="*" verb="*" modules="StaticFileModule" resourceType="Either" requireAccess="Read" />`|  
 
-La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agrega "StaticFileModule" al atributo \>modules>, separado por una coma.  
+La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agregue "StaticFileModule" al atributo \<modules>, separados por coma.  
 
 **Redirección HTTP**  
 
@@ -379,7 +379,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 |`<httpCompression>`|`<httpCompression directory\="%SystemDrive%\inetpub\temp\IIS Temporary Compressed Files"><br />    <scheme name="gzip" dll="%Windir%\system32\inetsrv\gzip.dll" \/><br />    \<dynamicTypes><br />        <add mimeType="text/*" enabled="true" \/><br />        <add mimeType="message/*" enabled="true" /><br />        <add mimeType="application/x-javascript" enabled="true" /><br />        <add mimeType="application/javascript" enabled="true" /><br />        <add mimeType="*/*" enabled="false" /><br />    <\/dynamicTypes><br /></httpCompression>`|  
 
 ### <a name="security"></a>Seguridad  
-**Filtro de solicitudes**  
+**Filtrado de solicitudes**  
 
 |Sección|Elementos de configuración|  
 |----------------|--------------------------|  
@@ -411,7 +411,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 |`<modules>`|`<add name="DigestAuthenticationModule" lockItem="true" />`|  
 |`<other>`|`<digestAuthentication enabled="false" />`|  
 
-**Autenticación de asignaciones de certificado de cliente de IIS**  
+**Autenticación de asignaciones de certificado de cliente IIS**  
 
 |Sección|Elementos de configuración|  
 |----------------|--------------------------|   
@@ -419,7 +419,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 |`<modules>`|`<add name="CertificateMappingAuthenticationModule" lockItem="true" `/>`|  
 |`<clientCertificateMappingAuthentication>`|`<clientCertificateMappingAuthentication enabled="false" />`|  
 
-**Restricciones de dominio y dirección IP**  
+**Restricciones de IP y dominio**  
 
 |Sección|Elementos de configuración|  
 |----------------|--------------------------|  
@@ -427,7 +427,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 |`<modules>`|`<add name="IpRestrictionModule" lockItem="true" \/><br /><add name="DynamicIpRestrictionModule" lockItem="true" \/>`|  
 |`<ipSecurity>`|`<ipSecurity allowUnlisted="true" />`|  
 
-**Autorización para URL**  
+**Autorización de URL**  
 
 |Sección|Elementos de configuración|  
 |----------------|--------------------------|  
@@ -435,7 +435,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 |`<modules>`|`<add name="UrlAuthorizationModule" lockItem="true" />`|  
 |`<authorization>`|`<authorization><br />    <add accessType="Allow" users="*" /><br /></authorization>`|  
 
-**Autenticación de Windows.**  
+**Autenticación de Windows**  
 
 |Sección|Elementos de configuración|  
 |----------------|--------------------------|    
@@ -444,7 +444,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 |`<windowsAuthentication>`|`<windowsAuthentication enabled="false" authPersistNonNTLM\="true"><br />    <providers><br />        <add value="Negotiate" /><br />        <add value="NTLM" /><br />    <\providers><br /><\windowsAuthentication><windowsAuthentication enabled="false" authPersistNonNTLM\="true"><br />    <providers><br />        <add value="Negotiate" /><br />        <add value="NTLM" /><br />    <\/providers><br /><\/windowsAuthentication>`|  
 
 ### <a name="application-development"></a>Desarrollo de aplicaciones  
-**Inicialización de aplicaciones**  
+**Inicialización de la aplicación**  
 
 |Sección|Elementos de configuración|  
 |----------------|--------------------------|  

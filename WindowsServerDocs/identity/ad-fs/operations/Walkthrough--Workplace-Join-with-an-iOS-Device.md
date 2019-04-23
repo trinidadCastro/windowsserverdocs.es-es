@@ -1,65 +1,70 @@
 ---
 ms.assetid: 299e4fb9-8f1a-4275-ad7d-dad4f1594657
-title: Tutorial - unirse a un área de trabajo con un dispositivo iOS
+title: 'Tutorial: unión con un dispositivo iOS'
 description: ''
 author: billmath
 ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+manager: mtillman
+ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0a8643bab913dfec07c6bbea0c068e1240f16c5b
-ms.sourcegitcommit: a2260c96b0e49519d180c7382b921ce8ddb053fe
+ms.openlocfilehash: c9c66b5bbe5fff83010859abe6ea4759d5bc4be0
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59853636"
 ---
-# <a name="walkthrough-workplace-join-with-an-ios-device"></a>Tutorial: Unirse un área de trabajo con un dispositivo iOS
+# <a name="walkthrough-workplace-join-with-an-ios-device"></a>Tutorial: unirse al área de trabajo con un dispositivo iOS
 
->Se aplica a: Windows Server 2012 R2
+>Se aplica a: Windows Server 2012 R2
 
-Este tema muestra al área de trabajo en un dispositivo iOS. Debes completar los pasos de la [configurar el entorno de laboratorio de AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md) sección antes de que puedes probar este tutorial. Puedes usar el dispositivo para acceder a la misma aplicación web de empresa que acceder en [Tutorial: al área de trabajo con un dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md).
+> [!IMPORTANT] 
+> Este método es relevante para sólo totalmente local, los clientes. Los clientes solo en la nube o híbrido no deben utilizar este método para registrar sus dispositivos iOS. Y este método no es compatible cuando los clientes a nivel local deciden cambiar a la nube. El dispositivo debe anular el registro y registrar con la nube. 
 
-## <a name="join-an-ios-device-with-workplace-join"></a>Unirse a un dispositivo iOS al área de trabajo
+En este tema se muestra cómo unirse a un área de trabajo en un dispositivo iOS. Debe completar los pasos descritos en la [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md) sección antes de comenzar este tutorial. Puede usar el dispositivo para tener acceso a la misma aplicación web de empresa que ha accedido en [Tutorial: Unión con un dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md).
+
+
+## <a name="join-an-ios-device-with-workplace-join"></a>Unir un dispositivo iOS al área de trabajo
 
 > [!IMPORTANT]
-> Cuando se configura DRS local, el dispositivo iOS debe confiar en el certificado de capa de sockets seguros (SSL) que se usó para configurar los servicios de federación de Active Directory (AD FS) en [paso 2: configurar el servidor de federación (ADFS1) con el servicio de registro de dispositivo](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4), en lugar de trabajo combinación correctamente.
+> Cuando se configura el DRS local, el dispositivo iOS debe confiar en el certificado de capa de sockets seguros (SSL) que se usó para configurar los servicios de federación de Active Directory (AD FS) en [paso 2: Configurar el servidor de federación (ADFS1) with Device Registration Service](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_4), para unirse al área de trabajo se ejecute correctamente.
 > 
-> -   Si se ha emitido el certificado SSL de AD FS de una entidad de certificación (CA) de prueba, debes instalar el certificado de entidad de certificación en el dispositivo iOS.
-> -   Si el certificado de entidad de certificación se publica en un sitio Web, puede instalar el certificado y busca el sitio Web de tu dispositivo iOS.
+> -   Si el certificado SSL de AD FS lo emitió una entidad de certificación (CA) de prueba, debes instalar el certificado de la entidad de certificación en tu dispositivo iOS.
+> -   Si el certificado de la entidad de certificación está publicado en un sitio web, puedes ir al sitio web desde el dispositivo iOS e instalar el certificado.
 
-En esta demostración, unir el dispositivo para el área de trabajo.
+En esta demostración, unes el dispositivo al área de trabajo.
 
 #### <a name="to-join-an-ios-device-to-a-workplace"></a>Para unir un dispositivo iOS a un área de trabajo
 
-1.  -   **Cuando el servicio de registro del dispositivo de Azure Active Directory es la DRS configurado:** abrir Apple Safari y navega al extremo de perfil de conexión de servicio de registro del dispositivo de Azure Active Directory para dispositivos iOS, <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > donde <`yourdomainname`> es el nombre de dominio que hayas configurado con Azure Active Directory. Por ejemplo, si el nombre de dominio es contoso.com, sería la dirección URL: `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
+1.  -   **Cuando el servicio de registro del dispositivo de Azure Active Directory es el DRS configurado:** Abre Apple Safari y navega al extremo de perfil móvil de servicio de registro de dispositivos de Azure Active Directory para dispositivos iOS, <`https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/<yourdomainname` > donde <`yourdomainname`> es el nombre de dominio que ha configurado con Azure Active Directory. Por ejemplo, si el nombre de dominio es contoso.com, la dirección URL sería: `https://enterpriseregistration.windows.net/enrollmentserver/otaprofile/contoso.com`
 
-    -   **Cuando DRS local es el DRS configurado**: abre Apple Safari y navega hacia el extremo de perfil de conexión de servicio de registro de dispositivo (DRS) para dispositivos iOS,`https://adf1s.contoso.com/enrollmentserver/otaprofile`
+    -   **Cuando el DRS local es el DRS configurado**: Abre Apple Safari y navega hasta el extremo del perfil de servicio de registro de dispositivos (DRS) por el aire para dispositivos iOS, `https://adf1s.contoso.com/enrollmentserver/otaprofile`
 
-    Existen muchas formas de comunicarse esta dirección URL a los usuarios. Una forma recomendada es publicar esta dirección URL en un acceso a la aplicación personalizada deniega el mensaje en AD FS. Esto se explica en la sección próxima: [crear una directiva de acceso de la aplicación y personalizado mensaje de acceso denegado](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
+    Hay muchas formas de comunicar la URL a los usuarios. Una forma recomendada es publicar esta dirección URL en un mensaje personalizado de acceso denegado de una aplicación en AD FS. Este tema se trata en la siguiente sección: [Crear una directiva de acceso de aplicaciones y el mensaje de denegación de acceso personalizada](https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-on-premises-setup#create-an-application-access-policy-and-custom-access-denied-message)
 
-2.  Iniciar sesión en la página Web con una cuenta de dominio de la empresa: ** roberth@contoso.com ** y la contraseña: ** P@ssword **.
+2.  Inicie sesión en la página Web con una cuenta de dominio de empresa: **roberth@contoso.com** y la contraseña: **P@ssword**.
 
-3.  Se te pida instalar un perfil. En la **instalar perfil** de pantalla, haz clic en **instalar**.
+3.  Se te pedirá que instales un perfil. En la pantalla **Instalar perfil** , haz clic en **Instalar**.
 
-4.  Cuando aparezca el mensaje para confirmar la instalación del perfil, haz clic en **instalar ahora**.
+4.  Cuando se te pida que confirmes la instalación del perfil, haz clic en **Instalar ahora**.
 
-5.  Si el dispositivo requiere un PIN para desbloquear el dispositivo, le introducir tu PIN.
+5.  Si tu dispositivo requiere un PIN para desbloquearlo, se te pedirá que lo escribas.
 
-6.  Finalice la instalación del perfil cuando veas la **perfil instalado** pantalla. Haz clic en **listo**.
+6.  La instalación del perfil termina cuando veas la pantalla **Perfil instalado** . Haga clic en **Listo**.
 
-    Vuelve a Safari. Un mensaje te informará que puede cerrar o salir de Safari.
+    Vuelve a Safari. Un mensaje te informa de que puedes cerrar Safari o salir de él.
 
 > [!TIP]
-> Para ver o eliminar el perfil al área de trabajo, vaya a **configuración**, haz clic en **General**y, a continuación, haz clic en **perfiles** en tu dispositivo iOS.
+> Para ver o quitar el perfil Unión al área de trabajo, ve a **Ajustes**, haz clic en **General** y, después, haz clic en **Perfiles** en tu dispositivo iOS.
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
 
-- [Unir al área de trabajo desde cualquier dispositivo para SSO y transparente segundo Factor de autenticación entre las aplicaciones de empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
-- [Configurar el entorno de laboratorio de AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-- [Tutorial: Unión a un área de trabajo con un dispositivo de Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [Unirse a un área de trabajo desde cualquier dispositivo para SSO y sin interrupciones de segundo Factor de autenticación a través de las aplicaciones de empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
+- [Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+- [Tutorial: Unión con un dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
 
 

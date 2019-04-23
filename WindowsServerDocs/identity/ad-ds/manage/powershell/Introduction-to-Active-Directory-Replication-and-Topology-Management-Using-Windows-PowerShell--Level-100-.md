@@ -1,159 +1,160 @@
 ---
 ms.assetid: c54b544f-cc32-4837-bb2d-a8656b22f3de
-title: "Introducción a la réplica de Active Directory y administración de la topología mediante Windows PowerShell (nivel 100)"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
+title: Administración de la replicación y la topología de Active Directory con Windows PowerShell
+description: ''
+author: MicrosoftGuyJFlo
+ms.author: joflore
+manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 006179bb3220f7bccfc7510e1b8ef69678321074
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: d5760820613c3b791b577a600cae543621eee257
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59845596"
 ---
-# <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>Introducción a la réplica de Active Directory y administración de la topología mediante Windows PowerShell (nivel 100)
+# <a name="introduction-to-active-directory-replication-and-topology-management-using-windows-powershell-level-100"></a>Administración de la replicación y la topología de Active Directory con Windows PowerShell
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Windows PowerShell para Active Directory incluye la capacidad para administrar la replicación, sitios, dominios y bosques, controladores de dominio y las particiones. Complemento de los usuarios anteriores de herramientas de administración, como los sitios de Active Directory y los servicios y repadmin.exe observarás que una funcionalidad similar ahora está disponible en el contexto de Active Directory de Windows PowerShell. Además, los cmdlets son compatibles con el existente de Windows PowerShell con los cmdlets de Active Directory, de, por consiguiente, crear una experiencia optimizada y permitir a los clientes crear fácilmente los scripts de automatización.
+Windows PowerShell para Active Directory ofrece la capacidad de administrar la replicación, los sitios, dominios y bosques, controladores de dominio y particiones. Los usuarios de herramientas de administración anteriores, como el complemento Sitios y servicios de Active Directory, y repadmin.exe, observarán que ahora está disponible funcionalidad similar en el contexto de Windows PowerShell para Active Directory. Además, los cmdlets son compatibles con los cmdlets existentes de Windows PowerShell para Active Directory, lo que crea una experiencia simplificada y permite a los clientes crear fácilmente scripts de automatización.
 
 > [!NOTE]
-> Windows PowerShell para la replicación de Active Directory y topología cmdlets están disponibles en los entornos siguientes:
+> Los cmdlets para administración de la replicación y la topología de Windows PowerShell para Active Directory están disponibles en los siguientes entornos:
 > 
 > -    Controlador de dominio de Windows Server 2012
 > -    Windows Server 2012 con las herramientas de administración de servidor remoto para AD DS y AD LDS instalado.
 > -   Windows&reg; 8 con las herramientas de administración de servidor remoto para AD DS y AD LDS instalado.
 
-## <a name="installing-the-active-directory-module-for-windows-powershell"></a>Instalar el módulo de Active Directory para Windows PowerShell
-El Active Directory módulo de Windows PowerShell se instala de forma predeterminada cuando se instala el rol de servidor de AD DS en un servidor que ejecuta Windows Server 2012. Se requiere que no sea la adición del rol de servidor ningún paso adicional. También puedes instalar el módulo de Active Directory en un servidor que ejecuta Windows Server 2012 mediante la instalación de las herramientas de administración de servidor remoto, y puede instalar el módulo de Active Directory en un equipo que ejecute Windows 8 descargando e instalando el [remota herramientas administrativas del servidor (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972). Consulta [instrucciones](https://www.microsoft.com/download/details.aspx?id=28972)para ver los pasos de instalación.
+## <a name="installing-the-active-directory-module-for-windows-powershell"></a>Instalar el módulo de Active Directory para Windows PowerShell
+El módulo de Active Directory para Windows PowerShell se instala de forma predeterminada cuando se instala el rol de servidor AD DS en un servidor que ejecuta Windows Server 2012. No se necesita ningún paso adicional además de agregar el rol de servidor. También puede instalar el módulo de Active Directory en un servidor que ejecuta Windows Server 2012 mediante la instalación de herramientas de administración remota del servidor, y puede instalar el módulo de Active Directory en un equipo que ejecuta Windows 8 descargando e instalando el [ Herramientas administrativas de servidor remoto (RSAT)](https://www.microsoft.com/download/details.aspx?id=28972). Consulte [Instrucciones](https://www.microsoft.com/download/details.aspx?id=28972)para obtener pasos de instalación.
 
-## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>Escenarios de pruebas de Windows PowerShell para los cmdlets de administración de replicación y topología de Active Directory
-Los siguientes escenarios están diseñados para que los administradores familiarizarse con los cmdlets de administración nuevo:
+## <a name="scenarios-for-testing-windows-powershell-for-active-directory-replication-and-topology-management-cmdlets"></a>Escenarios para probar los cmdlets de administración de la replicación y la topología de Windows PowerShell para Active Directory
+Los siguientes escenarios están diseñados para que los administradores se familiaricen con los nuevos cmdlets de administración:
 
--   Obtener una lista de todos los controladores de dominio y sus correspondientes sitios
+-   Obtener una lista de todos los controladores de dominio y sus sitios correspondientes
 
 -   Administrar la topología de replicación
 
--   Información y ver el estado de replicación
+-   Ver la información de estado de replicación
 
-## <a name="lab-requirements"></a>Requisitos de laboratorio
+## <a name="lab-requirements"></a>Requisitos del laboratorio
 
--   Dos de los controladores de dominio de Windows Server 2012: **DC1** y **DC2** que forman parte del dominio contoso.com y residen en el sitio corporativo en ese dominio.
+-   Dos controladores de dominio de Windows Server 2012: **DC1** y **DC2** que forman parte del dominio contoso.com y residen en el sitio CORPORATE dentro de ese dominio.
 
-## <a name="view-domain-controllers-and-their-sites"></a>Ver sus sitios y los controladores de dominio
-En este paso, usarás el Active Directory módulo de Windows PowerShell para ver los controladores de dominio existentes y la topología de replicación del dominio.
+## <a name="view-domain-controllers-and-their-sites"></a>Ver controladores de dominio y sus sitios
+En este paso usará el módulo de Active Directory para Windows PowerShell que permite ver los controladores de dominio existentes y la topología de replicación para el dominio.
 
-Para completar los pasos descritos en los siguientes procedimientos, debes ser miembro del grupo Domain Admins o tener permisos equivalentes.
+Para completar los pasos de los procedimientos siguientes debe ser miembro del grupo Admins. del dominio o tener permisos equivalentes.
 
 #### <a name="to-view-all-active-directory-sites"></a>Para ver todos los sitios de Active Directory
 
-1.  En **DC1**, haz clic en **Windows PowerShell** en la barra de tareas.
+1.  En **DC1**, haga clic en **Windows PowerShell** en la barra de tareas.
 
-2.  Escribe el siguiente comando:
+2.  Escribe el comando siguiente:
 
     `Get-ADReplicationSite -Filter *`
 
-    Esto devuelve información detallada acerca de cada sitio. La `Filter`parámetro se usa a lo largo de los cmdlets de PowerShell de Active Directory para limitar la lista de los objetos devueltos. En este caso, el asterisco (*) indica todos los objetos de sitio.
+    Devuelve información detallada sobre cada sitio. El parámetro `Filter` se usa en todos los cmdlets Active Directory de PowerShell para limitar la lista de objetos devueltos. En este caso, el asterisco (*) indica todos los objetos del sitio.
 
     > [!TIP]
-    > Puedes usar la tecla Tab para Autocompletar comandos en Windows PowerShell.
+    > Puede usar la tecla Tab para autocompletar los comandos de Windows PowerShell.
     > 
-    > Ejemplo: Escriba `Get-ADRep`y presione la tecla Tab varias veces para pasar por los comandos coincidentes hasta llegar a `Get-ADReplicationSite`. Autocompletar funciona también para los nombres de los parámetros como `Filter`.
+    > Por ejemplo: escriba `Get-ADRep` y presione la tecla TAB varias veces para omitir los comandos coincidentes hasta llegar a `Get-ADReplicationSite`. Autocompletar también funciona para los nombres de parámetro como `Filter`.
 
-    Para dar formato a la salida de la `Get-ADReplicationSite`comando como una tabla y limitar la visualización a campos específicos, puede canalizar la salida a la `Format-Table`comando (o "`ft`" para abreviar):
+    Para dar formato al resultado de la `Get-ADReplicationSite` comando como una tabla y limitar la visualización a campos específicos, puede canalizar la salida a la `Format-Table` comando (o "`ft`" para abreviar):
 
     `Get-ADReplicationSite -Filter * | ft Name`
 
-    Esto devuelve una versión más corta de la lista de sitios, incluyendo solo el campo de nombre.
+    Este comando devuelve una versión abreviada de la lista de sitios, que incluye solo el campo Name.
 
 #### <a name="to-produce-a-table-of-all-domain-controllers"></a>Para producir una tabla de todos los controladores de dominio
 
--   Escribe el siguiente comando en el **módulo de Active Directory para Windows PowerShell** símbolo del sistema:
+-   Escriba el siguiente comando en el símbolo del sistema del **módulo de Active Directory para Windows PowerShell** :
 
     `Get-ADDomainController -Filter * | ft Hostname,Site`
 
-    Este comando devuelve que los controladores de dominio hospedar nombre, así como sus asociaciones de sitio.
+    Este comando devuelve los nombres de host de los controladores de dominio, así como sus asociaciones de sitio.
 
 ## <a name="manage-replication-topology"></a>Administrar la topología de replicación
-En el paso anterior, después de ejecutar el comando, `Get-ADDomainController -Filter * | ft Hostname,Site`, **DC2** aparecía como parte de la **CORPORATE** sitio. En los siguientes procedimientos, vas a crear un nuevo sitio de sucursal, **BRANCH1**, crear un nuevo vínculo del sitio, establecer la frecuencia de replicación de costo del vínculo sitio y luego mover **DC2** a **BRANCH1**.
+En el paso anterior, después de ejecutar el comando, `Get-ADDomainController -Filter * | ft Hostname,Site`, **DC2** se incluyó como parte del sitio **CORPORATE** . En los procedimientos a continuación, creará el sitio de una nueva sucursal, **BRANCH1**, creará un nuevo vínculo de sitio, establecerá la frecuencia de replicación y el costo del vínculo de sitio y moverá **DC2** a **BRANCH1**.
 
-Para completar los pasos descritos en los siguientes procedimientos, debes ser miembro del grupo Domain Admins o tener permisos equivalentes.
+Para completar los pasos de los procedimientos siguientes debe ser miembro del grupo Admins. del dominio o tener permisos equivalentes.
 
-#### <a name="to-create-a-new-site"></a>Para crear un nuevo sitio
+#### <a name="to-create-a-new-site"></a>Para crear un sitio nuevo
 
--   Escribe el siguiente comando en el **módulo de Active Directory para Windows PowerShell** símbolo del sistema:
+-   Escriba el siguiente comando en el símbolo del sistema del **módulo de Active Directory para Windows PowerShell** :
 
     `New-ADReplicationSite BRANCH1`
 
-    Este comando crea el nuevo sitio de sucursal, branch1.
+    Este comando crea un nuevo sitio de sucursal, branch1.
 
-#### <a name="to-create-a-new-site-link"></a>Para crear un nuevo vínculo de sitio
+#### <a name="to-create-a-new-site-link"></a>Para crear un vínculo de sitio nuevo
 
--   Escribe el siguiente comando en el **módulo de Active Directory para Windows PowerShell** símbolo del sistema:
+-   Escriba el siguiente comando en el símbolo del sistema del **módulo de Active Directory para Windows PowerShell** :
 
     `New-ADReplicationSiteLink 'CORPORATE-BRANCH1'  -SitesIncluded CORPORATE,BRANCH1 -OtherAttributes @{'options'=1}`
 
-    Este comando crea el vínculo a sitios **BRANCH1** y activado el proceso de notificación de cambio.
+    Este comando creó el vínculo de sitio a **BRANCH1** y activó el proceso de notificación de cambios.
 
     > [!TIP]
-    > Usa la pestaña a nombres de Autocompletar parámetro como `-SitesIncluded`y `-OtherAttributes`en lugar de escribir en ellos manualmente.
+    > Use la tecla TAB para autocompletar los nombres de parámetro como `-SitesIncluded` y `-OtherAttributes` en lugar de escribirlos manualmente.
 
-#### <a name="to-set-the-site-link-cost-and-replication-frequency"></a>Para establecer la frecuencia de replicación de costo del vínculo sitio
+#### <a name="to-set-the-site-link-cost-and-replication-frequency"></a>Para establecer el costo del vínculo de sitio y la frecuencia de replicación
 
--   Escribe el siguiente comando en el **módulo de Active Directory para Windows PowerShell** símbolo del sistema:
+-   Escriba el siguiente comando en el símbolo del sistema del **módulo de Active Directory para Windows PowerShell** :
 
     `Set-ADReplicationSiteLink CORPORATE-BRANCH1 -Cost 100 -ReplicationFrequencyInMinutes 15`
 
-    Este comando establece el costo del vínculo **BRANCH1** en **100** y establecer la frecuencia de replicación con el sitio para **15 minutos **.
+    Este comando establece el costo del vínculo de sitio a **BRANCH1** en **100** y establece la frecuencia de replicación con el sitio en **15 minutos**.
 
-#### <a name="to-move-a-domain-controller-to-a-different-site"></a>Para mover un controlador de dominio a otro sitio
+#### <a name="to-move-a-domain-controller-to-a-different-site"></a>Para mover un controlador de dominio a un sitio distinto
 
--   Escribe el siguiente comando en el **módulo de Active Directory para Windows PowerShell** símbolo del sistema:
+-   Escriba el siguiente comando en el símbolo del sistema del **módulo de Active Directory para Windows PowerShell** :
 
     `Get-ADDomainController DC2 | Move-ADDirectoryServer -Site BRANCH1`
 
-    Este comando mueve el controlador de dominio, **DC2** a la **BRANCH1** sitio.
+    Este comando mueve el controlador de dominio, **DC2** , al sitio **BRANCH1** .
 
-### <a name="verification"></a>Verificación
+### <a name="verification"></a>Comprobación
 
-##### <a name="to-verify-site-creation-new-site-link-and-cost-and-replication-frequency"></a>Para comprobar la creación de sitios, el nuevo vínculo a sitios y la frecuencia de costo y la replicación
+##### <a name="to-verify-site-creation-new-site-link-and-cost-and-replication-frequency"></a>Para comprobar la creación de un sitio, el nuevo vínculo de sitio y el costo y la frecuencia de replicación
 
--   Haz clic en **administrador del servidor**, haz clic en **herramientas** y, a continuación, haz clic en **servicios y sitios de Active Directory** y comprueba lo siguiente:
+-   Haga clic en **Administrador del servidor**, en **Herramientas** y en **Sitios y servicios de Active Directory**, y compruebe lo siguiente:
 
-    Comprueba que la **BRANCH1** sitio contiene todos los valores correctos de los comandos de Windows PowerShell.
+    Compruebe que el sitio **BRANCH1** contenga todos lo valores correctos desde los comandos de Windows PowerShell.
 
-    Comprueba la **CORPORATE BRANCH1** vínculo del sitio, se crea y se conecta el **BRANCH1** y **CORPORATE** sitios.
+    Compruebe que el vínculo de sitio **CORPORATE-BRANCH1** esté creado y se conecte con los sitios **BRANCH1** y **CORPORATE**.
 
-    Comprobar **DC2** está ahora en la **BRANCH1** sitio. Como alternativa, puedes abrir el **módulo Active Directory para Windows PowerShell** y escribe el siguiente comando para comprobar **DC2** está ahora en la **BRANCH1** sitio:`Get-ADDomainController -Filter * | ft Hostname,Site`.
+    Compruebe que **DC2** esté ahora en el sitio **BRANCH1** . También puede abrir el **módulo de Active Directory para Windows PowerShell** y escribir el siguiente comando para comprobar que **DC2** esté ahora en el sitio **BRANCH1**: `Get-ADDomainController -Filter * | ft Hostname,Site`.
 
-## <a name="view-replication-status-information"></a>Consultar información de estado de replicación
-En los siguientes procedimientos, usarás uno de Windows PowerShell para la replicación de Active Directory y cmdlets de administración, `Get-ADReplicationUpToDatenessVectorTable DC1`, para generar un informe de replicación simple con la tabla de vector de actualización mantenida cada controlador de dominio. En esta tabla de vector grado realiza un seguimiento de la escritura USN original visto cada controlador de dominio del bosque.
+## <a name="view-replication-status-information"></a>Ver la información de estado de replicación
+En los siguientes procedimientos, usará uno de los cmdlets de administración y replicación de Windows PowerShell para Active Directory, `Get-ADReplicationUpToDatenessVectorTable DC1`, para generar un informe de replicación simple usando la tabla de vectores de actualización mantenida por cada controlador de dominio. Esta tabla de vectores de actualización hace un seguimiento del USN de escritura de origen más alto visto desde cada controlador de dominio en el bosque.
 
-Para completar los pasos descritos en los siguientes procedimientos, debes ser miembro del grupo Domain Admins o tener permisos equivalentes.
+Para completar los pasos de los procedimientos siguientes debe ser miembro del grupo Admins. del dominio o tener permisos equivalentes.
 
-#### <a name="to-view-the-up-to-dateness-vector-table-for-a-single-domain-controller"></a>Para ver la tabla de vector de actualización para un controlador de dominio
+#### <a name="to-view-the-up-to-dateness-vector-table-for-a-single-domain-controller"></a>Para ver la tabla de vectores de actualización para un solo controlador de dominio
 
-1.  Escribe el siguiente comando en el **módulo de Active Directory para Windows PowerShell** símbolo del sistema:
+1.  Escriba el siguiente comando en el símbolo del sistema del **módulo de Active Directory para Windows PowerShell** :
 
     `Get-ADReplicationUpToDatenessVectorTable DC1`
 
-    Esto muestra una lista de los más altos USN visto por **DC1** para cada controlador de dominio del bosque. La **Server** valor hace referencia al servidor de mantenimiento de la tabla, en este caso **DC1**. La **Partner** valor hace referencia a los asociados de replicación (directo o indirecto) en el que se realizaron cambios. El valor de UsnFilter es el mayor USN visto por **DC1** de socio. Si se agrega un nuevo controlador de dominio en el bosque, no aparecerá en **DC1**de tabla hasta **DC1** recibe un cambio que se origina desde el nuevo dominio.
+    Esto muestra una lista de los USN más altos que **DC1** ve para cada controlador de dominio del bosque. El valor **Server** hace referencia al servidor que mantiene la tabla, en este caso, **DC1**. El valor **Partner** hace referencia al asociado de replicación (directo o indirecto) en el que se realizaron los cambios. El valor UsnFilter es el USN más alto que **DC1** ve desde Partner. Si se agrega un nuevo controlador de dominio al bosque, no aparecerá en **DC1**tabla hasta **DC1** reciba un cambio que se originó en el nuevo dominio.
 
-#### <a name="to-view-the-up-to-dateness-vector-table-for-all-domain-controllers-in-a-domain"></a>Para ver la tabla de vector de actualización para todos los controladores de dominio en un dominio
+#### <a name="to-view-the-up-to-dateness-vector-table-for-all-domain-controllers-in-a-domain"></a>Para ver tabla de vectores de actualización para todos los controladores de dominio de un dominio
 
-1.  En el módulo de Active Directory para Windows PowerShell símbolo del sistema, escribe el siguiente comando:
+1.  Escriba el siguiente comando en el símbolo del sistema del módulo de Active Directory para Windows PowerShell:
 
     `Get-ADReplicationUpToDatenessVectorTable * | sort Partner,Server | ft Partner,Server,UsnFilter`
 
-    Este comando reemplaza **DC1** con `*`, por lo tanto, recopilar los datos de la tabla de vector de actualización de todos los controladores de dominio. Los datos se ordenan por **Partner** y **Server** y, a continuación, se muestran en una tabla.
+    Este comando reemplaza a **DC1** con `*`, y así recopila los datos de la tabla de vectores de actualización desde todos los controladores de dominio. Los datos se ordenan por **Partner** y **Server** , y después se muestran en una tabla.
 
-    La ordenación te permite comparar fácilmente el último USN visto por cada controlador de dominio para un duplicador determinado. Esto es una forma rápida de comprobar que la replicación se lleva a cabo a través de su entorno. Si la replicación funciona correctamente, los valores de UsnFilter notificados para un duplicador determinado deben ser bastante similares en todos los controladores de dominio.
+    La ordenación permite comparar fácilmente el último USN visto por cada controlador de dominio para un asociado de replicación determinado. Esta es una manera rápida de comprobar que se está realizando la replicación en el entorno. Si la réplica funciona correctamente, los valores de UsnFilter notificados para un asociado de replicación determinado deben ser bastante similares en todos los controladores de dominio.
 
-## <a name="see-also"></a>Consulta también
-[Avanzadas de réplica de Active Directory y administración de la topología mediante Windows PowerShell & #40; Nivel 200 & #41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
+## <a name="see-also"></a>Vea también
+[Avanzada de replicación de Active Directory y administración de la topología mediante Windows PowerShell &#40;nivel 200&#41;](Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)
 
 

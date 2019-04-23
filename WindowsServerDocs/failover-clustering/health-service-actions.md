@@ -1,32 +1,33 @@
 ---
-title: Acciones de servicio de estado
+title: Acciones de servicio de mantenimiento
 ms.prod: windows-server-threshold
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
 ms.topic: article
-ms.assetid: 
+ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
 ms.openlocfilehash: efdf8f04e68fcbdc7051e78d6725cb919e740ffa
-ms.sourcegitcommit: 583355400f6b0d880dc0ac6bc06f0efb50d674f7
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59843026"
 ---
-# <a name="health-service-actions"></a>Acciones de servicio de estado
+# <a name="health-service-actions"></a>Acciones de servicio de mantenimiento
 
 > Se aplica a Windows Server 2016
 
-El servicio de estado es una nueva característica de Windows Server 2016 que mejora la supervisión diarias y de la experiencia operativa clústeres ejecutan directa de los espacios de almacenamiento.
+El servicio de mantenimiento es una característica nueva en Windows Server 2016 que mejora la supervisión diaria y la experiencia operativa para los clústeres que ejecutan espacios de almacenamiento directo.
 
 ## <a name="actions"></a>Acciones  
 
-La siguiente sección describe los flujos de trabajo que estén automatizadas por el servicio de estado. Para comprobar que se realice una acción efectivamente se forma autónoma, o para realizar un seguimiento de su progreso o el resultado, el servicio de estado genera "Acciones". A diferencia de los registros, acciones desaparecen poco después de que han completado y están diseñados principalmente para proporcionar información sobre la actividad en curso, lo que puede afectar al rendimiento o la capacidad (por ejemplo, restaurar el estado de resistencia o volver a equilibrar datos).  
+En la sección siguiente se describen los flujos de trabajo que se automatizan mediante el servicio de mantenimiento. Para comprobar que se realiza una acción de forma autónoma, o para realizar el seguimiento de su progreso o resultado, el servicio de mantenimiento genera "acciones". A diferencia de los registros, las acciones desaparecen poco después de haberse completado y están pensadas principalmente para proporcionar información sobre la actividad en curso que pueda afectar al rendimiento o a la capacidad (por ejemplo, restauración de la resistencia o reequilibrio de datos).  
 
-### <a name="usage"></a>Uso de  
+### <a name="usage"></a>Uso  
 
-Una nuevo cmdlet de PowerShell muestra todas las acciones:  
+Un nuevo cmdlet de PowerShell muestra todas las acciones:  
 
 ```PowerShell
 Get-StorageHealthAction  
@@ -34,17 +35,17 @@ Get-StorageHealthAction
 
 ### <a name="coverage"></a>Cobertura  
 
-En Windows Server 2016, la **Get StorageHealthAction** cmdlet puede devolver cualquiera de la siguiente información:  
+En Windows Server 2016, el **Get-StorageHealthAction** cmdlet puede devolver cualquiera de la siguiente información:  
 
--   Retirada de conectividad, error de pérdida o disco físico no responde  
+-   Error en la retirada, conectividad perdida o disco físico no responde  
 
--   Cambiar el grupo de almacenamiento para utilizar disco físico de reemplazo  
+-   Cambio del grupo de almacenamiento para utilizar el disco físico de reemplazo  
 
--   Restaurar el estado de resistencia completo a datos  
+-   Restauración completa de la resistencia a los datos  
 
--   Volver a equilibrar el grupo de almacenamiento  
+-   Reequilibrio del grupo de almacenamiento  
 
-## <a name="see-also"></a>Consulta también
+## <a name="see-also"></a>Vea también
 
-- [Servicio de estado en Windows Server 2016](health-service-overview.md)
-- [Documentación del desarrollador, el código de muestra y referencia de API en MSDN](https://msdn.microsoft.com/windowshealthservice)
+- [Servicio de mantenimiento de Windows Server 2016](health-service-overview.md)
+- [Referencia de API en MSDN, código de ejemplo y documentación para desarrolladores](https://msdn.microsoft.com/windowshealthservice)

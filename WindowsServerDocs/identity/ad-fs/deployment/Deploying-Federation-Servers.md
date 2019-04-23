@@ -1,7 +1,7 @@
 ---
 ms.assetid: c4d83dd3-2846-4658-8b9c-93901ee69766
-title: "Implementación de los servidores de federación"
-description: 
+title: Implementación de servidores de federación
+description: ''
 author: billmath
 manager: femila
 ms.date: 05/31/2017
@@ -10,39 +10,40 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
 ms.openlocfilehash: 225e6b52ed46eef6f2ccacb5b0d9c6e6d880f475
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847176"
 ---
-# <a name="deploying-federation-servers"></a>Implementación de los servidores de federación
+# <a name="deploying-federation-servers"></a>Implementación de servidores de federación
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Para implementar los servidores de federación de los servicios de federación de Active Directory \(AD FS\), complete cada una de las tareas en [lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md).  
+Para implementar servidores de federación de Active Directory Federation Services \(AD FS\), realice cada una de las tareas de [lista de comprobación: Configuración de un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md).  
   
 > [!NOTE]  
-> Al usar esta lista de comprobación, te recomendamos que leas primero las referencias a la planificación de servidor de federación en la [Guía de diseño de AD FS en Windows Server 2012](https://technet.microsoft.com/library/dd807036.aspx) antes de comenzar los procedimientos para configurar los servidores. La lista de comprobación de este modo proporciona una mejor comprensión del proceso de diseño e implementación de los servidores de federación.  
+> Cuando se usa esta lista de comprobación, se recomienda que lea primero las referencias al planeamiento del servidor de federación en el [Guía de diseño de AD FS en Windows Server 2012](https://technet.microsoft.com/library/dd807036.aspx) antes de comenzar los procedimientos para configurar los servidores. La lista de comprobación de este modo proporciona una mejor comprensión del proceso de diseño e implementación de servidores de federación.  
   
 ## <a name="about-federation-servers"></a>Acerca de los servidores de federación  
-Los servidores de federación son equipos que ejecutan Windows Server 2008 con el software de AD FS instalado que se han configurado para el rol de servidor de federación de act. Los servidores de federación autentican o enrutan las solicitudes de cuentas de usuario en otras organizaciones y de los equipos cliente que se pueden ubicados en cualquier lugar en Internet.  
+Los servidores de federación son equipos que ejecutan Windows Server 2008 con el software AD FS instalado que se han configurado para actuar en el rol de servidor de federación. Los servidores de federación autentican o enrutan las solicitudes de cuentas de usuario de otras organizaciones y de los equipos cliente que pueden encontrarse en cualquier lugar en Internet.  
   
-El act de instalar el software de AD FS en un equipo y usar al Asistente para configuración del servidor de federación de AD FS a configurarla para el rol de servidor de federación lo convierte en un servidor de federación. También facilita la administración de AD FS en snap\ disponibles en el equipo en el **Start\\Administrative Tools\\** menú para que pueda especificar lo siguiente:  
+El hecho de instalar el software AD FS en un equipo y usar al Asistente para configuración del servidor de federación de AD FS para configurarlo para el rol de servidor de federación lo convierte en un servidor de federación. También hace que el complemento de administración de AD FS\-en disponibles en el equipo en el **iniciar\\herramientas administrativas\\**  menú para que pueda especificar lo siguiente:  
   
--   El nombre de host de AD FS donde aplicaciones y las organizaciones asociadas envía solicitudes de token y respuestas  
+-   El nombre de host de AD FS que las organizaciones asociadas y las aplicaciones enviará las solicitudes de token y respuestas  
   
--   El identificador de AD FS que las organizaciones asociadas y las aplicaciones se usa para identificar el nombre único o la ubicación de la organización  
+-   El identificador de AD FS que las organizaciones asociadas y las aplicaciones se usará para identificar el nombre único o la ubicación de su organización  
   
--   El certificado de firma token\ que todos los servidores de federación en una granja de servidores usará para el problema e inicia sesión tokens  
+-   El token\-firma de certificado que va a usar todos los servidores de federación en una granja de servidores a los tokens de problema y el inicio de sesión  
   
--   La ubicación de personalizada ASP.NET páginas Web de inicio de sesión del cliente, el cierre de sesión y detección de asociado de la cuenta que mejorará la experiencia del cliente  
+-   La ubicación de las páginas Web de ASP.NET personalizadas para el inicio de sesión de cliente, cierre de sesión y detección de asociado de cuenta que mejorará la experiencia del cliente  
   
     > [!NOTE]  
-    > La mayoría de estas opciones de \(UI\) de interfaz de usuario principal se encuentran en el archivo web.config en cada servidor de federación. El nombre de host de AD FS y los valores de identificador de AD FS no se especifican en el archivo web.config.  
+    > La mayoría de estos principales de interfaz de usuario \(UI\) configuración está contenida en el archivo web.config en cada servidor de federación. El nombre de host de AD FS y los valores de identificador de AD FS no se especifican en el archivo web.config.  
   
-Un motor de emisión de notificaciones que emite tokens basados en las credenciales de host de los servidores de federación \ (por ejemplo, nombre de usuario y password\) que se le presentan. Un token de seguridad es una unidad de datos firmada mediante cifrado que expresa una o más notificaciones. Una notificación es una declaración que sea un servidor \ (por ejemplo, nombre, identidad, clave, grupo, privilegios o capability\) acerca de un cliente. Después de comprobar las credenciales en el servidor de federación \ (a través de la process\ de inicio de sesión del usuario), se recopilan notificaciones para el usuario mediante el examen de los atributos de usuario que se almacenan en la tienda de atributo especificado.  
+Un motor de emisión de notificaciones que emite tokens basados en las credenciales de host de los servidores de federación \(por ejemplo, nombre de usuario y contraseña\) que se presentan a él. Un token de seguridad es una unidad de datos firmada mediante cifrado que expresa una o más notificaciones. Una notificación es una instrucción que hace que un servidor \(por ejemplo, nombre, identidad, clave, grupo, privilegio o capacidad\) acerca de un cliente. Una vez comprobadas las credenciales en el servidor de federación \(a través del proceso de inicio de sesión de usuario\), notificaciones para el usuario se recopilan mediante el examen de los atributos de usuario que se almacenan en el almacén de atributos especificado.  
   
-En federados Web Single\-Sign\-On \(SSO\) diseña \ (en el que dos o más organizaciones están involved\ los diseños de AD FS), reclamaciones pueden modificarse según las reglas de notificación para una parte específica de usuario de confianza. Las notificaciones están integradas en un token que se envía a un servidor de federación de la organización de partner de recurso. Después de que un servidor de federación de asociado de recurso recibe las notificaciones como notificaciones entrantes, ejecuta el motor de emisión de notificaciones para ejecutar un conjunto de reglas de notificación de filtro, pasa a través de, o transformar esas notificaciones. Las notificaciones están integradas, a continuación, en un nuevo token que se envía al servidor Web en el partner de recursos.  
+En Web único federado\-inicio de sesión\-en \(SSO\) diseños \(diseños AD FS en la que intervienen dos o más organizaciones\), las notificaciones se pueden modificar mediante reglas de notificación para un usuario de confianza específico la entidad. Las notificaciones están integradas en un símbolo (token) que se envía a un servidor de federación de la organización del asociado de recurso. Una vez que un servidor de federación del asociado de recurso recibe las notificaciones como las notificaciones entrantes, ejecuta el motor de emisión de notificaciones para ejecutar un conjunto de reglas de notificación para filtrar, transformas o pasas por dichas notificaciones. Las notificaciones están integradas, a continuación, en un nuevo token que se envía al servidor Web del asociado de recurso.  
   
-En el diseño Web SSO \ (un diseño de AD FS en el que solo una organización es involved\), un servidor de federación solo puede usarse para que los empleados puedan iniciar sesión una vez y seguir teniendo acceso a varias aplicaciones.  
+En el diseño SSO Web \(un diseño de AD FS en la que está implicada solo una organización\), un servidor de federación único puede usarse para que los empleados pueden iniciar sesión una vez y seguir teniendo acceso a varias aplicaciones.  
   

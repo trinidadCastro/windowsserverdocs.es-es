@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f8310baf659810d5d51587bafcc868c59ace61a
-ms.sourcegitcommit: 5b05bae2f47ef5d9f6940e13a2e8097f311206de
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "2304431"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59852056"
 ---
 # <a name="server-role-upgrade-and-migration-matrix-for-windows-server-2016"></a>Matriz de actualización y migración del rol de servidor para Windows Server 2016
 
@@ -30,7 +30,7 @@ En la cuadrícula de esta página se explican las opciones de actualización y m
 |Rol de servidor|¿Se puede actualizar desde Windows Server 2012 R2?|¿Se puede actualizar desde Windows Server 2012?|¿Se admite la migración?|¿La migración puede completarse sin tiempo de inactividad?|  
 |-------------------|----------|--------------|--------------|----------|  
 |Servicios de certificados de Active Directory| Sí|    Sí|    Sí|    No|
-|Servicios de dominio de ActiveDirectory|  Sí|    Sí|    Sí|    Sí|
+|Active Directory Domain Services|  Sí|    Sí|    Sí|    Sí|
 |Servicios de federación de Active Directory (AD FS)|  No| No| Sí|    No (es necesario agregar nuevos nodos a la granja)|
 |Active Directory Lightweight Directory Services|   Sí|    Sí|    Sí|    Sí|
 |Active Directory Rights Management Services|   Sí|    Sí|    Sí|    No|
@@ -42,7 +42,7 @@ En la cuadrícula de esta página se explican las opciones de actualización y m
 |Servicios de impresión y fax|    No| No| Sí (Printbrm.exe)| No|
 |Servicios de Escritorio remoto|   Sí, para todos los subroles, pero no se admite la granja de modo mixto|   Sí, para todos los subroles, pero no se admite la granja de modo mixto|   Sí|    No|
 |Servidor web (IIS)|  Sí|    Sí|    Sí|    No|
-|Experiencia con WindowsServer Essentials|  Sí|    N/A: nueva característica|  Sí|    No|
+|Experiencia con Windows Server Essentials|  Sí|    N/A: nueva característica|  Sí|    No|
 |Windows Server Update Services|    Sí|    Sí|    Sí|    No|
 |Carpetas de trabajo|  Sí|    Sí|    Sí|    Sí, en el clúster de WS 2012 R2, cuando se usa la [Actualización gradual de sistema operativo de clúster](https://technet.microsoft.com/windows-server-docs/failover-clustering/cluster-operating-system-rolling-upgrade).|
 

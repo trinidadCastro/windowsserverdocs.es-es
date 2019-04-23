@@ -1,6 +1,6 @@
 ---
 title: Vssadmin delete sombras
-description: Una descripción del comando vssadmin delete sombras.
+description: Una descripción del comando vssadmin eliminar sombras.
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -9,15 +9,15 @@ ms.technology: storage
 ms.date: 05/18/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 71119174c7fc5929eb4e1982183ba0aed7eb1735
-ms.sourcegitcommit: e0479b0114eac7f232e8b1e45eeede96ccd72b26
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "2082640"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59847096"
 ---
 # <a name="vssadmin-delete-shadows"></a>Vssadmin delete sombras
 
->Se aplica a: 10 de Windows, Windows 8.1, 2016 de Windows Server, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
 Elimina las instantáneas de un volumen especificado.
 
@@ -31,15 +31,15 @@ vssadmin delete shadows /for=<ForVolumeSpec> [/oldest | /all | /shadow=<ShadowID
 
 |Parámetro|Descripción|
 |---|---|
-|/ for = \ < ParaVolumenEspec >|Especifica qué de instantáneas se eliminarán.|
-|/ más antiguo|Elimina sólo la instantánea más antigua.|
-|/ all|Todos los de instantáneas de volumen especificado elimina.|
-|/ shadow = \ < IdDeInstantánea >|Elimina la instantánea especificada por IdDeInstantánea. Para obtener el identificador de instantánea, utilice el comando **vssadmin sombras de lista** . Cuando se especifica un identificador de instantánea, use el siguiente formato, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
-|/ silencioso|Especifica que el comando no mostrará los mensajes mientras se está ejecutando.|
+|/for=\<ForVolumeSpec>|Especifica qué de instantáneas se eliminarán.|
+|/oldest|Elimina solo las instantáneas más antiguas.|
+|/ all|Todas las instantáneas del volumen especificado elimina.|
+|/shadow=\<ShadowID>|Elimina la instantánea especificada por IdDeInstantánea. Para obtener el identificador de instantánea, use el **sombras de lista vssadmin** comando. Al especificar un Id. de instantánea, use el formato siguiente, donde cada *X* representa un carácter hexadecimal:<br><br>XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX|
+|/quiet|Especifica que el comando no mostrará los mensajes mientras se está ejecutando.|
 
 ## <a name="remarks"></a>Comentarios
 
-Sólo se pueden eliminar instantáneas de volumen con el tipo accesible para el cliente.
+Solo puede eliminar las instantáneas con el tipo accesible para el cliente.
 
 ## <a name="examples"></a>Ejemplos
 
@@ -51,6 +51,6 @@ vssadmin delete shadows /for=c: /oldest
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-* [Clave de la sintaxis de la línea de comandos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
+* [Clave de sintaxis de línea de comandos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771080(v%3dws.11))
 * [Vssadmin](vssadmin.md)
-* [Vssadmin sombras de lista](vssadmin-list-shadows.md)
+* [Sombras de lista vssadmin](vssadmin-list-shadows.md)

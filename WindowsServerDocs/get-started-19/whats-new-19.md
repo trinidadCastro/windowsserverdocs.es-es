@@ -8,37 +8,37 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: high
 ms.openlocfilehash: 4c454fc397b662e313d5cfb7ed02a83dc7059207
-ms.sourcegitcommit: e73fbe1046a8bd2bf4f24ccffc11465ad8dfab1d
-ms.translationtype: HT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "8992548"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59871846"
 ---
-# Novedades de Windows Server 2019
+# <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
-En este tema se describen algunas de las nuevas características de Windows Server 2019. Windows Server 2019 está creado sobre la sólida base de Windows Server 2016 y ofrece numerosas innovaciones en cuatro temas clave: Nube híbrida, seguridad, plataforma de aplicaciones e infraestructura hiperconvergida (HCI). Para descubrir las novedades de Windows Server, versión 1809, consulte [Novedades de Windows Server, versión 1809](../get-started/whats-new-in-windows-server-1809.md).
+En este tema se describen algunas de las nuevas características de Windows Server 2019. Windows Server 2019 se basa en la sólida base de Windows Server 2016 e incluye numerosas innovaciones en cuatro temas claves: Nube híbrida, seguridad, plataforma de aplicaciones e infraestructuras Hiperconvergidas (HCL). Para descubrir las novedades de Windows Server, versión 1809, consulte [Novedades de Windows Server, versión 1809](../get-started/whats-new-in-windows-server-1809.md).
 
-## General
+## <a name="general"></a>General
 
-### Experiencia de escritorio
+### <a name="desktop-experience"></a>Experiencia de escritorio
 
-Dado que Windows Server 2019 es una versión de canal de servicio a largo plazo (LTSC), incluye la <b>Experiencia de escritorio</b>. (No se incluye en Windows Server, versión 1709, Windows Server, versión 1803 o Windows Server, versión 1809, debido a que las versiones de canal semianual \(SAC\) no incluyen la Experiencia de escritorio de forma predeterminada; son estrictamente versiones de imagen de contenedor de Server Core y Nano Server). Al igual que con Windows Server 2016, durante la instalación del sistema operativo puedes elegir entre las instalaciones de Server Core o las de Server con Experiencia de escritorio.
+Dado que Windows Server 2019 es una versión de canal de servicio a largo plazo (LTSC), incluye la <b>Experiencia de escritorio</b>. (No se incluye en Windows Server, versión 1709, Windows Server, versión 1803 o Windows Server, versión 1809, porque el canal semianual \(SAC\) versiones no incluyen la experiencia de escritorio por diseño; son estrictamente Server Versiones de imagen de contenedor de Core y Nano Server.) Al igual que con Windows Server 2016, durante la instalación del sistema operativo puede elegir entre las instalaciones Server Core o servidor con las instalaciones de la experiencia de escritorio.
 
-### Información del sistema
+### <a name="system-insights"></a>Información del sistema
 
 Información del sistema es una nueva característica disponible en Windows Server 2019 que aporta funcionalidades de análisis predictivo local de forma nativa a Windows Server. Estas capacidades predictivas, cada una de ellas respaldada por un modelo de aprendizaje automático, analizan localmente datos del sistema de Windows Server, como los eventos y contadores de rendimiento, que proporcionan información sobre el funcionamiento de los servidores y ayudan a reducir los gastos operativos asociados a la administración reactiva de problemas en tus implementaciones de Windows Server.
 
-## Nube híbrida
+## <a name="hybrid-cloud"></a>Nube híbrida
 
-### Función de compatibilidad de aplicaciones de Server Core a petición
+### <a name="server-core-app-compatibility-feature-on-demand"></a>Función de compatibilidad de aplicaciones de Server Core a petición
 
 La [característica de compatibilidad de aplicaciones de Server Core a petición (FOD)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19) mejora significativamente la compatibilidad de las aplicaciones de la opción de instalación de Windows Server Core, al incluir un subconjunto de archivos binarios y componentes de Windows Server con la experiencia de escritorio sin agregar el propio entorno gráfico de la experiencia de escritorio de Windows Server.  Esto se hace para aumentar la funcionalidad y la compatibilidad de Server Core a la vez que se mantiene lo más simple posible.  
 
 Esta característica opcional a petición está disponible en una ISO independiente y se puede agregar solo a imágenes e instalaciones de Windows Server Core mediante DISM. 
 
-## Seguridad
+## <a name="security"></a>Seguridad
 
-### Protección contra amenazas avanzada de Windows Defender (ATP)
+### <a name="windows-defender-advanced-threat-protection-atp"></a>Protección contra amenazas avanzada de Windows Defender (ATP)
 
 Los sensores de plataforma profunda y las acciones de respuesta de ATP exponen ataques de nivel de kernel y memoria, y responden suprimiendo archivos malintencionados y finalizando procesos dañinos.
 
@@ -62,7 +62,7 @@ Los sensores de plataforma profunda y las acciones de respuesta de ATP exponen a
 Los comentarios de los clientes sugieren que es un concepto excelente, pero difícil de implementar.
 Para solucionar esta problemática, se crearon directivas de CI predeterminadas que habilitan a todos los archivos incluidos en Windows y aplicaciones de Microsoft, como SQL Server, y bloquean archivos ejecutables conocidos que pueden omitir la CI. 
 
-### Seguridad con Redes definidas por software (SDN)
+### <a name="security-with-software-defined-networking-sdn"></a>Seguridad con Redes definidas por software (SDN)
 
 [Seguridad con SDN](https://docs.microsoft.com/windows-server/networking/sdn/security/sdn-security-top) ofrece muchas características para aumentar la confianza del cliente en la ejecución de cargas de trabajo, de forma local, o como proveedor de servicios en la nube. 
 
@@ -70,15 +70,15 @@ Estas mejoras de seguridad están integradas en la plataforma completa de SDN qu
 
 Para obtener una lista completa de las novedades de SDN, consulta [Novedades de SDN para Windows Server 2019](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new).
 
-### Mejoras de las máquinas virtuales blindadas
+### <a name="shielded-virtual-machines-improvements"></a>Mejoras de las máquinas virtuales blindadas
 
-- **Mejoras de sucursal**
+- **Mejoras de office de rama**
 
     Ahora puedes ejecutar máquinas virtuales blindadas en máquinas con conectividad intermitente para el Servicio de protección de host al aprovechar las nuevas características [HGS reserva](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) y [modo sin conexión](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode). HGS de reserva te permite configurar un segundo conjunto de direcciones URL para Hyper-V para probar si no puede conectar con el servidor HGS principal.
 
     El modo sin conexión te permite continuar iniciando las máquinas virtuales blindadas, incluso si no se puede conectar a HGS, siempre y cuando la máquina virtual se haya iniciado correctamente una vez y no haya cambiado la configuración de seguridad del host.
 
-- **Solución de problemas de las mejoras**
+- **Mejoras de la solución de problemas**
 
     También hemos facilitado la [solución de problemas de las máquinas virtuales blindadas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando el soporte con el modo de sesión mejorada de VMConnect y PowerShell Direct. Estas herramientas son especialmente útiles si perdiste la conectividad de red con la VM y necesitas actualizar su configuración para restaurar el acceso. 
 
@@ -88,7 +88,7 @@ Para obtener una lista completa de las novedades de SDN, consulta [Novedades de 
 
     Si ejecutas entornos de sistemas operativos mixtos, Windows Server 2019 admite ahora la ejecución de Ubuntu, Red Hat Enterprise Linux y SUSE Linux Enterprise Server dentro de las máquinas virtuales blindadas.
 
-### HTTP/2 para una Web más rápida y segura
+### <a name="http2-for-a-faster-and-safer-web"></a>HTTP/2 para una Web más rápida y segura
 
 - Fusión mejorada de las conexiones para ofrecer una experiencia de exploración sin interrupciones y cifrada correctamente.
 
@@ -96,30 +96,30 @@ Para obtener una lista completa de las novedades de SDN, consulta [Novedades de 
 
 - Nuestro proveedor de congestión TCP predeterminado es ahora Cubic, para ofrecerte un mayor rendimiento.
 
-## Almacenamiento
+## <a name="storage"></a>Almacenamiento
 
 Estos son algunos de los cambios que hemos realizado para el almacenamiento en Windows Server 2019. Para obtener más información, consulta [Novedades del almacenamiento](../storage/whats-new-in-storage.md).
 
-### Servicio de migración de almacenamiento
+### <a name="storage-migration-service"></a>Servicio de migración de almacenamiento
 
 Servicio de migración de almacenamiento es una nueva tecnología que facilita migrar servidores a una versión más reciente de Windows Server. Proporciona una herramienta gráfica que inventaría los datos en los servidores, transfiere los datos y la configuración a servidores más recientes y entonces, opcionalmente, pasa las identidades de los servidores antiguos a los nuevos servidores, para que las aplicaciones y los usuarios no tengan que cambiar nada. Para obtener más información, consulta [Servicio de migración de almacenamiento](../storage/storage-migration-service/overview.md).
 
-### Espacios de almacenamiento directo
+### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directo
 
 Esta es una lista de novedades de Espacios de almacenamiento directo. Para obtener más información, consulta [Novedades de Espacios de almacenamiento directo](../storage/whats-new-in-storage.md#storage-spaces-direct).
 
-- **Desduplicación y compresión de volúmenes ReFS**
+- **Desduplicación y compresión de volúmenes de ReFS**
 - **Compatibilidad nativa con memoria persistente**
-- **Resistencia anidada para la infraestructura hiperconvergida de dos nodos en el borde**
-- **Clústeres de dos servidores usando una unidad flash USB como testigo**
+- **Resistencia anidada para las infraestructuras hiperconvergidas de dos nodos en el perímetro**
+- **Unidad flash de clústeres de dos servidores con un puerto USB como un testigo**
 - **Soporte técnico de Windows Admin Center**
 - **Historial de rendimiento**
 - **Escalar hasta 4 PB por clúster**
-- **La paridad acelerada por reflejos es el doble de rápida**
-- **Detección de valores atípicos de latencia de unidad**
+- **Paridad acelerada reflejado es 2 X más rápido**
+- **Unidad de detección de valores atípicos de latencia**
 - **Delimitar manualmente la asignación de volúmenes para aumentar la tolerancia a errores**
 
-### Réplica de almacenamiento
+### <a name="storage-replica"></a>Réplica de almacenamiento
 
 Estas son las novedades de Réplica de almacenamiento. Para obtener más información, consulta [Novedades de Réplica de almacenamiento](../storage/whats-new-in-storage.md#storage-replica).
 
@@ -128,27 +128,27 @@ Estas son las novedades de Réplica de almacenamiento. Para obtener más informa
 - Mejoras de rendimiento de registro de Réplica de almacenamiento
 - Soporte técnico de Windows Admin Center
 
-## Clústeres de conmutación por error
+## <a name="failover-clustering"></a>Clústeres de conmutación por error
 
 Esta es una lista de novedades de clústeres de conmutación por error. Para obtener más información, consulta [Novedades de clústeres de conmutación por error](../failover-clustering/whats-new-in-failover-clustering.md).
 
 - **Conjuntos de clústeres**
-- **Clústeres con reconocimiento de Azure**
+- **Clústeres de Azure**
 - **Migración de clúster entre dominios**
 - **Testigo USB**
-- **Mejoras de infraestructura de clústeres**
-- **La actualización con reconocimiento de clúster es compatible con Espacios de almacenamiento directo**
-- **Mejoras de testigo de recurso compartido de archivo**
-- **Refuerzo de clústeres**
-- **Clúster de conmutación por error ya no usa autenticación NTLM**
+- **Mejoras en la infraestructura de clúster**
+- **Actualización compatible con clústeres es compatible con espacios de almacenamiento directo**
+- **Mejoras de testigo de recurso compartido de archivos**
+- **Protección de clúster**
+- **Clúster de conmutación por error ya no utiliza la autenticación NTLM**
 
-## Plataforma de aplicaciones
+## <a name="application-platform"></a>Plataforma de aplicaciones
 
-### Contenedores de Linux en Windows
+### <a name="linux-containers-on-windows"></a>Contenedores de Linux en Windows
 
 Ahora es posible ejecutar contenedores basados en Linux y Windows en el mismo host de contenedor, usando el mismo demonio de Docker. Esto te permite tener un entorno de host de contenedor heterogéneo al tiempo que proporciona flexibilidad a los desarrolladores de aplicaciones.
 
-### Creación de soporte para Kubernetes
+### <a name="building-support-for-kubernetes"></a>Creación de soporte para Kubernetes
 
 Windows Server 2019 continúa con las mejoras de cálculo, redes y almacenamiento de las versiones del canal semianual necesarias para la compatibilidad con Kubernetes en Windows. Habrá más detalles disponibles en las próximas versiones de Kubernetes.
 
@@ -156,29 +156,29 @@ Windows Server 2019 continúa con las mejoras de cálculo, redes y almacenamient
 
 - Las cargas de trabajo implementadas en Kubernetes pueden usar la seguridad de red para proteger los servicios de Windows y Linux con herramientas incrustadas.
 
-### Mejoras de contenedor
+### <a name="container-improvements"></a>Mejoras de contenedor
     
-- **Mejora de la identidad integrada**
+- **Mejora de identidades integrada**
 
     Hemos facilitado la autenticación integrada de Windows en contenedores y la hemos vuelto más confiable, abordando varias limitaciones de versiones anteriores de Windows Server.
 
 - **Mejor compatibilidad de aplicaciones**
 
-    Se ha facilitado la introducción en contenedores de las aplicaciones basadas en Windows: se ha aumentado la compatibilidad de las aplicaciones para la imagen de *windowsservercore* existente. Para las aplicaciones con dependencias de API adicionales, ahora hay una imagen de terceros: *windows*.
+    Inclusión en contenedores de aplicaciones basadas en Windows solo es más fácil: La compatibilidad de aplicaciones ya existentes *windowsservercore* ha aumentado la imagen. Para las aplicaciones con dependencias de API adicionales, ahora hay una imagen de terceros: *windows*.
 
-- **Tamaño reducido y mayor rendimiento**
+- **Tamaño reducido y un rendimiento más alto**
 
     Se han mejorado los tamaños de descarga de imagen de contenedor base, el tamaño en el disco y los tiempos de inicio. Esto acelera los flujos de trabajo de contenedor.
 
-- **Experiencia de administración con Windows Admin Center \(preview\)**
+- **Experiencia de administración mediante Windows Admin Center \(versión preliminar\)**
 
     Hemos hecho que sea más sencillo que nunca antes la acción de ver qué contenedores se ejecutan en el equipo y de administrar contenedores individuales con una nueva extensión para Windows Admin Center. Busca la extensión "Contenedores" en la [fuente pública de Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/using-extensions).
 
-### Redes cifradas
+### <a name="encrypted-networks"></a>Redes cifradas
 
 [Redes cifradas](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new): el cifrado de red virtual permite el cifrado del tráfico de red virtual entre máquinas virtuales que se comunican entre sí dentro de subredes marcadas como **Cifrado habilitado**. También utiliza la Seguridad de la capa de transporte de datagrama (DTLS) en la subred virtual para cifrar los paquetes. DTLS protege frente a las interceptaciones, alteraciones y falsificaciones realizadas por cualquier persona con acceso a la red física.
 
-### Mejoras de rendimiento de red para las cargas de trabajo virtuales
+### <a name="network-performance-improvements-for-virtual-workloads"></a>Mejoras de rendimiento de red para las cargas de trabajo virtuales
 
 Las [mejoras de rendimiento de red para las cargas de trabajo virtuales](https://docs.microsoft.com/windows-server/networking/technologies/hpn/hpn-insider-preview) maximizan el rendimiento de red para las máquinas virtuales sin necesidad de realizar ajustes constantemente o de aprovisionar en exceso al host. Esto reduce las operaciones y el costo de mantenimiento a la vez que aumenta la densidad disponible de los hosts. Estas nuevas características son:
 
@@ -186,26 +186,26 @@ Las [mejoras de rendimiento de red para las cargas de trabajo virtuales](https:/
 
 * Cola múltiple de máquina virtual dinámica (d.VMMQ)
 
-### Transporte en segundo plano de retraso adicional bajo
+### <a name="low-extra-delay-background-transport"></a>Transporte en segundo plano de retraso adicional bajo
 
 El transporte en segundo plano de retraso adicional bajo (LEDBAT) es un proveedor de controles de congestión de red de optimización de latencia diseñado para producir automáticamente ancho de banda a usuarios y aplicaciones, a la vez que consume todo el ancho de banda disponible cuando no se está usando la red.   
 Esta tecnología está pensada para usarla en la implementación de actualizaciones críticas de gran tamaño en un entorno de TI sin afectar a los servicios orientados a los clientes y al ancho de banda asociado.
 
-### Servicio de hora de Windows
+### <a name="windows-time-service"></a>Servicio de hora de Windows
 
 El [Servicio de hora de Windows](https://docs.microsoft.com/windows-server/networking/windows-time-service/insider-preview) incluye soporte de segundo intercalar compatible con UTC real, un nuevo protocolo de hora denominado protocolo de tiempo de precisión y rastreabilidad integral.
 
 
-### Puertas de enlace SDN de alto rendimiento
+### <a name="high-performance-sdn-gateways"></a>Puertas de enlace SDN de alto rendimiento
 
 [Puertas de enlace SDN de alto rendimiento](https://docs.microsoft.com/windows-server/networking/sdn/gateway-performance) en Windows Server 2019 mejora considerablemente el rendimiento para las conexiones IPsec y GRE, proporcionando un rendimiento muy elevado con un uso mucho menor de la CPU.
 <br/>
 
-### Nueva extensión de Windows Admin Center e interfaz de usuario de implementación para SDN
+### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>Nueva extensión de Windows Admin Center e interfaz de usuario de implementación para SDN
 
 Ahora, gracias a Windows Server 2019, la implementación y administración son fáciles a través de una nueva interfaz de usuario de implementación y una extensión de Windows Admin Center que permiten que cualquier persona aproveche la capacidad de SDN. 
 
-### Soporte de memoria persistente para máquinas virtuales de Hyper-V
+### <a name="persistent-memory-support-for-hyper-v-vms"></a>Soporte de memoria persistente para máquinas virtuales de Hyper-V
 
 Para aprovechar el alto rendimiento y la baja latencia de la memoria persistente (también conocida como memoria de clase de almacenamiento) en máquinas virtuales, ahora se puede proyectar directamente en las máquinas virtuales. Esto puede ayudar a reducir drásticamente la latencia de transacción de base de datos o reducir los tiempos de recuperación para bases de datos en memoria de latencia baja en caso de error.
 

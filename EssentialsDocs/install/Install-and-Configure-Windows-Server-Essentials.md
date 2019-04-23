@@ -1,6 +1,6 @@
 ---
-title: Instalar y configurar Windows Server Essentials
-description: "Describe cómo usar Windows Server Essentials"
+title: Instalación y configuración de Windows Server Essentials
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 06/17/2013
 ms.prod: windows-server-2016-essentials
@@ -13,170 +13,171 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: cdad118c30fbf303b55ec7ea25bbe3e209c016db
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59870166"
 ---
-# <a name="install-and-configure-windows-server-essentials"></a>Instalar y configurar Windows Server Essentials
+# <a name="install-and-configure-windows-server-essentials"></a>Instalación y configuración de Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
 ##  <a name="BKMK_InstallConfigure"></a>   
 
- Este documento proporciona instrucciones paso a paso para instalar y configurar Windows Server Essentials. Antes de comenzar la instalación, revisar y realizar las tareas que se describen en [antes de que instalar Windows Server Essentials](Before-You-Install-Windows-Server-Essentials.md).  
+ Este documento proporciona instrucciones paso a paso para instalar y configurar Windows Server Essentials. Antes de comenzar la instalación, revise y complete las tareas que se describen en [antes de que instale Windows Server Essentials](Before-You-Install-Windows-Server-Essentials.md).  
 
- Este documento proporciona instrucciones paso a paso para instalar y configurar Windows Server Essentials. Antes de comenzar la instalación, revisar y realizar las tareas que se describen en [antes de que instalar Windows Server Essentials](../install/Before-You-Install-Windows-Server-Essentials.md).  
+ Este documento proporciona instrucciones paso a paso para instalar y configurar Windows Server Essentials. Antes de comenzar la instalación, revise y complete las tareas que se describen en [antes de que instale Windows Server Essentials](../install/Before-You-Install-Windows-Server-Essentials.md).  
   
  Instalar y configurar Windows Server Essentials en dos pasos:  
   
 
-1.  [Paso 1: Instalar el sistema operativo de Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials.md#BKMK_ManualInstallation) en este paso, instala el sistema operativo en el servidor.  
+1.  [Paso 1: Instalar el sistema operativo Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials.md#BKMK_ManualInstallation) en este paso, instale el sistema operativo en el servidor.  
   
-2.  [Paso 2: Configurar el sistema operativo de Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials.md#BKMK_Step2Configure) en este paso, completar la instalación proporcionando información sobre la empresa, la configuración de dominio y el Administrador de red. Esta información se usa para preparar el servidor para su uso.  
+2.  [Paso 2: Configurar el sistema operativo Windows Server Essentials](Install-and-Configure-Windows-Server-Essentials.md#BKMK_Step2Configure) en este paso, completar la instalación, ya que proporciona información acerca de su empresa, la configuración de dominio y Administrador de red. Esta información se utiliza para preparar el servidor para su uso.  
 
-1.  [Paso 1: Instalar el sistema operativo de Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md#BKMK_ManualInstallation) en este paso, instala el sistema operativo en el servidor.  
+1.  [Paso 1: Instalar el sistema operativo Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md#BKMK_ManualInstallation) en este paso, instale el sistema operativo en el servidor.  
   
-2.  [Paso 2: Configurar el sistema operativo de Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md#BKMK_Step2Configure) en este paso, completar la instalación proporcionando información sobre la empresa, la configuración de dominio y el Administrador de red. Esta información se usa para preparar el servidor para su uso.  
+2.  [Paso 2: Configurar el sistema operativo Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md#BKMK_Step2Configure) en este paso, completar la instalación, ya que proporciona información acerca de su empresa, la configuración de dominio y Administrador de red. Esta información se utiliza para preparar el servidor para su uso.  
 
   
-###  <a name="BKMK_ManualInstallation"></a>Paso 1: Instalar el sistema operativo de Windows Server Essentials  
+###  <a name="BKMK_ManualInstallation"></a> Paso 1: Instalar el sistema operativo Windows Server Essentials  
   
 > [!IMPORTANT]
->  Después de instalar el sistema operativo, no se personaliza tu servidor hasta que finalice [paso 2: configurar el sistema operativo de Windows Server Essentials](#BKMK_Step2Configure).  
+>  Después de instalar el sistema operativo, no personalice el servidor hasta que finalice [paso 2: Configurar el sistema operativo Windows Server Essentials](#BKMK_Step2Configure).  
   
- **El tiempo de finalización estimado:** aproximadamente 30 minutos.  
+ **Tiempo de finalización estimado:** Aproximadamente 30 minutos.  
   
 > [!NOTE]
->  Los tiempos de finalización estimada a lo largo de este procedimiento se basan en los requisitos mínimos de hardware.  
+>  Los tiempos de finalización estimados para este procedimiento se basan en los requisitos mínimos de hardware.  
   
 ##### <a name="to-install-the-operating-system"></a>Para instalar el sistema operativo  
   
-1.  Conectar el equipo a la red con un cable de red.  
+1.  Conecte el equipo a la red con un cable de red.  
   
     > [!IMPORTANT]
-    >  Desconecta el equipo desde la red durante la instalación. Si lo haces, pueden provocar un error en la instalación.  
+    >  Mantenga el equipo conectado a la red durante la instalación. Si no lo hace así, podría producirse un error en la instalación.  
   
-2.  Encienda el equipo y, a continuación, inserta el DVD de Windows Server Essentials en la unidad de DVD.  
+2.  Encienda el equipo y, a continuación, inserte el DVD de Windows Server Essentials en la unidad de DVD.  
   
-     Si estás realizando una instalación desatendida, conecta el medio extraíble (como un disco o una unidad flash USB) que contiene los archivos de respuesta. Según el contenido de los archivos de respuesta, no verás algunas o ninguna de las siguientes pantallas de instalación.  
+     Si va a realizar una instalación desatendida, conecte el medio extraíble (como un disquete o una unidad flash USB) que contenga los archivos de respuesta. Según el contenido de los archivos de respuesta, puede que no vea alguna o ninguna de las siguientes pantallas de instalación.  
   
-3.  Reinicia el equipo. Cuando el mensaje **presione cualquier tecla para arrancar desde un CD o DVD** aparece, presiona cualquier tecla.  
-  
-    > [!NOTE]
-    >  Si el equipo no se inicia desde el DVD, asegúrate de que la unidad de CD-ROM aparece en primer lugar en la secuencia de arranque de BIOS. Para obtener más información acerca de la secuencia de arranque de BIOS, consulta la documentación del fabricante del equipo.  
-  
-4.  Selecciona el **idioma** que quieras instalar, **formato de hora y moneda**, y **teclado o método de entrada**y, a continuación, haz clic en **siguiente**.  
-  
-5.  Haz clic en **instalar ahora**.  
-  
-6.  En **escribir la clave de producto**, escriba la clave de producto.  
-  
-7.  Leer la **términos de licencia**. Si aceptas, selecciona el **acepto los términos de licencia** y, a continuación, haz clic en **siguiente**.  
+3.  Reinicie el equipo. Cuando aparezca el mensaje **Presione cualquier tecla para iniciar desde el CD o el DVD** , presione una tecla.  
   
     > [!NOTE]
-    >  Si no eliges Aceptar los términos de licencia, la instalación no continuará.  
+    >  Si el equipo no se inicia desde el DVD, asegúrese de que la unidad de CD-ROM aparezca en primer lugar en la secuencia de arranque del BIOS. Para obtener más información acerca de la secuencia de arranque del BIOS, consulte la documentación del fabricante del equipo.  
   
-8.  ¿En **qué tipo de instalación desea? **, haz clic en **personalizada: instalar Windows solo (avanzado)**  
+4.  Seleccione el **Idioma** de la instalación, el **Formato de hora y moneda** y el **Teclado o método de entrada** y, a continuación, haga clic en **Siguiente**.  
   
-9. En **¿dónde desea instalar Windows? **, seleccionar el disco duro en la que desee instalar el sistema operativo Windows. Comprueba que todas las unidades de disco duras internas están disponibles para la instalación.  
+5.  Haga clic en **Instalar ahora**.  
+  
+6.  En **Escriba la clave del producto**, escriba la clave del producto.  
+  
+7.  Lea los **Términos de licencia**. Si los acepta, active la casilla **Acepto los términos de licencia** y, a continuación, haga clic en **Siguiente**.  
+  
+    > [!NOTE]
+    >  Si decide no aceptar los términos de licencia, la instalación no continuará.  
+  
+8.  En **qué tipo de instalación desea?**, haga clic en **personalizado: Instalar solo Windows (avanzado)**  
+  
+9. En **¿Dónde desea instalar Windows?**, seleccione la unidad de disco duro donde desea instalar el sistema operativo Windows. Compruebe que todas las unidades de disco duro internas estén disponibles para la instalación.  
   
     > [!IMPORTANT]
-    >   Windows Server Essentials debe estar instalado como el volumen C: y el tamaño del volumen debe tener al menos 60 GB. Se recomienda que crear dos particiones del disco del sistema operativo y no uses la unidad C: (partición del sistema) para almacenar datos empresariales.  
+    >   Windows Server Essentials debe estar instalado como volumen C:, y el tamaño del volumen debe ser al menos 60 GB. Se recomienda crear dos particiones en el disco del sistema operativo, en lugar de utilizar la C: (partición del sistema) para almacenar los datos de la empresa.  
   
     > [!NOTE]
-    >  Si no aparece una unidad de disco duro (por ejemplo, un disco duro de serie Advanced Technology Attachment (SATA)), debe cargar los controladores de dispositivo de disco duro. Obtener el controlador de dispositivo del fabricante y guardarla en un medio extraíble (como un disco o una unidad flash USB). Conecta el medio extraíble en el equipo y, a continuación, haz clic en **cargar controlador**.  
+    >  Si alguna de las unidades de disco duro no se muestra (por ejemplo, un disco duro Serial Advanced Technology Attachment (SATA)), deberá cargar los controladores de dispositivo de ese disco duro. Obtenga el controlador de dispositivo del fabricante y guárdelo en un medio extraíble (como un disquete o una unidad flash USB). Conecte el medio extraíble al equipo y, a continuación, haga clic en **Cargar controlador**.  
   
-     Si necesitas eliminar o crear particiones, consulte los siguientes pasos:  
+     Si necesita eliminar o crear particiones, consulte los siguientes pasos:  
   
-    1.  Para eliminar una partición, selecciona la partición, haz clic en **opciones de unidad (avanzadas)**y, a continuación, haz clic en **eliminar**. Después de eliminar la partición del sistema, crear una nueva partición mediante las instrucciones en cualquier paso **b** o paso **c**.  
+    1.  Para eliminar una partición, selecciónela, haga clic en **Opciones de unidad (avanzadas)** y, a continuación, haga clic en **Eliminar**. Después de eliminar la partición del sistema, cree una nueva partición siguiendo las instrucciones del paso **b** o del paso **c**.  
   
         > [!NOTE]
-        >  Después de hacer clic **opciones de unidad (avanzadas)**, que opción no volverá a aparecer. En ese caso, se omite la parte del paso hace referencia a las opciones de unidad.  
+        >  Una vez que ha hecho clic en **Opciones de unidad (avanzadas)**, esa opción no volverá a aparecer. En ese caso, omita la parte del paso que hace referencia a las opciones de unidad.  
   
-    2.  Para crear una partición de espacio en disco sin, haz clic en el disco duro que quieres crear particiones, haz clic en **opciones de unidad (avanzadas)**, haz clic en **nueva**y, a continuación, en la **tamaño** texto, escriba el tamaño de partición que quieras crear. Por ejemplo, si usas el tamaño de partición recomendada de 120 gigabytes (GB), escribe **122880**y, a continuación, haz clic en **aplicar**. Después de crea la partición, haz clic en **siguiente**. La partición es el formato antes de la instalación continúa.  
+    2.  Para crear una partición a partir de un espacio sin particionar, haga clic en el disco duro que desea particionar, haga clic en **Opciones de unidad (avanzadas)**, haga clic en **Nuevo** y, a continuación, en el cuadro de texto **Tamaño**, escriba la partición que desea crear. Por ejemplo, si utiliza el tamaño de partición recomendado de 120 gigabytes (GB), escriba **122880**y, a continuación, haga clic en **Aplicar**. Una vez creada la partición, haga clic en **Siguiente**. La partición se formatea antes de continuar la instalación.  
   
-    3.  Para crear una partición que use todo el espacio sin particiones, haz clic en el disco duro que quieres crear particiones, haz clic en **opciones de unidad (avanzadas)**, haz clic en **nueva**y, a continuación, haz clic en **aplicar** para aceptar el tamaño de partición predeterminado. Después de crea la partición, haz clic en **siguiente**. La partición es el formato antes de la instalación continúa.  
+    3.  Para crear una partición que utilice todo el espacio sin particionar, haga clic en el disco duro que desea particionar, haga clic en **Opciones de unidad (avanzadas)**, haga clic en **Nuevo** y, a continuación, haga clic en **Aplicar** para aceptar el tamaño de partición predeterminado. Una vez creada la partición, haga clic en **Siguiente**. La partición se formatea antes de continuar la instalación.  
   
         > [!IMPORTANT]
-        >  No puedes mover el sistema operativo en una partición diferente después de finalizar este paso.  
+        >  Tras finalizar este paso, no podrá mover el sistema operativo a otra partición.  
   
- Durante la instalación, se copian los archivos temporales en una carpeta de instalación en el equipo, que toma alrededor de 30 minutos. Después de instalar el sistema operativo de Windows Server Essentials, reinicia el equipo. Ahora ya estás listo para configurar el sistema operativo de Windows Server Essentials.  
+ Durante la instalación, los archivos temporales se copian en una carpeta de instalación en el equipo. Esta operación dura aproximadamente 30 minutos. Después de instalar el sistema operativo Windows Server Essentials, se reinicia el equipo. Ahora, está listo para configurar el sistema operativo Windows Server Essentials.  
   
-###  <a name="BKMK_Step2Configure"></a>Paso 2: Configurar el sistema operativo de Windows Server Essentials  
+###  <a name="BKMK_Step2Configure"></a> Paso 2: Configurar el sistema operativo Windows Server Essentials  
   
 > [!IMPORTANT]
->  Si vas a migrar desde una versión anterior de Windows Small Business Server para Windows Server Essentials, debes seguir un proceso distinto. Para obtener información acerca de las instalaciones de migración, consulta los siguientes temas:  
+>  Si va a migrar desde una versión anterior de Windows Small Business Server a Windows Server Essentials, debe seguir un proceso diferente. Para obtener información acerca de la migración de instalaciones, consulte:  
 >   
->  -   [Migrar de Windows SBS 2003](../migrate/Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
-> -   [Migrar de Windows SBS 2008](../migrate/Migrate-Windows-Small-Business-Server-2008-to-Windows-Server-Essentials.md)  
+>  -   [Migrar desde Windows SBS 2003](../migrate/Migrate-Windows-Small-Business-Server-2003-to-Windows-Server-Essentials.md)  
+> -   [Migrar desde Windows SBS 2008](../migrate/Migrate-Windows-Small-Business-Server-2008-to-Windows-Server-Essentials.md)  
   
- Durante esta fase de la instalación, se le pedirá a algunas preguntas acerca de la organización. Esta información se usa para configurar el sistema operativo.  
+ Durante esta fase de la instalación, se le pedirá que responda a unas preguntas acerca de su organización. Esta información se utiliza para configurar el sistema operativo.  
   
 > [!IMPORTANT]
->  Antes de comenzar este paso, asegúrate de que el adaptador de red local está conectado a un enrutador o un conmutador que está activado y funciona correctamente.  
+>  Antes de comenzar este paso, asegúrese de que el adaptador de red local esté conectado a un enrutador o a un conmutador que esté encendido y funcione correctamente.  
   
- **El tiempo de finalización estimado:** aproximadamente 30 minutos  
+ **Tiempo de finalización estimado:** Aproximadamente 30 minutos  
   
 ##### <a name="to-configure-the-operating-system"></a>Para configurar el sistema operativo  
   
-1.  En la **comprobar la fecha y la configuración de tiempo** página, haz clic en **cambiar la fecha del sistema y la configuración de tiempo** para seleccionar la configuración de fecha, hora y zona horaria para que el servidor. Cuando hayas terminado, haz clic en **siguiente**.  
+1.  En la página **Compruebe la configuración de fecha y hora** , haga clic en **Cambiar la configuración de fecha y hora del sistema** para seleccionar la configuración de fecha, hora y zona horaria de su servidor. Cuando haya terminado, haga clic en **Siguiente**.  
   
     > [!IMPORTANT]
-    >  Si vas a instalar Windows Server Essentials en una máquina virtual, asegúrate de que eliges la misma configuración de zona horaria que usa el sistema operativo host. Si la configuración de zona horaria varía, la instalación del servidor no puede realizarse correctamente.  
+    >  Si va a instalar Windows Server Essentials en una máquina virtual, asegúrese de que elija la misma configuración de zona horaria que se está utilizando el sistema operativo host. Si la configuración de zona horaria es diferente, puede que la instalación del servidor no se realice correctamente.  
   
-2.  En la **elegir el modo de instalación de servidor** página, realiza una de las siguientes acciones:  
+2.  En la página **Elegir el modo de instalación del servidor** , realice uno de los siguientes pasos:  
   
-    1.  Elige **instalación limpia** para configurar una nueva instalación del software de servidor de Windows Server Essentials.  
+    1.  Elija **una instalación limpia** para configurar una instalación completamente nueva del software del servidor de Windows Server Essentials.  
   
-    2.  Elige **migración de servidor** para instalar Windows Server Essentials y unirte a este servidor a un dominio de Windows existente.  
+    2.  Elija **migración del servidor** para instalar Windows Server Essentials y unir este servidor a un dominio de Windows existente.  
   
-3.  En la **personalizar tu servidor**, escriba el nombre de la organización, un nombre de dominio interno y el nombre del servidor.  
+3.  En la página **Personalice el servidor**, escriba el nombre de la organización, un nombre del dominio interno y el nombre del servidor.  
   
     > [!IMPORTANT]
-    >  El nombre del servidor debe ser un nombre único de la red. No puedes cambiar el nombre del servidor o el nombre de dominio interno después de finalizar este paso.  
+    >  El nombre del servidor debe ser un nombre único en la red. Una vez finalizado este paso, no podrá cambiar el nombre del servidor ni el nombre del dominio interno.  
   
-4.  Haz clic en **siguiente**.  
+4.  Haz clic en **Siguiente**.  
   
-5.  En la **proporcionar información de tu cuenta de administrador**, escriba la información para una nueva cuenta de administrador.  
+5.  En la página **Especifique la información de la cuenta de administrador** , escriba la información de una nueva cuenta de administrador.  
   
     > [!CAUTION]
-    >  No nombre de la cuenta de administrador de red de administrador o administrador de red. Estos nombres de cuenta están reservados para su uso por el sistema.  
+    >  No asigne a la cuenta de administrador de red, administrador o administrador de red. Estos nombres de cuenta están reservados para el sistema.  
   
-6.  En la **proporcionar información de tu cuenta de usuario estándar** página, escribe la información para una nueva cuenta de usuario estándar y, a continuación, haz clic en **siguiente**.  
+6.  En la página **Especifique la información de su cuenta de usuario estándar** , escriba la información de una nueva cuenta de usuario estándar y, a continuación, haga clic en **Siguiente**.  
   
-7.  En la **mantener tu servidor actualizados automáticamente** página, selecciona cómo deseas recibir las actualizaciones de Windows de tu servidor y, a continuación, haz clic en **siguiente**.  
+7.  En la página **Mantenga el servidor actualizado automáticamente**, seleccione cómo desea recibir actualizaciones de Windows para el servidor y, a continuación, haga clic en **Siguiente**.  
   
-8.  La **actualizar y preparar el servidor** página muestra el progreso del proceso de instalación final. Esto tarda en completarse, y el equipo reiniciará un par de veces.  
+8.  La página **Actualizar y preparar el servidor** muestra el progreso del proceso final de instalación. Esta operación tarda tiempo en realizarse, y el equipo se reiniciará un par de veces.  
   
-9. El último servidor después de reiniciar, el **el servidor está listo para usarse** aparecerá la página. Haz clic en **cerrar **.  
+9. Al finalizar el último reinicio del servidor, aparece la página **El servidor está listo para utilizarse** . Haga clic en **Cerrar**.  
   
-10. Haz clic en el icono de escritorio en la **inicio** de pantalla y, a continuación, en el panel, completa la **establecer mi servidor** tareas en la **Home** página. Debes completar estas tareas inmediatamente una vez finalizada la instalación de Windows Server Essentials.  
+10. Haga clic en el icono Panel de la pantalla **Inicio** y, a continuación, en el Panel, realice las tareas de **Configurar el servidor** en la página **Inicio** . Estas tareas se deben realizar inmediatamente después de que finalice la instalación de Windows Server Essentials.  
   
 > [!NOTE]
->  Una vez finalizada la instalación, se registran automáticamente el servidor con la nueva cuenta de administrador que agregaste durante la instalación. La contraseña de cuenta predefinida de administrador se establece en la misma contraseña que la nueva cuenta de administrador y, a continuación, se deshabilita la cuenta predefinida de administrador.  
+>  Una vez finalizada la instalación, iniciará automáticamente la sesión en el servidor con la nueva cuenta de administrador que agregó durante este proceso. La contraseña de la cuenta de administrador integrada se configura con la misma contraseña que la nueva cuenta de administrador y, a continuación, se deshabilita la cuenta de administrador integrada.  
   
- Puedes usar tu servidor recién instalado para una cantidad limitada de tiempo (conocido como el período de evaluación) sin necesidad de escribir una clave de producto. Después del período de evaluación, tienes que escribir una clave de producto para activar el servidor o ampliar el período de evaluación. Puedes extender el período de evaluación un máximo de dos veces. Cuando se alcance el número máximo de días permitidos para el período de evaluación, debe activar el servidor con una clave de producto.  
+ Puede usar el servidor recién instalado durante un período limitado de tiempo (conocido como el período de evaluación) sin escribir una clave de producto. Después del período de evaluación, debe escribir una clave de producto para activar el servidor o ampliar dicho período. El período de evaluación se puede ampliar dos veces como máximo. Al llegar al número máximo de días permitidos para el período de evaluación, debe activar el servidor con una clave de producto.  
   
 ### <a name="customize-windows-server-essentials"></a>Personalizar Windows Server Essentials  
- La **Home** página del panel Windows Server Essentials vínculos a **instalación** tareas que se deben realizar inmediatamente después de instalación el servidor. Al realizar estas tareas, puedes ayudar a proteger la información que se almacena en el servidor y habilitar las características que están disponibles en Windows Server Essentials.  
+ El **inicio** página del panel de Windows Server Essentials se vincula a **instalación** las tareas que debe completar inmediatamente después de instalación el servidor. Al realizar estas tareas, puede ayudar a proteger la información que se almacena en el servidor y habilitar las características que están disponibles en Windows Server Essentials.  
   
- Si eliges no realizar las tareas, los usuarios no tendrán acceso a algunas características de red. Para volver a estas tareas más adelante, vuelve al escritorio de Windows Server Essentials **Home** página.  
+ Si opta por no realizar las tareas, puede que los usuarios no tengan acceso a algunas de las características de red. Para volver a estas tareas más adelante, volver al panel de Windows Server Essentials **inicio** página.  
   
- La siguiente tabla define los elementos que pueden aparecer en la lista de tareas de configuración.  
+ En la siguiente tabla se definen los elementos que pueden aparecer en la lista de tareas de configuración.  
   
 |Tarea|Descripción
 |----------|-----------------|  
-|Obtener actualizaciones para otros productos de Microsoft|Haz clic en esta tarea para tener acceso a un vínculo que se ejecuta una herramienta que te permite especificar si quieres usar Microsoft Update para obtener automáticamente actualizaciones para Windows Server Essentials y otros productos de Microsoft como Office.  
-|Agregar cuentas de usuario|Haz clic en esta tarea para ver información resumida acerca de cómo agregar cuentas de usuario. Un vínculo a ejecutar el **agrega un asistente de cuenta de usuario** se proporciona. Para obtener más información, consulta [agregar una cuenta de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1).  
-|Agregar carpetas de servidor|Haz clic en esta tarea para ver información resumida acerca de cómo agregar carpetas del servidor. Un vínculo a ejecutar el **carpeta Asistente para agregar un** se proporciona. También proporciona es un vínculo a un tema de ayuda en línea sobre el uso de carpetas del servidor. Para obtener más información, consulta [agregar o mover una carpeta del servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5). 
-|Configurar copia de seguridad del servidor|Haz clic en esta tarea para ver información resumida acerca del uso de copia de seguridad del servidor para proteger los datos. Un vínculo a ejecutar el **servidor copia de seguridad Asistente para configurar el** se proporciona. Para obtener más información, consulta [establecer hacia arriba o personalizar copias de seguridad del servidor](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1). 
-|Configurar acceso desde cualquier lugar|Haz clic en esta tarea para ver información resumida acerca de la característica de acceso desde cualquier lugar en Windows Server Essentials. Un vínculo a la **configuración de acceso desde cualquier lugar** se proporciona la página. Para obtener más información, consulta [administrar acceso desde cualquier lugar](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md). 
-|Configurar la notificación de alertas por correo electrónico|Haz clic en esta tarea para ver información resumida acerca de la notificación de alertas por correo electrónico. Un vínculo a ejecutar el **configurar correo electrónico notificación de alertas** se proporciona la herramienta. Para obtener más información, consulta [configurar notificaciones de correo electrónico de alertas](../manage/Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email).  
-|Configurar el servidor multimedia|Haz clic en esta tarea para ver información resumida sobre el uso de servidor multimedia para compartir la música, vídeos y archivos de imagen. Un vínculo a la **configuración multimedia** se proporciona la página. También proporciona es un vínculo a un tema de ayuda en línea para obtener más información sobre el servidor multimedia. Para obtener más información, consulta [administrar archivos multimedia digitales](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md). 
-|Conectar equipos|Haz clic en esta tarea para ver información resumida sobre cómo conectar un equipo de red al servidor. Para obtener más información, consulta [conectar equipos con el servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).
+|Obtener actualizaciones para otros productos de Microsoft|Haga clic en esta tarea para tener acceso a un vínculo que se ejecuta una herramienta que le permite especificar si desea usar Microsoft Update para obtener automáticamente actualizaciones para Windows Server Essentials y otros productos de Microsoft como Office.  
+|Agregar cuentas de usuario|Haga clic en esta tarea para ver información breve acerca de cómo agregar cuentas de usuario. Se proporciona un vínculo al **Asistente para agregar cuentas de usuario**. Para obtener más información, consulte [Add a user account](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md#BKMK_Manage1).  
+|Agregar carpetas de servidor|Haga clic en esta tarea para ver información breve acerca de cómo agregar carpetas de servidor. Se proporciona un vínculo al **Asistente para agregar carpetas**. También se proporciona un vínculo a un tema de ayuda en pantalla acerca del uso de carpetas de servidor. Para obtener más información, vea cómo [agregar o mover una carpeta del servidor](../manage/Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5). 
+|Configurar copia de seguridad del servidor|Haga clic en esta tarea para ver información breve acerca del uso de Copia de seguridad del servidor para proteger sus datos. Se proporciona un vínculo al **Asistente para configuración de copia de seguridad del servidor** . Para obtener más información, vea cómo [configurar o personalizar una copia de seguridad del servidor](../manage/Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1). 
+|Configurar Acceso desde cualquier lugar|Haga clic en esta tarea para ver información breve acerca de la característica acceso desde cualquier lugar en Windows Server Essentials. Se proporciona un vínculo a la página **Configuración de Acceso desde cualquier lugar**. Para obtener más información, consulte [Manage Anywhere Access](../manage/Manage-Anywhere-Access-in-Windows-Server-Essentials.md). 
+|Configurar notificación de alertas por correo electrónico|Haga clic en esta tarea para ver información breve acerca de la notificación de alertas por correo electrónico. Se proporciona un vínculo a la herramienta **Configurar notificación de alertas por correo electrónico**. Para obtener más información, consulte [Set up email notifications for alerts](../manage/Manage-System-Health-in-Windows-Server-Essentials.md#BKMK_Email).  
+|Configurar el servidor multimedia|Haga clic en esta tarea para ver información breve acerca del uso del servidor multimedia para compartir archivos de música, de vídeo y de imagen. Se proporciona un vínculo a la página  **Configuración de medios** . También se proporciona un vínculo a un tema de ayuda en pantalla para obtener más información acerca del servidor multimedia. Para obtener más información, consulte [administrar medios digitales](../manage/Manage-Digital-Media-in-Windows-Server-Essentials.md). 
+|Conectar los equipos|Haga clic en esta tarea para ver información breve acerca de cómo conectar un equipo de red al servidor. Para obtener más información, consulte [Conectar los equipos al servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
 -   [Instalar Windows Server Essentials](Install-Windows-Server-Essentials.md)
 

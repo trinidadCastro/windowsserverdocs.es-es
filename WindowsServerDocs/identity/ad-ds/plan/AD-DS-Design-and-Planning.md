@@ -1,54 +1,51 @@
 ---
 ms.assetid: a91339ef-6ad4-445f-8ecc-a95fbcc04296
-title: "Diseño de AD DS y planificación"
-description: 
-author: billmath
-ms.author: billmath
-manager: femila
-ms.date: 05/31/2017
+title: Planeación y diseño de AD DS
+description: ''
+ms.author: joflore
+author: MicrosoftGuyJFlo
+manager: mtillman
+ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 150e79f6ba89208e617ff0c487d64f415aac538e
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
+ms.openlocfilehash: 24fc96aae268d9847bd3b32460ada33d2c6e0d65
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59848696"
 ---
-# <a name="ad-ds-design-and-planning"></a>Diseño de AD DS y planificación
+# <a name="ad-ds-design-and-planning"></a>Planeación y diseño de AD DS
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Al implementar Windows Server Active Directory Domain Services (AD DS) en tu entorno, se puede aprovechar el modelo administrativa delegada centralizado y único inicio de sesión único (SSO) funcionalidad que proporciona AD DS. Después de identificar las tareas de implementación y el entorno actual para la organización, puedes crear la estrategia de implementación de AD DS que satisfaga las necesidades de la organización.  
+Mediante la implementación de Windows Server Active Directory Domain Services (AD DS) en su entorno, se puede aprovechar el modelo administrativo centralizado, delegado y la única funcionalidad sign-on (SSO) que proporciona AD DS. Después de identificar las tareas de implementación y el entorno actual para su organización, puede crear la estrategia de implementación de AD DS que satisfaga las necesidades de su organización.  
   
-## <a name="about-this-guide"></a>Acerca de esta guía  
-Esta guía proporciona recomendaciones que te ayudarán a desarrollar una estrategia de implementación de AD DS en función de los requisitos de la organización y el diseño particular que quieres crear. Esta guía está prevista para su uso por los especialistas de infraestructura o arquitectos de sistema. Antes de leer a esta guía, debe tener una buena comprensión de funcionamiento en un nivel funcional de AD DS. También debe tener una buena comprensión de los requisitos de la organización que se reflejarán en tu estrategia de implementación de AD DS.  
+## <a name="about-this-guide"></a>Acerca de esta guía
+
+Esta guía proporciona recomendaciones para ayudarle a desarrollar una estrategia de implementación de AD DS según los requisitos de su organización y el diseño concreto que desea crear. Esta guía sirve para su uso por especialistas en infraestructuras o arquitectos del sistema. Antes de leer a esta guía, debe tener una buena comprensión del funcionamiento de AD DS en un nivel funcional. También debe tener una buena comprensión de los requisitos organizativos que se reflejarán en la estrategia de implementación de AD DS.  
   
-Esta guía describe conjuntos de tareas para varios puntos de partida posibles de una implementación de Windows Server 2008 AD DS. La guía ayuda a determinar la estrategia de implementación más adecuada para su entorno.  
+Esta guía describe las tareas necesarias como posibles puntos de partida de una implementación de AD DS de Windows Server 2008. La guía le ayuda a determinar la estrategia de implementación más adecuada para su entorno.  
   
-Aunque las estrategias que se presentan en esta guía son adecuadas para casi todas las implementaciones de sistema operativo de servidor, se han probado y validado específicamente para entornos que contienen menos de 100.000 usuarios y menos de 1000 sitios, conexiones de red de un mínimo de 28,8 kilobits por segundo (Kbps). Si el entorno no cumple estos criterios, considera el uso de una empresa de consultoría que tiene la experiencia de implementación de AD DS en entornos más complejos.  
+Aunque las estrategias que se presentan en esta guía son adecuadas para prácticamente implementaciones de sistema operativo de todos los servidores, se han probado y validado específicamente en entornos que contienen menos de 100 000 usuarios y menos de 1.000 sitios, con conexiones de red de un mínimo de 28,8 kilobits por segundo (Kbps). Si su entorno no cumple estos criterios, considere el uso de una empresa de consultoría con experiencia en implementación de AD DS en entornos más complejos.  
   
-Para obtener más información sobre cómo probar el proceso de implementación de AD DS, consulta probar y verificar el proceso de implementación ([https://go.microsoft.com/fwlink/?LinkId=100206](https://go.microsoft.com/fwlink/?LinkId=100206)).  
+Para obtener más información sobre cómo probar el proceso de implementación de AD DS, consulte el artículo [probar y comprobar el proceso de implementación](https://go.microsoft.com/fwlink/?LinkId=100206).  
   
-> [!NOTE]  
-> La información de esta guía también se aplica a Windows Server 2008 R2 AD DS.  
+## <a name="in-this-guide"></a>En esta guía
+
+[Descripción del diseño de AD DS](Understanding-AD-DS-Design.md)  
   
-## <a name="in-this-guide"></a>En esta guía  
-[Descripción de diseño de AD DS](Understanding-AD-DS-Design.md)  
+[Identificar los requisitos de implementación y diseño de AD DS](Identifying-Your-AD-DS-Design-and-Deployment-Requirements.md)  
   
-[Identificar el diseño de AD DS y los requisitos de implementación](Identifying-Your-AD-DS-Design-and-Deployment-Requirements.md)  
-  
-[Asignar los requisitos de a una estrategia de implementación de AD DS](Mapping-Your-Requirements-to-an-AD-DS-Deployment-Strategy.md)  
+[Asignación de requisitos a una estrategia de implementación de AD DS](Mapping-Your-Requirements-to-an-AD-DS-Deployment-Strategy.md)  
   
 [Diseñar la estructura lógica para Windows Server 2008 AD DS](Designing-the-Logical-Structure.md)  
   
-[Diseño de la topología de sitio para Windows Server 2008 AD DS](Designing-the-Site-Topology.md)  
+[Diseñar la topología de sitios para Windows Server 2008 AD DS](Designing-the-Site-Topology.md)  
   
-[Habilitar las características avanzadas de AD DS](Enabling-Advanced-Features-for-AD-DS.md)  
+[Habilitación de características avanzadas para AD DS](Enabling-Advanced-Features-for-AD-DS.md)  
   
-[Evaluar los ejemplos de estrategia de implementación de AD DS](Evaluating-AD-DS-Deployment-Strategy-Examples.md)  
+[Evaluar ejemplos de estrategia de implementación de AD DS](Evaluating-AD-DS-Deployment-Strategy-Examples.md)  
   
-[Apéndice A: claves AD DS términos de revisión](Appendix-A--Reviewing-Key-AD-DS-Terms.md)  
-  
-
-
+[Apéndice A: Revisión de términos de clave de AD DS](Appendix-A--Reviewing-Key-AD-DS-Terms.md)  

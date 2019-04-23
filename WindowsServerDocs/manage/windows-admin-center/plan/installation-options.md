@@ -1,85 +1,82 @@
 ---
-title: ¿Qué tipo de instalación es adecuado para TI
-description: En este tema se describe las opciones de instalación diferente para Windows Admin Center, incluida la instalación en un equipo Windows 10 o un servidor de Windows para su uso por varios de los administradores.
+title: ¿Qué tipo de instalación es adecuado para usted
+description: ¿Qué tipo de instalación es adecuado para usted Windows Admin Center (proyecto Honolulu). Instalar en un clúster de conmutación por error para alta disponibilidad y resistencia.
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.date: 04/12/2019
-ms.openlocfilehash: cc6f9e6c2f2572618c1c5fdae00047d24fbeb3cf
-ms.sourcegitcommit: f1edfc6525e09dd116b106293f9260123a94de0c
-ms.translationtype: MT
+ms.openlocfilehash: fae0305e454cdd10109219c6182ff612f539e9c9
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "9296667"
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59868016"
 ---
-# ¿Qué tipo de instalación es el adecuado para ti?
+# <a name="what-type-of-installation-is-right-for-you"></a>¿Qué tipo de instalación es el adecuado para ti?
 
->Se aplica a: Windows Admin Center, Versión preliminar de Windows Admin Center
+>Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
 
-En este tema se describe las opciones de instalación diferente para Windows Admin Center, incluida la instalación en un equipo Windows 10 o un servidor de Windows para su uso por varios de los administradores. Para instalar Windows Admin Center en una máquina virtual en Azure, consulta [Implementar Windows Admin Center en Azure](../azure/deploy-wac-in-azure.md).
+## <a name="supported-operating-systems-installation"></a>Sistemas operativos compatibles: Instalación
 
-## Sistemas operativos compatibles: instalación
-
-Puedes **instalar** Windows Admin Center en los siguientes sistemas operativos de Windows:
+También puede **instalar** Windows Admin Center en los siguientes sistemas operativos de Windows:
 
 | **Versión** | **Modo de instalación** |
 |-------------|-----------------------|
-|Windows 10, versión 1709 o posterior | Modo de escritorio |
-|Canal semianual de WindowsServer | Modo de puerta de enlace |
-|WindowsServer2016 | Modo de puerta de enlace |
+|Windows 10, versión 1709 o versiones más reciente | Modo de escritorio |
+|Canal semianual de Windows Server | Modo de puerta de enlace |
+|Windows Server 2016 | Modo de puerta de enlace |
 |Windows Server 2019 | Modo de puerta de enlace |
 
-**Modo de escritorio:** Iniciar desde el menú Inicio y conectarse a la puerta de enlace de Windows Admin Center desde el mismo equipo en el que está instalado (es decir, `https://localhost:6516`)
+**Modo de escritorio:** Iniciar desde el menú Inicio y conectarse a la puerta de enlace de Windows Admin Center desde el mismo equipo donde está instalado (es decir, `https://localhost:6516`)
 
-**El modo de puerta de enlace:** Conectarse a la puerta de enlace de Windows Admin Center desde un explorador cliente en un equipo diferente (es decir, `https://servername.contoso.com`) 
+**Modo de puerta de enlace:** Conectarse a la puerta de enlace de Windows Admin Center desde un explorador cliente en un equipo diferente (es decir, `https://servername.contoso.com`) 
 
 > [!WARNING]
-> No se admite la instalación de Windows Admin Center en un controlador de dominio. [Lee más sobre los procedimientos recomendados de seguridad de controlador de dominio](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack). 
+> No se admite la instalación de Windows Admin Center en un controlador de dominio. [Obtenga más información acerca de la seguridad de controladores de dominio procedimientos recomendados](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack). 
 
 > [!IMPORTANT]
-> No puedes usar Internet Explorer para administrar Windows Admin Center, en su lugar, debes usar un [admite el explorador](../understand/faq.md#which-web-browsers-are-supported-by-windows-admin-center
-).  Si vas a instalar Windows Admin Center en Windows Server, se recomienda administrar al conectarse de forma remota con Windows 10 y Edge.  Como alternativa, puede administrar localmente en Windows Server si has instalado un explorador compatible.
+> No se puede usar Internet Explorer para administrar Windows Admin Center: en su lugar, deberá usar un [explorador compatible](../understand/faq.md#which-web-browsers-are-supported-by-windows-admin-center
+).  Si va a instalar Windows Admin Center en Windows Server, se recomienda administrar mediante la conexión remota con Windows 10 y borde.  Como alternativa, puede administrar localmente en Windows Server si ha instalado un explorador compatible.
 
-## Sistemas operativos compatibles: administración
+## <a name="supported-operating-systems-management"></a>Sistemas operativos compatibles: Management
 
-Puedes **Administrar** los siguientes sistemas operativos de Windows con Windows Admin Center:
+También puede **administrar** los siguientes sistemas operativos de Windows mediante Windows Admin Center:
 
-| Versión | Administrar el *nodo* a través del *Administrador del servidor* | Administrar el *clúster* a través del *Administrador de clústeres de conmutación por error* | Administrar *HCI* a través del *Administrador de clústeres de HCI*|
+| Versión | Administrar *nodo* a través de *administrador del servidor* | Administrar *clúster* a través de *Administrador de clústeres de conmutación por error* | Administrar *HCI* a través de *HCI el Administrador de clústeres*|
 |-------------------------|---------------|-----|------------------------|
-| Windows 10, versión 1709 o posterior | Sí (a través de administración de equipos) | N/D | N/D |
-| Canal semianual de WindowsServer | Sí | Sí | N/D |
+| Windows 10, versión 1709 o versiones más reciente | Sí (a través de administración de equipos) | N/D | N/D |
+| Canal semianual de Windows Server | Sí | Sí | N/D |
 | Windows Server 2019 | Sí | Sí | Sí |
-| WindowsServer2016 | Sí | Sí | Sí, con la [actualización acumulativa más reciente](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
+| Windows Server 2016 | Sí | Sí | Sí, con [actualización acumulativa más reciente](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
 | Microsoft Hyper-V Server 2016 | Sí | Sí | N/D |
-| WindowsServer2012R2 | Sí | Sí | N/D |
+| Windows Server 2012 R2 | Sí | Sí | N/D |
 | Microsoft Hyper-V Server 2012 R2 | Sí | Sí | N/D |
 | Windows Server 2012 | Sí | Sí | N/D |
-| Windows Server 2008 R2 | Sí, una funcionalidad limitada | N/D | N/D |
+| Windows Server 2008 R2 | Sí, una funcionalidad limitada | N/D | N/D |
 
 > [!NOTE]
-> Windows Admin Center requiere características de PowerShell que no se incluyen en Windows Server 2008 R2, 2012 y 2012 R2. Si vas a administrar estos con Windows Admin Center, debes instalar Windows Management Framework (WMF) versión 5.1 o posterior en esos servidores.
+> Windows Admin Center requiere algunas características de PowerShell que no se incluyen en Windows Server 2008 R2, 2012 y 2012 R2. Si va a administrar estos elementos con Windows Admin Center, deberá instalar Windows Management Framework (WMF) versión 5.1 o superior en esos servidores.
 
 >Escribe `$PSVersiontable` en PowerShell para comprobar que esté instalado WMF y que la versión sea 5.1 o posterior. 
 
->Si no está instalado WMF, puedes [Descargar WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
+>Si no está instalado WMF, puede [descargar WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
 
-## Opciones de implementación
+## <a name="deployment-options"></a>Opciones de implementación
 
-| ![IMG](../media/deployment-options/W10.png) | ![IMG](../media/deployment-options/gateway.png) | ![IMG](../media/deployment-options/node.png) | ![IMG](../media/deployment-options/HA.png) |
+| ![img](../media/deployment-options/W10.png) | ![img](../media/deployment-options/gateway.png) | ![img](../media/deployment-options/node.png) | ![img](../media/deployment-options/HA.png) |
 |---|---|---|---|
 
-| Cliente local | Servidor de puerta de enlace | Servidor administrado | Clúster de conmutación por error |
+| Cliente local | Gateway Server | Servidor administrado | Clúster de conmutación por error |
 | --- | --- | --- | --- |
-| Instalar en un cliente local de Windows 10 que tiene conectividad a los servidores administrados.  Ideal para inicio rápido, pruebas, ad-hoc o escenarios de pequeña escala. |Instalar en un servidor de puerta de enlace designado y el acceso desde cualquier explorador cliente con la conectividad con el servidor de puerta de enlace.  Ideal para escenarios a gran escala. | Instalar directamente en un servidor administrado con el fin de administrar propio o en un clúster en el que es un nodo miembro.  Ideal para escenarios distribuidos. | Implementar en un clúster de conmutación por error para habilitar la alta disponibilidad del servicio de puerta de enlace. Ideal para entornos de producción garantizar la resistencia de su servicio de administración. |
+| Instalar en un cliente local de Windows 10 que tenga conectividad con los servidores administrados.  Excelente para el inicio rápido, pruebas, ad hoc o escenarios de pequeña escala. |Instalar en un servidor de puerta de enlace designada y tener acceso desde cualquier explorador del cliente con conectividad al servidor de puerta de enlace.  Ideal para escenarios a gran escala. | Instalar directamente en un servidor administrado con el fin de administrar a sí mismo o a un clúster en los que es un nodo de miembro.  Ideal para escenarios distribuidos. | Implementar en un clúster de conmutación por error para habilitar la alta disponibilidad del servicio de puerta de enlace. Excelente para entornos de producción garantizar la resistencia de su servicio de administración. |
 
-## Alta disponibilidad
+## <a name="high-availability"></a>Alta disponibilidad
 
-Puedes habilitar la alta disponibilidad del servicio de puerta de enlace mediante la implementación de Windows Admin Center en un modelo de activo / pasivo en un clúster de conmutación por error. Si se produce un error en uno de los nodos del clúster, Windows Admin Center correctamente conmutar por error a otro nodo, lo que te permite continuar con la administración de servidores en su entorno sin problemas.
+Puede habilitar la alta disponibilidad del servicio de puerta de enlace mediante la implementación de Windows Admin Center en un modelo activo / pasivo en un clúster de conmutación por error. Si se produce un error en uno de los nodos del clúster, Windows Admin Center correctamente conmuta por error a otro nodo, lo que le permite seguir administrando los servidores en su entorno sin problemas.
 
-[Aprende a implementar Windows Admin Center con alta disponibilidad.](../deploy/high-availability.md)
+[Aprenda a implementar Windows Admin Center con alta disponibilidad.](../deploy/high-availability.md)
 
 > [!Tip]
 > ¿Estás listo para instalar Windows Admin Center? [Descargar ahora](https://aka.ms/windowsadmincenter)

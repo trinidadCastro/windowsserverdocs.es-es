@@ -1,0 +1,1 @@
+**Cree anillos de migración.** Como se muestra en la mayoría de migraciones de sistema, como destino las migraciones de clientes en fases para ayudar a identificar cualquier problema antes de que afecten a toda la organización. La primera parte de la migración de VPN de Always On no es diferente.
