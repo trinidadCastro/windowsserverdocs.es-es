@@ -1,0 +1,50 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Documentación de infraestructura hiperconvergida
+metadata:
+  document_id: null
+  title: Documentación de infraestructura hiperconvergida
+  description: Documentación de infraestructura hiperconvergida
+  text: 'Consolide los procesos, el almacenamiento y las redes definidos por software en un clúster para proporcionar alto rendimiento, rentabilidad y virtualización fácilmente escalable'
+  keywords: 'Windows Server, Windows Server 2016, hyper-v, sdn, espacios de almacenamiento directos, wssd'
+  ms.localizationpriority: high
+  author: coreyp-at-msft
+  ms.author: coreyp
+  ms.topic: article
+  ms.devlang: na
+sections:
+  - title: null
+  - items:
+      - type: markdown
+        text: 'Consolide los procesos, el almacenamiento y las redes definidos por software en un clúster para proporcionar alto rendimiento, rentabilidad y virtualización fácilmente escalable.'
+  - items:
+      - type: list
+        style: cards
+        className: cardsI
+        columns: 2
+        items:
+          - href: ../virtualization/hyper-v/index.md
+            html: '<p>Virtualiza el hardware de servidor, lo que le permite ejecutar máquinas virtuales entre servidores en un clúster hiperconvergido</p>'
+            image:
+              src: ../media/i-virtualize.svg
+            title: Hyper-V
+          - href: ../storage/storage-spaces/storage-spaces-direct-overview.md
+            html: '<p>Virtualiza el hardware de almacenamiento, lo que le permite crear volúmenes encima de un grupo virtualizado de unidades repartidas entre servidores en un clúster hiperconvergido.</p>'
+            image:
+              src: ../media/i-store.svg
+            title: Espacios de almacenamiento directo
+          - href: ../failover-clustering/failover-clustering-overview.md
+            html: '<p>Agrupa varios servidores para que las cargas de trabajo, como máquinas virtuales, puedan ejecutarse en cualquier servidor en el clúster, para el equilibrio de carga y la conmutación por error correcta entre servidores.</p>'
+            image:
+              src: ../media/i-cluster.svg
+            title: Clústeres de conmutación por error
+          - href: 'https://docs.microsoft.com/windows-server/networking/sdn/'
+            html: '<p>Virtualiza el hardware de red, lo que le permite crear y administrar dinámicamente las redes y las directivas que abstraen las cargas de trabajo de redes físicas subyacentes.</p>'
+            image:
+              src: ../media/i-network.svg
+            title: Redes definidas por software
+          - href: 'https://www.microsoft.com/cloud-platform/software-defined-datacenter'
+            html: '<p>Empareja las tecnologías de virtualización y agrupación en clústeres de Windows Server con las soluciones de hardware validadas por el asociado de su elección, lo que ayuda a eliminar las suposiciones al querer optimizar un centro de datos definido por software.</p>'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_data-collection.svg'
+            title: Windows Server definido por software (WSSD)

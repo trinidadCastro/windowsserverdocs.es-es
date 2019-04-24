@@ -1,0 +1,100 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Acceso remoto con VPN de Always On
+metadata:
+  document_id: null
+  title: Acceso remoto con VPN de Always On
+  description: 'Obtenga información sobre las características, la tecnología y la implementación de VPN de Always On.'
+  text: 'VPN de Always On proporciona una solución única y coherente para el acceso remoto para todos los dispositivos conectados, incluso dispositivos de propiedad personal. Con VPN de Always On, el tipo de conexión no tiene que ser exclusivamente de usuario o de dispositivo, sino que puede ser una combinación de ambos. Por ejemplo, podría habilitar la autenticación de dispositivos para la administración de dispositivos remotos y, a continuación, habilitar la autenticación de usuarios para la conectividad a servicios y sitios internos de la empresa.'
+  keywords: 'Windows 10, Windows Server, Windows Server 2016, acceso remoto, VPN'
+  ms.localizationpriority: high
+  author: shortpatti
+  ms.author: pashort
+  ms.date: 11/05/2018
+  ms.topic: article
+  ms.devlang: na
+sections:
+  - title: Obtenga información…
+  - items:
+      - type: markdown
+        text: "Prepárese para implementar el acceso remoto como puerta de enlace RAS de VPN de inquilino único para conexiones VPN de punto a sitio, mediante cualquiera de los cuatro escenarios que se mencionan a continuación, para los equipos cliente remotos que ejecutan Windows\_10.  Si actualmente usa DirectAccess, recomendamos que investigue la funcionalidad de VPN de Always On cuidadosamente para determinar si satisface todas sus necesidades de acceso remoto antes de migrar de DirectAccess a VPN de Always On."
+  - items:
+      - type: list
+        style: cards
+        className: cardsE
+        columns: 3
+        items:
+          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-deploy
+            html: <p>Obtenga información sobre la implementación de VPN de Always On y por dónde empezar.</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
+            title: Comenzar el recorrido
+          - href: \windows-server\remote\remote-access\vpn\vpn-map-da
+            html: <p>Obtenga información sobre las características y la funcionalidad de VPN de Always On.</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_quick-start.svg'
+            title: Características y funcionalidad de VPN de Always On
+          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\always-on-vpn-enhancements
+            html: '<p>Obtenga información sobre las mejoras claves de integración, seguridad, conectividad, control de redes y compatibilidad.</p>'
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_whats-new.svg'
+            title: Mejoras de VPN de Always On
+          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\always-on-vpn-technology-overview
+            html: <p>Obtenga información acerca de las tecnologías usadas en la implementación de VPN de Always On.</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_overview.svg'
+            title: Información general sobre la tecnología
+          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-adv-options
+            html: <p>Obtenga información acerca de las características avanzadas de VPN que puede agregar para mejorar la seguridad y la disponibilidad de la conexión de VPN.</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
+            title: Ampliar la VPN de Always On con características avanzadas
+  - title: Introducción…
+    items:
+      - type: paragraph
+        text: "Implementar conexiones de VPN de Always On para los equipos cliente de Windows\_10 unidos a un dominio. También puede migrar de DirectAccess a VPN de Always On y configurar el acceso condicional con Azure\_AD."
+      - type: list
+        style: cards
+        className: cardsE
+        columns: 3
+        items:
+          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-deploy-deployment
+            html: <p>Descubra qué hace falta para implementar conexiones de VPN.</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_architecture.svg'
+            title: Escenarios y flujo de trabajo de implementación
+          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\always-on-vpn-deploy-planning
+            html: <p>Comience a planear y preparar la implementación de VPN de Always On.</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_guidelines.svg'
+            title: Planear la implementación de VPN de Always On
+          - href: \windows-server\remote\remote-access\vpn\always-on-vpn\deploy\vpn-deploy-server-infrastructure
+            html: <p>Comience la instalación y configuración de la infraestructura de VPN junto con la conectividad VPN de cliente de Windows 10.</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
+            title: Implementar la infraestructura de VPN
+          - href: \windows-server\remote\remote-access\vpn\ad-ca-vpn-connectivity-windows10
+            html: <p>Ajuste la manera en que los usuarios de VPN acceden a los recursos mediante el acceso condicional de Azure AD.</p>
+            image:
+              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
+            title: Configurar el acceso condicional
+  - items:
+      - type: list
+        style: cards
+        className: cardsL
+        items:
+          - title: Solucionar problemas de VPN de Always On
+            html: |-
+              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#vpnprofileps1-script-issues">Problemas de script de VPN_Profile.ps1</a></p>
+              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#always-on-vpn-client-connection-issues">Problemas de conexión de cliente VPN de Always On</a></p>
+              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#azure-ad-conditional-access-connection-issues">Problemas de conexión de acceso condicional de Azure AD</a></p>
+              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#error-codes">Códigos de error</a></p><br>
+              <p><a class="barLink" href="/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy-troubleshooting#logs">Archivos de registro</a></p></div>
+          - title: Recursos adicionales
+            html: |-
+              <p><a class="barLink" href="https://docs.microsoft.com/windows/access-protection/vpn/vpn-guide">Guía técnica de VPN para Windows 10</a></p>
+              <p><a class="barLink" href="https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp">VPNv2 CSP</a></p>
+              <p><a class="barLink" href="https://technet.microsoft.com/library/hh831740.aspx">Introducción a los Servicios de certificados de Active Directory</a></p>
+              <p><a class="barLink" href="https://technet.microsoft.com/library/cc730705.aspx">Plantillas de certificado</a></p>
+              <p><a class="barLink" href="https://social.technet.microsoft.com/wiki/contents/articles/2901.public-key-infrastructure-design-guidance.aspx">Public Key Infrastructure Design Guidance</a> (Guía de diseño de la infraestructura de clave pública)</p><p></p>
+              <p><a class="barLink" href="https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx">AD CS Step by Step Guide - Two Tier PKI Hierarchy Deployment</a> (Guía paso a paso de AD CS: implementación de la jerarquía PKI de dos niveles)</p>
