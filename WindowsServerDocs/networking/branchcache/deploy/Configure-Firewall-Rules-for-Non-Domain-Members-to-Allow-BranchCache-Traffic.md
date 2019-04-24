@@ -1,6 +1,6 @@
 ---
-title: Configurar las reglas de Firewall para los miembros no del dominio permitir el tráfico BranchCache
-description: En este tema es parte de la BranchCache implementación Guía para Windows Server 2016, que se muestra cómo implementar BranchCache en modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN en sucursales
+title: Configurar reglas de firewall para que los miembros que no son del dominio permitan el tráfico de BranchCache
+description: En este tema forma parte de BranchCache Deployment Guide para Windows Server 2016, que demuestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN de sucursales
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-bc
@@ -8,47 +8,48 @@ ms.topic: get-started-article
 ms.assetid: da956be0-c92d-46ea-99eb-85e2bd67bf07
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e5f744141efc35bb493bcd95fad53eafbbc3f78d
-ms.sourcegitcommit: 19d9da87d87c9eefbca7a3443d2b1df486b0b010
-ms.translationtype: MT
+ms.openlocfilehash: 288865f0237969e0bed7e105f8d539759984275e
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59834776"
 ---
-# <a name="configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic"></a>Configurar las reglas de Firewall para los miembros no del dominio permitir el tráfico BranchCache
+# <a name="configure-firewall-rules-for-non-domain-members-to-allow-branchcache-traffic"></a>Configurar reglas de firewall para que los miembros que no son del dominio permitan el tráfico de BranchCache
 
->Se aplica a: Windows Server (punto y anual canal), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puedes usar la información de este tema para configurar los firewall productos de terceros y para configurar manualmente un equipo cliente con las reglas de firewall que permitan BranchCache ejecutar en modo de caché distribuido.  
+Puede utilizar la información de este tema configurar productos de firewall de terceros y configurar manualmente un equipo cliente con reglas de firewall que permitan la ejecución de BranchCache en modo Caché distribuida.  
   
 > [!NOTE]  
-> -   Si has configurado BranchCache los equipos cliente mediante Directiva de grupo, la configuración de directiva de grupo invalida cualquier configuración manual de los equipos cliente a la que se aplican las directivas.  
-> -   Si se ha implementado BranchCache con DirectAccess, puedes usar la configuración en este tema para configurar las reglas de IPsec para permitir el tráfico de BranchCache.  
+> -   Si ha configurado equipos cliente de BranchCache utilizando la directiva de grupo, la configuración de la directiva de grupo invalida cualquier configuración manual de equipos cliente a los que se aplican las directivas.  
+> -   Si ha implementado BranchCache con DirectAccess, puede utilizar la configuración que se incluye en este tema para configurar las reglas IPsec de forma que permitan el tráfico de BranchCache.  
   
-Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para realizar estos cambios de configuración.  
+El requisito mínimo para realizar estos cambios de configuración es la pertenencia al grupo **Administradores** o un grupo equivalente.  
   
-## <a name="ms-pccrd-peer-content-caching-and-retrieval-discovery-protocol"></a>[MS-PCCRD]: del mismo nivel de protocolo de detección de recuperación y almacenamiento en caché de contenido  
-Los clientes de la memoria caché distribuida deben permitir el tráfico de MS-PCCRD entrante y saliente, que se realiza en el protocolo de detección dinámica de los servicios Web (WS-Discovery).  
+## <a name="ms-pccrd-peer-content-caching-and-retrieval-discovery-protocol"></a>[MS-PCCRD]\: Protocolo de detección de recuperación y almacenamiento en caché contenido del mismo nivel  
+Los clientes de caché distribuida deben permitir el tráfico entrante y saliente de MS-PCCRD, que se transporta en el protocolo de detección dinámica de servicios web (WS-Discovery).  
   
-Configuración del firewall debe permitir el tráfico de multidifusión además de tráfico entrante y saliente. Puedes usar la siguiente configuración para configurar excepciones de firewall para el modo de caché distribuida.  
+La configuración del firewall debe permitir el tráfico de multidifusión además del tráfico entrante y saliente. Puede utilizar la configuración siguiente para configurar las excepciones de firewall para el modo Caché distribuida.  
   
-La multidifusión IPv4: 239.255.255.250  
+Multidifusión IPv4: 239.255.255.250  
   
 Multidifusión IPv6: FF02::C  
   
-El tráfico entrante: puerto Local: 3702, puerto remoto: efímera  
+Tráfico entrante: puerto local: 3702, puerto remoto: efímeros  
   
-El tráfico saliente: puerto Local: puerto remoto efímera: 3702  
+Tráfico saliente: Puerto local: efímero, puerto remoto: 3702  
   
-Programa: %systemroot%\system32\svchost.exe (servicio de BranchCache [PeerDistSvc])  
+Programa: %systemroot%\system32\svchost.exe (servicio BranchCache [PeerDistSvc])  
   
-## <a name="ms-pccrr-peer-content-caching-and-retrieval-retrieval-protocol"></a>[MS-PCCRR]: del mismo nivel de almacenamiento en caché de contenido y la recuperación: protocolo de recuperación  
-Los clientes de la memoria caché distribuida deben permitir el tráfico de MS-PCCRR entrante y saliente, que se realiza en el protocolo HTTP 1.1, como se indica en la solicitud de comentarios (RFC) 2616.  
+## <a name="ms-pccrr-peer-content-caching-and-retrieval-retrieval-protocol"></a>[MS-PCCRR]: Almacenamiento en caché contenido del mismo nivel y la recuperación: Protocolo de recuperación  
+Los clientes de caché distribuida deben permitir el tráfico entrante y saliente de MS-PCCRR, que se transporta en el protocolo HTTP 1.1 que se documenta en la solicitud de comentarios (RFC) 2616.  
   
-Configuración del firewall debe permitir el tráfico entrante y saliente. Puedes usar la siguiente configuración para configurar excepciones de firewall para el modo de caché distribuida.  
+La configuración del firewall debe permitir el tráfico entrante y saliente. Puede utilizar la configuración siguiente para configurar las excepciones de firewall para el modo Caché distribuida.  
   
-El tráfico entrante: puerto Local: 80, puerto remoto: efímera  
+Tráfico entrante: puerto local: 80, puerto remoto: efímeros  
   
-El tráfico saliente: puerto Local: puerto remoto efímera: 80  
+Tráfico saliente: Puerto local: efímero, puerto remoto: 80  
   
 
 
