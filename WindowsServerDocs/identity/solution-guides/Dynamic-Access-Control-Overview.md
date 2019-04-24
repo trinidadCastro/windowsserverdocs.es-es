@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9ee8a6cb-7550-46e2-9c11-78d0545c3a97
-title: "Información general sobre el Control de acceso dinámico"
-description: 
+title: Introducción al Control de acceso dinámico
+description: ''
 author: billmath
 ms.author: billmath
 manager: femila
@@ -10,124 +10,125 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 5cf74042c9b511abb1fbeb88224dea0c7f2c8706
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812056"
 ---
-# <a name="dynamic-access-control-overview"></a>Información general sobre el Control de acceso dinámico
+# <a name="dynamic-access-control-overview"></a>Introducción al Control de acceso dinámico
 
 >Se aplica a: Windows Server 2012 R2, Windows Server 2012
 
-Este tema de introducción para profesionales de TI describe el Control de acceso dinámico y tiene asociados los elementos, que se introdujeron en Windows Server 2012 y Windows 8.  
+En este tema introductorio para profesionales de TI se describe el Control de acceso dinámico y sus elementos asociados, que se introdujeron en Windows Server 2012 y Windows 8.  
   
-Control de acceso dinámico basado en dominio permite a los administradores aplicar restricciones basadas en las reglas bien definidas que pueden incluir la confidencialidad de los recursos, el trabajo o la función del usuario y la configuración del dispositivo que se usa para acceder a estos recursos y permisos de control de acceso.  
+El control de acceso dinámico basado en el dominio permite a los administradores aplicar permisos de control de acceso y restricciones de acuerdo a reglas bien definidas que pueden contemplar la confidencialidad de los recursos, el trabajo o el rol del usuario y la configuración del dispositivo que se usa para acceder a tales recursos.  
   
-Por ejemplo, un usuario podría tener permisos diferentes cuando tienen acceso a un recurso desde su equipo office frente a cuando la estén usando un equipo portátil a través de una red privada virtual. O puede permitir acceso solo si un dispositivo cumple los requisitos de seguridad que se definen con los administradores de red. Cuando se usa el Control de acceso dinámico, los permisos de un usuario cambian dinámicamente sin la intervención del administrador adicionales si el usuario trabajo o rol cambia (resultantes cambios en atributos de la cuenta del usuario en AD DS).  
+Por ejemplo, es posible que un usuario tenga permisos diferentes si tiene acceso a un recurso desde el equipo de su oficina o si usa un equipo portátil a través de una red privada virtual. También puede suceder que solo tenga acceso si el dispositivo cumple con los requisitos de seguridad que definen los administradores de la red. Cuando se usa el Control de acceso dinámico, los permisos de un usuario cambian dinámicamente sin intervención del administrador adicionales si tareas o el rol del usuario cambia (lo que conlleva cambios a los atributos de cuenta del usuario en AD DS).  
   
-Control de acceso dinámico no se admite en sistemas operativos Windows anteriores a Windows Server 2012 y Windows 8. Cuando se configura el Control de acceso dinámico en entornos con versiones compatibles y no compatible de Windows, solo las versiones compatibles implementará los cambios.  
+No se admite el Control de acceso dinámico en sistemas operativos Windows anteriores a Windows Server 2012 y Windows 8. Cuando se configura el Control de acceso dinámico en entornos con versiones admitidas y no admitidas de Windows, solo las versiones admitidas implementarán los cambios.  
   
-Características y conceptos asociados con el Control de acceso dinámico incluyen:  
+Entre las características y conceptos asociados con el Control de acceso dinámico se incluyen las siguientes:  
   
 -   [Reglas de acceso central](#BKMK_Rules)  
   
 -   [Directivas de acceso central](#BKMK_Policies)  
   
--   [Reclamaciones](#BKMK_Claims)  
+-   [notificaciones](#BKMK_Claims)  
   
 -   [Expresiones](#BKMK_Expressions2)  
   
--   [Propuesta permisos](#BKMK_Permissions2)  
+-   [Permisos propuestos](#BKMK_Permissions2)  
   
 ### <a name="BKMK_Rules"></a>Reglas de acceso central  
-Una regla de acceso central es una expresión de reglas de autorización que puede incluir una o varias condiciones relacionado con los grupos de usuarios, las notificaciones de usuario, notificaciones de dispositivo y propiedades de recurso. Varias reglas de acceso central se pueden combinar en una directiva de acceso central.  
+Una regla de acceso central es una expresión de reglas de autorización que puede incluir una o más condiciones que competen a grupos de usuarios, notificaciones de usuario, notificaciones de dispositivos y propiedades de recursos. Se pueden combinar varias reglas de acceso central en una directiva de acceso central.  
   
-Si se ha definido una o varias reglas de acceso central para un dominio, administradores de recurso compartido de archivos pueden coincidir con las reglas específicas para los requisitos empresariales y los recursos específicos.  
+Si se han definido una o más reglas de acceso central relativas a un dominio, los administradores de recursos compartidos de archivos pueden relacionar reglas específicas a recursos y requisitos empresariales concretos.  
   
 ### <a name="BKMK_Policies"></a>Directivas de acceso central  
-Directivas de acceso central son las directivas de autorización que incluyen expresiones condicionales. Por ejemplo, supongamos que una organización tiene un requisito de negocio para restringir el acceso a información personalmente identificable (PII) en archivos solo el propietario del archivo y los miembros del departamento de recursos humanos (HR) que tienen permiso para ver información PII. Representa una directiva de toda la organización que se aplica a los archivos PII siempre que se encuentran en servidores de archivos en toda la organización. Para implementar esta directiva, debe ser capaz de una organización:  
+Las directivas de acceso central son directivas de autorización que incluyen expresiones condicionales. Por ejemplo, supongamos que una organización tiene un requisito empresarial para restringir el acceso a información personal identificable (PII) en archivos a solo el propietario del archivo y los miembros del departamento de recursos humanos (HR) que tienen permiso para ver información PII. Se trata de una directiva de toda la organización que se aplica a archivos de PII que estén en servidores de archivos de la organización. Para implementar esta directiva, una organización debe ser capaz de:  
   
--   Identificar y marcar los archivos que contengan el PII.  
+-   Identificar y marcar los archivos que contienen PII.  
   
--   Identifica el grupo de miembros HR que tienen permiso para ver la información de PII.  
+-   Identificar el grupo de los miembros de RR.HH. que están autorizados para ver información PII.  
   
--   Agregar la directiva de acceso central a una regla de acceso central y aplicar la regla de acceso central a todos los archivos que contienen la PII, siempre que se encuentran entre los servidores de archivos en toda la organización.  
+-   Agregar la directiva de acceso central a una regla de acceso central y aplicar dicha regla a todos los archivos que contengan PII, que se encuentren entre los servidores de archivos de toda la organización.  
   
-Directivas de acceso central actúan como paraguas de seguridad que se aplica una organización a través de sus servidores. Estas directivas están además (pero no reemplazan) las directivas de acceso local o listas de control de acceso discrecional (DACL) que se aplican a archivos y carpetas.  
+Las directivas de acceso central actúan como paraguas de seguridad que una organización aplica entre los servidores. Estas directivas son complementarias a las directivas de acceso local o a las listas de control de acceso discrecional (DACL) que se aplican a archivos y carpetas (si bien no las sustituyen).  
   
-### <a name="BKMK_Claims"></a>Reclamaciones  
-Una reclamación es un único elemento de información acerca de un usuario, el dispositivo o el recurso que se ha publicado un controlador de dominio. Título del usuario, la clasificación del departamento de un archivo o el estado de un equipo son válidos ejemplos de una reclamación. Una entidad puede implicar más de una notificación, y cualquier combinación de notificaciones puede usarse para autorizar el acceso a los recursos. Los siguientes tipos de notificaciones están disponibles en las versiones compatibles de Windows:  
+### <a name="BKMK_Claims"></a>notificaciones  
+Una notificación es una información única sobre un usuario, un dispositivo o un recurso que publicó un controlador de dominio. El puesto del usuario, la clasificación del departamento de un archivo o el estado de mantenimiento de un equipo son algunos ejemplos válidos de una notificación. Una entidad puede conllevar más de una notificación y se puede usar cualquier combinación de notificaciones para autorizar el acceso a los recursos. Están disponibles los siguientes tipos de notificaciones en las versiones admitidas de Windows:  
   
--   **Notificaciones de usuario** atributos de Active Directory que están asociados con un usuario específico.  
+-   **Notificaciones de usuario**: atributos de Active Directory relacionados con un usuario específico.  
   
--   **Notificaciones de dispositivo** atributos de Active Directory que están asociados con un objeto de equipo específico.  
+-   **Notificaciones de dispositivo**: atributos de Active Directory relacionados con un objeto de equipo específico.  
   
--   **Atributos de los recursos** propiedades de recurso Global que están marcados para su uso en las decisiones de autorización y se publican en Active Directory.  
+-   **Atributos de recurso**: propiedades de recurso global marcadas para su uso en decisiones de autorización y que se publican en Active Directory.  
   
-Reclamaciones hacen que sea posible para los administradores puedan realizar instrucciones de la organización o empresa wide preciso acerca de los usuarios, dispositivos y recursos que se puede integrar en expresiones, reglas y directivas.  
+Las notificaciones permiten a los administradores crear instrucciones precisas en toda la organización o la empresa acerca de los usuarios, los dispositivos y los recursos que se pueden incorporar en expresiones, reglas y directivas.  
   
 ### <a name="BKMK_Expressions2"></a>Expresiones  
-Expresiones condicionales son una mejora de administración de control de acceso que permitir o denegar el acceso a los recursos solo cuando se cumplen ciertas condiciones, por ejemplo, la pertenencia al grupo, la ubicación o el estado de seguridad del dispositivo. Expresiones se administran a través del cuadro de diálogo Configuración de seguridad avanzada del Editor de ACL o el Editor de reglas de acceso Central en el centro de administrativas de directorio (ADAC) activo.  
+Las expresiones condicionales constituyen una mejora en la administración del control de acceso. Con ellas se permite o deniega el acceso a los recursos solo si se cumplen ciertas condiciones, por ejemplo, la pertenencia a un grupo, la ubicación o estado de seguridad del dispositivo. Las expresiones se administran a través del cuadro de diálogo Configuración de seguridad avanzada del Editor ACL o del Editor de reglas de acceso central en el Centro de administración de Active Directory (ADAC).  
   
-Expresiones ayudar a los administradores a administrar el acceso a recursos con información confidencial con condiciones flexibles en entornos empresariales cada vez más complejos.  
+Las expresiones ayudan a los administradores a administrar acceso a recursos confidenciales con condiciones flexibles en entornos empresariales cada vez más complejos.  
   
-### <a name="BKMK_Permissions2"></a>Propuesta permisos  
-Propuesta permisos permiten a un administrador con más precisión modelar el impacto de posibles cambios para tener acceso a configuración de control sin en realidad modificarlas.  
+### <a name="BKMK_Permissions2"></a>Permisos propuestos  
+Con los permisos propuestos, un administrador puede modelar con más precisión el impacto de los posibles cambios en la configuración de control de acceso sin materializarlos de facto.  
   
-Predecir el acceso eficaz a un recurso te ayuda a planear y configurar los permisos de esos recursos antes de implementar los cambios.  
+Predecir el acceso eficaz a un recurso ayuda a planear y configurar permisos para esos recursos antes de implementar dichos cambios.  
   
 ## <a name="additional-changes"></a>Cambios adicionales  
-Mejoras adicionales de las versiones compatibles de Windows que admite el Control de acceso dinámico incluyen:  
+Otras mejoras en las versiones compatibles de Windows que admiten Control de acceso dinámico incluyen las siguientes:  
   
-### <a name="support-in-the-kerberos-authentication-protocol-to-reliably-provide-user-claims-device-claims-and-device-groups"></a>Se admiten en el protocolo de autenticación Kerberos para proporcionar de forma confiable notificaciones de usuario, las notificaciones de dispositivo y grupos de dispositivos.  
-De manera predeterminada, los dispositivos que ejecutan cualquiera de las versiones compatibles de Windows son capaces de procesar los vales Kerberos relacionados con el Control de acceso dinámico, que incluyen los datos necesarios para la autenticación compuesta. Controladores de dominio son capaces de emitir y responder a los vales Kerberos con información relacionada con la autenticación compuesta. Cuando un dominio está configurado para reconocer el Control de acceso dinámico, dispositivos reciban notificaciones de controladores de dominio durante la autenticación inicial y recibir vales de autenticación compuesta al enviar solicitudes de vales de servicio. La autenticación compuesta da como resultado un token de acceso que incluye la identidad del usuario y el dispositivo a los recursos que reconoce el Control de acceso dinámico.  
+### <a name="support-in-the-kerberos-authentication-protocol-to-reliably-provide-user-claims-device-claims-and-device-groups"></a>Compatibilidad con el protocolo de autenticación Kerberos para proporcionar notificaciones de usuario, notificaciones de dispositivo y grupos de dispositivo de manera confiable.  
+De manera predeterminada, los dispositivos que ejecutan cualquiera de las versiones admitidas de Windows pueden procesar vales Kerberos relacionados con el Control de acceso dinámico, que incluyen los datos necesarios para la autenticación compuesta. Los controladores de dominio pueden emitir vales Kerberos y responder a ellos con información relacionada con la autenticación compuesta. Cuando un dominio se configura para que reconozca el Control de acceso dinámico, los dispositivos reciben notificaciones de los controladores de dominio durante la autenticación inicial y reciben vales de autenticación compuesta al enviar solicitudes de vales de servicio. La autenticación compuesta genera un token de acceso que incluye la identidad del usuario y el dispositivo en recursos que reconocen el Control de acceso dinámico.  
   
-### <a name="support-for-using-the-key-distribution-center-kdc-group-policy-setting-to-enable-dynamic-access-control-for-a-domain"></a>Compatibilidad para usar la configuración de directiva de grupo de claves (KDC) de centro de distribución de clave para habilitar el Control de acceso dinámico para un dominio.  
-Cada controlador de dominio debe tener la misma configuración de directiva de plantillas administrativas, que se encuentra en **Control de acceso dinámico de equipo equipo\Directivas\Plantillas Templates\System\KDC\Support y protección de Kerberos**.  
+### <a name="support-for-using-the-key-distribution-center-kdc-group-policy-setting-to-enable-dynamic-access-control-for-a-domain"></a>Compatibilidad para usar la configuración de la directiva de grupo del Centro de distribución de claves (KDC) para habilitar el control de acceso dinámico de un dominio.  
+Cada controlador de dominio debe tener la misma configuración de directiva de plantilla administrativa, que se encuentra en **Configuración del equipo\Directivas\Plantillas administrativas\Sistema\KDC\Compatibilidad con el Control de acceso dinámico y protección de Kerberos**.  
   
-### <a name="support-for-using-the-key-distribution-center-kdc-group-policy-setting-to-enable-dynamic-access-control-for-a-domain"></a>Compatibilidad para usar la configuración de directiva de grupo de claves (KDC) de centro de distribución de clave para habilitar el Control de acceso dinámico para un dominio.  
-Cada controlador de dominio debe tener la misma configuración de directiva de plantillas administrativas, que se encuentra en **Control de acceso dinámico de equipo equipo\Directivas\Plantillas Templates\System\KDC\Support y protección de Kerberos**.  
+### <a name="support-for-using-the-key-distribution-center-kdc-group-policy-setting-to-enable-dynamic-access-control-for-a-domain"></a>Compatibilidad para usar la configuración de la directiva de grupo del Centro de distribución de claves (KDC) para habilitar el control de acceso dinámico de un dominio.  
+Cada controlador de dominio debe tener la misma configuración de directiva de plantilla administrativa, que se encuentra en **Configuración del equipo\Directivas\Plantillas administrativas\Sistema\KDC\Compatibilidad con el Control de acceso dinámico y protección de Kerberos**.  
   
-### <a name="support-in-active-directory-to-store-user-and-device-claims-resource-properties-and-central-access-policy-objects"></a>Se admiten en Active Directory para almacenar las reclamaciones de usuarios y dispositivos, las propiedades de recursos y objetos de directiva de acceso central.  
+### <a name="support-in-active-directory-to-store-user-and-device-claims-resource-properties-and-central-access-policy-objects"></a>Compatibilidad en Active Directory para almacenar notificaciones de usuario y dispositivo, propiedades de recursos y objetos de directiva de acceso central.  
   
-### <a name="support-for-using-group-policy-to-deploy-central-access-policy-objects"></a>Compatibilidad para usar la directiva de grupo para implementar objetos de directiva de acceso central.  
-La siguiente configuración de directiva de grupo permite implementar objetos de directiva de acceso central a servidores de archivos en la organización: **directiva de equipo Configuration\Policies\ Windows Windows\Configuración Settings\File System\Central acceso**.  
+### <a name="support-for-using-group-policy-to-deploy-central-access-policy-objects"></a>Compatibilidad con el uso de la directiva de grupo para implementar objetos de directiva de acceso central.  
+La siguiente configuración de directiva de grupo le permite implementar objetos de directiva de acceso central a servidores de archivos en su organización: **Equipo Configuración Windows Windows\Configuración seguridad\Sistema Archivos\directiva de acceso**.  
   
-### <a name="support-for-claims-based-file-authorization-and-auditing-for-file-systems-by-using-group-policy-and-global-object-access-auditing"></a>Soporte para la autorización de archivos basado en autenticaciones y auditoría para sistemas de archivos con la directiva de grupo y la auditoría de acceso a objetos Global  
-Debes habilitar la auditoría de directivas de acceso central por fases auditar el acceso eficaz de directiva de acceso central mediante permisos propuestos. Para configurar este valor para el equipo en **configuración de directiva de auditoría avanzada** en la **la configuración de seguridad** de un objeto de directiva de grupo (GPO). Después de configurar la configuración de seguridad en el GPO, puedes implementar el GPO a los equipos en la red.  
+### <a name="support-for-claims-based-file-authorization-and-auditing-for-file-systems-by-using-group-policy-and-global-object-access-auditing"></a>Compatibilidad con la autorización y auditoría de archivo basadas en notificaciones para sistemas de archivos usando la directiva de grupo y la Auditoría de acceso a objetos global  
+Debe habilitar la auditoría de directiva de acceso central almacenada provisionalmente para auditar la eficacia de acceso de una directiva de acceso central mediante permisos propuestos. Este valor se puede configurar para el equipo en **Configuración de directiva de auditoría avanzada** en la **Configuración de seguridad** de un objeto de directiva de grupo (GPO). Tras definir la configuración de seguridad en GPO, podrá implementarlo en los equipos de la red.  
   
-### <a name="support-for-transforming-or-filtering-claim-policy-objects-that-traverse-active-directory-forest-trusts"></a>Soporte técnico para transformar o filtrar objetos de directiva de reclamación que recorren confianzas de bosque de Active Directory  
-Puedes filtrar o transformar notificaciones entrantes y salientes que recorren una confianza de bosque. Hay tres escenarios básicos para filtrar y transformar notificaciones:  
+### <a name="support-for-transforming-or-filtering-claim-policy-objects-that-traverse-active-directory-forest-trusts"></a>Compatibilidad para transformar o filtrar objetos de directiva de notificación que atraviesan las confianzas del bosque de Active Directory  
+Puede filtrar o transformar las notificaciones entrantes o salientes que atraviesan la confianza de un bosque. Existen tres escenarios básicos de filtrado y transformación de notificaciones:  
   
--   **Filtrado basado en el valor** filtros pueden basarse en el valor de una reclamación. Esto permite que el bosque de confianza evitar reclamaciones con determinados valores que se envíen al bosque de confianza. Controladores de dominio de bosques de confianza pueden utilizar el filtrado basado en el valor para protegerse contra ataques de elevación de privilegios filtrando las notificaciones entrantes con valores específicos del bosque de confianza.  
+-   **Filtrado basado en valores**: los filtros pueden basarse en el valor de una notificación. Esto hace que el bosque de confianza impida que se envíen notificaciones con ciertos valores al bosque que confía. Los controladores de dominio en los bosques que confían pueden usar el filtrado basado en valores para ofrecer protección contra un ataque por elevación de privilegios al filtrar las notificaciones entrantes con valores específicos del bosque de confianza.  
   
--   **Los filtros basados en el tipo de notificación** filtros se basan en el tipo de notificación, en lugar de con el valor de dicha reclamación. Para identificar el tipo de notificación, el nombre de la notificación. Usar filtrado en el bosque de confianza basada en tipos de notificación y evita que Windows pueda enviar notificaciones que divulgar información al bosque de confianza.  
+-   **Filtrado basado en el tipo de notificación**: filtros basados en el tipo de notificación, y no en el valor de la notificación. Se identifica el tipo de notificación a partir del nombre de la notificación. Puede usar el filtrado basado en el tipo de notificación en el bosque de confianza e impedir que Windows envíe notificaciones que revelen información al bosque que confía.  
   
--   **Transformación basada en tipos de notificación** manipula una reclamación antes de enviarlo al destino previsto. Usar transformación basada en tipos de notificación en el bosque de confianza para generalizar una reclamación conocida que contiene información específica. Puedes usar transformaciones para generalizar el tipo de notificación, el valor de notificación o ambos.  
+-   **Transformación basada en el tipo de notificación**: manipula una notificación antes de enviarla al objetivo previsto. La transformación basada en el tipo de notificación se usa en el bosque de confianza para generalizar una notificación conocida que contiene información específica. Estas transformaciones pueden servir para generalizar el tipo de notificación, el valor de la notificación o ambos aspectos.  
   
 ## <a name="software-requirements"></a>Requisitos de software  
-Dado reclamaciones y autenticación compuesta de Control de acceso dinámico requieren extensiones de autenticación de Kerberos, todos los dominios que admite el Control de acceso dinámico deben tener suficiente controladores de dominio que ejecutan las versiones compatibles de Windows para admitir la autenticación de clientes de Kerberos con reconocimiento de Control de acceso dinámico. De manera predeterminada, los dispositivos deben utilizar controladores de dominio en otros sitios. Si no hay controladores de dominio están disponibles, se producirá un error de autenticación. Por lo tanto, debe admitir una de las siguientes condiciones:  
+Dado que las notificaciones y la autenticación compuesta de Control de acceso dinámico requieren extensiones de autenticación Kerberos, cualquier dominio que admita el Control de acceso dinámico debe contar con suficientes controladores de dominio que ejecuten las versiones compatibles de Windows para admitir la autenticación de los clientes Kerberos compatibles con el Control de acceso dinámico. De forma predeterminada, los dispositivos deben usar controladores de dominio en otros sitios. Si no hay disponible ninguno de esos controladores de dominio, se generará un error de autenticación. Por lo tanto, se debe dar cabida a una de las siguientes condiciones:  
   
--   Cada dominio que admite el Control de acceso dinámico debe tener suficiente controladores de dominio que ejecutan las versiones compatibles de Windows Server para admitir la autenticación de todos los dispositivos que ejecutan las versiones compatibles de Windows o Windows Server.  
+-   Todos los dominios que admiten el Control de acceso dinámico deben tener suficientes controladores de dominio que ejecuten las versiones compatibles de Windows Server para admitir la autenticación en todos los dispositivos que ejecutan las versiones admitidas de Windows o Windows Server.  
   
--   Dispositivos que ejecutan las versiones compatibles de Windows o no proteger los recursos mediante notificaciones o identidad compuesto, debes deshabilitar la compatibilidad con el protocolo Kerberos para el Control de acceso dinámico.  
+-   Los dispositivos que ejecuten las versiones compatibles de Windows o que no protejan los recursos con notificaciones o con identidad compuesta deben deshabilitar la compatibilidad del protocolo Kerberos con el control de acceso dinámico.  
   
-Para los dominios que admiten notificaciones de usuario, debe configurarse cada controlador de dominio que ejecutan las versiones compatibles de Windows server con el valor adecuado para admitir notificaciones y autenticación compuesta y para proporcionar protección de Kerberos. Configurar opciones de configuración en la directiva de plantilla administrativa de KDC como sigue:  
+En cuanto a los dominios que admiten notificaciones de usuario, cada controlador de dominio que ejecute las versiones compatibles de Windows debe estar configurado con los parámetros apropiados para admitir notificaciones y autenticación compuesta y proporcionar protección de Kerberos. Configure las opciones de la directiva de plantilla administrativa de KDC de la siguiente manera:  
   
--   **Siempre proporcionar notificaciones** usar esta opción si todos los controladores de dominio ejecutan las versiones compatibles de Windows Server. Además, Establece el nivel funcional del dominio a Windows Server 2012 o superior.  
+-   **Siempre proporcionar notificaciones**: use esta opción si todos los controladores de dominio ejecutan las versiones compatibles de Windows Server. Además, establezca el nivel funcional del dominio a Windows Server 2012 o posterior.  
   
--   **Admite** al usar esta configuración, supervisar los controladores de dominio para garantizar que el número de controladores de dominio que ejecutan las versiones compatibles de Windows Server es suficiente para el número de equipos cliente que necesitan acceder a recursos protegidos por el Control de acceso dinámico.  
+-   **Compatible**: si usa esta opción, supervise los controladores de dominio para asegurarse de que la cantidad de controladores de dominio que ejecutan las versiones compatibles de Windows Server sea suficiente para la cantidad de equipos cliente que necesita acceso a los recursos protegidos por el control de acceso dinámico.  
   
-Si el dominio del usuario y el dominio del servidor de archivos están en diferentes bosques, todos los controladores de dominio raíz del bosque del servidor de archivos deben establecerse en el Windows Server 2012 o un mayor nivel funcional.  
+Si el dominio del usuario y dominio del servidor de archivos están en bosques distintos, todos los controladores de dominio raíz del bosque del servidor de archivos deben establecerse en el Windows Server 2012 o el nivel funcional más alto.  
   
-Si los clientes no reconocen el Control de acceso dinámico, debe haber una relación de confianza bidireccional entre los dos bosques.  
+Si los clientes no reconocen el control de acceso dinámico, debe existir una relación de confianza bidireccional entre los dos bosques.  
   
-Si se transforman reclamaciones cuando abandonan un bosque, todos los controladores de dominio raíz del bosque del usuario deben establecerse en el Windows Server 2012 o un mayor nivel funcional.  
+Si las notificaciones se transforman cuando abandonan el bosque, todos los controladores de dominio raíz del bosque del usuario se deben establecer en el Windows Server 2012 o el nivel funcional más alto.  
   
-Un servidor de archivos que ejecutan Windows Server 2012 o Windows Server 2012 R2 debe tener una configuración de directiva de grupo que especifica si necesita para obtener tokens de usuario que no incluyen notificaciones de las notificaciones de usuario. Este valor se establece de forma predeterminada para **automática**, lo que genera esta configuración de directiva de grupo para activar **en** si hay una directiva central que contiene las reclamaciones de usuario o el dispositivo para ese servidor de archivos. Si el servidor de archivos contiene discrecionales ACL que incluyan notificaciones de usuario, debes establecer esta directiva de grupo **en** para que el servidor conoce para solicitar notificaciones en el nombre de los usuarios que no proporcionan notificaciones para acceder al servidor.  
+Un servidor de archivos que ejecuta Windows Server 2012 o Windows Server 2012 R2 debe tener una configuración de directiva de grupo que especifica si es necesario obtener notificaciones de usuario para los tokens de usuario que no transportan notificaciones. Esta configuración está establecida de forma predeterminada en **Automática**, lo que hace que esta configuración de directiva de grupo se **active** si hay una directiva central que contiene notificaciones de usuario o dispositivo para dicho servidor de archivos. Si el servidor de archivos contiene ACL discrecionales que incluyen notificaciones de usuario, deberá activar esta directiva de grupo para que el servidor de archivos sepa que tiene que solicitar notificaciones en nombre de los usuarios que no proporcionen notificaciones cuando obtengan acceso al servidor. ****  
   
 ## <a name="additional-resource"></a>Recursos adicionales  
-Para obtener información sobre la implementación de soluciones basadas en esta tecnología, vea [Control de acceso dinámico: información general del escenario](Dynamic-Access-Control--Scenario-Overview.md).  
+Para obtener información acerca de cómo implementar soluciones basadas en esta tecnología, vea [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md).  
   
 
 
