@@ -1,6 +1,6 @@
 ---
-title: Solucionar problemas de copia de seguridad del equipo y restaurar errores en Windows Server Essentials
-description: "Describe cómo usar Windows Server Essentials"
+title: Solucionar errores de copias de seguridad del equipo y restauración en Windows Server Essentials
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 06/25/2013
 ms.prod: windows-server-2016-essentials
@@ -13,234 +13,235 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 37e79661442ba9f66a564b6c6c8fb57db1978454
-ms.sourcegitcommit: db290fa07e9d50686667bfba3969e20377548504
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59812336"
 ---
-# <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar problemas de copia de seguridad del equipo y restaurar errores en Windows Server Essentials
+# <a name="troubleshoot-computer-backup-and-restore-errors-in-windows-server-essentials"></a>Solucionar errores de copias de seguridad del equipo y restauración en Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-Usa estos procedimientos para solucionar problemas de las copias de seguridad del equipo en Windows Server Essentials, incluidos los problemas de configuración de copia de seguridad, las copias de seguridad incompletas o incorrecta, alertas de estado de copia de seguridad y problemas con el archivo, carpeta o todo el sistema restaura.  
+Use estos procedimientos para solucionar problemas de copias de seguridad del equipo en Windows Server Essentials, como por ejemplo los problemas de configuración de copia de seguridad, las copias de seguridad incompletas o erróneas, alertas de estado de copia de seguridad y problemas relacionados con la restauración de archivos, carpetas o la restauración completa del sistema.  
   
 > [!NOTE]
->  Para obtener la información de solución de problemas más reciente de la Comunidad de Windows Server Essentials, visita el [foro de Windows Server Essentials](https://social.technet.microsoft.com/Forums//winserveressentials/threads).  
+>  Para la información de solución de problemas más reciente de la Comunidad de Windows Server Essentials, visite la [foro de Windows Server Essentials](https://social.technet.microsoft.com/Forums//winserveressentials/threads).  
   
-##  <a name="BKMK_TroubleshootBackupConfigurationIssues"></a>Solucionar problemas de configuración de copia de seguridad para un equipo conectado  
- Usa estos procedimientos para solucionar problemas con las configuraciones de copia de seguridad para los equipos que se copian en el servidor de Windows Server Essentials.  
-  
-### <a name="errors"></a>Errores  
-  
--   No se completó correctamente la configuración de copia de seguridad  
-  
--   Error recopilar información de PC  
-  
--   Quitar equipo de error de copia de seguridad  
-  
-### <a name="resolutions"></a>Resoluciones  
-  
-##### <a name="to-troubleshoot-errors-that-occur-while-you-configure-backups-for-a-connected-computer"></a>Para solucionar los errores que ocurren mientras configuras copias de seguridad de un equipo conectado  
-  
-1.  Asegúrate de que el equipo está conectado a la red a través de un dispositivo de red.  
-  
-2.  Asegúrese de que el dispositivo de red que el equipo está conectado a también está conectado a la red, encendida y funciona correctamente.  
-  
-3.  Asegúrate de que el servicio de copia de seguridad de cliente de Windows Server y el servicio de proveedor de copia de seguridad de Windows Server cliente equipo están ejecutando en el servidor.  
-  
-    ###### <a name="to-start-computer-backup-services-on-the-server"></a>Para iniciar servicios de copia de seguridad del equipo en el servidor  
-  
-    1.  En el servidor, haz clic en **inicio**, haz clic en **herramientas administrativas**y, a continuación, haz clic en **servicios**.  
-  
-    2.  Desplázate hacia abajo hasta y haz clic en **servicio de proveedor de copia de seguridad de Windows Server cliente equipo**. Si el estado del servicio no es **iniciado**, haz clic en el servicio y, a continuación, haz clic en **inicio**.  
-  
-    3.  Haz clic en **servicio copia de seguridad del equipo de cliente de Windows Server**. Si el estado del servicio no es **iniciado**, haz clic en el servicio y, a continuación, haz clic en **inicio**.  
-  
-    4.  Cerrar **servicios**.  
-  
-4.  Asegúrate de que el servicio de proveedor de copia de seguridad de Windows Server cliente equipo se ejecuta en el equipo cliente.  
-  
-    ###### <a name="to-start-the-computer-backup-service-on-the-client-computer"></a>Para iniciar el servicio de copia de seguridad del equipo en el equipo cliente  
-  
-    1.  En el equipo cliente, haz clic en **inicio**, tipo **servicios** en la **buscar programas y archivos** cuadro de texto y, a continuación, presiona ENTRAR.  
-  
-    2.  Desplázate hacia abajo hasta y haz clic en **servicio de proveedor de copia de seguridad de Windows Server cliente equipo**. Si el estado del servicio no es **iniciado**, haz clic en el servicio y, a continuación, haz clic en **inicio**.  
-  
-    3.  Cerrar **servicios**.  
-  
-5.  Active alertas para determinar si hay errores en la base de datos de copia de seguridad. Si hay errores, sigue las instrucciones en la alerta para reparar la copia de seguridad.  
-  
-6.  Desinstalar el software del conector de Windows Server Essentials desde el equipo y, a continuación, volver a instalarlo. Para obtener más información, consulta los temas [desinstalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) y [instalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
-  
-##  <a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a>Solucionar problemas de una copia de seguridad que no se completó correctamente  
- Cuando una copia de seguridad tiene estado incorrecto, ninguna parte de la copia de seguridad se realizó correctamente y no hay datos están disponibles para restaurar. Sin embargo, cuando una copia de seguridad tiene estado incompleta, no todos los elementos a los que se especifican en la copia de seguridad de configuración copia de seguridad, pero algunos datos pueden estar disponibles para restaurar.  
+##  <a name="BKMK_TroubleshootBackupConfigurationIssues"></a> Solucionar problemas de configuración de copia de seguridad de un equipo conectado  
+ Use estos procedimientos para solucionar problemas relacionados con las configuraciones de copia de seguridad de los equipos en los que se efectúan copias de seguridad en el servidor de Windows Server Essentials.  
   
 ### <a name="errors"></a>Errores  
   
--   Copia de seguridad está incompleta  
+-   La configuración de copia de seguridad no se ha completado correctamente  
   
--   Copia de seguridad incorrecta  
+-   Error al recopilar la información del equipo  
+  
+-   Error al quitar el equipo de la copia de seguridad  
   
 ### <a name="resolutions"></a>Resoluciones  
   
-##### <a name="to-identify-volumes-that-were-not-backed-up-successfully"></a>Para identificar los volúmenes que no se copia correctamente  
+##### <a name="to-troubleshoot-errors-that-occur-while-you-configure-backups-for-a-connected-computer"></a>Para solucionar los errores que se producen al configurar las copias de seguridad en un equipo conectado  
   
-1.  Abre el panel de Windows Server Essentials y, a continuación, haz clic en **copia de seguridad y equipos**.  
+1.  Asegúrese de que el equipo esté conectado a la red a través de un dispositivo de red.  
   
-2.  Haz clic en el nombre del equipo donde copia de seguridad no se completa correctamente y, a continuación, haz clic en **ver las propiedades** en la **tareas** panel.  
+2.  Asegúrese de que el dispositivo de red al que está conectado el equipo también esté conectado a la red, encendido y funcione correctamente.  
   
-3.  Haz clic en la copia de seguridad que no se completa correctamente y, a continuación, haz clic en **ver detalles**.  
+3.  Asegúrese de que el servicio de copia de seguridad de cliente de Windows Server y el servicio de proveedor de copias de seguridad de equipos cliente de Windows Server se estén ejecutando en el servidor.  
   
-4.  En la **detalles de la copia de seguridad** se muestra el cuadro de diálogo, una marca de verificación verde en el estado de cada volumen que se copia correctamente.  
+    ###### <a name="to-start-computer-backup-services-on-the-server"></a>Para iniciar los servicios de copia de seguridad del equipo en el servidor  
   
-##### <a name="to-troubleshoot-an-unsuccessful-backup-of-a-volume"></a>Solucionar problemas de una copia de seguridad incorrecta de un volumen  
+    1.  En el servidor, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, después, haga clic en **Servicios**.  
   
-1.  Asegúrese de que el disco duro está conectado al equipo, activado y funciona correctamente.  
+    2.  Desplácese hacia abajo y haga clic en **Servicio Proveedor de copias de seguridad de equipos cliente de Windows Server**. Si el estado del servicio no es **Iniciado**, haga clic con el botón derecho en el servicio y, a continuación, haga clic en **Iniciar**.  
   
-2.  Ejecutar **chkdsk /f /r** de corregir los errores en el disco duro (**/f**) y recuperar la información legible desde todos los sectores defectuosos (**/r**). Para obtener más información sobre cómo ejecutar **chkdsk**, consulta [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562).  
+    3.  Haga clic en **Servicio de copias de seguridad de equipos cliente de Windows Server**. Si el estado del servicio no es **Iniciado**, haga clic con el botón derecho en el servicio y, a continuación, haga clic en **Iniciar**.  
   
-3.  Asegúrate de que el equipo no se apaga o se desconecta de la red mientras se estaba ejecutando copia de seguridad.  
+    4.  Cierre **Servicios**.  
   
-4.  Asegúrate de que hay suficiente espacio libre en cada volumen para ejecutar copia de seguridad. Copia de seguridad requiere espacio adicional en el disco en el equipo cliente para crear una instantánea VSS. En cualquier otro volumen que no está reservada del sistema, al menos 10 por ciento de espacio en disco disponible deben ser gratuitas. En un volumen del sistema reservado, si el tamaño del volumen es inferior a 500 MB, VSS requiere 32 MB de espacio libre para crear una instantánea; Si el volumen es de 500 MB o más, VSS requiere 320 MB de espacio libre.  
+4.  Asegúrese de que el servicio de proveedor de copias de seguridad de equipos cliente de Windows Server se esté ejecutando en el equipo cliente.  
   
-     Si hay suficiente espacio libre en un volumen, prueba una de estas soluciones:  
+    ###### <a name="to-start-the-computer-backup-service-on-the-client-computer"></a>Para iniciar el servicio de copias de seguridad del equipo en el equipo cliente  
   
-    -   Extender el volumen. Puedes ampliar cualquier volumen básico o dinámico excepto el volumen del sistema reservado.  
+    1.  En el equipo cliente, haga clic en **Inicio**, escriba **Servicios** en el cuadro de texto **Buscar programas y archivos** y, a continuación, presione ENTRAR.  
   
-        ###### <a name="to-extend-a-volume"></a>Para ampliar un volumen  
+    2.  Desplácese hacia abajo y haga clic en **Servicio Proveedor de copias de seguridad de equipos cliente de Windows Server**. Si el estado del servicio no es **Iniciado**, haga clic con el botón derecho en el servicio y, a continuación, haga clic en **Iniciar**.  
   
-        1.  En el Panel de Control, haz clic en **sistema y seguridad**.  
+    3.  Cierre **Servicios**.  
   
-        2.  En **herramientas administrativas**, haz clic en **crear y formatear particiones de disco duro**.  
+5.  Compruebe las alertas para determinar si hay algún error en la base de datos de copia de seguridad. Si existe algún error, siga las instrucciones que aparecen en la alerta para reparar la base de datos de copia de seguridad.  
   
-        3.  Haz clic en el volumen que quieres ampliar. Si **Extender volumen** está habilitado, selecciona esa opción. Si la opción no está habilitada, no se puede extender el volumen.  
+6.  Desinstale el software del conector de Windows Server Essentials del equipo y, a continuación, vuelva a instalarlo. Para obtener más información, vea los temas [Desinstalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [Instalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
   
-        4.  Sigue los pasos del Asistente de volumen extender para extender el volumen.  
+##  <a name="BKMK_TroubleshootaBackupThatDidNotCompleteProperly"></a> Solución de problemas de una copia de seguridad que no se completó correctamente  
+ Cuando una copia de seguridad tiene el estado Incorrecto, la copia de seguridad no se ha hecho correctamente y no hay datos disponibles para ser restaurados. Sin embargo, cuando una copia de seguridad tiene el estado Incompleto no se hace una copia de seguridad de todos los elementos especificados en la configuración de copia de seguridad, pero es posible que haya algunos datos disponibles para ser restaurados.  
   
-    -   Eliminar el contenido del volumen para hacer más espacio disponible.  
+### <a name="errors"></a>Errores  
+  
+-   La copia de seguridad es incompleta  
+  
+-   Error de copia de seguridad  
+  
+### <a name="resolutions"></a>Resoluciones  
+  
+##### <a name="to-identify-volumes-that-were-not-backed-up-successfully"></a>Para identificar los volúmenes de los que no se ha hecho ninguna copia de seguridad correcta  
+  
+1.  Abra el panel de Windows Server Essentials y, a continuación, haga clic en **Equipos y copia de seguridad**.  
+  
+2.  Haga clic en el nombre del equipo en el que no se ha hecho la copia de seguridad correcta y, a continuación, haga clic en **Ver las propiedades del equipo** en el panel **Tareas**.  
+  
+3.  Haga clic en la copia de seguridad que no se ha completado correctamente y, a continuación, haga clic en **Ver detalles**.  
+  
+4.  En el cuadro de diálogo **Detalles de la copia de seguridad**, aparece una marca de comprobación verde en el estado de todos los volúmenes en los que se ha hecho una copia de seguridad correctamente.  
+  
+##### <a name="to-troubleshoot-an-unsuccessful-backup-of-a-volume"></a>Para solucionar problemas de una copia de seguridad incorrecta de un volumen  
+  
+1.  Asegúrese de que el disco duro esté conectado al equipo, esté activado y funcione correctamente.  
+  
+2.  Ejecute **chkdsk /f /r** para corregir los errores del disco duro (**/f**) y recuperar información legible de cualquier sector erróneo (**/r**). Para obtener más información sobre la ejecución de **chkdsk**, consulte [CHKDSK](https://go.microsoft.com/fwlink/?LinkId=206562).  
+  
+3.  Asegúrese de que el equipo no se había apagado o desconectado de la red mientras se ejecutaba la copia de seguridad.  
+  
+4.  Asegúrese de que haya suficiente espacio disponible en cada volumen para que se ejecute la copia de seguridad. La copia de seguridad necesita espacio en disco adicional en el equipo cliente para crear una instantánea VSS. En cualquier volumen que no esté reservado para el sistema debe haber al menos un 10 por ciento de espacio en disco disponible. En un volumen reservado para el sistema, si el tamaño del volumen es inferior a 500 MB, VSS necesitará 32 MB de espacio disponible para crear una instantánea; si el volumen es de 500 MB o superior, VSS necesitará 320 MB de espacio disponible.  
+  
+     Si no hay espacio disponible suficiente en un volumen, intente llevar a cabo alguna de estas soluciones:  
+  
+    -   Extienda el volumen. Puede extender cualquier volumen básico o dinámico excepto el volumen reservado para el sistema.  
+  
+        ###### <a name="to-extend-a-volume"></a>Para extender un volumen  
+  
+        1.  En el Panel de Control, haga clic en **Sistema y seguridad**.  
+  
+        2.  En **Herramientas administrativas**, haga clic en **Crear y formatear particiones del disco duro**.  
+  
+        3.  Haga clic con el botón derecho en el volumen que quiere extender. Si **Extender volumen** está habilitado, seleccione esta opción. Si la opción no está habilitada, no puede extender el volumen.  
+  
+        4.  Siga los pasos del asistente Extender volumen para extender el volumen.  
+  
+    -   Elimine el contenido del volumen para crear más espacio disponible.  
   
         > [!NOTE]
-        >  Si necesitas liberar espacio en el volumen del sistema reservado, puedes mover la imagen de recuperación del sistema a un volumen diferente. Para obtener instrucciones, consulta [implementar una imagen de recuperación del sistema](https://technet.microsoft.com/library/dd744280\(v=ws.10\).aspx).  
+        >  Si necesita liberar espacio en el volumen reservado para el sistema puede mover la imagen de recuperación del sistema a otro volumen. Para obtener instrucciones, consulte [Implementar una imagen de recuperación del sistema](https://technet.microsoft.com/library/dd744280\(v=ws.10\).aspx).  
   
-    -   Excluir el volumen de la copia de seguridad de cliente. Hazlo solamente si no es importante mantener una copia de seguridad de los datos en el volumen.  
+    -   Excluya el volumen de la copia de seguridad del cliente. Siga estos pasos únicamente si no le resulta imprescindible mantener una copia de seguridad de los datos en el volumen.  
   
         > [!WARNING]
-        >  Si se excluye el volumen del sistema reservado de una copia de seguridad de cliente, no se copia el sistema de cliente, y no podrá realizar una restauración completa del sistema en el equipo.  
+        >  Si excluye el volumen reservado para el sistema desde una copia de seguridad de cliente, no se hará ninguna copia de seguridad del sistema cliente y no podrá realizar una restauración completa del sistema en el equipo.  
   
-5.  Buscar otras alertas en el servidor que puede indicar que no hay suficiente espacio en disco en el servidor para completar correctamente la copia de seguridad. Sigue las instrucciones en la alerta para corregir el problema.  
+5.  Compruebe otras alertas del servidor que puedan indicar que no hay suficiente espacio en disco en el servidor para que la copia de seguridad se complete correctamente. Siga las instrucciones de la alerta para corregir el problema.  
   
-6.  Ejecutar **vssadmin** en un símbolo del sistema para solucionar problemas de servicio de copia sombra de volumen (VSS) emite. Para obtener información sobre **vssadmin**, consulta [VSSADMIN](https://go.microsoft.com/fwlink/?LinkID=94332).  
+6.  Ejecute **vssadmin** en un símbolo del sistema para solucionar problemas del Servicio de instantáneas de volumen (VSS). Para obtener información sobre **vssadmin**, consulte [VSSADMIN](https://go.microsoft.com/fwlink/?LinkID=94332).  
   
-##  <a name="BKMK_TroubleshootBackupHealthAlertIssues"></a>Solucionar problemas de alertas de estado de copia de seguridad  
+##  <a name="BKMK_TroubleshootBackupHealthAlertIssues"></a> Solucionar problemas de alertas de estado de copia de seguridad  
   
 ### <a name="errors"></a>Errores  
   
--   El servicio de proveedor de soluciones de equipo copia de seguridad de Windows Server dejó de funcionar  
+-   El servicio de proveedor de copias de seguridad del equipo de Soluciones de Windows Server ha dejado de funcionar  
   
--   El servicio de proveedor del cliente equipo copia de seguridad de Windows Server soluciones dejó de funcionar  
+-   El servicio de proveedor de copias de seguridad de equipos cliente de Windows Server ha dejado de funcionar  
   
 ### <a name="resolutions"></a>Resoluciones  
   
-##### <a name="to-troubleshoot-a-backup-health-alert"></a>Solucionar problemas de una alerta de estado de copia de seguridad  
+##### <a name="to-troubleshoot-a-backup-health-alert"></a>Para solucionar problemas de una alerta de mantenimiento de la copia de seguridad  
   
-1.  Si una alerta indica que la copia de seguridad tiene problemas, sigue las instrucciones en la alerta para corregir el problema.  
+1.  Si una alerta le indica que la base de datos de la copia de seguridad tiene problemas, siga las instrucciones de la alerta para corregir el problema.  
   
-2.  Si una alerta indica que no se está ejecutando un servicio de copia de seguridad, intente iniciar el servicio en el servidor o el equipo cliente en la que recibiste el mensaje de error.  
+2.  Si una alerta le indica que no se está ejecutando un servicio de copia de seguridad, intente iniciar el servicio en el servidor o en el equipo cliente en el que ha recibido el mensaje de error.  
   
-    ###### <a name="to-start-backup-services-on-the-server"></a>Para iniciar servicios de copia de seguridad en el servidor  
+    ###### <a name="to-start-backup-services-on-the-server"></a>Para iniciar los servicios de copia de seguridad en el servidor  
   
-    1.  En el servidor, haz clic en **inicio**y haz clic en **herramientas administrativas**y, a continuación, haz clic en **servicios**.  
+    1.  En el servidor, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, después, haga clic en **Servicios**.  
   
         > [!NOTE]
-        >  Si va a administrar el servidor de forma remota, debes usar conexión a Escritorio remoto para acceder al escritorio del servidor. Para obtener información sobre el uso de conexión a Escritorio remoto, vea [conectarse a otro equipo mediante conexión a Escritorio remoto](https://windows.microsoft.com/windows-vista/Connect-to-another-computer-using-Remote-Desktop-Connection).  
+        >  Si administra el servidor de forma remota debe usar Conexión a Escritorio remoto para tener acceso al escritorio del servidor. Para obtener información sobre el uso de Conexión a Escritorio remoto, consulte [Conectarse a otro equipo mediante Conexión a Escritorio remoto](https://windows.microsoft.com/windows-vista/Connect-to-another-computer-using-Remote-Desktop-Connection).  
   
-    2.  Desplázate hacia abajo hasta y haz clic en **servicio de proveedor de copia de seguridad de Windows Server cliente equipo**. Si el estado del servicio no es **iniciado**, haz clic en el servicio y, a continuación, haz clic en **inicio**.  
+    2.  Desplácese hacia abajo y haga clic en **Servicio Proveedor de copias de seguridad de equipos cliente de Windows Server**. Si el estado del servicio no es **Iniciado**, haga clic con el botón derecho en el servicio y, a continuación, haga clic en **Iniciar**.  
   
-    3.  Haz clic en **servicio copia de seguridad del equipo de cliente de Windows Server**. Si el estado del servicio no es **iniciado**, haz clic en el servicio y, a continuación, haz clic en **inicio**.  
+    3.  Haga clic en **Servicio de copias de seguridad de equipos cliente de Windows Server**. Si el estado del servicio no es **Iniciado**, haga clic con el botón derecho en el servicio y, a continuación, haga clic en **Iniciar**.  
   
-    4.  Cerrar **servicios**.  
+    4.  Cierre **Servicios**.  
   
-    ###### <a name="to-start-backup-services-on-a-client-computer"></a>Para iniciar servicios de copia de seguridad en un equipo cliente  
+    ###### <a name="to-start-backup-services-on-a-client-computer"></a>Para iniciar los servicios de copia de seguridad en un equipo cliente  
   
-    1.  En el equipo cliente, haz clic en **inicio**, tipo **servicios** en la **buscar programas y archivos** cuadro de texto y, a continuación, haz clic en ENTRAR.  
+    1.  En el equipo cliente, haga clic en **Inicio**, escriba **Servicios** en el cuadro de texto **Buscar programas y archivos** y, a continuación, haga clic en ENTRAR.  
   
-    2.  Haz clic en **servicio de proveedor de copia de seguridad de Windows Server cliente equipo**y, a continuación, haz clic en **inicio**.  
+    2.  Haga clic con el botón derecho en **Servicio Proveedor de copias de seguridad de equipos cliente de Windows Server**y, a continuación, haga clic en **Iniciar**.  
   
-    3.  Cerrar la **servicios**.  
+    3.  Cierre los **Servicios**.  
   
-3.  Comprueba los registros de eventos en el equipo cliente o servidor para problemas relacionados con los servicios de copia de seguridad o controladores.  
+3.  Busque problemas relacionados con los servicios o los controladores de la copia de seguridad en los registros de eventos del equipo cliente o del servidor.  
   
-4.  Reinicia el servidor o el equipo cliente en la que recibiste el mensaje de error.  
+4.  Reinicie el servidor o el equipo cliente en el que ha recibido el mensaje de error.  
   
-5.  Comprueba las alertas de estado para otros problemas que pueden tener un efecto en la copia de seguridad de cliente.  
+5.  Busque otros problemas que puedan tener efectos en la copia de seguridad del cliente en las alertas de mantenimiento.  
   
-##  <a name="BKMK_FileAndFolder"></a>Solucionar problemas de restauración de un archivo o carpeta  
-  
-### <a name="errors"></a>Errores  
-  
--   Restauración de archivos o carpetas no se completó correctamente.  
-  
-### <a name="resolutions"></a>Resoluciones  
-  
-##### <a name="to-troubleshoot-an-unsuccessful-file-or-folder-restore"></a>Para solucionar una error al restauración de archivo o carpeta  
-  
-1.  Asegúrate de que el equipo está conectado a la red a través de un dispositivo de red.  
-  
-2.  Asegúrese de que el dispositivo de red que el equipo está conectado a también está conectado a la red, encendida y funciona correctamente.  
-  
-3.  Active alertas para determinar si hay errores en la base de datos de copia de seguridad. Si hay errores, sigue las instrucciones en la alerta para reparar la copia de seguridad.  
-  
-4.  Intentar restaurar los archivos o carpetas desde otra copia de seguridad.  
-  
-5.  Asegúrate de que la **controlador Restaurar equipo de Windows Server solución** está instalada y funciona correctamente.  
-  
-    ###### <a name="to-check-the-status-of-the-windows-server-solution-computer-restore-driver"></a>Para comprobar el estado del controlador para restaurar del equipo de Windows Server solución  
-  
-    1.  Haz clic en **inicio**, tipo **Administrador de dispositivos** en la **buscar programas y archivos** cuadro de texto y, a continuación, haz clic en ENTRAR.  
-  
-    2.  En el Administrador de dispositivos, haga clic en **dispositivos del sistema**, desplázate hasta **controlador Restaurar equipo de Windows Server soluciones**.  
-  
-    3.  Si no se muestra el controlador:  
-  
-        1.  Abre un símbolo del sistema con privilegios de administrador y ejecuta el siguiente comando:  
-  
-             **¿%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe?  puedo**  
-  
-        2.  Actualizar al administrador de dispositivos. Debería aparecer el controlador.  
-  
-    4.  Si el icono que se muestra es un monitor de PC, el controlador está instalado y se ejecuta correctamente. Cierra el Administrador de dispositivos.  
-  
-    5.  Si el icono muestra no es un monitor de PC  
-  
-        1.  Haz clic en **controlador Restaurar equipo de Windows Server soluciones**y, a continuación, haz clic en **propiedades**.  
-  
-        2.  Haz clic en el **controlador** pestaña y, a continuación, haz clic en **Actualizar controlador**.  
-  
-        3.  Haz clic en **buscar software de controlador actualizado automáticamente**y, a continuación, sigue las instrucciones para actualizar el controlador.  
-  
-    6.  Cierra el Administrador de dispositivos.  
-  
-6.  Desinstalar el software del conector de Windows Server Essentials desde el equipo y, a continuación, volver a instalarlo. Para obtener más información, consulta los temas [desinstalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) y [instalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
-  
-##  <a name="BKMK_Troubleshootfullsystemrestoreissues"></a>Solucionar problemas de una restauración completa del sistema  
+##  <a name="BKMK_FileAndFolder"></a> Solucionar problemas de restauración de un archivo o carpeta  
   
 ### <a name="errors"></a>Errores  
   
--   No se puede iniciar sesión en el equipo cliente tras una restauración completa del sistema.  
+-   La restauración de archivos o carpetas no se ha completado correctamente.  
   
 ### <a name="resolutions"></a>Resoluciones  
- Si cambias el nombre de un equipo y necesitas más adelante restaurar una copia de seguridad que se guardó antes de que el nombre del equipo cambiado, después de la restauración, cuando intentas iniciar sesión en tu cuenta de dominio, recibirás este error: "la base de datos de seguridad en el servidor no tiene una cuenta de equipo para esta relación de confianza de la estación de trabajo". Para obtener acceso a la red en el equipo nuevo, quitar el software del conector, quita el dominio de Windows en el equipo y vuelva a conectar al servidor.  
+  
+##### <a name="to-troubleshoot-an-unsuccessful-file-or-folder-restore"></a>Para solucionar problemas de una restauración incorrecta de archivos o carpetas  
+  
+1.  Asegúrese de que el equipo esté conectado a la red a través de un dispositivo de red.  
+  
+2.  Asegúrese de que el dispositivo de red al que está conectado el equipo también esté conectado a la red, encendido y funcione correctamente.  
+  
+3.  Compruebe las alertas para determinar si hay algún error en la base de datos de copia de seguridad. Si existe algún error, siga las instrucciones que aparecen en la alerta para reparar la base de datos de copia de seguridad.  
+  
+4.  Intente restaurar los archivos o las carpetas desde otra copia de seguridad.  
+  
+5.  Asegúrese de que el **Controlador de la restauración de equipos con las soluciones de Windows Server** esté instalado y funcione correctamente.  
+  
+    ###### <a name="to-check-the-status-of-the-windows-server-solution-computer-restore-driver"></a>Para comprobar el estado del Controlador de la restauración de equipos con las soluciones de Windows Server  
+  
+    1.  Haga clic en **Inicio**, escriba **Administrador de dispositivos** en el cuadro de texto **Buscar programas y archivos** y a continuación, haga clic en ENTRAR.  
+  
+    2.  En el Administrador de dispositivos, haga clic en **Dispositivos del sistema** y desplácese hasta **Controlador de la restauración de equipos con las soluciones de Windows Server**.  
+  
+    3.  Si no aparece el controlador:  
+  
+        1.  Abra un símbolo del sistema con privilegios de administrador y ejecute el siguiente comando:  
+  
+             **%ProgramFiles%\Windows Server\Bin\BackupDriverInstaller.exe?  �i**  
+  
+        2.  Refresh Device Manager. Debe aparecer el controlador.  
+  
+    4.  Si el icono que aparece es un monitor de equipo, el controlador está instalado y se ejecuta correctamente. Cierre el Administrador de dispositivos.  
+  
+    5.  Si el icono que aparece no es un monitor de equipo  
+  
+        1.  Haga clic con el botón derecho en **Controlador de la restauración de equipos con las soluciones de Windows Server**y, a continuación, haga clic en **Propiedades**.  
+  
+        2.  Haga clic en la pestaña **Controlador** y, a continuación, haga clic en **Actualizar controlador**.  
+  
+        3.  Haga clic en **Buscar software de controlador actualizado automáticamente** y, a continuación, siga las instrucciones para actualizar el controlador.  
+  
+    6.  Cierre el Administrador de dispositivos.  
+  
+6.  Desinstale el software del conector de Windows Server Essentials del equipo y, a continuación, vuelva a instalarlo. Para obtener más información, vea los temas [Desinstalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13) e [Instalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_11).  
+  
+##  <a name="BKMK_Troubleshootfullsystemrestoreissues"></a> Solución de problemas de una restauración completa del sistema  
+  
+### <a name="errors"></a>Errores  
+  
+-   No se puede iniciar sesión en el equipo cliente después de una restauración completa del sistema.  
+  
+### <a name="resolutions"></a>Resoluciones  
+ Si cambia el nombre de un equipo y más adelante necesita restaurar una copia de seguridad guardada antes del cambio del nombre, después de la restauración, cuando intente iniciar sesión en la cuenta de dominio, recibirá este error: "La base de datos de seguridad en el servidor no tiene una cuenta de equipo para la relación de confianza de esta estación de trabajo." Para volver a tener acceso de red en el equipo, quite el software del conector, quite el equipo del dominio de Windows y, a continuación, vuelva a conectarlo al servidor.  
   
 ##### <a name="to-regain-network-access-to-a-restored-computer-after-a-computer-name-change"></a>Para recuperar el acceso de red a un equipo restaurado después de un cambio de nombre de equipo  
   
-1.  Inicia sesión como administrador local el equipo.  
+1.  Inicie sesión como administrador local en el equipo.  
   
-2.  Desinstalar el software del conector. Para obtener más información, consulta [desinstalar el software del conector](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13).  
+2.  Desinstale el software del conector. Para obtener más información, consulte [Uninstall the Connector software](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_13).  
   
-3.  Quitar el equipo del dominio. Para obtener más información, consulta [quitar un equipo de un dominio de Windows](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8).  
+3.  Quite el equipo del dominio. Para obtener más información, consulte [Remove a computer from a Windows domain](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_8).  
   
-4.  Vuelva a conectar el equipo al servidor. Para obtener más información, consulta [conectar equipos con el servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9).  
+4.  Vuelva a conectar el equipo al servidor. Para obtener más información, consulte [Conectar los equipos al servidor](../use/Get-Connected-in-Windows-Server-Essentials.md#BKMK_9)  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
   
 -   [Compatibilidad con Windows Server Essentials](Support-Windows-Server-Essentials.md)

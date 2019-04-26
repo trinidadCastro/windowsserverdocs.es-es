@@ -1,6 +1,6 @@
 ---
-title: Configurar el almacenamiento del servidor
-description: "Describe cómo usar Windows Server Essentials"
+title: Configurar el almacenamiento de servidor
+description: Describe cómo usar Windows Server Essentials
 ms.custom: na
 ms.date: 10/03/2016
 ms.prod: windows-server-2016-essentials
@@ -13,46 +13,47 @@ author: nnamuhcs
 ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 6de485f6fd46464ba707bc0871f60ac2fec5a1db
-ms.sourcegitcommit: 70c1b6cedad55b9c7d2068c9aa4891c6c533ee4c
-ms.translationtype: MT
+ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/03/2017
+ms.lasthandoff: 04/17/2019
+ms.locfileid: "59859986"
 ---
-# <a name="configure-server-storage"></a>Configurar el almacenamiento del servidor
+# <a name="configure-server-storage"></a>Configurar el almacenamiento de servidor
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
 
-## <a name="sample-hard-disk-configurations"></a>Configuraciones de disco duro de muestra  
- La siguiente tabla sugiere configuraciones de disco duro de muestra. Las estimaciones basadas en uso típico y funcionalidad, pero no tienen en consideración problemas que afectan al rendimiento óptimo. Puedes usar cualquier tipo de disco duro compatible para estas configuraciones (como SATA o SCSI), en función de las preferencias y necesidades de tu cliente.  
+## <a name="sample-hard-disk-configurations"></a>Configuraciones de disco duro de ejemplo  
+ La siguiente tabla sugiere algunas configuraciones de disco duro de ejemplo. Las estimaciones se basan en el uso y las funcionalidades típicos, pero no consideran problemas que afectan el rendimiento óptimo. Puede usar cualquier disco duro compatible que desee para estas configuraciones (por ejemplo, SATA o SCSI) en función de las preferencias y las necesidades del cliente.  
   
 > [!IMPORTANT]
->   Windows Server Essentials debe estar instalado como el volumen C: y el tamaño del volumen debe tener al menos 60 GB. Se recomienda que crear dos particiones del disco del sistema operativo y no uses la unidad C: (partición del sistema) para almacenar datos empresariales.  
+>   Windows Server Essentials debe estar instalado como volumen C:, y el tamaño del volumen debe ser al menos 60 GB. Se recomienda crear dos particiones en el disco del sistema operativo, en lugar de utilizar la C: (partición del sistema) para almacenar los datos de la empresa.  
   
-|Nivel de servidor|Configuración de disco|  
+|Nivel de servidor|Configuración del disco|  
 |------------------|------------------------|  
-|Entrada|-Dos discos físicos<br /><br /> -Configurado como un conjunto reflejado RAID 1 que contiene lo siguiente:<br /><br /> ¿-Volumen C:? 60 GB<br /><br /> ¿-Volumen D:? 1000 GB|  
-|Mediano|-Tres discos físicos<br /><br /> -Configurado como un conjunto RAID 5 que contiene lo siguiente:<br /><br /> ¿-Volumen C:? 60 GB<br /><br /> ¿-Volumen D:? 1500 GB|  
-|Alto|-Cinco o más discos físicos en total<br /><br /> ¿-Dos discos en un conjunto reflejado RAID 1 que contiene el volumen C:? 100 GB<br /><br /> -Todos los demás discos en un conjunto RAID 5 que contiene lo siguiente:<br /><br /> ¿-Volumen D:? 1500 GB<br /><br /> ¿-Volumen E:? 1500 GB|  
+|Entrada|-Dos discos físicos<br /><br /> -Configurados como conjunto reflejado RAID 1 que contiene lo siguiente:<br /><br /> ¿-Volumen C:? 60 GB<br /><br /> ¿-Volumen D:? 1000 GB|  
+|Medio|-Tres discos físicos<br /><br /> -Configurados como conjunto RAID 5 que contiene lo siguiente:<br /><br /> ¿-Volumen C:? 60 GB<br /><br /> ¿-Volumen D:? 1500 GB|  
+|Alto|-Cinco o más discos físicos en total<br /><br /> ¿-Dos discos en un conjunto reflejado RAID 1 que contiene el volumen C:? 100 GB<br /><br /> -Todos los demás discos en un conjunto RAID 5 que contiene lo siguiente:<br /><br /> ¿-Volumen D:? 1500 GB<br /><br /> ¿-Volumen de E:? 1500 GB|  
   
- Estas recomendaciones tienen en cuenta el tamaño del sistema operativo instalado, el tamaño medio del almacenamiento de datos que usa el servidor y el crecimiento de almacenamiento de datos que esperan durante el ciclo de vida del servidor. Los volúmenes pueden ser particiones en un único disco físico o pueden encontrarse en discos físicos independientes. Dado que el servidor almacena datos importantes para tu cliente, se recomienda usar varios discos físicos y proteger los datos de s de cliente mediante el uso de RAID de hardware espacios de almacenamiento.  
+ Estas recomendaciones tienen en cuenta el tamaño del sistema operativo instalado, el tamaño promedio del almacenamiento de datos que usa el servidor y el crecimiento del almacenamiento de datos previsto durante toda la vida útil del servidor. Los volúmenes pueden ser particiones de un único disco físico o se pueden incluir en discos físicos separados. Dado que el servidor almacena datos importantes de cara al cliente, se recomienda que use varios discos físicos y ayudar a proteger los datos del cliente s mediante el uso de RAID de hardware o espacios de almacenamiento.  
   
-## <a name="configuring-your-server-backup"></a>Configurar la copia de seguridad del servidor  
- Además de los discos duros internos en el servidor, los clientes consideren el uso de discos duros externos USB para las copias de seguridad. En teoría, el cliente tuviera al menos dos discos duros externos con suficiente capacidad para hacer copia de seguridad de todos los datos en el servidor. Si se usan discos duros externos, el cliente puede sacar un disco de la oficina cada día para proteger aún más los datos.  
+## <a name="configuring-your-server-backup"></a>Configuración de la copia de seguridad del servidor  
+ Además de los discos duros internos del servidor, los clientes deben plantearse el uso de discos duros USB externos para realizar copias de seguridad. En una situación ideal, el cliente dispondría de al menos dos discos duros externos con capacidad suficiente para realizar una copia de seguridad de todos los datos del servidor. Si se usan discos duros externos, el cliente puede retirar un disco de las instalaciones todas las noches para ofrecer mayor protección de los datos.  
   
-## <a name="partition-configuration"></a>Configuración de la partición  
- Durante la configuración inicial del servidor, se crea un conjunto de carpetas de servidor predeterminadas que se incluyen las carpetas compartidas y la carpeta de copia de seguridad del equipo cliente en la partición de datos más grande en el disco 0.  
+## <a name="partition-configuration"></a>Configuración de partición  
+ Durante la configuración inicial del servidor, se creará un conjunto de carpetas de servidor predeterminadas (incluidas carpetas compartidas y la carpeta de copia de seguridad del equipo cliente) en la partición de datos más grande del disco 0.  
   
-## <a name="see-also"></a>Consulta también  
+## <a name="see-also"></a>Vea también  
 
- [Tareas iniciales con el ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introducción al ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)
 
- [Tareas iniciales con el ADK de Windows Server Essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Introducción al ADK de Windows Server Essentials](../install/Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
  [Crear y personalizar la imagen](../install/Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](../install/Additional-Customizations.md)   
- [Preparación de la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
- [Prueba la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
+ [Preparar la imagen para la implementación](../install/Preparing-the-Image-for-Deployment.md)   
+ [Probar la experiencia del cliente](../install/Testing-the-Customer-Experience.md)
 
