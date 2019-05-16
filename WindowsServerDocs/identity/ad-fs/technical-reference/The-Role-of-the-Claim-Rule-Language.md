@@ -11,7 +11,7 @@ ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
 ms.openlocfilehash: 05728f04f6fb924cf3793bc843df3832c7c383f7
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59855696"
@@ -75,7 +75,7 @@ En la tabla siguiente proporciona un ejemplo de varios - condiciones de expresi�
   
 |Descripción de la condición|Ejemplo de sintaxis de condición|  
 |-------------------------|----------------------------|  
-|Esta regla tiene una condición para comprobar si dos de entrada notificaciones, cada uno con un tipo de notificación especificado ("http://test/name"y"http://test/email"). Si las dos notificaciones coincidentes se encuentran en las notificaciones de entrada, la regla copia la notificación de nombre en el conjunto de notificaciones de salida.|``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );```|  
+|Esta regla tiene una condición para comprobar si dos de entrada notificaciones, cada uno con un tipo de notificación especificado ("http://test/name" y "http://test/email"). Si las dos notificaciones coincidentes se encuentran en las notificaciones de entrada, la regla copia la notificación de nombre en el conjunto de notificaciones de salida.|``` c1: [type  == "http://test/name"] && c2: [type == "http://test/email"] => issue (claim  = c1 );```|  
   
 #### <a name="regular--condition-examples"></a>Normal: ejemplos de condición  
 En la tabla siguiente proporciona un ejemplo de una expresión regular,-según la condición.  
