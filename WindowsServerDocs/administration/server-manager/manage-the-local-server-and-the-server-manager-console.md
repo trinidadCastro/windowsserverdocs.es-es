@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 1f22578cc54a22464fe5d9208731fe681be30481
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59832986"
@@ -26,7 +26,7 @@ ms.locfileid: "59832986"
 
 En Windows Server, el administrador del servidor le permite administrar tanto el servidor local (si está ejecutando el administrador del servidor en Windows Server y no en un sistema operativo cliente basado en Windows) y los servidores remotos que ejecutan Windows Server 2008 y versiones más recientes de la Windows Sistema operativo de servidor.
 
-El **servidor Local** página en el administrador del servidor muestra los datos de contador de propiedades, eventos, servicios y rendimiento de servidor y resultados de Best Practices Analyzer (BPA) para el servidor local. Los iconos de eventos, servicios, BPA y rendimiento funcionan igual que en las páginas de grupos de servidores y roles. Para obtener más información sobre cómo configurar los datos que se muestran en estos iconos, consulta [View y Configure Performance, Event, y Service Data y [Run Best Practices Analyzer Scans y Manage Scan Results.
+El **servidor Local** página en el administrador del servidor muestra los datos de contador de propiedades, eventos, servicios y rendimiento de servidor y resultados de Best Practices Analyzer (BPA) para el servidor local. Los iconos de eventos, servicios, BPA y rendimiento funcionan igual que en las páginas de grupos de servidores y roles. Para obtener más información sobre cómo configurar los datos que se muestran en estos iconos, vea [Visualización y configuración de datos de servicios, eventos y rendimiento](view-and-configure-performance-event-and-service-data.md) y [Ejecución de análisis del Analizador de procedimientos recomendados y administración de los resultados de los análisis](run-best-practices-analyzer-scans-and-manage-scan-results.md).
 
 Comandos de menú y la configuración de las barras de título de la consola de administrador del servidor se aplica globalmente a todos los servidores en el grupo de servidores y le permite usar el administrador del servidor para administrar el grupo de todo el servidor.
 
@@ -104,7 +104,7 @@ Cuando los servidores que están en un clúster se agregan al administrador del 
 Datos que se muestran en las páginas principales de rol en el administrador del servidor para servicios de escritorio remoto, la dirección IP de administración y servicios de almacenamiento y archivos no se actualizan automáticamente. Actualizar los datos que se muestran en estas páginas manualmente, presionando **F5** o haciendo clic en **actualizar** en el encabezado de consola de administrador del servidor mientras estás en esas páginas.
 
 ### <a name="add-or-remove-roles-or-features"></a>Agregar o quitar roles o características
-Los comandos que abren el agregar Roles y características Asistente y quitar Roles y características Asistente y permiten agregar o quitar roles, servicios de rol y características a servidores en los servidores del grupo están en el **administrar** menú del administrador del servidor la consola y el **tareas** menú de la **Roles y características** icono en las páginas de rol o grupo. Para obtener información detallada sobre cómo agregar o quitar roles o características, consulta [Install or Uninstall Roles, Role Services, or Features](install-or-uninstall-roles-role-services-or-features.md).
+Los comandos que abren el agregar Roles y características Asistente y quitar Roles y características Asistente y permiten agregar o quitar roles, servicios de rol y características a servidores en los servidores del grupo están en el **administrar** menú del administrador del servidor la consola y el **tareas** menú de la **Roles y características** icono en las páginas de rol o grupo. Para obtener información detallada acerca de cómo agregar o quitar roles o características, consulte [instalación o desinstalación de Roles, servicios de rol o características](install-or-uninstall-roles-role-services-or-features.md).
 
 En el administrador del servidor, roles y características de datos se muestran en el idioma base del sistema, también denominado el idioma predeterminado de la interfaz gráfica de usuario o el idioma seleccionado durante la instalación del sistema operativo.
 
