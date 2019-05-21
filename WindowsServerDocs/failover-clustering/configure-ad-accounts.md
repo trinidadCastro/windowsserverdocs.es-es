@@ -6,17 +6,17 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 2fcc6047a0e85170754d8f05d10f728a4c529049
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 454783a13b834ef705bd896155195750de2b183c
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871966"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772715"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuración de cuentas de clúster en Active Directory
 
 
-Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
+Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
 En Windows Server, al crear un clúster de conmutación por error y configurar servicios en clúster o aplicaciones, los asistentes para clúster de conmutación por error crean las cuentas de equipo de Active Directory necesarias (también denominadas objetos de equipo) y conceden permisos concretos. Los asistentes crean una cuenta de equipo para el clúster propiamente dicho (esta cuenta también se denomina el objeto de nombre de clúster o CNO) y una cuenta de equipo para la mayoría de los tipos de servicios y aplicaciones en clúster, siendo la excepción una máquina virtual de Hyper-V. Los asistentes para clúster de conmutación por error establecen automáticamente los permisos para estas cuentas. Si se cambian los permisos, habrá que volver a cambiarlos para que coincidan con los requisitos de clúster. En esta guía se describen estas cuentas y permisos de Active Directory, se proporciona información general sobre por qué son importantes, y se describen los pasos para configurar y administrar las cuentas.
       
@@ -113,7 +113,7 @@ Tal y como se describe en las tres secciones anteriores, se deben cumplir cierto
 
 ### <a name="planning-ahead-for-password-resets-and-other-account-maintenance"></a>Planear de antemano los restablecimientos de la contraseña y otras tareas de mantenimiento de la cuenta
 
-A veces, los administradores de clústeres de conmutación por error pueden necesitar restablecer la contraseña de la cuenta de nombre de clúster. Esta acción necesita un permiso concreto, el permiso **Restablecer contraseña**. Por tanto, es una práctica recomendada editar los permisos de la cuenta de nombre de clúster (utilizando el complemento Usuarios y equipos de Active Directory) para conceder el permiso **Restablecer contraseña** a los administradores del clúster para la cuenta de nombre de clúster. Para obtener más información, vea [Pasos para solucionar problemas de contraseña con la cuenta de nombre de clúster](#steps_for_troubleshooting_password_problems_with_the_cluster_name_account), más adelante en esta guía.
+A veces, los administradores de clústeres de conmutación por error pueden necesitar restablecer la contraseña de la cuenta de nombre de clúster. Esta acción necesita un permiso concreto, el permiso **Restablecer contraseña**. Por tanto, es una práctica recomendada editar los permisos de la cuenta de nombre de clúster (utilizando el complemento Usuarios y equipos de Active Directory) para conceder el permiso **Restablecer contraseña** a los administradores del clúster para la cuenta de nombre de clúster. Para obtener más información, vea [Pasos para solucionar problemas de contraseña con la cuenta de nombre de clúster](#steps-for-troubleshooting-password-problems-with-the-cluster-name-account), más adelante en esta guía.
 
 ## <a name="steps-for-configuring-the-account-for-the-person-who-installs-the-cluster"></a>Pasos para configurar la cuenta para la persona que instala el clúster
 
