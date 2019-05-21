@@ -11,7 +11,7 @@ ms.topic: article
 ms.date: 10/16/2017
 ms.openlocfilehash: b55063c3c5ea41b43573e6322b5efb36d2dad90e
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59828336"
@@ -57,7 +57,7 @@ fsutil resource [stop] <RmRootPathname>
 |setavailable|Especifica que un administrador de recursos transaccional preferirá disponibilidad a través de coherencia.|
 |setconsistent|Especifica que un administrador de recursos transaccional preferirán coherencia a través de disponibilidad.|
 |setlog|Cambia las características de un administrador de recursos transaccional que ya se está ejecutando.|
-|Crecimiento|Especifica la cantidad por la que puede alcanzar el registro del Administrador de recursos transaccional.<br /><br />El parámetro de crecimiento se puede especificar como sigue:<br /><br />-El número de contenedores con el formato: *Contenedores ***contenedores**<br />: porcentaje con el formato: *Por ciento *** por ciento**|
+|Crecimiento|Especifica la cantidad por la que puede alcanzar el registro del Administrador de recursos transaccional.<br /><br />El parámetro de crecimiento se puede especificar como sigue:<br /><br />-El número de contenedores con el formato: *Contenedores***contenedores**<br />:   porcentaje con el formato: *Por ciento***por ciento**|
 |<containers>|Especifica los objetos de datos que se usan por el Administrador de recursos transaccionales.|
 |maxextent|Especifica el número máximo de contenedores para el Administrador de recursos transaccional especificado.|
 |minextent|Especifica el número mínimo de contenedores para el Administrador de recursos transaccional especificado.|
