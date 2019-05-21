@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: 77fb8cc6e13cb82e4d07808c3ae77757a4b2de79
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59826786"
@@ -56,7 +56,7 @@ Las propiedades de recurso Impact y Personally Identifiable Information se habil
   
 5.  Haz clic con el botón secundario en **Personally Identifiable Information** y, luego, haz clic en **Habilitar**.  
   
-![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)****Windows PowerShell equivalente comandos****  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -107,7 +107,7 @@ Una regla de clasificación de contenido de cadena analiza un archivo en busca d
   
 13. En la pestaña **Tipo de evaluación**, activa la casilla **Volver a evaluar los valores de propiedad existentes**, haz clic en **Sobrescribir el valor existente** y, luego, haz clic en **Aceptar**.  
   
-![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)****Windows PowerShell equivalente comandos****  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -155,7 +155,7 @@ Una regla de clasificación de contenido de expresión regular analiza un archiv
   
 12. En la pestaña **Tipo de evaluación**, activa la casilla **Volver a evaluar los valores de propiedad existentes**, haz clic en **Sobrescribir el valor existente** y, luego, haz clic en **Aceptar**.  
   
-![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)****Windows PowerShell equivalente comandos****  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

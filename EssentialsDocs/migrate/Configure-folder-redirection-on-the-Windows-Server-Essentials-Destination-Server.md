@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 7cc1207f36d3a921b49cc3ecd02acf3fe4fa243c
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59827376"
@@ -31,7 +31,7 @@ Haga esta tarea si está habilitada la redirección de carpetas en el servidor d
   
 1.  En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.  
   
-2.  En **Group Policy Management**, expanda **bosque: *** Nombredominiored*, expanda **dominios**, expanda *Nombredominiored* y, a continuación, expanda **Group Policy Objects**.  
+2.  En **Group Policy Management**, expanda **bosque:***Nombredominiored*, expanda **dominios**, expanda *Nombredominiored* y, a continuación, expanda **Group Policy Objects**.  
   
 3.  Haga clic con el botón secundario en **Redirección de carpetas de directiva de grupo de SBS**y después haga clic en **Eliminar**.  
   

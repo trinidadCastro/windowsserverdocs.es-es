@@ -15,7 +15,7 @@ ms.author: pashort
 author: shortpatti
 ms.openlocfilehash: 0d51ac71fa2fbe4d0bb7121a9ef511524c47f4f4
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59826616"
@@ -57,7 +57,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 6.  En la página **Progreso de la instalación**, comprueba que la instalación se ha completado correctamente y haz clic en **Cerrar**.  
   
-![Instalación correcta de progreso](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Instalación correcta de progreso](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)****Windows PowerShell equivalente comandos****  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

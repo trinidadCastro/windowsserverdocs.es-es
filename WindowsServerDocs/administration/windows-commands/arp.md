@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 5cd84269a5ac1a85d4b6cf359cc97f478a500c4f
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59825986"
@@ -32,7 +32,7 @@ arp [/a [<Inetaddr>] [/n <ifaceaddr>]] [/g [<Inetaddr>] [-n <ifaceaddr>]] [/d <I
 ### <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|/a [<Inetaddr>] [/n <ifaceaddr>]|Muestra las tablas de caché arp actual para todas las interfaces. El parámetro /n distingue mayúsculas de minúsculas.<br /><br />Para mostrar la entrada de caché de arp para una dirección IP específica, use **arp /a** con el *direcciónDeInternet* parámetro, donde *direcciónDeInternet* es una dirección IP. Si *direcciónDeInternet* no se especifica, se usa la primera interfaz aplicable.<br /><br />Para mostrar la tabla de la memoria caché de arp para una interfaz específica, use el **/n *** direcciónDeInterfaz* parámetro junto con el **/a** parámetro donde *direcciónDeInterfaz* es la dirección IP asignada a la interfaz.|
+|/a [<Inetaddr>] [/n <ifaceaddr>]|Muestra las tablas de caché arp actual para todas las interfaces. El parámetro /n distingue mayúsculas de minúsculas.<br /><br />Para mostrar la entrada de caché de arp para una dirección IP específica, use **arp /a** con el *direcciónDeInternet* parámetro, donde *direcciónDeInternet* es una dirección IP. Si *direcciónDeInternet* no se especifica, se usa la primera interfaz aplicable.<br /><br />Para mostrar la tabla de la memoria caché de arp para una interfaz específica, use el **/n***direcciónDeInterfaz* parámetro junto con el **/a** parámetro donde *direcciónDeInterfaz* es la dirección IP asignada a la interfaz.|
 |/g [<Inetaddr>] [/n <ifaceaddr>]|Idéntico a **/a**.|
 |[/d <Inetaddr> [<ifaceaddr>]|elimina una entrada con una dirección IP específica, donde *direcciónDeInternet* es la dirección IP.<br /><br />Para eliminar una entrada en una tabla para una interfaz específica, use el *direcciónDeInterfaz* parámetro donde *direcciónDeInterfaz* es la dirección IP asignada a la interfaz.<br /><br />Para eliminar todas las entradas, use el asterisco (\*) caracteres comodín en lugar de *direcciónDeInternet*.|
 |/s <Inetaddr> <Etheraddr> [<ifaceaddr>]|Agrega una entrada estática a la caché de arp que resuelve la dirección IP *direcciónDeInternet* a la dirección física *direcciónEthernet*.<br /><br />Para agregar una entrada de caché de arp estática a la tabla para una interfaz específica, use el *direcciónDeInterfaz* parámetro donde *direcciónDeInterfaz* es una dirección IP asignada a la interfaz.|

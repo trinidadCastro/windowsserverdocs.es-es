@@ -203,7 +203,7 @@ Acceso remoto administra una lista de prefijos IPv6 para los recursos corporativ
   
 2.  En el Asistente para instalación de acceso remoto, haga clic en **Configuración de prefijo**.  
   
-3.  En **Prefijos IPv6 de la red interna** en dicha**** página, agregue prefijos IPv6 separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). Haga clic en **Siguiente**.  
+3.  En **Prefijos IPv6 de la red interna** en dicha página, **agregue prefijos IPv6** separados por puntos y coma (por ejemplo, 2001:db8:1::/64;2001:db8:2::/64). Haga clic en **Siguiente**.  
   
 4.  En la página **Autenticación** , haga clic en **Finalizar**.  
   
