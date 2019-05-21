@@ -11,7 +11,7 @@ ms.date: 6/24/2017
 description: Cómo implementar Carpetas de trabajo, incluyendo la instalación del rol de servidor, la creación de recursos compartidos de sincronización y la creación de registros DNS.
 ms.openlocfilehash: 1f7a0aa0b7e08a1dd444cd6b488a1ced6ee3d9d7
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59812546"
@@ -110,7 +110,7 @@ Add-WindowsFeature FS-SyncShareService
 
 4.  En la ventana **Crear grupo** , en la sección **Grupo** , especifique la configuración siguiente:
 
-    -   En **Nombre de grupo**, escribe el nombre del grupo de seguridad, como por ejemplo: Usuarios del recurso compartido de sincronización de RRHH o **Administradores de Carpetas de trabajo**.  
+    -   En **Nombre de grupo**, escribe el nombre del grupo de seguridad, como por ejemplo: **Usuarios del recurso compartido de sincronización de RRHH** o **Administradores de Carpetas de trabajo**.  
   
     -   En **Ámbito de grupo**, haga clic en **Seguridad** y posteriormente haga clic en **Global**.  
   
@@ -181,7 +181,7 @@ DsAcls $ADGroupPath /I:S /G ""$GroupName":RPWP;msDS-SyncServerUrl;user"
   
     -   **Alias de usuario** crea carpetas de usuario que no incluyan un nombre de dominio. Si está utilizando un recurso compartido de archivo que ya se utiliza con Redirección de carpetas o con otra solución de datos del usuario, seleccione esta convención de nomenclatura. Opcionalmente puede activar la casilla **Sincronizar solo la siguiente subcarpeta** para sincronizar únicamente una subcarpeta específica, como la carpeta Documentos.  
   
-    -    **alias@domain de usuario** crea carpetas de usuario que incluyan un nombre de dominio. Si no usas un recurso compartido de archivo que ya esté siendo utilizado con la opción Redirección de carpetas o con otra solución de datos del usuario, selecciona esta convención de nomenclatura para eliminar los conflictos de nomenclatura de carpetas cuando varios usuarios del recurso compartido tengan alias idénticos (lo cual puede suceder si los usuarios pertenecen a dominios distintos).  
+    -   **alias@domain de usuario** crea carpetas de usuario que incluyan un nombre de dominio. Si no usas un recurso compartido de archivo que ya esté siendo utilizado con la opción Redirección de carpetas o con otra solución de datos del usuario, selecciona esta convención de nomenclatura para eliminar los conflictos de nomenclatura de carpetas cuando varios usuarios del recurso compartido tengan alias idénticos (lo cual puede suceder si los usuarios pertenecen a dominios distintos).  
   
 6.  En la página **Escriba el nombre del recurso compartido de sincronización**, especifique un nombre y una descripción para el recurso compartido de sincronización. Esto no se publicita en la red pero resulta visible en el Administrador del servidor y en Windows Powershell para ayudar a diferenciar los distintos recursos compartidos de sincronización.  
   
