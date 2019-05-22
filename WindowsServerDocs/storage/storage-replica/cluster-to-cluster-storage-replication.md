@@ -7,29 +7,27 @@ ms.technology: storage-replica
 ms.topic: get-started-article
 ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
-ms.date: 10/11/2017
-description: Cómo usar la opción Réplica de almacenamiento para replicar volúmenes de un clúster a otro clúster con Windows Server 2016 Datacenter Edition.
-ms.openlocfilehash: 46bd5a53ff0e704844f10264a9f3a6fbe0e4d512
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.date: 04/26/2019
+description: Cómo usar réplica de almacenamiento para replicar volúmenes en un clúster a otro clúster que ejecuta Windows Server.
+ms.openlocfilehash: 2e3245320b2ef7035ac600ff783684083f3f929a
+ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838666"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65699900"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>Replicación de almacenamiento de clúster a clúster
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
-La replicación de clúster a clúster ahora está disponible en Windows Server 2016 Datacenter Edition, incluida la replicación de los clústeres con espacios de almacenamiento directo (es decir, nada compartido, almacenamiento conectado directo). La administración y la configuración es similar a la replicación de servidor a servidor.  
+Réplica de almacenamiento puede replicar volúmenes entre clústeres, incluida la replicación de los clústeres con espacios de almacenamiento directo. La administración y la configuración es similar a la replicación de servidor a servidor.  
 
 Configurará estos equipos y el almacenamiento en una configuración de clúster a clúster, donde un clúster replica su propio conjunto de almacenamiento con otro clúster y su conjunto de almacenamiento. Estos nodos y su almacenamiento deberían encontrarse en distintos sitios físicos, aunque no es necesario.  
-
-No existen herramientas gráficas en Windows Server 2016 Datacenter Edition, que puedan configurar la réplica de almacenamiento para la replicación de clúster a clúster, aunque Azure Site Recovery será capaz de configurar este escenario en el futuro.
 
 > [!IMPORTANT]
 > En esta prueba, los cuatro servidores son un ejemplo. Puede usar cualquier número de servidores compatibles con Microsoft en cada clúster, que actualmente es 8 para un clúster de espacios de almacenamiento directo y 64 para un clúster de almacenamiento compartido.  
 >   
-> Esta guía no trata la configuración de Espacios de almacenamiento directo. Para obtener información sobre cómo configurar Espacios de almacenamiento directo, vea [Espacios de almacenamiento directo en Windows Server 2016](../storage-spaces/storage-spaces-direct-overview.md).  
+> Esta guía no trata la configuración de Espacios de almacenamiento directo. Para obtener información acerca de cómo configurar espacios de almacenamiento directo, vea [información general de espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md).  
 
 En este tutorial se utiliza como ejemplo el siguiente entorno:  
 
@@ -46,7 +44,7 @@ En este tutorial se utiliza como ejemplo el siguiente entorno:
 ## <a name="prerequisites"></a>Requisitos previos  
 
 * Bosque de Active Directory Domain Services (no es necesario ejecutar Windows Server 2016).  
-* Al menos cuatro servidores (dos servidores en dos clústeres) que tengan instalado Windows Server 2016 Datacenter Edition. Admite hasta dos clústeres de 64 nodos.  
+* 4-128 servidores (dos clústeres de servidores de 2-64) que ejecutan Windows Server 2019 o Windows Server 2016 Datacenter Edition. Si está ejecutando Windows Server 2019, en su lugar, puede usar Standard Edition si está replicando Aceptar sólo un único volumen hasta 2 TB de tamaño.  
 * Dos conjuntos de almacenamiento, mediante JBOD de SAS, SAN de canal de fibra, VHDX compartido, espacios de almacenamiento directo o destino iSCSI. El almacenamiento debe contener una combinación de medios de disco duro (HDD) y unidades de estado sólido (SSD). Hará que cada conjunto de almacenamiento esté disponible solo para cada uno de los clústeres, sin acceso compartido entre clústeres.  
 * Cada conjunto de almacenamiento debe permitir la creación de al menos dos discos virtuales, uno para datos replicados y otro para registros. El almacenamiento físico debe tener los mismos tamaños de sector en todos los discos de datos. El almacenamiento físico debe tener los mismos tamaños de sector en todos los discos de registro.  
 * Al menos una conexión de Ethernet/TCP en cada servidor para replicación sincrónica, pero preferiblemente RDMA.   
@@ -59,7 +57,7 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
 
 ## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>Paso 1: Aprovisionamiento de sistema operativo, características, roles, almacenamiento y red
 
-1.  Instala Windows Server 2016 en los cuatro nodos de servidor con un tipo de instalación de Windows Server 2016 Datacenter **(Experiencia de escritorio)**. No elijas la edición Standard si está disponible, ya que no contiene Réplica de almacenamiento.  
+1.  Instale Windows Server en todos los cuatro nodos de servidor con un tipo de instalación de Windows Server **(experiencia de escritorio)**. 
 
 2.  Agregue información de red y una los nodos al dominio; a continuación, reinícielos.  
 
@@ -95,7 +93,7 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
         $Servers | ForEach { Install-WindowsFeature -ComputerName $_ -Name Storage-Replica,Failover-Clustering,FS-FileServer -IncludeManagementTools -restart }  
         ```  
 
-        Para más información sobre estos pasos, consulte [Instalación o desinstalación de roles, servicios de rol o características](https://technet.microsoft.com/library/hh831809.aspx).  
+        Para más información sobre estos pasos, consulte [Instalación o desinstalación de roles, servicios de rol o características](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md).  
 
 9. Configure el almacenamiento como sigue:  
 
@@ -109,37 +107,37 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
     > -   Los volúmenes de registro deben usar almacenamiento basado en flash, como SSD.  Microsoft recomienda que el almacenamiento de registro sea más rápido que el almacenamiento de datos. Nunca se debe utilizar volúmenes de registro para otras cargas de trabajo.
     > -   Los discos de datos pueden usar HDD, SSD o una combinación en niveles, y pueden usar tanto espacios de paridad o reflejados como RAID 1 o 10, o RAID 5 o RAID 50.  
     > -   El volumen del registro debe tener al menos 8GB de forma predeterminada y puede ser mayor o menor en función de los requisitos de registro.
-    > -   Al utilizar espacios de almacenamiento directo (S2D) con una caché NVME o SSD, verá una mayor que el aumento previsto de latencia al configurar la replicación de réplica de almacenamiento entre clústeres de S2D. El cambio en la latencia es proporcionalmente mucho mayor de ver cuando se usa NVME y SSD en un rendimiento + la configuración de capacidad y ninguna capa HDD ni el nivel de capacidad.
+    > -   Al utilizar espacios de almacenamiento directo (espacios de almacenamiento directo) con una caché NVME o SSD, verá una mayor que el aumento previsto de latencia al configurar la replicación de réplica de almacenamiento entre clústeres de espacios de almacenamiento directo. El cambio en la latencia es proporcionalmente mucho mayor de ver cuando se usa NVME y SSD en un rendimiento + la configuración de capacidad y ninguna capa HDD ni el nivel de capacidad.
 
-Este problema se produce debido a limitaciones de arquitectura de mecanismo de registro del SR combinada con la latencia extremadamente baja de NVME en comparación con los medios más lentos. Cuando se usa la caché de S2D, todos los registros de E/S de SR, junto con todos los recientes lectura/escritura de aplicaciones, se producen en la memoria caché y nunca en los niveles de rendimiento o capacidad. Esto significa que toda la actividad SR ocurre en el mismo medio de velocidad: no se admite esta configuración no se recomienda (consulte https://aka.ms/srfaq para obtener recomendaciones de registro). 
+    Este problema se produce debido a limitaciones de arquitectura de mecanismo de registro del SR combinada con la latencia extremadamente baja de NVME en comparación con los medios más lentos. Cuando se usa la caché de almacenamiento espacios directo espacios de almacenamiento directo, todos los registros de E/S de SR, junto con todos los recientes lectura/escritura de aplicaciones, se producen en la memoria caché y nunca en los niveles de rendimiento o capacidad. Esto significa que toda la actividad SR ocurre en el mismo medio de velocidad: no se admite esta configuración no se recomienda (consulte https://aka.ms/srfaq para obtener recomendaciones de registro). 
 
-Al usar S2D con unidades de disco duro, no se puede deshabilitar o evitar la memoria caché. Como alternativa, si usa solo SSD y NVME, puede configurar solo a los niveles de capacidad y rendimiento. Si usa dicha configuración y mediante la colocación de los registros de SR en el nivel de rendimiento solo con los volúmenes de datos de servicio que está en el nivel de capacidad solo, evitará el problema de latencia elevada se ha descrito anteriormente. Lo mismo se podría hacer con una combinación de SSDs más rápidos y más lentos y no NVME.
+    Al utilizar espacios de almacenamiento directo con unidades de disco duro, no se puede deshabilitar o evitar la memoria caché. Como alternativa, si usa solo SSD y NVME, puede configurar solo a los niveles de capacidad y rendimiento. Si usa dicha configuración y mediante la colocación de los registros de SR en el nivel de rendimiento solo con los volúmenes de datos de servicio que está en el nivel de capacidad solo, evitará el problema de latencia elevada se ha descrito anteriormente. Lo mismo se podría hacer con una combinación de SSDs más rápidos y más lentos y no NVME.
 
-Esta solución obviamente no es ideal y algunos clientes no podrá hacer uso de ella. El equipo SR está trabajando en el mecanismo de registro actualizada para el futuro reducir estos cuellos de botella artificiales que se producen y optimizaciones. No hay ningún tiempo estimado para esto, pero cuando esté disponible para puntear en los clientes para las pruebas, estas preguntas más frecuentes se actualizará. 
+    Esta solución obviamente no es ideal y algunos clientes no podrá hacer uso de ella. El equipo SR está trabajando en el mecanismo de registro actualizada para el futuro reducir estos cuellos de botella artificiales que se producen y optimizaciones. No hay ningún tiempo estimado para esto, pero cuando esté disponible para puntear en los clientes para las pruebas, estas preguntas más frecuentes se actualizará. 
 
-    -   **Para contenedores JBOD:**  
+-   **Para contenedores JBOD:**  
 
-        1.  Asegúrese de que cada clúster pueda ver solo contenedores de almacenamiento de ese sitio y que las conexiones de SAS estén configuradas correctamente.  
+1. Asegúrese de que cada clúster pueda ver solo contenedores de almacenamiento de ese sitio y que las conexiones de SAS estén configuradas correctamente.  
 
-        2.  Aprovisione el almacenamiento con Espacios de almacenamiento siguiendo **los pasos 1 a 3** especificados en [Implementar Espacios de almacenamiento en un servidor independiente](https://technet.microsoft.com/library/jj822938.aspx) por medio de Windows PowerShell o el Administrador del servidor.  
+2. Aprovisione el almacenamiento con Espacios de almacenamiento siguiendo **los pasos 1 a 3** especificados en [Implementar Espacios de almacenamiento en un servidor independiente](../storage-spaces/deploy-standalone-storage-spaces.md) por medio de Windows PowerShell o el Administrador del servidor.  
 
-    -   **Para el almacenamiento de destino iSCSI:**  
+-   **Para el almacenamiento de destino iSCSI:**  
 
-        1.  Asegúrese de que cada clúster pueda ver solo los contenedores de almacenamiento de ese sitio. Debe usar más de un único adaptador de red si utiliza iSCSI.  
+1. Asegúrese de que cada clúster pueda ver solo los contenedores de almacenamiento de ese sitio. Debe usar más de un único adaptador de red si utiliza iSCSI.  
 
-        2.  Aprovisiona el almacenamiento mediante la documentación del proveedor. Si usa destinos iSCSI basados en Windows, consulte [Procedimientos de almacenamiento de bloque de destino iSCSI](https://technet.microsoft.com/library/hh848268.aspx).  
+2. Aprovisiona el almacenamiento mediante la documentación del proveedor. Si usa destinos iSCSI basados en Windows, consulte [Procedimientos de almacenamiento de bloque de destino iSCSI](../iscsi/iscsi-target-server.md).  
 
-    -   **Para el almacenamiento SAN de FC:**  
+-   **Para el almacenamiento SAN de FC:**  
 
-        1.  Asegúrese de que cada clúster pueda ver solo los contenedores de almacenamiento de ese sitio y que esté en la zona correcta en los hosts.  
+1. Asegúrese de que cada clúster pueda ver solo los contenedores de almacenamiento de ese sitio y que esté en la zona correcta en los hosts.  
 
-        2.  Aprovisiona el almacenamiento mediante la documentación del proveedor.  
+2. Aprovisiona el almacenamiento mediante la documentación del proveedor.  
 
-    -   **Espacios de almacenamiento directo:**  
+-   **Espacios de almacenamiento directo:**  
 
-        1.  Asegúrate de que cada clúster pueda ver solo contenedores de almacenamiento de ese sitio implementando espacios de almacenamiento directo. (https://docs.microsoft.com/windows-server/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct) 
+1. Asegúrate de que cada clúster pueda ver solo contenedores de almacenamiento de ese sitio implementando espacios de almacenamiento directo. (https://docs.microsoft.com/windows-server/storage/storage-spaces/hyper-converged-solution-using-storage-spaces-direct) 
 
-        2.  Asegúrate de que los volúmenes de registro SR siempre estarán en el almacenamiento flash más rápido y los volúmenes de datos en el almacenamiento de gran capacidad más lento.
+2. Asegúrate de que los volúmenes de registro SR siempre estarán en el almacenamiento flash más rápido y los volúmenes de datos en el almacenamiento de gran capacidad más lento.
 
 10. Inicie Windows PowerShell y use el cmdlet `Test-SRTopology` para determinar si se cumplen todos los requisitos de Réplica de almacenamiento. Puede usar el cmdlet en modo de solo requisitos para una prueba rápida, o en modo de evaluación de rendimiento de ejecución más larga.  
 Por ejemplo,  
@@ -159,7 +157,7 @@ Por ejemplo,
     ![Pantalla donde se muestran los resultados de informes de topología de replicación](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
 
 ## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>Paso 2: Configuración de dos clústeres de conmutación por error en Servidor de archivos de escalabilidad horizontal  
-Ahora creará dos clústeres de conmutación por error normal. Después de la configuración, la validación y las pruebas, los replicará con Réplica de almacenamiento. Puedes realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de RSAT de Windows Server 2016.  
+Ahora creará dos clústeres de conmutación por error normal. Después de la configuración, la validación y las pruebas, los replicará con Réplica de almacenamiento. Puede realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server.  
 
 ### <a name="graphical-method"></a>Método gráfico  
 
@@ -172,10 +170,10 @@ Ahora creará dos clústeres de conmutación por error normal. Después de la co
 4.  Configure un testigo de recurso compartido de archivos o un testigo en la nube.  
 
     > [!NOTE]  
-    > Windows Server 2016 incluye ahora una opción para un testigo basado en la nube (Azure). Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
+    > WIndows Server incluye ahora una opción para la nube (Azure)-testigo basado en. Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
 
     > [!WARNING]  
-    > Para más información sobre la configuración de cuórum, consulte la sección **Configuración de testigos**, en [Configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulta [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx).  
+    > Para obtener más información acerca de la configuración de quórum, vea el **configuración de testigos** sección [configurar y administrar el quórum](../../failover-clustering/manage-cluster-quorum.md). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulta [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).  
 
 5.  Agregue un disco del sitio de **Redmond** al CSV de clúster. Para ello, haga clic con el botón derecho en un disco de origen el nodo **Discos** de la sección **Almacenamiento** y, a continuación, haga clic en **Agregar a volúmenes compartidos de clúster**.  
 
@@ -204,17 +202,17 @@ Ahora creará dos clústeres de conmutación por error normal. Después de la co
     ```  
 
     > [!NOTE]  
-    > Windows Server 2016 incluye ahora una opción para un testigo basado en la nube (Azure). Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
+    > WIndows Server incluye ahora una opción para la nube (Azure)-testigo basado en. Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
 
     > [!WARNING]  
-    > Para más información sobre la configuración de cuórum, consulte la sección **Configuración de testigos**, en [Configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulta [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx).  
+    > Para obtener más información acerca de la configuración de quórum, vea el **configuración de testigos** sección [configurar y administrar el quórum](../../failover-clustering/manage-cluster-quorum.md). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulta [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).  
 
 4.  Cree los servidores de archivos de escalabilidad horizontal en clúster en ambos clústeres con las instrucciones del artículo sobre [configuración de un servidor de archivos de escalabilidad horizontal](https://technet.microsoft.com/library/hh831718.aspx).  
 
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Paso 3: Configurar la replicación de clúster a clúster mediante Windows PowerShell  
-Ahora configurarás la replicación de clúster a clúster mediante Windows PowerShell. Puede realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga las herramientas de administración de RSAT de Windows Server 2016  
+Ahora configurarás la replicación de clúster a clúster mediante Windows PowerShell. Puede realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server  
 
-1.  Conceda el primer acceso completo de clúster al otro clúster mediante la ejecución del **Grant SRAccess** cmdlet en cualquier nodo en el primer clúster, o de forma remota.  
+1.  Conceda el primer acceso completo de clúster al otro clúster mediante la ejecución del **Grant SRAccess** cmdlet en cualquier nodo en el primer clúster, o de forma remota.  Herramientas de administración remota del servidor de Windows Server
 
     ```PowerShell
     Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
@@ -300,9 +298,9 @@ Ahora configurarás la replicación de clúster a clúster mediante Windows Pow
 
 ## <a name="step-4-manage-replication"></a>Paso 4: Administrar la replicación
 
-Ahora podrá administrar y operar la replicación de clúster a clúster. Puedes realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de RSAT de Windows Server 2016.  
+Ahora podrá administrar y operar la replicación de clúster a clúster. Puede realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server.  
 
-1.  Use **Get-ClusterGroup** o **Administrador de clústeres de conmutación por error** para determinar el origen y el destino actuales de la replicación y su estado.  
+1.  Use **Get-ClusterGroup** o **Administrador de clústeres de conmutación por error** para determinar el origen y el destino actuales de la replicación y su estado.  Herramientas de administración remota del servidor de Windows Server
 
 2.  Para medir el rendimiento de la replicación, utilice el cmdlet **Get-Counter** en nodos de origen y de destino. Los nombres de contador son:  
 
@@ -358,7 +356,7 @@ Ahora podrá administrar y operar la replicación de clúster a clúster. Puedes
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Número de mensajes enviados  
 
-    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](https://technet.microsoft.com/library/hh849685.aspx).  
+    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter).  
 
 3.  Para mover la dirección de replicación de un sitio, use el cmdlet **Set-SRPartnership**.  
 
@@ -367,14 +365,14 @@ Ahora podrá administrar y operar la replicación de clúster a clúster. Puedes
     ```  
 
     > [!NOTE]  
-    > Windows Server 2016 impide el cambio de rol cuando la sincronización inicial está en curso, lo que puede dar lugar a pérdida de datos si intenta cambiar antes de dejar que finalice la replicación inicial. No fuerce el cambio de dirección hasta que la sincronización inicial se haya completado.
+    > Windows Server impide el cambio de rol cuando la sincronización inicial está en curso, lo que puede dar lugar a pérdida de datos si intenta cambiar antes de permitir que finalice la replicación inicial. No fuerce el cambio de dirección hasta que la sincronización inicial se haya completado.
 
     Compruebe los registros de eventos para ver la dirección en que se producen el cambio de replicación y el modo de recuperación y luego concílielos. Las E/S de escritura se pueden escribir luego en el almacenamiento propiedad del nuevo servidor de origen. Al cambiar la dirección de replicación se bloquearán las E/S de escritura en el equipo de origen anterior.  
 
     > [!NOTE]  
     > El disco de clúster de destino siempre se mostrará como **En línea (sin acceso)** cuando se replica.  
 
-4.  Para cambiar el tamaño del registro del valor predeterminado de 8 GB en Windows Server 2016, utilice **Set-SRGroup** en grupos de Réplica de almacenamiento de origen y de destino.  
+4.  Para cambiar el tamaño del registro el valor predeterminado de 8GB, use **Set-SRGroup** en grupos de réplica de almacenamiento de origen y destino.  
 
     > [!IMPORTANT]  
     > El tamaño de registro predeterminado es 8 GB. Según los resultados del cmdlet **Test-SRTopology**, puede decidir usar -LogSizeInBytes con un valor superior o inferior.  
