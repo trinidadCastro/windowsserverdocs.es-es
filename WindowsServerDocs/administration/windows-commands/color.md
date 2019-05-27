@@ -44,7 +44,7 @@ color [[<B>]<F>]
 
 ## <a name="remarks"></a>Comentarios
 
--   En la tabla siguiente se enumera los dígitos hexadecimales válidos que puede usar como valores para *B* y *F*.   
+-   En la tabla siguiente se enumera los dígitos hexadecimales válidos que puede usar como valores para *B* y *F*.  
     |Valor|Color|
     |-----|-----|
     |0|Negro|
