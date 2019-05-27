@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: f8cf1b12a8fffe2a6e3389aad518ac96bc136cc9
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59872176"
@@ -314,13 +314,13 @@ ms.locfileid: "59872176"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>Para iniciar sesión en el Acceso web remoto desde un dispositivo móvil  
   
-1.  Abra un explorador Web y escriba **https://***< Nombredesudominio\>***/remoto** en la barra de direcciones.  Asegúrese de que incluir la s de https.  
+1.  Abra un explorador Web y escriba **https://***<Nombredesudominio\>***/remoto** en la barra de direcciones.  Asegúrese de que incluir la s de https.  
   
 2.  En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión móvil del Acceso web remoto.  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>Para cambiar a la versión de escritorio del Acceso web remoto  
   
-1.  Abra un explorador Web y escriba **https://***< Nombredesudominio\>***/remoto** en la barra de direcciones.  Asegúrese de que incluir la s de https.  
+1.  Abra un explorador Web y escriba **https://***<Nombredesudominio\>***/remoto** en la barra de direcciones.  Asegúrese de que incluir la s de https.  
   
 2.  En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto, haga clic en **ver versión de escritorio**y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión de escritorio del acceso Web remoto.  
   
@@ -328,7 +328,7 @@ ms.locfileid: "59872176"
   
 1.  Cierre la sesión.  
   
-2.  Abra un explorador Web y escriba **https://***< Nombredesudominio\>***/remoto/m** en la barra de direcciones. Asegúrese de que incluir la s de https.  
+2.  Abra un explorador Web y escriba **https://***<Nombredesudominio\>***/remoto/m** en la barra de direcciones. Asegúrese de que incluir la s de https.  
   
 3.  Se muestra la versión móvil del acceso Web remoto. En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Se registran la versión móvil del acceso Web remoto.  
   

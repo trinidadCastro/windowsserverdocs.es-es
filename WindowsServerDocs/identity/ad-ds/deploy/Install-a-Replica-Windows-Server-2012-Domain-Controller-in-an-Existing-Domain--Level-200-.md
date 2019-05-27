@@ -11,7 +11,7 @@ ms.prod: windows-server-threshold
 ms.technology: identity-adds
 ms.openlocfilehash: cb4432084386cb3296163f24c801be1c74b379df
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59883046"
@@ -306,7 +306,7 @@ Al igual que el Administrador del servidor, **Install-ADDSDomainController** rec
   
 ![Instalar una réplica](media/Install-a-Replica-Windows-Server-2012-Domain-Controller-in-an-Existing-Domain--Level-200-/ADDS_PSUpgradeProgress.png)  
   
-Para configurar un controlador de dominio de forma remota con Windows PowerShell, encapsula el cmdlet **install-adddomaincontroller***dentro* del cmdlet **invoke-command**. Para ello es necesario usar llaves.  
+Para configurar un controlador de dominio de forma remota con Windows PowerShell, encapsula el cmdlet **install-adddomaincontroller** *dentro* del cmdlet **invoke-command**. Para ello es necesario usar llaves.  
   
 ```  
 invoke-command {install-addsdomaincontroller "domainname <domain> -credential (get-credential)} -computername <dc name>  

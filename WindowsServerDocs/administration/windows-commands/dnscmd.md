@@ -15,7 +15,7 @@ manager: dongill
 ms.date: 10/16/2017
 ms.openlocfilehash: 39478e9b7dd8e8c69ed07f5d431486a7ed96b9cb
 ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 04/17/2019
 ms.locfileid: "59815506"
@@ -721,7 +721,7 @@ dnscmd [<ServerName>] /resetforwarders [<IPaddress> [,<IPaddress>]...] [/ tiempo
 Especifica el servidor DNS para administrar, representado por la dirección IP, FQDN o nombre de host. Si se omite este parámetro, se utiliza el servidor local.  
 **<IPaddress>**  
 Enumera las direcciones IP a la que el servidor DNS reenvía consultas sin resolver.  
-** / tiempo de espera <timeOut>**  
+**/tiempo de espera <timeOut>**  
 Establece el número de segundos que el servidor DNS espera una respuesta del reenviador. De forma predeterminada, este valor es de cinco segundos.  
 **/slave|/noslave**  
 Determina si el servidor DNS realiza sus propias consultas iterativos si no se puede resolver una consulta el reenviador:  
@@ -814,15 +814,15 @@ Especifica el nombre de la zona.
 Especifica el tipo de zona que desea crear. Cada tipo de zona tiene diferentes parámetros necesarios:  
 **/dsprimary**  
 crea una zona integrada de active directory.  
-** / /file principal <FileName>**  
+**//file principal <FileName>**  
 crea una zona principal estándar y especifica el nombre del archivo que almacenará la información de zona.  
-** / secondary <MasterIPaddress> [<MasterIPaddress>...] **  
+**/secondary <MasterIPaddress> [<MasterIPaddress>...]**  
 crea una zona secundaria estándar.  
-** / stub <MasterIPaddress> [<MasterIPaddress>...] / archivo <FileName>**  
+**/stub <MasterIPaddress> [<MasterIPaddress>...] / archivo <FileName>**  
 crea una zona de código auxiliar correspondiente a un archivo.  
 **/dsstub <MasterIPaddress> [<MasterIPaddress>...]**  
 crea una zona de rutas internas integrada de active directory.  
-** / reenviador <MasterIPaddress> [<MasterIPaddress>]... / archivo <FileName>**  
+**/reenviador <MasterIPaddress> [<MasterIPaddress>]... / archivo <FileName>**  
 Especifica que la zona creada reenvía consultas sin resolver a otro servidor DNS.  
 **/dsforwarder**  
 Especifica que la zona integrada de Active Directory creado reenvía consultas sin resolver a otro servidor DNS.  
@@ -876,7 +876,7 @@ Especifica el nombre de la zona.
 **<ZoneExportFile>**  
 Especifica el nombre de archivo que se creará. ### Comentarios - la **zoneexport** operación crea un archivo de registros de recursos para una zona integrada de active directory para solucionar problemas. De forma predeterminada, el archivo que este comando crea se coloca en el directorio DNS, que es, de forma predeterminada, el directorio %systemroot%/System32/Dns. ### Vea ejemplo [ejemplo 10: Exportar lista de registros de recursos de zona a un archivo](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx).  
 ### <a name="BKMK_26"></a>dnscmd /zoneinfo  
-Muestra la configuración de la sección del registro de la zona especificada: ** HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>** ### sintaxis ```  
+Muestra la configuración de la sección del registro de la zona especificada: **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>** ### sintaxis ```  
 dnscmd [<ServerName>] /zoneinfo <ZoneName> [<Setting>] ```  
 #### Parameters  
 **<ServerName>**  
@@ -884,7 +884,7 @@ Especifica el servidor DNS para administrar, representado por la dirección IP, 
 **<ZoneName>**  
 Especifica el nombre de la zona.  
 **<Setting>**  
-Puede especificar individualmente cualquier configuración que el **ha caducado** comando. Si no especifica un valor, se devuelven todas las configuraciones. ### Comentarios - la **ha caducado** comando muestra la configuración del registro que está en la zona DNS de nivel en ** HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>**. -Para mostrar la configuración del registro de nivel de servidor, utilice el [información](#BKMK_12) comando. -Para ver una lista de configuraciones que se pueden mostrar con este comando, consulte el [config](#BKMK_3) comando. ### Vea ejemplo [ejemplo 11: Muestra la configuración del registro de RefreshInterval](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx) o [12 de ejemplo: Mostrar configuración del registro de antigüedad](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx).  
+Puede especificar individualmente cualquier configuración que el **ha caducado** comando. Si no especifica un valor, se devuelven todas las configuraciones. ### Comentarios - la **ha caducado** comando muestra la configuración del registro que está en la zona DNS de nivel en **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters\Zones\\<ZoneName>**. -Para mostrar la configuración del registro de nivel de servidor, utilice el [información](#BKMK_12) comando. -Para ver una lista de configuraciones que se pueden mostrar con este comando, consulte el [config](#BKMK_3) comando. ### Vea ejemplo [ejemplo 11: Muestra la configuración del registro de RefreshInterval](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx) o [12 de ejemplo: Mostrar configuración del registro de antigüedad](https://technet.microsoft.com/library/cc784399(v=ws.10).aspx).  
 ### <a name="BKMK_27"></a>dnscmd /zonepause  
 pone en pausa la zona especificada, que, a continuación, omite las solicitudes de consulta. ### Sintaxis ```  
 dnscmd [<ServerName>] /zonepause <ZoneName> ```  
@@ -985,15 +985,15 @@ Identifica la zona en el que se cambiará el tipo.
 Especifica el tipo de zona que desea crear. Cada tipo tiene diferentes parámetros necesarios:  
 **/dsprimary**  
 crea una zona integrada de active directory.  
-** / /file principal <FileName>**  
+**//file principal <FileName>**  
 crea una zona principal estándar.  
-** / secondary <MasterIPaddress> [,<MasterIPaddress>...] **  
+**/secondary <MasterIPaddress> [,<MasterIPaddress>...]**  
 crea una zona secundaria estándar.  
 **/stub <MasterIPaddress>[,<MasterIPaddress>...] /file <FileName>**  
 crea una zona de código auxiliar correspondiente a un archivo.  
 **/dsstub <MasterIPaddress>[,<MasterIPaddress>...]**  
 crea una zona de rutas internas integrada de active directory.  
-** / reenviador <MasterIPaddress[,<MasterIPaddress>]... / archivo<FileName>**  
+**/reenviador <MasterIPaddress[,<MasterIPaddress>]... / archivo<FileName>**  
 Especifica que la zona creada reenvía consultas sin resolver a otro servidor DNS.  
 **/dsforwarder**  
 Especifica que la zona integrada de Active Directory creado reenvía consultas sin resolver a otro servidor DNS.  
