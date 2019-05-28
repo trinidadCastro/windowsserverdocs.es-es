@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3e555d1003878e12320cb8557bd205ac24e1bbb3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6be56c25cc6f639f73842f57cdf48a6339dccf9c
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882446"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191854"
 ---
 # <a name="windows-server-2012-ad-fs-deployment-guide"></a>Guía de implementación de AD FS en Windows Server 2012
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Puede usar servicios de federación de Active Directory® \(AD FS\) con el sistema operativo Windows Server® 2012 para crear una solución de administración de identidades federadas que extiende la identificación distribuida, autenticación, y Servicios de autorización en Web\-en función de las aplicaciones a través de límites de la organización y la plataforma. Al implementar AD FS puede ampliar las capacidades existentes administración de identidades de su organización en Internet.  
   
@@ -30,7 +29,7 @@ Puede implementar AD FS para:
   
 -   Proporcionar los empleados o clientes con acceso ininterrumpido a Web\-basadas en recursos en cualquier organización del asociado de federación en Internet sin necesidad de que los empleados o clientes iniciar sesión varias veces.  
   
--   Mantener pleno control de las identidades de empleados o clientes sin usar otro signo\-en proveedores \(Windows Live ID, Liberty Alliance etc.\).  
+-   Mantener pleno control de las identidades de empleados o clientes sin usar otro signo\-en proveedores \(Windows Live ID, Liberty Alliance etc\).  
   
 ## <a name="about-this-guide"></a>Acerca de esta guía  
 Esta guía está pensada para administradores de sistemas e ingenieros de sistemas. Proporciona instrucciones detalladas para implementar un diseño de AD FS preseleccionado por usted o un arquitecto de sistema o especialista en infraestructura de su organización.  
@@ -60,20 +59,20 @@ Esta guía no proporciona:
   
 ## <a name="in-this-guide"></a>En esta guía  
   
--   [Planear la implementación de AD FS](Planning-to-Deploy-AD-FS.md)  
+-   [Planeación para la implementación de AD FS](Planning-to-Deploy-AD-FS.md)  
   
--   [Diseño del Plan de implementación de AD FS](Implementing-Your-AD-FS-Design-Plan.md)  
+-   [Implementación del plan de diseño de AD FS](Implementing-Your-AD-FS-Design-Plan.md)  
   
--   [Lista de comprobación: Implementar un diseño SSO Web](Checklist--Implementing-a-Web-SSO-Design.md)  
+-   [Lista de comprobación: Implementar un diseño de SSO web](Checklist--Implementing-a-Web-SSO-Design.md)  
   
--   [Lista de comprobación: Implementar un diseño de SSO Web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
+-   [Lista de comprobación: Implementar un diseño de SSO web federado](Checklist--Implementing-a-Federated-Web-SSO-Design.md)  
   
 -   [Configuración de las organizaciones asociadas](Configuring-Partner-Organizations.md)  
   
--   [Configurar reglas de notificación](Configuring-Claim-Rules.md)  
+-   [Configuración de reglas de notificación](Configuring-Claim-Rules.md)  
   
 -   [Implementación de servidores de federación](Deploying-Federation-Servers.md)  
   
 -   [Implementación de servidores proxy de federación](Deploying-Federation-Server-Proxies.md)  
   
--   [Interoperar con AD FS 1.x](Interoperating-with-AD-FS-1.x.md)  
+-   [Interoperación con AD FS 1.x](Interoperating-with-AD-FS-1.x.md)  
