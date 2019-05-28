@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f5bd0ad05bdc2573a5ea0abbe165de2d3e7f5c8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00f29c70628f2869e9f3aeffd0d08032bce5aeda
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857706"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034183"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volúmenes compartidos de clúster en un clúster de conmutación por error
 
->Se aplica a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2
 
 Los volúmenes compartidos de clúster (CSV) permiten a varios nodos de un clúster de conmutación por error tener simultáneamente acceso de lectura y escritura al mismo LUN (disco) que se aprovisiona como volumen NTFS. (En Windows Server 2012 R2, el disco se puede aprovisionar como NTFS o sistema de archivos resistente (ReFS).) Con CSV, los roles en clúster pueden conmutar por error rápidamente de un nodo a otro sin necesidad de que cambie la propiedad de la unidad o de que se desmonte y se vuelva a montar un volumen. CSV también puede ayudar a simplificar la administración de una cantidad potencialmente grande de LUN en un clúster de conmutación por error.
 
@@ -55,7 +55,7 @@ Ten en cuenta lo siguiente al configurar las redes compatibles con CSV.
     >En Windows Server 2012 R2, hay varias instancias del servicio servidor por nodo de clúster de conmutación por error. Tenemos la instancia predeterminada que se encarga del tráfico entrante de los clientes SMB que tienen acceso a recursos compartidos de archivos normales y una segunda instancia de CSV que solo se encarga del tráfico CSV entre nodos. Además, si el servicio Servidor de un nodo tiene un estado incorrecto, la propiedad de CSV pasa automáticamente a otro nodo.
 
     SMB 3.0 incluye las características SMB multicanal y SMB directo, lo que permite que el tráfico de CSV se transmita en secuencias entre varias redes del clúster y que se aprovechen los adaptadores de red compatibles con el acceso directo a memoria remota (RDMA). De manera predeterminada, SMB multicanal se usa para el tráfico de CSV. Para obtener más información, consulta [Información general de Bloque de mensajes del servidor](../storage/file-server/file-server-smb-overview.md).
-  - **Filtro de rendimiento del adaptador virtual de clúster de conmutación por error de Microsoft**. Esta opción de configuración mejora la capacidad de los nodos de realizar la redirección de E/S cuando es necesaria para comunicarse con CSV, por ejemplo, cuando un error de conectividad impide a un nodo conectarse directamente al disco CSV. Para obtener más información, consulte [About I/O synchronization y redirección de E/S en la comunicación de CSV](#about-i/o-synchronization-and-i/o-redirection-in-csv-communication) más adelante en este tema.
+  - **Filtro de rendimiento del adaptador virtual de clúster de conmutación por error de Microsoft**. Esta opción de configuración mejora la capacidad de los nodos de realizar la redirección de E/S cuando es necesaria para comunicarse con CSV, por ejemplo, cuando un error de conectividad impide a un nodo conectarse directamente al disco CSV. Para obtener más información, consulte [About I/O synchronization y redirección de E/S en la comunicación de CSV](#about-io-synchronization-and-io-redirection-in-csv-communication) más adelante en este tema.
 - **Prioridades de las redes en clúster**. Por lo general, recomendamos que no cambie las preferencias configuradas en el clúster para las redes.
 - **Configuración de subred IP**. No se necesita ninguna configuración de subred específica para los nodos de una red que usen CSV. CSV puede admitir clústeres de varias subredes.
 - **Calidad de servicio (QoS) basada en directivas**. Te recomendamos que configures una directiva de prioridad de QoS y una directiva de ancho de banda mínimo para el tráfico de red a cada nodo cuando uses CSV. Para obtener más información, consulte [calidad de servicio (QoS)](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831679(v%3dws.11)>).
@@ -144,7 +144,7 @@ Cuando planees la configuración del almacenamiento de un clúster de conmutaci�
 
   - Una organización implementa máquinas virtuales que admitirán una infraestructura de escritorio virtual (VDI), lo que supone una carga de trabajo relativamente ligera. El clúster usa almacenamiento de alto rendimiento. El administrador del clúster, después de consultar al proveedor de almacenamiento, decide colocar una cantidad relativamente alta de máquinas virtuales por volumen CSV.
   - Otra organización implementa una gran cantidad de máquinas virtuales que admitirán una aplicación de base de datos que registra un uso muy elevado, lo cual supone una carga de trabajo más pesada. El clúster usa almacenamiento de bajo rendimiento. El administrador del clúster, después de consultar al proveedor de almacenamiento, decide colocar una cantidad relativamente baja de máquinas virtuales por volumen CSV.
-- Al planear la configuración del almacenamiento de una máquina virtual concreta, ten en cuenta los requisitos de disco del servicio, la aplicación o el rol que admitirá la máquina virtual. Comprender estos requisitos te ayudará a evitar la contención de disco, que puede causar un bajo rendimiento. La configuración de almacenamiento de la máquina virtual debe parecerse mucho a la configuración de almacenamiento que usarías para un servidor físico que ejecute el mismo servicio, la misma aplicación o el mismo rol. Para obtener más información, consulte [archivos de la organización de LUN, volúmenes y VHD](#arrangement-of-luns,-volumes,-and-vhd-files) anteriormente en este tema.
+- Al planear la configuración del almacenamiento de una máquina virtual concreta, ten en cuenta los requisitos de disco del servicio, la aplicación o el rol que admitirá la máquina virtual. Comprender estos requisitos te ayudará a evitar la contención de disco, que puede causar un bajo rendimiento. La configuración de almacenamiento de la máquina virtual debe parecerse mucho a la configuración de almacenamiento que usarías para un servidor físico que ejecute el mismo servicio, la misma aplicación o el mismo rol. Para obtener más información, consulte [archivos de la organización de LUN, volúmenes y VHD](#arrangement-of-luns-volumes-and-vhd-files) anteriormente en este tema.
 
     También puedes mitigar la contención de disco si tienes almacenamiento con gran cantidad de discos duros físicos independientes. Elige el hardware de almacenamiento en consecuencia y consulta al proveedor cómo puedes optimizar el rendimiento del almacenamiento.
 - En función de las cargas de trabajo del clúster y las operaciones de E/S que necesiten, puedes considerar la opción de configurar solamente un porcentaje de las máquinas virtuales para tener acceso a cada LUN, mientras que otras máquinas virtuales no tendrán conectividad y se dedicarán a operaciones de cálculo.
@@ -274,5 +274,5 @@ Debes tener en cuenta los siguientes factores al seleccionar una aplicación de 
 
 ## <a name="more-information"></a>Más información
 
-- [Agrupación en clústeres de conmutación por error](failover-clustering.md)
+- [Clúster de conmutación por error](failover-clustering.md)
 - [Implementar espacios de almacenamiento en clúster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj822937(v%3dws.11)>)

@@ -6,18 +6,18 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 3/29/2018
+ms.date: 4/26/2019
 ms.assetid: e9b18e14-e692-458a-a39f-d5b569ae76c5
-ms.openlocfilehash: a921701747c5e21a2c7f135826f7d754c8f7d773
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e8b437a1a4ba3e5c10d6709e23efb306a077a21b
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866716"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64773535"
 ---
 # <a name="storage-replica-overview"></a>Información general sobre Réplica de almacenamiento
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Réplica de almacenamiento es una tecnología de Windows Server que permite la replicación de volúmenes entre servidores o clústeres para la recuperación ante desastres. También permite crear clústeres de conmutación por error ampliados que abarcan dos sitios y que tienen todos los nodos sincronizados.
 
@@ -25,7 +25,6 @@ La Réplica de almacenamiento admite la replicación sincrónica y asincrónica:
 
 * La **replicación sincrónica** refleja los datos en un sitio de red de baja latencia con volúmenes coherentes frente a bloqueos para asegurar que no se produce absolutamente ninguna pérdida de datos en el nivel de sistema de archivos durante un error.
 * La **Replicación asincrónica** refleja los datos entre sitios más allá de los intervalos metropolitanos a través de enlaces de red con latencias superiores, pero sin ninguna garantía de que ambos sitios tengan copias idénticas de los datos en el momento del error.
-
 
 ## <a name="why-use-storage-replica"></a>¿Por qué usar Réplica de almacenamiento?
 
@@ -39,7 +38,7 @@ Réplica de almacenamiento también admite la replicación asincrónica durante 
 
 ## <a name="BKMK_SRSupportedScenarios"></a>Configuraciones admitidas
 
-Con esta guía y Windows Server 2016 Datacenter Edition, puedes implementar la replicación de almacenamiento en un clúster extendido, entre configuraciones de clúster a clúster y de servidor a servidor (consulta las figuras de 1 a 3).
+Puede implementar réplica de almacenamiento en un clúster extendido, entre el clúster a clúster y en configuraciones de servidor a servidor (consulte las ilustraciones 1-3).
 
 **Clúster extendido** permite la configuración de equipos y almacenamiento en un único clúster, donde algunos nodos comparten un conjunto de almacenamiento asimétrico y otros nodos comparten otro y, luego, se replican de manera sincrónica o asincrónica con el reconocimiento de sitios. Este escenario puede utilizar Espacios de almacenamiento con almacenamiento SAS compartido, SAN y LUC asociados a iSCSI. Se administra con PowerShell y la herramienta gráfica del Administrador de clústeres de conmutación por error, y permite la conmutación por error de carga de trabajo automatizada.  
 
@@ -68,7 +67,7 @@ Con esta guía y Windows Server 2016 Datacenter Edition, puedes implementar la r
 
 * **Implementación y administración sencillas**. Réplica de almacenamiento tiene un mandato de diseño de uso sencillo. Creación de una asociación de replicación entre dos servidores puede usar el Windows Admin Center. La implementación de clústeres extendidos usa un asistente intuitivo en la conocida herramienta Administrador de clústeres de conmutación por error.   
 
-* **Invitado y host**. Todas las funcionalidades de Réplica de almacenamiento se exponen en implementaciones virtualizadas basadas en host y en invitado. Esto significa que los invitados pueden replicar sus volúmenes de datos incluso si se ejecutan en plataformas de virtualización distintas de Windows o en nubes públicas, siempre que usen Windows Server 2016 Datacenter Edition en el invitado.  
+* **Invitado y host**. Todas las funcionalidades de Réplica de almacenamiento se exponen en implementaciones virtualizadas basadas en host y en invitado. Esto significa que los invitados pueden replicar sus volúmenes de datos incluso si se ejecuta en plataformas de virtualización que no sean Windows o en nubes públicas, siempre y cuando el uso de Windows Server en el invitado.  
 
 * **Base en SMB3**. Réplica de almacenamiento utiliza la tecnología probada y asentada de SMB 3, publicada por primera vez en Windows Server 2012. Esto significa que todas las características avanzadas de SMB, como la compatibilidad directa en SMB y multicanal en tarjetas de red RoCE, iWARP e InfiniBand RDMA, están disponibles para Réplica de almacenamiento.   
 
@@ -84,7 +83,7 @@ Con esta guía y Windows Server 2016 Datacenter Edition, puedes implementar la r
 
 * **Aprovisionamiento fino**. Se admite el aprovisionamiento fino en Espacios de almacenamiento y dispositivos SAN, con el fin de proporcionar tiempos de replicación iniciales casi instantáneos en muchas circunstancias.  
 
-Windows Server 2016 implementa las características siguientes en Réplica de almacenamiento:  
+Réplica de almacenamiento incluye las siguientes características:  
 
 |Característica|Detalles|  
 |-----------|-----------|  
@@ -93,7 +92,7 @@ Windows Server 2016 implementa las características siguientes en Réplica de al
 |Asincrónico|Sí|  
 |Independiente del hardware de almacenamiento|Sí|  
 |Unidad de replicación|Volumen (partición)|  
-|Creación de un clúster extendido de Windows Server|Sí|  
+|Creación de clústeres de stretch de Windows Server|Sí|  
 |Replicación de servidor a servidor|Sí|  
 |Replicación de clúster a clúster|Sí|  
 |Transporte|SMB3|  
@@ -112,11 +111,16 @@ Windows Server 2016 implementa las características siguientes en Réplica de al
 
 ## <a name="BKMK_SR3"></a> Requisitos previos de réplica de almacenamiento  
 
-* Bosque de Active Directory Domain Services.  
-* Espacios de almacenamiento con JBOD SAS, Espacios de almacenamiento directo, SAN de canal de fibra, VHDX compartido, destino iSCSI o almacenamiento SAS/SCSI/SATA local. SSD o más rápido recomendado para las unidades de registro de replicación. Microsoft recomienda que el almacenamiento de registro sea más rápido que el almacenamiento de datos. Nunca se debe utilizar volúmenes de registro para otras cargas de trabajo. 
-* Al menos una conexión de Ethernet/TCP en cada servidor para replicación sincrónica, pero preferiblemente RDMA.   
-* Al menos 2GB de RAM y dos núcleos por servidor.  
-* Una red entre servidores con ancho de banda suficiente para contener la carga de trabajo de escritura de E/S y un promedio de 5 ms de latencia de ida y vuelta o menos para la replicación sincrónica. La replicación asincrónica no tiene una recomendación de latencia.  
+* Bosque de Active Directory Domain Services.
+* Espacios de almacenamiento con JBOD SAS, Espacios de almacenamiento directo, SAN de canal de fibra, VHDX compartido, destino iSCSI o almacenamiento SAS/SCSI/SATA local. SSD o más rápido recomendado para las unidades de registro de replicación. Microsoft recomienda que el almacenamiento de registro sea más rápido que el almacenamiento de datos. Nunca se debe utilizar volúmenes de registro para otras cargas de trabajo.
+* Al menos una conexión de Ethernet/TCP en cada servidor para replicación sincrónica, pero preferiblemente RDMA.
+* Al menos 2GB de RAM y dos núcleos por servidor.
+* Una red entre servidores con ancho de banda suficiente para contener la carga de trabajo de escritura de E/S y un promedio de 5 ms de latencia de ida y vuelta o menos para la replicación sincrónica. La replicación asincrónica no tiene una recomendación de latencia.
+* Windows Server, Datacenter Edition o Windows Server, Standard Edition. Réplica de almacenamiento que se ejecuta en Windows Server, Standard Edition, tiene las siguientes limitaciones:
+
+  * Debe usar Windows Server 2019 o posterior
+  * Réplica de almacenamiento replica un único volumen en lugar de un número ilimitado de volúmenes.
+  * Los volúmenes pueden tener un tamaño de hasta 2 TB en lugar de un tamaño ilimitado.
 
 ##  <a name="BKMK_SR4"> </a> En segundo plano  
 Esta sección incluye información sobre los términos de la industria de alto nivel, la replicación sincrónica y asincrónica y los comportamientos principales.
@@ -152,13 +156,13 @@ Con su RPO mayor que cero, la replicación asincrónica es menos apropiada para 
 
 -   El volumen de destino no es accesible durante la replicación en Windows Server 2016. Al configurar la replicación, se desmonta el volumen de destino, pasando a ser inaccesible para cualquier escritura o lectura de los usuarios. Su letra de unidad puede estar visible en interfaces tradicionales, tales como el Explorador de archivos, pero una aplicación no puede tener acceso al volumen. Las tecnologías de replicación a nivel de bloque son incompatibles con el hecho de permitir el acceso al sistema de archivos montado del objetivo de destino en un volumen; NTFS y ReFS no admiten que los usuarios escriban datos en el volumen mientras los bloques cambian en un nivel inferior. 
 
-En Windows Server, versión 1709 el **conmutación por error de prueba** se agregó el cmdlet. Esto ahora admite temporalmente montar una instantánea de lectura y escritura del volumen de destino para las copias de seguridad, pruebas, etcetera. Consulte https://aka.ms/srfaq para obtener más información.
+En Windows Server 2019 (y Windows Server, versión 1709) el **conmutación por error de prueba** se agregó el cmdlet. Esto ahora admite temporalmente montar una instantánea de lectura y escritura del volumen de destino para las copias de seguridad, pruebas, etcetera. Consulte https://aka.ms/srfaq para obtener más información.
 
 -   La implementación de Microsoft de la replicación asincrónica es diferente a la de la mayoría. La mayoría de las implementaciones de la industria de la replicación asincrónica se fundamentan en la replicación basada en instantáneas, donde hay transferencias diferenciales periódicas que se desplazan a otro nodo y se fusionan. La replicación asincrónica de Réplica de almacenamiento funciona igual que la replicación sincrónica, salvo que elimina el requisito de una confirmación sincrónica serializada desde el destino. Esto significa que Réplica de almacenamiento teóricamente tiene un menor RPO, ya que se replica continuamente. Sin embargo, esto también significa que se basa en garantías de coherencia de aplicación internas en lugar de usar instantáneas para forzar la coherencia en los archivos de la aplicación. Réplica de almacenamiento garantiza la coherencia de bloqueo en todos los modos de replicación  
 
 -   Muchos clientes usan Replicación DFS como una solución de recuperación ante desastres incluso si a menudo es un escenario poco práctico: Replicación DFS no puede replicar archivos abiertos y está diseñado para minimizar el uso de ancho de banda a costa del rendimiento, provocando grandes diferencias en el punto de recuperación. Réplica de almacenamiento puede permitirle retirar la Replicación DFS de algunos de estos tipos de funciones de recuperación ante desastres.  
 
--   Réplica de almacenamiento no es una copia de seguridad. Algunos entornos de TI implementan sistemas de replicación como soluciones de copia de seguridad, debido a sus opciones de cero pérdida de datos en comparación con las copias de seguridad diarias. Réplica de almacenamiento replica todos los cambios en todos los bloques de datos en el volumen, independientemente del tipo de cambio. Si un usuario elimina todos los datos de un volumen, réplica de almacenamiento replica la eliminación al instante en el otro volumen, quitando irrevocablemente los datos de ambos servidores. No use Réplica de almacenamiento para sustituir una solución de copia de seguridad a un momento dado.  
+-   Réplica de almacenamiento no es una solución de copia de seguridad. Algunos entornos de TI implementan sistemas de replicación como soluciones de copia de seguridad, debido a sus opciones de cero pérdida de datos en comparación con las copias de seguridad diarias. Réplica de almacenamiento replica todos los cambios en todos los bloques de datos en el volumen, independientemente del tipo de cambio. Si un usuario elimina todos los datos de un volumen, réplica de almacenamiento replica la eliminación al instante en el otro volumen, quitando irrevocablemente los datos de ambos servidores. No use Réplica de almacenamiento para sustituir una solución de copia de seguridad a un momento dado.  
 
 -   Réplica de almacenamiento no es una Réplica de Hyper-V ni Grupos de disponibilidad AlwaysOn de Microsoft SQL. Réplica de almacenamiento es un motor de propósito general independiente del almacenamiento. Por definición, no puede ajustar su comportamiento tan idealmente como la replicación a nivel de aplicación. Esto puede originar determinadas carencias de características que le recomendamos que implemente o mantenga en tecnologías de replicación de aplicaciones específicas.  
 

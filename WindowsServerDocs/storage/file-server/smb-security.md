@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 831ca8266c3ec18ffb83227dcb2d39b3f953ad1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1586c8c63e46452075b4106c944670395734142
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838056"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034404"
 ---
 # <a name="smb-security-enhancements"></a>Mejoras de seguridad SMB
 
@@ -73,7 +73,7 @@ De forma predeterminada, cuando se habilita el cifrado SMB para un recurso compa
 Set-SmbServerConfiguration –RejectUnencryptedAccess $false
 ```
 
-La capacidad de negociación de dialecto segura que se describe en la sección siguiente evita que un ataque man-in-the-middle degradar una conexión de SMB 3.0 para SMB 2.0 (que podría usar el acceso sin cifrar). Sin embargo, no impide una degradación a SMB 1.0, lo que daría lugar también acceso sin cifrar. Para garantizar que los clientes SMB 3.0 usan siempre el cifrado SMB para acceder a recursos compartidos cifrados, debe deshabilitar al servidor de SMB 1.0. (Para obtener instrucciones, consulte la sección [deshabilitar SMB 1.0](#disabling-smb-1.0).) Si el **– RejectUnencryptedAccess** valor se deja en su valor predeterminado de **$true**, se permiten los clientes solo compatible con cifrado de SMB 3.0 para tener acceso a los recursos compartidos de archivos (también se rechazarán los clientes SMB 1.0).
+La capacidad de negociación de dialecto segura que se describe en la sección siguiente evita que un ataque man-in-the-middle degradar una conexión de SMB 3.0 para SMB 2.0 (que podría usar el acceso sin cifrar). Sin embargo, no impide una degradación a SMB 1.0, lo que daría lugar también acceso sin cifrar. Para garantizar que los clientes SMB 3.0 usan siempre el cifrado SMB para acceder a recursos compartidos cifrados, debe deshabilitar al servidor de SMB 1.0. (Para obtener instrucciones, consulte la sección [deshabilitar SMB 1.0](#disabling-smb-10).) Si el **– RejectUnencryptedAccess** valor se deja en su valor predeterminado de **$true**, se permiten los clientes solo compatible con cifrado de SMB 3.0 para tener acceso a los recursos compartidos de archivos (también se rechazarán los clientes SMB 1.0).
 
 >[!NOTE]
 >* El cifrado SMB usa el estándar de cifrado avanzado (AES)-algoritmo CCM para cifrar y descifrar los datos. AES-CCM también proporciona validación de integridad de datos (firma) para recursos compartidos de archivos cifrados, independientemente de la configuración de firma de SMB. Si desea habilitar la firma sin cifrado SMB, puede seguir hacerlo. Para obtener más información, consulte [los conceptos básicos de la firma SMB](https://blogs.technet.microsoft.com/josebda/2010/12/01/the-basics-of-smb-signing-covering-both-smb1-and-smb2/).
@@ -84,7 +84,7 @@ La capacidad de negociación de dialecto segura que se describe en la sección s
 
 ## <a name="secure-dialect-negotiation"></a>Negociación del dialecto segura
 
-SMB 3.0 es capaz de detectar ataques man-in-the-middle que intentan cambiar el protocolo SMB 2.0 o SMB 3.0 o las funcionalidades que el cliente y servidor negociar. Cuando se detecta este tipo de ataque por el cliente o el servidor, la conexión se desconecta y 1005 de Id. de evento se registra en el registro de eventos de Microsoft-Windows-SmbServer/Operational. Proteger el dialecto de negociación no puede detectar ni evitar degradaciones de SMB 2.0 ó 3.0 para SMB 1.0. Por este motivo y para aprovechar todas las capacidades del cifrado SMB, se recomienda que deshabilite al servidor SMB 1.0. Para obtener más información, consulte [deshabilitar SMB 1.0](#disabling-smb-1.0).
+SMB 3.0 es capaz de detectar ataques man-in-the-middle que intentan cambiar el protocolo SMB 2.0 o SMB 3.0 o las funcionalidades que el cliente y servidor negociar. Cuando se detecta este tipo de ataque por el cliente o el servidor, la conexión se desconecta y 1005 de Id. de evento se registra en el registro de eventos de Microsoft-Windows-SmbServer/Operational. Proteger el dialecto de negociación no puede detectar ni evitar degradaciones de SMB 2.0 ó 3.0 para SMB 1.0. Por este motivo y para aprovechar todas las capacidades del cifrado SMB, se recomienda que deshabilite al servidor SMB 1.0. Para obtener más información, consulte [deshabilitar SMB 1.0](#disabling-smb-10).
 
 La capacidad de negociación de dialecto segura que se describe en la sección siguiente evita que un ataque man-in-the-middle degradar una conexión entre 3 SMB y SMB 2 (lo que usaría un acceso sin cifrar); Sin embargo, no impide degradaciones SMB 1, lo que daría lugar también acceso sin cifrar. Para obtener más información sobre posibles problemas con versiones anteriores que no sean Windows implementaciones de SMB, consulte el [Microsoft Knowledge Base](http://support.microsoft.com/kb/2686098).
 

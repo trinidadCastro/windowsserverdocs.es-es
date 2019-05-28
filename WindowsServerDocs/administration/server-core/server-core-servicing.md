@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: f51ffae5ed8f91cca386eb209e7a1d8cc664ceeb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b19512a6f34e13469433aba6051f1232824beb0e
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817356"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034157"
 ---
 # <a name="patch-a-server-core-installation"></a>Revisión de una instalación Server Core
 
@@ -20,7 +20,7 @@ ms.locfileid: "59817356"
 
 Puede aplicar revisiones a un servidor que ejecuta la instalación Server Core de las maneras siguientes:
 
-- **Mediante Windows Update automáticamente o con Windows Server Update Services (WSUS)**. Mediante Windows Update, ya sea automáticamente o con herramientas de línea de comandos o Windows Server Update Services (WSUS), puede atender los servidores que ejecutan una instalación Server Core.
+- **Mediante Windows Update automáticamente o con Windows Server Update Services (WSUS)** . Mediante Windows Update, ya sea automáticamente o con herramientas de línea de comandos o Windows Server Update Services (WSUS), puede atender los servidores que ejecutan una instalación Server Core.
 
 - **Manualmente**. Incluso en las organizaciones que no usan Windows update o WSUS, puede aplicar manualmente las actualizaciones.
 
@@ -66,7 +66,7 @@ Para obligar a Windows Update a detectar e instalar inmediatamente cualquier act
 Wuauclt /detectnow 
 ```
 
-En función de las actualizaciones que estén instaladas, es posible que deba reiniciar el equipo, aunque el sistema no se lo notificará. Para determinar si se ha completado el proceso de instalación, use el Administrador de tareas para comprobar que la **Wuauclt** o **instalador de confianza** procesos no se están ejecutando. También puede usar los métodos de [ver las actualizaciones instaladas en el servidor Server Core](#view-the-updates-installed-on-your-Server-Core-server) para comprobar la lista de actualizaciones instaladas.
+En función de las actualizaciones que estén instaladas, es posible que deba reiniciar el equipo, aunque el sistema no se lo notificará. Para determinar si se ha completado el proceso de instalación, use el Administrador de tareas para comprobar que la **Wuauclt** o **instalador de confianza** procesos no se están ejecutando. También puede usar los métodos de [ver las actualizaciones instaladas en el servidor Server Core](#view-the-updates-installed-on-your-server-core-server) para comprobar la lista de actualizaciones instaladas.
 
 ## <a name="patch-the-server-with-wsus"></a>Revisión del servidor con WSUS 
 

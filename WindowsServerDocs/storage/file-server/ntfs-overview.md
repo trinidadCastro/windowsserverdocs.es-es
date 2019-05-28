@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/06/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 556110fe7bed1aed002ef6d985324ff5171e770e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f85e321381adcf607c3504005a0a3448ab0f098a
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885376"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63738448"
 ---
 # <a name="ntfs-overview"></a>Introducción a NTFS
 
@@ -25,7 +25,7 @@ Para obtener más información acerca de las funciones nuevas y modificadas de N
 
 ## <a name="practical-applications"></a>Aplicaciones prácticas
 
-### <a name="increased-reliability"></a>Mayor confiabilidad
+### <a name="increased-reliability"></a>Una mayor confiabilidad
 
 NTFS usa su información de registro de archivo y el punto de control para restaurar la coherencia del sistema de archivos cuando se reinicia el equipo después de un error del sistema. Después de un error de sector defectuoso, NTFS reasigna dinámicamente el clúster que contiene el sector defectuoso, asigna un nuevo clúster para los datos, marca el clúster original como no válido y ya no usa el clúster anterior. Por ejemplo, después de un bloqueo del servidor, NTFS pueden recuperar datos mediante la reproducción de sus archivos de registro.
 

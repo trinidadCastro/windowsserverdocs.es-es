@@ -8,12 +8,12 @@ ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3912bb6048a06a4656b5b27ccec8f8fb3f5b114b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: daed746fe798ae253956d0977827d0e205bb8b3e
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847416"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034578"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>Administrar el centro de datos (DCB) de protocolo de puente
 
@@ -39,7 +39,7 @@ Las configuraciones de asignación de prioridad de tráfico PFC, clase y la apli
 2. Habilite DCB en los adaptadores de red. Consulte [habilitar y mostrar la configuración de DCB en los adaptadores de red](#bkmk_enabledcb).
 
 >[!NOTE]
->Si desea configurar DCB desde un conmutador a través de DCBX, consulte [configuración DCBX](#BKMK_DCBX_Settings)
+>Si desea configurar DCB desde un conmutador a través de DCBX, consulte [configuración DCBX](#dcb-configuration-on-network-adapters).
 
 El bit dispuesto DCBX se describe en la especificación de DCB. Si el bit dispuesto en un dispositivo se establece en true, el dispositivo está dispuesto a aceptar las configuraciones de un dispositivo remoto a través de DCBX. Si el bit dispuesto en un dispositivo se establece en false, el dispositivo rechazará todos los intentos de configuración de dispositivos remotos y aplicar solo a las configuraciones locales.
 
