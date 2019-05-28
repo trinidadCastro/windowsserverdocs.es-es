@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: dc49d8f4b656fdbb92083aa3c60bc4ce81091e9b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 330214e83b6da5bf711c36995306f8f1a098fa24
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890826"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192213"
 ---
 # <a name="deploying-federation-server-proxies"></a>Implementación de servidores proxy de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 En Active Directory Federation Services \(AD FS\) en Windows Server 2012 R2, el rol de un servidor proxy de federación se gestiona mediante un nuevo servicio de rol acceso remoto denominado Web Application Proxy. Para habilitar AD FS para el acceso desde fuera de la red corporativa, lo que era el propósito de la implementación de un servidor proxy de federación en versiones heredadas de AD FS, como AD FS 2.0 y AD FS en Windows Server 2012, puede implementar a uno o varios web application proxy para un D FS en Windows Server 2012 R2.  
   
@@ -39,7 +37,7 @@ Para implementar Web Application Proxy, puede seguir los procedimientos de los t
  
 ## <a name="see-also"></a>Vea también 
 
-[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
+[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
 
 [Guía de implementación de Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  

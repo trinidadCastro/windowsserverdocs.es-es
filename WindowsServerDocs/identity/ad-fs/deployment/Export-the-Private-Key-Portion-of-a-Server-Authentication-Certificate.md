@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c968f0702d56b56d0a80459e5cf0c9e658c56741
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3a39f9d51ed8243118522ae37bc7d205a7ea416
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857196"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192142"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>Exportar la parte de la clave privada de un certificado de autenticación de servidor
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Cada servidor de federación en un Active Directory Federation Services \(AD FS\) granja de servidores debe tener acceso a la clave privada del certificado de autenticación del servidor. Si está implementando una granja de servidores de federación o servidores Web, debe tener un certificado de autenticación único. Este certificado debe ser emitido por una entidad de certificación empresarial \(CA\), y debe tener una clave privada exportable. La clave privada del certificado de autenticación de servidor debe ser exportable para que pueda estar disponible para todos los servidores de la granja.  
   
@@ -55,12 +53,12 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 9. Importa el certificado de autenticación de servidor exportado en el almacén de certificados del nuevo servidor antes de instalar el Servicio de federación. ¿Para obtener información sobre cómo importar el certificado, consulte Importar un certificado de servidor \( [http:\/\/go.microsoft.com\/fwlink\/? LinkId\=108283](https://go.microsoft.com/fwlink/?LinkId=108283)\).  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Cómo configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Lista de comprobación: Configurar un servidor Proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de comprobación: configuración de un servidor proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
-[Requisitos de certificados para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx)  
+[Requisitos de certificado para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx)  
   
-[Requisitos de certificados para servidores proxy de federación](https://technet.microsoft.com/library/dd807054.aspx)  
+[Requisitos de certificado para servidores proxy de federación](https://technet.microsoft.com/library/dd807054.aspx)  
   
 

@@ -9,16 +9,16 @@ ms.date: 12/05/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0ee22afd6fdec96ab69d915e4730bb834d2ab8ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9d6161666be89673cff6ef1a975d3205fa4b5c9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855526"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189092"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía
 
->Se aplica a: Windows Server 2012 R2
+
 
 El rápido aumento en el número de dispositivos de consumo y el acceso a la información desde cualquier lugar está cambiando la manera en que las personas perciben su tecnología. El uso constante de tecnologías de la información durante todo el día, junto con el fácil acceso a la información, está difuminando los límites tradicionales entre trabajo y vida privada. Estos límites cambiantes están acompañados por la creencia ese personal seleccionado a la tecnología y personalizada para ajustarse a los usuarios personalidades, actividades y programaciones-debe extenderse al área de trabajo. Para satisfacer la creciente demanda de que los dispositivos de consumo personal se conecten a las redes empresariales, estamos incorporando las siguientes propuestas:
 
@@ -54,11 +54,11 @@ Como parte de esta solución, aprenderá a usar la unión al área de trabajo en
 
 Esta solución te lleva por los siguientes pasos del tutorial:
 
-1.  [Tutorial: Unión con un dispositivo Windows](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+1.  [Tutorial: Workplace Join con un dispositivo Windows](../../ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
-2.  [Tutorial: Unión con un dispositivo iOS](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
+2.  [Tutorial: Workplace Join con un dispositivo iOS](../../ad-fs/operations/Walkthrough--Workplace-Join-with-an-iOS-Device.md)
 
-3.  [Tutorial: Unión con un dispositivo Android](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
+3.  [Tutorial: Workplace Join con un dispositivo Android](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
 ## <a name="see-also"></a>Vea también
 [Configurar un servidor de federación con el servicio de registro de dispositivos](../deployment/configure-a-federation-server-with-device-registration-service.md)

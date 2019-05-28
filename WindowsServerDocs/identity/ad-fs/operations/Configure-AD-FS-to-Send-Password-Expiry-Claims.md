@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 080e8cc81949df3bf74ae846eee7f32c5e145f53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3be14b824038e9424b86c40bfd657dd988fa99e9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834366"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189866"
 ---
 # <a name="configure-ad-fs-to-send-password-expiry-claims"></a>Configuración de AD FS para enviar notificaciones de expiración de contraseña
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Puede configurar servicios de federación de Active Directory (AD FS) para enviar notificaciones de expiración de contraseña para el usuario autenticado (aplicaciones) que está protegida por AD FS. ¿Cómo se usan estas notificaciones depende de la aplicación. Por ejemplo, con Office 365, como el usuario de confianza, se han implementado las actualizaciones para Exchange y Outlook para notificar a los usuarios federados de sus contraseñas pronto-a-haber-expirado.
 
@@ -37,4 +36,4 @@ c1:[Type == "http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"]
 > Hay una ventana de 14 días para que las notificaciones enviadas se rellenará solamente si la contraseña caducará en 14 días.
 
 ## <a name="see-also"></a>Vea también
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)

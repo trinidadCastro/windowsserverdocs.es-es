@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 511a039afd47cf7570fffdcaf17842e0eccc5683
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f1367f03ea8a9ba96bfe4bae1c324deff92576f0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843066"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192258"
 ---
 # <a name="configure-a-federation-server-with-device-registration-service"></a>Configurar un servidor de federación con el Servicio de registro de dispositivos
-
->Se aplica a: Windows Server 2012 R2
 
 Puede habilitar Device Registration Service \(DRS\) en el servidor de federación después de completar los procedimientos de [paso 4: Configurar un servidor de federación](https://technet.microsoft.com/library/dn303424.aspx). El servicio de registro de dispositivos proporciona un mecanismo de incorporación sin interrupciones de segundo para la autenticación multifactor, inicio de sesión único persistente\-en \(SSO\)y el acceso condicional a los consumidores que requieren acceso a la empresa recursos. Para obtener más información sobre el servicio DRS, consulte [unirse al área de trabajo desde cualquier dispositivo para SSO y sin problemas segundo Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)  
   
@@ -78,7 +76,7 @@ Conexión directa segundo factor de autenticación es una mejora en AD FS que pr
   
 ## <a name="see-also"></a>Vea también 
 
-[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
+[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
 
 [Guía de implementación de Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  

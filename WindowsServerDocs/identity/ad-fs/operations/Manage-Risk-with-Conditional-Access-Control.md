@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e2ad7d1467abd6d69077b515b8c69a65f7e70f19
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2c399467a8bb70e723a86618aa37fc54425f4e7d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865596"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189051"
 ---
 # <a name="manage-risk-with-conditional-access-control"></a>Administración de riesgos con control de acceso condicional
 
->Se aplica a: Windows Server 2012 R2
+
 
 
 -   [Control de acceso de condicional de los conceptos clave de AD FS](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md#BKMK_1)
@@ -58,7 +58,7 @@ En la tabla siguiente incluye todos los tipos de notificación disponibles en AD
 |--------------|---------------|
 |Dirección de correo electrónico|Dirección de correo electrónico del usuario|
 |Nombre propio|Nombre propio del usuario|
-|Nombre|Nombre del usuario|
+|Name|Nombre del usuario|
 |UPN|Nombre principal de usuario (UPN) del usuario|
 |Nombre común|Nombre común del usuario|
 |Dirección de correo electrónico para AD FS 1|Dirección de correo electrónico del usuario al interoperar con AD FS 1.1 o AD FS 1.0|
@@ -106,7 +106,7 @@ En la tabla siguiente incluye todos los tipos de notificación disponibles en AD
 |Nombre alternativo del firmante|Uno de los nombres alternativos del certificado|
 |Número de serie|Numero de serie del certificado|
 |Algoritmo de firma|Algoritmo usado para crear la firma de un certificado|
-|Firmante|Firmante del certificado|
+|Subject|Firmante del certificado|
 |Identificador de clave del firmante|Identificador de clave del firmante del certificado|
 |Nombre del firmante|Nombre distintivo del firmante de un certificado|
 |Nombre de plantilla V2|Es el nombre de la plantilla de certificado de la versión 2 que se usa al emitir o renovar un certificado. Se trata de un valor específico de Microsoft.|
@@ -175,7 +175,7 @@ Otros ejemplos de implementación del control de acceso condicional en AD FS en 
     ```
 
 ## <a name="see-also"></a>Vea también
-[Guía paso a paso: Administración de riesgos con Control de acceso condicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
+[Guía de tutorial: Administración de riesgos con Control de acceso condicional](../../ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
 [configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
 
 
