@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: jgerend
 ms.date: 6/11/2017
 description: 'Introducción a Carpetas de trabajo: es un rol de servidor en Windows Server que proporciona a los usuarios un modo coherente de acceder a los archivos de trabajo desde equipos y dispositivos.'
-ms.openlocfilehash: dd32b84e6442ec55414da27ea94ef16eeab769eb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3e3c86efb2f781dc88cac6851ea22f19c6ae812
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890486"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222855"
 ---
 # <a name="work-folders-overview"></a>Introducción a Carpetas de trabajo
 
@@ -24,18 +24,18 @@ En este tema se explica Carpetas de trabajo, un servicio de rol para servidores 
   
 Si desea descargar o usar las carpetas de trabajo en un dispositivo Android o iOS, Windows 7 o Windows 10, consulte lo siguiente:
 
--   [Carpetas de trabajo para Windows 10](https://support.microsoft.com/help/12370/windows-10-work-folders)
--   [Carpetas de trabajo para Windows 7 (descarga de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)
--   [Carpetas de trabajo para Windows 7 (descarga de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)
+- [Carpetas de trabajo para Windows 10](https://support.microsoft.com/help/12370/windows-10-work-folders)
+- [Carpetas de trabajo para Windows 7 (descarga de 64 bits)](https://www.microsoft.com/download/details.aspx?id=42558)
+- [Carpetas de trabajo para Windows 7 (descarga de 32 bits)](https://www.microsoft.com/download/details.aspx?id=42559)
 - [Carpetas de trabajo para iOS](https://itunes.apple.com/app/work-folders/id950878067)
 - [Carpetas de trabajo para Android](https://play.google.com/store/apps/details?id=com.microsoft.workfolders)
 
-##  <a name="BKMK_OVER"></a> Descripción del rol  
+## <a name="role-description"></a>Descripción del rol  
  Con Carpetas de trabajo, los usuarios pueden almacenar y tener acceso a archivos de trabajo en equipos y dispositivos, lo que suele denominarse Traer su propio dispositivo (BYOD), así como a equipos corporativos. Los usuarios obtienen una ubicación adecuada para almacenar los archivos de trabajo y pueden tener acceso a ellos desde cualquier lugar. Las organizaciones mantienen el control sobre los datos corporativos almacenando los archivos en servidores de archivos administrados centralmente y, de manera opcional, especificando directivas de dispositivo de usuario como contraseñas de cifrado y de bloqueo de pantalla.  
   
  Puedes implementar Carpetas de trabajo con otras implementaciones como Redirección de carpetas, Archivos sin conexión y carpetas particulares. Asimismo, Carpetas de trabajo almacena archivos de usuario en una carpeta del servidor llamada *compartir sincronización*. Puedes especificar una carpeta que ya contenga datos de usuario, lo que te permitirá usar Carpetas de trabajo sin tener que migrar los datos y los servidores o sin tener que retirar inmediatamente la solución que ya estés usando.  
   
-##  <a name="BKMK_APP"></a> Aplicaciones prácticas  
+## <a name="practical-applications"></a>Aplicaciones prácticas  
  Los administradores pueden usar Carpetas de trabajo para que los usuarios puedan tener acceso a sus archivos de trabajo, a la vez que mantienen el almacenamiento centralizado y un control total sobre los datos de la organización. Algunas aplicaciones específicas para Carpetas de trabajo incluyen las siguientes características:  
   
 -   Proporcionan un único punto de acceso a los archivos de trabajo desde los equipos y dispositivos tanto del trabajo como personales de un usuario  
@@ -50,7 +50,8 @@ Si desea descargar o usar las carpetas de trabajo en un dispositivo Android o iO
   
 -   Usan clústeres de conmutación por error con Carpetas de trabajo para proporcionar una solución de alta disponibilidad  
   
-##  <a name="BKMK_NEW"></a> Funcionalidad importante  
+## <a name="important-functionality"></a>Funcionalidad importante
+
  Carpetas de trabajo incluye las siguientes funcionalidades.  
   
 |Funcionalidad|Disponibilidad|Descripción|  
@@ -60,7 +61,8 @@ Si desea descargar o usar las carpetas de trabajo en un dispositivo Android o iO
 |Integración de Carpetas de trabajo con Windows|Windows 10<br /><br /> Windows 8.1<br /><br /> Windows RT 8.1<br /><br /> Windows 7 (es necesario descargarlo)|Carpetas de trabajo proporciona las siguientes funcionalidades en los equipos de Windows:<br /><br /> -   Un elemento del Panel de control que configura y supervisa Carpetas de trabajo<br />-   Integración con el Explorador de archivos que te permite acceder fácilmente a los archivos de Carpetas de trabajo<br />-   Un motor de sincronización que transfiere los archivos hacia y desde un servidor de archivos central a la vez que maximiza la duración de la batería y el rendimiento del sistema|  
 |Aplicación Carpetas de trabajo para dispositivos|Android<br /><br /> Apple iPhone e iPad®|Gracias a esta aplicación, puedes acceder a los archivos que tienes en Carpetas de trabajo usando los dispositivos más populares|  
   
-##  <a name="BKMK_New"></a> Funcionalidad nueva y modificada  
+## <a name="new-and-changed-functionality"></a>Funcionalidad nueva y modificada
+  
  En la siguiente tabla se describen algunos de los principales cambios de Carpetas de trabajo.  
   
 |Característica/funcionalidad|¿Nueva o actualizada?|Descripción|  
@@ -70,7 +72,7 @@ Si desea descargar o usar las carpetas de trabajo en un dispositivo Android o iO
 |Se ha integrado con Windows Information Protection (WIP)|Se ha agregado a la versión 1607 de Windows 10|Si un administrador implementa WIP, Carpetas de trabajo puede aplicar la protección de datos mediante el cifrado de los datos del equipo. El cifrado usa una clave asociada con el identificador de empresa, que puede ser borrado de forma remota mediante un paquete de administración de dispositivos móviles compatibles, como Microsoft Intune.|  
 |Integración con Microsoft Office|Se ha agregado a la versión 1511 de Windows 10|En Windows 8.1 puedes acceder a Carpetas de trabajo desde las mismas aplicaciones de Office haciendo clic o pulsando la opción "Este equipo" y, a continuación, accediendo a la ubicación de Carpetas de trabajo de tu PC. En Windows 10 es aún más fácil acceder a Carpetas de trabajo; para ello, debes agregar esta característica a la lista de ubicaciones que Office muestra al guardar o abrir archivos. Para obtener más información, consulta [Carpetas de trabajo en Windows 10](https://windows.microsoft.com/windows-10/work-folders-in-windows-10) y [Solucionar problemas al usar Carpetas de trabajo como un Lugar en Microsoft Office](https://social.technet.microsoft.com/wiki/contents/articles/32881.troubleshooting-using-work-folders-as-a-place-in-microsoft-office.aspx).|  
   
-##  <a name="BKMK_SOFT"></a> Requisitos de software  
+## <a name="software-requirements"></a>Requisitos de software
 
 Carpetas de trabajo presenta los siguientes requisitos de software en cuanto a servidores de archivos e infraestructura de red:  
   
@@ -126,7 +128,7 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
   
 -   Carpetas de trabajo no admite revertir el estado de máquina virtual de las máquinas virtuales cliente. realice en su lugar operaciones de copia de seguridad y restauración desde la máquina virtual cliente, ya sea por medio de Copia de seguridad de imagen del sistema o de cualquier otra aplicación de copia de seguridad.  
   
-##  <a name="BKMK_Comparison"></a> Carpetas de trabajo en comparación con otras tecnologías de sincronización  
+## <a name="work-folders-compared-to-other-sync-technologies"></a>Carpetas de trabajo en comparación con otras tecnologías de sincronización  
 
 La siguiente tabla describe la posición de las distintas tecnologías de sincronización de Microsoft y cuándo debes usar cada una.  
   
@@ -141,7 +143,7 @@ La siguiente tabla describe la posición de las distintas tecnologías de sincro
 > [!NOTE]
 >  Además de las tecnologías de sincronización de la tabla anterior, Microsoft te ofrece otras tecnologías de replicación como, por ejemplo, la replicación de DFS que está diseñada para la replicación de servidor a servidor y BranchCache, que está pensada para funcionar como una tecnología de aceleración WAN de la sucursal. Para obtener más información, consulta [Espacios de nombres y replicación DFS](https://technet.microsoft.com/library/jj127250(v=ws.11).aspx) e [Introducción a BranchCache](https://technet.microsoft.com/library/hh831696(v=ws.11).aspx)  
   
-##  <a name="BKMK_INSTALL"></a> Información del administrador del servidor  
+## <a name="server-manager-information"></a>Información sobre el Administrador del servidor  
 
 Carpetas de trabajo forma parte del rol Servicios de archivos y almacenamiento. Puedes instalar Carpetas de trabajo mediante el asistente para agregar roles y características o el cmdlet `Install-WindowsFeature`. Ambos métodos realizan las siguientes acciones:  
   
@@ -151,12 +153,13 @@ Carpetas de trabajo forma parte del rol Servicios de archivos y almacenamiento. 
   
 -   Instalan el módulo SyncShare de Windows PowerShell para poder administrar Carpetas de trabajo en el servidor  
   
-##  <a name="BKMK_Azure"></a> Interoperabilidad con máquinas virtuales de Windows Azure  
+## <a name="interoperability-with-windows-azure-virtual-machines"></a>Interoperabilidad con las máquinas virtuales de Microsoft Azure
+
  Puedes ejecutar este servicio de rol de Windows Server en una máquina virtual en Microsoft Azure. Este escenario se ha probado con Windows Server 2012 R2 y Windows Server 2016.  
   
 Para obtener más información acerca de cómo comenzar a usar las máquinas virtuales de Microsoft Azure, visita el [sitio web de Microsoft Azure](http://www.windowsazure.com/documentation/services/virtual-machines).  
   
-##  <a name="BKMK_LINKS"></a> Vea también  
+## <a name="see-also"></a>Vea también  
  Para obtener más información relacionada, vea los siguientes recursos.  
   
 |Tipo de contenido|Referencias|  

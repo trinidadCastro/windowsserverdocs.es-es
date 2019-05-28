@@ -1,6 +1,6 @@
 ---
 title: Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
-description: Información general de la característica de servidor de archivos de escalabilidad horizontal para Windows Server 201 R2, Windows Server 2012 y Windows Server 2016.
+description: Información general de la característica de servidor de archivos de escalabilidad horizontal para Windows Server 201 R2 y Windows Server 2012.
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 04e25e9c69062611d9d14c220614f148ac5de770
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e6d67eee496d19b216a4366af51ab5736229cf0
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884776"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476153"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 
->Se aplica a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Se aplica a: Windows Server 2012 R2, Windows Server 2012
 
 El Servidor de archivos de escalabilidad horizontal es una característica que se diseñó para proporcionar recursos compartidos de archivos de escalabilidad horizontal que están disponibles continuamente para el almacenamiento de aplicaciones del servidor basado en archivos. Los recursos compartidos de archivos de escalabilidad horizontal otorgan la capacidad de compartir la misma carpeta desde varios nodos del mismo clúster. Este escenario se centra en cómo planear e implementar el Servidor de archivos de escalabilidad horizontal.
 
@@ -255,7 +255,7 @@ En la tabla siguiente, se enumeran las características que forman parte de este
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="failover-clustering.md">Agrupación en clústeres de conmutación por error</a></td>
+<td><a href="failover-clustering.md">Clúster de conmutación por error</a></td>
 <td>Clústeres de conmutación por error incorporaron las siguientes características en Windows Server 2012 para admitir el servidor de archivos de escalabilidad horizontal: Nombre de red distribuida, el tipo de recurso de servidor de archivos de escalabilidad horizontal, volúmenes compartidos clúster (CSV) 2 y el rol de servidor alta disponibilidad de archivos de escalabilidad horizontal. Para obtener más información acerca de estas características, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Novedades en los clústeres de conmutación por error en Windows Server 2012 [redirigido]</a>.</td>
 </tr>
 <tr class="even">

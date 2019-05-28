@@ -1,33 +1,32 @@
 ---
 title: Características eliminadas o en desuso en Windows Server 2016
-description: Características y funcionalidades se han quitado o planeado para su eliminación en las versiones.
-ms.custom: na
+description: Una lista de características y funcionalidades de Windows Server 2016 que se quitaron del producto en la versión actual o se planifican su posible eliminación en las versiones posteriores (en desuso). Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial.
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 05/02/2017
+ms.date: 05/21/2019
 ms.assetid: 5d10c5f9-ebac-49a0-b808-c0b1702e0437
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 20178a3be14c076623f647fa139e013528de9a69
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 83855cf7e4fa86a932298dd15735dc5bf7277dfb
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858166"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976605"
 ---
 # <a name="features-removed-or-deprecated-in--windows-server-2016"></a>Características eliminadas o en desuso en Windows Server 2016
 
 >Se aplica a: Windows Server 2016
 
-A continuación se enumeran las características y funcionalidades de Windows Server 2016 que se quitaron del producto en la versión actual o cuya eliminación se planea para las siguientes versiones (en desuso). Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. Esta lista está sujeta a cambios en versiones posteriores y es posible que no incluya todas las características o funcionalidades desusadas. Para obtener más detalles sobre una característica o funcionalidad en concreto y su reemplazo, consulte la documentación relativa a la característica en cuestión.  
+A continuación se enumeran las características y funcionalidades de Windows Server 2016 que se quitaron del producto en la versión actual o cuya eliminación se planea para las siguientes versiones (en desuso). Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. Esta lista está sujeta a cambios en versiones posteriores y es posible que no incluya todas las características o funcionalidades desusadas. Para obtener más detalles sobre una característica o funcionalidad en concreto y su reemplazo, consulte la documentación relativa a la característica en cuestión.
 
-## <a name="features-removed-from-windows-server-2016"></a>Características quitadas de Windows Server 2016 
+Para obtener información sobre lo que se han quitado o en desuso en las versiones más recientes, consulte [características eliminadas o planeado para el reemplazo a partir de Windows Server 2019](../get-started-19/removed-features-19.md).
+
+## <a name="features-removed-from-windows-server-2016"></a>Características quitadas de Windows Server 2016
+
 Las siguientes características y funcionalidades se quitaron de esta versión de Windows Server 2016. Las aplicaciones, el código o el uso que dependen de estas características no funcionarán en esta versión, a menos que se emplee un método alternativo.  
 
 > [!NOTE]  

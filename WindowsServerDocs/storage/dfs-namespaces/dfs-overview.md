@@ -2,22 +2,22 @@
 title: Información general de Espacios de nombres DFS
 ms.prod: windows-server-threshold
 ms.author: jgerend
-ms.manager: brianlic
+ms.manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 10/15/2018
+ms.date: 05/09/2019
 description: En este tema se describen los espacios de nombres DFS, que es un servicio de rol de Windows Server que te permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o varios espacios de nombres estructurados lógicamente.
-ms.openlocfilehash: 0f80e5a25254513702c25ce895a28c4cb1e0f2b4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 33b5a36c9f13179286a95735621272f79983231c
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844256"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613185"
 ---
 # <a name="dfs-namespaces-overview"></a>Información general de Espacios de nombres DFS
 
-> Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008, Windows Server (canal semianual)
 
 Espacios de nombres DFS es un servicio de rol de Windows Server que te permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o varios espacios de nombres estructurados lógicamente. Esto permite ofrecer a los usuarios una vista virtual de las carpetas compartidas, donde una única ruta de acceso conduce a los archivos ubicados en varios servidores, tal y como se muestra en la siguiente figura:
 
@@ -42,11 +42,12 @@ Un servidor de espacio de nombres es un controlador de dominio o un servidor mie
 
 Los servidores que ejecutan los siguientes sistemas operativos pueden alojar varios espacios de nombres basados en dominios y un único espacio de nombres independiente. 
 
-- Windows Server (Canal semianual)
+- Windows Server 2019
 - Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2 Datacenter, Enterprise
+- Windows Server 2008 R2 Datacenter y Enterprise Edition
+- Windows Server (Canal semianual)
 
 Los servidores que ejecutan los siguientes sistemas operativos pueden alojar un único espacio de nombres independiente:
 
@@ -126,5 +127,5 @@ Para obtener más información relacionada, vea los siguientes recursos.
 |**Operaciones**|[Espacios de nombres DFS: Preguntas más frecuentes](https://technet.microsoft.com/library/ee404780.aspx)|
 |**Recursos de la comunidad**|[El foro de TechNet sobre almacenamiento y servicios de archivos](https://social.technet.microsoft.com/forums/winserverfiles/threads/)|
 |**Protocolos**|[Protocolos de Windows Server de servicios de archivo](https://msdn.microsoft.com/en-us/library/cc239318.aspx) (en desuso)|
-|**Tecnologías relacionadas**| [Agrupación en clústeres de conmutación por error](../../failover-clustering/failover-clustering-overview.md)|
+|**Tecnologías relacionadas**| [Clúster de conmutación por error](../../failover-clustering/failover-clustering-overview.md)|
 |**Soporte técnico**|[Windows TI soporte técnico profesional](https://www.microsoft.com/itpro/windows/support)|

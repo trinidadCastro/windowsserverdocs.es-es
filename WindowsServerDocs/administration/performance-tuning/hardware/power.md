@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 5261c856a0a29f9f58526e4f9580a16bbed5be56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5fe91888188796c96d5da80e8f9bd3ed627b9d43
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874306"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564742"
 ---
 # <a name="server-hardware-power-considerations"></a>Consideraciones sobre la alimentación de Hardware de servidor
 
@@ -22,7 +22,7 @@ Es importante tener en cuenta la importancia creciente de eficiencia energética
 
 Frecuencia de funcionamiento de tensión, tamaño de caché y la tecnología de proceso afecta al consumo de energía de procesadores. Procesadores tienen un diseño térmico punto clasificación (TDP) que proporciona una indicación básica de consumo de energía en relación con otros modelos.
 
-En general, opte por el procesador TDP más bajo que cumpla sus objetivos de rendimiento. Además, las últimas generaciones de procesadores son energía suele ser más eficaz, y pueden exponer más Estados de energía para los algoritmos de administración de energía de Windows, lo que permite una mejor administración de energía en todos los niveles de rendimiento. ¿O pueden usar algunas de la nuevas "cooperativa? técnicas de administración de energía que Microsoft ha desarrollado en colaboración con fabricantes de hardware.
+En general, opte por el procesador TDP más bajo que cumpla sus objetivos de rendimiento. Además, las últimas generaciones de procesadores son energía suele ser más eficaz, y pueden exponer más Estados de energía para los algoritmos de administración de energía de Windows, lo que permite una mejor administración de energía en todos los niveles de rendimiento. O bien, pueden usar algunas de las técnicas de administración de energía "cooperativa" nuevo que Microsoft ha desarrollado en colaboración con fabricantes de hardware.
 
 Para obtener más información sobre las técnicas de administración de energía cooperativa, consulte la sección denominada Control de rendimiento de procesador de colaboración en el [avanzada de configuración y especificación de interfaz de energía](http://www.uefi.org/sites/default/files/resources/ACPI_5_1release.pdf).
 
@@ -36,7 +36,7 @@ Memoria de bajo consumo de energía ya está disponible, pero debe tener en cuen
 ## <a name="disks-recommendations"></a>Recomendaciones de discos
 RPM mayor significa que el consumo de energía mayor. Las unidades SSD son más energía eficaces que las unidades de rotación. Además, las unidades de 2,5 pulgadas generalmente requieren menos energía que las unidades de 3,5 pulgadas.
 
-## <a name="network-and-storage-adapter-recommendations"></a>Recomendaciones del adaptador de almacenamiento y de red
+## <a name="network-and-storage-adapter-recommendations"></a>Recomendaciones de adaptador de almacenamiento y red
 Algunos adaptadores disminuya el consumo de energía durante los períodos de inactividad. Ésta es una consideración importante para los adaptadores de red de 10 Gb y los vínculos de almacenamiento de alto ancho de banda (4 a 8 Gb). Estos dispositivos pueden consumir grandes cantidades de energía.
 
 
@@ -65,10 +65,10 @@ La terminología de procesador utilizada en este tema refleja la jerarquía de c
 -   Core
 -   procesador lógico
 
-![terminología de procesador](../media/perftune-guide-figure-1.png)
+![Terminología de procesador](../media/perftune-guide-figure-1.png)
 
 ## <a name="see-also"></a>Vea también
 - [Consideraciones de rendimiento del Hardware de servidor](index.md)
-- [Energía y ajuste del rendimiento](power/power-performance-tuning.md)
-- [Optimización de la administración de energía del procesador](power/processor-power-management-tuning.md)
-- [Parámetros de Plan equilibrado recomendados](power/recommended-balanced-plan-parameters.md)
+- [Power and Performance Tuning](power/power-performance-tuning.md) (Optimización de potencia y rendimiento)
+- [Processor Power Management Tuning](power/processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)
+- [Recommended Balanced Plan Parameters](power/recommended-balanced-plan-parameters.md) (Parámetros recomendados del plan equilibrado)

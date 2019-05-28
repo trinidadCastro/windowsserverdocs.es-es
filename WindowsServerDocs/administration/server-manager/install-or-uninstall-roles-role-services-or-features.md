@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 32d356b3ae70b7b15f23a40247e73b4b8f61c3db
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 18ba3517f6533a85fe7cb24f24a7f4ffdfad6991
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822376"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222983"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>Instalación o desinstalación de roles, servicios de rol o características
 
@@ -35,19 +35,19 @@ Para obtener más información acerca de cuáles son los roles, servicios de rol
   
 En este tema se incluyen las siguientes secciones.  
   
--   [Instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente](#BKMK_installarfw)  
+-   [Instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard)  
   
--   [Instalación de roles, servicios de rol y características mediante los cmdlets de Windows PowerShell](#BKMK_installwps)  
+-   [Instalación de roles, servicios de rol y características mediante los cmdlets de Windows PowerShell](#install-roles-role-services-and-features-by-using-windows-powershell-cmdlets)  
   
--   [Quitar roles, servicios de rol y características mediante la quitar Roles y características de Asistente](#BKMK_removerrfw)  
+-   [Quitar roles, servicios de rol y características mediante la quitar Roles y características de Asistente](#remove-roles-role-services-and-features-by-using-the-remove-roles-and-features-wizard)  
   
--   [Eliminación de roles, servicios de rol y características mediante los cmdlets de Windows PowerShell](#BKMK_removewps)  
+-   [Eliminación de roles, servicios de rol y características mediante los cmdlets de Windows PowerShell](#remove-roles-role-services-and-features-by-using-windows-powershell-cmdlets)  
   
--   [Instalar roles y características en varios servidores ejecutando un script de Windows PowerShell](#BKMK_batch)  
+-   [Instalar roles y características en varios servidores ejecutando un script de Windows PowerShell](#install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script)  
   
--   [Instalación de .NET Framework 3.5 y otras características a petición](#BKMK_FoD)  
+-   [Instalación de .NET Framework 3.5 y otras características a petición](#install-net-framework-35-and-other-features-on-demand)  
   
-## <a name="BKMK_installarfw"></a>Instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente  
+## <a name="install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard"></a>Instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente  
 En una única sesión en el Asistente de las características y agregar funciones, puede instalar roles, servicios de rol y características en el servidor local, un servidor remoto que se ha agregado al administrador del servidor o un VHD sin conexión. Para obtener más información sobre cómo agregar un servidor al administrador del servidor para administrar, consulte [agregar servidores al administrador del servidor](add-servers-to-server-manager.md).  
   
 > [!NOTE]  
@@ -72,7 +72,7 @@ En una única sesión en el Asistente de las características y agregar funcione
     > [!NOTE]  
     > Para instalar roles y características en VHD sin conexión, los VHD de destino deben cumplir los requisitos siguientes.  
     >   
-    > -   Los VHD deben ejecutar la versión de Windows Server que coincida con la versión del administrador del servidor está ejecutando. Consulte la nota al principio de [instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente](#BKMK_installarfw).  
+    > -   Los VHD deben ejecutar la versión de Windows Server que coincida con la versión del administrador del servidor está ejecutando. Consulte la nota al principio de [instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard).  
     > -   Los VHD no deben tener más de una partición o volumen de sistema.  
     > -   La carpeta compartida de red donde está almacenado el archivo de VHD debe conceder los siguientes derechos de acceso a la cuenta de equipo (o sistema local) del servidor que ha seleccionado para montar el VHD. El acceso de cuenta de solo usuario no es suficiente. El recurso compartido puede otorgar permisos de **lectura** y **escritura** a **todos** los integrantes del grupo para darles acceso al VHD, pero por razones de seguridad, no se recomienda hacer esto.  
     >   
@@ -95,7 +95,7 @@ En una única sesión en el Asistente de las características y agregar funcione
   
 8.  Tras hacer clic en **instalar**, **progreso de la instalación** página muestra el progreso de la instalación, los resultados y mensajes como advertencias, errores o pasos de configuración posteriores a la instalación se requiere para los roles o características que instaló. En Windows Server 2012 y versiones posteriores de Windows Server, puede cerrar el agregar Roles y características Asistente mientras la instalación está en curso y ver los resultados de instalación u otros mensajes en el **notificaciones** área en la parte superior de la consola de administrador del servidor. Haga clic en el **notificaciones** icono de marca para ver más detalles sobre las instalaciones u otras tareas que se va a realizar en el administrador del servidor.  
   
-## <a name="BKMK_installwps"></a>Instalar roles, servicios de rol y características mediante los cmdlets de Windows PowerShell  
+## <a name="install-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>Instalación de roles, servicios de rol y características mediante los cmdlets de Windows PowerShell  
 Los cmdlets de implementación del administrador del servidor para la función de Windows PowerShell de forma similar a basado en GUI agregar Roles y características Asistente y quitar Roles y características Asistente, con una diferencia importante. En Windows PowerShell, a diferencia de en el agregar Roles y características Asistente, las herramientas de administración y complementos para un rol no se incluyen de forma predeterminada. Para incluir herramientas de administración como parte de una instalación de rol, agregue el parámetro `IncludeManagementTools` al cmdlet. Si está instalando roles y características en un servidor que se está ejecutando la opción de instalación Server Core de Windows Server 2012 o versiones posteriores, puede agregar las herramientas de administración de un rol a una instalación, pero no se puede instalar complementos y herramientas de administración basada en GUI en los servidores que ejecutan la opción de instalación Server Core de Windows Server. Solo línea de comandos y herramientas de administración de Windows PowerShell pueden instalarse en la opción de instalación Server Core.  
   
 #### <a name="to-install-roles-and-features-by-using-the-install-windowsfeature-cmdlet"></a>Para instalar roles y características mediante el cmdlet Install-WindowsFeature  
@@ -109,7 +109,7 @@ Los cmdlets de implementación del administrador del servidor para la función d
   
     -   En el Windows **iniciar** pantalla, haga clic en el icono de Windows PowerShell y, a continuación, en la barra de la aplicación, haga clic en **ejecutar como administrador**.  
   
-2.  Escriba **Get-WindowsFeature** y, a continuación, presione **Entrar** para ver una lista de los roles y las características disponibles e instalados en el servidor local. Si el equipo local no es un servidor, o si desea obtener información acerca de un servidor remoto, ejecute **Get-WindowsFeature - computerName <***computer_name***>**, en el que  *computer_name* representa el nombre de un equipo remoto que ejecuta Windows Server 2016. Los resultados del cmdlet contienen los nombres de comando de roles y características que agregue al cmdlet en el paso 4.  
+2.  Escriba **Get-WindowsFeature** y, a continuación, presione **Entrar** para ver una lista de los roles y las características disponibles e instalados en el servidor local. Si el equipo local no es un servidor, o si desea obtener información acerca de un servidor remoto, ejecute **Get-WindowsFeature - computerName <***computer_name***>** , en el que  *computer_name* representa el nombre de un equipo remoto que ejecuta Windows Server 2016. Los resultados del cmdlet contienen los nombres de comando de roles y características que agregue al cmdlet en el paso 4.  
   
     > [!NOTE]  
     > En Windows PowerShell 3.0 y versiones posteriores de Windows PowerShell, no hay ninguna necesidad de importar el módulo de cmdlets del administrador del servidor en la sesión de Windows PowerShell antes de ejecutar los cmdlets que forman parte del módulo. El módulo se importa automáticamente la primera vez que se ejecuta un cmdlet que es parte del módulo. Además, los cmdlets de Windows PowerShell ni los nombres de características usados con los cmdlets distinguen mayúsculas de minúsculas.  
@@ -129,7 +129,7 @@ Los cmdlets de implementación del administrador del servidor para la función d
     >   
     > Para instalar roles y características en VHD sin conexión, los VHD de destino deben cumplir los requisitos siguientes.  
     >   
-    > -   Los VHD deben ejecutar la versión de Windows Server que coincida con la versión del administrador del servidor está ejecutando. Consulte la nota al principio de [instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente](#BKMK_installarfw).  
+    > -   Los VHD deben ejecutar la versión de Windows Server que coincida con la versión del administrador del servidor está ejecutando. Consulte la nota al principio de [instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard).  
     > -   Los VHD no deben tener más de una partición o volumen de sistema.  
     > -   La carpeta compartida de red donde está almacenado el archivo de VHD debe conceder los siguientes derechos de acceso a la cuenta de equipo (o sistema local) del servidor que ha seleccionado para montar el VHD. El acceso de cuenta de solo usuario no es suficiente. El recurso compartido puede otorgar permisos de **lectura** y **escritura** a **todos** los integrantes del grupo para darles acceso al VHD, pero por razones de seguridad, no se recomienda hacer esto.  
     >   
@@ -148,7 +148,7 @@ Los cmdlets de implementación del administrador del servidor para la función d
   
 5.  Cuando finalice la instalación, comprobar la instalación, abra el **todos los servidores** página Administrador del servidor, seleccione un servidor en el que haya instalado roles y características y vea el **Roles y características** icono en la página del servidor seleccionado. También puede ejecutar el `Get-WindowsFeature` cmdlet destinado al servidor seleccionado (Get-WindowsFeature - computerName <*computer_name*>) para ver una lista de roles y características que están instaladas en el servidor.  
   
-## <a name="BKMK_removerrfw"></a>quitar roles, servicios de rol y características mediante la quitar Roles y características de Asistente  
+## <a name="remove-roles-role-services-and-features-by-using-the-remove-roles-and-features-wizard"></a>Quitar roles, servicios de rol y características mediante la quitar Roles y características de Asistente  
 Debe ser iniciado sesión en un servidor como administrador para desinstalar los roles, servicios de rol y características. Si ha iniciado sesión en el equipo local con una cuenta que no tiene derechos de administrador en el servidor de destino de desinstalación, haga clic con el botón secundario en el servidor de destino, en el icono **Servidores** y haga clic en **Administrar como** para proporcionar una cuenta con derechos de administrador. El servidor en el que desea montar un VHD sin conexión debe agregarse al Administrador del servidor y el usuario debe tener derechos de administrador en ese servidor.  
   
 #### <a name="to-remove-roles-and-features-by-using-the-remove-roles-and-features-wizard"></a>Para quitar roles y características mediante la quitar Roles y características de Asistente  
@@ -186,7 +186,7 @@ Debe ser iniciado sesión en un servidor como administrador para desinstalar los
   
 7.  Tras hacer clic en **quitar**, **progreso de la eliminación** página muestra el progreso de la eliminación, los resultados y mensajes como advertencias, errores o pasos de configuración posteriores a la eliminación necesarios, como Reiniciando el servidor de destino. En Windows Server 2012 y versiones posteriores de Windows Server, puede cerrar la quitar Roles y características Asistente mientras la eliminación permanece en progresan y ver resultados de la eliminación u otros mensajes en el **notificaciones** área en la parte superior de la Consola de administrador del servidor. Haga clic en el **notificaciones** marca para ver más detalles sobre las eliminaciones u otras tareas que se va a realizar en el administrador del servidor.  
   
-## <a name="BKMK_removewps"></a>quitar roles, servicios de rol y características mediante los cmdlets de Windows PowerShell  
+## <a name="remove-roles-role-services-and-features-by-using-windows-powershell-cmdlets"></a>Eliminación de roles, servicios de rol y características mediante los cmdlets de Windows PowerShell  
 Los cmdlets de implementación del administrador del servidor para la función de Windows PowerShell de forma similar a basado en GUI quitar Roles y características Asistente, con una diferencia importante. En Windows PowerShell, a diferencia de en el para quitar Roles y características Asistente, las herramientas de administración y complementos para un rol no se quitan de forma predeterminada. Para eliminar herramientas de administración como parte de una eliminación de rol, agregue el parámetro `IncludeManagementTools` al cmdlet. Si está desinstalando roles y características de un servidor que ejecuta la opción de instalación Server Core de Windows Server 2012 o una versión posterior de Windows Server, este parámetro quita en línea de comandos y las herramientas de administración de Windows PowerShell para el elemento especificado roles y características.  
   
 #### <a name="to-remove-roles-and-features-by-using-the-uninstall-windowsfeature-cmdlet"></a>Para eliminar roles y características mediante el cmdlet Uninstall-WindowsFeature  
@@ -200,7 +200,7 @@ Los cmdlets de implementación del administrador del servidor para la función d
   
     -   En el Windows **iniciar** pantalla, haga clic en el icono de Windows PowerShell y, a continuación, en la barra de la aplicación, haga clic en **ejecutar como administrador**.  
   
-2.  Escriba **Get-WindowsFeature** y, a continuación, presione **Entrar** para ver una lista de los roles y las características disponibles e instalados en el servidor local. Si el equipo local no es un servidor, o si desea obtener información acerca de un servidor remoto, ejecute **Get-WindowsFeature - computerName <***computer_name***>**, en el que  *computer_name* representa el nombre de un equipo remoto que ejecuta Windows Server 2016. Los resultados del cmdlet contienen los nombres de comando de roles y características que agregue al cmdlet en el paso 4.  
+2.  Escriba **Get-WindowsFeature** y, a continuación, presione **Entrar** para ver una lista de los roles y las características disponibles e instalados en el servidor local. Si el equipo local no es un servidor, o si desea obtener información acerca de un servidor remoto, ejecute **Get-WindowsFeature - computerName <***computer_name***>** , en el que  *computer_name* representa el nombre de un equipo remoto que ejecuta Windows Server 2016. Los resultados del cmdlet contienen los nombres de comando de roles y características que agregue al cmdlet en el paso 4.  
   
     > [!NOTE]  
     > En Windows PowerShell 3.0 y versiones posteriores de Windows PowerShell, no hay ninguna necesidad de importar el módulo de cmdlets del administrador del servidor en la sesión de Windows PowerShell antes de ejecutar los cmdlets que forman parte del módulo. El módulo se importa automáticamente la primera vez que se ejecuta un cmdlet que es parte del módulo. Además, los cmdlets de Windows PowerShell ni los nombres de características usados con los cmdlets distinguen mayúsculas de minúsculas.  
@@ -235,7 +235,7 @@ Los cmdlets de implementación del administrador del servidor para la función d
   
 5.  Eliminación una vez finalizada, compruebe que los roles y características se han quitado abriendo el **todos los servidores** página Administrador del servidor, seleccione el servidor desde el que se haya quitado roles y características y vea el **Roles y Características** icono en la página del servidor seleccionado. También puede ejecutar el `Get-WindowsFeature` cmdlet destinado al servidor seleccionado (Get-WindowsFeature - computerName <*computer_name*>) para ver una lista de roles y características que están instaladas en el servidor.  
   
-## <a name="BKMK_batch"></a>Instalar roles y características en varios servidores ejecutando un script de Windows PowerShell  
+## <a name="install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script"></a>Instalar roles y características en varios servidores ejecutando un script de Windows PowerShell  
 Aunque no se puede usar el agregar Roles y características Asistente para instalar roles, servicios de rol y características en más de un servidor de destino de una única sesión del asistente, puede usar un script de Windows PowerShell para instalar roles, servicios de rol y características en varios destinos servidores que se están administrando mediante el administrador del servidor. El script que use para realizar la implementación por lotes, como se llama a este proceso, apunta a un archivo de configuración XML que se puede crear fácilmente con el Asistente de las características y agregar Roles y haciendo clic en **exportar opciones de configuración** después de avanzar por el Asistente para la **Confirmar selecciones de instalación** página del Asistente de las características y agregar funciones.  
   
 > [!IMPORTANT]  
@@ -294,18 +294,18 @@ Aunque no se puede usar el agregar Roles y características Asistente para insta
   
 5.  Cuando finalice la instalación, comprobar la instalación, abra el **todos los servidores** página Administrador del servidor, seleccione un servidor en el que haya instalado roles y características y vea el **Roles y características** icono en la página del servidor seleccionado. También puede ejecutar el `Get-WindowsFeature` cmdlet destinado a un servidor específico (`Get-WindowsFeature -computerName` <*computer_name*>) para ver una lista de roles y características que están instaladas en el servidor.  
   
-## <a name="BKMK_FoD"></a>Instalar .NET Framework 3.5 y otras características a petición  
+## <a name="install-net-framework-35-and-other-features-on-demand"></a>Instalación de .NET Framework 3.5 y otras características a petición  
 a partir de Windows Server 2012 y Windows 8, los archivos de características para .NET Framework 3.5 (que incluye .NET Framework 2.0 y .NET Framework 3.0) no están disponibles en el equipo local de forma predeterminada. Los archivos se han eliminado. Los archivos de las características que se eliminaron en una configuración de características a petición, junto con los archivos de características para .NET Framework 3.5, se encuentran disponibles a través de Windows Update. De forma predeterminada, si los archivos de características no están disponibles en el servidor de destino que ejecuta Windows Server 2012 o versiones posteriores, el proceso de instalación busca los archivos que faltan conecta a Windows Update. Puede invalidar el comportamiento predeterminado, configure una configuración de directiva de grupo o especifique una ruta de acceso de origen alternativa durante la instalación, independientemente de si va a instalar mediante el agregar Roles y características de GUI del Asistente para o una línea de comandos.  
   
 Para instalar .NET Framework 3.5, realice una de las siguientes acciones.  
   
--   Use [Para instalar .NET Framework 3.5 mediante la ejecución del cmdlet Install-WindowsFeature](#BKMK_dotnetcmdlet) para agregar el parámetro `Source` y especifique un origen a partir del cual se van a obtener los archivos de características de .NET Framework 3.5. Si no agrega el parámetro `Source`, el proceso de instalación primero determina si se ha especificado una ruta de acceso a los archivos de características en la configuración de la directiva de grupo y, si no encuentra la ruta de acceso, usa Windows Update para buscar los archivos de características que faltan.  
+-   Use [Para instalar .NET Framework 3.5 mediante la ejecución del cmdlet Install-WindowsFeature](#to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet) para agregar el parámetro `Source` y especifique un origen a partir del cual se van a obtener los archivos de características de .NET Framework 3.5. Si no agrega el parámetro `Source`, el proceso de instalación primero determina si se ha especificado una ruta de acceso a los archivos de características en la configuración de la directiva de grupo y, si no encuentra la ruta de acceso, usa Windows Update para buscar los archivos de características que faltan.  
   
--   Use [para instalar .NET Framework 3.5 mediante el agregar Roles y características Asistente](#BKMK_arfw) para especificar una ubicación de archivo de origen alternativa en el **Confirmar opciones de instalación** página del Asistente de las características y agregar funciones.  
+-   Use [para instalar .NET Framework 3.5 mediante el agregar Roles y características Asistente](#to-install-net-framework-35-by-using-the-add-roles-and-features-wizard) para especificar una ubicación de archivo de origen alternativa en el **Confirmar opciones de instalación** página del Asistente de las características y agregar funciones.  
   
--   Use [Para instalar .NET Framework 3.5 mediante DISM](#BKMK_dism) para obtener los archivos desde Windows Update de manera predeterminada o mediante la especificación de una ruta de acceso de origen para los medios de instalación.  
+-   Use [Para instalar .NET Framework 3.5 mediante DISM](#to-install-net-framework-35-by-using-dism) para obtener los archivos desde Windows Update de manera predeterminada o mediante la especificación de una ruta de acceso de origen para los medios de instalación.  
   
-[Configurar orígenes alternativos para los archivos de características en la directiva de grupo](#BKMK_configgp) para .NET Framework 3.5 u otras características, si no se encuentran los archivos de características en el equipo local.  
+[Configurar orígenes alternativos para los archivos de características en la directiva de grupo](#configure-alternate-sources-for-feature-files-in-group-policy) para .NET Framework 3.5 u otras características, si no se encuentran los archivos de características en el equipo local.  
   
 > [!IMPORTANT]  
 > Al instalar archivos de características desde un origen remoto, la ruta de acceso de origen o el recurso compartido de archivos deben conceder permisos de **lectura** al grupo **Todos** (no se recomienda por razones de seguridad) o a la cuenta de equipo (de sistema local) del servidor de destino; no es suficiente conceder acceso a la cuenta de usuario.  
@@ -314,7 +314,7 @@ Para instalar .NET Framework 3.5, realice una de las siguientes acciones.
 >   
 > Puede especificar un archivo WIM como un origen de archivo de características alternativo cuando va a instalar roles, servicios de rol y características en un servidor físico y ejecución. La ruta de acceso de origen de un archivo WIM debe tener el formato siguiente, con **WIM** como prefijo y el índice en el que los archivos de características se encuentran como sufijo: **WIM:e:\sources\install.wim:4**. Sin embargo, no se puede usar un archivo WIM directamente como origen para la instalación de roles, servicios de rol y características en un VHD sin conexión; debe montar el VHD sin conexión y apuntar a su ruta de montaje para los archivos de origen, o debe apuntar a una carpeta que contiene una copia del contenido del archivo WIM.  
   
-### <a name="BKMK_dotnetcmdlet"></a>Para instalar .NET Framework 3.5, ejecute el cmdlet Install-WindowsFeature  
+### <a name="to-install-net-framework-35-by-running-the-install-windowsfeature-cmdlet"></a>Para instalar .NET Framework 3.5 mediante la ejecución del cmdlet Install-WindowsFeature  
   
 1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.  
   
@@ -335,7 +335,7 @@ Para instalar .NET Framework 3.5, realice una de las siguientes acciones.
   
     Si quiere que la línea de comandos use Windows Update como el origen de los archivos de características que faltan, o si ya se ha configurado un origen predeterminado mediante la directiva de grupo, no es necesario agregar el parámetro `Source` , a menos que desee especificar otro origen.  
   
-### <a name="BKMK_arfw"></a>Para instalar .NET Framework 3.5 mediante el agregar Roles y características Asistente  
+### <a name="to-install-net-framework-35-by-using-the-add-roles-and-features-wizard"></a>Para instalar .NET Framework 3.5 mediante el agregar Roles y características Asistente  
   
 1.  En el **administrar** menú Administrador del servidor, haga clic en **agregar Roles y características**.  
   
@@ -357,7 +357,7 @@ Para instalar .NET Framework 3.5, realice una de las siguientes acciones.
   
 6.  Haga clic en **Aceptar**y, a continuación, en **Instalar**.  
   
-### <a name="BKMK_dism"></a>Para instalar .NET Framework 3.5 mediante DISM  
+### <a name="to-install-net-framework-35-by-using-dism"></a>Para instalar .NET Framework 3.5 mediante DISM  
   
 1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.  
   
@@ -387,7 +387,7 @@ Para instalar .NET Framework 3.5, realice una de las siguientes acciones.
     > [!NOTE]  
     > El comando DISM distingue mayúsculas de minúsculas.  
   
-### <a name="BKMK_configgp"></a>Configurar orígenes alternativos para los archivos de características en la directiva de grupo  
+### <a name="configure-alternate-sources-for-feature-files-in-group-policy"></a>Configurar orígenes alternativos para los archivos de características en la directiva de grupo  
 La configuración de la directiva de grupo descrita en esta sección especifica las ubicaciones de origen autorizadas para los archivos de .NET Framework 3.5 y otros archivos de características que se han quitado como parte de la configuración de características a petición. La configuración de directiva **especificar la configuración de instalación de componentes opcionales y reparación de componentes** se encuentra en la **equipo Configuración del equipo\Plantillas administrativas\Sistema** carpeta en la directiva de grupo Editor de directiva de grupo Local o de consola de administración.  
   
 > [!NOTE]  
@@ -403,13 +403,13 @@ La configuración de la directiva de grupo descrita en esta sección especifica 
   
 3.  En el cuadro de texto **Ruta de acceso del archivo de origen alternativa**, en el área **Opciones**, especifique una ruta de acceso completa a una carpeta compartida o a un archivo WIM. Para especificar un archivo WIM como ubicación del archivo de origen alternativa, agregue el prefijo **WIM:** a la ruta de acceso y agregue el índice de la imagen que se usará en el archivo WIM como sufijo. Los siguientes son ejemplos de valores que puede especificar.  
   
-    -   ruta de acceso a una carpeta compartida: **\\\\***nombre_servidor***\share\\*** nombreDeCarpeta*  
+    -   ruta de acceso a una carpeta compartida: * *\\\\***nombre_servidor***\share\\*** nombreDeCarpeta*  
   
     -   ruta de acceso a un archivo WIM, donde **3** representa el índice de la imagen en el que se encuentran los archivos de características:  **WIM:\\\\***server_name***\share\install.wim:3**  
   
 4.  Si no desea que los equipos controlados por esta configuración de directiva para buscar archivos de características que faltan en Windows Update, seleccione **no intentar descargar carga desde Windows Update**.  
   
-5.  Si los equipos controlados por esta configuración de directiva suelen recibir actualizaciones a través de WSUS, pero prefiere usar Windows Update en lugar de WSUS para buscar los archivos de características que faltan, seleccione **Ponerse en contacto directamente con Windows Update para descargar contenido de reparaciones en lugar de usar Windows Server Update Services (WSUS)**.  
+5.  Si los equipos controlados por esta configuración de directiva suelen recibir actualizaciones a través de WSUS, pero prefiere usar Windows Update en lugar de WSUS para buscar los archivos de características que faltan, seleccione **Ponerse en contacto directamente con Windows Update para descargar contenido de reparaciones en lugar de usar Windows Server Update Services (WSUS)** .  
   
 6.  Haga clic en **Aceptar** cuando haya terminado de modificar esta configuración de directiva y, a continuación, cierre el Editor de directivas de grupo.  
   

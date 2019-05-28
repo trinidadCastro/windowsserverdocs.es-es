@@ -13,12 +13,12 @@ ms.assetid: 2448d381-55aa-4c14-997a-202c537c6727
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 31c1579dc840f6f4eb805ac4e10f51192a6b4c99
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d671d044896ae9e71edad8302f06f2a21fe50772
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816196"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034557"
 ---
 # <a name="deploy-network-controller-using-windows-powershell"></a>Implementación de controladora de red con Windows PowerShell
 
@@ -31,19 +31,19 @@ Este tema proporciona instrucciones sobre el uso de Windows PowerShell para impl
 
 En este tema se incluyen las siguientes secciones.
 
-- [Instalar el rol de servidor de controladora de red](#bkmk_role)
+- [Instalar el rol de servidor de controladora de red](#install-the-network-controller-server-role)
 
-- [Configurar el clúster de controladora de red](#bkmk_configure)
+- [Configurar el clúster de controladora de red](#configure-the-network-controller-cluster)
 
-- [Configurar la aplicación de la controladora de red](#bkmk_app)
+- [Configurar la aplicación de la controladora de red](#configure-the-network-controller-application)
 
-- [Validación de la implementación de controladora de red](#bkmk_validation)
+- [Validación de la implementación de controladora de red](#network-controller-deployment-validation)
 
-- [Comandos de Windows PowerShell adicionales para la controladora de red](#bkmk_ps)
+- [Comandos de Windows PowerShell adicionales para la controladora de red](#additional-windows-powershell-commands-for-network-controller)
 
-- [Script de configuración de controladora de red de ejemplo](#bkmk_script)
+- [Script de configuración de controladora de red de ejemplo](#sample-network-controller-configuration-script)
 
-- [Pasos posteriores a la implementación para las implementaciones que no sea de Kerberos](#bkmk_nonkerb)
+- [Pasos posteriores a la implementación para las implementaciones que no sea de Kerberos](#post-deployment-steps-for-non-kerberos-deployments)
 
 ## <a name="install-the-network-controller-server-role"></a>Instalar el rol de servidor de controladora de red
 

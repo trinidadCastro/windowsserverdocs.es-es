@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 13323cd380c9df5185a7989721ec2574ea880d4f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d7ea1f6f5d99ef1b55e919af3b8ebe391486ed50
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814796"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475890"
 ---
 # <a name="classification-management"></a>Administración de clasificaciones
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Las propiedades de clasificación se usan para clasificar y seleccionar archivos para tareas de administración de archivos programadas.
 
@@ -35,4 +35,4 @@ Esta sección incluye los temas siguientes:
 
 ## <a name="see-also"></a>Vea también
 
-[Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
+[Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)

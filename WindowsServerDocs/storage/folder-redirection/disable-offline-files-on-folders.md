@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: adc93906cb7ff958fc1db7b00abdc557623e764e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b006742c9256c357d9aff3fb1b765dbed087383a
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834206"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475882"
 ---
 # <a name="disable-offline-files-on-individual-redirected-folders"></a>Deshabilitar archivos sin conexión en las carpetas redirigidas individuales
 
->Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
+>Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2 o Windows (canal semianual)
 
 Este tema describe cómo deshabilitar el almacenamiento en caché de archivos sin conexión en las carpetas individuales que se le redirigirá a recursos compartidos de red mediante el uso de la redirección de carpetas. Esto proporciona la capacidad de especificar las carpetas que desea excluir del almacenamiento en caché localmente, lo que reduce la memoria caché de archivos sin conexión tamaño y el tiempo necesario para sincronizar archivos sin conexión.
 
@@ -29,7 +29,7 @@ Este tema describe cómo deshabilitar el almacenamiento en caché de archivos si
 Para deshabilitar el almacenamiento en caché de archivos sin conexión de carpetas redirigidas específicas, el entorno debe cumplir los siguientes requisitos previos.
 
 - Un dominio de Active Directory Domain Services (AD DS), con los equipos cliente Unidos al dominio. No existen requisitos de nivel funcional del bosque o dominio ni requisitos de esquema.
-- Equipos cliente que ejecutan Windows 10, Windows 8.1, Windows 8, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.
+- Equipos cliente que ejecutan Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows (canal semianual).
 - Un equipo con administración de directivas de grupo instalada.
 
 ## <a name="disabling-offline-files-on-individual-redirected-folders"></a>Deshabilitar archivos sin conexión en las carpetas redirigidas individuales

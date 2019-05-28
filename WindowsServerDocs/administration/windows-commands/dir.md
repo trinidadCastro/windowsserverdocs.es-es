@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5d11a2d149ec1d83facd4aea64019bbb963ec70e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: acd3b4bb0342dfb8dc651ce7c31e85f1e77a2569
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840686"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222971"
 ---
 # <a name="dir"></a>dir
 
@@ -26,7 +26,7 @@ ms.locfileid: "59840686"
 
 Muestra una lista de archivos y subdirectorios de un directorio. Si se utiliza sin parámetros, **dir** muestra la etiqueta de volumen y el número de serie, seguido de una lista de directorios y archivos en el disco (incluidos sus nombres y la fecha y hora, cada uno se modificó por última vez) del disco. Para los archivos, **dir** muestra la extensión de nombre y el tamaño en bytes. **Dir** también muestra el número total de archivos y directorios que se muestran, su tamaño acumulado y el espacio libre (en bytes) del disco.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -59,7 +59,7 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 ## <a name="remarks"></a>Comentarios
 
 -   Para usar varios *FileName* parámetros, separe cada nombre de archivo con un espacio, coma o punto y coma.
--   Puede usar caracteres comodín (**&#42;** o **?**), para representar uno o más caracteres de un nombre de archivo y mostrar un subconjunto de archivos o subdirectorios.
+-   Puede usar caracteres comodín (**&#42;** o **?** ), para representar uno o más caracteres de un nombre de archivo y mostrar un subconjunto de archivos o subdirectorios.
 
     **Asterisco (\*):** Usar el asterisco como sustituto de cualquier cadena de caracteres, por ejemplo:  
     -   **dir \*.txt** muestra todos los archivos en el directorio actual con las extensiones que comienzan con .txt, por ejemplo, .txt, .txt1, .txt_old.
@@ -90,10 +90,10 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
     Si especifica más de una *SortOrder* valor, **dir** ordena los nombres de archivo por el primer criterio, después por el segundo criterio y así sucesivamente. Por ejemplo, si usa **/o** con el **e** y **-s** valores para *SortOrder* (mediante el uso **oe-s**o **/oe-s**), **dir** ordena los nombres de directorios y archivos por extensión, la más grande en primer lugar y, a continuación, muestra el resultado final. La ordenación alfabética por extensión hace sin extensiones que aparecen en primer lugar, los nombres de archivo, a continuación, los nombres de directorio y, a continuación, los nombres de archivo con extensión.
 -   Mediante canalizaciones y los símbolos de redirección
 
-    Cuando se usa el símbolo de redirección (**>**) para enviar **dir** en un archivo o una canalización de salida (**|**) para enviar **dir**de salida a otro comando, use **/a:-d** y **/b** para enumerar solo los nombres de archivo. Puede usar *FileName* con **/b** y **/s** para especificar que **dir** consiste en buscar el directorio actual y sus subdirectorios para todos los archivos los nombres que coinciden con *FileName*. **Dir** muestra solo la letra de unidad, nombre de directorio, nombre de archivo y extensión de nombre de archivo (una ruta de acceso por línea), para cada archivo de nombre busca. Antes de usar una canalización para enviar **dir** de salida a otro comando, debe establecer la TEMP variable de entorno en el archivo Autoexec.nt.
+    Cuando se usa el símbolo de redirección ( **>** ) para enviar **dir** en un archivo o una canalización de salida ( **|** ) para enviar **dir**de salida a otro comando, use **/a:-d** y **/b** para enumerar solo los nombres de archivo. Puede usar *FileName* con **/b** y **/s** para especificar que **dir** consiste en buscar el directorio actual y sus subdirectorios para todos los archivos los nombres que coinciden con *FileName*. **Dir** muestra solo la letra de unidad, nombre de directorio, nombre de archivo y extensión de nombre de archivo (una ruta de acceso por línea), para cada archivo de nombre busca. Antes de usar una canalización para enviar **dir** de salida a otro comando, debe establecer la TEMP variable de entorno en el archivo Autoexec.nt.
 -   El **dir** comando, con diferentes parámetros, está disponible en la consola de recuperación.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="examples"></a>Ejemplos
 
 Para mostrar todos los directorios uno tras otro, en orden alfabético, en formato ancho y poner en pausa después de cada pantalla, asegúrese de que el directorio raíz es el directorio actual y, a continuación, escriba:
 ```

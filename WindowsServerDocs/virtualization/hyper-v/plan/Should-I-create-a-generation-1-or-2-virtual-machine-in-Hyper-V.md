@@ -11,19 +11,19 @@ ms.assetid: 02e31413-6140-4723-a8d6-46c7f667792d
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 48319e057da9c815a77349bba34996f89973d85a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3c88ef5ee700bb3906746402bf6cc8916976800
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850506"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192773"
 ---
 # <a name="should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v"></a>¿Debo crear una máquina virtual de generación 1 o 2 en Hyper-V?
 
 >Se aplica a: Windows 10, Windows Server 2016 y Microsoft Hyper-V Server 2016, Windows Server 2019, Microsoft Hyper-V Server 2019
 
-> [!WARNING]
-> Si tiene previsto cargar alguna vez un Windows máquinas virtuales (VM) locales de Microsoft Azure, **solo máquinas virtuales de generación 1** que están en el formato de archivo VHD y tienen un disco de tamaño fijo se admiten. Para obtener más información acerca de cómo cargar un VHD de Windows o un VHDX, vea [preparar un VHD de Windows o un VHDX para cargar en Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
+> [!NOTE]
+> Si planea nunca cargar una máquina virtual (VM) de Windows desde local a Microsoft Azure, generación 1 y las máquinas virtuales de generación 2 en el formato de archivo de disco duro virtual y tiene un disco de tamaño fijo se admiten. Consulte [las máquinas virtuales de generación 2 en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/generation-2) para obtener más información sobre las capacidades de generación 2 admitidas en Azure. Para obtener más información acerca de cómo cargar un VHD de Windows o un VHDX, vea [preparar un VHD de Windows o un VHDX para cargar en Azure](https://docs.microsoft.com/azure/virtual-machines/windows/prepare-for-upload-vhd-image).
 
 La elección para crear una generación 1 o una máquina virtual de generación 2 depende del sistema operativo invitado que desea instalar y el método de arranque que desea usar para implementar la máquina virtual. Le recomendamos que cree una máquina virtual de generación 2 para aprovechar características como arranque seguro, a menos que una de las siguientes afirmaciones es verdadera:  
 

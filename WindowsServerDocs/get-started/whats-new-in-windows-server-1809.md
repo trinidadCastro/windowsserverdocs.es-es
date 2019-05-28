@@ -4,21 +4,22 @@ description: Nuevas funciones de Windows Server, versión 1809
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
+ms.date: 05/21/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 32868a4a5044360bf596e26d497138bccf6692bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d268550112236daecbe3dc1a9d9da21bc8ec67fb
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834416"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976643"
 ---
 # <a name="whats-new-in-windows-server-version-1809"></a>Novedades de Windows Server, versión 1809
 
 >Se aplica a: Windows Server (Canal semianual)
 
-En este tema se describen algunas de las nuevas funciones de Windows Server, versión 1809. Para descubrir las novedades de Windows Server 2019, consulta [Novedades de Windows Server 2019](../get-started-19/whats-new-19.md).
+Para obtener información sobre las características más recientes de Windows, consulte [What ' s New in Windows Server](whats-new-in-windows-server.md). En este tema se describen algunas de las nuevas funciones de Windows Server, versión 1809.
 
 ## <a name="container-networking-with-kubernetes"></a>Redes de contenedores con Kubernetes
 
@@ -41,7 +42,7 @@ Además de las nuevas características de Windows Server, versión 1809, las sig
 * Contenedores de Linux en Windows
 * [Transporte de retraso adicional bajo en segundo plano (LEDBAT)](https://blogs.technet.microsoft.com/networking/2018/07/25/ledbat/)
 * Mejoras de rendimiento de red para las cargas de trabajo virtuales
-* [Característica de compatibilidad de aplicaciones principales de servidor a petición (du) ](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
+* [Característica de compatibilidad de aplicaciones principales de servidor a petición (du)](https://docs.microsoft.com/windows-server/get-started-19/install-fod-19)
 * [Servicio de migración de almacenamiento (SMS)](../storage/whats-new-in-storage.md#storage-spaces-direct)
 * Réplica de almacenamiento
 * Información del sistema 

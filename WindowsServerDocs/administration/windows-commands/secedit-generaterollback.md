@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d7a55ddc3caea1002ab51ce4f992b36673ea312b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3229e6ccb07c925a900b298a8332c5e48cefefe7
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825646"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564666"
 ---
 # <a name="seceditgeneraterollback"></a>secedit:generaterollback
 
@@ -44,11 +44,11 @@ Secedit /generaterollback /db <database file name> /cfg <configuration file name
 
 ## <a name="remarks"></a>Comentarios
 
-Si la ruta de acceso del archivo de registro no se proporciona, el archivo de registro predeterminado (*systemroot*\Users \*UserAccount*\My Documents\Security\Logs\*DatabaseName*.log) se utiliza.
+Si la ruta de acceso del archivo de registro no se proporciona, el archivo de registro predeterminado (*systemroot*\Users \*UserAccount *\My Documents\Security\Logs\*DatabaseName*.log) se utiliza.
 
 Con Windows Server 2008, `Secedit /refreshpolicy` se ha reemplazado por `gpupdate`. Para obtener información sobre cómo actualizar la configuración de seguridad, consulte [Gpupdate](gpupdate.md).
 
-¿La ejecución correcta de este comando indicará "la tarea se ha completado correctamente.? y sólo las diferencias entre la plantilla de seguridad indicada y la configuración de directiva de seguridad de registros. Estas discrepancias en la scesrv.log contiene una lista.
+La ejecución correcta de este comando indicará "la tarea se completó correctamente." y sólo las diferencias entre la plantilla de seguridad indicada y la configuración de directiva de seguridad de registros. Estas discrepancias en la scesrv.log contiene una lista.
 
 Si se especifica una plantilla existente de reversión, este comando lo sobrescribirá. Puede crear una nueva plantilla de reversión con este comando. Parámetros adicionales no necesarios para alguna de estas condiciones.
 

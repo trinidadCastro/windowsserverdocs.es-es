@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 52a08ae7eaee81c00985d5334f9abeaa84e30879
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 05fcaf402347d16bf8c28528d402664ae5f99165
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814166"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476050"
 ---
 # <a name="file-screening-management"></a>Administración del filtrado de archivos
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 En el nodo **Administración del filtrado de archivo** del complemento MMC del Administrador de recursos del servidor de archivos, puedes realizar las siguientes tareas:
 
@@ -32,17 +32,17 @@ Por ejemplo, puedes:
 
 Esta sección incluye los temas siguientes:
 
--   [Definir grupos de archivos para la selección](define-file-groups-for-screening.md)
+-   [Definir grupos de archivos para el filtrado](define-file-groups-for-screening.md)
 -   [Crear un filtro de archivos](create-file-screen.md)
--   [Crear una excepción al filtro de archivo](create-file-screen-exception.md)
--   [Crear una plantilla de pantalla de archivo](create-file-screen-template.md)
--   [Editar propiedades de plantilla de filtro de archivos](edit-file-screen-template-properties.md)
+-   [Crear una excepción al filtro de archivos](create-file-screen-exception.md)
+-   [Crear una plantilla de filtro de archivos](create-file-screen-template.md)
+-   [Editar las propiedades de la plantilla de filtro de archivos](edit-file-screen-template-properties.md)
 
 > [!Note]
 > Para establecer notificaciones por correo electrónico y ciertas funcionalidades de informes, debes configurar primero las opciones generales del Administrador de recursos del servidor de archivos.
 
 ## <a name="see-also"></a>Vea también
 
--   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
+-   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
 
 

@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: f4fd9f69e75ed80bbdb345b4041c2337c65ec2e6
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: ff1f949c764473a63eafa25346949d710699dbd1
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63742555"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222721"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introducción a Windows Admin Center
 
@@ -114,7 +114,7 @@ Las credenciales se pueden aplicar a todas las conexiones, que se almacenará en
 
 **Solución de contraseña de administrador local (LAP)**
 
-Si su entorno usa [LAPS](https://technet.microsoft.com/mt227395.aspx), puede usar las credenciales de LAPS para autenticarse con el nodo administrado. **Si usa este escenario, por favor,** [proporcionar comentarios](http://aka.ms/WACFeedback).
+Si su entorno usa [LAPS](https://technet.microsoft.com/mt227395.aspx)y tiene Windows Admin Center instalados en los equipos Windows 10, puede usar las credenciales de LAPS para autenticarse con el nodo administrado. **Si usa este escenario, por favor,** [proporcionar comentarios](http://aka.ms/WACFeedback).
 
 ## <a name="using-tags-to-organize-your-connections"></a>Uso de etiquetas para organizar sus conexiones
 

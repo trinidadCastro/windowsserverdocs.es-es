@@ -1,29 +1,98 @@
 ---
-ms.assetid: a9f229eb-bef4-4231-97d0-0899e17cef32
 title: Crear volúmenes en Espacios de almacenamiento directo
+description: Cómo crear volúmenes en espacios de almacenamiento directo con Windows Admin Center y PowerShell.
 ms.prod: windows-server-threshold
-ms.author: cosdar
-ms.manager: eldenc
-ms.technology: storage-spaces
-ms.topic: article
+ms.reviewer: cosmosdarwin
 author: cosmosdarwin
-ms.date: 01/11/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 277a676d8e53a7847d54039aab6607be8e5a78c5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.author: cosdar
+manager: eldenc
+ms.technology: storage-spaces
+ms.date: 05/09/2019
+ms.openlocfilehash: d7c842a9b393f67c482dadeaa4090627887a67a3
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823616"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613216"
 ---
 # <a name="creating-volumes-in-storage-spaces-direct"></a>Crear volúmenes en Espacios de almacenamiento directo
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
-En este tema se describe cómo crear volúmenes en Espacios de almacenamiento directo con PowerShell o con el Administrador de clústeres de conmutación por error.
+Este tema describe cómo crear volúmenes en un clúster de espacios de almacenamiento directo con Windows Admin Center, PowerShell o administrador de clústeres de conmutación por error.
 
    >[!TIP]
    >  Si aún no lo hiciste, echa un vistazo primero a [Planificación de volúmenes en Espacios de almacenamiento directo](plan-volumes.md).
+
+## <a name="create-a-three-way-mirror-volume"></a>Crear un volumen triple
+
+Para crear un volumen triple en Windows Admin Center: 
+
+1. En Windows Admin Center, conectarse a un clúster de espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** desde el **herramientas** panel.
+2. En la página de volúmenes, seleccione el **inventario** pestaña y, a continuación, seleccione **crear volumen**.
+3. En el **crear volumen** panel, escriba un nombre para el volumen y dejar **resistencia** como **triple**.
+4. En **tamaño en disco duro**, especifique el tamaño del volumen. Por ejemplo, 5 TB (terabytes).
+5. Selecciona **Crear**.
+
+Según el tamaño, crear el volumen puede tardar unos minutos. Las notificaciones en la esquina superior derecha le permitirá saber cuándo se crea el volumen. El nuevo volumen aparece en la lista de inventario.
+
+Vea un breve vídeo sobre cómo crear un volumen triple.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/o66etKq70N8]
+
+## <a name="create-a-mirror-accelerated-parity-volume"></a>Crear un volumen reflejado acelerada paridad
+
+Paridad acelerada reflejado reduce el espacio del volumen en el disco duro. Por ejemplo, un volumen triple significaría que por cada 10 terabytes de tamaño, necesitará 30 terabytes como superficie. Para reducir la sobrecarga de la superficie, cree un volumen con paridad acelerada reflejado. Esto reduce la superficie de terabytes de 30 a 22 simplemente terabytes, incluso con solo 4 servidores, mediante la creación de reflejo el 20 por ciento más activos de datos y el uso de paridad, que es más eficaz, para almacenar el resto del espacio. Puede ajustar esta relación de paridad y el reflejo para hacer que el rendimiento en comparación con equilibrio de la capacidad adecuada para la carga de trabajo. Por ejemplo, reflejado de paridad y el 10 por ciento del 90 por ciento menor, el rendimiento, pero simplifica aún más la superficie.
+
+Para crear un volumen con paridad acelerada reflejado en Windows Admin Center:
+
+1. En Windows Admin Center, conectarse a un clúster de espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** desde el **herramientas** panel.
+2. En la página de volúmenes, seleccione el **inventario** pestaña y, a continuación, seleccione **crear volumen**.
+3. En el **crear volumen** panel, escriba un nombre para el volumen.
+4. En **resistencia**, seleccione **acelerada reflejado paridad**.
+5. En **porcentaje paridad**, seleccione el porcentaje de paridad.
+6. Selecciona **Crear**.
+
+Vea un breve vídeo sobre cómo crear un volumen reflejado acelerada de paridad.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/R72QHudqWpE]
+
+## <a name="open-volume-and-add-files"></a>Abra el volumen y agregar archivos
+
+Para abrir un volumen y agregar los archivos en el volumen en Windows Admin Center:
+
+1. En Windows Admin Center, conectarse a un clúster de espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** desde el **herramientas** panel.
+2. En la página de volúmenes, seleccione el **inventario** ficha.
+2. En la lista de volúmenes, seleccione el nombre del volumen que desea abrir.
+
+    En la página de detalles de volumen, puede ver la ruta de acceso al volumen.
+
+4. En la parte superior de la página, seleccione **abierto**. Esto inicia la herramienta de archivos en Windows Admin Center.
+5. Vaya a la ruta de acceso del volumen. Aquí puede examinar los archivos en el volumen.
+6. Seleccione **cargar**y, a continuación, seleccione un archivo para cargarlo.
+7. Utilice el explorador **volver** botón para volver al panel de herramientas de Windows Admin Center.
+
+Vea un breve vídeo sobre cómo abrir un volumen y agregar archivos.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/j59z7ulohs4]
+
+## <a name="turn-on-deduplication-and-compression"></a>Activar la compresión y desduplicación
+
+Desduplicación y compresión se administra por volumen. Desduplicación y compresión utiliza un modelo de procesamiento posterior, lo que significa que no verá ahorro hasta que se ejecuta. Cuando lo haga, trabajará en todos los archivos, incluso aquellos que estaban allí desde antes.
+
+1. En Windows Admin Center, conectarse a un clúster de espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** desde el **herramientas** panel.
+2. En la página de volúmenes, seleccione el **inventario** ficha.
+3. En la lista de volúmenes, seleccione el nombre del volumen que desea administrar.
+4. En la página de detalles de volumen, haga clic en el interruptor denominado **desduplicación y compresión**.
+5. En el panel de habilitar la desduplicación, seleccione el modo de desduplicación.
+
+    En lugar de configuración complicada, Windows Admin Center le permite elegir entre listas para usar perfiles para diferentes cargas de trabajo. Si no está seguro, use la configuración predeterminada.
+
+6. Selecciona **Habilitar**.
+
+Vea un breve vídeo sobre cómo activar la compresión y desduplicación.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/PRibTacyKko]
 
 ## <a name="create-volumes-using-powershell"></a>Crear volúmenes con PowerShell
 
@@ -92,7 +161,7 @@ Hay tres pasos principales:
 
 1. En el Administrador de clústeres de conmutación por error, navega a **Almacenamiento** -> **Grupos**.
 2. Selecciona **Nuevo disco virtual** desde el panel Acciones a la derecha, o haz clic con el botón derecho en el grupo y selecciona **Nuevo disco virtual**.
-3. Seleccione el grupo de almacenamiento y haz clic en **Aceptar**. Se abre el *Asistente para nuevo disco virtual (Espacios de almacenamiento directo)*.
+3. Seleccione el grupo de almacenamiento y haz clic en **Aceptar**. Se abre el *Asistente para nuevo disco virtual (Espacios de almacenamiento directo)* .
 4. Usa el asistente para ponerle nombre al disco virtual y especificar su tamaño.
 5. Revisa las opciones seleccionadas y haz clic en **Crear**.
 6. Asegúrate de marcar la casilla **Crear un volumen cuando este asistente se cierre** antes de cerrar.
@@ -120,3 +189,5 @@ Se abre el *Asistente para nuevo volumen*.
 
 - [Información general de espacios directo de almacenamiento](storage-spaces-direct-overview.md)
 - [Planificación de volúmenes en espacios de almacenamiento directo](plan-volumes.md)
+- [Ampliación de volúmenes en espacios de almacenamiento directo](resize-volumes.md)
+- [Eliminando los volúmenes en espacios de almacenamiento directo](delete-volumes.md)

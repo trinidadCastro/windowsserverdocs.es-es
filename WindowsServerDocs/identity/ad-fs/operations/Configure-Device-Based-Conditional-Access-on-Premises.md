@@ -9,16 +9,15 @@ ms.date: 08/11/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fa96fbeed1445b1add2e5de3aad45ad369a6cafa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0df290248f049b3f8a823e902cefa860fa074091
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847226"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189852"
 ---
 # <a name="configure-on-premises-conditional-access-using-registered-devices"></a>Configurar un entorno local acceso condicional con dispositivos registrados
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2  
 
 El siguiente documento le guiará a través de la instalación y configuración de acceso condicional local con los dispositivos registrados.
 

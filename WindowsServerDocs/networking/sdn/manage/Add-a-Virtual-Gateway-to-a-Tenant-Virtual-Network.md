@@ -13,12 +13,12 @@ ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 6d31cde5252cd7f7e8d286d6f8886f779d17735d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b76019232be5091440c3e0cf5ad85569cbe0d4dc
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875816"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034485"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>Adición de una puerta de enlace virtual a una red virtual de inquilino 
 
@@ -100,7 +100,7 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
 4. Crear una conexión VPN de sitio a sitio con GRE, IPsec o capa 3 reenvío (L3).  
 
    >[!TIP]
-   >Si lo desea, puede combinar todos los pasos anteriores y configurar una puerta de enlace virtual de inquilino con todas las opciones de conexión de tres.  Para obtener más información, consulte [configurar una puerta de enlace con todos los tipos de conexión de tres (L3 GRE, IPsec) y BGP](#configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp).
+   >Si lo desea, puede combinar todos los pasos anteriores y configurar una puerta de enlace virtual de inquilino con todas las opciones de conexión de tres.  Para obtener más información, consulte [configurar una puerta de enlace con todos los tipos de conexión de tres (L3 GRE, IPsec) y BGP](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp).
   
    **Conexión de red de sitio a sitio de VPN de IPsec**
   

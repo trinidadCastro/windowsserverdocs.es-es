@@ -9,16 +9,16 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
 ms.technology: identity-adfs
-ms.openlocfilehash: 6d06c017601003e3b93df32f5fa50190ce54541d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 347b4783e82a6561334f8757029b1fddec6a85a3
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864806"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189084"
 ---
 # <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>Autenticación multifactor y personalización de los proveedores de autenticación externa 
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
+
 
 En AD FS, se proporciona la compatibilidad con la autenticación multifactor out\-de\-el\-cuadro. Por ejemplo, puede configurar AD FS para uso integrada\-en la autenticación de certificado como el segundo factor de autenticación. También puedes usar proveedores de autenticación externos. Este enfoque puede habilitar AD FS para integrarse con servicios adicionales, como Azure Multi-factor Authentication, o puede desarrollar su propio proveedor. Consulte [Guía de soluciones: Administración de riesgos con múltiples\-factorizar el Control de acceso](https://technet.microsoft.com/library/dn280937.aspx) para obtener más información sobre cómo registrar el proveedor de autenticación externo con AD FS.  
   

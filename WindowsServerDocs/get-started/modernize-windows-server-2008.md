@@ -10,12 +10,12 @@ ms.date: 07/12/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: 4127eab613abb429a200f513a11b944e05da0f76
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d8a8cae62a9be3384c09009dbad52e06623adb0
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851346"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222914"
 ---
 # <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Actualizar Windows Server 2008 y Windows Server 2008 R2
 
@@ -42,12 +42,11 @@ Puedes migrar los servidores locales de Windows Server 2008 y Windows Server 200
 - Al migrar SQL Server a Azure Managed Instances o VM, obtendrás tres años más de actualizaciones de seguridad críticas de Windows Server 2008 R2 o 2008, incluidas sin cargos adicionales. 
 - Aprovechar las licencias existentes de SQL Server y Windows Server para ahorros de nube únicos en Azure.
 
-<a href="uploading-specialized-WS08-image-to-azure.md"><img src="media/WS08-image-banner-small.png"></a>
+[![Iniciar la migración a Azure con una imagen especializada](./media/WS08-image-banner-small.png)](uploading-specialized-WS08-image-to-azure.md)
 
 Para comenzar con la migración, consulta [Actualizar una imagen especializada de Windows Server 2008/2008 R2 a Azure](uploading-specialized-WS08-image-to-azure.md).
 
 Para ayudarte a conocer cómo analizar los recursos de TI existentes e identificar las ventajas de mover aplicaciones y servicios específicos a la nube, o mantener las cargas de trabajo localmente, así como actualizar a la última versión de Windows Server, consulta [Guía de migración de Windows Server](https://go.microsoft.com/fwlink/?linkid=872689).
-
 
 ## <a name="upgrade-sql-server-20082008-r2-in-parallel-with-your-windows-servers"></a>Actualizar SQL Server 2008/2008 R2 en paralelo con los Windows Server
 

@@ -5,26 +5,27 @@ ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
+ms.manager: daveba
 ms.technology: storage-failover-clustering
-ms.date: 04/25/2018
+ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 111969b074b33764dbbf72bfb24ad606f8314e41
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 151f02572d7595776539af163831b4a7a060c1c7
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869726"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613169"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Preconfiguración de objetos de equipo del clúster en Active Directory Domain Services
 
->Se aplica a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En este tema se muestra el modo de preconfigurar objetos de equipo en clúster en los Servicios de dominio de Active Directory (AD DS). Puede usar este procedimiento con el fin de habilitar a un usuario o grupo para que cree un clúster de conmutación por error cuando no tenga permisos para crear objetos de equipo en AD DS.
 
 Al crear un clúster de conmutación por error con el Asistente para crear clúster o con Windows PowerShell, se debe especificar el nombre del clúster. Si dispone de suficientes permisos al crear el clúster, el proceso de creación del clúster genera automáticamente un objeto de equipo en AD DS que se corresponde con el nombre del clúster. Este objeto se denomina *objeto de nombre de clúster* o CNO. Por medio del CNO, se crean automáticamente objetos de equipo virtual (VCO) cuando se configuran roles en clúster que emplean puntos de acceso cliente. Por ejemplo, si se crea un servidor de archivos de alta disponibilidad con un punto de acceso cliente denominado *ServidorDeArchivos1*, el CNO creará un VCO correspondiente en AD DS.
 
 >[!NOTE]
->En Windows Server 2012 R2, hay la opción para crear un clúster desconectado de Active Directory, donde no se crean ningún CNO o VCO en AD DS. Dicha opción está pensada para determinados tipos de implementaciones de clúster. Para obtener más información, consulte [Implementar un clúster desconectado de Active Directory](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>).
+>No hay la opción para crear un clúster desconectado de Active Directory, donde no se crean ningún CNO o VCO en AD DS. Dicha opción está pensada para determinados tipos de implementaciones de clúster. Para obtener más información, consulte [Implementar un clúster desconectado de Active Directory](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v%3dws.11)>).
 
 Para crear el CNO de forma automática, el usuario que crea el clúster de conmutación por error debe tener el permiso **Crear objetos de equipo** en la unidad organizativa o el contenedor donde residen los servidores que conformarán el clúster. Para que un usuario o grupo que no posee este permiso pueda crear un clúster, un usuario con los permisos correspondientes en AD DS (por lo general, un administrador de dominios) puede preconfigurar el CNO en AD DS. Este procedimiento también ofrece al administrador de dominios más control sobre la convención de nomenclatura empleada para el clúster y sobre la unidad organizativa en la que se crean los objetos de clúster.
 
@@ -95,7 +96,7 @@ Si ha preconfigurado el CNO en AD DS, tiene dos opciones para crear los VCO:
 >[!NOTE]
 >El requisito mínimo para completar los pasos de esta opción es la pertenencia al grupo **Admins. del dominio** u otro equivalente.
 
-- Opción 2: [Preconfigurar un VCO para un rol en clúster](#prestage-a-vco-for-the-clustered-role). Use esta opción si es necesario preconfigurar cuentas de roles en clúster debido a los requisitos existentes en su organización. Por ejemplo, es posible que desee controlar la convención de nomenclatura o bien controlar los roles de clúster que se crean.
+- Opción 2: [Preconfigurar un VCO para un rol en clúster](#prestage-a-vco-for-a-clustered-role). Use esta opción si es necesario preconfigurar cuentas de roles en clúster debido a los requisitos existentes en su organización. Por ejemplo, es posible que desee controlar la convención de nomenclatura o bien controlar los roles de clúster que se crean.
 
 >[!NOTE]
 >El requisito mínimo para completar los pasos de esta opción es la pertenencia al grupo **Opers. de cuentas**.
@@ -103,7 +104,7 @@ Si ha preconfigurado el CNO en AD DS, tiene dos opciones para crear los VCO:
 ### <a name="grant-the-cno-permissions-to-the-ou"></a>Conceda los permisos de CNO a la unidad organizativa
 
 1. En Usuarios y equipos de Active Directory, en el menú **Ver**, seleccione la opción **Características avanzadas**.
-2. Haga clic en la unidad organizativa donde creó el CNO en [paso 1: Preconfigurar el CNO en AD DS](#step-1:-prestage-the-CNO-in-ad-ds)y, a continuación, seleccione **propiedades**.
+2. Haga clic en la unidad organizativa donde creó el CNO en [paso 1: Preconfigurar el CNO en AD DS](#step-1-prestage-the-cno-in-ad-ds)y, a continuación, seleccione **propiedades**.
 3. En el **seguridad** ficha, seleccione **avanzadas**.
 4. En el **configuración de seguridad avanzada** cuadro de diálogo, seleccione **agregar**.
 5. Junto a **Principal**, seleccione **seleccionar una entidad de seguridad**.
@@ -137,4 +138,5 @@ Un administrador del clúster de conmutación por error puede ahora crear el rol
 
 ## <a name="more-information"></a>Más información
 
-- [Agrupación en clústeres de conmutación por error](failover-clustering.md)
+- [Clúster de conmutación por error](failover-clustering.md)
+- [Configuración de cuentas de clúster en Active Directory](configure-ad-accounts.md)

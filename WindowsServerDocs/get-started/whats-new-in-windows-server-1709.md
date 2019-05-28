@@ -7,25 +7,25 @@ ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: 1d63721dde484756e67b68bcff078257c130ae36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32ce591a8b50c6e35c3fde4fedb177b6d76fccdd
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825496"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976730"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novedades de Windows Server, versión 1709
 
 >Se aplica a: Windows Server (Canal semianual)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;El contenido de esta sección describe las novedades y los cambios de Windows Server, versión 1709. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión. Consulta también [Windows Server, versión 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
+<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Para obtener información sobre las características más recientes de Windows, consulte [What ' s New in Windows Server](whats-new-in-windows-server.md). El contenido de esta sección describe las novedades y los cambios de Windows Server, versión 1709. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión. Consulta también [Windows Server, versión 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
    
 
 ## <a name="new-cadence-of-releases"></a>Nueva cadencia de versiones
 
 A partir de esta versión, tienes dos opciones para recibir actualizaciones de características de Windows Server:
 - **A largo plazo (LTSC) de canal de servicio**: Se trata de negocio como de costumbre con 5 años de soporte técnico y 5 años de soporte técnico ampliado. Tienes la opción de actualizar a la próxima versión LTSC cada 2 o 3 años de la misma manera que se ha ofrecido soporte durante los últimos 20 años.
-- **Canal semianual (SAC)**: Esto es una ventaja de Software Assurance y es totalmente compatible en producción. La diferencia es que se ofrece soporte durante 18 meses y habrá una nueva versión cada seis meses.
+- **Canal semianual (SAC)** : Esto es una ventaja de Software Assurance y es totalmente compatible en producción. La diferencia es que se ofrece soporte durante 18 meses y habrá una nueva versión cada seis meses.
 
 Los canales de lanzamiento se resumen en la tabla siguiente.
 
@@ -36,7 +36,7 @@ Los canales de lanzamiento se resumen en la tabla siguiente.
 | Disponibilidad  | Software Assurance o Azure (hospedado en la nube)  | Todos los canales |
 | Convenciones de nomenclatura  | Windows Server, versión AAMM  | Windows Server AAAA |
 
-Para obtener más información, consulta [Introducción al Canal semianual de Windows Server](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview).
+Para obtener más información, consulte [comparación de canales de mantenimiento](https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview).
 
 ## <a name="application-containers-and-micro-services"></a>Microservicios y contenedores de aplicaciones
 
@@ -66,11 +66,11 @@ Host de **Server Core como contenedor** (e infraestructura) proporciona mejor fl
 
 **Memoria persistente virtualizada (vPMEM)** se habilita mediante la creación de un archivo VHD (.vhdpmem) en un volumen de acceso directo en un host, añadiendo un controlador vPMEM a una VM y añadiendo el dispositivo creado (.vhdpmem) a una VM. El uso de archivos vhdpmem en volúmenes de acceso directo en un host para respaldar vPMEM permite la flexibilidad de asignación y saca partido del modelo de administración conocido para añadir discos a máquinas virtuales.
 
-**Almacenamiento de contenedor: volúmenes de datos persistentes en volúmenes compartidos de clúster (CSV)**. En Windows Server, versión 1709, así como Windows Server 2016 con las últimas actualizaciones, hemos agregado soporte de contenedores para tener acceso a los volúmenes de datos persistentes ubicados en CSV, incluidos CSV en Espacios de almacenamiento directos. Esto ofrece acceso persistente del contenedor de aplicaciones al volumen sin importar el nodo de clúster en el que se ejecuta la instancia de contenedor. Para obtener más información, consulta [Soporte de almacenamiento de contenedor con Volúmenes compartidos de clúster (CSV), Espacios de almacenamiento directos (S2D), Asignación global de SMB](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/).
+**Almacenamiento de contenedor: volúmenes de datos persistentes en volúmenes compartidos de clúster (CSV)** . En Windows Server, versión 1709, así como Windows Server 2016 con las últimas actualizaciones, hemos agregado soporte de contenedores para tener acceso a los volúmenes de datos persistentes ubicados en CSV, incluidos CSV en Espacios de almacenamiento directos. Esto ofrece acceso persistente del contenedor de aplicaciones al volumen sin importar el nodo de clúster en el que se ejecuta la instancia de contenedor. Para obtener más información, consulta [Soporte de almacenamiento de contenedor con Volúmenes compartidos de clúster (CSV), Espacios de almacenamiento directos (S2D), Asignación global de SMB](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/).
 
 **Almacenamiento de contenedor: volúmenes de datos persistentes con asignación global de SMB**. En Windows Server, versión 1709 hemos agregado soporte para asignar un uso compartido de archivos de SMB a una letra de unidad de un contenedor; esto se denomina asignación global de SMB. Esta unidad asignada es accesible para todos los usuarios en el servidor local para que dicho contenedor de E/S del volumen de datos pueda atravesar la unidad montada hacia el uso compartido de archivos subyacente. Para obtener más información, consulta [Soporte de almacenamiento de contenedor con Volúmenes compartidos de clúster (CSV), Espacios de almacenamiento directos (S2D), Asignación global de SMB](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/).
 
-**Formato de archivo de configuración de máquina virtual (actualizado)**. Se ha agregado un archivo (.vmgs) adicional para máquinas virtuales con una versión de la configuración de 8.2 y superior. VMGS significa estado de invitado VM y es un nuevo archivo interno que incluye el estado del dispositivo que anteriormente formaba parte del archivo de estado en tiempo de ejecución de máquina virtual.
+**Formato de archivo de configuración de máquina virtual (actualizado)** . Se ha agregado un archivo (.vmgs) adicional para máquinas virtuales con una versión de la configuración de 8.2 y superior. VMGS significa estado de invitado VM y es un nuevo archivo interno que incluye el estado del dispositivo que anteriormente formaba parte del archivo de estado en tiempo de ejecución de máquina virtual.
 
 ## <a name="security-and-assurance"></a>Seguridad y control
 
@@ -115,7 +115,7 @@ Para obtener más información, consulta [Información general sobre máquinas v
 **Windows de la red a la par con Linux para Kubernetes**: Windows es ahora a la par de Linux en cuanto a las redes. Los clientes pueden implementar clústeres de Kubernetes de sistemas operativos mixtos en cualquier entorno, incluidas pilas de nube de terceros, locales y Azure con las mismas topologías y tipos primitivos de redes compatibles con Linux sin la necesidad de extensiones de conmutador o soluciones alternativas.
 
 **Pila de red básica**: Se han mejorado varias características de la pila de red principal. Para obtener más información sobre estas características, consulta [Características de pila de red principal en Creators Update para Windows 10](https://blogs.technet.microsoft.com/networking/2017/07/13/core-network-stack-features-in-the-creators-update-for-windows-10/).
-- **TCP Fast Open (TFO)**: Se agregó compatibilidad para TFO para optimizar el proceso de enlace de 3 vías TCP. TFO establece una cookie TFO segura en la primera conexión con un proceso de protocolo de enlace de 3 vías estándar.  Las conexiones posteriores al mismo servidor usan la cookie TFO en lugar de un proceso de protocolo de enlace de 3 vías para conectar con un tiempo de ida y vuelta cero.
+- **TCP Fast Open (TFO)** : Se agregó compatibilidad para TFO para optimizar el proceso de enlace de 3 vías TCP. TFO establece una cookie TFO segura en la primera conexión con un proceso de protocolo de enlace de 3 vías estándar.  Las conexiones posteriores al mismo servidor usan la cookie TFO en lugar de un proceso de protocolo de enlace de 3 vías para conectar con un tiempo de ida y vuelta cero.
 - **CUBIC**: Experimental implementación nativa de Windows de CÚBICA, un algoritmo de control de congestión TCP está disponible. Los siguientes comandos habilitan o deshabilitan CUBIC, respectivamente.
 
     ```
@@ -140,7 +140,7 @@ Para obtener más información, consulta [Información general sobre máquinas v
     ```
 
     - **ISATAP y 6to4**: Como paso hacia el futuro degradación, Creators Update tendrán estas tecnologías deshabilitadas de forma predeterminada.
-- **Detección de puertas de enlace inactivas (DGD)**: El algoritmo DGD pasa automáticamente las conexiones a través a otra puerta de enlace cuando la puerta de enlace actual es inaccesible. En esta versión, se ha mejorado el algoritmo periódicamente para volver a probar el entorno de red.
+- **Detección de puertas de enlace inactivas (DGD)** : El algoritmo DGD pasa automáticamente las conexiones a través a otra puerta de enlace cuando la puerta de enlace actual es inaccesible. En esta versión, se ha mejorado el algoritmo periódicamente para volver a probar el entorno de red.
 - [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) es un cmdlet integrado en Windows PowerShell que realiza una variedad de diagnósticos de red.  En esta versión, hemos mejorado el cmdlet para proporcionar información detallada sobre la selección de la ruta, así como la selección de direcciones de origen.
 
 **Redes definidas por software**

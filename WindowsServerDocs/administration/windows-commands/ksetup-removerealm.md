@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3f62208d6576890529be80b1c6cb3cc073a2b4e6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 579b0772e4642389b90aa370dad80a3eebea9d34
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853366"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564715"
 ---
 # <a name="ksetupremoverealm"></a>ksetup:removerealm
 
@@ -46,7 +46,7 @@ No se puede quitar el nombre de dominio Kerberos predeterminado del controlador 
 
 ## <a name="BKMK_Examples"></a>Ejemplos
 
-Establece el nombre de dominio Kerberos equivocadamente por error ortográfico ". ¿COM? en el equipo local para CORP. CONTOSO. CON
+Establecer por error el nombre de dominio Kerberos escribiendo mal ".COM" en el equipo local para CORP. CONTOSO. CON
 ```
 ksetup /setrealm CORP.CONTOSO.CON
 ```

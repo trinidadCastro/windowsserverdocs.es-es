@@ -8,23 +8,23 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 05/09/2017
-ms.openlocfilehash: 4344108f96d14475c15a31bd1ab917e7fc78ef9f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4376dbb2c172a82c4ab64dc63acefbc37457110f
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860136"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476042"
 ---
 # <a name="data-deduplication-overview"></a>Introducción a la desduplicación de datos
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server, Windows Server 2016, Windows Server (canal semianual), de 2019 
 
 ## <a name="what-is-dedup"></a>¿Qué es desduplicación de datos?
 
-Desduplicación de datos es una característica de Windows Server 2016 que pueden ayudar a reducir el impacto de los datos redundantes en los costos de almacenamiento. Cuando está habilitada, Desduplicación de datos optimiza el espacio libre en un volumen mediante el examen de los datos del volumen en busca de partes duplicadas en el volumen. Las partes duplicadas del conjunto de datos del volumen se almacenan una vez y, opcionalmente, se comprimen para un ahorro adicional. Desduplicación de datos optimiza redundancias sin poner en peligro la integridad o fidelidad de datos. Encontrará más información sobre cómo funciona Desduplicación de datos en la sección [¿Cómo funciona Desduplicación de datos?](understand.md#how-does-dedup-work) de la página [Información acerca de Desduplicación de datos](understand.md).
+Desduplicación de datos, a menudo denominada desduplicación para abreviar, es una característica que puede ayudar a reducir el impacto de los datos redundantes en los costos de almacenamiento. Cuando está habilitada, Desduplicación de datos optimiza el espacio libre en un volumen mediante el examen de los datos del volumen en busca de partes duplicadas en el volumen. Las partes duplicadas del conjunto de datos del volumen se almacenan una vez y, opcionalmente, se comprimen para un ahorro adicional. Desduplicación de datos optimiza redundancias sin poner en peligro la integridad o fidelidad de datos. Encontrará más información sobre cómo funciona Desduplicación de datos en la sección [¿Cómo funciona Desduplicación de datos?](understand.md#how-does-dedup-work) de la página [Información acerca de Desduplicación de datos](understand.md).
 
 > [!Important]  
-> [KB4025334](https://support.microsoft.com/kb/4025334) contiene un conjunto de correcciones de errores para Desduplicación de datos en el que se incluyen correcciones importantes de confiabilidad; te recomendamos encarecidamente que lo instales al usar Desduplicación de datos con Windows Server 2016.
+> [KB4025334](https://support.microsoft.com/kb/4025334) contiene un resumen de correcciones hasta de correcciones para desduplicación de datos, incluyendo confiabilidad importante y se recomienda instalarla al usar la desduplicación de datos con Windows Server 2016 y Windows Server 2019.
 
 ## <a name="why-is-dedup-useful"></a>¿Por qué es útil desduplicación de datos?
 

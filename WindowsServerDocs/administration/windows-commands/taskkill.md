@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: db264181ef8e5e3632f3312ade61183cac3fc8f5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c31098a7dc151b29def2f3615da1e969ff8c5664
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853086"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222940"
 ---
 # <a name="taskkill"></a>taskkill
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Finaliza uno o más procesos o tareas. Los procesos se pueden finalizar por el identificador del proceso o el nombre de la imagen. **taskkill** reemplaza el **kill** herramienta.
-Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -37,13 +37,13 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 |/s \<equipo >|Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.|
 |/u \<dominio >\\\<nombre de usuario >|Ejecuta el comando con los permisos de cuenta del usuario que se especifica mediante *UserName* o *dominio*\\*UserName*. **/u** se puede especificar sólo si **/s** se especifica. El valor predeterminado es los permisos del usuario que ha iniciado sesión actualmente en el equipo que está emitiendo el comando.|
 |/p \<contraseña >|Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.|
-|/Fi \<filtro >|Se aplica un filtro para seleccionar un conjunto de tareas. Puede usar más de un filtro o use el carácter comodín (**\***) para especificar todas las tareas o los nombres de imágenes. Vea el siguiente [tabla para los nombres de filtro válido](#BKMK_table), operadores y valores.|
+|/Fi \<filtro >|Se aplica un filtro para seleccionar un conjunto de tareas. Puede usar más de un filtro o use el carácter comodín ( **\*** ) para especificar todas las tareas o los nombres de imágenes. Vea el siguiente [tabla para los nombres de filtro válido](#filter-names-operators-and-values), operadores y valores.|
 |/PID \<ProcessID >|Especifica el identificador de proceso del proceso que se finalice.|
-|/im \<ImageName>|Especifica el nombre de la imagen del proceso que se finalice. Use el carácter comodín (**\***) para especificar todos los nombres de imagen.|
+|/im \<ImageName>|Especifica el nombre de la imagen del proceso que se finalice. Use el carácter comodín ( **\*** ) para especificar todos los nombres de imagen.|
 |/f|Especifica que los procesos terminar forzosamente. Este parámetro se omite para los procesos remotos; fuerza se terminan todos los procesos remotos.|
 |/t|Finaliza el proceso especificado y cualquier proceso secundario iniciado por ella.|
 
-#### <a name="BKMK_table"></a>Los nombres de filtro, operadores y valores
+#### <a name="filter-names-operators-and-values"></a>Los nombres de filtro, operadores y valores
 |Nombre de filtro|Operadores válidos|Valores válidos|
 |--------|----------|----------|
 |STatUS|eq, ne|EJECUTANDO &AMP;#124; NO RESPONDE &AMP;#124; DESCONOCIDO|
@@ -59,7 +59,7 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 ## <a name="remarks"></a>Comentarios
 * No se admiten los filtros WINDOWTITLE y el estado cuando se especifica un sistema remoto.
-* El carácter comodín (**\***) se acepta para la **/im** opción solo cuando se aplica un filtro.
+* El carácter comodín ( **\*** ) se acepta para la **/im** opción solo cuando se aplica un filtro.
 * Finalización de procesos remotos es siempre lleva a cabo de manera forzada, independientemente de si el **/f** se especifica la opción.
 * Proporciona un nombre de equipo para el filtro de nombre de host produce un cierre y se detienen todos los procesos.
 * Puede usar **tasklist** para determinar el identificador de proceso (PID) terminar el proceso.

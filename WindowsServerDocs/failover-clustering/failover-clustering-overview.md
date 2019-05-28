@@ -10,19 +10,19 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 03/08/2019
 ms.localizationpriority: high
-ms.openlocfilehash: 445de065ff5b68b83481ee5bd83ebf18fdd180a7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e4184e52ef48e758ebc80e63d3d6f952a09cc2c
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848656"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222452"
 ---
 # <a name="failover-clustering-in-windows-server"></a>Conmutación de clústeres por error en Windows Server
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 >[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Buscas información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 <hr />
 
@@ -34,189 +34,30 @@ La Conmutación de clústeres por error tiene muchas aplicaciones prácticas, in
 * Almacenamiento de recursos compartidos de archivos disponible continuamente o altamente disponible para aplicaciones como Microsoft SQL Server y máquinas virtuales de Hyper-V.
 * Roles en clúster de alta disponibilidad que se ejecutan en servidores físicos o en máquinas virtuales instaladas en servidores que ejecutan Hyper-V.
 
-<hr />
 
-<ul class="cardsF panelContent">
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-whats-new.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h2><a href="whats-new-in-failover-clustering.md">Novedades de agrupación en clústeres de conmutación por error</a></h2>
-                                        </div>
-                                    </div>
-                                </div>
-                             </div>
-                          </a>
-                        </li>
-                     </ul>
-<HR />
+|  |  |
+|---------|---------|
+|![Novedades](../media/i-whats-new.svg)  | [**Novedades de agrupación en clústeres de conmutación por error**](whats-new-in-failover-clustering.md) |
 
-<ul class="cardsF panelContent">
 
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Comprender</h3>
-<HR />
-                                        <p><a href="sofs-overview.md">Servidor de archivos de escalabilidad horizontal para datos de la aplicación</a></p>
-<HR />
-                                        <p><a href="../storage/storage-spaces/understand-quorum.md">Quórum de clúster y grupo</a></p>
-<HR />
-                                        <p><a href="fault-domains.md">Conocimiento de dominio de error</a></p>
-<HR />
-                                        <p><a href="smb-multichannel.md">Redes de clústeres de SMB multicanal y con varias NIC simplificadas</a></p>
-<HR />
-                                        <p><a href="vm-load-balancing-overview.md">Equilibrio de carga de máquina virtual</a></p>
-<HR />
-                                        <p><a href="../storage/storage-spaces/cluster-sets.md">Conjuntos de clústeres</a></p>
-<HR />
-                                        <p><a href="cluster-affinity.md">Afinidad de clúster</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
+|  |  |  |
+|---------|---------|---------|
+|![Comprender](../media/i-cluster.svg)**comprender**  |  ![Planeación](../media/i-cluster.svg)**planeación**  |  ![Implementación](../media/i-cluster.svg)**implementación**       |
+| [Servidor de archivos de escalabilidad horizontal para datos de aplicación](sofs-overview.md)    |   [Planear los requisitos de Hardware de clústeres de conmutación por error y opciones de almacenamiento](clustering-requirements.md)      |  [Objetos de equipo de clúster preconfigurado de implementación en servicios de dominio de Active Directory](prestage-cluster-adds.md)  |
+|  [Cuórum de clúster y grupo](../storage/storage-spaces/understand-quorum.md)   |   [Usar volúmenes compartidos de clúster (CSV)](failover-cluster-csvs.md)      | [Creación de un clúster de conmutación por error](create-failover-cluster.md)        |
+|  [Reconocimiento de dominio de error](fault-domains.md)   |  [Usar clústeres invitados de máquina virtual con espacios de almacenamiento directo](../storage/storage-spaces/storage-spaces-direct-in-vm.md)       | [Implementar un servidor de archivos de dos nodos](../storage/storage-spaces/storage-spaces-direct-in-vm.md)        |
+| [SMB multicanal simplificada y redes de clústeres de varias NIC](smb-multichannel.md)    |         |  [Administrar el quórum y testigos](manage-cluster-quorum.md)       |
+|   [Equilibrio de carga de VM](vm-load-balancing-overview.md)  |         |   [Implementación de un testigo en la nube](deploy-cloud-witness.md)      |
+|   [Conjuntos de clústeres](../storage/storage-spaces/cluster-sets.md)  |         |     [Implementar un testigo del recurso compartido de archivos](file-share-witness.md)    |
+|   [Afinidad de clústeres](cluster-affinity.md)  |         |    [Actualizaciones graduales del sistema operativo del clúster]()     |
+|     |         |     [Actualizar un clúster de conmutación por error en el mismo hardware](upgrade-option-same-hardware.md)    |
+|     |         |     [Implementar un clúster desasociado de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\))    |
 
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Planificación</h3>
-<HR />
-                                        <p><a href="clustering-requirements.md">Requisitos de Hardware de clústeres de conmutación por error y opciones de almacenamiento</a></p>
-<HR />
-                                        <p><a href="failover-cluster-csvs.md">Clúster de uso compartido de volúmenes (CSV)</a></p>               
-<HR />
-                                        <p><a href="../storage/storage-spaces/storage-spaces-direct-in-vm.md">Usar clústeres invitados de máquina virtual con espacios de almacenamiento directo</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Implementación</a></h3> 
-<HR />
-                                        <p><a href="prestage-cluster-adds.md">Preconfiguración de objetos de equipo del clúster en servicios de dominio de Active Directory</a></p>
-<HR />
-                                        <p><a href="create-failover-cluster.md">Creación de un clúster de conmutación por error</a></p> 
-<HR />
-                                        <p><a href="deploy-two-node-clustered-file-server.md">Implementar un servidor de archivos de dos nodos</a></p> 
-<HR />
-                                        <p><a href="manage-cluster-quorum.md">Administrar el quórum y testigos</a></p> 
-<HR />
-                                        <p><a href="deploy-cloud-witness.md">Implementación de un testigo en la nube</a></p>
-<HR />
-                                        <p><a href="file-share-witness.md">Implementar un testigo del recurso compartido de archivos</a></p>
-<HR />
-                                        <p><a href="cluster-operating-system-rolling-upgrade.md">Actualizaciones graduales de sistema operativo del clúster</a></p> 
-<HR />
-                                        <p><a href="upgrade-option-same-hardware.md">Actualizar un clúster de conmutación por error en el mismo hardware</a></p>
-<HR />
-                                        <p><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265970\(v%3dws.11\)">Implementar un clúster desasociado de Active Directory</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-                     </ul>
-<HR />
-<ul class="cardsF panelContent">
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Administrar</h3>
-<HR />
-                                        <p><a href="cluster-aware-updating.md">Actualización de clústeres</a></p> 
-<HR />
-                                        <p><a href="health-service-overview.md">Servicio de mantenimiento</a></p>
-<HR />
-                                        <p><a href="cluster-domain-migration.md">Migración del dominio del clúster</a></p>
-<HR />
-                                        <p><a href="troubleshooting-using-wer-reports.md">Solución de problemas con el informe de errores de Windows</a></p> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Herramientas y configuración</a></h3>
-<HR />
-                                        <p><a href="https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps">Cmdlets de PowerShell de clústeres de conmutación por error</a></p> 
-<HR />
-                                        <p><a href="https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps">Tenga en cuenta los Cmdlets de PowerShell de actualización del clúster</a></p> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-<li>
-                         <div class="cardSize">
-                                <div class="cardPadding">
-                                    <div class="card">
-                                        <div class="cardImageOuter">
-                                            <div class="cardImage">
-                                                <img src="../media/i-cluster.svg" alt="" />
-                                            </div>
-                                        </div>
-                                        <div class="cardText">
-                                        <h3>Recursos de la comunidad</a></h3>
-<HR />
-                                        <p><a href="https://go.microsoft.com/fwlink/p/?LinkId=230641">Foro High Availability (Clustering)</a></p> 
-<HR />
-                                        <p><a href="http://blogs.msdn.com/b/clustering/">Blog del equipo de equilibrio de carga de agrupación en clústeres de conmutación por error y de red</a></p> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-</ul>
+
+|  |  |  |
+|---------|---------|---------|
+|![Administrar](../media/i-cluster.svg)**administrar**  |  ![Configuración y herramientas](../media/i-cluster.svg)**herramientas y configuración**  |  ![Recursos de la Comunidad](../media/i-cluster.svg)**recursos de la Comunidad**       |
+| [Actualización compatible con clústeres](cluster-aware-updating.md)    |   [Cmdlets de PowerShell de clústeres de conmutación por error](https://docs.microsoft.com/powershell/module/failoverclusters/?view=win10-ps)      |  [Foro High Availability (Clustering)](https://go.microsoft.com/fwlink/p/?LinkId=230641)       |
+|  [Servicio de mantenimiento](health-service-overview.md)   |   [Tenga en cuenta los Cmdlets de PowerShell de actualización del clúster](https://docs.microsoft.com/powershell/module/clusterawareupdating/?view=win10-ps)      | [Blog del equipo de equilibrio de carga de agrupación en clústeres de conmutación por error y de red](http://blogs.msdn.com/b/clustering/)        |
+|  [Migración del dominio del clúster](cluster-domain-migration.md)   |         |         |
+|  [Solución de problemas de uso del Informe de errores de Windows](troubleshooting-using-wer-reports.md)   |         |         |

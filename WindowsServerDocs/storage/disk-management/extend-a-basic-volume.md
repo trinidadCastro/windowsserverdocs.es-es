@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 29b7b61f7edc20edda7bc18b82db17447badc0f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c20e2da3e629743ab4d4d4cf1da16a6e69093ecf
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834256"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192583"
 ---
 # <a name="extend-a-basic-volume"></a>Extender un volumen básico
 
@@ -25,30 +25,26 @@ En lo que respecta a unidades lógicas y volúmenes de arranque o de sistema, pu
 
 ## <a name="extending-a-basic-volume"></a>Extender un volumen básico
 
--   [Mediante la interfaz de Windows](#BKMK_WINUI)
--   [Línea de comandos](#BKMK_CMD)
+-   [Mediante la interfaz de Windows](#to-extend-a-basic-volume-using-the-windows-interface)
+-   [Línea de comandos](#to-extend-a-basic-volume-using-a-command-line)
 
-<a href="" id="BKMK_WINUI"></a>
 #### <a name="to-extend-a-basic-volume-using-the-windows-interface"></a>Para extender un volumen básico mediante la interfaz de Windows
 
-1.  En el Administrador de discos, haz clic con el botón derecho en el volumen básico que quieres extender.
+1. En el Administrador de discos, haz clic con el botón derecho en el volumen básico que quieres extender.
 
-2.  Haz clic en **Extender volumen**.
+2. Haz clic en **Extender volumen**.
 
-3.  Sigue las instrucciones en pantalla.
+3. Sigue las instrucciones en pantalla.
 
-<a href="" id="BKMK_CMD"></a>
 #### <a name="to-extend-a-basic-volume-using-a-command-line"></a>Para extender un volumen básico mediante la línea de comandos
 
-1.  Abra un símbolo del sistema y escriba `diskpart`.
+1. Abra un símbolo del sistema y escriba `diskpart`.
 
-2.  En el símbolo del sistema **DISKPART**, escribe `list volume`. Anota el volumen básico que quieres extender.
+2. En el símbolo del sistema **DISKPART**, escribe `list volume`. Anota el volumen básico que quieres extender.
 
-3.  En el símbolo del sistema **DISKPART**, escribe `select volume <volumenumber>`. Esta acción selecciona el volumen básico *volumenumber* que quieres extender en un espacio contiguo y vacío del mismo disco.
+3. En el símbolo del sistema **DISKPART**, escribe `select volume <volumenumber>`. Esta acción selecciona el volumen básico *volumenumber* que quieres extender en un espacio contiguo y vacío del mismo disco.
 
-4.  En el símbolo del sistema **DISKPART**, escribe `extend [size=<size>]`. Esto extiende el volumen seleccionado por *tamaño* en megabytes (MB).
-
-<br />
+4. En el símbolo del sistema **DISKPART**, escribe `extend [size=<size>]`. Esto extiende el volumen seleccionado por *tamaño* en megabytes (MB).
 
 | Valor | Descripción |
 | --- | --- |
@@ -64,5 +60,3 @@ En lo que respecta a unidades lógicas y volúmenes de arranque o de sistema, pu
 ## <a name="see-also"></a>Vea también
 
 -   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

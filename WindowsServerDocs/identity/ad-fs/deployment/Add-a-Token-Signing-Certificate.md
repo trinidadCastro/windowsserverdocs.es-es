@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 8a94e0724d6fd2a04e2fbfc22b3054b49d87f440
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac9f9b95ad6226a8e3b7012e317899f1d48c60c9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826156"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192469"
 ---
 # <a name="add-a-token-signing-certificate"></a>Agregar un certificado de firma de tokens
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Servidores de federación de Active Directory Federation Services \(AD FS\) requieren token\-certificados de firma para evitar que los atacantes modifiquen o falsifiquen los tokens de seguridad en un intento de obtener acceso no autorizado a los recursos federados. Cada token\-certificado de firma contiene claves privadas cifradas y claves públicas que se utilizan para firmar digitalmente \(mediante la clave privada\) un token de seguridad. Más adelante, después de un servidor de federación asociado recibe estas claves, validar la autenticidad \(por medio de la clave pública\) del token de seguridad cifrada.  
   
@@ -40,8 +39,8 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 4.  En el **Buscar archivo de certificado** diálogo cuadro, vaya al archivo de certificado que desea agregar, seleccione el archivo de certificado y, a continuación, haga clic en **abierto**.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Cómo configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Requisitos de certificados para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx)  
+[Requisitos de certificado para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx)  
   
 

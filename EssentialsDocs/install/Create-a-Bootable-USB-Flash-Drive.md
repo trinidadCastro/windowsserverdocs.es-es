@@ -12,12 +12,12 @@ ms.assetid: 2fe8e35c-69f9-40b3-a270-22e2402510d8
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2716ffb7ce8f74d7c729565064de91e0598d0753
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cb62a460c09fdb2874bcc051176a05e88cee19e7
+ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884686"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65621283"
 ---
 # <a name="create-a-bootable-usb-flash-drive"></a>Crear una unidad flash USB de arranque
 
@@ -31,7 +31,7 @@ Puede crear una unidad flash USB de arranque a usar para implementar Windows Ser
   
  Para otros escenarios en los que quiera crear o usar una unidad flash USB de arranque, vea los temas siguientes:  
   
--   [Restauración completa sistema desde una copia de seguridad del equipo cliente existente](../manage/restore-a-full-system-from-an-existing-client-computer-backup.md)  
+-   [Restauración completa del sistema desde una copia de seguridad existente del equipo cliente](../manage/restore-a-full-system-from-an-existing-client-computer-backup.md)  
   
 -   [Restaurar o reparar el servidor que ejecuta Windows Server Essentials](../manage/restore-or-repair-your-server-running-windows-server-essentials.md)  
 
@@ -50,9 +50,9 @@ Puede crear una unidad flash USB de arranque a usar para implementar Windows Ser
   
 6.  Escriba `clean`y haga clic en ENTRAR. Este comando elimina todos los datos de la unidad flash USB.  
   
-7.  Para crear una nueva partición principal en la unidad flash USB, escriba `create part pri` y haga clic en ENTRAR.  
+7.  Para crear una nueva partición principal en la unidad flash USB, escriba `create partition primary` y haga clic en ENTRAR.  
   
-8.  Para seleccionar la partición que acaba de crear, escriba `select part 1`y haga clic en ENTRAR.  
+8.  Para seleccionar la partición que acaba de crear, escriba `select partition 1`y haga clic en ENTRAR.  
   
 9. Para dar formato a la partición, escriba `format fs=ntfs quick`y haga clic en ENTRAR.  
   

@@ -1,6 +1,6 @@
 ---
 title: Crear un clúster de conmutación por error
-description: Cómo crear un clúster de conmutación por error para Windows Server 2012 R2, Windows Server 2012 y Windows Server 2016.
+description: Cómo crear un clúster de conmutación por error de Windows Server 2012 R2, Windows Server 2012, Windows Server 2016 y Windows Server 2019.
 ms.prod: windows-server-threshold
 ms.topic: article
 author: JasonGerend
@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: f919e69488c4f2272ddd07e535ba4e2248ddf79c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4122375a48cae17e5f3ebcd7e9f3ce1fad28a105
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843296"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222495"
 ---
 # <a name="create-a-failover-cluster"></a>Crear un clúster de conmutación por error
 
->Se aplica a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
 En este tema se muestra cómo crear un clúster de conmutación por error a través del complemento Administrador de clústeres de conmutación por error o bien a través de Windows PowerShell. Este tema se centra en una implementación típica, en la que los objetos de equipo para el clúster y sus roles en clúster asociados se crean en los Servicios de dominio de Active Directory (AD DS). Si va a implementar un clúster de espacios de almacenamiento directo, en su lugar ve [implementar espacios de almacenamiento directo](../storage/storage-spaces/deploy-storage-spaces-direct.md).
 
@@ -152,72 +152,24 @@ Aquí le mostramos cómo crear un rol en clúster:
     
     En la siguiente tabla se muestran los roles en clúster que puedes configurar en el Asistente para alta disponibilidad y la característica o el rol de servidor asociado que debes instalar como requisito previo.
     
-    <table>
-    <thead>
-    <tr class="header">
-    <th>Rol en clúster</th>
-    <th>Requisito previo del rol o característica</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td>Servidor de espacios de nombres DFS</td>
-    <td>Espacios de nombres DFS (parte del rol de Servidor de archivos)</td>
-    </tr>
-    <tr class="even">
-    <td>Servidor DHCP</td>
-    <td>Rol de Servidor DHCP</td>
-    </tr>
-    <tr class="odd">
-    <td>Coordinador de transacciones distribuidas (DTC)</td>
-    <td>Ninguno</td>
-    </tr>
-    <tr class="even">
-    <td>Servidor de archivos</td>
-    <td>Rol de Servidor de archivos</td>
-    </tr>
-    <tr class="odd">
-    <td>Aplicación genérica</td>
-    <td>No disponible</td>
-    </tr>
-    <tr class="even">
-    <td>Script genérico</td>
-    <td>No disponible</td>
-    </tr>
-    <tr class="odd">
-    <td>Servicio genérico</td>
-    <td>No disponible</td>
-    </tr>
-    <tr class="even">
-    <td>Agente de réplicas de Hyper-V</td>
-    <td>Rol de Hyper-V</td>
-    </tr>
-    <tr class="odd">
-    <td>Servidor de destino iSCSI</td>
-    <td>Servidor de destino iSCSI (parte del rol de Servidor de archivos)</td>
-    </tr>
-    <tr class="even">
-    <td>Servidor iSNS</td>
-    <td>Característica Servicio de servidor iSNS</td>
-    </tr>
-    <tr class="odd">
-    <td>Message Queue Server</td>
-    <td>Característica Servicios de Message Queue Server</td>
-    </tr>
-    <tr class="even">
-    <td>Otro servidor</td>
-    <td>Ninguno</td>
-    </tr>
-    <tr class="odd">
-    <td>Máquina virtual</td>
-    <td>Rol de Hyper-V</td>
-    </tr>
-    <tr class="even">
-    <td>Servidor WINS</td>
-    <td>Característica Servidor WINS</td>
-    </tr>
-    </tbody>
-    </table>
+
+|Rol en clúster  |Requisito previo del rol o característica  |
+|---------|---------|
+|Servidor de Namespace     |   Espacios de nombres (parte del rol de servidor de archivos)       |
+|Servidor de espacios de nombres DFS     |  Rol de Servidor DHCP       |
+|Coordinador de transacciones distribuidas (DTC)     | Ninguno        |
+|Servidor de archivos     |  Rol de Servidor de archivos       |
+|Aplicación genérica     |  No disponible       |
+|Script genérico     |   No disponible      |
+|Servicio genérico     |   No disponible      |
+|Agente de réplicas de Hyper-V     |   Rol de Hyper-V      |
+|Servidor de destino iSCSI     |    Servidor de destino iSCSI (parte del rol de Servidor de archivos)     |
+|Servidor iSNS     |  Característica Servicio de servidor iSNS       |
+|Message Queue Server     |  Característica Servicios de Message Queue Server       |
+|Otro servidor     |  Ninguno       |
+|Máquina virtual     |  Rol de Hyper-V       |
+|Servidor WINS     |   Característica Servidor WINS      |
+
 2. En el Administrador de clústeres de conmutación por error, expanda el nombre del clúster, haga clic en **Roles**y, a continuación, seleccione **configurar rol**.
 3. Sigue los pasos del Asistente para alta disponibilidad para crear el rol en clúster.
 4. Para comprobar que se ha creado el rol en clúster, en el panel **Roles** , asegúrate de que el rol tenga el estado **En ejecución**. El panel Roles también indica el nodo propietario. Para probar la conmutación por error, haga clic en el rol, seleccione **mover**y, a continuación, seleccione **Seleccionar nodo**. En el **mover rol en clúster** cuadro de diálogo, seleccione el nodo de clúster deseado y, a continuación, seleccione **Aceptar**. En la columna **Nodo propietario** , comprueba que el nodo propietario ha cambiado.
@@ -266,11 +218,11 @@ Para obtener ejemplos de cómo agregar roles en clúster, consulta temas como [A
 
 ## <a name="more-information"></a>Más información
 
-  - [Agrupación en clústeres de conmutación por error](failover-clustering.md)
+  - [Clúster de conmutación por error](failover-clustering.md)
   - [Implementar un clúster de Hyper-V](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj863389(v%3dws.11)>)
   - [Servidor de archivos de escalabilidad horizontal para datos de la aplicación](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831349(v%3dws.11)>)
   - [Implementar un clúster desconectado de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11))
   - [Usar clústeres invitados para alta disponibilidad](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)
-  - [Actualización de clústeres](cluster-aware-updating.md)
+  - [Actualización compatible con clústeres](cluster-aware-updating.md)
   - [New-Cluster](https://docs.microsoft.com/powershell/module/failoverclusters/new-cluster?view=win10-ps)
   - [Clúster de prueba](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps)

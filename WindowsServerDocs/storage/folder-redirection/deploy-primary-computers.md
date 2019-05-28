@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7b3c87597e07102d00fc068b7ecd5744e4ba366f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 39b790f39a2bf9c6334eb2176aa2e5f2e0196c0c
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854016"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475966"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>Implementar equipos principales para redirección de carpetas y perfiles de usuario móviles
 
->Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
+>Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2
 
 Este tema describe cómo habilitar soporte de equipo principal y designar equipos principales para los usuarios. Si lo hace, le permite controlar qué equipos usan el redireccionamiento de carpetas y perfiles de usuario móviles.
 
@@ -31,7 +31,7 @@ Este tema describe cómo habilitar soporte de equipo principal y designar equipo
 Soporte de equipo principal tiene los siguientes requisitos:
 
 - El esquema de Active Directory Domain Services (AD DS) debe actualizarse para incluir adiciones de esquema de Windows Server 2012 (al instalar un controlador de dominio de Windows Server 2012 actualizará automáticamente el esquema). Para obtener información acerca de cómo actualizar el esquema de AD DS, consulte [integración de Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>) y [ejecutar Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>).
-- Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.
+- Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.
 
 >[!TIP]
 >Aunque el soporte de equipo principal requiere la redirección de carpetas y perfiles de usuario móviles, si va a implementar estas tecnologías por primera vez, es mejor establecer la compatibilidad con el equipo principal antes de habilitar los GPO que configuración la redirección de carpetas y Los perfiles de usuario móviles. Esto evita que se copien los datos de usuario a equipos no principales antes de habilitar el soporte de equipo principal. Para obtener información de configuración, consulte [implementar la redirección de carpetas](deploy-folder-redirection.md) y [implementar perfiles de usuario móviles](deploy-roaming-user-profiles.md).

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 20b2150b1135467cce43ae23bfdc275a5da22141
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2639b8bb913bcd604a7c79015545006a23e1d0f2
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852646"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222956"
 ---
 # <a name="icacls"></a>icacls
 
@@ -26,7 +26,7 @@ ms.locfileid: "59852646"
 
 Muestra o modifica las listas de control de acceso discrecional (DACL) en los archivos especificados y aplica las DACL almacenadas a los archivos de los directorios especificados.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -129,7 +129,7 @@ icacls <Directory> [/substitute <SidOld> <SidNew> [...]] [/restore <ACLfile> [/c
 
     **(NP)** : no se propagan heredar
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="examples"></a>Ejemplos
 
 Para guardar las DACL para todos los archivos del directorio C:\Windows y sus subdirectorios en el archivo ACLFile, escriba:
 ```

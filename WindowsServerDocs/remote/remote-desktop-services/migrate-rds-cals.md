@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 91bdedce-6145-469f-b72e-7e113c4391e9
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: cb30c703adb7e3a791e41caab4561300faa8fcd3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b809d4d624f21eaeae5a66277db683c95c79bdd
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845026"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034446"
 ---
 # <a name="migrate-your-remote-desktop-services-client-access-licenses-rds-cals"></a>Migración de las licencias de acceso de cliente para Servicios de Escritorio remoto (CAL de RDS)
 
@@ -27,12 +27,12 @@ Tiene tres opciones para migrar las CAL de RDS:
 2. Mediante un explorador web: Este método permite la migración cuando el servidor que ejecuta la herramienta Administrador de licencias de escritorio remoto no tiene conectividad a internet, pero el administrador tiene conectividad a internet en un dispositivo independiente. La dirección URL para el método de migración de Web se muestra en el Asistente para administrar CAL de RDS. 
 3. Uso de un teléfono: Este método permite al administrador completar el proceso de migración por teléfono con un representante de Microsoft. El número de teléfono viene determinada por el país o región que eligió en el Asistente para activar servidor y se muestra en el Asistente para administrar CAL de RDS.
 
-En este artículo, el [método de migración de CAL de RDS establecer](#establish-RDS-CAL-migration-method) resalta los pasos generales comunes a través de cualquier método de migración de CAL de RDS, mientras que [migrar las CAL de RDS](#migrate-RDS-CALs) resalta los pasos específicos para cada migración método.
+En este artículo, el [método de migración de CAL de RDS establecer](#establish-rds-cal-migration-method) resalta los pasos generales comunes a través de cualquier método de migración de CAL de RDS, mientras que [migrar las CAL de RDS](#migrate-rds-cals) resalta los pasos específicos para cada migración método.
 
 Independientemente del método de migración, como mínimo, debe un miembro del grupo Administradores local para realizar los pasos de migración.
 
-
 ## <a name="establish-rds-cal-migration-method"></a>Establecer método de migración de CAL de RDS
+
 1. En el servidor de licencias, abra **el Administrador de licencias de escritorio remoto**. (Haga clic en **Inicio > Herramientas administrativas**. Escriba el **servicios de escritorio remoto** directorio e inicie **el Administrador de licencias de escritorio remoto**.)
 2. Compruebe que el método de conexión para el servidor de licencias de escritorio remoto: derecho a la que desea migrar las CAL de RDS y, a continuación, haga clic en el servidor de licencias **propiedades**. En el **método de conexión** , compruebe la **método de conexión** -puede cambiarlo en el menú desplegable. Haga clic en **Aceptar**.
 3. Haga clic en el servidor de licencias al que desea migrar las CAL de RDS y, a continuación, haga clic en **administrar CAL de RDS**.
@@ -54,12 +54,14 @@ Independientemente del método de migración, como mínimo, debe un miembro del 
 El siguiente paso es migrar las CAL: use la información siguiente para completar al asistente. Tenga en cuenta que lo que ve en el Asistente depende del método de conexión que identificó en el paso 2 anterior.
 
 ## <a name="migrate-rds-cals"></a>Migrar las CAL de RDS
+
 Existen tres mecanismos para migrar las licencias para el servidor de licencias de destino; Siga los pasos correspondientes a la **método de conexión** comprobado en el paso 2:
-  - [Método de conexión automática](#Automatic-connection-method)
-  - [Mediante un explorador web](#Using-a-web-browser)
-  - [Uso de un teléfono](#Using-a-telephone)
+  - [Método de conexión automática](#automatic-connection-method)
+  - [Mediante un explorador web](#using-a-web-browser)
+  - [Uso de un teléfono](#using-a-telephone)
 
 ### <a name="automatic-connection-method"></a>Método de conexión automática
+
 1. En el **programa de licencias** página, seleccione el programa a través del cual adquirió las CAL de RDS y, a continuación, haga clic en **siguiente**.
 2. Escriba la información necesaria (normalmente un código de licencia o un número de contrato, según la **programa de licencias**) y, a continuación, haga clic en **siguiente**. Consulte la documentación suministrada al comprar las CAL de RDS.
 4. Seleccione la versión del producto, el tipo de licencia y la cantidad de CAL de RDS para su entorno en función de su contrato de adquisición de CAL de RDS y, a continuación, haga clic en **siguiente**.

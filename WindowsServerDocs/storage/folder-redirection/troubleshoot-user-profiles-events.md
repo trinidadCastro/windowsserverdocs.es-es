@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 6099dac7d77e37b761785b4f58b6106472e5ba1e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f30bfcd531731e3a0d14350536ddf418c50f3ea0
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827956"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475950"
 ---
 # <a name="troubleshoot-user-profiles-with-events"></a>Solucionar problemas de perfiles de usuario con eventos
 
->Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2 y Windows Server 2016.
+>Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 y Windows Server (canal semianual).
 
 Este tema describe cómo solucionar problemas de carga y descarga de los perfiles de usuario mediante el uso de eventos y registros de seguimiento. Las secciones siguientes describen cómo usar los tres registros de eventos que registran información de perfil de usuario.
 
@@ -58,7 +58,7 @@ Le mostramos cómo habilitar y ver el análisis y registros de depuración:
 1. En el **acciones** panel del Visor de eventos, seleccione **vista**y, a continuación, seleccione **mostrar registros analíticos y depuración**.
 2. Vaya a **registros de aplicaciones y servicios**, a continuación, **Microsoft**, a continuación, **Windows**, a continuación, **servicio de perfil de usuario**y, a continuación,  **Diagnóstico**.
 3. Seleccione **Habilitar registro** y, a continuación, seleccione **Sí**. Esto permite el registro de diagnóstico, que se iniciará el registro.
-4. Si necesita información más detallada, consulte [paso 4: Creación y descodificar una traza](#step-4:-creating-and-decoding-a-trace) para obtener más información sobre cómo crear un registro de seguimiento.
+4. Si necesita información más detallada, consulte [paso 4: Creación y descodificar una traza](#step-4-creating-and-decoding-a-trace) para obtener más información sobre cómo crear un registro de seguimiento.
 5. Cuando haya terminado de solucionar el problema, vaya a la **diagnóstico** registro, seleccione **Deshabilitar registro**, seleccione **vista** y, a continuación, desactive la **mostrar Depurar registros analíticos y** casilla para ocultar la analítica y el registro de depuración.
 
 ## <a name="step-4-creating-and-decoding-a-trace"></a>Paso 4: Creación y descodificar un seguimiento

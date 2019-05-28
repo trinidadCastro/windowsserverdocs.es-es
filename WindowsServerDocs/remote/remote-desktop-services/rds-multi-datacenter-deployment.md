@@ -13,16 +13,16 @@ author: haley-rowland
 ms.author: elizapo
 ms.date: 06/14/2017
 manager: dongill
-ms.openlocfilehash: 7d895b1098c4d8cdf162c77f35209b7308872d60
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 2d12062f302c28a8124e0aa49af7f441e77ffe33
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849966"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222794"
 ---
 # <a name="create-a-geo-redundant-multi-data-center-rds-deployment-for-disaster-recovery"></a>Crear un centro de implementación de RDS para la recuperación ante desastres con redundancia geográfica, múltiples datos
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
 Puede habilitar la recuperación ante desastres para la implementación de servicios de escritorio remoto mediante el aprovechamiento de varios centros de datos en Azure. A diferencia de una implementación de RDS de alta disponibilidad estándar (como se describe en el [arquitectura de servicios de escritorio remoto](desktop-hosting-logical-architecture.md)), que usa centros de datos en una sola región de Azure (por ejemplo, Europa occidental), una implementación de varios centros de datos usa datos los centros de varias ubicaciones geográficas, aumentar la disponibilidad de la implementación - centro de datos podrían no estar disponibles, pero es improbable que varias regiones se dejan de funcionar al mismo tiempo. Al implementar una arquitectura RDS con redundancia geográfica, puede habilitar la conmutación por error en el caso de error grave de toda una región.
 
@@ -44,7 +44,7 @@ En comparación, ésta es la arquitectura para una implementación que usa vario
 
 ![Una implementación de RDS que usa varias regiones de Azure](media/rds-ha-multi-region.png)
 
-Toda la implementación de RDS se replica en una segunda región de Azure para crear una implementación con redundancia geográfica. Esta arquitectura emplea un modelo activo / pasivo, donde se ejecuta solo una implementación de RDS a la vez. Una conexión de red virtual a red virtual permite que los dos entornos comunicarse entre sí. Las implementaciones de RDS se basan en un único bosque de Active Directory/dominio y replican los servidores de AD a través de las dos implementaciones, los usuarios de significado pueden iniciar sesión en ninguna de las implementaciones con las mismas credenciales. Configuración de usuario y los datos almacenados en discos de perfil de usuario (UPD) se almacenan en un servidor de archivos de clúster de dos nodos espacios de almacenamiento directo (S2D) de escalabilidad horizontal (SOFS). Un segundo clúster de S2D idéntico se implementa en la segunda región (pasiva) y réplica de almacenamiento se usa para replicar los perfiles de usuario de activo a la implementación pasivo. Azure Traffic Manager se usa para dirigir automáticamente a cualquier implementación de los usuarios finales está activo actualmente - desde la perspectiva del usuario final, tener acceso a la implementación mediante una dirección URL única y no son conscientes de qué región termina usando.
+Toda la implementación de RDS se replica en una segunda región de Azure para crear una implementación con redundancia geográfica. Esta arquitectura emplea un modelo activo / pasivo, donde se ejecuta solo una implementación de RDS a la vez. Una conexión de red virtual a red virtual permite que los dos entornos comunicarse entre sí. Las implementaciones de RDS se basan en un único bosque de Active Directory/dominio y replican los servidores de AD a través de las dos implementaciones, los usuarios de significado pueden iniciar sesión en ninguna de las implementaciones con las mismas credenciales. Configuración de usuario y los datos almacenados en discos de perfil de usuario (UPD) se almacenan en un servidor de archivos de clúster de dos nodos espacios de almacenamiento directo de escalabilidad horizontal (SOFS). Un segundo clúster de espacios de almacenamiento directo idéntico se implementa en la segunda región (pasiva) y réplica de almacenamiento se usa para replicar los perfiles de usuario de activo a la implementación pasivo. Azure Traffic Manager se usa para dirigir automáticamente a cualquier implementación de los usuarios finales está activo actualmente - desde la perspectiva del usuario final, tener acceso a la implementación mediante una dirección URL única y no son conscientes de qué región termina usando.
 
 
 Le *podría* crear una implementación de RDS sin alta disponibilidad en cada región, pero si se reinicia incluso una sola máquina virtual en una región, podría producirse una conmutación por error, lo que aumenta la probabilidad de conmutaciones por error que se producen con asociados efectos sobre el rendimiento.
@@ -74,8 +74,8 @@ Cree los siguientes recursos en Azure para crear una implementación de RDS con 
 
    > [!NOTE]
    > Puede aprovisionar almacenamiento manualmente (en lugar de usar el script de PowerShell y la plantilla): 
-   >1. Implementar un [2 nodos SOFS de S2D](rds-storage-spaces-direct-deployment.md) en el grupo de recursos A para almacenar los discos de perfil de usuario (UPD).
-   >2. Implementación de un SOFS de S2D en segundo lugar, idénticos en RG B: asegúrese de usar la misma cantidad de almacenamiento en cada clúster.
+   >1. Implementar un [SOFS de espacios de almacenamiento de dos nodos directo](rds-storage-spaces-direct-deployment.md) en el grupo de recursos A para almacenar los discos de perfil de usuario (UPD).
+   >2. Implementación de una en segundo lugar, idénticos almacenamiento SOFS de espacios directo en RG B: asegúrese de usar la misma cantidad de almacenamiento en cada clúster.
    >3. Configurar [réplica de almacenamiento con replicación asincrónica](../../storage/storage-replica/cluster-to-cluster-storage-replication.md) entre los dos.
 
 ### <a name="enable-upds"></a>Habilitar los UPD
@@ -85,7 +85,7 @@ Réplica de almacenamiento replica datos desde un volumen de origen (asociado co
 
 Para habilitar los UPD en ambas implementaciones, realice lo siguiente:
 
-1. Ejecute el [cmdlet Set-RDSessionCollectionConfiguration](https://technet.microsoft.com/itpro/powershell/windows/remote-desktop/set-rdsessioncollectionconfiguration) para habilitar los discos de perfil de usuario para la implementación principal (activo): proporcione una ruta de acceso al recurso compartido de archivos en el volumen de origen (que creó en el paso 7 en los pasos de implementación).
+1. Ejecute el [cmdlet Set-RDSessionCollectionConfiguration](https://docs.microsoft.com/powershell/module/remotedesktop/set-rdsessioncollectionconfiguration) para habilitar los discos de perfil de usuario para la implementación principal (activo): proporcione una ruta de acceso al recurso compartido de archivos en el volumen de origen (que creó en el paso 7 en los pasos de implementación).
 2. Invertir la dirección de la réplica de almacenamiento para que el volumen de destino se convierte en el volumen de origen (el volumen se monta y hace que sea accesible por la implementación secundaria). Puede ejecutar **Set-SRPartnership** cmdlet para hacer esto. Por ejemplo:
 
    ```powershell
@@ -105,10 +105,10 @@ Crear un [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview
 
 Tenga en cuenta que Traffic Manager requiere los puntos de conexión para devolver 200 OK en respuesta a una solicitud GET con el fin de marcarse como "correcto". El objeto publicIP creado a partir de las plantillas RDS funcionará, pero no agregue un anexo de ruta de acceso. En su lugar, puedes usar los usuarios finales la dirección URL del Administrador de tráfico con "/ RDWeb" anexado, por ejemplo: ```http://deployment.trafficmanager.net/RDWeb```
 
-Mediante la implementación de Azure Traffic Manager con el método de enrutamiento de prioridad, evitar que los usuarios finales tengan acceso a la implementación pasiva, mientras que la implementación activa es funcional. Si los usuarios finales acceso a la implementación pasiva y no se ha cambiado la dirección de la réplica de almacenamiento para la conmutación por error, el inicio de sesión del usuario se bloquea como la implementación se prueba y se produce un error al acceder al recurso compartido de archivos en el clúster de S2D pasivo, finalmente, la implementación renunciar y dar el usuario de un perfil temporal.  
+Mediante la implementación de Azure Traffic Manager con el método de enrutamiento de prioridad, evitar que los usuarios finales tengan acceso a la implementación pasiva, mientras que la implementación activa es funcional. Si los usuarios finales acceso a la implementación pasiva y no se ha cambiado la dirección de la réplica de almacenamiento para la conmutación por error, el inicio de sesión del usuario se bloquea como la implementación se prueba y se produce un error al acceder al recurso compartido de archivos en el clúster de espacios de almacenamiento directo pasivo, al final de la implementación se renunciar y proporcionar al usuario un perfil temporal.  
 
 ### <a name="deallocate-vms-to-save-resources"></a>Desasignar máquinas virtuales para ahorrar recursos 
-Después de configurar ambas implementaciones, puede apagar y desasignar las máquinas virtuales de RDSH para ahorrar costos en estas máquinas virtuales y la infraestructura de RDS secundaria. El servidor SOFS de S2D y AD máquinas virtuales debe permanecer siempre que se ejecutan en la implementación de la base de datos secundaria/pasivo para habilitar la sincronización de perfil y cuenta de usuario.  
+Después de configurar ambas implementaciones, puede apagar y desasignar las máquinas virtuales de RDSH para ahorrar costos en estas máquinas virtuales y la infraestructura de RDS secundaria. El servidor SOFS de espacios de almacenamiento directo y AD máquinas virtuales debe permanecer siempre que se ejecutan en la implementación de la base de datos secundaria/pasivo para habilitar la sincronización de perfil y cuenta de usuario.  
 
 Cuando se produce una conmutación por error, deberá iniciar las máquinas virtuales desasignadas. Esta configuración de implementación tiene la ventaja de que se va a menor costo, pero a costa del tiempo de conmutación por error. Si se produce un error grave en la implementación activa, tendrá que iniciar manualmente la implementación pasiva o tiene un script de automatización para detectar el error e iniciar la implementación pasiva automáticamente. En cualquier caso, puede tardar varios minutos para obtener la implementación pasiva funcionamiento y disponibles para los usuarios iniciar sesión, lo que produce un tiempo de inactividad para el servicio. Este tiempo de inactividad depende de la cantidad de tiempo se tarda en iniciar la infraestructura RDS y máquinas virtuales de RDSH (normalmente 2 a 4 minutos, si las máquinas virtuales se inician en paralelo en lugar de en serie) y el tiempo para poner en línea el clúster pasivo (que depende del tamaño del clúster normalmente de 2 a 4 minutos para un clúster de 2 nodos con 2 discos por nodo). 
 
@@ -123,7 +123,7 @@ Igual que actualizar las imágenes RDSH para proporcionar nuevas aplicaciones o 
 
 ## <a name="failover"></a>Conmutación por error
 
-En el caso de la implementación activo / pasivo, conmutación por error requiere que inicie las máquinas virtuales de la implementación secundaria. Puede hacerlo manualmente o con un script de automatización. En el caso de una conmutación por error grave de los SOFS de S2D, cambie la dirección de asociación de réplica de almacenamiento, para que el volumen de destino se convierte en el volumen de origen. Por ejemplo:
+En el caso de la implementación activo / pasivo, conmutación por error requiere que inicie las máquinas virtuales de la implementación secundaria. Puede hacerlo manualmente o con un script de automatización. En el caso de una conmutación por error grave de los SOFS de espacios de almacenamiento directo, cambie la dirección de asociación de réplica de almacenamiento, para que el volumen de destino se convierte en el volumen de origen. Por ejemplo:
 
    ```powershell
    Set-SRPartnership -NewSourceComputerName "cluster-b-s2d-c" -SourceRGName "cluster-b-s2d-c" -DestinationComputerName "cluster-a-s2d-c" -DestinationRGName "cluster-a-s2d-c"

@@ -13,12 +13,12 @@ ms.assetid: 063783cd-d748-489e-b175-46eadc993f7a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 60d2e1fedc018136f5668d55a8afb2e0574d94de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da27467efb842368167b7a315056506e99331e8d
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845076"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034592"
 ---
 # <a name="multipoint-services-site-planning"></a>Planeación del sitio de MultiPoint Services
 Debe considerar la ubicación donde se va a implementar uno o más equipos que ejecuta MultiPoint Services y sus estaciones asociados.  
@@ -86,11 +86,11 @@ No hay ninguna limitación de distancia física para los clientes de LAN. Siempr
 ## <a name="using-additional-hubs"></a>Uso de concentradores adicionales  
 Hubs adicionales se puede usar para facilitar la instalación. Hay tres tipos de concentradores que se usan en un sistema MultiPoint Services:  
   
--   [Concentradores de estaciones](#Station-hubs)  
+-   [Concentradores de estaciones](#station-hubs)  
   
--   [Concentradores intermedios](#Intermediate-hubs)  
+-   [Concentradores intermedios](#intermediate-hubs)  
   
--   [Hubs de nivel inferiores](#Downstream-hubs)  
+-   [Hubs de nivel inferiores](#downstream-hubs)  
   
 ### <a name="station-hubs"></a>Concentradores de estaciones  
 Un concentrador de estaciones es un concentrador externo que se ha asociado con una estación de MultiPoint Services. Como mínimo, el concentrador de estaciones tendrá un teclado conectado en ella. También puede tener más periféricos conectados. Un concentrador de estaciones puede ser un concentrador USB genérico que se ajusta a la USB 2.0 o la especificación de una versión posterior. Concentradores de estaciones deben ser alimentar si los dispositivos de alta potencia harán complemento a ellos.  

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6d4c7763d7204dd2340d10a234e48f47c96788dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b2ed7a09bbc50c83d3bf6f8f2688152ed5202abc
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841846"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190821"
 ---
 # <a name="review-the-role-of-the-federation-server-in-the-resource-partner"></a>Revisar el rol del servidor de federación en el asociado de recurso
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 El servidor de federación en la organización del asociado de recurso intercepta los tokens de seguridad entrantes que se envían por un servidor de federación de cuenta, valida y firma de ellos y, a continuación, emite su propio tokens de seguridad que están destinadas a la Web\-basado aplicación.  
   
@@ -31,5 +29,5 @@ En el diseño SSO Web, al menos un servidor de federación debe instalarse en la
 > Antes de configurar un equipo de servidor de federación en la organización del asociado de recurso, primero debe unir el equipo a cualquier dominio de Active Directory en la organización del asociado de recurso. Para obtener más información, consulte [lista de comprobación: Configuración de un servidor de federación](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md).  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

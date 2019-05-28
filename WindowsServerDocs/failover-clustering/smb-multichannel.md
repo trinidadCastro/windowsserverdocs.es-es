@@ -7,18 +7,18 @@ ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: 45d8364adf9d3db24a8e6d8f7bc91178ce7d1551
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1b9271ceac99ac9b21cbfac902ba133d66815df4
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881136"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476116"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>SMB multicanal simplificada y redes de clústeres de varias NIC
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
-SMB multicanal y Multi - simplificada<abbr title="tarjeta de interfaz de red">NIC</abbr> redes del clúster es una característica nueva en Windows Server 2016 que permite el uso de varias NIC en la misma subred de red del clúster y habilita automáticamente SMB multicanal.  
+SMB multicanal y Multi - simplificada<abbr title="tarjeta de interfaz de red">NIC</abbr> redes del clúster es una característica que permite el uso de varias NIC en la misma subred de red del clúster y habilita automáticamente SMB multicanal.
 
 SMB multicanal simplificada y redes de clústeres de varias NIC proporciona las siguientes ventajas:  
 - Agrupación en clústeres de conmutación por error reconoce automáticamente todas las NIC en los nodos que se usan el mismo modificador / misma subred: no necesitan configuraciones adicionales.  
@@ -31,7 +31,7 @@ SMB multicanal simplificada y redes de clústeres de varias NIC proporciona las 
 -   Varias NIC por servidor, con el mismo conmutador / subred.  
 
 ## <a name="how-to-take-advantage-of-multi-nic-clusters-networks-and-simplified-smb-multichannel"></a>SMB multicanal simplificada y redes de clústeres de cómo aprovechar las ventajas de tener varias NIC  
-En esta sección se describe cómo aprovechar las ventajas de las nuevas redes de clústeres de varias NIC y simplificadas características multicanal de SMB en Windows Server 2016.  
+En esta sección se describe cómo aprovechar las nuevas redes de clústeres de varias NIC y simplificadas características SMB multicanal.  
 
 ### <a name="use-at-least-two-networks-for-failover-clustering"></a>Utilice al menos dos redes para agrupar en clústeres de conmutación por error   
 Aunque es poco frecuente, pueden producir un error en los conmutadores de red: es aún mejor práctica usar al menos dos redes para agrupación en clústeres de conmutación por error. Todas las redes que se encuentran se usan para los latidos del clúster. Evite el uso de una sola red para el clúster de conmutación por error con el fin de evitar un único punto de error. Idealmente, debería haber varias rutas de acceso física de la comunicación entre los nodos del clúster y ningún punto único de error.  
@@ -58,7 +58,7 @@ Cuando se usa más de una red privada (sólo en clúster), compruebe la configur
 **Figura 4: Configuración automática de recurso de dirección Local de vínculo IPv6 (fe80)**  
 
 ## <a name="throughput-and-fault-tolerance"></a>Rendimiento y tolerancia a errores  
-Windows Server 2016 detecta las capacidades NIC y se intentará usar cada NIC en la configuración más rápida posible automáticamente. Las NIC que están agrupados, por NIC mediante RSS y NIC con la funcionalidad RDMA pueden utilizarse. En la tabla siguiente se resume las ventajas y desventajas al usar estas tecnologías. Rendimiento máximo se logra al usar varias NIC compatibles con RDMA. Para obtener más información, consulte [los aspectos básicos de SMB multicanal](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/).
+2019 de Windows Server y Windows Server 2016 automáticamente detectan las capacidades NIC y se intentarán usar cada NIC en la configuración más rápida posible. Las NIC que están agrupados, por NIC mediante RSS y NIC con la funcionalidad RDMA pueden utilizarse. En la tabla siguiente se resume las ventajas y desventajas al usar estas tecnologías. Rendimiento máximo se logra al usar varias NIC compatibles con RDMA. Para obtener más información, consulte [los aspectos básicos de SMB multicanal](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/).
 
 ![Ver una ilustración de rendimiento y tolerancia a errores en las diferentes configuraciones de NIC](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig5.png)  
 **Figura 5: Rendimiento y tolerancia a errores para conifigurations de varias NIC**   

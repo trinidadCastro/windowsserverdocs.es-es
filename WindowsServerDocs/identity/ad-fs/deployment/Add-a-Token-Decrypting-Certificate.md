@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 0eba51521e7ef88542bccf93d92d2e783d800b5e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf89972120f3f0effa3eb1cf0fee6d29dbc8ed4e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842216"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192483"
 ---
 # <a name="add-a-token-decrypting-certificate"></a>Agregar un certificado de descifrado de tokens
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Los servidores de federación usan un token\-certificado de descifrado cuando un servidor de federación de terceros para usuario autenticado debe descifrar los tokens emitidos por un certificado antiguo después de establece un nuevo certificado como certificado de descifrado principal. Servicios de federación de Active Directory \(AD FS\) usa la capa de Sockets seguros \(SSL\) certificado para Internet Information Services \(IIS\) como el descifrado de forma predeterminada certificado.  
   
@@ -40,8 +38,8 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 4.  En el **Buscar archivo de certificado** diálogo cuadro, vaya al archivo de certificado que desea agregar, seleccione el archivo de certificado y, a continuación, haga clic en **abierto**.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Cómo configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
-[Requisitos de certificados para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx)  
+[Requisitos de certificado para servidores de federación](https://technet.microsoft.com/library/dd807040.aspx)  
   
 

@@ -8,21 +8,21 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4706372b06d0554196b692c3ddcda145dee5bae5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6eb6f2acd420ae657a5c1b698e9733751378552
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848176"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476080"
 ---
 # <a name="failover-clustering-hardware-requirements-and-storage-options"></a>Requisitos de hardware de agrupación en clústeres de conmutación por error y opciones de almacenamiento
 
-Se aplica a: Windows Server 2012 R2, Windows Server 2012, Windows Server 2016
+Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Necesita el siguiente hardware para crear un clúster de conmutación por error: Para que sea compatible con Microsoft, todas las herramientas de hardware deben estar certificadas para la versión de Windows Server que utilices, y la solución de clúster de conmutación por error completa debe superar todas las pruebas del Asistente para validar una configuración. Para obtener más información sobre la validación de un clúster de conmutación por error, consulte [Validate Hardware for a Failover Cluster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>).
 
 - **Servidores**: Se recomienda que use un conjunto de equipos parecidos que contengan los mismos componentes o componentes similares.
-- **Adaptadores de red y cable (para la comunicación de red)**: si usas iSCSI, los adaptadores de red se deben dedicar a la comunicación de red o iSCSI, pero no a ambos.
+- **Adaptadores de red y cable (para la comunicación de red)** : si usas iSCSI, los adaptadores de red se deben dedicar a la comunicación de red o iSCSI, pero no a ambos.
 
     En la infraestructura de red que conecta los nodos de clúster, evite tener puntos de concentración de errores. Por ejemplo, puede conectar los nodos del clúster mediante varias redes distintas. Como alternativa, puede conectar los nodos del clúster con una red construida con adaptadores de red agrupados, conmutadores redundantes, enrutadores redundantes o hardware similar que elimine los puntos únicos de error.
 
@@ -73,6 +73,6 @@ Al implementar una red de área de almacenamiento (SAN) con un clúster de conmu
 
 ## <a name="more-information"></a>Más información
 
-- [Agrupación en clústeres de conmutación por error](failover-clustering.md)
+- [Clúster de conmutación por error](failover-clustering.md)
 - [Espacios de almacenamiento](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831739(v%3dws.11)>)
 - [Usar clústeres invitados para alta disponibilidad](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn440540(v%3dws.11)>)

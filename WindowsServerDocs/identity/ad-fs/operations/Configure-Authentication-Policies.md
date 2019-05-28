@@ -3,22 +3,20 @@ ms.assetid: 8e7015bc-c489-4ec7-8b6e-3ece90f72317
 title: Configuración de directivas de autenticación
 description: ''
 author: billmath
-ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7faffb7ccbb4b0ea3c65329d18f915d7dafcd46f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.author: billmath
+ms.openlocfilehash: 9345f995af2f256dddcbcbd7d05c4bf6170b563e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861796"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189860"
 ---
 # <a name="configure-authentication-policies"></a>Configuración de directivas de autenticación
-
->Se aplica a: Windows Server 2012 R2
 
 En AD FS en Windows Server 2012 R2, ambos control de acceso y se han mejorado el mecanismo de autenticación con varios factores que incluyen datos de usuario, dispositivo, ubicación y autenticación. Estas mejoras permiten a usted, a través de la interfaz de usuario o a través de Windows PowerShell, para administrar el riesgo de conceder permisos de acceso a AD FS\-protege las aplicaciones a través de múltiples\-factorizar el control de acceso y de varios\-autenticación multifactor que se basan en los miembros del grupo o la identidad de usuario, la ubicación de red, datos del dispositivo al área de trabajo\-Unido, y el estado de la autenticación cuando varios\-autenticación multifactor \(MFA\) se realizó.  
   
@@ -27,7 +25,7 @@ Para obtener más información acerca de MFA y de varios\-factorizar el control 
 
 -   [Unirse a un área de trabajo desde cualquier dispositivo para SSO y sin interrupciones de segundo Factor de autenticación a través de las aplicaciones de empresa](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
 
--   [Administración de riesgos con Control de acceso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
+-   [Administración de riesgos con control de acceso condicional](../../ad-fs/operations/Manage-Risk-with-Conditional-Access-Control.md)
 
 -   [Administración de riesgos con autenticación multifactor adicional para aplicaciones confidenciales](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 
@@ -305,4 +303,4 @@ Pertenencia al grupo Administradores o equivalente, en el equipo local es el req
 
 ## <a name="additional-references"></a>Referencias adicionales  
 
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)

@@ -1,25 +1,22 @@
 ---
 title: Instalación de Server Core
 description: Cómo obtener e instalar una instalación Server Core en Windows Server 2019, Windows Server 2016 o Windows Server (canal semianual).
-ms.custom: na
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
-ms.date: 1/04/2019
+ms.date: 05/21/2019
 ms.technology: server-general
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2d22818c-fbb7-487a-bb82-81ef0a3f7ede
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: d99cd0b028d08d5c3247541ce3a868676b60693d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6f685ce29088b56bb243d21315787ab90e6863a4
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869026"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976721"
 ---
 # <a name="install-server-core"></a>Instalación de Server Core
 
@@ -35,7 +32,7 @@ Cuando se instala Windows Server por primera vez, tiene las siguientes opciones 
 -   Windows Server Datacenter
 -   Windows Server Datacenter con Experiencia de escritorio
 
-Cuando se instala Windows Server (canal semianual), incluidas las versiones 1709, 1803 y 1809, tiene las siguientes opciones de instalación:
+Cuando se instala Windows Server (canal semianual), tiene las siguientes opciones de instalación:
 
 -   Windows Server Standard 
 -   Windows Server Datacenter
@@ -74,10 +71,10 @@ Con esta opción de Server Core, no se instala la interfaz de usuario estándar 
 - Servidor Windows Server Update
 - Servidor de Active Directory Rights Management
 - Enrutamiento y acceso remoto y los siguientes subroles:
-- Agente de conexión a Servicios de Escritorio remoto
-- Concesión de licencias
-- Virtualización
-- Volume Activation Services
+   - Agente de conexión a Servicios de Escritorio remoto
+   - Concesión de licencias
+   - Virtualización
+   - Volume Activation Services
 
 Para los roles no incluidas en Server Core, vea [Roles, servicios de rol y características no incluidas en Windows Server - Server Core](../administration/server-core/server-core-removed-roles.md).
 
@@ -88,13 +85,12 @@ Para los pasos de instalación general y opciones de Windows Server (canal de se
 ## <a name="installing-on-windows-server-semi-annual-channel"></a>Instalación en Windows Server (canal semianual)
 
 Pasos de instalación para Windows Server (canal semianual) son los mismos que la instalación de las versiones anteriores de Windows Server (desde una. Imagen ISO), con las siguientes excepciones:
+
 - Las actualizaciones no admitidas de versiones anteriores de Windows Server para Windows Server, versión 1709. Una instalación nueva siempre es necesaria.
    Esto significa que cuando ejecute setup.exe desde el escritorio de un equipo Windows, la experiencia de instalación no permite la opción de actualización (está atenuado).
 - No hay ninguna versión de evaluación para Windows Server (canal semianual)
 - No hay ninguna versión OEM o comercial. Windows Server (canal semianual) solo puede tener una licencia a través de programas de Software Assurance o fidelidad.
 
-Para obtener Windows Server, versión 1709, consulta [Introducción a Windows Server, versión 1709](get-started-with-1709.md).
+Para obtener más información acerca del canal semianual, consulte [comparación de canales de mantenimiento](../get-started-19/servicing-channels-19.md).
 
-Para obtener la versión 1803 de Windows Server, consulte [Introducción a Windows Server, versión 1803](get-started-with-1803.md).
-
-Para ver cuáles son las novedades en Windows Server, versión 1809, consulte [What ' s New in Windows Server versión 1809](whats-new-in-windows-server-1809.md)
+Para ver cuáles son las novedades en canal semianual de Windows Server, consulte [What ' s New in Windows Server](whats-new-in-windows-server.md)

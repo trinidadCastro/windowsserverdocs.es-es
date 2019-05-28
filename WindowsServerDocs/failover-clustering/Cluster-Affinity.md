@@ -1,18 +1,18 @@
 ---
-title: Clúster AntiAffinity
+title: Afinidad de clúster
 ms.prod: windows-server-threshold
 ms.manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.date: 03/07/2019
-description: En este artículo se describe los niveles de AntiAffinity de clúster de conmutación por error
-ms.openlocfilehash: 0e7511aa4305e09a1e895a4f8f4ec120079733b7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+description: En este artículo se describe los niveles de afinidad y antiAffinity del clúster de conmutación por error
+ms.openlocfilehash: a38d53f6aed1ca634d41822f4486779f6d279ec0
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857206"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476048"
 ---
 # <a name="cluster-affinity"></a>Afinidad de clúster
 

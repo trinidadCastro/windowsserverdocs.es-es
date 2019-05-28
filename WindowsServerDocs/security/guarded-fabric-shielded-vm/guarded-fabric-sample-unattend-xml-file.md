@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 1d9e91ec8f4c998f34e324b5d551a387eba5a310
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5717fcc9e1732b6273620e633c140c6df58ec8b7
+ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823636"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65624655"
 ---
 # <a name="create-os-specialization-answer-file"></a>Crear el archivo de respuesta de especialización del sistema operativo
 
@@ -38,10 +38,8 @@ Las secciones siguientes muestran cómo puede utilizar los parámetros de funci�
 - [Archivo de respuesta básico de Windows](#basic-windows-answer-file)
 - [Archivo con la unión a un dominio de la respuesta de Windows](#windows-answer-file-with-domain-join)
 - [Archivo de respuesta de Windows con direcciones IPv4 estáticas](#windows-answer-file-with-static-ipv4-addresses)
-- [Archivo de respuesta de Windows con una configuración regional personalizada](#windows-answer-file-with-custom-locale)
+- [Archivo de respuesta de Windows con una configuración regional personalizada](#windows-answer-file-with-a-custom-locale)
 - [Archivo de respuesta básico de Linux](#basic-linux-answer-file)
-
-También puede revisar el [parámetros de función](#function-parameters), más adelante en este tema.
 
 ## <a name="basic-windows-answer-file"></a>Archivo de respuesta básico de Windows
 
@@ -51,7 +49,7 @@ Cuando se le pida que escriba una credencial de administrador, especifique el no
 Si desea configurar la cuenta de administrador integrada, utilice "Administrador" para el nombre de usuario.
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
+$adminCred = Get-Credential -Message "Local administrator account"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred
 ```
@@ -69,8 +67,8 @@ La segunda petición de credenciales le pedirá las credenciales que tengan el d
 No olvide cambiar el valor de la "-DomainName" parámetro para el FQDN del dominio de Active Directory.
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
-$domainCred = Get-Credential -Prompt "Domain join credentials"
+$adminCred = Get-Credential -Message "Local administrator account"
+$domainCred = Get-Credential -Message "Domain join credentials"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred -DomainName 'my.contoso.com' -DomainJoinCredentials $domainCred
 ```
@@ -97,7 +95,7 @@ Deberá configurar el adaptador de red para la máquina virtual. Captura de pant
 A continuación, puede usar el `-StaticIPPool` parámetro debe incluir los elementos IP estáticos en el archivo de respuesta. Los parámetros `@IPAddr-1@`, `@NextHop-1-1@`, y `@DNSAddr-1-1@` en la respuesta de archivo, a continuación, se reemplazará con los valores reales que especificó en tiempo de implementación de Virtual Machine Manager.
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
+$adminCred = Get-Credential -Message "Local administrator account"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred -StaticIPPool IPv4Address
 ```
@@ -110,8 +108,8 @@ Cuando se le pida que escriba una credencial de administrador, especifique el no
 Si desea configurar la cuenta de administrador integrada, utilice "Administrador" para el nombre de usuario.
 
 ```powershell
-$adminCred = Get-Credential -Prompt "Local administrator account"
-$domainCred = Get-Credential -Prompt "Domain join credentials"
+$adminCred = Get-Credential -Message "Local administrator account"
+$domainCred = Get-Credential -Message "Domain join credentials"
 
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred -Locale es-ES
 ```
@@ -133,4 +131,4 @@ New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -RootPassword $ro
 ## <a name="see-also"></a>Vea también
 
 - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [Las máquinas virtuales blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
+- [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

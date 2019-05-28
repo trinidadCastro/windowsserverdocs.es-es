@@ -7,12 +7,12 @@ ms.assetid: 424b8090-0692-49a6-9dc4-3c0e77d74b80
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 2dc9a612fa9760a6ca5f05efe1c287fd0872a1d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 05888ce57b5b922fc330d9deab430d329fede69b
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861256"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222530"
 ---
 # <a name="troubleshooting-the-host-guardian-service"></a>Solución de problemas del servicio guardián de Host
 
@@ -93,7 +93,7 @@ Para obtener información exacta que pertenecen a su dispositivo específico, si
 Marca HSM/serie      | Sugerencia
 ----------------------|-------------
 Gemalto SafeNet       | Asegúrese de que la propiedad de uso de clave en el archivo de solicitud de certificado se establece en 0xa0, lo que permite el certificado que se usará para la firma y cifrado. Además, debe conceder a la cuenta de gMSA *leer* acceso a la clave privada mediante la herramienta Administrador de certificados local (consulte los pasos anteriores).
-Thales nShield        | Asegúrese de que cada nodo HGS tiene acceso al mundo de seguridad que contiene las claves de firma y cifrado. No es necesario configurar los permisos específicos de la gMSA.
+nCipher nShield        | Asegúrese de que cada nodo HGS tiene acceso al mundo de seguridad que contiene las claves de firma y cifrado. No es necesario configurar los permisos específicos de la gMSA.
 Utimaco CryptoServers | Asegúrese de que la propiedad de uso de clave en el archivo de solicitud de certificado se establece en 0 x 13, lo que permite el certificado que se usará para el cifrado, descifrado y firma.
 
 ### <a name="certificate-requests"></a>Solicitudes de certificado

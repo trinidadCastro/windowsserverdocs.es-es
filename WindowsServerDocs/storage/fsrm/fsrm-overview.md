@@ -8,16 +8,16 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: Administrador de recursos de servidor de archivos (FSRM) es una herramienta que le permite administrar y clasificar los datos en un servidor de archivos de Windows Server.
-ms.openlocfilehash: 107d08f247fc56720ccc3d11a3db88c77377257c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8488c7418ac03be53db7164678fad353bc7c637d
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870726"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476126"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Introducción al Administrador de recursos del servidor de archivos (FSRM)
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server (canal semianual), 
 
 El Administrador de recursos del servidor (FSRM) es un servicio de rol de Windows Server que te permite administrar y clasificar los datos almacenados en los servidores de archivos. Puede usar el Administrador de recursos del servidor de archivos para clasificar archivos, realizar tareas basadas en estas clasificaciones, establecer cuotas en carpetas y crear informes de supervisión del uso de almacenamiento automáticamente.
 
@@ -72,7 +72,7 @@ Para evitar que crear un diario de cambios en algunos o todos los volúmenes cua
 3. Abra el Editor del registro, por ejemplo, escribiendo `regedit` en la misma sesión de PowerShell.
 4. Vaya a la siguiente clave: **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**
 5. Si lo desea para omitir cambie la creación de diario para todo el servidor (omitir este paso si desea deshabilitarlo sólo en volúmenes específicos):
-    1. Haga clic en el **configuración** clave y, a continuación, seleccione **New** > **valor DWORD (32 bits)**. 
+    1. Haga clic en el **configuración** clave y, a continuación, seleccione **New** > **valor DWORD (32 bits)** . 
     1. Asigne el valor `SkipUSNCreationForSystem`.
     1. Establezca el valor en **1** (en hexadecimal).
 6. Para omitir la creación del diario de cambios para volúmenes específicos:

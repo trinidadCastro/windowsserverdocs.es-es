@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 61c8eb2321ee2a282345aba01c6d04a128f0448c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e009780d83220b528ba7dac6e2561be36e662f71
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819396"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192758"
 ---
 # <a name="initialize-new-disks"></a>Inicializar nuevos discos
 
@@ -22,17 +22,23 @@ ms.locfileid: "59819396"
 Si agrega un disco nuevo a su equipo y no se mostrará en el Explorador de archivos, es posible que deba [agregar una letra de unidad](change-a-drive-letter.md), o lo inicializa antes de usarlo. Solo se puede inicializar una unidad que aún no tiene el formato. Inicializar un disco borra todo su contenido y lo prepara para su uso con Windows, tras el cual puede darle formato y, a continuación, almacenar archivos en él.
 
 > [!WARNING]
-> Si el disco ya tiene archivos en ella que le interesen, no inicializarlo - perderá todos los archivos. En su lugar, se recomienda que el disco de la solución de problemas para ver si puede leer los archivos - consulte [estado de un disco no inicializado o el disco falta completamente](troubleshooting-disk-management.md#disk-not-initialized).
+> Si el disco ya tiene archivos en ella que le interesen, no inicializarlo - perderá todos los archivos. En su lugar, se recomienda que el disco de la solución de problemas para ver si puede leer los archivos - consulte [estado de un disco no inicializado o el disco falta completamente](troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing).
 
 ## <a name="to-initialize-new-disks"></a>Para inicializar nuevos discos
 
 Aquí le mostramos cómo inicializar un disco nuevo mediante administración de discos. Si prefiere usar PowerShell, use el [initialize-disk](https://docs.microsoft.com/powershell/module/storage/initialize-disk) cmdlet en su lugar.
 
-1. Abra Administración de discos con permisos de administrador. <br>Para ello, en el cuadro de búsqueda en la barra de tareas, escriba **administración de discos**, seleccione y mantenga (o secundario) **administración de discos**, a continuación, seleccione **ejecutar como administrador**  >  **Sí**. Si no puede abrirlo como administrador, escriba **administración de equipos** en su lugar y, a continuación, vaya a **almacenamiento** > **administración de discos**.
-1. En administración de discos, haga clic en el disco que desea inicializar y, a continuación, haga clic en **inicializar disco** (que se muestra a continuación). Si el disco aparece como *Offline*, primero haga clic en él y seleccione **Online**.<br>Tenga en cuenta que algunas unidades USB no tienen la opción de inicializarse, simplemente se obtener aplica formato y un [letra de unidad](change-a-drive-letter.md).
+1. Abra Administración de discos con permisos de administrador. 
+ 
+    Para ello, en el cuadro de búsqueda en la barra de tareas, escriba **administración de discos**, seleccione y mantenga (o secundario) **administración de discos**, a continuación, seleccione **ejecutar como administrador**  >  **Sí**. Si no puede abrirlo como administrador, escriba **administración de equipos** en su lugar y, a continuación, vaya a **almacenamiento** > **administración de discos**.
+1. En administración de discos, haga clic en el disco que desea inicializar y, a continuación, haga clic en **inicializar disco** (que se muestra a continuación). Si el disco aparece como *Offline*, primero haga clic en él y seleccione **Online**.
+
+     Tenga en cuenta que algunas unidades USB no tienen la opción de inicializarse, simplemente se obtener aplica formato y un [letra de unidad](change-a-drive-letter.md).
 
     ![Administración de discos que se muestra un disco sin formatear con el menú contextual de inicializar disco mostrado](media\uninitialized-disk.PNG)
-2. En el **inicializar disco** cuadro de diálogo (se muestra aquí), compruebe para asegurarse de que el disco correcto está seleccionado y, a continuación, haga clic en **Aceptar** para aceptar el estilo de partición predeterminado. Si necesita cambiar el estilo de partición (GPT o MBR) consulte [sobre el estilo de partición - GPT y MBR](#about-partition-styles-GPT-and-MBR).<br>El estado del disco cambiará entonces brevemente a **inicializando** y, a continuación, en el **Online** estado. Si la inicialización se produce un error por algún motivo, consulte [estado de un disco no inicializado o el disco falta completamente](troubleshooting-disk-management.md#disk-not-initialized).
+2. En el **inicializar disco** cuadro de diálogo (se muestra aquí), compruebe para asegurarse de que el disco correcto está seleccionado y, a continuación, haga clic en **Aceptar** para aceptar el estilo de partición predeterminado. Si necesita cambiar el estilo de partición (GPT o MBR) consulte [sobre los estilos de partición - GPT y MBR](#about-partition-styles---gpt-and-mbr).
+
+     El estado del disco cambiará entonces brevemente a **inicializando** y, a continuación, en el **Online** estado. Si la inicialización se produce un error por algún motivo, consulte [estado de un disco no inicializado o el disco falta completamente](troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing).
 
     ![El cuadro de diálogo inicializar disco con el estilo de partición GPT seleccionado](media\initialize-disk.PNG)
 

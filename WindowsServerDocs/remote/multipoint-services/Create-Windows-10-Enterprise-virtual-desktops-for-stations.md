@@ -13,12 +13,12 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: befd784f4a2179c121992057e298d4ea9068c11b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0aa81ef3633adf27a25b45b3b7c00082d83bf0bb
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862086"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034627"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>Crear escritorios virtuales de Windows 10 Enterprise para las estaciones
 Esta configuración opcional en MultiPoint Services sirve principalmente para situaciones donde una aplicación esencial requiere su propia instancia de un sistema operativo cliente para cada usuario. Algunos ejemplos son las aplicaciones que no se puede instalar en Windows Server y aplicaciones que no se ejecutarán varias instancias en el mismo equipo host.  
@@ -44,13 +44,13 @@ Para preparar la creación de estación de escritorios virtuales, asegúrese de 
 ## <a name="procedures"></a>Procedimientos  
 Use los siguientes procedimientos para:  
   
--   [Crear una plantilla para escritorios virtuales](#a-namebkmkcreateatemplateacreate-a-template-for-virtual-desktops)  
+-   [Crear una plantilla para escritorios virtuales](#create-a-template-for-virtual-desktops)  
   
--   [Creación de escritorios virtuales de la plantilla](#BKMK_CreateVirtualDesktopsfromTemplate)  
+-   [Creación de escritorios virtuales de la plantilla](#create-virtual-machine-desktops-from-the-template)  
   
--   [Copiar una plantilla de escritorio virtual existente](#BKMK_CopyExiistingVirtualDesktopTemplate)  
+-   [Copiar una plantilla de escritorio virtual existente](#copy-an-existing-virtual-desktop-template)  
   
-### <a name="BKMK_CreateaTemplate"></a>Crear una plantilla para escritorios virtuales  
+### <a name="create-a-template-for-virtual-desktops"></a>Crear una plantilla para escritorios virtuales  
 Para poder crear una plantilla para los escritorios virtuales, debe habilitar la característica de Escritorio Virtual en MultiPoint Server.  
   
 ##### <a name="to-enable-the-virtual-desktop-feature"></a>Para habilitar la característica de Escritorio Virtual  
@@ -98,7 +98,7 @@ El siguiente paso es configurar la plantilla con el software y la configuración
 4.  Seleccione la plantilla que desee personalizar, haga clic en **Personalizar plantilla**y, a continuación, haga clic en **Aceptar**.  
   
     > [!NOTE]  
-    > Solo las plantillas que no se usaron para crear estaciones de escritorios virtuales están disponibles. Si desea actualizar una plantilla que ya está en uso, debe hacer una copia de la plantilla mediante el uso de la **Importar plantilla** tarea, se describe más adelante, en [copiar una plantilla existente de escritorio virtual](#BKMK_CopyExiistingVirtualDesktopTemplate).  
+    > Solo las plantillas que no se usaron para crear estaciones de escritorios virtuales están disponibles. Si desea actualizar una plantilla que ya está en uso, debe hacer una copia de la plantilla mediante el uso de la **Importar plantilla** tarea, se describe más adelante, en [copiar una plantilla existente de escritorio virtual](#copy-an-existing-virtual-desktop-template).  
   
     La plantilla se abre en un Hyper-V **conectar VM** ventana e inicio de sesión automático se realiza mediante la cuenta Administrador integrado.  
   
@@ -111,7 +111,7 @@ El siguiente paso es configurar la plantilla con el software y la configuración
   
 6.  Cuando termine de configurar el sistema, haga doble clic en el **CompleteCustomization** acceso directo en el escritorio del administrador para ejecutar Sysprep y, a continuación, cierre la plantilla. Durante la personalización, la herramienta Sysprep elimina toda la información única del sistema para preparar la instalación de Windows para crear la imagen.  
   
-### <a name="BKMK_CreateVirtualDesktopsfromTemplate"></a>Crear equipos de escritorio de máquina virtual de la plantilla  
+### <a name="create-virtual-machine-desktops-from-the-template"></a>Crear equipos de escritorio de máquina virtual de la plantilla  
 Con la plantilla de escritorio virtual configurada como desea que sus equipos de escritorio sea, está listo para empezar a crear escritorios virtuales. Para cada estación que está conectado al equipo de MultiPoint Server, se creará un escritorio virtual. La próxima vez que un usuario inicia sesión en una estación, verá el escritorio virtual en lugar del escritorio basado en sesión que se mostró antes.  
   
 > [!NOTE]  
@@ -141,7 +141,7 @@ Cuando se complete la tarea, cada estación local se conectará a un escritorio 
 > [!NOTE]  
 > Si una cuenta de usuario ha iniciado sesión en cualquiera de las estaciones locales, deberá cerrar la sesión para obtener la estación para conectarse a uno de los escritorios virtuales estación recién creado.  
   
-### <a name="BKMK_CopyExiistingVirtualDesktopTemplate"></a>Copiar una plantilla de escritorio virtual existente  
+### <a name="copy-an-existing-virtual-desktop-template"></a>Copiar una plantilla de escritorio virtual existente  
 Use el procedimiento siguiente para crear una copia de una plantilla de escritorio virtual existente que puede personalizar y usar. Esto puede ser útil en las situaciones siguientes:  
   
 -   Para copiar una plantilla maestra desde un recurso compartido de red en un equipo de MultiPoint Server host para que las estaciones de escritorios virtuales se pueden crear a partir de la plantilla principal.  

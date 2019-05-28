@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 98fd5d50645ad454204dcf9dabf58e97c246ab1a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7bdf30a4f721568add4e7902245da2a803b72db1
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853996"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475870"
 ---
 # <a name="enable-optimized-moves-of-redirected-folders"></a>Habilitar movimientos optimizadas de las carpetas redirigidas
 
->Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
+>Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server (canal semianual)
 
 Este tema describe cómo realizar un movimiento rápida optimizada de las carpetas redirigidas (redirección de carpetas) a un nuevo recurso compartido de archivos. Si habilita esta configuración de directiva, cuando un administrador mueve el recurso compartido de archivos hospeda las carpetas redirigidas y actualiza la ruta de acceso de destino de las carpetas redirigidas en la directiva de grupo, el contenido almacenado en caché simplemente cambia el nombre de la caché de archivos sin conexión local sin retrasos o posible pérdida de datos para el usuario.
 
@@ -28,7 +28,7 @@ Anteriormente, los administradores pueden cambiar la ruta de acceso de destino d
 Movimiento rápida optimizada tiene los siguientes requisitos:
 
 - Redirección de carpetas debe ser el programa de instalación. Para obtener más información, consulte [implementar la redirección de carpetas con archivos sin conexión](deploy-folder-redirection.md).
-- Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.
+- Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 o Windows Server (canal semianual).
 
 ## <a name="step-1-enable-optimized-move-in-group-policy"></a>Paso 1: Habilitar movimiento rápida optimizada de directiva de grupo
 

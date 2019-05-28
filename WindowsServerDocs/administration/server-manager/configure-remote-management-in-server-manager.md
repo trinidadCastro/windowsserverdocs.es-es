@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4a66fe7a274756de9bed9f6b14f5b9e491e5b623
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 63d90d52b55357b5de823f2ca5e0a9fa2a3468e6
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819586"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222988"
 ---
 # <a name="configure-remote-management-in-server-manager"></a>Configurar la administración remota en el administrador del servidor
 
@@ -38,35 +38,35 @@ Para administrar servidores que ejecutan versiones de Windows Server anterior a 
 
 Para obtener información detallada sobre cómo agregar servidores que están en grupos de trabajo para administrar o cómo administrar servidores remotos desde un equipo de grupo de trabajo que se está ejecutando el administrador del servidor, consulte [agregar servidores al administrador del servidor](add-servers-to-server-manager.md).
 
-## <a name="BKMK_remote"></a>Habilitar o deshabilitar la administración remota
+## <a name="enabling-or-disabling-remote-management"></a>Habilitar o deshabilitar la administración remota
 En Windows Server 2016, la administración remota está habilitada de forma predeterminada. Antes de poder conectarse a un equipo que se ejecuta Windows Server 2016 de forma remota mediante el administrador del servidor, el administrador del servidor de administración remota debe habilitarse en el equipo de destino si se ha deshabilitado. En los procedimientos de esta sección se describe cómo deshabilitar la administración remota y cómo volver a habilitarla si ha sido deshabilitada. En la consola de administrador del servidor, se muestra el estado de administración remota del servidor local en el **propiedades** área de la **servidor Local** página.
 
 Es posible que las cuentas de administrador local distintas de la cuenta predefinida de administrador no tengan derechos para administrar un servidor de forma remota, aunque la administración remota esté habilitada. El Control de cuentas de usuario (UAC) remoto **LocalAccountTokenFilterPolicy** configuración del registro debe configurarse para permitir que las cuentas locales del grupo administradores diferentes a la cuenta Administrador integrado para administrar de forma remota el servidor.
 
-En Windows Server 2016, el administrador del servidor se basa en la administración remota de Windows (WinRM) y el modelo de objetos de componentes distribuidos (DCOM) para las comunicaciones remotas. La configuración que se controla mediante el **configurar la administración remota** cuadro de diálogo solo afectan a partes del administrador del servidor y Windows PowerShell que usan WinRM para las comunicaciones remotas. No afectan a las partes del administrador del servidor que usan DCOM para las comunicaciones remotas. Por ejemplo, el administrador del servidor usa WinRM para comunicarse con servidores remotos que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012, pero usa DCOM para comunicarse con servidores que ejecutan Windows Server 2008 y Windows Server 2008 R2, pero no tienen la [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881) o [Windows Management Framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) actualizaciones aplicadas. Microsoft Management Console (mmc) y otras herramientas de administración heredadas usan DCOM. Para obtener más información acerca de cómo cambiar esta configuración, consulte [para configurar mmc u otra herramienta de administración remota con DCOM](#BKMK_dcom) en este tema.
+En Windows Server 2016, el administrador del servidor se basa en la administración remota de Windows (WinRM) y el modelo de objetos de componentes distribuidos (DCOM) para las comunicaciones remotas. La configuración que se controla mediante el **configurar la administración remota** cuadro de diálogo solo afectan a partes del administrador del servidor y Windows PowerShell que usan WinRM para las comunicaciones remotas. No afectan a las partes del administrador del servidor que usan DCOM para las comunicaciones remotas. Por ejemplo, el administrador del servidor usa WinRM para comunicarse con servidores remotos que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012, pero usa DCOM para comunicarse con servidores que ejecutan Windows Server 2008 y Windows Server 2008 R2, pero no tienen la [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkId=293881) o [Windows Management Framework 3.0](https://go.microsoft.com/fwlink/p/?LinkID=229019) actualizaciones aplicadas. Microsoft Management Console (mmc) y otras herramientas de administración heredadas usan DCOM. Para obtener más información acerca de cómo cambiar esta configuración, consulte [para configurar mmc u otra herramienta de administración remota con DCOM](#to-configure-mmc-or-other-tool-remote-management-over-dcom) en este tema.
 
 > [!NOTE]
 > Los procedimientos que se describen en esta sección pueden realizarse solo en equipos que ejecuten Windows Server. No se puede habilitar o deshabilitar la administración remota en un equipo que ejecuta Windows 10 mediante el uso de estos procedimientos, porque el sistema operativo cliente no puede administrarse mediante el administrador del servidor.
 
 -   Para habilitar la administración remota de WinRM, selecciona uno de los siguientes procedimientos
 
-    -   [Para habilitar la administración remota del administrador del servidor mediante la interfaz de Windows](#BKMK_windows)
+    -   [Para habilitar la administración remota del administrador del servidor mediante la interfaz de Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface)
 
-    -   [Para habilitar la administración remota del administrador del servidor mediante Windows PowerShell](#BKMK_ps)
+    -   [Para habilitar la administración remota del administrador del servidor mediante Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell)
 
-    -   [Para habilitar la administración remota del administrador del servidor mediante la línea de comandos](#BKMK_cmdline)
+    -   [Para habilitar la administración remota del administrador del servidor mediante la línea de comandos](#to-enable-server-manager-remote-management-by-using-the-command-line)
 
-    -   [Para habilitar la administración Server Manager y Windows PowerShell remoto en versiones anteriores de Windows Server](#BKMK_old)
+    -   [Para habilitar la administración Server Manager y Windows PowerShell remoto en versiones anteriores de Windows Server](#to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server)
 
 -   Para deshabilitar la administración remota de WinRM y el administrador del servidor, seleccione uno de los procedimientos siguientes.
 
-    -   [Para deshabilitar la administración remota mediante la directiva de grupo](#BKMK_disableGP)
+    -   [Para deshabilitar la administración remota mediante la directiva de grupo](#to-disable-remote-management-by-using-group-policy)
 
-    -   [Para deshabilitar la administración remota mediante el uso de un archivo de respuesta durante la instalación desatendida](#BKMK_unattend)
+    -   [Para deshabilitar la administración remota mediante el uso de un archivo de respuesta durante la instalación desatendida](#to-disable-remote-management-by-using-an-answer-file-during-unattended-installation)
 
--   Para configurar la administración remota de DCOM, consulta [To configure DCOM remote management](#BKMK_dcom).
+-   Para configurar la administración remota de DCOM, consulta [To configure DCOM remote management](#to-configure-mmc-or-other-tool-remote-management-over-dcom).
 
-### <a name="BKMK_windows"></a>Para habilitar la administración remota del administrador del servidor mediante la interfaz de Windows
+### <a name="to-enable-server-manager-remote-management-by-using-the-windows-interface"></a>Para configurar la administración remota del Administrador del servidor con la interfaz de Windows
 
 1.  > [!NOTE]
     > La configuración que se controla mediante el **configurar la administración remota** cuadro de diálogo no afectan a las partes del administrador del servidor que usan DCOM para las comunicaciones remotas.
@@ -81,7 +81,7 @@ En Windows Server 2016, el administrador del servidor se basa en la administraci
 
     -   Para permitir que este equipo a administrarse de forma remota mediante el administrador del servidor o Windows PowerShell, seleccione **habilitar la administración remota de este servidor desde otros equipos**.
 
-### <a name="BKMK_ps"></a>Para habilitar la administración remota del administrador del servidor mediante Windows PowerShell
+### <a name="to-enable-server-manager-remote-management-by-using-windows-powershell"></a>Para habilitar la administración remota del Administrador del servidor con Windows PowerShell
 
 1.  En el equipo que desea administrar de forma remota, realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.
 
@@ -93,7 +93,7 @@ En Windows Server 2016, el administrador del servidor se basa en la administraci
 
     **Configure-SMremoting.exe -enable**
 
-### <a name="BKMK_cmdline"></a>Para habilitar la administración remota del administrador del servidor mediante la línea de comandos
+### <a name="to-enable-server-manager-remote-management-by-using-the-command-line"></a>Para habilitar la administración remota del Administrador del servidor con la línea de comandos
 
 1.  En el equipo que desee administrar de forma remota, abra una sesión de símbolo del sistema con permisos de usuario elevados. Para ello, en el **iniciar** , escriba **cmd**, haga clic en el **símbolo** icono cuando se muestra en el **aplicaciones** resultados, y Haga clic en la barra de la aplicación, **ejecutar como administrador**.
 
@@ -109,17 +109,17 @@ En Windows Server 2016, el administrador del servidor se basa en la administraci
 
     -   Para ver la configuración actual de la administración remota, escriba **Configure-SMremoting.exe-get**, y, a continuación, presione ENTRAR.
 
-### <a name="BKMK_old"></a>Para habilitar la administración Server Manager y Windows PowerShell remoto en versiones anteriores de Windows Server
+### <a name="to-enable-server-manager-and-windows-powershell-remote-management-on-earlier-releases-of-windows-server"></a>Para habilitar la administración remota de Windows PowerShell y el Administrador del servidor en versiones anteriores de Windows Server
 
 -   Realiza una de las siguientes acciones:
 
-    -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2012, consulte [para habilitar la administración remota del administrador del servidor mediante la interfaz de Windows](#BKMK_windows) en este tema.
+    -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2012, consulte [para habilitar la administración remota del administrador del servidor mediante la interfaz de Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface) en este tema.
 
     -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2008 R2, consulte [con el administrador del servidor de administración remota](https://go.microsoft.com/fwlink/?LinkID=137378) en la Ayuda de Windows Server 2008 R2.
 
     -   Para habilitar la administración remota en servidores que ejecutan Windows Server 2008, consulte [habilitar y usar comandos remotos en Windows PowerShell](https://go.microsoft.com/fwlink/p/?LinkId=242565).
 
-### <a name="BKMK_dcom"></a>Para configurar mmc u otra herramienta de administración remota con DCOM
+### <a name="to-configure-mmc-or-other-tool-remote-management-over-dcom"></a>Para configurar mmc u otra herramienta de administración remota con DCOM
 
 1.  Realice una de las siguientes acciones para abrir el complemento Firewall de Windows con seguridad avanzada.
 
@@ -143,7 +143,7 @@ En Windows Server 2016, el administrador del servidor se basa en la administraci
 
 5.  Cierre el complemento Firewall de Windows con seguridad avanzada.
 
-### <a name="BKMK_disableGP"></a>Para deshabilitar la administración remota mediante la directiva de grupo
+### <a name="to-disable-remote-management-by-using-group-policy"></a>Para deshabilitar la administración remota con la directiva de grupo
 
 1.  Realice una de las siguientes acciones para abrir el editor de directivas de grupo Local.
 
@@ -157,7 +157,7 @@ En Windows Server 2016, el administrador del servidor se basa en la administraci
 
 4.  En el cuadro de diálogo de la configuración de directiva **Permitir la administración remota de servidores a través de WinRM** , seleccione **Deshabilitado** para deshabilitar la administración remota. Haga clic en **Aceptar** para guardar los cambios y cerrar el cuadro de diálogo de la configuración de directiva.
 
-### <a name="BKMK_unattend"></a>Para deshabilitar la administración remota mediante el uso de un archivo de respuesta durante la instalación desatendida
+### <a name="to-disable-remote-management-by-using-an-answer-file-during-unattended-installation"></a>Para deshabilitar la administración remota con un archivo de respuesta durante una instalación desatendida
 
 1.  crear un archivo de respuesta de instalación desatendida para las instalaciones de Windows Server 2016 mediante el Administrador de imágenes de sistema de Windows (Windows SIM). Para obtener más información acerca de cómo crear un archivo de respuesta y usar Windows SIM, consulte [¿qué es el Administrador de imágenes de sistema de Windows?](https://technet.microsoft.com/library/cc766347.aspx) y [paso a paso: Implementación básica de Windows para profesionales de TI](https://technet.microsoft.com/library/dd349348.aspx).
 
@@ -166,7 +166,7 @@ En Windows Server 2016, el administrador del servidor se basa en la administraci
 3.  Para deshabilitar la administración remota del administrador del servidor de forma predeterminada en todos los servidores a la que desea aplicar el archivo de respuesta, establezca **Microsoft-Windows-Web-Services-for-Management-Core \EnableServerremoteManagement** a **False** .
 
     > [!NOTE]
-    > Esta configuración deshabilita la administración remota como parte del proceso de instalación del sistema operativo. Esta configuración impedirá que un administrador habilite la administración remota del administrador del servidor en un servidor una vez completada la instalación del sistema operativo. Los administradores pueden habilitar la administración remota de nuevo mediante los pasos en el administrador del servidor [para configurar la administración remota del administrador del servidor mediante la interfaz de Windows](#BKMK_windows) o [para habilitar la administración remota del administrador del servidor mediante Windows PowerShell](#BKMK_ps) en este tema.
+    > Esta configuración deshabilita la administración remota como parte del proceso de instalación del sistema operativo. Esta configuración impedirá que un administrador habilite la administración remota del administrador del servidor en un servidor una vez completada la instalación del sistema operativo. Los administradores pueden habilitar la administración remota de nuevo mediante los pasos en el administrador del servidor [para configurar la administración remota del administrador del servidor mediante la interfaz de Windows](#to-enable-server-manager-remote-management-by-using-the-windows-interface) o [para habilitar la administración remota del administrador del servidor mediante Windows PowerShell](#to-enable-server-manager-remote-management-by-using-windows-powershell) en este tema.
     > 
     > Si deshabilitar la administración remota de forma predeterminada como parte de una instalación desatendida y no habilite la administración remota en el servidor nuevo tras la instalación, los servidores a la que se aplique este archivo de respuesta no pueden ser totalmente administrados mediante el administrador del servidor. Los servidores que ejecutan Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 (y que tienen la administración remota habilitada de forma predeterminada) generan errores de estado de manejabilidad en la consola de administrador del servidor después de agregarlos al servidor de administrador del servidor grupo.
 

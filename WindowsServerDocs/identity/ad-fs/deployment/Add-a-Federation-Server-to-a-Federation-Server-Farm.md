@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d67f4c252ad25a05f11b88771f12fd01d13137d4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 040caf6395b7c70313de900d522241f97699a999
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880396"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192503"
 ---
 # <a name="add-a-federation-server-to-a-federation-server-farm"></a>Agregar un servidor de federación a una granja de servidores de federación
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Después de instalar el servicio de rol Servicio de federación y configurar los certificados necesarios en un equipo, está listo para configurar el equipo para convertirse en un servidor de federación. Puede realizar el siguiente procedimiento para unir un equipo a una nueva granja de servidores de federación.  
   
@@ -54,6 +53,6 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 6.  En la página **Resultados de la configuración** , comprueba los resultados. Cuando haya finalizado todos los pasos de configuración, haga clic en **Cerrar**  para salir del asistente.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Cómo configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

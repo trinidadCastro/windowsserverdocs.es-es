@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: bc54b1e33d09e7f2b9eea01e4f09fb83f13dc1af
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8684926beb0f0c911ac384970d15ba7d25f84079
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832886"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475929"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>Habilitar el modo siempre sin conexión para acelerar el acceso a archivos
 
->Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
+>Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2 y Windows (canal semianual)
 
 Este documento describe cómo usar el modo siempre sin conexión de archivos sin conexión para proporcionar un acceso más rápido a los archivos almacenados en caché y las carpetas redirigidas. Siempre sin conexión también proporciona el uso de ancho de banda inferior porque los usuarios siempre están trabajando sin conexión, incluso cuando están conectados a través de una conexión de red de alta velocidad.
 

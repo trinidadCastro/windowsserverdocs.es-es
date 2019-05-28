@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8013764b88a1061cfcaa3a507466c111bfd59aad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e61c734780baa1482670af3f24697c10345b292
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864816"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190588"
 ---
 # <a name="when-to-create-a-federation-server"></a>Cuándo se debe crear un servidor de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Cuando creas un Servidorde federación Active Directory Federation Services \(AD FS\), proporcionan un medio por el que su organización puede:  
   
@@ -38,9 +36,9 @@ Cuando un servidor de federación se coloca en la red corporativa del asociado d
 ## <a name="determine-which-ad-fs-design-to-deploy"></a>Determinar qué diseño de AD FS implementar  
 Crear servidores de federación de su organización siempre que desee implementar cualquiera de los diseños AD FS:  
   
--   [Diseño de SSO Web](Web-SSO-Design.md)  
+-   [Diseño de SSO web](Web-SSO-Design.md)  
   
--   [Diseño de SSO Web federado](Federated-Web-SSO-Design.md)  
+-   [Diseño de SSO web federado](Federated-Web-SSO-Design.md)  
   
 Si es necesario, una organización que implementa un diseño SSO Web federado puede configurar un servidor de federación único para que actúe en ambos el rol de asociado de cuenta y en el rol de asociado de recurso. En este caso, el servidor de federación puede generar el lenguaje de marcado de aserción de seguridad \(SAML\) tokens, basándose en las cuentas de usuario en su propia organización o volver a enrutar las solicitudes de token a la organización, según donde residen las cuentas de los usuarios .  
   
@@ -79,5 +77,5 @@ Para obtener más información detallada acerca de cómo funciona cada una de es
 Para obtener más información acerca de cómo configurar todos los requisitos previos necesarios para implementar un servidor de federación, consulte [lista de comprobación: Configuración de un servidor de federación](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md).  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
 

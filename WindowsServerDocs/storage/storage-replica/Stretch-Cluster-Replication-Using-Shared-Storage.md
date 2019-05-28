@@ -6,18 +6,18 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 10/26/2016
+ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: 18c3c694e1d2e21a7068877ba22786862824bea6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc49674d518756424acc02bd5b830c361c7400df
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888376"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772429"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>Replicación de clúster extendido con almacenamiento compartido
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 En este ejemplo de evaluación, configurará estos equipos y su almacenamiento en un único clúster extendido, donde dos nodos comparten un conjunto de almacenamiento y dos nodos comparten otro conjunto de almacenamiento; luego, la replicación conserva ambos conjuntos de almacenamiento reflejados en el clúster para permitir la conmutación por error inmediata. Estos nodos y su almacenamiento deberían encontrarse en distintos sitios físicos, aunque no es necesario. Existen pasos independientes para crear clústeres de Hyper-V y de servidor de archivos como escenarios de ejemplo.  
 
@@ -40,7 +40,7 @@ En este tutorial se utiliza como ejemplo el siguiente entorno:
 
 ## <a name="prerequisites"></a>Requisitos previos  
 -   Bosque de Active Directory Domain Services (no es necesario ejecutar Windows Server 2016).  
--   Dos servidores, como mínimo, que tengan instalado Windows Server 2016 Datacenter Edition. Admite hasta 64 clústeres de nodos.  
+-   2-64 de los servidores que ejecutan Windows Server 2019 o Windows Server 2016 Datacenter Edition. Si está ejecutando Windows Server 2019, en su lugar, puede usar Standard Edition si está replicando Aceptar sólo un único volumen hasta 2 TB de tamaño. 
 -   Dos conjuntos de almacenamiento compartido, mediante JBOD de SAS (como con Espacios de almacenamiento), SAN de canal de fibra, VHDX compartido o destino iSCSI. El almacenamiento debe contener una combinación de medios de HDD y SSD y debe ser compatible con la reserva persistente. Pondrá cada conjunto de almacenamiento a disposición de solo dos de los servidores (modo asimétrico).  
 -   Cada conjunto de almacenamiento debe permitir la creación de al menos dos discos virtuales, uno para datos replicados y otro para registros. El almacenamiento físico debe tener los mismos tamaños de sector en todos los discos de datos. El almacenamiento físico debe tener los mismos tamaños de sector en todos los discos de registro.  
 -   Al menos una conexión de 1 GbE en cada servidor para replicación sincrónica, pero preferiblemente RDMA.   
@@ -53,7 +53,7 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
 
 ## <a name="provision-operating-system-features-roles-storage-and-network"></a>Aprovisionamiento de sistema operativo, características, roles, almacenamiento y red  
 
-1.  Instale Windows Server 2016 Datacenter Edition en todos los nodos de servidor. No elijas la edición Standard si está disponible, ya que no contiene Réplica de almacenamiento. El uso de los modos de instalación de Experiencia de escritorio de Windows Server, Core y Nano se admite en todo caso.  
+1.  Instale a Windows Server en todos los nodos de servidor, con el servidor principal o el servidor con las opciones de instalación de experiencia de escritorio.  
     > [!IMPORTANT]
     > A partir de este punto, inicie sesión siempre como un usuario de dominio que sea miembro del grupo de administradores integrado en todos los servidores. Recuerde siempre elevar sus solicitudes de CMD y PowerShell en el futuro cuando se ejecute en una instalación de servidor gráfico o en un equipo de Windows 10.
 
@@ -92,7 +92,7 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
 
         ```  
 
-        Para más información sobre estos pasos, consulte [Instalación o desinstalación de roles, servicios de rol o características](https://technet.microsoft.com/library/hh831809.aspx).  
+        Para más información sobre estos pasos, consulte [Instalación o desinstalación de roles, servicios de rol o características](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md).  
 
 
 8. Configure el almacenamiento como sigue:  
@@ -114,13 +114,13 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
 
         1.  Asegúrese de que cada conjunto de nodos de servidor emparejados pueda ver solo contenedores de almacenamiento de ese sitio (es decir, que tenga almacenamiento asimétrico) y que las conexiones de SAS estén configuradas correctamente.  
 
-        2.  Aprovisione el almacenamiento con Espacios de almacenamiento siguiendo **los pasos 1 a 3** especificados en [Implementar Espacios de almacenamiento en un servidor independiente](https://technet.microsoft.com/library/jj822938.aspx) por medio de Windows PowerShell o el Administrador del servidor.  
+        2.  Aprovisione el almacenamiento con Espacios de almacenamiento siguiendo **los pasos 1 a 3** especificados en [Implementar Espacios de almacenamiento en un servidor independiente](../storage-spaces/deploy-standalone-storage-spaces.md) por medio de Windows PowerShell o el Administrador del servidor.  
 
     -   **Para el almacenamiento iSCSI:**  
 
         1.  Asegúrese de que cada conjunto de nodos de servidor emparejados puedan ver solo contenedores de almacenamiento de ese sitio (es decir, que tengan almacenamiento asimétrico). Debe usar más de un único adaptador de red si utiliza iSCSI.  
 
-        2.  Aprovisiona el almacenamiento mediante la documentación del proveedor. Si usa destinos iSCSI basados en Windows, consulte [Procedimientos de almacenamiento de bloque de destino iSCSI](https://technet.microsoft.com/library/hh848268.aspx).  
+        2.  Aprovisiona el almacenamiento mediante la documentación del proveedor. Si usa destinos iSCSI basados en Windows, consulte [Procedimientos de almacenamiento de bloque de destino iSCSI](../iscsi/iscsi-target-server.md).  
 
     -   **Para el almacenamiento SAN de FC:**  
 
@@ -139,7 +139,7 @@ Después de configurar los nodos del servidor, el siguiente paso es crear uno de
 >[!NOTE]
 > Omita esta sección y vaya a [Configuración de un servidor de archivos para clúster de uso general](#BKMK_FileServer) si desea crear un clúster de servidor de archivos y no un clúster de Hyper-V.  
 
-Ahora creará un clúster de conmutación por error normal. Después de la configuración, la validación y las pruebas, lo extenderá mediante Réplica de almacenamiento. Puedes realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de RSAT de Windows Server 2016.  
+Ahora creará un clúster de conmutación por error normal. Después de la configuración, la validación y las pruebas, lo extenderá mediante Réplica de almacenamiento. Puede realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server.  
 
 #### <a name="graphical-method"></a>Método gráfico  
 
@@ -150,15 +150,15 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
     > [!NOTE]  
     > Es de esperar que aparezcan errores de almacenamiento en la validación del clúster, debido al uso del almacenamiento asimétrico.  
 
-3.  Cree el clúster de proceso de Hyper-V. Asegúrese de que el nombre del clúster contiene 15 caracteres o menos. En el ejemplo a continuación se usa SR-SRVCLUS. Si los nodos se van a residir en diferentes subredes, debe crear una dirección IP para el nombre del clúster para cada subred y utilizar la dependencia "O".  Puede encontrar más información en [configurar direcciones IP y las dependencias de clústeres de múltiples subredes: parte III](https://blogs.msdn.microsoft.com/clustering/2011/08/31/configuring-ip-addresses-and-dependencies-for-multi-subnet-clusters-part-iii/).  
+3.  Cree el clúster de proceso de Hyper-V. Asegúrese de que el nombre del clúster contiene 15 caracteres o menos. En el ejemplo a continuación se usa SR-SRVCLUS. Si los nodos se van a residir en diferentes subredes, debe crear una dirección IP para el nombre del clúster para cada subred y utilizar la dependencia "O".  Puede encontrar más información en [configurar direcciones IP y las dependencias de clústeres de múltiples subredes: parte III](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698).  
 
 4.  Configure un testigo de recurso compartido de archivos o un testigo de nube para proporcionar el cuórum en caso de pérdida del sitio.  
 
     > [!NOTE]  
-    > Windows Server 2016 incluye ahora una opción para un testigo basado en la nube (Azure). Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
+    > WIndows Server incluye ahora una opción para la nube (Azure)-testigo basado en. Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
 
     > [!WARNING]  
-    > Para más información sobre la configuración de cuórum, consulta la sección Configuración de testigos de la guía [Configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulta [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx).  
+    > Para más información sobre la configuración de cuórum, consulta la sección Configuración de testigos de la guía [Configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulta [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).  
 
 5.  Revisa [Recomendaciones de red para un clúster de Hyper-V en Windows Server 2012](https://technet.microsoft.com/library/dn550728.aspx) y asegúrate de haber configurado las redes en clúster de forma óptima.  
 
@@ -172,14 +172,14 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 
 9. Inicie Windows PowerShell y use el cmdlet `Test-SRTopology` para determinar si se cumplen todos los requisitos de Réplica de almacenamiento.  
 
-    Por ejemplo, para validar dos de los nodos de clúster extendido propuestos, donde cada uno tiene un volumen **F:** y **G:**, y ejecutar la prueba durante 30 minutos:
+    Por ejemplo, para validar dos de los nodos de clúster extendido propuestos, donde cada uno tiene un volumen **F:** y **G:** , y ejecutar la prueba durante 30 minutos:
     1. Mueva todo el almacenamiento disponible a **SR-SRV01**.
     2. Haga clic en **Crear rol vacío** en la sección **Roles** del Administrador de clústeres de conmutación por error.
     3. Agregue el almacenamiento en línea a ese rol vacío denominado **Nuevo rol**.
     4. Mueva todo el almacenamiento disponible a **SR-SRV03**.
     5. Haga clic en **Crear rol vacío** en la sección **Roles** del Administrador de clústeres de conmutación por error.
     6. Mueva el **Nuevo rol (2)** vacío a **SR-SRV03**.
-    7. Agregue el almacenamiento en línea a ese rol vacío denominado **Nuevo rol (2)**.
+    7. Agregue el almacenamiento en línea a ese rol vacío denominado **Nuevo rol (2)** .
     8. Ahora ha montado todo el almacenamiento con letras de unidad, y puede evaluar el clúster con `Test-SRTopology`.
 
         Por ejemplo:
@@ -242,12 +242,13 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
     > [!NOTE]
     >  Es de esperar que aparezcan errores de almacenamiento en la validación del clúster, debido al uso del almacenamiento asimétrico.  
 
-2.  Cree el clúster de proceso de Hyper-V (debe especificar su propia dirección IP estática que usará el clúster). Asegúrese de que el nombre del clúster contiene 15 caracteres o menos.  Si los nodos se encuentran en subredes diferentes, que una dirección IP para el sitio adicional debe crearse con la dependencia "OR". Puede encontrar más información en [configurar direcciones IP y las dependencias de clústeres de múltiples subredes: parte III](https://blogs.msdn.microsoft.com/clustering/2011/08/31/configuring-ip-addresses-and-dependencies-for-multi-subnet-clusters-part-iii/).
+2.  Cree el clúster de proceso de Hyper-V (debe especificar su propia dirección IP estática que usará el clúster). Asegúrese de que el nombre del clúster contiene 15 caracteres o menos.  Si los nodos se encuentran en subredes diferentes, que una dirección IP para el sitio adicional debe crearse con la dependencia "OR". Puede encontrar más información en [configurar direcciones IP y las dependencias de clústeres de múltiples subredes: parte III](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698).
 ```PowerShell  
 New-Cluster -Name SR-SRVCLUS -Node SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04 -StaticAddress <your IP here>  
 Add-ClusterResource -Name NewIPAddress -ResourceType “IP Address” -Group “Cluster Group”
 Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
 ```  
+
 3.  Configure un testigo de recurso compartido de archivos o un testigo en la nube (Azure) en el clúster que apunta a un recurso compartido hospedado en el controlador de dominio o algún otro tipo de servidor independiente. Por ejemplo:  
 
     ```PowerShell  
@@ -255,9 +256,9 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
     ```  
 
     > [!NOTE]
-    > Windows Server 2016 incluye ahora una opción para un testigo basado en la nube (Azure). Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
+    > WIndows Server incluye ahora una opción para la nube (Azure)-testigo basado en. Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
     
-    Para más información sobre la configuración de cuórum, consulta la sección Configuración de testigos de la guía [Configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulta [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx).  
+    Para más información sobre la configuración de cuórum, consulta la sección Configuración de testigos de la guía [Configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para más información sobre el cmdlet `Set-ClusterQuorum`, consulta [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).  
 
 4.  Revisa [Recomendaciones de red para un clúster de Hyper-V en Windows Server 2012](https://technet.microsoft.com/library/dn550728.aspx) y asegúrate de haber configurado las redes en clúster de forma óptima.  
 
@@ -304,7 +305,7 @@ Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Clust
 >[!NOTE]
 > Omita esta sección si ya ha configurado un clúster de conmutación por error de Hyper-V como se describe en [Configuración de un clúster de conmutación por error de Hyper-V](#BKMK_HyperV).  
 
-Ahora creará un clúster de conmutación por error normal. Después de la configuración, la validación y las pruebas, lo extenderá mediante Réplica de almacenamiento. Puedes realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de RSAT de Windows Server 2016.  
+Ahora creará un clúster de conmutación por error normal. Después de la configuración, la validación y las pruebas, lo extenderá mediante Réplica de almacenamiento. Puede realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server.  
 
 #### <a name="graphical-method"></a>Método gráfico  
 
@@ -313,13 +314,13 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 2.  Valida el clúster propuesto y analice los resultados para asegurarse de que puedes continuar.  
     >[!NOTE]
     >Es de esperar que aparezcan errores de almacenamiento en la validación del clúster, debido al uso del almacenamiento asimétrico.   
-3. Cree el servidor de archivos para el clúster de almacenamiento de uso general. Asegúrese de que el nombre del clúster contiene 15 caracteres o menos. En el ejemplo a continuación se usa SR-SRVCLUS.  Si los nodos se van a residir en diferentes subredes, debe crear una dirección IP para el nombre del clúster para cada subred y utilizar la dependencia "O".  Puede encontrar más información en [configurar direcciones IP y las dependencias de clústeres de múltiples subredes: parte III](https://blogs.msdn.microsoft.com/clustering/2011/08/31/configuring-ip-addresses-and-dependencies-for-multi-subnet-clusters-part-iii/).  
+3. Cree el servidor de archivos para el clúster de almacenamiento de uso general. Asegúrese de que el nombre del clúster contiene 15 caracteres o menos. En el ejemplo a continuación se usa SR-SRVCLUS.  Si los nodos se van a residir en diferentes subredes, debe crear una dirección IP para el nombre del clúster para cada subred y utilizar la dependencia "O".  Puede encontrar más información en [configurar direcciones IP y las dependencias de clústeres de múltiples subredes: parte III](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698).  
 
 4.  Configure un testigo de recurso compartido de archivos o un testigo de nube para proporcionar el cuórum en caso de pérdida del sitio.  
     >[!NOTE]
-    > Windows Server 2016 incluye ahora una opción para un testigo basado en la nube (Azure). Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.                                                                                                                                                                             
+    > WIndows Server incluye ahora una opción para la nube (Azure)-testigo basado en. Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.                                                                                                                                                                             
     >[!NOTE]
-    >  Para más información sobre la configuración de cuórum, consulta la sección Configuración de testigos de la guía [Configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para obtener más información sobre el cmdlet Set-ClusterQuorum, consulta [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx). 
+    >  Para más información sobre la configuración de cuórum, consulta la sección Configuración de testigos de la guía [Configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para obtener más información sobre el cmdlet Set-ClusterQuorum, consulta [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum). 
 
 5.  Si vas a crear un clúster extendido de 2 nodos, debes agregar todo el almacenamiento antes de continuar. Para ello, abra una sesión de PowerShell con permisos administrativos en los nodos del clúster y ejecute el siguiente comando: `Get-ClusterAvailableDisk -All | Add-ClusterDisk`.
 
@@ -365,33 +366,40 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 
 16.  (Opcional) Configure redes en clúster y Active Directory para una conmutación por error de sitio DNS más rápida. Puedes utilizar VLAN extendidas, dispositivos de abstracción de red, TTL de DNS reducido y otras técnicas habituales.  
 
-    Para más información, revise la sesión de Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Extensión de clústeres de conmutación por error y uso de la réplica de almacenamiento en Windows Server vNext](http://channel9.msdn.com/events/ignite/2015/brk3487) y [Enable Change Notifications between Sites - How and Why? (Habilitar las notificaciones de cambio entre sitios: ¿cómo y por qué?)](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).    
+Para más información, revise la sesión de Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Extensión de clústeres de conmutación por error y uso de la réplica de almacenamiento en Windows Server vNext](http://channel9.msdn.com/events/ignite/2015/brk3487) y [Enable Change Notifications between Sites - How and Why? (Habilitar las notificaciones de cambio entre sitios: ¿cómo y por qué?)](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).    
 
-#### <a name="powershell-method"></a>Método de PowerShell  
+#### <a name="powershell-method"></a>Método de PowerShell
+
 1. Prueba el clúster propuesto y analiza los resultados para asegurarse de que puedes continuar:    
 
-        Test-Cluster SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04  
+    ```PowerShell
+    Test-Cluster SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04
+    ```
 
     > [!NOTE]
     >  Es de esperar que aparezcan errores de almacenamiento en la validación del clúster, debido al uso del almacenamiento asimétrico.   
 
-2.  Cree el clúster de proceso de Hyper-V (debe especificar su propia dirección IP estática que usará el clúster). Asegúrese de que el nombre del clúster contiene 15 caracteres o menos.  Si los nodos se encuentran en subredes diferentes, que una dirección IP para el sitio adicional debe crearse con la dependencia "OR". Puede encontrar más información en [configurar direcciones IP y las dependencias de clústeres de múltiples subredes: parte III](https://blogs.msdn.microsoft.com/clustering/2011/08/31/configuring-ip-addresses-and-dependencies-for-multi-subnet-clusters-part-iii/).  
+2.  Cree el clúster de proceso de Hyper-V (debe especificar su propia dirección IP estática que usará el clúster). Asegúrese de que el nombre del clúster contiene 15 caracteres o menos.  Si los nodos se encuentran en subredes diferentes, que una dirección IP para el sitio adicional debe crearse con la dependencia "OR". Puede encontrar más información en [configurar direcciones IP y las dependencias de clústeres de múltiples subredes: parte III](https://techcommunity.microsoft.com/t5/Failover-Clustering/Configuring-IP-Addresses-and-Dependencies-for-Multi-Subnet/ba-p/371698).  
 
-        New-Cluster -Name SR-SRVCLUS -Node SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04 -StaticAddress <your IP here> 
+    ```PowerShell
+    New-Cluster -Name SR-SRVCLUS -Node SR-SRV01, SR-SRV02, SR-SRV03, SR-SRV04 -StaticAddress <your IP here> 
 
-        Add-ClusterResource -Name NewIPAddress -ResourceType “IP Address” -Group “Cluster Group”
+    Add-ClusterResource -Name NewIPAddress -ResourceType “IP Address” -Group “Cluster Group”
 
-        Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
+    Set-ClusterResourceDependency -Resource “Cluster Name” -Dependency “[Cluster IP Address] or [NewIPAddress]”
+    ```
 
 
 3. Configure un testigo de recurso compartido de archivos o un testigo en la nube (Azure) en el clúster que apunta a un recurso compartido hospedado en el controlador de dominio o algún otro tipo de servidor independiente. Por ejemplo:  
 
-       Set-ClusterQuorum -FileShareWitness \\someserver\someshare  
+    ```PowerShell
+    Set-ClusterQuorum -FileShareWitness \\someserver\someshare
+    ```
 
     >[!NOTE]
-    > Windows Server 2016 incluye ahora una opción para un testigo basado en la nube (Azure). Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
+    > Windows Server incluye ahora una opción para el testigo en la nube con Azure. Puedes elegir esta opción de cuórum en lugar del testigo de recurso compartido de archivos.  
 
-   Para más información sobre la configuración de cuórum, consulta la sección Configuración de testigos de la guía [Configurar y administrar el cuórum en un clúster de conmutación por error de Windows Server 2012](https://technet.microsoft.com/library/jj612870.aspx). Para obtener más información sobre el cmdlet Set-ClusterQuorum, consulta [Set-ClusterQuorum](https://technet.microsoft.com/library/hh847275.aspx).   
+   Para obtener más información acerca de la configuración de quórum, vea el [quórum de clúster y grupo descripción](../storage-spaces/understand-quorum.md). Para obtener más información sobre el cmdlet Set-ClusterQuorum, consulta [Set-ClusterQuorum](https://docs.microsoft.com/powershell/module/failoverclusters/set-clusterquorum).
 
 4.  Si vas a crear un clúster extendido de 2 nodos, debes agregar todo el almacenamiento antes de continuar. Para ello, abra una sesión de PowerShell con permisos administrativos en los nodos del clúster y ejecute el siguiente comando: `Get-ClusterAvailableDisk -All | Add-ClusterDisk`.
 
@@ -399,16 +407,16 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 
 5. Asegúrate de haber configurado las redes en clúster de forma óptima.  
 
-6.  Configure un rol Servidor de archivos. Por ejemplo:   
+6.  Configure un rol Servidor de archivos. Por ejemplo:
 
-        ```PowerShell  
-        Get-ClusterResource  
-        Add-ClusterFileServerRole -Name SR-CLU-FS2 -Storage "Cluster Disk 4"  
+    ```PowerShell  
+    Get-ClusterResource  
+    Add-ClusterFileServerRole -Name SR-CLU-FS2 -Storage "Cluster Disk 4"  
 
-        MD e:\share01  
+    MD e:\share01  
 
-        New-SmbShare -Name Share01 -Path f:\share01 -ContinuouslyAvailable $false  
-        ```
+    New-SmbShare -Name Share01 -Path f:\share01 -ContinuouslyAvailable $false  
+    ```
 
 7. Configure el reconocimiento de sitios de clúster extendido para que los servidores SR-SRV01 y SR-SRV02 estén en el sitio Redmond, SR-SRV03 y SRV04 SR estén en el sitio Bellevue, y Redmond sea el preferido para tener la propiedad del nodo de almacenamiento de origen y las máquinas virtuales:  
 
@@ -430,7 +438,7 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
     Para más información, revise la sesión de Microsoft Ignite: [Stretching Failover Clusters and Using Storage Replica in Windows Server vNext (Extensión de clústeres de conmutación por error y uso de la réplica de almacenamiento en Windows Server vNext](http://channel9.msdn.com/events/ignite/2015/brk3487) y [Enable Change Notifications between Sites - How and Why? (Habilitar las notificaciones de cambio entre sitios: ¿cómo y por qué?)](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).
 
 ### <a name="configure-a-stretch-cluster"></a>Configuración de un clúster extendido  
-Ahora va a configurar el clúster extendido mediante el Administrador de clústeres de conmutación por error o Windows PowerShell. Puedes realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de RSAT de Windows Server 2016.  
+Ahora va a configurar el clúster extendido mediante el Administrador de clústeres de conmutación por error o Windows PowerShell. Puede realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server.  
 
 #### <a name="failover-cluster-manager-method"></a>Método del Administrador de clústeres de conmutación por error  
 
@@ -622,7 +630,7 @@ Si se replica la carga de un recurso de disco físico (PDR) como Servidor de arc
     ```  
 
 ### <a name="manage-stretched-cluster-replication"></a>Administración de la replicación de clúster extendido  
-Ahora podrá administrar y hacer funcionar su clúster extendido. Puedes realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de RSAT de Windows Server 2016.  
+Ahora podrá administrar y hacer funcionar su clúster extendido. Puede realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server.  
 
 #### <a name="graphical-tools-method"></a>Método de herramientas gráficas  
 
@@ -658,7 +666,7 @@ Ahora podrá administrar y hacer funcionar su clúster extendido. Puedes realiza
         > [!NOTE]
         > La réplica de almacenamiento desmonta los volúmenes de destino. Esto es así por diseño.  
 
-4.  Para cambiar el tamaño del registro del valor predeterminado de 8 GB en Windows Server 2016, haga clic con el botón derecho en los discos de registro de origen y destino, haga clic en la pestaña **Registro de replicación** y, después, cambie el tamaño de los discos para que coincidan.  
+4.  Para cambiar el tamaño del registro el valor predeterminado de 8GB, haga clic en los discos de registro de origen y destino, haga clic en el **Log de replicación** y, después, cambie el tamaño de los discos para hacer coincidir.  
 
     > [!NOTE]  
     > El tamaño de registro predeterminado es 8 GB. Según los resultados del cmdlet `Test-SRTopology`, puede decidir usar `-LogSizeInBytes` con un valor superior o inferior.  
@@ -737,7 +745,7 @@ Ahora podrá administrar y hacer funcionar su clúster extendido. Puedes realiza
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Número de mensajes enviados  
 
-    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](https://technet.microsoft.com/library/hh849685.aspx).  
+    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter).  
 
 3.  Para modificar el origen y el destino de la replicación en el clúster extendido, use los métodos siguientes:  
 
@@ -762,7 +770,7 @@ Ahora podrá administrar y hacer funcionar su clúster extendido. Puedes realiza
         > [!NOTE]  
         > La réplica de almacenamiento desmonta los volúmenes de destino. Esto es así por diseño.  
 
-4.  Para cambiar el tamaño del registro del valor predeterminado de 8 GB en Windows Server 2016, use **Set-SRGroup** en grupos de Réplica de almacenamiento de origen y de destino.   Por ejemplo, para establecer todos los registros en 2 GB:  
+4.  Para cambiar el tamaño del registro el valor predeterminado de 8GB, use **Set-SRGroup** en grupos de réplica de almacenamiento de origen y destino.   Por ejemplo, para establecer todos los registros en 2 GB:  
 
     ```PowerShell  
     Get-SRGroup | Set-SRGroup -LogSizeInBytes 2GB  

@@ -11,25 +11,67 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/06/2018
+ms.date: 05/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0722ee739a9e2ed429018d3a311cceeeb4ec2d9b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e2b79a1f914bdbc971299493ca00680e2504fbd3
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827306"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476030"
 ---
 # <a name="whats-new-for-the-remote-desktop-client-on-android"></a>Novedades del cliente de escritorio remoto en Android
 
 Se actualiza con regularidad el [cliente de escritorio remoto para Android](remote-desktop-android.md), agregar nuevas características y solución de problemas. Consulte las actualizaciones más recientes a continuación.
 
+## <a name="updates-for-version-8170"></a>Actualizaciones de versión 8.1.70
+
+*Fecha de publicación: 05/06/2019*
+
+- Solucionar problemas que causaron el contenido no tener un tamaño de sesión correctamente en los dispositivos con pantalla muesca.
+- Se ha corregido un problema donde la tecla ENTRAR no funciona en algunos dispositivos Chromebook.
+- Se ha corregido un problema donde no se ha cargado alguna dirección URL de fuente recurso remoto.
+
+## <a name="updates-for-version-8169"></a>Actualizaciones de versión 8.1.69
+
+*Fecha de publicación: 04/22/2019*
+
+- Mejoras y correcciones de errores menores.
+
+## <a name="updates-for-version-8168"></a>Actualizaciones de versión 8.1.68
+
+*Fecha de publicación: 04/15/2019*
+
+- Se ha corregido un problema donde no se ha cargado la dirección URL de fuente recurso remoto.
+- Se ha corregido un problema donde se inició la aplicación de tamaño de teléfono en iniciarse por primera vez en Samsung DeX que ejecutan Android 9.0.
+- Actualiza el icono de la aplicación.
+- Correcciones de errores adicionales.
+
+## <a name="updates-for-version-8167"></a>Actualizaciones de versión 8.1.67
+
+*Fecha de publicación: 03/28/2019*
+
+- Se ha corregido un problema donde se repitieron pulsaciones de teclas al escribir en una sesión remota.
+
+## <a name="updates-for-version-8166"></a>Actualizaciones de versión 8.1.66
+
+*Fecha de publicación: 03/19/2019*
+
+- Agrega compatibilidad inicial para [Escritorio Virtual de Windows](https://aka.ms/wvd).
+- Se ha corregido un problema que provocaba un área negra que se mostrará en la parte inferior de la pantalla en algunos escenarios de DeX y dispositivos Chromebook.
+- Compatibilidad con modo envolvente Samsung DeX, ocultar la barra de tareas de la parte inferior.
+- Se agregó compatibilidad para el envío de claves de metadatos y Alt desde el teclado físico a la sesión remota para Samsung DeX.
+- Las actualizaciones de ahora del puntero del mouse en función del contenido de la sesión remota (Android 7.0 +)
+- Correcciones de errores adicionales.
+
 ## <a name="updates-for-version-8161"></a>Actualizaciones de versión 8.1.61
+
 *Fecha de publicación: 07/05/2018*
 
 - Se agregó compatibilidad inicial para Samsung DeX (Android 8.0 +).
 
 ## <a name="updates-for-version-8160"></a>Actualizaciones de versión 8.1.60
+
 *Fecha de publicación: 04/30/2018*
 
 - Actualizaciones para tratar la corrección de oracle cifrado CredSSP que se describe en CVE-2018-0886.

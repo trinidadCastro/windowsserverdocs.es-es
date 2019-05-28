@@ -4,25 +4,30 @@ description: Una descripción general de las nuevas funciones de Windows Server 
 ms.prod: windows-server-threshold
 ms.technology: server-general
 ms.topic: article
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 ms.localizationpriority: high
-ms.openlocfilehash: 4c454fc397b662e313d5cfb7ed02a83dc7059207
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.date: 05/21/2019
+ms.openlocfilehash: af887c0e1c66a017ee091fb2cab2dc61fa9ac1dc
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871846"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976555"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
-En este tema se describen algunas de las nuevas características de Windows Server 2019. Windows Server 2019 se basa en la sólida base de Windows Server 2016 e incluye numerosas innovaciones en cuatro temas claves: Nube híbrida, seguridad, plataforma de aplicaciones e infraestructuras Hiperconvergidas (HCL). Para descubrir las novedades de Windows Server, versión 1809, consulte [Novedades de Windows Server, versión 1809](../get-started/whats-new-in-windows-server-1809.md).
+> Se aplica a: Windows Server 2019
+
+En este tema se describen algunas de las nuevas características de Windows Server 2019. Windows Server 2019 se basa en la sólida base de Windows Server 2016 e incluye numerosas innovaciones en cuatro temas claves: Nube híbrida, seguridad, plataforma de aplicaciones e infraestructuras Hiperconvergidas (HCL).
+
+Para descubrir las novedades en las versiones de canal semianual de Windows Server, consulte [What ' s New in Windows Server](../get-started/whats-new-in-windows-server.md). 
 
 ## <a name="general"></a>General
 
 ### <a name="desktop-experience"></a>Experiencia de escritorio
 
-Dado que Windows Server 2019 es una versión de canal de servicio a largo plazo (LTSC), incluye la <b>Experiencia de escritorio</b>. (No se incluye en Windows Server, versión 1709, Windows Server, versión 1803 o Windows Server, versión 1809, porque el canal semianual \(SAC\) versiones no incluyen la experiencia de escritorio por diseño; son estrictamente Server Versiones de imagen de contenedor de Core y Nano Server.) Al igual que con Windows Server 2016, durante la instalación del sistema operativo puede elegir entre las instalaciones Server Core o servidor con las instalaciones de la experiencia de escritorio.
+Dado que Windows Server 2019 es una versión de canal de servicio a largo plazo (LTSC), incluye la <b>Experiencia de escritorio</b>. (Canal semianual \(SAC\) versiones no incluyen la experiencia de escritorio por diseño; son estrictamente Server Core y libera la imagen de contenedor de Nano Server.) Al igual que con Windows Server 2016, durante la instalación del sistema operativo puede elegir entre las instalaciones Server Core o servidor con las instalaciones de la experiencia de escritorio.
 
 ### <a name="system-insights"></a>Información del sistema
 
@@ -148,7 +153,7 @@ Esta es una lista de novedades de clústeres de conmutación por error. Para obt
 
 Ahora es posible ejecutar contenedores basados en Linux y Windows en el mismo host de contenedor, usando el mismo demonio de Docker. Esto te permite tener un entorno de host de contenedor heterogéneo al tiempo que proporciona flexibilidad a los desarrolladores de aplicaciones.
 
-### <a name="building-support-for-kubernetes"></a>Creación de soporte para Kubernetes
+### <a name="built-in-support-for-kubernetes"></a>Compatibilidad con Kubernetes
 
 Windows Server 2019 continúa con las mejoras de cálculo, redes y almacenamiento de las versiones del canal semianual necesarias para la compatibilidad con Kubernetes en Windows. Habrá más detalles disponibles en las próximas versiones de Kubernetes.
 

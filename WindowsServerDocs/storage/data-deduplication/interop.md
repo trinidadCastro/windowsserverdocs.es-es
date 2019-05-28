@@ -8,18 +8,21 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/16/2016
-ms.openlocfilehash: 2a28be1bdd22915182cbdbb2726ab9d37422e889
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9453811b0f76b249c245990293ba82cf5a6e0867
+ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834436"
+ms.lasthandoff: 05/15/2019
+ms.locfileid: "65624633"
 ---
 # <a name="data-deduplication-interoperability"></a>Interoperabilidad de Desduplicación de datos
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server de 2019
 
 ## <a id="supported"></a>Admite
+
+### <a id="supported-ReFS"></a>ReFS
+Se admite la desduplicación de datos a partir de Windows Server 2019. 
 
 ### <a id="supported-clusters"></a>Agrupación en clústeres de conmutación por error
 
@@ -76,8 +79,6 @@ Copias de seguridad de Windows Server puede realizar una copia de seguridad "tal
     ```
 
 ## <a id="unsupported"></a>No compatible
-### <a id="unsupported-refs"></a>ReFS
-Windows Server 2016 no admite Desduplicación de datos en volúmenes con formato ReFS. [Vota a favor de incluir este elemento en Windows Server vNext, en Windows Server Storage UserVoice](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/7962813-support-deduplication-on-refs).
 
 ### <a id="unsupported-windows-client"></a>Windows 10 (sistema operativo de cliente)
 La Desduplicación de datos no se admite en Windows 10. Hay varias entradas de blog muy populares de la Comunidad de Windows que describen cómo quitar los archivos binarios de Windows Server 2016 e instalar en Windows 10, pero este escenario no se ha validado como parte del desarrollo de la Desduplicación de datos. [Vota a favor de incluir este elemento en Windows 10 vNext, en Windows Server Storage UserVoice](https://windowsserver.uservoice.com/forums/295056-storage/suggestions/9011008-add-deduplication-support-to-client-os).

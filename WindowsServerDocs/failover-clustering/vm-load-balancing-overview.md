@@ -8,16 +8,16 @@ author: bhattacharyaz
 manager: eldenc
 ms.author: subhatt
 ms.date: 09/19/2016
-ms.openlocfilehash: 8b8ecee16c778ed26953be325fb88748fc458176
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 125dd7421cc1876c07983016498a9689d8a507ac
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867756"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475986"
 ---
 # <a name="virtual-machine-load-balancing-overview"></a>Introducción al equilibrio de carga de máquina virtual
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Una consideración importante para las implementaciones de nube privada es el gasto de capital (<abbr title="gastos de capital">Gastos de capital</abbr>) necesarios para pasar a producción. Es muy común para agregar redundancia para las implementaciones de nube privada para evitar el exceso de capacidad durante tráfico pico en producción, pero esto aumenta <abbr title="gastos de capital">Gastos de capital</abbr>. La necesidad de redundancia se controla mediante nubes privadas desequilibradas donde algunos nodos hospedan más máquinas virtuales (<abbr title="máquinas virtuales">Las máquinas virtuales</abbr>) y otros usuarios están infrautilizados (por ejemplo, un servidor recién reiniciado).
 
@@ -25,7 +25,7 @@ Una consideración importante para las implementaciones de nube privada es el ga
 > [!VIDEO https://channel9.msdn.com/Blogs/windowsserver/Virtual-Machine-Load-Balancing-in-Windows-Server-2016/player]
 
 ## <a id="what-is-vm-load-balancing"></a>¿Qué es el equilibrio de carga en la máquina Virtual?
-<abbr title="Máquina virtual">VM</abbr> equilibrio de carga es una nueva característica incluida en Windows Server 2016 que permite optimizar el uso de nodos de un clúster de conmutación por error. Identifica nodos sobrecargados y volver a distribuye <abbr title="máquinas virtuales">Las máquinas virtuales</abbr> de dichos nodos a los nodos bajo confirmada. Algunos de los aspectos importantes de esta característica son los siguientes:
+<abbr title="Máquina virtual">VM</abbr> equilibrio de carga es una característica de en el cuadro de 2019 de Windows Server y Windows Server 2016 que permite optimizar el uso de nodos de un clúster de conmutación por error. Identifica nodos sobrecargados y volver a distribuye <abbr title="máquinas virtuales">Las máquinas virtuales</abbr> de dichos nodos a los nodos bajo confirmada. Algunos de los aspectos importantes de esta característica son los siguientes:
 
 * *Es una solución sin tiempo de inactividad*: <abbr title="Máquinas virtuales">Las máquinas virtuales</abbr> son migran en vivo a nodos inactivos.
 * *Perfecta integración con el entorno de clúster existente*: Se respetan las directivas de error como antiafinidad, dominios de error y posibles propietarios.
@@ -56,5 +56,5 @@ Cuando se configura para el equilibrio periódica, se evalúa la presión en los
 
 ## <a name="see-also"></a>Vea también
 * [Profundidad de equilibrio de carga de máquina virtual](vm-load-balancing-deep-dive.md)
-* [Agrupación en clústeres de conmutación por error](failover-clustering-overview.md)
+* [Clúster de conmutación por error](failover-clustering-overview.md)
 * [Introducción a Hyper-V](../virtualization/hyper-v/Hyper-V-on-Windows-Server.md)

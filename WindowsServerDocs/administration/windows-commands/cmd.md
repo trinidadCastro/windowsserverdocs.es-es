@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 966ac7f70984dff6d26265e07a26a6eebcde9fb6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d9b99dbe7e26190e87c5dfc9de29980b9cb2f43
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874396"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192590"
 ---
 # <a name="cmd"></a>Cmd
-
-
 
 Inicia una nueva instancia de intérprete de comandos Cmd.exe. Si se utiliza sin parámetros, **cmd** muestra la información de copyright y de versión del sistema operativo.
 
@@ -104,6 +102,7 @@ En la tabla siguiente se enumera los dígitos hexadecimales válidos que puede u
 
 > [!CAUTION]
 > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
+
 -   Habilitar y deshabilitar las extensiones de comando
 
     Las extensiones de comando están habilitadas de forma predeterminada en Windows XP. Se puede deshabilitar para un proceso determinado mediante **/e: desactivar**. Puede habilitar o deshabilitar las extensiones para todos los **cmd** opciones de línea de comandos en una sesión de usuario o equipo estableciendo lo siguiente **REG_DWORD** valores:
@@ -114,34 +113,35 @@ En la tabla siguiente se enumera los dígitos hexadecimales válidos que puede u
 
     Establecer el **REG_DWORD** valor como **0 × 1** (habilitado) o **0 × 0** (deshabilitado) en el registro mediante Regedit.exe. Configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
->     [!CAUTION]
->     Incorrectly editing the registry may severely damage your system. Before making changes to the registry, you should back up any valued data on the computer.
+> [!CAUTION]
+> La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer una copia de seguridad de los datos de valor guardados en el equipo.
 
     When you enable command extensions, the following commands are affected:  
-    -   **assoc**
-    -   **call**
-    -   **chdir (cd)**
-    -   **color**
-    -   **del (erase)**
-    -   **endlocal**
-    -   **for**
-    -   **ftype**
-    -   **goto**
-    -   **if**
-    -   **mkdir (md)**
-    -   **popd**
-    -   **prompt**
-    -   **pushd**
-    -   **set**
-    -   **setlocal**
-    -   **shift**
-    -   **start** (also includes changes to external command processes)
+    -  **assoc**
+    -  **call**
+    -  **chdir (cd)**
+    -  **color**
+    -  **del (erase)**
+    -  **endlocal**
+    -  **for**
+    -  **ftype**
+    -  **goto**
+    -  **if**
+    -  **mkdir (md)**
+    -  **popd**
+    -  **prompt**
+    -  **pushd**
+    -  **set**
+    -  **setlocal**
+    -  **shift**
+    -  **start** (also includes changes to external command processes)
+
 -   Habilitar expansión de variables de entorno retrasada
 
     Si habilita la expansión de variables de entorno retrasada, puede usar el carácter de signo de exclamación para sustituir el valor de una variable de entorno en tiempo de ejecución.
 -   Habilitar la terminación de nombre de archivo y directorio
 
-    Terminación de nombre de archivo y directorio no está habilitada de forma predeterminada. Puede habilitar o deshabilitar la terminación de nombre de archivo para un determinado proceso de la **cmd** comando **/f:**{**en**|**desactivar**}. Puede habilitar o deshabilitar la terminación de nombre de archivo y directorio para todos los procesos de la **cmd** comando en un equipo o para una sesión de inicio de sesión de usuario estableciendo lo siguiente **REG_DWORD** valores:
+    Terminación de nombre de archivo y directorio no está habilitada de forma predeterminada. Puede habilitar o deshabilitar la terminación de nombre de archivo para un determinado proceso de la **cmd** comando **/f:** {**en**|**desactivar**}. Puede habilitar o deshabilitar la terminación de nombre de archivo y directorio para todos los procesos de la **cmd** comando en un equipo o para una sesión de inicio de sesión de usuario estableciendo lo siguiente **REG_DWORD** valores:
 
     **HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\CompletionChar\REG_DWORD**
 

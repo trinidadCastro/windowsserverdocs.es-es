@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: e63aa5d53f01fbff3029c6896556d92c9c99aa50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4ede63ab08d204c29555b28ae3a73795291c321c
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857686"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222484"
 ---
 # <a name="managing-wsus-client-computers-and-wsus-computer-groups"></a>Administración de equipos cliente de WSUS y grupos de equipos de WSUS
 
@@ -29,10 +29,10 @@ El nodo de equipos es el punto de acceso central en la consola de administració
 ## <a name="managing-client-computers"></a>Administración de equipos cliente
 Selección de uno de los grupos de equipos en los **equipos** nodo bajo **opciones** hace que los equipos de ese grupo que se mostrará en el panel de detalles. Si un equipo se asigna a varios grupos, aparecerá en las listas de ambos grupos. Si selecciona un equipo en la lista, puede ver sus propiedades, que incluyen información general sobre el equipo y el estado de las actualizaciones, como la instalación o el estado de detección de una actualización de un equipo determinado. Puede filtrar la lista de equipos sometidos a un grupo de equipos especificado por estado. El valor predeterminado muestra solo los equipos para las actualizaciones que son necesarios o que han tenido errores de instalación; Sin embargo, puede filtrar la visualización por cualquier estado. Haga clic en **actualizar** después de cambiar el filtro de estado.
 
-También puede administrar grupos de equipos en la página de los equipos, que incluye la creación de los grupos y asignar equipos a ellos. Para obtener más información acerca de cómo administrar grupos de equipos, consulte Administración de grupos de equipos en la siguiente sección de esta guía y [1.5. Planear grupos de equipos WSUS](../plan/plan-your-wsus-deployment.md#BKMK_1.5) en el paso 1: Preparar la implementación de WSUS de la Guía de implementación de WSUS.
+También puede administrar grupos de equipos en la página de los equipos, que incluye la creación de los grupos y asignar equipos a ellos. Para obtener más información acerca de cómo administrar grupos de equipos, consulte Administración de grupos de equipos en la siguiente sección de esta guía y [1.5. Planear grupos de equipos WSUS](../plan/plan-your-wsus-deployment.md#15-plan-wsus-computer-groups) en el paso 1: Preparar la implementación de WSUS de la Guía de implementación de WSUS.
 
 > [!NOTE]
-> En primer lugar, debe configurar los equipos cliente para ponerse en contacto con el servidor WSUS antes de poder administrar desde ese servidor. Hasta que realice esta tarea, el servidor WSUS no reconocerá los equipos cliente y no se mostrará en la lista en la página de los equipos. Para obtener más información acerca de cómo configurar los equipos cliente, consulte [1.5. Planear grupos de equipos WSUS](../plan/plan-your-wsus-deployment.md#BKMK_1.5) del paso 1: Preparar la implementación de WSUS y el paso 3: Configurar WSUS, en la Guía de implementación de WSUS.
+> En primer lugar, debe configurar los equipos cliente para ponerse en contacto con el servidor WSUS antes de poder administrar desde ese servidor. Hasta que realice esta tarea, el servidor WSUS no reconocerá los equipos cliente y no se mostrará en la lista en la página de los equipos. Para obtener más información acerca de cómo configurar los equipos cliente, consulte [1.5. Planear grupos de equipos WSUS](../plan/plan-your-wsus-deployment.md#15-plan-wsus-computer-groups) del paso 1: Preparar la implementación de WSUS y el paso 3: Configurar WSUS, en la Guía de implementación de WSUS.
 
 ## <a name="controlling-when-wsus-client-computers-install-updates"></a>Controlar cuando los equipos cliente WSUS instalan las actualizaciones
 Hay dos métodos para controlar cuando los equipos cliente WSUS instalan actualizaciones:
@@ -55,6 +55,6 @@ Dado que los equipos pueden asignarse a varios grupos, es posible que una actual
 Puede asignar equipos a grupos de equipos por medio de dos métodos: asignación del lado servidor o asignación del lado cliente. Con el lado servidor, mueve manualmente uno o más equipos cliente a un grupo de equipos a la vez. Con la asignación dirigida al cliente, se usa la directiva de grupo o se modifica la configuración del Registro en los equipos cliente para habilitar esos equipos de manera que se agreguen automáticamente a los grupos de equipos creados anteriormente. Este proceso puede incluir en el script e implementarse en muchos equipos a la vez. Debe especificar el método destinatarios que usará en el servidor WSUS, seleccione una de las dos opciones en el **equipos** sección de la **opciones** página.
 
 > [!NOTE]
-> Si un servidor WSUS se ejecuta en el modo de réplica, no se pueden crear grupos en ese servidor. Todos los grupos de equipos necesarios para los clientes del servidor réplica deben crearse en el servidor WSUS que es la raíz de la jerarquía de servidores WSUS. Para obtener más información acerca del modo de réplica, vea [el modo de réplica de WSUS ejecutando](running-wsus-replica-mode.md) y para obtener más información sobre cómo destinar de cliente y servidor, consulte la sección [1.5. Planear grupos de equipos WSUS](../plan/plan-your-wsus-deployment.md#BKMK_1.5) del paso 1: Preparar la implementación de WSUS en la Guía de implementación de WSUS.
+> Si un servidor WSUS se ejecuta en el modo de réplica, no se pueden crear grupos en ese servidor. Todos los grupos de equipos necesarios para los clientes del servidor réplica deben crearse en el servidor WSUS que es la raíz de la jerarquía de servidores WSUS. Para obtener más información acerca del modo de réplica, vea [el modo de réplica de WSUS ejecutando](running-wsus-replica-mode.md) y para obtener más información sobre cómo destinar de cliente y servidor, consulte la sección [1.5. Planear grupos de equipos WSUS](../plan/plan-your-wsus-deployment.md#15-plan-wsus-computer-groups) del paso 1: Preparar la implementación de WSUS en la Guía de implementación de WSUS.
 
 

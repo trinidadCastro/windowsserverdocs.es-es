@@ -7,21 +7,27 @@ ms.topic: article
 author: wmgries
 manager: klaasl
 ms.author: wgries
-ms.date: 09/15/2016
-ms.openlocfilehash: 4a69221548d9defff5a45413ccfe824f9788755a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 04/17/2019
+ms.openlocfilehash: 44a08443312d4e48b8fa518755e2a9b7aa50643c
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876456"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476091"
 ---
 # <a name="whats-new-in-data-deduplication"></a>Novedades de Desduplicación de datos
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
-[Desduplicación de datos](overview.md) en Windows Server 2016 se ha optimizado para ser altamente eficaz, flexible y manejable a escala de nube privada. Para más información sobre la pila de almacenamiento definida por software en Windows Server 2016, vea [Novedades de Espacios de almacenamiento en Windows Server 2016](../whats-new-in-storage.md).
+[Desduplicación de datos](overview.md) en Windows Server se ha optimizado para ser altamente eficaz, flexible y manejable a escala de nube privada. Para obtener más información acerca de la pila de almacenamiento definidas mediante software en Windows Server, vea [Novedades de almacenamiento en Windows Server](../whats-new-in-storage.md).
 
-Desduplicación de datos presenta las siguientes mejoras en Windows Server 2016:
+Desduplicación de datos tiene las siguientes mejoras en Windows Server 2019:
+
+| Funcionalidad | Nueva o actualizada | Descripción |
+|---------------|----------------|-------------|
+| Compatibilidad con reFS  | Nuevo            | Store hasta 10 veces más datos en el mismo volumen con desduplicación y compresión para el sistema de archivos ReFS. (Tiene [un solo clic](https://www.youtube.com/watch?v=PRibTacyKko&feature=youtu.be) para activar con Windows Admin Center.) El almacén de fragmentos de tamaño variable con compresión opcional maximiza las tasas de ahorro, mientras que la arquitectura de procesamiento posterior multiproceso mantiene mínimo impacto en el rendimiento. Es compatible con volúmenes de hasta 64 TB y se desduplicar los primeros 4 TB de cada archivo.|
+
+Desduplicación de datos tiene las siguientes mejoras a partir de Windows Server 2016:
 
 | Funcionalidad | Nueva o actualizada | Descripción |
 |---------------|----------------|-------------|

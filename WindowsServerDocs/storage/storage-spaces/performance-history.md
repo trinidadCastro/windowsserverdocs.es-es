@@ -8,12 +8,12 @@ author: cosmosdarwin
 ms.date: 09/07/2018
 Keywords: Espacios de almacenamiento directo
 ms.localizationpriority: medium
-ms.openlocfilehash: 828a3265c9770bab0158067c4f856866d03e3d42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1916d2d5e4d1fc846bec19826437b200afe36f42
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870866"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772213"
 ---
 # <a name="performance-history-for-storage-spaces-direct"></a>Historial de rendimiento de espacios de almacenamiento directo
 
@@ -153,7 +153,7 @@ Poco después de habilitar espacios de almacenamiento directo, un volumen GB apr
 
 El volumen está respaldado por espacios de almacenamiento y utiliza un reflejo bidireccional de simple, o resistencia de reflejo triple, dependiendo del número de nodos del clúster. Se repara después de errores de unidad o el servidor al igual que cualquier otro volumen en espacios de almacenamiento directo.
 
-El volumen usa a ReFS pero no es volumen de compartidos de clúster (CSV), por lo que solo aparece en el nodo de propietario del grupo de clúster. Además de que se creen automáticamente, que no hay nada especial acerca de este volumen: puede verlo, examinarla, cambiar su tamaño o eliminarlo (no recomendado). Si algo va mal, consulte [Troubleshooting](#troubleshooting). 
+El volumen usa a ReFS pero no es volumen de compartidos de clúster (CSV), por lo que solo aparece en el nodo de propietario del grupo de clúster. Además de que se creen automáticamente, que no hay nada especial acerca de este volumen: puede verlo, examinarla, cambiar su tamaño o eliminarlo (no recomendado). Si algo va mal, consulte [Troubleshooting](#troubleshooting).
 
 ### <a name="object-discovery-and-data-collection"></a>Recopilación de datos y detección de objeto
 
@@ -163,7 +163,7 @@ Colección se controla mediante el servicio de mantenimiento, que es de alta dis
 
 ### <a name="handling-measurement-gaps"></a>Controlar los intervalos de medición
 
-Cuando se combinan las mediciones en serie menos pormenorizado que abarcan más tiempo, como se describe en [los períodos de tiempo](#Timeframes), se excluyen los puntos de datos que faltan. Por ejemplo, si el servidor estaba inactivo durante 30 minutos, a continuación, ejecutar al 50% de CPU durante los próximos 30 minutos, el `ClusterNode.Cpu.Usage` promedio para la hora se registrará correctamente como (no un 25%) del 50%.
+Cuando se combinan las mediciones en serie menos pormenorizado que abarcan más tiempo, como se describe en [los períodos de tiempo](#timeframes), se excluyen los puntos de datos que faltan. Por ejemplo, si el servidor estaba inactivo durante 30 minutos, a continuación, ejecutar al 50% de CPU durante los próximos 30 minutos, el `ClusterNode.Cpu.Usage` promedio para la hora se registrará correctamente como (no un 25%) del 50%.
 
 ### <a name="extensibility-and-customization"></a>Extensibilidad y personalización
 

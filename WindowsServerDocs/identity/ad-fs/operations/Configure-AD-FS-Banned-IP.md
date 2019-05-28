@@ -8,16 +8,15 @@ ms.date: 06/28/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b8ff87a1043b589e83faa875467ddced536291b5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01ef992554a1e0961d8d795e9baa7730a1a1d682
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867516"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189887"
 ---
 # <a name="ad-fs-and-banned-ip-addresses"></a>AD FS y las direcciones IP no permitidas
 
->Se aplica a: Windows Server 2016
 
 En junio de 2018, AD FS en Windows Server 2016 introdujo **prohibidas** con AD FS actualización de junio de 2018.  Esta actualización le permite configurar un conjunto de direcciones IP global en AD FS, para que las solicitudes procedentes de esas direcciones IP, o que tengan esas direcciones IP el **x-forwarded-for** o **x-ms-reenviados-client-ip** encabezados, se bloqueará por AD FS.
 
@@ -63,4 +62,4 @@ BannedIpList                   : {1.2.3.4, ::3,1.2.3.4/16}
 
 [Set-AdfsProperties](https://technet.microsoft.com/itpro/powershell/windows/adfs/set-adfsproperties)
 
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)

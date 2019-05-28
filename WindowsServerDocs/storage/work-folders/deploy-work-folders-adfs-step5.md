@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: f168292b-0dbc-44b9-965f-d480e5134a0c
-ms.openlocfilehash: fa8b2b15ff411a59b28308a329d7ca2341ef0886
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b2c771a83824318f889c955f6194bcb062761f3
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871946"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976798"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 5, los clientes de la instalación
 
@@ -79,7 +79,7 @@ Para configurar Carpetas de trabajo en el equipo cliente, sigue estos pasos:
   
 2.  Haz clic en **Configurar Carpetas de trabajo**.  
   
-3.  En el **escriba su dirección de correo electrónico** , escriba la dirección de correo electrónico del usuario (por ejemplo, user@contoso.com) o la dirección URL de carpetas de trabajo (en el ejemplo de prueba, https://workfolders.contoso.com)y, a continuación, haga clic en **siguiente**.  
+3.  En el **escriba su dirección de correo electrónico** , escriba la dirección de correo electrónico del usuario (por ejemplo, user@contoso.com) o la dirección URL de carpetas de trabajo (en el ejemplo de prueba, https:\//workfolders.contoso.com) y, a continuación, haga clic en  **Siguiente**.  
   
 4.  Si el usuario está conectado a la red corporativa, la autenticación se realiza mediante la autenticación integrada de Windows. Si el usuario no está conectado a la red corporativa, la autenticación se realiza mediante ADFS (OAuth); asimismo, se le pedirán al usuario las credenciales. Escribe las credenciales y haz clic en **Aceptar**.  
   

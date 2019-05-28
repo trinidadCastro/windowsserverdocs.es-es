@@ -10,12 +10,12 @@ ms.topic: article
 author: adagashe
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 24890b191db8bc6934132857e830d4f77c394b02
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66d4796a6ffb453f6edb5fed20dba29b70f7ec4b
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879976"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476104"
 ---
 # <a name="understanding-cluster-and-pool-quorum"></a>Quórum de clúster y grupo de descripción
 
@@ -27,7 +27,7 @@ Quórum está diseñado para evitar *cerebro dividido* escenarios que pueden ocu
 
 Quórum determina el número de errores que el clúster puede admitir mientras permanece en línea. Quórum está diseñado para controlar el escenario cuando hay un problema con la comunicación entre los subconjuntos de los nodos del clúster, por lo que no intentan varios servidores simultáneamente un grupo de recursos de host y escribir en el mismo disco al mismo tiempo. Si tiene este concepto de quórum, el clúster forzará el servicio de clúster se detenga en uno de los subconjuntos de nodos para asegurarse de que hay solo un auténtico propietario de un grupo de recursos determinado. Una vez que una vez más, nodos que se han detenido pueden comunicarse con el grupo de nodos principal, automáticamente se unan al clúster e inicie su servicio de clúster.
 
-En Windows Server 2016, hay dos componentes del sistema que tienen sus propios mecanismos de quórum:
+En Windows Server 2019 y Windows Server 2016, hay dos componentes del sistema que tienen sus propios mecanismos de quórum:
 
 - <strong>Quórum de clúster</strong>: Esto funciona en el nivel de clúster (es decir, puede perder los nodos y hacer que el clúster de estar al día)
 - <strong>Grupo de quórum</strong>: Esto funciona en el nivel de grupo cuando se habilita espacios de almacenamiento directo (es decir, puede perder los nodos y las unidades y hacer que el grupo de estar al día). Los grupos de almacenamiento se diseñaron para usarse en escenarios clústeres y no agrupados, motivo por el que tienen un mecanismo de quórum diferentes.
@@ -229,5 +229,5 @@ Cada una de las 24 unidades de disco tiene un voto y dos nodo también tiene un 
 
 ## <a name="more-information"></a>Más información
 
-- [Configurar y administrar el quórum](../../failover-clustering/manage-cluster-quorum.md)
+- [Configurar y administrar el cuórum](../../failover-clustering/manage-cluster-quorum.md)
 - [Implementación de un testigo en la nube](../../failover-clustering/deploy-cloud-witness.md)

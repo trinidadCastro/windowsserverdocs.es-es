@@ -8,16 +8,16 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e3cf32cd718b906f16fc09901284d8520177df8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ad44ba4bbe0b31f423a4ae4593e349571d838de2
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824286"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475917"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Introducción al redireccionamiento de carpetas, archivos sin conexión y perfiles de usuario móvil
 
->Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
+>Se aplica a: Windows 10, Windows 8, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2
 
 Este tema describe la redirección de carpetas, archivos sin conexión (almacenamiento en caché del lado cliente o CSC) y las tecnologías de perfiles de usuario móviles (a veces conocidos como RUP), incluidas las novedades y dónde encontrar información adicional.
 
@@ -76,7 +76,7 @@ Para obtener más información, consulte [Enable the Always Offline Mode to Prov
 Con la sincronización con control de costo, Windows deshabilita la sincronización en segundo plano cuando el usuario utiliza una conexión de red de uso medido, como una red móvil 4G, y si el equipo utiliza un perfil móvil en la red de otro proveedor, cerca del límite de ancho de banda del suscriptor o sobre este.
 
 >[!NOTE]
->Las conexiones de red de uso medido normalmente tienen latencias de red de ida y vuelta que son más lentas que el valor de latencia de 35 milisegundos predeterminado para la transición al modo sin conexión (conexión lenta) en Windows 8, Windows Server 2012 y Windows Server 2016. Por lo tanto, estas conexiones generalmente hacen la transición al modo Sin conexión (Conexión lenta) en forma automática.
+>Las conexiones de red de uso medido normalmente tienen latencias de red de ida y vuelta que son más lentas que el valor de latencia de 35 milisegundos predeterminado para la transición al modo sin conexión (conexión lenta) en Windows 8, Windows Server 2019, Windows Server 2016 y Windows Server 2012. Por lo tanto, estas conexiones generalmente hacen la transición al modo Sin conexión (Conexión lenta) en forma automática.
 
 ### <a name="what-value-does-cost-aware-synchronization-add"></a>¿Qué valor aporta la sincronización con control de costo?
 
@@ -123,7 +123,7 @@ El redireccionamiento de carpeta, los archivos sin conexión y los perfiles de u
 Para designar equipos principales, el entorno debe cumplir con los siguientes requisitos:
 
 - El esquema de Active Directory Domain Services (AD DS) debe actualizarse para incluir el esquema de Windows Server 2012 y las condiciones (instalar un Windows Server 2012 o un controlador de dominio posterior actualizará automáticamente el esquema). Para obtener más información acerca de cómo actualizar el esquema de AD DS, consulte [actualizar controladores de dominio a Windows Server 2016](../../identity/ad-ds/deploy/upgrade-domain-controllers.md).
-- Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 y Unidos al dominio de Active Directory que está administrando.
+- Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 y Unidos al dominio de Active Directory que está administrando.
 
 ## <a name="more-information"></a>Más información
 

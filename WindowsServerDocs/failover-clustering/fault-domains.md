@@ -8,23 +8,41 @@ ms.technology: storage-failover-clustering
 ms.topic: article
 author: cosmosdarwin
 ms.date: 09/16/2016
-ms.openlocfilehash: f5c64bb8f8b7d4b8d13c76c4e94cfcf52ee32c30
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 18b7a932cc8a22c356fde89baa316c0532ebc374
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821476"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476000"
 ---
-# <a name="fault-domain-awareness-in-windows-server-2016"></a>Conocimiento de dominio de error en Windows Server 2016
+# <a name="fault-domain-awareness"></a>Reconocimiento de dominio de error
 
-> Se aplica a: Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
-Los clústeres de conmutación por error permiten que varios servidores funcionen conjuntamente para proporcionar alta disponibilidad, o dicho de otro modo, para proporcionar tolerancia de errores de nodo. Pero las empresas de hoy demandan cada vez mayor disponibilidad de su infraestructura. Para lograr un tiempo de actividad similar a la nube, incluso en situaciones muy improbables como errores de chasis, interrupciones del bastidor o desastres naturales, deberá estar protegido. Por este motivo los clústeres de conmutación por error en Windows Server 2016 presenta chasis, bastidor y sitio también tolerancia a errores.
+Los clústeres de conmutación por error permiten que varios servidores funcionen conjuntamente para proporcionar alta disponibilidad, o dicho de otro modo, para proporcionar tolerancia de errores de nodo. Pero las empresas de hoy demandan cada vez mayor disponibilidad de su infraestructura. Para lograr un tiempo de actividad similar a la nube, incluso en situaciones muy improbables como errores de chasis, interrupciones del bastidor o desastres naturales, deberá estar protegido. Por este motivo los clústeres de conmutación por error en Windows Server 2016 introdujo el chasis, bastidor y sitio también tolerancia a errores.
+
+## <a name="fault-domain-awareness"></a>Reconocimiento de dominio de error
 
 Los dominios de error y la tolerancia a errores son conceptos relacionados. Un dominio de error es un conjunto de componentes de hardware que comparten un único punto de error. Para ser tolerante a errores en un nivel determinado, se necesitan varios dominios de error en ese nivel. Por ejemplo, para ser tolerante a errores en bastidor, los servidores y los datos deben distribuirse entre varios bastidores.
 
 En este breve vídeo se presenta información general de dominios de error en Windows Server 2016:  
 [![Haga clic en esta imagen para ver una descripción general de los dominios de error en Windows Server 2016](media/Fault-Domains-in-Windows-Server-2016/Part-1-Fault-Domains-Overview.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-1-Overview)
+
+### <a name="fault-domain-awareness-in-windows-server-2019"></a>Conocimiento de dominio de error en Windows Server 2019
+
+Conocimiento de dominio de error está disponible en Windows Server 2019 pero está deshabilitada de forma predeterminada y debe habilitarse a través del registro de Windows.
+
+Para habilitar el reconocimiento de dominio de error en Windows Server 2019, vaya al registro de Windows y establezca (Get-Cluster). Clave del registro de AutoAssignNodeSite en 1.
+
+```Registry
+    (Get-Cluster).AutoAssignNodeSite=1
+```
+
+Para deshabilitar el conocimiento de dominio de error en Windows de 2019, vaya al registro de Windows y establezca (Get-Cluster). Clave de registro AutoAssignNodeSite en 0.
+
+```Registry
+    (Get-Cluster).AutoAssignNodeSite=0
+```
 
 ## <a name="benefits"></a>Ventajas
 - **Espacios de almacenamiento, incluidos espacios de almacenamiento directo, utiliza dominios de error para maximizar la seguridad de los datos.**  
@@ -103,7 +121,7 @@ Remove-ClusterFaultDomain -Name "Rack A"
 ```
 
 ### <a name="defining-fault-domains-with-xml-markup"></a>Definición de dominios de error con marcado XML
-Los dominios de error se especifican mediante una sintaxis basada en XML. Se recomienda usar el editor de texto que prefiera, como Visual Studio Code (disponible gratuitamente *[aquí](https://code.visualstudio.com/)*) o el Bloc de notas, para crear un documento XML que puede guardar y reutilizar.  
+Los dominios de error se especifican mediante una sintaxis basada en XML. Se recomienda usar el editor de texto que prefiera, como Visual Studio Code (disponible gratuitamente *[aquí](https://code.visualstudio.com/)* ) o el Bloc de notas, para crear un documento XML que puede guardar y reutilizar.  
 
 Este breve vídeo muestra el uso de marcado de XML para especificar los dominios de error.
 
@@ -176,5 +194,6 @@ Puede proporcionar opcional **ubicación** o **descripción** los metadatos de c
 [![Haga clic para ver un breve vídeo que muestra el valor de agregar los descriptores de ubicación para los dominios de error](media/Fault-Domains-in-Windows-Server-2016/part-4-location-description.jpg)](https://channel9.msdn.com/Blogs/windowsserver/Fault-Domain-Awareness-in-WS2016-Part-4-Location-Description)
 
 ## <a name="see-also"></a>Vea también  
--   [Windows Server 2016](../get-started/windows-server-2016.md)  
--   [Espacios de almacenamiento directo en Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md) 
+- [Introducción a Windows Server 2019](https://docs.microsoft.com/windows-server/get-started-19/get-started-19)  
+- [Introducción a Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/server-basics)  
+-   [Espacios de almacenamiento directo de introducción](../storage/storage-spaces/storage-spaces-direct-overview.md) 

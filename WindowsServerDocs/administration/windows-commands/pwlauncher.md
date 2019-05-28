@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1aa2e22f74323bb6cabfc644ca67e17a7fcbd3fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8ec9748056b296bb0c74250b36c762fb86fa90ad
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851026"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564652"
 ---
 # <a name="pwlauncher"></a>pwlauncher
 
@@ -44,7 +44,7 @@ Pwlauncher {/enable | /disable}
 
 ## <a name="remarks"></a>Comentarios
 
-El mayor obstáculo para un usuario que deseen usar Windows To Go recibe su equipo para arrancar desde USB. Tradicionalmente, esto se hace especificando el firmware y probar distintas opciones de configuración hasta que el equipo está configurado correctamente. Esto no es una tarea simple para la mayoría de los usuarios y es muy arriesgado porque el firmware contiene opciones que pueden inutilizar un sistema si se utiliza incorrectamente. ¿Para ayudar a aliviar este problema, Windows 8and los sistemas operativos posteriores incluyen una característica denominada "Windows To Go de las opciones de inicio? que permite que un usuario configurar su equipo para que arranque desde una unidad USB de Windows, sin escribir jamás su firmware, siempre que su firmware es compatible con arranque desde USB. Habilitación de un sistema de arranque siempre desde una unidad USB, en primer lugar tiene implicaciones que deberían tenerse en cuenta. Por ejemplo, se puede arrancar un dispositivo USB que incluye el software malintencionado sin darse cuenta para poner en peligro el sistema, o varias unidades USB se pueden conectar a producir un conflicto de arranque. Por este motivo, la configuración predeterminada tiene el Windows para ir inicio opciones deshabilitada de forma predeterminada. Además, se requieren privilegios de administrador para configurar Windows para opciones de inicio Go. Si habilita las opciones de inicio de Windows To Go mediante la herramienta de línea de comandos pwlauncher o el **cambiar Windows a opciones de inicio Go** intentará arrancar desde cualquier dispositivo USB que se inserta en el equipo antes de que el equipo de aplicación se inició.
+El mayor obstáculo para un usuario que deseen usar Windows To Go recibe su equipo para arrancar desde USB. Tradicionalmente, esto se hace especificando el firmware y probar distintas opciones de configuración hasta que el equipo está configurado correctamente. Esto no es una tarea simple para la mayoría de los usuarios y es muy arriesgado porque el firmware contiene opciones que pueden inutilizar un sistema si se utiliza incorrectamente. Para ayudar a mitigar este problema, Windows 8and los sistemas operativos posteriores incluyen una característica denominada "Windows para opciones de inicio Go" que permite que un usuario configurar su equipo para que arranque desde una unidad USB de Windows-sin escribir jamás su firmware, siempre y cuando sus firmware admite el arranque desde USB. Habilitación de un sistema de arranque siempre desde una unidad USB, en primer lugar tiene implicaciones que deberían tenerse en cuenta. Por ejemplo, se puede arrancar un dispositivo USB que incluye el software malintencionado sin darse cuenta para poner en peligro el sistema, o varias unidades USB se pueden conectar a producir un conflicto de arranque. Por este motivo, la configuración predeterminada tiene el Windows para ir inicio opciones deshabilitada de forma predeterminada. Además, se requieren privilegios de administrador para configurar Windows para opciones de inicio Go. Si habilita las opciones de inicio de Windows To Go mediante la herramienta de línea de comandos pwlauncher o el **cambiar Windows a opciones de inicio Go** intentará arrancar desde cualquier dispositivo USB que se inserta en el equipo antes de que el equipo de aplicación se inició.
 
 ## <a name="BKMK_examples"></a>Ejemplos
 
