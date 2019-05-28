@@ -12,12 +12,12 @@ ms.assetid: 27bf6f24-30c4-4935-9b24-069eb43e22f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e1ebc539928d13b0d34dfe5a0ee57ce6e98088e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 15d9a10daec0b72eb41092dbd9fa87f989ebedb8
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862356"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63720660"
 ---
 # <a name="restore-or-repair-your-server-running-windows-server-essentials"></a>Restaurar o reparar el servidor que ejecuta Windows Server Essentials
 
@@ -69,9 +69,9 @@ ms.locfileid: "59862356"
   
 -   **Si el servidor tiene una sola unidad de disco duro y se reemplaza la unidad**, se restaura el volumen del sistema y, a continuación, debe restaurar manualmente las carpetas en el volumen de datos. Las carpetas compartidas no predeterminadas deben crearse porque no se crean cuando se vuelve a crear el almacenamiento del servidor.  
   
--   **Si el servidor tiene varias unidades de disco duro y no se reemplaza la unidad 0 (que contiene el volumen del sistema)**, se conserva la información de partición de la unidad cuando se restaura el servidor. Se restaura el volumen del sistema y se conservan los datos en todos los volúmenes restantes.  
+-   **Si el servidor tiene varias unidades de disco duro y no se reemplaza la unidad 0 (que contiene el volumen del sistema)** , se conserva la información de partición de la unidad cuando se restaura el servidor. Se restaura el volumen del sistema y se conservan los datos en todos los volúmenes restantes.  
   
--   **Si el servidor tiene varias unidades de disco duro y se reemplaza la unidad 0 (que contiene el volumen del sistema)**, se restaura el volumen del sistema y, a continuación, debe restaurar manualmente las carpetas compartidas previamente almacenadas en la unidad 0.  
+-   **Si el servidor tiene varias unidades de disco duro y se reemplaza la unidad 0 (que contiene el volumen del sistema)** , se restaura el volumen del sistema y, a continuación, debe restaurar manualmente las carpetas compartidas previamente almacenadas en la unidad 0.  
   
 ###  <a name="BKMK_FactoryReset"></a> Restablecer el servidor a la configuración predeterminada de fábrica  
  Si no tiene una copia de seguridad desde la que restaurar o, por algún motivo, quiere o necesita realizar una restauración completa del sistema sin restaurar la configuración anterior del servidor, puede realizar una restauración que reinicie el servidor a la configuración predeterminada de fábrica con los medios de instalación o recuperación del fabricante del hardware de servidor.  

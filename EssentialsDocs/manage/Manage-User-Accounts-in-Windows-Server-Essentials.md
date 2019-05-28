@@ -12,12 +12,12 @@ ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 91175836e4453860b17d2655e6a5a831645de410
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 008e614ca7ae202d575d2c3e5976ed3d5544b6ea
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873456"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63720700"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Administrar cuentas de usuario en Windows Server Essentials
 
@@ -420,7 +420,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
   
 3.  Para sincronizar la contraseña de DSRM en un controlador de dominio con la cuenta de s de administrador de red actual, escriba:  
   
-     **sincronización de la cuenta de dominio** *< cuenta_de_administrador_de_red_actual >*, y, a continuación, presione ENTRAR.  
+     **sincronización de la cuenta de dominio** *< cuenta_de_administrador_de_red_actual >* , y, a continuación, presione ENTRAR.  
   
  Como va a cambiar la contraseña de la cuenta del administrador de red de forma periódica, para asegurarse de que la contraseña de DSRM sea siempre la misma que la contraseña actual del administrador de red, le recomendamos que cree una tarea de programación para sincronizar a diario y de forma automática la contraseña de DSRM con la contraseña del administrador de red.  
   
@@ -499,7 +499,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
   
     2.  En la pestaña **Acceso desde cualquier lugar** :  
   
-        1.  Para permitir que un usuario se conecte al servidor mediante VPN, active la casilla **Permitir red privada virtual (VPN)**.  
+        1.  Para permitir que un usuario se conecte al servidor mediante VPN, active la casilla **Permitir red privada virtual (VPN)** .  
   
         2.  Para permitir que un usuario se conecte al servidor mediante acceso Web remoto, active la casilla **Permitir el Acceso Web remoto y obtener acceso a las aplicaciones de servicios web** .  
   
@@ -523,7 +523,7 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
   
     3.  En la pestaña **Acceso desde cualquier lugar** :  
   
-        1.  Para permitir que un usuario se conecte al servidor mediante VPN, active la casilla **Permitir red privada virtual (VPN)**.  
+        1.  Para permitir que un usuario se conecte al servidor mediante VPN, active la casilla **Permitir red privada virtual (VPN)** .  
   
         2.  Para permitir que un usuario se conecte al servidor mediante acceso Web remoto, active la casilla **Permitir el Acceso Web remoto y obtener acceso a las aplicaciones de servicios web** .  
   
