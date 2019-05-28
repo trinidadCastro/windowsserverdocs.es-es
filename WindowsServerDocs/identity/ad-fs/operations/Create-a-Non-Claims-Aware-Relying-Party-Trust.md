@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f46675ff4c471af743fd8782c1e3036e7c546256
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cdd0b32b50f676007a6cc922bc15b95bb61323be
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839346"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189671"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>Creación de una confianza de usuario de confianza que no es compatible con notificaciones
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 En el complemento Administración de AD FS\-en, no\-notificaciones\-consciente autenticado son objetos que se crean para representar la confianza entre el servicio de federación y un único sitio web\-aplicación que no está basada en notificaciones\-tenga en cuenta que se obtiene acceso a través del Proxy de aplicación Web.  
   
@@ -53,4 +52,4 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 ![usuario de confianza](media/Create-a-Non-Claims-Aware-Relying-Party-Trust/addnon6.PNG)  
   
 ## <a name="see-also"></a>Vea también  
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 

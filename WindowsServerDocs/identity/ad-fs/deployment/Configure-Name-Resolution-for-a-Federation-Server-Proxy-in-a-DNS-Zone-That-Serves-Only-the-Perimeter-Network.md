@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 32b8e3cc133ce95872881115608bb8cfb17b2427
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d046c720c5c6250b6efa03e068aa66e2a6bbe3d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816016"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192298"
 ---
 # <a name="configure-name-resolution-for-a-federation-server-proxy-in-a-dns-zone-that-serves-only-the-perimeter-network"></a>Configurar la resolución de nombres para un servidor proxy de federación de una zona DNS que da servicio solo a la red perimetral
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Para que funcione correctamente la resolución de nombres para un servidor de federación en un Active Directory Federation Services \(AD FS\) escenario en qué sistema de nombres de dominio de uno o varios \(DNS\) zonas actúan sólo en el perímetro de red, los siguientes tareas deben completarse:  
   
@@ -58,7 +57,7 @@ Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para c
   
 1.  En un servidor DNS de la red perimetral, abra el complemento DNS\-en. Haga clic en **iniciar**, apunte a **herramientas administrativas**y, a continuación, haga clic en **DNS**.  
   
-2.  En el árbol de consola, a la derecha\-haga clic en la zona de búsqueda directa correspondiente y, a continuación, haga clic en **nuevo Host \(A o AAAA\)**.  
+2.  En el árbol de consola, a la derecha\-haga clic en la zona de búsqueda directa correspondiente y, a continuación, haga clic en **nuevo Host \(A o AAAA\)** .  
   
 3.  En **nombre**, escriba el nombre de equipo del servidor de federación. Por ejemplo, para el nombre de dominio completo \(FQDN\) fs.fabrikam.com, escriba **fs**.  
   
@@ -67,7 +66,7 @@ Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para c
 5.  Haga clic en **Agregar host**.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Configurar un servidor Proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de comprobación: configuración de un servidor proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 [Requisitos de resolución de nombres para servidores proxy de federación](https://technet.microsoft.com/library/dd807055.aspx)  
   

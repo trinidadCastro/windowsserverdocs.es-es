@@ -9,16 +9,14 @@ ms.date: 03/08/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6e0271ae3d7ac120e510a2fb81fb55c8d10b3c87
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe5c138466ea288b5dfb8c7c284603150ab9d874
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813586"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190029"
 ---
 # <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>Cambiar el logotipo de empresa en la página de inicio de sesión de AD FS
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 #### <a name="change-company-logo"></a>Cambio del logotipo de la compañía  
 Para cambiar el logotipo de la compañía que se muestra en el inicio de sesión\-en la página, use el siguiente cmdlet de PowerShell de Windows PowerShell y la sintaxis.  

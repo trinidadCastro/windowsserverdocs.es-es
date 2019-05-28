@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 167e43d49c08d0e39549bf46888118f985e3876d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 72fe425b040f83a217a144976265c7754830c91b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863776"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189504"
 ---
 # <a name="create-a-rule-to-permit-or-deny-users-based-on-an-incoming-claim"></a>Crear una regla para permitir o denegar usuarios según una notificación entrante 
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 En Windows Server 2016, puede usar un **directiva de Control de acceso** para crear una regla que permitirá o denegará a los usuarios según una notificación entrante.  En Windows Server 2012 R2, mediante el **permitir o denegar usuarios según una notificación entrante** plantilla de regla en Active Directory Federation Services \(AD FS\), puede crear una regla de autorización que se concederá o denegar el acceso de usuario al usuario de confianza según el tipo y el valor de una notificación entrante. 
 
@@ -115,12 +114,12 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[Configurar reglas de notificación](Configure-Claim-Rules.md)  
+[Configuración de regla de notificación](Configure-Claim-Rules.md)  
  
-[Lista de comprobación: Creación de reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de comprobación: crear reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
   
 [Cuándo usar una regla de notificación de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
-[El rol de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
+[El papel de las notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[La función de reglas de notificación](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  
+[El papel de las reglas de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  

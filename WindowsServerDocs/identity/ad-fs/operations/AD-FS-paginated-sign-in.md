@@ -8,16 +8,15 @@ ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2b11454427a65e37604b430a63b5ed745f4a2bb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 946e99448d13bf6782c10bce5a0b8566da4deb17
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864456"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190379"
 ---
 # <a name="ad-fs-paginated-sign-in"></a>AD FS paginado inicio de sesión
 
->Se aplica a: Windows Server 2019
 
 Para AD FS 2019, hemos rediseñado la interfaz de inicio de sesión de usuario.  Ahora, el inicio de sesión de AD FS tendrán la misma apariencia y comportamiento de Azure AD.  Esto proporcionará a los usuarios una experiencia más coherente de inicio de sesión, que incorpora un flujo de usuario paginados y centrado. 
 
@@ -60,4 +59,4 @@ Las opciones de personalización todavía serán aplicables para AD FS de 2019. 
 
 • Para quienes no previsto actualizar sus servidores a AD FS 2019 pero todavía desea que el nuevo diseño: [Uso de un tema de sitio Web de la experiencia de usuario de Azure AD en servicios de federación de Active Directory](azure-ux-web-theme-in-ad-fs.md)
 
-• Una ubicación central para la personalización: [Personalización de inicio de sesión del usuario de FS AD](ad-fs-user-sign-in-customization.md)
+• Una ubicación central para la personalización: [Personalización de inicio de sesión del usuario de AD FS](ad-fs-user-sign-in-customization.md)

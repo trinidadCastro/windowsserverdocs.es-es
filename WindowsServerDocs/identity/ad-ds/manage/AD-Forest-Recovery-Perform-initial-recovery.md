@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: fe113eb7fe5cb096ff1e94150b929682d137b24b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8e05043d029636ddeb3a24349897ac61a713b2a7
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871956"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034112"
 ---
 # <a name="perform-initial-recovery"></a>Realizar recuperación inicial  
 
@@ -22,9 +22,9 @@ ms.locfileid: "59871956"
 
 Esta sección incluye los siguientes pasos:  
 
-- [Restaurar el primer controlador de dominio grabable en cada dominio](#Restore-the-first-writeable-domain-controller-in-each-domain)  
-- [Volver a conectar cada controlador de dominio grabable que se restauró a la red](#Reconnect-each-restored-writeable-domain-controller-to-a-common-network)  
-- [Agregar el catálogo global a un controlador de dominio en el dominio raíz del bosque](#Add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain)  
+- [Restaurar el primer controlador de dominio grabable en cada dominio](#restore-the-first-writeable-domain-controller-in-each-domain)  
+- [Volver a conectar cada controlador de dominio grabable que se restauró a la red](#reconnect-each-restored-writeable-domain-controller-to-a-common-network)  
+- [Agregar el catálogo global a un controlador de dominio en el dominio raíz del bosque](#add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain)  
 
 ## <a name="restore-the-first-writeable-domain-controller-in-each-domain"></a>Restaurar el primer controlador de dominio grabable en cada dominio  
 
@@ -151,12 +151,12 @@ En esta fase debe tener un bosque estable, con un controlador de dominio para ca
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Recuperación de bosques de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)  
+- [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperación de bosques de AD - idear un plan de recuperación personalizada del bosque](AD-Forest-Recovery-Devising-a-Plan.md)  
 - [Recuperación de bosques de AD: identificar el problema](AD-Forest-Recovery-Identify-the-Problem.md)
 - [Recuperación de bosques de AD - determinar cómo recuperar](AD-Forest-Recovery-Determine-how-to-Recover.md)
 - [Recuperación de bosques de AD - realizar una recuperación inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [Recuperación de bosques de AD: procedimientos](AD-Forest-Recovery-Procedures.md)  
+- [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)  
 - [Recuperación de bosques de AD - preguntas más frecuentes](AD-Forest-Recovery-FAQ.md)  
 - [Recuperación de bosques de AD - recuperar un único dominio dentro de un bosque Multidomain](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
 - [Recuperación de bosques de AD: recuperación del bosque con controladores de dominio de Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md)  

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: bd15df5360a50e417881d83319344dbdf48f35fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2af1bfc295469d43e59593d69d4ba88f476e427
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829646"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034140"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>Recuperación de bosques de AD - recuperación de Windows Server 2003
 
@@ -22,9 +22,9 @@ ms.locfileid: "59829646"
 
 Este tema incluyen procedimientos de recuperación de bosques para controladores de dominio (DC) que ejecutan Windows Server 2003. El proceso general para la recuperación del bosque no es diferente con controladores de dominio de Windows Server 2003, pero los procedimientos específicos pueden diferir debido a las herramientas diferentes. Por ejemplo, se puede usar Ntdsutil.exe copia de seguridad y restauración de controladores de dominio que ejecutan controladores de dominio de Windows Server 2003, mientras que la copia de seguridad de Windows Server o Wbadmin.exe se usa para los controladores de dominio que ejecutan Windows Server 2008 o posterior.  
   
-- [Copia los datos de estado del sistema](#Backing-up-the-System-State-data)  
-- [Realizar una restauración no autoritativa](#Performing-a-nonauthoritative restore)  
-- [Instalar y configurar el servicio servidor DNS](#Install-and-configure-the-DNS-Server-service)  
+- [Copia los datos de estado del sistema](#backing-up-the-system-state-data)  
+- [Realizar una restauración no autoritativa](#performing-a-nonauthoritative-restore)  
+- [Instalar y configurar el servicio servidor DNS](#install-and-configure-the-dns-server-service)
 
 ## <a name="backing-up-the-system-state-data"></a>Copia los datos de estado del sistema
 Use el procedimiento siguiente para realizar una copia de seguridad de los datos de estado del sistema, junto con cualquier otro dato que seleccionó para la operación de copia de seguridad actual, de un controlador de dominio que ejecuta Windows Server 2003. Windows Server 2003 incluye la herramienta Ntbackup, que puede usar para realizar una copia de seguridad de los datos de estado del sistema.  
@@ -57,7 +57,7 @@ Para ahorrar tiempo requerido para volver a instalar el software, determinar si 
 ### <a name="to-perform-a-nonauthoritative-restore"></a>Para realizar una restauración no autoritativa
   
 1. Después de iniciar el controlador de dominio, presione F8 para reiniciar el equipo en el modo de restauración de servicios de directorio (DSRM).  
-2. Seleccione **modo de restauración de servicios de directorio (solo controladores de dominio de Windows)**.  
+2. Seleccione **modo de restauración de servicios de directorio (solo controladores de dominio de Windows)** .  
 3. Seleccione el sistema operativo que desea iniciar en modo de restauración.  
 4. Inicie sesión como administrador (solo puede utilizar una cuenta de equipo local, ninguna opción de inicio de sesión de dominio está disponible).  
 5. En un símbolo del sistema, escriba **ntbackup**, y, a continuación, presione ENTRAR.  
@@ -119,12 +119,12 @@ Si el controlador de dominio que puede restaurar desde copia de seguridad se est
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Recuperación de bosques de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)  
+- [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)  
 - [Recuperación de bosques de AD - idear un plan de recuperación personalizada del bosque](AD-Forest-Recovery-Devising-a-Plan.md)  
 - [Recuperación de bosques de AD: identificar el problema](AD-Forest-Recovery-Identify-the-Problem.md)
 - [Recuperación de bosques de AD - determinar cómo recuperar](AD-Forest-Recovery-Determine-how-to-Recover.md)
 - [Recuperación de bosques de AD - realizar una recuperación inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [Recuperación de bosques de AD: procedimientos](AD-Forest-Recovery-Procedures.md)  
+- [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)  
 - [Recuperación de bosques de AD - preguntas más frecuentes](AD-Forest-Recovery-FAQ.md)  
 - [Recuperación de bosques de AD - recuperar un único dominio dentro de un bosque Multidomain](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
 - [Recuperación de bosques de AD: recuperación del bosque con controladores de dominio de Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md) 

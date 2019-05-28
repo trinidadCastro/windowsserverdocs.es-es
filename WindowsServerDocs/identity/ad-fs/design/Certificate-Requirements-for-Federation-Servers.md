@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 369c0e9e7ab1ef25baee1c35379cc66b886f20d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce301f6320ed3347b1ee802f57c2b2ebd4394970
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827106"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191642"
 ---
 # <a name="certificate-requirements-for-federation-servers"></a>Requisitos de certificado para servidores de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En los servicios de federación de Active Directory \(AD FS\) diseño, deben utilizarse varios certificados para proteger la comunicación y facilitar las autenticaciones de usuario entre los clientes de Internet y los servidores de federación. Cada servidor de federación debe tener un certificado de comunicación de servicio y un token de\-certificados de firma para que pueda participar en comunicaciones con AD FS. En la tabla siguiente se describe los tipos de certificados que están asociados con el servidor de federación.  
   
@@ -55,4 +53,4 @@ Considera qué certificados se obtendrán de una CA pública y cuáles de una CA
 Si un certificado que utilizas tiene listas de revocación de certificados (CRL), el servidor con el certificado configurado debe poder establecer contacto con el servidor que distribuye las CRL.  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

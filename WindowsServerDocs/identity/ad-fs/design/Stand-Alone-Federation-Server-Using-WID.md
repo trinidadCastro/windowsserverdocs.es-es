@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9ec4150a7d3adfaac786219d253e1d0898c18204
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 31e2e1b04383adc8bec12e7290a7acec80e0402f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876526"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190791"
 ---
 # <a name="stand-alone-federation-server-using-wid"></a>Servidor de federación independiente mediante WID
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Un soporte\-servidor de federación independiente de servicios de federación de Active Directory \(AD FS\) consta de un único servidor que hospeda un servicio de federación configurado para usar Windows Internal Database \(WID\). Esta topología de AD FS es para los laboratorios de pruebas. No se recomienda para entornos de producción porque tiene un límite de un solo servidor de federación y no se puede usar para escalar a más servidores.  
   
@@ -45,4 +43,4 @@ Esta sección describen diversas consideraciones acerca de los destinatarios, ve
   
 
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,39 +9,38 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: eca5d42b96ba2180bdf0a42c6f494344ee3ff1e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6ea73506bbd67dd44fa23b4b87d4744ebbbd71cb
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866846"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192572"
 ---
-# <a name="ad-fs-2016-deployment"></a>Implementación de AD FS 2016
+# <a name="ad-fs-deployment"></a>Implementación de AD FS
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Este documento contiene una lista de toda la documentación de implementación de AD FS para Windows Server 2016. Esto incluye lo siguiente:
   
-* [Procedimientos recomendados para proteger AD FS](deployment/Best-Practices-Securing-AD-FS.md)
+* [Procedimientos recomendados para proteger AD FS](deployment/Best-Practices-Securing-AD-FS.md)
 
-* [Implementación de Azure AD Connect Health para supervisar la infraestructura de identidad local en la nube](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
+* [Implementar Azure AD Connect Health para supervisar la infraestructura de identidad local en la nube](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
 
-* [Planear el acceso condicional basado en el dispositivo local](deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
+* [Planeación del acceso condicional basado en dispositivos a nivel local](deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 
 * [Actualizaciones necesarias para AD FS y WAP](deployment/updates-for-active-directory-federation-services-ad-fs.md)
 
-* [Configurar la redundancia geográfica con replicación de SQL Server](deployment/Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md)
+* [Configuración de redundancia geográfica con replicación de SQL Server](deployment/Set-up-Geographic-Redundancy-with-SQL-Server-Replication.md)
 
-* [Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+* [Configuración del entorno de laboratorio para AD FS en Windows Server 2012 R2](deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
   
 
-* [Actualización a AD FS en Windows Server 2016 mediante una base de datos WID](deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)  
+* [Actualización a AD FS en Windows Server 2016 mediante una base de datos WID](deployment/Upgrading-to-AD-FS-in-Windows-Server-2016.md)  
 
-* [Actualización a AD FS en Windows Server 2016 mediante una base de datos SQL](deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)  
+* [Actualizar a AD FS en Windows Server 2016 mediante una base de datos SQL](deployment/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL.md)  
 
-* [Implementar AD FS en Azure](deployment/how-to-connect-fed-azure-adfs.md)
+* [Implementar AD FS en Azure](deployment/how-to-connect-fed-azure-adfs.md)
 
-* [AD FS en Azure con Azure Traffic Manager](deployment/active-directory-adfs-in-azure-with-azure-traffic-manager.md)  
+* [AD FS en Azure con Azure Traffic Manager](deployment/active-directory-adfs-in-azure-with-azure-traffic-manager.md)  
 
 * [Guía de implementación de Windows Server 2016 y 2012 R2](deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
 

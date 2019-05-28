@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: dffd886ffd0bedd429918f72408b2d13d9fa1bdf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea537aa61cd7bfbe05ed1dd151eddd4a0bfc5ca7
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859176"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188300"
 ---
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="when-to-use-a-send-group-membership-as-a-claim-rule"></a>Cuando usar la pertenencia a un grupo de envío como una regla de notificación
 Puede usar esta regla en Active Directory Federation Services \(AD FS\) cuando desee emitir un nuevo valor de notificación saliente para sólo aquellos usuarios que son miembros de un grupo de seguridad de Active Directory especificado. Cuando usa esta regla, emitirá una notificación única solo para el grupo que especifique y que coincida con la lógica de la regla, como se describe en la tabla siguiente.  
   

@@ -7,18 +7,18 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 06/04/2018
+ms.date: 04/26/2019
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: 620d339a505da77649d65537abc92f301760d40d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd0a160213e69e59194e1f775040c12769f1eb5e
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821296"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772483"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>Replicación de almacenamiento de servidor a servidor con la réplica de almacenamiento
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Puede utilizar la Réplica de almacenamiento para configurar dos servidores para sincronizar datos, de forma que cada uno tenga una copia idéntica del mismo volumen. Este tema proporciona cierta información general de esta configuración de replicación de servidor a servidor, además de cómo configurar y administrar el entorno.
 
@@ -31,7 +31,7 @@ Este es un vídeo de información general del uso de réplica de almacenamiento 
 ## <a name="prerequisites"></a>Requisitos previos  
 
 * Bosque de Active Directory Domain Services (no es necesario ejecutar Windows Server 2016).  
-* Dos servidores que tengan instalado Windows Server 2016 Datacenter Edition.  
+* Dos servidores que ejecutan Windows Server 2019 o Windows Server 2016 Datacenter Edition. Si está ejecutando Windows Server 2019, en su lugar, puede usar Standard Edition si está replicando Aceptar sólo un único volumen hasta 2 TB de tamaño.  
 * Dos conjuntos de almacenamiento, mediante JBOD de SAS, SAN de canal de fibra, destino iSCSI o almacenamiento SCSI/SATA local. El almacenamiento debe contener una combinación de medios de disco duro (HDD) y unidades de estado sólido (SSD). Hará que cada conjunto de almacenamiento esté disponible solo para cada uno de los servidores, sin acceso compartido.  
 * Cada conjunto de almacenamiento debe permitir la creación de al menos dos discos virtuales, uno para datos replicados y otro para registros. El almacenamiento físico debe tener los mismos tamaños de sector en todos los discos de datos. El almacenamiento físico debe tener los mismos tamaños de sector en todos los discos de registro.  
 * Al menos una conexión de Ethernet/TCP en cada servidor para replicación sincrónica, pero preferiblemente RDMA.   
@@ -52,7 +52,7 @@ Para usar réplica de almacenamiento y Windows Admin Center juntos, necesita lo 
 
 | Sistema                        | Sistema operativo                                            | Necesario para     |
 |-------------------------------|-------------------------------------------------------------|------------------|
-| Dos servidores <br>(cualquier combinación de hardware local, las máquinas virtuales y máquinas virtuales incluidas las máquinas virtuales de Azure en la nube)| Datacenter edition de Windows Server (canal semianual) o Windows Server 2016 | Réplica de almacenamiento  |
+| Dos servidores <br>(cualquier combinación de hardware local, las máquinas virtuales y máquinas virtuales incluidas las máquinas virtuales de Azure en la nube)| Windows Server 2019, Windows Server 2016 o Windows Server (canal semianual) | Réplica de almacenamiento  |
 | Un equipo                     | Windows 10                                                  | Windows Admin Center |
 
 > [!NOTE]
@@ -86,7 +86,7 @@ Si usa Windows Admin Center para administrar la réplica de almacenamiento, siga
 
 ## <a name="provision-os"></a>Paso 2: Aprovisionamiento de sistema operativo, características, roles, almacenamiento y red
 
-1.  Instala Windows Server 2016 en los dos nodos de servidor con un tipo de instalación de Windows Server 2016 Datacenter **(Experiencia de escritorio)**. No elija Standard Edition si está disponible, si contiene la réplica de almacenamiento.
+1.  Instale Windows Server en ambos nodos de servidor con un tipo de instalación de Windows Server **(experiencia de escritorio)** . 
  
     Para usar una máquina virtual de Azure conectada a la red a través de ExpressRoute, consulte [adición de una máquina virtual de Azure conectada a la red a través de ExpressRoute](#add-azure-vm-expressroute).
 
@@ -129,7 +129,7 @@ Si usa Windows Admin Center para administrar la réplica de almacenamiento, siga
         $Servers | ForEach { Install-WindowsFeature -ComputerName $_ -Name Storage-Replica,FS-FileServer -IncludeManagementTools -restart }  
         ```  
 
-        Para más información sobre estos pasos, consulte [Instalación o desinstalación de roles, servicios de rol o características](http://technet.microsoft.co/library/hh831809.aspx).  
+        Para más información sobre estos pasos, consulte [Instalación o desinstalación de roles, servicios de rol o características](../../administration/server-manager/install-or-uninstall-roles-role-services-or-features.md).  
 
 8.  Configure el almacenamiento como sigue:  
 
@@ -155,7 +155,7 @@ Si usa Windows Admin Center para administrar la réplica de almacenamiento, siga
 
         1.  Asegúrese de que cada clúster pueda ver solo los contenedores de almacenamiento de ese sitio. Debe usar más de un único adaptador de red si utiliza iSCSI.    
 
-        2.  Aprovisiona el almacenamiento mediante la documentación del proveedor. Si usa destinos iSCSI basados en Windows, consulte [Procedimientos de almacenamiento de bloque de destino iSCSI](https://technet.microsoft.com/library/hh848268.aspx).  
+        2.  Aprovisiona el almacenamiento mediante la documentación del proveedor. Si usa destinos iSCSI basados en Windows, consulte [Procedimientos de almacenamiento de bloque de destino iSCSI](../iscsi/iscsi-target-server.md).  
 
     - **Para el almacenamiento SAN de FC:**  
 
@@ -210,7 +210,7 @@ Si usa Windows Admin Center para administrar la réplica de almacenamiento, siga
 
 ### <a name="using-windows-powershell"></a>Uso de Windows PowerShell
 
-Ahora configurará la replicación de servidor a servidor mediante Windows PowerShell. Debe realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga las herramientas de administración de RSAT de Windows Server 2016.  
+Ahora configurará la replicación de servidor a servidor mediante Windows PowerShell. Debe realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server.  
 
 1. Asegúrese de que está utilizando una consola de Powershell con privilegios elevados como administrador.  
 2. Configure la replicación de servidor a servidor y especifique los discos de origen y destino, los registros de origen y destino, los nodos de origen y de destino y el tamaño del registro.  
@@ -314,7 +314,7 @@ Ahora configurará la replicación de servidor a servidor mediante Windows Power
 
 ## <a name="step-4-manage-replication"></a>Paso 4: Administrar la replicación
 
-Ahora administrará y usará su infraestructura replicada de servidor a servidor. Puede realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga las herramientas de administración de RSAT de Windows Server 2016.  
+Ahora administrará y usará su infraestructura replicada de servidor a servidor. Puede realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server.  
 
 1.  Use `Get-SRPartnership` y `Get-SRGroup` para determinar el origen y el destino actuales de la replicación y su estado.  
 
@@ -372,7 +372,7 @@ Ahora administrará y usará su infraestructura replicada de servidor a servidor
 
     -   \Estadísticas de Réplica de almacenamiento(*)\Número de mensajes enviados  
 
-    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](https://technet.microsoft.com/library/hh849685.aspx).  
+    Para más información sobre los contadores de rendimiento en Windows PowerShell, consulte [Get-Counter](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-Counter).  
 
 3.  Para mover la dirección de replicación de un sitio, use el cmdlet `Set-SRPartnership`.  
 
@@ -381,7 +381,7 @@ Ahora administrará y usará su infraestructura replicada de servidor a servidor
     ```  
 
     > [!WARNING]  
-    > Windows Server 2016 impide el cambio de rol cuando la sincronización inicial está en curso, lo que puede dar lugar a pérdida de datos si intenta cambiar antes de dejar que finalice la replicación inicial. No fuerce el cambio de dirección hasta que se complete la sincronización inicial.  
+    > Windows Server impide el cambio de rol cuando la sincronización inicial está en curso, lo que puede dar lugar a pérdida de datos si intenta cambiar antes de permitir que finalice la replicación inicial. No fuerce el cambio de dirección hasta que se complete la sincronización inicial.  
 
     Compruebe los registros de eventos para ver la dirección en que se producen el cambio de replicación y el modo de recuperación y luego concílielos. Las E/S de escritura se pueden escribir luego en el almacenamiento propiedad del nuevo servidor de origen. Al cambiar la dirección de replicación se bloquearán las E/S de escritura en el equipo de origen anterior.  
 
@@ -410,7 +410,7 @@ La Réplica de almacenamiento no tiene ninguna de estas limitaciones. Sin embarg
 Si no se trata de factores de bloqueo, la Réplica de almacenamiento permite reemplazar servidores de Replicación DFS por esta tecnología más reciente.   
 Se trata de un proceso de alto nivel:  
 
-1.  Instale Windows Server 2016 en dos servidores y configure el almacenamiento. Para ello podría ser necesario actualizar un conjunto existente de servidores o realizar una instalación limpia.  
+1.  Instale a Windows Server en dos servidores y configure el almacenamiento. Para ello podría ser necesario actualizar un conjunto existente de servidores o realizar una instalación limpia.  
 2.  Asegúrese de que los datos que quiera replicar existan en uno o varios volúmenes de datos y no en la unidad C:.   
 a.  También puede inicializar los datos en el otro servidor para ahorrar tiempo, mediante una copia de seguridad o copias de archivos, así como usar almacenamiento con aprovisionamiento fino. No es necesario que la seguridad de metadatos coincida exactamente, a diferencia de la Replicación DFS.  
 3.  Compartir los datos del servidor de origen y hacerla accesible a través de un espacio de nombres DFS. Esto es importante para asegurarse de que los usuarios pueden seguir teniendo acceso a él si el nombre del servidor cambia por uno de un sitio de desastres.  
@@ -440,7 +440,7 @@ b.  Se recomienda firmemente habilitar las instantáneas de volumen y tomar peri
 1. [Crear una máquina virtual de Azure](https://docs.microsoft.com/azure/virtual-machines/windows/quick-create-portal) con la configuración siguiente (se muestra en la figura 5):
     - **Dirección IP pública**: Ninguno
     - **Red virtual**: Seleccione la red virtual que se tomó nota de desde el grupo de recursos que se agregan con ExpressRoute.
-    - **Grupo de seguridad de red (firewall)**: Seleccione el grupo de seguridad de red que creó anteriormente.
+    - **Grupo de seguridad de red (firewall)** : Seleccione el grupo de seguridad de red que creó anteriormente.
     ![Crear la máquina virtual que muestra la configuración de red ExpressRoute](media/Server-to-Server-Storage-Replication/azure-vm-express-route.png)
     **figura 5: Crear una máquina virtual al seleccionar la configuración de red de ExpressRoute**
 1. Una vez creada la máquina virtual, consulte [paso 2: Aprovisionar el sistema operativo, características, roles, almacenamiento y red](#provision-os).

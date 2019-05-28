@@ -7,12 +7,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: b6ad1f1f8573fc380e999e5ec2091cea8ebb8aa1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d761e4532a5be92d43e09904e9df8f2aa61b6bb8
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820366"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63738458"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: Deben abrirse los puertos de compartir archivos e impresoras
 
@@ -69,7 +69,7 @@ Para completar este procedimiento, se requiere como mínimo pertenecer al grupo 
 
 2.  En el panel izquierdo, haga clic en **configuración avanzada**y en el árbol de consola, haga clic en **reglas de entrada**.
 
-3.  En **reglas de entrada**, busque las reglas **compartir archivos e impresoras (sesión NB de entrada)** y **compartir archivos e impresoras (SMB de entrada)**.
+3.  En **reglas de entrada**, busque las reglas **compartir archivos e impresoras (sesión NB de entrada)** y **compartir archivos e impresoras (SMB de entrada)** .
 
 4.  Para cada regla, haga clic en la regla y, a continuación, haga clic en **Habilitar regla**.
 

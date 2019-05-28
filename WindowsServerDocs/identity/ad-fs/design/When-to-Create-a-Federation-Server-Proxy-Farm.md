@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8935760cad272d5b82edb675cda85caf0456565f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c33475d7420383448439e2b769562e55127c7b0e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859446"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190626"
 ---
 # <a name="when-to-create-a-federation-server-proxy-farm"></a>Cuándo se debe crear una granja de servidores proxy de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Considere la posibilidad de instalar servidores proxy de federación adicionales cuando haya un gran Active Directory Federation Services \(AD FS\) implementación y desea proporcionar tolerancia a errores, carga\-equilibrio y la escalabilidad para la implementación de proxy. La acción de creación de proxies de servidor de federación de dos o más en la misma red perimetral y configurar cada uno de ellos para proteger el mismo servicio de federación de AD FS crea una granja de proxy de servidor de federación.  
   
@@ -39,4 +37,4 @@ En la tabla siguiente se describe las tareas que deben completarse para que cada
 Para obtener más información acerca de cómo agregar nuevos servidores proxy de federación para crear una granja de proxy de servidor de federación, consulte [lista de comprobación: Configurar un servidor Proxy de federación](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

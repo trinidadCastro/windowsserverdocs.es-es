@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 2f4fc63c6ff7c1254fda630a8f34188d8fedc8e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e20b4960faac0ef40ad68271fa907394344e9c47
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825046"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034427"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>Adición del servidor de Agente de conexión a Escritorio remoto para la implementación y la configuración de alta disponibilidad
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
 Puede implementar un clúster de agente de conexión de escritorio remoto (RD Connection Broker) para mejorar la disponibilidad y escalabilidad de su infraestructura de servicios de escritorio remoto. 
 
@@ -37,7 +37,7 @@ Configuración de una base de datos para el agente de conexión. Puede usar [Azu
     1. En el portal de Azure, haga clic en **examinar > grupos de recursos** y haga clic en el grupo de recursos para la implementación.   
     2. Seleccione la base de datos SQL que acaba de crear (por ejemplo, CB DB1).   
     3. Haga clic en **configuración > Propiedades > mostrar cadenas de conexión de base de datos**.   
-    4. Copie la cadena de conexión **ODBC (incluye Node.js)**, que debería tener este aspecto:   
+    4. Copie la cadena de conexión **ODBC (incluye Node.js)** , que debería tener este aspecto:   
       
         Driver = {SQL Server Native Client 13.0}; Server = tcp:cb-sqls1.database.windows.net,1433; Database = CB-DB1; UID =sqladmin@contoso; PWD = {your_password_here}; Cifrar = yes; TrustServerCertificate = no; Tiempo de espera de conexión = 30;   
   
@@ -62,7 +62,7 @@ Configuración de una base de datos para el agente de conexión. Puede usar [Azu
 
 ## <a name="step-2-configure-load-balancing-on-the-rd-connection-brokers"></a>Paso 2: Configurar Equilibrio de carga en los agentes de conexión a Escritorio remoto 
 
-Si usa la infraestructura de Azure, puede crear un [equilibrador de carga Azure](#create-a-load-balancer); si no, puede establecer hacia arriba [round robin DNS](#configure-dns-round--robin). 
+Si usa la infraestructura de Azure, puede crear un [equilibrador de carga Azure](#create-a-load-balancer); si no, puede establecer hacia arriba [round robin DNS](#configure-dns-round-robin).
 
 ### <a name="create-a-load-balancer"></a>Crear un equilibrador de carga  
 1. Crear un equilibrador de carga   
@@ -88,9 +88,9 @@ Si usa la infraestructura de Azure, puede crear un [equilibrador de carga Azure]
       1. Conéctese a la máquina virtual del servidor RDMS (por ejemplo, Contoso-CB1). Consulte la [Prepare la máquina virtual de RD Connection Broker](Prepare-the-RD-Connection-Broker-VM-for-Remote-Desktop.md) artículo para obtener información sobre cómo conectarse a la máquina virtual.   
       2. En el administrador del servidor, haga clic en **Herramientas > DNS**.   
       3. En el panel izquierdo, expanda **DNS**, haga clic en la máquina DNS, haga clic en **zonas de búsqueda directa**y, a continuación, haga clic en el nombre de dominio (por ejemplo, Contoso.com). (Podría tardar unos segundos en procesar la consulta al servidor DNS para obtener la información).  
-      4. Haga clic en **acción > Nuevo Host (A o AAAA)**.   
+      4. Haga clic en **acción > Nuevo Host (A o AAAA)** .   
       9. Escriba el nombre (por ejemplo, hacb) y la dirección IP especificada anteriormente (por ejemplo, 10.0.0.32).   
-  
+
 ### <a name="configure-dns-round-robin"></a>Configurar DNS round robin  
   
 Los pasos siguientes son una alternativa a la creación de un equilibrador de carga interno de Azure.   
@@ -99,7 +99,7 @@ Los pasos siguientes son una alternativa a la creación de un equilibrador de ca
 2. Creación de registros DNS:   
       1. En el administrador del servidor, haga clic en **Herramientas > DNS**.   
       2. En el panel izquierdo, expanda **DNS**, haga clic en la máquina DNS, haga clic en **zonas de búsqueda directa**y, a continuación, haga clic en el nombre de dominio (por ejemplo, Contoso.com). (Podría tardar unos segundos en procesar la consulta al servidor DNS para obtener la información).  
-      3. Haga clic en **acción** y **Host nuevo (A o AAAA)**.   
+      3. Haga clic en **acción** y **Host nuevo (A o AAAA)** .   
       4. Escriba el **nombre DNS** para el agente de conexión a Escritorio remoto de clúster (por ejemplo, hacb) y, a continuación, escriba el **dirección IP** del primer agente de conexión a Escritorio remoto.   
       5. Repita los pasos 3 y 4 para cada agente de conexión a Escritorio remoto adicionales, que proporciona cada dirección IP única para cada registro adicional.
 

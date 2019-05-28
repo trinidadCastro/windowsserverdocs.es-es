@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 7d215c80c03236df9479aff8046981741dfc83e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b027bff4645203c44e228f11c651b767fa4502e0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838156"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192061"
 ---
 # <a name="manually-configure-a-service-account-for-a-federation-server-farm"></a>Configurar manualmente una cuenta de servicio para una granja de servidores de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Si va a configurar un entorno de granja de servidores de federación de Active Directory Federation Services \(AD FS\), debe crear y configurar una cuenta de servicio dedicada en servicios de dominio de Active Directory \(AD DS\) donde residirá la granja de servidores. Después, configura cada servidor de federación de la granja para que use esta cuenta. Debe completar las tareas siguientes en su organización cuando desee permitir que los equipos cliente en la red corporativa se autentiquen en cualquiera de los servidores de federación en una granja de AD FS mediante la autenticación integrada de Windows.  
 

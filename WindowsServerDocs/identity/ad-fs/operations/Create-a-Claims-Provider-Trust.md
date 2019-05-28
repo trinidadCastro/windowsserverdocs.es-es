@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fbc8bb63435211a92cb7fc6aa05b1413aef939c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1c47986cda3f091033274aa2c59a656ec861a98f
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854236"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189715"
 ---
 # <a name="create-a-claims-provider-trust"></a>Creación de una confianza de proveedor de notificaciones
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Para agregar una nueva confianza de proveedor de notificaciones utilizando el complemento Administración de AD FS\-en y manualmente la configuración, lleve a cabo el siguiente procedimiento en un servidor de federación del asociado de recurso en la organización del asociado de recurso.  
   
@@ -84,8 +82,8 @@ Para agregar una nueva confianza de proveedor de notificaciones, mediante el com
 ## <a name="additional-references"></a>Referencias adicionales  
 [Lista de comprobación: Configuración de la organización del asociado de recurso](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md)  
   
-[Lista de comprobación: Crear reglas de notificación para un proveedor de notificaciones de confianza](../../ad-fs/deployment/Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)  
+[Lista de comprobación: Lista de comprobación: crear reglas de notificación para confianza de proveedores de notificaciones](../../ad-fs/deployment/Checklist--Creating-Claim-Rules-for-a-Claims-Provider-Trust.md)  
   
 ## <a name="see-also"></a>Vea también  
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
   

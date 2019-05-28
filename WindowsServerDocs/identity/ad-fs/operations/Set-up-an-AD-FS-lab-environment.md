@@ -9,26 +9,24 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 53d0e24f7fcb9efc64406dc6ed01f5bb1deb2277
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01db8ecc9f84123bbc3159c3cb2399d61d6344c2
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868086"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188960"
 ---
 # <a name="set-up-an-ad-fs-lab-environment"></a>Configuración de un entorno de laboratorio de AD FS
 
->Se aplica a: Windows Server 2012 R2
-
 En este tema se describen los pasos para configurar un entorno de prueba que puede utilizarse para completar los tutoriales de las siguientes guías:  
   
--   [Tutorial: Unión con un dispositivo iOS](Walkthrough--Workplace-Join-with-an-iOS-Device.md)  
+-   [Tutorial: Workplace Join con un dispositivo iOS](Walkthrough--Workplace-Join-with-an-iOS-Device.md)  
   
--   [Tutorial: Unión con un dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)  
+-   [Tutorial: Workplace Join con un dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)  
   
--   [Guía paso a paso: Administración de riesgos con Control de acceso condicional](Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)  
+-   [Guía de tutorial: administración de riesgos con control de acceso condicional](Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)  
   
--   [Guía paso a paso: Administración de riesgos con autenticación multifactor adicional para aplicaciones confidenciales](Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)  
+-   [Guía de tutorial: Administración de riesgos con autenticación multifactor adicional para aplicaciones confidenciales](Walkthrough-Guide--Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)  
   
 > [!NOTE]  
 > No recomendamos instalar el servidor web y el servidor de federación en el mismo equipo.  
@@ -161,7 +159,7 @@ El siguiente paso consiste en configurar el Servicio de registro de dispositivos
     Initialize-ADDeviceRegistration  
     ```  
   
-    Cuando se le solicitará una cuenta de servicio, escriba **contosofsgmsa$**.  
+    Cuando se le solicitará una cuenta de servicio, escriba **contosofsgmsa$** .  
   
     Ahora ejecute el cmdlet de Windows PowerShell.  
   
@@ -187,13 +185,13 @@ Para completar este procedimiento, debes pertenecer como mínimo al grupo Admini
   
 1.  En DC1, desde el Administrador de servidor, en el menú **Herramientas**, haz clic en **DNS** para abrir el complemento de DNS.  
   
-2.  En el árbol de consola, expande DC1, expande **Zonas de búsqueda directa**, haz clic con el botón secundario en **contoso.com** y haz clic en **Host nuevo (A o AAAA)**.  
+2.  En el árbol de consola, expande DC1, expande **Zonas de búsqueda directa**, haz clic con el botón secundario en **contoso.com** y haz clic en **Host nuevo (A o AAAA)** .  
   
 3.  En **Nombre,** escribe el nombre que deseas usar para tu granja de AD FS. Para este tutorial, escriba **adfs1**.  
   
 4.  En **Dirección IP**, escribe la dirección IP del servidor ADFS1. Haga clic en **Agregar host**.  
   
-5.  Haz clic con el botón secundario en **contoso.com**y, a continuación, haz clic en **Nuevo alias (CNAME)**.  
+5.  Haz clic con el botón secundario en **contoso.com**y, a continuación, haz clic en **Nuevo alias (CNAME)** .  
   
 6.  En el cuadro de diálogo **Nuevo registro de recursos**, escribe **enterpriseregistration** en el cuadro **Nombre de alias**.  
   
@@ -237,7 +235,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
   
 5.  En la página **Seleccionar servidor de destino**, haz clic en **Seleccionar un servidor del grupo de servidores**, comprueba que está seleccionado el equipo de destino y haz clic en **Siguiente**.  
   
-6.  En la página **Seleccionar roles de servidor** , selecciona la casilla situada junto a **Servidor web (IIS)**, haz clic en **Agregar características**y, a continuación, haz clic en **Siguiente**.  
+6.  En la página **Seleccionar roles de servidor** , selecciona la casilla situada junto a **Servidor web (IIS)** , haz clic en **Agregar características**y, a continuación, haz clic en **Siguiente**.  
   
 7.  En la página **Seleccionar características**, selecciona **Windows Identity Foundation 3.5** y haz clic en **Siguiente**.  
   
@@ -290,7 +288,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
   
 4.  **Configurar el Administrador de IIS**  
   
-    1.  Abre el **Administrador de Internet Information Services (IIS)**.  
+    1.  Abre el **Administrador de Internet Information Services (IIS)** .  
   
     2.  Ve a **Grupos de aplicaciones**, haz clic con el botón secundario en **DefaultAppPool** y selecciona **Configuración avanzada**. Configura **Cargar perfil de usuario** como **Verdadero** y haz clic en **Aceptar**.  
   
@@ -308,7 +306,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
   
     1.  Ejecute FedUtil.exe, que se encuentra en **c: Program Files archivos (x86) Windows Identity Foundation SDKv3.5**.  
   
-    2.  Establezca la ubicación de la configuración de aplicación en **C:inetputclaimappweb.config** y establezca el URI de la aplicación a la dirección URL de su sitio,  **https://webserv1.contoso.com /claimapp /**. Haz clic en **Siguiente**.  
+    2.  Establezca la ubicación de la configuración de aplicación en **C:inetputclaimappweb.config** y establezca el URI de la aplicación a la dirección URL de su sitio,  **https://webserv1.contoso.com /claimapp /** . Haz clic en **Siguiente**.  
   
     3.  Seleccione **usar un STS existente** y vaya a la dirección URL de metadatos del servidor AD FS **https://adfs1.contoso.com/federationmetadata/2007-06/federationmetadata.xml**. Haz clic en **Siguiente**.  
   
@@ -327,7 +325,7 @@ Ahora debe proteger la aplicación de ejemplo que se ejecuta en el servidor web 
 1.  En el servidor de federación (ADFS1), en la **Consola de administración de AD FS**, ve a **Relaciones de confianza para usuario autenticado** y haz clic en **Agregar relación de confianza para usuario autenticado**.  
   
 2.  En la página **Seleccionar origen de datos** , selecciona **Importar los datos acerca del usuario autenticado publicados en línea o en una red local**, escribe la dirección URL de los metadatos para **claimapp**y haz clic en **Siguiente**. Al ejecutarse FedUtil.exe, creó un archivo de metadatos .xml. Se encuentra en   
-    **https://webserv1.contoso.com/claimapp/federationmetadata/2007-06/federationmetadata.xml**.  
+    **https://webserv1.contoso.com/claimapp/federationmetadata/2007-06/federationmetadata.xml** .  
   
 3.  En la página **Especificar nombre para mostrar** , especifique el **nombre para mostrar** de la relación de confianza para usuario autenticado, **claimapp**, y haga clic en **Siguiente**.  
   

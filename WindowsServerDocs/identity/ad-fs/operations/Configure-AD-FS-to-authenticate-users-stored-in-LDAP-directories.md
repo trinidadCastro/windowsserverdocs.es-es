@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 05f8b8991e664a84c3f2b3200de4068af8d1476a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bef2cac726b1c4ea9b30f9a2086e3a2670339228
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846616"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189834"
 ---
 # <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories"></a>Configuración de AD FS para autenticar a los usuarios almacenados en directorios LDAP
-
->Se aplica a: Windows Server 2016
 
 El siguiente tema describe la configuración necesaria para habilitar la infraestructura de AD FS autenticar a los usuarios cuyas identidades se almacenan en directorios de protocolo ligero de acceso a directorios (LDAP) compatibles con v3.
 
@@ -99,6 +97,6 @@ Para configurar la granja de AD FS para autenticar a los usuarios desde un direc
     En el ejemplo anterior, se crea una confianza de proveedor de notificaciones local denominada "Proveedores". Está especificando información de conexión de AD FS para conectarse con el directorio LDAP que representa esta relación de confianza de proveedor de notificaciones local mediante la asignación `$vendorDirectory` a la `-LdapServerConnection` parámetro. Tenga en cuenta que en el paso uno, se ha asignado `$vendorDirectory` una cadena de conexión que se usará al conectarse a su directorio LDAP específico. Por último, está especificando que el `$GivenName`, `$Surname`, y `$CommonName` son atributos LDAP (que se asignan a las notificaciones de AD FS) que se usará para el control de acceso condicional, incluidas las directivas de autenticación multifactor y de emisión reglas de autorización, así como para la emisión de notificaciones de AD FS emitidas en tokens de seguridad. Para usar activos protocolos como Ws-Trust con AD FS, debe especificar el parámetro OrganizationalAccountSuffix, que permite que AD FS eliminar la ambigüedad entre los confianzas de proveedores de notificaciones local al atender una solicitud de autorización active.
 
 ## <a name="see-also"></a>Vea también
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
 
 

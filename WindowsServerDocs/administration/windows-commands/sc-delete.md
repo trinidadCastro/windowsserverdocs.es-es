@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b60127cf957a30d147c9992c74c01e37e5b8bf89
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 68af5f118b2cc9d7941abddccd2a1bc7fde4c6d0
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871926"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222933"
 ---
 # <a name="sc-delete"></a>Eliminación de SC
 
@@ -26,7 +26,7 @@ ms.locfileid: "59871926"
 
 Elimina una subclave de servicio del registro. Si el servicio se está ejecutando o si otro proceso tiene un identificador abierto en el servicio, el servicio está marcado para eliminación.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -46,7 +46,7 @@ sc [<ServerName>] delete [<ServiceName>]
 
 Use **agregar o quitar programas** en **Panel de Control** eliminar DHCP, DNS o cualquier otro servicio de sistema operativo integrada. Tenga en cuenta que **agregar o quitar programas** solo no quitará la subclave del registro para el servicio, pero también desinstala el servicio y eliminar todos los accesos directos a él.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="examples"></a>Ejemplos
 
 Para eliminar la subclave de servicio **NewServ** desde el registro en el equipo local, escriba:
 ```

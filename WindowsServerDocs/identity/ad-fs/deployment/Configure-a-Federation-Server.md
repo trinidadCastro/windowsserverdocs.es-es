@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 13ce514dc5f3f70217a26c898cde6fe24d4967c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2f597994aa74f453903e09f7d3eefd83f26faba
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847386"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192270"
 ---
 # <a name="configure-a-federation-server"></a>Configurar un servidor de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Después de instalar los servicios de federación de Active Directory \(AD FS\) servicio de rol en el equipo, está listo para configurar este equipo para convertirse en un servidor de federación. Puede realizar una de las acciones siguientes:  
   
@@ -118,7 +116,7 @@ Puede crear una nueva granja de servidores de federación mediante el uso de una
         Install-AdfsFarm -CertificateThumbprint <certificate_thumbprint> -FederationServiceName <federation_service_name> -ServiceAccountCredential $fscred  
         ```  
   
-        Para obtener el valor de **< certificado\_huella digital >**, ejecute `dir Cert:\LocalMachine\My`y, a continuación, seleccionar la huella digital del certificado SSL. El valor de **< federación\_servicio\_nombre >** es el nombre del servicio de federación, por ejemplo, fs.contoso.com.  
+        Para obtener el valor de **< certificado\_huella digital >** , ejecute `dir Cert:\LocalMachine\My`y, a continuación, seleccionar la huella digital del certificado SSL. El valor de **< federación\_servicio\_nombre >** es el nombre del servicio de federación, por ejemplo, fs.contoso.com.  
   
         > [!NOTE]  
         > Si esto no es la primera vez que ejecute este comando, agregue el `OverwriteConfiguration` parámetro.  
@@ -221,7 +219,7 @@ Puede agregar un servidor de federación a una granja existente mediante el uso 
   
 ## <a name="see-also"></a>Vea también 
 
-[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
+[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
 
 [Guía de implementación de Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  

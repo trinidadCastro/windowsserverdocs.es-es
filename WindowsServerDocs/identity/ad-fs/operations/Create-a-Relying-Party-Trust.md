@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 14e1cc732ed60b7f05a9a4a9aac9037c48b702f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 42df338ee5a5aecb3cf32f91a2b1aedae1210164
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879926"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189511"
 ---
 # <a name="create-a-relying-party-trust"></a>Creación de una relación de confianza para usuario autenticado
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 El siguiente documento proporciona información sobre cómo crear una relación de confianza para usuario autenticado manualmente y con metadatos de federación.
   
@@ -81,7 +80,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 3.  En el **bienvenida** página, elija **notificaciones** y haga clic en **iniciar**.  
 ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust2.PNG) 
   
-4.  En el **Seleccionar origen de datos** página, haga clic en **importar los datos acerca del usuario de confianza publican en línea o en una red local*. En **Dirección de metadatos de federación (nombre de host o dirección URL)**, escriba la dirección URL de los metadatos de federación o el nombre de host del asociado y haga clic en **Siguiente**.  
+4.  En el **Seleccionar origen de datos** página, haga clic en **importar los datos acerca del usuario de confianza publican en línea o en una red local*. En **Dirección de metadatos de federación (nombre de host o dirección URL)** , escriba la dirección URL de los metadatos de federación o el nombre de host del asociado y haga clic en **Siguiente**.  
 ![usuario de confianza](media/Create-a-Relying-Party-Trust/addtrust12.PNG) 
 
 5.  En la página Especificar nombre para mostrar, escriba un nombre en **nombre para mostrar**en notas escriba una descripción para esta relación de confianza y, a continuación, haga clic en **siguiente**.
@@ -96,4 +95,4 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
 
 ## <a name="see-also"></a>Vea también  
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 

@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: d872252180d49bd41a91e9a8eaf516b834ed242a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2a5a7a6bd6313f7a4eadd827e3d754c1e467c3bc
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814676"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63745421"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>Configuración de sistemas de alta precisión
 >Se aplica a: Windows Server 2016 y Windows 10 versión 1607 o posterior
