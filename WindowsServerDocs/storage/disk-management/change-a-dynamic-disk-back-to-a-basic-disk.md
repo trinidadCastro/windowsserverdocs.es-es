@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: d018b417aeba21e2b1303fd9e72b58b4e2fc334f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7655ca78868d40d354b5260fa99fcfa3a21d0de
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836056"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192751"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>Cambiar un disco dinámico por un disco básico
 
@@ -26,22 +26,20 @@ En este tema se describe cómo eliminar todo el contenido de un disco dinámico 
 
 ## <a name="changing-a-dynamic-disk-back-to-a-basic-disk"></a>Cambiar un disco dinámico por un disco básico
 
--   [Mediante la interfaz de Windows](#BKMK_WINUI)
--   [Línea de comandos](#BKMK_CMD)
+-   [Mediante la interfaz de Windows](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface)
+-   [Línea de comandos](#to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line)
 
 > [!NOTE]
 > Debes ser miembro del grupo **Operadores de copia de seguridad** o **Administradores**, como mínimo, para completar estos pasos.
 
-<a href="" id="BKMK_WINUI"></a>
 #### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-the-windows-interface"></a>Para cambiar un disco dinámico por un disco básico mediante la interfaz de Windows
+
 1.  Realiza una copia de seguridad de todos los volúmenes del disco que quieras convertir de dinámicos a básicos.
 
 2.  En Administración de discos, haz clic con el botón derecho en cada volumen del disco dinámico que quieras convertir en un disco básico y luego haz clic en **Eliminar volumen** de cada volumen del disco.
 
 3.  Cuando todos los volúmenes del disco se han eliminado, haz clic con el botón derecho en el disco y luego haz clic en **Convertir en disco básico**.
 
-
-<a href="" id="BKMK_CMD"></a>
 #### <a name="to-change-a-dynamic-disk-back-to-a-basic-disk-using-a-command-line"></a>Para cambiar un disco dinámico por un disco básico mediante una línea de comandos
 
 1.  Realiza una copia de seguridad de todos los volúmenes del disco que quieras convertir de dinámicos a básicos.

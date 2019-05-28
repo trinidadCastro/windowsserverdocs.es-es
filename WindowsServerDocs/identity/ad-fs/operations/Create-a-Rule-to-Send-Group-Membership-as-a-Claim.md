@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 96ab653393fbc5f0a4306db53f84c2d9ba6c7f5f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c9c4cdb881d77fe902776551b4e99061e67660ea
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847456"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189385"
 ---
 # <a name="create-a-rule-to-send-group-membership-as-a-claim"></a>Crear una regla para enviar la pertenencia a grupos como una notificación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Mediante la pertenencia al grupo de envío como una plantilla de regla de notificación en los servicios de federación de Active Directory \(AD FS\), puede crear una regla que hará posible para seleccionar un grupo de seguridad de Active Directory que se envían como una notificación. Se va a emitir solo una notificación única de esta regla, según el grupo que seleccione. Por ejemplo, puede usar esta plantilla de regla para crear una regla que va a enviar una notificación de grupo con un valor de administrador si el usuario es miembro del grupo de seguridad Admins. del dominio. Esta regla se debe usar solo para los usuarios del dominio de Active Directory local.  
   
@@ -109,14 +107,14 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[Configurar reglas de notificación](Configure-Claim-Rules.md)  
+[Configuración de regla de notificación](Configure-Claim-Rules.md)  
  
-[Lista de comprobación: Creación de reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de comprobación: crear reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[Lista de comprobación: Crear reglas de notificación para un proveedor de notificaciones de confianza](https://technet.microsoft.com/library/ee913564.aspx)  
+[Lista de comprobación: Lista de comprobación: crear reglas de notificación para confianza de proveedores de notificaciones](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [Cuándo usar una regla de notificación de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
-[El rol de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
+[El papel de las notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[La función de reglas de notificación](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 
+[El papel de las reglas de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 

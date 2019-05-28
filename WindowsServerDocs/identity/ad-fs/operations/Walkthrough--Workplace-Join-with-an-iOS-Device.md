@@ -9,16 +9,15 @@ ms.date: 10/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c9c66b5bbe5fff83010859abe6ea4759d5bc4be0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 42b71667758f392d641c5262e34322f8b21cfad9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853636"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188914"
 ---
 # <a name="walkthrough-workplace-join-with-an-ios-device"></a>Tutorial: unirse al área de trabajo con un dispositivo iOS
 
->Se aplica a: Windows Server 2012 R2
 
 > [!IMPORTANT] 
 > Este método es relevante para sólo totalmente local, los clientes. Los clientes solo en la nube o híbrido no deben utilizar este método para registrar sus dispositivos iOS. Y este método no es compatible cuando los clientes a nivel local deciden cambiar a la nube. El dispositivo debe anular el registro y registrar con la nube. 
@@ -63,8 +62,8 @@ En esta demostración, unes el dispositivo al área de trabajo.
 
 
 - [Unirse a un área de trabajo desde cualquier dispositivo para SSO y sin interrupciones de segundo Factor de autenticación a través de las aplicaciones de empresa](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
-- [Configurar el entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
-- [Tutorial: Unión con un dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
+- [Configuración del entorno de laboratorio para AD FS en Windows Server 2012 R2](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md)
+- [Tutorial: Workplace Join con un dispositivo Windows](Walkthrough--Workplace-Join-with-a-Windows-Device.md)
 
 
 

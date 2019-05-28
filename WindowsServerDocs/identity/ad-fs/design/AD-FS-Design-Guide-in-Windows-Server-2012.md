@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e660c1dabcc5a683fa74068ea148fd4efbeee569
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f2a6df6a9c9a5cbdfa9c64bc6521e92f4982a15
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890216"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191732"
 ---
-# <a name="ad-fs-design-guide-in-windows-server-2012"></a>Guía de diseño de AD FS en Windows Server 2012
+# <a name="ad-fs-design-guide-in-windows-server"></a>Guía de diseño de AD FS en Windows Server 
 
->Se aplica a: Windows Server 2012
+
   
 > [!NOTE]  
 > Para obtener información sobre cómo implementar AD FS en Windows Server 2012 R2, consulte [la Guía de implementación de Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md).  
@@ -38,20 +38,20 @@ Para cada diseño, encontrarás directrices para recopilar los datos necesarios 
   
 ## <a name="in-this-guide"></a>En esta guía  
   
--   [Identificar los objetivos de implementación de AD FS](Identifying-Your-AD-FS-Deployment-Goals.md)  
+-   [Identificar los objetivos de implementación de AD FS](Identifying-Your-AD-FS-Deployment-Goals.md)  
   
--   [Asignar los objetivos de implementación a un diseño de AD FS](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)  
+-   [Asignar los objetivos de implementación a un diseño de AD FS](Mapping-Your-Deployment-Goals-to-an-AD-FS-Design.md)  
   
--   [Determinar la topología de implementación de AD FS](Determine-Your-AD-FS-Deployment-Topology.md)  
+-   [Determinar la topología de la implementación de AD FS](Determine-Your-AD-FS-Deployment-Topology.md)  
   
 -   [Planear la implementación](Planning-Your-Deployment.md)  
   
 -   [Planear la ubicación del servidor de federación](Planning-Federation-Server-Placement.md)  
   
--   [Planear la ubicación de Proxy de servidor de federación](Planning-Federation-Server-Proxy-Placement.md)  
+-   [Planear la ubicación del servidor proxy de federación](Planning-Federation-Server-Proxy-Placement.md)  
   
--   [Planear la capacidad de AD FS Server](Planning-for-AD-FS-Server-Capacity.md)  
+-   [Planear la capacidad de los servidores de AD FS](Planning-for-AD-FS-Server-Capacity.md)  
   
--   [Apéndice A: Revisar los requisitos de AD FS](Appendix-A--Reviewing-AD-FS-Requirements.md)  
+-   [Apéndice A: Revisión de los requisitos de AD FS](Appendix-A--Reviewing-AD-FS-Requirements.md)  
   
 

@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 08cc0b31aa123aadd57a0ea5ddbbeb96bffc3d6e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 69b433ee3e0f57398db1e7814d2de24df7dd1696
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880106"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222922"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Paso 4: Configuración de directivas de grupo para actualizaciones automáticas
 
@@ -27,69 +27,69 @@ En un entorno de Active Directory, puede usar la directiva de grupo para definir
 
 Este tema contiene dos secciones principales:
 
-[Configuración de directiva para las actualizaciones de cliente WSUS de grupo](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_PolSettings), que proporciona una guía preceptiva y comportamiento detalles sobre la configuración de Windows Update y programador de mantenimiento de directiva de grupo que controlan cómo los clientes WSUS pueden interactuar con Windows Update Para obtener las actualizaciones automáticas.
+[Configuración de directiva para las actualizaciones de cliente WSUS de grupo](#group-policy-settings-for-wsus-client-updates), que proporciona una guía preceptiva y comportamiento detalles sobre la configuración de Windows Update y programador de mantenimiento de directiva de grupo que controlan cómo los clientes WSUS pueden interactuar con Windows Update Para obtener las actualizaciones automáticas.
 
-[Información complementaria](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_Supplemental) tiene las siguientes secciones:
+[Información complementaria](#supplemental-information) tiene las siguientes secciones:
 
--   [Obtener acceso a la configuración de Windows Update en la directiva de grupo](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_OpenGPO), que proporcionan instrucciones generales sobre cómo usar el editor de administración de directivas de grupo e información sobre el acceso a las extensiones de directiva de servicios de actualización y configuración del programador de mantenimiento en Directiva de grupo.
+-   [Obtener acceso a la configuración de Windows Update en la directiva de grupo](#accessing-the-windows-update-settings-in-group-policy), que proporcionan instrucciones generales sobre cómo usar el editor de administración de directivas de grupo e información sobre el acceso a las extensiones de directiva de servicios de actualización y configuración del programador de mantenimiento en Directiva de grupo.
 
--   [Cambia a WSUS relevantes para esta guía](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_changes): administradores familiarizados con WSUS 3.2 y versiones anteriores, esta sección ofrece un breve resumen de las diferencias clave entre la versión actual y pasada de WSUS relevantes para esta guía.
+-   [Cambia a WSUS relevantes para esta guía](#changes-to-wsus-relevant-to-this-guide): administradores familiarizados con WSUS 3.2 y versiones anteriores, esta sección ofrece un breve resumen de las diferencias clave entre la versión actual y pasada de WSUS relevantes para esta guía.
 
--   [Términos y definiciones](4-configure-group-policy-settings-for-automatic-updates.md#BKMK_Terms): definiciones para varios términos relacionados con WSUS y actualización de los servicios que se usan en esta guía.
+-   [Términos y definiciones](#terms-and-definitions): definiciones para varios términos relacionados con WSUS y actualización de los servicios que se usan en esta guía.
 
-## <a name="BKMK_PolSettings"></a>Configuración de directiva de grupo para actualizaciones de cliente WSUS
+## <a name="group-policy-settings-for-wsus-client-updates"></a>Configuración de directiva de grupo para actualizaciones de cliente WSUS
 Esta sección proporciona información acerca de tres extensiones de directiva de grupo. En estas extensiones puede encontrar la configuración que puede usar para configurar cómo los clientes WSUS pueden interactuar con Windows Update para recibir actualizaciones automáticas.
 
--   [equipo configuración &gt; configuración de directiva de actualización de Windows](#BKMK_computerPol)
+-   [equipo configuración &gt; configuración de directiva de actualización de Windows](#computer-configuration--windows-update-policy-settings)
 
--   [equipo configuración &gt; configuración de directiva de programador de mantenimiento](#BKMK_MtncScheduler)
+-   [equipo configuración &gt; configuración de directiva de programador de mantenimiento](#computer-configuration--maintenance-scheduler-policy-settings)
 
--   [Configuración de usuario &gt; configuración de directiva de actualización de Windows](#BKMK_UserPol)
+-   [Configuración de usuario &gt; configuración de directiva de actualización de Windows](#user-configuration--windows-update-policy-settings)
 
 > [!NOTE]
-> En este tema se da por supuesto que ya usa y está familiarizado con la directiva de grupo. Si no está familiarizado con la directiva de grupo, se recomienda que revise la información de la [información complementaria](#BKMK_Supplemental) sección de este documento antes de intentar configurar la directiva de WSUS.
+> En este tema se da por supuesto que ya usa y está familiarizado con la directiva de grupo. Si no está familiarizado con la directiva de grupo, se recomienda que revise la información de la [información complementaria](#supplemental-information) sección de este documento antes de intentar configurar la directiva de WSUS.
 
-### <a name="BKMK_computerPol"></a>Configuración del equipo > configuración de directiva de actualización de Windows
+### <a name="computer-configuration--windows-update-policy-settings"></a>Configuración del equipo > configuración de directiva de actualización de Windows
 En esta sección se proporciona detalles sobre la configuración de directiva de equipo siguiente:
 
--   [Permitir la instalación inmediata de actualizaciones automáticas](#BKMK_comp1)
+-   [Permitir la instalación inmediata de actualizaciones automáticas](#allow-automatic-updates-immediate-installation)
 
--   [Permitir que los usuarios reciben notificaciones de actualización](#BKMK_comp2)
+-   [Permitir que los usuarios reciben notificaciones de actualización](#allow-non-administrators-to-receive-update-notifications)
 
--   [Permitir actualizaciones firmadas desde una ubicación del servicio Microsoft update de la intranet](#BKMK_comp3)
+-   [Permitir actualizaciones firmadas desde una ubicación del servicio Microsoft update de la intranet](#allow-signed-updates-from-an-intranet-microsoft-update-service-location)
 
--   [Frecuencia de detección de actualizaciones automática](#BKMK_comp4)
+-   [Frecuencia de detección de actualizaciones automática](#automatic-updates-detection-frequency)
 
--   [Configurar actualizaciones automáticas](#BKMK_comp5)
+-   [Configurar actualizaciones automáticas](#configure-automatic-updates)
 
--   [Retrasar el reinicio para las instalaciones programadas](#BKMK_comp6)
+-   [Retrasar el reinicio para las instalaciones programadas](#delay-restart-for-scheduled-installations)
 
--   [No ajustar la opción predeterminada para "Instalar actualizaciones y apagar" en el cuadro de diálogo de cierre abajo Windows](#BKMK_comp7)
+-   [No ajustar la opción predeterminada para "Instalar actualizaciones y apagar" en el cuadro de diálogo de cierre abajo Windows](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
--   [No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo de cierre abajo Windows](#BKMK_comp8)
+-   [No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo de cierre abajo Windows](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
--   [Habilitar destinatarios del lado cliente](#BKMK_comp9)
+-   [Habilitar destinatarios del lado cliente](#enable-client-side-targeting)
 
--   [Habilitar la administración de energía de Windows Update reactivar automáticamente el equipo para instalar las actualizaciones programadas](#BKMK_comp10)
+-   [Habilitar la administración de energía de Windows Update reactivar automáticamente el equipo para instalar las actualizaciones programadas](#enabling-windows-update-power-management-to-automatically-wake-up-the-computer-to-install-scheduled-updates)
 
--   [Instalaciones de actualizaciones no reiniciar automáticamente con usuarios con sesión iniciada para automáticas programadas](#BKMK_comp11)
+-   [Instalaciones de actualizaciones no reiniciar automáticamente con usuarios con sesión iniciada para automáticas programadas](#no-auto-restart-with-logged-on-users-for-scheduled-automatic-updates-installations)
 
--   [Volver a preguntar para reiniciar con instalaciones programadas](#BKMK_comp12)
+-   [Volver a preguntar para reiniciar con instalaciones programadas](#re-prompt-for-restart-with-scheduled-installations)
 
--   [Volver a programar la instalación programada de actualizaciones automáticas](#BKMK_comp13)
+-   [Volver a programar la instalación programada de actualizaciones automáticas](#reschedule-automatic-updates-scheduled-installations)
 
--   [Especifique la ubicación del servicio Microsoft update de la intranet](#BKMK_comp14)
+-   [Especifique la ubicación del servicio Microsoft update de la intranet](#specify-intranet-microsoft-update-service-location)
 
--   [Activar las actualizaciones recomendadas mediante actualizaciones automáticas](#BKMK_comp15)
+-   [Activar las actualizaciones recomendadas mediante actualizaciones automáticas](#turn-on-recommended-updates-via-automatic-updates)
 
--   [Activar las notificaciones de Software](#BKMK_comp16)
+-   [Activar las notificaciones de Software](#turn-on-software-notifications)
 
 En GPME, directivas de actualización de Windows para la configuración basada en el equipo se encuentran en la ruta de acceso: *PolicyName* > **configuración del equipo** > **directivas** > **plantillas administrativas**  >  **Componentes de Windows** > **Windows Update**.
 
 > [!NOTE]
 > De forma predeterminada, estas opciones no están configuradas.
 
-#### <a name="BKMK_comp1"></a>Permitir la instalación inmediata de actualizaciones automáticas
+#### <a name="allow-automatic-updates-immediate-installation"></a>Permitir la instalación inmediata de actualizaciones automáticas
 Especifica si las actualizaciones automáticas se instalará automáticamente las actualizaciones que no interrumpe los servicios de Windows o reiniciar Windows.
 
 |Compatible con:|Excluir:|
@@ -108,7 +108,7 @@ Especifica si las actualizaciones automáticas se instalará automáticamente la
 
 **Opciones:** No hay ninguna opción para esta configuración.
 
-#### <a name="BKMK_comp2"></a>Permitir que los usuarios reciben notificaciones de actualización
+#### <a name="allow-non-administrators-to-receive-update-notifications"></a>Permitir que los usuarios reciben notificaciones de actualización
 Especifica si los usuarios no administrativos recibirán notificaciones de actualización según la configuración de directiva Configurar actualizaciones automáticas.
 
 |Compatible con:|Excluir:|
@@ -130,7 +130,7 @@ Especifica si los usuarios no administrativos recibirán notificaciones de actua
 
 **Opciones:** No hay ninguna opción para esta configuración.
 
-#### <a name="BKMK_comp3"></a>Permitir actualizaciones firmadas desde una ubicación del servicio Microsoft update de la intranet
+#### <a name="allow-signed-updates-from-an-intranet-microsoft-update-service-location"></a>Permitir las actualizaciones firmadas procedentes de una ubicación del servicio en Internet de Microsoft Update
 Especifica si las actualizaciones automáticas acepta las actualizaciones que están firmadas por las entidades que no sean de Microsoft cuando la actualización se encuentra en una ubicación del servicio de intranet Microsoft update.
 
 |Compatible con:|Excluir:|
@@ -173,7 +173,7 @@ Especifica si un temporizador de reinicio se iniciará siempre después de que W
 
 **Opciones:** Si habilita esta configuración, puede especificar la cantidad de tiempo que debe transcurrir después de instalar actualizaciones antes de que se produce un reinicio forzado.
 
-#### <a name="BKMK_comp4"></a>Frecuencia de detección de actualizaciones automática
+#### <a name="automatic-updates-detection-frequency"></a>Frecuencia de detección de las actualizaciones automáticas
 Especifica las horas que tardará Windows en determinar cuánto tiempo debe esperar antes de comprobar si hay actualizaciones disponibles. El tiempo de espera exacto se determina mediante el uso de las horas especificadas aquí menos cero hasta el veinte por ciento de las horas especificadas. Por ejemplo, si esta directiva se usa para especificar una frecuencia de detección de 20 horas, todos los clientes a la que se aplica esta directiva buscará actualizaciones en cualquier lugar entre 16 y 20 horas.
 
 |Compatible con:|Excluir:|
@@ -197,7 +197,7 @@ Especifica las horas que tardará Windows en determinar cuánto tiempo debe espe
 
 **Opciones:** Si habilita esta configuración, puede especificar el intervalo de tiempo (en horas) que espera a que Windows Update antes de comprobar las actualizaciones.
 
-#### <a name="BKMK_comp5"></a>Configurar actualizaciones automáticas
+#### <a name="configure-automatic-updates"></a>Configurar las actualizaciones automáticas
 Especifica especificar si las actualizaciones automáticas están habilitadas en este equipo.
 
 |Compatible con:|Excluir:|
@@ -212,10 +212,10 @@ Para usar esta configuración, seleccione **habilitado**y, a continuación, en *
 |-|-|
 |**Estado de la configuración de directiva**|**Comportamiento**|
 |**No configurado**|Especifica que el uso de las actualizaciones automáticas no se especifica en el nivel de directiva de grupo. Sin embargo, un administrador del equipo todavía puede configurar actualizaciones automáticas en el Panel de Control.|
-|**Enabled**|Especifica que Windows reconoce cuando el equipo está en línea y usa su conexión a Internet para buscar en Windows Update para las actualizaciones disponibles.<br /><br />Cuando se habilita, los administradores locales se podrá utilizar el panel de control de Windows Update para seleccionar una opción de configuración de su elección. Sin embargo, los administradores locales no se podrá deshabilitar la configuración para actualizaciones automáticas.<br /><br />-   **2 - notificar descarga y notificar instalación**<br />    Cuando Windows Update busca las actualizaciones que se aplican al equipo, se notificará a los usuarios que las actualizaciones están listas para su descarga. Los usuarios, a continuación, pueden ejecutar Windows Update para descargar e instalar las actualizaciones disponibles.<br />-   **3 - Descargar automáticamente y notificar instalación** (valor predeterminado)<br />    Windows Update busca las actualizaciones aplicables y los descarga en segundo plano; el usuario no es una notificación o se interrumpió durante el proceso. Cuando finalizan las descargas, los usuarios reciben notificaciones de que hay actualizaciones listas para instalar. Los usuarios, a continuación, pueden ejecutar Windows Update para instalar las actualizaciones descargadas.<br />-   **4 - Descargar automáticamente y programar la instalación**<br />    Puede especificar la programación con las opciones en esta configuración de directiva de grupo. Si no se especifica ninguna programación, la programación predeterminada para todas las instalaciones será cada día a las 3:00 A.M. Si alguna actualización requiere un reinicio para completar la instalación, Windows reiniciará automáticamente el equipo. (si un usuario ha iniciado sesión en el equipo cuando esté listo para reiniciar Windows, el usuario se notifica y ofrece la opción de retrasar el reinicio.) **Nota:** a partir de Windows 8, puede establecer las actualizaciones para instalar durante el mantenimiento automático en lugar de usar una programación específica asociada a Windows Update. Mantenimiento automático instalará las actualizaciones cuando el equipo no está en uso y evite la instalación de actualizaciones cuando el equipo se está ejecutando con batería. Si no puede instalar actualizaciones en días mantenimiento automático, Windows Update instalarán las actualizaciones inmediatamente. A continuación, se notificará a los usuarios acerca de un reinicio pendiente. Solo un reinicio pendiente llevará a cabo si no hay ninguna posibilidad de pérdida accidental de datos.    Puede especificar las opciones de programación en la configuración del programador de mantenimiento GPME, que se encuentra en la ruta de acceso, *PolicyName* > **equipo configuración**  >  **Directivas** > **plantillas administrativas** > **componentes de Windows** > **mantenimiento Programador** > **límite de activación de mantenimiento automático**. Consulte la sección de esta referencia titulada: [Configuración del programador de mantenimiento](#BKMK_MtncScheduler), para establecer los detalles.    **5 - Permitir que el administrador local elija la opción**<br />: Especifica si los administradores locales pueden usar el panel de control de las actualizaciones automáticas para seleccionar una opción de configuración de su elección, por ejemplo, si los administradores locales pueden elegir una hora de instalación programada.<br />    Los administradores locales no podrán deshabilitar la configuración de las actualizaciones automáticas.|
+|**Enabled**|Especifica que Windows reconoce cuando el equipo está en línea y usa su conexión a Internet para buscar en Windows Update para las actualizaciones disponibles.<br /><br />Cuando se habilita, los administradores locales se podrá utilizar el panel de control de Windows Update para seleccionar una opción de configuración de su elección. Sin embargo, los administradores locales no se podrá deshabilitar la configuración para actualizaciones automáticas.<br /><br />-   **2 - notificar descarga y notificar instalación**<br />    Cuando Windows Update busca las actualizaciones que se aplican al equipo, se notificará a los usuarios que las actualizaciones están listas para su descarga. Los usuarios, a continuación, pueden ejecutar Windows Update para descargar e instalar las actualizaciones disponibles.<br />-   **3 - Descargar automáticamente y notificar instalación** (valor predeterminado)<br />    Windows Update busca las actualizaciones aplicables y los descarga en segundo plano; el usuario no es una notificación o se interrumpió durante el proceso. Cuando finalizan las descargas, los usuarios reciben notificaciones de que hay actualizaciones listas para instalar. Los usuarios, a continuación, pueden ejecutar Windows Update para instalar las actualizaciones descargadas.<br />-   **4 - Descargar automáticamente y programar la instalación**<br />    Puede especificar la programación con las opciones en esta configuración de directiva de grupo. Si no se especifica ninguna programación, la programación predeterminada para todas las instalaciones será cada día a las 3:00 A.M. Si alguna actualización requiere un reinicio para completar la instalación, Windows reiniciará automáticamente el equipo. (si un usuario ha iniciado sesión en el equipo cuando esté listo para reiniciar Windows, el usuario se notifica y ofrece la opción de retrasar el reinicio.) **Nota:** a partir de Windows 8, puede establecer las actualizaciones para instalar durante el mantenimiento automático en lugar de usar una programación específica asociada a Windows Update. Mantenimiento automático instalará las actualizaciones cuando el equipo no está en uso y evite la instalación de actualizaciones cuando el equipo se está ejecutando con batería. Si no puede instalar actualizaciones en días mantenimiento automático, Windows Update instalarán las actualizaciones inmediatamente. A continuación, se notificará a los usuarios acerca de un reinicio pendiente. Solo un reinicio pendiente llevará a cabo si no hay ninguna posibilidad de pérdida accidental de datos.    Puede especificar las opciones de programación en la configuración del programador de mantenimiento GPME, que se encuentra en la ruta de acceso, *PolicyName* > **equipo configuración**  >  **Directivas** > **plantillas administrativas** > **componentes de Windows** > **mantenimiento Programador** > **límite de activación de mantenimiento automático**. Consulte la sección de esta referencia titulada: [Configuración del programador de mantenimiento](#computer-configuration--maintenance-scheduler-policy-settings), para establecer los detalles.    **5 - Permitir que el administrador local elija la opción**<br />: Especifica si los administradores locales pueden usar el panel de control de las actualizaciones automáticas para seleccionar una opción de configuración de su elección, por ejemplo, si los administradores locales pueden elegir una hora de instalación programada.<br />    Los administradores locales no podrán deshabilitar la configuración de las actualizaciones automáticas.|
 |**Deshabilitado**|Especifica que las actualizaciones de cliente que están disponibles en el servicio de actualización de Windows público deben ser descargadas de Internet manualmente y se instalado.|
 
-#### <a name="BKMK_comp6"></a>Retrasar el reinicio para las instalaciones programadas
+#### <a name="delay-restart-for-scheduled-installations"></a>Retrasar el reinicio para las instalaciones programadas
 Especifica la cantidad de tiempo que las actualizaciones automáticas esperará antes de continuar con un reinicio programado.
 
 |Compatible con:|Excluir:|
@@ -234,7 +234,7 @@ Especifica la cantidad de tiempo que las actualizaciones automáticas esperará 
 
 **Opciones:** Si habilita esta configuración, puede usar esta opción para especificar la cantidad de tiempo (en minutos) de actualizaciones automáticas espera antes de continuar con un reinicio programado.
 
-#### <a name="BKMK_comp7"></a>No ajustar la opción predeterminada para "Instalar actualizaciones y apagar" en el cuadro de diálogo de cierre abajo Windows
+#### <a name="do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog"></a>No ajustar la opción predeterminada para instalar actualizaciones y apagar en el cuadro de diálogo de cierre abajo Windows
 Esta configuración de directiva le permite especificar si el **instalar actualizaciones y apagar** opción se permite como la opción predeterminada en el **apagar abajo Windows** cuadro de diálogo.
 
 |Compatible con:|Excluir:|
@@ -274,7 +274,7 @@ Si habilita esta directiva se deshabilitará la funcionalidad para recuperar per
 
 **Opciones:** No hay ninguna opción para esta configuración.
 
-#### <a name="BKMK_comp8"></a>No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo de cierre abajo Windows
+#### <a name="do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog"></a>No mostrar instalar actualizaciones y la opción Apagar en el cuadro de diálogo de cierre abajo Windows
 Especifica si el **instalar actualizaciones y apagar** opción se muestra en el **apagar abajo Windows** cuadro de diálogo.
 
 |Compatible con:|Excluir:|
@@ -290,7 +290,7 @@ Especifica si el **instalar actualizaciones y apagar** opción se muestra en el 
 
 **Opciones:** No hay ninguna opción para esta configuración.
 
-#### <a name="BKMK_comp9"></a>Habilitar destinatarios del lado cliente
+#### <a name="enable-client-side-targeting"></a>Habilitar la orientación de cliente
 Especifica el nombre del grupo de destino o nombres que se configuran en la consola de WSUS que van a recibir actualizaciones de WSUS.
 
 |Compatible con:|Excluir:|
@@ -312,7 +312,7 @@ Especifica el nombre del grupo de destino o nombres que se configuran en la cons
 
 **Opciones:** Use este espacio para especificar uno o más nombres de grupo de destino.
 
-#### <a name="BKMK_comp10"></a>Habilitar la administración de energía de Windows Update reactivar automáticamente el equipo para instalar las actualizaciones programadas
+#### <a name="enabling-windows-update-power-management-to-automatically-wake-up-the-computer-to-install-scheduled-updates"></a>Habilitar la administración de energía de Windows Update reactivar automáticamente el equipo para instalar las actualizaciones programadas
 Especifica si Windows Update usará las características de administración de energía de Windows o las opciones de energía para reactivar el equipo desde la hibernación automáticamente si hay actualizaciones programadas para su instalación.
 
 El equipo se activará automáticamente solo si Windows Update está configurado para instalar actualizaciones automáticamente. Si el equipo está en hibernación cuando se produce la hora de instalación programada y hay aplicar actualizaciones, Windows Update usará las características de administración de energía de Windows o las opciones de energía para reactivar automáticamente el equipo para instalar las actualizaciones. Actualizar Windows también se reactivar el equipo e instalar una actualización si se produce una fecha límite de instalación.
@@ -332,7 +332,7 @@ El equipo no se reactivará a menos que haya actualizaciones para instalarse. Si
 
 **Opciones:** No hay ninguna opción para esta configuración.
 
-#### <a name="BKMK_comp11"></a>Instalaciones de actualizaciones no reiniciar automáticamente con usuarios con sesión iniciada para automáticas programadas
+#### <a name="no-auto-restart-with-logged-on-users-for-scheduled-automatic-updates-installations"></a>No reiniciar automáticamente para instalar actualizaciones automáticas programadas con usuarios que hayan iniciado sesión
 Especifica que, para completar una instalación programada, actualizaciones automáticas esperará el equipo se reinicie por cualquier usuario que ha iniciado sesión, en lugar de producir el equipo se reinicie automáticamente.
 
 |Compatible con:|Excluir:|
@@ -351,7 +351,7 @@ Especifica que, para completar una instalación programada, actualizaciones auto
 
 **Opciones:** No hay ninguna opción para esta configuración.
 
-#### <a name="BKMK_comp12"></a>Volver a preguntar para reiniciar con instalaciones programadas
+#### <a name="re-prompt-for-restart-with-scheduled-installations"></a>Volver a pedir la intervención del usuario para reiniciar con instalaciones programadas
 Especifica la cantidad de tiempo para las actualizaciones automáticas debe esperar antes de volver a preguntar con un reinicio programado.
 
 |Compatible con:|Excluir:|
@@ -373,7 +373,7 @@ Especifica la cantidad de tiempo para las actualizaciones automáticas debe espe
 
 **Opciones:** Cuando se habilita, puede usar esta opción de configuración para especificar (en minutos) de la duración de tiempo que transcurrirá antes de que los usuarios se pregunte si desea volver a un reinicio programado.
 
-#### <a name="BKMK_comp13"></a>Volver a programar la instalación programada de actualizaciones automáticas
+#### <a name="reschedule-automatic-updates-scheduled-installations"></a>Volver a programar las instalaciones programadas de actualizaciones automáticas
 Especifica la cantidad de tiempo para las actualizaciones automáticas debe esperar después de un inicio del equipo, antes de continuar con una instalación programada que previamente se ha perdido.
 
 Si el estado se establece en **no configurado**, se producirá una instalación programada no ejecutada inició un minuto después de que el equipo es el siguiente.
@@ -394,7 +394,7 @@ Si el estado se establece en **no configurado**, se producirá una instalación 
 
 **Opciones:** Cuando se habilita esta configuración de directiva, puede usarlo para especificar un número de minutos después de que el equipo se inicia a continuación, que una instalación programada que no tuvo lugar anteriormente, se producirá.
 
-#### <a name="BKMK_comp14"></a>Especifique la ubicación del servicio Microsoft update de la intranet
+#### <a name="specify-intranet-microsoft-update-service-location"></a>Especifique la ubicación del servicio Microsoft update de la intranet
 Especificar un servidor de intranet alternativo para las actualizaciones de host de Microsoft Update. A continuación, puede utilizar WSUS para actualizar automáticamente los equipos de la red.
 
 |Compatible con:|Excluir:|
@@ -425,7 +425,7 @@ Para usar esta configuración, debe establecer dos valores de nombre de servidor
 |Establecer el servicio de actualización de la intranet para detectar actualizaciones|http://wsus01:8530|
 |Establecer el servidor de estadísticas de la intranet|http://IntranetUpd01|
 
-#### <a name="BKMK_comp15"></a>Activar las actualizaciones recomendadas mediante actualizaciones automáticas
+#### <a name="turn-on-recommended-updates-via-automatic-updates"></a>Activar las actualizaciones recomendadas mediante actualizaciones automáticas
 Especifica si las actualizaciones automáticas ofrecerá importante y recomienda actualizaciones de WSUS.
 
 |Compatible con:|Excluir:|
@@ -441,7 +441,7 @@ Especifica si las actualizaciones automáticas ofrecerá importante y recomienda
 
 **Opciones:** No hay ninguna opción para esta configuración.
 
-#### <a name="BKMK_comp16"></a>Activar las notificaciones de Software
+#### <a name="turn-on-software-notifications"></a>Activar las notificaciones de Software
 Esta configuración de directiva le permite controlar si los usuarios ven mensajes de notificación mejorada detallada sobre el software desde el servicio Microsoft Update. Los mensajes de notificación mejorada transmiten el valor y promoción la instalación y uso de software opcionales. Esta configuración de directiva está pensada para su uso en entornos escasamente administrados en los que el acceso del usuario final para el servicio Microsoft Update.
 
 Si no usa el servicio Microsoft Update, la configuración de directiva "Notificaciones de Software" tiene ningún efecto.
@@ -464,16 +464,16 @@ Si la configuración de directiva "Configurar actualizaciones automáticas" est�
 
 **Opciones:** No hay ninguna opción para esta configuración.
 
-### <a name="BKMK_MtncScheduler"></a>Configuración del equipo > configuración de directiva de programador de mantenimiento
+### <a name="computer-configuration--maintenance-scheduler-policy-settings"></a>Configuración del equipo > configuración de directiva de programador de mantenimiento
 En la configuración de configurar actualizaciones automáticas, seleccionó la opción **4 - Descargar automáticamente y programar la instalación**, puede especificar programar la configuración del programador de mantenimiento en la GPMC de equipos que ejecutan Windows 8 y Windows RT Si no ha seleccionado la opción 4 en la configuración "Configurar actualizaciones automáticas", no es necesario configurar estas opciones con el fin de las actualizaciones automáticas. Configuración del programador de mantenimiento se encuentra en la ruta de acceso: *PolicyName* > **equipo configuración** > **directivas** > **plantillas administrativas**  >  **Componentes de Windows** > **mantenimiento programador**. La extensión del programador de mantenimiento de directiva de grupo contiene las siguientes opciones:
 
--   [Límite de activación de mantenimiento automático](#BKMK_comp5a)
+-   [Límite de activación de mantenimiento automático](#automatic-maintenance-activation-boundary)
 
--   [Retraso aleatorio de mantenimiento automático](#BKMK_comp5b)
+-   [Retraso aleatorio de mantenimiento automático](#automatic-maintenance-random-delay)
 
--   [Directiva de activación automática](#BKMK_comp5c)
+-   [Directiva de activación automática](#automatic-wakeup-policy)
 
-#### <a name="BKMK_comp5a"></a>Límite de activación de mantenimiento automático
+#### <a name="automatic-maintenance-activation-boundary"></a>Límite de activación del Mantenimiento automático
 Esta directiva permite configurar la opción "Límite de activación de mantenimiento automático".
 
 El límite de activación de mantenimiento es la hora programada diariamente a la que se inicia el mantenimiento automático.
@@ -492,7 +492,7 @@ El límite de activación de mantenimiento es la hora programada diariamente a l
 |**Enabled**|Si habilita esta configuración de directiva invalida cualquier valor predeterminado o modificar las opciones configuradas en los equipos cliente de **Panel de Control** > **centro de actividades**  >   **Mantenimiento automático** (o, en algunas versiones de cliente, **mantenimiento**).|
 |**Deshabilitado**|Si establece esta configuración de directiva en **deshabilitado**, la hora diaria programada como se especifica en el **centro de actividades** > **mantenimiento automático**, en el Control Se aplicará el panel.|
 
-#### <a name="BKMK_comp5b"></a>Retraso aleatorio de mantenimiento automático
+#### <a name="automatic-maintenance-random-delay"></a>Retraso aleatorio de mantenimiento automático
 Esta configuración de directiva permite configurar el retraso aleatorio de mantenimiento automático activación.
 
 El retraso aleatorio de mantenimiento es la cantidad de tiempo hasta que el mantenimiento automático, retrasará a partir de su límite de activación. Esta configuración es útil para las máquinas virtuales donde mantenimiento aleatorio puede ser un requisito de rendimiento.
@@ -513,7 +513,7 @@ De forma predeterminada, cuando se habilita, se establece el retraso aleatorio d
 |**Enabled**|Mantenimiento automático, retrasará a partir de su límite de activación por hasta el período de tiempo especificado.|
 |**Deshabilitado**|Mantenimiento automático no se aplica ningún retraso aleatorio.|
 
-#### <a name="BKMK_comp5c"></a>Directiva de activación automática
+#### <a name="automatic-wakeup-policy"></a>Directiva de activación automática
 Esta configuración de directiva permite configurar la directiva de mantenimiento automático reactivación.
 
 La directiva de mantenimiento de reactivación especifica si el mantenimiento automático debe realizar una solicitud de reactivación al equipo funcionamiento diario mantenimiento programado.
@@ -535,14 +535,14 @@ La directiva de mantenimiento de reactivación especifica si el mantenimiento au
 |**Enabled**|Si habilita a esta configuración de directiva, mantenimiento automático intentará establecer una directiva de reactivación del sistema operativo y realiza una solicitud de reactivación para el momento programado diario, si es necesario.|
 |**Deshabilitado**|Si deshabilita esta configuración de directiva, la configuración como reactivación especificado en el **centro de actividades** > **mantenimiento automático** Panel de Control se aplicará.|
 
-### <a name="BKMK_UserPol"></a>Configuración de usuario > configuración de directiva de actualización de Windows
+### <a name="user-configuration--windows-update-policy-settings"></a>Configuración de usuario > configuración de directiva de actualización de Windows
 En esta sección se proporciona detalles sobre la configuración de directiva basada en usuario siguientes:
 
--   [No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar abajo Windows](#BKMK_Client1)
+-   [No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar abajo Windows](#do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog)
 
--   [No ajustar la opción predeterminada para "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar abajo Windows](#BKMK_Client2)
+-   [No ajustar la opción predeterminada para "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar abajo Windows](#do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog)
 
--   [quitar el acceso para usar todas las características de Windows Update](#BKMK_Client3)
+-   [quitar el acceso para usar todas las características de Windows Update](#remove-access-to-use-all-windows-update-features)
 
 En GPMC, la configuración del usuario para las actualizaciones automáticas del equipo se encuentra en la ruta de acceso: *PolicyName* > **configuración de usuario** > **directivas** > **plantillas administrativas**  >  **Componentes de Windows** > **Windows Update**. La configuración se muestra en el mismo orden en que aparecen en la configuración del equipo y las extensiones de configuración de usuario en la directiva de grupo, cuando el **configuración** está seleccionada la pestaña de la directiva de actualización de Windows para ordenar la configuración orden alfabético.
 
@@ -552,7 +552,7 @@ En GPMC, la configuración del usuario para las actualizaciones automáticas del
 > [!TIP]
 > para cada una de estas opciones, puede usar los pasos siguientes para habilitar, deshabilitar o navegar entre la configuración:
 
-#### <a name="BKMK_Client1"></a>No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar abajo Windows
+#### <a name="do-not-display-install-updates-and-shut-down-option-in-shut-down-windows-dialog-box"></a>No mostrar la opción "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar abajo Windows
 Especifica si el **instalar actualizaciones y apagar** opción se muestra en el **apagar abajo Windows** cuadro de diálogo.
 
 |Compatible con:|Excluir:|
@@ -568,7 +568,7 @@ Especifica si el **instalar actualizaciones y apagar** opción se muestra en el 
 
 **Opciones:** No hay ninguna opción para esta configuración.
 
-#### <a name="BKMK_Client2"></a>No ajustar la opción predeterminada para "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar abajo Windows
+#### <a name="do-not-adjust-default-option-to-install-updates-and-shut-down-in-shut-down-windows-dialog-box"></a>No ajustar la opción predeterminada para "Instalar actualizaciones y apagar" en el cuadro de diálogo Cerrar abajo Windows
 Especifica si el **instalar actualizaciones y apagar** se permite la opción como la opción predeterminada en el **apagar abajo Windows** cuadro de diálogo.
 
 |Compatible con:|Excluir:|
@@ -586,8 +586,8 @@ Especifica si el **instalar actualizaciones y apagar** se permite la opción com
 |**Deshabilitado**|Especifica si el **instalar actualizaciones y apagar** opción será la opción predeterminada en el **apagar abajo Windows** cuadro de diálogo si hay actualizaciones disponibles para la instalación en el momento en que el usuario selecciona el apagado Opción para apagar el equipo.|
 
 **Opciones:** No hay ninguna opción para esta configuración.
-
-#### <a name="BKMK_Client3"></a>Quitar el acceso para usar todas las características de Windows Update
+    
+#### <a name="remove-access-to-use-all-windows-update-features"></a>Desactivar el acceso al uso de todas las características de Windows Update
 Esta configuración le permite quitar el acceso de cliente WSUS en Windows Update.
 
 |Compatible con:|Excluir:|
@@ -603,10 +603,10 @@ Esta configuración le permite quitar el acceso de cliente WSUS en Windows Updat
 
 **Opciones:** Consulte **habilitado** en la tabla para esta configuración.
 
-## <a name="BKMK_Supplemental"></a>Información complementaria
+## <a name="supplemental-information"></a>Información complementaria
 Esta sección proporciona información adicional sobre el uso de abrir y guardar la configuración de WSUS en las directivas de grupo y las definiciones de términos usados en esta guía. Para los administradores familiarizados con las versiones anteriores de WSUS (WSUS 3.2 y versiones anteriores), hay una tabla que resume brevemente las diferencias entre las versiones WSUS.
 
-### <a name="BKMK_OpenGPO"></a>Obtener acceso a la configuración de Windows Update en la directiva de grupo
+### <a name="accessing-the-windows-update-settings-in-group-policy"></a>Obtener acceso a la configuración de Windows Update en la directiva de grupo
 El siguiente procedimiento describe cómo abrir la consola de GPMC en el controlador de dominio. El procedimiento a continuación, describe cómo abrir un existente objeto de directiva de grupo (GPO) nivel de dominio para la edición, o crear un nuevo GPO de nivel de dominio y abrirlo para su edición.
 
 > [!NOTE]
@@ -668,7 +668,7 @@ Para obtener más información acerca de la directiva de grupo, consulte [Group 
 
     -   Para descartar todos los cambios sin guardar y cerrar el cuadro de diálogo, haga clic en **cancelar**.
 
-### <a name="BKMK_changes"></a>Cambios realizados en WSUS relevantes para esta guía
+### <a name="changes-to-wsus-relevant-to-this-guide"></a>Cambios realizados en WSUS relevantes para esta guía
 En la tabla siguiente se resume las diferencias clave entre las versiones actuales y pasadas de WSUS que son relevantes para esta guía.
 
 |Versiones de Windows Server y WSUS|Descripción|
@@ -676,7 +676,7 @@ En la tabla siguiente se resume las diferencias clave entre las versiones actual
 | Windows Server 2012 R2 con WSUS 6.0 y versiones posteriores|a partir de Windows Server 2012, el rol de servidor WSUS está integrado con el sistema operativo y la configuración de directiva de grupo asociada para los clientes WSUS es, de forma predeterminada, incluido en la directiva de grupo.|
 | Windows Server 2008 (y versiones anteriores de Windows Server) con WSUS 3.2 y versiones anteriores|En Windows Server 2008 (y versiones anteriores de Windows Server) con WSUS 3.2 (y versiones anteriores), la configuración de directiva de grupo que rigen a los clientes WSUS no se incluye en estos sistemas operativos de Windows Server. La configuración de directiva se encuentran en la plantilla administrativa de WSUS, **wuau.adm**. En estas versiones de servidor, la plantilla administrativa de WSUS debe agregar primero en la consola de administración de directivas de grupo (GPMC) para poder configurar las opciones de cliente WSUS.|
 
-### <a name="BKMK_Terms"></a>Términos y definiciones
+### <a name="terms-and-definitions"></a>Términos y definiciones
 Siguiente es una lista de los términos usados en esta guía.
 
 |Término|Definición|

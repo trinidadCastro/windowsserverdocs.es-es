@@ -13,16 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 07/25/2018
-ms.openlocfilehash: c4218331f716dc530e01f28a295cebd83c0e6616
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a10b3d3877e9511164d298bcc1dab11540e6f596
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818116"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188200"
 ---
 # <a name="robocopy"></a>robocopy
-
-
 
 Copia datos de archivo.
 
@@ -38,7 +36,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |---------|-----------|
 |\<origen >|Especifica la ruta de acceso al directorio de origen.|
 |\<Destino >|Especifica la ruta de acceso al directorio de destino.|
-|\<File>|Especifica el archivo o archivos que se van a copiar. Puede usar caracteres comodín (**&#42;** o **?**), si desea. Si el **archivo** no se especifica el parámetro, **\*.\*** se utiliza como el valor predeterminado.|
+|\<File>|Especifica el archivo o archivos que se van a copiar. Puede usar caracteres comodín (**&#42;** o **?** ), si desea. Si el **archivo** no se especifica el parámetro, **\*.\*** se utiliza como el valor predeterminado.|
 |\<Opciones >|Especifica las opciones que se usará con el **robocopy** comando.|
 
 ### <a name="copy-options"></a>Opciones de copia
@@ -46,7 +44,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |Opción|Descripción|
 |------|-----------|
 |/s|Subdirectorios de copias. Tenga en cuenta que esta opción excluye directorios vacíos.|
-|/e|Subdirectorios de copias. Tenga en cuenta que esta opción incluye directorios vacíos. Para obtener más información, consulte [comentarios](#BKMK_remarks).|
+|/e|Subdirectorios de copias. Tenga en cuenta que esta opción incluye directorios vacíos. Para obtener más información, consulte [comentarios](#remarks).|
 |/lev:\<N>|Copia únicamente la parte superior *N* niveles del árbol de directorio de origen.|
 |/z|Copia los archivos en modo reiniciable.|
 |/b|Copia los archivos en modo de copia de seguridad.|
@@ -59,8 +57,8 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/NOCOPY|No copia ninguna información de archivo (útil con **/purgar**).|
 |/secfix|Correcciones de seguridad de archivos de todos los archivos, incluso las omite.|
 |/timfix|Correcciones de la hora de todos los archivos, incluso las omite.|
-|/Purge|Elimina los archivos de destino y los directorios que ya no existen en el origen. Para obtener más información, consulte [comentarios](#BKMK_remarks).|
-|/mir|Refleja un árbol de directorios (equivalente a **/e** plus **/purgar**). Para obtener más información, consulte [comentarios](#BKMK_remarks).|
+|/Purge|Elimina los archivos de destino y los directorios que ya no existen en el origen. Para obtener más información, consulte [comentarios](#remarks).|
+|/mir|Refleja un árbol de directorios (equivalente a **/e** plus **/purgar**). Para obtener más información, consulte [comentarios](#remarks).|
 |/mov|Mueve los archivos y los elimina del origen una vez que se copian.|
 |/Move|Mueve los archivos y directorios y los elimina del origen una vez que se copian.|
 |/a+:[RASHCNET]|Agrega los atributos especificados a los archivos copiados.|
@@ -74,10 +72,15 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/rh:hhmm-hhmm|Especifica los tiempos de ejecución cuando es posible que se puede iniciar nuevas copias.|
 |/pf|Ejecutar las comprobaciones veces en una base por archivo (no por los pasos).|
 |/ipg:n|Especifica el intervalo entre paquetes para liberar ancho de banda en líneas lentas.|
-|/sl|Sigue el vínculo simbólico y el destino de copia.|
+|/sl|No siga los vínculos simbólicos y en su lugar, cree una copia del vínculo.|
 
 > [!IMPORTANT]
-> Cuando se usa el **/SECFIX** la opción de copia, especifique el tipo de información de seguridad que desea copiar también con una de estas opciones de copia adicional:</br>> -   **/COPYALL**</br>> -   **/COPY:O**</br>&GT;- **/COPY:S**</br>> -   **/COPY:U**</br>> -   **/SEC**
+> Cuando se usa el **/SECFIX** la opción de copia, especifique el tipo de información de seguridad que desea copiar también con una de estas opciones de copia adicional:
+>- **/COPYALL**
+>- **/COPY:O**
+>- **/COPY:S**
+>- **/COPY:U**
+>- **/SEC**
 
 ### <a name="file-selection-options"></a>Opciones de selección de archivo
 
@@ -87,7 +90,7 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 |/m|Copia solo archivos para el que el **archivo** atributo está establecido y restablece el **archivo** atributo.|
 |/ia:[RASHCNETO]|Incluye solo los archivos para el que se establezca cualquiera de los atributos especificados.|
 |/xa:[RASHCNETO]|Excluye los archivos para el que se establezca cualquiera de los atributos especificados.|
-|/xf \<FileName>[ ...]|Excluye los archivos que coinciden con los nombres especificados o rutas de acceso. Tenga en cuenta que *FileName* puede incluir caracteres comodín (**&#42;** y **?**).|
+|/xf \<FileName>[ ...]|Excluye los archivos que coinciden con los nombres especificados o rutas de acceso. Tenga en cuenta que *FileName* puede incluir caracteres comodín (**&#42;** y **?** ).|
 |/xd \<Directory>[ ...]|Excluye los directorios que coinciden con los nombres especificados y las rutas de acceso.|
 |/xc|Excluye los archivos modificados.|
 |/xn|Excluye los archivos más recientes.|
@@ -168,7 +171,7 @@ Valor | Descripción
 > [!NOTE]
 > Cualquier valor mayor que 8 indica que se produjo al menos un error durante la operación de copia.
 
-### <a name="BKMK_remarks"></a>Comentarios
+### <a name="remarks"></a>Comentarios
 
 -   El **/mir** opción es equivalente a la **/e** plus **/purgar** opciones con una pequeña diferencia de comportamiento:  
     -   Con el **/e** plus **/purgar** opciones, si existe el directorio de destino, la configuración de seguridad del directorio de destino no se sobrescriben.

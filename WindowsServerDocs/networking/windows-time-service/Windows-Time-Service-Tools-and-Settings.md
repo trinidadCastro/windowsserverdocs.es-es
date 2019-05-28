@@ -9,12 +9,12 @@ ms.date: 10/16/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 7cf3b3f2bb9a2c9f95c50aa6a7b7690f89cdd0af
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7426c3ede013905ba65a659baead928d3e2bbadf
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840666"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034565"
 ---
 # <a name="windows-time-service-tools-and-settings"></a>Configuración y herramientas del servicio Hora de Windows
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10 o posterior
@@ -70,7 +70,7 @@ Las tablas siguientes describen los parámetros que se usan con W32tm.exe.
 ---  
 Para obtener más información acerca de **W32tm.exe**, consulte Ayuda y soporte técnico de Windows XP, Windows Vista, Windows 7, Windows Server 2003, Windows Server 2003 R2, Windows Server 2008 y Windows Server 2008 R2.  
   
-## <a name="windows-time-service-registry-entries"></a>Entradas de registro del servicio de hora de Windows  
+## <a name="windows-time-service-registry-entries"></a>Entradas de registro del servicio de hora de Windows
 Las siguientes entradas del registro asociadas con el servicio de hora de Windows.  
   
 Esta información se proporciona como referencia para su uso en la solución de problemas o comprobando que se aplica la configuración necesaria. Se recomienda que no editar directamente el registro a menos que haya ninguna otra alternativa. Las modificaciones del registro no se validan mediante el editor del registro o mediante Windows antes de que se aplican, y como resultado, se pueden almacenar valores incorrectos. Esto puede dar lugar a errores irrecuperables en el sistema.  
@@ -86,11 +86,11 @@ Número de entradas del registro para el servicio de hora de Windows es los mism
 
   
 Hay varias claves del registro en esta ubicación del registro. La configuración de hora de Windows se almacena en los valores de todas estas claves:
-* [Parámetros](#Parameters)
-* [configuración](#Configuration)
-* [NtpClient](#NtpClient)
-* [NtpServer](#NtpServer)
-  
+
+* [Parámetros](#hklmsystemcurrentcontrolsetservicesw32timeparameters)
+* [configuración](#hklmsystemcurrentcontrolsetservicesw32timeconfig)
+* [NtpClient](#hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpclient)
+* [NtpServer](#hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver)
 
 Muchos de los valores en la sección W32Time del registro se utilizan internamente W32Time para almacenar información. Estos valores no se deben cambiar manualmente en cualquier momento. No modifique la configuración de esta sección a menos que está familiarizado con la configuración y está seguro de que el nuevo valor funcionarán según lo previsto. Las siguientes entradas del registro se encuentran en:
 
@@ -114,14 +114,13 @@ Algunos de los parámetros se almacenan en ciclos de reloj en el registro y algu
   
 -   1 ms = 10 000 ciclos de reloj en un sistema de Windows, tal y como se describe en [DateTime.Ticks Property](https://docs.microsoft.com/dotnet/api/system.datetime.ticks?redirectedfrom=MSDN&view=netframework-4.7.2#System_DateTime_Ticks).  
   
-Por ejemplo, 5 minutos se convertiría en 5 * 60\*1000\*3000000000 = 10000 ciclos de reloj. 
+Por ejemplo, 5 minutos se convertiría en 5\*60\*1000\*3000000000 = 10000 ciclos de reloj. 
 
 Todas las versiones incluyen Windows 7, Windows 8, Windows 10, Windows Server 2008 y Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016.  Algunas entradas solo están disponibles en las versiones más recientes de Windows.
 
-
 #### <a name="hklmsystemcurrentcontrolsetservicesw32timeparameters"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Parameters
 
-|Entrada del registro|Versión|Descripción|
+|Entrada del registro|`Version`|Descripción|
 |------------------------------------|---------------|----------------------------|
 |AllowNonstandardModeCombinations|Todos|Entrada indica que se permiten las combinaciones de modo no estándar en la sincronización entre equipos del mismo nivel. El valor predeterminado para los miembros del dominio es 1. El valor predeterminado para servidores y clientes independientes es 1.|
 |NtpServer|Todos|Entrada especifica una lista delimitada por espacios de pares de los que un equipo obtiene las marcas de tiempo, que consta de uno o varios nombres DNS o direcciones IP por línea. Cada nombre DNS o dirección IP que aparece debe ser único. Los equipos conectados a un dominio deben sincronizar con un origen de hora más confiable, como el reloj de tiempo oficial de Estados Unidos.  <ul><li>0 x 01 SpecialInterval </li><li>0x02 UseAsFallbackOnly</li><li>0 x 04 SymmetricActive - para obtener más información acerca de este modo, consulte [servidor horario de Windows: 3.3 modos de funcionamiento](https://go.microsoft.com/fwlink/?LinkId=208012).</li><li>0x08 Client</li></ul><br />No hay ningún valor predeterminado para esta entrada del registro en los miembros del dominio. El valor predeterminado en servidores y clientes independientes es time.windows.com,0x1.<br /><br />Nota: Para obtener más información sobre los servidores NTP disponibles, consulte [artículo de Microsoft Knowledge Base 262680: una lista de los servidores de hora de Protocolo Simple de tiempo de red (SNTP) que están disponibles en Internet](https://go.microsoft.com/fwlink/?LinkId=186067)|
@@ -131,7 +130,7 @@ Todas las versiones incluyen Windows 7, Windows 8, Windows 10, Windows Server 20
 ---
 #### <a name="hklmsystemcurrentcontrolsetservicesw32timeconfig"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\Config
 
-|Entrada del registro|Versión|Descripción|
+|Entrada del registro|`Version`|Descripción|
 |------------------------------------|---------------|----------------------------|
 |AnnounceFlags|Todos|Entrada controla si este equipo está marcado como un servidor horario confiable. Un equipo no está marcado como confiables a menos que también se marca como un servidor horario.<br /> -0 x 00 no es un servidor horario  <br /> -servidor de tiempo siempre es 0 x 01  <br /> -servidor de hora automática de 0 x 02  <br /> -servidor de hora confiable siempre es 0 x 04  <br /> -servidor de hora confiable automática de 0 x 08  <br />El valor predeterminado para los miembros del dominio es 10. El valor predeterminado para servidores y clientes independientes es 10.|
 |EventLogFlags|Todos|Entrada controla los eventos que registra el servicio de hora.  <br />-Tiempo de salto: 0x1  <br />-Cambio de código fuente: 0x2  <br />El valor predeterminado en los miembros del dominio es 2. El valor predeterminado en servidores y clientes independientes es 2.  |
@@ -140,7 +139,7 @@ Todas las versiones incluyen Windows 7, Windows 8, Windows 10, Windows Server 20
 |LargePhaseOffset|Todos|Entrada especifica que un tiempo de desplazamiento mayor o igual que este valor en 10<sup>-7</sup> segundos se considera un pico. Una interrupción de la red como una gran cantidad de tráfico puede provocar un aumento. Un pico se omitirá a menos que se conserva durante un largo período de tiempo. El valor predeterminado en los miembros del dominio es 50000000. El valor predeterminado en servidores y clientes independientes es 50000000.  |
 |LastClockRate|Todos|Entrada se mantiene por W32Time. Contiene los datos reservados que se usan el sistema operativo de Windows y los cambios realizados en esta configuración pueden causar resultados imprevisibles. El valor predeterminado en los miembros del dominio es 156250. El valor predeterminado en servidores y clientes independientes es 156250.  |
 |LocalClockDispersion|Todos|Entrada controla la dispersión (en segundos) que se debe suponer cuando la única vez origen es el reloj CMOS integrado. El valor predeterminado en los miembros del dominio es 10. El valor predeterminado en servidores y clientes independientes es 10.|
-|MaxAllowedPhaseOffset|Todos|Entrada especifica el desplazamiento máximo (en segundos) para el que W32Time intenta ajustar el reloj del equipo mediante el uso de la velocidad del reloj. Cuando el desplazamiento supera esta velocidad, W32Time configura el reloj del equipo directamente. El valor predeterminado para los miembros del dominio es 300. El valor predeterminado para servidores y clientes independientes es 1.  [Consulte a continuación para obtener más información](#MaxAllowedPhaseOffset).|
+|MaxAllowedPhaseOffset|Todos|Entrada especifica el desplazamiento máximo (en segundos) para el que W32Time intenta ajustar el reloj del equipo mediante el uso de la velocidad del reloj. Cuando el desplazamiento supera esta velocidad, W32Time configura el reloj del equipo directamente. El valor predeterminado para los miembros del dominio es 300. El valor predeterminado para servidores y clientes independientes es 1.  [Consulte a continuación para obtener más información](#maxallowedphaseoffset-information).|
 |MaxClockRate|Todos|Entrada se mantiene por W32Time. Contiene los datos reservados que se usan el sistema operativo de Windows y los cambios realizados en esta configuración pueden causar resultados imprevisibles. El valor predeterminado para los miembros del dominio es 155860. El valor predeterminado para servidores y clientes independientes es 155860.  |
 |MaxNegPhaseCorrection|Todos|Entrada especifica la corrección de tiempo negativo más grande en segundos que hace el servicio. Si el servicio determina que es necesario un cambio más grande, registra un evento en su lugar. Caso especial: 0xFFFFFFFF significa que siempre hace la corrección de hora. El valor predeterminado para los miembros del dominio es 0xFFFFFFFF. El valor predeterminado para servidores y clientes independientes es 54.000 (15 horas).  |
 |MaxPollInterval|Todos|Entrada especifica el intervalo mayor, en log2 segundos, permitido para el intervalo de sondeo del sistema. Tenga en cuenta que mientras un sistema debe sondear según el intervalo programado, un proveedor puede negar a producir muestras cuando lo solicita. El valor predeterminado para los controladores de dominio es 10. El valor predeterminado para los miembros del dominio es 15. El valor predeterminado para servidores y clientes independientes es 15.  |
@@ -156,7 +155,7 @@ Todas las versiones incluyen Windows 7, Windows 8, Windows 10, Windows Server 20
 ---
 Con el fin de habilitar el registro de W32Time se deben agregar las entradas del registro siguientes:  
 
-|Entrada del registro|Versión|Descripción|
+|Entrada del registro|`Version`|Descripción|
 |------------------------------------|---------------|----------------------------|
 |FileLogEntries|Todos|Entrada controla la cantidad de entradas que creó en el archivo de registro de la hora de Windows. El valor predeterminado es none, lo que no registra ninguna actividad en tiempo de Windows. Los valores válidos son 0 y 300. Este valor no afecta a las entradas de registro de eventos que normalmente se crean por hora de Windows|
 |FileLogName|Todos|Entrada controla la ubicación y el nombre de archivo del registro de hora de Windows. El valor predeterminado es en blanco y no se debe cambiar a menos que **FileLogEntries** se cambia. Un valor válido es una ruta de acceso completa y nombre de archivo que va a usar para crear el archivo de registro de hora de Windows. Este valor no afecta a las entradas de registro de eventos que normalmente se crean por hora de Windows.  |
@@ -166,7 +165,7 @@ Con el fin de habilitar el registro de W32Time se deben agregar las entradas del
 
 #### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpclient"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient
 
-|Entrada del registro|Versión|Descripción|
+|Entrada del registro|`Version`|Descripción|
 |------------------------------------|---------------|----------------------------|
 |AllowNonstandardModeCombinations|Todos|Entrada indica que se permiten las combinaciones de modo no estándar en la sincronización entre equipos del mismo nivel. El valor predeterminado para los miembros del dominio es 1. El valor predeterminado para servidores y clientes independientes es 1.|
 |CompatibilityFlags|Todos|Entrada especifica los valores y las marcas de compatibilidad siguientes: <br /><br />-   DispersionInvalid: 0x00000001  <br />-   IgnoreFutureRefTimeStamp: 0x00000002  <br /> -   AutodetectWin2K: 0x80000000  <br />-   AutodetectWin2KStage2: 0x40000000  <br /><br />El valor predeterminado para los miembros del dominio es 0 x 80000000. El valor predeterminado para servidores y clientes independientes es 0 x 80000000.  |
@@ -185,7 +184,7 @@ Con el fin de habilitar el registro de W32Time se deben agregar las entradas del
 
 #### <a name="hklmsystemcurrentcontrolsetservicesw32timetimeprovidersntpserver"></a>HKLM\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpServer
 
-|Entrada del registro|Versión|Descripción|
+|Entrada del registro|`Version`|Descripción|
 |------------------------------------|---------------|----------------------------|
 |AllowNonstandardModeCombinations|Todos|Entrada indica que se permiten las combinaciones de modo no estándar en la sincronización entre clientes y servidores. El valor predeterminado para los miembros del dominio es 1. El valor predeterminado para servidores y clientes independientes es 1.|
 |DllName|Todos|Entrada especifica la ubicación del archivo DLL para el proveedor de hora.<br /><br />La ubicación predeterminada de este archivo DLL en miembros del dominio y los clientes independientes y servidores es % windir%\System32\W32Time.dll.  |
@@ -209,7 +208,7 @@ W32tm /query /status /verbose
 ClockRate: 0.0156000s  
 ```  
   
-SystemclockRate es la velocidad del reloj del sistema. Con 156000 segundos como ejemplo, el SystemclockRate podría ser = 0.0156000 * 1000 \* 156000 = 10000 ciclos de reloj.  
+SystemclockRate es la velocidad del reloj del sistema. Con 156000 segundos como ejemplo, el SystemclockRate podría ser = 0.0156000 \* 1000 \* 156000 = 10000 ciclos de reloj.  
   
 MaxAllowedPhaseOffset también está en segundos. Para convertir para ciclos de reloj, multiplique MaxAllowedPhaseOffset * 1000\*10000.  
   
@@ -297,7 +296,7 @@ Puede encontrar la directiva de grupo configuración utiliza para configurar W32
 > [!WARNING]  
 > Algunos de los valores preestablecidos que se configuran en el archivo de plantilla administrativa de sistema (System.adm) para la configuración de directiva de grupo (GPO) son diferentes de las entradas de registro predeterminado correspondiente. Si tiene previsto utilizar un GPO para configurar cualquier valor de tiempo de Windows, asegúrese de que revisar [valores del valor preestablecido para la configuración de directiva de grupo de servicio de hora de Windows son diferentes de las entradas correspondientes de registro de servicio de hora de Windows en Windows Server 2003 ](https://go.microsoft.com/fwlink/?LinkId=186066). Este problema se aplica a Windows Server 2008 R2, Windows Server 2008, Windows Server 2003 R2 y Windows Server 2003.  
   
-La tabla siguiente muestra la configuración de directiva de grupo global que está asociada con el servicio de hora de Windows y el valor establecido previamente asociado con cada opción de configuración. Para obtener más información sobre cada opción, vea las entradas del registro correspondiente en "[entradas de registro del servicio de hora de Windows](#w2k3tr_times_tools_uhlp)" anteriormente en este tema. Las siguientes opciones se encuentran en un único GPO llamado **opciones de configuración globales**.  
+La tabla siguiente muestra la configuración de directiva de grupo global que está asociada con el servicio de hora de Windows y el valor establecido previamente asociado con cada opción de configuración. Para obtener más información sobre cada opción, vea las entradas del registro correspondiente en [entradas de registro del servicio de hora de Windows](#windows-time-service-registry-entries) anteriormente en este tema. Las siguientes opciones se encuentran en un único GPO llamado **opciones de configuración globales**.  
   
 **Configuración de directiva de grupo global asociado a la hora de Windows**  
   
@@ -319,7 +318,7 @@ La tabla siguiente muestra la configuración de directiva de grupo global que es
 |SpikeWatchPeriod|90|  
 |UpdateInterval|100|  
   
-En la tabla siguiente se enumera las opciones disponibles para el **configurar el cliente de Windows NTP** GPO y los valores predefinidos que están asociados con el servicio de hora de Windows. Para obtener más información sobre cada opción, vea las entradas del registro correspondiente en "[entradas de registro del servicio de hora de Windows](#w2k3tr_times_tools_uhlp)" anteriormente en este tema.  
+En la tabla siguiente se enumera las opciones disponibles para el **configurar el cliente de Windows NTP** GPO y los valores predefinidos que están asociados con el servicio de hora de Windows. Para obtener más información sobre cada opción, vea las entradas del registro correspondiente en [entradas de registro del servicio de hora de Windows](#windows-time-service-registry-entries) anteriormente en este tema.  
   
 **Configuración de directiva de grupo de clientes NTP asociado a la hora de Windows**  
   

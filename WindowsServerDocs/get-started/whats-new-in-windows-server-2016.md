@@ -5,34 +5,30 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.date: 01/05/2017
+ms.date: 05/21/2019
 ms.technology: server-general
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 2827f332-44d4-4785-8b13-98429087dcc7
-author: jaimeo
-ms.author: jaimeo
+author: jasongerend
+ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: b504c3396200502a09467ae97a36f9de613e4820
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d36961558066197a54f42d27a3560d653bd81f2
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830336"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65976631"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Novedades en Windows Server 2016
 
 >Se aplica a: Windows Server 2016
 
-<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">El contenido de esta sección describe las novedades y los cambios de Windows Server&reg; 2016. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión.  
-   
-<br>
-<br>
-<br>
-<br>
-<br>
-## <a name="computevirtualizationvirtualizationmd"></a>[Compute](../virtualization/virtualization.md)  
+<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">Para obtener información sobre las características más recientes de Windows, consulte [What ' s New in Windows Server](whats-new-in-windows-server.md). El contenido de esta sección describe las novedades y los cambios de Windows Server&reg; 2016. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión.  
+
+## <a name="computevirtualizationvirtualizationmd"></a>[Compute](../virtualization/virtualization.md)
+
 El área Virtualización incluye características y productos de virtualización destinados a los profesionales de TI para diseñar, implementar y mantener Windows Server.  
 
 ### <a name="general"></a>General  
@@ -162,7 +158,7 @@ Ahora puede usar la calidad de servicio de almacenamiento para supervisar de man
 
 Para más información, vea [Calidad de servicio del almacenamiento](../storage/storage-qos/storage-qos-overview.md).
 
-## <a name="failover-clusteringfailover-clusteringwhats-new-in-failover-clusteringmd"></a>[Agrupación en clústeres de conmutación por error](../failover-clustering/whats-new-in-failover-clustering.md)
+## <a name="failover-clusteringfailover-clusteringwhats-new-in-failover-clusteringmd"></a>[Clúster de conmutación por error](../failover-clustering/whats-new-in-failover-clustering.md)
 
 Windows Server 2016 incluye una serie de nuevas características y mejoras para varios servidores que se agrupan en un único clúster tolerante a errores mediante la característica Clústeres de conmutación por error. Algunas de las adiciones se enumeran a continuación; para obtener una lista más completa, vea [Novedades de los clústeres de conmutación por error de Windows Server 2016](../failover-clustering/whats-new-in-failover-clustering.md).
 
@@ -208,5 +204,5 @@ En Microsoft Windows 10 y Windows Server 2016, se agregaron tres característica
 
 
 ## <a name="see-also"></a>Vea también  
--   [Notas de la versión: Problemas importantes en Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)  
+-   [Notas de la versión: Problemas importantes en Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)  
 

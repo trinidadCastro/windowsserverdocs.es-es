@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 03/08/2019
+ms.date: 03/25/2019
 description: Temas nuevos y actualizados en la documentación de almacenamiento local para Windows Server para profesionales de TI.
-ms.openlocfilehash: 3eb2f0e8dd05612d1c160ffe53791db3c1ef1828
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: fa3da6e14c36fecfa48c3688a36518babb257920
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851096"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192677"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Cambiar el historial de los temas de almacenamiento en Windows Server
 
@@ -24,11 +24,20 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 
 > Si desea obtener el historial de actualización para Windows Server, vea [historial de actualizaciones de Windows 10 y Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
 
+## <a name="may-2019"></a>Mayo de 2019
+
+|Tema nuevo o modificado                                        |Descripción|
+|---                                                         |---           |
+|[Eliminar volúmenes](storage-spaces/delete-volumes.md)| Nuevo        |
+|[Crear volúmenes](storage-spaces/create-volumes.md)| Pasos agregados y vídeos para crear un volumen en Windows Admin Center.|
+|[Ampliar volúmenes](storage-spaces/resize-volumes.md)| Pasos agregados y vídeo para cambiar el tamaño de un volumen en Windows Admin Center.|
+
 ## <a name="march-2019"></a>Marzo de 2019
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
-|[Actualizar un clúster de espacios de almacenamiento directo en Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| Nuevo        |
+|[Supervisión con Azure Monitor](storage-spaces/configure-azure-monitor.md)| Nuevo|
+|[Actualizar un clúster de espacios de almacenamiento directo a Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| Nuevo        |
 |[Replicación DFS](dfs-replication/dfsr-overview.md)        | Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11)) biblioteca|
 
 ## <a name="february-2019"></a>Febrero de 2019
@@ -41,26 +50,26 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
-|[Entender y supervisar la resincronización de almacenamiento](storage-spaces/understand-storage-resync.md)|Nuevo tema|
+|[Comprender y controlar la resincronización de almacenamiento](storage-spaces/understand-storage-resync.md)|Nuevo tema|
 
 ## <a name="december-2018"></a>Diciembre de 2018
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
 |[Usar Storage Migration Service para migrar un servidor](storage-migration-service/migrate-data.md)| Agrega alguna aclaración sobre cómo se transfiere archivos |
-|[Réplica de almacenamiento de clúster a clúster entre la región de Azure](storage-replica/cluster-to-cluster-azure-cross-region.md)|Pasos de validación se ha agregado|
-|[Réplica de almacenamiento de clúster a clúster dentro de la misma región de Azure](storage-replica/cluster-to-cluster-azure-one-region.md)|Pasos de validación se ha agregado|
+|[Intercambio entre regiones de la Réplica de almacenamiento de clúster a clúster en Azure](storage-replica/cluster-to-cluster-azure-cross-region.md)|Pasos de validación se ha agregado|
+|[Réplica de almacenamiento de clúster a clúster dentro de la misma región en Azure](storage-replica/cluster-to-cluster-azure-one-region.md)|Pasos de validación se ha agregado|
 |[Preguntas más frecuentes sobre la réplica de almacenamiento](storage-replica/storage-replica-frequently-asked-questions.md)| Instrucción se ha agregado compatibilidad para la desduplicación de datos|
 
 ## <a name="november-2018"></a>Noviembre de 2018
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
-|[Resistencia anidado](storage-spaces/nested-resiliency.md)    | Nuevo tema    |
+|[Resistencia anidada](storage-spaces/nested-resiliency.md)    | Nuevo tema    |
 |[Servicio de migración de almacenamiento problemas conocidos](storage-migration-service/known-issues.md)   | Nuevo tema    |
 |[Replicación DFS: Preguntas más frecuentes (P+F)](dfs-replication/dfsr-faq.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/) biblioteca|
-|[Migrar la replicación de SYSVOL en la replicación DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
-|[SMB: Deben abrirse los puertos de compartir archivos e impresoras](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
+|[Migrar la replicación de SYSVOL a la replicación de DFS](dfs-replication/migrate-sysvol-to-dfsr.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
+|[SMB: Los puertos de compartir archivos e impresoras deben estar abiertos](file-server/best-practices-analyzer/smb-open-file-sharing-ports.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
 |[Servicio de instantáneas de volumen](file-server/volume-shadow-copy-service.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
 
 ## <a name="october-2018"></a>Octubre de 2018
@@ -78,7 +87,7 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 |[Usar Storage Migration Service para migrar un servidor](storage-migration-service/migrate-data.md)| Nuevo tema |
 |[Servicio de migración de almacenamiento preguntas más frecuentes (P+F)](storage-migration-service/faq.md)| Nuevo tema |
 | [Servidor de destino iSCSI](iscsi/iscsi-target-server.md) | Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
-| [límites de escalabilidad del servidor de destino iSCSI](iscsi/iscsi-target-server-limits.md) |Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
+| [Límites de escalabilidad del servidor de destino iSCSI](iscsi/iscsi-target-server-limits.md) |Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 
 ## <a name="june-2018"></a>Junio de 2018
 
@@ -141,11 +150,11 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 |Tema nuevo o modificado|Descripción|
 |---|---|
 |[Cambiar una letra de unidad](disk-management/change-a-drive-letter.md)|Nuevo tema.|
-|[Solución de problemas de administración de discos](disk-management/troubleshooting-disk-management.md)|Reescribe la [estado de un disco no inicializado o el disco falta completamente](disk-management/troubleshooting-disk-management.md#disk-not-initialized) sección para agregar una amplia solución de problemas de los pasos, en función de las solicitudes de cliente.|
+|[Solución de problemas de Administración de discos](disk-management/troubleshooting-disk-management.md)|Reescribe la [estado de un disco no inicializado o el disco falta completamente](disk-management/troubleshooting-disk-management.md#a-disks-status-is-not-initialized-or-the-disk-is-missing) sección para agregar una amplia solución de problemas de los pasos, en función de las solicitudes de cliente.|
 |[Inicializar nuevos discos](disk-management/initialize-new-disks.md)|Se reescribe para intentar que resulte más fácil entender y resolver preguntas de los clientes.|
 |[Planificación de volúmenes en espacios de almacenamiento directo](storage-spaces/plan-volumes.md)|Agrega una tabla que resume los tipos de resistencia disponibles en los clústeres de cuatro nodos de mayor tamaño.|
 |[Información general de reFS](refs/refs-overview.md)|Se ha aclarado las cargas de trabajo recomendados para paridad acelerada reflejado y corregir los tamaños admitidos de archivos y volúmenes NTFS y ReFS.|
-|[Paridad acelerada reflejado](refs/mirror-accelerated-parity.md)|Recomendación se ha aclarado que coloque los archivos de escritura intensiva en directorios independientes.|
+|[Paridad acelerada por reflejos](refs/mirror-accelerated-parity.md)|Recomendación se ha aclarado que coloque los archivos de escritura intensiva en directorios independientes.|
 |[Problemas conocidos de réplica de almacenamiento](storage-replica/storage-replica-known-issues.md)|Se ha agregado nueva información.|
 
 ## <a name="november-2017"></a>Noviembre de 2017
@@ -153,7 +162,7 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 |Tema nuevo o modificado|Descripción|
 |---|---|
 |[Novedades de almacenamiento](whats-new-in-storage.md)|Se ha agregado información acerca de cuáles son las novedades en Windows Server, versión 1709.|
-|[Agregar servidores o unidades de disco](storage-spaces/add-nodes.md)|Se ha agregado información acerca de cómo espacios de almacenamiento directo automáticamente optimiza el uso de la unidad después de agregar unidades de disco.|
+|[Agregar servidores o unidades](storage-spaces/add-nodes.md)|Se ha agregado información acerca de cómo espacios de almacenamiento directo automáticamente optimiza el uso de la unidad después de agregar unidades de disco.|
 
 ## <a name="october-2017"></a>Octubre de 2017
 
@@ -161,9 +170,9 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 |---|---|
 |[Implementar espacios de almacenamiento directo en un clúster de invitado de máquina virtual](storage-spaces/storage-spaces-direct-in-vm.md)|Nuevo tema.|
 |[Información general de administración de discos](disk-management/overview-of-disk-management.md)| Publicado el 13 nuevos temas para Windows y Windows Server.|
-|[Información general sobre réplica de almacenamiento](storage-replica/storage-replica-overview.md)|Agregar What ' s información nueva para Windows Server, versión 1709.|
+|[Información general sobre Réplica de almacenamiento](storage-replica/storage-replica-overview.md)|Agregar What ' s información nueva para Windows Server, versión 1709.|
 |[Problemas conocidos de réplica de almacenamiento](storage-replica/storage-replica-known-issues.md)|Se ha agregado nueva información.|
-|[Clúster de replicación de almacenamiento en clúster](storage-replica/cluster-to-cluster-storage-replication.md)|Revisa el número de nodos de clúster compatibles para espacios de almacenamiento directo.|
+|[Replicación de almacenamiento de clúster a clúster](storage-replica/cluster-to-cluster-storage-replication.md)|Revisa el número de nodos de clúster compatibles para espacios de almacenamiento directo.|
 |[Requisitos de hardware de almacenamiento directo en espacios](storage-spaces/storage-spaces-direct-hardware-requirements.md)|Se agregó una nota sobre una línea específica de los dispositivos NVMe.|
 
 ## <a name="july-2017"></a>Julio de 2017
@@ -189,7 +198,7 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 |Tema nuevo o modificado|Descripción|
 |---|---|
 |[Introducción a la desduplicación de datos](data-deduplication/overview.md) e <br>[Instalar desduplicación de datos](data-deduplication/install-enable.md)|Se han actualizado los requisitos del sistema para incluir una actualización de software más reciente. |
-|[Implementar carpetas de trabajo](work-folders/deploy-work-folders.md)|Se ha agregado información sobre los pasos necesarios actualizados y soporte técnico del Proxy de aplicación de Azure AD.|
+|[Implementar Carpetas de trabajo](work-folders/deploy-work-folders.md)|Se ha agregado información sobre los pasos necesarios actualizados y soporte técnico del Proxy de aplicación de Azure AD.|
 |[Implementar espacios de almacenamiento directo](storage-spaces/deploy-storage-spaces-direct.md)|Se ha agregado el paso 1.3 con las características necesarias y se ha corregido el parámetro obsoleto en Enable-NetAdapterQos.||[Información general sobre Réplica de almacenamiento](storage-replica/storage-replica-overview.md) (y otros temas sobre Réplica de almacenamiento)|Se ha agregado una recomendación para usar el almacenamiento de forma rápida y exclusiva para los registros de Réplica de almacenamiento.|
 |[Preguntas más frecuentes sobre la réplica de almacenamiento](storage-replica/storage-replica-frequently-asked-questions.md)|Se ha agregado información sobre cómo elegir entre distintas topologías de replicación.|
 |[Requisitos de hardware de almacenamiento directo en espacios](storage-spaces/storage-spaces-direct-hardware-requirements.md)|Se han cambiado los requisitos de resistencia de unidades para los dispositivos de caché.|
@@ -201,8 +210,8 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 |[Solución de problemas de las actualizaciones de firmware de unidad](troubleshoot-firmware-update.md)|Nuevo tema.|
 |[Carpetas de trabajo](work-folders/work-folders-overview.md)|Nuevo tema.|
 |[Planear una implementación de carpetas de trabajo](work-folders/plan-work-folders.md)|Nuevo tema.|
-|[Implementar carpetas de trabajo](work-folders/deploy-work-folders.md)|Nuevo tema.|
-|[Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web (WAP)](work-folders/deploy-work-folders-adfs-overview.md)|Nuevo tema.|
+|[Implementar Carpetas de trabajo](work-folders/deploy-work-folders.md)|Nuevo tema.|
+|[Implementar Carpetas de trabajo con AD FS y proxy de aplicación web (WAP)](work-folders/deploy-work-folders-adfs-overview.md)|Nuevo tema.|
 |[Implementar espacios de almacenamiento directo](storage-spaces/deploy-storage-spaces-direct.md)|Se ha eliminado una referencia a una actualización de software obsoleta y se ha corregido un error ortográfico en el resultado de muestra.|
 |[Problemas conocidos de réplica de almacenamiento](storage-replica/storage-replica-known-issues.md)|Se ha agregado nueva información.|
 
@@ -228,8 +237,8 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 |[Creación de volúmenes](storage-spaces/create-volumes.md)|Nuevo tema.|
 |[Ampliación de volúmenes en espacios de almacenamiento directo](storage-spaces/resize-volumes.md)|Nuevo tema.|
 |[Información general de reFS](refs/refs-overview.md)|Nuevo tema.|
-|[Descripción de espacios de almacenamiento directo](storage-spaces/understand-storage-spaces-direct.md)|Nueva lista de vínculos.|
-|[Planeación de espacios de almacenamiento directo](storage-spaces/plan-storage-spaces-direct.md)|Nueva lista de vínculos.|
+|[Descripción de Espacios de almacenamiento directo](storage-spaces/understand-storage-spaces-direct.md)|Nueva lista de vínculos.|
+|[Planificar Espacios de almacenamiento directo](storage-spaces/plan-storage-spaces-direct.md)|Nueva lista de vínculos.|
 |[Implementar espacios de almacenamiento directo](storage-spaces/deploy-storage-spaces-direct.md)|Nueva lista de vínculos.|
 |[Administrar espacios de almacenamiento directo](storage-spaces/manage-storage-spaces-direct.md)|Nuevo tema.|
 |[Preguntas más frecuentes sobre la réplica de almacenamiento](storage-replica/storage-replica-frequently-asked-questions.md)|Requisitos de puerto actualizados y explicación acerca de cómo ampliar los volúmenes replicados.|

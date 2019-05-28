@@ -9,15 +9,14 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: cd3ad4e6547194a971d8a51ecb95ee56f5e4e8c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 54b0e055d6cfde5e5c69540ac804a38cbceb1e59
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822726"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188767"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalizar encabezados de respuesta de seguridad HTTP con AD FS de 2019 
-Se aplica a: Windows Server 2019 
  
 Para protegerse frente a vulnerabilidades de seguridad frecuentes y ofrecen a los administradores la capacidad de aprovechar las ventajas de los últimos avances en los mecanismos de protección basada en explorador, AD FS 2019 agrega la funcionalidad para personalizar los encabezados de respuesta de seguridad HTTP enviado por AD FS. Esto se logra a través de la introducción de dos nuevos cmdlets: `Get-AdfsResponseHeaders` y `Set-AdfsResponseHeaders`.  
  
@@ -235,4 +234,4 @@ Use la tabla y los vínculos siguientes para determinar qué exploradores web so
 ## <a name="next"></a>Siguiente
 
 - [Utilizar las guías de Ayuda de AD FS troublehshooting](https://aka.ms/adfshelp/troubleshooting )
-- [Solución de problemas de AD FS](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)
+- [Solución de problemas de AD FS](../../ad-fs/troubleshooting/ad-fs-tshoot-overview.md)

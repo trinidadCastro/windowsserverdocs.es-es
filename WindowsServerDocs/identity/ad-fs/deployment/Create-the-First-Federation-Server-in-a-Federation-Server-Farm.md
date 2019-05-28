@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: af0aa61f0d16d4ca567b140c95d74445d09f1cf3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e16289142ea2e53adba52a4ed8f6c01a929a530d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879306"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192223"
 ---
 # <a name="create-the-first-federation-server-in-a-federation-server-farm"></a>Crear el primer servidor de federación en una granja de servidores de federación
-
- >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Después de instalar el servicio de rol Servicio de federación y configurar los certificados necesarios en un equipo, está listo para configurar el equipo para convertirse en un servidor de federación. Puede usar el procedimiento siguiente para configurar el equipo para convertirse en el primer servidor de federación en una nueva granja de servidores de federación mediante el Asistente para configuración del servidor de federación de AD FS.  
   
@@ -66,6 +64,6 @@ Para completar este procedimiento, lo mínimo que se necesita es pertenecer a Ad
     > Para que la implementación sea segura, la resolución de artefactos y la detección de respuestas se deshabilitan cuando utilizas el asistente para la configuración del servidor de federación de AD FS a fin de configurar una granja de servidores de federación. Este asistente configura automáticamente Windows Internal Database para almacenar los datos de configuración del servicio. Es posible que, sin embargo, podrías deshacer este cambio si habilitas el extremo de la resolución de artefactos utilizando el **extremos** nodo en el complemento Administración de AD FS\-en o permitir\-cmdlet ADFSEndpoint en Windows PowerShell. Procura no reconfigurar la configuración predeterminada para que este extremo permanezca deshabilitado cuando utilices conjuntamente una granja de servidores de federación y Windows Internal Database.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Cómo configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
+[Lista de comprobación: configurar un servidor de federación](Checklist--Setting-Up-a-Federation-Server.md)  
   
 

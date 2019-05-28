@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: afb4b10a0d347367780dbaf19b764f2cabd480d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eb5c9650b95703f1316e6f5f179b910d22574f68
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819546"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222962"
 ---
 # <a name="echo"></a>echo
 
@@ -26,7 +26,7 @@ ms.locfileid: "59819546"
 
 Muestra mensajes o activa o desactiva la característica de presentación de comandos. Si se utiliza sin parámetros, **echo** muestra la configuración actual.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -49,9 +49,9 @@ echo [on | off]
 -   Cuando **echo** está desactivada, la línea de comandos no aparece en la ventana de símbolo del sistema. Para mostrar el símbolo del sistema, escriba **eco.**
 -   Si se utiliza en un archivo por lotes, **eco** y **echo desactivar** no afectan a la configuración en el símbolo del sistema.
 -   Para evitar repetir un comando determinado en un archivo por lotes, inserte un signo de arroba (@) delante del comando. Para evitar repetir todos los comandos en un archivo por lotes, incluya el **echo desactivar** comando al principio del archivo.
--   Para mostrar una barra vertical (**|**) o de redirección (**<** o **>**) cuando se utiliza **eco**, utilice un símbolo de intercalación (^) inmediatamente antes del carácter de canalización o de redirección (por ejemplo, **^|**, **^>**, o **^<**). Para mostrar un símbolo de intercalación, escriba dos símbolos de intercalación en sucesión (**^^**).
+-   Para mostrar una barra vertical ( **|** ) o de redirección (**<** o **>**) cuando se utiliza **eco**, utilice un símbolo de intercalación (^) inmediatamente antes del carácter de canalización o de redirección (por ejemplo, **^|**, **^>**, o **^<**). Para mostrar un símbolo de intercalación, escriba dos símbolos de intercalación en sucesión ( **^^** ).
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="examples"></a>Ejemplos
 
 Para mostrar actual **echo** , escriba:
 ```

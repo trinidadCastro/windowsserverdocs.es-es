@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: ac206d5aa8af970b65a014955ac66a8cf2835eb6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3cf209756c27c72836c7e2e1e58e84f3f5af2ca9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882036"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189178"
 ---
 # <a name="customization-for-localization"></a>Personalización para la localización 
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 El contenido web se puede localizar a idiomas distintos del inglés. Al localizarlo, ten en cuenta las siguientes consideraciones.  
   

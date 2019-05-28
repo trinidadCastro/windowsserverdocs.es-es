@@ -13,23 +13,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8750094e7357a3aefa307d24abd1470fbf8d2a71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 7cf99a9124f78189de223018608d9864e51d7897
+ms.sourcegitcommit: 08eba714d3ceb5f2dfb5486d6b990da1aa4dcbdd
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867176"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65564691"
 ---
 # <a name="manage-bde-wipefreespace"></a>manage-bde: WipeFreeSpace
 
 
 
-Elimina el espacio libre en el volumen quitando los fragmentos de datos que puedan haber existido en el espacio. ¿Ejecute este comando en un volumen que se cifró mediante "solo el espacio utilizado? ¿método de cifrado proporciona el mismo nivel de protección como el "cifrado de volumen completo? método de cifrado. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Elimina el espacio libre en el volumen quitando los fragmentos de datos que puedan haber existido en el espacio. Ejecutar este comando en un volumen que se cifró mediante el método de cifrado "Solo del espacio utilizado" proporciona el mismo nivel de protección que el método de cifrado "Cifrado de volumen lleno". Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
 ```
-manage-bde –WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/?}] [{-help|-h}]
+manage-bde -WipeFreeSpace|-w [<Drive>] [-Cancel] [-computername <Name>] [{-?|/?}] [{-help|-h}]
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -49,7 +49,7 @@ El ejemplo siguiente se muestra cómo utilizar el **-w** borrado de comando para
 ```
 manage-bde -w C:
 ```
-El ejemplo siguiente se muestra cómo utilizar el **-w** comando con el **– cancelar** parámetro para cancelar el borrado del espacio libre en la unidad C.
+El ejemplo siguiente se muestra cómo utilizar el **-w** comando con el **-cancelar** parámetro para cancelar el borrado del espacio libre en la unidad C.
 ```
 manage-bde -w -Cancel C:
 ```

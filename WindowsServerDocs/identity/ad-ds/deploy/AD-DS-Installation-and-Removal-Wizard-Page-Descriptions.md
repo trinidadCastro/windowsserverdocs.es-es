@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 52e4b215c406eeae11dbab41e367f6ce4cd83507
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b4df753a1635a0935e70a76278b097d2f9f70142
+ms.sourcegitcommit: b190fac4bfa5599751a60d3fc3b4c4a64dd9afd7
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849256"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66009098"
 ---
 # <a name="ad-ds-installation-and-removal-wizard-page-descriptions"></a>Descripciones de la página del Asistente para la instalación y eliminación de AD DS
 
@@ -61,7 +61,7 @@ Cuando se crea un nuevo bosque aparecen las siguientes opciones.
   
 -   Cuando se crea un nuevo bosque, se debe especificar un nombre para el dominio raíz del bosque. El nombre de dominio raíz de bosque no se puede tener una sola etiqueta (por ejemplo, debe ser "contoso.com" en lugar de "contoso"). Debe usar convenciones de nomenclatura de dominio DNS permitidas. Se puede especificar un nombre de dominio internacionalizado (IDN). Para obtener más información sobre las convenciones de nomenclatura de dominios DNS, consulte [KB 909264](https://support.microsoft.com/kb/909264).  
   
--   No cree bosques nuevos de Active Directory con el mismo nombre que el del DNS externo. Por ejemplo, si la dirección URL de DNS de Internet es http://contoso.com, debe elegir un nombre diferente para el bosque interno evitar problemas de compatibilidad con versiones futuras. Ese nombre debe ser único y poco probable que corresponda al tráfico web, como por ejemplo corp.contoso.com.  
+-   No cree bosques nuevos de Active Directory con el mismo nombre que el del DNS externo. Por ejemplo, si la dirección URL de DNS de Internet es http:\/contoso.com, debe elegir un nombre diferente para el bosque interno evitar problemas de compatibilidad con versiones futuras. Ese nombre debe ser único y poco probable que corresponda al tráfico web, como por ejemplo corp.contoso.com.  
   
 -   Debe ser miembro del grupo Administradores en el servidor donde desea crear el nuevo bosque.  
   

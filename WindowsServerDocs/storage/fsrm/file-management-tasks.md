@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e83d0b79117144d42a0aff748f482f3c181cb300
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8d798611a00e29337a5d45979947a51f03bcdee
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874056"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65475894"
 ---
 # <a name="file-management-tasks"></a>Tareas de administración de archivos
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 Las tareas de administración de archivos automatizan el proceso de encontrar subconjuntos de archivos en un servidor y aplicar comandos sencillos. Estas tareas se pueden programar para que tengan lugar periódicamente con el fin de reducir los costes repetitivos. Se pueden definir los archivos que se procesarán mediante una tarea de administración de archivos a través de cualquiera de las siguientes propiedades:
 
@@ -43,6 +43,6 @@ Esta sección incluye los temas siguientes:
 
 ## <a name="see-also"></a>Vea también
 
--   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
+-   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
 
 

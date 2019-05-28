@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9b66bed99cbc2ac2cdf116579adaea282c45fabe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cd8febf9eff300b1a83d22828874b4a577b8af36
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876396"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192319"
 ---
 # <a name="configure-corporate-dns-for-the-federation-service-and-drs"></a>Configurar el DNS corporativo para los servicios de federación y DRS
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
   
 ## <a name="step-6-add-a-host-a-and-alias-cname-resource-record-to-corporate-dns-for-the-federation-service-and-drs"></a>Paso 6: Agregar un Host \(A\) y Alias \(CNAME\) registro de recurso al DNS corporativo para el servicio de federación y DRS  
 Debe agregar los siguientes registros de recursos para el sistema de nombres de dominio corporativo \(DNS\) para su servicio de federación y el servicio de registro de dispositivo que configuró en los pasos anteriores.  
@@ -36,13 +34,13 @@ Pertenencia a **administradores**, o equivalente, es el requisito mínimo para c
   
 1.  En, controlador de dominio en el administrador del servidor, en el **herramientas** menú, haga clic en **DNS** para abrir el complemento DNS\-en.  
   
-2.  En el árbol de consola, expanda el **dominio\_controlador\_nombre** nodo, expanda **zonas de búsqueda directa**, ¿no\-haga clic en **dominio\_nombre**y, a continuación, haga clic en **nuevo Host \(A o AAAA\)**.  
+2.  En el árbol de consola, expanda el **dominio\_controlador\_nombre** nodo, expanda **zonas de búsqueda directa**, ¿no\-haga clic en **dominio\_nombre**y, a continuación, haga clic en **nuevo Host \(A o AAAA\)** .  
   
 3.  En el **nombre** , escriba el nombre que se usará para la granja de AD FS.  
   
 4.  En el cuadro **Dirección IP**, escribe la dirección IP del servidor de federación. Haga clic en **Agregar host**.  
   
-5.  Derecha\-haga clic en el **dominio\_nombre** nodo y, a continuación, haga clic en **nuevo Alias \(CNAME\)**.  
+5.  Derecha\-haga clic en el **dominio\_nombre** nodo y, a continuación, haga clic en **nuevo Alias \(CNAME\)** .  
   
 6.  En el cuadro de diálogo **Nuevo registro de recursos**, escribe **enterpriseregistration** en el cuadro **Nombre de alias**.  
   
@@ -53,7 +51,7 @@ Pertenencia a **administradores**, o equivalente, es el requisito mínimo para c
   
 ## <a name="see-also"></a>Vea también 
 
-[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
+[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
 
 [Guía de implementación de Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  

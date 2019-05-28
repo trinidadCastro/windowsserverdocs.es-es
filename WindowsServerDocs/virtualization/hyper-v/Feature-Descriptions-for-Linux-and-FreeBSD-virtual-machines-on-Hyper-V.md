@@ -11,12 +11,12 @@ ms.assetid: a9ee931d-91fc-40cf-9a15-ed6fa6965cb6
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 944f8e9d902953ab4d6da0750603a2c40fa9e96d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a574275f6d3495a9cc9bff36fa785f28a7cd8d6f
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844896"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222886"
 ---
 # <a name="feature-descriptions-for-linux-and-freebsd-virtual-machines-on-hyper-v"></a>Descripciones de características para las máquinas virtuales de Linux y FreeBSD en Hyper-V
 
@@ -24,7 +24,7 @@ ms.locfileid: "59844896"
 
 Este artículo describe las características disponibles en los componentes, como memoria, redes, almacenamiento y los núcleos al usar Linux y FreeBSD en una máquina virtual.
 
-## <a name="BKMK_core"></a>Core
+## <a name="core"></a>Core
 
 |**Característica**|**Descripción**|
 |-|-|
@@ -37,7 +37,7 @@ Este artículo describe las características disponibles en los componentes, com
 |Dispositivo de almacenamiento específico de Hyper-V|Esta característica concede acceso de alto rendimiento a dispositivos de almacenamiento que estén conectados a una máquina virtual.|
 |Dispositivo de red de Hyper-V|Esta característica concede acceso de alto rendimiento para los adaptadores de red que están conectados a una máquina virtual.|
 
-## <a name="BKMK_Networking"></a>Funciones de red
+## <a name="networking"></a>Funciones de red
 
 |**Característica**|**Descripción**|
 |-|-|
@@ -50,7 +50,7 @@ Este artículo describe las características disponibles en los componentes, com
 |Grandes recibir descarga (LRO)|Aumenta el rendimiento entrante de conexiones de gran ancho de banda mediante la agregación de varios paquetes en un búfer mayor, lo que reduce la sobrecarga de CPU.|
 |SR-IOV|Dispositivos de E/S de raíz únicos use DDA para permitir el acceso de invitados a las partes de tarjetas NIC específicas que permite reducir la latencia y el aumento del rendimiento. SR-IOV requiere controladores de función físico al día (PF) en el host y la función virtual (VF) en el invitado.|
 
-## <a name="BKMK_Storage"></a>Almacenamiento de información
+## <a name="storage"></a>Almacenamiento
 
 |**Característica**|**Descripción**|
 |-|-|
@@ -60,7 +60,7 @@ Este artículo describe las características disponibles en los componentes, com
 |RECORTAR el soporte técnico|Sugerencias de RECORTE notificar a la unidad que determinados sectores que se asignaron previamente ya no son necesarios para la aplicación y se pueden purgar. Este proceso se suele usar cuando una aplicación realiza las asignaciones de espacio de gran tamaño a través de un archivo y, a continuación, automática administra las asignaciones en el archivo, por ejemplo, para los archivos de disco duro virtual.|
 |SCSI WWN|El controlador storvsc extrae información de World Wide Name (WWN) desde el puerto y el nodo de los dispositivos conectados a la máquina virtual y crea los archivos sysfs adecuado. |
 
-## <a name="BKMK_Memory"></a>Memoria
+## <a name="memory"></a>Memoria
 
 |**Característica**|**Descripción**|
 |-|-|
@@ -70,13 +70,13 @@ Este artículo describe las características disponibles en los componentes, com
 |Memoria dinámica - incremento|El host de forma dinámica puede aumentar o disminuir la cantidad de memoria disponible para una máquina virtual mientras está en funcionamiento. Antes de aprovisionar, el administrador habilita la memoria dinámica en el panel de configuración de máquina Virtual y especificar la memoria de inicio, cantidad mínima de memoria y memoria máxima para la máquina virtual. Puede cambiarse cuando la máquina virtual está en la operación que no se puede deshabilitar la memoria dinámica y la configuración mínima y máxima. (Es una práctica recomendada para especificar estos tamaños de memoria como múltiplos de 128MB).<br /><br />Cuando la máquina virtual se inicia por primera vez disponible memoria es igual a la **memoria de inicio**. A medida que aumenta la demanda de memoria debido a las cargas de trabajo de aplicación Hyper-V dinámicamente puede asignar más memoria a la máquina virtual a través del mecanismo de adición sin interrupción (arriba). Medida que disminuye la demanda de memoria Hyper-V puede desaprovisionar automáticamente la memoria de la máquina virtual a través del mecanismo de globo. Hyper-V no desaprovisionará memoria siguiente el **cantidad mínima de memoria** parámetro.<br /><br />La pestaña de la memoria del Administrador de Hyper-V mostrará la cantidad de memoria asignada a la máquina virtual, pero las estadísticas de memoria dentro de la máquina virtual mostrará la cantidad máxima de memoria asignada.<br /><br />Para obtener más información, consulte [Hyper-V Dynamic Memory Overview](https://technet.microsoft.com/library/hh831766.aspx).<br /><br />|
 |Cambio de tamaño de memoria en tiempo de ejecución|Un administrador puede establecer la cantidad de memoria disponible para una máquina virtual mientras está en funcionamiento, el aumento de memoria ("caliente") o disminuirlo ("Hot quitar"). Memoria se devuelve a Hyper-V a través del controlador de globo (vea "Dinámica memoria – incremento"). El controlador de globo mantiene una cantidad mínima de memoria libre después de globos, llamado "floor", por lo que asigna memoria no puede reducirse por debajo de la demanda actual más esta cantidad de piso. La pestaña de la memoria del Administrador de Hyper-V mostrará la cantidad de memoria asignada a la máquina virtual, pero las estadísticas de memoria dentro de la máquina virtual mostrará la cantidad máxima de memoria asignada. (Es una práctica recomendada para especificar los valores de memoria como múltiplos de 128MB).|
 
-## <a name="BKMK_Video"></a>Video
+## <a name="video"></a>Vídeo
 
 |**Característica**|**Descripción**|
 |-|-|
 |Dispositivo de vídeo específico de Hyper-V|Esta característica proporciona gráficos con alto rendimiento y una resolución superior para las máquinas virtuales. Este dispositivo no proporciona capacidades de modo de sesión mejorada o RemoteFX.|
 
-## <a name="BKMK_Misc"></a>Varios
+## <a name="miscellaneous"></a>Varios
 
 |**Característica**|**Descripción**|
 |-|-|
@@ -87,7 +87,7 @@ Este artículo describe las características disponibles en los componentes, com
 |Sockets de Hyper-V|Se trata de un canal de comunicación adicional entre el sistema operativo host e invitado. Para cargar y usar el módulo de kernel de Sockets de Hyper-V, consulte [ofrecer sus propios servicios de integración](https://msdn.microsoft.com/virtualization/hyperv_on_windows/develop/make_mgmt_service).|
 |Acceso directo/DDA de PCI|Con Windows Server 2016, los administradores pueden pasar a través de dispositivos PCI Express a través del mecanismo de asignación discreta de dispositivos. Dispositivos comunes son las tarjetas de red, las tarjetas gráficas y dispositivos de almacenamiento especiales. La máquina virtual requerirá que el controlador adecuado para usar el hardware expuesto. El hardware debe asignarse a la máquina virtual para que pueda usarse.<br /><br />Para obtener más información, consulte [discretos asignación de dispositivo, descripción y en segundo plano](https://blogs.technet.microsoft.com/virtualization/2015/11/19/discrete-device-assignment-description-and-background/).<br /><br />DDA es un requisito previo para las redes de SR-IOV. Puertos virtuales necesitará que se asignará a la máquina virtual y la máquina virtual debe usar los controladores de función Virtual (VF) correctos para la multiplexación de dispositivo.|
 
-## <a name="BKMK_gen2"></a>Máquinas virtuales de generación 2
+## <a name="generation-2-virtual-machines"></a>Máquinas virtuales de generación 2
 
 |**Característica**|**Descripción**|
 |-|-|
@@ -98,7 +98,7 @@ Este artículo describe las características disponibles en los componentes, com
 
 * [Admite CentOS y Red Hat Enterprise Linux virtual machines en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Admite máquinas virtuales de Debian en Hyper-V](Supported-Debian-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuales Debian admitidas en Hyper-V](Supported-Debian-virtual-machines-on-Hyper-V.md)
 
 * [Máquinas de virtuales Oracle Linux compatibles en Hyper-V](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 

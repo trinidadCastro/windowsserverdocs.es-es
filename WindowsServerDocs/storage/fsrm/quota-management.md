@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: febcd6ab0744a7fddd024e1f0afdb93711e8939a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6effaf7c2d197c08b4930e09c3ada96462b17d6f
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829546"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476186"
 ---
 # <a name="quota-management"></a>Administración de cuotas
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2
 
 En el nodo **Administración de cuotas** del Complemento de la consola de administración de Microsoft<sup>®</sup> (MMC) del Administrador de recursos del servidor de archivos, puedes realizar las siguientes tareas:
 
@@ -34,16 +34,16 @@ Por ejemplo, puedes:
 Esta sección incluye los temas siguientes:
 
 -   [Crear una cuota](create-quota.md)
--   [Crear un automáticamente una cuota de aplicación](create-auto-apply-quota.md)
+-   [Crear una cuota automática](create-auto-apply-quota.md)
 -   [Crear una plantilla de cuota](create-quota-template.md)
--   [Editar propiedades de la plantilla de cuota](edit-quota-template-properties.md)
--   [Automática de editar propiedades de cuota](edit-auto-apply-quota-properties.md)
+-   [Editar propiedades de plantillas de cuotas](edit-quota-template-properties.md)
+-   [Editar propiedades de cuota automática](edit-auto-apply-quota-properties.md)
 
 > [!Note]
 > Para establecer notificaciones por correo electrónico y funcionalidades de informes, debes configurar primero las opciones generales del Administrador de recursos del servidor de archivos.
 
 ## <a name="see-also"></a>Vea también
 
--   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
+-   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
 
 

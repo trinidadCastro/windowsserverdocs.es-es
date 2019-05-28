@@ -8,23 +8,23 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 33942db34314e0ff60b24d4b9c8e5e33b4ca92fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2bb15d5ae29da6c9dbcd6b58af280026d06febc8
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831576"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222744"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implementar la redirección de carpetas con archivos sin conexión
 
->Se aplica a: Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2, Windows Server 2016, Windows Vista
+>Se aplica a: Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Vista, Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012, Windows Server 2012 R2, Windows Server 2008 R2
 
 Este tema describe cómo usar Windows Server para implementar la redirección de carpetas con archivos sin conexión en los equipos cliente de Windows.
 
 Para obtener una lista de los cambios recientes en este tema, consulte [historial de cambios](#change-history).
 
 >[!IMPORTANT]
->Debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/en-us/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), actualizamos [paso 3: Crear un GPO para redirección de carpetas](#step-3:-create-a-gpo-for-folder-redirection) de este tema para que Windows pueden aplicar correctamente la directiva de redirección de carpetas (y no revertir las carpetas redirigidas en los equipos afectados).
+>Debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), actualizamos [paso 3: Crear un GPO para redirección de carpetas](#step-3-create-a-gpo-for-folder-redirection) de este tema para que Windows pueden aplicar correctamente la directiva de redirección de carpetas (y no revertir las carpetas redirigidas en los equipos afectados).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -37,7 +37,7 @@ Redirección de carpetas requiere un equipo basado en x64 64 o x86; no se admite
 Redirección de carpetas tiene los siguientes requisitos de software:
 
 - Para administrar el redireccionamiento de carpetas, debe ser iniciado sesión como miembro del grupo de seguridad Administradores de dominio, el grupo de seguridad Administradores de empresa o el grupo de seguridad propietarios del creador de directivas de grupo.
-- Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008.
+- Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 o Windows Server 2008.
 - Los equipos cliente deben unirse a los Servicios de dominio de Active Directory (AD DS) que estés administrando.
 - Los equipos deben estar disponibles con Administración de directivas de grupo y tener instalado el Centro de administración de Active Directory.
 - Un servidor de archivos debe estar disponible para hospedar las carpetas redirigidas.
@@ -70,13 +70,13 @@ Si no dispone de un recurso compartido de archivos para las carpetas redirigidas
 >[!NOTE]
 >Algunas funciones pueden ser distintas o no estar disponibles si creas el recurso compartido de archivos en un servidor que ejecute otra versión de Windows Server.
 
-Aquí le mostramos cómo crear un recurso compartido de archivos en Windows Server 2012 y Windows Server 2016:
+Aquí le mostramos cómo crear un recurso compartido de archivos en Windows Server 2012, Windows Server 2016 y Windows Server 2019:
 
 1. En el panel de navegación del administrador del servidor, seleccione **File and Storage Services**y, a continuación, seleccione **recursos compartidos** para mostrar la página de recursos compartidos.
 2. En el **recursos compartidos** icono, seleccione **tareas**y, a continuación, seleccione **nuevo recurso compartido**. Se abrirá el Asistente para nuevo recurso compartido.
 3. En el **Seleccionar perfil** , seleccione **recurso compartido SMB-rápido**. Si tiene instalado el Administrador de recursos de servidor de archivos y usas las propiedades de administración de carpetas, en su lugar, seleccione **recurso compartido SMB - avanzado**.
 4. En la página **Ubicación del recurso compartido** , selecciona el servidor y el volumen donde quieras crear el recurso compartido.
-5. En el **nombre del recurso compartido** página, escriba un nombre para el recurso compartido (por ejemplo, **usuarios$**) en el **nombre del recurso compartido** cuadro.
+5. En el **nombre del recurso compartido** página, escriba un nombre para el recurso compartido (por ejemplo, **usuarios$** ) en el **nombre del recurso compartido** cuadro.
     >[!TIP]
     >Al crear el recurso compartido, puedes ocultarlo colocando un ```$``` después del nombre del recurso compartido. Esto ocultará el recurso compartido a los usuarios ocasionales.
 6. En el **otra configuración** página, desactive la casilla de verificación Habilitar disponibilidad continua, si está presente y, opcionalmente, seleccione el **Habilitar enumeración basada en acceso** y **cifrar acceso a datos** casillas de verificación.
@@ -93,50 +93,15 @@ Aquí le mostramos cómo crear un recurso compartido de archivos en Windows Serv
 
 ### <a name="required-permissions-for-the-file-share-hosting-redirected-folders"></a>Permisos necesarios para el archivo de compartan las carpetas redirigidas de hospedaje
 
-<table>
-<tbody>
-<tr class="odd">
-<td>Cuenta de usuario</td>
-<td>Acceso</td>
-<td>Se aplica a</td>
-</tr>
-<tr class="even">
-<td>Sistema</td>
-<td>Control total</td>
-<td>Esta carpeta, subcarpetas y archivos</td>
-</tr>
-<tr class="odd">
-<td>Administradores</td>
-<td>Control total</td>
-<td>Solo esta carpeta</td>
-</tr>
-<tr class="even">
-<td>Creador/propietario</td>
-<td>Control total</td>
-<td>Solo subcarpetas y archivos</td>
-</tr>
-<tr class="odd">
-<td>Grupo de seguridad de los usuarios que necesitan colocar datos en el recurso compartido (usuarios de redirección de carpeta)</td>
-<td>Mostrar lista de carpetas/leer datos<sup>1</sup><br />
-<br />
-Crear carpetas/anexar datos<sup>1</sup><br />
-<br />
-Leer atributos<sup>1</sup><br />
-<br />
-Atributos extendidos de lectura<sup>1</sup><br />
-<br />
-Permisos de lectura<sup>1</sup></td>
-<td>Solo esta carpeta</td>
-</tr>
-<tr class="even">
-<td>Otros grupos y cuentas</td>
-<td>Ninguno (quitar)</td>
-<td></td>
-</tr>
-</tbody>
-</table>
 
-1 Permisos avanzados
+|Cuenta de usuario  |Acceso  |Se aplica a  |
+|---------|---------|---------|
+| Cuenta de usuario | Acceso | Se aplica a |
+|Sistema     | Control total        |    Esta carpeta, subcarpetas y archivos     |
+|Administradores     | Control total       | Solo esta carpeta        |
+|Creador/propietario     |   Control total      |   Solo subcarpetas y archivos      |
+|Grupo de seguridad de los usuarios que necesitan colocar datos en el recurso compartido (usuarios de redirección de carpeta)     |   Listar carpeta / leer datos *(permisos avanzados)* <br /><br />Crear carpetas / Anexar datos *(permisos avanzados)* <br /><br />Leer atributos *(permisos avanzados)* <br /><br />Atributos extendidos de lectura *(permisos avanzados)* <br /><br />Permisos de lectura *(permisos avanzados)*      |  Solo esta carpeta       |
+|Otros grupos y cuentas     |  Ninguno (quitar)       |         |
 
 ## <a name="step-3-create-a-gpo-for-folder-redirection"></a>Paso 3: Crear un GPO para redirección de carpetas
 
@@ -225,9 +190,9 @@ Aquí le mostramos cómo probar la redirección de carpetas:
 
 En la tabla siguiente se resumen los cambios más importantes realizados en este tema.
 
-|Fecha|Descripción|Razón|
+|Fecha|Descripción|Reason|
 |---|---|---|
-|18 de enero de 2017|Agrega un paso para [paso 3: Crear un GPO para redirección de carpetas](#step-3:-create-a-gpo-for-folder-redirection) para delegar permisos de lectura a los usuarios autenticados, que ahora es necesario debido a una actualización de seguridad de la directiva de grupo.|Comentarios del cliente.|
+|18 de enero de 2017|Agrega un paso para [paso 3: Crear un GPO para redirección de carpetas](#step-3-create-a-gpo-for-folder-redirection) para delegar permisos de lectura a los usuarios autenticados, que ahora es necesario debido a una actualización de seguridad de la directiva de grupo.|Comentarios del cliente.|
 
 ## <a name="more-information"></a>Más información
 

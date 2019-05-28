@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e429c87a2194ecfaf02c3d6c579eda75293250d4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a280d540d09c6fdcb7846d1cf545856869be1152
+ms.sourcegitcommit: b190fac4bfa5599751a60d3fc3b4c4a64dd9afd7
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827516"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66008967"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Error de replicación 1753: no hay más puntos de conexión disponibles desde el asignador de puntos de conexión
 
@@ -194,7 +194,6 @@ Para Windows Server 2008 o Windows Server 2008 R2: desde la consola del controla
           <code>c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs primary DNS Server IP &gt;
 c:&gt;nslookup -type=cname &lt;fully qualified cname of source DC&gt; &lt;destination DCs secondary DNS Server IP&gt;</code>
           <para>Comprobar que la dirección IP devuelta por NSLOOKUP "posee" el nombre de host / identidad de seguridad de lo DC de origen:</para>
-
           <code>C:&gt;NBTSTAT -A &lt;IP address returned by NSLOOKUP in the step above&gt;</code>
           <para>o bien</para>
           <para>Inicie sesión en la consola del controlador de dominio de origen, ejecute "IPCONFIG" desde el símbolo del sistema y compruebe que el DC de origen pertenece a la dirección IP devuelta por el comando NSLOOKUP anterior</para>

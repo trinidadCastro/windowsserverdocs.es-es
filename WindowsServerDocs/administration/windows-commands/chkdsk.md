@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: 26aad48db4a5f0a593dfcb29160031a0c9f3dc75
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9c5272ba0a5ff7c0a30f61631bb6c8dac6552ef0
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886866"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192612"
 ---
 # <a name="chkdsk"></a>chkdsk
 
@@ -35,7 +35,7 @@ Comprueba el sistema de archivos y los metadatos del sistema de archivos de un v
 > [!IMPORTANT]
 > **Nota:** CHKDSK puede usarse solo para los discos locales. No se puede usar el comando con una letra de unidad local que se ha redirigido a través de la red.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examples).
 
 ##<a name="syntax"></a>Sintaxis
 
@@ -60,7 +60,7 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 |/b|Sólo para NTFS: Borra la lista de clústeres defectuosos en el volumen y vuelve a examinar todos los clústeres asignados y libres de errores. **/b** incluye la funcionalidad de **/r**. Use este parámetro después de un volumen a una nueva unidad de disco duro de creación de imágenes.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-##<a name="remarks"></a>Comentarios
+## <a name="remarks"></a>Comentarios
 
 -   Omitiendo las comprobaciones de volumen
 
@@ -114,7 +114,7 @@ chkdsk [<Volume>[[<Path>]<FileName>]] [/f] [/v] [/r] [/x] [/i] [/c] [/l[:<Size>]
 -   El **chkdsk** comando, con diferentes parámetros, está disponible en la consola de recuperación.
 -   En servidores que se reinician con poca frecuencia, es posible que desee usar el **chkntfs** o **fsutil dirty consulta** comandos para determinar si el volumen 's desfasado bits ya está establecen antes de ejecutar chkdsk.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="examples"></a>Ejemplos
 
 Si desea comprobar el disco en la unidad D y que corregir errores de Windows, escriba:
 ```

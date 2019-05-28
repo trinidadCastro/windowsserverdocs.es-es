@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: bdfd06a28f8ccaa04014024a235cd19512adb181
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd4c436c806074f63bf51f497429532d7be32f75
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887036"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192408"
 ---
 # <a name="checklist-configuring-ad-fs-to-send-claims-to-an-ad-fs-1x-federation-service"></a>Lista de comprobación: Configuración de AD FS para enviar notificaciones a un servicio de federación de AD FS 1.x
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
   
 ## <a name="checklist-configuring-ad-fs-to-send-claims-to-an-adfs1x-federation-service"></a>Lista de comprobación: Configuración de AD FS para enviar notificaciones a AD FS 1.x Federation Service  
 Esta lista de comprobación incluye las tareas que son necesarias para configurar los servicios de federación de Active Directory \(AD FS\) servicio de federación de Windows Server 2012 para enviar notificaciones a los que se pueden entender mediante AD FS 1. *x* servicio de federación.  

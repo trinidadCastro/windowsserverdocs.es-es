@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 9c75cd4ccbafefdda83cba4551fd6b9af63c4822
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47c4913a09fb38c20752bdbc2a9e17ad0af93e01
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817406"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192385"
 ---
 # <a name="checklist-creating-claim-rules-for-a-relying-party-trust"></a>Lista de comprobación: Creación de reglas de notificación para una relación de confianza para usuario autenticado
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Esta lista de comprobación incluye las tareas que son necesarias para la planificación, diseño, y las reglas que están asociadas con una entidad de confianza en los servicios de federación de Active Directory de notificaciones de implementación \(AD FS\).  
   

@@ -9,12 +9,12 @@ ms.assetid: 9c7a67e0-0953-479c-8736-ccb356230bde
 ms.author: pashort
 author: shortpatti
 ms.date: 06/20/2018
-ms.openlocfilehash: c76483031bdca184e0943738a8c921776440d1fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0439c0f45a604f6b3ef90369f5fe77a59568d9d7
+ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829036"
+ms.lasthandoff: 05/25/2019
+ms.locfileid: "66222587"
 ---
 # <a name="network-policy-server-nps"></a>Servidor de directivas de redes (NPS)
 
@@ -39,10 +39,10 @@ También puede configurar NPS como un proxy de servicio de autenticación remota
 
 NPS permite configurar y administrar la autenticación de acceso de red, autorización y las cuentas con las siguientes características de forma centralizada:
 
-- **Servidor RADIUS**. NPS realiza la autenticación centralizada, autorización y contabilidad para conexiones inalámbricas, autenticación de modificador, acceso remoto telefónico y conexiones de red privada virtual (VPN). Cuando se usa NPS como un servidor RADIUS, se configuran los servidores de acceso a la red, como los puntos de acceso inalámbrico y los servidores VPN, como clientes RADIUS en NPS. Además, se configuran las directivas de redes que usa NPS para autorizar las solicitudes de conexión. También puede configurar la administración de cuentas RADIUS para que NPS registre la información de las cuentas en archivos de registro del disco duro local o en una base de datos de Microsoft SQL Server. Para obtener más información, consulte [servidor RADIUS](#bkmk_server).
-- **Proxy RADIUS**. Cuando se usa NPS como proxy RADIUS, configure las directivas de solicitud de conexión que indican el NPS qué solicitudes de conexión para reenviar a otros servidores RADIUS y a qué servidores RADIUS desea reenviar las solicitudes de conexión. También puede configurar NPS para que reenvíe datos de cuentas que deben registrar uno o más equipos en un grupo de servidores RADIUS remotos. Para configurar NPS como un servidor proxy RADIUS, consulte los temas siguientes. Para obtener más información, consulte [proxy RADIUS](#bkmk_proxy).
+- **Servidor RADIUS**. NPS realiza la autenticación centralizada, autorización y contabilidad para conexiones inalámbricas, autenticación de modificador, acceso remoto telefónico y conexiones de red privada virtual (VPN). Cuando se usa NPS como un servidor RADIUS, se configuran los servidores de acceso a la red, como los puntos de acceso inalámbrico y los servidores VPN, como clientes RADIUS en NPS. Además, se configuran las directivas de redes que usa NPS para autorizar las solicitudes de conexión. También puede configurar la administración de cuentas RADIUS para que NPS registre la información de las cuentas en archivos de registro del disco duro local o en una base de datos de Microsoft SQL Server. Para obtener más información, consulte [servidor RADIUS](#radius-server).
+- **Proxy RADIUS**. Cuando se usa NPS como proxy RADIUS, configure las directivas de solicitud de conexión que indican el NPS qué solicitudes de conexión para reenviar a otros servidores RADIUS y a qué servidores RADIUS desea reenviar las solicitudes de conexión. También puede configurar NPS para que reenvíe datos de cuentas que deben registrar uno o más equipos en un grupo de servidores RADIUS remotos. Para configurar NPS como un servidor proxy RADIUS, consulte los temas siguientes. Para obtener más información, consulte [proxy RADIUS](#radius-proxy).
     - [Configurar las directivas de solicitud de conexión](nps-crp-configure.md)
-- **Administración de cuentas RADIUS**. Puede configurar NPS para registrar eventos en un archivo de registro local o a una instancia local o remota de Microsoft SQL Server. Para obtener más información, consulte [registro NPS](#bkmk_logging).
+- **Administración de cuentas RADIUS**. Puede configurar NPS para registrar eventos en un archivo de registro local o a una instancia local o remota de Microsoft SQL Server. Para obtener más información, consulte [registro NPS](#nps-logging).
 
 >[!IMPORTANT]
 >Protección de acceso de red \(NAP\), autoridad de registro de mantenimiento \(HRA\)y el protocolo de autorización de credenciales de Host \(HCAP\) han quedado en desuso en Windows Server 2012 R2, y no están disponibles en Windows Server 2016. Si tiene una implementación de NAP con sistemas operativos anteriores a Windows Server 2016, no puede migrar la implementación de NAP en Windows Server 2016.
@@ -66,7 +66,7 @@ Las secciones siguientes proporcionan información más detallada acerca de NPS 
 
 Puede usar NPS como un servidor RADIUS, proxy RADIUS o ambos.
 
-### <a name="bkmk_server"></a>Servidor RADIUS
+### <a name="radius-server"></a>Servidor RADIUS
 
 NPS es la implementación de Microsoft del estándar RADIUS especificado por la Internet Engineering Task Force \(IETF\) en RFC 2865 y 2866. Como un servidor RADIUS, NPS realiza la autenticación de la conexión centralizada, autorización y contabilidad para muchos tipos de acceso a la red, incluidos el conmutador inalámbrico, que se autentica, acceso telefónico y red privada virtual \(VPN\) remoto el acceso y conexiones de enrutador a enrutador.
 
@@ -97,7 +97,7 @@ La siguiente ilustración muestra NPS como servidor RADIUS para una variedad de 
 
 ![NPS como servidor RADIUS](../../media/Nps-Server/Nps-Server.jpg)
 
-### <a name="bkmk_proxy"></a>Proxy RADIUS
+### <a name="radius-proxy"></a>Proxy RADIUS
 
 Como un proxy RADIUS, NPS reenvía mensajes de autenticación y cuentas para NPS y otros servidores RADIUS. Puede usar NPS como proxy RADIUS para el enrutamiento del radio de los mensajes entre clientes RADIUS \(también denominados servidores de acceso de red\) y servidores RADIUS que realizan la autenticación de usuario, autorización y contabilidad para el intento de conexión. 
 
@@ -169,8 +169,8 @@ Para configurar NPS como servidor RADIUS, debe configurar clientes RADIUS, direc
 
 Para obtener instrucciones sobre cómo realizar estas configuraciones, vea los temas siguientes.
 
-- [Configurar a clientes RADIUS](nps-radius-clients-configure.md)
-- [Configurar directivas de redes](nps-np-configure.md)
+- [Configurar clientes RADIUS](nps-radius-clients-configure.md)
+- [Configurar las directivas de red](nps-np-configure.md)
 - [Configurar las cuentas de servidor de directivas de red](nps-accounting-configure.md)
 
 #### <a name="configure-radius-proxy"></a>Configurar el proxy RADIUS
@@ -179,11 +179,11 @@ Para configurar NPS como proxy RADIUS, debe configurar clientes RADIUS, grupos d
 
 Para obtener instrucciones sobre cómo realizar estas configuraciones, vea los temas siguientes.
 
-- [Configurar a clientes RADIUS](nps-radius-clients-configure.md)
+- [Configurar clientes RADIUS](nps-radius-clients-configure.md)
 - [Configurar grupos de servidores RADIUS remotos](nps-crp-rrsg-configure.md)
 - [Configurar las directivas de solicitud de conexión](nps-crp-configure.md)
 
-## <a name="bkmk_logging"></a>Registro NPS
+## <a name="nps-logging"></a>Registro NPS
 
 Registro NPS también se denomina administración de cuentas RADIUS. Configure el registro NPS a sus requisitos si usa NPS como un servidor RADIUS, proxy o cualquier combinación de estas configuraciones.
 

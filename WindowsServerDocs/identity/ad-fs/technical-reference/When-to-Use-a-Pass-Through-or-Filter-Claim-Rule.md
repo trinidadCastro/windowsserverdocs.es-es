@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: aa205c46bf67dc25a55232b799bdd39fee4ac3c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 09f26e256793d30936496f7a936550acb7b20025
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812216"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188355"
 ---
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="when-to-use-a-pass-through-or-filter-claim-rule"></a>Cuándo usar una regla de Pasar a través o filtrar una notificación
 Puede usar esta regla en Active Directory Federation Services \(AD FS\) cuando necesite tomar un tipo de notificación entrante específica y, a continuación, aplicar una acción que determine qué resultado se debe producir en función de los valores de la notificación entrante. Cuando usas esta regla, pasas a través o filtras cualquier notificación que coincide con la lógica de la regla de la tabla siguiente, según cualquiera de las opciones que configures en la regla.  
   

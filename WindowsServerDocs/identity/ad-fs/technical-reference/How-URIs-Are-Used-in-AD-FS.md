@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 305bf0cece742c961604dacda7e27b8eac8065e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 677d3136305cbddd29f2fd782be33ae1e824d096
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812226"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188551"
 ---
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
-
 # <a name="how-uris-are-used-in-ad-fs"></a>Uso de URI en AD FS
 Un identificador uniforme de recursos \(URI\) es una cadena de caracteres que se usa como identificador único.  En AD FS, los URI se usan para identificar las direcciones de red de asociados y los objetos de configuración.  Cuando se usa para identificar las direcciones de red de asociados, el URI es siempre una dirección URL.  Cuando se usa para identificar los objetos de configuración, el URI puede ser un nombre de recursos uniforme (URN) o una dirección URL.  Para obtener información general sobre los URI, consulte [RFC 2396](https://go.microsoft.com/fwlink/?LinkId=48289) y [RFC 3986](https://go.microsoft.com/fwlink/?LinkId=90453).  
   
@@ -63,7 +61,7 @@ Por ejemplo, si el identificador del usuario autenticado en la base de datos de 
   
 La tabla siguiente incluye ejemplos adicionales.  
   
-|Identificador de usuario de confianza en la base de datos de configuración de AD FS|Identificador de usuario de confianza en el mensaje de las solicitudes|¿El identificador de la solicitud coincide con el identificador de configuración?|Razón|  
+|Identificador de usuario de confianza en la base de datos de configuración de AD FS|Identificador de usuario de confianza en el mensaje de las solicitudes|¿El identificador de la solicitud coincide con el identificador de configuración?|Reason|  
 |------------------------------------------------------------|-----------------------------------------------|------------------------------------------------------------|----------|  
 |http:\/\/contoso.com|http:\/\/contoso.com|TRUE|Coincidencia exacta|  
 |http:\/\/contoso.com\/|http:\/\/contoso.com|TRUE|Se ignoran las barras diagonales finales|  

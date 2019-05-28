@@ -1,27 +1,42 @@
 ---
 title: Ampliar volúmenes en Espacios de almacenamiento directo
-ms.assetid: fa48f8f7-44e7-4a0b-b32d-d127eff470f0
+description: Cómo cambiar el tamaño de los volúmenes en espacios de almacenamiento directo con Windows Admin Center y PowerShell.
 ms.prod: windows-server-threshold
-ms.author: cosmosdarwin
-ms.manager: eldenc
-ms.technology: storage-spaces
-ms.topic: article
+ms.reviewer: cosmosdarwin
 author: cosmosdarwin
-ms.date: 01/23/2017
-ms.localizationpriority: medium
-ms.openlocfilehash: 51f58ec23c55a6cb1664d800d6f4a75dae545899
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.author: cosdar
+manager: eldenc
+ms.technology: storage-spaces
+ms.date: 05/07/2019
+ms.openlocfilehash: 3be6a4cda20f4d7d7d881ad8a272dc38fd787bba
+ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824976"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65613229"
 ---
 # <a name="extending-volumes-in-storage-spaces-direct"></a>Ampliar volúmenes en Espacios de almacenamiento directo
 > Se aplica a: Windows Server 2019, Windows Server 2016
 
-En este tema se proporcionan instrucciones para cambiar el tamaño de los volúmenes en [Espacios de almacenamiento directo](storage-spaces-direct-overview.md).
+Este tema proporciona instrucciones para cambiar el tamaño de los volúmenes en un [espacios de almacenamiento directo](storage-spaces-direct-overview.md) clúster mediante el uso de Windows Admin Center.
 
-## <a name="prerequisites"></a>Requisitos previos
+Vea un breve vídeo sobre cómo cambiar el tamaño de un volumen.
+
+> [!VIDEO https://www.youtube-nocookie.com/embed/hqyBzipBoTI]
+
+## <a name="extending-volumes-using-windows-admin-center"></a>Ampliación de volúmenes mediante Windows Admin Center
+
+1. En Windows Admin Center, conectarse a un clúster de espacios de almacenamiento directo y, a continuación, seleccione **volúmenes** desde el **herramientas** panel.
+2. En la página de volúmenes, seleccione el **inventario** pestaña y, a continuación, seleccione el volumen que desea cambiar el tamaño.
+
+    En la página de detalles de volumen, se indica la capacidad de almacenamiento para el volumen. También puede abrir la página de detalles de volúmenes directamente desde el panel. En el panel, en el panel de alertas, seleccione la alerta, que le notifica si un volumen se está quedando sin capacidad de almacenamiento, y, a continuación, seleccione **ir al volumen**.
+
+4. En la parte superior de la página de detalles de volúmenes, seleccione **cambiar el tamaño de**.
+5. Escriba un nuevo tamaño más grande y, a continuación, seleccione **cambiar el tamaño de**.
+
+    En la página de detalles de volúmenes, se indica la mayor capacidad de almacenamiento para el volumen y se borra la alerta en el panel.
+
+## <a name="extending-volumes-using-powershell"></a>Ampliación de volúmenes mediante PowerShell
 
 ### <a name="capacity-in-the-storage-pool"></a>Capacidad del grupo de almacenamiento
 
@@ -49,7 +64,7 @@ Por ejemplo, aquí tienes cómo llegar desde un disco virtual hasta su volumen:
 Get-VirtualDisk <FriendlyName> | Get-Disk | Get-Partition | Get-Volume 
 ```
 
-## <a name="step-1--resize-the-virtual-disk"></a>Paso 1: cambiar el tamaño del disco virtual
+### <a name="step-1--resize-the-virtual-disk"></a>Paso 1: cambiar el tamaño del disco virtual
 
 El disco virtual puede usar capas de almacenamiento, o no, según cómo se haya creado.
 
@@ -61,7 +76,7 @@ Get-VirtualDisk <FriendlyName> | Get-StorageTier
 
 Si el cmdlet no devuelve nada, el disco virtual no usa capas de almacenamiento.
 
-### <a name="no-storage-tiers"></a>Sin capas de almacenamiento
+#### <a name="no-storage-tiers"></a>Sin capas de almacenamiento
 
 Si el disco virtual no tiene ninguna capa de almacenamiento, puedes cambiar el tamaño directamente mediante el cmdlet **Resize-VirtualDisk**.
 
@@ -75,7 +90,7 @@ Cuando cambies el tamaño de **VirtualDisk**, **Disk** lo seguirá automáticame
 
 ![Resize-VirtualDisk](media/resize-volumes/Resize-VirtualDisk.gif)
 
-### <a name="with-storage-tiers"></a>Con capas de almacenamiento
+#### <a name="with-storage-tiers"></a>Con capas de almacenamiento
 
 Si el disco virtual usa capas de almacenamiento, puedes cambiar el tamaño de cada capa por separado mediante el cmdlet **Resize-StorageTier**.
 
@@ -98,7 +113,7 @@ Cuando cambies el tamaño de **StorageTier**, **VirtualDisk** y **Disk** lo segu
 
 ![Resize-StorageTier](media/resize-volumes/Resize-StorageTier.gif)
 
-## <a name="step-2--resize-the-partition"></a>Paso 2: cambiar el tamaño de la partición
+### <a name="step-2--resize-the-partition"></a>Paso 2: cambiar el tamaño de la partición
 
 Luego cambia el tamaño de la partición con el cmdlet **Resize-Partition**. Se espera que el disco virtual tenga dos particiones: la primera es reservada y no se debe modificar; la que tienes que cambiar de tamaño tiene **PartitionNumber = 2** y **Type = Basic**.
 
@@ -129,3 +144,4 @@ Ya está.
 - [Espacios de almacenamiento directo en Windows Server 2016](storage-spaces-direct-overview.md)
 - [Planificación de volúmenes en espacios de almacenamiento directo](plan-volumes.md)
 - [Creación de volúmenes en espacios de almacenamiento directo](create-volumes.md)
+- [Eliminando los volúmenes en espacios de almacenamiento directo](delete-volumes.md)

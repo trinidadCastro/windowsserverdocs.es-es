@@ -1,0 +1,42 @@
+---
+title: Características eliminadas o planeado para el reemplazo a partir de Windows Server, versión 1903
+description: La siguiente es una lista de características y funcionalidades de Windows Server, versión 1903 que se quitaron del producto en que liberarán o están comenzando a tener en cuenta para el reemplazo posibles en versiones posteriores. Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial.
+ms.prod: windows-server-threshold
+ms.technology: server-general
+ms.topic: article
+ms.date: 05/21/2019
+author: jasongerend
+ms.author: jgerend
+manager: daveba
+ms.openlocfilehash: e2f51af55ba7005cb20d8a1c22f6ba9edc20c704
+ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.translationtype: MT
+ms.contentlocale: es-ES
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65983425"
+---
+# <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1903"></a>Características eliminadas o planeado para el reemplazo a partir de Windows Server, versión 1903
+
+>Se aplica a: Windows Server, versión 1903
+
+La siguiente es una lista de características y funcionalidades de Windows Server, versión 1903 que se quitaron del producto en que liberarán o están comenzando a tener en cuenta para el reemplazo posibles en versiones posteriores. Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. **Esta lista está sujeta a cambios en versiones posteriores y puede no incluir todas las características afectadas o funcionalidad.**
+
+Consulte también [características eliminadas o planeado para el reemplazo a partir de Windows Server 2019](removed-features-19.md).
+
+## <a name="features-were-no-longer-developing"></a>Características que ya no se estamos desarrollando
+
+Se están desarrollando activamente ya no estas características y puede quitarlos de una actualización futura. Algunas características se han reemplazado por otras características o funciones, mientras que otras están ahora disponibles de diferentes orígenes. 
+
+Si tienes algún comentario acerca de la sustitución propuesta de cualquiera de estas características, puedes usar la [aplicación Centro de comentarios](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app). 
+
+| Característica | En su lugar, puede usar |
+|-----------|---------------------|
+|WEP Wi-Fi y TKIP (**nuevo**)| Redes Wi-Fi mediante el cifrado WEP y TKIP anterior no son tan seguras como aquellos con AES, por ejemplo, WPA2 y WPA3. En Windows 10, versión 1903, conectarse a una red WEP o TKIP mostrará un mensaje de advertencia que la red no segura, pero no contiene ningún mensaje que se muestra en Windows Server, versión 1903. En una versión futura se permitirá ninguna conexión a una red Wi-Fi mediante estos cifrados antiguos. Para obtener más información sobre los riesgos de seguridad de WEP y TKIP, consulte este [entrada de blog](https://go.microsoft.com/fwlink/p/?linkid=2008426).|
+|Controlador de pantalla remota basada en XDDM (**nuevo**)|A partir de esta versión, los servicios de escritorio remoto usa Windows Display Driver Model (WDDM) en función de controlador de pantalla indirecta (IDD) de un escritorio remoto de sesión único. Se quitará la compatibilidad con los controladores de pantalla remota de Windows 2000 Mostrar controladores modelo (XDDM) basado en una versión futura. Los proveedores de Software independientes que usan el controlador de pantalla remota basada en XDDM debe planear una migración en el modelo de controlador WDDM. Para obtener más información sobre la implementación de pantalla remota controlador de pantalla indirecta ISV puede llegar a [ rdsdev@microsoft.com ](mailto:rdsdev@microsoft.com).|
+|Herramienta de recopilación de registro de UCS (**nuevo**)|La herramienta de recopilación de registro de UCS, aunque explícitamente no está diseñada para su uso con Windows Server, sin embargo se reemplaza por el centro de comentarios en Windows 10.|
+|Unidad de almacenamiento de claves de Hyper-V|Ya no estamos trabajando en la característica de unidad de almacenamiento de la clave de Hyper-V. Si usa máquinas virtuales de generación 1, consulte [seguridad de virtualización de máquinas virtuales de generación 1](https://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v) para obtener información acerca de las opciones en el futuro. Si va a crear nuevas máquinas virtuales usar máquinas virtuales de generación 2 con dispositivos TPM para una solución más segura. |
+|Consola de administración de confianza Platform Module (TPM)|La información que estaban disponible en la consola de administración de TPM está disponible en el [ **seguridad dispositivo** ](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/wdsc-device-security) página en el [Windows Defender Security Center](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/windows-defender-security-center).|
+|Modo de atestación de Active Directory del servicio de protección de host|Modo de atestación del servicio de protección de Host Active Directory ya no estamos desarrollando: en su lugar, hemos agregado un nuevo modo de atestación [atestación de clave de host](../security/guarded-fabric-shielded-vm/guarded-fabric-create-host-key.md), que es mucho más sencillo e igualmente como compatible como basada en Active Directory atestación.  Este nuevo modo proporciona una funcionalidad equivalente con una experiencia de instalación, administración más simple y menos dependencias de infraestructura de la atestación de Active Directory. Atestación de clave de host no tiene ningún requisito de hardware adicional más allá de qué atestación de Active Directory es necesario, por lo que todos los sistemas existentes seguirán siendo compatibles con el nuevo modo. Consulte [implementar hosts protegidos](../security/guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md) para obtener más información acerca de las opciones de atestación.|
+|Servicio OneSync|El servicio OneSync sincroniza los datos para las aplicaciones de correo electrónico, calendario y las personas. Hemos agregado un motor de sincronización a la aplicación de Outlook que proporciona la sincronización misma.|
+|Compatibilidad con las API de compresión diferencial remota|Compatibilidad con las API de compresión diferencial remota habilitada la sincronización de datos con un origen remoto mediante las tecnologías de compresión que minimizan la cantidad de datos que se envían a través de la red. Esta compatibilidad no se usa actualmente por cualquier producto de Microsoft.|
+|Extensión de conmutador de filtro ligero de WFP|La extensión de conmutador de filtro ligero de WFP permite a los desarrolladores crear [las extensiones para el conmutador virtual de Hyper-V de filtrado de paquetes de red simple](https://docs.microsoft.com/en-us/windows-hardware/drivers/network/using-virtual-switch-filtering). Puede lograr la misma funcionalidad mediante la creación de una extensión de filtrado completa. Por lo tanto, retiraremos esta extensión en el futuro.|

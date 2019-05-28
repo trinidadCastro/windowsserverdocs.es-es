@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 1245b88a42b80218b5557dc89f2b97b5d0059d44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 25ed17d964f12c2f497ccde443dad9f8bc253b20
+ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852546"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65034674"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>Máquinas virtuales blindadas para inquilinos - creación de los datos de blindaje para definir una máquina virtual blindada
 
@@ -35,7 +35,7 @@ Para preparar la creación de un archivo de datos de blindaje, realice los pasos
 
 A continuación, puede crear el archivo de datos de blindaje:
 
-- [Cree un archivo de datos de blindaje y agregue tutores](#create-a-shielding-data-file-and-add-guardians)
+- [Cree un archivo de datos de blindaje y agregue tutores](#create-a-shielding-data-file-and-add-guardians-using-the-shielding-data-file-wizard)
 
 
 ## <a name="obtain-a-certificate-for-remote-desktop-connection"></a>Obtener un certificado para la conexión a Escritorio remoto
@@ -211,7 +211,7 @@ Este comando crea un par de certificados de firma y cifrado en el almacén de ce
 Necesitará los certificados de propietario y sus claves privadas correspondientes para unshield una máquina virtual, así que asegúrese de estos certificados son una copia de seguridad y protegidos contra robo.
 Un atacante con acceso a los certificados de propietario puede usarlos para iniciar la máquina virtual blindada o cambiar su configuración de seguridad.
 
-Si tiene que importar la información de protección de un tejido protegido en el que desea ejecutar la máquina virtual (centro de datos principal, los centros de datos de copia de seguridad, etc.), ejecute el siguiente comando para cada [recuperar el archivo de metadatos de los tejidos protegidos ](#Select-trusted-fabrics).
+Si tiene que importar la información de protección de un tejido protegido en el que desea ejecutar la máquina virtual (centro de datos principal, los centros de datos de copia de seguridad, etc.), ejecute el siguiente comando para cada [recuperar el archivo de metadatos de los tejidos protegidos ](#select-trusted-fabrics).
 
 ```powershell
 Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
@@ -220,7 +220,7 @@ Import-HgsGuardian -Name 'EAST-US Datacenter' -Path '.\EastUSGuardian.xml'
 > [!TIP]
 > Si utiliza certificados autofirmados o certificados registrados con HGS han expirado, deberá usar el `-AllowUntrustedRoot` o `-AllowExpired` marcas con el comando Import-HgsGuardian para omitir las comprobaciones de seguridad.
 
-También deberá [obtener un catálogo de firmas de volumen](#Get-the-volume-signature-catalog-file) para cada disco de plantilla que desea usar con este archivo de datos de blindaje y una [archivo de respuesta de datos de blindaje](#Create-an-answer-file) para permitir que el sistema operativo para completar su especialización de tareas automáticamente.
+También deberá [obtener un catálogo de firmas de volumen](#get-the-volume-signature-catalog-file) para cada disco de plantilla que desea usar con este archivo de datos de blindaje y una [archivo de respuesta de datos de blindaje](#create-an-answer-file) para permitir que el sistema operativo para completar su especialización de tareas automáticamente.
 Por último, decida si desea que la máquina virtual sea totalmente blindada o simplemente habilitadas para vTPM.
 Use `-Policy Shielded` para una máquina virtual blindada completamente o `-Policy EncryptionSupported` ha habilitado un vTPM PowerShell Direct y máquina virtual que permita las conexiones de consola básica.
 
@@ -243,4 +243,4 @@ Consulte la documentación del cmdlet de [New ShieldingDataFile](https://docs.mi
 ## <a name="see-also"></a>Vea también
 
 - [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [Las máquinas virtuales blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
+- [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 101cab68d7c79bb107f1d6ef73900d9a4475b6ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c690f81620f97622a2f068b07c36e0a6c59e90d4
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861306"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190341"
 ---
 # <a name="access-control-policies-in-windows-server-2016-ad-fs"></a>Directivas de control de acceso en AD FS para Windows Server 2016
-
->Se aplica a: Windows Server 2016
 
   
 ## <a name="access-control-policy-templates-in-ad-fs"></a>Plantillas de directiva de Control de acceso en AD FS  
@@ -55,9 +53,9 @@ Si el administrador selecciona varias condiciones, son de **AND** relación. Las
 |**Directiva**|**Reglas de directiva**|
 | --- | --- |  
 |Acceso a extranet requiere MFA<br /><br />Se permiten todos los usuarios|**Regla #1**<br /><br />desde **extranet**<br /><br />y con MFA<br /><br />Permitir<br /><br />**Rule#2**<br /><br />desde **intranet**<br /><br />Permitir|  
-|No se permiten el acceso externo, excepto que no sean de FTE<br /><br />Se permiten el acceso a la intranet para FTE en dispositivo unido al área de trabajo|**Regla #1**<br /><br />Desde **extranet**<br /><br />y desde **no FTE** grupo<br /><br />Permitir<br /><br />**Regla #2**<br /><br />desde **intranet**<br /><br />y desde **unido** dispositivo<br /><br />y desde **FTE** grupo<br /><br />Permitir|  
+|No se permiten el acceso externo, excepto que no sean de FTE<br /><br />Se permiten el acceso a la intranet para FTE en dispositivo unido al área de trabajo|**Regla #1**<br /><br />desde **extranet**<br /><br />y desde **no FTE** grupo<br /><br />Permitir<br /><br />**Regla #2**<br /><br />desde **intranet**<br /><br />y desde **unido** dispositivo<br /><br />y desde **FTE** grupo<br /><br />Permitir|  
 |Acceso a extranet requiere MFA, excepto "Administrador de servicios"<br /><br />Todos los usuarios tienen permiso para tener acceso a|**Regla #1**<br /><br />desde **extranet**<br /><br />y con MFA<br /><br />Permitir<br /><br />Excepto **grupo de administración de servicio**<br /><br />**Regla #2**<br /><br />Siempre<br /><br />Permitir|  
-|dispositivo unido al lugar que no son de trabajo acceso desde extranet requiere MFA<br /><br />Permitir el tejido de AD para la intranet y extranet access|**Regla #1**<br /><br />desde **intranet**<br /><br />Y desde **AD Fabric** grupo<br /><br />Permitir<br /><br />**Regla #2**<br /><br />desde **extranet**<br /><br />y desde **no-unido** dispositivo<br /><br />y desde **AD Fabric** grupo<br /><br />y con MFA<br /><br />Permitir<br /><br />**Regla #3**<br /><br />desde **extranet**<br /><br />y desde **unido** dispositivo<br /><br />y desde **AD Fabric** grupo<br /><br />Permitir|  
+|dispositivo unido al lugar que no son de trabajo acceso desde extranet requiere MFA<br /><br />Permitir el tejido de AD para la intranet y extranet access|**Regla #1**<br /><br />desde **intranet**<br /><br />Y desde **AD Fabric** grupo<br /><br />Permitir<br /><br />**Regla #2**<br /><br />desde **extranet**<br /><br />y desde **no-unido** dispositivo<br /><br />Y desde **AD Fabric** grupo<br /><br />y con MFA<br /><br />Permitir<br /><br />**Regla #3**<br /><br />desde **extranet**<br /><br />y desde **unido** dispositivo<br /><br />Y desde **AD Fabric** grupo<br /><br />Permitir|  
   
 ## <a name="parameterized-policy-template-vs-non-parameterized-policy-template"></a>Plantilla de directiva sin parámetros de vs de plantilla de directiva con parámetros  
 Las directivas de control de acceso pueden ser  
@@ -183,5 +181,5 @@ Desde aquí puede seleccionar la directiva de control de acceso y se aplican a l
 ![directivas de control de acceso](media/Access-Control-Policies-in-AD-FS/ADFSACP15.PNG)  
   
 ## <a name="see-also"></a>Vea también  
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 
 

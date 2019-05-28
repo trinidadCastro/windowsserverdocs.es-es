@@ -6,17 +6,17 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: f1d77b6640bc0d6a5832a5a19c80d9d0af5d2b00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3782667e54f5e6b52c07645704b95fc9e7409a27
+ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832666"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65476069"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>Replicación DFS: Preguntas más frecuentes
 
 
-Actualizado: 9 de octubre de 2013
+Actualizado: 30 de abril de 2019
 
 Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
@@ -631,7 +631,7 @@ Si usa Windows Server 2008 o Windows Server 2003 R2, puede simular una conexión
 
 ### <a name="is-there-a-way-to-force-a-complete-replication-of-all-files-including-unchanged-files"></a>¿Hay una manera de forzar una replicación completa de todos los archivos incluidos en los archivos sin modificar?
 
-No. Si la replicación DFS considera que los archivos idénticos, no las replicará. Si no se han replicado los archivos modificados, la replicación DFS se replicarán automáticamente cuando se configura para ello. Para sobrescribir la programación configurada, utilice el método WMI **ForceReplicate()**. Sin embargo, esto solo es reemplazar una programación y no fuerza la replicación de archivos sin modificar o idénticos.
+No. Si la replicación DFS considera que los archivos idénticos, no las replicará. Si no se han replicado los archivos modificados, la replicación DFS se replicarán automáticamente cuando se configura para ello. Para sobrescribir la programación configurada, utilice el método WMI **ForceReplicate()** . Sin embargo, esto solo es reemplazar una programación y no fuerza la replicación de archivos sin modificar o idénticos.
 
 ### <a name="what-happens-if-the-primary-member-suffers-a-database-loss-during-initial-replication"></a>¿Qué ocurre si el miembro principal sufre una pérdida de la base de datos durante la replicación inicial?
 
@@ -730,7 +730,7 @@ Si ya se están transmitiendo cualquier parte del archivo, la replicación DFS c
 <tr class="header">
 <th>Fecha</th>
 <th>Descripción</th>
-<th>Razón</th>
+<th>Reason</th>
 </tr>
 </thead>
 <tbody>

@@ -9,23 +9,25 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ecf3cb5703a90976dce15abbd0c9fdd1d4aa24ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 48099ad15465b885ccaf562bcf94b4bafdeff388
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812636"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64772623"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solución de problemas de espacios de almacenamiento directo
+
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Utilice la siguiente información para solucionar problemas de implementación de espacios de almacenamiento directo.
 
 En general, comience con los pasos siguientes:
 
-1. Confirme que la marca y modelo de SSD está certificado para Windows Server 2016 mediante el catálogo de Windows Server. Confirme con el proveedor que se admiten las unidades de disco para espacios de almacenamiento directo.
+1. Confirme que la marca y modelo de SSD está certificado para Windows Server 2016 y Windows Server 2019 mediante el catálogo de Windows Server. Confirme con el proveedor que se admiten las unidades de disco para espacios de almacenamiento directo.
 2. Inspeccionar el almacenamiento para cualquier unidad defectuosa. Usar software de administración de almacenamiento para comprobar el estado de las unidades de disco. Si alguna de las unidades de disco defectuoso, hable con su proveedor. 
 3. Actualice el almacenamiento y firmware de la unidad si es necesario.
-   Asegúrese de que las actualizaciones más recientes de Windows están instaladas en todos los nodos. Puede obtener las actualizaciones más recientes para Windows Server 2016 desde [ https://aka.ms/update2016 ](https://aka.ms/update2016).
+   Asegúrese de que las actualizaciones más recientes de Windows están instaladas en todos los nodos. Puede obtener las actualizaciones más recientes para Windows Server 2016 desde [historial de actualizaciones de Windows 10 y Windows Server 2016](https://aka.ms/update2016) y para Windows Server 2019 desde [historial de actualizaciones de Windows 10 y Windows Server 2019](https://support.microsoft.com/help/4464619).
 4. Actualización de firmware y los controladores de adaptador de red.
 5. Ejecute la validación de clúster y revise la sección de espacio de almacenamiento directo, asegúrese de que las unidades que se va a usar para la memoria caché se notifican correctamente y sin errores.
 
@@ -195,7 +197,8 @@ Para obtener más información, consulte [de estado de solución de problemas de
     
 ## <a name="event-5120-with-statusiotimeout-c00000b5"></a>Evento 5120 con STATUS_IO_TIMEOUT c00000b5 
 
->[! Importante} para reducir la posibilidad de que experimentan estos síntomas al aplicar la actualización con la corrección, se recomienda utilizar el siguiente procedimiento de modo de mantenimiento de almacenamiento para instalar el [18 de octubre de 2018, la actualización acumulativa para Windows Server 2016 ](https://support.microsoft.com/help/4462928) o una versión posterior cuando los nodos actualmente han instalado una actualización acumulativa de Windows Server 2016 que se publicó desde [8 de mayo de 2018](https://support.microsoft.com/help/4103723) a [9 de octubre de 2018](https://support.microsoft.com/help/KB4462917).
+> [!Important]
+> **Para Windows Server 2016:** Para reducir la posibilidad de que experimentan estos síntomas al aplicar la actualización con la corrección, se recomienda utilizar el siguiente procedimiento de modo de mantenimiento de almacenamiento para instalar el [18 de octubre de 2018, la actualización acumulativa para Windows Server 2016](https://support.microsoft.com/help/4462928)o una versión posterior cuando los nodos actualmente han instalado una actualización acumulativa de Windows Server 2016 que se publicó desde [8 de mayo de 2018](https://support.microsoft.com/help/4103723) a [9 de octubre de 2018](https://support.microsoft.com/help/KB4462917).
 
 Podría obtener eventos 5120 con STATUS_IO_TIMEOUT c00000b5 después de reiniciar un nodo en Windows Server 2016 con la actualización acumulativa que se publicaron desde [8 de mayo de 2018 KB 4103723](https://support.microsoft.com/help/4103723) a [9 de octubre de 2018 KB 4462917](https://support.microsoft.com/help/4462917)instalado.
 
@@ -217,11 +220,7 @@ Event ID: 1135
 Description: Cluster node 'NODENAME'was removed from the active failover cluster membership. The Cluster service on this node may have stopped. This could also be due to the node having lost communication with other active nodes in the failover cluster. Run the Validate a Configuration wizard to check your network configuration. If the condition persists, check for hardware or software errors related to the network adapters on this node. Also check for failures in any other network components to which the node is connected such as hubs, switches, or bridges.
 ```
 
-Se introdujo un cambio en la actualización acumulativa 8 de mayo de 2018, para agregar controla resistente de SMB para las sesiones de red SMB de espacios de almacenamiento directo dentro del clúster. Esto se hace para mejorar la resistencia a errores de red transitorios y mejorar cómo controla la congestión de la red RoCE.
-
-Estas mejoras también accidentalmente aumentan los tiempos de espera cuando las conexiones SMB intentan volver a conectarse y espera hasta el tiempo de espera cuando se reinicia un nodo. Estos problemas pueden afectar a un sistema que está bajo presión. Durante el tiempo de inactividad imprevisto, también se han observado pausas de E/S de hasta 60 segundos mientras espera a que el sistema para las conexiones con el tiempo de espera.
-
-Para corregir este problema, instale el [18 de octubre de 2018, la actualización acumulativa para Windows Server 2016](https://support.microsoft.com/help/4462928) o una versión posterior.
+Un cambio introducido en 8 de mayo de 2018 a Windows Server 2016, lo que era una actualización acumulativa para agregar controla resistente de SMB para las sesiones de red SMB de espacios de almacenamiento directo dentro del clúster. Esto se hace para mejorar la resistencia a errores de red transitorios y mejorar cómo controla la congestión de la red RoCE. Estas mejoras también accidentalmente aumentan los tiempos de espera cuando las conexiones SMB intentan volver a conectarse y espera hasta el tiempo de espera cuando se reinicia un nodo. Estos problemas pueden afectar a un sistema que está bajo presión. Durante el tiempo de inactividad imprevisto, también se han observado pausas de E/S de hasta 60 segundos mientras espera a que el sistema para las conexiones con el tiempo de espera. Para corregir este problema, instale el [18 de octubre de 2018, la actualización acumulativa para Windows Server 2016](https://support.microsoft.com/help/4462928) o una versión posterior.
 
 *Tenga en cuenta* esta actualización alinea los tiempos de espera CSV con tiempos de espera de conexión de SMB para corregir este problema. No implementa los cambios para deshabilitar la generación de volcado de memoria en vivo se menciona en la sección solución alternativa.
     
@@ -455,4 +454,4 @@ Hemos identificado un problema crítico que afecta a algunos espacios de almacen
 >[!NOTE]
 > Los OEM individual pueden tener los dispositivos que se basan en la familia Intel P3x00 de dispositivos NVMe con cadenas de versión de firmware único. Para obtener más información de la última versión de firmware, póngase en contacto con su OEM.
 
-Si utiliza hardware de su implementación en función de la familia Intel P3x00 de dispositivos NVMe, se recomienda aplicar inmediatamente el firmware más reciente disponible (al menos 8 de la versión de mantenimiento). Esto [artículo de Microsoft Support](https://support.microsoft.com/en-us/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda) proporciona información adicional sobre este problema. 
+Si utiliza hardware de su implementación en función de la familia Intel P3x00 de dispositivos NVMe, se recomienda aplicar inmediatamente el firmware más reciente disponible (al menos 8 de la versión de mantenimiento). Esto [artículo de Microsoft Support](https://support.microsoft.com/help/4052341/slow-performance-or-lost-communication-io-error-detached-or-no-redunda) proporciona información adicional sobre este problema. 
