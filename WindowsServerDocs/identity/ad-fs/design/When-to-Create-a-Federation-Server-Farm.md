@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e7c991cf87bc0e6914e158f0878bcadbede3c22
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91a0122198639bf75e9e43e9da9edf68dd0453d9
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816236"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190680"
 ---
 # <a name="when-to-create-a-federation-server-farm"></a>Cuándo se debe crear una granja de servidores de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Considere la posibilidad de crear una granja de servidores de federación de Active Directory Federation Services \(AD FS\) cuando tiene una implementación mayor de AD FS y desea proporcionar tolerancia a errores, carga\-equilibrio o escalabilidad a su Servicio de federación de su organización. El acto de crear dos o más servidores de federación en la misma red, configurando cada uno de ellos para que use el mismo servicio de federación y agregar el token de la clave pública de cada servidor la\-certificados de firma para el complemento de administración de AD FS\-en crea una granja de servidores de federación.  
   
@@ -55,4 +53,4 @@ En la tabla siguiente se describe las tareas que deben completarse para que cada
 |Selecciona la misma instancia de SQL Server|Si la base de datos de configuración de AD FS se almacenarán en una base de datos SQL, el nuevo servidor de federación debe apuntar a la misma instancia de SQL Server que se usa por otros servidores de federación en la granja de servidores para que el nuevo servidor pueda participar en la granja de servidores.|  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

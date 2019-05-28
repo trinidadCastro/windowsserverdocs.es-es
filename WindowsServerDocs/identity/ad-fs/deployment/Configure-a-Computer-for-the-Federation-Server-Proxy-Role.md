@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 2a89bab2fd1af1a1d7234da29f2025b4b12d6774
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b01e2ae567155cd3d53d6d7972bfd0b9ec0cf51b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861806"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192282"
 ---
 # <a name="configure-a-computer-for-the-federation-server-proxy-role"></a>Configurar un equipo para el rol de servidor proxy de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Después de configurar un equipo con los certificados necesarios y ha instalado el servicio de rol Proxy de servicio de federación, está listo para configurar el equipo para convertirse en un servidor proxy de federación. Puede realizar el siguiente procedimiento para que el equipo actúe como servidor proxy de federación.  
   
@@ -102,6 +100,6 @@ De forma predeterminada, el servicio de proxy de servidor de federación está c
     En el servidor de federación y los equipos de servidores proxy de federación, se deben ejecutar los comandos anteriores.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Configurar un servidor Proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de comprobación: configuración de un servidor proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

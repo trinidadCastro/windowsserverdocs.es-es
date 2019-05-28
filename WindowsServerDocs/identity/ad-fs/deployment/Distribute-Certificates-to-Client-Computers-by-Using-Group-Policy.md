@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: d3a7e05e4d16565b17b69de254e353df749bbc3a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11cdd9c75ca588ebeac9387e6512fee439621bf8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839236"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192162"
 ---
 # <a name="distribute-certificates-to-client-computers-by-using-group-policy"></a>Distribuir certificados a los equipos cliente mediante la directiva de grupo
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
 Puede usar el procedimiento siguiente para desplazar hacia abajo de la capa de Sockets seguros adecuado \(SSL\) certificados \(o equivalente en los certificados vinculados a una raíz de confianza\) para servidores de federación de cuenta, los servidores de federación de recursos y servidores Web para cada equipo cliente en el bosque del asociado de cuenta mediante la directiva de grupo.  

@@ -9,16 +9,15 @@ ms.prod: windows-server-threshold
 ms.assetid: 70f279bf-aea1-4f4f-9ab3-e9157233e267
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 59b761e69da5b1c1e27fea71b32447b19d2b83c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8ada2ae5c9fcdb77f35200581848041f222ed7f3
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812086"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191959"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-with-sql-server"></a>Actualización a AD FS en Windows Server 2016 con SQL Server
 
->Se aplica a: Windows Server 2016
 
 
 ## <a name="moving-from-a-windows-server-2012-r2-ad-fs-farm-to-a-windows-server-2016-ad-fs-farm"></a>Movimiento de una granja de servidores de Windows Server 2012 R2 AD FS a una granja de servidores de AD FS en Windows Server 2016  
@@ -44,7 +43,7 @@ El resto de la es el documento proporciona los pasos para agregar un servidor de
 
 En el siguiente diagrama de arquitectura muestra la configuración que se usó para validar y grabar los pasos siguientes.
 
-![Arquitectura](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png) 
+![Arquitectura](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/arch.png)
 
 
 #### <a name="join-the-windows-2016-ad-fs-server-to-the-ad-fs-farm"></a>Unir el servidor de AD FS de Windows 2016 a la granja de AD FS
@@ -58,18 +57,18 @@ En el siguiente diagrama de arquitectura muestra la configuración que se usó p
 ![Unirse a granja](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure3.png)
 5.  En el **especificar certificado SSL** pantalla, especifique el certificado y haga clic en **siguiente**.
 ![Unirse a granja](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/configure4.png)
-6.  En el **especificar cuenta de servicio** pantalla, especifique la cuenta de servicio y haga clic en **siguiente**. 
-7.  En el **Revisar opciones** pantalla, revise las opciones y haga clic en **siguiente**. 
+6.  En el **especificar cuenta de servicio** pantalla, especifique la cuenta de servicio y haga clic en **siguiente**.
+7.  En el **Revisar opciones** pantalla, revise las opciones y haga clic en **siguiente**.
 8.  En el **comprobaciones de requisitos previos** pantalla, asegúrese de que todas las comprobaciones de requisitos previos han pasado y haga clic en **configurar**.
 9.  En el **resultados** pantalla, asegúrese de que el servidor se configuró correctamente y haga clic en **cerrar**.
- 
-   
+
+
 #### <a name="remove-the-windows-server-2012-r2-ad-fs-server"></a>Quitar el servidor de Windows Server 2012 R2 AD FS
 
 >[!NOTE]
 >No es necesario establecer el servidor de AD FS principal mediante Set-AdfsSyncProperties-rol cuando se usa SQL como la base de datos.  Esto es porque todos los nodos se consideran principales en esta configuración.
 
-1.  En el servidor de Windows Server 2012 R2 AD FS en el administrador del servidor uso **quitar Roles y características** en **administrar**. 
+1.  En el servidor de Windows Server 2012 R2 AD FS en el administrador del servidor uso **quitar Roles y características** en **administrar**.
 ![Quitar servidor](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/remove1.png)
 2.  En la pantalla **Antes de comenzar**, haz clic en **Siguiente**.
 3.  En el **selección de servidor** pantalla, haga clic en **siguiente**.
@@ -78,12 +77,12 @@ En el siguiente diagrama de arquitectura muestra la configuración que se usó p
 5.  En el **características** pantalla, haga clic en **siguiente**.
 6.  En el **confirmación** pantalla, haga clic en **quitar**.
 7.  Una vez que se complete, reinicie el servidor.
-     
+
 #### <a name="raise-the-farm-behavior-level-fbl"></a>Elevar el nivel de comportamiento de la granja de servidores (FBL)
 Antes de este paso, deberá asegurarse de que se han ejecutado forestprep y domainprep en su entorno de Active Directory y que Active Directory tiene el esquema de Windows Server 2016.  Este documento a trabajar con un controlador de dominio de Windows 2016 y no era necesario ejecutar estos porque se ejecutan cuando se instaló AD.
 
 >[!NOTE]
->Antes de comenzar este procedimiento, asegúrese de que Windows Server 2016 está actualizada ejecutando Windows Update desde configuración.  Continúa este proceso hasta que no se necesiten actualizaciones. 
+>Antes de comenzar este procedimiento, asegúrese de que Windows Server 2016 está actualizada ejecutando Windows Update desde configuración.  Continúa este proceso hasta que no se necesiten actualizaciones.
 
 1. Ahora en el servidor de Windows Server 2016, abra PowerShell y ejecute lo siguiente: **$cred = Get-Credential** y presione ENTRAR.
 2. Escriba las credenciales que tienen privilegios de administrador en el servidor SQL Server.
@@ -93,3 +92,24 @@ Antes de este paso, deberá asegurarse de que se han ejecutado forestprep y doma
 3. Ahora, si va a administración de AD FS, verá los nuevos nodos que se han agregado para AD FS en Windows Server 2016  
 4. Del mismo modo, puede usar el cmdlet de PowerShell:  Get-AdfsFarmInformation para mostrar el FBL actual.  
 ![Finalizar actualización](media/Upgrading-to-AD-FS-in-Windows-Server-2016-SQL/finish2.png)
+
+#### <a name="upgrade-the-configuration-version-of-existing-wap-servers"></a>Actualizar la versión de configuración de los servidores WAP existentes
+1. En cada Proxy de aplicación Web, volver a configurar el WAP ejecutando el siguiente comando de PowerShell en una ventana con privilegios elevados:  
+    ```powershell
+    $trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
+    Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
+    ```
+2. Quitar los antiguos servidores del clúster y conservar sólo los servidores WAP ejecutando la versión más reciente del servidor, que se vuelve a configurar anteriormente, ejecutando el siguiente cmdlet de Powershell.
+    ```powershell
+    Set-WebApplicationProxyConfiguration -ConnectedServersName WAPServerName1, WAPServerName2
+    ```
+3. Compruebe la configuración de WAP ejecutando el commmandlet Get-WebApplicationProxyConfiguration. El ConnectedServersName reflejará el servidor que ejecute el comando anterior.
+    ```powershell
+    Get-WebApplicationProxyConfiguration
+    ```
+4. Para actualizar la versión de configuración de los servidores WAP, ejecute el siguiente comando de Powershell.
+    ```powershell
+    Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
+    ```
+5. Compruebe que la versión de configuración se ha actualizado con el comando de Powershell Get-WebApplicationProxyConfiguration.
+    

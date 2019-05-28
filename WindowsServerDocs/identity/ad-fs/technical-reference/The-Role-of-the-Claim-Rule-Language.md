@@ -9,15 +9,13 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: 05728f04f6fb924cf3793bc843df3832c7c383f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: bf36f12803b8ba621f2249b53ad868fcd8f6c4a7
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855696"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188461"
 ---
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="the-role-of-the-claim-rule-language"></a>El papel del lenguaje de reglas de notificaciones
 Lenguaje de reglas actúa como bloque de creación administrativo del comportamiento de las notificaciones entrantes y salientes, mientras que el motor de notificaciones actúa como el motor de procesamiento de la lógica en el lenguaje de reglas de notificación de notificación de los servicios de federación de Active Directory (AD FS) que define la regla personalizada. Para obtener más información acerca de cómo se procesan todas las reglas el motor de notificaciones, consulte [The Role of the Claims Engine](The-Role-of-the-Claims-Engine.md).  
   

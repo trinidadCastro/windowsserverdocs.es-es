@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9851134d1ad73092ee44c34c99bc2d873d20ca07
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ffa9b20d4d7b5c84b0e29ac446b8aa6f3a932850
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831176"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192113"
 ---
 # <a name="install-the-ad-fs-role-service"></a>Instalar el servicio de rol de AD FS
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Puede usar el procedimiento siguiente para instalar el servicio de rol de AD FS en un equipo que ejecuta Windows Server 2012 R2 para convertirse en el primer servidor de federación en una granja de servidores de federación o un servidor de federación en una granja de servidores de federación existente.  
   
@@ -50,7 +48,7 @@ Pertenencia a **administradores**, o equivalente, en el equipo local es el requi
   
 ## <a name="see-also"></a>Vea también 
 
-[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
+[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
 
 [Guía de implementación de Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  

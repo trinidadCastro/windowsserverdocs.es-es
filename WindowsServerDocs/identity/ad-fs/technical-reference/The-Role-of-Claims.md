@@ -9,15 +9,13 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: df35348cb51a9021f4aaa2fc6516cb119bdb8b8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 542d7a24e29b52dd3fa0d7ea6a9b2d27fb620d8d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849436"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188501"
 ---
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
 # <a name="the-role-of-claims"></a>El papel de las notificaciones
 En las notificaciones\-modelo de identidad basado en, las notificaciones desempeñan un papel fundamental en el proceso de federación, son el componente clave que el resultado de todas las aplicaciones Web\-se determinan en función de las solicitudes de autenticación y autorización. Con este modelo, las organizaciones pueden presentar identidades digitales y derechos (o *notificaciones*) en todo el ámbito empresarial sin ningún tipo de riesgo y de manera estándar.  
   
@@ -52,11 +50,11 @@ Al escribir reglas de notificaciones, el origen de las notificaciones entrantes 
 ## <a name="what-are-claim-types"></a>¿Qué son los tipos de notificaciones?  
 Un tipo de notificación ofrece contexto para el valor de la notificación Normalmente se expresa como un identificador uniforme de recursos \(URI\). AD FS puede admitir cualquier tipo de notificación y se configura de forma predeterminada con los tipos de notificación en la tabla siguiente.  
   
-|Name|Descripción|URI|  
+|Nombre|Descripción|URI|  
 |--------|---------------|-------|  
 |E\-dirección de correo|La e\-dirección del usuario de correo|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/identity\/claims\/emailaddress|  
 |Nombre propio|Nombre propio del usuario|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/identity\/claims\/givenname|  
-|Name|Nombre único del usuario|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/identity\/claims\/name|  
+|Nombre|Nombre único del usuario|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/identity\/claims\/name|  
 |UPN|El nombre principal de usuario \(UPN\) del usuario|http:\/\/schemas.xmlsoap.org\/ws\/2005\/05\/identity\/claims\/upn|  
 |Nombre común|Nombre común del usuario|http:\/\/schemas.xmlsoap.org\/claims\/CommonName|  
 |AD FS 1.x E\-dirección de correo|La e\-correo dirección del usuario al interoperar con AD FS 1.1 o AD FS 1.0|http:\/\/schemas.xmlsoap.org\/claims\/EmailAddress|  

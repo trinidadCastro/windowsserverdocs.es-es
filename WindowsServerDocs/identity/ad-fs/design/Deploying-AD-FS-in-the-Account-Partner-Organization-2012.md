@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3a668659f375f7fe96d676e7018e9e9315e35be5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf21860603b3055c2ef2c9e7b77bb106eb06e238
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814446"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191624"
 ---
 # <a name="deploying-ad-fs-in-the-account-partner-organization"></a>Implementación de AD FS en la organización del asociado de cuenta
-
->Se aplica a: Windows Server 2012
 
 Un asociado de cuenta en Active Directory Federation Services \(AD FS\) representa la organización en la relación de confianza de federación que almacena físicamente las cuentas de usuario en un almacén de atributos admitidos. Para obtener más información acerca de qué atributo se admiten los almacenes, vea [The Role of Attribute Stores](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md).  
   
@@ -30,11 +28,11 @@ Para obtener más información acerca de cómo instalar y configurar una organiz
   
 ## <a name="in-this-section"></a>En esta sección  
   
--   [Revise el rol del servidor de federación del asociado de cuenta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
+-   [Revisar el rol del servidor de federación en el asociado de cuenta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md)  
   
--   [Revise el rol de servidor Proxy de federación del asociado de cuenta](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)  
+-   [Revisar el rol del servidor proxy de federación en el asociado de cuenta](Review-the-Role-of-the-Federation-Server-Proxy-in-the-Account-Partner.md)  
   
 -   [Preparar los equipos cliente en el asociado de cuenta](Prepare-Client-Computers-in-the-Account-Partner.md)  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2e57f34b173c10e9e753c7f3b8dcd88d7bf6742c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3efbb4081336ebfdfe9d3ab8a2b91412aa82dee
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888906"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191080"
 ---
 # <a name="planning-for-federation-server-proxy-capacity"></a>Planear la capacidad de los servidores proxy de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Planear la capacidad de los servidores proxy de federación ayuda a calcular:  
   
@@ -47,4 +45,4 @@ En las pruebas realizadas por el equipo de productos de AD FS, el uso de CPU tot
 Sin embargo, para fines de tolerancia a errores, se recomienda un mínimo de dos servidores proxy de federación para cada granja de servidores de federación que implementa.  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

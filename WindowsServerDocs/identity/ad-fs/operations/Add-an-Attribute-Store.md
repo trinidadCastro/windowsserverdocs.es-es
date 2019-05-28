@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 11baba5bfdb699f120a506feb8361db21d26cff1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 103ee707c88f4e88b231a833f739cf75b6503e18
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837866"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190098"
 ---
 # <a name="add-an-attribute-store"></a>Adición de un almacén de atributos
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Cuentas de usuario y cuentas de equipo que requieren acceso a un recurso que está protegido por Active Directory Federation Services \(AD FS\) se almacenan en un almacén de atributos, como los servicios de dominio de Active Directory \(AD DS \). El motor de emisión de notificaciones utiliza almacenes de atributos para recopilar datos que es necesarios emitir notificaciones. Datos de los almacenes de atributos, a continuación, se proyectan como notificaciones.  
   
@@ -51,6 +50,6 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
   
 ## <a name="additional-references"></a>Referencias adicionales  
 
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
   
 [La función de los almacenes de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md)  

@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 2df8a00a953196d7ca19ea0d164abbbf6eefd829
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7cab415cc599f388c2bb5966d45998874ce56987
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840746"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191839"
 ---
 # <a name="verify-your-windows-server-2012-r2-federation-server-is-operational"></a>Compruebe que el servidor de federación de Windows Server 2012 R2 está operativo
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
+
 
 Puede realizar los siguientes procedimientos para comprobar que un servidor de federación está operativo; es decir, que todos los clientes de la misma red pueden acceder a un nuevo servidor de federación.  
   
@@ -50,7 +50,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
   
 ## <a name="see-also"></a>Vea también 
 
-[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
+[Implementación de AD FS](../../ad-fs/AD-FS-Deployment.md)  
 
 [Guía de implementación de Windows Server 2012 R2 AD FS](../../ad-fs/deployment/Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)  
  

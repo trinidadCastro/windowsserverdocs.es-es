@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e7fb8e71afed1c0eb6b55857835d95f2dd0ec9d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca0b25480eedfc6471837ab8ae83b0d1d522e61e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875726"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191658"
 ---
 # <a name="certificate-requirements-for-federation-server-proxies"></a>Requisitos de certificado para servidores proxy de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Los servidores que se ejecutan en el rol de proxy del servidor de federación de Active Directory Federation Services \(AD FS\) son necesarios para usar capa de Sockets seguros \(SSL\) certificados de autenticación de servidor. Los servidores proxy de federación usan certificados de autenticación de servidor SSL para proteger la comunicación del tráfico de servidor web con los clientes web.  
   
@@ -36,4 +34,4 @@ Es importante comprobar que el nombre del sujeto en las coincidencias de certifi
 Si cualquier certificado de uso tiene listas de revocación de certificados \(CRL\), el servidor con el certificado configurado debe poder ponerse en contacto con el servidor que distribuye las CRL. El tipo de CRL determina los puertos que se utilizan.  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

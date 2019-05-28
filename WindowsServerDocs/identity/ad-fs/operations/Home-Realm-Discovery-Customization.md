@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1198d8b76f2ecdad728e2de6ce7a5c0d053f779f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e91306ecd8ef08dd6af9173ead314a39dd5d2eff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868936"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189132"
 ---
 # <a name="home-realm-discovery-customization"></a>Personalización de detección del dominio de inicio
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Cuando el cliente de AD FS primero solicita un recurso, el servidor de federación de recursos no tiene información sobre el dominio Kerberos del cliente. El servidor de federación de recursos responde al cliente de AD FS con un **detección de cliente del dominio** página, donde el usuario selecciona el dominio de inicio de una lista. Los valores de la lista se rellenar a partir de la propiedad del nombre para mostrar de las relaciones de confianza para proveedor de notificaciones. Use los siguientes cmdlets de Windows PowerShell para modificar y personalizar la experiencia de AD FS Home Realm Discovery.  
   

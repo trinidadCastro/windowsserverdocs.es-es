@@ -9,23 +9,22 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 39c735e9dde0fd60c7eb9ccfe0af890bdc5a5950
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c8e72f1075b984506f9f992cd45cf853b50bddeb
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838326"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191919"
 ---
 # <a name="upgrading-to-ad-fs-in-windows-server-2016-using-a-wid-database"></a>Actualización a AD FS en Windows Server 2016 mediante una base de datos WID
 
->Se aplica a: Windows Server 2019, Windows Server 2016
 
 
-## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Actualizar un Windows Server 2012 R2 o granja 2016 AD FS a Windows Server 2019 
+## <a name="upgrading-a-windows-server-2012-r2-or-2016-ad-fs-farm-to-windows-server-2019"></a>Actualizar un Windows Server 2012 R2 o granja 2016 AD FS a Windows Server 2019
 El siguiente documento describe cómo actualizar la granja de AD FS para AD FS en Windows Server 2019 cuando se usa una base de datos WID.  
 
 ### <a name="ad-fs-farm-behavior-levels-fbl"></a>Niveles de AD FS granja comportamiento (FBL)  
-En AD FS para Windows Server 2016, se introdujo el nivel de comportamiento de la granja de servidores (FBL). Esta es toda la granja de servidores de configuración que determina que el conjunto de características de AD FS puede usar. 
+En AD FS para Windows Server 2016, se introdujo el nivel de comportamiento de la granja de servidores (FBL). Esta es toda la granja de servidores de configuración que determina que el conjunto de características de AD FS puede usar.
 
 En la tabla siguiente se enumera los valores FBL por versión de Windows Server:
 | Versión de Windows Server  | FBL | Nombre de base de datos de configuración de AD FS |
@@ -59,7 +58,7 @@ El resto de la es el documento proporciona los pasos para agregar un servidor de
 
 ##### <a name="to-upgrade-your-ad-fs-farm-to-windows-server-2019-farm-behavior-level"></a>Para actualizar la granja de AD FS a nivel de comportamiento de granja de servidores de Windows Server de 2019  
 
-1.  Con el administrador del servidor, instale el rol de servicios de federación de Active Directory en el servidor de Windows 2019 
+1.  Con el administrador del servidor, instale el rol de servicios de federación de Active Directory en el servidor de Windows 2019
 
 2.  Mediante el Asistente para configuración de AD FS, unir el servidor de Windows Server 2019 nuevo a la granja de AD FS existente.  
 
@@ -77,45 +76,56 @@ El resto de la es el documento proporciona los pasos para agregar un servidor de
 
     ![actualizar](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_5.png)  
 
-6.  En cada Proxy de aplicación Web, volver a configurar el WAP ejecutando el siguiente comando de PowerShell en una ventana con privilegios elevados:  
-```powershell
-$trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
-Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
-```
-
-7.  Ahora en el servidor de federación de Windows Server 2016 abra Administración de AD FS. Tenga en cuenta que ahora todas las funcionalidades de administración aparecen porque el rol principal se ha transferido a este servidor.  
+6.  Ahora en el servidor de federación de Windows Server 2016 abra Administración de AD FS. Tenga en cuenta que ahora todas las funcionalidades de administración aparecen porque el rol principal se ha transferido a este servidor.  
 
     ![actualizar](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_6.png)  
 
-8.  Si va a actualizar una granja de AD FS 2012 R2 a 2016 o de 2019, la actualización de la granja de servidores requiere el esquema de AD para que sea al menos el nivel 85.  Para actualizar el esquema, los medios de instalación con Windows Server 2016, abra un símbolo del sistema y desplácese al directorio support\adprep. Ejecute lo siguiente:  `adprep /forestprep`
+7.  Si va a actualizar una granja de AD FS 2012 R2 a 2016 o de 2019, la actualización de la granja de servidores requiere el esquema de AD para que sea al menos el nivel 85.  Para actualizar el esquema, los medios de instalación con Windows Server 2016, abra un símbolo del sistema y desplácese al directorio support\adprep. Ejecute lo siguiente:  `adprep /forestprep`
 
     ![actualizar](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_7.png)  
 
     Una vez que completa una ejecución `adprep/domainprep`
     >[!NOTE]
-    >Antes de ejecutar el siguiente paso, asegúrese de que Windows Server es actual mediante la ejecución de Windows Update desde configuración. Continúa este proceso hasta que no se necesiten actualizaciones. 
-    > 
-    
+    >Antes de ejecutar el siguiente paso, asegúrese de que Windows Server es actual mediante la ejecución de Windows Update desde configuración. Continúa este proceso hasta que no se necesiten actualizaciones.
+    >
+
     ![actualizar](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_8.png)  
 
-9. Ahora en el servidor de Windows Server 2016 abra PowerShell y ejecute el siguiente cmdlet:
+8. Ahora en el servidor de Windows Server 2016 abra PowerShell y ejecute el siguiente cmdlet:
     >[!NOTE]
     > Todos los servidores de R2 2012 deben quitarse de la granja de servidores antes de ejecutar el paso siguiente.
- 
+
     `Invoke-AdfsFarmBehaviorLevelRaise`  
 
     ![actualizar](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_9.png)  
 
-10. Cuando se le solicite, escriba Y. Esto comenzará la elevación del nivel. Cuando se complete correctamente que han surgido la FBL.  
+9. Cuando se le solicite, escriba Y. Esto comenzará la elevación del nivel. Cuando se complete correctamente que han surgido la FBL.  
 
     ![actualizar](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_10.png)  
 
-11. Ahora, si va a administración de AD FS, verá que las nuevas funcionalidades se han agregado para la versión posterior de AD FS 
+10. Ahora, si va a administración de AD FS, verá que las nuevas funcionalidades se han agregado para la versión posterior de AD FS
 
     ![actualizar](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_12.png)  
 
-13. Del mismo modo, puede usar el cmdlet de PowerShell: `Get-AdfsFarmInformation` para mostrar el FBL actual.  
+11. Del mismo modo, puede usar el cmdlet de PowerShell: `Get-AdfsFarmInformation` para mostrar el FBL actual.  
 
     ![actualizar](media/Upgrading-to-AD-FS-in-Windows-Server-2016/ADFS_Mixed_13.png)  
-    
 
+12. Para actualizar los servidores WAP al nivel más reciente, en cada Proxy de aplicación Web, volver a configurar el WAP ejecutando el siguiente comando de PowerShell en una ventana con privilegios elevados:  
+    ```powershell
+    $trustcred = Get-Credential -Message "Enter Domain Administrator credentials"
+    Install-WebApplicationProxy -CertificateThumbprint {SSLCert} -fsname fsname -FederationServiceTrustCredential $trustcred  
+    ```
+    Quitar los antiguos servidores del clúster y conservar sólo los servidores WAP ejecutando la versión más reciente del servidor, que se vuelve a configurar anteriormente, ejecutando el siguiente cmdlet de Powershell.
+    ```powershell
+    Set-WebApplicationProxyConfiguration -ConnectedServersName WAPServerName1, WAPServerName2
+    ```
+    Compruebe la configuración de WAP ejecutando el commmandlet Get-WebApplicationProxyConfiguration. El ConnectedServersName reflejará el servidor que ejecute el comando anterior.
+    ```powershell
+    Get-WebApplicationProxyConfiguration
+    ```
+    Para actualizar la versión de configuración de los servidores WAP, ejecute el siguiente comando de Powershell.
+    ```powershell
+    Set-WebApplicationProxyConfiguration -UpgradeConfigurationVersion
+    ```
+    Esto completará la actualización de los servidores WAP.

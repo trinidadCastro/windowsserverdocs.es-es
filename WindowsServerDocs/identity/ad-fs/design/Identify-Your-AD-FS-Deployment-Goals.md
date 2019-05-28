@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f618add4c4803142b3bd7278908834a412f30999
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2b881553431be873ed9883da67a7989527d7d288
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862576"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191269"
 ---
 # <a name="identify-your-ad-fs-deployment-goals"></a>Identificar los objetivos de implementación de AD FS
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Identificar correctamente los servicios de federación de Active Directory \(AD FS\) objetivos de implementación es esencial para el éxito de su proyecto de diseño de AD FS. Establecer prioridades y, posiblemente, combine los objetivos de implementación para que puede diseñar e implementar AD FS mediante el uso de un enfoque iterativo. Puede aprovechar las ventajas de las existentes, documenta y predefinidos objetivos de implementación de AD FS que son relevantes para los diseños AD FS y desarrollar una solución que funcione para su situación.  
   
@@ -93,6 +91,6 @@ Los siguientes son nuevas capacidades de AD FS en Windows Server® 2012 R2 que p
 -   Elección de autenticación del usuario cuando hay más de un proveedor de autenticación disponible.  
   
 ## <a name="see-also"></a>Vea también  
-[Guía de diseño de AD FS en Windows Server 2012 R2](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Guía de diseño de AD FS en Windows Server 2012 R2](../../ad-fs/design/AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

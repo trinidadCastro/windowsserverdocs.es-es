@@ -9,16 +9,15 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d5c2d84c263517a4c81622ca02538796ccd9da71
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d819ea036029fbe7cfde9ad5a445db6b2b42c96
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817506"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189700"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configuración de AD FS para la autenticación de certificados de usuario
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 AD FS puede configurarse para x509 autenticación de certificado de usuario mediante uno de los modos que se describe en [en este artículo](ad-fs-support-for-alternate-hostname-binding-for-certificate-authentication.md). Esta funcionalidad puede usarse [con Azure Active Directory](https://blogs.msdn.microsoft.com/samueld/2016/07/19/adfs-certauth-aad-o365/) o por sí mismo habilitar los clientes y dispositivos aprovisionados con certificados de usuario para tener acceso a AD FS recursos desde la intranet o extranet.
 
@@ -43,7 +42,7 @@ Para obtener más información sobre cómo configurar esto para Chrome, consulte
 
 
 ## <a name="troubleshooting"></a>Solución de problemas
-- Si se producen errores de las solicitudes de autenticación de certificado con un HTTP 204 "sin contenido de https://certauth.fs.contoso.com" respuesta, compruebe que la raíz y los certificados de CA intermedios están instalados, respectivamente, en la raíz de confianza en todos los almacenes de certificados de CA intermedio y de entidad emisora de certificados servidores de federación.
+- Si se producen errores de las solicitudes de autenticación de certificado con un HTTP 204 "ningún contenido de https:\//certauth.fs.contoso.com" respuesta, compruebe que la raíz y los certificados de CA intermedios están instalados, respectivamente, para la entidad de certificación raíz de confianza y certificado de CA intermedio se almacena en todos los servidores de federación.
 - Si se producen errores en las solicitudes de autenticación de certificado por razones desconocidas, exporte el certificado de cliente a un archivo .cer y ejecute el comando 
 
 `certutil -f -urlfetch -verify certificatefilename.cer`

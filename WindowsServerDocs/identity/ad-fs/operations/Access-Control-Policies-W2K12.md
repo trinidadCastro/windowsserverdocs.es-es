@@ -9,16 +9,15 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6e56c95bb3284615d8cc9487e70ca32abbb0f22b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13969958c9b4e0539993142d680cb6c34dc10750
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855566"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190248"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Directivas de Control de acceso en Windows Server 2012 R2 y Windows Server 2012 AD FS
 
->Se aplica a: Windows Server 2012 R2 y Windows Server 2012 
 
 Las directivas descritas en este artículo hacen que el uso de dos tipos de notificaciones  
   
@@ -380,4 +379,4 @@ Siempre se deben usar las directivas descritas en este artículo con otro métod
  El valor de la notificación es el nombre del servicio AD FS que recibió la solicitud.  
   
 ## <a name="see-also"></a>Vea también  
- [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+ [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)

@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e9762e4bc50a1c2b862999af5269a0da376ec9a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00ea4f9f868b9c82c2a0859be971db26394251a3
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887616"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189349"
 ---
 # <a name="create-a-rule-to-send-ldap-attributes-as-claims"></a>Crear una regla para enviar atributos LDAP como notificaciones
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Mediante el envío de atributos LDAP como plantilla de reglas de notificaciones en servicios de federación de Active Directory \(AD FS\), puede crear una regla que seleccionará los atributos de un Lightweight Directory Access Protocol \(LDAP\)almacén de atributos, como Active Directory, que se envían como notificaciones al usuario autenticado. Por ejemplo, puede usar esta plantilla de regla para crear un enviar atributos LDAP como notificaciones de regla que extraerá los valores de atributo para los usuarios autenticados de los **displayName** y **telephoneNumber** activo Directorio de los atributos y, a continuación, enviar esos valores como dos notificaciones salientes diferentes.  
   
@@ -106,14 +105,14 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[Configurar reglas de notificación](Configure-Claim-Rules.md)  
+[Configuración de regla de notificación](Configure-Claim-Rules.md)  
  
-[Lista de comprobación: Creación de reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de comprobación: crear reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[Lista de comprobación: Crear reglas de notificación para un proveedor de notificaciones de confianza](https://technet.microsoft.com/library/ee913564.aspx)  
+[Lista de comprobación: Lista de comprobación: crear reglas de notificación para confianza de proveedores de notificaciones](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [Cuándo usar una regla de notificación de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
-[El rol de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
+[El papel de las notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[La función de reglas de notificación](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  
+[El papel de las reglas de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md)  

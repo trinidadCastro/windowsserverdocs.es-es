@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4bde30f694c6490962edaa0c3fe1543e74ba7fd7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9cc40920d366c973ace06a0b6d438a1c2d84b03e
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842986"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190511"
 ---
 # <a name="where-to-place-a-federation-server-proxy"></a>Dónde colocar a un servidor proxy de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Puede colocar los servicios de federación de Active Directory \(AD FS\)proxies de servidor de federación en una red perimetral para proporcionar un nivel de protección contra usuarios malintencionados que procedan de Internet. Los servidores proxy de federación son ideales para el entorno de red perimetral porque no tienen acceso a las claves privadas que se usan para crear tokens. Sin embargo, los servidores proxy de federación eficazmente pueden enrutar las solicitudes entrantes a servidores de federación que están autorizados para generar esos tokens.  
   
@@ -53,4 +51,4 @@ Para facilitar las comunicaciones seguras de AD FS, debe configurar ISA Server p
 > El servidor de federación o servidor proxy de federación requiere que la conexión sea segura mediante SSL para proteger el contenido del token de seguridad.  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e372f066fc82b9857d438234b491732a177e24fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d49ae34d83d4a0b912bd92dbb9de16e18cc5b7ff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860396"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191337"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>Granja de servidores de federación con WID y servidores proxy
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Esta topología de implementación para los servicios de federación de Active Directory \(AD FS\) es idéntica a la granja de servidores de federación con Windows Internal Database \(WID\) topología, pero agrega los equipos de proxy para el red perimetral para admitir usuarios externos. Estos servidores proxy redirigen las solicitudes de autenticación de cliente que proceden de fuera de la red corporativa a la granja de servidores de federación. En versiones anteriores de AD FS, estos servidores proxy se denominaban a servidores proxy de federación.  
   
@@ -66,7 +64,7 @@ La siguiente ilustración muestra la granja de servidores de federación existen
 Para obtener más información sobre cómo configurar el entorno de red para su uso con los servidores de federación o servidores proxy de aplicación web, vea "Requisitos de resolución de nombre" sección [requisitos de AD FS](AD-FS-Requirements.md) y [Plan Web Infraestructura del Proxy de aplicación (WAP)](https://technet.microsoft.com/library/dn383648.aspx).  
   
 ## <a name="see-also"></a>Vea también  
-[Planear la topología de implementación de AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  
-[Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Planear la topología de la implementación de AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  
+[Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

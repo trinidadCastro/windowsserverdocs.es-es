@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a0fff975b9cb278e59686323d2bd72e641597573
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66c8bae2fbccca2bf618e46ffd3ccc05cb52f911
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863956"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191497"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>Granja de servidores de federación con SQL Server
-
->Se aplica a: Windows Server 2012
 
 Esta topología de Active Directory Federation Services \(AD FS\) difiere de la granja de servidores de federación usa Windows Internal Database \(WID\) topología de implementación en el que no se replica los datos a cada servidor de federación en la granja de servidores. En su lugar, todos los servidores de federación en la granja de servidores pueden leer y escribir datos en una base de datos común que se almacena en un servidor que ejecuta Microsoft SQL Server que se encuentra en la red corporativa.  
   
@@ -65,4 +63,4 @@ La siguiente ilustración muestra cómo la empresa ficticia de Contoso Pharmaceu
 Para obtener más información sobre cómo configurar el entorno de red para su uso con los servidores de federación o servidores proxy de federación, consulte [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md) o [nombre Requisitos de resolución para los servidores proxy de federación](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

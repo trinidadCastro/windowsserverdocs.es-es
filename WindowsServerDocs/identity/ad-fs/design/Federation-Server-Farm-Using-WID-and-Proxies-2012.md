@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4bd815daccdd72a8c612b9b728ce12378c1926e7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19e73e43a863ec60fbc9da09b24173220bb331ed
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817626"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191360"
 ---
 # <a name="federation-server-farm-using-wid-and-proxies"></a>Granja de servidores de federación con WID y servidores proxy
-
->Se aplica a: Windows Server 2012
 
 Esta topología de implementación para los servicios de federación de Active Directory \(AD FS\) es idéntica a la granja de servidores de federación con Windows Internal Database \(WID\) topología, pero agrega servidores proxy de federación a la red perimetral para admitir usuarios externos. Los servidores proxy de federación redirigen las solicitudes de autenticación de cliente que proceden de fuera de la red corporativa a la granja de servidores de federación.  
   
@@ -51,4 +49,4 @@ La siguiente ilustración muestra la granja de servidores de federación existen
 Para obtener más información sobre cómo configurar el entorno de red para su uso con los servidores de federación o servidores proxy de federación, consulte [Name Resolution Requirements for Federation Servers](Name-Resolution-Requirements-for-Federation-Servers.md) o [nombre Requisitos de resolución para los servidores proxy de federación](Name-Resolution-Requirements-for-Federation-Server-Proxies.md).  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

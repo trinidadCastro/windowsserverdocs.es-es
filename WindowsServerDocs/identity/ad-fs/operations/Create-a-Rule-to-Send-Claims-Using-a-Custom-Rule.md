@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f0eef89e651585d48ba87d14bc782efa49087669
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ade2a8304288d102608c81a0c29155478e5a4b7b
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824836"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189434"
 ---
 # <a name="create-a-rule-to-send-claims-using-a-custom-rule"></a>Crear una regla para enviar notificaciones mediante una regla personalizada
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Mediante el uso de la **enviar notificaciones mediante una regla personalizada** plantilla en los servicios de federación de Active Directory (AD FS), puede crear reglas de notificación personalizada para la situación en que una plantilla de regla estándar no satisface los requisitos de su organización. Reglas de notificaciones personalizadas se escriben en el lenguaje de reglas de notificación y, a continuación, se debe copiar en el **regla personalizada** cuadro de texto antes de que se pueden usar en un conjunto de reglas. Para obtener información sobre cómo construir la sintaxis para una regla avanzada, consulte [The Role of the Claim Rule Language](../../ad-fs/technical-reference/The-Role-of-the-Claim-Rule-Language.md).  
   
@@ -123,14 +122,14 @@ Pertenencia a **administradores**, o equivalente, en el equipo local es el requi
 8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[Configurar reglas de notificación](Configure-Claim-Rules.md)  
+[Configuración de regla de notificación](Configure-Claim-Rules.md)  
  
-[Lista de comprobación: Creación de reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
+[Lista de comprobación: crear reglas de notificación para una relación de confianza para usuario autenticado](https://technet.microsoft.com/library/ee913578.aspx)  
 
-[Lista de comprobación: Crear reglas de notificación para un proveedor de notificaciones de confianza](https://technet.microsoft.com/library/ee913564.aspx)  
+[Lista de comprobación: Lista de comprobación: crear reglas de notificación para confianza de proveedores de notificaciones](https://technet.microsoft.com/library/ee913564.aspx)  
   
 [Cuándo usar una regla de notificación de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
-[El rol de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
+[El papel de las notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   
-[La función de reglas de notificación](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 
+[El papel de las reglas de notificaciones](../../ad-fs/technical-reference/The-Role-of-Claim-Rules.md) 

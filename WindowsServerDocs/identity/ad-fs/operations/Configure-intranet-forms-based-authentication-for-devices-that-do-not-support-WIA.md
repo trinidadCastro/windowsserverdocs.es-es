@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: cddc5d890114dec7e0053b16701db6f03c3cbbdf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c79524a011336d676fa2e80936e1254a8d2dd6b2
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889856"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189690"
 ---
 # <a name="configuring-intranet-forms-based-authentication-for-devices-that-do-not-support-wia"></a>Configurar la autenticación basada en formularios de intranet para los dispositivos que no son compatibles con WIA
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 De forma predeterminada, está habilitada la autenticación integrada de Windows (WIA) en Active Directory Federation Services (AD FS) en Windows Server 2012 R2 para las solicitudes de autenticación que se producen dentro de la red interna de la organización (intranet) para cualquier aplicación que usa un explorador para su autenticación. Por ejemplo, pueden ser aplicaciones basadas en explorador que use WS-Federation o SAML protocolos y aplicaciones enriquecidas que utilizan el protocolo OAuth. WIA proporciona a los usuarios finales con inicio de sesión sin problemas a las aplicaciones sin tener que escribir sus credenciales de forma manual. Sin embargo, algunos exploradores y dispositivos no son capaces de admitir WIA y como resultado errores de solicitudes de autenticación desde estos dispositivos. Además, la experiencia en algunos exploradores que negociar a NTLM no es deseable. El enfoque recomendado es la reserva para la autenticación basada en formularios para estos dispositivos y exploradores.
 

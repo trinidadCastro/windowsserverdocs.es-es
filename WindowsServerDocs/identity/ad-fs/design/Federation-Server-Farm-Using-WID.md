@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 41c2179cbd8bf2c6032f233335099b512c02f880
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 067461b90ed5ce03d9470a450917dcbb93cf653a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832506"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191308"
 ---
 # <a name="federation-server-farm-using-wid"></a>Granja de servidores de federación con WID
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 La topología predeterminada para los servicios de federación de Active Directory \(AD FS\) es una granja de servidores de federación, mediante la Windows Internal Database \(WID\). En esta topología, AD FS utiliza WID como almacén de la base de datos de configuración de AD FS para todos los servidores de federación que se unen a esa granja. La granja replica y mantiene los datos del Servicio de federación de la base de datos de configuración de todos los servidores de la granja. AD FS en Windows Server 2012 R2 permite a las organizaciones con 100 o menos relaciones de confianza para configurar las granjas de servidores de federación con WID hasta 30 servidores.  
   
@@ -80,7 +78,7 @@ El host de NLB puede usar la configuración que se define en este clúster NLB p
 Para obtener más información sobre cómo configurar el entorno de red para su uso con los servidores de federación, vea la sección requisitos de resolución de nombres en [requisitos de AD FS](AD-FS-Requirements.md).  
   
 ## <a name="see-also"></a>Vea también  
-[Planear la topología de implementación de AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  
-[Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Planear la topología de la implementación de AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  
+[Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 

@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 44448088184d86874e91855d8a51ef40d8cea049
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d46fc3246ed6ead54d58f44aaed0e8863ea189a6
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880506"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192336"
 ---
 # <a name="checklist-setting-up-a-federation-server"></a>Lista de comprobación: Configuración de un servidor de federación
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Esta lista de comprobación incluye las tareas de implementación que son necesarias para preparar un servidor que ejecuta Windows Server® 2012 para el rol de servidor de federación de Active Directory Federation Services \(AD FS\).  
   

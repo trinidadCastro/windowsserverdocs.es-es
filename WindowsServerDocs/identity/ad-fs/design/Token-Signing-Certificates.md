@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: a047b94906cf703bb934c93f517b8874af91e092
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9db69cfb2eb42af90b392433a6e05eaab9978160
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864066"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190810"
 ---
 # <a name="token-signing-certificates"></a>Certificados de firma de tokens
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Los servidores de federación requieren el token\-certificados de firma para evitar que los atacantes modifiquen o falsifiquen los tokens de seguridad en un intento de obtener acceso no autorizado a los recursos federados. Privado\/emparejamiento de clave pública se utiliza con el token\-certificados de firma es el mecanismo de validación más importante de cualquier asociación federada porque estas claves comprobación que un token de seguridad fue emitido por un socio válido servidor de federación y que el token no se ha modificado durante el tránsito.  
   
@@ -75,4 +73,4 @@ Para obtener información acerca de cómo instalar un certificado de una CA púb
 Para obtener información acerca de cómo instalar un autoservicio\-firmado de certificados, vea [IIS 7.0: Crear un\-firmado el certificado de servidor en IIS 7.0](https://go.microsoft.com/fwlink/?LinkID=108271).  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

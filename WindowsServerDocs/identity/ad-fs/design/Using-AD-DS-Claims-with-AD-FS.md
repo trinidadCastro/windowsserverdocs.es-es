@@ -9,16 +9,15 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 46692653ba10558a9236bd321127591bc7c8a275
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2af0950e52d800202235bf674545f6c47e9cd88
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838386"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190782"
 ---
 # <a name="using-ad-ds-claims-with-ad-fs"></a>Usar notificaciones de AD DS con AD FS
   
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
   
 Puede permitir un mayor control de acceso para las aplicaciones federadas mediante el uso de servicios de dominio de Active Directory \(AD DS\)\-emite notificaciones de usuario y dispositivo junto con los servicios de federación de Active Directory \(AD FS \).  
   
@@ -80,4 +79,4 @@ Emitidas notificaciones de AD DS se puede usar con AD FS para tener acceso a las
 Para obtener más información sobre cómo crear las reglas de notificación necesarias para AD DS emite notificaciones para que funcione con AD FS, consulte [crear una regla para transformar una notificación entrante](../../ad-fs/operations/Create-a-Rule-to-Transform-an-Incoming-Claim.md).  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

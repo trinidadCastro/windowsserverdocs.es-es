@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0c5bdcb0a80b15a1905109229ddd20ee642a8dd7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3a746ec003cf312ffe0b9804f84a55c98aa8089
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868526"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190992"
 ---
 # <a name="prepare-client-computers-in-the-account-partner"></a>Preparar los equipos cliente en el asociado de cuenta
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 La manera más fácil para que un administrador en una cuenta de organización preparar los equipos cliente para tener acceso a los servicios de federación de Active Directory asociado \(AD FS\) aplicaciones federadas es usar la directiva de grupo. La directiva de grupo proporciona una manera cómoda para insertar certificados y valores de configuración específicos que son necesarios para la federación a todos los equipos cliente que se usarán para el acceso a las aplicaciones federadas.  
   
@@ -34,4 +32,4 @@ Para que los equipos cliente puedan acceder sin problemas las aplicaciones feder
   
 
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

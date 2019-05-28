@@ -9,16 +9,15 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 615faf4153949aa4ad989f017068d1809fca26b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5bc43717f37fb3b14ac7f384a061ee64c734222d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820876"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66189660"
 ---
 # <a name="configuring-alternate-login-id"></a>Configuración de identificador de inicio de sesión alternativo
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 ## <a name="what-is-alternate-login-id"></a>¿Qué es el identificador de inicio de sesión alternativo?
 En la mayoría de los escenarios, los usuarios usar su UPN (nombres principales de usuario) para iniciar sesión en sus cuentas. Sin embargo, en algunos entornos debido a las directivas corporativas o dependencias de la aplicación de línea de negocio de forma local, los usuarios que esté utilizando algún otro método de inicio de sesión. 
@@ -39,7 +38,7 @@ En los escenarios mencionados anteriormente, Id. alternativo con AD FS permite a
 ## <a name="end-user-experience-with-alternate-login-id"></a>Experiencia del usuario final con el Id. de inicio de sesión alternativo
 La experiencia del usuario final varía según el método de autenticación usado con el Id. de inicio de sesión alternativo.  Actualmente hay tres maneras diferentes en el que se puede lograr mediante el identificador de inicio de sesión alternativo.  Estas sobrecargas son:
 
-- **Autenticación normal (heredado)**-utiliza el protocolo de autenticación básica.
+- **Autenticación normal (heredado)** -utiliza el protocolo de autenticación básica.
 - **Autenticación moderna** -aporta sesión basada en Active Directory Authentication Library ADAL a aplicaciones. Esto habilita características de inicio de sesión como Multi-factor Authentication (MFA), proveedores de identidades de terceros basado en SAML con aplicaciones cliente de Office, tarjeta inteligente y la autenticación basada en certificados.
 - **Autenticación moderna híbrida** : proporciona todas las ventajas de la autenticación moderna y proporciona a los usuarios la capacidad de tener acceso a aplicaciones locales mediante los tokens de autorización obtenidos de la nube.
 
@@ -127,18 +126,19 @@ Configurar el directorio de inicio de sesión único con alternate id Using alte
 
 Con la siguiente configuración adicional, la experiencia del usuario se ha mejorado significativamente y puede conseguir casi cero peticiones de autenticación alternativo-id a los usuarios de su organización.
 
-##### <a name="step-1-update-to-required-office-version"></a>Paso 1. Actualizar a la versión de office necesarios
-Versión de Office 1712 (no compilación ningún 8827.2148) y versiones posteriores, hemos actualizado la lógica de autenticación para controlar el escenario alternativo-id. Para poder aprovechar la nueva lógica, los equipos cliente deben actualizarse a la versión 1712 de office (no crear ningún 8827.2148) y versiones posteriores.
+##### <a name="step-1-update-to-required-office-version"></a>Paso 1. Actualizar a Office versión requerida
+Versión de Office 1712 (no compilación ningún 8827.2148) y versiones posteriores, hemos actualizado la lógica de autenticación para controlar el escenario alternativo-id. Para poder aprovechar la nueva lógica, los equipos cliente deben actualizarse a la versión 1712 de Office (no crear ningún 8827.2148) y versiones posteriores.
 
-##### <a name="step-2-configure-registry-for-impacted-users-using-group-policy"></a>Paso 2. Configurar el registro para los usuarios afectados mediante la directiva de grupo
+##### <a name="step-2-update-to-required-windows-version"></a>Paso 2. Actualizar a la versión de Windows requerida
+Windows versión 1709 y versiones posteriores, hemos actualizado la lógica de autenticación para controlar el escenario alternativo-id. Para poder aprovechar la nueva lógica, los equipos cliente deben actualizarse a Windows versión 1709 y versiones posteriores.
+
+##### <a name="step-3-configure-registry-for-impacted-users-using-group-policy"></a>Paso 3. Configurar el registro para los usuarios afectados mediante la directiva de grupo
 Las aplicaciones de office se basan en información insertada por el administrador del directorio para identificar el entorno de identificador alternativo. Las siguientes claves del registro deben configurarse para ayudar a las aplicaciones de office a autenticar al usuario con Id. alternativo sin mostrar ningún otro aviso
 
 |Clave del registro para agregar|Valor, tipo y nombre de clave del registro de datos|Windows 7/8|Windows 10|Descripción|
 |-----|-----|-----|-----|-----|
 |HKEY_CURRENT_USER\Software\Microsoft\AuthN|DomainHint</br>REG_SZ</br>contoso.com|Requerido|Requerido|El valor de esta clave del registro es un nombre de dominio personalizado comprobado en el inquilino de la organización. Por ejemplo, Contoso corp puede proporcionar un valor de Contoso.com en esta clave del registro si Contoso.com es uno de los nombres de dominio personalizado comprobado en el inquilino Contoso.onmicrosoft.com.|
 HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Common\Identity|EnableAlternateIdSupport</br>REG_DWORD</br>1|Necesario para Outlook 2016 ProPlus|Necesario para Outlook 2016 ProPlus|El valor de esta clave del registro puede ser 1 / 0 para indicar a la aplicación de Outlook si debe interactuar con la lógica de autenticación de Id. alternativo mejorada.|
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableADALatopWAMOverride</br>REG_DWORD</br>1|No disponible|Obligatorio.|Esto garantiza que Office no utiliza WAM como alt-id no es compatible con el Administrador de aplicaciones Web.|
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\16.0\Common\Identity|DisableAADWAM</br>REG_DWORD</br>1|No disponible|Obligatorio.|Esto garantiza que Office no utiliza WAM como alt-id no es compatible con el Administrador de aplicaciones Web.|
 HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\contoso.com\sts|&#42;</br>REG_DWORD</br>1|Requerido|Requerido|Esta clave del registro puede usarse para establecer al STS como una zona de confianza en la configuración de internet. Implementación estándar de AD FS recomienda agregar el espacio de nombres ADFS para la zona Intranet Local de Internet Explorer|
 
 ## <a name="new-authentication-flow-after-additional-configuration"></a>Nuevo flujo de autenticación después de la configuración adicional
@@ -219,6 +219,6 @@ Varios objetos de usuario se encuentran en bosques|Error de inicio de sesión|Id
 Se encontraron varios objetos de usuario en varios bosques|Error de inicio de sesión|Id. de evento 364 con mensaje de excepción MSIS8014: Se encontró varias cuentas de usuario con la identidad '{0}' en bosques: {1}|
 
 ## <a name="see-also"></a>Vea también
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
 
 

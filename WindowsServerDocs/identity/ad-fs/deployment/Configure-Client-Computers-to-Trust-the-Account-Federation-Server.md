@@ -9,16 +9,14 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: bdfb086c8177e72c074ac5b5b1a38aac49c4082c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e28d050a9aa40c015af16a665e90535cb810b4ff
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886756"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66192332"
 ---
 # <a name="configure-client-computers-to-trust-the-account-federation-server"></a>Configurar los equipos cliente para confiar en el servidor de federación de cuenta
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Para que los equipos cliente pueden tener acceso correctamente a las aplicaciones federadas con Active Directory Federation Services \(AD FS\), debe configurar primero las opciones de Internet Explorer en cada equipo cliente para que confíe en el explorador el servidor de federación de cuenta. Puede hacerlo manualmente o mediante la directiva de grupo, dependiendo de sus preferencias administrativas, completando uno de los procedimientos siguientes.  
   

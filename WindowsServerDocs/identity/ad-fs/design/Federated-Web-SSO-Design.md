@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: b85f49ac0556bf9b3542a23514d7fcbf82d2d88e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f7454279f234f65136b9fe6649a6e96ea53e5d51
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865146"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191511"
 ---
 # <a name="federated-web-sso-design"></a>Diseño de SSO web federado
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Federated Web único\-inicio de sesión\-en \(SSO\) diseño en servicios de federación de Active Directory \(AD FS\) supone una comunicación segura que abarque varios firewalls perimetrales las redes y el nombre\-servidores de resolución, además de toda la infraestructura de enrutamiento de Internet.  
   
@@ -37,15 +35,15 @@ En este diseño SSO Web federado, dos servidores de federación \(uno en Fabrika
   
 En este ejemplo, Fabrikam es el proveedor de identidad o cuenta. La parte de Fabrikam del diseño SSO Web federado usa el siguiente objetivo de implementación de AD FS:  
   
--   [Proporcionar acceso de los usuarios de Active Directory a las aplicaciones y servicios de otras organizaciones](Provide-Your-Active-Directory-Users-Access-to-the-Applications-and-Services-of-Other-Organizations.md)  
+-   [Proporcionar a los usuarios de Active Directory acceso a aplicaciones y servicios de otras organizaciones](Provide-Your-Active-Directory-Users-Access-to-the-Applications-and-Services-of-Other-Organizations.md)  
   
 Contoso es el proveedor de recursos. La parte de Contoso del diseño SSO Web federado logra los objetivos de implementación de AD FS siguientes:  
   
--   [Proporcionar a los usuarios de otra organización acceso a los servicios y aplicaciones para notificaciones](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
+-   [Proporcionar a los usuarios de otra organización acceso a aplicaciones y servicios habilitados para notificaciones](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
--   [Proporcionar acceso de los usuarios de Active Directory a los servicios y aplicaciones para notificaciones](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
+-   [Proporcionar a los usuarios de Active Directory acceso a aplicaciones y servicios habilitados para notificaciones](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
 Para obtener una lista de tareas detalladas que puede usar para planear e implementar el diseño SSO Web federado, vea [lista de comprobación: Implementar un diseño de SSO Web federado](../../ad-fs/deployment/Checklist--Implementing-a-Federated-Web-SSO-Design.md).  
   
 ## <a name="see-also"></a>Vea también
-[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
+[Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

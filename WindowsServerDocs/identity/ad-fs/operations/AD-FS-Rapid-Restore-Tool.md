@@ -5,20 +5,18 @@ description: ''
 author: billmath
 ms.author: billmath
 manager: femila
-ms.date: 09/19/2018
+ms.date: 04/01/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6fb023529ac8857f7c2eb35586be497f0c809a51
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: a831154a8b1e84f5ed879375980882e208c33d73
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874176"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190353"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Herramienta de restauración rápida de AD FS
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 ## <a name="overview"></a>Información general
 Hoy en día se realiza AD FS alta disponibilidad mediante la configuración de una granja de AD FS. Algunas organizaciones desearían una manera de tener un único servidor de implementación de AD FS, lo que elimina la necesidad de varios servidores de AD FS y carga de red, equilibrio de la infraestructura, mientras sigue teniendo algunos garantía de que el servicio se puede restaurar rápidamente si hay un problema.
@@ -215,6 +213,16 @@ Cada vez que se realiza una copia de seguridad o restauración se crea un archiv
 > Al realizar una restauración que puede crearse un archivo de PostRestore_Instructions que contiene una descripción general de los proveedores de autenticación adicional, atributo almacena y confianzas de proveedor de notificaciones local instalarse manualmente antes de iniciar el servicio AD FS.
 
 ## <a name="version-release-history"></a>Historial de versiones
+
+### <a name="version-10810"></a>Versión: 1.0.81.0
+Versión: Abril de 2019
+
+**Problemas corregidos:**
+
+
+- Correcciones de errores de copia de seguridad del certificado y la restauración
+- Información de seguimiento adicional en el archivo de registro
+
 
 ### <a name="version-10750"></a>Versión: 1.0.75.0
 Versión: Agosto de 2018

@@ -9,16 +9,15 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 4900d8621b94a514a07bba55b2f7f3df5dd36353
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 26b0ae4f331607d83c6b94a2655ddc9eded8a356
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814626"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191869"
 ---
 # <a name="verify-that-a-federation-server-proxy-is-operational"></a>Comprobar que un servidor proxy de federación está operativo
 
->Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Puede usar el procedimiento siguiente para comprobar que el servidor proxy de federación puede comunicarse con el servicio de federación de Active Directory Federation Services \(AD FS\). Ejecute este procedimiento después de ejecutar el **Asistente para la configuración de AD FS Federation Server Proxy** para configurar el equipo para ejecutar en el rol de servidor proxy de federación. Para obtener más información sobre cómo ejecutar este asistente, consulte [configurar un equipo para el rol de servidor Proxy de federación](Configure-a-Computer-for-the-Federation-Server-Proxy-Role.md).  
   
@@ -40,6 +39,6 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
     Si el servidor proxy de federación está configurado correctamente, verá un nuevo evento en el registro de aplicación del Visor de eventos, con el evento ID 198. Este evento comprueba que el servicio de proxy de servidor de federación se inició correctamente y ahora está en línea.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
-[Lista de comprobación: Configurar un servidor Proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
+[Lista de comprobación: configuración de un servidor proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md)  
   
 

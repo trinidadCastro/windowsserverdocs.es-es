@@ -1,5 +1,5 @@
 ---
-title: Cree una aplicación web de página única con OAuth y ADAL. JS con AD FS 2016
+title: Cree una aplicación web de página única con OAuth y ADAL. JS con AD FS 2016 o posterior
 description: Un tutorial que proporciona instrucciones para realizar la autenticación con AD FS mediante ADAL para JavaScript proteger un AngularJS en función de aplicación de página única
 author: billmath
 ms.author: billmath
@@ -8,16 +8,14 @@ ms.date: 06/12/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 78ab9f5d7c3e75650a4efb171d3b9281c56c63d3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1292c7e6cd1dec6926516880c34fe60fb97a9ec8
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865306"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66190501"
 ---
-# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016"></a>Cree una aplicación web de página única con OAuth y ADAL. JS con AD FS 2016
-
->Se aplica a: Windows Server 2016
+# <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Cree una aplicación web de página única con OAuth y ADAL. JS con AD FS 2016 o posterior
 
 Este tutorial proporciona instrucciones para realizar la autenticación con AD FS mediante ADAL para proteger un AngularJS de JavaScript basado en aplicación una sola página, implementada con un back-end de ASP.NET Web API.
 
@@ -52,8 +50,8 @@ Puede, si lo desea, usar solo dos máquinas. Uno para DC/AD FS y otro para el de
 
 Cómo configurar el controlador de dominio y AD FS está fuera del ámbito de este artículo. Para información de implementación adicionales, vea:
 
-- [Implementación de AD DS](../../ad-ds/deploy/AD-DS-Deployment.md) 
-- [Implementación de AD FS](../AD-FS-Deployment.md)
+- [AD DS Deployment](../../ad-ds/deploy/AD-DS-Deployment.md) 
+- [Implementación de AD FS](../AD-FS-Deployment.md)
 
 
 
@@ -157,7 +155,7 @@ Cambie la appsettings como sigue:
 ## <a name="running-the-solution"></a>Ejecución de la solución
 Limpiar la solución, vuelva a compilar la solución y ejecutarla. Si desea ver seguimientos detallados, inicie Fiddler y habilitar el descifrado de HTTPS.
 
-El explorador cargará la SPA y aparecerá la siguiente pantalla:
+El explorador (use el explorador Chrome) cargará la SPA y aparecerá la siguiente pantalla:
 
 ![Registro del cliente](media/Single-Page-Application-with-AD-FS/singleapp3.PNG)
 
@@ -174,4 +172,4 @@ Podrá llamar a la API para agregar elementos de lista de tareas para el usuario
 ![Fiddler](media/Single-Page-Application-with-AD-FS/singleapp6.PNG)
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  
+[Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  

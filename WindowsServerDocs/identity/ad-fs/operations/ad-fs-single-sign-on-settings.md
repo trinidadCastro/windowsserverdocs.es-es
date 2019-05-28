@@ -9,16 +9,14 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0b0d4d085a94631b70df81fd53bff974d8425611
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3719277c80eae2bf2a4d923146920d17546601d
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877766"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66188732"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS único inicio de sesión en la configuración
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Inicio de sesión único (SSO) permite a los usuarios autenticarse una vez y tener acceso a varios recursos sin que se le pidan credenciales adicionales.  Este artículo describe el comportamiento de AD FS predeterminado para el inicio de sesión único, así como los valores de configuración que le permiten personalizar este comportamiento.  
 

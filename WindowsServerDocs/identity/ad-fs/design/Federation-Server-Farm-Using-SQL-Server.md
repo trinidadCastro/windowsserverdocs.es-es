@@ -9,16 +9,14 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e26b7cac971f472bc8b5e48e3dc8cd2592dc22ce
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 585d0195b096056ba769f4e9a08d5c4d2156b96a
+ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814786"
+ms.lasthandoff: 05/24/2019
+ms.locfileid: "66191449"
 ---
 # <a name="federation-server-farm-using-sql-server"></a>Granja de servidores de federación con SQL Server
-
->Se aplica a: Windows Server 2016, Windows Server 2012 R2
 
 Esta topología de Active Directory Federation Services \(AD FS\) difiere de la granja de servidores de federación usa Windows Internal Database \(WID\) topología de implementación en el que no se replica los datos a cada servidor de federación en la granja de servidores. En su lugar, todos los servidores de federación en la granja de servidores pueden leer y escribir datos en una base de datos común que se almacena en un servidor que ejecuta Microsoft SQL Server que se encuentra en la red corporativa.  
   
@@ -162,7 +160,7 @@ El siguiente diagrama muestra un granjas de servidores de AD FS SQL Server con r
 Para que obtener instrucciones más detalladas sobre cómo configurar AD FS usar la replicación de mezcla de SQL Server, vea [instalación redundancia geográfica con replicación de SQL Server](https://technet.microsoft.com/library/dn632406.aspx).  
   
 ## <a name="see-also"></a>Vea también  
-[Planear la topología de implementación de AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  
-[Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
+[Planear la topología de la implementación de AD FS](Plan-Your-AD-FS-Deployment-Topology.md)  
+[Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  
   
 
