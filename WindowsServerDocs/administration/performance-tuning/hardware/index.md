@@ -22,7 +22,7 @@ En la sección siguiente se muestran los elementos importantes que se deben tene
 
 Elija procesadores de 64 bits para los servidores. Los procesadores de 64 bits tienen mucho más espacio de direcciones y son necesarios para Windows Server 2016. No se proporcionará ninguna edición de 32 bits del sistema operativo, pero las aplicaciones de 32 bits sí se ejecutarán en el sistema operativo Windows Server 2016 de 64 bits.
 
-Para aumentar los recursos informáticos de un servidor, puede usar un procesador con núcleos de mayor frecuencia o puede aumentar la cantidad de núcleos de procesador. Si la CPU es el recurso limitante del sistema, un núcleo con una frecuencia de 2x por lo general ofrece una mayor mejora de rendimiento que dos núcleos con una frecuencia de 1x.
+Para aumentar los recursos informáticos de un servidor, puede usar un procesador con núcleos de mayor frecuencia o puede aumentar la cantidad de núcleos de procesador. Si la CPU es el recurso que limita el sistema, un núcleo con una frecuencia de 2x por lo general ofrece una mayor mejora de rendimiento que dos núcleos con una frecuencia de 1x.
 
 No se espera que varios núcleos brinden una escala lineal perfecta y el factor de escala puede ser incluso menor si está habilitada la tecnología Hyper-Threading, porque esta se basa en el uso compartido de los recursos del mismo núcleo físico.
 
@@ -41,16 +41,16 @@ Elija cachés de procesador L2 o L3 de gran tamaño. En arquitecturas más recie
 ## <a name="memory-ram-and-paging-storage-recommendations"></a>Recomendaciones de almacenamiento de paginación y memoria (RAM)
 
 >[!Note] 
-> Algunos sistemas pueden presentar un rendimiento de almacenamiento reducido al ejecutar una nueva instalación de Windows Server 2016 frente a Windows Server 2012 R2. Durante el desarrollo de Windows Server 2016 se realizaron una serie de cambios para mejorar la seguridad y confiabilidad de la plataforma. Algunos de esos cambios, como la habilitación de Windows Defender de manera predeterminada, dan como resultado rutas de acceso de E/S más largas, que pueden reducir el rendimiento de E/S en cargas de trabajo y patrones específicos. Microsoft no recomienda deshabilitar Windows Defender, ya que es una importante capa de protección para tus sistemas. 
+> Algunos sistemas pueden presentar un rendimiento de almacenamiento reducido al ejecutar una nueva instalación de Windows Server 2016 frente a Windows Server 2012 R2. Durante el desarrollo de Windows Server 2016 se realizaron una serie de cambios para mejorar la seguridad y confiabilidad de la plataforma. Algunos de esos cambios, como la habilitación de Windows Defender de manera predeterminada, dan como resultado rutas de acceso de E/S más largas, que pueden reducir el rendimiento de E/S en cargas de trabajo y patrones específicos. Microsoft no recomienda deshabilitar Windows Defender, ya que es una importante capa de protección para sus sistemas. 
 
 Aumente la cantidad de RAM para cumplir con sus necesidades de memoria.
 Cuando el equipo se queda sin memoria y necesita más de forma inmediata, Windows usa el espacio en disco duro para complementar la RAM del sistema a través de un procedimiento denominado paginación. Demasiada paginación degrada el rendimiento general del sistema.
 Puede optimizar la paginación si usa estas instrucciones para la ubicación del archivo de paginación:
-- Aísle el archivo de paginación en su propio dispositivo de almacenamiento o al menos asegúrese de que no comparte los mismos dispositivos de almacenamiento que otros archivos a los que se tiene acceso con frecuencia. Por ejemplo, coloque el archivo de paginación y los archivos del sistema operativo en unidades de disco físico independientes.
+- Aísle el archivo de paginación en su propio dispositivo de almacenamiento o al menos asegúrese de que no comparte los mismos dispositivos de almacenamiento que otros archivos a los que se tiene acceso con frecuencia. Por ejemplo, coloque el archivo de paginación y los archivos del sistema operativo en unidades de disco físicas independientes.
 
-- Coloque el archivo de paginación en una unidad que no tolere errores. Si se produce un error en el disco, es probable que el sistema se bloquee. Si pone el archivo de paginación en una unidad con tolerancia a errores, recuerde que los sistemas que toleran errores suelen ser más lentos para escribir datos, porque los escriben en distintas ubicaciones.
+- Coloque el archivo de paginación en una unidad que no tolere errores. Si se produce un error en el disco, es probable que el sistema se bloquee. Si pone el archivo de paginación en una unidad con tolerancia a errores, recuerde que los sistemas que toleran errores suelen ser más lentos al escribir datos, porque los escriben en distintas ubicaciones.
 
-- Use varios discos o una matriz de discos si necesita ancho de banda de disco adicional para la paginación. No coloque varios archivos de paginación en particiones distintas de la misma unidad de disco físico.
+- Use varios discos o una matriz de discos si necesita ancho de banda de disco adicional para la paginación. No coloque varios archivos de paginación en particiones distintas de la misma unidad de disco física.
 
 ## <a name="peripheral-bus-recommendations"></a>Recomendaciones de bus periférico
 En Windows Server 2016, las interfaces principales de almacenamiento y red deben ser PCI Express (PCIe), por lo que se recomiendan servidores con buses PCIe. Para evitar la limitaciones de velocidad de bus, use PCIe x8 y ranuras superiores para los adaptadores Ethernet de más de 10 GB.
@@ -66,18 +66,18 @@ Consolidar unidades pequeñas en menos unidades de alta capacidad puede reducir 
 
 El uso de SSD y de discos flash de alta velocidad es útil para leer principalmente discos con altas velocidades de E/S o E/S sensibles a la latencia. Los discos de arranque son buenos candidatos para el uso de SSD o de discos flash de alta velocidad, porque estos pueden mejorar considerablemente los tiempos de arranque.
 
-Las SSD de NVMe ofrecen un rendimiento superior con profundidades de cola de comandos mayores, procesamiento de interrupciones más eficaz y una mayor eficacia para los comandos de 4 KB. Esto beneficia especialmente a los escenarios que requieren E/S simultáneas intensivas.
+Los SSD de NVMe ofrecen un rendimiento superior con profundidades de cola de comandos mayores, procesamiento de interrupciones más eficaz y una mayor eficacia para los comandos de 4 KB. Esto beneficia especialmente a los escenarios que requieren E/S simultáneas intensivas.
 
 
 ## <a name="network-and-storage-adapter-recommendations"></a>Recomendaciones de adaptador de almacenamiento y red
 
-En la sección siguiente se muestran las características recomendadas para los adaptadores de almacenamiento y red de servidores de alto rendimiento. Esta configuración puede ayudar a evitar que los cuellos de botella en el hardware de almacenamiento o red cuando se está bajo una carga intensa.
+En la sección siguiente se muestran las características recomendadas para los adaptadores de almacenamiento y red de servidores de alto rendimiento. Esta configuración puede ayudar a evitar los cuellos de botella en el hardware de almacenamiento o red cuando se está bajo una carga intensa.
 
 ### <a name="certified-adapter-usage"></a>Uso de adaptadores certificados
 Use un adaptador que haya pasado el conjunto de pruebas de certificación de hardware para Windows.
 
 ### <a name="64-bit-capability"></a>Funcionalidad de 64 bits
-Los adaptadores con funcionalidad de 64 bits puede realizar operaciones de acceso directo a memoria (DMA) desde y hacia ubicaciones de gran memoria física (más de 4 GB). Si el controlador no es compatible con DMA de más de 4 GB, el sistema almacena doblemente en caché la E/S en un espacio de direcciones físicas de menos de 4 GB.
+Los adaptadores con funcionalidad de 64 bits pueden realizar operaciones de acceso directo a memoria (DMA) desde y hacia ubicaciones de gran memoria física (más de 4 GB). Si el controlador no es compatible con DMA de más de 4 GB, el sistema almacena doblemente en caché la E/S en un espacio de direcciones físicas de menos de 4 GB.
 
 ### <a name="copper-and-fiber-adapters"></a>Adaptadores de cobre y fibra
 Por lo general, los adaptadores de cobre tienen el mismo rendimiento que sus homólogos de fibra y ambos están disponibles en algunos adaptadores de canal de fibra. Ciertos entornos se adaptan mejor a los adaptadores de cobre, mientras que otros se adaptan mejor a los adaptadores de fibra.

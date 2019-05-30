@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0e5c5f8b7cf5c028fbfa5d72c4bc1218565d4087
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e1652e45f51500ceeb0026b8892fbe9c54ff38f3
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814026"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266637"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Colocación adecuada de los controladores de dominio y consideraciones de sitio
 
@@ -64,7 +64,7 @@ Confianza entre dominios escenarios son un área que ha sido sistemáticamente u
 
     -   Utilice DnsAvoidRegisterRecords para eliminar controladores de dominio mal rendimiento o alta latencia, como los de los sitios de satélite, con la publicidad a los localizadores genéricos. Para obtener más información, consulte [cómo optimizar la ubicación de un controlador de dominio o catálogo global que reside fuera de un sitio del cliente](https://support.microsoft.com/kb/306602).
 
-        **Tenga en cuenta**    hay un límite práctico de aproximadamente 50 y el número de controladores de dominio puede consumir el cliente. Mayor capacidad óptima para el sitio y más alta deben ser controladores de dominio.
+        > [!Note]   Hay un límite práctico de aproximadamente 50 y el número de controladores de dominio que puede consumir el cliente. Mayor capacidad óptima para el sitio y más alta deben ser controladores de dominio.
 
          
 
@@ -78,7 +78,7 @@ Todos los escenarios de confianza, las credenciales se enrutan según el dominio
 
 ## <a name="see-also"></a>Vea también
 - [Servidores de Active Directory de optimización del rendimiento](index.md)
-- [Consideraciones de hardware](hardware-considerations.md)
+- [Consideraciones de hardware](hardware-considerations.md).
 - [Consideraciones de LDAP](ldap-considerations.md)
-- [Solución de problemas de rendimiento de ADDS](troubleshoot.md) 
-- [Planear la capacidad de servicios de dominio de Active Directory](https://go.microsoft.com/fwlink/?LinkId=324566)
+- [Solución de problemas de rendimiento de AD DS](troubleshoot.md) 
+- [Capacity Planning for Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) (Planeamiento de la capacidad para Active Directory Domain Services)

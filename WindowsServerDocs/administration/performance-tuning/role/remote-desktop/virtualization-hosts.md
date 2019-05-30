@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 1893c0d2689657a5213b2d59e8d83cea0fc3a0db
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 0aa359644f5e9bf85f4e013e6571276716ed0218
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63722724"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266614"
 ---
 # <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Hosts de virtualización de escritorio remoto de optimización del rendimiento
 
@@ -40,14 +40,14 @@ Cuando sea adecuado, use la desduplicación de disco y el almacenamiento en cach
 
 Se introdujo en Windows Server 2012 R2, desduplicación de datos admite la optimización de archivos abiertos. Para poder usar las máquinas virtuales que se ejecutan en un volumen desduplicado, los archivos de máquina virtual deben almacenarse en un host desde el host de Hyper-V independiente. Si están ejecutando Hyper-V y la desduplicación en el mismo equipo, las dos características se competir por los recursos del sistema y afectar negativamente al rendimiento general.
 
-¿El volumen también debe configurarse para usar el "Desktop Infraestructura Virtual (VDI)? tipo de optimización de la desduplicación. Puede configurar mediante el administrador del servidor (**File and Storage Services**  - &gt; **volúmenes**  - &gt; **deconfiguracióndedesduplicación**) o bien, mediante el siguiente comando de Windows PowerShell comando:
+El volumen también debe configurarse para usar el tipo de optimización de la desduplicación de "infraestructura de Escritorio Virtual (VDI)". Puede configurar mediante el administrador del servidor (**File and Storage Services**  - &gt; **volúmenes**  - &gt; **deconfiguracióndedesduplicación**) o bien, mediante el siguiente comando de Windows PowerShell comando:
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
 ```
 
-**Tenga en cuenta**    optimización de la desduplicación de datos de archivos abiertos solo se admite para escenarios VDI con Hyper-V utiliza almacenamiento remoto sobre SMB 3.0.
-
+> [!Note]
+> Optimización de la desduplicación de datos de archivos abiertos solo se admite para escenarios VDI con Hyper-V utiliza almacenamiento remoto sobre SMB 3.0.
 
 ### <a name="memory"></a>Memoria
 

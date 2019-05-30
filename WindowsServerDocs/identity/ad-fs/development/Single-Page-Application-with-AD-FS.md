@@ -8,12 +8,12 @@ ms.date: 06/12/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 1292c7e6cd1dec6926516880c34fe60fb97a9ec8
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 24a9caba7a2745973d7c69c3bd7bc42717e7a06c
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190501"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266683"
 ---
 # <a name="build-a-single-page-web-application-using-oauth-and-adaljs-with-ad-fs-2016-or-later"></a>Cree una aplicación web de página única con OAuth y ADAL. JS con AD FS 2016 o posterior
 
@@ -78,13 +78,19 @@ Los archivos de claves que contiene la lógica de autenticación son las siguien
 ## <a name="registering-the-public-client-in-ad-fs"></a>Registrar al cliente público en AD FS
 En el ejemplo, la API Web está configurada para escuchar en https://localhost:44326/. El grupo de aplicaciones **explorador Web acceso a una aplicación web** se puede usar para configurar la aplicación de flujo de concesión implícita.
 
-1. Abra la consola de administración de AD FS y haga clic en **Agregar grupo de aplicaciones**. En el **Asistente para agregar un grupo de aplicaciones** escriba el nombre de la aplicación, descripción y seleccione el **explorador Web acceso a una aplicación web** plantilla desde el **cliente / servidor aplicaciones** sección tal como se muestra a continuación  <br>![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
+1. Abra la consola de administración de AD FS y haga clic en **Agregar grupo de aplicaciones**. En el **Asistente para agregar un grupo de aplicaciones** escriba el nombre de la aplicación, descripción y seleccione el **explorador Web acceso a una aplicación web** plantilla desde el **cliente / servidor aplicaciones** sección tal como se muestra a continuación
 
-2. En la página siguiente **aplicación nativa**, proporcione el identificador de aplicación cliente y URI de redirección, como se muestra a continuación  <br>![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
+    ![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step1.png)
+
+2. En la página siguiente **aplicación nativa**, proporcione el identificador de aplicación cliente y URI de redirección, como se muestra a continuación
+
+    ![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step2.png)
 
 3. En la página siguiente **aplicar directiva de Control de acceso** dejar los permisos como *permitir todos los usuarios*
 
-4. La página de resumen un aspecto parecida al siguiente  <br>![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
+4. La página de resumen un aspecto parecida al siguiente
+
+    ![Crear nuevo grupo de aplicaciones](media/Single-Page-Application-with-AD-FS/appgroup_step3.png)
 
 5. Haga clic en **siguiente** para completar la adición del grupo de aplicaciones y cerrar el asistente.
 

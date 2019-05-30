@@ -14,18 +14,18 @@ author: jasongerend
 ms.author: jgerend
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d36961558066197a54f42d27a3560d653bd81f2
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 8526d86c03f895d5bc8e0776aa958c627e78dfd9
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976631"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266805"
 ---
 # <a name="whats-new-in-windows-server-2016"></a>Novedades en Windows Server 2016
 
 >Se aplica a: Windows Server 2016
 
-<img src="media/whats-new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">Para obtener información sobre las características más recientes de Windows, consulte [What ' s New in Windows Server](whats-new-in-windows-server.md). El contenido de esta sección describe las novedades y los cambios de Windows Server&reg; 2016. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión.  
+![Icono que muestra un periódico](media/whats-new.png) para obtener información sobre las características más recientes de Windows, consulte [What ' s New in Windows Server](whats-new-in-windows-server.md). El contenido de esta sección describe las novedades y los cambios de Windows Server&reg; 2016. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión.
 
 ## <a name="computevirtualizationvirtualizationmd"></a>[Compute](../virtualization/virtualization.md)
 

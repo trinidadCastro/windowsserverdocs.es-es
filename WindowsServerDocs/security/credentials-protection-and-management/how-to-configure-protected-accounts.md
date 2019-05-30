@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: f2effdb7a82a25c810bc041475e760145de492d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9bd03beb81d4a3031b80d0633607efea2f2fe1f7
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864616"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266821"
 ---
 # <a name="how-to-configure-protected-accounts"></a>Cómo configurar cuentas protegidas
 
@@ -25,11 +25,11 @@ ms.locfileid: "59864616"
 
 En los ataques del tipo "pasar el hash" (PtH), un atacante puede autenticarse en un servidor o servicio remoto usando el hash de NTLM subyacente de la contraseña de un usuario (u otros derivados de las credenciales). Microsoft ya ha [publicado instrucciones](https://www.microsoft.com/download/details.aspx?id=36036) para mitigar los ataques pass-the-hash.  Windows Server 2012 R2 incluye nuevas características para ayudar a mitigar aún más estos ataques. Para obtener más información sobre otras características de seguridad que ayudan a proteger contra el robo de credenciales, consulte [Protección y administración de credenciales](https://technet.microsoft.com/library/dn408190.aspx). En este tema se explica cómo configurar las siguientes características nuevas:  
   
--   [Usuarios protegidos](how-to-configure-protected-accounts.md#BKMK_AddtoProtectedUsers)  
+-   [Usuarios protegidos](#protected-users)  
   
--   [Directivas de autenticación](how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicies)  
+-   [Directivas de autenticación](#authentication-policies)  
   
--   [Silos de directivas de autenticación](how-to-configure-protected-accounts.md#BKMK_CreateAuthNPolicySilos)  
+-   [Silos de directivas de autenticación](#authentication-policy-silos)  
   
 Hay otras soluciones integradas en Windows 8.1 y Windows Server 2012 R2 para ayudar a proteger contra el robo de credenciales, que se tratan en los siguientes temas:  
   
@@ -37,7 +37,7 @@ Hay otras soluciones integradas en Windows 8.1 y Windows Server 2012 R2 para ayu
   
 -   [Protección LSA](https://technet.microsoft.com/library/dn408187)  
   
-## <a name="BKMK_AddtoProtectedUsers"></a>Usuarios protegidos  
+## <a name="protected-users"></a>Usuarios protegidos  
 Usuarios protegidos es un nuevo grupo de seguridad global al que puedes agregar usuarios nuevos o existentes. Dispositivos Windows 8.1 y Windows Server 2012 R2 hosts tienen un comportamiento especial con los miembros de este grupo para proporcionar una mejor protección contra el robo de credenciales. Para un miembro del grupo, un dispositivo Windows 8.1 o un host de Windows Server 2012 R2 no almacena en caché las credenciales que no son compatibles para usuarios protegidos. Los miembros de este grupo no tienen protección adicional si ha iniciado sesión en un dispositivo que ejecuta una versión de Windows anteriores a Windows 8.1.  
   
 Agrupar miembros de usuarios protegidos que se inicien sesión en dispositivos Windows 8.1 y Windows Server 2012 R2 hosts pueden *ya no* utilizar:  
@@ -75,14 +75,14 @@ Los miembros del grupo Usuarios protegidos deben poder autenticarse mediante Ker
   
 -   **Cambiar contraseña** para cada usuario antes de agregar la cuenta de usuarios protegidos, grupo o asegúrese de que la contraseña ha cambiado recientemente en un controlador de dominio que ejecute Windows Server 2008 o posterior.  
   
-### <a name="BKMK_Prereq"></a>Requisitos para usar cuentas protegidas  
+### <a name="requirements-for-using-protected-accounts"></a>Requisitos para usar cuentas protegidas  
 Las cuentas protegidas tienen los siguientes requisitos de implementación:  
   
 -   Para proporcionar restricciones del lado cliente para usuarios protegidos, los hosts deben ejecutar Windows 8.1 o Windows Server 2012 R2. Un usuario solo tiene que iniciar sesión con una cuenta que sea miembro del grupo Usuarios protegidos. En este caso, se puede crear el grupo de usuarios protegidos por [transfiriendo el rol de emulador de controlador (PDC) de dominio principal](https://technet.microsoft.com/library/cc816944(v=ws.10).aspx) a un controlador de dominio que ejecute Windows Server 2012 R2. Una vez replicado ese grupo a otros controladores de dominio, el rol de emulador de PDC se puede hospedar en un controlador de dominio que ejecuta una versión anterior de Windows Server.  
   
 -   Para proporcionar restricciones de lado del controlador de dominio para los usuarios protegidos, es decir restringir el uso de la autenticación NTLM, y otras restricciones, el nivel funcional del dominio debe ser Windows Server 2012 R2. Para obtener más información sobre los niveles funcionales inferiores, consulte [Descripción de los niveles funcionales de Servicios de dominio de Active Directory (AD DS)](../../identity/ad-ds/active-directory-functional-levels.md).  
   
-### <a name="BKMK_TrubleshootingEvents"></a>Solucionar problemas de eventos relacionados a usuarios protegidos  
+### <a name="troubleshoot-events-related-to-protected-users"></a>Solucionar problemas de eventos relativos a usuarios protegidos  
 En esta sección se describen los nuevos registros que ayudan a solucionar problemas de eventos relativos a los usuarios protegidos, y cómo los usuarios protegidos pueden afectar a los cambios para solucionar problemas como la expiración de los vales de concesión de vales (TGT) o los problemas de delegación.  
   
 #### <a name="new-logs-for-protected-users"></a>Nuevos registros para usuarios protegidos  
@@ -106,13 +106,13 @@ Anteriormente, si una tecnología que usa delegación de Kerberos producía un e
   
 ![cuentas protegidas](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
   
-### <a name="BKMK_AuditAuthNattempts"></a>Auditar los intentos de autenticación  
+### <a name="audit-authentication-attempts"></a>Auditar los intentos de autenticación  
 Para auditar los intentos de autenticación explícitamente para los miembros del grupo **Usuarios protegidos**, puedes continuar recopilando eventos de auditoría del registro de seguridad o puedes recopilar los datos de los nuevos registros administrativos operativos. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).  
   
-### <a name="BKMK_ProvidePUdcProtections"></a>Proporcionan protecciones de lado del controlador de dominio de servicios y equipos  
+### <a name="provide-dc-side-protections-for-services-and-computers"></a>Proporcionar protección en el lado del controlador de dominio para servicios y equipos  
 Las cuentas de servicios y equipos no pueden ser miembros de **Usuarios protegidos**. En esta sección se explica qué protecciones de controlador de dominio se pueden ofrecer para estas cuentas:  
   
--   Rechazar la autenticación NTLM: Solo se puede configurar a través de [directivas de bloqueo de NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx)  
+-   Rechazar la autenticación NTLM: Solo se puede configurar a través de [directivas de bloqueo de NTLM](https://technet.microsoft.com/library/jj865674(v=ws.10).aspx).  
   
 -   Rechazar el Estándar de cifrado de datos (DES) en la autenticación previa de Kerberos:  Los controladores de dominio de Windows Server 2012 R2 no aceptan DES para cuentas de equipo a menos que se configuren para DES sólo porque todas las versiones de Windows lanzadas con Kerberos también admiten RC4.  
   
@@ -127,7 +127,7 @@ Las cuentas de servicios y equipos no pueden ser miembros de **Usuarios protegid
   
     ![cuentas protegidas](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_TshootDelegation.gif)  
   
-## <a name="BKMK_CreateAuthNPolicies"></a>Directivas de autenticación  
+## <a name="authentication-policies"></a>Directivas de autenticación  
 Directivas de autenticación es un nuevo contenedor de AD DS que contiene objetos de directiva de autenticación. Las directivas de autenticación pueden especificar configuraciones que ayuden a mitigar la exposición a robos de credenciales, como restringir la vigencia de los TGT para las cuentas o agregar otras condiciones relativas a notificaciones.  
   
 En Windows Server 2012, Control de acceso dinámico presentó una clase de objeto de ámbito del bosque de Active Directory llamada directiva de acceso Central para proporcionar una manera fácil de configurar los servidores de archivos de una organización. En Windows Server 2012 R2, se puede usar una nueva clase de objeto llamada directiva de autenticación (objectClass msDS-AuthNPolicies) para aplicar la configuración de autenticación a clases de cuentas en dominios de Windows Server 2012 R2. Las clases de cuentas de Active Directory son las siguientes:  
@@ -155,7 +155,7 @@ El intercambio TGS es donde se usa el TGT de una cuenta para crear un autenticad
   
 El intercambio AP se produce con la misma frecuencia que los datos dentro del protocolo de la aplicación, y no se ve afectado por las directivas de autenticación.  
   
-Para obtener más información, consulte [cómo funciona el Kerberos versión 5 autenticación protocolo] (https://technet.microsoft.com/library/cc772815(v=WS.10.aspx.  
+Para obtener información más detallada, consulte [Cómo funciona el protocolo de autenticación Kerberos versión 5](https://technet.microsoft.com/library/cc772815(v=WS.10.aspx)).  
   
 ### <a name="overview"></a>Información general  
 Las directivas de autenticación complementan el grupo de usuarios protegidos porque proporcionan una manera de aplicar restricciones configurables a las cuentas, además de restricciones a las cuentas de servicios y equipos. Las directivas de autenticación se aplican durante el intercambio AS o el intercambio TGS.  
@@ -172,7 +172,7 @@ Puedes configurar lo siguiente para restringir las solicitudes de vales de servi
   
 -   Condiciones de control de acceso que deben cumplir el cliente (usuario, servicio, equipo) o los dispositivos desde los que procede el intercambio TGS.  
   
-### <a name="BKMK_ReqForAuthnPolicies"></a>Requisitos para usar las directivas de autenticación  
+### <a name="requirements-for-using-authentication-policies"></a>Requisitos para usar directivas de autenticación  
   
 |Directiva|Requisitos|  
 |-----|--------|  
@@ -329,7 +329,7 @@ Usa el Editor de directivas de grupo o el Editor de directivas de grupo local pa
   
 ![cuentas protegidas](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_KerbClientDACSupport.gif)  
   
-### <a name="BKMK_TroubleshootAuthnPolicies"></a>Solucionar problemas de directivas de autenticación  
+### <a name="troubleshoot-authentication-policies"></a>Solucionar problemas de directivas de autenticación  
   
 #### <a name="determine-the-accounts-that-are-directly-assigned-an-authentication-policy"></a>Determina las cuentas que están directamente asignadas a una directiva de autenticación  
 La sección de cuentas de la directiva de autenticación muestra las cuentas a las que se ha aplicado directamente la directiva.  
@@ -339,7 +339,7 @@ La sección de cuentas de la directiva de autenticación muestra las cuentas a l
 #### <a name="use-the-authentication-policy-failures---domain-controller-administrative-log"></a>Uso de los errores de directiva de autenticación - registro administrativo del controlador de dominio  
 Un nuevo **errores de directiva de autenticación: controlador de dominio** registro administrativo en **registros de aplicaciones y servicios** > **Microsoft**  >  **Windows** > **autenticación** se ha creado para que sea más fácil detectar errores debidos a directivas de autenticación. El registro está deshabilitado de forma predeterminada. Para habilitarlo, haz clic con el botón derecho en el nombre del registro y haz clic en **Habilitar registro**. El contenido de los nuevos eventos es muy similar al de los eventos de auditoría de TGT y de vales de servicio de Kerberos existentes. Para obtener más información acerca de estos eventos, consulte [Directivas de autenticación y silos de directivas de autenticación](https://technet.microsoft.com/library/dn486813.aspx).  
   
-### <a name="BKMK_ManageAuthnPoliciesUsingPSH"></a>Administrar directivas de autenticación mediante Windows PowerShell  
+### <a name="manage-authentication-policies-by-using-windows-powershell"></a>Administrar directivas de autenticación mediante Windows PowerShell  
 Este comando crea una directiva de autenticación llamada **TestAuthenticationPolicy**. El parámetro **UserAllowedToAuthenticateFrom** especifica los dispositivos desde los que los usuarios pueden autenticarse mediante una cadena SDDL en el archivo someFile.txt.  
   
 ```  
@@ -371,7 +371,7 @@ Este comando usa el cmdlet **Get-ADAuthenticationPolicy** con el parámetro **Fi
 PS C:\> Get-ADAuthenticationPolicy -Filter 'Enforce -eq $false' | Remove-ADAuthenticationPolicy  
 ```  
   
-## <a name="BKMK_CreateAuthNPolicySilos"></a>Silos de directivas de autenticación  
+## <a name="authentication-policy-silos"></a>Silos de directivas de autenticación  
 Silos de directivas de autenticación es un nuevo contenedor (objectClass msDS-AuthNPolicySilos) de AD DS para cuentas de usuario, equipo y servicio. Ayudan a proteger las cuentas de gran valor. Aunque todas las organizaciones necesitan proteger a los miembros de los grupos Administradores de organización, Admins. del dominio y Administradores de esquema porque esas cuentas podrían ser usadas por un atacante para acceder al bosque, otras cuentas también pueden necesitar protección.  
   
 Algunas organizaciones aíslan las cargas de trabajo; para ello, crean cuentas únicas para ellas y aplican configuraciones de directiva de grupo para limitar el inicio de sesión interactivo local y remoto, y los privilegios administrativos. Los silos de directivas de autenticación complementan este trabajo y crean una manera de definir una relación entre las cuentas de usuario, de equipo y de servicio administradas. Las cuentas solo pueden pertenecer a un silo. Puedes configurar la directiva de autenticación para cada tipo de cuenta para controlar lo siguiente:  
@@ -429,7 +429,7 @@ Puede crear un silo de directivas de autenticación mediante el centro de admini
   
     ![cuentas protegidas](../media/how-to-configure-protected-accounts/ADDS_ProtectAcct_NewAuthNPolicySiloDisplayName.gif)  
   
-### <a name="BKMK_ManageAuthnSilosUsingPSH"></a>Administrar silos de directivas de autenticación mediante Windows PowerShell  
+### <a name="manage-authentication-policy-silos-by-using-windows-powershell"></a>Administrar silos de directivas de autenticación mediante Windows PowerShell  
 Este comando crea un objeto de silo de directivas de autenticación y lo aplica.  
   
 ```  

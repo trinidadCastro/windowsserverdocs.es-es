@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 04/12/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 3208c20e8bf9f4cfab4340aa33b24175bbc72dda
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: ee3c4ba5d6c3dc911ab318ade9a46b279317496f
+ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188329"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66260257"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -128,6 +128,7 @@ Puedes tener Windows Admin Center en funcionamiento y ejecutándose en tu entorn
 
 Obtén información sobre las últimas funciones publicadas:
 
+- Versión 1904.1 - actualización de mantenimiento para mejorar la estabilidad de los complementos de puerta de enlace.
 - Versión [1904](https://aka.ms/wac1904) es la versión más reciente de GA que presenta la herramienta servicios híbridos de Azure y ofrece características que anteriormente se encontraban en versión preliminar para el canal de GA.
 - Versión [1903](https://aka.ms/wac1903) ofrece notificaciones de correo electrónico de Azure Monitor, la capacidad para agregar conexiones de servidor o equipo de Active Directory y las nuevas herramientas para administrar Active Directory, DHCP y DNS.
 - Versión [1902](https://aka.ms/wac1902) agrega una lista de conexiones compartidas y mejoras a la administración de redes definidas por software, incluidas nuevas herramientas SDN para administrar las ACL, las conexiones de puerta de enlace y redes lógicas.

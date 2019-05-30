@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f8d23cc1bb5739b47c755d90c927cbcf82b8da7f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5e1ee9b7c1ade184cf17b867b7fce10ab8885f0f
+ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825026"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64771883"
 ---
 # <a name="color"></a>color
 
@@ -44,25 +44,27 @@ color [[<B>]<F>]
 
 ## <a name="remarks"></a>Comentarios
 
--   En la tabla siguiente se enumera los dígitos hexadecimales válidos que puede usar como valores para *B* y *F*.  
-    |Valor|Color|
-    |-----|-----|
-    |0|Negro|
-    |1|Azul|
-    |2|Verde|
-    |3|Aqua|
-    |4|Roja|
-    |5|Púrpura|
-    |6|Amarillo|
-    |7|Blanco|
-    |8|Gris|
-    |9|Azul claro|
-    |A|Verde claro|
-    |B|Aguamarina claro|
-    |C|Rojo claro|
-    |D|Púrpura claro|
-    |E|Amarillo claro|
-    |F|Blanco brillante|
+-   En la tabla siguiente se enumera los dígitos hexadecimales válidos que puede usar como valores para *B* y *F*.
+
+|Valor|Color|
+|-----|-----|
+|0|Negro|
+|1|Azul|
+|2|Verde|
+|3|Aqua|
+|4|Roja|
+|5|Púrpura|
+|6|Amarillo|
+|7|Blanco|
+|8|Gris|
+|9|Azul claro|
+|A|Verde claro|
+|B|Aguamarina claro|
+|C|Rojo claro|
+|D|Púrpura claro|
+|E|Amarillo claro|
+|F|Blanco brillante|
+    
 -   No utilice caracteres de espacio entre *B* y *F*.
 -   Si especifica solo un dígito hexadecimal, el color correspondiente se usa como el color de primer plano y el color de fondo se establece en el color predeterminado.
 -   Para establecer el color predeterminado de la ventana de símbolo del sistema, haga clic en la esquina superior izquierda de la ventana de símbolo del sistema, haga clic en **valores predeterminados**, haga clic en el **colores** pestaña y, a continuación, haga clic en los colores que desee usar para el  **Texto de la pantalla** y **en segundo plano de pantalla**.

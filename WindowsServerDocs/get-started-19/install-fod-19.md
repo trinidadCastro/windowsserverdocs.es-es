@@ -9,13 +9,13 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.date: 05/24/2019
-ms.openlocfilehash: c9af38720df79918bed3404995e81a7f93a10744
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.date: 05/29/2019
+ms.openlocfilehash: e76b7862549814d5453717c40cec45e341141d7a
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222897"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308603"
 ---
 # <a name="server-core-app-compatibility-feature-on-demand-fod"></a>Característica de compatibilidad de aplicación de Server Core a petición (FOD)
 
@@ -156,7 +156,7 @@ Los DU de compatibilidad de la aplicación solo puede instalarse en Server Core.
 1. Descargue los archivos de imagen de Windows Server y servidor du ISO en una carpeta local en un equipo Windows.
 
    - Si tiene una licencia por volumen, puede descargar los archivos de imagen de Windows Server y servidor du ISO de la [Volume Licensing Service Center](https://www.microsoft.com/Licensing/servicecenter/default.aspx).
-   - El archivo de imagen ISO de du Server también está disponible en el [Microsoft Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server) o en el [portal de Visual Studio](https://visualstudio.microsoft.com) para los suscriptores.
+   - El archivo de imagen ISO de du Server también está disponible para las versiones de canal de servicio a largo plazo en el [Microsoft Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server) o en el [portal de Visual Studio](https://visualstudio.microsoft.com) para los suscriptores.
 
 2. Abra una sesión de PowerShell como administrador y, a continuación, use los siguientes comandos para montar los archivos de imagen como unidades de disco:
 

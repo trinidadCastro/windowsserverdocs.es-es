@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b402195f90977aa63299c1a2a550ba310a4513
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 081e5caeb7fb458b367f035b9995929de84a5528
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832346"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266570"
 ---
 # <a name="bitsadmin-addfilewithranges"></a>bitsadmin addfilewithranges
 
@@ -41,14 +41,14 @@ bitsadmin /AddFileWithRanges <Job> <RemoteURL> <LocalName> <RangeList>
 
 ## <a name="more-information"></a>Más información
 
--   El token **eof** es un valor de longitud válida dentro de los pares de desplazamiento y longitud de la  *\<RangeList >*. Indica el servicio para leer hasta el final del archivo especificado.
+-   El token **eof** es un valor de longitud válida dentro de los pares de desplazamiento y longitud de la  *\<RangeList >* . Indica el servicio para leer hasta el final del archivo especificado.
 -   Tenga en cuenta que AddFileWithRanges se producirá un error con código de error 0x8020002c cuando se especifica un intervalo de longitud cero, junto con otro intervalo con el mismo desplazamiento, como: C:\bits > bitsadmin /addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100:0, 100:5
 
     Mensaje de error: No se puede agregar archivos al trabajo - 0x8020002c. La lista de intervalos de bytes contiene intervalos solapados, que no son compatibles.
 
     Solución alternativa: no especifique el intervalo de longitud cero en primer lugar. Por ejemplo: bitsadmin /addfilewithranges j2 http://bitsdc/dload/1k.zip c:\1k.zip 100:5, 100:0.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="examples"></a>Ejemplos
 
 El ejemplo siguiente se indica a BITS para transferir 100 bytes desde el desplazamiento 0, 100 bytes del desplazamiento 2000 y los bytes restantes del desplazamiento 5000 hasta el final del archivo.
 ```

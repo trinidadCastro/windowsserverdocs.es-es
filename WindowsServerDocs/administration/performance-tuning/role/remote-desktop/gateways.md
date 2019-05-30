@@ -7,22 +7,24 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7619d2e2ce394c7f06826d6ebe36bccfa43344ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 70b27d45acbfb046d52271a50ca7deffb226b8d0
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842576"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266729"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>Las puertas de enlace de escritorio remotos de optimización del rendimiento
 
-**Tenga en cuenta**    en Windows 8 y versiones posteriores y Windows Server 2012 R2 y versiones posteriores, puerta de enlace de escritorio remoto (puerta de enlace de escritorio remoto) es compatible con TCP, UDP y los transportes RPC heredados. La mayoría de los siguientes datos está relacionado con el transporte RPC heredado. Si no se utiliza el transporte RPC heredado, esta sección no es aplicable.
+> [!Note]
+> En Windows 8 y versiones posteriores y Windows Server 2012 R2 y versiones posteriores, puerta de enlace de escritorio remoto (puerta de enlace de escritorio remoto) es compatible con TCP, UDP y los transportes RPC heredados. La mayoría de los siguientes datos está relacionado con el transporte RPC heredado. Si no se utiliza el transporte RPC heredado, esta sección no es aplicable.
 
 En este tema se describe los parámetros relacionados con el rendimiento que ayudan a mejorar el rendimiento de una implementación de cliente y los ajustes que se basan en patrones de uso de red del cliente.
 
 En esencia, la puerta de enlace de escritorio remoto lleva a cabo muchas operaciones entre las instancias de la conexión a Escritorio remoto y las instancias del servidor Host de sesión de escritorio remoto en la red del cliente de reenvío.
 
-**Tenga en cuenta**    los parámetros siguientes se aplican a sólo el transporte RPC.
+> [!Note]
+> Los parámetros siguientes se aplican a sólo el transporte RPC.
 
 Internet Information Services (IIS) y la puerta de enlace de escritorio remoto de exportación de los parámetros del registro siguientes para ayudar a mejorar el rendimiento del sistema en la puerta de enlace de escritorio remoto.
 

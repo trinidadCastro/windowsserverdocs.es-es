@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 460837c79c0e0d2c48331ddaaffcd118fd16ebc1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 55dd38c966fea8448231b06cde9c1dd63b024197
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870616"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266769"
 ---
 # <a name="authentication-policies-and-authentication-policy-silos"></a>Directivas de autenticación y silos de directivas de autenticación
 
@@ -230,7 +230,7 @@ En la tabla siguiente se describen los eventos asociados con el grupo de segurid
 
 Los eventos se registran en los registros de aplicaciones y servicios en **Microsoft\Windows\Authentication**.
 
-Para solucionar problemas en los pasos que usan estos eventos, vea [Troubleshoot Authentication Policies](how-to-configure-protected-accounts.md#BKMK_TroubleshootAuthnPolicies) y [Troubleshoot events related to Protected Users](how-to-configure-protected-accounts.md#BKMK_TrubleshootingEvents).
+Para solucionar problemas en los pasos que usan estos eventos, vea [Troubleshoot Authentication Policies](how-to-configure-protected-accounts.md#troubleshoot-authentication-policies) y [Troubleshoot events related to Protected Users](how-to-configure-protected-accounts.md#troubleshoot-events-related-to-protected-users).
 
 |Identificador de evento y registro|Descripción|
 |----------|--------|
@@ -245,6 +245,6 @@ Para solucionar problemas en los pasos que usan estos eventos, vea [Troubleshoot
 
 [Protección y administración de credenciales](credentials-protection-and-management.md)
 
-[Grupo de seguridad usuarios protegidos](protected-users-security-group.md)
+[Grupo de seguridad Usuarios protegidos](protected-users-security-group.md)
 
 

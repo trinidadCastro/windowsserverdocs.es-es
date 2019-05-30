@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4ad399e62e1aa76b76b6109e28845b2615efa0fe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fb940effaae7989dec397e539b64160c87828d5a
+ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882286"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66266706"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>Paso 2 Planear la implementación de acceso remoto
 
@@ -31,11 +31,11 @@ Después de planear la infraestructura que va a usar para configurar el servidor
   
 |Tarea|Descripción|  
 |----|--------|  
-|[Planear una estrategia de implementación de cliente](#bkmk_21client)|Decide qué equipos administrados se configurarán como clientes de DirectAccess.|  
-|[Planear una estrategia de implementación del servidor de acceso remoto](#bkmk_22server)|Planifica cómo implementar el servidor de acceso remoto.|  
-|[Planear las configuraciones de los servidores de infraestructura](#bkmk_23Infservers)|Planear los servidores de infraestructura en la implementación de acceso remoto, incluido el servidor de ubicación de red de DirectAccess, servidores DNS y servidores de administración de DirectAccess.|  
+|[Planear una estrategia de implementación de cliente](#plan-a-client-deployment-strategy)|Decide qué equipos administrados se configurarán como clientes de DirectAccess.|  
+|[Planear una estrategia de implementación del servidor de acceso remoto](#plan-a-remote-access-server-deployment-strategy)|Planifica cómo implementar el servidor de acceso remoto.|  
+|[Planear las configuraciones de los servidores de infraestructura](#plan-the-infrastructure-servers-configurations)|Planear los servidores de infraestructura en la implementación de acceso remoto, incluido el servidor de ubicación de red de DirectAccess, servidores DNS y servidores de administración de DirectAccess.|  
   
-## <a name="bkmk_21client"></a>Planear una estrategia de implementación de cliente  
+## <a name="plan-a-client-deployment-strategy"></a>Planear una estrategia de implementación de cliente  
 Tienes que tomar tres decisiones a la hora de planear la implementación de clientes:  
   
 1.  ¿DirectAccess sólo estará disponible para los equipos móviles, o para todos los equipos de un grupo de seguridad especificado?  
@@ -70,7 +70,7 @@ Tienes que tomar tres decisiones a la hora de planear la implementación de clie
   
         Los clientes requieren un medio de resolución de nombres localmente. Si permites que los clientes de DirectAccess usen resolución de nombres local, los usuarios finales pueden usar servidores de DNS locales para resolver los nombres. Cuando los usuarios finales decide usar servidores DNS locales para la resolución de nombres, DirectAccess no envía las solicitudes de resolución de nombres de una sola etiqueta para el servidor DNS corporativo interno. En su lugar utiliza la resolución local (mediante el uso de la resolución de nombres de multidifusión Local de vínculos (LLMNR) y NetBios a través de protocolos TCP/IP).  
   
-## <a name="bkmk_22server"></a>Planear una estrategia de implementación del servidor de acceso remoto  
+## <a name="plan-a-remote-access-server-deployment-strategy"></a>Planear una estrategia de implementación del servidor de acceso remoto  
 Las decisiones que deberá realizar cuando planee la implementación del servidor de acceso remoto se incluyen:  
   
 -   **Topología de red**  
@@ -110,7 +110,7 @@ Las decisiones que deberá realizar cuando planee la implementación del servido
   
     Antes de configurar el acceso remoto, decida si va a proporcionar acceso a VPN a los clientes remotos. Debe proporcionar acceso a VPN si tiene equipos cliente de su organización que no admiten la conectividad de DirectAccess (por ejemplo, no son administrados o ejecuten un sistema operativo para el que no se admite DirectAccess). El Asistente para instalación de servidor de acceso remoto permite configurar cómo se asignan direcciones IP (mediante DHCP o desde un grupo de direcciones estáticas) y cómo se autentican los clientes VPN (mediante el uso de Active Directory o un servidor RADIUS).  
   
-## <a name="bkmk_23Infservers"></a>Planear las configuraciones de los servidores de infraestructura  
+## <a name="plan-the-infrastructure-servers-configurations"></a>Planear las configuraciones de los servidores de infraestructura  
 Acceso remoto requiere tres tipos de servidores de infraestructura:  
   
 -   **Servidor de ubicación de red**  
@@ -119,9 +119,9 @@ Acceso remoto requiere tres tipos de servidores de infraestructura:
   
 -   **Servidores de administración** 
   
-## <a name="BKMK_Links"></a>Vea también  
+## <a name="see-also"></a>Vea también  
   
--   [Paso 1: Planear la infraestructura de acceso remoto](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
+-   [Paso 1: Planificar la infraestructura de acceso remoto](Step-1-Plan-the-Remote-Access-Infrastructure.md)  
   
 
 

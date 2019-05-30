@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1c47986cda3f091033274aa2c59a656ec861a98f
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 909be9e4bbcd12b00fd60ff061b1f4e2ede34546
+ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189715"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66308536"
 ---
 # <a name="create-a-claims-provider-trust"></a>Creación de una confianza de proveedor de notificaciones
 
@@ -57,7 +57,7 @@ Pertenencia a **administradores**, o equivalente, en el equipo local es el requi
 Para agregar una nueva confianza de proveedor de notificaciones, mediante el complemento de administración de AD FS, importando automáticamente los datos de configuración del asociado de metadatos de federación que el asociado ha publicado en una red local o a Internet, lleve a cabo el procedimiento siguiente en un servidor de federación de la organización del asociado de recurso.
 
 >[!NOTE]
->Aunque ha sido una práctica común usar certificados con nombres de host sin calificar como https://myserver, estos certificados no tienen ningún valor de seguridad y puede permitir que un atacante suplante un servicio de federación que está publicando metadatos de federación. Por lo tanto, al consultar los metadatos de federación, debe sólo usar un nombre de dominio completo, como https://myserver.contoso.com.
+>Aunque ha sido una práctica común usar certificados con nombres de host sin calificar como https:\//myserver, estos certificados no tienen ningún valor de seguridad y puede permitir que un atacante suplante un servicio de federación que está publicando la federación metadatos. Por lo tanto, al consultar los metadatos de federación, debe sólo usar un nombre de dominio completo, como `https://myserver.contoso.com`.
 
 1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
   

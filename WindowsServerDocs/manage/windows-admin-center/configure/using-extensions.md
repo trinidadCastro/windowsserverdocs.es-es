@@ -7,12 +7,12 @@ author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 6091edd7aa7f790f6029ca6b6ae402bf1b7e61ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c775dd5a3011115bbb031c0b9e4e24a8911d378e
+ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877026"
+ms.lasthandoff: 04/24/2019
+ms.locfileid: "63748406"
 ---
 # <a name="install-and-manage-extensions"></a>Instalar y administrar extensiones
 
@@ -85,9 +85,6 @@ $feedUrlBase = "https://aka.ms/sme-extension-feed"
 >Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
 
 Versión preliminar de Windows Admin Center incluye un módulo de PowerShell para administrar las extensiones de la puerta de enlace.
-
->[!IMPORTANT]
->Administrar las extensiones de la puerta de enlace con el módulo de PowerShell solo se admite cuando se implementa Windows Admin Center como un servicio de puerta de enlace de Windows Server.
 
 ```powershell
 # Add the module to the current session
