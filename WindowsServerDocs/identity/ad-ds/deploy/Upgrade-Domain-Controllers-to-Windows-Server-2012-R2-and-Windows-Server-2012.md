@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: e3b44dbc1c869680db91f5e9732a50504d80e7b8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 6dda30bd15bedab8ea5ca8ca2e9597e1cc196e43
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877506"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443051"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2012-r2-and-windows-server-2012"></a>Actualizar controladores de dominio a Windows Server 2012 R2 y Windows Server 2012
 
@@ -76,7 +76,7 @@ En la siguiente tabla se recogen las nuevas características de AD DS en Windows
 |-----------|---------------|  
 |[El área de trabajo](https://technet.microsoft.com/library/dn280945.aspx)|Permite a los trabajadores de la información unir sus dispositivos personales a su compañía para tener acceso a los recursos y servicios de la compañía.|  
 |[Proxy de aplicación Web](https://technet.microsoft.com/library/dn280942.aspx)|Proporciona acceso a la aplicación web con un nuevo servicio de rol de acceso remoto.|  
-|[Servicios de federación de Active Directory](https://technet.microsoft.com/library/hh831502.aspx)|AD FS ha simplificado la implementación y las mejoras para permitir a los usuarios tener acceso a recursos de dispositivos personales y ayudar a los departamentos de TI a administrar el control de acceso.|  
+|[Servicios de federación de Active Directory (AD FS)](https://technet.microsoft.com/library/hh831502.aspx)|AD FS ha simplificado la implementación y las mejoras para permitir a los usuarios tener acceso a recursos de dispositivos personales y ayudar a los departamentos de TI a administrar el control de acceso.|  
 |[Unicidad de SPN y UPN](https://technet.microsoft.com/library/dn535779.aspx)|Los controladores de dominio en los que se ejecuta Windows Server 2012 R2 bloquean la creación de nombres de entidad de seguridad de servicio (SPN) y nombres principales de usuario (UPN) duplicados.|  
 |[Inicio de sesión con reinicio automático de Winlogon (ARSO)](https://technet.microsoft.com/library/dn535772.aspx)|Permite que las aplicaciones de la pantalla de bloqueo se reinicien y estén disponibles en dispositivos Windows 8.1.|  
 |[Atestación de clave de TPM](https://technet.microsoft.com/library/dn581921.aspx)|Permite a las entidades de certificación (CA) atestar criptográficamente en un certificado emitido que la clave privada del solicitante del certificado está realmente protegida por un Módulo de plataforma segura (TPM).|  
@@ -150,8 +150,8 @@ Existen algunos cambios relativos a AD DS:
    - Solo hay una versión de Adprep.exe, que se puede ejecutar cuando sea necesario en servidores de 64 bits que ejecuten Windows Server 2008 o posterior. La ejecución puede ser remota y, de hecho, debe serlo cuando el rol de maestro de operaciones de destino esté hospedado en un sistema operativo de 32 bits o en Windows Server 2003.  
 - **Desuso de Dcpromo.exe**
    - Dcpromo está en desuso aunque en Windows Server 2012 solo se puede seguir ejecutando con un archivo de respuesta o parámetros de línea de comandos para dar tiempo a las organizaciones para trasladar la automatización existente a las nuevas opciones de instalación de Windows PowerShell.  
--   **LMHash está deshabilitado en las cuentas de usuario**
-   - Las opciones predeterminadas de seguridad de las plantillas de seguridad en Windows Server 2008, Windows Server 2008 R2 y Windows Server 2012 habilitan la directiva NoLMHash, que está deshabilitada en las plantillas de seguridad de los controladores de dominio de Windows 2000 y Windows Server 2003. Siga los pasos del artículo de KB [946405](https://support.microsoft.com/kb/946405)para deshabilitar la directiva NoLMHash en clientes dependientes de LMHash según sea necesario.  
+- **LMHash está deshabilitado en las cuentas de usuario**
+  - Las opciones predeterminadas de seguridad de las plantillas de seguridad en Windows Server 2008, Windows Server 2008 R2 y Windows Server 2012 habilitan la directiva NoLMHash, que está deshabilitada en las plantillas de seguridad de los controladores de dominio de Windows 2000 y Windows Server 2003. Siga los pasos del artículo de KB [946405](https://support.microsoft.com/kb/946405)para deshabilitar la directiva NoLMHash en clientes dependientes de LMHash según sea necesario.  
 
 A partir de Windows Server 2008, los controladores de dominio también tienen la siguiente configuración predeterminada segura, en comparación con los controladores de dominio que ejecutan Windows Server 2003 o Windows 2000.
 

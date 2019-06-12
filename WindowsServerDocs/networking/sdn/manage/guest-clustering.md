@@ -13,12 +13,12 @@ ms.assetid: 8e9e5c81-aa61-479e-abaf-64c5e95f90dc
 ms.author: grcusanz
 author: shortpatti
 ms.date: 08/26/2018
-ms.openlocfilehash: fcd37ebb3739f1d7118ce41dfc61764486c920d3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 97c20fd07d06b609686daf4d6308a9f248873036
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844966"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446342"
 ---
 # <a name="guest-clustering-in-a-virtual-network"></a>Clústeres invitados en una red virtual
 
@@ -143,7 +143,7 @@ Puede usar los pasos siguientes para configurar un clúster de conmutación por 
    Import-module failoverclusters
 
    $ClusterName = "MyCluster"
-   
+   
    $ClusterNetworkName = "Cluster Network 1"
    $IPResourceName =  
    $ILBIP = “192.168.2.100” 
@@ -182,6 +182,6 @@ Puede usar los pasos siguientes para configurar un clúster de conmutación por 
    Add-ClusterNode $nodes[1]
    ```
 
-_**El clúster está activo.**_ Se dirige el tráfico que va a la dirección VIP en el puerto especificado en el nodo activo.
+_**El clúster está activo.** _ Se dirige el tráfico que va a la dirección VIP en el puerto especificado en el nodo activo.
 
 ---

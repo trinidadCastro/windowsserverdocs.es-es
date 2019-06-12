@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: f000066e-7cf8-4085-82a3-4f4fe1cb3c5c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e075569f6ce5983838edde26f928d41606ac44bb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f835e27a80e661ff1f066af4779bd7c033cddc99
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824136"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446624"
 ---
 # <a name="step-3-configure-a-load-balanced-cluster"></a>Paso 3 configurar un clúster con equilibrio de carga
 
@@ -101,7 +101,7 @@ Después de preparar servidores para el clúster, configurar el equilibrio de ca
     > [!NOTE]  
     > Si se está usando el equilibrio de carga externo, tenga en cuenta las direcciones IP virtuales y proporcione lo que en los equilibradores de carga externo.  
   
-![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -131,7 +131,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia al gr
   
 3.  En el **agregar o quitar complementos** cuadro de diálogo, haga clic en **certificados**, haga clic en **agregar**, haga clic en **cuenta de equipo**, haga clic en  **Siguiente**, haga clic en **finalizar**y, a continuación, haga clic en **Aceptar**.  
   
-4.  En el panel izquierdo de la consola, vaya a **\Personal\Certificates certificados (equipo Local)**. Haga clic en el certificado IP-HTTPS, seleccione **todas las tareas** y haga clic en **exportar**.  
+4.  En el panel izquierdo de la consola, vaya a **\Personal\Certificates certificados (equipo Local)** . Haga clic en el certificado IP-HTTPS, seleccione **todas las tareas** y haga clic en **exportar**.  
   
 5.  En la página **Éste es el Asistente para exportación de certificados**, haga clic en **Siguiente**.  
   
@@ -155,7 +155,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia al gr
   
 15. En el **agregar o quitar complementos** cuadro de diálogo, haga clic en **certificados**, haga clic en **agregar**, haga clic en **cuenta de equipo**, haga clic en  **Siguiente**, haga clic en **finalizar**y, a continuación, haga clic en **Aceptar**.  
   
-16. En el panel izquierdo de la consola, vaya a **\Personal\Certificates certificados (equipo Local)**. Haga clic en el **certificados** nodo, seleccione **todas las tareas**y, a continuación, haga clic en **importación**.  
+16. En el panel izquierdo de la consola, vaya a **\Personal\Certificates certificados (equipo Local)** . Haga clic en el **certificados** nodo, seleccione **todas las tareas**y, a continuación, haga clic en **importación**.  
   
 17. En la página **Éste es el Asistente para importación de certificados**, haga clic en **Siguiente**.  
   
@@ -248,7 +248,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia al gr
   
 12. En el **agregar y quitar servidores** cuadro de diálogo, haga clic en **cerrar**.  
   
-![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -278,7 +278,7 @@ Add-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 7.  En el **agregar y quitar servidores** cuadro de diálogo, haga clic en **cerrar**.  
   
-![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -299,7 +299,7 @@ Remove-RemoteAccessLoadBalancerNode -RemoteAccessServer <server name>
   
 4.  En el **deshabilitar Equilibrio de carga** cuadro de diálogo, haga clic en **cerrar**.  
   
-![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-3-Configure-a-Load-Balanced-Cluster/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

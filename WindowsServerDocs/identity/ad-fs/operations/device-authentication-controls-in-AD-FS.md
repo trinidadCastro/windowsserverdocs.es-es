@@ -8,12 +8,12 @@ ms.date: 11/09/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d66cfde20060229844c34abeea85dd83b802ddad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f52d3d237573e4ed0028e228ff80273862a0aaf2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822826"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444642"
 ---
 # <a name="device-authentication-controls-in-ad-fs"></a>Controles de autenticación de dispositivo en AD FS
 El siguiente documento muestra cómo habilitar los controles de autenticación de dispositivo en Windows Server 2016 y 2012 R2.
@@ -43,7 +43,7 @@ El método de autenticación de dispositivo determina el tipo de autenticación 
 Tiene los siguientes valores:
  - SignedToken: PRT solo
  - PKeyAuth: PRT + PKeyAuth
- - ClientTLS: PRT + clientTLS 
+ - ClientTLS: PRT + clientTLS
  - Todo: Todos los anteriores
 
 Como puede ver, PRT forma parte de todos los métodos de autenticación de dispositivo, lo que en efecto el método predeterminado que siempre está habilitado cuando `DeviceAuthenticationEnabled` está establecido en `$true`.
@@ -53,6 +53,14 @@ Por ejemplo: Para configurar los métodos, use el cmdlet DeviceAuthenticationEna
 ``` powershell
 PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 ```
+
+>[!NOTE]
+> En AD FS de 2019, `DeviceAuthenticationMethod` puede utilizarse con el `Set-AdfsRelyingPartyTrust` comando.
+
+``` powershell
+PS:\>Set-AdfsRelyingPartyTrust -DeviceAuthenticationMethod ClientTLS
+```
+
 >[!NOTE]
 > Al habilitar la autenticación de dispositivo (configuración `DeviceAuthenticationEnabled` a `$true`) significa que el `DeviceAuthenticationMethod` se establece implícitamente en `SignedToken`, que equivale a **PRT**.
 
@@ -60,8 +68,8 @@ PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationEnabled $true
 ``` powershell
 PS:\>Set-AdfsGlobalAuthenticationPolicy –DeviceAuthenticationMethod All
 ```
->[!NOTE]
->El método de autenticación de dispositivo predeterminado es `SignedToken`.  Otros valores son **PKeyAuth, *** ClientTLS,** y **todas**.
+> [!NOTE]
+> El método de autenticación de dispositivo predeterminado es `SignedToken`.  Otros valores son **PKeyAuth,** <strong>ClientTLS,</strong> y **todas**.
 
 Los significados de los `DeviceAuthenticationMethod` valores han cambiado ligeramente desde el lanzamiento de AD FS 2016.  Consulte la tabla siguiente para el significado de cada valor, según el nivel de actualización:
 
@@ -77,4 +85,4 @@ Los significados de los `DeviceAuthenticationMethod` valores han cambiado ligera
 ||Todos|PRT + PkeyAuth + clientTLS|
 
 ## <a name="see-also"></a>Vea también
-[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)
+[Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)

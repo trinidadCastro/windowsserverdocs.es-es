@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: ea7ecd52-4c12-4a49-92fd-b8c08cec42a9
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 5c74a9277af3853d709a8ecd58c1e53e1bccc719
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 009ded50b156162ad1f3397fc0708ef8075c6a6f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812516"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446836"
 ---
 # <a name="step-3-configure-the-multisite-deployment"></a>Paso 3 configurar la implementación multisitio
 
@@ -67,7 +67,7 @@ Después de configurar la infraestructura de multisitio, siga estos pasos para c
 11.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
   
   
-![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
   
 Los pasos 1-3 deben realizarse manualmente y no se realizan mediante este cmdlet de Windows PowerShell.  
@@ -183,7 +183,7 @@ Si ha seleccionado configurar el sitio Web servidor de ubicación de red en el s
   
 1.  En el servidor DNS: En el **iniciar** , escriba **dnsmgmt.msc**, y, a continuación, presione ENTRAR.  
   
-2.  En el panel izquierdo de la **el Administrador de DNS** de consola, abra la zona de búsqueda directa para la red interna. Haga clic en la zona correspondiente y haga clic en **Host nuevo (A o AAAA)**.  
+2.  En el panel izquierdo de la **el Administrador de DNS** de consola, abra la zona de búsqueda directa para la red interna. Haga clic en la zona correspondiente y haga clic en **Host nuevo (A o AAAA)** .  
   
 3.  En el **nuevo Host** cuadro de diálogo el **nombre (si está en blanco se usa el nombre del dominio primario)** , escriba el nombre que se usó para el servidor de ubicación de red para el primer servidor de acceso remoto. En el **dirección IP** cuadro, escriba la dirección IPv4 intranet del servidor de acceso remoto y, a continuación, haga clic en **agregar Host**. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
   
@@ -261,7 +261,7 @@ Para configurar una implementación multisitio, habilitar la funcionalidad de mu
   
 10. En el **Habilitar implementación multisitio** cuadro de diálogo, haga clic en **cerrar** y, a continuación, haga clic en el Asistente para habilitar implementación multisitio, **cerrar**.  
   
-![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -343,7 +343,7 @@ Después de habilitar el multisitio en su implementación, puede agregar puntos 
   
 16. Repita este procedimiento en el paso 2 para cada punto de entrada que desea agregar a la implementación multisitio.  
   
-![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-3-Configure-the-Multisite-Deployment/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 5a7252d0-6db8-4a9d-98ee-75082ecd2929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c21b890523ca61b8f0821692178d050bc11efd79
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af22b1bbc923b9a06e4aebb910690050af1b7492
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890816"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446634"
 ---
 # <a name="step-7-test-connectivity-when-returning-to-the-corpnet"></a>PASO 7 probar la conectividad al volver a la red corporativa
 
@@ -28,11 +28,11 @@ Muchos de los usuarios se moverán entre ubicaciones remotas y la red corporativ
   
 ### <a name="test-connectivity-on-client1"></a>Probar la conectividad en CLIENT1  
   
-1.  Apague CLIENT1 y, a continuación, desconecta CLIENT1 del conmutador virtual o subred Homenet y conectarlo a la subred de la red corporativa o un conmutador virtual. Activar CLIENT1 e iniciar sesión como corp\usuario1.  
+1. Apague CLIENT1 y, a continuación, desconecta CLIENT1 del conmutador virtual o subred Homenet y conectarlo a la subred de la red corporativa o un conmutador virtual. Activar CLIENT1 e iniciar sesión como corp\usuario1.  
   
-2.  Abra una ventana de Windows PowerShell con privilegios elevados, escriba **ipconfig/all**, y presione ENTRAR. La salida indicará que CLIENT1 tiene una dirección IP local y que no hay ningún activo 6to4, Teredo o IP-HTTPS túnel.  
+2. Abra una ventana de Windows PowerShell con privilegios elevados, escriba **ipconfig/all**, y presione ENTRAR. La salida indicará que CLIENT1 tiene una dirección IP local y que no hay ningún activo 6to4, Teredo o IP-HTTPS túnel.  
   
-3.  Probar la conectividad con el recurso compartido de red en APP2. En el **iniciar** , escriba**\\\APP2\Files**, y, a continuación, presione ENTRAR. Podrá abrir el archivo en esa carpeta.  
+3. Probar la conectividad con el recurso compartido de red en APP2. En el **iniciar** , escriba<strong>\\\APP2\Files</strong>, y, a continuación, presione ENTRAR. Podrá abrir el archivo en esa carpeta.  
   
 
 

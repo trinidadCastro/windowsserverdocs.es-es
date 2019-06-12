@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: bce4622983271bde06614ebc04418871490cff91
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 293534a2287fe0219643dacc88926018c37dbdcc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818896"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441770"
 ---
 # <a name="replace"></a>replace
 
@@ -39,7 +39,7 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<Drive1>:][\<Path1>]\<FileName>|Especifica la ubicación y el nombre del archivo de origen o un conjunto de archivos. *Nombre de archivo* es necesario y puede incluir caracteres comodín (**&#42;** y **?**).|
+|[\<Drive1>:][\<Path1>]\<FileName>|Especifica la ubicación y el nombre del archivo de origen o un conjunto de archivos. *Nombre de archivo* es necesario y puede incluir caracteres comodín ( **&#42;** y **?** ).|
 |[\<Drive2>:][\<Path2>]|Especifica la ubicación del archivo de destino. No se puede especificar un nombre de archivo para reemplazar los archivos. Si no especifica una unidad o ruta de acceso, **reemplazar** usa la unidad actual y el directorio como el destino.|
 |/a|Agrega nuevos archivos al directorio de destino en lugar de reemplazar los archivos existentes. No se puede usar esta opción de línea de comandos con el **/s** o **/u** opción de línea de comandos.|
 |/p|Solicita confirmación antes de reemplazar un archivo de destino o agregar un archivo de origen.|
@@ -51,25 +51,25 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 ## <a name="remarks"></a>Comentarios
 
--   Como **reemplazar** agrega o reemplaza archivos, el archivo se muestran los nombres en la pantalla. Después de **reemplazar** haya finalizado, se muestra una línea de resumen en uno de los siguientes formatos:  
-    ```
-    nnn files added
-    nnn files replaced
-    no file added
-    no file replaced
-    ```  
--   Si usas los disquetes y necesita cambiar discos durante la **reemplazar** operación, puede especificar el **/w** opción de línea de comandos para que **reemplazar** esperará para que pueda cambiar los discos.
--   No puede usar **reemplazar** para actualizar los archivos ocultos o archivos del sistema.
--   En la tabla siguiente se muestra los códigos de salida y una breve descripción de su significado:  
-    |Código de salida|Descripción|
-    |---------|-----------|
-    |0|El **reemplazar** comando reemplaza o agrega los archivos correctamente.|
-    |1|El **reemplazar** comando encontró una versión incorrecta de MS-DOS.|
-    |2|El **reemplazar** comando no encontró los archivos de origen.|
-    |3|El **reemplazar** comando no encontró la ruta de acceso de origen o destino.|
-    |5|El usuario no tiene acceso a los archivos que se va a reemplazar.|
-    |8|No hay memoria de sistema insuficiente para llevar a cabo el comando.|
-    |11|El usuario ha utilizado una sintaxis incorrecta en la línea de comandos.|
+- Como **reemplazar** agrega o reemplaza archivos, el archivo se muestran los nombres en la pantalla. Después de **reemplazar** haya finalizado, se muestra una línea de resumen en uno de los siguientes formatos:  
+  ```
+  nnn files added
+  nnn files replaced
+  no file added
+  no file replaced
+  ```  
+- Si usas los disquetes y necesita cambiar discos durante la **reemplazar** operación, puede especificar el **/w** opción de línea de comandos para que **reemplazar** esperará para que pueda cambiar los discos.
+- No puede usar **reemplazar** para actualizar los archivos ocultos o archivos del sistema.
+- En la tabla siguiente se muestra los códigos de salida y una breve descripción de su significado:  
+  |Código de salida|Descripción|
+  |---------|-----------|
+  |0|El **reemplazar** comando reemplaza o agrega los archivos correctamente.|
+  |1|El **reemplazar** comando encontró una versión incorrecta de MS-DOS.|
+  |2|El **reemplazar** comando no encontró los archivos de origen.|
+  |3|El **reemplazar** comando no encontró la ruta de acceso de origen o destino.|
+  |5|El usuario no tiene acceso a los archivos que se va a reemplazar.|
+  |8|No hay memoria de sistema insuficiente para llevar a cabo el comando.|
+  |11|El usuario ha utilizado una sintaxis incorrecta en la línea de comandos.|
 
 > [!NOTE]
 > Puede usar el parámetro ERRORLEVEL en el **si** línea de comandos en un programa por lotes para procesar los códigos de salida devueltos por **reemplazar**.

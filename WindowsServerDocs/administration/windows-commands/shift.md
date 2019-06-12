@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 52b3012a39409f9d48ae8aa7608e7bd0af5787d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e72b4be1b265d682d489cf372cdfe5ef54bb444d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858826"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441244"
 ---
 # <a name="shift"></a>shift
 
@@ -43,11 +43,11 @@ shift [/n <N>]
 
 ## <a name="remarks"></a>Comentarios
 
--   El **MAYÚS** comando cambia los valores de los parámetros del lote **%0** a través de **%9** mediante la copia de cada parámetro en el anterior, el valor de **%1** se copia en **%0**, el valor de **%2** se copia en **%1**, y así sucesivamente. Esto es útil para escribir un archivo por lotes que realiza la misma operación en cualquier número de parámetros.
--   Si se habilitan las extensiones de comando, el **MAYÚS** comando admite la **/n** opción de línea de comandos. El **/n** opción especifica que comience el desplazamiento en el argumento n, donde **N** es cualquier valor entre 0 y 8. Por ejemplo, **MAYÚS /2** cambiaría **%3** a **%2**, **%4** a **%3**, y así sucesivamente y dejar **%0** y **%1** afectados. Las extensiones de comando están habilitadas de forma predeterminada.
--   Puede usar el **MAYÚS** comando para crear un archivo por lotes que acepte más de 10 parámetros por lotes. Si especifica más de 10 parámetros en la línea de comandos, aquellos que aparecen después del décimo (**%9**) será desplazadas en un momento **%9**.
--   El **MAYÚS** comando no tiene ningún efecto el **% \*** por lotes de parámetro.
--   Hay versiones anteriores no **MAYÚS** comando. Después de implementar el **MAYÚS** comando, no se puede recuperar el parámetro de lote (**%0**) que existían antes de la tecla MAYÚS.
+- El **MAYÚS** comando cambia los valores de los parámetros del lote **%0** a través de **%9** mediante la copia de cada parámetro en el anterior, el valor de **%1** se copia en **%0**, el valor de **%2** se copia en **%1**, y así sucesivamente. Esto es útil para escribir un archivo por lotes que realiza la misma operación en cualquier número de parámetros.
+- Si se habilitan las extensiones de comando, el **MAYÚS** comando admite la **/n** opción de línea de comandos. El **/n** opción especifica que comience el desplazamiento en el argumento n, donde **N** es cualquier valor entre 0 y 8. Por ejemplo, **MAYÚS /2** cambiaría **%3** a **%2**, **%4** a **%3**, y así sucesivamente y dejar **%0** y **%1** afectados. Las extensiones de comando están habilitadas de forma predeterminada.
+- Puede usar el **MAYÚS** comando para crear un archivo por lotes que acepte más de 10 parámetros por lotes. Si especifica más de 10 parámetros en la línea de comandos, aquellos que aparecen después del décimo ( **%9**) será desplazadas en un momento **%9**.
+- El **MAYÚS** comando no tiene ningún efecto el **% \\** * por lotes de parámetro.
+- Hay versiones anteriores no **MAYÚS** comando. Después de implementar el **MAYÚS** comando, no se puede recuperar el parámetro de lote ( **%0**) que existían antes de la tecla MAYÚS.
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

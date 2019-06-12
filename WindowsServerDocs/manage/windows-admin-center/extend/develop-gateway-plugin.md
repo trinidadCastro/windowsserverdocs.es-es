@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 93cee5b8e3611a264119947103d22d9aa3b9a56b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 66e36a349fc6bd38a77ccf4f00d380788ea4b422
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834396"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445956"
 ---
 # <a name="develop-a-gateway-plugin"></a>Desarrollar un complemento de puerta de enlace
 
@@ -69,7 +69,7 @@ Una vez reiniciado el proceso de administración de Windows, podrá ejercer las 
 
 ### <a name="optional-attach-to-plugin-for-debugging"></a>Opcional: Adjuntar al complemento para la depuración
 
-En Visual Studio 2017, en el menú Depurar, seleccione "Asociar al proceso". En la siguiente ventana, desplácese por la lista procesos disponibles y haga clic en "Adjuntar" SMEDesktop.exe. Una vez se inicia el depurador, puede colocar un punto de interrupción en el código de función y, a continuación, ejercicio mediante el formato de dirección URL anterior. Para nuestro proyecto de ejemplo (nombre de la característica: "Uno de ejemplo") en la dirección URL es: "http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno"
+En Visual Studio 2017, en el menú Depurar, seleccione "Asociar al proceso". En la siguiente ventana, desplácese por la lista procesos disponibles y haga clic en "Adjuntar" SMEDesktop.exe. Una vez se inicia el depurador, puede colocar un punto de interrupción en el código de función y, a continuación, ejercicio mediante el formato de dirección URL anterior. Para nuestro proyecto de ejemplo (nombre de la característica: "Uno de ejemplo") en la dirección URL es: "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
 
 ## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>Crear una extensión de la herramienta con la CLI de Windows Admin Center ##
 
@@ -104,8 +104,8 @@ Una vez que se complete, ha configurado todo lo que necesita para cargar la nuev
 
 Ahora que ha creado una extensión con la CLI de Windows Admin Center, está listo para conectar su extensión con el complemento de puerta de enlace personalizada siguiendo estos pasos:
 
-- Agregar un [módulo vacío](guides\add-module.md)
-- Use su [complemento de puerta de enlace personalizada](guides\use-custom-gateway-plugin.md) en su extensión
+- Agregar un [módulo vacío](guides/add-module.md)
+- Use su [complemento de puerta de enlace personalizada](guides/use-custom-gateway-plugin.md) en su extensión
  
 ## <a name="build-and-side-load-your-extension"></a>Compilación y cargan la extensión
 

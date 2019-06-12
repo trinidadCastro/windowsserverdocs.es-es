@@ -9,12 +9,12 @@ ms.assetid: e9a8f2fd-48fe-4a90-9250-f6b32488b7a4
 ms.author: grcusanz
 author: shortpatti
 ms.date: 08/27/2018
-ms.openlocfilehash: 3374d1b79b84edd78dca3b61c73ea2db1dff9561
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7916377f58261d0ccaa3fa24f135fccca3d5e79b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854466"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446334"
 ---
 # <a name="upgrade-backup-and-restore-sdn-infrastructure"></a>Actualizar copia de seguridad y restauración de infraestructura de SDN
 
@@ -131,18 +131,18 @@ Copias de seguridad periódicas de la base de datos de la controladora de red ga
 
 **Procedimiento:**
 
-1.  Utilice el método de copia de seguridad de máquina virtual de su elección o usar Hyper-V para exportar una copia de cada máquina virtual de controlador de red.<p>La copia de seguridad de la máquina virtual de controlador de red garantiza que los certificados necesarios para descifrar la base de datos están presentes.  
+1. Utilice el método de copia de seguridad de máquina virtual de su elección o usar Hyper-V para exportar una copia de cada máquina virtual de controlador de red.<p>La copia de seguridad de la máquina virtual de controlador de red garantiza que los certificados necesarios para descifrar la base de datos están presentes.  
 
-2.  Si usa System Center Virtual Machine Manager (SCVMM), detenga el servicio SCVMM y realizar copias de seguridad a través de SQL Server.<p>El objetivo es asegurarse de que no hay actualizaciones obtengan realizan a SCVMM durante este tiempo, lo que podría crear una incoherencia entre la copia de seguridad de controladora de red y SCVMM.  
+2. Si usa System Center Virtual Machine Manager (SCVMM), detenga el servicio SCVMM y realizar copias de seguridad a través de SQL Server.<p>El objetivo es asegurarse de que no hay actualizaciones obtengan realizan a SCVMM durante este tiempo, lo que podría crear una incoherencia entre la copia de seguridad de controladora de red y SCVMM.  
 
    >[!IMPORTANT]
    >No vuelva a iniciar el servicio SCVMM hasta que se complete la copia de seguridad de la controladora de red.
 
-3.  Copia de seguridad de la base de datos de la controladora de red con el `new-networkcontrollerbackup` cmdlet.
+3. Copia de seguridad de la base de datos de la controladora de red con el `new-networkcontrollerbackup` cmdlet.
 
-4.  Comprobar la finalización y el éxito de la copia de seguridad con el `get-networkcontrollerbackup` cmdlet.
+4. Comprobar la finalización y el éxito de la copia de seguridad con el `get-networkcontrollerbackup` cmdlet.
 
-5.  Si se usa SCVMM, inicie el servicio SCVMM.
+5. Si se usa SCVMM, inicie el servicio SCVMM.
 
 
 

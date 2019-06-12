@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 31a5310ddb59831650f6b46108d071c120116dc1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f8a6448661861fdc9f97c66fb130bfc03d0ce72c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830936"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446977"
 ---
 #  <a name="step-2-configure-the-directaccess-vpn-server"></a>Paso 2 configurar el servidor VPN de DirectAccess
 
@@ -83,10 +83,10 @@ Cuando el sufijo de búsqueda lista no está vacía y tiene al menos un sufijo D
 
 Si las consultas de todos los FQDN formados como resultado de anexar e intentar cada sufijo de la lista no se resuelven, el proceso de consulta produce un error y genera el resultado "nombre no encontrado". 
 
->[!WARNING]
->Si se utiliza la lista de sufijos de dominio, los clientes siguen enviando consultas alternativas basadas en diferentes nombres de dominio DNS cuando una consulta no se responda o no se resuelva. Si un nombre se resuelve al utilizar una entrada de la lista de sufijos, no se intentarán las entradas de la lista que no se han usado. Por esta razón, lo más eficaz es ordenar la lista con los sufijos de dominio más utilizados en primer lugar.
-
->Las búsquedas de sufijos de nombres de dominio se usan únicamente cuando una entrada de nombre DNS no está completa. Para completar un nombre DNS, debe ponerse un punto (.) al final del nombre.
+> [!WARNING]
+> Si se utiliza la lista de sufijos de dominio, los clientes siguen enviando consultas alternativas basadas en diferentes nombres de dominio DNS cuando una consulta no se responda o no se resuelva. Si un nombre se resuelve al utilizar una entrada de la lista de sufijos, no se intentarán las entradas de la lista que no se han usado. Por esta razón, lo más eficaz es ordenar la lista con los sufijos de dominio más utilizados en primer lugar.
+> 
+> Las búsquedas de sufijos de nombres de dominio se usan únicamente cuando una entrada de nombre DNS no está completa. Para completar un nombre DNS, debe ponerse un punto (.) al final del nombre.
 
 ## <a name="gpo-configuration"></a>Configuración del GPO
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b6e679c6-4398-496c-88bc-115099f3a819
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 806c0cdeedb44db44fc0ec5218124f516a6f70e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9f76163e6b064ac3225ab4d755afd548e1cb720b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852556"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446413"
 ---
 # <a name="use-dns-policy-for-application-load-balancing-with-geo-location-awareness"></a>Uso de la directiva de DNS para equilibrio de carga de aplicación con reconocimiento de ubicación geográfica
 
@@ -45,7 +45,7 @@ Las secciones siguientes muestran cómo configurar la directiva de DNS para la a
 >[!IMPORTANT]
 >Las secciones siguientes incluyen ejemplos de comandos de Windows PowerShell que contienen valores de ejemplo para muchos parámetros. Asegúrese de sustituir los valores de ejemplo de estos comandos con los valores adecuados para su implementación antes de ejecutar estos comandos.
 
-###<a name="bkmk_clientsubnets"></a>Crear las subredes del cliente DNS
+### <a name="bkmk_clientsubnets"></a>Crear las subredes del cliente DNS
 
 En primer lugar debe identificar las subredes o espacio de direcciones IP de las regiones de Norteamérica y Europa.
 
@@ -61,7 +61,7 @@ Puede usar los siguientes comandos de Windows PowerShell para crear subredes de 
     
 Para obtener más información, consulte [agregar DnsServerClientSubnet](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverclientsubnet?view=win10-ps).
 
-###<a name="bkmk_zscopes2"></a>Creación de los ámbitos de zona
+### <a name="bkmk_zscopes2"></a>Creación de los ámbitos de zona
 
 Después de las subredes del cliente están en su lugar, debe dividir el contosogiftservices.com de zona en los ámbitos de zona diferente, cada uno de un centro de datos.
 
@@ -85,7 +85,7 @@ Puede usar los siguientes comandos de Windows PowerShell para crear ámbitos de 
 
 Para obtener más información, consulte [agregar DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-###<a name="bkmk_records2"></a>Agregar registros a los ámbitos de zona
+### <a name="bkmk_records2"></a>Agregar registros a los ámbitos de zona
 
 Ahora debe agregar los registros que representa el host del servidor web en los ámbitos de la zona.
 
@@ -98,7 +98,7 @@ En el escenario anterior, se agregaron los registros de los centros de datos de 
 
 Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-###<a name="bkmk_policies2"></a>Cree las directivas DNS
+### <a name="bkmk_policies2"></a>Cree las directivas DNS
 
 Una vez que ha creado las particiones (ámbitos de zona) y se han agregado registros, debe crear las directivas DNS que distribución las consultas entrantes entre estos ámbitos.
 

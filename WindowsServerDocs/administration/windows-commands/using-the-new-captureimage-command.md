@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7d9f402acb9904624bdb4193a4306d57b104eda8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 00f15ae7ee1a7ab1ac1f71599d2cae9bb51d921e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888616"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440416"
 ---
 # <a name="using-the-new-captureimage-command"></a>Con el comando nuevo Imagendecaptura
 
@@ -43,20 +43,19 @@ WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|[/ Server:\<nombre del servidor >]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usará el servidor local.|
-|/ Image:\<nombre de la imagen >|Especifica el nombre de la imagen de arranque de origen.|
-|/ Architecture: {x 86 | ia64 | x64}|Especifica la arquitectura de la imagen que se usará. Dado que puede tener el mismo nombre de imagen para las imágenes de arranque diferentes en distintas arquitecturas, especificar que esto garantiza que la imagen correcta se usa.|
-|[/Filename: \<Nombre de archivo >]|Si la imagen no se identifica por nombre, debe usar esta opción para especificar el nombre de archivo.|
-|/DestinationImage|Especifica la configuración de la imagen de destino. Especifique la configuración mediante las siguientes opciones:</br>-   /FilePath: \<Ruta de acceso y nombre del archivo > establece la ruta de acceso completa para la nueva imagen de captura.</br>-[/ Name: \<Nombre >]-establece el nombre para mostrar de la imagen. Si no se especifica ningún nombre para mostrar, se usará el nombre para mostrar de la imagen de origen.</br>-[/ Descripción: \<Descripción >]-establece la descripción de la imagen.</br>-[/ Overwrite: {Sí | No | Append}]: determina si el archivo especificado en **/DestinationImage** se debe sobrescribir si ya existe otro archivo con ese nombre en/filepath. **Sí** sobrescribe el archivo existente. **No** (valor predeterminado) provoca un error si ya existe otro archivo con el mismo nombre. **Anexar** adjunta la imagen generada como una nueva imagen en el archivo .wim existente.</br>-   [/UnattendFilePath: \<Ruta de acceso de archivo >]-establece la ruta de acceso completa y el nombre para el archivo de instalación desatendida de imagen de captura.|
+|        Parámetro         |                                                                                                                                                                                                                         Descripción                                                                                                                                                                                                                          |
+|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [/ Server:\<nombre del servidor >] |                                                                                                                                       Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usará el servidor local.                                                                                                                                        |
+|   / Image:\<nombre de la imagen >   |                                                                                                                                                                                                         Especifica el nombre de la imagen de arranque de origen.                                                                                                                                                                                                         |
+|   / Architecture: {x 86    |                                                                                                                                                                                                                             ia64                                                                                                                                                                                                                             |
+| [/Filename: \<Nombre de archivo >] |                                                                                                                                                                            Si la imagen no se identifica por nombre, debe usar esta opción para especificar el nombre de archivo.                                                                                                                                                                            |
+|    /DestinationImage     | Especifica la configuración de la imagen de destino. Especifique la configuración mediante las siguientes opciones:</br>-   /FilePath: \<Ruta de acceso y nombre del archivo > establece la ruta de acceso completa para la nueva imagen de captura.</br>-[/ Name: \<Nombre >]-establece el nombre para mostrar de la imagen. Si no se especifica ningún nombre para mostrar, se usará el nombre para mostrar de la imagen de origen.</br>-[/ Descripción: \<Descripción >]-establece la descripción de la imagen.</br>-[/ Overwrite: {Sí |
 
 ## <a name="BKMK_examples"></a>Ejemplos
 
 Para crear una imagen de captura y asígnele el nombre WinPECapture.wim, escriba:
 ```
 WDSUTIL /New-CaptureImage /Image:"WinPE boot image" /Architecture:x86 /DestinationImage /FilePath:"C:\Temp\WinPECapture.wim"
-
 ```
 Para crear una imagen de captura y aplicar la configuración especificada, escriba:
 ```

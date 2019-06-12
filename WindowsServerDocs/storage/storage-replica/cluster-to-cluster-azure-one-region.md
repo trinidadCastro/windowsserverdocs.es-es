@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 4371192d44878d3c953374b8d307b4d5612869f5
-ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
+ms.openlocfilehash: 9cf998087e23f45fe5981aef6d1ff5b7b4e85b9b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65461979"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447615"
 ---
 # <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Clúster al clúster de réplica de almacenamiento en la misma región de Azure
 
@@ -30,7 +30,7 @@ Primera parte
 Segunda parte
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
 
-![El diagrama de arquitectura que muestra la réplica de almacenamiento de clúster a clúster de Azure dentro de la misma región.](media\Cluster-to-cluster-azure-one-region\architecture.png)
+![El diagrama de arquitectura que muestra la réplica de almacenamiento de clúster a clúster de Azure dentro de la misma región.](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
 > Todos los ejemplos que se hace referencia son específicos de la ilustración anterior.
 
@@ -58,41 +58,43 @@ Segunda parte
 8. En nuestro ejemplo, el controlador de dominio **az2azDC** tiene la dirección IP privada (10.3.0.8). En la red Virtual (**az2az Vnet**) cambiar el servidor DNS 10.3.0.8. Conecte todos los nodos para "Contoso.com" y proporcionar los privilegios de administrador para "contosoadmin".
    - Inicie sesión como contosoadmin de todos los nodos. 
     
-9. Crear los clústeres (**SRAZC1**, **SRAZC2**). A continuación encontrará los comandos de PowerShell para nuestro ejemplo
-```PowerShell
+9. Crear los clústeres (**SRAZC1**, **SRAZC2**). 
+   A continuación encontrará los comandos de PowerShell para nuestro ejemplo
+   ```PowerShell
     New-Cluster -Name SRAZC1 -Node az2az1,az2az2 –StaticAddress 10.3.0.100
-```
-```PowerShell
+   ```
+   ```PowerShell
     New-Cluster -Name SRAZC2 -Node az2az3,az2az4 –StaticAddress 10.3.0.101
-```
+   ```
 10. Habilitar espacios de almacenamiento directo
-```PowerShell
+    ```PowerShell
     Enable-clusterS2D
-```   
+    ```   
    
-   Para cada clúster crear volúmenes y discos virtuales. Uno de los datos y otro para el registro. 
+    Para cada clúster crear volúmenes y discos virtuales. Uno de los datos y otro para el registro. 
    
 11. Creación de una SKU estándar interno [equilibrador de carga](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) para cada clúster (**azlbr1**,**azlbr2**). 
    
-   Proporcionar la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-   - azlbr1 => Frontend IP: 10.3.0.100 (seleccionar una dirección IP no utilizada de la red Virtual (**az2az Vnet**) subred)
-   - Crear grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociado.
-   - Cree el sondeo de estado: puerto 59999
-   - Crear regla de equilibrio de carga: Permitir que los puertos de alta disponibilidad, con IP flotante habilitada. 
+    Proporcionar la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
+    - azlbr1 => Frontend IP: 10.3.0.100 (seleccionar una dirección IP no utilizada de la red Virtual (**az2az Vnet**) subred)
+    - Crear grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociado.
+    - Cree el sondeo de estado: puerto 59999
+    - Crear regla de equilibrio de carga: Permitir que los puertos de alta disponibilidad, con IP flotante habilitada. 
    
-   Proporcionar la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-   - azlbr2 => Frontend IP: 10.3.0.101 (seleccionar una dirección IP no utilizada de la red Virtual (**az2az Vnet**) subred)
-   - Crear grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociado.
-   - Cree el sondeo de estado: puerto 59999
-   - Crear regla de equilibrio de carga: Permitir que los puertos de alta disponibilidad, con IP flotante habilitada. 
+    Proporcionar la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
+    - azlbr2 => Frontend IP: 10.3.0.101 (seleccionar una dirección IP no utilizada de la red Virtual (**az2az Vnet**) subred)
+    - Crear grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociado.
+    - Cree el sondeo de estado: puerto 59999
+    - Crear regla de equilibrio de carga: Permitir que los puertos de alta disponibilidad, con IP flotante habilitada. 
    
 12. En cada nodo del clúster, abra el puerto 59999 (sondeo de estado). 
    
     Ejecute el siguiente comando en cada nodo:
-```PowerShell
-netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
-```   
-13. Indicar al clúster para escuchar mensajes de sondeo de estado en el puerto 59999 y responder desde el nodo que posee actualmente este recurso. Ejecútelo una vez desde cualquier nodo de clúster, para cada clúster. 
+    ```PowerShell
+    netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
+    ```   
+13. Indicar al clúster para escuchar mensajes de sondeo de estado en el puerto 59999 y responder desde el nodo que posee actualmente este recurso. 
+    Ejecútelo una vez desde cualquier nodo de clúster, para cada clúster. 
     
     En nuestro ejemplo, asegúrese de cambiar el "ILBIP" según los valores de configuración. Ejecute el siguiente comando desde cualquier uno nodo **az2az1**/**az2az2**:
 
@@ -113,16 +115,16 @@ netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=al
     [int]$ProbePort = 59999
     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}  
     ```   
-   Asegúrese de que ambos clústeres pueden conectarse o comunicarse entre sí. 
+    Asegúrese de que ambos clústeres pueden conectarse o comunicarse entre sí. 
 
-   O bien, usar la característica de "Conectarse al clúster" en el Administrador de clústeres de conmutación por error para conectarse al otro clúster o comprobar que responde otro clúster de uno de los nodos del clúster actual.  
+    O bien, usar la característica de "Conectarse al clúster" en el Administrador de clústeres de conmutación por error para conectarse al otro clúster o comprobar que responde otro clúster de uno de los nodos del clúster actual.  
    
-   ```PowerShell
+    ```PowerShell
      Get-Cluster -Name SRAZC1 (ran from az2az3)
-   ```
-   ```PowerShell
+    ```
+    ```PowerShell
      Get-Cluster -Name SRAZC2 (ran from az2az1)
-   ```   
+    ```   
 
 15. Cree a los testigos de la nube para ambos clústeres. Cree dos [cuentas de almacenamiento](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM) (**az2azcw**, **az2azcw2**) en azure es para cada clúster en el mismo grupo de recursos (**SR-AZ2AZ**).
 
@@ -135,25 +137,25 @@ netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=al
 
 18. Configurar réplica de almacenamiento de clúster a clúster.
    
-   Conceder acceso de un clúster a otro clúster en ambas direcciones:
+    Conceder acceso de un clúster a otro clúster en ambas direcciones:
 
-   En nuestro ejemplo:
+    En nuestro ejemplo:
 
-   ```PowerShell
+    ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
-   ```
-Si usa Windows Server 2016, a continuación, también se ejecute este comando:
+    ```
+    Si usa Windows Server 2016, a continuación, también se ejecute este comando:
 
-   ```PowerShell
+    ```PowerShell
       Grant-SRAccess -ComputerName az2az3 -Cluster SRAZC1
-   ```   
+    ```   
    
 19. Crear SRPartnership para los clústeres:</ol>
 
- - Para clúster **SRAZC1**.
-   - Ubicación del volumen:-c:\ClusterStorage\DataDisk1
-   - Ubicación del registro:-g:
- - Para clúster **SRAZC2**
+    - Para clúster **SRAZC1**.
+    - Ubicación del volumen:-c:\ClusterStorage\DataDisk1
+    - Ubicación del registro:-g:
+    - Para clúster **SRAZC2**
     - Ubicación del volumen:-c:\ClusterStorage\DataDisk2
     - Ubicación del registro:-g:
 

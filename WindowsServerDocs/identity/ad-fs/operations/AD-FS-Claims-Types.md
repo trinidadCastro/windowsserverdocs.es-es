@@ -9,18 +9,18 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1e37aded450555d293806d1ed8903a51e3df9424
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0ffa4273a2c776a16f3ea0ce77d1b3a528481468
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839146"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445163"
 ---
-#<a name="client-access-policy-claim-types-in-ad-fs"></a>Directiva de acceso de cliente tipos de notificación de AD FS
+# <a name="client-access-policy-claim-types-in-ad-fs"></a>Directiva de acceso de cliente tipos de notificación de AD FS
 
 Para proporcionar información de contexto de solicitud adicionales, las directivas de acceso de cliente use los siguientes tipos de notificación, que AD FS genera a partir de la información de encabezado de solicitud de procesamiento.  Para obtener más información, consulte [el rol del motor de notificaciones de](../technical-reference/the-role-of-the-claims-engine.md).
 
-##<a name="x-ms-forwarded-client-ip"></a>X-MS-Forwarded-Client-IP
+## <a name="x-ms-forwarded-client-ip"></a>X-MS-Forwarded-Client-IP
 
 Tipo de notificación: `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`
 
@@ -32,8 +32,8 @@ Esta notificación de AD FS representa un "mejor intento" en determinar la direc
     >! [Nota] La dirección IP de un cliente en la red corporativa aparecerá como la dirección IP de interfaz externa de la puerta de enlace o proxy de salida de la organización.
 
 - Una o varias direcciones IP
-    - Si no se puede determinar la dirección IP del cliente de conexión de Exchange Online, establecerá el valor según el valor del encabezado x-forwarded-for, las solicitudes de un encabezado no estándar que puede incluirse en basado en HTTP y es compatible con muchos clientes, equilibradores de carga, y servidores proxy en el mercado.
-    - Varias direcciones IP que indica la dirección IP del cliente y la dirección de cada servidor proxy que pasa la solicitud estarán separadas por una coma.
+  - Si no se puede determinar la dirección IP del cliente de conexión de Exchange Online, establecerá el valor según el valor del encabezado x-forwarded-for, las solicitudes de un encabezado no estándar que puede incluirse en basado en HTTP y es compatible con muchos clientes, equilibradores de carga, y servidores proxy en el mercado.
+  - Varias direcciones IP que indica la dirección IP del cliente y la dirección de cada servidor proxy que pasa la solicitud estarán separadas por una coma.
 
     >! [Nota] Las direcciones IP relacionadas con la infraestructura de Exchange Online no estará presentes en la lista.
 

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e9a2b2162fcf11385a5a866372e57338df87c541
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e9a5b397127e9eb88352fb4d7bc28955023d4b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850596"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447215"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>Habilitar la enumeración basada en el acceso en un espacio de nombres
 
@@ -78,15 +78,15 @@ Puedes controlar los usuarios y grupos que pueden ver carpetas DFS individuales 
 
 ## <a name="to-control-folder-visibility-by-using-a-command-line"></a>Para controlar la visibilidad de carpeta mediante una línea de comandos
 
-1.  Abre una ventana del símbolo del sistema en un servidor que tenga el servicio de rol **Sistema de archivos distribuido** o la característica **Herramientas del sistema de archivos distribuido**.
+1. Abre una ventana del símbolo del sistema en un servidor que tenga el servicio de rol **Sistema de archivos distribuido** o la característica **Herramientas del sistema de archivos distribuido**.
 
-2.  Escriba el comando siguiente, donde *&lt;DFSPath&gt;* es la ruta de acceso de la carpeta DFS (vínculo), *< dominio\\cuenta >* es el nombre de la cuenta de usuario o grupo y *(...)*  se reemplaza por entradas de Control de acceso (ACE) adicionales:
+2. Escriba el comando siguiente, donde *&lt;DFSPath&gt;* es la ruta de acceso de la carpeta DFS (vínculo), *< dominio\\cuenta >* es el nombre de la cuenta de usuario o grupo y *(...)*  se reemplaza por entradas de Control de acceso (ACE) adicionales:
 
-    ```
-    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
-    ```
+   ```
+   dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
+   ```
 
-    Por ejemplo, para reemplazar los permisos existentes con los permisos que permite los administradores de dominio y CONTOSO\\instructores grupos Read (R) acceso a la \\contoso.office\public\training carpeta, escriba el siguiente comando:
+   Por ejemplo, para reemplazar los permisos existentes con los permisos que permite los administradores de dominio y CONTOSO\\instructores grupos Read (R) acceso a la \\contoso.office\public\training carpeta, escriba el siguiente comando:
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -103,7 +103,7 @@ Puedes controlar los usuarios y grupos que pueden ver carpetas DFS individuales 
 
 ## <a name="see-also"></a>Vea también
 
--   [Crear un Namespace DFS](create-a-dfs-namespace.md)
+-   [Crear un espacio de nombres DFS](create-a-dfs-namespace.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)
 -   [Instalación de DFS](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
 -   [Usar permisos heredados con enumeración basada en acceso](using-inherited-permissions-with-access-based-enumeration.md)

@@ -6,12 +6,12 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 454783a13b834ef705bd896155195750de2b183c
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: c15c33e31bf0bf7261097fbea110f2a0a788dab2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64772715"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439750"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuración de cuentas de clúster en Active Directory
 
@@ -60,12 +60,12 @@ En la tabla siguiente se describen los permisos necesarios para estas cuentas.
 <tr class="even">
 <td><p>Cuenta de nombre de clúster (cuenta de equipo del propio clúster)</p></td>
 <td><p>Cuando se ejecuta el Asistente para crear clúster, crea la cuenta de nombre de clúster en el contenedor predeterminado que se utiliza para las cuentas de equipo en el dominio. De forma predeterminada, la cuenta de nombre de clúster (como otras cuentas de equipo) puede crear hasta diez cuentas de equipo en el dominio.</p>
-<p>Si crea la cuenta de nombre de clúster (objeto de nombre de clúster) antes de crear el clúster (es decir, preconfigura la cuenta), debe concederle los permisos <strong>Crear objetos de equipo</strong> y <strong>Leer todas las propiedades</strong> en el contenedor que se utiliza para las cuentas de equipo en el dominio. También debe deshabilitar la cuenta y asignar <strong>Control total</strong> a la cuenta que utilizará el administrador que instala el clúster. Para obtener más información, vea [Pasos para preconfigurar la cuenta de nombre de clúster](#steps-for-prestaging-the-cluster-name-account), más adelante en esta guía.</p></td>
+<p>Si crea la cuenta de nombre de clúster (objeto de nombre de clúster) antes de crear el clúster (es decir, preconfigura la cuenta), debe concederle los permisos <strong>Crear objetos de equipo</strong> y <strong>Leer todas las propiedades</strong> en el contenedor que se utiliza para las cuentas de equipo en el dominio. También debe deshabilitar la cuenta y asignar <strong>Control total</strong> a la cuenta que utilizará el administrador que instala el clúster. Para obtener más información, vea <a href="#steps-for-prestaging-the-cluster-name-account" data-raw-source="[Steps for prestaging the cluster name account](#steps-for-prestaging-the-cluster-name-account)">Pasos para preconfigurar la cuenta de nombre de clúster</a>, más adelante en esta guía.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Cuenta de equipo de un servicio o aplicación en clúster</p></td>
 <td><p>Cuando el Asistente para alta disponibilidad es ejecutar (para crear un nuevo servicio en clúster o aplicación), en la mayoría casos, una cuenta de equipo para el servicio en clúster o aplicación se crea en Active Directory. La cuenta de nombre de clúster se concede los permisos necesarios para controlar esta cuenta. La excepción es una máquina virtual de Hyper-V en clúster: se crea ninguna cuenta de equipo para esto.</p>
-<p>Si preconfigura la cuenta de equipo para una aplicación o servicio en clúster, debe configurarlo con los permisos necesarios. Para obtener más información, vea [Pasos para preconfigurar una cuenta para un servicio o una aplicación en clúster](#steps-for-prestaging-an-account-for-a-clustered-service-or-application), más adelante en esta guía.</p></td>
+<p>Si preconfigura la cuenta de equipo para una aplicación o servicio en clúster, debe configurarlo con los permisos necesarios. Para obtener más información, vea <a href="#steps-for-prestaging-an-account-for-a-clustered-service-or-application" data-raw-source="[Steps for prestaging an account for a clustered service or application](#steps-for-prestaging-an-account-for-a-clustered-service-or-application)">Pasos para preconfigurar una cuenta para un servicio o una aplicación en clúster</a>, más adelante en esta guía.</p></td>
 </tr>
 </tbody>
 </table>
@@ -144,23 +144,23 @@ La pertenencia a grupos mínima necesaria para completar el procedimiento siguie
 <br>
 
 
-3.  Si la cuenta que se creó u obtuvo en el paso 1 es una cuenta de administrador de dominio, omita el resto de este procedimiento. De lo contrario, conceda a la cuenta los permisos **Crear objetos de equipo** y **Leer todas las propiedades** en el contenedor que se utiliza para las cuentas de equipo en el dominio:
+3. Si la cuenta que se creó u obtuvo en el paso 1 es una cuenta de administrador de dominio, omita el resto de este procedimiento. De lo contrario, conceda a la cuenta los permisos **Crear objetos de equipo** y **Leer todas las propiedades** en el contenedor que se utiliza para las cuentas de equipo en el dominio:
     
-    1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
+   1.  En un controlador de dominio, haga clic en **Inicio**, haga clic en **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**. Si aparece el cuadro de diálogo **Control de cuentas de usuario**, confirme que la acción que muestra es la que desea y, a continuación, haga clic en **Continuar**.  
           
-    2.  En el menú **Ver**, asegúrese de que está seleccionado **Características avanzadas**.  
+   2.  En el menú **Ver**, asegúrese de que está seleccionado **Características avanzadas**.  
           
-        Cuando se ha seleccionado **Características avanzadas**, puede ver la pestaña **Seguridad** en las propiedades de cuentas (objetos) en **Usuarios y equipos de Active Directory**.  
+       Cuando se ha seleccionado **Características avanzadas**, puede ver la pestaña **Seguridad** en las propiedades de cuentas (objetos) en **Usuarios y equipos de Active Directory**.  
           
-    3.  Haga clic con el botón secundario en el contenedor predeterminado **Equipos** o en el contenedor predeterminado donde se crean las cuentas de equipo en su dominio y, a continuación, haga clic en **Propiedades**. **Equipos** se encuentra en <b>equipos y usuarios de Active Directory /</b><i>nodo del dominio</i><b>Locations</b>.  
+   3.  Haga clic con el botón secundario en el contenedor predeterminado **Equipos** o en el contenedor predeterminado donde se crean las cuentas de equipo en su dominio y, a continuación, haga clic en **Propiedades**. **Equipos** se encuentra en <b>equipos y usuarios de Active Directory /</b><i>nodo del dominio</i><b>Locations</b>.  
           
-    4.  En la pestaña **Seguridad** , haga clic en **Opciones avanzadas**.  
+   4.  En la pestaña **Seguridad** , haga clic en **Opciones avanzadas**.  
           
-    5.  Haga clic en **Agregar**, escriba el nombre de la cuenta que se creó u obtuvo en el paso 1 y, a continuación, haga clic en **Aceptar**.  
+   5.  Haga clic en **Agregar**, escriba el nombre de la cuenta que se creó u obtuvo en el paso 1 y, a continuación, haga clic en **Aceptar**.  
           
-    6.  En el **entrada de permiso para *** contenedor* diálogo cuadro, busque la **crear objetos de equipo** y **leer todas las propiedades** permisos y asegúrese de que el **Permitir** está seleccionada la casilla de verificación para cada uno de ellos.  
+   6.  En el **entrada de permiso para *** contenedor* diálogo cuadro, busque la **crear objetos de equipo** y **leer todas las propiedades** permisos y asegúrese de que el **Permitir** está seleccionada la casilla de verificación para cada uno de ellos.  
           
-        ![](media/configure-ad-accounts/Cc731002.0a863ac5-2024-4f9f-8a4d-a419aff32fa0(WS.10).gif)
+       ![](media/configure-ad-accounts/Cc731002.0a863ac5-2024-4f9f-8a4d-a419aff32fa0(WS.10).gif)
 
 ## <a name="steps-for-prestaging-the-cluster-name-account"></a>Pasos para preconfigurar la cuenta de nombre de clúster
 
@@ -309,9 +309,9 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 <br>
 
 
-9.  Para la cuenta de nombre de clúster (también conocida como objeto de nombre de clúster o CNO), asegúrese de que está seleccionado **Permitir** para los permisos **Crear objetos de equipo** y **Leer todas las propiedades**.
+9. Para la cuenta de nombre de clúster (también conocida como objeto de nombre de clúster o CNO), asegúrese de que está seleccionado **Permitir** para los permisos **Crear objetos de equipo** y **Leer todas las propiedades**.
     
-    ![](media/configure-ad-accounts/Cc731002.f5977c4d-a62e-4b17-81e3-8c19ddca2078(WS.10).gif)
+   ![](media/configure-ad-accounts/Cc731002.f5977c4d-a62e-4b17-81e3-8c19ddca2078(WS.10).gif)
 
 10. Haga clic en **Aceptar** hasta volver al complemento **Usuarios y equipos de Active Directory**.
 
@@ -323,17 +323,17 @@ El requisito mínimo para completar este procedimiento es la pertenencia al grup
 
 14. En la pestaña **Seguridad**, confirme que la cuenta de nombre de clúster figura entre las cuentas que tienen permisos y selecciónela. Confirme que la cuenta de nombre de clúster tiene el permiso **Control total** (la casilla **Permitir** está activada). Si no lo tiene, agregue la cuenta de nombre de clúster a la lista y concédala el permiso **Control total**.
     
-    ![](media/configure-ad-accounts/Cc731002.2e614376-87a6-453a-81ba-90ff7ebc3fa2(WS.10).gif)
+   ![](media/configure-ad-accounts/Cc731002.2e614376-87a6-453a-81ba-90ff7ebc3fa2(WS.10).gif)
 
 15. Repita los pasos 13 y 14 para cada servicio y aplicación en clúster configurado en el clúster.
 
 16. Compruebe que no se ha alcanzado la cuota para todo el dominio para la creación de objetos de equipo (de forma predeterminada, 10), consulte con un administrador de dominio si es aplicable. Si todos los elementos anteriores de este procedimiento se han revisado y corregido, y si se ha alcanzado la cuota, considere la posibilidad de aumentar la cuota. Para cambiar la cuota:
     
-    1.  Abra un símbolo del sistema como administrador y ejecute **ADSIEdit.msc**.  
+   1.  Abra un símbolo del sistema como administrador y ejecute **ADSIEdit.msc**.  
           
-    2.  Haga clic con el botón secundario en **Editor ADSI**, haga clic en **Conectar con** y, a continuación, haga clic en **Aceptar**. El **Contexto de nomenclatura predeterminado** se agregará al árbol de consola.  
+   2.  Haga clic con el botón secundario en **Editor ADSI**, haga clic en **Conectar con** y, a continuación, haga clic en **Aceptar**. El **Contexto de nomenclatura predeterminado** se agregará al árbol de consola.  
           
-    3.  Haga doble clic en **Contexto de nomenclatura predeterminado**, haga clic con el botón secundario en el objeto de dominio que hay debajo de él y, a continuación, haga clic en **Propiedades**.  
+   3.  Haga doble clic en **Contexto de nomenclatura predeterminado**, haga clic con el botón secundario en el objeto de dominio que hay debajo de él y, a continuación, haga clic en **Propiedades**.  
           
-    4.  Vaya hasta **ms-DS-MachineAccountQuota**, selecciónelo, haga clic en **Editar**, cambie el valor y, a continuación, haga clic en **Aceptar**.
+   4.  Vaya hasta **ms-DS-MachineAccountQuota**, selecciónelo, haga clic en **Editar**, cambie el valor y, a continuación, haga clic en **Aceptar**.
 

@@ -8,12 +8,12 @@ ms.topic: article
 author: gawatu
 ms.date: 10/17/2018
 ms.assetid: ''
-ms.openlocfilehash: ba7454f58255ba7a66624a5c59b062da9f871063
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0f4fb73941c5d6667d3c13356b6f29178d73788f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865946"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447683"
 ---
 # <a name="mirror-accelerated-parity"></a>Paridad acelerada por reflejos
 
@@ -100,12 +100,12 @@ La compactación de ReFS aborda estos problemas de rendimiento, liberando espaci
 ### <a name="performance-counters"></a>Contadores de rendimiento
 
 ReFS mantiene contadores de rendimiento para ayudar a evaluar el rendimiento de la paridad acelerada por reflejos. 
--   Tal y como se describe anteriormente en la sección Escrituras en la paridad, ReFS escribirá directamente en la paridad cuando no pueda encontrar espacio libre en el reflejo. Por lo general, esto se produce cuando el nivel de reflejo se llena de forma más rápida que ReFS puede cambiar los datos a la paridad. En otras palabras, el cambio de ReFS no es capaz de seguir el ritmo de la velocidad de ingesta. Los siguientes contadores de rendimiento identifican si ReFS escribe directamente en la paridad:
-```
-ReFS\Data allocations slow tier/sec
-ReFS\Metadata allocations slow tier/sec
-```
--   Si estos contadores no están a cero, esto indica que ReFS no cambia los datos con la suficiente rapidez fuera del reflejo. Para ayudar a mitigar este problema, se puede cambiar la agresividad de cambio o aumentar el tamaño del nivel de reflejo.
+- Tal y como se describe anteriormente en la sección Escrituras en la paridad, ReFS escribirá directamente en la paridad cuando no pueda encontrar espacio libre en el reflejo. Por lo general, esto se produce cuando el nivel de reflejo se llena de forma más rápida que ReFS puede cambiar los datos a la paridad. En otras palabras, el cambio de ReFS no es capaz de seguir el ritmo de la velocidad de ingesta. Los siguientes contadores de rendimiento identifican si ReFS escribe directamente en la paridad:
+  ```
+  ReFS\Data allocations slow tier/sec
+  ReFS\Metadata allocations slow tier/sec
+  ```
+- Si estos contadores no están a cero, esto indica que ReFS no cambia los datos con la suficiente rapidez fuera del reflejo. Para ayudar a mitigar este problema, se puede cambiar la agresividad de cambio o aumentar el tamaño del nivel de reflejo.
 
 ### <a name="rotation-aggressiveness"></a>Agresividad de rotación
 

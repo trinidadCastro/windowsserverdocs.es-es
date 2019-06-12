@@ -12,12 +12,12 @@ ms.assetid: e427c66f-9571-4b8c-b65d-e7370d91544d
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f5d3e352cd022853a1602c67c3aaf2530cfc696
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e832d35f1ae3bbdba256b3531a22f93b69cadbb3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813646"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443393"
 ---
 # <a name="troubleshooting-nano-server"></a>Solución de problemas de Nano Server
 
@@ -36,15 +36,15 @@ Al arrancar Nano Server en una máquina virtual o en un equipo físico que tiene
   
 -   Use las teclas de flecha para desplazarse  
   
--   Use TAB para desplazarse a cualquier texto que comienza con **>**; a continuación, presione ENTRAR para seleccionar.  
+-   Use TAB para desplazarse a cualquier texto que comienza con **>** ; a continuación, presione ENTRAR para seleccionar.  
   
 -   Para retroceder una pantalla o página, presione ESC. Si se encuentra en la página de inicio, presione ESC para cerrará la sesión.  
   
 -   Algunas pantallas tienen capacidades adicionales que se muestran en la última línea de la pantalla. Por ejemplo, si explora un adaptador de red, F4 deshabilitará el adaptador de red.  
   
 La consola de recuperación permite ver y configurar adaptadores de red y la configuración TCP/IP, así como las reglas de firewall.
-> [!NOTE]  
-    > La Consola de recuperación solo admite funciones básicas de teclado. No se admiten las luces del teclado, las secciones de 10 teclas y el cambio de la distribución del teclado entre Bloq Mayús y Bloq num. Solo se admiten los teclados en inglés y el juego de caracteres.
+> [!NOTE]
+> La Consola de recuperación solo admite funciones básicas de teclado. No se admiten las luces del teclado, las secciones de 10 teclas y el cambio de la distribución del teclado entre Bloq Mayús y Bloq num. Solo se admiten los teclados en inglés y el juego de caracteres.
 
 ## <a name="accessing-nano-server-over-a-serial-port-with-emergency-management-services"></a>Acceso a Nano Server a través de un puerto serie con los Servicios de administración de emergencia  
 Los Servicios de administración de emergencia (EMS) permiten realizar la solución básica, obtener el estado de la red y abrir las sesiones de consola (incluidos CMD o PowerShell) mediante un emulador de terminal a través de un puerto serie. Esto reemplaza la necesidad de un teclado y un monitor para solucionar problemas de un servidor. Para obtener más información sobre EMS, vea [Emergency Management Services Technical Reference](https://technet.microsoft.com/library/cc784411(v=ws.10).aspx) (Referencia técnica de servicios de administración de emergencia).

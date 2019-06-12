@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 54b0e055d6cfde5e5c69540ac804a38cbceb1e59
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 231c8783032f51f607565922d90ea7f7eb877cfd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188767"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444690"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalizar encabezados de respuesta de seguridad HTTP con AD FS de 2019 
  
@@ -39,7 +39,7 @@ Antes de tratar los encabezados, echemos un vistazo a algunos escenarios de crea
 ## <a name="http-security-response-headers"></a>Encabezados de respuesta de seguridad HTTP 
 Los encabezados de respuesta se incluyen en la respuesta HTTP saliente enviada por AD FS en un explorador web. Los encabezados se pueden enumerar mediante la `Get-AdfsResponseHeaders` cmdlet tal y como se muestra a continuación.  
 
-![Respuesta de encabezado](media\customize-http-security-headers-ad-fs\header1.png)
+![Respuesta de encabezado](media/customize-http-security-headers-ad-fs/header1.png)
 
 El `ResponseHeaders` atributo en la captura de pantalla anterior identifica los encabezados de seguridad que se incluirán por AD FS en cada respuesta HTTP. Los encabezados de respuesta se enviarán solo si `ResponseHeadersEnabled` está establecido en `True` (valor predeterminado). El valor puede establecerse en `False` para impedir que cualquiera de los encabezados de seguridad incluidas en la respuesta HTTP de AD FS. Pero esto no se recomienda.  Para ello, use lo siguiente:
 
@@ -218,7 +218,7 @@ Set-AdfsResponseHeaders -SetHeaderName "TestHeader" -SetHeaderValue "TestHeaderV
 
 Una vez establecido, el encabezado nuevo se envía en la respuesta de AD FS (fiddler siguiente fragmento de código).  
  
-![Fiddler](media\customize-http-security-headers-ad-fs\header2.png)
+![Fiddler](media/customize-http-security-headers-ad-fs/header2.png)
 
 ## <a name="web-browswer-compatibility"></a>Compatibilidad de Web ya
 Use la tabla y los vínculos siguientes para determinar qué exploradores web son compatibles con cada uno de los encabezados de respuesta de seguridad.

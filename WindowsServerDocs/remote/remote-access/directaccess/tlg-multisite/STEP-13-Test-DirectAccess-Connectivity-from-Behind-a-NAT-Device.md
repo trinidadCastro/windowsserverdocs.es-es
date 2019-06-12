@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 796825c3-5e3e-4745-a921-25ab90b95ede
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e8a9324e7c5b72f60422b1263e76c7d5e14cccf4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d1661d43cd45614dfabc66fd9a737c55ab388ed
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880976"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446924"
 ---
 # <a name="step-13-test-directaccess-connectivity-from-behind-a-nat-device"></a>PASO 13 probar la conectividad de DirectAccess desde detrás de un dispositivo NAT
 
@@ -39,55 +39,55 @@ Antes de realizar estas pruebas, desconecta CLIENT1 y CLIENT2 del conmutador de 
   
 ## <a name="TeredoCLIENT1"></a>Probar la conectividad Teredo  
   
-1.  En CLIENT1, abra una ventana de Windows PowerShell con privilegios elevados.  
+1. En CLIENT1, abra una ventana de Windows PowerShell con privilegios elevados.  
   
-2.  Habilitar el adaptador Teredo, tipo **teredo de interfaz de netsh establece estado enterpriseclient**, y, a continuación, presione ENTRAR.  
+2. Habilitar el adaptador Teredo, tipo **teredo de interfaz de netsh establece estado enterpriseclient**, y, a continuación, presione ENTRAR.  
   
-3.  En la ventana de Windows PowerShell, escriba **ipconfig/all** y presione ENTRAR.  
+3. En la ventana de Windows PowerShell, escriba **ipconfig/all** y presione ENTRAR.  
   
-4.  Examina el resultado del comando ipconfig.  
+4. Examina el resultado del comando ipconfig.  
   
-    El equipo está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Cuando el cliente de DirectAccess está detrás de un dispositivo NAT y se le asigna una dirección IPv4 privada, la tecnología de transición IPv6 preferida es Teredo. Si observa la salida del comando ipconfig, debería ver una sección para el adaptador de túnel Teredo pseudo-interfaz de túnel y, a continuación, una descripción del adaptador de túnel Teredo de Microsoft, con una dirección IP que empieza por 2001: 0 coherente con un Teredo dirección. Debería ver la puerta de enlace predeterminada para el adaptador de túnel Teredo como '::'.  
+   El equipo está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Cuando el cliente de DirectAccess está detrás de un dispositivo NAT y se le asigna una dirección IPv4 privada, la tecnología de transición IPv6 preferida es Teredo. Si observa la salida del comando ipconfig, debería ver una sección para el adaptador de túnel Teredo pseudo-interfaz de túnel y, a continuación, una descripción del adaptador de túnel Teredo de Microsoft, con una dirección IP que empieza por 2001: 0 coherente con un Teredo dirección. Debería ver la puerta de enlace predeterminada para el adaptador de túnel Teredo como '::'.  
   
-5.  En la ventana de Windows PowerShell, escriba **ipconfig /flushdns** y presione ENTRAR.  
+5. En la ventana de Windows PowerShell, escriba **ipconfig /flushdns** y presione ENTRAR.  
   
-    De este modo, se vaciarán las entradas de resolución de nombres que todavía existan en la caché de DNS de cliente desde el momento en que el equipo cliente se conectó a Internet.  
+   De este modo, se vaciarán las entradas de resolución de nombres que todavía existan en la caché de DNS de cliente desde el momento en que el equipo cliente se conectó a Internet.  
   
-6.  En la ventana de Windows PowerShell, escriba **ping app1** y presione ENTRAR. Deberías ver respuestas de la dirección IPv6 de APP1, 2001:db8:1::3.  
+6. En la ventana de Windows PowerShell, escriba **ping app1** y presione ENTRAR. Deberías ver respuestas de la dirección IPv6 de APP1, 2001:db8:1::3.  
   
-7.  En la ventana de Windows PowerShell, escriba **ping app2** y presione ENTRAR. Debería ver las respuestas de la dirección NAT64 que EDGE1 asigna a APP2, que en este caso es fd**c9:9f4e:eb1b**: 7777::a00:4. Tenga en cuenta que los valores en negrita variará en cómo se genera la dirección.  
+7. En la ventana de Windows PowerShell, escriba **ping app2** y presione ENTRAR. Debería ver las respuestas de la dirección NAT64 que EDGE1 asigna a APP2, que en este caso es fd**c9:9f4e:eb1b**: 7777::a00:4. Tenga en cuenta que los valores en negrita variará en cómo se genera la dirección.  
   
-8.  En la ventana de Windows PowerShell, escriba **ping app1 de 2** y presione ENTRAR. Deberías ver respuestas de la dirección IPv6 de 2-APP1, 2001:db8:2::3.  
+8. En la ventana de Windows PowerShell, escriba **ping app1 de 2** y presione ENTRAR. Deberías ver respuestas de la dirección IPv6 de 2-APP1, 2001:db8:2::3.  
   
 9. Abra Internet Explorer, en la barra de direcciones de Internet Explorer, escriba **https://2-app1/** y presione ENTRAR. Verá el sitio Web de IIS predeterminado en APP1 de 2.  
   
 10. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione ENTRAR. Verás el sitio web predeterminado en APP2.  
   
-11. En el **iniciar** , escriba**\\\App2\Files**, y, a continuación, presione ENTRAR. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
+11. En el **iniciar** , escriba<strong>\\\App2\Files</strong>, y, a continuación, presione ENTRAR. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
   
 12. Repita este procedimiento en CLIENT2.  
   
 ## <a name="IPHTTPS_CLIENT1"></a>Probar la conectividad IP-HTTPS  
   
-1.  En CLIENT1, abra un elevado ventana de Windows PowerShell y escriba **teredo de interfaz de netsh establece el estado deshabilitado** y presione ENTRAR. Esto deshabilita Teredo en el equipo cliente y permite que el equipo cliente se configure a sí mismo para usar IP-HTTPS. Cuando se completa el comando, aparece la respuesta **Aceptar** .  
+1. En CLIENT1, abra un elevado ventana de Windows PowerShell y escriba **teredo de interfaz de netsh establece el estado deshabilitado** y presione ENTRAR. Esto deshabilita Teredo en el equipo cliente y permite que el equipo cliente se configure a sí mismo para usar IP-HTTPS. Cuando se completa el comando, aparece la respuesta **Aceptar** .  
   
-2.  En la ventana de Windows PowerShell, escriba **ipconfig/all** y presione ENTRAR.  
+2. En la ventana de Windows PowerShell, escriba **ipconfig/all** y presione ENTRAR.  
   
-3.  Examina el resultado del comando ipconfig. El equipo está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Teredo está deshabilitado y el cliente de DirectAccess vuelve a IP-HTTPS. Al examinar la salida del comando ipconfig, verás una sección para el adaptador de túnel iphttpsinterface con una dirección IP que comienza con 2001:db8:1:1000 o 2001:db8:2:2000 coherente con una dirección IP-HTTPS en función de los prefijos que estaban estableció al configurar DirectAccess. No verá ninguna puerta de enlace predeterminada para el adaptador de túnel IPHTTPSInterface.  
+3. Examina el resultado del comando ipconfig. El equipo está ahora conectado a Internet desde detrás de un dispositivo NAT y se le ha asignado una dirección IPv4 privada. Teredo está deshabilitado y el cliente de DirectAccess vuelve a IP-HTTPS. Al examinar la salida del comando ipconfig, verás una sección para el adaptador de túnel iphttpsinterface con una dirección IP que comienza con 2001:db8:1:1000 o 2001:db8:2:2000 coherente con una dirección IP-HTTPS en función de los prefijos que estaban estableció al configurar DirectAccess. No verá ninguna puerta de enlace predeterminada para el adaptador de túnel IPHTTPSInterface.  
   
-4.  En la ventana de Windows PowerShell, escriba **ipconfig /flushdns** y presione ENTRAR. De este modo, se vaciarán las entradas de resolución de nombres que todavía existan en la caché de DNS de cliente desde el momento en que el equipo cliente se conectó a corpnet.  
+4. En la ventana de Windows PowerShell, escriba **ipconfig /flushdns** y presione ENTRAR. De este modo, se vaciarán las entradas de resolución de nombres que todavía existan en la caché de DNS de cliente desde el momento en que el equipo cliente se conectó a corpnet.  
   
-5.  En la ventana de Windows PowerShell, escriba **ping app1** y presione ENTRAR. Deberías ver respuestas de la dirección IPv6 de APP1, 2001:db8:1::3.  
+5. En la ventana de Windows PowerShell, escriba **ping app1** y presione ENTRAR. Deberías ver respuestas de la dirección IPv6 de APP1, 2001:db8:1::3.  
   
-6.  En la ventana de Windows PowerShell, escriba **ping app2** y presione ENTRAR. Debería ver las respuestas de la dirección NAT64 que EDGE1 asigna a APP2, que en este caso es fd**c9:9f4e:eb1b**: 7777::a00:4. Tenga en cuenta que los valores en negrita variará en cómo se genera la dirección.  
+6. En la ventana de Windows PowerShell, escriba **ping app2** y presione ENTRAR. Debería ver las respuestas de la dirección NAT64 que EDGE1 asigna a APP2, que en este caso es fd**c9:9f4e:eb1b**: 7777::a00:4. Tenga en cuenta que los valores en negrita variará en cómo se genera la dirección.  
   
-7.  En la ventana de Windows PowerShell, escriba **ping app1 de 2** y presione ENTRAR. Deberías ver respuestas de la dirección IPv6 de 2-APP1, 2001:db8:2::3.  
+7. En la ventana de Windows PowerShell, escriba **ping app1 de 2** y presione ENTRAR. Deberías ver respuestas de la dirección IPv6 de 2-APP1, 2001:db8:2::3.  
   
-8.  Abra Internet Explorer, en la barra de direcciones de Internet Explorer, escriba **https://2-app1/** y presione ENTRAR. Verá el sitio Web de IIS predeterminado en APP1 de 2.  
+8. Abra Internet Explorer, en la barra de direcciones de Internet Explorer, escriba **https://2-app1/** y presione ENTRAR. Verá el sitio Web de IIS predeterminado en APP1 de 2.  
   
 9. En la barra de direcciones de Internet Explorer, escriba **https://app2/** y presione ENTRAR. Verás el sitio web predeterminado en APP2.  
   
-10. En el **iniciar** , escriba**\\\App2\Files**, y, a continuación, presione ENTRAR. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
+10. En el **iniciar** , escriba<strong>\\\App2\Files</strong>, y, a continuación, presione ENTRAR. Haz doble clic en el archivo Nuevo documento de texto. Esto demuestra que has sido capaz de conectarte a un servidor solo IPv4 utilizando SMB para obtener un recurso en un host solo IPv4.  
   
 11. Repita este procedimiento en CLIENT2.  
   

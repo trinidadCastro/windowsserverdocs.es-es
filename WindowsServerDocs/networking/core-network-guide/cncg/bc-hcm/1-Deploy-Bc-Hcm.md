@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4235231c-4732-4ea9-9330-2a8c8a616d39
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: dc2cb29f0f00c04c4208bd83d70bc4d966bbad00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 54991b343623b934118bb62af1bd91871a726996
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839356"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446484"
 ---
 # <a name="deploy-branchcache-hosted-cache-mode"></a>Implementar el modo de caché hospedada de BranchCache
 
@@ -63,8 +63,8 @@ Se trata de una guía complementaria a la Guía de red de Windows Server 2016 Co
     - Windows 8.1 Enterprise
     - Windows 8 Enterprise
 
->[!NOTE]
->En los siguientes sistemas operativos, BranchCache no admite la funcionalidad HTTP y SMB, pero es compatible con la funcionalidad de BranchCache BITS.
+> [!NOTE]
+> En los siguientes sistemas operativos, BranchCache no admite la funcionalidad HTTP y SMB, pero es compatible con la funcionalidad de BranchCache BITS.
 >     - Windows 10 Pro, BITS solamente es compatible con
 >     - Windows 8.1 Pro, BITS solamente es compatible con
 >     - Windows 8 Pro, BITS solamente es compatible con

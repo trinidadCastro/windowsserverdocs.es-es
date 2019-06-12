@@ -9,12 +9,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 2da1e33d24fa6d68815f4fbc0891be0616004856
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd9b89f34a3b4af8bb98d2399a524790aa65de0e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817476"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447485"
 ---
 # <a name="shielded-vms-for-tenants---creating-a-new-shielded-vm-on-premises-and-moving-it-to-a-guarded-fabric"></a>Blindadas de las máquinas virtuales blindadas para inquilinos: crear una nueva máquina virtual local y la mueve a un tejido protegido
 
@@ -76,66 +76,66 @@ Como parte del procedimiento, creará un Protector de clave que contiene dos ele
 
 Para ver una ilustración que muestra el Protector de clave, que es un elemento en un archivo de datos de blindaje, consulte [lo es con los datos de blindaje y por qué es necesario?](guarded-fabric-and-shielded-vms.md#what-is-shielding-data-and-why-is-it-necessary).
 
-1.  En un host de Hyper-V de inquilino para crear una máquina virtual nueva generación 2, ejecute el siguiente comando.
+1. En un host de Hyper-V de inquilino para crear una máquina virtual nueva generación 2, ejecute el siguiente comando.
 
-    Para &lt;ShieldedVMname&gt;, especifique un nombre para la máquina virtual, por ejemplo: **ShieldVM1**
+   Para &lt;ShieldedVMname&gt;, especifique un nombre para la máquina virtual, por ejemplo: **ShieldVM1**
     
-    Para &lt;VHDPath&gt;, especifique una ubicación para almacenar el VHDX de la máquina virtual, por ejemplo: **C:\\VMs\\ShieldVM1\\ShieldVM1.vhdx**
+   Para &lt;VHDPath&gt;, especifique una ubicación para almacenar el VHDX de la máquina virtual, por ejemplo: **C:\\VMs\\ShieldVM1\\ShieldVM1.vhdx**
     
-    Para &lt;nnGB&gt;, especifique un tamaño para VHDX, por ejemplo: **60GB**
+   Para &lt;nnGB&gt;, especifique un tamaño para VHDX, por ejemplo: **60GB**
 
-        New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
+       New-VM -Generation 2 -Name "<ShieldedVMname>" -NewVHDPath <VHDPath>.vhdx -NewVHDSizeBytes <nnGB>
 
-2.  Instalar un sistema operativo compatible (cliente de Windows Server 2012 o posterior, Windows 8 o superior) en la máquina virtual y habilitar la conexión a Escritorio remoto y la regla de firewall correspondiente. Registrar la dirección IP o nombre DNS; de la máquina virtual la necesitará para conectarse remotamente a él.
+2. Instalar un sistema operativo compatible (cliente de Windows Server 2012 o posterior, Windows 8 o superior) en la máquina virtual y habilitar la conexión a Escritorio remoto y la regla de firewall correspondiente. Registrar la dirección IP o nombre DNS; de la máquina virtual la necesitará para conectarse remotamente a él.
 
-3.  Use RDP para conectarse a la máquina virtual de forma remota y comprobar que RDP y el firewall están configurados correctamente. Como parte del proceso de blindaje, se deshabilitarán acceso mediante consola a la máquina virtual mediante Hyper-V, por lo que es importante asegurarse de que puede administrar el sistema de forma remota a través de la red.
+3. Use RDP para conectarse a la máquina virtual de forma remota y comprobar que RDP y el firewall están configurados correctamente. Como parte del proceso de blindaje, se deshabilitarán acceso mediante consola a la máquina virtual mediante Hyper-V, por lo que es importante asegurarse de que puede administrar el sistema de forma remota a través de la red.
 
-4.  Para crear un nuevo Protector de clave (descrito al principio de esta sección), ejecute el siguiente comando.
+4. Para crear un nuevo Protector de clave (descrito al principio de esta sección), ejecute el siguiente comando.
 
-    Para &lt;GuardianName&gt;, utilice el nombre especificado en el procedimiento anterior, por ejemplo: **HostingProvider1**
+   Para &lt;GuardianName&gt;, utilice el nombre especificado en el procedimiento anterior, por ejemplo: **HostingProvider1**
 
-    Incluir **- AllowUntrustedRoot** para permitir que los certificados autofirmados.
+   Incluir **- AllowUntrustedRoot** para permitir que los certificados autofirmados.
 
-        $Guardian = Get-HgsGuardian -Name '<GuardianName>'
+       $Guardian = Get-HgsGuardian -Name '<GuardianName>'
 
-        $Owner = New-HgsGuardian -Name 'Owner' -GenerateCertificates
+       $Owner = New-HgsGuardian -Name 'Owner' -GenerateCertificates
 
-        $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
+       $KP = New-HgsKeyProtector -Owner $Owner -Guardian $Guardian -AllowUntrustedRoot
 
-    Si desea más de un centro de datos poder ejecutar la máquina virtual blindada (por ejemplo, un sitio de recuperación ante desastres y un proveedor de nube pública), puede proporcionar una lista de protecciones para el **-Guardian** parámetro. Para obtener más información, consulte [New-HgsKeyProtector] (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps.
+   Si desea más de un centro de datos poder ejecutar la máquina virtual blindada (por ejemplo, un sitio de recuperación ante desastres y un proveedor de nube pública), puede proporcionar una lista de protecciones para el **-Guardian** parámetro. Para obtener más información, consulte [New-HgsKeyProtector] (https://docs.microsoft.com/powershell/module/hgsclient/new-hgskeyprotector?view=win10-ps.
 
-5.  Para habilitar el vTPM usando el Protector de clave, ejecute el siguiente comando. Para &lt;ShieldedVMname&gt;, use el mismo nombre de máquina virtual usado en pasos anteriores.
+5. Para habilitar el vTPM usando el Protector de clave, ejecute el siguiente comando. Para &lt;ShieldedVMname&gt;, use el mismo nombre de máquina virtual usado en pasos anteriores.
 
-        $VMName="<ShieldedVMname>"
+       $VMName="<ShieldedVMname>"
 
-        Stop-VM -Name $VMName -Force
+       Stop-VM -Name $VMName -Force
 
-        Set-VMKeyProtector -VMName $VMName -KeyProtector $KP.RawData
+       Set-VMKeyProtector -VMName $VMName -KeyProtector $KP.RawData
 
-        Set-VMSecurityPolicy -VMName $VMName -Shielded $true
+       Set-VMSecurityPolicy -VMName $VMName -Shielded $true
 
-        Enable-VMTPM -VMName $VMName
+       Enable-VMTPM -VMName $VMName
 
-6.  Para iniciar la máquina virtual para comprobar que el protector de clave es trabajar con certificados de propietario local, ejecute el siguiente comando.
+6. Para iniciar la máquina virtual para comprobar que el protector de clave es trabajar con certificados de propietario local, ejecute el siguiente comando.
 
-        Start-VM -Name $VMName
+       Start-VM -Name $VMName
 
-7.  Compruebe que la máquina virtual se ha iniciado en la consola de Hyper-V.
+7. Compruebe que la máquina virtual se ha iniciado en la consola de Hyper-V.
 
-8.  Use RDP para conectarse a la máquina virtual de forma remota y habilitar BitLocker en todas las particiones de todos los discos duros virtuales que están conectados a la máquina virtual blindada.
+8. Use RDP para conectarse a la máquina virtual de forma remota y habilitar BitLocker en todas las particiones de todos los discos duros virtuales que están conectados a la máquina virtual blindada.
 
-    > [!IMPORTANT]
-    > Antes de continuar con el paso siguiente, espere a que finalice en todas las particiones donde haya habilitado el cifrado de BitLocker.
+   > [!IMPORTANT]
+   > Antes de continuar con el paso siguiente, espere a que finalice en todas las particiones donde haya habilitado el cifrado de BitLocker.
 
-9.  Apague la máquina virtual cuando esté listo para moverla al tejido protegido.
+9. Apague la máquina virtual cuando esté listo para moverla al tejido protegido.
 
-10.  En el servidor de Hyper-V de inquilino, exporte la máquina virtual mediante la herramienta de su elección (Windows PowerShell o administrador de Hyper-V). A continuación, organizar los archivos que se copiarán en un host protegido mantenido por el proveedor de hospedaje o centro de datos empresarial.
+10. En el servidor de Hyper-V de inquilino, exporte la máquina virtual mediante la herramienta de su elección (Windows PowerShell o administrador de Hyper-V). A continuación, organizar los archivos que se copiarán en un host protegido mantenido por el proveedor de hospedaje o centro de datos empresarial.
 
-11.  **Para el centro de datos de empresa o de proveedor de hospedaje**:
+11. **Para el centro de datos de empresa o de proveedor de hospedaje**:
 
     Importar la máquina virtual blindada mediante el Administrador de Hyper-V o Windows PowerShell. Debe importar el archivo de configuración de máquina virtual desde el propietario de la máquina virtual con el fin de iniciar la máquina virtual. Esto es porque el protector de clave y TPM virtual de la máquina virtual se almacenan en el archivo de configuración. Si la máquina virtual está configurada para ejecutarse en el tejido protegido, debería poder iniciar correctamente.
 
 ## <a name="see-also"></a>Vea también
 
 - [Hospedaje de los pasos de configuración del proveedor de servicio para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [Las máquinas virtuales blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
+- [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

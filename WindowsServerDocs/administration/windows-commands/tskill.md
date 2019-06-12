@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59958481a7c832aca7bc25d7d4d3ebbf4e8ef80c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b582334d7b79b2badbb86818be1093b6a5f55080
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835046"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440816"
 ---
 # <a name="tskill"></a>tskill
 
@@ -36,6 +36,7 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 ```
 
 ## <a name="parameters"></a>Parámetros
+
 |Parámetro|Descripción|
 |-------|--------|
 |\<ProcessID>|Especifica el identificador del proceso que desea finalizar.|
@@ -47,19 +48,19 @@ tskill {<ProcessID> | <ProcessName>} [/server:<ServerName>] [/id:<SessionID> | /
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
--   Puede usar **tskill** para finalizar solamente los procesos que pertenecen a usted, a menos que sea un administrador. Los administradores tienen acceso total a todos **tskill** funciones y pueden finalizar los procesos que se ejecutan en otras sesiones de usuario.
--   Cuando finalizan todos los procesos que se ejecutan en una sesión, la sesión también termina.
--   Si usas el *ProcessName* y el **/Server: *** ServerName* parámetros, también debe especificar el **/ID: *** SessionID* o **/a** parámetro.
+- Puede usar **tskill** para finalizar solamente los procesos que pertenecen a usted, a menos que sea un administrador. Los administradores tienen acceso total a todos **tskill** funciones y pueden finalizar los procesos que se ejecutan en otras sesiones de usuario.
+- Cuando finalizan todos los procesos que se ejecutan en una sesión, la sesión también termina.
+- Si usas el *ProcessName* y **/Server:** <em>ServerName</em> parámetros, también debe especificar el **/ID:**  <em>SessionID</em> o **/a** parámetro.
 
 ## <a name="BKMK_examples"></a>Ejemplos
--   Para finalizar el proceso 6543, escriba:
-    ```
-    tskill 6543
-    ```
--   Para finalizar el proceso "explorer" que se ejecutan en la sesión 5, escriba:
-    ```
-    tskill explorer /id:5
-    ```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)
+- Para finalizar el proceso 6543, escriba:
+  ```
+  tskill 6543
+  ```
+- Para finalizar el proceso "explorer" que se ejecutan en la sesión 5, escriba:
+  ```
+  tskill explorer /id:5
+  ```
+  #### <a name="additional-references"></a>Referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)

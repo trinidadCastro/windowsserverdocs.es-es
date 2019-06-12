@@ -11,14 +11,14 @@ author: sakitong
 ms.author: coreyp
 manager: lizapo
 ms.date: 10/16/2017
-ms.openlocfilehash: b891f61ff2c930591c33805d0e3bc595ebf196f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 7331418c1926958da07c94bca9ff9f871134f3fa
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850496"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439872"
 ---
-#<a name="express-update-delivery-isv-support"></a>Soporte técnico de ISV de entrega de actualizaciones Express
+# <a name="express-update-delivery-isv-support"></a>Soporte técnico de ISV de entrega de actualizaciones Express
 
 >Se aplica a: Windows 10, Windows Server 2016
 
@@ -38,7 +38,7 @@ Desde la versión 7, Windows ha sido capaz de reducir el tamaño de las descarga
 
 -  **Los dispositivos de empresa administrados a través de [Windows Update para empresas](https://technet.microsoft.com/itpro/windows/manage/waas-manage-updates-wufb)** también aprovechan las ventajas de soporte técnico de entrega de actualizaciones Express sin realizar cambios en la configuración.
 
-##<a name="how-isvs-can-take-advantage-of-express"></a>Cómo los ISV pueden aprovechar las ventajas de Express
+## <a name="how-isvs-can-take-advantage-of-express"></a>Cómo los ISV pueden aprovechar las ventajas de Express
 
 Los ISV pueden utilizar WSUS y el cliente de Windows Update para admitir la entrega de actualización de Express. Microsoft recomienda a los tres pasos siguientes, cada uno describe con más detalle en las secciones siguientes:
 
@@ -64,7 +64,7 @@ WSUS actúa como la interfaz de Windows Update y administra todos los metadatos 
 
 ### <a name="BKMK_2"></a>Paso 2: Especificar y rellenar la caché de archivos de ISV 
 
-####<a name="specify-the-isv-file-cache"></a>Especificar la caché de archivos de ISV
+#### <a name="specify-the-isv-file-cache"></a>Especificar la caché de archivos de ISV
 
 Nueva configuración de directiva de grupo y administración de dispositivos móviles (MDM) de cliente detallada en el [ **referencia del proveedor de servicio de configuración** ](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/customize/mdm/configuration-service-provider-reference) definen la ubicación de la memoria caché de archivos de ISV.
 
@@ -82,10 +82,10 @@ Hay dos opciones al configurar la ubicación de descarga alternativo para la cac
  
     Este enfoque configura el cliente de Windows Update para que se descarguen las solicitudes al host local. Esto permite al agente de cliente de ISV controlar estas solicitudes y la ruta según corresponda satisfacer la solicitud de descarga.
 
->[!IMPORTANT]
->La memoria caché de archivos de ISV requiere lo siguiente:                                                          
-                                                                                                                                   >- El servidor debe ser conforme según la RFC de HTTP 1.1: <http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                                
-                                                                                                                                   >En concreto, debe admitir el servidor web                                                                                                                                                                                                                                       [ **HEAD** ](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) y [ **obtener** ](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) solicitudes<br>                                                                                                                                                                                                                                                                                                  -Solicitudes de intervalo de parcial<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   -Keep-alive<br>                                                                                                                                                                                                                                                                                                                                                                                                                            ¿-No use "Transfer-Encoding: fragmentada?                                                                                                 
+> [!IMPORTANT]
+> La memoria caché de archivos de ISV requiere lo siguiente:                                                          
+> - El servidor debe ser conforme según la RFC de HTTP 1.1: <http://www.w3.org/Protocols/rfc2616/rfc2616.html>                                                                                                                                                                
+> En concreto, debe admitir el servidor web                                                                                                                                                                                                                                       [ **HEAD** ](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) y [ **obtener** ](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.htm) solicitudes<br>                                                                                                                                                                                                                                                                                                  -Solicitudes de intervalo de parcial<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   -Keep-alive<br>                                                                                                                                                                                                                                                                                                                                                                                                                            -No use "Transfer-Encoding: fragmentada"                                                                                                 
 
 #### <a name="populate-the-isv-file-cache"></a>Rellenar la caché de archivos de ISV
 
@@ -95,15 +95,15 @@ La memoria caché de archivos de ISV se debe rellenar con los archivos asociados
 
 1. Use [las API de WSUS](https://msdn.microsoft.com/en-us/library/windows/desktop/microsoft.updateservices.administration.updatefile(v=vs.85).aspx) para tener acceso a la actualización de la ruta de acceso y nombre de archivo para el servicio Microsoft Update.
 
-    Los metadatos para cada actualización en el servidor WSUS contienen la actualización de la ruta de acceso y nombre de archivo en Microsoft Update como se indica a continuación (nombre de host de Microsoft Update en negrita, seguido de la ruta de acceso y nombre de archivo): **http://download.windowsupdate.com** /c/msdownload/actualización / software/updt/2016/09/windows10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74.msu
+    Los metadatos para cada actualización en el servidor WSUS contienen la actualización de la ruta de acceso y nombre de archivo en Microsoft Update como se indica a continuación (nombre de host de Microsoft Update en negrita, seguido de la ruta de acceso y nombre de archivo): **<http://download.windowsupdate.com>** /c/msdownload/actualización / software/updt/2016/09/windows10.0-kb3195781-x64_0c06079bccc35cba35a48bd2b1ec46f818bd2e74.msu
 
 2. Descargar archivos desde Microsoft Update y almacenarlos en la memoria caché de archivos de ISV mediante uno de estos dos métodos: 
 
- - Archivos de Store mediante el **misma ruta de carpeta como en el servicio MU**
+   - Archivos de Store mediante el **misma ruta de carpeta como en el servicio MU**
 
- - Archivos de Store mediante una **ruta de acceso de carpeta definido por el ISV**
+   - Archivos de Store mediante una **ruta de acceso de carpeta definido por el ISV**
 
-    Tiene la redirección HTTP server (o localhost) **HTTP GET** solicitudes, que hacen referencia a la MU ruta de acceso y nombre de la carpeta, en la ubicación del archivo de ISV.
+     Tiene la redirección HTTP server (o localhost) **HTTP GET** solicitudes, que hacen referencia a la MU ruta de acceso y nombre de la carpeta, en la ubicación del archivo de ISV.
 
 ### <a name="BKMK_3"></a>Paso 3: Configurar un agente de cliente de ISV para dirigir las operaciones de cliente de Windows Update
 
@@ -132,15 +132,15 @@ Estas son las dos ilustraciones de las opciones de flujo de trabajo de descarga 
 
 - Para las actualizaciones del sistema operativo que admiten Express, existen dos versiones de la carga de archivos almacenada en el servicio:
 
- - **Versión de archivo completo** --esencialmente reemplazando las versiones locales de los archivos binarios de actualización
+  - **Versión de archivo completo** --esencialmente reemplazando las versiones locales de los archivos binarios de actualización
 
- - **Versión Express** --que contiene los deltas necesaria para aplicar revisiones a los archivos binarios existentes en el dispositivo. 
+  - **Versión Express** --que contiene los deltas necesaria para aplicar revisiones a los archivos binarios existentes en el dispositivo. 
 
-   La versión de archivo completo y la versión Express se hace referencia en los metadatos de la actualización, que se ha descargado en el cliente como parte de la fase de análisis. 
+    La versión de archivo completo y la versión Express se hace referencia en los metadatos de la actualización, que se ha descargado en el cliente como parte de la fase de análisis. 
 
-   **Descarga rápida funciona del siguiente modo:**
+    **Descarga rápida funciona del siguiente modo:**
 
-   El cliente WU intentará descargar Express en primer lugar y en determinadas situaciones de otoño a todos los archivos de la si es necesario (por ejemplo, si va a través de un proxy que no es compatible con solicitudes de intervalo de bytes).
+    El cliente WU intentará descargar Express en primer lugar y en determinadas situaciones de otoño a todos los archivos de la si es necesario (por ejemplo, si va a través de un proxy que no es compatible con solicitudes de intervalo de bytes).
 
   1. Cuando el cliente WU inicia una descarga rápida, **el cliente WU primero descarga un código auxiliar**, que forma parte del paquete de Express.
 

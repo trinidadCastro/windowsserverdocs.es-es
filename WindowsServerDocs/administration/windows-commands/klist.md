@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b3d0591f9feb12782d0c77b6c786cfe17656ab2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d0b77aed5970c74181ba03da5e57e9b230313a15
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831166"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438114"
 ---
 # <a name="klist"></a>klist
 
@@ -120,52 +120,51 @@ Los parámetros muestran la siguiente información:
 
 ## <a name="BKMK_Examples"></a>Ejemplos
 
-1.  Al diagnosticar un 27 de Id. de evento al procesar un servicio de concesión de vales (TGS) de solicitud para el servidor de destino, la cuenta no tiene una clave adecuada para generar un vale de Kerberos. Puede usar Klist para consultar la caché del vale Kerberos para determinar si los vales no se encuentran, si la cuenta o el servidor de destino es un error, o si no se admite el tipo de cifrado.  
-    ```
-    klist 
-    ```  
-    ```
-    klist –li 0x3e7
-    ```  
-2.  Cuando diagnostique errores y desea conocer los detalles de cada incidencia vale de concesión que se almacena en caché en el equipo para una sesión de inicio de sesión, puede usar Klist para mostrar la información de TGT.  
-    ```
-    klist tgt
-    ```  
-3.  Si no se puede establecer una conexión y un diagnóstico más detallado puede tardar demasiado tiempo, puede purgar la caché de vales de Kerberos, cierre la sesión y, a continuación, volver a iniciar sesión.  
-    ```
-    klist purge
-    ```  
-    ```
-    klist purge –li 0x3e7
-    ```  
-4.  Cuando desea diagnosticar una sesión de inicio de sesión para un usuario o un servicio, puede usar el comando siguiente para encontrar el ID de registro que se usa en otros comandos Klist.  
-    ```
-    klist sessions
-    ```  
-5.  Cuando desea diagnosticar errores de delegación restringida de Kerberos, puede usar el siguiente comando para buscar el último error que se encontró.  
-    ```
-    klist kcd_cache
-    ```  
-6.  Cuando desea diagnosticar si un usuario o un servicio puede obtener un vale para un servidor, puede usar este comando para solicitar un vale para un SPN específico.  
-    ```
-    klist get host/%computername%
-    ```  
-7.  Al diagnosticar problemas de replicación entre controladores de dominio, normalmente se necesita el equipo cliente para tener como destino un controlador de dominio específico. En estos casos, puede usar el siguiente comando para establecer como destino el equipo cliente para ese controlador de dominio específico.  
-    ```
-    klist add_bind CONTOSO KDC.CONTOSO.COM
-    
-    ```  
-    ```
-    klist add_bind CONTOSO.COM KDC.CONTOSO.COM
-    ```  
-8.  Para consultar qué controladores de dominio de este equipo puede establecer contacto conectado recientemente, puede usar el siguiente comando.  
-    ```
-    klist query_bind
-    ```  
-9.  Cuando desee Kerberos para volver a detectar los controladores de dominio, puede usar el siguiente comando. Este comando también puede utilizarse para vaciar la memoria caché antes de crear nuevos enlaces de controlador de dominio con klist add_bind.  
-    ```
-    klist purge_bind
-    ```
+1. Al diagnosticar un 27 de Id. de evento al procesar un servicio de concesión de vales (TGS) de solicitud para el servidor de destino, la cuenta no tiene una clave adecuada para generar un vale de Kerberos. Puede usar Klist para consultar la caché del vale Kerberos para determinar si los vales no se encuentran, si la cuenta o el servidor de destino es un error, o si no se admite el tipo de cifrado.  
+   ```
+   klist 
+   ```  
+   ```
+   klist –li 0x3e7
+   ```  
+2. Cuando diagnostique errores y desea conocer los detalles de cada incidencia vale de concesión que se almacena en caché en el equipo para una sesión de inicio de sesión, puede usar Klist para mostrar la información de TGT.  
+   ```
+   klist tgt
+   ```  
+3. Si no se puede establecer una conexión y un diagnóstico más detallado puede tardar demasiado tiempo, puede purgar la caché de vales de Kerberos, cierre la sesión y, a continuación, volver a iniciar sesión.  
+   ```
+   klist purge
+   ```  
+   ```
+   klist purge –li 0x3e7
+   ```  
+4. Cuando desea diagnosticar una sesión de inicio de sesión para un usuario o un servicio, puede usar el comando siguiente para encontrar el ID de registro que se usa en otros comandos Klist.  
+   ```
+   klist sessions
+   ```  
+5. Cuando desea diagnosticar errores de delegación restringida de Kerberos, puede usar el siguiente comando para buscar el último error que se encontró.  
+   ```
+   klist kcd_cache
+   ```  
+6. Cuando desea diagnosticar si un usuario o un servicio puede obtener un vale para un servidor, puede usar este comando para solicitar un vale para un SPN específico.  
+   ```
+   klist get host/%computername%
+   ```  
+7. Al diagnosticar problemas de replicación entre controladores de dominio, normalmente se necesita el equipo cliente para tener como destino un controlador de dominio específico. En estos casos, puede usar el siguiente comando para establecer como destino el equipo cliente para ese controlador de dominio específico.  
+   ```
+   klist add_bind CONTOSO KDC.CONTOSO.COM
+   ```  
+   ```
+   klist add_bind CONTOSO.COM KDC.CONTOSO.COM
+   ```  
+8. Para consultar qué controladores de dominio de este equipo puede establecer contacto conectado recientemente, puede usar el siguiente comando.  
+   ```
+   klist query_bind
+   ```  
+9. Cuando desee Kerberos para volver a detectar los controladores de dominio, puede usar el siguiente comando. Este comando también puede utilizarse para vaciar la memoria caché antes de crear nuevos enlaces de controlador de dominio con klist add_bind.  
+   ```
+   klist purge_bind
+   ```
 
 #### <a name="additional-references"></a>Referencias adicionales
 

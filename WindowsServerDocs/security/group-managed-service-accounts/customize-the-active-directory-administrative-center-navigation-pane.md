@@ -11,12 +11,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: e7b1128d93912f724225905bedd38131f8aab0b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a4cab0246226cf22a1b7212b832a902783952407
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854846"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446505"
 ---
 # <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>Personalizar el panel de navegación del centro de administración de Active Directory
 
@@ -33,21 +33,21 @@ ms.locfileid: "59854846"
 
 ### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>Para personalizar el panel de navegación del centro de administración de Active Directory
 
-1.  En el panel de navegación del centro de administración de Active Directory, a la derecha\-haga clic en el nodo que desea modificar. Puede modificar la posición o el nombre del nodo, o puede crear un duplicado.
+1. En el panel de navegación del centro de administración de Active Directory, a la derecha\-haga clic en el nodo que desea modificar. Puede modificar la posición o el nombre del nodo, o puede crear un duplicado.
 
-2.  Haga clic en uno de los siguientes comandos:
+2. Haga clic en uno de los siguientes comandos:
 
-    -   **Rename**
+   -   **Rename**
 
-    -   **Duplicar nodo**
+   -   **Duplicar nodo**
 
-    -   **Quitar**
+   -   **Quitar**
 
-    -   **Mover hacia arriba**
+   -   **Mover hacia arriba**
 
-    -   **Mover hacia abajo**
+   -   **Mover hacia abajo**
 
- Mediante el uso de la vista de lista, puede sacar partido de los usados más recientemente \(MRU\) lista. La lista de elementos utilizados Recientemente aparece automáticamente en un nodo de navegación cuando visita al menos un contenedor en este nodo de navegación. También puede ver la lista MRU actual mediante la expansión de la barra de ruta de navegación en la parte superior de la ventana del centro de administración de Active Directory. La lista de elementos utilizados Recientemente siempre contiene los últimos tres contenedores que visitó en un nodo de navegación determinado. Cada vez que selecciona un contenedor determinado, éste se agrega al principio de la lista de elementos utilizados recientemente y se quita el último contenedor de dicha lista.
+   Mediante el uso de la vista de lista, puede sacar partido de los usados más recientemente \(MRU\) lista. La lista de elementos utilizados Recientemente aparece automáticamente en un nodo de navegación cuando visita al menos un contenedor en este nodo de navegación. También puede ver la lista MRU actual mediante la expansión de la barra de ruta de navegación en la parte superior de la ventana del centro de administración de Active Directory. La lista de elementos utilizados Recientemente siempre contiene los últimos tres contenedores que visitó en un nodo de navegación determinado. Cada vez que selecciona un contenedor determinado, éste se agrega al principio de la lista de elementos utilizados recientemente y se quita el último contenedor de dicha lista.
 
   
 

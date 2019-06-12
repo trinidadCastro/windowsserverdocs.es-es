@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a565a1d5fa1bc3ff57d1578fb54cfa4553e3bb26
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ebd65fb56114bff9e6ae4b6a76376561c686dfa
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818876"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439565"
 ---
 # <a name="diskraid"></a>diskraid
 
@@ -95,7 +95,7 @@ Especifica el número LUN para agregar como complejo al LUN actualmente seleccio
 > [!CAUTION]
 > Se eliminarán todos los datos en el LUN que se va a agregar como complejo.
 
-**tpgroup tportal=***n*
+**tpgroup tportal=** <em>n</em>
 
 Especifica el número de portal de destino iSCSI para agregar al grupo de portales de destino iSCSI seleccionado actualmente.
 
@@ -742,7 +742,7 @@ Especifica el tipo de inicio de sesión para realizar: **manual**, **persistente
 
 **persistente** : automáticamente usa el mismo inicio de sesión cuando se reinicia el equipo.
 
-**arranque** -(esta opción es para el desarrollo futuro y no se usa actualmente *.*)
+**arranque** -(esta opción es para el desarrollo futuro y no se usa actualmente<em>.</em>)
 
 **chap**
 

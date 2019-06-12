@@ -10,17 +10,17 @@ ms.topic: landing-page
 author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
-ms.openlocfilehash: 1ae36a2e1be1559094dd55dba41fa9a468118260
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 53c927f89fd3ccaa212c998f7102d0fdb9f41bde
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840066"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447941"
 ---
 # <a name="virtualization"></a>Virtualización
 
 >[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Buscas información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 <HR />
 
@@ -41,7 +41,7 @@ Virtualización en Windows Server es una de las tecnologías fundamentales neces
                     <div class="cardText">
                         <h3>Máquinas virtuales blindadas y tejido protegido</h3>
 <HR />
-                        <p>Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de un servicio guardián de Host \(HGS\) -normalmente, un clúster de tres nodos: más de uno o más hosts protegidos y un conjunto de máquinas virtuales blindadas.</p>
+                        <p>Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de servicio de protección de un Host (HGS): por lo general, un clúster de tres nodos: más de uno o más protegidos de los hosts y un conjunto de máquinas virtuales blindadas.</p>
                      </div>
                   </div>
               </div>

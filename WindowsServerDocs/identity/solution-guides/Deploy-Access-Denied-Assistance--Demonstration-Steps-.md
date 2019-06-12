@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 5201441ba884fe4658b917919e60c7d20530341b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 441dad92611e1a4a1135bd15bbcdfd05f38c1be3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835586"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445820"
 ---
 # <a name="deploy-access-denied-assistance-demonstration-steps"></a>Deploy Access-Denied Assistance (Demonstration Steps)
 
@@ -70,7 +70,7 @@ Puedes configurar la asistencia para acceso denegado para el domino mediante la 
   
     3.  Deja los demás ajustes de la configuración predeterminada.  
   
-![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -118,7 +118,7 @@ También se puede configurar la asistencia para acceso denegado individualmente 
   
 8.  Haga clic en **Aceptar**.  
   
-![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
   
@@ -142,7 +142,7 @@ Después de configurar la asistencia para acceso denegado, debes habilitarla par
   
 5.  Haga clic en **Habilitada**y, a continuación, haga clic en **Aceptar**.  
   
-![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato. 
   
@@ -181,7 +181,7 @@ También puede especificarse un mensaje de acceso denegado diferente para cada c
   
 7.  Haga clic en **Aceptar** y, a continuación, en **Cerrar**.  
   
-![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato. 
   
@@ -210,7 +210,7 @@ Debes configurar las notificaciones de correo electrónico en cada servidor de a
   
 6.  Haga clic en **Aceptar**.  
   
-![guías de soluciones](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![guías de solución](media/Deploy-Access-Denied-Assistance--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.
   
@@ -226,10 +226,10 @@ Puede comprobar que la asistencia de acceso denegado esté configurada correctam
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Escenario: Asistencia para acceso denegado](Scenario--Access-Denied-Assistance.md)  
+-   [Escenario: Asistencia de acceso denegado](Scenario--Access-Denied-Assistance.md)  
   
 -   [Plan para la asistencia para acceso denegado](assetId:///b169f0a4-8b97-4da8-ae4a-c8f1986d19e1)  
   
--   [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

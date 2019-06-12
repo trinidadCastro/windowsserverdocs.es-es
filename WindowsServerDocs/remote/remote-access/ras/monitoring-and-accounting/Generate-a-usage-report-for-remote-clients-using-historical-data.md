@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 0305467b-ce39-4532-a05a-2cc5ff946f55
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bb122990c1baf1db8a2edbbbecba8b8cdf8a264d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fa82ba8e2fc3fe19b9e73f602605d3ef76f4b9a5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833766"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446902"
 ---
 # <a name="generate-a-usage-report-for-remote-clients-using-historical-data"></a>Generar un informe de uso para clientes remotos mediante datos históricos
 
@@ -60,7 +60,7 @@ La consola de administración en el servidor de acceso remoto puede usarse para 
 >   
 > Cuentas de acceso remoto se basa en el concepto de **sesiones**. En contraposición con un **conexión**, un **sesión** se identifica mediante una combinación de nombre de usuario y dirección IP de cliente remoto. Por ejemplo, si está formado un túnel de equipo desde el cliente remoto, denominado CLIENTE1, una sesión se crea y almacena en la base de datos. Cuando pasa de un usuario con nombre User1 se conecta desde ese cliente más tarde (pero el túnel de equipo todavía está activo), la sesión se registra como una sesión independiente. La diferencia de las sesiones es conservar la distinción entre el túnel de equipo y el túnel de usuario.  
   
-![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../media/Generate-a-usage-report-for-remote-clients-using-historical-data/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

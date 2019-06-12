@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e3f9db4afb37452b4fd5d0229b385492b915fe45
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 7aa25602c71e5d114be7ae59c5e3ce168844d700
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859016"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446551"
 ---
 # <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>Habilitar la recuperación ante desastres de RDS con Azure Site Recovery
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
 Para asegurarse de que la implementación de RDS está configurada correctamente para la recuperación ante desastres, es preciso proteger todos los componentes que constituyen la implementación de RDS:
 
@@ -29,7 +29,7 @@ Para asegurarse de que la implementación de RDS está configurada correctamente
 - Nivel de SQL Server
 - Componentes de RDS
 - Componentes de red
- 
+
 ## <a name="configure-active-directory-and-dns-replication"></a>Configurar la replicación de Active Directory y DNS
 
 Necesita Active Directory en el sitio de recuperación ante desastres para la implementación de RDS para que funcione. Tiene dos opciones, según la complejidad de la implementación de RDS es:
@@ -47,9 +47,10 @@ Consulte [proteger SQL Server con la recuperación ante desastres de SQL Server 
 
 Según el tipo de implementación de RDS puede habilitar la protección de máquinas virtuales de diferentes componentes (como se muestra en la tabla siguiente) en Azure Site Recovery. Configure los elementos correspondientes de Azure Site Recovery en función de si están implementadas las máquinas virtuales en Hyper-V o VMWare.
 
-| Tipo de implementación                              | Pasos de protección                                                                                                                                                                                      |
-|----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Escritorio virtual personal (no administrado)         |  1. Asegúrese de que todos los hosts de virtualización están preparados con la función RDVH instalada.    </br>2. Agente de conexión.  </br>3. Escritorios personales. </br>4. Gold plantilla de máquina virtual. </br>5. Web Access, servidor de licencias y el servidor de puerta de enlace |
-| Escritorio virtual agrupado (administrado con sin UPD) |  1. Todos los hosts de virtualización están preparados con la función RDVH instalada.  </br>2. Agente de conexión.  </br>3. Gold plantilla de máquina virtual. </br>4. Web Access, servidor de licencias y el servidor de puerta de enlace.                                  |
-| RemoteApps y sesiones de escritorio (sin UPD)     |  1. Hosts de sesión.  </br>2. Agente de conexión. </br>3. Web Access, servidor de licencias y el servidor de puerta de enlace.                                                                                                          |                                                                                                                                      |
+
+|               Tipo de implementación                |                                                                                                     Pasos de protección                                                                                                     |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     Escritorio virtual personal (no administrado)     | 1. Asegúrese de que todos los hosts de virtualización están preparados con la función RDVH instalada.    </br>2. Agente de conexión.  </br>3. Escritorios personales. </br>4. Gold plantilla de máquina virtual. </br>5. Web Access, servidor de licencias y el servidor de puerta de enlace |
+| Escritorio virtual agrupado (administrado con sin UPD) |                    1. Todos los hosts de virtualización están preparados con la función RDVH instalada.  </br>2. Agente de conexión.  </br>3. Gold plantilla de máquina virtual. </br>4. Web Access, servidor de licencias y el servidor de puerta de enlace.                    |
+|   RemoteApps y sesiones de escritorio (sin UPD)   |                                                          1. Hosts de sesión.  </br>2. Agente de conexión. </br>3. Web Access, servidor de licencias y el servidor de puerta de enlace.                                                           |
 

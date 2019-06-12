@@ -12,12 +12,12 @@ ms.assetid: 6141fa69-5952-4e3c-a868-40ef3f4badd2
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7bfe1686ac84962cdb4ab1cde8d6ca5226cb9d44
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 999887f09c27c1df481cb5e46579942424a2847b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844356"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433624"
 ---
 # <a name="create-a-server-recovery-dvd-for-remotely-administered-servers"></a>Crear un DVD de recuperación del servidor para servidores administrados de forma remota
 
@@ -83,11 +83,11 @@ ms.locfileid: "59844356"
 ####  <a name="BKMK_Collecting"></a> Paso 2: Recopilar las imágenes de restablecimiento de fábrica y los archivos XML  
  Para restablecer un servidor a sus valores predeterminados de fábrica, es necesario capturar las dos imágenes siguientes:  
   
--   La imagen de la unidad del sistema  
+- La imagen de la unidad del sistema  
   
--   La partición reservada del sistema  
+- La partición reservada del sistema  
   
- Para capturar estas imágenes, se proporciona la herramienta GenDiskXML.exe. GenDiskXML.exe también recopila un archivo llamado disk.xml, que el proceso de recuperación utiliza para volver a crear la configuración del disco.  
+  Para capturar estas imágenes, se proporciona la herramienta GenDiskXML.exe. GenDiskXML.exe también recopila un archivo llamado disk.xml, que el proceso de recuperación utiliza para volver a crear la configuración del disco.  
   
 1.  Después de Sysprep, reinicie el sistema con cualquier versión de 64 bits de Windows PE.  
   
@@ -117,29 +117,29 @@ ms.locfileid: "59844356"
 > [!NOTE]
 >  Los nombres de archivo que se enumeran deben coincidir exactamente.  
   
-1.  La página del asistente incluye un vínculo de ayuda adicional. Si el archivo .chm existe, invalidará el vínculo redireccionable para la Ayuda web. El archivo de Ayuda se encuentra en:  
+1. La página del asistente incluye un vínculo de ayuda adicional. Si el archivo .chm existe, invalidará el vínculo redireccionable para la Ayuda web. El archivo de Ayuda se encuentra en:  
   
-     < raíz de DVD\>\\$OEM$ \Customization\\< nombre de referencia cultural\>\RestartHelp.chm  
+    < raíz de DVD\>\\$OEM$ \Customization\\< nombre de referencia cultural\>\RestartHelp.chm  
   
-2.  Este archivo contiene el texto que el cliente ve en la página del asistente. Dicho texto debe explicar cómo arrancar el servidor en modo de recuperación. El control se puede desplazar, lo que establece un límite práctico con respecto a la cantidad de texto que se puede agregar.  
+2. Este archivo contiene el texto que el cliente ve en la página del asistente. Dicho texto debe explicar cómo arrancar el servidor en modo de recuperación. El control se puede desplazar, lo que establece un límite práctico con respecto a la cantidad de texto que se puede agregar.  
   
-     El siguiente archivo se usa para sustituir la imagen de ejemplo del asistente y tiene que ver principalmente con la personalización de marca. Debe tratarse de un archivo .png. El tamaño de dicho archivo debe ser de 256 x 256 píxeles o aparecerá recortado cuando el asistente lo muestre.  
+    El siguiente archivo se usa para sustituir la imagen de ejemplo del asistente y tiene que ver principalmente con la personalización de marca. Debe tratarse de un archivo .png. El tamaño de dicho archivo debe ser de 256 x 256 píxeles o aparecerá recortado cuando el asistente lo muestre.  
   
-     < raíz de DVD\>\\$OEM$ \Customization\\< nombre de referencia cultural\>\RestartInstructions.rtf  
+    < raíz de DVD\>\\$OEM$ \Customization\\< nombre de referencia cultural\>\RestartInstructions.rtf  
   
-3.  < raíz de DVD\>\\$OEM$ \Customization\\< nombre de referencia cultural\>\ServerImage.png  
+3. < raíz de DVD\>\\$OEM$ \Customization\\< nombre de referencia cultural\>\ServerImage.png  
   
- Cuando vaya a convertir el DVD de recuperación del servidor para que admita varios idiomas, asegúrese de que:  
+   Cuando vaya a convertir el DVD de recuperación del servidor para que admita varios idiomas, asegúrese de que:  
   
-1.  Siempre debe tener la carpeta en-us. Si la aplicación de recuperación del servidor no encuentra los archivos de referencias culturales específicas que coinciden con el equipo cliente en que se ejecuta, revertirá a en-us.  
+4. Siempre debe tener la carpeta en-us. Si la aplicación de recuperación del servidor no encuentra los archivos de referencias culturales específicas que coinciden con el equipo cliente en que se ejecuta, revertirá a en-us.  
   
-2.  En cada carpeta de referencias culturales que cree, agregue los tres archivos de personalización (.png, .chm y .rtf).  
+5. En cada carpeta de referencias culturales que cree, agregue los tres archivos de personalización (.png, .chm y .rtf).  
   
-3.  Copie las dos carpetas de referencias culturales de paquetes de idioma\\< CultureName\>\Server Recovery en la raíz del DVD de recuperación del servidor. Por ejemplo: para que se pueda usar el español, se deben copiar las carpetas ES y ES-ES en el directorio raíz del DVD.  
+6. Copie las dos carpetas de referencias culturales de paquetes de idioma\\< CultureName\>\Server Recovery en la raíz del DVD de recuperación del servidor. Por ejemplo: para que se pueda usar el español, se deben copiar las carpetas ES y ES-ES en el directorio raíz del DVD.  
   
-4.  Finalice el archivo ISO.  
+7. Finalice el archivo ISO.  
   
- Entre los nombres de referencias culturales admitidos, se incluyen:  
+   Entre los nombres de referencias culturales admitidos, se incluyen:  
 
 |-|-|  
 |- cs-CZ<br /><br /> -de-DE<br /><br /> -en-US<br /><br /> - es-ES<br /><br /> - fr-FR<br /><br /> -hu-HU<br /><br /> -it-IT<br /><br /> - ja-JP<br /><br /> -ko-KR<br /><br /> -nl-NL |-pl-PL<br /><br /> -pt-BR<br /><br /> -pt-PT<br /><br /> - ru-RU<br /><br /> -sv-SE<br /><br /> - tr-TR<br /><br /> - zh-CN<br /><br /> - zh-HK<br /><br /> - zh-TW

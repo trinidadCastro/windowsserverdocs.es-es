@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ed11e702aeae66458f888e454c1bc1d1bc22630
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 757b218ad3a88cc10c4d1bcfed15a83bfd34cc74
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887086"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437035"
 ---
 # <a name="nlbmgr"></a>nlbmgr
 
@@ -30,13 +30,15 @@ Mediante el Administrador de equilibrio de carga de red, puede configurar y admi
 nlbmgr [/help] [/noping] [/hostlist <filename>] [/autorefresh <interval>]
 ```
 ### <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|/help|Muestra la ayuda en el símbolo del sistema.|
-|/ noping|Impide que el Administrador de equilibrio de carga de red hacer ping a los hosts antes de intentar ponerse en contacto con ellos a través de Windows Management Instrumentation (WMI). Use esta opción si ha deshabilitado el protocolo de mensajes de Control de Internet (ICMP) en todos los adaptadores de red disponible. Si el Administrador de equilibrio de carga de red intenta ponerse en contacto con un host que no está disponible, experimentarán una demora al utilizar esta opción.|
-|/hostlist <filename>|Carga los hosts especificados en el nombre de archivo en el Administrador de equilibrio de carga de red.|
-|/autorefresh <interval>|Hace que el Administrador de equilibrio de carga de red actualizar su información de host y clúster cada <interval> segundos. Si no se especifica ningún intervalo, la información se actualiza cada 60 segundos.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+
+|        Parámetro        |                                                                                                                                                                                                Descripción                                                                                                                                                                                                |
+|-------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|          /help          |                                                                                                                                                                                   Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                    |
+|         / noping         | Impide que el Administrador de equilibrio de carga de red hacer ping a los hosts antes de intentar ponerse en contacto con ellos a través de Windows Management Instrumentation (WMI). Use esta opción si ha deshabilitado el protocolo de mensajes de Control de Internet (ICMP) en todos los adaptadores de red disponible. Si el Administrador de equilibrio de carga de red intenta ponerse en contacto con un host que no está disponible, experimentarán una demora al utilizar esta opción. |
+|  /hostlist <filename>   |                                                                                                                                                                Carga los hosts especificados en el nombre de archivo en el Administrador de equilibrio de carga de red.                                                                                                                                                                 |
+| /autorefresh <interval> |                                                                                                          Hace que el Administrador de equilibrio de carga de red actualizar su información de host y clúster cada <interval> segundos. Si no se especifica ningún intervalo, la información se actualiza cada 60 segundos.                                                                                                          |
+|           /?            |                                                                                                                                                                                   Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                    |
+
 ## <a name="additional-references"></a>Referencias adicionales
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 

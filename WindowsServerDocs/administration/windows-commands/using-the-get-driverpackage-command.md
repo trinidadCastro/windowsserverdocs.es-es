@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6574177f1f0a8ead0cc2fa596380eb2c980f8d1f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0f123d281625140b3c4ba46316cb9b773bf5fee
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888526"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440513"
 ---
 # <a name="using-the-get-driverpackage-command"></a>Mediante el comando get-DriverPackage
 
@@ -34,12 +34,12 @@ WDSUTIL /Get-DriverPackage [/Server:<Server name>] {/DriverPackage:<Package Name
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|[/ Server:\<nombre del servidor >]|Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se usa el servidor local.|
-|[/DriverPackage:\<Name>]|Especifica el nombre del paquete de controladores para mostrar.|
-|[/ PackageId:\<Id. >]|Especifica el identificador de servicios de implementación de Windows del paquete de controladores para mostrar. Debe especificar el Id. Si el paquete de controladores no se identifica por nombre.|
-|[/ Mostrar: {controladores | Archivos | All}]|Indica qué información se va a mostrar (si se especifica). Si **/mostrar** no se especifica, el valor predeterminado es devolver solo el controlador de metadatos del paquete. **Controladores** muestra todos los controladores en el paquete. **Archivos** muestra la lista de archivos en el paquete. **Todos los** muestra los controladores, archivos y metadatos.|
+|        Parámetro         |                                                                           Descripción                                                                            |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [/ Server:\<nombre del servidor >] |              Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se usa el servidor local.               |
+| [/DriverPackage:\<Name>] |                                                        Especifica el nombre del paquete de controladores para mostrar.                                                         |
+|    [/ PackageId:\<Id. >]    | Especifica el identificador de servicios de implementación de Windows del paquete de controladores para mostrar. Debe especificar el Id. Si el paquete de controladores no se identifica por nombre. |
+|     [/ Mostrar: {controladores     |                                                                              Archivos                                                                               |
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

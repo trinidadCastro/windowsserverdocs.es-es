@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 69b433ee3e0f57398db1e7814d2de24df7dd1696
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 9205565486b75edcd550174fc89990a5aa2d69b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222922"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439851"
 ---
 # <a name="step-4-configure-group-policy-settings-for-automatic-updates"></a>Paso 4: Configuración de directivas de grupo para actualizaciones automáticas
 
@@ -420,10 +420,11 @@ Para usar esta configuración, debe establecer dos valores de nombre de servidor
 
 **Opciones:** Cuando se habilita esta configuración de directiva, debe especificar el servicio de actualización de la intranet que va a usar los clientes WSUS al detectar las actualizaciones y el servidor de estadísticas de Internet a la que actualiza a los clientes WSUS cargará las estadísticas. Valores de ejemplo:
 
-|Opción de configuración:|Valor de ejemplo:|
-|----------|---------|
-|Establecer el servicio de actualización de la intranet para detectar actualizaciones|http://wsus01:8530|
-|Establecer el servidor de estadísticas de la intranet|http://IntranetUpd01|
+
+|                    Opción de configuración:                    |    Valor de ejemplo:    |
+|-------------------------------------------------------|----------------------|
+| Establecer el servicio de actualización de la intranet para detectar actualizaciones |  http://wsus01:8530  |
+|          Establecer el servidor de estadísticas de la intranet           | http://IntranetUpd01 |
 
 #### <a name="turn-on-recommended-updates-via-automatic-updates"></a>Activar las actualizaciones recomendadas mediante actualizaciones automáticas
 Especifica si las actualizaciones automáticas ofrecerá importante y recomienda actualizaciones de WSUS.
@@ -586,7 +587,7 @@ Especifica si el **instalar actualizaciones y apagar** se permite la opción com
 |**Deshabilitado**|Especifica si el **instalar actualizaciones y apagar** opción será la opción predeterminada en el **apagar abajo Windows** cuadro de diálogo si hay actualizaciones disponibles para la instalación en el momento en que el usuario selecciona el apagado Opción para apagar el equipo.|
 
 **Opciones:** No hay ninguna opción para esta configuración.
-    
+
 #### <a name="remove-access-to-use-all-windows-update-features"></a>Desactivar el acceso al uso de todas las características de Windows Update
 Esta configuración le permite quitar el acceso de cliente WSUS en Windows Update.
 

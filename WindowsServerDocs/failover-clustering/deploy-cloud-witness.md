@@ -9,16 +9,16 @@ ms.topic: article
 author: JasonGerend
 ms.date: 01/18/2019
 description: Cómo usar Microsoft Azure para hospedar el testigo de un clúster de conmutación por error de Windows Server en la nube, también conocido como cómo implementar un testigo en la nube.
-ms.openlocfilehash: f7e1c84e54f08044a772f06e591588c1add33026
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 64fd39a37c63d24f8fc0eb4f45c8a7e9f6089013
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857986"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439784"
 ---
 # <a name="deploy-a-cloud-witness-for-a-failover-cluster"></a>Implementación de un testigo en la nube para un clúster de conmutación por error
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Testigo en la nube es un tipo de testigo de quórum de clúster de conmutación por error que usa Microsoft Azure para proporcionar un voto de quórum de clúster. En este tema se proporciona información general de la característica de testigo en la nube, los escenarios que admite e instrucciones sobre cómo configurar a un testigo en la nube para un clúster de conmutación por error.
 
@@ -134,14 +134,14 @@ Configuración del testigo en la nube es bien integrado en el Asistente de confi
     **Figura 8. Selección del testigo de quórum**  
 
 5. En el **configurar testigo en la nube** , escriba la siguiente información:  
-    1. (Parámetro requerido) Nombre de la cuenta de almacenamiento de Azure.  
-    2. (Parámetro requerido) Clave de acceso correspondiente a la cuenta de almacenamiento.  
-        1. Cuando se crea por primera vez, utilice la clave de acceso principal (consulte la figura 5)  
-        2. Al girar la clave de acceso principal, use la clave de acceso secundaria (consulte la figura 5)  
-    3. (Parámetro opcional) Si piensa utilizar un punto de conexión de servicio de Azure diferente (por ejemplo, el servicio de Microsoft Azure en China), a continuación, actualice el nombre del servidor de punto de conexión.  
+   1. (Parámetro requerido) Nombre de la cuenta de almacenamiento de Azure.  
+   2. (Parámetro requerido) Clave de acceso correspondiente a la cuenta de almacenamiento.  
+       1. Cuando se crea por primera vez, utilice la clave de acceso principal (consulte la figura 5)  
+       2. Al girar la clave de acceso principal, use la clave de acceso secundaria (consulte la figura 5)  
+   3. (Parámetro opcional) Si piensa utilizar un punto de conexión de servicio de Azure diferente (por ejemplo, el servicio de Microsoft Azure en China), a continuación, actualice el nombre del servidor de punto de conexión.  
 
-    ![Instantánea del panel de configuración de testigo en la nube en el Asistente para Cuórum de clúster](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
-    **Figura 9: Configure el testigo en la nube**
+      ![Instantánea del panel de configuración de testigo en la nube en el Asistente para Cuórum de clúster](media/Deploy-a-Cloud-Witness-for-a-Failover-Cluster/CloudWitness_10.png)  
+      **Figura 9: Configure el testigo en la nube**
 
 6. Tras la correcta configuración del testigo en la nube, puede ver el recurso de testigo recién creado en el Administrador de clústeres de conmutación por error de complemento (Véase la figura 10).
 

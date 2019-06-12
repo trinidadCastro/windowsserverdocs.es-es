@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 7042a501e69a69b613979229ce2e4a9d2c3e0915
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b2e237cee6eac6be809add37a2ac29fdf1c92118
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889686"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446496"
 ---
 # <a name="wireless-access-deployment"></a>Implementación de acceso inalámbrico
 
@@ -64,7 +64,7 @@ Este procedimiento enumera los elementos que normalmente se configura un AP inal
 
 - **Cifrado**. Especificar WPA2\-Enterprise \(preferido\) o WPA\-Enterprise y cualquier AES \(preferido\) o cifrado TKIP, dependiendo de qué versiones son compatibles con su adaptadores de red del equipo cliente inalámbrico.
 
-- **Inalámbrica de la dirección IP PA \(estático\)**. En cada punto de acceso, configurar una dirección IP estática única que se encuentre dentro del intervalo de exclusión del ámbito DHCP para la subred. Con una dirección que se excluye de la asignación DHCP impide que el servidor DHCP asigna la misma dirección IP a un equipo u otro dispositivo.
+- **Inalámbrica de la dirección IP PA \(estático\)** . En cada punto de acceso, configurar una dirección IP estática única que se encuentre dentro del intervalo de exclusión del ámbito DHCP para la subred. Con una dirección que se excluye de la asignación DHCP impide que el servidor DHCP asigna la misma dirección IP a un equipo u otro dispositivo.
 
 - **Máscara de subred**. Configure esto para que coincida con la configuración de máscara de subred de la LAN a la que se ha conectado el AP inalámbrico.  
 
@@ -79,7 +79,7 @@ Este procedimiento enumera los elementos que normalmente se configura un AP inal
 
 - **Dirección IP del servidor RADIUS**. Escriba la dirección IP del servidor que ejecuta NPS.
 
-- **El puerto UDP\(s\)**. De forma predeterminada, NPS usa los puertos UDP 1812 y 1645 para los mensajes de autenticación y puertos UDP 1813 y 1646 para los mensajes de cuentas. Se recomienda usar estos mismos puertos UDP en tus AP, pero si tiene una razón válida para usar puertos diferentes, asegúrese de que no sólo configurar los puntos de acceso con los números de puerto nuevas pero también volver a configurar todos los NPSs a usar los mismos números de puerto como los puntos de acceso. Si los puntos de acceso y el NPSs no están configurados con los mismos puertos UDP, NPS no puede recibir ni procesar solicitudes de conexión de los puntos de acceso y se producirá un error en todos los intentos de conexión inalámbrica de la red.
+- **El puerto UDP\(s\)** . De forma predeterminada, NPS usa los puertos UDP 1812 y 1645 para los mensajes de autenticación y puertos UDP 1813 y 1646 para los mensajes de cuentas. Se recomienda usar estos mismos puertos UDP en tus AP, pero si tiene una razón válida para usar puertos diferentes, asegúrese de que no sólo configurar los puntos de acceso con los números de puerto nuevas pero también volver a configurar todos los NPSs a usar los mismos números de puerto como los puntos de acceso. Si los puntos de acceso y el NPSs no están configurados con los mismos puertos UDP, NPS no puede recibir ni procesar solicitudes de conexión de los puntos de acceso y se producirá un error en todos los intentos de conexión inalámbrica de la red.
 
 - **Los VSA**. Algunos puntos de acceso inalámbricos requieren proveedor\-atributos específicos \(VSA\) para proporcionar funcionalidad de AP inalámbrica completa. Los VSA se agregan en la directiva de red NPS.
 
@@ -246,7 +246,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
 
 4. En el**propiedades de perfil nuevo** cuadro de diálogo el **conexión** ficha la **nombre del perfil** , escriba un nombre nuevo para el perfil. Por ejemplo, escriba **ejemplo.com WLAN perfil para Windows 10**.
 
-5. En **nombre de red\(s\) \(SSID\)**, escriba el SSID que se corresponde con el SSID configurado en tus AP inalámbricos y, a continuación, haga clic en **agregar**.
+5. En **nombre de red\(s\) \(SSID\)** , escriba el SSID que se corresponde con el SSID configurado en tus AP inalámbricos y, a continuación, haga clic en **agregar**.
 
     Si tu implementación utiliza varios SSID y cada AP inalámbrico usa la misma configuración de seguridad inalámbrica, repite este paso para agregar el SSID a cada AP inalámbrico al que desees aplicar este perfil.
 
@@ -289,7 +289,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
     > [!NOTE]  
     > Esta configuración limita las CA raíz en las que confían los clientes a las CA seleccionadas. Si no se selecciona ninguna CA raíz de confianza, a continuación, los clientes confiarán en que todas las CA que se muestran en su almacén de certificados de entidades de certificación raíz de confianza raíz.  
 
-15. En el **Seleccionar método de autenticación** , seleccione **contraseña segura \(EAP\-MS\-CHAP v2\)**.
+15. En el **Seleccionar método de autenticación** , seleccione **contraseña segura \(EAP\-MS\-CHAP v2\)** .
 
 16. Haga clic en **configurar**. En el **propiedades de EAP MSCHAPv2** diálogo cuadro, compruebe **usar automáticamente mi nombre de inicio de sesión de Windows y contraseña \(y dominio, si existiera\)**  está seleccionada y haga clic en  **Aceptar**.
 
@@ -299,9 +299,9 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
 
 19. Para especificar que la identidad del usuario se enmascara en la primera fase de autenticación, seleccione **Habilitar privacidad de identidad**y en el cuadro de texto, escriba un nombre de identidad anónima o dejar en blanco el cuadro de texto.
 
-    >[! NOTAS]
-    >- Debe crearse la directiva NPS para conexiones inalámbricas 802.1X con NPS **directiva de solicitud de conexión**. Si se crea la directiva NPS mediante el uso de NPS **directiva de red**, privacidad de identidad no funcionará.
-    >- Ciertos métodos EAP proporciona privacidad de identidad EAP donde vacía o una identidad anónima \(diferente de la identidad real\) se envía como respuesta a la solicitud de identidad EAP. PEAP envía la identidad dos veces durante la autenticación. En la primera fase, la identidad se envía en texto sin formato y se usa esta identidad para fines de enrutamiento, no para la autenticación de cliente. La identidad real, utilizado para la autenticación, se envía durante la segunda fase de la autenticación en el túnel seguro que se establece en la primera fase. Si **Habilitar privacidad de identidad** está activada la casilla, el nombre de usuario se sustituye por la entrada especificada en el cuadro de texto. Por ejemplo, suponga **Habilitar privacidad de identidad** está seleccionada y el alias de privacidad de identidad **anónimo** se especifica en el cuadro de texto. Para un usuario con un alias de la identidad real **jdoe@example.com**, se cambiará la identidad enviada en la primera fase de autenticación a **anonymous@example.com**. No se modifica la parte del dominio Kerberos de la identidad de la fase 1 ya que se utiliza para fines de enrutamiento.  
+    > [! NOTAS]
+    > - Debe crearse la directiva NPS para conexiones inalámbricas 802.1X con NPS **directiva de solicitud de conexión**. Si se crea la directiva NPS mediante el uso de NPS **directiva de red**, privacidad de identidad no funcionará.
+    > - Ciertos métodos EAP proporciona privacidad de identidad EAP donde vacía o una identidad anónima \(diferente de la identidad real\) se envía como respuesta a la solicitud de identidad EAP. PEAP envía la identidad dos veces durante la autenticación. En la primera fase, la identidad se envía en texto sin formato y se usa esta identidad para fines de enrutamiento, no para la autenticación de cliente. La identidad real, utilizado para la autenticación, se envía durante la segunda fase de la autenticación en el túnel seguro que se establece en la primera fase. Si **Habilitar privacidad de identidad** está activada la casilla, el nombre de usuario se sustituye por la entrada especificada en el cuadro de texto. Por ejemplo, suponga **Habilitar privacidad de identidad** está seleccionada y el alias de privacidad de identidad **anónimo** se especifica en el cuadro de texto. Para un usuario con un alias de la identidad real <strong>jdoe@example.com</strong>, se cambiará la identidad enviada en la primera fase de autenticación a <strong>anonymous@example.com</strong>. No se modifica la parte del dominio Kerberos de la identidad de la fase 1 ya que se utiliza para fines de enrutamiento.  
 
 20. Haga clic en **Aceptar** para cerrar el **propiedades de EAP protegido** cuadro de diálogo.
 21. Haga clic en **Aceptar** para cerrar el **seguridad** ficha.
@@ -410,7 +410,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
 3. En **Servidor de directivas de redes**, haga clic en **Aceptar** y, a continuación, en **Aceptar** de nuevo.
 
 ### <a name="bkmk_radiusclient"></a>Configurar un punto de acceso inalámbrico como cliente RADIUS NPS
-Puede usar este procedimiento para configurar un punto de acceso, también conocido como un *servidor de acceso de red \(NAS\)*, como un acceso telefónico de autenticación remota\-en el servicio de usuario \(RADIUS\) cliente mediante el complemento NPS\-en. 
+Puede usar este procedimiento para configurar un punto de acceso, también conocido como un *servidor de acceso de red \(NAS\)* , como un acceso telefónico de autenticación remota\-en el servicio de usuario \(RADIUS\) cliente mediante el complemento NPS\-en. 
 
 >[!IMPORTANT]
 >Los equipos cliente, como los equipos portátiles inalámbricos y otros equipos que ejecutan sistemas operativos cliente, no son clientes RADIUS. Los clientes RADIUS son servidores de acceso de red, como puntos de acceso inalámbrico 802.1X\-conmutadores compatibles con, red privada virtual \(VPN\) servidores y marcado\-servidores de seguridad, porque usan el protocolo RADIUS para comunicarse con servidores RADIUS como NPSs.
@@ -429,7 +429,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
 
     Por ejemplo, si desea agregar un punto de acceso inalámbrico \(AP\) denominado AP\-01, tipo **AP\-01**.
 
-5. En **dirección \(IP o DNS\)**, escriba la dirección IP o nombre de dominio completo \(FQDN\) de NAS.
+5. En **dirección \(IP o DNS\)** , escriba la dirección IP o nombre de dominio completo \(FQDN\) de NAS.
 
     Si especifica el FQDN, para comprobar que el nombre es correcto y se asigna a una dirección IP válida, haga clic en **compruebe**y, a continuación, en **Comprobar dirección**, en el **dirección** , a continuación, haga clic en  **Resolver**. Si el nombre de dominio completo que se asigna a una dirección IP válida, la dirección IP de ese servidor NAS aparecerán automáticamente en **dirección IP**. Si el FQDN no se resuelve en una dirección IP que recibirá un mensaje que indica que este host es desconocido. Si esto ocurre, compruebe que tiene el nombre correcto de Asia Pacífico y que el punto de acceso está encendido y conectado a la red.  
 
@@ -465,7 +465,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
 
 #### <a name="create-policies-for-8021x-authenticated-wireless-by-using-a-wizard"></a>Crear directivas para 802.1X inalámbrico autenticado mediante un asistente
 
-1. Abra el NPS ajustar\-en. Si aún no está seleccionada, haga clic en **NPS \(Local\)**. Si está ejecutando el complemento MMC NPS\-en y desea crear directivas en un NPS remoto, seleccione el servidor.
+1. Abra el NPS ajustar\-en. Si aún no está seleccionada, haga clic en **NPS \(Local\)** . Si está ejecutando el complemento MMC NPS\-en y desea crear directivas en un NPS remoto, seleccione el servidor.
 
 2. En **Introducción**, en **configuración estándar**, seleccione **servidor RADIUS para conexiones cableadas o inalámbricas 802.1X**. El texto y los vínculos debajo del texto cambiarán para reflejar la selección.
 
@@ -475,7 +475,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
 
 5.  En el **especificar conmutadores 802.1X** página del asistente, en **clientes RADIUS**, 802.1X todas de conmutadores y puntos de acceso inalámbrico que haya agregado como clientes RADIUS en el complemento NPS\-en que se muestran. Lleve a cabo cualquiera de las siguientes acciones:
 
-    -   Para agregar servidores de acceso de red adicional \(NAS\), como puntos de acceso inalámbricos en **clientes RADIUS**, haga clic en **agregar**y, a continuación, en **nuevo cliente RADIUS**, escriba la información para: **Nombre descriptivo**, **dirección \(IP o DNS\)**, y **secreto compartido**.
+    -   Para agregar servidores de acceso de red adicional \(NAS\), como puntos de acceso inalámbricos en **clientes RADIUS**, haga clic en **agregar**y, a continuación, en **nuevo cliente RADIUS**, escriba la información para: **Nombre descriptivo**, **dirección \(IP o DNS\)** , y **secreto compartido**.
 
     -   Para modificar la configuración de cualquier NAS, en **clientes RADIUS**, seleccione el punto de acceso para el que desea modificar la configuración y, a continuación, haga clic en **editar**. Modifique la configuración según sea necesario.
 
@@ -484,7 +484,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
         >[!WARNING]
         >Eliminación de un cliente RADIUS desde el **configurar 802.1X** asistente elimina el cliente de la configuración de NPS. Todas las adiciones, modificaciones y eliminaciones que se realicen dentro de la **configurar 802.1X** asistente a los clientes RADIUS se reflejan en el NPS complemento\-en, en el **clientes RADIUS** nodo bajo  **NPS** \/ **clientes y servidores RADIUS**. Por ejemplo, si utiliza el Asistente para quitar un conmutador 802.1X, el conmutador se quita también de NPS complemento\-en.
 
-6. Haz clic en **Siguiente**. En el **configurar un método de autenticación** página del asistente, en **tipo \(según el método de acceso y configuración de red\)**, seleccione **Microsoft: EAP protegido \(PEAP\)** y, a continuación, haga clic en **configurar**.
+6. Haz clic en **Siguiente**. En el **configurar un método de autenticación** página del asistente, en **tipo \(según el método de acceso y configuración de red\)** , seleccione **Microsoft: EAP protegido \(PEAP\)** y, a continuación, haga clic en **configurar**.
 
     >[!TIP]
     >Si recibe un mensaje de error que indica que no se encuentra un certificado para su uso con el método de autenticación, y ha configurado servicios de certificados de Active Directory para emitir automáticamente certificados a servidores RAS e IAS en la red, en primer lugar Asegúrese de que ha seguido los pasos para registrar NPS en Active Directory Domain Services, a continuación, siga estos pasos para actualizar la directiva de grupo: Haga clic en **iniciar**, haga clic en **Windows System**, haga clic en **ejecutar**y en **abierto**, tipo **gpupdate**y, a continuación, presione ENTRAR. Cuando el comando devuelve resultados que indican que los usuarios y directiva de grupo del equipo han actualizado correctamente, seleccione **Microsoft: EAP protegido \(PEAP\)**  nuevo y, a continuación, haga clic en **configurar**.
@@ -608,7 +608,7 @@ Con este método, completa los pasos descritos en la sección pasos generales, a
 
 9. Haga clic en **cambiar configuración de conexión**. El *su SSID de red* abre el cuadro de diálogo de propiedades de red inalámbrica.
 
-10. Haga clic en el **seguridad** ficha y, a continuación, en **elegir un método de autenticación de red**, seleccione **EAP protegido \(PEAP\)**.
+10. Haga clic en el **seguridad** ficha y, a continuación, en **elegir un método de autenticación de red**, seleccione **EAP protegido \(PEAP\)** .
 
 11. Haga clic en **Configuración**. El **EAP protegido \(PEAP\) propiedades** abre la página.
 

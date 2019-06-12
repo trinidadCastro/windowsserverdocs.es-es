@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2033cbc9b3d9127249656c3e0dcf95d872229797
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1b5fca329864ebed9eab66671a17493f0fc3ca8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842546"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440913"
 ---
 # <a name="tsdiscon"></a>tsdiscon
 
@@ -36,6 +36,7 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 ```
 
 ## <a name="parameters"></a>Parámetros
+
 |Parámetro|Descripción|
 |-------|--------|
 |\<SessionId>|Especifica el identificador de la sesión a desconectar.|
@@ -52,18 +53,18 @@ tsdiscon [<SessionID> | <SessionName>] [/server:<ServerName>] [/v]
 -   No se puede desconectar la sesión de consola.
 
 ## <a name="BKMK_examples"></a>Ejemplos
--   Para desconectar la sesión actual, escriba:
-    ```
-    tsdiscon
-    ```
--   Para desconectar la sesión 10, escriba:
-    ```
-    tsdiscon 10
-    ```
--   Para desconectar la sesión TERM04, escriba:
-    ```
-    tsdiscon TERM04
-    ```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)
+- Para desconectar la sesión actual, escriba:
+  ```
+  tsdiscon
+  ```
+- Para desconectar la sesión 10, escriba:
+  ```
+  tsdiscon 10
+  ```
+- Para desconectar la sesión TERM04, escriba:
+  ```
+  tsdiscon TERM04
+  ```
+  #### <a name="additional-references"></a>Referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)

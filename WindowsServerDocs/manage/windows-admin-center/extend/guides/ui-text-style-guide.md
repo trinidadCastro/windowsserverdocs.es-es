@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.date: 10/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ab5bee55975b803a77db0b6cdb179b76590e1d83
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: be41267d6584002ebf87e5fe828a41575d305e1b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826056"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445912"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guía de estilo de texto y diseño de la interfaz de usuario de Windows Admin Center
 
@@ -199,12 +199,12 @@ Estado null se produce cuando los datos del cliente o el contenido no está pres
 
 ### <a name="guidelines"></a>Instrucciones
 
- - Si es posible, utilice situaciones del estado null como una oportunidad para informar a las personas sobre cómo usar la característica (por ejemplo, cómo agregar música, donde para buscar la fotografías, etcetera.)  
-- Si tiene un título en la interfaz de usuario, se explica la acción para "corregir" el estado null (por ejemplo, "Agregar música") 
-- Diviértase con el texto. Este espacio puede ser una oportunidad para que se proporcionan los usuarios, ya que probablemente no se verán varias veces. 
-- Evitar "Es nada aquí." Es triste y ha sido sobreutilizado. 
-- Evitar preguntas como "No ha conectado la impresora?" Correcto para utilizar una vez, pero este formato tiende a obtener sobreutilizados y preguntas suponer una presión/carga adicional en el cliente. También puede parecer condescendiente. 
-- Diversos en texto de estado null es una buena opción. 
+- Si es posible, utilice situaciones del estado null como una oportunidad para informar a las personas sobre cómo usar la característica (por ejemplo, cómo agregar música, donde para buscar la fotografías, etcetera.)  
+  - Si tiene un título en la interfaz de usuario, se explica la acción para "corregir" el estado null (por ejemplo, "Agregar música") 
+  - Diviértase con el texto. Este espacio puede ser una oportunidad para que se proporcionan los usuarios, ya que probablemente no se verán varias veces. 
+  - Evitar "Es nada aquí." Es triste y ha sido sobreutilizado. 
+  - Evitar preguntas como "No ha conectado la impresora?" Correcto para utilizar una vez, pero este formato tiende a obtener sobreutilizados y preguntas suponer una presión/carga adicional en el cliente. También puede parecer condescendiente. 
+  - Diversos en texto de estado null es una buena opción. 
 
 ### <a name="examples"></a>Ejemplos
 

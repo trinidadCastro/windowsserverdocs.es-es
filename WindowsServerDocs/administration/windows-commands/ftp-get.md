@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 798317f3921cd0e5ff12b69b972e2ea423fa6b3f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 28961ccf0ae04b52586728f9c68a9b2ca3e69b1d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816736"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438769"
 ---
 # <a name="ftp-get"></a>FTP: obtener
 
@@ -30,10 +30,12 @@ Copia un archivo remoto en el equipo local utilizando el tipo de transferencia d
 get <remoteFile> [<LocalFile>]  
 ```  
 ### <a name="parameters"></a>Parámetros  
-|Parámetro|Descripción|  
-|-------|--------|  
-|<remoteFile>|Especifica el archivo remoto para copiar.|  
-|[<LocalFile>]|Especifica el nombre del archivo que se use en el equipo local. Si *archivoLocal* no se especifica, el archivo tendrá el *archivoRemoto* nombre.|  
+
+|   Parámetro   |                                                              Descripción                                                               |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| <remoteFile>  |                                                   Especifica el archivo remoto para copiar.                                                   |
+| [<LocalFile>] | Especifica el nombre del archivo que se use en el equipo local. Si *archivoLocal* no se especifica, el archivo tendrá el *archivoRemoto* nombre. |
+
 ## <a name="remarks"></a>Comentarios  
 El **obtener** comando es idéntico a la **recv** comando.  
 ## <a name="BKMK_Examples"></a>Ejemplos  

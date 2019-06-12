@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a6886fbdfe541b39e530d2b7f71d4fc40909a2a2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e79acc100a9ec9955f2692a3c6ee812d0310b687
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862936"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434734"
 ---
 # <a name="bootcfg-query"></a>bootcfg query
 
@@ -31,34 +31,36 @@ Consulta y muestra [el cargador de arranque] y las entradas del archivo Boot.ini
 bootcfg /query [/s <computer> [/u <Domain>\<User> /p <Password>]]
 ```
 ## <a name="parameters"></a>Parámetros
-|Término|Definición|
-|----|-------|
-|/s <computer>|Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.|
-|/u <Domain>\\<User>|Ejecuta el comando con los permisos de cuenta del usuario especificado por <User>o <Domain> \\ <User>. El valor predeterminado es los permisos de la sesión de usuario en el equipo que emite el comando actual.|
-|/p <Password>|Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+
+|        Término         |                                                                                             Definición                                                                                              |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /s <computer>    |                                         Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.                                          |
+| /u <Domain>\\<User> | Ejecuta el comando con los permisos de cuenta del usuario especificado por <User>o <Domain> \\ <User>. El valor predeterminado es los permisos de la sesión de usuario en el equipo que emite el comando actual. |
+|    /p <Password>    |                                                        Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.                                                        |
+|         /?          |                                                                                Muestra la ayuda en el símbolo del sistema.                                                                                 |
+
 ##### <a name="remarks"></a>Comentarios
--   El siguiente es un ejemplo de **bootcfg /query** salida:
-    ```
-    Boot Loader Settings
-    ----------
-    timeout: 30
-    default: multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
-    Boot Entries
-    ------
-    Boot entry ID:   1
-    Friendly Name:   ""
-    path:            multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
-    OS Load Options: /fastdetect /debug /debugport=com1:
-    ```
--   La parte de la configuración del cargador de arranque de la **bootcfg consulta** salida muestra cada entrada en la sección [boot loader] del archivo Boot.ini.
--   La parte de las entradas de arranque de la **bootcfg consulta** salida muestra los detalles siguientes para cada entrada de sistema operativo en la sección [operating systems] del archivo Boot.ini: Id. de entrada de arranque, un nombre descriptivo, ruta de acceso y las opciones de carga del sistema operativo.
-## <a name="BKMK_examples"></a>Ejemplos
-Los ejemplos siguientes muestran cómo puede usar el **bootcfg /query** comando:
-```
-bootcfg /query
-bootcfg /query /s srvmain /u maindom\hiropln /p p@ssW23
-bootcfg /query /u hiropln /p p@ssW23
-```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+- El siguiente es un ejemplo de **bootcfg /query** salida:
+  ```
+  Boot Loader Settings
+  ----------
+  timeout: 30
+  default: multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
+  Boot Entries
+  ------
+  Boot entry ID:   1
+  Friendly Name:   ""
+  path:            multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
+  OS Load Options: /fastdetect /debug /debugport=com1:
+  ```
+- La parte de la configuración del cargador de arranque de la **bootcfg consulta** salida muestra cada entrada en la sección [boot loader] del archivo Boot.ini.
+- La parte de las entradas de arranque de la **bootcfg consulta** salida muestra los detalles siguientes para cada entrada de sistema operativo en la sección [operating systems] del archivo Boot.ini: Id. de entrada de arranque, un nombre descriptivo, ruta de acceso y las opciones de carga del sistema operativo.
+  ## <a name="BKMK_examples"></a>Ejemplos
+  Los ejemplos siguientes muestran cómo puede usar el **bootcfg /query** comando:
+  ```
+  bootcfg /query
+  bootcfg /query /s srvmain /u maindom\hiropln /p p@ssW23
+  bootcfg /query /u hiropln /p p@ssW23
+  ```
+  #### <a name="additional-references"></a>Referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

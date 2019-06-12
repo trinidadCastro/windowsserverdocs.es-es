@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cf5fffdedbc25ad97e9e96a84d3ff1bbdaf87b2a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9b41b6dcc52c3e6700d1d18c61eceea8b990ecdf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835056"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440581"
 ---
 # <a name="using-the-convert-riprepimage-command"></a>Con el comando convert-RiprepImage
 
@@ -40,10 +40,10 @@ WDSUTIL [Options] /Convert-RIPrepImage /FilePath:<File path and name>
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/ FilePath:\<ruta de acceso y nombre del archivo >|Especifica la ruta de acceso y el nombre completo del archivo que se corresponde con la imagen RIPrep. Este archivo suele llamarse Riprep.sif y se encuentra en la subcarpeta \Templates de la carpeta que contiene la imagen RIPrep.|
-|/DestinationImage|Especifica la configuración de la imagen de destino, mediante las siguientes opciones.</br>-/ FilePath:\<ruta de acceso y nombre del archivo >-establece la ruta de acceso completa para el nuevo archivo. Por ejemplo: **C:\Temp\convert.wim**</br>-[/ Name:\<nombre >]-establece el nombre para mostrar de la imagen. Si no se especifica ningún nombre para mostrar, se usará el nombre para mostrar de la imagen de origen.</br>-[/ Descripción: \<Descripción >]-establece la descripción de la imagen.</br>-[/InPlace]: Especifica que la conversión debe tener lugar en la imagen RIPrep original y no en una copia de la imagen original, que es el comportamiento predeterminado.</br>-   [/Overwrite:{Yes | No | Append}]: determina si el archivo especificado en el **/DestinationImage** opción se debe sobrescribir si ya existe un archivo existente con ese nombre en/filepath. **Sí** sobrescribe el archivo existente. **No** (valor predeterminado) provoca un error si ya existe otro archivo con el mismo nombre. **Anexar** adjunta la imagen generada como una nueva imagen en el archivo .wim existente.|
+|            Parámetro            |                                                                                                                                                                                                                                                                                                               Descripción                                                                                                                                                                                                                                                                                                                |
+|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| / FilePath:\<ruta de acceso y nombre del archivo > |                                                                                                                                                                                                       Especifica la ruta de acceso y el nombre completo del archivo que se corresponde con la imagen RIPrep. Este archivo suele llamarse Riprep.sif y se encuentra en la subcarpeta \Templates de la carpeta que contiene la imagen RIPrep.                                                                                                                                                                                                       |
+|        /DestinationImage        | Especifica la configuración de la imagen de destino, mediante las siguientes opciones.</br>-/ FilePath:\<ruta de acceso y nombre del archivo >-establece la ruta de acceso completa para el nuevo archivo. Por ejemplo: **C:\Temp\convert.wim**</br>-[/ Name:\<nombre >]-establece el nombre para mostrar de la imagen. Si no se especifica ningún nombre para mostrar, se usará el nombre para mostrar de la imagen de origen.</br>-[/ Descripción: \<Descripción >]-establece la descripción de la imagen.</br>-[/InPlace]: Especifica que la conversión debe tener lugar en la imagen RIPrep original y no en una copia de la imagen original, que es el comportamiento predeterminado.</br>-   [/Overwrite:{Yes |
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

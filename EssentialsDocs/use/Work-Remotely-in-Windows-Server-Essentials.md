@@ -12,12 +12,12 @@ ms.assetid: 8b183f8f-1279-4fdf-a495-c7c801563cb0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: bdd523efa1b1819bde4edb40f29d664df2a07db2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8a2742c974535d9e92ac88c289ff02f6f1d0d10c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847406"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435858"
 ---
 # <a name="work-remotely-in-windows-server-essentials"></a>Trabajar de forma remota en Windows Server Essentials
 
@@ -28,7 +28,7 @@ ms.locfileid: "59847406"
  Los siguientes temas pueden ayudarle a acceder a los recursos del servidor de forma remota:  
   
 
--   [Usar acceso Web remoto en Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
+-   [Administrar Acceso web remoto en Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
   
 -   [Usar VPN para conectarse a Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
   
@@ -38,7 +38,7 @@ ms.locfileid: "59847406"
   
 -   [Usar Microsoft Office 365 con Windows Server Essentials](Work-Remotely-in-Windows-Server-Essentials.md#BKMK_O365)  
 
--   [Usar acceso Web remoto en Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
+-   [Administrar Acceso web remoto en Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMA_RWA)  
   
 -   [Usar VPN para conectarse a Windows Server Essentials](../use/Work-Remotely-in-Windows-Server-Essentials.md#BKMK_3)  
   
@@ -88,11 +88,11 @@ ms.locfileid: "59847406"
   
  Puede descargar cualquier aplicación desde la Tienda de Windows Phone:  
   
--   [Instalar a mi servidor para Windows Phone](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
+- [Instalar a mi servidor para Windows Phone](http://www.windowsphone.com/store/app/my-server/6c2f98d5-6fcf-4e1d-b8b1-cde62ea1a94a)  
   
--   [Instalar My Server 2012 R2 para Windows Phone](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
+- [Instalar My Server 2012 R2 para Windows Phone](http://www.windowsphone.com/store/app/my-server-2012-r2/44f596b5-0477-4096-b96e-ddd6ef64ad6b)  
   
- Para obtener más información acerca de la aplicación de teléfono My Server, vea la entrada de blog [aplicación de teléfono My Server para Windows Server Essentials](http://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx). Para obtener más información sobre la aplicación de teléfono My Server 2012 R2, consulte la entrada de blog [Aplicaciones My Server 2012 R2 de Windows y Windows Phone](http://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx).  
+  Para obtener más información acerca de la aplicación de teléfono My Server, vea la entrada de blog [aplicación de teléfono My Server para Windows Server Essentials](http://blogs.technet.com/b/sbs/archive/2012/09/18/my-server-phone-app-for-windows-server-2012-essentials.aspx). Para obtener más información sobre la aplicación de teléfono My Server 2012 R2, consulte la entrada de blog [Aplicaciones My Server 2012 R2 de Windows y Windows Phone](http://blogs.technet.com/b/sbs/archive/2013/11/19/my-server-2012-r2-windows-and-windows-phone-apps.aspx).  
   
 ##  <a name="BKMK_O365"></a> Usar Microsoft Office 365 con Windows Server Essentials  
 

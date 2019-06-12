@@ -12,12 +12,12 @@ ms.assetid: 86244c66-2c5e-488d-adb8-112e1ca3e2e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 24a1f2da2333c7e6854e9efd9d996391d0fcb3b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6842137dd498b11bccc2216023d648d61edbb87e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872366"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432546"
 ---
 # <a name="step-6-demote-and-remove-the-source-server-from-the-new-windows-server-essentials-network"></a>Paso 6: Disminución de nivel y eliminación del servidor de origen de la nueva red de Windows Server Essentials
 
@@ -76,17 +76,17 @@ Después de finalizar la instalación de Windows Server Essentials y completar l
   
 #### <a name="to-force-a-group-policy-update-on-a-client-computer"></a>Para forzar una actualización de directiva de grupo en un equipo cliente  
   
-1.  Inicie sesión en el equipo cliente como administrador.  
+1. Inicie sesión en el equipo cliente como administrador.  
   
-2.  Abra una ventana del símbolo del sistema como administrador.  
+2. Abra una ventana del símbolo del sistema como administrador.  
   
-3.  En el símbolo del sistema, escriba **gpupdate /force** y, después, presione ENTRAR.  
+3. En el símbolo del sistema, escriba **gpupdate /force** y, después, presione ENTRAR.  
   
-4.  El proceso puede requerir que cierre la sesión y vuelva a iniciarla para finalizar. Haga clic en **Sí** para confirmar.  
+4. El proceso puede requerir que cierre la sesión y vuelva a iniciarla para finalizar. Haga clic en **Sí** para confirmar.  
   
- Si va a migrar desde Windows Server Essentials o versiones anteriores, para disminuir de nivel el servidor, consulte [quitar Active Directory Domain Services](https://technet.microsoft.com/library/hh472163.aspx). Después de agregar el servidor de origen como miembro de un grupo de trabajo y desconectarlo de la red, debe quitarlo de AD DS en el servidor de destino.  
+   Si va a migrar desde Windows Server Essentials o versiones anteriores, para disminuir de nivel el servidor, consulte [quitar Active Directory Domain Services](https://technet.microsoft.com/library/hh472163.aspx). Después de agregar el servidor de origen como miembro de un grupo de trabajo y desconectarlo de la red, debe quitarlo de AD DS en el servidor de destino.  
   
- Si va a migrar desde Windows Server Essentials, use el administrador del servidor para quitar el rol de servicios de dominio de Active Directory y, por tanto, degradar el controlador de dominio en el servidor de origen mediante el procedimiento siguiente:  
+   Si va a migrar desde Windows Server Essentials, use el administrador del servidor para quitar el rol de servicios de dominio de Active Directory y, por tanto, degradar el controlador de dominio en el servidor de origen mediante el procedimiento siguiente:  
   
 #### <a name="to-remove-the-source-server-from-active-directory"></a>Para quitar el servidor de origen de Active Directory  
   

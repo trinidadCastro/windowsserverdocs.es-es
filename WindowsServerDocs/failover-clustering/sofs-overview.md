@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 3e6d67eee496d19b216a4366af51ab5736229cf0
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: e38c53c3458c3f66f24ea2ddaa66febf508c4568
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476153"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442449"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 
@@ -177,25 +177,25 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <td>Administración de archivos</td>
 <td>Redirección de carpetas</td>
 <td>Sí</td>
-<td>No se recomienda*</td>
+<td>no se recomienda<em></td>
 </tr>
 <tr class="odd">
 <td>Administración de archivos</td>
 <td>Archivos sin conexión (caché del lado cliente)</td>
 <td>Sí</td>
-<td>No se recomienda*</td>
+<td>No recomendada</em></td>
 </tr>
 <tr class="even">
 <td>Administración de archivos</td>
 <td>Perfiles de usuario móviles</td>
 <td>Sí</td>
-<td>No se recomienda*</td>
+<td>no se recomienda<em></td>
 </tr>
 <tr class="odd">
 <td>Administración de archivos</td>
 <td>Directorios principales</td>
 <td>Sí</td>
-<td>No se recomienda*</td>
+<td>No recomendada</em></td>
 </tr>
 <tr class="even">
 <td>Administración de archivos</td>
@@ -256,13 +256,13 @@ En la tabla siguiente, se enumeran las características que forman parte de este
 <tbody>
 <tr class="odd">
 <td><a href="failover-clustering.md">Clúster de conmutación por error</a></td>
-<td>Clústeres de conmutación por error incorporaron las siguientes características en Windows Server 2012 para admitir el servidor de archivos de escalabilidad horizontal: Nombre de red distribuida, el tipo de recurso de servidor de archivos de escalabilidad horizontal, volúmenes compartidos clúster (CSV) 2 y el rol de servidor alta disponibilidad de archivos de escalabilidad horizontal. Para obtener más información acerca de estas características, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">Novedades en los clústeres de conmutación por error en Windows Server 2012 [redirigido]</a>.</td>
+<td>Clústeres de conmutación por error incorporaron las siguientes características en Windows Server 2012 para admitir el servidor de archivos de escalabilidad horizontal: Nombre de red distribuida, el tipo de recurso de servidor de archivos de escalabilidad horizontal, volúmenes compartidos clúster (CSV) 2 y el rol de servidor alta disponibilidad de archivos de escalabilidad horizontal. Para obtener más información acerca de estas características, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)">lo&#39;s nuevo en los clústeres de conmutación por error en Windows Server 2012 [redirigido]</a>.</td>
 </tr>
 <tr class="even">
 <td><a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831795(v%3dws.11)">Bloque de mensajes del servidor</a></td>
 <td>SMB 3.0 agregó las siguientes características en Windows Server 2012 para admitir el servidor de archivos de escalabilidad horizontal: Conmutación por error transparente de SMB, SMB multicanal y SMB directo.<br />
 <br />
-Para obtener más información sobre las funciones nuevas y modificadas para SMB en Windows Server 2012 R2, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">Novedades de SMB en Windows Server</a>.</td>
+Para obtener más información sobre las funciones nuevas y modificadas para SMB en Windows Server 2012 R2, consulte <a href="https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831474(v%3dws.11)">lo&#39;s nuevo de SMB en Windows Server</a>.</td>
 </tr>
 </tbody>
 </table>

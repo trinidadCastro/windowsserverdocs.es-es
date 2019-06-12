@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 454d261aa520778a6129ac9809f53894937b036a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1023ca7da02d2a1f6af42f68892dc4c5c8f1a2bf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190145"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444370"
 ---
 # <a name="add-a-claim-description"></a>Agregar una descripción de notificación
 
@@ -31,27 +31,29 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
 1. En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**. 
 
-2.  Expanda **servicio** y haga clic derecho en **Agregar descripción de notificación**.
-![Agregar descripción de notificación.](media\Add-a-Claim-Description\claimdesc1.png)
+2. Expanda **servicio** y haga clic derecho en **Agregar descripción de notificación**.
+   ![Agregar descripción de notificación.](media/Add-a-Claim-Description/claimdesc1.png)
 
-3.  En la agregar un descripción de notificación de cuadro de diálogo **nombre para mostrar**, escriba un nombre único que identifica el grupo o rol de esta notificación.
+3. En la agregar un descripción de notificación de cuadro de diálogo **nombre para mostrar**, escriba un nombre único que identifica el grupo o rol de esta notificación.
 
-4.  Agregar un **nombre corto**.
+4. Agregar un **nombre corto**.
 
-5.  En **de notificación de identificador**, escriba un URI que está asociado con el grupo o rol de la notificación que se va a usar.
+5. En **de notificación de identificador**, escriba un URI que está asociado con el grupo o rol de la notificación que se va a usar.
 
-6.  En **descripción**, escriba el texto que mejor describa el propósito de esta notificación.
+6. En **descripción**, escriba el texto que mejor describa el propósito de esta notificación.
 
-7.  Según las necesidades de su organización, seleccione cualquiera de las casillas de verificación siguientes, según corresponda, al publicar esta notificación en los metadatos de federación:
+7. Según las necesidades de su organización, seleccione cualquiera de las casillas de verificación siguientes, según corresponda, al publicar esta notificación en los metadatos de federación:
 
 
-    - Para publicar esta notificación para asegurarse de tener en cuenta que este servidor puede aceptar esta notificación asociados, haga clic en **publicar esta notificación en los metadatos de federación como un tipo de notificación que este servicio de federación puede aceptar**.
-    - Para publicar esta notificación para asegurarse de socios, tenga en cuenta que este servidor puede editar esta notificación, haga clic en **publicar esta notificación en los metadatos de federación como un tipo de notificación que este servicio de federación puede enviar**.
+~~~
+- To publish this claim to make partners aware that this server can accept this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can accept**.
+- To publish this claim to make partners aware that this server can issue this claim, click **Publish this claim in federation metadata as a claim type that this Federation Service can send**.
+~~~
 
-8.  Haga clic en **Aceptar**.
+8. Haga clic en **Aceptar**.
 
-![Agregar descripción de notificación.](media\Add-a-Claim-Description\claimdesc2.png)
+![Agregar descripción de notificación.](media/Add-a-Claim-Description/claimdesc2.png)
 
-  
+
 ## <a name="see-also"></a>Vea también  
 [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md) 

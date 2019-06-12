@@ -9,12 +9,12 @@ author: eldenchristensen
 ms.date: 10/25/2017
 description: Cómo implementar espacios de almacenamiento directo en un clúster de invitado de máquina virtual, por ejemplo, en Microsoft Azure.
 ms.localizationpriority: medium
-ms.openlocfilehash: a741475d09ab7f7ab29f158ef55378ca9a37beac
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b99e750b78654df48ad3b412269511d047e3057c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841026"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447810"
 ---
 # <a name="using-storage-spaces-direct-in-guest-virtual-machine-clusters"></a>Uso de espacios de almacenamiento directo en clústeres invitados de máquina virtual
 
@@ -81,4 +81,4 @@ Se aplican las consideraciones siguientes al implementar espacios de almacenamie
 
 [Plantillas de máquina virtual de Iaas de Azure adicionales para implementar espacios de almacenamiento directo, vídeos y guías paso a paso](https://blogs.msdn.microsoft.com/clustering/2017/02/14/deploying-an-iaas-vm-guest-clusters-in-microsoft-azure/).
 
-[Espacios de almacenamiento adicionales directo Overview] (https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview)
+[Espacios de almacenamiento adicionales directo información general](https://docs.microsoft.com/en-us/windows-server/storage/storage-spaces/storage-spaces-direct-overview)

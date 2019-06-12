@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c9c0fb17620147d2de5b991c1a9a0fb95e782677
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8778401efb272a167aaa3d9abb4ecafc67e5f50d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826996"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435111"
 ---
 # <a name="auditpol-set"></a>conjunto Auditpol
 
@@ -37,18 +37,20 @@ auditpol /set
 [/option:<option name> /value: <enable>|<disable>]
 ```
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|/user|Se establece la entidad de seguridad para los que la directiva especificada por la categoría o subcategoría de auditoría por el usuario. La categoría o subcategoría opción debe especificarse como un nombre o identificador de seguridad (SID).|
-|/include|Especificado con/User; indica que la directiva del usuario por usuario provocará una auditoría que se generará incluso si no se especifica mediante la directiva de auditoría del sistema. Esta configuración es el valor predeterminado y se aplica automáticamente si no la / incluye ni /exclude parámetros se especifican explícitamente.|
-|/exclude|Especificado con/User; indica que la directiva del usuario por usuario provocará una auditoría se supriman independientemente de la directiva de auditoría del sistema. Este valor se omite para los usuarios que son miembros del grupo Administradores local.|
-|/Category|Una o varias categorías de auditoría especificadas por nombre o identificador único global (GUID). Si no se especifica ningún usuario, se establece la directiva del sistema.|
-|/subcategory|Una o varias subcategorías de auditoría especificadas por nombre o GUID. Si no se especifica ningún usuario, se establece la directiva del sistema.|
-|/success|Especifica la auditoría de acierto. Esta configuración es el valor predeterminado y se aplica automáticamente si se especifican explícitamente el /success ni /failure parámetros. Esta opción debe utilizarse con un parámetro que indica si se habilita o deshabilita a la configuración.|
-|/failure|Especifica la auditoría de errores. Esta opción debe utilizarse con un parámetro que indica si se habilita o deshabilita a la configuración.|
-|/Option|Establece la directiva de auditoría para las opciones CrashOnAuditFail, FullprivilegeAuditing, AuditBaseObjects o AuditBasedirectories.|
-|/sd|Establece el descriptor de seguridad que se usa para delegar el acceso a la directiva de auditoría. El descriptor de seguridad debe especificarse mediante el lenguaje de definición de descriptores de seguridad (SDDL). El descriptor de seguridad debe tener una lista de control de acceso discrecional (DACL).|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+
+|  Parámetro   |                                                                                                                                          Descripción                                                                                                                                           |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /user     |                                        Se establece la entidad de seguridad para los que la directiva especificada por la categoría o subcategoría de auditoría por el usuario. La categoría o subcategoría opción debe especificarse como un nombre o identificador de seguridad (SID).                                         |
+|   /include   | Especificado con/User; indica que la directiva del usuario por usuario provocará una auditoría que se generará incluso si no se especifica mediante la directiva de auditoría del sistema. Esta configuración es el valor predeterminado y se aplica automáticamente si no la / incluye ni /exclude parámetros se especifican explícitamente. |
+|   /exclude   |                                Especificado con/User; indica que la directiva del usuario por usuario provocará una auditoría se supriman independientemente de la directiva de auditoría del sistema. Este valor se omite para los usuarios que son miembros del grupo Administradores local.                                |
+|  /Category   |                                                                            Una o varias categorías de auditoría especificadas por nombre o identificador único global (GUID). Si no se especifica ningún usuario, se establece la directiva del sistema.                                                                             |
+| /subcategory |                                                                                         Una o varias subcategorías de auditoría especificadas por nombre o GUID. Si no se especifica ningún usuario, se establece la directiva del sistema.                                                                                          |
+|   /success   |                 Especifica la auditoría de acierto. Esta configuración es el valor predeterminado y se aplica automáticamente si se especifican explícitamente el /success ni /failure parámetros. Esta opción debe utilizarse con un parámetro que indica si se habilita o deshabilita a la configuración.                 |
+|   /failure   |                                                                                  Especifica la auditoría de errores. Esta opción debe utilizarse con un parámetro que indica si se habilita o deshabilita a la configuración.                                                                                   |
+|   /Option    |                                                                                   Establece la directiva de auditoría para las opciones CrashOnAuditFail, FullprivilegeAuditing, AuditBaseObjects o AuditBasedirectories.                                                                                    |
+|     /sd      |                 Establece el descriptor de seguridad que se usa para delegar el acceso a la directiva de auditoría. El descriptor de seguridad debe especificarse mediante el lenguaje de definición de descriptores de seguridad (SDDL). El descriptor de seguridad debe tener una lista de control de acceso discrecional (DACL).                 |
+|      /?      |                                                                                                                              Muestra la ayuda en el símbolo del sistema.                                                                                                                              |
+
 ## <a name="remarks"></a>Comentarios
 todas las operaciones de conjunto de la directiva de por usuario y la directiva del sistema, se debe escribir o permiso Control total sobre ese objeto se establece en el descriptor de seguridad. También se pueden realizar operaciones de conjunto que poseen el **Administrar registro de auditoría y seguridad** derecho de usuario (SeSecurityPrivilege). Sin embargo, este derecho permite acceso adicional que no es necesario realizar la operación de establecimiento.
 ## <a name="BKMK_examples"></a>Ejemplos
@@ -73,14 +75,14 @@ auditpol /set /category:"detailed Tracking" /success:enable
 ```
 > [!NOTE]
 > No se modifica la configuración de error.
-Para establecer la directiva de auditoría del sistema para las categorías de acceso a objetos y del sistema (que está implícito debido a que se enumeran las subcategorías) y las subcategorías especificadas por el GUID para la supresión de intentos erróneos y auditar los intentos correctos, escriba:
-```
-auditpol /set /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},{0ccee9211-69ae-11d9-bed3-505054503030}, /failure:disable /success:enable
-```
-### <a name="example-for-auditing-options"></a>Ejemplo de opciones de auditoría
-Para establecer las opciones de auditoría en el estado habilitado para la opción CrashOnAuditFail, escriba:
-```
-auditpol /set /option:CrashOnAuditFail /value:enable
-```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+> Para establecer la directiva de auditoría del sistema para las categorías de acceso a objetos y del sistema (que está implícito debido a que se enumeran las subcategorías) y las subcategorías especificadas por el GUID para la supresión de intentos erróneos y auditar los intentos correctos, escriba:
+> ```
+> auditpol /set /subcategory:{0ccee9210-69ae-11d9-bed3-505054503030},{0ccee9211-69ae-11d9-bed3-505054503030}, /failure:disable /success:enable
+> ```
+> ### <a name="example-for-auditing-options"></a>Ejemplo de opciones de auditoría
+> Para establecer las opciones de auditoría en el estado habilitado para la opción CrashOnAuditFail, escriba:
+> ```
+> auditpol /set /option:CrashOnAuditFail /value:enable
+> ```
+> #### <a name="additional-references"></a>Referencias adicionales
+> [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

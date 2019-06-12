@@ -14,12 +14,12 @@ ms.assetid: fdee02ec-3a7e-473e-9784-2889dc1b6dbb
 ms.author: pashort
 author: shortpatti
 ms.date: 09/13/2018
-ms.openlocfilehash: d39dc6a4dcf5dca8186b0599fb479ed5ae684e0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a6af3cbd038e97d889269b83d72c77c50680e513
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856256"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446172"
 ---
 # <a name="troubleshooting-nic-teaming"></a>Solución de problemas de formación de equipos NIC
 
@@ -44,7 +44,7 @@ Según la configuración, la formación de equipos NIC puede enviar paquetes des
 
 Una razón habitual para un equipo NIC producir un error es que la interfaz de equipo está deshabilitada y en muchos casos, por accidente, cuando se ejecuta una secuencia de comandos.  Esta particular secuencia de comandos no permitir que todos los NetAdapters deshabilitado porque deshabilitar todos los miembros físicos subyacentes de NIC quita la interfaz del equipo NIC. 
 
-En este caso, la interfaz del equipo NIC ya no se muestra en Get-NetAdapter y, por este motivo, **Enable-NetAdapter \***  no permite que el equipo NIC. El **Enable-NetAdapter \***  comandos, habilitar sin embargo, el miembro de las NIC, que, a continuación, (después de una hora corta) vuelve a crear la interfaz de equipo. La interfaz del equipo permanece en estado "deshabilitado" hasta que vuelva a habilitar, lo que permite el tráfico de red empezar a fluir. 
+En este caso, la interfaz del equipo NIC ya no se muestra en Get-NetAdapter y, por este motivo, **Enable-NetAdapter \\** * no permite que el equipo NIC. El **Enable-NetAdapter \\** * comandos, habilitar sin embargo, el miembro de las NIC, que, a continuación, (después de una hora corta) vuelve a crear la interfaz de equipo. La interfaz del equipo permanece en estado "deshabilitado" hasta que vuelva a habilitar, lo que permite el tráfico de red empezar a fluir. 
 
 La secuencia de comandos de Windows PowerShell siguiente puede deshabilitar la interfaz de equipo por accidente:  
   

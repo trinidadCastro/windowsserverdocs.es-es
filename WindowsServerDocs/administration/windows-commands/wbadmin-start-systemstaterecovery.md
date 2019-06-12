@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7c99a934987e320baaec0e56c69f36eda5a32819
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4282da2011c39daec0315a7f3836d5517f29debb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852686"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440206"
 ---
 # <a name="wbadmin-start-systemstaterecovery"></a>Wbadmin start systemstaterecovery
 
@@ -74,14 +74,14 @@ wbadmin start systemstaterecovery
 
 ## <a name="BKMK_examples"></a>Ejemplos
 
--   Para realizar una recuperación del estado del sistema de la copia de seguridad desde el 31/03/2013 a las 9:00 A.M., escriba:  
-    ```
-    wbadmin start systemstaterecovery -version:03/31/2013-09:00
-    ```  
--   Para realizar una recuperación del estado del sistema de la copia de seguridad desde el 30/04/2013 a las 9:00 A.M. que se almacena en el recurso compartido \\ \\servername\share para server01, escriba:  
-    ```
-    wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
-    ```
+- Para realizar una recuperación del estado del sistema de la copia de seguridad desde el 31/03/2013 a las 9:00 A.M., escriba:  
+  ```
+  wbadmin start systemstaterecovery -version:03/31/2013-09:00
+  ```  
+- Para realizar una recuperación del estado del sistema de la copia de seguridad desde el 30/04/2013 a las 9:00 A.M. que se almacena en el recurso compartido \\ \\servername\share para server01, escriba:  
+  ```
+  wbadmin start systemstaterecovery -version:04/30/2013-09:00 -backupTarget:\\servername\share -machine:server01
+  ```
 
 #### <a name="additional-references"></a>Referencias adicionales
 

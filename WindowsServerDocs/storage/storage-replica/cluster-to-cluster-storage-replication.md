@@ -9,12 +9,12 @@ ms.assetid: 834e8542-a67a-4ba0-9841-8a57727ef876
 author: nedpyle
 ms.date: 04/26/2019
 description: Cómo usar réplica de almacenamiento para replicar volúmenes en un clúster a otro clúster que ejecuta Windows Server.
-ms.openlocfilehash: 2e3245320b2ef7035ac600ff783684083f3f929a
-ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
+ms.openlocfilehash: 9d4b7eb05576095abd5d8c905211b2a5e88555bd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65699900"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447631"
 ---
 # <a name="cluster-to-cluster-storage-replication"></a>Replicación de almacenamiento de clúster a clúster
 
@@ -57,7 +57,7 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
 
 ## <a name="step-1-provision-operating-system-features-roles-storage-and-network"></a>Paso 1: Aprovisionamiento de sistema operativo, características, roles, almacenamiento y red
 
-1.  Instale Windows Server en todos los cuatro nodos de servidor con un tipo de instalación de Windows Server **(experiencia de escritorio)**. 
+1.  Instale Windows Server en todos los cuatro nodos de servidor con un tipo de instalación de Windows Server **(experiencia de escritorio)** . 
 
 2.  Agregue información de red y una los nodos al dominio; a continuación, reinícielos.  
 
@@ -139,8 +139,8 @@ Muchos de estos requisitos se pueden determinar mediante el cmdlet `Test-SRTopol
 
 2. Asegúrate de que los volúmenes de registro SR siempre estarán en el almacenamiento flash más rápido y los volúmenes de datos en el almacenamiento de gran capacidad más lento.
 
-10. Inicie Windows PowerShell y use el cmdlet `Test-SRTopology` para determinar si se cumplen todos los requisitos de Réplica de almacenamiento. Puede usar el cmdlet en modo de solo requisitos para una prueba rápida, o en modo de evaluación de rendimiento de ejecución más larga.  
-Por ejemplo,  
+3. Inicie Windows PowerShell y use el cmdlet `Test-SRTopology` para determinar si se cumplen todos los requisitos de Réplica de almacenamiento. Puede usar el cmdlet en modo de solo requisitos para una prueba rápida, o en modo de evaluación de rendimiento de ejecución más larga.  
+   Por ejemplo,  
 
    ```PowerShell
    MD c:\temp
@@ -148,13 +148,13 @@ Por ejemplo,
    Test-SRTopology -SourceComputerName SR-SRV01 -SourceVolumeName f: -SourceLogVolumeName g: -DestinationComputerName SR-SRV03 -DestinationVolumeName f: -DestinationLogVolumeName g: -DurationInMinutes 30 -ResultPath c:\temp        
    ```
 
-      > [!IMPORTANT]
-      > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Otra alternativa es copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar E/S de escritura. Por ejemplo, una muestra con una carga de trabajo de E/S de escritura baja durante cinco minutos en el volumen D:.  
-      > `Diskspd.exe -c1g -d300 -W5 -C5 -b8k -t2 -o2 -r -w5 -h d:\test.dat`  
+     > [!IMPORTANT]
+     > Al usar un servidor de prueba sin carga de E/S de escritura en el volumen de origen especificado durante el período de evaluación, considere la posibilidad de agregar una carga de trabajo o no se generará un informe útil. Pruebe con cargas de trabajo del estilo de producción para ver números reales y tamaños de registro recomendados. Otra alternativa es copiar algunos archivos en el volumen de origen durante la prueba o descargar y ejecutar [DISKSPD](https://gallery.technet.microsoft.com/DiskSpd-a-robust-storage-6cd2f223) para generar E/S de escritura. Por ejemplo, una muestra con una carga de trabajo de E/S de escritura baja durante cinco minutos en el volumen D:.  
+     > `Diskspd.exe -c1g -d300 -W5 -C5 -b8k -t2 -o2 -r -w5 -h d:\test.dat`  
 
-11. Examine el informe **TestSrTopologyReport.html** para asegurarse de que cumple los requisitos de la Réplica de almacenamiento.  
+4. Examine el informe **TestSrTopologyReport.html** para asegurarse de que cumple los requisitos de la Réplica de almacenamiento.  
 
-    ![Pantalla donde se muestran los resultados de informes de topología de replicación](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
+   ![Pantalla donde se muestran los resultados de informes de topología de replicación](./media/Cluster-to-Cluster-Storage-Replication/SRTestSRTopologyReport.png)      
 
 ## <a name="step-2-configure-two-scale-out-file-server-failover-clusters"></a>Paso 2: Configuración de dos clústeres de conmutación por error en Servidor de archivos de escalabilidad horizontal  
 Ahora creará dos clústeres de conmutación por error normal. Después de la configuración, la validación y las pruebas, los replicará con Réplica de almacenamiento. Puede realizar todos los pasos siguientes en los nodos del clúster directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server.  
@@ -212,89 +212,89 @@ Ahora creará dos clústeres de conmutación por error normal. Después de la co
 ## <a name="step-3-set-up-cluster-to-cluster-replication-using-windows-powershell"></a>Paso 3: Configurar la replicación de clúster a clúster mediante Windows PowerShell  
 Ahora configurarás la replicación de clúster a clúster mediante Windows PowerShell. Puede realizar todos los pasos siguientes en los nodos directamente o desde un equipo de administración remota que contenga las herramientas de administración de servidor remoto de Windows Server  
 
-1.  Conceda el primer acceso completo de clúster al otro clúster mediante la ejecución del **Grant SRAccess** cmdlet en cualquier nodo en el primer clúster, o de forma remota.  Herramientas de administración remota del servidor de Windows Server
+1. Conceda el primer acceso completo de clúster al otro clúster mediante la ejecución del **Grant SRAccess** cmdlet en cualquier nodo en el primer clúster, o de forma remota.  Herramientas de administración remota del servidor de Windows Server
 
-    ```PowerShell
-    Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
-    ```  
+   ```PowerShell
+   Grant-SRAccess -ComputerName SR-SRV01 -Cluster SR-SRVCLUSB  
+   ```  
 
-2.  Conceda el segundo clúster acceso completo al otro clúster mediante la ejecución del **Grant SRAccess** cmdlet en cualquier nodo en el segundo clúster, o de forma remota.  
+2. Conceda el segundo clúster acceso completo al otro clúster mediante la ejecución del **Grant SRAccess** cmdlet en cualquier nodo en el segundo clúster, o de forma remota.  
 
-    ```PowerShell
-    Grant-SRAccess -ComputerName SR-SRV03 -Cluster SR-SRVCLUSA  
-    ```  
+   ```PowerShell
+   Grant-SRAccess -ComputerName SR-SRV03 -Cluster SR-SRVCLUSA  
+   ```  
 
-3.  Configure la replicación de clúster a clúster y especifique los discos de origen y destino, los registros de origen y destino, los nombres de clúster de origen y de destino y el tamaño del registro. Puede realizar este comando localmente en el servidor o mediante un equipo de administración remota.  
+3. Configure la replicación de clúster a clúster y especifique los discos de origen y destino, los registros de origen y destino, los nombres de clúster de origen y de destino y el tamaño del registro. Puede realizar este comando localmente en el servidor o mediante un equipo de administración remota.  
 
-    ```powershell  
-    New-SRPartnership -SourceComputerName SR-SRVCLUSA -SourceRGName rg01 -SourceVolumeName c:\ClusterStorage\Volume2 -SourceLogVolumeName f: -DestinationComputerName SR-SRVCLUSB -DestinationRGName rg02 -DestinationVolumeName c:\ClusterStorage\Volume2 -DestinationLogVolumeName f:  
-    ```  
+   ```powershell  
+   New-SRPartnership -SourceComputerName SR-SRVCLUSA -SourceRGName rg01 -SourceVolumeName c:\ClusterStorage\Volume2 -SourceLogVolumeName f: -DestinationComputerName SR-SRVCLUSB -DestinationRGName rg02 -DestinationVolumeName c:\ClusterStorage\Volume2 -DestinationLogVolumeName f:  
+   ```  
 
-    > [!WARNING]  
-    > El tamaño de registro predeterminado es 8 GB. Según los resultados del cmdlet **Test-SRTopology**, puede decidir usar -**LogSizeInBytes** con un valor superior o inferior.  
+   > [!WARNING]  
+   > El tamaño de registro predeterminado es 8 GB. Según los resultados del cmdlet **Test-SRTopology**, puede decidir usar -**LogSizeInBytes** con un valor superior o inferior.  
 
-4.  Para obtener el estado de origen y destino de replicación, utilice **Get-SRGroup** y **Get-SRPartnership** como sigue:  
+4. Para obtener el estado de origen y destino de replicación, utilice **Get-SRGroup** y **Get-SRPartnership** como sigue:  
 
-    ```powershell
-    Get-SRGroup  
-    Get-SRPartnership  
-    (Get-SRGroup).replicas  
-    ```  
+   ```powershell
+   Get-SRGroup  
+   Get-SRPartnership  
+   (Get-SRGroup).replicas  
+   ```  
 
-5.  Determine el progreso de la replicación del modo siguiente:  
+5. Determine el progreso de la replicación del modo siguiente:  
 
-    1.  En el servidor de origen, ejecuta el siguiente comando y examina los eventos 5015, 5002, 5004, 1237, 5001 y 2200:
+   1.  En el servidor de origen, ejecuta el siguiente comando y examina los eventos 5015, 5002, 5004, 1237, 5001 y 2200:
         
-        ```PowerShell
-        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
-        ```
-    2.  En el servidor de destino, ejecute el siguiente comando para ver los eventos de Réplica de almacenamiento que muestran la creación de la asociación. Este evento indica el número de bytes copiados y el tiempo necesario. Por ejemplo:  
-        
-        ```powershell
-        Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
-        ```
-        A continuación presentamos un ejemplo de la salida:
-        
-        ```
-        TimeCreated  : 4/8/2016 4:12:37 PM  
-        ProviderName : Microsoft-Windows-StorageReplica  
-        Id           : 1215  
-        Message      : Block copy completed for replica.  
-            ReplicationGroupName: rg02  
-            ReplicationGroupId:  
-            {616F1E00-5A68-4447-830F-B0B0EFBD359C}  
-            ReplicaName: f:\  
-            ReplicaId: {00000000-0000-0000-0000-000000000000}  
-            End LSN in bitmap:  
-            LogGeneration: {00000000-0000-0000-0000-000000000000}  
-            LogFileId: 0  
-            CLSFLsn: 0xFFFFFFFF  
-            Number of Bytes Recovered: 68583161856  
-            Elapsed Time (seconds): 117  
-        ```
-    3. También es posible que el grupo de servidores de destino de la réplica indique el número de bytes que quedan por copiar en todo momento, lo cual se puede consultar mediante PowerShell. Por ejemplo:
-
        ```PowerShell
-       (Get-SRGroup).Replicas | Select-Object numofbytesremaining
+       Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica -max 20
        ```
+   2.  En el servidor de destino, ejecute el siguiente comando para ver los eventos de Réplica de almacenamiento que muestran la creación de la asociación. Este evento indica el número de bytes copiados y el tiempo necesario. Por ejemplo:  
+        
+       ```powershell
+       Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | Where-Object {$_.ID -eq "1215"} | Format-List
+       ```
+       A continuación presentamos un ejemplo de la salida:
+        
+       ```
+       TimeCreated  : 4/8/2016 4:12:37 PM  
+       ProviderName : Microsoft-Windows-StorageReplica  
+       Id           : 1215  
+       Message      : Block copy completed for replica.  
+           ReplicationGroupName: rg02  
+           ReplicationGroupId:  
+           {616F1E00-5A68-4447-830F-B0B0EFBD359C}  
+           ReplicaName: f:\  
+           ReplicaId: {00000000-0000-0000-0000-000000000000}  
+           End LSN in bitmap:  
+           LogGeneration: {00000000-0000-0000-0000-000000000000}  
+           LogFileId: 0  
+           CLSFLsn: 0xFFFFFFFF  
+           Number of Bytes Recovered: 68583161856  
+           Elapsed Time (seconds): 117  
+       ```
+   3. También es posible que el grupo de servidores de destino de la réplica indique el número de bytes que quedan por copiar en todo momento, lo cual se puede consultar mediante PowerShell. Por ejemplo:
 
-       Como ejemplo de progreso (que no terminará):  
+      ```PowerShell
+      (Get-SRGroup).Replicas | Select-Object numofbytesremaining
+      ```
 
-       ```PowerShell
-         while($true) {  
-         $v = (Get-SRGroup -Name "Replication 2").replicas | Select-Object numofbytesremaining  
-         [System.Console]::Write("Number of bytes remaining: {0}`n", $v.numofbytesremaining)  
-         Start-Sleep -s 5  
-        }
-        ```
+      Como ejemplo de progreso (que no terminará):  
+
+      ```PowerShell
+        while($true) {  
+        $v = (Get-SRGroup -Name "Replication 2").replicas | Select-Object numofbytesremaining  
+        [System.Console]::Write("Number of bytes remaining: {0}`n", $v.numofbytesremaining)  
+        Start-Sleep -s 5  
+       }
+       ```
 
 6. En el servidor de destino del clúster de destino, ejecute el siguiente comando y examine los eventos 5009, 1237, 5001, 5015, 5005 y 2200 para entender el progreso del procesamiento. No debería haber ninguna advertencia de errores en esta secuencia. Habrá muchos eventos 1237; estos indican el progreso.  
     
    ```PowerShell
    Get-WinEvent -ProviderName Microsoft-Windows-StorageReplica | FL  
    ```
-   > [!NOTE]  
-        > El disco de clúster de destino siempre se mostrará como **En línea (sin acceso)** cuando se replica.  
+   > [!NOTE]
+   > El disco de clúster de destino siempre se mostrará como **En línea (sin acceso)** cuando se replica.  
 
 ## <a name="step-4-manage-replication"></a>Paso 4: Administrar la replicación
 

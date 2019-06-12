@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 91bdedce-6145-469f-b72e-7e113c4391e9
 author: christianmontoya
 manager: scottman
-ms.openlocfilehash: 3b809d4d624f21eaeae5a66277db683c95c79bdd
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: c947375b58c0ad88781335b799055e101bd2a193
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034446"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447098"
 ---
 # <a name="migrate-your-remote-desktop-services-client-access-licenses-rds-cals"></a>Migración de las licencias de acceso de cliente para Servicios de Escritorio remoto (CAL de RDS)
 
@@ -70,19 +70,19 @@ Existen tres mecanismos para migrar las licencias para el servidor de licencias 
 
 ### <a name="using-a-web-browser"></a>Mediante un explorador web
 1. En el **obtener un paquete de clave de licencia de cliente** página, haga clic en el hipervínculo para conectar al sitio Web de licencias de servicios de escritorio remoto.
-Si está ejecutando el Administrador de licencias de escritorio remoto en un equipo que no tiene conectividad a Internet, anote la dirección del sitio Web de licencias de servicios de escritorio remoto y, a continuación, conectarse al sitio Web desde un equipo que tenga conectividad a Internet. 
+   Si está ejecutando el Administrador de licencias de escritorio remoto en un equipo que no tiene conectividad a Internet, anote la dirección del sitio Web de licencias de servicios de escritorio remoto y, a continuación, conectarse al sitio Web desde un equipo que tenga conectividad a Internet. 
 2. En la página Web de licencias de servicios de escritorio remoto, en **seleccione opción**, seleccione **administrar CAL**y, a continuación, haga clic en **siguiente**.
 3. Proporcione la siguiente información necesaria, a continuación, haga clic en **siguiente**:
     - **Identificador del servidor de licencias de destino**: Un número de 35 dígitos, en grupos de 5 números, que se muestra en el **obtener un paquete de clave de licencia de cliente** página del Asistente para administrar CAL de RDS.
     - **Motivo para la recuperación**: Elegir el motivo para migrar las CAL de RDS.
     - **Programa de licencias**: Elija el programa a través del cual adquirió las CAL de RDS.
 4. Proporcione la siguiente información necesaria, a continuación, haga clic en **siguiente**:
-    - Apellidos
-    - Nombre o un nombre dado
-    - Nombre de la empresa
-    - País o región
+   - Apellidos
+   - Nombre o un nombre dado
+   - Nombre de la empresa
+   - País o región
 
-    También puede proporcionar la información opcional solicitada, como la dirección de la compañía, dirección de correo electrónico y número de teléfono. En el campo de unidad organizativa, puede describir la unidad dentro de su organización que actúa este servidor de licencias.
+     También puede proporcionar la información opcional solicitada, como la dirección de la compañía, dirección de correo electrónico y número de teléfono. En el campo de unidad organizativa, puede describir la unidad dentro de su organización que actúa este servidor de licencias.
 
 5. El programa de licencias que ha seleccionado en la página anterior determinará la información que debe proporcionar en la página siguiente. En la mayoría de los casos, debe proporcionar un código de licencia o un número de contrato. Consulte la documentación suministrada al comprar las CAL de RDS. Además, deberá especificar qué tipo de CAL de RDS y la cantidad que desea migrar al servidor de licencias.
 6. Después de haber proporcionado la información necesaria, haga clic en **Siguiente**.

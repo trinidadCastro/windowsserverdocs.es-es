@@ -11,12 +11,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 5f253bd4952d8a347e97eafdb38d86fa98024b8d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bd5650724272422d09e87b7eecf10f825b00fabf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839946"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447042"
 ---
 # <a name="manage-different-domains-in-active-directory-administrative-center"></a>Administración de dominios diferentes en el centro de administración de Active Directory
 
@@ -52,31 +52,31 @@ ms.locfileid: "59839946"
 
 ### <a name="windows-server-2008-r2-to-manage-a-foreign-domain-in-the-selected-instance-of-active-directory-administrative-center-using-the-current-set-of-logon-credentials"></a>Windows Server 2008 R2: Para administrar un dominio externo de la instancia seleccionada del centro de administración de Active Directory con el conjunto actual de credenciales de inicio de sesión
 
-1.  Para abrir el centro de administración de Active Directory, haga clic en **iniciar**, haga clic en **herramientas administrativas**y, a continuación, haga clic en **centro de administración de Active Directory**.
+1. Para abrir el centro de administración de Active Directory, haga clic en **iniciar**, haga clic en **herramientas administrativas**y, a continuación, haga clic en **centro de administración de Active Directory**.
 
-    > [!NOTE]
-    >  Otra forma de abrir el centro de administración de Active Directory es hacer clic en **iniciar**, haga clic en **ejecutar**y, a continuación, escriba **dsac.exe**.
+   > [!NOTE]
+   >  Otra forma de abrir el centro de administración de Active Directory es hacer clic en **iniciar**, haga clic en **ejecutar**y, a continuación, escriba **dsac.exe**.
 
-2.  Para abrir **agregar nodos de navegación**, cerca de la parte superior de la ventana del centro de administración de Active Directory, haga clic en **agregar nodos de navegación** tal como se muestra en la siguiente ilustración.
+2. Para abrir **agregar nodos de navegación**, cerca de la parte superior de la ventana del centro de administración de Active Directory, haga clic en **agregar nodos de navegación** tal como se muestra en la siguiente ilustración.
 
-     ![Captura de pantalla mostrando ** Agregar navegación nodos ** la interfaz de usuario](media/click_add_nav_nodes.gif)
+    ![Captura de pantalla mostrando ** Agregar navegación nodos ** la interfaz de usuario](media/click_add_nav_nodes.gif)
 
-    > [!NOTE]
-    >  Otra forma de abrir **agregar nodos de navegación** a derecha\-haga clic en cualquier lugar en el espacio vacío en el panel de navegación del centro de administración de Active Directory y, a continuación, haga clic en **agregar nodos de navegación**.
+   > [!NOTE]
+   >  Otra forma de abrir **agregar nodos de navegación** a derecha\-haga clic en cualquier lugar en el espacio vacío en el panel de navegación del centro de administración de Active Directory y, a continuación, haga clic en **agregar nodos de navegación**.
 
-3.  En **agregar nodos de navegación**, haga clic en **conectar a otros dominios** tal como se muestra en la siguiente ilustración.
+3. En **agregar nodos de navegación**, haga clic en **conectar a otros dominios** tal como se muestra en la siguiente ilustración.
 
-     ![Captura de pantalla mostrando ** Agregar navegación nodos ** ** conectar a otros dominios ** la interfaz de usuario](media/add_nav_nodes.gif)
+    ![Captura de pantalla mostrando ** Agregar navegación nodos ** ** conectar a otros dominios ** la interfaz de usuario](media/add_nav_nodes.gif)
 
-4.  En **conectarse a**, escriba el nombre del dominio externo que desea administrar \(por ejemplo, **contoso.com**\)y, a continuación, haga clic en **Aceptar**.
+4. En **conectarse a**, escriba el nombre del dominio externo que desea administrar \(por ejemplo, **contoso.com**\)y, a continuación, haga clic en **Aceptar**.
 
-5.  Cuando está conectado correctamente al dominio externo, desplácese por las columnas en el **agregar nodos de navegación** ventana, seleccione los contenedores para agregar al panel de navegación del centro de administración de Active Directory, y a continuación, haga clic en **Aceptar**.
+5. Cuando está conectado correctamente al dominio externo, desplácese por las columnas en el **agregar nodos de navegación** ventana, seleccione los contenedores para agregar al panel de navegación del centro de administración de Active Directory, y a continuación, haga clic en **Aceptar**.
 
- Para obtener más información acerca de cómo personalizar el panel de navegación del centro de administración de Active Directory, consulte [personalizar el panel de navegación del centro de administración de Active Directory](customize-the-active-directory-administrative-center-navigation-pane.md).
+   Para obtener más información acerca de cómo personalizar el panel de navegación del centro de administración de Active Directory, consulte [personalizar el panel de navegación del centro de administración de Active Directory](customize-the-active-directory-administrative-center-navigation-pane.md).
 
- También puede abrir el centro de administración de Active Directory mediante el uso de un conjunto de credenciales de inicio de sesión que es diferente de su conjunto actual de credenciales de inicio de sesión. El comando en el siguiente procedimiento puede ser útil si ha iniciado sesión el equipo que ejecuta el centro de administración de Active Directory con credenciales de usuario normal, pero desea usar el centro de administración de Active Directory en este equipo para administrar su dominio local como administrador. \(Este comando también puede ser útil si desea usar el centro de administración de Active Directory para administrar un dominio externo que sea diferente de su dominio local con un conjunto de credenciales que es diferente de su conjunto actual de credenciales de inicio de sesión de forma remota. Sin embargo, el dominio externo debe tener una confianza establecida con el dominio local.\)
+   También puede abrir el centro de administración de Active Directory mediante el uso de un conjunto de credenciales de inicio de sesión que es diferente de su conjunto actual de credenciales de inicio de sesión. El comando en el siguiente procedimiento puede ser útil si ha iniciado sesión el equipo que ejecuta el centro de administración de Active Directory con credenciales de usuario normal, pero desea usar el centro de administración de Active Directory en este equipo para administrar su dominio local como administrador. \(Este comando también puede ser útil si desea usar el centro de administración de Active Directory para administrar un dominio externo que sea diferente de su dominio local con un conjunto de credenciales que es diferente de su conjunto actual de credenciales de inicio de sesión de forma remota. Sin embargo, el dominio externo debe tener una confianza establecida con el dominio local.\)
 
- No se requiere una pertenencia a grupos mínima para llevar a cabo este procedimiento.
+   No se requiere una pertenencia a grupos mínima para llevar a cabo este procedimiento.
 
 ### <a name="to-manage-a-domain-using-logon-credentials-that-are-different-from-the-current-set-of-logon-credentials"></a>Para administrar un dominio con credenciales de inicio de sesión distintas del conjunto de credenciales de inicio de sesión actual
 

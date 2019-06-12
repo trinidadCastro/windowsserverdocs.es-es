@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c239dd1f1f8d03d761e45505634da10f19ed08cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 34c761cb08916d277f8f7f1c58d57a05ed2c8daf
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842026"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441812"
 ---
 # <a name="ren"></a>ren
 
@@ -37,19 +37,19 @@ rename [<Drive>:][<Path>]<FileName1> <FileName2>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<Drive>:][\<Path>]\<FileName1>|Especifica la ubicación y el nombre del archivo o un conjunto de archivos que desea cambiar el nombre. *NombreDeArchivo1* puede incluir caracteres comodín (**&#42;** y **?**).|
+|[\<Drive>:][\<Path>]\<FileName1>|Especifica la ubicación y el nombre del archivo o un conjunto de archivos que desea cambiar el nombre. *NombreDeArchivo1* puede incluir caracteres comodín ( **&#42;** y **?** ).|
 |\<FileName2>|Especifica el nuevo nombre para el archivo. Puede usar caracteres comodín para especificar los nuevos nombres de varios archivos.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   No se puede especificar una nueva unidad o ruta de acceso al cambiar el nombre de archivos.
--   No puede usar el **ren** comando para cambiar el nombre de archivos en las unidades o mover archivos a un directorio diferente.
--   Puede usar caracteres comodín (**&#42;** y **?**) en cualquiera *FileName* parámetro. Caracteres que se representan mediante caracteres comodín en *FileName2* serán idénticos a los caracteres correspondientes de *nombreDeArchivo1*.
--   *NombreDeArchivo2* debe ser un nombre de archivo único. Si *FileName2* coincide con un nombre de archivo existente, **ren** muestra el mensaje siguiente:  
-    ```
-    Duplicate file name or file not found
-    ```
+- No se puede especificar una nueva unidad o ruta de acceso al cambiar el nombre de archivos.
+- No puede usar el **ren** comando para cambiar el nombre de archivos en las unidades o mover archivos a un directorio diferente.
+- Puede usar caracteres comodín ( **&#42;** y **?** ) en cualquiera *FileName* parámetro. Caracteres que se representan mediante caracteres comodín en *FileName2* serán idénticos a los caracteres correspondientes de *nombreDeArchivo1*.
+- *NombreDeArchivo2* debe ser un nombre de archivo único. Si *FileName2* coincide con un nombre de archivo existente, **ren** muestra el mensaje siguiente:  
+  ```
+  Duplicate file name or file not found
+  ```
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

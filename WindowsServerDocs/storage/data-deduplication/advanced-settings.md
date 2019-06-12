@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 15cfc054810a2cab85aae9a04d6195c3ae6fe0b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af977519b5e77eb768fdf8de1e6a34f7c8274666
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861216"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447242"
 ---
 # <a name="advanced-data-deduplication-settings"></a>Configuración avanzada de Desduplicación de datos
 
@@ -97,7 +97,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
                     <li>Bajo</li>
                 </ul>
             </td>
-            <td>Este valor ayuda a que el sistema determinar cómo asignar el tiempo de CPU. *High* utilizará más tiempo de CPU, *Low* utilizará menos.</td>
+            <td>Este valor ayuda a que el sistema determinar cómo asignar el tiempo de CPU. <em>High</em> utilizará más tiempo de CPU, <em>Low</em> utilizará menos.</td>
         </tr>
         <tr>
             <td>Days</td>
@@ -123,7 +123,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>DurationHours</td>
             <td>Número máximo de horas que puede ejecutarse un trabajo</td>
             <td>Números enteros positivos</td>
-            <td>Para evitar que un trabajo se ejecute en horas de inactividad de la carga de trabajo</td>
+            <td>Para evitar que un trabajo se ejecute en una carga de trabajo&#39;horas de inactividad de s</td>
         </tr>
         <tr>
             <td>Enabled</td>
@@ -141,7 +141,7 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
             <td>InputOutputThrottle</td>
             <td>Especifica la cantidad de limitación de entrada y salida aplicada al trabajo</td>
             <td>Enteros de 0 a 100 (indica un porcentaje)</td>
-            <td>La limitación garantiza que los trabajos no interfieren con otros procesos intensivos de entrada y salida.</td>
+            <td>La limitación garantiza que no trabajos&#39;t interferir con otros procesos de E/s intensivas.</td>
         </tr>
         <tr>
             <td>Memoria</td>
@@ -164,8 +164,8 @@ Puede alternar la siguiente configuración para los trabajos de Desduplicación 
         <tr>
             <td>Comienzo</td>
             <td>Especifica la hora en la que se debe iniciar un trabajo.</td>
-            <td>`System.DateTime`</td>
-            <td>La parte de *fecha* de `System.Datetime` proporcionada en *Start* es irrelevante (mientras esté en el pasado), pero la parte de *hora* especifica cuándo debe comenzar el trabajo.</td>
+            <td><code>System.DateTime</code></td>
+            <td>El <em>fecha</em> forma parte de la <code>System.Datetime</code> proporcionado a <em>iniciar</em> es irrelevante (mientras ésta&#39;s en el pasado), pero la <em>tiempo</em> parte especifica cuándo debe comenzar el trabajo .</td>
         </tr>
         <tr>
             <td>StopWhenSystemBusy</td>
@@ -208,9 +208,9 @@ Las razones principales para modificar la configuración de volumen desde el tip
     <tbody>
         <tr>
             <td>ChunkRedundancyThreshold</td>
-            <td>El número de veces al que se hace referencia a un fragmento antes de que se duplique un fragmento en la sección de la zona activa del almacén de fragmentos. El valor de la sección de la zona activa es que los llamados fragmentos "activos" a los que se hace referencia con frecuencia tienen varias rutas de acceso para mejorar el tiempo de acceso.</td>
+            <td>El número de veces al que se hace referencia a un fragmento antes de que se duplique un fragmento en la sección de la zona activa del almacén de fragmentos. El valor de la sección de punto de conexión es que llamados &quot;hot&quot; fragmentos que se hace referencia con frecuencia tienen varias rutas de acceso para mejorar el tiempo de acceso.</td>
             <td>Números enteros positivos</td>
-            <td>La razón principal para modificar este número es aumentar la velocidad del ahorro de volúmenes con desduplicación alta. En general, el valor predeterminado (100) es la configuración recomendada y no es necesario modificarlo.</td>
+            <td>La razón principal para modificar este número es aumentar la velocidad del ahorro de volúmenes con desduplicación alta. En general, el valor predeterminado (100) es la opción recomendada y no se debe&#39;t es necesario modificarlo.</td>
         </tr>
         <tr>
             <td>ExcludeFileType</td>
@@ -228,13 +228,13 @@ Las razones principales para modificar la configuración de volumen desde el tip
             <td>InputOutputScale</td>
             <td>Especifica el nivel de la paralelización de E/S (colas de E/S) para que Desduplicación de datos la usará en un volumen durante un trabajo de procesamiento posterior.</td>
             <td>Números enteros positivos entre 1 y 36</td>
-            <td>La razón principal para modificar este valor es reducir el impacto en el rendimiento de una carga de trabajo de elevada E/S al restringir el número de colas de E/S que Desduplicación de datos puede usar en un volumen. Tenga en cuenta que la modificación de esta configuración predeterminada puede provocar que los trabajos de procesamiento posterior de Desduplicación de datos se ejecuten lentamente.</td>
+            <td>La razón principal para modificar este valor es reducir el impacto en el rendimiento de una carga de trabajo de elevada E/S al restringir el número de colas de E/S que Desduplicación de datos puede usar en un volumen. Tenga en cuenta que modificar esta configuración desde el valor predeterminado puede causar la desduplicación de datos&#39;s posprocesamiento los trabajos se ejecuten lentamente.</td>
         </tr>
         <tr>
             <td>MinimumFileAgeDays</td>
             <td>Número de días después de crear el archivo antes de que el archivo se considere apto para la directiva de optimización.</td>
             <td>Números enteros positivos (incluido el cero)</td>
-            <td>Los tipos de uso **Predeterminado** e **Hyper-v** establecen este valor en 3 para maximizar el rendimiento en los archivos activos o recientemente creados. Puede modificar este comportamiento si desea que Desduplicación de datos sea más agresivo o si no le importa la latencia adicional asociada con la desduplicación.</td>
+            <td>Los tipos de uso <strong>Predeterminado</strong> e <strong>Hyper-v</strong> establecen este valor en 3 para maximizar el rendimiento en los archivos activos o recientemente creados. Puede modificar este comportamiento si desea que Desduplicación de datos sea más agresivo o si no le importa la latencia adicional asociada con la desduplicación.</td>
         </tr>
         <tr>
             <td>MinimumFileSize</td>
@@ -258,7 +258,7 @@ Las razones principales para modificar la configuración de volumen desde el tip
             <td>OptimizeInUseFiles</td>
             <td>Cuando está habilitada esta opción, los archivos que tienen controladores activos en ellos se considerarán aptos para la directiva de optimización.</td>
             <td>Verdadero o falso</td>
-            <td>Habilite esta opción si la carga de trabajo mantiene los archivos abiertos durante largos períodos. Si esta opción no está habilitada, el archivo nunca se podría optimizar si la carga de trabajo tiene un controlador abierto, incluso si solo anexa datos ocasionalmente al final.</td>
+            <td>Habilite esta opción si la carga de trabajo mantiene los archivos abiertos durante largos períodos. Si esta opción no está habilitada, nunca se podría optimizar un archivo si la carga de trabajo tiene un identificador abierto, incluso si lo&#39;s anexa datos ocasionalmente solo al final.</td>
         </tr>
         <tr>
             <td>OptimizePartialFiles</td>
@@ -310,9 +310,9 @@ Por ejemplo, puede querer deshabilitar la recolección de elementos no utilizado
         </tr>
         <tr>
             <td>DeepGCInterval</td>
-            <td>Esta opción configura el intervalo en el que trabajos de recolección normal de elementos no utilizados se convierten en [trabajos de recolección completa de elementos no utilizados](advanced-settings.md#faq-full-v-regular-gc). Un valor de n significa que cada n<sup></sup> trabajos había un trabajo de recolección completa de elementos no utilizados. Ten en cuenta que la colección completa de elementos no utilizados siempre está deshabilitada (independientemente del valor del Registro) para volúmenes con el [tipo de Uso de copia de seguridad](understand.md#usage-type-backup). `Start-DedupJob -Type GarbageCollection -Full` se pueden utilizar si se desea la recolección de elementos no utilizados completa en un volumen de copia de seguridad.</td>
+            <td>Esta opción configura el intervalo en el que trabajos de recolección normal de elementos no utilizados se convierten en <a href="advanced-settings.md#faq-full-v-regular-gc" data-raw-source="[full Garbage Collection jobs](advanced-settings.md#faq-full-v-regular-gc)">trabajos de recolección completa de elementos no utilizados</a>. Un valor de n significa que cada n<sup></sup> trabajos había un trabajo de recolección completa de elementos no utilizados. Ten en cuenta que la colección completa de elementos no utilizados siempre está deshabilitada (independientemente del valor del Registro) para volúmenes con el <a href="understand.md#usage-type-backup" data-raw-source="[Backup Usage Type](understand.md#usage-type-backup)">tipo de Uso de copia de seguridad</a>. <code>Start-DedupJob -Type GarbageCollection -Full</code> se pueden utilizar si se desea la recolección de elementos no utilizados completa en un volumen de copia de seguridad.</td>
             <td>Enteros (-1 indica deshabilitado)</td>
-            <td>Consulte [esta pregunta frecuente](advanced-settings.md#faq-why-disable-full-gc)</td>
+            <td>Consulte <a href="advanced-settings.md#faq-why-disable-full-gc" data-raw-source="[this frequently asked question](advanced-settings.md#faq-why-disable-full-gc)">esta pregunta frecuente</a></td>
         </tr>
     </tbody>
 </table>
@@ -324,12 +324,12 @@ Esta configuración le permiten controlar cómo se ejecuta Desduplicación de da
 <a id="faq-running-dedup-jobs-manually"></a>**Quiero ejecutar un trabajo de desduplicación de datos ahora mismo, pero no quiero crear una nueva programación--¿puedo hacer esto?**  
 Sí, [todos los trabajos se pueden ejecutar manualmente](run.md#running-dedup-jobs-manually).
 
-<a id="faq-full-v-regular-gc"></a>**¿Cuál es la diferencia entre la recopilación de elementos no utilizados completa y normal?**  
+<a id="faq-full-v-regular-gc"></a> **¿Cuál es la diferencia entre la recopilación de elementos no utilizados completa y normal?**  
 Hay dos tipos de [recolección de elementos no deseados](understand.md#job-info-gc):
 
 - *Recolección normal de elementos no utilizados*: utiliza un algoritmo estadístico para buscar grandes fragmentos sin referencia que cumplen unos criterios determinados (bajo en memoria e IOPs). La recolección normal de elementos no utilizados compacta un contenedor de almacenamiento de fragmentos solo si un porcentaje mínimo de los fragmentos están sin referencia. Este tipo de recolección de elementos no utilizados se ejecuta más rápido y consume menos recursos que la recolección completa de elementos no utilizados. La programación predeterminada del trabajo de recolección normal de elementos no utilizados es ejecutarlo una vez por semana.
 - La *recolección completa de elementos no utilizados* hace un trabajo mucho más profundo de búsqueda de fragmentos sin referencia y de liberación de más espacio en disco. La recolección completa de elementos no utilizados compacta cada contenedor, incluso si solo un único fragmento del contenedor no tiene referencia. La recolección de elementos no utilizados completa también liberará espacio que haya estado en uso si se produjo un error de alimentación o un bloqueo durante un trabajo de optimización. Los trabajos de recolección completa de elementos no utilizados recuperarán el 100 por ciento del espacio disponible que se puede recuperar en un volumen desduplicado a costa de requerir más tiempo y recursos del sistema en comparación con un trabajo de recolección normal de elementos no utilizados. El trabajo de recolección completa de elementos no utilizados normalmente encontrará y liberará hasta un 5 por ciento más de datos sin referencia que un trabajo de recolección normal de elementos no utilizados. La programación predeterminada del trabajo de recolección completa de elementos no utilizados consiste en ejecutarse cada cuarta vez que está programada la recolección de elementos no utilizados.
 
-<a id="faq-why-disable-full-gc"></a>**¿Por qué podría ser necesario deshabilitar la recolección de elementos no utilizados completa?**  
+<a id="faq-why-disable-full-gc"></a> **¿Por qué podría ser necesario deshabilitar la recolección de elementos no utilizados completa?**  
 - La recolección de elementos no utilizados podría afectar negativamente a las instantáneas del tiempo de vida del volumen y al tamaño de la copia de seguridad incremental. Las cargas de trabajo con una E/S intensiva o con una elevada renovación de código pueden ver una degradación del rendimiento en los trabajos de recolección completa de elementos no utilizados.           
 - Puede ejecutar manualmente un trabajo de recolección completa de elementos no utilizados desde PowerShell para limpiar las fugas si sabe que se bloqueó el sistema.

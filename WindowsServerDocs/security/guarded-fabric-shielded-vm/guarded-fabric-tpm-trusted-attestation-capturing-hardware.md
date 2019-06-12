@@ -7,13 +7,13 @@ ms.assetid: 915b1338-5085-481b-8904-75d29e609e93
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.date: 12/12/2018
-ms.openlocfilehash: 82171eee10a06cad6bb3ac30e8f771086975c242
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.date: 04/01/2019
+ms.openlocfilehash: 61f56eea59d11264047a9c7b8b6734617ad1802f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841666"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447335"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>Autorizar a los hosts protegidos con la atestación de TPM
 
@@ -99,8 +99,11 @@ Para obtener más información acerca de los niveles de regla de directiva de CI
 
 3.  Aplicar la directiva de CI a su host de referencia:
 
-    1.  Copie el archivo binario de directiva de CI (HW1CodeIntegrity.p7b) en la siguiente ubicación en el host de referencia (el nombre de archivo debe coincidir exactamente con):<br>
-        **C:\\Windows\\System32\\CodeIntegrity\\SIPolicy.p7b**
+    1.  Ejecute el comando siguiente para configurar la máquina para usar la directiva de CI. También puede implementar la directiva de CI con [directiva de grupo](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) o [System Center Virtual Machine Manager](https://docs.microsoft.com/en-us/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm).
+
+        ```powershell
+        Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }
+        ```
 
     2.  Reinicie el host para aplicar la directiva.
 
@@ -117,8 +120,8 @@ Para obtener más información acerca de los niveles de regla de directiva de CI
 5.  Aplicar la directiva de CI a todos los hosts (con la configuración de hardware y software idéntica) mediante los siguientes comandos:
 
     ```powershell
-    Copy-Item -Path '<Path to HW1CodeIntegrity\_enforced.p7b>' -Destination 'C:\Windows\System32\CodeIntegrity\SIPolicy.p7b'
-
+    Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }
+    
     Restart-Computer
     ```
 
@@ -167,5 +170,5 @@ Una línea de base TPM se requiere para cada clase de hardware en el tejido del 
 
 ## <a name="next-step"></a>Paso siguiente
 
->[!div class="nextstepaction"]
-[Confirmar atestación](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [!div class="nextstepaction"]
+> [Confirmar la atestación](guarded-fabric-confirm-hosts-can-attest-successfully.md)

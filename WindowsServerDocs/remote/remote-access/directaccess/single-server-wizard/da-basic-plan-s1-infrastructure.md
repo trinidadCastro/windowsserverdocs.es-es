@@ -13,14 +13,14 @@ ms.topic: article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b86726fd6e9ee37dbfd43357d8040b43b8dfb200
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7fb7b5f7ae6e10d1007317949a42c48b4765f35c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853346"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446060"
 ---
-#<a name="step-1-plan-the-basic-directaccess-infrastructure"></a>Paso 1 Plan la infraestructura de DirectAccess básica
+# <a name="step-1-plan-the-basic-directaccess-infrastructure"></a>Paso 1 Plan la infraestructura de DirectAccess básica
 El primer paso para una implementación básica de DirectAccess en un solo servidor es planear la infraestructura necesaria para la implementación. En este tema se describen los pasos para la planificación de la infraestructura:  
   
 |Tarea|Descripción|  
@@ -253,5 +253,5 @@ Se mostrará el siguiente mensaje de error en **Administración de DirectAccess*
   
 ### <a name="BKMK_Links"></a>Paso siguiente  
   
--   [Paso 2: Planear la implementación de DirectAccess básica](da-basic-plan-s2-deployment.md)  
+-   [Paso 2: Planear la implementación básica de DirectAccess](da-basic-plan-s2-deployment.md)  
   

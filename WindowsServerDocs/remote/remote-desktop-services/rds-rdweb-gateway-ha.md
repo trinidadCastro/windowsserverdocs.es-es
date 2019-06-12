@@ -12,16 +12,16 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: fa09532e0b327b24ebb1c0e155c26c25d1043b63
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 4e185e51b09d2e2f8ac4527f9de339de27e02f24
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854606"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805137"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>Agregar alta disponibilidad a la parte delantera de web Web de escritorio remoto y puerta de enlace
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
 
 Puede implementar un acceso Web a Escritorio remoto (RD Web Access) y la granja de servidores de puerta de enlace de escritorio remoto (puerta de enlace de escritorio remoto) para mejorar la disponibilidad y escalabilidad de una implementación de servicios de escritorio remoto (RDS) de Windows Server 
@@ -46,15 +46,15 @@ Configurar un servidor para que actúe como un adicionales Web de escritorio rem
     4. En la página de confirmación, seleccione **reiniciar los equipos remotos según sea necesario**y, a continuación, haga clic en **agregar**.  
     5. Repita estos pasos para agregar el servidor de puerta de enlace de escritorio remoto, pero elija **servidores de puerta de enlace de escritorio remoto** en el paso b.
 4. Volver a instalar certificados para los servidores de puerta de enlace de escritorio remoto:
-    1.  Haga clic en Administrador del servidor en el servidor RDMS, **servicios de escritorio remoto > información general > tareas > Editar las propiedades de implementación**.  
-    2.  Expanda **certificados**.  
-    3.  Desplácese hacia abajo hasta la tabla. Haga clic en el escritorio remoto **servicio de rol puerta de enlace > Seleccionar certificado existente.**  
-    4.  Haga clic en **elegir otro certificado** y, a continuación, vaya a la ubicación del certificado. Por ejemplo, \Contoso-CB1\Certificates). Seleccione el archivo de certificado para el servidor Web de escritorio remoto y puerta de enlace que se creó durante los requisitos previos (p. ej., ContosoRdGwCert) y, a continuación, haga clic en **abierto**.  
-    5.  Escriba la contraseña del certificado, seleccione **permitir que el certificado que se agregarán al almacén de certificados entidades emisoras de certificados raíz de confianza en los equipos de destino**y, a continuación, haga clic en **Aceptar**.  
-    6.  Haga clic en **Aplicar**.
-    > [!Note] 
-    > Es posible que deba reiniciar manualmente el servicio TSGateway que se ejecutan en cada servidor de puerta de enlace de escritorio remoto, ya sea a través del administrador del servidor o el Administrador de tareas.
-    7.  Repita los pasos para el servicio de rol de acceso Web de escritorio remoto.
+   1. Haga clic en Administrador del servidor en el servidor RDMS, **servicios de escritorio remoto > información general > tareas > Editar las propiedades de implementación**.  
+   2. Expanda **certificados**.  
+   3. Desplácese hacia abajo hasta la tabla. Haga clic en el escritorio remoto **servicio de rol puerta de enlace > Seleccionar certificado existente.**  
+   4. Haga clic en **elegir otro certificado** y, a continuación, vaya a la ubicación del certificado. Por ejemplo, \Contoso-CB1\Certificates). Seleccione el archivo de certificado para el servidor Web de escritorio remoto y puerta de enlace que se creó durante los requisitos previos (p. ej., ContosoRdGwCert) y, a continuación, haga clic en **abierto**.  
+   5. Escriba la contraseña del certificado, seleccione **permitir que el certificado que se agregarán al almacén de certificados entidades emisoras de certificados raíz de confianza en los equipos de destino**y, a continuación, haga clic en **Aceptar**.  
+   6. Haga clic en **Aplicar**.
+      > [!NOTE] 
+      > Es posible que deba reiniciar manualmente el servicio TSGateway que se ejecutan en cada servidor de puerta de enlace de escritorio remoto, ya sea a través del administrador del servidor o el Administrador de tareas.
+   7. Repita los pasos para el servicio de rol de acceso Web de escritorio remoto.
 
 ## <a name="step-2-configure-rd-web-and-rd-gateway-properties-on-the-new-server"></a>Paso 2: Configurar las propiedades Web de escritorio remoto y puerta de enlace de escritorio remoto en el nuevo servidor
 1. Configurar el servidor para formar parte de una granja de servidores de puerta de enlace de escritorio remoto:
@@ -68,7 +68,7 @@ Configurar un servidor para que actúe como un adicionales Web de escritorio rem
 2. Configurar el servidor para formar parte de una granja de servidores de acceso Web de escritorio remoto. El procedimiento siguiente configura la validación y descifrado de las claves de equipo para que sean iguales en ambos sitios RDWeb.
     1.  Haga clic en Administrador del servidor en el servidor RDMS, **todos los servidores**. Haga clic en el primer servidor de acceso Web de escritorio remoto (por ejemplo, Contoso-WebGw1) y, a continuación, haga clic en **conexión a Escritorio remoto**.  
     2.  Inicie sesión en el servidor de acceso Web de escritorio remoto con una cuenta de administrador de dominio.  
-    3.  En Administrador del servidor en el servidor de acceso Web de escritorio remoto, haga clic en **Herramientas > Administrador de Internet Information Services (IIS)**.  
+    3.  En Administrador del servidor en el servidor de acceso Web de escritorio remoto, haga clic en **Herramientas > Administrador de Internet Information Services (IIS)** .  
     4.  En el panel izquierdo del Administrador de IIS, expanda el **Server (por ejemplo, Contoso-WebGw1) > sitios > sitio Web predeterminado**y, a continuación, haga clic en **RDWeb**.  
     5.  Haga clic en **machineKey**y, a continuación, haga clic en **abrir característica**.
     6.  En la página clave del equipo, en el **acciones** panel, seleccione **Generate Keys**y, a continuación, haga clic en **aplicar**.
@@ -90,7 +90,7 @@ Configurar un servidor para que actúe como un adicionales Web de escritorio rem
 
 Si usa la infraestructura de Azure, puede crear un equilibrador de carga externo; Si no es así, puede configurar un equilibrador de carga de hardware o software independiente. Equilibrio de carga es clave para que sea tráfico uniformemente distribuido las conexiones de clientes de escritorio remoto, a través de la puerta de enlace de escritorio remoto a los servidores que los usuarios se ejecutarán sus cargas de trabajo de larga duración.
 
-> [!Note] 
+> [!NOTE] 
 > Si el servidor anterior ejecuta Web de escritorio remoto y puerta de enlace de escritorio remoto ya se ha configurado detrás de un equilibrador de carga externo, ir directamente para el paso 4, seleccione el grupo de back-end existente y agregue un nuevo servidor al grupo.
 
 1.  Crear un equilibrador de carga:  

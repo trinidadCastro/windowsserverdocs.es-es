@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ef3b943491a90078dab453aaf3a037bd4ccf1825
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1c9406af0868421fa54fe757742cf2a120561b9c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887496"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438345"
 ---
 # <a name="ftp-user"></a>FTP: usuario
 
@@ -30,11 +30,13 @@ Especifica un usuario en el equipo remoto.
 user <UserName> [<Password>] [<Account>]  
 ```  
 ### <a name="parameters"></a>Parámetros  
-|Parámetro|Descripción|  
-|-------|--------|  
-|<UserName>|Especifica un nombre de usuario con la que se va a iniciar sesión en el equipo remoto.|  
-|[<Password>]|Especifica la contraseña de *UserName*. Si no se especifica una contraseña, pero es necesaria, **ftp** pide la contraseña.|  
-|[<Account>]|Especifica una cuenta con la que se va a iniciar sesión en el equipo remoto. Si un *cuenta* no se especifica, pero es necesario, **ftp** solicitará la cuenta.|  
+
+|  Parámetro   |                                                                      Descripción                                                                      |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  <UserName>  |                                          Especifica un nombre de usuario con la que se va a iniciar sesión en el equipo remoto.                                           |
+| [<Password>] |               Especifica la contraseña de *UserName*. Si no se especifica una contraseña, pero es necesaria, **ftp** pide la contraseña.               |
+| [<Account>]  | Especifica una cuenta con la que se va a iniciar sesión en el equipo remoto. Si un *cuenta* no se especifica, pero es necesario, **ftp** solicitará la cuenta. |
+
 ## <a name="BKMK_Examples"></a>Ejemplos  
 Especifique User1 con la contraseña Password1.  
 ```  

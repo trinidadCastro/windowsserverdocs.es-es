@@ -12,12 +12,12 @@ ms.assetid: 0c82a6cb-d652-429c-9c3d-0f568c78d54b
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimps
-ms.openlocfilehash: 50151a322f1ccde2be927de31b0e5c30732b278e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 04fb86d813049dc5f0aa6d4fba51e45dccbd1b80
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813956"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440183"
 ---
 # <a name="wecutil"></a>wecutil
 
@@ -94,32 +94,32 @@ wecutil  [{es | enum-subscription}]
 > [!IMPORTANT]
 > ¿Si recibe el mensaje, "el servidor RPC no está disponible? al intentar ejecutar wecutil, deberá iniciar el servicio Recopilador de eventos de Windows (wecsvc). Para empezar a wecsvc, en un símbolo del sistema con privilegios elevados, escriba net inicia wecsvc.
 
--   El ejemplo siguiente muestra el contenido de un archivo de configuración:  
-    ```
-    <Subscription xmlns="https://schemas.microsoft.com/2006/03/windows/events/subscription">
-    <Uri>https://schemas.microsoft.com/wbem/wsman/1/windows/EventLog</Uri>
-    <!-- Use Normal (default), Custom, MinLatency, MinBandwidth -->
-    <ConfigurationMode>Normal</ConfigurationMode>
-    <Description>Forward Sample Subscription</Description>
-    <SubscriptionId>SampleSubscription</SubscriptionId>
-    <Query><![CDATA[
-    <QueryList>
-    <Query Path="Application">
-    <Select>*</Select>
-    </Query>
-    </QueryList>
-    ]]></Query>
-    <EventSources>
-    <EventSource Enabled="true">
-    <Address>mySource.myDomain.com</Address>
-    <UserName>myUserName</UserName>
-    <Password>*</Password>
-    </EventSource>
-    </EventSources>
-    <CredentialsType>Default</CredentialsType>
-    <Locale Language="EN-US"></Locale>
-    </Subscription>
-    ```
+- El ejemplo siguiente muestra el contenido de un archivo de configuración:  
+  ```
+  <Subscription xmlns="https://schemas.microsoft.com/2006/03/windows/events/subscription">
+  <Uri>https://schemas.microsoft.com/wbem/wsman/1/windows/EventLog</Uri>
+  <!-- Use Normal (default), Custom, MinLatency, MinBandwidth -->
+  <ConfigurationMode>Normal</ConfigurationMode>
+  <Description>Forward Sample Subscription</Description>
+  <SubscriptionId>SampleSubscription</SubscriptionId>
+  <Query><![CDATA[
+  <QueryList>
+  <Query Path="Application">
+  <Select>*</Select>
+  </Query>
+  </QueryList>
+  ]]></Query>
+  <EventSources>
+  <EventSource Enabled="true">
+  <Address>mySource.myDomain.com</Address>
+  <UserName>myUserName</UserName>
+  <Password>*</Password>
+  </EventSource>
+  </EventSources>
+  <CredentialsType>Default</CredentialsType>
+  <Locale Language="EN-US"></Locale>
+  </Subscription>
+  ```
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

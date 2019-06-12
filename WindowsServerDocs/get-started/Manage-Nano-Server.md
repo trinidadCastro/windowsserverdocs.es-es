@@ -12,12 +12,12 @@ ms.assetid: 599d6438-a506-4d57-a0ea-1eb7ec19f46e
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 8973302fc8a0c6bdb5b19f9296e711dcc6465589
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cc535934705878c7f2b7fdc4e655ab5c853e4f96
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826806"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443533"
 ---
 # <a name="manage-nano-server"></a>Administración de Nano Server
 
@@ -39,8 +39,8 @@ Para utilizar cualquier herramienta de administración remota, probablemente nec
 ## <a name="using-windows-powershell-remoting"></a>Uso de la comunicación remota a Windows PowerShell  
 Para administrar Nano Server con la comunicación remota a Windows PowerShell, necesita agregar la dirección IP de Nano Server a la lista de hosts de confianza del equipo de administración, agregar la cuenta que utiliza para los administradores de Nano Server y habilitar CredSSP si piensa usar esta característica.  
 
- >[!NOTE]  
-    > Si el destino de Nano Server y el equipo de administración están en el mismo bosque de AD DS (o en bosques con una relación de confianza), no debe agregar Nano Server a la lista de hosts de confianza, puede conectarse al servidor Nano mediante su nombre de dominio completo , por ejemplo: PS C:\> Enter-PSSession - ComputerName nanoserver.contoso.com-Credential (Get-Credential)
+> [!NOTE]
+> Si el destino de Nano Server y el equipo de administración están en el mismo bosque de AD DS (o en bosques con una relación de confianza), no debe agregar Nano Server a la lista de hosts de confianza, puede conectarse al servidor Nano mediante su nombre de dominio completo , por ejemplo: PS C:\> Enter-PSSession - ComputerName nanoserver.contoso.com-Credential (Get-Credential)
   
   
 Para agregar Nano Server a la lista de hosts de confianza, ejecute este comando en un símbolo del sistema de Windows PowerShell con privilegios elevados:  
@@ -51,7 +51,7 @@ Para iniciar la sesión remota de Windows PowerShell, inicie una sesión local d
   
   
 ```  
-$ip = "\<IP address of Nano Server>"  
+$ip = "<IP address of Nano Server>"  
 $user = "$ip\Administrator"  
 Enter-PSSession -ComputerName $ip -Credential $user  
 ```  
@@ -72,7 +72,7 @@ Inicie la sesión CIM ejecutando estos comandos en un símbolo del sistema de Wi
   
 ```  
 $ip = "<IP address of the Nano Server\>"  
-$ip\Administrator  
+$user = $ip\Administrator  
 $cim = New-CimSession -Credential $user -ComputerName $ip  
 ```  
   
@@ -89,15 +89,17 @@ Get-CimInstance -CimSession $Cim -Query "SELECT * from Win32_Process WHERE name 
 ## <a name="windows-remote-management"></a>Administración remota de Windows  
 Puede ejecutar programas de forma remota en Nano Server con la Administración remota de Windows (WinRM). Para usar WinRM, primero configure el servicio y establezca la página de códigos con estos comandos en un símbolo del sistema con privilegios elevados:  
   
-**winrm quickconfig**  
-  
-**WinRM establece winrm/config/client @{TrustedHosts = "< dirección ip del servidor Nano"}**  
-  
-**chcp 65001**  
+```
+winrm quickconfig
+winrm set winrm/config/client @{TrustedHosts="<ip address of Nano Server>"}
+chcp 65001
+```
   
 Ahora puede ejecutar comandos de forma remota en Nano Server. Por ejemplo:  
-  
-**winrs-r:\<dirección IP de Nano Server > - u: Administrador-p:\<contraseña de administrador de Nano Server > ipconfig**  
+
+```
+winrs -r:<IP address of Nano Server> -u:Administrator -p:<Nano Server administrator password> ipconfig
+```
   
 Para obtener más información sobre la Administración remota de Windows, vea [Información general sobre la Administración remota de Windows (WinRM)](https://technet.microsoft.com/library/dn265971.aspx).  
    
@@ -115,7 +117,7 @@ Stop-NetEventSession [-Name]
 ```  
 Estos cmdlets se documentan detalladamente en [Network Event Packet Capture Cmdlets](https://technet.microsoft.com/library/dn268520(v=wps.630).aspx) (Cmdlets de captura de paquetes de eventos de red) en Windows PowerShell.  
 
-##<a name="installing-servicing-packages"></a>Instalación de paquetes de mantenimiento  
+## <a name="installing-servicing-packages"></a>Instalación de paquetes de mantenimiento  
 Si desea instalar paquetes de mantenimiento, utilice el parámetro -ServicingPackagePath (puede pasar una matriz de rutas de acceso a los archivos .cab):  
   
 `New-NanoServerImage -DeploymentType Guest -Edition Standard -MediaPath \\Path\To\Media\en_us -BasePath .\Base -TargetPath .\NanoServer.wim -ServicingPackagePath \\path\to\kb123456.cab`  
@@ -134,7 +136,7 @@ El número de serie del volumen es B05B-CC3D
       Directorio de C:\KB3157663_expanded  
    
       04/19/2016  01:17 PM    \<DIR>          .  
-      04/19/2016  01:17 PM    \<DIR>          ..  
+      04/19/2016  01:17 PM    \<DIR&gt;          .  
         04/17/2016  12:31 AM               517 Windows10.0-KB3157663-x64-pkgProperties.txt  
 04/17/2016  12:30 AM        93,886,347 Windows10.0-KB3157663-x64.cab  
 04/17/2016  12:31 AM               454 Windows10.0-KB3157663-x64.xml  
@@ -378,7 +380,7 @@ The command completed successfully.
 
 Otras opciones de línea de comandos le permiten especificar los nombres de contador de rendimiento de interés en un archivo de configuración y redirigir la salida a un archivo de registro, entre otras acciones. Vea la [documentación sobre typeperf.exe](https://technet.microsoft.com/library/bb490960.aspx) para obtener más información.
 
-También puede utilizar la interfaz gráfica de Perfmon.exe de forma remota con destinos de Nano Server. Al agregar los contadores de rendimiento a la vista, especifique el destino de Nano Server en el nombre de equipo en lugar del valor predeterminado *<Local computer>*.
+También puede utilizar la interfaz gráfica de Perfmon.exe de forma remota con destinos de Nano Server. Al agregar los contadores de rendimiento a la vista, especifique el destino de Nano Server en el nombre de equipo en lugar del valor predeterminado *<Local computer>* .
 
 ### <a name="interact-with-the-windows-event-log"></a>Interactuación con el registro de eventos de Windows
 

@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 095cd2ad799857b789943b4f477aa9e6a8c3ae50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 506072251b77362f3dc35faa0c976f396f7f6034
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815186"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435482"
 ---
 # <a name="manage-software-inventory-logging"></a>Administrar el Registro de inventario de software
 
@@ -121,7 +121,7 @@ Registro de inventario de software de recopilación diaria y hacia delante a tra
 ## <a name="configuring-software-inventory-logging"></a>Configuración del Registro de inventario de software  
 Hay tres pasos para configurar el Registro de inventario de software con el fin de reenviar datos de un servidor de agregación con el transcurso del tiempo:  
   
-1.  Use **Set-SilLogging – TargetUri** para especificar la dirección web de su servidor de agregación (debe comenzar por "https://?).  
+1.  Use **Set-SilLogging – TargetUri** para especificar la dirección web de su servidor de agregación (debe comenzar por "https://").  
   
 2.  Use **Set-SilLogging –CertificateThumbprint** para especificar el valor de hash de huella digital del certificado SSL válido que se va a usar para autenticar las transmisiones de datos a su servidor de agregación (el servidor de agregación deberá configurarse para aceptar hash).  
   
@@ -140,17 +140,17 @@ Si un administrador inició el Registro de inventario de software, comenzará la
 ## <a name="BKMK_Step3"></a>Mostrar los datos de registro de inventario de Software  
 Además de los cmdlets de PowerShell que se describen en la sección anterior, es posible usar seis cmdlets adicionales para recopilar datos del Registro de inventario de software:  
   
--   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)**: Muestra los valores en momentos concretos de datos relacionados con el sistema operativo y un servidor concreto, así como el FQDN o el nombre de host del host físico, si está disponible.  
+-   **[Get-SilComputer](https://technet.microsoft.com/library/dn283392.aspx)** : Muestra los valores en momentos concretos de datos relacionados con el sistema operativo y un servidor concreto, así como el FQDN o el nombre de host del host físico, si está disponible.  
   
--   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)**: Muestra los identificadores que usa SIL para servidores individuales.  
+-   **[Get-SilComputerIdentity (KB 3000850)](https://technet.microsoft.com/library/dn858074.aspx)** : Muestra los identificadores que usa SIL para servidores individuales.  
   
--   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)**: Muestra una recopilación en momentos concretos de todos los datos del Registro de inventario de software.  
+-   **[Get-SilData](https://technet.microsoft.com/library/dn283388.aspx)** : Muestra una recopilación en momentos concretos de todos los datos del Registro de inventario de software.  
   
--   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)**: Muestra la identidad en momentos concretos de todo el software instalado en el equipo.  
+-   **[Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx)** : Muestra la identidad en momentos concretos de todo el software instalado en el equipo.  
   
--   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)**: Muestra el número total de solicitudes de dispositivos cliente únicos y las solicitudes del servidor de los dos días anteriores.  
+-   **[Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx)** : Muestra el número total de solicitudes de dispositivos cliente únicos y las solicitudes del servidor de los dos días anteriores.  
   
--   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)**: Muestra la lista en momentos concretos de todas las actualizaciones de Windows instaladas en el equipo.  
+-   **[Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx)** : Muestra la lista en momentos concretos de todas las actualizaciones de Windows instaladas en el equipo.  
   
 Un escenario de caso de uso típico de los cmdlets del Registro de inventario de software sería un administrador que consulta el Registro de inventario de software en busca de la recopilación de un momento concreto de todos los datos del Registro de inventario de software mediante [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx).  
   
@@ -206,13 +206,13 @@ El Registro de inventario de software no pretende ser un componente crítico. Es
   
 #### <a name="to-delete-data-logged-by-software-inventory-logging"></a>Para eliminar los datos que el Registro de inventario de software ha registrado  
   
-1.  En PowerShell, detenga el Registro de inventario de software con el comando **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** .  
+1. En PowerShell, detenga el Registro de inventario de software con el comando **[Stop-SilLogging](https://technet.microsoft.com/library/dn283394.aspx)** .  
   
-2.  Abra el Explorador de Windows.  
+2. Abra el Explorador de Windows.  
   
-3.  Vaya a **\Windows\System32\Logfiles\SIL\**  
+3. Vaya a **\Windows\System32\Logfiles\SIL\\**  
   
-4.  Elimine todos los archivos de esa carpeta.  
+4. Elimine todos los archivos de esa carpeta.  
   
 ## <a name="BKMK_Step5"></a>Copia de seguridad y restauración de datos registrados por el registro de inventario de Software  
 El Registro de inventario de software almacenará temporalmente colecciones de datos cada hora si no pueden realizar los reenvíos a través de la red. Los archivos de registro se almacenan en el directorio \Windows\System32\LogFiles\SIL\. Se pueden realizar copias de seguridad de estos datos del Registro de inventario de software con las copias de seguridad de servidor programadas periódicamente.  
@@ -237,9 +237,9 @@ Los datos almacenados localmente en un equipo Windows Server (solo se produce si
   
 -   Al usar [Set-SilLogging](https://technet.microsoft.com/library/dn283387.aspx) -TimeOfDay para configurar la hora a la que se ejecuta el registro de SIL, se debe especificar una fecha y hora. Se establecerá la fecha del calendario y no se producirá el registro hasta que se llegue a esa fecha, en la hora del sistema local.  
   
--   ¿Cuando se usa [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx), o [Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx), "InstallDate? mostrará siempre 12:00:00 A.M., un valor sin sentido.  
+-   Cuando se usa [Get-SilSoftware](https://technet.microsoft.com/library/dn283397.aspx), o [Get-SilWindowsUpdate](https://technet.microsoft.com/library/dn283393.aspx), "InstallDate" mostrará siempre 12:00:00 A.M., un valor sin sentido.  
   
--   ¿Cuando se usa [Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx), "SampleDate? mostrará siempre 11:59:00 p. M., un valor sin sentido.  La fecha se corresponde con los datos pertinentes para estas consultas de cmdlet.  
+-   Cuando se usa [Get-SilUalAccess](https://technet.microsoft.com/library/dn283389.aspx), "SampleDate" mostrará siempre 11:59:00 p. M., un valor sin sentido.  La fecha se corresponde con los datos pertinentes para estas consultas de cmdlet.  
   
 ## <a name="BKMK_Step10"></a>Habilitar y configurar el inventario de Software de registro en un disco duro Virtual montado  
 El Registro de inventario de software también admite la configuración y habilitación de máquinas virtuales sin conexión. Los usos prácticos de esto están diseñados para cubrir tanto la instalación "de imagen dorada" para la implementación a gran escala a lo largo de los centros de datos, así como la configuración de imágenes de usuario final que van desde una implementación local a una en la nube.  
@@ -256,13 +256,13 @@ Para admitir estos usos, el Registro de inventario de software tiene entradas de
   
 Para modificar estos valores en un VHD sin conexión (sin que el sistema operativo de la máquina virtual se ejecute), primero se debe montar un VHD y, después, podrán usarse los comandos siguientes para realizar cambios:  
   
--   [carga de registro](https://technet.microsoft.com/library/cc742053.aspx)  
+-   [Reg load](https://technet.microsoft.com/library/cc742053.aspx)  
   
--   [reg delete](https://technet.microsoft.com/library/cc742145.aspx)  
+-   [Reg delete](https://technet.microsoft.com/library/cc742145.aspx)  
   
--   [Agregar registro](https://technet.microsoft.com/library/cc742162.aspx)  
+-   [Reg add](https://technet.microsoft.com/library/cc742162.aspx)  
   
--   [reg unload](https://technet.microsoft.com/library/cc742043.aspx)  
+-   [Reg unload](https://technet.microsoft.com/library/cc742043.aspx)  
   
 El Registro de inventario de software comprobará estos valores cuando se inicie el sistema operativo y se ejecutará en consecuencia.  
   
@@ -297,7 +297,7 @@ A continuación se muestran dos ejemplos de máquina virtual con el registro de 
   
 ## <a name="see-also"></a>Vea también  
 [Empezar a trabajar con Software de registro de inventario](get-started-with-software-inventory-logging.md)  
-[Agregador de registro de inventario de software](software-inventory-logging-aggregator.md)  
+[Agregador de Registro de inventario de software](software-inventory-logging-aggregator.md)  
 [Cmdlets de registro de inventario de software en Windows PowerShell](https://technet.microsoft.com/library/dn283390.aspx)  
 [Import-BinaryMiLog](https://technet.microsoft.com/library/dn262592.aspx)  
 [Export-BinaryMiLog](https://technet.microsoft.com/library/dn262591.aspx)  

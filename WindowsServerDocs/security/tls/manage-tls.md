@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 05/16/2018
-ms.openlocfilehash: 8053a14a74797cccce4c441d41f1f1623ba0ad6e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 872647f09898bf8ae08ee69f28b717d28abf7c78
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879446"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447307"
 ---
 # <a name="manage-transport-layer-security-tls"></a>Administrar la seguridad de la capa de transporte (TLS)
 
@@ -39,22 +39,22 @@ Los cambios realizados en el orden de conjuntos de cifrado TLS surtirá efecto e
 
 Puede usar la configuración de directiva de grupo de orden de SSL cifrado Suite para configurar el orden predeterminado TLS cipher suite.
 
-1.  En la consola de administración de directivas de grupo, vaya a **configuración del equipo** > **plantillas administrativas** > **redes**  >  **Opciones de configuración de SSL**.
-2.  Haga doble clic en **orden de conjuntos de cifrado SSL**y, a continuación, haga clic en el **habilitado** opción.
-3.  Haga clic en **conjuntos de cifrado SSL** cuadro y seleccione **seleccionar todo** en el menú emergente.
+1. En la consola de administración de directivas de grupo, vaya a **configuración del equipo** > **plantillas administrativas** > **redes**  >  **Opciones de configuración de SSL**.
+2. Haga doble clic en **orden de conjuntos de cifrado SSL**y, a continuación, haga clic en el **habilitado** opción.
+3. Haga clic en **conjuntos de cifrado SSL** cuadro y seleccione **seleccionar todo** en el menú emergente.
 
-    ![Configuración de directiva de grupo](../media/Transport-Layer-Security-protocol/ssl-cipher-suite-order-gp-setting.png)
+   ![Configuración de directiva de grupo](../media/Transport-Layer-Security-protocol/ssl-cipher-suite-order-gp-setting.png)
 
-4.  Haga clic en el texto seleccionado y seleccione **copia** en el menú emergente.
-5.  Pegue el texto en un editor de texto como notepad.exe y actualización con la nueva lista de orden del conjunto de cifrado.
+4. Haga clic en el texto seleccionado y seleccione **copia** en el menú emergente.
+5. Pegue el texto en un editor de texto como notepad.exe y actualización con la nueva lista de orden del conjunto de cifrado.
 
-    > [!NOTE]
-    > La lista de pedidos TLS cipher suite debe estar en formato delimitado por estricta de comas. Cada cadena de cifrado suite finalizará con una coma (,) a la derecha de la misma. 
+   > [!NOTE]
+   > La lista de pedidos TLS cipher suite debe estar en formato delimitado por estricta de comas. Cada cadena de cifrado suite finalizará con una coma (,) a la derecha de la misma. 
+   > 
+   > Además, la lista de conjuntos de cifrado se limita a 1023 caracteres.
 
-    > Además, la lista de conjuntos de cifrado se limita a 1023 caracteres.
-
-6.  Reemplazar la lista en el **conjuntos de cifrado SSL** con la lista ordenada actualizada.
-7.  Haga clic en **Aceptar** o en **Aplicar**.
+6. Reemplazar la lista en el **conjuntos de cifrado SSL** con la lista ordenada actualizada.
+7. Haga clic en **Aceptar** o en **Aplicar**.
 
 ### <a name="configuring-tls-cipher-suite-order-by-using-mdm"></a>Configuración de orden de conjuntos de cifrado TLS mediante MDM
 
@@ -124,7 +124,7 @@ El proceso para distribuir una curva es:
 1.  En Windows 10 y Windows Server 2016, use **certutil.exe** para agregar una nueva curva con nombre registrada a Windows.
 2.  Desde ese mismo equipo, abra la consola de administración de directivas de grupo (GPMC), cree un nuevo objeto de directiva de grupo y editarlo.
 3.  Vaya a **configuración del equipo | Preferencias | Configuración de Windows | Registro**.  Haga clic en **registro**. Mantenga el mouse sobre **New** y seleccione **elemento de recopilación**. El nombre del elemento de colección para que coincida con el nombre de la curva. Se creará un elemento de recopilación del registro para cada clave del registro bajo *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ECCParameters*.
-4.  Configurar la recopilación de registro del preferencias de directiva de grupo recién creado mediante la adición de un nuevo **elemento del registro** para cada valor del Registro enumerada en *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ ECCParameters\[curveName]*.
+4.  Configurar la recopilación de registro del preferencias de directiva de grupo recién creado mediante la adición de un nuevo **elemento del registro** para cada valor del Registro enumerada en *HKEY_LOCAL_MACHINE\CurrentControlSet\Control\Cryptography\ ECCParameters\[curveName]* .
 5.  Implemente el objeto de directiva de grupo que contiene el elemento de recopilación del registro de directiva de grupo para equipos Windows 10 y Windows Server 2016 que debe recibir las curvas con nombre nueva.
 
     ![GPP distribuir curvas](../media/Transport-Layer-Security-protocol/gpp-distribute-curves.png)

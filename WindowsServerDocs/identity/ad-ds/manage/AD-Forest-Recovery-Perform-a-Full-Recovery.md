@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 1a1182a6-4462-4a13-806e-0e642a0d5db2
 ms.technology: identity-adds
-ms.openlocfilehash: 6f600ade3d07130d4e1fb3b1a254cb1073f592e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9cf89c9f4875f602abea89e366cadfba8d0599c3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874236"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443013"
 ---
 # <a name="ad-forest-recovery---performing-a-full-server-recovery"></a>Recuperación de bosques de AD - realizar una recuperación completa del servidor 
 
@@ -69,15 +69,15 @@ Según el escenario, utilice uno de los siguientes procedimientos para realizar 
    ![Restauración del servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore8.png)
 8. Escriba la ruta de acceso UNC a la ubicación del recurso compartido de copia de seguridad (por ejemplo, \\\server1\backups) y haga clic en **Aceptar**. También puede escribir la dirección IP del servidor de destino, como \\\192.168.1.3\backups. 
    ![Restauración del servidor](media/AD-Forest-Recovery-Perform-a-Full-Recovery/restore9.png)
-10. Escriba las credenciales necesarias para acceder al recurso compartido y haga clic en Aceptar. 
-11. Ahora **seleccione la fecha y hora de la imagen del sistema para restaurar** y haga clic en **siguiente**.
-12. Ahora tendrá una opción para:
-   - Formatear y volver a particionar discos
-   - Instalar controladores
-   - Anulando la selección de la **avanzadas** características de reiniciar automáticamente y la comprobación de errores de disco. Están habilitados de manera predeterminada.
-13. Haz clic en **Siguiente**.
-14. Haga clic en **Finalizar**. Se le pedirá que le pregunta si está seguro de que desea continuar. Haga clic en **Sí**.  
-15. Cuando se complete, realice una restauración autoritativa de SYSVOL, como se describe en [recuperación de bosques de AD - realizar una sincronización autoritativa de SYSVOL DFSR replicado](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md).
+9. Escriba las credenciales necesarias para acceder al recurso compartido y haga clic en Aceptar. 
+10. Ahora **seleccione la fecha y hora de la imagen del sistema para restaurar** y haga clic en **siguiente**.
+11. Ahora tendrá una opción para:
+    - Formatear y volver a particionar discos
+    - Instalar controladores
+    - Anulando la selección de la **avanzadas** características de reiniciar automáticamente y la comprobación de errores de disco. Están habilitados de manera predeterminada.
+12. Haz clic en **Siguiente**.
+13. Haga clic en **Finalizar**. Se le pedirá que le pregunta si está seguro de que desea continuar. Haga clic en **Sí**.  
+14. Cuando se complete, realice una restauración autoritativa de SYSVOL, como se describe en [recuperación de bosques de AD - realizar una sincronización autoritativa de SYSVOL DFSR replicado](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md).
 
 ## <a name="enabling-the-network-adapter-for-a-network-backup"></a>Habilitar al adaptador de red para una copia de seguridad de red
 
@@ -132,5 +132,5 @@ Si tiene que habilitar un adaptador de red desde el símbolo del sistema restaur
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Guía de recuperación de bosque de AD](AD-Forest-Recovery-Guide.md)
-- [Recuperación de bosques de AD: procedimientos](AD-Forest-Recovery-Procedures.md)
+- [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
+- [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

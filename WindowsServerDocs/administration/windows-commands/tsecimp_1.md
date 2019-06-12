@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 38582706dfa5db2b5069415b81dafc533c8a89b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a5ed2ef8b1d0238a3608dabdd165a255855a304d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822106"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440873"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -68,102 +68,101 @@ tsecimp /d
         Para cada **línea** elemento, puede establecer el **quitar** atributo. Si establece este atributo, el usuario ya no está asignado ese dispositivo de línea. Si no se establece este atributo, el usuario obtiene acceso al dispositivo de línea. No se proporciona ningún error si el dispositivo de línea no está disponible para el usuario.
 
 ## <a name="examples"></a>Ejemplos
--   Los siguientes segmentos de código XML de ejemplo muestran el uso correcto de los elementos definidos anteriormente.  
-    -   El código siguiente quita todos los dispositivos de línea asignados a usuario1.  
-        ```
-        <UserList>
-          <User NoMerge="1">
-            <DomainUser>domain1\user1</DomainUser>
-          </User>
-        </UserList>
-        ```  
-    -   El código siguiente quita todos los dispositivos de línea asignados a Usuario1 antes de asignar una línea con la dirección 99999. Este User1 no tendría ningún otros dispositivos de línea asignados, con independencia de si los dispositivos de línea se asignaron previamente.  
-        ```
-        <UserList>
-          <User NoMerge="1">
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <Address>99999</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        ```  
-    -   El código siguiente agrega un dispositivo de línea para usuario1 sin eliminar los dispositivos de línea asignados anteriormente.  
-        ```
-        <UserList>
-          <User>
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <Address>99999</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        ```  
-    -   El código siguiente agrega la dirección de línea 99999 y quita la dirección de línea 88888 del acceso de User1.  
-        ```
-        <UserList>
-          <User>
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <Address>99999</Address>
-              </Line>
-              <Line Remove="1">
-                <Address>88888</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        ```  
-    -   El código siguiente agrega el dispositivo permanente 1000 y quita la línea 88888 del acceso de User1.  
-        ```
-        <UserList>
-          <User>
-            <DomainUser>domain1\user1</DomainUser>
-            <FriendlyName>User1</FriendlyName>
-            <LineList>
-              <Line>
-                <PermanentID>1000</PermanentID>
-              </Line>
-              <Line Remove="1">
-                <Address>88888</Address>
-              </Line>
-            </LineList>
-          </User>
-        </UserList>
-        
-        
-        ```  
--   La siguiente salida de ejemplo aparece después de la **/d** se especifica la opción de línea de comandos para mostrar la configuración de TAPI actual. Para cada proveedor de telefonía, se enumeran los dispositivos de línea asociados, así como las direcciones y los usuarios asociados con cada dispositivo de línea.  
+- Los siguientes segmentos de código XML de ejemplo muestran el uso correcto de los elementos definidos anteriormente.  
+  - El código siguiente quita todos los dispositivos de línea asignados a usuario1.  
+    ```
+    <UserList>
+      <User NoMerge="1">
+        <DomainUser>domain1\user1</DomainUser>
+      </User>
+    </UserList>
+    ```  
+  - El código siguiente quita todos los dispositivos de línea asignados a Usuario1 antes de asignar una línea con la dirección 99999. Este User1 no tendría ningún otros dispositivos de línea asignados, con independencia de si los dispositivos de línea se asignaron previamente.  
+    ```
+    <UserList>
+      <User NoMerge="1">
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <Address>99999</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+    ```  
+  - El código siguiente agrega un dispositivo de línea para usuario1 sin eliminar los dispositivos de línea asignados anteriormente.  
+    ```
+    <UserList>
+      <User>
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <Address>99999</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+    ```  
+  - El código siguiente agrega la dirección de línea 99999 y quita la dirección de línea 88888 del acceso de User1.  
+    ```
+    <UserList>
+      <User>
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <Address>99999</Address>
+          </Line>
+          <Line Remove="1">
+            <Address>88888</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+    ```  
+  - El código siguiente agrega el dispositivo permanente 1000 y quita la línea 88888 del acceso de User1.  
+    ```
+    <UserList>
+      <User>
+        <DomainUser>domain1\user1</DomainUser>
+        <FriendlyName>User1</FriendlyName>
+        <LineList>
+          <Line>
+            <PermanentID>1000</PermanentID>
+          </Line>
+          <Line Remove="1">
+            <Address>88888</Address>
+          </Line>
+        </LineList>
+      </User>
+    </UserList>
+
+
+~~~
+    ```  
+~~~
+-   The following sample output appears after the **/d** command-line option is specified to display the current TAPI configuration. For each telephony provider, the associated line devices are listed, as well as the addresses and users associated with each line device.  
     ```
     NDIS Proxy TAPI Service Provider
             Line: "WAN Miniport (L2TP)"
                     Permanent ID: 12345678910
-    
+
     NDIS Proxy TAPI Service Provider
             Line: "LPT1DOMAIN1\User1"
                     Permanent ID: 12345678910
-    
+
     Microsoft H.323 Telephony Service Provider
             Line: "H323 Line"
                     Permanent ID: 123456
                     Addresses:
                             BLDG1-TAPI32
-    
+
     ```
 
-#### <a name="additional-references"></a>Referencias adicionales
+#### Additional references
 
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+[Command-Line Syntax Key](command-line-syntax-key.md)
 
-[Introducción al shell de comandos](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[Command shell overview](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)

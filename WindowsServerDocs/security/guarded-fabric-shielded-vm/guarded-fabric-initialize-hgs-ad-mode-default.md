@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 4ef70ab9ce8150a9a3ed774d6df407da097880e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7a3d38818bfdaa48f53ca7a54bf10b68e4e4a7d3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865676"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447442"
 ---
 # <a name="initialize-the-hgs-cluster-using-ad-mode-in-a-new-dedicated-forest-default"></a>Inicializar el clúster HGS utilizando el modo de AD en un nuevo bosque dedicado (valor predeterminado)
 
@@ -47,5 +47,5 @@ ms.locfileid: "59865676"
 
 ## <a name="next-step"></a>Paso siguiente
 
->[!div class="nextstepaction"]
-[Configurar el tejido de DNS](guarded-fabric-configuring-fabric-dns-ad.md)
+> [!div class="nextstepaction"]
+> [Configurar el tejido DNS](guarded-fabric-configuring-fabric-dns-ad.md)

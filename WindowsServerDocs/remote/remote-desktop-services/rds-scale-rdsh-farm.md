@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: d243994a68c0bf4f0584f68475a185acb9cb73d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 0e3852b4ea5f1080a3798c0806e5c87ca808c3be
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865496"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446521"
 ---
 # <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>Escalar horizontalmente la implementación de servicios de escritorio remoto mediante la adición de una granja de servidores Host de sesión de escritorio remoto
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
 Puede mejorar la disponibilidad y escalabilidad de la implementación de RDS mediante la adición de una granja de servidores Host de sesión de escritorio remoto (RDSH).   
   
@@ -30,7 +30,7 @@ Use los pasos siguientes para agregar otro Host de sesión de escritorio remoto 
   
 1. Crear un servidor para hospedar al segundo Host de sesión de escritorio remoto. Si usa máquinas virtuales de Azure, asegúrese de incluir la nueva máquina virtual en el mismo conjunto de disponibilidad que contiene al primer Host de sesión de escritorio remoto.
 2. Habilitar la administración remota en el nuevo servidor o máquina virtual:
-   1. En el administrador del servidor, haga clic en **servidor Local > configuración actual de administración remota (deshabilitado)**. 
+   1. En el administrador del servidor, haga clic en **servidor Local > configuración actual de administración remota (deshabilitado)** . 
    2. Seleccione **habilitar la administración remota para este servidor**y, a continuación, haga clic en **Aceptar**. 
    3. Opcional: Windows Update para descargar e instalar actualizaciones automáticamente no se puede establecer temporalmente. Esto ayuda a evitar que los cambios y los reinicios del sistema mientras se implementa el servidor RDSH. En el administrador del servidor, haga clic en **servidor Local > configuración actual de Windows Update**. Haga clic en **opciones avanzadas > aplazar actualizaciones**. 
 3. Agregue el servidor o máquina virtual al dominio:
@@ -39,8 +39,8 @@ Use los pasos siguientes para agregar otro Host de sesión de escritorio remoto 
    3. Escriba las credenciales de administrador de dominio. 
    4. Reinicie el servidor o máquina virtual.
 4. Agregue al Host de sesión de escritorio remoto nuevo a la granja de servidores:
->[!NOTE] 
-> Paso 1: creación de una dirección IP pública para la máquina virtual RDMS, solo es necesario si está usando una máquina virtual para el RDMS y si aún no tiene una dirección IP asignada.
+   >[!NOTE] 
+   > Paso 1: creación de una dirección IP pública para la máquina virtual RDMS, solo es necesario si está usando una máquina virtual para el RDMS y si aún no tiene una dirección IP asignada.
    
    1. Cree una dirección IP pública para la máquina virtual ejecuta Servicios de administración de escritorio remoto (RDMS). La máquina virtual RDMS normalmente será la máquina virtual ejecuta la primera instancia del rol de agente de conexión a Escritorio remoto.  
        1. En el portal de Azure, haga clic en **examinar > grupos de recursos**, haga clic en el grupo de recursos para la implementación y, a continuación, haga clic en la máquina virtual RDMS (por ejemplo, Contoso-Cb1).  

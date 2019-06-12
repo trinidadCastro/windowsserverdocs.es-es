@@ -13,30 +13,32 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 79d9f19f70840c8e40d602ba7ce634d4a6dbb73b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 18ff1ff3ecbc2df0a437ec8a465dec9a12123ede
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866766"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437512"
 ---
 # <a name="lpq"></a>lpq
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Muestra el estado de una cola de impresión en un equipo que ejecuta Line printer Daemon (LPD).  
-  
+
 ## <a name="syntax"></a>Sintaxis  
 ```  
 lpq -S <ServerName> -P <printerName> [-l]  
 ```  
 ## <a name="parameters"></a>Parámetros  
-|Parámetro|Descripción|  
-|-------|--------|  
-|-S <ServerName>|Especifica (por nombre o dirección IP), el equipo o dispositivo que hospeda la cola de impresión de LPD con un estado que desea mostrar de compartir impresoras. Obligatorio.|  
-|-P <printerName>|Especifica (por nombre) la impresora para la cola de impresión con un estado que desea mostrar. Obligatorio.|  
-|-l|Especifica que desea mostrar los detalles sobre el estado de la cola de impresión.|  
-|/?|Muestra la ayuda en el símbolo del sistema.|  
+
+|    Parámetro     |                                                                        Descripción                                                                        |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -S <ServerName>  | Especifica (por nombre o dirección IP), el equipo o dispositivo que hospeda la cola de impresión de LPD con un estado que desea mostrar de compartir impresoras. Obligatorio. |
+| -P <printerName> |                           Especifica (por nombre) la impresora para la cola de impresión con un estado que desea mostrar. Obligatorio.                           |
+|        -l        |                                      Especifica que desea mostrar los detalles sobre el estado de la cola de impresión.                                      |
+|        /?        |                                                           Muestra la ayuda en el símbolo del sistema.                                                            |
+
 ## <a name="remarks"></a>Comentarios  
 El **-S** y **-P** los parámetros distinguen entre mayúsculas y minúsculas y debe escribirse en letras mayúsculas.  
 ## <a name="BKMK_examples"></a>Ejemplos  

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e8352b45cf3a46f14828c9c6796e4ec73499d5a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2da74afda7c15145327b4d64f5c0e97e4f9b10cc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858966"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441446"
 ---
 # <a name="select-disk"></a>select disk
 
@@ -35,16 +35,16 @@ select disk={ <n> | <disk path> | system | next }
 ```  
   
 > [!NOTE]  
-> El **<disk path>**, **sistema**, y **siguiente** parámetros solo están disponibles en Windows 7 y Windows Server 2008 R2.  
+> El **<disk path>** , **sistema**, y **siguiente** parámetros solo están disponibles en Windows 7 y Windows Server 2008 R2.  
   
 ## <a name="parameters"></a>Parámetros  
   
-|Parámetro|Descripción|  
-|-------|--------|  
-|<n>|Especifica el número del disco que se va a recibir el foco. Puede ver los números para todos los discos en el equipo mediante el **disco lista** comando DiskPart. **Nota:** Al configurar los sistemas con varios discos, no use **seleccione disco\=0** para especificar el disco del sistema. El equipo puede volver a asignar números de disco cuando se reinicia y los diferentes equipos con la misma configuración de disco pueden tener números de disco diferente.|  
-|<disk path>|Especifica la ubicación del disco para recibir el foco, por ejemplo, **PCIROOT\(0\)\#PCI\(0F02\)\#atA\(C00T00L00\)** . Para ver la ruta de acceso de ubicación de un disco, selecciónelo y, a continuación, escriba **disco detalle**.|  
-|Sistema|En equipos con BIOS, especifica que el disco 0 recibe el foco. En los equipos EFI, el disco que contiene la partición del sistema EFI \(ESP\) que se usa para el arranque actual recibe el foco. En los equipos EFI, el comando generará un error si no hay ningún ESP, si hay más de una ESP o el equipo se arranca desde el entorno de preinstalación de Windows \(Windows PE\).|  
-|siguiente|Una vez que se ha seleccionado un disco, este comando recorre en iteración todos los discos en la lista de discos. Al ejecutar este comando, el disco en la lista siguiente recibirá el foco.|  
+|  Parámetro  |                                                                                                                                                                                                            Descripción                                                                                                                                                                                                            |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     <n>     | Especifica el número del disco que se va a recibir el foco. Puede ver los números para todos los discos en el equipo mediante el **disco lista** comando DiskPart. **Nota:** Al configurar los sistemas con varios discos, no use **seleccione disco\=0** para especificar el disco del sistema. El equipo puede volver a asignar números de disco cuando se reinicia y los diferentes equipos con la misma configuración de disco pueden tener números de disco diferente. |
+| <disk path> |                                                                                                                 Especifica la ubicación del disco para recibir el foco, por ejemplo, **PCIROOT\(0\)\#PCI\(0F02\)\#atA\(C00T00L00\)** . Para ver la ruta de acceso de ubicación de un disco, selecciónelo y, a continuación, escriba **disco detalle**.                                                                                                                  |
+|   Sistema    |                                 En equipos con BIOS, especifica que el disco 0 recibe el foco. En los equipos EFI, el disco que contiene la partición del sistema EFI \(ESP\) que se usa para el arranque actual recibe el foco. En los equipos EFI, el comando generará un error si no hay ningún ESP, si hay más de una ESP o el equipo se arranca desde el entorno de preinstalación de Windows \(Windows PE\).                                  |
+|    siguiente     |                                                                                                                                     Una vez que se ha seleccionado un disco, este comando recorre en iteración todos los discos en la lista de discos. Al ejecutar este comando, el disco en la lista siguiente recibirá el foco.                                                                                                                                      |
   
 ## <a name="BKMK_examples"></a>Ejemplos  
 Para cambiar el foco en el disco 1, escriba:  

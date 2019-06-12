@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 59927015f63243f16ba6e9674bc74adbd3c4f96a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ab7388633681120442544adf4ee0e337d8599854
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852636"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441226"
 ---
 # <a name="start"></a>start
 
@@ -41,8 +41,8 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 |"\<Title >"|Especifica el título que se mostrará en la barra de título de la ventana de símbolo del sistema.|
 |/d \<Path>|Especifica el directorio de inicio.|
 |/i|El entorno de inicio de Cmd.exe se pasa a la nueva ventana de símbolo del sistema. Si **/i** no se especifica, se usa el entorno actual.|
-|/min  \| /máx.|Especifica que se debe minimizar (**/min**) o maximizar (**/máx.**) la nueva ventana de símbolo del sistema.|
-|/ separar \| / shared|Inicia programas de 16 bits en un espacio de memoria independiente (**/separar**) o compartir el espacio de memoria (**/ shared**). Estas opciones no se admiten en plataformas de 64 bits.|
+|/min  \| /máx.|Especifica que se debe minimizar ( **/min**) o maximizar ( **/máx.** ) la nueva ventana de símbolo del sistema.|
+|/ separar \| / shared|Inicia programas de 16 bits en un espacio de memoria independiente ( **/separar**) o compartir el espacio de memoria ( **/ shared**). Estas opciones no se admiten en plataformas de 64 bits.|
 |/low \| /normal \| /high \| /realtime \| /abovenormal \| /belownormal|Inicia la aplicación en la clase de prioridad especificado. Los valores de clase de prioridad válido son **/baja**, **/normal**, **/alto**, **/realtime**, **/abovenormal**, y **/belownormal**.|
 |/affinity \<HexAffinity >|Se aplica la máscara de afinidad de procesador especificado (expresada como un número hexadecimal) a la nueva aplicación.|
 |/wait|Inicia la aplicación y espera a que finalice.|
@@ -53,15 +53,15 @@ start ["<Title>"] [/d <Path>] [/i] [{/min | /max}] [{/separate | /shared}] [{/lo
 
 ## <a name="remarks"></a>Comentarios
 
--   Puede ejecutar archivos no ejecutables a través de su asociación de archivo, escriba el nombre del archivo como un comando.
--   Al ejecutar un comando que contiene la cadena "CMD" como el primer token sin un calificador de extensión o ruta de acceso, "CMD" se reemplaza por el valor de la variable COMSPEC. Esto impide que los usuarios recoger **cmd** desde el directorio actual.
--   Al ejecutar una aplicación de 32 bits gráfica de usuario (GUI) de la interfaz, **cmd** no espera la aplicación se cierre antes de volver a la línea de comandos. Este comportamiento no se produce si ejecuta la aplicación desde una secuencia de comandos.
--   Al ejecutar un comando que usa un primer token que no tiene una extensión, Cmd.exe utiliza el valor de la variable de entorno PATHEXT para determinar qué extensiones se buscarán y en qué orden. El valor predeterminado de la variable PATHEXT es:  
-    ```
-    .COM;.EXE;.BAT;.CMD 
-    ```  
-    Tenga en cuenta que la sintaxis es igual que la variable de ruta de acceso con punto y coma separa cada extensión.
--   Cuando busca un archivo ejecutable, si no hay ninguna coincidencia en cualquier extensión, **iniciar** comprueba si el nombre coincide con un nombre de directorio. Si es así, **iniciar** abre Explorer.exe en esa ruta de acceso.
+- Puede ejecutar archivos no ejecutables a través de su asociación de archivo, escriba el nombre del archivo como un comando.
+- Al ejecutar un comando que contiene la cadena "CMD" como el primer token sin un calificador de extensión o ruta de acceso, "CMD" se reemplaza por el valor de la variable COMSPEC. Esto impide que los usuarios recoger **cmd** desde el directorio actual.
+- Al ejecutar una aplicación de 32 bits gráfica de usuario (GUI) de la interfaz, **cmd** no espera la aplicación se cierre antes de volver a la línea de comandos. Este comportamiento no se produce si ejecuta la aplicación desde una secuencia de comandos.
+- Al ejecutar un comando que usa un primer token que no tiene una extensión, Cmd.exe utiliza el valor de la variable de entorno PATHEXT para determinar qué extensiones se buscarán y en qué orden. El valor predeterminado de la variable PATHEXT es:  
+  ```
+  .COM;.EXE;.BAT;.CMD 
+  ```  
+  Tenga en cuenta que la sintaxis es igual que la variable de ruta de acceso con punto y coma separa cada extensión.
+- Cuando busca un archivo ejecutable, si no hay ninguna coincidencia en cualquier extensión, **iniciar** comprueba si el nombre coincide con un nombre de directorio. Si es así, **iniciar** abre Explorer.exe en esa ruta de acceso.
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

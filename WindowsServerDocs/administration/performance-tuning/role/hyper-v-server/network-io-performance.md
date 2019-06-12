@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 6dd9d03cce71c42e2ecc1388519de049a5e4e8dd
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 9f576963a93c8c0b9d6c05f406cc3331c407ceb9
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266712"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811517"
 ---
 # <a name="hyper-v-network-io-performance"></a>Rendimiento de E/S de red de Hyper-V
 
@@ -22,7 +22,7 @@ Server 2016 contiene varias mejoras y nuevas funcionalidades para optimizar el r
 
 Migración en vivo permite mover de manera transparente máquinas virtuales en ejecución de un nodo de un clúster de conmutación por error a otro nodo del mismo clúster sin una conexión de red ni tiempo de inactividad perceptible.
 
-> [!Note]
+> [!NOTE]
 > Agrupación en clústeres de conmutación por error requiere almacenamiento compartido para los nodos del clúster.
 
 El proceso de mover una máquina virtual se puede dividir en dos fases principales. La primera fase, copia la memoria de la máquina virtual desde el host actual al nuevo host. La segunda fase transfiere el estado de la máquina virtual desde el host actual al nuevo host. Las duraciones de las dos fases en gran medida viene determinada por la velocidad a la que se pueden transferir datos desde el host actual al nuevo host.

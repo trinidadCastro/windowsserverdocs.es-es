@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c45e26f6578510837f190ae20e3140e619dc59cb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6abf8466f90ac29846f2e1ee7d305e7e4280231e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841766"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438632"
 ---
 # <a name="ftp-ls1"></a>ftp: ls_1
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
-
-
->Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> 
+> 
+> Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Muestra una lista abreviada de archivos y subdirectorios desde el equipo remoto.   
 ## <a name="syntax"></a>Sintaxis  
@@ -33,10 +33,12 @@ Muestra una lista abreviada de archivos y subdirectorios desde el equipo remoto.
 ls [<remotedirectory>] [<LocalFile>]  
 ```  
 ### <a name="parameters"></a>Parámetros  
-|Parámetro|Descripción|  
-|-------|--------|  
-|[<remotedirectory>]|Especifica el directorio para el que desea ver una lista. Si no se especifica ningún directorio, se usa el directorio de trabajo actual en el equipo remoto.|  
-|[<LocalFile>]|Especifica un archivo local en el que se va a almacenar la lista. Si no se especifica un archivo local, los resultados se muestran en la pantalla.|  
+
+|      Parámetro      |                                                                       Descripción                                                                        |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [<remotedirectory>] | Especifica el directorio para el que desea ver una lista. Si no se especifica ningún directorio, se usa el directorio de trabajo actual en el equipo remoto. |
+|    [<LocalFile>]    |               Especifica un archivo local en el que se va a almacenar la lista. Si no se especifica un archivo local, los resultados se muestran en la pantalla.               |
+
 ## <a name="BKMK_Examples"></a>Ejemplos  
 Mostrar una lista abreviada de archivos y subdirectorios desde el equipo remoto.  
 ```  

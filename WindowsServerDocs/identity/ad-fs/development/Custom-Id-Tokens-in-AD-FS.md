@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: c4f9a2880aa91b7a600cdb40238bead7d565e6bc
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 04573aa13689a0e6744b01a0fbf8b11b622b2706
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65977047"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445472"
 ---
 # <a name="customize-claims-to-be-emitted-in-idtoken-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>Personalización de notificaciones emitido en id_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior
 
@@ -57,29 +57,29 @@ Siga estos pasos para crear y configurar la aplicación en AD FS para recibir el
 
 2. En el Asistente para grupo de aplicaciones, como nombre escriba **ADFSSSO** y en el cliente / servidor, seleccione las aplicaciones la **aplicación nativa accediendo a una aplicación web** plantilla. Haz clic en **Siguiente**.
 
-  ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
+   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
 3. Copia el **identificador de cliente** valor.  Se usará más adelante como el valor de ida: ClientId en el archivo web.config de aplicaciones.
 
 4. Escriba lo siguiente para **URI de redirección:**  -  **https://localhost:44320/** .  Haz clic en **Agregar**. Haz clic en **Siguiente**.
 
-  ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
+   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
 5. En el **configurar Web API** pantalla, escriba lo siguiente para **identificador** -  **https://contoso.com/WebApp** .  Haz clic en **Agregar**. Haz clic en **Siguiente**.  Este valor se usará más adelante para **ida: ResourceID** en el archivo web.config de aplicaciones.
 
-  ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
+   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
 6. En el **elegir directiva de Control de acceso** pantalla, seleccione **permitir todos los usuarios** y haga clic en **siguiente**.
 
-  ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
+   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
 
 7. En el **configurar permisos de la aplicación** pantalla, asegúrese de que **openid** y **allatclaims** están seleccionadas y haga clic en **siguiente**.
 
-  ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.png)
+   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.png)
 
 8. En el **resumen** pantalla, haga clic en **siguiente**.  
 
-  ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.png)
+   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.png)
 
 9. En el **completar** pantalla, haga clic en **cerrar**.
 
@@ -89,20 +89,20 @@ Siga estos pasos para crear y configurar la aplicación en AD FS para recibir el
 
 11. En **ADFSSSO - propiedades de la API Web** pantalla, seleccione **reglas de transformación de emisión** ficha y haga clic en **Agregar regla...**
 
-  ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.png)
+    ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.png)
 
 12. En **transformar notificaciones Asistente para agregar regla** pantalla, seleccione **enviar notificaciones mediante regla personalizada** en la lista desplegable y haga clic en **siguiente**
 
-  ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.png)
+    ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.png)
 
 13. En **transformar notificaciones Asistente para agregar regla** pantalla, escriba **ForCustomIDToken** en **nombre de la regla de notificación** y la siguiente regla de notificación **regla personalizada**. Haga clic en **finalizar**
 
-  ```  
-  x:[]
-  => issue(claim=x);  
-  ```
+    ```  
+    x:[]
+    => issue(claim=x);  
+    ```
 
-  ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.png)
+    ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.png)
 
 ```
 

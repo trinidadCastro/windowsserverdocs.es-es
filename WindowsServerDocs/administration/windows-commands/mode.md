@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cde0e9786f72823f446202f1c87ad8e9e181d29c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0b76d16bdc9099d78e35d8714397d61b9af0f389
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848206"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437319"
 ---
 # <a name="mode"></a>mode
 
@@ -44,21 +44,21 @@ mode com<M>[:] [baud=<B>] [parity=<P>] [data=<D>] [stop=<S>] [to={on|off}] [xon=
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Com\<M > [:]|Especifica el número de puerto de comunicaciones Prncnfg.vbshronous async.|
-|velocidad en baudios =\<B >|Especifica la velocidad de transmisión en bits por segundo. En la tabla siguiente se enumera las abreviaturas válidas para *B* y sus tipos relacionados.</br>-   **11** = 110 baudios</br>-   **15** = 150 baudios</br>-   **30** = 300 baudios</br>-   **60** = 600 baudios</br>-   **12** = 1200 baudios</br>-   **24** = 2400 baudios</br>-   **48** = 4800 baudios</br>-   **96** = 9600 baud</br>-   **19** = 19.200 baudios|
-|parity=\<P>|Especifica cómo el sistema usa el bit de paridad para comprobar los errores de transmisión. La tabla siguiente enumeran los valores válidos para *P*. El valor predeterminado es **e**. No todos los equipos admiten los valores **m** y **s**.</br>-   **n** = ninguno</br>-   **e** = even</br>-   **o** = odd</br>-   **m** = mark</br>-   **s** = espacio|
-|data=\<D>|Especifica el número de bits de datos en un carácter. Los valores válidos para **d.** están en el intervalo de 5 a 8. El valor predeterminado es 7. No todos los equipos admiten los valores 5 y 6.|
-|stop=\<S>|Especifica el número de bits de parada que define el final de un carácter: 1, 1,5 ó 2. Si la velocidad en baudios es 110, el valor predeterminado es 2. En caso contrario, el valor predeterminado es 1. No todos los equipos admiten el valor 1.5.|
-|a = {on | off}|Especifica si el procesamiento de tiempo de espera infinito está activado o desactivado. El valor predeterminado es.|
-|xon={on | off}|Especifica si el protocolo xon o xoff para el control de flujo de datos está activado o desactivado.|
-|odsr={on | off}|Especifica si el protocolo de enlace de salida que utiliza el circuito de conjunto de datos preparado (DSR) está activado o desactivado.|
-|octs={on | off}|Especifica si el protocolo de enlace de salida que utiliza el circuito Listo para enviar (CTS) está activado o desactivado.|
-|dtr={on | Desactivado | hs}|Especifica si el circuito de Terminal de datos preparado (DTR) está activada o desactivada o establecido en el protocolo de enlace.|
-|rts={on | Desactivado | hs | tg}|Especifica si el circuito de la solicitud de envío (RTS) está establecido en on, off, protocolo de enlace o botón de alternancia.|
-|idsr={on | off}|Especifica si la sensibilidad DSR circuito está activado o desactivado.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|  Parámetro  |                                                                                                                                                                                     Descripción                                                                                                                                                                                     |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Com\<M > [:]  |                                                                                                                                                      Especifica el número de puerto de comunicaciones Prncnfg.vbshronous async.                                                                                                                                                      |
+|  velocidad en baudios =\<B >  | Especifica la velocidad de transmisión en bits por segundo. En la tabla siguiente se enumera las abreviaturas válidas para *B* y sus tipos relacionados.</br>-   **11** = 110 baudios</br>-   **15** = 150 baudios</br>-   **30** = 300 baudios</br>-   **60** = 600 baudios</br>-   **12** = 1200 baudios</br>-   **24** = 2400 baudios</br>-   **48** = 4800 baudios</br>-   **96** = 9600 baud</br>-   **19** = 19.200 baudios |
+| parity=\<P> |                              Especifica cómo el sistema usa el bit de paridad para comprobar los errores de transmisión. La tabla siguiente enumeran los valores válidos para *P*. El valor predeterminado es **e**. No todos los equipos admiten los valores **m** y **s**.</br>-   **n** = ninguno</br>-   **e** = even</br>-   **o** = odd</br>-   **m** = mark</br>-   **s** = espacio                              |
+|  data=\<D>  |                                                                                                    Especifica el número de bits de datos en un carácter. Los valores válidos para **d.** están en el intervalo de 5 a 8. El valor predeterminado es 7. No todos los equipos admiten los valores 5 y 6.                                                                                                     |
+|  stop=\<S>  |                                                                                  Especifica el número de bits de parada que define el final de un carácter: 1, 1,5 ó 2. Si la velocidad en baudios es 110, el valor predeterminado es 2. En caso contrario, el valor predeterminado es 1. No todos los equipos admiten el valor 1.5.                                                                                   |
+|   a = {on    |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|   xon={on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|  odsr={on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|  octs={on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|   dtr={on   |                                                                                                                                                                                         Desactivado                                                                                                                                                                                         |
+|   rts={on   |                                                                                                                                                                                         Desactivado                                                                                                                                                                                         |
+|  idsr={on   |                                                                                                                                                                                        off}                                                                                                                                                                                         |
+|     /?      |                                                                                                                                                                        Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                         |
 
 ## <a name="BKMK_2"></a>Para mostrar el estado de todos los dispositivos o de un solo dispositivo
 
@@ -171,13 +171,13 @@ mode con[:] [rate=<R> delay=<D>]
 
 ### <a name="remarks"></a>Comentarios
 
--   La velocidad del teclado es la velocidad a la que se repite un carácter cuando se mantiene presionada la tecla correspondiente a ese carácter. La velocidad del teclado tiene dos componentes, la velocidad y el retraso. Algunos teclados no reconocen este comando.
--   Uso de **tasa = *** R*
+- La velocidad del teclado es la velocidad a la que se repite un carácter cuando se mantiene presionada la tecla correspondiente a ese carácter. La velocidad del teclado tiene dos componentes, la velocidad y el retraso. Algunos teclados no reconocen este comando.
+- Uso de **tasa =** <em>R</em>
 
-    Los valores válidos están comprendidos entre 1 y 32. Estos valores son iguales a aproximadamente 2 y 30 caracteres por segundo. El valor predeterminado es 20 para teclados compatibles con IBM AT y 21 para teclados compatibles con PS/2 de IBM. Si establece la velocidad, también debe establecer el retraso.
--   Uso de **retraso**=*d.*
+  Los valores válidos están comprendidos entre 1 y 32. Estos valores son iguales a aproximadamente 2 y 30 caracteres por segundo. El valor predeterminado es 20 para teclados compatibles con IBM AT y 21 para teclados compatibles con PS/2 de IBM. Si establece la velocidad, también debe establecer el retraso.
+- Uso de **retraso**=*d.*
 
-    Los valores válidos para *d.* son 1, 2, 3 y 4 (que representan 0,25, 0,50, 0,75 y 1 segundo). El valor predeterminado es 2. Si establece el retraso, también debe establecer la velocidad.
+  Los valores válidos para *d.* son 1, 2, 3 y 4 (que representan 0,25, 0,50, 0,75 y 1 segundo). El valor predeterminado es 2. Si establece el retraso, también debe establecer la velocidad.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

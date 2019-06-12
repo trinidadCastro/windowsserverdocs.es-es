@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: d63726e7046896c9ef7aa0c3b3d85237bc3f788d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8e1ef34370b1459cd55705bc0069b49a572de303
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879066"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447531"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>Inicio rápido para la implementación de tejido protegido
 
@@ -107,7 +107,7 @@ Para el modo TPM, se requieren tres cosas:
 
 1.  Un _clave de aprobación pública_ (o _EKpub_) desde la versión 2.0 de TPM en cada host de Hyper-V. Para capturar el EKpub, utilice `Get-PlatformIdentifier`. 
 2.  Un _baseline hardware_. Si cada uno de los hosts de Hyper-V es idéntico, una sola línea de base es todo lo que necesita. Si no lo son, a continuación, necesitará una para cada clase de hardware. Es la línea de base en forma de un archivo de registro de Trustworthy Computing Group o TCGlog. El TCGlog contiene todo lo que hizo el host, desde el firmware UEFI, a través del kernel, hasta donde arrancar por completo el host. Para capturar la instantánea de hardware, instale el rol Hyper-V y la característica de compatibilidad de Hyper-V de guardián de Host y usar `Get-HgsAttestationBaselinePolicy`. 
-3.  Un _directiva de integridad de código_. Si cada uno de los hosts de Hyper-V es idéntico, una única directiva de CI es todo lo que necesita. Si no lo son, a continuación, necesitará una para cada clase de hardware. Windows Server 2016 y Windows 10 tienen un nuevo formulario de cumplimiento de directivas de CI, llamado _integridad de código aplicada por hipervisor (HVCI)_. HVCI proporciona seguros de cumplimiento y garantiza que solo se permite un host para ejecutar los archivos binarios que un administrador de confianza ha permitido que se ejecute. Estas instrucciones se encapsulan en una directiva de CI que se agrega a HGS. HGS mide la directiva de CI de cada host antes de que están autorizados a ejecutar máquinas virtuales blindadas. Para capturar una directiva de CI, utilice `New-CIPolicy`. La directiva, a continuación, se debe convertir en su formato binario utilizando `ConvertFrom-CIPolicy`.
+3.  Un _directiva de integridad de código_. Si cada uno de los hosts de Hyper-V es idéntico, una única directiva de CI es todo lo que necesita. Si no lo son, a continuación, necesitará una para cada clase de hardware. Windows Server 2016 y Windows 10 tienen un nuevo formulario de cumplimiento de directivas de CI, llamado _integridad de código aplicada por hipervisor (HVCI)_ . HVCI proporciona seguros de cumplimiento y garantiza que solo se permite un host para ejecutar los archivos binarios que un administrador de confianza ha permitido que se ejecute. Estas instrucciones se encapsulan en una directiva de CI que se agrega a HGS. HGS mide la directiva de CI de cada host antes de que están autorizados a ejecutar máquinas virtuales blindadas. Para capturar una directiva de CI, utilice `New-CIPolicy`. La directiva, a continuación, se debe convertir en su formato binario utilizando `ConvertFrom-CIPolicy`.
 
 ![Extraer las identidades, instantánea y directiva de CI](../media/Guarded-Fabric-Shielded-VM/guarded-fabric-deployment-step-three-extract-identity-baseline-ci-policy.png)
 
@@ -165,5 +165,5 @@ Creación de máquinas virtuales blindadas difiere muy poco desde máquinas virt
 
 ## <a name="next-step"></a>Paso siguiente
 
->[!div class="nextstepaction"]
-[Requisitos previos HGS](guarded-fabric-prepare-for-hgs.md)
+> [!div class="nextstepaction"]
+> [Requisitos previos HGS](guarded-fabric-prepare-for-hgs.md)

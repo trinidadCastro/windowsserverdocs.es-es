@@ -9,12 +9,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 61881b52-ee6a-4c8e-85d3-702ab8a2bd8c
-ms.openlocfilehash: dd0a160213e69e59194e1f775040c12769f1eb5e
-ms.sourcegitcommit: 4ff3d00df3148e4bea08056cea9f1c3b52086e5d
+ms.openlocfilehash: 844c9d1b0fef9fc49a699bbe09bcb28657d31b2a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64772483"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447623"
 ---
 # <a name="server-to-server-storage-replication-with-storage-replica"></a>Replicación de almacenamiento de servidor a servidor con la réplica de almacenamiento
 
@@ -201,7 +201,7 @@ Si usa Windows Admin Center para administrar la réplica de almacenamiento, siga
 3. Seleccione **réplica de almacenamiento** desde el panel de herramientas.
 4. Seleccione **New** para crear una nueva asociación.
 5. Proporcione los detalles de la asociación y, a continuación, seleccione **crear**. <br>
-![La pantalla de nueva asociación con los detalles de la asociación, como el tamaño de un registro de 8 GB.](media\Storage-Replica-UI\Honolulu_SR_Create_Partnership.png)
+   ![La pantalla de nueva asociación con los detalles de la asociación, como el tamaño de un registro de 8 GB.](media/Storage-Replica-UI/Honolulu_SR_Create_Partnership.png)
 
     **Figura 3: Crear una nueva asociación**
 
@@ -410,23 +410,23 @@ La Réplica de almacenamiento no tiene ninguna de estas limitaciones. Sin embarg
 Si no se trata de factores de bloqueo, la Réplica de almacenamiento permite reemplazar servidores de Replicación DFS por esta tecnología más reciente.   
 Se trata de un proceso de alto nivel:  
 
-1.  Instale a Windows Server en dos servidores y configure el almacenamiento. Para ello podría ser necesario actualizar un conjunto existente de servidores o realizar una instalación limpia.  
-2.  Asegúrese de que los datos que quiera replicar existan en uno o varios volúmenes de datos y no en la unidad C:.   
-a.  También puede inicializar los datos en el otro servidor para ahorrar tiempo, mediante una copia de seguridad o copias de archivos, así como usar almacenamiento con aprovisionamiento fino. No es necesario que la seguridad de metadatos coincida exactamente, a diferencia de la Replicación DFS.  
-3.  Compartir los datos del servidor de origen y hacerla accesible a través de un espacio de nombres DFS. Esto es importante para asegurarse de que los usuarios pueden seguir teniendo acceso a él si el nombre del servidor cambia por uno de un sitio de desastres.  
-a.  Puede crear recursos compartidos de coincidencias en el servidor de destino no estará disponible durante las operaciones normales,   
-b.  No agregar el servidor de destino al espacio de nombres de espacios de nombres DFS, o si lo hace, asegúrese de que todas sus destinos de carpeta estén deshabilitados.  
-4.  Habilite la replicación de la Réplica de almacenamiento y la sincronización inicial completa. La replicación puede ser sincrónica o asincrónica.   
-a.  Sin embargo, se recomienda sincrónica con el fin de garantizar la coherencia de datos de E/S en el servidor de destino.   
-b.  Se recomienda firmemente habilitar las instantáneas de volumen y tomar periódicamente instantáneas con VSSADMIN u otras herramientas de su elección. De esta forma se garantiza que las aplicaciones vacían sus archivos de datos en el disco de forma coherente. En caso de desastres, puede recuperar archivos de instantáneas en el servidor de destino que se podrían haber replicado parcialmente de manera asincrónica. Las instantáneas se replican junto con los archivos.  
-5.  Funcionan normalmente hasta que hay un desastre.  
-6.  Cambie el servidor de destino para que sea el nuevo origen, lo que expone sus volúmenes replicados a los usuarios.  
-7.  Si usa replicación sincrónica, no será necesaria ninguna restauración de datos a menos que el usuario estuviera usando una aplicación que estaba escribiendo datos sin protección de transacciones (esto es independiente de la replicación) durante la pérdida del servidor de origen. Si usa replicación asincrónica, la necesidad de un montaje de instantáneas de VSS es mayor, pero considere el uso de VSS en todas las circunstancias para instantáneas coherentes de aplicación.  
-8.  Agregue el servidor y sus recursos compartidos como un destino de carpeta de espacios de nombres DFS.   
-9.  Así los usuarios podrán acceder a sus datos.  
+1. Instale a Windows Server en dos servidores y configure el almacenamiento. Para ello podría ser necesario actualizar un conjunto existente de servidores o realizar una instalación limpia.  
+2. Asegúrese de que los datos que quiera replicar existan en uno o varios volúmenes de datos y no en la unidad C:.   
+   a.  También puede inicializar los datos en el otro servidor para ahorrar tiempo, mediante una copia de seguridad o copias de archivos, así como usar almacenamiento con aprovisionamiento fino. No es necesario que la seguridad de metadatos coincida exactamente, a diferencia de la Replicación DFS.  
+3. Compartir los datos del servidor de origen y hacerla accesible a través de un espacio de nombres DFS. Esto es importante para asegurarse de que los usuarios pueden seguir teniendo acceso a él si el nombre del servidor cambia por uno de un sitio de desastres.  
+   a.  Puede crear recursos compartidos de coincidencias en el servidor de destino no estará disponible durante las operaciones normales,   
+   b.  No agregar el servidor de destino al espacio de nombres de espacios de nombres DFS, o si lo hace, asegúrese de que todas sus destinos de carpeta estén deshabilitados.  
+4. Habilite la replicación de la Réplica de almacenamiento y la sincronización inicial completa. La replicación puede ser sincrónica o asincrónica.   
+   a.  Sin embargo, se recomienda sincrónica con el fin de garantizar la coherencia de datos de E/S en el servidor de destino.   
+   b.  Se recomienda firmemente habilitar las instantáneas de volumen y tomar periódicamente instantáneas con VSSADMIN u otras herramientas de su elección. De esta forma se garantiza que las aplicaciones vacían sus archivos de datos en el disco de forma coherente. En caso de desastres, puede recuperar archivos de instantáneas en el servidor de destino que se podrían haber replicado parcialmente de manera asincrónica. Las instantáneas se replican junto con los archivos.  
+5. Funcionan normalmente hasta que hay un desastre.  
+6. Cambie el servidor de destino para que sea el nuevo origen, lo que expone sus volúmenes replicados a los usuarios.  
+7. Si usa replicación sincrónica, no será necesaria ninguna restauración de datos a menos que el usuario estuviera usando una aplicación que estaba escribiendo datos sin protección de transacciones (esto es independiente de la replicación) durante la pérdida del servidor de origen. Si usa replicación asincrónica, la necesidad de un montaje de instantáneas de VSS es mayor, pero considere el uso de VSS en todas las circunstancias para instantáneas coherentes de aplicación.  
+8. Agregue el servidor y sus recursos compartidos como un destino de carpeta de espacios de nombres DFS.   
+9. Así los usuarios podrán acceder a sus datos.  
 
- > [!NOTE]
- > El planeamiento de la recuperación ante desastres es un tema complejo que requiere prestar una gran atención al detalle. Es muy recomendable la creación de Runbooks y la ejecución de exploraciones anuales en vivo de conmutación por error. Cuando se produzca un desastre real, reinará la confusión y puede que no esté disponible personal con experiencia.  
+   > [!NOTE]
+   > El planeamiento de la recuperación ante desastres es un tema complejo que requiere prestar una gran atención al detalle. Es muy recomendable la creación de Runbooks y la ejecución de exploraciones anuales en vivo de conmutación por error. Cuando se produzca un desastre real, reinará la confusión y puede que no esté disponible personal con experiencia.  
 
 ## <a name="add-azure-vm-expressroute"></a>Adición de una máquina virtual de Azure conectada a la red a través de ExpressRoute
 

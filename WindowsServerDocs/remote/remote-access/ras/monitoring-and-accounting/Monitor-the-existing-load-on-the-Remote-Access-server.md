@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 62fa2895-62ae-42cf-817c-53e06ac2a26c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a1f47273ab3be6faa762df2fb90d6486bc0ed2d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6d7a5aa7b699f5a8f24c4a36ee8ae314768329b4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849026"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446859"
 ---
 # <a name="monitor-the-existing-load-on-the-remote-access-server"></a>Supervisar la carga existente en el servidor de acceso remoto
 
@@ -51,7 +51,7 @@ Puede usar el panel de supervisión que está disponible en la consola de admini
   
 3.  Haga clic en el **agregar** botón (indicado por un icono de cruz verde) en el **Monitor de rendimiento** barra de herramientas.  
   
-4.  En la lista de **contadores disponibles**, seleccione todos los contadores en el **RAS** y **RAmgmtsvc** categorías y, a continuación, haga clic en **Agregar >>**.  
+4.  En la lista de **contadores disponibles**, seleccione todos los contadores en el **RAS** y **RAmgmtsvc** categorías y, a continuación, haga clic en **Agregar >>** .  
   
 5.  De nuevo, en la lista de **contadores disponibles**, seleccione todos los contadores en el **conexiones IPsec** categoría y, a continuación, haga clic en **Agregar >>.**  
   
@@ -59,7 +59,7 @@ Puede usar el panel de supervisión que está disponible en la consola de admini
   
 **Monitor de rendimiento** gráficamente mostrará ahora las estadísticas de carga del servidor seleccionado.  
   
-![Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../media/Monitor-the-existing-load-on-the-Remote-Access-server/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

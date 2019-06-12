@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 4/5/2017
 description: Cómo planificar una implementación de Carpetas de trabajo, incluyendo los requisitos del sistema y la manera de preparar el entorno de red.
-ms.openlocfilehash: 2ac52b15f266fce7202df4c9c76e774fca4098cc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 06d56df7ce9ddb8c9822f62de383ccad0394b4f3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824646"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447844"
 ---
 # <a name="planning-a-work-folders-deployment"></a>Planificar una implementación de Carpetas de trabajo
 
@@ -22,17 +22,17 @@ ms.locfileid: "59824646"
 
 En este tema se explica el proceso de diseño de una implementación de Carpetas de trabajo. Se entiende que el usuario ya cuenta con lo siguiente:  
   
--   Conocimientos básicos sobre Carpetas de trabajo (según se describe en el tema [Carpetas de trabajo](work-folders-overview.md))  
+- Conocimientos básicos sobre Carpetas de trabajo (según se describe en el tema [Carpetas de trabajo](work-folders-overview.md))  
   
--   Conocimientos básicos sobre los conceptos de Servicios de dominio de Active Directory (AD DS)  
+- Conocimientos básicos sobre los conceptos de Servicios de dominio de Active Directory (AD DS)  
   
--   Conocimientos básicos sobre el uso compartido de archivos de Windows y tecnologías relacionadas  
+- Conocimientos básicos sobre el uso compartido de archivos de Windows y tecnologías relacionadas  
   
--   Conocimientos básicos sobre el uso de certificados SSL  
+- Conocimientos básicos sobre el uso de certificados SSL  
   
--   Conocimientos básicos sobre cómo habilitar el acceso web a recursos internos a través de un proxy inverso web  
+- Conocimientos básicos sobre cómo habilitar el acceso web a recursos internos a través de un proxy inverso web  
   
- Las siguientes secciones le servirán para diseñar su implementación de Carpetas de trabajo. La implementación de Carpetas de trabajo se detalla en el siguiente tema, [Implementar Carpetas de trabajo](deploy-work-folders.md).  
+  Las siguientes secciones le servirán para diseñar su implementación de Carpetas de trabajo. La implementación de Carpetas de trabajo se detalla en el siguiente tema, [Implementar Carpetas de trabajo](deploy-work-folders.md).  
   
 ##  <a name="BKMK_SOFT"></a> Requisitos de software  
 
@@ -119,16 +119,16 @@ Carpetas de trabajo presenta los siguientes requisitos de software relativos a l
 ###  <a name="GroupPolicy"></a> Directiva de grupo  
  Si tiene equipos con Windows 7 en el entorno, se recomienda lo siguiente:  
   
--   Usar la directiva de grupo para controlar las directivas de contraseña para todos los equipos unidos al dominio que usen Carpetas de trabajo.  
+- Usar la directiva de grupo para controlar las directivas de contraseña para todos los equipos unidos al dominio que usen Carpetas de trabajo.  
   
--   Usa la directiva **Bloquear pantalla automáticamente y requerir contraseña** de Carpetas de trabajo en los equipos que no estén unidos al dominio.  
+- Usa la directiva **Bloquear pantalla automáticamente y requerir contraseña** de Carpetas de trabajo en los equipos que no estén unidos al dominio.  
   
- La directiva de grupo también se puede usar para especificar un servidor de Carpetas de trabajo en equipos unidos a dominios. Esto simplifica en cierto modo la configuración de Carpetas de trabajo; de otro modo, los usuarios tendrían que indicar su dirección de correo electrónico del trabajo para buscar la configuración (siempre y cuando Carpetas de trabajo se haya configurado correctamente), o bien indicar la dirección URL de Carpetas de trabajo que se les haya hecho llegar explícitamente por correo electrónico o por cualquier otro medio de comunicación.  
+  La directiva de grupo también se puede usar para especificar un servidor de Carpetas de trabajo en equipos unidos a dominios. Esto simplifica en cierto modo la configuración de Carpetas de trabajo; de otro modo, los usuarios tendrían que indicar su dirección de correo electrónico del trabajo para buscar la configuración (siempre y cuando Carpetas de trabajo se haya configurado correctamente), o bien indicar la dirección URL de Carpetas de trabajo que se les haya hecho llegar explícitamente por correo electrónico o por cualquier otro medio de comunicación.  
   
- La directiva de grupo también puede servir para configurar Carpetas de trabajo forzosamente de manera individual por cada usuario o equipo, pese a que esto hace que Carpetas de trabajo se sincronice en todos los equipos en los que un usuario inicie sesión (si se usa la configuración de directiva por usuario) e impide que los usuarios establezcan otra ubicación en su PC para Carpetas de trabajo (como una tarjeta microSD, a fin de ahorrar espacio en la unidad principal). Aconsejamos evaluar detenidamente las necesidades de los usuarios antes de implantar la configuración automática.  
+  La directiva de grupo también puede servir para configurar Carpetas de trabajo forzosamente de manera individual por cada usuario o equipo, pese a que esto hace que Carpetas de trabajo se sincronice en todos los equipos en los que un usuario inicie sesión (si se usa la configuración de directiva por usuario) e impide que los usuarios establezcan otra ubicación en su PC para Carpetas de trabajo (como una tarjeta microSD, a fin de ahorrar espacio en la unidad principal). Aconsejamos evaluar detenidamente las necesidades de los usuarios antes de implantar la configuración automática.  
   
 ### <a name="windows-intune"></a>Windows Intune  
- Windows Intune aporta un nivel de seguridad y facilidad de administración para los dispositivos no unidos a dominios que de otra forma no estarían presentes. Windows Intune se puede usar para configurar y administrar dispositivos personales de los usuarios como, por ejemplo, tabletas que se conectan a Carpetas de trabajo desde Internet. Windows Intune puede proporcionar dispositivos con la URL del servidor de sincronización para usar; en caso contrario, los usuarios deben escribir su dirección de correo electrónico de trabajo para buscar la configuración (si se publica una dirección URL pública carpetas de trabajo en forma de https://workfolders. *contoso.com*), o escriba la URL del servidor de sincronización directamente.  
+ Windows Intune aporta un nivel de seguridad y facilidad de administración para los dispositivos no unidos a dominios que de otra forma no estarían presentes. Windows Intune se puede usar para configurar y administrar dispositivos personales de los usuarios como, por ejemplo, tabletas que se conectan a Carpetas de trabajo desde Internet. Windows Intune puede proporcionar dispositivos con la URL del servidor de sincronización para usar; en caso contrario, los usuarios deben escribir su dirección de correo electrónico de trabajo para buscar la configuración (si se publica una dirección URL pública carpetas de trabajo en forma de https://workfolders. <em>contoso.com</em>), o escriba la URL del servidor de sincronización directamente.  
   
  Sin una implementación de Windows Intune, los usuarios deben configurar los dispositivos externos manualmente, lo que puede traducirse en una mayor demanda del personal del servicio de asistencia.  
   
@@ -149,16 +149,16 @@ La opción Carpetas de trabajo admite el uso del Proxy de aplicación web, el Pr
 ### <a name="number-of-sync-servers"></a>Número de servidores de sincronización  
  Un cliente puede poner en marcha varios servidores de sincronización en un solo entorno. Esta configuración puede ser muy adecuada por diversos motivos:  
   
--   Dispersión geográfica de los usuarios: por ejemplo, servidores de archivos de sucursales o centros de datos regionales.  
+- Dispersión geográfica de los usuarios: por ejemplo, servidores de archivos de sucursales o centros de datos regionales.  
   
--   Requisitos de almacenamiento de datos: puede que algunos departamentos empresariales presenten requisitos de tratamiento o almacenamiento de los datos que sean más fáciles de cubrir con un servidor dedicado.  
+- Requisitos de almacenamiento de datos: puede que algunos departamentos empresariales presenten requisitos de tratamiento o almacenamiento de los datos que sean más fáciles de cubrir con un servidor dedicado.  
   
--   Equilibrio de carga: en entornos de gran tamaño, el rendimiento y el tiempo de actividad de los servidores pueden aumentar si los datos se almacenan en varios servidores.  
+- Equilibrio de carga: en entornos de gran tamaño, el rendimiento y el tiempo de actividad de los servidores pueden aumentar si los datos se almacenan en varios servidores.  
   
- Para obtener información sobre el rendimiento y la escala de los servidores de Carpetas de trabajo, vea [Consideraciones de rendimiento de las implementaciones de Carpetas de trabajo](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx).  
+  Para obtener información sobre el rendimiento y la escala de los servidores de Carpetas de trabajo, vea [Consideraciones de rendimiento de las implementaciones de Carpetas de trabajo](http://blogs.technet.com/b/filecab/archive/2013/11/01/performance-considerations-for-large-scale-work-folders-deployments.aspx).  
   
 > [!NOTE]
->  Cuando se usen varios servidores de sincronización, recomendamos configurar la detección automática de servidores para los usuarios. Este proceso se basa en la configuración de un atributo de cada cuenta de usuario en AD DS. Este atributo es **msDS-SyncServerURL** y está disponible en las cuentas de usuario después de que un controlador de dominio de Windows Server 2012 R2 se haya agregado al dominio o se hayan aplicado actualizaciones de esquema de Active Directory. Este atributo debe definirse en cada usuario si se quiere garantizar que los usuarios se conecten al servidor de sincronización adecuado. Mediante el uso de detección automática de servidores, las organizaciones pueden publicar carpetas de trabajo tras una dirección URL "descriptiva" como *https://workfolders.contoso.com*, independientemente del número de servidores de sincronización.  
+>  Cuando se usen varios servidores de sincronización, recomendamos configurar la detección automática de servidores para los usuarios. Este proceso se basa en la configuración de un atributo de cada cuenta de usuario en AD DS. Este atributo es **msDS-SyncServerURL** y está disponible en las cuentas de usuario después de que un controlador de dominio de Windows Server 2012 R2 se haya agregado al dominio o se hayan aplicado actualizaciones de esquema de Active Directory. Este atributo debe definirse en cada usuario si se quiere garantizar que los usuarios se conecten al servidor de sincronización adecuado. Mediante el uso de detección automática de servidores, las organizaciones pueden publicar carpetas de trabajo tras una dirección URL "descriptiva" como *https://workfolders.contoso.com* , independientemente del número de servidores de sincronización.  
   
 ### <a name="number-of-sync-shares"></a>Número de recursos compartidos de sincronización  
  Los servidores de sincronización individuales pueden mantener varios recursos compartidos de sincronización, lo que puede ser práctico por los motivos siguientes:  

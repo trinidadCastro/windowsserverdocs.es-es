@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a255a4a5-c1a0-4edc-b41a-211bae397e3c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4ec4bc8e77e8411101b9a2b83a85ad5e1a0765b2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c74bb2ee2f1647716c8c38e392434a5b7f01805f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873506"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446392"
 ---
 # <a name="use-dns-policy-for-split-brain-dns-deployment"></a>Usar la directiva de DNS para la división\-cerebral la implementación de DNS
 
@@ -33,7 +33,7 @@ En este tema se incluyen las siguientes secciones.
 - [Ejemplo de implementación de cerebro dividida de DNS](#bkmk_sbexample)
 - [Ejemplo de Control de recursividad selectiva de DNS](#bkmk_recursion)
 
-##<a name="bkmk_sbexample"></a>Ejemplo de implementación de cerebro dividida de DNS
+## <a name="bkmk_sbexample"></a>Ejemplo de implementación de cerebro dividida de DNS
 La siguiente es un ejemplo de cómo se puede usar la directiva DNS para lograr el escenario descrito anteriormente de DNS de cerebro dividido.
 
 Esta sección contiene los temas siguientes.
@@ -57,7 +57,7 @@ La siguiente ilustración muestra este escenario.
 ![Implementación de DNS de cerebro dividido](../../media/DNS-Split-Brain/Dns-Split-Brain-01.jpg)  
 
 
-##<a name="bkmk_sbhow"></a>Cómo funciona la implementación de cerebro dividida de DNS
+## <a name="bkmk_sbhow"></a>Cómo funciona la implementación de cerebro dividida de DNS
 
 Cuando el servidor DNS está configurado con las directivas DNS necesarias, cada solicitud de resolución de nombres se evalúa con las directivas en el servidor DNS.
 
@@ -67,7 +67,7 @@ Si la interfaz de servidor en el que se recibe la consulta coincide con cualquie
 
 Por lo tanto, en nuestro ejemplo, las consultas DNS para www.career.contoso.com que se reciben en la dirección IP privada (10.0.0.56) recepción una respuesta DNS que contiene una dirección IP interna; y las consultas DNS que se reciben en la interfaz de red pública recibirán una respuesta DNS que contiene la dirección IP pública en el ámbito de la zona predeterminada (es igual que la resolución de consultas normal).  
 
-##<a name="bkmk_sbconfigure"></a>Cómo configurar la implementación de cerebro dividida de DNS
+## <a name="bkmk_sbconfigure"></a>Cómo configurar la implementación de cerebro dividida de DNS
 Para configurar DNS Split-Brain implementación mediante la directiva de DNS, debe usar los pasos siguientes.
 
 - [Creación de los ámbitos de zona](#bkmk_zscopes)  
@@ -79,12 +79,12 @@ Las secciones siguientes proporcionan instrucciones de configuración detallada.
 >[!IMPORTANT]
 >Las secciones siguientes incluyen ejemplos de comandos de Windows PowerShell que contienen valores de ejemplo para muchos parámetros. Asegúrese de sustituir los valores de ejemplo de estos comandos con los valores adecuados para su implementación antes de ejecutar estos comandos. 
 
-###<a name="bkmk_zscopes"></a>Creación de los ámbitos de zona
+### <a name="bkmk_zscopes"></a>Creación de los ámbitos de zona
 
 Un ámbito de la zona es una instancia única de la zona. Una zona DNS puede tener varios ámbitos de zona, con cada ámbito de la zona que contiene su propio conjunto de registros DNS. El mismo registro puede estar presente en varios ámbitos, con direcciones IP diferentes o las mismas direcciones IP. 
 
->[!NOTE]
->De forma predeterminada, un ámbito de la zona existe en las zonas DNS. Este ámbito de la zona tiene el mismo nombre que la zona y las operaciones de DNS heredadas funcionan en este ámbito. Este ámbito de la zona predeterminada va a hospedar la versión de www.career.contoso.com externa.
+> [!NOTE]
+> De forma predeterminada, un ámbito de la zona existe en las zonas DNS. Este ámbito de la zona tiene el mismo nombre que la zona y las operaciones de DNS heredadas funcionan en este ámbito. Este ámbito de la zona predeterminada va a hospedar la versión de www.career.contoso.com externa.
 
 Puede usar el siguiente comando de ejemplo para la partición en el ámbito de zona "contoso.com" para crear un ámbito de la zona interna. El ámbito de la zona interna se usará para mantener la versión interna de www.career.contoso.com.
 
@@ -92,11 +92,11 @@ Puede usar el siguiente comando de ejemplo para la partición en el ámbito de z
 
 Para obtener más información, consulte [agregar DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-###<a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
+### <a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
 
 El siguiente paso es agregar los registros que representa el host del servidor Web en los ámbitos de dos zona - internos y predeterminado (para los clientes externos). 
 
-En el ámbito de la zona interna, el registro **www.career.contoso.com** se agrega con la dirección IP 10.0.0.39, que es una dirección IP privada; y en el ámbito de la zona de forma predeterminada el mismo registro, **www.career.contoso.com**, es se agregan con la dirección IP 65.55.39.10.
+En el ámbito de la zona interna, el registro <strong>www.career.contoso.com</strong> se agrega con la dirección IP 10.0.0.39, que es una dirección IP privada; y en el ámbito de la zona de forma predeterminada el mismo registro, <strong>www.career.contoso.com</strong>, es se agregan con la dirección IP 65.55.39.10.
 
 No **– zonaámbito** parámetro se proporciona en los siguientes comandos de ejemplo cuando se agrega el registro para el ámbito de la zona predeterminada. Esto es similar a agregar registros a una zona vainilla.
 
@@ -109,7 +109,7 @@ Add-DnsServerResourceRecord -ZoneName "contoso.com" -A -Name "www.career" -IPv4A
 
 Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-###<a name="bkmk_policies"></a>Cree las directivas DNS
+### <a name="bkmk_policies"></a>Cree las directivas DNS
 
 Una vez que haya identificado las interfaces de servidor para la red externa y la red interna y ha creado los ámbitos de zona, debe crear las directivas DNS que se conectan los ámbitos de la zona interna y externa.
 

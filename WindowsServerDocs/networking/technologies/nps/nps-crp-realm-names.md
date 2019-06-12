@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: d011eaad-f72a-4a83-8099-8589c4ee8994
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0257c4d15db4fc54e55ef430f6f2eea9cea2ec4d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65a272873a60d74efcf417a16fdc84670f5878da
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882826"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447000"
 ---
 # <a name="realm-names"></a>Nombres de dominio kerberos
 
@@ -28,7 +28,7 @@ En otro ejemplo, si el atributo RADIUS de nombre de usuario contiene el nombre d
 
 - **Ejemplo\usuario1**. En este ejemplo, el nombre de dominio Kerberos **ejemplo** es un prefijo; y también es el nombre de Active Directory&reg; servicios de dominio \(AD DS\) dominio.
 
-- **user1@example.com**. En este ejemplo, el nombre de dominio Kerberos **ejemplo.com** es un sufijo y es un nombre de dominio DNS o el nombre de un dominio de AD DS.
+- <strong>user1@example.com</strong>. En este ejemplo, el nombre de dominio Kerberos **ejemplo.com** es un sufijo y es un nombre de dominio DNS o el nombre de un dominio de AD DS.
 
 Puede usar nombres de dominio Kerberos configurados en las directivas de solicitud de conexión al diseñar e implementar la infraestructura de RADIUS para asegurarse de que se enrutan las solicitudes de conexión de clientes RADIUS, también denominados servidores de acceso de red, a servidores RADIUS que puede autenticar y autorizar la solicitud de conexión.
 

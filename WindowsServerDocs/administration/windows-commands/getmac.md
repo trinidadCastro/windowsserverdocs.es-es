@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e356354e63a057201582db0fb74933e1b3ef8d8c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1266b7368f1b073e00735a8d3362c75305d7c0f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851046"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438270"
 ---
 # <a name="getmac"></a>getmac
 
@@ -30,15 +30,17 @@ Devuelve los medios tener acceso a la dirección MAC (control) y la lista de pro
 getmac[.exe][/s <computer> [/u <Domain\<User> [/p <Password>]]][/fo {TABLE | list | CSV}][/nh][/v]
 ```
 ### <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|/s <computer>|Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.|
-|/u <Domain>\\<User>|Ejecuta el comando con los permisos de cuenta del usuario especificado por el usuario o dominio\usuario. El valor predeterminado es los permisos de la sesión de usuario en el equipo que emite el comando actual.|
-|/p <Password>|Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.|
-|/FO {tabla &#124; lista&#124; CSV}|Especifica el formato que se usará para la salida de la consulta. Los valores válidos son **tabla**, **lista**, y **CSV**. El formato predeterminado para la salida es **tabla**.|
-|/nh|Suprime el encabezado de columna de salida. Es válido cuando el **/fo** parámetro está establecido en **tabla** o **CSV**.|
-|/v|Especifica que la salida muestra información detallada.|
-|/?||
+
+|             Parámetro              |                                                                                          Descripción                                                                                          |
+|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|           /s <computer>            |                                      Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.                                       |
+|        /u <Domain>\\<User>         | Ejecuta el comando con los permisos de cuenta del usuario especificado por el usuario o dominio\usuario. El valor predeterminado es los permisos de la sesión de usuario en el equipo que emite el comando actual. |
+|           /p <Password>            |                                                     Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.                                                     |
+| /FO {tabla &#124; lista&#124; CSV} |                       Especifica el formato que se usará para la salida de la consulta. Los valores válidos son **tabla**, **lista**, y **CSV**. El formato predeterminado para la salida es **tabla**.                        |
+|                /nh                 |                                             Suprime el encabezado de columna de salida. Es válido cuando el **/fo** parámetro está establecido en **tabla** o **CSV**.                                              |
+|                 /v                 |                                                                    Especifica que la salida muestra información detallada.                                                                     |
+|                 /?                 |                                                                                                                                                                                               |
+
 ## <a name="remarks"></a>Comentarios
 **GETMAC** puede ser útil cuando desea escribir la dirección MAC en un analizador de red o cuando necesite saber qué protocolos están actualmente en uso en cada adaptador de red en un equipo.
 ## <a name="BKMK_Examples"></a>Ejemplos

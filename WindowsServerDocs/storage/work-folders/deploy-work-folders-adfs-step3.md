@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: 5a43b104-4d02-4d73-a385-da1cfb67e341
-ms.openlocfilehash: 81f30a7a4d50423a68719343fec3032cc6a1602e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6b21579fb1dedc777733317e7222debd8d944a1
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854716"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812668"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-3-set-up-work-folders"></a>Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 3, configurar carpetas de trabajo
 
@@ -32,7 +32,7 @@ En este tema se describe el tercer paso para implementar Carpetas de trabajo con
 -   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: El paso 5, configure los clientes](deploy-work-folders-adfs-step5.md)  
   
 > [!NOTE]
->   Las instrucciones incluidas en esta sección toman como referencia un entorno de Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   Las instrucciones descritas en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
 
 Para configurar Carpetas de trabajo, usa los siguientes procedimientos.  
   
@@ -49,7 +49,7 @@ Para crear el registro CNAME de Carpetas de trabajo, sigue estos pasos:
   
 1.  Desde el controlador de dominio, abre el **administrador de DNS**.  
   
-2.  Expande la carpeta Zonas de búsqueda directa, haz clic con el botón derecho en el dominio y haz clic en **Nuevo alias (CNAME)**.  
+2.  Expande la carpeta Zonas de búsqueda directa, haz clic con el botón derecho en el dominio y haz clic en **Nuevo alias (CNAME)** .  
   
 3.  En la ventana **Nuevo registro de recursos** que se encuentra en el campo **Nombre de alias**, escribe el alias de Carpetas de trabajo. En el ejemplo de prueba, este nombre es **workfolders**.  
   
@@ -250,7 +250,7 @@ Para configurar Carpetas de trabajo y así poder usar AD FS para la autenticaci�
   
 4.  En la ventana **Configuración de Carpetas de trabajo**, selecciona **Servicios de federación de Active Directory** y escribe la dirección URL del Servicio de federación. Haga clic en **Aplicar**.  
   
-    En el ejemplo de prueba, la dirección URL es **https://blueadfs.contoso.com**.  
+    En el ejemplo de prueba, la dirección URL es **https://blueadfs.contoso.com** .  
   
 El cmdlet para lograr la misma tarea mediante Windows PowerShell es:  
   

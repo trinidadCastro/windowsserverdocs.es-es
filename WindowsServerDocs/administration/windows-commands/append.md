@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: abf7713b3fd5bbb6172969ca1cc39cbbbbafafc6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe641e1336c163b5e98421a5fc32f8dbe64023b0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881986"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435325"
 ---
 # <a name="append"></a>append
 
@@ -41,16 +41,16 @@ append ;
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|[\<Drive>:]<Path>|Especifica una unidad y directorio que se anexará.|
-|/x:on|Aplica los directorios agregados a búsquedas de archivos y aplicaciones al iniciar.|
-|/x:off|Solo se aplica directorios agregados a las solicitudes para abrir archivos.</br>**/ x: off** es la configuración predeterminada.|
-|/path:on|Aplica los directorios agregados a las solicitudes de archivos que ya especifican una ruta de acceso. **/ Path: en** es la configuración predeterminada.|
-|/path:off|Desactiva el efecto de **/path: en**.|
-|/e|Almacena una copia de la lista de directorios agregados en una variable de entorno denominada APPEND. **/e** se puede usar solo la primera vez que use **anexar** después de iniciar el sistema.|
-|;|Borra la lista de directorios agregados.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|     Parámetro     |                                                                                 Descripción                                                                                 |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [\<Drive>:]<Path> |                                                                 Especifica una unidad y directorio que se anexará.                                                                  |
+|       /x:on       |                                                  Aplica los directorios agregados a búsquedas de archivos y aplicaciones al iniciar.                                                  |
+|      /x:off       |                                     Solo se aplica directorios agregados a las solicitudes para abrir archivos.</br>**/ x: off** es la configuración predeterminada.                                     |
+|     /path:on      |                               Aplica los directorios agregados a las solicitudes de archivos que ya especifican una ruta de acceso. **/ Path: en** es la configuración predeterminada.                               |
+|     /path:off     |                                                                    Desactiva el efecto de **/path: en**.                                                                    |
+|        /e         | Almacena una copia de la lista de directorios agregados en una variable de entorno denominada APPEND. **/e** se puede usar solo la primera vez que use **anexar** después de iniciar el sistema. |
+|         ;         |                                                                     Borra la lista de directorios agregados.                                                                     |
+|        /?         |                                                                    Muestra la ayuda en el símbolo del sistema.                                                                     |
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

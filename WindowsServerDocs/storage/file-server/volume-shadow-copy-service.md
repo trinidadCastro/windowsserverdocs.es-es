@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 7b61a0494b8a63168b40bfaed42dedf0fff40c35
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d67f15d65feb28fb05fc056fd3c34c04cee80d09
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887266"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447761"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -97,7 +97,7 @@ Para crear una instantánea, el solicitante, el escritor y el proveedor realizan
 > Si los sistemas de escritura se mantienen en el estado de inmovilización durante más de 60 segundos o si los proveedores tardan más de 10 segundos para confirmar la instantánea, se puede anular la creación de instantáneas. 
 <br>
 
-9.  El solicitante puede volver a intentar el proceso (vaya al paso 1) o notificar al administrador que vuelva a intentarlo más tarde.  
+9. El solicitante puede volver a intentar el proceso (vaya al paso 1) o notificar al administrador que vuelva a intentarlo más tarde.  
       
 10. Si la instantánea se crea correctamente, el servicio de instantáneas de volumen devuelve la información de ubicación de la instantánea al solicitante. En algunos casos, la instantánea puede ser temporalmente disponible como un volumen de lectura y escritura para que VSS y una o varias aplicaciones pueden modificar el contenido de la instantánea antes de que termine la instantánea. Después de VSS y las aplicaciones realizar sus modificaciones, se realiza la instantánea de solo lectura. Esta fase se denomina recuperación automática, y se usa para deshacer las transacciones del sistema de archivos o una aplicación en el volumen de instantáneas que no se completaron antes de que se creó la instantánea.  
       
@@ -136,7 +136,7 @@ En el método de copia en escritura, cuando se produce un cambio en el volumen o
 </colgroup>
 <thead>
 <tr class="header">
-<th>Tiempo</th>
+<th>Time</th>
 <th>Origen de datos (estado y datos)</th>
 <th>Instantánea (estado y datos)</th>
 </tr>
@@ -177,7 +177,7 @@ En el método de redirección en la escritura, siempre que el volumen original r
 </colgroup>
 <thead>
 <tr class="header">
-<th>Tiempo</th>
+<th>Time</th>
 <th>Origen de datos (estado y datos)</th>
 <th>Instantánea (estado y datos)</th>
 </tr>
@@ -376,12 +376,12 @@ Para excluir determinados archivos de instantáneas, use la siguiente clave del 
 
 > [!NOTE]
 > El <STRONG>FilesNotToSnapshot</STRONG> clave del registro está pensada para usarse únicamente por las aplicaciones. Los usuarios que intentan usar encontrarán limitaciones como los siguientes:
-<br>
-<UL>
-<LI>No puede eliminar archivos desde una instantánea que se creó en un servidor de Windows mediante la característica versiones anteriores.<BR><BR>
-<LI>No puede eliminar los archivos de instantáneas para carpetas compartidas.<BR><BR>
-<LI>Puede eliminar archivos desde una instantánea que se creó mediante la [Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow) utilidad, pero no se puede eliminar archivos desde una instantánea que se creó mediante la [Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin) utilidad.<BR><BR>
-<LI>Se eliminan los archivos desde una copia sombra de forma óptima. Esto significa que no se garantiza que se va a eliminar.<BR><BR></LI></UL>
+> <br>
+> <UL>
+> <LI>No puede eliminar archivos desde una instantánea que se creó en un servidor de Windows mediante la característica versiones anteriores.<BR><BR>
+> <LI>No puede eliminar los archivos de instantáneas para carpetas compartidas.<BR><BR>
+> <LI>Puede eliminar archivos desde una instantánea que se creó mediante la <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a> utilidad, pero no se puede eliminar archivos desde una instantánea que se creó mediante la <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a> utilidad.<BR><BR>
+> <LI>Se eliminan los archivos desde una copia sombra de forma óptima. Esto significa que no se garantiza que se va a eliminar.<BR><BR></LI></UL>
 
 
 Para obtener más información, consulte [excluir archivos de instantáneas](http://go.microsoft.com/fwlink/?linkid=180904) (http://go.microsoft.com/fwlink/?LinkId=180904) en MSDN.

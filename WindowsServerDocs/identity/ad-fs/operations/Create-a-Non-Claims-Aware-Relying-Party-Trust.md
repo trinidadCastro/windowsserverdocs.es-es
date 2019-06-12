@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: cdd0b32b50f676007a6cc922bc15b95bb61323be
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e94b07d7fa654732526d0b43daadc9ad0ad4f3a8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189671"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444932"
 ---
 # <a name="create-a-non-claims-aware-relying-party-trust"></a>Creación de una confianza de usuario de confianza que no es compatible con notificaciones
 
@@ -27,7 +27,7 @@ Para agregar un nuevo no\-notificaciones\-compatible con confianza, utilizando e
   
 El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).   
   
-##<a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>Crear manualmente un no basada en notificaciones compatible con confianza 
+## <a name="to-create-a-non-claims-aware-relying-party-trust-manually"></a>Crear manualmente un no basada en notificaciones compatible con confianza 
 1. En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
   
 2.  En **acciones**, haga clic en **agregar confianza**.  

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6c7a9e95ebd36209d5729f81b7eae9e2660b3606
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f934d8c65da939fb60c564b375699f411b7c9ac
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890696"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440833"
 ---
 # <a name="using-the-add-alldriverpackages-subcommand"></a>Con el subcomando add AllDriverPackages
 
@@ -34,12 +34,12 @@ WDSUTIL /Add-AllDriverPackages /FolderPath:<Folder Path> [/Server:<Server name>]
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/ FolderPath:\<ruta de acceso de carpeta >|Especifica la ruta de acceso completa a la carpeta que contiene los archivos .inf para los paquetes de controladores.|
-|[/ Server:\<nombre del servidor >]|Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se usa el servidor local.|
-|[/ Arquitectura: {x86 | ia64 | x64}]|Especifica la arquitectura de los paquetes de controladores para agregar. Se omiten los paquetes de controladores para otras arquitecturas.|
-|[/ DriverGroup:\<nombre de grupo >]|Especifica el nombre del grupo de controladores a la que se deben agregar los paquetes.|
+|          Parámetro           |                                                              Descripción                                                              |
+|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+|  / FolderPath:\<ruta de acceso de carpeta >  |                      Especifica la ruta de acceso completa a la carpeta que contiene los archivos .inf para los paquetes de controladores.                      |
+|   [/ Server:\<nombre del servidor >]   | Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se usa el servidor local. |
+|     [/ Arquitectura: {x86      |                                                                 ia64                                                                  |
+| [/ DriverGroup:\<nombre de grupo >] |                             Especifica el nombre del grupo de controladores a la que se deben agregar los paquetes.                             |
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 02/05/2019
-ms.openlocfilehash: 6b67208176b426f52d3c5106f8de09ad334d3b01
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87878eba785c0e1cc50454a74b2af4a159e88e12
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829536"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443662"
 ---
 # <a name="confirm-guarded-hosts-can-attest"></a>Confirme que los hosts protegidos pueden dar fe 
 
@@ -52,13 +52,13 @@ Un administrador del tejido debe confirmar que los hosts de Hyper-V pueden ejecu
         Get-HgsTrace -RunDiagnostics -Detailed
 
     > [!IMPORTANT]
-    > Si usa Windows Server 2019 o Windows 10, versión 1809 y está usando directivas de integridad de código, `Get-HgsTrace` puede devolver un error para el **directiva de integridad de código activo** diagnóstico.
+    > Si usa Windows Server 2019 o Windows 10, versión 1809 y está usando directivas de integridad de código, `Get-HgsTrace` devolver un error para el **directiva de integridad de código activo** diagnóstico.
     > Puede ignorar este resultado cuando es el solo errores diagnóstico.
 
 ## <a name="next-step"></a>Paso siguiente
 
->[!div class="nextstepaction"]
-[Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
+> [!div class="nextstepaction"]
+> [Implementar máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
 
 ## <a name="see-also"></a>Vea también
 

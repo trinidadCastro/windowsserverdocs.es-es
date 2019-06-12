@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 8e05043d029636ddeb3a24349897ac61a713b2a7
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 9883d337520c3920f8638ddfe5f6bd393e31fd2f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034112"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442864"
 ---
 # <a name="perform-initial-recovery"></a>Realizar recuperación inicial  
 
@@ -126,7 +126,7 @@ Después de la validación, únase a los controladores de dominio a la red de pr
 
 - Para solucionar el problema de resolución de nombres, cree registros de delegación DNS y configure DNS de sugerencias de raíz y reenvío según sea necesario. Ejecute **repadmin/Replsum** para comprobar la replicación entre controladores de dominio. 
 - Si el controlador de dominio restaurado no es asociados de replicación directos, recuperación de replicación será mucho más rápido mediante la creación de objetos de conexión temporal entre ellos. 
-- Para validar la limpieza de metadatos, ejecute **Repadmin /viewlist \***  para obtener una lista de todos los controladores de dominio del bosque. Ejecute **/DCLIST Nltest:** *< dominio\>*  para obtener una lista de todos los controladores de dominio en el dominio. 
+- Para validar la limpieza de metadatos, ejecute **Repadmin /viewlist \\** * para obtener una lista de todos los controladores de dominio del bosque. Ejecute **/DCLIST Nltest:** *< dominio\>*  para obtener una lista de todos los controladores de dominio en el dominio. 
 - Para comprobar el estado de DC y DNS, ejecute DCDiag /v para informar de errores en todos los controladores de dominio del bosque. 
 
 ## <a name="add-the-global-catalog-to-a-domain-controller-in-the-forest-root-domain"></a>Agregar el catálogo global a un controlador de dominio en el dominio raíz del bosque

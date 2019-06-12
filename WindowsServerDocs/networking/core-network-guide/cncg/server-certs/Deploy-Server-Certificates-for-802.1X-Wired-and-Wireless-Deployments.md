@@ -8,12 +8,12 @@ ms.prod: windows-server-threshold
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 769a4165cfd82056a904c79c41e96fb666d05e43
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2d4cdcd11e0eb334064ddefec0eda775ffccff2c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842276"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446471"
 ---
 # <a name="deploy-server-certificates-for-8021x-wired-and-wireless-deployments"></a>Implementación de certificados de servidor para las implementaciones cableadas e inalámbricas de 802.1X
 
@@ -66,8 +66,8 @@ La inscripción automática de certificados de servidor, que también se denomin
 Esta guía proporciona instrucciones sobre cómo implementar certificados de servidor mediante el uso de AD CS y el rol de servidor servidor Web (IIS) en Windows Server 2016. Estos son los requisitos previos para llevar a cabo los procedimientos de esta guía.  
 
 - Debe implementar una red principal con la Guía de red de Windows Server 2016 Core, o ya debe tener las tecnologías proporcionadas en la Guía de red principal instalado y funciona correctamente en la red. Estas tecnologías incluyen TCP/IP v4, DHCP, Active Directory Domain Services (AD DS), DNS y NPS.  
->[!NOTE]
->La Guía de red de Windows Server 2016 Core está disponible en la biblioteca técnica de Windows Server 2016. Para obtener más información, consulte [Guía de red principal](../../../core-network-guide/Core-Network-Guide.md).
+  >[!NOTE]
+  >La Guía de red de Windows Server 2016 Core está disponible en la biblioteca técnica de Windows Server 2016. Para obtener más información, consulte [Guía de red principal](../../../core-network-guide/Core-Network-Guide.md).
 
 - Debe leer la sección de planeación de esta guía para asegurarse de que estén preparados para esta implementación antes de realizar la implementación.  
 - Debe realizar los pasos de esta guía en el orden en que se presentan. No pasar la sección e implementar una entidad de certificación sin realizar los pasos que conducen a implementar el servidor o la implementación se producirá un error.  

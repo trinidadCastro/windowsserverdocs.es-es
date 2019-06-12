@@ -10,12 +10,12 @@ ms.date: 07/11/2018
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
-ms.openlocfilehash: af98a219a4a5aa708df9c648f1b245a21e95f016
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 425197d3462762c60a7371fc6ca529ad1b70e7ef
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827816"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443373"
 ---
 # <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure 
 
@@ -29,17 +29,17 @@ Antes de cargar imágenes, realiza los cambios siguientes:
 - Descarga e instala Windows Server 2008 Service Pack 2 (SP2) si todavía no lo tienes instalado en tu imagen.
 
 - Configuración de Escritorio remoto (RDP).
-   1. Ve a **Panel de control** > **Configuración del sistema**.   
-   2. Selecciona **Configuración remota** en la barra de menús de la izquierda.
+  1. Ve a **Panel de control** > **Configuración del sistema**.   
+  2. Selecciona **Configuración remota** en la barra de menús de la izquierda.
 
-   ![Captura de pantalla de la configuración del sistema, destacando "Configuración remota".](media/1a_remote_settings.png)
+     ![Captura de pantalla de la configuración del sistema, destacando "Configuración remota".](media/1a_remote_settings.png)
 
-   3. Selecciona la pestaña **Remoto** en Propiedades del sistema.   
+  3. Selecciona la pestaña **Remoto** en Propiedades del sistema.   
 
-   ![Captura de pantalla de la pestaña Remoto en las propiedades del sistema.](media/2c_sysprops.png)
+     ![Captura de pantalla de la pestaña Remoto en las propiedades del sistema.](media/2c_sysprops.png)
 
-   4. Selecciona Permitir las conexiones desde equipos que ejecutan cualquier versión de Escritorio remoto (menos seguro).   
-   5. Haz clic en **Aplicar** y en **Aceptar**.
+  4. Selecciona Permitir las conexiones desde equipos que ejecutan cualquier versión de Escritorio remoto (menos seguro).   
+  5. Haz clic en **Aplicar** y en **Aceptar**.
 - Configurar Firewall de Windows.   
    1. En el símbolo del sistema en modo Administrador, introduce “**wf.msc**” para ir a la configuración de Firewall de Windows y de seguridad avanzada.   
    2. Ordena los resultados por **Puertos** selecciona **puerto 3389**.   

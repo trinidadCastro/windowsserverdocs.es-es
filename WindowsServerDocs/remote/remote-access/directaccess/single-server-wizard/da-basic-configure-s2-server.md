@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 82bf5fed-93b3-4fa6-8e71-522146eccdb1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fc0abf849d43c8ba6ec86e17b9ed86fce573ed47
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9983fb475143109d191f3b6d69afef48d109472a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813386"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446952"
 ---
 # <a name="step-2-configure-the-basic-directaccess-server"></a>Paso 2 configurar el servidor de DirectAccess básica
 
@@ -54,7 +54,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 7.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
   
-![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../media/Step-2-Configure-the-DirectAccess-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 El siguiente cmdlet de Windows PowerShell o cmdlets de instalar el rol de acceso remoto: 
 

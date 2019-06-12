@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8267a35aefc279ff57ce3d200415e16e431775f7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8cac59b2f5524df5a82e9c83424fd781f0ef7c8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883066"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440931"
 ---
 # <a name="tscon"></a>tscon
 
@@ -35,9 +35,10 @@ Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_exam
 tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /password:*] [/v]  
 ```  
 ## <a name="parameters"></a>Parámetros  
+
 |Parámetro|Descripción|  
 |-------|--------|  
-|\<SessionID>|Especifica el identificador de la sesión a la que desea conectarse. Si usa el elemento opcional **/dest:**<*SessionName*> parámetro, este es el identificador de la sesión a la que desea conectarse.|  
+|\<SessionID>|Especifica el identificador de la sesión a la que desea conectarse. Si usa el elemento opcional **/dest:** <*SessionName*> parámetro, este es el identificador de la sesión a la que desea conectarse.|  
 |\<SessionName>|Especifica el nombre de la sesión a la que desea conectarse.|  
 |/dest:\<SessionName>|Especifica el nombre de la sesión actual. Esta sesión se desconectará al conectarse a la nueva sesión.|  
 |/password:\<pw>|Especifica la contraseña del usuario que posee la sesión a la que desea conectarse. Esta contraseña es necesaria cuando el usuario que se conecta no es propietario de la sesión.|  
@@ -47,23 +48,23 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 
 ## <a name="remarks"></a>Comentarios  
 -   Debe tener permiso de acceso de Control total o permiso de acceso especial para conectarse a otra sesión de conexión.  
--   El **/dest:**<*SessionName*> parámetro le permite conectar la sesión de otro usuario a una sesión diferente.  
+-   El **/dest:** <*SessionName*> parámetro le permite conectar la sesión de otro usuario a una sesión diferente.  
 -   Si no especifica una contraseña en el <*contraseña*> parámetro y la sesión de destino pertenece a un usuario distinto del actual, **tscon** se produce un error.  
 -   No se puede conectar a la sesión de consola.  
 
 ## <a name="BKMK_examples"></a>Ejemplos  
--   Para conectarse a la sesión 12 en el servidor Host de sesión de escritorio remoto actual y desconectar la sesión actual, escriba:  
-    ```  
-    tscon 12  
-    ```  
--   Para conectarse a la sesión 23 en el servidor Host de sesión de escritorio remoto actual, mediante el uso de la contraseña micontra y desconectar la sesión actual, escriba:  
-    ```  
-    tscon 23 /password:mypass  
-    ```  
--   Para conectar la sesión llamada TERM03 a la sesión TERM05 y, a continuación, desconecte la sesión TERM05, si está conectado, escriba:  
-    ```  
-    tscon TERM03 /v /dest:TERM05  
-    ```  
-#### <a name="additional-references"></a>Referencias adicionales  
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
-[Servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)  
+- Para conectarse a la sesión 12 en el servidor Host de sesión de escritorio remoto actual y desconectar la sesión actual, escriba:  
+  ```  
+  tscon 12  
+  ```  
+- Para conectarse a la sesión 23 en el servidor Host de sesión de escritorio remoto actual, mediante el uso de la contraseña micontra y desconectar la sesión actual, escriba:  
+  ```  
+  tscon 23 /password:mypass  
+  ```  
+- Para conectar la sesión llamada TERM03 a la sesión TERM05 y, a continuación, desconecte la sesión TERM05, si está conectado, escriba:  
+  ```  
+  tscon TERM03 /v /dest:TERM05  
+  ```  
+  #### <a name="additional-references"></a>Referencias adicionales  
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
+  [Servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)  

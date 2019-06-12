@@ -8,12 +8,12 @@ manager: dongill
 author: JasonGerend
 ms.author: jgerend
 ms.date: 10/18/2018
-ms.openlocfilehash: 3c0792347aaa70fe80d346cc51cbc44b73c42f39
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 330f65721fca1908ac54ddfd194f96ffe540f1b5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476018"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442363"
 ---
 # <a name="whats-new-in-failover-clustering"></a>What's new in Failover Clustering (Novedades de los clústeres de conmutación por error)
 
@@ -50,10 +50,10 @@ En este tema se explica la funcionalidad nueva y modificada en Windows Server 20
     La Actualización compatible con clústeres (CAU) ahora está integrada y es compatible con Espacios de almacenamiento directo, validando y garantizando que la resincronización de datos se completa en cada nodo. Actualización compatible con clústeres inspecciona las actualizaciones de forma inteligente reinicie si es necesario. Esto permite la coordinación de reinicios de todos los servidores del clúster para el mantenimiento planeado.
 
 - **Mejoras de testigo de recurso compartido de archivos** habilitamos el uso de un testigo de recurso compartido de archivos en los siguientes escenarios: 
-    - Falta o muy deficiente acceso a Internet debido a una ubicación remota, impidiendo así el uso de un testigo en la nube. 
-    - Falta de unidades compartidas para un testigo de disco. Podría tratarse de una configuración de espacios de almacenamiento directo hiperconvergido un SQL Server siempre en disponibilidad grupos (AG), o un * Exchange base de datos de grupo de disponibilidad (DAG), ninguno de los cuales usa discos compartidos. 
-    - Ausencia de una conexión de controlador de dominio porque el clúster está detrás de una red Perimetral. 
-    - Un grupo de trabajo o entre dominios clúster para el que existe no es ningún objeto de nombre de clúster (CNO) de Active Directory. Obtener más información sobre estas mejoras en la siguiente entrada en los Blogs de administración y servidor: Testigo de recurso compartido de archivos de clúster de conmutación por error y DFS.
+  - Falta o muy deficiente acceso a Internet debido a una ubicación remota, impidiendo así el uso de un testigo en la nube. 
+  - Falta de unidades compartidas para un testigo de disco. Podría tratarse de una configuración de espacios de almacenamiento directo hiperconvergido un SQL Server siempre en disponibilidad grupos (AG), o un * Exchange base de datos de grupo de disponibilidad (DAG), ninguno de los cuales usa discos compartidos. 
+  - Ausencia de una conexión de controlador de dominio porque el clúster está detrás de una red Perimetral. 
+  - Un grupo de trabajo o entre dominios clúster para el que existe no es ningún objeto de nombre de clúster (CNO) de Active Directory. Obtener más información sobre estas mejoras en la siguiente entrada en los Blogs de administración y servidor: Testigo de recurso compartido de archivos de clúster de conmutación por error y DFS.
     
     Ahora nos explícitamente también bloquea el uso de un recurso compartido de espacios de nombres DFS como una ubicación. Agregar un testigo del recurso compartido de archivos a un DFS recurso compartido puede causar problemas de estabilidad del clúster y nunca se admite esta configuración. Hemos agregado lógica para detectar si un recurso compartido usa espacios de nombres DFS, y si se detecta los espacios de nombres DFS, Administrador de clústeres de conmutación por error bloquea la creación del testigo y muestra un mensaje de error sobre no se admite.
 - **Protección de clúster**

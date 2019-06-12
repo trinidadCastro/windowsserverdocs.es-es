@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8a2ddc0f2ab495b2500d4bfe48f3ee83c333c769
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d302dcd06b7a3a40afbb6f613c39caaabbeba91
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842756"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443720"
 ---
 # <a name="configure-the-fabric-dns-for-guarded-hosts"></a>Configurar al tejido de DNS para hosts protegidos
 
@@ -32,5 +32,5 @@ Un administrador del tejido debe configurar al tejido de que DNS tarda en permit
 
 ## <a name="next-step"></a>Paso siguiente
 
->[!div class="nextstepaction"]
-[Configurar HGS DNS y una confianza unidireccional](guarded-fabric-configure-dns-forwarding-and-trust.md)
+> [!div class="nextstepaction"]
+> [Configurar DNS de HGS y una confianza unidireccional](guarded-fabric-configure-dns-forwarding-and-trust.md)

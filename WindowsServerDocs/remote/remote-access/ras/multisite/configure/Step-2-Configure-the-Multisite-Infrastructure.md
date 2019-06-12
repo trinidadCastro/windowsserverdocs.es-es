@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: faec70ac-88c0-4b0a-85c7-f0fe21e28257
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: beecef692b2ac01e6cb6c36892fec16e55b08209
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f3b2eb55c11348c3abcb1ef9e234cd19ba727758
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835176"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446592"
 ---
 # <a name="step-2-configure-the-multisite-infrastructure"></a>Paso 2 configurar la infraestructura de multisitio
 
@@ -61,7 +61,7 @@ Para obtener más información, consulte [adición de un sitio al bosque](https:
   
 8.  Cierre los servicios y sitios de Active Directory.  
   
-![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -129,13 +129,13 @@ Para obtener más información, consulte [instalar un controlador de dominio adi
             > [!NOTE]  
             > Si selecciona la opción para instalar el servidor DNS, es posible que reciba un mensaje que indica que no se pudo crear una delegación DNS para el servidor DNS y que debe crear manualmente una delegación DNS al servidor DNS para garantizar una resolución de nombres confiable. Si va a instalar un controlador de dominio adicional en el dominio raíz del bosque o un dominio raíz del árbol, no es necesario que crear la delegación DNS. En este caso, haga clic en **Sí** y pasar por alto el mensaje.  
   
-        -   **Catálogo global (GC)**"de forma predeterminada, se selecciona esta opción. Agregue el catálogo global y las particiones del directorio de solo lectura al controlador de dominio, y activa la funcionalidad de búsqueda del catálogo global.  
+        -   **Catálogo global (GC)** "de forma predeterminada, se selecciona esta opción. Agregue el catálogo global y las particiones del directorio de solo lectura al controlador de dominio, y activa la funcionalidad de búsqueda del catálogo global.  
   
-        -   **Controlador de dominio de solo lectura (RODC)**"no se selecciona esta opción de forma predeterminada. Hace que el controlador de dominio adicional sea de sólo lectura; es decir, hace que el controlador de dominio un RODC.  
+        -   **Controlador de dominio de solo lectura (RODC)** "no se selecciona esta opción de forma predeterminada. Hace que el controlador de dominio adicional sea de sólo lectura; es decir, hace que el controlador de dominio un RODC.  
   
     2.  En **nombre del sitio**, seleccione un sitio de la lista.  
   
-    3.  En **escriba la contraseña del modo de restauración de servicios de directorio (DSRM)**, en **contraseña** y **Confirmar contraseña**, escriba una contraseña segura dos veces y, a continuación, haga clic en  **Siguiente**. Esta contraseña debe usarse para iniciar los AD DS en el modo DSRM para las tareas que deben realizarse sin conexión.  
+    3.  En **escriba la contraseña del modo de restauración de servicios de directorio (DSRM)** , en **contraseña** y **Confirmar contraseña**, escriba una contraseña segura dos veces y, a continuación, haga clic en  **Siguiente**. Esta contraseña debe usarse para iniciar los AD DS en el modo DSRM para las tareas que deben realizarse sin conexión.  
   
 10. En el **opciones de DNS** página, seleccione el **delegación DNS actualizar** casilla de verificación si desea actualizar delegación DNS durante la instalación del rol y, a continuación, haga clic en **siguiente**.  
   
@@ -170,7 +170,7 @@ Una implementación multisitio requiere un grupo de seguridad adicional para los
   
 8.  Repita este procedimiento para crear un grupo de seguridad para cada punto de entrada según sea necesario.  
   
-![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -301,7 +301,7 @@ Información de asociación del controlador de dominio se almacena en el registr
     ![Windows PowerShell](../../../../media/Step-2-Configure-the-Multisite-Infrastructure/DCAssocFinal.png)  
   
 ### <a name="ConfigDistOptimization"></a>Optimización de distribución de configuración  
-Al realizar cambios de configuración, los cambios se aplican solo después de que los GPO de servidor se propagan a los servidores de acceso remoto. Para reducir el tiempo de distribución de configuración, acceso remoto selecciona automáticamente un controlador de dominio de escritura en el hipervínculo "https://technet.microsoft.com/library/cc978016.aspx" más cercano al servidor de acceso remoto al crear el GPO de servidor.  
+Al realizar cambios de configuración, los cambios se aplican solo después de que los GPO de servidor se propagan a los servidores de acceso remoto. Para reducir el tiempo de distribución de configuración, acceso remoto selecciona automáticamente un controlador de dominio de escritura en el hipervínculo "<https://technet.microsoft.com/library/cc978016.aspx>" más cercano al servidor de acceso remoto al crear el GPO de servidor.  
   
 En algunos escenarios, es posible que deba modificar manualmente el controlador de dominio que administra un GPO de servidor con el fin de optimizar el tiempo de distribución de configuración:  
   

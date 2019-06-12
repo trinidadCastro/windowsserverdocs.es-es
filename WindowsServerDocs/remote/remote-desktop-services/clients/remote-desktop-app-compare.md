@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0c10cf6c9355b5f7457a5f17babdfb44aaa679b2
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 0e001b590f524711185e3dd70db3bc52a9b8d9af
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976786"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447124"
 ---
 # <a name="compare-the-client-apps"></a>Comparar las aplicaciones cliente
 
@@ -35,12 +35,13 @@ Si, de forma remota a su escritorio personal, hay redirecciones adicionales que 
 
 ### <a name="input-redirection"></a>Redirección de entrada
 
-| Redirección | Escritorio remoto<br> Conexión | Universal | Android | iOS | macOS | cliente Web |
-|-------------|-------------------------------|-----------|---------|-----|-------|------------|
-| Teclado    | X                             | X         | X       | X   | X     | X          |
-| Mouse       | X                             | X         | X       | X*    | X     | X          |
-| Función táctil       | X                             | X         | X       | X   |       | X (Internet Explorer no admite Edge ni) |
-| Otras       | Lápiz                           |           |         |     |       |            |
+| Redirección | Escritorio remoto<br> Conexión | Universal | Android | iOS | macOS |          cliente Web           |
+|-------------|-------------------------------|-----------|---------|-----|-------|-------------------------------|
+|  Teclado   |               X               |     X     |    X    |  X  |   X   |               X               |
+|    Mouse    |               X               |     X     |    X    | X\* |   X   |               X               |
+|    Función táctil    |               X               |     X     |    X    |  X  |       | X (Internet Explorer no admite Edge ni) |
+|    Otras    |              Lápiz              |           |         |     |       |                               |
+
 * Para ver el [lista de dispositivos de entrada admitidos por el cliente de escritorio remoto de iOS Beta](remote-desktop-ios.md#supported-input-devices).
 
 ### <a name="port-redirection"></a>Redirección de puertos   

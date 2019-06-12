@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b3aa535128786d0de5c1a5ef7186e26aa62b478d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b816dbe759d94980b2cc27284fd2e0ec7787d0b0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859306"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446005"
 ---
 # <a name="create-a-file-expiration-task"></a>Crear una tarea de expiración de archivos
 
@@ -27,57 +27,57 @@ El nombre de directorio nuevo se basa en el nombre de la tarea de administració
 
 ## <a name="to-create-a-file-expiration-task"></a>Para crear una tarea de expiración de archivos
 
-1.  Haga clic en el nodo **Tareas de administración de archivos**.
+1. Haga clic en el nodo **Tareas de administración de archivos**.
 
-2.  Haz clic con el botón derecho en **Tareas de administración de archivos**y luego haz clic en **Crear tarea de administración de archivos** (o haz clic en **Crear tarea de administración de archivos** en el panel **Acciones**). Se abrirá el cuadro de diálogo **Crear tarea de administración de archivos**.
+2. Haz clic con el botón derecho en **Tareas de administración de archivos**y luego haz clic en **Crear tarea de administración de archivos** (o haz clic en **Crear tarea de administración de archivos** en el panel **Acciones**). Se abrirá el cuadro de diálogo **Crear tarea de administración de archivos**.
 
-3.  En la ficha **General**, escriba la siguiente información:
+3. En la ficha **General**, escriba la siguiente información:
 
-    -   **Nombre**. Escriba un nombre para la nueva tarea.  
+   -   **Nombre**. Escriba un nombre para la nueva tarea.  
 
-    -   **Descripción**. Escriba una etiqueta descriptiva opcional para esta tarea.  
+   -   **Descripción**. Escriba una etiqueta descriptiva opcional para esta tarea.  
     
-    -   **Ámbito**. Agrega los directorios en los que esta tarea debe operar con el botón **Agregar**. De forma opcional, los directorios se pueden quitar de la lista con el botón **Quitar**. La tarea de administración de archivos se aplicará a todas las carpetas y a sus subcarpetas de esta lista.
+   -   **Ámbito**. Agrega los directorios en los que esta tarea debe operar con el botón **Agregar**. De forma opcional, los directorios se pueden quitar de la lista con el botón **Quitar**. La tarea de administración de archivos se aplicará a todas las carpetas y a sus subcarpetas de esta lista.
 
-4.  En la ficha **Acción**, especifique la siguiente información:
+4. En la ficha **Acción**, especifique la siguiente información:
 
-    -   **Tipo**. Selecciona **Expiración de archivo** del menú desplegable.
+   - **Tipo**. Selecciona **Expiración de archivo** del menú desplegable.
 
-    -   **Directorio de expiración**. Selecciona un directorio donde expirarán los archivos.
+   - **Directorio de expiración**. Selecciona un directorio donde expirarán los archivos.
 
      > [!Warning]
      > No seleccione un directorio que se encuentre dentro del ámbito de la tarea tal como se define en el paso anterior. Si lo hace, podría generar un bucle iterativo que podría provocar la inestabilidad del sistema y la pérdida de datos.
 
-5.  De forma opcional, en la pestaña **Notificación**, haz clic en **Agregar** para enviar notificaciones por correo electrónico, registrar un evento o ejecutar un comando o script una cantidad mínima de días especificada antes de que la tarea ejecute una acción en un archivo.
+5. De forma opcional, en la pestaña **Notificación**, haz clic en **Agregar** para enviar notificaciones por correo electrónico, registrar un evento o ejecutar un comando o script una cantidad mínima de días especificada antes de que la tarea ejecute una acción en un archivo.
 
-    -   En el cuadro combinado **Número de días antes de ejecutar la tarea para enviar una notificación**, escribe o selecciona un valor para especificar el número mínimo de días antes de actuar en un archivo para enviar una notificación.
+   - En el cuadro combinado **Número de días antes de ejecutar la tarea para enviar una notificación**, escribe o selecciona un valor para especificar el número mínimo de días antes de actuar en un archivo para enviar una notificación.
 
      > [!Note]
      > Las notificaciones solo se envían cuando se ejecuta una tarea. Si el número de días especificado para enviar una notificación no coincide con una tarea programada, la notificación se enviará el día de la tarea programada anterior.
 
-    -   Para configurar notificaciones por correo electrónico, haz clic en la pestaña **Mensaje de correo electrónico** y escribe la siguiente información:
+   - Para configurar notificaciones por correo electrónico, haz clic en la pestaña **Mensaje de correo electrónico** y escribe la siguiente información:
 
-        -   Para notificar a los administradores que se ha alcanzado un umbral, selecciona la casilla de verificación **Enviar mensaje de correo electrónico a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán las notificaciones. Usa el formato *account@domain* y usa punto y coma para separar varias cuentas.  
+     - Para notificar a los administradores que se ha alcanzado un umbral, selecciona la casilla de verificación **Enviar mensaje de correo electrónico a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán las notificaciones. Usa el formato <em>account@domain</em> y usa punto y coma para separar varias cuentas.  
 
-        -   Para enviar un correo electrónico a la persona cuyos archivos están a punto de expirar, selecciona la casilla de verificación **Enviar mensaje de correo electrónico al usuario cuyos archivos están a punto de expirar**.
+     - Para enviar un correo electrónico a la persona cuyos archivos están a punto de expirar, selecciona la casilla de verificación **Enviar mensaje de correo electrónico al usuario cuyos archivos están a punto de expirar**.
 
-        -   Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, el **\[Source File Owner\]** variable inserta el nombre del usuario cuyo archivo está a punto de expirar. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
+     - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, el **\[Source File Owner\]** variable inserta el nombre del usuario cuyo archivo está a punto de expirar. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
 
-        -   Para adjuntar una lista de los archivos que están a punto de expirar, haz clic en **Adjuntar a la lista de correo electrónico de los archivos en los que se va a realizar la acción**y escribe o selecciona un valor para **Número máximo de archivos en la lista**.
+     - Para adjuntar una lista de los archivos que están a punto de expirar, haz clic en **Adjuntar a la lista de correo electrónico de los archivos en los que se va a realizar la acción**y escribe o selecciona un valor para **Número máximo de archivos en la lista**.
 
-        -   Para configurar los encabezados adicionales (incluidos De, Cc, Bcc y Responder-a), haz clic en **Encabezados de correo electrónico adicionales**.  
+     - Para configurar los encabezados adicionales (incluidos De, Cc, Bcc y Responder-a), haz clic en **Encabezados de correo electrónico adicionales**.  
 
-    -   Para registrar un evento, haz clic en la pestaña **Registro de eventos** y selecciona la casilla de verificación **Enviar advertencia al registro de eventos** y luego edita la entrada de registro predeterminada.  
+   - Para registrar un evento, haz clic en la pestaña **Registro de eventos** y selecciona la casilla de verificación **Enviar advertencia al registro de eventos** y luego edita la entrada de registro predeterminada.  
 
-    -   Para ejecutar un comando o script, haz clic en la pestaña **Comando** y selecciona la casilla de verificación **Ejecutar este comando o script**. Luego escribe el comando o haz clic en **Examinar** para buscar la ubicación en la que está almacenado el script. También puedes especificar argumentos de comando; para ello, selecciona un directorio de trabajo para el comando o script o modifica la configuración de seguridad de comandos.
+   - Para ejecutar un comando o script, haz clic en la pestaña **Comando** y selecciona la casilla de verificación **Ejecutar este comando o script**. Luego escribe el comando o haz clic en **Examinar** para buscar la ubicación en la que está almacenado el script. También puedes especificar argumentos de comando; para ello, selecciona un directorio de trabajo para el comando o script o modifica la configuración de seguridad de comandos.
 
-6.  Otra alternativa es usar la ficha **Informe** para generar uno o varios registros o informes de almacenamiento.
+6. Otra alternativa es usar la ficha **Informe** para generar uno o varios registros o informes de almacenamiento.
 
-    -   Para generar registros, selecciona la casilla de verificación **Generar registro** y luego selecciona uno o varios registros disponibles.  
+   - Para generar registros, selecciona la casilla de verificación **Generar registro** y luego selecciona uno o varios registros disponibles.  
 
-    -   Para generar informes, selecciona la casilla de verificación **Generar un informe** y luego selecciona uno o varios formatos de informe disponibles.  
+   - Para generar informes, selecciona la casilla de verificación **Generar un informe** y luego selecciona uno o varios formatos de informe disponibles.  
 
-    -   Para crear informes de almacenamiento o registros generados por correo electrónico, selecciona la casilla de verificación **Enviar informes a los siguientes administradores** y escribe uno o varios destinatarios de correos electrónicos administrativos con el formato *account@domain*. Usa punto y coma para separar varias direcciones.
+   - Para crear informes de almacenamiento o registros generados por correo electrónico, selecciona la casilla de verificación **Enviar informes a los siguientes administradores** y escribe uno o varios destinatarios de correos electrónicos administrativos con el formato <em>account@domain</em>. Usa punto y coma para separar varias direcciones.
 
      > [!Note]
      > El informe se guarda en la ubicación predeterminada para los informes de incidentes, que se puede modificar en el cuadro de diálogo **Opciones del Administrador de recursos del servidor de archivos**.
@@ -94,7 +94,7 @@ El nombre de directorio nuevo se basa en el nombre de la tarea de administració
 
     -   **Vigente a partir de**. Establece una fecha para que esta tarea de administración de archivos comience con el procesamiento de archivos. Esta opción es útil para retrasar la tarea hasta que hayas tenido la oportunidad de notificar a los usuarios o realizar otros preparativos con antelación.
 
-8.  En la pestaña **Programación**, haz clic en **Crear una programación** y luego en **Programación**, haz clic en **Nueva**. Se muestra una programación predeterminada para las 9:00 a.m. todos los días, pero puedes modificar la programación predeterminada. Cuando haya terminado de configurar la programación, haz clic en **Aceptar** y luego vuelve a hacer clic en **Aceptar**.
+8. En la pestaña **Programación**, haz clic en **Crear una programación** y luego en **Programación**, haz clic en **Nueva**. Se muestra una programación predeterminada para las 9:00 a.m. todos los días, pero puedes modificar la programación predeterminada. Cuando haya terminado de configurar la programación, haz clic en **Aceptar** y luego vuelve a hacer clic en **Aceptar**.
 
 ## <a name="see-also"></a>Vea también
 

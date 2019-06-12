@@ -8,12 +8,12 @@ author: wmgries
 manager: klaasl
 ms.author: wgries
 ms.date: 09/15/2016
-ms.openlocfilehash: 0421faaa910a1d679d809b88c0b4d2c94ba694b3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2e2e4975c4ab9ebb7ec68834f380255292426393
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852476"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447225"
 ---
 # <a name="running-data-deduplication"></a>Ejecución de Desduplicación de datos
 
@@ -49,10 +49,10 @@ Como la desduplicación de datos emplea un modelo de posprocesamiento, es import
 
 Un indicador de error del [trabajo de Optimización](understand.md#job-info-optimization) es una tasa de optimización con tendencia a la baja que puede indicar que los trabajos de Optimización no se mantienen actualizados con la tasa de cambios, o renovación. Puede comprobar la tasa de optimización mediante el cmdlet [`Get-DedupStatus`](https://technet.microsoft.com/library/hh848437.aspx) de PowerShell.
 
-> [!Important]  
+> [!Important]
 > `Get-DedupStatus` tiene dos campos que están relacionados con la tasa de optimización: `OptimizedFilesSavingsRate` y `SavingsRate`. Ambos son valores importantes que hay que supervisar, pero cada uno tiene un significado único.
-- `OptimizedFilesSavingsRate` solo se aplica a los archivos que están en la misma directiva para la optimización (`space used by optimized files after optimization / logical size of optimized files`).
-- `SavingsRate` se aplica a todo el volumen (`space used by optimized files after optimization / total logical size of the optimization`).
+> - `OptimizedFilesSavingsRate` solo se aplica a los archivos que están en la misma directiva para la optimización (`space used by optimized files after optimization / logical size of optimized files`).
+> - `SavingsRate` se aplica a todo el volumen (`space used by optimized files after optimization / total logical size of the optimization`).
 
 ## <a id="disabling-dedup"></a>Deshabilitación de desduplicación de datos
 Para desactivar la Desduplicación de datos, ejecute el [trabajo de Desoptimización](understand.md#job-info-unoptimization). Para deshacer la optimización del volumen, ejecute el siguiente comando:

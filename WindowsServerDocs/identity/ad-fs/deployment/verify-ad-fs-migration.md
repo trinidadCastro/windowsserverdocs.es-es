@@ -8,12 +8,12 @@ ms.date: 07/10/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 0a3e8e444f715fe2ae0f0ccd858d90e8664be00c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 38e44ab2f803d8ec8940dbba7574a9f37389112a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877776"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444462"
 ---
 # <a name="verify-the-ad-fs-20-migration-to-windows-server-2012-r2"></a>Compruebe el AD FS 2.0 migración a Windows Server 2012 R2
 
@@ -27,7 +27,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **U
   
 Si en la ventana del explorador puede ver los metadatos del servidor de federación sin errores ni advertencias de SSL, el servidor de federación es operativo.  
   
-2.  También puede ir a la página de inicio de sesión de AD FS (nombre de su servicio de federación con `adfs/ls/idpinitiatedsignon.htm` anexado, por ejemplo, `https://fs.contoso.com/adfs/ls/idpinitiatedsignon.htm`).  Esto muestra la página de inicio de sesión de AD FS donde puede iniciar sesión con credenciales de administrador del dominio.  
+2. También puede ir a la página de inicio de sesión de AD FS (nombre de su servicio de federación con `adfs/ls/idpinitiatedsignon.htm` anexado, por ejemplo, `https://fs.contoso.com/adfs/ls/idpinitiatedsignon.htm`).  Esto muestra la página de inicio de sesión de AD FS donde puede iniciar sesión con credenciales de administrador del dominio.  
   
 > [!IMPORTANT]
 >  Asegúrese de configurar las opciones del explorador para que confíe en el rol del servidor de federación. Para ello, agregue el nombre del servicio de federación (por ejemplo, `https://fs.contoso.com`) a la zona de intranet local del explorador.  

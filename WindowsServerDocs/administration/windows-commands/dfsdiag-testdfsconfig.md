@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: affb3c879275228fa0ec17f77ad77db6fc44d6ab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 922b78b87f3bb66765b87348a3bf136e14c9e837
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814776"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436130"
 ---
 # <a name="dfsdiag-testdfsconfig"></a>dfsdiag TestDFSConfig
 
@@ -48,9 +48,9 @@ dfsdiag /TestDFSConfig /DFSRoot:<namespace>
   
 ### <a name="parameters"></a>Parámetros  
   
-|Parámetro|Descripción|  
-|-------|--------|  
-|\/DFSRoot:<namespace>|El espacio de nombres \(raíz DFS\) para diagnosticar.|  
+|       Parámetro       |               Descripción               |
+|-----------------------|-----------------------------------------|
+| \/DFSRoot:<namespace> | El espacio de nombres \(raíz DFS\) para diagnosticar. |
   
 ## <a name="BKMK_Examples"></a>Ejemplos  
 Para TBD, escriba:  

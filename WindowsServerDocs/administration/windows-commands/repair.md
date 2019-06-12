@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 940b0931671d5f3c2137fafe4ae73b7cecd0160e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e4b9cde10e11558aaa95edda94921144dac1f86
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821196"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441804"
 ---
 # <a name="repair"></a>Reparación
 
@@ -36,11 +36,11 @@ repair disk=<n> [align=<n>] [noerr]
   
 ## <a name="parameters"></a>Parámetros  
   
-|Parámetro|Descripción|  
-|-------|--------|  
-|disk\=<n>|Especifica el disco dinámico que reemplazará a la región del disco con errores.|  
-|Alinear\=<n>|Alinea todas las extensiones de volumen o partición para el límite de alineación más cercano. *n* es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano.|  
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|  
+| Parámetro  |                                                                                             Descripción                                                                                              |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| disk\=<n>  |                                                                 Especifica el disco dinámico que reemplazará a la región del disco con errores.                                                                 |
+| Alinear\=<n> |          Alinea todas las extensiones de volumen o partición para el límite de alineación más cercano. *n* es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano.           |
+|   noerr    | sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error. |
   
 ## <a name="remarks"></a>Comentarios  
   

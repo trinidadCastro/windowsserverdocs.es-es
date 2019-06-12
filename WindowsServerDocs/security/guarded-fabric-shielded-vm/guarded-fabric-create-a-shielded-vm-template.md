@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/29/2019
-ms.openlocfilehash: e00322186ea34784048366bf17881af742cb4444
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d9f07d2e6e93d4f8d198c2fc3b62c28c940bdefb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853696"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447515"
 ---
 # <a name="create-a-windows-shielded-vm-template-disk"></a>Crear un disco de plantilla de máquina virtual blindado de Windows
 
@@ -27,7 +27,7 @@ Para entender cómo encaja este tema en el proceso general de la implementación
 
 En primer lugar, prepare un disco del sistema operativo que, a continuación, ejecutará a través del Asistente de creación de disco de plantilla blindada. Se usará este disco como disco del SO en máquinas virtuales del inquilino. Puede usar las herramientas existentes para crear este disco, como Microsoft Desktop Image Service Manager (DISM), o configurar una máquina virtual con un VHDX en blanco e instale manualmente el sistema operativo en ese disco. Al configurar el disco, debe cumplir los requisitos siguientes que son específicas de generación 2 o máquinas virtuales blindadas: 
 
-| Requisito de VHDX | Razón |
+| Requisito de VHDX | Reason |
 |-----------|----|
 |Debe ser un disco de tabla de particiones GUID (GPT) | Es necesario para que las máquinas virtuales de generación 2 admitan UEFI|
 |Tipo de disco debe ser **básica** en contraposición a **dinámica**. <br>Nota: Esto hace referencia al tipo de disco lógico, no la característica VHDX "expansión dinámica" compatible con Hyper-V. | BitLocker no admite discos dinámicos.|
@@ -163,10 +163,10 @@ Save-VolumeSignatureCatalog -TemplateDiskPath 'C:\temp\MyLinuxTemplate.vhdx' -Vo
 
 ## <a name="next-step"></a>Paso siguiente
 
->[!div class="nextstepaction"]
-[Crear un archivo de datos de blindaje](guarded-fabric-tenant-creates-shielding-data.md)
+> [!div class="nextstepaction"]
+> [Crear un archivo de datos de blindaje](guarded-fabric-tenant-creates-shielding-data.md)
 
 ## <a name="see-also"></a>Vea también
 
 - [Hospedaje de los pasos de configuración del proveedor de servicio para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [Las máquinas virtuales blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
+- [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

@@ -10,12 +10,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 05/24/2018
-ms.openlocfilehash: 4e4da87e5a2a4cd80e748a05596da3f23b5ac85f
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: a568324ba69b13c7016f4715d3c37f991ae4c1ad
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222906"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439723"
 ---
 # <a name="plan-your-wsus-deployment"></a>Planear la implementación de WSUS
 
@@ -94,19 +94,19 @@ Durante el proceso de instalación, WSUS instalará lo siguiente de manera prede
 
 Tenga en cuenta que la configuración de los equipos cliente (incluidos los servidores) para actualizar mediante WSUS provocará las siguientes limitaciones:
 
-1.  Los roles de servidor a los que se ha quitado sus cargas mediante características a petición no se pueden instalar a petición desde Microsoft Update. Debe proporcionar un origen de instalación en el momento de que intentar instalar estos roles de servidor, o configurar un origen para las características a petición en la directiva de grupo.
+1. Los roles de servidor a los que se ha quitado sus cargas mediante características a petición no se pueden instalar a petición desde Microsoft Update. Debe proporcionar un origen de instalación en el momento de que intentar instalar estos roles de servidor, o configurar un origen para las características a petición en la directiva de grupo.
 
-2.  Las ediciones cliente de Windows no podrán instalar .NET 3.5 a petición desde la web. Las mismas consideraciones de los roles de servidor se aplican a .NET 3.5.
+2. Las ediciones cliente de Windows no podrán instalar .NET 3.5 a petición desde la web. Las mismas consideraciones de los roles de servidor se aplican a .NET 3.5.
 
-    > [!NOTE]
-    > Configurar las características de un origen de instalación a petición no influye WSUS. Para obtener información sobre cómo configurar las características, consulte [Configuración de características a petición en Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
+   > [!NOTE]
+   > Configurar las características de un origen de instalación a petición no influye WSUS. Para obtener información sobre cómo configurar las características, consulte [Configuración de características a petición en Windows Server](https://technet.microsoft.com/library/jj127275.aspx).
 
 3. Dispositivos de la empresa que ejecutan Windows 10, versión 1709 o versión 1803, no pueden instalar las características a petición directamente desde WSUS. Para instalar las características a petición, [cree un archivo de característica (almacén side-by-side)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj127275%28v=ws.11%29#create-a-feature-file-or-side-by-side-store) u obtener la característica en el paquete a petición desde uno de los siguientes orígenes:
-    - [Volume Licensing Service Center](https://www.microsoft.com/licensing/servicecenter) (VLSC) - se requiere acceso de licencias por volumen
-    - Portal de OEM: se requiere acceso de OEM
-    - Descarga MSDN, se requiere suscripción a MSDN
+   - [Volume Licensing Service Center](https://www.microsoft.com/licensing/servicecenter) (VLSC) - se requiere acceso de licencias por volumen
+   - Portal de OEM: se requiere acceso de OEM
+   - Descarga MSDN, se requiere suscripción a MSDN
 
-    Característica individualmente obtenidos en los paquetes a petición se puede instalar mediante [opciones de línea de comandos de DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
+     Característica individualmente obtenidos en los paquetes a petición se puede instalar mediante [opciones de línea de comandos de DISM](https://docs.microsoft.com/windows-hardware/manufacture/desktop/dism-operating-system-package-servicing-command-line-options).
 
 ### <a name="wsus-database-requirements"></a>Requisitos de base de datos de WSUS
 WSUS requiere una de las siguientes bases de datos:
@@ -319,7 +319,7 @@ La elección de idiomas de un servidor que precede en la cadena no es lo mismo q
 > [!NOTE]
 > Debe hacer esto aunque quiera que el servidor que sigue en la cadena descargue los mismos idiomas que el servidor que precede en la cadena.
 
-2.  Si el servidor que precede en la cadena se configuró para descargar archivos de actualización de todos los idiomas: En el Asistente para configuración de WSUS, haga clic en **Descargar actualizaciones en todos los idiomas que admite el servidor que precede en**.
+2. Si el servidor que precede en la cadena se configuró para descargar archivos de actualización de todos los idiomas: En el Asistente para configuración de WSUS, haga clic en **Descargar actualizaciones en todos los idiomas que admite el servidor que precede en**.
 
 > [!NOTE]
 > Debe hacer esto aunque quiera que el servidor que sigue en la cadena descargue los mismos idiomas que el servidor que precede en la cadena. Esta configuración hace que el servidor que precede en la cadena descargue actualizaciones en todos los idiomas, incluidos los idiomas que no se configuraron originalmente para el servidor que precede en la cadena. Si agrega idiomas al servidor que precede en la cadena, debe copiar las nuevas actualizaciones en sus servidores de réplica.

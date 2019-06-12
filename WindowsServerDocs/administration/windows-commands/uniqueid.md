@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4cad6607e13d2657433e4e78ce8e65beff73aa9d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d237f4d6d3562e3787efe28ca98f9dc553d74898
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857516"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440755"
 ---
 # <a name="uniqueid"></a>Identificador único
 
@@ -37,10 +37,10 @@ uniqueid disk [id={<dword> | <GUID>}] [noerr]
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|id={\<dword> | <GUID>}|En discos MBR, especifica un valor de cuatro bytes (DWORD) en formato hexadecimal para la firma.</br>Los discos GPT, especifica un GUID para el identificador.|
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|
+|  Parámetro   |                                                                                             Descripción                                                                                              |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id={\<dword> |                                                                                               <GUID>}                                                                                                |
+|    noerr     | sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error. |
 
 ## <a name="remarks"></a>Comentarios
 

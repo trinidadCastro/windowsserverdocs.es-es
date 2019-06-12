@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5e02a6f473a7c2dc6d6b66eb5b23fded930bc817
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7953f450c17afdee849515f8d8945631a30f4b98
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856356"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436839"
 ---
 # <a name="nslookup-set-class"></a>nslookup set class
 
@@ -34,10 +34,10 @@ set class=<Class>
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<Clase >|La clase predeterminada es in. A continuación enumeran los valores válidos para este comando.</br>-IN: Especifica la clase de Internet.</br>- CHAOS: Especifica la clase de Chaos.</br>-HESIOD: Especifica la clase MIT Athena Hesiod.</br>-CUALQUIER: Especifica cualquiera de los comodines enumerados anteriormente.|
-|{Ayuda | ?}|Muestra un resumen breve de **nslookup** subcomandos.|
+| Parámetro |                                                                                                                                    Descripción                                                                                                                                    |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| \<Clase >  | La clase predeterminada es in. A continuación enumeran los valores válidos para este comando.</br>-IN: Especifica la clase de Internet.</br>- CHAOS: Especifica la clase de Chaos.</br>-HESIOD: Especifica la clase MIT Athena Hesiod.</br>-CUALQUIER: Especifica cualquiera de los comodines enumerados anteriormente. |
+|   {Ayuda   |                                                                                                                                        ?}                                                                                                                                         |
 
 #### <a name="additional-references"></a>Referencias adicionales
 

@@ -9,12 +9,12 @@ ms.date: 08/07/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4577e65fe5dd2193fe7256cc555e859a78824b4b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 35d6322f053c7a02dc1df5430b28f771f57a1ad7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867946"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442570"
 ---
 # <a name="mapping-design-requirements-to-forest-design-models"></a>Requisitos de diseño de la asignación a los modelos de diseño de bosque
 
@@ -89,13 +89,13 @@ Consideraciones para la creación de bosques para el aislamiento de datos incluy
 
 - Bosques organizativas creados para el aislamiento de datos pueden confiar en dominios de otros bosques, pero los usuarios de otros bosques no deben incluirse en cualquiera de las siguientes acciones:  
 
-   - Grupos responsables de la administración de servicios o grupos que pueden administrar la pertenencia a grupos del Administrador de servicio  
+  - Grupos responsables de la administración de servicios o grupos que pueden administrar la pertenencia a grupos del Administrador de servicio  
 
-   - Grupos que tienen control administrativo sobre los equipos que almacenan los datos protegidos  
+  - Grupos que tienen control administrativo sobre los equipos que almacenan los datos protegidos  
 
-   - Los grupos que tienen acceso a datos protegidos o grupos que son responsables de la administración de objetos de usuario o grupo que tienen acceso a datos protegidos  
+  - Los grupos que tienen acceso a datos protegidos o grupos que son responsables de la administración de objetos de usuario o grupo que tienen acceso a datos protegidos  
 
-   Si los usuarios de otro bosque se incluyen en ninguno de estos grupos, podría provocar un riesgo en el otro bosque a un riesgo en el bosque aislado y la divulgación de datos protegidos.  
+    Si los usuarios de otro bosque se incluyen en ninguno de estos grupos, podría provocar un riesgo en el otro bosque a un riesgo en el bosque aislado y la divulgación de datos protegidos.  
 
 - Otros bosques pueden configurarse para que confíe en el bosque organizativo creado para el aislamiento de datos para que los usuarios del bosque aislado pueden tener acceso a recursos en otros bosques. Sin embargo, los usuarios del bosque aislado interactivamente nunca deben iniciar sesión en estaciones de trabajo en el bosque que confía. El equipo en el bosque que confía podrían estar en peligro el software malintencionado y puede usarse para capturar las credenciales de inicio de sesión del usuario.  
 

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 187db7e201e98ae97268b96c2e4faa202a9a5372
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40471354af5434e77a300303572ccce639ba2489
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874836"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443783"
 ---
 # <a name="install-a-new-windows-server-2012-active-directory-forest-level-200"></a>Instalar un nuevo bosque de Active Directory de Windows Server 2012 (nivel 200)
 
@@ -88,15 +88,15 @@ Estas nuevas características no son compatibles con las versiones anteriores de
   
 ![Instalar un bosque nuevo](media/Install-a-New-Windows-Server-2012-Active-Directory-Forest--Level-200-/ADDS_PSInstallADDSForest.png)  
   
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Dcpromo.exe ya no contiene un asistente gráfico y ya no instala los archivos binarios de los roles ni las características. Si tratas de ejecutar Dcpromo.exe desde el shell del Explorador, devolverá:  
->   
-> "El Asistente para la instalación de los servicios de dominio de Active Directory se reubica en Administrador del servidor. Para obtener más información, consulte https://go.microsoft.com/fwlink/?LinkId=220921. "  
->   
+> 
+> "El Asistente para la instalación de los servicios de dominio de Active Directory se reubica en Administrador del servidor. Para obtener más información, consulte <https://go.microsoft.com/fwlink/?LinkId=220921>. "  
+> 
 > Si tratas de ejecutar Dcpromo.exe /unattend, se instalarán los archivos binarios, como en los sistemas operativos anteriores, pero aparecerá la siguiente advertencia:  
->   
-> "El dcpromo operación desatendida se reemplaza por el módulo ADDSDeployment para Windows PowerShell. Para obtener más información, consulte https://go.microsoft.com/fwlink/?LinkId=220924. "  
->   
+> 
+> "El dcpromo operación desatendida se reemplaza por el módulo ADDSDeployment para Windows PowerShell. Para obtener más información, consulte <https://go.microsoft.com/fwlink/?LinkId=220924>. "  
+> 
 > En Windows Server 2012 se deja de usar dcpromo.exe, que no se incluirá en las futuras versiones de Windows ni recibirá más mejoras en este sistema operativo. Los administradores deben dejar de utilizarlo y, si quieren crear controladores de dominio desde la línea de comandos, deberán usar en su lugar los módulos de Windows PowerShell admitidos.  
   
 #### <a name="prerequisite-checking"></a>Comprobación de requisitos previos  

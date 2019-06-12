@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f9c313ac-bb86-4e48-b9b9-de5004393e06
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1bb3e6695a7ec8fc7d950873403df023b4def3d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dca60fc0e216b1b873bd4f94dd1b01174d80fc14
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881616"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446444"
 ---
 # <a name="use-dns-policy-for-application-load-balancing"></a>Uso de la directiva de DNS para el equilibrio de carga de aplicación
 
@@ -79,7 +79,7 @@ Puede usar los siguientes comandos de Windows PowerShell para crear ámbitos de 
 
 Para obtener más información, consulte [agregar DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps)
 
-####<a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
+#### <a name="bkmk_records"></a>Agregar registros a los ámbitos de zona
 
 Ahora debe agregar los registros que representa el host del servidor web en los ámbitos de la zona.
 
@@ -100,7 +100,7 @@ Puede usar los siguientes comandos de Windows PowerShell para agregar registros 
 
 Para obtener más información, consulte [Add-DnsServerResourceRecord](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverresourcerecord?view=win10-ps).
 
-####<a name="bkmk_policies"></a>Cree las directivas DNS
+#### <a name="bkmk_policies"></a>Cree las directivas DNS
 
 Una vez que ha creado las particiones (ámbitos de zona) y se han agregado registros, debe crear las directivas DNS que distribución las consultas entrantes entre estos ámbitos para que el 50% de las consultas para contosogiftservices.com se responde con la dirección IP para la Web servidor en el centro de datos de Seattle y el resto se distribuyen equitativamente entre los centros de datos de Chicago y Dallas.
 

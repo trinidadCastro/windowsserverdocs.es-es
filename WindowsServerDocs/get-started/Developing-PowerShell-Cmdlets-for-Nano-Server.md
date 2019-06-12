@@ -12,12 +12,12 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 4c669db414c4f12b6145a26a75b83449f43e8918
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c3376d03a2e9f02b20aba608de0228efd7dfddea
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887686"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443620"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Desarrollo de cmdlets de PowerShell para Nano Server
 
@@ -127,9 +127,9 @@ Si no está seguro de qué implementación ha usado para los cmdlets existentes 
 * %UserProfile%\Documents\WindowsPowerShell\Modules   
 * \<la ubicación de instalación del producto >   
     
- Compruebe en estas ubicaciones estos detalles:  
- * Los cmdlets CIM tienen extensiones de archivo .cdxml.  
- * Los cmdlets de .NET tienen extensiones de archivo .dll o tienen ensamblados instalados en la GAC que aparecen en el archivo. psd1 en los campos RootModule, ModuleToProcess o NestedModules.  
+  Compruebe en estas ubicaciones estos detalles:  
+  * Los cmdlets CIM tienen extensiones de archivo .cdxml.  
+  * Los cmdlets de .NET tienen extensiones de archivo .dll o tienen ensamblados instalados en la GAC que aparecen en el archivo. psd1 en los campos RootModule, ModuleToProcess o NestedModules.  
 * Los cmdlets de script de PowerShell tienen las extensiones de archivo .psm1 o .ps1.   
   
 ## <a name="porting-cim-cmdlets"></a>Migración de los cmdlets CIM  

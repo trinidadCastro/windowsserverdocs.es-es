@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: f3f34b4c86854bfc55cf4b1b57a0fd3c2baf2ffc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3cce07ba5b3d2cc89f1363bbb2af5acd048c0466
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839256"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445941"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>Controlar la visibilidad de la herramienta en una solución #
 
@@ -194,6 +194,7 @@ Por último, puede ejecutar un script de PowerShell para identificar la disponib
 }
 ```
 La propiedad State es el valor importante que controle la decisión para mostrar u ocultar la extensión en la lista de herramientas.  Los valores permitidos son:
+
 | Valor | Descripción |
 | ---- | ----------- |
 | Disponible | La extensión se debe mostrar en la lista de herramientas. |

@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 01db8ecc9f84123bbc3159c3cb2399d61d6344c2
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 98d70ea8fb32d48ff34248600cd964d7fa79a0cb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188960"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444836"
 ---
 # <a name="set-up-an-ad-fs-lab-environment"></a>Configuración de un entorno de laboratorio de AD FS
 
@@ -42,7 +42,7 @@ Para configurar este entorno de prueba, realiza los siguientes pasos:
 4.  [Paso 4: Configurar el equipo cliente (Client1)](../../ad-fs/deployment/Set-up-the-lab-environment-for-AD-FS-in-Windows-Server-2012-R2.md#BKMK_10)  
   
 ## <a name="BKMK_1"></a>Paso 1: Configurar el controlador de dominio (DC1)  
-Para los fines de este entorno de prueba, puede llamar a su dominio de Active Directory raíz **contoso.com** y especifique **pass@word1** como contraseña de administrador.  
+Para los fines de este entorno de prueba, puede llamar a su dominio de Active Directory raíz **contoso.com** y especifique <strong>pass@word1</strong> como contraseña de administrador.  
   
 -   Instale el servicio de rol de AD DS e instale los servicios de dominio de Active Directory (AD DS) para convertir un controlador de dominio de su equipo en Windows Server 2012 R2. Esta acción actualiza el esquema de AD DS como parte de la creación del controlador de dominio. Para obtener más información e instrucciones detalladas, consulte[ https://technet.microsoft.com/ library/hh472162.aspx](https://technet.microsoft.com/library/hh472162.aspx).  
   
@@ -51,9 +51,9 @@ Cuando tu controlador de dominio esté operativo, puedes crear un grupo de prueb
   
 Crea las cuentas siguientes:  
   
--   Usuario: **Robert Hatley** con las credenciales siguientes: Nombre de usuario: **RobertH** y la contraseña: **P@ssword**  
+- Usuario: **Robert Hatley** con las credenciales siguientes: Nombre de usuario: **RobertH** y la contraseña: <strong>P@ssword</strong>  
   
--   Grupo: **Finanzas**  
+- Grupo: **Finanzas**  
   
 Para obtener información acerca de cómo crear cuentas de usuario y grupo en Active Directory (AD), consulte [ https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx ](https://technet.microsoft.com/library/cc783323%28v=ws.10%29.aspx).  
   
@@ -94,21 +94,21 @@ Para más información sobre cómo configurar los certificados SSL, consulte [Co
   
 ##### <a name="to-install-the-federation-service-role-service"></a>Cómo instalar el servicio de rol de servicio de federación  
   
-1.  Inicie sesión en el servidor mediante el uso de la cuenta de administrador de dominio administrator@contoso.com.  
+1. Inicie sesión en el servidor mediante el uso de la cuenta de administrador de dominio administrator@contoso.com.  
   
-2.  Inicie el Administrador del servidor. Para iniciar el Administrador del servidor, haz clic en **Administrador del servidor** en la pantalla **Inicio** de Windows, o bien en el **Administrador del servidor** en la barra de tareas de Windows en el escritorio. En la pestaña **Inicio rápido** del icono **Página principal** en la página **Panel** , haz clic en **Agregar roles y características**. Como alternativa, puede hacer clic en **Agregar roles y características** en el menú **Administrar**.  
+2. Inicie el Administrador del servidor. Para iniciar el Administrador del servidor, haz clic en **Administrador del servidor** en la pantalla **Inicio** de Windows, o bien en el **Administrador del servidor** en la barra de tareas de Windows en el escritorio. En la pestaña **Inicio rápido** del icono **Página principal** en la página **Panel** , haz clic en **Agregar roles y características**. Como alternativa, puede hacer clic en **Agregar roles y características** en el menú **Administrar**.  
   
-3.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
+3. En la página **Antes de comenzar** , haga clic en **Siguiente**.  
   
-4.  En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.  
+4. En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.  
   
-5.  En la página **Seleccionar servidor de destino**, haz clic en **Seleccionar un servidor del grupo de servidores**, comprueba que está seleccionado el equipo de destino y haz clic en **Siguiente**.  
+5. En la página **Seleccionar servidor de destino**, haz clic en **Seleccionar un servidor del grupo de servidores**, comprueba que está seleccionado el equipo de destino y haz clic en **Siguiente**.  
   
-6.  En la página **Seleccionar roles de servidor** , haz clic en **Servicios de federación de Active Directory**y, a continuación, en **Siguiente**.  
+6. En la página **Seleccionar roles de servidor** , haz clic en **Servicios de federación de Active Directory**y, a continuación, en **Siguiente**.  
   
-7.  En la página **Seleccionar características**, haga clic en **Siguiente**.  
+7. En la página **Seleccionar características**, haga clic en **Siguiente**.  
   
-8.  En la página **Servicio de federación de Active Directory (AD FS)** , haz clic en **Siguiente**.  
+8. En la página **Servicio de federación de Active Directory (AD FS)** , haz clic en **Siguiente**.  
   
 9. Después de comprobar la información de la página **Confirmar selecciones de instalación** , selecciona la casilla **Reiniciar automáticamente el servidor de destino en caso necesario** y haz clic en **Instalar**.  
   
@@ -179,7 +179,7 @@ En DC1, debes asegurarte de que se crean los siguientes registros del Sistema de
   
 Puedes usar el siguiente procedimiento para agregar un registro de recursos de host (A) a los servidores de nombres DNS corporativos para el servidor de federación y el Servicio de registro de dispositivos.  
   
-Para completar este procedimiento, debes pertenecer como mínimo al grupo Administradores o un grupo equivalente. Revise los detalles sobre el uso de las cuentas adecuadas y pertenencias a grupos en el hipervínculo "https://go.microsoft.com/fwlink/?LinkId=83477" dominio grupos predeterminados locales y (https://go.microsoft.com/fwlink/p/?LinkId=83477).  
+Para completar este procedimiento, debes pertenecer como mínimo al grupo Administradores o un grupo equivalente. Revise los detalles sobre el uso de las cuentas adecuadas y pertenencias a grupos en el hipervínculo "<https://go.microsoft.com/fwlink/?LinkId=83477>" dominio grupos predeterminados locales y (<https://go.microsoft.com/fwlink/p/?LinkId=83477>).  
   
 ##### <a name="to-add-a-host-a-and-alias-cname-resource-records-to-dns-for-your-federation-server"></a>Cómo agregar registros de recursos de host (A) y alias (CNAME) a DNS para el servidor de federación  
   
@@ -222,24 +222,24 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
   
 ### <a name="BKMK_15"></a>Instalar el rol de servidor Web y Windows Identity Foundation  
   
-1.  > [!NOTE]  
-    > Debe tener acceso a los medios de instalación de Windows Server 2012 R2.  
+1. > [!NOTE]  
+   > Debe tener acceso a los medios de instalación de Windows Server 2012 R2.  
   
-    Inicie sesión en WebServ1 utilizando **administrator@contoso.com** y la contraseña **pass@word1**.  
+   Inicie sesión en WebServ1 utilizando <strong>administrator@contoso.com</strong> y la contraseña <strong>pass@word1</strong>.  
   
-2.  Desde el Administrador del servidor, en la pestaña **Inicio rápido** del icono **Página principal** en la página **Panel** , haz clic en **Agregar roles y características**. Como alternativa, puede hacer clic en **Agregar roles y características** en el menú **Administrar**.  
+2. Desde el Administrador del servidor, en la pestaña **Inicio rápido** del icono **Página principal** en la página **Panel** , haz clic en **Agregar roles y características**. Como alternativa, puede hacer clic en **Agregar roles y características** en el menú **Administrar**.  
   
-3.  En la página **Antes de comenzar** , haga clic en **Siguiente**.  
+3. En la página **Antes de comenzar** , haga clic en **Siguiente**.  
   
-4.  En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.  
+4. En la página **Seleccionar tipo de instalación**, haga clic en **Instalación basada en características o en roles** y, a continuación, en **Siguiente**.  
   
-5.  En la página **Seleccionar servidor de destino**, haz clic en **Seleccionar un servidor del grupo de servidores**, comprueba que está seleccionado el equipo de destino y haz clic en **Siguiente**.  
+5. En la página **Seleccionar servidor de destino**, haz clic en **Seleccionar un servidor del grupo de servidores**, comprueba que está seleccionado el equipo de destino y haz clic en **Siguiente**.  
   
-6.  En la página **Seleccionar roles de servidor** , selecciona la casilla situada junto a **Servidor web (IIS)** , haz clic en **Agregar características**y, a continuación, haz clic en **Siguiente**.  
+6. En la página **Seleccionar roles de servidor** , selecciona la casilla situada junto a **Servidor web (IIS)** , haz clic en **Agregar características**y, a continuación, haz clic en **Siguiente**.  
   
-7.  En la página **Seleccionar características**, selecciona **Windows Identity Foundation 3.5** y haz clic en **Siguiente**.  
+7. En la página **Seleccionar características**, selecciona **Windows Identity Foundation 3.5** y haz clic en **Siguiente**.  
   
-8.  En la página **Rol Servidor web (IIS)** , haz clic en **Siguiente**.  
+8. En la página **Rol Servidor web (IIS)** , haz clic en **Siguiente**.  
   
 9. En la página **Seleccionar servicios de rol**, selecciona y expande **Desarrollo de aplicaciones**. Selecciona **ASP.NET 3.5**, haz clic en **Agregar características**y, a continuación, haz clic en **Siguiente**.  
   
@@ -308,7 +308,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
   
     2.  Establezca la ubicación de la configuración de aplicación en **C:inetputclaimappweb.config** y establezca el URI de la aplicación a la dirección URL de su sitio,  **https://webserv1.contoso.com /claimapp /** . Haz clic en **Siguiente**.  
   
-    3.  Seleccione **usar un STS existente** y vaya a la dirección URL de metadatos del servidor AD FS **https://adfs1.contoso.com/federationmetadata/2007-06/federationmetadata.xml**. Haz clic en **Siguiente**.  
+    3.  Seleccione **usar un STS existente** y vaya a la dirección URL de metadatos del servidor AD FS **https://adfs1.contoso.com/federationmetadata/2007-06/federationmetadata.xml** . Haz clic en **Siguiente**.  
   
     4.  Selecciona **Deshabilitar la validación de la cadena de certificados**y haz clic en **Siguiente**.  
   
@@ -316,7 +316,7 @@ Debes llevar a cabo los siguientes pasos para configurar un servidor web con est
   
     6.  Selecciona la casilla situada junto a **Programar una tarea para realizar diariamente actualizaciones de metadatos de WS-Federation**. Haga clic en **Finalizar**.  
   
-    7.  La aplicación de ejemplo ya está configurada. Si prueba la dirección URL de la aplicación **https://webserv1.contoso.com/claimapp**, debería redirigirle a su servidor de federación. El servidor de federación debería mostrar una página de error, ya que todavía no has configurado la relación de confianza para usuario autenticado. En otras palabras, no está protegida por AD FS esta aplicación de prueba.  
+    7.  La aplicación de ejemplo ya está configurada. Si prueba la dirección URL de la aplicación **https://webserv1.contoso.com/claimapp** , debería redirigirle a su servidor de federación. El servidor de federación debería mostrar una página de error, ya que todavía no has configurado la relación de confianza para usuario autenticado. En otras palabras, no está protegida por AD FS esta aplicación de prueba.  
   
 Ahora debe proteger la aplicación de ejemplo que se ejecuta en el servidor web con AD FS. Puedes hacerlo agregando una relación de confianza para usuario autenticado en el servidor de federación (ADFS1). Para ver un vídeo, [Active Directory Federation Services procedimientos serie de vídeos: Agregar una relación de confianza para usuario autenticado](https://technet.microsoft.com/video/adfs-how-to-add-a-relying-party-trust).  
   

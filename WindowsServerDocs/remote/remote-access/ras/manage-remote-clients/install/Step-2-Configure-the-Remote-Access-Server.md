@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c0257b98-5633-4264-9df6-b6ffae80592c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a99a2667733c1a23bcba1134d59223044dc000b7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 85bc7385fc3413bedb539cdbe9982b33dc653d6f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845536"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446892"
 ---
 # <a name="step-2-configure-the-remote-access-server"></a>Paso 2 configurar el servidor de acceso remoto
 
@@ -62,7 +62,7 @@ Debe instalar el rol de acceso remoto en un servidor en su organización, que ac
   
 8.  En el cuadro de diálogo **Progreso de la instalación**, compruebe que la instalación se ha realizado correctamente y, a continuación, haga clic en **Cerrar**.  
   
-![Windows PowerShell](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-2-Configure-the-Remote-Access-Server/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

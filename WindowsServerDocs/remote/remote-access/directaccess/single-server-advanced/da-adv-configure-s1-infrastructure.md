@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 43abc30a-300d-4752-b845-10a6b9f32244
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: edd59208237f9b1042427dfecba0a407a34b30a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d19ac813280981341019330470cc5d53ee00778
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835816"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446110"
 ---
 # <a name="step-1-configure-advanced-directaccess-infrastructure"></a>Paso 1 configuración de la infraestructura de DirectAccess avanzada
 
@@ -246,17 +246,17 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 1.  En el servidor DNS de la red interna: En el **iniciar** , escriba**dnsmgmt.msc**, y, a continuación, presione ENTRAR.  
   
-2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haz clic con el botón secundario en el dominio y selecciona **Host nuevo (A o AAAA)**.  
+2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haz clic con el botón secundario en el dominio y selecciona **Host nuevo (A o AAAA)** .  
   
 3.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Dirección IP**:  
   
-    -   En el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)**, escribe el nombre DNS del sitio web del servidor de ubicación de red (es decir, el nombre que los clientes de DirectAccess usarán para conectarse al servidor de ubicación de red).  
+    -   En el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sitio web del servidor de ubicación de red (es decir, el nombre que los clientes de DirectAccess usarán para conectarse al servidor de ubicación de red).  
   
     -   Escribe la dirección IPv4 o IPv6 del servidor de ubicación de red, haz clic en **Agregar host** y, después, en **Aceptar**.  
   
 4.  En el cuadro de diálogo **Host nuevo**:  
   
-    -   En el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)**, escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es **directaccess-webprobehost**).  
+    -   En el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es **directaccess-webprobehost**).  
   
     -   En el cuadro **Dirección IP**, escribe la dirección IPv4 o IPv6 del sondeo web y, después, haz clic en **Agregar host**.  
   
@@ -264,7 +264,7 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 5.  En el cuadro de diálogo **DNS**, haz clic en **Aceptar** y, después, en **Listo**.  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -336,7 +336,7 @@ El servidor de DirectAccess y todos los equipos cliente de DirectAccess deben un
   
 10. Cuando se le pida que reinicie el equipo, haga clic en **Reiniciar ahora**.  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -425,7 +425,7 @@ Cuando el administrador de acceso remoto completa los cambios en la configuraci�
   
     10. En la página **Examinar copia de seguridad**, haz clic en **Siguiente** y, después, en **Finalizar**.  
   
-![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../media/Step-1-Configuring-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -556,7 +556,7 @@ Estos son los requisitos para cada tipo de certificado, si aún no existen:
   
 ## <a name="BKMK_Links"></a>Paso siguiente  
   
--   [Paso 2: Configurar los servidores de DirectAccess avanzada](da-adv-configure-s2-servers.md)  
+-   [Paso 2: Configurar los servidores avanzados de DirectAccess](da-adv-configure-s2-servers.md)  
   
 
 

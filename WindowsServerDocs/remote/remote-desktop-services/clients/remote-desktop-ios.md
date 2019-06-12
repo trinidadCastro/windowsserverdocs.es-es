@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 date: 01/13/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 1a1939c7fd6d25d756369c85e4adaa6c15195b37
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 71fe969de4d21f7fa3c134b0f80fc7f69e5b2da8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889636"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446706"
 ---
 # <a name="get-started-with-remote-desktop-on-ios"></a>Introducción a Escritorio remoto en iOS
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 Puede usar al cliente de escritorio remoto para iOS para trabajar con aplicaciones, recursos y equipos de escritorio de Windows desde el dispositivo iOS (iPhone e iPad).
 
@@ -50,14 +50,14 @@ En el dispositivo iOS, siga [estas instrucciones](https://aka.ms/rdiosbeta) para
 Para crear una conexión a escritorio remota: 
 1. En la derivación de centro de conexiones **+** y, a continuación, puntee en **Agregar PC o servidor**.
 2. Escriba la siguiente información para la conexión a escritorio remota:
-  - **Nombre de equipo** : el nombre del equipo. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede anexar información del puerto en el nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
-  - **Nombre de usuario** : el nombre de usuario a usar para obtener acceso al equipo remoto. Puede usar los siguientes formatos: *user_name*, *DOMINIO\nombre_de_usuario*, o *user_name@domain.com*. También puede especificar si se le solicitará un nombre de usuario y una contraseña.
+   - **Nombre de equipo** : el nombre del equipo. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede anexar información del puerto en el nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
+   - **Nombre de usuario** : el nombre de usuario a usar para obtener acceso al equipo remoto. Puede usar los siguientes formatos: *user_name*, *DOMINIO\nombre_de_usuario*, o <em>user_name@domain.com</em>. También puede especificar si se le solicitará un nombre de usuario y una contraseña.
 3. También puede establecer las siguientes opciones adicionales:
-  - **Nombre descriptivo (opcional)** : un nombre fácil de recordar para el equipo se conecta a. Puede utilizar cualquier cadena, pero si no especifica un nombre descriptivo, se muestra el nombre de equipo.
-  - **(Opcional) de la puerta de enlace** : puerta de enlace de escritorio remoto el que desea usar para conectarse a escritorios virtuales, programas RemoteApp y escritorios basados en una red corporativa interna. Obtenga la información acerca de la puerta de enlace desde el administrador del sistema.
-  - **Sonido** : seleccione el dispositivo que se usará para audio durante la sesión remota. Puede reproducir un sonido en los dispositivos locales, el dispositivo remoto, o no en absoluto.
-  - **Intercambiar botones del mouse** : cada vez que un gesto del mouse tendría que enviar un comando con el botón primario del mouse, envía el mismo comando con el botón secundario del mouse en su lugar. Esto es necesario si el equipo remoto está configurado para el modo del mouse zurdo.
-  - **Modo de administrador** -conectarse a una sesión de administración en un servidor que ejecuta Windows Server 2003 o posterior.
+   - **Nombre descriptivo (opcional)** : un nombre fácil de recordar para el equipo se conecta a. Puede utilizar cualquier cadena, pero si no especifica un nombre descriptivo, se muestra el nombre de equipo.
+   - **(Opcional) de la puerta de enlace** : puerta de enlace de escritorio remoto el que desea usar para conectarse a escritorios virtuales, programas RemoteApp y escritorios basados en una red corporativa interna. Obtenga la información acerca de la puerta de enlace desde el administrador del sistema.
+   - **Sonido** : seleccione el dispositivo que se usará para audio durante la sesión remota. Puede reproducir un sonido en los dispositivos locales, el dispositivo remoto, o no en absoluto.
+   - **Intercambiar botones del mouse** : cada vez que un gesto del mouse tendría que enviar un comando con el botón primario del mouse, envía el mismo comando con el botón secundario del mouse en su lugar. Esto es necesario si el equipo remoto está configurado para el modo del mouse zurdo.
+   - **Modo de administrador** -conectarse a una sesión de administración en un servidor que ejecuta Windows Server 2003 o posterior.
 4. Pulse **guardar**.
 
 ¿Es necesario modificar esta configuración? Mantenga presionado el escritorio que desea editar y, a continuación, puntee en el icono de configuración. 
@@ -89,8 +89,8 @@ Para configurar una puerta de enlace:
 1. En el centro de conexiones, pulse **configuración > puertas de enlace**. 
 2. Pulse **puerta de enlace de escritorio remoto agregar**.
 3. Escriba la siguiente información:
-  - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
-  - **Nombre de usuario** -el nombre de usuario y la contraseña que se usará para la puerta de enlace de escritorio remoto que se conecta. También puede seleccionar **usar las credenciales de conexión** para usar el mismo nombre de usuario y la contraseña que se utilizaron para la conexión a escritorio remota.
+   - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
+   - **Nombre de usuario** -el nombre de usuario y la contraseña que se usará para la puerta de enlace de escritorio remoto que se conecta. También puede seleccionar **usar las credenciales de conexión** para usar el mismo nombre de usuario y la contraseña que se utilizaron para la conexión a escritorio remota.
 
 
 ## <a name="manage-your-user-accounts"></a>Administrar las cuentas de usuario 

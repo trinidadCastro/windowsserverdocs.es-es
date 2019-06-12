@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dougkim
 ms.date: 07/25/2018
-ms.openlocfilehash: ed6f695947fc17d2e96b5282b3a67a221bb0140d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9015bbc54a4c4bda0f691b79dbb7d3ba8ddbc4a1
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858036"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439895"
 ---
 >Se aplica a: Windows Server 2012, Windows Server 2012 R2, Windows Server 2016
 
@@ -55,8 +55,8 @@ En PowerShell (con privilegios elevado), ejecute:
 
 > [!IMPORTANT]
 > Estos pasos muestran cómo desasociar la base de datos WSUS (SUSDB) de la instancia de base de datos interna de Windows mediante el uso de la **sqlcmd** utilidad. Para obtener más información sobre la **sqlcmd** utilidad, vea [utilidad sqlcmd](https://go.microsoft.com/fwlink/?LinkId=81183).
-1. Abra un símbolo del sistema con privilegios elevados
-2. Ejecute el siguiente comando SQL para desasociar la base de datos WSUS (SUSDB) de la instancia de base de datos interna de Windows mediante el uso de la **sqlcmd** utilidad:
+> 1. Abra un símbolo del sistema con privilegios elevados
+> 2. Ejecute el siguiente comando SQL para desasociar la base de datos WSUS (SUSDB) de la instancia de base de datos interna de Windows mediante el uso de la **sqlcmd** utilidad:
 
 ```batchfile
         sqlcmd -S \\.\pipe\Microsoft##WID\tsql\query
@@ -70,7 +70,7 @@ En PowerShell (con privilegios elevado), ejecute:
 
 ### <a name="copy-the-susdb-files-to-the-sql-server"></a>Copie los archivos SUSDB en el servidor SQL Server
 
-1. Copia **SUSDB.mdf** y **SUSDB\_log.ldf** desde la carpeta de datos WID (**% SystemDrive %**\** Windows\WID\Data **) a los datos de la instancia SQL Carpeta.
+1. Copia **SUSDB.mdf** y **SUSDB\_log.ldf** desde la carpeta de datos WID ( **% SystemDrive %** \** Windows\WID\Data **) a los datos de la instancia SQL Carpeta.
 
 > [!TIP]
 > Por ejemplo, si su carpeta de la instancia de SQL es **C:\Program Files\Microsoft SQL Server\MSSQL12. MSSQLSERVER\MSSQL**, y es la carpeta de datos de WID **C:\Windows\WID\Data,** copie los archivos SUSDB de **C:\Windows\WID\Data** a **C:\Program Files\Microsoft SQL Server \MSSQL12. MSSQLSERVER\MSSQL\Data**
@@ -111,7 +111,7 @@ Después de adjuntar el SUSDB, compruebe que **NT AUTHORITY\NETWORK SERVICE** ti
 El **NT AUTHORITY\NETWORK SERVICE** cuenta debería aparecer. Si no es así, deberá agregarlo al agregar el nuevo nombre de inicio de sesión.
 
 > [!IMPORTANT]
-> Si la instancia de SQL está en un equipo diferente de WSUS, cuenta de equipo del servidor WSUS debe aparecer en el formato **[FQDN]\\[WSUSComputerName] $**.  Si no, se pueden usar los pasos siguientes para agregarlo, reemplace **NT AUTHORITY\NETWORK SERVICE** con la cuenta de equipo del servidor WSUS (**[FQDN]\\[WSUSComputerName] $**) sería ***además*** conceder derechos a **NT AUTHORITY\NETWORK SERVICE**
+> Si la instancia de SQL está en un equipo diferente de WSUS, cuenta de equipo del servidor WSUS debe aparecer en el formato **[FQDN]\\[WSUSComputerName] $** .  Si no, se pueden usar los pasos siguientes para agregarlo, reemplace **NT AUTHORITY\NETWORK SERVICE** con la cuenta de equipo del servidor WSUS ( **[FQDN]\\[WSUSComputerName] $** ) sería ***además*** conceder derechos a **NT AUTHORITY\NETWORK SERVICE**
 
 ##### <a name="adding-nt-authoritynetwork-service-and-granting-it-rights"></a>Adición de NT AUTHORITY\NETWORK SERVICE y concédale derechos
 
@@ -150,7 +150,7 @@ El **NT AUTHORITY\NETWORK SERVICE** cuenta debería aparecer.
     > ![Image11](images/image11.png)
 
 4. En el **User Mapping** página, seleccione el **SUSDB** en la base de datos **"Usuarios asignados a este inicio de sesión"**
-5. Comprobar **webservice** bajo el **"miembros del rol para la base de datos: SUSDB"**: ![image12](images/image12.png)
+5. Comprobar **webservice** bajo el **"miembros del rol para la base de datos: SUSDB"** : ![image12](images/image12.png)
 6. Haga clic en **Aceptar** para guardar la configuración.
     > [!NOTE]
     > Es posible que deba reiniciar el servicio de SQL para que los cambios surtan efecto.
@@ -162,7 +162,7 @@ El **NT AUTHORITY\NETWORK SERVICE** cuenta debería aparecer.
 
 1. Haga clic en **Inicio**, luego en **Ejecutar**, escriba **regedit**y, a continuación, haga clic en **OK**.
 2. Busque la siguiente clave: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\UpdateServices\Server\Setup\SqlServerName**
-3. En el **valor** cuadro de texto, escriba **[ServerName]\\[nombreDeInstancia]** y, a continuación, haga clic en **Aceptar**. Si el nombre de instancia es la instancia predeterminada, escriba **[ServerName]**.
+3. En el **valor** cuadro de texto, escriba **[ServerName]\\[nombreDeInstancia]** y, a continuación, haga clic en **Aceptar**. Si el nombre de instancia es la instancia predeterminada, escriba **[ServerName]** .
 4. Busque la siguiente clave: **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Update Services\Server\Setup\Installed rol Services\UpdateServices-WidDatabase** ![image13](images/image13.png)
 5. Cambiar el nombre de la clave para **UpdateServices-base de datos** ![image41](images/image14.png)
 
@@ -184,7 +184,7 @@ En PowerShell (con privilegios elevado), ejecute:
 ## <a name="uninstalling-the-wid-role-not-recommended"></a>Desinstalar el rol WID (no recomendado)
 
 > [!WARNING]
-> Quitar el rol WID también quita una carpeta de base de datos (**%SystemDrive%\Program programa\Update Services\Database**) que contiene los scripts necesarios por WSUSUtil.exe para las tareas posteriores a la instalación. Si decide desinstalar el rol de WID, asegúrese de copia de seguridad de la **%SystemDrive%\Program programa\Update Services\Database** carpeta con antelación.
+> Quitar el rol WID también quita una carpeta de base de datos ( **%SystemDrive%\Program programa\Update Services\Database**) que contiene los scripts necesarios por WSUSUtil.exe para las tareas posteriores a la instalación. Si decide desinstalar el rol de WID, asegúrese de copia de seguridad de la **%SystemDrive%\Program programa\Update Services\Database** carpeta con antelación.
 
 Uso de PowerShell:
 

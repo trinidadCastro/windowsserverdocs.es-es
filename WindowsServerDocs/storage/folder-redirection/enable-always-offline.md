@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 09/10/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 8684926beb0f0c911ac384970d15ba7d25f84079
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: ddf6a816e417c2eddff090df8dba841a894a3255
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475929"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447670"
 ---
 # <a name="enable-always-offline-mode-for-faster-access-to-files"></a>Habilitar el modo siempre sin conexión para acelerar el acceso a archivos
 
@@ -44,7 +44,7 @@ Para habilitar el modo siempre sin conexión, use Directiva de grupo para habili
 6. Seleccione **Habilitado**.
 7. En el **opciones** cuadro, seleccione **mostrar**. El **ventana Mostrar contenido** aparecerá.
 8. En el **nombre del valor** , especifique el recurso compartido de archivos para el que desea habilitar el modo siempre sin conexión.
-9. Para habilitar el modo siempre sin conexión en todos los recursos compartidos de archivos, escriba **\***.
+9. Para habilitar el modo siempre sin conexión en todos los recursos compartidos de archivos, escriba **\\***.
 10. En el **valor** , escriba **latencia = 1** para establecer el umbral de latencia a un milisegundo y, a continuación, seleccione **Aceptar**.
 
 >[!NOTE]

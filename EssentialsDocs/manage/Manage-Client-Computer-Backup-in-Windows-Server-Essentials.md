@@ -12,12 +12,12 @@ ms.assetid: 1b4776e8-9504-4b98-ae80-11da797d9819
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d184c97e47f04b9d7434aaeb0d328761bcfac1c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 4249273c42e07fea980af3e97ae59b31db243e56
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839276"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433340"
 ---
 # <a name="manage-client-computer-backup-in-windows-server-essentials"></a>Administrar copias de seguridad del equipo cliente en Windows Server Essentials
 
@@ -109,7 +109,7 @@ ms.locfileid: "59839276"
 4.  Haga clic en **Cerrar** cuando haya configurado las copias de seguridad del equipo.  
   
 ### <a name="critical-system-files"></a>Archivos imprescindibles del sistema  
- Al instalar el sistema operativo Windows, el programa de instalación crea carpetas en la unidad del sistema donde coloca los archivos que el sistema necesita para iniciarse y funcionar. Los archivos imprescindibles del sistema incluyen archivos con las extensiones .exe, .dll, .ocx y .sys. Algunos de estos archivos son fuentes True Type. Además, los archivos de estado del sistema, como el registro del sistema s, son necesarios para el sistema operativo se ejecute correctamente.  
+ Al instalar el sistema operativo Windows, el programa de instalación crea carpetas en la unidad del sistema donde coloca los archivos que el sistema necesita para iniciarse y funcionar. Los archivos imprescindibles del sistema incluyen archivos con las extensiones .exe, .dll, .ocx y .sys. Algunos de estos archivos son fuentes True Type. Además, los archivos de estado del sistema, como el registro del sistema, son necesarios para el sistema operativo se ejecute correctamente.  
   
 ### <a name="find-the-file-you-are-looking-for"></a>Encuentre el archivo que está buscando  
  Puede restaurar todas las carpetas de un equipo, varios archivos y carpetas, o un único archivo o carpeta desde una copia de seguridad existente.  
@@ -119,17 +119,17 @@ ms.locfileid: "59839276"
 ### <a name="why-am-i-unable-to-select-some-items"></a>¿Por qué no puedo seleccionar algunos elementos?  
  La casilla de verificación del menú de selección de la página **Seleccione los elementos de los que se va a realizar copia de seguridad** puede indicar un estado diferente para cada carpeta. Cuando la casilla de verificación está:  
   
--   **seleccionada**, se selecciona la carpeta asociada y el contenido de la carpeta para hacer una copia de seguridad.  
+- **seleccionada**, se selecciona la carpeta asociada y el contenido de la carpeta para hacer una copia de seguridad.  
   
--   **no seleccionada**, la carpeta asociada y el contenido de la carpeta no se incluyen en la copia de seguridad.  
+- **no seleccionada**, la carpeta asociada y el contenido de la carpeta no se incluyen en la copia de seguridad.  
   
--   **sólida**, se selecciona la carpeta asociada para hacer una copia de seguridad, pero uno o varios elementos incluidos en esa carpeta no se incluyen en la copia de seguridad.  
+- **sólida**, se selecciona la carpeta asociada para hacer una copia de seguridad, pero uno o varios elementos incluidos en esa carpeta no se incluyen en la copia de seguridad.  
   
- Si no puede seleccionar una carpeta específica:  
+  Si no puede seleccionar una carpeta específica:  
   
--   El volumen puede estar configurado para hacer copias de seguridad, pero es posible que esté sin conexión. Esto es común en las unidades USB extraíbles. Los volúmenes sin conexión se muestran en texto gris.  
+- El volumen puede estar configurado para hacer copias de seguridad, pero es posible que esté sin conexión. Esto es común en las unidades USB extraíbles. Los volúmenes sin conexión se muestran en texto gris.  
   
--   Solo puede hacer copias de seguridad de datos desde una unidad local que tenga el formato de un sistema de archivos NTFS. Las unidades que tengan el formato FAT (incluido FAT32) o los sistemas de archivos ReFS no aparecen en la lista de unidades de disco de las que se va a hacer una copia de seguridad.  
+- Solo puede hacer copias de seguridad de datos desde una unidad local que tenga el formato de un sistema de archivos NTFS. Las unidades que tengan el formato FAT (incluido FAT32) o los sistemas de archivos ReFS no aparecen en la lista de unidades de disco de las que se va a hacer una copia de seguridad.  
   
 > [!IMPORTANT]
 >  El Servicio de instantáneas de volumen (VSS) no admite la creación de una instantánea de un volumen virtual y del volumen del host en el mismo conjunto de instantáneas. VSS admite la creación de instantáneas de volúmenes en un disco duro virtual (VHD) si es necesario hacer una copia de seguridad del volumen virtual. Para obtener más información, consulte [Servicing and Backing Up Virtual Hard Disks (Mantenimiento y seguridad de los discos duros virtuales)](https://go.microsoft.com/fwlink/p/?LinkId=256577).  
@@ -265,30 +265,30 @@ ms.locfileid: "59839276"
   
 #### <a name="to-disable-backup-for-a-computer"></a>Para deshabilitar la copia de seguridad de un equipo  
   
-1.  Abra el **Panel**.  
+1. Abra el **Panel**.  
   
-2.  Haga clic en la pestaña **Dispositivos**.  
+2. Haga clic en la pestaña **Dispositivos**.  
   
-3.  Haga clic en el nombre del equipo del que quiere deshabilitar las copias de seguridad.  
+3. Haga clic en el nombre del equipo del que quiere deshabilitar las copias de seguridad.  
   
-4.  En el panel de tareas, haga clic en **Personalizar la copia de seguridad para el equipo**. Aparece el asistente para personalizar las copias de seguridad.  
+4. En el panel de tareas, haga clic en **Personalizar la copia de seguridad para el equipo**. Aparece el asistente para personalizar las copias de seguridad.  
   
-5.  Haga clic en **Deshabilitar la copia de seguridad para este equipo** y después seleccione si quiere conservar o eliminar los archivos de copias de seguridad existentes.  
+5. Haga clic en **Deshabilitar la copia de seguridad para este equipo** y después seleccione si quiere conservar o eliminar los archivos de copias de seguridad existentes.  
   
-6.  Haga clic en **Guardar cambios** y después, en **Cerrar**.  
+6. Haga clic en **Guardar cambios** y después, en **Cerrar**.  
   
- Para información sobre cómo habilitar la copia de seguridad de un equipo después de haberla deshabilitado, consulte [Set up backup for a client computer](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_3).  
+   Para información sobre cómo habilitar la copia de seguridad de un equipo después de haberla deshabilitado, consulte [Set up backup for a client computer](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_3).  
   
 ##  <a name="BKMK_10"></a> Ejecute la tarea de limpieza de copia de seguridad  
  La tarea de limpieza de copias de seguridad del equipo cliente está programada para ejecutarse cada sábado a las 11:59 p. m. después de haberse completado todas las copias de seguridad. La tarea de limpieza elimina las copias de seguridad de la base de datos de copias de seguridad del equipo cliente según la directiva de retención de copias de seguridad. Los valores predeterminados de la directiva de retención de copias de seguridad son:  
   
--   Número de días que se retienen las copias de seguridad diarias: 5 días  
+- Número de días que se retienen las copias de seguridad diarias: 5 días  
   
--   Número de semanas que se retiene la última copia de seguridad de la semana: 4 semanas  
+- Número de semanas que se retiene la última copia de seguridad de la semana: 4 semanas  
   
--   Número de meses que se retiene la última copia de seguridad del mes: 6 meses  
+- Número de meses que se retiene la última copia de seguridad del mes: 6 meses  
   
- Para obtener información acerca de cómo cambiar la directiva de conservación de copia de seguridad, consulte [Change the computer backup retention policy](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
+  Para obtener información acerca de cómo cambiar la directiva de conservación de copia de seguridad, consulte [Change the computer backup retention policy](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
   
 #### <a name="to-run-the-client-backup-database-cleanup-task"></a>Para ejecutar la tarea de limpieza de la base de datos de copias de seguridad del cliente  
   

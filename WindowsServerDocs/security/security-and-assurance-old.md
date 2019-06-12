@@ -11,19 +11,19 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: b32b4879ad454d1154c3d65dbf690cdaae73d76c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fed0587b74873005f14a216bac22f952bcc65a4f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827226"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447297"
 ---
 # <a name="security-and-assurance-in-windows-server"></a>Seguridad y control en Windows Server 
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 >[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Buscas información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 <img src="../media/landing-icons/security.png" style='float:left; padding:.5em;' alt="Icon representing a lock"> Puedes confiar en las nuevas capas de protección integradas en el sistema operativo para una mayor protección contra las infracciones de seguridad. Ayuda a bloquear ataques malintencionados y a mejorar la seguridad de sus máquinas virtuales, aplicaciones y datos.
 
@@ -90,7 +90,7 @@ Tutorial de demostración de Just Enough Administration.
 ### <a name="protect-derived-domain-credentials-with-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectioncredential-guardcredential-guard"></a>[Proteger las credenciales de dominio derivadas con Credential Guard](https://docs.microsoft.com/windows/security/identity-protection/credential-guard/credential-guard)
 Credential Guard usa la seguridad basada en virtualización para aislar los secretos de forma que solo el software de sistema con privilegios pueda acceder a ellos. El acceso no autorizado a estos secretos puede derivar en ataques de robo de credenciales, como ataques pass-the-hash o pass-the-ticket. Credential Guard impide estos ataques mediante la protección de los hash de contraseña NTLM y los vales de concesión de vales Kerberos.
 
-### <a name="protect-remote-desktop-credentials-with-remote-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectionremote-credential-guard"></a>[Proteger las credenciales de escritorio remoto con de Credential Guard remoto](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
+### <a name="protect-remote-desktop-credentials-with-remote-credential-guardhttpsdocsmicrosoftcomwindowssecurityidentity-protectionremote-credential-guard"></a>[Proteger las credenciales de Escritorio remoto con Credential Guard remoto](https://docs.microsoft.com/windows/security/identity-protection/remote-credential-guard)
 Credential Guard remoto ayuda a proteger las credenciales a través de una conexión a Escritorio remoto al redirigir las solicitudes de Kerberos de vuelta al dispositivo que solicita la conexión. También proporciona experiencias de inicio de sesión único para sesiones de Escritorio remoto.                                                                                                        |
 ### <a name="credential-guard-demo-videohttpswwwyoutubecomwatchveupkogsl7yk"></a>[Vídeo de demostración de Credential Guard](https://www.youtube.com/watch?v=eUpKOGSl7yk)
 En este vídeo de 5 minutos se presentan demostraciones de vídeo de Credential Guard y Credential Guard remoto.         
@@ -111,7 +111,7 @@ Protección de flujo de control proporciona protección integrada frente a algun
 ### <a name="windows-defenderhttpstechnetmicrosoftcomwindows-server-docssecuritywindows-defenderwindows-defender-overview-windows-server"></a>[Windows Defender](https://technet.microsoft.com/windows-server-docs/security/windows-defender/windows-defender-overview-windows-server)
 Windows Defender proporciona capacidades de detección activas para bloquear malware conocido. Windows Defender está activado de forma predeterminada y está optimizado para admitir los distintos roles de servidor en Windows Server.
 
-##<a name="detecting-and-responding-to-threats"></a>Detección y respuesta a las amenazas
+## <a name="detecting-and-responding-to-threats"></a>Detección y respuesta a las amenazas
 ### <a name="security-threat-analysis-using-microsoft-operations-management-suitehttpschannel9msdncomeventsignite2015brk3464"></a>[Análisis de amenazas de seguridad con Microsoft Operations Management Suite](https://channel9.msdn.com/events/ignite/2015/brk3464)
 En esta presentación de Ignite se describe cómo puede usar Operational Insights para realizar el análisis de las amenazas de seguridad.
 

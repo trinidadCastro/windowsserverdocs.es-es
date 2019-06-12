@@ -6,12 +6,12 @@ ms.author: joflore
 ms.date: 04/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 684f3418bf336af4959282e7a8c2088d22a8c8dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8a1775a40761e4a489cc39535514d75174edffa5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865136"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442989"
 ---
 # <a name="virtualizing-domain-controllers-using-hyper-v"></a>Virtualización de controladores de dominio con Hyper-V
 
@@ -64,7 +64,7 @@ Para obtener más información acerca de cómo proteger los controladores de dom
 
 El uso de máquinas virtuales permite tener varias configuraciones diferentes de controladores de dominio. Se debe prestar mucha atención a la forma en que las máquinas virtuales influyen sobre los límites y confianzas de la topología Active Directory. En la siguiente tabla se describen las posibles configuraciones de un controlador de dominio y host de Active Directory (servidor Hyper-V) y sus equipos invitados (máquinas virtuales que se ejecutan en el servidor Hyper-V).
 
-|Máquina|Configuración 1|Configuration 2|
+|Machine|Configuración 1|Configuration 2|
 |-------|---------------|---------------|
 |Host|Equipo miembro o grupo de trabajo|Equipo miembro o grupo de trabajo|
 |Invitado|Controlador de dominio|Equipo miembro o grupo de trabajo|
@@ -191,19 +191,19 @@ Hay varias prácticas de máquina virtual comunes que debe evitar al implementar
 
 Las plataformas de virtualización, tales como Hyper-V, ofrecen una serie de características útiles que facilitan la administración, el mantenimiento, la realización de copias de seguridad y la migración de equipos. Sin embargo, los siguientes procedimientos recomendados de implementación comunes y características no deben utilizarse para controladores de dominio virtual:
 
-   - Para garantizar la durabilidad de las escrituras de Active Directory, implementar archivos de base de datos de un controlador de dominio (Active Directory base de datos (NTDS. DIT), los registros y SYSVOL) en los discos IDE virtuales. En su lugar, cree un segundo VHD conectado a una controladora SCSI virtual y asegúrese de que la base de datos, registros y SYSVOL se colocan en el disco SCSI de la máquina virtual durante la instalación del controlador de dominio.  
-   - No implemente discos duros virtuales (VHD) de disco de diferenciación en una máquina virtual que se vaya a configurar como controlador de dominio. Esto hace que sea mucho más fácil poder volver a una versión anterior, además de disminuir el rendimiento. Para obtener más información acerca de los tipos de disco duro virtual, consulte [Asistente para nuevo disco duro de Virtual](https://go.microsoft.com/fwlink/?linkid=137279).  
-   - Implementar nuevos dominios de Active Directory y bosques en una copia de un sistema operativo Windows Server que no se estaba preparado en primer lugar el uso de la herramienta de preparación del sistema (Sysprep). Para obtener más información sobre la ejecución de Sysprep, consulte [Introducción a Sysprep (preparación del sistema)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
+- Para garantizar la durabilidad de las escrituras de Active Directory, implementar archivos de base de datos de un controlador de dominio (Active Directory base de datos (NTDS. DIT), los registros y SYSVOL) en los discos IDE virtuales. En su lugar, cree un segundo VHD conectado a una controladora SCSI virtual y asegúrese de que la base de datos, registros y SYSVOL se colocan en el disco SCSI de la máquina virtual durante la instalación del controlador de dominio.  
+- No implemente discos duros virtuales (VHD) de disco de diferenciación en una máquina virtual que se vaya a configurar como controlador de dominio. Esto hace que sea mucho más fácil poder volver a una versión anterior, además de disminuir el rendimiento. Para obtener más información acerca de los tipos de disco duro virtual, consulte [Asistente para nuevo disco duro de Virtual](https://go.microsoft.com/fwlink/?linkid=137279).  
+- Implementar nuevos dominios de Active Directory y bosques en una copia de un sistema operativo Windows Server que no se estaba preparado en primer lugar el uso de la herramienta de preparación del sistema (Sysprep). Para obtener más información sobre la ejecución de Sysprep, consulte [Introducción a Sysprep (preparación del sistema)](https://docs.microsoft.com/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)
 
-      > [!WARNING]
-      > No se admite la ejecución de Sysprep en un controlador de dominio.
+   > [!WARNING]
+   > No se admite la ejecución de Sysprep en un controlador de dominio.
 
-   - Para evitar una situación de posible reversión en el número de secuencias actualizadas (USN), no se deben usar copias de un archivo de VHD que represente un controlador de dominio ya implementado para implementar más controladores de dominio. Para obtener más información acerca de la reversión de USN, vea [USN y reversión de USN](#usn-and-usn-rollback).
-      - Windows Server 2012 y versiones posterior permite a los administradores clonar imágenes del controlador de dominio si prepara correctamente cuando deseen implementar controladores de dominio adicionales
-   - No use la característica de exportación de Hyper-V para exportar máquinas virtuales que ejecutan un controlador de dominio.
-      - Con Windows Server 2012 y versiones más recientes, una exportación e importación de un invitado virtual de controlador de dominio se administra como una restauración no autoritativa como detecta un cambio del Id. de generación y no está configurado para la clonación.
-      - Asegúrese de que no utilizan al invitado que ya ha exportado.
-  - Puede utilizar la replicación de Hyper-V para mantener una segunda copia inactiva de un controlador de dominio. Si inicia la imagen replicada, también deberá realizar la limpieza adecuada, por la misma razón que no usa el origen después de exportar una imagen de invitado del controlador de dominio.
+- Para evitar una situación de posible reversión en el número de secuencias actualizadas (USN), no se deben usar copias de un archivo de VHD que represente un controlador de dominio ya implementado para implementar más controladores de dominio. Para obtener más información acerca de la reversión de USN, vea [USN y reversión de USN](#usn-and-usn-rollback).
+   - Windows Server 2012 y versiones posterior permite a los administradores clonar imágenes del controlador de dominio si prepara correctamente cuando deseen implementar controladores de dominio adicionales
+- No use la característica de exportación de Hyper-V para exportar máquinas virtuales que ejecutan un controlador de dominio.
+  - Con Windows Server 2012 y versiones más recientes, una exportación e importación de un invitado virtual de controlador de dominio se administra como una restauración no autoritativa como detecta un cambio del Id. de generación y no está configurado para la clonación.
+  - Asegúrese de que no utilizan al invitado que ya ha exportado.
+    - Puede utilizar la replicación de Hyper-V para mantener una segunda copia inactiva de un controlador de dominio. Si inicia la imagen replicada, también deberá realizar la limpieza adecuada, por la misma razón que no usa el origen después de exportar una imagen de invitado del controlador de dominio.
 
 ## <a name="physical-to-virtual-migration"></a>Migración de máquinas físicas a virtuales
 
@@ -244,23 +244,23 @@ Para deshabilitar al proveedor de sincronización de hora de Hyper-V, apague la 
 
 Para optimizar el rendimiento de la máquina virtual de controlador de dominio y garantizar la durabilidad de las escrituras de Active Directory, utilice las siguientes recomendaciones para almacenar el sistema operativo, Active Directory y los archivos VHD:
 
-   - **Almacenamiento de invitados**. Almacene el archivo de base de datos de Active Directory (Ntds.dit), los archivos de registro y los archivos SYSVOL en un disco virtual separado de los archivos del sistema operativo. Crear un segundo VHD conectado a una controladora SCSI virtual y almacenar la base de datos, registros y SYSVOL en discos SCSI virtuales de la máquina virtual. Discos SCSI virtuales proporcionan un mayor rendimiento en comparación con IDE virtuales y admiten forzada Unit Access (FUA). FUA garantiza que el sistema operativo escribe y lee los datos directamente desde el disco omitiendo todos los mecanismos de almacenamiento en caché.
+- **Almacenamiento de invitados**. Store el archivo de base de datos de Active Directory (Ntds.dit), archivos de registro y archivos SYSVOL en un disco virtual separado de los archivos del sistema operativo. Crear un segundo VHD conectado a una controladora SCSI virtual y almacenar la base de datos, registros y SYSVOL en discos SCSI virtuales de la máquina virtual. Discos SCSI virtuales proporcionan un mayor rendimiento en comparación con IDE virtuales y admiten forzada Unit Access (FUA). FUA garantiza que el sistema operativo escribe y lee los datos directamente desde el disco omitiendo todos los mecanismos de almacenamiento en caché.
 
-   > [!NOTE]
-   > Si va a usar Bitlocker para el invitado virtual del controlador de dominio, deberá asegurarse de que los volúmenes adicionales configurados para "desbloquear automáticamente".
-   > Obtener más información acerca de la configuración automática desbloqueo puede encontrarse en [Enable BitLockerAutoUnlock](https://docs.microsoft.com/powershell/module/bitlocker/enable-bitlockerautounlock)
+  > [!NOTE]
+  > Si va a usar Bitlocker para el invitado virtual del controlador de dominio, deberá asegurarse de que los volúmenes adicionales configurados para "desbloquear automáticamente".
+  > Obtener más información acerca de la configuración automática desbloqueo puede encontrarse en [Enable BitLockerAutoUnlock](https://docs.microsoft.com/powershell/module/bitlocker/enable-bitlockerautounlock)
 
-   - **Almacenamiento host de archivos VHD**. Recomendaciones: las recomendaciones de almacenamiento host se refieren al almacenamiento de los archivos VHD. Para lograr un rendimiento máximo, no almacene los archivos VHD en un disco que se use con frecuencia para otros servicios o aplicaciones, como el disco del sistema en el que está instalado el sistema operativo Windows del host. Almacene cada archivo VHD en una partición distinta del sistema operativo del host y en cualquier otro archivo VHD. La configuración ideal sería almacenar cada archivo VHD en una unidad física distinta.  
+- **Almacenamiento host de archivos VHD**. Recomendaciones: las recomendaciones de almacenamiento host se refieren al almacenamiento de los archivos VHD. Para lograr un rendimiento máximo, no almacene los archivos VHD en un disco que se use con frecuencia para otros servicios o aplicaciones, como el disco del sistema en el que está instalado el sistema operativo Windows del host. Almacene cada archivo VHD en una partición distinta del sistema operativo del host y en cualquier otro archivo VHD. La configuración ideal sería almacenar cada archivo VHD en una unidad física distinta.  
 
-    También debe cumplir el sistema de disco físico del host **al menos un** de los siguientes criterios para satisfacer los requisitos de carga de trabajo virtualizada de integridad de datos:  
+  También debe cumplir el sistema de disco físico del host **al menos un** de los siguientes criterios para satisfacer los requisitos de carga de trabajo virtualizada de integridad de datos:  
 
-      - El sistema utiliza discos de la clase de servidor (SCSI, canal de fibra).  
-      - El sistema se asegura de que los discos están conectados a un batería almacenamiento en caché adaptador de bus host (HBA).  
-      - El sistema utiliza un controlador de almacenamiento (por ejemplo, un sistema RAID) como el dispositivo de almacenamiento.  
-      - El sistema se asegura de que la energía en el disco está protegida por una fuente de alimentación ininterrumpida (SAI o UPS).  
-      - El sistema se asegura de que la característica de caché de escritura del disco está deshabilitada.  
+   - El sistema utiliza discos de la clase de servidor (SCSI, canal de fibra).  
+   - El sistema se asegura de que los discos están conectados a un batería almacenamiento en caché adaptador de bus host (HBA).  
+   - El sistema utiliza un controlador de almacenamiento (por ejemplo, un sistema RAID) como el dispositivo de almacenamiento.  
+   - El sistema se asegura de que la energía en el disco está protegida por una fuente de alimentación ininterrumpida (SAI o UPS).  
+   - El sistema se asegura de que la característica de caché de escritura del disco está deshabilitada.  
 
-   - **VHD fijo frente a discos de paso a través**. Existen muchas maneras de configurar el almacenamiento para máquinas virtuales. Cuando se usan archivos VHD, los VHD de tamaño fijo son más eficientes que los VHD dinámicos, porque la memoria para los VHD de tamaño fijo se asigna cuando se crean dichos discos. Los discos de paso a través, que las máquinas virtuales pueden usar para tener acceso a medios de almacenamiento físicos, consiguen incluso un mayor rendimiento. Este tipo de discos son esencialmente discos físicos o números de unidad lógica (LUN) conectados a una máquina virtual. Los discos de paso a través no son compatibles con la característica de instantánea. Por lo tanto, los discos de paso a través son la configuración de disco duro preferida debido a que el uso de instantáneas con controladores de dominio no es recomendable.  
+- **VHD fijo frente a discos de paso a través**. Existen muchas maneras de configurar el almacenamiento para máquinas virtuales. Cuando se usan archivos VHD, los VHD de tamaño fijo son más eficientes que los VHD dinámicos, porque la memoria para los VHD de tamaño fijo se asigna cuando se crean dichos discos. Los discos de paso a través, que las máquinas virtuales pueden usar para tener acceso a medios de almacenamiento físicos, consiguen incluso un mayor rendimiento. Este tipo de discos son esencialmente discos físicos o números de unidad lógica (LUN) conectados a una máquina virtual. Los discos de paso a través no son compatibles con la característica de instantánea. Por lo tanto, los discos de paso a través son la configuración de disco duro preferida debido a que el uso de instantáneas con controladores de dominio no es recomendable.  
 
 Para reducir la posibilidad de daños en los datos de Active Directory, use controladoras SCSI virtuales:
 
@@ -320,11 +320,11 @@ Cuando sucede un error en una máquina virtual de controlador de dominio y no se
 
 Use el proceso que se muestra en la siguiente ilustración para determinar la mejor forma de restaurar el controlador de dominio virtualizado.
 
-![](media\virtualized-domain-controller-architecture\Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.85c97481-7b95-4705-92a7-006e48bc29d0(WS.10).gif)
 
 Para los RODC, el proceso de restauración y las decisiones son más fáciles.
 
-![](media\virtualized-domain-controller-architecture\Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.4c5c5eda-df95-4c6b-84e0-d84661434e5d(WS.10).gif)
 
 ## <a name="restoring-the-system-state-backup-of-a-virtual-domain-controller"></a>Restaurar la copia de seguridad del estado del sistema de un controlador de dominio virtual
 
@@ -356,7 +356,7 @@ Si no dispone de una copia de seguridad de datos del estado del sistema que sea 
 
 1. Use el VHD anterior para iniciar el controlador de dominio virtual en DSRM, tal como se describe en la sección anterior. No permita que el controlador de dominio se inicie en modo normal. Si se pierde la pantalla del Administrador de arranque de Windows y el controlador de dominio empieza a iniciarse en el modo normal, apague la máquina virtual para impedir que se complete el inicio. Vea la sección anterior para obtener instrucciones detalladas para iniciar el DSRM.
 2. Abre el Editor del Registro. Para abrir el Editor del Registro, haga clic en **Inicio**, en **Ejecutar**, escriba **regedit** y, a continuación, haga clic en Aceptar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**. En el Editor del Registro, expanda la siguiente ruta de acceso: **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\NTDS\\Parameters**. Busque un valor llamado **DSA Previous Restore Count**. Si el valor está, anote el valor de configuración. Si el valor no está, el valor es igual al valor predeterminado, que es cero. No agregue un valor si no ve uno allí.
-3. Haga clic con el botón secundario en la clave **Parameters**, haga clic en **Nuevo** y, a continuación, haga clic en **Valor de DWORD (32 bits)**.
+3. Haga clic con el botón secundario en la clave **Parameters**, haga clic en **Nuevo** y, a continuación, haga clic en **Valor de DWORD (32 bits)** .
 4. Escriba el nuevo nombre **Base de datos restaurada desde una copia de seguridad** y, a continuación, presione ENTRAR.
 5. Haga doble clic en el valor que acaba de crear para abrir el cuadro de diálogo **Editar valor de DWORD (32 bits)** y, a continuación, escriba **1** en el cuadro **Información del valor**. El **base de datos restaurada desde una copia de seguridad** opción está disponible en controladores de dominio que ejecutan Windows 2000 Server con Service Pack 4 (SP4), Windows Server 2003 con las actualizaciones que se incluyen en [cómo detectar y recuperarse de una reversión de USN en Windows Server 2003, Windows Server 2008 y Windows Server 2008 R2](https://go.microsoft.com/fwlink/?linkid=137182) en Microsoft Knowledge Base instalado y Windows Server 2008.
 6. Reinicie el controlador de dominio en modo normal.
@@ -365,17 +365,17 @@ Si no dispone de una copia de seguridad de datos del estado del sistema que sea 
 9. Haga clic con el botón secundario en el registro **Servicios de directorio** y, a continuación, haga clic en **Buscar**. En **Buscar**, escriba **1109** y haga clic en **Buscar siguiente**.
 10. Debería ver al menos una entrada con identificador de evento 1109. Si no ve esta entrada, continúe con el siguiente paso. En caso contrario, haga doble clic en la entrada y, a continuación, revise el texto que confirma que se realizó la actualización al identificador de invocación:
 
-   ```
-   Active Directory has been restored from backup media, or has been configured to host an application partition. 
-   The invocationID attribute for this directory server has been changed. 
-   The highest update sequence number at the time the backup was created is <time>
+    ```
+    Active Directory has been restored from backup media, or has been configured to host an application partition. 
+    The invocationID attribute for this directory server has been changed. 
+    The highest update sequence number at the time the backup was created is <time>
 
-   InvocationID attribute (old value):<Previous InvocationID value>
-   InvocationID attribute (new value):<New InvocationID value>
-   Update sequence number:<USN>
+    InvocationID attribute (old value):<Previous InvocationID value>
+    InvocationID attribute (new value):<New InvocationID value>
+    Update sequence number:<USN>
 
-   The InvocationID is changed when a directory server is restored from backup media or is configured to host a writeable application directory partition.
-   ```
+    The InvocationID is changed when a directory server is restored from backup media or is configured to host a writeable application directory partition.
+    ```
 
 11. Cierre el Visor de eventos.
 12. Use el Editor del Registro para comprobar que el valor en **DSA Previous Restore Count** es igual al del valor anterior más uno. Si este no es el valor correcto y no puede encontrar una entrada para el identificador de evento 1109 en el Visor de eventos, compruebe que los Service Pack del controlador de dominio son actuales. No se puede volver a intentar este procedimiento en el mismo VHD. Puede intentarlo de nuevo con una copia del VHD o con otro VHD distinto que no se haya iniciado en modo normal; para ello, vuelva a empezar en el paso 1.
@@ -418,7 +418,7 @@ Cuando se restaura correctamente AD DS en un controlador de dominio, el **invoca
 
 Por ejemplo, supongamos que VDC1 y DC2 son dos controladores de dominio del mismo dominio. En la siguiente ilustración se muestra cómo percibe DC2 a VDC1 cuando el valor invocationID se restablece en una restauración correcta.
 
-![](media\virtualized-domain-controller-architecture\Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.ca71fc12-b484-47fb-991c-5a0b7f516366(WS.10).gif)
 
 ## <a name="usn-rollback"></a>Reversión de USN
 
@@ -445,7 +445,7 @@ En Windows Server 2008 y Windows Server 2003 SP1, cuando un controlador de 
 
 En la siguiente ilustración se muestra la secuencia de eventos que tiene lugar cuando se detecta una reversión de USN en VDC2, el controlador de dominio de destino que se ejecuta en una máquina virtual. En esta ilustración, la detección de la reversión de USN se produce en VDC2 cuando un asociado de replicación detecta que VDC2 envió un valor de actualización USN que el controlador de dominio de destino ya había visto, lo cual indica que la base de datos de VDC2 se revirtió de manera incorrecta.
 
-![](media\virtualized-domain-controller-architecture\\Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.373b0504-43fc-40d0-9908-13fdeb7b3f14(WS.10).gif)
 
 Si el registro de eventos del Servicio de directorio notifica el identificador de evento 2095, siga estos pasos inmediatamente.
 
@@ -470,7 +470,7 @@ En el primer caso, es posible que se repliquen otros controladores de dominio co
 
 En el segundo caso, un intervalo de USN se aplica a dos conjuntos de cambios distintos. Esto puede ocurrir durante largos períodos sin que se detecte. Cuando se modifica un objeto que se creó durante ese período, se detecta un objeto persistente y se notifica como identificador de evento 1988 en el Visor de eventos. En la siguiente ilustración se muestra cómo es posible que no se detecte la reversión de USN en la situación descrita.
 
-![](media\virtualized-domain-controller-architecture\Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
+![](media/virtualized-domain-controller-architecture/Dd363553.63565fe0-d970-4b4e-b5f3-9c76bc77e2d4(WS.10).gif)
 
 ## <a name="read-only-domain-controllers"></a>Controladores de dominio de solo lectura
 

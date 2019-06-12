@@ -12,12 +12,12 @@ ms.assetid: 71e3243e-2da9-409a-ae1f-813d4c9062e1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: afae2e7290d29454eb5041064bec671a66a2076a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8f871f279756591f9216f3de3340dfa341cff182
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851636"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432872"
 ---
 # <a name="migrate-windows-small-business-server-2008-to-windows-server-essentials"></a>Migración de Windows Small Business Server 2008 a Windows Server Essentials
 
@@ -27,11 +27,11 @@ Esta guía describe cómo migrar un dominio de Windows SBS 2008 existente a Wind
   
 > [!NOTE]
 >  Para evitar problemas durante la migración, el equipo de desarrollo del producto de Windows Server Essentials recomienda encarecidamente que lea este documento antes de comenzar la migración.  
-  
+> 
 > [!NOTE]
-
+> 
 >  Para migrar los datos del servidor a la versión más reciente de Windows Server Essentials, consulte [migrar a Windows Server Essentials](Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).  
-
+> 
 >  Para migrar los datos del servidor a la versión más reciente de Windows Server Essentials, consulte [migrar a Windows Server Essentials](../migrate/Migrate-from-Previous-Versions-to-Windows-Server-Essentials-or-Windows-Server-Essentials-Experience.md).  
 
   

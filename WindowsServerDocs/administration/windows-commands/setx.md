@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5a650fae246d71d8c1f9822dfa9ff8e96d855b4b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0b2caceed6962bef22e7d546fa3b4469c9682b39
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886576"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441256"
 ---
 # <a name="setx"></a>setx
 
@@ -38,21 +38,21 @@ setx [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <FileName>
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/s \<equipo >|Especifica el nombre o dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el nombre del equipo local.|
-|/u [\<Domain>\]<User name>|Ejecuta el script con las credenciales de cuenta de usuario especificada. El valor predeterminado es que los permisos del sistema.|
-|/p [\<Password>]|Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.|
-|\<Variable>|Especifica el nombre de la variable de entorno que desea establecer.|
-|\<valor >|Especifica el valor al que desea establecer la variable de entorno.|
-|/k \<ruta de acceso >|Especifica que la variable se establece basándose en información procedente de una clave del registro. Las p*ath* utiliza la sintaxis siguiente:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por ejemplo, podría especificar la ruta de acceso siguiente:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName`|
-|/f \<nombre de archivo >|Especifica el archivo que desea usar.|
-|/a \<X>,<Y>|Especifica las coordenadas absolutas y el desplazamiento como parámetros de búsqueda.|
-|/r \<X>,<Y> "<String>"|Especifica las coordenadas relativas y el desplazamiento de **cadena** como parámetros de búsqueda.|
-|/m|Especifica que se establezca la variable en el entorno del sistema. El valor predeterminado es el entorno local.|
-|/x|Muestra las coordenadas, omitiendo archivo la **/a**, **/r**, y **/d** opciones de línea de comandos.|
-|/d \<delimitadores >|Especifica los delimitadores, como "**,**" o "**\**" que se utilizará además de los cuatro delimitadores integrados: espacio, tabulación, ENTRAR y avance de línea. Los delimitadores válidos incluyen cualquier carácter ASCII. El número máximo de delimitadores es 15, incluidos los delimitadores integrados.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|         Parámetro          |                                                                                                                                              Descripción                                                                                                                                              |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       /s \<equipo >       |                                                                                  Especifica el nombre o dirección IP de un equipo remoto. No use barras diagonales inversas. El valor predeterminado es el nombre del equipo local.                                                                                  |
+| /u [\<Domain>\]<User name> |                                                                                           Ejecuta el script con las credenciales de cuenta de usuario especificada. El valor predeterminado es que los permisos del sistema.                                                                                            |
+|      /p [\<Password>]      |                                                                                                         Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.                                                                                                         |
+|        \<Variable>         |                                                                                                                 Especifica el nombre de la variable de entorno que desea establecer.                                                                                                                  |
+|          \<valor >          |                                                                                                                Especifica el valor al que desea establecer la variable de entorno.                                                                                                                 |
+|         /k \<ruta de acceso >         | Especifica que la variable se establece basándose en información procedente de una clave del registro. Las p*ath* utiliza la sintaxis siguiente:</br>`\\<HIVE>\<KEY>\...\<Value>`</br>Por ejemplo, podría especificar la ruta de acceso siguiente:</br>`HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation\StandardName` |
+|      /f \<nombre de archivo >       |                                                                                                                               Especifica el archivo que desea usar.                                                                                                                                |
+|        /a \<X>,<Y>         |                                                                                                                    Especifica las coordenadas absolutas y el desplazamiento como parámetros de búsqueda.                                                                                                                    |
+|   /r \<X>,<Y> "<String>"   |                                                                                                            Especifica las coordenadas relativas y el desplazamiento de **cadena** como parámetros de búsqueda.                                                                                                            |
+|             /m             |                                                                                                Especifica que se establezca la variable en el entorno del sistema. El valor predeterminado es el entorno local.                                                                                                 |
+|             /x             |                                                                                                       Muestra las coordenadas, omitiendo archivo la **/a**, **/r**, y **/d** opciones de línea de comandos.                                                                                                        |
+|      /d \<delimitadores >      |                    Especifica los delimitadores, como " **,** "o" **\\** " que se utilizará además de los cuatro delimitadores integrados: espacio, tabulación, ENTRAR y avance de línea. Los delimitadores válidos incluyen cualquier carácter ASCII. El número máximo de delimitadores es 15, incluidos los delimitadores integrados.                    |
+|             /?             |                                                                                                                                 Muestra la ayuda en el símbolo del sistema.                                                                                                                                  |
 
 ## <a name="remarks"></a>Comentarios
 
@@ -80,7 +80,7 @@ Para establecer la variable de entorno MYPATH en el entorno local para usar la r
 ```
 setx MYPATH %PATH%
 ```
-Para establecer la variable de entorno MYPATH en el entorno local para usar la ruta de búsqueda definida en la variable de entorno PATH después de reemplazar **~** con **%**, tipo:
+Para establecer la variable de entorno MYPATH en el entorno local para usar la ruta de búsqueda definida en la variable de entorno PATH después de reemplazar **~** con **%** , tipo:
 ```
 setx MYPATH ~PATH~ 
 ```

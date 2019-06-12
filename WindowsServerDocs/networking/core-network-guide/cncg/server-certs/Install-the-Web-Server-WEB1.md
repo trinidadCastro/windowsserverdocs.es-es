@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: f51c9e38-98bb-49c1-9d39-427d07021499
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ef4f10a6ac1998850758f2c9db86bfd950c1ad70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 15da16094a47a2492dc9054e0671c3709fe23362
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833286"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446456"
 ---
 # <a name="install-the-web-server-web1"></a>Instalar la WEB1 de servidor web
 
@@ -40,8 +40,8 @@ Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
 **Nota**   
 El **antes de comenzar** no se muestra la página del Asistente de las características y agregar Roles si ya ha ejecutado el agregar Roles y características Asistente y seleccionó **omitir esta página predeterminada** en ese momento.  
 
-3.  En la página **Tipo de instalación**, haga clic en **Siguiente**.  
-4.  En el **selección de servidor** página, haga clic en **siguiente**.  
-5.  En el **roles de servidor** página, seleccione **servidor Web (IIS)** y, a continuación, haga clic en **siguiente**.  
-6.  Haga clic en **Siguiente** hasta haber aceptado todas las configuraciones predeterminadas del servidor web y, a continuación, haga clic en **Instalar**.  
-7.  Compruebe que todas las instalaciones se realizaron correctamente y, a continuación, haga clic en **Cerrar**.
+3. En la página **Tipo de instalación**, haga clic en **Siguiente**.  
+4. En el **selección de servidor** página, haga clic en **siguiente**.  
+5. En el **roles de servidor** página, seleccione **servidor Web (IIS)** y, a continuación, haga clic en **siguiente**.  
+6. Haga clic en **Siguiente** hasta haber aceptado todas las configuraciones predeterminadas del servidor web y, a continuación, haga clic en **Instalar**.  
+7. Compruebe que todas las instalaciones se realizaron correctamente y, a continuación, haga clic en **Cerrar**.

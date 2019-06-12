@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b3cd60f7-d380-4712-9a78-0a8f551e1121
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0a9ef4c61794aec6c46cdad2c7111a03430972a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ef764356c5f74eb0aff15753e7f83a020c68c091
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850546"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446534"
 ---
 # <a name="core-network-components"></a>Componentes de la red principal
 
@@ -486,9 +486,9 @@ Puede usar los procedimientos de este tema para configurar el protocolo de Inter
 
 3.  En **Conexiones de red**, haga clic con el botón secundario en la conexión que desea configurar y, a continuación, haga clic en **Propiedades**. Se abre el cuadro de diálogo **Propiedades** de la conexión de red.
 
-4.  En el cuadro de diálogo **Propiedades** de la conexión de red, en **Esta conexión usa los siguientes elementos**, seleccione **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, haga clic en **Propiedades**. Se abre el cuadro de diálogo **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)**.
+4.  En el cuadro de diálogo **Propiedades** de la conexión de red, en **Esta conexión usa los siguientes elementos**, seleccione **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, haga clic en **Propiedades**. Se abre el cuadro de diálogo **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)** .
 
-5.  En **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)**, en la pestaña **General**, haga clic en **Usar la siguiente dirección IP**. En **Dirección IP**, escriba la dirección IP que desea usar.
+5.  En **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)** , en la pestaña **General**, haga clic en **Usar la siguiente dirección IP**. En **Dirección IP**, escriba la dirección IP que desea usar.
 
 6.  Presione el tabulador para colocar el cursor en **Máscara de subred**. Se escribe automáticamente un valor predeterminado para la máscara de subred. Acepte la máscara de subred predeterminada o escriba la máscara de subred que quiera usar.
 
@@ -561,11 +561,11 @@ Para poder realizar este procedimiento debe pertenecer, como mínimo, al grupo *
 
 Cuando haya finalizado correctamente la instalación, se muestra el mensaje siguiente en Windows PowerShell.
 
-    
+
     Success Restart Needed  Exit Code   Feature Result
     ------- --------------  ---------   --------------
     True    No              Success     {Active Directory Domain Services, Group P...
-    
+
 
 - En Windows PowerShell, escriba el comando siguiente, reemplazando el texto **corp.contoso.com** con el nombre de dominio y, a continuación, presione ENTRAR:
 
@@ -583,11 +583,13 @@ Install-ADDSForest -DomainName "corp.contoso.com"
 
 - Cuando aparezca el mensaje siguiente, escriba la letra **Y** y, a continuación, presione ENTRAR.
 
-    
-    El servidor de destino se configura como un controlador de dominio y reinicia una vez completada esta operación.
-    ¿Desea continuar con esta operación?
-    [Y] Sí [A] Sí a todos los [N] No [L] No a todos [S] suspende [?] Ayuda (el valor predeterminado es "Y"):
-    
+
+~~~
+The target server will be configured as a domain controller and restarted when this operation is complete.
+Do you want to continue with this operation?
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
+~~~
+
 - Si desea, puede leer los mensajes de advertencia que se muestran durante la instalación normal y correcta de AD DS y DNS. Estos mensajes son normales y no son una indicación de error de instalación.
 
 - Una vez finalizada correctamente la instalación, aparecerá un mensaje indicando que va a haber iniciado en el equipo para que pueda reiniciar el equipo. Si hace clic en **cerrar**, inmediatamente se desconecte el equipo y el equipo se reinicia. Si no hace clic en **cerrar**, el equipo se reinicia tras un período de tiempo predeterminado.
@@ -615,7 +617,7 @@ Los resultados de este comando se muestran en Windows PowerShell y deben ser sim
 
 4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haz clic en **Siguiente**.
 
-5.  En **Seleccionar roles de servidor**, en **Roles**, haga clic en **Active Directory Domain Services**. En **¿Desea agregar características requeridas para Active Directory Domain Services?**, haga clic en **Agregar características**. Haz clic en **Siguiente**.
+5.  En **Seleccionar roles de servidor**, en **Roles**, haga clic en **Active Directory Domain Services**. En **¿Desea agregar características requeridas para Active Directory Domain Services?** , haga clic en **Agregar características**. Haz clic en **Siguiente**.
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Active Directory Domain Services**, repase la información proporcionada y haga clic en **Siguiente**.
 
@@ -853,7 +855,7 @@ El requisito mínimo para llevar a cabo este procedimiento consiste en pertenece
 
 4.  En **Seleccionar servidor de destino**, asegúrese de que la opción **Seleccionar un servidor del grupo de servidores** está seleccionada. En **Grupo de servidores**, asegúrese de que el equipo local está seleccionado. Haz clic en **Siguiente**.
 
-5.  En **seleccionar Roles de servidor**, en **Roles**, seleccione **servidor DHCP**. En **¿Desea agregar características requeridas para servidor DHCP?**, haga clic en **Agregar características**. Haz clic en **Siguiente**.
+5.  En **seleccionar Roles de servidor**, en **Roles**, seleccione **servidor DHCP**. En **¿Desea agregar características requeridas para servidor DHCP?** , haga clic en **Agregar características**. Haz clic en **Siguiente**.
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Servidor DHCP**, repase la información proporcionada y haga clic en **Siguiente**.
 
@@ -902,7 +904,7 @@ El requisito mínimo para realizar este procedimiento consiste en pertenecer a *
 
 11. En **Configurar opciones DHCP**, seleccione **Configurar estas opciones ahora** y haga clic en **Siguiente**.
 
-12. En **Enrutador (puerta de enlace predeterminada)**, realice una de las acciones siguientes:
+12. En **Enrutador (puerta de enlace predeterminada)** , realice una de las acciones siguientes:
 
     -   Si no dispone de enrutadores en la red, haga clic en **Siguiente**.
 
@@ -1076,7 +1078,7 @@ Para completar este procedimiento, debe ser miembro del grupo **Admins. del domi
 
 6.  En **Seleccionar características**, haga clic en **Siguiente**. En **Servicios de acceso y directivas de redes**, repase la información proporcionada y haga clic en **Siguiente**.
 
-7.  En **Seleccionar servicios de rol**, haga clic en **Servidor de directivas de redes**.  En **¿Desea agregar características requeridas para Servidor de directivas de redes?**, haga clic en **Agregar características**. Haz clic en **Siguiente**.
+7.  En **Seleccionar servicios de rol**, haga clic en **Servidor de directivas de redes**.  En **¿Desea agregar características requeridas para Servidor de directivas de redes?** , haga clic en **Agregar características**. Haz clic en **Siguiente**.
 
 8.  En **Confirmar selecciones de instalación**, haga clic en **Reiniciar automáticamente el servidor de destino en caso necesario**. Si se le pide confirmar la selección, haga clic en **Sí** y, a continuación, haga clic en **Instalar**. La página Progreso de la instalación muestra el estado durante el proceso de instalación. Cuando se completa el proceso, el mensaje "instalación correcta en *ComputerName*" se muestra, donde *ComputerName* es el nombre del equipo en el que instaló el servidor de directivas de red. Haga clic en **Cerrar**.
 
@@ -1147,7 +1149,7 @@ Para completar este procedimiento, debe pertenecer al grupo **Administradores**.
 
 4.  En el **Seleccionar servidor de destino** página, asegúrese de que el equipo local está seleccionado y, a continuación, haga clic en **siguiente**.
 
-5.  En el **seleccionar roles de servidor** página, desplácese y seleccione **servidor Web (IIS)**. El **agregar características requeridas para servidor Web (IIS)** abre el cuadro de diálogo. Haz clic en **Agregar características requeridas**y, a continuación, haz clic en **Siguiente**.
+5.  En el **seleccionar roles de servidor** página, desplácese y seleccione **servidor Web (IIS)** . El **agregar características requeridas para servidor Web (IIS)** abre el cuadro de diálogo. Haz clic en **Agregar características requeridas**y, a continuación, haz clic en **Siguiente**.
 
 6.  Haga clic en **Siguiente** hasta haber aceptado todas las configuraciones predeterminadas del servidor web y, a continuación, haga clic en **Instalar**.
 
@@ -1250,9 +1252,9 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 4.  En **Conexiones de red**, haga clic con el botón secundario en la conexión de red que desea configurar y, a continuación, haga clic en **Propiedades**.
 
-5.  En **Propiedades de conexión de área local**, en **Esta conexión usa los siguientes elementos**, seleccione **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, haga clic en **Propiedades**. Se abre el cuadro de diálogo **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)**.
+5.  En **Propiedades de conexión de área local**, en **Esta conexión usa los siguientes elementos**, seleccione **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, haga clic en **Propiedades**. Se abre el cuadro de diálogo **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)** .
 
-6.  En **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)**, en la pestaña **General**, haga clic en **Usar la siguiente dirección IP**. En **Dirección IP**, escriba la dirección IP que desea usar.
+6.  En **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)** , en la pestaña **General**, haga clic en **Usar la siguiente dirección IP**. En **Dirección IP**, escriba la dirección IP que desea usar.
 
 7.  Presione el tabulador para colocar el cursor en **Máscara de subred**. Se escribe automáticamente un valor predeterminado para la máscara de subred. Acepte la máscara de subred predeterminada o escriba la máscara de subred que quiera usar.
 
@@ -1277,9 +1279,9 @@ El requisito mínimo para realizar este procedimiento es la pertenencia al grupo
 
 4.  En **Conexiones de red**, haga clic con el botón secundario en la conexión de red que desea configurar y, a continuación, haga clic en **Propiedades**.
 
-5.  En **Propiedades de conexión de área local**, en **Esta conexión usa los siguientes elementos**, seleccione **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, haga clic en **Propiedades**. Se abre el cuadro de diálogo **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)**.
+5.  En **Propiedades de conexión de área local**, en **Esta conexión usa los siguientes elementos**, seleccione **Protocolo de Internet versión 4 (TCP/IPv4)** y, a continuación, haga clic en **Propiedades**. Se abre el cuadro de diálogo **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)** .
 
-6.  En **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)**, en la pestaña **General**, haga clic en **Usar la siguiente dirección IP**. En **Dirección IP**, escriba la dirección IP que desea usar.
+6.  En **Propiedades de protocolo de Internet versión 4 (TCP/IPv4)** , en la pestaña **General**, haga clic en **Usar la siguiente dirección IP**. En **Dirección IP**, escriba la dirección IP que desea usar.
 
 7.  Presione el tabulador para colocar el cursor en **Máscara de subred**. Se escribe automáticamente un valor predeterminado para la máscara de subred. Acepte la máscara de subred predeterminada o escriba la máscara de subred que quiera usar.
 

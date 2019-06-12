@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a3de5088b64105e970fc38f55ecaf54382670549
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f8ad4cf5480492042cdd1e372abae652aff71b90
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843466"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437189"
 ---
 # <a name="msinfo32"></a>msinfo32
 
@@ -30,19 +30,21 @@ Se abre la herramienta información del sistema para mostrar una vista completa 
 msinfo32 [/pch] [/nfo <path>] [/report <path>] [/computer <computerName>] [/showcategories] [/category <CategoryID>] [/categories {+<CategoryID>(+<CategoryID>)|+all(-<CategoryID>)}]
 ```
 ### <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|<path>|Especifica el archivo que se puede abrir en el formato *C:\Folder1\File1.XXX*, donde *C* es la letra de unidad, *carpeta1* es la carpeta, *File1*es el nombre de archivo y *XXX* es la extensión de nombre de archivo.<br /><br />Este archivo puede ser un **.nfo**, **.xml**, **.txt**, o **.cab** archivo.|
-|<computerName>|Especifica el nombre del destino o el equipo local. Esto puede ser un nombre UNC, una dirección IP o nombre completo de equipo.|
-|<CategoryID>|Especifica el identificador del elemento de categoría. También puede obtener el identificador de categoría con **/showcategories**.|
-|/pch|Muestra la vista de historial del sistema en la herramienta información del sistema.|
-|/nfo|Guarda el archivo exportado como un **.nfo** archivo. Si el nombre del archivo que se especifica en *ruta* no termina en un **.nfo** extensión, el **.nfo** extensión se anexa automáticamente al nombre de archivo.|
-|/ Report|Guarda el archivo en *ruta* como un archivo de texto. El nombre de archivo se guarda exactamente como aparece en *ruta de acceso*. No se anexa la extensión .txt en el archivo a menos que se especifica en la ruta de acceso.|
-|/computer|inicia la herramienta información del sistema para el equipo remoto especificado. Debe tener los permisos adecuados para tener acceso al equipo remoto.|
-|/showcategories|se inicia la herramienta información del sistema con muestran los identificadores de categoría disponibles, en lugar de mostrar los nombres descriptivos o localizados. Por ejemplo, se muestra la categoría de entorno de Software como el **SWEnv** categoría.|
-|/Category|Información del sistema se inicia con la categoría especificada seleccionada. Use **/showcategories** para mostrar una lista de identificadores de categoría disponibles.|
-|/categories|Información del sistema se inicia con solo la categoría especificada o categorías que se muestran. También limita la salida a las categorías o la categoría seleccionada. Use **/showcategories** para mostrar una lista de identificadores de categoría disponibles.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+
+|    Parámetro    |                                                                                                                                 Descripción                                                                                                                                  |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     <path>      | Especifica el archivo que se puede abrir en el formato *C:\Folder1\File1.XXX*, donde *C* es la letra de unidad, *carpeta1* es la carpeta, *File1*es el nombre de archivo y *XXX* es la extensión de nombre de archivo.<br /><br />Este archivo puede ser un **.nfo**, **.xml**, **.txt**, o **.cab** archivo. |
+| <computerName>  |                                                                             Especifica el nombre del destino o el equipo local. Esto puede ser un nombre UNC, una dirección IP o nombre completo de equipo.                                                                              |
+|  <CategoryID>   |                                                                                     Especifica el identificador del elemento de categoría. También puede obtener el identificador de categoría con **/showcategories**.                                                                                      |
+|      /pch       |                                                                                                       Muestra la vista de historial del sistema en la herramienta información del sistema.                                                                                                       |
+|      /nfo       |                                     Guarda el archivo exportado como un **.nfo** archivo. Si el nombre del archivo que se especifica en *ruta* no termina en un **.nfo** extensión, el **.nfo** extensión se anexa automáticamente al nombre de archivo.                                      |
+|     / Report     |                                               Guarda el archivo en *ruta* como un archivo de texto. El nombre de archivo se guarda exactamente como aparece en *ruta de acceso*. No se anexa la extensión .txt en el archivo a menos que se especifica en la ruta de acceso.                                                |
+|    /computer    |                                                                inicia la herramienta información del sistema para el equipo remoto especificado. Debe tener los permisos adecuados para tener acceso al equipo remoto.                                                                |
+| /showcategories |                         se inicia la herramienta información del sistema con muestran los identificadores de categoría disponibles, en lugar de mostrar los nombres descriptivos o localizados. Por ejemplo, se muestra la categoría de entorno de Software como el **SWEnv** categoría.                         |
+|    /Category    |                                                                     Información del sistema se inicia con la categoría especificada seleccionada. Use **/showcategories** para mostrar una lista de identificadores de categoría disponibles.                                                                     |
+|   /categories   |                          Información del sistema se inicia con solo la categoría especificada o categorías que se muestran. También limita la salida a las categorías o la categoría seleccionada. Use **/showcategories** para mostrar una lista de identificadores de categoría disponibles.                          |
+|       /?        |                                                                                                                     Muestra la ayuda en el símbolo del sistema.                                                                                                                     |
+
 ## <a name="remarks"></a>Comentarios
 Algunas categorías de información del sistema contienen grandes cantidades de datos. Puede usar el **start /wait** comando para optimizar el rendimiento de los informes de estas categorías. Para obtener más información, consulte [información del sistema](https://technet.microsoft.com/library/cc783305(v=ws.10).aspx).
 ## <a name="BKMK_Examples"></a>Ejemplos
