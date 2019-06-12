@@ -9,12 +9,12 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f3719277c80eae2bf2a4d923146920d17546601d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 97e1fa441c5fe4fb7d23743387392732663326de
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188732"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501586"
 ---
 # <a name="ad-fs-single-sign-on-settings"></a>AD FS único inicio de sesión en la configuración
 
@@ -56,7 +56,7 @@ Habilitar o deshabilitar el inicio de sesión único persistente | ```` Set-Adfs
 
 
 ## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016 - dispositivos autenticados y Single Sign-On
-AD FS 2016 cambia el PSSO si el solicitante se autentica desde un dispositivo registrado aumentar al máximo 90 días, pero que requieren un authenticvation dentro de un período de 14 días (ventana de uso de dispositivos).
+AD FS 2016 cambia el PSSO si el solicitante se autentica desde un dispositivo registrado aumentar al máximo 90 días, pero que requiere una autenticación en un período de 14 días (ventana de uso de dispositivos).
 Después de proporcionar las credenciales por primera vez, de forma predeterminada a los usuarios con dispositivos registrados obtención inicio de sesión único para un período máximo de 90 días, suponiendo que usen el dispositivo para tener acceso a los recursos de AD FS con al menos una vez cada 14 días.  Si se esperan de 15 días después de proporcionar las credenciales, se pedirá a los usuarios las credenciales de nuevo.  
 
 Inicio de sesión único persistente está habilitada de forma predeterminada. Si está deshabilitado, no se escribirá ninguna cookie PSSO. |  
@@ -103,23 +103,23 @@ Es importante tener en cuenta que, proporcionando relativamente largos períodos
 ## <a name="psso-revocation"></a>Revocación PSSO  
  Para proteger la seguridad, AD FS rechazará cualquier cookie persistente de SSO emitido anteriormente cuando se cumplen las condiciones siguientes. Esto requerirá al usuario que proporcione sus credenciales para autenticarse con AD FS de nuevo. 
   
--   Usuario cambia la contraseña  
+- Usuario cambia la contraseña  
   
--   Configuración de inicio de sesión único persistente está deshabilitada en AD FS  
+- Configuración de inicio de sesión único persistente está deshabilitada en AD FS  
   
--   Dispositivo está deshabilitado por el administrador en caso de pérdida o robo  
+- Dispositivo está deshabilitado por el administrador en caso de pérdida o robo  
   
--   AD FS recibe una cookie persistente de SSO que se emitió para un usuario registrado, pero el usuario o el dispositivo no está registrado ya  
+- AD FS recibe una cookie persistente de SSO que se emitió para un usuario registrado, pero el usuario o el dispositivo no está registrado ya  
   
--   AD FS recibe una cookie persistente de inicio de sesión único para un usuario registrado, pero el usuario volver a registrar  
+- AD FS recibe una cookie persistente de inicio de sesión único para un usuario registrado, pero el usuario volver a registrar  
   
--   AD FS recibe una cookie persistente de SSO que se emite como resultado "mantener la sesión iniciada" pero "mantener la sesión iniciada" se deshabilita la configuración de AD FS  
+- AD FS recibe una cookie persistente de SSO que se emite como resultado "mantener la sesión iniciada" pero "mantener la sesión iniciada" se deshabilita la configuración de AD FS  
   
--   AD FS recibe una cookie persistente de SSO que se emitió para un usuario registrado pero el certificado de dispositivo se encuentra o modificado durante la autenticación  
+- AD FS recibe una cookie persistente de SSO que se emitió para un usuario registrado pero el certificado de dispositivo se encuentra o modificado durante la autenticación  
   
--   Administrador de AD FS estableció una hora límite para el inicio de sesión único persistente. Cuando esto se configura, AD FS rechazará cualquier cookie persistente de SSO emitido antes de esta hora  
+- Administrador de AD FS estableció una hora límite para el inicio de sesión único persistente. Cuando esto se configura, AD FS rechazará cualquier cookie persistente de SSO emitido antes de esta hora  
   
- Para establecer la hora límite, ejecute el siguiente cmdlet de PowerShell:  
+  Para establecer la hora límite, ejecute el siguiente cmdlet de PowerShell:  
   
 
 ``` powershell
@@ -163,7 +163,7 @@ Para resumir:
     <th>SÍ</th>
   </tr>
  <tr align="center">
-    <td>SSO = > establece el Token de actualización = ></td>
+    <td>SSO =&gt;establecer Token de actualización =&gt;</td>
     <td>8 horas</td>
     <td>N/D</td>
     <td>N/D</td>
@@ -174,7 +174,7 @@ Para resumir:
   </tr>
 
  <tr align="center">
-    <td>PSSO = > establece el Token de actualización = ></td>
+    <td>PSSO =&gt;establecer Token de actualización =&gt;</td>
     <td>N/D</td>
     <td>24 horas</td>
     <td>7 días</td>

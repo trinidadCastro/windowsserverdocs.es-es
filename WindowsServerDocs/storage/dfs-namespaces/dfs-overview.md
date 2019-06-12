@@ -6,14 +6,14 @@ ms.manager: daveba
 ms.technology: storage
 ms.topic: article
 author: jasongerend
-ms.date: 05/09/2019
+ms.date: 06/07/2019
 description: En este tema se describen los espacios de nombres DFS, que es un servicio de rol de Windows Server que te permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o varios espacios de nombres estructurados lógicamente.
-ms.openlocfilehash: 33b5a36c9f13179286a95735621272f79983231c
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: b16d8145d766cbb9b12feaaa2e5e9443813a69f2
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613185"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812580"
 ---
 # <a name="dfs-namespaces-overview"></a>Información general de Espacios de nombres DFS
 
@@ -55,11 +55,11 @@ Los servidores que ejecutan los siguientes sistemas operativos pueden alojar un 
 
 En la siguiente tabla se describen factores adicionales a tener en cuenta al elegir servidores para alojar un espacio de nombres.
 
-|Servidor que aloja espacios de nombres independientes|Servidor que aloja espacios de nombres basados en dominios|
-|---|---|
-|Debe incluir un volumen NTFS para alojar el espacio de nombres.|Debe incluir un volumen NTFS para alojar el espacio de nombres.|
-|Puede ser un servidor miembro o un controlador de dominio.|Debe ser un servidor miembro o un controlador de dominio en el dominio en el que se ha configurado el espacio de nombres. (Este requisito se aplica a cada servidor de espacio de nombres que aloja un espacio de nombres basado en un dominio determinado).|
-|Puede estar alojado por un clúster de conmutación por error para aumentar la disponibilidad del espacio de nombres.|El espacio de nombres no puede ser un recurso en clúster en un clúster de conmutación por error. Pero puedes ubicar el espacio de nombres en un servidor que también funcione como un nodo en un clúster de conmutación por error si configuras el espacio de nombres para usar solo los recursos locales en dicho servidor.|
+| Servidor que aloja espacios de nombres independientes | Servidor que aloja espacios de nombres basados en dominios |
+| ---                                   |        ---                                |
+| Debe incluir un volumen NTFS para alojar el espacio de nombres.|Debe incluir un volumen NTFS para alojar el espacio de nombres. |
+| Puede ser un servidor miembro o un controlador de dominio.|Debe ser un servidor miembro o un controlador de dominio en el dominio en el que se ha configurado el espacio de nombres. (Este requisito se aplica a cada servidor de espacio de nombres que aloja un espacio de nombres basado en un dominio determinado). |
+| Puede estar alojado por un clúster de conmutación por error para aumentar la disponibilidad del espacio de nombres.|El espacio de nombres no puede ser un recurso en clúster en un clúster de conmutación por error. Pero puedes ubicar el espacio de nombres en un servidor que también funcione como un nodo en un clúster de conmutación por error si configuras el espacio de nombres para usar solo los recursos locales en dicho servidor. |
 
 ## <a name="installing-dfs-namespaces"></a>Instalar Espacios de nombres DFS
 
@@ -89,10 +89,10 @@ Abra una sesión de Windows PowerShell con derechos de usuario con privilegios e
 Install-WindowsFeature <name>
 ```
 
-|Servicio de rol o característica|Nombre|
-|---|---|
-|Espacios de nombres DFS|`FS-DFS-Namespace`|
-|Herramientas de administración de DFS|`RSAT-DFS-Mgmt-Con`|
+| Servicio de rol o característica | Nombre |
+| ----------------------- | ---- |
+| Espacios de nombres DFS          | `FS-DFS-Namespace` |
+| Herramientas de administración de DFS    | `RSAT-DFS-Mgmt-Con` |
 
 Por ejemplo, para instalar la parte de Herramientas del sistema de archivos distribuido de la característica Herramientas de administración remota del servidor, escriba:
 
@@ -120,12 +120,12 @@ Para obtener más información sobre cómo comenzar a usar las máquinas virtual
 
 Para obtener más información relacionada, vea los siguientes recursos.
 
-|Tipo de contenido|Referencias|
-|------------------|----------------|
-|**Evaluación del producto**|[Novedades de espacios de nombres DFS y replicación DFS en Windows Server](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx)|
-|**Implementación**|[Consideraciones de escalabilidad DFS Namespace](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx)|
-|**Operaciones**|[Espacios de nombres DFS: Preguntas más frecuentes](https://technet.microsoft.com/library/ee404780.aspx)|
-|**Recursos de la comunidad**|[El foro de TechNet sobre almacenamiento y servicios de archivos](https://social.technet.microsoft.com/forums/winserverfiles/threads/)|
-|**Protocolos**|[Protocolos de Windows Server de servicios de archivo](https://msdn.microsoft.com/en-us/library/cc239318.aspx) (en desuso)|
-|**Tecnologías relacionadas**| [Clúster de conmutación por error](../../failover-clustering/failover-clustering-overview.md)|
-|**Soporte técnico**|[Windows TI soporte técnico profesional](https://www.microsoft.com/itpro/windows/support)|
+| Tipo de contenido        | Referencias |
+| ------------------  | ----------------|
+| **Evaluación del producto** | [Novedades de espacios de nombres DFS y replicación DFS en Windows Server](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
+| **Implementación**    | [Consideraciones de escalabilidad DFS Namespace](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
+| **Operaciones**    | [Espacios de nombres DFS: Preguntas más frecuentes](https://technet.microsoft.com/library/ee404780.aspx) |
+| **Recursos de la comunidad** | [El foro de TechNet sobre almacenamiento y servicios de archivos](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
+| **Protocolos**        | [Protocolos de Windows Server de servicios de archivo](https://msdn.microsoft.com/en-us/library/cc239318.aspx) (en desuso) |
+| **Tecnologías relacionadas** | [Clúster de conmutación por error](../../failover-clustering/failover-clustering-overview.md)|
+| **Soporte técnico** | [Windows TI soporte técnico profesional](https://www.microsoft.com/itpro/windows/support)|

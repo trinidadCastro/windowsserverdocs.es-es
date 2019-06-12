@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8ff9cad993b220c2ef58f19d0064691407beacf9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b7524973c50b597b8fd8798c5268746dd1d991d7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887526"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441837"
 ---
 # <a name="remote-desktop-services-terminal-services-command-reference"></a>Referencia de comandos (Terminal Services) de Servicios de Escritorio remoto
 
@@ -27,33 +27,34 @@ ms.locfileid: "59887526"
 La siguiente es una lista de herramientas de línea de comandos de servicios de escritorio remoto.
 > [!NOTE]
 > En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para descubrir las novedades de la versión más reciente, consulte [novedades nuevos servicios de escritorio remoto en Windows Server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.
-|Comando|Descripción|
-|------|--------|
-|[change](change.md)|cambia la configuración del servidor Host de sesión de escritorio remoto (Host de sesión de rd) para los inicios de sesión, las asignaciones de puertos COM y el modo de instalación.|
-|[Cambiar inicio de sesión](change-logon.md)|Habilita o deshabilita los inicios de sesión de sesiones de cliente en un servidor Host de sesión de escritorio remoto o muestra el estado de inicio de sesión actual.|
-|[cambiar puerto](change-port.md)|Muestra o cambia las asignaciones de puerto COM para que sean compatibles con las aplicaciones MS-DOS.|
-|[Cambiar usuario](change-user.md)|cambia el modo de instalación para el servidor Host de sesión de escritorio remoto.|
-|[chglogon](chglogon.md)|Habilita o deshabilita los inicios de sesión de sesiones de cliente en un servidor Host de sesión de escritorio remoto o muestra el estado de inicio de sesión actual.|
-|[chgport](chgport.md)|Muestra o cambia las asignaciones de puerto COM para que sean compatibles con las aplicaciones MS-DOS.|
-|[chgusr](chgusr.md)|cambia el modo de instalación para el servidor Host de sesión de escritorio remoto.|
-|[flattemp](flattemp.md)|Habilita o deshabilita las carpetas temporales lineales.|
-|[logoff](logoff.md)|Cierra la sesión en un servidor Host de sesión de escritorio remoto de un usuario y elimina la sesión del servidor.|
-|[msg](msg.md)|Envía un mensaje a un usuario en un servidor Host de sesión de escritorio remoto.|
-|[mstsc](mstsc.md)|crea las conexiones a servidores Host de sesión de escritorio remoto o en otros equipos remotos.|
-|[qappsrv](qappsrv.md)|Muestra una lista de todos los servidores Host de sesión de escritorio remoto en la red.|
-|[qprocess](qprocess.md)|Muestra información acerca de los procesos que se ejecutan en un servidor Host de sesión de escritorio remoto.|
-|[consulta](query.md)|Muestra información acerca de los procesos, sesiones y los servidores Host de sesión de escritorio remoto.|
-|[proceso de consulta](query-process.md)|Muestra información acerca de los procesos que se ejecutan en un servidor Host de sesión de escritorio remoto.|
-|[sesión de consulta](query-session.md)|Muestra información acerca de las sesiones en un servidor Host de sesión de escritorio remoto.|
-|[consulta termserver](query-termserver.md)|Muestra una lista de todos los servidores Host de sesión de escritorio remoto en la red.|
-|[consultar el usuario](query-user.md)|Muestra información sobre las sesiones de usuario en un servidor Host de sesión de escritorio remoto.|
-|[quser](quser.md)|Muestra información sobre las sesiones de usuario en un servidor Host de sesión de escritorio remoto.|
-|[qwinsta](qwinsta.md)|Muestra información acerca de las sesiones en un servidor Host de sesión de escritorio remoto.|
-|[rdpsign](rdpsign.md)|Le permite firmar digitalmente un archivo de protocolo de escritorio remoto (.rdp).|
-|[Restablecer sesión](reset-session.md)|Permite restablecer (eliminar) una sesión en un servidor Host de sesión de escritorio remoto.|
-|[rwinsta](rwinsta.md)|Permite restablecer (eliminar) una sesión en un servidor Host de sesión de escritorio remoto.|
-|[shadow](shadow.md)|Le permite controlar remotamente una sesión activa de otro usuario en un servidor Host de sesión de escritorio remoto.|
-|[tscon](tscon.md)|Se conecta a otra sesión de un servidor Host de sesión de escritorio remoto.|
-|[tsdiscon](tsdiscon.md)|Desconecta una sesión de un servidor Host de sesión de escritorio remoto.|
-|[tskill](tskill.md)|Finaliza un proceso que se ejecuta en una sesión en un servidor Host de sesión de escritorio remoto.|
-|[tsprof](tsprof.md)|Copia la información de configuración de usuario de servicios de escritorio remoto de un usuario a otro.|
+> 
+> |                 Comando                 |                                                      Descripción                                                       |
+> |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+> |           [change](change.md)           | cambia la configuración del servidor Host de sesión de escritorio remoto (Host de sesión de rd) para los inicios de sesión, las asignaciones de puertos COM y el modo de instalación. |
+> |     [change logon](change-logon.md)     |    Habilita o deshabilita los inicios de sesión de sesiones de cliente en un servidor Host de sesión de escritorio remoto o muestra el estado de inicio de sesión actual.     |
+> |      [change port](change-port.md)      |                   Muestra o cambia las asignaciones de puerto COM para que sean compatibles con las aplicaciones MS-DOS.                    |
+> |      [change user](change-user.md)      |                                cambia el modo de instalación para el servidor Host de sesión de escritorio remoto.                                |
+> |         [chglogon](chglogon.md)         |    Habilita o deshabilita los inicios de sesión de sesiones de cliente en un servidor Host de sesión de escritorio remoto o muestra el estado de inicio de sesión actual.     |
+> |          [chgport](chgport.md)          |                   Muestra o cambia las asignaciones de puerto COM para que sean compatibles con las aplicaciones MS-DOS.                    |
+> |           [chgusr](chgusr.md)           |                                cambia el modo de instalación para el servidor Host de sesión de escritorio remoto.                                |
+> |         [flattemp](flattemp.md)         |                                      Habilita o deshabilita las carpetas temporales lineales.                                       |
+> |           [logoff](logoff.md)           |          Cierra la sesión en un servidor Host de sesión de escritorio remoto de un usuario y elimina la sesión del servidor.          |
+> |              [msg](msg.md)              |                                Envía un mensaje a un usuario en un servidor Host de sesión de escritorio remoto.                                 |
+> |            [mstsc](mstsc.md)            |                       crea las conexiones a servidores Host de sesión de escritorio remoto o en otros equipos remotos.                        |
+> |          [qappsrv](qappsrv.md)          |                             Muestra una lista de todos los servidores Host de sesión de escritorio remoto en la red.                             |
+> |         [qprocess](qprocess.md)         |                  Muestra información acerca de los procesos que se ejecutan en un servidor Host de sesión de escritorio remoto.                   |
+> |            [query](query.md)            |                      Muestra información acerca de los procesos, sesiones y los servidores Host de sesión de escritorio remoto.                      |
+> |    [proceso de consulta](query-process.md)    |                  Muestra información acerca de los procesos que se ejecutan en un servidor Host de sesión de escritorio remoto.                   |
+> |    [sesión de consulta](query-session.md)    |                           Muestra información acerca de las sesiones en un servidor Host de sesión de escritorio remoto.                            |
+> | [consulta termserver](query-termserver.md) |                             Muestra una lista de todos los servidores Host de sesión de escritorio remoto en la red.                             |
+> |       [consultar el usuario](query-user.md)       |                         Muestra información sobre las sesiones de usuario en un servidor Host de sesión de escritorio remoto.                         |
+> |            [quser](quser.md)            |                         Muestra información sobre las sesiones de usuario en un servidor Host de sesión de escritorio remoto.                         |
+> |          [qwinsta](qwinsta.md)          |                           Muestra información acerca de las sesiones en un servidor Host de sesión de escritorio remoto.                            |
+> |          [rdpsign](rdpsign.md)          |                          Le permite firmar digitalmente un archivo de protocolo de escritorio remoto (.rdp).                          |
+> |    [reset session](reset-session.md)    |                         Permite restablecer (eliminar) una sesión en un servidor Host de sesión de escritorio remoto.                          |
+> |          [rwinsta](rwinsta.md)          |                         Permite restablecer (eliminar) una sesión en un servidor Host de sesión de escritorio remoto.                          |
+> |           [shadow](shadow.md)           |            Le permite controlar remotamente una sesión activa de otro usuario en un servidor Host de sesión de escritorio remoto.             |
+> |            [tscon](tscon.md)            |                               Se conecta a otra sesión de un servidor Host de sesión de escritorio remoto.                                |
+> |         [tsdiscon](tsdiscon.md)         |                                 Desconecta una sesión de un servidor Host de sesión de escritorio remoto.                                  |
+> |           [tskill](tskill.md)           |                           Finaliza un proceso que se ejecuta en una sesión en un servidor Host de sesión de escritorio remoto.                            |
+> |           [tsprof](tsprof.md)           |              Copia la información de configuración de usuario de servicios de escritorio remoto de un usuario a otro.               |

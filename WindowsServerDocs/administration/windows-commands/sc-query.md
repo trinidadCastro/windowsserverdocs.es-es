@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ed9ee813e3ea41f24ce5c012eecd278ef051138
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 60b6e945c4b2944f97d40cbc27694acc2915c615
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879296"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441624"
 ---
 # <a name="sc-query"></a>Consulta de SC
 
@@ -36,31 +36,31 @@ sc [<ServerName>] query [<ServiceName>] [type= {driver | service | all}] [type= 
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<ServerName>|Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe tener el formato de convención de nomenclatura Universal (UNC) (por ejemplo, \\ \\myserver). Para ejecutar SC.exe localmente, omita este parámetro.|
-|\<ServiceName>|Especifica el nombre del servicio devolviendo por la **getkeyname** operación. Esto **consulta** parámetro no se utiliza junto con otras **consulta** parámetros (distintos de *ServerName*).|
-|tipo = {driver | servicio | Todos los}|Especifica qué se va a enumerar. El valor predeterminado para el primer tipo es **servicio**.</br>-controlador: Especifica que se enumeran solo los controladores.</br>-servicio: Especifica que se enumeran solo los servicios.</br>-todos: Especifica que se enumeran los controladores y servicios.|
-|type= {own | Compartir | interact | kernel | filesys | rec | adapt}|Especifica el tipo de servicios o el tipo de controladores que hay que enumerar. El valor predeterminado para el segundo tipo es **propio**.</br>-propio: Especifica que el servicio se ejecuta en su propio proceso. No se comparte un archivo ejecutable con otros servicios.</br>-compartir: Especifica que el servicio se ejecuta como un proceso compartido. Un archivo ejecutable comparte con otros servicios.</br>-interactuar: Especifica que el servicio puede interactuar con el escritorio, recibir datos de entrada a los usuarios. Servicios interactivos se deben ejecutar bajo la cuenta LocalSystem.</br>-kernel: Especifica un controlador.</br>-filesys: Especifica un controlador de sistema de archivos.|
-|estado = {activa | inactivo | Todos los}|Especifica el estado del servicio que hay que enumerar iniciado. El estado predeterminado es **active**.</br>-active: Especifica todos los servicios activos.</br>-inactivos: Especifica todos pausado o detenido los servicios.</br>-todos: Especifica todos los servicios.|
-|bufsize = \<BufferSize >|Especifica el tamaño (en bytes) del búfer de enumeración. El tamaño de búfer predeterminado es 1.024 bytes. Debe aumentar el tamaño del búfer de enumeración cuando la presentación resultante de una consulta supera los 1024 bytes.|
-|RI = \<índiceReanudación >|Especifica el número de índice en el que la enumeración es iniciar o reanudar. El valor predeterminado es **0** (cero). Utilice este parámetro junto con el **bufsize =** parámetro cuando una consulta devuelve más información que puede mostrar el búfer de forma predeterminada.|
-|grupo = \<GroupName >|Especifica el grupo de servicio que hay que enumerar. De forma predeterminada, se enumeran todos los grupos (**grupo = ""**).|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|       Parámetro        |                                                                                                                          Descripción                                                                                                                          |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|     \<ServerName>      |                       Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe tener el formato de convención de nomenclatura Universal (UNC) (por ejemplo, \\ \\myserver). Para ejecutar SC.exe localmente, omita este parámetro.                        |
+|     \<ServiceName>     |                                      Especifica el nombre del servicio devolviendo por la **getkeyname** operación. Esto **consulta** parámetro no se utiliza junto con otras **consulta** parámetros (distintos de *ServerName*).                                      |
+|     tipo = {driver      |                                                                                                                            servicio                                                                                                                            |
+|       type= {own       |                                                                                                                             Compartir                                                                                                                             |
+|     estado = {activa     |                                                                                                                           inactivo                                                                                                                            |
+| bufsize = \<BufferSize > |                     Especifica el tamaño (en bytes) del búfer de enumeración. El tamaño de búfer predeterminado es 1.024 bytes. Debe aumentar el tamaño del búfer de enumeración cuando la presentación resultante de una consulta supera los 1024 bytes.                      |
+|   RI = \<índiceReanudación >   | Especifica el número de índice en el que la enumeración es iniciar o reanudar. El valor predeterminado es **0** (cero). Utilice este parámetro junto con el **bufsize =** parámetro cuando una consulta devuelve más información que puede mostrar el búfer de forma predeterminada. |
+|  grupo = \<GroupName >   |                                                                             Especifica el grupo de servicio que hay que enumerar. De forma predeterminada, se enumeran todos los grupos (**grupo = ""** ).                                                                              |
+|           /?           |                                                                                                             Muestra la ayuda en el símbolo del sistema.                                                                                                              |
 
 ## <a name="remarks"></a>Comentarios
 
--   Sin un espacio entre el parámetro y su valor (es decir, **tipo = propio**, no **tipo = propio**), se producirá un error en la operación.
--   El **consulta** operación muestra la siguiente información acerca de un servicio: SERVICE_NAME (nombre de la subclave del servicio en el registro), TYPE, STATE (así como los Estados que no están disponibles), WIN32_EXIT_B, SERVICE_EXIT_B, CHECKPOINT y WAIT_HINT.
--   El **tipo =** parámetro se puede utilizar dos veces en algunos casos. La primera aparición de la **tipo =** parámetro especifica si se debe consultar los servicios, controladores o ambos (**todas**). El segundo aspecto de la **tipo =** parámetro especifica un tipo de la **crear** operación para restringir aún más el ámbito de la consulta.
--   Cuando la presentación resultante de un **consulta** comando supera el tamaño del búfer de enumeración, se muestra un mensaje similar al siguiente:  
-    ```
-    Enum: more data, need 1822 bytes start resume at index 79
-    ```  
-    Para mostrar los restantes **consulta** información, vuelva a ejecutar **consulta**, estableciendo **bufsize =** al número de bytes y configuración **ri =** a la índice especificado. Por ejemplo, la salida restante se mostraría escribiendo lo siguiente en el símbolo del sistema:  
-    ```
-    sc query bufsize= 1822 ri= 79
-    ```
+- Sin un espacio entre el parámetro y su valor (es decir, **tipo = propio**, no **tipo = propio**), se producirá un error en la operación.
+- El **consulta** operación muestra la siguiente información acerca de un servicio: SERVICE_NAME (nombre de la subclave del servicio en el registro), TYPE, STATE (así como los Estados que no están disponibles), WIN32_EXIT_B, SERVICE_EXIT_B, CHECKPOINT y WAIT_HINT.
+- El **tipo =** parámetro se puede utilizar dos veces en algunos casos. La primera aparición de la **tipo =** parámetro especifica si se debe consultar los servicios, controladores o ambos (**todas**). El segundo aspecto de la **tipo =** parámetro especifica un tipo de la **crear** operación para restringir aún más el ámbito de la consulta.
+- Cuando la presentación resultante de un **consulta** comando supera el tamaño del búfer de enumeración, se muestra un mensaje similar al siguiente:  
+  ```
+  Enum: more data, need 1822 bytes start resume at index 79
+  ```  
+  Para mostrar los restantes **consulta** información, vuelva a ejecutar **consulta**, estableciendo **bufsize =** al número de bytes y configuración **ri =** a la índice especificado. Por ejemplo, la salida restante se mostraría escribiendo lo siguiente en el símbolo del sistema:  
+  ```
+  sc query bufsize= 1822 ri= 79
+  ```
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

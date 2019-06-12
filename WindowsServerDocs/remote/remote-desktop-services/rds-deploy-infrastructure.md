@@ -13,16 +13,16 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: acfdd99fa67e218f58fe650de5607f2a5ba97bf8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 5b9ce1bb87a7a2ad8819235edc412fd095bc2985
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833836"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805132"
 ---
 # <a name="deploy-your-remote-desktop-environment"></a>Implementación del entorno de Escritorio remoto
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
 Siga estos pasos para implementar los servidores de escritorio remoto en su entorno. Puede instalar los roles de servidor en equipos físicos o máquinas virtuales, dependiendo de si está creando una local, basada en la nube o entorno híbrido. 
 
@@ -30,11 +30,11 @@ Si usa máquinas virtuales para cualquiera de los servidores de servicios de esc
   
   
 1.  Agregue todos los servidores que se va a usar para servicios de escritorio remoto al administrador del servidor:  
-    1.  En el administrador del servidor, haga clic **administrar > Agregar servidores**.  
+    1.  En el administrador del servidor, haga clic en **administrar** > **agregar servidores**.  
     2.  Haz clic en **Buscar ahora**.  
     3.  Haga clic en cada servidor de la implementación (por ejemplo, Contoso Cb1, Contoso WebGw1 y Contoso-SHA-1) y haga clic en **Aceptar**.  
 2.  Crear una implementación basada en sesión para implementar los componentes de servicios de escritorio remoto:  
-    1.  En el administrador del servidor, haga clic en **administrar > Agregar Roles y características**.  
+    1.  En el administrador del servidor, haga clic en **administrar** > **agregar Roles y características**.  
     2.  Haga clic en **instalación de servicios de escritorio remoto**, **implementación estándar**, y **la implementación de escritorio basados en sesión**.  
     3.  Seleccione los servidores adecuados para el servidor de agente de conexión a Escritorio remoto, servidor de acceso Web de escritorio remoto y servidor Host de sesión de escritorio remoto (por ejemplo, Contoso Cb1, Contoso WebGw1 y Contoso-SHA-1, respectivamente).  
     4.  Seleccione **reiniciar automáticamente el servidor de destino si es necesario**y, a continuación, haga clic en **implementar**.  

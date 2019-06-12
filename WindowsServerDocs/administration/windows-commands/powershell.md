@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: c8070268fdf58fbbb71c159a7360b488222ef740
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1e2ccf6187e4480f94b30632b6f8f9f092052541
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852186"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811078"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -31,22 +31,31 @@ El **PowerShell.exe** herramienta de línea de comandos inicia una sesión de Wi
 Puede usar el **PowerShell.exe** herramienta de línea de comandos para iniciar una sesión de Windows PowerShell en una ventana del símbolo del sistema.
 
 - Para iniciar una sesión de Windows PowerShell en una ventana del símbolo del sistema, escriba `PowerShell`. Un **PS** prefijo se agrega a la línea de comandos para indicar que se encuentra en una sesión de Windows PowerShell.
-- Para iniciar una sesión con una directiva de ejecución determinada, use la **ExecutionPolicy** parámetro.  
+
+- Para iniciar una sesión con una directiva de ejecución determinada, use la **ExecutionPolicy** parámetro.
+
     ```
     PowerShell.exe -ExecutionPolicy Restricted
-    ```  
-- Para iniciar una sesión de Windows PowerShell sin los perfiles de Windows PowerShell, use el **NoProfile** parámetro.  
+    ```
+
+- Para iniciar una sesión de Windows PowerShell sin los perfiles de Windows PowerShell, use el **NoProfile** parámetro.
+
     ```
     PowerShell.exe -NoProfile
-    ```  
-- Para iniciar una sesión, use la **ExecutionPolicy** parámetro.  
+    ```
+  
+- Para iniciar una sesión, use la **ExecutionPolicy** parámetro.
+
     ```
     PowerShell.exe -ExecutionPolicy Restricted
-    ```  
+    ```
+  
 - Para ver el PowerShell.exe archivo de ayuda, use el siguiente formato de comando.  
+    
     ```
     PowerShell.exe -help, -?, /?
-    ```  
+    ```
+
 - Para finalizar una sesión de Windows PowerShell en una ventana del símbolo del sistema, escriba `exit`. Devuelve el símbolo del sistema típico.
 
 Para obtener una lista completa de la **PowerShell.exe** parámetros de línea de comandos, vea [about_PowerShell.Exe](https://go.microsoft.com/fwlink/?LinkID=113439).

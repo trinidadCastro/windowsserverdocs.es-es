@@ -12,12 +12,12 @@ ms.assetid: 47e498a6-1b71-47de-88f6-8c13c221d108
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cfc4d1ce461e1e1cbb9b99970355c4dc7241911b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c78a2a2d950c8542bcf56005eb340ec78619acdb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869696"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433089"
 ---
 # <a name="restore-a-full-system-from-an-existing-client-computer-backup"></a>Restauración completa del sistema desde una copia de seguridad existente del equipo cliente
 
@@ -128,11 +128,11 @@ ms.locfileid: "59869696"
   
 > [!NOTE]
 >   Windows Server Essentials no admite los siguientes escenarios de restauración:  
->   
->  -   Equipo basado en restaurar un disco de registro de arranque maestro (MBR) a un Unified Extensible Firmware Interface (UEFI).  
-> -   Restauración de una copia de seguridad de UEFI/GPT al BIOS.  
->   
->  Si restaura los datos en alguno de estos casos, no podrá arrancar el sistema. Además, es posible que no pueda utilizar unidades de disco duro con un tamaño superior a dos terabytes.  
+> 
+> - Restaurar un disco de registro de arranque maestro (MBR) en un equipo basado en Unified Extensible Firmware Interface UEFI.  
+>   -   Restauración de una copia de seguridad de UEFI/GPT al BIOS.  
+> 
+>   Si restaura los datos en alguno de estos casos, no podrá arrancar el sistema. Además, es posible que no pueda utilizar unidades de disco duro con un tamaño superior a dos terabytes.  
   
  **Requisitos previos:**  
   
@@ -149,46 +149,46 @@ ms.locfileid: "59869696"
   
 #### <a name="to-use-the-full-system-restore-wizard"></a>Para usar el Asistente para restauración completa del sistema  
   
-1.  Realiza una de las siguientes acciones:  
+1. Realiza una de las siguientes acciones:  
   
-    -   Windows Server Essentials: Encienda el equipo cliente que desee restaurar, inserte el medio de restauración y, a continuación, apague el equipo.  
+   -   Windows Server Essentials: Encienda el equipo cliente que desee restaurar, inserte el medio de restauración y, a continuación, apague el equipo.  
   
-         Vuelva a encender el equipo y, durante las pruebas automáticas de encendido (POST), pulse la tecla de función correspondiente para acceder al menú del dispositivo de arranque y seleccione la unidad de CD/DVD. Se iniciará el Administrador de arranque de Windows.  
+        Vuelva a encender el equipo y, durante las pruebas automáticas de encendido (POST), pulse la tecla de función correspondiente para acceder al menú del dispositivo de arranque y seleccione la unidad de CD/DVD. Se iniciará el Administrador de arranque de Windows.  
   
-    -   Windows Server Essentials: Si usa el servicio de restauración de cliente, reinicie el equipo mediante la opción **Arranque de red**. De lo contrario, inicie el equipo con la llave USB.  
+   -   Windows Server Essentials: Si usa el servicio de restauración de cliente, reinicie el equipo mediante la opción **Arranque de red**. De lo contrario, inicie el equipo con la llave USB.  
   
-         Vuelva a encender el equipo y, durante la comprobación automática durante el inicio (POST), presione la tecla de función correspondiente para tener acceso al menú del dispositivo de arranque y seleccione **Arranque de red** (o seleccione la opción de arrancar desde la llave USB). Se iniciará el Administrador de arranque de Windows.  
+        Vuelva a encender el equipo y, durante la comprobación automática durante el inicio (POST), presione la tecla de función correspondiente para tener acceso al menú del dispositivo de arranque y seleccione **Arranque de red** (o seleccione la opción de arrancar desde la llave USB). Se iniciará el Administrador de arranque de Windows.  
   
-    > [!NOTE]
-    >  Compruebe la documentación del fabricante de su equipo para determinar qué tecla de función accede al menú del dispositivo de arranque.  
+   > [!NOTE]
+   >  Compruebe la documentación del fabricante de su equipo para determinar qué tecla de función accede al menú del dispositivo de arranque.  
   
-2.  El medio de restauración de equipos contiene las opciones de arranque para 32 bits (x86) y 64 bits (x64). En el Administrador de arranque de Windows, seleccione **Restauración completa del sistema (x86)** o **Restauración completa del sistema (x64)**. Si los controladores de hardware del equipo son de 32 bits, seleccione x86 y si son de 64 bits seleccione x64. Se cargarán los archivos de Windows y el Asistente para restauración completa del sistema realizará una comprobación para asegurarse de que todos los controladores de hardware estén disponibles.  
+2. El medio de restauración de equipos contiene las opciones de arranque para 32 bits (x86) y 64 bits (x64). En el Administrador de arranque de Windows, seleccione **Restauración completa del sistema (x86)** o **Restauración completa del sistema (x64)** . Si los controladores de hardware del equipo son de 32 bits, seleccione x86 y si son de 64 bits seleccione x64. Se cargarán los archivos de Windows y el Asistente para restauración completa del sistema realizará una comprobación para asegurarse de que todos los controladores de hardware estén disponibles.  
   
-3.  En la ventana **Asistente para restauración completa del sistema** elija su idioma preferido y, a continuación, haga clic en la flecha.  
+3. En la ventana **Asistente para restauración completa del sistema** elija su idioma preferido y, a continuación, haga clic en la flecha.  
   
-4.  Seleccione el **Formato de hora y moneda**, y **Teclado o método de entrada** adecuados para el equipo. Haga clic en **Continuar**.  
+4. Seleccione el **Formato de hora y moneda**, y **Teclado o método de entrada** adecuados para el equipo. Haga clic en **Continuar**.  
   
-5.  Si faltan los controladores, se muestra el mensaje en que el proceso de restauración no puede comprobar los controladores. Haga clic en **Cerrar**y a continuación, en el cuadro de diálogo Bienvenida, seleccione **Cargar controladores**.  
+5. Si faltan los controladores, se muestra el mensaje en que el proceso de restauración no puede comprobar los controladores. Haga clic en **Cerrar**y a continuación, en el cuadro de diálogo Bienvenida, seleccione **Cargar controladores**.  
   
-    1.  En el cuadro de diálogo **Detectar hardware** , haga clic en **Instalar controladores**.  
+   1.  En el cuadro de diálogo **Detectar hardware** , haga clic en **Instalar controladores**.  
   
-    2.  Inserte la unidad flash USB que contenga los controladores de hardware y, en el cuadro de diálogo **Instalar controladores**, haga clic en **Digitalizar**.  
+   2.  Inserte la unidad flash USB que contenga los controladores de hardware y, en el cuadro de diálogo **Instalar controladores**, haga clic en **Digitalizar**.  
   
-    3.  En el cuadro de diálogo **Instalar controladores** , haga clic en **Aceptar** cuando se encuentren los controladores.  
+   3.  En el cuadro de diálogo **Instalar controladores** , haga clic en **Aceptar** cuando se encuentren los controladores.  
   
-    4.  En el cuadro de diálogo **Detectar hardware** , haga clic en **Continuar**.  
+   4.  En el cuadro de diálogo **Detectar hardware** , haga clic en **Continuar**.  
   
-6.  Si se encontraron todos los controladores durante la comprobación inicial o la instalación de los controladores importantes, haga clic en **Continuar** en la ventana **Restauración completa del sistema**.  
+6. Si se encontraron todos los controladores durante la comprobación inicial o la instalación de los controladores importantes, haga clic en **Continuar** en la ventana **Restauración completa del sistema**.  
   
-7.  En la página **Bienvenido al Asistente para restauración completa del sistema**, haga clic en **Siguiente**.  
+7. En la página **Bienvenido al Asistente para restauración completa del sistema**, haga clic en **Siguiente**.  
   
-8.  El asistente buscará el servidor.  
+8. El asistente buscará el servidor.  
   
-    1.  Si el asistente no puede encontrar el servidor, podrá repetir la búsqueda o introducir la dirección IP del servidor.  
+   1.  Si el asistente no puede encontrar el servidor, podrá repetir la búsqueda o introducir la dirección IP del servidor.  
   
-    2.  Si se detectan varios servidores, deberá seleccionar uno.  
+   2.  Si se detectan varios servidores, deberá seleccionar uno.  
   
-    3.  Si se encuentra el servidor, el **iniciar sesión en < nombreDeSuServidor\>**  se muestra la página.  
+   3.  Si se encuentra el servidor, el **iniciar sesión en < nombreDeSuServidor\>**  se muestra la página.  
   
 9. En el **iniciar sesión en < nombreDeSuServidor\>**  , escriba *< nombreDeCuentaDeAdministrador\>*  en el **nombre de usuario** cuadro de texto y el contraseña de la cuenta de administrador en el **contraseña** cuadro de texto y, a continuación, haga clic en **siguiente**.  
   
@@ -214,55 +214,55 @@ ms.locfileid: "59869696"
     > [!NOTE]
     >  Esta página no se muestra si no se admite la creación automática de particiones.  
   
-    1.  **Dejar que el asistente restaure por completo el equipo (recomendado)**. Esta opción le ayuda a garantizar que el equipo se restaure al estado anterior a la fecha y hora de la copia seleccionada. Si selecciona esta opción, pase al paso 15.  
+    1.  **Dejar que el asistente restaure por completo el equipo (recomendado)** . Esta opción le ayuda a garantizar que el equipo se restaure al estado anterior a la fecha y hora de la copia seleccionada. Si selecciona esta opción, pase al paso 15.  
   
-    2.  **Dejarme seleccionar los volúmenes a restaurar (Avanzado)**. Esta opción le permite seleccionar los volúmenes que desea restaurar y la ubicación. También puede crear particiones en el disco duro.  
+    2.  **Dejarme seleccionar los volúmenes a restaurar (Avanzado)** . Esta opción le permite seleccionar los volúmenes que desea restaurar y la ubicación. También puede crear particiones en el disco duro.  
   
 15. En la página **Seleccionar los volúmenes a restaurar** puede seleccionar los volúmenes que desee restaurar.  
   
     > [!NOTE]
     >  Esta página se muestra si hay varias unidades de disco duro en el equipo de origen de copia de seguridad, o si la unidad de destino de restauración tiene menos espacio de almacenamiento que la unidad de origen de la copia de seguridad.  
   
-    1.  El asistente intentará que los volúmenes de origen y destino coincidan. Compruebe que la asignación predeterminada sea correcta.  
+    1. El asistente intentará que los volúmenes de origen y destino coincidan. Compruebe que la asignación predeterminada sea correcta.  
   
-        1.  Para anular la selección de un volumen, haga clic en la flecha de menú de listado del volumen y seleccione **Ninguno**.  
+       1.  Para anular la selección de un volumen, haga clic en la flecha de menú de listado del volumen y seleccione **Ninguno**.  
   
-        2.  Cuando termine de seleccionar los volúmenes, haga clic en **Siguiente**.  
+       2.  Cuando termine de seleccionar los volúmenes, haga clic en **Siguiente**.  
   
-    2.  Si el volumen de origen y de destino son del mismo tamaño o el de origen es de menor tamaño que el de destino, aparecerá una flecha verde entre ambos. Si no coincide el tamaño de los volúmenes (si el volumen de origen es mayor que el destino), aparecerá una X roja entre el origen y el destino.  
+    2. Si el volumen de origen y de destino son del mismo tamaño o el de origen es de menor tamaño que el de destino, aparecerá una flecha verde entre ambos. Si no coincide el tamaño de los volúmenes (si el volumen de origen es mayor que el destino), aparecerá una X roja entre el origen y el destino.  
   
-        > [!NOTE]
-        >  Una X roja puede aparecer también si:  
-        >   
-        >  -   El tamaño de sector de disco del volumen de origen no coincide con el tamaño de sector de disco del volumen de destino. Esto puede ocurrir si se reemplaza el disco físico por un disco con un tamaño de sector diferente o si configura los espacios de almacenamiento (que pueden tener un tamaño de sector diferente al del disco físico).  
-        > -   Ha alcanzado el límite del número de clústeres. Para restaurar el volumen de origen al volumen de destino, debe formatear el volumen de destino con el mismo tamaño de clúster que el volumen de origen. Si el volumen de destino es demasiado grande, y el tamaño del clúster es demasiado pequeño, puede alcanzar el límite del número de clústeres.  
+       > [!NOTE]
+       >  Una X roja puede aparecer también si:  
+       > 
+       > - El tamaño de sector de disco del volumen de origen no coincide con el tamaño de sector de disco del volumen de destino. Esto puede ocurrir si se reemplaza el disco físico por un disco con un tamaño de sector diferente o si configura los espacios de almacenamiento (que pueden tener un tamaño de sector diferente al del disco físico).  
+       >   -   Ha alcanzado el límite del número de clústeres. Para restaurar el volumen de origen al volumen de destino, debe formatear el volumen de destino con el mismo tamaño de clúster que el volumen de origen. Si el volumen de destino es demasiado grande, y el tamaño del clúster es demasiado pequeño, puede alcanzar el límite del número de clústeres.  
   
-        1.  Haga clic en **Ejecutar Administrador de discos (avanzado)** y cree un nuevo volumen del mismo tamaño que el volumen de reserva del sistema.  
+       1. Haga clic en **Ejecutar Administrador de discos (avanzado)** y cree un nuevo volumen del mismo tamaño que el volumen de reserva del sistema.  
   
-            > [!NOTE]
-            >  Si un equipo cliente Unified Extensible Firmware Interface (UEFI) en función, debe usar el **diskpart** herramienta que inicialice el disco del sistema. Para ello, abra una ventana de comandos (presione Ctrl + Alt + Mayús durante 5 segundos en el entorno WinPE), ejecute **diskpart.exe** y, a continuación, los siguientes comandos de Diskpart:  
-            >   
-            >  1.  **DISKPART > disco lista**  
-            > 2.  **DISKPART > select disk #** *< disco\>*  
-            > 3.  **DISKPART > limpia**  
-            > 4.  **DISKPART > convertir a gpt**  
-            > 5.  **DISKPART > Crear partición efi tamaño =** *100* (donde *100* es un tamaño de partición de ejemplo en MB, debe ser el mismo que la partición original)  
-            > 6.  **DISKPART > crear el tamaño de la partición msr =** *128* (donde *128* es un tamaño de partición de ejemplo en MB, debe ser el mismo que la partición original)  
-            > 7.  **DISKPART > Salir**  
+          > [!NOTE]
+          >  Si un equipo cliente está basado en Unified Extensible Firmware Interface UEFI, debe usar el **diskpart** herramienta que inicialice el disco del sistema. Para ello, abra una ventana de comandos (presione Ctrl + Alt + Mayús durante 5 segundos en el entorno WinPE), ejecute **diskpart.exe** y, a continuación, los siguientes comandos de Diskpart:  
+          > 
+          > 1. **DISKPART > disco lista**  
+          >    2. **DISKPART > select disk #** *< disco\>*  
+          >    3. **DISKPART > limpia**  
+          >    4. **DISKPART > convertir a gpt**  
+          >    5. **DISKPART > Crear partición efi tamaño =** *100* (donde *100* es un tamaño de partición de ejemplo en MB, debe ser el mismo que la partición original)  
+          >    6. **DISKPART > crear el tamaño de la partición msr =** *128* (donde *128* es un tamaño de partición de ejemplo en MB, debe ser el mismo que la partición original)  
+          >    7. **DISKPART > Salir**  
   
-        2.  *(Opcional)* Seleccione la opción **No asignar una letra o ruta de acceso de unidad**.  
+       2. *(Opcional)* Seleccione la opción **No asignar una letra o ruta de acceso de unidad**.  
   
-        3.  Formatee el volumen como **NTFS**.  
+       3. Formatee el volumen como **NTFS**.  
   
-        4.  Una vez formateado el volumen, haga clic con el botón secundario en el volumen del sistema y, a continuación, haga clic en **Marcar partición como activa**.  
+       4. Una vez formateado el volumen, haga clic con el botón secundario en el volumen del sistema y, a continuación, haga clic en **Marcar partición como activa**.  
   
-        5.  Si necesita que otros volúmenes se correspondan con volúmenes de la copia de seguridad, repita los pasos de *ii* al *iv* para crear y activar los volúmenes y a continuación cierre **Administración de discos**.  
+       5. Si necesita que otros volúmenes se correspondan con volúmenes de la copia de seguridad, repita los pasos de *ii* al *iv* para crear y activar los volúmenes y a continuación cierre **Administración de discos**.  
   
-        6.  En la página **Seleccionar los volúmenes a restaurar**, asigne el volumen reservado del origen de copia de seguridad al volumen del mismo tamaño que creó en el paso *v*.  
+       6. En la página **Seleccionar los volúmenes a restaurar**, asigne el volumen reservado del origen de copia de seguridad al volumen del mismo tamaño que creó en el paso *v*.  
   
-        7.  Asigne el resto de los recursos con los volúmenes de destino correspondientes.  
+       7. Asigne el resto de los recursos con los volúmenes de destino correspondientes.  
   
-        8.  Haga clic en **Siguiente** para continuar con la restauración.  
+       8. Haga clic en **Siguiente** para continuar con la restauración.  
   
 16. En la página **Confirmar volúmenes a restaurar** , revise la asignación y haga clic en **Siguiente**. Si necesita realizar más cambios, haga clic en **Atrás** y repita el paso 14.  
   
@@ -274,30 +274,30 @@ ms.locfileid: "59869696"
     >  Si ha habilitado el Cifrado de unidad BitLocker antes de la restauración, deberá habilitar BitLocker manualmente cuando se reinicie el equipo.  
   
 ##  <a name="BKMK_FindDrivers"></a> ¿Dónde puedo encontrar los controladores para mi hardware?  
- Dependiendo del hardware del equipo nuevo o restaurado, es posible que el medio de restauración no incluya todos los controladores del adaptador de red y de almacenamiento necesarios para reiniciar el equipo restaurado. Debe determinar qué controladores faltan, búsquelos en el medio existente o en del sitio Web del fabricante, cópielos en una unidad flash y, a continuación, copian de la unidad flash al nuevo o restauran el equipo al ejecutar el Asistente para restauración del sistema completa.  
+ Dependiendo del hardware del equipo nuevo o restaurado, es posible que el medio de restauración no incluya todos los controladores del adaptador de red y de almacenamiento necesarios para reiniciar el equipo restaurado. Debe determinar qué controladores faltan, búsquelos en el medio existente o en el sitio Web del fabricante, cópielos en una unidad flash y, a continuación, copian de la unidad flash al nuevo o restauran el equipo al ejecutar el Asistente para restauración del sistema completa.  
   
  Al realizar una copia de seguridad de un equipo, los controladores del equipo se guardan en la copia de seguridad. Si el medio de recuperación no incluye todas las unidades que necesite, puede abrir una copia de seguridad del equipo y copiar los controladores a una unidad flash USB.  
   
 #### <a name="to-copy-drivers-from-a-backup-to-a-usb-flash-drive"></a>Para copiar controladores desde una copia de seguridad a una unidad flash USB  
   
-1.  Abra el Panel desde otro equipo.  
+1. Abra el Panel desde otro equipo.  
   
-2.  Haga clic en **Dispositivos** y, a continuación, en el equipo para el que necesite los controladores.  
+2. Haga clic en **Dispositivos** y, a continuación, en el equipo para el que necesite los controladores.  
   
-3.  Haga clic en **Restaurar archivos o carpetas para el equipo**. Se abre el Asistente de restauración de archivos o carpetas.  
+3. Haga clic en **Restaurar archivos o carpetas para el equipo**. Se abre el Asistente de restauración de archivos o carpetas.  
   
-4.  Haga clic en la copia de seguridad correcta más reciente y a continuación haga clic en **Siguiente**.  
+4. Haga clic en la copia de seguridad correcta más reciente y a continuación haga clic en **Siguiente**.  
   
-5.  Haga clic en un volumen para abrirlo y pulse **Siguiente**. Se abrirá una ventana con la lista de archivos y carpetas de la copia de seguridad.  
+5. Haga clic en un volumen para abrirlo y pulse **Siguiente**. Se abrirá una ventana con la lista de archivos y carpetas de la copia de seguridad.  
   
-6.  Introduzca la unidad flash USB en un conector USB del equipo y copie la carpeta de controladores para la restauración completa del sistema en la unidad flash USB.  
+6. Introduzca la unidad flash USB en un conector USB del equipo y copie la carpeta de controladores para la restauración completa del sistema en la unidad flash USB.  
   
-    > [!NOTE]
-    >  Es posible que necesite hacer clic en **Subir un nivel** hasta que alcance el directorio raíz del volumen del sistema.  
+   > [!NOTE]
+   >  Es posible que necesite hacer clic en **Subir un nivel** hasta que alcance el directorio raíz del volumen del sistema.  
   
-7.  Retire la unidad flash y a continuación introdúzcala en el equipo que vaya a restaurar.  
+7. Retire la unidad flash y a continuación introdúzcala en el equipo que vaya a restaurar.  
   
- Puede utilizar la unidad flash USB para instalar los controladores del equipo para completar la restauración. El Asistente de restauración de archivos o carpetas busca controladores adicionales en la unidad flash USB al usar el Asistente para restauración completa del sistema. Muy probablemente, los controladores que necesite son los del adaptador de red y el dispositivo de almacenamiento.  
+   Puede utilizar la unidad flash USB para instalar los controladores del equipo para completar la restauración. El Asistente de restauración de archivos o carpetas busca controladores adicionales en la unidad flash USB al usar el Asistente para restauración completa del sistema. Muy probablemente, los controladores que necesite son los del adaptador de red y el dispositivo de almacenamiento.  
   
 ## <a name="see-also"></a>Vea también  
   

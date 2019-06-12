@@ -1,23 +1,23 @@
 ---
 title: Información general de la Administración de discos
 description: Administración de discos es una utilidad del sistema de Windows que le permite realizar tareas avanzadas de almacenamiento, como inicializar una nueva unidad de ampliación de volúmenes, reducir las particiones y cambiar las letras de unidad.
-ms.date: 4/2/2018
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 2a467c64a3e0ff38b5165b9e001fc2deb2d92148
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3885ae6b09ad431fd1ea5e4c593e02c7bb274d9
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819286"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812549"
 ---
 # <a name="overview-of-disk-management"></a>Información general de la Administración de discos
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Administración de discos es una utilidad del sistema de Windows que le permite realizar tareas avanzadas de almacenamiento. Estas son algunas de las cosas que es buena para la administración de discos:
 
@@ -51,9 +51,9 @@ Aunque la administración de discos puede mostrar la partición del sistema EFI 
 
 ## <a name="see-also"></a>Vea también
 
-- [Administración de discos](manage-disks.md)
+- [Administrar discos](manage-disks.md)
 - [Administrar volúmenes básicos](manage-basic-volumes.md)
-- [Solución de problemas de administración de discos](troubleshooting-disk-management.md)
+- [Solución de problemas de Administración de discos](troubleshooting-disk-management.md)
 - [Opciones de recuperación de Windows 10](https://support.microsoft.com/help/12415/windows-10-recovery-options)
 - [Encontrar archivos perdidos tras la actualización a Windows 10](https://support.microsoft.com/help/12386/windows-10-find-lost-files-after-update)
 - [Copia de seguridad y restaurar los archivos](https://support.microsoft.com/help/17143/windows-10-back-up-your-files)

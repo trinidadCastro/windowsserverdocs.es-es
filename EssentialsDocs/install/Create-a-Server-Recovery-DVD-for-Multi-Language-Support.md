@@ -12,12 +12,12 @@ ms.assetid: c7da0f6c-9732-4784-9c28-7dad72c4071d
 4author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: ac547f97b48e4cd0ebf87e0935cadc2c539b4d0b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2bbc7bf7af71c671153bf7ba3356ddc08dcc38b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855006"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433636"
 ---
 # <a name="create-a-server-recovery-dvd-for-multi-language-support"></a>Crear un DVD de recuperación del servidor para compatibilidad con varios idiomas
 
@@ -30,20 +30,20 @@ ms.locfileid: "59855006"
   
  La instalación consta de dos fases: el entorno de preinstalación de Windows (Windows PE) y la configuración inicial. De forma predeterminada, la página de selección de idioma de la configuración inicial no se mostrará.  
   
--   Para una instalación administrada de forma remota por un OEM o un escenario de preinstalación de OEM, se deberá añadir una clave de registro con el comando siguiente para que se muestre la página de selección de idioma en la configuración inicial.  
+- Para una instalación administrada de forma remota por un OEM o un escenario de preinstalación de OEM, se deberá añadir una clave de registro con el comando siguiente para que se muestre la página de selección de idioma en la configuración inicial.  
   
-    ```  
-    %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
-    ```  
+  ```  
+  %systemroot%\system32\reg.exe add "HKLM\Software\microsoft\windows server\setup" /v ShowPreinstallPages /t REG_SZ /d true /f  
+  ```  
   
-    > [!IMPORTANT]
-    >  Cuando los OEM crean una imagen en el laboratorio, deben elegir el idioma **Inglés** durante la fase de configuración de Windows PE.  
+  > [!IMPORTANT]
+  >  Cuando los OEM crean una imagen en el laboratorio, deben elegir el idioma **Inglés** durante la fase de configuración de Windows PE.  
   
--   En un escenario del Kit de opciones de distribuidor (ROK), los clientes reciben un DVD y, quizás, hardware. El cliente debe poder seleccionar el idioma durante la instalación de Windows PE y la página de selección de idioma no se vuelve a mostrar durante la configuración inicial.  
+- En un escenario del Kit de opciones de distribuidor (ROK), los clientes reciben un DVD y, quizás, hardware. El cliente debe poder seleccionar el idioma durante la instalación de Windows PE y la página de selección de idioma no se vuelve a mostrar durante la configuración inicial.  
   
- Puede optar por enviar un único DVD de doble capa que contenga varios idiomas.  
+  Puede optar por enviar un único DVD de doble capa que contenga varios idiomas.  
   
- Esta sección describe cómo agregar compatibilidad con idioma al programa de instalación de Windows. La herramienta principal para personalizar Windows PE 3.0 es Administración y mantenimiento de imágenes de implementación (DISM), una herramienta de línea de comandos. Esta solución habilita los siguientes escenarios:  
+  Esta sección describe cómo agregar compatibilidad con idioma al programa de instalación de Windows. La herramienta principal para personalizar Windows PE 3.0 es Administración y mantenimiento de imágenes de implementación (DISM), una herramienta de línea de comandos. Esta solución habilita los siguientes escenarios:  
   
 1.  Creación de instalaciones multilingües  
   

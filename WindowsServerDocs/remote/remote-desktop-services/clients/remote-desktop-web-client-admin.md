@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: bf10f7f7444967247e51065bc6138fc0afd5ed1a
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 45164e9eca0873c82148aa3b7baa179a3f626dd7
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976781"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804976"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configurar el cliente de web de Escritorio remoto para los usuarios
 
@@ -216,7 +216,7 @@ En esta sección se describe cómo habilitar una conexión de cliente web a un a
     >
     > En la lista de los enlaces de certificados SSL, asegúrese de que el certificado correcto está enlazado al puerto 3392.
 
-3. Abra el registro de Windows (regedit) y nagivate a ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` y busque la clave **WebSocketURI**. El valor debe establecerse en **https://+:3392/rdp/**.
+3. Abra el registro de Windows (regedit) y nagivate a ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` y busque la clave **WebSocketURI**. El valor debe establecerse en <strong>https://+:3392/rdp/</strong>.
 
 ### <a name="setting-up-the-rd-session-host"></a>Configurar el Host de sesión de escritorio remoto
 Si el servidor Host de sesión de escritorio remoto es diferente del servidor de agente de escritorio remoto, siga estos pasos:
@@ -238,7 +238,7 @@ Si el servidor Host de sesión de escritorio remoto es diferente del servidor de
     >
     > En la lista de los enlaces de certificados SSL, asegúrese de que el certificado correcto está enlazado al puerto 3392.
 
-3. Abra el registro de Windows (regedit) y nagivate a ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` y busque la clave **WebSocketURI**. El valor debe establecerse en **https://+:3392/rdp/**.
+3. Abra el registro de Windows (regedit) y nagivate a ```HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp``` y busque la clave **WebSocketURI**. El valor debe establecerse en <https://+:3392/rdp/>.
 
 ### <a name="general-observations"></a>Observaciones generales
 

@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 103ee707c88f4e88b231a833f739cf75b6503e18
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 8d3027c419e85d1aec4b3b0308926a86bb37620d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190098"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445089"
 ---
 # <a name="add-an-attribute-store"></a>Adición de un almacén de atributos
 
@@ -33,20 +33,20 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
 ![agregar el almacén de atributos](media/Add-an-Attribute-Store/addstore1.PNG)
   
-3.  En el **agregar un almacén de atributos** diálogo cuadro, configure las siguientes propiedades para el almacén de atributos que desea agregar:  
+3. En el **agregar un almacén de atributos** diálogo cuadro, configure las siguientes propiedades para el almacén de atributos que desea agregar:  
   
-    -   En **nombre para mostrar**, escriba el nombre que desea usar para identificar el almacén de atributos.  
+   -   En **nombre para mostrar**, escriba el nombre que desea usar para identificar el almacén de atributos.  
   
-    -   En **tipo de almacén de atributo**, seleccione un tipo de almacén de atributos admitidos, bien **Active Directory**, **LDAP**, o **SQL**.  
+   -   En **tipo de almacén de atributo**, seleccione un tipo de almacén de atributos admitidos, bien **Active Directory**, **LDAP**, o **SQL**.  
   
-    -   En **cadena de conexión**, si ha seleccionado un protocolo de acceso de directorio ligero \(LDAP\) almacén o un lenguaje de consulta estructurado \(SQL\) almacenar, escriba la cadena que utiliza para establecer una conexión con el almacén de atributos. Para almacenes de atributos de Active Directory, no es necesaria; ninguna cadena de conexión por lo tanto, este campo está deshabilitado.  
+   -   En **cadena de conexión**, si ha seleccionado un protocolo de acceso de directorio ligero \(LDAP\) almacén o un lenguaje de consulta estructurado \(SQL\) almacenar, escriba la cadena que utiliza para establecer una conexión con el almacén de atributos. Para almacenes de atributos de Active Directory, no es necesaria; ninguna cadena de conexión por lo tanto, este campo está deshabilitado.  
   
-        > [!NOTE]  
-        > AD FS crea automáticamente un almacén de atributos de Active Directory de manera predeterminada.  
+       > [!NOTE]  
+       > AD FS crea automáticamente un almacén de atributos de Active Directory de manera predeterminada.  
  
 ![agregar el almacén de atributos](media/Add-an-Attribute-Store/addstore2.PNG) 
 
-4.  Haga clic en **Aceptar**.  
+4. Haga clic en **Aceptar**.  
   
 ## <a name="additional-references"></a>Referencias adicionales  
 

@@ -12,12 +12,12 @@ ms.assetid: d94de050-3300-4323-a5ea-c824cb9cecc9
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c6abc11ba2ce8a9f1d32c6a884db6332586de78b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 62f31f859ed3fd0f77baf37d3467d4702b24ad95
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822646"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432915"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-network1"></a>Unir equipos a la nueva network1 de Windows Server Essentials
 
@@ -27,13 +27,13 @@ ms.locfileid: "59822646"
  El siguiente paso del proceso de migración es unir equipos cliente a la nueva red de Windows Server Essentials y actualizar la configuración de directiva de grupo.  
   
 ### <a name="domain-joined-client-computers"></a>Equipos cliente unidos a un dominio  
- Vaya a **http://***destino-nombreDeServidor***/ conectar** e instale el software del conector de Windows Server como si fuera un nuevo equipo. El proceso de instalación es el mismo tanto para los equipos cliente unidos a un dominio como para los que no.  
+ Vaya a **http://** <em>nombre-de-servidor-de-destino</em> **/connect** e instale el software del Conector de Windows Server como si fuera un nuevo equipo. El proceso de instalación es el mismo tanto para los equipos cliente unidos a un dominio como para los que no.  
   
 > [!NOTE]
 >  El software del Conector de Windows Server no admite equipos que ejecuten Windows XP o Windows Vista. Si ya se han unido al dominio equipos con estos sistemas operativos, puede omitir este paso.  
   
 ### <a name="non-domain-joined-client-computers"></a>Equipos cliente no unidos a un dominio  
- Vaya a **http://***destino-nombreDeServidor***/ conectar** e instale el software del conector de Windows Server como si fuera un nuevo equipo. El proceso de instalación es el mismo para equipos unidos y no unidos a un dominio.  
+ Vaya a **http://** <em>nombre-de-servidor-de-destino</em> **/connect** e instale el software del Conector de Windows Server como si fuera un nuevo equipo. El proceso de instalación es el mismo para equipos unidos y no unidos a un dominio.  
   
 > [!NOTE]
 >  El software del Conector de Windows Server no admite equipos que ejecuten Windows XP o Windows Vista. Si ya se han unido al dominio equipos con estos sistemas operativos, puede omitir este paso.  

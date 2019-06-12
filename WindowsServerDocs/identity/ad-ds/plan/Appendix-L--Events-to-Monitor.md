@@ -9,12 +9,12 @@ ms.date: 07/30/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 0b937debf2d9156c50f3c0ae51fdab8bd2a2bf2d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c245c5a6b2165385096f32713a92916236cdddfb
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863486"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719699"
 ---
 # <a name="appendix-l-events-to-monitor"></a>Apéndice L: Eventos para supervisar
 
@@ -174,7 +174,7 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |4707|611|Bajo|Se quitó una confianza de un dominio|  
 |4709|N/D|Bajo|Se iniciaron los Servicios IPsec.|  
 |4710|N/D|Bajo|Se deshabilitaron los Servicios IPsec.|  
-|4711|N/D|Bajo|Puede contener: El motor PAStore aplicó la copia en caché local de la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó la directiva IPsec de almacenamiento de registro local en el equipo. El motor PAStore no se pudo aplicar la copia en caché local de la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore no se pudo aplicar la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore no se pudo aplicar la directiva IPsec de almacenamiento de registro local en el equipo. Error del motor PAStore no se pudo aplicar algunas reglas de la directiva IPsec activa en el equipo. No se pudo cargar la directiva de IPsec en el equipo de almacenamiento de directorio PAStore motor. El motor PAStore cargó directiva de IPsec en el equipo de almacenamiento de directorio. Error del motor PAStore no se pudo cargar la directiva de IPsec en el equipo de almacenamiento local. El motor PAStore cargó la directiva de IPsec en el equipo de almacenamiento local. El motor PAStore sondeo de cambios en la directiva IPsec activa y no detectó ningún cambio.|  
+|4711|N/D|Bajo|Puede contener: El motor PAStore aplicó una copia almacenada en caché localmente de la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar una copia almacenada en caché localmente de la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar algunas reglas de la directiva IPsec activa en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento de directorio en el equipo. El motor PAStore cargó la directiva IPsec de almacenamiento de directorio en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento local en el equipo. El motor PAStore cargó la directiva de IPsec en el equipo de almacenamiento local. El motor PAStore sondeo de cambios en la directiva IPsec activa y no detectó ningún cambio. |  
 |4712|N/D|Bajo|Los Servicios IPsec detectaron un error que puede ser importante.|  
 |4717|621|Bajo|Se concedió acceso de seguridad de sistema a una cuenta|  
 |4718|622|Bajo|Se quitó acceso de seguridad de sistema de una cuenta|  

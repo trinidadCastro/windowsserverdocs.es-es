@@ -9,16 +9,16 @@ ms.topic: article
 author: cosmosdarwin
 ms.date: 10/08/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 227906685d77c31587c66d1c292f20ca94775058
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d16a9ddea96760b41c6cd2e4239b9bb51c8b3b38
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881056"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501640"
 ---
 # <a name="choosing-drives-for-storage-spaces-direct"></a>Elegir las unidades para Espacios de almacenamiento directo
 
->Se aplica a: Windows Server 2016
+>Se aplica a: Windows 2019, Windows Server 2016
 
 En este tema encontrarás instrucciones sobre cómo elegir las unidades para [Espacios de almacenamiento directo](storage-spaces-direct-overview.md) para satisfacer los requisitos de rendimiento y capacidad.
 
@@ -116,7 +116,7 @@ Debe ajustar el tamaño de la memoria caché para alojar el espacio de trabajo d
 
 Te recomendamos limitar la capacidad total de almacenamiento por servidor a aproximadamente 100 terabytes (TB). Cuanta más capacidad de almacenamiento tenga un servidor, más tiempo se necesitará para resincronizar los datos tras un periodo de inactividad o reinicio, como por ejemplo tras aplicar actualizaciones de software.
 
-El tamaño máximo actual por cada grupo de almacenamiento es de 1 petabyte (PB) o 1000 terabytes.
+El tamaño máximo actual por grupo de almacenamiento es 4 petabytes (PB) (4.000 TB) para Windows Server 2019, o 1 petabyte para Windows Server 2016.
 
 ## <a name="see-also"></a>Vea también
 
@@ -124,4 +124,4 @@ El tamaño máximo actual por cada grupo de almacenamiento es de 1 petabyte (PB)
 - [Comprender la memoria caché en espacios de almacenamiento directo](understand-the-cache.md)
 - [Requisitos de hardware de almacenamiento directo en espacios](storage-spaces-direct-hardware-requirements.md)
 - [Planificación de volúmenes en espacios de almacenamiento directo](plan-volumes.md)
-- [Eficacia de almacenamiento y la tolerancia a errores](storage-spaces-fault-tolerance.md)
+- [Tolerancia a errores y eficiencia del almacenamiento](storage-spaces-fault-tolerance.md)

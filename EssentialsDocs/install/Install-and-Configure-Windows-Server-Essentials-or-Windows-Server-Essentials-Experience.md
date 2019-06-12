@@ -12,12 +12,12 @@ ms.assetid: 48ea6cd4-3955-4aaf-9236-2515a6c3e730
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8a2310b178663c6ca32a4e07d11656f1aaf2a11b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f5593c21b99f4f8cb22979d5dc201a38e54be84c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844416"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433479"
 ---
 # <a name="install-and-configure-windows-server-essentials-or-windows-server-essentials-experience"></a>Instalación y configuración de Windows Server Essentials o Experiencia con Windows Server Essentials
 
@@ -73,28 +73,28 @@ Antes de instalar el rol experiencia con Essentials o Windows Server Essentials,
   
 ##### <a name="to-configure-windows-server-essentials-on-a-physical-server"></a>Para configurar Windows Server Essentials en un servidor físico  
   
-1.  Después de la página de **bienvenida** de Windows, el **asistente para configurar Windows Server Essentials** está visible en el escritorio.  
+1. Después de la página de **bienvenida** de Windows, el **asistente para configurar Windows Server Essentials** está visible en el escritorio.  
   
-2.  Siga las instrucciones siguientes para completar el asistente:  
+2. Siga las instrucciones siguientes para completar el asistente:  
   
-    1.  En la página **Configurar Windows Server Essentials** , haga clic en **Siguiente**.  
+   1.  En la página **Configurar Windows Server Essentials** , haga clic en **Siguiente**.  
   
-    2.  En **Configuración de tiempo**, asegúrese de que la fecha, hora y zona horaria sean correctas y, a continuación, haga clic en **Siguiente**.  
+   2.  En **Configuración de tiempo**, asegúrese de que la fecha, hora y zona horaria sean correctas y, a continuación, haga clic en **Siguiente**.  
   
-    3.  En **Información de la compañía**, escriba el nombre de su compañía, por ejemplo, **Contoso,Ltd.** y, a continuación, haga clic en **Siguiente**. Si quiere, puede cambiar el nombre de dominio interno y el nombre del servidor.  
+   3.  En **Información de la compañía**, escriba el nombre de su compañía, por ejemplo, **Contoso,Ltd.** y, a continuación, haga clic en **Siguiente**. Si quiere, puede cambiar el nombre de dominio interno y el nombre del servidor.  
   
-    4.  En **Crear cuenta de administrador de red**, escriba un nuevo nombre de cuenta de administrador y una contraseña.  
+   4.  En **Crear cuenta de administrador de red**, escriba un nuevo nombre de cuenta de administrador y una contraseña.  
   
-        > [!NOTE]
-        >  No use el nombre predeterminado **Administrador** como nombre de cuenta y contraseña.  
+       > [!NOTE]
+       >  No use el nombre predeterminado **Administrador** como nombre de cuenta y contraseña.  
   
-    5.  Haga clic en **configurar**.  
+   5.  Haga clic en **configurar**.  
   
-3.  El servidor se reiniciará varias veces durante la configuración, y los inicios de sesión serán automáticos hasta que finalice la configuración. Este proceso tarda aproximadamente 20 minutos.  
+3. El servidor se reiniciará varias veces durante la configuración, y los inicios de sesión serán automáticos hasta que finalice la configuración. Este proceso tarda aproximadamente 20 minutos.  
   
-4.  En el escritorio, haga clic en el icono de escritorio para iniciar el panel del servidor. En la página **Inicio**, complete las tareas de **Introducción** en la pestaña **Instalación**.  
+4. En el escritorio, haga clic en el icono de escritorio para iniciar el panel del servidor. En la página **Inicio**, complete las tareas de **Introducción** en la pestaña **Instalación**.  
   
- Cuando se haya configurado el servidor, el servidor que ejecuta Windows Server Essentials se establecerá como un controlador de dominio.  
+   Cuando se haya configurado el servidor, el servidor que ejecuta Windows Server Essentials se establecerá como un controlador de dominio.  
   
 ###  <a name="BKMK_DeployWSERole"></a> Implementar el rol de experiencia con Windows Server Essentials en Windows Server 2012 R2 Standard y Datacenter  
  Puede usar el administrador del servidor para habilitar y configurar el rol experiencia con Windows Server Essentials en Windows Server 2012 R2 Standard o Windows Server 2012 R2 Datacenter mediante el procedimiento siguiente.  
@@ -220,6 +220,6 @@ Antes de instalar el rol experiencia con Essentials o Windows Server Essentials,
   
 -   [Novedades en Windows Server Essentials](../get-started/what-s-new.md)  
   
--   [Instalar Windows Server Essentials](Install-Windows-Server-Essentials.md)  
+-   [Instalación de Windows Server 2012 Essentials](Install-Windows-Server-Essentials.md)  
   
 -   [Introducción a Windows Server Essentials](../get-started/get-started.md)

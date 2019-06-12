@@ -6,14 +6,14 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
-ms.date: 09/10/2018
+ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 39b790f39a2bf9c6334eb2176aa2e5f2e0196c0c
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: b6e0a019297dbee557e284508a329001cac93bde
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475966"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812522"
 ---
 # <a name="deploy-primary-computers-for-folder-redirection-and-roaming-user-profiles"></a>Implementar equipos principales para redirección de carpetas y perfiles de usuario móviles
 
@@ -21,8 +21,8 @@ ms.locfileid: "65475966"
 
 Este tema describe cómo habilitar soporte de equipo principal y designar equipos principales para los usuarios. Si lo hace, le permite controlar qué equipos usan el redireccionamiento de carpetas y perfiles de usuario móviles.
 
->[!IMPORTANT]
->Al habilitar soporte de equipo principal para perfiles de usuario móviles, habilitar siempre el soporte de equipo principal para redirección de carpetas también. Esto mantiene los documentos y otros archivos de usuario fuera de los perfiles de usuario, lo que ayuda a los perfiles seguirán siendo pequeñas y tiempos de inicio de sesión rápido mantenerse.
+> [!IMPORTANT]
+> Al habilitar soporte de equipo principal para perfiles de usuario móviles, habilitar siempre el soporte de equipo principal para redirección de carpetas también. Esto mantiene los documentos y otros archivos de usuario fuera de los perfiles de usuario, lo que ayuda a los perfiles seguirán siendo pequeñas y tiempos de inicio de sesión rápido mantenerse.
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -33,15 +33,15 @@ Soporte de equipo principal tiene los siguientes requisitos:
 - El esquema de Active Directory Domain Services (AD DS) debe actualizarse para incluir adiciones de esquema de Windows Server 2012 (al instalar un controlador de dominio de Windows Server 2012 actualizará automáticamente el esquema). Para obtener información acerca de cómo actualizar el esquema de AD DS, consulte [integración de Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh472161(v=ws.11)#adprepexe-integration>) y [ejecutar Adprep.exe](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd464018(v=ws.10)>).
 - Los equipos cliente deben ejecutar Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.
 
->[!TIP]
->Aunque el soporte de equipo principal requiere la redirección de carpetas y perfiles de usuario móviles, si va a implementar estas tecnologías por primera vez, es mejor establecer la compatibilidad con el equipo principal antes de habilitar los GPO que configuración la redirección de carpetas y Los perfiles de usuario móviles. Esto evita que se copien los datos de usuario a equipos no principales antes de habilitar el soporte de equipo principal. Para obtener información de configuración, consulte [implementar la redirección de carpetas](deploy-folder-redirection.md) y [implementar perfiles de usuario móviles](deploy-roaming-user-profiles.md).
+> [!TIP]
+> Aunque el soporte de equipo principal requiere la redirección de carpetas y perfiles de usuario móviles, si va a implementar estas tecnologías por primera vez, es mejor establecer la compatibilidad con el equipo principal antes de habilitar los GPO que configuración la redirección de carpetas y Los perfiles de usuario móviles. Esto evita que se copien los datos de usuario a equipos no principales antes de habilitar el soporte de equipo principal. Para obtener información de configuración, consulte [implementar la redirección de carpetas](deploy-folder-redirection.md) y [implementar perfiles de usuario móviles](deploy-roaming-user-profiles.md).
 
 ## <a name="step-1-designate-primary-computers-for-users"></a>Paso 1: Designar equipos principales para usuarios
 
 El primer paso para implementar la compatibilidad con equipos principales es que designa los equipos principales para cada usuario. Para ello, use el centro de administración de Active Directory para obtener el nombre completo de los equipos pertinentes y, a continuación, establezca el **msDs-PrimaryComputer** atributo.
 
->[!TIP]
->Para usar Windows PowerShell para trabajar con equipos principales, consulte la entrada de blog [adentrarnos un poco más en el equipo principal de Windows 8](<https://blogs.technet.microsoft.com/askds/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer/>).
+> [!TIP]
+> Para usar Windows PowerShell para trabajar con equipos principales, consulte la entrada de blog [adentrarnos un poco más en el equipo principal de Windows 8](<https://blogs.technet.microsoft.com/askds/2012/10/23/digging-a-little-deeper-into-windows-8-primary-computer/>).
 
 Aquí le mostramos cómo especificar los equipos principales para los usuarios:
 
@@ -76,8 +76,7 @@ El siguiente paso es configurar opcionalmente la directiva de grupo para habilit
 
 Aquí le mostramos cómo habilitar equipos principales para perfiles de usuario móviles:
 
-1. Habilitar soporte de equipo principal para redirección de carpetas, si no lo ha hecho ya.
-    * Esto mantiene los documentos y otros archivos de usuario fuera de los perfiles de usuario, lo que ayuda a los perfiles seguirán siendo pequeñas y tiempos de inicio de sesión rápido mantenerse.
+1. Habilitar soporte de equipo principal para redirección de carpetas, si no lo ha hecho ya.<br>Esto mantiene los documentos y otros archivos de usuario fuera de los perfiles de usuario, lo que ayuda a los perfiles seguirán siendo pequeñas y tiempos de inicio de sesión rápido mantenerse.
 2. En administración de directivas de grupo, haga clic en el GPO que creaste (por ejemplo, **redirección de carpetas y la configuración de perfiles de usuario móviles**) y, a continuación, seleccione **editar**.
 3. Vaya a **configuración del equipo**, a continuación, **directivas**, a continuación, **plantillas administrativas**, a continuación, **sistema**y, a continuación, **Perfiles de usuario**.
 4. Haga clic en **descargar perfiles móviles en equipos principales solo,** y, a continuación, seleccione **editar**.
@@ -100,17 +99,19 @@ Aquí le mostramos cómo probar la funcionalidad principal del equipo:
 
 1. Inicie sesión en un equipo principal designado con una cuenta de usuario para el que ha habilitado la redirección de carpetas y perfiles de usuario móviles.
 2. Si la cuenta de usuario ha iniciado la sesión en el equipo anteriormente, abra una sesión de Windows PowerShell o la ventana del símbolo del sistema como administrador, escriba el siguiente comando y, a continuación, cierre la sesión cuando se le solicite para asegurarse de que la última configuración de directiva de grupo se aplica a la equipo cliente:
+
     ```PowerShell
     Gpupdate /force
     ```
-3. Abra el Explorador de archivos.
-4. Haga clic en una carpeta redirigida (por ejemplo, la carpeta Mis documentos en la biblioteca de documentos) y, a continuación, seleccione **propiedades**.
-5. Seleccione el **ubicación** pestaña y confirme que muestra la ruta de acceso del recurso compartido de archivos especificado en lugar de una ruta de acceso local. Para confirmar que el perfil de usuario está en itinerancia, abra **Panel de Control**, seleccione **sistema y seguridad**, seleccione **sistema**, seleccione **configuración avanzada del sistema** , seleccione **configuración** en los perfiles de usuario de la sección y, a continuación, busque **Roaming** en el **tipo** columna.
-6. Inicie sesión con la misma cuenta de usuario en un equipo que no se designa como equipo principal del usuario.
-7. Repita los pasos del 2 al 5, en su lugar, busca las rutas de acceso locales y un **Local** tipo de perfil.
 
->[!NOTE]
->Si se redirigieron las carpetas en un equipo antes de habilitar soporte de equipo principal, permanecerá las carpetas redirigidas a menos que se configuran las opciones siguientes en la configuración de directiva de redirección de carpeta de la carpeta: **Redirigir la carpeta a la ubicación del perfil de usuario local cuando se quita la directiva**. De forma similar, los perfiles que eran roaming previamente en un equipo determinado mostrará **Roaming** en el **tipo** columnas; sin embargo, el **estado** columna mostrará **Local**.
+3. Abra el Explorador de archivos.
+1. Haga clic en una carpeta redirigida (por ejemplo, la carpeta Mis documentos en la biblioteca de documentos) y, a continuación, seleccione **propiedades**.
+1. Seleccione el **ubicación** pestaña y confirme que muestra la ruta de acceso del recurso compartido de archivos especificado en lugar de una ruta de acceso local. Para confirmar que el perfil de usuario está en itinerancia, abra **Panel de Control**, seleccione **sistema y seguridad**, seleccione **sistema**, seleccione **configuración avanzada del sistema** , seleccione **configuración** en los perfiles de usuario de la sección y, a continuación, busque **Roaming** en el **tipo** columna.
+1. Inicie sesión con la misma cuenta de usuario en un equipo que no se designa como equipo principal del usuario.
+1. Repita los pasos del 2 al 5, en su lugar, busca las rutas de acceso locales y un **Local** tipo de perfil.
+
+> [!NOTE]
+> Si se redirigieron las carpetas en un equipo antes de habilitar soporte de equipo principal, permanecerá las carpetas redirigidas a menos que se configuran las opciones siguientes en la configuración de directiva de redirección de carpeta de la carpeta: **Redirigir la carpeta a la ubicación del perfil de usuario local cuando se quita la directiva**. De forma similar, los perfiles que eran roaming previamente en un equipo determinado mostrará **Roaming** en el **tipo** columnas; sin embargo, el **estado** columna mostrará **Local**.
 
 ## <a name="more-information"></a>Más información
 

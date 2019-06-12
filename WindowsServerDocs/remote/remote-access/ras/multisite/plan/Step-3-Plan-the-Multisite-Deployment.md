@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6024b118504a233e9e7483711df4e0a05b632d5a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 29d52e57a18bf956d135179b503255efd256b35e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869446"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446853"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>Paso 3 Plan la implementación multisitio
 
@@ -151,39 +151,39 @@ Si implementa VPN en el servidor de acceso remoto único, tenga en cuenta lo sig
 ### <a name="routing"></a>Enrutamiento  
 En una implementación multisitio enrutamiento simétrico se aplica mediante Teredo e IP-HTTPS. Cuando se implementa IPv6 en la red corporativa, tenga en cuenta lo siguiente:  
   
-1.  Los prefijos IP-HTTPS y Teredo de cada punto de entrada deben enrutarse a través de la red corporativa con su servidor de acceso remoto asociado.  
+1. Los prefijos IP-HTTPS y Teredo de cada punto de entrada deben enrutarse a través de la red corporativa con su servidor de acceso remoto asociado.  
   
-2.  Las rutas deben configurarse en la infraestructura de enrutamiento de la red corporativa.  
+2. Las rutas deben configurarse en la infraestructura de enrutamiento de la red corporativa.  
   
-3.  Para cada punto de entrada debe haber uno y tres rutas en la red interna:  
+3. Para cada punto de entrada debe haber uno y tres rutas en la red interna:  
   
-    1.  Prefijo este prefijo de IP-HTTPS se elige el administrador en el agregar un asistente de punto de entrada.  
+   1. Prefijo este prefijo de IP-HTTPS se elige el administrador en el agregar un asistente de punto de entrada.  
   
-    2.  Prefijo IPv6 de VPN (opcional). Se puede elegir este prefijo después de habilitar un punto de entrada VPN  
+   2. Prefijo IPv6 de VPN (opcional). Se puede elegir este prefijo después de habilitar un punto de entrada VPN  
   
-    3.  Prefijo de Teredo (opcional). Este prefijo solo es pertinente si el servidor de acceso remoto está configurado con dos direcciones de IPv4 públicas consecutivas en el adaptador externo. El prefijo se basa en la primera dirección IPv4 pública del par de direcciones. Por ejemplo, si las direcciones externas son:  
+   3. Prefijo de Teredo (opcional). Este prefijo solo es pertinente si el servidor de acceso remoto está configurado con dos direcciones de IPv4 públicas consecutivas en el adaptador externo. El prefijo se basa en la primera dirección IPv4 pública del par de direcciones. Por ejemplo, si las direcciones externas son:  
   
-        1.  www.xxx.yyy.zzz  
+      1. www.xxx.yyy.zzz  
   
-        2.  www.xxx.yyy.zzz+1  
+      2. www.xxx.yyy.zzz+1  
   
-        A continuación, configure el prefijo de Teredo es 2001:0:WWXX:YYZZ:: / 64, donde WWXX: YYZZ es la representación hexadecimal de la www.xxx.yyy.zzz dirección IPv4.  
+      A continuación, configure el prefijo de Teredo es 2001:0:WWXX:YYZZ:: / 64, donde WWXX: YYZZ es la representación hexadecimal de la www.xxx.yyy.zzz dirección IPv4.  
   
-        Tenga en cuenta que puede usar el siguiente script para calcular el prefijo de Teredo:  
+      Tenga en cuenta que puede usar el siguiente script para calcular el prefijo de Teredo:  
   
-        ```  
-        $TeredoIPv4 = (Get-NetTeredoConfiguration).ServerName # Use for a Remote Access server that is already configured  
-        $TeredoIPv4 = "20.0.0.1" # Use for an IPv4 address  
+      ```  
+      $TeredoIPv4 = (Get-NetTeredoConfiguration).ServerName # Use for a Remote Access server that is already configured  
+      $TeredoIPv4 = "20.0.0.1" # Use for an IPv4 address  
   
-            [Byte[]] $TeredoServerAddressBytes = `  
-            [System.Net.IPAddress]::Parse("2001::").GetAddressBytes()[0..3] + `  
-            [System.Net.IPAddress]::Parse($TeredoIPv4).GetAddressBytes() + `  
-            [System.Net.IPAddress]::Parse("::").GetAddressBytes()[0..7]  
+          [Byte[]] $TeredoServerAddressBytes = `  
+          [System.Net.IPAddress]::Parse("2001::").GetAddressBytes()[0..3] + `  
+          [System.Net.IPAddress]::Parse($TeredoIPv4).GetAddressBytes() + `  
+          [System.Net.IPAddress]::Parse("::").GetAddressBytes()[0..7]  
   
-        Write-Host "The server's Teredo prefix is $([System.Net.IPAddress]$TeredoServerAddressBytes)/64"  
-        ```  
+      Write-Host "The server's Teredo prefix is $([System.Net.IPAddress]$TeredoServerAddressBytes)/64"  
+      ```  
   
-    4.  Todas las rutas anteriores deben enrutarse a la dirección IPv6 en el adaptador interno del servidor de acceso remoto (o a la dirección IP (VIP) virtual interna para una carga equilibrada punto de entrada).  
+   4. Todas las rutas anteriores deben enrutarse a la dirección IPv6 en el adaptador interno del servidor de acceso remoto (o a la dirección IP (VIP) virtual interna para una carga equilibrada punto de entrada).  
   
 > [!NOTE]  
 > Cuando se implementa IPv6 en la red corporativa y la administración del servidor de acceso remoto se realizó de forma remota a través de DirectAccess, las rutas para el Teredo y prefijos IP-HTTPS de todos los demás puntos de entrada deben agregarse a cada servidor de acceso remoto para que sea el tráfico reenviar a la red interna.  

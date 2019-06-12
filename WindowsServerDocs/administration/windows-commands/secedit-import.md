@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f24cf173d1bacd70d92b325bfe7b342d0589a490
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 305b915a0d7e8ab152b072ff131854f56b9b0386
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874286"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441536"
 ---
 # <a name="seceditimport"></a>secedit:import
 
@@ -30,7 +30,6 @@ Importa la configuración de seguridad almacenada en un archivo inf que se haya 
 
 ```
 Secedit /import /db <database file name> /cfg <configuration file name> [/overwrite] [/areas [securitypolicy | group_mgmt | user_rights | regkeys | filestore | services]] [/log <log file name>] [/quiet]
-
 ```
 
 ### <a name="parameters"></a>Parámetros
@@ -49,7 +48,7 @@ Secedit /import /db <database file name> /cfg <configuration file name> [/overwr
 
 Antes de importar un archivo .inf en otro equipo, ejecute el /generaterollback secedit de comando en la base de datos en que se realizará la importación y secedit / validar en el archivo de importación para comprobar su integridad.
 
-Si la ruta de acceso del archivo de registro no se proporciona, el archivo de registro predeterminado (*systemroot*\Documents and Settings\*UserAccount*\My Documents\Security\Logs\*DatabaseName*. se usa el registro).
+Si la ruta de acceso del archivo de registro no se proporciona, el archivo de registro predeterminado (*systemroot*\Documents and Settings\*UserAccount<em>\My Documents\Security\Logs\*DatabaseName</em>. se usa el registro).
 
 En Windows Server 2008, `Secedit /refreshpolicy` se ha reemplazado por `gpupdate`. Para obtener información sobre cómo actualizar la configuración de seguridad, consulte [Gpupdate](gpupdate.md).
 

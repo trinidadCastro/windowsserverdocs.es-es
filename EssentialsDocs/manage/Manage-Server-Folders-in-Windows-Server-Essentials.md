@@ -12,12 +12,12 @@ ms.assetid: 090cf1b8-7b9b-48b9-ae85-b98477b8d7cc
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e1f3640f21b95acafa850b2204cd52f9c0f324e5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0c46d19f4f172786e0ffe7f3b9dd7ac1d8f4fcf0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859336"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433205"
 ---
 # <a name="manage-server-folders-in-windows-server-essentials"></a>Administrar carpetas de servidor en Windows Server Essentials
 
@@ -42,23 +42,23 @@ ms.locfileid: "59859336"
 ##  <a name="BKMK_2"></a> Administrar carpetas de servidor mediante el panel  
  Windows Server Essentials permite realizar tareas administrativas comunes desde el panel. La página **Carpetas del servidor** del panel contiene los elementos siguientes:  
   
--   Una lista de las carpetas del servidor, que muestra:  
+- Una lista de las carpetas del servidor, que muestra:  
   
-    -   El nombre de la carpeta.  
+  -   El nombre de la carpeta.  
   
-    -   Una descripción de la carpeta.  
+  -   Una descripción de la carpeta.  
   
-    -   La ubicación de la carpeta.  
+  -   La ubicación de la carpeta.  
   
-    -   La cantidad de espacio libre disponible en la ubicación de la carpeta.  
+  -   La cantidad de espacio libre disponible en la ubicación de la carpeta.  
   
-    -   Breve información de estado sobre las tareas que se realizan en la carpeta. El campo **Estado** está en blanco si el estado de la carpeta es correcto y no se está ejecutando ninguna tarea.  
+  -   Breve información de estado sobre las tareas que se realizan en la carpeta. El campo **Estado** está en blanco si el estado de la carpeta es correcto y no se está ejecutando ninguna tarea.  
   
--   Un panel de detalles que puede proporcionar información adicional sobre una carpeta seleccionada.  
+- Un panel de detalles que puede proporcionar información adicional sobre una carpeta seleccionada.  
   
--   Un panel de tareas que incluye un conjunto de tareas administrativas relacionadas con la carpeta.  
+- Un panel de tareas que incluye un conjunto de tareas administrativas relacionadas con la carpeta.  
   
- La tabla siguiente describe las distintas tareas de carpeta del servidor que están disponibles en el panel de Windows Server Essentials. La mayoría de las tareas son específicas de una carpeta y solo pueden verse cuando se selecciona una carpeta en la lista.  
+  La tabla siguiente describe las distintas tareas de carpeta del servidor que están disponibles en el panel de Windows Server Essentials. La mayoría de las tareas son específicas de una carpeta y solo pueden verse cuando se selecciona una carpeta en la lista.  
   
 ### <a name="server-folder-tasks-on-the-dashboard"></a>Tareas de carpeta del servidor en el panel  
   
@@ -77,13 +77,13 @@ ms.locfileid: "59859336"
   
  Si almacena los archivos en las carpetas del servidor, podrá:  
   
--   Hacer una copia de seguridad de la carpeta del servidor con las características de copia de seguridad y restauración del servidor, como medida de protección frente a un error generalizado de este.  
+- Hacer una copia de seguridad de la carpeta del servidor con las características de copia de seguridad y restauración del servidor, como medida de protección frente a un error generalizado de este.  
   
--   Acceder a archivos que están almacenados en la carpeta del servidor desde cualquier ubicación con un explorador de Internet, a través del acceso Web remoto o las aplicaciones Mi servidor para Windows Phone y Windows 8.  
+- Acceder a archivos que están almacenados en la carpeta del servidor desde cualquier ubicación con un explorador de Internet, a través del acceso Web remoto o las aplicaciones Mi servidor para Windows Phone y Windows 8.  
   
--   Acceder a la nueva carpeta del servidor desde cualquier equipo cliente.  
+- Acceder a la nueva carpeta del servidor desde cualquier equipo cliente.  
   
- Puede administrar el acceso a cualquier carpeta del servidor desde el propio servidor, con las tareas de la pestaña **Carpetas del servidor** del panel. La tabla siguiente enumera las carpetas del servidor que se crean de forma predeterminada al instalar Windows Server Essentials o activar el streaming en el servidor.  
+  Puede administrar el acceso a cualquier carpeta del servidor desde el propio servidor, con las tareas de la pestaña **Carpetas del servidor** del panel. La tabla siguiente enumera las carpetas del servidor que se crean de forma predeterminada al instalar Windows Server Essentials o activar el streaming en el servidor.  
   
 |Nombre de la carpeta del servidor|Descripción|  
 |------------------------|-----------------|  
@@ -188,43 +188,43 @@ ms.locfileid: "59859336"
   
  Con el asistente para mover carpetas, si es preciso puede **mover una carpeta del servidor** que se encuentre en el servidor principal, ejecute Windows Server Essentials y se muestre en la pestaña **Carpetas del servidor** del panel, a otra unidad de disco duro. Puede mover una carpeta del servidor a otra dirección de ubicación de la unidad de disco duro si:  
   
--   La unidad de disco duro de datos ya no tiene suficiente espacio para almacenar los datos.  
+- La unidad de disco duro de datos ya no tiene suficiente espacio para almacenar los datos.  
   
--   Desea cambiar la ubicación de almacenamiento predeterminada. Para aumentar la velocidad, considere la posibilidad de mover la carpeta del servidor, aunque no incluya datos.  
+- Desea cambiar la ubicación de almacenamiento predeterminada. Para aumentar la velocidad, considere la posibilidad de mover la carpeta del servidor, aunque no incluya datos.  
   
--   Desea quitar la unidad de disco duro existente sin perder las carpetas del servidor que contiene.  
+- Desea quitar la unidad de disco duro existente sin perder las carpetas del servidor que contiene.  
   
- Antes de mover la carpeta, asegúrese de lo siguiente:  
+  Antes de mover la carpeta, asegúrese de lo siguiente:  
   
--   Ha creado una copia de seguridad del servidor.  
+- Ha creado una copia de seguridad del servidor.  
   
--   Todas las copias de seguridad de equipos clientes están detenidas y no en curso, si va a mover la carpeta de copias de seguridad de equipos cliente. Al mover la carpeta de copia de seguridad de equipos cliente, el servidor no podrá crear ninguna de estas copias hasta que la carpeta se transfiera por completo.  
+- Todas las copias de seguridad de equipos clientes están detenidas y no en curso, si va a mover la carpeta de copias de seguridad de equipos cliente. Al mover la carpeta de copia de seguridad de equipos cliente, el servidor no podrá crear ninguna de estas copias hasta que la carpeta se transfiera por completo.  
   
--   Asegúrese de que el servidor no está realizando ninguna operación crítica del sistema. Se recomienda completar todas las actualizaciones o copias de seguridad en curso antes de mover una carpeta. De lo contrario, el proceso tardará más.  
+- Asegúrese de que el servidor no está realizando ninguna operación crítica del sistema. Se recomienda completar todas las actualizaciones o copias de seguridad en curso antes de mover una carpeta. De lo contrario, el proceso tardará más.  
   
--   Ninguno de los archivos de la carpeta que desea mover está en uso. No podrá acceder a la carpeta del servidor mientras se esté moviendo.  
+- Ninguno de los archivos de la carpeta que desea mover está en uso. No podrá acceder a la carpeta del servidor mientras se esté moviendo.  
   
- No se podrá mover una carpeta de NTFS a ReFS si los archivos de las carpetas del servidor implementan las siguientes tecnologías:  
+  No se podrá mover una carpeta de NTFS a ReFS si los archivos de las carpetas del servidor implementan las siguientes tecnologías:  
   
--   Secuencias de datos alternativas  
+- Secuencias de datos alternativas  
   
--   Id. de objeto  
+- Id. de objeto  
   
--   Nombres cortos (nombres 8.3)  
+- Nombres cortos (nombres 8.3)  
   
--   Compresión  
+- Compresión  
   
--   Cifrado EFS  
+- Cifrado EFS  
   
--   TxF, NTFS transaccional (implementado en Windows Vista)  
+- TxF, NTFS transaccional (implementado en Windows Vista)  
   
--   Archivos dispersos  
+- Archivos dispersos  
   
--   Vínculos físicos  
+- Vínculos físicos  
   
--   Atributos extendidos  
+- Atributos extendidos  
   
--   Cuotas  
+- Cuotas  
   
 ###  <a name="BKMK_6"></a> Dónde agregar o mover una carpeta del servidor  
  Por lo general, debe agregar o mover las carpetas del servidor a unidades de disco duro con la máxima cantidad de espacio libre. Si es posible, evite agregar o mover una carpeta compartida a la unidad de sistema (por ejemplo, C:). Puede consumir el espacio de unidad necesario para el sistema operativo y sus actualizaciones. Además, evite agregar o mover las carpetas del servidor a una unidad de disco duro externa, porque pueden desconectarse fácilmente y, en ese caso, no podría acceder a los archivos. En su lugar, se recomienda crear la carpeta en una unidad interna.  
@@ -254,17 +254,17 @@ ms.locfileid: "59859336"
   
 ##### <a name="to-add-a-server-folder"></a>Para agregar una carpeta del servidor:  
   
-1.  Abra el Panel.  
+1. Abra el Panel.  
   
-2.  Haga clic en **ALMACENAMIENTO** y después, en **Carpetas del servidor**.  
+2. Haga clic en **ALMACENAMIENTO** y después, en **Carpetas del servidor**.  
   
-3.  En **Tareas de carpeta del servidor**, haga clic en **Agregar una carpeta**. Así se inicia el asistente para agregar una carpeta.  
+3. En **Tareas de carpeta del servidor**, haga clic en **Agregar una carpeta**. Así se inicia el asistente para agregar una carpeta.  
   
-4.  Siga las instrucciones para completar el asistente.  
+4. Siga las instrucciones para completar el asistente.  
   
-    > [!NOTE]
-    >  -   Si busca una carpeta concreta con el botón Examinar para especificar la ubicación de la carpeta del servidor, la carpeta que ha visitado se agregará como carpeta del servidor.  
-    > -   Puede definir a qué carpetas del servidor se podrá acceder a través del acceso Web remoto. Para más información, consulte [Administrar el acceso a las carpetas del servidor](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_1).  
+   > [!NOTE]
+   > - Si busca una carpeta concreta con el botón Examinar para especificar la ubicación de la carpeta del servidor, la carpeta que ha visitado se agregará como carpeta del servidor.  
+   >   -   Puede definir a qué carpetas del servidor se podrá acceder a través del acceso Web remoto. Para más información, consulte [Administrar el acceso a las carpetas del servidor](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_1).  
   
 ##### <a name="to-move-a-server-folder"></a>Para mover una carpeta del servidor:  
   
@@ -294,13 +294,13 @@ ms.locfileid: "59859336"
 ##  <a name="BKMK_Shadow"></a> Información sobre las instantáneas  
  Con las instantáneas de servidor, los usuarios pueden ver carpetas y archivos compartidos tal como eran en determinados momentos del pasado. El acceso a las versiones anteriores de los archivos (o instantáneas) es útil porque los usuarios pueden:  
   
-1.  **Recuperar archivos eliminados de forma accidental**. Si elimina accidentalmente un archivo, puede abrir una versión anterior y copiarla en una ubicación segura.  
+1. **Recuperar archivos eliminados de forma accidental**. Si elimina accidentalmente un archivo, puede abrir una versión anterior y copiarla en una ubicación segura.  
   
-2.  **Recuperar un archivo tras sobrescribirlo accidentalmente**. Si sobrescribe accidentalmente un archivo, puede recuperar una versión anterior de este. (El número de versiones dependerá de la cantidad de instantáneas que haya creado).  
+2. **Recuperar un archivo tras sobrescribirlo accidentalmente**. Si sobrescribe accidentalmente un archivo, puede recuperar una versión anterior de este. (El número de versiones dependerá de la cantidad de instantáneas que haya creado).  
   
-3.  **Comparar versiones de un archivo mientras trabaja**. Puede usar las versiones anteriores si desea comprobar qué ha cambiado entre las versiones de un archivo.  
+3. **Comparar versiones de un archivo mientras trabaja**. Puede usar las versiones anteriores si desea comprobar qué ha cambiado entre las versiones de un archivo.  
   
- Para usar las instantáneas, desde un equipo cliente, haga clic en una carpeta compartida del servidor y seleccione **Restaurar la versión anterior**.  
+   Para usar las instantáneas, desde un equipo cliente, haga clic en una carpeta compartida del servidor y seleccione **Restaurar la versión anterior**.  
   
 ## <a name="see-also"></a>Vea también  
   

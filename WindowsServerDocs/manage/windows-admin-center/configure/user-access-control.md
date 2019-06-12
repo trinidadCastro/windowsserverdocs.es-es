@@ -5,23 +5,23 @@ ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
-ms.date: 03/19/2019
+ms.date: 06/07/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: b19657f4ce1a1a2cfb94f7234f07805ba0abd42c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 96d09b25ddb2f473fb4fe22c0cf716bfcf8becaa
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850576"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811927"
 ---
 # <a name="configure-user-access-control-and-permissions"></a>Configurar permisos y Control de acceso de usuario
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+> Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
 
 Si no lo ha hecho ya, familiarícese con el [opciones de control de acceso de usuario en Windows Admin Center](../plan/user-access-options.md)
 
->[!NOTE]
+> [!NOTE]
 > Acceso de grupo basado en Windows Admin Center no se admite en entornos de grupo de trabajo o dominios que no son de confianza.
 
 ## <a name="gateway-access-role-definitions"></a>Definiciones de roles de acceso de puerta de enlace
@@ -41,7 +41,7 @@ De forma predeterminada, los grupos de equipo local o de Active Directory se usa
 
 En el **usuarios** ficha puede controlar quién puede acceder a Windows Admin Center como un usuario de la puerta de enlace. De forma predeterminada, y si no especifica un grupo de seguridad, cualquier usuario que tiene acceso a la dirección URL de puerta de enlace tenga acceso. Una vez que agregue uno o varios grupos de seguridad a la lista de usuarios, el acceso está restringido a los miembros de esos grupos.
 
-Si no usa un dominio de Active Directory en su entorno, el acceso se controla mediante el ```Users``` y ```Administrators``` grupos locales en la máquina de puerta de enlace de Windows Admin Center.
+Si no usa un dominio de Active Directory en su entorno, el acceso se controla mediante el `Users` y `Administrators` grupos locales en la máquina de puerta de enlace de Windows Admin Center.
 
 ### <a name="smartcard-authentication"></a>Autenticación de tarjeta inteligente
 
@@ -143,6 +143,7 @@ Configuración de RBAC consta de 2 pasos: habilitar la compatibilidad en los equ
 
 El modelo de implementación de máquina única es ideal para entornos simples con solo unos pocos equipos para administrar.
 Configuración de una máquina con compatibilidad para control de acceso basado en roles dará como resultado los siguientes cambios:
+
 -   Módulos de PowerShell con las funciones requeridas por Windows Admin Center se instalará en la unidad del sistema, en `C:\Program Files\WindowsPowerShell\Modules`. Todos los módulos se iniciarán con **Microsoft.Sme**
 -   Desired State Configuration se ejecutará una única configuración para configurar un punto de conexión de Just Enough Administration en la máquina, denominada **Microsoft.Sme.PowerShell**. Este punto de conexión define los 3 roles usando Windows Admin Center y se ejecutará como administrador local temporal cuando un usuario se conecta a él.
 -   se crearán 3 nuevos grupos locales a los usuarios que tengan concedidos acceso a los roles de control:
@@ -191,6 +192,7 @@ Invoke-RestMethod -Uri "https://localhost:6516/api/nodes/all/features/jea/endpoi
 ```
 
 Al expandir el archivo zip, verá la siguiente estructura de carpetas:
+
 - InstallJeaFeatures.ps1
 - JustEnoughAdministration (directorio)
 - Módulos (directorio)
@@ -198,6 +200,7 @@ Al expandir el archivo zip, verá la siguiente estructura de carpetas:
     - WindowsAdminCenter.Jea (directory)
 
 Para configurar la compatibilidad con el control de acceso basado en roles en un nodo, debe realizar las siguientes acciones:
+
 1.  Copie el JustEnoughAdministration, Microsoft.SME. \*y los módulos de WindowsAdminCenter.Jea en el directorio de módulo de PowerShell en el equipo de destino. Normalmente, esto se encuentra en `C:\Program Files\WindowsPowerShell\Modules`.
 2.  Actualización **InstallJeaFeature.ps1** archivo para que coincida con la configuración deseada para el punto de conexión RBAC.
 3.  Ejecute InstallJeaFeature.ps1 para compilar el recurso de DSC.

@@ -12,12 +12,12 @@ ms.assetid: e143df43-e227-4629-a4ab-9f70d9bf6e84
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e5a8db44f80c333d589e0c1664174c394701f90d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fa6ab8e2108e569b7cef6bfbf0d20af4fa31016d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835686"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432570"
 ---
 # <a name="step-4-move-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Paso 4: Mover la configuración y los datos al servidor de destino para la migración a Windows Server Essentials
 
@@ -46,41 +46,41 @@ Esta sección proporciona información sobre cómo migrar los datos y la configu
   
 #### <a name="to-copy-data-from-the-source-server-to-the-destination-server"></a>Para copiar los datos del servidor de origen en el servidor de destino:  
   
-1.  Inicie sesión en el servidor de destino como administrador de dominio y abra una ventana del símbolo del sistema o un símbolo del sistema de Windows PowerShell.  
+1. Inicie sesión en el servidor de destino como administrador de dominio y abra una ventana del símbolo del sistema o un símbolo del sistema de Windows PowerShell.  
   
-2.  Si utiliza la ventana del símbolo del sistema, escriba el siguiente comando y presione ENTRAR:  
+2. Si utiliza la ventana del símbolo del sistema, escriba el siguiente comando y presione ENTRAR:  
   
-    `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
+   `robocopy \\<SourceServerName>\<SharedSourceFolderName> "<PathOfTheDestination>\<SharedDestinationFolderName>" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`
   
-     Donde:  
+    Donde:  
   
-    -   \<Nombreservidororigen\> es el nombre del servidor de origen  
+   - \<Nombreservidororigen\> es el nombre del servidor de origen  
   
-    -   \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen  
+   - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen  
   
-    -   \<RutaDeAccesoDeDestino\> es la ruta de acceso absoluta donde desea mover la carpeta  
+   - \<RutaDeAccesoDeDestino\> es la ruta de acceso absoluta donde desea mover la carpeta  
   
-    -   \<Nombredecarpetadedestinocompartida\> es la carpeta del servidor de destino al que se copiarán los datos  
+   - \<Nombredecarpetadedestinocompartida\> es la carpeta del servidor de destino al que se copiarán los datos  
   
      Por ejemplo,  `robocopy \\sourceserver\MyData "d:\ServerFolders\MyData" /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt`.  
   
-3.  Si usa Windows PowerShell, escriba el siguiente comando y presione ENTRAR.  
+3. Si usa Windows PowerShell, escriba el siguiente comando y presione ENTRAR.  
   
-     `Add-Wssfolder  Path \ -Name  -KeepPermission`  
+    `Add-Wssfolder  Path \ -Name  -KeepPermission`  
   
-4.  Repita este proceso para cada una de las carpetas compartidas que desee migrar desde el servidor de origen.  
+4. Repita este proceso para cada una de las carpetas compartidas que desee migrar desde el servidor de origen.  
   
 ##  <a name="BKMK_Network"></a> Configurar la red  
   
 #### <a name="to-configure-the-network"></a>Para configurar la red  
   
-1.  En el servidor de destino, abra el panel.  
+1. En el servidor de destino, abra el panel.  
   
-2.  En la **página principal** del panel, haga clic en **Instalación** y en **Configurar Acceso desde cualquier lugar**, y elija la opción **Haga clic para configurar el Acceso desde cualquier lugar**.  
+2. En la **página principal** del panel, haga clic en **Instalación** y en **Configurar Acceso desde cualquier lugar**, y elija la opción **Haga clic para configurar el Acceso desde cualquier lugar**.  
   
-3.  Aparecerá el Asistente para configurar el Acceso desde cualquier lugar. Siga las instrucciones del asistente para configurar el enrutador y los nombres de dominio.  
+3. Aparecerá el Asistente para configurar el Acceso desde cualquier lugar. Siga las instrucciones del asistente para configurar el enrutador y los nombres de dominio.  
   
- Si el enrutador no es compatible con el entorno UPnP, o si este se ha deshabilitado, puede aparecer un icono de advertencia amarillo junto al nombre del enrutador. Asegúrese de que los puertos siguientes están abiertos y dirigidos a la dirección IP del servidor de destino:  
+   Si el enrutador no es compatible con el entorno UPnP, o si este se ha deshabilitado, puede aparecer un icono de advertencia amarillo junto al nombre del enrutador. Asegúrese de que los puertos siguientes están abiertos y dirigidos a la dirección IP del servidor de destino:  
   
 -   Puerto 80: Tráfico web HTTP  
   

@@ -9,13 +9,13 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.date: 05/29/2019
-ms.openlocfilehash: e76b7862549814d5453717c40cec45e341141d7a
-ms.sourcegitcommit: 8eea7aadbe94f5d4635c4ffedc6a831558733cc0
+ms.date: 06/07/2019
+ms.openlocfilehash: 747258601aa05885d209aacde6947eb7b05e8121
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66308603"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810795"
 ---
 # <a name="server-core-app-compatibility-feature-on-demand-fod"></a>Característica de compatibilidad de aplicación de Server Core a petición (FOD)
 
@@ -64,7 +64,7 @@ Componentes del sistema operativo que están disponibles como parte de los DU de
 
         -   Para ejecutar el Administrador de clústeres de conmutación por error, escriba **cluadmin** en el símbolo del sistema.
 
-Los servidores que ejecutan Windows Server, versión 1903 y versiones posterior también admiten los siguientes componentes:
+Los servidores que ejecutan Windows Server, versión 1903 y versiones posterior también admiten los siguientes componentes (cuando se usa la misma versión de los DU de compatibilidad de aplicación):
 
 - Hyper-V Manager (virtmgmt.msc)
 - Programador de tareas (taskschd.msc)
@@ -104,7 +104,7 @@ Los DU de compatibilidad de la aplicación solo puede instalarse en Server Core.
 
 8. Una vez finalizada la barra de progreso, reinicie el sistema operativo.
 
- Para obtener más información acerca de los comandos DISM, vea [usar DISM en Windows PowerShell](https://docs.microsoft.com/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)
+   Para obtener más información acerca de los comandos DISM, vea [usar DISM en Windows PowerShell](https://docs.microsoft.com/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)
 
 ## <a name="to-optionally-add-internet-explorer-11-to-server-core-after-adding-the-server-core-app-compatibility-fod"></a>Para agregar, opcionalmente, Internet Explorer 11 a Server Core (después de agregar los DU de compatibilidad de Server Core App)
 
@@ -148,8 +148,8 @@ Los DU de compatibilidad de la aplicación solo puede instalarse en Server Core.
 
 - Como un punto general de orientación, al instalar aplicaciones en Server Core (con o sin estos paquetes opcionales) a veces es necesario usar las instrucciones y opciones de instalación silenciosa. 
     
- - Por ejemplo, SQL Server Management Studio para SQL Server 2016 y SQL Server 2017 se puede instalar en Server Core y es totalmente funcional cuando los DU de compatibilidad de la aplicación está presente.  Ver, [instalar SQL Server desde el símbolo del sistema](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt?view=sql-server-2017).
- - Si SQL Server Management Studio no es el deseado, no es necesario instalar los DU de compatibilidad de Server Core App.  Ver, [instalar SQL Server en Server Core](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-on-server-core?view=sql-server-2017).
+  - Por ejemplo, SQL Server Management Studio para SQL Server 2016 y SQL Server 2017 se puede instalar en Server Core y es totalmente funcional cuando los DU de compatibilidad de la aplicación está presente.  Ver, [instalar SQL Server desde el símbolo del sistema](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-from-the-command-prompt?view=sql-server-2017).
+  - Si SQL Server Management Studio no es el deseado, no es necesario instalar los DU de compatibilidad de Server Core App.  Ver, [instalar SQL Server en Server Core](https://docs.microsoft.com/sql/database-engine/install-windows/install-sql-server-on-server-core?view=sql-server-2017).
 
 ## <a name="a-idadd-capabilities-adding-capabilities-and-optional-packages-to-an-offline-wim-server-core-image"></a><a id="add-capabilities"> Agregar funciones y paquetes opcionales a una imagen de Server Core de WIM sin conexión
 

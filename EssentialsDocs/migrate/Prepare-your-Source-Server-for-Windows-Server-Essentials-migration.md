@@ -12,12 +12,12 @@ ms.assetid: f5861ae9-77cb-4d37-b4c5-8f0757213385
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 929c7506c78667646e429c4f28df7e5642c575ab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93f5bdb615adf56b81a1c4c93f802f6da4e48c1b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841156"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432613"
 ---
 # <a name="prepare-your-source-server-for-windows-server-essentials-migration1"></a>Preparar el servidor de origen para Windows Server Essentials migration1
 
@@ -89,20 +89,20 @@ Complete los siguientes pasos previos para asegurarse de que los datos y la conf
   
 ###### <a name="to-use-the-windows-server-solutions-bpa-to-analyze-your-source-server"></a>Para usar el BPA de Soluciones de Windows Server para analizar el servidor de origen  
   
-1.  Descargue e instale el [Windows Server Solutions Best Practices Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=15556) en Microsoft Download Center.  
+1. Descargue e instale el [Windows Server Solutions Best Practices Analyzer](https://www.microsoft.com/en-us/download/details.aspx?id=15556) en Microsoft Download Center.  
   
-2.  Una vez completada la descarga, haga clic en **Inicio**, seleccione **Todos los programas** y haga clic en **Herramienta Analizador de procedimientos recomendados de SBS**.  
+2. Una vez completada la descarga, haga clic en **Inicio**, seleccione **Todos los programas** y haga clic en **Herramienta Analizador de procedimientos recomendados de SBS**.  
   
-    > [!NOTE]
-    >  Compruebe si hay actualizaciones antes de examinar el servidor.  
+   > [!NOTE]
+   >  Compruebe si hay actualizaciones antes de examinar el servidor.  
   
-3.  En el panel de navegación, haga clic en **Iniciar un análisis**.  
+3. En el panel de navegación, haga clic en **Iniciar un análisis**.  
   
-4.  En el panel de detalles, escriba la etiqueta del análisis y, a continuación, haga clic en **Iniciar análisis**. La etiqueta del análisis es el nombre del informe de análisis, por ejemplo **SBS BPA Scan 1Jul2012**.  
+4. En el panel de detalles, escriba la etiqueta del análisis y, a continuación, haga clic en **Iniciar análisis**. La etiqueta del análisis es el nombre del informe de análisis, por ejemplo **SBS BPA Scan 1Jul2012**.  
   
-5.  Cuando termine el análisis, haga clic en **Ver un informe de este análisis de Best Practices**.  
+5. Cuando termine el análisis, haga clic en **Ver un informe de este análisis de Best Practices**.  
   
- Después de recopilar información sobre la configuración del servidor, el BPA de Soluciones de Windows Server comprueba que la información sea correcta y, a continuación, presenta a los administradores una lista de información y problemas ordenados por gravedad. En la lista se describe cada problema y se propone una recomendación o posible solución. Hay disponibles tres tipos de informes:  
+   Después de recopilar información sobre la configuración del servidor, el BPA de Soluciones de Windows Server comprueba que la información sea correcta y, a continuación, presenta a los administradores una lista de información y problemas ordenados por gravedad. En la lista se describe cada problema y se propone una recomendación o posible solución. Hay disponibles tres tipos de informes:  
   
 |Tipo de informe|Descripción|  
 |-----------------|-----------------|  
@@ -140,25 +140,25 @@ Complete los siguientes pasos previos para asegurarse de que los datos y la conf
   
 ##### <a name="to-verify-that-you-have-the-appropriate-permissions-to-run-the-tool-on-the-source-server"></a>Comprobar que tiene los permisos adecuados para ejecutar la herramienta en el servidor de origen  
   
-1.  En el servidor de origen, haga clic en **Inicio**, **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**.  
+1. En el servidor de origen, haga clic en **Inicio**, **Herramientas administrativas** y, a continuación, haga clic en **Usuarios y equipos de Active Directory**.  
   
-2.  En el árbol de consola, expanda el dominio y, a continuación, haga clic en **Usuarios**.  
+2. En el árbol de consola, expanda el dominio y, a continuación, haga clic en **Usuarios**.  
   
-3.  Haga clic con el botón secundario en la cuenta de administrador que está usando para la migración y, a continuación, en **Propiedades**.  
+3. Haga clic con el botón secundario en la cuenta de administrador que está usando para la migración y, a continuación, en **Propiedades**.  
   
-4.  Haga clic en la ficha **Miembro de** y, a continuación, compruebe que se muestren los grupos Administradores de empresas, Administradores de esquema y Administradores de dominio en el cuadro de texto **Miembro de**.  
+4. Haga clic en la ficha **Miembro de** y, a continuación, compruebe que se muestren los grupos Administradores de empresas, Administradores de esquema y Administradores de dominio en el cuadro de texto **Miembro de**.  
   
-5.  Si no se muestran, haga clic en **Agregar** y agregue cada grupo que no se encuentre en la lista.  
+5. Si no se muestran, haga clic en **Agregar** y agregue cada grupo que no se encuentre en la lista.  
   
-    > [!NOTE]
-    >  -   Es posible que reciba un error de permiso si no se ha iniciado el servicio Netlogon.  
-    > -   Debe cerrar la sesión y volver a iniciar sesión en el servidor para que se apliquen los cambios.  
+   > [!NOTE]
+   > - Es posible que reciba un error de permiso si no se ha iniciado el servicio Netlogon.  
+   >   -   Debe cerrar la sesión y volver a iniciar sesión en el servidor para que se apliquen los cambios.  
   
-     Puede utilizar la versión más reciente del Agente de Windows Update para asegurarse de que el proceso de actualización de servidor funciona correctamente.  
+    Puede utilizar la versión más reciente del Agente de Windows Update para asegurarse de que el proceso de actualización de servidor funciona correctamente.  
   
- Puede utilizar la versión más reciente del Agente de Windows Update para asegurarse de que el proceso de actualización de servidor funciona correctamente.  
+   Puede utilizar la versión más reciente del Agente de Windows Update para asegurarse de que el proceso de actualización de servidor funciona correctamente.  
   
- Antes de que puede instalar el agente de Windows Update en el servidor de origen, primero debe instalar Windows PowerShell 2.0 y Microsoft Baseline Configuration Analyzer 2.0.  
+   Antes de que puede instalar el agente de Windows Update en el servidor de origen, primero debe instalar Windows PowerShell 2.0 y Microsoft Baseline Configuration Analyzer 2.0.  
   
 -   Para descargar e instalar Windows PowerShell 2.0, consulte [artículo 968929](https://go.microsoft.com/fwlink/p/?LinkId=241483) en Microsoft Knowledge Base.  
   
@@ -168,34 +168,34 @@ Complete los siguientes pasos previos para asegurarse de que los datos y la conf
   
 ##### <a name="to-install-and-run-the-migration-preparation-tool-on-the-source-server"></a>Para instalar la herramienta de preparación de la migración en el servidor de origen  
   
-1.  Inserte el DVD1 de Windows Server Essentials en la unidad de DVD en el servidor de origen.  
+1. Inserte el DVD1 de Windows Server Essentials en la unidad de DVD en el servidor de origen.  
   
-2.  Abra el Explorador de Windows, vaya a la carpeta **\support\tools** del DVD y, a continuación, haga doble clic en el archivo **sourcetool.msi**.  
+2. Abra el Explorador de Windows, vaya a la carpeta **\support\tools** del DVD y, a continuación, haga doble clic en el archivo **sourcetool.msi**.  
   
-    > [!NOTE]
-    >  -   Si la herramienta de preparación de la migración ya está instalada en el servidor, ejecute la herramienta desde el menú **Inicio**.  
-    > -   Para asegurarse de estar preparado para la mejor experiencia de migración posible, se recomienda siempre la instalación de la actualización más reciente.  
+   > [!NOTE]
+   > - Si la herramienta de preparación de la migración ya está instalada en el servidor, ejecute la herramienta desde el menú **Inicio**.  
+   >   -   Para asegurarse de estar preparado para la mejor experiencia de migración posible, se recomienda siempre la instalación de la actualización más reciente.  
   
-     El asistente instala la herramienta de preparación de la migración en el servidor de origen. Una vez finalizada la instalación, la herramienta de preparación de la migración se ejecuta automáticamente e instala las actualizaciones más recientes.  
+    El asistente instala la herramienta de preparación de la migración en el servidor de origen. Una vez finalizada la instalación, la herramienta de preparación de la migración se ejecuta automáticamente e instala las actualizaciones más recientes.  
   
-3.  En la Herramienta de preparación de la migración, haga clic en **Tengo una copia de seguridad y estoy listo para continuar** y luego en **Siguiente**.  
+3. En la Herramienta de preparación de la migración, haga clic en **Tengo una copia de seguridad y estoy listo para continuar** y luego en **Siguiente**.  
   
-    > [!WARNING]
-    >  Si recibe un mensaje de error relacionado con una instalación de la revisión, vea el método 2: Cambiar el nombre de la carpeta Catroot2 en [artículo 822798](https://go.microsoft.com/FWLink/p/?LinkID=118672) en Microsoft Knowledge Base.  
+   > [!WARNING]
+   >  Si recibe un mensaje de error relacionado con una instalación de la revisión, vea el método 2: Cambiar el nombre de la carpeta Catroot2 en [artículo 822798](https://go.microsoft.com/FWLink/p/?LinkID=118672) en Microsoft Knowledge Base.  
   
-     La herramienta de preparación de la migración prepara el dominio de origen para la migración ampliando el esquema de Active Directory. Una vez finalizada la tarea, haga clic en **Siguiente** para continuar.  
+    La herramienta de preparación de la migración prepara el dominio de origen para la migración ampliando el esquema de Active Directory. Una vez finalizada la tarea, haga clic en **Siguiente** para continuar.  
   
-4.  Después de preparar el dominio de origen, la herramienta de preparación de la migración analiza el servidor de origen para identificar dos tipos de problemas potenciales.  
+4. Después de preparar el dominio de origen, la herramienta de preparación de la migración analiza el servidor de origen para identificar dos tipos de problemas potenciales.  
   
-    -   **Errores** problemas encontrados en el servidor de origen que se puede bloquear la migración o provocar errores en la migración. Siga las instrucciones que aparecen en el mensaje de error para solucionar los problemas y, a continuación, haga clic en **Detectar de nuevo**.  
+   - **Errores** problemas encontrados en el servidor de origen que se puede bloquear la migración o provocar errores en la migración. Siga las instrucciones que aparecen en el mensaje de error para solucionar los problemas y, a continuación, haga clic en **Detectar de nuevo**.  
   
-    -   **Advertencias** problemas encontrados en el servidor de origen que pueden causar problemas funcionales durante la migración. Siga las instrucciones que aparecen en el mensaje de error para solucionar los problemas antes de continuar la migración.  
+   - **Advertencias** problemas encontrados en el servidor de origen que pueden causar problemas funcionales durante la migración. Siga las instrucciones que aparecen en el mensaje de error para solucionar los problemas antes de continuar la migración.  
   
      Después de corregir o reconocer todos los problemas, haga clic en **Siguiente**.  
   
-5.  En la herramienta de preparación de la migración, haga clic en **Finalizar**.  
+5. En la herramienta de preparación de la migración, haga clic en **Finalizar**.  
   
-6.  Cuando finalice la herramienta de preparación de la migración, se le pedirá que reinicie el servidor de origen antes de comenzar la migración a Windows Server Essentials.  
+6. Cuando finalice la herramienta de preparación de la migración, se le pedirá que reinicie el servidor de origen antes de comenzar la migración a Windows Server Essentials.  
   
 > [!NOTE]
 >  Debe completar una ejecución correcta de la herramienta de preparación de la migración del servidor de origen en dos semanas tras la instalación de Windows Server Essentials en el servidor de destino. En caso contrario, se bloqueará la instalación de Windows Server Essentials en el servidor de destino. Si esto ocurre, vuelva a instalar la herramienta de preparación de la migración en el servidor de origen.  

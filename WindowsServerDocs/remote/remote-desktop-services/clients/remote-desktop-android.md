@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 41f8b511453143bb6239de6cdb369ebe8a307aec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: b4b188eb8148b2f4e5c6672b07884af8fdcd0c60
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885856"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446742"
 ---
 # <a name="get-started-with-remote-desktop-on-android"></a>Introducción a Escritorio remoto en Android
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 Puede usar al cliente de escritorio remoto para Android para trabajar con equipos de escritorio y aplicaciones de Windows directamente desde un dispositivo Android.
 
@@ -51,22 +51,22 @@ Para crear una conexión a Escritorio remoto:
 
 1. En la derivación de centro de conexiones **+** y, a continuación, puntee en **Desktop**.
 2. Escriba la siguiente información para el equipo que desea conectarse:
-  - **Nombre de equipo** : el nombre del equipo. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede anexar información del puerto en el nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
-  - **Nombre de usuario** : el nombre de usuario a usar para obtener acceso al equipo remoto. Puede usar los siguientes formatos: *user_name*, *DOMINIO\nombre_de_usuario*, o *user_name@domain.com*. También puede especificar si se le solicitará un nombre de usuario y una contraseña.
+   - **Nombre de equipo** : el nombre del equipo. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede anexar información del puerto en el nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
+   - **Nombre de usuario** : el nombre de usuario a usar para obtener acceso al equipo remoto. Puede usar los siguientes formatos: *user_name*, *DOMINIO\nombre_de_usuario*, o <em>user_name@domain.com</em>. También puede especificar si se le solicitará un nombre de usuario y una contraseña.
 3. También puede establecer las siguientes opciones adicionales:
-  - **Nombre descriptivo** : un nombre fácil de recordar para el equipo se conecta a. Puede utilizar cualquier cadena, pero si no especifica un nombre descriptivo, se muestra el nombre de equipo.
-  - **Puerta de enlace** : puerta de enlace de escritorio remoto el que desea usar para conectarse a escritorios virtuales, programas RemoteApp y escritorios basados en una red corporativa interna. Obtenga la información acerca de la puerta de enlace desde el administrador del sistema.
+   - **Nombre descriptivo** : un nombre fácil de recordar para el equipo se conecta a. Puede utilizar cualquier cadena, pero si no especifica un nombre descriptivo, se muestra el nombre de equipo.
+   - **Puerta de enlace** : puerta de enlace de escritorio remoto el que desea usar para conectarse a escritorios virtuales, programas RemoteApp y escritorios basados en una red corporativa interna. Obtenga la información acerca de la puerta de enlace desde el administrador del sistema.
     ¿Debe configurar una puerta de enlace de escritorio remoto?
-  - **Sonido** : seleccione el dispositivo que se usará para audio durante la sesión remota. Puede reproducir un sonido en los dispositivos locales, el dispositivo remoto, o no en absoluto.
-  - **Personalizar la resolución de pantalla** -establecer una resolución personalizada para una conexión si habilita esta configuración. Cuando se aplica fuera de la resolución que ha definido en la configuración global de la aplicación.
-  - **Intercambiar botones del mouse** : Use esta opción para cambiar el primario del mouse funciones del botón para el botón secundario del mouse. (Esto es especialmente útil si el equipo remoto está configurado para un usuario zurdo pero usa un mouse diestro).
-  - **Conectarse a la sesión de administrador** -Utilice esta opción para conectarse a una sesión de consola para administrar un servidor de Windows.
-  - **Redirigir a almacenamiento local** : el almacenamiento local se monta como un sistema de archivos remoto en el equipo remoto.
+   - **Sonido** : seleccione el dispositivo que se usará para audio durante la sesión remota. Puede reproducir un sonido en los dispositivos locales, el dispositivo remoto, o no en absoluto.
+   - **Personalizar la resolución de pantalla** -establecer una resolución personalizada para una conexión si habilita esta configuración. Cuando se aplica fuera de la resolución que ha definido en la configuración global de la aplicación.
+   - **Intercambiar botones del mouse** : Use esta opción para cambiar el primario del mouse funciones del botón para el botón secundario del mouse. (Esto es especialmente útil si el equipo remoto está configurado para un usuario zurdo pero usa un mouse diestro).
+   - **Conectarse a la sesión de administrador** -Utilice esta opción para conectarse a una sesión de consola para administrar un servidor de Windows.
+   - **Redirigir a almacenamiento local** : el almacenamiento local se monta como un sistema de archivos remoto en el equipo remoto.
 4. Pulse **guardar**.
 
-¿Es necesario modificar esta configuración? Puntee en el menú de desbordamiento (**...** ) junto al nombre del escritorio y, a continuación, en **editar**.
+¿Es necesario modificar esta configuración? Puntee en el menú de desbordamiento ( **...** ) junto al nombre del escritorio y, a continuación, en **editar**.
 
-¿Desea eliminar la conexión? De nuevo, puntee en el menú de desbordamiento (**...** ) y, a continuación, puntee en **quitar**.
+¿Desea eliminar la conexión? De nuevo, puntee en el menú de desbordamiento ( **...** ) y, a continuación, puntee en **quitar**.
 
 >[!TIP]
 > Si se produce el error 0xf07 acerca de una contraseña incorrecta ("se puede conectar con el equipo remoto porque ha caducado la contraseña asociada con la cuenta de usuario"), cambiar la contraseña y vuelva a intentarlo.
@@ -88,7 +88,7 @@ Los recursos remotos se mostrará en el centro de conexiones.
 
 Para eliminar los recursos remotos:
 
-1. En el centro de conexiones, pulse el menú de desbordamiento (**...** ) junto al recurso remoto.
+1. En el centro de conexiones, pulse el menú de desbordamiento ( **...** ) junto al recurso remoto.
 2. Pulse **quitar**.
 3. Confirme la eliminación.
 
@@ -115,8 +115,8 @@ Para configurar una puerta de enlace:
 
 1. En el centro de conexiones, pulse **configuración > puertas de enlace**. Pulse **+** para agregar una nueva puerta de enlace.
 2. Escriba la siguiente información:
-  - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
-  - **Nombre de usuario** -el nombre de usuario y la contraseña que se usará para la puerta de enlace de escritorio remoto que se conecta. También puede seleccionar **usar cuenta de usuario de escritorio** para usar las mismas credenciales que se utilizaron para la conexión a escritorio remota.
+   - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
+   - **Nombre de usuario** -el nombre de usuario y la contraseña que se usará para la puerta de enlace de escritorio remoto que se conecta. También puede seleccionar **usar cuenta de usuario de escritorio** para usar las mismas credenciales que se utilizaron para la conexión a escritorio remota.
 
 ## <a name="manage-your-user-accounts"></a>Administrar las cuentas de usuario
 
@@ -153,13 +153,13 @@ Puede establecer la configuración global siguiente en el cliente de Android:
 - **Acercar el zoom** -le permite usar gestos de acercar para alejar. Si la aplicación usa a través de escritorio remoto es compatible con multitoque (introducida en Windows 8), Active esta configuración **desactivar**.
 - **Ayuda a mejorar el escritorio remoto** -envía datos anónimos a Microsoft. Usamos estos datos para mejorar al cliente. Puede obtener más información sobre cómo se tratan estos datos anónimos, privados, consulte el [declaración de privacidad de cliente de escritorio remoto](https://www.microsoft.com/privacystatement/RemoteApp/Default.aspx). De forma predeterminada, esta configuración es **en**.
 - **Mostrar** -hay dos configuraciones globales para su presentación:
-   - **Orientación** -establece la orientación preferida (horizontal o vertical) para la sesión. 
-   >[!NOTE]
-   > Si se conecta a un equipo que ejecuta Windows 8 o una versión anterior de Windows, la sesión no escala correctamente. La mejor opción es desconectar desde el equipo y, a continuación, volver a conectar en la orientación que desee utilizar. Una mejor opción consiste en actualizar el equipo al menos Windows 8.1.
+  - **Orientación** -establece la orientación preferida (horizontal o vertical) para la sesión. 
+    >[!NOTE]
+    > Si se conecta a un equipo que ejecuta Windows 8 o una versión anterior de Windows, la sesión no escala correctamente. La mejor opción es desconectar desde el equipo y, a continuación, volver a conectar en la orientación que desee utilizar. Una mejor opción consiste en actualizar el equipo al menos Windows 8.1.
 
-   - **Resolución** -establece la resolución que desee utilizar para las conexiones de escritorio globalmente. Si ya ha establecido una resolución personalizada para una aplicación individual o una conexión, esta opción no cambia.
-   >[!NOTE]
-   >Cuando se cambia una de las opciones de presentación, solo se aplican a las nuevas conexiones desde ese punto en. Para ver el cambio en una sesión ya está conectado para desconectar y, a continuación, volver a conectar.
+  - **Resolución** -establece la resolución que desee utilizar para las conexiones de escritorio globalmente. Si ya ha establecido una resolución personalizada para una aplicación individual o una conexión, esta opción no cambia.
+    >[!NOTE]
+    >Cuando se cambia una de las opciones de presentación, solo se aplican a las nuevas conexiones desde ese punto en. Para ver el cambio en una sesión ya está conectado para desconectar y, a continuación, volver a conectar.
 
 ### <a name="connection-bar"></a>Barra de conexión
 

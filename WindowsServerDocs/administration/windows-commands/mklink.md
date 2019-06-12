@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eabbf159a64ab5df7f45ece390d0c2fdb9956b80
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ca9f5f00bc92d7929f782be45562e80bba455d74
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826336"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501452"
 ---
 # <a name="mklink"></a>mklink
 Crea un vínculo simbólico.
@@ -44,9 +44,14 @@ mklink [[/d] | [/h] | [/j]] <Link> <Target>
 
 ## <a name="BKMK_examples"></a>Ejemplos
 
-Para crear un vínculo simbólico denominado MyDocs desde el directorio raíz en el directorio \Users\User1\Documents, escriba:
+El ejemplo siguiente muestra la creación y eliminación de un vínculo simbólico denominado MiCarpeta y MyFile.file desde el directorio raíz en el directorio \Users\User1\Documents y un example.file ubicado en el directorio:
 ```
-mklink /d \MyDocs \Users\User1\Documents
+mklink /d \MyFolder \Users\User1\Documents
+mklink /h \MyFile.file \User1\Documents\example.file
+rd \MyFolder
+del \MyFile.file
 ```
 ## <a name="additional-references"></a>Referencias adicionales
 -   [New-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-item?view=powershell-6)
+-   [del](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/del)
+-   [rmdir](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/rd)

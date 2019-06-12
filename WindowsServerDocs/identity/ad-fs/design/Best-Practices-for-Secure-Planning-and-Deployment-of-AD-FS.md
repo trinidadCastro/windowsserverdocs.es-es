@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: df1afc77afffd9b737965215a5c9d96f278c8129
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 4a2fb188bd0a46ebd54ae068e8e4eeb63788aaa0
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191670"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501577"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>Procedimientos recomendados para planear e implementar AD FS de forma segura
 
@@ -23,7 +23,12 @@ Este tema proporciona información de procedimientos recomendados para ayudarle 
   
 ## <a name="core-security-best-practices-for-ad-fs"></a>Recomendaciones de seguridad principales para AD FS  
 Los siguientes procedimientos recomendados principales son comunes a todas las instalaciones de AD FS donde desea mejorar o ampliar la seguridad del diseño o implementación:  
-  
+
+-   **Protección de AD FS como un sistema de "Nivel 0"** 
+
+    AD FS es, básicamente, un sistema de autenticación.  Por lo tanto, deben tratarse como un sistema de "Nivel 0" como otro sistema de identidad en la red.  [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) contiene más información sobre el modelo de nivel administrativo de Active Directory. 
+
+
 -   **Utilice al Asistente para configuración de seguridad para aplicar prácticas recomendadas de seguridad específicas de AD FS a servidores de federación y equipos de servidores proxy de federación**  
   
     El Asistente para configuración de seguridad (SCW) es una herramienta que viene preinstalada en todos los Windows Server 2008, Windows Server 2008 R2 y equipos de Windows Server 2012. Se puede usar para aplicar recomendaciones de seguridad que pueden ayudar a reducir la superficie expuesta a ataques de un servidor, según los roles de servidor que vaya a instalar.  

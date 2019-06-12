@@ -8,12 +8,12 @@ manager: alanth
 author: justinha
 ms.technology: security-authentication
 ms.date: 11/09/2016
-ms.openlocfilehash: 7b046490c606cdf9e1436f503bf46a9cd4280ea9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 90107bd49268f232fd6d532c304c2fdd050bcbf5
+ms.sourcegitcommit: c6acac3622e5d34714ca5c569805931681f98779
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831096"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66391504"
 ---
 # <a name="whats-new-in-kerberos-authentication"></a>What's New in Kerberos Authentication
 
@@ -50,6 +50,8 @@ HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Paramete
 Para configurar la compatibilidad con nombres de host de dirección IP en los SPN, cree una entrada TryIPSPN. Esta entrada no existe en el registro de forma predeterminada. Después de haber creado la entrada, cambie el valor DWORD a 1. Si no está configurado, los nombres de host de dirección IP no se intenta realizar.
 
 Si el SPN se registra en Active Directory, a continuación, la autenticación se realiza correctamente con Kerberos. 
+
+Para obtener más información consulte el documento [configurar Kerberos para las direcciones IP](configuring-kerberos-over-ip.md).
 
 ## <a name="kdc-support-for-key-trust-account-mapping"></a>Compatibilidad del KDC con asignación de cuentas de claves de confianza
 

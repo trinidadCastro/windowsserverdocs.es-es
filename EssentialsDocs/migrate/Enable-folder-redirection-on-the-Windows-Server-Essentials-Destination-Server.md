@@ -13,12 +13,12 @@ ms.assetid: f67d195e-36f6-495a-8361-6d5faa889441
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f93d7b28177f96725f2e62c40f9c81cbf186ee6d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 50995f0d03b400d6e44d16389afc69e5f25465ac
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819386"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432972"
 ---
 # <a name="enable-folder-redirection-on-the-windows-server-essentials-destination-server1"></a>Habilitación del redireccionamiento de carpetas en el servidor 1 de destino de Windows Server Essentials
 
@@ -42,14 +42,14 @@ Puede hacer esta tarea si está habilitada la redirección de carpetas en el ser
   
 ### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>Para eliminar la antigua configuración de directiva de grupo de redirección de carpetas  
   
-1.  En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.  
+1. En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.  
   
-2.  En **Group Policy Management**, expanda **bosque: *** Nombredominiored*, expanda **dominios**, expanda *Nombredominiored* y, a continuación, expanda **Group Policy Objects**.  
+2. En **Administración de directivas de grupo**, expandaaa **Bosque:** <em>NombreDominioRed</em>, expandaaa **Dominios**, expandaaa *NombreDominioRed*y **Objetos de directiva de grupo**.  
   
-3.  Haga clic con el botón secundario en **Redirección de carpetas de W7PVP**y después haga clic en **Eliminar**.  
+3. Haga clic con el botón secundario en **Redirección de carpetas de W7PVP**y después haga clic en **Eliminar**.  
   
-4.  Lea la advertencia y haga clic en **Sí**.  
+4. Lea la advertencia y haga clic en **Sí**.  
   
-5.  Cierre **Administración de directivas de grupo**.  
+5. Cierre **Administración de directivas de grupo**.  
   
- Para aplicar el cambio a la redirección de carpetas, los usuarios de la red deben cerrar sesión en su equipo y después reiniciarla. Así se garantiza la transferencia de todas las carpetas redirigidas al servidor de destino.
+   Para aplicar el cambio a la redirección de carpetas, los usuarios de la red deben cerrar sesión en su equipo y después reiniciarla. Así se garantiza la transferencia de todas las carpetas redirigidas al servidor de destino.

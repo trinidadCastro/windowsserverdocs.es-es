@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: ba4de2a4-f237-4b14-a8a7-0b06bfcd89ad
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 75a47b6a6cb0a345d1d6e46ac8807bba6a895ace
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fd4b691a4b2bf6cc66a3b833eef8eca9f93dccc5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820946"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446107"
 ---
 # <a name="step-1-configure-the-basic-directaccess-infrastructure"></a>Paso 1 configuración de la infraestructura de DirectAccess básica
 
@@ -114,15 +114,15 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 1.  En el servidor DNS de red interna, ejecute **dnsmgmt.msc** y, a continuación, presione ENTRAR.  
   
-2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haz clic con el botón secundario en el dominio y haz clic en **Host nuevo (A o AAAA)**.  
+2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haz clic con el botón secundario en el dominio y haz clic en **Host nuevo (A o AAAA)** .  
   
-3.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)**, escribe el nombre DNS del sitio web del servidor de ubicación de red (es el nombre que los clientes de DirectAccess usan para conectarse al servidor de ubicación de red). En el cuadro **Dirección IP**, escribe la dirección IPv4 del servidor de ubicación de red y haz clic en **Agregar host**. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
+3.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sitio web del servidor de ubicación de red (es el nombre que los clientes de DirectAccess usan para conectarse al servidor de ubicación de red). En el cuadro **Dirección IP**, escribe la dirección IPv4 del servidor de ubicación de red y haz clic en **Agregar host**. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
   
-4.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)**, escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es directaccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**. Repite este proceso para directaccess-corpconnectivityhost y todos los comprobadores de conectividad creados manualmente. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
+4.  En el cuadro de diálogo **Host nuevo**, en el cuadro **Nombre (si se deja en blanco, se usa el nombre del dominio primario)** , escribe el nombre DNS del sondeo web (el nombre del sondeo web predeterminado es directaccess-webprobehost). En el cuadro **Dirección IP**, escribe la dirección IPv4 del sondeo web y haz clic en **Agregar host**. Repite este proceso para directaccess-corpconnectivityhost y todos los comprobadores de conectividad creados manualmente. En el cuadro de diálogo **DNS**, haz clic en **Aceptar**.  
   
 5.  Haga clic en **Listo**.  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
 
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -184,7 +184,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 9. En el cuadro de diálogo **Propiedades del sistema**, haga clic en Cerrar. Haz clic en **Reiniciar ahora** cuando se te solicite.  
   
-![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../media/Step-1-Configure-the-DirectAccess-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -239,7 +239,7 @@ Add-ADGroupMember -Identity DirectAccess_clients_group_name -Members <computer_n
   
 ## <a name="BKMK_Links"></a>Paso siguiente  
   
--   [Paso 2: Configurar el servidor de DirectAccess básica](da-basic-configure-s2-server.md)  
+-   [Paso 2: Configurar el servidor básico de DirectAccess](da-basic-configure-s2-server.md)  
   
 
 

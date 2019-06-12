@@ -8,18 +8,18 @@ ms.author: jol
 ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 41767b9e53c0106931e78f86f8675e413cca0d0a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 84e1ce7864f04550ee25253bcf038afdd7b919fe
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816886"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811678"
 ---
 # <a name="managing-virtual-machines-with-windows-admin-center"></a>Administración de máquinas virtuales con Windows Admin Center
 
 >Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
 
-La herramienta de máquinas virtuales está disponible en [Server](manage-servers.md), [clúster de conmutación por error](manage-failover-clusters.md) o [Hyper-Converged clúster](manage-hyper-converged.md) conexiones si el rol de Hyper-V está habilitado en el servidor o clúster. Puede usar la herramienta de máquinas virtuales para administrar hosts de Hyper-V que ejecutan Windows Server 2012 o versiones posteriores, ya sea instaladas con experiencia de escritorio o como Server Core. También se admiten Hyper-V Server 2012 y 2016.
+La herramienta de máquinas virtuales está disponible en [Server](manage-servers.md), [clúster de conmutación por error](manage-failover-clusters.md) o [Hyper-Converged clúster](manage-hyper-converged.md) conexiones si el rol de Hyper-V está habilitado en el servidor o clúster. Puede usar la herramienta de máquinas virtuales para administrar hosts de Hyper-V que ejecutan Windows Server 2012 o versiones posteriores, ya sea instaladas con experiencia de escritorio o como Server Core. Hyper-V Server 2012, también se admiten 2016 y 2019.
 
 ## <a name="key-features"></a>Principales características
 
@@ -37,6 +37,8 @@ Estas son algunas de las tareas de Hyper-V que puede hacer en Windows Admin Cent
 - [Cambiar la configuración de máquina virtual](#change-virtual-machine-settings)
 - [Migración en vivo de una máquina virtual a otro nodo del clúster](#live-migrate-a-virtual-machine-to-another-cluster-node)
 - [Administración avanzada y solución de problemas de una sola máquina virtual](#advanced-management-and-troubleshooting-for-a-single-virtual-machine)
+- [Administrar una máquina virtual a través del host de Hyper-V (VMConnect)](#manage-a-virtual-machine-through-the-hyper-v-host-vmconnect)
+- [Cambiar la configuración de host de Hyper-V](#change-hyper-v-host-settings)
 - [Ver registros de eventos de Hyper-V](#view-hyper-v-event-logs)
 - [Proteger las máquinas virtuales con Azure Site Recovery](#protect-virtual-machines-with-azure-site-recovery)
 
@@ -65,6 +67,7 @@ Estas son algunas de las tareas de Hyper-V que puede hacer en Windows Admin Cent
     - [Cambiar la configuración de una máquina virtual](#change-virtual-machine-settings).
     - Conectarse a una consola de máquina virtual con VMConnect mediante el host de Hyper-V.
     - [Replicar una máquina virtual mediante Azure Site Recovery](#protect-virtual-machines-with-azure-site-recovery).
+    - Para las operaciones que se pueden ejecutar en varias máquinas virtuales, como iniciar, apagar, guardar, pausar, eliminar, restablecimiento, puede seleccionar varias máquinas virtuales y ejecutar la operación a la vez.
 
 Nota: Si está conectado a un clúster, la herramienta de la máquina Virtual mostrará solo máquinas virtuales en clúster. Tenemos previsto también se muestran en el futuro sin agrupar máquinas virtuales.
 
@@ -77,6 +80,10 @@ Nota: Si está conectado a un clúster, la herramienta de la máquina Virtual mo
 3. Escriba el nombre de la máquina virtual y elija entre las máquinas virtuales de generación 1 y 2.
 4. Si va a crear una máquina virtual en un clúster, puede elegir qué host para crear inicialmente la máquina virtual en. Si está ejecutando Windows Server 2016 o versiones posteriores, la herramienta proporcionará una recomendación de host para usted.
 5. Elija una ruta de acceso para los archivos de máquina virtual. Elija un volumen en la lista desplegable o haga clic en **examinar** para elegir una carpeta con el selector de carpeta. Los archivos de configuración de máquina virtual y el archivo de disco duro virtual se guardarán en una sola carpeta en el `\Hyper-V\\[virtual machine name]` ruta de acceso de la ruta de acceso o el volumen seleccionado.
+
+   >[!Tip]
+   > En el selector de carpeta, puede ir a cualquier recurso compartido SMB disponible en la red escribiendo la ruta de acceso en el **nombre de la carpeta** campo como ```\\server\share```. Uso de un recurso compartido de red para el almacenamiento de máquina virtual requerirá [CredSSP](../understand/faq.md#does-windows-admin-center-use-credssp).
+
 6. Elija el número de procesadores virtuales, si desea habilitar la virtualización anidada, configurar opciones de memoria, adaptadores de red, discos duros virtuales y elija si desea instalar un sistema operativo desde un archivo de imagen .iso o desde la red.
 7. Haga clic en **Crear** para crear la máquina virtual.
 8. Una vez que la máquina virtual se crea y aparece en la lista de máquinas virtuales, puede iniciar la máquina virtual.
@@ -88,7 +95,7 @@ Nota: Si está conectado a un clúster, la herramienta de la máquina Virtual mo
 
 1. Haga clic en el **máquinas virtuales** herramienta desde el panel de navegación del lado izquierdo.
 2. En la parte superior de la herramienta de máquinas virtuales, elija el **inventario** ficha. Elija una máquina virtual en la lista y haga clic en **más** > **configuración**.
-3. Cambiar entre el **General**, **memoria**, **procesadores**, **discos**, **redes**, **Orden de arranque** y **puntos de control** pestaña, configure las opciones necesarias y luego haga clic en **guardar** para guardar la configuración de la ficha actual. Las opciones disponibles varían en función de generación de la máquina virtual. Además, no se puede cambiar algunos valores de configuración para ejecutar máquinas virtuales y tendrá que detener la máquina virtual en primer lugar.
+3. Cambiar entre el **General**, **seguridad**, **memoria**, **procesadores**, **discos**, **Redes**, **orden de arranque** y **puntos de control** pestaña, configure las opciones necesarias y luego haga clic en **guardar** para guardar la ficha actual Configuración. Las opciones disponibles varían en función de generación de la máquina virtual. Además, no se puede cambiar algunos valores de configuración para ejecutar máquinas virtuales y tendrá que detener la máquina virtual en primer lugar.
 
 ## <a name="live-migrate-a-virtual-machine-to-another-cluster-node"></a>Migración en vivo de una máquina virtual a otro nodo del clúster
 
@@ -117,6 +124,26 @@ Puede ver información detallada y gráficos de rendimiento de una sola máquina
     - Conectarse a la consola de máquina virtual con VMConnect mediante el host de Hyper-V.
     - [Replicar la máquina virtual mediante Azure Site Recovery](#protect-virtual-machines-with-azure-site-recovery).
 
+## <a name="manage-a-virtual-machine-through-the-hyper-v-host-vmconnect"></a>Administrar una máquina virtual a través del host de Hyper-V (VMConnect)
+
+![Conectar la máquina virtual a través del explorador web](../media/manage-virtual-machines/vm-connect.png)
+
+1. Haga clic en el **máquinas virtuales** herramienta desde el panel de navegación del lado izquierdo.
+2. En la parte superior de la herramienta de máquinas virtuales, elija el **inventario** ficha. Elija una máquina virtual en la lista y haga clic en **más** > **Connect** o **archivo RDP descargar**. **Conectar** le permitirá interactuar con la máquina virtual invitada a través de la consola web de escritorio remoto, integrada en Windows Admin Center. **Descargar archivo RDP** se descargará un archivo .rdp que se puede abrir con la aplicación de conexión a Escritorio remoto (mstsc.exe). Ambas opciones usarán VMConnect para conectarse a la máquina virtual invitada a través del host de Hyper-V y será necesario que escriba las credenciales de administrador para el servidor host de Hyper-V.
+
+## <a name="change-hyper-v-host-settings"></a>Cambiar la configuración de host de Hyper-V
+
+![Pantalla de configuración de host de Hyper-V](../media/manage-virtual-machines/host-settings.png)
+
+1. En una conexión de servidor, clúster hiperconvergido o clúster de conmutación por error, haga clic en el **configuración** menú en la parte inferior del panel de navegación izquierda.
+2. En un clúster o servidor host de Hyper-V, verá un **configuración de Host de Hyper-V** grupo con las siguientes secciones:
+    - General: Cambio de discos duros y las máquinas virtuales archivo ruta de acceso virtual e hipervisor tipo de programación (si se admite)
+    - Modo de sesión mejorada
+    - Expansión de NUMA
+    - Migración en vivo
+    - Migración de almacenamiento
+3. Si realiza cualquier host de Hyper-V cambios de configuración en una conexión de clúster hiperconvergido o clúster de conmutación por error, el cambio se aplicará a todos los nodos del clúster.
+
 ## <a name="view-hyper-v-event-logs"></a>Ver registros de eventos de Hyper-V
 
 Puede ver los registros de eventos de Hyper-V directamente desde la herramienta de máquinas virtuales.
@@ -127,21 +154,20 @@ Puede ver los registros de eventos de Hyper-V directamente desde la herramienta 
 
 ## <a name="protect-virtual-machines-with-azure-site-recovery"></a>Proteger las máquinas virtuales con Azure Site Recovery
 
-Puede usar Windows Admin Center para configurar Azure Site Recovery y replicar máquinas virtuales locales a Azure. [Más información](azure-services.md)
+Puede usar Windows Admin Center para configurar Azure Site Recovery y replicar máquinas virtuales locales a Azure. [Más información](../azure/azure-site-recovery.md)
 
 ## <a name="more-coming"></a>Pero pronto habrá más
 
 Administración de máquinas virtuales en Windows Admin Center activamente está en desarrollo y se agregarán nuevas características en un futuro próximo. Puede ver el estado y vote por características en UserVoice:
 
-|Solicitud de característica|
-|-------|
-|[Importación y exportación de máquinas virtuales](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31481971--virtual-machines-import-export-vms)|
-|[Máquinas virtuales de ordenación en las carpetas](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31494712--virtual-machines-ability-to-sort-vm-into-folder)|
-|[Configuración de máquina virtual adicional de soporte técnico](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31915264--virtual-machines-expose-all-configurable-setting)|
-|[Compatibilidad con réplica de Hyper-V](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/32040253--virtual-machines-setup-and-manage-hyper-v-replic)|
-|[Delegar la propiedad de la máquina virtual](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31663837--virtual-machines-owner-delegation)|
-|[Clonar máquina virtual](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31783288--virtual-machines-add-a-button-to-clone-a-vm)|
-|[Crear una plantilla desde una máquina virtual existente](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31494649--virtual-machines-create-a-template-from-an-exist)|
-|[Ver la máquinas virtuales entre hosts de Hyper-V](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31734559--virtual-machines-find-vms-on-host-screen)|
-|[Configurar las VLAN en el panel de la nueva máquina Virtual](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31710979--virtual-machines-new-new-vm-pane-need-vlan-opt)|
-|[**Ver todos o Proponer nueva característica**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5Bvirtual%20machines%5D)|
+- [Importación y exportación de máquinas virtuales](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31481971--virtual-machines-import-export-vms)
+- [Máquinas virtuales de ordenación en las carpetas](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31494712--virtual-machines-ability-to-sort-vm-into-folder)
+- [Configuración de máquina virtual adicional de soporte técnico](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31915264--virtual-machines-expose-all-configurable-setting)
+- [Compatibilidad con réplica de Hyper-V](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/32040253--virtual-machines-setup-and-manage-hyper-v-replic)
+- [Delegar la propiedad de la máquina virtual](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31663837--virtual-machines-owner-delegation)
+- [Clonar máquina virtual](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31783288--virtual-machines-add-a-button-to-clone-a-vm)
+- [Crear una plantilla desde una máquina virtual existente](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31494649--virtual-machines-create-a-template-from-an-exist)
+- [Ver la máquinas virtuales entre hosts de Hyper-V](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31734559--virtual-machines-find-vms-on-host-screen)
+- [Configurar las VLAN en el panel de la nueva máquina Virtual](https://windowsserver.uservoice.com/forums/295071-management-tools/suggestions/31710979--virtual-machines-new-new-vm-pane-need-vlan-opt)
+
+[Ver todos o proponer nuevas características](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5Bvirtual%20machines%5D).

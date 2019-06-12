@@ -7,23 +7,23 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 70b27d45acbfb046d52271a50ca7deffb226b8d0
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: f3ac020b3137621f6b2535c973ab7759443e1535
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266729"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811428"
 ---
 # <a name="performance-tuning-remote-desktop-gateways"></a>Las puertas de enlace de escritorio remotos de optimización del rendimiento
 
-> [!Note]
+> [!NOTE]
 > En Windows 8 y versiones posteriores y Windows Server 2012 R2 y versiones posteriores, puerta de enlace de escritorio remoto (puerta de enlace de escritorio remoto) es compatible con TCP, UDP y los transportes RPC heredados. La mayoría de los siguientes datos está relacionado con el transporte RPC heredado. Si no se utiliza el transporte RPC heredado, esta sección no es aplicable.
 
 En este tema se describe los parámetros relacionados con el rendimiento que ayudan a mejorar el rendimiento de una implementación de cliente y los ajustes que se basan en patrones de uso de red del cliente.
 
 En esencia, la puerta de enlace de escritorio remoto lleva a cabo muchas operaciones entre las instancias de la conexión a Escritorio remoto y las instancias del servidor Host de sesión de escritorio remoto en la red del cliente de reenvío.
 
-> [!Note]
+> [!NOTE]
 > Los parámetros siguientes se aplican a sólo el transporte RPC.
 
 Internet Information Services (IIS) y la puerta de enlace de escritorio remoto de exportación de los parámetros del registro siguientes para ayudar a mejorar el rendimiento del sistema en la puerta de enlace de escritorio remoto.
@@ -68,7 +68,6 @@ Los parámetros siguientes pueden ayudarle a ajustar las llamadas a procedimient
 
 ## <a name="monitoring-and-data-collection"></a>Supervisión y recopilación de datos
 
-
 La siguiente lista de contadores de rendimiento se considera un conjunto básico de contadores al supervisar el uso de recursos en la puerta de enlace de escritorio remoto:
 
 -   \\Terminal Service Gateway\\\*
@@ -107,6 +106,6 @@ Los siguientes contadores de rendimiento son aplicables solo para el transporte 
 
 -   \\W3SVC\_W3WP\\\* RPC
 
-**Tenga en cuenta**    si procede, agregue el \\IPv6\\ \* y \\TCPv6\\ \* objetos. ReplaceThisText
+> [!NOTE]
+> Si procede, agregue el \\IPv6\\ \* y \\TCPv6\\ \* objetos. ReplaceThisText
 
- 

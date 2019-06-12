@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 648b179f5b2feb8a7585c815aee47804e3bf1532
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e35d3a3e85ed046fb658bbf5a97ab5fc5eec6d3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882276"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442013"
 ---
 # <a name="rdpsign"></a>rdpsign
 
@@ -36,6 +36,7 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 ```
 
 ## <a name="parameters"></a>Parámetros
+
 |Parámetro|Descripción|
 |-------|--------|
 |/sha1 \<hash>|Especifica la huella digital, que es el hash del algoritmo Hash seguro 1 (SHA1) del certificado de firmado que se incluye en el almacén de certificados.|
@@ -55,20 +56,20 @@ rdpsign /sha1 <hash> [/q | /v |] [/l] <file_name.rdp>
 -   Si alguno de los archivos .rdp no puede leer o escribir en, la herramienta continuará con el siguiente archivo si se especifican varios archivos.
 
 ## <a name="BKMK_examples"></a>Ejemplos
--   Para iniciar sesión en un archivo .rdp que se denomina File1.rdp, navegue hasta la carpeta donde guardó el archivo .rdp y, a continuación, escriba lo siguiente:
-    ```
-    rdpsign /sha1 hash file1.rdp
-    ```
-    > [!NOTE]
-    > El *hash* valor representa la huella digital de SHA1, sin espacios en blanco.
--   Para comprobar si la firma digital se realizará correctamente para un archivo .rdp sin firmar realmente el archivo, escriba lo siguiente:
-    ```
-    rdpsign /sha1 hash /l file1.rdp
-    ```
--   Para iniciar sesión en varios archivos .rdp, separe los nombres de archivo mediante espacios. Por ejemplo, para iniciar sesión en varios archivos .rdp que se denominan File1.rdp, File2.rdp y File3.rdp, escriba lo siguiente:
-    ```
-    rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
-    ```
-## <a name="see-also"></a>Vea también
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)
+- Para iniciar sesión en un archivo .rdp que se denomina File1.rdp, navegue hasta la carpeta donde guardó el archivo .rdp y, a continuación, escriba lo siguiente:
+  ```
+  rdpsign /sha1 hash file1.rdp
+  ```
+  > [!NOTE]
+  > El *hash* valor representa la huella digital de SHA1, sin espacios en blanco.
+- Para comprobar si la firma digital se realizará correctamente para un archivo .rdp sin firmar realmente el archivo, escriba lo siguiente:
+  ```
+  rdpsign /sha1 hash /l file1.rdp
+  ```
+- Para iniciar sesión en varios archivos .rdp, separe los nombres de archivo mediante espacios. Por ejemplo, para iniciar sesión en varios archivos .rdp que se denominan File1.rdp, File2.rdp y File3.rdp, escriba lo siguiente:
+  ```
+  rdpsign /sha1 hash file1.rdp file2.rdp file3.rdp
+  ```
+  ## <a name="see-also"></a>Vea también
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)

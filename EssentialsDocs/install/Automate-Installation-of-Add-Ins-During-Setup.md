@@ -12,12 +12,12 @@ ms.assetid: 2e6ff6e4-8d68-4d49-9e38-8088bc8bf95e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d4c547c2fec8e2b11e5c1d9bde46e55e91c9d6fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c2345726a17a074fc7022c8c4dc9b2443e9ad384
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884626"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433641"
 ---
 # <a name="automate-installation-of-add-ins-during-setup"></a>Automatizar la instalación de complementos durante la instalación
 
@@ -69,13 +69,13 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
  Un paso de desinstalación personalizado se puede utilizar para cualquiera de las acciones siguientes:  
   
--   Sustituir el cuadro de diálogo de confirmación integrado.  
+- Sustituir el cuadro de diálogo de confirmación integrado.  
   
--   Rellenar cuadros de diálogo personalizados antes de la desinstalación.  
+- Rellenar cuadros de diálogo personalizados antes de la desinstalación.  
   
--   Realizar determinadas tareas antes de la desinstalación.  
+- Realizar determinadas tareas antes de la desinstalación.  
   
- Para implementar un paso de desinstalación, agregue el contenido siguiente en addin.xml (directamente bajo Package):  
+  Para implementar un paso de desinstalación, agregue el contenido siguiente en addin.xml (directamente bajo Package):  
   
 ```  
 <Package xmlns="https://schemas.microsoft.com/WindowsServerSolutions/2010/03/Addins" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">  
@@ -103,19 +103,19 @@ C:\Program Files\Windows Server\bin\Installaddin.exe <full path to wssx file> -q
   
  En esta fase, el exefile puede realizar las siguientes tareas:  
   
--   Muestra algunos cuadros de diálogo emergentes para la interacción con el usuario.  
+- Muestra algunos cuadros de diálogo emergentes para la interacción con el usuario.  
   
--   Realizar algunas tareas de fondo.  
+- Realizar algunas tareas de fondo.  
   
- El código de salida de este archivo exe determina cómo avanza el proceso de desinstalación:  
+  El código de salida de este archivo exe determina cómo avanza el proceso de desinstalación:  
   
--   0: el proceso de desinstalación continúa sin rellenar el cuadro de diálogo de confirmación integrado, porque el usuario ya lo ha confirmado. (este enfoque se puede utilizar para sustituir el cuadro de diálogo de confirmación integrado);  
+- 0: el proceso de desinstalación continúa sin rellenar el cuadro de diálogo de confirmación integrado, porque el usuario ya lo ha confirmado. (este enfoque se puede utilizar para sustituir el cuadro de diálogo de confirmación integrado);  
   
--   1: el proceso de desinstalación se cancela y, por último, se muestra un mensaje de cancelación al usuario. Todo permanece intacto;  
+- 1: el proceso de desinstalación se cancela y, por último, se muestra un mensaje de cancelación al usuario. Todo permanece intacto;  
   
--   Otro: el proceso de desinstalación continúa con el diálogo de confirmación integrado, ya que el paso de desinstalación personalizado no está presente.  
+- Otro: el proceso de desinstalación continúa con el diálogo de confirmación integrado, ya que el paso de desinstalación personalizado no está presente.  
   
- Cualquier fallo que invoque exefile llevará al mismo comportamiento, ya que exefile devuelve un código diferente de 0 o 1.  
+  Cualquier fallo que invoque exefile llevará al mismo comportamiento, ya que exefile devuelve un código diferente de 0 o 1.  
   
 ## <a name="see-also"></a>Vea también  
  [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   

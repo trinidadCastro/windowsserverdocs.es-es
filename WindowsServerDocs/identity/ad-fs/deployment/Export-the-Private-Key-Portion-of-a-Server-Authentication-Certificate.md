@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: c3a39f9d51ed8243118522ae37bc7d205a7ea416
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1a7e59dd83ebc9a9eabd5bda1dc598d320f5028d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192142"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442503"
 ---
 # <a name="export-the-private-key-portion-of-a-server-authentication-certificate"></a>Exportar la parte de la clave privada de un certificado de autenticación de servidor
 
@@ -31,24 +31,24 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
   
 ### <a name="to-export-the-private-key-portion-of-a-server-authentication-certificate"></a>Para exportar la parte de la clave privada de un certificado de autenticación de servidor  
   
-1.  En el **iniciar** , escriba**Internet Information Services \(IIS\) Manager**, y, a continuación, presione ENTRAR.  
+1. En el **iniciar** , escriba**Internet Information Services \(IIS\) Manager**, y, a continuación, presione ENTRAR.  
   
-2.  En el árbol de consola, haz clic en **nombreDeEquipo**.  
+2. En el árbol de consola, haz clic en **nombreDeEquipo**.  
   
-3.  En el panel central, haga doble\-haga clic en **certificados de servidor**.  
+3. En el panel central, haga doble\-haga clic en **certificados de servidor**.  
   
-4.  En el panel central, derecho\-haga clic en el certificado que desea exportar y, a continuación, haga clic en **exportar**.  
+4. En el panel central, derecho\-haga clic en el certificado que desea exportar y, a continuación, haga clic en **exportar**.  
   
-5.  En el **Exportar certificado** cuadro de diálogo, haga clic en el **...** de puntos suspensivos (...).  
+5. En el **Exportar certificado** cuadro de diálogo, haga clic en el **...** de puntos suspensivos (...).  
   
-6.  En **nombre de archivo**, tipo **C:\\*** Nombredecertificado*y, a continuación, haga clic en **abierto**.  
+6. En **nombre de archivo**, tipo **C:\\** <em>Nombredecertificado</em>y, a continuación, haga clic en **abierto**.  
   
-7.  Escribe la contraseña del certificado, confírmala y haz clic en **Aceptar**.  
+7. Escribe la contraseña del certificado, confírmala y haz clic en **Aceptar**.  
   
-8.  Comprueba si el archivo que has especificado se ha creado en la ubicación especificada para confirmar que la exportación se ha realizado correctamente.  
+8. Comprueba si el archivo que has especificado se ha creado en la ubicación especificada para confirmar que la exportación se ha realizado correctamente.  
   
-    > [!IMPORTANT]  
-    > Para que este certificado se pueda importar al almacén de certificados local del nuevo servidor, debes transferir el archivo a un medio físico y proteger su seguridad durante el transporte al nuevo servidor. Es extremadamente importante proteger la seguridad de la clave privada. Si esta clave está en peligro, la seguridad de toda la implementación de AD FS \(incluidos los recursos dentro de su organización y en las organizaciones asociadas\) está en peligro.  
+   > [!IMPORTANT]  
+   > Para que este certificado se pueda importar al almacén de certificados local del nuevo servidor, debes transferir el archivo a un medio físico y proteger su seguridad durante el transporte al nuevo servidor. Es extremadamente importante proteger la seguridad de la clave privada. Si esta clave está en peligro, la seguridad de toda la implementación de AD FS \(incluidos los recursos dentro de su organización y en las organizaciones asociadas\) está en peligro.  
   
 9. Importa el certificado de autenticación de servidor exportado en el almacén de certificados del nuevo servidor antes de instalar el Servicio de federación. ¿Para obtener información sobre cómo importar el certificado, consulte Importar un certificado de servidor \( [http:\/\/go.microsoft.com\/fwlink\/? LinkId\=108283](https://go.microsoft.com/fwlink/?LinkId=108283)\).  
   

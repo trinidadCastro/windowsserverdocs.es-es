@@ -6,14 +6,14 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
-ms.date: 11/05/2018
+ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4122375a48cae17e5f3ebcd7e9f3ce1fad28a105
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: b36f707edc08a4a8b2bc55a87c9db168e19a5487
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222495"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810979"
 ---
 # <a name="create-a-failover-cluster"></a>Crear un clúster de conmutación por error
 
@@ -25,13 +25,13 @@ También puede implementar un clúster desconectado de Active Directory. Este m�
 
 #### <a name="checklist-create-a-failover-cluster"></a>Lista de comprobación: Crear un clúster de conmutación por error
 
-|Estado|Tarea|Referencia|
-|:---:|---|---|
-|☐|Comprobar los requisitos previos|[Compruebe los requisitos previos](#verify-the-prerequisites)|
-|☐|Instalar la característica de clúster de conmutación por error en todos los servidores que desees incluir como nodo de clúster|[Instalar la característica clúster de conmutación por error](#install-the-failover-clustering-feature)|
-|☐|Ejecutar el Asistente para validación de clústeres a fin de validar la configuración|[Validar la configuración](#validate-the-configuration)|
-|☐|Ejecutar el Asistente para crear clúster a fin de crear el clúster de conmutación por error|[Crear el clúster de conmutación por error](#create-the-failover-cluster)|
-|☐|Crear roles en clúster para hospedar las cargas de trabajo de clúster|[Crear roles en clúster](#create-clustered-roles)|
+| Estado | Tarea | Referencia |
+| ---    | ---  | ---       |
+| ☐    | Comprobar los requisitos previos | [Compruebe los requisitos previos](#verify-the-prerequisites) |
+| ☐    | Instalar la característica de clúster de conmutación por error en todos los servidores que desees incluir como nodo de clúster | [Instalar la característica clúster de conmutación por error](#install-the-failover-clustering-feature) |
+| ☐    | Ejecutar el Asistente para validación de clústeres a fin de validar la configuración | [Validar la configuración](#validate-the-configuration) |
+| ☐ | Ejecutar el Asistente para crear clúster a fin de crear el clúster de conmutación por error | [Crear el clúster de conmutación por error](#create-the-failover-cluster) |
+| ☐ | Crear roles en clúster para hospedar las cargas de trabajo de clúster | [Crear roles en clúster](#create-clustered-roles) |
 
 ## <a name="verify-the-prerequisites"></a>Comprobar los requisitos previos
 
@@ -50,8 +50,8 @@ Además, comprueba los siguientes requisitos de la cuenta:
     - El usuario que crea el clúster tiene el permiso **Crear objetos de equipo** en la OU o el contenedor donde residen los servidores que conformarán el clúster.
     - Si el usuario no tiene el permiso **Crear objetos de equipo**, solicita a un administrador de dominio que preconfigure un objeto de equipo de clúster para el clúster. Para obtener más información, consulta [Preconfigurar objetos de equipo de clúster en Servicios de dominio de Active Directory](prestage-cluster-adds.md).
 
->[!NOTE]
->Este requisito no es aplicable si desea crear un clúster desconectado de Active Directory en Windows Server 2012 R2. Para obtener más información, consulte [Implementar un clúster desconectado de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11)).
+> [!NOTE]
+> Este requisito no es aplicable si desea crear un clúster desconectado de Active Directory en Windows Server 2012 R2. Para obtener más información, consulte [Implementar un clúster desconectado de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11)).
 
 ## <a name="install-the-failover-clustering-feature"></a>Instalar la característica de clúster de conmutación por error
 
@@ -73,22 +73,22 @@ Debes instalar la característica de clúster de conmutación por error en todos
 10. Cuando se complete la instalación, seleccione **cerrar**.
 11. Repite este procedimiento en todos los servidores que desees incluir como nodo de clúster de conmutación por error.
 
->[!NOTE]
->Una vez instalada la característica de clústeres de conmutación por error, recomendamos aplicar las últimas actualizaciones de Windows Update. Además, para un clúster de conmutación por error basados en Windows Server 2012, revise el [revisiones y actualizaciones recomendadas para clústeres de conmutación por error basados en Windows Server 2012](https://support.microsoft.com/help/2784261/recommended-hotfixes-and-updates-for-windows-server-2012-based-failove) Microsoft Support artículo e instalar las actualizaciones necesarias.
+> [!NOTE]
+> Una vez instalada la característica de clústeres de conmutación por error, recomendamos aplicar las últimas actualizaciones de Windows Update. Además, para un clúster de conmutación por error basados en Windows Server 2012, revise el [revisiones y actualizaciones recomendadas para clústeres de conmutación por error basados en Windows Server 2012](https://support.microsoft.com/help/2784261/recommended-hotfixes-and-updates-for-windows-server-2012-based-failove) Microsoft Support artículo e instalar las actualizaciones necesarias.
 
 ## <a name="validate-the-configuration"></a>Validar la configuración
 
 Antes de crear el clúster de conmutación por error, recomendamos encarecidamente validar la configuración para asegurarse de que el hardware y sus valores sean compatibles con los clústeres de conmutación por error. Microsoft es compatible con una solución de clúster únicamente si el conjunto de la configuración supera todas las pruebas de validación y si todo el hardware está certificado para la versión de Windows Server en la que se ejecutan los nodos de clúster.
 
->[!NOTE]
->Debes tener por lo menos dos nodos para ejecutar todas las pruebas. Si solo tienes uno, no podrán ejecutarse muchas de las pruebas de almacenamiento más importantes.
+> [!NOTE]
+> Debes tener por lo menos dos nodos para ejecutar todas las pruebas. Si solo tienes uno, no podrán ejecutarse muchas de las pruebas de almacenamiento más importantes.
 
 ### <a name="run-cluster-validation-tests"></a>Ejecutar pruebas de validación de clúster
 
 1. En un equipo que tenga las Herramientas de administración de clústeres de conmutación por error instaladas desde las Herramientas de administración remota del servidor, o en un servidor donde hayas instalado la característica de clústeres de conmutación por error, inicia el Administrador de clústeres de conmutación por error. Para hacer esto en un servidor, inicie el administrador del servidor y, a continuación, en el **herramientas** menú, seleccione **Administrador de clústeres de conmutación por error**.
 2. En el **Administrador de clústeres de conmutación por error** panel, en **administración**, seleccione **validar configuración**.
 3. En el **antes de comenzar** página, seleccione **siguiente**.
-4. En el **seleccionar servidores o un clúster** página, en el **escriba el nombre** cuadro, escriba el nombre NetBIOS o el nombre de dominio completo de un servidor que va a agregar como un nodo de clúster de conmutación por error y, a continuación, seleccione **Agregar**. Repite este paso para todos los servidores que quieras agregar. Para agregar varios servidores al mismo tiempo, separa los nombres con una coma o un punto y coma. Por ejemplo, escribe los nombres con el formato *server1.contoso.com, server2.contoso.com*. Cuando haya terminado, seleccione **siguiente**.
+4. En el **seleccionar servidores o un clúster** página, en el **escriba el nombre** cuadro, escriba el nombre NetBIOS o el nombre de dominio completo de un servidor que va a agregar como un nodo de clúster de conmutación por error y, a continuación, seleccione **Agregar**. Repite este paso para todos los servidores que quieras agregar. Para agregar varios servidores al mismo tiempo, separa los nombres con una coma o un punto y coma. Por ejemplo, escriba los nombres en el formato `server1.contoso.com, server2.contoso.com`. Cuando haya terminado, seleccione **siguiente**.
 5. En el **opciones de pruebas** página, seleccione **ejecutar todas las pruebas (recomendadas)** y, a continuación, seleccione **siguiente**.
 6. En el **confirmación** página, seleccione **siguiente**.
 
@@ -98,8 +98,8 @@ Antes de crear el clúster de conmutación por error, recomendamos encarecidamen
       - Si los resultados indican que las pruebas se completaron correctamente y la configuración es adecuada para los clústeres, y desea crear el clúster inmediatamente, asegúrate de que el **crear el clúster ahora con los nodos validados** comprobar casilla está seleccionada y, a continuación, seleccione **finalizar**. Después, continúa con el paso 4 del procedimiento [Crear el clúster de conmutación por error](#create-the-failover-cluster).
       - Si los resultados indican que había advertencias o errores, seleccione **Ver informe** para ver los detalles y determinar qué problemas deben corregirse. Ten en cuenta que una advertencia sobre una prueba de validación en particular indica que ese aspecto del clúster de conmutación por error puede ser compatible, pero podría no cumplir los procedimientos recomendados.
         
-        >[!NOTE]
-        >Si recibes una advertencia sobre la prueba Validar reserva persistente de espacios de almacenamiento, consulta la entrada de blog [La advertencia sobre la validación de un clúster de conmutación por error de Windows indica que los discos no son compatibles con las reservas persistentes de espacios de almacenamiento](https://blogs.msdn.microsoft.com/clustering/2013/05/24/validate-storage-spaces-persistent-reservation-test-results-with-warning/) para obtener más información.
+        > [!NOTE]
+        > Si recibes una advertencia sobre la prueba Validar reserva persistente de espacios de almacenamiento, consulta la entrada de blog [La advertencia sobre la validación de un clúster de conmutación por error de Windows indica que los discos no son compatibles con las reservas persistentes de espacios de almacenamiento](https://blogs.msdn.microsoft.com/clustering/2013/05/24/validate-storage-spaces-persistent-reservation-test-results-with-warning/) para obtener más información.
 
 Para obtener más información sobre las pruebas de validación de hardware, consulta [Validate Hardware for a Failover Cluster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134244(v%3dws.11)>).
 
@@ -115,8 +115,8 @@ Para completar este paso, asegúrate de que la cuenta de usuario con la que inic
 4. En el **antes de comenzar** página, seleccione **siguiente**.
 5. Si el **seleccionar servidores** página aparece en el **escriba el nombre** cuadro, escriba el nombre NetBIOS o el nombre de dominio completo de un servidor que va a agregar como un nodo de clúster de conmutación por error y, a continuación, seleccione **Agregar**. Repite este paso para todos los servidores que quieras agregar. Para agregar varios servidores al mismo tiempo, separa los nombres con una coma o un punto y coma. Por ejemplo, escribe los nombres con el formato *server1.contoso.com; server2.contoso.com*. Cuando haya terminado, seleccione **siguiente**.
     
-    >[!NOTE]
-    >Si decide crear el clúster inmediatamente después de ejecutar la validación el [validar el procedimiento de configuración](#validate-the-configuration), no verá el **seleccionar servidores** página. Los nodos que se validaron se agregan automáticamente al Asistente para crear clúster, de modo que no tengas que introducirlos de nuevo.
+    > [!NOTE]
+    > Si decide crear el clúster inmediatamente después de ejecutar la validación el [validar el procedimiento de configuración](#validate-the-configuration), no verá el **seleccionar servidores** página. Los nodos que se validaron se agregan automáticamente al Asistente para crear clúster, de modo que no tengas que introducirlos de nuevo.
 6. Si antes omitiste la validación, aparecerá la página **Advertencia de validación** . Recomendamos encarecidamente ejecutar la validación de clústeres. Solo los clústeres que superan todas las pruebas de validación son compatibles con Microsoft. Para ejecutar las pruebas de validación, seleccione **Sí**y, a continuación, seleccione **siguiente**. Completar la configuración del Asistente para validar una como se describe en [validar la configuración](#validate-the-configuration).
 7. En la página **Punto de acceso para administrar el clúster** , haz lo siguiente:
     
@@ -151,24 +151,23 @@ Aquí le mostramos cómo crear un rol en clúster:
 1. Utiliza el Administrador del servidor o Windows PowerShell para instalar el rol o la característica que sean necesarios para un rol en clúster en cada nodo de clúster de conmutación. Por ejemplo, si deseas crear un servidor de archivos en clúster, instala el rol de Servidor de archivos en todos los nodos de clúster.
     
     En la siguiente tabla se muestran los roles en clúster que puedes configurar en el Asistente para alta disponibilidad y la característica o el rol de servidor asociado que debes instalar como requisito previo.
-    
 
-|Rol en clúster  |Requisito previo del rol o característica  |
-|---------|---------|
-|Servidor de Namespace     |   Espacios de nombres (parte del rol de servidor de archivos)       |
-|Servidor de espacios de nombres DFS     |  Rol de Servidor DHCP       |
-|Coordinador de transacciones distribuidas (DTC)     | Ninguno        |
-|Servidor de archivos     |  Rol de Servidor de archivos       |
-|Aplicación genérica     |  No disponible       |
-|Script genérico     |   No disponible      |
-|Servicio genérico     |   No disponible      |
-|Agente de réplicas de Hyper-V     |   Rol de Hyper-V      |
-|Servidor de destino iSCSI     |    Servidor de destino iSCSI (parte del rol de Servidor de archivos)     |
-|Servidor iSNS     |  Característica Servicio de servidor iSNS       |
-|Message Queue Server     |  Característica Servicios de Message Queue Server       |
-|Otro servidor     |  Ninguno       |
-|Máquina virtual     |  Rol de Hyper-V       |
-|Servidor WINS     |   Característica Servidor WINS      |
+   | Rol en clúster  | Requisito previo del rol o característica  |
+   | ---------       | ---------                    |
+   | Servidor de Namespace     |   Espacios de nombres (parte del rol de servidor de archivos)       |
+   | Servidor de espacios de nombres DFS     |  Rol de Servidor DHCP       |
+   | Coordinador de transacciones distribuidas (DTC)     | Ninguno        |
+   | Servidor de archivos     |  Rol de Servidor de archivos       |
+   | Aplicación genérica     |  No disponible       |
+   | Script genérico     |   No disponible      |
+   | Servicio genérico     |   No disponible      |
+   | Agente de réplicas de Hyper-V     |   Rol de Hyper-V      |
+   | Servidor de destino iSCSI     |    Servidor de destino iSCSI (parte del rol de Servidor de archivos)     |
+   | Servidor iSNS     |  Característica Servicio de servidor iSNS       |
+   | Message Queue Server     |  Característica Servicios de Message Queue Server       |
+   | Otro servidor     |  Ninguno       |
+   | Máquina virtual     |  Rol de Hyper-V       |
+   | Servidor WINS     |   Característica Servidor WINS      |
 
 2. En el Administrador de clústeres de conmutación por error, expanda el nombre del clúster, haga clic en **Roles**y, a continuación, seleccione **configurar rol**.
 3. Sigue los pasos del Asistente para alta disponibilidad para crear el rol en clúster.
@@ -178,8 +177,8 @@ Aquí le mostramos cómo crear un rol en clúster:
 
 Los siguientes cmdlets de Windows PowerShell realizar las mismas funciones que los procedimientos anteriores de este tema. Escribe cada cmdlet en una sola línea, aunque aparezcan con salto entre varias líneas debido a las limitaciones de formato.
 
->[!NOTE]
->Debe usar Windows PowerShell para crear un clúster desconectado de Active Directory en Windows Server 2012 R2. Para obtener más información sobre la sintaxis, consulta [Deploy an Active Directory-Detached Cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11)).
+> [!NOTE]
+> Debe usar Windows PowerShell para crear un clúster desconectado de Active Directory en Windows Server 2012 R2. Para obtener más información sobre la sintaxis, consulta [Deploy an Active Directory-Detached Cluster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265970(v=ws.11)).
 
 El siguiente ejemplo instala la característica Clústeres de conmutación por error.
 
@@ -193,8 +192,8 @@ El siguiente ejemplo ejecuta todas las pruebas de validación de clústeres en l
 Test-Cluster –Node Server1, Server2
 ```
 
->[!NOTE]
->El **Test-Cluster** cmdlet guarda el resultado en un archivo de registro en el directorio de trabajo actual. Por ejemplo: C:\Users\<username>\AppData\Local\Temp.
+> [!NOTE]
+> El **Test-Cluster** cmdlet guarda el resultado en un archivo de registro en el directorio de trabajo actual. Por ejemplo: C:\Users\<username>\AppData\Local\Temp.
 
 El siguiente ejemplo crea un clúster de conmutación por error llamado *MyCluster* con los nodos *Server1* y *Server2*, asigna la dirección IP estática *192.168.1.12*y agrega todo el almacenamiento apto al clúster de conmutación por error.
 

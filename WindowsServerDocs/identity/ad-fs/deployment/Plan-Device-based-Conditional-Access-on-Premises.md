@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: ffd7131f7f3772ab47b62c9755008fe3b1c4b274
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 3a78334f64d9e51515757b01f2d788bf87f67a35
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192071"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501606"
 ---
 # <a name="plan-device-based-conditional-access-on-premises"></a>Planeación del acceso condicional basado en dispositivos a nivel local
 
@@ -30,7 +30,7 @@ AD FS proporciona el componente de entorno local en directivas de acceso condici
 ### <a name="types-of-registered-devices"></a>Tipos de dispositivos registrados  
 Hay tres tipos de dispositivos registrados, todos los cuales se representan como objetos de dispositivo en Azure AD y se pueden usar para el acceso condicional con AD FS como local.  
 
-| |Agregar trabajo o educativa  |Unión a Azure AD  |Combinación Domian Windows 10    
+| |Agregar trabajo o educativa  |Unión a Azure AD  |Unión a un dominio 10 Windows    
 | --- | --- |--- | --- |
 |Descripción    |  Los usuarios agregar su trabajo o educativa a su dispositivo BYOD interactivamente.  **Nota:** Agregar cuenta profesional o educativa es el reemplazo de Workplace Join en Windows 8/8.1       | Los usuarios inscribir sus dispositivos de trabajo de Windows 10 en Azure AD.|Dispositivos de Windows 10 Unidos a un dominio se registrarán automáticamente con Azure AD.|           
 |Cómo los usuarios iniciar sesión en el dispositivo     |  Sin inicio de sesión de Windows como la cuenta profesional o educativa.  Inicio de sesión con una cuenta Microsoft.       |   Inicie sesión en Windows como la cuenta (profesional o educativa) que registra el dispositivo.      |     Inicio de sesión con cuenta de AD.|      

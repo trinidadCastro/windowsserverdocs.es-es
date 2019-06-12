@@ -11,12 +11,12 @@ ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.date: 10/12/2016
-ms.openlocfilehash: d304ee3456f8db1e5b202c1d9221d1374a5251be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7c2d7113847cc44f18c5234502b58becde1dcb9f
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831016"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446512"
 ---
 # <a name="device-health-attestation"></a>Certificación de estado del dispositivo
 
@@ -58,15 +58,15 @@ El servicio DHA se integra con las soluciones MDM y proporciona lo siguiente:
 Este es un ejemplo que muestra cómo puede utilizar DHA para aumentar la protección de seguridad para los recursos de su organización.
 
 1. Va a crear una directiva que comprueba los atributos o configuración de arranque siguientes:
-  - Arranque seguro
-  - BitLocker
-  - ELAM
+   - Arranque seguro
+   - BitLocker
+   - ELAM
 2. La solución MDM aplica esta directiva y desencadena una acción correctora basándose en los datos del informe DHA.  Por ejemplo, puede comprobar lo siguiente:
-  - Se habilitó el arranque seguro, el dispositivo cargó un código de confianza auténtico y no se alteró el cargador de arranque de Windows.
-  - El arranque seguro comprobó correctamente la firma digital del kernel de Windows y los componentes que se cargaron al iniciar el dispositivo.
-  - El arranque medido creó una pista de auditoría protegida por TPM que se puede comprobar de forma remota.
-  - Se habilitó BitLocker y protegió los datos cuando se desconectó el dispositivo.
-  - ELAM se habilitó en las primeras fases de arranque y supervisa el tiempo de ejecución.
+   - Se habilitó el arranque seguro, el dispositivo cargó un código de confianza auténtico y no se alteró el cargador de arranque de Windows.
+   - El arranque seguro comprobó correctamente la firma digital del kernel de Windows y los componentes que se cargaron al iniciar el dispositivo.
+   - El arranque medido creó una pista de auditoría protegida por TPM que se puede comprobar de forma remota.
+   - Se habilitó BitLocker y protegió los datos cuando se desconectó el dispositivo.
+   - ELAM se habilitó en las primeras fases de arranque y supervisa el tiempo de ejecución.
   
 #### <a name="dha-cloud-service"></a>Servicio en la nube DHA
 

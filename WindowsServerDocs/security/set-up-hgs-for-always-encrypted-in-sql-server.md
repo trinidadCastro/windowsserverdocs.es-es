@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 11/03/2018
-ms.openlocfilehash: 2f800dfa01077287f8200dd8abea0be899776683
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 70f6f8c2db742361deecaa216b053d8b1d057a3d
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866696"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812605"
 ---
 # <a name="setting-up-the-host-guardian-service-for-always-encrypted-with-secure-enclaves-in-sql-server"></a>Configurar el servicio de protección de Host para Always Encrypted con enclaves seguros en SQL Server 
 
@@ -39,8 +39,8 @@ Esta sección describen los requisitos previos para las máquinas host y HGS.
 
 - 1-3 servidores para ejecutar el HGS. 
 
-  >[!NOTE]
-  >Es necesario para un entorno de prueba o preproducción solo 1 servidor HGS.
+  > [!NOTE]
+  > Es necesario para un entorno de prueba o preproducción solo 1 servidor HGS.
 
   Estos servidores deben protegerse cuidadosamente, ya que controlan qué máquinas pueden ejecutar las instancias de SQL Server mediante Always Encrypted con enclaves seguros. 
   Se recomienda que distintos administradores administración el clúster HGS y ejecutar el HGS en hardware físico aislado del resto de la infraestructura, o en tejidos de virtualización independiente o las suscripciones de Azure.
@@ -110,11 +110,13 @@ Ejecutar todos los comandos siguientes en una sesión de PowerShell con privileg
    Para el HgsServiceName, especifique la DNN que eligió.
 
    Para el modo TPM:
+
    ```powershell
    Initialize-HgsAttestation -HgsServiceName 'hgs' -TrustTpm
    ```
 
    Para el modo de clave de host:
+
    ```powershell
    Initialize-HgsAttestation -HgsServiceName 'hgs' -TrustHostKey 
    ```
@@ -148,13 +150,13 @@ Para agregar nodos al clúster, ejecute los siguientes comandos en una sesión d
 
 De forma predeterminada, al inicializar el servidor HGS configurará los sitios web IIS para las comunicaciones de sólo HTTP.
 
->[!NOTE]
->Configurar HTTPS con un certificado de servidor HGS conocido y de confianza, es necesario para evitar ataques man-in-the-middle y, por tanto, se recomienda para las implementaciones de producción.
+> [!NOTE]
+> Configurar HTTPS con un certificado de servidor HGS conocido y de confianza, es necesario para evitar ataques man-in-the-middle y, por tanto, se recomienda para las implementaciones de producción.
 
 [!INCLUDE [Configure HTTPS](../../includes/configure-hgs-for-https.md)] 
 
->[!NOTE]
->Always Encrypted con enclaves seguros, el certificado SSL debe ser de confianza en ambos equipos host que ejecutan SQL Server y póngase en contacto con HGS máquinas que ejecuten aplicaciones de cliente de base de datos. 
+> [!NOTE]
+> Always Encrypted con enclaves seguros, el certificado SSL debe ser de confianza en ambos equipos host que ejecutan SQL Server y póngase en contacto con HGS máquinas que ejecuten aplicaciones de cliente de base de datos. 
 
 ## <a name="collect-attestation-info-from-the-host-machines"></a>Recopilar información de atestación de los equipos host
 
@@ -197,6 +199,7 @@ Si está utilizando el modo TPM, ejecute los siguientes comandos en una sesión 
    ```powershell
    Get-ComputerInfo -Property DeviceGuard* 
    ```
+
 5. Recopilar el identificador TPM y la línea de base:
 
    ```powershell 
@@ -216,6 +219,7 @@ Si está utilizando el modo TPM, ejecute los siguientes comandos en una sesión 
    Add-HgsAttestationTpmPolicy -Name ServerA-Baseline -Path C:\temp\TpmBaseline-ServerA.tcglog 
    Add-HgsAttestationCiPolicy -Name AllowMicrosoft-Audit -Path C:\temp\AllowMicrosoft-Audit.bin 
    ```
+
 9. El primer servidor ya está listo para dar fe. 
    En el equipo host, ejecute el comando siguiente le indiquen dónde dar fe (cambio que del nombre DNS de su clúster HGS, normalmente, usará el nombre del servicio HGS combinada con el nombre de dominio HGS). 
    Si recibe un error HostUnreachable, asegúrese de que pueda resolver y haga ping a los nombres DNS de los servidores HGS. 
@@ -231,8 +235,8 @@ Si está utilizando el modo TPM, ejecute los siguientes comandos en una sesión 
 
 ### <a name="collecting-host-keys"></a>Recopilar claves de Host 
 
->[!NOTE] 
->Solo se recomienda la atestación de clave de host para su uso en entornos de prueba. Atestación de TPM proporciona las garantías más fuertes que enclaves VBS procesar los datos confidenciales en SQL Server están ejecutando código de confianza y las máquinas están configuradas con la configuración de seguridad recomendada. 
+> [!NOTE] 
+> Solo se recomienda la atestación de clave de host para su uso en entornos de prueba. Atestación de TPM proporciona las garantías más fuertes que enclaves VBS procesar los datos confidenciales en SQL Server están ejecutando código de confianza y las máquinas están configuradas con la configuración de seguridad recomendada. 
 
 Si decide configurar HGS en modo de atestación de clave de host, deberá generar y recopilar las claves de cada equipo host y registrarlas con el servicio de protección de Host. 
 

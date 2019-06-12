@@ -9,29 +9,27 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 11/05/2018
-ms.openlocfilehash: d629f04abda0ce22deb75e487f5b485f50a60a53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: db309f451eb9187463f71dfd85a82d214c464e2b
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881916"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749453"
 ---
 # <a name="step-1-plan-the-always-on-vpn-deployment"></a>Paso 1. Planear la implementación de VPN de Always On
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
+- [**Anterior:** Obtenga información sobre el flujo de trabajo para la implementación de VPN de Always On](always-on-vpn-deploy-deployment.md)
+- [**Siguiente:** Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md)
 
-&#171;  [**Anterior:** Obtenga información sobre el flujo de trabajo para la implementación de VPN de Always On](always-on-vpn-deploy-deployment.md)<br>
-&#187;  [**próximo:** Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md)
-
-En este paso, primero planear y preparar la implementación de VPN de Always On. Antes de instalar el rol de servidor de acceso remoto en el equipo que tiene previsto usar como un servidor VPN, realice las tareas siguientes. Después de la planeación adecuada, puede implementar la VPN de Always On y, opcionalmente, configure el acceso condicional para la conectividad VPN con Azure AD. 
+En este paso, primero planear y preparar la implementación de VPN de Always On. Antes de instalar el rol de servidor de acceso remoto en el equipo que tiene previsto usar como un servidor VPN, realice las tareas siguientes. Después de la planeación adecuada, puede implementar la VPN de Always On y, opcionalmente, configure el acceso condicional para la conectividad VPN con Azure AD.
 
 [!INCLUDE [always-on-vpn-standard-config-considerations-include](../../../includes/always-on-vpn-standard-config-considerations-include.md)]
 
-
 ## <a name="prepare-the-remote-access-server"></a>Preparar el servidor de acceso remoto
 
-Debe hacer lo siguiente en el equipo que se usa como un servidor VPN: 
+Debe hacer lo siguiente en el equipo que se usa como un servidor VPN:
 
 - **Asegúrese de que es correcta la configuración de hardware y software de servidor VPN**. Instale Windows Server 2016 en el equipo que va a usar como servidor VPN de acceso remoto. Este servidor debe tener instalados dos adaptadores de red físicos, uno para conectarse a la red de perímetro externo y uno para conectarse a la red de perímetro interno.
 
@@ -61,19 +59,18 @@ Puede configurar el servidor VPN para asignar direcciones a los clientes VPN des
 
 - **Asegúrese de que se puede modificar la zona DNS pública**. Agregar registros DNS a su dominio DNS público para admitir la infraestructura VPN. 
 
-- **Asegúrese de que todos los usuarios VPN tienen cuentas de usuario en Active Directory User \(AD DS\)**. Antes de que los usuarios pueden conectarse a la red con conexiones VPN, deben tener cuentas de usuario en AD DS.
+- **Asegúrese de que todos los usuarios VPN tienen cuentas de usuario en el usuario de Active Directory (AD DS)** . Antes de que los usuarios pueden conectarse a la red con conexiones VPN, deben tener cuentas de usuario en AD DS.
 
 ## <a name="prepare-routing-and-firewall"></a>Preparación de enrutamiento y de Firewall 
 
 Instale al servidor VPN dentro de la red perimetral, lo cual particiona la red perimetral en redes perimetrales internos y externos. Dependiendo de su entorno de red, debe realizar varias modificaciones de enrutamientos.
 
-- **\(Opcional\) configurar reenvío de puerto.** El firewall perimetral debe abrir los puertos y protocolos identificadores asociados con una VPN de IKEv2 y reenviarlos al servidor VPN. En la mayoría de los entornos, si lo hace por lo que requiere que configure el reenvío de puerto. Redirigir los puertos 500 y 4500 de protocolo de datagramas Universal (UDP) en el servidor VPN.
+- **(Opcional) Configure el reenvío de puerto.** El firewall perimetral debe abrir los puertos y protocolos identificadores asociados con una VPN de IKEv2 y reenviarlos al servidor VPN. En la mayoría de los entornos, si lo hace por lo que requiere que configure el reenvío de puerto. Redirigir los puertos 500 y 4500 de protocolo de datagramas Universal (UDP) en el servidor VPN.
 
-- **Configurar el enrutamiento para que los servidores DNS y servidores VPN pueden acceder a Internet**. Esta implementación usa IKEv2 y la traducción de direcciones de red \(NAT\). Asegúrese de que el servidor VPN puede llegar a todas las redes internas necesarias y los recursos de red. Cualquier recurso accesible desde el servidor VPN o red también es inaccesible a través de conexiones de VPN desde ubicaciones remotas.
+- **Configurar el enrutamiento para que los servidores DNS y servidores VPN pueden acceder a Internet**. Esta implementación usa IKEv2 y la traducción de direcciones de red (NAT). Asegúrese de que el servidor VPN puede llegar a todas las redes internas necesarias y los recursos de red. Cualquier recurso accesible desde el servidor VPN o red también es inaccesible a través de conexiones de VPN desde ubicaciones remotas.
 
 En la mayoría de los entornos, para llegar a la nueva red de perímetro interno, ajuste las rutas estáticas en el firewall perimetral y el servidor VPN. Sin embargo, en entornos más complejos, es posible que necesita agregar rutas estáticas a enrutadores internos o ajustar las reglas de firewall interno para el servidor VPN y el bloque de direcciones IP asociadas con los clientes de VPN.
 
-## <a name="next-step"></a>Paso siguiente
-[Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md): En este paso, instale y configure los componentes de servidor necesarios para admitir la VPN. Los componentes de servidor incluyen la configuración de PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS. 
+## <a name="next-steps"></a>Pasos siguientes
 
----
+[Paso 2. Configurar la infraestructura de servidor](vpn-deploy-server-infrastructure.md): En este paso, instale y configure los componentes de servidor necesarios para admitir la VPN. Los componentes de servidor incluyen la configuración de PKI para distribuir los certificados usados por los usuarios, el servidor VPN y el servidor NPS.

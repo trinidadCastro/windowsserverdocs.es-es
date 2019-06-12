@@ -12,12 +12,12 @@ ms.assetid: cdfa9504-9881-4265-b308-c7ee8721bfaa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 1a67cda9e4b04e8d861232b48f45915fb2b460d1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0240abfff58baedd79ab038af93b107dbb898eb2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836416"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432943"
 ---
 # <a name="join-computers-to-the-new-windows-server-essentials-server1"></a>Unir equipos a la nueva server1 Windows Server Essentials
 
@@ -31,7 +31,7 @@ ms.locfileid: "59836416"
   
  El proceso de conectar un equipo cliente al servidor es el mismo tanto si los equipos están unidos a un dominio como si no.  
   
--   Vaya a **http://***destino-nombreDeServidor***/ conectar** e instale el software del conector de Windows Server como si fuera un nuevo equipo.  
+- Vaya a **http://** <em>nombre-de-servidor-de-destino</em> **/connect** e instale el software del Conector de Windows Server como si fuera un nuevo equipo.  
   
 > [!NOTE]
 >  El software del Conector de Windows Server no admite equipos que ejecuten Windows XP o Windows Vista. Si ya se han unido al dominio equipos con estos sistemas operativos, puede omitir este paso.  

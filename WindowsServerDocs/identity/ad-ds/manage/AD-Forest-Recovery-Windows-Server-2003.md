@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: e2af1bfc295469d43e59593d69d4ba88f476e427
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 1a9db8b4cdfbb4cc7d7edc2a17a3e747943fb073
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034140"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442804"
 ---
 # <a name="ad-forest-recovery---windows-server-2003-recovery"></a>Recuperación de bosques de AD - recuperación de Windows Server 2003
 
@@ -112,10 +112,10 @@ Si el controlador de dominio que puede restaurar desde copia de seguridad se est
 
 10. Escriba el siguiente comando y presione ENTRAR:  
 
-   **Net start netlogon**
+    **Net start netlogon**
 
-   > [!NOTE]
-   > Inicio de sesión registrará los registros de recursos de ubicador de DC en DNS para este controlador de dominio. Si va a instalar el servicio servidor DNS en un servidor en el dominio secundario, este controlador de dominio no podrá registrar sus registros de inmediato. Esto es porque está aislado en la actualidad como parte del proceso de recuperación y su servidor DNS principal es el servidor DNS de raíz de bosque. Configurar este equipo con la misma dirección IP que tenía antes del desastre para evitar errores de búsqueda del servicio de controlador de dominio.
+    > [!NOTE]
+    > Inicio de sesión registrará los registros de recursos de ubicador de DC en DNS para este controlador de dominio. Si va a instalar el servicio servidor DNS en un servidor en el dominio secundario, este controlador de dominio no podrá registrar sus registros de inmediato. Esto es porque está aislado en la actualidad como parte del proceso de recuperación y su servidor DNS principal es el servidor DNS de raíz de bosque. Configurar este equipo con la misma dirección IP que tenía antes del desastre para evitar errores de búsqueda del servicio de controlador de dominio.
 
 ## <a name="next-steps"></a>Pasos siguientes
 

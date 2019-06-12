@@ -12,12 +12,12 @@ ms.assetid: f70a79de-9c56-4496-89b5-20a1bff2293e
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c2cc603f5e0303ada245956a524151393c538b27
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2322fa3f4617e8a8450aaf7fd5ead702574bf759
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881576"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433135"
 ---
 # <a name="overview-of-the-dashboard-in-windows-server-essentials"></a>Introducción al panel en Windows Server Essentials
 
@@ -25,39 +25,39 @@ ms.locfileid: "59881576"
  
  Windows Server Essentials y Windows Server 2012 R2 Standard con el rol Experiencia con Windows Server Essentials habilitado incluyen un panel de administración que simplifica las tareas que lleve a cabo para administrar la red y el servidor de Windows Server Essentials. Al usar el panel de Windows Server Essentials puede:  
   
--   Finalizar la configuración del servidor  
+- Finalizar la configuración del servidor  
   
--   Tener acceso y realizar tareas administrativas comunes  
+- Tener acceso y realizar tareas administrativas comunes  
   
--   Ver alertas del servidor y realizar acciones relacionadas con ellas  
+- Ver alertas del servidor y realizar acciones relacionadas con ellas  
   
--   Configurar y cambiar la configuración del servidor  
+- Configurar y cambiar la configuración del servidor  
   
--   Tener acceso o buscar temas de ayuda en la Web  
+- Tener acceso o buscar temas de ayuda en la Web  
   
--   Tener acceso a recursos de la comunidad en la Web  
+- Tener acceso a recursos de la comunidad en la Web  
   
--   Administrar cuentas de usuario  
+- Administrar cuentas de usuario  
   
--   Administrar dispositivos y copias de seguridad  
+- Administrar dispositivos y copias de seguridad  
   
--   Administrar el acceso y la configuración de carpetas de servidor y unidades de disco duro  
+- Administrar el acceso y la configuración de carpetas de servidor y unidades de disco duro  
   
--   Ver y administrar aplicaciones de complementos  
+- Ver y administrar aplicaciones de complementos  
   
--   Integrarse con los servicios en línea de Microsoft  
+- Integrarse con los servicios en línea de Microsoft  
   
- Este tema incluye:  
+  Este tema incluye:  
   
--   [Características básicas del panel](#BKMK_Design)  
+- [Características básicas del panel](#BKMK_Design)  
   
--   [Características de la página principal del panel](#BKMK_Home)  
+- [Características de la página principal del panel](#BKMK_Home)  
   
--   [Secciones administrativas del panel](#BKMK_Features)  
+- [Secciones administrativas del panel](#BKMK_Features)  
   
--   [Tener acceso al panel de Windows Server Essentials](#BKMK_AccessDb)  
+- [Tener acceso al panel de Windows Server Essentials](#BKMK_AccessDb)  
   
--   [Uso del modo seguro](#BKMK_UseSafeMode)  
+- [Uso del modo seguro](#BKMK_UseSafeMode)  
   
 ##  <a name="BKMK_Design"></a> Características básicas del panel  
  El panel de Windows Server Essentials le ayuda a tener acceso rápidamente a la información clave y a las características de administración del servidor. El panel incluye varias secciones. La tabla siguiente describe las secciones.  
@@ -90,7 +90,7 @@ ms.locfileid: "59881576"
   
  En la tabla siguiente se describen las secciones de administración del panel que están disponibles de manera predeterminada después de la instalación. La tabla también muestra las tareas que están disponibles dentro de cada sección.  
   
-|Sección|Descripción|  
+|Section|Descripción|  
 |-------------|-----------------|  
 |Inicio|La página **Inicio** aparece de manera predeterminada cada vez que abre el panel. Incluye información y tareas en las siguientes categorías:<br /><br /> **El programa de instalación** œ completar las tareas de esta categoría para configurar el servidor por primera vez. Para obtener información acerca de estas tareas, consulte [instalar y configurar Windows Server Essentials](../install/Install-and-Configure-Windows-Server-Essentials.md).<br /><br /> **Correo electrónico** œ elija una opción en esta categoría para integrar un servicio de correo electrónico con el servidor.<br /><br /> **Nota:** Esta categoría solo está disponible en Windows Server Essentials.<br /><br /> **SERVICIOS** œ elija una tarea de esta categoría para integrar los servicios en línea de Microsoft con el servidor.<br /><br /> **Nota:** Esta categoría solo está disponible en Windows Server Essentials y Windows Server 2012 R2 Standard con el rol experiencia con Windows Server Essentials habilitado.<br /><br /> **ADD-INS** œ, haga clic en esta categoría para instalar valiosos complementos para su negocio.<br /><br /> **ESTADO rápido** œ muestra el estado de alto nivel de servidor. Haga clic en un estado para ver la información y las opciones de configuración de dicha característica. Si completa todas las tareas de la categoría CONFIGURACIÓN, esta categoría aparecerá en la parte superior del panel Categoría.<br /><br /> **Ayudar a** œ utilice el cuadro de búsqueda para buscar ayuda en la Web. Haga clic en un vínculo para visitar el sitio web de la opción de soporte seleccionada.|  
 |Usuarios|Para que los usuarios puedan tener acceso a los recursos proporcionados por Windows Server Essentials deberá crear cuentas de usuario mediante el panel de Windows Server Essentials. Después de crear las cuentas de usuario puede administrarlas mediante las tareas disponibles en la página **Usuarios** del panel. Tareas que puede llevar a cabo en esta página:<br /><br /> -Ver una lista de cuentas de usuario.<br /><br /> -Ver y administrar propiedades de la cuenta de usuario.<br /><br /> -Activar o desactivar las cuentas de usuario.<br /><br /> -Agregar o quitar cuentas de usuario.<br /><br /> -Permite asignar cuentas de red local a cuentas de Microsoft online services, si el servidor está integrado con Office 365.<br /><br /> -Cambiar las contraseñas de cuentas de usuario y administrar la directiva de contraseñas.<br /><br /> Para obtener información acerca de cómo administrar cuentas de usuario, consulte [administrar cuentas de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md).|  

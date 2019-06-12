@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e45d1abb545ad46e654c811a0347c589bd12adf0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e95671718616fc7c81977434e83a227c858fca17
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863246"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811421"
 ---
 # <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sesión de escritorio remoto de optimización del rendimiento
 
@@ -21,13 +21,13 @@ Este tema explica cómo seleccionar hardware de Host de sesión de escritorio re
 
 **En este tema:**
 
--   [Seleccionar el hardware adecuado para el rendimiento](#hw)
+-   [Seleccionar el hardware adecuado para el rendimiento](#selecting-the-proper-hardware-for-performance)
 
--   [Optimización de aplicaciones de Host de sesión de escritorio remoto](#apps)
+-   [Optimización de aplicaciones de Host de sesión de escritorio remoto](#tuning-applications-for-remote-desktop-session-host)
 
--   [Host de sesión de escritorio remoto para parámetros de ajuste](#host)
+-   [Host de sesión de escritorio remoto para parámetros de ajuste](#remote-desktop-session-host-tuning-parameters)
 
-## <a href="" id="hw"></a>Seleccionar el hardware adecuado para el rendimiento
+## <a name="selecting-the-proper-hardware-for-performance"></a>Selección del hardware adecuado para el rendimiento
 
 
 Para una implementación de servidor Host de sesión de escritorio remoto, la elección del hardware se rige por el conjunto de aplicaciones y cómo usar los usuarios. Los factores clave que afectan al número de usuarios y su experiencia son la CPU, memoria, disco y gráficos. Esta sección contiene directrices adicionales que son específicas de los servidores Host de sesión de escritorio remoto y está relacionada principalmente con el entorno de varios usuarios de los servidores Host de sesión de escritorio remoto.
@@ -72,7 +72,7 @@ Uso de la red para un servidor Host de sesión de escritorio remoto incluye dos 
 
     El volumen y el perfil de tráfico de red es específico para cada implementación.
 
-## <a href="" id="apps"></a>Optimización de aplicaciones de Host de sesión de escritorio remoto
+## <a name="tuning-applications-for-remote-desktop-session-host"></a>Optimización de aplicaciones de Host de sesión de escritorio remoto
 
 
 La mayoría del uso de CPU en un servidor Host de sesión de escritorio remoto está controlado por las aplicaciones. Las aplicaciones de escritorio se optimizan normalmente hacia la capacidad de respuesta con el objetivo de minimizar el tiempo que tarda una aplicación para responder a una solicitud de usuario. Sin embargo, en un entorno de servidor, es igualmente importante minimizar la cantidad total de uso de CPU que se necesita para completar una acción para evitar afectar negativamente a otras sesiones.
@@ -111,7 +111,7 @@ Para el consumo de memoria, tenga en cuenta lo siguiente:
 
     Cuando sea posible, aplicar técnicas similares para otros motores de ejecución similares.
 
-## <a href="" id="host"></a>Host de sesión de escritorio remoto para parámetros de ajuste
+## <a name="remote-desktop-session-host-tuning-parameters"></a>Host de sesión de escritorio remoto para parámetros de ajuste
 
 
 ### <a name="page-file"></a>Archivo de paginación

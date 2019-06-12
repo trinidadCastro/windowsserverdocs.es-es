@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: ac2b1643ed151e94c3815abca9a57eb3706c845a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b14ded98c4f1a340349119bd9f5f42e3a1bf9434
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871136"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445746"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>Implementar la auditoría de seguridad con directivas de auditoría central (pasos de demostración)
 
@@ -34,21 +34,21 @@ En este paso, se configura la directiva de acceso a objetos global en el control
   
 #### <a name="to-configure-a-global-object-access-policy"></a>Para configurar una directiva de acceso a objetos global  
   
-1.  Inicie sesión en el controlador de dominio DC1 como Contoso\Administrador con la contraseña **pass@word1**.  
+1. Inicie sesión en el controlador de dominio DC1 como Contoso\Administrador con la contraseña <strong>pass@word1</strong>.  
   
-2.  En Administrador del servidor, seleccione **Herramientas**y haga clic en **Administración de directivas de grupo**.  
+2. En Administrador del servidor, seleccione **Herramientas**y haga clic en **Administración de directivas de grupo**.  
   
-3.  En el árbol de la consola, haga doble clic en **Dominios**, haga doble clic en **contoso.com**, haga clic en **Contoso**y, a continuación, haga doble clic en **Servidores de archivos**.  
+3. En el árbol de la consola, haga doble clic en **Dominios**, haga doble clic en **contoso.com**, haga clic en **Contoso**y, a continuación, haga doble clic en **Servidores de archivos**.  
   
-4.  Haga clic con el botón secundario en **FlexibleAccessGPO** y haga clic en **Editar**.  
+4. Haga clic con el botón secundario en **FlexibleAccessGPO** y haga clic en **Editar**.  
   
-5.  Haga doble clic en **Configuración del equipo**, haga doble clic en **Directivas** y, a continuación, haga doble clic en **Configuración de Windows**.  
+5. Haga doble clic en **Configuración del equipo**, haga doble clic en **Directivas** y, a continuación, haga doble clic en **Configuración de Windows**.  
   
-6.  Haga doble clic en **Configuración de seguridad**, haga doble clic en **Configuración de directiva de auditoría avanzada** y, a continuación, haga doble clic en **Directivas de auditoría**.  
+6. Haga doble clic en **Configuración de seguridad**, haga doble clic en **Configuración de directiva de auditoría avanzada** y, a continuación, haga doble clic en **Directivas de auditoría**.  
   
-7.  Haga doble clic en **Acceso a objetos**y, a continuación, haga doble clic en **Auditar sistema de archivos**.  
+7. Haga doble clic en **Acceso a objetos**y, a continuación, haga doble clic en **Auditar sistema de archivos**.  
   
-8.  Active la casilla **Configurar los siguientes eventos de auditoría**, active las casillas **Aciertos** y **Errores** y, a continuación, haga clic en **Aceptar**.  
+8. Active la casilla **Configurar los siguientes eventos de auditoría**, active las casillas **Aciertos** y **Errores** y, a continuación, haga clic en **Aceptar**.  
   
 9. En el panel de navegación, haga doble clic en **Auditoría de acceso a objetos global** y, a continuación, haga doble clic en **Sistema de archivos**.  
   
@@ -58,7 +58,7 @@ En este paso, se configura la directiva de acceso a objetos global en el control
   
 12. En el cuadro **Entrada de auditoría para SACL de archivo global**, seleccione **Control total** en el cuadro **Permisos**.  
   
-13. En la sección **Agregar una condición:**, haga clic en **Agregar una condición** y, en las listas desplegables, seleccione   
+13. En la sección **Agregar una condición:** , haga clic en **Agregar una condición** y, en las listas desplegables, seleccione   
     [**Recurso**] [**Departamento**] [**Cualquiera de**] [**Valor**] [**Finanzas**].  
   
 14. Haga clic en **Aceptar** tres veces para completar la configuración de los parámetros de la directiva de auditoría de acceso a objetos global.  
@@ -70,14 +70,14 @@ En este paso se actualiza la configuración de directiva de grupo después de ha
   
 #### <a name="to-update-group-policy-settings"></a>Para actualizar la configuración de directiva de grupo  
   
-1.  Inicie sesión en el servidor de archivos, FILE1 como Contoso\Administrador con la contraseña **pass@word1**.  
+1. Inicie sesión en el servidor de archivos, FILE1 como Contoso\Administrador con la contraseña <strong>pass@word1</strong>.  
   
-2.  Presione la tecla Windows+R y escriba **cmd** para abrir la ventana del símbolo del sistema.  
+2. Presione la tecla Windows+R y escriba **cmd** para abrir la ventana del símbolo del sistema.  
   
-    > [!NOTE]  
-    > Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+   > [!NOTE]  
+   > Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
   
-3.  Escriba **gpupdate /force** y presione ENTRAR.  
+3. Escriba **gpupdate /force** y presione ENTRAR.  
   
 ## <a name="BKMK_3"></a>Compruebe que se ha aplicado la directiva de acceso a objetos global  
 Una vez aplicada la configuración de directiva de grupo, puede comprobar si la configuración de directiva de auditoría se ha aplicado correctamente.  
@@ -95,8 +95,8 @@ Una vez aplicada la configuración de directiva de grupo, puede comprobar si la 
   
 -   [Escenario: Auditoría de acceso a archivos](Scenario--File-Access-Auditing.md)  
   
--   [Plan para el archivo de auditoría de acceso](Plan-for-File-Access-Auditing.md)  
+-   [Planear la auditoría de acceso a archivos](Plan-for-File-Access-Auditing.md)  
   
--   [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

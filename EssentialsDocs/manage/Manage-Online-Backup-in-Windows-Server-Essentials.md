@@ -12,12 +12,12 @@ ms.assetid: 95a9f593-fad7-4335-bd4d-c7bb8c033efb
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 37d59d500a2de1e2b98c848e7484ae13639d09b7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: c0357c1a2dc0bebee11355d1e2d1faa2dc80d06a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890726"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433291"
 ---
 # <a name="manage-online-backup-in-windows-server-essentials"></a>Administrar copias de seguridad en línea en Windows Server Essentials
 
@@ -25,23 +25,23 @@ ms.locfileid: "59890726"
   
  Después de integrar con copia de seguridad de Microsoft Azure, el **Online Backup** aparecerá la página de administración en el panel de Windows Server Essentials. La página **Copia de seguridad en línea** permite realizar tareas administrativas habituales. Las características en la página de copia de seguridad en línea incluyen:  
   
--   Las siguientes páginas de subsección:  
+- Las siguientes páginas de subsección:  
   
-    -   **Copia de seguridad en línea** Después de registrar el servidor para realizar copias de seguridad en línea, en esta sección se muestra el estado actual de la copia de seguridad, el estado de almacenamiento y la información de la cuenta.  
+  -   **Copia de seguridad en línea** Después de registrar el servidor para realizar copias de seguridad en línea, en esta sección se muestra el estado actual de la copia de seguridad, el estado de almacenamiento y la información de la cuenta.  
   
-    -   **Carpetas protegidas** esta sección enumeran todas las carpetas compartidas y todas las carpetas del historial de archivos en el servidor y todas las carpetas que ha elegido realizar copias de seguridad en Azure. La lista incluye el nombre, la ruta de acceso y el estado de cada carpeta compartida.  
+  -   **Carpetas protegidas** esta sección enumeran todas las carpetas compartidas y todas las carpetas del historial de archivos en el servidor y todas las carpetas que ha elegido realizar copias de seguridad en Azure. La lista incluye el nombre, la ruta de acceso y el estado de cada carpeta compartida.  
   
-    -   **Historial de copias de seguridad** En esta sección se muestra una lista de copias de seguridad en línea recientes. La lista incluye el tipo de operación, la hora y el estado de cada copia de seguridad.  
+  -   **Historial de copias de seguridad** En esta sección se muestra una lista de copias de seguridad en línea recientes. La lista incluye el tipo de operación, la hora y el estado de cada copia de seguridad.  
   
--   Un panel de detalles con información adicional sobre una determinada tarea de copia de seguridad o restauración.  
+- Un panel de detalles con información adicional sobre una determinada tarea de copia de seguridad o restauración.  
   
--   Un panel de tareas que incluye un conjunto de tareas administrativas que puede realizar.  
+- Un panel de tareas que incluye un conjunto de tareas administrativas que puede realizar.  
   
- Le recomendamos realizar una copia de los datos más importantes de la empresa y de usuario. Por ejemplo, debería copiar las carpetas del servidor que contengan archivos de datos importantes. También debe copiar el historial de archivos para los equipos de la red que contengan información importante.  
+  Le recomendamos realizar una copia de los datos más importantes de la empresa y de usuario. Por ejemplo, debería copiar las carpetas del servidor que contengan archivos de datos importantes. También debe copiar el historial de archivos para los equipos de la red que contengan información importante.  
   
- Al decidir de qué datos quiere hacer una copia de seguridad en línea, piense con qué frecuencia quiere realizarla y que directiva de retención desea aplicar. A continuación, revise su presupuesto y decida la cantidad de espacio de almacenamiento que se puede permitir. Analice el coste y el volumen de almacenamiento teniendo en cuenta sus necesidades y, a continuación, configure copias de seguridad en línea para proteger la mayor cantidad posible de datos importantes. Para obtener más información sobre precios, consulte [Detalles de precios de Copia de seguridad de Azure](https://azure.microsoft.com/pricing/details/backup/).  
+  Al decidir de qué datos quiere hacer una copia de seguridad en línea, piense con qué frecuencia quiere realizarla y que directiva de retención desea aplicar. A continuación, revise su presupuesto y decida la cantidad de espacio de almacenamiento que se puede permitir. Analice el coste y el volumen de almacenamiento teniendo en cuenta sus necesidades y, a continuación, configure copias de seguridad en línea para proteger la mayor cantidad posible de datos importantes. Para obtener más información sobre precios, consulte [Detalles de precios de Copia de seguridad de Azure](https://azure.microsoft.com/pricing/details/backup/).  
   
- En las siguientes secciones se describen diversas tareas de copia de seguridad en línea que pueden aparecer en el panel de Windows Server Essentials.  
+  En las siguientes secciones se describen diversas tareas de copia de seguridad en línea que pueden aparecer en el panel de Windows Server Essentials.  
   
 ## <a name="online-backup-tasks-in-the-dashboard"></a>Tareas de copia de seguridad en línea en el panel  
   
@@ -65,41 +65,41 @@ ms.locfileid: "59890726"
   
 ##### <a name="to-upload-a-certificate-to-use-with-the-azure-backup-service"></a>Para cargar un certificado y usarlo con el servicio de Azure Backup  
   
-1.  Inicie sesión en el panel de Windows Server Essentials con una cuenta de administrador.  
+1. Inicie sesión en el panel de Windows Server Essentials con una cuenta de administrador.  
   
-2.  En el panel **Página principal** , haga clic en **COPIA DE SEGURIDAD EN LÍNEA**.  
+2. En el panel **Página principal** , haga clic en **COPIA DE SEGURIDAD EN LÍNEA**.  
   
-3.  En la sección **Copia de seguridad en línea**, haga clic en **Cargar certificado en el almacén de Azure Backup**.  
+3. En la sección **Copia de seguridad en línea**, haga clic en **Cargar certificado en el almacén de Azure Backup**.  
   
-     Se abrirá **Recovery Services** en el Portal de administración de Azure. Si t de se ha iniciado sesión en Azure, deberá iniciar sesión con su cuenta de Microsoft.  
+    Se abrirá **Recovery Services** en el Portal de administración de Azure. Si aún no se ha registrado en Azure, deberá iniciar sesión con su cuenta de Microsoft.  
   
-4.  Haga clic en el nombre del almacén de copias de seguridad en línea que usará para abrir la página **Inicio rápido** del almacén de copias de seguridad.  
+4. Haga clic en el nombre del almacén de copias de seguridad en línea que usará para abrir la página **Inicio rápido** del almacén de copias de seguridad.  
   
-5.  Haga clic en **Administrar certificado**.  
+5. Haga clic en **Administrar certificado**.  
   
-6.  En el cuadro de diálogo **Administrar certificado** , pegue la ruta de acceso del certificado público generado con Windows Server Essentials. Para obtener la ruta de acceso del certificado público, haga lo siguiente:  
+6. En el cuadro de diálogo **Administrar certificado** , pegue la ruta de acceso del certificado público generado con Windows Server Essentials. Para obtener la ruta de acceso del certificado público, haga lo siguiente:  
   
-    1.  En el panel de Windows Server Essentials, haga clic en la pestaña **Copia de seguridad en línea** .  
+   1.  En el panel de Windows Server Essentials, haga clic en la pestaña **Copia de seguridad en línea** .  
   
-    2.  En la página **Copia de seguridad en línea**, copie la ruta de acceso del certificado generado.  
+   2.  En la página **Copia de seguridad en línea**, copie la ruta de acceso del certificado generado.  
   
-    3.  Conmutador en el Portal de administración de Azure y, a continuación, en el **administrar certificado** diálogo cuadro, pegue la ruta de acceso para cargar el certificado público generado.  
+   3.  Conmutador en el Portal de administración de Azure y, a continuación, en el **administrar certificado** diálogo cuadro, pegue la ruta de acceso para cargar el certificado público generado.  
   
-    > [!NOTE]
-    >  También puede usar su propio certificado público. Para saber qué certificado es necesario, en la página **Inicio rápido**, haga clic en el vínculo **Adquirir certificado**.  
+   > [!NOTE]
+   >  También puede usar su propio certificado público. Para saber qué certificado es necesario, en la página **Inicio rápido**, haga clic en el vínculo **Adquirir certificado**.  
   
-    > [!NOTE]
-    >   Azure requiere un certificado x.509 v2 con una clave pública. Para obtener más información, consulte [Administrar certificados de almacén](https://msdn.microsoft.com/library/azure/dn169036.aspx).  
+   > [!NOTE]
+   >   Azure requiere un certificado x.509 v2 con una clave pública. Para obtener más información, consulte [Administrar certificados de almacén](https://msdn.microsoft.com/library/azure/dn169036.aspx).  
   
-7.  Después de seleccionar el certificado, haga clic en **Aceptar** (marca de comprobación).  
+7. Después de seleccionar el certificado, haga clic en **Aceptar** (marca de comprobación).  
   
-8.  Vuelva a la página **Inicio rápido** . Haga clic en **Panel** y compruebe que el certificado se cargue correctamente. Una vez que el certificado se carga correctamente, el panel muestra la huella digital y la fecha de expiración del certificado.  
+8. Vuelva a la página **Inicio rápido** . Haga clic en **Panel** y compruebe que el certificado se cargue correctamente. Una vez que el certificado se carga correctamente, el panel muestra la huella digital y la fecha de expiración del certificado.  
   
- Después de completar este procedimiento, haga lo siguiente:  
+   Después de completar este procedimiento, haga lo siguiente:  
   
-1.  Registre el servidor con el servicio de copia de seguridad de Azure. Para obtener más información, vea cómo [registrar este servidor para realizar copias de seguridad](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
+9. Registre el servidor con el servicio de copia de seguridad de Azure. Para obtener más información, vea cómo [registrar este servidor para realizar copias de seguridad](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
   
-2.  Configure las copias de seguridad en línea del servidor. Para obtener más información, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
+10. Configure las copias de seguridad en línea del servidor. Para obtener más información, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
   
 ###  <a name="BKMK_2"></a> Configurar copia de seguridad en línea  
  Después de registrar el servidor con copia de seguridad de Azure, puede configurar la configuración de copia de seguridad en línea en Windows Server Essentials.  
@@ -250,15 +250,15 @@ ms.locfileid: "59890726"
   
 ##### <a name="to-change-the-online-backup-policy"></a>Para cambiar la directiva de copias de seguridad en línea  
   
-1.  Inicie sesión en el panel como administrador.  
+1. Inicie sesión en el panel como administrador.  
   
-2.  En la barra de navegación, haga clic en **Copia de seguridad en línea**.  
+2. En la barra de navegación, haga clic en **Copia de seguridad en línea**.  
   
-3.  En el panel **Tareas de copia de seguridad en línea** , haga clic en **Configurar copia de seguridad en línea**.  
+3. En el panel **Tareas de copia de seguridad en línea** , haga clic en **Configurar copia de seguridad en línea**.  
   
-4.  Siga las instrucciones del asistente para personalizar la directiva de copias de seguridad en línea.  
+4. Siga las instrucciones del asistente para personalizar la directiva de copias de seguridad en línea.  
   
- Para obtener más información sobre las opciones de configuración que pueden personalizarse, vea el tema sobre la [configuración de copias de seguridad en línea](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
+   Para obtener más información sobre las opciones de configuración que pueden personalizarse, vea el tema sobre la [configuración de copias de seguridad en línea](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
   
 ###  <a name="BKMK_8"></a> Ver el uso de almacenamiento de copia de seguridad en línea  
   
@@ -274,23 +274,23 @@ ms.locfileid: "59890726"
   
 ##### <a name="to-include-a-new-folder-in-the-online-backup-policy"></a>Para incluir una carpeta nueva en la directiva de copias de seguridad en línea  
   
-1.  Inicie sesión en el panel como administrador.  
+1. Inicie sesión en el panel como administrador.  
   
-2.  En la barra de navegación, haga clic en **Copia de seguridad en línea**.  
+2. En la barra de navegación, haga clic en **Copia de seguridad en línea**.  
   
-3.  En el panel **Tareas de copia de seguridad en línea** , haga clic en **Configurar copia de seguridad en línea**.  
+3. En el panel **Tareas de copia de seguridad en línea** , haga clic en **Configurar copia de seguridad en línea**.  
   
-4.  En la página **Modificar o quitar la directiva de copia de seguridad** , haga clic en **Personalizar la directiva de Copia de seguridad en línea**.  
+4. En la página **Modificar o quitar la directiva de copia de seguridad** , haga clic en **Personalizar la directiva de Copia de seguridad en línea**.  
   
-5.  En la página **Configurar copia de seguridad en línea**, si la carpeta que desea incluir no aparece en la lista, haga clic en **Agregar carpetas**.  
+5. En la página **Configurar copia de seguridad en línea**, si la carpeta que desea incluir no aparece en la lista, haga clic en **Agregar carpetas**.  
   
-6.  En la ventana **Agregar carpetas** , busque y seleccione la carpeta que desea incluir en la copia de seguridad en línea y, después, haga clic en **Aceptar**.  
+6. En la ventana **Agregar carpetas** , busque y seleccione la carpeta que desea incluir en la copia de seguridad en línea y, después, haga clic en **Aceptar**.  
   
-7.  En la página **Configurar copia de seguridad en línea** , seleccione otras carpetas que desee incluir y, a continuación, haga clic en **Siguiente**.  
+7. En la página **Configurar copia de seguridad en línea** , seleccione otras carpetas que desee incluir y, a continuación, haga clic en **Siguiente**.  
   
-8.  Siga las instrucciones del asistente para finalizar la personalización de la directiva de copias de seguridad en línea.  
+8. Siga las instrucciones del asistente para finalizar la personalización de la directiva de copias de seguridad en línea.  
   
- Para obtener más información acerca de otras opciones de configuración que se pueden personalizar, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
+   Para obtener más información acerca de otras opciones de configuración que se pueden personalizar, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
   
 ###  <a name="BKMK_10"></a> Quitar o excluir las copias de seguridad del historial de archivos de la directiva de copia de seguridad en línea  
   
@@ -336,17 +336,17 @@ ms.locfileid: "59890726"
   
 ##### <a name="to-view-online-backup-alerts-in-the-alert-viewer"></a>Para ver las alertas de copia de seguridad en línea en el Visor de alertas  
   
-1.  Abra el Panel.  
+1. Abra el Panel.  
   
-2.  Realiza una de las siguientes acciones:  
+2. Realiza una de las siguientes acciones:  
   
-      Windows Server Essentials: En el panel de navegación, haga clic en el icono alertas \(puede ser crítico, advertencia o informativa\). Se abrirá el Visor de alertas.  
+     Windows Server Essentials: En el panel de navegación, haga clic en el icono alertas \(puede ser crítico, advertencia o informativa\). Se abrirá el Visor de alertas.  
   
-      Windows Server Essentials: En la **Página principal**, haga clic en la pestaña **Seguimiento de estado**.  
+     Windows Server Essentials: En la **Página principal**, haga clic en la pestaña **Seguimiento de estado**.  
   
-3.  Revise la lista de alertas para problemas relacionados con la copia de seguridad de Azure.  
+3. Revise la lista de alertas para problemas relacionados con la copia de seguridad de Azure.  
   
- Para obtener más información sobre cómo usar el Visor de alertas o la supervisión del estado de la pestaña para administrar las alertas, consulte [Manage System Health](Manage-System-Health-in-Windows-Server-Essentials.md).  
+   Para obtener más información sobre cómo usar el Visor de alertas o la supervisión del estado de la pestaña para administrar las alertas, consulte [Manage System Health](Manage-System-Health-in-Windows-Server-Essentials.md).  
   
 ###  <a name="BKMK_15"></a> Restablecer configuración predeterminada de copia de seguridad en línea  
  Windows Server Essentials proporciona un asistente que ayuda a configurar las opciones de copia de seguridad en línea. Si desea restaurar la configuración predeterminada, ejecute la tarea **Configurar copia de seguridad en línea** y luego seleccione la opción **Quitar la directiva de Copia de seguridad en línea**. A continuación, ejecute la tarea **Configurar copia de seguridad en línea** de nuevo. Los datos cargados anteriormente no cambiarán.  
@@ -376,7 +376,7 @@ ms.locfileid: "59890726"
   
      Si ya tiene una suscripción de Azure, haga clic en **Portal** en la esquina superior derecha de la página web para ir al Portal de administración de Azure.  
   
-5.  En la página de Portal de administración de Azure, verá **Recovery Services** en el panel izquierdo. S donde ll administrar la copia de seguridad de los almacenes ese almacén las copias de seguridad en línea de Windows Server Essentials.  
+5.  En la página de Portal de administración de Azure, verá **Recovery Services** en el panel izquierdo. Es donde podrá administrar los almacenes de copia de seguridad que almacenan las copias de seguridad en línea de Windows Server Essentials.  
   
 ####  <a name="BKMK_Createabackupvaulttostoreonlinebackups"></a> Crear un almacén de copia de seguridad para almacenar las copias de seguridad en línea  
   
@@ -396,30 +396,30 @@ ms.locfileid: "59890726"
   
 ####  <a name="BKMK_InstalltheWindowsAzureBackupAddIn"></a> Instalar el complemento de copia de seguridad de Azure en el servidor  
   
-1.  Inicie sesión en el servidor con una cuenta de administrador y, a continuación, ejecute el archivo **OnlineBackupAddin.wssx** descargado en el paso anterior.  
+1. Inicie sesión en el servidor con una cuenta de administrador y, a continuación, ejecute el archivo **OnlineBackupAddin.wssx** descargado en el paso anterior.  
   
-2.  Se mostrarán los **Términos de licencia de software**. Si está de acuerdo con los términos y condiciones, haga clic en **Aceptar** para continuar con la instalación.  
+2. Se mostrarán los **Términos de licencia de software**. Si está de acuerdo con los términos y condiciones, haga clic en **Aceptar** para continuar con la instalación.  
   
-3.  En la página **Instalar el complemento** , haga clic en **Instalar el complemento**.  
+3. En la página **Instalar el complemento** , haga clic en **Instalar el complemento**.  
   
-    > [!NOTE]
-    >  Es posible que deba reiniciar el servidor para instalar el software requerido.  
+   > [!NOTE]
+   >  Es posible que deba reiniciar el servidor para instalar el software requerido.  
   
-     Se abrirá la página **Instalación**. Aparecerá un indicador de progreso de instalación cuando esta se inicie. Una vez completada la instalación, recibirá un mensaje que el complemento Azure Backup se instaló correctamente.  
+    Se abrirá la página **Instalación**. Aparecerá un indicador de progreso de instalación cuando esta se inicie. Una vez completada la instalación, recibirá un mensaje que el complemento Azure Backup se instaló correctamente.  
   
-4.  Haga clic en **Finalizar**.  
+4. Haga clic en **Finalizar**.  
   
-5.  Cierre el panel y vuelva a abrirlo.  
+5. Cierre el panel y vuelva a abrirlo.  
   
-     Verá en el panel la nueva pestaña **Copia de seguridad en línea**. En esta pestaña, puede registrar el servidor, configurar opciones de copia de seguridad y abrir **Recovery Services** en el Portal de administración de Azure para administrar los almacenes de copia de seguridad de los servidores.  
+    Verá en el panel la nueva pestaña **Copia de seguridad en línea**. En esta pestaña, puede registrar el servidor, configurar opciones de copia de seguridad y abrir **Recovery Services** en el Portal de administración de Azure para administrar los almacenes de copia de seguridad de los servidores.  
   
- Después de completar estos pasos, haga lo siguiente:  
+   Después de completar estos pasos, haga lo siguiente:  
   
-1.  En Windows Server Essentials, cargar un certificado que se utilizará para las copias de seguridad en línea. Para obtener más información, vea cómo [cargar un certificado en el almacén de Azure Backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_1).  
+6. En Windows Server Essentials, cargar un certificado que se utilizará para las copias de seguridad en línea. Para obtener más información, vea cómo [cargar un certificado en el almacén de Azure Backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_1).  
   
-2.  Registrar el servidor con el almacén de copia de seguridad de Azure. Para obtener más información, vea cómo [registrar este servidor para realizar copias de seguridad](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
+7. Registrar el servidor con el almacén de copia de seguridad de Azure. Para obtener más información, vea cómo [registrar este servidor para realizar copias de seguridad](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_5).  
   
-3.  Configure las copias de seguridad en línea del servidor. Para obtener más información, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
+8. Configure las copias de seguridad en línea del servidor. Para obtener más información, consulte [Configure online backup](Manage-Online-Backup-in-Windows-Server-Essentials.md#BKMK_2).  
   
 ###  <a name="BKMK_17"></a> Integrar Azure Backup con Windows Server Essentials  
  El módulo de integración de Microsoft Azure Backup es una característica nueva de Windows Server Essentials que le permite cifrar y realizar copias de seguridad de archivos y carpetas desde el servidor a un sistema de almacenamiento hospedado de Azure proporcionado por Microsoft. Con Azure Backup para cifrar y hacer una copia de seguridad de los datos en el servidor, puede ayudar a evitar la pérdida grave de datos críticos de empresa a causa de incendios, inundaciones, robos u otros desastres. Al usar Azure Backup para realizar una copia de seguridad de los datos del servidor, la información se cifra con la frase de contraseña antes de cargarlos en un centro de datos segura en Internet. Para acceder a los datos de una copia de seguridad en línea, debe tener un servidor que se autentique mediante un certificado. Además, debe proporcionar la frase de contraseña.  
@@ -446,7 +446,7 @@ ms.locfileid: "59890726"
 |------------|-----------------|  
 |**Nombre de carpeta:**|El nombre de la carpeta que se incluye en la copia de seguridad en línea.<br /><br /> Para agregar o excluir una carpeta, ejecute la tarea **Configurar copia de seguridad en línea**.|  
 |**Ruta de acceso de carpeta:**|La ubicación de la carpeta.|  
-|**Estado:**|Hay tres tipos de estado **Protected**, **no protegido**, y **desconocido**.|  
+|**Estado:**|Hay tres tipos de estado - **Protected**, **no protegido**, y **desconocido**.|  
   
 ###  <a name="BKMK_19"></a> Historial de copia de seguridad en línea en Windows Server Essentials  
  En la subsección **Historial de copias de seguridad** de la sección de copias de seguridad en línea del panel aparece una lista de las copias de seguridad en línea más recientes. Puede usar copias de seguridad correctas para restaurar archivos y carpetas. En la tabla siguiente se describe la información incluida en la lista.  
@@ -455,7 +455,7 @@ ms.locfileid: "59890726"
 |------------|-----------------|  
 |**Operación:**|Hay dos tipos de operación: **Copia de seguridad** y **Restaurar**.|  
 |**hora:**|La hora que se registra para el estado más reciente.|  
-|**Estado:**|Hay cinco tipos de estado **éxito**, **en curso**, **Canceled**, **advertencia**, y **incorrecto**.|  
+|**Estado:**|Hay cinco tipos de estado - **éxito**, **en curso**, **Canceled**, **advertencia**, y **incorrecto**.|  
   
 ## <a name="see-also"></a>Vea también  
   

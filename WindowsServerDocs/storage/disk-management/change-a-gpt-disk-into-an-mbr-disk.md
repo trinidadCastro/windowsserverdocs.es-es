@@ -8,16 +8,16 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c42cffec0ddc1ae480ae67982147e9f186f0e50a
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 5cd345230ce5c0fc556bfd8b421d866bd827507b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222860"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812446"
 ---
 # <a name="convert-a-gpt-disk-into-an-mbr-disk"></a>Convertir un disco GPT en un disco MBR
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Los discos de registro de arranque maestro (MBR) usan la tabla de particiones BIOS estándar. Los discos de tabla de particiones GUID (GPT) usan Unified Extensible Firmware Interface (UEFI). Los discos MBR no admiten más de cuatro particiones en cada disco. El método de partición MBR no se recomienda para los discos de más de dos terabytes (TB).
 
@@ -56,16 +56,12 @@ Puedes cambiar un disco de un estilo de partición GPT a un estilo de partición
 
 7.  En el símbolo del sistema **DISKPART**, escribe `convert mbr`.
 
-<br />
-
-| Valor | Descripción |
-| --- | --- |
-| <p>**disco de la lista**</p> | <p>Muestra una lista de discos e información sobre ellos, como su tamaño, la cantidad de espacio libre disponible, si se trata de un disco básico o dinámico y si el disco utiliza el estilo de partición de Registro de arranque maestro (MBR) o Tabla de particiones GUID (GPT). El disco marcado con un asterisco (*) tiene el foco.</p> |
-| <p>**Seleccione el disco**</p> | <p>Selecciona el disco especificado, donde <em>disknumber</em> es el número de disco y el que recibe el foco.</p> | <p>**clean**</p> | <p>Quita todas las particiones o volúmenes del disco con el foco.</p> |
-| <p>**convert mbr**</p> | <p>Convierte un disco básico vacío con el estilo de partición de la tabla de particiones GUID (GPT) en un disco básico con el estilo de partición de registro de arranque maestro (MBR).</p>
+|                Valor                  |      Descripción   |
+| ------------------------------------- | -----------------  |
+|  <strong>disco de la lista</strong>  | Muestra una lista de discos e información sobre ellos, como su tamaño, la cantidad de espacio libre disponible, si se trata de un disco básico o dinámico y si el disco utiliza el estilo de partición de Registro de arranque maestro (MBR) o Tabla de particiones GUID (GPT). El disco marcado con un asterisco (\*) tiene el foco. |
+| <strong>Seleccione el disco</strong> |                                                                                                          Selecciona el disco especificado, donde <em>disknumber</em> es el número de disco y el que recibe el foco.                                                                                                           |
+| <strong>convert mbr</strong> |                                                                               Convierte un disco básico vacío con el estilo de partición de la tabla de particiones GUID (GPT) en un disco básico con el estilo de partición de registro de arranque maestro (MBR).                                                                                |
 
 ## <a name="see-also"></a>Vea también
 
 -   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

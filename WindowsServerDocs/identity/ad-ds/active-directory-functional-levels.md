@@ -11,12 +11,12 @@ ms.prod: windows-server-threshold
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: ea56c718394d145a36145d32e5769661a62efd56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: cb9b5b9448f364760c3d2a7e43edd01a5a9f7f9d
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841006"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719664"
 ---
 # <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de bosque y dominio
 
@@ -34,7 +34,7 @@ En el Windows Server 2008 y los niveles funcionales de dominio más altos, repli
 
 No hay ningún nuevo bosque o los niveles funcionales de dominio agregados en esta versión.
 
-El requisito mínimo para agregar un controlador de dominio de Windows Server 2019 es un nivel funcional de Windows Server 2008 R2.
+El requisito mínimo para agregar un controlador de dominio de Windows Server 2019 es un nivel funcional de Windows Server 2008. El dominio también tiene que usar DFS-R como el motor para replicar SYSVOL.
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -139,25 +139,27 @@ Sistema de operativo del controlador de dominio admitidos:
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Características de nivel funcional de dominio de Windows Server 2008
 
 * Todos los de la predeterminada de AD DS características, todas las características desde el nivel funcional del dominio de Windows Server 2003, y están disponibles las siguientes características:
-   * Compatibilidad con la replicación de Distributed File System (DFS) para el volumen de sistema de Windows Server 2003 (SYSVOL)
-      * Compatibilidad con la replicación DFS proporciona una replicación más sólida y detallada del contenido de SYSVOL.
-        [!NOTE]>
-        >A partir de Windows Server 2012 R2, servicio de replicación de archivos (FRS) está en desuso. Un dominio nuevo que se crea en un controlador de dominio que ejecute al menos Windows Server 2012 R2 debe establecerse en el nivel funcional del dominio de Windows Server 2008 o posterior.
+  * Compatibilidad con la replicación de Distributed File System (DFS) para el volumen de sistema de Windows Server 2003 (SYSVOL)
+    * Compatibilidad con la replicación DFS proporciona una replicación más sólida y detallada del contenido de SYSVOL.
 
-   * Basado en dominio espacios de nombres DFS que se ejecuta en modo de Windows Server 2008, que incluye soporte técnico para aumentar la escalabilidad y el acceso según la enumeración. Espacios de nombres basados en dominio en modo Windows Server 2008 también requieren el bosque que desea utilizar el nivel funcional del bosque de Windows Server 2003. Para obtener más información, consulte [elegir un tipo de Namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
-   * Advanced Encryption Standard (AES 128 y AES 256) compatibilidad con el protocolo Kerberos. En el orden de los TGT que se emitan mediante AES, el nivel funcional del dominio debe ser Windows Server 2008 o posterior y debe cambiarse la contraseña de dominio. 
-      * Para obtener más información, consulte [mejoras de Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
-        [!NOTE]>
-        >Errores de autenticación pueden producirse en un controlador de dominio después de eleva el nivel funcional del dominio a Windows Server 2008 o posterior si el controlador de dominio ya ha replicado el cambio del nivel funcional de dominio, pero no ha actualizado la contraseña de krbtgt todavía. En este caso, un reinicio del servicio KDC en el controlador de dominio desencadenará una actualización en la memoria de la nueva contraseña de krbtgt y resolver errores de autenticación relacionadas.
+      > [!NOTE]
+      > A partir de Windows Server 2012 R2, servicio de replicación de archivos (FRS) está en desuso. Un dominio nuevo que se crea en un controlador de dominio que ejecute al menos Windows Server 2012 R2 debe establecerse en el nivel funcional del dominio de Windows Server 2008 o posterior.
 
-   * [Último inicio de sesión interactivo](https://go.microsoft.com/fwlink/?LinkId=180387) información muestra la siguiente información:
-      * El número total de intentos de inicio de sesión en un servidor unido a un dominio de Windows Server 2008 o una estación de trabajo de Windows Vista
-      * El número total de intentos de inicio de sesión después de iniciar sesión correctamente en un servidor de Windows Server 2008 o una estación de trabajo de Windows Vista
-      * La hora del último intento de inicio de sesión en un equipo con Windows Server 2008 o una estación de trabajo de Windows Vista
-      * Intento de la hora del último inicio de sesión correcto en un servidor de Windows Server 2008 o una estación de trabajo de Windows Vista
-   * Directivas de contraseña específica permiten especificar directivas de bloqueo de cuentas y contraseñas para usuarios y grupos de seguridad global en un dominio. Para obtener más información, consulte [guía paso a paso para la configuración de directiva de bloqueo de cuenta y contraseña específica](https://go.microsoft.com/fwlink/?LinkID=91477).
-   * Escritorios virtuales personales
-      * Para usar la funcionalidad agregada proporcionada por la ficha de Escritorio Virtual Personal en el cuadro de diálogo Propiedades de la cuenta de usuario en usuarios y equipos de usuarios de Active Directory, se debe extender el esquema de AD DS para Windows Server 2008 R2 (versión de esquema de objeto = 47). Para obtener más información, consulte [implementar escritorios virtuales personales usando RemoteApp y Guía paso a paso de conexión de escritorio](https://go.microsoft.com/fwlink/?LinkId=183552).
+  * Basado en dominio espacios de nombres DFS que se ejecuta en modo de Windows Server 2008, que incluye soporte técnico para aumentar la escalabilidad y el acceso según la enumeración. Espacios de nombres basados en dominio en modo Windows Server 2008 también requieren el bosque que desea utilizar el nivel funcional del bosque de Windows Server 2003. Para obtener más información, consulte [elegir un tipo de Namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
+  * Advanced Encryption Standard (AES 128 y AES 256) compatibilidad con el protocolo Kerberos. En el orden de los TGT que se emitan mediante AES, el nivel funcional del dominio debe ser Windows Server 2008 o posterior y debe cambiarse la contraseña de dominio. 
+    * Para obtener más información, consulte [mejoras de Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
+
+      > [!NOTE]
+      >Errores de autenticación pueden producirse en un controlador de dominio después de eleva el nivel funcional del dominio a Windows Server 2008 o posterior si el controlador de dominio ya ha replicado el cambio del nivel funcional de dominio, pero no ha actualizado la contraseña de krbtgt todavía. En este caso, un reinicio del servicio KDC en el controlador de dominio desencadenará una actualización en la memoria de la nueva contraseña de krbtgt y resolver errores de autenticación relacionadas.
+
+  * [Último inicio de sesión interactivo](https://go.microsoft.com/fwlink/?LinkId=180387) información muestra la siguiente información:
+     * El número total de intentos de inicio de sesión en un servidor unido a un dominio de Windows Server 2008 o una estación de trabajo de Windows Vista
+     * El número total de intentos de inicio de sesión después de iniciar sesión correctamente en un servidor de Windows Server 2008 o una estación de trabajo de Windows Vista
+     * La hora del último intento de inicio de sesión en un equipo con Windows Server 2008 o una estación de trabajo de Windows Vista
+     * Intento de la hora del último inicio de sesión correcto en un servidor de Windows Server 2008 o una estación de trabajo de Windows Vista
+  * Directivas de contraseña específica permiten especificar directivas de bloqueo de cuentas y contraseñas para usuarios y grupos de seguridad global en un dominio. Para obtener más información, consulte [guía paso a paso para la configuración de directiva de bloqueo de cuenta y contraseña específica](https://go.microsoft.com/fwlink/?LinkID=91477).
+  * Escritorios virtuales personales
+     * Para usar la funcionalidad agregada proporcionada por la ficha de Escritorio Virtual Personal en el cuadro de diálogo Propiedades de la cuenta de usuario en usuarios y equipos de usuarios de Active Directory, se debe extender el esquema de AD DS para Windows Server 2008 R2 (versión de esquema de objeto = 47). Para obtener más información, consulte [implementar escritorios virtuales personales usando RemoteApp y Guía paso a paso de conexión de escritorio](https://go.microsoft.com/fwlink/?LinkId=183552).
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 

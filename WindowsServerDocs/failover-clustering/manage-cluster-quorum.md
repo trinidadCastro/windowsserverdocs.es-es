@@ -6,14 +6,14 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
-ms.date: 01/18/2019
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d6641ba08323aeffa680e59c8e0bc5fcfa9757fd
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 85b75d0039fec1b2ad9982d6ae9bf83fa8da2fdf
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222438"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810987"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar y administrar el cuórum
 
@@ -31,20 +31,19 @@ El modelo de quórum en Windows Server es flexible. Si necesita modificar la con
 
 En la tabla siguiente encontrarás las tres opciones de configuración del cuórum que están disponibles en el Asistente para configurar cuórum de clúster.
 
-|Opción  |Descripción  |
-|---------|---------|
-|Usar configuración típica     |  El clúster asigna automáticamente un voto a cada nodo y administra de forma dinámica los votos de nodos. Si funciona bien con el clúster y, además, hay disponible un almacenamiento compartido de clúster, el clúster seleccionará un testigo de disco. Esta opción es la recomendada en la mayoría de los casos, ya que el software del clúster elige automáticamente una configuración de cuórum y testigo que proporciona la mayor disponibilidad para el clúster.       |
-|Agregar o cambiar el testigo de cuórum     |   Puede agregar, cambiar o quitar un recurso de testigo. Puede configurar un testigo de disco o recurso compartido de archivo. El clúster asigna automáticamente un voto a cada nodo y administra de forma dinámica los votos de nodos.      |
-|Configuración avanzada de cuórum y selección de testigo     | Elige esta opción solo cuando tengas requisitos específicos para configurar el cuórum, ya sean de aplicación o de sitio. Puedes modificar el testigo de cuórum, agregar o quitar votos de los nodos y elegir si quieres que el clúster administre de forma dinámica los votos de nodos. De manera predeterminada, los votos se asignan a todos los nodos, y los votos de nodos se administran de forma dinámica.        |
+| Opción  |Descripción  |
+| --------- | ---------|
+| Usar configuración típica     |  El clúster asigna automáticamente un voto a cada nodo y administra de forma dinámica los votos de nodos. Si funciona bien con el clúster y, además, hay disponible un almacenamiento compartido de clúster, el clúster seleccionará un testigo de disco. Esta opción es la recomendada en la mayoría de los casos, ya que el software del clúster elige automáticamente una configuración de cuórum y testigo que proporciona la mayor disponibilidad para el clúster.       |
+| Agregar o cambiar el testigo de cuórum     |   Puede agregar, cambiar o quitar un recurso de testigo. Puede configurar un testigo de disco o recurso compartido de archivo. El clúster asigna automáticamente un voto a cada nodo y administra de forma dinámica los votos de nodos.      |
+| Configuración avanzada de cuórum y selección de testigo     | Elige esta opción solo cuando tengas requisitos específicos para configurar el cuórum, ya sean de aplicación o de sitio. Puedes modificar el testigo de cuórum, agregar o quitar votos de los nodos y elegir si quieres que el clúster administre de forma dinámica los votos de nodos. De manera predeterminada, los votos se asignan a todos los nodos, y los votos de nodos se administran de forma dinámica.        |
 
 Según la opción de configuración de cuórum que elijas y la configuración específica, el clúster se configurará en uno de los siguientes modos de cuórum:
 
-
-|Modo  |Descripción  |
-|---------|---------|
-|Mayoría de nodo (sin testigo)     |   Solo los nodos tienen votos. No se configura ningún testigo de cuórum. El cuórum de clúster es la mayoría de los nodos de votación en la pertenencia al clúster activa.      |
-|Mayoría de nodo con testigo (disco o recurso compartido de archivos)     |   Los nodos tienen votos. Además, los testigos de cuórum tienen un voto. El cuórum de clúster es la mayoría de los nodos de votación en la pertenencia al clúster activa, más un voto de testigo. Los testigos de cuórum se pueden designar como testigos de disco o como testigos de recurso compartido de archivos. 
-|Sin mayoría (solo testigo de disco)     | Ningún nodo tiene votos. Solo los testigos de disco tienen un voto. <br>El cuórum de clúster se determina por el estado del testigo de disco. En general, no se recomienda usar este modo y solo debería seleccionarse porque crea un punto de error único para el clúster.       |
+| Modo  | Descripción  |
+| --------- | ---------|
+| Mayoría de nodo (sin testigo)     |   Solo los nodos tienen votos. No se configura ningún testigo de cuórum. El cuórum de clúster es la mayoría de los nodos de votación en la pertenencia al clúster activa.      |
+| Mayoría de nodo con testigo (disco o recurso compartido de archivos)     |   Los nodos tienen votos. Además, los testigos de cuórum tienen un voto. El cuórum de clúster es la mayoría de los nodos de votación en la pertenencia al clúster activa, más un voto de testigo. Los testigos de cuórum se pueden designar como testigos de disco o como testigos de recurso compartido de archivos. 
+| Sin mayoría (solo testigo de disco)     | Ningún nodo tiene votos. Solo los testigos de disco tienen un voto. <br>El cuórum de clúster se determina por el estado del testigo de disco. En general, no se recomienda usar este modo y solo debería seleccionarse porque crea un punto de error único para el clúster.       |
 
 Las siguientes subsecciones le proporcionará más información sobre opciones de configuración avanzada de cuórum.
 
@@ -56,12 +55,11 @@ Si todos los nodos pueden ver el disco, usa un testigo de disco. Usa testigos de
 
 En la tabla siguiente encontrarás información adicional y consideraciones sobre los tipos de testigos de cuórum.
 
-
-|Tipo de testigo  |Descripción  |Requisitos y recomendaciones  |
-|---------|---------|---------|
-|Testigo de disco     |  <ul><li> LUN dedicado que almacena una copia de la base de datos del clúster</li><li> Recomendado para clústeres con almacenamiento compartido (no replicado)</li>       |  <ul><li>El tamaño del LUN debe ser como mínimo de 512 MB</li><li> Debe ser exclusivo para el clúster y no debe asignarse a un rol en clúster</li><li> Debe incluirse en almacenamiento en clúster y completar sin errores las pruebas de validación de almacenamiento</li><li> No puede ser un disco que sea un volumen compartido de clúster (CSV)</li><li> Disco básico con un solo volumen</li><li> No necesita tener asignada una letra de unidad</li><li> Puede formatearse como NTFS o como ReFS</li><li> De manera opcional, se puede configurar con RAID de hardware para tolerancia a errores</li><li> Debe excluirse de las copias de seguridad y de los análisis antivirus</li><li> No se admite un testigo de disco con espacios de almacenamiento directo</li>|
-|Testigo de recurso compartido de archivos     | <ul><li>El recurso compartido de archivos SMB que se configura en un servidor de archivos que ejecute Windows Server</li><li> No almacena una copia de la base de datos del clúster</li><li> Mantiene toda la información del clúster en el archivo witness.log</li><li> Recomendado para clústeres multisitio con almacenamiento replicado </li>       |  <ul><li>Debe disponer de un mínimo de 5 MB de espacio</li><li> Debe ser dedicado para un solo clúster y no usarse para almacenar datos de usuarios o de aplicaciones</li><li> Debe tener habilitados los permisos de escritura para el objeto de equipo del nombre del clúster</li></ul><br>A continuación, encontrarás consideraciones adicionales para un servidor de archivos que hospede el testigo de recurso compartido de archivos:<ul><li>Un solo servidor de archivos se puede configurar con testigos del recurso compartido de archivos para varios clústeres.</li><li> El servidor de archivos debe encontrarse en un sitio que esté separado de la carga de trabajo del clúster. Esto ofrece las mismas oportunidades de supervivencia para cualquier clúster si se pierden las comunicaciones de red de sitio a sitio. Si el servidor de archivos se encuentra en el mismo sitio, dicho sitio se convertirá en el sitio principal y será el único sitio que podrá conectarse al recurso compartido de archivos.</li><li> El servidor de archivos se puede ejecutar en una máquina virtual si esta no está hospedada en el mismo clúster que usa el testigo de recurso compartido de archivos.</li><li> Para obtener una alta disponibilidad, el servidor de archivos se puede configurar en un clúster de conmutación por error separado. </li>      |
-|Testigo en la nube     |  <ul><li>Un archivo de testigo almacenado en Azure blob storage</li><li> Se recomienda cuando todos los servidores del clúster tienen una conexión a Internet segura.</li>      |  Consulte [implementar un testigo en la nube](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness).       |
+| Tipo de testigo  | Descripción  | Requisitos y recomendaciones  |
+| ---------    |---------        |---------                        |
+| Testigo de disco     |  <ul><li> LUN dedicado que almacena una copia de la base de datos del clúster</li><li> Recomendado para clústeres con almacenamiento compartido (no replicado)</li>       |  <ul><li>El tamaño del LUN debe ser como mínimo de 512 MB</li><li> Debe ser exclusivo para el clúster y no debe asignarse a un rol en clúster</li><li> Debe incluirse en almacenamiento en clúster y completar sin errores las pruebas de validación de almacenamiento</li><li> No puede ser un disco que sea un volumen compartido de clúster (CSV)</li><li> Disco básico con un solo volumen</li><li> No necesita tener asignada una letra de unidad</li><li> Puede formatearse como NTFS o como ReFS</li><li> De manera opcional, se puede configurar con RAID de hardware para tolerancia a errores</li><li> Debe excluirse de las copias de seguridad y de los análisis antivirus</li><li> No se admite un testigo de disco con espacios de almacenamiento directo</li>|
+| Testigo de recurso compartido de archivos     | <ul><li>El recurso compartido de archivos SMB que se configura en un servidor de archivos que ejecute Windows Server</li><li> No almacena una copia de la base de datos del clúster</li><li> Mantiene toda la información del clúster en el archivo witness.log</li><li> Recomendado para clústeres multisitio con almacenamiento replicado </li>       |  <ul><li>Debe disponer de un mínimo de 5 MB de espacio</li><li> Debe ser dedicado para un solo clúster y no usarse para almacenar datos de usuarios o de aplicaciones</li><li> Debe tener habilitados los permisos de escritura para el objeto de equipo del nombre del clúster</li></ul><br>A continuación, encontrarás consideraciones adicionales para un servidor de archivos que hospede el testigo de recurso compartido de archivos:<ul><li>Un solo servidor de archivos se puede configurar con testigos del recurso compartido de archivos para varios clústeres.</li><li> El servidor de archivos debe encontrarse en un sitio que esté separado de la carga de trabajo del clúster. Esto ofrece las mismas oportunidades de supervivencia para cualquier clúster si se pierden las comunicaciones de red de sitio a sitio. Si el servidor de archivos se encuentra en el mismo sitio, dicho sitio se convertirá en el sitio principal y será el único sitio que podrá conectarse al recurso compartido de archivos.</li><li> El servidor de archivos se puede ejecutar en una máquina virtual si esta no está hospedada en el mismo clúster que usa el testigo de recurso compartido de archivos.</li><li> Para obtener una alta disponibilidad, el servidor de archivos se puede configurar en un clúster de conmutación por error separado. </li>      |
+| Testigo en la nube     |  <ul><li>Un archivo de testigo almacenado en Azure blob storage</li><li> Se recomienda cuando todos los servidores del clúster tienen una conexión a Internet segura.</li>      |  Consulte [implementar un testigo en la nube](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness).       |
 
 ### <a name="node-vote-assignment"></a>Asignación de votos de nodos
 
@@ -93,7 +91,7 @@ Comprueba la asignación de votos de todos los nodos de clúster mediante la pru
 - La administración de cuórum dinámico no permite que el clúster mantenga un error simultáneo de una mayoría de miembros con derecho a voto. Para continuar ejecutándose, el clúster siempre debe tener una mayoría del cuórum cuando un nodo se apague o produzca errores.
 
 - Si has quitado de manera explícita el voto de un nodo, el clúster tampoco puede agregar o quitar de forma dinámica dicho voto.
-- Cuando se habilita espacios de almacenamiento directo, el clúster solo puede admitir errores en los dos nodos. Esto se explica más en el [grupo de sección de quórum](../storage/storage-spaces/understand-quorum.md#poolQuorum)
+- Cuando se habilita espacios de almacenamiento directo, el clúster solo puede admitir errores en los dos nodos. Esto se explica más en el [grupo de sección de quórum](../storage/storage-spaces/understand-quorum.md)
 
 ## <a name="general-recommendations-for-quorum-configuration"></a>Recomendaciones generales para la configuración de cuórum
 
@@ -114,15 +112,15 @@ Para obtener más información sobre la validación de un clúster de conmutaci�
 
 Puede configurar la configuración de quórum de clúster mediante el Administrador de clústeres de conmutación por error o los cmdlets de PowerShell de Windows de clústeres de conmutación por error.
 
->[!IMPORTANT]
->En general, la mejor opción es usar la configuración de cuórum recomendada por el Asistente para configurar cuórum de clúster. Solo se recomienda personalizar la configuración de cuórum si consideras que el cambio es adecuado para el clúster. Para obtener más información, consulta [Recomendaciones generales para la configuración de quórum](#general-recommendations-for-quorum-configuration) más adelante en este tema.
+> [!IMPORTANT]
+> En general, la mejor opción es usar la configuración de cuórum recomendada por el Asistente para configurar cuórum de clúster. Solo se recomienda personalizar la configuración de cuórum si consideras que el cambio es adecuado para el clúster. Para obtener más información, consulta [Recomendaciones generales para la configuración de quórum](#general-recommendations-for-quorum-configuration) más adelante en este tema.
 
 ### <a name="configure-the-cluster-quorum-settings"></a>Configurar las opciones de cuórum de clúster
 
 Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo de **administradores** locales en todos los servidores en clúster, o equivalente. Además, la cuenta que uses debe ser una cuenta de usuario de dominio.
 
->[!NOTE]
->La configuración de cuórum de clúster se puede cambiar sin que sea necesario detener el clúster o desconectar los recursos de clúster.
+> [!NOTE]
+> La configuración de cuórum de clúster se puede cambiar sin que sea necesario detener el clúster o desconectar los recursos de clúster.
 
 ### <a name="change-the-quorum-configuration-in-a-failover-cluster-by-using-failover-cluster-manager"></a>Cambiar la configuración de quórum en un clúster de conmutación por error mediante el Administrador de clústeres de conmutación por error
 
@@ -135,8 +133,8 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
 
       1. En la página **Seleccionar testigo de quórum** , selecciona una opción para configurar un testigo de disco o un testigo de recurso compartido de archivos. El asistente indica las opciones de selección de testigo recomendadas para el clúster.
 
-          >[!NOTE]
-          >También puedes seleccionar **No configurar un testigo de quórum** y completar el asistente después. No se recomienda tener un número par de nodos de votación en el clúster.
+          > [!NOTE]
+          > También puedes seleccionar **No configurar un testigo de quórum** y completar el asistente después. No se recomienda tener un número par de nodos de votación en el clúster.
 
       2. Si seleccionas la opción para configurar un testigo de disco, en la página **Configurar testigo de almacenamiento** , selecciona el volumen de almacenamiento que quieras asignar como el testigo de disco y, después, completa el asistente.
       3. Si seleccionas la opción para configurar un testigo de recurso compartido de archivos, en la página **Configurar testigo del recurso compartido de archivos**, escribe o explora hasta un recurso compartido de archivos que quieras usar como el recurso de testigo y, después, completa el asistente.
@@ -145,24 +143,24 @@ Para completar este procedimiento se requiere, como mínimo, pertenecer al grupo
 
       1. En la página **Seleccionar configuración de votación**, selecciona una opción para asignar votos a nodos. De manera predeterminada, todos los nodos tienen asignado un voto. Pero en algunos escenarios puedes asignar votos a un subconjunto específico de nodos.
 
-          >[!NOTE]
-          >También puedes seleccionar la opción **Ningún nodo**. Esta opción no suele recomendarse, ya que no permite que los nodos participen en la votación de cuórum y, además, requiere configurar un testigo de disco. Este testigo de disco se convierte en el único punto de error del clúster.
+          > [!NOTE]
+          > También puedes seleccionar la opción **Ningún nodo**. Esta opción no suele recomendarse, ya que no permite que los nodos participen en la votación de cuórum y, además, requiere configurar un testigo de disco. Este testigo de disco se convierte en el único punto de error del clúster.
 
       2. En la página **Configurar administración de quórum** puedes habilitar o deshabilitar la opción **Permitir que el clúster administre dinámicamente la asignación de votos de nodos**. Al seleccionar esta opción, se aumenta la disponibilidad del clúster. Esta opción está seleccionada de manera predeterminada y no se recomienda deshabilitarla. Esta opción permite que el clúster continúe ejecutándose en escenarios de error que no son posibles cuando esta opción está deshabilitada.
       3. En la página **Seleccionar testigo de quórum** , selecciona una opción para configurar un testigo de disco o un testigo de recurso compartido de archivos. El asistente indica las opciones de selección de testigo recomendadas para el clúster.
 
-          >[!NOTE]
-          >También puedes seleccionar **No configurar un testigo de quórum**y completar el asistente después. No se recomienda tener un número par de nodos de votación en el clúster.
+          > [!NOTE]
+          > También puedes seleccionar **No configurar un testigo de quórum**y completar el asistente después. No se recomienda tener un número par de nodos de votación en el clúster.
 
       4. Si seleccionas la opción para configurar un testigo de disco, en la página **Configurar testigo de almacenamiento** , selecciona el volumen de almacenamiento que quieras asignar como el testigo de disco y, después, completa el asistente.
       5. Si seleccionas la opción para configurar un testigo de recurso compartido de archivos, en la página **Configurar testigo del recurso compartido de archivos**, escribe o explora hasta un recurso compartido de archivos que quieras usar como el recurso de testigo y, después, completa el asistente.
 
 4. Selecciona **Siguiente**. Confirme las selecciones en la página de confirmación que aparece y, a continuación, seleccione **siguiente**.
 
-Una vez que se ejecuta el asistente y el **resumen** aparece la página, si desea ver un informe de las tareas que realizó el asistente, seleccione **Ver informe**. El informe más reciente permanecerá en el *systemroot ***\\clúster\\informes** carpeta con el nombre **QuorumConfiguration.mht**.
+Una vez que se ejecuta el asistente y el **resumen** aparece la página, si desea ver un informe de las tareas que realizó el asistente, seleccione **Ver informe**. El informe más reciente permanecerá en el <em>systemroot</em> **\\clúster\\informes** carpeta con el nombre **QuorumConfiguration.mht**.
 
->[!NOTE]
->Después de configurar el quórum de clúster, ejecuta la prueba **Validar configuración de quórum** para comprobar la configuración de quórum actualizada.
+> [!NOTE]
+> Después de configurar el quórum de clúster, ejecuta la prueba **Validar configuración de quórum** para comprobar la configuración de quórum actualizada.
 
 ### <a name="windows-powershell-equivalent-commands"></a>Comandos equivalentes de Windows PowerShell
 
@@ -208,7 +206,7 @@ En el ejemplo siguiente se habilita la propiedad **DynamicQuorum** del clúster 
 
 Un clúster no se iniciará si no tiene suficientes votos de cuórum. El primer paso es confirmar la configuración de cuórum de clúster e tratar de averiguar por qué el clúster ya no tiene un cuórum. Esto puede ocurrir si tienes nodos que han dejado de responder, o bien si el sitio principal no es accesible en un clúster multisitio. Después de identificar la causa raíz del error del clúster, sigue los pasos de recuperación que se describen en esta sección.
 
->[!NOTE]
+> [!NOTE]
 > * Si el servicio de clúster se detiene porque se pierde el cuórum, se mostrará el evento id. 1177 en el registro del sistema.
 > * Es importante investigar por qué se ha perdido el cuórum de clúster.
 > * Se recomienda poner un nodo o un testigo de cuórum en un estado correcto (unido al clúster) en lugar de iniciar el clúster sin un cuórum.
@@ -221,10 +219,10 @@ Forzar el inicio de un clúster cuando no tenga cuórum puede ser especialmente 
 
 Cuando se inicia un clúster con el modo **ForceQuorum** , y después de que vuelva a obtener votos de quórum suficientes, el clúster dejará automáticamente el estado forzado y su comportamiento volverá a ser normal. Por lo tanto, no será necesario volver a iniciar el clúster normalmente. Si el clúster pierde un nodo y también cuórum, volverá a estar sin conexión, ya que no estará en el estado forzado. Para ponerlo en línea cuando no tiene quórum requiere forzar el clúster se inicie sin quórum.
 
->[!IMPORTANT]
->* Después de forzar el inicio de un clúster, el administrador tendrá control total sobre el clúster.
->* El clúster usa la configuración del clúster en el nodo donde el clúster se encuentra en estado forzado y lo replicará al resto de nodos que estén disponibles.
->* Si obligas al nodo a que se inicie sin quórum, se ignorarán todas las opciones de configuración de quórum cuando el clúster esté en el modo **ForceQuorum**. Esto incluye asignaciones de votos de nodos específicas y opciones de administración de cuórum dinámico.
+> [!IMPORTANT]
+> * Después de forzar el inicio de un clúster, el administrador tendrá control total sobre el clúster.
+> * El clúster usa la configuración del clúster en el nodo donde el clúster se encuentra en estado forzado y lo replicará al resto de nodos que estén disponibles.
+> * Si obligas al nodo a que se inicie sin quórum, se ignorarán todas las opciones de configuración de quórum cuando el clúster esté en el modo **ForceQuorum**. Esto incluye asignaciones de votos de nodos específicas y opciones de administración de cuórum dinámico.
 
 ### <a name="prevent-quorum-on-remaining-cluster-nodes"></a>Evitar cuórum en nodos de clúster restantes
 
@@ -232,8 +230,8 @@ Después de obligar a que el clúster se inicie en un nodo, es necesario iniciar
 
 Esto es necesario para recuperar el clúster en algunos escenarios de recuperación ante desastres multisitio después de forzar el inicio del clúster en el sitio de copia de seguridad ( *SitioB*). Para unirse al clúster iniciado de manera forzosa en el *SitioB*, es necesario iniciar los nodos los nodos del sitio principal (*SitioA*) sin permitir el quórum.
 
->[!IMPORTANT]
->Después de iniciar de manera forzosa un clúster en un nodo, se recomienda iniciar siempre el resto de nodos sin permitir el cuórum.
+> [!IMPORTANT]
+> Después de iniciar de manera forzosa un clúster en un nodo, se recomienda iniciar siempre el resto de nodos sin permitir el cuórum.
 
 Aquí le mostramos cómo recuperar el clúster con el Administrador de clústeres de conmutación por error:
 
@@ -242,8 +240,8 @@ Aquí le mostramos cómo recuperar el clúster con el Administrador de clústere
 
     El Administrador de clústeres de conmutación por error forzará el inicio del clúster en todos los nodos que estén accesibles. El clúster usa la configuración del clúster actual al iniciarse.
 
->[!NOTE]
->* Para forzar al clúster a iniciarse en un nodo específico que contiene una configuración de clúster que desea usar, debe usar los cmdlets de Windows PowerShell o las herramientas de línea de comandos equivalentes tal como se presenta después de este procedimiento. 
+> [!NOTE]
+> * Para forzar al clúster a iniciarse en un nodo específico que contiene una configuración de clúster que desea usar, debe usar los cmdlets de Windows PowerShell o las herramientas de línea de comandos equivalentes tal como se presenta después de este procedimiento. 
 > * Si usas el Administrador de clústeres de conmutación por error para conectarte a un clúster que se haya iniciado de manera forzosa y, además, usas la acción **Iniciar el Servicio de clúster** para iniciar un nodo, el nodo se iniciará automáticamente con la opción que impide el quórum.
 
 #### <a name="windows-powershell-equivalent-commands-start-clusternode"></a>Comandos equivalentes de Windows PowerShell (Start-Clusternode)
@@ -282,14 +280,13 @@ En esta configuración, el clúster está formado por dos o más sitios que pued
 
 En la tabla siguiente se resumen las consideraciones y recomendaciones para esta configuración.
 
-
-|Elemento  |Descripción  |
-|---------|---------|
-|Número de votos de nodos por sitio     | Debe ser igual       |
-|Asignación de votos de nodos     |  No deben eliminarse los votos de nodos, ya que todos los nodos tienen la misma importancia       |
-|Administración dinámica de cuórum     |   Debe estar habilitado      |
-|Configuración de testigos     |  Se recomienda el testigo de recurso compartido de archivos, configurado en un sitio separado de los sitios del clúster       |
-|Cargas de trabajo     |  Las cargas de trabajo se pueden configurar en cualquiera de los sitios       |
+| Elemento  | Descripción  |
+| ---------| ---------|
+| Número de votos de nodos por sitio     | Debe ser igual       |
+| Asignación de votos de nodos     |  No deben eliminarse los votos de nodos, ya que todos los nodos tienen la misma importancia       |
+| Administración dinámica de cuórum     |   Debe estar habilitado      |
+| Configuración de testigos     |  Se recomienda el testigo de recurso compartido de archivos, configurado en un sitio separado de los sitios del clúster       |
+| Cargas de trabajo     |  Las cargas de trabajo se pueden configurar en cualquiera de los sitios       |
 
 #### <a name="additional-considerations-for-automatic-failover"></a>Consideraciones adicionales para la conmutación automática por error
 
@@ -301,13 +298,12 @@ En esta configuración, el clúster está formado por un sitio principal, el *Si
 
 En la tabla siguiente se resumen las consideraciones y recomendaciones para esta configuración.
 
-
-|Elemento  |Descripción  |
-|---------|---------|
-|Número de votos de nodos por sitio     |  <ul><li> Los votos de nodos no deben eliminarse de los nodos en el sitio principal, **SitioA**</li><li>Los votos de nodos deben eliminarse de los nodos en el sitio de copia de seguridad, **SitioB**</li><li>Si se produce una interrupción de larga duración en el **SitioA**, los votos deben asignarse a los nodos del **SitioB** para habilitar una mayoría del quórum en dicho sitio como parte de la recuperación</li>       |
-|Administración dinámica de cuórum     |  Debe estar habilitado       |
-|Configuración de testigos     |  <ul><li>Configura un testigo si hay un número par de nodos en el **SitioA**</li><li>Si se necesita un testigo, configura un testigo de recurso compartido de archivos o un testigo de disco que solo sea accesible para nodos en el **SitioA** (a veces se conoce como un testigo de disco asimétrico)</li>       |
-|Cargas de trabajo     |  Usa los propietarios preferidos para que las cargas de trabajo sigan ejecutándose en los nodos de **SitioA**       |
+| Elemento   |Descripción  |
+| ---------| ---------|
+| Número de votos de nodos por sitio     |  <ul><li> Los votos de nodos no deben eliminarse de los nodos en el sitio principal, **SitioA**</li><li>Los votos de nodos deben eliminarse de los nodos en el sitio de copia de seguridad, **SitioB**</li><li>Si se produce una interrupción de larga duración en el **SitioA**, los votos deben asignarse a los nodos del **SitioB** para habilitar una mayoría del quórum en dicho sitio como parte de la recuperación</li>       |
+| Administración dinámica de cuórum     |  Debe estar habilitado       |
+| Configuración de testigos     |  <ul><li>Configura un testigo si hay un número par de nodos en el **SitioA**</li><li>Si se necesita un testigo, configura un testigo de recurso compartido de archivos o un testigo de disco que solo sea accesible para nodos en el **SitioA** (a veces se conoce como un testigo de disco asimétrico)</li>       |
+| Cargas de trabajo     |  Usa los propietarios preferidos para que las cargas de trabajo sigan ejecutándose en los nodos de **SitioA**       |
 
 #### <a name="additional-considerations-for-manual-failover"></a>Consideraciones adicionales para la conmutación por error manual
 

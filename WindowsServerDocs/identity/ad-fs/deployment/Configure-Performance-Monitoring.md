@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 5426ea929037e59d2105fb2b3b06d4ebfdb7a577
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 6d651670976fca65ee517672c81dc6cebc42fff8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192288"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442482"
 ---
 # <a name="configure-performance-monitoring"></a>Configurar la supervisión de rendimiento
   
@@ -23,25 +23,25 @@ AD FS incluye sus propios contadores de rendimiento dedicado para ayudarle a sup
   
 #### <a name="to-configure-performance-monitoring-for-ad-fs-using-performance-monitor"></a>Para configurar la supervisión del rendimiento de AD FS mediante el Monitor de rendimiento  
   
-1.  En el **iniciar** , escriba **Monitor de rendimiento**, y, a continuación, presione ENTRAR.  
+1. En el **iniciar** , escriba **Monitor de rendimiento**, y, a continuación, presione ENTRAR.  
   
-2.  En el árbol de consola, expanda **conjuntos de recopiladores de datos**, ¿no\-haga clic en **definido por el usuario**, apunte a **New**y, a continuación, haga clic en **conjunto de recopiladores de datos** .  
+2. En el árbol de consola, expanda **conjuntos de recopiladores de datos**, ¿no\-haga clic en **definido por el usuario**, apunte a **New**y, a continuación, haga clic en **conjunto de recopiladores de datos** .  
   
-    Aparece el Asistente Crear nuevo datos recopilador establecido.  
+   Aparece el Asistente Crear nuevo datos recopilador establecido.  
   
-3.  En **crear nuevo conjunto de recopiladores datos**, para **nombre** escriba un nombre para el nuevo conjunto de recopiladores de datos \(como "Rendimiento de AD FS"\), haga clic en **crear manualmente \( Advanced\)** y, a continuación, haga clic en **siguiente**.  
+3. En **crear nuevo conjunto de recopiladores datos**, para **nombre** escriba un nombre para el nuevo conjunto de recopiladores de datos \(como "Rendimiento de AD FS"\), haga clic en **crear manualmente \( Advanced\)** y, a continuación, haga clic en **siguiente**.  
   
-4.  Para el tipo de datos que se incluirán, compruebe que **crear registros de datos** está seleccionada y, a continuación, haga clic en las casillas de verificación para los siguientes tipos de datos: **Contador de rendimiento**, **datos de seguimiento de eventos**, **información de configuración del sistema**.  
+4. Para el tipo de datos que se incluirán, compruebe que **crear registros de datos** está seleccionada y, a continuación, haga clic en las casillas de verificación para los siguientes tipos de datos: **Contador de rendimiento**, **datos de seguimiento de eventos**, **información de configuración del sistema**.  
   
-5.  Para los contadores de rendimiento, expanda **AD FS** en el **contadores disponibles** lista y, a continuación, haga clic en **agregar**.  
+5. Para los contadores de rendimiento, expanda **AD FS** en el **contadores disponibles** lista y, a continuación, haga clic en **agregar**.  
   
-    Los contadores de rendimiento de AD FS deben aparecer en el **agregado contadores** lista.  
+   Los contadores de rendimiento de AD FS deben aparecer en el **agregado contadores** lista.  
   
-6.  Cuando se le pida para agregar proveedores de seguimiento de eventos, haga clic en **agregar**, seleccione **AD FS Eventing** y **traza de AD FS** desde la lista de proveedores.  
+6. Cuando se le pida para agregar proveedores de seguimiento de eventos, haga clic en **agregar**, seleccione **AD FS Eventing** y **traza de AD FS** desde la lista de proveedores.  
   
-7.  Cuando se le solicite para agregar las claves del registro para supervisar, haga clic en **siguiente**.  
+7. Cuando se le solicite para agregar las claves del registro para supervisar, haga clic en **siguiente**.  
   
-8.  Cuando se le pida que especifique la ubicación para guardar los datos de rendimiento, puede aceptar la ubicación predeterminada \( * *% systemdrive %\\PerfLogs\\Admin\\*** < datos\_recopilador\_establecer >* y, a continuación, haga clic en **siguiente**.  
+8. Cuando se le pida que especifique la ubicación para guardar los datos de rendimiento, puede aceptar la ubicación predeterminada \( * *% systemdrive %\\PerfLogs\\Admin\\*** < datos\_recopilador\_establecer >* y, a continuación, haga clic en **siguiente**.  
   
 9. Cuando se le pida para crear el conjunto de recopiladores de datos, seleccione **guardar y cerrar**y, a continuación, haga clic en **finalizar**.  
   
@@ -55,7 +55,7 @@ AD FS incluye sus propios contadores de rendimiento dedicado para ayudarle a sup
   
     -   Para finalizar una captura de datos de rendimiento para que pueda ver el informe más reciente, a la derecha\-haga clic en el conjunto de recopiladores de datos que agregó \(como "Rendimiento de AD FS"\)y, a continuación, haga clic en **detener**.  
   
-    El informe más reciente se agrega y se numeran automáticamente \(comenzando en 000001\) en el **informe\\definido por usuario ***\\< datos\_recopilador\_establecer >* nodo en el árbol de consola.  
+    El informe más reciente se agrega y se numeran automáticamente \(comenzando en 000001\) bajo el **informe\\definido por el usuario**<em>\\< datos\_recopilador \_establecer ></em> nodo en el árbol de consola.  
   
 ## <a name="ad-fs-performance-counters"></a>Contadores de rendimiento de AD FS  
 En la tabla siguiente se enumera los contadores de rendimiento de AD FS y se describe cómo son útiles para supervisar la actividad que se relaciona con un servidor de federación o el servidor proxy de federación.  

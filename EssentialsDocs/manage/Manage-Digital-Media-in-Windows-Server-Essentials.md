@@ -12,12 +12,12 @@ ms.assetid: 9378bffa-487c-43ca-9ec3-7e7864d2dd9a
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6906c1dafc6d4131e07c008b9db47ebebe9b7770
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 87ec5218455672cbfd2bc1d77244fd263b91362c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864696"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433303"
 ---
 # <a name="manage-digital-media-in-windows-server-essentials"></a>Administración de medios digitales en Windows Server Essentials
 
@@ -72,7 +72,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 ##  <a name="BKMK_2"></a> Administrar el servidor multimedia mediante el panel  
   Windows Server Essentials permite realizar tareas administrativas comunes mediante el panel de Windows Server Essentials. En el panel, la pestaña **Multimedia** de la página **Configuración** del servidor ofrece las siguientes funciones:  
   
-|Sección|Funcionalidad|  
+|Section|Funcionalidad|  
 |-------------|-------------------|  
 |Servidor multimedia|El botón **Activar o desactivar** le permite activar o desactivar la transmisión por secuencias.|  
 |Calidad de transmisión por secuencias de vídeo|La flecha desplegable le permite elegir la calidad de transmisión por secuencias de los vídeos que se reproducen desde el servidor.|  
@@ -85,25 +85,25 @@ En los siguientes temas se abordan las características de transmisión por secu
   
  Al activar el servidor multimedia, el contenido que comparta en las bibliotecas multimedia podrán reproducirse en los dispositivos de la red que puedan recibir medios de transmisión desde el servidor. Puede transmitir la mayoría de los tipos de archivos multimedia digitales. Algunos de los tipos de archivos más habituales que puede transmitir son:  
   
--   Formatos de Windows Media (.asf, .wma, .wmv, .wm)  
+- Formatos de Windows Media (.asf, .wma, .wmv, .wm)  
   
--   Audio Visual Interleave (.avi)  
+- Audio Visual Interleave (.avi)  
   
--   Moving Pictures Experts Group (.mpeg, .mpg, .mp3)  
+- Moving Pictures Experts Group (.mpeg, .mpg, .mp3)  
   
--   Audio para Windows (.wav)  
+- Audio para Windows (.wav)  
   
--   Pista de audio de CD (.cda)  
+- Pista de audio de CD (.cda)  
   
- Para reproducir un archivo, busque una canción, un vídeo o una imagen en una carpeta compartida, haga doble clic en el archivo y el contenido se transmitirá del servidor al equipo y se reproducirá. Para obtener información acerca de cómo buscar y reproducir los archivos multimedia digitales que se almacenan en el servidor, consulte [reproducir medios digitales](../use/Play-Digital-Media-in-Windows-Server-Essentials.md).  
+  Para reproducir un archivo, busque una canción, un vídeo o una imagen en una carpeta compartida, haga doble clic en el archivo y el contenido se transmitirá del servidor al equipo y se reproducirá. Para obtener información acerca de cómo buscar y reproducir los archivos multimedia digitales que se almacenan en el servidor, consulte [reproducir medios digitales](../use/Play-Digital-Media-in-Windows-Server-Essentials.md).  
   
- Para transmitir los medios necesita el siguiente hardware:  
+  Para transmitir los medios necesita el siguiente hardware:  
   
--   Una red privada con cable o inalámbrica  
+- Una red privada con cable o inalámbrica  
   
--   Otro equipo de la red o un dispositivo conocido como receptor de medios digitales (también conocido como reproductor multimedia digital en red). Receptores de medios digitales son dispositivos de hardware conectados a la red con cable o inalámbrica que se puede controlar mediante el uso de su equipo? incluso si el equipo se encuentra en otra habitación.  
+- Otro equipo de la red o un dispositivo conocido como receptor de medios digitales (también conocido como reproductor multimedia digital en red). Receptores de medios digitales son dispositivos de hardware conectados a la red con cable o inalámbrica que se puede controlar mediante el uso de su equipo? incluso si el equipo se encuentra en otra habitación.  
   
- Para obtener más información, consulte [activar o desactivar la transmisión por secuencias](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4).  
+  Para obtener más información, consulte [activar o desactivar la transmisión por secuencias](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_4).  
   
 ##  <a name="BKMK_4"></a> Activar o desactivar la transmisión por secuencias  
  Puede compartir música, vídeos e imágenes de Windows Server Essentials mediante el streaming de archivos a cualquier receptor de medios digitales compatible (DMR), como equipos, teléfonos móviles, televisores, receptores de medios digitales, extensores para Windows Media Center (incluido Xbox 360) y otros dispositivos electrónicos personales.  
@@ -115,21 +115,21 @@ En los siguientes temas se abordan las características de transmisión por secu
   
 ####  <a name="BKMK_2.5"></a> Para activar o desactivar la transmisión por secuencias  
   
-1.  Abra el panel de Windows Server Essentials.  
+1. Abra el panel de Windows Server Essentials.  
   
-2.  Haga clic en **Configuración**, haga clic en **Multimedia** y, a continuación, realice una de las acciones siguientes:  
+2. Haga clic en **Configuración**, haga clic en **Multimedia** y, a continuación, realice una de las acciones siguientes:  
   
-    -   Haga clic en **Activar** para iniciar el uso compartido de todos los archivos almacenados en la biblioteca multimedia del servidor.  
+   -   Haga clic en **Activar** para iniciar el uso compartido de todos los archivos almacenados en la biblioteca multimedia del servidor.  
   
-    -   Haga clic en **Desactivar** para detener el uso compartido de todos los archivos almacenados en la biblioteca multimedia del servidor.  
+   -   Haga clic en **Desactivar** para detener el uso compartido de todos los archivos almacenados en la biblioteca multimedia del servidor.  
   
-3.  Si quiere compartir carpetas adicionales en la biblioteca multimedia, haga clic en **Personalizar** y, a continuación, seleccione **Sí** en cada carpeta compartida que quiera incluir en la biblioteca multimedia.  
+3. Si quiere compartir carpetas adicionales en la biblioteca multimedia, haga clic en **Personalizar** y, a continuación, seleccione **Sí** en cada carpeta compartida que quiera incluir en la biblioteca multimedia.  
   
-4.  Haga clic en **Aceptar** para guardar los cambios.  
+4. Haga clic en **Aceptar** para guardar los cambios.  
   
- Para obtener información acerca de los tipos de medios digitales compatibles con el Reproductor de Windows Media, consulte [Tipos de archivo compatibles con el Reproductor de Windows Media](https://support.microsoft.com/kb/316992).  
+   Para obtener información acerca de los tipos de medios digitales compatibles con el Reproductor de Windows Media, consulte [Tipos de archivo compatibles con el Reproductor de Windows Media](https://support.microsoft.com/kb/316992).  
   
- Para obtener más información, vea [Permitir o restringir el acceso a una biblioteca multimedia en el servidor](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6).  
+   Para obtener más información, vea [Permitir o restringir el acceso a una biblioteca multimedia en el servidor](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6).  
   
 ##  <a name="BKMK_5"></a> Agregar archivos multimedia digitales en el servidor  
  El administrador del servidor puede agregar archivos multimedia digitales a las carpetas compartidas en la biblioteca multimedia accediendo directamente al servidor, o mediante el sitio de acceso Web remoto para iniciar sesión el panel. Otros usuarios pueden agregar archivos multimedia al servidor mediante el uso de la **carpetas compartidas** conexión del LaunchPad, mediante el sitio de acceso Web remoto, o mediante el uso de la aplicación My Server para Windows Phone. Para obtener información acerca de la reproducción de medios, consulte [reproducir medios digitales](../use/Play-Digital-Media-in-Windows-Server-Essentials.md).  
@@ -151,7 +151,7 @@ En los siguientes temas se abordan las características de transmisión por secu
   
 ##  <a name="BKMK_6"></a> Permitir o restringir el acceso a una biblioteca multimedia en el servidor  
   
--   Al activar el uso compartido de multimedia se crean cuatro carpetas predefinidas: Música, imágenes, vídeos y TV grabada. Si cualquiera de estas carpetas ya existe en el servidor, se volverá a usar la carpeta existente como carpeta compartida para el uso compartido de multimedia. Se conservan todos los existentes s media contenido y el usuario permisos de carpeta y se comparten con todos los usuarios de red.  
+-   Al activar el uso compartido de multimedia se crean cuatro carpetas predefinidas: Música, imágenes, vídeos y TV grabada. Si cualquiera de estas carpetas ya existe en el servidor, se volverá a usar la carpeta existente como carpeta compartida para el uso compartido de multimedia. Permisos de usuario y contenido de media de todos los existentes de la carpeta se conservan y se comparten con todos los usuarios de red.  
   
 -   Antes de activar el uso compartido de la biblioteca multimedia para una carpeta compartida, debe saber que el uso compartido de la biblioteca multimedia omite cualquier tipo de acceso de cuenta de usuario que haya establecido para la carpeta compartida. Por ejemplo, supongamos que activa el uso compartido de la biblioteca multimedia para la carpeta compartida **Fotos** y establece dicha carpeta compartida **Fotos** en **Sin acceso** para una cuenta de usuario denominada Enrique. Enrique aún puede transmitir los medios digitales desde la carpeta compartida **Vídeos** a cualquier reproductor multimedia digital o DMR admitido. Si tiene elementos multimedia digitales que no quiere transmitir de esta manera debe almacenar los archivos en una carpeta que no tenga activado el uso compartido de la biblioteca multimedia.  
   
@@ -204,21 +204,21 @@ En los siguientes temas se abordan las características de transmisión por secu
   
  El formato y la velocidad de bits elegidos para la transcodificación dependen en gran medida del rendimiento del procesador del servidor. El rendimiento del procesador se identifica como parte de la evaluación de experiencia de Windows. Para determinar los resultados de rendimiento del servidor realice una de las acciones siguientes:  
   
--   En un equipo de red que ejecutan Windows 7 o Windows 8 que tiene el mismo procesador que el servidor, vaya a la **Panel de Control**, haga clic en **información de rendimiento y herramientas**y, a continuación, revise la información de la **Tasa y mejorar el rendimiento del equipo s** página.  
+- En un equipo de red que ejecutan Windows 7 o Windows 8 que tiene el mismo procesador que el servidor, vaya a la **Panel de Control**, haga clic en **información de rendimiento y herramientas**y, a continuación, revise la información de la **Tasa y mejorar el rendimiento del equipo** página.  
   
--   Póngase en contacto con el fabricante del procesador.  
+- Póngase en contacto con el fabricante del procesador.  
   
- Para lograr la mejor experiencia de usuario, elija una calidad de resolución de transmisión por secuencias de vídeo que sea adecuada para el procesador del servidor. El servidor ajustará automáticamente la velocidad de bits a uno de estos valores:  
+  Para lograr la mejor experiencia de usuario, elija una calidad de resolución de transmisión por secuencias de vídeo que sea adecuada para el procesador del servidor. El servidor ajustará automáticamente la velocidad de bits a uno de estos valores:  
   
--   **Bajo** si la calificación del procesador es inferior a 3,6.  
+- **Bajo** si la calificación del procesador es inferior a 3,6.  
   
--   **Medio** si la calificación del procesador se encuentra entre 3,6 y 4,2.  
+- **Medio** si la calificación del procesador se encuentra entre 3,6 y 4,2.  
   
--   **Alto** si la calificación del procesador se encuentra entre 4,2 y 6,0.  
+- **Alto** si la calificación del procesador se encuentra entre 4,2 y 6,0.  
   
--   **Excelente** si la calificación del procesador es superior a 6,0.  
+- **Excelente** si la calificación del procesador es superior a 6,0.  
   
- Si elige una resolución de transmisión por secuencias de vídeo que requiere más capacidad de procesamiento de la que tiene el servidor puede experimentar búferes e interrupciones durante la transmisión por secuencias de multimedia desde el servidor.  
+  Si elige una resolución de transmisión por secuencias de vídeo que requiere más capacidad de procesamiento de la que tiene el servidor puede experimentar búferes e interrupciones durante la transmisión por secuencias de multimedia desde el servidor.  
   
 > [!NOTE]
 >  Para transmitir vídeos de alta definición a través de Acceso Web remoto necesita un procesador con una puntuación de al menos 6,0.  

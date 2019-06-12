@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ea306127be9497c21a5b8efa9fd3f0fa2433014c
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 8d080420d250deee9bef701272e936d33733a9d6
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192671"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811197"
 ---
 # <a name="findstr"></a>findstr
 
@@ -60,65 +60,84 @@ findstr [/b] [/e] [/l | /r] [/s] [/i] [/x] [/v] [/n] [/m] [/o] [/p] [/f:<File>] 
 
 ## <a name="remarks"></a>Comentarios
 
--   Todos los **findstr** deben preceder las opciones de línea de comandos *cadenas* y *FileName* en la cadena de comandos.
--   Expresiones regulares usan caracteres literales y metacaracteres para buscar patrones de texto, en lugar de cadenas exactas de caracteres. Un carácter literal es un carácter que no tiene un significado especial en la sintaxis de expresión regular, coincide con una aparición del carácter. Por ejemplo, letras y números son caracteres literales. Un metacarácter es un símbolo con un significado especial (un operador o un delimitador) en la sintaxis de expresión regular.
+- Todos los **findstr** deben preceder las opciones de línea de comandos *cadenas* y *FileName* en la cadena de comandos.
+- Expresiones regulares usan caracteres literales y metacaracteres para buscar patrones de texto, en lugar de cadenas exactas de caracteres. Un carácter literal es un carácter que no tiene un significado especial en la sintaxis de expresión regular, coincide con una aparición del carácter. Por ejemplo, letras y números son caracteres literales. Un metacarácter es un símbolo con un significado especial (un operador o un delimitador) en la sintaxis de expresión regular.
 
-    La tabla siguiente enumeran los metacaracteres que **findstr** acepta.  
-    |Metacarácter|Valor|
-    |-------------|-----|
-    |.|Comodín: cualquier carácter|
-    |*|Repetir: cero o más apariciones del carácter anterior o la clase|
-    |^|Posición de línea: a partir de la línea|
-    |$|Posición de línea: final de la línea|
-    |[class]|Clase de caracteres: cualquier carácter de un conjunto|
-    |[^ clase]|Clase inversa: cualquier carácter no en un conjunto|
-    |[x-y]|Intervalo: cualquier carácter dentro del intervalo especificado|
-    |\x|Escape: uso literal de un metacarácter x|
-    |\\< cadena|Posición de Word: a partir de la palabra|
-    |Cadena\>|Posición de Word: final de la palabra|
+  La tabla siguiente enumeran los metacaracteres que **findstr** acepta.  
 
-    Los caracteres especiales en la sintaxis de expresiones regulares tienen la máxima potencia cuando se usan juntas. Por ejemplo, utilice la siguiente combinación del carácter comodín (.) y repita el carácter (*) para que coincida con cualquier cadena de caracteres:  
-    ```
-    .*
-    ```  
-    Utilice la siguiente expresión como parte de una expresión mayor para que coincida con cualquier cadena comienza con "b" y termina por "ing":  
-    ```
-    b.*ing
-    ```
+  |Metacarácter|Valor|
+  |-------------|-----|
+  |.|Comodín: cualquier carácter|
+  |*|Repetir: cero o más apariciones del carácter anterior o la clase|
+  |^|Posición de línea: a partir de la línea|
+  |$|Posición de línea: final de la línea|
+  |[class]|Clase de caracteres: cualquier carácter de un conjunto|
+  |[^ clase]|Clase inversa: cualquier carácter no en un conjunto|
+  |[x-y]|Intervalo: cualquier carácter dentro del intervalo especificado|
+  |\x|Escape: uso literal de un metacarácter x|
+  |\\< cadena|Posición de Word: a partir de la palabra|
+  |Cadena\>|Posición de Word: final de la palabra|
+
+  Los caracteres especiales en la sintaxis de expresiones regulares tienen la máxima potencia cuando se usan juntas. Por ejemplo, utilice la siguiente combinación del carácter comodín (.) y repita el carácter (*) para que coincida con cualquier cadena de caracteres:
+
+  ```
+  .*
+  ``` 
+
+  Utilice la siguiente expresión como parte de una expresión mayor para que coincida con cualquier cadena comienza con "b" y termina por "ing": 
+
+  ```
+  b.*ing
+  ```
 
 ## <a name="examples"></a>Ejemplos
 
 Use espacios para separar varias cadenas de búsqueda a menos que el argumento es el prefijo **/c**.
 
 Para buscar "hello" o "there" en el archivo x.y, escriba:
+
 ```
 findstr "hello there" x.y 
 ```
+
 Para buscar "Hola" en el archivo x.y, escriba:
+
 ```
 findstr /c:"hello there" x.y 
 ```
+
 Para buscar todas las apariciones de la palabra "Windows" (con una letra mayúscula inicial W) en el archivo propuesta.txt, escriba:
+
 ```
 findstr Windows proposal.txt 
 ```
+
 Para buscar todos los archivos del directorio actual y todos los subdirectorios que contienen la palabra Windows, sin tener en cuenta las mayúsculas y minúsculas, escriba:
+
 ```
 findstr /s /i Windows *.* 
 ```
+
 Para buscar todas las apariciones de las líneas que comienzan por "FOR" y van precedidas por cero o más espacios (como en un bucle de programa) y para mostrar el número de línea donde se encuentra cada coincidencia, escriba:
+
 ```
 findstr /b /n /r /c:"^ *FOR" *.bas 
 ```
+
 Para buscar varias cadenas en un conjunto de archivos, cree un archivo de texto que contiene cada criterio de búsqueda en una línea independiente. También puede enumerar los archivos exactos que desea buscar en un archivo de texto. Por ejemplo, para usar los criterios de búsqueda en el archivo Stringlist.txt, buscar los archivos enumerados en Filelist.txt y, a continuación, almacenar los resultados en resultado.out, tipo:
+
 ```
 findstr /g:stringlist.txt /f:filelist.txt > results.out 
 ```
+
 Para obtener una lista de todos los archivos que contienen la palabra "equipo" en el directorio actual y todos los subdirectorios, independientemente del caso, escriba:
+
 ```
 findstr /s /i /m "\<computer\>" *.*
 ```
+
 Para mostrar todos los archivos que contiene la palabra "equipo" y otras palabras que comienzan por "composición" (por ejemplo, "el complemento" y "competir"), escriba:
+
 ```
 findstr /s /i /m "\<comp.*" *.*
 ```

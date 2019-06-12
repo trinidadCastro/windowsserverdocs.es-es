@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 4a6b378bc4aef180ebedd260008febaa2f2a76ae
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1f5c724d041a9f64c3b2697a8b5acd17a2a7bd9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856216"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445809"
 ---
 # <a name="claims-transformation-rules-language"></a>Lenguaje de reglas de transformación de notificaciones
 
@@ -225,75 +225,75 @@ Se analizan las reglas de transformación de notificaciones con un analizador pe
   
 En esta sección se muestra algunos ejemplos de reglas que se escriben con sintaxis incorrecta y la sintaxis correspondiente errores generados por el analizador.  
   
-1.  Por ejemplo:  
+1. Por ejemplo:  
   
-    ```  
-    c1;[]=>Issue(claim=c1);  
-    ```  
+   ```  
+   c1;[]=>Issue(claim=c1);  
+   ```  
   
-    En este ejemplo tiene un punto y coma utilizado incorrectamente en lugar de dos puntos.   
-    **Mensaje de error:**  
-    *POLICY0002: No se pudo analizar los datos de la directiva.*  
-    *Número de línea: 1, número de columna: Token de 2, error:;. Line: 'c1;[]=>Issue(claim=c1);'.*  
-    *Error del analizador: ' POLICY0030: Error de sintaxis inesperado ';', se esperaba uno de los siguientes: ':'.'*  
+   En este ejemplo tiene un punto y coma utilizado incorrectamente en lugar de dos puntos.   
+   **Mensaje de error:**  
+   *POLICY0002: No se pudo analizar los datos de la directiva.*  
+   *Número de línea: 1, número de columna: Token de 2, error:;. Line: 'c1;[]=>Issue(claim=c1);'.*  
+   *Error del analizador: ' POLICY0030: Error de sintaxis inesperado ';', se esperaba uno de los siguientes: ':'.'*  
   
-2.  Por ejemplo:  
+2. Por ejemplo:  
   
-    ```  
-    c1:[]=>Issue(claim=c2);  
-    ```  
+   ```  
+   c1:[]=>Issue(claim=c2);  
+   ```  
   
-    En este ejemplo, la etiqueta de identificador en la instrucción de emisión de la copia es indefinida.   
-    **Mensaje de error**:   
-    *POLICY0011: Ninguna condición en la regla de notificación coincida con la etiqueta de la condición especificada en el CopyIssuanceStatement: "c2".*  
+   En este ejemplo, la etiqueta de identificador en la instrucción de emisión de la copia es indefinida.   
+   **Mensaje de error**:   
+   *POLICY0011: Ninguna condición en la regla de notificación coincida con la etiqueta de la condición especificada en el CopyIssuanceStatement: "c2".*  
   
-3.  Por ejemplo:  
+3. Por ejemplo:  
   
-    ```  
-    c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
-    ```  
+   ```  
+   c1:[type=="x1", value=="1", valuetype=="bool"]=>Issue(claim=c1)  
+   ```  
   
-    "bool" no es un Terminal en el lenguaje y no es un tipo de valor válido. Terminales válidos se muestran en el siguiente mensaje de error.   
-    **Mensaje de error:**  
-    *POLICY0002: No se pudo analizar los datos de la directiva.*  
-    Número de línea: 1, número de columna: Token de 39, error: "bool". Line: 'c1:[type=="x1", value=="1",valuetype=="bool"]=>Issue(claim=c1);'.   
-    *Error del analizador: ' POLICY0030: Error de sintaxis inesperado 'STRING', se esperaba uno de los siguientes: 'INT64_TYPE' 'UINT64_TYPE' 'STRING_TYPE' 'BOOLEAN_TYPE' 'IDENTIFIER'*  
+   "bool" no es un Terminal en el lenguaje y no es un tipo de valor válido. Terminales válidos se muestran en el siguiente mensaje de error.   
+   **Mensaje de error:**  
+   *POLICY0002: No se pudo analizar los datos de la directiva.*  
+   Número de línea: 1, número de columna: Token de 39, error: "bool". Line: 'c1:[type=="x1", value=="1",valuetype=="bool"]=>Issue(claim=c1);'.   
+   *Error del analizador: ' POLICY0030: Error de sintaxis inesperado 'STRING', se esperaba uno de los siguientes: 'INT64_TYPE' 'UINT64_TYPE' 'STRING_TYPE' 'BOOLEAN_TYPE' 'IDENTIFIER'*  
   
-4.  Por ejemplo:  
+4. Por ejemplo:  
   
-    ```  
-    c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
-    ```  
+   ```  
+   c1:[type=="x1", value==1, valuetype=="boolean"]=>Issue(claim=c1);  
+   ```  
   
-    El número **1** en este ejemplo no es un token válido en el lenguaje, y dicho uso no se permite en una condición de coincidencia. Tiene que estar entre comillas dobles para que sea una cadena.   
-    **Mensaje de error:**  
-    *POLICY0002: No se pudo analizar los datos de la directiva.*  
-    *Número de línea: 1, número de columna: 23 símbolo (token) de error: 1. Line: 'c1:[type=="x1", value==1, valuetype=="bool"]=>Issue(claim=c1);'.**Parser error: ' POLICY0029: Entrada inesperada.*  
+   El número **1** en este ejemplo no es un token válido en el lenguaje, y dicho uso no se permite en una condición de coincidencia. Tiene que estar entre comillas dobles para que sea una cadena.   
+   **Mensaje de error:**  
+   *POLICY0002: No se pudo analizar los datos de la directiva.*  
+   *Número de línea: 1, número de columna: 23 símbolo (token) de error: 1. Line: 'c1:[type=="x1", value==1, valuetype=="bool"]=>Issue(claim=c1);'.* <em>Parser error: ' POLICY0029: Entrada inesperada.</em>  
   
-5.  Por ejemplo:  
+5. Por ejemplo:  
   
-    ```  
-    c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
+   ```  
+   c1:[type == "x1", value == "1", valuetype == "boolean"] =>   
   
-         Issue(type = c1.type, value="0", valuetype == "boolean");  
-    ```  
+        Issue(type = c1.type, value="0", valuetype == "boolean");  
+   ```  
   
-    En este ejemplo se utiliza un signo igual doble (==) en lugar de un solo signo igual (=).   
-    **Mensaje de error:**  
-    *POLICY0002: No se pudo analizar los datos de la directiva.*  
-    *Número de línea: 1, número de columna: Error al 91, el token: ==. Line: 'c1:[type=="x1", value=="1",*  
-    *valuetype=="boolean"]=>Issue(type=c1.type, value="0", valuetype=="boolean");'.*  
-    *Error del analizador: ' POLICY0030: Error de sintaxis, inesperado '==', se esperaba uno de los siguientes: '='*  
+   En este ejemplo se utiliza un signo igual doble (==) en lugar de un solo signo igual (=).   
+   **Mensaje de error:**  
+   *POLICY0002: No se pudo analizar los datos de la directiva.*  
+   *Número de línea: 1, número de columna: Error al 91, el token: ==. Line: 'c1:[type=="x1", value=="1",*  
+   *valuetype=="boolean"]=>Issue(type=c1.type, value="0", valuetype=="boolean");'.*  
+   *Error del analizador: ' POLICY0030: Error de sintaxis, inesperado '==', se esperaba uno de los siguientes: '='*  
   
-6.  Por ejemplo:  
+6. Por ejemplo:  
   
-    ```  
-    c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
+   ```  
+   c1:[type=="x1", value=="boolean", valuetype=="string"] =>   
   
-          Issue(type=c1.type, value=c1.value, valuetype = "string");  
-    ```  
+         Issue(type=c1.type, value=c1.value, valuetype = "string");  
+   ```  
   
-    En este ejemplo es sintáctica y semánticamente correcto. Sin embargo, mediante "boolean" como valor de cadena está enlazado a provocar confusión, y debe evitarse. Como se mencionó anteriormente, mediante los terminales de idioma como valores de notificaciones deben evitarse siempre que sea posible.  
+   En este ejemplo es sintáctica y semánticamente correcto. Sin embargo, mediante "boolean" como valor de cadena está enlazado a provocar confusión, y debe evitarse. Como se mencionó anteriormente, mediante los terminales de idioma como valores de notificaciones deben evitarse siempre que sea posible.  
   
 ## <a name="BKMK_LT"></a>Terminales de lenguaje  
 En la tabla siguiente enumera el conjunto completo de las cadenas de terminales y los terminales de idioma asociado a la que se usan en el lenguaje de reglas de transformación de notificaciones. Estas definiciones usen las cadenas de UTF-16 entre mayúsculas y minúsculas.  

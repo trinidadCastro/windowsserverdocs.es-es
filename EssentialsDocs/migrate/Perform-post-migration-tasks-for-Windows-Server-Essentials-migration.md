@@ -12,12 +12,12 @@ ms.assetid: f2d236a4-0d62-4961-9d1f-332054e06f6d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 535a547ded55cb4afc0942259eadf5222a815274
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93d07938435ab1ce7686b1960974696582a2924c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821026"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432661"
 ---
 # <a name="perform-post-migration-tasks-for-windows-server-essentials-migration1"></a>Realizar tareas posteriores a la migración de Windows Server Essentials migration1
 
@@ -84,11 +84,11 @@ Las siguientes tareas le ayudarán a configurar el servidor de destino con algun
   
 2.  Haga clic en la pestaña **Conexiones**, haga clic en **Configuración de LAN** y, después, realice una de las acciones siguientes:  
   
-    -   Si no está usando un servidor proxy en la red, desactive las casillas en el cuadro de diálogo **Configuración de red de área local (LAN)**.  
+    -   Si no está usando un servidor proxy en la red, desactive las casillas en el cuadro de diálogo **Configuración de red de área local (LAN)** .  
   
     -   Si desea usar un nuevo servidor proxy en la red:  
   
-        1.  En el cuadro de diálogo **Configuración de red de área local (LAN)**, desactive las casillas de la sección **Configuración automática**.  
+        1.  En el cuadro de diálogo **Configuración de red de área local (LAN)** , desactive las casillas de la sección **Configuración automática**.  
   
         2.  En la sección **Servidor proxy**, compruebe que las casillas estén activadas.  
   
@@ -105,21 +105,21 @@ Las siguientes tareas le ayudarán a configurar el servidor de destino con algun
   
 #### <a name="to-give-the-built-in-administrators-group-the-right-to-log-on-as-a-batch-job"></a>Para dar a la cuenta de grupo de administradores el derecho a iniciar sesión como un proceso por lotes  
   
-1.  En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.  
+1. En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.  
   
-2.  En el **Group Policy Management** árbol de consola, expanda **bosque:** *< ServerName\>*, expanda dominios y, a continuación, expanda el servidor.  
+2. En el **Group Policy Management** árbol de consola, expanda **bosque:** *< ServerName\>* , expanda dominios y, a continuación, expanda el servidor.  
   
-3.  Expanda **Controladores de dominio**, haga clic con el botón derecho en **Directiva predeterminada de controladores de dominio** y, después, haga clic en **Editar**.  
+3. Expanda **Controladores de dominio**, haga clic con el botón derecho en **Directiva predeterminada de controladores de dominio** y, después, haga clic en **Editar**.  
   
-4.  En **Editor de administración de directivas de grupo**, haga clic en **directiva predeterminada de controladores de dominio ***< ServerName\>*** directiva**y, a continuación, expanda  **Configuración del equipo**.  
+4. En **Editor de administración de directivas de grupo**, haga clic en **directiva predeterminada de controladores de dominio**<em>< ServerName\></em>**directiva**, y, a continuación, expanda **configuración del equipo**.  
   
-5.  Expanda **Directivas**, expanda **Configuración de Windows** y, después, expanda **Configuración de seguridad**.  
+5. Expanda **Directivas**, expanda **Configuración de Windows** y, después, expanda **Configuración de seguridad**.  
   
-6.  En el árbol **Configuración de seguridad**, expanda **Directivas locales** y, después, haga clic en **Asignación de derechos de usuario**.  
+6. En el árbol **Configuración de seguridad**, expanda **Directivas locales** y, después, haga clic en **Asignación de derechos de usuario**.  
   
-7.  En el panel de resultados, haga clic con el botón derecho en **Iniciar sesión como proceso por lotes** y, después, haga clic en Propiedades.  
+7. En el panel de resultados, haga clic con el botón derecho en **Iniciar sesión como proceso por lotes** y, después, haga clic en Propiedades.  
   
-8.  En la página de propiedades de **Iniciar sesión como proceso por lotes**, haga clic en **Agregar usuario o grupo**.  
+8. En la página de propiedades de **Iniciar sesión como proceso por lotes**, haga clic en **Agregar usuario o grupo**.  
   
 9. En el cuadro de diálogo **Agregar usuario o grupo**, haga clic en **Examinar**.  
   

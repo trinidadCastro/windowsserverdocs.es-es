@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
-ms.openlocfilehash: 0d618d465ee45245e98fbc6aa58b32b974be08e8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32068319aae7545675e126eed6e1ab4c914bcbcf
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880886"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812635"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>Configuración del registro de seguridad de la capa (TLS) de transporte
 
@@ -25,9 +25,13 @@ ms.locfileid: "59880886"
 
 Este tema de referencia para profesionales de TI contiene información de configuración del registro compatibles para la implementación de Windows del protocolo capa de transporte (TLS) y el protocolo de capa de Sockets seguros (SSL) a través de la compatibilidad de seguridad de Schannel Proveedor (SSP). Las subclaves del registro y las entradas que se trata en este tema de ayuda administrar y solucionar problemas de Schannel SSP, específicamente los protocolos TLS y SSL. 
 
->[!Caution]
->Esta información se proporciona como una referencia para usar cuando estés solucionando problemas o comprobando que se aplica la configuración necesaria. Te recomendamos que no modifiques directamente el registro a menos que no haya ninguna otra alternativa.
->El editor del registro y el sistema operativo de Windows no validan las modificaciones del registro antes de que se apliquen. Como resultado, se pueden almacenar valores incorrectos y esto puede producir errores irrecuperables en el sistema. Cuando sea posible, en lugar de modificar el registro directamente, usa la directiva de grupo u otras herramientas de Windows, como Microsoft Management Console (MMC) para realizar las tareas. Si tienes que modificar el registro, ten mucha precaución. 
+> [!CAUTION]
+> Esta información se proporciona como una referencia para usar cuando estés solucionando problemas o comprobando que se aplica la configuración necesaria.
+> Te recomendamos que no modifiques directamente el registro a menos que no haya ninguna otra alternativa.
+> El editor del registro y el sistema operativo de Windows no validan las modificaciones del registro antes de que se apliquen.
+> Como resultado, se pueden almacenar valores incorrectos y esto puede producir errores irrecuperables en el sistema.
+> Cuando sea posible, en lugar de modificar el registro directamente, usa la directiva de grupo u otras herramientas de Windows, como Microsoft Management Console (MMC) para realizar las tareas.
+> Si tienes que modificar el registro, ten mucha precaución.
 
 ## <a name="certificatemappingmethods"></a>CertificateMappingMethods 
 
@@ -57,7 +61,7 @@ Cifrado TLS/SSL debe controlarse mediante la configuración de la orden de conju
 
 Para obtener información sobre el orden de los conjuntos de cifrado predeterminado que usa Schannel SSP, consulte [conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx). 
 
-##<a name="ciphersuites"></a>CipherSuites
+## <a name="ciphersuites"></a>CipherSuites
 
 Configurar conjuntos de cifrado TLS/SSL debe realizarse mediante la directiva de grupo, MDM o PowerShell, consulte [configurar TLS Cipher Suite orden](manage-tls.md#configuring-tls-cipher-suite-order) para obtener más información.
 
@@ -100,8 +104,8 @@ Para deshabilitar, establezca el valor DWORD a 0:
 
 "EnableOcspStaplingForSni"=dword:00000000
 
->[!NOTE] 
->La habilitación de esta clave del registro tiene un impacto del rendimiento.
+> [!NOTE] 
+> La habilitación de esta clave del registro tiene un impacto del rendimiento.
 
 ## <a name="fipsalgorithmpolicy"></a>FIPSAlgorithmPolicy
 
@@ -207,7 +211,7 @@ Esta entrada no existe en el registro de forma predeterminada.
 
 Comportamiento de envío de lista de emisores de confianza predeterminado
 
-| Versión de Windows | Tiempo |
+| Versión de Windows | Time |
 |-----------------|------|
 | Windows Server 2012 y Windows 8 y versiones posteriores | FALSE |
 | Windows Server 2008 R2 y Windows 7 y versiones anteriores | TRUE |

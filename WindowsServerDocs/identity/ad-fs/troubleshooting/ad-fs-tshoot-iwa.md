@@ -8,12 +8,12 @@ ms.date: 02/21/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 91f252f5b0eca0f4c44e0b1a4564037298bf023c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9703a8652b0e0bbafe48858cbfbcc8aa9aa31ef8
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814066"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812050"
 ---
 # <a name="ad-fs-troubleshooting---integrated-windows-authentication"></a>Solución de AD FS - de autenticación de Windows integrada
 La autenticación integrada de Windows permite a los usuarios inicien sesión con sus credenciales de Windows y la experiencia de inicio de sesión único (SSO), utilizando Kerberos o NTLM.
@@ -24,7 +24,7 @@ Hay tres motivo principal por qué se producirá un error de autenticación inte
     - Token de enlace de canal
     - Configuración de Internet Explorer
 
-## <a name="spn-misonfiguration"></a>SPN misonfiguration
+## <a name="spn-misconfiguration"></a>Configuración incorrecta de SPN
 Un nombre principal de servicio (SPN) es un identificador único de una instancia de servicio. Los SPN se utilizan la autenticación Kerberos para asociar una instancia de servicio con una cuenta de inicio de sesión del servicio. Esto permite que una aplicación cliente solicitar que el servicio autentique una cuenta incluso si el cliente no tiene el nombre de cuenta.
 
 Un ejemplo de un procedimiento que se usa un SPN con AD FS es como sigue:
@@ -67,13 +67,14 @@ De forma predeterminada, Internet explorer se tendrá la siguiente manera:
 
 Hay 2 aspectos principales que pueden evitar que esto happeing.
    - Habilitar que la autenticación integrada de Windows no está activada en las propiedades de Internet Explorer.  Esto se encuentra en Opciones de Internet -> Opciones avanzadas -> seguridad.
-![integrated](media/ad-fs-tshoot-iwa/iwa4.png)
+   
+   ![Integrado](media/ad-fs-tshoot-iwa/iwa4.png)
    
    - Las zonas de seguridad no están configuradas correctamente
        - FQDN no están en la zona de intranet
        - URL de AD FS no está en la zona de intranet.
 
-![Integrado](media/ad-fs-tshoot-iwa/iwa5.png)
+      ![Integrado](media/ad-fs-tshoot-iwa/iwa5.png)
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)
+- [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

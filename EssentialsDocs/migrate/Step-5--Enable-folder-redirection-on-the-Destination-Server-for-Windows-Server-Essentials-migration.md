@@ -12,12 +12,12 @@ ms.assetid: d3925f80-552d-431f-b2a6-2af202e50ca4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 613ff4c80a80ed4f3207cb0c1ead6db12c723e85
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 98b1a7adc23fca15c06ae9588d52bc9bcd532252
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815386"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432607"
 ---
 # <a name="step-5-enable-folder-redirection-on-the-destination-server-for-windows-server-essentials-migration"></a>Paso 5: Habilitar la redirección de carpetas en la migración del servidor de destino para Windows Server Essentials
 
@@ -41,17 +41,17 @@ Si el redireccionamiento de carpetas está habilitado en el servidor de origen, 
   
 ### <a name="to-delete-the-old-folder-redirection-group-policy-setting"></a>Para eliminar la antigua configuración de directiva de grupo de redirección de carpetas  
   
-1.  En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.  
+1. En el servidor de destino, abra la herramienta administrativa **Administración de directivas de grupo**.  
   
-2.  En **Group Policy Management**, expanda **bosque:*** Nombredominiored*, expanda **dominios**, expanda *Nombredominiored* y, a continuación, expanda **Group Policy Objects**.  
+2. En **Administración de directivas de grupo**, expandaaa **Bosque:** <em>NombreDominioRed</em>, expandaaa **Dominios**, expandaaa *NombreDominioRed*y **Objetos de directiva de grupo**.  
   
-3.  Haga clic con el botón secundario en la directiva que desea eliminar y con el botón primario en **Eliminar**.  
+3. Haga clic con el botón secundario en la directiva que desea eliminar y con el botón primario en **Eliminar**.  
   
-4.  Lea la advertencia y haga clic en **Sí**.  
+4. Lea la advertencia y haga clic en **Sí**.  
   
-5.  Cierre **Administración de directivas de grupo**.  
+5. Cierre **Administración de directivas de grupo**.  
   
- Para aplicar el cambio de redirección de carpetas, los usuarios de red deben cerrar sesión en sus equipos e iniciarla de nuevo. Así se garantiza la transferencia de todas las carpetas redirigidas al servidor de destino.  
+   Para aplicar el cambio de redirección de carpetas, los usuarios de red deben cerrar sesión en sus equipos e iniciarla de nuevo. Así se garantiza la transferencia de todas las carpetas redirigidas al servidor de destino.  
   
 ## <a name="next-steps"></a>Pasos siguientes  
  Ya ha habilitado la redirección de carpetas en el servidor de destino. Ahora, vaya a [paso 6: Disminuir de nivel y quitar el servidor de origen de la nueva red de Windows Server Essentials](Step-6--Demote-and-remove-the-Source-Server-from-the-new-Windows-Server-Essentials-network.md).  

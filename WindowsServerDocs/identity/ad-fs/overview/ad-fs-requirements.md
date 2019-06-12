@@ -9,12 +9,12 @@ ms.date: 03/06/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 235030ea913f2fe1860efaa00bdb4641ac56750d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e62032533b15ec3d93896d242273612faafdca58
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188684"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444103"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos de AD FS
 
@@ -191,16 +191,16 @@ En la tabla siguiente proporciona un resumen de cuántos servidores de AD FS son
 ## <a name="BKMK_6"></a>Requisitos del explorador  
 Cuando se realiza la autenticación de AD FS a través de un explorador o el control del explorador, el explorador debe ser compatible con los siguientes requisitos:  
   
--   JavaScript debe estar habilitado  
+- JavaScript debe estar habilitado  
   
--   Para el inicio de sesión único, el explorador del cliente debe configurarse para permitir las cookies  
+- Para el inicio de sesión único, el explorador del cliente debe configurarse para permitir las cookies  
   
--   Indicación de nombre de servidor \(SNI\) deben ser compatibles  
+- Indicación de nombre de servidor \(SNI\) deben ser compatibles  
   
--   Para la autenticación de certificados de certificado & dispositivo de usuario, el explorador debe admitir la autenticación de certificado de cliente SSL  
+- Para la autenticación de certificados de certificado & dispositivo de usuario, el explorador debe admitir la autenticación de certificado de cliente SSL  
 
--   Para el inicio de sesión sin problemas con la autenticación integrada de Windows, el nombre del servicio de federación (por ejemplo, https:\/\/fs.contoso.com) debe configurarse en la zona de intranet local o sitios de confianza.
-## <a name="BKMK_7"></a>Requisitos de red  
+- Para el inicio de sesión sin problemas con la autenticación integrada de Windows, el nombre del servicio de federación (por ejemplo, https:\/\/fs.contoso.com) debe configurarse en la zona de intranet local o sitios de confianza.
+  ## <a name="BKMK_7"></a>Requisitos de red  
  
 **Requisitos de Firewall**  
   
@@ -210,7 +210,7 @@ Además, si la autenticación de certificado de usuario del cliente \(autenticac
 
 Para obtener más información sobre el híbrido de puerto de requisitos, consulte [protocolos y puertos de identidad híbrida](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-ports). 
 
-Para obtener más información, consulte [procedimientos recomendados para proteger los servicios de federación de Active Directory](..\deployment\Best-Practices-Securing-AD-FS.md)
+Para obtener más información, consulte [procedimientos recomendados para proteger los servicios de federación de Active Directory](../deployment/Best-Practices-Securing-AD-FS.md)
   
 **Requisitos de DNS**  
   

@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 320e12fd30deda30ccc0da1ad6e5bea6f9a19d8a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5ef487ce9799c1f09660cdfcd6fba71336fc4d9a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818446"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442139"
 ---
 # <a name="prompt"></a>prompt
 
 
 
-Cambia el símbolo del sistema Cmd.exe. Si se utiliza sin parámetros, **símbolo del sistema** restablece el símbolo del sistema a la configuración predeterminada, que es la letra de unidad actual y el directorio seguido por el símbolo mayor que (**>**).
+Cambia el símbolo del sistema Cmd.exe. Si se utiliza sin parámetros, **símbolo del sistema** restablece el símbolo del sistema a la configuración predeterminada, que es la letra de unidad actual y el directorio seguido por el símbolo mayor que ( **>** ).
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -46,31 +46,32 @@ prompt [<Text>]
 Puede personalizar el símbolo del sistema para mostrar el texto que desee, incluida información como el nombre del directorio actual, el tiempo y fecha y el número de versión de Microsoft Windows.
 
 En la tabla siguiente se enumera las combinaciones de caracteres que se pueden incluir en lugar de, o además de uno o más cadenas de caracteres en el *texto* parámetro. La lista incluye una breve descripción de la información que cada combinación de caracteres que se agrega a la línea de comandos o de texto.  
-|Carácter|Descripción|
-|---------|-----------|
-|$q|signo igual (=)|
-|$$|$ (dólar)|
-|$t|Hora actual|
-|$d|Fecha actual|
-|$p|Ruta de acceso y la unidad actual|
-|$v|Número de versión de Windows|
-|$n|Unidad actual|
-|$g|> (mayor que el inicio de sesión)|
-|$l|< (menor que el inicio de sesión)|
-|$b|| (barra vertical)|
-|$_|ESCRIBA O SALTO DE LÍNEA|
-|$e|Código de escape ANSI (código 27)|
-|$h|Retroceso (para eliminar un carácter que se ha escrito en la línea de comandos)|
-|$a|& (y comercial)|
-|$c|((paréntesis de apertura)|
-|$f|) (paréntesis)|
-|$s|Espacio|
+
+| Carácter |                                 Descripción                                 |
+|-----------|-----------------------------------------------------------------------------|
+|    $q     |                               signo igual (=)                                |
+|    $$     |                               $ (dólar)                               |
+|    $t     |                                Hora actual                                 |
+|    $d     |                                Fecha actual                                 |
+|    $p     |                           Ruta de acceso y la unidad actual                            |
+|    $v     |                           Número de versión de Windows                            |
+|    $n     |                                Unidad actual                                |
+|    $g     |                            > (mayor que el inicio de sesión)                            |
+|    $l     |                             < (menor que el inicio de sesión)                              |
+|    $b     |                                                                             |
+|    $_     |                               ESCRIBA O SALTO DE LÍNEA                                |
+|    $e     |                         Código de escape ANSI (código 27)                          |
+|    $h     | Retroceso (para eliminar un carácter que se ha escrito en la línea de comandos) |
+|    $a     |                                & (y comercial)                                |
+|    $c     |                            ((paréntesis de apertura)                             |
+|    $f     |                            ) (paréntesis)                            |
+|    $s     |                                    Espacio                                    |
 
 Cuando se habilitan las extensiones de comando (es decir, el valor predeterminado) el **símbolo del sistema** comando admite los caracteres de formato siguientes:  
 
 |Carácter|Descripción|
 |---------|-----------|
-|$+|Cero o más en el signo (**+**) caracteres, según la profundidad de la **pushd** pila de directorio (un carácter para cada nivel insertado).|
+|$+|Cero o más en el signo ( **+** ) caracteres, según la profundidad de la **pushd** pila de directorio (un carácter para cada nivel insertado).|
 |$m|El nombre remoto asociado con la letra de unidad actual o una cadena vacía si la unidad actual no es una unidad de red.|
 
 Si incluye el **$p** caracteres en el parámetro de texto, se lee el disco después de escribir cada comando (para determinar la unidad actual y la ruta de acceso). Esto puede tardar más tiempo, especialmente para las unidades de disco.

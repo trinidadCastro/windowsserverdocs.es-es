@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 82a42cd219e41330fe4215124c21e799a41e412c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d97ec0efee86165f82bdf99a316d24d9c39ec958
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853146"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810717"
 ---
 # <a name="system-requirements"></a>Requisitos del sistema
 
@@ -27,6 +27,7 @@ ms.locfileid: "59853146"
 Este tema describen los requisitos mínimos del sistema para ejecutar Windows Server&reg; 2019.
 
 ## <a name="review-system-requirements"></a>Repasar los requisitos del sistema  
+
 Estos son los requisitos del sistema estimados 2019 de Windows Server. Si su equipo no cumple con los requisitos mínimos, no podrá instalar el producto correctamente. Los requisitos reales variarán según la configuración del sistema y las aplicaciones y características que instale.
 
 A menos que se especifique lo contrario, estos requisitos mínimos del sistema se aplican a todas las opciones de instalación (Server Core, Server con Experiencia de escritorio y Nano Server) y a las ediciones Standard y Datacenter.  
@@ -34,8 +35,8 @@ A menos que se especifique lo contrario, estos requisitos mínimos del sistema s
 > [!IMPORTANT]  
 > Dado a la gran diversidad de implementaciones posibles, sería irreal que se declararan requisitos del sistema "recomendados" de aplicación general. Consulte la documentación específica de los roles de servidor que intenta implementar para obtener más detalles sobre los recursos que se necesitan para cada uno de ellos. Podrá obtener mejores resultados con implementaciones de prueba que le ayuden a determinar los requisitos del sistema apropiados para sus propios escenarios.  
 
-
 ## <a name="processor"></a>Procesador  
+
 El rendimiento del procesador depende no solo de su frecuencia de reloj, sino también de su número de núcleos y tamaño de la caché. A continuación, se detallan los requisitos relativos al procesador para este producto:  
 
 **Mínimo**:  
@@ -69,13 +70,13 @@ A continuación se detallan los requisitos **mínimos** de espacio en disco esti
 
 **Mínimo**: 32 GB  
 
-   > [!NOTE]  
-    > Tenga en cuenta que 32 GB debe considerarse como el valor *mínimo absoluto* para una instalación correcta. Este valor mínimo debería poder instalar Windows Server 2019 en modo Server Core, con el rol de servidor de servicios Web (IIS). Un servidor en modo Server Core es unos 4 GB más pequeño que el mismo servidor en modo Servidor con una GUI. 
-    >   
-    > La partición del sistema requerirá más espacio en cualquiera de las siguientes circunstancias:  
-    >   
-    > -   Si se instala el sistema en una red.  
-    > -   Los equipos con más de 16 GB de RAM necesitarán más espacio en disco para los archivos de paginación, hibernación y volcado.  
+> [!NOTE]
+> Tenga en cuenta que 32 GB debe considerarse como el valor *mínimo absoluto* para una instalación correcta. Este valor mínimo debería poder instalar Windows Server 2019 en modo Server Core, con el rol de servidor de servicios Web (IIS). Un servidor en modo Server Core es unos 4 GB más pequeño que el mismo servidor en modo Servidor con una GUI. 
+> 
+> La partición del sistema requerirá más espacio en cualquiera de las siguientes circunstancias:  
+> 
+> -   Si se instala el sistema en una red.  
+> -   Los equipos con más de 16 GB de RAM necesitarán más espacio en disco para los archivos de paginación, hibernación y volcado.  
 
 ## <a name="network-adapter-requirements"></a>Requisitos del adaptador de red  
 
@@ -88,8 +89,6 @@ Los adaptadores de red utilizados con esta versión deberían incluir estas cara
 Un adaptador de red que admite la depuración de red (KDNet) es útil, pero no es un requisito mínimo.   
 
 Un adaptador de red que admite el entorno de ejecución previo al arranque (PXE) es útil, pero no es un requisito mínimo.
-
-
 
 ## <a name="other-requirements"></a>Otros requisitos  
 Los equipos que ejecutan esta versión también deben tener lo siguiente:  
@@ -107,10 +106,10 @@ Los siguientes elementos no son estrictamente obligatorios, pero sí necesarios 
 
 -   Acceso a Internet (pueden aplicarse las tarifas correspondientes)  
 
->[!NOTE]  
+> [!NOTE]  
 > Un chip de Módulo de plataforma segura (TPM) no es estrictamente necesario para instalar esta versión, aunque es necesario para poder utilizar determinadas características (como el Cifrado de unidad BitLocker). Si el equipo usa TPM, debe cumplir estos requisitos:  
 >  
->- Los TPM basados en hardware deben implementar la versión 2.0 de la especificación de TPM.  
->- Los TPM que implementan la versión 2.0 deben tener un certificado EK que sea suministrado previamente al TPM por el proveedor de hardware o que se puedan recuperar del dispositivo durante el primer inicio.  
->- Los TPM que implementan la versión 2.0 deben suministrarse con bancos SHA-256 PCR e implementar PCR de 0 a 23 para SHA-256. Es aceptable suministrar los TPM con un solo banco PCR intercambiable que se puede usar para las mediciones de SHA-1 y SHA-256.  
->- La opción de UEFI para desactivar TPM no es un requisito.  
+> - Los TPM basados en hardware deben implementar la versión 2.0 de la especificación de TPM.  
+> - Los TPM que implementan la versión 2.0 deben tener un certificado EK que sea suministrado previamente al TPM por el proveedor de hardware o que se puedan recuperar del dispositivo durante el primer inicio.  
+> - Los TPM que implementan la versión 2.0 deben suministrarse con bancos SHA-256 PCR e implementar PCR de 0 a 23 para SHA-256. Es aceptable suministrar los TPM con un solo banco PCR intercambiable que se puede usar para las mediciones de SHA-1 y SHA-256.  
+> - La opción de UEFI para desactivar TPM no es un requisito.  

@@ -8,12 +8,12 @@ author: JasonGerend
 manager: dougkim
 ms.author: jgerend
 ms.date: 09/11/2018
-ms.openlocfilehash: 9514392da133911c900f68fc8f1be260b6c91138
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d912047ab0e3136c6dc05064f3a28aaaafd36c79
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873036"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447726"
 ---
 # <a name="iscsi-target-server-scalability-limits"></a>Límites de escalabilidad del servidor de destino iSCSI
 
@@ -73,7 +73,7 @@ Este tema proporciona a Microsoft iSCSI compatible y probado los límites del se
 <td><p>Discos virtuales montados localmente o instantáneas por dispositivo de almacenamiento</p></td>
 <td><p>32</p></td>
 <td><p>Sí</p></td>
-<td><p>Discos virtuales montados localmente no ofrecen ninguna funcionalidad específica de iSCSI y están en desuso: para obtener más información, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">características o funcionalidades desusadas en Windows Server 2012 R2</a>.</p></td>
+<td><p>Montado localmente don de discos virtuales&#39;oferta de t cualquier funcionalidad específica de iSCSI y están en desuso: para obtener más información, consulte <a href="https://technet.microsoft.com/library/dn303411.aspx">características o funcionalidades desusadas en Windows Server 2012 R2</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -105,7 +105,7 @@ Este tema proporciona a Microsoft iSCSI compatible y probado los límites del se
 <tr class="even">
 <td><p>Varios nodos de clúster activo</p></td>
 <td><p>Se admite</p></td>
-<td> 
+<td> 
 <p>N/D</p></td>
 <td><p>Cada nodo activo del clúster de conmutación por error es el propietario de una instancia en clúster del servidor de destino iSCSI diferentes con otros nodos que actúa como posibles nodos propietarios.</p></td>
 </tr>
@@ -205,8 +205,7 @@ Este tema proporciona a Microsoft iSCSI compatible y probado los límites del se
 <tr class="odd">
 <td><p>descarga de iSCSI</p></td>
 <td><p>No se admite</p></td>
-<td>              
-<p>N/D</p></td>
+<td><br/><p>N/D</p></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -249,7 +248,7 @@ Este tema proporciona a Microsoft iSCSI compatible y probado los límites del se
 </thead>
 <tbody>
 <tr class="odd">
-<td><p>Desde un iniciador iSCSI de convertir el disco virtual de un disco básico a un disco dinámico </p></td>
+<td><p>Desde un iniciador iSCSI de convertir el disco virtual de un disco básico a un disco dinámico </p></td>
 <td><p>Sí</p></td>
 <td><p>No</p></td>
 <td></td>
@@ -264,7 +263,7 @@ Este tema proporciona a Microsoft iSCSI compatible y probado los límites del se
 <tr class="odd">
 <td><p>Tamaño mínimo del formato de disco duro virtual</p></td>
 <td><p>.vhdx: 3 MB</p>
-<p>.vhd: 8 MB</p></td>
+<p>.vhd: 8 MB</p></td>
 <td><p>Sí</p></td>
 <td><p>Se aplica a todos los tipos de disco duro virtual compatibles: primario, de diferenciación y se ha corregido.</p></td>
 </tr>
@@ -312,7 +311,7 @@ Este tema proporciona a Microsoft iSCSI compatible y probado los límites del se
 <td><p>.vhdx: Sí</p>
 <p>.vhd: Sí (No en Windows Server 2012)</p></td>
 <td><p>Sí</p></td>
-<td><p>Anular la asignación no se admite.</p></td>
+<td><p>Anular la asignación&#39;t compatibles.</p></td>
 </tr>
 <tr class="odd">
 <td><p>exFAT/FAT32 o FAT (hospeda el volumen del VHD)</p></td>
@@ -348,7 +347,7 @@ Este tema proporciona a Microsoft iSCSI compatible y probado los límites del se
 <td><p>Aprovisionamiento fino</p></td>
 <td><p>No</p></td>
 <td><p>N/D</p></td>
-<td><p>Se admiten discos duros virtuales dinámicos, pero no se admite la asignación.</p></td>
+<td><p>Los VHD dinámicos son compatibles, pero quitar la asignación&#39;t compatibles.</p></td>
 </tr>
 <tr class="odd">
 <td><p>Reducción de unidad lógica</p></td>
@@ -542,9 +541,9 @@ También hemos probado los siguientes iniciadores de iSCSI que se realiza un arr
 
 En la siguiente lista se proporcionan recursos adicionales acerca del servidor de destino iSCSI y las tecnologías relacionadas.
 
-  - [Introducción al almacenamiento de bloque de destino iSCSI](iscsi-target-server.md)
+- [Introducción al almacenamiento de bloque de destino iSCSI](iscsi-target-server.md)
 
-  - [información general de arranque de destino iSCSI](iscsi-boot-overview.md)
+- [información general de arranque de destino iSCSI](iscsi-boot-overview.md)
 
-  - [Almacenamiento en Windows Server](..\storage.md)
+- [Almacenamiento en Windows Server](../storage.md)
 

@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 29183c62830cbe9e26cce4e0ce4543b554f0ed65
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d089af3562467aa1c222b17d9a1ad69d9c1b5008
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837316"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810585"
 ---
 # <a name="system-requirements"></a>Requisitos del sistema
 
@@ -27,10 +27,8 @@ ms.locfileid: "59837316"
 
 En este tema se tratan los requisitos mínimos del sistema para ejecutar Windows Server&reg; 2016 o Windows Server, versión 1709.
 
-
-> [!Note]  
+> [!NOTE]  
 > En esta versión, se recomiendan las instalaciones limpias.  
->   
 
 > [!NOTE]  
 > Si en el momento de la instalación opta por la opción Server Core, debe tener en cuenta que no se instala ningún componente de la interfaz gráfica de usuario y que no podrá instalarlos o desinstalarlos con el Administrador del servidor. Si necesita características de la interfaz gráfica de usuario, asegúrese de elegir la opción "Servidor con Experiencia de escritorio" al instalar Windows Server 2016. Para obtener más información, consulte [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).  
@@ -79,13 +77,13 @@ A continuación se detallan los requisitos **mínimos** de espacio en disco esti
 
 **Mínimo**: 32 GB  
 
-   > [!NOTE]  
-    > Tenga en cuenta que 32 GB debe considerarse como el valor *mínimo absoluto* para una instalación correcta. Con este valor mínimo debería poder instalar Windows Server 2016 en modo Server Core con el rol del servidor de servicios web (IIS). Un servidor en modo Server Core es unos 4 GB más pequeño que el mismo servidor en modo Servidor con una GUI. 
-    >   
-    > La partición del sistema requerirá más espacio en cualquiera de las siguientes circunstancias:  
-    >   
-    > -   Si se instala el sistema en una red.  
-    > -   Los equipos con más de 16 GB de RAM necesitarán más espacio en disco para los archivos de paginación, hibernación y volcado.  
+> [!NOTE]
+> Tenga en cuenta que 32 GB debe considerarse como el valor *mínimo absoluto* para una instalación correcta. Con este valor mínimo debería poder instalar Windows Server 2016 en modo Server Core con el rol del servidor de servicios web (IIS). Un servidor en modo Server Core es unos 4 GB más pequeño que el mismo servidor en modo Servidor con una GUI. 
+> 
+> La partición del sistema requerirá más espacio en cualquiera de las siguientes circunstancias:  
+> 
+> -   Si se instala el sistema en una red.  
+> -   Los equipos con más de 16 GB de RAM necesitarán más espacio en disco para los archivos de paginación, hibernación y volcado.  
 
 ## <a name="network-adapter-requirements"></a>Requisitos del adaptador de red  
 
@@ -97,8 +95,6 @@ Los adaptadores de red utilizados con esta versión deberían incluir estas cara
 - Admite el entorno de ejecución previo al arranque (PXE).  
 
 Un adaptador de red que admite la depuración de red (KDNet) es útil, pero no es un requisito mínimo.   
-
-
 
 ## <a name="other-requirements"></a>Otros requisitos  
 Los equipos que ejecutan esta versión también deben tener lo siguiente:  
@@ -117,13 +113,13 @@ Los siguientes elementos no son estrictamente obligatorios, pero sí necesarios 
 
 -   Acceso a Internet (pueden aplicarse las tarifas correspondientes)  
 
->[!NOTE]  
+> [!NOTE]  
 > Un chip de Módulo de plataforma segura (TPM) no es estrictamente necesario para instalar esta versión, aunque es necesario para poder utilizar determinadas características (como el Cifrado de unidad BitLocker). Si el equipo usa TPM, debe cumplir estos requisitos:  
 >  
->- Los TPM basados en hardware deben implementar la versión 2.0 de la especificación de TPM.  
->- Los TPM que implementan la versión 2.0 deben tener un certificado EK que sea suministrado previamente al TPM por el proveedor de hardware o que se puedan recuperar del dispositivo durante el primer inicio.  
->- Los TPM que implementan la versión 2.0 deben suministrarse con bancos SHA-256 PCR e implementar PCR de 0 a 23 para SHA-256. Es aceptable suministrar los TPM con un solo banco PCR intercambiable que se puede usar para las mediciones de SHA-1 y SHA-256.  
->- La opción de UEFI para desactivar TPM no es un requisito.  
+> - Los TPM basados en hardware deben implementar la versión 2.0 de la especificación de TPM.  
+> - Los TPM que implementan la versión 2.0 deben tener un certificado EK que sea suministrado previamente al TPM por el proveedor de hardware o que se puedan recuperar del dispositivo durante el primer inicio.  
+> - Los TPM que implementan la versión 2.0 deben suministrarse con bancos SHA-256 PCR e implementar PCR de 0 a 23 para SHA-256. Es aceptable suministrar los TPM con un solo banco PCR intercambiable que se puede usar para las mediciones de SHA-1 y SHA-256.  
+> - La opción de UEFI para desactivar TPM no es un requisito.  
 
 ## <a name="installation-of-nano-server"></a>Instalación de Nano Server  
 Para obtener instrucciones detalladas para instalar Windows Server 2016 como Nano Server, vea [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).
@@ -131,5 +127,5 @@ Para obtener instrucciones detalladas para instalar Windows Server 2016 como Nan
 ## <a name="additional-resources"></a>Recursos adicionales
 - [Requisitos de procesador de Windows](https://docs.microsoft.com/windows-hardware/design/minimum/windows-processor-requirements)
 - [Comparación de las ediciones Standard y Datacenter de Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/2016-edition-comparison)
-- [Requisitos del sistema de Windows 10 ](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
+- [Requisitos del sistema de Windows 10](https://www.microsoft.com/windows/windows-10-specifications#system-specifications)
 - [Descargue la hoja de datos de licencias de Windows Server 2016](http://download.microsoft.com/download/7/2/9/7290EA05-DC56-4BED-9400-138C5701F174/WS2016LicensingDatasheet.pdf)

@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 10/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e8c5da1960d0e3129b5520e65c2d5ecf45eef778
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a54ffd3d5596ba8c71deab668e4952da445ca12e
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886956"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804942"
 ---
 # <a name="get-started-with-remote-desktop-on-mac"></a>Introducción a Escritorio remoto en Mac
 
@@ -27,7 +27,7 @@ ms.locfileid: "59886956"
 
 Puede usar al cliente de escritorio remoto para Mac para trabajar con aplicaciones, recursos y equipos de escritorio de Windows desde el equipo Mac. Use la siguiente información para comenzar - y desproteger la [preguntas más frecuentes sobre](remote-desktop-client-faq.md) si tiene alguna pregunta.
 
->[!Note]
+>[!NOTE]
 > - ¿Tiene curiosidad acerca de las nuevas versiones para el cliente de macOS? ¿Consulte [Novedades de escritorio remoto en Mac?](mac-whatsnew.md)
 > - Se ejecuta el cliente Mac en equipos que ejecutan macOS 10.10 y versiones más recientes.
 > - La información de este artículo se aplica principalmente a la versión completa del cliente Mac - la versión disponible en el App Store de Mac. Pruebe las nuevas características mediante la descarga aquí nuestra aplicación de vista previa: [notas de la versión beta cliente](https://go.microsoft.com/fwlink/?LinkID=619698&clcid=0x409).
@@ -53,11 +53,11 @@ Para crear una conexión a escritorio remota:
       - Esto puede ser un nombre de equipo de Windows (se encuentra en la **sistema** configuración), un nombre de dominio o una dirección IP.
       - También puede agregar información de puerto al final de este nombre, como *MyDesktop:3389*.
    - **Cuenta de usuario** -agregar la cuenta de usuario que usa para obtener acceso al equipo remoto.
-      - Los equipos o cuentas locales, Unidos a Active Directory (AD), use uno de estos formatos: *user_name*, *DOMINIO\nombre_de_usuario*, o *user_name@domain.com*.
-      - Para Azure Active Directory (AAD) unido los equipos, use uno de estos formatos: *AzureAD\user_name* o *AzureAD\user_name@domain.com*.
-      - También puede elegir si se requiere una contraseña.
-      - Al administrar varias cuentas de usuario con el mismo nombre de usuario, establezca un nombre descriptivo para diferenciar las cuentas.
-      - Administrar sus cuentas de usuario guardadas en las preferencias de la aplicación. 
+     - Los equipos o cuentas locales, Unidos a Active Directory (AD), use uno de estos formatos: *user_name*, *DOMINIO\nombre_de_usuario*, o <em>user_name@domain.com</em>.
+     - Para Azure Active Directory (AAD) unido los equipos, use uno de estos formatos: *AzureAD\user_name* o <em>AzureAD\user_name@domain.com</em>.
+     - También puede elegir si se requiere una contraseña.
+     - Al administrar varias cuentas de usuario con el mismo nombre de usuario, establezca un nombre descriptivo para diferenciar las cuentas.
+     - Administrar sus cuentas de usuario guardadas en las preferencias de la aplicación. 
 
 3. También puede establecer estos valores opcionales para la conexión:
    - Establezca un nombre descriptivo 
@@ -82,7 +82,7 @@ Puede exportar una definición de conexión a Escritorio remoto y usarla en un d
 
 Siga estos pasos para importar un escritorio remoto. Archivo RDP.
 
-1. En la barra de menús, haga clic en **archivo > Importar**.
+1. En la barra de menús, haga clic en **archivo** > **importación**.
 2. Vaya a la. Archivo RDP.
 3. Haga clic en **Abrir**.
 
@@ -113,8 +113,8 @@ Para configurar una puerta de enlace en Preferencias:
 
 1. En el centro de conexiones, haga clic en **Preferencias > puertas de enlace**. 
 2. Haga clic en el **+** situado en la parte inferior de la tabla, escriba la siguiente información:
-  - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
-  - **Nombre de usuario** -el nombre de usuario y la contraseña que se usará para la puerta de enlace de escritorio remoto que se conecta. También puede seleccionar **usar las credenciales de conexión** para usar el mismo nombre de usuario y la contraseña que se utilizaron para la conexión a escritorio remota.
+   - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
+   - **Nombre de usuario** -el nombre de usuario y la contraseña que se usará para la puerta de enlace de escritorio remoto que se conecta. También puede seleccionar **usar las credenciales de conexión** para usar el mismo nombre de usuario y la contraseña que se utilizaron para la conexión a escritorio remota.
 
 
 ## <a name="manage-your-user-accounts"></a>Administrar las cuentas de usuario
@@ -136,10 +136,10 @@ Puede especificar la resolución de pantalla de la sesión de escritorio remota.
 
 1. En el centro de conexiones, haga clic en **preferencias**.
 2. Haga clic en **resolución**. 
-3. Haga clic en **+**.
+3. Haga clic en **+** .
 4. Escriba una altura de resolución y el ancho y, a continuación, haga clic en **Aceptar.**
 
-Para eliminar la resolución, selecciónelo y, a continuación, haga clic en **-**.
+Para eliminar la resolución, selecciónelo y, a continuación, haga clic en **-** .
 
 **Las pantallas tienen espacios separados** si está ejecutando Mac OS X 10.9 y deshabilitado **pantallas tienen espacios separados** en Mavericks (**preferencias del sistema > Centro de Control**), deberá configurar Esta configuración en el cliente de escritorio remoto con la misma opción.
 

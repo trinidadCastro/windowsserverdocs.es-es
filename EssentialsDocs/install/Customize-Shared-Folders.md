@@ -12,12 +12,12 @@ ms.assetid: 47bc4986-14eb-4a29-9930-83a25704a3a0
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 552a76ba9c2ff385f1ff09d4869eaeb6613027a7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8f52cbe76204bb00cb15c3093f69daf3d8abb6e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823476"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433533"
 ---
 # <a name="customize-shared-folders"></a>Personalizar carpetas compartidas
 
@@ -25,33 +25,33 @@ ms.locfileid: "59823476"
 
 De forma predeterminada, las carpetas del servidor se crean en la última partición de datos del Disco 0. Los asociados pueden personalizar la ubicación y especificar carpetas de servidor adicionales utilizando los pasos siguientes:  
   
-1.  Utilice una configuración de partición personalizada para crear la imagen de fábrica y, a continuación, la nueva clave del Registro Storage antes de usar sysprep. Durante la configuración inicial, la tarea de configuración inicial del almacenamiento comprueba esta clave del Registro. Si existe, las carpetas de servidor predeterminadas se crearán en el directorio C:\ServerFolders.  
+1. Utilice una configuración de partición personalizada para crear la imagen de fábrica y, a continuación, la nueva clave del Registro Storage antes de usar sysprep. Durante la configuración inicial, la tarea de configuración inicial del almacenamiento comprueba esta clave del Registro. Si existe, las carpetas de servidor predeterminadas se crearán en el directorio C:\ServerFolders.  
   
-    #### <a name="to-create-a-new-storage-registry-key"></a>Para crear una nueva clave del Registro Storage  
+   #### <a name="to-create-a-new-storage-registry-key"></a>Para crear una nueva clave del Registro Storage  
   
-    1.  En el servidor, mueva el ratón a la esquina superior derecha de la pantalla y haga clic en **Buscar**.  
+   1.  En el servidor, mueva el ratón a la esquina superior derecha de la pantalla y haga clic en **Buscar**.  
   
-    2.  En el cuadro de búsqueda, escriba **regedit**y después haga clic en la aplicación **Regedit** .  
+   2.  En el cuadro de búsqueda, escriba **regedit**y después haga clic en la aplicación **Regedit** .  
   
-    3.  En el panel de navegación, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE** y finalmente **Microsoft**.  
+   3.  En el panel de navegación, expanda **HKEY_LOCAL_MACHINE**, **SOFTWARE** y finalmente **Microsoft**.  
   
-    4.  Haga clic con el botón secundario en **Windows Server**, en **Nuevo**y, a continuación, en **Clave**.  
+   4.  Haga clic con el botón secundario en **Windows Server**, en **Nuevo**y, a continuación, en **Clave**.  
   
-    5.  Use **Storage** como el nombre de la clave.  
+   5.  Use **Storage** como el nombre de la clave.  
   
-    6.  En el panel de navegación, haga clic con el botón secundario en la clave del Registro Storage, en **Nueva** y, a continuación, en **Valor de DWORD (32 bits)**.  
+   6.  En el panel de navegación, haga clic con el botón secundario en la clave del Registro Storage, en **Nueva** y, a continuación, en **Valor de DWORD (32 bits)** .  
   
-    7.  Use el nombre **CreateFoldersOnSystem**para la cadena.  
+   7.  Use el nombre **CreateFoldersOnSystem**para la cadena.  
   
-    8.  Haga clic con el botón secundario en **CreateFoldersOnSystem**y, a continuación, en **Modificar**. Se abrirá el cuadro de diálogo **Editar cadena**.  
+   8.  Haga clic con el botón secundario en **CreateFoldersOnSystem**y, a continuación, en **Modificar**. Se abrirá el cuadro de diálogo **Editar cadena**.  
   
-    9. Escriba **1**como el valor de la nueva clave y, a continuación, haga clic en **Aceptar**.  
+   9. Escriba **1**como el valor de la nueva clave y, a continuación, haga clic en **Aceptar**.  
   
-2.  Utilice el script PostIC.cmd para mover las carpetas a otra ubicación o para crear carpetas adicionales. Vea el ejemplo siguiente: [Ejemplo 1: Crear una carpeta personalizada y mover las carpetas predeterminadas a una nueva ubicación de PostIC.cmd mediante Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1).  
+2. Utilice el script PostIC.cmd para mover las carpetas a otra ubicación o para crear carpetas adicionales. Vea el ejemplo siguiente: [Ejemplo 1: Crear una carpeta personalizada y mover las carpetas predeterminadas a una nueva ubicación de PostIC.cmd mediante Windows PowerShell](Customize-Shared-Folders.md#BKMK_Example1).  
   
-3.  Utilice el SDK de Soluciones de Windows Server para mover las carpetas a otra ubicación o para crear carpetas adicionales. Vea el ejemplo siguiente: [Ejemplo 2: Crear una carpeta personalizada y mover una carpeta existente mediante el SDK de soluciones de Windows Server](Customize-Shared-Folders.md#BKMK_Example2).  
+3. Utilice el SDK de Soluciones de Windows Server para mover las carpetas a otra ubicación o para crear carpetas adicionales. Vea el ejemplo siguiente: [Ejemplo 2: Crear una carpeta personalizada y mover una carpeta existente mediante el SDK de soluciones de Windows Server](Customize-Shared-Folders.md#BKMK_Example2).  
   
- Los asociados tienen la opción de mantener las carpetas de datos en la unidad C. Esto permite que el usuario final o el revendedor determine el diseño de las carpetas de datos en las unidades de datos.  
+   Los asociados tienen la opción de mantener las carpetas de datos en la unidad C. Esto permite que el usuario final o el revendedor determine el diseño de las carpetas de datos en las unidades de datos.  
   
 ###  <a name="BKMK_Example1"></a> Ejemplo 1: Crear una carpeta personalizada y mover las carpetas predeterminadas a una nueva ubicación desde PostIC.cmd mediante Windows PowerShell  
   

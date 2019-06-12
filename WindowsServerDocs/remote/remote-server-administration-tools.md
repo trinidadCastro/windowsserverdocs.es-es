@@ -12,12 +12,12 @@ ms.assetid: d54a1f5e-af68-497e-99be-97775769a7a7
 author: coreyp-at-msft
 ms.author: coreyp
 manager: dansimp
-ms.openlocfilehash: 748010e80cf2b54926ca226a7af8c49f1aa16800
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 30ca0a1e8a2f17f54a8f05d7270bf9512be7a8dc
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192643"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805184"
 ---
 # <a name="remote-server-administration-tools"></a>Herramientas de administración remota del servidor
 
@@ -97,30 +97,30 @@ Si tiene una versión de Windows 10 antes de la de octubre de 2018 actualizar (1
 
 ##### <a name="to-uninstall-remote-server-administration-tools-for-windows-10-after-rsat-package-install"></a>Para desinstalar herramientas de administración remota del servidor para Windows 10 (después de la instalación del paquete RSAT)
 
-1.  En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows** y **Panel de control**.
+1. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows** y **Panel de control**.
 
-2.  En **Programas**, haga clic en **Desinstalar un programa**.
+2. En **Programas**, haga clic en **Desinstalar un programa**.
 
-3.  Haga clic en **Ver actualizaciones instaladas**.
+3. Haga clic en **Ver actualizaciones instaladas**.
 
-4.  Haga clic con el botón secundario en **Actualización para Microsoft Windows (KB2693643)** y, a continuación, haga clic en **Desinstalar**.
+4. Haga clic con el botón secundario en **Actualización para Microsoft Windows (KB2693643)** y, a continuación, haga clic en **Desinstalar**.
 
-5.  Cuando se le pregunte si está seguro de que desea desinstalar la actualización, haga clic en **Sí**.
-S
-##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>Para desactivar herramientas específicas (después de instalar el paquete de RSAT)
+5. Cuando se le pregunte si está seguro de que desea desinstalar la actualización, haga clic en **Sí**.
+   S
+   ##### <a name="to-turn-off-specific-tools-after-rsat-package-install"></a>Para desactivar herramientas específicas (después de instalar el paquete de RSAT)
 
-1.  En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows** y **Panel de control**.
+6. En el escritorio, haga clic en **Inicio**, **Todas las aplicaciones**, **Sistema de Windows** y **Panel de control**.
 
-2.  Haga clic en **Programas**y, a continuación, en **Programas y características** ; haga clic en **Activar o desactivar las características de Windows**.
+7. Haga clic en **Programas**y, a continuación, en **Programas y características** ; haga clic en **Activar o desactivar las características de Windows**.
 
-3.  En el cuadro de diálogo **Características de Windows** , expanda **Herramientas de administración remota del servidor**y, a continuación, expanda **Herramientas de administración de roles** o **Herramientas de administración de características**.
+8. En el cuadro de diálogo **Características de Windows** , expanda **Herramientas de administración remota del servidor**y, a continuación, expanda **Herramientas de administración de roles** o **Herramientas de administración de características**.
 
-4.  Desactive las casillas de las herramientas que desee desactivar.
+9. Desactive las casillas de las herramientas que desee desactivar.
 
-    > [!NOTE]
-    > Si desactivar el Administrador de servidor, debe reiniciarse el equipo, y herramientas que se puede acceder desde el **herramientas** deberá abrirse desde el menú del administrador del servidor el **herramientas administrativas** carpeta.
+   > [!NOTE]
+   > Si desactivar el Administrador de servidor, debe reiniciarse el equipo, y herramientas que se puede acceder desde el **herramientas** deberá abrirse desde el menú del administrador del servidor el **herramientas administrativas** carpeta.
 
-5.  Cuando termine de desactivar las herramientas que no desea usar, haga clic en **Aceptar**.
+10. Cuando termine de desactivar las herramientas que no desea usar, haga clic en **Aceptar**.
 
 ### <a name="run-remote-server-administration-tools"></a>Ejecutar Herramientas de administración remota del servidor
 
@@ -158,7 +158,7 @@ Aunque no aparezcan en la consola de administrador del servidor **herramientas**
 ### <a name="issue-rsat-fod-installation-fails-with-error-code-0x800f0954"></a>**Problema**: Se produce un error en la instalación de RSAT FOD con código de error 0x800f0954
 
 > **Impacto**: RSAT FODs en Windows 10 1809 (actualización de octubre de 2018) en entornos de WSUS/SCCM
-
+> 
 > **Resolución**: Para instalar FODs en un equipo unido al dominio que recibe las actualizaciones a través de WSUS o SCCM, deberá cambiar una configuración de directiva de grupo para habilitar la descarga FODs directamente desde Windows Update o un recurso compartido local. Para obtener más detalles e instrucciones sobre cómo cambiar la configuración, consulte [para que las características de demanda y paquetes de idiomas estén disponibles cuando se usa WSUS/SCCM](https://docs.microsoft.com/windows/deployment/update/fod-and-lang-packs).
 
 ---
@@ -166,7 +166,7 @@ Aunque no aparezcan en la consola de administrador del servidor **herramientas**
 ### <a name="issue-rsat-fod-installation-via-settings-app-does-not-show-statusprogress"></a>**Problema**: Instalación RSAT FOD a través de la aplicación de configuración no muestra el estado y progreso
 
 > **Impacto**: RSAT FODs en Windows 10 1809 (actualización de octubre de 2018)
-
+> 
 > **Resolución**: Para ver el progreso de la instalación, haga clic en el **Atrás** botón para ver el estado de la **administrar características opcionales** página.
 
 ---
@@ -174,7 +174,7 @@ Aunque no aparezcan en la consola de administrador del servidor **herramientas**
 ### <a name="issue-rsat-fod-uninstallation-via-settings-app-may-fail"></a>**Problema**: Desinstalación de RSAT FOD a través de la configuración de la aplicación puede producir un error
 
 > **Impacto**: RSAT FODs en Windows 10 1809 (actualización de octubre de 2018)
-
+> 
 > **Resolución**: En algunos casos, los errores de desinstalación son debido a la necesidad de desinstalar manualmente las dependencias. En concreto, si se necesita una herramienta de RSAT herramienta RSAT B, a continuación, elegir desinstalar una herramienta RSAT se producirá un error si todavía está instalada la herramienta RSAT B. En este caso, desinstale la herramienta de RSAT B primero y, a continuación, desinstale RSAT herramienta a Ver la lista de FODs RSAT, incluidas las dependencias.
 
 ---
@@ -182,7 +182,7 @@ Aunque no aparezcan en la consola de administrador del servidor **herramientas**
 ### <a name="issue-rsat-fod-uninstallation-appears-to-succeed-but-the-tool-is-still-installed"></a>**Problema**: Desinstalación de RSAT FOD parece realizarse correctamente, pero todavía se instala la herramienta
 
 > **Impacto**: RSAT FODs en Windows 10 1809 (actualización de octubre de 2018)
-
+> 
 > **Resolución**: Reiniciar el equipo completará la eliminación de la herramienta.
 
 ---
@@ -190,7 +190,7 @@ Aunque no aparezcan en la consola de administrador del servidor **herramientas**
 ### <a name="issue-rsat-missing-after-windows-10-upgrade"></a>**Problema**: RSAT falta después de actualizar Windows 10
 
 > **Impacto**: Cualquier RSAT. Instalación del paquete de MSU (antes FODs RSAT) se vuelve a instalar automáticamente
-
+> 
 > **Resolución**: Una instalación de RSAT no puede persistir a través de actualizaciones del sistema operativo debido a las RSAT. MSU se entregan como un paquete de actualización de Windows. Instale RSAT nuevo después de actualizar Windows 10. Tenga en cuenta que esta limitación es uno de los motivos por qué tuvimos que explicar a FODs a partir de Windows 10 1809. Se conservará FODs RSAT que se instalan a través de actualizaciones de versiones futuras de Windows 10.
 
 ## <a name="see-also"></a>Vea también

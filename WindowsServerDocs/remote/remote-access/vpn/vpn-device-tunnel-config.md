@@ -9,12 +9,12 @@ ms.assetid: 158b7a62-2c52-448b-9467-c00d5018f65b
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 005721873ad3a0df942bc9e23eba13728965ccba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 989216f90e78689b464240cff957bab1d9c1229b
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864556"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749567"
 ---
 # <a name="configure-vpn-device-tunnels-in-windows-10"></a>Configurar dispositivo túneles VPN en Windows 10
 
@@ -92,22 +92,23 @@ La siguiente es la profileXML VPN de ejemplo.
 Según las necesidades de cada escenario de implementación concreta, es otra característica VPN que se puede configurar con el túnel de dispositivo [detección de red de confianza](https://social.technet.microsoft.com/wiki/contents/articles/38546.new-features-for-vpn-in-windows-10-and-windows-server-2016.aspx#Trusted_Network_Detection).
 
 ```
- <!-- inside/outside detection --> 
-  <TrustedNetworkDetection>corp.contoso.com</TrustedNetworkDetection> 
+ <!-- inside/outside detection -->
+  <TrustedNetworkDetection>corp.contoso.com</TrustedNetworkDetection>
 ```
 
 ## <a name="deployment-and-testing"></a>Implementación y pruebas
 
-Puede configurar los túneles de dispositivo mediante un script de Windows PowerShell y mediante el Instrumental de administración de Windows \(WMI\) puente. El túnel de dispositivo VPN de Always On debe configurarse en el contexto de la **sistema LOCAL** cuenta. Para lograr esto, será necesario usar [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec), uno de los [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) incluido en el [Sysinternals](https://docs.microsoft.com/sysinternals/) conjunto de utilidades.
+Puede configurar los túneles de dispositivo mediante un script de Windows PowerShell y con el puente de Windows Management Instrumentation (WMI). El túnel de dispositivo VPN de Always On debe configurarse en el contexto de la **sistema LOCAL** cuenta. Para lograr esto, será necesario usar [PsExec](https://docs.microsoft.com/sysinternals/downloads/psexec), uno de los [PsTools](https://docs.microsoft.com/sysinternals/downloads/pstools) incluido en el [Sysinternals](https://docs.microsoft.com/sysinternals/) conjunto de utilidades.
 
-Para obtener instrucciones sobre cómo implementar una por dispositivo `(.\Device)` frente a una por usuario `(.\User)` de perfil, vea [scripting con PowerShell con el proveedor de WMI puente](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider). 
+Para obtener instrucciones sobre cómo implementar una por dispositivo `(.\Device)` frente a una por usuario `(.\User)` de perfil, vea [scripting con PowerShell con el proveedor de WMI puente](https://docs.microsoft.com/windows/client-management/mdm/using-powershell-scripting-with-the-wmi-bridge-provider).
 
 Ejecute el siguiente comando de Windows PowerShell para comprobar que ha implementado correctamente un perfil de dispositivo:
 
-    `Get-VpnConnection -AllUserConnection`
+  ```powershell
+  Get-VpnConnection -AllUserConnection
+  ```
 
 La salida muestra una lista de los dispositivos\-amplios perfiles de VPN que se implementan en el dispositivo.
-
 
 ### <a name="example-windows-powershell-script"></a>Script de PowerShell de Windows de ejemplo
 
@@ -166,19 +167,19 @@ Write-Host "$Message"
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
-Estos son los recursos adicionales que le ayudarán con la implementación de VPN.
+Los siguientes son recursos adicionales que le ayudarán con la implementación de VPN.
 
 ### <a name="vpn-client-configuration-resources"></a>Recursos de configuración de cliente VPN
 
-Estos son los recursos de configuración de cliente VPN.
+Los siguientes son recursos de configuración de cliente VPN.
 
 - [Cómo crear perfiles de VPN en System Center Configuration Manager](https://docs.microsoft.com/sccm/protect/deploy-use/create-vpn-profiles)
 - [Configuración de cliente Windows 10 siempre en las conexiones VPN](always-on-vpn/deploy/vpn-deploy-client-vpn-connections.md)
 - [Opciones de perfil de VPN](https://docs.microsoft.com/windows/access-protection/vpn/vpn-profile-options)
 
-### <a name="remote-access-server-ras-gateway-resources"></a>Servidor de acceso remoto \(RAS\) recursos de puerta de enlace
+### <a name="remote-access-server-gateway-resources"></a>Recursos de puerta de enlace de servidor de acceso remotos
 
-Estos son los recursos de puerta de enlace RAS.
+Estos son los recursos de puerta de enlace de servidor de acceso remoto (RAS).
 
 - [Configuración de RRAS con un certificado de autenticación de equipo](https://technet.microsoft.com/library/dd458982.aspx)
 - [Solución de problemas de conexiones VPN de IKEv2](https://technet.microsoft.com/library/dd941612.aspx)
@@ -187,4 +188,3 @@ Estos son los recursos de puerta de enlace RAS.
 >[!IMPORTANT]
 >Al usar el túnel de dispositivo con una puerta de enlace de RAS de Microsoft, deberá configurar el servidor RRAS para admitir la autenticación de certificados de equipo IKEv2 habilitando la **permitir la autenticación de certificado de equipo para IKEv2** método de autenticación como se describe [aquí](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ee922682%28v=ws.10%29). Una vez habilitada esta opción, se recomienda encarecidamente que la **conjunto VpnAuthProtocol** cmdlet de PowerShell, junto con el **RootCertificateNameToAccept** parámetro opcional, se usa para asegurarse de que Solo se permiten las conexiones IKEv2 RRAS para los certificados de cliente VPN que se relacionan con un definido explícitamente interna o privada entidad de certificación raíz. Como alternativa, el **entidades emisoras raíz de confianza** almacén en el servidor RRAS debe modificarse para asegurarse de que no contiene las entidades de certificación pública como se explicó [aquí](https://blogs.technet.microsoft.com/rrasblog/2009/06/10/what-type-of-certificate-to-install-on-the-vpn-server/). Métodos similares también tendrá que tener en cuenta otras puertas de enlace VPN.
 
----

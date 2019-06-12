@@ -12,12 +12,12 @@ ms.assetid: 8a7b3cc1-21bb-4344-8110-f5d5959b370d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f8f99a2051e114b3c890f1cdac23aebf58689980
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5d7dac41ba6d6f73b0d3d65d3481fe45ff99a6bc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884656"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433612"
 ---
 # <a name="create-the-oobexml-file-including-logo-and-eula"></a>Crear el archivo Oobe.xml, incluyendo el logotipo y los términos de licencia
 
@@ -29,41 +29,41 @@ Puede agregar su propio Contrato de licencia para el usuario final (CLUF) a la C
   
 #### <a name="to-add-your-company-eula-and-logo"></a>Para agregar el CLUF y el logotipo de la empresa  
   
-1.  Abra el archivo Oobe.xml en un editor de textos como el Bloc de notas.  
+1. Abra el archivo Oobe.xml en un editor de textos como el Bloc de notas.  
   
-2.  En el < logopath\>< / logopath\> etiquetas, escriba la ruta de acceso absoluta al archivo de logotipo. El archivo debe contener un archivo .png (portable network graphics) de 32 bits de 240 x 100 píxeles.  
+2. En el < logopath\>< / logopath\> etiquetas, escriba la ruta de acceso absoluta al archivo de logotipo. El archivo debe contener un archivo .png (portable network graphics) de 32 bits de 240 x 100 píxeles.  
   
-3.  En el < eulafilename\>< / eulafilename\> etiquetas, escriba la ruta de acceso absoluta al archivo del CLUF. El archivo del CLUF debe estar en formato .rtf (texto enriquecido).  
+3. En el < eulafilename\>< / eulafilename\> etiquetas, escriba la ruta de acceso absoluta al archivo del CLUF. El archivo del CLUF debe estar en formato .rtf (texto enriquecido).  
   
-4.  En el < nombre\>< / nombre de\> etiquetas, escriba el nombre de su empresa.  
+4. En el < nombre\>< / nombre de\> etiquetas, escriba el nombre de su empresa.  
   
-     En el ejemplo siguiente se muestra el formato del archivo Oobe.xml:  
+    En el ejemplo siguiente se muestra el formato del archivo Oobe.xml:  
   
-    ```  
+   ```  
   
-    <FirstExperience>  
-       <oobe>  
-          <oem>  
-             <name>Fabrikam</name>  
-             <logopath>c:\fabrikam\fabrikam.png</logopath>  
-             <eulafilename>c:\fabrikam\fabrikam_eula.rtf</eulafilename>  
-          </oem>  
-       </oobe>  
-    </FirstExperience>  
+   <FirstExperience>  
+      <oobe>  
+         <oem>  
+            <name>Fabrikam</name>  
+            <logopath>c:\fabrikam\fabrikam.png</logopath>  
+            <eulafilename>c:\fabrikam\fabrikam_eula.rtf</eulafilename>  
+         </oem>  
+      </oobe>  
+   </FirstExperience>  
   
-    ```  
+   ```  
   
-5.  Guarde el archivo.  
+5. Guarde el archivo.  
   
-6.  Copie el archivo Oobe.xml en una de las ubicaciones siguientes:  
+6. Copie el archivo Oobe.xml en una de las ubicaciones siguientes:  
   
-    |Ubicación de Oobe.xml|Condición para determinar la ubicación|  
-    |-----------------------|----------------------------------------|  
-    |%WINDIR%\System32\Oobe\Info\|el servidor se envía en un solo país/región y un sistema de idioma único.|  
-    |%windir%\system32\oobe\info\default\\<language\>|El servidor se envía a un solo país/región y para sistemas de varios idiomas.|  
-    |%WINDIR%\System32\Oobe\Info\\< país/región > \ y %windir%\system32\oobe\info\\< país/región >\\< idioma\>\|el servidor se envía a más de un país / región y la configuración requiere personalizaciones distintas para una base por país/región, cada uno con un solo idioma. Donde < país/región > es la versión decimal del identificador de ubicación geográfica (GeoID) del país o región donde se implementa el servidor, y < idioma\> es la versión decimal del identificador de configuración regional (LCID).|  
+   |Ubicación de Oobe.xml|Condición para determinar la ubicación|  
+   |-----------------------|----------------------------------------|  
+   |%WINDIR%\System32\Oobe\Info\|el servidor se envía en un solo país/región y un sistema de idioma único.|  
+   |%windir%\system32\oobe\info\default\\<language\>|El servidor se envía a un solo país/región y para sistemas de varios idiomas.|  
+   |%WINDIR%\System32\Oobe\Info\\< país/región > \ y %windir%\system32\oobe\info\\< país/región >\\< idioma\>\|el servidor se envía a más de un país / región y la configuración requiere personalizaciones distintas para una base por país/región, cada uno con un solo idioma. Donde < país/región > es la versión decimal del identificador de ubicación geográfica (GeoID) del país o región donde se implementa el servidor, y < idioma\> es la versión decimal del identificador de configuración regional (LCID).|  
   
- Si tiene un logotipo de empresa alternativo con texto de color blanco, puede que se visualice mejor en el flujo de instalación debido al azul del fondo.  Opcionalmente puede especificar este logotipo configurando una clave del Registro y un valor.  
+   Si tiene un logotipo de empresa alternativo con texto de color blanco, puede que se visualice mejor en el flujo de instalación debido al azul del fondo.  Opcionalmente puede especificar este logotipo configurando una clave del Registro y un valor.  
   
 #### <a name="to-specify-a-company-logo-by-setting-the-oem-registry-key"></a>Para especificar un logotipo de empresa mediante la configuración de la clave de Registro del OEM  
   

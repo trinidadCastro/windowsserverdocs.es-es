@@ -11,18 +11,27 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/06/2019
+ms.date: 06/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: e2b79a1f914bdbc971299493ca00680e2504fbd3
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 7730790495babf4a70fb5a70ce93464faa86f1e3
+ms.sourcegitcommit: 1102e91571c88c7a1a2e021a6c53af1def7bb0a4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476030"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66736535"
 ---
 # <a name="whats-new-for-the-remote-desktop-client-on-android"></a>Novedades del cliente de escritorio remoto en Android
 
 Se actualiza con regularidad el [cliente de escritorio remoto para Android](remote-desktop-android.md), agregar nuevas características y solución de problemas. Consulte las actualizaciones más recientes a continuación.
+
+## <a name="updates-for-version-8171"></a>Actualizaciones de versión 8.1.71
+
+*Fecha de publicación: 06/05/2019*
+
+- Compatibilidad con versiones de Android 4.0.3 y 4.0.4 quitado.
+- Se ha corregido un problema donde los recursos remotos del mismo nombre se mostrara correctamente.
+- Actualiza el icono de la aplicación.
+- Mejoras y correcciones de errores menores.
 
 ## <a name="updates-for-version-8170"></a>Actualizaciones de versión 8.1.70
 

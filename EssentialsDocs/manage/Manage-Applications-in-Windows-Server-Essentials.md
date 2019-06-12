@@ -12,12 +12,12 @@ ms.assetid: ae89c46a-0afd-4858-9150-ec97650f45a4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e98d661ac71697bc0e38b6a25fe2f9d2b0b7254f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1a60a9e7fd958d447b4770431a69546f0ad6f229
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860176"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433351"
 ---
 # <a name="manage-applications-in-windows-server-essentials"></a>Administrar aplicaciones en Windows Server Essentials
 
@@ -32,21 +32,21 @@ ms.locfileid: "59860176"
 ##  <a name="BKMK_1"></a> Tareas de administración de aplicaciones en el panel  
  En la página de administración **Aplicaciones** del panel encontrará lo siguiente:  
   
--   Una lista de complementos instalados, que muestra:  
+- Una lista de complementos instalados, que muestra:  
   
-    -   El nombre del servicio en línea o complemento  
+  -   El nombre del servicio en línea o complemento  
   
-    -   El estado de actualización del complemento  
+  -   El estado de actualización del complemento  
   
-    -   El estado de suscripción del complemento  
+  -   El estado de suscripción del complemento  
   
-    -   El nombre de la empresa o el editor que ofrece el complemento  
+  -   El nombre de la empresa o el editor que ofrece el complemento  
   
--   Un panel que incluye un conjunto de tareas para administrar un complemento determinado  
+- Un panel que incluye un conjunto de tareas para administrar un complemento determinado  
   
--   Una lista de complementos disponibles para descargar e instalar desde Microsoft Pinpoint  
+- Una lista de complementos disponibles para descargar e instalar desde Microsoft Pinpoint  
   
- En la tabla siguiente se describen las diversas tareas de administración del complemento que están disponibles en el panel del servidor. Algunas de las tareas son para complementos, por lo que solo están visibles cuando se selecciona un complemento en la lista.  
+  En la tabla siguiente se describen las diversas tareas de administración del complemento que están disponibles en el panel del servidor. Algunas de las tareas son para complementos, por lo que solo están visibles cuando se selecciona un complemento en la lista.  
   
 |Nombre de la tarea|Descripción|  
 |---------------|-----------------|  

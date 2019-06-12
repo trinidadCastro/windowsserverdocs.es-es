@@ -7,14 +7,14 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.date: 03/25/2019
+ms.date: 06/04/2019
 description: Temas nuevos y actualizados en la documentación de almacenamiento local para Windows Server para profesionales de TI.
-ms.openlocfilehash: fa3da6e14c36fecfa48c3688a36518babb257920
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 3245e6bc5320cc0ffae01817a8f7b9caeaa6c685
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192677"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501485"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Cambiar el historial de los temas de almacenamiento en Windows Server
 
@@ -22,7 +22,13 @@ ms.locfileid: "66192677"
 
 Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storage.md) documentación de Windows Server.
 
-> Si desea obtener el historial de actualización para Windows Server, vea [historial de actualizaciones de Windows 10 y Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
+> Si desea obtener el historial de actualización para Windows Server, vea [historial de actualizaciones de Windows 10 y Windows Server 2019](https://support.microsoft.com/help/4464619) o [historial de actualización de Windows Server 2016](https://support.microsoft.com/help/4000825/windows-10-and-windows-server-2016-update-history).
+
+## <a name="june-2019"></a>Junio de 2019
+
+| Tema nuevo o modificado                                        | Descripción|
+| ---                                                         | ---           |
+| [Preguntas más frecuentes sobre servicio de migración de almacenamiento](storage-migration-service/faq.md#consolidate-servers) | Agrega información de optimización de rendimiento. |
 
 ## <a name="may-2019"></a>Mayo de 2019
 
@@ -36,7 +42,7 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
-|[Supervisión con Azure Monitor](storage-spaces/configure-azure-monitor.md)| Nuevo|
+|[Supervisión con Azure Monitor](storage-spaces/configure-azure-monitor.md)| Nuevo|
 |[Actualizar un clúster de espacios de almacenamiento directo a Windows Server 2019](storage-spaces/upgrade-storage-spaces-direct-to-windows-server-2019.md)| Nuevo        |
 |[Replicación DFS](dfs-replication/dfsr-overview.md)        | Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc770278(v%3dws.11)) biblioteca|
 
@@ -105,7 +111,7 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 |[Implementar espacios de almacenamiento en un servidor independiente](storage-spaces/deploy-standalone-storage-spaces.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Introducción a NTFS](file-server/ntfs-overview.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Use Robocopy para inicializar previamente los archivos para la replicación DFS](dfs-replication/preseed-dfsr-with-robocopy.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
-|[Vssadmin - herramienta de línea de comandos de versiones anteriores](..\administration\windows-commands\vssadmin.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
+|[Vssadmin - herramienta de línea de comandos de versiones anteriores](../administration/windows-commands/vssadmin.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Información general del Administrador de recursos del servidor de archivos](fsrm/fsrm-overview.md)| Se ha agregado información sobre una nueva configuración del registro en Windows Server 2016, versión 1803.|
 |[Replicación de almacenamiento de servidor a servidor](storage-replica/server-to-server-storage-replication.md)|Se ha agregado información sobre el uso de Windows Admin Center.|
 |[Problemas conocidos de réplica de almacenamiento](storage-replica/storage-replica-known-issues.md)|Se ha agregado nueva información.|
@@ -195,13 +201,13 @@ Este tema enumeran los temas nuevos y actualizados en el [almacenamiento](storag
 
 ## <a name="may-2017"></a>Mayo de 2017
 
-|Tema nuevo o modificado|Descripción|
-|---|---|
-|[Introducción a la desduplicación de datos](data-deduplication/overview.md) e <br>[Instalar desduplicación de datos](data-deduplication/install-enable.md)|Se han actualizado los requisitos del sistema para incluir una actualización de software más reciente. |
-|[Implementar Carpetas de trabajo](work-folders/deploy-work-folders.md)|Se ha agregado información sobre los pasos necesarios actualizados y soporte técnico del Proxy de aplicación de Azure AD.|
-|[Implementar espacios de almacenamiento directo](storage-spaces/deploy-storage-spaces-direct.md)|Se ha agregado el paso 1.3 con las características necesarias y se ha corregido el parámetro obsoleto en Enable-NetAdapterQos.||[Información general sobre Réplica de almacenamiento](storage-replica/storage-replica-overview.md) (y otros temas sobre Réplica de almacenamiento)|Se ha agregado una recomendación para usar el almacenamiento de forma rápida y exclusiva para los registros de Réplica de almacenamiento.|
-|[Preguntas más frecuentes sobre la réplica de almacenamiento](storage-replica/storage-replica-frequently-asked-questions.md)|Se ha agregado información sobre cómo elegir entre distintas topologías de replicación.|
-|[Requisitos de hardware de almacenamiento directo en espacios](storage-spaces/storage-spaces-direct-hardware-requirements.md)|Se han cambiado los requisitos de resistencia de unidades para los dispositivos de caché.|
+|                                                           Tema nuevo o modificado                                                           |                                          Descripción                                           |
+|------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| [Introducción a la desduplicación de datos](data-deduplication/overview.md) e <br>[Instalar desduplicación de datos](data-deduplication/install-enable.md) |              Se han actualizado los requisitos del sistema para incluir una actualización de software más reciente.               |
+|                                      [Implementar Carpetas de trabajo](work-folders/deploy-work-folders.md)                                       |         Se ha agregado información sobre los pasos necesarios actualizados y soporte técnico del Proxy de aplicación de Azure AD.          |
+|                            [Implementar espacios de almacenamiento directo](storage-spaces/deploy-storage-spaces-direct.md)                             | Se ha agregado el paso 1.3 con las características necesarias y se ha corregido el parámetro obsoleto en Enable-NetAdapterQos. |
+|               [Preguntas más frecuentes sobre la réplica de almacenamiento](storage-replica/storage-replica-frequently-asked-questions.md)                |             Se ha agregado información sobre cómo elegir entre distintas topologías de replicación.              |
+|               [Requisitos de hardware de almacenamiento directo en espacios](storage-spaces/storage-spaces-direct-hardware-requirements.md)               |                    Se han cambiado los requisitos de resistencia de unidades para los dispositivos de caché.                     |
 
 ## <a name="april-2017"></a>Abril de 2017
 

@@ -13,12 +13,12 @@ ms.author: jgerend
 manager: jasgro
 ms.date: 05/21/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 820dfed8a0a58d3ccc64023325c373b761461ba8
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 597da91aa40d9af4526b5358a88128b52d040645
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "65976520"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501440"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>Características eliminadas o planeado para el reemplazo a partir de Windows Server 2019
 
@@ -54,5 +54,5 @@ Si tienes algún comentario acerca de la sustitución propuesta de cualquiera de
 | Consola de administración de confianza Platform Module (TPM)|La información que estaban disponible en la consola de administración de TPM está disponible en el [ **seguridad dispositivo** ](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/wdsc-device-security) página en el [Windows Defender Security Center](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/windows-defender-security-center). |
 | Modo de atestación de Active Directory del servicio de protección de host|Modo de atestación del servicio de protección de Host Active Directory ya no estamos desarrollando: en su lugar, hemos agregado un nuevo modo de atestación [atestación de clave de host](../security/guarded-fabric-shielded-vm/guarded-fabric-create-host-key.md), que es mucho más sencillo e igualmente como compatible como basada en Active Directory atestación.  Este nuevo modo proporciona una funcionalidad equivalente con una experiencia de instalación, administración más simple y menos dependencias de infraestructura de la atestación de Active Directory. Atestación de clave de host no tiene ningún requisito de hardware adicional más allá de qué atestación de Active Directory es necesario, por lo que todos los sistemas existentes seguirán siendo compatibles con el nuevo modo. Consulte [implementar hosts protegidos](../security/guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md) para obtener más información acerca de las opciones de atestación. |
 | Servicio OneSync|El servicio OneSync sincroniza los datos para las aplicaciones de correo electrónico, calendario y las personas. Hemos agregado un motor de sincronización a la aplicación de Outlook que proporciona la sincronización misma. |
-| Compatibilidad con las API de compresión diferencial remota|Compatibilidad con las API de compresión diferencial remota habilitada la sincronización de datos con un origen remoto mediante las tecnologías de compresión que minimizan la cantidad de datos que se envían a través de la red. Esta compatibilidad no se usa actualmente por cualquier producto de Microsoft. |
+| Compatibilidad con las API de compresión diferencial remota|Compatibilidad con las API de compresión diferencial remota habilitada la sincronización de datos con un origen remoto mediante las tecnologías de compresión que minimizan la cantidad de datos que se envían a través de la red. |
 | Extensión de conmutador de filtro ligero de WFP|La extensión de conmutador de filtro ligero de WFP permite a los desarrolladores crear [las extensiones para el conmutador virtual de Hyper-V de filtrado de paquetes de red simple](https://docs.microsoft.com/en-us/windows-hardware/drivers/network/using-virtual-switch-filtering). Puede lograr la misma funcionalidad mediante la creación de una extensión de filtrado completa. Por lo tanto, retiraremos esta extensión en el futuro. |

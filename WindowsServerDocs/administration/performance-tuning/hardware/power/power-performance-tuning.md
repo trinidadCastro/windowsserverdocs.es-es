@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 91bc02e5edbdfbbbf3ccf600f3536a783e49eb79
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 4ad58e9b477f61844dedd9f6638efb12f1a96500
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814916"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811567"
 ---
 # <a name="power-and-performance-tuning"></a>Energía y ajuste del rendimiento
 
@@ -60,7 +60,7 @@ Debe entender perfectamente los requisitos de carga de trabajo para elegir una c
 
 **PowerCfg.exe** admite una opción de línea de comandos que puede usar para analizar la eficacia de energía de inactividad del servidor. Al ejecutar PowerCfg.exe con el **/energy** opción, la herramienta realiza una prueba de 60 segundos para detectar problemas de la eficiencia de energía potencial. La herramienta genera un informe HTML sencillo en el directorio actual.
 
->[!Important]
+> [!Important]
 > Para garantizar un análisis preciso, asegúrese de que todas las aplicaciones locales se cierran antes de ejecutar **PowerCfg.exe**. 
 
 Abreviado tasas de graduación temporizador, los controladores que compatibilidad con la administración de energía de ausencia y el uso excesivo de CPU son algunos de los problemas de comportamiento que se detectan mediante el **powercfg /energy** comando. Esta herramienta proporciona una manera sencilla de identificar y corregir problemas de administración de energía, lo que puede producir un importante ahorro económico en un centro de datos grande.
@@ -74,7 +74,7 @@ Windows Server 2016 tiene tres planes de energía integrados diseñados para sat
 | **Plan** | **Descripción** | **Escenarios aplicables comunes** | **Información destacada de la implementación** |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Equilibrado (recomendado) | Configuración predeterminada. Se dirige a la eficiencia de energía buena con un impacto mínimo en el rendimiento. | Informática general | Coincide con la capacidad a petición. Características de ahorro de energía equilibran la eficacia y el rendimiento. |
-| Alto rendimiento | Aumenta el rendimiento a costa de elevado consumo de energía. Energía y térmicas limitaciones, funcionamiento de gastos y las consideraciones de confiabilidad se aplican. | Las aplicaciones de baja latencia y el código de aplicación que es sensible a los cambios de rendimiento del procesador | ¿Siempre se bloquean los procesadores en el estado de rendimiento más alto (incluida "turbo? frecuencias). Todos los núcleos se unparked. Salida térmica puede ser importante. |
+| Alto rendimiento | Aumenta el rendimiento a costa de elevado consumo de energía. Energía y térmicas limitaciones, funcionamiento de gastos y las consideraciones de confiabilidad se aplican. | Las aplicaciones de baja latencia y el código de aplicación que es sensible a los cambios de rendimiento del procesador | Siempre se bloquean los procesadores en el estado de rendimiento más alto (incluidas las frecuencias de "turbo"). Todos los núcleos se unparked. Salida térmica puede ser importante. |
 | Ahorro de energía | Limita el rendimiento para ahorrar energía y reducir los costos operativos. No se recomienda sin realizar pruebas minuciosas ofrecer un rendimiento seguro es adecuada. | Implementaciones con presupuestos limitada de energía y restricciones térmicas | Limita la frecuencia del procesador en un porcentaje de máximo (si se admite) y permite que otras características de ahorro de energía. |
 
 
@@ -82,7 +82,7 @@ Estos planes de energía existen en Windows de corriente alterna (CA) y los sist
 
 Para obtener más información sobre los planes de energía y las configuraciones de directiva de energía, consulte [configuración de directiva de energía e implementación en Windows](https://msdn.microsoft.com/windows/hardware/gg463243.aspx).
 
->[!Note]
+> [!Note]
 > Algunos fabricantes de servidor tienen sus propias opciones de administración de energía disponibles a través de la configuración del BIOS. Si el sistema operativo no tiene control sobre la administración de energía, cambiar los planes de energía en Windows no afectará a rendimiento y la alimentación del sistema.
 
 ## <a name="tuning-processor-power-management-parameters"></a>Ajuste los parámetros de administración de energía de procesador
@@ -97,7 +97,7 @@ Las tecnologías de Intel Turbo Boost y AMD Turbo CORE son características que 
 
 Turbo está habilitada para los planes de energía de alto rendimiento en todos los procesadores de Intel y AMD y está deshabilitada para los planes de energía ahorro de energía. Los planes de energía equilibrada en los sistemas que se basan en la administración tradicional de frecuencia basado en estado P, Turbo está habilitado de forma predeterminada solo si la plataforma es compatible con el registro EPB.
 
->[!Note]
+> [!Note]
 > Solo se admite el registro EPB en Intel Westmere y procesadores más adelante.
 
 Para los procesadores de AMD e Intel Nehalem, Turbo está deshabilitada de forma predeterminada en plataformas basadas en el estado de P. Sin embargo, si un sistema es compatible con Control de rendimiento de colaboración procesador (CPPC), es un nuevo modo alternativo de comunicación de rendimiento entre el sistema operativo y el hardware (definido en ACPI 5.0), Turbo podría exponerse a si el funcionamiento de Windows sistema solicita dinámicamente el hardware para ofrecer los mayores niveles de rendimiento posible.
@@ -106,7 +106,7 @@ Para habilitar o deshabilitar la función Turbo Boost, se debe configurar el par
 
 Para un control basado en el estado de P, se deshabilitan las opciones, habilitado (está disponible para el hardware Turbo siempre que se solicita el rendimiento nominal) y eficaz (Turbo solo está disponible si se implementa el registro EPB).
 
-¿Para un control basado en CPPC, se deshabilitan las opciones, habilitado eficaz (Windows especifica la cantidad exacta de Turbo para proporcionar) y dinámico (Windows pide "máximo rendimiento? Para habilitar Turbo).
+Para un control basado en CPPC, se deshabilitan las opciones, habilitado eficaz (Windows especifica la cantidad exacta de Turbo para proporcionar) y dinámico (Windows pidan "máximo rendimiento" para habilitar Turbo).
 
 En Windows Server 2016, el valor predeterminado para el modo de aumento es 3.
 
@@ -118,7 +118,7 @@ En Windows Server 2016, el valor predeterminado para el modo de aumento es 3.
 | 3 (eficaz habilitado) | Eficaz | Eficaz habilitado |
 | 4 (eficaz agresiva) | Eficaz | Agresiva |
 
- 
+ 
 Los siguientes comandos de habilitar el modo de aumento de rendimiento de procesador en el plan de energía actual (especificar la directiva mediante el uso de un alias de GUID):
 
 ``` syntax
@@ -126,9 +126,10 @@ Powercfg -setacvalueindex scheme_current sub_processor PERFBOOSTMODE 1
 Powercfg -setactive scheme_current
 ```
 
->[!Important]  Debe ejecutar el **powercfg - setactive** comando para habilitar la nueva configuración. No es necesario reiniciar el servidor.
+> [!Important]
+> Debe ejecutar el **powercfg - setactive** comando para habilitar la nueva configuración. No es necesario reiniciar el servidor.
 
-Para establecer este valor para los planes de energía que no sea el plan seleccionado actualmente, puede utilizar alias como esquema\_MAX (Economizador de energía), combinación\_MIN (alto rendimiento) y el esquema\_EQUILIBRADO (equilibrada) en lugar de esquema\_Actual. ¿Reemplace "esquema actual? en comandos powercfg - setactive mostrados anteriormente con el alias deseado para habilitar ese plan de energía.
+Para establecer este valor para los planes de energía que no sea el plan seleccionado actualmente, puede utilizar alias como esquema\_MAX (Economizador de energía), combinación\_MIN (alto rendimiento) y el esquema\_EQUILIBRADO (equilibrada) en lugar de esquema\_Actual. Reemplace "esquema actual" en los comandos de powercfg - setactive mostrado anteriormente con el alias deseado para habilitar ese plan de energía.
 
 Por ejemplo ajustar el modo de aumento en el plan economizador de energía y hacer que ese Economizador de energía es el plan actual, ejecute los siguientes comandos:
 
@@ -157,7 +158,7 @@ Powercfg -setacvalueindex scheme_current sub_processor PROCTHROTTLEMAX 75
 Powercfg -setactive scheme_current
 ```
 
->[!Note]
+> [!Note]
 > Limita el rendimiento del procesador en un porcentaje de máximo, requiere compatibilidad con procesadores. Consulte la documentación de procesador para determinar si existe dicha compatibilidad, o ver el contador del Monitor de rendimiento **% de frecuencia máxima** en el **procesador** grupo para ver si se produjeron los límites de frecuencia aplicar.
 
 ## <a name="processor-performance-increase-and-decrease-of-thresholds-and-policies"></a>Rendimiento del procesador aumentan y disminuyen de umbrales y directivas
@@ -168,9 +169,9 @@ La velocidad a la que un estado de rendimiento del procesador aumenta o disminuy
 
 -   **Umbral de reducir el rendimiento de procesador** define el valor de uso siguiente que se reducirá el estado de rendimiento del procesador. Los valores mayores aumentan la tasa de disminución del estado de rendimiento durante los períodos de inactividad.
 
--   **Directiva de aumentar el rendimiento del procesador y reducir el rendimiento de procesador** directiva determinar qué estado de rendimiento se debe establecer cuando se produce un cambio. ¿"Único? Directiva significa que elige el siguiente estado. ¿"Rocket? significa que el estado de rendimiento máximo o mínimo de energía. ¿"Ideal? intenta encontrar un equilibrio entre la capacidad y rendimiento.
+-   **Directiva de aumentar el rendimiento del procesador y reducir el rendimiento de procesador** directiva determinar qué estado de rendimiento se debe establecer cuando se produce un cambio. Directiva de "Único" significa que elige el siguiente estado. "Rocket" significa que el estado de rendimiento máximo o mínimo de energía. "Ideal" intenta encontrar un equilibrio entre la capacidad y rendimiento.
 
-Por ejemplo, si el servidor requiere una latencia muy baja aún desean beneficiarse de bajo consumo de energía durante los períodos de inactividad, podría quicken el aumento de estado de rendimiento para el aumento de carga y ralentizar la disminución cuando carga deja de funcionar. ¿Los siguientes comandos de establecen la directiva de aumento para "Rocket? para un estado rápido aumentar y establecer la directiva de disminución en "único?. Los umbrales de aumento y disminución se establecen a 10 y 8 respectivamente.
+Por ejemplo, si el servidor requiere una latencia muy baja aún desean beneficiarse de bajo consumo de energía durante los períodos de inactividad, podría quicken el aumento de estado de rendimiento para el aumento de carga y ralentizar la disminución cuando carga deja de funcionar. Los siguientes comandos de establecer la directiva de aumento a "Rocket" para un rápido aumento de estado y establecer la directiva de disminución a "Single". Los umbrales de aumento y disminución se establecen a 10 y 8 respectivamente.
 
 ``` syntax
 Powercfg.exe -setacvalueindex scheme_current sub_processor PERFINCPOL 2
@@ -221,6 +222,6 @@ Powercfg -setactive scheme_current
 
 ## <a name="see-also"></a>Vea también
 - [Consideraciones de rendimiento del Hardware de servidor](../index.md)
-- [Consideraciones sobre la alimentación de Hardware de servidor](../power.md)
-- [Optimización de la administración de energía del procesador](processor-power-management-tuning.md)
-- [Parámetros de Plan equilibrado recomendados](recommended-balanced-plan-parameters.md)
+- [Server Hardware Power Considerations](../power.md) (Consideraciones de alimentación del hardware de servidor)
+- [Processor Power Management Tuning](processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)
+- [Recommended Balanced Plan Parameters](recommended-balanced-plan-parameters.md) (Parámetros recomendados del plan equilibrado)

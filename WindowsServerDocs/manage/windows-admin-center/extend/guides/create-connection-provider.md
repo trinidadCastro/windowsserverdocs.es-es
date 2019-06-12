@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 09/18/2018
+ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 883fba96fcb71cb1c6e8162c1564d66924c4e24d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b79e832ee45990d18baf4c211ab68b907134ceb7
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885656"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811834"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>Crear un proveedor de conexión para una extensión de la solución
 
@@ -76,26 +76,24 @@ Un punto de entrada de tipo "connnectionProvider" indica al shell de Windows Adm
 | Property | Descripción |
 | -------- | ----------- |
 | entryPointType | Se trata de una propiedad necesaria. Hay tres valores válidos: "herramienta", "solución" y "connectionProvider". | 
-| NAME | Identifica el proveedor de conexión dentro del ámbito de una solución. Este valor debe ser único dentro de una instancia completa de Windows Admin Center (no sólo una solución). |
+| name | Identifica el proveedor de conexión dentro del ámbito de una solución. Este valor debe ser único dentro de una instancia completa de Windows Admin Center (no sólo una solución). |
 | ruta de acceso | Representa la ruta de acceso de dirección URL para el "Agregar conexión" interfaz de usuario, si se configurará la solución. Este valor debe asignar a una ruta que se configura en el archivo de aplicación routing.module.ts. Cuando el punto de entrada de la solución está configurado para usar el rootNavigationBehavior conexiones, esta ruta cargará el módulo que se usa el shell para mostrar la interfaz de usuario de conexión de agregar. Más información disponible en la sección sobre rootNavigationBehavior. |
 | displayName | El valor introducido aquí se muestra en el lado derecho del shell, debajo de la barra negra de Windows Admin Center cuando un usuario carga la página de conexiones de la solución. |
 | icono | Representa el icono utilizado en el menú desplegable de soluciones para representar la solución. |
 | description | Escriba una breve descripción del punto de entrada. |
 | connectionType | Representa el tipo de conexión que se cargará el proveedor. El valor especificado aquí también se usará en el punto de entrada de la solución para especificar que la solución puede cargar esas conexiones. El valor especificado aquí también se utilizará en la herramienta o los puntos de entrada para indicar que la herramienta es compatible con este tipo. Este valor introducido aquí se usará también en el objeto de conexión que se envía a la RPC llamar en la "ventana de agregar", en el paso de implementación de capa de aplicación. |
 | connectionTypeName | Se utiliza en la tabla de conexiones para representar una conexión que utiliza el proveedor de la conexión. Esto se espera que el nombre plural del tipo. |
-| connectionTypeUrlName | Se utiliza en la creación de la dirección URL para representar la solución cargada, después de que Windows Admin Center se ha conectado a una instancia. Esta entrada se utiliza después de las conexiones y antes del destino. En este ejemplo, "connectionexample" es donde este valor aparece en la dirección URL: http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com |
-| connectionTypeDefaultSolution | Representa el componente predeterminado que se debe cargar el proveedor de conexión. Este valor es una combinación de: [a] el nombre del paquete de extensión definido en la parte superior del manifiesto; signo de exclamación (!); [b] [c], el nombre de punto de entrada de solución.    Para un proyecto con el nombre "msft.sme.mySample-extension" y un punto de entrada de la solución con el nombre "example", este valor sería "msft.sme.solutionExample extensión! ejemplo". |
-| connectionTypeDefaultTool | Representa el valor predeterminado de herramienta que se debe cargar en una conexión correcta. Este valor de propiedad se compone de dos partes, similares a la connectionTypeDefaultSolution. Este valor es una combinación de: [a] el nombre del paquete de extensión definido en la parte superior del manifiesto; signo de exclamación (!); [b] [c], el nombre del punto de entrada de herramienta para la herramienta que se debe cargar inicialmente. Para un proyecto con el nombre "msft.sme.solutionExample-extension" y un punto de entrada de la solución con el nombre "example", este valor sería "msft.sme.solutionExample extensión! ejemplo". |
+| connectionTypeUrlName | Se utiliza en la creación de la dirección URL para representar la solución cargada, después de que Windows Admin Center se ha conectado a una instancia. Esta entrada se utiliza después de las conexiones y antes del destino. En este ejemplo, "connectionexample" es donde este valor aparece en la dirección URL: `http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
+| connectionTypeDefaultSolution | Representa el componente predeterminado que se debe cargar el proveedor de conexión. Este valor es una combinación de: <br>[a] el nombre del paquete de extensión definido en la parte superior del manifiesto; <br>signo de exclamación (!); [b] <br>[c], el nombre de punto de entrada de solución.    <br>Para un proyecto con el nombre "msft.sme.mySample-extension" y un punto de entrada de la solución con el nombre "example", este valor sería "msft.sme.solutionExample extensión! ejemplo". |
+| connectionTypeDefaultTool | Representa el valor predeterminado de herramienta que se debe cargar en una conexión correcta. Este valor de propiedad se compone de dos partes, similares a la connectionTypeDefaultSolution. Este valor es una combinación de: <br>[a] el nombre del paquete de extensión definido en la parte superior del manifiesto; <br>signo de exclamación (!); [b] <br>[c], el nombre del punto de entrada de herramienta para la herramienta que se debe cargar inicialmente. <br>Para un proyecto con el nombre "msft.sme.solutionExample-extension" y un punto de entrada de la solución con el nombre "example", este valor sería "msft.sme.solutionExample extensión! ejemplo". |
 | connectionStatusProvider | Consulte la sección "Definir proveedor de estado de la conexión" |
 
 ## <a name="define-connection-status-provider"></a>Defina el proveedor de estado de conexión
 
 Proveedor de estado de conexión es el mecanismo por el que se valida un destino para estar en línea y disponibles, también lo que garantiza que el usuario que se conecta tiene permiso para tener acceso al destino. Actualmente hay dos tipos de proveedores de estado de conexión:  PowerShell y RelativeGatewayUrl.
 
-*   Proveedor de estado de conexión de PowerShell
-    *   Determina si un destino está en línea y accesible con un script de PowerShell. El resultado se debe devolver en un objeto con una sola propiedad "estado", que define a continuación.
-*   Proveedor de estado de conexión RelativeGatewayUrl
-    *   Determina si un destino está en línea y accesible con una llamada de rest. El resultado se debe devolver en un objeto con una sola propiedad "estado", que define a continuación.
+*   <strong>Proveedor de estado de conexión de PowerShell</strong> -determina si un destino está en línea y accesible con un script de PowerShell. El resultado se debe devolver en un objeto con una sola propiedad "estado", que define a continuación.
+*   <strong>El proveedor de estado de conexión RelativeGatewayUrl</strong> -determina si un destino está en línea y accesible con una llamada de rest. El resultado se debe devolver en un objeto con una sola propiedad "estado", que define a continuación.
 
 ### <a name="define-status"></a>Definir estado
 
@@ -113,25 +111,22 @@ Proveedores de estado de conexión son necesarios para devolver un objeto con un
 
 Propiedades de estado:
 
-* Etiqueta
-    * Tipo de valor devuelto de una etiqueta que describe el estado. Tenga en cuenta que se pueden asignar valores de etiqueta en tiempo de ejecución. Consulte la entrada siguiente para asignar valores en tiempo de ejecución.
+* <strong>Etiqueta</strong> : una etiqueta que describe el tipo de valor devuelto del estado. Tenga en cuenta que se pueden asignar valores de etiqueta en tiempo de ejecución. Consulte la entrada siguiente para asignar valores en tiempo de ejecución.
 
-* Tipo
-    * El tipo de valor devuelto del estado. Tipo tiene los siguientes valores de enumeración. Para cualquier valor de 2 o posterior, la plataforma no se le remitirá a objeto conectado y se mostrará un error en la interfaz de usuario.
+* <strong>Tipo</strong> -tipo de valor devuelto del estado. Tipo tiene los siguientes valores de enumeración. Para cualquier valor de 2 o posterior, la plataforma no se le remitirá a objeto conectado y se mostrará un error en la interfaz de usuario.
 
-Tipos:
+   Tipos:
 
-| Valor | Descripción |
-| ----- | ----------- |
-| 0 | Online |
-| 1 | Advertencia |
-| 2 | Sin autorización |
-| 3 | Error |
-| 4 | Fatal |
-| 5 | Unknown |
+  | Valor | Descripción |
+  | ----- | ----------- |
+  | 0 | Online |
+  | 1 | Advertencia |
+  | 2 | Sin autorización |
+  | 3 | Error |
+  | 4 | Fatal |
+  | 5 | Unknown |
 
-* Detalles
-    * Tipo de valor devuelto que describe el estado de detalles adicionales.
+* <strong>Detalles</strong> : detalles adicionales que describe el tipo de valor devuelto del estado.
 
 ### <a name="powershell-connection-status-provider-script"></a>Secuencia de comandos de proveedor de estado de conexión de PowerShell
 
@@ -139,7 +134,7 @@ El script de PowerShell de proveedor de estado de conexión determina si un dest
 
 Script de PowerShell de ejemplo:
 
-``` ts
+```PowerShell
 ## Get-My-Status ##
 
 function Get-Status()

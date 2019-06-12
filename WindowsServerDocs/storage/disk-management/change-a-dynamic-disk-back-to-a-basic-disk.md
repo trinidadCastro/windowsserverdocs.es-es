@@ -1,23 +1,23 @@
 ---
 title: Cambiar un disco dinámico por un disco básico
 description: Describe cómo convertir un disco dinámico en un disco básico.
-ms.date: 10/12/2017
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e7655ca78868d40d354b5260fa99fcfa3a21d0de
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 249db6d2779e696ef93fecfd11718dbcce8654be
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192751"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812466"
 ---
 # <a name="change-a-dynamic-disk-back-to-a-basic-disk"></a>Cambiar un disco dinámico por un disco básico
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En este tema se describe cómo eliminar todo el contenido de un disco dinámico y luego convertirlo en un disco básico. Discos dinámicos han quedado en desuso de Windows y no se recomienda su uso ya. En su lugar, recomendamos usar discos básicos o utilizando la más reciente [espacios de almacenamiento](https://support.microsoft.com/help/12438/windows-10-storage-spaces) tecnología cuando desee discos del bloque juntos en volúmenes más grandes. Si quieres reflejar el volumen desde el que Windows se inicia, es posible que quieras usar un controlador RAID de hardware, como por ejemplo, el incluido en un gran número de placas base.
 
@@ -57,17 +57,16 @@ En este tema se describe cómo eliminar todo el contenido de un disco dinámico 
 7.  En el símbolo de sistema **DISKPART**, escribe `select disk <disknumber>` y especifica el número de disco del disco que quieres convertir en un disco básico.
 
 8.  En el símbolo del sistema **DISKPART**, escribe `convert basic`.
- 
-<br /> <br />
+
 
 | Valor  | Descripción |
-| --- |---|
-| <p>**disco de la lista**</p>                         | <p>Muestra una lista de discos e información sobre ellos, como su tamaño, la cantidad de espacio libre disponible, si se trata de un disco básico o dinámico y si el disco utiliza el estilo de partición de Registro de arranque maestro (MBR) o Tabla de particiones GUID (GPT). El disco marcado con un asterisco (*) tiene el foco.</p> |
-| <p>**Seleccione el disco** <em>númeroDeDisco</em></p>   | <p>Selecciona el disco especificado, donde <em>disknumber</em> es el número de disco y el que recibe el foco.</p>  |
-| <p>**disco de detalle** <em>númeroDeDisco</em></p>   | <p>Muestra las propiedades del disco seleccionado y los volúmenes de dicho disco.</p>  |
-| <p>**Seleccione el volumen** <em>númeroDeDisco</em></p> | <p>Selecciona el volumen especificado, donde <em>disknumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.</p> |
-| <p>**Eliminar volumen**</p>                     | <p>Elimina el volumen seleccionado. No puedes eliminar el volumen del sistema, el volumen de arranque o cualquier otro volumen que incluya el archivo de paginación activo o de volcado (volcado de memoria).</p> |
-| <p>**convertir básico**</p> | <p>Convierte un disco dinámico vacío en un disco básico.</p>  |
+| --- | --- |
+| **disco de la lista**                         | Muestra una lista de discos e información sobre ellos, como su tamaño, la cantidad de espacio libre disponible, si se trata de un disco básico o dinámico y si el disco utiliza el estilo de partición de Registro de arranque maestro (MBR) o Tabla de particiones GUID (GPT). El disco marcado con un asterisco (*) tiene el foco. |
+| **Seleccione el disco** <em>númeroDeDisco</em>   | Selecciona el disco especificado, donde <em>disknumber</em> es el número de disco y el que recibe el foco.  |
+| **disco de detalle** <em>númeroDeDisco</em>   | Muestra las propiedades del disco seleccionado y los volúmenes de dicho disco.  |
+| **Seleccione el volumen** <em>númeroDeDisco</em> | Selecciona el volumen especificado, donde <em>disknumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente. |
+| **Eliminar volumen**                     | Elimina el volumen seleccionado. No puedes eliminar el volumen del sistema, el volumen de arranque o cualquier otro volumen que incluya el archivo de paginación activo o de volcado (volcado de memoria). |
+| **convertir básico** | Convierte un disco dinámico vacío en un disco básico.  |
 
 ## <a name="additional-considerations"></a>Consideraciones adicionales
 
@@ -77,5 +76,3 @@ En este tema se describe cómo eliminar todo el contenido de un disco dinámico 
 ## <a name="see-also"></a>Vea también
 
 -   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

@@ -11,12 +11,12 @@ ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 08/30/2017
-ms.openlocfilehash: a398334700f7c292732207919b73a33145a6aae9
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: f11ef246ce4ac4f8773f046a25badd83cff106d0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222691"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447735"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas de virtuales de FreeBSD compatibles en Hyper-V
 
@@ -94,7 +94,7 @@ El siguiente mapa de distribución de la característica indica las característ
     # dd if=/dev/da1 of=/dev/da1 count=0
     # gpart recover da1
     ```
-**Notas adicionales**: La matriz de características de estable 10 y 11 estable es la misma versión de FreeBSD 11.1. Además, FreeBSD 10.2 y versiones anteriores (10.1, 10.0, 9.x, 8.x) son el final del ciclo de vida. Consulte [aquí](https://security.freebsd.org/) para obtener una lista actualizada de las versiones admitidas y los avisos de seguridad más recientes.
+   **Notas adicionales**: La matriz de características de estable 10 y 11 estable es la misma versión de FreeBSD 11.1. Además, FreeBSD 10.2 y versiones anteriores (10.1, 10.0, 9.x, 8.x) son el final del ciclo de vida. Consulte [aquí](https://security.freebsd.org/) para obtener una lista actualizada de las versiones admitidas y los avisos de seguridad más recientes.
 
 **Notas adicionales**: La matriz de características de estable 10 y 11 estable es la misma versión de FreeBSD 11.1. Además, FreeBSD 10.2 y versiones anteriores (10.1, 10.0, 9.x, 8.x) son el final del ciclo de vida. Consulte [aquí](https://security.freebsd.org/) para obtener una lista actualizada de las versiones admitidas y los avisos de seguridad más recientes.
 

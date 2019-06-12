@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 75474bd37f425388f01986ca32073107ee4fed99
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bcc06a3ccc4e95fa43a7f8f0ef7d110fd427f5a0
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830696"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501650"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Modelo de nivel administrativo de Active Directory
 
@@ -330,11 +330,11 @@ Los administradores que admiten usuarios y sistemas remotos deben seguir estas d
 Asegúrese de que se aplican las prácticas siguientes a este escenario:
 
 - **Soporte técnico del servidor remoto**: al acceder de manera remota a un servidor, los administradores de nivel 0 deben seguir estas directrices:
-   - **Principal (herramienta)**: herramientas remotas que usan inicios de sesión de red (tipo 3). Para más información, consulte [Herramientas administrativas y tipos de inicio de sesión](http://aka.ms/admintoolsecurity).
-   - **Principal (interactiva)**: use RDP RestrictedAdmin o una sesión RDP estándar desde una estación de trabajo de administración con una cuenta de dominio
+  - **Principal (herramienta)** : herramientas remotas que usan inicios de sesión de red (tipo 3). Para más información, consulte [Herramientas administrativas y tipos de inicio de sesión](http://aka.ms/admintoolsecurity).
+  - **Principal (interactiva)** : use RDP RestrictedAdmin o una sesión RDP estándar desde una estación de trabajo de administración con una cuenta de dominio
 
-   > [!NOTE]
-   > Si tiene una solución de administración con privilegios de nivel 0, agregue "que usa los permisos obtuvieron just-in-time de una solución de administración del acceso con privilegios".
+    > [!NOTE]
+    > Si tiene una solución de administración con privilegios de nivel 0, agregue "que usa los permisos obtuvieron just-in-time de una solución de administración del acceso con privilegios".
 
 - **Soporte técnico del servidor físico**: cuando estén físicamente presentes en la consola de servidor o en una consola de máquina virtual (herramientas de Hyper-V o VMWare), estas cuentas no tienen restricciones de uso de herramientas administrativas específicas, solo las restricciones generales de las tareas de usuario estándar, como correo electrónico y exploración en Internet abierta.
 
@@ -346,8 +346,8 @@ Asegúrese de que se aplican las prácticas siguientes a este escenario:
 Asegúrese de que se aplican las prácticas siguientes a este escenario:
 
 - **Soporte técnico del servidor remoto**: al acceder de manera remota a un servidor, los administradores de nivel 1 deben seguir estas directrices:
-   - **Principal (herramienta)**: herramientas remotas que usan inicios de sesión de red (tipo 3). Para más información, consulte [Mitigating Pass-the-Hash and Other Credential Theft](https://www.microsoft.com/pth) v1 (pp 42 47) (Mitigación de Pass-the-Hash y otros robos de credenciales).
-   - **Principal (interactiva)**: use RestrictedAdmin de RDP en una estación de trabajo de administración con una cuenta de dominio que usa permisos obtenidos just-in-time en una solución de administración del acceso con privilegios.
+   - **Principal (herramienta)** : herramientas remotas que usan inicios de sesión de red (tipo 3). Para más información, consulte [Mitigating Pass-the-Hash and Other Credential Theft](https://www.microsoft.com/pth) v1 (pp 42 47) (Mitigación de Pass-the-Hash y otros robos de credenciales).
+   - **Principal (interactiva)** : use RestrictedAdmin de RDP en una estación de trabajo de administración con una cuenta de dominio que usa permisos obtenidos just-in-time en una solución de administración del acceso con privilegios.
    - **Secundario**: inicie sesión en el servidor mediante una contraseña de cuenta local se establece LAPS desde una estación de trabajo de administración.
    - **Prohibido**: el RDP estándar no puede usarse con una cuenta de dominio.
    - **Prohibido**: con las credenciales de la cuenta de dominio mientras se encuentra en la sesión (por ejemplo, mediante *RunAs* o la autenticación de un recurso compartido). Esto expone las credenciales de inicio de sesión a un riesgo de robo.
@@ -436,10 +436,10 @@ Para usar todas las cuentas de acceso de emergencia:
 - Los administradores de dominio autorizado solo pueden tener acceso a las cuentas de acceso de emergencia con privilegios de administrador de dominio.
 - Las cuentas de acceso de emergencia únicamente pueden utilizarse en controladores de dominio y otros hosts de nivel 0.
 - Esta cuenta debe usarse solo para:
-   - Realizar la solución de problemas y la corrección de los problemas técnicos que impiden el uso de las cuentas administrativas correctas.
-   - Realizar tareas poco frecuentes, como:
-      - Administración de esquema
-      - Tareas de todo el bosque que requieren privilegios de administrador de empresa
+  - Realizar la solución de problemas y la corrección de los problemas técnicos que impiden el uso de las cuentas administrativas correctas.
+  - Realizar tareas poco frecuentes, como:
+    - Administración de esquema
+    - Tareas de todo el bosque que requieren privilegios de administrador de empresa
 
       > [!NOTE]
       > Administración de topologías, incluida la administración de sitios y subredes de Active Directory se delega a limitar el uso de estos privilegios.
@@ -555,7 +555,7 @@ Las organizaciones deben controlar y supervisar la pertenencia en todos los grup
 - Operadores de servidores
 - Controladores de dominio
 - Controladores de dominio de solo lectura
-- Creadores propietarios de directiva de grupo
+- Propietarios del creador de directivas de grupo
 - Operadores criptográficos
 - Usuarios de COM distribuido
 - Otros grupos delegados - grupos personalizados que pueden ser creados por la organización para administrar las operaciones de directorio que también pueden tener acceso de nivel 0 efectivo.

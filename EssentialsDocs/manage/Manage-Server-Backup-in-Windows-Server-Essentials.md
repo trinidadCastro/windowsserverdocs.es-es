@@ -12,12 +12,12 @@ ms.assetid: 0302d070-c58a-40f2-b56d-7e7842813d02
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2b0cd926b15d65e5cd4c784681c40df29b18a48f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7e40a4675cf77d55a3047b41e0ab852fd7cd9de9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890146"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433214"
 ---
 # <a name="manage-server-backup-in-windows-server-essentials"></a>Administrar copias de seguridad del servidor en Windows Server Essentials
 
@@ -27,7 +27,7 @@ ms.locfileid: "59890146"
   
 -   [¿Qué copia de seguridad debo elegir?](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_WhichBackup)  
   
--   [Configurar o personalizar la copia de seguridad de servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [Configurar o personalizar la copia de seguridad del servidor](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_1)  
   
 -   [Detener copia de seguridad de servidor en curso](Manage-Server-Backup-in-Windows-Server-Essentials.md#BKMK_2)  
   
@@ -48,7 +48,7 @@ ms.locfileid: "59890146"
   
 1.  Póngase en contacto con el propietario de los archivos o las carpetas y anote las fechas y las horas en las que se han agregado o editado. Use las fechas y horas como punto de inicio.  
   
-2.  En la página **Elija una opción de restauración** del asistente de restauración de archivos y carpetas, haga clic en **Restaurar desde una copia de seguridad seleccionada (avanzado)**.  
+2.  En la página **Elija una opción de restauración** del asistente de restauración de archivos y carpetas, haga clic en **Restaurar desde una copia de seguridad seleccionada (avanzado)** .  
   
 3.  En función de si quiere restaurar una versión anterior o posterior de los archivos o carpetas, seleccione la copia de seguridad que mejor se adapte a las fechas y horas que ha anotado en el paso 1.  
   
@@ -75,17 +75,17 @@ ms.locfileid: "59890146"
   
 #### <a name="to-use-remote-web-access-to-manage-your-server"></a>Para usar Acceso Web remoto y administrar el servidor  
   
-1.  Abra un explorador web.  
+1. Abra un explorador web.  
   
-2.  En el cuadro de dirección, escriba el nombre del dominio de Windows Server Essentials.  
+2. En el cuadro de dirección, escriba el nombre del dominio de Windows Server Essentials.  
   
-3.  Cuando se le solicite, escriba el nombre de usuario y la contraseña.  
+3. Cuando se le solicite, escriba el nombre de usuario y la contraseña.  
   
-4.  Al hacer clic en el nombre del servidor de acceso Web remoto, se muestra la página de inicio de sesión en el panel.  
+4. Al hacer clic en el nombre del servidor de acceso Web remoto, se muestra la página de inicio de sesión en el panel.  
   
-5.  Inicie sesión en el panel como administrador y, a continuación, haga clic en **Dispositivos**.  
+5. Inicie sesión en el panel como administrador y, a continuación, haga clic en **Dispositivos**.  
   
- Para obtener más información sobre el acceso Web remoto, consulte [Introducción al acceso Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview).  
+   Para obtener más información sobre el acceso Web remoto, consulte [Introducción al acceso Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Overview).  
   
 ##  <a name="BKMK_4"></a> Deshabilitar copia de seguridad de servidor  
  Debe proteger el servidor y sus datos de forma automática programando copias de seguridad diarias. Se recomienda mantener un plan de copias de seguridad diario porque la mayoría de las empresas no puede permitirse perder los datos creados durante varios días.  
@@ -138,12 +138,12 @@ ms.locfileid: "59890146"
   
 > [!NOTE]
 >  En la instalación predeterminada de Windows Server Essentials, el servidor está configurado para llevar a cabo una desfragmentación automáticamente una vez a la semana. Esto podría comportar que se hicieran más copias de seguridad de las habituales si usa software de creación de imágenes que no sea de Microsoft. Si no es necesario desfragmentar el servidor con regularidad puede seguir estos pasos para desactivar el programa de desfragmentación:  
->   
->  1.  Presione la tecla de Windows + W para abrir **Buscar**.  
-> 2.  En el cuadro de texto Buscar, escriba **Defragment**.  
-> 3.  En la sección de resultados, haga clic en **Desfragmentar y optimizar unidades**.  
-> 4.  En la página **Optimizar unidades**, seleccione una unidad y haga clic en **Cambiar la configuración**.  
-> 5.  En la ventana **Programación de la optimización** , desactive la casilla **Ejecución programada (recomendado)** y, a continuación, haga clic en **Aceptar** para guardar el cambio.  
+> 
+> 1. Presione la tecla de Windows + W para abrir **Buscar**.  
+>    2. En el cuadro de texto Buscar, escriba **Defragment**.  
+>    3. En la sección de resultados, haga clic en **Desfragmentar y optimizar unidades**.  
+>    4. En la página **Optimizar unidades**, seleccione una unidad y haga clic en **Cambiar la configuración**.  
+>    5. En la ventana **Programación de la optimización** , desactive la casilla **Ejecución programada (recomendado)** y, a continuación, haga clic en **Aceptar** para guardar el cambio.  
   
 ### <a name="items-to-be-backed-up"></a>Elementos para la copia de seguridad  
  De manera predeterminada se seleccionan todos los archivos y carpetas del sistema operativo para efectuar la copia de seguridad. Puede elegir hacer una copia de seguridad de todos los discos duros, archivos y carpetas del servidor, o seleccionar únicamente determinados discos duros, archivos o carpetas para la copia de seguridad. Para agregar o quitar elementos de la copia de seguridad, realice una de las acciones siguientes:  

@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 6/242017
 ms.assetid: 4a11ede0-b000-4188-8190-790971504e17
-ms.openlocfilehash: 1f452fd1e2f054c449660eb0ee12642fefe4da8f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4cbf85f8413353801f048f253859c9f3ef9c7691
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865056"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812553"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-4-set-up-web-application-proxy"></a>Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 4, configuración Proxy de aplicación Web
 
@@ -32,7 +32,7 @@ En este tema se describe el cuarto paso para implementar Carpetas de trabajo con
 -   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: El paso 5, configure los clientes](deploy-work-folders-adfs-step5.md)  
 
 > [!NOTE]
->   Las instrucciones incluidas en esta sección toman como referencia un entorno de Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+>   Las instrucciones descritas en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
 
 Para configurar el Proxy de aplicación web y así poder usarlo con Carpetas de trabajo, usa los siguientes procedimientos.  
   
@@ -108,47 +108,47 @@ Para configurar el Proxy de aplicación web, sigue estos pasos:
 ## <a name="publish-the-work-folders-web-application"></a>Publicar la aplicación web Carpetas de trabajo  
 En el siguiente paso publicaremos una aplicación web que pondrá a disposición de los clientes Carpetas de trabajo. Para publicar la aplicación web Carpetas de trabajo, sigue estos pasos:  
   
-1.  Abre el **Administrador del servidor** y, en el menú **Herramientas**, haz clic en **Administración de acceso remoto** para abrir la consola de administración de acceso remoto.  
+1. Abre el **Administrador del servidor** y, en el menú **Herramientas**, haz clic en **Administración de acceso remoto** para abrir la consola de administración de acceso remoto.  
   
-2.  En **Configuración**, haz clic en **Proxy de aplicación web**.  
+2. En **Configuración**, haz clic en **Proxy de aplicación web**.  
   
-3.  En **Tareas**, haz clic en **Publicar**. Se abrirá el asistente para publicar nuevas aplicaciones.  
+3. En **Tareas**, haz clic en **Publicar**. Se abrirá el asistente para publicar nuevas aplicaciones.  
   
-4.  En la página principal, haz clic en **Siguiente**.  
+4. En la página principal, haz clic en **Siguiente**.  
   
-5.  En la página **Autenticación previa**, selecciona **Servicios de federación de Active Directory (AD FS)** y, a continuación, haz clic en **Siguiente**.  
+5. En la página **Autenticación previa**, selecciona **Servicios de federación de Active Directory (AD FS)** y, a continuación, haz clic en **Siguiente**.  
   
-6.  En la página **Admitir clientes**, selecciona **OAuth2** y haz clic en **Siguiente**.
+6. En la página **Admitir clientes**, selecciona **OAuth2** y haz clic en **Siguiente**.
 
-7.  En la página **Usuario de confianza**, selecciona **Carpetas de trabajo** y, a continuación, haz clic en **Siguiente**. Esta lista se publica en el Proxy de aplicación web de AD FS.  
+7. En la página **Usuario de confianza**, selecciona **Carpetas de trabajo** y, a continuación, haz clic en **Siguiente**. Esta lista se publica en el Proxy de aplicación web de AD FS.  
   
-8.  En la página **Configuración de publicación**, escribe lo siguiente y, a continuación, haz clic en **Siguiente**:  
+8. En la página **Configuración de publicación**, escribe lo siguiente y, a continuación, haz clic en **Siguiente**:  
   
-    -   El nombre de la aplicación web  
+   -   El nombre de la aplicación web  
   
-    -   La dirección URL externa de Carpetas de trabajo  
+   -   La dirección URL externa de Carpetas de trabajo  
   
-    -   El nombre del certificado de Carpetas de trabajo  
+   -   El nombre del certificado de Carpetas de trabajo  
   
-    -   La dirección URL de back-end de Carpetas de trabajo  
+   -   La dirección URL de back-end de Carpetas de trabajo  
   
-    El asistente creará tanto la URL de back-end como la URL externa de manera predeterminada.  
+   El asistente creará tanto la URL de back-end como la URL externa de manera predeterminada.  
   
-    En el ejemplo de prueba, usa estos valores:  
+   En el ejemplo de prueba, usa estos valores:  
   
-    Nombre: **WorkFolders**  
+   Nombre: **WorkFolders**  
   
-    Dirección URL externa: **https://workfolders.contoso.com**  
+   Dirección URL externa: **https://workfolders.contoso.com**  
   
-    Certificado externo: **El certificado de carpetas de trabajo que ha instalado anteriormente**  
+   Certificado externo: **El certificado de carpetas de trabajo que ha instalado anteriormente**  
   
-    Dirección URL del servidor back-end: **https://workfolders.contoso.com**  
+   Dirección URL del servidor back-end: **https://workfolders.contoso.com**  
   
-9.  La página de confirmación muestra el comando de Windows PowerShell que se ejecutará para publicar la aplicación. Haga clic en **Publicar**.  
+9. La página de confirmación muestra el comando de Windows PowerShell que se ejecutará para publicar la aplicación. Haga clic en **Publicar**.  
   
 10. En la página **Resultados** verás que la aplicación se publicó correctamente.
-   >[!NOTE]
-   > Si tienes varios servidores de Carpetas de trabajo, debes publicar una aplicación web de Carpetas de trabajo para cada servidor de Carpetas de trabajo (repite los pasos 1 a 10).  
+    >[!NOTE]
+    > Si tienes varios servidores de Carpetas de trabajo, debes publicar una aplicación web de Carpetas de trabajo para cada servidor de Carpetas de trabajo (repite los pasos 1 a 10).  
   
 Paso siguiente: [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: El paso 5, configure los clientes](deploy-work-folders-adfs-step5.md)  
   

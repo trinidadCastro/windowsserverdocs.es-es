@@ -12,12 +12,12 @@ ms.assetid: 3043f83b-389c-4f37-a1ff-85afe99314fa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 91635a58c64fbf74d3b0139be7c9c36365487319
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: d9002a1530e114f490ddf1cfb0e5706ddec52431
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842056"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433157"
 ---
 # <a name="manage-system-health-in-windows-server-essentials"></a>Administrar el mantenimiento del sistema en Windows Server Essentials
 
@@ -28,7 +28,7 @@ ms.locfileid: "59842056"
 > [!NOTE]
 >  En Windows Server Essentials y Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado, ya no se muestran en el Visor de alertas de las alertas de estado para el servidor y los equipos cliente de la red, pero en su lugar, se pueden ver en el  **Informes de mantenimiento** pestaña de la **inicio** página.  
   
- Windows Server Essentials supervisa activamente cada equipo que está conectado al servidor y alerta al administrador de problemas relacionados con el mantenimiento del sistema s, incluidas las actualizaciones críticas, falta de protección contra malware, las definiciones de virus obsoletas en cliente los equipos y otros problemas importantes que requieren acción. Estos problemas se muestran como alertas en el Visor de alertas, que se puede iniciar desde el servidor s panel o el equipo cliente s Launchpad en Windows Server Essentials, o en el **informes de mantenimiento** ficha en Windows Server Essentials. De forma predeterminada, las alertas se actualizan cada 30 minutos, pero puede evaluar la red en busca de alertas en cualquier momento haciendo clic en **Actualizar** en el Visor de alertas o en la pestaña **Informes de mantenimiento**.  
+ Windows Server Essentials supervisa activamente cada equipo que está conectado al servidor y alerta al administrador de problemas relacionados con el estado del sistema, incluidas las actualizaciones críticas, falta de protección contra malware, las definiciones de virus obsoletas en cliente los equipos y otros problemas importantes que requieren acción. Estos problemas se muestran como alertas en el Visor de alertas, que se puede iniciar desde el panel del servidor o Launchpad del equipo cliente en Windows Server Essentials, o en el **informes de mantenimiento** ficha en Windows Server Essentials. De forma predeterminada, las alertas se actualizan cada 30 minutos, pero puede evaluar la red en busca de alertas en cualquier momento haciendo clic en **Actualizar** en el Visor de alertas o en la pestaña **Informes de mantenimiento**.  
   
  Los siguientes temas le ayudarán a comprender, ver y responder a las alertas del Visor de alertas y también le proporcionan instrucciones para configurar el servidor de modo que reciba notificaciones de alerta por correo electrónico:  
   
@@ -56,7 +56,7 @@ ms.locfileid: "59842056"
 > [!NOTE]
 >  **Windows Server Essentials:** Puede descargar el complemento en el informe de mantenimiento para Windows Server Essentials desde el [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=266342).  
 >   
->  **Windows Server Essentials:** De forma predeterminada, el complemento de informe de mantenimiento se integra con Windows Server Essentials o Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado, y los informes de mantenimiento se muestran en el **informes de mantenimiento** ficha del panel s **inicio** página.  
+>  **Windows Server Essentials:** De forma predeterminada, el complemento de informe de mantenimiento se integra con Windows Server Essentials o Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado, y los informes de mantenimiento se muestran en el **informes de mantenimiento** ficha el escritorio **inicio** página.  
   
 ###  <a name="BKMK_Generate"></a> Generar un informe a petición o mediante programación  
  Después de instalar el complemento de informes de mantenimiento y reiniciar el panel, se agrega al panel una nueva pestaña, **Informes** . Puede generar un informe de mantenimiento a petición en cualquier momento haciendo clic en la tarea **Generar un informe de mantenimiento** de la pestaña **Informes** .  
@@ -68,21 +68,21 @@ ms.locfileid: "59842056"
 ###  <a name="BKMK_Customize"></a> Personalizar el contenido del informe  
  El informe de mantenimiento contiene lo siguiente:  
   
--   **Alertas críticas y advertencias** . Esto es coherente con las alertas críticas y advertencias que aparecen en el Visor de alertas del panel. Las alertas de información no se incluyen en el informe de mantenimiento.  
+- **Alertas críticas y advertencias** . Esto es coherente con las alertas críticas y advertencias que aparecen en el Visor de alertas del panel. Las alertas de información no se incluyen en el informe de mantenimiento.  
   
--   **Errores críticos en los registros de eventos** . Se analizan los registros de aplicaciones y de servicios, y los errores que se registran en las últimas 24 horas se presentan en la sección **Detalles** del informe.  
+- **Errores críticos en los registros de eventos** . Se analizan los registros de aplicaciones y de servicios, y los errores que se registran en las últimas 24 horas se presentan en la sección **Detalles** del informe.  
   
--   **Copia de seguridad del servidor**. La información sobre la última copia de seguridad del servidor se muestra en la sección **Detalles** del informe.  
+- **Copia de seguridad del servidor**. La información sobre la última copia de seguridad del servidor se muestra en la sección **Detalles** del informe.  
   
--   **Los servicios de inicio automático que no se están ejecutando**. En el momento en que se genera el informe, si no se está ejecutando un servicio de inicio automático, la información sobre este servicio se indica en la sección **Detalles** del informe.  
+- **Los servicios de inicio automático que no se están ejecutando**. En el momento en que se genera el informe, si no se está ejecutando un servicio de inicio automático, la información sobre este servicio se indica en la sección **Detalles** del informe.  
   
--   **Actualizaciones**. Puede ver el estado de actualización del servidor y de todos los equipos cliente de la sección **Detalles**.  
+- **Actualizaciones**. Puede ver el estado de actualización del servidor y de todos los equipos cliente de la sección **Detalles**.  
   
--   **Almacenamiento**. La lista de unidades y su capacidad aparece en la sección **Detalles**.  
+- **Almacenamiento**. La lista de unidades y su capacidad aparece en la sección **Detalles**.  
   
- En el informe de mantenimiento, vea primero el **Resumen**y luego, si hay elementos que tengan un icono rojo de error o un icono amarillo de advertencia, haga clic en el vínculo **Detalles** de la misma fila para ver los detalles sobre ellos.  
+  En el informe de mantenimiento, vea primero el **Resumen**y luego, si hay elementos que tengan un icono rojo de error o un icono amarillo de advertencia, haga clic en el vínculo **Detalles** de la misma fila para ver los detalles sobre ellos.  
   
- Si no está interesado en algunos de los puntos de datos que se incluyen en el informe de forma predeterminada, puede personalizar el contenido del informe haciendo clic en **Personalizar la configuración del informe de mantenimiento** en el panel de tareas y después en la pestaña **Contenido**. Desactive las casillas de verificación para el contenido que no t desee ver en el informe. Por ejemplo, si tiene su propio plan de copia de seguridad de servidor y don t desea ver las advertencias sobre las copias de seguridad de servidor, puede excluir las copias de seguridad del servidor desde el informe desactivando el **copia de seguridad de servidor** casilla de verificación.  
+  Si no está interesado en algunos de los puntos de datos que se incluyen en el informe de forma predeterminada, puede personalizar el contenido del informe haciendo clic en **Personalizar la configuración del informe de mantenimiento** en el panel de tareas y después en la pestaña **Contenido**. Desactive las casillas de verificación para el contenido que no desea ver en el informe. Por ejemplo, si tiene su propio plan de copia de seguridad de servidor y no desea ver las advertencias sobre las copias de seguridad de servidor, puede excluir las copias de seguridad del servidor desde el informe desactivando el **copia de seguridad de servidor** casilla de verificación.  
   
 ###  <a name="BKMK_emailreport"></a> El informe de correo electrónico  
  Tener que iniciar sesión en el panel para leer informes sigue siendo poco práctico para algunos administradores, especialmente si tienen que administrar más de un servidor. Con la característica de correo electrónico activada, después de generarse un informe, se envía un correo electrónico con el contenido del informe a una lista de direcciones de correo electrónico especificadas. El administrador puede ver fácilmente este informe desde cualquier dispositivo o aplicación cliente y asegurarse de que el servidor está funcionando de forma óptima.  
@@ -140,13 +140,13 @@ ms.locfileid: "59842056"
   
 ##### <a name="to-ignore-an-alert"></a>Para omitir una alerta  
   
-1.  Abra Launchpad en un equipo que esté conectado al servidor de Windows Server Essentials.  
+1. Abra Launchpad en un equipo que esté conectado al servidor de Windows Server Essentials.  
   
-2.  En Launchpad, haga clic en cualquiera de los iconos de alerta mostrados (alerta crítica, de advertencia e informativa). Se abrirá el Visor de alertas.  
+2. En Launchpad, haga clic en cualquiera de los iconos de alerta mostrados (alerta crítica, de advertencia e informativa). Se abrirá el Visor de alertas.  
   
-3.  En el Visor de alertas, seleccione la alerta que quiere omitir y después, en la sección **Tareas**, haga clic en **Omitir la alerta**.  
+3. En el Visor de alertas, seleccione la alerta que quiere omitir y después, en la sección **Tareas**, haga clic en **Omitir la alerta**.  
   
- Para responder a una alerta deshabilitada, deberá habilitarla.  
+   Para responder a una alerta deshabilitada, deberá habilitarla.  
   
 ###  <a name="BKMK_5"></a> Habilitar una alerta  
  Puede habilitar una alerta que había decidido omitir anteriormente. Después de habilitar la alerta, puede resolverla o eliminarla según sea necesario. La alerta aparece como deshabilitada cuando se marca para omitirse. Cuando se habilita una alerta que se ha deshabilitado previamente, se activa y se vuelve a incluir en la evaluación del mantenimiento general de los equipos.  
@@ -276,7 +276,7 @@ ms.locfileid: "59842056"
   
 4.  En la ventana **Configuración SMTP**, haga lo siguiente:  
   
-    1.  En **Desde la dirección de correo electrónico**, escriba la dirección de correo electrónico desde la que quiere que se envíen alertas por correo electrónico. Esta dirección de correo electrónico se mostrará como la dirección de remitente en la notificación de alerta.  
+    1.  En **Desde la dirección de correo electrónico**, escriba la dirección de correo electrónico desde la que quiere que se envíen alertas por correo electrónico. Esta dirección de correo electrónico se mostrará como la dirección del remitente en la notificación de alerta.  
   
     2.  En **Nombre del servidor SMTP**, en el cuadro de texto **Desde la dirección de correo electrónico** , escriba el nombre del servidor SMTP que especificó en el paso 4a. (Consulte la tabla 1 para ver una lista de algunos nombres de servidor SMTP).  
   
@@ -309,7 +309,7 @@ ms.locfileid: "59842056"
  En esta sección se explica cómo configurar los valores de SMTP para el servidor de modo que pueda recibir informes de mantenimiento por correo electrónico.  
   
 > [!NOTE]
->  De forma predeterminada, el complemento de informe de mantenimiento se integra con Windows Server Essentials o Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado, y los informes de mantenimiento se muestran en el **informes de mantenimiento** ficha del panel s **inicio** página.  
+>  De forma predeterminada, el complemento de informe de mantenimiento se integra con Windows Server Essentials o Windows Server 2012 R2 con el rol experiencia con Windows Server Essentials instalado, y los informes de mantenimiento se muestran en el **informes de mantenimiento** ficha el escritorio **inicio** página.  
   
 ##### <a name="to-set-up-email-notification-for-health-reports"></a>Para configurar la notificación de informes de mantenimiento por correo electrónico  
   
@@ -321,7 +321,7 @@ ms.locfileid: "59842056"
   
 4.  En la sección **Correo electrónico** de la pestaña **Programación y correo electrónico**, haga lo siguiente:  
   
-    1.  Haga clic en **Habilitar**y escriba la dirección de correo electrónico desde la que quiere que se envíen los informes de mantenimiento. Esta dirección de correo electrónico se mostrará como la dirección de remitente en los informes de mantenimiento que se envían por correo electrónico.  
+    1.  Haga clic en **Habilitar**y escriba la dirección de correo electrónico desde la que quiere que se envíen los informes de mantenimiento. Esta dirección de correo electrónico se mostrará como la dirección del remitente en los informes de mantenimiento que se envían por correo electrónico.  
   
         1.  En **Nombre del servidor SMTP**, escriba el nombre del servidor SMTP. (Consulte la tabla 1 para ver una lista de algunos nombres de servidor SMTP).  
   

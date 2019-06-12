@@ -7,12 +7,12 @@ ms.assetid: eecb002e-6ae5-4075-9a83-2bbcee2a891c
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: ed3a3d4c5d0e55126f4dae8ecaf0ba1f32e46317
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dab27e71e42970507f321271edda90f6d161c691
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820226"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447391"
 ---
 # <a name="managing-the-host-guardian-service"></a>Administrar el servicio de protección de Host
 
@@ -221,7 +221,7 @@ La copia de seguridad HGS, estado del servidor no incluirá el nombre del clúst
 Esta configuración es importante para mantener la coherencia, pero no son fundamentales para obtener el clúster HGS en línea después de un desastre.
 
 Para capturar el nombre del servicio HGS, ejecute `Get-HgsServer` y anote el nombre de la atestación y protección de clave de las direcciones URL sin formato.
-Por ejemplo, si la dirección URL de atestación es "http://hgs.contoso.com/Attestation", "hgs" es el nombre de servicio HGS.
+Por ejemplo, si la dirección URL de atestación es "<http://hgs.contoso.com/Attestation>", "hgs" es el nombre de servicio HGS.
 
 El dominio de Active Directory que usan HGS debe administrarse como cualquier otro dominio de Active Directory.
 Al restaurar HGS tras un desastre, no necesariamente debe volver a crear los objetos exactos que se encuentran en el dominio actual.
@@ -702,10 +702,10 @@ Para cada máquina virtual blindada, realice los pasos siguientes:
 10. Copia el KP actualizada en el tejido de hospedaje
 11. Aplicar el KP a la máquina virtual original:
 
-    ```powershell
-    $updatedKP = Get-Content -Path .\updatedVM001.kp
-    Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
-    ```
+   ```powershell
+   $updatedKP = Get-Content -Path .\updatedVM001.kp
+   Set-VMKeyProtector -VMName VM001 -KeyProtector $updatedKP
+   ```
 12. Por último, inicie la máquina virtual y asegúrese de que se ejecuta correctamente.
 
 > [!NOTE]
@@ -718,10 +718,10 @@ Una vez que se han actualizado todas las máquinas virtuales para autorizar a la
 
 14. Deshabilitar cada certificado ejecutando los comandos siguientes:  
 
-    ```powershell
-    Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
-    Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
-    ```
+   ```powershell
+   Set-HgsKeyProtectionCertificate -CertificateType Signing -Thumbprint <Thumbprint> -IsEnabled $false
+   Set-HgsKeyProtectionCertificate -CertificateType Encryption -Thumbprint <Thumbprint> -IsEnabled $false
+   ```
 
 15. Después de asegurarse de que las máquinas virtuales pueden seguir para empezar con los certificados deshabilitados, quitar los certificados de HGS ejecutando los comandos siguientes:
 

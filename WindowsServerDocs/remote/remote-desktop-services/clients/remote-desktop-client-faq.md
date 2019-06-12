@@ -14,20 +14,20 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ec1b0a17c578f2d8ac55d1704af6b267b6bb8e5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865936"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804950"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Preguntas más frecuentes acerca de los clientes de escritorio remoto
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 Ahora que ha configurado el cliente de escritorio remoto en el dispositivo (Android, Mac, iOS o Windows), es posible que tenga dudas. Aquí encontrará respuestas a las preguntas más frecuentes acerca de los clientes de escritorio remoto. 
 
-- [Configurar](#Setting-up)
+- [Configurar](#setting-up)
 - [Conexiones de puerta de enlace y redes](#connection-gateway-and-networks)
 - [cliente Web](#web-client)
 - [Monitores, audio y mouse](#monitors-audio-and-mouse)
@@ -81,18 +81,20 @@ Estas son algunas posibles soluciones a problemas comunes que puede surgir al in
 - **Hay un problema con la red.** Asegúrese de que tiene conexión a internet. 
 - **El puerto de escritorio remoto podría estar bloqueado por un firewall.** Si usa Firewall de Windows, siga estos pasos:
 
-   1. Abra Firewall de Windows. 
-   2. Haga clic en **permitir una aplicación o característica a través de Firewall de Windows**. 
-   3. Haga clic en **cambiar la configuración de**. Puede que se le pida una contraseña de administrador o para confirmar su elección.
-   4. En **aplicaciones y características permitidas**, seleccione **escritorio remoto**y, a continuación, pulse o haga clic en **Aceptar**.
+  1. Abra Firewall de Windows. 
+  2. Haga clic en **permitir una aplicación o característica a través de Firewall de Windows**. 
+  3. Haga clic en **cambiar la configuración de**. Puede que se le pida una contraseña de administrador o para confirmar su elección.
+  4. En **aplicaciones y características permitidas**, seleccione **escritorio remoto**y, a continuación, pulse o haga clic en **Aceptar**.
 
-   Si usa otro firewall, asegúrese de que el puerto de escritorio remoto (normalmente 3389) esté abierto.
+     Si usa otro firewall, asegúrese de que el puerto de escritorio remoto (normalmente 3389) esté abierto.
 - **Las conexiones remotas no se pueden configurar en el equipo remoto.** Para solucionar este problema, desplácese hacia atrás hasta [¿Cómo configuro un PC de escritorio remoto?](#how-do-i-set-up-a-pc-for-remote-desktop) pregunta en este tema.
 - **El equipo remoto podría permitir sólo conectar los equipos que tienen la configuración de autenticación a nivel de red.** 
 - **El equipo remoto podría estar desactivado.** No puede conectarse a un equipo que está apagado, suspensión o hibernación, así que asegúrese de que la configuración de suspensión e hibernación en el equipo remoto se establecen en **nunca** (modo de hibernación no está disponible en todos los equipos.).
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>¿Por qué no puedo encontrar o conectarse a su PC?
+
 Compruebe lo siguiente:
+
 - ¿Es el PC y Active?
 - ¿Escriba la dirección IP o el nombre correcto?
 
@@ -105,9 +107,11 @@ Compruebe lo siguiente:
    > Windows XP Home, Windows Media Center Edition, Windows Vista Home y Windows 7 Home o Starter no se admiten sin 3rd software de terceros.
 
 ### <a name="why-cant-i-sign-in-to-a-remote-pc"></a>¿Por qué no puedo iniciar sesión en un equipo remoto?
+
 Si puede ver la pantalla de inicio de sesión del equipo remoto, pero no puede iniciar sesión, es posible que no se agregaron al grupo de usuarios de escritorio remoto o a cualquier grupo con derechos de administrador en el equipo remoto. Pídale al administrador del sistema para hacer esto por usted.
 
 ### <a name="which-connection-methods-are-supported-for-company-networks"></a>¿Los métodos de conexión se admiten para redes de empresa?
+
 Si desea obtener acceso al escritorio de office desde fuera de la red de empresa, su empresa debe proporcionar un medio de acceso remoto. Actualmente, el cliente de escritorio remoto admite lo siguiente:
 
 - Puerta de enlace de Terminal Server o la puerta de enlace de escritorio remoto
@@ -124,9 +128,11 @@ Para comprobar otras cosas:
 - **VPN está mal configurada.** Un servidor VPN mal configurado puede ser la razón por la las conexiones VPN nunca funcionaban o dejó de funcionar más tarde. Asegúrese de probar con iOS explorador web del dispositivo o un PC o Mac en la misma red, si esto ocurre.
 
 ### <a name="how-can-i-test-if-vpn-is-working-properly"></a>¿Cómo se puede probar si VPN está funcionando correctamente?
+
 Compruebe que la VPN está habilitada en el dispositivo. Puede probar la conexión VPN a una página Web en su red interna o mediante un servicio web que solo está disponible a través de la VPN.
 
 ### <a name="how-do-i-configure-l2tp-or-pptp-vpn-connections"></a>¿Cómo se puede configurar las conexiones L2TP o PPTP VPN?
+
 Si usa L2TP o PPTP en la VPN, asegúrese de establecer **enviar todo el tráfico** a **ON** en la configuración de VPN.
 
 ## <a name="web-client"></a>cliente Web

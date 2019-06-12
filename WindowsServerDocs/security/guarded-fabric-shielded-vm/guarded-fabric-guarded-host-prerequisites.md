@@ -7,12 +7,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5f2c3ec4b2c434ea945d86c4b1593e2e416a5123
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40c0f6df31061268b1e1ef8c15b0a02b0f50b0de
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59819236"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447475"
 ---
 # <a name="prerequisites-for-guarded-hosts"></a>Requisitos previos para los hosts protegidos
 
@@ -45,15 +45,15 @@ Los hosts protegidos utilizando el modo de TPM deben cumplir los siguientes requ
 > La característica de compatibilidad de Hyper-V de guardián de Host permite protección basada en virtualización de integridad de código que puede no ser compatible con algunos dispositivos. Se recomienda esta configuración de pruebas en su laboratorio antes de habilitar esta característica. Si no lo haces pueden producirse errores inesperados, incluida la pérdida de datos o un error de pantalla azul (también llamado error grave). Para obtener más información, consulte [hardware Compatible con la protección basada en Windows Server Virtualization de integridad de código](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md).
 
 **Paso siguiente:** 
->[!div class="nextstepaction"]
-[Capturar información TPM](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
+> [!div class="nextstepaction"]
+> [Capturar información TPM](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md)
 
 ## <a name="host-key-attestation"></a>Atestación de clave de host
 
 Los hosts protegidos con la atestación de clave de host deben cumplir los siguientes requisitos previos:
 
 - **Hardware**: Cualquier servidor capaz de ejecutar el principio de Hyper-V con Windows Server 2019
-- **Sistema operativo**: 2019 de Windows Server Datacenter edition
+- **Sistema operativo**: Windows Server 2019 Datacenter Edition
 - **Roles y características**: Rol de Hyper-V y la característica de compatibilidad de Hyper-V de guardián de Host 
 
 El host se puede unir a un dominio o un grupo de trabajo. 
@@ -61,8 +61,8 @@ El host se puede unir a un dominio o un grupo de trabajo.
 Para la atestación de clave de host, HGS debe estar ejecutando Windows Server 2019 y funciona con la atestación de v2. Para obtener más información, consulte [requisitos previos HGS](guarded-fabric-prepare-for-hgs.md#prerequisites). 
 
 **Paso siguiente:** 
->[!div class="nextstepaction"]
-[Crear un par de claves](guarded-fabric-create-host-key.md)
+> [!div class="nextstepaction"]
+> [Crear un par de claves](guarded-fabric-create-host-key.md)
 
 ## <a name="admin-trusted-attestation"></a>Atestación de administrador de confianza
 
@@ -84,5 +84,5 @@ Hosts de Hyper-V deben cumplir los siguientes requisitos previos para el modo de
 > La característica de compatibilidad de Hyper-V de guardián de Host permite protección basada en virtualización de integridad de código que puede no ser compatible con algunos dispositivos. Se recomienda esta configuración de pruebas en su laboratorio antes de habilitar esta característica. Si no lo haces pueden producirse errores inesperados, incluida la pérdida de datos o un error de pantalla azul (también llamado error grave). Para obtener más información, consulte [hardware Compatible con la protección basada en virtualización de Windows Server 2016 de integridad de código](guarded-fabric-compatible-hardware-with-virtualization-based-protection-of-code-integrity.md).
 
 **Paso siguiente:** 
->[!div class="nextstepaction"]
-[Colocar hosts protegidos en un grupo de seguridad](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)
+> [!div class="nextstepaction"]
+> [Colocar hosts protegidos en un grupo de seguridad](guarded-fabric-admin-trusted-attestation-creating-a-security-group.md)

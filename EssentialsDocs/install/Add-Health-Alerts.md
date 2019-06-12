@@ -12,12 +12,12 @@ ms.assetid: 270e0aac-dc42-46f3-a20b-a68ffbded06d
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: cf0c062b92c687f5f7b33b419eafdca2dd3bbbfc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8c3ba4746211690ad52f775b8bdc1ccf9b6c74b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828516"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433719"
 ---
 # <a name="add-health-alerts"></a>Agregue Alertas de estado
 
@@ -32,13 +32,13 @@ Los complementos de estado ofrecen definiciones para alertas, comprobaciones de 
   
 #### <a name="to-install-the-xml-files-on-the-server"></a>Para instalar los archivos xml en el servidor  
   
-1.  En la carpeta **%ProgramFiles%\Windows Server\Bin\Feature Definitions** , cree una nueva carpeta llamada **MyHealthAddIn**. Puede utilizar cualquier nombre para esta carpeta. Se recomienda que el nombre de la carpeta sea el mismo que el nombre de la función.  
+1. En la carpeta **%ProgramFiles%\Windows Server\Bin\Feature Definitions** , cree una nueva carpeta llamada **MyHealthAddIn**. Puede utilizar cualquier nombre para esta carpeta. Se recomienda que el nombre de la carpeta sea el mismo que el nombre de la función.  
   
-2.  Copie los archivo Definition.xml y Definition.xml.config en la nueva carpeta.  
+2. Copie los archivo Definition.xml y Definition.xml.config en la nueva carpeta.  
   
-3.  Si ha creado archivos binarios para estados o acciones, debería copiar estos archivos en **%ProgramFiles%\Windows Server\Bin**.  
+3. Si ha creado archivos binarios para estados o acciones, debería copiar estos archivos en **%ProgramFiles%\Windows Server\Bin**.  
   
- Los equipos cliente ejecutan una tarea programada cada 6 horas que copia los archivos XML en la ubicación correspondiente. Puede forzar la sincronización entre el equipo cliente y el servidor ejecutando la tarea de forma manual.  
+   Los equipos cliente ejecutan una tarea programada cada 6 horas que copia los archivos XML en la ubicación correspondiente. Puede forzar la sincronización entre el equipo cliente y el servidor ejecutando la tarea de forma manual.  
   
 #### <a name="to-install-the-xml-files-on-the-client-computer"></a>Para instalar los achivos XML en el equipo cliente  
   

@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: aa3174f3-42af-4511-ac2d-d8968b66da87
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 01005b5d69a48b01a1735e690a4a97c46094da23
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: c3b7751ca6d0b62ee078d5da7084cbc007edc155
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266773"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805170"
 ---
 # <a name="step-1-plan-the-advanced-directaccess-infrastructure"></a>Paso 1 Plan la infraestructura de DirectAccess avanzada
 
@@ -26,7 +26,7 @@ ms.locfileid: "66266773"
 
 El primer paso para planear una implementación avanzada de DirectAccess en un único servidor es planear la infraestructura necesaria para la implementación. En este tema se detallan los pasos de planeación de la infraestructura. No es necesario realizar estas tareas de implementación en un orden específico.  
   
-|Tarea|Descripción| 
+|Tarea|Descripción|
 |----|--------|  
 |[1.1 planear la configuración y topología de red](#11-plan-network-topology-and-settings)|Decide dónde colocar el servidor de DirectAccess (en el perímetro, detrás de un firewall o detrás de un dispositivo de traducción de direcciones de red [NAT]), y planea el direccionamiento IP, el enrutamiento y el túnel forzado.|  
 |[1.2 Planear los requisitos de firewall](#12-plan-firewall-requirements)|Planea permitir el paso de tráfico de DirectAccess a través de los firewalls perimetrales.|  
@@ -37,60 +37,63 @@ El primer paso para planear una implementación avanzada de DirectAccess en un �
 |[1.7 planear Active Directory Domain Services](#17-plan-active-directory-domain-services)|Planea los controladores de dominio, los requisitos de Active Directory, la autenticación de clientes y múltiples dominios.|  
 |[1.8 objetos de directiva de grupo de planes de](#18-plan-group-policy-objects)|Decide qué GPO se necesitan en tu organización y cómo crearlos o editarlos.|  
   
-## <a name="11-plan-network-topology-and-settings"></a>1.1 Planear la topología de red y la configuración  
+## <a name="11-plan-network-topology-and-settings"></a>1.1 Planear la topología de red y la configuración
+
 En esta sección se explica cómo planear tu red, incluido:  
   
--   [1.1.1 planear los adaptadores de red y el direccionamiento IP](#111-plan-network-adapters-and-ip-addressing)  
+- [1.1.1 planear los adaptadores de red y el direccionamiento IP](#111-plan-network-adapters-and-ip-addressing)  
   
--   [1.1.2 Planear la conectividad de intranet IPv6](#112-plan-ipv6-intranet-connectivity)  
+- [1.1.2 Planear la conectividad de intranet IPv6](#112-plan-ipv6-intranet-connectivity)  
   
--   [1.1.3 planear el túnel forzado](#113-plan-for-force-tunneling)  
+- [1.1.3 planear el túnel forzado](#113-plan-for-force-tunneling)  
   
 ### <a name="111-plan-network-adapters-and-ip-addressing"></a>1.1.1 Planear los adaptadores de red y el direccionamiento IP  
   
-1.  Identifica la topología de adaptadores de red que quieres usar. DirectAccess se puede configurar con cualquiera de las siguientes topologías:  
+1. Identifica la topología de adaptadores de red que quieres usar. DirectAccess se puede configurar con cualquiera de las siguientes topologías:  
   
-    -   **Dos adaptadores de red**. El servidor de DirectAccess se puede instalar en el perímetro con un adaptador de red conectado a Internet y otro a la red interna, o se puede instalar detrás de un NAT, firewall o enrutador, con un adaptador de red conectado a una red perimetral y otro a la red interna.  
+    - **Dos adaptadores de red**. El servidor de DirectAccess se puede instalar en el perímetro con un adaptador de red conectado a Internet y otro a la red interna, o se puede instalar detrás de un NAT, firewall o enrutador, con un adaptador de red conectado a una red perimetral y otro a la red interna.  
   
-    -   **Un adaptador de red**. El servidor de DirectAccess se instala detrás de un dispositivo NAT, y el único adaptador de red se conecta a la red interna.  
+    - **Un adaptador de red**. El servidor de DirectAccess se instala detrás de un dispositivo NAT, y el único adaptador de red se conecta a la red interna.  
   
-2.  Identifica tus requisitos de direccionamiento IP:  
+2. Identifica tus requisitos de direccionamiento IP:  
   
     DirectAccess usa IPv6 con IPsec para crear una conexión segura entre los equipos cliente de DirectAccess y la red corporativa interna. Sin embargo, DirectAccess no requiere necesariamente conectividad con Internet IPv6 ni compatibilidad nativa con IPv6 en las redes internas. En su lugar, configura y usa automáticamente tecnologías de transición IPv6 para tunelizar el tráfico IPv6 a través de Internet IPv4 (mediante 6to4, Teredo o IP-HTTPS) y a través de la intranet solo IPv4 (mediante NAT64 o ISATAP). Para obtener información general acerca de estas tecnologías de transición, consulta los siguientes recursos:  
   
-    -   [Tecnologías de transición IPv6](https://technet.microsoft.com/library/bb726951.aspx)  
+    - [Tecnologías de transición IPv6](https://technet.microsoft.com/library/bb726951.aspx)  
   
-    -   [Especificación del protocolo de túnel IP-HTTPS](https://msdn.microsoft.com/library/dd358571(PROT.10).aspx)  
+    - [Especificación del protocolo de túnel IP-HTTPS](https://msdn.microsoft.com/library/dd358571(PROT.10).aspx)  
   
-3.  Configura los adaptadores y las direcciones necesarios conforme a la tabla siguiente. Para implementaciones que usan un único adaptador de red y se configuran detrás de un dispositivo NAT, configura tus direcciones IP usando solo la columna **Adaptador de red interno**.  
+3. Configura los adaptadores y las direcciones necesarios conforme a la tabla siguiente. Para implementaciones que usan un único adaptador de red y se configuran detrás de un dispositivo NAT, configura tus direcciones IP usando solo la columna **Adaptador de red interno**.  
   
     ||Adaptador de red externo|Adaptador de red interno|Requisitos de enrutamiento|  
     |-|--------------|--------------|------------|  
-    |Internet IPv4 e intranet IPv4|Configura dos direcciones IPv4 públicas estáticas consecutivas con las máscaras de subred adecuadas (solo se necesita para Teredo).<br /><br />Configura también la dirección IPv4 de la puerta de enlace predeterminada del firewall de Internet o del enrutador del proveedor de acceso a Internet (ISP). **Nota:** El servidor de DirectAccess necesita dos direcciones IPv4 públicas consecutivas para que pueda actuar como un servidor Teredo y para que los clientes basados en Windows puedan usar el servidor de DirectAccess para detectar el tipo de NAT detrás del que están.|Configura lo siguiente:<br /><br />-Una dirección de intranet IPv4 con la máscara de subred adecuada.<br />-El sufijo DNS específico de la conexión del espacio de nombres de intranet. También se debería configurar un servidor DNS en la interfaz interna. **Precaución:** No configure ninguna puerta de enlace predeterminada en ninguna interfaz de la intranet.|Para configurar el servidor de DirectAccess de manera que tenga acceso a todas las subredes de la red IPv4 interna, haz lo siguiente:<br /><br />-Enumere los espacios de direcciones IPv4 para todas las ubicaciones de la intranet.<br />-Use el **ruta agregar -p** o**netsh interface ipv4 Agregar ruta** comando para agregar los espacios de direcciones IPv4 como rutas estáticas en la tabla de enrutamiento IPv4 del servidor de DirectAccess.|  
-    |Internet IPv6 e intranet IPv6|Configura lo siguiente:<br /><br />-Usar la configuración de dirección suministrada por su ISP.<br />-Use el **Route Print** comando para asegurarse de que existe una ruta IPv6 predeterminada y apunta al enrutador del ISP en la tabla de enrutamiento de IPv6.<br />-Determine si los enrutadores del ISP y de intranet están usando las preferencias de enrutador predeterminadas descritas en RFC 4191 y usando una preferencia predeterminada mayor que los enrutadores de la intranet local.<br />    Si ambas condiciones se cumplen, no se necesita ninguna otra configuración para la ruta predeterminada. La preferencia mayor para el enrutador del ISP asegura que la ruta IPv6 predeterminada activa del servidor de DirectAccess señala a Internet por IPv6.<br /><br />Como el servidor de DirectAccess es un enrutador IPv6, si tienes una infraestructura IPv6 nativa, la interfaz de Internet también puede tener acceso a los controladores de dominio de la intranet. En este caso, agrega filtros de paquetes al controlador de dominio de la red perimetral que impidan que el servidor de DirectAccess conecte con la dirección IPv6 de la interfaz accesible desde Internet.|Configura lo siguiente:<br /><br />-Si no usas los niveles de preferencia predeterminados, puede configurar las interfaces de la intranet mediante el comando siguiente**netsh interface ipv6 establecer InterfaceIndex ignoredefaultroutes = habilitado**.<br />    Este comando garantiza que las rutas predeterminadas adicionales que apunten a enrutadores de la intranet no se agregarán a la tabla de enrutamiento IPv6. Puedes obtener el índice de interfaz de las interfaces de la intranet con el siguiente comando: **netsh interface ipv6 show interface**.|Si la intranet es IPv6, haz lo siguiente para configurar el servidor de DirectAccess para que tenga acceso a todas las ubicaciones IPv6:<br /><br />-Enumere los espacios de direcciones IPv6 para todas las ubicaciones de la intranet.<br />-Use el **netsh interface ipv6 Agregar ruta** comando para agregar los espacios de direcciones IPv6 como rutas estáticas en la tabla de enrutamiento IPv6 del servidor de DirectAccess.|  
-    |Internet IPv4 e intranet IPv6|El servidor de DirectAccess reenvía el tráfico de la ruta IPv6 predeterminada a través del adaptador 6to4 de Microsoft con una retransmisión 6to4 en Internet IPv4. Puede configurar un servidor de DirectAccess para la dirección IPv4 del adaptador 6to4 de Microsoft mediante el comando siguiente: **netsh interface ipv6 6to4 establecer nombre de retransmisión =<ipaddress> estado = habilitado**.|||  
+    |Internet IPv4 e intranet IPv4|Configura dos direcciones IPv4 públicas estáticas consecutivas con las máscaras de subred adecuadas (solo se necesita para Teredo).<br/><br/>Configura también la dirección IPv4 de la puerta de enlace predeterminada del firewall de Internet o del enrutador del proveedor de acceso a Internet (ISP). **Nota:** El servidor de DirectAccess necesita dos direcciones IPv4 públicas consecutivas para que pueda actuar como un servidor Teredo y para que los clientes basados en Windows puedan usar el servidor de DirectAccess para detectar el tipo de NAT detrás del que están.|Configura lo siguiente:<br/><br/>-Una dirección de intranet IPv4 con la máscara de subred adecuada.<br/>-El sufijo DNS específico de la conexión del espacio de nombres de intranet. También se debería configurar un servidor DNS en la interfaz interna. **Precaución:** No configure ninguna puerta de enlace predeterminada en ninguna interfaz de la intranet.|Para configurar el servidor de DirectAccess de manera que tenga acceso a todas las subredes de la red IPv4 interna, haz lo siguiente:<br/><br/>-Enumere los espacios de direcciones IPv4 para todas las ubicaciones de la intranet.<br/>-Use el **ruta agregar -p** o**netsh interface ipv4 Agregar ruta** comando para agregar los espacios de direcciones IPv4 como rutas estáticas en la tabla de enrutamiento IPv4 del servidor de DirectAccess.|  
+    |Internet IPv6 e intranet IPv6|Configura lo siguiente:<br/><br/>-Usar la configuración de dirección suministrada por su ISP.<br/>-Use el **Route Print** comando para asegurarse de que existe una ruta IPv6 predeterminada y apunta al enrutador del ISP en la tabla de enrutamiento de IPv6.<br/>-Determine si los enrutadores del ISP y de intranet están usando las preferencias de enrutador predeterminadas descritas en RFC 4191 y usando una preferencia predeterminada mayor que los enrutadores de la intranet local.<br/>    Si ambas condiciones se cumplen, no se necesita ninguna otra configuración para la ruta predeterminada. La preferencia mayor para el enrutador del ISP asegura que la ruta IPv6 predeterminada activa del servidor de DirectAccess señala a Internet por IPv6.<br/><br/>Como el servidor de DirectAccess es un enrutador IPv6, si tienes una infraestructura IPv6 nativa, la interfaz de Internet también puede tener acceso a los controladores de dominio de la intranet. En este caso, agrega filtros de paquetes al controlador de dominio de la red perimetral que impidan que el servidor de DirectAccess conecte con la dirección IPv6 de la interfaz accesible desde Internet.|Configura lo siguiente:<br/><br/>-Si no usas los niveles de preferencia predeterminados, puede configurar las interfaces de la intranet mediante el comando siguiente**netsh interface ipv6 establecer InterfaceIndex ignoredefaultroutes = habilitado**.<br/>    Este comando garantiza que las rutas predeterminadas adicionales que apunten a enrutadores de la intranet no se agregarán a la tabla de enrutamiento IPv6. Puedes obtener el índice de interfaz de las interfaces de la intranet con el siguiente comando: **netsh interface ipv6 show interface**.|Si la intranet es IPv6, haz lo siguiente para configurar el servidor de DirectAccess para que tenga acceso a todas las ubicaciones IPv6:<br/><br/>-Enumere los espacios de direcciones IPv6 para todas las ubicaciones de la intranet.<br/>-Use el **netsh interface ipv6 Agregar ruta** comando para agregar los espacios de direcciones IPv6 como rutas estáticas en la tabla de enrutamiento IPv6 del servidor de DirectAccess.|  
+    |Internet IPv4 e intranet IPv6|El servidor de DirectAccess reenvía el tráfico de la ruta IPv6 predeterminada a través del adaptador 6to4 de Microsoft con una retransmisión 6to4 en Internet IPv4. Puede configurar un servidor de DirectAccess para la dirección IPv4 del adaptador 6to4 de Microsoft con el siguiente comando: `netsh interface ipv6 6to4 set relay name=<ipaddress> state=enabled`.|||  
   
     > [!NOTE]  
-    > -   Si se ha asignado una dirección IPv4 pública al cliente de DirectAccess, este usará la tecnología de transición 6to4 para conectarse a la intranet. Si tiene asignada una dirección IPv4 privada, empleará Teredo. Si el cliente de DirectAccess no puede conectarse al servidor de DirectAccess mediante 6to4 o Teredo, usará IP-HTTPS.  
-    > -   Para usar Teredo, debes configurar dos direcciones IP consecutivas en el adaptador de red accesible desde el exterior.  
-    > -   No puedes usar Teredo si el servidor de DirectAccess solo tiene un adaptador de red.  
-    > -   Los equipos cliente IPv6 nativos pueden conectar con el servidor de DirectAccess a través de IPv6 nativo, y no se necesita ninguna tecnología de transición.  
+    > - Si se ha asignado una dirección IPv4 pública al cliente de DirectAccess, este usará la tecnología de transición 6to4 para conectarse a la intranet. Si tiene asignada una dirección IPv4 privada, empleará Teredo. Si el cliente de DirectAccess no puede conectarse al servidor de DirectAccess mediante 6to4 o Teredo, usará IP-HTTPS.  
+    > - Para usar Teredo, debes configurar dos direcciones IP consecutivas en el adaptador de red accesible desde el exterior.  
+    > - No puedes usar Teredo si el servidor de DirectAccess solo tiene un adaptador de red.  
+    > - Los equipos cliente IPv6 nativos pueden conectar con el servidor de DirectAccess a través de IPv6 nativo, y no se necesita ninguna tecnología de transición.  
   
-### <a name="112-plan-ipv6-intranet-connectivity"></a>1.1.2 Planear la conectividad con la intranet IPv6  
+### <a name="112-plan-ipv6-intranet-connectivity"></a>1.1.2 Planear la conectividad con la intranet IPv6
+
 Para administrar clientes de DirectAccess remotos, se necesita IPv6. IPv6 permite a los servidores de administración de DirectAccess conectarse a clientes de DirectAccess que están ubicados en Internet con fines de administración remota.  
   
 > [!NOTE]  
-> -   No es necesario usar IPv6 en la red para admitir conexiones iniciadas por equipos cliente de DirectAccess con los recursos IPv4 de la red de tu organización. Para esto se usa NAT64/DNS64.  
-> -   Si no vas a administrar clientes de DirectAccess remotos, no necesitas implementar IPv6.  
-> -   ISATAP (Intra-Site Automatic Tunnel Addressing Protocol) no se admite en las implementaciones de DirectAccess.  
-> -   Si usas IPv6, puedes habilitar las consultas de registros de recursos (AAAA) de host IPv6 para DNS64 mediante el siguiente comando de Windows PowerShell:   **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**.  
+> - No es necesario usar IPv6 en la red para admitir conexiones iniciadas por equipos cliente de DirectAccess con los recursos IPv4 de la red de tu organización. Para esto se usa NAT64/DNS64.  
+> - Si no vas a administrar clientes de DirectAccess remotos, no necesitas implementar IPv6.  
+> - ISATAP (Intra-Site Automatic Tunnel Addressing Protocol) no se admite en las implementaciones de DirectAccess.  
+> - Si usas IPv6, puedes habilitar las consultas de registros de recursos (AAAA) de host IPv6 para DNS64 mediante el siguiente comando de Windows PowerShell:   **Set-NetDnsTransitionConfiguration -OnlySendAQuery $false**.  
   
-### <a name="113-plan-for-force-tunneling"></a>1.1.3 Planear el túnel forzado  
+### <a name="113-plan-for-force-tunneling"></a>1.1.3 Planear el túnel forzado
+
 Con IPv6 y la tabla de directivas de resolución de nombres (NRPT), los clientes de DirectAccess separan, de forma predeterminada, el tráfico de intranet y de Internet de la siguiente manera:  
   
--   Las consultas de nombres DNS para los nombres de dominio completo (FQDN) de la intranet y todo el tráfico de la intranet se intercambian a través de los túneles creados con el servidor de DirectAccess o directamente con servidores de la intranet. El tráfico de intranet de los clientes de DirectAccess es tráfico IPv6.  
+- Las consultas de nombres DNS para los nombres de dominio completo (FQDN) de la intranet y todo el tráfico de la intranet se intercambian a través de los túneles creados con el servidor de DirectAccess o directamente con servidores de la intranet. El tráfico de intranet de los clientes de DirectAccess es tráfico IPv6.  
   
--   Las consultas de nombres FQDN de DNS que corresponden a reglas de exención o no coinciden con el espacio de nombres de la intranet y todo el tráfico a los servidores de Internet se intercambian a través de la interfaz física que está conectada a Internet. El tráfico de Internet de los clientes de DirectAccess normalmente es tráfico IPv4.  
+- Las consultas de nombres FQDN de DNS que corresponden a reglas de exención o no coinciden con el espacio de nombres de la intranet y todo el tráfico a los servidores de Internet se intercambian a través de la interfaz física que está conectada a Internet. El tráfico de Internet de los clientes de DirectAccess normalmente es tráfico IPv4.  
   
 Por el contrario, algunas implementaciones de red privada virtual (VPN) de acceso remoto, incluido el cliente VPN, envían de forma predeterminada todo el tráfico de la intranet y de Internet a través de la conexión VPN de acceso remoto. El servidor VPN enruta el tráfico de Internet a los servidores web proxy IPv4 de la intranet para el acceso a recursos de Internet por IPv4. Es posible separar el tráfico de la intranet y de Internet para los clientes VPN de acceso remoto usando túnel dividido. Para ello, se configura la tabla de enrutamiento del protocolo de Internet (IP) en clientes de VPN para que el tráfico a las ubicaciones de la intranet se envíe a través de la conexión VPN y el tráfico a todas las demás ubicaciones se envíe mediante la interfaz física conectada a Internet.  
   
@@ -101,28 +104,29 @@ Puede configurar los clientes de DirectAccess para que envíen todo su tráfico 
   
 Habilitar el túnel forzado tiene las siguientes consecuencias:  
   
--   Los clientes de DirectAccess solo utilizan protocolo de Internet sobre protocolo seguro de transferencia de hipertexto (IP-HTTPS) para obtener conectividad IPv6 al servidor de DirectAccess sobre Internet por IPv4.  
+- Los clientes de DirectAccess solo utilizan protocolo de Internet sobre protocolo seguro de transferencia de hipertexto (IP-HTTPS) para obtener conectividad IPv6 al servidor de DirectAccess sobre Internet por IPv4.  
   
--   Las únicas ubicaciones a las que un cliente de DirectAccess puede tener acceso de forma predeterminada con tráfico IPv4 son las de su subred local. Todo el tráfico restante enviado por las aplicaciones y los servicios que se ejecutan en el cliente de DirectAccess es tráfico IPv6 enviado a través de la conexión de DirectAccess. Por tanto, las aplicaciones solo IPv4 del cliente de DirectAccess no se pueden usar para tener acceso a recursos de Internet, excepto las de la subred local.  
+- Las únicas ubicaciones a las que un cliente de DirectAccess puede tener acceso de forma predeterminada con tráfico IPv4 son las de su subred local. Todo el tráfico restante enviado por las aplicaciones y los servicios que se ejecutan en el cliente de DirectAccess es tráfico IPv6 enviado a través de la conexión de DirectAccess. Por tanto, las aplicaciones solo IPv4 del cliente de DirectAccess no se pueden usar para tener acceso a recursos de Internet, excepto las de la subred local.  
   
 > [!IMPORTANT]  
 > Para aplicar el túnel forzado a través de DNS64 y NAT64, se debe implementar conectividad con Internet IPv6. Una manera de lograrlo es hacer que el prefijo IP-HTTPS sea enrutable globalmente, de manera que ipv6.msftncsi.com sea accesible a través de IPv6, y que la respuesta desde el servidor de Internet a los clientes IP-HTTPS pueda volver a través del servidor de DirectAccess.  
->   
+>
 > Como esto no es factible en la mayoría de los casos, la mejor opción es crear servidores NCSI virtuales dentro de la red corporativa, de la siguiente manera:  
->   
-> 1.  Agrega una entrada NRPT para ipv6.msftncsi.com y resuélvela mediante DNS64 en un sitio web interno (puede ser un sitio web IPv4).  
-> 2.  Agrega una entrada NRPT para dns.msftncsi.com y resuélvela mediante un servidor DNS corporativo para que devuelva el registro de recursos (AAAA) de host IPv6 (AAAA) fd3e:4f5a:5b81::1. (Puede que usar DNS64 para enviar solo consultas de registros de recursos [A] de host para este FQDN no funcione porque está configurado en implementaciones solo IPv4, por lo que tienes que configurarlo para que se resuelva directamente mediante DNS corporativo).  
+>
+> 1. Agrega una entrada NRPT para ipv6.msftncsi.com y resuélvela mediante DNS64 en un sitio web interno (puede ser un sitio web IPv4).  
+> 2. Agrega una entrada NRPT para dns.msftncsi.com y resuélvela mediante un servidor DNS corporativo para que devuelva el registro de recursos (AAAA) de host IPv6 (AAAA) fd3e:4f5a:5b81::1. (Puede que usar DNS64 para enviar solo consultas de registros de recursos [A] de host para este FQDN no funcione porque está configurado en implementaciones solo IPv4, por lo que tienes que configurarlo para que se resuelva directamente mediante DNS corporativo).  
   
-## <a name="12-plan-firewall-requirements"></a>1.2 Planear los requisitos del firewall  
+## <a name="12-plan-firewall-requirements"></a>1.2 Planear los requisitos del firewall
+
 Si el servidor de DirectAccess está detrás de un firewall perimetral, se necesitan las siguientes excepciones para el tráfico de acceso remoto cuando el servidor de DirectAccess se encuentre en Internet IPv4:  
   
--   Puerto 3544 de destino (UDP) de protocolo de datagramas de usuario de tráfico Teredo entrante y el puerto de origen UDP 3544 de salida.  
+- Puerto 3544 de destino (UDP) de protocolo de datagramas de usuario de tráfico Teredo entrante y el puerto de origen UDP 3544 de salida.  
   
--   6to4 tráfico IP protocolo 41 de entrada y salida.  
+- 6to4 tráfico IP protocolo 41 de entrada y salida.  
   
--   Puerto de destino 443 de protocolo de Control de transmisión de IP-HTTPS (TCP) y el puerto de origen TCP 443 de salida.  
+- Puerto de destino 443 de protocolo de Control de transmisión de IP-HTTPS (TCP) y el puerto de origen TCP 443 de salida.  
   
--   Si implementas el acceso remoto con un único adaptador de red y lo instalas con el servidor de ubicación de red en el servidor de DirectAccess, también deberás agregar el puerto TCP 62000 a las excepciones.  
+- Si implementas el acceso remoto con un único adaptador de red y lo instalas con el servidor de ubicación de red en el servidor de DirectAccess, también deberás agregar el puerto TCP 62000 a las excepciones.  
   
     > [!NOTE]  
     > Esta exención está en el servidor de DirectAccess, y todas las demás exenciones están en el firewall perimetral.  
@@ -131,24 +135,25 @@ Para el tráfico de Teredo y 6to4, estas excepciones se deben aplicar para las d
   
 Se necesitan las siguientes excepciones para el tráfico de acceso remoto cuando el servidor de DirectAccess está en Internet IPv6:  
   
--   Protocolo IP ID 50  
+- Protocolo IP ID 50  
   
--   Puerto de destino UDP 500 de entrada y puerto de origen UDP 500 de salida.  
+- Puerto de destino UDP 500 de entrada y puerto de origen UDP 500 de salida.  
   
--   Tráfico ICMPv6 de entrada y de salida (solo cuando se usa Teredo).  
+- Tráfico ICMPv6 de entrada y de salida (solo cuando se usa Teredo).  
   
 Si usas firewalls adicionales, aplica las siguientes excepciones de firewall de la red interna para el tráfico de acceso remoto:  
   
--   ISATAP: protocolo 41 de entrada y salida  
+- ISATAP: protocolo 41 de entrada y salida  
   
--   TCP/UDP para todo el tráfico IPv4 e IPv6  
+- TCP/UDP para todo el tráfico IPv4 e IPv6  
   
--   ICMP para todo el tráfico IPv4 e IPv6 (solo cuando se usa Teredo)  
+- ICMP para todo el tráfico IPv4 e IPv6 (solo cuando se usa Teredo)  
   
-## <a name="13-plan-certificate-requirements"></a>1.3 Planear los requisitos de certificados  
+## <a name="13-plan-certificate-requirements"></a>1.3 Planear los requisitos de certificados
+
 Hay tres escenarios que requieren certificados cuando se implementa un único servidor de DirectAccess:  
   
--   [1.3.1 planear certificados de equipo para la autenticación IPsec](#131-plan-computer-certificates-for-ipsec-authentication)  
+- [1.3.1 planear certificados de equipo para la autenticación IPsec](#131-plan-computer-certificates-for-ipsec-authentication)  
   
     Entre los requisitos de certificados para IPsec se incluye un certificado de equipo que los equipos cliente de DirectAccess usan al establecer la conexión IPsec entre el cliente y el servidor de DirectAccess, y un certificado de equipo que los servidores de DirectAccess usan para establecer conexiones IPsec con los clientes de DirectAccess.  
   
@@ -166,9 +171,9 @@ En la tabla siguiente se resumen los requisitos de entidad de certificación (CA
   
 |Autenticación IPsec|Servidor IP-HTTPS|Servidor de ubicación de red|  
 |------------|----------|--------------|  
-|Una CA interna es necesaria para emitir certificados de equipo en el servidor de DirectAccess y los clientes para la autenticación IPsec si no se usa el proxy Kerberos para la autenticación|Entidad de certificación interna:<br /><br />Puedes usar una entidad de certificación interna para emitir el certificado IP-HTTPS; sin embargo, debes asegurarte de que el punto de distribución CRL esté disponible externamente.|Entidad de certificación interna:<br /><br />Puedes usar una entidad de certificación interna para emitir el certificado de sitio web del servidor de ubicación de red. Asegúrate de que el punto de distribución CRL tenga alta disponibilidad en la red interna.|  
-||Certificado autofirmado:<br /><br />Puedes usar un certificado autofirmado para el servidor IP-HTTPS; sin embargo, debes asegurarte de que el punto de distribución CRL esté disponible externamente.<br /><br />En las implementaciones multisitio no se pueden usar certificados autofirmados.|Certificado autofirmado:<br /><br />Puedes usar un certificado autofirmado para el sitio web del servidor de ubicación de red.<br /><br />En las implementaciones multisitio no se pueden usar certificados autofirmados.|  
-||**Recomienda**<br /><br />Entidad de certificación pública:<br /><br />Se recomienda usar una entidad de certificación pública para emitir el certificado IP-HTTPS. Esto garantiza que el punto de distribución CRL esté disponible externamente.|  
+|Una CA interna es necesaria para emitir certificados de equipo en el servidor de DirectAccess y los clientes para la autenticación IPsec si no se usa el proxy Kerberos para la autenticación|Entidad de certificación interna:<br/><br/>Puedes usar una entidad de certificación interna para emitir el certificado IP-HTTPS; sin embargo, debes asegurarte de que el punto de distribución CRL esté disponible externamente.|Entidad de certificación interna:<br/><br/>Puedes usar una entidad de certificación interna para emitir el certificado de sitio web del servidor de ubicación de red. Asegúrate de que el punto de distribución CRL tenga alta disponibilidad en la red interna.|  
+||Certificado autofirmado:<br/><br/>Puedes usar un certificado autofirmado para el servidor IP-HTTPS; sin embargo, debes asegurarte de que el punto de distribución CRL esté disponible externamente.<br/><br/>En las implementaciones multisitio no se pueden usar certificados autofirmados.|Certificado autofirmado:<br/><br/>Puedes usar un certificado autofirmado para el sitio web del servidor de ubicación de red.<br/><br/>En las implementaciones multisitio no se pueden usar certificados autofirmados.|  
+||**Recomienda**<br/><br/>Entidad de certificación pública:<br/><br/>Se recomienda usar una entidad de certificación pública para emitir el certificado IP-HTTPS. Esto garantiza que el punto de distribución CRL esté disponible externamente.|  
   
 ### <a name="131-plan-computer-certificates-for-ipsec-authentication"></a>1.3.1 Planear certificados de equipo para la autenticación IPsec  
 Si usas la autenticación IPsec basada en certificado, el servidor y los clientes de DirectAccess deben obtener un certificado de equipo. La manera más sencilla de instalar los certificados es configurar la inscripción automática basada en la directiva de grupo para los certificados de equipo. De esta manera se garantiza que todos los miembros del dominio obtengan un certificado de una entidad de certificación empresarial. Si no tiene una empresa entidad emisora de certificados en su organización, consulte [Active Directory Certificate Services](https://technet.microsoft.com/library/cc770357.aspx).  
@@ -313,7 +318,7 @@ DNS se usa para resolver las solicitudes de equipos cliente de DirectAccess que 
   
 -   Si la conexión no se realiza correctamente, se da por hecho que los clientes están en Internet y los clientes de DirectAccess usarán la tabla de directivas de resolución de nombres (NRPT) para determinar qué servidor DNS se usará para resolver las solicitudes de nombres.  
   
-Puedes especificar que los clientes usen DirectAccess DNS64 para resolver los nombres o un servidor DNS interno alternativo. Para llevar a cabo la resolución de nombres, los clientes de DirectAccess usan la tabla NRPT para identificar cómo gestionar una solicitud. Los clientes solicitan un FQDN o nombre de etiqueta única, como https://internal. Si se solicita un nombre de etiqueta única, se anexa un sufijo DNS para crear un FQDN. Si la consulta DNS coincide con una entrada de la tabla NRPT y se ha especificado DNS64 o un servidor DNS en la red interna para la entrada, la consulta se envía para resolución de nombres con el servidor especificado. Si existe una coincidencia pero no se ha especificado un servidor DNS, esto indica una regla de exención y se aplica la resolución de nombres normal.  
+Puedes especificar que los clientes usen DirectAccess DNS64 para resolver los nombres o un servidor DNS interno alternativo. Para llevar a cabo la resolución de nombres, los clientes de DirectAccess usan la tabla NRPT para identificar cómo gestionar una solicitud. Los clientes solicitan un FQDN o nombre de etiqueta única, como <https://internal>. Si se solicita un nombre de etiqueta única, se anexa un sufijo DNS para crear un FQDN. Si la consulta DNS coincide con una entrada de la tabla NRPT y se ha especificado DNS64 o un servidor DNS en la red interna para la entrada, la consulta se envía para resolución de nombres con el servidor especificado. Si existe una coincidencia pero no se ha especificado un servidor DNS, esto indica una regla de exención y se aplica la resolución de nombres normal.  
   
 > [!NOTE]  
 > Ten en cuenta que cuando se agrega un nuevo sufijo a la tabla NRPT en la Consola de administración de acceso remoto, los servidores DNS predeterminados para el sufijo se pueden detectar automáticamente haciendo clic en **Detectar**.  
@@ -332,7 +337,7 @@ La detección automática funciona de la siguiente manera:
   
     -   Una regla de sufijo de DNS para el dominio raíz o el nombre de dominio del servidor de DirectAccess, y las direcciones IPv6 que corresponden con la dirección DNS64. En las redes corporativas de solo IPv6, los servidores DNS de intranet se configuran en el servidor de DirectAccess. Por ejemplo, si el servidor de DirectAccess pertenece al dominio corp.contoso.com, se creará una regla para el sufijo DNS corp.contoso.com.  
   
-    -   Una regla de exención para el FQDN del servidor de ubicación de red. Por ejemplo, si la URL del servidor de ubicación de red es https://nls.corp.contoso.com, se crea una regla de exención para el FQDN nls.corp.contoso.com.  
+    -   Una regla de exención para el FQDN del servidor de ubicación de red. Por ejemplo, si la URL del servidor de ubicación de red es <https://nls.corp.contoso.com>, se crea una regla de exención para el FQDN nls.corp.contoso.com.  
   
 -   **Servidor IP-HTTPS**  
   
@@ -371,7 +376,7 @@ Los siguientes son los requisitos de DNS cuando se implementa DirectAccess.
   
 -   Usa un servidor DNS que admita actualizaciones dinámicas. Puedes usar servidores DNS que no admitan actualizaciones dinámicas, pero debes actualizar manualmente las entradas en esos servidores.  
   
--   El FQDN de los puntos de distribución CRL accesibles por Internet deben poder resolverse con servidores DNS de Internet. Por ejemplo, si URL https://crl.contoso.com/crld/corp-DC1-CA.crl está en el **puntos de distribución CRL** campo del certificado IP-HTTPS del servidor de DirectAccess, debe asegurarse de que el FQDN CRL.contoso.com sea capaz de resolver usando servidores DNS de Internet.  
+-   El FQDN de los puntos de distribución CRL accesibles por Internet deben poder resolverse con servidores DNS de Internet. Por ejemplo, si URL <https://crl.contoso.com/crld/corp-DC1-CA.crl> está en el **puntos de distribución CRL** campo del certificado IP-HTTPS del servidor de DirectAccess, debe asegurarse de que el FQDN CRL.contoso.com sea capaz de resolver usando servidores DNS de Internet.  
   
 ### <a name="142-plan-for-local-name-resolution"></a>1.4.2 Planear la resolución local de nombres  
 A la hora de planear la resolución local de nombres, ten en cuenta los siguientes aspectos:  
@@ -392,7 +397,7 @@ Puede que tengas que crear reglas de NRPT adicionales en los siguientes casos:
   
 **Nombres de etiqueta única**  
   
-Único, como nombres de etiqueta, https://paycheck, a veces se usan para los servidores de intranet. Si se solicita un nombre de una sola etiqueta y hay configurada una lista de sufijos DNS, los sufijos DNS de la lista se anexarán al nombre de una sola etiqueta. Por ejemplo, cuando un usuario en un equipo que es miembro del dominio corp.contoso.com escribe https://paycheck en el explorador web, el FQDN que se construye como el nombre es paycheck.corp.contoso.com. De forma predeterminada, el sufijo anexado se basa en el sufijo DNS principal del equipo cliente.  
+Único, como nombres de etiqueta, <https://paycheck>, a veces se usan para los servidores de intranet. Si se solicita un nombre de una sola etiqueta y hay configurada una lista de sufijos DNS, los sufijos DNS de la lista se anexarán al nombre de una sola etiqueta. Por ejemplo, cuando un usuario en un equipo que es miembro del dominio corp.contoso.com escribe <https://paycheck> en el explorador web, el FQDN que se construye como el nombre es paycheck.corp.contoso.com. De forma predeterminada, el sufijo anexado se basa en el sufijo DNS principal del equipo cliente.  
   
 > [!NOTE]  
 > En un escenario de espacio de nombres no contiguo (en el que uno o varios equipos del dominio tienen un sufijo DSN que no coincide con el dominio de Active Directory al que pertenecen los equipos), debes asegurarte de que la lista de búsqueda se personalice para incluir todos los sufijos necesarios. De forma predeterminada, el Asistente para acceso remoto configurará el nombre DNS de Active Directory como sufijo DNS principal en el cliente. Asegúrate de agregar el sufijo DNS que los clientes usan para la resolución de nombres.  
@@ -645,7 +650,7 @@ También puedes cambiar la configuración predeterminada en el cuadro de diálog
   
 -   Para hacerlo en Windows PowerShell, especifica el parámetro **DomainController** para el cmdlet **Open-NetGPO**. Por ejemplo, para habilitar perfiles públicos y privados en Firewall de Windows en un GPO llamado domain1\DA_Server_GPO _Europe usando un controlador de dominio llamado europe-dc.corp.contoso.com, escribe lo siguiente:  
   
-    ```  
+    ```powershell
     $gpoSession = Open-NetGPO -PolicyStore "domain1\DA_Server_GPO _Europe" -DomainController "europe-dc.corp.contoso.com"  
     Set-NetFirewallProfile -GpoSession $gpoSession -Name @("Private","Public") -Enabled True  
     Save-NetGPO -GpoSession $gpoSession  
@@ -671,7 +676,7 @@ En el siguiente diagrama se ilustra esta configuración.
 ### <a name="185-recover-from-a-deleted-gpo"></a>1.8.5 Recuperación de un GPO eliminado  
 Si un GPO de cliente, de servidor de DirectAccess o de servidor de aplicaciones se elimina accidentalmente y no hay una copia de seguridad disponible, tienes que quitar la configuración y volver a configurarlo. Si hay una copia de seguridad disponible, puedes usarla para restaurar el GPO.  
   
-La consola de Administración de acceso remoto mostrará el siguiente mensaje de error: **GPO <GPO name> no se encuentra**. Para quitar las opciones de configuración, sigue estos pasos:  
+La consola de Administración de acceso remoto mostrará el siguiente mensaje de error: **No se puede encontrar el GPO (nombre del GPO)** . Para quitar las opciones de configuración, sigue estos pasos:  
   
 1.  Ejecuta el cmdlet de Windows PowerShell **Uninstall-remoteaccess**.  
   
@@ -679,7 +684,7 @@ La consola de Administración de acceso remoto mostrará el siguiente mensaje de
   
 3.  Verás un mensaje de error que indica que no se encontró el GPO. Haz clic en **Quitar opciones de configuración**. Cuando se complete la operación, el servidor se restaurará a un estado sin configurar.  
   
-## <a name="next-step"></a>Paso siguiente  
+## <a name="next-steps"></a>Pasos siguientes  
   
 -   [Paso 2: Planear las implementaciones de DirectAccess](da-adv-plan-s2-deployments.md)  
   

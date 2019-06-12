@@ -6,14 +6,14 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
-ms.date: 04/05/2018
+ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 00f29c70628f2869e9f3aeffd0d08032bce5aeda
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: b41ebd0bb822875a3114de4a849ea3ec5decee11
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034183"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810887"
 ---
 # <a name="use-cluster-shared-volumes-in-a-failover-cluster"></a>Usar volúmenes compartidos de clúster en un clúster de conmutación por error
 
@@ -26,15 +26,15 @@ CSV proporciona un sistema de archivos en clúster general que se superpone en N
 - Archivos de disco duro virtual (VHD) en clúster para máquinas virtuales de Hyper-V en clúster.
 - Recursos compartidos de archivos de escalabilidad horizontal para almacenar datos de aplicación para el rol en clúster Servidor de archivos de escalabilidad horizontal. Son ejemplos de los datos de aplicación para este rol los archivos de máquinas virtuales de Hyper-V y datos de Microsoft SQL Server. (Ten en cuenta que ReFS no es compatible para un servidor de archivos de escalabilidad horizontal). Para obtener más información sobre el servidor de archivos de escalabilidad horizontal, consulte [Scale-Out File Server datos de la aplicación](sofs-overview.md).
 
->[!NOTE]
->CSV no es compatible con la carga de trabajo en clúster de Microsoft SQL Server en SQL Server 2012 y versiones anteriores de SQL Server.
+> [!NOTE]
+> CSV no son compatibles con la carga de trabajo en clúster de Microsoft SQL Server en SQL Server 2012 y versiones anteriores de SQL Server.
 
 En Windows Server 2012, funcionalidad CSV mejoró considerablemente. Por ejemplo, se quitaron las dependencias en Servicios de dominio de Active Directory. Se agregó compatibilidad con las mejoras funcionales de **chkdsk**, con la interoperabilidad con aplicaciones antivirus y de copia de seguridad, y con la integración con características de almacenamiento generales como los volúmenes cifrados con BitLocker y Espacios de almacenamiento. Para obtener información general de la funcionalidad CSV introducida en Windows Server 2012, consulte [Novedades en los clústeres de conmutación por error en Windows Server 2012 \[redirigido\]](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
 
 Windows Server 2012 R2 introduce funcionalidad adicional, como la propiedad CSV distribuida, aumento de la resistencia a través de la disponibilidad del servicio del servidor, mayor flexibilidad en la cantidad de memoria física que se puede asignar a la memoria caché de CSV, mejor capacidad de diagnóstico y mejor interoperabilidad que incluye compatibilidad con ReFS y desduplicación. Para obtener más información, consulte [Novedades en clústeres de conmutación por error](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn265972(v%3dws.11)>).
 
->[!NOTE]
->Para obtener información acerca del uso de desduplicación de datos en CSV para escenarios de infraestructura de Escritorio Virtual (VDI), consulte las publicaciones del blog [Implementar la desduplicación de datos para el almacenamiento VDI en Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) y [Ampliación de desduplicación de datos para nuevas cargas de trabajo en Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx).
+> [!NOTE]
+> Para obtener información acerca del uso de desduplicación de datos en CSV para escenarios de infraestructura de Escritorio Virtual (VDI), consulte las publicaciones del blog [Implementar la desduplicación de datos para el almacenamiento VDI en Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/deploying-data-deduplication-for-vdi-storage-in-windows-server-2012-r2.aspx) y [Ampliación de desduplicación de datos para nuevas cargas de trabajo en Windows Server 2012 R2](https://blogs.technet.com/b/filecab/archive/2013/07/31/extending-data-deduplication-to-new-workloads-in-windows-server-2012-r2.aspx).
 
 ## <a name="review-requirements-and-considerations-for-using-csv-in-a-failover-cluster"></a>Revisar los requisitos y las consideraciones para usar CSV en un clúster de conmutación por error
 
@@ -81,7 +81,7 @@ El servidor usa uno de los modos de redirección de E/S siguientes, en función 
 
 En Windows Server 2012 R2, puede ver el estado de un volumen CSV en una base por nodos. Por ejemplo, puedes ver si la E/S es directa o redirigida o si el volumen CSV no está disponible. Si un volumen CSV está en modo de E/S redirigida, también puedes ver el motivo. Usa el cmdlet **Get-ClusterSharedVolumeState** de Windows PowerShell para ver esta información.
 
->[!NOTE]
+> [!NOTE]
 > * En Windows Server 2012, debido a las mejoras en el diseño CSV, CSV realiza más operaciones en modo de E/S directa que ocurría en Windows Server 2008 R2.
 > * Debido a la integración de CSV con características de SMB 3.0 como SMB multicanal y SMB directo, el tráfico de E/S redirigida se puede emitir en secuencias a través de varias redes en clúster.
 > * Deberías planear las redes en clúster de manera que permitan un posible aumento del tráfico de red al nodo coordinador durante la redirección de E/S.
@@ -116,8 +116,8 @@ Para usar CSV, los nodos deben cumplir con los siguientes requisitos:
 
 Esta sección enumeran consideraciones de planificación y recomendaciones para usar CSV en un clúster de conmutación por error que ejecuta Windows Server 2012 R2 o Windows Server 2012.
 
->[!IMPORTANT]
->Solicita al proveedor de almacenamiento recomendaciones sobre cómo configurar tu unidad de almacenamiento concreta para CSV. Si las recomendaciones del proveedor de almacenamiento difieren de la información de este tema, sigue las recomendaciones del proveedor de almacenamiento.
+> [!IMPORTANT]
+> Solicita al proveedor de almacenamiento recomendaciones sobre cómo configurar tu unidad de almacenamiento concreta para CSV. Si las recomendaciones del proveedor de almacenamiento difieren de la información de este tema, sigue las recomendaciones del proveedor de almacenamiento.
 
 ### <a name="arrangement-of-luns-volumes-and-vhd-files"></a>Organización de LUN, volúmenes y archivos VHD
 
@@ -198,31 +198,14 @@ La memoria caché de CSV proporciona almacenamiento en caché en el nivel de blo
 >[!NOTE]
 >Te recomendamos que habilites la memoria caché de CSV para todas las implementaciones de Hyper-V y servidor de archivos de escalabilidad horizontal en clúster.
 
-De forma predeterminada en Windows Server 2012, la caché CSV está deshabilitada. En Windows Server 2012 R2, la caché de CSV está habilitada de forma predeterminada. No obstante, debes asignar el tamaño de la memoria caché de bloque que deseas reservar.
+De forma predeterminada en Windows Server 2012, la caché CSV está deshabilitada. En Windows Server 2012 R2 y versiones posteriores, la caché CSV está habilitada de forma predeterminada. No obstante, debes asignar el tamaño de la memoria caché de bloque que deseas reservar.
 
 En la tabla siguiente se describen las dos opciones de configuración que controlan la memoria caché de CSV.
 
-<table>
-<thead>
-<tr class="header">
-<th>Nombre de propiedad en Windows Server 2012 R2</th>
-<th>Nombre de propiedad en Windows Server 2012</th>
-<th>Descripción</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>BlockCacheSize</strong></td>
-<td><strong>SharedVolumeBlockCacheSizeInMB</strong></td>
-<td>Se trata de una propiedad común del clúster que permite definir cuánta memoria (en megabytes) deseas reservar para la memoria caché de CSV en cada nodo del clúster. Por ejemplo, si se define un valor de 512, se reservan 512 MB de memoria del sistema en cada nodo. (En muchos clústeres, 512 MB es un valor recomendado). El valor predeterminado es 0 (deshabilitado).</td>
-</tr>
-<tr class="even">
-<td><strong>EnableBlockCache</strong></td>
-<td><strong>CsvEnableBlockCache</strong></td>
-<td>Se trata de una propiedad privada del recurso de disco físico del clúster. Permite habilitar la memoria caché de CSV en un disco individual que se agrega a CSV. En Windows Server 2012, el valor predeterminado es 0 (deshabilitado). Para habilitar la memoria caché de CSV en un disco, configura un valor de 1. De forma predeterminada, en Windows Server 2012 R2, esta configuración está habilitada.</td>
-</tr>
-</tbody>
-</table>
+| Windows Server 2012 R2 y versiones posteriores |  Windows Server 2012                 | Descripción |
+| -------------------------------- | ------------------------------------ | ----------- |
+| BlockCacheSize                   | SharedVolumeBlockCacheSizeInMB       | Se trata de una propiedad común del clúster que permite definir cuánta memoria (en megabytes) deseas reservar para la memoria caché de CSV en cada nodo del clúster. Por ejemplo, si se define un valor de 512, se reservan 512 MB de memoria del sistema en cada nodo. (En muchos clústeres, 512 MB es un valor recomendado). El valor predeterminado es 0 (deshabilitado). |
+| EnableBlockCache                 | CsvEnableBlockCache                  | Se trata de una propiedad privada del recurso de disco físico del clúster. Permite habilitar la memoria caché de CSV en un disco individual que se agrega a CSV. En Windows Server 2012, el valor predeterminado es 0 (deshabilitado). Para habilitar la memoria caché de CSV en un disco, configura un valor de 1. De forma predeterminada, en Windows Server 2012 R2, esta configuración está habilitada. |
 
 Puedes supervisar la memoria caché de CSV en el monitor de rendimiento si agregas los contadores en **Caché de volumen CSV de clúster**.
 
@@ -231,7 +214,7 @@ Puedes supervisar la memoria caché de CSV en el monitor de rendimiento si agreg
 1. Inicie Windows PowerShell como administrador.
 2. Para definir una memoria caché de *512* MB reservados en cada nodo, escribe lo siguiente:
 
-    - Para Windows Server 2012 R2:
+    - Para Windows Server 2012 R2 y versiones posteriores:
 
         ```PowerShell
         (Get-Cluster).BlockCacheSize = 512  
@@ -249,14 +232,14 @@ Puedes supervisar la memoria caché de CSV en el monitor de rendimiento si agreg
     ```
 
 >[!NOTE]
-> * En Windows Server 2012, puede asignar solo el 20% del total de RAM física a la caché de CSV. En Windows Server 2012 R2, puede asignar hasta un 80%. Como los servidores de archivos de escalabilidad horizontal no suelen tener restricciones de memoria, puedes aumentar significativamente el rendimiento si usas la memoria adicional para la memoria caché de CSV.
-> * Para evitar la contención de recursos, debe reiniciar cada nodo del clúster después de modificar la memoria que se asigna a la caché de CSV. En Windows Server 2012 R2, ya no se requiere un reinicio.
-> * Después de habilitar o deshabilitar la caché de CSV en un disco individual, para que la configuración surta efecto, debes dejar el recurso de disco físico sin conexión y volver a conectarlo en línea. (De forma predeterminada, en Windows Server 2012 R2, la caché CSV está habilitada.) 
+> * En Windows Server 2012, puede asignar solo el 20% del total de RAM física a la caché de CSV. En Windows Server 2012 R2 y versiones posteriores, puede asignar hasta un 80%. Como los servidores de archivos de escalabilidad horizontal no suelen tener restricciones de memoria, puedes aumentar significativamente el rendimiento si usas la memoria adicional para la memoria caché de CSV.
+> * Para evitar la contención de recursos, debe reiniciar cada nodo del clúster después de modificar la memoria que se asigna a la caché de CSV. En Windows Server 2012 R2 y versiones posteriores, ya no se requiere un reinicio.
+> * Después de habilitar o deshabilitar la caché de CSV en un disco individual, para que la configuración surta efecto, debes dejar el recurso de disco físico sin conexión y volver a conectarlo en línea. (De forma predeterminada, en Windows Server 2012 R2 y versiones posteriores, la caché CSV está habilitada.) 
 > * Para obtener más información sobre la caché de CSV que incluye información sobre los contadores de rendimiento, consulte la entrada del blog [Cómo habilitar la memoria caché de CSV](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/).
 
-## <a name="back-up-csv"></a>Copia de seguridad de CSV
+## <a name="backing-up-csvs"></a>Copia de seguridad CSV
 
-Hay varios métodos para hacer copias de seguridad de la información almacenada en CSV en un clúster de conmutación por error. Puedes usar una aplicación de copia de seguridad de Microsoft o una aplicación que no sea de Microsoft. En general, CSV no impone requisitos de copia de seguridad especiales, aparte de los del almacenamiento en clúster formateado con NTFS o ReFS. Las copias de seguridad de CSV tampoco interrumpen otras operaciones de almacenamiento de CSV.
+Existen varios métodos para realizar una copia de seguridad de la información que se almacena en CSV en un clúster de conmutación por error. Puedes usar una aplicación de copia de seguridad de Microsoft o una aplicación que no sea de Microsoft. En general, CSV no impone requisitos de copia de seguridad especiales, aparte de los del almacenamiento en clúster formateado con NTFS o ReFS. Las copias de seguridad de CSV tampoco interrumpen otras operaciones de almacenamiento de CSV.
 
 Debes tener en cuenta los siguientes factores al seleccionar una aplicación de copia de seguridad y una programación de copia de seguridad para CSV:
 
@@ -266,11 +249,11 @@ Debes tener en cuenta los siguientes factores al seleccionar una aplicación de 
 - CSV admite los solicitantes de copia de seguridad que ejecutan Windows Server 2012 R2 copia de seguridad, copias de seguridad de Windows Server 2012 o Windows Server 2008 R2 copia de seguridad. No obstante, por lo general, Copias de seguridad de Windows Server solo proporciona una solución de copia de seguridad básica que es posible que no sea apta para organizaciones con clústeres grandes. Copias de seguridad de Windows Server no admite la copia de seguridad de máquinas virtuales coherente con la aplicación en CSV. Solo admite copias de seguridad de nivel de volumen preparadas para bloqueos. (Si restauras una copia de seguridad preparada para bloqueos, la máquina virtual tendrá el mismo estado que tenía si se había bloqueado en el momento de hacer la copia de seguridad). Una copia de seguridad de una máquina virtual en un volumen CSV se realizará correctamente, pero se registrará un evento de error que indicará que no es compatible.
 - Es posible que necesites credenciales administrativas al hacer una copia de seguridad de un clúster de conmutación por error.
 
->[!IMPORTANT]
+> [!IMPORTANT]
 >Asegúrate de revisar detenidamente los datos que la aplicación de copia de seguridad incluye en la copia de seguridad y restaura, qué características de CSV admite y cuáles son los requisitos de recursos para la aplicación en cada nodo del clúster.
 
->[!WARNING]
->Si necesitas restaurar los datos de la copia de seguridad a un volumen CSV, ten en cuenta las capacidades y limitaciones de la aplicación de copia de seguridad para mantener y restaurar datos coherentes con la aplicación en los nodos del clúster. Por ejemplo, con algunas aplicaciones, si el volumen CSV se restaura en un nodo distinto del nodo del que se obtuvo su copia de seguridad, es posible que sobrescribas sin darte cuenta datos importantes sobre el estado de la aplicación en el nodo en el que se realiza la restauración.
+> [!WARNING]
+> Si necesitas restaurar los datos de la copia de seguridad a un volumen CSV, ten en cuenta las capacidades y limitaciones de la aplicación de copia de seguridad para mantener y restaurar datos coherentes con la aplicación en los nodos del clúster. Por ejemplo, con algunas aplicaciones, si el volumen CSV se restaura en un nodo distinto del nodo del que se obtuvo su copia de seguridad, es posible que sobrescribas sin darte cuenta datos importantes sobre el estado de la aplicación en el nodo en el que se realiza la restauración.
 
 ## <a name="more-information"></a>Más información
 

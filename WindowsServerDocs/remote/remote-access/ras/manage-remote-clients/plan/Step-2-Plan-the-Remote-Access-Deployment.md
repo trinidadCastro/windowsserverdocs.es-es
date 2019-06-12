@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: cc9f02b9-8ddd-4cae-b397-a832996144dd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fb940effaae7989dec397e539b64160c87828d5a
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 7aec08a19759c98150cf7518643f634947c5133d
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266706"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66804997"
 ---
 # <a name="step-2-plan-the-remote-access-deployment"></a>Paso 2 Planear la implementación de acceso remoto
 
@@ -56,7 +56,7 @@ Tienes que tomar tres decisiones a la hora de planear la implementación de clie
   
     -   **Comprobadores de conectividad**  
   
-        Se crea una sonda web predeterminada que los clientes usan para validar la conectividad a la red interna. El nombre predeterminado es https://directaccess-WebProbeHost.<domain_name>. El nombre debe registrarse manualmente en DNS. Puede crear otros comprobadores de conectividad que usan otras direcciones web a través de HTTP o PING. Debe existir una entrada DNS por cada comprobador de conectividad.  
+        Se crea una sonda web predeterminada que los clientes usan para validar la conectividad a la red interna. El nombre predeterminado es `https://directaccess-WebProbeHost.<domain_name>`. El nombre debe registrarse manualmente en DNS. Puede crear otros comprobadores de conectividad que usan otras direcciones web a través de HTTP o PING. Debe existir una entrada DNS por cada comprobador de conectividad.  
   
     -   **Ayuda de dirección de correo electrónico del departamento de soporte técnico**  
   

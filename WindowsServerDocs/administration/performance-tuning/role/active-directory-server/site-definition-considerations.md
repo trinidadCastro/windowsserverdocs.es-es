@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e1652e45f51500ceeb0026b8892fbe9c54ff38f3
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: 9861703e5ae88dcaec5e76d9fab426b928d0cb9a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266637"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811497"
 ---
 # <a name="proper-placement-of-domain-controllers-and-site-considerations"></a>Colocación adecuada de los controladores de dominio y consideraciones de sitio
 
@@ -64,11 +64,11 @@ Confianza entre dominios escenarios son un área que ha sido sistemáticamente u
 
     -   Utilice DnsAvoidRegisterRecords para eliminar controladores de dominio mal rendimiento o alta latencia, como los de los sitios de satélite, con la publicidad a los localizadores genéricos. Para obtener más información, consulte [cómo optimizar la ubicación de un controlador de dominio o catálogo global que reside fuera de un sitio del cliente](https://support.microsoft.com/kb/306602).
 
-        > [!Note]   Hay un límite práctico de aproximadamente 50 y el número de controladores de dominio que puede consumir el cliente. Mayor capacidad óptima para el sitio y más alta deben ser controladores de dominio.
+        > [!NOTE]
+        > Hay un límite práctico de aproximadamente 50 y el número de controladores de dominio que puede consumir el cliente. Mayor capacidad óptima para el sitio y más alta deben ser controladores de dominio.
 
-         
-
-    -   Considere la posibilidad de colocar los controladores de dominio de dominios de confianza y que confían en la misma ubicación física.
+    
+    -  Considere la posibilidad de colocar los controladores de dominio de dominios de confianza y que confían en la misma ubicación física.
 
 Todos los escenarios de confianza, las credenciales se enrutan según el dominio especificado en las solicitudes de autenticación. Esto también es cierto para las consultas al LookupAccountName y LsaLookupNames (así como otros usuarios, estos simplemente el más frecuente) API. Cuando los parámetros de dominio para estas API se pasa un valor NULL, el controlador de dominio intentará encontrar el nombre de cuenta especificado en cada dominio de confianza disponible.
 

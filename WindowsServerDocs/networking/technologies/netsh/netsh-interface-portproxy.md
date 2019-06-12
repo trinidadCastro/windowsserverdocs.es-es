@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
-ms.openlocfilehash: 194a418fe6b33e312a3f2529e82d50d76cd15f4c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8ac4f8e7cd0aed5a81e89672354622dd81afce2a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842486"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446182"
 ---
 # <a name="netsh-interface-portproxy-commands"></a>Comandos de proxy de puerto de interfaz de netsh
 
@@ -84,13 +84,13 @@ add v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 ### <a name="parameters"></a>Parámetros
 
 
-| | |
-|-----|--------|----------|
-| **listenport**     | Especifica el puerto IPv4, por número de puerto o el servicio de nombre, en el que se va a escuchar.                                                                                                                      | Requerido |
-| **connectaddress** | Especifica la dirección IPv4 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **connectport**    | Especifica el puerto IPv4, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.              |          |
-| **listenaddress**  | Especifica la dirección IPv4 que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **protocol**       | Especifica el protocolo que se usará.                                                                                                                                                                    |          |
+|                    |                                                                                                                                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   **listenport**   |                                                           Especifica el puerto IPv4, por número de puerto o el servicio de nombre, en el que se va a escuchar.                                                            |
+| **connectaddress** | Especifica la dirección IPv4 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|  **connectport**   |       Especifica el puerto IPv4, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.        |
+| **listenaddress**  | Especifica la dirección IPv4 que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|    **protocol**    |                                                                                  Especifica el protocolo que se usará.                                                                                   |
 
 ## <a name="add-v4tov6"></a>Agregar v4tov6
 
@@ -104,13 +104,13 @@ add v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address |
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|-----------|-------------|----------|
-| **listenport**     | Especifica el puerto IPv4, por número de puerto o el servicio de nombre, en el que se va a escuchar.       | Requerido |
-| **connectaddress** | Especifica la dirección IPv6 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **connectport**    | Especifica el puerto IPv6, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.              |          |
-| **listenaddress**  | Especifica la dirección IPv4 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |          |
-| **protocol**       | Especifica el protocolo que se usará.                                                                                                                                                                    |          |
+|                    |                                                                                                                                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   **listenport**   |                                                           Especifica el puerto IPv4, por número de puerto o el servicio de nombre, en el que se va a escuchar.                                                            |
+| **connectaddress** | Especifica la dirección IPv6 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|  **connectport**   |       Especifica el puerto IPv6, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.        |
+| **listenaddress**  | Especifica la dirección IPv4 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |
+|    **protocol**    |                                                                                  Especifica el protocolo que se usará.                                                                                   |
 
 ## <a name="add-v6tov4"></a>Agregar v6tov4
 
@@ -124,13 +124,13 @@ add v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|------------|-------------|----------|
-| **listenport**     | Especifica el puerto IPv6, por número de puerto o el servicio de nombre, en el que se va a escuchar.              | Requerido |
-| **connectaddress** | Especifica la dirección IPv4 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **connectport**    | Especifica el puerto IPv4, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.              |          |
-| **listenaddress**  | Especifica la dirección IPv6 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |          |
-| **protocol**       | Especifica el protocolo que se usará.      |          |
+|                    |                                                                                                                                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   **listenport**   |                                                           Especifica el puerto IPv6, por número de puerto o el servicio de nombre, en el que se va a escuchar.                                                            |
+| **connectaddress** | Especifica la dirección IPv4 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|  **connectport**   |       Especifica el puerto IPv4, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.        |
+| **listenaddress**  | Especifica la dirección IPv6 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |
+|    **protocol**    |                                                                                  Especifica el protocolo que se usará.                                                                                   |
 
 ## <a name="add-v6tov6"></a>Agregar v6tov6
 
@@ -144,13 +144,13 @@ add v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address |
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|-------------|------------------|----------|
-| **listenport**     | Especifica el puerto IPv6, por número de puerto o el servicio de nombre, en el que se va a escuchar.       | Requerido |
-| **connectaddress** | Especifica la dirección IPv6 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **connectport**    | Especifica el puerto IPv6, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.              |          |
-| **listenaddress**  | Especifica la dirección IPv6 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |          |
-| **protocol**       | Especifica el protocolo que se usará.                                                                                                                                                                    |          |
+|                    |                                                                                                                                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   **listenport**   |                                                           Especifica el puerto IPv6, por número de puerto o el servicio de nombre, en el que se va a escuchar.                                                            |
+| **connectaddress** | Especifica la dirección IPv6 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|  **connectport**   |       Especifica el puerto IPv6, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.        |
+| **listenaddress**  | Especifica la dirección IPv6 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |
+|    **protocol**    |                                                                                  Especifica el protocolo que se usará.                                                                                   |
 
 ## <a name="delete-v4tov4"></a>eliminar v4tov4
 
@@ -164,11 +164,11 @@ delete v4tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|-------------------|----------------------------------------------------------------------------------------------------------|----------|
-| **listenport**    | Especifica el puerto IPv4 a eliminar.                                                                       | Requerido |
-| **listenaddress** | Especifica la dirección IPv4 para eliminar. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **protocol**      | Especifica el protocolo que se usará.                                                                           |          |
+|                   |                                                                                                          |
+|-------------------|----------------------------------------------------------------------------------------------------------|
+|  **listenport**   |                                    Especifica el puerto IPv4 a eliminar.                                    |
+| **listenaddress** | Especifica la dirección IPv4 para eliminar. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|   **protocol**    |                                      Especifica el protocolo que se usará.                                      |
 
 ## <a name="delete-v4tov6"></a>delete v4tov6
 
@@ -182,11 +182,11 @@ delete v4tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv4Address
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|-------------------|----------------------------------------------------------------------------------------------------------|----------|
-| **listenport**    | Especifica el puerto IPv4 a eliminar.                                                                       | Requerido |
-| **listenaddress** | Especifica la dirección IPv4 para eliminar. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **protocol**      | Especifica el protocolo que se usará.                                                                           |          |
+|                   |                                                                                                          |
+|-------------------|----------------------------------------------------------------------------------------------------------|
+|  **listenport**   |                                    Especifica el puerto IPv4 a eliminar.                                    |
+| **listenaddress** | Especifica la dirección IPv4 para eliminar. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|   **protocol**    |                                      Especifica el protocolo que se usará.                                      |
 
 ## <a name="delete-v6tov4"></a>delete v6tov4
 
@@ -200,11 +200,11 @@ delete v6tov4 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|-------------------|----------------------------------------------------------------------------------------------------------|----------|
-| **listenport**    | Especifica el puerto IPv6 va a eliminar.                                                                       | Requerido |
-| **listenaddress** | Especifica la dirección IPv6 a eliminar. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **protocol**      | Especifica el protocolo que se usará.                                                                           |          |
+|                   |                                                                                                          |
+|-------------------|----------------------------------------------------------------------------------------------------------|
+|  **listenport**   |                                    Especifica el puerto IPv6 va a eliminar.                                    |
+| **listenaddress** | Especifica la dirección IPv6 a eliminar. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|   **protocol**    |                                      Especifica el protocolo que se usará.                                      |
 
 ## <a name="delete-v6tov6"></a>delete v6tov6
 
@@ -218,11 +218,11 @@ delete v6tov6 listenport= {Integer | ServiceName} [[listenaddress=] {IPv6Address
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|-------------------|----------------------------------------------------------------------------------------------------------|----------|
-| **listenport**    | Especifica el puerto IPv6 va a eliminar.                                                                       | Requerido |
-| **listenaddress** | Especifica la dirección IPv6 a eliminar. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **protocol**      | Especifica el protocolo que se usará.                                                                           |          |
+|                   |                                                                                                          |
+|-------------------|----------------------------------------------------------------------------------------------------------|
+|  **listenport**   |                                    Especifica el puerto IPv6 va a eliminar.                                    |
+| **listenaddress** | Especifica la dirección IPv6 a eliminar. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|   **protocol**    |                                      Especifica el protocolo que se usará.                                      |
 
 ## <a name="reset"></a>Restablecer
 
@@ -244,13 +244,13 @@ set v4tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|--------------------|---------------------------|----------|
-| **listenport**     | Especifica el puerto IPv4, por número de puerto o el servicio de nombre, en el que se va a escuchar.     | Requerido |
-| **connectaddress** | Especifica la dirección IPv4 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **connectport**    | Especifica el puerto IPv4, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.              |          |
-| **listenaddress**  | Especifica la dirección IPv4 que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **protocol**       | Especifica el protocolo que se usará.                                                                                                                                                                    |          |
+|                    |                                                                                                                                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   **listenport**   |                                                           Especifica el puerto IPv4, por número de puerto o el servicio de nombre, en el que se va a escuchar.                                                            |
+| **connectaddress** | Especifica la dirección IPv4 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|  **connectport**   |       Especifica el puerto IPv4, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.        |
+| **listenaddress**  | Especifica la dirección IPv4 que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|    **protocol**    |                                                                                  Especifica el protocolo que se usará.                                                                                   |
 
 ## <a name="set-v4tov6"></a>set v4tov6
 
@@ -264,13 +264,13 @@ set v4tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address |
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|--------------------|---------------------|----------|
-| **listenport**     | Especifica el puerto IPv4, por número de puerto o el servicio de nombre, en el que se va a escuchar.     | Requerido |
-| **connectaddress** | Especifica la dirección IPv6 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **connectport**    | Especifica el puerto IPv6, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.              |          |
-| **listenaddress**  | Especifica la dirección IPv4 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |          |
-| **protocol**       | Especifica el protocolo que se usará.                                                                                                                                                                    |          |
+|                    |                                                                                                                                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   **listenport**   |                                                           Especifica el puerto IPv4, por número de puerto o el servicio de nombre, en el que se va a escuchar.                                                            |
+| **connectaddress** | Especifica la dirección IPv6 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|  **connectport**   |       Especifica el puerto IPv6, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.        |
+| **listenaddress**  | Especifica la dirección IPv4 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |
+|    **protocol**    |                                                                                  Especifica el protocolo que se usará.                                                                                   |
 
 ## <a name="set-v6tov4"></a>set v6tov4
 
@@ -284,13 +284,13 @@ set v6tov4 listenport= {Integer | ServiceName} [[connectaddress=] {IPv4Address |
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|--------------------|----------------------|----------|
-| **listenport**     | Especifica el puerto IPv6, por número de puerto o el servicio de nombre, en el que se va a escuchar.      | Requerido |
-| **connectaddress** | Especifica la dirección IPv4 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **connectport**    | Especifica el puerto IPv4, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.              |          |
-| **listenaddress**  | Especifica la dirección IPv6 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |          |
-| **protocol**       | Especifica el protocolo que se usará.                                                                                                                                                                    |          |
+|                    |                                                                                                                                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   **listenport**   |                                                           Especifica el puerto IPv6, por número de puerto o el servicio de nombre, en el que se va a escuchar.                                                            |
+| **connectaddress** | Especifica la dirección IPv4 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local. |
+|  **connectport**   |       Especifica el puerto IPv4, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.        |
+| **listenaddress**  | Especifica la dirección IPv6 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |
+|    **protocol**    |                                                                                  Especifica el protocolo que se usará.                                                                                   |
 
 ## <a name="set-v6tov6"></a>set v6tov6
 
@@ -304,13 +304,13 @@ set v6tov6 listenport= {Integer | ServiceName} [[connectaddress=] {IPv6Address |
 
 ### <a name="parameters"></a>Parámetros
 
-|   |   |
-|--------------------|-------------------------|----------|
-| **listenport**     | Especifica el puerto IPv6, por número de puerto o el servicio de nombre, en el que se va a escuchar.   | Requerido |
-| **connectaddress** | Especifica la dirección IPv6 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |          |
-| **connectport**    | Especifica el puerto IPv6, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.               |          |
-| **listenaddress**  | Especifica la dirección IPv6 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no especifica una dirección, el valor predeterminado es el equipo local. |          |
-| **protocol**       | Especifica el protocolo que se usará.                                                                                                                                                                     |          |
+|                    |                                                                                                                                                                                                    |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   **listenport**   |                                                            Especifica el puerto IPv6, por número de puerto o el servicio de nombre, en el que se va a escuchar.                                                            |
+| **connectaddress** | Especifica la dirección IPv6 que se va a conectar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no se especifica una dirección, el valor predeterminado es el equipo local.  |
+|  **connectport**   |        Especifica el puerto IPv6, por número de puerto o el servicio de nombre, que se va a conectar. Si **connectport** no se especifica, el valor predeterminado es el valor de **listenport** en el equipo local.        |
+| **listenaddress**  | Especifica la dirección IPv6 en la que se va a escuchar. Los valores aceptables son direcciones IP, nombre NetBIOS del equipo o nombre DNS del equipo. Si no especifica una dirección, el valor predeterminado es el equipo local. |
+|    **protocol**    |                                                                                   Especifica el protocolo que se usará.                                                                                   |
 
 ## <a name="show-all"></a>mostrar todas
 

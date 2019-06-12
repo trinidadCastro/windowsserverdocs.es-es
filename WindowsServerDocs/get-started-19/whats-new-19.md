@@ -7,13 +7,13 @@ ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
-ms.date: 05/21/2019
-ms.openlocfilehash: af887c0e1c66a017ee091fb2cab2dc61fa9ac1dc
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.date: 06/04/2019
+ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976555"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810770"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
@@ -21,9 +21,17 @@ ms.locfileid: "65976555"
 
 En este tema se describen algunas de las nuevas características de Windows Server 2019. Windows Server 2019 se basa en la sólida base de Windows Server 2016 e incluye numerosas innovaciones en cuatro temas claves: Nube híbrida, seguridad, plataforma de aplicaciones e infraestructuras Hiperconvergidas (HCL).
 
-Para descubrir las novedades en las versiones de canal semianual de Windows Server, consulte [What ' s New in Windows Server](../get-started/whats-new-in-windows-server.md). 
+Para descubrir las novedades en las versiones de canal semianual de Windows Server, consulte [What ' s New in Windows Server](../get-started/whats-new-in-windows-server.md).
 
 ## <a name="general"></a>General
+
+### <a name="windows-admin-center"></a>Windows Admin Center
+
+Windows Admin Center es una aplicación implementada localmente, basado en explorador para la administración de servidores, clústeres, infraestructura hiperconvergida y PC con Windows 10. Se ofrece sin coste adicional más allá de Windows y está listo para usarse en producción.
+
+Puede instalar Windows Admin Center en Windows Server 2019, así como Windows 10 y versiones anteriores de Windows y Windows Server y usarlo para administrar servidores y clústeres que ejecutan Windows Server 2008 R2 y versiones posteriores.
+
+Para obtener más información, consulte [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
 
 ### <a name="desktop-experience"></a>Experiencia de escritorio
 
@@ -60,8 +68,6 @@ Los sensores de plataforma profunda y las acciones de respuesta de ATP exponen a
 -   [Acceso controlado a carpetas](https://cloudblogs.microsoft.com/microsoftsecure/2017/10/23/stopping-ransomware-where-it-counts-protecting-your-data-with-controlled-folder-access/?ocid=cx-blog-mmpc?source=mmpc) protege los datos confidenciales del ransomware bloqueando para los procesos que no son de confianza el acceso a las carpetas protegidas.
 
 -   [Protección contra vulnerabilidades](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-exploit-guard) es un conjunto de las mitigaciones para vulnerabilidades de seguridad (reemplazando EMET) que se pueden configurar con facilidad para proteger sus aplicaciones y el sistema.
-
-
 
 [Control de aplicaciones de Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/windows-defender-application-control) (también conocido como la directiva de integridad de código (CI)) se lanzó en Windows Server 2016.
 Los comentarios de los clientes sugieren que es un concepto excelente, pero difícil de implementar.
@@ -111,7 +117,7 @@ Servicio de migración de almacenamiento es una nueva tecnología que facilita m
 
 ### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directo
 
-Esta es una lista de novedades de Espacios de almacenamiento directo. Para obtener más información, consulta [Novedades de Espacios de almacenamiento directo](../storage/whats-new-in-storage.md#storage-spaces-direct).
+Esta es una lista de novedades de Espacios de almacenamiento directo. Para obtener más información, consulta [Novedades de Espacios de almacenamiento directo](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulte también [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) para información acerca de cómo obtener valida los sistemas de espacios de almacenamiento directo.
 
 - **Desduplicación y compresión de volúmenes de ReFS**
 - **Compatibilidad nativa con memoria persistente**

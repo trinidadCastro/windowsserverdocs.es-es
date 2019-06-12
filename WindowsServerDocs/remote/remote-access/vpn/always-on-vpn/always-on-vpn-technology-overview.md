@@ -8,18 +8,19 @@ ms.date: 11/05/2018
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: fd3f7c6ca8555e270aabf04bbee6800ed284080c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65a575b24ea3c70ad7eedd95fe287d955ccaeea6
+ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821266"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66749675"
 ---
 # <a name="always-on-vpn-technology-overview"></a>Información general sobre la tecnología de VPN de Always On
+
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-&#171;  [**Anterior:** Obtenga información sobre las mejoras de VPN de Always On](always-on-vpn-enhancements.md)<br>
-&#187;  [**próximo:** Obtenga información sobre las características avanzadas de VPN de Always On](deploy/always-on-vpn-adv-options.md)
+- [**Anterior:** Obtenga información sobre las mejoras de VPN de Always On](always-on-vpn-enhancements.md)
+- [**Siguiente:** Obtenga información sobre las características avanzadas de VPN de Always On](deploy/always-on-vpn-adv-options.md)
 
 Para esta implementación, debe instalar a un nuevo servidor de acceso remoto que ejecuta Windows Server 2016, así como modificar parte de su infraestructura existente para la implementación.
 
@@ -33,7 +34,7 @@ El proceso de conexión que se muestra en esta ilustración se compone de los pa
 
 2. Con la dirección IP devuelta por DNS, el cliente VPN envía una solicitud de conexión a la puerta de enlace VPN.
 
-3. La puerta de enlace VPN también se configura como un Remote Authentication Dial-in User Service \(RADIUS\) cliente; el cliente de VPN RADIUS envía la solicitud de conexión al servidor NPS o corporativas de la organización para el procesamiento de solicitud de conexión.
+3. La puerta de enlace VPN también está configurado como un cliente de servicio de autenticación remota telefónica de usuario (RADIUS); el cliente de VPN RADIUS envía la solicitud de conexión al servidor NPS o corporativas de la organización para el procesamiento de solicitud de conexión.
 
 4. El servidor NPS procesa la solicitud de conexión, incluida la realización de autorización y autenticación y determina si se debe permitir o denegar la solicitud de conexión.
 
@@ -52,11 +53,8 @@ Zonas del sistema de nombres de dominio (DNS) internos y externos son necesarias
 
 Obtenga más información sobre [Domain Name System (DNS)](../../../../networking/dns/dns-top.md) o [Guía de red principal](../../../../networking/core-network-guide/core-network-guide.md).
 
-
-
-
->[!NOTE] 
->Otros DNS diseña, por ejemplo, DNS de cerebro dividido (con el mismo nombre de dominio interna y externamente de zonas DNS independientes) o no relacionada con interno y dominios externos (por ejemplo, contoso.local y contoso.com) también son posibles. Para obtener más información sobre la implementación de DNS de cerebro dividido, consulte [uso de directiva DNS para la implementación de DNS de cerebro/división](../../../../networking/dns/deploy/split-brain-DNS-deployment.md).
+>[!NOTE]
+>Otros DNS diseña, por ejemplo, DNS de cerebro dividido (con el mismo nombre de dominio interna y externamente de zonas DNS independientes) o no relacionada con interno y dominios externos (por ejemplo, contoso.local y contoso.com) también son posibles. Para obtener más información sobre la implementación de DNS de cerebro dividido, consulte [uso de directiva DNS para la implementación de DNS Split-Brain](../../../../networking/dns/deploy/split-brain-DNS-deployment.md).
 
 ## <a name="firewalls"></a>Firewalls
 
@@ -70,11 +68,9 @@ En Windows Server 2016, el rol de servidor de acceso remoto está diseñado para
 
 IKEv2 es una protocolo que se describe en la solicitud de Internet Engineering Task Force para comentarios 7296 de túnel de VPN. La ventaja principal de IKEv2 es que tolera interrupciones en la conexión de red subyacente. Por ejemplo, si se pierde temporalmente la conexión o si un usuario mueve un equipo cliente de una red a otra, IKEv2 restaura automáticamente la conexión VPN cuando se restablece la conexión de red, todo ello sin intervención del usuario.
 
-Mediante el uso de puerta de enlace RAS, puede implementar conexiones VPN para proporcionar a los usuarios finales con acceso remoto a la red y los recursos de su organización. Implementación de VPN de Always On mantiene una conexión persistente entre los clientes y la red de su organización, siempre que los equipos remotos están conectados a Internet. Con la puerta de enlace de RAS, también puede crear una conexión VPN de sitio a sitio entre dos servidores en ubicaciones diferentes, como entre la oficina principal y una sucursal y utilizará la traducción de direcciones de red \(NAT\) para que los usuarios dentro de la red puede tener acceso a recursos externos, como Internet. Además, la puerta de enlace RAS admite Border Gateway Protocol (BGP), que proporciona servicios de enrutamiento dinámicos cuando sus oficinas remotas también tienen las puertas de enlace de borde que admiten BGP.
+Mediante el uso de puerta de enlace RAS, puede implementar conexiones VPN para proporcionar a los usuarios finales con acceso remoto a la red y los recursos de su organización. Implementación de VPN de Always On mantiene una conexión persistente entre los clientes y la red de su organización, siempre que los equipos remotos están conectados a Internet. Con la puerta de enlace de RAS, también puede crear una conexión VPN de sitio a sitio entre dos servidores en ubicaciones diferentes, como entre la oficina principal y una sucursal y usar la traducción de direcciones de red (NAT) para que los usuarios dentro de la red pueden tener acceso externo recursos, como Internet. Además, la puerta de enlace RAS admite Border Gateway Protocol (BGP), que proporciona servicios de enrutamiento dinámicos cuando sus oficinas remotas también tienen las puertas de enlace de borde que admiten BGP.
 
 Puede administrar las puertas de enlace de servicio de acceso remoto (RAS) mediante el uso de comandos de Windows PowerShell y remotos acceso a Microsoft Management Console (MMC).
-
-
 
 ## <a name="network-policy-server-nps"></a>Servidor de directivas de redes (NPS)
 
@@ -84,7 +80,6 @@ Además, se configuran las directivas de redes que usa NPS para autorizar las so
 
 Para obtener más información, consulte [servidor de directivas de redes (NPS)](../../../../networking/technologies/nps/nps-top.md).
 
-
 ## <a name="active-directory-certificate-services"></a>Servicios de certificados de Active Directory
 
 El servidor de la entidad de certificación (CA) es una entidad de certificación que se está ejecutando servicios de certificados de Active Directory. La configuración de VPN requiere una basada en Active Directory infraestructura de clave pública (PKI).
@@ -93,23 +88,23 @@ Las organizaciones pueden usar AD CS para mejorar la seguridad al enlazar la ide
 
 Durante la finalización de la implementación, configurará las siguientes plantillas de certificado en la CA.
 
--   La plantilla de certificado de autenticación de usuario
+- La plantilla de certificado de autenticación de usuario
 
--   La plantilla de certificado de autenticación de servidor VPN
+- La plantilla de certificado de autenticación de servidor VPN
 
--   La plantilla de certificado de autenticación del servidor NPS
+- La plantilla de certificado de autenticación del servidor NPS
 
 ### <a name="certificate-templates"></a>Plantillas de certificado
 
 Las plantillas de certificado pueden simplificar notablemente la tarea de administración de una entidad de certificación (CA) por lo que le permite emitir certificados que están preconfigurados para las tareas seleccionadas. El complemento MMC de plantillas de certificado permite realizar las siguientes tareas.
 
--   Ver las propiedades de cada plantilla de certificado.
+- Ver las propiedades de cada plantilla de certificado.
 
--   Copiar y modificar plantillas de certificado.
+- Copiar y modificar plantillas de certificado.
 
--   Controlar qué usuarios y equipos pueden leer las plantillas e inscribirse para certificados.
+- Controlar qué usuarios y equipos pueden leer las plantillas e inscribirse para certificados.
 
--   Realizar otras tareas administrativas relacionadas con las plantillas de certificado.
+- Realizar otras tareas administrativas relacionadas con las plantillas de certificado.
 
 Las plantillas de certificado son una parte integral de una entidad de certificación (CA) empresarial. Son un elemento importante de la directiva de certificado para un entorno, que es el conjunto de reglas y formatos para la inscripción de certificados, el uso y administración.
 
@@ -121,11 +116,11 @@ Esta guía de implementación proporciona instrucciones para usar los servicios 
 
 Cuando se usan certificados de servidor digital para la autenticación entre los equipos de la red, los certificados proporcionan:
 
-1.  Confidencialidad mediante cifrado.
+1. Confidencialidad mediante cifrado.
 
-2.  Integridad mediante firmas digitales.
+2. Integridad mediante firmas digitales.
 
-3.  Autenticación mediante la asociación de claves de certificado con una cuenta de equipo, usuario o dispositivo en una red de equipo.
+3. Autenticación mediante la asociación de claves de certificado con una cuenta de equipo, usuario o dispositivo en una red de equipo.
 
 Para obtener más información, consulte [guía paso a paso de AD CS: Implementación de la jerarquía PKI de dos niveles](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx).
 
@@ -135,17 +130,15 @@ AD DS proporciona una base de datos distribuida que almacena y administra inform
 
 AD DS contiene las cuentas de usuario, las cuentas de equipo y propiedades de la cuenta que son necesarios por protegido Extensible Authentication Protocol (PEAP) para autenticar las credenciales de usuario y para evaluar la autorización para las solicitudes de conexión de VPN. Para obtener información sobre la implementación de AD DS, vea Windows Server 2016 [Guía de red principal](../../../../networking/core-network-guide/Core-Network-Guide.md).
 
-
-
 Durante la realización de los pasos descritos en esta implementación, configurará los siguientes elementos en el controlador de dominio.
 
--   Habilitar la inscripción automática de certificados en la directiva de grupo para equipos y usuarios
+- Habilitar la inscripción automática de certificados en la directiva de grupo para equipos y usuarios
 
--   Crear el grupo de usuarios de VPN
+- Crear el grupo de usuarios de VPN
 
--   Crear el grupo de servidores de VPN
+- Crear el grupo de servidores de VPN
 
--   Crear el grupo de servidores de NPS
+- Crear el grupo de servidores de NPS
 
 ### <a name="active-directory-users-and-computers"></a>Usuarios y equipos de Active Directory
 
@@ -155,14 +148,11 @@ Cuentas de usuario en usuarios y equipos de usuarios de Active Directory tienen 
 
 Para obtener más información, consulte [configurar NPS para la cuenta de usuario Omitir propiedades de acceso telefónico](../../../../networking/technologies/nps/nps-np-configure.md#configure-nps-to-ignore-user-account-dial-in-properties).
 
-
-
 ### <a name="group-policy-management"></a>Administración de directivas de grupo
 
 Administración de directivas de grupo permite la administración de cambios y la configuración basada en Active de configuración del equipo y usuario, incluida la información de usuario y de seguridad. Usar Directiva de grupo para definir configuraciones de grupos de usuarios y equipos.
 
 Con la directiva de grupo, puede especificar valores para las entradas del registro, seguridad, instalación de software, las secuencias de comandos, redirección de carpetas, servicios de instalación remota y mantenimiento de Internet Explorer. La configuración de directiva de grupo que cree se encuentran en un objeto de directiva de grupo (GPO). Al asociar un GPO con contenedores de sistema seleccionados de Active Directory, sitios, dominios y unidades organizativas, puede aplicar la configuración del GPO a los usuarios y equipos de estos contenedores de Active Directory. Para administrar objetos de directiva de grupo en toda la empresa, puede usar el grupo de directiva de administración Editor de Microsoft Management Console (MMC).
-
 
 ## <a name="windows-10-vpn-clients"></a>Clientes VPN de Windows 10
 
@@ -173,16 +163,15 @@ El cliente de VPN de Windows 10 es altamente configurable y ofrece muchas opcion
 
 Tabla 1. Características de VPN y las configuraciones tratadas en esta implementación
 
-| **Característica VPN** | **Configuración del escenario de implementación**         |
+| Característica VPN     |     Configuración del escenario de implementación         |
 |-----------------|-----------------------------------------------|
-| Tipo de conexión | IKEv2 nativo                                  |
-| Enrutamiento         | Tunelización dividida                               |
-| Resolución de nombres | Sufijo de la lista de información de nombre de dominio y DNS   |
-| Desencadenar      | Detección de red siempre encendido y confianza       |
+| Tipo de conexión |                 IKEv2 nativo                  |
+|     Enrutamiento     |                Tunelización dividida                |
+| Resolución de nombres |  Sufijo de la lista de información de nombre de dominio y DNS  |
+|   Desencadenar    |    Detección de red siempre encendido y confianza    |
 | Autenticación  | PEAP-TLS con certificados de usuarios protegidos de TPM: |
----
 
->[!NOTE] 
+>[!NOTE]
 >PEAP-TLS y TPM son "Protected Extensible Authentication Protocol con Transport Layer Security" y "Módulo de plataforma segura,", respectivamente.
 
 ### <a name="vpnv2-csp-nodes"></a>Nodos CSP de VPNv2
@@ -195,18 +184,14 @@ Sin embargo, no se puede configurar algunos nodos CSP directamente a través de 
 
 Windows 10 ofrece muchos de los CSP, pero esta implementación se centra en usar el CSP de VPNv2 para configurar al cliente VPN. El CSP de VPNv2 permite la configuración de cada configuración de perfil VPN en Windows 10 a través de un único nodo CSP. También está incluida en el CSP de VPNv2 es un nodo denominado *ProfileXML*, lo que permite configurar todos los parámetros en un nodo en lugar de individualmente. Para obtener más información acerca de ProfileXML, consulte la sección "Información general de ProfileXML" más adelante en esta implementación. Para obtener más información acerca de cada nodo de CSP de VPNv2, consulte el [CSP de VPNv2](https://msdn.microsoft.com/windows/hardware/commercialize/customize/mdm/vpnv2-csp).
 
-
-
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Obtenga información sobre algunas de las características avanzadas de VPN de Always On](deploy/always-on-vpn-adv-options.md)
 
 - [Comience a planear la implementación de VPN de Always On](deploy/always-on-vpn-deploy-deployment.md)
 
-
----
-
 ## <a name="related-topics"></a>Temas relacionados
+
 - [Soporte de software de servidor de Microsoft para las máquinas virtuales de Microsoft Azure](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines): Este artículo describe la directiva de compatibilidad para ejecutar software de servidor de Microsoft en el entorno de máquina virtual de Microsoft Azure (infraestructura como-servicio).
 
 - [Acceso remoto](../../Remote-Access.md): Este tema proporciona información general sobre el rol de servidor de acceso remoto en Windows Server 2016.
@@ -215,7 +200,7 @@ Windows 10 ofrece muchos de los CSP, pero esta implementación se centra en usar
 
 - [Guía de red principal](../../../../networking/core-network-guide/Core-Network-Guide.md): Esta guía proporciona instrucciones sobre cómo planear e implementar los componentes principales necesarios para una red plenamente funcional y un nuevo dominio de Active Directory en un bosque nuevo.
 
-- [Sistema de nombres de dominio (DNS)](../../../../networking/dns/dns-top.md): En este tema se proporciona información general de los sistemas de nombres de dominio (DNS). En Windows Server 2016, el DNS es un rol de servidor que se puede instalar mediante los comandos del administrador del servidor o Windows PowerShell. Si va a instalar un nuevo bosque de Active Directory y dominio, DNS se instala automáticamente con Active Directory que el servidor de catálogo Global para el bosque y dominio. 
+- [Sistema de nombres de dominio (DNS)](../../../../networking/dns/dns-top.md): En este tema se proporciona información general de los sistemas de nombres de dominio (DNS). En Windows Server 2016, el DNS es un rol de servidor que se puede instalar mediante los comandos del administrador del servidor o Windows PowerShell. Si va a instalar un nuevo bosque de Active Directory y dominio, DNS se instala automáticamente con Active Directory que el servidor de catálogo Global para el bosque y dominio.
 
 - [Información general de servicios de certificados de Active Directory](https://technet.microsoft.com/library/hh831740.aspx): Este documento proporciona información general de servicios de certificados de Active Directory (AD CS) en Windows Server® 2012. AD CS es el rol de servidor que permite crear una infraestructura de clave pública (PKI) y proporcionar criptografía de clave pública, certificados digitales y capacidad de forma digital a su organización.
 
@@ -223,6 +208,4 @@ Windows 10 ofrece muchos de los CSP, pero esta implementación se centra en usar
 
 - [Guía paso a paso de AD CS: Implementación de la jerarquía PKI de dos niveles](https://social.technet.microsoft.com/wiki/contents/articles/15037.ad-cs-step-by-step-guide-two-tier-pki-hierarchy-deployment.aspx): Esta guía paso a paso describe los pasos necesarios para configurar una configuración básica de servicios de certificados de Active Directory® (AD CS) en un entorno de laboratorio. AD CS en Windows Server® 2008 R2 ofrece servicios personalizables para crear y administrar certificados de clave pública utilizados en sistemas de seguridad de software que emplean tecnologías de clave pública.
 
-- [Red (NPS) del servidor de directivas](../../../../networking/technologies/nps/nps-top.md): En este tema se proporciona información general del servidor de directivas de redes en Windows Server 2016. Servidor de directivas de redes (NPS) te permite crear y aplicar directivas de acceso de red de toda la organización para la autenticación y autorización de solicitudes de conexión. 
-
----
+- [Red (NPS) del servidor de directivas](../../../../networking/technologies/nps/nps-top.md): En este tema se proporciona información general del servidor de directivas de redes en Windows Server 2016. Servidor de directivas de redes (NPS) te permite crear y aplicar directivas de acceso de red de toda la organización para la autenticación y autorización de solicitudes de conexión.

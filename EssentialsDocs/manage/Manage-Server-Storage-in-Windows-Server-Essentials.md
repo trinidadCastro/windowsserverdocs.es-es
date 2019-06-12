@@ -12,12 +12,12 @@ ms.assetid: 1836682e-c7bb-4dd5-a2b5-6ff032693574
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: e0f65dfd25afbd584764d33904ba82e4da4c5443
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 38843a511548cd11c154dd5c130a0b2da88b59eb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842456"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433229"
 ---
 # <a name="manage-server-storage-in-windows-server-essentials"></a>Administrar el almacenamiento de servidor en Windows Server Essentials
 
@@ -44,19 +44,19 @@ ms.locfileid: "59842456"
 ##  <a name="BKMK_1"></a> Administrar unidades de disco duro mediante el panel  
  Windows Server Essentials permite administrar todas las unidades de disco duro que están conectadas al servidor mediante el panel. En la pestaña **Almacenamiento** del panel, **Unidades de disco duro** muestra todas las unidades de disco duro que están disponibles en el servidor para almacenar datos y copias de seguridad del servidor. El servidor supervisa el espacio disponible en cada unidad de disco duro y mostrará una alerta si queda poco espacio en la unidad de disco duro. La pestaña **Unidades de disco duro** muestra la siguiente información:  
   
--   El nombre de cada unidad de disco duro.  
+- El nombre de cada unidad de disco duro.  
   
--   La capacidad de cada unidad de disco duro.  
+- La capacidad de cada unidad de disco duro.  
   
--   La cantidad de espacio usado en cada unidad de disco duro.  
+- La cantidad de espacio usado en cada unidad de disco duro.  
   
--   La cantidad de espacio libre en cada unidad de disco duro.  
+- La cantidad de espacio libre en cada unidad de disco duro.  
   
--   El estado de cada unidad de disco duro; un estado en blanco significa que la unidad de disco duro está funcionando correctamente.  
+- El estado de cada unidad de disco duro; un estado en blanco significa que la unidad de disco duro está funcionando correctamente.  
   
--   El panel de detalles, que muestra toda la información de la pila de almacenamiento (para el grupo de almacenamiento, el espacio de almacenamiento y la unidad de disco duro) si la unidad de disco duro seleccionada se encuentra en un espacio de almacenamiento (en lugar de un disco físico).  
+- El panel de detalles, que muestra toda la información de la pila de almacenamiento (para el grupo de almacenamiento, el espacio de almacenamiento y la unidad de disco duro) si la unidad de disco duro seleccionada se encuentra en un espacio de almacenamiento (en lugar de un disco físico).  
   
- En la tabla siguiente se enumeran las tareas de administración de la unidad de disco duro que están disponibles en el panel y sus descripciones. Algunas de las tareas se muestran únicamente cuando se selecciona una unidad de disco duro.  
+  En la tabla siguiente se enumeran las tareas de administración de la unidad de disco duro que están disponibles en el panel y sus descripciones. Algunas de las tareas se muestran únicamente cuando se selecciona una unidad de disco duro.  
   
 ### <a name="available-hard-drive-management-tasks"></a>Tareas administrativas de la unidad de disco duro disponibles  
   
@@ -118,7 +118,7 @@ ms.locfileid: "59842456"
   
 2.  Formatear la unidad de disco duro y configurarla como copia de seguridad de servidor. Si elige esta opción, se inicia el Asistente para configurar la copia de seguridad del servidor, que le guiará a lo largo del proceso de configurar la copia de seguridad del servidor.  
   
-3.  Si existe un t de del espacio de almacenamiento, utilice la nueva unidad de disco dura para crear un espacio de almacenamiento. Debe tener al menos dos unidades de disco duro para crear un espacio de almacenamiento.  
+3.  Si no existe un espacio de almacenamiento, utilice la nueva unidad de disco dura para crear un espacio de almacenamiento. Debe tener al menos dos unidades de disco duro para crear un espacio de almacenamiento.  
   
 4.  Si ya existe un espacio de almacenamiento, use la nueva unidad de disco duro para aumentar la capacidad de un grupo de almacenamiento. Esta opción solo se muestra si hay un espacio de almacenamiento creado en el servidor. Si elige esta opción, el asistente agregará esta unidad de disco duro al grupo de almacenamiento.  
   
@@ -136,41 +136,41 @@ ms.locfileid: "59842456"
   
 ##### <a name="to-store-server-folders"></a>Para almacenar las carpetas de servidor  
   
-1.  Abra el Panel.  
+1. Abra el Panel.  
   
-2.  Haga clic en la pestaña **ALMACENAMIENTO** y, después, en **Carpetas de servidor**.  
+2. Haga clic en la pestaña **ALMACENAMIENTO** y, después, en **Carpetas de servidor**.  
   
-3.  En el panel **Tareas de carpetas de servidor**, realice una de las siguientes acciones:  
+3. En el panel **Tareas de carpetas de servidor**, realice una de las siguientes acciones:  
   
-    1.  Para agregar una carpeta de servidor, haga clic en **Agregar una carpeta**.  
+   1.  Para agregar una carpeta de servidor, haga clic en **Agregar una carpeta**.  
   
-    2.  Para mover una carpeta de servidor, seleccione la carpeta que desea mover a la nueva unidad de disco duro y, a continuación, haga clic en **Mover una carpeta**.  
+   2.  Para mover una carpeta de servidor, seleccione la carpeta que desea mover a la nueva unidad de disco duro y, a continuación, haga clic en **Mover una carpeta**.  
   
-    > [!NOTE]
-    >  Si navega a la unidad de disco duro y la selecciona como ubicación de la carpeta de servidor sin crear una carpeta, aparece el mensaje de error siguiente: **Un directorio raíz (por ejemplo, C:\\, D:\\) no se puede agregar como una carpeta del servidor. Cree una nueva carpeta o seleccione uno existente en el directorio raíz y, a continuación, vuelva a intentarlo**. Para resolver este error, cree una carpeta nueva en la unidad de disco duro recién agregada y, a continuación, seleccione la nueva carpeta como ubicación para almacenar las carpetas de servidor.  
+   > [!NOTE]
+   >  Si navega a la unidad de disco duro y la selecciona como ubicación de la carpeta de servidor sin crear una carpeta, aparece el mensaje de error siguiente: **Un directorio raíz (por ejemplo, C:\\, D:\\) no se puede agregar como una carpeta del servidor. Cree una nueva carpeta o seleccione uno existente en el directorio raíz y, a continuación, vuelva a intentarlo**. Para resolver este error, cree una carpeta nueva en la unidad de disco duro recién agregada y, a continuación, seleccione la nueva carpeta como ubicación para almacenar las carpetas de servidor.  
   
-4.  Siga las instrucciones para finalizar el asistente.  
+4. Siga las instrucciones para finalizar el asistente.  
   
- Para obtener más información sobre cómo mover las carpetas de servidor, consulte [Add or move a server folder](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
+   Para obtener más información sobre cómo mover las carpetas de servidor, consulte [Add or move a server folder](Manage-Server-Folders-in-Windows-Server-Essentials.md#BKMK_5).  
   
 ###  <a name="BKMK_4b"></a> Usar la nueva unidad de disco dura para almacenar las copias de seguridad de servidor  
  Puede usar la unidad de disco duro recién agregada para almacenar copias de seguridad del servidor.  
   
 ##### <a name="to-store-server-backups"></a>Para almacenar las copias de seguridad del servidor  
   
-1.  Abra el Panel.  
+1. Abra el Panel.  
   
-2.  Haga clic en la pestaña **Dispositivos**, seleccione el servidor en el panel de lista y, a continuación, desde el panel de tareas, realice una de las acciones siguientes:  
+2. Haga clic en la pestaña **Dispositivos**, seleccione el servidor en el panel de lista y, a continuación, desde el panel de tareas, realice una de las acciones siguientes:  
   
-    1.  Si la copia de seguridad del servidor no está configurada en el servidor, haga clic en **Configurar copia de seguridad del servidor**.  
+   1. Si la copia de seguridad del servidor no está configurada en el servidor, haga clic en **Configurar copia de seguridad del servidor**.  
   
-    2.  Si la copia de seguridad del servidor está configurada en el servidor, haga clic en **Personalizar la copia de seguridad del servidor**.  
+   2. Si la copia de seguridad del servidor está configurada en el servidor, haga clic en **Personalizar la copia de seguridad del servidor**.  
   
-     Aparece el Asistente para configurar la copia de seguridad del servidor.  
+      Aparece el Asistente para configurar la copia de seguridad del servidor.  
   
-3.  En la página **Seleccionar el destino de la copia de seguridad**, seleccione la nueva unidad de disco duro como destino de la copia de seguridad.  
+3. En la página **Seleccionar el destino de la copia de seguridad**, seleccione la nueva unidad de disco duro como destino de la copia de seguridad.  
   
-4.  Siga las instrucciones para finalizar el asistente.  
+4. Siga las instrucciones para finalizar el asistente.  
   
 ###  <a name="BKMK_4c"></a> Use la nueva unidad de disco dura para aumentar la capacidad del grupo de almacenamiento  
  Cuando la capacidad del grupo de almacenamiento sea baja, recibirá una alerta que indica que puede aumentar la capacidad del grupo de almacenamiento agregando una nueva unidad de disco duro al grupo de almacenamiento mediante el Asistente para aumentar la capacidad de un grupo de almacenamiento.  
@@ -191,7 +191,7 @@ ms.locfileid: "59842456"
 5.  Siga las instrucciones para finalizar el asistente.  
   
 ##  <a name="BKMK_5"></a> Introducción a espacios de almacenamiento  
- Los espacios de almacenamiento permiten agrupan discos en un grupo de almacenamiento. A continuación, puede usar la capacidad del grupo para crear espacios de almacenamiento. Los espacios de almacenamiento son unidades virtuales que aparecen en la pestaña **Unidades de disco duro** del panel. Puede usar espacios de almacenamiento como cualquier otra unidad, por lo que lo sencillo trabajar con archivos en ellos. Cuando empieza a escasear la capacidad del grupo, puede crear espacios de almacenamiento grandes y agregar más unidades al grupo de almacenamiento. Si tiene dos o más discos en el grupo de almacenamiento, puede crear espacios de almacenamiento con un reflejo doble que no se verán afectado por un error de disco? o incluso un error de dos unidades? si crea un espacio de almacenamiento triple.  
+ Los espacios de almacenamiento permiten agrupan discos en un grupo de almacenamiento. A continuación, puede usar la capacidad del grupo para crear espacios de almacenamiento. Los espacios de almacenamiento son unidades virtuales que aparecen en la pestaña **Unidades de disco duro** del panel. Puede usar espacios de almacenamiento como cualquier otra unidad, por lo que es fácil trabajar con archivos en ellos. Cuando empieza a escasear la capacidad del grupo, puede crear espacios de almacenamiento grandes y agregar más unidades al grupo de almacenamiento. Si tiene dos o más discos en el grupo de almacenamiento, puede crear espacios de almacenamiento con un reflejo doble que no se verán afectado por un error de disco? o incluso un error de dos unidades? si crea un espacio de almacenamiento triple.  
   
  Para crear un espacio de almacenamiento, lo único que necesita es una o más unidades adicionales, además la unidad donde está instalado Windows. Estas unidades pueden ser unidades de disco duro internas o externas, o unidades de estado sólido. Puede usar diversos tipos de unidades con los espacios de almacenamiento, incluidas las unidades USB, SATA y SAS.  
   
@@ -212,29 +212,29 @@ ms.locfileid: "59842456"
   
 #### <a name="to-create-a-storage-space-in-windows-server-essentials"></a>Para crear un espacio de almacenamiento en Windows Server Essentials  
   
-1.  Agregue o conecte todas las unidades que desea agrupar con los espacios de almacenamiento al servidor que ejecuta Windows Server Essentials.  
+1. Agregue o conecte todas las unidades que desea agrupar con los espacios de almacenamiento al servidor que ejecuta Windows Server Essentials.  
   
-2.  En el panel, haga clic en **avanzadas: Administrar espacios de almacenamiento**.  
+2. En el panel, haga clic en **avanzadas: Administrar espacios de almacenamiento**.  
   
-3.  Haga clic en **Crear un nuevo grupo y espacio de almacenamiento**.  
+3. Haga clic en **Crear un nuevo grupo y espacio de almacenamiento**.  
   
-4.  Seleccione las unidades que desea agregar al nuevo espacio de almacenamiento y, a continuación, haga clic en **Crear grupo**.  
+4. Seleccione las unidades que desea agregar al nuevo espacio de almacenamiento y, a continuación, haga clic en **Crear grupo**.  
   
-5.  Asigne un nombre y una letra a la unidad y, a continuación, elija un diseño. **Reflejo doble**, **Reflejo triple**y **Paridad** pueden ayudar a proteger los archivos del espacio de almacenamiento frente a errores de la unidad.  
+5. Asigne un nombre y una letra a la unidad y, a continuación, elija un diseño. **Reflejo doble**, **Reflejo triple**y **Paridad** pueden ayudar a proteger los archivos del espacio de almacenamiento frente a errores de la unidad.  
   
-6.  Especifique el tamaño máximo que puede alcanzar el espacio de almacenamiento y, a continuación, haga clic en **Crear espacio de almacenamiento**.  
+6. Especifique el tamaño máximo que puede alcanzar el espacio de almacenamiento y, a continuación, haga clic en **Crear espacio de almacenamiento**.  
   
- En Windows Server Essentials, puede crear un espacio de almacenamiento reflejado bidireccional mediante el uso de crear un asistente de espacio de almacenamiento desde el panel.  
+   En Windows Server Essentials, puede crear un espacio de almacenamiento reflejado bidireccional mediante el uso de crear un asistente de espacio de almacenamiento desde el panel.  
   
 #### <a name="to-create-a-storage-space-in-windows-server-essentials"></a>Para crear un espacio de almacenamiento en Windows Server Essentials  
   
-1.  Agregue o conecte todas las unidades que desea agrupar con los espacios de almacenamiento al servidor que ejecuta Windows Server Essentials.  
+1. Agregue o conecte todas las unidades que desea agrupar con los espacios de almacenamiento al servidor que ejecuta Windows Server Essentials.  
   
-2.  En el panel, haga clic en **Administrar los espacios de almacenamiento**. Aparecerá el Asistente para crear un espacio de almacenamiento.  
+2. En el panel, haga clic en **Administrar los espacios de almacenamiento**. Aparecerá el Asistente para crear un espacio de almacenamiento.  
   
-3.  Siga las instrucciones para completar el asistente.  
+3. Siga las instrucciones para completar el asistente.  
   
- Para obtener información acerca de cómo aumentar la capacidad del grupo de almacenamiento, consulte [Use the new hard drive to increase storage pool capacity](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c).  
+   Para obtener información acerca de cómo aumentar la capacidad del grupo de almacenamiento, consulte [Use the new hard drive to increase storage pool capacity](Manage-Server-Storage-in-Windows-Server-Essentials.md#BKMK_4c).  
   
 ## <a name="see-also"></a>Vea también  
   

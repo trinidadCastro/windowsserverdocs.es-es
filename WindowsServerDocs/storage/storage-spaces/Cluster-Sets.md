@@ -8,24 +8,24 @@ author: johnmarlin-msft
 ms.date: 01/30/2019
 description: En este artículo se describe el escenario de conjuntos de clúster
 ms.localizationpriority: medium
-ms.openlocfilehash: 2deeb6968f910e80bacb2354ad2e575060a7797a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 349b69835ae68c626e886cad30f4d5a89d358372
+ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833956"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66719707"
 ---
 # <a name="cluster-sets"></a>Conjuntos de clústeres
 
-> Se aplica a: Compilación de Windows Server Insider Preview 17650 y versiones posterior
+> Se aplica a: Windows Server 2019
 
-Conjuntos de clúster es la nueva tecnología de escalabilidad horizontal en la nube en esta versión preliminar que aumenta el número de nodos de clúster en una centro de datos definida de Software (SDDC) en la nube en órdenes de magnitud. Un conjunto de clústeres es una agrupación de acoplamiento de varios clústeres de conmutación por error: proceso, almacenamiento o hiperconvergida. Clúster establece tecnología permite fluidez de la máquina virtual a través de clústeres de miembro dentro de un conjunto de clústeres y un espacio de nombres unificado de almacenamiento en todo el conjunto para respaldar la fluidez de la máquina virtual. 
+Conjuntos de clúster es la nueva tecnología de escalabilidad horizontal en la nube en la versión de Windows Server 2019 que aumenta el número de nodos de clúster en una centro de datos definida de Software (SDDC) en la nube en órdenes de magnitud. Un conjunto de clústeres es una agrupación de acoplamiento de varios clústeres de conmutación por error: proceso, almacenamiento o hiperconvergida. Clúster establece tecnología permite fluidez de la máquina virtual a través de clústeres de miembro dentro de un conjunto de clústeres y un espacio de nombres unificado de almacenamiento en todo el conjunto para respaldar la fluidez de la máquina virtual.
 
-Mientras experimenta conservación administración del clúster de conmutación por error existente en clústeres de miembro, una instancia del conjunto de clúster ofrece además casos de uso clave en torno a la administración del ciclo de vida en el agregado. Esta guía de evaluación de escenario de versión preliminar de Windows Server proporciona la información en segundo plano necesarias, así como instrucciones paso a paso para evaluar la tecnología de conjuntos de clúster mediante PowerShell. 
+Mientras experimenta conservación administración del clúster de conmutación por error existente en clústeres de miembro, una instancia del conjunto de clúster ofrece además casos de uso clave en torno a la administración del ciclo de vida en el agregado. Esta guía de evaluación de Windows Server 2019 escenario proporciona la información en segundo plano necesarias, así como instrucciones paso a paso para evaluar la tecnología de conjuntos de clúster mediante PowerShell.
 
 ## <a name="technology-introduction"></a>Introducción de tecnología
 
-Tecnología de conjuntos de clúster se desarrolla para satisfacer las solicitudes de cliente específico operativo nubes del centro de datos definido por Software (SDDC) a escala. Propuesta de valor de conjuntos de clúster en esta versión preliminar puede resumirse de la forma siguiente:  
+Tecnología de conjuntos de clúster se desarrolla para satisfacer las solicitudes de cliente específico operativo nubes del centro de datos definido por Software (SDDC) a escala. Propuesta de valor de conjuntos de clúster puede resumirse de la forma siguiente:  
 
 - Aumentar significativamente la escala de nube SDDC admitida para la ejecución de máquinas virtuales de alta disponibilidad mediante la combinación de varios clústeres más pequeños en un único tejido grande, incluso mientras mantiene el límite de errores de software en un solo clúster
 - Administrar el ciclo de vida de clúster de conmutación por error incluida la incorporación y retirada de clústeres, sin afectar a la disponibilidad de máquina virtual de inquilino, a través de migración de forma fluida de toda las máquinas virtuales a través de este tejido grande
@@ -35,7 +35,7 @@ Tecnología de conjuntos de clúster se desarrolla para satisfacer las solicitud
 
 Desde una vista de alto nivel, se trata qué clúster pueden parecer conjuntos.
 
-![Clúster establece la vista de la solución](media\Cluster-sets-Overview\Cluster-sets-solution-View.png)
+![Clúster establece la vista de la solución](media/Cluster-sets-Overview/Cluster-sets-solution-View.png)
 
 El siguiente proporciona un resumen rápido de cada uno de los elementos de la imagen anterior:
 
@@ -49,7 +49,7 @@ Un clúster de miembro en un conjunto de clústeres es normalmente un clúster h
 
 **Clúster establecido la referencia de espacio de nombres SOFS**
 
-Una referencia de espacio de nombres del conjunto de clúster (clúster establecer Namespace) SOFS es un servidor de archivos de escalabilidad horizontal en la que cada recurso compartido de SMB en el SOFS Namespace establecido de clúster es un recurso compartido de referencia: del tipo 'SimpleReferral' recientemente introducida en esta versión preliminar.  Esta referencia permite que los clientes de bloque de mensajes del servidor (SMB) acceso al destino de recurso compartido de SMB hospedado en el clúster SOFS de miembro. El clúster de establece la referencia de espacio de nombres SOFS es un mecanismo de referencia de peso ligero y por lo tanto, no participa en la ruta de acceso de E/S. Las referencias de SMB se almacenan en caché permanente en cada uno de los nodos de cliente y el espacio de nombres de conjuntos de clúster actualiza dinámicamente automáticamente estas referencias según sea necesario.
+Una referencia de espacio de nombres de conjunto de clúster (clúster establecer Namespace) SOFS es un servidor de archivos de escalabilidad horizontal en la que cada recurso compartido de SMB en el SOFS Namespace establecido de clúster es un recurso compartido de referencia: del tipo 'SimpleReferral' recientemente introducida en Windows Server 2019. Esta referencia permite que los clientes de bloque de mensajes del servidor (SMB) acceso al destino de recurso compartido de SMB hospedado en el clúster SOFS de miembro. El clúster de establece la referencia de espacio de nombres SOFS es un mecanismo de referencia de peso ligero y por lo tanto, no participa en la ruta de acceso de E/S. Las referencias de SMB se almacenan en caché permanente en cada uno de los nodos de cliente y el espacio de nombres de conjuntos de clúster actualiza dinámicamente automáticamente estas referencias según sea necesario.
 
 **Establecer principal del clúster**
 
@@ -100,7 +100,7 @@ En Windows Server 2019, hay un nuevo rol de servidor de archivos de escalabilida
 
 Las siguientes consideraciones se aplican a un rol de infraestructura SOFS:
 
-1.  Puede haber a lo sumo un rol de clúster de SOFS de infraestructura en un clúster de conmutación por error. Se crea el rol SOFS de infraestructura mediante la especificación de la "**-infraestructura**" cambiar el parámetro a la **agregar ClusterScaleOutFileServerRole** cmdlet.  Por ejemplo:
+1.  Puede haber a lo sumo un rol de clúster de SOFS de infraestructura en un clúster de conmutación por error. Se crea el rol SOFS de infraestructura mediante la especificación de la " **-infraestructura**" cambiar el parámetro a la **agregar ClusterScaleOutFileServerRole** cmdlet.  Por ejemplo:
 
         Add-ClusterScaleoutFileServerRole -Name "my_infra_sofs_name" -Infrastructure
 
@@ -112,7 +112,7 @@ Una vez que se crea un conjunto de clústeres, el espacio de nombres del conjunt
 
 En el momento en un clúster de miembro se agrega a un conjunto de clústeres, el administrador especifica el nombre de un SOFS de infraestructura en ese clúster si ya existe uno. Si no existe la infraestructura de SOFS, se crea un nuevo rol de infraestructura SOFS en el nuevo clúster de miembro esta operación. Si ya existe un rol de infraestructura SOFS en el clúster de miembro, la operación de adición implícitamente cambia su nombre para el nombre especificado, según sea necesario. Los servidores SMB de singleton existentes, o funciones no infraestructura SOFS en el miembro clústeres se dejan sin usar por el conjunto de clústeres. 
 
-En el momento en que se crea el conjunto de clústeres, el administrador tiene la opción para usar un objeto de equipo de AD existente como la raíz del espacio de nombres en el clúster de administración. Las operaciones de creación del conjunto de clúster crear el rol de clúster SOFS de infraestructura del clúster de administración o cambia el nombre de la función de infraestructura SOFS existente solo como se describió anteriormente para los clústeres de miembro. Infraestructura de SOFS en el clúster de administración se usa como el clúster del conjunto de referencia de espacio de nombres (clúster establecer Namespace) SOFS. Simplemente significa que cada recurso compartido de SMB en el clúster de establecer espacio de nombres que SOFS es un recurso compartido de referencia: de tipo 'SimpleReferral' - recientemente introducido en esta versión preliminar.  Esta referencia se permite el acceso de los clientes SMB al destino de recurso compartido de SMB hospedado en el clúster SOFS de miembro. El clúster de establece la referencia de espacio de nombres SOFS es un mecanismo de referencia de peso ligero y por lo tanto, no participa en la ruta de acceso de E/S. Las referencias de SMB se almacenan en caché permanente en cada uno de los nodos de cliente y el espacio de nombres de conjuntos de clúster actualiza dinámicamente automáticamente estas referencias según sea necesario
+En el momento en que se crea el conjunto de clústeres, el administrador tiene la opción para usar un objeto de equipo de AD existente como la raíz del espacio de nombres en el clúster de administración. Las operaciones de creación del conjunto de clúster crear el rol de clúster SOFS de infraestructura del clúster de administración o cambia el nombre de la función de infraestructura SOFS existente solo como se describió anteriormente para los clústeres de miembro. Infraestructura de SOFS en el clúster de administración se usa como el clúster del conjunto de referencia de espacio de nombres (clúster establecer Namespace) SOFS. Simplemente significa que cada recurso compartido de SMB en el clúster de establecer espacio de nombres que SOFS es un recurso compartido de referencia: del tipo 'SimpleReferral' - recientemente introducida en Windows Server 2019.  Esta referencia se permite el acceso de los clientes SMB al destino de recurso compartido de SMB hospedado en el clúster SOFS de miembro. El clúster de establece la referencia de espacio de nombres SOFS es un mecanismo de referencia de peso ligero y por lo tanto, no participa en la ruta de acceso de E/S. Las referencias de SMB se almacenan en caché permanente en cada uno de los nodos de cliente y el espacio de nombres de conjuntos de clúster actualiza dinámicamente automáticamente estas referencias según sea necesario
 
 ## <a name="creating-a-cluster-set"></a>Creación de un conjunto de clústeres
 
@@ -120,7 +120,7 @@ En el momento en que se crea el conjunto de clústeres, el administrador tiene l
 
 Cuando se establece la creación de un clúster, se recomienda que los requisitos previos siguientes:
 
-1. Configurar a un cliente de administración que ejecuta la versión más reciente de Windows Server Insider.
+1. Configurar a un cliente de administración que ejecuta Windows Server 2019.
 2. Instalar las herramientas de clúster de conmutación por error en este servidor de administración.
 3. Creación de los miembros del clúster (al menos dos clústeres con al menos dos volúmenes compartidos de clúster en cada clúster)
 4. Crear un clúster de administración (físico o invitado) que une los clústeres de miembro.  Este enfoque garantiza los conjuntos de clúster sigue estando disponible a pesar de los errores de clúster de miembro posibles plano de administración.
@@ -258,7 +258,11 @@ En vivo de migración de una máquina virtual entre clústeres de conjunto de di
 2. migración en vivo la máquina virtual a un nodo de miembro de un clúster diferente.
 3. agregar la máquina virtual en el clúster como un nuevo rol de máquina virtual.
 
-Estos pasos con conjuntos de clúster no son necesarios y se necesita un solo comando.  Por ejemplo, quiero mover una máquina virtual de clúster pone de CLUSTER1 a NODE2 CL3 en CLUSTER3.  El comando sería:
+Estos pasos con conjuntos de clúster no son necesarios y se necesita un solo comando.  En primer lugar, debe establecer todas las redes estén disponibles para la migración con el comando:
+
+    Set-VMHost -UseAnyNetworkMigration $true
+
+Por ejemplo, quiero mover una máquina virtual de clúster pone de CLUSTER1 a NODE2 CL3 en CLUSTER3.  El comando sería:
 
         Move-ClusterSetVM -CimSession CSMASTER -VMName CSVM1 -Node NODE2-CL3
 
@@ -327,7 +331,7 @@ Por ejemplo, el comando para quitar el clúster clúster1 de conjuntos de clúst
 **Pregunta:** ¿Puedo administrar mi clúster establecido a través de System Center Virtual Machine Manager? <br>
 **Respuesta:** System Center Virtual Machine Manager no admite actualmente los conjuntos de clúster <br><br> **Pregunta:** ¿Pueden Windows Server 2012 R2 o 2016 clústeres coexistir en el mismo conjunto de clústeres? <br>
 **Pregunta:** ¿Puedo migrar las cargas de trabajo fuera de Windows Server 2012 R2 o 2016 clústeres por el solo hecho de tener esos clústeres unir el mismo conjunto de clúster? <br>
-**Respuesta:** Conjuntos de clúster es una nueva tecnología que se introdujo en Windows Server Preview compilaciones, así que por lo tanto, no existe en las versiones anteriores. Los clústeres basados en sistema operativo de nivel inferior no pueden unirse a un conjunto de clústeres. Sin embargo, la tecnología de las actualizaciones gradual de sistema operativo del clúster debe proporcionar la funcionalidad de migración que buscan actualizando estos clústeres a Windows Server 2019.
+**Respuesta:** Conjuntos de clúster es una nueva tecnología que se introdujo en Windows Server 2019, así que por lo tanto, no existe en las versiones anteriores. Los clústeres basados en sistema operativo de nivel inferior no pueden unirse a un conjunto de clústeres. Sin embargo, la tecnología de las actualizaciones gradual de sistema operativo del clúster debe proporcionar la funcionalidad de migración que buscan actualizando estos clústeres a Windows Server 2019.
 
 **Pregunta:** ¿Pueden conjuntos Clústerme permite escalar el almacenamiento o de proceso (solo)? <br>
 **Respuesta:** Sí, agregando simplemente un clúster de Hyper-V tradicional o espacio de almacenamiento directo. Con los conjuntos de clúster es un sencillo cambio de relación de almacenamiento de Compute incluso en un conjunto de clúster hiperconvergido.
@@ -360,7 +364,7 @@ Por ejemplo, el comando para quitar el clúster clúster1 de conjuntos de clúst
 **Respuesta:** Todos los clústeres de miembro deben estar en el mismo bosque de AD.
 
 **Pregunta:** ¿Cuántos clústeres o nodos puede ser parte de un único clúster establecer? <br>
-**Respuesta:** Conjuntos de clústeres en versión preliminar, se han probado y admite hasta 64 nodos total del clúster. Sin embargo, clúster establece arquitectura escala mucho mayor límites y no es algo que está codificado para un límite. Por favor, informar a Microsoft si mayor escala es fundamental y cómo planea usarla.
+**Respuesta:** Conjuntos de clústeres en Windows Server 2019, se han probado y admite hasta 64 nodos total del clúster. Sin embargo, clúster establece arquitectura escala mucho mayor límites y no es algo que está codificado para un límite. Por favor, informar a Microsoft si mayor escala es fundamental y cómo planea usarla.
 
 **Pregunta:** ¿Todos los clústeres de espacios de almacenamiento directo en un conjunto de clústeres forman un único grupo de almacenamiento? <br>
 **Respuesta:** No. Tecnología de almacenamiento de espacios directo todavía funciona dentro de un clúster y no a través de clústeres de miembro en un conjunto de clústeres.
@@ -372,4 +376,4 @@ Por ejemplo, el comando para quitar el clúster clúster1 de conjuntos de clúst
 **Respuesta:** No. Conjunto de nombres del clúster ofrece un espacio de nombres de referencia de superposición dentro de un conjunto de clústeres: conceptualmente como archivo de sistema distribuido espacios de nombres (DFSN). Y, a diferencia de DFSN, todos los metadatos de referencia de espacio de nombres de conjunto de clúster están rellena automáticamente y se actualiza automáticamente en todos los nodos sin intervención del administrador, por lo que hay casi ninguna sobrecarga de rendimiento en la ruta de acceso de almacenamiento. 
 
 **Pregunta:** ¿Cómo puedo backup los metadatos del conjunto de clúster? <br>
-**Respuesta:** Esta guía es igual que el del clúster de conmutación por error. La copia de seguridad sistema de estado de una copia de seguridad del estado del clúster.  A través de la copia de seguridad de Windows Server, puede realizar restauraciones de solo de un nodo clúster base de datos (que nunca debería ser necesario debido a un montón de lógica de recuperación automática tenemos) o realizar una restauración autoritativa para revertir la base de datos de todo el clúster en todos los nodos. En el caso de conjuntos de clúster, Microsoft recomienda hacer este tipo de una restauración autoritativa en primer lugar en el clúster de miembro y, a continuación, en el clúster de administración si es necesario. 
+**Respuesta:** Esta guía es igual que el del clúster de conmutación por error. La copia de seguridad sistema de estado de una copia de seguridad del estado del clúster.  A través de la copia de seguridad de Windows Server, puede realizar restauraciones de solo de un nodo clúster base de datos (que nunca debería ser necesario debido a un montón de lógica de recuperación automática tenemos) o realizar una restauración autoritativa para revertir la base de datos de todo el clúster en todos los nodos. En el caso de conjuntos de clúster, Microsoft recomienda hacer este tipo de una restauración autoritativa en primer lugar en el clúster de miembro y, a continuación, en el clúster de administración si es necesario.

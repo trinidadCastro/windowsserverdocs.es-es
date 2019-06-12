@@ -12,12 +12,12 @@ ms.assetid: 0d340223-fa24-4c75-ba8e-b654feb120ab
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 6b49fee7ca4a19d5a501cf96c1ce356f8242c81f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5654f28aeda3c231376ed888a8aa04bc0cf3d000
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830926"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432493"
 ---
 # <a name="run-the-windows-server-essentials-log-collector"></a>Ejecución del compilador de registros de Windows Server Essentials
 Puede ejecutar el recopilador de registros de Windows Server Essentials desde el servidor o en un equipo en la red. Si ejecuta el Compilador de registros desde el servidor, solo podrá recopilar registros del servidor. Si ejecuta el Compilador de registros desde un equipo de red, puede recopilar registros del servidor además de los registros de ese equipo.  
@@ -26,20 +26,20 @@ Puede ejecutar el recopilador de registros de Windows Server Essentials desde el
   
 #### <a name="to-run-the-log-collector-on-the-server-by-using-the-wizard"></a>Para ejecutar el Compilador de registros en el servidor usando el asistente  
   
-1.  En el **iniciar** página del servidor, haga clic en **Windows Server Essentials Log Collector**.  
+1. En el **iniciar** página del servidor, haga clic en **Windows Server Essentials Log Collector**.  
   
-    > [!NOTE]
-    >  -   Si el programa de recopilador de registros no aparece en el **iniciar** página, vaya a **%system%\Program Files (x86) \Windows Server Essentials Log Collector**y, a continuación, haga doble clic en **LogCollector** .  
-    > -   Si no ha iniciado sesión en el servidor con privilegios administrativos, el Compilador de registros le pide que escriba sus credenciales.  
+   > [!NOTE]
+   > - Si el programa de recopilador de registros no aparece en el **iniciar** página, vaya a **%system%\Program Files (x86) \Windows Server Essentials Log Collector**y, a continuación, haga doble clic en **LogCollector** .  
+   >   -   Si no ha iniciado sesión en el servidor con privilegios administrativos, el Compilador de registros le pide que escriba sus credenciales.  
   
-2.  Cuando se le pida una ubicación guardar los archivos de registro recopilados, puede elegir la ubicación predeterminada,  **\\ \\< ServerName\>\logs**, o especificar otra ubicación. Para aceptar la ubicación predeterminada, haga clic en **Siguiente**. Para cambiar la ubicación, haga clic en **Examinar**, vaya hasta la carpeta donde desea guardar los archivos de registro y, a continuación, haga clic en **Guardar**.  
+2. Cuando se le pida una ubicación guardar los archivos de registro recopilados, puede elegir la ubicación predeterminada,  **\\ \\< ServerName\>\logs**, o especificar otra ubicación. Para aceptar la ubicación predeterminada, haga clic en **Siguiente**. Para cambiar la ubicación, haga clic en **Examinar**, vaya hasta la carpeta donde desea guardar los archivos de registro y, a continuación, haga clic en **Guardar**.  
   
-    > [!NOTE]
-    >  No es necesario que proporcione los nombres de archivo de los archivos de registro. El recopilador de registros nombres de la colección de archivos .zip concatenando el nombre del equipo y la marca de tiempo del archivo.  
+   > [!NOTE]
+   >  No es necesario que proporcione los nombres de archivo de los archivos de registro. El recopilador de registros nombres de la colección de archivos .zip concatenando el nombre del equipo y la marca de tiempo del archivo.  
   
-3.  Se muestra una barra de progreso mientras se recopilan los registros.  
+3. Se muestra una barra de progreso mientras se recopilan los registros.  
   
-4.  Para ver el contenido del archivo de recopilación de registros, seleccione la casilla **Abrir la ubicación del archivo donde se han guardado los registros** y, a continuación, haga clic en **Cerrar** para cerrar el asistente y abrir el archivo de recopilación de registros.  
+4. Para ver el contenido del archivo de recopilación de registros, seleccione la casilla **Abrir la ubicación del archivo donde se han guardado los registros** y, a continuación, haga clic en **Cerrar** para cerrar el asistente y abrir el archivo de recopilación de registros.  
   
 #### <a name="to-run-the-log-collector-on-a-network-computer-by-using-the-wizard"></a>Para ejecutar el Compilador de registros en un equipo de la red usando el asistente  
   

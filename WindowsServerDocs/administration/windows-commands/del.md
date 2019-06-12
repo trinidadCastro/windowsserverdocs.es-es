@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a1c2756e53d9f047160ddd037b3868e47d6e3181
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b10da1a6035155d525a516f35f83a25209e90075
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822996"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433888"
 ---
 # <a name="del"></a>del
 
@@ -51,29 +51,29 @@ erase [/p] [/f] [/s] [/q] [/a[:]<Attributes>] <Names>
 
 > [!CAUTION]
 > Si usas **SUPR** para eliminar un archivo desde el disco, no podrá recuperarla.
--   Si usas **/p**, **SUPR** muestra el nombre de un archivo y envía el mensaje siguiente:
+> -   Si usas **/p**, **SUPR** muestra el nombre de un archivo y envía el mensaje siguiente:
 
     `FileName, Delete (Y/N)?`
 
-    Para confirmar la eliminación, presione S. Para cancelar la eliminación y mostrar el siguiente nombre de archivo (es decir, si especifica un grupo de archivos), presione N. Para detener el **SUPR** de comandos, presione CTRL+C.
--   Si deshabilita las extensiones de comando, **/s** muestra los nombres de los archivos que no se encontraron en lugar de mostrar los nombres de archivos que se va a eliminar (es decir, se invierte el comportamiento).
--   Si especifica una carpeta en *nombres*, se eliminan todos los archivos en la carpeta. Por ejemplo, el siguiente comando elimina todos los archivos de la carpeta \Work:  
-    ```
-    del \work
-    ```  
--   Puede usar caracteres comodín (**&#42;** y **?**) para eliminar más de un archivo a la vez. Sin embargo, para evitar eliminar archivos involuntariamente, debe usar caracteres comodín con precaución con el **SUPR** comando. Por ejemplo, si escribe el siguiente comando:  
-    ```
-    del *.*
-    ```  
-    El **SUPR** comando muestra el símbolo del sistema siguiente:
+    To confirm the deletion, press Y. To cancel the deletion and display the next file name (that is, if you specified a group of files), press N. To stop the **del** command, press CTRL+C.
+- Si deshabilita las extensiones de comando, **/s** muestra los nombres de los archivos que no se encontraron en lugar de mostrar los nombres de archivos que se va a eliminar (es decir, se invierte el comportamiento).
+- Si especifica una carpeta en *nombres*, se eliminan todos los archivos en la carpeta. Por ejemplo, el siguiente comando elimina todos los archivos de la carpeta \Work:  
+  ```
+  del \work
+  ```  
+- Puede usar caracteres comodín ( **&#42;** y **?** ) para eliminar más de un archivo a la vez. Sin embargo, para evitar eliminar archivos involuntariamente, debe usar caracteres comodín con precaución con el **SUPR** comando. Por ejemplo, si escribe el siguiente comando:  
+  ```
+  del *.*
+  ```  
+  El **SUPR** comando muestra el símbolo del sistema siguiente:
 
-    `Are you sure (Y/N)?`
+  `Are you sure (Y/N)?`
 
-    Para eliminar todos los archivos en el directorio actual, presione s y, a continuación, presione ENTRAR. Para cancelar la eliminación, presione N y, a continuación, presione ENTRAR.
+  Para eliminar todos los archivos en el directorio actual, presione s y, a continuación, presione ENTRAR. Para cancelar la eliminación, presione N y, a continuación, presione ENTRAR.
 
 > [!NOTE]
 > Antes de usar caracteres comodín con el **SUPR** comando, use los mismos caracteres comodín con el **dir** comando para enumerar todos los archivos que se eliminará.
--   El **SUPR** comando, con diferentes parámetros, está disponible en la consola de recuperación.
+> -   El **SUPR** comando, con diferentes parámetros, está disponible en la consola de recuperación.
 
 ## <a name="BKMK_examples"></a>Ejemplos
 
@@ -84,7 +84,7 @@ del c:\test\*.*
 ```
 Para eliminar todos los archivos con la extensión de nombre de archivo .bat desde el directorio actual, escriba:
 ```
-del *.bak
+del *.bat
 ```
 Para eliminar todos los archivos de solo lectura en el directorio actual, escriba:
 ```

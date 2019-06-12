@@ -14,24 +14,24 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: eb2e5be2ed19fe7cd64f6c6bd64ca9afafd93bff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf67a1c9675191936a6150bb950c59e6f99b54ad
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812316"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810695"
 ---
 # <a name="install-server-with-desktop-experience"></a>Instalación de servidor con Experiencia de escritorio
 > Se aplica a: Windows Server 2016
   
 
-Cuando se instala Windows Server 2016 mediante el Asistente para la instalación, puede elegir entre **Windows Server 2016** y **Windows Server 2016 (Servidor con Experiencia de escritorio)**. La opción Servidor con Experiencia de escritorio es el equivalente de Windows Server 2016 de la opción de instalación completa disponible en Windows Server 2012 R2 con la característica Experiencia de escritorio instalada. Si no elige una opción en el Asistente para instalación, se instala **Windows Server 2016**; se trata de la opción de instalación **Server Core**.
+Cuando se instala Windows Server 2016 mediante el Asistente para la instalación, puede elegir entre **Windows Server 2016** y **Windows Server 2016 (Servidor con Experiencia de escritorio)** . La opción Servidor con Experiencia de escritorio es el equivalente de Windows Server 2016 de la opción de instalación completa disponible en Windows Server 2012 R2 con la característica Experiencia de escritorio instalada. Si no elige una opción en el Asistente para instalación, se instala **Windows Server 2016**; se trata de la opción de instalación **Server Core**.
 
 La opción Servidor con Experiencia de escritorio instala la interfaz de usuario estándar y todas las herramientas, incluidas las características de experiencia de cliente que requieren una instalación independiente de Windows Server 2012 R2. Los roles y características de servidor se instalan con Administrador del servidor o con otros métodos. En comparación con la opción Server Core, requiere más espacio en disco y tiene requisitos de mantenimiento de mantenimiento más estrictos, por lo que se recomienda que elija la instalación Server Core a menos que necesite particularmente los elementos de la interfaz de usuario y las herramientas de administración de gráficos que se incluyen en la opción Servidor con Experiencia de escritorio. Si cree que puede trabajar sin los elementos adicionales, vea [Instalar Server Core](Getting-Started-with-Server-Core.md). Para ver una opción aún más ligera, consulte [Instalar Nano Server](Getting-Started-with-Nano-Server.md).
 
->[!NOTE]
+> [!NOTE]
 >
->A diferencia de algunas versiones anteriores de Windows Server, no se puede convertir entre Server Core y Servidor con Experiencia de escritorio tras la instalación. Si instala Servidor con Experiencia de escritorio y más tarde decides usar Server Core, debes efectuar una instalación nueva.
+> A diferencia de algunas versiones anteriores de Windows Server, no se puede convertir entre Server Core y Servidor con Experiencia de escritorio tras la instalación. Si instala Servidor con Experiencia de escritorio y más tarde decides usar Server Core, debes efectuar una instalación nueva.
 
 **Interfaz de usuario:** Interfaz gráfica de usuario estándar (“Shell gráfico de servidor”). El Shell gráfico de servidor incluye el nuevo shell de Windows 10. Las características específicas de Windows instaladas de forma predeterminada con esta opción son User-Interfaces-Infra, Server-GUI-Shell, Server-GUI-Mgmt-Infra, InkAndHandwritingServices, ServerMediaFoundation y Experiencia de escritorio. Aunque estas características aparecen en el Administrador del servidor en esta versión, no se admite su desinstalación y no estarán disponibles en las versiones futuras.
 

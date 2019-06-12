@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 6510f8b21186b856eb489c1add0674b8984b0e56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5a0991c76ba890bb94b0dcf258df6207ed228e72
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857096"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441797"
 ---
 # <a name="reset-session"></a>reset session
 
@@ -36,6 +36,7 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 ```  
 
 ## <a name="parameters"></a>Parámetros  
+
 |Parámetro|Descripción|  
 |-------|--------|  
 |\<SessionName>|Especifica el nombre de la sesión que desea restablecer. Para determinar el nombre de la sesión, utilice el **consultar sesión** comando.|  
@@ -51,14 +52,14 @@ reset session {<SessionName> | <SessionID>} [/server:<ServerName>] [/v]
 -   El **/Server** parámetro es obligatorio solo si usa **restablecer sesión** desde un servidor remoto.  
 
 ## <a name="BKMK_examples"></a>Ejemplos  
--   Para restablecer la sesión designada rdp-tcp #6, escriba:  
-    ```  
-    reset session rdp-tcp#6  
-    ```  
--   Para restablecer la sesión que utiliza 3 Id. de sesión, escriba:  
-    ```  
-    reset session 3  
-    ```  
+- Para restablecer la sesión designada rdp-tcp #6, escriba:  
+  ```  
+  reset session rdp-tcp#6  
+  ```  
+- Para restablecer la sesión que utiliza 3 Id. de sesión, escriba:  
+  ```  
+  reset session 3  
+  ```  
 
 #### <a name="additional-references"></a>Referencias adicionales  
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  

@@ -12,12 +12,12 @@ ms.assetid: 198d16cb-3d07-4706-be89-ad14a5f7dc47
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9c240320d990652a4669499d99c1fc3eba9e06fa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4dd32d57f6f36bdbf94c763fe0cbd1f37ff990b8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883596"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433114"
 ---
 # <a name="overview-of-the-launchpad-in-windows-server-essentials"></a>Introducción al Launchpad en Windows Server Essentials
 
@@ -29,20 +29,20 @@ Launchpad de Windows Server Essentials es una pequeña aplicación que se instal
   
  Los siguientes sistemas operativos de Windows admiten el uso de Launchpad de Windows Server Essentials:  
   
--   **Windows 8**: todas las ediciones.  
+- **Windows 8**: todas las ediciones.  
   
--   **Windows 7**: todas las ediciones.  
--   **Windows 10**: todas las ediciones. 
+- **Windows 7**: todas las ediciones.  
+- **Windows 10**: todas las ediciones. 
   
- Los siguientes sistemas operativos no admiten el uso de Launchpad de Windows Server Essentials:  
+  Los siguientes sistemas operativos no admiten el uso de Launchpad de Windows Server Essentials:  
   
--   **Servidores adicionales**: no se puede ejecutar Launchpad de Windows Server Essentials en los equipos adicionales que ejecutan el sistema operativo Windows Server.  
+- **Servidores adicionales**: no se puede ejecutar Launchpad de Windows Server Essentials en los equipos adicionales que ejecutan el sistema operativo Windows Server.  
   
- En este tema:  
+  En este tema:  
   
--   [Uso de Launchpad](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
+- [Uso de Launchpad](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Launchpad)  
   
--   [Uso de Launchpad con un equipo Mac](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
+- [Uso de Launchpad con un equipo Mac](Overview-of-the-Launchpad-in-Windows-Server-Essentials.md#BKMK_Mac)  
   
 ##  <a name="BKMK_Launchpad"></a> Uso de Launchpad  
  La información y los vínculos siguientes están disponibles en Launchpad de Windows Server Essentials.  
@@ -50,13 +50,13 @@ Launchpad de Windows Server Essentials es una pequeña aplicación que se instal
 ### <a name="backup"></a>Copias de seguridad  
  Haga clic en **Copia de seguridad** para abrir las **Propiedades de copia de seguridad** del equipo. En la página **Propiedades de copia de seguridad** puede:  
   
--   Iniciar o detener una copia de seguridad.  
+- Iniciar o detener una copia de seguridad.  
   
--   Ver el estado y los detalles de la copia de seguridad más reciente.  
+- Ver el estado y los detalles de la copia de seguridad más reciente.  
   
--   Especificar la manera en que se administrará la energía del equipo cuando se ejecute la copia de seguridad.  
+- Especificar la manera en que se administrará la energía del equipo cuando se ejecute la copia de seguridad.  
   
- Para obtener información acerca de cómo usar Launchpad para hacer una copia de seguridad del equipo, consulte [administrar copias de seguridad de cliente](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md).  
+  Para obtener información acerca de cómo usar Launchpad para hacer una copia de seguridad del equipo, consulte [administrar copias de seguridad de cliente](Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md).  
   
 ### <a name="remote-web-access"></a>Acceso web remoto  
  Haga clic en **Acceso Web remoto** para abrir el explorador web en el sitio de Acceso Web remoto. El sitio de Acceso Web remoto le permite conectarse a otros equipos y tener acceso a algunos de los recursos de red desde la oficina o desde cualquier ubicación remota con un equipo habilitado para Internet. Para obtener más información sobre el acceso Web remoto, consulte [administrar acceso Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md).  

@@ -7,21 +7,22 @@ author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.date: 04/12/2019
-ms.openlocfilehash: 7bf23c5af5620241574864babd07fd852115a450
-ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.date: 06/07/2019
+ms.openlocfilehash: e7cf6fc6a4fae2eee76409bd6af4ef2ff6ed35a3
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66260275"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811779"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conocidos de Windows Admin Center
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+> Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
 
 Si encuentras un problema no descrito en esta página, [háznoslo saber](http://aka.ms/WACfeedback).
 
 ## <a name="lenovo-xclarity-integrator"></a>Lenovo XClarity integrador
+
 Ya se ha resuelto el problema de incompatibilidad anteriormente ha informado de la extensión de integración de Lenovo XClarity y Windows Admin Center versión 1904 con Windows Admin Center versión 1904.1. Se recomienda encarecidamente que actualice a la última versión compatible de Windows Admin Center.
 
 - Lenovo XClarity integrador versión 1.1 de la extensión es totalmente compatible con Windows Admin Center 1904.1. Se recomienda encarecidamente que actualice a la versión más reciente de Windows Admin Center y la extensión de Lenovo.
@@ -50,8 +51,8 @@ Ya se ha resuelto el problema de incompatibilidad anteriormente ha informado de 
 
 - Si tiene Windows Admin Center instalado como una puerta de enlace y la lista de conexiones parece estar dañada, realice los pasos siguientes:
 
->[!WARNING]
->Esta acción eliminará la configuración para todos los usuarios de Windows Admin Center en la puerta de enlace y una lista de conexiones.
+   > [!WARNING]
+   >Esta acción eliminará la configuración para todos los usuarios de Windows Admin Center en la puerta de enlace y una lista de conexiones.
 
   1. Desinstala Windows Admin Center
   2. Elimina la carpeta **Server Management Experience** en **C:\Windows\ServiceProfiles\NetworkService\AppData\Roaming\Microsoft**
@@ -82,7 +83,7 @@ Ya se ha resuelto el problema de incompatibilidad anteriormente ha informado de 
 
 - Al utilizar Azure Active Directory como proveedor de identidades y Windows Admin Center se configura con un certificado autofirmado o, en caso contrario , no de confianza, no puedes completar la autenticación de AAD en Microsoft Edge.  [15968377]
 
-- Si ha implementado como un servicio de Windows Admin Center y que usa Microsoft Edge como explorador, conectar la puerta de enlace de Azure puede fallar después de generar una nueva ventana del explorador. Intenta solucionar este problema mediante la adición de https://login.microsoftonline.com, https://login.live.com, y la dirección URL de la puerta de enlace como sitios de confianza y sitios permitidos para la configuración del bloqueador de elementos emergentes en el explorador del lado cliente. Para obtener instrucciones sobre cómo corregir esto en el [Guía de solución](troubleshooting.md#azlogin). [17990376]
+- Si ha implementado como un servicio de Windows Admin Center y que usa Microsoft Edge como explorador, conectar la puerta de enlace de Azure puede fallar después de generar una nueva ventana del explorador. Intenta solucionar este problema mediante la adición de https://login.microsoftonline.com, https://login.live.com, y la dirección URL de la puerta de enlace como sitios de confianza y sitios permitidos para la configuración del bloqueador de elementos emergentes en el explorador del lado cliente. Para obtener instrucciones sobre cómo corregir esto en el [Guía de solución](troubleshooting.md#azure-features-dont-work-properly-in-edge). [17990376]
 
 - Si tiene instalado en modo de escritorio de Windows Admin Center, la pestaña del explorador Microsoft Edge no mostrará el favicon. [17665801]
 
@@ -100,8 +101,6 @@ Windows Admin Center no se ha probado con Mozilla Firefox, pero deberían funcio
 
 - Instalación de Windows 10: Mozilla Firefox tiene su propio almacén de certificados, por lo que debe importar el ```Windows Admin Center Client``` certificado en Firefox para usar Windows Admin Center en Windows 10.
 
-<a id="websockets"></a>
-
 ## <a name="websocket-compatibility-when-using-a-proxy-service"></a>Compatibilidad de WebSocket al usar un servicio de proxy
 
 Los módulos Escritorio remoto, PowerShell y Eventos en Windows Admin Center utilizan el protocolo WebSocket, que a menudo no se admite al utilizar un servicio de proxy. El soporte de Websocket en Proxy de aplicación de Azure AD se encuentra en la [vista previa](https://blogs.technet.microsoft.com/applicationproxyblog/2018/03/28/limited-websocket-support-now-in-public-preview/) y buscando comentarios sobre compatibilidad.
@@ -114,8 +113,6 @@ Los módulos Escritorio remoto, PowerShell y Eventos en Windows Admin Center uti
 Escribe `$PSVersiontable` en PowerShell para comprobar que esté instalado WMF y que la versión sea 5.1 o posterior.
 
 Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
-
-<a id="rbacknownissues"></a>
 
 ## <a name="role-based-access-control-rbac"></a>Control de acceso (RBAC) basado en roles
 
@@ -141,7 +138,7 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
 ### <a name="events"></a>Eventos
 
-- Los eventos se realiza a través de [compatibilidad de websocket al usar un servicio de proxy.](#websockets)
+- Los eventos se realiza a través de [compatibilidad de websocket al usar un servicio de proxy.](#websocket-compatibility-when-using-a-proxy-service)
 
 - Puedes obtener un error que hace referencia al "tamaño del paquete" al exportar los archivos de registro de gran tamaño. [16630279]
 
@@ -153,7 +150,7 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
 ### <a name="powershell"></a>PowerShell
 
-- PowerShell se realiza a través de [compatibilidad de websocket cuando se usa un servicio de proxy](#websockets)
+- PowerShell se realiza a través de [compatibilidad de websocket cuando se usa un servicio de proxy](#websocket-compatibility-when-using-a-proxy-service)
 
 - Pegar con un solo clic con el botón derecho en la consola de PowerShell del escritorio no funciona. En su lugar, obtendrás el menú contextual del explorador, donde puedes seleccionar pegar. Ctrl-V funciona bien.
 
@@ -173,7 +170,7 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
 - Algunas configuraciones pueden bloquear el cliente de escritorio remoto de Windows Admin Center con la directiva de grupo. Si se produce esto, habilitar ```Allow users to connect remotely by using Remote Desktop Services``` bajo ```Computer Configuration/Policies/Administrative Templates/Windows Components/Remote Desktop Services/Remote Desktop Session Host/Connections```
 
-- Escritorio remoto se ve afectado por [compatibilidad de websocket.](#websockets)
+- Escritorio remoto se ve afectado por [compatibilidad de websocket.](#websocket-compatibility-when-using-a-proxy-service)
 
 - La herramienta Escritorio remoto no admite actualmente copiar/pegar texto, imagen o archivo entre el escritorio local y la sesión remota.
 

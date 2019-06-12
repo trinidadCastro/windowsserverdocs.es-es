@@ -12,12 +12,12 @@ ms.assetid: ecf19216-7aac-4aca-839a-342ac28f5329
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 293b392203269a65efffcefb3744bedc659f71c9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4756d3735fd710930e0eb124b7b5c58c50078d9e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862026"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432427"
 ---
 # <a name="troubleshoot-windows-server-essentials-installation"></a>Solucionar problemas en la instalación de Windows Server Essentials
 
@@ -79,26 +79,26 @@ En este tema proporciona una solución de problemas que se producen al instalar 
   
 ##### <a name="to-manually-install-a-storage-controller-driver"></a>Para instalar manualmente un controlador del controlador de almacenamiento  
   
-1.  Busque los controladores del controlador de almacenamiento. Los proporciona el fabricante de hardware, pero también pueden estar disponibles en el sitio web del fabricante.  
+1. Busque los controladores del controlador de almacenamiento. Los proporciona el fabricante de hardware, pero también pueden estar disponibles en el sitio web del fabricante.  
   
-2.  Cree una carpeta denominada CONTROLADORES en un disquete o una unidad flash USB y copie los controladores en la carpeta.  
+2. Cree una carpeta denominada CONTROLADORES en un disquete o una unidad flash USB y copie los controladores en la carpeta.  
   
-3.  Conecte al equipo la unidad de disquete o la unidad flash USB con los controladores.  
+3. Conecte al equipo la unidad de disquete o la unidad flash USB con los controladores.  
   
-4.  Arranque el equipo desde el DVD de Windows Server Essentials.  
+4. Arranque el equipo desde el DVD de Windows Server Essentials.  
   
-     Si faltan los controladores del controlador de almacenamiento, se muestra el cuadro de diálogo de Error de instalación de Windows Server Essentials.  
+    Si faltan los controladores del controlador de almacenamiento, se muestra el cuadro de diálogo de Error de instalación de Windows Server Essentials.  
   
-5.  En el cuadro de diálogo de Error de instalación de Windows Server Essentials, haga clic en **Sí** para cargar los controladores de almacenamiento adicional.  
+5. En el cuadro de diálogo de Error de instalación de Windows Server Essentials, haga clic en **Sí** para cargar los controladores de almacenamiento adicional.  
   
-6.  En el símbolo del sistema **Seleccione el archivo inf de su controlador** , vaya al archivo .inf de la carpeta CONTROLADORES en el disquete o la unidad flash USB, seleccione el archivo, haga clic con el botón derecho en el nombre del archivo y, a continuación, haga clic en **Abrir**. De este modo, se carga el controlador.  
+6. En el símbolo del sistema **Seleccione el archivo inf de su controlador** , vaya al archivo .inf de la carpeta CONTROLADORES en el disquete o la unidad flash USB, seleccione el archivo, haga clic con el botón derecho en el nombre del archivo y, a continuación, haga clic en **Abrir**. De este modo, se carga el controlador.  
   
-    > [!NOTE]
-    >  Antes de intentar cargar el archivo, compruebe que la extensión del nombre de archivo (.inf) está en minúsculas. Esta operación distingue mayúsculas de minúsculas, y un archivo de controlador no se cargará si la extensión del nombre de archivo tiene letras mayúsculas.  
+   > [!NOTE]
+   >  Antes de intentar cargar el archivo, compruebe que la extensión del nombre de archivo (.inf) está en minúsculas. Esta operación distingue mayúsculas de minúsculas, y un archivo de controlador no se cargará si la extensión del nombre de archivo tiene letras mayúsculas.  
   
-7.  En el símbolo del sistema, haga clic en **Sí** para que el controlador de almacenamiento esté disponible durante la fase de modo de texto del programa de instalación.  
+7. En el símbolo del sistema, haga clic en **Sí** para que el controlador de almacenamiento esté disponible durante la fase de modo de texto del programa de instalación.  
   
- La instalación debería proseguir con normalidad.  
+   La instalación debería proseguir con normalidad.  
   
 ###  <a name="BKMK_AddingNICdrivers"></a> Agregar controladores de adaptadores de red  
  Si un adaptador de red en el equipo no es compatible con Windows Server Essentials, el servidor no tendrá conectividad de red una vez completada la instalación, y no podrá conectar equipos al servidor.  

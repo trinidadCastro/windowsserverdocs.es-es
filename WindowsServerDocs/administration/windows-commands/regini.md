@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 292dfe5755a10a91f2b8bcffaa6412ccda6c6f8a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e3f8454572b662c9327aeb4783c5e9651ad2022b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867636"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441888"
 ---
 # <a name="regini"></a>regini
 
@@ -35,6 +35,7 @@ regini [-m \\machinename | -h hivefile hiveroot][-i n] [-o outputWidth][-b] text
 ### <a name="parameters"></a>Parámetros
 
 | Parámetro | Descripción |
+
 |-m \< \\ \\nombreDeEquipo >|Especifica el nombre del equipo remoto con un registro que se va a modificar. Use el formato  **\\ \\ComputerName**.|
 |---------------------|-|
 |-h \<hivefile raízDeSección >|Especifica el subárbol del registro local para modificar. Debe especificar el nombre del archivo de hive y la raíz del subárbol en el formato **hivefile raízDeSección**.|

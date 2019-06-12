@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: f3e0553b1919a7f9129d47616d0ffb66b6ff48f8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe27b61abe196a2148ced18806be904ebd555fcc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874446"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442893"
 ---
 # <a name="directory-services-component-updates"></a>Actualizaciones de componentes de Servicios de directorio
 
@@ -161,12 +161,12 @@ Utilice el parámetro - DomainMode con el Install-ADDSForest o los cmdlets Insta
 ### <a name="overview"></a>Información general  
 El algoritmo de optimizador de consultas LDAP se vuelven a evaluar y se optimiza aún más.  El resultado es la mejora del rendimiento en tiempo de búsqueda LDAP de las consultas complejas y la eficacia de la búsqueda LDAP.  
   
-> [!NOTE]  
-> **Parte del desarrollador:** consultar las mejoras de rendimiento de las búsquedas a través de mejoras en la asignación de LDAP para consultar ESE.  Filtros LDAP más allá de un cierto nivel de complejidad impedir la selección de índice optimizado, lo que disminuye considerablemente el rendimiento (x 1000 o más). Este cambio modifica la manera en que se seleccionan índices para las consultas LDAP evitar este problema.  
-  
-> [!NOTE]  
+> [!NOTE]
+> <strong>Parte del desarrollador:</strong>consultar las mejoras de rendimiento de las búsquedas a través de mejoras en la asignación de LDAP para consultar ESE.  Filtros LDAP más allá de un cierto nivel de complejidad impedir la selección de índice optimizado, lo que disminuye considerablemente el rendimiento (x 1000 o más). Este cambio modifica la manera en que se seleccionan índices para las consultas LDAP evitar este problema.  
+> 
+> [!NOTE]
 > Una revisión completa del algoritmo de optimizador de consultas LDAP, lo que da lugar:  
->   
+> 
 > -   Tiempos de búsqueda más rápidos  
 > -   Mayor eficacia permite hacer más de los controladores de dominio  
 > -   Menos llamadas de soporte técnico se emite en cuanto a rendimiento de AD  
