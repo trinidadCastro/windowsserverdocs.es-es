@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 84047c690006bf727bc12855576960bbf67d1617
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6fdf070a733392d89bafe5bed5a1bf23d8e24d57
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857936"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439351"
 ---
 # <a name="extend"></a>extend
 
@@ -37,12 +37,12 @@ extend filesystem [noerr]
   
 ## <a name="parameters"></a>Parámetros  
   
-|Parámetro|Descripción|  
-|-------|--------|  
-|size\=<n>|Especifica la cantidad de espacio en megabytes \(MB\) para agregar a la partición o volumen actual. Si no se especifica tamaño, se usa todo el espacio libre contiguo que está disponible en el disco.|  
-|disk\=<n>|Especifica el disco en el que se extiende el volumen o partición. Si no se especifica ningún disco, se extiende el volumen o partición del disco actual.|  
-|sistema de archivos|amplía el sistema de archivos del volumen que tiene el foco. Para su uso en los discos donde el sistema de archivos no se ha ampliado con el volumen.|  
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|  
+| Parámetro  |                                                                                             Descripción                                                                                              |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| size\=<n>  |      Especifica la cantidad de espacio en megabytes \(MB\) para agregar a la partición o volumen actual. Si no se especifica tamaño, se usa todo el espacio libre contiguo que está disponible en el disco.       |
+| disk\=<n>  |                          Especifica el disco en el que se extiende el volumen o partición. Si no se especifica ningún disco, se extiende el volumen o partición del disco actual.                          |
+| sistema de archivos |                                   amplía el sistema de archivos del volumen que tiene el foco. Para su uso en los discos donde el sistema de archivos no se ha ampliado con el volumen.                                    |
+|   noerr    | sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error. |
   
 ## <a name="remarks"></a>Comentarios  
   

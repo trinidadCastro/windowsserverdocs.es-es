@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65ccaf23b0e19319383952f3a1ca436aaf4d06fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a637abc91dd3342afb3a2723d1b3a835be149122
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856466"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436319"
 ---
 # <a name="path"></a>ruta de acceso
 
@@ -37,12 +37,12 @@ path ;
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|[\<Drive>:]<Path>|Especifica la unidad y directorio para establecer la ruta de acceso de comando.|
-|;|Separa los directorios en la ruta de acceso. Si se usa sin otros parámetros, **;** borra las rutas de acceso de comandos existentes de la variable de entorno PATH y dirige Cmd.exe para buscar sólo en el directorio actual.|
-|% PATH %|Anexa la ruta de acceso al conjunto existente de directorios se muestran en la variable de entorno PATH.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|     Parámetro     |                                                                                                     Descripción                                                                                                      |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [\<Drive>:]<Path> |                                                                            Especifica la unidad y directorio para establecer la ruta de acceso de comando.                                                                             |
+|         ;         | Separa los directorios en la ruta de acceso. Si se usa sin otros parámetros, **;** borra las rutas de acceso de comandos existentes de la variable de entorno PATH y dirige Cmd.exe para buscar sólo en el directorio actual. |
+|      % PATH %       |                                                         Anexa la ruta de acceso al conjunto existente de directorios se muestran en la variable de entorno PATH.                                                         |
+|        /?         |                                                                                         Muestra la ayuda en el símbolo del sistema.                                                                                         |
 
 ## <a name="remarks"></a>Comentarios
 

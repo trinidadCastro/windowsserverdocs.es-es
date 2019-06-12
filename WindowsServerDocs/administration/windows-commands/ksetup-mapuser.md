@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2828f92b20cafcb571c81c8ceae28c741fbe025a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5bc68fe9e8f4cbb9869cb74e4eb20a3400eb56ad
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872866"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437962"
 ---
 # <a name="ksetupmapuser"></a>ksetup:mapuser
 
@@ -34,10 +34,10 @@ ksetup /mapuser <Principal> <Account>
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<Principal>|El nombre de dominio completo de cualquier entidad de seguridad; Por ejemplo, mike@corp.CONTOSO.COM.|
-|\<Cuenta >|Cualquier nombre de grupo de seguridad o la cuenta de que existe en este equipo, como invitado, los usuarios del dominio o administrador.|
+|  Parámetro   |                                                   Descripción                                                   |
+|--------------|-----------------------------------------------------------------------------------------------------------------|
+| \<Principal> |              El nombre de dominio completo de cualquier entidad de seguridad; Por ejemplo, mike@corp.CONTOSO.COM.              |
+|  \<Cuenta >  | Cualquier nombre de grupo de seguridad o la cuenta de que existe en este equipo, como invitado, los usuarios del dominio o administrador. |
 
 ## <a name="remarks"></a>Comentarios
 

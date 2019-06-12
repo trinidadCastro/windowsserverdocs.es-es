@@ -12,12 +12,12 @@ ms.assetid: f3ea40fa-b6ba-4d66-b754-221ca6271387
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: de01b2fd2395377b6e7b3349b9862eb0e51a59b8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 1998ccc7d69bdbc399a71e7177bf9952b3632f26
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870006"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433276"
 ---
 # <a name="manage-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
@@ -55,15 +55,15 @@ ms.locfileid: "59870006"
 ###  <a name="BKMK_Overview"></a> Introducción a acceso Web remoto  
  Cuando esté fuera de la oficina, puede abrir un explorador web y tener acceso a acceso Web remoto desde cualquier lugar que tenga acceso a Internet. En acceso Web remoto, puede:  
   
--   Acceder a carpetas y archivos compartidos en el servidor.  
+- Acceder a carpetas y archivos compartidos en el servidor.  
   
--   Acceder al servidor y a sus equipos en la red. Esto significa que puede acceder al escritorio de un equipo en red como si estuviera sentado frente a él en la oficina.  
+- Acceder al servidor y a sus equipos en la red. Esto significa que puede acceder al escritorio de un equipo en red como si estuviera sentado frente a él en la oficina.  
   
   Acceso Web remoto no está activado de forma predeterminada. Al ejecutar el Asistente para configurar el Acceso desde cualquier lugar, este intenta configurar el enrutador y la conectividad a Internet. Después de activar acceso Web remoto, puede configurar un nombre de dominio para el servidor y personalizar el acceso Web remoto. Si cambia de enrutador, también puede volver a configurarlo.  
   
- Permiso para acceder a acceso Web remoto no se concede automáticamente cuando se agrega una nueva cuenta de usuario. Cuando se realiza esta operación, puede elegir si desea permitir el acceso a las carpetas compartidas, la biblioteca multimedia, los equipos, los vínculos de página principal y el panel del servidor. También puede especificar que un usuario no podrá usar acceso Web remoto.  
+  Permiso para acceder a acceso Web remoto no se concede automáticamente cuando se agrega una nueva cuenta de usuario. Cuando se realiza esta operación, puede elegir si desea permitir el acceso a las carpetas compartidas, la biblioteca multimedia, los equipos, los vínculos de página principal y el panel del servidor. También puede especificar que un usuario no podrá usar acceso Web remoto.  
   
- Se muestra la configuración de acceso Web remoto para cada cuenta de usuario en el **usuarios** ficha Panel de Windows Server Essentials. Para cambiar la configuración de acceso Web remoto, haga clic en la cuenta de usuario y, a continuación, haga clic en **ver las propiedades de cuenta**.  
+  Se muestra la configuración de acceso Web remoto para cada cuenta de usuario en el **usuarios** ficha Panel de Windows Server Essentials. Para cambiar la configuración de acceso Web remoto, haga clic en la cuenta de usuario y, a continuación, haga clic en **ver las propiedades de cuenta**.  
   
 ###  <a name="BKMK_TurnOnRWA"></a> Activar acceso Web remoto  
  Para activar Acceso web remoto, ejecute el asistente para configuración de Acceso desde cualquier lugar desde el panel del servidor.  
@@ -94,21 +94,21 @@ ms.locfileid: "59870006"
 4.  En la lista desplegable, seleccione la nueva región y haga clic en **Aplicar** para aceptar la nueva configuración de región.  
   
 ###  <a name="BKMK_ManagePerms"></a> Administrar permisos de acceso Web remoto  
- Cuando se agrega una cuenta de usuario en Windows Server Essentials, se permite al nuevo usuario usar el acceso Web remoto de forma predeterminada. Si decide no permitir el acceso Web remoto para una cuenta de usuario y, a continuación, busque el usuario que necesite usar acceso Web remoto, puede actualizar las propiedades de s de cuenta de usuario.  
+ Cuando se agrega una cuenta de usuario en Windows Server Essentials, se permite al nuevo usuario usar el acceso Web remoto de forma predeterminada. Si decide no permitir el acceso Web remoto para una cuenta de usuario y, a continuación, busque el usuario que necesite usar acceso Web remoto, puede actualizar las propiedades de la cuenta de usuario.  
   
 ##### <a name="to-manage-remote-web-access-permissions-for-a-user-account"></a>Para administrar los permisos de acceso Web remoto para una cuenta de usuario:  
   
-1.  Inicie sesión en el panel y haga clic en **Usuarios**.  
+1. Inicie sesión en el panel y haga clic en **Usuarios**.  
   
-2.  Haga clic en la cuenta de usuario que desea administrar y en **Ver las propiedades de la cuenta** en el **Panel de tareas**.  
+2. Haga clic en la cuenta de usuario que desea administrar y en **Ver las propiedades de la cuenta** en el **Panel de tareas**.  
   
-3.  En el cuadro de diálogo **Propiedades** , haga clic en la pestaña **Acceso desde cualquier lugar** .  
+3. En el cuadro de diálogo **Propiedades** , haga clic en la pestaña **Acceso desde cualquier lugar** .  
   
-4.  En la pestaña **Acceso desde cualquier lugar** , active la casilla **Permitir el Acceso Web remoto y obtener acceso a las aplicaciones de servicios web** para permitir que un usuario se conecte al servidor con acceso Web remoto.  
+4. En la pestaña **Acceso desde cualquier lugar** , active la casilla **Permitir el Acceso Web remoto y obtener acceso a las aplicaciones de servicios web** para permitir que un usuario se conecte al servidor con acceso Web remoto.  
   
-5.  Haga clic en **Aplicar** y en **Aceptar**.  
+5. Haga clic en **Aplicar** y en **Aceptar**.  
   
- Para obtener más información, consulte [administrar cuentas de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md).  
+   Para obtener más información, consulte [administrar cuentas de usuario](Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
 ###  <a name="BKMK_SecureRWA"></a> Proteger el acceso Web remoto  
  Windows Server Essentials usa un certificado de seguridad para proteger la información que se intercambia entre el software y un explorador web. Al instalar el software del Conector en los equipos, se agrega el certificado de seguridad para Windows Server Essentials a la lista de certificados de confianza de los equipos. La mejor manera para los usuarios de poder utilizar el acceso Web remoto cuando se encuentran fuera de la oficina consiste en usar un equipo portátil donde se haya instalado el software del Conector.  
@@ -133,7 +133,7 @@ ms.locfileid: "59870006"
   
 6.  En la pestaña **Acceso desde cualquier lugar**, haga lo siguiente:  
   
-    1.  Para permitir que un usuario se conecte al servidor mediante VPN, active la casilla **Permitir red privada virtual (VPN)**.  
+    1.  Para permitir que un usuario se conecte al servidor mediante VPN, active la casilla **Permitir red privada virtual (VPN)** .  
   
     2.  Para permitir que un usuario se conecte al servidor mediante acceso Web remoto, active la casilla **Permitir el Acceso Web remoto y obtener acceso a las aplicaciones de servicios web** .  
   
@@ -159,7 +159,7 @@ ms.locfileid: "59870006"
  Si el enrutador no se configura con el Asistente para configurar el nombre de dominio, debe desviar manualmente el puerto 443. Para obtener más información sobre cómo configurar el enrutamiento de puerto en su enrutador, consulte [Configuración del enrutador](https://social.technet.microsoft.com/wiki/contents/articles/windows-small-business-server-2011-essentials-router-setup.aspx).  
   
 ###  <a name="BKMK_ReplaceRouter"></a> Reemplazar un enrutador  
- Reemplace el enrutador conforme a las instrucciones del fabricante s y, a continuación, ejecute el conjunto Asistente para configurar el enrutador nuevo.  
+ Reemplace el enrutador conforme a las instrucciones del fabricante y, a continuación, ejecute el conjunto Asistente para configurar el enrutador nuevo.  
   
 ##### <a name="to-set-up-your-new-router"></a>Para configurar el enrutador nuevo:  
   
@@ -236,13 +236,13 @@ ms.locfileid: "59870006"
 ###  <a name="BKMK_PersonalizedNames"></a> Descripción de los nombres de dominio personalizados de Microsoft  
  Un nombre de dominio personalizado de Microsoft incluye las siguientes características:  
   
--   Un nombre de dominio personalizado para el acceso Web remoto (por ejemplo, *nombreHost*. remotewebaccess.com). El nombre de dominio está asociado con la dirección IP pública.  
+- Un nombre de dominio personalizado para el acceso Web remoto (por ejemplo, *nombreHost*. remotewebaccess.com). El nombre de dominio está asociado con la dirección IP pública.  
   
--   DNS dinámico Actualizar servicio de protocolo para que no se interrumpirá el acceso Web remoto con el nombre de dominio si cambia la dirección IP pública. Normalmente, los proveedores de servicios de Internet (ISP) para las conexiones de banda ancha de organización s proporcionan direcciones IP públicas dinámicas que pueden cambiar.  
+- DNS dinámico Actualizar servicio de protocolo para que no se interrumpirá el acceso Web remoto con el nombre de dominio si cambia la dirección IP pública. Normalmente, los proveedores de servicios de Internet (ISP) para las conexiones de banda ancha de su organización proporcionar direcciones IP públicas dinámicas que pueden cambiar.  
   
--   Un certificado de confianza asociado con el nombre de dominio.  
+- Un certificado de confianza asociado con el nombre de dominio.  
   
- Para integrar un nombre de dominio personalizado de Microsoft con el servidor, necesita una cuenta de Microsoft (anteriormente conocida como Windows Live ID). Si no tiene ninguna, puede suscribirse en el sitio web de [Microsoft Hotmail](https://login.live.com/) .  
+  Para integrar un nombre de dominio personalizado de Microsoft con el servidor, necesita una cuenta de Microsoft (anteriormente conocida como Windows Live ID). Si no tiene ninguna, puede suscribirse en el sitio web de [Microsoft Hotmail](https://login.live.com/) .  
   
 > [!IMPORTANT]
 >  Windows Live admite caracteres especiales en la contraseña de cuenta de Microsoft que el servidor no acepta. Si usa un dominio personalizado de Microsoft, asegúrese de que la contraseña de cuenta de Microsoft contiene solo caracteres compatibles con el servidor. El servidor no admite el uso de los caracteres $, /, ' y %.  
@@ -254,7 +254,7 @@ ms.locfileid: "59870006"
   
 -   Si dispone de un nombre de dominio existente que adquirió de uno de los proveedores de servicios de nombres de dominio compatibles, puede configurar el nombre de dominio del servidor con el Asistente para configurar el nombre de dominio. Haga clic en **Deseo usar un nombre de dominio del que ya soy propietario** y escriba el nombre de dominio en el cuadro de texto **Configurar un nombre de dominio**. Debe proporcionar el nombre de usuario y la contraseña que usó para comprar el nombre de dominio.  
   
--   Si dispone de un nombre de dominio existente que adquirió de un proveedor de servicios de nombres de dominio no compatible con Windows Server Essentials, y desea configurar el nombre de dominio para el servidor con el Asistente para configurar el nombre de dominio, puede transferir el nombre de dominio a uno de los proveedores que aparecen en el asistente. Haga clic en **deseo usar un nombre de dominio que ya soy propietario**, escriba el nombre de dominio en el **nombre de dominio** texto cuadro y, a continuación, siga las instrucciones en el sitio Web s del proveedor de dominio nombre servicio para transferir el nombre de dominio .  
+-   Si dispone de un nombre de dominio existente que adquirió de un proveedor de servicios de nombres de dominio no compatible con Windows Server Essentials, y desea configurar el nombre de dominio para el servidor con el Asistente para configurar el nombre de dominio, puede transferir el nombre de dominio a uno de los proveedores que aparecen en el asistente. Haga clic en **deseo usar un nombre de dominio que ya soy propietario**, escriba el nombre de dominio en el **nombre de dominio** texto cuadro y, a continuación, siga las instrucciones en el sitio Web del dominio nombre del proveedor de servicios para transferir el nombre de dominio.  
   
 ###  <a name="BKMK_SetUpName"></a> Configurar un nombre de dominio  
  Si activa el acceso Web remoto, puede configurar el nombre de dominio de Internet del servidor.  
@@ -270,7 +270,7 @@ ms.locfileid: "59870006"
 4.  Siga las instrucciones para completar el asistente. Si aún no tiene un certificado y un nombre de dominio propios, el asistente le ayudará a buscar un proveedor de nombres de dominio para adquirirlos. O también puede obtener un nombre de dominio de Microsoft personalizado.  
   
 ###  <a name="BKMK_ChooseProvider"></a> Elegir un proveedor de servicio de nombres de dominio  
- Debe elegir un proveedor de servicios de nombres de dominio que admita la extensión de nombre de dominio que desea usar. El establecer su asistente nombre de dominio incluye una lista de proveedores completos que puede usar con un vínculo a cada sitio Web s de proveedor. Haga clic en el **More Info** vínculo junto a cada nombre de proveedor s para obtener información sobre los servicios y precios que ofrece el proveedor.  
+ Debe elegir un proveedor de servicios de nombres de dominio que admita la extensión de nombre de dominio que desea usar. El establecer su asistente nombre de dominio incluye una lista de proveedores completos que puede usar con un vínculo al sitio Web de cada proveedor. Haga clic en el **More Info** vínculo situado junto al nombre de cada proveedor para obtener información sobre los servicios y precios que ofrece el proveedor.  
   
 > [!NOTE]
 >  Algunos proveedores de servicios de nombres de dominio operan en amplias regiones internacionales y otros en mercados más reducidos. Por este motivo, con algunos proveedores no podrá usar un sitio web y traducirlo a su idioma de preferencia.  
@@ -347,19 +347,19 @@ ms.locfileid: "59870006"
 ###  <a name="BKMK_SetNameManually"></a> Configurar manualmente un nombre de dominio  
  Si elige esta opción, el servidor no supervisa ni mantiene el nombre de dominio, y no le alerta si hay un problema de configuración. También puede considerar esta opción si se da alguno de los siguientes casos:  
   
--   No se encuentran proveedores de nombres de dominio asociados para su país o región.  
+- No se encuentran proveedores de nombres de dominio asociados para su país o región.  
   
--   Los proveedores de dominio asociados enumerados no admiten su extensión de nombre de dominio.  
+- Los proveedores de dominio asociados enumerados no admiten su extensión de nombre de dominio.  
   
--   Ya tiene un nombre de dominio de un proveedor de nombres de dominio que actualmente no es un asociado, y no desea transferir ese nombre de dominio a uno de los proveedores de nombres de dominio que admite Windows Server Essentials.  
+- Ya tiene un nombre de dominio de un proveedor de nombres de dominio que actualmente no es un asociado, y no desea transferir ese nombre de dominio a uno de los proveedores de nombres de dominio que admite Windows Server Essentials.  
   
--   El asistente no incluye la extensión de nombre de dominio que quiere usar, pero la extensión está disponible en un proveedor de nombres de dominio que actualmente no es un asociado.  
+- El asistente no incluye la extensión de nombre de dominio que quiere usar, pero la extensión está disponible en un proveedor de nombres de dominio que actualmente no es un asociado.  
   
- Si elige configurar manualmente el nombre de dominio, trabajar con su proveedor de servicio de nombres de dominio para crear un registro para el dominio.  
+  Si elige configurar manualmente el nombre de dominio, trabajar con su proveedor de servicio de nombres de dominio para crear un registro para el dominio.  
   
 ##### <a name="to-create-an-a-record"></a>Para crear un registro  
   
-1.  Decida un nombre de host, como el remoto. Este es el prefijo de nombre de dominio. El prefijo del nombre de dominio junto con su nombre de dominio definirán la dirección URL para abrir la página de inicio de sesión de acceso Web remoto; Por ejemplo, **http://remote.contoso.com**.  
+1.  Decida un nombre de host, como el remoto. Este es el prefijo de nombre de dominio. El prefijo del nombre de dominio junto con su nombre de dominio definirán la dirección URL para abrir la página de inicio de sesión de acceso Web remoto; Por ejemplo, **http://remote.contoso.com** .  
   
 2.  En el dominio nombre proveedores configuración panel de servicio (normalmente en su página Web), cree el registro para el nombre de host que decidió en el paso 1. Asegúrese de que la dirección IP que especifique en el registro es la dirección IP del lado WAN del enrutador (el lado orientado a Internet). Consulte la documentación del enrutador para obtener la dirección IP WAN.  
   
@@ -373,15 +373,15 @@ ms.locfileid: "59870006"
   
 ##### <a name="to-find-the-domain-name-service-provider-for-your-domain-name"></a>Para buscar el proveedor de servicios de nombres de dominio para un nombre de dominio:  
   
-1.  Abra un explorador web y escriba **www.internic.com** en la barra de direcciones para ir a la página principal de Internic.  
+1. Abra un explorador web y escriba <strong>www.internic.com</strong> en la barra de direcciones para ir a la página principal de Internic.  
   
-2.  En la página principal de Internic, haga clic en **Whois**.  
+2. En la página principal de Internic, haga clic en **Whois**.  
   
-3.  En el cuadro **Whois Search**, escriba el nombre de dominio (por ejemplo, contoso.com).  
+3. En el cuadro **Whois Search**, escriba el nombre de dominio (por ejemplo, contoso.com).  
   
-4.  Haga clic en la opción **Domain** y en **Submit**.  
+4. Haga clic en la opción **Domain** y en **Submit**.  
   
-5.  En los resultados de la búsqueda, aparece el nombre de su proveedor de servicios de nombres de dominio en **Registrar**.  
+5. En los resultados de la búsqueda, aparece el nombre de su proveedor de servicios de nombres de dominio en **Registrar**.  
   
 ##  <a name="BKMK_4"></a> Personalizar el acceso Web remoto  
  Puede personalizar el sitio de Acceso web remoto agregando un logotipo o una imagen de fondo personalizados. También puede agregar vínculos a la página Inicio para que esta información esté disponible para todos sus usuarios. Para obtener más información, vea los temas siguientes:  

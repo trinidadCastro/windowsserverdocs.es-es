@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: e832dce3eed7d0e5103254fb48683726b82af2e6
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: d03407292a797b1cd511937ba40fc0fa373f5dc0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475907"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447572"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>Preguntas frecuentes acerca de Réplica de almacenamiento
 
@@ -227,7 +227,7 @@ Lamentablemente, no se admite crear un *nueva* la asociación entre 2019 de Wind
 Sin embargo, para obtener el rendimiento de replicación mejorados de Windows Server 2019, todos los miembros de la asociación deben ejecutar Windows Server 2019 y deberá eliminar asociaciones existentes y los grupos de replicación asociados y, a continuación, volver a crearlos con datos inicializados (ya sea al crear la asociación en Windows Admin Center o con el cmdlet New-SRPartnership).
 
 ## <a name="FAQ17"></a> ¿Cómo se puede notificar un problema con la réplica de almacenamiento o esta guía?  
-Para obtener asistencia técnica con réplica de almacenamiento, puede publicar en [los foros de Microsoft TechNet](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview). También puede enviar un correo electrónico a srfeed@microsoft.com para formular preguntas acerca de la Réplica de almacenamiento o plantear problemas relacionados con esta documentación. El https://windowsserver.uservoice.com sitio es preferible para las solicitudes de cambio de diseño, ya que permite a los clientes proporcionar soporte técnico y comentarios para sus ideas.
+Para obtener asistencia técnica con réplica de almacenamiento, puede publicar en [los foros de Microsoft TechNet](https://social.technet.microsoft.com/Forums/windowsserver/en-US/home?forum=WinServerPreview). También puede enviar un correo electrónico a srfeed@microsoft.com para formular preguntas acerca de la Réplica de almacenamiento o plantear problemas relacionados con esta documentación. El <https://windowsserver.uservoice.com> sitio es preferible para las solicitudes de cambio de diseño, ya que permite a los clientes proporcionar soporte técnico y comentarios para sus ideas.
 
 
 

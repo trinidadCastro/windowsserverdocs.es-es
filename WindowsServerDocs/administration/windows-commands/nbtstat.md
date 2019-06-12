@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0193152674dc934aa4f2d3be4dec54afc3066951
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4e670b1490f1c4c54b8cf377d48755849faa16f8
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867706"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437123"
 ---
 # <a name="nbtstat"></a>nbtstat
 
@@ -34,19 +34,19 @@ nbtstat [/a <remoteName>] [/A <IPaddress>] [/c] [/n] [/r] [/R] [/RR] [/s] [/S] [
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------|--------|
-|/a <remoteName>|Muestra la tabla de nombres NetBIOS de un equipo remoto, donde *remoteName* es el nombre de equipo NetBIOS del equipo remoto. La tabla de nombres NetBIOS es la lista de nombres NetBIOS que corresponde a las aplicaciones NetBIOS que se ejecutan en ese equipo.|
-|/A <IPaddress>|Muestra la tabla de nombres NetBIOS de un equipo remoto, especificado por la dirección IP (en notación decimal con puntos) del equipo remoto.|
-|/c|Muestra el contenido de los nombres NetBIOS caché, la tabla de nombres NetBIOS y sus direcciones IP resueltas.|
-|/n|Muestra la tabla de nombres NetBIOS del equipo local. El estado de **registrado** indica que el nombre está registrado mediante la difusión o con un servidor WINS.|
-|/r|Muestra las estadísticas de resolución de nombres NetBIOS. En un equipo que ejecuta Windows XP o Windows Server 2003 que está configurado para usar WINS, este parámetro devuelve el número de nombres que se han resuelto y registrados mediante difusión y WINS.|
-|/R|Purga el contenido de la caché de nombres NetBIOS y, a continuación, vuelve a cargar el #tagged entradas desde el **Lmhosts** archivo.|
-|/RR|Libera y, a continuación, actualiza los nombres de NetBIOS del equipo local que está registrado con servidores WINS.|
-|/s|Muestra el cliente y el servidor las sesiones NetBIOS, intenta convertir la dirección IP de destino en un nombre.|
-|/S|Muestra el cliente y el servidor las sesiones NetBIOS, enumera los equipos remotos mediante la dirección IP de destino solo.|
-|<Interval>|Vuelve a mostrar las estadísticas seleccionadas, poner en pausa el número de segundos especificado en *intervalo* entre cada muestra. Presione CTRL+C para detener la presentación de estadísticas. Si se omite este parámetro, **nbtstat** imprime sólo una vez la información de configuración actual.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|    Parámetro    |                                                                                                                         Descripción                                                                                                                         |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| /a <remoteName> |    Muestra la tabla de nombres NetBIOS de un equipo remoto, donde *remoteName* es el nombre de equipo NetBIOS del equipo remoto. La tabla de nombres NetBIOS es la lista de nombres NetBIOS que corresponde a las aplicaciones NetBIOS que se ejecutan en ese equipo.     |
+| /A <IPaddress>  |                                                           Muestra la tabla de nombres NetBIOS de un equipo remoto, especificado por la dirección IP (en notación decimal con puntos) del equipo remoto.                                                            |
+|       /c        |                                                                        Muestra el contenido de los nombres NetBIOS caché, la tabla de nombres NetBIOS y sus direcciones IP resueltas.                                                                         |
+|       /n        |                                            Muestra la tabla de nombres NetBIOS del equipo local. El estado de **registrado** indica que el nombre está registrado mediante la difusión o con un servidor WINS.                                             |
+|       /r        |      Muestra las estadísticas de resolución de nombres NetBIOS. En un equipo que ejecuta Windows XP o Windows Server 2003 que está configurado para usar WINS, este parámetro devuelve el número de nombres que se han resuelto y registrados mediante difusión y WINS.       |
+|       /R        |                                                                      Purga el contenido de la caché de nombres NetBIOS y, a continuación, vuelve a cargar el #tagged entradas desde el **Lmhosts** archivo.                                                                      |
+|       /RR       |                                                                           Libera y, a continuación, actualiza los nombres de NetBIOS del equipo local que está registrado con servidores WINS.                                                                            |
+|       /s        |                                                                          Muestra el cliente y el servidor las sesiones NetBIOS, intenta convertir la dirección IP de destino en un nombre.                                                                           |
+|       /S        |                                                                          Muestra el cliente y el servidor las sesiones NetBIOS, enumera los equipos remotos mediante la dirección IP de destino solo.                                                                          |
+|   <Interval>    | Vuelve a mostrar las estadísticas seleccionadas, poner en pausa el número de segundos especificado en *intervalo* entre cada muestra. Presione CTRL+C para detener la presentación de estadísticas. Si se omite este parámetro, **nbtstat** imprime sólo una vez la información de configuración actual. |
+|       /?        |                                                                                                            Muestra la ayuda en el símbolo del sistema.                                                                                                             |
 
 ## <a name="remarks"></a>Comentarios
 

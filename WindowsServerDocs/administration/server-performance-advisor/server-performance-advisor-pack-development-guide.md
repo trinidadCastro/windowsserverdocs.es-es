@@ -5,12 +5,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c647e8a335aac924067d92dcb41ab4d17e0cceef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c27dd0602c5993fd84e6956c2f50f6e2bfec8691
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884866"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435473"
 ---
 # <a name="server-performance-advisor-pack-development-guide"></a>Guía de desarrollo de Server Performance Advisor Pack
 
@@ -55,7 +55,7 @@ Un módulo del Asesor de actualizaciones incluye los siguientes elementos:
 
 ### <a name="advisor-pack-workflow"></a>Flujo de trabajo de Advisor pack
 
-![flujo de trabajo de Advisor pack](../media/server-performance-advisor/spa-dev-guide-workflow.png)
+![Flujo de trabajo de Advisor pack](../media/server-performance-advisor/spa-dev-guide-workflow.png)
 
 En este diagrama de flujo, los círculos verdes representan los módulos de advisor. Todos los demás círculos representan las fases que se ejecutan en el proceso del marco de SPA. SPA usa un paquete de advisor para recopilar datos, importar los datos en la base de datos, inicializar el entorno de ejecución y ejecutar scripts de SQL.
 
@@ -276,6 +276,7 @@ KeytypeId | smallint no NULL | Id. de tipo interno
 Valor | Nvarchar (4000) no es NULL | Todos los valores
 
 El **KeytypeID** columna puede tener uno de los tipos siguientes:
+
 Id. | Tipo
 --- | ---
 1 | Cadena
@@ -300,7 +301,7 @@ Puede agregar una consulta de WMI. Para obtener más información sobre cómo es
 
 La consulta en el ejemplo anterior devuelve un registro:
 
-Título | Name | PeakUsage
+Título | Nombre | PeakUsage
 ----- | ----- | -----
 C:\pagefile.sys | C:\pagefile.sys | 215
 
@@ -339,7 +340,7 @@ WmiqueryId | int no NULL | Correlacionar la clave de #WmiQueries
 Nombre de columna | Tipo de datos SQL | Descripción
 --- | --- | ---
 SequenceId | int no NULL | Correlacionar la fila y sus propiedades
-Name | Nvarchar (1000) no es NULL | Nombre de propiedad
+Nombre | Nvarchar (1000) no es NULL | Nombre de propiedad
 Valor | Nvarchar(4000) NULL | El valor de la propiedad actual
 
 **\#Esquema de tabla WmiQueries**
@@ -363,7 +364,7 @@ El **intervalo** atributo es obligatorio global para todos los contadores de ren
 
 En el ejemplo anterior, contador \\PhysicalDisk (\*)\\promedio Segundos de disco/transferencia se va a consultar cada segundo.
 
-Pueden existir dos instancias: **\_Total** y **0 C: D:**, y el resultado podría ser como sigue:
+Pueden existir dos instancias: **\_Total** y **0 C: D:** , y el resultado podría ser como sigue:
 
 marca de tiempo | CategoryName | CounterName | Valor de la instancia de _Total | Valor de la instancia de 0 C: D:
 ---- | ---- | ---- | ---- | ----
@@ -449,7 +450,7 @@ Este es un ejemplo de una regla sencilla s:
 
 ``` syntax
 <advisorPack>
-   
+
   <reportDefinition>
     <thresholds>
       <threshold  />
@@ -515,7 +516,7 @@ Después de que se definen las reglas, los administradores del sistema pueden ve
 
 Continuando con el ejemplo anterior, el usuario sabe si hay suficiente espacio libre en disco en la unidad del sistema. Los usuarios también pueden estar interesados en el tamaño real del espacio libre. Un grupo de valor único se usa para almacenar y mostrar los resultados de este tipo. Varios valores únicos se pueden agrupar y se muestra en una tabla en la consola de SPA. La tabla tiene solo dos columnas, nombre y valor, como se muestra aquí.
 
-Name | Valor
+Nombre | Valor
 ---- | ----
 Tamaño de disco libre en unidad del sistema (GB) | 100
 Tamaño total del disco (GB) | 500 
@@ -589,7 +590,7 @@ El siguiente grupo de valor único tiene un atributo, **sección**, y puede señ
 
 Un grupo de valor único y una tabla de valores de lista contienen distintos tipos de datos, por ejemplo, string, int y float. Dado que estos valores se almacenan en la base de datos de SQL Server, puede definir un tipo de datos SQL para cada propiedad de datos. Sin embargo, la definición de un tipo de datos SQL es bastante complicado. Debe especificar la longitud o precisión, que puede ser susceptibles de cambiar.
 
-Para definir tipos de datos lógicos, puede usar el primer elemento secundario de  **&lt;reportDefinition /&gt;**, que es donde puede definir una asignación de tipo de datos SQL y el tipo lógico.
+Para definir tipos de datos lógicos, puede usar el primer elemento secundario de  **&lt;reportDefinition /&gt;** , que es donde puede definir una asignación de tipo de datos SQL y el tipo lógico.
 
 El siguiente ejemplo define dos tipos de datos. Uno es **cadena** y el otro es **companyCode**.
 
@@ -668,7 +669,7 @@ Un valor único debe tener un atributo de nombre único global. En este ejemplo,
 
 Aunque puede definir varios grupos de valor único, no dos nombres de valor único pueden ser el mismo, aunque estén en diferentes grupos. Se usa el nombre de valor único por el informe de la secuencia de comandos SQL para establecer el valor en consecuencia.
 
-Puede definir un tipo de datos para cada valor único. La entrada permitida para **tipo** se define en  **&lt;datatype /&gt;**. El informe final podría tener este aspecto:
+Puede definir un tipo de datos para cada valor único. La entrada permitida para **tipo** se define en  **&lt;datatype /&gt;** . El informe final podría tener este aspecto:
 
 **Facts**
 
@@ -702,7 +703,7 @@ La interfaz de usuario ficticio del informe final podría tener el aspecto sigui
 
 **Información del adaptador de red físico**
 
-Id. | Name | Tipo | Velocidad (Mbps) | Dirección MAC
+Id. | Nombre | Tipo | Velocidad (Mbps) | Dirección MAC
 --- | --- | --- | --- | ---
  | <br> | | |
  | | | |
@@ -941,7 +942,7 @@ DECLARE @freediskSize FLOat
 exec dbo.GetThreshold N freediskSize , @freediskSize output
 
 if (@freediskSizeInGB < @freediskSize)
- 
+
 ```
 
 ### <a name="set-or-remove-the-single-value"></a>Establecer o quitar el único valor
@@ -1033,7 +1034,7 @@ INSERT INTO #NetworkAdapterInformation (
   MACaddress
 )
 VALUES (
-   
+
 )
 ```
 
@@ -1091,7 +1092,7 @@ Puede ejecutar la consola SPA en dos modos, depuración o lanzamiento. Modo de v
 
     **Tenga en cuenta** también puede presionar F11 para pasar a la instrucción anterior y la depuración.
 
-     
+
 
 Ejecutando \[dbo\].\[ DebugReportScript\] devuelve varios conjuntos de resultados, incluidas:
 
@@ -1109,9 +1110,9 @@ Ejecutando \[dbo\].\[ DebugReportScript\] devuelve varios conjuntos de resultado
 
 ### <a name="naming-convention-and-styles"></a>Estilos y la convención de nomenclatura
 
-Pascal mayúsculas y minúsculas | Uso de mayúsculas y minúsculas | Mayúsculas
---- | ---- | ---
-<ul><li>Nombres de ProvisionMetadata.xml</li><li>Procedimientos almacenados</li><li>Funciones</li><li>Nombres de vista</li><li>Nombres de tabla temporal</li></ul> | <ul><li>Nombres de parámetro</li><li>Variables locales</li></ul> | Uso de todas las palabras clave SQL reservada
+|                                                                 Pascal mayúsculas y minúsculas                                                                 |                       Uso de mayúsculas y minúsculas                        |             Mayúsculas             |
+|-----------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------|
+| <ul><li>Nombres de ProvisionMetadata.xml</li><li>Procedimientos almacenados</li><li>Funciones</li><li>Nombres de vista</li><li>Nombres de tabla temporal</li></ul> | <ul><li>Nombres de parámetro</li><li>Variables locales</li></ul> | Uso de todas las palabras clave SQL reservada |
 
 ### <a name="other-recommendations"></a>Otras recomendaciones
 
@@ -1143,13 +1144,13 @@ El ejemplo siguiente muestra el flujo de trabajo para ejecutar dos módulos de a
 
 El conjunto de recopiladores de datos de fusión es solo para recopilar el contador de rendimiento y los orígenes de datos ETW. Se aplican las siguientes reglas de combinación:
 
-1.  SPA toma la mayor duración como la nueva duración.
+1. SPA toma la mayor duración como la nueva duración.
 
-2.  Cuando hay conflictos de combinación, se siguen las reglas siguientes:
+2. Cuando hay conflictos de combinación, se siguen las reglas siguientes:
 
-    1.  Tomar el intervalo mínimo como el nuevo intervalo.
+   1. Tomar el intervalo mínimo como el nuevo intervalo.
 
-    2.  Tome el superconjunto de los contadores de rendimiento. Por ejemplo, con **proceso (\*)\\% de tiempo de procesador** y **proceso (\*)\\\*,\\proceso (\*)\\ \***  devuelve más datos, por lo que **proceso (\*)\\% de tiempo de procesador** y **proceso (\*)\\ \***  se quita el conjunto de recopiladores de datos combinados.
+   2. Tome el superconjunto de los contadores de rendimiento. Por ejemplo, con **proceso (\*)\\% de tiempo de procesador** y **proceso (\*)\\\*,\\proceso (\*)\\ \\** * devuelve más datos, por lo que **proceso (\*)\\% de tiempo de procesador** y **proceso (\*)\\ \\** * se quita el conjunto de recopiladores de datos combinados.
 
 ### <a name="collect-dynamic-data"></a>Recopilar datos dinámicos
 
@@ -1169,7 +1170,7 @@ Devuelve una lista de objetos de adaptador de red. Cada objeto tiene una propied
 ROOT\*ISatAP\0001
 PCI\VEN_8086&DEV_4238&SUBSYS_11118086&REV_35\4&372A6B86&0&00E4
 ROOT\*IPHTTPS\0000
- 
+
 ```
 
 Para buscar el **FriendlyName** valor, abra el editor del registro y vaya a configuración del registro mediante la combinación **HKEY\_LOCAL\_máquina\\sistema\\ CurrentControlSet\\Enum\\**  con cada línea en el ejemplo anterior. , por ejemplo: **HKEY\_LOCAL\_máquina\\sistema\\CurrentControlSet\\Enum\\ raíz\\\*IPHTTPS\\0000**.
@@ -1188,7 +1189,7 @@ Para traducir los pasos anteriores en los metadatos de aprovisionamiento de SPA,
 </managementpaths>
 ```
 
-En este ejemplo, primero agregar una consulta WMI en managementpaths y definir el nombre de clave **adaptador de red**. A continuación, agregue una clave del registro y hacer referencia a **adaptador de red** utilizando la sintaxis, **$(NetworkAdapter.PNPDeviceID)**.
+En este ejemplo, primero agregar una consulta WMI en managementpaths y definir el nombre de clave **adaptador de red**. A continuación, agregue una clave del registro y hacer referencia a **adaptador de red** utilizando la sintaxis, **$(NetworkAdapter.PNPDeviceID)** .
 
 La siguiente tabla define si un recopilador de datos de SPA es compatible con los datos dinámicos y si se pueden hacer referencia a otros los recopiladores de datos:
 
@@ -1216,7 +1217,7 @@ Y un ejemplo de WMI:
 <path name="wmi">Root\Cimv2:select PNPDeviceID FROM Win32_NetworkAdapter</path>
 ```
 
-Para definir un recopilador de datos dependiente, se usa la sintaxis siguiente: $(*{name}*.*atributo {}*).
+Para definir un recopilador de datos dependiente, se usa la sintaxis siguiente: $( *{name}* .*atributo {}* ).
 
 *{name}*  y *{atributo}* son marcadores de posición.
 
@@ -1343,7 +1344,7 @@ Tiempos | BigInt no NULL | Tiempo de usuario
 Nombre de columna | Tipo de datos SQL | Descripción
 --- | --- | ---
 SequenceID | int no NULL | Id. de secuencia de correlación
-Name | Nvarchar(100) | Nombre de propiedad
+Nombre | Nvarchar(100) | Nombre de propiedad
 Valor | Nvarchar(4000) | Valor
 
 ### <a name="etw-schema"></a>ETW schema

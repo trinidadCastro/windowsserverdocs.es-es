@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 06e7aa1309b453da649537d5ae9b22acce830530
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 52568944a98bed7960b37335b2e3cbbde61479ca
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816866"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447204"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>Establecer el método para ordenar destinos en las referencias
 
@@ -36,9 +36,9 @@ Usa el siguiente procedimiento para establecer el método para ordenar en la ra�
 
 > [!NOTE]
 > Para usar Windows PowerShell para establecer el método para ordenar de destinos en las referencias de raíz del espacio de nombres, usa el cmdlet [Set-DfsnRoot](https://technet.microsoft.com/library/jj884281.aspx) con uno de los siguientes parámetros:
-   -   **EnableSiteCosting** especifica el método **Ordenación de menor costo**
-   -   **EnableInsiteReferrals** especifica el método para ordenar **Excluir destinos fuera del sitio del cliente**
-   -   Si omites algún parámetro, especifica el método para ordenar referencias **Orden aleatorio**. 
+>    -   **EnableSiteCosting** especifica el método **Ordenación de menor costo**
+>    -   **EnableInsiteReferrals** especifica el método para ordenar **Excluir destinos fuera del sitio del cliente**
+>    -   Si omites algún parámetro, especifica el método para ordenar referencias **Orden aleatorio**. 
 
 El módulo de DFSN Windows PowerShell se introdujo en Windows Server 2012.
    
@@ -91,5 +91,5 @@ En este método, la referencia incluye únicamente los destinos que están en el
 
 ## <a name="see-also"></a>Vea también 
 
--   [Optimización de espacios de nombres DFS](tuning-dfs-namespaces.md)
+-   [Ajustar espacios de nombres DFS](tuning-dfs-namespaces.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)

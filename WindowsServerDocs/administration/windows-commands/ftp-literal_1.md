@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d50c6356dfa56a4a1c22c09b08dffc6b3a514c4a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 693916507488a9a480315a8e9299baa93a223b8a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879266"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438658"
 ---
 # <a name="ftp-literal1"></a>FTP: literal_1
 
@@ -29,9 +29,11 @@ ms.locfileid: "59879266"
 literal <Argument> [ ]  
 ```  
 ### <a name="parameters"></a>Parámetros  
-|Parámetro|Descripción|  
-|-------|--------|  
-|<Argument>|Especifica el argumento que se enviará al servidor ftp.|  
+
+| Parámetro  |                    Descripción                    |
+|------------|---------------------------------------------------|
+| <Argument> | Especifica el argumento que se enviará al servidor ftp. |
+
 ## <a name="remarks"></a>Comentarios  
 El **literal** comando es idéntico a la **oferta** comando.  
 ## <a name="BKMK_Examples"></a>Ejemplos  

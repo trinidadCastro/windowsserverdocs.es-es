@@ -9,12 +9,12 @@ ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 08/08/2018
-ms.openlocfilehash: 58596387d79f3f212a472f00c2785bacc278e855
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: aab4ec7c69ec5b52eae926cd1065d777415b1124
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821916"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446209"
 ---
 # <a name="virtual-network-peering"></a>Interconexión de red virtual
 
@@ -36,20 +36,20 @@ Las ventajas del uso del emparejamiento de red virtual son:
 
 Emparejamiento de red virtual tiene unos requisitos y restricciones:
 
--   Redes virtuales emparejadas deben:
+- Redes virtuales emparejadas deben:
 
-    -   Tener espacios de direcciones IP no superpuestos
+  -   Tener espacios de direcciones IP no superpuestos
 
-    -   Administrar la misma controladora de red
+  -   Administrar la misma controladora de red
 
--   Una vez que emparejar una red virtual con otra red virtual, no se puede agregar o eliminar los intervalos de direcciones en el espacio de direcciones.
+- Una vez que emparejar una red virtual con otra red virtual, no se puede agregar o eliminar los intervalos de direcciones en el espacio de direcciones.
 
-   >[!TIP]
-   >Si necesita agregar intervalos de direcciones:<ol><li>Quite el emparejamiento.</li><li>Agregue el espacio de direcciones.</li><li>Agregar el emparejamiento de nuevo.</li></ol>
+  >[!TIP]
+  >Si necesita agregar intervalos de direcciones:<ol><li>Quite el emparejamiento.</li><li>Agregue el espacio de direcciones.</li><li>Agregar el emparejamiento de nuevo.</li></ol>
 
--   Puesto que el emparejamiento de redes virtuales está entre dos redes virtuales, no hay ninguna relación transitiva derivada entre emparejamientos. Por ejemplo, si emparejar la red virtual a red virtual b y la red virtual b con la red, a continuación, red virtual a no obtener emparejada con la red.
+- Puesto que el emparejamiento de redes virtuales está entre dos redes virtuales, no hay ninguna relación transitiva derivada entre emparejamientos. Por ejemplo, si emparejar la red virtual a red virtual b y la red virtual b con la red, a continuación, red virtual a no obtener emparejada con la red.
 
-    [image here]
+  [image here]
 
 ## <a name="connectivity"></a>Conectividad
 

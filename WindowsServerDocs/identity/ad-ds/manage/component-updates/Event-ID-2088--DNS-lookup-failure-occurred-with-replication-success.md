@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: cc090fa749a601e53b4347cce43245f22badc8ae
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e0c5e838290a8ebf33f0f7891dc10f8b00e5bcba
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840716"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442652"
 ---
 # <a name="event-id-2088-dns-lookup-failure-occurred-with-replication-success"></a>Id. de evento 2088: Se ha producido un error de búsqueda DNS con éxito de replicación
 
@@ -58,7 +58,7 @@ Acción del usuario:
 
 2) Confirme que el controlador de dominio de origen está ejecutando Active Directory y es accesible en la red escribiendo "net view \\ &lt;nombre de DC de origen&gt;" o "ping &lt;nombre de DC de origen&gt;". 
 
-3) Compruebe que el controlador de dominio de origen usa un servidor DNS válido para los servicios DNS y que el controlador de dominio de origen registro de host y CNAME de registro están registrados correctamente, con la versión mejorada de DNS de DCDIAG. EXE disponible en https://www.microsoft.com/dns 
+3) Compruebe que el controlador de dominio de origen usa un servidor DNS válido para los servicios DNS y que el controlador de dominio de origen registro de host y CNAME de registro están registrados correctamente, con la versión mejorada de DNS de DCDIAG. EXE disponible en <https://www.microsoft.com/dns> 
 
 dcdiag /test:dns 
 
@@ -66,7 +66,7 @@ dcdiag /test:dns
 
 dcdiag /test:dns 
 
-5) Para realizar un análisis de errores DNS, consulte 824449 KB: https://support.microsoft.com/?kbid=824449 
+5) Para realizar un análisis de errores DNS, consulte 824449 KB: <https://support.microsoft.com/?kbid=824449> 
 
 Datos adicionales Valor de error: 11004 el nombre solicitado es válido, pero no se encontró ningún dato del tipo solicitado</code> </introduction>
   <section>
@@ -78,7 +78,7 @@ Datos adicionales Valor de error: 11004 el nombre solicitado es válido, pero no
   <section>
     <title>Resolución</title>
     <content>
-      <para>Continuar con la prueba de DNS como se describe en "<link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">Id. de evento 2087: Error de búsqueda de DNS provocó un error de replicación</link>. "</para>
+      <para>Continuar con la prueba de DNS como se describe en &quot; <link xlink:href="85b1d179-f53e-4f95-b0b8-5b1c096a8076">identificador de evento 2087: Error de búsqueda de DNS provocó un error de replicación</link>.&quot;</para>
     </content>
   </section>
   <relatedTopics />

@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 15b69e723af3a30375beae73782ab122c68f8880
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 681939409b9b8b952179992a2a86415e737ee675
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879726"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447700"
 ---
 # <a name="schedule-a-set-of-reports"></a>Programar un conjunto de informes
 
@@ -28,50 +28,50 @@ Los informes programados se guardan en una ubicación predeterminada, que puedes
 
 ## <a name="to-schedule-a-report-task"></a>Para programar una tarea de informes
 
-1.  Haz clic en el nodo **Administración de informes de almacenamiento**.
+1. Haz clic en el nodo **Administración de informes de almacenamiento**.
 
-2.  Haz clic con el botón derecho en **Administración de informes de almacenamiento** y luego haz clic en **Programar una nueva tarea de informes** (o selecciona **Programar una nueva tarea de informes** en el panel **Acciones**). Se abrirá el cuadro de diálogo **Propiedades de la tarea de informes de almacenamiento**.
+2. Haz clic con el botón derecho en **Administración de informes de almacenamiento** y luego haz clic en **Programar una nueva tarea de informes** (o selecciona **Programar una nueva tarea de informes** en el panel **Acciones**). Se abrirá el cuadro de diálogo **Propiedades de la tarea de informes de almacenamiento**.
 
-3.  Para seleccionar volúmenes o carpetas en los que se generarán informes:
+3. Para seleccionar volúmenes o carpetas en los que se generarán informes:
 
-    -   En **Ámbito**, haz clic en **Agregar**.
-    -   Busca el volumen o carpeta en los que quieres generar los informes, selecciónalos y luego haz clic en **Aceptar** para agregar la ruta de acceso a la lista.
-    -   Agregar todos los volúmenes o carpetas posibles que quieras incluir en los informes. (Para quitar un volumen o carpeta, haz clic en la ruta de acceso y luego haz clic en **Quitar**).
+   -   En **Ámbito**, haz clic en **Agregar**.
+   -   Busca el volumen o carpeta en los que quieres generar los informes, selecciónalos y luego haz clic en **Aceptar** para agregar la ruta de acceso a la lista.
+   -   Agregar todos los volúmenes o carpetas posibles que quieras incluir en los informes. (Para quitar un volumen o carpeta, haz clic en la ruta de acceso y luego haz clic en **Quitar**).
 
-4.  Para especificar los informes que han de generarse:
+4. Para especificar los informes que han de generarse:
 
-    -  En **Datos del informe**, selecciona cada informe que quieres incluir. De forma predeterminada, todos los informes se generan para una tarea de informes programada.
+   -  En **Datos del informe**, selecciona cada informe que quieres incluir. De forma predeterminada, todos los informes se generan para una tarea de informes programada.
 
-    Para editar los parámetros de un informe:
+   Para editar los parámetros de un informe:
 
-    -   Haz clic en la etiqueta del informe y luego haz clic en **Editar parámetros**.
-    -   En el cuadro de diálogo **Parámetros de informes**, edita los parámetros según sea necesario y luego haz clic en **Aceptar**.
+   -   Haz clic en la etiqueta del informe y luego haz clic en **Editar parámetros**.
+   -   En el cuadro de diálogo **Parámetros de informes**, edita los parámetros según sea necesario y luego haz clic en **Aceptar**.
 
-    -   Para ver una lista de los parámetros de todos los informes seleccionados, haz clic en **Revisar informes seleccionados**. A continuación, haga clic en **Cerrar**.
+   -   Para ver una lista de los parámetros de todos los informes seleccionados, haz clic en **Revisar informes seleccionados**. A continuación, haga clic en **Cerrar**.
 
-5.  Para especificar los formatos para guardar los informes:
+5. Para especificar los formatos para guardar los informes:
 
-    -  En **Formatos de informes**, selecciona uno o varios formatos para los informes programados. De forma predeterminada, los informes se generan en Dynamic HTML (DHTML). También puedes seleccionar HTML, XML, CSV y formatos de texto. Los informes se guardan en la ubicación predeterminada para los informes programados.
+   -  En **Formatos de informes**, selecciona uno o varios formatos para los informes programados. De forma predeterminada, los informes se generan en Dynamic HTML (DHTML). También puedes seleccionar HTML, XML, CSV y formatos de texto. Los informes se guardan en la ubicación predeterminada para los informes programados.
 
-6.  Para enviar copias de los informes a los administradores por correo electrónico:
+6. Para enviar copias de los informes a los administradores por correo electrónico:
 
-    - En la pestaña **Entrega**, selecciona la casilla de verificación **Enviar informes a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán los informes. 
-    - Usa el formato *account@domain* y usa punto y coma para separar varias cuentas.
+   - En la pestaña **Entrega**, selecciona la casilla de verificación **Enviar informes a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán los informes. 
+   - Usa el formato <em>account@domain</em> y usa punto y coma para separar varias cuentas.
 
-7.  Para programar los informes:
+7. Para programar los informes:
 
-    En la pestaña **Programación**, haz clic en **Crear una programación** y luego en **Programación**, haz clic en **Nueva**. Se muestra una programación predeterminada para las 9:00 a.m. todos los días, pero puedes modificar la programación predeterminada.
+   En la pestaña **Programación**, haz clic en **Crear una programación** y luego en **Programación**, haz clic en **Nueva**. Se muestra una programación predeterminada para las 9:00 a.m. todos los días, pero puedes modificar la programación predeterminada.
 
-    -   Para especificar una frecuencia de generación de informes, selecciona un intervalo en la lista desplegable **Programar tarea**.
-        Puedes programar informes diarios, semanales o mensuales o generar los informes una sola vez. También puedes generar informes en el inicio del sistema o en el inicio de sesión o cuando el equipo haya estado inactivo durante un tiempo determinado.
-    -   Para ofrecer información adicional de programación para el intervalo elegido, modifica o establece los valores en las opciones **Programar tarea**.
-        Estas opciones cambian según el intervalo que elijas. Por ejemplo, para un informe semanal, puedes especificar el número de semanas entre los informes y los días de la semana que quieres generar los informes.
-    -   Para especificar la hora del día en que quieres generar el informe, escribe o selecciona el valor en el cuadro **Hora de inicio**.
-    -   Para acceder a opciones de programación adicionales (como por ejemplo, fecha de inicio y fecha de finalización de la tarea), haz clic en **Opciones avanzadas**.
-    -   Para guardar la programación, haz clic en **Aceptar**.
-    -  Para crear una programación adicional para una tarea (o modificar una existente), en la pestaña **Programación**, haz clic en **Editar programación**.
+   -   Para especificar una frecuencia de generación de informes, selecciona un intervalo en la lista desplegable **Programar tarea**.
+       Puedes programar informes diarios, semanales o mensuales o generar los informes una sola vez. También puedes generar informes en el inicio del sistema o en el inicio de sesión o cuando el equipo haya estado inactivo durante un tiempo determinado.
+   -   Para ofrecer información adicional de programación para el intervalo elegido, modifica o establece los valores en las opciones **Programar tarea**.
+       Estas opciones cambian según el intervalo que elijas. Por ejemplo, para un informe semanal, puedes especificar el número de semanas entre los informes y los días de la semana que quieres generar los informes.
+   -   Para especificar la hora del día en que quieres generar el informe, escribe o selecciona el valor en el cuadro **Hora de inicio**.
+   -   Para acceder a opciones de programación adicionales (como por ejemplo, fecha de inicio y fecha de finalización de la tarea), haz clic en **Opciones avanzadas**.
+   -   Para guardar la programación, haz clic en **Aceptar**.
+   -  Para crear una programación adicional para una tarea (o modificar una existente), en la pestaña **Programación**, haz clic en **Editar programación**.
 
-8.  Para guardar la tarea de informes, haz clic en **Aceptar**.
+8. Para guardar la tarea de informes, haz clic en **Aceptar**.
 
 La tarea de informes se agrega al nodo **Administración de informes de almacenamiento**. Las tareas se identifican por los informes que se generan, el espacio de nombres sobre el que se crea los informes y la programación de informes.
 
@@ -80,6 +80,6 @@ Además, puedes ver el estado actual del informe (sin importar si el informe se 
 ## <a name="see-also"></a>Vea también
 
 -   [Administración de informes de almacenamiento](storage-reports-management.md)
--   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
+-   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
 
 

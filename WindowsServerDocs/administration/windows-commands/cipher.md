@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: baf527d3590a4ec52a51260d3083419ab27d548d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d801d6e6286e97319766c879f7289f6191cc7101
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887186"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434337"
 ---
 # <a name="cipher"></a>cipher
 
@@ -45,24 +45,24 @@ cipher /rekey [PathName [...]]
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetros|Descripción|
-|----------|-----------|
-|/b|Anula si se produce un error. De forma predeterminada, **cifrado** continúa ejecutándose incluso si se producen errores.|
-|/c|Muestra información sobre el archivo cifrado.|
-|/d|Descifra los archivos o directorios especificados.|
-|/e|Cifra los archivos o directorios especificados. Los directorios se marcan para que se cifrarán los archivos que se agreguen más adelante.|
-|/h|Muestra los archivos con oculto o atributos del sistema. De forma predeterminada, estos archivos no se cifra o descifra.|
-|/k|Crea un nuevo certificado y una clave para su uso con archivos de sistema de archivos cifrados (EFS). Si el **/k** parámetro se especifica, se omiten todos los demás parámetros.|
-|/r:\<FileName> [/smartcard]|Genera una clave del agente de recuperación de EFS y un certificado y luego escribe en un archivo .pfx (que contiene los certificados y la clave privada) y un archivo .cer (que contiene solo el certificado). Si **/smartcard** se especifica, escriben la clave de recuperación y el certificado en una tarjeta inteligente y se genera ningún archivo pfx.|
-|/ s:\<directorio >|Realiza la operación especificada en todos los subdirectorios en la instancia especificada *Directory*.|
-|/u [/n]|Busca todos los archivos cifrados en las unidades locales. Si se usa con el **/n** parámetro, no se actualiza. Si se usa sin **/n**, **/u** compara la clave de cifrado de archivos del usuario o la clave del agente de recuperación a las ya existentes y las actualiza si han cambiado. Este parámetro solo funciona con **/n**.|
-|/ w:\<directorio >|Quita los datos de espacio en disco sin usar disponible en todo el volumen. Si usas el **/w** parámetro, se omiten todos los demás parámetros. El directorio especificado puede encontrarse en cualquier lugar en un volumen local. Si es un montaje de punto o apunta a un directorio en otro volumen, los datos en que se ha quitado el volumen.|
-|/x[:efsfile] [\<FileName>]|Copia el certificado EFS y las claves en el nombre de archivo especificado. Si se usa con **: efsfile**, **/x** realiza copias de seguridad o los certificados del usuario que se usaron para cifrar el archivo. En caso contrario, el usuario actual del certificado EFS y claves son una copia de seguridad.|
-|/y|Muestra la miniatura de certificado EFS actual en el equipo local.|
-|/AddUser [/ certhash:\<Hash > | /certfile:<FileName>]|Agrega un usuario a los archivos cifrados especificados. Si se usa con **/certhash**, **cifrado** busca un certificado con el hash SHA1 especificado. Si se usa con **/certfile**, **cifrado** extrae el nombre de archivo especificado en el certificado.|
-|/rekey|Actualiza los archivos cifrados especificados para usar la clave de EFS actualmente configurada.|
-|/removeuser /certhash:\<Hash>|Quita un usuario de los archivos especificados. El *Hash* previstas **/certhash** debe ser el hash SHA1 del certificado que se va a quitar.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|          Parámetros           |                                                                                                                                                   Descripción                                                                                                                                                    |
+|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|              /b               |                                                                                                    Anula si se produce un error. De forma predeterminada, **cifrado** continúa ejecutándose incluso si se producen errores.                                                                                                    |
+|              /c               |                                                                                                                                   Muestra información sobre el archivo cifrado.                                                                                                                                    |
+|              /d               |                                                                                                                                   Descifra los archivos o directorios especificados.                                                                                                                                   |
+|              /e               |                                                                                          Cifra los archivos o directorios especificados. Los directorios se marcan para que se cifrarán los archivos que se agreguen más adelante.                                                                                           |
+|              /h               |                                                                                                     Muestra los archivos con oculto o atributos del sistema. De forma predeterminada, estos archivos no se cifra o descifra.                                                                                                     |
+|              /k               |                                                                            Crea un nuevo certificado y una clave para su uso con archivos de sistema de archivos cifrados (EFS). Si el **/k** parámetro se especifica, se omiten todos los demás parámetros.                                                                            |
+|  /r:\<FileName> [/smartcard]  |   Genera una clave del agente de recuperación de EFS y un certificado y luego escribe en un archivo .pfx (que contiene los certificados y la clave privada) y un archivo .cer (que contiene solo el certificado). Si **/smartcard** se especifica, escriben la clave de recuperación y el certificado en una tarjeta inteligente y se genera ningún archivo pfx.   |
+|        / s:\<directorio >        |                                                                                                               Realiza la operación especificada en todos los subdirectorios en la instancia especificada *Directory*.                                                                                                               |
+|            /u [/n]            |  Busca todos los archivos cifrados en las unidades locales. Si se usa con el **/n** parámetro, no se actualiza. Si se usa sin **/n**, **/u** compara la clave de cifrado de archivos del usuario o la clave del agente de recuperación a las ya existentes y las actualiza si han cambiado. Este parámetro solo funciona con **/n**.  |
+|        / w:\<directorio >        | Quita los datos de espacio en disco sin usar disponible en todo el volumen. Si usas el **/w** parámetro, se omiten todos los demás parámetros. El directorio especificado puede encontrarse en cualquier lugar en un volumen local. Si es un montaje de punto o apunta a un directorio en otro volumen, los datos en que se ha quitado el volumen. |
+|  /x[:efsfile] [\<FileName>]   |                                 Copia el certificado EFS y las claves en el nombre de archivo especificado. Si se usa con **: efsfile**, **/x** realiza copias de seguridad o los certificados del usuario que se usaron para cifrar el archivo. En caso contrario, el usuario actual del certificado EFS y claves son una copia de seguridad.                                 |
+|              /y               |                                                                                                                      Muestra la miniatura de certificado EFS actual en el equipo local.                                                                                                                      |
+|  /AddUser [/ certhash:\<Hash >  |                                                                                                                                              /certfile:<FileName>]                                                                                                                                               |
+|            /rekey             |                                                                                                                 Actualiza los archivos cifrados especificados para usar la clave de EFS actualmente configurada.                                                                                                                 |
+| /removeuser /certhash:\<Hash> |                                                                                       Quita un usuario de los archivos especificados. El *Hash* previstas **/certhash** debe ser el hash SHA1 del certificado que se va a quitar.                                                                                       |
+|              /?               |                                                                                                                                       Muestra la ayuda en el símbolo del sistema.                                                                                                                                       |
 
 ## <a name="remarks"></a>Comentarios
 

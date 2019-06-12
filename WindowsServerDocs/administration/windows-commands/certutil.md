@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: faaf936e4c23579e908e12543c07d0764a2cdcc1
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 7a602472d30f19cb2d4a802423635e5788e78a43
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192624"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434555"
 ---
 # <a name="certutil"></a>certutil
 
@@ -145,14 +145,15 @@ Vuelva a [menú](#menu)
 
 En la tabla siguiente se describe la notación que se utiliza para indicar la sintaxis de línea de comandos.
 
-|Notación|Descripción|
-|--------|-----------|
-|Texto sin corchetes ni llaves|Elementos que se debe escribir como se muestra|
-|\<Texto dentro de corchetes angulares >|Marcador de posición para el que debe proporcionar un valor|
-|[Texto entre corchetes]|Elementos opcionales|
-|{Texto entre llaves}|Conjunto de elementos necesarios; Elija una|
-|Vertical de la barra ()|) simple|Separador para elementos mutuamente excluyentes; Elija una|
-|Puntos suspensivos (...)|Elementos que se pueden repetir|
+
+|            Notación             |                  Descripción                  |
+|---------------------------------|-----------------------------------------------|
+| Texto sin corchetes ni llaves |         Elementos que se debe escribir como se muestra          |
+|  \<Texto dentro de corchetes angulares >  | Marcador de posición para el que debe proporcionar un valor |
+|  [Texto entre corchetes]  |                Elementos opcionales                 |
+|      {Texto entre llaves}       |       Conjunto de elementos necesarios; Elija una       |
+|         Vertical de la barra ()          |                       ) simple                       |
+|          Puntos suspensivos (...)           |          Elementos que se pueden repetir           |
 
 Vuelva a [menú](#menu)
 

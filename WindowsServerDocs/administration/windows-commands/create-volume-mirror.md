@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c66f21f55201d9d784b1ab0d7b729bc272589e5f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 72d80fdf6eca1262a858cbe2a98ed8c9c421bff6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822976"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434081"
 ---
 # <a name="create-volume-mirror"></a>creación de reflejo de volumen
 
@@ -39,12 +39,12 @@ create volume mirror [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr] [noer
   
 ## <a name="parameters"></a>Parámetros  
   
-|Parámetro|Descripción|  
-|-------|--------|  
-|size\=<n>|Especifica la cantidad de espacio en disco, en megabytes \(MB\), que ocupará el volumen en cada disco. Si no se especifica tamaño, el nuevo volumen ocupará todo el espacio libre restante en el disco más pequeño y cantidades equivalentes de espacio en los discos sucesivos.|  
-|disco\=<n>,<n>\[,<n>,...\]|Especifica los discos dinámicos en el que se crea el volumen reflejado. Se necesitan dos discos dinámicos para crear un volumen reflejado. Cantidad de espacio que es igual al tamaño especificado con el **tamaño** en cada disco se asigna el parámetro.|  
-|Alinear\=<n>|Alinea todas las extensiones de volumen para el límite de alineación más cercano. Este parámetro se usa normalmente con el número de unidad lógica de RAID de hardware \(LUN\) matrices para mejorar el rendimiento. *n* es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano.|  
-|noerr|Se utiliza sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un error.|  
+|         Parámetro         |                                                                                                                                     Descripción                                                                                                                                     |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         size\=<n>         |                 Especifica la cantidad de espacio en disco, en megabytes \(MB\), que ocupará el volumen en cada disco. Si no se especifica tamaño, el nuevo volumen ocupará todo el espacio libre restante en el disco más pequeño y cantidades equivalentes de espacio en los discos sucesivos.                 |
+| disco\=<n>,<n>\[,<n>,...\] |                       Especifica los discos dinámicos en el que se crea el volumen reflejado. Se necesitan dos discos dinámicos para crear un volumen reflejado. Cantidad de espacio que es igual al tamaño especificado con el **tamaño** en cada disco se asigna el parámetro.                        |
+|        Alinear\=<n>         | Alinea todas las extensiones de volumen para el límite de alineación más cercano. Este parámetro se usa normalmente con el número de unidad lógica de RAID de hardware \(LUN\) matrices para mejorar el rendimiento. *n* es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano. |
+|           noerr           |                                        Se utiliza sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un error.                                         |
   
 ## <a name="remarks"></a>Comentarios  
   

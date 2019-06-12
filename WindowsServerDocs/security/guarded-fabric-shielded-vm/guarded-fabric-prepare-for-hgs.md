@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: dddf694aaceab93bd102456dbe86df17a001cb01
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9a668a39990b79862b99c2c7d9aeaf6540fa376d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879886"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447376"
 ---
 # <a name="review-prerequisites-for-the-host-guardian-service"></a>Revisar los requisitos previos para el servicio de protección de Host
 
@@ -32,7 +32,7 @@ En este tema se trata los requisitos previos HGS y pasos iniciales para preparar
 
 -   **Roles de servidor**: Servicio guardián de host y compatibles con los roles de servidor.
 
--   **Permisos y privilegios de configuración para el dominio de tejido (host)**: Deberá configurar el reenvío de DNS entre el dominio de tejido (host) y el dominio HGS. 
+-   **Permisos y privilegios de configuración para el dominio de tejido (host)** : Deberá configurar el reenvío de DNS entre el dominio de tejido (host) y el dominio HGS. 
     
 ## <a name="upgrading-hgs"></a>Actualización de HGS
 
@@ -40,5 +40,5 @@ Si ya ha implementado HGS y desea actualizar su sistema operativo, siga el [actu
 
 ## <a name="next-step"></a>Paso siguiente
 
->[!div class="nextstepaction"]
-[Obtener certificados de HGS](guarded-fabric-obtain-certs.md)
+> [!div class="nextstepaction"]
+> [Obtener certificados de HGS](guarded-fabric-obtain-certs.md)

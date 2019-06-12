@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc2952bdbf709c31d720a7fb57430429edf9feb1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47a26be99a5eee510970d3eee6b486331a98b159
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871916"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436899"
 ---
 # <a name="nslookup-root"></a>nslookup root
 
@@ -30,11 +30,13 @@ cambia el servidor predeterminado en el servidor para la raíz del espacio de no
 root 
 ```
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|{help &#124; ?}|Muestra un resumen breve de **nslookup** subcomandos.|
+
+|    Parámetro    |                      Descripción                      |
+|-----------------|-------------------------------------------------------|
+| {help &#124; ?} | Muestra un resumen breve de **nslookup** subcomandos. |
+
 ## <a name="remarks"></a>Comentarios
--   Actualmente, se usa el servidor de nombres ns.nic.ddn.mil. Este comando es un sinónimo de lserver ns.nic.ddn.mil. Puede cambiar el nombre del servidor de raíz con el **conjunto raíz** comando.
-## <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[nslookup establece raíz](nslookup-set-root.md)
+- Actualmente, se usa el servidor de nombres ns.nic.ddn.mil. Este comando es un sinónimo de lserver ns.nic.ddn.mil. Puede cambiar el nombre del servidor de raíz con el **conjunto raíz** comando.
+  ## <a name="additional-references"></a>Referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [nslookup establece raíz](nslookup-set-root.md)

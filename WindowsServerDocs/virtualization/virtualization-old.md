@@ -9,19 +9,19 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: medium
 ms.date: 03/16/2018
-ms.openlocfilehash: b3b018037d788d47fafe7d3adda50cfb5831ab56
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6dbb5be6d836462c9a24078dbec3700b09b08fc
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829916"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446049"
 ---
 # <a name="virtualization"></a>Virtualización
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016 
 
 >[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Buscas información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 <img src="../media/landing-icons/virtualization.png" style='float:left; padding:.5em;' alt="Icon showing a box with spokes"> La virtualización en Windows Server 2016 es una de las tecnologías fundamentales necesarias para crear tu infraestructura definida por software. Junto con las redes y el almacenamiento, las funciones de virtualización ofrecen la flexibilidad que necesitas para impulsar las cargas de trabajo para tus clientes.
 
@@ -41,7 +41,7 @@ Tecnologías de virtualización de Windows Server incluyen las actualizaciones d
                     </div>
                     <div class="cardText">
                         <h3>Máquinas virtuales blindadas y tejido protegido</h3>
-                        <p>Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de un servicio guardián de Host \(HGS\) -normalmente, un clúster de tres nodos: más de uno o más hosts protegidos y un conjunto de máquinas virtuales blindadas.</p>
+                        <p>Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de servicio de protección de un Host (HGS): por lo general, un clúster de tres nodos: más de uno o más protegidos de los hosts y un conjunto de máquinas virtuales blindadas.</p>
                     </div>
                 </div>
             </div>
@@ -101,11 +101,11 @@ Tecnologías de virtualización de Windows Server incluyen las actualizaciones d
                     </div>
                     <div class="cardText">
                         <h3>Conmutador virtual de Hyper-V</h3>
-                        <p>El Hyper\-V Virtual Switch es un software\-basada en capa\-conmutador de red Ethernet 2 que se incluye en todas las versiones de Hyper\-V.</p>
+                        <p>El conmutador Virtual de Hyper-V es un conmutador de red Ethernet de capa 2 basado en software que se incluye en todas las versiones de Hyper-V.</p>
 
-                        <p>Hyper\-V Virtual Switch está disponible en Hyper\-V Manager después de instalar Hyper\-rol de servidor V.</p>
+                        <p>El conmutador virtual de Hyper-V está disponible en el Administrador de Hyper-V después de instalar el rol de servidor de Hyper-V.</p>
 
-                        <p>Incluido en Hyper\-V Virtual Switch son extensibles y administradas mediante programación funcionalidades que permiten conectar máquinas virtuales a las redes virtuales y la red física.</p> 
+                        <p>En el conmutador virtual de Hyper-V se incluyen funcionalidades extensibles y administradas mediante programación que te permiten conectar máquinas virtuales tanto a la red física como a las redes virtuales.</p> 
 
                         <p>Además el conmutador virtual de Hyper-V exige la aplicación de la directiva en los niveles de servicio, aislamiento y seguridad.</p>
                     </div>
@@ -128,7 +128,7 @@ Tecnologías de virtualización de Windows Server incluyen las actualizaciones d
                     </div>
                     <div class="cardText">
                         <h3>Contenedores de Windows</h3>
-                        <p>Contenedores de Windows proporcionan el sistema operativo\-virtualización a nivel que permite que varias aplicaciones aisladas que se ejecute en un único sistema. Se incluyen dos tipos diferentes de contenedores en tiempo de ejecución con la función, cada uno de ellos con distintos grados de aislamiento de aplicaciones.</p>
+                        <p>Los contenedores de Windows proporcionan virtualización en el nivel del sistema operativo que permite que varias aplicaciones aisladas se ejecuten en un solo sistema. Se incluyen dos tipos diferentes de contenedores en tiempo de ejecución con la función, cada uno de ellos con distintos grados de aislamiento de aplicaciones.</p>
                     </div>
                 </div>
             </div>

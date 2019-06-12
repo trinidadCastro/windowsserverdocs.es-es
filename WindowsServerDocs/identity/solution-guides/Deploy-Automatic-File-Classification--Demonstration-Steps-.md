@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 77fb8cc6e13cb82e4d07808c3ae77757a4b2de79
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 8d1ea7a428b2d03649a7a9347421d717be3f468a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826786"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445832"
 ---
 # <a name="deploy-automatic-file-classification-demonstration-steps"></a>Deploy Automatic File Classification (Demonstration Steps)
 
@@ -56,7 +56,7 @@ Las propiedades de recurso Impact y Personally Identifiable Information se habil
   
 5.  Haz clic con el botón secundario en **Personally Identifiable Information** y, luego, haz clic en **Habilitar**.  
   
-![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)****Windows PowerShell equivalente comandos****  
+![guías de solución](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -107,7 +107,7 @@ Una regla de clasificación de contenido de cadena analiza un archivo en busca d
   
 13. En la pestaña **Tipo de evaluación**, activa la casilla **Volver a evaluar los valores de propiedad existentes**, haz clic en **Sobrescribir el valor existente** y, luego, haz clic en **Aceptar**.  
   
-![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)****Windows PowerShell equivalente comandos****  
+![guías de solución](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -155,7 +155,7 @@ Una regla de clasificación de contenido de expresión regular analiza un archiv
   
 12. En la pestaña **Tipo de evaluación**, activa la casilla **Volver a evaluar los valores de propiedad existentes**, haz clic en **Sobrescribir el valor existente** y, luego, haz clic en **Aceptar**.  
   
-![guías de soluciones](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)****Windows PowerShell equivalente comandos****  
+![guías de solución](media/Deploy-Automatic-File-Classification--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -186,11 +186,11 @@ Para comprobar que los archivos están correctamente clasificados, puedes ver la
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Escenario: Obtenga información sobre los datos mediante el uso de clasificación](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
+-   [Escenario: Comprender los datos mediante la clasificación](Scenario--Get-Insight-into-Your-Data-by-Using-Classification.md)  
   
 -   [Planificar la clasificación automática de archivos](https://docs.microsoft.com/previous-versions/orphan-topics/ws.11/jj574209(v%3dws.11))  
 
   
--   [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c7d5675aa6c33ddbe1e5e873e1a7cf7a2e8f8017
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 79449bc74dd09246b380b3f892acc1b338650d20
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59824966"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441503"
 ---
 # <a name="select-partition"></a>Seleccione la partición
 
@@ -36,9 +36,9 @@ select partition=<n>
   
 ## <a name="parameters"></a>Parámetros  
   
-|Parámetro|Descripción|  
-|-------|--------|  
-|partición\=<n>|El número de la partición que se va a recibir el foco. Puede ver los números de todas las particiones en el disco seleccionado actualmente mediante el uso de la **lista partición** comando DiskPart.|  
+|   Parámetro    |                                                                                    Descripción                                                                                    |
+|----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| partición\=<n> | El número de la partición que se va a recibir el foco. Puede ver los números de todas las particiones en el disco seleccionado actualmente mediante el uso de la **lista partición** comando DiskPart. |
   
 ## <a name="remarks"></a>Comentarios  
   

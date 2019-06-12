@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 42622fdf19cdd50b76d32989769874cbd05e9f4a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 526363db3ecff4a9138c9cf13cbf330196e14ced
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826946"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439254"
 ---
 # <a name="finger"></a>finger
 
@@ -30,12 +30,14 @@ Muestra información acerca de los usuarios en un equipo remoto especificado (no
 finger [-l] [<User>] [@<Host>] [...]
 ```
 ### <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|-l|Muestra información de usuario en formato de lista larga.|
-|<User>|Especifica el usuario sobre el que desea información. Si se omite el *usuario* parámetro, **dedo** muestra información sobre todos los usuarios en el equipo especificado.|
-|@<Host>|Especifica el equipo remoto que ejecuta el servicio finger donde desea obtener información de usuario. Puede especificar una dirección IP o nombre de equipo.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+
+| Parámetro |                                                                            Descripción                                                                            |
+|-----------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    -l     |                                                          Muestra información de usuario en formato de lista larga.                                                           |
+|  <User>   | Especifica el usuario sobre el que desea información. Si se omite el *usuario* parámetro, **dedo** muestra información sobre todos los usuarios en el equipo especificado. |
+|  @<Host>  |        Especifica el equipo remoto que ejecuta el servicio finger donde desea obtener información de usuario. Puede especificar una dirección IP o nombre de equipo.        |
+|    /?     |                                                               Muestra la ayuda en el símbolo del sistema.                                                                |
+
 ## <a name="remarks"></a>Comentarios
 Varios User@Host se pueden especificar parámetros.
 Se debe anteponer **dedo** parámetros con un guión (-) en lugar de una barra diagonal (/).

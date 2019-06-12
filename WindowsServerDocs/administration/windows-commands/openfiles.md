@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83175d8529d9204c6b6d969a3db2aee2775bd0c4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0bec8cf64a3c7f261c792a07da603cba4366e1a7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852386"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436430"
 ---
 # <a name="openfiles"></a>openfiles
 
@@ -43,16 +43,16 @@ openfiles /disconnect [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]]
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/s \<system >|Especifica el sistema remoto para conectarse a (por nombre o dirección IP). No use barras diagonales inversas. Si no usa el **/s** opción, el comando se ejecuta en el equipo local de forma predeterminada. Este parámetro se aplica a todos los archivos y carpetas que se especifican en el comando.|
-|/u [\<Domain>\]<UserName>|Ejecuta el comando con los permisos de la cuenta de usuario especificado. Si no usa el **/u** opción, el sistema de permisos se utilizan de forma predeterminada.|
-|/p [\<Password>]|Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** opción. Si no usa el **/p** opción, una solicitud de contraseña aparece cuando se ejecuta el comando.|
-|/id \<OpenFileID>|Desconecta archivos abiertos por el identificador de archivo especificado. El carácter comodín (**&#42;**) se puede usar con este parámetro.</br>Nota: Puede usar el **openfiles /query** comando para buscar el identificador de archivo.|
-|/a \<Con_acceso_por >|Desconecta todos los archivos abiertos asociados con el nombre de usuario que se especifica en el *Con_acceso_por* parámetro. El carácter comodín (**&#42;**) se puede usar con este parámetro.|
-|/o {leer \| escribir \| lectura/escritura}|Desconecta todos los archivos abiertos con el valor del modo de apertura especificada. Los valores válidos son de lectura, escritura o lectura/escritura. El carácter comodín (**&#42;**) se puede usar con este parámetro.|
-|/ Op. \<OpenFile >|Desconecta todas las conexiones de archivos abiertos que se crean mediante un nombre de archivo abiertos específicos. El carácter comodín (**&#42;**) se puede usar con este parámetro.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|            Parámetro             |                                                                                                                                 Descripción                                                                                                                                  |
+|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|           /s \<system >           | Especifica el sistema remoto para conectarse a (por nombre o dirección IP). No use barras diagonales inversas. Si no usa el **/s** opción, el comando se ejecuta en el equipo local de forma predeterminada. Este parámetro se aplica a todos los archivos y carpetas que se especifican en el comando. |
+|    /u [\<Domain>\]<UserName>     |                                                          Ejecuta el comando con los permisos de la cuenta de usuario especificado. Si no usa el **/u** opción, el sistema de permisos se utilizan de forma predeterminada.                                                           |
+|         /p [\<Password>]         |                                               Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** opción. Si no usa el **/p** opción, una solicitud de contraseña aparece cuando se ejecuta el comando.                                                |
+|        /id \<OpenFileID>         |                                       Desconecta archivos abiertos por el identificador de archivo especificado. El carácter comodín ( **&#42;** ) se puede usar con este parámetro.</br>Nota: Puede usar el **openfiles /query** comando para buscar el identificador de archivo.                                       |
+|         /a \<Con_acceso_por >         |                                                Desconecta todos los archivos abiertos asociados con el nombre de usuario que se especifica en el *Con_acceso_por* parámetro. El carácter comodín ( **&#42;** ) se puede usar con este parámetro.                                                 |
+| /o {leer \| escribir \| lectura/escritura} |                                               Desconecta todos los archivos abiertos con el valor del modo de apertura especificada. Los valores válidos son de lectura, escritura o lectura/escritura. El carácter comodín ( **&#42;** ) se puede usar con este parámetro.                                                |
+|         / Op. \<OpenFile >          |                                                           Desconecta todas las conexiones de archivos abiertos que se crean mediante un nombre de archivo abiertos específicos. El carácter comodín ( **&#42;** ) se puede usar con este parámetro.                                                           |
+|                /?                |                                                                                                                     Muestra la ayuda en el símbolo del sistema.                                                                                                                     |
 
 ### <a name="examples"></a>Ejemplos
 
@@ -89,15 +89,15 @@ openfiles /query [/s <System> [/u [<Domain>\]<UserName> [/p [<Password>]]]] [/fo
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/s \<system >|Especifica el sistema remoto para conectarse a (por nombre o dirección IP). No use barras diagonales inversas. Si no usa el **/s** opción, el comando se ejecuta en el equipo local de forma predeterminada. Este parámetro se aplica a todos los archivos y carpetas que se especifican en el comando.|
-|/u [\<Domain>\]<UserName>|Ejecuta el comando con los permisos de la cuenta de usuario especificado. Si no usa el **/u** opción, el sistema de permisos se utilizan de forma predeterminada.|
-|/p [\<Password>]|Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** opción. Si no usa el **/p** opción, una solicitud de contraseña aparece cuando se ejecuta el comando.|
-|[/ FO {tabla \| lista \| CSV}]|Muestra el resultado en el formato especificado. Los valores válidos para *formato* son:</br>TABLA:  Muestra los resultados en una tabla.</br>LISTA: Muestra los resultados en una lista.</br>CSV: Muestra la salida en formato de valores separados por comas.|
-|/nh|Suprime el encabezado de columna en la salida. Solo es válido cuando el **/fo** parámetro está establecido en **tabla** o **CSV**.|
-|/v|Especifica que se muestra información detallada en la salida.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|          Parámetro           |                                                                                                                                 Descripción                                                                                                                                  |
+|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         /s \<system >         | Especifica el sistema remoto para conectarse a (por nombre o dirección IP). No use barras diagonales inversas. Si no usa el **/s** opción, el comando se ejecuta en el equipo local de forma predeterminada. Este parámetro se aplica a todos los archivos y carpetas que se especifican en el comando. |
+|  /u [\<Domain>\]<UserName>   |                                                          Ejecuta el comando con los permisos de la cuenta de usuario especificado. Si no usa el **/u** opción, el sistema de permisos se utilizan de forma predeterminada.                                                           |
+|       /p [\<Password>]       |                                               Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** opción. Si no usa el **/p** opción, una solicitud de contraseña aparece cuando se ejecuta el comando.                                                |
+| [/ FO {tabla \| lista \| CSV}] |                             Muestra el resultado en el formato especificado. Los valores válidos para *formato* son:</br>TABLA:  Muestra los resultados en una tabla.</br>LISTA: Muestra los resultados en una lista.</br>CSV: Muestra la salida en formato de valores separados por comas.                              |
+|             /nh              |                                                                                Suprime el encabezado de columna en la salida. Solo es válido cuando el **/fo** parámetro está establecido en **tabla** o **CSV**.                                                                                 |
+|              /v              |                                                                                                       Especifica que se muestra información detallada en la salida.                                                                                                        |
+|              /?              |                                                                                                                     Muestra la ayuda en el símbolo del sistema.                                                                                                                     |
 
 ### <a name="examples"></a>Ejemplos
 

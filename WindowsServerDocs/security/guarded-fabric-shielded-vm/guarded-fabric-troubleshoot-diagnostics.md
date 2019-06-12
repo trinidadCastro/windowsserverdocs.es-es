@@ -7,12 +7,12 @@ ms.assetid: 07691d5b-046c-45ea-8570-a0a85c3f2d22
 manager: dongill
 author: huu
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: c102fa0503e6aac279235e1243b55e0e3cf81e1d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0fb257f693cc27c0bc6dd18fc89e8dc6328ee638
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812416"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447342"
 ---
 # <a name="troubleshooting-using-the-guarded-fabric-diagnostic-tool"></a>Solución de problemas mediante la herramienta de diagnóstico de tejido protegido
 
@@ -156,9 +156,9 @@ Pasos para realizar un diagnóstico manual son los siguientes:
 
 1. Solicitud que se ejecutan cada administrador host `Get-HgsTrace` especificando un conocido `-Path` y la lista de diagnósticos que se va a ejecutar en los seguimientos resultantes.  Por ejemplo:
 
- ```PowerShell
- Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
- ```
+   ```PowerShell
+   Get-HgsTrace -Path C:\Traces -Diagnostic Networking,BestPractices
+   ```
 2. Solicitar que cada administrador del host de la carpeta de seguimientos resultante del paquete y lo envíe de nuevo.  Este proceso se puede controlar a través de correo electrónico, a través de recursos compartidos de archivos, o cualquier otro mecanismo según las directivas y procedimientos establecidos por la organización de funcionamiento.
 
 3. Combinar todos los seguimientos recibidos en una sola carpeta, con ningún otro contenido o las carpetas.
@@ -181,9 +181,9 @@ Pasos para realizar un diagnóstico manual son los siguientes:
 
 4. Ejecutar diagnósticos, que proporciona la ruta de acceso a la carpeta de seguimiento montado en el `-Path` parámetro y especificar el `-RunDiagnostics` cambiar, así como los diagnósticos para que le pide que los administradores para recopilar seguimientos.  Diagnósticos supondrá no puede obtener acceso a los hosts que se encuentra dentro de la ruta de acceso y, por tanto, se intentará usar solo los seguimientos recopilados previamente.  Si los seguimientos que faltan o están dañados, diagnósticos fallará solo las pruebas afectadas y continuar con normalidad.  Por ejemplo:
 
- ```PowerShell
- Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
- ```
+   ```PowerShell
+   Get-HgsTrace -RunDiagnostics -Diagnostic Networking,BestPractices -Path ".\FabricTraces"
+   ```
 
 ### <a name="mixing-saved-traces-with-additional-targets"></a>Mezclar guarda los seguimientos con destinos adicionales
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 23fa04b86d9c26fb30b74eebe8caef8498b90a12
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9580d725120bb32a9b915d37cdbc173bfb17b859
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879036"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438845"
 ---
 # <a name="ftp-append"></a>FTP: anexar
 
@@ -30,10 +30,12 @@ anexa un archivo local a un archivo en el equipo remoto mediante la configuraci�
 append <LocalFile> [remoteFile]  
 ```  
 ### <a name="parameters"></a>Parámetros  
-|Parámetro|Descripción|  
-|-------|--------|  
-|<LocalFile>|Especifica el archivo local para agregar.|  
-|[remoteFile]|Especifica el archivo en el equipo remoto al que <LocalFile> se agrega.|  
+
+|  Parámetro   |                               Descripción                                |
+|--------------|--------------------------------------------------------------------------|
+| <LocalFile>  |                     Especifica el archivo local para agregar.                     |
+| [remoteFile] | Especifica el archivo en el equipo remoto al que <LocalFile> se agrega. |
+
 ## <a name="remarks"></a>Comentarios  
 Si *archivoRemoto* se omite, el *archivoLocal* nombre se usa en lugar del nombre de archivo remoto.  
 ## <a name="BKMK_Examples"></a>Ejemplos  

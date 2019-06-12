@@ -8,12 +8,12 @@ ms.date: 09/07/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 270fb6efd63e6355c410ee45d09e6fd16b14222b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2380060894ff2f365451bbabfd41b8aa7e6792a0
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867996"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445296"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>Autenticación compuesta y notificaciones de AD DS en AD FS
 Windows Server 2012 mejora la autenticación Kerberos mediante la introducción de autenticación compuesta.  Autenticación compuesta permite realizar una solicitud de servicio de concesión de vales de Kerberos (TGS) incluir dos identidades: 
@@ -87,21 +87,21 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 >En una granja de servidores basado en SQL, se puede ejecutar el comando de PowerShell en cualquier servidor de AD FS es miembro de la granja de servidores.
 
 ### <a name="step-5--add-the-claim-description-to-ad-fs"></a>Paso 5:  Agregue la descripción de notificación a AD FS
-1.  Agregue la siguiente descripción de notificación a la granja. Esta descripción de notificación no está presente de forma predeterminada en AD FS 2012 R2 y debe agregarse manualmente.
-2.  Administración de AD FS, en **servicio**, haga clic en **descripción de notificación** y seleccione **Agregar descripción de notificación**
-3.  Escriba la siguiente información en la descripción de notificación
-    - Nombre para mostrar: 'Grupo de dispositivos de Windows' 
-    - Descripción de notificación: 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' '
+1. Agregue la siguiente descripción de notificación a la granja. Esta descripción de notificación no está presente de forma predeterminada en AD FS 2012 R2 y debe agregarse manualmente.
+2. Administración de AD FS, en **servicio**, haga clic en **descripción de notificación** y seleccione **Agregar descripción de notificación**
+3. Escriba la siguiente información en la descripción de notificación
+   - Nombre para mostrar: 'Grupo de dispositivos de Windows' 
+   - Descripción de notificación: '<https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup>' '
 4. Coloque una marca de verificación en ambos cuadros.
 5. Haga clic en **Aceptar**.
 
 ![Descripción de notificación.](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc6.png)
 
 6. Uso de PowerShell que puede usar el **agregar AdfsClaimDescription** cmdlet.
-``` powershell
-Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
--ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
-```
+   ``` powershell
+   Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schemas.microsoft.com/ws/2008/06/identity/claims/windowsdevicegroup' `
+   -ShortName 'windowsdevicegroup' -IsAccepted $true -IsOffered $true -IsRequired $false -Notes 'The windows group SID of the device' 
+   ```
 
 
 >[!NOTE]
@@ -118,7 +118,7 @@ Add-AdfsClaimDescription -Name 'Windows device group' -ClaimType 'https://schema
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
 ```
-2.  Reinicie el servicio ADFS.
+2. Reinicie el servicio ADFS.
 
 >[!NOTE]
 >Una vez 'CompoundIdentitySupported' está establecida en true, instalación de la misma gMSA en nuevos servidores (2012 R2/2016) produce un error con el siguiente error: **Install-ADServiceAccount: No se puede instalar la cuenta de servicio. Mensaje de error: "El contexto proporcionado no coincidió con el destino."** .
@@ -137,15 +137,15 @@ Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no
 ![Descripción de notificación.](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>Paso 8: En la parte que confía donde se esperan que las notificaciones de 'WindowsDeviceGroup', agregue una regla de notificación de 'Paso a través' o 'Transformar' similar.
-2.  En **administración de AD FS**, haga clic en **autenticado** y en el panel derecho, con el botón derecho y haga clic en el RP y selecciona **editar reglas de notificación**.
-3.  En el **reglas de transformación de emisión** haga clic en **Agregar regla**.
-4.  En el **transformar notificaciones Asistente para agregar regla** seleccione **pasar o filtrar una notificación entrante** y haga clic en **siguiente**.
-5.  Agregar un nombre para mostrar y seleccionar **grupo de dispositivos de Windows** desde el **tipo de notificación entrante** lista desplegable.
-6.  Haga clic en **Finalizar**.  Haga clic en **aplicar** y **Aceptar**.
-![Descripción de notificación.](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
+2. En **administración de AD FS**, haga clic en **autenticado** y en el panel derecho, con el botón derecho y haga clic en el RP y selecciona **editar reglas de notificación**.
+3. En el **reglas de transformación de emisión** haga clic en **Agregar regla**.
+4. En el **transformar notificaciones Asistente para agregar regla** seleccione **pasar o filtrar una notificación entrante** y haga clic en **siguiente**.
+5. Agregar un nombre para mostrar y seleccionar **grupo de dispositivos de Windows** desde el **tipo de notificación entrante** lista desplegable.
+6. Haga clic en **Finalizar**.  Haga clic en **aplicar** y **Aceptar**.
+   ![Descripción de notificación.](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
 
 
-##<a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>Pasos para configurar AD FS en Windows Server 2016
+## <a name="steps-for-configuring-ad-fs-in-windows-server-2016"></a>Pasos para configurar AD FS en Windows Server 2016
 Lo siguiente detalla los pasos para configurar la autenticación compuesta en AD FS para Windows Server 2016.
 
 ### <a name="step-1--enable-kdc-support-for-claims-compound-authentication-and-kerberos-armoring-on-the-default-domain-controller-policy"></a>Paso 1:  Habilitar la compatibilidad de KDC con notificaciones, autenticación compuesta y protección de Kerberos en la directiva predeterminada de controladores de dominio
@@ -189,7 +189,7 @@ Set-AdfsGlobalAuthenticationPolicy -PrimaryIntranetAuthenticationProvider 'Windo
 ``` powershell
 Set-ADServiceAccount -Identity “ADFS Service Account” -CompoundIdentitySupported:$true 
 ```
-2.  Reinicie el servicio ADFS.
+2. Reinicie el servicio ADFS.
 
 >[!NOTE]
 >Una vez 'CompoundIdentitySupported' está establecida en true, instalación de la misma gMSA en nuevos servidores (2012 R2/2016) produce un error con el siguiente error: **Install-ADServiceAccount: No se puede instalar la cuenta de servicio. Mensaje de error: "El contexto proporcionado no coincidió con el destino."** .
@@ -208,11 +208,11 @@ Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no
 
 
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>Paso 6: En la parte que confía donde se esperan que las notificaciones de 'WindowsDeviceGroup', agregue una regla de notificación de 'Paso a través' o 'Transformar' similar.
-2.  En **administración de AD FS**, haga clic en **autenticado** y en el panel derecho, con el botón derecho y haga clic en el RP y selecciona **editar reglas de notificación**.
-3.  En el **reglas de transformación de emisión** haga clic en **Agregar regla**.
-4.  En el **transformar notificaciones Asistente para agregar regla** seleccione **pasar o filtrar una notificación entrante** y haga clic en **siguiente**.
-5.  Agregar un nombre para mostrar y seleccionar **grupo de dispositivos de Windows** desde el **tipo de notificación entrante** lista desplegable.
-6.  Haga clic en **Finalizar**.  Haga clic en **aplicar** y **Aceptar**.
+2. En **administración de AD FS**, haga clic en **autenticado** y en el panel derecho, con el botón derecho y haga clic en el RP y selecciona **editar reglas de notificación**.
+3. En el **reglas de transformación de emisión** haga clic en **Agregar regla**.
+4. En el **transformar notificaciones Asistente para agregar regla** seleccione **pasar o filtrar una notificación entrante** y haga clic en **siguiente**.
+5. Agregar un nombre para mostrar y seleccionar **grupo de dispositivos de Windows** desde el **tipo de notificación entrante** lista desplegable.
+6. Haga clic en **Finalizar**.  Haga clic en **aplicar** y **Aceptar**.
 
 ## <a name="validation"></a>Resultados
 Para validar la versión de 'WindowsDeviceGroup' reclamaciones, crear una prueba de notificaciones de aplicación compatible con .net 4.6. Con el SDK de WIF 4.0.

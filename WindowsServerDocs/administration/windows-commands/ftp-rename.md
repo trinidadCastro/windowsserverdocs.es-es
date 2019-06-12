@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f99b3a43192a48e8adffaa60c25b46cfcaa8e3c2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 80d1a15f038017444c7654a44748bfd22be8e487
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861866"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438382"
 ---
 # <a name="ftp-rename"></a>FTP: cambiar el nombre
 
@@ -30,10 +30,12 @@ cambia el nombre de los archivos remotos.
 rename <FileName> <NewFileName>  
 ```  
 ### <a name="parameters"></a>Parámetros  
-|Parámetro|Descripción|  
-|-------|--------|  
-|<FileName>|Especifica el archivo que desea cambiar el nombre.|  
-|<NewFileName>|Especifica el nuevo nombre de archivo.|  
+
+|   Parámetro   |                 Descripción                 |
+|---------------|---------------------------------------------|
+|  <FileName>   | Especifica el archivo que desea cambiar el nombre. |
+| <NewFileName> |        Especifica el nuevo nombre de archivo.         |
+
 ## <a name="BKMK_Examples"></a>Ejemplos  
 el nombre del archivo remoto **example.txt** a **example1.txt**  
 ```  

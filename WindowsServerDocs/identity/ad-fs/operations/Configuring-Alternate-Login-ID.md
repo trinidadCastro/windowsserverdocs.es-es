@@ -9,12 +9,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 5bc43717f37fb3b14ac7f384a061ee64c734222d
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 75ab011ed4931af3d5a03a38b3f7a7f0cfecbe3d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189660"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444914"
 ---
 # <a name="configuring-alternate-login-id"></a>Configuración de identificador de inicio de sesión alternativo
 
@@ -31,9 +31,9 @@ Identificador de Active Directory Federation Services (AD FS) habilita las aplic
 
 ## <a name="alternate-id-in-azure-ad"></a>Id. alternativo en Azure AD
 Una organización que tenga que utilizar un identificador alternativo en los escenarios siguientes:
-1.  El nombre de dominio local no es enrutable, p. ej. Contoso.local y como resultado el nombre principal de usuario predeterminada no es enrutable (jdoe@contoso.local). UPN existente no se puede cambiar debido a dependencias de aplicación locales o las directivas de empresa. Azure AD y Office 365 requieren todos los sufijos de dominio asociados con el directorio de Azure AD para ser totalmente enrutable de internet. 
-2.  El UPN local no es igual a la dirección de correo electrónico del usuario y para iniciar sesión en Office 365, los usuarios usar la dirección de correo electrónico y UPN no se puede utilizar debido a restricciones de la organización.
-En los escenarios mencionados anteriormente, Id. alternativo con AD FS permite a los usuarios iniciar sesión en Azure AD sin modificar su UPN local. 
+1. El nombre de dominio local no es enrutable, p. ej. Contoso.local y como resultado el nombre principal de usuario predeterminada no es enrutable (jdoe@contoso.local). UPN existente no se puede cambiar debido a dependencias de aplicación locales o las directivas de empresa. Azure AD y Office 365 requieren todos los sufijos de dominio asociados con el directorio de Azure AD para ser totalmente enrutable de internet. 
+2. El UPN local no es igual a la dirección de correo electrónico del usuario y para iniciar sesión en Office 365, los usuarios usar la dirección de correo electrónico y UPN no se puede utilizar debido a restricciones de la organización.
+   En los escenarios mencionados anteriormente, Id. alternativo con AD FS permite a los usuarios iniciar sesión en Azure AD sin modificar su UPN local. 
 
 ## <a name="end-user-experience-with-alternate-login-id"></a>Experiencia del usuario final con el Id. de inicio de sesión alternativo
 La experiencia del usuario final varía según el método de autenticación usado con el Id. de inicio de sesión alternativo.  Actualmente hay tres maneras diferentes en el que se puede lograr mediante el identificador de inicio de sesión alternativo.  Estas sobrecargas son:
@@ -81,7 +81,7 @@ En el ejemplo siguiente, va a habilitar la funcionalidad de Id. de inicio de ses
 Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID mail -LookupForests contoso.com,fabrikam.com
 ```
 
-3.  Para deshabilitar esta característica, establezca el valor para ambos parámetros es null.
+3. Para deshabilitar esta característica, establezca el valor para ambos parámetros es null.
 
 ``` powershell
 Set-AdfsClaimsProviderTrust -TargetIdentifier "AD AUTHORITY" -AlternateLoginID $NULL -LookupForests $NULL
@@ -155,6 +155,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 ## <a name="applications-and-user-experience-after-the-additional-configuration"></a>Las aplicaciones y experiencias de usuario después de la configuración adicional
 
 ### <a name="non-exchange-and-skype-for-business-clients"></a>No es de Exchange y Skype para los clientes empresariales
+
 |Remoto|Declaración de soporte técnico|Comentarios|
 | ----- | -----|-----|
 |Microsoft Teams|Se admite|<li>Microsoft Teams es compatible con AD FS (SAML-P, WS-Fed, WS-Trust y OAuth) y la autenticación moderna.</li><li> Core Microsoft Teams, como las funcionalidades de canales, charlas y archivos funcionan con el identificador de inicio de sesión alternativo.</li><li>las aplicaciones de terceros 1 y 3 se deben investigar por separado por el cliente. Esto es porque cada aplicación tiene sus propios protocolos de autenticación de compatibilidad.</li>|     
@@ -173,7 +174,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 |Outlook Web Access|Se admite|Se admite|
 |Aplicaciones móviles de Outlook para Android, IOS y Windows Phone|Se admite|Se admite|
 |Skype for Business o Lync|Admite, sin solicitudes adicionales|Compatible (excepto como se indica) pero no hay posibilidad de confusión de los usuarios.</br></br>En los clientes móviles, Id. alternativo solo se admite si dirección SIP = dirección de correo electrónico = identificador alternativo.</br></br> Los usuarios que deba iniciar sesión en dos veces el Skype para cliente de escritorio de negocios, primero mediante el UPN local y, a continuación, utilizando el identificador alternativo. (Tenga en cuenta que "inicio de sesión de la dirección" es realmente la dirección SIP que no puede ser el mismo que el "nombre de usuario", aunque a menudo es). Cuando primero se le pida un nombre de usuario, el usuario debe escribir el UPN, incluso si incorrectamente se rellena previamente con la dirección SIP o de identificador alternativo. Después de que el usuario hace clic en iniciar sesión con el UPN, el usuario vuelve a aparecer el símbolo del sistema de nombre, esta vez rellena previamente con el UPN. Esta vez el usuario debe reemplazar por el identificador alternativo y haga clic en iniciar sesión para completar el proceso de inicio de sesión. En los clientes móviles, los usuarios deben escribir el identificador de usuario local en la página Opciones avanzadas, con formato de estilo de SAM (DOMINIO\nombre de usuario), formato UPN no.</br></br>Tras el inicio de sesión correcto, si dice de Skype para la empresa o Lync "Exchange necesita sus credenciales", deberá proporcionar las credenciales que son válidas para que se encuentra el buzón. Si el buzón está en la nube que debe proporcionar el identificador alternativo. Si el buzón está en el entorno local que deba proporcionar el UPN local.| 
- 
+
 ## <a name="additional-details--considerations"></a>Consideraciones de & detalles adicionales
 
 -   La característica de Id. de inicio de sesión alternativo está disponible para entornos federados con AD FS implementado.  No se admite en los escenarios siguientes:
@@ -211,12 +212,12 @@ Estos son los distintos casos de error y su repercusión en la experiencia del u
 
 
 
-**Casos de error**|**Impacto en la experiencia de inicio de sesión**|**Evento**|
----------|---------|---------
-No se puede obtener un valor para el atributo SAMAccountName para el objeto de usuario|Error de inicio de sesión|Id. de evento 364 con mensaje de excepción MSIS8012: No se encuentra el atributo samAccountName para el usuario: '{0}'.|
-El atributo CanonicalName no es accesible|Error de inicio de sesión|Id. de evento 364 con mensaje de excepción MSIS8013: CanonicalName: '{0}' del usuario:'{1}' está en un formato incorrecto.|
-Varios objetos de usuario se encuentran en bosques|Error de inicio de sesión|Id. de evento 364 con mensaje de excepción MSIS8015: Se encontró varias cuentas de usuario con la identidad '{0}'en el bosque'{1}' con identidades: {2}|
-Se encontraron varios objetos de usuario en varios bosques|Error de inicio de sesión|Id. de evento 364 con mensaje de excepción MSIS8014: Se encontró varias cuentas de usuario con la identidad '{0}' en bosques: {1}|
+|                       **Casos de error**                        | **Impacto en la experiencia de inicio de sesión** |                                                              **Evento**                                                              |
+|--------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
+| No se puede obtener un valor para el atributo SAMAccountName para el objeto de usuario |          Error de inicio de sesión           |                  Id. de evento 364 con mensaje de excepción MSIS8012: No se encuentra el atributo samAccountName para el usuario: '{0}'.                   |
+|        El atributo CanonicalName no es accesible         |          Error de inicio de sesión           |               Id. de evento 364 con mensaje de excepción MSIS8013: CanonicalName: '{0}' del usuario:'{1}' está en un formato incorrecto.                |
+|        Varios objetos de usuario se encuentran en bosques        |          Error de inicio de sesión           | Id. de evento 364 con mensaje de excepción MSIS8015: Se encontró varias cuentas de usuario con la identidad '{0}'en el bosque'{1}' con identidades: {2} |
+|   Se encontraron varios objetos de usuario en varios bosques    |          Error de inicio de sesión           |           Id. de evento 364 con mensaje de excepción MSIS8014: Se encontró varias cuentas de usuario con la identidad '{0}' en bosques: {1}            |
 
 ## <a name="see-also"></a>Vea también
 [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)

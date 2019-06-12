@@ -8,12 +8,12 @@ ms.assetid: c4306f06-a117-4f65-b78b-9fd0d1133f95
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2a24ce3213b1aa1c66a438d278f7499b6d53bf6e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2617c897ed2ea173d29fc7c4a87e52557154d463
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834356"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446996"
 ---
 # <a name="qos-policy-scenarios"></a>Escenarios de directiva de QoS
 
@@ -189,7 +189,7 @@ En el caso de nombre de host, un nombre de host con elementos con más puntos (m
   
 - biblioteca (profundidad = 1)
   
- **video.Internal.Training.hr.mycompany.com** tiene la prioridad más alta, y **selfguide.training.mycompany.com** tiene la siguiente prioridad más alta. **Entrenamiento** y **biblioteca** comparten la misma prioridad más baja.  
+  **video.Internal.Training.hr.mycompany.com** tiene la prioridad más alta, y **selfguide.training.mycompany.com** tiene la siguiente prioridad más alta. **Entrenamiento** y **biblioteca** comparten la misma prioridad más baja.  
   
 ####  <a name="bkmk_QoS_UrlPort"></a> 3. Puerto de dirección URL
 

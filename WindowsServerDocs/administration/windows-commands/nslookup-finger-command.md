@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a76ea6ede1237b05a7f7dd95fdb9f7c1560a922
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 13eb4e45b3fdc17fd48fa9793abaaf05925b56a2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858256"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436960"
 ---
 # <a name="nslookup-finger-command"></a>nslookup finger Command
 
@@ -34,11 +34,11 @@ finger [<UserName>] [{[>] <FileName>|[>>] <FileName>}]
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<UserName>|Especifica el nombre del usuario que se va a buscar.|
-|\<FileName>|Especifica un nombre de archivo en el que se va a guardar la salida. Puede utilizar el mayor que (>) y doble mayor que (>>) caracteres que se va a redirigir la salida de la manera habitual.|
-|{Ayuda | ?}|Muestra un resumen breve de **nslookup** subcomandos.|
+|  Parámetro  |                                                                               Descripción                                                                               |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| \<UserName> |                                                               Especifica el nombre del usuario que se va a buscar.                                                                |
+| \<FileName> | Especifica un nombre de archivo en el que se va a guardar la salida. Puede utilizar el mayor que (>) y doble mayor que (>>) caracteres que se va a redirigir la salida de la manera habitual. |
+|    {Ayuda    |                                                                                   ?}                                                                                    |
 
 #### <a name="additional-references"></a>Referencias adicionales
 

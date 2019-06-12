@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 197864c6908645af0c0fa47ac811186207c2f247
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 55ed731df4613e215fb4d0954a5b8424035b1166
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853886"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433999"
 ---
 # <a name="create-volume-stripe"></a>Crear volumen seccionado
 
@@ -39,12 +39,12 @@ create volume stripe [size=<n>] disk=<n>,<n>[,<n>,...] [align=<n>] [noerr]
   
 ## <a name="parameters"></a>Parámetros  
   
-|Parámetro|Descripción|  
-|-------|--------|  
-|size\=<n>|La cantidad de espacio en disco, en megabytes \(MB\), que ocupará el volumen en cada disco. Si no se especifica tamaño, el nuevo volumen ocupará todo el espacio libre restante en el disco más pequeño y cantidades equivalentes de espacio en los discos sucesivos.|  
-|disco\=<n>,<n>\[,<n>,...\]|Los discos dinámicos en el que se crea el volumen seccionado. Necesita al menos dos discos dinámicos para crear un volumen seccionado. Cantidad de espacio igual a **tamaño\= <n>**  en cada disco se asigna.|  
-|Alinear\=<n>|Alinea todas las extensiones de volumen para el límite de alineación más cercano. Se utiliza normalmente con el número de unidad lógica de RAID de hardware \(LUN\) matrices para mejorar el rendimiento. *n* es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano.|  
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|  
+|         Parámetro         |                                                                                                                            Descripción                                                                                                                            |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         size\=<n>         |             La cantidad de espacio en disco, en megabytes \(MB\), que ocupará el volumen en cada disco. Si no se especifica tamaño, el nuevo volumen ocupará todo el espacio libre restante en el disco más pequeño y cantidades equivalentes de espacio en los discos sucesivos.             |
+| disco\=<n>,<n>\[,<n>,...\] |                                  Los discos dinámicos en el que se crea el volumen seccionado. Necesita al menos dos discos dinámicos para crear un volumen seccionado. Cantidad de espacio igual a **tamaño\= <n>**  en cada disco se asigna.                                   |
+|        Alinear\=<n>         | Alinea todas las extensiones de volumen para el límite de alineación más cercano. Se utiliza normalmente con el número de unidad lógica de RAID de hardware \(LUN\) matrices para mejorar el rendimiento. *n* es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano. |
+|           noerr           |                               sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.                                |
   
 ## <a name="remarks"></a>Comentarios  
   

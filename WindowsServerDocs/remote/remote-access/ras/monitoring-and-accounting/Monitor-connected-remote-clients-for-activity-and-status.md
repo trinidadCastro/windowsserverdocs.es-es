@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: beb94475-b21f-46a9-ac51-bf2bb28ca94e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 468854d6e03bbc2abee3b9fce7f7960c7c25cfd3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2a38e5682b03cdb37ff88332317122b6addd000c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879716"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446869"
 ---
 # <a name="monitor-connected-remote-clients-for-activity-and-status"></a>Supervisar la actividad y el estado de los clientes remotos conectados
 
@@ -41,7 +41,7 @@ Puede usar la consola de administración en el servidor de acceso remoto para su
   
 4.  Verá la lista de usuarios que están conectados al servidor de acceso remoto y detallada las estadísticas sobre ellos. Haga clic en la primera fila de la lista que corresponde a un cliente. Cuando se selecciona una fila, se muestra la actividad del usuario remoto en el panel de vista previa.  
   
-![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../media/Monitor-connected-remote-clients-for-activity-and-status/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 966f25eb0bd43513b3c544fb3dc97115ed668b28
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 856eb7c2c2dfe0e0e3300fcf826e75b56258dc1b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872756"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447650"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar Storage Migration Service para migrar un servidor
 
@@ -55,18 +55,18 @@ En este paso, especifique qué servidores para migrar y, después, escanéelos p
 
 En este paso, transferir los datos después de especificar su ubicación en los servidores de destino.
 
- 1. En el **transferir datos** > **escriba credenciales** página, escriba las credenciales de administrador que trabajan en los servidores de destino que desea migrar a y, a continuación, seleccione **siguiente**.
- 1. En el **agregar un dispositivo de destino y las asignaciones** aparece la página, el primer servidor de origen. Escriba el nombre del servidor al que desea migrar y, a continuación, seleccione **Buscar dispositivo**.
- 1. Los volúmenes de origen se asignan a los volúmenes de destino, desactive la **Include** casilla de verificación de los recursos compartidos no desea transferir (incluidos los recursos compartidos administrativos ubicados en la carpeta de sistema de Windows) y, a continuación, seleccione **siguiente** .
-    ![Captura de pantalla con un servidor de origen y de sus volúmenes y recursos compartidos y donde se podrá transferir a en el destino](media/migrate/transfer.png) **figura 3: Un servidor de origen y que se transferirán a su almacenamiento**
- 1. Agregar un servidor de destino y las asignaciones de los servidores de origen más y, a continuación, seleccione **siguiente**.
- 1. Opcionalmente, ajuste la configuración de transferencia y, a continuación, seleccione **siguiente**.
- 1. Seleccione **validar** y, a continuación, seleccione **siguiente**.
- 1. Seleccione **iniciar transferencia** para iniciar la transferencia de datos.<br>La primera vez que se transfiere, pasaremos los archivos existentes en un destino en una carpeta de copia de seguridad. En las transferencias siguientes, de forma predeterminada se actualizará el destino sin realizar copias de seguridad de la primera. <br>Además, servicio de migración de almacenamiento es lo suficientemente inteligente como para tratar con recursos compartidos de superpuestas, no copiaremos las mismas carpetas dos veces en el mismo trabajo.
- 1. Una vez completada la transferencia, consulte el servidor de destino para asegurarse de que todo lo que ha transferido correctamente. Seleccione **sólo el registro de errores** si desea descargar un registro de los archivos que no se transfirió.
+1. En el **transferir datos** > **escriba credenciales** página, escriba las credenciales de administrador que trabajan en los servidores de destino que desea migrar a y, a continuación, seleccione **siguiente**.
+2. En el **agregar un dispositivo de destino y las asignaciones** aparece la página, el primer servidor de origen. Escriba el nombre del servidor al que desea migrar y, a continuación, seleccione **Buscar dispositivo**.
+3. Los volúmenes de origen se asignan a los volúmenes de destino, desactive la **Include** casilla de verificación de los recursos compartidos no desea transferir (incluidos los recursos compartidos administrativos ubicados en la carpeta de sistema de Windows) y, a continuación, seleccione **siguiente** .
+   ![Captura de pantalla con un servidor de origen y de sus volúmenes y recursos compartidos y donde se podrá transferir a en el destino](media/migrate/transfer.png) **figura 3: Un servidor de origen y que se transferirán a su almacenamiento**
+4. Agregar un servidor de destino y las asignaciones de los servidores de origen más y, a continuación, seleccione **siguiente**.
+5. Opcionalmente, ajuste la configuración de transferencia y, a continuación, seleccione **siguiente**.
+6. Seleccione **validar** y, a continuación, seleccione **siguiente**.
+7. Seleccione **iniciar transferencia** para iniciar la transferencia de datos.<br>La primera vez que se transfiere, pasaremos los archivos existentes en un destino en una carpeta de copia de seguridad. En las transferencias siguientes, de forma predeterminada se actualizará el destino sin realizar copias de seguridad de la primera. <br>Además, servicio de migración de almacenamiento es lo suficientemente inteligente como para tratar con recursos compartidos de superpuestas, no copiaremos las mismas carpetas dos veces en el mismo trabajo.
+8. Una vez completada la transferencia, consulte el servidor de destino para asegurarse de que todo lo que ha transferido correctamente. Seleccione **sólo el registro de errores** si desea descargar un registro de los archivos que no se transfirió.
 
-  > [!NOTE]
-  > Si desea mantener una pista de auditoría de las transferencias o va a realizar más de una transferencia de un trabajo, haga clic en **registro transferencia** para guardar una copia CSV. Cada transferencia subsiguiente sobrescribe la información de la base de datos de una ejecución anterior. 
+   > [!NOTE]
+   > Si desea mantener una pista de auditoría de las transferencias o va a realizar más de una transferencia de un trabajo, haga clic en **registro transferencia** para guardar una copia CSV. Cada transferencia subsiguiente sobrescribe la información de la base de datos de una ejecución anterior. 
 
 En este punto, tiene tres opciones:
 

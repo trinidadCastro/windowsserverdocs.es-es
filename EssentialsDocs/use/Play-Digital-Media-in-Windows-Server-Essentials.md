@@ -12,12 +12,12 @@ ms.assetid: 5f570492-ee21-471b-92c1-3fd9bfb84f55
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 8228d0b17a58858ed893181ddceb465715ffdeb5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f38d234768d40903615145954f1215546119344a
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874106"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435942"
 ---
 # <a name="play-digital-media-in-windows-server-essentials"></a>Reproducción de medios digitales en Windows Server Essentials
 
@@ -190,25 +190,25 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
   
 #### <a name="to-play-shared-media-files-when-you-are-away-from-the-network"></a>Para reproducir archivos multimedia compartidos cuando está fuera de la red  
   
-1.  Abra un explorador de Internet.  
+1. Abra un explorador de Internet.  
   
-2.  Vaya al sitio web de Acceso Web remoto. Tipo **https://<YourDomainName\>/remoto** en la barra de direcciones del explorador de Internet y, a continuación, presione ENTRAR.  
+2. Vaya al sitio web de Acceso Web remoto. Tipo **https://<YourDomainName\>/remoto** en la barra de direcciones del explorador de Internet y, a continuación, presione ENTRAR.  
   
-    > [!NOTE]
-    >  *< Nombredesudominio\>*  es un marcador de posición. Será un nombre único para el servidor, por lo que la dirección que escriba será similar a **https://contoso.com/remote**. Si no conoce el nombre del dominio, solicíteselo al administrador que ha elegido el nombre del dominio al establecer la funcionalidad de acceso remoto en el servidor. Para obtener más información, consulte [Turn on Remote Web Access](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
+   > [!NOTE]
+   >  *< Nombredesudominio\>*  es un marcador de posición. Será un nombre único para el servidor, por lo que la dirección que escriba será similar a **https://contoso.com/remote** . Si no conoce el nombre del dominio, solicíteselo al administrador que ha elegido el nombre del dominio al establecer la funcionalidad de acceso remoto en el servidor. Para obtener más información, consulte [Turn on Remote Web Access](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_TurnOnRWA).  
   
-3.  En la página de inicio de sesión de Acceso Web remoto, escriba el nombre de la cuenta de usuario y la contraseña y, a continuación, haga clic en la flecha.  
+3. En la página de inicio de sesión de Acceso Web remoto, escriba el nombre de la cuenta de usuario y la contraseña y, a continuación, haga clic en la flecha.  
   
-4.  Use el método que quiera para buscar el archivo multimedia que desea reproducir.  
+4. Use el método que quiera para buscar el archivo multimedia que desea reproducir.  
   
-    > [!NOTE]
+   > [!NOTE]
+   > 
+   >  Para obtener información acerca de los diversos métodos de búsqueda, vea [buscar y reproducir archivos de medios en Windows Server Essentials desde un equipo o Reproductor multimedia digital en la red](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1).  
+   > 
+   >  Para obtener información acerca de los diversos métodos de búsqueda, vea [buscar y reproducir archivos de medios en Windows Server Essentials desde un equipo o Reproductor multimedia digital en la red](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1).  
 
-    >  Para obtener información acerca de los diversos métodos de búsqueda, vea [buscar y reproducir archivos de medios en Windows Server Essentials desde un equipo o Reproductor multimedia digital en la red](Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1).  
-
-    >  Para obtener información acerca de los diversos métodos de búsqueda, vea [buscar y reproducir archivos de medios en Windows Server Essentials desde un equipo o Reproductor multimedia digital en la red](../use/Play-Digital-Media-in-Windows-Server-Essentials.md#BKMK_2.1).  
-
   
-5.  Cuando aparezca el nombre del archivo multimedia, haga clic en el nombre para reproducir el medio.  
+5. Cuando aparezca el nombre del archivo multimedia, haga clic en el nombre para reproducir el medio.  
   
 ##  <a name="BKMK_4"></a> Agregar archivos multimedia digitales en el servidor  
 
@@ -241,21 +241,21 @@ Por medios digitales se hace referencia al audio, vídeo y contenido de fotos qu
   
  Elija la opción que mejor se adapte a sus necesidades relativas a las descargas:  
   
--   **Archivo ZIP comprimido (.zip)**  
+- **Archivo ZIP comprimido (.zip)**  
   
-     Al comprimir un archivo se crea una versión comprimida del archivo, que es menor que el archivo original. La versión comprimida del archivo tiene la extensión de nombre de archivo .zip. Los tipos de archivo que se reducen al máximo al comprimirse son tipos de archivos de texto (como .txt, .doc y .xls) y archivos de gráficos que usan tipos de archivo no comprimidos (.bmp). Algunos archivos de gráficos, como por ejemplo los archivos .jpg y .gif, ya emplean la compresión, y el tamaño del archivo se reduce muy poco durante la compresión. Además, un documento de Word que contiene una gran cantidad de gráficos no se reduce tanto como un documento que está formado principalmente por texto.  
+   Al comprimir un archivo se crea una versión comprimida del archivo, que es menor que el archivo original. La versión comprimida del archivo tiene la extensión de nombre de archivo .zip. Los tipos de archivo que se reducen al máximo al comprimirse son tipos de archivos de texto (como .txt, .doc y .xls) y archivos de gráficos que usan tipos de archivo no comprimidos (.bmp). Algunos archivos de gráficos, como por ejemplo los archivos .jpg y .gif, ya emplean la compresión, y el tamaño del archivo se reduce muy poco durante la compresión. Además, un documento de Word que contiene una gran cantidad de gráficos no se reduce tanto como un documento que está formado principalmente por texto.  
   
-    > [!NOTE]
-    >  Esta opción proporciona una compatibilidad limitada para los nombres de archivo internacionales.  
+  > [!NOTE]
+  >  Esta opción proporciona una compatibilidad limitada para los nombres de archivo internacionales.  
   
--   **Archivo ejecutable autoextraíble (.exe)**  
+- **Archivo ejecutable autoextraíble (.exe)**  
   
-     Un archivo ejecutable autoextraíble es un archivo que se puede descargar y que combina el programa (ejecutable) de descompresión con los archivos comprimidos. Al ejecutar el programa ejecutable, este descomprime automáticamente los archivos comprimidos. Se trata de un método habitual de distribuir los datos comprimidos sin preocuparse de si el destinatario tiene la utilidad de descompresión adecuada.  
+   Un archivo ejecutable autoextraíble es un archivo que se puede descargar y que combina el programa (ejecutable) de descompresión con los archivos comprimidos. Al ejecutar el programa ejecutable, este descomprime automáticamente los archivos comprimidos. Se trata de un método habitual de distribuir los datos comprimidos sin preocuparse de si el destinatario tiene la utilidad de descompresión adecuada.  
   
-    > [!NOTE]
-    >  Esta opción admite los caracteres Unicode.  
+  > [!NOTE]
+  >  Esta opción admite los caracteres Unicode.  
   
- Antes de que comience la descarga real se crea el archivo .exe o .zip. En función del número de archivos y del tamaño total de los archivos que se van a descargar, esta acción puede tardar varios minutos. Después de crearse el archivo de descarga, la descarga del archivo tiene lugar en segundo plano. Esto le permite seguir trabajando mientras se completa el proceso de descarga.  
+  Antes de que comience la descarga real se crea el archivo .exe o .zip. En función del número de archivos y del tamaño total de los archivos que se van a descargar, esta acción puede tardar varios minutos. Después de crearse el archivo de descarga, la descarga del archivo tiene lugar en segundo plano. Esto le permite seguir trabajando mientras se completa el proceso de descarga.  
   
 ##  <a name="BKMK_6"></a> Herramienta de carga fácil  
  La herramienta de carga fácil simplifica el proceso de carga de archivos en el servidor de Windows Server Essentials. Puede agregar tantos archivos como desee a la herramienta de carga fácil de archivos y, a continuación, cargarlos en las carpetas compartidas en el servidor de Windows Server Essentials en un único lote. Para obtener más información, consulte la entrada de blog sobre la [descripción del uso compartido de archivos en Acceso Web remoto](http://blogs.technet.com/b/sbs/archive/2012/04/19/understanding-remote-web-access-file-sharing.aspx).  

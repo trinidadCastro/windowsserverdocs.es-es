@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6ce2129a455ed5c8c2e4ef9540abb09102db2b5e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: de948d9e182cf6489c1869a5725bce8319484293
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859346"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436673"
 ---
 # <a name="nslookup-set-recurse"></a>nslookup set recurse
 
@@ -34,11 +34,11 @@ set [no]recurse
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|**norecurse**|Detiene el servidor de nombres del sistema de nombres de dominio (DNS) de la consulta si no tiene la información de otros servidores.|
-|**recurse**|Indica que el servidor de nombres del sistema de nombres de dominio (DNS) para consultar otros servidores si no tiene la información. La sintaxis predeterminada es **recurse**.|
-|{Ayuda | ?}|Muestra un resumen breve de **nslookup** subcomandos.|
+|   Parámetro   |                                                                  Descripción                                                                  |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| **norecurse** |                Detiene el servidor de nombres del sistema de nombres de dominio (DNS) de la consulta si no tiene la información de otros servidores.                |
+|  **recurse**  | Indica que el servidor de nombres del sistema de nombres de dominio (DNS) para consultar otros servidores si no tiene la información. La sintaxis predeterminada es **recurse**. |
+|     {Ayuda     |                                                                      ?}                                                                       |
 
 #### <a name="additional-references"></a>Referencias adicionales
 

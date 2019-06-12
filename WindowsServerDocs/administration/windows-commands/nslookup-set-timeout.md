@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5b7a35a4a8e9e9cc10ea5548875f710fb5a86036
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1f6c8863d0a9330fd3a8499b0e6dbc802bd95022
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837816"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436511"
 ---
 # <a name="nslookup-set-timeout"></a>nslookup set timeout
 
@@ -30,17 +30,19 @@ cambia el número de segundos que espera una respuesta a una solicitud de búsqu
 set timeout=<Number>
 ```
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|<Number>|Especifica el número de segundos que esperar una respuesta. El número predeterminado de segundos de espera es 5.|
-|{help &#124; ?}|Muestra un resumen breve de **nslookup** subcomandos.|
+
+|    Parámetro    |                                           Descripción                                            |
+|-----------------|--------------------------------------------------------------------------------------------------|
+|    <Number>     | Especifica el número de segundos que esperar una respuesta. El número predeterminado de segundos de espera es 5. |
+| {help &#124; ?} |                      Muestra un resumen breve de **nslookup** subcomandos.                       |
+
 ## <a name="remarks"></a>Comentarios
--   Cuando no se recibe una respuesta a una solicitud dentro del período de tiempo especificado, se duplica el tiempo de espera y se volverá a enviar la solicitud. Puede usar el **conjunto reintento** comandos para controlar el número de reintentos.
-## <a name="BKMK_examples"></a>Ejemplos
-El ejemplo siguiente establece el tiempo de espera para obtener una respuesta a 2 segundos:
-```
-set timeout=2
-```
-## <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[nslookup establece reintento](nslookup-set-retry.md)
+- Cuando no se recibe una respuesta a una solicitud dentro del período de tiempo especificado, se duplica el tiempo de espera y se volverá a enviar la solicitud. Puede usar el **conjunto reintento** comandos para controlar el número de reintentos.
+  ## <a name="BKMK_examples"></a>Ejemplos
+  El ejemplo siguiente establece el tiempo de espera para obtener una respuesta a 2 segundos:
+  ```
+  set timeout=2
+  ```
+  ## <a name="additional-references"></a>Referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [nslookup establece reintento](nslookup-set-retry.md)

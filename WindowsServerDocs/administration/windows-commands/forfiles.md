@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 08/21/2018
-ms.openlocfilehash: 127f715620321354792d46f024ee12a06925d866
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d5ac95b795d1c5a59f8917bf851ab08fb4d7c1e7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881316"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439187"
 ---
 # <a name="forfiles"></a>forfiles
 
@@ -37,14 +37,14 @@ forfiles [/p <Path>] [/m <SearchMask>] [/s] [/c "<Command>"] [/d [{+|-}][{<Date>
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/p \<ruta de acceso >|Especifica la ruta de acceso desde el que se va a iniciar la búsqueda. De forma predeterminada, la búsqueda comienza en el directorio de trabajo actual.|
-|/m \<máscara de búsqueda >|Busca archivos de acuerdo con la máscara de búsqueda especificado. La máscara de búsqueda predeterminada es **\*.\***.|
-|/s|Indica el **forfiles** comando para buscar en subdirectorios de forma recursiva.|
-|/c "\<comando >"|Ejecuta el comando especificado en cada archivo. Cadenas de comandos deben estar entre comillas. El comando predeterminado es **"cmd /c echo @file"**.|
-|/d&nbsp;[{+\|-}]&#8288;[{\<fecha >\|&#8288;\<días >}]|Selecciona archivos con una fecha de última modificación en el período de tiempo especificado.</br>: Selecciona archivos con una fecha de última modificación posterior o igual a (**+**) o anterior o igual a (**-**) la fecha especificada, donde *fecha* tiene el formato MM/DD/AAAA.</br>: Selecciona archivos con una fecha de última modificación posterior o igual a (**+**) la fecha actual más el número de días especificado, o anterior o igual a (**-**) la fecha actual menos el número de días especificado.</br>-Los valores válidos para *días* incluir cualquier número en el intervalo 0 – 32 768. Si no se especifica ningún inicio de sesión, **+** se usa de forma predeterminada.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|                     Parámetro                      |                                                                                                                                                                                                                                                                                                    Descripción                                                                                                                                                                                                                                                                                                     |
+|----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                     /p \<ruta de acceso >                     |                                                                                                                                                                                                                                                 Especifica la ruta de acceso desde el que se va a iniciar la búsqueda. De forma predeterminada, la búsqueda comienza en el directorio de trabajo actual.                                                                                                                                                                                                                                                  |
+|                  /m \<máscara de búsqueda >                  |                                                                                                                                                                                                                                                           Busca archivos de acuerdo con la máscara de búsqueda especificado. La máscara de búsqueda predeterminada es **\*.\\** \*.                                                                                                                                                                                                                                                           |
+|                         /s                         |                                                                                                                                                                                                                                                                   Indica el **forfiles** comando para buscar en subdirectorios de forma recursiva.                                                                                                                                                                                                                                                                    |
+|                  /c "\<comando >"                   |                                                                                                                                                                                                                                  Ejecuta el comando especificado en cada archivo. Cadenas de comandos deben estar entre comillas. El comando predeterminado es **"cmd /c echo @file"** .                                                                                                                                                                                                                                   |
+| /d&nbsp;[{+\|-}]&#8288;[{\<fecha >\|&#8288;\<días >}] | Selecciona archivos con una fecha de última modificación en el período de tiempo especificado.</br>: Selecciona archivos con una fecha de última modificación posterior o igual a ( **+** ) o anterior o igual a ( **-** ) la fecha especificada, donde *fecha* tiene el formato MM/DD/AAAA.</br>: Selecciona archivos con una fecha de última modificación posterior o igual a ( **+** ) la fecha actual más el número de días especificado, o anterior o igual a ( **-** ) la fecha actual menos el número de días especificado.</br>-Los valores válidos para *días* incluir cualquier número en el intervalo 0 – 32 768. Si no se especifica ningún inicio de sesión, **+** se usa de forma predeterminada. |
+|                         /?                         |                                                                                                                                                                                                                                                                                        Muestra la ayuda en el símbolo del sistema.                                                                                                                                                                                                                                                                                        |
 
 ## <a name="remarks"></a>Comentarios
 

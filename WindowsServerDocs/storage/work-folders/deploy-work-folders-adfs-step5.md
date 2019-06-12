@@ -8,12 +8,12 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 4/5/2017
 ms.assetid: f168292b-0dbc-44b9-965f-d480e5134a0c
-ms.openlocfilehash: 4b2c771a83824318f889c955f6194bcb062761f3
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 44e3ab06ac29d770ad47b43db5eba06f0eb08a60
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976798"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447790"
 ---
 # <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-5-set-up-clients"></a>Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 5, los clientes de la instalación
 
@@ -75,21 +75,21 @@ Para instalar los certificados, sigue estos pasos:
 ### <a name="configure-work-folders-on-the-client"></a>Configurar Carpetas de trabajo en el cliente  
 Para configurar Carpetas de trabajo en el equipo cliente, sigue estos pasos:  
   
-1.  En el equipo cliente, abre **Panel de Control** y haz clic en **Carpetas de trabajo**.  
+1. En el equipo cliente, abre **Panel de Control** y haz clic en **Carpetas de trabajo**.  
   
-2.  Haz clic en **Configurar Carpetas de trabajo**.  
+2. Haz clic en **Configurar Carpetas de trabajo**.  
   
-3.  En el **escriba su dirección de correo electrónico** , escriba la dirección de correo electrónico del usuario (por ejemplo, user@contoso.com) o la dirección URL de carpetas de trabajo (en el ejemplo de prueba, https:\//workfolders.contoso.com) y, a continuación, haga clic en  **Siguiente**.  
+3. En el **escriba su dirección de correo electrónico** , escriba la dirección de correo electrónico del usuario (por ejemplo, user@contoso.com) o la dirección URL de carpetas de trabajo (en el ejemplo de prueba, https:\//workfolders.contoso.com) y, a continuación, haga clic en  **Siguiente**.  
   
-4.  Si el usuario está conectado a la red corporativa, la autenticación se realiza mediante la autenticación integrada de Windows. Si el usuario no está conectado a la red corporativa, la autenticación se realiza mediante ADFS (OAuth); asimismo, se le pedirán al usuario las credenciales. Escribe las credenciales y haz clic en **Aceptar**.  
+4. Si el usuario está conectado a la red corporativa, la autenticación se realiza mediante la autenticación integrada de Windows. Si el usuario no está conectado a la red corporativa, la autenticación se realiza mediante ADFS (OAuth); asimismo, se le pedirán al usuario las credenciales. Escribe las credenciales y haz clic en **Aceptar**.  
   
-5.  Una vez que hayas realizado la autenticación, se mostrará la página **Introducción a Carpetas de trabajo**, donde tienes la opción de cambiar la ubicación del directorio de Carpetas de trabajo. Haz clic en **Siguiente**.  
+5. Una vez que hayas realizado la autenticación, se mostrará la página **Introducción a Carpetas de trabajo**, donde tienes la opción de cambiar la ubicación del directorio de Carpetas de trabajo. Haz clic en **Siguiente**.  
   
-6.  En la página **Directivas de seguridad** se indican las directivas de seguridad de Carpetas de trabajo que configuraste. Haz clic en **Siguiente**.  
+6. En la página **Directivas de seguridad** se indican las directivas de seguridad de Carpetas de trabajo que configuraste. Haz clic en **Siguiente**.  
   
-7.  Se mostrará un mensaje que indica que Carpetas de trabajo comenzó la sincronización del equipo. Haga clic en **Cerrar**.  
+7. Se mostrará un mensaje que indica que Carpetas de trabajo comenzó la sincronización del equipo. Haga clic en **Cerrar**.  
   
-8.  En la página **Administrar Carpetas de trabajo**, se muestra la cantidad de espacio disponible que hay en el servidor, el estado de la sincronización, etcétera. Si fuera necesario, puedes volver a escribir las credenciales aquí. Cierra la ventana  
+8. En la página **Administrar Carpetas de trabajo**, se muestra la cantidad de espacio disponible que hay en el servidor, el estado de la sincronización, etcétera. Si fuera necesario, puedes volver a escribir las credenciales aquí. Cierra la ventana  
   
 9. La carpeta Carpetas de trabajo se abrirá automáticamente. Puedes agregar contenido a esta carpeta para sincronizarlo entre los dispositivos.  
   

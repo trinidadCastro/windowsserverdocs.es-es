@@ -9,12 +9,12 @@ ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
 ms.date: 08/22/2018
-ms.openlocfilehash: 618c2c4da60decc94f84c2a40cd4d2aa80d5f26b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d29a98e24b475c38fee61972bf9efbd5a2528974
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827576"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446262"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>Administrar certificados para redes definidas por Software
 
@@ -128,13 +128,13 @@ Puede usar el complemento certificados para solicitar certificados. Puede solici
 **Los usuarios** o local **administradores** es la pertenencia a grupos mínima necesaria para completar este procedimiento.
 
 1. Abra el complemento certificados para un equipo.
-2. En el árbol de consola, haga clic en **certificados \(ordenador\)**. Seleccione el **Personal** almacén de certificados.
-3. En el **acción** menú, seleccione ** todas las tareas ** y, a continuación, haga clic en **solicitar un nuevo certificado** para iniciar el Asistente de inscripción de certificados. Haz clic en **Siguiente**.
+2. En el árbol de consola, haga clic en **certificados \(ordenador\)** . Seleccione el **Personal** almacén de certificados.
+3. En el **acción** menú, seleccione ** todas las tareas<strong>y, a continuación, haga clic en ** solicitar un nuevo certificado</strong> para iniciar el Asistente de inscripción de certificados. Haz clic en **Siguiente**.
 4. Seleccione el **configurado por el administrador** directiva de inscripción de certificados y haga clic en **siguiente**.
 5. Seleccione el **directiva de inscripción de Active Directory** \(basado en la plantilla de entidad de certificación que configuró en la sección anterior\).
 6. Expanda el **detalles** sección y configurar los elementos siguientes.
-    1. Asegúrese de que **uso de la clave** incluye ambos ** firma Digital ** y **cifrado de clave**.
-    2. Asegúrese de que **las directivas de aplicación** incluye ambos **autenticación de servidor** \(1.3.6.1.5.5.7.3.1\) y **autenticación de cliente** \(1.3.6.1.5.5.7.3.2\).
+   1. Asegúrese de que **uso de la clave** incluye ambos <strong>firma Digital ** y ** cifrado de clave</strong>.
+   2. Asegúrese de que **las directivas de aplicación** incluye ambos **autenticación de servidor** \(1.3.6.1.5.5.7.3.1\) y **autenticación de cliente** \(1.3.6.1.5.5.7.3.2\).
 7. Haga clic en **Propiedades**.
 8. En el **asunto** ficha **nombre de sujeto**, en **tipo**, seleccione **nombre común**. En valor, especifique **punto de conexión de REST de controladora de red**.
 9. Haga clic en **Aplicar** y en **Aceptar**.

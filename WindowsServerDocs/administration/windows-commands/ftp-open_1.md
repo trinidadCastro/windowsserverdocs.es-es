@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da7926914e2cbdbb4909093d90c33025ae5cd695
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45de8b3c210fe0925ac3cc43c41d3e092d5dfe16
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882476"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438506"
 ---
 # <a name="ftp-open1"></a>FTP: open_1
 
@@ -30,10 +30,12 @@ Se conecta al servidor ftp especificada.
 open <computer> [<Port>]  
 ```  
 ### <a name="parameters"></a>Parámetros  
-|Parámetro|Descripción|  
-|-------|--------|  
-|<computer>|Especifica el equipo remoto al que está intentando conectarse.|  
-|[<Port>]|Especifica un número de puerto TCP para conectarse a un servidor ftp. De forma predeterminada, se usa el puerto TCP 21.|  
+
+| Parámetro  |                                           Descripción                                            |
+|------------|--------------------------------------------------------------------------------------------------|
+| <computer> |                Especifica el equipo remoto al que está intentando conectarse.                 |
+|  [<Port>]  | Especifica un número de puerto TCP para conectarse a un servidor ftp. De forma predeterminada, se usa el puerto TCP 21. |
+
 ## <a name="remarks"></a>Comentarios  
 Puede usar un nombre de equipo o dirección IP (en cuyo caso debe estar disponible un servidor DNS o el archivo de Hosts) para especificar **equipo**.  
 ## <a name="BKMK_Examples"></a>Ejemplos  

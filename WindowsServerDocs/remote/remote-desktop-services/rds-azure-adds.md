@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: christianmontoya
 ms.localizationpriority: medium
-ms.openlocfilehash: e60cf70f1f91ad87046bedf024fe9afc459075b6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8b1baf642ffa3c8e8a0a2cfc70d2f49b58f208b3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860516"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446583"
 ---
 # <a name="integrate-azure-ad-domain-services-with-your-rds-deployment"></a>Integrar Azure AD Domain Services con la implementación de RDS
 
@@ -51,26 +51,26 @@ Siga estos pasos para implementar Azure AD DS y RDS.
 2. Configuración de RDS. Puede usar una plantilla de Azure o implementar RDS manualmente.
    - Use la [plantilla existente de AD](https://azure.microsoft.com/resources/templates/rds-deployment-existing-ad/). Asegúrese de personalizar los siguientes elementos:
    
-      - **Configuración**
-         - **Grupo de recursos**: Use el grupo de recursos donde desea crear los recursos RDS.
+     - **Configuración**
+       - **Grupo de recursos**: Use el grupo de recursos donde desea crear los recursos RDS.
          > [!NOTE] 
          > En estos momentos, este debe ser el mismo grupo de recursos donde existe la red virtual de Azure resource manager.
 
-         - **Prefijo de etiqueta DNS**: Escriba la dirección URL que desea que los usuarios usen para tener acceso a Web a Escritorio remoto.
-         - **Nombre de dominio AD**: Escriba el nombre completo de la instancia de Azure AD, por ejemplo, "contoso.onmicrosoft.com" o "contoso.com".
-         - **Nombre de red virtual de AD** y **nombre de subred de Ad**: Especifique los mismos valores que usó cuando creó la red virtual de Azure resource manager. Se trata de la subred a la que se conectarán los recursos RDS.
-         - **Nombre de usuario administrador** y **contraseña de administrador**: Escriba las credenciales de un usuario de administrador que es un miembro de la **AAD DC Administrators** grupo en Azure AD.
+       - **Prefijo de etiqueta DNS**: Escriba la dirección URL que desea que los usuarios usen para tener acceso a Web a Escritorio remoto.
+       - **Nombre de dominio AD**: Escriba el nombre completo de la instancia de Azure AD, por ejemplo, "contoso.onmicrosoft.com" o "contoso.com".
+       - **Nombre de red virtual de AD** y **nombre de subred de Ad**: Especifique los mismos valores que usó cuando creó la red virtual de Azure resource manager. Se trata de la subred a la que se conectarán los recursos RDS.
+       - **Nombre de usuario administrador** y **contraseña de administrador**: Escriba las credenciales de un usuario de administrador que es un miembro de la **AAD DC Administrators** grupo en Azure AD.
    
-      - **plantilla**
-         - Quitar todas las propiedades de **dnsServers**: después de seleccionar **Editar plantilla** desde la página de plantilla de inicio rápido de Azure, busque "dnsServers" y quite la propiedad. 
+     - **plantilla**
+        - Quitar todas las propiedades de **dnsServers**: después de seleccionar **Editar plantilla** desde la página de plantilla de inicio rápido de Azure, busque "dnsServers" y quite la propiedad. 
 
-            Por ejemplo, antes de quitar el **dnsServers** propiedad:
+           Por ejemplo, antes de quitar el **dnsServers** propiedad:
       
-            ![Plantilla de inicio rápido de Azure con la propiedad dnsSettings](media/rds-remove-dnssettings-before.png)
+           ![Plantilla de inicio rápido de Azure con la propiedad dnsSettings](media/rds-remove-dnssettings-before.png)
 
-            Y aquí es el mismo archivo después de quitar la propiedad:
+           Y aquí es el mismo archivo después de quitar la propiedad:
 
-            ![Plantilla de inicio rápido de Azure con la propiedad dnsSettings quitada](media/rds-remove-dnssettings-after.png)
+           ![Plantilla de inicio rápido de Azure con la propiedad dnsSettings quitada](media/rds-remove-dnssettings-after.png)
    
    - [Implementación manual de RDS](rds-deploy-infrastructure.md). 
 

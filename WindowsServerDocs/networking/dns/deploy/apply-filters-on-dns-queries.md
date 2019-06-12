@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4b00c773462569f005a73f535b1a872ae7b389db
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e9322da3142c584c7b9d0a28396a1d1fd62ce6ee
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859906"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446407"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>Uso de la directiva de DNS para aplicar filtros en las consultas DNS
 
@@ -45,7 +45,7 @@ Los ejemplos siguientes muestran cómo crear filtros para la directiva DNS bloqu
 >[!NOTE]
 >Los comandos de ejemplo en este tema usan el comando de Windows PowerShell **agregar DnsServerQueryResolutionPolicy**. Para obtener más información, consulte [agregar DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps). 
 
-##<a name="bkmk_block1"></a>Consultas de bloqueo de un dominio
+## <a name="bkmk_block1"></a>Consultas de bloqueo de un dominio
 
 En algunas circunstancias puede bloquear la resolución de nombres DNS para dominios que se han identificado como malintencionada o dominios que no son compatibles con las instrucciones de uso de su organización. Puede realizar consultas de bloqueo para dominios mediante la directiva DNS.
 
@@ -60,7 +60,7 @@ Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicy" -Action IGNORE -FQDN 
 >[!NOTE]
 >Al configurar el **acción** parámetro con el valor **omitir**, el servidor DNS está configurado para quitar las consultas sin respuesta en absoluto. Esto hace que al cliente DNS del dominio malintencionado en tiempo de espera.
 
-##<a name="bkmk_block2"></a>Consultas de bloqueo de una subred
+## <a name="bkmk_block2"></a>Consultas de bloqueo de una subred
 Con este ejemplo, puede bloquear las consultas de una subred si se encuentra infectados por malware y está intentando ponerse en contacto con los sitios malintencionados mediante su servidor DNS. 
 
 ` Add-DnsServerClientSubnet -Name "MaliciousSubnet06" -IPv4Subnet 172.0.33.0/24 -PassThru
@@ -73,14 +73,14 @@ El ejemplo siguiente muestra cómo puede usar los criterios de la subred en comb
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyMalicious06" -Action IGNORE -ClientSubnet  "EQ,MaliciousSubnet06" –FQDN “EQ,*.contosomalicious.com” -PassThru
 `
 
-##<a name="bkmk_block3"></a>Bloquear un tipo de consulta
+## <a name="bkmk_block3"></a>Bloquear un tipo de consulta
 Es posible que deba bloquear la resolución de nombres para ciertos tipos de consultas en los servidores. Por ejemplo, puede bloquear la consulta 'ANY', que se puede usar de forma malintencionada para crear ataques de amplificación.
 
 `
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyQType" -Action IGNORE -QType "EQ,ANY" -PassThru
 `
 
-##<a name="bkmk_allow1"></a>Permitir consultas solo desde un dominio
+## <a name="bkmk_allow1"></a>Permitir consultas solo desde un dominio
 No puede usar solo de directiva para bloquear las consultas DNS, puede usar para aprobar automáticamente las consultas entre subredes o dominios específicos. Al configurar listas de permitir, el servidor DNS solo procesa las consultas de dominios permitidos, mientras se bloquea todas las consultas de otros dominios.
 
 El siguiente comando de ejemplo permite que solo los equipos y dispositivos en los dominios contoso.com y secundario para consultar el servidor DNS.
@@ -89,7 +89,7 @@ El siguiente comando de ejemplo permite que solo los equipos y dispositivos en l
 Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicyDomain" -Action IGNORE -FQDN "NE,*.contoso.com" -PassThru 
 `
 
-##<a name="bkmk_allow2"></a>Permitir consultas solo desde una subred
+## <a name="bkmk_allow2"></a>Permitir consultas solo desde una subred
 También puede crear listas de permitir para las subredes IP, para que se omiten todas las consultas no que se origina en estas subredes.
 
 `
@@ -99,7 +99,7 @@ Add-DnsServerClientSubnet -Name "AllowedSubnet06" -IPv4Subnet 172.0.33.0/24 -Pas
 Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicySubnet” -Action IGNORE -ClientSubnet  "NE, AllowedSubnet06" -PassThru
 `
 
-##<a name="bkmk_allow3"></a>Permitir solo determinadas QTypes
+## <a name="bkmk_allow3"></a>Permitir solo determinadas QTypes
 Permitir que se muestran se puede aplicar a QTYPEs. 
 
 Por ejemplo, si tiene clientes externos consultar la interfaz del servidor DNS 164.8.1.1, sólo ciertos QTYPEs se permiten consultar, aunque hay otros QTYPEs similares a los registros SRV o TXT que se usan los servidores internos para la resolución o con fines de supervisión.

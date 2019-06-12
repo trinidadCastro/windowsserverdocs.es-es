@@ -12,12 +12,12 @@ ms.assetid: 57079470-a1c1-4fdc-af15-1950d3381860
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: bc1930b681621d4d34c85414dbc2f97df257af20
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d793dde9c41bc99b55eeb0da3a5ee4b025f08d6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817166"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443642"
 ---
 # <a name="developing-for-nano-server"></a>Desarrollo para Nano Server
 
@@ -29,13 +29,13 @@ ms.locfileid: "59817166"
 En estos temas se explican las diferencias importantes de PowerShell en Nano Server y también se proporcionan instrucciones para desarrollar sus propios cmdlets de PowerShell para usarlos en Nano Server.
 
 - [PowerShell en Nano Server](PowerShell-on-Nano-Server.md)
-- [Desarrollo de Cmdlets de PowerShell para Nano Server](Developing-PowerShell-Cmdlets-for-Nano-Server.md)
+- [Desarrollo de cmdlets de PowerShell para Nano Server](Developing-PowerShell-Cmdlets-for-Nano-Server.md)
 
 ## <a name="using-windows-powershell-remoting"></a>Uso de la comunicación remota a Windows PowerShell  
 Para administrar Nano Server con la comunicación remota a Windows PowerShell, necesita agregar la dirección IP de Nano Server a la lista de hosts de confianza del equipo de administración, agregar la cuenta que utiliza para los administradores de Nano Server y habilitar CredSSP si piensa usar esta característica.  
 
- >[!NOTE]  
-    > Si el destino de Nano Server y el equipo de administración están en el mismo bosque de AD DS (o en bosques con una relación de confianza), no debe agregar Nano Server a la lista de hosts de confianza, puede conectarse al servidor Nano mediante su nombre de dominio completo , por ejemplo: PS C:\> Enter-PSSession - ComputerName nanoserver.contoso.com-Credential (Get-Credential)
+> [!NOTE]
+> Si el destino de Nano Server y el equipo de administración están en el mismo bosque de AD DS (o en bosques con una relación de confianza), no debe agregar Nano Server a la lista de hosts de confianza, puede conectarse al servidor Nano mediante su nombre de dominio completo , por ejemplo: PS C:\> Enter-PSSession - ComputerName nanoserver.contoso.com-Credential (Get-Credential)
   
   
 Para agregar Nano Server a la lista de hosts de confianza, ejecute este comando en un símbolo del sistema de Windows PowerShell con privilegios elevados:  

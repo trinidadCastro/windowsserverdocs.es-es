@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9390f8e5b0bded92a553b3057d122dace3fc665a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7b342f9d728e91085d5edf2f8e1ece00b48bec8d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851616"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438320"
 ---
 # <a name="ftp-mdelete1"></a>ftp: mdelete_1
 
@@ -30,9 +30,11 @@ Elimina los archivos en el equipo remoto.
 mdelete <remoteFile>[ ]  
 ```  
 ### <a name="parameters"></a>Parámetros  
-|Parámetro|Descripción|  
-|-------|--------|  
-|<remoteFile>|Especifica el archivo remoto para eliminar.|  
+
+|  Parámetro   |             Descripción              |
+|--------------|--------------------------------------|
+| <remoteFile> | Especifica el archivo remoto para eliminar. |
+
 ## <a name="BKMK_Examples"></a>Ejemplos  
 eliminar archivos remotos **a.exe** y **b.exe**.  
 ```  

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 018d94e08cc15780cf0aa861b06b915538c21122
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 249eb82bb40890e071bd7d1eca3a0201064fa01e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865866"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437940"
 ---
 # <a name="ksetupsetrealmflags"></a>ksetup:setrealmflags
 
@@ -53,7 +53,7 @@ Los indicadores de territorio especifican características adicionales de un dom
 |0x08|NcSupported|Este campo admite la canonización de nombre, lo que permite los estándares de nomenclatura de dominio Kerberos y DNS.|
 |0x80|RC4|Este campo admite el cifrado RC4 para habilitar la confianza entre territorios, que permite el uso de TLS.|
 
-Marcas de dominio Kerberos se almacenan en el registro bajo **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\*** RealmName *. Esta entrada no existe en el registro de forma predeterminada. Puede usar el [Ksetup:addrealmflags](ksetup-addrealmflags.md) comando llenar el registro.
+Marcas de dominio Kerberos se almacenan en el registro bajo **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\\** <em>RealmName</em>. Esta entrada no existe en el registro de forma predeterminada. Puede usar el [Ksetup:addrealmflags](ksetup-addrealmflags.md) comando llenar el registro.
 
 Puede ver qué marcas de dominio Kerberos están disponible y configurado mediante la visualización de la salida de **ksetup**.
 
@@ -67,7 +67,7 @@ Establecer dos marcas que no están establecidas actualmente:
 ```
 ksetup /setrealmflags CONTOSO ncsupported delegate
 ```
-Ejecute el **ksetup** comando para comprobar que la marca del dominio está establecida al ver la salida y busca **marcas Realm =**.
+Ejecute el **ksetup** comando para comprobar que la marca del dominio está establecida al ver la salida y busca **marcas Realm =** .
 
 #### <a name="additional-references"></a>Referencias adicionales
 

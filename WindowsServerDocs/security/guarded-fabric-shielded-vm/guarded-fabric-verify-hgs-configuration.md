@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 43b2a90eaa987e96b716e10259f75ffaf9f136a4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 954393126333bf04d2aa46a01089d88bc91151cb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832576"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447321"
 ---
 # <a name="verify-the-hgs-configuration"></a>Verify the HGS configuration (Comprobar la configuración HGS)
 
@@ -38,6 +38,6 @@ Ejecute los diagnósticos en cada nodo del clúster de HGS.
 
 ## <a name="next-step"></a>Paso siguiente
 
->[!div class="nextstepaction"]
-[Implementar hosts protegidos](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
+> [!div class="nextstepaction"]
+> [Implementar hosts protegidos](guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md)
 

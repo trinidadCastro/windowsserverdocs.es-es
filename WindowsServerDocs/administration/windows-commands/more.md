@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d4957f9455c6caed027331a939db0c2fefbe1961
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93ba6c696c509ea20ffe8f680d4416d24d202b89
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59857576"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437317"
 ---
 # <a name="more"></a>more
 
@@ -38,17 +38,17 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|\<Command>|Especifica un comando para el que desea mostrar la salida.|
-|/c|Borra la pantalla antes de mostrar una página.|
-|/p|Expande los caracteres de avance de página.|
-|/s|Muestra varias líneas en blanco como una sola línea en blanco.|
-|/t\<N>|Muestra las pestañas como el número de espacios especificado por *N*.|
-|+\<N>|Muestra el primer principio de archivo en la línea especificada por *N*.|
-|[\<Drive>:] [<Path>]<FileName>|Especifica la ubicación y el nombre de un archivo para mostrar.|
-|\<Archivos >|Especifica una lista de archivos que se va a mostrar. Separe los nombres de archivo con un espacio.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|           Parámetro            |                               Descripción                               |
+|--------------------------------|-------------------------------------------------------------------------|
+|           \<Command>           |      Especifica un comando para el que desea mostrar la salida.      |
+|               /c               |               Borra la pantalla antes de mostrar una página.               |
+|               /p               |                      Expande los caracteres de avance de página.                      |
+|               /s               |          Muestra varias líneas en blanco como una sola línea en blanco.          |
+|             /t\<N>             |         Muestra las pestañas como el número de espacios especificado por *N*.         |
+|             +\<N>              |     Muestra el primer principio de archivo en la línea especificada por *N*.     |
+| [\<Drive>:] [<Path>]<FileName> |          Especifica la ubicación y el nombre de un archivo para mostrar.          |
+|            \<Archivos >            | Especifica una lista de archivos que se va a mostrar. Separe los nombres de archivo con un espacio. |
+|               /?               |                  Muestra la ayuda en el símbolo del sistema.                   |
 
 ## <a name="remarks"></a>Comentarios
 
@@ -63,7 +63,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
     |p \<N >|Muestra la siguiente *N* líneas.|
     |s \<N>|Omite la próxima *N* líneas.|
     |?|Muestra los comandos que están disponibles en el **más** símbolo del sistema.|
--Cuando se usa el carácter de redirección (**<**), debe especificar un nombre de archivo como origen. Cuando se usa la canalización (**|*), puede usar estos comandos como **dir**, **ordenación**, y **tipo**.
+-Cuando se usa el carácter de redirección ( **<** ), debe especificar un nombre de archivo como origen. Cuando se usa la canalización (**|*), puede usar estos comandos como **dir**, **ordenación**, y **tipo**.
 -   El **más** comando, con diferentes parámetros, está disponible en la consola de recuperación.
 
 ## <a name="BKMK_examples"></a>Ejemplos
@@ -92,25 +92,25 @@ El **más** comando muestra la primera pantalla de información de clientes.nue 
 ### <a name="using-more-subcommands"></a>Usar subcomandos más
 
 Los ejemplos siguientes se pueden usar en el **más** símbolo del sistema (`-- More --`).
--   Para mostrar el archivo línea a la vez, presione ENTRAR en el **más** símbolo del sistema.
--   Para mostrar la pantalla siguiente, presione la barra espaciadora en el **más** símbolo del sistema.
--   Para mostrar el siguiente archivo aparece en la línea de comandos, escriba **f** en el **más** símbolo del sistema.
--   ¿Para mostrar los comandos disponibles, escriba **?** en el **más** símbolo del sistema.
--   Para salir de **más**, tipo **q** en el **más** símbolo del sistema.
--   Para mostrar el número de línea actual, escriba **=** en el **más** símbolo del sistema. El número de línea actual se agrega a la **más** símbolo del sistema como sigue:  
-    ```
-    -- More [Line: 24] --
-    ```  
--   Para mostrar un número específico de líneas, escriba **p** en el **más** símbolo del sistema. **Más** le solicita que el número de líneas que desea mostrar como sigue:  
-    ```
-    -- More -- Lines:
-    ```  
-    Escriba el número de líneas para mostrar y, a continuación, presione ENTRAR. **Más** muestra el número de líneas especificado.
--   Para omitir un número específico de líneas, escriba **s** en el **más** símbolo del sistema. **Más** le solicita que el número de líneas para omitir la manera siguiente:  
-    ```
-    -- More -- Lines:
-    ```  
-    Escriba el número de líneas para omitir y, a continuación, presione ENTRAR. **Más** omite el número especificado de líneas y muestra la siguiente pantalla de información.
+- Para mostrar el archivo línea a la vez, presione ENTRAR en el **más** símbolo del sistema.
+- Para mostrar la pantalla siguiente, presione la barra espaciadora en el **más** símbolo del sistema.
+- Para mostrar el siguiente archivo aparece en la línea de comandos, escriba **f** en el **más** símbolo del sistema.
+- ¿Para mostrar los comandos disponibles, escriba **?** en el **más** símbolo del sistema.
+- Para salir de **más**, tipo **q** en el **más** símbolo del sistema.
+- Para mostrar el número de línea actual, escriba **=** en el **más** símbolo del sistema. El número de línea actual se agrega a la **más** símbolo del sistema como sigue:  
+  ```
+  -- More [Line: 24] --
+  ```  
+- Para mostrar un número específico de líneas, escriba **p** en el **más** símbolo del sistema. **Más** le solicita que el número de líneas que desea mostrar como sigue:  
+  ```
+  -- More -- Lines:
+  ```  
+  Escriba el número de líneas para mostrar y, a continuación, presione ENTRAR. **Más** muestra el número de líneas especificado.
+- Para omitir un número específico de líneas, escriba **s** en el **más** símbolo del sistema. **Más** le solicita que el número de líneas para omitir la manera siguiente:  
+  ```
+  -- More -- Lines:
+  ```  
+  Escriba el número de líneas para omitir y, a continuación, presione ENTRAR. **Más** omite el número especificado de líneas y muestra la siguiente pantalla de información.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e487389e0f27f58aacaea2b81d573dc9a965e42f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1c701707f736fe51a1f4af70a2571e63025f281
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889086"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438042"
 ---
 # <a name="ksetupdelkpasswd"></a>ksetup:delkpasswd
 
@@ -30,10 +30,12 @@ Quita un servidor de la contraseña de Kerberos (Kpasswd) para un dominio Kerber
 ksetup /delkpasswd <RealmName> <KpasswdName>
 ```
 ### <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|<RealmName>|El nombre de dominio Kerberos se define como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM y aparece como el valor predeterminado territorio o un territorio = cuando **ksetup** se ejecuta.|
-|<KpasswdName>|El nombre KDC que se usará como el servidor de la contraseña de Kerberos se define como un nombre de dominio completo entre mayúsculas y minúsculas, como mitkdc.contoso.com. Si se omite el nombre KDC, DNS podría utilizarse para buscar los KDC.|
+
+|   Parámetro   |                                                                                                   Descripción                                                                                                   |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  <RealmName>  |                                El nombre de dominio Kerberos se define como un nombre DNS en mayúsculas, como CORP. CONTOSO.COM y aparece como el valor predeterminado territorio o un territorio = cuando **ksetup** se ejecuta.                                |
+| <KpasswdName> | El nombre KDC que se usará como el servidor de la contraseña de Kerberos se define como un nombre de dominio completo entre mayúsculas y minúsculas, como mitkdc.contoso.com. Si se omite el nombre KDC, DNS podría utilizarse para buscar los KDC. |
+
 ## <a name="remarks"></a>Comentarios
 Ejecute el comando **ksetup** para comprobar el nombre KDC. Si **kpasswd =** no aparece en la salida, no se ha configurado la asignación. Se mostrarán varias asignaciones, si establece.
 ## <a name="BKMK_Examples"></a>Ejemplos

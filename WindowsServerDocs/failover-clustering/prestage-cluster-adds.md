@@ -9,12 +9,12 @@ ms.manager: daveba
 ms.technology: storage-failover-clustering
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 151f02572d7595776539af163831b4a7a060c1c7
-ms.sourcegitcommit: 75f257d97d345da388cda972ccce0eb29e82d3bc
+ms.openlocfilehash: fa240ba5fedd98f16639dd19fb8f22c10bfdd9ac
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65613169"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66442462"
 ---
 # <a name="prestage-cluster-computer-objects-in-active-directory-domain-services"></a>Preconfiguración de objetos de equipo del clúster en Active Directory Domain Services
 
@@ -48,14 +48,14 @@ Como práctica recomendada, se aconseja crear una unidad organizativa para los o
 3. En el árbol de consola, haga clic en la unidad organizativa donde desea crear el CNO, seleccione **New**y, a continuación, seleccione **equipo**.
 4. En el **nombre_equipo** , escriba el nombre que se usará para el clúster de conmutación por error y, a continuación, seleccione **Aceptar**.
 
-  >[!NOTE]
-  >Este es el nombre del clúster que el usuario que crea el clúster indicará en la página **Punto de acceso para administrar el clúster** del Asistente para crear clúster o como valor del parámetro *–Name* del cmdlet **New-Cluster** de Windows PowerShell.
+   >[!NOTE]
+   >Este es el nombre del clúster que el usuario que crea el clúster indicará en la página **Punto de acceso para administrar el clúster** del Asistente para crear clúster o como valor del parámetro *–Name* del cmdlet **New-Cluster** de Windows PowerShell.
 
 5. Como práctica recomendada, haga clic en la cuenta de equipo que acaba de crear, seleccione **propiedades**y, a continuación, seleccione el **objeto** ficha. En el **objeto** ficha, seleccione el **proteger objeto contra eliminación accidental** casilla de verificación y, a continuación, seleccione **Aceptar**.
 6. Haga clic en la cuenta de equipo recién creado y, a continuación, seleccione **deshabilitar cuenta**. Seleccione **Sí** para confirmar y, a continuación, seleccione **Aceptar**.
 
-  >[!NOTE]
-  >Debe deshabilitar la cuenta para que, durante la creación del clúster, el proceso de creación del clúster pueda confirmar que no hay ningún equipo o clúster en el dominio que esté utilizando la cuenta.
+   >[!NOTE]
+   >Debe deshabilitar la cuenta para que, durante la creación del clúster, el proceso de creación del clúster pueda confirmar que no hay ningún equipo o clúster en el dominio que esté utilizando la cuenta.
 
 ![CNO deshabilitado en la unidad organizativa de clústeres usada como ejemplo.](media/prestage-cluster-adds/disabled-cno-in-the-example-clusters-ou.png)
 
@@ -75,9 +75,9 @@ Aquí le mostramos cómo conceder los permisos de usuario para crear el clúster
 4. En el **Seleccionar usuarios, equipos o grupos** diálogo cuadro, especifique la cuenta de usuario o grupo que desea conceder permisos a y, a continuación, seleccione **Aceptar**.
 5. Seleccione la cuenta de usuario o el grupo recién agregado y, junto a **Control total**, active la casilla **Permitir** .
   
-  ![Concesión de control total al usuario o grupo que creará el clúster](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
+   ![Concesión de control total al usuario o grupo que creará el clúster](media/prestage-cluster-adds/granting-full-control-to-the-user-create-the-cluster.png)
   
-  **Figura 2. Conceder Control total al usuario o grupo que va a crear el clúster**
+   **Figura 2. Conceder Control total al usuario o grupo que va a crear el clúster**
 6. Seleccione **Aceptar**.
 
 Tras finalizar este paso, el usuario al que concedió los permisos puede crear el clúster de conmutación por error. Sin embargo, si el CNO está ubicado en una unidad organizativa, el usuario no puede crear roles en clúster que requieran un punto de acceso cliente hasta que se haya realizado el Paso 3.
@@ -113,9 +113,9 @@ Si ha preconfigurado el CNO en AD DS, tiene dos opciones para crear los VCO:
 8. En el cuadro de diálogo **Entrada de permiso**, asegúrese de que la lista **Tipo** esté definida en **Permitir** y que la lista **Se aplica a** esté definida en **Este objeto y todos los descendientes**.
 9. En **Permisos**, active la casilla **Crear objetos de equipo**.
 
-  ![Concesión del permiso Crear objetos de equipo al CNO](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
+   ![Concesión del permiso Crear objetos de equipo al CNO](media/prestage-cluster-adds/granting-create-computer-objects-permission-to-the-cno.png)
 
-  **Figura 3. Conceder el permiso Crear equipo objetos al CNO**
+   **Figura 3. Conceder el permiso Crear equipo objetos al CNO**
 10. Seleccione **Aceptar** hasta volver a los usuarios de Active Directory y complemento en los equipos.
 
 Un administrador del clúster de conmutación por error puede ahora crear roles en clúster con puntos de acceso cliente y poner los recursos en línea.

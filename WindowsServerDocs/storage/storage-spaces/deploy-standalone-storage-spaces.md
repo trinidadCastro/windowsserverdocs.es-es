@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-spaces
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7090657a0936aed0f4b2e79007f69d7b082b0b8f
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: f9b5d2b0d5acfcbde52131c29704e38d835d048e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63750650"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447552"
 ---
 # <a name="deploy-storage-spaces-on-a-stand-alone-server"></a>Implementar espacios de almacenamiento en un servidor independiente
 
@@ -150,16 +150,16 @@ A continuación, debes crear uno o más discos virtuales desde el grupo de almac
 
 8. En el **especificar el tipo de aprovisionamiento** página, seleccione una de las opciones siguientes y luego seleccione **siguiente**.
     
-      - **Fino**
+   - **Fino**
         
-        Con el aprovisionamiento fino, el espacio se asigna según haga falta. De este modo, se optimiza el uso del almacenamiento disponible. Sin embargo, como esto te permite sobreasignar almacenamiento, debes supervisar cuidadosamente de cuánto espacio en disco dispones.
+     Con el aprovisionamiento fino, el espacio se asigna según haga falta. De este modo, se optimiza el uso del almacenamiento disponible. Sin embargo, como esto te permite sobreasignar almacenamiento, debes supervisar cuidadosamente de cuánto espacio en disco dispones.
     
-      - **Fixed**
+   - **Fixed**
         
-        Con el aprovisionamiento fijo, la capacidad de almacenamiento se asigna inmediatamente, cuando se crea un disco virtual. Por lo tanto, el aprovisionamiento fijo utiliza un espacio del grupo de almacenamiento que es igual al tamaño del disco virtual.
+     Con el aprovisionamiento fijo, la capacidad de almacenamiento se asigna inmediatamente, cuando se crea un disco virtual. Por lo tanto, el aprovisionamiento fijo utiliza un espacio del grupo de almacenamiento que es igual al tamaño del disco virtual.
     
-    >[!TIP]
-    >Con los Espacios de almacenamiento, puedes crear discos virtuales con aprovisionamiento fino y fijo en el mismo grupo de almacenamiento. Por ejemplo, puedes usar un disco virtual con aprovisionamiento fino para hospedar una base de datos y un disco virtual con aprovisionamiento fijo para hospedar los archivos de registro asociados.
+     >[!TIP]
+     >Con los Espacios de almacenamiento, puedes crear discos virtuales con aprovisionamiento fino y fijo en el mismo grupo de almacenamiento. Por ejemplo, puedes usar un disco virtual con aprovisionamiento fino para hospedar una base de datos y un disco virtual con aprovisionamiento fijo para hospedar los archivos de registro asociados.
 
 9. En la página **Especificar el tamaño del disco virtual**, haz lo siguiente:
     

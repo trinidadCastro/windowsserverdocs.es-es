@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: Cómo implementar Carpetas de trabajo, incluyendo la instalación del rol de servidor, la creación de recursos compartidos de sincronización y la creación de registros DNS.
-ms.openlocfilehash: 1f7a0aa0b7e08a1dd444cd6b488a1ced6ee3d9d7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 1ed26c9949fa3f4b53b9f650ca5a3649d5261d65
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812546"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447852"
 ---
 # <a name="deploying-work-folders"></a>Implementar Carpetas de trabajo
 
@@ -36,17 +36,17 @@ En este tema se describen los pasos necesarios para implementar Carpetas de trab
 ## <a name="step-1-obtain-ssl-certificates"></a>Paso 1: obtener un certificado SSL  
  Carpetas de trabajo usa HTTPS para sincronizar de forma segura archivos entre los clientes de Carpetas de trabajo y el servidor de Carpetas de trabajo. Los requisitos de los certificados SSL utilizados por Carpetas de trabajo son los siguientes:  
   
--   El certificado debe emitirlo una entidad de certificación de confianza. Para la mayoría de implementaciones de Carpetas de trabajo, se recomienda una CA de confianza pública, ya que los certificados los utilizarán dispositivos basados en Internet, no unidos a dominios.  
+- El certificado debe emitirlo una entidad de certificación de confianza. Para la mayoría de implementaciones de Carpetas de trabajo, se recomienda una CA de confianza pública, ya que los certificados los utilizarán dispositivos basados en Internet, no unidos a dominios.  
   
--   El certificado debe ser válido.  
+- El certificado debe ser válido.  
   
--   La clave privada del certificado debe ser exportable (ya que deberá instalar el certificado en varios servidores).  
+- La clave privada del certificado debe ser exportable (ya que deberá instalar el certificado en varios servidores).  
   
--   El nombre del firmante del certificado debe contener la URL de Carpetas de trabajo utilizada para descubrir el servicio Carpetas de trabajo por Internet; debe tener el formato `workfolders.`*<domain_name>*.  
+- El nombre del firmante del certificado debe contener la URL de Carpetas de trabajo utilizada para descubrir el servicio Carpetas de trabajo por Internet; debe tener el formato `workfolders.` *<domain_name>* .  
   
--   El certificado debe incluir nombres alternativos de firmante (SAN) y enumerar el nombre del servidor de cada servidor de sincronización en uso.
+- El certificado debe incluir nombres alternativos de firmante (SAN) y enumerar el nombre del servidor de cada servidor de sincronización en uso.
 
- El [blog](https://blogs.technet.microsoft.com/filecab/2013/08/09/work-folders-certificate-management/) Work Folders Certificate Management proporciona información adicional sobre el uso de certificados con Carpetas de trabajo.
+  El [blog](https://blogs.technet.microsoft.com/filecab/2013/08/09/work-folders-certificate-management/) Work Folders Certificate Management proporciona información adicional sobre el uso de certificados con Carpetas de trabajo.
   
 ## <a name="step-2-create-dns-records"></a>Paso 2: Crear registros de DNS  
  Para que los usuarios puedan realizar la sincronización por Internet, debe crear un registro Host (A) en el DNS público para que los clientes de Internet puedan resolver la URL de Carpetas de trabajo. La resolución del registro de DNS debe ser la interfaz externa del servidor proxy inverso.  
@@ -96,9 +96,9 @@ Add-WindowsFeature FS-SyncShareService
 
 - Un grupo para todos los administradores de Carpetas de trabajo, de modo que puedan editar un atributo en cada objeto del usuario que vincule el usuario con el servidor de sincronización correcto (en el caso de que uses varios servidores de sincronización).
 
- Los grupos deben seguir una convención de nomenclatura estándar y deben utilizarse únicamente para Carpetas de trabajo, de cara a evitar posibles conflictos con otros requisitos de seguridad.
+  Los grupos deben seguir una convención de nomenclatura estándar y deben utilizarse únicamente para Carpetas de trabajo, de cara a evitar posibles conflictos con otros requisitos de seguridad.
 
- Para crear los grupos de seguridad adecuados, utilice el procedimiento siguiente varias veces (una vez para cada recurso compartido de sincronización y una vez para crear, de forma opcional, un grupo para administradores de servidores de archivos).
+  Para crear los grupos de seguridad adecuados, utilice el procedimiento siguiente varias veces (una vez para cada recurso compartido de sincronización y una vez para crear, de forma opcional, un grupo para administradores de servidores de archivos).
 
 #### <a name="to-create-security-groups-for-work-folders"></a>Para crear grupos de seguridad para Carpetas de trabajo
 
@@ -141,7 +141,7 @@ Set-ADGroup -Add:@{'Member'=$Members} -Identity:$GroupName -Server:$DC
   
 2.  En el menú **Herramientas**, haga clic en **Usuarios y equipos de Active Directory**. Aparece Usuarios y equipos de Active Directory.  
   
-3.  Haga clic con el botón derecho en la unidad organizativa bajo la cual existen todos los objetos de usuario de Carpetas de trabajo (si los usuarios se almacenan en varias unidades organizativas o en varios dominios) y posteriormente haga clic en **Delegar control…**. Aparece el Asistente para delegación de control.  
+3.  Haga clic con el botón derecho en la unidad organizativa bajo la cual existen todos los objetos de usuario de Carpetas de trabajo (si los usuarios se almacenan en varias unidades organizativas o en varios dominios) y posteriormente haga clic en **Delegar control…** . Aparece el Asistente para delegación de control.  
   
 4.  En la página **Usuarios o grupos** , haga clic en **Agregar…** y posteriormente especifique el grupo que ha creado para los administradores de Carpetas de trabajo (por ejemplo, **Administradores de carpetas de trabajo**).  
   
@@ -166,38 +166,38 @@ DsAcls $ADGroupPath /I:S /G ""$GroupName":RPWP;msDS-SyncServerUrl;user"
 ## <a name="step-7-create-sync-shares-for-user-data"></a>Paso 7: crear recursos compartidos de sincronización para los datos del usuario  
  En este momento, ya estás listo para designar una carpeta del servidor de sincronización para que almacene los archivos de los usuarios. Se conoce a esta carpeta como un recurso compartido de sincronización; puede utilizar los procedimientos siguientes para crear una.  
   
-1.  Si todavía no dispones de un volumen NTFS con espacio libre para el recurso compartido de sincronización y los archivos de usuario que contendrá, crea un volumen nuevo y dale formato con el sistema de archivos NTFS.  
+1. Si todavía no dispones de un volumen NTFS con espacio libre para el recurso compartido de sincronización y los archivos de usuario que contendrá, crea un volumen nuevo y dale formato con el sistema de archivos NTFS.  
   
-2.  En el Administrador del servidor, haga clic en **Servicios de archivos y almacenamiento**y posteriormente haga clic en **Carpetas de trabajo**.  
+2. En el Administrador del servidor, haga clic en **Servicios de archivos y almacenamiento**y posteriormente haga clic en **Carpetas de trabajo**.  
   
-3.  En la parte superior del panel de detalles se visualizará una lista de todos los recursos compartidos de sincronización existentes. Para crear un recurso compartido de sincronización nuevo, en el menú **Tareas** elija **Nuevo recurso compartido de sincronización…**. Se abre el Asistente para crear recursos compartidos de sincronización.  
+3. En la parte superior del panel de detalles se visualizará una lista de todos los recursos compartidos de sincronización existentes. Para crear un recurso compartido de sincronización nuevo, en el menú **Tareas** elija **Nuevo recurso compartido de sincronización…** . Se abre el Asistente para crear recursos compartidos de sincronización.  
   
-4.  En la página **Seleccionar el servidor y la ruta de acceso** , especifique la ubicación de almacenamiento del recurso compartido de sincronización. Si ya tiene un recurso compartido de archivo creado para los datos de este usuario, puede elegir este recurso compartido. Como alternativa, puede crear una carpeta nueva.  
+4. En la página **Seleccionar el servidor y la ruta de acceso** , especifique la ubicación de almacenamiento del recurso compartido de sincronización. Si ya tiene un recurso compartido de archivo creado para los datos de este usuario, puede elegir este recurso compartido. Como alternativa, puede crear una carpeta nueva.  
   
-    > [!NOTE]
-    >  De forma predeterminada, no se puede obtener acceso directo a los recursos compartidos de sincronización mediante un recurso compartido de archivo (a menos que elijas un recurso compartido de archivo existente). Si desea hacer que un recurso compartido de sincronización sea accesible a través de un recurso compartido de archivo, utilice el icono **Recursos compartidos** del Administrador del servidor o el cmdlet [New-SmbShare](https://technet.microsoft.com/library/jj635722.aspx) para crear un recurso compartido de archivo, preferentemente con la enumeración basada en el acceso activada.  
+   > [!NOTE]
+   >  De forma predeterminada, no se puede obtener acceso directo a los recursos compartidos de sincronización mediante un recurso compartido de archivo (a menos que elijas un recurso compartido de archivo existente). Si desea hacer que un recurso compartido de sincronización sea accesible a través de un recurso compartido de archivo, utilice el icono **Recursos compartidos** del Administrador del servidor o el cmdlet [New-SmbShare](https://technet.microsoft.com/library/jj635722.aspx) para crear un recurso compartido de archivo, preferentemente con la enumeración basada en el acceso activada.  
   
-5.  En la página **Especificar la estructura de las carpetas de usuario**, elija una convención de nomenclatura para las carpetas de usuario del recurso compartido de sincronización. Hay dos opciones disponibles:  
+5. En la página **Especificar la estructura de las carpetas de usuario**, elija una convención de nomenclatura para las carpetas de usuario del recurso compartido de sincronización. Hay dos opciones disponibles:  
   
-    -   **Alias de usuario** crea carpetas de usuario que no incluyan un nombre de dominio. Si está utilizando un recurso compartido de archivo que ya se utiliza con Redirección de carpetas o con otra solución de datos del usuario, seleccione esta convención de nomenclatura. Opcionalmente puede activar la casilla **Sincronizar solo la siguiente subcarpeta** para sincronizar únicamente una subcarpeta específica, como la carpeta Documentos.  
+   - **Alias de usuario** crea carpetas de usuario que no incluyan un nombre de dominio. Si está utilizando un recurso compartido de archivo que ya se utiliza con Redirección de carpetas o con otra solución de datos del usuario, seleccione esta convención de nomenclatura. Opcionalmente puede activar la casilla **Sincronizar solo la siguiente subcarpeta** para sincronizar únicamente una subcarpeta específica, como la carpeta Documentos.  
   
-    -   **alias@domain de usuario** crea carpetas de usuario que incluyan un nombre de dominio. Si no usas un recurso compartido de archivo que ya esté siendo utilizado con la opción Redirección de carpetas o con otra solución de datos del usuario, selecciona esta convención de nomenclatura para eliminar los conflictos de nomenclatura de carpetas cuando varios usuarios del recurso compartido tengan alias idénticos (lo cual puede suceder si los usuarios pertenecen a dominios distintos).  
+   - <strong>alias@domain de usuario</strong> crea carpetas de usuario que incluyan un nombre de dominio. Si no usas un recurso compartido de archivo que ya esté siendo utilizado con la opción Redirección de carpetas o con otra solución de datos del usuario, selecciona esta convención de nomenclatura para eliminar los conflictos de nomenclatura de carpetas cuando varios usuarios del recurso compartido tengan alias idénticos (lo cual puede suceder si los usuarios pertenecen a dominios distintos).  
   
-6.  En la página **Escriba el nombre del recurso compartido de sincronización**, especifique un nombre y una descripción para el recurso compartido de sincronización. Esto no se publicita en la red pero resulta visible en el Administrador del servidor y en Windows Powershell para ayudar a diferenciar los distintos recursos compartidos de sincronización.  
+6. En la página **Escriba el nombre del recurso compartido de sincronización**, especifique un nombre y una descripción para el recurso compartido de sincronización. Esto no se publicita en la red pero resulta visible en el Administrador del servidor y en Windows Powershell para ayudar a diferenciar los distintos recursos compartidos de sincronización.  
   
-7.  En la página **Conceder acceso a sincronización a grupos** , especifique el grupo que ha creado y que enumera los usuarios con permiso para utilizar el recurso compartido de sincronización.  
+7. En la página **Conceder acceso a sincronización a grupos** , especifique el grupo que ha creado y que enumera los usuarios con permiso para utilizar el recurso compartido de sincronización.  
   
-    > [!IMPORTANT]
-    >  Para mejorar el rendimiento y la seguridad, conceda acceso a grupos en lugar de a usuarios individuales, y sea lo más específico que pueda, evitando grupos genéricos como Usuarios autenticados y Usuarios del dominio. Conceder acceso a grupos con un número elevado de usuarios aumenta el tiempo que Carpetas de trabajo necesita para consultar AD DS. Si tiene un número elevado de usuarios, cree varios recursos compartidos de sincronización para ayudar a dispersar la carga.  
+   > [!IMPORTANT]
+   >  Para mejorar el rendimiento y la seguridad, conceda acceso a grupos en lugar de a usuarios individuales, y sea lo más específico que pueda, evitando grupos genéricos como Usuarios autenticados y Usuarios del dominio. Conceder acceso a grupos con un número elevado de usuarios aumenta el tiempo que Carpetas de trabajo necesita para consultar AD DS. Si tiene un número elevado de usuarios, cree varios recursos compartidos de sincronización para ayudar a dispersar la carga.  
   
-8.  En la página **Especificar directivas de dispositivos** , especifique si se solicitarán restricciones de seguridad en los dispositivos y equipos cliente. Hay dos directivas de dispositivos que pueden seleccionarse de forma individual:  
+8. En la página **Especificar directivas de dispositivos** , especifique si se solicitarán restricciones de seguridad en los dispositivos y equipos cliente. Hay dos directivas de dispositivos que pueden seleccionarse de forma individual:  
   
-    -   **Cifrar Carpetas de trabajo** Solicita que Carpetas de trabajo se cifre en los dispositivos y equipos cliente  
+   -   **Cifrar Carpetas de trabajo** Solicita que Carpetas de trabajo se cifre en los dispositivos y equipos cliente  
   
-    -   **Bloquear pantalla automáticamente y requerir contraseña** Solicita que los dispositivos y equipos cliente bloqueen automáticamente sus pantallas transcurridos 15 minutos, requieran una contraseña de seis o más caracteres para desbloquear la pantalla y activen un modo de bloqueo del dispositivo tras 10 intentos fallidos.  
+   -   **Bloquear pantalla automáticamente y requerir contraseña** Solicita que los dispositivos y equipos cliente bloqueen automáticamente sus pantallas transcurridos 15 minutos, requieran una contraseña de seis o más caracteres para desbloquear la pantalla y activen un modo de bloqueo del dispositivo tras 10 intentos fallidos.  
   
-        > [!IMPORTANT]
-        >  Para aplicar obligatoriamente directivas de contraseña para equipos con Windows 7 y para no administradores en equipos unidos a dominios, utilice las directivas de contraseña de directiva de grupo para los dominios de equipo y excluya estos dominios de las directivas de contraseña de Carpetas de trabajo. Puede excluir dominios con el cmdlet [Set-Syncshare -PasswordAutoExcludeDomain](https://technet.microsoft.com/library/dn296649\(v=wps.630\).aspx) después de crear el recurso compartido de sincronización. Para obtener información sobre la configuración de directivas de contraseña de la directiva de grupo, consulte [Directiva de contraseña](https://technet.microsoft.com/library/hh994572(v=ws.11).aspx).  
+       > [!IMPORTANT]
+       >  Para aplicar obligatoriamente directivas de contraseña para equipos con Windows 7 y para no administradores en equipos unidos a dominios, utilice las directivas de contraseña de directiva de grupo para los dominios de equipo y excluya estos dominios de las directivas de contraseña de Carpetas de trabajo. Puede excluir dominios con el cmdlet [Set-Syncshare -PasswordAutoExcludeDomain](https://technet.microsoft.com/library/dn296649\(v=wps.630\).aspx) después de crear el recurso compartido de sincronización. Para obtener información sobre la configuración de directivas de contraseña de la directiva de grupo, consulte [Directiva de contraseña](https://technet.microsoft.com/library/hh994572(v=ws.11).aspx).  
   
 9. Revise sus selecciones y complete el asistente para crear el nuevo recurso compartido de sincronización.
 
@@ -251,7 +251,7 @@ En el ejemplo anterior se crea un nuevo recurso compartido de sincronización co
 6.  En el cuadro **Valor para agregar**, escriba la URL del servidor de sincronización con el cual desea que se sincronice este usuario, haga clic en **Agregar**, haga clic en **Aceptar** y posteriormente haga clic en **Aceptar** de nuevo.  
   
     > [!NOTE]
-    >  La URL del servidor de sincronización es simplemente `https://` o `http://` (en función de si desea requerir una conexión segura) seguido del nombre de dominio completo del servidor de sincronización. Por ejemplo, **https://sync1.contoso.com**.
+    >  La URL del servidor de sincronización es simplemente `https://` o `http://` (en función de si desea requerir una conexión segura) seguido del nombre de dominio completo del servidor de sincronización. Por ejemplo, **https://sync1.contoso.com** .
 
 Para rellenar el atributo para varios usuarios, utilice Active Directory PowerShell. A continuación se proporciona un ejemplo que rellena el atributo para todos los miembros del grupo *Usuarios del recurso compartido de sincronización de RRHH* , tratado en el paso 5.
   
@@ -276,15 +276,15 @@ Para configurar el acceso a Carpetas de trabajo con el Proxy de aplicación de A
 
 Si tiene un número elevado de equipos unidos a dominios a los que desea implementar Carpetas de trabajo, puede utilizar la directiva de grupo para realizar las siguientes tareas de configuración del equipo cliente:  
   
--   Especificar el servidor de sincronización con el cual deben sincronizarse los usuarios  
+- Especificar el servidor de sincronización con el cual deben sincronizarse los usuarios  
   
--   Aplique la configuración automática de Carpetas de trabajo, con la configuración predeterminada (revise los aspectos tratados acerca de la directiva de grupo en [Diseñar una implementación de Carpetas de trabajo](plan-work-folders.md) antes de hacerlo)  
+- Aplique la configuración automática de Carpetas de trabajo, con la configuración predeterminada (revise los aspectos tratados acerca de la directiva de grupo en [Diseñar una implementación de Carpetas de trabajo](plan-work-folders.md) antes de hacerlo)  
   
- Para controlar esta configuración, cree un nuevo objeto de directiva de grupo (GPO) para Carpetas de trabajo y posteriormente configure los valores de directiva de grupo siguientes, según corresponda:  
+  Para controlar esta configuración, cree un nuevo objeto de directiva de grupo (GPO) para Carpetas de trabajo y posteriormente configure los valores de directiva de grupo siguientes, según corresponda:  
   
--   Configuración de directiva "Especificar la configuración de Carpetas de trabajo" en Configuración del usuario\Directivas\Plantillas administrativas\Componentes de Windows\WorkFolders  
+- Configuración de directiva "Especificar la configuración de Carpetas de trabajo" en Configuración del usuario\Directivas\Plantillas administrativas\Componentes de Windows\WorkFolders  
   
--   Configuración de la directiva "Aplicar la configuración automática a todos los usuarios" en Configuración del equipo\Directivas\Plantillas administrativas\Componentes de Windows\WorkFolders  
+- Configuración de la directiva "Aplicar la configuración automática a todos los usuarios" en Configuración del equipo\Directivas\Plantillas administrativas\Componentes de Windows\WorkFolders  
   
 > [!NOTE]
 >  Estas configuraciones de seguridad únicamente están disponibles cuando se edita la directiva de grupo desde un equipo que ejecuta la Administración de directivas de grupo en Windows 8.1, Windows Server 2012 R2 o posterior. Las versiones de Administración de directivas de grupo de sistemas operativos anteriores no tienen esta configuración disponible. Esta configuración de directiva se aplica a equipos con Windows 7 en los que se haya instalado la aplicación [Carpetas de trabajo para Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) .  

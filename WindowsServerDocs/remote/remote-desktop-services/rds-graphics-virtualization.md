@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: d6ff5b22-7695-4fee-b1bd-6c9dce5bd0e8
 author: lizap
 manager: scottman
-ms.openlocfilehash: 7cf7fdf3510fcaaa955bd0031fb3564fe4372472
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: af5d5ce89561c89d8468627e20dfdb6f35eca5ef
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875806"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66447113"
 ---
 # <a name="which-graphics-virtualization-technology-is-right-for-you"></a>¿La tecnología de virtualización de gráficos es adecuada para usted?
 
@@ -43,12 +43,12 @@ Para obtener más información acerca de DDA, visite [planear la implementación
 ## <a name="remotefx-vgpu"></a>RemoteFX vGPU 
 VGPU de RemoteFX es una tecnología de virtualización de gráficos que permite la capacidad de procesamiento de una GPU va a dividir entre varios sistemas operativos de invitado para habilitar escenarios de trabajador del conocimiento (vea el primer gráfico anterior). Los avances en Windows Server 2016 permiten mejoras adicionales para escenarios de ráfaga GPU, por ejemplo, para las aplicaciones y datos de la visualización de diseñador. Otras mejoras de características se incluyen:
 
--   Compatibilidad con invitados de generación 2 máquinas virtuales, Invitado VM de Windows Server 2016 y host de Hyper-V de Windows Client.
-   >[!NOTE] 
-   > Host de sesión de escritorio remoto no se admite en un máquina virtual; de invitado de Windows Server 2016 1 solo sesión se puede hospedar por máquina virtual invitada de Windows Server 2016.
+- Compatibilidad con invitados de generación 2 máquinas virtuales, Invitado VM de Windows Server 2016 y host de Hyper-V de Windows Client.
+  >[!NOTE] 
+  > Host de sesión de escritorio remoto no se admite en un máquina virtual; de invitado de Windows Server 2016 1 solo sesión se puede hospedar por máquina virtual invitada de Windows Server 2016.
 
--   Compatibilidad de aplicaciones mejorada y la estabilidad.
--   Máquina virtual conectarse modo de sesión mejorada, lo que permite la redirección de USB y Portapapeles a través de máquina virtual se conecte a una máquina virtual que está habilitada para RemoteFX vGPU.
+- Compatibilidad de aplicaciones mejorada y la estabilidad.
+- Máquina virtual conectarse modo de sesión mejorada, lo que permite la redirección de USB y Portapapeles a través de máquina virtual se conecte a una máquina virtual que está habilitada para RemoteFX vGPU.
 
 Para obtener más información, consulte [establecer instalación y configuración vGPU de RemoteFX para servicios de escritorio remoto](rds-remotefx-vgpu.md).
 

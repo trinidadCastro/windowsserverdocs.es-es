@@ -14,12 +14,12 @@ ms.author: coreyp
 manager: dongill
 ms.localizationpriority: medium
 ms.date: 02/01/2018
-ms.openlocfilehash: a663e7dbb3ee84c09fc14ba23a50e6de16c4c7b5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a47ecbc0c7359438ed60ed34c94adf0096b14967
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840696"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435455"
 ---
 # <a name="add-servers-to-server-manager"></a>Add Servers to Server Manager
 
@@ -31,9 +31,9 @@ En este tema se describe cómo agregar servidores al grupo de servidores del Adm
 
 > [!NOTE]
 > En nuestras pruebas, pueden usarse el Administrador de servidores en Windows Server 2012 y versiones posteriores de Windows Server para administrar hasta 100 servidores configurados con una carga de trabajo típica. El número de servidores que se pueden administrar con una sola consola del Administrador de servidores puede variar según la cantidad de datos que solicite de los servidores administrados así como los recursos de hardware y de red disponibles para el equipo que ejecuta el Administrador de servidores. Como la cantidad de datos que desea mostrar se acerca a la capacidad de los recursos del equipo, puede experimentar respuestas lentas del administrador de servidores y retrasos en la finalización de las actualizaciones. Para ayudar a aumentar el número de servidores que se pueden administrar mediante el Administrador de servidores, se recomienda limitar los datos de eventos que el Administrador de servidores obtiene de los servidores administrados utilizando la configuración del cuadro de diálogo **Configurar datos de eventos** . Configurar datos de eventos se puede abrir desde el menú **Tareas** del icono **Eventos** . Si tienes que administrar un número de nivel de empresa de servidores de su organización, se recomienda evaluar productos en la [suite Microsoft System Center](https://go.microsoft.com/fwlink/p/?LinkId=239437).
->
+> 
 > El Administrador de servidores solo puede recibir estado en línea o sin conexión de los servidores que ejecutan Windows Server 2003. Aunque puedes usar el Administrador de servidores para realizar las tareas de administración en los servidores que ejecutan Windows Server 2008 R2 o Windows Server 2008, no puedes agregar roles y características a los servidores que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
-
+> 
 > El Administrador de servidores no se puede usar para administrar una versión más reciente del sistema operativo Windows Server. El Administrador de servidores que se ejecuta en Windows Server 2012 R2, Windows Server 2012, Windows 8.1 o Windows 8 no puede usarse para administrar los servidores que ejecutan Windows Server 2016.
 
 En este tema se incluyen las siguientes secciones.

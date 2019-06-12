@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: fa6da3f4a98686f83fff3937c2dc44fd4d623fe3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9badbfcb709c29451425aaecc56b46ac98837e18
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871016"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443801"
 ---
 # <a name="deploy-shielded-vms"></a>Implementar máquinas virtuales blindadas
 
@@ -40,9 +40,9 @@ Los temas siguientes describen cómo un inquilino puede trabajar con máquinas v
 
 ## <a name="next-step"></a>Paso siguiente
 
->[!div class="nextstepaction"]
-[Crear una plantilla de máquina virtual blindada](guarded-fabric-create-a-shielded-vm-template.md)
+> [!div class="nextstepaction"]
+> [Crear una plantilla de máquina virtual blindada](guarded-fabric-create-a-shielded-vm-template.md)
 
 ## <a name="see-also"></a>Vea también
 
-- [Las máquinas virtuales blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
+- [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)

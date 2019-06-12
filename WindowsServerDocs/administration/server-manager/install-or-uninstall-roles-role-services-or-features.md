@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 18ba3517f6533a85fe7cb24f24a7f4ffdfad6991
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 526acaadc257d5e8b1dea342756cdeeec240c1dd
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222983"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435459"
 ---
 # <a name="install-or-uninstall-roles-role-services-or-features"></a>Instalación o desinstalación de roles, servicios de rol o características
 
@@ -100,53 +100,53 @@ Los cmdlets de implementación del administrador del servidor para la función d
   
 #### <a name="to-install-roles-and-features-by-using-the-install-windowsfeature-cmdlet"></a>Para instalar roles y características mediante el cmdlet Install-WindowsFeature  
   
-1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.  
+1. Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.  
   
-    > [!NOTE]  
-    > Si está instalando roles y características en un servidor remoto, no es necesario ejecutar Windows PowerShell con derechos de usuario elevados.  
+   > [!NOTE]  
+   > Si está instalando roles y características en un servidor remoto, no es necesario ejecutar Windows PowerShell con derechos de usuario elevados.  
   
-    -   En el escritorio de Windows, haga clic con el botón secundario en **Windows PowerShell** en la barra de tareas y, a continuación, haga clic en **Ejecutar como administrador**.  
+   -   En el escritorio de Windows, haga clic con el botón secundario en **Windows PowerShell** en la barra de tareas y, a continuación, haga clic en **Ejecutar como administrador**.  
   
-    -   En el Windows **iniciar** pantalla, haga clic en el icono de Windows PowerShell y, a continuación, en la barra de la aplicación, haga clic en **ejecutar como administrador**.  
+   -   En el Windows **iniciar** pantalla, haga clic en el icono de Windows PowerShell y, a continuación, en la barra de la aplicación, haga clic en **ejecutar como administrador**.  
   
-2.  Escriba **Get-WindowsFeature** y, a continuación, presione **Entrar** para ver una lista de los roles y las características disponibles e instalados en el servidor local. Si el equipo local no es un servidor, o si desea obtener información acerca de un servidor remoto, ejecute **Get-WindowsFeature - computerName <***computer_name***>** , en el que  *computer_name* representa el nombre de un equipo remoto que ejecuta Windows Server 2016. Los resultados del cmdlet contienen los nombres de comando de roles y características que agregue al cmdlet en el paso 4.  
+2. Escriba **Get-WindowsFeature** y, a continuación, presione **Entrar** para ver una lista de los roles y las características disponibles e instalados en el servidor local. Si el equipo local no es un servidor, o si desea obtener información acerca de un servidor remoto, ejecute **Get-WindowsFeature - computerName <** <em>computer_name</em> **>** , en el que *computer_name* representa el nombre de un equipo remoto que ejecuta Windows Server 2016. Los resultados del cmdlet contienen los nombres de comando de roles y características que agregue al cmdlet en el paso 4.  
   
-    > [!NOTE]  
-    > En Windows PowerShell 3.0 y versiones posteriores de Windows PowerShell, no hay ninguna necesidad de importar el módulo de cmdlets del administrador del servidor en la sesión de Windows PowerShell antes de ejecutar los cmdlets que forman parte del módulo. El módulo se importa automáticamente la primera vez que se ejecuta un cmdlet que es parte del módulo. Además, los cmdlets de Windows PowerShell ni los nombres de características usados con los cmdlets distinguen mayúsculas de minúsculas.  
+   > [!NOTE]  
+   > En Windows PowerShell 3.0 y versiones posteriores de Windows PowerShell, no hay ninguna necesidad de importar el módulo de cmdlets del administrador del servidor en la sesión de Windows PowerShell antes de ejecutar los cmdlets que forman parte del módulo. El módulo se importa automáticamente la primera vez que se ejecuta un cmdlet que es parte del módulo. Además, los cmdlets de Windows PowerShell ni los nombres de características usados con los cmdlets distinguen mayúsculas de minúsculas.  
   
-3.  tipo **Get-help Install-WindowsFeature**y, a continuación, presione **ENTRAR** para ver la sintaxis y los parámetros aceptados para el `Install-WindowsFeature` cmdlet.  
+3. tipo **Get-help Install-WindowsFeature**y, a continuación, presione **ENTRAR** para ver la sintaxis y los parámetros aceptados para el `Install-WindowsFeature` cmdlet.  
   
-4.  Escriba lo siguiente y, a continuación, presione **ENTRAR**, donde *feature_name* representa el nombre de comando de un rol o característica que desea instalar (obtenido en el paso 2), y *computer_name* representa un equipo remoto en el que desea instalar roles y características. Separe los valores múltiples para *feature_name* con comas. El parámetro `Restart` reinicia el servidor de destino automáticamente si lo requiere la instalación del rol o la característica.  
+4. Escriba lo siguiente y, a continuación, presione **ENTRAR**, donde *feature_name* representa el nombre de comando de un rol o característica que desea instalar (obtenido en el paso 2), y *computer_name* representa un equipo remoto en el que desea instalar roles y características. Separe los valores múltiples para *feature_name* con comas. El parámetro `Restart` reinicia el servidor de destino automáticamente si lo requiere la instalación del rol o la característica.  
   
-    ```  
-    Install-WindowsFeature -Name <feature_name> -computerName <computer_name> -Restart  
-    ```  
+   ```  
+   Install-WindowsFeature -Name <feature_name> -computerName <computer_name> -Restart  
+   ```  
   
-    Para instalar roles y características en un VHD sin conexión, agregue tanto el parámetro `computerName` como el parámetro `VHD` . Si no agrega el parámetro `computerName`, el cmdlet da por hecho que el equipo local está montado para acceder al VHD. El parámetro `computerName` contiene el nombre del servidor en el que se montará el VHD y el parámetro `VHD` contiene la ruta de acceso al archivo VHD en el servidor especificado.  
+   Para instalar roles y características en un VHD sin conexión, agregue tanto el parámetro `computerName` como el parámetro `VHD` . Si no agrega el parámetro `computerName`, el cmdlet da por hecho que el equipo local está montado para acceder al VHD. El parámetro `computerName` contiene el nombre del servidor en el que se montará el VHD y el parámetro `VHD` contiene la ruta de acceso al archivo VHD en el servidor especificado.  
   
-    > [!NOTE]  
-    > Debe agregar el `computerName` parámetro si está ejecutando el cmdlet desde un equipo que se está ejecutando un sistema operativo de cliente de Windows.  
-    >   
-    > Para instalar roles y características en VHD sin conexión, los VHD de destino deben cumplir los requisitos siguientes.  
-    >   
-    > -   Los VHD deben ejecutar la versión de Windows Server que coincida con la versión del administrador del servidor está ejecutando. Consulte la nota al principio de [instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard).  
-    > -   Los VHD no deben tener más de una partición o volumen de sistema.  
-    > -   La carpeta compartida de red donde está almacenado el archivo de VHD debe conceder los siguientes derechos de acceso a la cuenta de equipo (o sistema local) del servidor que ha seleccionado para montar el VHD. El acceso de cuenta de solo usuario no es suficiente. El recurso compartido puede otorgar permisos de **lectura** y **escritura** a **todos** los integrantes del grupo para darles acceso al VHD, pero por razones de seguridad, no se recomienda hacer esto.  
-    >   
-    >     -   Acceso de **Lectura y escritura** en el cuadro de diálogo **Uso compartido de archivos**.  
-    >     -   **Control total** acceder en el **seguridad** tab, archivo o carpeta **propiedades** cuadro de diálogo.  
+   > [!NOTE]  
+   > Debe agregar el `computerName` parámetro si está ejecutando el cmdlet desde un equipo que se está ejecutando un sistema operativo de cliente de Windows.  
+   >   
+   > Para instalar roles y características en VHD sin conexión, los VHD de destino deben cumplir los requisitos siguientes.  
+   >   
+   > -   Los VHD deben ejecutar la versión de Windows Server que coincida con la versión del administrador del servidor está ejecutando. Consulte la nota al principio de [instalar roles, servicios de rol y características mediante el agregar Roles y características Asistente](#install-roles-role-services-and-features-by-using-the-add-roles-and-features-wizard).  
+   > -   Los VHD no deben tener más de una partición o volumen de sistema.  
+   > -   La carpeta compartida de red donde está almacenado el archivo de VHD debe conceder los siguientes derechos de acceso a la cuenta de equipo (o sistema local) del servidor que ha seleccionado para montar el VHD. El acceso de cuenta de solo usuario no es suficiente. El recurso compartido puede otorgar permisos de **lectura** y **escritura** a **todos** los integrantes del grupo para darles acceso al VHD, pero por razones de seguridad, no se recomienda hacer esto.  
+   >   
+   >     -   Acceso de **Lectura y escritura** en el cuadro de diálogo **Uso compartido de archivos**.  
+   >     -   **Control total** acceder en el **seguridad** tab, archivo o carpeta **propiedades** cuadro de diálogo.  
   
-    ```  
-    Install-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
-    ```  
+   ```  
+   Install-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
+   ```  
   
-    **Ejemplo:** El siguiente cmdlet instala el rol Servicios de dominio de Active Directory y la característica de administración de directivas de grupo en un servidor remoto, ContosoDC1. Se agregan los complementos y las herramientas de administración mediante el parámetro `IncludeManagementTools`, y el servidor de destino se reinicia automáticamente si así lo requiere la instalación.  
+   **Ejemplo:** El siguiente cmdlet instala el rol Servicios de dominio de Active Directory y la característica de administración de directivas de grupo en un servidor remoto, ContosoDC1. Se agregan los complementos y las herramientas de administración mediante el parámetro `IncludeManagementTools`, y el servidor de destino se reinicia automáticamente si así lo requiere la instalación.  
   
-    ```  
-    Install-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
-    ```  
+   ```  
+   Install-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
+   ```  
   
-5.  Cuando finalice la instalación, comprobar la instalación, abra el **todos los servidores** página Administrador del servidor, seleccione un servidor en el que haya instalado roles y características y vea el **Roles y características** icono en la página del servidor seleccionado. También puede ejecutar el `Get-WindowsFeature` cmdlet destinado al servidor seleccionado (Get-WindowsFeature - computerName <*computer_name*>) para ver una lista de roles y características que están instaladas en el servidor.  
+5. Cuando finalice la instalación, comprobar la instalación, abra el **todos los servidores** página Administrador del servidor, seleccione un servidor en el que haya instalado roles y características y vea el **Roles y características** icono en la página del servidor seleccionado. También puede ejecutar el `Get-WindowsFeature` cmdlet destinado al servidor seleccionado (Get-WindowsFeature - computerName <*computer_name*>) para ver una lista de roles y características que están instaladas en el servidor.  
   
 ## <a name="remove-roles-role-services-and-features-by-using-the-remove-roles-and-features-wizard"></a>Quitar roles, servicios de rol y características mediante la quitar Roles y características de Asistente  
 Debe ser iniciado sesión en un servidor como administrador para desinstalar los roles, servicios de rol y características. Si ha iniciado sesión en el equipo local con una cuenta que no tiene derechos de administrador en el servidor de destino de desinstalación, haga clic con el botón secundario en el servidor de destino, en el icono **Servidores** y haga clic en **Administrar como** para proporcionar una cuenta con derechos de administrador. El servidor en el que desea montar un VHD sin conexión debe agregarse al Administrador del servidor y el usuario debe tener derechos de administrador en ese servidor.  
@@ -191,49 +191,49 @@ Los cmdlets de implementación del administrador del servidor para la función d
   
 #### <a name="to-remove-roles-and-features-by-using-the-uninstall-windowsfeature-cmdlet"></a>Para eliminar roles y características mediante el cmdlet Uninstall-WindowsFeature  
   
-1.  Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.  
+1. Realice una de las siguientes acciones para abrir una sesión de Windows PowerShell con derechos de usuario elevados.  
   
-    > [!NOTE]  
-    > Si está desinstalando roles y características de un servidor remoto, no es necesario ejecutar Windows PowerShell con derechos de usuario elevados.  
+   > [!NOTE]  
+   > Si está desinstalando roles y características de un servidor remoto, no es necesario ejecutar Windows PowerShell con derechos de usuario elevados.  
   
-    -   En el escritorio de Windows, haga clic con el botón secundario en **Windows PowerShell** en la barra de tareas y, a continuación, haga clic en **Ejecutar como administrador**.  
+   -   En el escritorio de Windows, haga clic con el botón secundario en **Windows PowerShell** en la barra de tareas y, a continuación, haga clic en **Ejecutar como administrador**.  
   
-    -   En el Windows **iniciar** pantalla, haga clic en el icono de Windows PowerShell y, a continuación, en la barra de la aplicación, haga clic en **ejecutar como administrador**.  
+   -   En el Windows **iniciar** pantalla, haga clic en el icono de Windows PowerShell y, a continuación, en la barra de la aplicación, haga clic en **ejecutar como administrador**.  
   
-2.  Escriba **Get-WindowsFeature** y, a continuación, presione **Entrar** para ver una lista de los roles y las características disponibles e instalados en el servidor local. Si el equipo local no es un servidor, o si desea obtener información acerca de un servidor remoto, ejecute **Get-WindowsFeature - computerName <***computer_name***>** , en el que  *computer_name* representa el nombre de un equipo remoto que ejecuta Windows Server 2016. Los resultados del cmdlet contienen los nombres de comando de roles y características que agregue al cmdlet en el paso 4.  
+2. Escriba **Get-WindowsFeature** y, a continuación, presione **Entrar** para ver una lista de los roles y las características disponibles e instalados en el servidor local. Si el equipo local no es un servidor, o si desea obtener información acerca de un servidor remoto, ejecute **Get-WindowsFeature - computerName <** <em>computer_name</em> **>** , en el que *computer_name* representa el nombre de un equipo remoto que ejecuta Windows Server 2016. Los resultados del cmdlet contienen los nombres de comando de roles y características que agregue al cmdlet en el paso 4.  
   
-    > [!NOTE]  
-    > En Windows PowerShell 3.0 y versiones posteriores de Windows PowerShell, no hay ninguna necesidad de importar el módulo de cmdlets del administrador del servidor en la sesión de Windows PowerShell antes de ejecutar los cmdlets que forman parte del módulo. El módulo se importa automáticamente la primera vez que se ejecuta un cmdlet que es parte del módulo. Además, los cmdlets de Windows PowerShell ni los nombres de características usados con los cmdlets distinguen mayúsculas de minúsculas.  
+   > [!NOTE]  
+   > En Windows PowerShell 3.0 y versiones posteriores de Windows PowerShell, no hay ninguna necesidad de importar el módulo de cmdlets del administrador del servidor en la sesión de Windows PowerShell antes de ejecutar los cmdlets que forman parte del módulo. El módulo se importa automáticamente la primera vez que se ejecuta un cmdlet que es parte del módulo. Además, los cmdlets de Windows PowerShell ni los nombres de características usados con los cmdlets distinguen mayúsculas de minúsculas.  
   
-3.  tipo **Get-help Uninstall-WindowsFeature**y, a continuación, presione **ENTRAR** para ver la sintaxis y los parámetros aceptados para el `Uninstall-WindowsFeature` cmdlet.  
+3. tipo **Get-help Uninstall-WindowsFeature**y, a continuación, presione **ENTRAR** para ver la sintaxis y los parámetros aceptados para el `Uninstall-WindowsFeature` cmdlet.  
   
-4.  Escriba lo siguiente y, a continuación, presione **Entrar**, donde *feature_name* representa el nombre de comando de un rol o característica que se desea quitar (obtenido en el paso 2) y *computer_name* representa un equipo remoto del que se desean quitar roles y características. Separe los valores múltiples para *feature_name* con comas. El parámetro `Restart` reinicia automáticamente los servidores de destino si así lo requiere la eliminación del rol o la característica.  
+4. Escriba lo siguiente y, a continuación, presione **Entrar**, donde *feature_name* representa el nombre de comando de un rol o característica que se desea quitar (obtenido en el paso 2) y *computer_name* representa un equipo remoto del que se desean quitar roles y características. Separe los valores múltiples para *feature_name* con comas. El parámetro `Restart` reinicia automáticamente los servidores de destino si así lo requiere la eliminación del rol o la característica.  
   
-    ```  
-    Uninstall-WindowsFeature -Name <feature_name> -computerName <computer_name> -Restart  
-    ```  
+   ```  
+   Uninstall-WindowsFeature -Name <feature_name> -computerName <computer_name> -Restart  
+   ```  
   
-    Para quitar roles y características de un VHD sin conexión, agregue tanto el parámetro `computerName` como el parámetro `VHD`. Si no agrega el parámetro `computerName`, el cmdlet da por hecho que el equipo local está montado para acceder al VHD. El parámetro `computerName` contiene el nombre del servidor en el que se montará el VHD y el parámetro `VHD` contiene la ruta de acceso al archivo VHD en el servidor especificado.  
+   Para quitar roles y características de un VHD sin conexión, agregue tanto el parámetro `computerName` como el parámetro `VHD`. Si no agrega el parámetro `computerName`, el cmdlet da por hecho que el equipo local está montado para acceder al VHD. El parámetro `computerName` contiene el nombre del servidor en el que se montará el VHD y el parámetro `VHD` contiene la ruta de acceso al archivo VHD en el servidor especificado.  
   
-    > [!NOTE]  
-    > Debe agregar el `computerName` parámetro si está ejecutando el cmdlet desde un equipo que se está ejecutando un sistema operativo de cliente de Windows.  
-    >   
-    > La carpeta compartida de red donde está almacenado el archivo de VHD debe conceder los siguientes derechos de acceso a la cuenta de equipo (o sistema local) del servidor que ha seleccionado para montar el VHD. El acceso de cuenta de solo usuario no es suficiente. El recurso compartido puede otorgar permisos de **lectura** y **escritura** a **todos** los integrantes del grupo para darles acceso al VHD, pero por razones de seguridad, no se recomienda hacer esto.  
-    >   
-    > -   Acceso de **Lectura y escritura** en el cuadro de diálogo **Uso compartido de archivos**.  
-    > -   **Control total** acceder en el **seguridad** tab, archivo o carpeta **propiedades** cuadro de diálogo.  
+   > [!NOTE]  
+   > Debe agregar el `computerName` parámetro si está ejecutando el cmdlet desde un equipo que se está ejecutando un sistema operativo de cliente de Windows.  
+   >   
+   > La carpeta compartida de red donde está almacenado el archivo de VHD debe conceder los siguientes derechos de acceso a la cuenta de equipo (o sistema local) del servidor que ha seleccionado para montar el VHD. El acceso de cuenta de solo usuario no es suficiente. El recurso compartido puede otorgar permisos de **lectura** y **escritura** a **todos** los integrantes del grupo para darles acceso al VHD, pero por razones de seguridad, no se recomienda hacer esto.  
+   >   
+   > -   Acceso de **Lectura y escritura** en el cuadro de diálogo **Uso compartido de archivos**.  
+   > -   **Control total** acceder en el **seguridad** tab, archivo o carpeta **propiedades** cuadro de diálogo.  
   
-    ```  
-    Uninstall-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
-    ```  
+   ```  
+   Uninstall-WindowsFeature -Name <feature_name> -VHD <path> -computerName <computer_name> -Restart  
+   ```  
   
-    **Ejemplo:** El siguiente cmdlet quita el rol Servicios de dominio de Active Directory y la característica de administración de directivas de grupo desde un servidor remoto, ContosoDC1. También se quitan los complementos y las herramientas de administración, y el servidor de destino se reinicia automáticamente si la eliminación necesita que se reinicien los servidores.  
+   **Ejemplo:** El siguiente cmdlet quita el rol Servicios de dominio de Active Directory y la característica de administración de directivas de grupo desde un servidor remoto, ContosoDC1. También se quitan los complementos y las herramientas de administración, y el servidor de destino se reinicia automáticamente si la eliminación necesita que se reinicien los servidores.  
   
-    ```  
-    Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
-    ```  
+   ```  
+   Uninstall-WindowsFeature -Name AD-Domain-Services,GPMC -computerName ContosoDC1 -IncludeManagementTools -Restart  
+   ```  
   
-5.  Eliminación una vez finalizada, compruebe que los roles y características se han quitado abriendo el **todos los servidores** página Administrador del servidor, seleccione el servidor desde el que se haya quitado roles y características y vea el **Roles y Características** icono en la página del servidor seleccionado. También puede ejecutar el `Get-WindowsFeature` cmdlet destinado al servidor seleccionado (Get-WindowsFeature - computerName <*computer_name*>) para ver una lista de roles y características que están instaladas en el servidor.  
+5. Eliminación una vez finalizada, compruebe que los roles y características se han quitado abriendo el **todos los servidores** página Administrador del servidor, seleccione el servidor desde el que se haya quitado roles y características y vea el **Roles y Características** icono en la página del servidor seleccionado. También puede ejecutar el `Get-WindowsFeature` cmdlet destinado al servidor seleccionado (Get-WindowsFeature - computerName <*computer_name*>) para ver una lista de roles y características que están instaladas en el servidor.  
   
 ## <a name="install-roles-and-features-on-multiple-servers-by-running-a-windows-powershell-script"></a>Instalar roles y características en varios servidores ejecutando un script de Windows PowerShell  
 Aunque no se puede usar el agregar Roles y características Asistente para instalar roles, servicios de rol y características en más de un servidor de destino de una única sesión del asistente, puede usar un script de Windows PowerShell para instalar roles, servicios de rol y características en varios destinos servidores que se están administrando mediante el administrador del servidor. El script que use para realizar la implementación por lotes, como se llama a este proceso, apunta a un archivo de configuración XML que se puede crear fácilmente con el Asistente de las características y agregar Roles y haciendo clic en **exportar opciones de configuración** después de avanzar por el Asistente para la **Confirmar selecciones de instalación** página del Asistente de las características y agregar funciones.  
@@ -337,25 +337,25 @@ Para instalar .NET Framework 3.5, realice una de las siguientes acciones.
   
 ### <a name="to-install-net-framework-35-by-using-the-add-roles-and-features-wizard"></a>Para instalar .NET Framework 3.5 mediante el agregar Roles y características Asistente  
   
-1.  En el **administrar** menú Administrador del servidor, haga clic en **agregar Roles y características**.  
+1. En el **administrar** menú Administrador del servidor, haga clic en **agregar Roles y características**.  
   
-2.  Seleccione un servidor de destino que ejecuta Windows Server 2016.  
+2. Seleccione un servidor de destino que ejecuta Windows Server 2016.  
   
-3.  En el **seleccionar características** página del Asistente de características, seleccione Agregar Roles y **.NET Framework 3.5**.  
+3. En el **seleccionar características** página del Asistente de características, seleccione Agregar Roles y **.NET Framework 3.5**.  
   
-4.  Si la configuración de la directiva de grupo lo permite en el equipo local, el proceso de instalación intentará obtener los archivos de características que faltan mediante Windows Update. Haga clic en **Instalar**; no es necesario avanzar al siguiente paso.  
+4. Si la configuración de la directiva de grupo lo permite en el equipo local, el proceso de instalación intentará obtener los archivos de características que faltan mediante Windows Update. Haga clic en **Instalar**; no es necesario avanzar al siguiente paso.  
   
-    Si la configuración de directiva de grupo no lo permite, o desea usar otro origen para los archivos de características de .NET Framework 3.5, en el **Confirmar selecciones de instalación** página del asistente, haga clic en **especificar una ruta de acceso de origen alternativa** .  
+   Si la configuración de directiva de grupo no lo permite, o desea usar otro origen para los archivos de características de .NET Framework 3.5, en el **Confirmar selecciones de instalación** página del asistente, haga clic en **especificar una ruta de acceso de origen alternativa** .  
   
-5.  Proporcione una ruta de acceso a un almacén colateral (denominado **SxS**) en los medios de instalación o a un archivo WIM. En el siguiente ejemplo, los medios de instalación se encuentran en la unidad D.  
+5. Proporcione una ruta de acceso a un almacén colateral (denominado **SxS**) en los medios de instalación o a un archivo WIM. En el siguiente ejemplo, los medios de instalación se encuentran en la unidad D.  
   
-    **D:\Sources\SxS\\**  
+   **D:\Sources\SxS\\**  
   
-    Para especificar un archivo WIM, agregue un prefijo **WIM:** y agregue el índice de la imagen que se usará en el archivo WIM como sufijo, como se muestra en el siguiente ejemplo.  
+   Para especificar un archivo WIM, agregue un prefijo **WIM:** y agregue el índice de la imagen que se usará en el archivo WIM como sufijo, como se muestra en el siguiente ejemplo.  
   
-    **WIM:\\\\***server_name***\share\install.wim:3**  
+   **WIM:\\\\** <em>server_name</em> **\share\install.wim:3**  
   
-6.  Haga clic en **Aceptar**y, a continuación, en **Instalar**.  
+6. Haga clic en **Aceptar**y, a continuación, en **Instalar**.  
   
 ### <a name="to-install-net-framework-35-by-using-dism"></a>Para instalar .NET Framework 3.5 mediante DISM  
   
@@ -395,23 +395,23 @@ La configuración de la directiva de grupo descrita en esta sección especifica 
   
 ##### <a name="to-configure-a-default-alternate-source-path-in-group-policy"></a>Para configurar una ruta de acceso de origen alternativa predeterminada en la directiva de grupo  
   
-1.  En el editor de directivas de grupo Local o la consola de administración de directivas de grupo, abra la siguiente configuración de directiva.  
+1. En el editor de directivas de grupo Local o la consola de administración de directivas de grupo, abra la siguiente configuración de directiva.  
   
-    **configuración del equipo\Plantillas administrativas\sistema\especificar configuración de equipo para la instalación de componentes opcionales y reparación de componentes**  
+   **configuración del equipo\Plantillas administrativas\sistema\especificar configuración de equipo para la instalación de componentes opcionales y reparación de componentes**  
   
 2. Seleccione **habilitado** para habilitar la configuración de directiva, si aún no está habilitado.  
   
-3.  En el cuadro de texto **Ruta de acceso del archivo de origen alternativa**, en el área **Opciones**, especifique una ruta de acceso completa a una carpeta compartida o a un archivo WIM. Para especificar un archivo WIM como ubicación del archivo de origen alternativa, agregue el prefijo **WIM:** a la ruta de acceso y agregue el índice de la imagen que se usará en el archivo WIM como sufijo. Los siguientes son ejemplos de valores que puede especificar.  
+3. En el cuadro de texto **Ruta de acceso del archivo de origen alternativa**, en el área **Opciones**, especifique una ruta de acceso completa a una carpeta compartida o a un archivo WIM. Para especificar un archivo WIM como ubicación del archivo de origen alternativa, agregue el prefijo **WIM:** a la ruta de acceso y agregue el índice de la imagen que se usará en el archivo WIM como sufijo. Los siguientes son ejemplos de valores que puede especificar.  
   
-    -   ruta de acceso a una carpeta compartida: * *\\\\***nombre_servidor***\share\\*** nombreDeCarpeta*  
+   - ruta de acceso a una carpeta compartida: **\\ \\** <em>nombre_servidor</em> **\share\\** <em>nombreDeCarpeta</em>  
   
-    -   ruta de acceso a un archivo WIM, donde **3** representa el índice de la imagen en el que se encuentran los archivos de características:  **WIM:\\\\***server_name***\share\install.wim:3**  
+   - ruta de acceso a un archivo WIM, donde **3** representa el índice de la imagen en el que se encuentran los archivos de características:  **WIM:\\\\** <em>server_name</em> **\share\install.wim:3**  
   
-4.  Si no desea que los equipos controlados por esta configuración de directiva para buscar archivos de características que faltan en Windows Update, seleccione **no intentar descargar carga desde Windows Update**.  
+4. Si no desea que los equipos controlados por esta configuración de directiva para buscar archivos de características que faltan en Windows Update, seleccione **no intentar descargar carga desde Windows Update**.  
   
-5.  Si los equipos controlados por esta configuración de directiva suelen recibir actualizaciones a través de WSUS, pero prefiere usar Windows Update en lugar de WSUS para buscar los archivos de características que faltan, seleccione **Ponerse en contacto directamente con Windows Update para descargar contenido de reparaciones en lugar de usar Windows Server Update Services (WSUS)** .  
+5. Si los equipos controlados por esta configuración de directiva suelen recibir actualizaciones a través de WSUS, pero prefiere usar Windows Update en lugar de WSUS para buscar los archivos de características que faltan, seleccione **Ponerse en contacto directamente con Windows Update para descargar contenido de reparaciones en lugar de usar Windows Server Update Services (WSUS)** .  
   
-6.  Haga clic en **Aceptar** cuando haya terminado de modificar esta configuración de directiva y, a continuación, cierre el Editor de directivas de grupo.  
+6. Haga clic en **Aceptar** cuando haya terminado de modificar esta configuración de directiva y, a continuación, cierre el Editor de directivas de grupo.  
   
 ## <a name="see-also"></a>Vea también  
 [Opciones de instalación de Windows Server](https://go.microsoft.com/fwlink/p/?LinkId=241573)  

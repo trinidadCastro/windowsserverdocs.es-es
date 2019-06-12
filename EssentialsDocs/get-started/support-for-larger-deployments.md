@@ -12,14 +12,14 @@ ms.assetid: 07d0c4c6-3e92-4969-82b8-105e46ab8d97
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: c60e5f73c88a225fbd1067992894f9d20da745ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a99698519524c3b5050dc534d61921560522528c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860486"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433870"
 ---
-#<a name="support-for-larger-deployments"></a>Compatibilidad con implementaciones de gran tamaño
+# <a name="support-for-larger-deployments"></a>Compatibilidad con implementaciones de gran tamaño
 
 >Se aplica a: Windows Server 2016 Essentials
 
@@ -34,7 +34,7 @@ Windows Server Essentials ahora admite implementaciones más grandes con:
 - capacidad de especificar un controlador de dominio designado
 - compatibilidad con hasta 500 usuarios y 500 dispositivos
 
-##<a name="support-for-multiple-domains"></a>Compatibilidad con varios dominios
+## <a name="support-for-multiple-domains"></a>Compatibilidad con varios dominios
 
 Servidor Windows 2012 R2 Essentials admite solo un dominio por servidor, que es necesario, y el servidor de Essentials debe ser la raíz del bosque. Mientras que un dominio y bosque siguen siendo necesarias, ahora puede implementarse el rol experiencia con Windows Server 2016 Essentials en Windows Server 2016 Standard o Datacenter para admitir varios dominios.
 
@@ -42,7 +42,7 @@ Servidor Windows 2012 R2 Essentials admite solo un dominio por servidor, que es 
 
  Windows Server Essentials 2012 R2 bloquea todos los servicios que utilizan Azure Active Directory, como Office 365, donde se implementa más de un controlador de dominio. El motivo es que las credenciales de cuenta puede provocar cuenta y contraseña la sincronización entre los controladores de dominio local y Azure Active Directory con contraseñas que no están sincronizadas. Esta limitación se ha quitado en Windows Server 2016 Essentials.
 
-##<a name="ability-to-specify-a-designated-domain-controller"></a>Capacidad de especificar un controlador de dominio designado
+## <a name="ability-to-specify-a-designated-domain-controller"></a>capacidad de especificar un controlador de dominio designado
 
 Ahora puede elegir un controlador de dominio designado que se mejorar los tiempos de recuperación de objetos de dominio de Active Directory, así como coordinar la sincronización de cambio de la cuenta a través de otros controladores de dominio en el dominio.
 
@@ -50,7 +50,7 @@ Designada el controlador de dominio predeterminado será el mismo servidor que e
 
 ![Una captura de pantalla que muestra los valores de control panel en primer plano y el panel de Windows Server Essentials en segundo plano. La página de controlador de dominio designado de la configuración del panel de control está seleccionada actualmente.](media/larger-deployments-1.PNG)
 
-##<a name="support-for-500-users-and-500-devices"></a>Compatibilidad con 500 usuarios y 500 dispositivos
+## <a name="support-for-500-users-and-500-devices"></a>Compatibilidad con 500 usuarios y 500 dispositivos
 -------------------------------------
 
 El número máximo de usuarios admitidos y los dispositivos de Windows Server 2012 R2 Essentials es 25 y 50, respectivamente. Con la introducción del rol de servidor Windows Server Essentials Experience, ese límite se ha aumentado a 100 usuarios y 200 dispositivos.

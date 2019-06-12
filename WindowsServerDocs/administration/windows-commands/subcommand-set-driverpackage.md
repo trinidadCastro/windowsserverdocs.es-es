@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0513d3de2416f93f69b1e1cc286c38b12be94d15
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 24acd672184b8df235e8de843961ac4adb2bd412
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818826"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66441133"
 ---
 # <a name="subcommand-set-driverpackage"></a>Subcomando: set-DriverPackage
 
@@ -34,13 +34,13 @@ WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /Pac
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|[/ Server:\<nombre del servidor >]|Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se usa el servidor local.|
-|[/DriverPackage:\<Name>]|Especifica el nombre actual del paquete de controladores para modificar.|
-|[/ PackageId:\<Id. >]|Especifica el identificador de servicios de implementación de Windows del paquete de controladores. Debe especificar esta opción si el paquete de controladores no se identifica por nombre. Para encontrar este identificador de un paquete, haga clic en el grupo de controladores que se encuentra el paquete (o el **todos los paquetes** nodo), haga clic en el paquete y, a continuación, haga clic en **propiedades**. El identificador del paquete se muestra en el **General** ficha. Por ejemplo: {DD098D20-1850-4FC8-8E35-EA24A1BEFF5E}.|
-|[/ Name:\<nuevo nombre >]|Especifica el nuevo nombre para el paquete de controladores.|
-|[/Enabled:{Yes | No}|Habilita o deshabilita el paquete.|
+|        Parámetro         |                                                                                                                                                                                                               Descripción                                                                                                                                                                                                                |
+|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [/ Server:\<nombre del servidor >] |                                                                                                                                                 Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se usa el servidor local.                                                                                                                                                 |
+| [/DriverPackage:\<Name>] |                                                                                                                                                                                       Especifica el nombre actual del paquete de controladores para modificar.                                                                                                                                                                                        |
+|    [/ PackageId:\<Id. >]    | Especifica el identificador de servicios de implementación de Windows del paquete de controladores. Debe especificar esta opción si el paquete de controladores no se identifica por nombre. Para encontrar este identificador de un paquete, haga clic en el grupo de controladores que se encuentra el paquete (o el **todos los paquetes** nodo), haga clic en el paquete y, a continuación, haga clic en **propiedades**. El identificador del paquete se muestra en el **General** ficha. Por ejemplo: {DD098D20-1850-4FC8-8E35-EA24A1BEFF5E}. |
+|   [/ Name:\<nuevo nombre >]    |                                                                                                                                                                                              Especifica el nuevo nombre para el paquete de controladores.                                                                                                                                                                                              |
+|      [/Enabled:{Yes      |                                                                                                                                                                                                                   No}                                                                                                                                                                                                                    |
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

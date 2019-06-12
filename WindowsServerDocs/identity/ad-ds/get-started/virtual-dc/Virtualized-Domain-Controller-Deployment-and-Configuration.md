@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: d692e58d616376149e62fbce611fe2a9ac80c743
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 4af0f96b0af3a547ab7d509d031a9e23cce8b654
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863256"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66443214"
 ---
 # <a name="virtualized-domain-controller-deployment-and-configuration"></a>Implementación y configuración de controladores de dominio virtualizados
 
@@ -280,7 +280,7 @@ Ejecuta el cmdlet en el controlador de dominio de origen propuesto que pretendes
 ||-PreferredWINSServer|Especifica la dirección IPv4 estática del servidor WINS principal. Tipo de datos de cadena.|  
 ||-AlternateWINSServer|Especifica la dirección IPv4 estática del servidor WINS secundario. Tipo de datos de cadena.|  
 ||-IPv6DNSResolver|Especifica las entradas DNS de IPv6 estática del equipo clonado en una lista separada por comas. No hay manera de establecer información de IPv6 estática en la clonación de controladores de dominio virtualizados. Tipo de datos de matriz.|  
-||-Offline|No realiza las pruebas de validación y sobrescribe cualquier archivo dccloneconfig.xml existente. No tiene parámetros. Para obtener más información, consulte [Ejecución de New-ADDCCloneConfigFile en el modo sin conexión](../../../ad-ds/Introduction-to-Active-Directory-Domain-Services-AD-DS-Virtualization-Level-100.md#BKMK_OfflineMode).|  
+||-Offline|No realiza las pruebas de validación y sobrescribe cualquier archivo dccloneconfig.xml existente. No tiene parámetros.|  
 ||*-Static*|Requerido si se especifican argumentos de IP estática IPv4SubnetMask, IPv4SubnetMask o IPv4DefaultGateway. No tiene parámetros.|  
   
 Pruebas realizadas si se ejecuta en modo en línea:  
@@ -644,11 +644,11 @@ Por ejemplo:
   
 ![Implementación del controlador de dominio virtualizado](media/Virtualized-Domain-Controller-Deployment-and-Configuration/ADDS_VDC_PSGetVMSnap.png)  
   
-> [!WARNING]  
+> [!WARNING]
 > Asegúrate de que, al importar el equipo, las direcciones MAC estáticas no se asignaron al controlador de dominio de origen. Si se clona un equipo de origen con una MAC estática, los equipos copiados no enviarán ni recibirán tráfico de red correctamente. Establece una nueva dirección MAC exclusiva, estática o dinámica, si este es el caso. Puedes ver si una VM utiliza direcciones MAC estáticas con el comando:  
->   
+> 
 > **Get-VM -VMName**   
->  ***Test-vm* | Get-VMNetworkAdapter | fl \***  
+>  ***Test-vm* | Get-VMNetworkAdapter | fl \\** *  
   
 ### <a name="step-9---clone-the-new-virtual-machine"></a>Paso 9 - Clonar la nueva máquina virtual  
 Si lo deseas, antes de empezar a clonar, puedes reiniciar el controlador de dominio de origen de clonación sin conexión. A pesar de todo, asegúrate de que el emulador de PDC esté en línea.  

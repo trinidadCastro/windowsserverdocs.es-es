@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6dea364b1afe385d03b0519538ff7bbd6bb9df28
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d0c68fbbf3ea776bbf6cd49fc4fa446d5dd46542
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883256"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437912"
 ---
 # <a name="label"></a>etiqueta
 
@@ -45,19 +45,19 @@ label [/mp] [<Volume>] [<Label>]
 
 ## <a name="remarks"></a>Comentarios
 
--   Windows muestra la etiqueta de volumen y el número de serie (si lo tiene) como parte de la lista de directorios.
--   Una etiqueta de volumen NTFS puede ser hasta 32 caracteres de longitud, incluidos los espacios. Las etiquetas de volumen NTFS conservan y mostrar el caso de que se usó cuando creó la etiqueta.
--   Si no especifica un valor para el **etiqueta** parámetro, el **etiqueta** comando muestra la salida en el formato siguiente:  
-    ```
-    Volume in drive C: xxxxxxxxxxx 
-    Volume Serial Number is xxxx-xxxx 
-    Volume label (32 characters, ENTER for none)?
-    ```  
-    Puede escribir una nueva etiqueta de volumen o presione ENTRAR para mantener la etiqueta actual. Si se presiona ENTRAR y el volumen actualmente tiene una etiqueta, el **etiqueta** comando le pide el mensaje siguiente:  
-    ```
-    Delete current volume label (Y/N)?
-    ```  
-    Presione s para eliminar la etiqueta, o presione N para mantener la etiqueta.
+- Windows muestra la etiqueta de volumen y el número de serie (si lo tiene) como parte de la lista de directorios.
+- Una etiqueta de volumen NTFS puede ser hasta 32 caracteres de longitud, incluidos los espacios. Las etiquetas de volumen NTFS conservan y mostrar el caso de que se usó cuando creó la etiqueta.
+- Si no especifica un valor para el **etiqueta** parámetro, el **etiqueta** comando muestra la salida en el formato siguiente:  
+  ```
+  Volume in drive C: xxxxxxxxxxx 
+  Volume Serial Number is xxxx-xxxx 
+  Volume label (32 characters, ENTER for none)?
+  ```  
+  Puede escribir una nueva etiqueta de volumen o presione ENTRAR para mantener la etiqueta actual. Si se presiona ENTRAR y el volumen actualmente tiene una etiqueta, el **etiqueta** comando le pide el mensaje siguiente:  
+  ```
+  Delete current volume label (Y/N)?
+  ```  
+  Presione s para eliminar la etiqueta, o presione N para mantener la etiqueta.
 
 ## <a name="BKMK_examples"></a>Ejemplos
 
@@ -66,21 +66,21 @@ Para etiquetar un disco de la unidad que contiene la información de ventas de j
 label a:sales-july
 ```
 Para eliminar la etiqueta actual de la unidad C, siga estos pasos:
-1.  En la ventana de símbolo del sistema, escriba:  
-    ```
-    Label
-    ```  
-    Debe mostrarse un resultado similar al siguiente:  
-    ```
-    Volume in drive C: is Main Disk
-    Volume Serial Number is 6789-ABCD
-    Volume label (32 characters, ENTER for none)?
-    ```  
-2.  Presione ENTRAR. Debe mostrarse el mensaje siguiente:  
-    ```
-    Delete current volume label (Y/N)?
-    ```  
-3.  Presione s para eliminar la etiqueta actual.
+1. En la ventana de símbolo del sistema, escriba:  
+   ```
+   Label
+   ```  
+   Debe mostrarse un resultado similar al siguiente:  
+   ```
+   Volume in drive C: is Main Disk
+   Volume Serial Number is 6789-ABCD
+   Volume label (32 characters, ENTER for none)?
+   ```  
+2. Presione ENTRAR. Debe mostrarse el mensaje siguiente:  
+   ```
+   Delete current volume label (Y/N)?
+   ```  
+3. Presione s para eliminar la etiqueta actual.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

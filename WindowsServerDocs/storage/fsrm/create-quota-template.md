@@ -8,12 +8,12 @@ ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f74382c4a5e2c0a8636edbd4f9cfe2227cd6334a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 236b5cb198a13441a087ad6dbfeef9a416e07e61
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875876"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445985"
 ---
 # <a name="create-a-quota-template"></a>Crear una plantilla de cuota
 
@@ -55,44 +55,44 @@ Por ejemplo, puedes configurar umbrales para enviar un mensaje de correo electr�
 
 **Para configurar las notificaciones que generará el Administrador de recursos del servidor de archivos con un umbral de cuota**
 
-1.  En el cuadro de diálogo **Crear plantilla de cuota**, en **Umbrales de notificación**, haz clic en **Agregar**. Aparece el cuadro de diálogo **Agregar umbral**.
+1. En el cuadro de diálogo **Crear plantilla de cuota**, en **Umbrales de notificación**, haz clic en **Agregar**. Aparece el cuadro de diálogo **Agregar umbral**.
 
-2.  Para establecer un porcentaje del límite de cuota que generará una notificación:
+2. Para establecer un porcentaje del límite de cuota que generará una notificación:
 
-    En el cuadro de texto **Generar notificaciones cuando el uso alcance (%)**, escribe un porcentaje del límite de cuota para el umbral de notificación. (El porcentaje predeterminado para el primer umbral de notificación es 85 por ciento).
+   En el cuadro de texto **Generar notificaciones cuando el uso alcance (%)** , escribe un porcentaje del límite de cuota para el umbral de notificación. (El porcentaje predeterminado para el primer umbral de notificación es del 85 %).
 
-3.  Para configurar notificaciones por correo electrónico:
+3. Para configurar notificaciones por correo electrónico:
 
-    En la pestaña **Mensaje de correo electrónico**, establece las siguientes opciones:
+   En la pestaña **Mensaje de correo electrónico**, establece las siguientes opciones:
 
-    -   Para notificar a los administradores que se ha alcanzado un umbral, selecciona la casilla de verificación **Enviar mensaje de correo electrónico a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán las notificaciones. Usa el formato *account@domain* y usa punto y coma para separar varias cuentas.
-    -   Para enviar un correo electrónico a la persona que guardó el archivo que alcanzó el umbral de cuota, selecciona la casilla de verificación **Enviar correo electrónico al usuario que ha superado el umbral**.
-    -   Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, el **\[Source Io Owner\]** variable inserta el nombre del usuario que guardó el archivo que alcanzó el umbral de cuota. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
-    -   Para configurar los encabezados adicionales (incluidos De, Cc, Bcc y Responder-a), haz clic en **Encabezados de correo electrónico adicionales**.
+   - Para notificar a los administradores que se ha alcanzado un umbral, selecciona la casilla de verificación **Enviar mensaje de correo electrónico a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán las notificaciones. Usa el formato <em>account@domain</em> y usa punto y coma para separar varias cuentas.
+   - Para enviar un correo electrónico a la persona que guardó el archivo que alcanzó el umbral de cuota, selecciona la casilla de verificación **Enviar correo electrónico al usuario que ha superado el umbral**.
+   - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, el **\[Source Io Owner\]** variable inserta el nombre del usuario que guardó el archivo que alcanzó el umbral de cuota. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
+   - Para configurar los encabezados adicionales (incluidos De, Cc, Bcc y Responder-a), haz clic en **Encabezados de correo electrónico adicionales**.
 
-4.  Para registrar un evento:
+4. Para registrar un evento:
 
-    En la pestaña **Registro de eventos**, selecciona la casilla de verificación **Enviar advertencia al registro de eventos** y edita la entrada de registro predeterminada.
+   En la pestaña **Registro de eventos**, selecciona la casilla de verificación **Enviar advertencia al registro de eventos** y edita la entrada de registro predeterminada.
 
-5.  Para ejecutar un comando o script:
+5. Para ejecutar un comando o script:
 
-    En la pestaña **Comando**, selecciona loa casilla de verificación **Ejecutar este comando o script**. Luego escribe el comando o haz clic en **Examinar** para buscar la ubicación en la que está almacenado el script. También puedes especificar argumentos de comando; para ello, selecciona un directorio de trabajo para el comando o script o modifica la configuración de seguridad de comandos.
+   En la pestaña **Comando**, selecciona loa casilla de verificación **Ejecutar este comando o script**. Luego escribe el comando o haz clic en **Examinar** para buscar la ubicación en la que está almacenado el script. También puedes especificar argumentos de comando; para ello, selecciona un directorio de trabajo para el comando o script o modifica la configuración de seguridad de comandos.
 
-6.  Para generar uno o varios informes de almacenamiento:
+6. Para generar uno o varios informes de almacenamiento:
 
-    En la pestaña **Informe**, selecciona la casilla de verificación **Generar informes** y luego selecciona los informes que quieres generar. (Puedes elegir uno o varios destinatarios de correos electrónicos administrativos para enviar el informe o puedes enviar por correo electrónico el informe al usuario que alcanzó el umbral).
+   En la pestaña **Informe**, selecciona la casilla de verificación **Generar informes** y luego selecciona los informes que quieres generar. (Puedes elegir uno o varios destinatarios de correos electrónicos administrativos para enviar el informe o puedes enviar por correo electrónico el informe al usuario que alcanzó el umbral).
 
-    El informe se guarda en la ubicación predeterminada para los informes de incidentes, que se puede modificar en el cuadro de diálogo **Opciones del Administrador de recursos del servidor de archivos**.
+   El informe se guarda en la ubicación predeterminada para los informes de incidentes, que se puede modificar en el cuadro de diálogo **Opciones del Administrador de recursos del servidor de archivos**.
 
-7.  Haz clic en **Aceptar** para guardar el umbral de notificación.
+7. Haz clic en **Aceptar** para guardar el umbral de notificación.
 
-8.  Repite estos pasos si quieres configurar umbrales de notificación adicionales para la plantilla de cuota.
+8. Repite estos pasos si quieres configurar umbrales de notificación adicionales para la plantilla de cuota.
 
 ## <a name="see-also"></a>Vea también
 
 -   [Administración de cuotas](quota-management.md)
--    [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
--   [Editar propiedades de la plantilla de cuota](edit-quota-template-properties.md)
+-    [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
+-   [Editar propiedades de plantillas de cuotas](edit-quota-template-properties.md)
 -   [Herramientas de línea de comandos](command-line-tools.md)
 
 

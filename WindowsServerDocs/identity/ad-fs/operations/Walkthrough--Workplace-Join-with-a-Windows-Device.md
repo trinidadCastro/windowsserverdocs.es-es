@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 8b3b2934e7aa177e873e19d77530b2d796ccd521
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 83dab73230737b8303660b32683a6d05322ac754
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188900"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444773"
 ---
 # <a name="walkthrough-workplace-join-with-a-windows-device"></a>Tutorial: unirse al área de trabajo con un dispositivo Windows
 
@@ -25,19 +25,19 @@ En este tutorial, accederás a una aplicación web antes de unir el dispositivo 
 
 #### <a name="to-access-the-web-application-before-you-use-workplace-join-on-your-device"></a>Para acceder a la aplicación web antes de usar la unión al área de trabajo en tu dispositivo
 
-1.  Inicie sesión en Client1 con su cuenta Microsoft.
+1. Inicie sesión en Client1 con su cuenta Microsoft.
 
-2.  Abra Internet Explorer y vaya a la aplicación de notificaciones genérica, **https://webserv1.contoso.com/claimapp**.
+2. Abra Internet Explorer y vaya a la aplicación de notificaciones genérica, **https://webserv1.contoso.com/claimapp** .
 
-3.  Inicie sesión en la página Web con una cuenta de dominio de empresa: **roberth@contoso.com**, contraseña: **P@ssword**.
+3. Inicie sesión en la página Web con una cuenta de dominio de empresa: <strong>roberth@contoso.com</strong>, contraseña: <strong>P@ssword</strong>.
 
-4.  La página web enumera todas las notificaciones de tu token de seguridad. En el token de seguridad solo se encuentran las notificaciones de usuario.
+4. La página web enumera todas las notificaciones de tu token de seguridad. En el token de seguridad solo se encuentran las notificaciones de usuario.
 
-5.  Cierra Internet Explorer.
+5. Cierra Internet Explorer.
 
-6.  Abra Internet Explorer y vaya a la misma aplicación de notificaciones, **https://webserv1.contoso.com/claimapp**.
+6. Abra Internet Explorer y vaya a la misma aplicación de notificaciones, **https://webserv1.contoso.com/claimapp** .
 
-7.  Ten en cuenta que se te pedirá que especifiques de nuevo tus credenciales. No te conectas al área de trabajo desde un dispositivo unido al área de trabajo y, por lo tanto, no tienes inicio de sesión único.
+7. Ten en cuenta que se te pedirá que especifiques de nuevo tus credenciales. No te conectas al área de trabajo desde un dispositivo unido al área de trabajo y, por lo tanto, no tienes inicio de sesión único.
 
 ## <a name="join-your-device-with-workplace-join"></a>Unir un dispositivo al área de trabajo
 
@@ -48,36 +48,36 @@ En este tutorial, accederás a una aplicación web antes de unir el dispositivo 
 
 #### <a name="to-join-your-device-with-workplace-join"></a>Para unir tu dispositivo al área de trabajo
 
-1.  Inicie sesión en Client1 con su cuenta Microsoft.
+1. Inicie sesión en Client1 con su cuenta Microsoft.
 
-2.  En la pantalla **Inicio** , abre la barra **Accesos** y selecciona el acceso a **Configuración** . Selecciona **Cambiar configuración de PC**.
+2. En la pantalla **Inicio** , abre la barra **Accesos** y selecciona el acceso a **Configuración** . Selecciona **Cambiar configuración de PC**.
 
-3.  En la página **Configuración de PC** , selecciona **Red**y haz clic en **Área de trabajo**.
+3. En la página **Configuración de PC** , selecciona **Red**y haz clic en **Área de trabajo**.
 
-4.  En el **escriba su identificador de usuario para obtener acceso al área de trabajo o activa la administración de dispositivos** , escriba **roberth@contoso.com**y, a continuación, haga clic en **unir**.
+4. En el **escriba su identificador de usuario para obtener acceso al área de trabajo o activa la administración de dispositivos** , escriba <strong>roberth@contoso.com</strong>y, a continuación, haga clic en **unir**.
 
-5.  Cuando se le pida las credenciales, escriba **roberth@contoso.com**y la contraseña: **P@ssword**. Haga clic en **Aceptar**.
+5. Cuando se le pida las credenciales, escriba <strong>roberth@contoso.com</strong>y la contraseña: <strong>P@ssword</strong>. Haga clic en **Aceptar**.
 
-6.  Ahora deberías ver el mensaje: "Este dispositivo se unió a la red de tu área de trabajo."
+6. Ahora deberías ver el mensaje: "Este dispositivo se unió a la red de tu área de trabajo."
 
 ### <a name="access-the-web-application-after-joining-the-workplace"></a>Acceder a la aplicación web después de la unión al área de trabajo
 En esta parte de la demostración, accederás a una aplicación web de la compañía desde el dispositivo que está conectado a la unión al área de trabajo. La página web muestra las notificaciones que se incluyeron en tu token de seguridad. Ten en cuenta que la lista de notificaciones incluye la información tanto del dispositivo como del usuario. También verás que ahora tienes inicio de sesión único.
 
 ##### <a name="to-access-the-web-application-after-joining-the-workplace"></a>Para acceder a la aplicación web después de la unión al área de trabajo
 
-1.  Inicia sesión en **Client1** con tu cuenta Microsoft.
+1. Inicia sesión en **Client1** con tu cuenta Microsoft.
 
-2.  Abra Internet Explorer y vaya a la aplicación de notificaciones genérica, **https://webserv1.contoso.com/claimapp**.
+2. Abra Internet Explorer y vaya a la aplicación de notificaciones genérica, **https://webserv1.contoso.com/claimapp** .
 
-3.  Inicie sesión en la página Web con una cuenta de dominio de empresa: **roberth@contoso.com**, contraseña: **P@ssword**.
+3. Inicie sesión en la página Web con una cuenta de dominio de empresa: <strong>roberth@contoso.com</strong>, contraseña: <strong>P@ssword</strong>.
 
-4.  La página web enumera las notificaciones de tu token de seguridad. El token contiene notificaciones tanto de usuario como de dispositivo.
+4. La página web enumera las notificaciones de tu token de seguridad. El token contiene notificaciones tanto de usuario como de dispositivo.
 
-5.  Cierra Internet Explorer.
+5. Cierra Internet Explorer.
 
-6.  Abra Internet Explorer y vaya a la misma aplicación de notificaciones, **https://webserv1.contoso.com/claimapp**.
+6. Abra Internet Explorer y vaya a la misma aplicación de notificaciones, **https://webserv1.contoso.com/claimapp** .
 
-7.  Ten en cuenta que **no** se te pedirá que especifiques de nuevo tus credenciales. Te conectas desde un dispositivo unido al área de trabajo y, por lo tanto, tiene inicio de sesión único.
+7. Ten en cuenta que **no** se te pedirá que especifiques de nuevo tus credenciales. Te conectas desde un dispositivo unido al área de trabajo y, por lo tanto, tiene inicio de sesión único.
 
 ## <a name="see-also"></a>Vea también
 [Unirse a un área de trabajo desde cualquier dispositivo para SSO y sin problemas segundo Factor Authentication Across Company Applications](Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md)
