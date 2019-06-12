@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 7aa09636f8c23678f003bfa5ebf8be164e7fc683
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 53b72459d497ac5d079336c2a00ba65634b2e3a6
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879526"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436335"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
@@ -43,12 +43,12 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 Preparación preliminar es necesario. Antes de usar este comando, debe completar las tareas siguientes:
 
-1.  Cree un directorio para los controladores que desea instalar. Por ejemplo, cree una carpeta en **C:\Drivers\Video** para controladores de adaptador de vídeo.
-2.  Descargue y extraiga el paquete de controladores para el dispositivo. Copie el contenido de la subcarpeta que contiene el archivo INF para su versión del sistema operativo y todas las subcarpetas en la carpeta de vídeo que ha creado. Por ejemplo, copie los archivos de controlador de vídeo a C:\Drivers\Video.
-3.  Agregar una variable de ruta de acceso de entorno del sistema a la carpeta que creó en el paso 1, por ejemplo, **C:\Drivers\Video**.
-4.  Cree la siguiente clave del registro y, a continuación, para la **DriverPaths** clave se crea, configura el **datos del valor** a **1**.
--   Para Windows® 7 navegar por la ruta de acceso del registro: **HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion\** y, a continuación, cree las claves: **UnattendSettings\PnPUnattend\DriverPaths\**
--   Para Windows Vista, vaya a la ruta de acceso del registro: **HK_LM\Software\Microsoft\Windows NT\CurrentVersion\** y, a continuación, cree las claves = **\UnattendSettings\PnPUnattend\DriverPaths** .
+1. Cree un directorio para los controladores que desea instalar. Por ejemplo, cree una carpeta en **C:\Drivers\Video** para controladores de adaptador de vídeo.
+2. Descargue y extraiga el paquete de controladores para el dispositivo. Copie el contenido de la subcarpeta que contiene el archivo INF para su versión del sistema operativo y todas las subcarpetas en la carpeta de vídeo que ha creado. Por ejemplo, copie los archivos de controlador de vídeo a C:\Drivers\Video.
+3. Agregar una variable de ruta de acceso de entorno del sistema a la carpeta que creó en el paso 1, por ejemplo, **C:\Drivers\Video**.
+4. Cree la siguiente clave del registro y, a continuación, para la **DriverPaths** clave se crea, configura el **datos del valor** a **1**.
+5. Para Windows® 7 navegar por la ruta de acceso del registro: **HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion\\** y, a continuación, cree las claves: **UnattendSettings\PnPUnattend\DriverPaths\\**
+6. Para Windows Vista, vaya a la ruta de acceso del registro: **NT\CurrentVersion HK_LM\Software\Microsoft\Windows\\** y, a continuación, cree las claves = **\UnattendSettings\PnPUnattend\DriverPaths**.
 
 ## <a name="examples"></a>Ejemplos
 

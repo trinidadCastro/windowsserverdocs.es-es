@@ -14,18 +14,18 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: cd00f92254f9e55f83442f5e68e344e0aa7579a2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3d148c99911be0cebfc29429d93241f24c2b9606
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855506"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453009"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>Bienvenida a Servicios de Escritorio remoto 
 
 Servicios de escritorio remoto (RDS) es la plataforma de elección para la creación de soluciones de virtualización para cada necesidad del cliente final, incluyendo la entrega de aplicaciones virtualizadas individuales, proporcionar acceso seguro de escritorio remoto y móvil y proporcionar a los usuarios finales el capacidad para ejecutar sus aplicaciones y escritorios desde la nube.
 
-![Información general de servicios de escritorio remoto](.\media\rds-overview.png)
+![Información general de servicios de escritorio remoto](./media/rds-overview.png)
 
 RDS ofrece flexibilidad de implementación, extensibilidad y la eficacia de costos: ofrecida a través de una variedad de opciones de implementación, incluido Windows Server 2016 para las implementaciones locales, Microsoft Azure para implementaciones en la nube y una matriz sólida de asociados soluciones.
 

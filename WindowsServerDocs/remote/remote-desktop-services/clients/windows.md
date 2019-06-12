@@ -14,16 +14,16 @@ manager: dongill
 ms.author: elizapo
 ms.date: 05/07/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 20879507e13ac7da566c95db7b59d88e0b5d8ce8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: b2141a6a57629ccbb585b2f74c581eba5ba2b1b1
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873576"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446686"
 ---
 # <a name="get-started-with-remote-desktop-on-windows"></a>Introducción a Escritorio remoto en Windows
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2012 R2, Windows Server 2016
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
 Puede usar al cliente de escritorio remoto para Windows para trabajar con aplicaciones de Windows y escritorios de forma remota desde otro dispositivo de Windows.
 
@@ -48,25 +48,25 @@ Para crear una conexión a Escritorio remoto:
 
 1. En la derivación de centro de conexiones **+ agregar**y, a continuación, puntee en **Desktop**.
 2. Escriba la siguiente información para el equipo que desea conectarse:
-  - **Nombre de equipo** : el nombre del equipo. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede anexar información del puerto en el nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
-  - **Cuenta de usuario** : la cuenta de usuario a usar para obtener acceso al equipo remoto. Pulse **+** para agregar una cuenta nueva o seleccione una cuenta existente. Puede usar los siguientes formatos para el nombre de usuario: *user_name*, *DOMINIO\nombre_de_usuario*, o *user_name@domain.com*. También puede especificar si se debe solicitar un nombre de usuario y contraseña durante la conexión seleccionando **Preguntarme cada vez**.
+   - **Nombre de equipo** : el nombre del equipo. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede anexar información del puerto en el nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
+   - **Cuenta de usuario** : la cuenta de usuario a usar para obtener acceso al equipo remoto. Pulse **+** para agregar una cuenta nueva o seleccione una cuenta existente. Puede usar los siguientes formatos para el nombre de usuario: *user_name*, *DOMINIO\nombre_de_usuario*, o <em>user_name@domain.com</em>. También puede especificar si se debe solicitar un nombre de usuario y contraseña durante la conexión seleccionando **Preguntarme cada vez**.
 3. También puede establecer opciones adicionales al pulsar **mostrar más**:
-  - **Nombre para mostrar** : un nombre fácil de recordar para el equipo se conecta a. Puede utilizar cualquier cadena, pero si no especifica un nombre descriptivo, se muestra el nombre de equipo.
-  - **Grupo** : especificar un grupo para que sea más fácil encontrar sus conexiones más adelante. Puede agregar un nuevo grupo, puntee en **+** o seleccione uno de la lista.
-  - **Puerta de enlace** : puerta de enlace de escritorio remoto el que desea usar para conectarse a escritorios virtuales, programas RemoteApp y escritorios basados en una red corporativa interna. Obtenga la información acerca de la puerta de enlace desde el administrador del sistema.
-  - **Conectarse a la sesión de administrador** -Utilice esta opción para conectarse a una sesión de consola para administrar un servidor de Windows.
-  - **Intercambiar botones del mouse** : Use esta opción para cambiar el primario del mouse funciones del botón para el botón secundario del mouse. (Esto es especialmente útil si el equipo remoto está configurado para un usuario zurdo pero usa un mouse diestro).
-  - **Configure la resolución de mi sesión remota en:** : seleccione la resolución que desee utilizar en la sesión. **Elija para mí** establecerá la resolución en función del tamaño del cliente.
-  - **Cambiar el tamaño de la pantalla:** : al seleccionar una alta resolución estática para la sesión, tiene la opción para que los elementos en la pantalla parezcan de mayor tamaño para mejorar la legibilidad. Nota: Esto solo se aplica cuando se conecta a Windows 8.1 o versiones posteriores.
-  - **Actualizar la resolución de la sesión remota en el cambio de tamaño** : cuando se habilita, el cliente actualizará dinámicamente la resolución de la sesión en función del tamaño del cliente. Nota: Esto solo se aplica cuando se conecta a Windows 8.1 o versiones posteriores.
-  - **Portapapeles** : cuando está habilitado, le permite copiar texto e imágenes hacia y desde el equipo remoto.
-  - **Reproducción de audio** : seleccione el dispositivo que se usará para audio durante la sesión remota. Puede reproducir un sonido en los dispositivos locales, el equipo remoto, o no en absoluto.
-  - **Grabación de audio** : cuando está habilitada, permite usar un micrófono local con las aplicaciones en el equipo remoto.
+   - **Nombre para mostrar** : un nombre fácil de recordar para el equipo se conecta a. Puede utilizar cualquier cadena, pero si no especifica un nombre descriptivo, se muestra el nombre de equipo.
+   - **Grupo** : especificar un grupo para que sea más fácil encontrar sus conexiones más adelante. Puede agregar un nuevo grupo, puntee en **+** o seleccione uno de la lista.
+   - **Puerta de enlace** : puerta de enlace de escritorio remoto el que desea usar para conectarse a escritorios virtuales, programas RemoteApp y escritorios basados en una red corporativa interna. Obtenga la información acerca de la puerta de enlace desde el administrador del sistema.
+   - **Conectarse a la sesión de administrador** -Utilice esta opción para conectarse a una sesión de consola para administrar un servidor de Windows.
+   - **Intercambiar botones del mouse** : Use esta opción para cambiar el primario del mouse funciones del botón para el botón secundario del mouse. (Esto es especialmente útil si el equipo remoto está configurado para un usuario zurdo pero usa un mouse diestro).
+   - **Configure la resolución de mi sesión remota en:** : seleccione la resolución que desee utilizar en la sesión. **Elija para mí** establecerá la resolución en función del tamaño del cliente.
+   - **Cambiar el tamaño de la pantalla:** : al seleccionar una alta resolución estática para la sesión, tiene la opción para que los elementos en la pantalla parezcan de mayor tamaño para mejorar la legibilidad. Nota: Esto solo se aplica cuando se conecta a Windows 8.1 o versiones posteriores.
+   - **Actualizar la resolución de la sesión remota en el cambio de tamaño** : cuando se habilita, el cliente actualizará dinámicamente la resolución de la sesión en función del tamaño del cliente. Nota: Esto solo se aplica cuando se conecta a Windows 8.1 o versiones posteriores.
+   - **Portapapeles** : cuando está habilitado, le permite copiar texto e imágenes hacia y desde el equipo remoto.
+   - **Reproducción de audio** : seleccione el dispositivo que se usará para audio durante la sesión remota. Puede reproducir un sonido en los dispositivos locales, el equipo remoto, o no en absoluto.
+   - **Grabación de audio** : cuando está habilitada, permite usar un micrófono local con las aplicaciones en el equipo remoto.
 4. Pulse **guardar**.
 
-¿Es necesario modificar esta configuración? Puntee en el menú de desbordamiento (**...** ) junto al nombre del escritorio y, a continuación, en **editar**.
+¿Es necesario modificar esta configuración? Puntee en el menú de desbordamiento ( **...** ) junto al nombre del escritorio y, a continuación, en **editar**.
 
-¿Desea eliminar la conexión? De nuevo, puntee en el menú de desbordamiento (**...** ) y, a continuación, puntee en **quitar**.
+¿Desea eliminar la conexión? De nuevo, puntee en el menú de desbordamiento ( **...** ) y, a continuación, puntee en **quitar**.
 
 ### <a name="add-a-remote-resource"></a>Agregar un recurso remoto
 Los recursos remotos son programas RemoteApp, escritorios basados en sesión y escritorios virtuales publicados por el Administrador de servicios de escritorio remoto.
@@ -82,12 +82,12 @@ Los recursos remotos se mostrará en el centro de conexiones.
 
 Para eliminar los recursos remotos:
 
-1. En el centro de conexiones, pulse el menú de desbordamiento (**...** ) junto al recurso remoto.
+1. En el centro de conexiones, pulse el menú de desbordamiento ( **...** ) junto al recurso remoto.
 2. Pulse **quitar**.
 
 ### <a name="pin-a-saved-desktop-to-your-start-menu"></a>Anclar un escritorio guardado en el menú Inicio
 
-Para anclar una conexión con el menú Inicio, puntee en el menú de desbordamiento (**...** ) junto al nombre del escritorio y, a continuación, en **anclar a inicio**.
+Para anclar una conexión con el menú Inicio, puntee en el menú de desbordamiento ( **...** ) junto al nombre del escritorio y, a continuación, en **anclar a inicio**.
 
 Ahora puede iniciar la conexión a escritorio remota directamente desde el menú Inicio, puntee en él.
 
@@ -100,8 +100,8 @@ Para configurar una puerta de enlace:
 1. En el centro de conexiones, pulse **configuración**.
 2. Junto a la puerta de enlace, pulse **+** para agregar una nueva puerta de enlace. Nota: También se puede agregar una puerta de enlace cuando se agrega una nueva conexión.
 3. Escriba la siguiente información:
-  - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
-  - **Cuenta de usuario** : seleccione o agregue una cuenta de usuario para usarla con la puerta de enlace de escritorio remoto se conecta a. También puede seleccionar **usar cuenta de usuario de escritorio** para usar las mismas credenciales que se utilizaron para la conexión a escritorio remota.
+   - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
+   - **Cuenta de usuario** : seleccione o agregue una cuenta de usuario para usarla con la puerta de enlace de escritorio remoto se conecta a. También puede seleccionar **usar cuenta de usuario de escritorio** para usar las mismas credenciales que se utilizaron para la conexión a escritorio remota.
 4. Pulse **guardar**.  
 
 ## <a name="global-app-settings"></a>Configuración de la aplicación global

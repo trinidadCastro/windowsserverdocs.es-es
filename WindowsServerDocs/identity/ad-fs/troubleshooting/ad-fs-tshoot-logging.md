@@ -8,12 +8,12 @@ ms.date: 02/21/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 20e2d0747b98e7c7728230d0768506261f5b0d50
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1acc00ca376c48f7fb34214cef3a92961d355ae4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825126"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444027"
 ---
 # <a name="ad-fs-troubleshooting---events-and-logging"></a>Solución de AD FS - eventos y registro
 AD FS proporciona dos registros principales que pueden usarse para solucionar problemas.  Estas sobrecargas son:
@@ -89,18 +89,21 @@ La siguiente tabla describe los tipos básicos de eventos.
 Auditoría de seguridad de la cuenta de servicio de AD FS a veces puede ayudar a solucionar los problemas con las actualizaciones de contraseña, registro de solicitud/respuesta, encabezados de contexto de solicitud y los resultados del registro de dispositivo.  Auditoría de la cuenta de servicio de AD FS está deshabilitada de forma predeterminada.
 
 ### <a name="to-enable-security-auditing"></a>Para habilitar la auditoría de seguridad
-1.       Haga clic en Inicio, seleccione **programas**, apunte a **herramientas administrativas**y, a continuación, haga clic en **directiva de seguridad Local**.
-2.       Navegue a la carpeta **Configuración de seguridad\Directivas locales\Administración de permisos del usuario** y haga doble clic en **Generar auditorías de seguridad**.
-3.       En el **configuración de seguridad Local** , compruebe que aparece la cuenta de servicio de AD FS. Si no está presente, haga clic en Agregar usuario o grupo y agregarlo a la lista y, a continuación, haga clic en Aceptar.
-4.       Abra un símbolo del sistema con privilegios elevados y ejecute el siguiente comando para habilitar la auditoría auditpol.exe /set/SubCategory: "Aplicación generado" /failure:enable /success:enable 5.       Cerrar **directiva de seguridad Local**y, a continuación, abra el complemento de administración de AD FS.
- 
+1. Haga clic en Inicio, seleccione **programas**, apunte a **herramientas administrativas**y, a continuación, haga clic en **directiva de seguridad Local**.
+2. Navegue a la carpeta **Configuración de seguridad\Directivas locales\Administración de permisos del usuario** y haga doble clic en **Generar auditorías de seguridad**.
+3. En el **configuración de seguridad Local** , compruebe que aparece la cuenta de servicio de AD FS. Si no está presente, haga clic en Agregar usuario o grupo y agregarlo a la lista y, a continuación, haga clic en Aceptar.
+4. Abra un símbolo del sistema con privilegios elevados y ejecute el siguiente comando para habilitar la auditoría auditpol.exe /set/SubCategory: "Aplicación generado" /failure:enable /success:enable
+5. Cerrar **directiva de seguridad Local**y, a continuación, abra el complemento de administración de AD FS.
+ 
 Para abrir el complemento de administración de AD FS, haga clic en Inicio, elija programas, herramientas administrativas y, a continuación, haga clic en administración de AD FS.
- 
-6.       En el panel Acciones, haga clic en Editar Federation Service propiedades 7.       En el cuadro de diálogo Propiedades del servicio de federación, haga clic en la ficha de eventos. 8.       Seleccione el **auditorías de aciertos** y **auditorías de errores** casillas de verificación.
-9.       Haga clic en Aceptar.
+ 
+6. En el panel Acciones, haga clic en Editar propiedades del servicio de federación
+7. En el cuadro de diálogo Propiedades del servicio de federación, haga clic en la ficha de eventos.
+8. Seleccione el **auditorías de aciertos** y **auditorías de errores** casillas de verificación.
+9. Haga clic en Aceptar.
 
 ![mejoras de auditoría](media/ad-fs-tshoot-logging/event4.PNG)  
- 
+ 
 >[!NOTE]
 >Las instrucciones anteriores sirven solamente cuando AD FS se encuentra en un servidor miembro independiente.  Si AD FS se ejecuta en un controlador de dominio, en lugar de la directiva de seguridad Local, use el **directiva predeterminada de controladores de dominio** ubicado en **controladores de administración de dominio o el bosque/dominios/directiva de grupo**.  Haga clic en Editar y vaya a **equipo Configuración del equipo\Directivas\Configuración de Windows\Configuración seguridad\Directivas locales\Asignación Rights Management**
 
@@ -155,4 +158,4 @@ El evento Id. de autor de llamada también registra el identificador de activida
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)
+- [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

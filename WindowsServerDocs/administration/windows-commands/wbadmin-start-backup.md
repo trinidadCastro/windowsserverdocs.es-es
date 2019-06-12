@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 09b2ffabcea414dd4717a2ffa1f6e860a17f3653
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2ac602506960b92333750e7a37692c44c92aae22
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871706"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440276"
 ---
 # <a name="wbadmin-start-backup"></a>Wbadmin start backup
 
@@ -87,25 +87,25 @@ Wbadmin start backup
 Los ejemplos siguientes muestran cómo el **wbadmin start backup** comando puede utilizarse en diferentes escenarios de copia de seguridad:
 
 Escenario 1 #
--   Crear una copia de seguridad de volúmenes e:, d:\mountpoint, y \\ \\? \Volume{cc566d14-4410-11d9-9d93-806e6f6e6963}
--   Guardar la copia de seguridad en el volumen f:
-```
-wbadmin start backup -backupTarget:f: -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
-```
-Escenario 2 #
--   Realizar una copia de seguridad única de *f:\folder1* y *h:\folder2* al volumen *d:*.
--   Copia de seguridad del estado del sistema
--   Realizar una copia de seguridad para que la copia de seguridad diferencial normalmente programada no se ve afectada.
-```
-wbadmin start backup –backupTarget:d: -include:g\folder1,h:\folder2 –systemstate -vsscopy
-```
-Escenario 3 #
--   Realizar una copia de seguridad única de *d:\folder1* que realizar copias de seguridad de forma no recursiva.
--   La carpeta a la ubicación de red de copia de seguridad  *\\ \\backupshare\backup1*
--   Restringir el acceso a la copia de seguridad a los miembros de la **administradores** o **operadores de copia de seguridad** grupo.
-```
-wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
-```
+- Crear una copia de seguridad de volúmenes e:, d:\mountpoint, y \\ \\? \Volume{cc566d14-4410-11d9-9d93-806e6f6e6963}
+- Guardar la copia de seguridad en el volumen f:
+  ```
+  wbadmin start backup -backupTarget:f: -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+  ```
+  Escenario 2 #
+- Realizar una copia de seguridad única de *f:\folder1* y *h:\folder2* al volumen *d:* .
+- Copia de seguridad del estado del sistema
+- Realizar una copia de seguridad para que la copia de seguridad diferencial normalmente programada no se ve afectada.
+  ```
+  wbadmin start backup –backupTarget:d: -include:g\folder1,h:\folder2 –systemstate -vsscopy
+  ```
+  Escenario 3 #
+- Realizar una copia de seguridad única de *d:\folder1* que realizar copias de seguridad de forma no recursiva.
+- La carpeta a la ubicación de red de copia de seguridad  *\\ \\backupshare\backup1*
+- Restringir el acceso a la copia de seguridad a los miembros de la **administradores** o **operadores de copia de seguridad** grupo.
+  ```
+  wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
+  ```
 
 #### <a name="additional-references"></a>Referencias adicionales
 

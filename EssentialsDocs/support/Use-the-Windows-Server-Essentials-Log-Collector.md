@@ -12,12 +12,12 @@ ms.assetid: c6985518-b42d-4cfb-9761-eaa75306b6d7
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d003c6a45159548f7e34d86ca242f74868659d2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ba5c0de9d8689c63c95ea3410a74fc9a7289aeab
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59877996"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435992"
 ---
 # <a name="use-the-windows-server-essentials-log-collector"></a>Uso del compilador de registros de Windows Server Essentials
 
@@ -28,9 +28,9 @@ Al solucionar problemas del equipo, un representante del servicio al cliente de 
  El Compilador de registros copia registros de programas, registros de revisión de eventos e información del entorno en cuestión en un solo archivo zip en una ubicación específica. Puede ejecutar el Compilador de registros directamente desde el servidor o cualquier equipo de la red, o mediante una conexión remota a los equipos.  
   
 > [!NOTE]
->  -   El Compilador de registros no analiza los problemas de red ni realiza cambios en cualquier servidor o equipo de la red. Para obtener información sobre cómo solucionar problemas de red, consulte la documentación de ayuda del producto de su servidor.  
-> -   En esta guía, los equipos de la red, aparte de su servidor, se denominan equipos de la red.  
-> -   [Descargue el paquete de instalación de Windows Server Essentials Log Collector](https://go.microsoft.com/fwlink/?LinkID=266341).  
+> - El Compilador de registros no analiza los problemas de red ni realiza cambios en cualquier servidor o equipo de la red. Para obtener información sobre cómo solucionar problemas de red, consulte la documentación de ayuda del producto de su servidor.  
+>   -   En esta guía, los equipos de la red, aparte de su servidor, se denominan equipos de la red.  
+>   -   [Descargue el paquete de instalación de Windows Server Essentials Log Collector](https://go.microsoft.com/fwlink/?LinkID=266341).  
   
  Para instalar y ejecutar el Compilador de registros, realice los pasos que se indican en los temas siguientes:  
   

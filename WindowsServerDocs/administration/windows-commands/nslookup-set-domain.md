@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9019893d92201079fb60b820a14dda3763bafd6b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d1af9f30dd2c44111adecb477a6469333f4f7685
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886646"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436768"
 ---
 # <a name="nslookup-set-domain"></a>nslookup set domain
 
@@ -30,13 +30,15 @@ cambia el nombre de dominio predeterminado del sistema de nombres de dominio (DN
 set domain=<DomainName>
 ```
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|<DomainName>|Especifica un nombre nuevo para el nombre de dominio DNS predeterminado. El nombre de dominio predeterminado es el nombre de host.|
-|{help &#124; ?}|Muestra un resumen breve de **nslookup** subcomandos.|
+
+|    Parámetro    |                                           Descripción                                           |
+|-----------------|-------------------------------------------------------------------------------------------------|
+|  <DomainName>   | Especifica un nombre nuevo para el nombre de dominio DNS predeterminado. El nombre de dominio predeterminado es el nombre de host. |
+| {help &#124; ?} |                      Muestra un resumen breve de **nslookup** subcomandos.                      |
+
 ## <a name="remarks"></a>Comentarios
--   El nombre de dominio DNS predeterminado se anexa a una solicitud de búsqueda según el estado de la **defname** y **búsqueda** opciones. La lista de búsqueda de dominio DNS contiene a los elementos primarios del dominio DNS predeterminado si tiene al menos dos componentes en su nombre. Por ejemplo, si el dominio DNS predeterminado es mfg.widgets.com, la lista de búsqueda se denomina mfg.widgets.com y widgets.com. Use la **establecer srchlist** comando para especificar una lista distinta y el **establecer todos los** comando para mostrar la lista.
-## <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[nslookup establece srchlist](nslookup-set-srchlist.md)
-[nslookup establece todas](nslookup-set-all.md)
+- El nombre de dominio DNS predeterminado se anexa a una solicitud de búsqueda según el estado de la **defname** y **búsqueda** opciones. La lista de búsqueda de dominio DNS contiene a los elementos primarios del dominio DNS predeterminado si tiene al menos dos componentes en su nombre. Por ejemplo, si el dominio DNS predeterminado es mfg.widgets.com, la lista de búsqueda se denomina mfg.widgets.com y widgets.com. Use la **establecer srchlist** comando para especificar una lista distinta y el **establecer todos los** comando para mostrar la lista.
+  ## <a name="additional-references"></a>Referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [nslookup establece srchlist](nslookup-set-srchlist.md)
+  [nslookup establece todas](nslookup-set-all.md)

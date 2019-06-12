@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7cced9a930b63baa79b4addb429c562c38d6da01
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 298df36b856cba97ec19126f77456785e5eb6f50
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843886"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66810932"
 ---
 # <a name="wsus-and-the-catalog-site"></a>WSUS y el sitio del catálogo
 
@@ -64,7 +64,7 @@ Los administradores WSUS es posible que considere la posibilidad de restringir e
 
     -   Seleccione **Windows autenticación** y haga clic en **habilitar** en el **acciones** panel de la derecha.
 
-2.  Cree un grupo de destino WSUS para los equipos que necesitan la revisión y agregarlos al grupo. Para obtener más información acerca de los equipos y grupos, consulte [equipos de administración de cliente de WSUS y grupos de equipos WSUS](managing-wsus-client-computers-and-wsus-computer-groups.md) en esta sección y guía [3.3. Configurar grupos de equipos WSUS](../deploy/2-configure-wsus.md#BKMK_ConfigcomputerGroups) del paso 3: Configurar WSUS, en la Guía de implementación de WSUS.
+2.  Cree un grupo de destino WSUS para los equipos que necesitan la revisión y agregarlos al grupo. Para obtener más información acerca de los equipos y grupos, consulte [equipos de administración de cliente de WSUS y grupos de equipos WSUS](managing-wsus-client-computers-and-wsus-computer-groups.md) en esta sección y guía [3.3. Configurar grupos de equipos WSUS](../deploy/2-configure-wsus.md#23-configure-wsus-computer-groups) del paso 3: Configurar WSUS, en la Guía de implementación de WSUS.
 
 3.  Descargar los archivos de la revisión.
 

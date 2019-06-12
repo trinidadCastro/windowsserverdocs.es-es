@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aa8d556822bc6caf4277812be818a0cf456e75dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a1cca93a064cfb6e5c18f4a472ea837b922d07b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818886"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434193"
 ---
 # <a name="create-partition-extended"></a>Crear partición extendida
 
@@ -36,12 +36,12 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 ## <a name="parameters"></a>Parámetros  
   
-|Parámetro|Descripción|  
-|-------|--------|  
-|size\=<n>|Especifica el tamaño de la partición en megabytes \(MB\). Si no se especifica tamaño, la partición continuará mientras haya espacio libre en la partición extendida.|  
-|offset\=<n>|Especifica el desplazamiento en kilobytes \(KB\), que se crea la partición. Si se indica ningún desplazamiento, la partición comenzará al principio del espacio libre en el disco que es lo suficientemente grande como para contener la nueva partición.|  
-|Alinear\=<n>|Alinea todas las extensiones de partición para el límite de alineación más cercano. Se utiliza normalmente con el número de unidad lógica de RAID de hardware \(LUN\) matrices para mejorar el rendimiento. <n> es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano.|  
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|  
+|  Parámetro  |                                                                                                                             Descripción                                                                                                                              |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  size\=<n>  |                                                  Especifica el tamaño de la partición en megabytes \(MB\). Si no se especifica tamaño, la partición continuará mientras haya espacio libre en la partición extendida.                                                  |
+| offset\=<n> |                     Especifica el desplazamiento en kilobytes \(KB\), que se crea la partición. Si se indica ningún desplazamiento, la partición comenzará al principio del espacio libre en el disco que es lo suficientemente grande como para contener la nueva partición.                      |
+| Alinear\=<n>  | Alinea todas las extensiones de partición para el límite de alineación más cercano. Se utiliza normalmente con el número de unidad lógica de RAID de hardware \(LUN\) matrices para mejorar el rendimiento. <n> es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano. |
+|    noerr    |                                 sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.                                 |
   
 ## <a name="remarks"></a>Comentarios  
   

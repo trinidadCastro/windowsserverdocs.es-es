@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7cf1dcec1bc8e187b6db789c5402ca8119ca8b6c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: da3850b75a0e069f9153d3c66baef9f00b67d61c
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850766"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452590"
 ---
 # <a name="add-an-iframe-to-a-tool-extension"></a>Agregar un iFrame a una extensión de herramienta
 
@@ -23,7 +23,7 @@ En este artículo, se agregará un iFrame en una extensión de herramienta nueva
 
 ## <a name="prepare-your-environment"></a>Preparar el entorno ##
 
-Si no lo ha hecho ya, siga las instrucciones de [desarrollar una extensión de la herramienta](..\develop-tool.md) para preparar el entorno y crear un nuevo, vacíe la extensión de la herramienta.
+Si no lo ha hecho ya, siga las instrucciones de [desarrollar una extensión de la herramienta](../develop-tool.md) para preparar el entorno y crear un nuevo, vacíe la extensión de la herramienta.
 
 ## <a name="add-a-module-to-your-project"></a>Agregue un módulo al proyecto ##
 
@@ -47,7 +47,7 @@ En el archivo html, agregue el siguiente contenido:
 </div>
 ```
 
-Eso es todo, ha agregado un elemento iFrame en su extensión.  A continuación, puede [de compilación y side carga](..\develop-tool.md#build-and-side-load-your-extension) la extensión en Windows Admin Center para ver los resultados.
+Eso es todo, ha agregado un elemento iFrame en su extensión.  A continuación, puede [de compilación y side carga](../develop-tool.md#build-and-side-load-your-extension) la extensión en Windows Admin Center para ver los resultados.
 
 > [!Note]
 > Configuración de directiva de seguridad (CSP) de contenido podría impedir que algunos sitios representación en un iFrame dentro de Windows Admin Center. Puede aprender más sobre esto [aquí](https://content-security-policy.com/). 

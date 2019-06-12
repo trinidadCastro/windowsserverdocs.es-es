@@ -1,23 +1,23 @@
 ---
 title: Convertir un registro de arranque maestro (MBR) en un disco de tabla de particiones GUID (GPT)
 description: Describe cómo convertir un registro de arranque maestro (MBR) en un disco de tabla de particiones GUID (GPT)
-ms.date: 06/19/2018
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f6aba72c329ba380f9617f484c4cf754fbcbb363
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 902a845bbe6a7e2a4d811aac0ea2990fb3557832
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192730"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812453"
 ---
 # <a name="convert-an-mbr-disk-into-a-gpt-disk"></a>Convertir un disco MBR en un disco GPT
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Los discos de registro de arranque maestro (MBR) usan la tabla de particiones BIOS estándar. Los discos de tabla de particiones GUID (GPT) usan Unified Extensible Firmware Interface (UEFI). Una ventaja de los discos GPT es que puedes tener más de cuatro particiones en cada disco. GPT también se requiere para discos de más de dos terabytes (TB).
 
@@ -59,7 +59,7 @@ Siga estos pasos para convertir un disco MBR vacío en un disco GPT. También ha
 7.  En el símbolo del sistema **DISKPART**, escribe `convert gpt`.
 
 | Valor  | Descripción  |
-| ----- | ----|
+| ----- | ---- |
 | **disco de la lista** | Muestra una lista de discos e información sobre ellos, como su tamaño, la cantidad de espacio libre disponible, si se trata de un disco básico o dinámico y si el disco utiliza el estilo de partición de Registro de arranque maestro (MBR) o Tabla de particiones GUID (GPT). El disco marcado con un asterisco (*) tiene el foco. |
 | **Seleccione el disco** *númeroDeDisco* | Selecciona el disco especificado, donde *disknumber* es el número de disco y el que recibe el foco. |
 | **clean** | Quita todas las particiones o volúmenes del disco con el foco.  |
@@ -68,5 +68,3 @@ Siga estos pasos para convertir un disco MBR vacío en un disco GPT. También ha
 ## <a name="see-also"></a>Vea también
 
 -   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
-
-

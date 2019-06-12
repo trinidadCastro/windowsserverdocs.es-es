@@ -6,25 +6,25 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
-ms.date: 07/09/2018
+ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2bb15d5ae29da6c9dbcd6b58af280026d06febc8
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 4b6c58f0f33b45052e038a9af941297a294d17b2
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222744"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812509"
 ---
 # <a name="deploy-folder-redirection-with-offline-files"></a>Implementar la redirección de carpetas con archivos sin conexión
 
->Se aplica a: Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Vista, Windows Server 2019, Windows Server 2016, Windows Server (canal semianual), Windows Server 2012, Windows Server 2012 R2, Windows Server 2008 R2
+>Se aplica a: Windows 10, Windows 7, Windows 8, Windows 8.1, Windows Vista, Windows Server 2019, Windows Server 2016, Windows Server 2012, Windows Server 2012 R2, Windows Server 2008 R2, Windows Server (canal semianual)
 
 Este tema describe cómo usar Windows Server para implementar la redirección de carpetas con archivos sin conexión en los equipos cliente de Windows.
 
 Para obtener una lista de los cambios recientes en este tema, consulte [historial de cambios](#change-history).
 
->[!IMPORTANT]
->Debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), actualizamos [paso 3: Crear un GPO para redirección de carpetas](#step-3-create-a-gpo-for-folder-redirection) de este tema para que Windows pueden aplicar correctamente la directiva de redirección de carpetas (y no revertir las carpetas redirigidas en los equipos afectados).
+> [!IMPORTANT]
+> Debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), actualizamos [paso 3: Crear un GPO para redirección de carpetas](#step-3-create-a-gpo-for-folder-redirection) de este tema para que Windows pueden aplicar correctamente la directiva de redirección de carpetas (y no revertir las carpetas redirigidas en los equipos afectados).
 
 ## <a name="prerequisites"></a>Requisitos previos
 
@@ -45,8 +45,8 @@ Redirección de carpetas tiene los siguientes requisitos de software:
     - Si el recurso compartido de archivos usa Replicación DFS para replicar los contenidos con otro servidor, los usuarios deben poder acceder únicamente al servidor de origen para evitar que se realicen ediciones en conflicto en diferentes servidores.
     - Cuando se usa un recurso compartido de archivos en clúster, deshabilite la disponibilidad continua en el recurso compartido de archivos para evitar problemas de rendimiento con redirección de carpetas y archivos sin conexión. Además, los archivos sin conexión no pueden pasar al modo sin conexión durante 3 a 6 minutos después de que un usuario pierde el acceso a un recurso compartido de archivos disponible continuamente, lo que puede frustrar a los usuarios que aún no están usando el modo siempre sin conexión de archivos sin conexión.
 
->[!NOTE]
->Algunas características más recientes de redirección de carpetas tienen adicionales para equipos cliente y los requisitos de esquema de Active Directory. Para obtener más información, consulte [implementar equipos principales](deploy-primary-computers.md), [deshabilitar archivos sin conexión en las carpetas](disable-offline-files-on-folders.md), [habilitar modo siempre sin conexión](enable-always-offline.md), y [Enable optimizado para mover carpeta ](enable-optimized-moving.md).
+> [!NOTE]
+> Algunas características más recientes de redirección de carpetas tienen adicionales para equipos cliente y los requisitos de esquema de Active Directory. Para obtener más información, consulte [implementar equipos principales](deploy-primary-computers.md), [deshabilitar archivos sin conexión en las carpetas](disable-offline-files-on-folders.md), [habilitar modo siempre sin conexión](enable-always-offline.md), y [Enable optimizado para mover carpeta ](enable-optimized-moving.md).
 
 ## <a name="step-1-create-a-folder-redirection-security-group"></a>Paso 1: Crear un grupo de seguridad de redireccionamiento de carpetas
 
@@ -67,8 +67,8 @@ Aquí le mostramos cómo crear un grupo de seguridad para la redirección de car
 
 Si no dispone de un recurso compartido de archivos para las carpetas redirigidas, use el procedimiento siguiente para crear un recurso compartido de archivos en un servidor que ejecuta Windows Server 2012.
 
->[!NOTE]
->Algunas funciones pueden ser distintas o no estar disponibles si creas el recurso compartido de archivos en un servidor que ejecute otra versión de Windows Server.
+> [!NOTE]
+> Algunas funciones pueden ser distintas o no estar disponibles si creas el recurso compartido de archivos en un servidor que ejecute otra versión de Windows Server.
 
 Aquí le mostramos cómo crear un recurso compartido de archivos en Windows Server 2012, Windows Server 2016 y Windows Server 2019:
 
@@ -93,15 +93,14 @@ Aquí le mostramos cómo crear un recurso compartido de archivos en Windows Serv
 
 ### <a name="required-permissions-for-the-file-share-hosting-redirected-folders"></a>Permisos necesarios para el archivo de compartan las carpetas redirigidas de hospedaje
 
-
-|Cuenta de usuario  |Acceso  |Se aplica a  |
-|---------|---------|---------|
+| Cuenta de usuario  | Acceso  | Se aplica a  |
+| --------- | --------- | --------- |
 | Cuenta de usuario | Acceso | Se aplica a |
-|Sistema     | Control total        |    Esta carpeta, subcarpetas y archivos     |
-|Administradores     | Control total       | Solo esta carpeta        |
-|Creador/propietario     |   Control total      |   Solo subcarpetas y archivos      |
-|Grupo de seguridad de los usuarios que necesitan colocar datos en el recurso compartido (usuarios de redirección de carpeta)     |   Listar carpeta / leer datos *(permisos avanzados)* <br /><br />Crear carpetas / Anexar datos *(permisos avanzados)* <br /><br />Leer atributos *(permisos avanzados)* <br /><br />Atributos extendidos de lectura *(permisos avanzados)* <br /><br />Permisos de lectura *(permisos avanzados)*      |  Solo esta carpeta       |
-|Otros grupos y cuentas     |  Ninguno (quitar)       |         |
+| Sistema     | Control total        |    Esta carpeta, subcarpetas y archivos     |
+| Administradores     | Control total       | Solo esta carpeta        |
+| Creador/propietario     |   Control total      |   Solo subcarpetas y archivos      |
+| Grupo de seguridad de los usuarios que necesitan colocar datos en el recurso compartido (usuarios de redirección de carpeta)     |   Listar carpeta / leer datos *(permisos avanzados)* <br /><br />Crear carpetas / Anexar datos *(permisos avanzados)* <br /><br />Leer atributos *(permisos avanzados)* <br /><br />Atributos extendidos de lectura *(permisos avanzados)* <br /><br />Permisos de lectura *(permisos avanzados)*      |  Solo esta carpeta       |
+| Otros grupos y cuentas     |  Ninguno (quitar)       |         |
 
 ## <a name="step-3-create-a-gpo-for-folder-redirection"></a>Paso 3: Crear un GPO para redirección de carpetas
 
@@ -121,15 +120,15 @@ Aquí le mostramos cómo crear un GPO para redirección de carpetas:
     
     Este paso es necesario debido a cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016).
 
->[!IMPORTANT]
->Debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), ahora debe proporcionar los permisos de lectura de grupo delegado usuarios autenticados en el GPO redirección de carpetas: en caso contrario, el GPO no se aplican a los usuarios, o si se ha aplicado, el GPO es quita, el redireccionamiento de carpetas hasta el equipo local. Para obtener más información, consulte [implementación de grupo Directiva de seguridad Update MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/).
+> [!IMPORTANT]
+> Debido a los cambios de seguridad realizados en [MS16-072](https://support.microsoft.com/help/3163622/ms16-072-security-update-for-group-policy-june-14-2016), ahora debe proporcionar los permisos de lectura de grupo delegado usuarios autenticados en el GPO redirección de carpetas: en caso contrario, el GPO no se aplican a los usuarios, o si se ha aplicado, el GPO es quita, el redireccionamiento de carpetas hasta el equipo local. Para obtener más información, consulte [implementación de grupo Directiva de seguridad Update MS16-072](https://blogs.technet.microsoft.com/askds/2016/06/22/deploying-group-policy-security-update-ms16-072-kb3163622/).
 
 ## <a name="step-4-configure-folder-redirection-with-offline-files"></a>Paso 4: Configurar la redirección de carpetas con archivos sin conexión
 
 Después de crear un GPO para la configuración de redirección de carpetas, edite la configuración de directiva de grupo para habilitar y configurar la redirección de carpetas, como se describe en el siguiente procedimiento.
 
->[!NOTE]
->Archivos sin conexión está habilitada de forma predeterminada para las carpetas redirigidas en los equipos cliente de Windows y deshabilitada en los equipos que ejecutan Windows Server, a menos que el usuario puede cambiar. Para utilizar Directiva de grupo para controlar si los archivos sin conexión está habilitado, utilice el **permitir o impedir el uso de la característica archivos sin conexión** configuración de directiva.
+> [!NOTE]
+> Archivos sin conexión está habilitada de forma predeterminada para las carpetas redirigidas en los equipos cliente de Windows y deshabilitada en los equipos que ejecutan Windows Server, a menos que el usuario puede cambiar. Para utilizar Directiva de grupo para controlar si los archivos sin conexión está habilitado, utilice el **permitir o impedir el uso de la característica archivos sin conexión** configuración de directiva.
 > Para obtener información acerca de algunas de las demás configuraciones de directiva de grupo de archivos sin conexión, vea [habilitar avanzadas sin conexión archivos de funcionalidad](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn270369(v%3dws.11)>), y [configuración de directiva de grupo para archivos sin conexión](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc759721(v%3dws.10)>).
 
 Aquí le mostramos cómo configurar la redirección de carpetas en la directiva de grupo:
@@ -141,6 +140,7 @@ Aquí le mostramos cómo configurar la redirección de carpetas en la directiva 
 
     > [!NOTE]
     > Para aplicar la redirección de carpetas para los equipos cliente que ejecutan Windows XP o Windows Server 2003, seleccione el **configuración** pestaña y seleccione el **aplicar también directiva de redirección a Windows 2000, Windows 2000 Server, Windows XP y Sistemas operativos Windows Server 2003** casilla de verificación.
+
 5. En el **ubicación de carpeta de destino** sección, seleccione **cree una carpeta para cada usuario en la ruta de acceso raíz** y, a continuación, en el **ruta de acceso raíz** , escriba la ruta de acceso para el almacenamiento de recurso compartido de archivos redirige las carpetas, por ejemplo:  **\\ \\fs1.corp.contoso.com\\$ de los usuarios**
 6. Seleccione el **configuración** ficha y en el **eliminación de la directiva** sección, seleccione opcionalmente **redirigir la carpeta a la ubicación del perfil de usuario local cuando se quita la directiva** (esta configuración puede ayudar a la redirección de carpetas se comportan de manera más predecible para adminisitrators y usuarios).
 7. Seleccione **Aceptar**y, a continuación, seleccione **Sí** en el cuadro de diálogo de advertencia.
@@ -149,8 +149,8 @@ Aquí le mostramos cómo configurar la redirección de carpetas en la directiva 
 
 Una vez haya completado la configuración de directiva de grupo de redirección de carpetas, el siguiente paso es habilitar el GPO, que se permite que se aplicará a los usuarios afectados.
 
->[!TIP]
->Si quieres implementar el soporte de equipo principal u otra configuración de directivas, hazlo ahora, antes de habilitar el GPO. Esto evita que se copien los datos de usuario a equipos no principales antes de habilitar el soporte de equipo principal.
+> [!TIP]
+> Si quieres implementar el soporte de equipo principal u otra configuración de directivas, hazlo ahora, antes de habilitar el GPO. Esto evita que se copien los datos de usuario a equipos no principales antes de habilitar el soporte de equipo principal.
 
 Aquí le mostramos cómo habilitar el GPO redirección de carpetas:
 
@@ -175,24 +175,24 @@ Aquí le mostramos cómo probar la redirección de carpetas:
 
 ## <a name="appendix-a-checklist-for-deploying-folder-redirection"></a>Apéndice A: Lista de comprobación para implementar la redirección de carpeta
 
-|Estado|Acción|
-|:---:|---|
-|☐<br>☐<br>☐|1. Preparar el dominio<br>-Unir equipos al dominio<br>-Crear cuentas de usuario|
-|☐<br><br><br>|2. Crear grupo de seguridad para la redirección de carpetas<br>-Nombre del grupo:<br>-Miembros:|
-|☐<br><br>|3. Crear un recurso compartido de archivos para las carpetas redirigidas<br>: Nombre del recurso compartido archivo:|
-|☐<br><br>|4. Crear un GPO para redirección de carpetas<br>-Nombre del GPO:|
-|☐<br><br>☐<br>☐<br>☐<br>☐<br>☐|5. Configurar opciones de directiva de redirección de carpetas y archivos sin conexión<br>-Redirigidas carpetas:<br>¿-Windows 2000, Windows XP y habilitada la compatibilidad con Windows Server 2003?<br>¿-Archivos sin conexión habilitados? (habilitado de forma predeterminada en los equipos cliente de Windows)<br>¿-Modo siempre sin conexión habilitado?<br>¿: Sincronización de archivos en segundo plano habilitada?<br>¿-Move optimizada de las carpetas redirigidas habilitado?|
-|☐<br><br>☐<br><br>☐<br>☐|6. (Opcional) Habilitar soporte de equipo principal<br>¿-Basadas en equipos o en función de usuario?<br>-Designar equipos principales para los usuarios<br>-Ubicación de usuario y asignaciones de equipos principales:<br>-(Opcional) habilitar soporte de equipo principal para redirección de carpetas<br>-(Opcional) habilitar soporte de equipo principal para perfiles de usuario móviles|
-|☐|7. Habilitar la redirección de carpetas de GPO|
-|☐|8. Probar la redirección de carpetas|
+| Estado           | Acción |
+| ---              | ---    |
+| ☐<br>☐<br>☐    | 1. Preparar el dominio<br>-Unir equipos al dominio<br>-Crear cuentas de usuario |
+| ☐<br><br><br>   | 2. Crear grupo de seguridad para la redirección de carpetas<br>-Nombre del grupo:<br>-Miembros: |
+| ☐<br><br>       | 3. Crear un recurso compartido de archivos para las carpetas redirigidas<br>: Nombre del recurso compartido archivo: |
+| ☐<br><br>       | 4. Crear un GPO para redirección de carpetas<br>-Nombre del GPO: |
+| ☐<br><br>☐<br>☐<br>☐<br>☐<br>☐ | 5. Configurar opciones de directiva de redirección de carpetas y archivos sin conexión<br>-Redirigidas carpetas:<br>¿-Windows 2000, Windows XP y habilitada la compatibilidad con Windows Server 2003?<br>¿-Archivos sin conexión habilitados? (habilitado de forma predeterminada en los equipos cliente de Windows)<br>¿-Modo siempre sin conexión habilitado?<br>¿: Sincronización de archivos en segundo plano habilitada?<br>¿-Move optimizada de las carpetas redirigidas habilitado? |
+| ☐<br><br>☐<br><br>☐<br>☐ | 6. (Opcional) Habilitar soporte de equipo principal<br>¿-Basadas en equipos o en función de usuario?<br>-Designar equipos principales para los usuarios<br>-Ubicación de usuario y asignaciones de equipos principales:<br>-(Opcional) habilitar soporte de equipo principal para redirección de carpetas<br>-(Opcional) habilitar soporte de equipo principal para perfiles de usuario móviles |
+| ☐         | 7. Habilitar la redirección de carpetas de GPO |
+| ☐         | 8. Probar la redirección de carpetas |
 
 ## <a name="change-history"></a>Historial de cambios
 
 En la tabla siguiente se resumen los cambios más importantes realizados en este tema.
 
-|Fecha|Descripción|Reason|
-|---|---|---|
-|18 de enero de 2017|Agrega un paso para [paso 3: Crear un GPO para redirección de carpetas](#step-3-create-a-gpo-for-folder-redirection) para delegar permisos de lectura a los usuarios autenticados, que ahora es necesario debido a una actualización de seguridad de la directiva de grupo.|Comentarios del cliente.|
+| Fecha | Descripción | Reason|
+| --- | --- | --- |
+| 18 de enero de 2017 | Agrega un paso para [paso 3: Crear un GPO para redirección de carpetas](#step-3-create-a-gpo-for-folder-redirection) para delegar permisos de lectura a los usuarios autenticados, que ahora es necesario debido a una actualización de seguridad de la directiva de grupo. | Comentarios del cliente |
 
 ## <a name="more-information"></a>Más información
 

@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: a9ee7a56-f062-474f-a61c-9387ff260929
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6869ee5f39f1719a3c71025207ef9ffe740492ff
-ms.sourcegitcommit: d84dc3d037911ad698f5e3e84348b867c5f46ed8
+ms.openlocfilehash: cf66a306c7f023852cec93d6458e74a99c46c831
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66266790"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812105"
 ---
 # <a name="use-dns-policy-for-geo-location-based-traffic-management-with-primary-secondary-deployments"></a>Uso de directiva DNS para la administración del tráfico basada en la ubicación geográfica con implementaciones primarias-secundarias
 
@@ -25,8 +25,8 @@ El escenario anterior, [uso de directiva DNS para la administración de tráfico
   
 Los servidores secundarios usan los protocolos de transferencia de zona transferencia autoritativo (AXFR) y transferencia de zona Incremental (IXFR) para solicitar y recibir las actualizaciones de zona que incluyen los nuevos cambios en las zonas de los servidores DNS principales.   
   
->[!NOTE]
->Para obtener más información acerca de AXFR, vea Internet Engineering Task Force (IETF) [de solicitud de comentarios 5936](https://tools.ietf.org/rfc/rfc5936.txt). Para obtener más información acerca de IXFR, consulte Internet Engineering Task Force (IETF) [de solicitud de comentarios de 1995](https://tools.ietf.org/html/rfc1995).  
+> [!NOTE]
+> Para obtener más información acerca de AXFR, vea Internet Engineering Task Force (IETF) [de solicitud de comentarios 5936](https://tools.ietf.org/rfc/rfc5936.txt). Para obtener más información acerca de IXFR, consulte Internet Engineering Task Force (IETF) [de solicitud de comentarios de 1995](https://tools.ietf.org/html/rfc1995).  
   
 ## <a name="primary-secondary-geo-location-based-traffic-management-example"></a>Ubicación geográfica secundaria principal en función de ejemplo de administración de tráfico  
 La siguiente es un ejemplo de cómo se puede usar la directiva DNS en una implementación de principal secundario para lograr el redireccionamiento del tráfico basándose en la ubicación física del cliente que realiza una consulta DNS.  
@@ -82,7 +82,7 @@ Cualquier actualización adicional en un ámbito de la zona, se envía una notif
 
 Antes de comenzar, asegúrese de que ha completado todos los pasos en el tema [uso de directiva DNS para la administración de tráfico en función de la ubicación geográfica con servidores principales](../../dns/deploy/Scenario--Use-DNS-Policy-for-Geo-Location-Based-Traffic-Management-with-Primary-Servers.md), y el servidor DNS principal se configura con zonas, ámbitos de zona, el cliente DNS Las subredes y directiva de DNS.  
   
->[!NOTE]
+> [!NOTE]
 > Las instrucciones de este tema para copiar las subredes de cliente DNS, los ámbitos de zona y las directivas DNS de los servidores DNS principales en los servidores DNS secundarios son para la instalación inicial de DNS y la validación. En el futuro que desea cambiar las subredes del cliente DNS, los ámbitos de zona y configuración de directivas en el servidor principal. En este caso, puede crear scripts de automatización para mantener los servidores secundarios sincronizados con el servidor principal.  
   
 Para configurar la directiva DNS para las respuestas de consulta basada primarias-secundarias la ubicación geográfica, debe realizar los pasos siguientes.  
@@ -95,9 +95,10 @@ Para configurar la directiva DNS para las respuestas de consulta basada primaria
   
 Las secciones siguientes proporcionan instrucciones de configuración detallada.  
   
->[!IMPORTANT]
->Las secciones siguientes incluyen ejemplos de comandos de Windows PowerShell que contienen valores de ejemplo para muchos parámetros. Asegúrese de sustituir los valores de ejemplo de estos comandos con los valores adecuados para su implementación antes de ejecutar estos comandos.  
-><br>Pertenencia a **DnsAdmins**, o equivalente, es necesario para realizar los procedimientos siguientes.  
+> [!IMPORTANT]
+> Las secciones siguientes incluyen ejemplos de comandos de Windows PowerShell que contienen valores de ejemplo para muchos parámetros. Asegúrese de sustituir los valores de ejemplo de estos comandos con los valores adecuados para su implementación antes de ejecutar estos comandos.  
+> 
+> Pertenencia a **DnsAdmins**, o equivalente, es necesario para realizar los procedimientos siguientes.  
   
 ### <a name="create-the-secondary-zones"></a>Crear las zonas de la base de datos secundaria
 
@@ -124,8 +125,8 @@ Debe configurar la configuración de zona principal para que:
   
 Puede usar los siguientes comandos de Windows PowerShell para configurar las opciones de transferencia de zona en la zona principal.
   
->[!NOTE]
->En el siguiente comando de ejemplo, el parámetro **-notificar** especifica que el servidor principal enviará notificaciones sobre actualizaciones a la lista de selección de bases de datos secundarias.  
+> [!NOTE]
+> En el siguiente comando de ejemplo, el parámetro **-notificar** especifica que el servidor principal enviará notificaciones sobre actualizaciones a la lista de selección de bases de datos secundarias.  
   
     
     Set-DnsServerPrimaryZone -Name "woodgrove.com" -Notify Notify -SecondaryServers "10.0.0.2,10.0.0.3" -SecureSecondaries TransferToSecureServers -ComputerName PrimaryServer  
@@ -160,8 +161,8 @@ Puede usar los siguientes comandos de Windows PowerShell para crear los ámbitos
     Get-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName PrimaryServer|Add-DnsServerZoneScope -ZoneName "woodgrove.com" -ComputerName SecondaryServer2 -ErrorAction Ignore  
   
 
->[!NOTE]
->En estos comandos de ejemplo, el **- ErrorAction omitir** parámetro se incluye, porque existe un ámbito de la zona de forma predeterminada en todas las zonas. El ámbito de la zona predeterminada no se pueden crear ni eliminar. La canalización dará como resultado un intento de crear ese ámbito y se producirá un error. Como alternativa, puede crear los ámbitos de la zona no predeterminada en dos zonas secundarias.  
+> [!NOTE]
+> En estos comandos de ejemplo, el **- ErrorAction omitir** parámetro se incluye, porque existe un ámbito de la zona de forma predeterminada en todas las zonas. El ámbito de la zona predeterminada no se pueden crear ni eliminar. La canalización dará como resultado un intento de crear ese ámbito y se producirá un error. Como alternativa, puede crear los ámbitos de la zona no predeterminada en dos zonas secundarias.  
   
 Para obtener más información, consulte [agregar DnsServerZoneScope](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverzonescope?view=win10-ps).  
   

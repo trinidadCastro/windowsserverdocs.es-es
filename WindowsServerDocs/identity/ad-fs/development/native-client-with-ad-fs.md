@@ -9,12 +9,12 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: e85a97fa08e4c77588b17aee08ee03e0b897a74c
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: 15bb6f1e39f64ff19ebb5515188ee944e277d3b7
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976851"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445480"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>Crear a un cliente nativo de aplicación de uso de los clientes públicos de OAuth con AD FS 2016 o posterior
 
@@ -163,7 +163,7 @@ Ejecutar la aplicación
 
 En este paso, la aplicación nativa redirige a AD FS y tiene un token de identificador y un token de acceso para la API Web
 
-3.  Escriba un elemento en el cuadro de texto y haga clic en Agregar elemento. En este paso, la aplicación llega a la API Web para agregar el elemento de tareas pendientes y para ello, presentan el token de acceso a la API Web obtenida de AD FS. La API Web coincide con el valor de audiencia para asegurarse de que el token está destinado a él y comprueba la firma del token con la información de los metadatos de federación.
+3. Escriba un elemento en el cuadro de texto y haga clic en Agregar elemento. En este paso, la aplicación llega a la API Web para agregar el elemento de tareas pendientes y para ello, presentan el token de acceso a la API Web obtenida de AD FS. La API Web coincide con el valor de audiencia para asegurarse de que el token está destinado a él y comprueba la firma del token con la información de los metadatos de federación.
 
 ![Iniciar sesión](media/native-client-with-ad-fs-2016/clienttodoadd.png)
 

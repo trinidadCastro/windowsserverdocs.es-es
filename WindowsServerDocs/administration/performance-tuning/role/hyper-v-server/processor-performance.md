@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 2a49fdaba89a01c8daf6483f72dbc88daa91452b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f16ee9cff9c244a8c579e008bced1e90b1a20673
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843246"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435593"
 ---
 # <a name="hyper-v-processor-performance"></a>Rendimiento del procesador de Hyper-V
 
@@ -69,15 +69,15 @@ Las características de NUMA virtual y Memoria dinámica no se pueden usar al mi
 
 Para obtener más información sobre NUMA Virtual, consulte [Introducción a NUMA Virtual de Hyper-V](https://technet.microsoft.com/library/dn282282.aspx).
 
-##<a name="see-also"></a>Vea también
+## <a name="see-also"></a>Vea también
 
--   [Terminología de Hyper-v.](terminology.md)
+-   [Terminología de Hyper-V](terminology.md)
 
 -   [Arquitectura de Hyper-V](architecture.md)
 
 -   [Configuración del servidor de Hyper-V](configuration.md)
 
--   [Rendimiento de la memoria de Hyper-V](memory-performance.md)
+-   [Rendimiento del procesador de Hyper-V](memory-performance.md)
 
 -   [Rendimiento de E/S de almacenamiento de Hyper-V](storage-io-performance.md)
 

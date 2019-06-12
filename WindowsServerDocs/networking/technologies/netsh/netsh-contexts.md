@@ -8,12 +8,12 @@ ms.assetid: 8cb9b59f-0255-4261-b49a-562c5ea50ee0
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: adb77d841ba4d69b0d36bc7f19d4707638530c97
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: adb1546bc21b3209a362fd61feab0d3ee6810a66
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823696"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812171"
 ---
 # <a name="netsh-command-syntax-contexts-and-formatting"></a>Sintaxis, contextos y formatos de comandos Netsh
 
@@ -33,68 +33,68 @@ Cada estos archivos DLL proporciona un amplio conjunto de características denom
 
 ### <a name="obtain-a-list-of-contexts"></a>Obtener una lista de contextos
 
-Puede obtener una lista de contextos de netsh abriendo el símbolo del sistema o Windows PowerShell en un equipo que ejecuta Windows Server 2016 o Windows 10. Escriba el comando **netsh** y presione ENTRAR. Tipo **/?**, y, a continuación, presione ENTRAR.
+Puede obtener una lista de contextos de netsh abriendo el símbolo del sistema o Windows PowerShell en un equipo que ejecuta Windows Server 2016 o Windows 10. Escriba el comando **netsh** y presione ENTRAR. Tipo **/?** , y, a continuación, presione ENTRAR.
 
 La siguiente es la salida de ejemplo de estos comandos en un equipo que ejecuta Windows Server 2016 Datacenter.
 
-    PS C:\Windows\system32> netsh
-    netsh>/?
-    
-    The following commands are available:
-    
-    Commands in this context:
-    ..            - Goes up one context level.
-    ?             - Displays a list of commands.
-    abort         - Discards changes made while in offline mode.
-    add           - Adds a configuration entry to a list of entries.
-    advfirewall   - Changes to the `netsh advfirewall' context.
-    alias         - Adds an alias.
-    branchcache   - Changes to the `netsh branchcache' context.
-    bridge        - Changes to the `netsh bridge' context.
-    bye           - Exits the program.
-    commit        - Commits changes made while in offline mode.
-    delete        - Deletes a configuration entry from a list of entries.
-    dhcpclient    - Changes to the `netsh dhcpclient' context.
-    dnsclient     - Changes to the `netsh dnsclient' context.
-    dump          - Displays a configuration script.
-    exec          - Runs a script file.
-    exit          - Exits the program.
-    firewall      - Changes to the `netsh firewall' context.
-    help          - Displays a list of commands.
-    http          - Changes to the `netsh http' context.
-    interface     - Changes to the `netsh interface' context.
-    ipsec         - Changes to the `netsh ipsec' context.
-    ipsecdosprotection - Changes to the `netsh ipsecdosprotection' context.
-    lan           - Changes to the `netsh lan' context.
-    namespace     - Changes to the `netsh namespace' context.
-    netio         - Changes to the `netsh netio' context.
-    offline       - Sets the current mode to offline.
-    online        - Sets the current mode to online.
-    popd          - Pops a context from the stack.
-    pushd         - Pushes current context on stack.
-    quit          - Exits the program.
-    ras           - Changes to the `netsh ras' context.
-    rpc           - Changes to the `netsh rpc' context.
-    set           - Updates configuration settings.
-    show          - Displays information.
-    trace         - Changes to the `netsh trace' context.
-    unalias       - Deletes an alias.
-    wfp           - Changes to the `netsh wfp' context.
-    winhttp       - Changes to the `netsh winhttp' context.
-    winsock       - Changes to the `netsh winsock' context.
-    
-    The following sub-contexts are available:
-     advfirewall branchcache bridge dhcpclient dnsclient firewall http interface ipsec ipsecdosprotection lan namespace netio ras rpc trace wfp winhttp winsock
-    
-    To view help for a command, type the command, followed by a space, and then
-     type ?.
-
+>    ```
+>   PS C:\Windows\system32> netsh
+>   netsh>/?
+>    
+>    The following commands are available:
+>    
+>    Commands in this context:
+>    ..            - Goes up one context level.
+>    ?             - Displays a list of commands.
+>    abort         - Discards changes made while in offline mode.
+>    add           - Adds a configuration entry to a list of entries.
+>    advfirewall   - Changes to the `netsh advfirewall' context.
+>    alias         - Adds an alias.
+>    branchcache   - Changes to the `netsh branchcache' context.
+>    bridge        - Changes to the `netsh bridge' context.
+>    bye           - Exits the program.
+>    commit        - Commits changes made while in offline mode.
+>    delete        - Deletes a configuration entry from a list of entries.
+>    dhcpclient    - Changes to the `netsh dhcpclient' context.
+>    dnsclient     - Changes to the `netsh dnsclient' context.
+>    dump          - Displays a configuration script.
+>    exec          - Runs a script file.
+>    exit          - Exits the program.
+>    firewall      - Changes to the `netsh firewall' context.
+>    help          - Displays a list of commands.
+>    http          - Changes to the `netsh http' context.
+>    interface     - Changes to the `netsh interface' context.
+>    ipsec         - Changes to the `netsh ipsec' context.
+>    ipsecdosprotection - Changes to the `netsh ipsecdosprotection' context.
+>    lan           - Changes to the `netsh lan' context.
+>    namespace     - Changes to the `netsh namespace' context.
+>    netio         - Changes to the `netsh netio' context.
+>    offline       - Sets the current mode to offline.
+>    online        - Sets the current mode to online.
+>    popd          - Pops a context from the stack.
+>    pushd         - Pushes current context on stack.
+>    quit          - Exits the program.
+>    ras           - Changes to the `netsh ras' context.
+>    rpc           - Changes to the `netsh rpc' context.
+>    set           - Updates configuration settings.
+>    show          - Displays information.
+>    trace         - Changes to the `netsh trace' context.
+>    unalias       - Deletes an alias.
+>    wfp           - Changes to the `netsh wfp' context.
+>    winhttp       - Changes to the `netsh winhttp' context.
+>    winsock       - Changes to the `netsh winsock' context.
+>    
+>    The following sub-contexts are available:
+>     advfirewall branchcache bridge dhcpclient dnsclient firewall http interface ipsec ipsecdosprotection lan namespace netio ras rpc trace wfp winhttp winsock
+>    
+>    To view help for a command, type the command, followed by a space, and then type ?.
+>    ```
 
 ### <a name="subcontexts"></a>Subcontextos
 
 Contextos de Netsh pueden contener comandos y en otros contextos, llamados *subcontextos*. Por ejemplo, en el contexto de enrutamiento, puede cambiar los subcontextos IP e IPv6.
 
-¿Para mostrar una lista de comandos y subcontextos que puede usar dentro de un contexto en el símbolo del sistema netsh, escriba el nombre de contexto y, a continuación, escriba **/?** o **ayuda**. Por ejemplo, para mostrar una lista de subcontextos y comandos que puede usar en el contexto de enrutamiento, en el símbolo del sistema de netsh \(es decir, **netsh&gt;**\), escriba uno de los siguientes:
+¿Para mostrar una lista de comandos y subcontextos que puede usar dentro de un contexto en el símbolo del sistema netsh, escriba el nombre de contexto y, a continuación, escriba **/?** o **ayuda**. Por ejemplo, para mostrar una lista de subcontextos y comandos que puede usar en el contexto de enrutamiento, en el símbolo del sistema de netsh \(es decir, **netsh&gt;** \), escriba uno de los siguientes:
 
 **¿enrutamiento /?**
 
@@ -127,11 +127,11 @@ Para iniciar el Shell de red y escriba netsh en el símbolo del sistema o en Win
 
 ### <a name="netsh"></a>netsh
 
-Netsh es una utilidad de scripting de línea de comandos que le permite, ya sea de forma local o remota, mostrar o modificar la configuración de red de un equipo que se está ejecutando. Se utiliza sin parámetros, **netsh** abre el símbolo del sistema de Netsh.exe \(es decir, **netsh&gt;**\).
+Netsh es una utilidad de scripting de línea de comandos que le permite, ya sea de forma local o remota, mostrar o modificar la configuración de red de un equipo que se está ejecutando. Se utiliza sin parámetros, **netsh** abre el símbolo del sistema de Netsh.exe \(es decir, **netsh&gt;** \).
 
 #### <a name="syntax"></a>Sintaxis
 
-**netsh** \[ **- a**&nbsp;*archivoAlias* \] \[ **- c** &nbsp;  *Contexto* \] \[ **- r**&nbsp;*equipoRemoto* \] \[ **- u** \[ *DomainName\\*  \] *UserName* \] \[ **-p** &nbsp; *Contraseña*  |  \* \] \[{*comandoNetsh* | **-f** &nbsp; *ScriptFile*}\]
+**netsh** \[ **- a**&nbsp;*archivoAlias* \] \[ **- c** &nbsp;  *Contexto* \] \[ **- r**&nbsp;*equipoRemoto* \] \[ **- u** \[ *DomainName\\*  \] *UserName* \] \[ **-p** &nbsp; *Contraseña*  |  \* \] \[{*comandoNetsh* |  **-f** &nbsp; *ScriptFile*}\]
 
 #### <a name="parameters"></a>Parámetros
 
@@ -155,8 +155,8 @@ Opcional. Especifica el **netsh** contexto que se desea escribir.
 
 Opcional. Especifica que desea que el comando se ejecute en un equipo remoto.
 
->[!IMPORTANT]
->Cuando usa algunos comandos de netsh remotamente en otro equipo con el **netsh – r** parámetro, el servicio Registro remoto debe ejecutar en el equipo remoto. Si no está en ejecución, Windows muestra un mensaje de error "Ruta de acceso de red no encontrado".
+> [!IMPORTANT]
+> Cuando usa algunos comandos de netsh remotamente en otro equipo con el **netsh – r** parámetro, el servicio Registro remoto debe ejecutar en el equipo remoto. Si no está en ejecución, Windows muestra un mensaje de error "Ruta de acceso de red no encontrado".
 
 ***`RemoteComputer`***
 
@@ -198,8 +198,8 @@ Opcional. Especifica el script que desea ejecutar.
 
 Opcional. Muestra la Ayuda en el símbolo del sistema de netsh.
 
->[!NOTE]
->Si especifica **`-r`** seguido de otro comando, **netsh** se ejecuta el comando en el equipo remoto y, a continuación, se devuelve a la línea de comandos de Cmd.exe. Si especifica **`-r`** sin otro comando **netsh** se abre en modo remoto. El proceso es similar a usar **conjunto máquina** en la línea de comandos de Netsh. Cuando usas **`-r`**, configura el equipo de destino para la instancia actual de **netsh** solo. Después de salir y volver a escribir **netsh**, se restablece el equipo de destino que el equipo local. Puede ejecutar **netsh** comandos en un equipo remoto mediante la especificación de un equipo el nombre almacenado en WINS, un nombre UNC, un nombre de Internet pueden resolverse mediante el servidor DNS o una dirección IP.
+> [!NOTE]
+> Si especifica **`-r`** seguido de otro comando, **netsh** se ejecuta el comando en el equipo remoto y, a continuación, se devuelve a la línea de comandos de Cmd.exe. Si especifica **`-r`** sin otro comando **netsh** se abre en modo remoto. El proceso es similar a usar **conjunto máquina** en la línea de comandos de Netsh. Cuando usas **`-r`** , configura el equipo de destino para la instancia actual de **netsh** solo. Después de salir y volver a escribir **netsh**, se restablece el equipo de destino que el equipo local. Puede ejecutar **netsh** comandos en un equipo remoto mediante la especificación de un equipo el nombre almacenado en WINS, un nombre UNC, un nombre de Internet pueden resolverse mediante el servidor DNS o una dirección IP.
 
 **Escribir valores de cadena de parámetros para los comandos de netsh**
 

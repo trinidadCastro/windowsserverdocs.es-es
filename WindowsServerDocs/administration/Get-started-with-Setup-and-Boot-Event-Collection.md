@@ -12,12 +12,12 @@ ms.topic: get-started-article
 ms.assetid: fc239aec-e719-47ea-92fc-d82a7247b3f8
 author: jaimeo
 ms.author: jaimeo
-ms.openlocfilehash: 781ed17fb07d2aecd4bb0b7bc672056096ab8060
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e94659c62db574dc8779c8246d471ab401414ddb
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837066"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435803"
 ---
 # <a name="get-started-with-setup-and-boot-event-collection"></a>Introducción a la recopilación de eventos de configuración y arranque
 
@@ -311,7 +311,7 @@ El propio registro del servicio del recopilador (que es distinto del programa de
   
 ||Error|Descripción del error|Síntoma|Posible problema|  
 |-|---------|---------------------|-----------|---------------------|  
-|Dism.exe|87|La opción nombre-característica no se reconoce en este contexto||- Esto puede ocurrir si escribes incorrectamente el nombre de la característica. Comprueba que usas la ortografía correcta e inténtela de nuevo.<br />- Confirma que esta característica está disponible en la versión de sistema operativo que estás utilizando. En Windows PowerShell, ejecuta **dism /online /get-features &#124; ?{$_ -match "boot"}**. Si no se devuelve ninguna coincidencia, probablemente está ejecutando una versión que no es compatible con esta característica.|  
+|Dism.exe|87|La opción nombre-característica no se reconoce en este contexto||- Esto puede ocurrir si escribes incorrectamente el nombre de la característica. Comprueba que usas la ortografía correcta e inténtela de nuevo.<br />- Confirma que esta característica está disponible en la versión de sistema operativo que estás utilizando. En Windows PowerShell, ejecuta **dism /online /get-features &#124; ?{$_ -match "boot"}** . Si no se devuelve ninguna coincidencia, probablemente está ejecutando una versión que no es compatible con esta característica.|  
 |Dism.exe|0x800f080c|Característica \<nombre > es desconocido.||Igual que arriba|  
   
 ### <a name="troubleshooting-the-collector"></a>Solución de problemas del recopilador  
@@ -335,23 +335,23 @@ En el nivel "debug", podría ser útil escribir el registro en un archivo, en lu
       
  **Un enfoque sugerido para el recopilador de solución de problemas:**  
    
- 1. En primer lugar, comprueba que el recopilador ha recibido la conexión desde el destino (creará el archivo solo cuando el destino empiece a enviar los mensajes) con   
-```  
-Get-SbecForwarding  
-```  
-Si devuelve que hay una conexión desde este destino, el problema podría estar en la configuración del registrador automático. Si no devuelve nada, el problema está en la conexión de KDNET con la que comenzar. Para diagnosticar problemas de conexión de KDNET, intenta comprobar la conexión desde ambos extremos (es decir, desde el recolector y desde el destino).  
+1. En primer lugar, comprueba que el recopilador ha recibido la conexión desde el destino (creará el archivo solo cuando el destino empiece a enviar los mensajes) con   
+   ```  
+   Get-SbecForwarding  
+   ```  
+   Si devuelve que hay una conexión desde este destino, el problema podría estar en la configuración del registrador automático. Si no devuelve nada, el problema está en la conexión de KDNET con la que comenzar. Para diagnosticar problemas de conexión de KDNET, intenta comprobar la conexión desde ambos extremos (es decir, desde el recolector y desde el destino).  
   
 2. Para ver diagnóstico extendidas del recopilador, agregue esto a la \<recopilador > elemento del archivo de configuración:  
-\<collector ... minlog="verbose">  
-Esto permitirá mensajes sobre todos los paquetes recibidos.  
+   \<collector ... minlog="verbose">  
+   Esto permitirá mensajes sobre todos los paquetes recibidos.  
 3. Comprueba si se reciben todos los paquetes. De forma opcional, es posible que desees escribir el registro en modo detallado directamente en un archivo en lugar de hacerlo a través de ETW. Para ello, agregue esto a la \<recopilador > elemento del archivo de configuración:  
-\<Recopilador... minlog = "detallado" log="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
+   \<Recopilador... minlog = "detallado" log="c:\ProgramData\Microsoft\BootEventCollector\Logs\log.txt" >  
       
 4. Comprueba los registros de eventos de todos los mensajes sobre los paquetes recibidos. Comprueba si se reciben todos los paquetes. Si se reciben los paquetes pero de forma incorrecta, comprueba los mensajes de eventos para obtener información detallada.  
 5. Desde el lado de destino, KDNET escribe información de diagnóstico en el registro. Buscar en   
-**HKLM\SYSTEM\CurrentControlSet\Services\kdnet** para los mensajes.  
-  KdInitStatus (DWORD) will = 0 en caso de éxito y muestra un código de error en el error  
-  KdInitErrorString = explicación del error (también contiene mensajes informativos si no hay error)  
+   **HKLM\SYSTEM\CurrentControlSet\Services\kdnet** para los mensajes.  
+   KdInitStatus (DWORD) will = 0 en caso de éxito y muestra un código de error en el error  
+   KdInitErrorString = explicación del error (también contiene mensajes informativos si no hay error)  
   
 6. Ejecuta Ipconfig.exe en el destino y comprueba el nombre de dispositivo que notifica. Si KDNET se carga correctamente, el nombre del dispositivo debe ser similar a "kdnic" en lugar del nombre de la tarjeta del proveedor original.  
 7. Comprueba si DHCP se ha configurado para el destino. KDNET absolutamente requiere DHCP.  

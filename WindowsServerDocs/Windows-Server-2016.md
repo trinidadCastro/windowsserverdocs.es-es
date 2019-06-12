@@ -1,11 +1,11 @@
 ---
 redirect_url: /windows-server/windows-server
-ms.openlocfilehash: 6f6e0d21fdf43ce3cf9f713d5731cfea5bb069de
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a852dfdda87aa37b403176483ea85f9bdb059e68
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812276"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436004"
 ---
 # <a name="windows-server-2016"></a>Windows Server 2016
 
@@ -19,54 +19,40 @@ En esta biblioteca se ofrece información a los profesionales de TI para evaluar
 <table border="0" width="100%" align='center'>
   <tr style="text-align:center;">
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/get-started/what-s-new-in-windows-server-2016">
-        <img height=145 src="media/whats-new-highlight.png" alt="What's new icon" title="Novedades en Windows Server 16"/></a>
-        <br/>Novedades
+      <a href="/windows-server/get-started/what-s-new-in-windows-server-2016"> &lt;¿img height = 145 src =&quot;media/novedades-nueva-highlight.png&quot; alt =&quot;lo&#39;icono nuevo s&quot; título =&quot;Novedades de Windows Server 16?&quot;/&gt;</a>
+        <br/>¿Qué&#39;s nuevo?
     </td>
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/get-started/server-basics">
-        <img height=145 src="media/1-getstarted.png" alt="get started icon" title="Introducción a Windows Server 16" /></a>
+      <a href="/windows-server/get-started/server-basics"> &lt;img height = 145 src =&quot;media, 1-getstarted.png&quot; alt =&quot;icono de introducción de get&quot; título =&quot;empezar a trabajar con Windows Server 16&quot; /&gt;</a>
       <br/>Comenzar </td>
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/administration/index">
-        <img height=145 src="media/8-management.png" alt="administer icon" title="Administración de Windows Server" /></a>
+      <a href="/windows-server/administration/index"> &lt;img height = 145 src =&quot;media/8-management.png&quot; alt =&quot;administrar icono&quot; título =&quot;administrar Windows Server&quot; /&gt;</a>
       <br/>Administración </td>
     <td align='center' style="width:25%; border:0;">
-      <a href="/windows-server/failover-clustering/failover-clustering-overview">
-        <img height=145 src="media/3-failover.png" alt="Failover clustering icon" title="Clústeres de conmutación por error de Windows Server" /></a>
+      <a href="/windows-server/failover-clustering/failover-clustering-overview"> &lt;img height = 145 src =&quot;media, 3-failover.png&quot; alt =&quot;icono de agrupación en clústeres de conmutación por error&quot; título =&quot;agrupación en clústeres de conmutación por error de Windows Server&quot; /&gt;</a>
       <br/>Clústeres de conmutación por error </td>
   </tr>
   <tr style="text-align:center;">
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/identity/identity-and-access">
-        <img height=145 src="media/4-identity.png" alt="Identity and access icon" title="Identidad y acceso de Windows Server" /></a>
+      <a href="/windows-server/identity/identity-and-access"> &lt;img height = 145 src =&quot;media, 4-identity.png&quot; alt =&quot;icono de acceso e identidad&quot; título =&quot;identidad de Windows Server y Access&quot; /&gt;</a>
       <br>Identidad y acceso </td>
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/networking/networking">
-        <img height=145 src="media/6-networking.png" alt="Networking icon" title="Redes en Windows Server" />
-        </a>
+      <a href="/windows-server/networking/networking"> &lt;img height = 145 src =&quot;media/6-networking.png&quot; alt =&quot;icono redes&quot; título =&quot;a redes de Windows Server&quot; /&gt; </a>
       <br/>Funciones de red </td>
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/remote/index">
-        <img height=145 src="media/remote.png" alt="remote icon" title="Administración de servidor y acceso remoto" />
-        </a>
+      <a href="/windows-server/remote/index"> &lt;img height = 145 src =&quot;media/remote.png&quot; alt =&quot;icono remoto&quot; título =&quot;administración de acceso y el servidor remoto&quot; /&gt; </a>
       <br/>Acceso remoto </td>
     <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/security/security-and-assurance">
-        <img height=145 src="media/5-security.png" alt="Security icon" title="Seguridad y control de Windows Server" />
-      </a>
+      <a href="/windows-server/security/security-and-assurance"> &lt;img height = 145 src =&quot;media/5-security.png&quot; alt =&quot;icono seguridad&quot; título =&quot;aseguramiento y seguridad de Windows Server&quot; /&gt; </a>
       <br/>Seguridad y control </td>
   </tr>
   <tr style="text-align:center;">
     <td align='center' style="width:25%; border:0;">&nbsp;</td>
     <td align='center' style="width:25%; border:0;"><br>
-      <a href="/windows-server/storage/storage">
-        <img height=145 src="media/7-storage.png" alt="Storage icon" title="Almacenamiento de Windows Server" />
-      </a>
+      <a href="/windows-server/storage/storage"> &lt;img height = 145 src =&quot;media/7-storage.png&quot; alt =&quot;icono almacenamiento&quot; título =&quot;almacenamiento de Windows Server&quot; /&gt; </a>
       <br/>Almacenamiento </td>
    <td align='center' style="width:25%; border:0;"><br/>
-      <a href="/windows-server/virtualization/virtualization">
-        <img height=145 src="media/virtualization.png" alt="virtualization icon" title="Virtualización de Windows Server" /></a>
+      <a href="/windows-server/virtualization/virtualization"> &lt;img height = 145 src =&quot;media/virtualization.png&quot; alt =&quot;icono virtualización&quot; título =&quot;virtualización de Windows Server&quot; /&gt;</a>
       <br/>Virtualización </td>
     <td align='center' style="width:25%; border:0;">&nbsp; </td>
   </tr>

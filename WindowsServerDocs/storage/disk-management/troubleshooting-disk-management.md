@@ -1,23 +1,23 @@
 ---
 title: Solución de problemas de Administración de discos
 description: En este artículo se describe cómo solucionar problemas de Administración de discos
-ms.date: 12/22/2017
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c234828706d999fe049626a2fd98db70e612766f
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 4d9448cc642ef522fa129dcfe97e2286f16bad1b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192741"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812535"
 ---
 # <a name="troubleshooting-disk-management"></a>Solución de problemas de Administración de discos
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 En este tema se tratan algunos problemas comunes que puedes encontrar al usar la Administración de discos.
 
@@ -26,7 +26,7 @@ En este tema se tratan algunos problemas comunes que puedes encontrar al usar la
 
 ## <a name="a-disks-status-is-not-initialized-or-the-disk-is-missing"></a>Estado de un disco no inicializado o el disco falta
 
-![Administración de discos que se muestra un disco desconocido que se debe inicializar.](media\uninitialized-disk.PNG)
+![Administración de discos que se muestra un disco desconocido que se debe inicializar.](media/uninitialized-disk.PNG)
 
 **Causa:** Si tiene un disco que no aparece en el Explorador de archivos y aparece en la administración de discos como *no inicializado*, es posible que el disco no tiene una firma de disco válida. Básicamente, esto significa que nunca se ha inicializado y con el formato del disco, o el formato de la unidad se ha dañado algún modo. 
 
@@ -39,24 +39,25 @@ Hay una serie de motivos, puede que falte o que no se pudo inicializar una a la 
 1. Examine el disco en administración de discos. Si aparece *Offline* como se muestra aquí, try, haga clic en él y seleccionando **Online**.
 
     ![Disco aparece como sin conexión](media/offline-disk.png)
-1. Si el disco aparece en administración de discos como *Online*, y tiene una partición primaria que se muestra como *correcto*, como se muestra aquí, que es una buena señal.
+2. Si el disco aparece en administración de discos como *Online*, y tiene una partición primaria que se muestra como *correcto*, como se muestra aquí, que es una buena señal.
 
     ![Se muestra como en línea con un volumen en buen estado de disco](media/healthy-volume.png)
     - Si la partición tiene un sistema de archivos, pero sin letra de unidad (por ejemplo, E:), consulte [cambiar una letra de unidad](change-a-drive-letter.md) para agregar manualmente una letra de unidad.
     - Si no tiene un sistema de archivos (NTFS, ReFS, FAT32 o exFAT) y sabe que el disco está vacío, haga clic en la partición y seleccione **formato**. Al formatear un disco, borra todos los datos en él, por lo que no lo haga si está intentando recuperar archivos desde el disco: en su lugar, vaya al paso siguiente.
-1. Si tiene discos, desconecte el disco externo, conéctelo en y, a continuación, seleccione **acción** > **volver a examinar los discos**. 
-2. Apague su PC, desactivar el disco duro externo (si es un disco externo con un cable de alimentación) y, a continuación, vuelva a activar su PC y el disco.
+3. Si tiene discos, desconecte el disco externo, conéctelo en y, a continuación, seleccione **acción** > **volver a examinar los discos**. 
+4. Apague su PC, desactivar el disco duro externo (si es un disco externo con un cable de alimentación) y, a continuación, vuelva a activar su PC y el disco.
     Para desactivar su PC de Windows 10, seleccione el botón Inicio, seleccione el botón de encendido y, a continuación, seleccione **apagar**.
-1. Conecte el disco en un puerto USB diferente que se encuentra directamente en su PC (no en un concentrador).
+5. Conecte el disco en un puerto USB diferente que se encuentra directamente en su PC (no en un concentrador).
     A veces, los discos USB no obtener suficiente capacidad de algunos puertos, o tiene otros problemas con determinados puertos. Esto es especialmente habitual con concentradores USB, pero a veces hay diferencias entre los puertos en un equipo, así que pruebe algunos puertos diferentes si las tiene.
-1. Pruebe un cable diferente.
+6. Pruebe un cable diferente.
     Podría parecer una locura, pero producirá un error en un lote de cables, por lo que intente usar un cable diferente para conectar el disco. Si tiene un disco interno en un equipo de escritorio, probablemente necesitará apagar su PC antes de cambiar los cables, consulte el manual de su PC para obtener más información.
-1. Compruebe el Administrador de dispositivos para los problemas.
+7. Compruebe el Administrador de dispositivos para los problemas.
     Presione y mantenga el botón Inicio, a continuación, seleccione el Administrador de dispositivos en el menú contextual (o secundario). Busque dispositivos con un signo de exclamación junto a él u otros problemas, haga doble clic en el dispositivo y, a continuación, leer su estado.
 
     Esta es una lista de [códigos de Error en el Administrador de dispositivos](https://support.microsoft.com/help/310123/error-codes-in-device-manager-in-windows), pero un enfoque que a veces funciona es que hace clic en el dispositivo problemático, seleccione **desinstalar dispositivo**y, a continuación, **acción**  >  **Buscar cambios de hardware**.
-    ![Administrador de dispositivos con un dispositivo USB desconocido](media\device-manager.PNG)
-1. Conecte el disco en un equipo diferente.
+
+    ![Administrador de dispositivos con un dispositivo USB desconocido](media/device-manager.PNG)
+8. Conecte el disco en un equipo diferente.
     
     Si el disco no funciona en otro equipo, es una buena señal de que hay algo vaya mal sucede en el disco y no a su PC. Nada divertido, lo sabemos. Hay algunos pasos más que puede probar en [USB externo unidad error "Debe inicializar el disco antes de que el Administrador de discos lógicos pueden tener acceso a"](https://social.technet.microsoft.com/Forums/windows/en-US/2b069948-82e9-49ef-bbb7-e44ec7bfebdb/forum-faq-external-usb-drive-error-you-must-initialize-the-disk-before-logical-disk-manager-can?forum=w7itprohardware), pero podría ser el momento para buscar y solicitar ayuda en el [decomunidaddeMicrosoft](https://answers.microsoft.com/en-us/windows) de sitio, o póngase en contacto con el fabricante del disco.
 
@@ -64,9 +65,9 @@ Hay una serie de motivos, puede que falte o que no se pudo inicializar una a la 
 
 > [!IMPORTANT]
 > Errores en los discos con bastante frecuencia, por lo que es importante realizar copias de seguridad con regularidad todos los archivos que le interesan. Si tiene un disco que no aparece en ocasiones o genera errores, tenga en cuenta esto un aviso para que vuelva a comprobar los métodos de copia de seguridad. Es correcto si está ligeramente por detrás de: hemos todos pasado por ahí. La mejor solución de copia de seguridad es que utiliza, por lo que le recomendamos que busque uno que funciona para usted y sígala.
-
+> 
 > [!TIP]
-Para obtener información sobre cómo usar aplicaciones integradas en Windows a los archivos de copia de seguridad en una unidad externa como una unidad USB, consulte [copia de seguridad y restaurar los archivos](https://support.microsoft.com/help/17143/windows-10-back-up-your-files). También puede guardar archivos en OneDrive de Microsoft, que sincroniza los archivos de su PC en la nube. Si se produce un error en el disco duro, podrá obtener los archivos que se almacenan en OneDrive desde OneDrive.com. Para obtener más información, consulte [OneDrive en su PC](https://support.microsoft.com/help/17184/windows-10-onedrive).
+> Para obtener información sobre cómo usar aplicaciones integradas en Windows a los archivos de copia de seguridad en una unidad externa como una unidad USB, consulte [copia de seguridad y restaurar los archivos](https://support.microsoft.com/help/17143/windows-10-back-up-your-files). También puede guardar archivos en OneDrive de Microsoft, que sincroniza los archivos de su PC en la nube. Si se produce un error en el disco duro, podrá obtener los archivos que se almacenan en OneDrive desde OneDrive.com. Para obtener más información, consulte [OneDrive en su PC](https://support.microsoft.com/help/17184/windows-10-onedrive).
 
 ## <a name="a-basic-or-dynamic-disks-status-is-unreadable"></a>El estado de un disco básico o dinámico es ilegible
 
@@ -177,10 +178,8 @@ Si el estado del volumen es **Correcto (en riesgo)** , un estado del disco subya
 2. Para administrar discos en equipos remotos que admiten VDS, debes configurar el Firewall de Windows Defender en el equipo local (en el que se ejecuta Administración de discos) y el equipo remoto.
 3. En el equipo local, configura el Firewall de Windows Defender para habilitar la excepción de Administración remota del volumen.
 
-
 > [!NOTE]
 > La excepción de Administración remota del volumen incluye excepciones para Vds.exe, Vdsldr.exe y el puerto TCP 135.
 
-
- > [!NOTE]
- > No se admiten las conexiones remotas en grupos de trabajo. Tanto el equipo local como el equipo remoto deben ser miembros de un dominio.
+> [!NOTE]
+> No se admiten las conexiones remotas en grupos de trabajo. Tanto el equipo local como el equipo remoto deben ser miembros de un dominio.

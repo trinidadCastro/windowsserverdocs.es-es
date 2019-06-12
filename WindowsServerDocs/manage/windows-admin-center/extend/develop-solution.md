@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ed5ecddbaef91f127846825e408a9a6ec65ff741
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 268a7d2833f73e9fab006501e9b3dc261d1b1d9e
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825476"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452573"
 ---
 # <a name="develop-a-solution-extension"></a>Desarrollar una extensión de la solución
 
@@ -71,10 +71,10 @@ Una vez que se complete, ha configurado todo lo que necesita para cargar la nuev
 
 Ahora que ha creado una extensión con la CLI de Windows Admin Center, está listo para personalizar el contenido.  Consulte a estas guías para obtener ejemplos de lo que puede hacer:
 
-- Agregar un [módulo vacío](guides\add-module.md)
-- Agregar un [iFrame](guides\add-iframe.md)
-- Crear un [el proveedor de conexión personalizado](guides\create-connection-provider.md)
-- Modificar [root de comportamiento de navegación](guides\modify-root-navigation.md)
+- Agregar un [módulo vacío](guides/add-module.md)
+- Agregar un [iFrame](guides/add-iframe.md)
+- Crear un [el proveedor de conexión personalizado](guides/create-connection-provider.md)
+- Modificar [root de comportamiento de navegación](guides/modify-root-navigation.md)
  
 Puede encontrar más ejemplos nuestro [sitio GitHub SDK](https://aka.ms/wacsdk):
 -  [Herramientas de desarrollo](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/windows-admin-center-developer-tools) es una extensión totalmente operativa que puede ser de carga lateral en Windows Admin Center y contiene una amplia colección de ejemplos de funcionalidad y la herramienta de ejemplo que puede examinar y usar en su propia extensión.

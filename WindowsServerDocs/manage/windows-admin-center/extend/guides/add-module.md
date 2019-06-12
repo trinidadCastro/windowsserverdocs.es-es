@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: e6978ce20a7c6da8addb217de8d30f733b40d261
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8d901097eb280679a388ff66161e3514befcd13
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834406"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452655"
 ---
 # <a name="add-a-module-to-a-tool-extension"></a>Agregar un módulo a una extensión de herramienta
 
@@ -23,7 +23,7 @@ En este artículo, agregaremos un módulo vacío a una extensión de herramienta
 
 ## <a name="prepare-your-environment"></a>Preparar el entorno
 
-Si no lo ha hecho ya, siga las instrucciones en desarrollar un [herramienta](..\develop-tool.md) (o [solución](..\develop-solution.md)) extensión para preparar el entorno y crear una extensión de la herramienta nueva y vacía.
+Si no lo ha hecho ya, siga las instrucciones en desarrollar un [herramienta](../develop-tool.md) (o [solución](../develop-solution.md)) extensión para preparar el entorno y crear una extensión de la herramienta nueva y vacía.
 
 ## <a name="use-the-angular-cli-to-create-a-module-and-component"></a>Use la CLI de Angular para crear un módulo (y componente)
 
@@ -181,4 +181,4 @@ Este es un ejemplo de una ruta de acceso predeterminados actualizados:
 
 ## <a name="build-and-side-load-your-extension"></a>Compilación y cargan la extensión
 
-Ahora ha agregado un módulo a su extensión.  A continuación, puede [de compilación y side carga](..\develop-tool.md#build-and-side-load-your-extension) la extensión en Windows Admin Center para ver los resultados.
+Ahora ha agregado un módulo a su extensión.  A continuación, puede [de compilación y side carga](../develop-tool.md#build-and-side-load-your-extension) la extensión en Windows Admin Center para ver los resultados.

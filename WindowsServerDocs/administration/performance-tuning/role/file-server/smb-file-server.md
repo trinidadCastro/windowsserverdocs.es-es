@@ -7,12 +7,12 @@ ms.topic: article
 author: phstee
 ms.author: NedPyle; Danlo; DKruse
 ms.date: 4/14/2017
-ms.openlocfilehash: 337716792a4bb3cf730b723df3abe1029631426b
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 87ad8058f7353c938087b1211e0f17820f0bd2ae
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222502"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435650"
 ---
 # <a name="performance-tuning-for-smb-file-servers"></a>Optimizar el rendimiento de los servidores de archivos SMB
 
@@ -93,22 +93,22 @@ Los siguientes contadores de rendimiento de SMB se introdujeron en Windows Serve
 
 El siguiente REG\_valores de DWORD del registro pueden afectar al rendimiento de los servidores de archivos SMB:
 
--   **Smb2CreditsMin** y **Smb2CreditsMax**
+- **Smb2CreditsMin** y **Smb2CreditsMax**
 
-    ```
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMin
-    ```
+  ```
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMin
+  ```
 
-    ```
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMax
-    ```
+  ```
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\Smb2CreditsMax
+  ```
 
-    Los valores predeterminados son 512 y 8192, respectivamente. Estos parámetros permiten al servidor limitar la simultaneidad de la operación de cliente dinámicamente dentro de los límites especificados. Algunos clientes podrían conseguir aumento del rendimiento con mayores límites de simultaneidad, por ejemplo, copiar archivos a través de vínculos de gran ancho de banda, latencia alta.
+  Los valores predeterminados son 512 y 8192, respectivamente. Estos parámetros permiten al servidor limitar la simultaneidad de la operación de cliente dinámicamente dentro de los límites especificados. Algunos clientes podrían conseguir aumento del rendimiento con mayores límites de simultaneidad, por ejemplo, copiar archivos a través de vínculos de gran ancho de banda, latencia alta.
     
-    >[!TIP]
-    > Antes de Windows 10 y Windows Server 2016, el número de créditos concedidos al cliente varía dinámicamente entre Smb2CreditsMin y Smb2CreditsMax según un algoritmo que puede utilizar para determinar el número óptimo de créditos para conceder en función de la latencia de red y uso de crédito. En Windows 10 y Windows Server 2016, se cambió el servidor SMB para conceder incondicionalmente créditos a petición hasta el número máximo configurado de créditos. Como parte de este cambio, se ha quitado el crédito mecanismo, lo que reduce el tamaño de ventana de crédito de la conexión cuando el servidor está bajo presión de memoria, de limitación. Eventos de falta de memoria del kernel que desencadenó la limitación solo está señalado cuando el servidor de poco memoria (< unos MB) que sean inútiles. Puesto que el servidor ya no reduce el crédito windows la configuración de Smb2CreditsMin ya no es necesaria y ahora se omite.
-
-    > Puede supervisar los recursos compartidos de cliente de SMB \\ /s se detiene de crédito para ver si hay algún problema con los créditos.
+  > [!TIP]
+  > Antes de Windows 10 y Windows Server 2016, el número de créditos concedidos al cliente varía dinámicamente entre Smb2CreditsMin y Smb2CreditsMax según un algoritmo que puede utilizar para determinar el número óptimo de créditos para conceder en función de la latencia de red y uso de crédito. En Windows 10 y Windows Server 2016, se cambió el servidor SMB para conceder incondicionalmente créditos a petición hasta el número máximo configurado de créditos. Como parte de este cambio, se ha quitado el crédito mecanismo, lo que reduce el tamaño de ventana de crédito de la conexión cuando el servidor está bajo presión de memoria, de limitación. Eventos de falta de memoria del kernel que desencadenó la limitación solo está señalado cuando el servidor de poco memoria (< unos MB) que sean inútiles. Puesto que el servidor ya no reduce el crédito windows la configuración de Smb2CreditsMin ya no es necesaria y ahora se omite.
+  > 
+  > Puede supervisar los recursos compartidos de cliente de SMB \\ /s se detiene de crédito para ver si hay algún problema con los créditos.
 
 - **AdditionalCriticalWorkerThreads**
 
@@ -121,27 +121,28 @@ El siguiente REG\_valores de DWORD del registro pueden afectar al rendimiento de
     >[!TIP]
     > El valor es posible que tenga que aumentar si la cantidad de administrador de caché de integridad de datos (contador de rendimiento de caché\\páginas desfasadas) está creciendo a consumir una gran parte (más ~ 25%) de memoria o si el sistema está realizando una gran cantidad de sincrónica las operaciones de E/s de lectura.
 
--   **MaxThreadsPerQueue**
+- **MaxThreadsPerQueue**
 
-    ```
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\MaxThreadsPerQueue
-    ```
+  ```
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\MaxThreadsPerQueue
+  ```
 
-    El valor predeterminado es 20. Al aumentar este valor aumenta el número de subprocesos que puede usar el servidor de archivos para atender las solicitudes simultáneas. Cuando debe atender un gran número de conexiones activas y los recursos de hardware, como el ancho de banda de almacenamiento, son suficientes, aumentar el valor puede mejorar los tiempos de respuesta, el rendimiento y escalabilidad del servidor.
+  El valor predeterminado es 20. Al aumentar este valor aumenta el número de subprocesos que puede usar el servidor de archivos para atender las solicitudes simultáneas. Cuando debe atender un gran número de conexiones activas y los recursos de hardware, como el ancho de banda de almacenamiento, son suficientes, aumentar el valor puede mejorar los tiempos de respuesta, el rendimiento y escalabilidad del servidor.
 
-    >[!TIP]
-    > Una indicación de que es posible que tenga que aumentar el valor es si las colas de trabajo SMB2 están creciendo muy grandes (contador de rendimiento "colas de trabajos de servidor\\longitud de cola\\SMB2 sin bloqueo \*' está constantemente por encima de 100 ~).
+  >[!TIP]
+  > Una indicación de que es posible que tenga que aumentar el valor es si las colas de trabajo SMB2 están creciendo muy grandes (contador de rendimiento "colas de trabajos de servidor\\longitud de cola\\SMB2 sin bloqueo \*' está constantemente por encima de 100 ~).
 
-    >[!Note]
-    >En Windows 10 y Windows Server 2016, MaxThreadsPerQueue no está disponible. El número de subprocesos para un grupo de subprocesos será "20 * el número de procesadores en un nodo NUMA".  
+  >[!Note]
+  >En Windows 10 y Windows Server 2016, MaxThreadsPerQueue no está disponible. El número de subprocesos para un grupo de subprocesos será "20 * el número de procesadores en un nodo NUMA".
+     
 
--   **AsynchronousCredits**
+- **AsynchronousCredits**
 
-    ``` 
-    HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
-    ```
+  ``` 
+  HKLM\System\CurrentControlSet\Services\LanmanServer\Parameters\AsynchronousCredits
+  ```
 
-    El valor predeterminado es 512. Este parámetro limita el número de comandos SMB asincrónicos simultáneos que se permiten en una sola conexión. Algunos casos (por ejemplo, cuando hay un servidor front-end con un servidor IIS de back-end) requieren una gran cantidad de simultaneidad (por archivo cambiar solicitudes de notificación, en particular). El valor de esta entrada puede aumentarse para admitir estos casos.
+  El valor predeterminado es 512. Este parámetro limita el número de comandos SMB asincrónicos simultáneos que se permiten en una sola conexión. Algunos casos (por ejemplo, cuando hay un servidor front-end con un servidor IIS de back-end) requieren una gran cantidad de simultaneidad (por archivo cambiar solicitudes de notificación, en particular). El valor de esta entrada puede aumentarse para admitir estos casos.
 
 ### <a name="smb-server-tuning-example"></a>Ejemplo de optimización de servidor SMB
 

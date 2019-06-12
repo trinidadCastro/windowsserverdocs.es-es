@@ -11,12 +11,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: dbdbd0f436645f7e19c07e4f3278c5073636a547
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.openlocfilehash: 3b4feb6b8b3dad5c34de92f634eb30d0e952fe76
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831866"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435775"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>Repositorio de Software de Linux para productos de Microsoft
 
@@ -29,8 +29,8 @@ Repositorio de Software de Microsoft Linux consta de varios repositorios subcarp
 
  - MSSQL-server - estos repositorios contienen paquetes para Microsoft SQL Server en Linux: Véase también: [SQL Server en Linux](https://www.microsoft.com/en-us/sql-server/sql-server-vnext-including-Linux).
 
->[!Note]
-Los paquetes en los repositorios de software de Linux están sujetos a los términos de licencia que se encuentra en los paquetes. Lea los términos de licencia antes de usar el paquete. La instalación y uso del paquete constituye su aceptación de estos términos. Si no está de acuerdo con los términos de licencia, no use el paquete.
+> [!Note]
+> Los paquetes en los repositorios de software de Linux están sujetos a los términos de licencia que se encuentra en los paquetes. Lea los términos de licencia antes de usar el paquete. La instalación y uso del paquete constituye su aceptación de estos términos. Si no está de acuerdo con los términos de licencia, no use el paquete.
 
 
 ## <a name="configuring-the-repositories"></a>Configuración de los repositorios

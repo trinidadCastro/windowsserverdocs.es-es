@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: e20b4960faac0ef40ad68271fa907394344e9c47
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: b1e5726e3976527278b11f105007a32548da0bc4
+ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034427"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66805151"
 ---
 # <a name="add-the-rd-connection-broker-server-to-the-deployment-and-configure-high-availability"></a>Adición del servidor de Agente de conexión a Escritorio remoto para la implementación y la configuración de alta disponibilidad
 
@@ -27,7 +27,7 @@ Puede implementar un clúster de agente de conexión de escritorio remoto (RD Co
 
 ## <a name="pre-requisites"></a>Requisitos previos
 
-Configurar un servidor para que actúe como un segundo agente de conexión a Escritorio remoto: Esto puede ser un servidor físico o una máquina virtual.
+Configurar un servidor para que actúe como un segundo agente de conexión a Escritorio remoto, puede tratarse de un servidor físico o una máquina virtual.
 
 Configuración de una base de datos para el agente de conexión. Puede usar [Azure SQL Database](https://azure.microsoft.com/documentation/articles/sql-database-get-started/#create-a-new-aure-sql-database) instancia o SQL Server en su entorno local. Hablamos acerca del uso de Azure SQL a continuación, pero los pasos se siguen aplicando a SQL Server. Deberá buscar la cadena de conexión de la base de datos y asegúrese de que tiene el controlador ODBC correcto.
 
@@ -36,21 +36,23 @@ Configuración de una base de datos para el agente de conexión. Puede usar [Azu
 1. Buscar la cadena de conexión de la base de datos que creó, necesitará ambos para identificar la versión del controlador ODBC que necesita y más adelante, cuando se configura el agente de conexión propia (paso 3), por lo que guarda la cadena en lugar donde se puede hacer referencia a él fácilmente. Aquí puede saber cuál es la cadena de conexión para SQL Azure:  
     1. En el portal de Azure, haga clic en **examinar > grupos de recursos** y haga clic en el grupo de recursos para la implementación.   
     2. Seleccione la base de datos SQL que acaba de crear (por ejemplo, CB DB1).   
-    3. Haga clic en **configuración > Propiedades > mostrar cadenas de conexión de base de datos**.   
+    3. Haga clic en **configuración** > **propiedades** > **mostrar cadenas de conexión de base de datos**.   
     4. Copie la cadena de conexión **ODBC (incluye Node.js)** , que debería tener este aspecto:   
       
-        Driver = {SQL Server Native Client 13.0}; Server = tcp:cb-sqls1.database.windows.net,1433; Database = CB-DB1; UID =sqladmin@contoso; PWD = {your_password_here}; Cifrar = yes; TrustServerCertificate = no; Tiempo de espera de conexión = 30;   
+        ```
+        Driver={SQL Server Native Client 13.0};Server=tcp:cb-sqls1.database.windows.net,1433;Database=CB-DB1;Uid=sqladmin@contoso;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+        ```
   
     5. Reemplace "your_password_here" con la contraseña real. Usará esta cadena completa, con la contraseña que se incluyen, al conectarse a la base de datos. 
 2. Instalar al controlador ODBC en el nuevo agente de conexión: 
    1. Si usa una máquina virtual para el agente de conexión, cree una dirección IP pública para el primer agente de conexión a Escritorio remoto. (Sólo tiene que hacer esto si la máquina virtual RDMS no dispone de una dirección IP pública para permitir las conexiones RDP.)
-       1. En el portal de Azure, haga clic en **examinar > grupos de recursos**, haga clic en el grupo de recursos para la implementación y, a continuación, haga clic en la primera máquina virtual de agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).
+       1. En el portal de Azure, haga clic en **examinar** > **grupos de recursos**, haga clic en el grupo de recursos para la implementación y, a continuación, haga clic en la primera máquina virtual de agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).
        2. Haga clic en **configuración > interfaces de red**y, a continuación, haga clic en la interfaz de red correspondiente.
        3. Haga clic en **configuración > dirección IP**.
        4. Para **dirección IP pública**, seleccione **habilitado**y, a continuación, haga clic en **dirección IP**.
        5. Si tiene una dirección IP pública existente que desea usar, selecciónelo en la lista. En caso contrario, haga clic en **crear nuevo**, escriba un nombre y, a continuación, haga clic en **Aceptar** y, a continuación, **guardar**.
    2. Conectar con el primer agente de conexión a Escritorio remoto:
-       1. En el portal de Azure, haga clic en **examinar > grupos de recursos**, haga clic en el grupo de recursos para la implementación y, a continuación, haga clic en la primera máquina virtual de agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).
+       1. En el portal de Azure, haga clic en **examinar** > **grupos de recursos**, haga clic en el grupo de recursos para la implementación y, a continuación, haga clic en la primera máquina virtual de agente de conexión a Escritorio remoto (por ejemplo, Contoso-Cb1).
        2. Haga clic en **Connect > Abrir** para abrir el cliente de escritorio remoto.
        3. En el cliente, haga clic en **Connect**y, a continuación, haga clic en **usar otra cuenta de usuario**. Escriba el nombre de usuario y la contraseña para una cuenta de administrador de dominio.
        4. Haga clic en **Sí** cuando existe una advertencia sobre el certificado.

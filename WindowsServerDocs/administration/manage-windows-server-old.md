@@ -8,19 +8,19 @@ author: lizap
 ms.author: elizapo
 ms.date: 03/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 4faadb811927626c26a5b01e2ce0598d40792b68
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ae87b12997aa3cb3ae3fe290c9243995b30d6b0
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846766"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452817"
 ---
 # <a name="manage-windows-server"></a>Administrar Windows Server
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 >[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Echa un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Buscas información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
  <ul class="cardse panelContent cols cols3">
     <li>
@@ -118,5 +118,5 @@ Windows PowerShell es un lenguaje de shell de línea de comandos y de scripting 
 Las herramientas de línea de comandos de Windows se usan para realizar tareas administrativas en Windows. Puedes usar la referencia de comandos para familiarizarte con las herramientas de línea de comandos, para obtener información sobre el shell de comandos y para automatizar tareas de línea de comandos usando archivos por lotes o herramientas de scripting.
 
 ## <a name="windows-server-insider-preview"></a>Windows Server Insider Preview
-### <a name="system-insightsmanagesystem-insightsoverviewmd"></a>[Información del sistema](..\manage\system-insights\overview.md)
+### <a name="system-insightsmanagesystem-insightsoverviewmd"></a>[Conclusiones del sistema](../manage/system-insights/overview.md)
 Información del sistema es una característica nueva que presenta a Windows Server análisis predictivo de forma nativa. Estas capacidades predictivas localmente analizan datos del sistema de Windows Server, como contadores de rendimiento o eventos ETW y ayudan a los administradores de TI de forma proactiva a detectar y abordar el comportamiento problemático en sus implementaciones. 

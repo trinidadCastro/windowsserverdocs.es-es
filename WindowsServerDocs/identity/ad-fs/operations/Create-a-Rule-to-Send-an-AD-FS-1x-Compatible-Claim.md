@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c87b76224d1ac5dbe3befc837fad8879d0b9a1ef
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: bda071be6668710361205643125fc8ad44246012
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189403"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453025"
 ---
 # <a name="create-a-rule-to-send-an-ad-fs-1x-compatible-claim"></a>Crear una regla para enviar una notificación Compatible de AD FS 1.x
 
@@ -42,9 +42,6 @@ Según las necesidades de su organización, utilice uno de los procedimientos si
   
 > [!NOTE]  
 > Para que esta regla funcione según lo esperado, asegúrese de que la relación de confianza o relación de confianza de proveedor de notificaciones donde va a crear esta regla se ha configurado para usar el **perfil de AD FS 1.0 y 1.1**. 
-
-
-
 
 ## <a name="to-create-a-rule-to-issue-an-adfs1x-name-id-claim-using-the-pass-through-or-filter-an-incoming-claim-rule-template-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para emitir AD FS 1. *x* Id. de nombre de notificación con el paso a través o filtrar una plantilla de regla de notificación entrante en una confianza de Windows Server 2016 
 
@@ -125,11 +122,10 @@ Según las necesidades de su organización, utilice uno de los procedimientos si
     -   **Pasar a través de los valores de notificación que coincidan con un valor de sufijo de correo electrónico específico**  
   
     -   **Pasar a través de los valores de notificación que empiezan con un valor específico**  
-![Crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)   
+![Crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs3.PNG)
 
 10. Haga clic en **finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
 
-  
 
 ## <a name="to-create-a-rule-to-transform-an-incoming-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para transformar una notificación entrante en una confianza de Windows Server 2016 
 
@@ -139,13 +135,13 @@ Según las necesidades de su organización, utilice uno de los procedimientos si
 ![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
 3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **Editar directiva de emisión de notificación**.
-![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)
   
 4.  En el **Editar directiva de emisión de notificación** cuadro de diálogo **reglas de transformación de emisión** haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
-![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)
 
 5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **transformar una notificación entrante** en la lista y, a continuación, haga clic en **siguiente**.  
-![Crear regla](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)      
+![Crear regla](media/Create-a-Rule-to-Transform-an-Incoming-Claim/transform3.PNG)
 
 6.  En el **configurar regla** página, escriba un nombre de regla de notificación.  
   
@@ -168,7 +164,7 @@ Según las necesidades de su organización, utilice uno de los procedimientos si
     -   **Reemplazar un valor de notificación entrante con un valor de notificación saliente diferente**  
   
     -   **Reemplace entrante e\-con una nueva e las notificaciones de sufijo de correo\-sufijo de correo electrónico**  
-![Crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)    
+![Crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs4.PNG)
 
 11. Haga clic en **finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
 
@@ -273,7 +269,7 @@ Según las necesidades de su organización, utilice uno de los procedimientos si
     -   **Pasar a través de los valores de notificación que coincidan con un valor de sufijo de correo electrónico específico**  
   
     -   **Pasar a través de los valores de notificación que empiezan con un valor específico**  
-![Crear regla](media/\Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)   
+![Crear regla](media/Create-a-Rule-to-Send-an-AD-FS-1x-Compatible-Claim/adfs1.PNG)
 
 10. Haga clic en **finalizar**y, a continuación, haga clic en **Aceptar** para guardar la regla.  
 

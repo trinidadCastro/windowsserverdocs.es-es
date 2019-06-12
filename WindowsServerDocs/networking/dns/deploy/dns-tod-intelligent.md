@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 161446ff-a072-4cc4-b339-00a04857ff3a
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 33fd9447a79346127714a5e5e73977611eba483c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c36475dacb8664352f4ab270878357118d281c60
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829476"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446419"
 ---
 # <a name="use-dns-policy-for-intelligent-dns-responses-based-on-the-time-of-day"></a>Uso de la directiva de DNS para las respuestas DNS inteligentes basadas en la hora del día
 
@@ -107,7 +107,7 @@ Para obtener más información, consulte [agregar DnsServerZoneScope](https://do
 #### <a name="bkmk_records"></a>Agregar registros a los ámbitos de zona  
 Ahora debe agregar los registros que representa el host del servidor web en los ámbitos de la zona de dos.  
   
-Por ejemplo, en **SeattleZoneScope**, el registro **www.contosogiftservices.com** se agrega con dirección IP 192.0.0.1, que se encuentra en un centro de datos de Seattle. De forma similar, en **DublinZoneScope**, el registro **www.contosogiftservices.com** se agrega con la dirección IP 141.1.0.3 en el centro de datos Dublín  
+Por ejemplo, en **SeattleZoneScope**, el registro <strong>www.contosogiftservices.com</strong> se agrega con dirección IP 192.0.0.1, que se encuentra en un centro de datos de Seattle. De forma similar, en **DublinZoneScope**, el registro <strong>www.contosogiftservices.com</strong> se agrega con la dirección IP 141.1.0.3 en el centro de datos Dublín  
   
 Puede usar los siguientes comandos de Windows PowerShell para agregar registros a los ámbitos de la zona.  
   

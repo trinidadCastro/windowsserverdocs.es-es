@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b6c6193fc439140fa559643427067066e819c502
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 68a393b57a255915b93759b4b26286ce4d838019
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879556"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437221"
 ---
 # <a name="msg"></a>msg
 
@@ -35,19 +35,20 @@ msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<Server
 ```
 
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|<UserName>|Especifica el nombre del usuario que desea recibir el mensaje.|
-|<SessionName>|Especifica el nombre de la sesión que desea recibir el mensaje.|
-|<SessionID>|Especifica el identificador numérico de la sesión de usuario que desea recibir un mensaje.|
-|@<FileName>|Identifica un archivo que contiene una lista de nombres de usuario, los nombres de sesión y los identificadores de sesión que desea recibir el mensaje.|
-|*|Envía el mensaje a todos los nombres de usuario en el sistema.|
-|/server:<ServerName>|Especifica el servidor Host de sesión de escritorio remoto cuya sesión o usuario que desea recibir el mensaje. Si no se especifica, **/Server** usa el servidor al que han iniciado sesión.|
-|/Time:<Seconds>|Especifica la cantidad de tiempo que se muestra el mensaje enviado en la pantalla del usuario. Cuando se alcanza el límite de tiempo, el mensaje desaparece. Si no se establece ningún límite de tiempo, el mensaje permanece en la pantalla del usuario hasta que el usuario verá el mensaje y hace clic en **Aceptar**.|
-|/v|Muestra información sobre las acciones que se va a realizar.|
-|/w|Espera una confirmación del usuario que se ha recibido el mensaje. Use este parámetro con **/time:**<*segundos*> para evitar un retraso largo posible si el usuario no responde inmediatamente. Usa este parámetro con **/v** también es útil.|
-|<Message>|Especifica el texto del mensaje que desea enviar. Si no se especifica ningún mensaje, se le pedirá que escriba un mensaje. Para enviar un mensaje que se encuentra en un archivo, escriba el símbolo menor que (<) seguido del nombre de archivo.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+
+|      Parámetro       |                                                                                                                               Descripción                                                                                                                               |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|      <UserName>      |                                                                                                  Especifica el nombre del usuario que desea recibir el mensaje.                                                                                                   |
+|    <SessionName>     |                                                                                                 Especifica el nombre de la sesión que desea recibir el mensaje.                                                                                                 |
+|     <SessionID>      |                                                                                            Especifica el identificador numérico de la sesión de usuario que desea recibir un mensaje.                                                                                            |
+|     @<FileName>      |                                                                         Identifica un archivo que contiene una lista de nombres de usuario, los nombres de sesión y los identificadores de sesión que desea recibir el mensaje.                                                                         |
+|          \*          |                                                                                                           Envía el mensaje a todos los nombres de usuario en el sistema.                                                                                                            |
+| /server:<ServerName> |                                              Especifica el servidor Host de sesión de escritorio remoto cuya sesión o usuario que desea recibir el mensaje. Si no se especifica, **/Server** usa el servidor al que han iniciado sesión.                                              |
+|   /Time:<Seconds>    | Especifica la cantidad de tiempo que se muestra el mensaje enviado en la pantalla del usuario. Cuando se alcanza el límite de tiempo, el mensaje desaparece. Si no se establece ningún límite de tiempo, el mensaje permanece en la pantalla del usuario hasta que el usuario verá el mensaje y hace clic en **Aceptar**. |
+|          /v          |                                                                                                         Muestra información sobre las acciones que se va a realizar.                                                                                                         |
+|          /w          |         Espera una confirmación del usuario que se ha recibido el mensaje. Use este parámetro con **/time:** <*segundos*> para evitar un retraso largo posible si el usuario no responde inmediatamente. Usa este parámetro con **/v** también es útil.          |
+|      <Message>       |                  Especifica el texto del mensaje que desea enviar. Si no se especifica ningún mensaje, se le pedirá que escriba un mensaje. Para enviar un mensaje que se encuentra en un archivo, escriba el símbolo menor que (<) seguido del nombre de archivo.                  |
+|          /?          |                                                                                                                  Muestra la ayuda en el símbolo del sistema.                                                                                                                   |
 
 ## <a name="remarks"></a>Comentarios
 -   Si no especifica un usuario o una sesión, **msg** muestra un mensaje de error. Al especificar una sesión, debe ser uno activo.
@@ -78,7 +79,7 @@ msg {<UserName> | <SessionName> | <SessionID>| @<FileName> | *} [/server:<Server
     ```
     msg * /time:10 Let's meet at 1PM today
     ```
-    
+
 #### <a name="additional-references"></a>Referencias adicionales
 -  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -  [Servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)

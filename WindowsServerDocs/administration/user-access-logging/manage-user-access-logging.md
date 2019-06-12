@@ -13,12 +13,12 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d65a40e229fe4b0a1b27db496523dfe7a9419752
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 03bad9864f81cf75be13b4ca391fdcbc5f9dcb5c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886796"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435348"
 ---
 # <a name="manage-user-access-logging"></a>Administrar el Registro de acceso de usuarios
 
@@ -195,7 +195,7 @@ El primer día del año, UAL creará una base de datos *GUID.mdb*nueva, y la ant
   
 2.  Presione las teclas de logotipo de Windows+R y, después, escriba **cmd** para abrir una ventana del símbolo del sistema.  
   
-3.  Agregue el valor de Registro:  **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)**.  
+3.  Agregue el valor de Registro:  **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\WMI\AutoLogger\Sum\PollingInterval (REG_DWORD)** .  
   
     > [!WARNING]  
     > La edición incorrecta del Registro puede dañar gravemente el sistema. Antes de realizar cambios en el Registro, debe hacer y guardar una copia de seguridad de los datos valiosos en el equipo.  
@@ -211,13 +211,13 @@ UAL no está pensado para ser un componente crítico del sistema. Está diseñad
   
 #### <a name="to-delete-data-logged-by-ual"></a>Para eliminar los datos que UAL registra  
   
-1.  Detenga el servicio de registro de acceso de usuarios  
+1. Detenga el servicio de registro de acceso de usuarios  
   
-2.  Abra el Explorador de Windows.  
+2. Abra el Explorador de Windows.  
   
-3.  Vaya a **\Windows\System32\Logfiles\SUM\**.  
+3. Vaya a **\Windows\System32\Logfiles\SUM\\** .  
   
-4.  Elimine todos los archivos de esa carpeta.  
+4. Elimine todos los archivos de esa carpeta.  
   
 ## <a name="managing-ual-in-high-volume-environments"></a>Administrar UAL en entornos de gran volumen  
 En esta sección se explica lo que un administrador puede esperar cuando UAL se usa en un servidor con un gran volumen de clientes:  

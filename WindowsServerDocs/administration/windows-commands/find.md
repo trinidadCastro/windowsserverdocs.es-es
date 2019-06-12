@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b4639ff780687ad7a69ddba5374a722a15b06542
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4b13a2fe573ffc81fa5c85d8fd28e9ab13ca4342
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848266"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439344"
 ---
 # <a name="find"></a>find
 
@@ -36,16 +36,16 @@ find [/v] [/c] [/n] [/i] [/off[line]] "<String>" [[<Drive>:][<Path>]<FileName>[.
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/v|Muestra todas las líneas que no tienen especificado \<String >.|
-|/c|Recuentos de las líneas que contienen el texto especificado \<String > y muestra el total.|
-|/n|Precede a cada línea con el número de línea del archivo.|
-|/i|Especifica que la búsqueda no distingue mayúsculas de minúsculas.|
-|[/off[line]]|No omite los archivos que tienen establecido el atributo sin conexión.|
-|"\<String >"|Obligatorio. Especifica el grupo de caracteres (entre comillas) que desea buscar.|
-|[\<Drive>:][<Path>]<FileName>|Especifica la ubicación y el nombre del archivo en el que se va a buscar la cadena especificada.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|           Parámetro           |                                              Descripción                                               |
+|-------------------------------|--------------------------------------------------------------------------------------------------------|
+|              /v               |                    Muestra todas las líneas que no tienen especificado \<String >.                     |
+|              /c               |              Recuentos de las líneas que contienen el texto especificado \<String > y muestra el total.              |
+|              /n               |                            Precede a cada línea con el número de línea del archivo.                             |
+|              /i               |                            Especifica que la búsqueda no distingue mayúsculas de minúsculas.                            |
+|         [/off[line]]          |                        No omite los archivos que tienen establecido el atributo sin conexión.                        |
+|          "\<String >"          | Obligatorio. Especifica el grupo de caracteres (entre comillas) que desea buscar. |
+| [\<Drive>:][<Path>]<FileName> |        Especifica la ubicación y el nombre del archivo en el que se va a buscar la cadena especificada.        |
+|              /?               |                                  Muestra la ayuda en el símbolo del sistema.                                  |
 
 ## <a name="remarks"></a>Comentarios
 
@@ -62,7 +62,7 @@ find [/v] [/c] [/n] [/i] [/off[line]] "<String>" [[<Drive>:][<Path>]<FileName>[.
     Puede escribir parámetros y las opciones de línea de comandos para el **buscar** comando en cualquier orden.
 -   Uso de caracteres comodín
 
-    No se puede usar caracteres comodín (**&#42;** y **?**) en los nombres de archivo o extensiones que se especifican con el **buscar** comando. Para buscar una cadena en un conjunto de archivos que se especifican con caracteres comodín, puede usar el **buscar** comando dentro de un **para** comando.
+    No se puede usar caracteres comodín ( **&#42;** y **?** ) en los nombres de archivo o extensiones que se especifican con el **buscar** comando. Para buscar una cadena en un conjunto de archivos que se especifican con caracteres comodín, puede usar el **buscar** comando dentro de un **para** comando.
 -   Uso de **/v** o **/n** con **/c**
 
     Si usas **/c** y **/v** en la misma línea de comandos **buscar** muestra un recuento de las líneas que no contienen la cadena especificada. Si especifica **/c** y **/n** en la misma línea de comandos **buscar** omite **/n**.

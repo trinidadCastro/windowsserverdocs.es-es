@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 109d162e8d5c4bdd59871a21f16b6f568df4fbd6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e5805fcc14d6874d95ba90537d72b560229ba99b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861666"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436314"
 ---
 # <a name="pause"></a>pause
 
@@ -44,16 +44,16 @@ pause
 
 ## <a name="remarks"></a>Comentarios
 
--   Al ejecutar el **pausar** comando, aparece el mensaje siguiente:  
-    ```
-    Press any key to continue . . .
-    ```  
--   Si presiona CTRL+C para detener un programa por lotes, aparece el mensaje siguiente:  
-    ```
-    Terminate batch job (Y/N)?
-    ```  
-    Si presiona S (Sí) en respuesta a este mensaje, el programa por lotes finaliza y el control se devuelve al sistema operativo.
--   Puede insertar el **pausar** comando antes de una sección del archivo por lotes que no desee procesar. Cuando **pausar** suspende el procesamiento de un programa por lotes, puede presionar CTRL + C y, a continuación, presione s para detener el programa por lotes.
+- Al ejecutar el **pausar** comando, aparece el mensaje siguiente:  
+  ```
+  Press any key to continue . . .
+  ```  
+- Si presiona CTRL+C para detener un programa por lotes, aparece el mensaje siguiente:  
+  ```
+  Terminate batch job (Y/N)?
+  ```  
+  Si presiona S (Sí) en respuesta a este mensaje, el programa por lotes finaliza y el control se devuelve al sistema operativo.
+- Puede insertar el **pausar** comando antes de una sección del archivo por lotes que no desee procesar. Cuando **pausar** suspende el procesamiento de un programa por lotes, puede presionar CTRL + C y, a continuación, presione s para detener el programa por lotes.
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

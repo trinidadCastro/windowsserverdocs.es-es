@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 91fceb429ca00b1b3d9d36d01f5e97cfd464ccb9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 179d540371870075906bbcbf8ff912e1b883915d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825166"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433936"
 ---
 # <a name="dcgpofix"></a>dcgpofix
 
@@ -34,11 +34,11 @@ DCGPOFix [/ignoreschema] [/target: {Domain | DC | Both}] [/?]
 
 ### <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/ignoreschema|Omite la versión de la consola de administración de esquema Active Directory®</br>al ejecutar este comando. En caso contrario, el comando sólo funciona en la misma versión de esquema que la versión de Windows en el que se envió el comando.|
-|/ Target {nombre de dominio | DC | Ambos}|Especifica qué GPO para restaurar. Puede restaurar el GPO de directiva de dominio predeterminado, el GPO de controladores de dominio predeterminado o ambos.|
-|/?|Muestra la Ayuda en el símbolo del sistema.|
+|    Parámetro    |                                                                                                 Descripción                                                                                                 |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  /ignoreschema  | Omite la versión de la consola de administración de esquema Active Directory®</br>al ejecutar este comando. En caso contrario, el comando sólo funciona en la misma versión de esquema que la versión de Windows en el que se envió el comando. |
+| / Target {nombre de dominio |                                                                                                     DC                                                                                                      |
+|       /?        |                                                                                    Muestra la Ayuda en el símbolo del sistema.                                                                                     |
 
 ## <a name="remarks"></a>Comentarios
 

@@ -12,12 +12,12 @@ ms.assetid: e45b3d89-c057-4c70-a627-86fb06dd22aa
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9b0d11be08840ecedabab6fd4e96f5d453ea4857
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 52ec9bf1caa4cb4c7ed661eec1448f3f2a4be980
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848196"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436050"
 ---
 # <a name="troubleshoot-connecting-computers-to-the-server-in-windows-server-essentials"></a>Solucionar problemas de conexión de equipos al servidor en Windows Server Essentials
 
@@ -165,7 +165,7 @@ ms.locfileid: "59848196"
   
  Esto puede suceder si la fecha y la hora del equipo conectado no están sincronizadas con la fecha y la hora del servidor.  Windows Server Essentials y Windows Server Essentials usan el servicio de sincronización para sincronizar la fecha y hora de los equipos que se ejecutan en una red de Windows Server Essentials o Windows Server Essentials. La sincronización de la hora es fundamental, ya que el protocolo de autenticación predeterminado utiliza la hora del servidor como parte del proceso de autenticación. Por ejemplo, si no se sincroniza el reloj en un equipo cliente a la fecha y hora correctas, Windows Server Essentials o autenticación de Windows Server Essentials falsamente podría interpretar una solicitud de inicio de sesión como un intento de intrusión y denegar el acceso al usuario.  
   
- Esto puede ocurrir si la memoria libre del servidor s es inferior al 5 por ciento.  
+ Esto puede ocurrir si la memoria libre del servidor es inferior al 5 por ciento.  
   
  Esto puede suceder si ya tiene una conexión VPN a Windows Server Essentials e intenta configurar el software del conector de forma remota mediante una dirección de dominio.  
   
@@ -179,17 +179,17 @@ ms.locfileid: "59848196"
   
 #### <a name="to-change-the-date-and-time-on-the-client-computer"></a>Para cambiar la fecha y la hora del equipo cliente  
   
-1.  En la página Inicio del equipo cliente, abra el **Panel de control**.  
+1. En la página Inicio del equipo cliente, abra el **Panel de control**.  
   
-2.  En el Panel de control, haga clic en **Reloj, idioma y región**y en **Fecha y hora**.  
+2. En el Panel de control, haga clic en **Reloj, idioma y región**y en **Fecha y hora**.  
   
-3.  Haga clic en **Cambiar fecha y hora**, establezca la fecha y la hora correctas y haga clic en **Aceptar**.  
+3. Haga clic en **Cambiar fecha y hora**, establezca la fecha y la hora correctas y haga clic en **Aceptar**.  
   
-4.  Haga clic en **Aceptar** y cierre el Panel de control.  
+4. Haga clic en **Aceptar** y cierre el Panel de control.  
   
-5.  Intente conectar de nuevo el equipo cliente al servidor. Para obtener instrucciones, consulte Conectar equipos al servidor.  
+5. Intente conectar de nuevo el equipo cliente al servidor. Para obtener instrucciones, consulte Conectar equipos al servidor.  
   
- Si todavía no se puede conectar el equipo cliente al servidor, asegúrese de que la fecha y la hora del servidor son correctas. Si la fecha y la hora no son correctas, cámbielas.  
+   Si todavía no se puede conectar el equipo cliente al servidor, asegúrese de que la fecha y la hora del servidor son correctas. Si la fecha y la hora no son correctas, cámbielas.  
   
 #### <a name="to-change-the-date-and-time-on-the-server"></a>Para cambiar la fecha y la hora del servidor  
   

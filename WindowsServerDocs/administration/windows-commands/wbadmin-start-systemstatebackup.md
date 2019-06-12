@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 591ff7caa554a892bda0bc0e888bd89a87d8b0ef
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d98ba295b2a76baf98e85a01a02677d57922877d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863556"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440263"
 ---
 # <a name="wbadmin-start-systemstatebackup"></a>Wbadmin start systemstatebackup
 
@@ -43,10 +43,10 @@ wbadmin start systemstatebackup
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|-backupTarget|Especifica la ubicación donde desea almacenar la copia de seguridad. La ubicación de almacenamiento requiere una letra de unidad o un volumen basado en el GUID del formato: \\ \\? \Volume {*GUID*}.</br>Una copia de seguridad del estado del sistema en una carpeta compartida de red no se admite en un equipo que ejecuta Windows Server 2008. Si el servidor se está ejecutando Windows Server 2008 R2 o posterior puede usar el comando **- backuptarget:\\\\servername\sharedFolder\**  para almacenar copias de seguridad de estado del sistema.|
-|-quiet|Se ejecuta el subcomando sin solicitudes para el usuario.|
+|   Parámetro   |                                                                                                                                                                                                                      Descripción                                                                                                                                                                                                                      |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| -backupTarget | Especifica la ubicación donde desea almacenar la copia de seguridad. La ubicación de almacenamiento requiere una letra de unidad o un volumen basado en el GUID del formato: \\ \\? \Volume {*GUID*}.</br>Una copia de seguridad del estado del sistema en una carpeta compartida de red no se admite en un equipo que ejecuta Windows Server 2008. Si el servidor se está ejecutando Windows Server 2008 R2 o posterior puede usar el comando **- backuptarget:\\\\servername\sharedFolder\\**  para almacenar copias de seguridad de estado del sistema. |
+|    -quiet     |                                                                                                                                                                                                   Se ejecuta el subcomando sin solicitudes para el usuario.                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentarios
 

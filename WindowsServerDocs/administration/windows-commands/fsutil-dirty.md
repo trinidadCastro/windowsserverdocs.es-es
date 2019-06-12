@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: c308b0497a5a39a25384b22441b733143df8727b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d8a5c4905991203a051fea360ed91c9b372f6993
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852136"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66439084"
 ---
 # <a name="fsutil-dirty"></a>fsutil dirty
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
@@ -31,11 +31,11 @@ fsutil dirty {query | set} <VolumePath>
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|-------------|---------------|
-|query|Consulta el bit de integridad del volumen especificado.|
-|set|Establece el bit de integridad del volumen especificado.|
-|\<VolumePath>|Especifica el nombre de la unidad seguido por un signo de dos puntos o un GUID en el formato siguiente: **Volume{***GUID***}**.|
+|   Parámetro   |                                                 Descripción                                                  |
+|---------------|--------------------------------------------------------------------------------------------------------------|
+|     query     |                                  Consulta el bit de integridad del volumen especificado.                                   |
+|      set      |                                    Establece el bit de integridad del volumen especificado.                                    |
+| \<VolumePath> | Especifica el nombre de la unidad seguido por un signo de dos puntos o un GUID en el formato siguiente: **Volume{** <em>GUID</em> **}** . |
 
 ## <a name="remarks"></a>Comentarios
 

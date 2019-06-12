@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 007256fffde11899d930c9197cade6d3bf9be42c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3ad9f55ba130014227326f4abe8540c78755f6c5
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868786"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66437374"
 ---
 # <a name="mapadmin"></a>mapadmin
 
@@ -52,7 +52,7 @@ Además de los argumentos de comando específico, **mapadmin** acepta los siguie
 
 &lt;equipo&gt; especifica el equipo remoto que ejecuta el servicio de asignación de nombres de usuario que desea administrar. Puede especificar el equipo mediante un nombre de servicio de nombres Internet de Windows (WINS) o un nombre de sistema de nombres de dominio (DNS) o la dirección de protocolo de Internet (IP).
 
--u &lt;usuario&gt; especifica el nombre de usuario del usuario cuyas credenciales se van a usarse. Podría ser necesario agregar el nombre de dominio al nombre de usuario en el formulario *dominio***\\***nombre de usuario*.
+-u &lt;usuario&gt; especifica el nombre de usuario del usuario cuyas credenciales se van a usarse. Podría ser necesario agregar el nombre de dominio al nombre de usuario en el formulario <em>dominio</em> **\\** <em>nombre de usuario</em>.
 
 -p &lt;contraseña&gt; especifica la contraseña del usuario. Si especifica la **-u** opción pero omita el **-p** opción, se le solicitará la contraseña del usuario.
 La acción concreta que **mapadmin** realiza depende del argumento de comando que especifique:
@@ -90,7 +90,7 @@ Especifica las opciones generales para la asignación de nombres de usuario. Las
 
 |Opción|Definición|
 |-----|-------|
-|-wu &lt;user&gt;|El usuario de Windows para el que se eliminarán la asignación especificada como &lt; *WindowsDomain&gt;\\&lt;nombre de usuario&gt;*. Debe especificar el **- wu** o **- uu** , o ambas. Si especifica ambas opciones, se eliminará la asignación concreto identificada por las dos opciones. Si especifica solo el **- wu** opción, todas las asignaciones para el usuario especificado se eliminarán.|
+|-wu &lt;user&gt;|El usuario de Windows para el que se eliminarán la asignación especificada como &lt; *WindowsDomain&gt;\\&lt;nombre de usuario&gt;* . Debe especificar el **- wu** o **- uu** , o ambas. Si especifica ambas opciones, se eliminará la asignación concreto identificada por las dos opciones. Si especifica solo el **- wu** opción, todas las asignaciones para el usuario especificado se eliminarán.|
 |-wg &lt;grupo&gt;|El grupo de Windows para el que se eliminarán la asignación especificada como &lt;WindowsDomain&gt;\\&lt;groupname&gt;. Debe especificar el **- wg** o **- ug** , o ambas. Si especifica ambas opciones, se eliminará la asignación concreto identificada por las dos opciones. Si especifica solo el **- wg** opción, todas las asignaciones para el grupo especificado se eliminarán.|
 |-uu &lt;user&gt;|El usuario de UNIX para los que se eliminarán la asignación especificada como &lt;nombre de usuario&gt;. Debe especificar el **- wu** o **- uu** , o ambas. Si especifica ambas opciones, se eliminará la asignación concreto identificada por las dos opciones. Si especifica solo el **- uu** opción, todas las asignaciones para el usuario especificado se eliminarán.|
 |-ug &lt;grupo&gt;|El grupo de UNIX para el que se eliminarán la asignación especificada como &lt;groupname&gt;. Debe especificar el **- wg** o **- ug** , o ambas. Si especifica ambas opciones, se eliminará la asignación concreto identificada por las dos opciones. Si especifica solo el **- ug** opción, todas las asignaciones para el grupo especificado se eliminarán.|
@@ -114,7 +114,7 @@ Especifica las opciones generales para la asignación de nombres de usuario. Las
 |Opción|Definición|
 |-----|-------|
 |-d &lt;WindowsDomain&gt;|Especifica el dominio de Windows que se puede asignar.|
-|-y &lt;Dominionis&gt;|Especifica el dominio NIS a asignarse. &lt;br /&gt;&lt;br /&gt;**- n** &lt;Servidornis&gt; especifica el servidor NIS para el dominio NIS especificado con el **- y**opción.|
+|-y &lt;Dominionis&gt;|Especifica el dominio NIS a asignarse. &lt;br /&gt;&lt;br /&gt; **- n** &lt;Servidornis&gt; especifica el servidor NIS para el dominio NIS especificado con el **- y**opción.|
 |-f &lt;ruta de acceso&gt;|Especifica la ruta de acceso completa del directorio que contiene los archivos de contraseña y grupo que debe asignarse. Los archivos deben estar ubicados en el equipo administrado y no puede usar **mapadmin** para administrar un equipo remoto para configurar las asignaciones basadas en contraseña y grupo de archivos.|
 
 **removedomainmap** -quita una asignación simple entre un dominio de Windows y un dominio NIS. Las siguientes opciones y argumentos están disponibles para este argumento de comando:

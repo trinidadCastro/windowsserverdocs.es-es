@@ -10,12 +10,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.service: na
 ms.assetid: 9cafd6cb-dbbe-4b91-b26c-dee1c18fd8c2
-ms.openlocfilehash: b049efc61d5060791574f20fcdd8b369a26f0507
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e2c14e471abb9af7a9182100969a8dd94a17205a
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890256"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812195"
 ---
 >Se aplica a: Windows 10, Windows Server 2016, Windows Server de 2019
 
@@ -25,8 +25,8 @@ Servicios de integración de Hyper-V mejorar el rendimiento de la máquina virtu
 
 Para obtener más información acerca de cada servicio de integración, consulte [servicios de integración de Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/reference/integration-services).
 
->[!IMPORTANT]
->Cada servicio que desee usar debe habilitarse en el host y el invitado para poder funcionar. Todos los servicios de integración excepto "Interfaz de servicio de invitado de Hyper-V" están activadas de forma predeterminada en los sistemas operativos invitados de Windows. Los servicios se pueden activar y desactivar individualmente. Las secciones siguientes muestran cómo.
+> [!IMPORTANT]
+> Cada servicio que desee usar debe habilitarse en el host y el invitado para poder funcionar. Todos los servicios de integración excepto "Interfaz de servicio de invitado de Hyper-V" están activadas de forma predeterminada en los sistemas operativos invitados de Windows. Los servicios se pueden activar y desactivar individualmente. Las secciones siguientes muestran cómo.
 
 ## <a name="turn-an-integration-service-on-or-off-using-hyper-v-manager"></a>Activar un servicio de integración o desactivar mediante el Administrador de Hyper-V
 
@@ -47,6 +47,7 @@ Los ejemplos siguientes muestran la activación del invitado archivo copia servi
     ``` PowerShell
     Get-VMIntegrationService -VMName "DemoVM"
     ```
+
 1. La salida debe parecerse a la siguiente:
 
     ``` PowerShell
@@ -84,12 +85,13 @@ Algunas características no funcionen correctamente o en absoluto si Servicios d
 ```
 REG QUERY "HKLM\Software\Microsoft\Virtual Machine\Auto" /v IntegrationServicesVersion
 ```
+
 Sistemas operativos anteriores no tendrá todos los servicios disponibles. Por ejemplo, los invitados de Windows Server 2008 R2 no pueden tener la "interfaz de servicio de invitado Hyper-V".
 
 ## <a name="start-and-stop-an-integration-service-from-a-windows-guest"></a>Iniciar y detener un servicio de integración de un invitado de Windows
 Para un servicio de integración en estar completamente funcional, su servicio correspondiente debe estar ejecutando dentro del invitado además está habilitado en el host. En los invitados de Windows, cada servicio de integración aparece como un servicio de Windows estándar. Puede usar el applet Servicios en el Panel de Control o PowerShell para detener e iniciar estos servicios.
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > Detener un servicio de integración puede afectar gravemente a la capacidad del host para administrar la máquina virtual. Para que funcione correctamente, cada servicio de integración que desee usar debe habilitarse en el host e invitado.
 > Como práctica recomendada, solo debe controlar servicios de integración de Hyper-V mediante las instrucciones anteriores. El servicio de búsqueda de coincidencias en el sistema operativo invitado se detendrá o empezará automáticamente cuando se cambia su estado en Hyper-V.
 > Si se inicia un servicio en el sistema operativo invitado, pero está deshabilitado en Hyper-V, se detendrá el servicio. Si se detiene un servicio en el sistema operativo invitado que está habilitado en Hyper-V, Hyper-V finalmente iniciará lo nuevo. Si deshabilita el servicio en el invitado, Hyper-V no se puede iniciar.
@@ -104,7 +106,6 @@ Para un servicio de integración en estar completamente funcional, su servicio c
 
 1. Haga clic en el servicio que desee iniciar o detener. Haga clic en la acción deseada.
 
-
 ### <a name="use-windows-powershell-to-start-or-stop-an-integration-service-within-a-windows-guest"></a>Usar Windows PowerShell para iniciar o detener un servicio de integración dentro de un invitado de Windows
 
 1. Para obtener una lista de servicios de integración, ejecute:
@@ -112,6 +113,7 @@ Para un servicio de integración en estar completamente funcional, su servicio c
     ```
     Get-Service -Name vm*
     ```
+
 1.  La salida debe ser similar al siguiente:
 
     ```PowerShell
@@ -137,13 +139,13 @@ Para un servicio de integración en estar completamente funcional, su servicio c
 
 Los servicios de integración de Linux normalmente se ofrecen a través del kernel de Linux. El controlador de servicios de integración de Linux se denomina **hv_utils**.
 
-1.  Para averiguar si **hv_utils** se carga, use este comando:
+1. Para averiguar si **hv_utils** se carga, use este comando:
 
-    ``` BASH
-    lsmod | grep hv_utils
-    ``` 
+   ``` BASH
+   lsmod | grep hv_utils
+   ``` 
   
-1. La salida debe ser similar al siguiente:  
+2. La salida debe ser similar al siguiente:  
   
     ``` BASH
     Module                  Size   Used by
@@ -151,13 +153,13 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     hv_vmbus               61440   8 hv_balloon,hyperv_keyboard,hv_netvsc,hid_hyperv,hv_utils,hyperv_fb,hv_storvsc
     ```
 
-1. Para averiguar si se están ejecutando los demonios necesarios, use este comando.
+3. Para averiguar si se están ejecutando los demonios necesarios, use este comando.
   
     ``` BASH
     ps -ef | grep hv
     ```
   
-1. La salida debe ser similar al siguiente: 
+4. La salida debe ser similar al siguiente: 
   
     ```BASH
     root       236     2  0 Jul11 ?        00:00:00 [hv_vmbus_con]
@@ -170,13 +172,13 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     scooley  43774 43755  0 21:20 pts/0    00:00:00 grep --color=auto hv          
     ```
 
-1. Para ver los demonios que están disponibles, ejecute:
+5. Para ver los demonios que están disponibles, ejecute:
 
     ``` BASH
     compgen -c hv_
     ```
   
-1. La salida debe ser similar al siguiente:
+6. La salida debe ser similar al siguiente:
   
     ``` BASH
     hv_vss_daemon
@@ -187,10 +189,10 @@ Los servicios de integración de Linux normalmente se ofrecen a través del kern
     hv_fcopy_daemon     
     ```
   
- Demonios de servicio de integración que debe aparecer incluyen lo siguiente. Si falta alguno, que no se admiten en el sistema o no se pueden instalar. Para obtener detalles, vea [Linux y FreeBSD máquinas virtuales de Hyper-V en Windows](https://technet.microsoft.com/library/dn531030.aspx).  
-  - **hv_vss_daemon**: Este demonio es necesario para crear las copias de seguridad de máquina virtual en directo de Linux.
-  - **hv_kvp_daemon**: Este demonio permite establecer y consultar pares clave-valor intrínsecos y extrínsecos.
-  - **hv_fcopy_daemon**: Este demonio implementa un servicio entre el host e invitadas de copia de archivos.  
+   Demonios de servicio de integración que debe aparecer incluyen lo siguiente. Si falta alguno, que no se admiten en el sistema o no se pueden instalar. Para obtener detalles, vea [Linux y FreeBSD máquinas virtuales de Hyper-V en Windows](https://technet.microsoft.com/library/dn531030.aspx).  
+   - **hv_vss_daemon**: Este demonio es necesario para crear las copias de seguridad de máquina virtual en directo de Linux.
+   - **hv_kvp_daemon**: Este demonio permite establecer y consultar pares clave-valor intrínsecos y extrínsecos.
+   - **hv_fcopy_daemon**: Este demonio implementa un servicio entre el host e invitadas de copia de archivos.  
 
 ### <a name="examples"></a>Ejemplos
 

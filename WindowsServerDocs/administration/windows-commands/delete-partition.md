@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bf9f456ad6ab3010493154da843b2b519754e250
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b47338b74cf71a4754b7320d6b3842f342d324d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816336"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436144"
 ---
 # <a name="delete-partition"></a>Eliminar partición
 
@@ -43,8 +43,8 @@ delete partition [noerr] [override]
 
 > [!CAUTION]
 > Al eliminar una partición en un disco dinámico, pueden eliminar todos los volúmenes dinámicos del disco, por lo tanto, se destruirán los datos y dejar el disco en un estado dañado. Para eliminar un volumen dinámico, utilice siempre el **Eliminar volumen** comando en su lugar. Se pueden eliminar las particiones de los discos dinámicos, pero no se debe crear. Por ejemplo, es posible eliminar una partición de tabla de particiones GUID (GPT) no reconocida en un disco GPT dinámico. Eliminar dicha partición no hace que el espacio libre resultante esté disponible. Este comando está diseñado para permitirle que espacio reclame en un disco dinámico sin conexión dañado en una situación de emergencia donde el **limpia** no se puede usar comandos de DiskPart.
--   No se puede eliminar la partición del sistema, partición de arranque o cualquier partición que contenga la active bloqueo o archivo de volcado de memoria información de paginación.
--   Debe seleccionarse una partición para que esta operación se realice correctamente. Use la **seleccione partición** comando para seleccionar una partición y desplace el foco a ella.
+> -   No se puede eliminar la partición del sistema, partición de arranque o cualquier partición que contenga la active bloqueo o archivo de volcado de memoria información de paginación.
+> -   Debe seleccionarse una partición para que esta operación se realice correctamente. Use la **seleccione partición** comando para seleccionar una partición y desplace el foco a ella.
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

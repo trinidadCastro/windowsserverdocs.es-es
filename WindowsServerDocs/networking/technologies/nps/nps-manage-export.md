@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: d268dc57-78f8-47ba-9a7a-a607e8b9225c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a5f28c317f1d58fd1889fb55d345463dc8a62999
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b95e39af63e284d0147335faabfb740c0dd175bc
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816426"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812293"
 ---
 # <a name="export-an-nps-configuration-for-import-on-another-server"></a>Exportar una configuración de NPS para la importación en otro servidor
 
@@ -26,13 +26,13 @@ Para exportar la configuración de NPS, use una de las siguientes herramientas:
 - En Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012, puede usar Netsh o puede usar Windows PowerShell.
 - En Windows Server 2008 R2 y Windows Server 2008, use Netsh.
 
->[!IMPORTANT]
->No utilice este procedimiento si la base de datos NPS de origen tiene un número de versión mayor que el número de versión de la base de datos NPS de destino. Puede ver el número de versión de la base de datos NPS de la presentación de la **netsh nps muestran config** comando.
+> [!IMPORTANT]
+> No utilice este procedimiento si la base de datos NPS de origen tiene un número de versión mayor que el número de versión de la base de datos NPS de destino. Puede ver el número de versión de la base de datos NPS de la presentación de la **netsh nps muestran config** comando.
 
 Dado que las configuraciones de NPS no están cifradas en el archivo XML exportado, enviarlo a través de una red podría suponer un riesgo de seguridad, por lo que tome precauciones al mover el archivo XML desde el servidor de origen a los servidores de destino. Por ejemplo, agregar el archivo a un archivo de almacenamiento protegido de contraseña cifrada, antes de pasar el archivo. Además, almacene el archivo en una ubicación segura para evitar que usuarios malintencionados accedan a él.
 
->[!NOTE]
->Si el registro de SQL Server está configurado en el origen de NPS, configuración del registro de SQL Server no se exporta al archivo XML. Después de importar el archivo en otro NPS, debe configurar manualmente el registro de SQL Server.
+> [!NOTE]
+> Si el registro de SQL Server está configurado en el origen de NPS, configuración del registro de SQL Server no se exporta al archivo XML. Después de importar el archivo en otro NPS, debe configurar manualmente el registro de SQL Server.
 
 ## <a name="export-and-import-the-nps-configuration-by-using-windows-powershell"></a>Exportar e importar la configuración de NPS mediante Windows PowerShell
 
@@ -46,7 +46,7 @@ En la tabla siguiente se enumera los parámetros para el **exportación NpsConfi
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Ruta de acceso|Especifica el nombre y la ubicación del archivo XML al que desea exportar la configuración de NPS.|
+|Path|Especifica el nombre y la ubicación del archivo XML al que desea exportar la configuración de NPS.|
 
 **Credenciales administrativas**
 
@@ -80,8 +80,8 @@ Puede usar el Shell de red \(Netsh\) para exportar la configuración de NPS medi
 
 Cuando el **importación netsh nps** se ejecuta el comando, NPS se actualiza automáticamente con la configuración actualizada. No es necesario detener el NPS en el equipo de destino para ejecutar el **importación netsh nps** comando, pero si la consola NPS o el complemento MMC NPS está abierta durante la importación de configuración, los cambios realizados en la configuración del servidor no son visibles hasta que Actualice la vista. 
 
->[!NOTE]
->Cuando se usa el **exportación netsh nps** comando, debe proporcionar el parámetro de comando **exportPSK** con el valor **Sí**. Este parámetro y valor indicar explícitamente que comprende que va a exportar la configuración de NPS, y que contiene el archivo XML exportado sin cifrar secretos compartidos para los clientes RADIUS y miembros de grupos de servidores RADIUS remotos.
+> [!NOTE]
+> Cuando se usa el **exportación netsh nps** comando, debe proporcionar el parámetro de comando **exportPSK** con el valor **Sí**. Este parámetro y valor indicar explícitamente que comprende que va a exportar la configuración de NPS, y que contiene el archivo XML exportado sin cifrar secretos compartidos para los clientes RADIUS y miembros de grupos de servidores RADIUS remotos.
 
 **Credenciales administrativas**
 
@@ -93,13 +93,13 @@ Para completar este procedimiento, debe ser miembro del grupo Administradores.
 
 2. En el **netsh** escriba **nps**, y, a continuación, presione ENTRAR. 
 
-3. En el **netsh nps** escriba **exportar filename =**"*path\file.xml*" **exportPSK = YES**, donde *derutadeacceso* es la ubicación de la carpeta donde desea guardar el archivo de configuración de NPS y *archivo* es el nombre del archivo XML que desea guardar. Presiona Entrar. 
+3. En el **netsh nps** escriba **exportar filename =** "*path\file.xml*" **exportPSK = YES**, donde *derutadeacceso* es la ubicación de la carpeta donde desea guardar el archivo de configuración de NPS y *archivo* es el nombre del archivo XML que desea guardar. Presiona Entrar. 
 
 Esto almacena valores de configuración \(, incluida la configuración del registro\) en un archivo XML. La ruta de acceso puede ser absoluta o relativa, o puede ser una convención de nomenclatura Universal \(UNC\) ruta de acceso. Después de presionar ENTRAR, aparece un mensaje que indica si la exportación a archivo ha sido correcta.
 
 4. Copie el archivo que creó en el NPS de destino.
 
-5. En el símbolo del sistema en el NPS de destino, escriba **netsh nps importar filename =**"*path\file.xml*", y, a continuación, presione ENTRAR. Aparece un mensaje indicando si la importación del archivo XML ha sido correcta.
+5. En el símbolo del sistema en el NPS de destino, escriba **netsh nps importar filename =** "*path\file.xml*", y, a continuación, presione ENTRAR. Aparece un mensaje indicando si la importación del archivo XML ha sido correcta.
 
 Para obtener más información acerca de netsh, vea [Shell de red (Netsh)](../netsh/netsh.md).
 

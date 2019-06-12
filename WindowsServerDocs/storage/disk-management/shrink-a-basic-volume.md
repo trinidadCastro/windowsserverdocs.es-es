@@ -1,25 +1,25 @@
 ---
 title: Reducir un volumen básico
 description: En este artículo se describe cómo reducir un volumen básico
-ms.date: 10/12/2017
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: e54632b78fd67a65b51147323565130881d8d81b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9073632a656f512bdb49ebe4eeefd4cd5f4eaadf
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885336"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812530"
 ---
 # <a name="shrink-a-basic-volume"></a>Reducir un volumen básico
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Es posible disminuir el espacio que usan las particiones principales y las unidades lógicas reduciéndolas en espacios adyacentes y contiguos del mismo disco. Por ejemplo, si necesitas una partición más pero no dispones de discos adicionales, puedes reducir la partición existente de la parte final del volumen para crear un nuevo espacio sin asignar que puede usarse para una nueva partición. La operación de reducción puede bloquearse por la presencia de determinados tipos de archivos. Para obtener más información, consulta [Consideraciones adicionales](#addcon) 
+Es posible disminuir el espacio que usan las particiones principales y las unidades lógicas reduciéndolas en espacios adyacentes y contiguos del mismo disco. Por ejemplo, si necesitas una partición más pero no dispones de discos adicionales, puedes reducir la partición existente de la parte final del volumen para crear un nuevo espacio sin asignar que puede usarse para una nueva partición. La operación de reducción puede bloquearse por la presencia de determinados tipos de archivos. Para obtener más información, consulte [consideraciones adicionales](#additional-considerations) 
 
 Al reducir una partición, todos los archivos normales se reubican automáticamente en el disco para crear el nuevo espacio sin asignar. No es necesario volver a formatear el disco para reducir la partición.
 
@@ -28,13 +28,9 @@ Al reducir una partición, todos los archivos normales se reubican automáticame
 
 ## <a name="shrinking-a-basic-volume"></a>Reducir un volumen básico
 
--   [Mediante la interfaz de Windows](#BKMK_WINUI)
--   [Línea de comandos](#BKMK_CMD)
-
 > [!NOTE]
 > Debes ser miembro del grupo **Operadores de copia de seguridad** o **Administradores**, como mínimo, para completar estos pasos.
 
-<a id="BKMK_WINUI"></a>
 #### <a name="to-shrink-a-basic-volume-using-the-windows-interface"></a>Para reducir un volumen básico mediante la interfaz de Windows
 
 1.  En el Administrador de discos, haz clic con el botón derecho en el volumen básico que quieres reducir.
@@ -43,12 +39,10 @@ Al reducir una partición, todos los archivos normales se reubican automáticame
 
 3.  Sigue las instrucciones en pantalla.
 
-<br />
 
 > [!NOTE]
 > Solo se pueden reducir los volúmenes básicos que no tienen ningún sistema de archivos o que usan el sistema de archivos NTFS.
 
-<a id="BKMK_CMD"></a>
 #### <a name="to-shrink-a-basic-volume-using-a-command-line"></a>Para reducir un volumen básico mediante una línea de comandos
 
 1.  Abra un símbolo del sistema y escriba `diskpart`.
@@ -59,17 +53,13 @@ Al reducir una partición, todos los archivos normales se reubican automáticame
 
 4.  En el símbolo del sistema **DISKPART**, escribe `shrink [desired=<desiredsize>] [minimum=<minimumsize>]`. Reduce el volumen seleccionado a *desiredsize* en megabytes (MB), si es posible, o a *minimumsize* si *desiredsize* es demasiado grande.
 
-<br />
-
-| Valor | Descripción|
-|---|---|
-| <p>**volumen de la lista**</p> | <p>Muestra una lista de volúmenes básicos y dinámicos en todos los discos.</p>|
-| <p>**Seleccione el volumen**</p> | <p>Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.</p> |
-| <p>**shrink**</p> | <p>Reduce el volumen con el foco para crear un espacio sin asignar. No se produce ninguna pérdida de datos. Si la partición incluye archivos que no pueden moverse (por ejemplo, el archivo de página o el área de almacenamiento de instantáneas), el volumen se reducirá hasta el punto donde se encuentran los archivos que no pueden moverse. |
-| <p>**desired=** <em>desiredsize</em></p> | <p>La cantidad de espacio, en megabytes, para recuperarse en la partición actual.</p> |
-| <p>**mínimo =** <em>minimumsize</em></p> | <p>La cantidad mínima de espacio, en megabytes, para recuperarse en la partición actual. Si no se especifica un tamaño mínimo o deseado, el comando reclamará la cantidad máxima de espacio posible.</p> 
-
-<a id="addcon"></a>
+| Valor             | Descripción |
+| ---               | ----------- |
+| **volumen de la lista** | Muestra una lista de volúmenes básicos y dinámicos en todos los discos. |
+| **Seleccione el volumen** | Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente. |
+| **shrink** | Reduce el volumen con el foco para crear un espacio sin asignar. No se produce ninguna pérdida de datos. Si la partición incluye archivos que no pueden moverse (por ejemplo, el archivo de página o el área de almacenamiento de instantáneas), el volumen se reducirá hasta el punto donde se encuentran los archivos que no pueden moverse. |
+| **desired=** <em>desiredsize</em> | La cantidad de espacio, en megabytes, para recuperarse en la partición actual. |
+| **mínimo =** <em>minimumsize</em> | La cantidad mínima de espacio, en megabytes, para recuperarse en la partición actual. Si no se especifica un tamaño mínimo o deseado, el comando reclamará la cantidad máxima de espacio posible. |
 
 ## <a name="additional-considerations"></a>Consideraciones adicionales
 

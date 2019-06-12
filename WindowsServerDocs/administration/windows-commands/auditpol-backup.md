@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78594c0445ae482e49d47b3b67bb867e53866017
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7de5e6dc6d205b7e6749d38ac822e31a78788c6e
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867956"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435214"
 ---
 # <a name="auditpol-backup"></a>copia de seguridad Auditpol
 
@@ -31,10 +31,12 @@ Configuración de directiva, la configuración de directiva de auditoría por us
 auditpol /backup /file:<filename>
 ```
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|/file|Especifica el nombre del archivo al que la directiva de auditoría se realizará una copia.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+
+| Parámetro |                                 Descripción                                 |
+|-----------|-----------------------------------------------------------------------------|
+|   /file   | Especifica el nombre del archivo al que la directiva de auditoría se realizará una copia. |
+|    /?     |                    Muestra la ayuda en el símbolo del sistema.                     |
+
 ## <a name="remarks"></a>Comentarios
 para las operaciones de copia de seguridad de la directiva de por usuario y la directiva del sistema, se debe escribir o permiso Control total sobre ese objeto se establece en el descriptor de seguridad. También se pueden realizar operaciones de copia de seguridad que posee el **Administrar registro de auditoría y seguridad** derecho de usuario (SeSecurityPrivilege). Sin embargo, este derecho permite acceso adicional que no es necesario realizar la operación de lista.
 ## <a name="BKMK_examples"></a>Ejemplos
@@ -44,6 +46,6 @@ auditpol /backup /file:C:\auditpolicy.csv
 ```
 > [!NOTE]
 > Si se especifica ninguna unidad, se usa el directorio actual.
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[auditpol restauración](auditpol-restore.md)
+> #### <a name="additional-references"></a>Referencias adicionales
+> [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+> [auditpol restauración](auditpol-restore.md)

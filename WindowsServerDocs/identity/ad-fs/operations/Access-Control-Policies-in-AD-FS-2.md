@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 216af933aee643ee56feff71c59d9ecc2e62998c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 036d6d0543687e7f82caf3dfd2c3bb0b4a981181
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842996"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66445053"
 ---
 # <a name="client-access-control-policies-in-ad-fs-20"></a>Directivas de Control de acceso de cliente de AD FS 2.0
 Una directivas de acceso de cliente en Active Directory Federation Services 2.0 permiten restringir o conceder acceso a los usuarios a los recursos.  Este documento describe cómo habilitar las directivas de acceso de cliente de AD FS 2.0 y cómo configurar los escenarios más comunes.
@@ -52,11 +52,13 @@ En la confianza de proveedor de notificaciones de Active Directory, cree una nue
     `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`
 
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
+~~~
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`
 
-    `https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+`https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`
+~~~
 
 ### <a name="step-3-update-the-microsoft-office-365-identity-platform-relying-party-trust"></a>Paso 3: Actualizar la plataforma de identidad de Microsoft Office 365 confianza
 
@@ -160,16 +162,16 @@ El ejemplo siguiente habilita el acceso de clientes internos en función de la d
 
 ### <a name="descriptions-of-the-claim-rule-language-syntax-used-in-the-above-scenarios"></a>Descripciones de la sintaxis de lenguaje de reglas de notificación utilizado en los escenarios anteriores
 
-|Descripción|Sintaxis de lenguaje de reglas de notificación|
-|-----|-----| 
-|Regla de FS AD de forma predeterminada para permitir el acceso a todos los usuarios. Esta regla ya debe existir en la plataforma de identidad de Microsoft Office 365 confianza lista de reglas de autorización de emisión.|= > problema (tipo = "https://schemas.microsoft.com/authorization/claims/permit", valor = "true");| 
-|Agregue esta cláusula a una nueva regla personalizada especifica que la solicitud procede de servidor proxy de federación (es decir, tiene el encabezado x-ms-proxy)
-Se recomienda que todas las reglas de incluyen.|exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"])| 
-|Se usa para establecer que la solicitud proviene de un cliente con una dirección IP del intervalo aceptable definido.|NO existe ([tipo == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", valor = ~ "regex de dirección ip pública proporcionado por el cliente"])| 
-|Esta cláusula se utiliza para especificar que si la aplicación que se obtiene acceso no es Microsoft.Exchange.ActiveSync se debe denegar la solicitud.|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value=="Microsoft.Exchange.ActiveSync"])| 
-|Esta regla permite determinar si la llamada se realizó utilizando un explorador Web y no se denegará.|NOT exists([Type == "https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value == "/adfs/ls/"])| 
-|Esta regla indica que deben denegarse los únicos usuarios de un determinado grupo de Active Directory (según el valor de SID). Agregar en la declaración no significa que se permitirá un grupo de usuarios, independientemente de la ubicación.|exists([Type == "https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value =~ "{Group SID value of allowed AD group}"])| 
-|Se trata de una cláusula necesaria para emitir un permiso deny cuando se cumplen todas las condiciones anteriores.|= > problema (tipo = "https://schemas.microsoft.com/authorization/claims/deny", valor = "true");|
+|                                                                                                   Descripción                                                                                                   |                                                                     Sintaxis de lenguaje de reglas de notificación                                                                     |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|              Regla de FS AD de forma predeterminada para permitir el acceso a todos los usuarios. Esta regla ya debe existir en la plataforma de identidad de Microsoft Office 365 confianza lista de reglas de autorización de emisión.              |                                  = > problema (tipo = "<https://schemas.microsoft.com/authorization/claims/permit>", valor = "true");                                   |
+|                               Agregue esta cláusula a una nueva regla personalizada especifica que la solicitud procede de servidor proxy de federación (es decir, tiene el encabezado x-ms-proxy)                                |                                                                                                                                                                    |
+|                                                                                 Se recomienda que todas las reglas de incluyen.                                                                                  |                                    exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy>"])                                    |
+|                                                         Se usa para establecer que la solicitud proviene de un cliente con una dirección IP del intervalo aceptable definido.                                                         | NO existe ([tipo == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip>", valor = ~ "regex de dirección ip pública proporcionado por el cliente"]) |
+|                                    Esta cláusula se utiliza para especificar que si la aplicación que se obtiene acceso no es Microsoft.Exchange.ActiveSync se debe denegar la solicitud.                                     |       NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application>", Value=="Microsoft.Exchange.ActiveSync"])        |
+|                                                      Esta regla permite determinar si la llamada se realizó utilizando un explorador Web y no se denegará.                                                      |              NOT exists([Type == "<https://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path>", Value == "/adfs/ls/"])               |
+| Esta regla indica que deben denegarse los únicos usuarios de un determinado grupo de Active Directory (según el valor de SID). Agregar en la declaración no significa que se permitirá un grupo de usuarios, independientemente de la ubicación. |             exists([Type == "<https://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid>", Value =~ "{Group SID value of allowed AD group}"])              |
+|                                                                Se trata de una cláusula necesaria para emitir un permiso deny cuando se cumplen todas las condiciones anteriores.                                                                 |                                   = > problema (tipo = "<https://schemas.microsoft.com/authorization/claims/deny>", valor = "true");                                    |
 
 ### <a name="building-the-ip-address-range-expression"></a>Creación de la expresión de intervalo de direcciones IP
 
@@ -271,4 +273,4 @@ Después de haber habilitado el seguimiento, use la siguiente sintaxis de línea
 
 ## <a name="related"></a>Relacionados
 Para obtener más información sobre los nuevos tipos de notificación vea [tipos de notificaciones de AD FS](AD-FS-Claims-Types.md).
- 
+

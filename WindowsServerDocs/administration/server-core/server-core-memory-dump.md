@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: bd22378ec7ce5a1ff4e39546246e6e85ca859c45
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 235df6f681de51a12f82b9fad019dd2db45fd486
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828846"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435552"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar archivos de volcado de memoria para la instalación de Server Core
 
@@ -49,8 +49,8 @@ No debe tener el archivo de paginación en la partición donde está instalado e
 9. Haga clic en **DumpFileSize**y, a continuación, haga clic en **modificar**.
 10. En **Editar valor DWORD**, en **Base**, haga clic en **Decimal**.
 11. En **datos del valor**, escriba el valor adecuado y, a continuación, haga clic en **Aceptar**.
-   >[!NOTE]
-   > Es el tamaño del archivo de volcado de memoria en megabytes (MB).
+    >[!NOTE]
+    > Es el tamaño del archivo de volcado de memoria en megabytes (MB).
 12. Salga del Editor del registro.
 
 Después de determinar la ubicación de la partición del volcado de memoria, configure la ruta de acceso de destino para el archivo de paginación. Para ver la ruta de acceso de destino actual del archivo de paginación, ejecute el siguiente comando:

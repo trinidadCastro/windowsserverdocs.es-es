@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 0e7d1f5b-c939-47ca-892f-5bb285027fbc
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: dc08d89f7d84b5435e97ed5ed77eb72d003b0c84
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 95fc9cbef454c8f36b1921eb7f570138bf124256
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888576"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446942"
 ---
 # <a name="step-1-configure-the-remote-access-infrastructure"></a>Paso 1 configuración de la infraestructura de acceso remoto
 
@@ -57,11 +57,11 @@ Requiere lo siguiente:
   
 -   Una sola dirección IPv4 o IPv6 estática interna.  
   
-**Detrás de un dispositivo NAT (dos adaptadores de red)**:  
+**Detrás de un dispositivo NAT (dos adaptadores de red)** :  
   
 Requiere una sola internos orientados a Internet IPv4 o IPv6 dirección estática.  
   
-**Detrás de un dispositivo NAT (un adaptador de red)**:  
+**Detrás de un dispositivo NAT (un adaptador de red)** :  
   
 Requiere una sola dirección IPv4 o IPv6 estática.  
   
@@ -234,7 +234,7 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 1.  En el servidor DNS de la red interna: En el **iniciar** , escriba**dnsmgmt.msc**, y, a continuación, presione ENTRAR.  
   
-2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haga clic en el dominio y haga clic en **Host nuevo (A o AAAA)**.  
+2.  En el panel izquierdo de la consola del **Administrador del DNS**, expande la zona de búsqueda directa de tu dominio. Haga clic en el dominio y haga clic en **Host nuevo (A o AAAA)** .  
   
 3.  En el **nuevo Host** cuadro de diálogo el **nombre (si está en blanco se usa el nombre del dominio primario)** , escriba el nombre DNS para el sitio Web servidor de ubicación de red (es el nombre de los clientes de DirectAccess usan para conectarse a la servidor de ubicación de red). En el **dirección IP** cuadro, escriba la dirección IPv4 del servidor de ubicación de red y haga clic en **agregar Host**y, a continuación, haga clic en **Aceptar**.  
   
@@ -244,7 +244,7 @@ Debes configurar manualmente una entrada DNS para el sitio web del servidor de u
   
 6.  Haga clic en **Listo**.  
   
-![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -316,7 +316,7 @@ El servidor de acceso remoto y todos los equipos cliente de DirectAccess deben e
   
 10. Haz clic en **Reiniciar ahora** cuando se te solicite.  
   
-![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)Windows PowerShell equivalente comandos ***  
+![Windows PowerShell](../../../../media/Step-1-Configure-the-Remote-Access-Infrastructure/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   

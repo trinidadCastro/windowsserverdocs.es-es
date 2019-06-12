@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: acd3b4bb0342dfb8dc651ce7c31e85f1e77a2569
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 37fdcd1f60281eedc4faa9a14e18410b1215b685
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222971"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811212"
 ---
 # <a name="dir"></a>dir
 
@@ -58,71 +58,83 @@ dir [<Drive>:][<Path>][<FileName>] [...] [/p] [/q] [/w] [/d] [/a[[:]<Attributes>
 
 ## <a name="remarks"></a>Comentarios
 
--   Para usar varios *FileName* parámetros, separe cada nombre de archivo con un espacio, coma o punto y coma.
--   Puede usar caracteres comodín (**&#42;** o **?** ), para representar uno o más caracteres de un nombre de archivo y mostrar un subconjunto de archivos o subdirectorios.
+- Para usar varios *FileName* parámetros, separe cada nombre de archivo con un espacio, coma o punto y coma.
+- Puede usar caracteres comodín ( **&#42;** o **?** ), para representar uno o más caracteres de un nombre de archivo y mostrar un subconjunto de archivos o subdirectorios.
 
-    **Asterisco (\*):** Usar el asterisco como sustituto de cualquier cadena de caracteres, por ejemplo:  
-    -   **dir \*.txt** muestra todos los archivos en el directorio actual con las extensiones que comienzan con .txt, por ejemplo, .txt, .txt1, .txt_old.
-    -   **dir leer\*.txt** muestra todos los archivos en el directorio actual que comienzan con "lectura" y con las extensiones que comienzan con .txt, como .txt, .txt1 o .txt_old.
-    -   **dir leer\*.\***  muestra todos los archivos en el directorio actual que comienzan con "lectura" con cualquier extensión.
+  **Asterisco (\*):** Usar el asterisco como sustituto de cualquier cadena de caracteres, por ejemplo:  
+  - **dir \*.txt** muestra todos los archivos en el directorio actual con las extensiones que comienzan con .txt, por ejemplo, .txt, .txt1, .txt_old.
+  - **dir leer\*.txt** muestra todos los archivos en el directorio actual que comienzan con "lectura" y con las extensiones que comienzan con .txt, como .txt, .txt1 o .txt_old.
+  - **dir leer\*.\\** * enumera todos los archivos en el directorio actual que comienzan con "lectura" con cualquier extensión.
 
-    El carácter comodín de asterisco siempre utiliza la asignación de nombres de archivo cortos, por lo que podría obtener resultados inesperados. Por ejemplo, el directorio siguiente contiene dos archivos (t.txt2 y t97.txt):  
-    ```
-    C:\test>dir /x
-    Volume in drive C has no label.
-    Volume Serial Number is B86A-EF32
+  El carácter comodín de asterisco siempre utiliza la asignación de nombres de archivo cortos, por lo que podría obtener resultados inesperados. Por ejemplo, el directorio siguiente contiene dos archivos (t.txt2 y t97.txt): 
+ 
+  ```
+  C:\test>dir /x
+  Volume in drive C has no label.
+  Volume Serial Number is B86A-EF32
     
-    Directory of C:\test
+  Directory of C:\test
     
-    11/30/2004  01:40 PM <DIR>  .
-    11/30/2004  01:40 PM <DIR> ..
-    11/30/2004  11:05 AM 0 T97B4~1.TXT t.txt2
-    11/30/2004  01:16 PM 0 t97.txt
-    ```  
-    Es de esperar ese tiempo escribiendo **dir t97\***  devolvería el t97.txt de archivo. Sin embargo, escribir **dir t97\***  devuelve ambos archivos, porque el carácter comodín de asterisco coincide con el t.txt2 de archivo a t97.txt mediante su asignación de nombre corto T97B4~1.TXT. De forma similar, escribiendo **del t97\***  eliminaría ambos archivos.
+  11/30/2004  01:40 PM <DIR>  .
+  11/30/2004  01:40 PM <DIR> ..
+  11/30/2004  11:05 AM 0 T97B4~1.TXT t.txt2
+  11/30/2004  01:16 PM 0 t97.txt
+  ```  
 
-    **Signo de interrogación (?):** Utilice el signo de interrogación como sustituto de un único carácter en un nombre. Por ejemplo, si escribe **dir leer???. txt** enumera los archivos en el directorio actual con la extensión .txt que comienzan con "lectura" y van seguidos por hasta tres caracteres. Esto incluye Read.txt, Read1.txt, Read12.txt, Read123.txt y Readme1.txt, pero no Readme12.txt.
--   Especificar atributos de visualización del archivo
+  Es de esperar ese tiempo escribiendo **dir t97\\** * devolvería el t97.txt de archivo. Sin embargo, escribir **dir t97\\** * devuelve ambos archivos, porque el carácter comodín de asterisco coincide con el t.txt2 de archivo a t97.txt mediante su asignación de nombre corto T97B4~1.TXT. De forma similar, escribiendo **del t97\\** * eliminaría ambos archivos.
 
-    Si usas **/a** con más de un valor en *atributos*, **dir** muestra los nombres de sólo los archivos con todos los atributos especificados. Por ejemplo, si usa **/a** con **r** y **-h** como atributos (mediante el uso **/ a: r-h** o **/ar** ), **dir** mostrará solo los nombres de los archivos de solo lectura que no están ocultos.
--   Especificar la ordenación de nombre de archivo
+  **Signo de interrogación (?):** Utilice el signo de interrogación como sustituto de un único carácter en un nombre. Por ejemplo, si escribe **dir leer???. txt** enumera los archivos en el directorio actual con la extensión .txt que comienzan con "lectura" y van seguidos por hasta tres caracteres. Esto incluye Read.txt, Read1.txt, Read12.txt, Read123.txt y Readme1.txt, pero no Readme12.txt.
+- Especificar atributos de visualización del archivo
 
-    Si especifica más de una *SortOrder* valor, **dir** ordena los nombres de archivo por el primer criterio, después por el segundo criterio y así sucesivamente. Por ejemplo, si usa **/o** con el **e** y **-s** valores para *SortOrder* (mediante el uso **oe-s**o **/oe-s**), **dir** ordena los nombres de directorios y archivos por extensión, la más grande en primer lugar y, a continuación, muestra el resultado final. La ordenación alfabética por extensión hace sin extensiones que aparecen en primer lugar, los nombres de archivo, a continuación, los nombres de directorio y, a continuación, los nombres de archivo con extensión.
--   Mediante canalizaciones y los símbolos de redirección
+  Si usas **/a** con más de un valor en *atributos*, **dir** muestra los nombres de sólo los archivos con todos los atributos especificados. Por ejemplo, si usa **/a** con **r** y **-h** como atributos (mediante el uso **/ a: r-h** o **/ar** ), **dir** mostrará solo los nombres de los archivos de solo lectura que no están ocultos.
+- Especificar la ordenación de nombre de archivo
 
-    Cuando se usa el símbolo de redirección ( **>** ) para enviar **dir** en un archivo o una canalización de salida ( **|** ) para enviar **dir**de salida a otro comando, use **/a:-d** y **/b** para enumerar solo los nombres de archivo. Puede usar *FileName* con **/b** y **/s** para especificar que **dir** consiste en buscar el directorio actual y sus subdirectorios para todos los archivos los nombres que coinciden con *FileName*. **Dir** muestra solo la letra de unidad, nombre de directorio, nombre de archivo y extensión de nombre de archivo (una ruta de acceso por línea), para cada archivo de nombre busca. Antes de usar una canalización para enviar **dir** de salida a otro comando, debe establecer la TEMP variable de entorno en el archivo Autoexec.nt.
--   El **dir** comando, con diferentes parámetros, está disponible en la consola de recuperación.
+  Si especifica más de una *SortOrder* valor, **dir** ordena los nombres de archivo por el primer criterio, después por el segundo criterio y así sucesivamente. Por ejemplo, si usa **/o** con el **e** y **-s** valores para *SortOrder* (mediante el uso **oe-s**o **/oe-s**), **dir** ordena los nombres de directorios y archivos por extensión, la más grande en primer lugar y, a continuación, muestra el resultado final. La ordenación alfabética por extensión hace sin extensiones que aparecen en primer lugar, los nombres de archivo, a continuación, los nombres de directorio y, a continuación, los nombres de archivo con extensión.
+- Mediante canalizaciones y los símbolos de redirección
+
+  Cuando se usa el símbolo de redirección ( **>** ) para enviar **dir** en un archivo o una canalización de salida ( **|** ) para enviar **dir**de salida a otro comando, use **/a:-d** y **/b** para enumerar solo los nombres de archivo. Puede usar *FileName* con **/b** y **/s** para especificar que **dir** consiste en buscar el directorio actual y sus subdirectorios para todos los archivos los nombres que coinciden con *FileName*. **Dir** muestra solo la letra de unidad, nombre de directorio, nombre de archivo y extensión de nombre de archivo (una ruta de acceso por línea), para cada archivo de nombre busca. Antes de usar una canalización para enviar **dir** de salida a otro comando, debe establecer la TEMP variable de entorno en el archivo Autoexec.nt.
+- El **dir** comando, con diferentes parámetros, está disponible en la consola de recuperación.
 
 ## <a name="examples"></a>Ejemplos
 
 Para mostrar todos los directorios uno tras otro, en orden alfabético, en formato ancho y poner en pausa después de cada pantalla, asegúrese de que el directorio raíz es el directorio actual y, a continuación, escriba:
+
 ```
 dir /s/w/o/p
 ```
+
 **Dir** muestra el directorio raíz, los subdirectorios y los archivos en el directorio raíz, incluidas las extensiones. A continuación, **dir** se enumeran los nombres de subdirectorio y los nombres de archivo en cada subdirectorio en el árbol.
 
 Para modificar el ejemplo anterior para que **dir** muestra los nombres de archivo y extensiones, pero omite los nombres de directorio, escriba:
+
 ```
 dir /s/w/o/p/a:-d
 ```
+
 Para imprimir una lista de directorios, escriba:
+
 ```
 dir > prn
 ```
+
 Al especificar **prn**, la lista de directorios se envía a la impresora que está conectada al puerto LPT1. Si la impresora está conectada a un puerto diferente, debe reemplazar **prn** con el nombre del puerto correcto.
 
 También puede redirigir la salida de la **dir** a un archivo reemplazando **prn** con un nombre de archivo. También puede escribir una ruta de acceso. Por ejemplo, a direct **dir** de salida para el archivo dir.doc en el directorio de registros, escriba:
+
 ```
 dir > \records\dir.doc
 ```
+
 Si no existe el archivo dir.doc, **dir** lo crea, a menos que no existe el directorio de registros. En ese caso, aparece el siguiente mensaje:
 
 `File creation error`
 
 Para mostrar una lista de todos los nombres de archivo con la extensión .txt en todos los directorios en la unidad C, escriba:
+
 ```
 dir c:\*.txt /w/o/s/p
 ```
+
 **Dir** muestra, en formato ancho, nombres de una lista ordenada alfabéticamente de los archivos coincidentes en cada directorio y pone en pausa cada vez que se rellena de la pantalla hasta que presione cualquier tecla para continuar.
 
 #### <a name="additional-references"></a>Referencias adicionales

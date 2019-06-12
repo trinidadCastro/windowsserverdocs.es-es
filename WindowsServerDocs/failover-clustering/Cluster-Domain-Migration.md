@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/18/2019
 description: Este artículo describe cómo mover un clúster de Windows Server 2019 de un dominio a otro
 ms.localizationpriority: medium
-ms.openlocfilehash: bcfd458c94d33820f434cde3313dc069fc42ffd9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1054de942e807f00586903683faeaf695ec2f033
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875946"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452929"
 ---
 # <a name="failover-cluster-domain-migration"></a>Migración de clústeres de conmutación por error de dominio
 
@@ -46,7 +46,7 @@ Para llevar a cabo este movimiento, hay dos opciones.
 
 La primera opción implica destruir el clúster y volver a crearlo en el nuevo dominio.
 
-![Destruir y volver a generar](media\Cross-Domain-Cluster-Migration\Cross-Cluster-Domain-Migration-1.gif)
+![Destruir y volver a generar](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-1.gif)
 
 Como se muestra en la animación, esta opción es destructiva con los pasos que se va a:
 
@@ -56,7 +56,7 @@ Como se muestra en la animación, esta opción es destructiva con los pasos que 
 
 La segunda opción es menos destructiva, pero requiere hardware adicional, ya que sería necesario un nuevo clúster que se crea en el nuevo dominio.  Una vez que el clúster está en el nuevo dominio, ejecute el Asistente para migración de clúster para migrar los recursos. Tenga en cuenta que esto no migra datos, deberá usar otra herramienta para migrar datos, como [Storage Migration Service](../storage/storage-migration-service/overview.md)(una vez que se ha agregado compatibilidad con clústeres).
 
-![Crear y migrar](media\Cross-Domain-Cluster-Migration\Cross-Cluster-Domain-Migration-2.gif)
+![Crear y migrar](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-2.gif)
 
 Como se muestra en la animación, esta opción no es destructiva, pero requiere un hardware diferente o un nodo del clúster existente que se ha quitado.
 
@@ -76,7 +76,7 @@ Mover un clúster de un dominio es un proceso sencillo. Para lograr esto, hay do
 
 El proceso para lograr esto consiste en cambiar el clúster de un dominio a un grupo de trabajo y volver al nuevo dominio.  La necesidad de destruir un clúster, volver a generar un clúster, instalar aplicaciones, etcetera no es un requisito. Por ejemplo, sería similar al siguiente:
 
-![Migrar](media\Cross-Domain-Cluster-Migration\Cross-Cluster-Domain-Migration-3.gif)
+![Migrar](media/Cross-Domain-Cluster-Migration/Cross-Cluster-Domain-Migration-3.gif)
 
 ## <a name="migrating-a-cluster-to-a-new-domain"></a>Migración de un clúster a un nuevo dominio
 

@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ffdbd6f67e4e4c32022134191deabd861bf248b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ef98a98088e345f267aa852318cee6e237604aa4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827676"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433990"
 ---
 # <a name="cscript"></a>cscript
 
@@ -30,24 +30,26 @@ inicia una secuencia de comandos para que se ejecute en un entorno de línea de 
 cscript <Scriptname.extension> [/B] [/D] [/E:<Engine>] [{/H:cscript|/H:wscript}] [/I] [/Job:<Identifier>] [{/Logo|/NoLogo}] [/S] [/T:<Seconds>] [/X] [/U] [/?] [<ScriptArguments>]
 ```
 ### <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|Scriptname.extension|Especifica la ruta de acceso y el nombre del archivo de script con la extensión de nombre de archivo opcional.|
-|/B|Especifica el modo por lotes, que no muestra alertas, errores de scripting o solicita información al usuario.|
-|/D|Inicia al depurador.|
-|/E:<Engine>|Especifica el motor que se usa para ejecutar el script.|
-|/H:cscript|Registra cscript.exe como host predeterminado para ejecutar scripts.|
-|/H:wscript|Registra wscript.exe como host predeterminado para ejecutar scripts. Este es el valor predeterminado.|
-|/I|Especifica el modo interactivo, que muestra las alertas, los errores de secuencias de comandos y solicita información al usuario. Este es el valor predeterminado y lo opuesto a **/B**.|
-|/ Trabajo:<Identifier>|Se ejecuta el trabajo identificado por *identificador* en un archivo de script .wsf.|
-|O logotipo|Especifica que la pancarta de Windows Script Host se muestra en la consola antes de que se ejecuta la secuencia de comandos. Este es el valor predeterminado y lo opuesto a **/Nologo**.|
-|/Nologo|Especifica que no se muestra la pancarta de Windows Script Host antes de que se ejecuta la secuencia de comandos.|
-|/S|Guarda las opciones de línea de comandos actuales para el usuario actual.|
-|/T:<Seconds>|Especifica el tiempo máximo que se puede ejecutar la secuencia de comandos (en segundos). Puede especificar hasta 32.767 segundos. El valor predeterminado no es límite de tiempo.|
-|/U|Especifica Unicode para la entrada y salida que se redirige desde la consola.|
-|/X|Inicia la secuencia de comandos en el depurador.|
-|/?|Muestra los parámetros de los comandos disponibles y proporciona ayuda para su uso. Esto es lo mismo que escribir **cscript.exe** sin parámetros ni ningún script.|
-|ScriptArguments|Especifica los argumentos pasados al script. Cada argumento de la secuencia de comandos debe ir precedido por una barra diagonal (**/**).|
+
+|      Parámetro       |                                                                      Descripción                                                                       |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Scriptname.extension |                                 Especifica la ruta de acceso y el nombre del archivo de script con la extensión de nombre de archivo opcional.                                 |
+|          /B          |                                Especifica el modo por lotes, que no muestra alertas, errores de scripting o solicita información al usuario.                                |
+|          /D          |                                                                  Inicia al depurador.                                                                  |
+|     /E:<Engine>      |                                                  Especifica el motor que se usa para ejecutar el script.                                                  |
+|      /H:cscript      |                                         Registra cscript.exe como host predeterminado para ejecutar scripts.                                          |
+|      /H:wscript      |                               Registra wscript.exe como host predeterminado para ejecutar scripts. Este es el valor predeterminado.                               |
+|          /I          |        Especifica el modo interactivo, que muestra las alertas, los errores de secuencias de comandos y solicita información al usuario. Este es el valor predeterminado y lo opuesto a **/B**.         |
+|  / Trabajo:<Identifier>   |                                             Se ejecuta el trabajo identificado por *identificador* en un archivo de script .wsf.                                             |
+|        O logotipo         | Especifica que la pancarta de Windows Script Host se muestra en la consola antes de que se ejecuta la secuencia de comandos. Este es el valor predeterminado y lo opuesto a **/Nologo**. |
+|       /Nologo        |                                 Especifica que no se muestra la pancarta de Windows Script Host antes de que se ejecuta la secuencia de comandos.                                 |
+|          /S          |                                             Guarda las opciones de línea de comandos actuales para el usuario actual.                                             |
+|     /T:<Seconds>     |            Especifica el tiempo máximo que se puede ejecutar la secuencia de comandos (en segundos). Puede especificar hasta 32.767 segundos. El valor predeterminado no es límite de tiempo.             |
+|          /U          |                                      Especifica Unicode para la entrada y salida que se redirige desde la consola.                                       |
+|          /X          |                                                           Inicia la secuencia de comandos en el depurador.                                                           |
+|          /?          |  Muestra los parámetros de los comandos disponibles y proporciona ayuda para su uso. Esto es lo mismo que escribir **cscript.exe** sin parámetros ni ningún script.  |
+|   ScriptArguments    |                        Especifica los argumentos pasados al script. Cada argumento de la secuencia de comandos debe ir precedido por una barra diagonal ( **/** ).                         |
+
 ### <a name="remarks"></a>Comentarios
 -   Para llevar a cabo esta tarea no es necesario contar con credenciales administrativas. Por lo tanto, para garantizar la mayor seguridad, se recomienda realizar esta tarea como usuario sin credenciales administrativas.
 -   Para abrir un símbolo del sistema, en el **iniciar** , escriba **cmd**y, a continuación, haga clic en **símbolo**.

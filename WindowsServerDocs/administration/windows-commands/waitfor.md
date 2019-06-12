@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c4a91dd3822cf4d8dd904f473f146a2f0ee54c0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21ced4a9ef0dd7dac5f6c4fc6f171d99fa516c07
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840166"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440314"
 ---
 # <a name="waitfor"></a>waitfor
 
@@ -37,15 +37,15 @@ waitfor [/t <Timeout>] <SignalName>
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|/s \<equipo >|Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificadas en el comando.|
-|/u [\<Domain>\]<User>|Ejecuta el script con las credenciales de cuenta de usuario especificada. De forma predeterminada, **waitfor** usa las credenciales del usuario actual.|
-|/p [\<Password>]|Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.|
-|/si|Envía la señal especificada a través de la red.|
-|/t \<tiempo de espera >|Especifica el número de segundos que esperar una señal. De forma predeterminada, **waitfor** espera indefinidamente.|
-|\<SignalName>|Especifica la señal que **waitfor** espera o envía. *NombreDeSeñal* no distingue mayúsculas de minúsculas.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|       Parámetro       |                                                                                         Descripción                                                                                          |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /s \<equipo >     | Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificadas en el comando. |
+| /u [\<Domain>\]<User> |                              Ejecuta el script con las credenciales de cuenta de usuario especificada. De forma predeterminada, **waitfor** usa las credenciales del usuario actual.                               |
+|   /p [\<Password>]    |                                                    Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.                                                     |
+|          /si          |                                                                        Envía la señal especificada a través de la red.                                                                        |
+|     /t \<tiempo de espera >     |                                              Especifica el número de segundos que esperar una señal. De forma predeterminada, **waitfor** espera indefinidamente.                                               |
+|     \<SignalName>     |                                                Especifica la señal que **waitfor** espera o envía. *NombreDeSeñal* no distingue mayúsculas de minúsculas.                                                 |
+|          /?           |                                                                             Muestra la ayuda en el símbolo del sistema.                                                                             |
 
 ## <a name="remarks"></a>Comentarios
 

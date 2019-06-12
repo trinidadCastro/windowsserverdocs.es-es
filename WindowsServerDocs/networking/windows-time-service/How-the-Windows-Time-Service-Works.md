@@ -9,12 +9,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 67c3471a726df354e0faa9e3aced491c4084e9e3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e4131c28a18a50f3312e5e0201a0ed9529d4555
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864346"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812398"
 ---
 # <a name="how-the-windows-time-service-works"></a>Funcionamiento del servicio Hora de Windows
 
@@ -22,13 +22,13 @@ ms.locfileid: "59864346"
 
 **En esta sección**  
   
--   [Arquitectura del servicio de hora de Windows](#w2k3tr_times_how_rrfo)  
+-   [Arquitectura del servicio de hora de Windows](#windows-time-service-architecture)  
   
--   [Protocolos de tiempo de servicio de hora de Windows](#w2k3tr_times_how_ekoc)  
+-   [Protocolos de tiempo de servicio de hora de Windows](#windows-time-service-time-protocols)  
   
--   [Hora de Windows Service procesos e interacciones](#w2k3tr_times_how_izcr)  
+-   [Hora de Windows Service procesos e interacciones](#windows-time-service-processes-and-interactions)  
   
--   [Puertos de red usados por el servicio de hora de Windows](#w2k3tr_times_how_ydum)  
+-   [Puertos de red usados por el servicio de hora de Windows](#network-ports-used-by-windows-time-service)  
   
 > [!NOTE]  
 > En este tema se explica solo cómo funciona el servicio de hora de Windows (W32Time). Para obtener información sobre cómo configurar el servicio de hora de Windows, consulte [configurar sistemas de alta precisión](configuring-systems-for-high-accuracy.md).
@@ -57,7 +57,7 @@ El grado en que se precisa tiempo de un equipo se denomina un satélites. El ori
   
 Cuando el Administrador de W32Time recibe ejemplos de tiempo, utiliza algoritmos especiales NTP para determinar cuál de las muestras de tiempo es la más adecuada para su uso. El servicio de hora también usa otro conjunto de algoritmos para determinar cuál de los orígenes del tiempo configurado es el más preciso. Cuando el servicio de hora ha determinado qué muestra de tiempo es mejor, según los criterios mencionados anteriormente, ajusta la velocidad del reloj local para permitir que convergen hacia la hora correcta. Si la diferencia horaria entre el reloj local y el ejemplo de tiempo precisa seleccionado (también denominado el tiempo de sesgo) es demasiado grande para corregir mediante el ajuste de la velocidad del reloj local, en el servicio de hora se establece el reloj local a la hora correcta. Este ajuste de velocidad de reloj o cambio del tiempo de reloj directa se conoce como disciplina de reloj.  
   
-## <a name="w2k3tr_times_how_rrfo"></a>Arquitectura del servicio de hora de Windows  
+## <a name="windows-time-service-architecture"></a>Arquitectura de servicio de hora de Windows  
 El servicio de hora de Windows consta de los siguientes componentes:  
   
 -   administrador de control de servicios  
@@ -88,7 +88,7 @@ El proceso de sincronización de hora implica los pasos siguientes:
   
 Si un equipo se ha designado como un servidor horario, puede enviar el tiempo de sesión en cualquier equipo que solicita la sincronización de hora en cualquier momento durante este proceso.  
   
-## <a name="w2k3tr_times_how_ekoc"></a>Protocolos de tiempo de servicio de hora de Windows  
+## <a name="windows-time-service-time-protocols"></a>Protocolos de tiempo de servicio de hora de Windows  
 
 Protocolos de tiempo determinan cómo estrechamente dos de los equipos se sincronizan los relojes. Un protocolo de tiempo es responsable de determinar la mejor información de hora disponible y converger los relojes para asegurarse de que se mantiene un tiempo consistente en sistemas independientes.  
   
@@ -144,7 +144,7 @@ El servicio de hora de Windows puede interoperar con equipos que ejecutan Window
   
 Windows NT 4.0 utiliza un mecanismo más sencillo para la sincronización de hora que usa el servicio de hora de Windows. Por lo tanto, para garantizar la sincronización de hora exacta a través de la red, se recomienda que actualice los controladores de dominio de Windows NT 4.0 a Windows 2000 o Windows Server 2003.  
   
-## <a name="w2k3tr_times_how_izcr"></a>Hora de Windows Service procesos e interacciones  
+## <a name="windows-time-service-processes-and-interactions"></a>Hora de Windows Service procesos e interacciones  
 
 El servicio de hora de Windows está diseñado para sincronizar los relojes de los equipos de una red. El proceso de sincronización de tiempo de red, también denominado convergencia de tiempo, se produce a lo largo de una red como equipo cada vez que accede a desde un servidor de tiempo más preciso. Convergencia de tiempo implica un proceso por el que un servidor autoritativo proporciona la hora actual en los equipos cliente en forma de paquetes NTP. La información proporcionada en un paquete indica si un ajuste debe realizarse a la hora del equipo actual, por lo que se sincronice con el servidor más preciso.  
   
@@ -252,7 +252,7 @@ La única vez que los servidores que confían los clientes incluso si no se han 
 ### <a name="disabling-the-windows-time-service"></a>Deshabilitar el servicio de hora de Windows  
 Se puede deshabilitar completamente el servicio de hora de Windows (W32Time). Si decide implementar un producto de sincronización de hora de terceros que utiliza NTP, debe deshabilitar el servicio de hora de Windows. Esto es porque todos los servidores NTP necesitan tener acceso al puerto de protocolo de datagramas de usuario (UDP) 123 y, siempre y cuando el servicio de hora de Windows se ejecuta en el sistema operativo Windows Server 2003, el puerto 123 permanece reservado por hora de Windows.  
   
-## <a name="w2k3tr_times_how_ydum"></a>Puertos de red usados por el servicio de hora de Windows  
+## <a name="network-ports-used-by-windows-time-service"></a>Puertos de red usados por el servicio de hora de Windows  
 El servicio de hora de Windows se comunica en una red para identificar orígenes de hora confiable, obtener información de tiempo y proporcionar información de tiempo a otros equipos. Esta comunicación realiza como definido por el NTP y SNTP RFC.  
   
 **Asignaciones de puertos para el servicio de hora de Windows**  

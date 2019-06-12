@@ -2,44 +2,40 @@
 title: Asignar una ruta de acceso de carpeta de punto de montaje a una unidad
 description: En este artículo se describe cómo asignar una ruta de acceso de carpeta de punto de montaje (en lugar de una letra de unidad) a una unidad.
 keywords: virtualización, seguridad, malware
-ms.date: 10/12/2017
+ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a25dac6e49d6e9aee2efa043999162262c5bb791
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d09024b3c7f7a1e55c9e9c2ece56e037fe7e16f2
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870876"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812498"
 ---
 # <a name="assign-a-mount-point-folder-path-to-a-drive"></a>Asignar una ruta de acceso de carpeta de punto de montaje a una unidad
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Puedes usar la Administración de discos para asignar una ruta de acceso de carpeta de punto de montaje (en lugar de una letra de unidad) a la unidad. Las rutas de acceso de carpeta de punto de montaje solo están disponibles en carpetas vacías en volúmenes NTFS básicos o dinámicos.
 
 ## <a name="assigning-a-mount-point-folder-path-to-a-drive"></a>Asignar una ruta de acceso de carpeta de punto de montaje a una unidad
 
--   [Mediante la interfaz de Windows](#BKMK_WINUI)
--   [Línea de comandos](#BKMK_CMD)
-
 > [!NOTE]
 > Debes ser miembro del grupo **Operadores de copia de seguridad** o **Administradores**, como mínimo, para completar estos pasos.
 
-**Para asignar una ruta de acceso de carpeta de punto de montaje a una unidad mediante la interfaz de Windows:**
-<a id="BKMK_WINUI"></a>
+#### <a name="to-assign-a-mount-point-folder-path-to-a-drive-by-using-the-windows-interface"></a>Para asignar una ruta de acceso de carpeta de punto de montaje a una unidad mediante la interfaz de Windows
 
 1.  En el Administrador de discos, haz clic con el botón derecho en la partición o volumen donde quieras asignar la ruta de acceso de carpeta de punto de montaje. 
 2. Haz clic en **Cambiar la letra y rutas de acceso de unidad** y luego haz clic en **Agregar**. 
 3. Haz clic en **Montar en la siguiente carpeta NTFS vacía**.
 4. Escribe la ruta de acceso a una carpeta vacía en un volumen NTFS o haz clic en **Examinar** para buscarla.
 
-<a id="BKMK_CMD"></a>
 #### <a name="to-assign-a-mount-point-folder-path-to-a-drive-using-a-command-line"></a>Para asignar una ruta de acceso de carpeta de punto de montaje a una unidad con una línea de comandos
+
 1.  Abra un símbolo del sistema y escriba `diskpart`.
 
 2.  En el símbolo de sistema **DISKPART**, escribe `list volume`, tomando nota del número de volumen al que quieres asignar la ruta de acceso.
@@ -54,14 +50,12 @@ Puedes usar la Administración de discos para asignar una ruta de acceso de carp
 
 -   Para quitar la ruta de acceso de carpeta de punto de montaje, haz clic en ella y luego haz clic en **Quitar**.
 
-<br />
-
 | Valor | Descripción |
 | --- | --- |
-| <p>**volumen de la lista**</p> | <p>Muestra una lista de volúmenes básicos y dinámicos en todos los discos.</p> |
-| <p>**Seleccione el volumen**</p>        | <p>Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de carpeta de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.</p>|
-| <p>**assign**</p> | <p><ul><li> Asigna una letra de unidad o una ruta de acceso de carpeta de punto de montaje al volumen con foco. Si no se especifica ninguna ruta de acceso de carpeta de punto de montaje o letra de unidad, se le asigna la siguiente letra de unidad disponible. Si la ruta de acceso de carpeta de punto de montaje o unidad letra ya está en uso, se genera un error.</li> </p> <p><li>Con el comando **assign**, puedes cambiar la letra de unidad asociada a una unidad extraíble.</li> </p><p><li> No puedes asignar letras de unidad a volúmenes de arranque ni a volúmenes que incluyan el archivo de paginación. Además, no puedes asignar una letra de unidad a una partición del fabricante de equipos originales (OEM), partición del sistema EFI o una partición GPT que no sea una partición de datos básica.</p></li></ul> |
-| <p>**mount=** <em>path</em></p> | <p>Especifica una carpeta NTFS vacía y existente donde residirá la unidad montada.</p>  |
+| **volumen de la lista** | Muestra una lista de volúmenes básicos y dinámicos en todos los discos. |
+| **Seleccione el volumen**        | Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de carpeta de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.|
+| **assign** | <ul><li> Asigna una letra de unidad o una ruta de acceso de carpeta de punto de montaje al volumen con foco. Si no se especifica ninguna ruta de acceso de carpeta de punto de montaje o letra de unidad, se le asigna la siguiente letra de unidad disponible. Si la ruta de acceso de carpeta de punto de montaje o unidad letra ya está en uso, se genera un error.</li>  <li>Con el comando **assign**, puedes cambiar la letra de unidad asociada a una unidad extraíble.</li> <li> No puedes asignar letras de unidad a volúmenes de arranque ni a volúmenes que incluyan el archivo de paginación. Además, no puedes asignar una letra de unidad a una partición del fabricante de equipos originales (OEM), partición del sistema EFI o una partición GPT que no sea una partición de datos básica.</li></ul> |
+| **mount=** <em>path</em> | Especifica una carpeta NTFS vacía y existente donde residirá la unidad montada.  |
 
 ## <a name="additional-considerations"></a>Consideraciones adicionales
 

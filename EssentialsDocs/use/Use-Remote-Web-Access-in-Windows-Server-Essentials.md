@@ -12,12 +12,12 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f8cf1b12a8fffe2a6e3389aad518ac96bc136cc9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: b78d6abbaf287fc56336ff8d16127ce249b97519
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872176"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435916"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
@@ -139,21 +139,21 @@ ms.locfileid: "59872176"
   
 ###### <a name="to-upload-files"></a>Para cargar archivos  
   
-1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, a continuación, haga clic en un vínculo de carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.  
+1. En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, a continuación, haga clic en un vínculo de carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.  
   
-2.  En la lista de archivos y carpetas de la carpeta compartida, haga clic en la carpeta donde quiera cargar el archivo y, a continuación, haga clic en **Cargar**.  
+2. En la lista de archivos y carpetas de la carpeta compartida, haga clic en la carpeta donde quiera cargar el archivo y, a continuación, haga clic en **Cargar**.  
   
-3.  Si aún no está cargada la herramienta de carga estándar, haga clic en **Use el método de carga estándar**.  
+3. Si aún no está cargada la herramienta de carga estándar, haga clic en **Use el método de carga estándar**.  
   
-4.  Haga clic en **Examinar**  para buscar un archivo en el equipo.  
+4. Haga clic en **Examinar**  para buscar un archivo en el equipo.  
   
-5.  Navegue a través de las carpetas en el equipo para buscar el archivo que desea cargar y, a continuación, haga clic en **Abrir**.  
+5. Navegue a través de las carpetas en el equipo para buscar el archivo que desea cargar y, a continuación, haga clic en **Abrir**.  
   
-6.  Repita los pasos 2 y 3 para cada archivo que quiera cargar.  
+6. Repita los pasos 2 y 3 para cada archivo que quiera cargar.  
   
-7.  Cuando haya agregado todos los archivos que quiere cargar, haga clic en **Cargar**.  
+7. Cuando haya agregado todos los archivos que quiere cargar, haga clic en **Cargar**.  
   
- La herramienta de carga fácil simplifica el proceso de carga de archivos en el servidor que ejecuta Windows Server Essentials. Puede agregar todos los archivos que quiera a la herramienta de carga fácil usando la característica de arrastrar y soltar y, a continuación, cargarlos en las carpetas compartidas del servidor.  
+   La herramienta de carga fácil simplifica el proceso de carga de archivos en el servidor que ejecuta Windows Server Essentials. Puede agregar todos los archivos que quiera a la herramienta de carga fácil usando la característica de arrastrar y soltar y, a continuación, cargarlos en las carpetas compartidas del servidor.  
   
 > [!NOTE]
 >  La carga de varios archivos de forma nativa es compatible con los exploradores web que son compatibles con HTML5. Esta herramienta solo es necesaria cuando el explorador web no admite HTML5.  
@@ -178,39 +178,39 @@ ms.locfileid: "59872176"
   
 ###### <a name="to-download-a-single-file"></a>Para descargar un solo archivo  
   
-1.  En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, a continuación, haga clic en un vínculo de carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.  
+1. En el Acceso web remoto, haga clic en la pestaña **Carpetas compartidas** y, a continuación, haga clic en un vínculo de carpeta compartida. Se muestra una lista de los archivos y las carpetas de esa carpeta compartida.  
   
-2.  En la lista de archivos de carpeta compartida, haga clic en la casilla de verificación junto al archivo que desea descargar en su equipo doméstico.  
+2. En la lista de archivos de carpeta compartida, haga clic en la casilla de verificación junto al archivo que desea descargar en su equipo doméstico.  
   
-3.  Haga clic en **Descargar** para comenzar la descarga.  
+3. Haga clic en **Descargar** para comenzar la descarga.  
   
-4.  En el cuadro de diálogo **Descarga de archivos**, haga clic en **Guardar** para guardar el archivo en el equipo.  
+4. En el cuadro de diálogo **Descarga de archivos**, haga clic en **Guardar** para guardar el archivo en el equipo.  
   
-5.  En el cuadro de diálogo **Guardar como**, seleccione la ubicación para guardar el archivo y, a continuación, haga clic en **Guardar**. No se comprime un solo archivo antes de descargarlo.  
+5. En el cuadro de diálogo **Guardar como**, seleccione la ubicación para guardar el archivo y, a continuación, haga clic en **Guardar**. No se comprime un solo archivo antes de descargarlo.  
   
- Hay dos opciones para descargar varios archivos o carpetas. Elija la opción que se adapte a sus necesidades:  
+   Hay dos opciones para descargar varios archivos o carpetas. Elija la opción que se adapte a sus necesidades:  
   
 > [!NOTE]
 >  Estas opciones solo están disponibles cuando se descarga varios archivos o carpetas en el equipo.  
   
--   **Archivo ejecutable autoextraíble (.exe)**  
+- **Archivo ejecutable autoextraíble (.exe)**  
   
-    > [!NOTE]
-    >   En esta sección se aplica a un servidor que ejecuta Windows Server Essentials.  
+  > [!NOTE]
+  >   En esta sección se aplica a un servidor que ejecuta Windows Server Essentials.  
   
-     Un archivo ejecutable autoextraíble es un archivo que se puede descargar y que combina el programa (ejecutable) de descompresión con los archivos comprimidos. Al ejecutar el programa ejecutable, se descomprimen automáticamente los archivos comprimidos (autoextraíble). Se trata de un método habitual de distribuir los datos comprimidos sin preocuparse de si el destinatario tiene la utilidad de descompresión adecuada.  
+   Un archivo ejecutable autoextraíble es un archivo que se puede descargar y que combina el programa (ejecutable) de descompresión con los archivos comprimidos. Al ejecutar el programa ejecutable, se descomprimen automáticamente los archivos comprimidos (autoextraíble). Se trata de un método habitual de distribuir los datos comprimidos sin preocuparse de si el destinatario tiene la utilidad de descompresión adecuada.  
   
-    > [!NOTE]
-    >  Esta opción admite los caracteres Unicode.  
+  > [!NOTE]
+  >  Esta opción admite los caracteres Unicode.  
   
--   **Carpeta comprimida de Windows (.zip)**  
+- **Carpeta comprimida de Windows (.zip)**  
   
-     Al comprimir un archivo se crea una versión comprimida del archivo, que es menor que el archivo original. La versión comprimida del archivo tiene la extensión de nombre de archivo .zip. Los tipos de archivo que se reducen al máximo al comprimirlos son los de texto, como .txt, .doc, .xls, y archivos de gráficos que usan tipos de archivo no comprimidos, como .bmp. Algunos archivos de gráficos, como por ejemplo los archivos .jpg y .gif, ya emplean la compresión, y el tamaño del archivo se reduce muy poco durante la compresión. Además, un documento de Word que contiene una gran cantidad de gráficos no se reduce tanto como un documento que está formado principalmente por texto.  
+   Al comprimir un archivo se crea una versión comprimida del archivo, que es menor que el archivo original. La versión comprimida del archivo tiene la extensión de nombre de archivo .zip. Los tipos de archivo que se reducen al máximo al comprimirlos son los de texto, como .txt, .doc, .xls, y archivos de gráficos que usan tipos de archivo no comprimidos, como .bmp. Algunos archivos de gráficos, como por ejemplo los archivos .jpg y .gif, ya emplean la compresión, y el tamaño del archivo se reduce muy poco durante la compresión. Además, un documento de Word que contiene una gran cantidad de gráficos no se reduce tanto como un documento que está formado principalmente por texto.  
   
-    > [!NOTE]
-    >  Esta opción proporciona compatibilidad limitada para los nombres de archivo internacionales en Windows Server Essentials.  
+  > [!NOTE]
+  >  Esta opción proporciona compatibilidad limitada para los nombres de archivo internacionales en Windows Server Essentials.  
   
- Antes de que comience la descarga real, se crea el archivo .exe o .zip. En función del número de archivos y del tamaño total de los archivos que se van a descargar, esta acción puede tardar varios minutos. Después de crearse el archivo de descarga, la descarga del archivo tiene lugar en segundo plano. Esto le permite seguir trabajando mientras se completa el proceso de descarga.  
+  Antes de que comience la descarga real, se crea el archivo .exe o .zip. En función del número de archivos y del tamaño total de los archivos que se van a descargar, esta acción puede tardar varios minutos. Después de crearse el archivo de descarga, la descarga del archivo tiene lugar en segundo plano. Esto le permite seguir trabajando mientras se completa el proceso de descarga.  
   
 ###### <a name="to-download-multiple-files-or-folders"></a>Para descargar varios archivos o carpetas  
   
@@ -326,13 +326,13 @@ ms.locfileid: "59872176"
   
 ##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>Para volver a la versión móvil del Acceso web remoto  
   
-1.  Cierre la sesión.  
+1. Cierre la sesión.  
   
-2.  Abra un explorador Web y escriba **https://***<Nombredesudominio\>***/remoto/m** en la barra de direcciones. Asegúrese de que incluir la s de https.  
+2. Abra un explorador Web y escriba **https://***<Nombredesudominio\>***/remoto/m** en la barra de direcciones. Asegúrese de que incluir la s de https.  
   
-3.  Se muestra la versión móvil del acceso Web remoto. En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Se registran la versión móvil del acceso Web remoto.  
+3. Se muestra la versión móvil del acceso Web remoto. En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Se registran la versión móvil del acceso Web remoto.  
   
- Puede buscar archivos y carpetas en las carpetas compartidas en el servidor.  
+   Puede buscar archivos y carpetas en las carpetas compartidas en el servidor.  
   
 ###  <a name="BKMK_9"></a> Exploradores Web compatibles para dispositivos móviles  
  Entre los exploradores web compatibles para dispositivos móviles se incluyen los siguientes:  

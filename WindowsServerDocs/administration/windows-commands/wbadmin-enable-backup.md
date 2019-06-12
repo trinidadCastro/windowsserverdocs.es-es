@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fd0bea5da83ca9351d5ea1028c94392bdb40422
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 08a9754b6bb11c50e21ba0d30543761be1866326
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845546"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440251"
 ---
 # <a name="wbadmin-enable-backup"></a>Wbadmin habilitar copia de seguridad
 
@@ -76,7 +76,6 @@ wbadmin enable backup
 [-password:<Password>]
 [-quiet] 
 [-allowDeleteOldBackups]
-
 ```
 
 ## <a name="parameters"></a>Parámetros
@@ -109,26 +108,26 @@ Para ver el valor de identificador de disco para los discos, escriba **wbadmin o
 Los ejemplos siguientes muestran cómo el **wbadmin habilitar copia de seguridad** comando puede utilizarse en diferentes escenarios de copia de seguridad:
 
 Escenario 1 #
--   Programar copias de seguridad de las unidades de disco duro e:, d:\mountpoint, y \\ \\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
--   Guardar los archivos en el disco DiskID
--   Ejecutar copias de seguridad diariamente a las 9:00 A.M. y las 6:00 P.M.
-```
-wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
-```
-Escenario 2 #
--   Programar copias de seguridad de la d:\documents carpeta a la ubicación de red \\ \\backupshare\backup1
--   Usar las credenciales de red para el Administrador de copia de seguridad Aaren Ekelund (aekel), que es un miembro del dominio CONTOSOEAST para autenticar el acceso al recurso compartido de red. Es la contraseña del Aaren *$3 hM 9 ^ 5lp*.
--   Ejecutar copias de seguridad diariamente a las 12:00 A.M. y las 7:00 P.M.
-```
-wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
-```
-Escenario 3 #
--   Programar copias de seguridad del volumen d:\documents t: y la carpeta a la altura de la unidad, pero excluye la d:\documents carpeta\~tmp
--   Realizar una copia de seguridad completa mediante el servicio de instantáneas de volumen.
--   Ejecutar copias de seguridad diariamente a las 1:00 A.M.
-```
-wbadmin enable backup –addtarget:H: –include T:,D:\documents –exclude D:\documents\~tmp –vssfull –schedule:01:00
-```
+- Programar copias de seguridad de las unidades de disco duro e:, d:\mountpoint, y \\ \\? \Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+- Guardar los archivos en el disco DiskID
+- Ejecutar copias de seguridad diariamente a las 9:00 A.M. y las 6:00 P.M.
+  ```
+  wbadmin enable backup -addtarget:DiskID -schedule:09:00,18:00 -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
+  ```
+  Escenario 2 #
+- Programar copias de seguridad de la d:\documents carpeta a la ubicación de red \\ \\backupshare\backup1
+- Usar las credenciales de red para el Administrador de copia de seguridad Aaren Ekelund (aekel), que es un miembro del dominio CONTOSOEAST para autenticar el acceso al recurso compartido de red. Es la contraseña del Aaren *$3 hM 9 ^ 5lp*.
+- Ejecutar copias de seguridad diariamente a las 12:00 A.M. y las 7:00 P.M.
+  ```
+  wbadmin enable backup –addtarget:\\backupshare\backup1 –include: d:\documents –user:CONTOSOEAST\aekel –password:$3hM9^5lp –schedule:00:00,19:00
+  ```
+  Escenario 3 #
+- Programar copias de seguridad del volumen d:\documents t: y la carpeta a la altura de la unidad, pero excluye la d:\documents carpeta\~tmp
+- Realizar una copia de seguridad completa mediante el servicio de instantáneas de volumen.
+- Ejecutar copias de seguridad diariamente a las 1:00 A.M.
+  ```
+  wbadmin enable backup –addtarget:H: –include T:,D:\documents –exclude D:\documents\~tmp –vssfull –schedule:01:00
+  ```
 
 #### <a name="additional-references"></a>Referencias adicionales
 

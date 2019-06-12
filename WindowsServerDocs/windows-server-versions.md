@@ -14,12 +14,12 @@ author: lizap
 ms.author: elizapo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 8d14ccf734d5242301030bbb6e3c2489e1a0266a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f9a4e4e0dde0c2c6178629f0dee744448edc72dd
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59876356"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812598"
 ---
 # <a name="windows-server---it-administrator-content-for-current-and-previous-releases"></a>Windows Server: contenido de administradores de TI para versiones actuales y anteriores
 
@@ -29,7 +29,7 @@ Usa los siguientes vínculos para ver el contenido técnico destinado a profesio
 
 > [!IMPORTANT]
 > ¿Tienes Windows en tu PC? ¿Windows 10, Windows 8 o 8.1? ¿Windows 7 ¿Tienes algún problema? Ve a [Soporte técnico de Microsoft](https://support.microsoft.com): escribe tu problema en la barra de búsqueda. Tienen información sobre Windows, Office, Skype y todo lo que se te ocurra. 
-
+> 
 > La siguiente información es *solo* sobre Windows **Server**.
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
@@ -54,18 +54,14 @@ Usa los siguientes vínculos para ver el contenido técnico destinado a profesio
 
 [Biblioteca de Windows Server 2003 para desarrolladores en MSDN](https://msdn.microsoft.com/library/dn792549.aspx)
 
-
 ## <a name="product-evaluations"></a>Evaluaciones del producto
 
 [Descargue la evaluación de Windows Server 2016](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016?i=1) 
 
 [Descargue la versión de prueba de Windows Server 2012 R2](https://www.microsoft.com/evalcenter/evaluate-windows-server-2012-r2) 
 
-
 ## <a name="related-links"></a>Vínculos relacionados
 [Información de producto de Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server) 
-
-<br>
 
 > [!TIP]
 > ¿Tienes un problema? Empieza con [Soporte técnico de Microsoft](https://support.microsoft.com): escribe tu problema en la barra de búsqueda. Puedes obtener ayuda con Windows, Office, Skype y todo lo que se te ocurra. 

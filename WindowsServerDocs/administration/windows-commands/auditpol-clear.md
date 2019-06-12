@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 453579589f3fd3cc2c9fa835b50bfb59e33bc3dc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 86b56386ba9bed2486cdf8cdbb4486fcec6c6265
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872586"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435149"
 ---
 # <a name="auditpol-clear"></a>Borrar Auditpol
 
@@ -31,10 +31,12 @@ elimina la directiva de auditoría por usuario para todos los usuarios, se resta
 auditpol /clear [/y]
 ```
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|/y|Suprime el mensaje para confirmar si se deben borrar todas las configuraciones de directiva de auditoría.|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+
+| Parámetro |                                   Descripción                                    |
+|-----------|----------------------------------------------------------------------------------|
+|    /y     | Suprime el mensaje para confirmar si se deben borrar todas las configuraciones de directiva de auditoría. |
+|    /?     |                       Muestra la ayuda en el símbolo del sistema.                       |
+
 ## <a name="remarks"></a>Comentarios
 para operaciones de borrado de la directiva de por usuario y la directiva del sistema, se debe escribir o permiso Control total sobre ese objeto se establece en el descriptor de seguridad. También se puede realizar la operación de borrado que poseen el **Administrar registro de auditoría y seguridad** derecho de usuario (SeSecurityPrivilege). Sin embargo, este derecho permite acceso adicional que no es necesario realizar la operación de borrado.
 ## <a name="BKMK_examples"></a>Ejemplos
@@ -48,5 +50,5 @@ auditpol /clear /y
 ```
 > [!NOTE]
 > El ejemplo anterior es útil cuando se usa una secuencia de comandos para realizar esta operación.
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+> #### <a name="additional-references"></a>Referencias adicionales
+> [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

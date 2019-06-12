@@ -12,12 +12,12 @@ ms.assetid: f1e6b377-4a24-4d28-9b25-05910914826b
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 72fe309e0e7ce6d7227cce8b7f2c5dbf018eb4a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1adf8ae2dd8763d0bc5a514609bb2470de6acde4
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813096"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436070"
 ---
 # <a name="troubleshoot-computer-monitoring-in-windows-server-essentials"></a>Solucionar problemas de supervisión del equipo en Windows Server Essentials
 
@@ -36,13 +36,13 @@ Este tema proporciona una solución de problemas que surgen al supervisar el est
   
  **Causa** Este error puede producirse por cualquiera de los siguientes problemas en la configuración de las notificaciones de alerta:  
   
--   Un nombre de servidor SMTP o un número de puerto incorrecto.  
+- Un nombre de servidor SMTP o un número de puerto incorrecto.  
   
--   Se especificó incorrectamente que el servidor SMTP requiere una conexión de Capa de sockets seguros (SSL).  
+- Se especificó incorrectamente que el servidor SMTP requiere una conexión de Capa de sockets seguros (SSL).  
   
--   El servidor SMTP requiere autenticación, y se especificaron credenciales incorrectas.  
+- El servidor SMTP requiere autenticación, y se especificaron credenciales incorrectas.  
   
- **Soluciones** Corregir los errores en la configuración de las notificaciones por correo electrónico.  
+  **Soluciones** Corregir los errores en la configuración de las notificaciones por correo electrónico.  
   
 ##### <a name="to-identify-issues-in-your-email-notification-settings"></a>Para identificar problemas en la configuración de notificación de correo electrónico  
   
@@ -53,7 +53,7 @@ Este tema proporciona una solución de problemas que surgen al supervisar el est
      %ProgramData%\Microsoft\Windows Server\Logs\SharedServiceHost-AlertServiceConfig.log  
   
     > [!TIP]
-    >  Para ver la carpeta ProgramData, debe ocultar los elementos mostrados. Si don t ve la carpeta ProgramData, en la cinta de opciones s **vista** ficha la **mostrar u ocultar** grupo, seleccione el **elementos ocultos** cuadro de texto.  
+    >  Para ver la carpeta ProgramData, debe ocultar los elementos mostrados. Si no ve la carpeta ProgramData, en la cinta de opciones **vista** ficha la **mostrar u ocultar** grupo, seleccione el **elementos ocultos** cuadro de texto.  
   
 ##### <a name="to-update-your-email-notification-setup-for-alerts"></a>Para actualizar la configuración de notificaciones de correo electrónico para alertas  
   

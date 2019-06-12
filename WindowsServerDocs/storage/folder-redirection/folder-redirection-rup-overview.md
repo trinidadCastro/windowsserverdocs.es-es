@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: ad44ba4bbe0b31f423a4ae4593e349571d838de2
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 89506d0f7445f0df230945f45a31d4f58390c5c1
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65475917"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812419"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Introducción al redireccionamiento de carpetas, archivos sin conexión y perfiles de usuario móvil
 
@@ -46,11 +46,11 @@ Los administradores pueden usar el redireccionamiento de carpetas, los archivos 
 
 En la siguiente tabla, se describen algunos de los principales cambios en el redireccionamiento de carpetas, archivos sin conexión y perfiles de usuarios móviles que se encuentran disponibles en esta versión.
 
-|Característica/funcionalidad|¿Nueva o actualizada?|Descripción|
-|---|---|---|
-|Modo Siempre sin conexión|Nuevo|Proporciona un acceso más rápido a los archivos y un menor uso de ancho de banda ya que siempre trabaja sin conexión, incluso cuando se encuentra conectado a través de una conexión de red de alta velocidad.|
-|Sincronización con control costo|Nuevo|Evita que los usuarios tengan altos costos de uso de datos de sincronización al usar conexiones de uso medido que poseen límites de uso, o al utilizar un perfil móvil en la red de otro proveedor.|
-|Soporte de equipo principal|Nuevo|Permite limitar el uso de el redireccionamiento de carpetas, los perfiles de usuarios móviles o ambos a tan solo los equipos principales de un usuario.|
+| Característica/funcionalidad | ¿Nueva o actualizada? | Descripción |
+| --- | --- | --- |
+| Modo Siempre sin conexión | Nuevo | Proporciona un acceso más rápido a los archivos y un menor uso de ancho de banda ya que siempre trabaja sin conexión, incluso cuando se encuentra conectado a través de una conexión de red de alta velocidad. |
+| Sincronización con control costo | Nuevo | Evita que los usuarios tengan altos costos de uso de datos de sincronización al usar conexiones de uso medido que poseen límites de uso, o al utilizar un perfil móvil en la red de otro proveedor. |
+| Soporte de equipo principal | Nuevo | Permite limitar el uso de el redireccionamiento de carpetas, los perfiles de usuarios móviles o ambos a tan solo los equipos principales de un usuario. |
 
 ## <a name="always-offline-mode"></a>Modo Siempre sin conexión
 
@@ -75,8 +75,8 @@ Para obtener más información, consulte [Enable the Always Offline Mode to Prov
 
 Con la sincronización con control de costo, Windows deshabilita la sincronización en segundo plano cuando el usuario utiliza una conexión de red de uso medido, como una red móvil 4G, y si el equipo utiliza un perfil móvil en la red de otro proveedor, cerca del límite de ancho de banda del suscriptor o sobre este.
 
->[!NOTE]
->Las conexiones de red de uso medido normalmente tienen latencias de red de ida y vuelta que son más lentas que el valor de latencia de 35 milisegundos predeterminado para la transición al modo sin conexión (conexión lenta) en Windows 8, Windows Server 2019, Windows Server 2016 y Windows Server 2012. Por lo tanto, estas conexiones generalmente hacen la transición al modo Sin conexión (Conexión lenta) en forma automática.
+> [!NOTE]
+> Las conexiones de red de uso medido normalmente tienen latencias de red de ida y vuelta que son más lentas que el valor de latencia de 35 milisegundos predeterminado para la transición al modo sin conexión (conexión lenta) en Windows 8, Windows Server 2019, Windows Server 2016 y Windows Server 2012. Por lo tanto, estas conexiones generalmente hacen la transición al modo Sin conexión (Conexión lenta) en forma automática.
 
 ### <a name="what-value-does-cost-aware-synchronization-add"></a>¿Qué valor aporta la sincronización con control de costo?
 
@@ -129,10 +129,10 @@ Para designar equipos principales, el entorno debe cumplir con los siguientes re
 
 Para obtener más información relacionada, vea los siguientes recursos.
 
-|Tipo de contenido|Referencias|
-|---|---|
-|Evaluación del producto|[Trabajadores de información compatibles con servicios de archivos confiables y almacenamiento](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[Novedades de archivos sin conexión](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>) (Windows 7 y Windows Server 2008 R2)<br>[Novedades de archivos sin conexión para Windows Vista](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Cambios en los archivos sin conexión en Windows Vista](<https://technet.microsoft.com/library/2007.11.offline.aspx>) (TechNet Magazine)|
-|Implementación|[Implementar la redirección de carpetas, archivos sin conexión y perfiles de usuario móviles](deploy-folder-redirection.md)<br>[Implementar una solución de centralización de datos del usuario final: Redirección de carpetas y la validación de la tecnología de archivos sin conexión y la implementación](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Administración de movilidad de la Guía de implementación de datos de usuario](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guía paso a paso para configurar nuevas características de Archivos sin conexión para equipos con Windows 7](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Uso del redireccionamiento de carpeta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Implementar la redirección de carpetas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003)|
-|Herramientas y configuración|[Archivos sin conexión en MSDN](https://msdn.microsoft.com/library/cc296092.aspx)<br>[Referencia de directiva de grupo de archivos sin conexión](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000)|
-|Recursos de la comunidad|[Foro de almacenamiento y servicios de archivo](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[¡Hola, chicos del Scripting! ¿Cómo trabajar con la característica archivos sin conexión en Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[¡Hola, chicos del Scripting! ¿Cómo puedo habilitar y deshabilitar los archivos sin conexión?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)|
-Tecnologías relacionadas|[Identidad y acceso en Windows Server](../../identity/identity-and-access.md)<br>[Almacenamiento en Windows Server](../storage.md)<br>[Administración de acceso y el servidor remoto](../../remote/index.md)|
+| Tipo de contenido | Referencias |
+| --- | --- |
+| Evaluación del producto | [Trabajadores de información compatibles con servicios de archivos confiables y almacenamiento](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831495(v%3dws.11)>)<br>[Novedades de archivos sin conexión](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff183315(v=ws.10)>) (Windows 7 y Windows Server 2008 R2)<br>[Novedades de archivos sin conexión para Windows Vista](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc749449(v=ws.10)>)<br>[Cambios en los archivos sin conexión en Windows Vista](<https://technet.microsoft.com/library/2007.11.offline.aspx>) (TechNet Magazine) |
+| Implementación | [Implementar la redirección de carpetas, archivos sin conexión y perfiles de usuario móviles](deploy-folder-redirection.md)<br>[Implementar una solución de centralización de datos del usuario final: Redirección de carpetas y la validación de la tecnología de archivos sin conexión y la implementación](http://download.microsoft.com/download/3/0/1/3019A3DA-2F41-4F2D-BBC9-A6D24C4C68C4/Implementing%20an%20End-User%20Data%20Centralization%20Solution.docx)<br>[Administración de movilidad de la Guía de implementación de datos de usuario](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-vista/cc766489(v=ws.10)>)<br>[Guía paso a paso para configurar nuevas características de Archivos sin conexión para equipos con Windows 7](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff633429(v=ws.10)>)<br>[Uso del redireccionamiento de carpeta](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc753996(v=ws.11)>)<br>[Implementar la redirección de carpetas](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc737434(v=ws.10)>) (Windows Server 2003) |
+| Herramientas y configuración | [Archivos sin conexión en MSDN](https://msdn.microsoft.com/library/cc296092.aspx)<br>[Referencia de directiva de grupo de archivos sin conexión](https://msdn.microsoft.com/library/ms878937.aspx) (Windows 2000) |
+| Recursos de la comunidad | [Foro de almacenamiento y servicios de archivo](https://social.technet.microsoft.com/forums/windowsserver/home?forum=winserverfiles)<br>[¡Hola, chicos del Scripting! ¿Cómo trabajar con la característica archivos sin conexión en Windows?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>)<br>[¡Hola, chicos del Scripting! ¿Cómo puedo habilitar y deshabilitar los archivos sin conexión?](<https://blogs.technet.microsoft.com/heyscriptingguy/2009/06/02/hey-scripting-guy-how-can-i-enable-and-disable-offline-files/>) |
+| Tecnologías relacionadas|[Identidad y acceso en Windows Server](../../identity/identity-and-access.md)<br>[Almacenamiento en Windows Server](../storage.md)<br>[Administración de acceso y el servidor remoto](../../remote/index.md) |

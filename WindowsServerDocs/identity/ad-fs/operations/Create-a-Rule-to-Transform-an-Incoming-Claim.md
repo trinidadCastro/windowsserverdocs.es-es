@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 6bd107aca6c6f33cdf5f88e5b48a52fdea8d2086
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: a29406880481f0e4e257105e94bc1a33ee661164
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189343"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66444446"
 ---
 # <a name="create-a-rule-to-transform-an-incoming-claim"></a>Crear una regla para transformar una notificación entrante
 
@@ -130,9 +130,9 @@ Pertenencia a **administradores**, o equivalente, en el equipo local es el requi
 >   
 > Para obtener más información acerca de los escenarios de Control de acceso dinámico, consulte [Guía de contenido de Control de acceso dinámico](../../solution-guides/dynamic-access-control--scenario-overview.md) o [mediante notificaciones de AD DS con AD FS](https://technet.microsoft.com/library/hh831504.aspx).  
   
-7.  Haga clic en **Finalizar**.  
+7. Haga clic en **Finalizar**.  
   
-8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
+8. En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
 
 ## <a name="additional-references"></a>Referencias adicionales 
 [Configuración de regla de notificación](Configure-Claim-Rules.md)  

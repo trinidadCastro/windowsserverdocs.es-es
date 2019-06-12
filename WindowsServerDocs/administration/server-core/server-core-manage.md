@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: 6836e5db36727294d215f7f98e0faeede55a612a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 761bfc681d7e39059884977cd99997ea9996268b
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869306"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811359"
 ---
 # <a name="manage-a-server-core-server"></a>Administrar un servidor server Core
  
@@ -61,15 +61,17 @@ Para usar un complemento de MMC para administrar un servidor server Core, es mie
 Para usar un complemento de MMC para administrar un servidor Server Core que esté *no* un miembro del dominio: 
 
 1. Establecer credenciales alternativas para conectarse al equipo Server Core escribiendo el siguiente comando en un símbolo del sistema en el equipo remoto:
+1. 
    ```
    cmdkey /add:<ServerName> /user:<UserName> /pass:<password>
    ```
+
    Si desea que se le pida una contraseña, omita el **/pasar** opción.
 
 2. Cuando se le solicite, escriba la contraseña para el nombre de usuario especificado.
    Si el firewall en el servidor server Core ya no está configurado para permitir que los complementos MMC para conectarse, siga estos pasos para configurar Firewall de Windows para permitir el complemento de MMC. A continuación, continúe con el paso 3.
 3. En un equipo diferente, inicie un complemento de MMC, como **administración de equipos**.
-4. En el panel izquierdo, haga clic en el complemento y, a continuación, haga clic en **conectarse a otro equipo**. (Por ejemplo, en el ejemplo de administración de equipos, haga **administración de equipos (Local)**.)
+4. En el panel izquierdo, haga clic en el complemento y, a continuación, haga clic en **conectarse a otro equipo**. (Por ejemplo, en el ejemplo de administración de equipos, haga **administración de equipos (Local)** .)
 5. En **otro equipo**, escriba el nombre del equipo del servidor Server Core y, a continuación, haga clic en **Aceptar**. Ahora ya puede usar el complemento MMC para administrar el servidor Server Core como haría con cualquier otro equipo que ejecute un sistema operativo Windows Server.
 
 ### <a name="to-configure-windows-firewall-to-allow-mmc-snap-ins-to-connect"></a>Para configurar el Firewall de Windows para permitir conectarse a los complementos MMC
@@ -120,14 +122,17 @@ Esto habilita el modo Escritorio remoto para Administración para aceptar conexi
 Para agregar hardware a un servidor server Core, siga las instrucciones proporcionadas por el fabricante del hardware para instalar el nuevo hardware. 
 
 Si el hardware no es plug and play, deberá instalar manualmente el controlador. Para ello, copie los archivos del controlador en una ubicación temporal en el servidor y, a continuación, ejecute el siguiente comando:
+
 ```
 pnputil –i –a <driverinf>
 ```
+
 Donde *driverinf* es el nombre de archivo del archivo .inf del controlador.
 
 Si se le pide, reinicie el equipo.
 
 Para ver qué controladores están instalados, ejecute el siguiente comando: 
+
 ```
 sc query type= driver
 ```
@@ -135,7 +140,8 @@ sc query type= driver
 > [!NOTE] 
 > Debe incluir el espacio después del signo igual para que el comando se complete correctamente.
 
-Para deshabilitar a un controlador de dispositivo, ejecute lo siguiente: 
+Para deshabilitar a un controlador de dispositivo, ejecute lo siguiente:
+
 ```
 sc delete <service_name>
 ```

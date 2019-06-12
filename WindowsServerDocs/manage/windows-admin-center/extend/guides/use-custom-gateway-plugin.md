@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: c9b2e9201d58472286b42a9c89a36423f40d143d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 348ebf5b99de7f582a3edf57b0a190f87f1c4a5b
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834516"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452603"
 ---
 # <a name="use-a-custom-gateway-plugin-in-your-tool-extension"></a>Usar un complemento de puerta de enlace personalizado en la extensión de herramienta
 
@@ -23,7 +23,7 @@ En este artículo, usamos un complemento de puerta de enlace personalizada en un
 
 ## <a name="prepare-your-environment"></a>Preparar el entorno ##
 
-Si no lo ha hecho ya, siga las instrucciones de [desarrollar una extensión de la herramienta](..\develop-tool.md) para preparar el entorno y crear un nuevo, vacíe la extensión de la herramienta.
+Si no lo ha hecho ya, siga las instrucciones de [desarrollar una extensión de la herramienta](../develop-tool.md) para preparar el entorno y crear un nuevo, vacíe la extensión de la herramienta.
 
 ## <a name="add-a-module-to-your-project"></a>Agregue un módulo al proyecto ##
 
@@ -62,6 +62,9 @@ export class PluginService {
 ```
 
 Cambie las referencias a ```Sample Uno``` y ```Sample%20Uno``` a su nombre de característica según corresponda.
+
+[!WARNING]
+> Es recomendable que la compilación en ```this.appContextService.node``` se usa para llamar a cualquier API que se define en el complemento de puerta de enlace personalizada. Esto garantiza si las credenciales son necesarias dentro de su complemento de puerta de enlace que se controlarán correctamente.
 
 ### <a name="modify-modulets"></a>Modificar module.ts
 
@@ -142,4 +145,4 @@ En el archivo html, agregue el siguiente contenido:
 
 ## <a name="build-and-side-load-your-extension"></a>Compilación y cargan la extensión
 
-Ahora está listo para [de compilación y side carga](..\develop-tool.md#build-and-side-load-your-extension) la extensión en Windows Admin Center.
+Ahora está listo para [de compilación y side carga](../develop-tool.md#build-and-side-load-your-extension) la extensión en Windows Admin Center.

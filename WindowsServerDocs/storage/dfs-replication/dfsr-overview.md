@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 17fa97e28d099806c9280e42dd900e8d6c708641
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dd381c04b02889a7f2e7b8992ff6050d1b0f078a
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850246"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453065"
 ---
 # <a name="dfs-replication-overview"></a>Introducción a la replicación DFS
 
@@ -25,7 +25,7 @@ Para obtener más información acerca de la replicación de SYSVOL mediante la r
 
 Para usar la replicación DFS, debe crear grupos de replicación y agregar carpetas replicadas a los grupos. En la ilustración siguiente se muestran los grupos de replicación, las carpetas replicadas y los miembros.
 
-![Un grupo de replicación que contiene una conexión entre dos miembros, cada uno con un par de carpetas replicadas](media\dfsr-overview.gif)
+![Un grupo de replicación que contiene una conexión entre dos miembros, cada uno con un par de carpetas replicadas](media/dfsr-overview.gif)
 
 Esta ilustración muestra que un grupo de replicación es un conjunto de servidores, llamados miembros, que participa en la replicación de una o varias carpetas replicadas. Una carpeta replicada es una carpeta que se mantiene sincronizada en cada miembro. En la ilustración, hay dos carpetas replicadas: Proyectos y propuestas. Cuando cambian los datos en cada carpeta replicada, los cambios se replican a través de conexiones entre los miembros del grupo de replicación. Las conexiones entre todos los miembros forman la topología de replicación.
 Creación de varias carpetas replicadas en un único grupo de replicación simplifica el proceso de implementación de carpetas replicadas porque la topología, la programación y el ancho de banda para el grupo de replicación se aplican a cada carpeta replicada. Para implementar más carpetas replicadas, puede usar Dfsradmin.exe o seguir las instrucciones en un Asistente para definir la ruta de acceso local y los permisos para la nueva carpeta replicada.
@@ -85,7 +85,7 @@ Abra una sesión de Windows PowerShell con derechos de usuario con privilegios e
 Install-WindowsFeature <name>
 ```
 
-|Servicio de rol o característica|Name|
+|Servicio de rol o característica|Nombre|
 |---|---|
 |Replicación DFS|`FS-DFS-Replication`|
 |Herramientas de administración de DFS|`RSAT-DFS-Mgmt-Con`|

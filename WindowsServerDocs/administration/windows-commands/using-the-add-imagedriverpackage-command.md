@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dc675ac202f87703074f78c45b1f264f6105c324
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 38d6c032f347f9945701f17b9289f3e3ff474031
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843746"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440623"
 ---
 # <a name="using-the-add-imagedriverpackage-command"></a>Con el comando add-ImageDriverPackage
 
@@ -33,15 +33,17 @@ wdsutil /add-ImageDriverPackage [/Server:<Server name>media:<Image namemediatype
 [/Filename:<File name>] {/DriverPackage:<Package Name> | /PackageId:<ID>}
 ```
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|[/ Server:<Server name>|Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se usa el servidor local.|
-Medio:<Image name>|Especifica el nombre de la imagen para agregar el controlador.|
-mediatype:Boot|Especifica el tipo de imagen para agregar el controlador. Solo se pueden agregar paquetes de controladores a imágenes de arranque.|
-|/ Arquitectura: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen de arranque. Dado que es posible tener el mismo nombre de imagen para las imágenes de arranque en arquitecturas diferentes, debe especificar la arquitectura para asegurarse de que se usa la imagen correcta.|
-|/Filename:<File name>]|Especifica el nombre del archivo. Si la imagen no se identifica por nombre, debe especificarse el nombre de archivo.|
-|[/DriverPackage:<Name>|Especifica el nombre del paquete de controladores para agregar a la imagen.|
-|[/PackageId:<ID>]|Especifica el identificador de servicios de implementación de Windows del paquete de controladores. Debe especificar esta opción si el paquete de controladores no se identifica por nombre. Para buscar el identificador del paquete, haga clic en el grupo de controladores que se encuentra el paquete (o el **todos los paquetes** nodo), haga clic en el paquete y, a continuación, haga clic en **propiedades**. El identificador del paquete se muestra en el **General** ficha. Por ejemplo: {DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}.|
+
+|                 Parámetro                  |                                                                                                                                                                                                            Descripción                                                                                                                                                                                                             |
+|--------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|           [/ Server:<Server name>           |                                                                                                                                               Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se usa el servidor local.                                                                                                                                                |
+|             Medio:<Image name>             |                                                                                                                                                                                       Especifica el nombre de la imagen para agregar el controlador.                                                                                                                                                                                        |
+|               mediatype:Boot               |                                                                                                                                                                Especifica el tipo de imagen para agregar el controlador. Solo se pueden agregar paquetes de controladores a imágenes de arranque.                                                                                                                                                                 |
+| / Arquitectura: {x86 &#124; ia64 &#124; x64} |                                                                                                       Especifica la arquitectura de la imagen de arranque. Dado que es posible tener el mismo nombre de imagen para las imágenes de arranque en arquitecturas diferentes, debe especificar la arquitectura para asegurarse de que se usa la imagen correcta.                                                                                                        |
+|           /Filename:<File name>]           |                                                                                                                                                        Especifica el nombre del archivo. Si la imagen no se identifica por nombre, debe especificarse el nombre de archivo.                                                                                                                                                        |
+|           [/DriverPackage:<Name>           |                                                                                                                                                                                   Especifica el nombre del paquete de controladores para agregar a la imagen.                                                                                                                                                                                    |
+|             [/PackageId:<ID>]              | Especifica el identificador de servicios de implementación de Windows del paquete de controladores. Debe especificar esta opción si el paquete de controladores no se identifica por nombre. Para buscar el identificador del paquete, haga clic en el grupo de controladores que se encuentra el paquete (o el **todos los paquetes** nodo), haga clic en el paquete y, a continuación, haga clic en **propiedades**. El identificador del paquete se muestra en el **General** ficha. Por ejemplo: {DD098D20-1850-4fc8-8E35-EA24A1BEFF5E}. |
+
 ## <a name="BKMK_examples"></a>Ejemplos
 Para agregar un paquete de controladores a una imagen de arranque, escriba uno de los siguientes:
 ```

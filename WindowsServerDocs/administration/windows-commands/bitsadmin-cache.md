@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 75d303928250053ee30d344e1d8730b07ba452fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 80077957df0891d738364552491a66a00e831168
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845816"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435055"
 ---
-#<a name="bitsadmin-cache"></a>caché Bitsadmin
+# <a name="bitsadmin-cache"></a>caché Bitsadmin
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -43,16 +43,16 @@ bitsadmin /Cache /SetExpirationtime
 
 |Parámetro|Descripción|
 |-------|--------|
-|[Ayuda y bitsadmin caché](bitsadmin-cache-and-help.md)|Muestra el comando\-el uso de la línea del \/conmutadores de caché.|
-|[caché bitsadmin y borrarlo](bitsadmin-cache-clear.md)|Purga la memoria caché local.|
-|[eliminación y bitsadmin caché](bitsadmin-cache-and-delete.md)|elimina una entrada de caché.|
-|[deleteurl y bitsadmin caché](bitsadmin-cache-and-deleteurl.md)|Elimina todas las entradas de caché para la dirección URL especificada.|
-|[lista y bitsadmin caché](bitsadmin-cache-and-list.md)|Enumera todas las entradas de caché.|
-|[información y bitsadmin caché](bitsadmin-cache-and-info.md)|Volcados de memoria de una entrada de caché específica.|
-|[getlimit y bitsadmin caché](bitsadmin-cache-and-getlimit.md)|Recupera el límite de caché.|
-|[setlimit y bitsadmin caché](bitsadmin-cache-and-setlimit.md)|Establece el límite de memoria caché.|
-|[getexpirationtime y bitsadmin caché](bitsadmin-cache-and-getexpirationtime.md)|Recupera la hora de expiración de caché.|
-|[setexpirationtime y bitsadmin caché](bitsadmin-cache-and-setexpirationtime.md)|Establece la hora de expiración de caché.|
+|[bitsadmin cache y help](bitsadmin-cache-and-help.md)|Muestra el comando\-el uso de la línea del \/conmutadores de caché.|
+|[bitsadmin cache y clear](bitsadmin-cache-clear.md)|Purga la memoria caché local.|
+|[bitsadmin cache y delete](bitsadmin-cache-and-delete.md)|elimina una entrada de caché.|
+|[bitsadmin cache y deleteurl](bitsadmin-cache-and-deleteurl.md)|Elimina todas las entradas de caché para la dirección URL especificada.|
+|[bitsadmin cache y list](bitsadmin-cache-and-list.md)|Enumera todas las entradas de caché.|
+|[bitsadmin cache e info](bitsadmin-cache-and-info.md)|Volcados de memoria de una entrada de caché específica.|
+|[bitsadmin cache y getlimit](bitsadmin-cache-and-getlimit.md)|Recupera el límite de caché.|
+|[bitsadmin cache y setlimit](bitsadmin-cache-and-setlimit.md)|Establece el límite de memoria caché.|
+|[bitsadmin cache y getexpirationtime](bitsadmin-cache-and-getexpirationtime.md)|Recupera la hora de expiración de caché.|
+|[bitsadmin cache y setexpirationtime](bitsadmin-cache-and-setexpirationtime.md)|Establece la hora de expiración de caché.|
 
 ## <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

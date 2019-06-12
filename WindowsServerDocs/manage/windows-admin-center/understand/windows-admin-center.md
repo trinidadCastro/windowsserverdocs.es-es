@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: haley-rowland
 ms.author: harowl
-ms.date: 04/12/2019
+ms.date: 06/06/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: db69ad3021850552e92c4aa653dfd9bd9110c06d
-ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.openlocfilehash: ff08e9544a499eb73d402dcbe6c3baf40633a9d9
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66260286"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811719"
 ---
 # <a name="hello-windows-admin-center"></a>¡Hola, Windows Admin Center!
 
@@ -34,25 +34,20 @@ Windows Admin Center es una aplicación implementada localmente, basado en explo
 
 Puede actualizar versiones no preliminares de Windows Admin Center mediante Microsoft Update o instalando manualmente. Cada versión de Windows Admin Center es compatible hasta 30 días después del lanzamiento de la siguiente versión sin vista previa. Consulte nuestra [directiva de soporte técnico](../support/index.md) para obtener más información.
 
-********************
-
 >[!VIDEO https://www.youtube.com/embed/WCWxAp27ERk]
 
-
-|   |   |
-|:-:|:--|
-| [Ventana de icono que representa la aplicación](/media/simple-icon.png)| **Simple y ligero** <br/> Herramientas familiares optimizadas para realizar tareas de administración más sencillas. Instala en menos de 5 minutos y administra servidores en tu entorno inmediatamente, no se requiere configuración de destino. |
-| [Nube híbrida que representa de icono](/media/future-icon.png)| **Creado para el futuro** <br/> La integración con servicios de Azure ayuda a aprovechar el poder del mundo híbrido. Administra clústeres hiperconvergidos con herramientas eficaces y sencillas. |
-| [Servidor seguro que representa de icono](/media/secure-icon.png)| **Administración segura** <br/> Controla quién puede administrar los servidores y obtén una visión de los administradores de las acciones que se realizan en el entorno. |
+|     |     |
+| --- | --- |
+| ![](../media/simple-icon.png)| **Simple y ligero** <br/> Herramientas familiares optimizadas para realizar tareas de administración más sencillas. Instala en menos de 5 minutos y administra servidores en tu entorno inmediatamente, no se requiere configuración de destino. |
+| ![](../media/future-icon.png)| **Creado para el futuro** <br/> La integración con servicios de Azure ayuda a aprovechar el poder del mundo híbrido. Administra clústeres hiperconvergidos con herramientas eficaces y sencillas. |
+| ![](../media/secure-icon.png)| **Administración segura** <br/> Controla quién puede administrar los servidores y obtén una visión de los administradores de las acciones que se realizan en el entorno. |
 
 [Obtenga información sobre cómo Windows Admin Center puede mejorar la administración del entorno del servidor.](../overview.md)
 
-********************
-
 ## <a name="see-how-customers-are-benefitting-from-windows-admin-center"></a>Descubre cómo los clientes se benefician de Windows Admin Center
 
-|  |
-|--|
+|     |
+| --- |
 | "[Windows Admin Center] ha disminuido nuestro tiempo y esfuerzo en la administración del sistema de administración en más de un 75 %".<br> *-Rand Morimoto, presidente de Convergent Computing* |
 | "Gracias a [Windows Admin Center], podemos administrar nuestros clientes de forma remota desde el portal de HTML5 sin problema y con la integración completa con Azure Active Directory, podemos aumentar la seguridad gracias a Multi-Factor Authentication".<br/> *-Silvio Di Benedetto, fundador y consultor Senior, dentro de las tecnologías* |
 | "Hemos logrado implementar los SKU de [Server Core] SKU de una manera más eficaz, mejorar la eficacia de los recursos, la seguridad y la automatización mientras logramos un buen grado de productividad y reducimos errores que pueden ocurrir cuando solo dependen de scripts". <br/> *-Guglielmo Mengora, fundador y director ejecutivo, VaiSulWeb* |
@@ -60,18 +55,14 @@ Puede actualizar versiones no preliminares de Windows Admin Center mediante Micr
 
 [Más información acerca de las empresas que utilizan Windows Admin Center en sus entornos de producción.](case-studies.md)
 
-********************
-
 ## <a name="related-products"></a>Productos relacionados
 
-Windows Admin Center está diseñado para administrar un solo servidor o clúster. Complementa pero no sustituye a las soluciones de supervisión y administración de Microsoft existentes, como las Herramientas de administración remota del servidor (RSAT), System Center, Intune o Azure Stack. 
+Windows Admin Center está diseñado para administrar un solo servidor o clúster. Complementa pero no sustituye a las soluciones de supervisión y administración de Microsoft existentes, como las Herramientas de administración remota del servidor (RSAT), System Center, Intune o Azure Stack.
 
 [Obtenga información sobre cómo Windows Admin Center complementa a otras soluciones de administración de Microsoft.](related-management.md)
 
-********************
-
 ## <a name="connect-with-us"></a>Conecta con nosotros
 
-![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Síganos en Twitter](https://twitter.com/servermgmt)
+![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOolR)[Síganos en Twitter](https://twitter.com/servermgmt)
 
-![ ](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[Lea nuestra Blogs](https://blogs.technet.microsoft.com/servermanagement/)
+![](//img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/REOtyw)[Lea nuestra Blogs](https://blogs.technet.microsoft.com/servermanagement/)

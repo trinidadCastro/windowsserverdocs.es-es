@@ -7,16 +7,16 @@ ms.assetid: 6e102c1f-df26-4eaa-bc7a-d0d55d3b82d5
 author: jasongerend
 ms.author: jgerend
 ms.date: 03/27/2018
-ms.openlocfilehash: 60dacf63f1a355b961f84169060dbd7122a6fd32
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f56c036768de7c1afcf3327135a7ff7d7a690a8b
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842736"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66440141"
 ---
 # <a name="cluster-operating-system-rolling-upgrade"></a>Actualización gradual de sistema operativo del clúster
 
-> Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 Actualización gradual de clúster del sistema operativo permite a un administrador actualizar el sistema operativo de los nodos del clúster sin detener la función Hyper-V o las cargas de trabajo de servidor de archivos de escalabilidad horizontal. Con esta característica, se pueden evitar las penalizaciones de tiempo de inactividad en los acuerdos de nivel de servicio (SLA).
 
@@ -226,12 +226,12 @@ Actualización gradual de SO del clúster incluye los siguientes pasos:
         ![Captura de pantalla que muestra la salida del cmdlet Get-VMHostSupportedVersion](media/Cluster-Operating-System-Rolling-Upgrade/Clustering_GetVMHostSupportVersion.png)  
         **Figura 21: Ver las versiones de configuración de máquina virtual de Hyper-V admitidas por el host**  
 
-   3.  En cada nodo de host de Hyper-V en el clúster, se pueden actualizar las versiones de configuración de máquina virtual de Hyper-V mediante la programación de una ventana de mantenimiento breve con usuarios, realizar copias de seguridad, al desactivar las máquinas virtuales y ejecutar el [ `Update-VMVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) cmdlet (consulte la Figura 22). Esto actualizará la versión de la máquina virtual y habilitar nuevas características de Hyper-V, lo que elimina la necesidad de futuras actualizaciones de componentes de integración de Hyper-V (IC). Este cmdlet se puede ejecutar desde el nodo de Hyper-V que hospeda la máquina virtual, o el `-ComputerName` parámetro puede usarse para actualizar la versión de la máquina virtual de forma remota. En este ejemplo, aquí se actualiza la versión de configuración de VM1 de 5.0 a 7.0 pueda beneficiarse de muchas características nuevas de Hyper-V asociadas con esta versión de configuración de máquina virtual como puntos de control de producción (copias de seguridad coherentes de aplicación) y VM binario archivo de configuración.  
+   3. En cada nodo de host de Hyper-V en el clúster, se pueden actualizar las versiones de configuración de máquina virtual de Hyper-V mediante la programación de una ventana de mantenimiento breve con usuarios, realizar copias de seguridad, al desactivar las máquinas virtuales y ejecutar el [ `Update-VMVersion` ](https://docs.microsoft.com/powershell/module/hyper-v/Update-VMVersion?view=win10-ps) cmdlet (consulte la Figura 22). Esto actualizará la versión de la máquina virtual y habilitar nuevas características de Hyper-V, lo que elimina la necesidad de futuras actualizaciones de componentes de integración de Hyper-V (IC). Este cmdlet se puede ejecutar desde el nodo de Hyper-V que hospeda la máquina virtual, o el `-ComputerName` parámetro puede usarse para actualizar la versión de la máquina virtual de forma remota. En este ejemplo, aquí se actualiza la versión de configuración de VM1 de 5.0 a 7.0 pueda beneficiarse de muchas características nuevas de Hyper-V asociadas con esta versión de configuración de máquina virtual como puntos de control de producción (copias de seguridad coherentes de aplicación) y VM binario archivo de configuración.  
 
-        ![Captura de pantalla que muestra el cmdlet Update-VMVersion en acción](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
-        **Figura 22: Actualización de una versión de la máquina virtual mediante el cmdlet de PowerShell Update-VMVersion**  
+       ![Captura de pantalla que muestra el cmdlet Update-VMVersion en acción](media/Cluster-Operating-System-Rolling-Upgrade/Cluster_RollingUpgrade_StopVM.png)  
+       **Figura 22: Actualización de una versión de la máquina virtual mediante el cmdlet de PowerShell Update-VMVersion**  
 
-4.  Los grupos de almacenamiento se pueden actualizar mediante el [Update-StoragePool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) cmdlet de PowerShell: se trata de una operación en línea.  
+6. Los grupos de almacenamiento se pueden actualizar mediante el [Update-StoragePool](https://docs.microsoft.com/powershell/module/storage/Update-StoragePool?view=win10-ps) cmdlet de PowerShell: se trata de una operación en línea.  
 
 Aunque se usa como destino escenarios de nube privada, específicamente en Hyper-V y clústeres de servidor de archivos de escalabilidad horizontal, que pueden actualizarse sin tiempo de inactividad, el proceso de actualización gradual de clúster del sistema operativo pueden usarse para cualquier rol de clúster.  
 
@@ -278,6 +278,6 @@ Aunque se usa como destino escenarios de nube privada, específicamente en Hyper
     Sí, puede automatizar el proceso de actualización gradual de clúster del sistema operativo con VMM en System Center 2016.  
 
 ## <a name="see-also"></a>Vea también  
--   [Notas de la versión: Problemas importantes en Windows Server 2016](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
--   [Novedades en Windows Server 2016](../get-started/What-s-New-in-windows-server-2016.md)  
+-   [Notas de la versión: Problemas importantes en Windows Server 2016](../get-started/Release-Notes--Important-Issues-in-Windows-Server-2016-Technical-Preview.md)  
+-   [Novedades en Windows Server 2016](../get-started/What-s-New-in-windows-server-2016.md)  
 -   [Novedades de la conmutación por error en Windows Server](whats-new-in-failover-clustering.md)  

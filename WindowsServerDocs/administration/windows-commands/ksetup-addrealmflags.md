@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bbc878bd0ee25ad92c640710ab6b46bbc0eaf62a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: f097fc8268976cf038523de0d5fa33c1dd3c6901
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827686"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438028"
 ---
 # <a name="ksetupaddrealmflags"></a>ksetup:addrealmflags
 
@@ -52,7 +52,7 @@ Los indicadores de territorio especifican características adicionales de un dom
 |0x08|NcSupported|Este campo admite la canonización de nombre, lo que permite los estándares de nomenclatura de dominio Kerberos y DNS.|
 |0x80|RC4|Este campo admite el cifrado RC4 para habilitar la confianza entre territorios, que permite el uso de TLS.|
 
-Marcas de dominio Kerberos se almacenan en el registro bajo **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\*** Realm-nombre*. Esta entrada no existe en el registro de forma predeterminada. Puede usar el [Ksetup:addrealmflags](ksetup-addrealmflags.md) comando llenar el registro.
+Marcas de dominio Kerberos se almacenan en el registro bajo **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\Kerberos\Domains\\** <em>nombre de dominio Kerberos</em>. Esta entrada no existe en el registro de forma predeterminada. Puede usar el [Ksetup:addrealmflags](ksetup-addrealmflags.md) comando llenar el registro.
 
 Puede ver qué marcas de dominio Kerberos están disponible y configurado mediante la visualización de la salida de ksetup o ksetup /dumpstate.
 
@@ -70,7 +70,7 @@ Agregar una marca más que no está actualmente en el conjunto:
 ```
 ksetup /addrealmflags CONTOSO SendAddress
 ```
-Ejecute el **ksetup** comando para comprobar que la marca del dominio está establecida al ver la salida y busca **marcas Realm =**.
+Ejecute el **ksetup** comando para comprobar que la marca del dominio está establecida al ver la salida y busca **marcas Realm =** .
 
 #### <a name="additional-references"></a>Referencias adicionales
 

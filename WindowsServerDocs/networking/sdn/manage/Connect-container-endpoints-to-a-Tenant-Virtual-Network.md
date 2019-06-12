@@ -13,12 +13,12 @@ ms.assetid: f7af1eb6-d035-4f74-a25b-d4b7e4ea9329
 ms.author: pashort
 author: jmesser81
 ms.date: 08/24/2018
-ms.openlocfilehash: 1968a4db9231459fe5858d9a0f3ba5e8f317ed1b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cb9c7157ffb07233e41e1c933f6775f1cd0766a9
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872746"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66446354"
 ---
 # <a name="connect-container-endpoints-to-a-tenant-virtual-network"></a>Conexión de puntos de conexión de contenedor a una red virtual de inquilino
 
@@ -34,9 +34,11 @@ Directiva de red (ACL, encapsulación y QoS) para estos puntos de conexión de c
 
 La diferencia entre el *l2bridge* y *l2tunnel* controladores son:
 
-| l2bridge | l2tunnel |
-| --- | --- |
-|Puntos de conexión de contenedor que residen en: <ul><li>El mismo contenedor host de máquina virtual y en la misma subred que tiene todo el tráfico de red con puente en el conmutador virtual de Hyper-V. </li><li>Contenedor diferente hospedar las máquinas virtuales o en subredes diferentes tiene su tráfico reenviado para el host de Hyper-V físico. </li></ul>No obtener aplica la directiva de red puesto que el tráfico de red entre contenedores en el mismo host y en la misma subred no pasan el host físico. Directiva de red aplica el tráfico de red de contenedor solo a entre hosts o entre subredes. | *Todos los* se reenvía el tráfico de red entre dos puntos de conexión de contenedor para el host de Hyper-V físico independientemente de host o la subred. Directiva de red se aplica al tráfico de red entre subredes y entre hosts. |
+
+|                                                                                                                                                                                                                                                                            l2bridge                                                                                                                                                                                                                                                                            |                                                                                                 l2tunnel                                                                                                  |
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Puntos de conexión de contenedor que residen en: <ul><li>El mismo contenedor host de máquina virtual y en la misma subred que tiene todo el tráfico de red con puente en el conmutador virtual de Hyper-V. </li><li>Contenedor diferente hospedar las máquinas virtuales o en subredes diferentes tiene su tráfico reenviado para el host de Hyper-V físico. </li></ul>No obtener aplica la directiva de red puesto que el tráfico de red entre contenedores en el mismo host y en la misma subred no pasan el host físico. Directiva de red aplica el tráfico de red de contenedor solo a entre hosts o entre subredes. | *Todos los* se reenvía el tráfico de red entre dos puntos de conexión de contenedor para el host de Hyper-V físico independientemente de host o la subred. Directiva de red se aplica al tráfico de red entre subredes y entre hosts. |
+
 ---
 
 >[!NOTE]
@@ -60,10 +62,10 @@ La diferencia entre el *l2bridge* y *l2tunnel* controladores son:
 ## <a name="workflow"></a>Flujo de trabajo
 
 [1. Agregar varias configuraciones de IP a un recurso de NIC de VM existente a través de la controladora de red (Host de Hyper-V)](#1-add-multiple-ip-configurations)
-[2. Habilitar el proxy de red en el host para asignar direcciones IP de entidad emisora de certificados para puntos de conexión de contenedor (Host de Hyper-V) ](#2-enable-the-network-proxy) 
- [3. Instalar el complemento para asignar direcciones IP de la entidad emisora de certificados para puntos de conexión de contenedor (contenedor Host de VM) de nube privada ](#3-install-the-private-cloud-plug-in) 
- [4. Crear un *l2bridge* o *l2tunnel* red mediante docker (máquina virtual de Host de contenedor) ](#4-create-an-l2bridge-container-network)
- 
+[2. Habilitar el proxy de red en el host para asignar direcciones IP de entidad emisora de certificados para puntos de conexión de contenedor (Host de Hyper-V)](#2-enable-the-network-proxy)
+[3. Instalar el complemento para asignar direcciones IP de la entidad emisora de certificados para puntos de conexión de contenedor (contenedor Host de VM) de nube privada](#3-install-the-private-cloud-plug-in)
+[4. Crear un *l2bridge* o *l2tunnel* red mediante docker (máquina virtual de Host de contenedor)](#4-create-an-l2bridge-container-network)
+
 >[!NOTE]
 >No se admite varias configuraciones de IP en recursos de VM NIC creados a través de System Center Virtual Machine Manager. Se recomienda para estos tipos de implementaciones que cree el recurso de NIC de VM fuera de banda mediante PowerShell de controlador de red.
 
@@ -101,10 +103,10 @@ foreach ($i in 1..10)
         $resourceid += "0$i"
         $ipstr = "192.168.1.10$i"
     }
-    
+
     $newipconfig.ResourceId = $resourceid
     $props.PrivateIPAddress = $ipstr    
-    
+
     $props.PrivateIPAllocationMethod = "Static"
     $props.Subnet = new-object Microsoft.Windows.NetworkController.Subnet
     $props.Subnet.ResourceRef = $vmsubnet.ResourceRef

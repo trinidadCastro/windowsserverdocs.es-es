@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 647389aaac06d1eb109052548c1b24f7579bde2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a832e8f3d21681f67a4486df33c387e5a8456718
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59851246"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434873"
 ---
 # <a name="bitsadmin-setvalidationstate"></a>Bitsadmin setvalidationstate
 
@@ -34,11 +34,11 @@ bitsadmin /SetValidationState <Job> <file index> <true|false>
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
-|Índice de archivo|Comienza por 0|
-|True|False|Establecida en TRUE si el contenido del archivo es válido, en caso contrario, establezca en FALSE|
+| Parámetro  |          Descripción           |
+|------------|--------------------------------|
+|    Trabajo     | Nombre para mostrar o el GUID del trabajo |
+| Índice de archivo |         Comienza por 0          |
+|    True    |             False              |
 
 ## <a name="BKMK_examples"></a>Ejemplos
 

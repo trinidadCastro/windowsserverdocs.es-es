@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 03/29/2018
 description: En este artículo se describe los escenarios disponibles actualmente para la recuperación ante desastres de Microsoft HCI (espacios de almacenamiento directo)
 ms.localizationpriority: medium
-ms.openlocfilehash: 32bbf02ca78d5c6a2147162768c984d0e0b27e36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c844c56c3a1717658bcdb970e78d45b5cdda861c
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879596"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453120"
 ---
 # <a name="disaster-recovery-with-storage-spaces-direct"></a>Recuperación ante desastres con espacios de almacenamiento directo
 
@@ -41,7 +41,7 @@ Una importante capacidad de réplica de almacenamiento es que se puede ejecutar 
 
 En este escenario, hay dos clústeres independientes independientes. Para configurar la réplica de almacenamiento entre HCI, puede seguir los pasos descritos en [replicación de almacenamiento de clúster a clúster](../storage-replica/cluster-to-cluster-storage-replication.md).
 
-![Diagrama de la replicación de almacenamiento](media\storage-spaces-direct-disaster-recovery\Disaster-Recovery-Figure1.png)
+![Diagrama de la replicación de almacenamiento](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure1.png)
 
 Se aplican las consideraciones siguientes al implementar la réplica de almacenamiento. 
 
@@ -56,7 +56,7 @@ Réplica de almacenamiento puede usarse si tiene máquinas virtuales o un SOFS q
 
 [Réplica de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/set-up-hyper-v-replica) proporciona replicación a nivel de máquina virtual para la recuperación ante desastres en las infraestructuras hiperconvergidas. ¿Qué réplica de Hyper-V puede hacer es poner una máquina virtual y la replicará en un sitio secundario o Azure (réplica). A continuación, desde el sitio secundario, réplica de Hyper-V puede replicar la máquina virtual en un tercer (réplica extendida).
 
-![Diagrama de la replicación de Hyper-V](media\storage-spaces-direct-disaster-recovery\Disaster-Recovery-Figure2.png)
+![Diagrama de la replicación de Hyper-V](media/storage-spaces-direct-disaster-recovery/Disaster-Recovery-Figure2.png)
 
 Con la réplica de Hyper-V, se tiene en cuenta la replicación de Hyper-v. Al habilitar una máquina virtual para la replicación en primer lugar, hay tres opciones de cómo desea que la copia inicial para enviarse a los clústeres de réplica correspondiente.
 

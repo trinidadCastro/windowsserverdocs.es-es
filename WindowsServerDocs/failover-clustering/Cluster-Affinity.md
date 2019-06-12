@@ -7,12 +7,12 @@ ms.topic: article
 author: johnmarlin-msft
 ms.date: 03/07/2019
 description: En este artículo se describe los niveles de afinidad y antiAffinity del clúster de conmutación por error
-ms.openlocfilehash: a38d53f6aed1ca634d41822f4486779f6d279ec0
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 67929e6d3399633ebfec0b908463131973aecaf7
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476048"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453028"
 ---
 # <a name="cluster-affinity"></a>Afinidad de clúster
 
@@ -69,7 +69,7 @@ El valor de "0" significa que está deshabilitado y no para su cumplimiento.  El
 
 Cuando se establecen ambos, el grupo se impedirá juntos entran en línea.  Si están en el mismo nodo, esto es lo que vería en el Administrador de clústeres de conmutación por error.
 
-![Afinidad de clúster](media\Cluster-Affinity\Cluster-Affinity-1.png)
+![Afinidad de clúster](media/Cluster-Affinity/Cluster-Affinity-1.png)
 
 En una lista de PowerShell de los grupos, vería esto:
 

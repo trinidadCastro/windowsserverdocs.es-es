@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83aa1d9d193db977dfe3d375476106d7d6f81e85
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 03ba59b19af42ab2d3fdd1dd52d976d381779640
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881546"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435146"
 ---
 # <a name="auditpol-get"></a>get Auditpol
 
@@ -37,15 +37,17 @@ auditpol /get
 [/r]
 ```
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|/user|Muestra a la entidad de seguridad para los que se consulta la directiva de auditoría por usuario. Debe especificarse el parámetro /category o/SubCategory. El usuario puede especificarse como un nombre o identificador de seguridad (SID). Si no se especifica ninguna cuenta de usuario, se consulta la directiva de auditoría del sistema.|
-|/Category|Una o varias categorías de auditoría especificadas por nombre o identificador único global (GUID). Un asterisco (*) puede utilizarse para indicar que se deben consultar todas las categorías de auditoría.|
-|/subcategory|Una o varias subcategorías de auditoría especificadas por nombre o GUID.|
-|/sd|Recupera el descriptor de seguridad que se usa para delegar el acceso a la directiva de auditoría.|
-|/Option|Recupera la directiva existente para las opciones CrashOnAuditFail, FullprivilegeAuditing, AuditBaseObjects o AuditBasedirectories.|
-|/r|Muestra la salida en formato de informe, valores separados por comas (CSV).|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+
+|  Parámetro   |                                                                                                                                         Descripción                                                                                                                                          |
+|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    /user     | Muestra a la entidad de seguridad para los que se consulta la directiva de auditoría por usuario. Debe especificarse el parámetro /category o/SubCategory. El usuario puede especificarse como un nombre o identificador de seguridad (SID). Si no se especifica ninguna cuenta de usuario, se consulta la directiva de auditoría del sistema. |
+|  /Category   |                                                          Una o varias categorías de auditoría especificadas por nombre o identificador único global (GUID). Un asterisco (\*) puede utilizarse para indicar que se deben consultar todas las categorías de auditoría.                                                          |
+| /subcategory |                                                                                                                  Una o varias subcategorías de auditoría especificadas por nombre o GUID.                                                                                                                  |
+|     /sd      |                                                                                                        Recupera el descriptor de seguridad que se usa para delegar el acceso a la directiva de auditoría.                                                                                                        |
+|   /Option    |                                                                              Recupera la directiva existente para las opciones CrashOnAuditFail, FullprivilegeAuditing, AuditBaseObjects o AuditBasedirectories.                                                                               |
+|      /r      |                                                                                                              Muestra la salida en formato de informe, valores separados por comas (CSV).                                                                                                              |
+|      /?      |                                                                                                                             Muestra la ayuda en el símbolo del sistema.                                                                                                                             |
+
 ## <a name="remarks"></a>Comentarios
 Todas las categorías y subcategorías pueden especificarse mediante el GUID o nombre entre comillas. Los usuarios se pueden especificar por nombre o SID.
 todas las operaciones get de la directiva de por usuario y la directiva del sistema, debe tener permiso lectura en ese objeto establecido en el descriptor de seguridad. También se pueden realizar las operaciones get que poseen el **Administrar registro de auditoría y seguridad** derecho de usuario (SeSecurityPrivilege). Sin embargo, este derecho permite acceso adicional que no es necesario realizar la operación get.
@@ -57,37 +59,37 @@ auditpol /get /user:{S-1-5-21-1443922412-3030960370-963420232-51} /category:"Sys
 ```
 > [!NOTE]
 > Este comando es útil en dos escenarios. Al supervisar una cuenta de usuario para la actividad sospechosa, puede usar el comando /get para recuperar los resultados en las categorías específicas mediante el uso de una directiva de inclusión para habilitar la auditoría adicional. O bien, si auditar la configuración en una cuenta de la sesión numerosos pero superfluos eventos, puede usar el comando /get para filtrar los eventos extraños para esa cuenta con una directiva de exclusión. Para obtener una lista de todas las categorías, use el comando de /category auditpol /list.
-Para recuperar la directiva de auditoría por usuario para una categoría y una subcategoría particular, que informa de la configuración inclusivo y exclusiva para esa subcategoría en la categoría del sistema para la cuenta de invitado, escriba:
-```
-auditpol /get /user:guest /category:"System" /subcategory:{0ccee921a-69ae-11d9-bed3-505054503030}
-```
-Para mostrar la salida en formato de informe e incluir el nombre del equipo, destino de la directiva, subcategoría, subcategoría GUID, configuración de inclusión y configuración de exclusión, escriba:
-```
-auditpol /get /user:guest /category:detailed Tracking" /r
-```
-### <a name="examples-for-the-system-audit-policy"></a>Ejemplos de la directiva de auditoría del sistema
-Para recuperar la directiva para el sistema de categorías y subcategorías, que informa de la configuración de directiva de categoría y subcategoría de la directiva de auditoría del sistema, escriba:
-```
-auditpol /get /category:"System" /subcategory:{0ccee921a-69ae-11d9-bed3-505054503030}
-```
-Para recuperar la directiva para la categoría de seguimiento detallado y subcategorías en formato de informe e incluir el nombre del equipo, destino de la directiva, subcategoría, subcategoría GUID, la configuración de inclusión y configuración de exclusión, tipo:
-```
-auditpol /get /category:"detailed Tracking" /r
-```
-Para recuperar la directiva para dos categorías con las categorías especifica como GUID, que informa de todas las opciones de directiva de auditoría de todas las subcategorías en dos categorías, tipo:
-```
-auditpol /get /category:{69979849-797a-11d9-bed3-505054503030},{69997984a-797a-11d9-bed3-505054503030} subcategory:{0ccee921a-69ae-11d9-bed3-505054503030}
-```
-### <a name="examples-for-auditing-options"></a>Ejemplos de opciones de auditoría
-Para recuperar el estado, habilitado o deshabilitado, de la opción AuditBaseObjects, escriba:
-```
-auditpol /get /option:AuditBaseObjects
-```
+> Para recuperar la directiva de auditoría por usuario para una categoría y una subcategoría particular, que informa de la configuración inclusivo y exclusiva para esa subcategoría en la categoría del sistema para la cuenta de invitado, escriba:
+> ```
+> auditpol /get /user:guest /category:"System" /subcategory:{0ccee921a-69ae-11d9-bed3-505054503030}
+> ```
+> Para mostrar la salida en formato de informe e incluir el nombre del equipo, destino de la directiva, subcategoría, subcategoría GUID, configuración de inclusión y configuración de exclusión, escriba:
+> ```
+> auditpol /get /user:guest /category:detailed Tracking" /r
+> ```
+> ### <a name="examples-for-the-system-audit-policy"></a>Ejemplos de la directiva de auditoría del sistema
+> Para recuperar la directiva para el sistema de categorías y subcategorías, que informa de la configuración de directiva de categoría y subcategoría de la directiva de auditoría del sistema, escriba:
+> ```
+> auditpol /get /category:"System" /subcategory:{0ccee921a-69ae-11d9-bed3-505054503030}
+> ```
+> Para recuperar la directiva para la categoría de seguimiento detallado y subcategorías en formato de informe e incluir el nombre del equipo, destino de la directiva, subcategoría, subcategoría GUID, la configuración de inclusión y configuración de exclusión, tipo:
+> ```
+> auditpol /get /category:"detailed Tracking" /r
+> ```
+> Para recuperar la directiva para dos categorías con las categorías especifica como GUID, que informa de todas las opciones de directiva de auditoría de todas las subcategorías en dos categorías, tipo:
+> ```
+> auditpol /get /category:{69979849-797a-11d9-bed3-505054503030},{69997984a-797a-11d9-bed3-505054503030} subcategory:{0ccee921a-69ae-11d9-bed3-505054503030}
+> ```
+> ### <a name="examples-for-auditing-options"></a>Ejemplos de opciones de auditoría
+> Para recuperar el estado, habilitado o deshabilitado, de la opción AuditBaseObjects, escriba:
+> ```
+> auditpol /get /option:AuditBaseObjects
+> ```
 > [!NOTE]
 > Las opciones disponibles son AuditBaseObjects, AuditBaseOperations y FullprivilegeAuditing.
-Para recuperar el estado habilitado, deshabilitado o 2 de la opción CrashOnAuditFail, escriba:
-```
-auditpol /get /option:CrashOnAuditFail /r
-```
-#### <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+> Para recuperar el estado habilitado, deshabilitado o 2 de la opción CrashOnAuditFail, escriba:
+> ```
+> auditpol /get /option:CrashOnAuditFail /r
+> ```
+> #### <a name="additional-references"></a>Referencias adicionales
+> [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

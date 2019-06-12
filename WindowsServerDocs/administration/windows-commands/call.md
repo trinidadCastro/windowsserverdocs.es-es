@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 06/05/2018
-ms.openlocfilehash: e2366133c4699f43731c9a4e8a7a8238fc83031d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1f5253700f2932b2afa725163121e64ea4c1748d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815256"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434580"
 ---
 # <a name="call"></a>llamada
 
@@ -39,21 +39,21 @@ call [Drive:][Path]<FileName> [<BatchParameters>] [:<Label> [<Arguments>]]
 
 ## <a name="parameters"></a>Parámetros
 
-|Parámetro|Descripción|
-|---------|-----------|
-|[\<Drive>:][<Path>]<FileName>|Especifica la ubicación y el nombre del programa por lotes que se desea llamar. El *FileName* el parámetro es obligatorio y debe tener una extensión .bat o. cmd.|
-|\<BatchParameters>|Especifica la información de línea de comandos requerido por el programa por lotes.|
-|:\<Etiqueta >|Especifica la etiqueta que desee saltar a un control del programa por lotes.|
-|\<argumentos >|Especifica la información de línea de comandos que se pasarán a la nueva instancia del programa por lotes, comenzando por *: etiqueta.*|
-|/?|Muestra la ayuda en el símbolo del sistema.|
+|           Parámetro           |                                                                         Descripción                                                                          |
+|-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [\<Drive>:][<Path>]<FileName> | Especifica la ubicación y el nombre del programa por lotes que se desea llamar. El *FileName* el parámetro es obligatorio y debe tener una extensión .bat o. cmd. |
+|      \<BatchParameters>       |                                            Especifica la información de línea de comandos requerido por el programa por lotes.                                             |
+|           :\<Etiqueta >           |                                            Especifica la etiqueta que desee saltar a un control del programa por lotes.                                             |
+|         \<argumentos >          |                     Especifica la información de línea de comandos que se pasarán a la nueva instancia del programa por lotes, comenzando por *: etiqueta.*                     |
+|              /?               |                                                             Muestra la ayuda en el símbolo del sistema.                                                             |
 
 ## <a name="batch-parameters"></a>Parámetros del lote
 
-Las referencias de argumentos de script por lotes (**%0**, **%1**,...) se enumeran en las tablas siguientes.
+Las referencias de argumentos de script por lotes ( **%0**, **%1**,...) se enumeran en las tablas siguientes.
 
-**%*** en un lote script hace referencia a todos los argumentos (por ejemplo, **%1**, **%2**, **%3**...)
+**%** * en un lote script hace referencia a todos los argumentos (por ejemplo, **%1**, **%2**, **%3**...)
 
-Puede usar las siguientes sintaxis opcionales como sustituciones de parámetros por lotes (**%n**):
+Puede usar las siguientes sintaxis opcionales como sustituciones de parámetros por lotes ( **%n**):
 
 |Parámetro de lote|Descripción|
 |---------------|-----------|
@@ -78,19 +78,19 @@ En la tabla siguiente se muestra cómo se pueden combinar los modificadores con 
 |%~dp$PATH:1|Busca en los directorios mostrados en la variable de entorno PATH para **%1**y, a continuación, se expande a la letra de unidad y ruta de acceso de la primera se encuentra el directorio.|
 |%~ftza1|Se expande **%1** para mostrar un resultado similar a la **dir** comando.|
 
-En los ejemplos anteriores, **%1** y ruta de acceso puede ser reemplazado por otros valores válidos. El **%~** sintaxis termina con un número de argumento válido. El **%~** modificadores no pueden utilizarse con **% \***.
+En los ejemplos anteriores, **%1** y ruta de acceso puede ser reemplazado por otros valores válidos. El <strong>%~</strong> sintaxis termina con un número de argumento válido. El <strong>%~</strong> modificadores no se puede usar con ** %\\***.
 
 ## <a name="remarks"></a>Comentarios
 
 -   Uso de parámetros de proceso por lotes
 
-    Parámetros del lote pueden contener cualquier información que se puede pasar a un programa por lotes, incluidas las opciones de línea de comandos, los nombres de archivo, los parámetros del lote **%0** a través de **%9**y las variables (por ejemplo, **baudios %**).
+    Parámetros del lote pueden contener cualquier información que se puede pasar a un programa por lotes, incluidas las opciones de línea de comandos, los nombres de archivo, los parámetros del lote **%0** a través de **%9**y las variables (por ejemplo, **baudios %** ).
 -   Mediante el *etiqueta* parámetro
 
     Mediante el uso de **llamar** con el *etiqueta* parámetro, cree un nuevo contexto de archivo por lotes y pasar el control a la instrucción después de la etiqueta especificada. La primera vez que se encuentra el final del archivo por lotes (es decir, después saltar a la etiqueta), el control vuelve a la instrucción después de la **llamar** instrucción. La segunda vez que se encuentra el final del archivo por lotes, se cierra la secuencia de comandos por lotes.
 -   Mediante canalizaciones y los símbolos de redirección
 
-    No utilice canalizaciones (**|**) y símbolos de redirección (**<** o **>**) con **llamar a**.
+    No utilice canalizaciones ( **|** ) y símbolos de redirección ( **<** o **>** ) con **llamar a**.
 -   Realizar una llamada recursiva
 
     Puede crear un programa por lotes que llama a sí mismo. Sin embargo, debe proporcionar una condición de salida. En caso contrario, los programas de lote primarios y secundarios pueden bucle sin fin.

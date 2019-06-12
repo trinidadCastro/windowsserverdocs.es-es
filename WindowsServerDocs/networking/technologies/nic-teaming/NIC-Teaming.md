@@ -14,12 +14,12 @@ ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: pashort
 author: shortpatti
 ms.date: 09/10/2018
-ms.openlocfilehash: 367de10e8c77490ff27be81ddc05239f931ad1f4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cf58956ead8e8a47b8ec6d189bf23e5c576d5f15
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860476"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66812186"
 ---
 # <a name="nic-teaming"></a>Formación de equipos NIC
 
@@ -27,8 +27,8 @@ ms.locfileid: "59860476"
 
 En este tema, le proporcionamos una visión general de formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. Formación de equipos NIC permite agrupar entre 1 y 32 adaptadores de red Ethernet físicos en uno o más adaptadores de red virtual basada en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.  
   
->[!IMPORTANT]
->Debe instalar a adaptadores de red del miembro de equipo NIC en el mismo equipo host físico. 
+> [!IMPORTANT]
+> Debe instalar a adaptadores de red del miembro de equipo NIC en el mismo equipo host físico. 
 
 > [!TIP]  
 > Un equipo NIC que contiene solo un adaptador de red no puede proporcionar equilibrio de carga y conmutación por error. Sin embargo, con un adaptador de red, puede usar la formación de equipos NIC para separar el tráfico de red cuando también se usa redes de área Local virtual (VLAN).  
@@ -63,7 +63,7 @@ Las siguientes NIC no se pueden colocar en un equipo NIC:
 ## <a name="compatibility"></a>Compatibilidad  
 Formación de equipos NIC es compatible con todas las tecnologías de red en Windows Server 2016 con las siguientes excepciones.  
   
--   **Virtualización de E/S de raíz única (SR-IOV)**. Para SR-IOV, los datos se entregan directamente a la NIC sin que pasen a través de la pila de red (en el sistema operativo de host, en el caso de virtualización). Por lo tanto, no es posible que el equipo NIC para inspeccionar o redirigir los datos a otra ruta de acceso en el equipo.  
+-   **Virtualización de E/S de raíz única (SR-IOV)** . Para SR-IOV, los datos se entregan directamente a la NIC sin que pasen a través de la pila de red (en el sistema operativo de host, en el caso de virtualización). Por lo tanto, no es posible que el equipo NIC para inspeccionar o redirigir los datos a otra ruta de acceso en el equipo.  
   
 -   **Calidad de servicio (QoS) del host nativo**. Al establecer directivas de QoS en nativo o el sistema host y esas directivas invocan las limitaciones de ancho de banda mínimo, el rendimiento general de un equipo NIC es menor que sería sin las directivas de ancho de banda en su lugar.  
   

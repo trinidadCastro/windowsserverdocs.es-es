@@ -9,16 +9,16 @@ ms.topic: article
 author: vpetter
 ms.date: 03/27/2018
 ms.localizationpriority: ''
-ms.openlocfilehash: 55167d0f4c838af5f6f79432ede2dd45eac848a5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6e301b8c46041f107739bbcdb09c2eb0c8252ebb
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853866"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66452906"
 ---
 # <a name="troubleshooting-a-failover-cluster-using-windows-error-reporting"></a>Solución de problemas de un clúster de conmutación por error mediante el informe de errores de Windows 
 
-> Se aplica a: Windows Server 2016, Windows Server
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server
 
 Informe de errores de Windows (WER) es una infraestructura de comentarios basado en eventos flexible diseñada para ayudar a los administradores avanzados o soporte técnico de nivel 3 para recopilar información acerca de los problemas de hardware y software que Windows pueden detectar, notificar la información a Microsoft, y proporcionar a los usuarios con ninguna solución disponible. Esto [referencia](https://docs.microsoft.com/powershell/module/windowserrorreporting/) proporciona descripciones y sintaxis de todos los cmdlets de WindowsErrorReporting.
 
@@ -47,7 +47,7 @@ Microsoft-Windows-SMBServer/Analytic
 Microsoft-Windows-Kernel-LiveDump/Analytic
 ```
 
-El **EnabledEventLogs** propiedad es un elemento multistring, donde cada cadena tiene el formato: **máscara de palabra clave de nombre de canal, el nivel de registro,**. El **máscara de palabra clave** puede ser un valor hexadecimal (prefijo 0 x), octal (prefijo 0) o número de número decimal (sin prefijo). Por ejemplo, para agregar un nuevo canal de eventos a la lista y para configurar ambos **nivel de registro** y **máscara de palabra clave** puede ejecutar:
+El **EnabledEventLogs** propiedad es un elemento multistring, donde cada cadena tiene el formato: **máscara de palabra clave de nombre de canal, el nivel de registro,** . El **máscara de palabra clave** puede ser un valor hexadecimal (prefijo 0 x), octal (prefijo 0) o número de número decimal (sin prefijo). Por ejemplo, para agregar un nuevo canal de eventos a la lista y para configurar ambos **nivel de registro** y **máscara de palabra clave** puede ejecutar:
 
 ```powershell
 (get-cluster).EnabledEventLogs += "Microsoft-Windows-WinINet/Analytic,2,321"
@@ -317,15 +317,15 @@ A continuación presentamos un ejemplo de la salida:
 
 Analizador de mensajes le permite capturar, mostrar y analizar el tráfico de mensajería de protocolo. También le permite seguimiento y evaluar los eventos del sistema y otros mensajes de componentes de Windows. Puede descargar [Microsoft Message Analyzer desde aquí](https://www.microsoft.com/download/details.aspx?id=44226). Cuando se cargan los registros en el analizador de mensajes, verá los siguientes proveedores y los mensajes de los canales de registro.
 
-![Cargar registros en el analizador de mensajes](media\troubleshooting-using-WER-reports\loading-logs-into-message-analyzer.png)
+![Cargar registros en el analizador de mensajes](media/troubleshooting-using-WER-reports/loading-logs-into-message-analyzer.png)
 
 También puede agrupar por los proveedores para obtener la vista siguiente:
 
-![Registros agrupados por los proveedores](media\troubleshooting-using-WER-reports\logs-grouped-by-providers.png)
+![Registros agrupados por los proveedores](media/troubleshooting-using-WER-reports/logs-grouped-by-providers.png)
 
-Para identificar el motivo por el error en el disco, vaya a los eventos en **FailoverClustering y diagnóstico** y **FailoverClustering/DiagnosticVerbose**. A continuación, ejecute la consulta siguiente: **EventLog.EventData["LogString"] contiene el "Disco de clúster de 10"**.  Esto le facilitará asigne a la salida siguiente:
+Para identificar el motivo por el error en el disco, vaya a los eventos en **FailoverClustering y diagnóstico** y **FailoverClustering/DiagnosticVerbose**. A continuación, ejecute la consulta siguiente: **EventLog.EventData["LogString"] contiene el "Disco de clúster de 10"** .  Esto le facilitará asigne a la salida siguiente:
 
-![Resultado de consulta de registro de ejecución](media\troubleshooting-using-WER-reports\output-of-running-log-query.png)
+![Resultado de consulta de registro de ejecución](media/troubleshooting-using-WER-reports/output-of-running-log-query.png)
 
 
 ### <a name="physical-disk-timed-out"></a>Tiempo de espera de disco físico
@@ -423,7 +423,7 @@ La lista de servicios y procesos que se recopilan en un volcado de memoria se co
 
 Para determinar por qué ha ocurrido la falta de respuesta, abra los archivos de disco. A continuación, ejecute la consulta siguiente: **EventLog.EventData["LogString"] contiene el "Disco de clúster de 10"** esto dará asigne a la salida siguiente:
 
-![Resultado de consulta de registro de ejecución 2](media\troubleshooting-using-WER-reports\output-of-running-log-query-2.png)
+![Resultado de consulta de registro de ejecución 2](media/troubleshooting-using-WER-reports/output-of-running-log-query-2.png)
 
 Esto nos podemos cross-examine con el subproceso de la **memory.hdmp** archivo:
 

@@ -8,12 +8,12 @@ ms.date: 05/21/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: fd99058036a5b8041e4c65ca120c6a7e68b2df8d
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.openlocfilehash: ce4cbdc291d98a180ee6f5b597d322620fa1b19f
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976648"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453167"
 ---
 # <a name="storage-migration-service-overview"></a>Información general sobre el servicio de migración de almacenamiento
 
@@ -32,7 +32,7 @@ Use el servicio de migración de almacenamiento porque tiene un servidor (o una 
 - Opcionalmente, asumir la identidad de los servidores de origen (también conocida como cortar a través) para que los usuarios y aplicaciones no tienen que cambiar nada para tener acceso a datos existentes
 - Administrar una o varias de las migraciones desde la interfaz de usuario de Windows Admin Center
 
-![Diagrama que muestra los archivos de migración de servicio de migración de almacenamiento & configuración de los servidores de origen en los servidores de destino, las máquinas virtuales de Azure o Azure File Sync.](media\overview\storage-migration-service-diagram.png)
+![Diagrama que muestra los archivos de migración de servicio de migración de almacenamiento & configuración de los servidores de origen en los servidores de destino, las máquinas virtuales de Azure o Azure File Sync.](media/overview/storage-migration-service-diagram.png)
 
 **Figura 1: Storage Migration Service orígenes y destinos**
 

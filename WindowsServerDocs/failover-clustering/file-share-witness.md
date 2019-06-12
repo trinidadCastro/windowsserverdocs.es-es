@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/24/2019
 description: Testigos de recurso compartido de archivos le permiten usar un recurso compartido de archivos de voto de quórum de clúster. Este tema describe los testigos de recurso compartido de archivo y la nueva funcionalidad, incluido el uso de una unidad USB conectada a un enrutador como un testigo de recurso compartido de archivos.
 ms.localizationpriority: medium
-ms.openlocfilehash: 1888142f96208800a0417c9caeea89e8a0472e88
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47371be946c08cac2f271138d701922fc340a89d
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831756"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453037"
 ---
 # <a name="deploy-a-file-share-witness"></a>Implementar un testigo del recurso compartido de archivos
 
@@ -61,26 +61,26 @@ Otras notas:
 
 En [2018 de Microsoft Ignite](https://azure.microsoft.com/ignite/), [almacenamiento de datos](http://www.dataonstorage.com/) tenía un clúster de espacios de almacenamiento directo en su área de pantalla completa.  Este clúster se ha conectado a un [NetGear](https://www.netgear.com) Nighthawk X4S Wi-Fi enrutador mediante el puerto USB como un archivo de recurso compartido testigo similar al siguiente.
 
-![NetGear testigo](media\File-Share-Witness\FSW1.png)
+![NetGear testigo](media/File-Share-Witness/FSW1.png)
 
 Los pasos para crear un testigo del recurso compartido de archivos mediante un dispositivo USB en este enrutador concreto se enumeran a continuación.  Tenga en cuenta que los pasos en otros enrutadores y los dispositivos NAS variarán y deben realizarse mediante el proveedor había proporcionado instrucciones.
 
 
 1. Inicie sesión en el enrutador con el dispositivo USB conectado.
 
-   ![Interfaz NetGear](media\File-Share-Witness\FSW2.png)
+   ![Interfaz NetGear](media/File-Share-Witness/FSW2.png)
 
 2. En la lista de opciones, seleccione ReadySHARE que es donde se pueden crear recursos compartidos.
 
-   ![NetGear ReadySHARE](media\File-Share-Witness\FSW3.png)
+   ![NetGear ReadySHARE](media/File-Share-Witness/FSW3.png)
 
 3. Para un testigo de recurso compartido de archivos, un recurso compartido de básico es todo lo que es necesario.  Seleccione el botón de edición se abrirá un cuadro de diálogo donde se puede crear el recurso compartido en el dispositivo USB.
 
-   ![Interfaz NetGear compartir](media\File-Share-Witness\FSW4.png)
+   ![Interfaz NetGear compartir](media/File-Share-Witness/FSW4.png)
 
 4. Una vez que seleccione el botón Aplicar, el recurso compartido se crea y se puede ver en la lista.
 
-   ![Recursos compartidos de NetGear](media\File-Share-Witness\FSW5.png)
+   ![Recursos compartidos de NetGear](media/File-Share-Witness/FSW5.png)
 
 5. Una vez creado el recurso compartido, el testigo de recurso compartido de archivos para clúster se crean con PowerShell.
 

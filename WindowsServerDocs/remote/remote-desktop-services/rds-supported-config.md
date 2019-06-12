@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: c925c7eb-6880-411f-8e59-bd0f57cc5fc3
 author: lizap
 manager: dongill
-ms.openlocfilehash: 894ea8b134ae5b871a2978e3f72e683c12346fe5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8571c2220f804a27e4e1a6b744e8e15e38bd53a3
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850206"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453079"
 ---
 # <a name="supported-configurations-for-remote-desktop-services-in-windows-server-2016"></a>Configuraciones admitidas para los servicios de escritorio remoto en Windows Server 2016
 
@@ -90,7 +90,7 @@ Windows Server 2016 RDS admite dos experiencias de inicio de sesión único prin
  - En la aplicación (aplicación de escritorio remoto en Windows, iOS, Android y Mac)
  - Web SSO
  
-Con la aplicación de escritorio remoto, puede almacenar las credenciales como parte de la información de conexión ([Mac](clients\remote-desktop-mac.md)) o como parte de las cuentas administradas ([iOS](clients\remote-desktop-ios.md#manage-your-user-accounts), [Android](clients\remote-desktop-android.md#manage-your-user-accounts), Windows) forma segura a través de mecanismos únicos para cada sistema operativo.
+Con la aplicación de escritorio remoto, puede almacenar las credenciales como parte de la información de conexión ([Mac](clients/remote-desktop-mac.md)) o como parte de las cuentas administradas ([iOS](clients/remote-desktop-ios.md#manage-your-user-accounts), [Android](clients/remote-desktop-android.md#manage-your-user-accounts), Windows) forma segura a través de mecanismos únicos para cada sistema operativo.
 
 Para conectarse a escritorios y RemoteApps con inicio de sesión único a través del cliente de conexión a Escritorio remoto de la Bandeja de entrada en Windows, debe conectarse a la página Web de escritorio remoto a través de Internet Explorer. Las siguientes opciones de configuración son necesarios en el lado del servidor. No hay otras configuraciones son compatibles con SSO Web:
 

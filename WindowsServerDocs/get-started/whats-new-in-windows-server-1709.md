@@ -7,19 +7,23 @@ ms.topic: article
 author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
-ms.openlocfilehash: 32ce591a8b50c6e35c3fde4fedb177b6d76fccdd
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
+ms.date: 06/03/2019
+ms.openlocfilehash: e17a636c5bf06d194abd1bfe9b6d20970773e993
+ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65976730"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66501400"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novedades de Windows Server, versión 1709
 
 >Se aplica a: Windows Server (Canal semianual)
 
 <img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Para obtener información sobre las características más recientes de Windows, consulte [What ' s New in Windows Server](whats-new-in-windows-server.md). El contenido de esta sección describe las novedades y los cambios de Windows Server, versión 1709. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión. Consulta también [Windows Server, versión 1709](https://blogs.technet.microsoft.com/windowsserver/2017/08/24/sneak-peek-1-windows-server-version-1709/).
-   
+
+> [!IMPORTANT]
+> Windows Server, versión 1709 está fuera del soporte técnico a partir del 9 de abril de 2019.
+
 
 ## <a name="new-cadence-of-releases"></a>Nueva cadencia de versiones
 
@@ -126,20 +130,20 @@ Para obtener más información, consulta [Información general sobre máquinas v
 - **Autoajuste de ventana de recepción**: Lógica de autoajuste TCP calcula el parámetro "ventana de recepción" de una conexión TCP.  Las conexiones de retraso largo o de alta velocidad necesitan este algoritmo para lograr características de buen rendimiento.  En esta versión, se ha modificado el algoritmo para usar una función gradual para convergir en el valor máximo de recepción de ventana de una determinada conexión.
 - **Estadísticas TCP API**: Se introduce una nueva API denominada SIO_TCP_INFO.  SIO_TCP_INFO permite a los desarrolladores consultar información enriquecida sobre conexiones TCP con una opción de socket.
 - **IPv6**: Hay varias mejoras de IPv6 en esta versión.
-    - **RFC 6106** admite: 6106 RFC que permite la configuración de DNS a través de los anuncios de enrutador (RAs). Puedes utilizar el siguiente comando para habilitar o deshabilitar el soporte de RFC 6106:
+  - **RFC 6106** admite: 6106 RFC que permite la configuración de DNS a través de los anuncios de enrutador (RAs). Puedes utilizar el siguiente comando para habilitar o deshabilitar el soporte de RFC 6106:
 
     ```
     netsh int ipv6 set interface <ifindex> rabaseddnsconfig=<enabled | disabled>
     ```
 
-    - **Flujo de etiquetas**: A partir Creators Update, saliente TCP y UDP paquetes a través de IPv6 tienen este campo establecido en un valor hash de la tupla 5 (Src IP, IP de horario de verano, puerto de origen, puerto de destino).  Esto permitirá que los centros de datos de solo IPv6 realicen un equilibrio de carga o clasificación de flujos de forma más eficaz. Para habilitar etiquetas de flujo:
+  - **Flujo de etiquetas**: A partir Creators Update, saliente TCP y UDP paquetes a través de IPv6 tienen este campo establecido en un valor hash de la tupla 5 (Src IP, IP de horario de verano, puerto de origen, puerto de destino).  Esto permitirá que los centros de datos de solo IPv6 realicen un equilibrio de carga o clasificación de flujos de forma más eficaz. Para habilitar etiquetas de flujo:
 
     ```
     netsh int ipv6 set flowlabel=[disabled|enabled] (enabled by default)
     netsh int ipv6 set global flowlabel=<enabled | disabled>
     ```
 
-    - **ISATAP y 6to4**: Como paso hacia el futuro degradación, Creators Update tendrán estas tecnologías deshabilitadas de forma predeterminada.
+  - **ISATAP y 6to4**: Como paso hacia el futuro degradación, Creators Update tendrán estas tecnologías deshabilitadas de forma predeterminada.
 - **Detección de puertas de enlace inactivas (DGD)** : El algoritmo DGD pasa automáticamente las conexiones a través a otra puerta de enlace cuando la puerta de enlace actual es inaccesible. En esta versión, se ha mejorado el algoritmo periódicamente para volver a probar el entorno de red.
 - [Test-NetConnection](https://technet.microsoft.com/itpro/powershell/windows/nettcpip/test-netconnection) es un cmdlet integrado en Windows PowerShell que realiza una variedad de diagnósticos de red.  En esta versión, hemos mejorado el cmdlet para proporcionar información detallada sobre la selección de la ruta, así como la selección de direcciones de origen.
 

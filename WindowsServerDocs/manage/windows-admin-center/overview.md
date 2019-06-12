@@ -5,21 +5,21 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 04/12/2019
+ms.date: 06/07/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ee3c4ba5d6c3dc911ab318ade9a46b279317496f
-ms.sourcegitcommit: 39ab8041d166e6817a95417d6aa30bc7abeeef54
+ms.openlocfilehash: 2314e336cbf9ad44b07f3f94d7a866b48b5e9bff
+ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66260257"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66811810"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+> Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
 
-**Windows Admin Center** (respetuosas **proyecto Honolulu**) es una evolución de Windows Server en el cuadro de herramientas de administración; es un único panel de vidrio que consolida todos los aspectos de administración de servidores locales y remotos. Al tratarse de una experiencia de administración basada en explorador implementada localmente, no se requiere una conexión a Internet ni Azure. Windows Admin Center te ofrece control total de todos los aspectos de la implementación, incluidas redes privadas que no están conectadas a Internet.
+**Windows Admin Center** (anteriormente con el código **proyecto Honolulu**) es una evolución de Windows Server en el cuadro de herramientas de administración; es un único panel de vidrio que consolida todos los aspectos de administración de servidores locales y remotos. Al tratarse de una experiencia de administración basada en explorador implementada localmente, no se requiere una conexión a Internet ni Azure. Windows Admin Center te ofrece control total de todos los aspectos de la implementación, incluidas redes privadas que no están conectadas a Internet.
 
 ## <a name="introduction"></a>Introducción
 
@@ -75,6 +75,7 @@ Puedes tener Windows Admin Center en funcionamiento y ejecutándose en tu entorn
             <ul>
             <li><a href="configure/settings.md">Configuración de Windows Admin Center</a>
             <li><a href="configure/user-access-control.md">Control de acceso de usuario y permisos</a>
+            <li><a href="configure/shared-connections.md">Conexiones compartidas</a>
             <li><a href="configure/using-extensions.md">Extensiones</a>
             </ul>
         </td>
@@ -92,7 +93,7 @@ Puedes tener Windows Admin Center en funcionamiento y ejecutándose en tu entorn
             </ul>
         </td>
         <td style="vertical-align: top;">
-            <h3>Conectarse a Azure</h3>
+            <h3>Conexión a Azure AD</h3>
             <ul>
             <li><a href="azure/index.md">Servicios híbridos de Azure</a></li>
             <li><a href="azure/azure-integration.md">Conectar Windows Admin Center en Azure</a></li>

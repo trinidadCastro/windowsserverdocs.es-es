@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4aa041c27b1797e7d00476212887a7dc6dbc1880
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b2dd62e34f8205e0b5d395ba759fff4b4937b0ad
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889066"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66435044"
 ---
 # <a name="bdehdcfg-driveinfo"></a>bdehdcfg: driveinfo
 
@@ -30,9 +30,11 @@ Muestra la letra de unidad, el tamaño total, el espacio máximo disponible y la
 bdehdcfg -driveinfo <DriveLetter>
 ```
 ### <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|<DriveLetter>|Especifica una letra de unidad seguida de dos puntos.|
+
+|   Parámetro   |                  Descripción                  |
+|---------------|-----------------------------------------------|
+| <DriveLetter> | Especifica una letra de unidad seguida de dos puntos. |
+
 ## <a name="remarks"></a>Comentarios
 El comando es solo informativo y no realiza ninguna modificación en la unidad.
 ## <a name="BKMK_Examples"></a>Ejemplo

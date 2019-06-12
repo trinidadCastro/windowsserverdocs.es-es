@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5f907b6162e6767820e23222e287b933397397d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 53340612d26eaa7c4ae6fd977a0eac573f91881d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861106"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66434600"
 ---
 # <a name="cd"></a>cd
 
@@ -53,16 +53,16 @@ chdir [..]
 ## <a name="remarks"></a>Comentarios
 
 Si se habilitan las extensiones de comando, las condiciones siguientes se aplican a la **cd** comando:
--   La cadena de directorio actual se convierte para usar las mismas mayúsculas y minúsculas como los nombres en el disco. Por ejemplo, `cd C:\TEMP` establecería el directorio actual en C:\Temp si ese es el caso en el disco.
--   Espacios de no se tratan como delimitadores, por lo que *ruta* pueden contener espacios sin incluir las comillas. Por ejemplo:  
-    ```
-    cd username\programs\start menu
-    ```  
-    es igual que:  
-    ```
-    cd "username\programs\start menu"
-    ```  
-    Sin embargo, las comillas son necesarias, si las extensiones están deshabilitadas.
+- La cadena de directorio actual se convierte para usar las mismas mayúsculas y minúsculas como los nombres en el disco. Por ejemplo, `cd C:\TEMP` establecería el directorio actual en C:\Temp si ese es el caso en el disco.
+- Espacios de no se tratan como delimitadores, por lo que *ruta* pueden contener espacios sin incluir las comillas. Por ejemplo:  
+  ```
+  cd username\programs\start menu
+  ```  
+  es igual que:  
+  ```
+  cd "username\programs\start menu"
+  ```  
+  Sin embargo, las comillas son necesarias, si las extensiones están deshabilitadas.
 
 Para deshabilitar las extensiones de comando, escriba:
 ```

@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 02/28/2019
 description: Este artículo describe la actualización de un clúster de conmutación por error de 2 nodos con el mismo hardware
 ms.localizationpriority: medium
-ms.openlocfilehash: 0bfeb05c8cbc205745dc16bc7ef04052481668ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 77cde9e64fda385facd91d86483f4d7f749f30a1
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854836"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453052"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>Actualización de clústeres de conmutación por error en el mismo hardware
 
@@ -29,7 +29,7 @@ Actualizar el sistema operativo de una conmutación por error existente clúster
 
 Antes de realizar cualquier actualización del clúster de conmutación por error, consulte el [centro de actualización de Windows](https://www.microsoft.com/upgradecenter).  Al actualizar un servidor de Windows local, se mueve de una versión de sistema operativo existente a una versión más reciente en el mismo hardware. Windows Server puede ser actualizado en contexto al menos uno y a veces dos versiones al día. Por ejemplo, se pueden actualizar Windows Server 2012 R2 y Windows Server 2016 en contexto a Windows Server 2019.  También tenga en cuenta que el [Asistente para migración de clúster](https://blogs.msdn.microsoft.com/clustering/2012/06/25/how-to-move-highly-available-clustered-vms-to-windows-server-2012-with-the-cluster-migration-wizard/) pueden utilizarse, pero solo se admite hasta dos versiones de vuelta. El gráfico siguiente muestra las rutas de actualización para Windows Server. Flechas hacia abajo de señaladores representan la ruta de actualización admitida mover desde versiones anteriores hasta Windows Server 2019.
 
-![Diagrama de actualización en contexto](media\In-Place-Upgrade\In-Place-Upgrade-1.png)
+![Diagrama de actualización en contexto](media/In-Place-Upgrade/In-Place-Upgrade-1.png)
 
 Los pasos siguientes son un ejemplo de pasar de un servidor de clúster de conmutación por error de Windows Server 2012 para Windows Server 2019 usa el mismo hardware.  
 
@@ -41,11 +41,11 @@ En el ejemplo siguiente, el nombre del clúster de conmutación por error es el 
 
 1. En el Administrador de clústeres de conmutación por error, purgar todos los recursos del Nodo1 al Nodo2 por secundario del mouse al hacer clic en el nodo y seleccione **pausar** y **purgar Roles**.  Como alternativa, puede usar el comando de PowerShell [SUSPEND-CLUSTERNODE](https://docs.microsoft.com/powershell/module/failoverclusters/suspend-clusternode).
 
-    ![Nodo de purga](media\In-Place-Upgrade\In-Place-Upgrade-2.png)
+    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-2.png)
 
 2. Expulse el Nodo1 del clúster por secundario del mouse al hacer clic en el nodo y seleccione **más acciones** y **expulsar**.  Como alternativa, puede usar el comando de PowerShell [REMOVE-CLUSTERNODE](https://docs.microsoft.com/powershell/module/failoverclusters/remove-clusternode).
 
-    ![Nodo de purga](media\In-Place-Upgrade\In-Place-Upgrade-3.png)
+    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-3.png)
 
 3. Como medida de precaución, desasociar el almacenamiento que se usen en NODE1.  En algunos casos, será suficiente la desconexión de los cables de almacenamiento de la máquina.  Póngase en contacto con su proveedor de almacenamiento para los pasos de desasociación adecuado si es necesario.  Dependiendo de su almacenamiento, esto puede no ser necesario.
 
@@ -53,11 +53,11 @@ En el ejemplo siguiente, el nombre del clúster de conmutación por error es el 
 
 5. Crear un nuevo clúster denominado clúster1 con NODE1.  Abra el Administrador de clústeres de conmutación por error y, en el **administración** panel, elija **crear clúster** y siga las instrucciones del asistente.
 
-    ![Nodo de purga](media\In-Place-Upgrade\In-Place-Upgrade-4.png)
+    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-4.png)
 
 6. Una vez creado el clúster, necesitará los roles se migrado desde el clúster original a este nuevo clúster.  En el nuevo clúster, botón secundario del mouse haga clic en el nombre del clúster (CLUSTER1) y seleccione **más acciones** y **copiar Roles de clúster**.  Seguir el tutorial del Asistente para migrar los roles.
 
-    ![Nodo de purga](media\In-Place-Upgrade\In-Place-Upgrade-5.png)
+    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-5.png)
 
 7.  Una vez que se han migrado todos los recursos, apague Nodo2 (clúster original) y desconecte el almacenamiento con el fin de no hacer que las interferencias.  Conectar el almacenamiento al Nodo1.  Una vez que todo está conectado, poner en línea todos los recursos y asegúrese de que funcionan como deben.
 
@@ -75,7 +75,7 @@ Cuando haya comprobado que todo funciona como debería, se puede volver a compil
 
    c. Al elegir Aceptar o aplicar, verá el siguiente mensaje emergente del cuadro de diálogo.
 
-    ![Nodo de purga](media\In-Place-Upgrade\In-Place-Upgrade-6.png)
+    ![Nodo de purga](media/In-Place-Upgrade/In-Place-Upgrade-6.png)
 
     d. Se ha detenido el servicio de clúster y era necesario volver a iniciar para que completar el cambio de nombre.
 

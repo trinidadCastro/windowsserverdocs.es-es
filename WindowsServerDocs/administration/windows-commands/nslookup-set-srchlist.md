@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c3bc06f82f557f136850872180a5c430f70da5fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 39b28e7d43df2427caae46d323cd30f03b6b484c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888486"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66436576"
 ---
 # <a name="nslookup-set-srchlist"></a>nslookup set srchlist
 
@@ -31,18 +31,20 @@ cambia el nombre y la búsqueda de la lista de los dominios de Domain Name Syste
 Set srchlist=<DomainName>[/...]
 ```
 ## <a name="parameters"></a>Parámetros
-|Parámetro|Descripción|
-|-------|--------|
-|<DomainName>|Especifica los nombres nuevos para la lista de dominios y búsqueda DNS de forma predeterminada. El valor de nombre de dominio predeterminado se basa en el nombre de host. Puede especificar un máximo de seis nombres separados por barras diagonales (/).|
-|{help &#124; ?}|Muestra un resumen breve de **nslookup** subcomandos.|
+
+|    Parámetro    |                                                                                        Descripción                                                                                        |
+|-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  <DomainName>   | Especifica los nombres nuevos para la lista de dominios y búsqueda DNS de forma predeterminada. El valor de nombre de dominio predeterminado se basa en el nombre de host. Puede especificar un máximo de seis nombres separados por barras diagonales (/). |
+| {help &#124; ?} |                                                                   Muestra un resumen breve de **nslookup** subcomandos.                                                                   |
+
 ## <a name="remarks"></a>Comentarios
--   El **establecer srchlist**comando invalida la DNS dominio nombre y la búsqueda de lista predeterminada de la **dominio conjunto** comando. Use la **establecer todo** comando para mostrar la lista.
-## <a name="BKMK_examples"></a>Ejemplos
-El ejemplo siguiente establece el dominio DNS a mfg.widgets.com y la lista de búsqueda a los nombres de tres:
-```
-set srchlist=mfg.widgets.com/mrp2.widgets.com/widgets.com
-```
-## <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[nslookup establece dominio](nslookup-set-domain.md)
-[nslookup establece todas](nslookup-set-all.md)
+- El **establecer srchlist**comando invalida la DNS dominio nombre y la búsqueda de lista predeterminada de la **dominio conjunto** comando. Use la **establecer todo** comando para mostrar la lista.
+  ## <a name="BKMK_examples"></a>Ejemplos
+  El ejemplo siguiente establece el dominio DNS a mfg.widgets.com y la lista de búsqueda a los nombres de tres:
+  ```
+  set srchlist=mfg.widgets.com/mrp2.widgets.com/widgets.com
+  ```
+  ## <a name="additional-references"></a>Referencias adicionales
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
+  [nslookup establece dominio](nslookup-set-domain.md)
+  [nslookup establece todas](nslookup-set-all.md)

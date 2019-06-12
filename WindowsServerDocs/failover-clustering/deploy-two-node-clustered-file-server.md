@@ -7,12 +7,12 @@ ms.topic: article
 author: johnmarlin-msft
 ms.date: 02/01/2019
 description: En este artículo describe cómo crear un clúster de servidores de archivos de dos nodos
-ms.openlocfilehash: fbfde60f60df64514a6a0f514cbabd005544af84
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9f50470b379bd0ab05834eb3c5a35be0f5e9e93a
+ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846416"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66453002"
 ---
 # <a name="deploying-a-two-node-clustered-file-server"></a>Implementación de un servidor de archivos en clúster de dos nodos
 
@@ -28,11 +28,11 @@ Servidores en un clúster de conmutación por error pueden funcionar en diversos
 
 Un clúster de conmutación por error normalmente incluye una unidad de almacenamiento que está conectada físicamente a todos los servidores del clúster, aunque solo un servidor tiene acceso cada vez a cualquier volumen determinado el almacenamiento. En el siguiente diagrama se muestra un clúster de conmutación por error de dos nodos conectado a una unidad de almacenamiento.
 
-![Clúster de dos nodos](media\Cluster-File-Server\Cluster-FS-Overview.png)
+![Clúster de dos nodos](media/Cluster-File-Server/Cluster-FS-Overview.png)
 
 Los volúmenes de almacenamiento o números de unidad lógica (LUN) expuestos a los nodos de un clúster no se deben exponer a otros servidores, incluidos los servidores de otro clúster. En el diagrama siguiente se ilustra esto.
 
-![LUN de almacenamiento](media\Cluster-File-Server\Cluster-FS-LUNs.png)
+![LUN de almacenamiento](media/Cluster-File-Server/Cluster-FS-LUNs.png)
 
 Tenga en cuenta que para la disponibilidad máxima de cualquier servidor, es importante seguir los procedimientos recomendados de administración del servidor, por ejemplo, administrar con cuidado el entorno físico de los servidores, probar los cambios de software antes de implementarlos por completo y realizar un cuidadoso seguimiento de las actualizaciones de software y los cambios de configuración en todos los servidores en clúster.
 
@@ -167,7 +167,7 @@ En este paso, se instalará la característica de clúster de conmutación por e
 
 1. Abra **administrador del servidor** y, en el **administrar** lista desplegable, seleccione **agregar Roles y características**.
 
-   ![Agregar función](media\Cluster-File-Server\Cluster-FS-Add-Feature.png)
+   ![Agregar función](media/Cluster-File-Server/Cluster-FS-Add-Feature.png)
 
 2. Si el **antes de comenzar** abre la ventana, elija **siguiente**.
 
@@ -177,11 +177,11 @@ En este paso, se instalará la característica de clúster de conmutación por e
 
 5. Para el rol de servidor, en la lista de roles, abra **servicios de archivo**, seleccione **servidor de archivos**, y **siguiente**.
 
-   ![Agregar rol](media\Cluster-File-Server\Cluster-FS-Add-FS-Role-1.png)
+   ![Agregar rol](media/Cluster-File-Server/Cluster-FS-Add-FS-Role-1.png)
 
 6. Para las características de la lista de características, seleccione **agrupación en clústeres de conmutación por error**.  Se mostrará un cuadro de diálogo emergente que muestra las herramientas de administración también está instaladas.  Guardar todos los seleccionados, elija **agregar características** y **siguiente**.
 
-   ![Agregar función](media\Cluster-File-Server\Cluster-FS-Add-WSFC-1.png)
+   ![Agregar función](media/Cluster-File-Server/Cluster-FS-Add-WSFC-1.png)
 
 7. En la página de confirmación, seleccione instalar.
 
@@ -191,7 +191,7 @@ En este paso, se instalará la característica de clúster de conmutación por e
 
 #### <a name="using-powershell"></a>Con PowerShell
 
-1. Abra una sesión de PowerShell administrativa haciendo clic en el botón Inicio y, a continuación, seleccione **Windows PowerShell (Admin)**.
+1. Abra una sesión de PowerShell administrativa haciendo clic en el botón Inicio y, a continuación, seleccione **Windows PowerShell (Admin)** .
 2. Para instalar el rol de servidor de archivos, ejecute el comando:
 
     ```PowerShell
@@ -233,7 +233,7 @@ Antes de crear un clúster, se recomienda encarecidamente que valide su configur
 
 4. En el **seleccionar servidores o un clúster** ventana, agregue los nombres de los dos equipos que serán los nodos del clúster.  Por ejemplo, si los nombres son Nodo1 y Nodo2, escriba el nombre y seleccione **agregar**.  También puede elegir el **examinar** botón para buscar los nombres de Active Directory.  Una vez que ambos se muestran bajo **servidores seleccionados**, elija **siguiente**.
 
-5. En el **opciones de pruebas** ventana, seleccione **ejecutar todas las pruebas (recomendadas)**, y **siguiente**.
+5. En el **opciones de pruebas** ventana, seleccione **ejecutar todas las pruebas (recomendadas)** , y **siguiente**.
 
 6. En el **confirmación** página, le proporcionará la lista de todas las pruebas que comprobará.  Elija **siguiente** comenzarán a las pruebas.
 
@@ -245,7 +245,7 @@ Antes de crear un clúster, se recomienda encarecidamente que valide su configur
 
 #### <a name="using-powershell"></a>Con PowerShell
 
-1. Abra una sesión de PowerShell administrativa haciendo clic en el botón Inicio y, a continuación, seleccione **Windows PowerShell (Admin)**.
+1. Abra una sesión de PowerShell administrativa haciendo clic en el botón Inicio y, a continuación, seleccione **Windows PowerShell (Admin)** .
 
 2. Para validar las máquinas (por ejemplo, los nombres de máquina que se va a Nodo1 y Nodo2) para la agrupación en clústeres de conmutación por error, ejecute el comando:
 
@@ -283,7 +283,7 @@ El siguiente creará un clúster fuera de las máquinas y la configuración que 
 
 #### <a name="using-powershell"></a>Con PowerShell
 
-1. Abra una sesión de PowerShell administrativa haciendo clic en el botón Inicio y, a continuación, seleccione **Windows PowerShell (Admin)**.
+1. Abra una sesión de PowerShell administrativa haciendo clic en el botón Inicio y, a continuación, seleccione **Windows PowerShell (Admin)** .
 
 2. Ejecute el siguiente comando para crear el clúster si usa direcciones IP estáticas.  Por ejemplo, los nombres de equipo son Nodo1 y Nodo2, el nombre del clúster será el clúster y la dirección IP será 1.1.1.1.
 
@@ -315,7 +315,7 @@ Para configurar un clúster de conmutación por error de servidor de archivos, s
 
 7. El tipo de servidor de archivo, seleccione **servidor de archivos para uso general** y **siguiente**.<br>Para obtener información sobre el servidor de archivos de escalabilidad horizontal, consulte [Introducción a Scale-Out File Server](sofs-overview.md).
 
-   ![Tipo de servidor de archivos](media\Cluster-File-Server\Cluster-FS-File-Server-Type.png)
+   ![Tipo de servidor de archivos](media/Cluster-File-Server/Cluster-FS-File-Server-Type.png)
 
 8. En el **punto de acceso cliente** ventana, escriba el nombre del servidor de archivos que se va a usar.  Tenga en cuenta que esto no es el nombre del clúster.  Esto es para la conectividad de recurso compartido de archivos.  Por ejemplo, si desea conectarse a \\SERVER, el nombre de la entrada sería SERVER.
 
