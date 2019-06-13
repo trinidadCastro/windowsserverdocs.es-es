@@ -3,4 +3,7 @@
 ## [Espacios de almacenamiento directo](../storage/storage-spaces/storage-spaces-direct-overview.md)
 ## [Clúster de conmutación por error](../failover-clustering/failover-clustering-overview.md)
 ## [Redes definidas por software](https://docs.microsoft.com/windows-server/networking/sdn/)
+## [Windows Admin Center](../manage/windows-admin-center/overview.md)
+## [Conectarse a Azure](../azure-hybrid-services/index.md)
+## [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview)
 ## [Windows Server definido por software (WSSD)](https://www.microsoft.com/en-us/cloud-platform/software-defined-datacenter)

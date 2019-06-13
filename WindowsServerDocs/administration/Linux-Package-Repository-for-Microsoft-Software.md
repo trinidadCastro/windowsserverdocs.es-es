@@ -11,12 +11,12 @@ ms.assetid: b5387444-595f-4f38-abb7-163a70ea1895
 author: szarkos
 ms.author: szark
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b4feb6b8b3dad5c34de92f634eb30d0e952fe76
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: HT
+ms.openlocfilehash: 77b309739125a2114ef4ada4adb305f4dd169b06
+ms.sourcegitcommit: 927adf32faa6052234ad08f21125906362e593dc
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435775"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67033326"
 ---
 # <a name="linux-software-repository-for-microsoft-products"></a>Repositorio de Software de Linux para productos de Microsoft
 
@@ -51,22 +51,33 @@ Repositorios pueden configurarse automáticamente al instalar el paquete de Linu
 
  - Ubuntu 14.04 (furgoneta)
 
-        wget https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
-        sudo dpkg -i packages-microsoft-prod.deb
+        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+        sudo apt-add-repository https://packages.microsoft.com/ubuntu/14.04/prod
         sudo apt-get update
 
  - Ubuntu 16.04 (Xenial)
 
-        wget https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
-        sudo dpkg -i packages-microsoft-prod.deb
+        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+        sudo apt-add-repository https://packages.microsoft.com/ubuntu/16.04/prod
         sudo apt-get update
 
- - Ubuntu 16.10 (Yakkety)
+ - Ubuntu 18.04 (biónica)
 
-        wget https://packages.microsoft.com/config/ubuntu/16.10/packages-microsoft-prod.deb
-        sudo dpkg -i packages-microsoft-prod.deb
+        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+        sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.04/prod
         sudo apt-get update
 
+ - Ubuntu 18.10 (cósmica)
+
+        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+        sudo apt-add-repository https://packages.microsoft.com/ubuntu/18.10/prod
+        sudo apt-get update
+
+ - Ubuntu 19.04 (Disco)
+
+        curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+        sudo apt-add-repository https://packages.microsoft.com/ubuntu/19.04/prod
+        sudo apt-get update
 
 ### <a name="suse-linux-enterprise-12"></a>SUSE Linux Enterprise 12
 
