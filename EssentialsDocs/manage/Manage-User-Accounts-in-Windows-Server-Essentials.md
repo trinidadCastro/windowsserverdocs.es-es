@@ -12,12 +12,12 @@ ms.assetid: 0d115697-532b-48c2-a659-9f889e235326
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 008e614ca7ae202d575d2c3e5976ed3d5544b6ea
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 1cce047c45279f7116e0e8a256633df06344e13c
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720700"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433142"
 ---
 # <a name="manage-user-accounts-in-windows-server-essentials"></a>Administrar cuentas de usuario en Windows Server Essentials
 
@@ -63,8 +63,8 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
 -   Asignar a grupos de usuarios (solo Windows Server Essentials).  
   
 > [!NOTE]
->  -   No se admiten caracteres no ASCII en Microsoft Azure Active Directory (Azure AD). No utilice caracteres no ASCII en su contraseña, si el servidor se integra con Azure AD.  
-> -   Las opciones de correo electrónico solo están disponibles si instala un complemento que ofrece el servicio de correo electrónico.  
+> - No se admiten caracteres no ASCII en Microsoft Azure Active Directory (Azure AD). No utilice caracteres no ASCII en su contraseña, si el servidor se integra con Azure AD.  
+>   -   Las opciones de correo electrónico solo están disponibles si instala un complemento que ofrece el servicio de correo electrónico.  
   
 ##### <a name="to-add-a-user-account"></a>Para agregar una cuenta de usuario  
   
@@ -200,38 +200,38 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
  Windows Server Essentials permite realizar tareas administrativas comunes mediante su panel. De forma predeterminada, el **usuarios** página del panel incluye dos pestañas **usuarios** y **grupos de usuarios**.  
   
 > [!NOTE]
->  -   Si integra el servidor que ejecuta Windows Server Essentials con Office 365, una nueva pestaña denominada **grupos de distribución** también se agrega dentro de la **usuarios** página del panel.  
-> -   En Windows Server Essentials, el **usuarios** página del panel incluye una única pestaña - **usuarios**.  
+> - Si integra el servidor que ejecuta Windows Server Essentials con Office 365, una nueva pestaña denominada **grupos de distribución** también se agrega dentro de la **usuarios** página del panel.  
+>   -   En Windows Server Essentials, el **usuarios** página del panel incluye una única pestaña - **usuarios**.  
   
  La pestaña **Usuarios** incluye lo siguiente:  
   
--   Una lista de cuentas de usuario, que muestra:  
+- Una lista de cuentas de usuario, que muestra:  
   
-    -   El nombre del usuario.  
+  -   El nombre del usuario.  
   
-    -   El nombre de inicio de sesión de la cuenta de usuario.  
+  -   El nombre de inicio de sesión de la cuenta de usuario.  
   
-    -   Si la cuenta de usuario tiene permiso de acceso desde cualquier lugar. El permiso de acceso desde cualquier lugar de una cuenta de usuario puede estar **Permitido** o **No permitido**.  
+  -   Si la cuenta de usuario tiene permiso de acceso desde cualquier lugar. El permiso de acceso desde cualquier lugar de una cuenta de usuario puede estar **Permitido** o **No permitido**.  
   
-    -   Si el servidor que ejecuta Windows Server Essentials administra el Historial de archivos para esta cuenta de usuario. El estado del Historial de archivos para una cuenta de usuario es **Administrado** o **No administrado**.  
+  -   Si el servidor que ejecuta Windows Server Essentials administra el Historial de archivos para esta cuenta de usuario. El estado del Historial de archivos para una cuenta de usuario es **Administrado** o **No administrado**.  
   
-    -   El nivel de acceso que se asigna a la cuenta de usuario. Puede asignar un acceso de **usuario estándar** o de **administrador** a una cuenta de usuario.  
+  -   El nivel de acceso que se asigna a la cuenta de usuario. Puede asignar un acceso de **usuario estándar** o de **administrador** a una cuenta de usuario.  
   
-    -   El estado de la cuenta de usuario. Una cuenta de usuario puede estar **Activa**, **Inactiva**o **Incompleta**.  
+  -   El estado de la cuenta de usuario. Una cuenta de usuario puede estar **Activa**, **Inactiva**o **Incompleta**.  
   
-    -   En Windows Server Essentials, si el servidor está integrado con Office 365 o Windows Intune, se muestra la cuenta de Microsoft online.  
+  -   En Windows Server Essentials, si el servidor está integrado con Office 365 o Windows Intune, se muestra la cuenta de Microsoft online.  
   
-    -   En Windows Server Essentials, si el servidor se integra con Microsoft Office 365, se muestra el estado de la cuenta de Office 365 (conocido en Windows Server Essentials como la cuenta de Microsoft online) para la cuenta de usuario.  
+  -   En Windows Server Essentials, si el servidor se integra con Microsoft Office 365, se muestra el estado de la cuenta de Office 365 (conocido en Windows Server Essentials como la cuenta de Microsoft online) para la cuenta de usuario.  
   
--   Un panel de detalles con información adicional acerca de una cuenta de usuario seleccionada.  
+- Un panel de detalles con información adicional acerca de una cuenta de usuario seleccionada.  
   
--   Un panel de tareas que incluye:  
+- Un panel de tareas que incluye:  
   
-    -   Un conjunto de tareas administrativas de cuenta de usuario como la visualización y eliminación de cuentas de usuario y el cambio de contraseñas.  
+  -   Un conjunto de tareas administrativas de cuenta de usuario como la visualización y eliminación de cuentas de usuario y el cambio de contraseñas.  
   
-    -   Tareas que le permiten establecer o cambiar la configuración de todas las cuentas de usuario en la red de forma global.  
+  -   Tareas que le permiten establecer o cambiar la configuración de todas las cuentas de usuario en la red de forma global.  
   
- En la tabla siguiente se describen las diversas tareas de cuenta de usuario que están disponibles en la pestaña **Usuarios**. Algunas de las tareas son específicas de las cuentas de usuario y solo están visibles cuando se selecciona una cuenta de usuario de la lista.  
+  En la tabla siguiente se describen las diversas tareas de cuenta de usuario que están disponibles en la pestaña **Usuarios**. Algunas de las tareas son específicas de las cuentas de usuario y solo están visibles cuando se selecciona una cuenta de usuario de la lista.  
   
 > [!NOTE]
 >  Si integra Office 365 con Windows Server Essentials, las tareas adicionales estarán disponibles. Para obtener más información, consulte [administrar cuentas en línea para los usuarios](Manage-Online-Accounts-for-Users.md).  
@@ -286,55 +286,55 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
   
 ##### <a name="to-reset-the-password-for-a-user-account"></a>Para restablecer la contraseña de una cuenta de usuario  
   
-1.  Abra el panel de Windows Server Essentials.  
+1. Abra el panel de Windows Server Essentials.  
   
-2.  En la barra de navegación, haga clic en **Usuarios**.  
+2. En la barra de navegación, haga clic en **Usuarios**.  
   
-3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiere restablecer.  
+3. En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiere restablecer.  
   
-4.  En el **< cuenta de usuario\> tareas** panel, haga clic en **cambiar la contraseña de cuenta de usuario**. Aparece el Asistente para cambiar la contraseña de la cuenta de usuario.  
+4. En el **< cuenta de usuario\> tareas** panel, haga clic en **cambiar la contraseña de cuenta de usuario**. Aparece el Asistente para cambiar la contraseña de la cuenta de usuario.  
   
-5.  Escriba una nueva contraseña para la cuenta de usuario y después escriba la contraseña para confirmarla.  
+5. Escriba una nueva contraseña para la cuenta de usuario y después escriba la contraseña para confirmarla.  
   
-6.  Haga clic en **Cambiar contraseña**.  
+6. Haga clic en **Cambiar contraseña**.  
   
-7.  Dé la nueva contraseña al usuario.  
+7. Dé la nueva contraseña al usuario.  
   
-    > [!IMPORTANT]
-    >  -   Es posible que no pueda cambiar la contraseña si se ha establecido la directiva de contraseñas para su cuenta en **Las contraseñas nunca expiran**.  
-    > -   No se admiten caracteres no ASCII en Azure AD. Por lo tanto, si el servidor se integra con Azure AD, no use caracteres que no sean ASCII en su contraseña.  
-    > -   Si una cuenta de Microsoft online (conocida en Windows Server Essentials como una cuenta de Office 365) se asigna al usuario, la contraseña se sincroniza con la contraseña de cuenta en línea. El usuario usará la nueva contraseña para iniciar sesión en el servidor o en Office 365. Para obtener más información, consulte [administrar cuentas en línea para los usuarios](Manage-Online-Accounts-for-Users.md).  
+   > [!IMPORTANT]
+   > - Es posible que no pueda cambiar la contraseña si se ha establecido la directiva de contraseñas para su cuenta en **Las contraseñas nunca expiran**.  
+   >   -   No se admiten caracteres no ASCII en Azure AD. Por lo tanto, si el servidor se integra con Azure AD, no use caracteres que no sean ASCII en su contraseña.  
+   >   -   Si una cuenta de Microsoft online (conocida en Windows Server Essentials como una cuenta de Office 365) se asigna al usuario, la contraseña se sincroniza con la contraseña de cuenta en línea. El usuario usará la nueva contraseña para iniciar sesión en el servidor o en Office 365. Para obtener más información, consulte [administrar cuentas en línea para los usuarios](Manage-Online-Accounts-for-Users.md).  
   
 ###  <a name="BKMK_Access3"></a> Lo que debe saber acerca de las directivas de contraseña  
  La directiva de contraseñas es un conjunto de reglas que definen cómo crean y usan las contraseñas los usuarios. La directiva ayuda a impedir el acceso no autorizado a los datos de usuario y a otra información que se almacena en el servidor. La directiva de contraseñas se aplica a todas las cuentas de usuario que tengan acceso a la red.  
   
  La directiva de contraseñas de Windows Server Essentials consta de tres elementos principales, que se describen a continuación:  
   
--   **Longitud de la contraseña**.  Cuanto más larga sea una contraseña, más segura será. Las contraseñas en blanco no son seguras.  
+- **Longitud de la contraseña**.  Cuanto más larga sea una contraseña, más segura será. Las contraseñas en blanco no son seguras.  
   
--   **Complejidad de la contraseña**.  Las contraseñas complejas contienen una combinación de letras en mayúsculas y minúsculas (a-z, A-z), números base (0-9) y símbolos no alfabéticos (como ;, !, @, #, _ y -). Las contraseñas complejas son mucho menos susceptibles a que se produzcan un acceso no autorizado. Las contraseñas que contienen nombres de usuario, cumpleaños u otra información personal no dan la seguridad adecuada.  
+- **Complejidad de la contraseña**.  Las contraseñas complejas contienen una combinación de letras en mayúsculas y minúsculas (a-z, A-z), números base (0-9) y símbolos no alfabéticos (como ;, !, @, #, _ y -). Las contraseñas complejas son mucho menos susceptibles a que se produzcan un acceso no autorizado. Las contraseñas que contienen nombres de usuario, cumpleaños u otra información personal no dan la seguridad adecuada.  
   
--   **Duración de la contraseña**.  Windows Server Essentials requiere que los usuarios cambien su contraseña al menos una vez cada 180 días. Como opción, puede elegir que las contraseñas no expiren nunca.  
+- **Duración de la contraseña**.  Windows Server Essentials requiere que los usuarios cambien su contraseña al menos una vez cada 180 días. Como opción, puede elegir que las contraseñas no expiren nunca.  
   
- Para que sea más fácil implementar una directiva de contraseñas en la red, Windows Server Essentials ofrece una sencilla herramienta que le permite establecer o modificar la directiva de contraseñas para cualquiera de los cuatro siguientes perfiles de directivas predefinidos:  
+  Para que sea más fácil implementar una directiva de contraseñas en la red, Windows Server Essentials ofrece una sencilla herramienta que le permite establecer o modificar la directiva de contraseñas para cualquiera de los cuatro siguientes perfiles de directivas predefinidos:  
   
--   **Débil**.  Los usuarios pueden especificar cualquier contraseña que no esté en blanco.  
+- **Débil**.  Los usuarios pueden especificar cualquier contraseña que no esté en blanco.  
   
--   **Media**.  Estas contraseñas deben contener al menos 5 caracteres. No se requiere una contraseña compleja.  
+- **Media**.  Estas contraseñas deben contener al menos 5 caracteres. No se requiere una contraseña compleja.  
   
--   **Medianamente segura**.  Estas contraseñas deben contener al menos 5 caracteres y deben incluir letras, números y símbolos.  
+- **Medianamente segura**.  Estas contraseñas deben contener al menos 5 caracteres y deben incluir letras, números y símbolos.  
   
--   **Segura**.  Estas contraseñas deben contener al menos 7 caracteres y deben incluir letras, números y símbolos. Estas contraseñas son más seguras, pero pueden ser más difíciles de recordar para los usuarios.  
+- **Segura**.  Estas contraseñas deben contener al menos 7 caracteres y deben incluir letras, números y símbolos. Estas contraseñas son más seguras, pero pueden ser más difíciles de recordar para los usuarios.  
   
-    > [!NOTE]
-    >  Las contraseñas no pueden contener la dirección de correo electrónico o el nombre de usuario.  
-    >   
-    >  Si integra su sistema con Office 365, la integración aplica la directiva de contraseñas **Segura** y actualiza la directiva para que incluya los siguientes requisitos:  
-    >   
-    >  -   Las contraseñas deben contener 8 y 16 caracteres.  
-    > -   Las contraseñas no pueden contener un espacio ni el nombre de correo electrónico de Office 365.  
+  > [!NOTE]
+  >  Las contraseñas no pueden contener la dirección de correo electrónico o el nombre de usuario.  
+  > 
+  >  Si integra su sistema con Office 365, la integración aplica la directiva de contraseñas **Segura** y actualiza la directiva para que incluya los siguientes requisitos:  
+  > 
+  > - Las contraseñas deben contener 8 y 16 caracteres.  
+  >   -   Las contraseñas no pueden contener un espacio ni el nombre de correo electrónico de Office 365.  
   
- De forma predeterminada, la instalación del servidor establece la directiva de contraseñas predeterminada en la opción **Segura**.  
+  De forma predeterminada, la instalación del servidor establece la directiva de contraseñas predeterminada en la opción **Segura**.  
   
 ###  <a name="BKMK_Access4"></a> Cambiar la directiva de contraseñas  
  Use el siguiente procedimiento para establecer o modificar la directiva de contraseñas en cualquiera de los cuatro perfiles de directiva predefinidos.  
@@ -373,21 +373,21 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
   
 ##### <a name="to-remove-a-user-account-but-retain-access-to-the-user-s-files"></a>Para quitar una cuenta de usuario pero conservar el acceso a los archivos de usuario s  
   
-1.  Abra el panel de Windows Server Essentials.  
+1. Abra el panel de Windows Server Essentials.  
   
-2.  En la barra de navegación, haga clic en **Usuarios**.  
+2. En la barra de navegación, haga clic en **Usuarios**.  
   
-3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiere quitar.  
+3. En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiere quitar.  
   
-4.  En el **< cuenta de usuario\> tareas** panel, haga clic en **quitar la cuenta de usuario**. Aparece el Asistente para eliminar cuentas de usuario.  
+4. En el **< cuenta de usuario\> tareas** panel, haga clic en **quitar la cuenta de usuario**. Aparece el Asistente para eliminar cuentas de usuario.  
   
-5.  En la página **¿Quiere mantener los archivos?** , asegúrese de que la casilla **Eliminar los archivos que incluyan copias de seguridad del Historial de archivos de esta cuenta de usuario** esté desactivada y después haga clic en **Siguiente**.  
+5. En la página **¿Quiere mantener los archivos?** , asegúrese de que la casilla **Eliminar los archivos que incluyan copias de seguridad del Historial de archivos de esta cuenta de usuario** esté desactivada y después haga clic en **Siguiente**.  
   
-     Aparece una página de confirmación que le advierte de que se va a quitar la cuenta, pero de que los archivos se van a mantener.  
+    Aparece una página de confirmación que le advierte de que se va a quitar la cuenta, pero de que los archivos se van a mantener.  
   
-6.  Haga clic en **Eliminar cuenta** para quitar la cuenta de usuario.  
+6. Haga clic en **Eliminar cuenta** para quitar la cuenta de usuario.  
   
- Después de quitar la cuenta de usuario, el administrador puede conceder acceso a la carpeta compartida a otra cuenta de usuario.  
+   Después de quitar la cuenta de usuario, el administrador puede conceder acceso a la carpeta compartida a otra cuenta de usuario.  
   
 ##### <a name="to-give-a-user-account-permission-to-access-a-shared-folder"></a>Para permitir a una cuenta de usuario tener acceso a una carpeta compartida  
   
@@ -414,15 +414,15 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
   
 ##### <a name="to-manually-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>Para sincronizar de forma manual la contraseña de DSRM con una cuenta de administrador de red  
   
-1.  En un símbolo del sistema, ejecute `ntdsutil.exe` para abrir la herramienta ntdsutil.  
+1. En un símbolo del sistema, ejecute `ntdsutil.exe` para abrir la herramienta ntdsutil.  
   
-2.  Para restablecer la contraseña de DSRM, escriba **set dsrm password**.  
+2. Para restablecer la contraseña de DSRM, escriba **set dsrm password**.  
   
-3.  Para sincronizar la contraseña de DSRM en un controlador de dominio con la cuenta de s de administrador de red actual, escriba:  
+3. Para sincronizar la contraseña de DSRM en un controlador de dominio con la cuenta de s de administrador de red actual, escriba:  
   
-     **sincronización de la cuenta de dominio** *< cuenta_de_administrador_de_red_actual >* , y, a continuación, presione ENTRAR.  
+    **sincronización de la cuenta de dominio** *< cuenta_de_administrador_de_red_actual >* , y, a continuación, presione ENTRAR.  
   
- Como va a cambiar la contraseña de la cuenta del administrador de red de forma periódica, para asegurarse de que la contraseña de DSRM sea siempre la misma que la contraseña actual del administrador de red, le recomendamos que cree una tarea de programación para sincronizar a diario y de forma automática la contraseña de DSRM con la contraseña del administrador de red.  
+   Como va a cambiar la contraseña de la cuenta del administrador de red de forma periódica, para asegurarse de que la contraseña de DSRM sea siempre la misma que la contraseña actual del administrador de red, le recomendamos que cree una tarea de programación para sincronizar a diario y de forma automática la contraseña de DSRM con la contraseña del administrador de red.  
   
 ##### <a name="to-automatically-synchronize-the-dsrm-password-to-a-network-administrator-account"></a>Para sincronizar de forma automática la contraseña de DSRM con una cuenta de administrador de red  
   
@@ -460,15 +460,15 @@ La página de usuarios de la consola de Windows Server Essentials centraliza la 
   
  El Asistente para configurar el Acceso desde cualquier lugar permite habilitar dos métodos de acceso remoto:  
   
--   Red privada virtual (VPN)  
+- Red privada virtual (VPN)  
   
--   Acceso web remoto  
+- Acceso web remoto  
   
- Al ejecutar el asistente, también puede permitir el Acceso desde cualquier lugar a todas las cuentas de usuario actuales y recién agregadas.  
+  Al ejecutar el asistente, también puede permitir el Acceso desde cualquier lugar a todas las cuentas de usuario actuales y recién agregadas.  
   
- Para configurar el Acceso desde cualquier lugar, abra la página **Inicio** del panel, haga clic en **CONFIGURAR**y después haga clic en **Configurar Acceso desde cualquier lugar**.  
+  Para configurar el Acceso desde cualquier lugar, abra la página **Inicio** del panel, haga clic en **CONFIGURAR**y después haga clic en **Configurar Acceso desde cualquier lugar**.  
   
- Para obtener más información sobre el acceso desde cualquier lugar, consulte [Manage Anywhere Access](Manage-Anywhere-Access-in-Windows-Server-Essentials.md).  
+  Para obtener más información sobre el acceso desde cualquier lugar, consulte [Manage Anywhere Access](Manage-Anywhere-Access-in-Windows-Server-Essentials.md).  
   
 ###  <a name="BKMK_Access9"></a> Permitir que los usuarios tener acceso a los recursos del servidor  
   En esta sección se aplica a un servidor que ejecuta Windows Server Essentials o Windows Server Essentials, o a un servidor que ejecuta Windows Server 2012 R2 Standard o Windows Server 2012 R2 Datacenter con el rol experiencia con Windows Server Essentials instalado.  

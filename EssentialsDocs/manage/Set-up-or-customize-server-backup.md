@@ -12,12 +12,12 @@ ms.assetid: 441c2d6c-435a-42cb-90f2-6d680d279d34
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 4fb34e05b00c35156a8451ffb0d8b914fcc73cf5
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 5bd36db4f61b990c3864828370607158df4803a3
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720290"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433038"
 ---
 # <a name="set-up-or-customize-server-backup"></a>Configurar o personalizar la copia de seguridad del servidor
 
@@ -55,12 +55,12 @@ ms.locfileid: "63720290"
   
 > [!NOTE]
 >  En la instalación predeterminada de Windows Server Essentials, el servidor está configurado para llevar a cabo automáticamente una vez a la semana de desfragmentación. Esto podría comportar que se hicieran más copias de seguridad de las habituales si usa software de creación de imágenes que no sea de Microsoft. Si no es necesario desfragmentar el servidor con regularidad puede seguir estos pasos para desactivar el programa de desfragmentación:  
->   
->  1.  Presione la tecla de Windows + W para abrir **Buscar**.  
-> 2.  En el cuadro de texto Buscar, escriba **Defragment**.  
-> 3.  En la sección de resultados, haga clic en **Desfragmentar y optimizar las unidades**.  
-> 4.  En la página **Optimizar unidades**, seleccione una unidad y haga clic en **Cambiar la configuración**.  
-> 5.  En la ventana **Programación de la optimización** , desactive la casilla **Ejecución programada (recomendado)** y, a continuación, haga clic en **Aceptar** para guardar el cambio.  
+> 
+> 1. Presione la tecla de Windows + W para abrir **Buscar**.  
+>    2. En el cuadro de texto Buscar, escriba **Defragment**.  
+>    3. En la sección de resultados, haga clic en **Desfragmentar y optimizar las unidades**.  
+>    4. En la página **Optimizar unidades**, seleccione una unidad y haga clic en **Cambiar la configuración**.  
+>    5. En la ventana **Programación de la optimización** , desactive la casilla **Ejecución programada (recomendado)** y, a continuación, haga clic en **Aceptar** para guardar el cambio.  
   
 ##  <a name="BKMK_2"></a> Programación de copia de seguridad de servidor  
  Al usar el asistente Configurar copias de seguridad del servidor o el Asistente Personalizar copias de seguridad del servidor, puede optar por hacer una copia de seguridad de los datos del servidor varias veces durante el día. Dado que los asistentes programan copias de seguridad incrementales, las copias de seguridad se ejecutan rápidamente y el rendimiento del servidor apenas se ve afectado. De manera predeterminada, los asistentes programan una copia de seguridad para que se ejecute cada día a las 12:00 y las 23:00. Sin embargo, puede ajustar la programación de copias de seguridad según las necesidades de su organización. De vez en cuando debe evaluar la eficacia de su plan de copia de seguridad y cambiar el plan si es necesario.  
@@ -106,32 +106,32 @@ ms.locfileid: "63720290"
   
 > [!NOTE]
 >  Si una copia de seguridad se realiza correctamente porque la unidad de copia de seguridad tenía suficiente espacio, se quita la letra de unidad para la unidad de destino de copia de seguridad de la base de datos de Windows Server Essentials y el panel no muestra la unidad. Si quiere usar la unidad en futuras copias de seguridad deberá reasignar la letra de unidad con una herramienta nativa.  
->   
+> 
 >  **Para reasignar una letra de unidad para un volumen existente**  
->   
->  1.  En el Panel de Control, abra **Sistemas y seguridad**.  
-> 2.  En **Herramientas administrativas**, haga clic en **Crear y formatear particiones del disco duro**.  
-> 3.  Haga clic con el botón derecho en la unidad y, a continuación, haga clic en **Cambiar la letra y rutas de acceso de unidad**.  
-> 4.  Haz clic en **Agregar**.  
-> 5.  En el cuadro de diálogo Agregar letra o ruta de acceso de unidad, seleccione una letra de unidad para asignarla (puede reasignar la misma letra de unidad). A continuación, haga clic en **Aceptar**.  
->   
->      La unidad aparecerá inmediatamente en el panel.  
+> 
+> 1. En el Panel de Control, abra **Sistemas y seguridad**.  
+>    2. En **Herramientas administrativas**, haga clic en **Crear y formatear particiones del disco duro**.  
+>    3. Haga clic con el botón derecho en la unidad y, a continuación, haga clic en **Cambiar la letra y rutas de acceso de unidad**.  
+>    4. Haz clic en **Agregar**.  
+>    5. En el cuadro de diálogo Agregar letra o ruta de acceso de unidad, seleccione una letra de unidad para asignarla (puede reasignar la misma letra de unidad). A continuación, haga clic en **Aceptar**.  
+> 
+>    La unidad aparecerá inmediatamente en el panel.  
   
 ##  <a name="BKMK_4"></a> Elementos de una copia de seguridad  
  Puede elegir hacer una copia de seguridad de todas las unidades, archivos y carpetas del servidor, o seleccionar únicamente determinadas unidades, archivos o carpetas para la copia de seguridad.  
   
  Al agregar o quitar una unidad, o agregar o quitar carpetas y archivos compartidos, debe revisar la configuración de copia de seguridad del servidor para asegurarse de que se han agregado o quitado estos elementos de la configuración de copia de seguridad. Para agregar o quitar elementos de la copia de seguridad, realice una de las acciones siguientes:  
   
--   Para incluir una unidad de datos en la copia de seguridad del servidor, active la casilla adyacente.  
+- Para incluir una unidad de datos en la copia de seguridad del servidor, active la casilla adyacente.  
   
--   Para excluir una unidad de datos de la copia de seguridad del servidor, desactive la casilla adyacente.  
+- Para excluir una unidad de datos de la copia de seguridad del servidor, desactive la casilla adyacente.  
   
-    > [!NOTE]
-    >  Si quiere excluir el elemento **Sistema operativo** de la copia de seguridad, primero debe desactivar la casilla **Copia de seguridad del sistema (recomendado)** .  
+  > [!NOTE]
+  >  Si quiere excluir el elemento **Sistema operativo** de la copia de seguridad, primero debe desactivar la casilla **Copia de seguridad del sistema (recomendado)** .  
   
- Para reducir la cantidad de almacenamiento del servidor que usan las copias de seguridad del servidor, es posible que quiera excluir las carpetas que contienen archivos que no considere valiosos o muy importantes.  
+  Para reducir la cantidad de almacenamiento del servidor que usan las copias de seguridad del servidor, es posible que quiera excluir las carpetas que contienen archivos que no considere valiosos o muy importantes.  
   
- Por ejemplo, es posible que tenga una carpeta que contiene programas de televisión grabados que emplea una gran cantidad de espacio de disco duro. Puede elegir no hacer una copia de estos archivos porque normalmente los elimina después de verlos. También es posible que tenga una carpeta que contiene archivos temporales que no quiere conservar.  
+  Por ejemplo, es posible que tenga una carpeta que contiene programas de televisión grabados que emplea una gran cantidad de espacio de disco duro. Puede elegir no hacer una copia de estos archivos porque normalmente los elimina después de verlos. También es posible que tenga una carpeta que contiene archivos temporales que no quiere conservar.  
   
 ## <a name="see-also"></a>Vea también  
   

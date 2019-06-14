@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: d740b71a2c3b9ed8ddb0ecfae6da2cf7d4f689a5
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: a66f98b0896e706f520aa057b91cce2fe662d22d
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720412"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433323"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Administrar dispositivos en Windows Server Essentials
 
@@ -64,13 +64,13 @@ ms.locfileid: "63720412"
   
 #### <a name="to-view-the-status-of-network-computers"></a>Para ver el estado de los equipos de la red  
   
-1.  Abra el panel de Windows Server Essentials.  
+1. Abra el panel de Windows Server Essentials.  
   
-2.  En la barra de navegación, haga clic en **Dispositivos**.  
+2. En la barra de navegación, haga clic en **Dispositivos**.  
   
-3.  Vea el estado de todos los equipos de la red en el panel de la lista.  
+3. Vea el estado de todos los equipos de la red en el panel de la lista.  
   
- En la tabla siguiente se describen las diversas tareas de copia de seguridad y del equipo que están disponibles en el panel del servidor. Algunas tareas son para complementos, por lo que solo están visibles cuando se selecciona un complemento específico en la lista.  
+   En la tabla siguiente se describen las diversas tareas de copia de seguridad y del equipo que están disponibles en el panel del servidor. Algunas tareas son para complementos, por lo que solo están visibles cuando se selecciona un complemento específico en la lista.  
   
 ### <a name="computer-tasks-in-the-dashboard"></a>Tareas de equipo en el panel  
   

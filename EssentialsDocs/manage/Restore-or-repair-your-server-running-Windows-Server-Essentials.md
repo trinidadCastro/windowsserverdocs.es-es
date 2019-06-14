@@ -12,12 +12,12 @@ ms.assetid: 27bf6f24-30c4-4935-9b24-069eb43e22f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 15d9a10daec0b72eb41092dbd9fa87f989ebedb8
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 5618eb95fb8afcff2057575191699da05612a542
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63720660"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433067"
 ---
 # <a name="restore-or-repair-your-server-running-windows-server-essentials"></a>Restaurar o reparar el servidor que ejecuta Windows Server Essentials
 
@@ -36,19 +36,19 @@ ms.locfileid: "63720660"
   
  Las razones más comunes para restaurar un servidor son las siguientes:  
   
--   No es posible inmovilizar o eliminar un virus en el servidor.  
+- No es posible inmovilizar o eliminar un virus en el servidor.  
   
--   Hay errores en las opciones de configuración del servidor y no se puede iniciar el servidor.  
+- Hay errores en las opciones de configuración del servidor y no se puede iniciar el servidor.  
   
--   Se ha remplazado la unidad del sistema.  
+- Se ha remplazado la unidad del sistema.  
   
--   Abandona el servidor y desea restaurar a un nuevo servidor.  
+- Abandona el servidor y desea restaurar a un nuevo servidor.  
   
- O bien puede restaurar el servidor desde una copia de seguridad o restaurar el servidor a la configuración predeterminada de fábrica.  
+  O bien puede restaurar el servidor desde una copia de seguridad o restaurar el servidor a la configuración predeterminada de fábrica.  
   
--   [Restaurar el servidor desde una copia de seguridad](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFromBackup)  
+- [Restaurar el servidor desde una copia de seguridad](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_RestoreFromBackup)  
   
--   [Restablecer el servidor a la configuración predeterminada de fábrica](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_FactoryReset)  
+- [Restablecer el servidor a la configuración predeterminada de fábrica](Restore-or-repair-your-server-running-Windows-Server-Essentials.md#BKMK_FactoryReset)  
   
 ###  <a name="BKMK_RestoreFromBackup"></a> Restaurar el servidor desde una copia de seguridad  
  Esta sección proporciona instrucciones sobre qué tipo de copia de seguridad puede elegir.  
@@ -57,21 +57,21 @@ ms.locfileid: "63720660"
   
  Si decide recuperar el servidor desde una copia de seguridad anterior, debe elegir la copia de seguridad específica que quiera restaurar y debe tener un archivo de copia de seguridad válido en un disco duro externo que esté conectado directamente al servidor:  
   
--   **Si tiene una copia de seguridad reciente y en buen estado del servidor** y sabe que contiene todos los datos críticos, su elección es bastante sencilla. Solo tendrá que recrear los datos que se crearon después de la última copia de seguridad correcta y volver a configurar los cambios de configuración realizados después de la copia de seguridad.  
+- **Si tiene una copia de seguridad reciente y en buen estado del servidor** y sabe que contiene todos los datos críticos, su elección es bastante sencilla. Solo tendrá que recrear los datos que se crearon después de la última copia de seguridad correcta y volver a configurar los cambios de configuración realizados después de la copia de seguridad.  
   
--   **Si va a restaurar el servidor debido a un virus**, seleccione una copia de seguridad que sepa que se produjo antes de recibir el virus. Necesitará retroceder varios días para seleccionar una copia de seguridad limpia.  
+- **Si va a restaurar el servidor debido a un virus**, seleccione una copia de seguridad que sepa que se produjo antes de recibir el virus. Necesitará retroceder varios días para seleccionar una copia de seguridad limpia.  
   
--   **Si va a restaurar el servidor debido a una configuración incorrecta**, seleccione una copia de seguridad que sepa que se realizó del cambio de configuración que está causando el problema en el servidor.  
+- **Si va a restaurar el servidor debido a una configuración incorrecta**, seleccione una copia de seguridad que sepa que se realizó del cambio de configuración que está causando el problema en el servidor.  
   
- Al restaurar una copia de seguridad, el proceso exacto y el seguimiento necesario dependen del número de unidades de disco duro en el servidor y de si se reemplaza la unidad del sistema:  
+  Al restaurar una copia de seguridad, el proceso exacto y el seguimiento necesario dependen del número de unidades de disco duro en el servidor y de si se reemplaza la unidad del sistema:  
   
--   **Si el servidor tiene una sola unidad de disco duro y no se reemplaza la unidad**, se conserva la información de partición de la unidad cuando se restaura el servidor. Se restaura el volumen del sistema y se conservan los datos en el volumen restante.  
+- **Si el servidor tiene una sola unidad de disco duro y no se reemplaza la unidad**, se conserva la información de partición de la unidad cuando se restaura el servidor. Se restaura el volumen del sistema y se conservan los datos en el volumen restante.  
   
--   **Si el servidor tiene una sola unidad de disco duro y se reemplaza la unidad**, se restaura el volumen del sistema y, a continuación, debe restaurar manualmente las carpetas en el volumen de datos. Las carpetas compartidas no predeterminadas deben crearse porque no se crean cuando se vuelve a crear el almacenamiento del servidor.  
+- **Si el servidor tiene una sola unidad de disco duro y se reemplaza la unidad**, se restaura el volumen del sistema y, a continuación, debe restaurar manualmente las carpetas en el volumen de datos. Las carpetas compartidas no predeterminadas deben crearse porque no se crean cuando se vuelve a crear el almacenamiento del servidor.  
   
--   **Si el servidor tiene varias unidades de disco duro y no se reemplaza la unidad 0 (que contiene el volumen del sistema)** , se conserva la información de partición de la unidad cuando se restaura el servidor. Se restaura el volumen del sistema y se conservan los datos en todos los volúmenes restantes.  
+- **Si el servidor tiene varias unidades de disco duro y no se reemplaza la unidad 0 (que contiene el volumen del sistema)** , se conserva la información de partición de la unidad cuando se restaura el servidor. Se restaura el volumen del sistema y se conservan los datos en todos los volúmenes restantes.  
   
--   **Si el servidor tiene varias unidades de disco duro y se reemplaza la unidad 0 (que contiene el volumen del sistema)** , se restaura el volumen del sistema y, a continuación, debe restaurar manualmente las carpetas compartidas previamente almacenadas en la unidad 0.  
+- **Si el servidor tiene varias unidades de disco duro y se reemplaza la unidad 0 (que contiene el volumen del sistema)** , se restaura el volumen del sistema y, a continuación, debe restaurar manualmente las carpetas compartidas previamente almacenadas en la unidad 0.  
   
 ###  <a name="BKMK_FactoryReset"></a> Restablecer el servidor a la configuración predeterminada de fábrica  
  Si no tiene una copia de seguridad desde la que restaurar o, por algún motivo, quiere o necesita realizar una restauración completa del sistema sin restaurar la configuración anterior del servidor, puede realizar una restauración que reinicie el servidor a la configuración predeterminada de fábrica con los medios de instalación o recuperación del fabricante del hardware de servidor.  

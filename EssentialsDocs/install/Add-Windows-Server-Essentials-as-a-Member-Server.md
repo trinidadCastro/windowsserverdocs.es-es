@@ -12,12 +12,12 @@ ms.assetid: d09dd82f-f7d2-47ce-862d-fd9869f2021c
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 413c1d5d3bec7f002b73e9861aa119d495c5cfb2
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 502e54cf719895dd11030cf163159f6cdda47164
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63717122"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66433732"
 ---
 # <a name="add-windows-server-essentials-as-a-member-server"></a>Agregar Windows Server Essentials como servidor miembro
 
@@ -49,23 +49,23 @@ En este tema se aplica a un servidor que ejecuta Windows Server 2012 R2 Standard
   
 #### <a name="to-join-windows-server-essentials-to-a-workgroup-or-domain"></a>Para conectar Windows Server Essentials a un dominio o grupo de trabajo  
   
-1.  Después de completar la instalación de Windows Server Essentials en el segundo servidor, cierre al asistente para configurar Windows Server Essentials.  
+1. Después de completar la instalación de Windows Server Essentials en el segundo servidor, cierre al asistente para configurar Windows Server Essentials.  
   
-2.  En el cuadro de **búsqueda** , escriba **System Settings**y, en los resultados de búsqueda, haga clic en **Ver la configuración avanzada del sistema**.  
+2. En el cuadro de **búsqueda** , escriba **System Settings**y, en los resultados de búsqueda, haga clic en **Ver la configuración avanzada del sistema**.  
   
-3.  En **Propiedades del sistema**, haga clic en la pestaña **Nombre de equipo**.  
+3. En **Propiedades del sistema**, haga clic en la pestaña **Nombre de equipo**.  
   
-4.  En **Nombre de equipo**, en la sección **Dominio** , haga clic en **Cambiar**.  
+4. En **Nombre de equipo**, en la sección **Dominio** , haga clic en **Cambiar**.  
   
-5.  En **cambios de dominio o el nombre de equipo**, en el **miembro** sección, elija si desea unir el servidor que ejecuta Windows Server Essentials a un **Workgroup** o a un **Dominio**.  
+5. En **cambios de dominio o el nombre de equipo**, en el **miembro** sección, elija si desea unir el servidor que ejecuta Windows Server Essentials a un **Workgroup** o a un **Dominio**.  
   
-    -   Para agregar el servidor a un grupo de trabajo, escriba **workgroup** y, a continuación, haga clic en **Aceptar**.  
+   -   Para agregar el servidor a un grupo de trabajo, escriba **workgroup** y, a continuación, haga clic en **Aceptar**.  
   
-    -   Para unir este servidor a un dominio de Active Directory existente, escriba el nombre del dominio y, a continuación, haga clic en **Aceptar**.  
+   -   Para unir este servidor a un dominio de Active Directory existente, escriba el nombre del dominio y, a continuación, haga clic en **Aceptar**.  
   
-6.  Reinicie el servidor para aplicar los cambios.  
+6. Reinicie el servidor para aplicar los cambios.  
   
- Después de que el servidor se ha unido al dominio s servidor principal, puede seguir configurar Windows Server Essentials ejecutando el Asistente para configurar Essentials de Windows Server desde el administrador del servidor.  
+   Después de que el servidor se ha unido al dominio s servidor principal, puede seguir configurar Windows Server Essentials ejecutando el Asistente para configurar Essentials de Windows Server desde el administrador del servidor.  
   
 #### <a name="to-configure-windows-server-essentials-experience-on-a-member-server"></a>Para configurar la Experiencia con Windows Server Essentials en un servidor miembro  
   

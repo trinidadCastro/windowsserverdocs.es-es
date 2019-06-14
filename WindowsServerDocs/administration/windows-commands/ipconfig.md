@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: babcdaf6ae35770d48176c7c391fa41e295ce5d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fff4e5088e3e08cf2e9e742d8fb6aa2187bb9e83
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59825056"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66438135"
 ---
 # <a name="ipconfig"></a>ipconfig
 
@@ -45,15 +45,15 @@ ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [
 |/RELEASE6 [\<adaptador >]|Envía un mensaje DHCPRELEASE al servidor DHCPv6 para liberar la configuración de DHCP actual y descartar la configuración de direcciones IPv6 para todos los adaptadores (si no se especifica un adaptador) o de un adaptador específico si el *adaptador* se incluye un parámetro. Este parámetro deshabilita TCP/IP para los adaptadores configurados para obtener una dirección IP automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros.|
 |/ renew [\<adaptador >]|Renueva la configuración de DHCP para todos los adaptadores (si no se especifica un adaptador) o de un adaptador específico si el *adaptador* se incluye el parámetro. Este parámetro está disponible solo en equipos con los adaptadores que están configurados para obtener una dirección IP automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros.|
 |/renew6 [\<adaptador >]|Renueva la configuración de DHCPv6 para todos los adaptadores (si no se especifica un adaptador) o de un adaptador específico si el *adaptador* se incluye el parámetro. Este parámetro está disponible solo en equipos con los adaptadores que están configurados para obtener una dirección IPv6 automáticamente. Para especificar un nombre de adaptador, escriba el nombre del adaptador que aparece cuando se usa **ipconfig** sin parámetros.|
-|/setclassid \<adaptador > [ <ClassID>]|Configura el ID. Para establecer el identificador de clase DHCP para todos los adaptadores, utilice el asterisco (**&#42;**) caracteres comodín en lugar de *adaptador*. Este parámetro está disponible solo en equipos con los adaptadores que están configurados para obtener una dirección IP automáticamente. Si no se especifica un identificador de clase DHCP, se quita el identificador de clase actual.|
-|/showclassid \<adaptador >|Muestra el ID. Para ver el identificador de clase DHCP para todos los adaptadores, use el asterisco (**&#42;**) caracteres comodín en lugar de *adaptador*. Este parámetro está disponible solo en equipos con los adaptadores que están configurados para obtener una dirección IP automáticamente.|
+|/setclassid \<adaptador > [ <ClassID>]|Configura el ID. Para establecer el identificador de clase DHCP para todos los adaptadores, utilice el asterisco ( **&#42;** ) caracteres comodín en lugar de *adaptador*. Este parámetro está disponible solo en equipos con los adaptadores que están configurados para obtener una dirección IP automáticamente. Si no se especifica un identificador de clase DHCP, se quita el identificador de clase actual.|
+|/showclassid \<adaptador >|Muestra el ID. Para ver el identificador de clase DHCP para todos los adaptadores, use el asterisco ( **&#42;** ) caracteres comodín en lugar de *adaptador*. Este parámetro está disponible solo en equipos con los adaptadores que están configurados para obtener una dirección IP automáticamente.|
 |/?|Muestra la Ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Este comando es muy útil en los equipos que están configurados para obtener una dirección IP automáticamente. Esto permite a los usuarios a determinar qué valores de configuración de TCP/IP se han configurado por DHCP, direcciones IP privada automática (APIPA) o una configuración alternativa.
--   Si el nombre que se suministran a *adaptador* contiene espacios, utilice comillas alrededor del nombre de adaptador (ejemplo: **"***Nombre de adaptador***"**).
--   Para los nombres de adaptador, **ipconfig** admite el uso del carácter comodín asterisco (*) para especificar los adaptadores con nombres que comienzan con una cadena especificada o los adaptadores con nombres que contienen la cadena especificada. Por ejemplo, **Local\***  coincide con todos los adaptadores que comienzan con la cadena Local y **\*Con\*** coincide con todos los adaptadores que contienen la cadena Con.
+- Este comando es muy útil en los equipos que están configurados para obtener una dirección IP automáticamente. Esto permite a los usuarios a determinar qué valores de configuración de TCP/IP se han configurado por DHCP, direcciones IP privada automática (APIPA) o una configuración alternativa.
+- Si el nombre que se suministran a *adaptador* contiene espacios, utilice comillas alrededor del nombre de adaptador (ejemplo: **"** <em>Nombre de adaptador</em> **"** ).
+- Para los nombres de adaptador, **ipconfig** admite el uso del asterisco ( *) carácter comodín para especificar los adaptadores con nombres que comienzan con una cadena especificada o los adaptadores con nombres que contienen la cadena especificada. Por ejemplo, **Local\\** *   coincide con todos los adaptadores que comienzan con la cadena Local y  **\*Con\\** * coincide con todos los adaptadores que contienen el cadena Con.
 
 ## <a name="examples"></a>Ejemplos
 

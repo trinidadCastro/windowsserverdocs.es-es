@@ -12,12 +12,12 @@ ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 12a9ba285757a37a8fc32a73e52ac3003db80a6d
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: f080bed5714ae4426cc6d0ca8edb5fab2d3c65b2
+ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63721022"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66432474"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Solucionar problemas del historial de archivos en Windows Server Essentials
 
@@ -29,11 +29,11 @@ ms.locfileid: "63721022"
 ### <a name="file-history-data-is-not-automatically-deleted"></a>Los datos del historial de archivos no se eliminan automáticamente  
  Los datos del historial de archivos podrían no eliminarse automáticamente si:  
   
--   Al eliminar una cuenta de usuario, decide no eliminar la cuenta de usuario s de datos de historial de archivos y optar por eliminar los datos manualmente.  
+- Al eliminar una cuenta de usuario, decide no eliminar la cuenta de usuario s de datos de historial de archivos y optar por eliminar los datos manualmente.  
   
--   Al intentar eliminar los datos del historial de archivos, otro proceso está usando los datos del historial de archivos.  
+- Al intentar eliminar los datos del historial de archivos, otro proceso está usando los datos del historial de archivos.  
   
- Para resolver este problema, debe eliminar manualmente el historial de archivos siguiendo el procedimiento que se indica a continuación:  
+  Para resolver este problema, debe eliminar manualmente el historial de archivos siguiendo el procedimiento que se indica a continuación:  
   
 ####  <a name="BKMK_manuallyDelete"></a> Para eliminar manualmente las copias de seguridad del historial de archivos para un usuario o un equipo  
   
@@ -78,7 +78,7 @@ ms.locfileid: "63721022"
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>Se quitó una cuenta de usuario, pero sigue estando de historial de archivos del usuario  
  En algunos casos, el administrador de red puede decidir quitar un usuario o un equipo del servidor, pero conservar la copia de seguridad del historial de archivos para usarlo en el futuro. Cuando ya no necesite el historial de archivos, quite de las carpetas compartidas del servidor la carpeta de copias de seguridad del historial de archivos del usuario o del equipo. Para ello, consulte [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  
 
-5.  Ahora puede agregar el usuario nuevo. ¿Para obtener instrucciones, consulte Agregar una cuenta de usuario? en [administrar cuentas de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
+5. Ahora puede agregar el usuario nuevo. ¿Para obtener instrucciones, consulte Agregar una cuenta de usuario? en [administrar cuentas de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>Se quitó una cuenta de usuario, pero sigue estando de historial de archivos del usuario  
  En algunos casos, el administrador de red puede decidir quitar un usuario o un equipo del servidor, pero conservar la copia de seguridad del historial de archivos para usarlo en el futuro. Cuando ya no necesite el historial de archivos, quite de las carpetas compartidas del servidor la carpeta de copias de seguridad del historial de archivos del usuario o del equipo. Para ello, consulte [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  
