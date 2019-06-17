@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 9f8310baf659810d5d51587bafcc868c59ace61a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852056"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63687274"
 ---
 # <a name="server-role-upgrade-and-migration-matrix-for-windows-server-2016"></a>Matriz de actualización y migración del rol de servidor para Windows Server 2016
 
