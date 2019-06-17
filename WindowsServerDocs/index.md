@@ -38,7 +38,7 @@ ms.locfileid: "66462171"
                                         </div>
                                         <div class="cardText">
                                             <h2>Novedades</h2>
-                                            <p>Descubra lo que&#39;Novedades de Windows Server</p>
+                                            <p>Descubra las novedades de Windows Server</p>
                                         </div>
                                     </div>
                                 </div>
@@ -135,8 +135,8 @@ ms.locfileid: "66462171"
                                             </div>
                                         </div>
                                         <div class="cardText">
-                                            <h2>Conectarse a servicios híbridos de Azure</h2>
-                                            <p>Conecte su servidor o clúster a servicios de Azure híbrido para combinan lo mejor de un entorno local y la nube.</p>
+                                            <h2>Conexión a los servicios híbridos de Azure</h2>
+                                            <p>Conecte un servidor o clúster a los servicios híbridos de Azure y disfrutará de lo mejor del entorno local y la nube.</p>
             </li>
                     <li class="fullSpan">
                     <HR COLOR="purple" SIZE="6" WIDTH="60%">
@@ -280,7 +280,7 @@ ms.locfileid: "66462171"
        <hr width="80%">
             <li>2. <a href="https://docs.microsoft.com/windows-server/failover-clustering/failover-cluster-csvs">Usar volúmenes compartidos de clúster en un clúster de conmutación por error</a></li>
        <hr width="80%">
-            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">¿Qué&#39;s nuevo en el clúster de conmutación por error</a></li>
+            <li>3. <a href="https://docs.microsoft.com/windows-server/failover-clustering/whats-new-in-failover-clustering">Novedades de los clústeres de conmutación por error</a></li>
             </ol>
         </td>
     </tr>
@@ -451,7 +451,7 @@ ms.locfileid: "66462171"
             <ol>
             <li>1. <a href="https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings">Configuración del Registro de Seguridad de la capa de transporte (TLS)</a></li>
        <hr width="80%">
-            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">Orientación acerca de cómo deshabilitar los servicios del sistema en Windows Server 2016 con experiencia de escritorio </a></li>
+            <li>2. <a href="https://docs.microsoft.com/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server">Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio </a></li>
        <hr width="80%">
             <li>3. <a href="https://docs.microsoft.com/windows-server/security/windows-authentication/credentials-processes-in-windows-authentication">Procesos de las credenciales en la autenticación de Windows</a></li>
             </ol>

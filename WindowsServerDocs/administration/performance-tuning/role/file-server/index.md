@@ -94,7 +94,7 @@ La siguiente configuración del Registro REG\_DWORD puede afectar al rendimiento
     El valor predeterminado es 10 segundos. Tiempo de espera de caché de directorio.
 
     > [!NOTE]
-    > Este parámetro controla el almacenamiento en caché de metadatos de directorio en la ausencia de concesiones de directorio.
+    > Este parámetro controla el almacenamiento en caché de los metadatos del directorio en ausencia de concesiones de directorio.
      
 
 -   **DirectoryCacheEntrySizeMax**

@@ -462,8 +462,8 @@
 #### [Protección contra ataques de contraseñas de AD FS](ad-fs/technical-reference/ad-fs-password-protection.md)
 ### [Preguntas frecuentes de AD FS 2016](ad-fs/overview/AD-FS-FAQ.md)
 
-## Servicio de Active Directory Rights Management
-### [Actualización de AD RMS a Windows Server 2016](ad-rms/adrms-deploy.md)
+## Active Directory Rights Management Services
+### [Actualización de AD RMS a Windows Server 2016](ad-rms/adrms-deploy.md)
 
 
 ## [Protección del acceso con privilegios](securing-privileged-access/securing-privileged-access.md)

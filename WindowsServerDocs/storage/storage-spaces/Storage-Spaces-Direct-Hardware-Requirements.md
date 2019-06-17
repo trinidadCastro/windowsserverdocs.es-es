@@ -7,14 +7,14 @@ ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 06/04/2019
+ms.date: 06/13/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f2031afada302c0f73621a75f572c8547620db16
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: f6b93b55d8685180de8eafff5e8a3d5ca33e5fb5
+ms.sourcegitcommit: 3fe551f99c58ac232a9df72aaca55187118eac3b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501660"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67132924"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
@@ -23,8 +23,6 @@ ms.locfileid: "66501660"
 En este tema se describe los requisitos mínimos de hardware para espacios de almacenamiento directo.
 
 Para entornos de producción, Microsoft recomienda adquirir una solución validada de hardware y software de nuestros asociados, los cuales incluyen procedimientos y herramientas de implementación. Estas soluciones son diseñadas, ensamblar y validadas con respecto a nuestra arquitectura de referencia para garantizar la compatibilidad y confiabilidad, por lo que ponerse en marcha rápidamente. Para las soluciones de Windows Server 2019, visite la [sitio Web de soluciones de Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci). Para las soluciones de Windows Server 2016, obtenga más información en [definido por el Software de Windows Server](https://microsoft.com/wssd).
-
-![logotipos de nuestros socios definida de Software de Windows Server](media/hardware-requirements/wssd-partners.png)
 
    > [!TIP]
    > Desea evaluar espacios de almacenamiento directo, pero no tienen hardware? Usar máquinas virtuales de Hyper-V o Azure, como se describe en [usando espacios de almacenamiento directo en clústeres invitados de máquina virtual](storage-spaces-direct-in-vm.md).
