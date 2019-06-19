@@ -6,13 +6,13 @@ ms.manager: mchad
 ms.technology: storage-file-systems
 ms.topic: article
 author: gawatu
-ms.date: 06/07/2019
-ms.openlocfilehash: fed23c999c67ba81b3bbb821170a748ed5eaa7b8
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.date: 06/17/2019
+ms.openlocfilehash: 133358e959e24abc506be13259d750753d3727f7
+ms.sourcegitcommit: 6fec3ca19ddaecbc936320d98cca0736dd8505d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812013"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67196173"
 ---
 # <a name="resilient-file-system-refs-overview"></a>Información general del Sistema de archivos resistente (ReFS)
 
@@ -168,6 +168,7 @@ Implementación de ReFS como un destino de copia de seguridad es mejor adecuados
 
 ## <a name="see-also"></a>Vea también
 
--   [Información general de espacios directo de almacenamiento](../storage-spaces/storage-spaces-direct-overview.md)
--   [Clonación de bloques de reFS](block-cloning.md)
--   [Secuencias de integridad de reFS](integrity-streams.md)
+- [Recomendaciones de tamaño de clúster para NTFS y ReFS](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
+- [Información general de espacios directo de almacenamiento](../storage-spaces/storage-spaces-direct-overview.md)
+- [Clonación de bloques de reFS](block-cloning.md)
+- [Secuencias de integridad de reFS](integrity-streams.md)

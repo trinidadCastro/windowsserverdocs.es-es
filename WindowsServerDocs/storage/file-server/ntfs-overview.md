@@ -6,18 +6,18 @@ ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
-ms.date: 09/06/2018
+ms.date: 06/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: f85e321381adcf607c3504005a0a3448ab0f098a
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 2e45fd1eb13044fdf0ba0f66a6e909a3f2d39bc3
+ms.sourcegitcommit: 6fec3ca19ddaecbc936320d98cca0736dd8505d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63738448"
+ms.lasthandoff: 06/18/2019
+ms.locfileid: "67196165"
 ---
 # <a name="ntfs-overview"></a>Introducción a NTFS
 
->Se aplica a: Windows 10, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
+>Se aplica a: Windows 10, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server 2008
 
 NTFS: sistema de archivos principal para las versiones recientes de Windows y Windows Server, proporciona un conjunto completo de características que incluyen descriptores de seguridad, cifrado, cuotas de disco y metadatos enriquecidos y puede utilizarse con volúmenes compartidos de clúster (CSV) para proporcionar continuamente volúmenes disponibles que pueden tener acceso simultáneamente desde varios nodos de un clúster de conmutación por error.
 
@@ -93,8 +93,11 @@ Si se limita el espacio en un volumen, NTFS proporciona los siguientes métodos 
 
 ## <a name="additional-information"></a>Información adicional
 
-|Tipo de contenido|Referencias|
-|---|---|
-|Evaluación|- [Novedades de NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11)) (Windows Server 2012 R2)<br>- [Novedades de NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff383236(v=ws.10)) (Windows Server 2008 R2, Windows 7)<br>- [Chkdsk y el estado NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))<br>- [Recuperación automática de NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10)) (introducida en Windows Server 2008)<br>- [NTFS transaccional](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10)) (introducida en Windows Server 2008)|
-|Recursos de la comunidad|- [Blog del equipo de almacenamiento de Windows](https://blogs.msdn.microsoft.com/san/)|
-|Tecnologías relacionadas|- [Almacenamiento en Windows Server](../storage.md)<br>- [Clúster de uso de volúmenes compartidos en un clúster de conmutación por error](../../failover-clustering/failover-cluster-csvs.md)<br>-El [volúmenes compartidos de clúster](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831630(v%3dws.11)#cluster-shared-volumes>) y [diseño de almacenamiento](<https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831630(v%3dws.11)#storage-design>) secciones de [diseñar la infraestructura de nube](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831630(v%3dws.11)) <br>- [Espacios de almacenamiento](../storage-spaces/overview.md)<br>- [Introducción a resistente (ReFS) del sistema de archivos](../refs/refs-overview.md)
+- [Recomendaciones de tamaño de clúster para NTFS y ReFS](https://techcommunity.microsoft.com/t5/Storage-at-Microsoft/Cluster-size-recommendations-for-ReFS-and-NTFS/ba-p/425960)
+- [Introducción a resistente (ReFS) del sistema de archivos](../refs/refs-overview.md)
+- [Novedades de NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/dn466520(v%3dws.11)) (Windows Server 2012 R2)
+- [Novedades de NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/ff383236(v=ws.10)) (Windows Server 2008 R2, Windows 7)
+- [Chkdsk y el estado NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831536(v%3dws.11))
+- [Recuperación automática de NTFS](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771388(v=ws.10)) (introducida en Windows Server 2008)
+- [NTFS transaccional](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc730726(v%3dws.10)) (introducida en Windows Server 2008)
+- [Almacenamiento en Windows Server](../storage.md)

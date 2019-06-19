@@ -22,7 +22,7 @@ En la sección siguiente se muestran los elementos importantes que se deben tene
 
 Elija procesadores de 64 bits para los servidores. Los procesadores de 64 bits tienen mucho más espacio de direcciones y son necesarios para Windows Server 2016. No se proporcionará ninguna edición de 32 bits del sistema operativo, pero las aplicaciones de 32 bits sí se ejecutarán en el sistema operativo Windows Server 2016 de 64 bits.
 
-Para aumentar los recursos informáticos de un servidor, puede usar un procesador con núcleos de mayor frecuencia o puede aumentar la cantidad de núcleos de procesador. Si la CPU es el recurso que limita el sistema, un núcleo con una frecuencia de 2x por lo general ofrece una mayor mejora de rendimiento que dos núcleos con una frecuencia de 1x.
+Para aumentar los recursos informáticos de un servidor, puede usar un procesador con núcleos de mayor frecuencia o puede aumentar la cantidad de núcleos del procesador. Si la CPU es el recurso que limita el sistema, un núcleo con una frecuencia de 2x por lo general ofrece una mayor mejora de rendimiento que dos núcleos con una frecuencia de 1x.
 
 No se espera que varios núcleos brinden una escala lineal perfecta y el factor de escala puede ser incluso menor si está habilitada la tecnología Hyper-Threading, porque esta se basa en el uso compartido de los recursos del mismo núcleo físico.
 
@@ -66,7 +66,7 @@ Consolidar unidades pequeñas en menos unidades de alta capacidad puede reducir 
 
 El uso de SSD y de discos flash de alta velocidad es útil para leer principalmente discos con altas velocidades de E/S o E/S sensibles a la latencia. Los discos de arranque son buenos candidatos para el uso de SSD o de discos flash de alta velocidad, porque estos pueden mejorar considerablemente los tiempos de arranque.
 
-Los SSD de NVMe ofrecen un rendimiento superior con profundidades de cola de comandos mayores, procesamiento de interrupciones más eficaz y una mayor eficacia para los comandos de 4 KB. Esto beneficia especialmente a los escenarios que requieren E/S simultáneas intensivas.
+Las SSD de NVMe ofrecen un rendimiento superior con profundidades de cola de comandos mayores, procesamiento de interrupciones más eficaz y una mayor eficacia para los comandos de 4 KB. Esto beneficia especialmente a los escenarios que requieren E/S simultáneas intensivas.
 
 
 ## <a name="network-and-storage-adapter-recommendations"></a>Recomendaciones de adaptador de almacenamiento y red
