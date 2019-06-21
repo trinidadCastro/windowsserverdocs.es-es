@@ -8,16 +8,16 @@ ms.date: 05/23/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f28458ed9e781df6eca2478b02fb667d9240ca48
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: a638ec25be4fc99b4eccd1d9fa541e640ef9e15c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445303"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280654"
 ---
 # <a name="build-a-custom-authentication-method-for-ad-fs-in-windows-server"></a>Creación de un método de autenticación personalizada para AD FS en Windows Server
 
-Este tutorial proporciona instrucciones para implementar un método de autenticación personalizado para ADFS en Windows Server 2012 R2. Para obtener más información, consulte [métodos de autenticación adicionales](https://msdn.microsoft.com/en-us/library/dn758113\(v=msdn.10\)).
+Este tutorial proporciona instrucciones para implementar un método de autenticación personalizado para ADFS en Windows Server 2012 R2. Para obtener más información, consulte [métodos de autenticación adicionales](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\)).
 
 
 > [!WARNING]
@@ -224,7 +224,7 @@ Este tutorial usa Visual Studio 2012.  El proyecto puede compilarse utilizando c
          }
          }
 
-         /// Returns an array indicating the type of claim that that the adapter uses to identify the user being authenticated.
+         /// Returns an array indicating the type of claim that the adapter uses to identify the user being authenticated.
          /// Note that although the property is an array, only the first element is currently used.
          /// MUST BE ONE OF THE FOLLOWING
          /// "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"
@@ -377,7 +377,7 @@ Copiar archivos y agregar a GAC.
 
 2.  Instalar el servicio de rol de AD FS y configurar una granja de servidores con al menos un nodo.
 
-    Para que obtener pasos detallados para configurar un servidor de federación en un entorno de laboratorio, consulte el [la Guía de implementación de Windows Server 2012 R2 AD FS](https://msdn.microsoft.com/en-us/library/dn486820\(v=msdn.10\)).
+    Para que obtener pasos detallados para configurar un servidor de federación en un entorno de laboratorio, consulte el [la Guía de implementación de Windows Server 2012 R2 AD FS](https://msdn.microsoft.com/library/dn486820\(v=msdn.10\)).
 
 3.  Copie las herramientas Gacutil.exe en el servidor.
 
@@ -641,6 +641,6 @@ Debería ver un inicio de sesión correcto al escribir "adfabric" en la página 
 
 #### <a name="other-resources"></a>Otros recursos
 
-[Métodos de autenticación adicionales](https://msdn.microsoft.com/en-us/library/dn758113\(v=msdn.10\))  
-[Administración de riesgos con autenticación multifactor adicional para aplicaciones confidenciales](https://msdn.microsoft.com/en-us/library/dn280949\(v=msdn.10\))
+[Métodos de autenticación adicionales](https://msdn.microsoft.com/library/dn758113\(v=msdn.10\))  
+[Administración de riesgos con autenticación multifactor adicional para aplicaciones confidenciales](https://msdn.microsoft.com/library/dn280949\(v=msdn.10\))
 

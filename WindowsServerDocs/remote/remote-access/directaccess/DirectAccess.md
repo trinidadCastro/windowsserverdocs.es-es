@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 6b71d18e-1939-4fc0-bb42-29e0e5ffc8da
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 608d6b4dd3d5e894b28e767164b9370de9cb59ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 11c5aa093ddd5aa4777e88c536195bb70bd846db
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869576"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281923"
 ---
 # <a name="directaccess"></a>DirectAccess
 
@@ -34,12 +33,12 @@ Puede usar este tema para obtener una introducción breve de DirectAccess, inclu
 > -   [Configuraciones no compatibles de DirectAccess](DirectAccess-Unsupported-Configurations.md)  
 > -   [Guías del laboratorio de pruebas de DirectAccess](DirectAccess-Test-Lab-Guides.md)  
 > -   [Problemas conocidos de DirectAccess](DirectAccess-Known-Issues.md)  
-> -   [Planear la capacidad de DirectAccess](DirectAccess-Capacity-Planning.md) 
+> -   [Planeamiento de capacidad de DirectAccess](DirectAccess-Capacity-Planning.md) 
 > -   [Unión a dominio sin conexión de DirectAccess](DirectAccess-Offline-Domain-Join.md)  
 > -   [Solución de problemas de DirectAccess](Troubleshooting-DirectAccess.md)  
 > -   [Implementar un único servidor de DirectAccess mediante el Asistente para introducción](single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)  
 > -   [Implementar un único servidor de DirectAccess con configuración avanzada](single-server-advanced/Deploy-a-Single-DirectAccess-Server-with-Advanced-Settings.md)  
-> -   [Agregar DirectAccess a una implementación existente de acceso remoto (VPN)](add-to-existing-vpn/Add-DirectAccess-to-an-Existing-Remote-Access-VPN-Deployment.md)  
+> -   [Agregar DirectAccess a una implementación de acceso remoto existente (VPN)](add-to-existing-vpn/Add-DirectAccess-to-an-Existing-Remote-Access-VPN-Deployment.md)  
   
 DirectAccess permite la conectividad a los usuarios remotos a los recursos de red de organización sin necesidad de establecer conexiones de red privada Virtual (VPN). Con las conexiones de DirectAccess, los equipos cliente remotos estén siempre conectados a su organización: no es necesario para los usuarios remotos iniciar y detener las conexiones, como es necesario con conexiones VPN. Además, los administradores de TI pueden administrar equipos cliente de DirectAccess, siempre que se están ejecutando y conectado a Internet.
 

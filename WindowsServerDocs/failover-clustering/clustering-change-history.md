@@ -9,16 +9,16 @@ manager: daveba
 ms.author: jgerend
 ms.date: 03/08/2019
 description: Temas nuevos y actualizados en la documentación de agrupación en clústeres de conmutación por error de Windows Server 2016
-ms.openlocfilehash: 4044475995175ea527a1ecc487bc0e1cc6f75003
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d6dd5c98b14134d42901fad79a375298ad0e7e23
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861226"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280182"
 ---
 # <a name="change-history-for-failover-clustering-topics"></a>Historial de cambios para temas relacionados con clústeres de conmutación por error
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016
 
 Este tema enumeran los temas nuevos y actualizados en el [agrupación en clústeres de conmutación por error](failover-clustering-overview.md) documentación de Windows Server.
 
@@ -28,7 +28,7 @@ Este tema enumeran los temas nuevos y actualizados en el [agrupación en clúste
 
 |Tema nuevo o modificado                                    |Descripción |
 |--------------------------------------------------------|------------|
-|[Afinidad de clúster](cluster-affinity.md)| Nuevo     |
+|[Afinidad de clústeres](cluster-affinity.md)| Nuevo     |
 
 ## <a name="february-2019"></a>Febrero de 2019
 
@@ -48,7 +48,7 @@ Este tema enumeran los temas nuevos y actualizados en el [agrupación en clúste
 
 |Tema nuevo o modificado|Descripción|
 |---|---|
-|[Configurar cuentas de clúster en Active Directory](configure-ad-accounts.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
+|[Configuración de cuentas de clúster en Active Directory](configure-ad-accounts.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/) biblioteca|
 
 ## <a name="october-2018"></a>Octubre de 2018
 
@@ -66,18 +66,18 @@ Este tema enumeran los temas nuevos y actualizados en el [agrupación en clúste
 
 |Tema nuevo o modificado|Descripción|
 |---|---|
-|[Configurar y administrar el quórum](manage-cluster-quorum.md) | Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca. |
+|[Configurar y administrar el cuórum](manage-cluster-quorum.md) | Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca. |
 
 ## <a name="april-2018"></a>Abril de 2018
 
 |Tema nuevo o modificado|Descripción|
 |---|---|
-|[Solución de problemas de un clúster de conmutación por error mediante el informe de errores de Windows](troubleshooting-using-WER-reports.md)| Nuevo tema. |
-|[Servidor de archivos de escalabilidad horizontal para datos de la aplicación](sofs-overview.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
+|[Solución de problemas de clúster de conmutación por error con el Informe de errores de Windows](troubleshooting-using-WER-reports.md)| Nuevo tema. |
+|[Servidor de archivos de escalabilidad horizontal para datos de aplicación](sofs-overview.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Requisitos de hardware](clustering-requirements.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
-|[Clúster de uso compartido de volúmenes (CSV)](failover-cluster-csvs.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
+|[Usar volúmenes compartidos de clúster (CSV)](failover-cluster-csvs.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Crear un clúster de conmutación por error](create-failover-cluster.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
-|[Preconfigurar un clúster de AD DS](prestage-cluster-adds.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
+|[Preconfigurar un clúster en AD DS](prestage-cluster-adds.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 |[Implementación de un testigo en la nube para un clúster de conmutación por error](deploy-cloud-witness.md)|Migrar desde el [versiones anteriores](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) biblioteca.|
 
 ## <a name="june-2017"></a>Junio de 2017
@@ -91,7 +91,7 @@ Este tema enumeran los temas nuevos y actualizados en el [agrupación en clúste
 |Tema nuevo o modificado|Descripción|
 |---|---|
 |[Introducción a la actualización compatible con clústeres](cluster-aware-updating.md)|Nuevo tema.|
-|[Requisitos para la actualización compatible con clústeres y los procedimientos recomendados](cluster-aware-updating-requirements.md)|Nuevo tema.|
+|[Requisitos y procedimientos recomendados para la actualización compatible con clústeres](cluster-aware-updating-requirements.md)|Nuevo tema.|
 |[Actualización de clústeres opciones avanzadas](cluster-aware-updating-options.md)|Nuevo tema.|
 |[Preguntas más frecuentes de actualización compatible con clústeres](cluster-aware-updating-faq.md)|Nuevo tema.|
 |[Actualización de clústeres de complementos](cluster-aware-updating-plug-ins.md)|Nuevo tema.|

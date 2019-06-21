@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 02/28/2019
 description: Este artículo describe la actualización de un clúster de conmutación por error de 2 nodos con el mismo hardware
 ms.localizationpriority: medium
-ms.openlocfilehash: 77cde9e64fda385facd91d86483f4d7f749f30a1
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 6787d852cc5075e306373a163814135190f27fd6
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453052"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280244"
 ---
 # <a name="upgrading-failover-clusters-on-the-same-hardware"></a>Actualización de clústeres de conmutación por error en el mismo hardware
 
@@ -25,7 +25,7 @@ Esta guía describe los pasos para actualizar los nodos del clúster a Windows S
 
 ## <a name="overview"></a>Información general
 
-Actualizar el sistema operativo de una conmutación por error existente clúster solo se admite al pasar de Windows Server 2016 para Windows de 2019.  Si el clúster de conmutación por error se está ejecutando una versión anterior, tal como Windows Server 2012 R2 y versiones anteriores, la actualización mientras se ejecutan los servicios de cluster Server no permite unir los nodos.  Si usa el mismo hardware, se pueden realizar pasos para dirigirlo a la versión más reciente.  
+Actualizar el sistema operativo de una conmutación por error existente clúster solo se admite al pasar de Windows Server 2016 para Windows de 2019.  Si el clúster de conmutación por error se está ejecutando una versión anterior, como Windows Server 2012 R2 y versiones anteriores, actualizar mientras se ejecutan los servicios de cluster Server no permite unir los nodos.  Si usa el mismo hardware, se pueden realizar pasos para dirigirlo a la versión más reciente.  
 
 Antes de realizar cualquier actualización del clúster de conmutación por error, consulte el [centro de actualización de Windows](https://www.microsoft.com/upgradecenter).  Al actualizar un servidor de Windows local, se mueve de una versión de sistema operativo existente a una versión más reciente en el mismo hardware. Windows Server puede ser actualizado en contexto al menos uno y a veces dos versiones al día. Por ejemplo, se pueden actualizar Windows Server 2012 R2 y Windows Server 2016 en contexto a Windows Server 2019.  También tenga en cuenta que el [Asistente para migración de clúster](https://blogs.msdn.microsoft.com/clustering/2012/06/25/how-to-move-highly-available-clustered-vms-to-windows-server-2012-with-the-cluster-migration-wizard/) pueden utilizarse, pero solo se admite hasta dos versiones de vuelta. El gráfico siguiente muestra las rutas de actualización para Windows Server. Flechas hacia abajo de señaladores representan la ruta de actualización admitida mover desde versiones anteriores hasta Windows Server 2019.
 

@@ -8,15 +8,15 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: bc21b9fdec5700fec23dc6af7ca15873ded34bea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e018c0270a0bf410dada9c05d2c25e51fdfac1d8
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59821966"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280155"
 ---
 # <a name="health-service-reports"></a>Informes de servicio de mantenimiento
-> Se aplica a Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 ## <a name="what-are-reports"></a>¿Cuáles son los informes  
 
@@ -110,7 +110,7 @@ public void DiscoverObjects(CimSession Session)
 
 Estos son los mismos objetos que se obtendrá en PowerShell mediante los cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**, y **Get-Volume**.
 
-Se pueden obtener acceso a las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx).
+Se pueden obtener acceso a las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
 
 ```
 ...
@@ -131,7 +131,7 @@ La lista completa de métricas disponibles en cada ámbito de Windows Server 201
 
 ### <a name="iobserveronnext"></a>IObserver.OnNext()
 
-Este código de ejemplo usa el [patrón de diseño de observador](https://msdn.microsoft.com/en-us/library/ee850490(v=vs.110).aspx) para implementar un observador cuyo **OnNext()** método se invocará cuando llega a cada nuevo ejemplo de métricas. Su **OnCompleted()** se llamará al método si/cuando los extremos de streaming. Por ejemplo, puede usarlo para reiniciar la transmisión por secuencias, por lo que continúa indefinidamente.
+Este código de ejemplo usa el [patrón de diseño de observador](https://msdn.microsoft.com/library/ee850490(v=vs.110).aspx) para implementar un observador cuyo **OnNext()** método se invocará cuando llega a cada nuevo ejemplo de métricas. Su **OnCompleted()** se llamará al método si/cuando los extremos de streaming. Por ejemplo, puede usarlo para reiniciar la transmisión por secuencias, por lo que continúa indefinidamente.
 
 ```
 class MetricsObserver<T> : IObserver<T>

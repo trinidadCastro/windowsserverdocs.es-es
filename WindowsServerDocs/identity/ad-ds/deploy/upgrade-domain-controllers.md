@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 6f3907426fd1124c5ed0a411a155490a2a537239
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: 572f923c33739b854808372a826e9c9bbc6aaca3
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719682"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280851"
 ---
 # <a name="upgrade-domain-controllers-to-windows-server-2016"></a>Actualizar controladores de dominio a Windows Server 2016
 
@@ -27,7 +27,7 @@ El método recomendado para actualizar un dominio es promover controladores de d
 1. Confirme que el servidor de destino reúne los requisitos del sistema. 
 2. Compruebe la compatibilidad de aplicaciones. 
 3. Revisar las recomendaciones para migrar a Windows Server 2016 
-4. Compruebe la configuración de seguridad. Para obtener más información, consulte [características desusadas y cambios de comportamiento relativos a AD DS en Windows Server 2016](https://docs.microsoft.com/en-us/windows-server/get-started/deprecated-features). 
+4. Compruebe la configuración de seguridad. Para obtener más información, consulte [características desusadas y cambios de comportamiento relativos a AD DS en Windows Server 2016](https://docs.microsoft.com/windows-server/get-started/deprecated-features). 
 5. Compruebe la conectividad del servidor de destino desde el equipo donde tenga intención de realizar la instalación. 
 6. Compruebe la disponibilidad de los roles de maestro de operaciones necesarios: 
    - Para instalar el primer controlador de dominio que ejecuta Windows Server 2016 en un bosque y dominio existentes, el equipo donde se ejecuta la instalación necesita conectarse a la **maestro de esquema** con el fin de ejecutar adprep /forestprep y el maestro de infraestructura Para poder ejecutar adprep/domainprep. 

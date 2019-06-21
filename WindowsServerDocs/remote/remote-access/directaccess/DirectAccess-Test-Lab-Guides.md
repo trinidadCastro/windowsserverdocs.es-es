@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 931a75ac-80f8-434c-8789-1dffb308ee13
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: dc5c7c3780c095f88fcbdb80d1dabde78799ec38
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 667f7be5e31118a7ec62d98b5b6e095d5473d603
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846916"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281972"
 ---
 # <a name="directaccess-test-lab-guides"></a>Guías del laboratorio de pruebas de DirectAccess
 
@@ -26,8 +25,8 @@ ms.locfileid: "59846916"
 
 A continuación encontrará vínculos a las guías de laboratorio de pruebas para DirectAccess en Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012.
 
-- [Guía del laboratorio de pruebas: Mostrar DirectAccess en un clúster con NLB de Windows](tlg-cluster-nlb/Test-Lab-Guide-Demonstrate-DirectAccess-in-a-Cluster-with-Windows-NLB.md)
+- [Guía de laboratorio de pruebas: Mostrar DirectAccess en un clúster con NLB de Windows](tlg-cluster-nlb/Test-Lab-Guide-Demonstrate-DirectAccess-in-a-Cluster-with-Windows-NLB.md)
 
-- [Guía del laboratorio de pruebas: Mostrar una implementación multisitio de DirectAccess](tlg-multisite/Test-Lab-Guide-Demonstrate-a-DirectAccess-Multisite-Deployment.md)
+- [Guía de laboratorio de pruebas: Mostrar una implementación multisitio de DirectAccess](tlg-multisite/Test-Lab-Guide-Demonstrate-a-DirectAccess-Multisite-Deployment.md)
 
-- [Guía del laboratorio de pruebas: Demostrar DirectAccess con autenticación OTP y RSA SecurID](tlg-otp-securid/Test-Lab-Guide-Demonstrate-DirectAccess-with-OTP-Authentication-and-RSA-SecurID.md)
+- [Guía de laboratorio de pruebas: Demostrar DirectAccess con autenticación OTP y RSA SecurID](tlg-otp-securid/Test-Lab-Guide-Demonstrate-DirectAccess-with-OTP-Authentication-and-RSA-SecurID.md)

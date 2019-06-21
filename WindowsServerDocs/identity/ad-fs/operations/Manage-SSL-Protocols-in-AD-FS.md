@@ -8,12 +8,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: e834c50965c3af569dbe3756d677ec4cb2372542
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c1153cd81185dcfe83d291161a85481e5a7d0700
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883926"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280549"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>Administración de protocolos SSL/TLS y conjuntos de cifrado de AD FS
 La siguiente documentación proporciona información sobre cómo deshabilitar y habilitar ciertos protocolos TLS/SSL y conjuntos que son usados por AD FS de cifrado
@@ -256,7 +256,7 @@ Puede deshabilitar ciertos cifrados específicos quitándolas de HKEY_LOCAL_MACH
 
 Para habilitar un conjunto de cifrado, agregue su valor de cadena a la clave del valor de cadena múltiple de funciones.  Por ejemplo, si queremos habilitar TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521, a continuación, se agregaría, a la cadena.
 
-Para obtener una lista completa de cifrado compatibles consulte conjuntos [conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa374757.aspx).  Este documento proporciona una tabla de los conjuntos que están habilitadas de forma predeterminada y los que son compatibles pero no habilitado de forma predeterminada.  Para dar prioridad a los conjuntos de cifrado, consulte [dando prioridad a los conjuntos de cifrado de Schannel](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx).
+Para obtener una lista completa de cifrado compatibles consulte conjuntos [conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx).  Este documento proporciona una tabla de los conjuntos que están habilitadas de forma predeterminada y los que son compatibles pero no habilitado de forma predeterminada.  Para dar prioridad a los conjuntos de cifrado, consulte [dando prioridad a los conjuntos de cifrado de Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx).
 
 ## <a name="enabling-strong-authentication-for-net-applications"></a>Al habilitar la autenticación segura para las aplicaciones .NET
 Las aplicaciones de .NET Framework 3.5/4.0/4.5.x pueden cambiar el protocolo predeterminado a TLS 1.2 habilitando la clave del registro SchUseStrongCrypto.  Esta clave del registro obligará a aplicaciones .NET para usar TLS 1.2.
@@ -280,7 +280,7 @@ Para .NET Framework 4.0 o 4.5. x use la siguiente clave del registro: HKEY_LOCAL
 
 ## <a name="additional-information"></a>Información adicional
 
-- [Conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa374757.aspx)
-- [Conjuntos de cifrado TLS en Windows 8.1](https://msdn.microsoft.com/en-us/library/windows/desktop/mt767781.aspx)
-- [Dar prioridad a los conjuntos de cifrado de Schannel](https://msdn.microsoft.com/en-us/library/windows/desktop/bb870930.aspx)
+- [Conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx)
+- [Conjuntos de cifrado TLS en Windows 8.1](https://msdn.microsoft.com/library/windows/desktop/mt767781.aspx)
+- [Dar prioridad a los conjuntos de cifrado de Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx)
 - [Hablando en cifrados y otro lengua Enigmatic](https://blogs.technet.microsoft.com/askds/2015/12/08/speaking-in-ciphers-and-other-enigmatic-tonguesupdate/)

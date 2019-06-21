@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 4781df0a-158b-4562-b8f5-32b27615a4f8
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f110ad945139da3b07b33bbb0adb3e8084743fdb
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7cbcc844c356978f5bb5f34b66aa36dec9b163c1
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812246"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283004"
 ---
 # <a name="deploy-remote-access-in-an-enterprise"></a>Implementar el acceso directo en una empresa
 
@@ -46,7 +45,7 @@ Cada escenario empresarial está descrito en un documento que incluye instruccio
   
 -   [Implementar el acceso remoto en un clúster](cluster/Deploy-Remote-Access-In-Cluster.md)  
   
--   [Implementar varios servidores de acceso remoto en una implementación multisitio](multisite/Deploy-Multiple-Remote-Access-Servers-in-a-Multisite-Deployment.md)  
+-   [Implementación de varios servidores de acceso remoto en una implementación multisitio](multisite/Deploy-Multiple-Remote-Access-Servers-in-a-Multisite-Deployment.md)  
   
 -   [Implementar el acceso remoto con autenticación OTP](otp/Deploy-RA-OTP.md)  
   

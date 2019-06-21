@@ -9,12 +9,12 @@ ms.assetid: acaa46b7-09b1-4707-9562-116df8db17eb
 ms.author: pashort
 author: shortpatti
 ms.date: 05/23/2018
-ms.openlocfilehash: 8fc1c97d7c2a8694e56cc36b5501a82081b3db23
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d61dcdbb61449bd2af57b8e2c99ced6235c4deca
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812346"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67281263"
 ---
 # <a name="ras-gateway"></a>Puerta de enlace RAS
 
@@ -109,7 +109,7 @@ Puerta de enlace RAS incluye las siguientes capacidades.
   
 -   **Point-to-site VPN**. Esta característica de puerta de enlace RAS permite que los empleados de la organización o administradores para conectarse a la red de su organización desde ubicaciones remotas. Para las implementaciones de un solo inquilino de puerta de enlace de RAS, los empleados remotos pueden conectarse a la red de su organización mediante una conexión VPN. Esta conexión permite que usen recursos de red interna, como sitios web de intranet y servidores de archivos. Para las implementaciones de varios inquilinos, los administradores de red de inquilinos pueden usar conexiones VPN de punto a sitio para acceder a recursos de red virtual en el centro de datos CSP.  
   
--   **Enrutamiento dinámico con el protocolo de puerta de enlace de borde (BGP)**. BGP reduce la necesidad de configuración de enrutamiento manual en los enrutadores, ya que es un protocolo de enrutamiento dinámico y aprende automáticamente las rutas entre sitios que están conectados mediante conexiones VPN de sitio a sitio. Si su organización tiene varios sitios que están conectados mediante enrutadores BGP habilitado como puerta de enlace RAS, BGP permite que los enrutadores calcular automáticamente y usar rutas válidas entre sí en caso de interrupciones de red o un error. Para obtener más información, consulte [4271 RFC](https://tools.ietf.org/html/rfc4271).  
+-   **Enrutamiento dinámico con el protocolo de puerta de enlace de borde (BGP)** . BGP reduce la necesidad de configuración de enrutamiento manual en los enrutadores, ya que es un protocolo de enrutamiento dinámico y aprende automáticamente las rutas entre sitios que están conectados mediante conexiones VPN de sitio a sitio. Si su organización tiene varios sitios que están conectados mediante enrutadores BGP habilitado como puerta de enlace RAS, BGP permite que los enrutadores calcular automáticamente y usar rutas válidas entre sí en caso de interrupciones de red o un error. Para obtener más información, consulte [4271 RFC](https://tools.ietf.org/html/rfc4271).  
   
 -   **Traducción de direcciones (NAT) de red**. Traducción de direcciones de red (NAT) le permite compartir una conexión a Internet a través de una única interfaz con una única dirección IP pública. Los equipos de la red privada usan direcciones privadas no enrutables. NAT asigna las direcciones privadas a la dirección pública. Esta característica de puerta de enlace RAS permite que los empleados de la organización con las implementaciones de un solo inquilino tener acceso a recursos de Internet desde detrás de la puerta de enlace. Para CSP, esta característica permite que las aplicaciones que se ejecutan en máquinas virtuales para tener acceso a Internet de inquilino. Por ejemplo, un máquina virtual que está configurado como un servidor Web del inquilino puede ponerse en contacto con los recursos financieros externos para procesar las transacciones de tarjeta de crédito.  
 
@@ -124,11 +124,11 @@ Estos son los escenarios de implementación recomendada para la puerta de enlace
 ## <a name="bkmk_manage"></a>Herramientas de administración de puerta de enlace RAS  
 A continuación es las herramientas de administración de puerta de enlace de RAS.  
   
--   En Windows Server 2016, para implementar un enrutador de puerta de enlace RAS, debe usar los comandos de Windows PowerShell. Para obtener más información, consulte [Cmdlets de acceso remoto](https://technet.microsoft.com/library/hh918399.aspx) para Windows Server 2016 y Windows 10.  
+-   En Windows Server 2016, para implementar un enrutador de puerta de enlace RAS, debe usar los comandos de Windows PowerShell. Para obtener más información, consulte [Cmdlets de acceso remoto](https://docs.microsoft.com/powershell/module/remoteaccess) para Windows Server 2016 y Windows 10.  
   
--   En System Center 2012 R2 Virtual Machine Manager (VMM), la puerta de enlace de RAS se denomina puerta de enlace de Windows Server. Un conjunto limitado de opciones de configuración de protocolo de puerta de enlace de borde (BGP) están disponibles en la interfaz de software VMM, incluyendo **dirección IP BGP Local** y **números de sistema autónomo (ASN)**,  **Lista de direcciones IP de BGP del mismo nivel**, y **valores ASN**. Puede, no obstante, utilizar los comandos de Windows PowerShell BGP de acceso remoto para configurar el resto de características de la puerta de enlace de Windows Server. Para obtener más información, consulte [de Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm) y [Cmdlets de acceso remoto](https://technet.microsoft.com/library/hh918399.aspx) para Windows Server 2016 y Windows 10.  
+-   En System Center 2012 R2 Virtual Machine Manager (VMM), la puerta de enlace de RAS se denomina puerta de enlace de Windows Server. Un conjunto limitado de opciones de configuración de protocolo de puerta de enlace de borde (BGP) están disponibles en la interfaz de software VMM, incluyendo **dirección IP BGP Local** y **números de sistema autónomo (ASN)** ,  **Lista de direcciones IP de BGP del mismo nivel**, y **valores ASN**. Puede, no obstante, utilizar los comandos de Windows PowerShell BGP de acceso remoto para configurar el resto de características de la puerta de enlace de Windows Server. Para obtener más información, consulte [de Virtual Machine Manager (VMM)](https://technet.microsoft.com/system-center-docs/vmm/vmm) y [Cmdlets de acceso remoto](https://technet.microsoft.com/library/hh918399.aspx) para Windows Server 2016 y Windows 10.  
   
 ## <a name="related-topics"></a>Temas relacionados
 - [Alta disponibilidad de puerta de enlace RAS](../../../networking/sdn/technologies/network-function-virtualization/RAS-Gateway-High-Availability.md)  
-- [Tunelización de GRE en Windows Server](gre-tunneling-windows-server.md)
-- [Rendimiento y la capacidad de túnel GRE de puerta de enlace RAS](RAS-Gateway-GRE-Perf.md)
+- [Tunelización de GRE en Windows Server 2016](gre-tunneling-windows-server.md)
+- [Rendimiento de túnel GRE de puerta de enlace de RAS](RAS-Gateway-GRE-Perf.md)

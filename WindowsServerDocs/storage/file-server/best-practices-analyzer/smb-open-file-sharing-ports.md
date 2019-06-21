@@ -7,12 +7,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d761e4532a5be92d43e09904e9df8f2aa61b6bb8
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: fae579347a43dfa361206e65032b1f3da512ec4a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63738458"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284375"
 ---
 # <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: Deben abrirse los puertos de compartir archivos e impresoras
 
@@ -75,5 +75,5 @@ Para completar este procedimiento, se requiere como mínimo pertenecer al grupo 
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Comprender las carpetas compartidas y el Firewall de Windows](http://technet.microsoft.com/en-us/library/cc731402.aspx)()http://technet.microsoft.com/en-us/library/cc731402.aspx)
+[Comprender las carpetas compartidas y el Firewall de Windows](https://technet.microsoft.com/library/cc731402.aspx)()https://technet.microsoft.com/library/cc731402.aspx)
 

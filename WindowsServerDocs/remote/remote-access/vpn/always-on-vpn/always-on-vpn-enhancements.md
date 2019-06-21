@@ -9,12 +9,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 11/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 0b4dd78e0e88678d4570d408b3dcd472bddc88ba
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: e7cbe64609e30b042df70020896aebd85b7d22b9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749663"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280781"
 ---
 # <a name="always-on-vpn-enhancements"></a>Mejoras de VPN de Always On
 
@@ -27,7 +27,7 @@ VPN de Always On tiene muchas ventajas respecto a las soluciones VPN de Windows 
 
 - **Integración de plataforma:** VPN de Always On tiene integración mejorada con el sistema operativo de Windows y soluciones de terceros para proporcionar una plataforma sólida para escenarios de conexión avanzada innumerables.
 
-- **Seguridad:** VPN de Always On tiene funcionalidades de seguridad nuevas y avanzadas para restringir el tipo de tráfico, las aplicaciones que pueden usar la conexión VPN, y qué métodos de autenticación puede usar para iniciar la conexión. Cuando la conexión está activa la mayoría de los casos, es especialmente importante proteger la conexión. Para obtener más información, consulte [las opciones de autenticación de VPN](https://docs.microsoft.com/en-us/windows/security/identity-protection/vpn/vpn-authentication).
+- **Seguridad:** VPN de Always On tiene funcionalidades de seguridad nuevas y avanzadas para restringir el tipo de tráfico, las aplicaciones que pueden usar la conexión VPN, y qué métodos de autenticación puede usar para iniciar la conexión. Cuando la conexión está activa la mayoría de los casos, es especialmente importante proteger la conexión. Para obtener más información, consulte [las opciones de autenticación de VPN](https://docs.microsoft.com/windows/security/identity-protection/vpn/vpn-authentication).
 
 - **Conectividad VPN:** VPN de Always On, con o sin dispositivos túnel proporciona funcionalidad de desencadenamiento automático. Antes de VPN de Always On, la posibilidad de desencadenar una conexión automática a través de usuario o la autenticación de dispositivos no era posible.  
 

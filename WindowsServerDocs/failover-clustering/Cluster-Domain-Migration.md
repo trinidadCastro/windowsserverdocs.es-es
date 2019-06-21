@@ -8,12 +8,12 @@ author: johnmarlin-msft
 ms.date: 01/18/2019
 description: Este artículo describe cómo mover un clúster de Windows Server 2019 de un dominio a otro
 ms.localizationpriority: medium
-ms.openlocfilehash: 1054de942e807f00586903683faeaf695ec2f033
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 5d5aaa333d2e20fa25e4738e343f326d63f75c6b
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452929"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280210"
 ---
 # <a name="failover-cluster-domain-migration"></a>Migración de clústeres de conmutación por error de dominio
 
@@ -61,7 +61,7 @@ La segunda opción es menos destructiva, pero requiere hardware adicional, ya qu
 Como se muestra en la animación, esta opción no es destructiva, pero requiere un hardware diferente o un nodo del clúster existente que se ha quitado.
 
 1. Crear un nuevo clusterin el nuevo dominio mientras sigue teniendo el clúster antiguo disponible.
-2. Use la [Asistente para migración de clúster](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10)) para migrar todos los recursos al nuevo clúster. Recordatorio, esto no copia los datos, por lo que deberán realizarse por separado.
+2. Use la [Asistente para migración de clúster](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754481(v=ws.10)) para migrar todos los recursos al nuevo clúster. Recordatorio, esto no copia los datos, por lo que deberán realizarse por separado.
 3. Retirar o destruir el clúster anterior.
 
 En ambos casos, el nuevo clúster necesitaría tener todos [aplicaciones compatibles con clústeres](https://technet.microsoft.com/aa369082(v=vs.90)) instalado, actualizado para todos los controladores y, posiblemente, las pruebas para garantizar que todos se ejecutarán correctamente.  Este es un proceso mucho tiempo si los datos también es necesario mover.

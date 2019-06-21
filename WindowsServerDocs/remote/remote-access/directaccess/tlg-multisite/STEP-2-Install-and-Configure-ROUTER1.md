@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: dc20b1a0-540d-4531-a176-50b87c071600
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 6a771b5eb8587d23bc67a7e7769264251afdb5bf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7d215ca234d63e7e393fbbce4d65e0803f023487
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838516"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283214"
 ---
 # <a name="step-2-install-and-configure-router1"></a>PASO 2 instalar y configurar ENRUTADOR1
 

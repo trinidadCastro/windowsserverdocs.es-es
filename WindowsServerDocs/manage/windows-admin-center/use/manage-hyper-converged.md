@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: fe00072932d9c7f283ebd887a5292ac9a9d0e37f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4d156820781d2a9defc989fa1acf35d4289fb24f
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446032"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284090"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Administrar infraestructuras Hiperconvergidas con Windows Admin Center
 
@@ -21,7 +21,7 @@ ms.locfileid: "66446032"
 
 ## <a name="what-is-hyper-converged-infrastructure"></a>¿Qué es la infraestructura de Hyper-Converged
 
-Infraestructura Hiperconvergida consolida red en un clúster para proporcionar alto rendimiento, rentable y la virtualización fácilmente escalable, almacenamiento y proceso definidas por software. Esta funcionalidad se introdujo en Windows Server 2016 con [espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview), [redes definidas por Software](https://docs.microsoft.com/en-us/windows-server/networking/sdn/software-defined-networking) y [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server).
+Infraestructura Hiperconvergida consolida red en un clúster para proporcionar alto rendimiento, rentable y la virtualización fácilmente escalable, almacenamiento y proceso definidas por software. Esta funcionalidad se introdujo en Windows Server 2016 con [espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview), [redes definidas por Software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking) y [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server).
 
 > [!Tip]
 > ¿Desea para adquirir Hyper-Converged infraestructura? Microsoft recomienda estos [definido por el Software de Windows Server](https://microsoft.com/wssd) soluciones de nuestros asociados. Están diseñadas, ensambla y validadas con respecto a nuestra arquitectura de referencia para garantizar la compatibilidad y confiabilidad, por lo que ponerse en marcha rápidamente.

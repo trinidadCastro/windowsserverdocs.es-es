@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: f04eb11e-ed5f-42a1-a77b-57a248ba2d10
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0692d47d50d84a66b5c3cc41d2ba2fca1004cafe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 708a2a71f798b842e38510a2c5ea8ed10ae7656e
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870886"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283367"
 ---
 # <a name="step-3-install-and-configure-edge2"></a>PASO 3 instalar y configurar EDGE2
 
@@ -118,7 +117,7 @@ Realice los pasos siguientes para configurar EDGE2:
   
 3.  En el **agregar o quitar complementos** cuadro de diálogo, haga clic en **certificados**, haga clic en **agregar**, haga clic en **cuenta de equipo**, haga clic en  **Siguiente**, haga clic en **finalizar**y, a continuación, haga clic en **Aceptar**.  
   
-4.  En el panel izquierdo de la consola, vaya a **\Personal\Certificates certificados (equipo Local)**. Haga clic en el **certificados** nodo, seleccione **todas las tareas**y, a continuación, haga clic en **solicitar un nuevo certificado**.  
+4.  En el panel izquierdo de la consola, vaya a **\Personal\Certificates certificados (equipo Local)** . Haga clic en el **certificados** nodo, seleccione **todas las tareas**y, a continuación, haga clic en **solicitar un nuevo certificado**.  
   
 5.  En el Asistente para inscripción de certificados, haga clic en **siguiente** dos veces.  
   

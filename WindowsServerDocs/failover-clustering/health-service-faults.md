@@ -8,15 +8,15 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 10/05/2017
-ms.openlocfilehash: 31a38eacea3af3c0a288d61a77a24b4fa45a1932
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 72b1593503db75aa275b9eb45c8342cee6724001
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843376"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280399"
 ---
 # <a name="health-service-faults"></a>Errores del servicio de mantenimiento
-> Se aplica a Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016
 
 ## <a name="what-are-faults"></a>¿Cuáles son los errores
 
@@ -136,7 +136,7 @@ public void DiscoverObjects(CimSession Session)
 
 Estos son los mismos objetos que se obtendrá en PowerShell mediante los cmdlets como **Get-StorageSubSystem**, **Get-StorageNode**, y **Get-Volume**.
 
-Se pueden obtener acceso a las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](https://msdn.microsoft.com/en-us/library/windows/desktop/hh830612(v=vs.85).aspx).
+Se pueden obtener acceso a las mismas propiedades, documentadas en [clases de API de administración de almacenamiento](https://msdn.microsoft.com/library/windows/desktop/hh830612(v=vs.85).aspx).
 
 ```
 ...
@@ -291,7 +291,7 @@ Esta tabla presentan varias propiedades clave del objeto error. Para el esquema 
 |---------------------------|-----------------------------------------------------------------|
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft.Health.FaultType.Volume.Capacity                      |
-| Razón                    | "El volumen se está quedando sin espacio disponible."                 |
+| Reason                    | "El volumen se está quedando sin espacio disponible."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | Bastidor A06, RU 25, ranura 11                                        |
@@ -318,7 +318,7 @@ Tenga en cuenta la **ChangeType**, lo que indica si se está creando un error, q
 | ChangeType                | 0                                                               |
 | FaultId                   | {12345-12345-12345-12345-12345}                                 |
 | FaultType                 | Microsoft.Health.FaultType.Volume.Capacity                      |
-| Razón                    | "El volumen se está quedando sin espacio disponible."                 |
+| Reason                    | "El volumen se está quedando sin espacio disponible."                 |
 | PerceivedSeverity         | 5                                                               |
 | FaultingObjectDescription | Contoso XYZ9000 S.N. 123456789                                  |
 | FaultingObjectLocation    | Bastidor A06, RU 25, ranura 11                                        |
@@ -391,7 +391,7 @@ En Windows Server 2016, el servicio de mantenimiento ofrece la cobertura del err
 * Motivo: *"El bloque de almacenamiento no tiene la capacidad de reserva recomendada mínima. Esto puede limitar su capacidad de restaurar la resistencia de datos en el caso de errores de la unidad."*
 * RecommendedAction: *"Agregar capacidad adicional al bloque de almacenamiento o liberar capacidad. El mínimo recomendado reserva varía según la implementación, pero es natural de aproximadamente 2 de las unidades de capacidad."*
 
-### <a name="volume-capacity-2sup1sup"></a>**Capacidad del volumen (2)**<sup>1</sup>
+### <a name="volume-capacity-2sup1sup"></a>**Capacidad del volumen (2)** <sup>1</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypevolumecapacity"></a>FaultType: Microsoft.Health.FaultType.Volume.Capacity
 * Gravedad: Advertencia
@@ -498,7 +498,7 @@ En Windows Server 2016, el servicio de mantenimiento ofrece la cobertura del err
 * Motivo: *"Implementación de firmware se canceló debido a demasiados discos físicos que se producen errores en un intento de actualización de firmware".*
 * RecommendedAction: *"Reinicio firmware desplegar una vez que se ha resuelto el problema de firmware."*
 
-### <a name="storage-qos-3sup2sup"></a>**QoS de almacenamiento (3)**<sup>2</sup>
+### <a name="storage-qos-3sup2sup"></a>**QoS de almacenamiento (3)** <sup>2</sup>
 
 #### <a name="faulttype-microsofthealthfaulttypestorqosinsufficientthroughput"></a>FaultType: Microsoft.Health.FaultType.StorQos.InsufficientThroughput
 * Gravedad: Advertencia

@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 04/01/2019
-ms.openlocfilehash: 61f56eea59d11264047a9c7b8b6734617ad1802f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 24d81e3d2c31b3493563f3f3e2ab3f92afff2c06
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447335"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284138"
 ---
 # <a name="authorize-guarded-hosts-using-tpm-based-attestation"></a>Autorizar a los hosts protegidos con la atestación de TPM
 
@@ -99,7 +99,7 @@ Para obtener más información acerca de los niveles de regla de directiva de CI
 
 3.  Aplicar la directiva de CI a su host de referencia:
 
-    1.  Ejecute el comando siguiente para configurar la máquina para usar la directiva de CI. También puede implementar la directiva de CI con [directiva de grupo](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) o [System Center Virtual Machine Manager](https://docs.microsoft.com/en-us/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm).
+    1.  Ejecute el comando siguiente para configurar la máquina para usar la directiva de CI. También puede implementar la directiva de CI con [directiva de grupo](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/deploy-windows-defender-application-control-policies-using-group-policy) o [System Center Virtual Machine Manager](https://docs.microsoft.com/system-center/vmm/guarded-deploy-host?view=sc-vmm-2019#manage-and-deploy-code-integrity-policies-with-vmm).
 
         ```powershell
         Invoke-CimMethod -Namespace root/Microsoft/Windows/CI -ClassName PS_UpdateAndCompareCIPolicy -MethodName Update -Arguments @{ FilePath = "C:\temp\HW1CodeIntegrity.p7b" }

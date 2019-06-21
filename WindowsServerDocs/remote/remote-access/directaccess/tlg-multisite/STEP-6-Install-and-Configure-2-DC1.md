@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 3d66901a-c40b-474c-9948-f989f399cfea
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4f31c0e1d36ff458fb4807ab6856a56498f449ab
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8c3e12f9d64619ce00e578c7a8096c764e68ff7d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838186"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283157"
 ---
 # <a name="step-6-install-and-configure-2-dc1"></a>PASO 6 instalar y configurar 2-DC1
 
@@ -121,7 +120,7 @@ Configure 2-DC1 como un controlador de dominio para el dominio corp2.corp.contos
   
 8.  En **proporcionar las credenciales para realizar esta operación**, haga clic en **cambio**. En el **Windows Security** cuadro de diálogo **nombre de usuario**, tipo **corp.contoso.com\Administrator**y en **contraseña**, escriba el corp\ Contraseña de administrador, haga clic en **Aceptar**y, a continuación, haga clic en **siguiente**.  
   
-9. En el **opciones del controlador de dominio** página, asegúrese de que el **nombre del sitio** es **segundo sitio**. En **escriba la contraseña del modo de restauración de servicios de directorio (DSRM)**, en **contraseña** y **Confirmar contraseña**, escriba una contraseña segura dos veces y, a continuación, haga clic en  **Siguiente** cinco veces.  
+9. En el **opciones del controlador de dominio** página, asegúrese de que el **nombre del sitio** es **segundo sitio**. En **escriba la contraseña del modo de restauración de servicios de directorio (DSRM)** , en **contraseña** y **Confirmar contraseña**, escriba una contraseña segura dos veces y, a continuación, haga clic en  **Siguiente** cinco veces.  
   
 10. En el **comprobación de requisitos previos** página después de que se validen los requisitos previos, haga clic en **instalar**.  
   
@@ -201,7 +200,7 @@ Para poder inscribir certificados en 2 EDGE1, debe forzar la replicación de la 
   
 4.  En el **DEFAULTIPSITELINK propiedades** cuadro de diálogo **costo**, tipo **1**, en **replicar cada**, tipo **15**y, a continuación, haga clic en **Aceptar**. Espere 15 minutos para que finalice la replicación.  
   
-5.  Para forzar la replicación ahora en el árbol de consola, expanda **configuración Web\Sitio-First-Site-name\Servers\DC1\NTDS**, en el panel de detalles, haga clic en **<automatically generated>**, haga clic en  **Replicar ahora**y, a continuación, en el **Replicar ahora** cuadro de diálogo, haga clic en **Aceptar**.  
+5.  Para forzar la replicación ahora en el árbol de consola, expanda **configuración Web\Sitio-First-Site-name\Servers\DC1\NTDS**, en el panel de detalles, haga clic en **<automatically generated>** , haga clic en  **Replicar ahora**y, a continuación, en el **Replicar ahora** cuadro de diálogo, haga clic en **Aceptar**.  
   
 6.  Para asegurarse de que se ha completado correctamente la replicación haga lo siguiente:  
   

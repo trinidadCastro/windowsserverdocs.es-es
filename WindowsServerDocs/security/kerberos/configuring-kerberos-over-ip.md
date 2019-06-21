@@ -1,12 +1,12 @@
 ---
 title: Configuración de Kerberos para la dirección IP
 description: Compatibilidad de Kerberos para los SPN basado en IP
-ms.openlocfilehash: 30741f7a0f1978fcaa6ac83c98a54c07e1ef25c5
-ms.sourcegitcommit: c6acac3622e5d34714ca5c569805931681f98779
+ms.openlocfilehash: aa2685fcff2fdf231e5e5884d25885585f0bd6c9
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66391526"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67279970"
 ---
 # <a name="kerberos-clients-allow-ipv4-and-ipv6-address-hostnames-in-service-principal-names-spns"></a>Los clientes Kerberos permiten los nombres de host de las direcciones IPv4 e IPv6 en los nombres de entidad de servicio (SPN)
 
@@ -30,7 +30,7 @@ Un nombre de entidad de servicio es un identificador único usado durante la aut
 
 Las direcciones IP no se usan normalmente en lugar de los nombres de host porque las direcciones IP suelen ser temporales. Esto puede provocar conflictos y errores de autenticación como concesiones de direcciones del punto de expirar y renovación. Por lo tanto, registrar un SPN de basadas en direcciones IP es un proceso manual y solo debe usarse cuando es imposible cambiar a un nombre de host basado en DNS.
 
-El enfoque recomendado es usar el [Setspn.exe](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)) herramienta. Tenga en cuenta que un SPN solo se puede registrar en una sola cuenta en Active Directory a la vez por lo que se recomienda que las direcciones IP tienen concesiones estáticas si se usa DHCP.
+El enfoque recomendado es usar el [Setspn.exe](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc731241(v=ws.11)) herramienta. Tenga en cuenta que un SPN solo se puede registrar en una sola cuenta en Active Directory a la vez por lo que se recomienda que las direcciones IP tienen concesiones estáticas si se usa DHCP.
 
 ```
 Setspn -s <service>/ip.address> <domain-user-account>  

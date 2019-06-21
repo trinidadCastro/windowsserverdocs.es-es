@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 25ed17d964f12c2f497ccde443dad9f8bc253b20
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: 3c36eff8aabd1fa1c6456dce1d08ebe504102e8c
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034674"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284166"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>Máquinas virtuales blindadas para inquilinos - creación de los datos de blindaje para definir una máquina virtual blindada
 
@@ -199,7 +199,7 @@ Ejecute el Asistente de archivo de datos de blindaje para crear un archivo de bl
 Como alternativa para el Asistente para archivos de datos de blindaje, puede ejecutar [New ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/new-shieldingdatafile?view=win10-ps) para crear un archivo de datos de blindaje.
 
 Todos los archivos de datos de blindaje deben configurarse con los certificados de protección y propietario correcto para autorizar a las máquinas virtuales blindadas para ejecutarse en un tejido protegido.
-Puede comprobar si tiene cualquier tutores instalados localmente mediante la ejecución [Get HgsGuardian](https://docs.microsoft.com/en-us/powershell/module/hgsclient/get-hgsguardian?view=win10-ps). Protecciones de propietario tienen las claves privadas mientras tutores de su centro de datos, normalmente no.
+Puede comprobar si tiene cualquier tutores instalados localmente mediante la ejecución [Get HgsGuardian](https://docs.microsoft.com/powershell/module/hgsclient/get-hgsguardian?view=win10-ps). Protecciones de propietario tienen las claves privadas mientras tutores de su centro de datos, normalmente no.
 
 Si necesita crear a una protección de propietario, ejecute el siguiente comando:
 
@@ -238,7 +238,7 @@ El nombre del disco y el certificado de firma deben coincidir exactamente para q
 Puede confiar en más de un disco de plantilla, ya que proporciona una lista separada por comas de volumen calificadores de Id. para el `-VolumeIDQualifier` parámetro.
 Por último, si tiene otros archivos que necesitan para acompañar el archivo de respuesta con la máquina virtual, use el `-OtherFile` parámetro y proporcionar una lista separada por comas de rutas de acceso.
 
-Consulte la documentación del cmdlet de [New ShieldingDataFile](https://docs.microsoft.com/en-us/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) y [New VolumeIDQualifier](https://docs.microsoft.com/en-us/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para obtener información sobre otras maneras de configurar su archivo de datos de blindaje.
+Consulte la documentación del cmdlet de [New ShieldingDataFile](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-ShieldingDataFile?view=win10-ps) y [New VolumeIDQualifier](https://docs.microsoft.com/powershell/module/shieldedvmdatafile/New-VolumeIDQualifier?view=win10-ps) para obtener información sobre otras maneras de configurar su archivo de datos de blindaje.
 
 ## <a name="see-also"></a>Vea también
 

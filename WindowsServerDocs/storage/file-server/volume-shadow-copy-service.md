@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: d67f15d65feb28fb05fc056fd3c34c04cee80d09
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0a4af25723c6d1e796cd3255875c15faf21fb8be
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447761"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284385"
 ---
 # <a name="volume-shadow-copy-service"></a>Servicio de instantáneas de volumen
 
@@ -380,7 +380,7 @@ Para excluir determinados archivos de instantáneas, use la siguiente clave del 
 > <UL>
 > <LI>No puede eliminar archivos desde una instantánea que se creó en un servidor de Windows mediante la característica versiones anteriores.<BR><BR>
 > <LI>No puede eliminar los archivos de instantáneas para carpetas compartidas.<BR><BR>
-> <LI>Puede eliminar archivos desde una instantánea que se creó mediante la <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a> utilidad, pero no se puede eliminar archivos desde una instantánea que se creó mediante la <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a> utilidad.<BR><BR>
+> <LI>Puede eliminar archivos desde una instantánea que se creó mediante la <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow" data-raw-source="[Diskshadow](https://docs.microsoft.com/windows-server/administration/windows-commands/diskshadow)">Diskshadow</a> utilidad, pero no se puede eliminar archivos desde una instantánea que se creó mediante la <a href="https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin" data-raw-source="[Vssadmin](https://docs.microsoft.com/windows-server/administration/windows-commands/vssadmin)">Vssadmin</a> utilidad.<BR><BR>
 > <LI>Se eliminan los archivos desde una copia sombra de forma óptima. Esto significa que no se garantiza que se va a eliminar.<BR><BR></LI></UL>
 
 

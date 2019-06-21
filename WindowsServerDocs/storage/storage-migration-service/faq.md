@@ -8,12 +8,12 @@ ms.date: 06/04/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 258f25a7e1ec5c796c15450625397e96db25d693
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 8f0f16f14ccf9099af8ff8bb8b27209c75c87cfc
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501522"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284467"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Servicio de migración de almacenamiento preguntas más frecuentes (P+F)
 
@@ -25,7 +25,7 @@ Servicio de migración de almacenamiento no transferencia de archivos o carpetas
 
 - Programa de Windows, archivos, archivos de programa (x86), datos de programa, los usuarios
 - $Recycle.bin, recycler, la Papelera de reciclaje, la información de volumen del sistema, $UpgDrv$, $SysReset, Windows $. ~ BT, Windows $. ~ LS, Windows.old, arranque, documentos, configuración y recuperación
-- pagefile.sys, hiberfil.sys, swapfile.sys, winpepge.sys, config.sys, bootsect.bak, bootmgr, bootnxt
+- Pagefile.sys, hiberfil.sys, swapfile.sys, winpepge.sys, config.sys, bootsect.bak, bootmgr, bootnxt
 - Los archivos o carpetas en el servidor de origen que entra en conflicto con las carpetas excluidas de la de destino. <br>Por ejemplo, si hay una carpeta N:\Windows en el origen y se asignan a la C:\ volumen en el destino, no se transfieren, independientemente de lo que lo contiene, ya que podría interferir con la carpeta C:\Windows del sistema en el destino.
 
 ## <a name="domain-migration"></a> ¿Se admiten las migraciones de dominio?
@@ -110,7 +110,7 @@ El servicio de migración de almacenamiento contiene una lectura multiproceso y 
 
 - **Modificar los subprocesos de transferencia de forma predeterminada.** El servicio de Proxy de servicio de migración de almacenamiento copia 8 archivos simultáneamente en un trabajo determinado. Puede aumentar el número de subprocesos de copia simultáneas ajustando el nombre del valor REG_DWORD del registro siguiente en formato decimal en cada nodo ejecuta al Proxy de SMS:
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy   FileTransferThreadCount
+    HKEY_Local_Machine\Software\Microsoft\SMSProxy FileTransferThreadCount
 
    El intervalo válido es 1 y 128 en Windows Server 2019. Después de cambiar debe reiniciar el servicio de Proxy de servicio de migración de almacenamiento en todos los equipos que participan en una migración. Sea precavido al usar esta opción. configuración posterior puede requerir núcleos adicionales, el rendimiento de almacenamiento y ancho de banda de red. Si se establece demasiado alto puede provocar un rendimiento reducido en comparación con la configuración predeterminada. La capacidad para cambiar la configuración de subprocesos basada en CPU, memoria, red y almacenamiento de heurísticamente está prevista para una versión posterior de SMS.
 
@@ -131,7 +131,7 @@ El servicio de migración de almacenamiento contiene una lectura multiproceso y 
 
 - **Habilitar el procesamiento de alto rendimiento.** Asegúrese de que la configuración de BIOS o UEFI para los servidores permite un alto rendimiento; por ejemplo, deshabilite el estado C, establezca la velocidad de QPI, habilite NUMA y configure la frecuencia de la memoria en el valor más elevado. Asegúrese de que la administración de energía en Windows Server se establece en alto rendimiento. Reinicie si es necesario. No olvide devolver estos Estados adecuada después de completar la migración. 
 
-- **Ajustar el hardware** revisión el [Performance Tuning directrices para Windows Server 2016](https://docs.microsoft.com/en-us/windows-server/administration/performance-tuning/) para optimizar el orquestador y equipos de destino que ejecuta Windows Server 2019 y Windows Server 2016. El [ajuste de rendimiento del subsistema de red](https://docs.microsoft.com/en-us/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) sección contiene información especialmente valiosa.
+- **Ajustar el hardware** revisión el [Performance Tuning directrices para Windows Server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/) para optimizar el orquestador y equipos de destino que ejecuta Windows Server 2019 y Windows Server 2016. El [ajuste de rendimiento del subsistema de red](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) sección contiene información especialmente valiosa.
 
 - **Usar el almacenamiento más rápido.** Aunque puede ser difícil de actualizar la velocidad de almacenamiento del equipo de origen, debe asegurarse que el almacenamiento de destino sea al menos tan rápido en el rendimiento de E/S de escritura, como el origen está en el rendimiento de E/S de lectura para asegurarse de que no hay ningún cuello de botella innecesario en las transferencias. Si el destino es una máquina virtual, asegúrese de que, al menos para los fines de migración, se ejecuta en la capa de almacenamiento más rápida de los hosts de hipervisor, como en el nivel de flash o con el uso de memoria flash reflejado o espacios híbrida de clústeres de HCI directa de espacios de almacenamiento. Una vez completada la migración de SMS la máquina virtual puede ser en vivo migra a un host o un nivel más lento.
 

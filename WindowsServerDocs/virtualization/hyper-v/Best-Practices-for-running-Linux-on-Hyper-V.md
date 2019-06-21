@@ -11,12 +11,12 @@ ms.assetid: a08648eb-eea0-4e2b-87fb-52bfe8953491
 author: shirgall
 ms.author: kathydav
 ms.date: 3/1/2019
-ms.openlocfilehash: 190a5e5d32140d6fa688bb9de98d05ec2f9783c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a24e2b1a1d79d52c1cc16f9e7c1b253d9b477aae
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838686"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284441"
 ---
 # <a name="best-practices-for-running-linux-on-hyper-v"></a>Procedimientos recomendados para ejecutar Linux en Hyper-V
 
@@ -102,6 +102,6 @@ Después de cambiar el tamaño de un VHD o VHDX, los administradores deben usar 
 
 * [Implementar un clúster de Hyper-V](https://technet.microsoft.com/library/jj863389.aspx)
 
-* [Creación de imágenes de Linux para Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/create-upload-generic)
+* [Creación de imágenes de Linux para Azure](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic)
 
-* [Optimizar la máquina virtual Linux en Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/optimization)
+* [Optimizar la máquina virtual Linux en Azure](https://docs.microsoft.com/azure/virtual-machines/linux/optimization)

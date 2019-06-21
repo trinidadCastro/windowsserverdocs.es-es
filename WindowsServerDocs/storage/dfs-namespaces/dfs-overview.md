@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: En este tema se describen los espacios de nombres DFS, que es un servicio de rol de Windows Server que te permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o varios espacios de nombres estructurados lógicamente.
-ms.openlocfilehash: b16d8145d766cbb9b12feaaa2e5e9443813a69f2
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 2d91cb7197d2deecd96ebb29a951ef96ceefd9aa
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812580"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67284284"
 ---
 # <a name="dfs-namespaces-overview"></a>Información general de Espacios de nombres DFS
 
@@ -126,6 +126,6 @@ Para obtener más información relacionada, vea los siguientes recursos.
 | **Implementación**    | [Consideraciones de escalabilidad DFS Namespace](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
 | **Operaciones**    | [Espacios de nombres DFS: Preguntas más frecuentes](https://technet.microsoft.com/library/ee404780.aspx) |
 | **Recursos de la comunidad** | [El foro de TechNet sobre almacenamiento y servicios de archivos](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
-| **Protocolos**        | [Protocolos de Windows Server de servicios de archivo](https://msdn.microsoft.com/en-us/library/cc239318.aspx) (en desuso) |
+| **Protocolos**        | [Protocolos de Windows Server de servicios de archivo](https://msdn.microsoft.com/library/cc239318.aspx) (en desuso) |
 | **Tecnologías relacionadas** | [Clúster de conmutación por error](../../failover-clustering/failover-clustering-overview.md)|
 | **Soporte técnico** | [Windows TI soporte técnico profesional](https://www.microsoft.com/itpro/windows/support)|

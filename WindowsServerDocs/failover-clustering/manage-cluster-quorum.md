@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 06/07/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 85b75d0039fec1b2ad9982d6ae9bf83fa8da2fdf
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: bf854418e9efb7dbb5bd07ba86f29d84ba54d68a
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66810987"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280382"
 ---
 # <a name="configure-and-manage-quorum"></a>Configurar y administrar el cuórum
 
@@ -67,7 +67,7 @@ Como una opción de configuración avanzada de cuórum, puede elegir asignar o q
 
 Es posible que quieras quitar votos de nodos en determinadas configuraciones de recuperación ante desastres. Por ejemplo, en un clúster multisitio podrías eliminar votos de los nodos en un sitio de copia de seguridad para que dichos nodos no afecten a los cálculos de cuórum. Esta configuración solo se recomienda para la conmutación por error manual en varios sitios. Para obtener más información, consulta [Consideraciones del quórum para las configuraciones de recuperación ante desastres](#quorum-considerations-for-disaster-recovery-configurations) más adelante en este tema.
 
-Se puede comprobar el voto configurado de un nodo buscando el **NodeWeight** propiedad común del nodo de clúster mediante el uso de la [Get-ClusterNode](http://technet.microsoft.com/library/hh847268.aspx)cmdlet de Windows PowerShell. El valor 0 indica que el nodo no tiene configurado un voto de cuórum. El valor 1 indica que el voto de cuórum del nodo está asignado y que está administrado por el clúster. Para obtener más información sobre la administración de votos de nodos, consulta [Administración de quórum dinámico](#dynamic-quorum-management) más adelante en este tema.
+Se puede comprobar el voto configurado de un nodo buscando el **NodeWeight** propiedad común del nodo de clúster mediante el uso de la [Get-ClusterNode](https://technet.microsoft.com/library/hh847268.aspx)cmdlet de Windows PowerShell. El valor 0 indica que el nodo no tiene configurado un voto de cuórum. El valor 1 indica que el voto de cuórum del nodo está asignado y que está administrado por el clúster. Para obtener más información sobre la administración de votos de nodos, consulta [Administración de quórum dinámico](#dynamic-quorum-management) más adelante en este tema.
 
 Comprueba la asignación de votos de todos los nodos de clúster mediante la prueba de validación **Validar quórum de clúster**.
 

@@ -11,12 +11,12 @@ ms.assetid: 1a65a98e-54b6-4c41-9732-1e3d32fe3a5f
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/21/2017
-ms.openlocfilehash: 8b7d9233b105f710d620b5142205fb2eadd0248a
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6ec5db82ecae2fb74731f3c52b9113325837a2fb
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67141370"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280017"
 ---
 # <a name="whats-new-in-hyper-v-on-windows-server"></a>Novedades de Hyper-V en Windows Server
 
@@ -212,7 +212,7 @@ Los archivos de configuración de máquina virtual usan un nuevo formato que per
   
 ### <a name="virtual-machine-configuration-version-updated"></a>Versión de configuración de máquina virtual \(actualizado\)
 
-La versión representa la compatibilidad de configuración de la máquina virtual, guarda el estado y los archivos de instantánea con la versión de Hyper-V. Las máquinas virtuales con la versión 5 son compatibles con Windows Server 2012 R2 y se pueden ejecutar en Windows Server 2012 R2 y Windows Server 2016. Las máquinas virtuales con las versiones que se introdujo en Windows Server 2016 y y Windows Server 2019 no se ejecuta en Hyper-V en Windows Server 2012 R2.   
+La versión representa la compatibilidad de configuración de la máquina virtual, guarda el estado y los archivos de instantánea con la versión de Hyper-V. Las máquinas virtuales con la versión 5 son compatibles con Windows Server 2012 R2 y se pueden ejecutar en Windows Server 2012 R2 y Windows Server 2016. Las máquinas virtuales con las versiones que se introdujo en Windows Server 2016 y Windows Server 2019 no se ejecuta en Hyper-V en Windows Server 2012 R2.   
   
 Si mueve o importar una máquina virtual en un servidor que ejecuta Hyper-V en Windows Server 2016 o Windows Server 2019 desde Windows Server 2012 R2, no se actualiza automáticamente la configuración de la máquina virtual. Esto significa que puede devolver la máquina virtual a un servidor que ejecuta Windows Server 2012 R2. Sin embargo, esto también significa que no se puede usar las nuevas características de la máquina virtual hasta que actualice manualmente la versión de la configuración de máquina virtual.  
   

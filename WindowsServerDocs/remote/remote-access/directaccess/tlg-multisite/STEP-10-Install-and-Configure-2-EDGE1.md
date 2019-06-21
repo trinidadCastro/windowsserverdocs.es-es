@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: d98d6f7a-a2e6-45b1-9c63-08e2986a5c03
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 1640dbae52a1a7c93355b34822d72faa5351bcda
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9810d7294a2651d4811bc5969eaf6a118db8ed56
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860316"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283267"
 ---
 # <a name="step-10-install-and-configure-2-edge1"></a>PASO 10 instalar y configurar 2 EDGE1
 
@@ -141,7 +140,7 @@ Configuración de 2-EDGE1 consta de las siguientes acciones:
   
 3.  En el cuadro de diálogo **Agregar o quitar complementos**, haz clic en **Certificados**, **Agregar**, **Cuenta de equipo**, **Siguiente**, **Equipo local**, **Finalizar** y **Aceptar**.  
   
-4.  En el árbol de consola del complemento certificados, abra **\Personal certificados (equipo Local)**.  
+4.  En el árbol de consola del complemento certificados, abra **\Personal certificados (equipo Local)** .  
   
 5.  Haga clic en **Personal**, apunte a **todas las tareas**y, a continuación, haga clic en **solicitar un nuevo certificado**.  
   

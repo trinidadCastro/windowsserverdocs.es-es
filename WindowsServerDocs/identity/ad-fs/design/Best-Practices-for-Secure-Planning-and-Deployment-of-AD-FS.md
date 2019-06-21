@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 4a2fb188bd0a46ebd54ae068e8e4eeb63788aaa0
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 95f9fd468df39525a2fe7d18647f399214486bbb
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501577"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280597"
 ---
 # <a name="best-practices-for-secure-planning-and-deployment-of-ad-fs"></a>Procedimientos recomendados para planear e implementar AD FS de forma segura
 
@@ -26,7 +26,7 @@ Los siguientes procedimientos recomendados principales son comunes a todas las i
 
 -   **Protección de AD FS como un sistema de "Nivel 0"** 
 
-    AD FS es, básicamente, un sistema de autenticación.  Por lo tanto, deben tratarse como un sistema de "Nivel 0" como otro sistema de identidad en la red.  [Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) contiene más información sobre el modelo de nivel administrativo de Active Directory. 
+    AD FS es, básicamente, un sistema de autenticación.  Por lo tanto, deben tratarse como un sistema de "Nivel 0" como otro sistema de identidad en la red.  [Microsoft Docs](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material) contiene más información sobre el modelo de nivel administrativo de Active Directory. 
 
 
 -   **Utilice al Asistente para configuración de seguridad para aplicar prácticas recomendadas de seguridad específicas de AD FS a servidores de federación y equipos de servidores proxy de federación**  

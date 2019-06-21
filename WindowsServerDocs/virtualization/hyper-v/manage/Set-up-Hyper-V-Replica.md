@@ -10,12 +10,12 @@ ms.assetid: eea9e996-bfec-4065-b70b-d8f66e7134ac
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/10/2016
-ms.openlocfilehash: 04066c5b645c0be641c2ba76fadac032d5a91420
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b8dcf23946d99509aafba0f8af58bf633bedd069
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843216"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280231"
 ---
 # <a name="set-up-hyper-v-replica"></a>Configuración de la réplica de Hyper-V
 
@@ -27,7 +27,7 @@ La réplica de Hyper-V es una parte integral del rol de Hyper-V. Contribuye a su
 
 -   **Replicación y seguimiento de cambios**: Cuando se habilita la réplica de Hyper-V para una máquina virtual específica, la replicación inicial crea una máquina virtual de réplica idéntico en un servidor secundario. Cuando esto sucede, el seguimiento de cambios de réplica de Hyper-V crea y mantiene un archivo de registro que captura los cambios en una máquina virtual del disco duro virtual. El archivo de registro se reproduce en orden inverso a la réplica en que disco duro virtual en función de la configuración de frecuencia de replicación. Esto significa que los cambios más recientes se almacenan y replican de forma asincrónica. La replicación puede ser a través de HTTP o HTTPS.  
 
--   **Extendidos de replicación (encadenada)**: Esto le permite replicar una máquina virtual desde un host principal a un host secundario y, a continuación, se replican hospedar la base de datos secundaria para hospedar una tercera. Tenga en cuenta que no se replique desde el host principal directamente en el segundo y el tercero.  
+-   **Extendidos de replicación (encadenada)** : Esto le permite replicar una máquina virtual desde un host principal a un host secundario y, a continuación, se replican hospedar la base de datos secundaria para hospedar una tercera. Tenga en cuenta que no se replique desde el host principal directamente en el segundo y el tercero.  
 
     Esta característica hace que la réplica de Hyper-V más sólido para la recuperación ante desastres porque si se produce una interrupción puede recuperarse la réplica principal y extendida.  Puede conmutar por error al servidor réplica extendido si las ubicaciones principales y secundarias dejan de funcionar. Tenga en cuenta que el servidor réplica extendido no admite la replicación coherente con la aplicación y debe usar los mismos discos duros virtuales que usa la réplica secundaria.  
 
@@ -80,7 +80,7 @@ Para permitir la replicación entre los servidores principales y secundarias, de
 
     1. Abra Firewall de Windows con seguridad avanzada y haga clic en **reglas de entrada**.  
 
-    2. Para habilitar la autenticación HTTP (Kerberos), haga clic en **escucha de HTTP de réplica de Hyper-V (TCP-In)** >**Habilitar regla.** Para habilitar la autenticación basada en certificados HTTPS, haga clic en **escucha HTTPS de réplica Hyper-V (TCP-In)** > E**Habilitar regla**.  
+    2. Para habilitar la autenticación HTTP (Kerberos), haga clic en **escucha de HTTP de réplica de Hyper-V (TCP-In)**  >**Habilitar regla.** Para habilitar la autenticación basada en certificados HTTPS, haga clic en **escucha HTTPS de réplica Hyper-V (TCP-In)** > E**Habilitar regla**.  
 
 -  Para habilitar las reglas en un clúster de Hyper-V, abra una sesión de Windows PowerShell con **ejecutar como administrador**, a continuación, ejecute uno de estos comandos:  
 
@@ -110,14 +110,14 @@ Siga este procedimiento en cada máquina virtual que va a replicar:
 
     Si lo hace la replicación sin conexión le transporte la copia inicial en el servidor secundario mediante un medio de almacenamiento externo como un disco duro o una unidad USB. Para ello, deberá conectar la externa almacenamiento al servidor principal (o nodo de propietario de un clúster) y, a continuación, al seleccionar envían copia inicial mediante medios externos, que puede especificar una ubicación local o en el medio externo donde se puede almacenar la copia inicial.  Se crea una máquina virtual de marcador de posición en el sitio de réplica. Una vez completada la replicación inicial, el almacenamiento externo puede enviarse al sitio de réplica. Se conectará el medio externo al servidor secundario o en el nodo propietario del clúster secundario. A continuación, podrá importar la réplica inicial en una ubicación especificada y combinarlo con la máquina virtual de marcador de posición.  
 
-9. En el **completar Habilitar replicación** , revise la información del resumen y, a continuación, haga clic en **Finalizar.**. Los datos de la máquina virtual, se transferirán según la configuración elegida. y aparecerá un cuadro de diálogo indicando que la replicación se habilitó correctamente.  
+9. En el **completar Habilitar replicación** , revise la información del resumen y, a continuación, haga clic en **Finalizar.** . Los datos de la máquina virtual, se transferirán según la configuración elegida. y aparecerá un cuadro de diálogo indicando que la replicación se habilitó correctamente.  
 
 10. Si desea configurar la replicación (encadenada) extendida, abra el servidor de réplica y haga clic en la máquina virtual que desea replicar. Haga clic en **replicación** > **extender replicación** y especifique la configuración de replicación.  
 
 ## <a name="run-a-failover"></a>Ejecutar una conmutación por error  
 Después de completar estos pasos de implementación su entorno replicado está en funcionamiento. Ahora puede ejecutar conmutaciones por error según sea necesario.  
 
-**Probar conmutación por error**:  Si desea ejecutar un conmutación por error de prueba con el botón secundario en la máquina virtual principal y seleccione **replicación** > **probar conmutación por error**. Elija el punto de recuperación más reciente o de otro si ha configurado. Se crea una nueva máquina virtual de prueba y ha iniciado en el sitio secundario. Cuando haya terminado las pruebas, seleccione **detener conmutación por error de prueba** en la máquina virtual de réplica para limpiar. Tenga en cuenta que para una máquina virtual que solo se puede ejecutar una prueba de conmutación por error a la vez. [Obtenga más](https://blogs.technet.com/b/virtualization/archive/2012/07/26/types-of-failover-operations-in-hyper-v-replica.aspx).  
+**Probar conmutación por error**:  Si desea ejecutar un conmutación por error de prueba con el botón secundario en la máquina virtual principal y seleccione **replicación** > **probar conmutación por error**. Elija el punto de recuperación más reciente o de otro si ha configurado. Se crea una nueva máquina virtual de prueba y ha iniciado en el sitio secundario. Cuando haya terminado las pruebas, seleccione **detener conmutación por error de prueba** en la máquina virtual de réplica para limpiarlos. Tenga en cuenta que para una máquina virtual que solo se puede ejecutar una prueba de conmutación por error a la vez. [Obtenga más](https://blogs.technet.com/b/virtualization/archive/2012/07/26/types-of-failover-operations-in-hyper-v-replica.aspx).  
 
 **Conmutación por error planeada**: Para ejecutar un secundario de conmutación por error planeada de la máquina virtual principal y seleccione **replicación** > **conmutación por error planeada**. Conmutación por error planeada realiza comprobaciones de requisitos previos para garantizar la pérdida de datos. Comprueba que la máquina virtual principal está apagada antes de comenzar la conmutación por error. Después de la máquina virtual se conmuta por error, se inicia replicar los cambios de vuelta al sitio principal cuando esté disponible. Tenga en cuenta que para que funcione el servidor principal debe configurarse para recibir replicación desde el servidor secundario o desde el agente de réplica de Hyper-V en el caso de un clúster principal. Planifica el último conjunto de cambios sometidos a seguimiento de envíos de conmutación por error. [Obtenga más](https://blogs.technet.com/b/virtualization/archive/2012/07/31/types-of-failover-operations-in-hyper-v-replica-part-ii-planned-failover.aspx).  
 

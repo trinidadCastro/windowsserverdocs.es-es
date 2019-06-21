@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-ras
+ms.technology: networking-ras
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 78cc2ce3-a48e-45db-b402-e480b493fab1
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 65af14e3adfacd96334e2326f8dd0b346e27034a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 655a7b02468db4246b85b495289806a3f9735a95
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850186"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67282001"
 ---
 # <a name="border-gateway-protocol-bgp"></a>Protocolo de puerta de enlace de borde (BGP)
 
@@ -29,7 +28,7 @@ Puede usar este tema para obtener una descripción del Protocolo de puerta de en
 > [!NOTE]  
 > Además de este tema, está disponible la siguiente documentación de BGP.  
 >   
-> -   [Referencia de comandos de PowerShell de Windows BGP](../../remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
+> -   [Referencia de comandos de Windows PowerShell de BGP](../../remote-access/bgp/BGP-Windows-PowerShell-Command-Reference.md)  
   
 En este tema se incluyen las siguientes secciones.  
   
@@ -150,7 +149,7 @@ A continuación es las características del enrutador de BGP de puerta de enlace
   
 **Enrutamiento de BGP como un servicio de rol de acceso remoto**. Ahora puede instalar el **enrutamiento** servicio de rol del rol de servidor de acceso remoto sin necesidad de instalar el **el servicio de acceso remoto (RAS)** servicio de rol cuando desea usar el acceso remoto como un enrutador LAN de BGP.  Esto reduce el consumo de memoria del enrutador BGP y sólo instala los componentes necesarios para el enrutamiento dinámico de BGP. El servicio de rol de enrutamiento es útil cuando solo se requiere una máquina virtual de enrutador de BGP y no requieren el uso de DirectAccess o VPN. Además, mediante el acceso remoto como un enrutador LAN con BGP le proporcionará las ventajas de enrutamientos dinámicas de BGP en su red interna.  
   
-**Estadísticas de BGP (contadores de mensajes, contadores de ruta)**. El enrutador BGP permite mostrar las estadísticas de mensajes y ruta si es necesario mediante el uso del comando de Windows PowerShell **Get-BgpStatistics** .  
+**Estadísticas de BGP (contadores de mensajes, contadores de ruta)** . El enrutador BGP permite mostrar las estadísticas de mensajes y ruta si es necesario mediante el uso del comando de Windows PowerShell **Get-BgpStatistics** .  
   
 **Compatibilidad con enrutamiento de varias rutas de costo igual**. El enrutador BGP admite ECMP y puede tener más de una ruta de igual costo conectadas a la tabla y la pila de enrutamiento de BGP. La selección del enrutador BGP de la ruta para transmitir paquetes de datos es aleatoria con ECMP habilitado.  
   
@@ -162,7 +161,7 @@ A continuación es las características del enrutador de BGP de puerta de enlace
   
 **Compatibilidad de mismo nivel de transporte de IPv4 e IPv6**. El enrutador BGP es compatible con el emparejamiento IPv4 e IPv6. Sin embargo, debe configurar el identificador BGP como la dirección IPv4 del enrutador BGP. Para todas las topologías de implementación de enrutador BGP, se puede usar cualquiera de los dos tipos de emparejamiento (IPV4/IPv6).  
   
-**Aprendizaje de rutas de unidifusión IPv4 e IPv6 y capacidad de anuncio (información de disponibilidad de capa de red multiprotocolo [NLRI])**. Independientemente del transporte que use, el enrutador BGP puede intercambiar rutas IPv4 e IPv6 si otros enrutadores BGP anuncian la capacidad adecuada al establecer la sesión. Para configurar el enrutamiento de IPv6, debe habilitarse el parámetro IPv6Routing y una dirección IPv6 global local a nivel del enrutador.  
+**Aprendizaje de rutas de unidifusión IPv4 e IPv6 y capacidad de anuncio (información de disponibilidad de capa de red multiprotocolo [NLRI])** . Independientemente del transporte que use, el enrutador BGP puede intercambiar rutas IPv4 e IPv6 si otros enrutadores BGP anuncian la capacidad adecuada al establecer la sesión. Para configurar el enrutamiento de IPv6, debe habilitarse el parámetro IPv6Routing y una dirección IPv6 global local a nivel del enrutador.  
   
 **Emparejamiento de modo mixto y modo pasivo**. Puede configurar sesiones de emparejamiento BGP en modo mixto: donde el enrutador BGP actúa como iniciador y Respondedor - o modo pasivo, donde el enrutador BGP no inicia el emparejamiento, pero responder a las solicitudes entrantes. El modo mixto es el valor predeterminado y se recomienda para el emparejamiento BGP. Esto es así a menos que desee usar el modo pasivo para fines de depuración o de diagnóstico. Para todas las topologías de implementación de enrutador BGP, es necesario que el emparejamiento de modo mixto habilite reinicios automáticos en caso de que se produzcan eventos de error.  
   

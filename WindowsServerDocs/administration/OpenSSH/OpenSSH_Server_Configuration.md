@@ -6,12 +6,12 @@ contributor: maertendMSFT
 ms.product: w10
 author: maertendMSFT
 title: Configuración del servidor de OpenSSH para Windows
-ms.openlocfilehash: 8e6476e4005bd5bbc2d40c8a59d39510ca1beb70
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7eff3d3e1af67c9daf7a68c67c3609c0ee89fc93
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827286"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280033"
 ---
 # <a name="openssh-server-configuration-for-windows-10-1809-and-server-2019"></a>Configuración del servidor de OpenSSH para Windows 10 1809 y Server 2019#
 
@@ -28,7 +28,7 @@ Para establecer el valor predeterminado de shell de comandos, primero confirme q
 Shell de comandos | Comando para usar
 ------------- | -------------- 
 Comando | ruta de acceso
-PowerShell | $env:\path
+PowerShell | $env:path
 
 Configurar el valor predeterminado de ssh shell se realiza en el registro de Windows mediante la adición de la ruta de acceso completa al ejecutable en el valor de cadena DefaultShell Computer\HKEY_LOCAL_MACHINE\SOFTWARE\OpenSSH shell. 
 
@@ -53,7 +53,7 @@ Controlar qué usuarios y grupos pueden conectarse al servidor se realiza median
 Cuando la configuración de usuario o grupo en función de las reglas con un usuario de dominio o grupo, use el siguiente formato: ``` user?domain* ```.
 Windows permite varios formatos para especificar las entidades de dominio, pero muchos entran en conflicto con el patrón estándar de Linux. Por esta razón, * se agregan para cubrir el FQDN. Además, este enfoque utiliza "?", en lugar de @, para evitar conflictos con los username@host formato. 
 
-Grupo de trabajo a los usuarios o grupos y cuentas conectadas a internet siempre se resuelven en su nombre de cuenta local (ninguna parte del dominio, similar a los nombres de Unix estándares). Los usuarios del dominio y los grupos son estrictamente resuelve en [NameSamCompatible](https://docs.microsoft.com/en-us/windows/desktop/api/secext/ne-secext-extended_name_format) formato - domain_short_name\user_name. Todos los usuarios y grupos según las reglas deben adherirse a este formato de configuración.
+Grupo de trabajo a los usuarios o grupos y cuentas conectadas a internet siempre se resuelven en su nombre de cuenta local (ninguna parte del dominio, similar a los nombres de Unix estándares). Los usuarios del dominio y los grupos son estrictamente resuelve en [NameSamCompatible](https://docs.microsoft.com/windows/desktop/api/secext/ne-secext-extended_name_format) formato - domain_short_name\user_name. Todos los usuarios y grupos según las reglas deben adherirse a este formato de configuración.
 
 Ejemplos de los usuarios del dominio y grupos 
 

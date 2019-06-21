@@ -9,12 +9,12 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: e4ce1d18-d346-492a-8bca-f85513aa3ac1
 ms.technology: identity-adds
-ms.openlocfilehash: eae4cab2bd709097fe0efd0745baeb0ec685abc7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 65e33e6507d2affc4d07cc0780a7baf91a170a09
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829616"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67280587"
 ---
 # <a name="performing-a-nonauthoritative-restore-of-active-directory-domain-services"></a>Realizar una restauración no autoritativa de Active Directory Domain Services 
 
@@ -24,7 +24,7 @@ Para llevar a cabo una restauración no autoritativa, complete el procedimiento 
   
 Los siguientes procedimientos utilizan el Wbadmin.exe para realizar una restauración no autoritativa de Active Directory o servicios de dominio de Active Directory (AD DS). Si usa una solución de copia de seguridad diferente o si tiene previsto completar la restauración autoritativa de SYSVOL más adelante en el proceso de recuperación del bosque, puede realizar una restauración autoritativa de SYSVOL mediante estos métodos alternativos:  
   
-- Si usa el servicio de replicación de archivos (FRS) para replicar SYSVOL, siga los pasos descritos en [artículo 290762](https://go.microsoft.com/fwlink/?LinkId=148443) en Microsoft Knowledge Base, con el **BurFlags** clave del registro para reinicializar réplica FRS Establece o, si es necesario, el artículo 315457 [315457](https://support.microsoft.com/kb/315457)para volver a generar el árbol SYSVOL. Para determinar si se replica SYSVOL mediante FRS, consulte [carpeta SYSVOL de determinar si un controlador de dominio se replica mediante DFSR o FRS](https://msdn.microsoft.com/en-us/library/windows/desktop/cc507518.aspx#determining_whether_a_domain_controller_s_sysvol_folder_is_replicated_by_dfsr_or_frs).  
+- Si usa el servicio de replicación de archivos (FRS) para replicar SYSVOL, siga los pasos descritos en [artículo 290762](https://go.microsoft.com/fwlink/?LinkId=148443) en Microsoft Knowledge Base, con el **BurFlags** clave del registro para reinicializar réplica FRS Establece o, si es necesario, el artículo 315457 [315457](https://support.microsoft.com/kb/315457)para volver a generar el árbol SYSVOL. Para determinar si se replica SYSVOL mediante FRS, consulte [carpeta SYSVOL de determinar si un controlador de dominio se replica mediante DFSR o FRS](https://msdn.microsoft.com/library/windows/desktop/cc507518.aspx#determining_whether_a_domain_controller_s_sysvol_folder_is_replicated_by_dfsr_or_frs).  
 - Si se usa la replicación del sistema de archivos distribuido (DFS) para replicar SYSVOL, consulte [realizar una sincronización autoritativa de SYSVOL DFSR replicado](AD-Forest-Recovery-Authoritative-Recovery-SYSVOL.md).  
 
 ## <a name="performing-a-nonauthoritative-restore"></a>Realizar una restauración no autoritativa
@@ -49,5 +49,5 @@ Utilice el procedimiento siguiente para realizar una restauración no autoritati
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Guía de recuperación de bosque de AD](AD-Forest-Recovery-Guide.md)
-- [Recuperación de bosques de AD: procedimientos](AD-Forest-Recovery-Procedures.md)
+- [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
+- [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)

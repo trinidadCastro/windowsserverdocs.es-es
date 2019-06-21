@@ -6,19 +6,18 @@ ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
 ms.suite: na
-ms.technology:
-- networking-da
+ms.technology: networking-da
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 8cbdeb1d-5f7c-4360-bcc1-ab40d3cd8040
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2dc70d9c89b19a3e38d7f6cd682f047530f87cc6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c95fb641c0d0fa3161caadfa2eb769e12b47672d
+ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839526"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67283233"
 ---
 # <a name="step-11-configure-the-multisite-deployment"></a>PASO 11 configurar la implementación multisitio
 
@@ -84,7 +83,7 @@ Para configurar una implementación multisitio, realizar cambios en el Asistente
   
 4.  En el **nombre de red o la dirección IP** página **tipo en el nombre público o dirección IP usada por los clientes para conectarse al servidor de acceso remoto**, tipo **2 edge1.contoso.com**, y a continuación, haga clic en **siguiente**.  
   
-5.  En el **adaptadores de red** página, asegúrese de que el **adaptador externo** es **Internet**, **adaptador interno** es **2 Corpnet -**, el certificado es **CN = 2 edge1.contoso.com**y, a continuación, haga clic en **siguiente**.  
+5.  En el **adaptadores de red** página, asegúrese de que el **adaptador externo** es **Internet**, **adaptador interno** es **2 Corpnet -** , el certificado es **CN = 2 edge1.contoso.com**y, a continuación, haga clic en **siguiente**.  
   
 6.  En el **configuración de prefijo** página **prefijo IPv6 asignado a los equipos cliente de DirectAccess**, tipo **2001:db8:2:2000:: / 64**y, a continuación, haga clic en **siguiente** .  
   
