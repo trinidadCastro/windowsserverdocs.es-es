@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: fc92e8b30d6b4c0c765333d3e22311e551d3365d
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 1fe73df2ce209fc47c7414d33cb1e0a83d31dcd7
+ms.sourcegitcommit: 9bece8049b1766bd9bb0d5eb5921413a2de2ca61
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280494"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67351285"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>Preguntas más frecuentes (P+F) de AD FS
 
@@ -300,3 +300,6 @@ AD FS y servidores de aplicaciones Web admiten cualquier firewall que no se real
 En AD FS 2016, enlace de token se habilita automáticamente y hace que varios problemas conocidos con escenarios de proxy y la federación qué resultado de este error. Para resolver este problema, ejecute el siguiente comando de Powershell y quitar la compatibilidad de enlace del token.
 
 `Set-AdfsProperties -IgnoreTokenBinding $true`
+
+### <a name="i-have-upgraded-my-farm-from-ad-fs-in-windows-server-2016-to-ad-fs-in-windows-server-2019-the-farm-behavior-level-for-the-ad-fs-farm-has-been-successfully-raised-to-2019-but-the-web-application-proxy-configuration-is-still-displayed-as-windows-server-2016"></a>He actualizado mi granja de servidores de AD FS en Windows Server 2016 a AD FS en Windows Server 2019. El nivel de comportamiento de la granja de servidores para la granja de servidores de AD FS se ha ampliado correctamente a 2019 pero todavía se muestra la configuración de Proxy de aplicación Web como Windows Server 2016?
+Después de actualizar a Windows Server 2019, la versión de configuración del Proxy de aplicación Web seguirá mostrando como Windows Server 2016. El Proxy de aplicación Web no tiene nuevas características de versión específica de Windows Server 2019, y si el nivel de comportamiento de la granja de servidores se ha elevado correctamente en AD FS, el Proxy de aplicación Web seguirá mostrando como Windows Server 2016 por diseño. 
