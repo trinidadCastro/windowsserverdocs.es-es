@@ -8,12 +8,12 @@ ms.author: jol
 ms.date: 09/17/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: fa3d7e75b32f0195346e58db54b7932c8d2fd3b9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: beb2b3d1eefc5d70e39baa461708938ac9c17be5
+ms.sourcegitcommit: 3be280c8638214857dc355b201eb56a04499a5e5
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885006"
+ms.lasthandoff: 06/26/2019
+ms.locfileid: "67396677"
 ---
 # <a name="extensions-for-windows-admin-center"></a>Extensiones para Windows Admin Center
 
@@ -51,9 +51,14 @@ Consulta los temas siguientes para obtener más información sobre el SDK y empe
 
 Consulta el increíble valor que nuestros socios han comenzado a incorporar en Windows Admin Center y prueba ya estas extensiones. Conoce más sobre [cómo instalar las extensiones](../configure/using-extensions.md) desde Windows Admin Center.
 
+### <a name="biitops"></a>BiitOps
+La extensión de los cambios de BiitOps proporciona seguimiento de cambios para la configuración de hardware, software y configuración en las máquinas físicas y virtuales de Windows Server. El BiitOps cambios extensión se mostrará con precisión cuáles son las novedades, lo que ha cambiado y qué se ha eliminado en un único panel-de-vidrio para ayudar a realizar un seguimiento de problemas relacionados con la compatibilidad, confiabilidad y seguridad. [Más información sobre la extensión de los cambios de BiitOps](case-studies/biitops.md).
+
+![Extensión BiitOps](../media/extensibility-overview/biitops-1.png)
+
 ### <a name="dataon"></a>DataON
 
-Extensión de datos deben ofrece supervisión, administración y to-end visión general de almacenamiento y la infraestructura de sistemas hiperconvergidos del datos basada en Windows Server. La extensión debe aporta un valor único, como los informes de datos históricos, asignación de disco, las alertas del sistema y servicio local llamada similar a SAN, como complemento para el servidor de Windows Admin Center y capacidades de administración de infraestructuras hiperconvergidas, a través de una conexión directa experiencia unificada. [Obtén más información acerca de la extensión DataON MUST y su experiencia de desarrollo](case-studies/dataon.md).
+La extensión de datos debe ofrece supervisión, administración y insight to-end en infraestructuras hiperconvergidas de datos y sistemas de almacenamiento basados en Windows Server. La extensión debe aporta un valor único, como los informes de datos históricos, asignación de disco, las alertas del sistema y servicio local llamada similar a SAN, como complemento para el servidor de Windows Admin Center y capacidades de administración de infraestructuras hiperconvergidas, a través de una conexión directa experiencia unificada. [Obtén más información acerca de la extensión DataON MUST y su experiencia de desarrollo](case-studies/dataon.md).
 
 ![Extensión DataON MUST](../media/extensibility-overview/dataon-must-extension.png)
 
@@ -65,7 +70,7 @@ Fujitsu ServerView estado y mantenimiento de RAID extensiones para Windows Admin
 
 ### <a name="lenovo"></a>Lenovo
 
-Extensión de XClarity integrador de Lenovo lleva la administración de hardware al siguiente nivel al integrar sin problemas en varias experiencias de Windows Admin Center. La solución de integración de XClarity proporciona una visión general de todos los servidores de Lenovo y extensiones de herramientas diferentes proporcionan los detalles de hardware si está conectado a un solo servidor, clúster de conmutación por error o un clúster hiperconvergido. [Más información sobre la extensión de integración de Lenovo XClarity](case-studies/lenovo.md).
+La extensión de integración de Lenovo XClarity lleva la administración de hardware al siguiente nivel al integrar sin problemas en varias experiencias de Windows Admin Center. La solución de integración de XClarity proporciona una visión general de todos los servidores de Lenovo y extensiones de herramientas diferentes proporcionan los detalles de hardware si está conectado a un solo servidor, clúster de conmutación por error o un clúster hiperconvergido. [Más información sobre la extensión de integración de Lenovo XClarity](case-studies/lenovo.md).
 
 ![Extensión de Lenovo](../media/extensibility-overview/lenovo-extension.png)
 
@@ -74,6 +79,12 @@ Extensión de XClarity integrador de Lenovo lleva la administración de hardware
 Almacenamiento puro proporciona enterprise, soluciones de almacenamiento de datos de memoria flash que entregar arquitectura centradas en datos para acelerar su negocio para una ventaja competitiva. La extensión de almacenamiento puro para Windows Admin Center proporciona una vista de panel único en productos FlashArray puro y permite a los usuarios realizar tareas de supervisión, ver las métricas de rendimiento en tiempo real y administrar volúmenes de almacenamiento y los iniciadores a través de una interfaz de usuario único experiencia. [Más información sobre las extensiones del puro y su experiencia de desarrollo](case-studies/purestorage.md).
 
 ![Extensión de almacenamiento puro](../media/extensibility-overview/purestorage-extension.png)
+
+### <a name="qct"></a>QCT
+
+La extensión QCT Management Suite complementa Windows Admin Center, ya que proporciona administración y supervisión de servidor físico de QCT Azure Stack HCI sistemas certificados. La extensión QCT Management Suite muestra información de hardware de servidor y proporciona un asistente intuitivo de interfaz de usuario para ayudar a reemplazar físico discos eficiente, herramientas de registro de eventos de hardware y S.M.A.R.T en función de administración de discos predictivo. [Más información sobre la extensión QCT Management Suite](case-studies/qct.md).
+
+![Extensión QCT](../media/extensibility-overview/qct-extension.png)
 
 ### <a name="squared-up"></a>Squared Up
 

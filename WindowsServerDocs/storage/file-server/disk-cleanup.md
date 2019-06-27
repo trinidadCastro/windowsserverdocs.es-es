@@ -8,12 +8,12 @@ ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: b479697366239144e5ca9d3486b84191eb51dc4d
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: fbec7cd2b8312f03998cfb27b739d0866d3a47c5
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67301617"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407665"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>Mediante el Liberador de espacio en disco en Windows Server
 
@@ -23,7 +23,7 @@ La herramienta de limpieza de disco borra los archivos innecesarios en un entorn
 
 Para iniciar el Liberador de espacio en disco, ejecute el comando Cleanmgr.exe o seleccione **iniciar**, seleccione **herramientas administrativas de Windows**y, a continuación, seleccione **Liberador de espacio en disco**.
 
-También puede ejecutar el Liberador de espacio en disco mediante el uso de la [cleanmgr comando Windows](../../administration/windows-commands/clean-mgr.md) y usar las opciones de línea de comandos para especificar que determinados archivos limpia Liberador de espacio en disco.
+También puede ejecutar el Liberador de espacio en disco mediante el uso de la [cleanmgr comando Windows](../../administration/windows-commands/cleanmgr.md) y usar las opciones de línea de comandos para especificar que determinados archivos limpia Liberador de espacio en disco.
 
 ## <a name="enable-disk-cleanup-on-an-earlier-version-of-windows-server-by-installing-the-desktop-experience"></a>Habilitar el Liberador de espacio en disco en una versión anterior de Windows Server mediante la instalación de la experiencia de escritorio
 
@@ -78,4 +78,4 @@ Para que el botón de liberar espacio en disco aparezca en el cuadro de diálogo
 
 [Libere espacio en disco en Windows 10](https://support.microsoft.com/en-us/help/12425/windows-10-free-up-drive-space)
 
-[cleanmgr](../../administration/windows-commands/clean-mgr.md)
+[cleanmgr](../../administration/windows-commands/cleanmgr.md)

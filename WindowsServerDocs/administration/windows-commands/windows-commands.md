@@ -1,24 +1,20 @@
 ---
 title: Comandos de Windows
 description: Comandos de Windows
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
 ms.technology: manage-windows-commands
-ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: c703d07c-8227-4e86-94a6-8ef390f94cdc
-author: coreyp-at-msft
-ms.author: coreyp
+author: jasongerend
+ms.author: jgerend
 manager: dongill
-ms.date: 05/22/2018
+ms.date: 06/26/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 861c8f35cf57fc7c8d03914dba2d971d50b66fc5
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: d0cf58ea8d37efccf80ce262b64e604218bd8d0b
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298175"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407658"
 ---
 # <a name="windows-commands"></a>Comandos de Windows
 
@@ -54,7 +50,8 @@ Para obtener información acerca de un comando específico, en el siguiente men�
 [X](#x) | Y | Z
 
 ## <a name="prerequisites"></a>Requisitos previos
-La información contenida en este PDF se aplica a:
+
+La información contenida en este tema se aplica a:
 
 -   Windows Server 2019
 -   Windows Server (Canal semianual)
@@ -67,6 +64,7 @@ La información contenida en este PDF se aplica a:
 -   Windows 8.1
 
 ### <a name="command-shell-overview"></a>Introducción al shell de comandos
+
 El shell de comandos fue el primer shell integrado en Windows para automatizar las tareas rutinarias, como administración de cuentas de usuario o por la noche copias de seguridad, con los archivos por lotes (.bat). Con Windows Script Host podría ejecutar secuencias de comandos más complejas en el shell de comandos. Para obtener más información, consulte [cscript](cscript.md) o [wscript](wscript.md). Puede realizar operaciones de forma más eficaz mediante el uso de secuencias de comandos que si lo hace mediante el uso de la interfaz de usuario. Las secuencias de comandos aceptan todos los comandos que están disponibles en la línea de comandos.
 
 Windows tiene dos shells de comandos: El shell de comandos y [PowerShell](https://docs.microsoft.com/powershell/scripting/powershell-scripting?view=powershell-6). Cada depósito es un programa de software que proporciona comunicación directa entre usted y el sistema operativo o aplicación, que proporciona un entorno para automatizar las operaciones de TI.
@@ -88,6 +86,7 @@ Para más sólida y actualizada Windows automation, se recomienda usar PowerShel
 > Para establecer el **reg_DWOrd** valor, use el valor hexadecimal de un carácter de control para una función determinada (por ejemplo, **0 9** pestaña y **0 08** es retroceso). Configuración especificada por el usuario tiene prioridad sobre la configuración del equipo y las opciones de línea de comandos tienen prioridad sobre la configuración del registro.
 
 ## <a name="command-line-reference-a-z"></a>Referencia de línea de comandos a la Z
+
 Para obtener información sobre un comando de Windows específico, en el siguiente menú de la a Z, haga clic en la letra que empieza el comando y, a continuación, haga clic en el nombre del comando.
 
 [UN](#a) |
@@ -225,7 +224,7 @@ Para obtener información sobre un comando de Windows específico, en el siguien
 - [chkntfs](chkntfs.md)
 - [choice](choice.md)
 - [cipher](cipher.md)
-- [cleanmgr](clean-mgr.md)
+- [cleanmgr](cleanmgr.md)
 - [clip](clip.md)
 - [cls](cls.md)
 - [Cmd](Cmd.md)

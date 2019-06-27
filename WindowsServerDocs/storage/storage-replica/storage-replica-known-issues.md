@@ -6,18 +6,18 @@ ms.author: nedpyle
 ms.technology: storage-replica
 ms.topic: get-started-article
 author: nedpyle
-ms.date: 04/26/2019
+ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: da0a7b309bd671b8dfde2dab7d1736ed0d2f722d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7659446f57aaad3827cc722c735a31a5194f30e2
+ms.sourcegitcommit: 545dcfc23a81943e129565d0ad188263092d85f6
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447564"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67407629"
 ---
 # <a name="known-issues-with-storage-replica"></a>Problemas conocidos de Réplica de almacenamiento
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 En este tema se describe problemas conocidos de réplica de almacenamiento en Windows Server.
 
@@ -29,34 +29,36 @@ Para solucionar el problema, debe borrar la partición oculta de Réplica de alm
 
 -   Para quitar todas las ranuras huérfanas de bases de datos de partición de Réplica de almacenamiento y volver a montar todas las particiones, use el parámetro `-AllPartitions` como sigue:  
 
-    ```  
+    ```PowerShell
     Clear-SRMetadata -AllPartitions  
     ```  
 
 -   Para quitar todos los datos de registro huérfanos de Réplica de almacenamiento, utilice el parámetro `-AllLogs` como sigue:  
 
-    ```  
+    ```PowerShell
     Clear-SRMetadata -AllLogs  
     ```  
 
 -   Para quitar todos los datos de configuración huérfanos del clúster de conmutación por error, utilice el parámetro `-AllConfiguration` como sigue:  
 
-    ```  
+    ```PowerShell
     Clear-SRMetadata -AllConfiguration  
     ```  
 
 -   Para quitar los metadatos individuales del grupo de replicación, utilice el parámetro `-Name` y especifique un grupo de replicación como sigue:  
 
-    ```  
+    ```PowerShell
     Clear-SRMetadata -Name RG01 -Logs -Partition  
     ```  
 
 Es posible que el servidor tenga que reiniciarse después de limpiar la base de datos de la partición; puede obviar esto temporalmente con `-NoRestart`, pero no debe omitir el reinicio del servidor si lo solicita el cmdlet. Este cmdlet no elimina los volúmenes de datos ni los datos contenidos dentro de esos volúmenes.  
 
-## <a name="during-initial-sync-see-event-log-4004-warnings"></a>Durante la sincronización inicial, consulte las advertencias 4004 del registro de eventos.  
+## <a name="during-initial-sync-see-event-log-4004-warnings"></a>Durante la sincronización inicial, consulte las advertencias 4004 del registro de eventos.
+
 En Windows Server 2016, al configurar la replicación, es posible que tanto el servidor de origen como el de destino muestren cada uno varias advertencias 4004 del registro de eventos **StorageReplica\Admin** durante la sincronización inicial, con un estado de "No hay recursos de sistema suficientes para completar la llamada a la API". Es probable que vea también errores 5014. Estos indican que los servidores no tienen suficiente memoria disponible (RAM) para realizar la sincronización inicial y ejecutar cargas de trabajo. Agregue RAM o reduzca la cantidad de RAM usada en características y aplicaciones que no sean de Réplica de almacenamiento.  
 
-## <a name="when-using-guest-clusters-with-shared-vhdx-and-a-host-without-a-csv-virtual-machines-stop-responding-after-configuring-replication"></a>Al usar clústeres invitados con VHDX compartidos y un host sin CSV, las máquinas virtuales dejan de responder tras configurar la replicación.  
+## <a name="when-using-guest-clusters-with-shared-vhdx-and-a-host-without-a-csv-virtual-machines-stop-responding-after-configuring-replication"></a>Al usar clústeres invitados con VHDX compartidos y un host sin CSV, las máquinas virtuales dejan de responder tras configurar la replicación.
+
 En Windows Server 2016 , al usar clústeres invitados de Hyper-V para fines de prueba o demostración de Réplica de almacenamiento, y con VHDX compartido como almacenamiento de clúster invitado, las máquinas virtuales dejan de responder después de configurar la replicación. Si reinicia el host de Hyper-V, las máquinas virtuales empiezan a responder, pero la configuración de replicación no se completará y no se producirá ninguna replicación.  
 
 Este comportamiento se produce cuando se usa **fltmc.exe attach svhdxflt** para omitir el requisito para el host de Hyper-V que ejecuta un CSV. El uso de este comando no se admite y está destinado únicamente a fines de prueba y demostración.  
@@ -67,7 +69,8 @@ La causa de la ralentización es un problema de interoperabilidad de diseño ent
 SC config storqosflt start= disabled  
 ```  
 
-## <a name="cannot-configure-replication-when-using-new-volume-and-differing-storage"></a>No se puede configurar la replicación al usar New-Volume y un almacenamiento diferente.  
+## <a name="cannot-configure-replication-when-using-new-volume-and-differing-storage"></a>No se puede configurar la replicación al usar New-Volume y un almacenamiento diferente.
+
 Cuando se usa el cmdlet `New-Volume` con diferentes conjuntos de almacenamiento en el servidor de origen y de destino, como dos SAN diferentes o dos JBOD con discos diferentes, es posible que no pueda configurar posteriormente la replicación mediante `New-SRPartnership`. El error que aparece puede incluir:  
 
     Data partition sizes are different in those two groups  
@@ -113,6 +116,7 @@ Este cmdlet tiene limitado el informe de errores en Windows Server 2016 y devolv
 * El volumen de origen o de destino especificado es un disco local en un nodo de clúster, no discos agrupados.  
 
 ## <a name="configuring-new-storage-replica-partnership-returns-an-error---failed-to-provision-partition"></a>La configuración de nueva asociación de Réplica de almacenamiento devuelve un error que especifica que no se pudo aprovisionar la partición.
+
 Al intentar crear una nueva asociación de replicación con `New-SRPartnership`, recibe el error siguiente:
 
     New-SRPartnership : Unable to create replication group test01, detailed reason: Failed to provision partition ed0dc93f-107c-4ab4-a785-afd687d3e734.
@@ -124,6 +128,7 @@ Al intentar crear una nueva asociación de replicación con `New-SRPartnership`,
 Esto se produce al seleccionar un volumen de datos que se encuentra en la misma partición que la unidad del sistema (es decir, la unidad **C:** con su carpeta de Windows). Por ejemplo, en una unidad que contiene los volúmenes **C:** y **D:** creados desde la misma partición. Esto no se admite en Réplica de almacenamiento; debe elegir un volumen diferente para replicar.
 
 ## <a name="attempting-to-grow-a-replicated-volume-fails-due-to-missing-update"></a>No se puede ampliar un volumen replicado porque falta una actualización
+
 Cuando intenta aumentar o extender un volumen replicado, recibe el error siguiente:
 
     PS C:\> Resize-Partition -DriveLetter d -Size 44GB
@@ -144,6 +149,7 @@ Esto ocurre incluso si habilitas correctamente el cambio de tamaño de volumen e
 Este problema se corrigió en la actualización acumulativa para Windows 10, versión 1607 (actualización de aniversario) y Windows Server 2016: 9 de diciembre de 2016 (KB3201845). 
 
 ## <a name="attempting-to-grow-a-replicated-volume-fails-due-to-missing-step"></a>No se puede ampliar un volumen replicado porque falta un paso
+
 Si intentas cambiar el tamaño de un volumen replicado en el servidor de origen sin configurar antes `-AllowResizeVolume $TRUE`, recibirás los siguientes errores:
 
     PS C:\> Resize-Partition -DriveLetter I -Size 8GB
@@ -176,6 +182,7 @@ Disk Management Snap-in Error:
 After resizing the volume, remember to disable resizing with `Set-SRGroup -Name rg01 -AllowVolumeResize $FALSE`. This parameter prevents admins from attempting to resize volumes prior to ensuring that there is sufficient space on the destination volume, typically because they were unaware of Storage Replica's presence. 
 
 ## Attempting to move a PDR resource between sites on an asynchronous stretch cluster fails
+
 When attempting to move a physical disk resource-attached role - such as a file server for general use - in order to move the associated storage in an asynchronous stretch cluster, you receive an error.
 
 If using the Failover Cluster Manager snap-in:
@@ -202,7 +209,8 @@ This occurs due to a by-design behavior in Windows Server 2016. Use `Set-SRPartn
 
 This behavior has been changed in Windows Server, version 1709 to allow manual and automated failovers with asynchronous replication, based on customer feedback.
 
-## Attempting to add disks to a two-node asymmetric cluster returns "No disks suitable for cluster disks found" 
+## Attempting to add disks to a two-node asymmetric cluster returns "No disks suitable for cluster disks found"
+
 When attempting to provision a cluster with only two nodes, prior to adding Storage Replica stretch replication, you attempt to add the disks in the second site to the Available Disks. You receive the following error:
 
     "No disks suitable for cluster disks found. For diagnostic information about disks available to the cluster, use the Validate a Configuration Wizard to run Storage tests." 
@@ -216,6 +224,7 @@ To add the storage, you can run the following command on the node in the second 
 This will not work with node local storage. You can use Storage Replica to replicate a stretch cluster between two total nodes, **each one using its own set of shared storage.** 
 
 ## The SMB Bandwidth limiter fails to throttle Storage Replica bandwidth
+
 When specifying a bandwidth limit to Storage Replica, the limit is ignored and full bandwidth used. For example:
 
 `Set-SmbBandwidthLimit  -Category StorageReplication -BytesPerSecond 32MB`
@@ -223,6 +232,7 @@ When specifying a bandwidth limit to Storage Replica, the limit is ignored and f
 This issue occurs because of an interoperability issue between Storage Replica and SMB. This issue was first fixed in the July 2017 Cumulative Update of Windows Server 2016 and in Windows Server, version 1709.
 
 ## Event 1241 warning repeated during initial sync
+
 When specifying a replication partnership is asynchronous, the source computer repeatedly logs warning event 1241 in the Storage Replica Admin channel. For example:
 
     Log Name:      Microsoft-Windows-StorageReplica/Admin
@@ -255,6 +265,7 @@ The asynchronous destination is currently disconnected. The RPO may become avail
 This is expected behavior during initial sync and can safely be ignored. This behavior may change in a later release. If you see this behavior during ongoing asynchronous replication, investigate the partnership to determine why replication is delayed beyond your configured RPO (30 seconds, by default).
 
 ## Event 4004 warning repeated after rebooting a replicated node
+
 Under rare and usually unreproducable circumstances, rebooting a server that is in a partnership leads to replication failing and the rebooted node logging warning event 4004 with an access denied error.
 
     Log Name:      Microsoft-Windows-StorageReplica/Admin
@@ -284,6 +295,7 @@ Under rare and usually unreproducable circumstances, rebooting a server that is 
 Note the `Status: "{Access Denied}"` and the message `A process has requested access to an object, but has not been granted those access rights.` This is a known issue within Storage Replica and was fixed in Quality Update September 12, 2017—KB4038782 (OS Build 14393.1715) https://support.microsoft.com/help/4038782/windows-10-update-kb4038782 
 
 ## Error "Failed to bring the resource 'Cluster Disk x' online." with a stretch cluster
+
 When attempting to bring a cluster disk online after a successful failover, where you are attempting to make the original source site primary again, you receive an error in Failover Cluster Manager. For example:
 
     Error
@@ -356,13 +368,15 @@ This behavior is by design. This not a volume, but a partition. Storage Replica 
 To view details, use the DISKPART tool or Get-Partition cmdlet. These partitions will have a GPT Type of `558d43c5-a1ac-43c0-aac8-d1472b2923d1`.
 
 ## A Storage Replica node hangs when creating snapshots
+
 When creating a VSS snapshot (through backup, VSSADMIN, etc) a Storage Replica node hangs, and you must force a restart of the node to recover. There is no error, just a hard hang of the server.
 
 This issue occurs when you create a VSS snapshot of the log volume. The underlying cause is a legacy design aspect of VSS, not Storage Replica. The resulting behavior when you snapshot the Storage Replica log volume is a VSS I/O queing mechanism deadlocks the server.
 
 To prevent this behavior, do not snapshot Storage Replica log volumes. There is no need to snapshot Storage Replica log volumes, as these logs cannot be restored. Furthermore, the log volume should never contain any other workloads, so no snapshot is needed in general.
 
-## High IO latency increase when using Storage Spaces Direct with Storage Replica  
+## High IO latency increase when using Storage Spaces Direct with Storage Replica
+
 When using Storage Spaces Direct with an NVME or SSD cache, you see a greater than expected increase in latency when configuring Storage Replica replication between Storage Spaces Direct clusters. The change in latency is proportionally much higher than you see when using NVME and SSD in a performance + capacity configuration and no HDD tier nor capacity tier.
 
 This issue occurs due to architectural limitations within Storage Replica's log mechanism combined with the extremely low latency of NVME when compared to slower media. When using the Storage Spaces Direct cache, all I/O of Storage Replica logs, along with all recent read/write IO of applications, will occur in the cache and never on the performance or capacity tiers. This means that all Storage Replica activity happens on the same speed media - this configuration is supported but not recommended (see https://aka.ms/srfaq for log recommendations). 
