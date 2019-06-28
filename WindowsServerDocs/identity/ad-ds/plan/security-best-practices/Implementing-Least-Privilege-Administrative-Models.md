@@ -9,12 +9,12 @@ ms.date: 08/09/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 609ea0bd796a4d3696e14c7499be047ebdd83183
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 01113b957c6b0be4e18955b5ddc78be3f463abe4
+ms.sourcegitcommit: 236a8ae1da12cea1acfff3f306246db0f022354d
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868856"
+ms.lasthandoff: 06/27/2019
+ms.locfileid: "67412209"
 ---
 # <a name="implementing-least-privilege-administrative-models"></a>Implementación de modelos administrativos de menor privilegio
 
@@ -37,7 +37,7 @@ Los principios descritos en los extractos anteriores no han cambiado, sin embarg
 
 Por desgracia, la ruta de acceso de menor resistencia en muchos entornos ha demostrado para ser el uso excesivo de las cuentas con privilegio amplia y profunda. Privilegios amplios son derechos y permisos que permiten una cuenta realizar actividades específicas a través de una sección transversal de gran tamaño del entorno, por ejemplo, personal del departamento puede tener permisos de permitirles restablecer las contraseñas en varias cuentas de usuario.  
 
-Privilegios profundidad son eficaces privilegios que se aplican a un segmento estrecho de rellenado, este tipo que proporciona un ingeniero de derechos de administrador en un servidor para que puedan realizar reparaciones. Privilegio amplio ni privilegios profundo están necesariamente peligroso, pero cuando muchas cuentas en el dominio permanentemente se conceden privilegios muy extenso y, si solo una de las cuentas se pone en peligro, rápidamente se puede usar para volver a configurar el entorno para el efectos del atacante o incluso para destruir grandes segmentos de la infraestructura.  
+Privilegios profundos son privilegios eficaces que se aplican a un segmento de la población, por ejemplo, dando a un ingeniero de derechos de administrador en un servidor para que puedan realizar reparaciones estrecho. Privilegio amplio ni privilegios profundo están necesariamente peligroso, pero cuando muchas cuentas en el dominio permanentemente se conceden privilegios muy extenso y, si solo una de las cuentas se pone en peligro, rápidamente se puede usar para volver a configurar el entorno para el efectos del atacante o incluso para destruir grandes segmentos de la infraestructura.  
 
 Los ataques PASS-the-hash, que son un tipo de ataque de robo de credenciales, son omnipresentes porque las herramientas para llevarlas a cabo están libremente disponible y es fácil de usar, y dado que muchos entornos son vulnerables a los ataques. Los ataques PASS-the-hash, sin embargo, no son el problema real. El quid del problema es doble:  
 
