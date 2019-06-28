@@ -78,7 +78,7 @@ En los siguientes temas se abordan las características de transmisión por secu
 |Calidad de transmisión por secuencias de vídeo|La flecha desplegable le permite elegir la calidad de transmisión por secuencias de los vídeos que se reproducen desde el servidor.|  
 |Biblioteca multimedia|Muestra el nombre de la biblioteca multimedia. El nombre predeterminado de la biblioteca se denomina **Biblioteca multimedia digital**, que se crea al activar la transmisión por secuencias de multimedia. Para cambiar el nombre de la biblioteca multimedia, vea el tema sobre cómo [cambiar el nombre de la biblioteca multimedia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_8). Puede hacer clic en **Personalizar** para personalizar las carpetas compartidas en la biblioteca multimedia.|  
   
- Para obtener más información, consulte [Allow or restrict access to a media library on the server](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6) y [Sharing copy-protected media](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1.5).  
+ Para obtener más información, consulte [permitir o restringir el acceso a una biblioteca multimedia en el servidor](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_6) y [compartir medios protegidos contra copia](Manage-Digital-Media-in-Windows-Server-Essentials.md#BKMK_1.5).  
   
 ##  <a name="BKMK_3"></a> Cómo funciona la transmisión por secuencias  
  La característica de Windows Server Essentials de streaming multimedia permite que los equipos en red y algunos dispositivos de medios digitales en red para reproducir archivos multimedia digitales que se almacenan en el servidor.  
