@@ -8,12 +8,12 @@ ms.date: 05/08/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 2a5a7a6bd6313f7a4eadd827e3d754c1e467c3bc
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
+ms.openlocfilehash: 9bfa4e7d4f8777f8fef299cf3991238e31564ace
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63745421"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469594"
 ---
 # <a name="configuring-systems-for-high-accuracy"></a>Configuración de sistemas de alta precisión
 >Se aplica a: Windows Server 2016 y Windows 10 versión 1607 o posterior
@@ -91,7 +91,6 @@ Por ejemplo: Considere la posibilidad de una jerarquía de sincronización de ho
 - Servidor de tiempo A y el origen
 
 Esta medida se puede obtener mediante la herramienta w32tm.exe de bandeja de entrada.  Para ello:
-<!-- Use PowerShell to import the CSV then average the RTT Column -->
 
 1. Realizar el cálculo desde el servidor de destino y la hora B.
     

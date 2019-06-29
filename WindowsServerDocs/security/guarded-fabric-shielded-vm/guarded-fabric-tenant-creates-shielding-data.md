@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 3c36eff8aabd1fa1c6456dce1d08ebe504102e8c
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d1d269ecdbfd4803c51da4817b62caf01d2091ae
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284166"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469622"
 ---
 # <a name="shielded-vms-for-tenants---creating-shielding-data-to-define-a-shielded-vm"></a>Máquinas virtuales blindadas para inquilinos - creación de los datos de blindaje para definir una máquina virtual blindada
 
@@ -43,8 +43,6 @@ A continuación, puede crear el archivo de datos de blindaje:
 Dado que los inquilinos solo pueden conectarse a sus máquinas virtuales blindadas con conexión a Escritorio remoto u otras herramientas de administración remota, es importante asegurarse de que los inquilinos pueden comprobar que se está conectando al extremo derecho (es decir, no hay un tipo "man in the middle" interceptar la conexión).
 
 Es una forma de verificar que se está conectando al servidor adecuado instalar y configurar un certificado para los servicios de escritorio remoto presentar cuando se inicia una conexión. El equipo cliente conectarse al servidor comprobará si confía en el certificado y mostrará una advertencia si no es así. Por lo general, para asegurarse de que confía en el cliente que se conecta el certificado, se emiten certificados RDP de PKI del inquilino. Para obtener más información acerca de [mediante certificados en los servicios de escritorio remoto](https://technet.microsoft.com/library/dn781533.aspx) puede encontrarse en TechNet.
-
-<!-- The previous link comes from Windows 2012 R2 content, but as of Sept 2016, there isn't a more recent link that covers the same information. -->
 
 > [!NOTE]
 > Al seleccionar un certificado RDP para incluir en el archivo de datos de blindaje, asegúrese de usar un certificado comodín. Un archivo de datos de blindaje se puede usar para crear un número ilimitado de máquinas virtuales. Puesto que cada máquina virtual compartirán el mismo certificado, un certificado comodín garantiza que el certificado sea válido, independientemente del nombre de host de la máquina virtual.
@@ -142,8 +140,6 @@ Usted o su proveedor de servicio de hospedaje puede obtener los metadatos del gu
         $relecloudmetadata = Get-SCGuardianConfiguration
 
         $relecloudmetadata.InnerXml | Out-File .\RelecloudGuardian.xml -Encoding UTF8
-
-<!-- Note that the VMM PowerShell cmdlets aren't Windows PowerShell, so "VMM PowerShell" is the correct terminology for them. -->
 
 Obtener archivos de metadatos de la protección para cada tejido protegido que desea autorizar a las máquinas virtuales blindadas para ejecutar en antes de continuar.
 

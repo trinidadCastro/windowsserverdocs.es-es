@@ -16,12 +16,12 @@ ms.date: 10/28/2018
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 588bc3f87c78feccac47d18d31d37be3b1a02d2f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f075f91e97f806555507bfc0e0c5f3d1589a71e6
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835106"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469650"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Implementación de servicios de federación de Active Directory en Azure
 AD FS proporciona capacidades de inicio de sesión único (SSO) Web y de federación de identidades simplificada y protegida. Federación con Azure AD u Office 365 permite a los usuarios autenticarse mediante las credenciales de forma local y tener acceso a todos los recursos de nube. Como resultado, es importante tener una infraestructura de AD FS de alta disponibilidad para garantizar el acceso a recursos locales y en la nube. Implementación de AD FS en Azure puede ayudar a lograr la alta disponibilidad necesaria con el mínimo esfuerzo.
@@ -123,7 +123,7 @@ Crear los siguientes conjuntos de disponibilidad
 ### <a name="4-deploy-virtual-machines"></a>4. Implementar máquinas virtuales
 El siguiente paso es implementar las máquinas virtuales que hospedarán los distintos roles en su infraestructura. Se recomienda un mínimo de dos máquinas en cada conjunto de disponibilidad. Cree cuatro máquinas virtuales para la implementación básica.
 
-| Máquina | Rol | Subred | Conjunto de disponibilidad | Cuenta de almacenamiento | Dirección IP |
+| Machine | Rol | Subred | Conjunto de disponibilidad | Cuenta de almacenamiento | Dirección IP |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | contosodc1 |DC/ADFS |INT |contosodcset |contososac1 |Estático |
 | contosodc2 |DC/ADFS |INT |contosodcset |contososac2 |Estático |
@@ -277,11 +277,6 @@ En general, necesita las siguientes reglas para proteger eficazmente la subred i
 
 ![Reglas de acceso INT (entrantes)](./media/how-to-connect-fed-azure-adfs/nsg_int.png)
 
-<!--
-[comment]: <> (![INT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsgintinbound.png))
-[comment]: <> (![INT access rules (outbound)](./media/how-to-connect-fed-azure-adfs/nsgintoutbound.png))
--->
-
 **9.2. Protección de la subred DMZ**
 
 | Regla | Descripción | Flujo |
@@ -290,11 +285,6 @@ En general, necesita las siguientes reglas para proteger eficazmente la subred i
 | DenyInternetOutbound |Se bloquea nada, excepto HTTPS a internet |Saliente |
 
 ![Reglas de acceso EXT (entrantes)](./media/how-to-connect-fed-azure-adfs/nsg_dmz.png)
-
-<!--
-[comment]: <> (![EXT access rules (inbound)](./media/how-to-connect-fed-azure-adfs/nsgdmzinbound.png))
-[comment]: <> (![EXT access rules (outbound)](./media/how-to-connect-fed-azure-adfs/nsgdmzoutbound.png))
--->
 
 > [!NOTE]
 > Si el usuario del cliente un certificado de autenticación (autenticación de clientTLS mediante X509 certificados de usuario) se requiere, a continuación, AD FS requiere TCP habilitarse el puerto 49443 para el acceso de entrada.

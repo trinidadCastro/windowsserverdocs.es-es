@@ -8,12 +8,12 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 954393126333bf04d2aa46a01089d88bc91151cb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8098edd1eea475cea1face5541459b262364a07b
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447321"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469550"
 ---
 # <a name="verify-the-hgs-configuration"></a>Verify the HGS configuration (Comprobar la configuración HGS)
 
@@ -29,10 +29,6 @@ Get-HgsTrace -RunDiagnostics
 Dado que la configuración de HGS todavía no contiene información acerca de los hosts que se incluirán en el tejido protegido, los diagnósticos indicará que no hay hosts podrán dar fe correctamente todavía. Pasar por alto este resultado y revise el resto de información proporcionada por los diagnósticos.
 
 [!INCLUDE [Guarded fabric diagnostics tool](../../../includes/guarded-fabric-diagnostics-tool.md)] 
-
-<!-- When a link is available for an updated troubleshooting guide, add a sentence like the following and create a link to the troubleshooting guide:
-If failures did occur, please review the remediation steps provided or see the Troubleshooting Guide.
--->
 
 Ejecute los diagnósticos en cada nodo del clúster de HGS.
 

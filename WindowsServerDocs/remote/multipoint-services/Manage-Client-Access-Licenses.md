@@ -13,19 +13,19 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: f5f78d3d2387d3b95177a6a8a40fb9b16d8ed8e2
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 42b943ed5e0066f1f810efaba9e65a529ac25f00
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446123"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469348"
 ---
 # <a name="manage-client-access-licenses"></a>Administrar licencias de acceso de cliente
 Todas las estaciones que se conecta a un sistema MultiPoint Services, incluido el equipo que ejecuta MultiPoint Services que se usa como estación, deben tener un escritorio remoto válida por usuario *licencia de acceso de cliente (CAL)* .
 
 Si usa en lugar de físicas estaciones de escritorios virtuales de estación, debe instalar una CAL para cada escritorio virtual de la estación.  
   
-1.  Adquirir una licencia de cliente para cada estación que esté conectado a su equipo de MultiPoint Services o el servidor. Para obtener más información acerca de cómo comprar CAL, consulte la documentación de licencias de escritorio remoto. <!--@Liza: add link to RDS licensing here-->
+1.  Adquirir una licencia de cliente para cada estación que esté conectado a su equipo de MultiPoint Services o el servidor. Para obtener más información acerca de cómo comprar CAL, consulte la documentación de licencias de escritorio remoto. 
 
 2.  Desde el **iniciar** pantalla, abra **MultiPoint Manager**.  
   

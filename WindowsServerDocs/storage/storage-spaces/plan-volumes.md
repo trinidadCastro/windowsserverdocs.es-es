@@ -7,14 +7,14 @@ ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 01/10/2019
+ms.date: 06/28/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: c68444be5662480293cee630970d5eb76b52268a
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: a04a362b65af8f184037d26728a1c147ca8ef948
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453190"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469672"
 ---
 # <a name="planning-volumes-in-storage-spaces-direct"></a>Planificar volúmenes en Espacios de almacenamiento directo
 
@@ -24,7 +24,7 @@ En este tema se proporcionan instrucciones para planificar los volúmenes Espaci
 
 ## <a name="review-what-are-volumes"></a>Revisión: ¿Cuáles son los volúmenes
 
-Los volúmenes son los almacenes de datos donde pones los archivos que necesitan tus cargas de trabajo, como los archivos VHD o VHDX para máquinas virtuales Hyper-V. Los volúmenes combinan las unidades en el grupo de almacenamiento para introducir las ventajas de tolerancia a errores, escalabilidad y rendimiento de Espacios de almacenamiento directo.
+Los volúmenes son donde colocar los archivos que necesitan sus cargas de trabajo, como VHD o VHDX para las máquinas virtuales de Hyper-V. Los volúmenes combinan las unidades en el grupo de almacenamiento para introducir las ventajas de tolerancia a errores, escalabilidad y rendimiento de Espacios de almacenamiento directo.
 
    >[!NOTE]
    > En toda la documentación de Espacios de almacenamiento directo, se usa el término "volumen" para hacer referencia conjuntamente al volumen y al disco virtual contenido, incluida la funcionalidad proporcionada por otras características integradas de Windows, como volúmenes compartidos de clúster (CSV) y ReFS. No es necesario comprender estas diferencias en el nivel de la implementación para planificar e implementar directa Espacios de almacenamiento directo correctamente.
@@ -51,23 +51,27 @@ Te recomendamos que uses el nuevo [Sistema de archivos resistente (ReFS)](../ref
 
 Si la carga de trabajo requiere una característica que ReFS no admite aún, puedes usar NTFS en su lugar.
 
-   >[!TIP]
+   > [!TIP]
    > En el mismo clúster pueden coexistir volúmenes con diferentes sistemas de archivos.
 
 ## <a name="choosing-the-resiliency-type"></a>Elegir el tipo de resistencia
 
 Los volúmenes en Espacios de almacenamiento directo proporcionan resistencia para proteger frente a problemas de hardware, como errores de servidor o unidades, y para permitir la disponibilidad continua a lo largo del mantenimiento de servidores, como las actualizaciones de software.
 
-   >[!NOTE]
+   > [!NOTE]
    > Qué tipos de resistencia puedes elegir es independiente de los tipos de unidades que tengas.
 
 ### <a name="with-two-servers"></a>Con dos servidores
 
-La única opción para clústeres con dos servidores es la creación de reflejos dobles. Esto mantiene dos copias de todos los datos, una copia en las unidades en cada servidor. Su eficiencia del almacenamiento es del 50 %: para escribir 1 TB de datos, se necesitan al menos 2 TB de capacidad de almacenamiento físico en el grupo de almacenamiento. La creación de reflejos dobles puede tolerar con seguridad un error de hardware (en la unidad o el servidor) a la vez.
+Con dos servidores en el clúster, puede usar la creación de reflejo bidireccional. Si está ejecutando Windows Server 2019, también puede usar la resistencia anidado.
+
+Creación de reflejo bidireccional mantiene dos copias de todos los datos, una copia de las unidades en cada servidor. Su eficiencia de almacenamiento es un 50%, para escribir 1 TB de datos, necesita al menos 2 TB de capacidad de almacenamiento físico en el grupo de almacenamiento. Creación de reflejo bidireccional segura puede tolerar un error de hardware a la vez (un servidor o unidad).
 
 ![two-way-mirror](media/plan-volumes/two-way-mirror.png)
 
-Si tienes más de dos servidores, te recomendamos usar uno de los siguientes tipos de resistencia en su lugar.
+Resistencia anidada (disponible solo en Windows Server 2019) ofrece resistencia de datos entre servidores con la creación de reflejo bidireccional y, a continuación, agrega resistencia dentro de un servidor con la creación de reflejo bidireccional o paridad acelerada reflejado. Anidamiento proporciona resistencia de datos, incluso cuando un servidor se está reiniciando o no está disponible. Su eficiencia de almacenamiento es 25% con la creación de reflejo de bidireccional anidados y aproximadamente 35-40% por motivos de paridad acelerada reflejado anidado. Resistencia anidado sin riesgos puede tolerar dos errores de hardware a la vez (dos unidades, o un servidor y una unidad en el servidor restante). Debido a esta resistencia de datos agregados, se recomienda usar la resistencia anidada en las implementaciones de producción de clústeres de dos servidores, si está ejecutando Windows Server 2019. Para obtener más información, consulte [Nested resistencia](nested-resiliency.md).
+
+![Paridad acelerada reflejado anidado](media/nested-resiliency/nested-mirror-accelerated-parity.png)
 
 ### <a name="with-three-servers"></a>Con tres servidores
 
@@ -77,16 +81,16 @@ Con tres servidores, debes usar la creación de reflejos triple para mejor toler
 
 ### <a name="with-four-or-more-servers"></a>Con cuatro servidores o más
 
-Con cuatro servidores o más, puedes elegir para cada volumen si vas a usar la creación de reflejos triple, paridad dual (a menudo llamada "codificación de borrado") o una combinación de las dos.
+Con cuatro o más servidores, se puede elegir para cada volumen si desea usar reflejo triple, paridad dual (a menudo denominada "codificación de borrado") o mezclar los dos con paridad acelerada reflejado.
 
-La paridad dual proporciona la misma tolerancia a errores que la creación de reflejos triple, pero con una mejor eficiencia de almacenamiento. Con cuatro servidores, su eficiencia del almacenamiento es del 50,0 %: para almacenar 2 TB de datos, se necesitan 4 TB de capacidad de almacenamiento físico en el grupo de almacenamiento. Esto aumenta la eficiencia del almacenamiento a un 66,7 % con siete servidores y continúa hasta una eficiencia de almacenamiento del 80,0 %. El inconveniente es que la codificación de paridad consume más recursos, lo que puede limitar su rendimiento.
+La paridad dual proporciona la misma tolerancia a errores que la creación de reflejos triple, pero con una mejor eficiencia de almacenamiento. Con cuatro servidores, su eficiencia de almacenamiento es 50.0%—to almacenar 2 TB de datos, necesita 4 TB de capacidad de almacenamiento físico en el grupo de almacenamiento. Esto aumenta la eficiencia del almacenamiento a un 66,7 % con siete servidores y continúa hasta una eficiencia de almacenamiento del 80,0 %. El inconveniente es que la codificación de paridad consume más recursos, lo que puede limitar su rendimiento.
 
 ![paridad doble](media/plan-volumes/dual-parity.png)
 
 Qué tipo de resistencia debes usar depende de las necesidades de la carga de trabajo. Esta es una tabla que resume qué cargas de trabajo son una buena opción para cada tipo de resistencia, así como la eficacia de almacenamiento y rendimiento de cada tipo de resistencia.
 
-| **Tipo de resistencia**| **Eficacia de capacidad**| **Velocidad**| **Cargas de trabajo**
-|--------------------|--------------------------------|--------------------------------|--------------------------
+| Tipo de resistencia | Eficacia de capacidad | Velocidad | Cargas de trabajo |
+| ------------------- | ----------------------  | --------- | ------------- |
 | **Reflejo**         | ![Que muestra la eficacia de almacenamiento 33%](media/plan-volumes/3-way-mirror-storage-efficiency.png)<br>Triple: 33% <br>Dos de forma reflejo: 50 %     |![Mostrando rendimiento 100%](media/plan-volumes/three-way-mirror-perf.png)<br> Mayor rendimiento  | Cargas de trabajo virtualizadas<br> Bases de datos<br>Otras cargas de trabajo de alto rendimiento |
 | **Paridad acelerada por reflejos** |![Eficacia de almacenamiento que muestra aproximadamente 50%](media/plan-volumes/mirror-accelerated-parity-storage-efficiency.png)<br> Depende de proporción de reflejo y paridad | ![Que se muestra aproximadamente el 20% de rendimiento](media/plan-volumes/mirror-accelerated-parity-perf.png)<br>Mucho más lento que reflejan, pero hasta dos veces tan rápido como paridad dual<br> Lo mejor para lecturas y escrituras secuenciales grandes | Archivado y copia de seguridad<br> Infraestructura de escritorio virtualizado     |
 | **Paridad dual**               | ![Eficacia de almacenamiento que se muestra aproximadamente el 80%](media/plan-volumes/dual-parity-storage-efficiency.png)<br>4 servidores: 50 % <br>16 servidores: hasta un 80% | ![Rendimiento que muestra aproximadamente 10%](media/plan-volumes/dual-parity-perf.png)<br>Uso de CPU en las escrituras & mayor latencia de E/S<br> Lo mejor para lecturas y escrituras secuenciales grandes | Archivado y copia de seguridad<br> Infraestructura de escritorio virtualizado  |
@@ -108,8 +112,8 @@ Las cargas de trabajo que escriben en fases grandes y secuenciales, como los des
 
 La eficiencia del almacenamiento resultante depende de las proporciones que elijas. Consulta [esta demostración](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s) para ver algunos ejemplos.
 
-   >[!TIP]
-   > Si observa una disminución repentina en el rendimiento de escritura mitad a través de injestion de datos, puede indicar que la parte de la réplica no es suficientemente grande o que acelerada reflejado paridad no es adecuado para su caso de uso. Por ejemplo, si escribir disminuciones de rendimiento de 400 MB/s a 40 MB/s, considere la posibilidad de expandir la parte reflejo o cambiar a triple.
+   > [!TIP]
+   > Si observa una disminución repentina en el rendimiento de escritura mitad a través de la ingesta de datos, puede indicar que la parte de la réplica no es suficientemente grande o que acelerada reflejado paridad no es adecuado para su caso de uso. Por ejemplo, si escribir disminuciones de rendimiento de 400 MB/s a 40 MB/s, considere la posibilidad de expandir la parte reflejo o cambiar a triple.
 
 ### <a name="about-deployments-with-nvme-ssd-and-hdd"></a>Acerca de las implementaciones con NVMe, SSD y HDD
 
@@ -117,7 +121,7 @@ En las implementaciones con dos tipos de unidades, las unidades más rápidas pr
 
 En las implementaciones con los tres tipos de unidad, únicamente las unidades más rápidas (NVMe) proporcionan almacenamiento en caché, lo que deja dos tipos de unidad (SSD y HDD) para proporcionar capacidad. Para cada volumen, puedes elegir si reside por completo en la capa SSD, por completo en la capa HDD o si abarca las dos.
 
-   >[!IMPORTANT]
+   > [!IMPORTANT]
    > Te recomendamos que uses la capa de SSD para colocar las cargas de trabajo más dependientes del rendimiento en todo flash.
 
 ## <a name="choosing-the-size-of-volumes"></a>Elegir el tamaño de los volúmenes
@@ -125,11 +129,11 @@ En las implementaciones con los tres tipos de unidad, únicamente las unidades m
 Le recomendamos que limite el tamaño de cada volumen para:
 
 | Windows Server 2016 | Windows Server 2019 |
-|---------------------|---------------------|
+| ------------------- | ------------------- |
 | Hasta 32 TB         | Hasta 64 TB         |
 
-   >[!TIP]
-   > Si usas una solución de copia de seguridad que se basa en el Servicio de instantáneas de volumen (VSS) y el proveedor de software Volsnap —como es común con las cargas de trabajo de servidores de archivos—, limitar el tamaño de los volúmenes a 10 TB mejorará el rendimiento y la confiabilidad. Las soluciones de copia de seguridad que usan la más reciente API RCT de Hyper-V o clonación de bloques de ReFS o las API nativas de copia de seguridad SQL tienen un buen rendimiento hasta 32 TB y más allá.
+   > [!TIP]
+   > Si usa una solución de copia de seguridad que se basa en el servicio de instantáneas de volumen (VSS) y el proveedor de software de Volsnap, como es habitual con cargas de trabajo de servidor de archivos: limitar el tamaño del volumen a 10 TB mejorará el rendimiento y confiabilidad. Las soluciones de copia de seguridad que usan la más reciente API RCT de Hyper-V o clonación de bloques de ReFS o las API nativas de copia de seguridad SQL tienen un buen rendimiento hasta 32 TB y más allá.
 
 ### <a name="footprint"></a>Superficie
 

@@ -8,18 +8,16 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 8e14cdeed435f23f28ca514e232fbcfa6220fc74
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 81e6ed7950fe13c5bed4a3f8850d64e7185b8ddd
+ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887726"
+ms.lasthandoff: 06/29/2019
+ms.locfileid: "67469636"
 ---
 # <a name="shielded-vms---preparing-a-vm-shielding-helper-vhd"></a>Máquinas virtuales blindadas: preparar una VHD de aplicación auxiliar de blindaje de VM
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
-
-<!-- This comment creates a break between the Applies To above and the Important note below. -->
 
 > [!IMPORTANT]
 > Antes de comenzar estos procedimientos, asegúrese de que ha instalado la actualización acumulativa más reciente para Windows Server 2016 o está usando la versión más reciente de Windows 10 [herramientas de administración remota del servidor](https://www.microsoft.com/en-us/download/details.aspx?id=45520). En caso contrario, los procedimientos no funcionará. 
@@ -64,4 +62,4 @@ En la consola VMM, abra el panel de configuración y, a continuación, **configu
 ## <a name="see-also"></a>Vea también
 
 - [Hospedaje de los pasos de configuración del proveedor de servicio para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-configuration-scenarios-for-shielded-vms-overview.md)
-- [Las máquinas virtuales blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
+- [VM blindadas y tejido protegido](guarded-fabric-and-shielded-vms-top-node.md)
