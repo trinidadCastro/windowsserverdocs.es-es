@@ -421,6 +421,7 @@
 #### [Planeación del acceso condicional basado en dispositivos a nivel local](ad-fs/deployment/Plan-Device-based-Conditional-Access-on-Premises.md)
 
 #### [Configuración de un entorno de laboratorio de AD FS](ad-fs/operations/Set-up-an-AD-FS-lab-environment.md)
+#### [Ajuste preciso de SQL y control de la latencia](ad-fs/operations/adfs-sql-latency.md)
 #### [Guía de tutorial: administración de riesgos con la autenticación multifactor adicional para aplicaciones confidenciales](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-additional-Multi-Factor-Authentication-for-Sensitive-Applications.md)
 #### [Guía de tutorial: administración de riesgos con control de acceso condicional](ad-fs/operations/Walkthrough-Guide--Manage-Risk-with-Conditional-Access-Control.md)
 #### [Tutorial: Workplace Join con un dispositivo Windows](ad-fs/operations/Walkthrough--Workplace-Join-with-a-Windows-Device.md)
