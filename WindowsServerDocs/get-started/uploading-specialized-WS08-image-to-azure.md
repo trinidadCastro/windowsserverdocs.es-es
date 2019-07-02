@@ -1,5 +1,5 @@
 ---
-title: Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure
+title: Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure
 description: Windows Server 2008 y 2008 R2 están acercándose al final de servicio. Aprende a subir y moverte a Azure, alojando Windows Server en la nube.
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
@@ -11,17 +11,17 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: 425197d3462762c60a7371fc6ca529ad1b70e7ef
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443373"
 ---
-# <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure 
+# <a name="upload-a-windows-server-20082008-r2-specialized-image-to-azure"></a>Cargar una imagen especializada de Windows Server 2008/2008 R2 en Azure 
 
 ![Banner presentando un tema de imagen de WS08](media/WS08-image-banner-large.png)
 
-Ahora puedes ejecutar máquinas VM de Windows Server 2008/2008 R2 en la nube con Azure 
+Ahora puedes ejecutar máquinas VM de Windows Server 2008/2008 R2 en la nube con Azure. 
 
 ## <a name="prep-the-windows-server-20082008-r2-specialized-image"></a>Preparar la imagen especializada de Windows Server 2008/2008 R2
 Antes de cargar imágenes, realiza los cambios siguientes:
@@ -39,12 +39,12 @@ Antes de cargar imágenes, realiza los cambios siguientes:
      ![Captura de pantalla de la pestaña Remoto en las propiedades del sistema.](media/2c_sysprops.png)
 
   4. Selecciona Permitir las conexiones desde equipos que ejecutan cualquier versión de Escritorio remoto (menos seguro).   
-  5. Haz clic en **Aplicar** y en **Aceptar**.
+  5. Haga clic en **Aplicar** y en **Aceptar**.
 - Configurar Firewall de Windows.   
    1. En el símbolo del sistema en modo Administrador, introduce “**wf.msc**” para ir a la configuración de Firewall de Windows y de seguridad avanzada.   
    2. Ordena los resultados por **Puertos** selecciona **puerto 3389**.   
-     ![Reglas de entrada de configuración de la captura de pantalla de Firewall de WIndows.](media/3b_inboundrules.png)   
-   3. Habilitar Escritorio remoto (TCP-IN) para los perfiles: **Dominio**, **privada**, y **pública** (mostrado anteriormente).
+     ![Captura de pantalla de reglas de entrada de la configuración del Firewall de Windows.](media/3b_inboundrules.png)   
+   3. Habilitar Escritorio remoto (TCP-IN) para los perfiles: **Dominio**, **Privado** y **Público** (como se muestra arriba).
 
 - Guarda toda la configuración y cierra la imagen.   
 - Si estás usando Hyper-V, asegúrate que el AVHD secundario esté combinado en el VHD para cambios persistentes.
@@ -55,8 +55,8 @@ Un error actual conocido provoca que la contraseña de administrador en la image
 2. Escribe **lusrmgr.msc**
 3. Selecciona **Usuarios** en Usuarios y grupos locales
 4. Haz clic con el botón derecho en **Administrador** y selecciona **Propiedades**.
-5. Seleccione **contraseña nunca expira** y seleccione **Aceptar**
-![captura de pantalla de las propiedades del administrador.](media/6_adminprops.png)
+5. Selecciona **la contraseña nunca expira** y después **Aceptar**
+![Captura de pantalla de propiedades de administrador.](media/6_adminprops.png)
 
 ## <a name="uploading-the-image-vhd"></a>Carga del VHD de la imagen
 Puedes usar el script posterior para cargar el VHD. Para poder hacerlo, necesitarás el archivo de configuración de publicación de tu cuenta de Azure. Obtén tu [archivo de configuración de Azure](https://azure.microsoft.com/downloads/).
@@ -95,7 +95,7 @@ En esta sección, implementarás la imagen VHD in Azure.
      a. Ve a Discos y haz clic en **Agregar**.  
      b. Introduce un nombre para el disco. Selecciona la suscripción que quieres usar, configura la región y elige el tipo de cuenta.   
      c. En Tipo de fuente, selecciona Almacenamiento. Explora la ubicación del VHD del blob creado usando el script.  
-     d. Seleccione el tipo de sistema operativo Windows y el tamaño (valor predeterminado: 1023).   
+     d. Selecciona el sistema operativo de tipo Windows y Tamaño (predeterminado: 1023).   
      e. Haga clic en **Crear**.   
 
 7.  Ve al disco creado y haz clic en **Crear VM**.   

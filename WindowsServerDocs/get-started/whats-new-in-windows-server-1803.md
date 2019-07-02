@@ -1,5 +1,5 @@
 ---
-title: Novedades de Windows Server, versión 1803
+title: Novedades de Windows Server, versión 1803
 description: ¿Cuáles son las nuevas características de proceso, identidad, administración, automatización, redes, seguridad y almacenamiento?
 ms.prod: windows-server-threshold
 ms.technology: server-general
@@ -9,17 +9,17 @@ ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.date: 05/07/2018
 ms.openlocfilehash: a489d3f8958304d685116186f5db9e1c854114bf
-ms.sourcegitcommit: c8cc0b25ba336a2aafaabc92b19fe8faa56be32b
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "65976540"
 ---
-# <a name="whats-new-in-windows-server-version-1803"></a>Novedades de Windows Server, versión 1803
+# <a name="whats-new-in-windows-server-version-1803"></a>Novedades de Windows Server, versión 1803
 
->Se aplica a: Windows Server (Canal semianual)
+>Se aplica a: Windows Server (Canal semianual)
 
-<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Para obtener información sobre las características más recientes de Windows, consulte [What ' s New in Windows Server](whats-new-in-windows-server.md). En esta sección se describen las novedades y cambios en Windows Server, versión 1803. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión. Consulta también [Actualización del Canal semianual de Windows Server](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/).
+<img src="../media/landing-icons/new.png" style='float:left; padding:.5em;' alt="Icon showing a newspaper">&nbsp;Para obtener información sobre las características más recientes de Windows, consulta [Novedades de Windows Server](whats-new-in-windows-server.md). El contenido de esta sección describe las novedades y los cambios de Windows Server, versión 1803. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan un mayor impacto al trabajar con esta versión. Consulta también [Actualización del Canal semianual de Windows Server](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/).
 
 ## <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -43,10 +43,10 @@ Los escenarios específicos para el Canal semianual y el Canal de mantenimiento 
 | ------------- | ------------- | ------------ |
 | Escenarios recomendados     | Servidores de archivos de uso general, cargas de trabajo propias y de terceros, aplicaciones tradicionales, roles de infraestructura, centro de datos definido mediante software e infraestructura hiperconvergida  | Aplicaciones en contenedor, hosts de contenedor y escenarios de aplicaciones que se benefician de una innovación más rápida |
 | Nuevas versiones  | Cada 2–3 años  | Cada 6 meses |
-| Soporte  | 5 años de soporte estándar + 5 años de soporte ampliado  | 18 meses |
+| Soporte  | 5 años de soporte estándar + 5 años de soporte ampliado  | 18 meses |
 | Ediciones  | Todas las ediciones de Windows Server disponibles  | Ediciones Standard y Datacenter |
-| Quién puede usarlas  | Todos los clientes a través de todos los canales | Solo clientes de Software Assurance y de la nube |
-| Opciones de instalación  | Server Core y Server con Experiencia de escritorio  | Server Core para host contenedor, imagen de contenedor y imagen de contenedor de Nano Server |
+| ¿Quién puede usarlas?  | Todos los clientes a través de todos los canales | Solo clientes de Software Assurance y de la nube |
+| Opciones de instalación  | Server Core y Server con experiencia de escritorio  | Server Core para host contenedor, imagen de contenedor y imagen de contenedor de Nano Server |
 
 ## <a name="application-platform-and-containers"></a>Contenedores y plataforma de aplicaciones
 
@@ -54,8 +54,8 @@ Los escenarios específicos para el Canal semianual y el Canal de mantenimiento 
     - La imagen de contenedor base de Server Core se reduce en un 30 % con respecto a Windows Server, versión 1709. 
     - La compatibilidad de aplicaciones también se ha mejorado para ayudar con la introducción en contenedores de las aplicaciones tradicionales.
     - El rendimiento de inicio del contenedor y el rendimiento de tiempo de ejecución se han mejorado también gracias a varias revisiones y optimizaciones.
-- Redes de contenedor: Se ha agregado compatibilidad con el proxy http y el host local y se ha mejorado el tiempo de inicio y la escalabilidad del contenedor.
-- Herramientas: Se ha mejorado la compatibilidad con Curl.exe, Tar.exe y SSH a fin de complementar PowerShell para generar y depurar los escenarios.
+- Red de contenedores: se ha agregado compatibilidad con el proxy Localhost y http, y se ha mejorado el tiempo de inicio y la escalabilidad de contenedor.
+- Herramientas: se ha mejorado la compatibilidad con Curl.exe, Tar.exe y SSH para complementar PowerShell para escenarios de compilación depuración.
 
 ### <a name="server-core-container-image"></a>Imagen de contenedor de Server Core
 
@@ -75,9 +75,9 @@ WSL permite a los administradores de servidores usar las herramientas existentes
 Kubernetes (normalmente denominado K8s) es un sistema de código abierto para automatizar la implementación, el escalado y la administración de aplicaciones incluidas en contenedor desarrollados bajo la protección de la [Cloud Native Computing Foundation](https://www.cncf.io). 
 
 En Windows Server, los usuarios de la versión 1709 podían aprovechar Kubernetes en características de redes de Windows, que incluye:
-- Compartido compartimientos pod: Los pods de infraestructura y de trabajo comparten ahora un compartimento de red (de manera similar a un espacio de nombres de Linux).
-- Optimización de punto de conexión: Gracias al uso compartido de compartimiento, servicios de contenedor deben realizar un seguimiento de al menos la mitad tantos puntos de conexión.
-- Optimización de la ruta de acceso de datos: Mejoras en la plataforma de filtrado Virtual y el servicio de red de Host que basada en kernel-equilibrio de carga.
+- Compartimentos de pods compartidos: los pods de infraestructura y trabajadores ahora comparten un compartimiento de red (similar a un espacio de nombres de Linux).
+- Optimización de punto de conexión: gracias al uso compartido de compartimiento, los servicios de contenedor necesitan realizar un seguimiento de al menos la mitad de los muchos puntos de conexión.
+- Optimización de la ruta de acceso a datos: las mejoras en la plataforma de filtrado virtual y el servicio de redes de host permiten el equilibrio de carga basado en kernel
 
 Con el lanzamiento de Windows Server, versión 1803, estará disponibles más características en las próximas versiones de kubernetes: 
 - [Complementos de almacenamiento](https://github.com/Microsoft/K8s-Storage-Plugins) para los contenedores de Windows organizados por Kubernetes.
@@ -94,7 +94,7 @@ Con el lanzamiento de Windows Server, versión 1803, estará disponibles más ca
 
 ## <a name="storage"></a>Almacenamiento
 
-Con esta versión, es posible evitar que el servicio del Administrador de recursos del servidor de archivos cree un diario de cambios (también conocido como diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, consulta [Información general sobre el Administrador de recursos del servidor de archivos](https://docs.microsoft.com/windows-server/storage/fsrm/fsrm-overview).
+Con esta versión, es posible evitar que el servicio del Administrador de recursos del servidor de archivos cree un diario de cambios (también conocido como diario USN) en todos los volúmenes cuando se inicia el servicio. Esto puede ahorrar espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real. Para obtener más información, vea [Introducción al Administrador de recursos del servidor de archivos](https://docs.microsoft.com/windows-server/storage/fsrm/fsrm-overview).
 
 ## <a name="features-added-to-server-core"></a>Características agregadas a Server Core
 
@@ -108,7 +108,7 @@ Puedes usar el siguiente comando de Windows PowerShell para habilitar el servici
 Install-WindowsFeature -Name WDS
 ```
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 [Información de versión de Windows Server](https://docs.microsoft.com/windows-server/get-started/windows-server-release-info)<br>
-[Novedades de Windows 10, el contenido para profesionales de TI de versión 1803](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)
+[Novedades de Windows 10, contenido profesional de TI de la versión 1803](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1803)

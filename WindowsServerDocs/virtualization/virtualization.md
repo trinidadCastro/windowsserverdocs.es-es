@@ -11,16 +11,16 @@ author: shortpatti
 ms.author: pashort
 ms.localizationpriority: high
 ms.openlocfilehash: 53c927f89fd3ccaa212c998f7102d0fdb9f41bde
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66447941"
 ---
 # <a name="virtualization"></a>Virtualización
 
 >[!TIP]
-> ¿Buscas información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puedes [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
+> ¿Busca información sobre versiones anteriores de Windows Server? Eche un vistazo a nuestras otras [bibliotecas de Windows Server](/previous-versions/windows/) en docs.microsoft.com. También puede [buscar en este sitio](https://docs.microsoft.com/search/index?search=Windows+Server&dataSource=previousVersions) para obtener información específica.
 
 <HR />
 
@@ -41,7 +41,7 @@ Virtualización en Windows Server es una de las tecnologías fundamentales neces
                     <div class="cardText">
                         <h3>Máquinas virtuales blindadas y tejido protegido</h3>
 <HR />
-                        <p>Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de servicio de protección de un Host (HGS): por lo general, un clúster de tres nodos: más de uno o más protegidos de los hosts y un conjunto de máquinas virtuales blindadas.</p>
+                        <p>Como administrador de empresa de nube privada y proveedor de servicio en la nube, puedes usar un tejido protegido para proporcionar un entorno más seguro para las máquinas virtuales. Un tejido protegido consta de un Servicio de protección de host (HGS), por lo general un clúster de tres nodos, además de uno o más hosts protegidos y un conjunto de VM blindadas.</p>
                      </div>
                   </div>
               </div>
@@ -81,7 +81,7 @@ Virtualización en Windows Server es una de las tecnologías fundamentales neces
                     <div class="cardText">
                         <h3>Contenedores de Windows</h3>
 <HR />
-                        <p>Los contenedores de Windows proporcionan virtualización en el nivel del sistema operativo que permite que varias aplicaciones aisladas se ejecuten en un solo sistema. Se incluyen dos tipos diferentes de contenedores en tiempo de ejecución con la función, cada uno de ellos con distintos grados de aislamiento de aplicaciones.</p>
+                        <p>Los contenedores de Windows proporcionan una virtualización a nivel de sistema operativo que permite ejecutar varias aplicaciones aisladas en un solo sistema. Se incluyen dos tipos diferentes de contenedores en tiempo de ejecución con la función, cada uno de ellos con distintos grados de aislamiento de aplicaciones.</p>
                      </div>
                   </div>
               </div>
@@ -99,7 +99,7 @@ Virtualización en Windows Server es una de las tecnologías fundamentales neces
                         </div>
                     </div>
                     <div class="cardText">
-                       <h3>Windows 10 para empresa: Formas de usar dispositivos para trabajar</h3>
+                       <h3>Windows 10 para empresas: Formas de usar dispositivos para trabajar</h3>
 <HR />
                        <p>La tecnología Hyper-V proporciona recursos informáticos mediante la virtualización de hardware. Hyper-V crea una versión de software de un equipo, denominada máquina virtual, que usas para ejecutar un sistema operativo y las aplicaciones. Puedes ejecutar varias máquinas virtuales al mismo tiempo y puedes crearlas y eliminarlas según sea necesario.</p>
                      </div>

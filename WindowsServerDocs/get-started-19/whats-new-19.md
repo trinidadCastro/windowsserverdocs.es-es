@@ -9,35 +9,35 @@ ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
 ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810770"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Windows Server 2019
 
-En este tema se describen algunas de las nuevas características de Windows Server 2019. Windows Server 2019 se basa en la sólida base de Windows Server 2016 e incluye numerosas innovaciones en cuatro temas claves: Nube híbrida, seguridad, plataforma de aplicaciones e infraestructuras Hiperconvergidas (HCL).
+En este tema se describen algunas de las nuevas características de Windows Server 2019. Windows Server 2019 se basa en Windows Server 2016 e incluye numerosas innovaciones en cuatro temas claves: nube híbrida, seguridad, plataforma de aplicaciones e infraestructuras hiperconvergidas (HCI).
 
-Para descubrir las novedades en las versiones de canal semianual de Windows Server, consulte [What ' s New in Windows Server](../get-started/whats-new-in-windows-server.md).
+Para descubrir las novedades del canal semianual de Windows Server, consulta [Novedades de Windows Server](../get-started/whats-new-in-windows-server.md).
 
 ## <a name="general"></a>General
 
 ### <a name="windows-admin-center"></a>Windows Admin Center
 
-Windows Admin Center es una aplicación implementada localmente, basado en explorador para la administración de servidores, clústeres, infraestructura hiperconvergida y PC con Windows 10. Se ofrece sin coste adicional más allá de Windows y está listo para usarse en producción.
+Windows Admin Center es una aplicación implementada localmente, basada en explorador para la administración de servidores, clústeres, infraestructura hiperconvergida y PC con Windows 10. Se ofrece sin costo adicional además del de Windows y está listo para usarse en producción.
 
-Puede instalar Windows Admin Center en Windows Server 2019, así como Windows 10 y versiones anteriores de Windows y Windows Server y usarlo para administrar servidores y clústeres que ejecutan Windows Server 2008 R2 y versiones posteriores.
+Puede instalar Windows Admin Center en Windows Server 2019, así como Windows 10 y versiones anteriores de Windows y Windows Server, y usarlo para administrar servidores y clústeres con Windows Server 2008 R2 y versiones posteriores.
 
-Para obtener más información, consulte [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
+Para obtener más información, consulta [Windows Admin Center](../manage/windows-admin-center/understand/windows-admin-center.md).
 
 ### <a name="desktop-experience"></a>Experiencia de escritorio
 
-Dado que Windows Server 2019 es una versión de canal de servicio a largo plazo (LTSC), incluye la <b>Experiencia de escritorio</b>. (Canal semianual \(SAC\) versiones no incluyen la experiencia de escritorio por diseño; son estrictamente Server Core y libera la imagen de contenedor de Nano Server.) Al igual que con Windows Server 2016, durante la instalación del sistema operativo puede elegir entre las instalaciones Server Core o servidor con las instalaciones de la experiencia de escritorio.
+Dado que Windows Server 2019 es una versión de canal de servicio a largo plazo (LTSC), incluye la <b>Experiencia de escritorio</b>. (Las versiones \(SAC\) de Canal semianual no incluyen la experiencia de escritorio por diseño; son estrictamente versiones de imagen de contenedor Server Core y Nano Server). Al igual que con Windows Server 2016, durante la instalación del sistema operativo, es posible elegir entre las instalaciones de Server Core o las instalaciones de Server con Experiencia de escritorio.
 
-### <a name="system-insights"></a>Información del sistema
+### <a name="system-insights"></a>Conclusiones del sistema
 
 Información del sistema es una nueva característica disponible en Windows Server 2019 que aporta funcionalidades de análisis predictivo local de forma nativa a Windows Server. Estas capacidades predictivas, cada una de ellas respaldada por un modelo de aprendizaje automático, analizan localmente datos del sistema de Windows Server, como los eventos y contadores de rendimiento, que proporcionan información sobre el funcionamiento de los servidores y ayudan a reducir los gastos operativos asociados a la administración reactiva de problemas en tus implementaciones de Windows Server.
 
@@ -83,13 +83,13 @@ Para obtener una lista completa de las novedades de SDN, consulta [Novedades de 
 
 ### <a name="shielded-virtual-machines-improvements"></a>Mejoras de las máquinas virtuales blindadas
 
-- **Mejoras de office de rama**
+- **Mejoras de sucursal**
 
     Ahora puedes ejecutar máquinas virtuales blindadas en máquinas con conectividad intermitente para el Servicio de protección de host al aprovechar las nuevas características [HGS reserva](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#fallback-configuration) y [modo sin conexión](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-manage-branch-office#offline-mode). HGS de reserva te permite configurar un segundo conjunto de direcciones URL para Hyper-V para probar si no puede conectar con el servidor HGS principal.
 
     El modo sin conexión te permite continuar iniciando las máquinas virtuales blindadas, incluso si no se puede conectar a HGS, siempre y cuando la máquina virtual se haya iniciado correctamente una vez y no haya cambiado la configuración de seguridad del host.
 
-- **Mejoras de la solución de problemas**
+- **Solución de problemas de las mejoras**
 
     También hemos facilitado la [solución de problemas de las máquinas virtuales blindadas](https://docs.microsoft.com/windows-server/security/guarded-fabric-shielded-vm/guarded-fabric-troubleshoot-shielded-vms) habilitando el soporte con el modo de sesión mejorada de VMConnect y PowerShell Direct. Estas herramientas son especialmente útiles si perdiste la conectividad de red con la VM y necesitas actualizar su configuración para restaurar el acceso. 
 
@@ -117,17 +117,17 @@ Servicio de migración de almacenamiento es una nueva tecnología que facilita m
 
 ### <a name="storage-spaces-direct"></a>Espacios de almacenamiento directo
 
-Esta es una lista de novedades de Espacios de almacenamiento directo. Para obtener más información, consulta [Novedades de Espacios de almacenamiento directo](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulte también [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) para información acerca de cómo obtener valida los sistemas de espacios de almacenamiento directo.
+Esta es una lista de novedades de Espacios de almacenamiento directo. Para obtener más información, consulta [Novedades de Espacios de almacenamiento directo](../storage/whats-new-in-storage.md#storage-spaces-direct). Consulta también [Azure Stack HCI](https://docs.microsoft.com/azure-stack/operator/azure-stack-hci-overview) para más información acerca de cómo adquirir sistemas de espacio de almacenamiento directo validados.
 
-- **Desduplicación y compresión de volúmenes de ReFS**
+- **Desduplicación y compresión de volúmenes ReFS**
 - **Compatibilidad nativa con memoria persistente**
-- **Resistencia anidada para las infraestructuras hiperconvergidas de dos nodos en el perímetro**
-- **Unidad flash de clústeres de dos servidores con un puerto USB como un testigo**
+- **Resistencia anidada para la infraestructura hiperconvergida de dos nodos en el borde**
+- **Clústeres de dos servidores usando una unidad flash USB como testigo**
 - **Soporte técnico de Windows Admin Center**
 - **Historial de rendimiento**
-- **Escalar hasta 4 PB por clúster**
-- **Paridad acelerada reflejado es 2 X más rápido**
-- **Unidad de detección de valores atípicos de latencia**
+- **Escalar hasta 4 PB por clúster**
+- **La paridad acelerada por reflejos es el doble de rápida**
+- **Detección de valores atípicos de latencia de unidad**
 - **Delimitar manualmente la asignación de volúmenes para aumentar la tolerancia a errores**
 
 ### <a name="storage-replica"></a>Réplica de almacenamiento
@@ -144,22 +144,22 @@ Estas son las novedades de Réplica de almacenamiento. Para obtener más informa
 Esta es una lista de novedades de clústeres de conmutación por error. Para obtener más información, consulta [Novedades de clústeres de conmutación por error](../failover-clustering/whats-new-in-failover-clustering.md).
 
 - **Conjuntos de clústeres**
-- **Clústeres de Azure**
+- **Clústeres con reconocimiento de Azure**
 - **Migración de clúster entre dominios**
 - **Testigo USB**
-- **Mejoras en la infraestructura de clúster**
-- **Actualización compatible con clústeres es compatible con espacios de almacenamiento directo**
-- **Mejoras de testigo de recurso compartido de archivos**
-- **Protección de clúster**
-- **Clúster de conmutación por error ya no utiliza la autenticación NTLM**
+- **Mejoras de infraestructura de clústeres**
+- **La actualización con reconocimiento de clúster es compatible con Espacios de almacenamiento directo**
+- **Mejoras de testigo de recurso compartido de archivo**
+- **Refuerzo de clústeres**
+- **Clúster de conmutación por error ya no usa autenticación NTLM**
 
-## <a name="application-platform"></a>Plataforma de aplicaciones
+## <a name="application-platform"></a>Plataformas de aplicaciones
 
 ### <a name="linux-containers-on-windows"></a>Contenedores de Linux en Windows
 
 Ahora es posible ejecutar contenedores basados en Linux y Windows en el mismo host de contenedor, usando el mismo demonio de Docker. Esto te permite tener un entorno de host de contenedor heterogéneo al tiempo que proporciona flexibilidad a los desarrolladores de aplicaciones.
 
-### <a name="built-in-support-for-kubernetes"></a>Compatibilidad con Kubernetes
+### <a name="built-in-support-for-kubernetes"></a>Soporte técnico integrado para Kubernetes
 
 Windows Server 2019 continúa con las mejoras de cálculo, redes y almacenamiento de las versiones del canal semianual necesarias para la compatibilidad con Kubernetes en Windows. Habrá más detalles disponibles en las próximas versiones de Kubernetes.
 
@@ -169,19 +169,19 @@ Windows Server 2019 continúa con las mejoras de cálculo, redes y almacenamient
 
 ### <a name="container-improvements"></a>Mejoras de contenedor
     
-- **Mejora de identidades integrada**
+- **Mejora de la identidad integrada**
 
     Hemos facilitado la autenticación integrada de Windows en contenedores y la hemos vuelto más confiable, abordando varias limitaciones de versiones anteriores de Windows Server.
 
 - **Mejor compatibilidad de aplicaciones**
 
-    Inclusión en contenedores de aplicaciones basadas en Windows solo es más fácil: La compatibilidad de aplicaciones ya existentes *windowsservercore* ha aumentado la imagen. Para las aplicaciones con dependencias de API adicionales, ahora hay una imagen de terceros: *windows*.
+    Inclusión de aplicaciones para Windows en contenedores más fácil: La compatibilidad de aplicaciones para la imagen de *windowsservercore* existente ha aumentado. Para las aplicaciones con dependencias de API adicionales, ahora hay una imagen de terceros: *windows*.
 
-- **Tamaño reducido y un rendimiento más alto**
+- **Tamaño reducido y mayor rendimiento**
 
     Se han mejorado los tamaños de descarga de imagen de contenedor base, el tamaño en el disco y los tiempos de inicio. Esto acelera los flujos de trabajo de contenedor.
 
-- **Experiencia de administración mediante Windows Admin Center \(versión preliminar\)**
+- **Experiencia de administración con Windows Admin Center \((versión preliminar)\)**
 
     Hemos hecho que sea más sencillo que nunca antes la acción de ver qué contenedores se ejecutan en el equipo y de administrar contenedores individuales con una nueva extensión para Windows Admin Center. Busca la extensión "Contenedores" en la [fuente pública de Windows Admin Center](https://docs.microsoft.com/windows-server/manage/windows-admin-center/configure/using-extensions).
 

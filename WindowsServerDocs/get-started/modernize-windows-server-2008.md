@@ -1,5 +1,5 @@
 ---
-title: Actualizar Windows Server 2008 y Windows Server 2008 R2
+title: Actualizar Windows Server 2008 y Windows Server 2008 R2
 description: Windows Server 2008 y 2008 R2 están acercándose al final de servicio. Aprende a actualizar localmente o realojar en Azure.
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
@@ -11,15 +11,15 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.localizationpriority: high
 ms.openlocfilehash: 9d8a8cae62a9be3384c09009dbad52e06623adb0
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66222914"
 ---
-# <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Actualizar Windows Server 2008 y Windows Server 2008 R2
+# <a name="upgrade-windows-server-2008-and-windows-server-2008-r2"></a>Actualizar Windows Server 2008 y Windows Server 2008 R2
 
-El soporte técnico ampliado para Windows Server 2008 y Windows Server 2008 R2 termina el 14 de enero de 2020. Hay disponibles dos rutas de acceso de modernización: Actualización local o migración mediante rehospedaje en Azure. **Si rehost en Azure, puede migrar las imágenes de servidor existentes de forma gratuita.**
+El soporte técnico ampliado para Windows Server 2008 y Windows Server 2008 R2 termina el 14 de enero de 2020. Hay disponibles dos rutas de acceso de modernización: Actualización o migración local mediante rehospedaje en Azure. **Si rehospedas en Azure, puedes migrar las imágenes de servidor existentes de forma gratuita.**
 
 ![Diagrama de flujo que describe las rutas de actualización desde Windows Server 2008](media/WS08_upgrade_paths.png)
 

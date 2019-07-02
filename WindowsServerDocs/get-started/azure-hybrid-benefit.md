@@ -1,6 +1,6 @@
 ---
 title: Ventaja híbrida de Azure para Windows Server
-description: Usar las licencias locales de Windows Server para ahorrar en las VM de Azure
+description: Usar las licencias locales de Windows Server para ahorrar en las máquinas virtuales de Azure
 ms.prod: windows-server
 ms.date: 11/10/2017
 ms.technology: server-general
@@ -9,11 +9,11 @@ author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
 ms.openlocfilehash: 62821abc6c9eec660fa6af832bb1aba151708021
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884086"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63686441"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Ventaja híbrida de Azure para Windows Server
 
@@ -51,8 +51,8 @@ La Ventaja híbrida de Azure para Windows Server también ofrece flexibilidad pa
 
 Configuraciones de ejemplo para distintas posiciones de licencias:
 
-![image 4](media/ahb04.png)
-![image 5](media/ahb05.png)
+![imagen 4](media/ahb04.png)
+![imagen 5](media/ahb05.png)
 
  
 Si quieres obtener más información sobre la Ventaja híbrida de Azure para Windows Server, ve al sitio web de Ventaja híbrida de Azure.
@@ -84,7 +84,7 @@ A continuación, puedes rellenar los resultados en la **Herramienta de recuento 
 
 Asegúrate de realizar un inventario en cada suscripción que poseas para generar una vista completa de la posición de la licencia.
 
-[Herramienta de recuento de SA de WS de ventaja híbrida de Azure](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
+[Herramienta de recuento de Microsoft Software Assurance de Ventaja híbrida de Azure WS](http://download.microsoft.com/download/7/1/2/712FEFF0-155C-4ABF-96C0-CE4EC4DB0516/Azure_Hybrid_Benefit_Windows_Server_SA_Count_Tool.xlsx)
 
 Si has realizado lo anterior y confirmado que tienes todas las licencias necesarias para el número de instancias de Ventaja híbrida de Azure que estás ejecutando, no es necesaria ninguna otra acción. Si descubres que puedes cubrir VM incrementales con la ventaja, puede que te interese optimizar aun más los costes cambiando a ejecutar instancias con la ventaja frente al coste sin reducción.
 
@@ -94,7 +94,7 @@ Software Assurance y/o suscripciones de Windows Server están disponibles para s
 
 | Canal                      | Abrir     | OVS      | Seleccionar/Seleccionar Plus  | MPSA       | EA/EAS   |
 |------------------------------|----------|----------|-----------------------|-----------|----------|
-| Tamaño habitual (n.º de dispositivos)  | 5 - 250    | 5 - 250    | > 250                  | > 250      | > 500     |
+| Tamaño habitual (n.º de dispositivos)  | 5-250    | 5-250    | >250                  | >250      | >500     |
 | Microsoft Software Assurance/Suscripción            | Opcional | Incluido | Opcional              | Opcional  | Incluido |
 
 Microsoft se reserva el derecho a auditar al cliente final en cualquier momento, para comprobar si es elegible para el uso de Ventaja híbrida de Azure. 
