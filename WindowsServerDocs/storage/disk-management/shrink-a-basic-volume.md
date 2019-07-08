@@ -1,6 +1,6 @@
 ---
 title: Reducir un volumen básico
-description: En este artículo se describe cómo reducir un volumen básico
+description: En este artículo se describe cómo reducir un volumen básico.
 ms.date: 06/07/2019
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,17 +9,17 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: 9073632a656f512bdb49ebe4eeefd4cd5f4eaadf
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66812530"
 ---
 # <a name="shrink-a-basic-volume"></a>Reducir un volumen básico
 
 > **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Es posible disminuir el espacio que usan las particiones principales y las unidades lógicas reduciéndolas en espacios adyacentes y contiguos del mismo disco. Por ejemplo, si necesitas una partición más pero no dispones de discos adicionales, puedes reducir la partición existente de la parte final del volumen para crear un nuevo espacio sin asignar que puede usarse para una nueva partición. La operación de reducción puede bloquearse por la presencia de determinados tipos de archivos. Para obtener más información, consulte [consideraciones adicionales](#additional-considerations) 
+Es posible disminuir el espacio que usan las particiones principales y las unidades lógicas reduciéndolas en espacios adyacentes y contiguos del mismo disco. Por ejemplo, si necesitas una partición más pero no dispones de discos adicionales, puedes reducir la partición existente de la parte final del volumen para crear un nuevo espacio sin asignar que puede usarse para una nueva partición. La operación de reducción puede bloquearse por la presencia de determinados tipos de archivos. Para obtener más información, consulta [Consideraciones adicionales](#additional-considerations). 
 
 Al reducir una partición, todos los archivos normales se reubican automáticamente en el disco para crear el nuevo espacio sin asignar. No es necesario volver a formatear el disco para reducir la partición.
 
@@ -47,29 +47,29 @@ Al reducir una partición, todos los archivos normales se reubican automáticame
 
 1.  Abra un símbolo del sistema y escriba `diskpart`.
 
-2.  En el símbolo del sistema **DISKPART**, escribe `list volume`. Ten en cuenta el número del volumen sencillo que quieres reducir.
+2.  En el símbolo del sistema **DISKPART**, escribe `list volume`. Ten en cuenta el número del volumen simple que quieres reducir.
 
-3.  En el símbolo del sistema **DISKPART**, escribe `select volume <volumenumber>`. Selecciona el volumen sencillo *volumenumber* que quieres reducir.
+3.  En el símbolo del sistema **DISKPART**, escribe `select volume <volumenumber>`. Selecciona el volumen simple *volumenumber* que quieres reducir.
 
 4.  En el símbolo del sistema **DISKPART**, escribe `shrink [desired=<desiredsize>] [minimum=<minimumsize>]`. Reduce el volumen seleccionado a *desiredsize* en megabytes (MB), si es posible, o a *minimumsize* si *desiredsize* es demasiado grande.
 
 | Valor             | Descripción |
 | ---               | ----------- |
-| **volumen de la lista** | Muestra una lista de volúmenes básicos y dinámicos en todos los discos. |
-| **Seleccione el volumen** | Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente. |
+| **list volume** | Muestra una lista de volúmenes básicos y dinámicos en todos los discos. |
+| **select volume** | Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente. |
 | **shrink** | Reduce el volumen con el foco para crear un espacio sin asignar. No se produce ninguna pérdida de datos. Si la partición incluye archivos que no pueden moverse (por ejemplo, el archivo de página o el área de almacenamiento de instantáneas), el volumen se reducirá hasta el punto donde se encuentran los archivos que no pueden moverse. |
 | **desired=** <em>desiredsize</em> | La cantidad de espacio, en megabytes, para recuperarse en la partición actual. |
-| **mínimo =** <em>minimumsize</em> | La cantidad mínima de espacio, en megabytes, para recuperarse en la partición actual. Si no se especifica un tamaño mínimo o deseado, el comando reclamará la cantidad máxima de espacio posible. |
+| **minimum=** <em>minimumsize</em> | La cantidad mínima de espacio, en megabytes, para recuperarse en la partición actual. Si no se especifica un tamaño mínimo o deseado, el comando reclamará la cantidad máxima de espacio posible. |
 
 ## <a name="additional-considerations"></a>Consideraciones adicionales
 
--   Al reducir una partición, no pueden reubicarse automáticamente determinados archivos (por ejemplo, el archivo de paginación o el área de almacenamiento de instantáneas), y no se puede reducir el espacio asignado más allá del punto donde se encuentran los archivos que no pueden moverse. Si se produce un error en la operación de reducción, comprueba el registro de la aplicación para el evento 259, que identificará el archivo que no puede moverse. Si sabes que los clústeres asociados con el archivo impiden la operación de reducción, también puedes usar el comando **fsutil** en un símbolo del sistema (escribe **fsutil volume querycluster /?** para el uso). Cuando se proporciona el parámetro **querycluster**, el resultado del comando identificará el archivo que no se puede mover que impide que la operación de reducción se realice correctamente.
-En algunos casos, se puede cambiar la ubicación del archivo temporalmente. Por ejemplo, si necesitas reducir aún más la partición, puedes usar el Panel de control para mover el archivo de paginación o instantáneas almacenadas en otro disco, eliminar las instantáneas almacenadas, reducir el volumen y mover el archivo de paginación en el disco. Si el número de clústeres defectuosos detectados por la reasignación dinámica de clústeres defectuosos, no se puede reducir la partición. Si esto ocurre, debes considerar trasladar los datos y reemplazar el disco.
+-   Al reducir una partición, no pueden reubicarse automáticamente determinados archivos (por ejemplo, el archivo de paginación o el área de almacenamiento de instantáneas) ni se puede reducir el espacio asignado más allá del punto donde se encuentran los archivos que no pueden moverse. Si se produce un error en la operación de reducción, comprueba el registro de aplicaciones para el evento 259, que identificará el archivo que no puede moverse. Si sabes que los clústeres asociados con el archivo impiden la operación de reducción, también puedes usar el comando **fsutil** en un símbolo del sistema (escribe **fsutil volume querycluster /?** para el uso). Cuando se proporciona el parámetro **querycluster**, el resultado del comando identificará el archivo que no se puede mover que impide que la operación de reducción se realice correctamente.
+En algunos casos, se puede cambiar la ubicación del archivo temporalmente. Por ejemplo, si necesitas reducir aún más la partición, puedes usar el Panel de control para mover el archivo de paginación o instantáneas almacenadas en otro disco, eliminar las instantáneas almacenadas, reducir el volumen y mover el archivo de paginación en el disco. Si el número de clústeres defectuosos detectados por la reasignación dinámica de clústeres defectuosos es demasiado alto, no se puede reducir la partición. Si esto ocurre, debes considerar trasladar los datos y reemplazar el disco.
 
--  No uses una copia de nivel de bloque para transferir los datos. También se copiarán la tabla de sectores defectuosos y el nuevo disco tratará los mismos sectores como defectuosos aunque sean normales.
+-  No uses una copia de nivel de bloque para transferir los datos. También se copiará la tabla de sectores defectuosos y el nuevo disco tratará los mismos sectores como defectuosos aunque sean normales.
 
 -   Puedes reducir particiones principales y unidades lógicas en particiones sin procesar (las que no disponen de un sistema de archivos) o particiones con el sistema de archivos NTFS.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 -   [Administrar volúmenes básicos](manage-basic-volumes.md)

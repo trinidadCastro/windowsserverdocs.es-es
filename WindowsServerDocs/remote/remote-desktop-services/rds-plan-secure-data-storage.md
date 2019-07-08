@@ -1,6 +1,6 @@
 ---
-title: 'Servicios de escritorio remoto: almacenamiento de datos seguro'
-description: Información de planeación para almacenar datos de forma segura mediante el uso de discos de perfil de usuario (UPD) de RDS.
+title: 'Servicios de Escritorio remoto: almacenamiento de datos seguro'
+description: Información de planificación para almacenar datos de forma segura mediante el uso de discos de perfil de usuario (UPD) en RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,22 +14,22 @@ ms.author: elizapo
 ms.date: 11/21/2016
 manager: dongill
 ms.openlocfilehash: c3c7be624e3b093347807a5ee131270d3c802f1a
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66805161"
 ---
-# <a name="remote-desktop-services---secure-data-storage-with-upds"></a>Servicios de escritorio remoto: almacenamiento de datos seguro con los UPD
+# <a name="remote-desktop-services---secure-data-storage-with-upds"></a>Servicios de Escritorio remoto: almacenamiento de datos seguro con UPD
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
 
-Recursos empresariales de Store, los datos de personalización de usuario y configuración de forma segura en el entorno local o en Azure. Hosts de sesión de escritorio remoto usa la autenticación de Active Directory y capacitar a los usuarios con los recursos que necesitan en un entorno personalizado, de forma segura. 
+Recursos empresariales de Store, datos de personalización del usuario y configuración segura en el entorno local o en Azure. Los hosts de sesión de Escritorio remoto usan la autenticación de AD y otorgan a los usuarios los recursos que necesitan en un entorno personalizado, de forma segura. 
 
-Los usuarios cómo asegurarse de que tienen una experiencia coherente, independientemente del punto de conexión desde el que obtener acceso a sus recursos remotos, es un aspecto importante de la administración de una implementación de RDS. Discos de perfil de usuario (UPD) permiten la configuración de la aplicación para seguir un usuario en una sola colección, las personalizaciones y datos de usuario. UPD es un archivo de disco duro virtual por recopilación guarda en un recurso compartido central que se monta en una sesión de usuario cuando inician sesión: el UPD se trata como una unidad local para el tiempo que dure esa sesión por usuario. 
+Asegurar que los usuarios tengan una experiencia consistente, independientemente del punto de conexión desde el que acceden a sus recursos remotos, es un aspecto importante de la administración de una implementación del Servicio de Escritorio remoto. Los Discos de perfil de usuario (UPD) permiten que los datos de los usuarios, las personalizaciones y la configuración de la aplicación sigan a un usuario en una sola colección. Un UPD es un archivo VHD creado en función de la colección y el usuario, que se guarda en un recurso compartido central que se monta en la sesión de un usuario cuando este inicia sesión: el UPD se trata como una unidad de disco local durante la duración de esa sesión. 
 
-Desde la perspectiva del usuario, el UPD proporciona una experiencia de famililar - que guardarán sus documentos en sus documentos en la carpeta (en lo que parece ser una unidad local), cambiar su configuración de la aplicación como de costumbre y hacen las personalizaciones realizadas en su entorno de Windows. Todos estos datos, incluidos el subárbol del registro, se almacenan en el UPD y continúa en un recurso compartido de red central. Los UPD solo están disponibles para el usuario cuando el usuario está conectado activamente a un escritorio o una conexión de RemoteApp. Los UPD solo pueden moverse dentro de una colección porque del todo usuario `C:\Users\<username\>` directorio (incluyendo AppData\Local) se almacena en el UPD.
+Desde la perspectiva del usuario, el UPD proporciona una experiencia familiar: guarda sus documentos en la carpeta Documentos (en lo que parece ser una unidad de disco local), cambia la configuración de la aplicación como de costumbre y realiza las personalizaciones en el entorno de Windows. Todos estos datos, incluido el subárbol del Registro, se almacenan en el UPD y persisten en un recurso compartido de red central. Los UPD solo están disponibles para el usuario cuando está conectado a un escritorio o RemoteApp. Igualmente, los UPD solo pueden desplazarse dentro de una colección porque el directorio completo `C:\Users\<username\>` del usuario (incluido AppData\Local) está almacenado en el UPD.
 
-Puede usar [cmdlets de PowerShell](https://technet.microsoft.com/library/jj215443.aspx) para designar la ruta de acceso para el recurso compartido central, el tamaño de cada UPD y las carpetas que deben incluirse o excluirse el perfil de usuario que se guardan en el UPD. Como alternativa, puede habilitar los UPD mediante Administrador del servidor, vaya a **servicios de escritorio remoto** > **colecciones** > **colecciones de escritorios**  >  **Propiedades de colección de escritorios** > **discos de perfil de usuario**. Tenga en cuenta que habilite o deshabilite los UPD para todos los usuarios de una colección completa, pero no para usuarios específicos de la colección. Los UPD deben almacenarse en un recurso compartido de archivo central donde los servidores de la colección tienen permisos control total. 
+Puedes usar los [cmdlets de PowerShell](https://technet.microsoft.com/library/jj215443.aspx) para designar la ruta de acceso al recurso compartido central, el tamaño de cada UPD y las carpetas que deben incluirse o excluirse del perfil de usuario guardado en el UPD. Como alternativa, puedes habilitar los UPD a través del Administrador del servidor si accedes a **Servicios de Escritorio remoto** > **Colecciones** > **Colección de escritorio** > **Propiedades de la colección de escritorio** > **Discos de perfil de usuario**. Ten en cuenta que debes habilitar o deshabilitar los UPD de todos los usuarios de una colección completa, no los de usuarios específicos de esa colección. Los UPD deben almacenarse en un recurso compartido de archivos central donde los servidores de la colección tienen permisos de control total. 
 
-Se puede lograr una alta disponibilidad para sus UPD guardándolos en Azure con [espacios de almacenamiento directo](rds-storage-spaces-direct-deployment.md). 
+Puedes obtener una alta disponibilidad para tus UPD si los almacenas en Azure con [Espacios de almacenamiento directo](rds-storage-spaces-direct-deployment.md). 

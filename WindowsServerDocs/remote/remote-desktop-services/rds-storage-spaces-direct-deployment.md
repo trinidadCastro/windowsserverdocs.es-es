@@ -1,6 +1,6 @@
 ---
-title: Implementar un nodo de dos espacios SOFS de almacenamiento directo para el almacenamiento UPD en Azure
-description: Aprenda a usar espacios de almacenamiento directo con RDS.
+title: Implementar un SOFS en Espacios de almacenamiento directo de dos nodos para almacenar UPD en Azure
+description: Aprende a usar Espacios de almacenamiento directo con RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,125 +14,125 @@ ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
 ms.openlocfilehash: 792c9320f6976a4fc7f2ccd235f66daa0cb19b19
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66805192"
 ---
-# <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Implementar un servidor de archivos de escalabilidad horizontal de espacios de almacenamiento directo de dos nodos para el almacenamiento UPD en Azure
+# <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Implementar un servidor de archivos de escalabilidad horizontal de Espacios de almacenamiento directo de dos nodos para almacenar UPD en Azure
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
 
-Servicios de escritorio remoto (RDS) requiere un servidor de archivos unido al dominio para discos de perfil de usuario (UPD). Para implementar un servidor de archivos de escalabilidad horizontal unido al dominio de alta disponibilidad (SOFS) en Azure, use espacios de almacenamiento directo con Windows Server 2016. Si no está familiarizado con los UPD o servicios de escritorio remoto, consulte [Bienvenido a servicios de escritorio remoto](welcome-to-rds.md).
+Los Servicios de Escritorio remoto (RDS) requieren un servidor de archivos unido al dominio para los discos de perfil de usuario (UPD). Para implementar un servidor de archivos de escalabilidad horizontal unido al dominio de alta disponibilidad (SOFS) en Azure, usa Espacios de almacenamiento directo con Windows Server 2016. Si no estás familiarizado con los UPD o los Servicios de Escritorio Remoto, consulta [Welcome to Remote Desktop Services](welcome-to-rds.md) (Bienvenido a Servicios de Escritorio Remoto).
 
 > [!NOTE] 
-> Microsoft acaba de publicar un [plantilla de Azure para implementar un servidor de archivos de escalabilidad horizontal de espacios de almacenamiento directo](https://azure.microsoft.com/documentation/templates/301-storage-spaces-direct/)! Puede usar la plantilla para crear la implementación, o use los pasos de este artículo. 
+> Microsoft acaba de publicar una [plantilla de Azure para implementar un servidor de archivos de escalabilidad horizontal de Espacios de almacenamiento directo](https://azure.microsoft.com/documentation/templates/301-storage-spaces-direct/). Puedes usar la plantilla para crear tu implementación o seguir los pasos de este artículo. 
 
-Se recomienda implementar el SOFS con máquinas virtuales de la serie DS y discos de datos de premium storage, donde hay el mismo número y tamaño de los discos de datos en cada máquina virtual. Necesitará un mínimo de dos cuentas de almacenamiento. 
+Es recomendable implementar el SOFS con VM de la serie DS y discos de datos de almacenamiento premium, donde hay la misma cantidad de discos de datos en cada VM; además, estos discos tienen el mismo tamaño. Necesitarás un mínimo de dos cuentas de almacenamiento. 
 
-Para las pequeñas implementaciones, se recomienda un clúster de 2 nodos con un testigo en la nube, donde se refleja el volumen con 2 copias. Aumentar las pequeñas implementaciones mediante la adición de discos de datos. Aumentar las implementaciones más grandes mediante la adición de nodos (máquinas virtuales). 
+Para realizar implementaciones pequeñas, te recomendamos un clúster de dos nodos con un testigo en la nube, donde el volumen se refleja con dos copias. Aumenta el tamaño de pequeñas implementaciones agregando discos de datos. Crea implementaciones más grandes agregando nodos (VM). 
 
-Estas instrucciones son para una implementación de 2 nodos. La siguiente tabla muestra los tamaños de máquina virtual y disco que necesitará para almacenar los UPD para el número de usuarios en su negocio. 
+Estas instrucciones son para una implementación de dos nodos. En la siguiente tabla se muestran los tamaños de VM y disco que necesitarás para almacenar los UPD en función del número de usuarios en tu negocio. 
 
-| Usuarios | Total (GB) | Máquina virtual | # Discos | Tipo de disco | Tamaño del disco (GB) | Configuración   |
+| Usuarios | Total (GB) | Máquina virtual | # discos | Tipo de disco | Tamaño del disco (GB) | Configuración   |
 |-------|------------|----|---------|-----------|----------------|-----------------|
 | 10    | 50         | DS1 | 2       | P10       | 128            | 2x(DS1 + 2 P10)  |
 | 25    | 125        | DS1 | 2       | P10       | 128            | 2x(DS1 + 2 P10)  |
 | 50    | 250        | DS1 | 2       | P10       | 128            | 2x(DS1 + 2 P10)  |
-| 100   | 500        | DS1 | 2       | P20       | 512            | 2 x (DS1 + 2 P20)  |
+| 100   | 500        | DS1 | 2       | P20       | 512            | 2x(DS1 + 2 P20)  |
 | 250   | 1250       | DS1 | 2       | P30       | 1024           | 2x(DS1 + 2 P30)  |
-| 500   | 2500       | DS2 | 3       | P30       | 1024           | 2 x (DS2 + 3 P30)  |
-| 1000  | 5000       | DS3 | 5       | P30       | 1024           | 2 x (DS3 + 5 P30)  |
-| 2500  | 12500      | DS4 | 13      | P30       | 1024           | 2 x (DS4 + 13 P30) |
-| 5000  | 25000      | DS5 | 25      | P30       | 1024           | 2 x (DS5 + 25 P30) | 
+| 500   | 2500       | DS2 | 3       | P30       | 1024           | 2x(DS2 + 3 P30)  |
+| 1000  | 5000       | DS3 | 5       | P30       | 1024           | 2x(DS3 + 5 P30)  |
+| 2500  | 12500      | DS4 | 13      | P30       | 1024           | 2x(DS4 + 13 P30) |
+| 5000  | 25000      | DS5 | 25      | P30       | 1024           | 2x(DS5 + 25 P30) | 
 
-Siga estos pasos para crear un controlador de dominio (pusimos el nombre "Mis controladores de dominio" a continuación) y dos nodos de máquinas virtuales ("Mi-fsn1" y "my-fsn2") y configurar las máquinas virtuales para que sea un SOFS de espacios de almacenamiento de 2 nodos directo.
+Sigue estos pasos para crear un controlador de dominio (el nuestro tiene el nombre "my-dc") y dos nodos de VM ("my-fsn1" y "my-fsn2") y configura las VM para que sean un SOFS de Espacios de almacenamiento directo de dos nodos.
 
-1. Crear un [suscripción de Microsoft Azure](https://azure.microsoft.com).
-2. Inicie sesión en el [portal Azure](https://ms.portal.azure.com).
-3. Crear un [cuenta de Azure storage](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account) en Azure Resource Manager. Cree en un grupo de recursos y use las siguientes configuraciones:
-   - Modelo de implementación: Administrador de recursos
+1. Crea una [suscripción a Microsoft Azure](https://azure.microsoft.com).
+2. Inicia sesión en [Azure Portal](https://ms.portal.azure.com).
+3. Crea una [cuenta de Azure Storage](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account) en Azure Resource Manager. Créala en un grupo de recursos nuevo y usa las siguientes configuraciones:
+   - Modelo de implementación: Resource Manager
    - Tipo de cuenta de almacenamiento: Uso general
    - Nivel de rendimiento: Premium
    - Opción de replicación: LRS
-4. Configurar un bosque de Active Directory con una plantilla de inicio rápido o implementar manualmente el bosque. 
-   - Implementar mediante una plantilla de inicio rápido de Azure:
-      - [Crear una máquina virtual de Azure con un nuevo bosque de AD](https://azure.microsoft.com/documentation/templates/active-directory-new-domain/)
-      - [Crear un nuevo dominio de AD con 2 controladores de dominio](https://azure.microsoft.com/documentation/templates/active-directory-new-domain-ha-2-dc/) (para lograr alta disponibilidad)
-   - Manualmente [implementar el bosque](https://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/) con las siguientes configuraciones:
-      - Crear la red virtual en el mismo grupo de recursos que la cuenta de almacenamiento.
-      - Tamaño recomendado: DS2 (aumentar el tamaño si va a hospedar el controlador de dominio más objetos de dominio)
-      - Usar una red virtual generada automáticamente.
-      - Siga los pasos para instalar AD DS.
-5. Configure los nodos del clúster de servidor de archivos. Puede hacerlo mediante la implementación de la [plantilla de Azure de clúster de Windows Server 2016 Storage SOFS de espacios directo](https://azure.microsoft.com/resources/templates/301-storage-spaces-direct/) o siguiendo los pasos del 6 al 11 para implementar manualmente.
-6. Para configurar manualmente los nodos de clúster de servidor de archivos:
-   1. Crear el primer nodo: 
-      1. Crear una nueva máquina virtual con la imagen de Windows Server 2016. (Haga clic en **nuevo > máquinas virtuales > Windows Server 2016.** Seleccione **Resource Manager**y, a continuación, haga clic en **crear**.)
-      2. Establezca la configuración básica de la manera siguiente:
-         - Name: my-fsn1
-         - Tipo de disco de máquina virtual SSD
-         - Usar un grupo de recursos existente, lo que ha creado en el paso 3. 
-      3. Tamaño: DS2, DS1, DS3, DS4 o DS5 según el usuario necesita (consulte la tabla al principio de estas instrucciones). Asegúrese de que esté seleccionada la compatibilidad de disco premium.
+4. Configura un bosque de Active Directory mediante una plantilla de inicio rápido o implementando el bosque manualmente. 
+   - Para realizar la implementación con una plantilla de inicio rápido de Azure:
+      - [Create an Azure VM with a new AD forest](https://azure.microsoft.com/documentation/templates/active-directory-new-domain/) (Crear una VM de Azure con un nuevo bosque de AD)
+      - [Create a new AD domain with 2 domain controllers](https://azure.microsoft.com/documentation/templates/active-directory-new-domain-ha-2-dc/) (Crear un nuevo dominio de AD con dos controladores de dominio) (para alta disponibilidad)
+   - Para [implementar el bosque](https://azure.microsoft.com/documentation/articles/active-directory-new-forest-virtual-machine/) de forma manual con las siguientes configuraciones:
+      - Crea la red virtual en el mismo grupo de recursos que la cuenta de almacenamiento.
+      - Tamaño recomendado: DS2 (aumenta el tamaño si el controlador de dominio va a hospedar más objetos de dominio)
+      - Usa una red virtual generada automáticamente.
+      - Sigue los pasos indicados para instalar AD DS.
+5. Configura los nodos del clúster de servidores de archivos. Para ello, implementa la [plantilla de Azure del clúster de SOFS de Espacios de almacenamiento directo para Windows Server 2016](https://azure.microsoft.com/resources/templates/301-storage-spaces-direct/) o sigue los pasos 6-11 para realizar la implementación manual.
+6. Para configurar manualmente los nodos del clúster del servidor de archivos:
+   1. Crea el primer nodo: 
+      1. Crea una nueva máquina virtual mediante la imagen de Windows Server 2016. (Haz clic en **Nuevo > Máquinas virtuales > Windows Server 2016.** Selecciona **Resource Manager** y, a continuación, haz clic en **Crear**.)
+      2. Establece la configuración básica de la manera siguiente:
+         - Nombre: my-fsn1
+         - SSD del tipo de disco de VM
+         - Usa un grupo de recursos existente, por ejemplo, el que ya has creado en el paso 3. 
+      3. Tamaño: DS1, DS2, DS3, DS4 o DS5 según las necesidades del usuario (consulta la tabla al comienzo de estas instrucciones). Asegúrate de que se haya seleccionado la compatibilidad con discos premium.
       4. Configuración: 
-         - Cuenta de almacenamiento: Elija la cuenta de almacenamiento que creó en el paso 3.
-         - Alta disponibilidad: crear un nuevo conjunto de disponibilidad. (Haga clic en **alta disponibilidad > Crear nueva**y, a continuación, escriba un nombre (por ejemplo, clúster s2d). Use los valores predeterminados para **dominios de actualización** y **dominios de error**.)
-   2. Crear el segundo nodo. Repita el paso anterior con los cambios siguientes:
+         - Cuenta de almacenamiento: Elige la cuenta de almacenamiento que creaste en el paso tres.
+         - Alta disponibilidad: crea un nuevo conjunto de disponibilidad. (Haz clic en **Alta disponibilidad > Crear nuevo** y escribe un nombre (por ejemplo, s2d-cluster). Usa los valores predeterminados para **Actualizar dominios** y **Dominios de error**.)
+   2. Crea el segundo nodo. Repite el paso anterior con los siguientes cambios:
       - Nombre: my-fsn2
-      - Alta disponibilidad: seleccione que el conjunto de disponibilidad creó anteriormente.  
-7. [Conectar discos de datos](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-attach-disk-portal/) para el nodo de clúster de máquinas virtuales según el usuario necesita (como se muestra en la tabla anterior). Después de los datos se crean y se adjunta a la máquina virtual, Establece discos **hospedar caching** a **ninguno**.
-8. Establecimiento de direcciones IP para todas las máquinas virtuales a **estático**. 
-   1. En el grupo de recursos, seleccione una máquina virtual y, a continuación, haga clic en **interfaces de red** (bajo **configuración**). Seleccione la interfaz de red enumerados y, a continuación, haga clic en **configuraciones de IP**. Seleccione la configuración de IP enumerada, seleccione **estático**y, a continuación, haga clic en **guardar**.
-   2. Tenga en cuenta la dirección IP privada (10.x.x.x) de dominio controlador (Mis controladores de dominio en nuestro ejemplo).
-9. Establecer dirección del servidor DNS principal en la NIC de máquinas virtuales de nodos de clúster en el servidor de mi controlador de dominio. Seleccione la máquina virtual y, a continuación, haga clic en **Interfaces de red > servidores DNS > DNS personalizado**. Escriba la dirección IP privada que anotó anteriormente y, a continuación, haga clic en **guardar**.
-10. Crear un [cuenta de almacenamiento para que el testigo en la nube](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness). (Si usa las instrucciones vinculadas, detendrá cuando llegue a "Configuración de nube testigo con conmutación por error de clúster GUI del Administrador de" - haremos todo lo que paso siguiente).
-11. Configurar el servidor de archivos de espacios de almacenamiento directo. Conectarse a una máquina virtual del nodo y, a continuación, ejecute los siguientes cmdlets de Windows PowerShell.
-    1. Instale la característica de agrupación en clústeres de conmutación por error y la característica de servidor de archivos en el nodo de clúster de servidor de archivos de dos máquinas virtuales:
+      - Alta disponibilidad: selecciona el conjunto de disponibilidad que creaste anteriormente.  
+7. [Adjunta los discos de datos](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-attach-disk-portal/) a las VM del nodo de clúster según tus necesidades de usuario (tal como se indica en la tabla anterior). Después de crear los discos de datos y adjuntarlos a la máquina virtual, configura el **almacenamiento en caché del servidor** como **Ninguno**.
+8. Asimismo, debes establecer las direcciones IP de todas las VM con el estado **Estática**. 
+   1. En el grupo de recursos, selecciona una VM y, a continuación, haz clic en **Interfaces de red** (está en la sección **Configuración**). Selecciona la interfaz de red en la lista y, a continuación, haz clic en **Configuraciones de IP**. Selecciona la configuración de IP en la lista, selecciona **Estático** y, a continuación, haz clic en **Guardar**.
+   2. Ten en cuenta que la dirección IP privada (10.x.x.x) del controlador de dominio (que es my-dc, en nuestro ejemplo).
+9. Establece la dirección del servidor DNS principal en las NIC de las VM del nodo de clúster en el servidor my-dc. Selecciona la VM y haz clic en **Interfaces de red > Servidores DNS > DNS personalizado**. Escribe la dirección IP privada que anotaste anteriormente y haz clic en **Guardar**.
+10. Crea una [cuenta de almacenamiento de Azure para que sea tu testigo en la nube](https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness). (Si usas las instrucciones vinculadas, detente cuando llegues a "Configuración del testigo en la nube con la GUI del administrador de clústeres de conmutación por error"; haremos ese paso a continuación).
+11. Configura el servidor de archivos de Espacios de almacenamiento directo. Conéctate a una VM de nodo y ejecuta los siguientes cmdlets de Windows PowerShell.
+    1. Instala la característica para la agrupación de clústeres de conmutación por error y la característica del servidor de archivos en las dos VM del nodo de clústeres del servidor de archivos:
 
        ```powershell
        $nodes = ("my-fsn1", "my-fsn2")
        icm $nodes {Install-WindowsFeature Failover-Clustering -IncludeAllSubFeature -IncludeManagementTools} 
        icm $nodes {Install-WindowsFeature FS-FileServer} 
        ```
-    2. Validar el nodo de clúster de máquinas virtuales y crear un clúster SOFS 2 nodos:
+    2. Valida las VM del nodo de clústeres y crea un clúster de SOFS de dos nodos:
 
        ```powershell
        Test-Cluster -node $nodes
        New-Cluster -Name MY-CL1 -Node $nodes –NoStorage –StaticAddress [new address within your addr space]
        ``` 
-    3. Configurar al testigo en la nube. Usar la nube testigo cuenta acceso y el nombre clave de almacenamiento.
+    3. Configura el testigo en la nube. Usa tu nombre de cuenta de almacenamiento en la nube y la clave de acceso.
 
        ```powershell
        Set-ClusterQuorum –CloudWitness –AccountName <StorageAccountName> -AccessKey <StorageAccountAccessKey> 
        ```
-    4. Habilitar espacios de almacenamiento directo.
+    4. Habilita Espacios de almacenamiento directo.
 
        ```powershell
        Enable-ClusterS2D 
        ```
       
-    5. Crear un volumen de disco virtual.
+    5. Crea un volumen de disco virtual.
 
        ```powershell
        New-Volume -StoragePoolFriendlyName S2D* -FriendlyName VDisk01 -FileSystem CSVFS_REFS -Size 120GB 
        ```
-       Para ver información sobre el volumen compartido de clúster en el clúster SOFS, ejecute el siguiente cmdlet:
+       Para ver información sobre el volumen compartido de clúster en el clúster SOFS, ejecuta el siguiente cmdlet:
 
        ```powershell
        Get-ClusterSharedVolume
        ```
    
-    6. Crear el servidor de archivos de escalabilidad horizontal (SOFS):
+    6. Crea un servidor de archivos de escalabilidad horizontal (SOFS):
 
        ```powershell
        Add-ClusterScaleOutFileServerRole -Name my-sofs1 -Cluster MY-CL1
        ```
 
-    7. Cree un nuevo recurso compartido de archivos SMB en el clúster SOFS.
+    7. Crea un nuevo recurso compartido de archivos SMB en el clúster SOFS.
 
        ```powershell
        New-Item -Path C:\ClusterStorage\Volume1\Data -ItemType Directory
        New-SmbShare -Name UpdStorage -Path C:\ClusterStorage\Volume1\Data
        ```
 
-Ahora tiene un recurso compartido en `\\my-sofs1\UpdStorage`, que se puede usar para el almacenamiento UPD cuando le [habilitar UPD](https://social.technet.microsoft.com/wiki/contents/articles/15304.installing-and-configuring-user-profile-disks-upd-in-windows-server-2012.aspx) para los usuarios. 
+Ya tienes un recurso compartido en `\\my-sofs1\UpdStorage`, que se puede usar para el almacenamiento de UPD cuando [habilites UPD](https://social.technet.microsoft.com/wiki/contents/articles/15304.installing-and-configuring-user-profile-disks-upd-in-windows-server-2012.aspx) para los usuarios. 

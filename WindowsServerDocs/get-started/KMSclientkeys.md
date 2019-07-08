@@ -1,5 +1,5 @@
 ---
-title: Claves de configuración de cliente KMS
+title: Claves de configuración del cliente KMS
 description: Claves necesarias para activar los productos de Windows desde un servidor KMS
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
@@ -10,42 +10,42 @@ ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
 ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66810703"
 ---
-# <a name="kms-client-setup-keys"></a>Claves de configuración de cliente KMS
+# <a name="kms-client-setup-keys"></a>Claves de configuración del cliente KMS
 
->Se aplica a: Windows Server 2019, canal semianual de Windows Server, Windows Server 2016, Windows 10
+>Se aplica a: Windows Server 2019, Windows Server canal semianual, Windows Server 2016, Windows 10
 
 Los ordenadores que ejecutan ediciones con licencias por volumen de Windows Server, Windows 10, Windows 8.1, Windows Server 2012 R2, Windows 8, Windows Server 2012, Windows 7, Windows Server 2008 R2, Windows Vista y Windows Server 2008 son, de forma predeterminada, clientes KMS que no necesitan configuración adicional.
 
 > [!NOTE]
-> En las tablas siguientes, "LTSC" es el acrónimo "Canal de mantenimiento a largo plazo," mientras que "LTSB" hace referencia a la "a largo plazo rama de mantenimiento". 
+> En las tablas siguientes, "LTSC" se refiere a "Canal de mantenimiento a largo plazo", mientras que "LTSB" hace referencia a la "Rama de mantenimiento a largo plazo". 
 
-**Para usar las claves que aquí (que son Gvlk), primero debe tener un host de KMS que se ejecuta en su implementación.** Si aún no ha configurado un host de KMS, consulte [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) para ver los pasos para configurar uno.
+**Para usar las claves que aquí se indican (que son GVLK), en la implementación debe haber un host de KMS en ejecución**. Si aún no ha configurado un host de KMS, consulte [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) para ver los pasos para configurar uno.
 
-Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a un cliente de KMS, instale la clave de configuración correspondiente (GVLK) que se incluye en las tablas siguientes. Para instalar una clave de configuración de cliente, abra un símbolo del sistema administrativo en el cliente, escriba **slmgr /ipk \<clave de configuración\>**  y, a continuación, presione **ENTRAR**.
+Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a un cliente de KMS, instale la clave de configuración correspondiente (GVLK) que se incluye en las tablas siguientes. Para instalar una clave de configuración de cliente, abre un símbolo del sistema administrativo en el cliente, escriba **slmgr /ipk \<setup key\>** y después presione **ENTRAR**.
 
 | Si desea...    | ...use estos recursos   |
 |--------------------|------------------------|
-| Activa Windows fuera de un escenario de activación por volumen (es decir, intentar activar una versión comercial de Windows), en cuyo caso **estas claves no funcionarán**. | Use estos vínculos para versiones comerciales de Windows: |
-| Corregir este error aparece cuando intenta activar un Windows 8.1, Windows Server 2012 R2 o un sistema más reciente: "Error: 0xC004F050 El Servicio de licencias de software notificó que la clave de producto no es válida"… | [Instale esta actualización](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) en el host de KMS si está ejecutando Windows 8.1, Windows Server 2012 R2, Windows 8 o Windows Server 2012. |
+| Activar Windows fuera de un escenario de activación por volumen (es decir, está intentando activar una versión comercial de Windows), **estas claves no funcionarán**. | Use estos vínculos para versiones comerciales de Windows: |
+| Resolver este error que aparece al intentar activar un sistema Windows 8.1, Windows Server 2012 R2 o un sistema más reciente: "Error: 0xC004F050 El Servicio de licencias de software notificó que la clave de producto no es válida"… | [Instale esta actualización](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) en el host de KMS si está ejecutando Windows 8.1, Windows Server 2012 R2, Windows 8 o Windows Server 2012. |
 
--   [Obtenga Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)
+-   [Obtener Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)
 
--   [Obtener una nueva clave de producto de Windows](https://support.microsoft.com/help/10749/windows-product-key)
+-   [Obtener una clave de producto nueva de Windows](https://support.microsoft.com/help/10749/windows-product-key)
 
--   [Ayuda de Windows original y procedimientos](https://support.microsoft.com/help/15087/windows-genuine)
+-   [Ayuda y procedimientos de Windows original](https://support.microsoft.com/help/15087/windows-genuine)
 
 
->   Si estás ejecutando Windows Server 2008 R2 o Windows 7, estate atento por si hay una actualización que admita su uso como hosts de KMS para clientes de Windows 10.
+>   Si estás ejecutando Windows Server 2008 R2 o Windows 7, está atento por si hay una actualización que admita su uso como hosts de KMS para clientes de Windows 10.
 
-## <a name="windows-server-semi-annual-channel-versions"></a>Versiones de canal semianual de Windows Server
+## <a name="windows-server-semi-annual-channel-versions"></a>Versiones del Canal semianual de Windows Server
 
-### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Windows Server, versión 1903 y Windows Server, versión 1809
+### <a name="windows-server-version-1903-and-windows-server-version-1809"></a>Para identificar Windows Server 1903 y Windows Server, versión 1809
 
 | Edición de sistema operativo  | Clave de configuración de cliente de KMS          |
 |---------------------------|-------------------------------|
@@ -66,9 +66,9 @@ Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a 
 | Windows Server Datacenter | 6Y6KB-N82V8-D8CQV-23MJW-BWTG6  | 
 | Windows Server Standard   | DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4  |
 
-## <a name="windows-server-ltscltsb-versions"></a>Versiones de LTSC/LTSB de Windows Server
+## <a name="windows-server-ltscltsb-versions"></a>Versiones LTSC/LTSB de Windows Server
 
-### <a name="windows-server-2019"></a>Windows Server 2019
+### <a name="windows-server-2019"></a>Windows Server 2019
 | Edición de sistema operativo       | Clave de configuración de cliente de KMS          |
 |--------------------------------|-------------------------------|
 | Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG  | 
@@ -83,16 +83,16 @@ Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a 
 | Windows Server 2016 Standard   | WC2BQ-8NRM3-FDDYY-2BFGV-KHKQY |
 | Windows Server 2016 Essentials | JCKRF-N37P4-C2D82-9YXRT-4M63B |
 
-## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10, todas las versiones de canal semianual compatibles
+## <a name="windows-10-all-supported-semi-annual-channel-versions"></a>Windows 10, todas las versiones admitidas de canal semianual
 
-Consulte la [hoja de información del ciclo de vida de Windows](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet) para obtener información acerca de las versiones compatibles y el final de las fechas de servicio.
+Consulta la [hoja de información del ciclo de vida de Windows](https://support.microsoft.com/en-us/help/13853/windows-lifecycle-fact-sheet) para obtener información acerca de las versiones compatibles y el final de las fechas de servicio.
 
 | Edición de sistema operativo          | Clave de configuración de cliente de KMS          |
 |-----------------------------------|-------------------------------|
 |Windows 10 Pro|W269N-WFGWX-YVC9B-4J6C9-T83GX|
 |Windows 10 Pro N|MH37W-N47XK-V7XM9-C7227-GCQG9|
-|Estaciones de trabajo de Windows 10 Pro|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
-|Estaciones de trabajo de Windows 10 Pro N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
+|Windows 10 Pro Workstations|NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J|
+|Windows 10 Pro Workstations N|9FNHH-K3HBT-3W4TD-6383H-6XYWF|
 |Windows 10 Pro Education|6TP4R-GNPTD-KYYHQ-7B7DP-J447Y|
 |Windows 10 Pro Education N|YVWGF-BXNMC-HTQYQ-CPQ99-66QFC|
 |Windows 10 Education|NW6C2-QMPVW-D7KKK-3GKT6-VCFB2|
@@ -102,7 +102,7 @@ Consulte la [hoja de información del ciclo de vida de Windows](https://support.
 |Windows 10 Enterprise G|YYVX9-NTFWV-6MDM3-9PT4T-4M68B|
 |Windows 10 Enterprise G N|44RPN-FTY23-9VTTB-MP9BX-T84FV|
 
-## <a name="windows-10-ltscltsb-versions"></a>Versiones de Windows 10 LTSC/LTSB
+## <a name="windows-10-ltscltsb-versions"></a>Versiones LTSC/LTSB de Windows 10
 
 ### <a name="windows-10-ltsc-2019"></a>Windows 10 LTSC 2019
 
@@ -166,7 +166,7 @@ Consulte la [hoja de información del ciclo de vida de Windows](https://support.
 | Windows Web Server 2008                        | WYR28-R7TFJ-3X2YQ-YCY4H-M249D |
 | Windows Server 2008 Standard                   | TM24T-X9RMF-VWXK6-X8JC9-BFGM2 |
 | Windows Server 2008 Standard sin Hyper-V   | W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ |
-| Windows Server 2008 Enterprise                 | YQGMW-MPWTJ-34KDK-48M3W-X4Q6V |
+| Windows Server 2008 Enterprise                 | YQGMW-MPWTJ-34KDK-48M3W-X4Q6V |
 | Windows Server 2008 Enterprise sin Hyper-V | 39BXF-X8Q23-P2WWT-38T2F-G3FPG |
 | Windows Server 2008 HPC                        | RCTX3-KWVHP-BR6TB-RB6DM-6X7HP |
 | Windows Server 2008 Datacenter                 | 7M67G-PC374-GR742-YH8V4-TCBY3 |
@@ -206,8 +206,8 @@ Consulte la [hoja de información del ciclo de vida de Windows](https://support.
 | Windows 7 Enterprise E                           | C29WB-22CC8-VJ326-GHFJW-H9DH4 |
 
 
-Vea también
+Consulte también
 
-• [Planificar la activación por volumen](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
+• [Plan de activación de volumen](https://technet.microsoft.com/library/jj134042(v=ws.11).aspx)
 
 

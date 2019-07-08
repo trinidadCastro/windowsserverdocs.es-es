@@ -1,6 +1,6 @@
 ---
-title: 'Escritorio remoto: permitir el acceso a su equipo desde fuera de la red'
-description: Obtenga información acerca de las opciones de acceso remoto a su equipo desde fuera de la red del equipo
+title: 'Escritorio remoto: permitir el acceso a tu PC desde fuera de la red'
+description: Obtén información acerca de las opciones de acceso remoto a tu PC desde fuera de la red del equipo
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,46 +14,46 @@ ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: 9e90a2faa14b65bc766c7d7ec47d5e815658c06e
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66805058"
 ---
-# <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>Escritorio remoto: permitir el acceso a su equipo desde fuera de la red de su PC
+# <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>Escritorio remoto: permitir el acceso a tu PC desde fuera de la red del equipo
 
 >Se aplica a: Windows 10, Windows Server 2016
 
-Cuando se conecta a su equipo mediante un cliente de escritorio remoto, se crea una conexión punto a punto. Esto significa que necesita acceso directo al equipo (a veces se denomina "host"). Si necesita conectarse a su equipo desde fuera de la red en en que el equipo se ejecuta, deberá habilitar el acceso. Tiene dos opciones: utilizar el reenvío de puerto o configurar una VPN.
+Cuando te conectas a tu PC mediante un cliente de Escritorio remoto, estás creando una conexión de punto a punto. Esto significa que necesitas obtener acceso directo al equipo (a veces se denomina “host”). Si necesitas conectarte al equipo desde fuera de la red en la que se ejecuta el mismo, debes habilitar ese acceso. Tienes un par de opciones: usar el enrutamiento de puerto o configurar una VPN.
 
-## <a name="enable-port-forwarding-on-your-router"></a>Habilitar el reenvío de puerto en el enrutador
+## <a name="enable-port-forwarding-on-your-router"></a>Habilitar el enrutamiento de puerto en el enrutador
 
-Reenvío de puerto simplemente asigna el puerto en la dirección IP de su enrutador (la dirección IP pública) para el puerto y dirección IP del equipo que desea tener acceso. 
+El enrutamiento de puerto simplemente asigna el puerto en la dirección IP del enrutador (tu IP pública) al puerto y la dirección IP de el equipo al que quiere obtener acceso. 
 
-Los pasos específicos para habilitar el reenvío de puerto dependen el enrutador que usa, por lo que necesitará buscar en línea para obtener instrucciones de su enrutador. Para obtener una explicación general de los pasos, eche un vistazo [wikiHow para establecer seguridad de enrutamiento de puerto en un enrutador](https://www.wikihow.com/Set-Up-Port-Forwarding-on-a-Router).
+Los pasos específicos para habilitar el enrutamiento de puerto dependen del enrutador que estés usando, por lo que deberás buscar en línea las instrucciones del enrutador. Para obtener una explicación general de los pasos, echa un vistazo a [wikiHow to Set Up Port Forwarding on a Router](https://www.wikihow.com/Set-Up-Port-Forwarding-on-a-Router) (wikiHow para configurar el enrutamiento de puerto en un enrutador).
 
-Antes de asignar el puerto necesita lo siguiente:
+Antes de asignar el puerto necesitarás lo siguiente:
 
-- Dirección IP interna de PC: Buscar en **configuración > red e Internet > estado > ver las propiedades de red**. Obtenga la configuración de red cuyo estado sea "Operational" y, a continuación, el **dirección IPv4**.
+- Dirección IP interna del equipo: Ve a **Configuración > Redes e Internet > Estado > Ver las propiedades de la red** . Encuentra la configuración de red que tenga el estado "Operativa" y obtén la **dirección IPv4**.
 
    ![Configuración de red operativa](../media/rdclient-operational-network.png)
 
-- La dirección IP pública (IP del enrutador). Hay muchas maneras para encontrarlo, puede buscar "Mi IP" (en Bing o Google) o ver el [propiedades de la red Wi-Fi](https://binged.it/2Gwob34) (para Windows 10).
-- Número de puerto que se está asignando. En la mayoría de los casos es 3389 - que es el puerto predeterminado usado por las conexiones de escritorio remoto.
-- Acceso de administrador a su enrutador.  
+- Tu dirección IP pública (la IP del enrutador). Tienes varias maneras de encontrarla: puedes buscar (en Bing o Google) "mi IP" o consultar las [propiedades de la red Wi-Fi](https://binged.it/2Gwob34) (para Windows 10).
+- Número de puerto que se va a asignar. En la mayoría de los casos es 3389, ya que es el puerto predeterminado que usan las conexiones del Escritorio remoto.
+- Acceso de administrador a tu enrutador.  
 
    >[!WARNING]
-   > Se abre su equipo hasta internet; Asegúrese de que establecer una contraseña segura para su PC.
+   > Vas a abrir el equipo a Internet: asegúrate de que tienes una contraseña segura establecida en el equipo.
 
-Después de asignar el puerto, podrá conectarse a su equipo host desde fuera de la red local mediante la conexión a la dirección IP pública del enrutador (la segunda viñeta anterior).
+Después de asignar el puerto, podrás conectarte al equipo host desde fuera de la red local; para ello, solo debes conectarte a la dirección IP pública del enrutador (esto se indica en la segunda viñeta anterior).
 
-Puede cambiar la dirección IP del enrutador: proveedor de servicios internet (ISP) puede asignar una dirección IP nueva en cualquier momento. Para evitar este problema, considere el uso de DNS dinámico: Esto le permite conectarse al equipo mediante una fácil de recordar el nombre de dominio, en lugar de la dirección IP. El enrutador actualiza automáticamente el servicio DDNS con la nueva dirección IP, debe cambiar.
+Recuerda que la dirección IP del enrutador puede cambiar: tu proveedor de acceso a Internet (ISP) puede asignarte una nueva IP en cualquier momento. Para evitar este problema, usa un DNS dinámico: esto te permitirá conectarte al equipo mediante un nombre de dominio fácil de recordar, en lugar de la dirección IP. El enrutador actualizará automáticamente el servicio DDNS con su nueva dirección IP, en caso de que cambie.
 
-Con la mayoría de los enrutadores puede definir qué dirección IP de origen o la red de origen puede usar la asignación de puertos. Por lo tanto, si sabe que va a conectar desde el trabajo, puede agregar la dirección IP para la red del trabajo - que le permite evitar la apertura del puerto en todo internet pública. Si el host que usa para conectarse usa la dirección IP dinámica, Establece la restricción de origen para permitir el acceso desde el intervalo completo de ese ISP determinado.
+Con la mayoría de los enrutadores, puedes definir qué IP de origen o red de origen puede usar la asignación de puertos. Por lo tanto, si sabes que solo vas a conectarte desde el trabajo, puedes agregar la dirección IP de la red del trabajo; gracias a ello, no tendrás que abrir el puerto a todo Internet. Si el host que estás usando para conectarte usa una dirección IP dinámica, configura la restricción de origen para permitir el acceso desde todo el rango de ese ISP en particular.
 
-También podría considerar la configuración de un [dirección IP estática](/windows-hardware/customize/mobile/mcsf/enable-static-ip) en su PC, por lo que no cambia la dirección IP interna. Si lo hace que, a continuación, el enrutador reenvío de puerto siempre señalará a la dirección IP correcta.
+También puedes configurar una [dirección IP estática](/windows-hardware/customize/mobile/mcsf/enable-static-ip) en tu PC para que la dirección IP interna no cambie. Si lo haces, el enrutamiento de puerto del enrutador siempre apuntará a la dirección IP correcta.
 
 
 ## <a name="use-a-vpn"></a>Usar una VPN
 
-Si se conecta a la red de área local mediante el uso de una red privada virtual (VPN), no tendrá que abrir su PC a la internet pública. En su lugar, cuando se conecta a la VPN, el cliente de escritorio remoto actúa como forma parte de la misma red y tener acceso a su PC. Hay una serie de servicios VPN, puede encontrar y usar lo que mejor le convenga.
+Si te conectas a una red de área local mediante una red privada virtual (VPN), no es necesario abrir el equipo a Internet. En cambio, cuando te conectes a la VPN, tu cliente de RD actuará como si fuera parte de la misma red y podrá obtener acceso al equipo. Existe una serie de servicios de VPN que puedes buscar y usar según lo que te convenga.

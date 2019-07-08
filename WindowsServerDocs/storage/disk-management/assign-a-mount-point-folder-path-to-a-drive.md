@@ -10,10 +10,10 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: d09024b3c7f7a1e55c9e9c2ece56e037fe7e16f2
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66812498"
 ---
 # <a name="assign-a-mount-point-folder-path-to-a-drive"></a>Asignar una ruta de acceso de carpeta de punto de montaje a una unidad
@@ -52,9 +52,9 @@ Puedes usar la Administración de discos para asignar una ruta de acceso de carp
 
 | Valor | Descripción |
 | --- | --- |
-| **volumen de la lista** | Muestra una lista de volúmenes básicos y dinámicos en todos los discos. |
-| **Seleccione el volumen**        | Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de carpeta de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.|
-| **assign** | <ul><li> Asigna una letra de unidad o una ruta de acceso de carpeta de punto de montaje al volumen con foco. Si no se especifica ninguna ruta de acceso de carpeta de punto de montaje o letra de unidad, se le asigna la siguiente letra de unidad disponible. Si la ruta de acceso de carpeta de punto de montaje o unidad letra ya está en uso, se genera un error.</li>  <li>Con el comando **assign**, puedes cambiar la letra de unidad asociada a una unidad extraíble.</li> <li> No puedes asignar letras de unidad a volúmenes de arranque ni a volúmenes que incluyan el archivo de paginación. Además, no puedes asignar una letra de unidad a una partición del fabricante de equipos originales (OEM), partición del sistema EFI o una partición GPT que no sea una partición de datos básica.</li></ul> |
+| **list volume** | Muestra una lista de volúmenes básicos y dinámicos en todos los discos. |
+| **select volume**        | Selecciona el volumen especificado, donde <em>volumenumber</em> es el número de volumen y el que recibe el foco. Si no se especifica ningún volumen, el comando **select** muestra el volumen actual con el foco. Puedes especificar el volumen por número, letra de unidad o ruta de acceso de carpeta de punto de montaje. En un disco básico, si seleccionas un volumen, este también recibe el foco de partición correspondiente.|
+| **assign** | <ul><li> Asigna una letra de unidad o una ruta de acceso de carpeta de punto de montaje al volumen con foco. Si no se especifica ninguna ruta de acceso de carpeta de punto de montaje o letra de unidad, se le asigna la siguiente letra de unidad disponible. Si la ruta de acceso de carpeta de punto de montaje o letra de unidad ya está en uso, se genera un error.</li>  <li>Con el comando **assign**, puedes cambiar la letra de unidad asociada a una unidad extraíble.</li> <li> No puedes asignar letras de unidad a volúmenes de arranque ni a volúmenes que incluyan el archivo de paginación. Además, no puedes asignar una letra de unidad a una partición del fabricante de equipos originales (OEM), partición de sistema EFI o una partición GPT que no sea una partición de datos básica.</li></ul> |
 | **mount=** <em>path</em> | Especifica una carpeta NTFS vacía y existente donde residirá la unidad montada.  |
 
 ## <a name="additional-considerations"></a>Consideraciones adicionales
@@ -65,7 +65,7 @@ Puedes usar la Administración de discos para asignar una ruta de acceso de carp
 -   Al asignar una ruta de acceso de carpeta de punto de montaje a una unidad, usa el **Visor de eventos** para comprobar el registro del sistema en busca de errores o advertencias del servicio de clúster que indiquen errores en la ruta de acceso de carpeta de punto de montaje. Estos errores aparecerían como **ClusSvc** en la columna **Origen** y **Recurso de disco físico** en la columna **Categoría**.
 -   También puedes crear una unidad montada usando el comando [mountvol](https://go.microsoft.com/fwlink/?linkid=64111).
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 -   [Notación de sintaxis de línea de comandos](https://technet.microsoft.com/library/cc742449(v=ws.11).aspx)
 
 
