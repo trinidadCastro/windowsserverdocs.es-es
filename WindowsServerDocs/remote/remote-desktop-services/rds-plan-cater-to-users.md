@@ -1,5 +1,5 @@
 ---
-title: Servicios de escritorio remoto - satisfaga las necesidades de diferentes tipos de usuarios
+title: 'Servicios de Escritorio remoto: Destinado a distintos tipos de usuarios'
 description: Describe los distintos tipos de usuarios para RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,18 +13,18 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: e602f41c19f38878925552a4bf173b7f3e36e796
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9d16989cc3ecbf0170081bb8cb52a9103f979741
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848126"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743462"
 ---
-# <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>Servicios de escritorio remoto - satisfaga las necesidades de diferentes tipos de usuarios
+# <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>Servicios de Escritorio remoto: Destinado a distintos tipos de usuarios
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
-Escalar la implementación según las necesidades de cada tipo de usuario esperada.
-Por ejemplo, los usuarios pueden llevar a cabo la entrada de datos en aplicaciones ligeras, manipular grandes conjuntos de datos con las aplicaciones de productividad como Office o trabajar con aplicaciones de ingeniería o gráficos pesadas.
+Escala la implementación según la necesidad esperada de cada tipo de usuario.
+Por ejemplo, los usuarios pueden realizar la entrada de datos en aplicaciones ligeras, manipular grandes conjuntos de datos con aplicaciones de productividad como Office, o trabajar con aplicaciones pesadas de ingeniería o gráficos.
 
-Se recomienda cargar la prueba de la implementación con las pruebas de esfuerzo y simulación de uso reales. ¡Cambiar el tamaño de carga para evitar sorpresas! Asegúrese de que la capacidad de respuesta cumple los requisitos del usuario, y que todo el sistema es resistente. Crear pruebas de carga con las herramientas de simulación, como LoginVSI, que comprueban la capacidad de su implementación para satisfacer las necesidades del usuario. 
+Se recomienda hacer una prueba de carga de la implementación con las pruebas de esfuerzo y simulación de uso real. ¡Cambia el tamaño de la carga para evitar sorpresas! Asegúrate de que la capacidad de respuesta cumpla los requisitos del usuario, y que todo el sistema sea resistente. Crea pruebas de carga con herramientas de simulación, como LoginVSI, que comprobar la capacidad de la implementación de satisfacer las necesidades de los usuarios. 

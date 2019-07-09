@@ -1,6 +1,6 @@
 ---
-title: 'Servicios de escritorio remoto: conectarse desde cualquier dispositivo'
-description: Obtenga información sobre las distintas formas en que los usuarios pueden conectarse a Escritorio remoto.
+title: 'Servicios de Escritorio remoto: Conexión desde cualquier dispositivo'
+description: Obtén información sobre las distintas maneras en que los usuarios pueden conectarse a Escritorio remoto.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,17 +13,17 @@ author: lizap
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: b06c081965869ece6c7418646413421382ae0c3b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7ff06314dc518dcc206da331327e2f974c9a5f6d
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887126"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743434"
 ---
-# <a name="remote-desktop-services---connect-from-any-device"></a>Servicios de escritorio remoto: conectarse desde cualquier dispositivo
+# <a name="remote-desktop-services---connect-from-any-device"></a>Servicios de Escritorio remoto: Conexión desde cualquier dispositivo
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
-Acceso a recursos corporativos desde cualquier Windows, Apple o Android equipo, tableta o teléfono. Permitir que los usuarios a ver fácilmente sus escritorios disponibles y aplicaciones desde cualquier dispositivo a través de fuente de Web de escritorio remoto.
+Accede a recursos corporativos desde cualquier equipo, tableta o teléfono Windows, Apple o Android. Permite que los usuarios vean fácilmente sus escritorios y aplicaciones disponibles desde cualquier dispositivo a través de fuente web de Escritorio remoto.
 
-Obtenga más información sobre [clientes de escritorio remoto de Microsoft](clients/remote-desktop-clients.md).
+Obtén más información sobre [Clientes de Escritorio remoto](clients/remote-desktop-clients.md).

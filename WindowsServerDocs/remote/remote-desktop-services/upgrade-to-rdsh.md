@@ -1,6 +1,6 @@
 ---
-title: Actualizar el Host de sesión de escritorio remoto a Windows Server 2016
-description: En este artículo se describe cómo actualizar las implementaciones existentes de servicios de escritorio remoto a Windows Server 2016.
+title: Actualización del host de sesión de Escritorio remoto a Windows Server 2016
+description: En este artículo se describe cómo actualizar las implementaciones existentes de Servicios de Escritorio remoto a Windows Server 2016.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,36 +13,36 @@ ms.topic: article
 ms.assetid: 5c9b98b8-4eca-4a39-b10b-2bac729f7f44
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 0cf5af29d610ba64d045e10241fd39b01d3f7024
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 98ed5b75680e6969a40017a27061e33449cb69e8
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856066"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743336"
 ---
-# <a name="upgrading-your-remote-desktop-session-host-to-windows-server-2016"></a>Actualizar el Host de sesión de escritorio remoto a Windows Server 2016
+# <a name="upgrading-your-remote-desktop-session-host-to-windows-server-2016"></a>Actualización del host de sesión de Escritorio remoto a Windows Server 2016
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
 > [!IMPORTANT]
-> Todas las aplicaciones deben desinstalarse antes de la actualización y reinstalarse tras la actualización para evitar cualquier problema de compatibilidad de aplicaciones que puede aumentar debido a la actualización.
+> Todas las aplicaciones deben desinstalarse antes de la actualización y reinstalarse tras la actualización para evitar cualquier problema de compatibilidad de aplicaciones que pueda surgir debido a la actualización.
 
-## <a name="supported-os-upgrades-with-rds-role-installed"></a>Admite actualizaciones del sistema operativo con instalado el rol RDS
-Se admiten actualizaciones a Windows Server 2016 solo desde Windows Server 2012 R2 y Windows Server 2016 TP5.
+## <a name="supported-os-upgrades-with-rds-role-installed"></a>Actualizaciones admitidas del sistema operativo con el rol de RDS instalado
+Las actualizaciones a Windows Server 2016 solo se admiten desde Windows Server 2012 R2 y Windows Server 2016 TP5.
 
-## <a name="upgrading-a-rds-session-based-collection"></a>Actualizar una colección basada en sesiones RDS
-Con el fin de mantener el tiempo de inactividad al mínimo, es mejor seguir los pasos descritos a continuación al actualizar una colección basada en sesiones RDS:
+## <a name="upgrading-a-rds-session-based-collection"></a>Actualizar una colección basada en sesiones de RDS
+Con el fin de minimizar el tiempo de inactividad, es mejor seguir los pasos descritos a continuación al actualizar una colección basada en sesiones de RDS:
 
-1. Identificar los servidores que se puede actualizar, por ejemplo, mitad de los servidores de la colección.
-2. Impedir nuevas conexiones a estos servidores estableciendo **permiten nuevas conexiones** en false.
+1. Identifica los servidores que se van a actualizar, por ejemplo, la mitad de los servidores de la colección.
+2. Impide nuevas conexiones a estos servidores; para ello, establece **Permitir conexiones nuevas** en false.
 3. Cierre todas las sesiones en estos servidores. 
-4. Quitar estos servidores de la colección.
-5. Actualizar los servidores a Windows Server 2016.
-6. Establecer **permiten nuevas conexiones** en "false" en los servidores restantes de la colección.
-7. Agregue los servidores actualizados a sus correspondientes colecciones.
-8. Quitar el conjunto de servidores para actualizarse desde la colección restantes.
-9. Establecer **permiten nuevas conexiones** en "true" en los servidores actualizados en la colección.
-10. Ahora puede actualizar los demás servidores de la implementación siguiendo los pasos del 3 al 9 anteriores.
+4. Quita estos servidores de la colección.
+5. Actualiza los servidores a Windows Server 2016.
+6. Establece **Permiten conexiones nuevas** en "false" en los servidores restantes de la colección.
+7. Vuelve a agregar los servidores actualizados a sus colecciones correspondientes.
+8. Quita de la colección el conjunto de servidores restante que va a actualizarse.
+9. Establece **Permiten conexiones nuevas** en "true" en los servidores actualizados de la colección.
+10. Ahora puedes actualizar los servidores restantes de la implementación siguiendo los pasos del 3 al 9 anteriores.
 
-## <a name="upgrading-a-standalone-rd-session-host-server"></a>Actualizar un servidor de Host de sesión de escritorio remoto independientes
-Un servidor de Host de sesión de escritorio remoto independientes se puede actualizar en cualquier momento.
+## <a name="upgrading-a-standalone-rd-session-host-server"></a>Actualizar un servidor host de sesión de Escritorio remoto independiente
+Un servidor host de sesión de Escritorio remoto independiente se puede actualizar en cualquier momento.

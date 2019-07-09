@@ -1,6 +1,6 @@
 ---
-title: Crear tu plan de recuperación ante desastres
-description: Obtenga información sobre cómo crear un plan de recuperación ante desastres para la implementación de RDS.
+title: Crear un plan de recuperación ante desastres
+description: Obtén información sobre cómo crear un plan de recuperación ante desastres para su implementación de RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,55 +12,55 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 8ad759a73e4a0ce1dc28f2b8e8d80f4365895430
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7bfe19258662a8e334ea0476689d8e860bfc8e5
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879506"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743881"
 ---
-# <a name="create-your-disaster-recovery-plan-for-rds"></a>Crear el plan de recuperación ante desastres para RDS
+# <a name="create-your-disaster-recovery-plan-for-rds"></a>Crear un plan de recuperación ante desastres para RDS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
-Puede crear un plan de recuperación ante desastres en Azure Site Recovery para automatizar el proceso de conmutación por error. Agregue todas las máquinas virtuales del componente RDS al plan de recuperación.
+Puedes crear un plan de recuperación ante desastres en Azure Site Recovery para automatizar el proceso de conmutación por error. Agrega todas las VM con componentes de RDS al plan de recuperación.
 
-Use los pasos siguientes en Azure para crear el plan de recuperación:
+Sigue los pasos a continuación en Azure para crear el plan de recuperación:
 
-1. Abrir almacén de Azure Site Recovery en Azure portal y, a continuación, haga clic en **planes de recuperación**.
-2. Haga clic en **crear** y escriba un nombre para el plan.
-3. Seleccione su **origen** y **destino**. El destino es un sitio RDS secundario o Azure.
-4. Seleccione las máquinas virtuales que hospedan los componentes RDS y, a continuación, haga clic en **Aceptar**.
+1. Abre Azure Site Recovery Vault en Azure Portal y, luego, haz clic en **Planes de recuperación**.
+2. Haz clic en **Crear** y escribe un nombre para el plan.
+3. Selecciona tu **Origen** y **Destino**. El destino es un sitio de RDS secundario o Azure.
+4. Selecciona las VM que hospedan los componentes de RDS y, luego, haz clic en **Aceptar**.
 
-Las secciones siguientes proporcionan información adicional acerca de cómo crear planes de recuperación para los diferentes tipos de implementación de RDS.
+En las secciones siguientes se proporciona información adicional sobre cómo crear planes de recuperación para los distintos tipos de implementación de RDS.
 
-## <a name="sessions-based-rds-deployment"></a>Implementación basada en sesiones de RDS
+## <a name="sessions-based-rds-deployment"></a>Implementación de RDS basada en sesiones
 
-Para una implementación basada en sesiones RDS, agrupar las máquinas virtuales para que aparezcan en la secuencia:
+Para una implementación de RDS basada en sesiones, agrupa las VM para que aparezcan en secuencia:
 
-1. Grupo de conmutación por error 1: máquina virtual del Host de sesión
-2. Grupo de conmutación por error 2: conexión de agente de VM
-3. Grupo de conmutación por error 3: máquina virtual de Web Access
+1. Grupo 1 de conmutación por error: VM del host de sesión
+2. Grupo 2 de conmutación por error: VM del Agente de conexión
+3. Grupo 3 de conmutación por error: VM de acceso web
 
-El plan será algo parecido a esto: 
+Tu plan tendrá un aspecto similar a este: 
 
-![Un plan de recuperación ante desastres para una implementación de RDS basados en sesión](media/rds-asr-session-drplan.png)
+![Un plan de recuperación ante desastres para una implementación de RDS basada en sesiones](media/rds-asr-session-drplan.png)
 
-## <a name="pooled-desktops-rds-deployment"></a>Implementación de RDS de escritorios
+## <a name="pooled-desktops-rds-deployment"></a>Implementación de RDS de escritorios agrupados
 
-Para una implementación de RDS con escritorios, agrupe las máquinas virtuales de modo que aparezcan en la secuencia, agregar scripts y los pasos manuales.
+Para una implementación de RDS con escritorios agrupados, agrupa las VM de modo que aparezcan en secuencia, agregando pasos manuales y scripts.
 
-1. Grupo de conmutación por error 1: máquina virtual de agente de conexión de RDS
-2. Grupo 1 acción manual - actualización de DNS
+1. Grupo 1 de conmutación por error: VM del Agente de conexión de RDS
+2. Acción manual del grupo 1: actualiza DNS
 
-   Ejecute PowerShell en modo elevado en la máquina virtual de agente de conexión. Ejecute el siguiente comando y espere unos minutos para asegurarse de que el DNS se actualiza con el nuevo valor:
+   Ejecuta PowerShell en modo elevado en la VM del Agente de conexión. Ejecuta el siguiente comando y espera unos minutos para asegurarte de que el DNS se actualice con el nuevo valor:
 
    ```
    ipconfig /registerdns
    ```
-3. Grupo 1 script - agregar hosts de virtualización
+3. Script del grupo 1: agrega hosts de virtualización
 
-   Modifique el script siguiente para ejecutar para cada host de virtualización en la nube. Normalmente, después de agregar un host de virtualización para un agente de conexión, deberá reiniciar el host. Asegúrese de que el host no tiene un reinicio pendiente antes de ejecutar la secuencia de comandos, o bien se producirá un error.
+   Modifica el script siguiente para ejecutarlo para cada host de virtualización en la nube. Normalmente, después de agregar un host de virtualización a un Agente de conexión, deberás reiniciar el host. Asegúrate de que el host no tenga un reinicio pendiente antes de ejecutar el script o, de lo contrario, se producirá un error.
 
    ```
    Broker - broker.contoso.com
@@ -69,10 +69,10 @@ Para una implementación de RDS con escritorios, agrupe las máquinas virtuales 
    ipmo RemoteDesktop; 
    add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
    ```
-4. Grupo de conmutación por error 2: plantilla de VM
-5. Grupo 2 script 1: activar desactivar la máquina virtual de plantilla
+4. Grupo 2 de conmutación por error: VM de plantillas
+5. Script 1 del grupo 2: desactiva la VM de plantillas
    
-   Se iniciará la plantilla de máquina virtual cuando se recuperan en el sitio secundario, pero es una máquina virtual de preparada con Sysprep y no se puede iniciar por completo. También RDS requiere que la máquina virtual esté apagado para crear una configuración agrupada de la máquina virtual a partir de él. Por lo tanto, debemos desactivarlo. Si tiene un único servidor VMM, el nombre de la máquina virtual de plantilla es el mismo en el servidor principal y la secundaria. Por este motivo, usamos el identificador de la máquina virtual según lo especificado por el *contexto* variable en el siguiente script. Si tiene varias plantillas, desactivarlas todas.
+   La VM de plantillas, cuando se recupere en el sitio secundario, se iniciará, pero es una VM de preparada con Sysprep y no se puede iniciar por completo. Además, RDS requiere apagar la VM para crear una configuración de VM agrupadas a partir de ella. Por lo tanto, debemos desactivarla. Si tienes un único servidor VMM, el nombre de la VM de plantillas es el mismo en el principal y el secundario. Por este motivo, usamos el id. de VM según lo especificado por la variable *Context* en el siguiente script. Si tienes varias plantillas, desactívalas todas.
 
    ```powershell
    ipmo virtualmachinemanager; 
@@ -81,9 +81,9 @@ Para una implementación de RDS con escritorios, agrupe las máquinas virtuales 
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
    } 
    ```
-6. Grupo 2 script 2: quitar las máquinas virtuales agrupadas existentes
+6. Script 2 del grupo 2: quita las VM agrupadas existentes
 
-   Deberá quitar las máquinas virtuales agrupadas en el sitio primario desde el agente de conexión, por lo que se pueden crear nuevas máquinas virtuales en el sitio secundario. En este caso, deberá especificar el host exacto en que se va a crear la máquina virtual agrupada. Tenga en cuenta que esta acción eliminará las máquinas virtuales de sólo la colección.
+   Deberás quitar del Agente de conexión las VM agrupadas en el sitio principal, de modo que las nuevas VM se puedan crear en el sitio secundario. En este caso, deberás especificar el host exacto en el que se van a crear las VM agrupadas. Ten en cuenta que esta acción eliminará las VM solo de la colección.
 
    ```powershell
    ipmo RemoteDesktop
@@ -92,40 +92,40 @@ Para una implementación de RDS con escritorios, agrupe las máquinas virtuales 
       Remove-RDVirtualDesktopFromCollection -CollectionName Win8Desktops -VirtualDesktopName $vm.VirtualDesktopName –Force
    }
    ```
-7. Acción manual del grupo 2 - nueva plantilla de asignación
+7. Acción manual del grupo 2: asigna una nueva plantilla
 
-   Debe asignar la nueva plantilla para el agente de conexión para la colección para que pueda crear nuevas máquinas virtuales agrupadas en el sitio de recuperación. Vaya al agente de conexión de RDS e identificar la colección. Editar las propiedades y especifique una nueva imagen de máquina virtual como su plantilla.
-8. Grupo 2 script 3: volver a crear máquinas virtuales agrupadas todas
+   Debes asignar la nueva plantilla al Agente de conexión para la colección, de modo que puedas crear nuevas VM agrupadas en el sitio de recuperación. Ve al Agente de conexión de RDS e identifica la colección. Edita las propiedades y especifica una nueva imagen de VM como plantilla.
+8. Script 3 del grupo 2: vuelve a crear todas las VM agrupadas
 
-   Vuelva a crear las máquinas virtuales agrupadas en el sitio de recuperación mediante el agente de conexión. En este caso, deberá especificar el host exacto en que se va a crear la máquina virtual agrupada.
+   Vuelve a crear las VM agrupadas en el sitio de recuperación mediante el Agente de conexión. En este caso, deberás especificar el host exacto en el que se van a crear las VM agrupadas.
 
-   El nombre de máquina virtual agrupado debe ser único, con el prefijo y sufijo. Si ya existe el nombre de la máquina virtual, se producirá un error en la secuencia de comandos. Además, si el lado principal máquinas virtuales se numeran del 1 al 5, la numeración de sitio de recuperación continuará desde 6.
+   El nombre de la VM agrupada debe ser único, con el prefijo y sufijo. Si ya existe el nombre de la VM, se producirá un error en el script. Además, si las VM del lado principal se numeran del 1 al 5, la numeración del sitio de recuperación continuará desde el 6.
 
    ```powershell
    ipmo RemoteDesktop; 
    Add-RDVirtualDesktopToCollection -CollectionName Win8Desktops -VirtualDesktopAllocation @{"RDVH1.contoso.com" = 1} 
    ```
-9. Grupo de conmutación por error 3: máquina virtual del servidor de puerta de enlace y de Web Access
+9. Grupo 3 de conmutación por error: VM de acceso web y servidor de puerta de enlace
 
 El plan de recuperación tendrá un aspecto similar al siguiente:
 
-![Un plan de recuperación ante desastres para una implementación de RDS con escritorios](media/rds-asr-pooled-drplan.png)
+![Un plan de recuperación ante desastres para una implementación de RDS con escritorios agrupados](media/rds-asr-pooled-drplan.png)
 
-## <a name="personal-desktops-rds-deployment"></a>Implementación de RDS escritorios personales
+## <a name="personal-desktops-rds-deployment"></a>Implementación de RDS de escritorios personales
 
-Para una implementación de RDS con escritorios personales, agrupe las máquinas virtuales de modo que aparezcan en la secuencia, agregar scripts y los pasos manuales.
+Para una implementación de RDS con escritorios personales, agrupa las VM de modo que aparezcan en secuencia, agregando pasos manuales y scripts.
 
-1. Grupo de conmutación por error 1: máquina virtual de agente de conexión de RDS
-2. Grupo 1 acción manual - actualización de DNS
+1. Grupo 1 de conmutación por error: VM del Agente de conexión de RDS
+2. Acción manual del grupo 1: actualiza DNS
 
-   Ejecute PowerShell en modo elevado en la máquina virtual de agente de conexión. Ejecute el siguiente comando y espere unos minutos para asegurarse de que el DNS se actualiza con el nuevo valor:
+   Ejecuta PowerShell en modo elevado en la VM del Agente de conexión. Ejecuta el siguiente comando y espera unos minutos para asegurarte de que el DNS se actualice con el nuevo valor:
 
    ```
    ipconfig /registerdns
    ```
-3. Grupo 1 script - agregar hosts de virtualización
+3. Script del grupo 1: agregue hosts de virtualización
       
-   Modifique el script siguiente para ejecutar para cada host de virtualización en la nube. Normalmente, después de agregar un host de virtualización para un agente de conexión, deberá reiniciar el host. Asegúrese de que el host no tiene un reinicio pendiente antes de ejecutar la secuencia de comandos, o bien se producirá un error.
+   Modifica el script siguiente para ejecutarlo para cada host de virtualización en la nube. Normalmente, después de agregar un host de virtualización a un Agente de conexión, deberás reiniciar el host. Asegúrate de que el host no tenga un reinicio pendiente antes de ejecutar el script o, de lo contrario, se producirá un error.
 
    ```powershell
    Broker - broker.contoso.com
@@ -134,10 +134,10 @@ Para una implementación de RDS con escritorios personales, agrupe las máquinas
    ipmo RemoteDesktop; 
    add-rdserver –ConnectionBroker broker.contoso.com –Role RDS-VIRTUALIZATION –Server VH1.contoso.com 
    ```
-4. Grupo de conmutación por error 2: plantilla de VM
-5. Grupo 2 script 1: activar desactivar la plantilla de máquina virtual
+4. Grupo 2 de conmutación por error: VM de plantillas
+5. Script 1 del grupo 2: desactiva la VM de plantillas
    
-   Se iniciará la plantilla de máquina virtual cuando se recuperan en el sitio secundario, pero es una máquina virtual de preparada con Sysprep y no se puede iniciar por completo. También RDS requiere que la máquina virtual esté apagado para crear una configuración agrupada de la máquina virtual a partir de él. Por lo tanto, debemos desactivarlo. Si tiene un único servidor VMM, el nombre de la máquina virtual de plantilla es el mismo en el servidor principal y la secundaria. Por este motivo, usamos el identificador de la máquina virtual según lo especificado por el *contexto* variable en el siguiente script. Si tiene varias plantillas, desactivarlas todas.
+   La VM de plantillas, cuando se recupere en el sitio secundario, se iniciará, pero es una VM de preparada con Sysprep y no se puede iniciar por completo. Además, RDS requiere apagar la VM para crear una configuración de VM agrupadas a partir de ella. Por lo tanto, debemos desactivarla. Si tienes un único servidor VMM, el nombre de la VM de plantillas es el mismo en el principal y el secundario. Por este motivo, usamos el id. de VM según lo especificado por la variable *Context* en el siguiente script. Si tienes varias plantillas, desactívalas todas.
 
    ```powershell
    ipmo virtualmachinemanager; 
@@ -146,10 +146,10 @@ Para una implementación de RDS con escritorios personales, agrupe las máquinas
       Get-SCVirtualMachine -ID $vm | Stop-SCVirtualMachine –Force
    } 
    ```
-6. Grupo de conmutación por error 3: máquinas virtuales personales
-7. Grupo 3 script 1: quitar las máquinas virtuales personales existentes y agregarlos
+6. Grupo 3 de conmutación por error: VM personales
+7. Script 1 del grupo 3: quita las VM personales existentes y agréguelas
 
-   Quite las máquinas virtuales personales en el sitio primario desde el agente de conexión, por lo que se pueden crear nuevas máquinas virtuales en el sitio secundario. Debe extraer las asignaciones de las máquinas virtuales y volver a agregar las máquinas virtuales para el agente de conexión con el hash de las asignaciones. Esto solo quitará las máquinas virtuales personales de la colección y volver a agregarlos. La asignación de escritorio personal se exportan y volver a importar en la colección.
+   Quita del Agente de conexión las VM personales en el sitio principal, de modo que las nuevas VM se puedan crear en el sitio secundario. Debes extraer las asignaciones de las VM y volver a agregar las máquinas virtuales al Agente de conexión con el hash de las asignaciones. Esto solo quitará las VM personales de la colección y las volverá a agregar. La asignación de escritorios personales se exportará y se volverá a importar en la colección.
 
    ```powershell
    ipmo RemoteDesktop
@@ -162,8 +162,8 @@ Para una implementación de RDS con escritorios personales, agrupe las máquinas
    
    Import-RDPersonalVirtualDesktopAssignment -CollectionName CEODesktops -Path ./Desktopallocations.txt -ConnectionBroker broker.contoso.com 
    ```
-8. Grupo de conmutación por error 3: máquina virtual del servidor de puerta de enlace y de Web Access
+8. Grupo 3 de conmutación por error: VM de acceso web y servidor de puerta de enlace
 
-El plan será algo parecido a esto: 
+Tu plan tendrá un aspecto similar a este: 
 
-![Un plan de recuperación ante desastres para una implementación de RDS escritorios personales](media/rds-asr-personal-desktops-drplan.png)
+![Un plan de recuperación ante desastres para una implementación de RDS con escritorios personales](media/rds-asr-personal-desktops-drplan.png)

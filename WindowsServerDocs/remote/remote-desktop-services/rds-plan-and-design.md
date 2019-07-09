@@ -1,6 +1,6 @@
 ---
-title: 'RDS: ejecución y optimización'
-description: Información de planeación para ayudarle a diseñar la implementación de escritorio remoto.
+title: 'RDS: Ejecución y ajuste'
+description: Información de planeación para ayudarle a diseñar la implementación de Escritorio remoto.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,27 +14,27 @@ ms.assetid: 047b08be-7f91-4194-a641-5b6941b92515
 author: spatnaik
 manager: scottman
 ms.openlocfilehash: 534fbef473c2627f65189c6f3dfcc9a89200f289
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59815736"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743493"
 ---
-# <a name="plan-and-design-your-remote-desktop-services-environment"></a>Planear y diseñar su entorno de servicios de escritorio remoto
+# <a name="plan-and-design-your-remote-desktop-services-environment"></a>Planear y diseñar su entorno de Servicios de Escritorio remoto
 
-Una implementación escalable y de escritorio remoto requiere el uso de modelos y prácticas específicos.
-Diseñar para un rendimiento óptimo y escalar horizontalmente es clave. Use los siguientes escenarios que le ayudarán a idear, diseñar y mejorando la implementación.
+Una implementación altamente escalable de Escritorio remoto requiere el uso de modelos y prácticas específicos.
+Es clave diseñar para un rendimiento óptimo y escalado horizontal. Usa los siguientes escenarios para ayudarlo a idear, diseñar y mejorando la implementación de manera continua.
 
-Use la siguiente información para planear y diseñar su implementación:
+Usa la siguiente información para planear y diseñar su implementación:
 
 - [Compilación en cualquier lugar](rds-plan-build-anywhere.md)
-- [Satisfaga las necesidades de diferentes tipos de usuarios](rds-plan-cater-to-users.md)
+- [Destinado a distintos tipos de usuarios](rds-plan-cater-to-users.md)
 - [Acceso desde cualquier lugar](rds-plan-access-from-anywhere.md)
 - [Alta disponibilidad](rds-plan-high-availability.md)
-- [Autenticación multiFactor](rds-plan-mfa.md)
-- [Almacenamiento de datos seguro](rds-plan-secure-data-storage.md)
+- [Autenticación multifactor](rds-plan-mfa.md)
+- [Almacenamiento seguro de datos](rds-plan-secure-data-storage.md)
 - [Habilitar la representación de gráficos avanzados](rds-graphics-virtualization.md)
-- [Conectarse desde cualquier dispositivo](rds-plan-connect-from-any-device.md)
-- [Elija la forma de pago](rds-plan-choose-how-you-pay.md)
+- [Conexión desde cualquier dispositivo](rds-plan-connect-from-any-device.md)
+- [Elección de la forma de pago](rds-plan-choose-how-you-pay.md)
 
-No olvide revisar también el [arquitectura de referencia de hospedaje de escritorio](desktop-hosting-reference-architecture.md), que proporciona información general sobre la arquitectura de escritorio remoto y le ayuda a planear un entorno de RDS híbrida que incluye la infraestructura de Azure.
+No olvides revisar también la [arquitectura de referencia de hospedaje de escritorio](desktop-hosting-reference-architecture.md), que proporciona información general sobre la arquitectura de Escritorio remoto y le ayuda a planear un entorno de RDS híbrido que incluye la infraestructura de Azure.

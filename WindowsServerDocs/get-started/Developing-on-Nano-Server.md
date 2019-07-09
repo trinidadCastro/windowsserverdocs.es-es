@@ -13,10 +13,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 8d793dde9c41bc99b55eeb0da3a5ee4b025f08d6
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443642"
 ---
 # <a name="developing-for-nano-server"></a>Desarrollo para Nano Server
@@ -24,7 +24,7 @@ ms.locfileid: "66443642"
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como una [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para obtener más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
 
 En estos temas se explican las diferencias importantes de PowerShell en Nano Server y también se proporcionan instrucciones para desarrollar sus propios cmdlets de PowerShell para usarlos en Nano Server.
 
@@ -35,7 +35,7 @@ En estos temas se explican las diferencias importantes de PowerShell en Nano Ser
 Para administrar Nano Server con la comunicación remota a Windows PowerShell, necesita agregar la dirección IP de Nano Server a la lista de hosts de confianza del equipo de administración, agregar la cuenta que utiliza para los administradores de Nano Server y habilitar CredSSP si piensa usar esta característica.  
 
 > [!NOTE]
-> Si el destino de Nano Server y el equipo de administración están en el mismo bosque de AD DS (o en bosques con una relación de confianza), no debe agregar Nano Server a la lista de hosts de confianza, puede conectarse al servidor Nano mediante su nombre de dominio completo , por ejemplo: PS C:\> Enter-PSSession - ComputerName nanoserver.contoso.com-Credential (Get-Credential)
+> Si el destino en Nano Server y el equipo de administración están en el mismo bosque de AD DS (o en bosques con una relación de confianza), no debe agregar Nano Server a la lista de hosts de confianza; puede conectarse a Nano Server mediante su nombre de dominio completo, por ejemplo: PS C:\> Enter-PSSession -ComputerName nanoserver.contoso.com -Credential (Get-Credential)
   
   
 Para agregar Nano Server a la lista de hosts de confianza, ejecute este comando en un símbolo del sistema de Windows PowerShell con privilegios elevados:  
@@ -55,9 +55,9 @@ Enter-PSSession -ComputerName $ip -Credential $user
 Ahora puede ejecutar comandos de Windows PowerShell en Nano Server de la forma habitual.  
   
 > [!NOTE]  
-> No todos los comandos de Windows PowerShell están disponibles en esta versión de Nano Server. Para ver cuáles están disponibles, ejecute `Get-Command -CommandType Cmdlet`  
+> No todos los comandos de Windows PowerShell están disponibles en esta versión de Nano Server. Para ver cuáles están disponibles, ejecute `Get-Command -CommandType Cmdlet`.  
   
-Detener la sesión remota con el comando `Exit-PSSession`  
+Detenga la sesión remota con el comando `Exit-PSSession`.  
   
 ## <a name="using-windows-powershell-cim-sessions-over-winrm"></a>Uso de sesiones CIM en Windows PowerShell a través de WinRM  
 Puede usar sesiones e instancias CIM en Windows PowerShell para ejecutar comandos WMI mediante la Administración remota de Windows (WinRM).  
