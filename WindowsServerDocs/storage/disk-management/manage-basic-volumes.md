@@ -1,5 +1,5 @@
 ---
-title: Administrar volúmenes básicos
+title: Administración de volúmenes básicos
 description: En este artículo se describe cómo administrar volúmenes básicos.
 ms.date: 10/12/2017
 ms.prod: windows-server-threshold
@@ -9,21 +9,21 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: c75d887a6427673319999522b890d523f4276871
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870966"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63738483"
 ---
-# <a name="manage-basic-volumes"></a>Administrar volúmenes básicos
+# <a name="manage-basic-volumes"></a>Administración de volúmenes básicos
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 Un disco básico es un disco físico que incluye particiones principales, particiones extendidas o unidades lógicas. Las particiones y unidades lógicas en los discos básicos se conocen como volúmenes básicos. Solo puedes crear volúmenes básicos en los discos básicos.
 
-Puedes agregar más espacio a las particiones existentes principales y unidades lógicas ampliándolas con espacio sin asignar, contiguo y adyacente en el mismo disco. Para extender un volumen básico, debe estar formateado con el sistema de archivos NTFS. Puedes ampliar una unidad lógica en el espacio libre contiguo en la partición extendida que lo contiene. Si se extiende a una unidad lógica más allá del espacio libre disponible en la partición extendida, la partición extendida crece para incluir la unidad lógica siempre que la partición extendida vaya seguida de un espacio contiguo y sin asignar.
+Puedes agregar más espacio a las particiones existentes principales y unidades lógicas ampliándolas con espacio sin asignar, contiguo y adyacente en el mismo disco. Para extender un volumen básico, debe estar formateado con el sistema de archivos NTFS. Puedes ampliar una unidad lógica en el espacio disponible contiguo en la partición extendida que lo contiene. Si se extiende a una unidad lógica más allá del espacio disponible en la partición extendida, la partición extendida crece para incluir la unidad lógica siempre que la partición extendida vaya seguida de un espacio contiguo y sin asignar.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulta también
 
 -   [Asignar una ruta de acceso de carpeta de punto de montaje a una unidad](assign-a-mount-point-folder-path-to-a-drive.md)
 -   [Extender un volumen básico](extend-a-basic-volume.md)

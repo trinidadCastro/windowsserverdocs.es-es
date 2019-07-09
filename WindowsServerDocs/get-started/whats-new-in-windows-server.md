@@ -9,33 +9,33 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
 ms.openlocfilehash: 8e19c7a51ef1f50f974dc380e00315f9980da560
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66501364"
 ---
-# <a name="whats-new-in-windows-server"></a>Novedades de Windows Server
+# <a name="whats-new-in-windows-server"></a>Novedades de Windows Server
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
-Puede encontrar las nuevas características para cada una de estas versiones de Windows Server.  
+Puedes encontrar las nuevas características para cada una de estas versiones de Windows Server.  
 
-Libera el canal de mantenimiento a largo plazo (LTSC):
+Versiones del Canal de mantenimiento a largo plazo (LTSC):
 
 - [Novedades de Windows Server 2019](../get-started-19/whats-new-19.md)
 - [Novedades en Windows Server 2016](whats-new-in-windows-server-2016.md)
 
-Versiones de canal semianual:
+Versiones del Canal semianual:
 
-- [What ' s New in Windows Server, versión 1903](../get-started-19/whats-new-in-windows-server-1903.md)
+- [Novedades de Windows Server, versión 1903](../get-started-19/whats-new-in-windows-server-1903.md)
 - [Novedades de Windows Server, versión 1809](whats-new-in-windows-server-1809.md)
 - [Novedades de Windows Server, versión 1803](whats-new-in-windows-server-1803.md)
-- [What ' s New in Windows Server, versión 1709](whats-new-in-windows-server-1709.md) (sin soporte técnico a partir del 9 de abril de 2019)
+- [Novedades de Windows Server, versión 1709](whats-new-in-windows-server-1709.md) (sin soporte técnico a partir del 9 de abril de 2019)
 
-Las versiones de canal semianual de Windows Server ofrecen nuevas capacidades de sistema operativo a un ritmo más rápido. Una nueva versión sale cada seis meses y se admite durante 18 meses. Comprobar [información de versión de Windows Server](windows-server-release-info.md) y [página de soporte técnico del ciclo de vida](https://support.microsoft.com/lifecycle) para admitir las fechas y use siempre la versión más reciente si es posible.
+Las versiones del Canal semianual de Windows Server ofrecen nuevas funcionalidades del sistema operativo a un ritmo más rápido. Cada seis meses sale una nueva versión y se admite durante 18 meses. Comprueba la [información de versión de Windows Server](windows-server-release-info.md) y la [página de soporte técnico del ciclo de vida](https://support.microsoft.com/lifecycle) para ver las fechas de soporte técnico y utiliza siempre la versión más reciente si es posible.
 
-## <a name="see-also"></a>Vea también
+## <a name="see-also"></a>Consulte también
 
 - [Notas de la versión: Problemas importantes en Windows Server 2019](../get-started-19/rel-notes-19.md)
 - [Notas de la versión: Problemas importantes en Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)

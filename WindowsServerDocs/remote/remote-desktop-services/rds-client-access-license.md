@@ -1,6 +1,6 @@
 ---
-title: Licencia de su implementación de RDS con licencias de acceso de cliente (CAL)
-description: Información general sobre licencias de servicios de escritorio remoto de cliente.
+title: Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)
+description: Información general sobre licencias de cliente en Servicios de Escritorio remoto.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,68 +13,67 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/20/2018
 manager: dongill
-ms.openlocfilehash: 6648a52bb4d09725935a2197d6ce6fa6d8cc74a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0254c03396cba69a86eed021319ca2e2483ca625
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853446"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63743866"
 ---
-# <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>Licencia de su implementación de RDS con licencias de acceso de cliente (CAL)
+# <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
 
-Cada usuario y el dispositivo que se conecta a un host de sesión de escritorio remoto necesitan un licencias de acceso de cliente (CAL). Use licencias de escritorio remoto para instalar, emitir y realizar un seguimiento de CAL de RDS.  
+Cada usuario y dispositivo que se conecta a un host de sesión de Escritorio remoto necesita una licencia de acceso de cliente (CAL). Las licencias de Escritorio remoto se usan para instalar, emitir y realizar un seguimiento de las CAL de RDS.  
 
-Cuando un usuario o un dispositivo se conecta a un servidor Host de sesión de escritorio remoto, el servidor Host de sesión de escritorio remoto determina si es necesaria una CAL de RDS. El servidor Host de sesión de escritorio remoto, a continuación, solicita una CAL de RDS desde el servidor de licencias de escritorio remoto. Si una CAL de RDS adecuada está disponible en un servidor de licencias, la CAL de RDS se emite al cliente y el cliente es capaz de conectarse al servidor Host de sesión de escritorio remoto y desde allí para el escritorio o las aplicaciones que se está intentando usar.
+Cuando un usuario o un dispositivo se conecta a un servidor host de sesión de Escritorio remoto, el servidor host de sesión de Escritorio remoto determina si es necesaria una CAL de RDS. Luego, el servidor host de sesión de Escritorio remoto solicita una CAL de RDS al servidor de licencias de Escritorio remoto. Si hay disponible una CAL de RDS adecuada en un servidor de licencias, se emite esta CAL de RDS para el cliente, y el cliente puede conectarse al servidor host de sesión de Escritorio remoto y, desde allí, al escritorio o las aplicaciones que intenta usar.
 
-Aunque no hay un período de gracia durante qué ninguna licencia de servidor es necesario, tras el período de gracia finalice, los clientes debe tener una CAL de RDS válido emitido por un servidor de licencias antes de puede iniciar sesión en un servidor Host de sesión de escritorio remoto.
+Aunque hay un período de gracia de la licencia durante el que no se necesita ningún servidor de licencias, después de que el período de gracia finaliza, los clientes deben tener una CAL de RDS válida emitida por un servidor de licencias para poder iniciar sesión en un servidor host de sesión de Escritorio remoto.
 
-Para obtener información acerca del funcionan de las licencias de acceso de cliente de servicios de escritorio remoto y para implementar y administrar las licencias, use la siguiente información:
+Para saber cómo funcionan las licencias de acceso de cliente en servicios de Escritorio remoto y para implementar y administrar las licencias, usa la siguiente información:
 
-- [Entender el modelo CAL](#understanding-the-cals-model)
-- [Activar el servidor de licencias](rds-activate-license-server.md)
-- [Instalar CAL de RDS en el servidor de licencias](rds-install-cals.md)
-- [Seguimiento de CAL utilizadas en la implementación](rds-track-cals.md)
+- [Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)](#license-your-rds-deployment-with-client-access-licenses-cals)
+  - [Descripción del modelo de CAL](#understanding-the-cals-model)
+  - [Nota sobre las versiones de CAL](#note-about-cal-versions)
 
 ## <a name="understanding-the-cals-model"></a>Descripción del modelo de CAL
 
-Hay dos tipos de CAL:
+Existen dos tipos de CAL:
 
-- RDS CAL por dispositivo
-- RDS CAL por usuario
+- CAL de RDS por dispositivo
+- CAL de RDS por usuario
 
-En la tabla siguiente se describe las diferencias entre los dos tipos de CAL:
+En la tabla siguiente se describen las diferencias entre los dos tipos de CAL:
 
 | Por dispositivo                                                     | Por usuario                                                                         |
 |----------------------------------------------------------------|----------------------------------------------------------------------------------|
-| CAL físicamente se asignan a cada dispositivo.                   | CAL se asignan a un usuario en Active Directory.                                 |
-| Se realiza un seguimiento de CAL del servidor de licencias.                        | Se realiza un seguimiento de CAL del servidor de licencias.                                          |
-| Pueden realizar el seguimiento de CAL, independientemente de la pertenencia a Active Directory. | No realizar el seguimiento de CAL dentro de un grupo de trabajo.                                       |
-| Puede revocar hasta un 20% de las CAL.                              | No se puede revocar las CAL.                                                      |
-| Licencias CAL temporales son válidas para 52 a 89 días.                       | Licencias CAL temporales no están disponibles.                                                |
-| No pueden estar sobreasignadas CAL.                                  | CAL pueden estar sobreasignadas (en incumplimiento de contrato de licencia de escritorio remoto). |
+| Las CAL se asignan físicamente a cada dispositivo.                   | Las CAL se asignan a un usuario en Active Directory.                                 |
+| El seguimiento de las CAL se hace por servidor de licencias.                        | El seguimiento de las CAL se hace por servidor de licencias.                                          |
+| El seguimiento de las CAL puede hacerse independientemente de la pertenencia a Active Directory. | No se hace un seguimiento de las CAL dentro de un grupo de trabajo.                                       |
+| Puedes revocar hasta un 20 % de las CAL.                              | No puedes revocar las CAL.                                                      |
+| Las CAL temporales son válidas durante 52 a 89 días.                       | Las CAL temporales no están disponibles.                                                |
+| Las CAL no pueden sobreasignarse.                                  | Las CAL pueden sobreasignarse (en incumplimiento del contrato de licencia de Escritorio remoto). |
 
-Cuando se usa el modelo por dispositivo, una licencia temporal se emite la primera vez que se conecta un dispositivo para el Host de sesión de escritorio remoto. La segunda vez que el dispositivo se conecta, siempre que el servidor de licencias está activado y hay CAL disponibles, los problemas del servidor de licencias una CAL de RDS por dispositivo permanente.
+Cuando se usa el modelo por dispositivo, se emite una licencia temporal la primera vez que un dispositivo se conecta al host de sesión de Escritorio remoto. La segunda vez que el dispositivo se conecta, siempre que el servidor de licencias esté activado y haya CAL disponibles, el servidor de licencias emite una CAL permanente de RDS por dispositivo.
 
-Cuando se usa el modelo por usuario, no se aplica la licencia y se concede a cada usuario una licencia para conectarse a un Host de sesión de escritorio remoto desde cualquier número de dispositivos. El servidor de licencias emite licencias desde el grupo de CAL disponible o el grupo de CAL Over-Used. Es responsabilidad suya asegurarse de que todos los usuarios tienen una licencia válida y cero Over-Used CAL; en caso contrario, se encuentra en la infracción de los términos de licencia de servicios de escritorio remoto.
+Cuando se usa el modelo por usuario, no se exige la concesión de licencias y se concede una licencia a cada usuario para que se conecte a un host de sesión de Escritorio remoto desde cualquier cantidad de dispositivos. El servidor de licencias emite licencias desde el grupo de CAL disponible o el grupo de CAL Over-Used. Es tu responsabilidad asegurarte de que todos los usuarios tengan una licencia válida y ninguna CAL Over-Used; en caso contrario, estarás en infracción de los términos de licencia de los Servicios de escritorio remoto.
 
-Para asegurarse de que cumple con los términos de licencia de servicios de escritorio remoto, vía el número de CAL por usuario de RDS en su organización y asegúrese de tener un suficientes CAL por usuario instalada en el servidor de licencias para todos los usuarios.
+Para asegurarte de que cumples con los términos de licencia de los Servicios de escritorio remoto, haz un seguimiento del número de CAL de RDS por usuario en tu organización y asegúrate de tener suficientes CAL por usuario instaladas en el servidor de licencias para todos los usuarios.
 
-Puede usar el Administrador de licencias de escritorio remoto para realizar un seguimiento y generar informes de CAL por usuario de RDS.
+Puedes usar el Administrador de licencias de Escritorio remoto para el seguimiento y generar informes de CAL de RDS por usuario.
 
-## <a name="note-about-cal-versions"></a>Tenga en cuenta acerca de las versiones de CAL
+## <a name="note-about-cal-versions"></a>Nota sobre las versiones de CAL
 
-La CAL utilizada por los usuarios o dispositivos debe corresponder a la versión de Windows Server que se está conectando el usuario o dispositivo. No se puede utilizar CAL anteriores para tener acceso a las versiones más recientes de Windows Server, pero puede utilizar CAL más recientes para tener acceso a versiones anteriores de Windows Server.
+La CAL usada por los usuarios o dispositivos debe corresponder a la versión de Windows Server a la que se conecta el usuario o dispositivo. No puedes usar CAL anteriores para acceder a versiones más recientes de Windows Server, pero puedes usar CAL más recientes para acceder a versiones anteriores de Windows Server.
 
-La siguiente tabla muestra las CAL que son compatibles en Hosts de sesión de escritorio remoto y los Hosts de virtualización de escritorio remoto.
+En la siguiente tabla se muestran las CAL que son compatibles con los hosts de sesión de Escritorio remoto y los hosts de virtualización de Escritorio remoto.
 
-|                  |2008 R2 y versiones anterior CAL|2012 CAL|2016 CAL|2019 CAL|
+|                  |CAL para 2008 R2 y versiones anteriores|CAL para 2012|CAL para 2016|CAL para 2019|
 |---------------------------------|--------|--------|--------|--------|
-| **Servidor de licencias de 2008, 2008 R2**| Sí    | No     | No     | No     |
-| **servidor de licencias de 2012**         | Sí    | Sí    | No     | No     |
-| **Servidor de licencias de 2012 R2**      | Sí    | Sí    | No     | No     |
-| **servidor de licencias de 2016**         | Sí    | Sí    | Sí    | No     |
-| **servidor de licencias de 2019**         | Sí    | Sí    | Sí    | Sí    |
+| **Servidor de licencias para 2008, 2008 R2**| Sí    | No     | No     | No     |
+| **Servidor de licencias para 2012**         | Sí    | Sí    | No     | No     |
+| **Servidor de licencias para 2012 R2**      | Sí    | Sí    | No     | No     |
+| **Servidor de licencias para 2016**         | Sí    | Sí    | Sí    | No     |
+| **Servidor de licencias para 2019**         | Sí    | Sí    | Sí    | Sí    |
 
-Cualquier servidor de licencias RDS puede hospedar las licencias de todas las versiones anteriores de servicios de escritorio remoto y la versión actual de servicios de escritorio remoto. Por ejemplo, un servidor de licencias de RDS de Windows Server 2016 puede hospedar las licencias de todas las versiones anteriores de RDS, mientras que un servidor de licencias de Windows Server 2012 R2 RDS solo puede hospedar licencias hasta Windows Server 2012 R2.
+Cualquier servidor de licencias de RDS puede hospedar las licencias de todas las versiones anteriores de los Servicios de Escritorio remoto y la versión actual de los Servicios de Escritorio remoto. Por ejemplo, un servidor de licencias de RDS para Windows Server 2016 puede hospedar licencias de todas las versiones anteriores de RDS, mientras que un servidor de licencias de RDS para Windows Server 2012 R2 solo puede hospedar licencias hasta Windows Server 2012 R2.

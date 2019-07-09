@@ -1,6 +1,6 @@
 ---
 title: 'Escritorio remoto: comparación de las aplicaciones cliente'
-description: Obtenga información sobre cómo se comparan las distintas aplicaciones de escritorio remoto en cuanto a funciones y características admitidas.
+description: Aprenda cómo se comparan las diferentes aplicaciones de Escritorio remoto cuando se trata de las características y funciones admitidas.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,58 +15,58 @@ ms.author: elizapo
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 0e001b590f524711185e3dd70db3bc52a9b8d9af
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66447124"
 ---
-# <a name="compare-the-client-apps"></a>Comparar las aplicaciones cliente
+# <a name="compare-the-client-apps"></a>Comparación de las aplicaciones cliente
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
-A menudo se nos pide cómo comparan las diferentes aplicaciones cliente de escritorio remoto entre sí. ¿Todas ellas hacen lo mismo? Estas son las respuestas a esas preguntas.
+A menudo nos preguntan cómo se comparan las diferentes aplicaciones cliente de Escritorio remoto entre sí. ¿Todas ellas hacen lo mismo? Estas son las respuestas a esas preguntas.
 
-## <a name="redirection-support"></a>Compatibilidad con la redirección
+## <a name="redirection-support"></a>Compatibilidad con el redireccionamiento
 
-Las siguientes tablas comparan la compatibilidad con dispositivos y otros redireccionamientos en la aplicación de conexión a Escritorio remoto, aplicación Universal, aplicación Android, aplicación iOS, macOS web y la aplicación cliente. Estas tablas cubre las redirecciones que puede tener acceso a la vez en una sesión remota. 
+En las tablas siguientes se compara la compatibilidad para dispositivos y otros redireccionamientos en la aplicación Conexión a Escritorio remoto, aplicación universal, aplicación Android, aplicación iOS, aplicación macOS y cliente web. Estas tablas cubren los redireccionamientos a las que puedes tener acceso una vez te encuentres en una sesión remota. 
 
-Si, de forma remota a su escritorio personal, hay redirecciones adicionales que se pueden configurar en el **configuración adicional** para la sesión. Si su organización administra las aplicaciones o escritorio remoto, el administrador puede habilitar o deshabilitar las redirecciones a través de la configuración de directiva de grupo.
+Si lo haces de forma remota en tu escritorio personal, hay redireccionamientos adicionales que puedes configurar en la **configuración adicional** de la sesión. Si tu organización administra tus aplicaciones o escritorio remotos, tu administrador puede habilitar o deshabilitar los redireccionamientos mediante la configuración de la directiva de grupo.
 
-### <a name="input-redirection"></a>Redirección de entrada
+### <a name="input-redirection"></a>Redireccionamiento de entrada
 
-| Redirección | Escritorio remoto<br> Conexión | Universal | Android | iOS | macOS |          cliente Web           |
+| Redireccionamiento | Escritorio remoto<br> Conexión | Universal | Android | iOS | macOS |          cliente web           |
 |-------------|-------------------------------|-----------|---------|-----|-------|-------------------------------|
 |  Teclado   |               X               |     X     |    X    |  X  |   X   |               X               |
 |    Mouse    |               X               |     X     |    X    | X\* |   X   |               X               |
-|    Función táctil    |               X               |     X     |    X    |  X  |       | X (Internet Explorer no admite Edge ni) |
+|    Función táctil    |               X               |     X     |    X    |  X  |       | X (no se admiten Internet Explorer ni Edge) |
 |    Otras    |              Lápiz              |           |         |     |       |                               |
 
-* Para ver el [lista de dispositivos de entrada admitidos por el cliente de escritorio remoto de iOS Beta](remote-desktop-ios.md#supported-input-devices).
+*Consulta la [lista de dispositivos de entrada compatibles para el cliente beta de iOS de Escritorio remoto](remote-desktop-ios.md#supported-input-devices).
 
-### <a name="port-redirection"></a>Redirección de puertos   
+### <a name="port-redirection"></a>Redireccionamiento de puertos   
 
-| Redirección | Escritorio remoto <br>Conexión | Universal | Android | iOS | macOS | cliente Web |
+| Redireccionamiento | Escritorio remoto <br>Conexión | Universal | Android | iOS | macOS | cliente web |
 |-------------|-------------------------------|-----------|---------|-----|-------|------------|
 | Puerto serie | X                             |           |         |     |       |            |
 | USB         | X                             |           |         |     |       |            |
 
-Cuando se habilita la redirección de puertos USB, los dispositivos USB conectados al puerto USB se reconocen automáticamente en la sesión remota.
+Cuando se habilita el redireccionamiento del puerto USB, los dispositivos USB conectados al puerto USB se reconocen automáticamente en la sesión remota.
 
-### <a name="other-redirection-devices-etc"></a>Otro redireccionamiento (dispositivos, etcetera)
+### <a name="other-redirection-devices-etc"></a>Otro redireccionamiento (dispositivos, etc.)
 
 
 
-| Redirección         | Conexión a Escritorio remoto | Universal   | Android | iOS         | macOS                                    | cliente Web    |
+| Redireccionamiento         | Conexión a Escritorio remoto | Universal   | Android | iOS         | macOS                                    | cliente web    |
 |---------------------|---------------------------|-------------|---------|-------------|------------------------------------------|---------------|
 | Cámaras             | X                         |             |         |             |                                          |               |
 | Portapapeles           | X                         | texto, imagen | texto    | texto, imagen | X                                        | texto          |
-| Unidad local y almacenamiento | X                         |             | X       |             | x                                        |               |
-| Location            | X                         |             |         |             |                                          |               |
+| Unidad o almacenamiento local | X                         |             | X       |             | x                                        |               |
+| Ubicación            | X                         |             |         |             |                                          |               |
 | Micrófonos         | X                         |X            |         |             | X                                        |               |
-| Impresoras            | X                         |             |         |             | X (solo CUP)                            | Impresión PDF     |
+| Impresoras            | X                         |             |         |             | X (solo CUPS)                            | Impresión PDF     |
 | Escáneres            | X                         |             |         |             |                                          |               |
-| Tarjetas inteligentes         | X                         |             |         |             | X (no admitida la autenticación de Windows) |               |
+| Tarjetas inteligentes         | X                         |             |         |             | X (no se admite la autenticación de Windows) |               |
 | Altavoces            | X                         | X           | X       | X           | X                                        | X (excepto Internet Explorer) |
 
-* Para la redirección de impresora - la aplicación macOS es compatible con el controlador de impresora publicador claros de forma predeterminada. No admiten la redirección de los controladores de impresora nativo.
+*Para el redireccionamiento de la impresora: la aplicación macOS admite el controlador de impresora Publisher Imagesetter de manera predeterminada. No admiten el redireccionamiento de los controladores de impresora nativos.

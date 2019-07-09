@@ -1,6 +1,6 @@
 ---
-title: 'Servicios de escritorio remoto: elija la forma de pago'
-description: Información acerca de las licencias de RDS de planeación.
+title: 'Servicios de Escritorio remoto: elegir la forma de pago'
+description: Información de planeación sobre las licencias de RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,17 +13,17 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: daa23b6ff8123f7b5122d93f39c4865402bd8565
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5d6b0b230bace0ce66d9956fad231eac5b679403
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844486"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712067"
 ---
-# <a name="remote-desktop-services---choose-how-you-pay"></a>Servicios de escritorio remoto: elija la forma de pago
+# <a name="remote-desktop-services---choose-how-you-pay"></a>Servicios de Escritorio remoto: elegir la forma de pago
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
-Elija la licencia según lo que tiene sentido para su empresa. Licencia por usuario para permitir que los usuarios remotos en cualquiera de sus dispositivos en un escenario de BYOD. Licencia por dispositivo, si los usuarios comparten los mismos dispositivos. Si es un proveedor de servicios (HSP o MSP) o ISV, elija la licencia por usuario sal para un modelo flexible de pago por uso.
+Elige la licencia en función de lo que más sentido tenga para tu empresa. Licencia por usuario para permitir que los usuarios se conecten de forma remota a cualquiera de tus dispositivos en un escenario de BYOD. Licencia por dispositivo si los usuarios comparten los mismos dispositivos. Si eres un proveedor de servicios (HSP o MSP) o ISV, elige la licencia SAL por usuario con un modelo flexible de pago por uso.
 
-Para obtener más información, consulte [licencia de su implementación de RDS con licencias de acceso de cliente (CAL)](rds-client-access-license.md).
+Para obtener más información, consulta [Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)](rds-client-access-license.md).

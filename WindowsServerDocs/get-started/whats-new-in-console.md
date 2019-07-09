@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2f05bcffa7c8c4f9e74f3699b9838b8a627af1b1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837726"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63688672"
 ---
 # <a name="whats-new-in-the-windows-console-in-windows-server-2016"></a>Novedades en la consola de Windows en Windows Server 2016
 >Se aplica a: Windows Server 2016
@@ -66,7 +66,7 @@ Las ventanas de consola ahora pueden ser semitransparentes (el valor de transpar
 ## <a name="selection"></a>Selección  
 Hay muchas opciones nuevas para la selección de texto y líneas, así como para marcar el texto y utilizar el historial del búfer. La consola intenta evitar conflictos con las aplicaciones que puedan estar usando las mismas teclas.  
 
-**Para los desarrolladores:** Si se produce un conflicto, normalmente puede controlar el comportamiento de uso de la aplicación de línea de entrada, entrada procesada y modos de eco de entrada con la API Etconsolemode(). Si se ejecuta en modo de entrada procesada, se aplican los siguientes métodos abreviados; sin embargo, en otros modos, la aplicación los debe controlar. Las combinaciones de teclas que no aparecen aquí funcionan igual que en las versiones anteriores de la consola. También puede intentar resolver conflictos con distintas configuraciones en la pestaña **Opciones**. Si todo lo demás provoca error, siempre puede revertir a la consola original.  
+**Para desarrolladores:** si se produce un conflicto, normalmente puedes controlar el comportamiento del uso de entrada de línea, la entrada procesada y los modos de entrada de eco de la aplicación con la API etConsoleMode(). Si se ejecuta en modo de entrada procesada, se aplican los siguientes métodos abreviados; sin embargo, en otros modos, la aplicación los debe controlar. Las combinaciones de teclas que no aparecen aquí funcionan igual que en las versiones anteriores de la consola. También puede intentar resolver conflictos con distintas configuraciones en la pestaña **Opciones**. Si todo lo demás provoca error, siempre puede revertir a la consola original.  
 
 Ahora puede usar la selección "hacer clic y arrastrar" fuera del modo de Edición rápida, y así puede seleccionar texto en líneas como en el Bloc de notas, en lugar de obtener simplemente un bloque rectangular. Las operaciones de copia ya no requieren que quite los saltos de línea. Además de la selección de "hacer clic y arrastrar", tiene a su disposición estas combinaciones de teclas:  
 
@@ -101,7 +101,7 @@ Puede copiar y pegar texto en la consola mediante comandos de teclado. CTRL+C ah
 |Copiar el texto seleccionado en el Portapapeles; enviar BREAK.|CTRL+C|  
 |Pegar el texto en la línea de comandos.|MAYÚS+INS|  
 
-**Modo Marcar**  
+**Modo de marcado**  
 
 Para entrar en el modo de marcado en cualquier momento, haga clic con el botón derecho en cualquier parte en la barra de título de la consola, seleccione **Editar**, y seleccione **Marcar** en el menú que se abre. También puede utilizar CTRL+M. En el modo de marcado, utilice la tecla ALT para identificar el inicio de una selección de ajuste de línea. (Si está deshabilitada la opción **Habilitar la selección de ajuste de línea** el modo de marcado selecciona texto en un bloque). En el modo de marcado, CTRL+MAYÚS+FLECHA selecciona por carácter y no por palabra como en el modo normal. Además de las teclas de selección de la sección **Modificar texto**, estas combinaciones están disponibles en el modo de marcado:  
 
@@ -114,7 +114,7 @@ Para entrar en el modo de marcado en cualquier momento, haga clic con el botón 
 |Mover el cursor al principio del búfer.|CTRL+INICIO|  
 |Mover el cursor al final del búfer.|CTRL+FIN|  
 
-**Navegar por historial**  
+**Historial de navegación**  
 
 |Para ello:|Utilice esta combinación de teclas:|  
 |---------------|-----------------------------|  

@@ -13,10 +13,10 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 54c8d05c028cbca364b6a46052d12cdcb12c01b0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66443616"
 ---
 # <a name="iis-on-nano-server"></a>IIS en Nano Server
@@ -24,7 +24,7 @@ ms.locfileid: "66443616"
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como una [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para obtener más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
 
 Puede instalar el rol de servidor de Internet Information Services (IIS) en Nano Server mediante el parámetro -Package con Microsoft-NanoServer-IIS-Package. Para obtener información sobre cómo configurar Nano Server, incluida la instalación de paquetes, vea [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).  
 
@@ -65,7 +65,7 @@ En esta versión de Nano Server, están disponibles las siguientes característi
 |**Herramientas de administración**||  
 |Módulo IISAdministration para Windows PowerShell|x|  
 
-Una serie de artículos sobre otras configuraciones de IIS (por ejemplo, con ASP.NET, PHP y Java), así como otros relacionados con el contenido se publique en [ http://iis.net/learn ](http://iis.net/learn).  
+Una serie de artículos sobre otras configuraciones de IIS (por ejemplo, con ASP.NET, PHP y Java) y otros relacionados con el contenido están publicados en [http://iis.net/learn](http://iis.net/learn).  
 
 ## <a name="installing-iis-on-nano-server"></a>Instalación de IIS en Nano Server  
 Puede instalar este rol de servidor sin conexión (con Nano Server desactivado) o en línea (con Nano Server activado); la instalación sin conexión es la opción recomendada.  
@@ -129,7 +129,7 @@ Aunque se recomienda la instalación sin conexión del rol de servidor, debe rea
 
    **dism /online /get-packages**  
 
-   Debería ver "identidad del paquete: Microsoft-NanoServer-IIS-Package ~ 31bf3856ad364e35 ~ amd64 ~ ~ 10.0.14393.1000" aparece dos veces, una vez para tipo de versión: Paquete de idioma y una vez para tipo de versión: Feature Pack.  
+   Deberías ver que "Package Identity : Microsoft-NanoServer-IIS-Package~31bf3856ad364e35~amd64~~10.0.14393.1000" aparezca dos veces, una para Release Type : Language Pack y una para Release Type : Feature Pack.  
 
 6. Inicie el servicio W3SVC con **net start w3svc** o reiniciando Nano Server.  
 
@@ -145,7 +145,7 @@ Una serie de características de IIS están habilitadas de forma predeterminada 
 
 Cada característica de IIS existe como un conjunto de elementos de configuración. Por ejemplo, la característica de autenticación de Windows consta de estos elementos:  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |-----------|--------------------------|  
 |`<globalModules>`|`<add name="WindowsAuthenticationModule" image="%windir%\System32\inetsrv\authsspi.dll`|  
 |`<modules>`|`<add name="WindowsAuthenticationModule" lockItem="true" \/>`|  
@@ -177,7 +177,7 @@ El conjunto completo de subcaracterísticas de IIS se encuentra en el Apéndice 
     ```
 
 ## <a name="other-common-iis-configuration-tasks"></a>Otras tareas comunes de configuración de IIS  
-**Creación de sitios Web**  
+**Creación de sitios web**  
 
 Use este cmdlet:  
 
@@ -225,7 +225,7 @@ Use la utilidad Certoc.exe para importar certificados, como en este ejemplo, que
 
 3.  En Nano Server, importe el certificado en el almacén "My" con este comando:  
 
-    **certoc.exe - ImportPFX -p YOUR_PFX_PASSWD mi c:\temp\test.pfx**  
+    **certoc.exe -ImportPFX -p YOUR_PFX_PASSWD My c:\temp\test.pfx**  
 
 4.  Recuperar la huella digital de este certificado nuevo (en este ejemplo, 61E71251294B2A7BB8259C2AC5CF7BA622777E73) con `Get-ChildItem Cert:\LocalMachine\my`.  
 
@@ -242,7 +242,7 @@ Use la utilidad Certoc.exe para importar certificados, como en este ejemplo, que
     $sm.CommitChanges()  
     ```  
 
-    También podría usar indicación de nombre de servidor (SNI) con un nombre de host específico con esta sintaxis: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
+    También puedes usar la Indicación de nombre de servidor (SNI) mediante un nombre de host específico con esta sintaxis: `$sm.Sites["Default Web Site"].Bindings.Add("*:443:www.foo.bar.com", $hash, "My", "Sni".`  
 
 ## <a name="appendix-1-list-of-iis-sub-features"></a>Apéndice 1: Lista de subcaracterísticas de IIS
 
@@ -280,13 +280,13 @@ Use la utilidad Certoc.exe para importar certificados, como en este ejemplo, que
 - IIS-HttpTracing
 - IIS-CustomLogging
 
-## <a name="appendix-2-elements-of-http-features"></a>Apéndice 2: Elementos de las características HTTP  
+## <a name="appendix-2-elements-of-http-features"></a>Apéndice 2: Elementos de características HTTP  
 Cada característica de IIS existe como un conjunto de elementos de configuración. En este apéndice se enumeran los elementos de configuración de todas las características de esta versión de Nano Server  
 
 ### <a name="common-http-features"></a>Características HTTP comunes  
 **Documento predeterminado**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="DefaultDocumentModule" image="%windir%\System32\inetsrv\defdoc.dll" />`|  
 |`<modules>`|`<add name="DefaultDocumentModule" lockItem="true" />`|  
@@ -295,9 +295,9 @@ Cada característica de IIS existe como un conjunto de elementos de configuraci�
 
 La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agregue "DefaultDocumentModule" al atributo \<modules>, separados por coma.  
 
-**examen de directorios**  
+**Examen de directorios**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|   
 |`<globalModules>`|`<add name="DirectoryListingModule" image="%windir%\System32\inetsrv\dirlist.dll" />`|  
 |`<modules>`|`<add name="DirectoryListingModule" lockItem="true" />`|  
@@ -307,7 +307,7 @@ La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agregu
 
 **Errores HTTP**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|   
 |`<globalModules>`|`<add name="CustomErrorModule" image="%windir%\System32\inetsrv\custerr.dll" />`|  
 |`<modules>`|`<add name="CustomErrorModule" lockItem="true" />`|  
@@ -315,7 +315,7 @@ La entrada `StaticFile <handlers>` podría estar ya presente; si es así, agregu
 
 **Contenido estático**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="StaticFileModule" image="%windir%\System32\inetsrv\static.dll" />`|  
 |`<modules>`|`<add name="StaticFileModule" lockItem="true" />`|  
@@ -325,7 +325,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Redirección HTTP**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="HttpRedirectionModule" image="%windir%\System32\inetsrv\redirect.dll" />`|  
 |`<modules>`|`<add name="HttpRedirectionModule" lockItem="true" />`|  
@@ -334,7 +334,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 ### <a name="health-and-diagnostics"></a>Estado y diagnóstico  
 **Registro HTTP**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|   
 |`<globalModules>`|`<add name="HttpLoggingModule" image="%windir%\System32\inetsrv\loghttp.dll" />`|  
 |`<modules>`|`<add name="HttpLoggingModule" lockItem="true" />`|  
@@ -342,20 +342,20 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Registro personalizado**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="CustomLoggingModule" image="%windir%\System32\inetsrv\logcust.dll" />`|  
 |`<modules>`|`<add name="CustomLoggingModule" lockItem="true" />`|  
 
 **Monitor de solicitudes**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="RequestMonitorModule" image="%windir%\System32\inetsrv\iisreqs.dll" />`|  
 
 **Seguimiento**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="TracingModule" image="%windir%\System32\inetsrv\iisetw.dll" \/><br /><add name="FailedRequestsTracingModule" image="%windir%\System32\inetsrv\iisfreb.dll" />`|  
 |`<modules>`|`<add name="FailedRequestsTracingModule" lockItem="true" />`|  
@@ -364,7 +364,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 ### <a name="performance"></a>Rendimiento  
 **Compresión de contenido estático**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="StaticCompressionModule" image="%windir%\System32\inetsrv\compstat.dll" />`|  
 |`<modules>`|`<add name="StaticCompressionModule" lockItem="true" />`|  
@@ -372,7 +372,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Compresión de contenido dinámico**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |-----------|--------------------------|  
 |`<globalModules>`|`<add name="DynamicCompressionModule" image="%windir%\System32\inetsrv\compdyn.dll" />`|  
 |`<modules>`|`<add name="DynamicCompressionModule" lockItem="true" />`|  
@@ -382,7 +382,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 **Filtrado de solicitudes**  
 
 
-|       Section        |                                                                                                                                        Elementos de configuración                                                                                                                                        |
+|       Sección        |                                                                                                                                        Elementos de configuración                                                                                                                                        |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  `<globalModules>`   |                                                                                                        `<add name="RequestFilteringModule" image="%windir%\System32\inetsrv\modrqflt.dll" />`                                                                                                        |
 |     `<modules>`      |                                                                                                                       `<add name="RequestFilteringModule" lockItem="true" />`                                                                                                                        |
@@ -390,7 +390,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Autenticación básica**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|   
 |`<globalModules>`|`<add name="BasicAuthenticationModule" image="%windir%\System32\inetsrv\authbas.dll" />`|  
 |`<modules>`|`<add name="WindowsAuthenticationModule" lockItem="true" />`|  
@@ -398,7 +398,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Autenticación de asignaciones de certificado de cliente**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="CertificateMappingAuthentication" image="%windir%\System32\inetsrv\authcert.dll" />`|  
 |`<modules>`|`<add name="CertificateMappingAuthenticationModule" lockItem="true" />`|  
@@ -406,32 +406,32 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Autenticación implícita**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="DigestAuthenticationModule" image="%windir%\System32\inetsrv\authmd5.dll" />`|  
 |`<modules>`|`<add name="DigestAuthenticationModule" lockItem="true" />`|  
 |`<other>`|`<digestAuthentication enabled="false" />`|  
 
-**Autenticación de asignaciones de certificado de cliente IIS**  
+**Autenticación de asignaciones de certificado de cliente de IIS**  
 
 
-|                  Section                   |                                         Elementos de configuración                                         |
+|                  Sección                   |                                         Elementos de configuración                                         |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------|
 |             `<globalModules>`              | `<add name="CertificateMappingAuthenticationModule" image="%windir%\System32\inetsrv\authcert.dll" />` |
 |                `<modules>`                 |               `<add name="CertificateMappingAuthenticationModule" lockItem="true" `/>\`                |
 | `<clientCertificateMappingAuthentication>` |                      `<clientCertificateMappingAuthentication enabled="false" />`                      |
 
-**Restricciones de IP y dominio**  
+**Restricciones de dominio y dirección IP**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|```<add name="IpRestrictionModule" image="%windir%\System32\inetsrv\iprestr.dll" /><br /><add name="DynamicIpRestrictionModule" image="%windir%\System32\inetsrv\diprestr.dll" />```|  
 |`<modules>`|`<add name="IpRestrictionModule" lockItem="true" \/><br /><add name="DynamicIpRestrictionModule" lockItem="true" \/>`|  
 |`<ipSecurity>`|`<ipSecurity allowUnlisted="true" />`|  
 
-**Autorización de URL**  
+**Autorización para URL**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="UrlAuthorizationModule" image="%windir%\System32\inetsrv\urlauthz.dll" />`|  
 |`<modules>`|`<add name="UrlAuthorizationModule" lockItem="true" />`|  
@@ -439,23 +439,23 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Autenticación de Windows**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="WindowsAuthenticationModule" image="%windir%\System32\inetsrv\authsspi.dll" />`|  
 |`<modules>`|`<add name="WindowsAuthenticationModule" lockItem="true" />`|  
 |`<windowsAuthentication>`|`<windowsAuthentication enabled="false" authPersistNonNTLM\="true"><br />    <providers><br />        <add value="Negotiate" /><br />        <add value="NTLM" /><br />    <\providers><br /><\windowsAuthentication><windowsAuthentication enabled="false" authPersistNonNTLM\="true"><br />    <providers><br />        <add value="Negotiate" /><br />        <add value="NTLM" /><br />    <\/providers><br /><\/windowsAuthentication>`|  
 
 ### <a name="application-development"></a>Desarrollo de aplicaciones  
-**Inicialización de la aplicación**  
+**Inicialización de aplicaciones**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="ApplicationInitializationModule" image="%windir%\System32\inetsrv\warmup.dll" />`|  
 |`<modules>`|`<add name="ApplicationInitializationModule" lockItem="true" />`|  
 
 **CGI**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|`<add name="CgiModule" image="%windir%\System32\inetsrv\cgi.dll" /><br /><add name="FastCgiModule" image="%windir%\System32\inetsrv\iisfcgi.dll" />`|  
 |`<modules>`|`<add name="CgiModule" lockItem="true" /><br /><add name="FastCgiModule" lockItem="true" />`|  
@@ -463,7 +463,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Extensiones ISAPI**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="IsapiModule" image="%windir%\System32\inetsrv\isapi.dll" />`|  
 |`<modules>`|`<add name="IsapiModule" lockItem="true" />`|  
@@ -471,14 +471,14 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Filtros ISAPI**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="IsapiFilterModule" image="%windir%\System32\inetsrv\filter.dll" />`|  
 |`<modules>`|`<add name="IsapiFilterModule" lockItem="true" />`|  
 
 **Inclusiones del lado servidor**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|  
 |`<globalModules>`|<`add name="ServerSideIncludeModule" image="%windir%\System32\inetsrv\iis_ssi.dll" />`|  
 |`<modules>`|`<add name="ServerSideIncludeModule" lockItem="true" />`|  
@@ -487,7 +487,7 @@ La entrada `StaticFile \<handlers>` podría estar ya presente; si es así, agreg
 
 **Protocolo WebSocket**  
 
-|Section|Elementos de configuración|  
+|Sección|Elementos de configuración|  
 |----------------|--------------------------|    
 |`<globalModules>`|`<add name="WebSocketModule" image="%windir%\System32\inetsrv\iiswsock.dll" />`|  
 |`<modules>`|`<add name="WebSocketModule" lockItem="true" />`|  

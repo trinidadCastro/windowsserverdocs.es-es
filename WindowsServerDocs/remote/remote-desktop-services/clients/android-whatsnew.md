@@ -1,6 +1,6 @@
 ---
-title: Novedades de escritorio remoto en Android
-description: Obtenga información sobre los cambios recientes en el cliente de escritorio remoto para Android
+title: Novedades de Escritorio remoto en Android
+description: Obtén información sobre los cambios recientes en el cliente de Escritorio remoto para Android.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,74 +14,74 @@ ms.author: elizapo
 ms.date: 06/05/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 7730790495babf4a70fb5a70ce93464faa86f1e3
-ms.sourcegitcommit: 1102e91571c88c7a1a2e021a6c53af1def7bb0a4
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66736535"
 ---
-# <a name="whats-new-for-the-remote-desktop-client-on-android"></a>Novedades del cliente de escritorio remoto en Android
+# <a name="whats-new-for-the-remote-desktop-client-on-android"></a>Novedades del cliente de Escritorio remoto en Android
 
-Se actualiza con regularidad el [cliente de escritorio remoto para Android](remote-desktop-android.md), agregar nuevas características y solución de problemas. Consulte las actualizaciones más recientes a continuación.
+El [cliente de Escritorio remoto para Android](remote-desktop-android.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Consulta las actualizaciones más recientes a continuación.
 
-## <a name="updates-for-version-8171"></a>Actualizaciones de versión 8.1.71
+## <a name="updates-for-version-8171"></a>Actualizaciones de la versión 8.1.71
 
 *Fecha de publicación: 06/05/2019*
 
-- Compatibilidad con versiones de Android 4.0.3 y 4.0.4 quitado.
-- Se ha corregido un problema donde los recursos remotos del mismo nombre se mostrara correctamente.
+- Se ha eliminado la compatibilidad para las versiones 4.0.3 y 4.0.4 de Android.
+- Se ha corregido un problema por el que los recursos remotos del mismo nombre no se mostraban correctamente.
 - Actualiza el icono de la aplicación.
 - Mejoras y correcciones de errores menores.
 
-## <a name="updates-for-version-8170"></a>Actualizaciones de versión 8.1.70
+## <a name="updates-for-version-8170"></a>Actualizaciones de la versión 8.1.70
 
 *Fecha de publicación: 05/06/2019*
 
-- Solucionar problemas que causaron el contenido no tener un tamaño de sesión correctamente en los dispositivos con pantalla muesca.
-- Se ha corregido un problema donde la tecla ENTRAR no funciona en algunos dispositivos Chromebook.
-- Se ha corregido un problema donde no se ha cargado alguna dirección URL de fuente recurso remoto.
+- Se resolvieron los problemas que causaron que el contenido de la sesión no tuviera el tamaño adecuado en los dispositivos con pantalla de muesca.
+- Se ha solucionado un problema por el que la tecla Entrar no funcionaba en algunos dispositivos de Chromebook.
+- Se ha corregido un problema por el que no se cargaban algunas direcciones URL de la fuente de recursos remotos.
 
-## <a name="updates-for-version-8169"></a>Actualizaciones de versión 8.1.69
+## <a name="updates-for-version-8169"></a>Actualizaciones de la versión 8.1.69
 
-*Fecha de publicación: 04/22/2019*
+*Fecha de publicación: 22/04/2019*
 
 - Mejoras y correcciones de errores menores.
 
-## <a name="updates-for-version-8168"></a>Actualizaciones de versión 8.1.68
+## <a name="updates-for-version-8168"></a>Actualizaciones de la versión 8.1.68
 
-*Fecha de publicación: 04/15/2019*
+*Fecha de publicación: 15/04/2019*
 
-- Se ha corregido un problema donde no se ha cargado la dirección URL de fuente recurso remoto.
-- Se ha corregido un problema donde se inició la aplicación de tamaño de teléfono en iniciarse por primera vez en Samsung DeX que ejecutan Android 9.0.
+- Se ha corregido un problema por el que no se cargaba la dirección URL de la fuente de recursos remotos.
+- Se ha corregido un problema por el que la aplicación se iniciaba en el tamaño del teléfono al iniciarse por primera vez en Samsung DeX con Android 9.0.
 - Actualiza el icono de la aplicación.
-- Correcciones de errores adicionales.
+- Corrección de errores adicionales.
 
-## <a name="updates-for-version-8167"></a>Actualizaciones de versión 8.1.67
+## <a name="updates-for-version-8167"></a>Actualizaciones de la versión 8.1.67
 
-*Fecha de publicación: 03/28/2019*
+*Fecha de publicación: 28/03/2019*
 
 - Se ha corregido un problema donde se repitieron pulsaciones de teclas al escribir en una sesión remota.
 
-## <a name="updates-for-version-8166"></a>Actualizaciones de versión 8.1.66
+## <a name="updates-for-version-8166"></a>Actualizaciones de la versión 8.1.66
 
-*Fecha de publicación: 03/19/2019*
+*Fecha de publicación: 19/03/2019*
 
-- Agrega compatibilidad inicial para [Escritorio Virtual de Windows](https://aka.ms/wvd).
-- Se ha corregido un problema que provocaba un área negra que se mostrará en la parte inferior de la pantalla en algunos escenarios de DeX y dispositivos Chromebook.
-- Compatibilidad con modo envolvente Samsung DeX, ocultar la barra de tareas de la parte inferior.
-- Se agregó compatibilidad para el envío de claves de metadatos y Alt desde el teclado físico a la sesión remota para Samsung DeX.
-- Las actualizaciones de ahora del puntero del mouse en función del contenido de la sesión remota (Android 7.0 +)
-- Correcciones de errores adicionales.
+- Se ha agregado compatibilidad con [Windows Virtual Desktop](https://aka.ms/wvd).
+- Se ha resuelto un problema que causaba que se mostraba un área negra en la parte inferior de la pantalla en algunos dispositivos Chromebook y escenarios DeX.
+- Se ha agregado soporte de modo envolvente para Samsung DeX, que ocultaba la barra de tareas inferior.
+- Se ha agregado soporte para el envío de teclas Meta y Alt desde el teclado físico a la sesión remota para Samsung DeX.
+- El puntero se actualiza ahora en función del contenido de la sesión remota (Android 7.0+)
+- Corrección de errores adicionales.
 
-## <a name="updates-for-version-8161"></a>Actualizaciones de versión 8.1.61
+## <a name="updates-for-version-8161"></a>Actualizaciones de la versión 8.1.61
 
-*Fecha de publicación: 07/05/2018*
+*Fecha de publicación: 05/07/2018*
 
-- Se agregó compatibilidad inicial para Samsung DeX (Android 8.0 +).
+- Se ha agregado compatibilidad inicial para Samsung DeX (Android 8.0 +).
 
-## <a name="updates-for-version-8160"></a>Actualizaciones de versión 8.1.60
+## <a name="updates-for-version-8160"></a>Actualizaciones de la versión 8.1.60
 
-*Fecha de publicación: 04/30/2018*
+*Fecha de publicación: 30/04/2018*
 
-- Actualizaciones para tratar la corrección de oracle cifrado CredSSP que se describe en CVE-2018-0886.
+- Actualizaciones para abordar la corrección de oráculo de cifrado de CredSSP que se describe en CVE-2018-0886.
 - Se ha corregido un bloqueo al iniciar las conexiones procedente de una versión anterior.

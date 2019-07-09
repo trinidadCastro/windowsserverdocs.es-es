@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882056"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63688540"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Comparación de las ediciones Standard y Datacenter de Windows Server 2016
 
@@ -32,7 +32,7 @@ ms.locfileid: "59882056"
 |Número máximo de conexiones SMB|16 777 216|16 777 216|
 |Número máximo de conexiones RRAS|sin límite|sin límite|
 |Número máximo de conexiones IAS|2 147 483 647|2 147 483 647|
-|Número máximo de conexiones RDS|65535|65535|
+|Número máximo de conexiones RDS|65 535|65 535|
 |Número máximo de sockets de 64 bits|64|64|
 |Número máximo de núcleos|sin límite|sin límite|
 |RAM máxima|24 TB|24 TB|
@@ -91,7 +91,7 @@ ms.locfileid: "59882056"
 |Desbloqueo de BitLocker en red|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |BranchCache|Sí|Sí|
 |Cliente para NFS|Sí|Sí|
-|Contenedores|Sí (contenedores de Windows ilimitados; hasta 2 contenedores de Hyper-V)|Sí (todos los tipos de contenedor ilimitados)|
+|Contenedores|Sí (contenedores de Windows ilimitados; hasta 2 contenedores de Hyper-V)|Sí (todos los tipos de contenedor ilimitados)|
 |Protocolo de puente del centro de datos|Sí|Sí|
 |DirectPlay|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Almacenamiento mejorado|Sí|Sí|

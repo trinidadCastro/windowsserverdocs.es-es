@@ -1,6 +1,6 @@
 ---
-title: 'Servicios de escritorio remoto: compilar en cualquier lugar'
-description: Información de planeación para ayudarle a determinar dónde desea hospedar su implementación de RDS.
+title: 'Servicios de Escritorio remoto: creación en cualquier lugar'
+description: Información de planeamiento para ayudarte a determinar dónde hospedar tu implementación de RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,26 +13,26 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/07/2016
 manager: dongill
-ms.openlocfilehash: cbb8e73d753b1fe4f0293cf4427c634020a23a42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4563108d2efa9cd864fbe75fa82349d21659a941
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869516"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712334"
 ---
-# <a name="remote-desktop-services---build-anywhere"></a>Servicios de escritorio remoto: compilar en cualquier lugar
+# <a name="remote-desktop-services---build-anywhere"></a>Servicios de Escritorio remoto: creación en cualquier lugar
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
 
-Implementar de forma local en la nube o un híbrido de los dos. Modificar la implementación según sus necesidades empresariales cambien.
+Impleméntalo en el entorno local, en la nube o en un híbrido de los dos. Modifica la implementación a medida que cambien tus necesidades empresariales.
 
-Independientemente de dónde se encuentre, subyacente [arquitectura](desktop-hosting-logical-architecture.md) de los servicios de escritorio remoto entorno sigue siendo el mismo:
-- Todavía debe tener un servidor con conexión a internet para usar acceso Web de escritorio remoto y puerta de enlace de escritorio remoto para los usuarios externos
-- Todavía debe tener un Active Directory y--para entornos de alta disponibilidad, una instancia de SQL de base de datos al usuario de casa y propiedades de escritorio remoto
-- Todavía debe tener acceso de comunicación entre los roles de infraestructura de escritorio remoto (RD Connection Broker, puerta de enlace de escritorio remoto, licencias de escritorio remoto y acceso Web de RD) y el extremo RDSH o hosts RDVH para poder conectarse a los usuarios finales a sus equipos de escritorio o aplicaciones.
+Independientemente de dónde te encuentres, la [arquitectura](desktop-hosting-logical-architecture.md) subyacente del entorno de Servicios de Escritorio remoto sigue siendo la misma:
+- Todavía debes tener un servidor con conexión a Internet para utilizar Acceso web de Escritorio remoto y Puerta de enlace de Escritorio remoto para usuarios externos.
+- Todavía debes tener una instancia de Active Directory y, para los entornos de alta disponibilidad, una base de datos SQL para hospedar las propiedades del usuario y del Escritorio remoto.
+- Aún debes tener acceso a la comunicación entre los roles de infraestructura de Escritorio remoto (Agente de conexión a Escritorio remoto, Puerta de enlace de Escritorio remoto, Licencia de Escritorio remoto y Acceso web a Escritorio remoto) y los hosts RDSH o RDVH finales para poder conectar a los usuarios finales con sus escritorios o aplicaciones.
 
-Esta flexibilidad le permite obtener el mejor de ambos mundos:
-- Los métodos de pago por uso y simplicidad asociados a la nube y el mundo en línea.
-- La familiaridad y las complicaciones de la manera de aprovechar muchos recursos que ya existen en el entorno local.
+Esta flexibilidad te permite obtener lo mejor de ambos mundos:
+- La simplicidad y los métodos de pago por uso asociados a la nube y al mundo conectado.
+- La familiaridad y la manera sencilla de aprovechar los recursos pesados que ya existen en el entorno local.
 
-Para obtener más información, veamos cómo [compilar e implementar la implementación de servicios de escritorio remoto](rds-build-and-deploy.md).
+Para más información, echa un vistazo a cómo [crear y poner en marcha la implementación de Servicios de Escritorio remoto](rds-build-and-deploy.md).

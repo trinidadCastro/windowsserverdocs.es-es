@@ -1,6 +1,6 @@
 ---
-title: ¿Novedades de cliente web de escritorio remoto?
-description: Obtenga información sobre los cambios recientes en el cliente web de escritorio remoto
+title: Novedades del cliente web de Escritorio remoto
+description: Obtén información sobre los cambios recientes en el cliente web de Escritorio remoto.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,95 +14,95 @@ ms.author: elizapo
 ms.date: 05/20/2019
 ms.localizationpriority: medium
 ms.openlocfilehash: 5be9b05da1e78cc54e12254f43d0f44f7ff65c5d
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66804884"
 ---
-# <a name="whats-new-for-the-remote-desktop-web-client"></a>¿Novedades para el cliente web de escritorio remoto?
+# <a name="whats-new-for-the-remote-desktop-web-client"></a>Novedades del cliente web de Escritorio remoto
 
-Se actualiza con regularidad el [cliente web de escritorio remoto](remote-desktop-web-client.md), agregar nuevas características y solución de problemas. Consulte las actualizaciones más recientes a continuación.
+El [cliente web de Escritorio remoto](remote-desktop-web-client.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Consulta las actualizaciones más recientes a continuación.
 
 > [!NOTE]
-> Hemos cambiado el sistema de control de versiones para el cliente web. A partir de la versión 1.0.18.0, todas las versiones de lanzamiento de cliente web contiene números (en el formato "W.x.y.z"). Números de versión para el cliente web de escritorio remoto siempre finalizará con un 0 (por ejemplo, W.X.Y.0). Cada versión de cliente web de Escritorio Virtual de Windows cambiará el último dígito hasta la próxima versión de cliente de web de escritorio remoto (por ejemplo, 1.0.18.1).
+> Cambiamos el sistema de control de versiones del cliente web. A partir de la versión 1.0.18.0, todas las versiones del cliente web incluirán números (con el formato "W.X.Y.Z"). Los números de versión del cliente web de Escritorio remoto siempre terminarán en 0 (por ejemplo, W.X.Y.0). Cada versión del cliente web de Windows Virtual Desktop cambiará el último dígito hasta la próxima versión del cliente web de Escritorio remoto (por ejemplo, 1.0.18.1).
 
-## <a name="updates-for-version-10180"></a>Actualizaciones de versión 1.0.18.0
-*Fecha de publicación: 5/14/2019*
+## <a name="updates-for-version-10180"></a>Actualizaciones de la versión 1.0.18.0
+*Fecha de publicación: 14/05/2019*
 
-- Configuración de recurso el método de inicio se ha agregado en la pestaña Configuración, permitiendo a los usuarios abrir recursos en el explorador o descargar un archivo .rdp para controlar con otro cliente. Esta opción se puede configurar el administrador. Detalles acerca de las configuraciones de administrador para esta característica se encuentra en la [web de documentación de instalación de cliente](remote-desktop-web-client-admin.md).
-- Color fijo presentar problemas, lo que permite más vivos son los colores de la sesión remota.
-- Mensajes de error revisada relacionados con errores de recursos remotos de fuente. 
-- Se agregó compatibilidad para varios accesos directos de office, como Pegado especial (Ctrl + Alt + V).
-- Método abreviado de teclado se ha agregado a los usuarios invocar la clave de Windows en la sesión remota (ALT+F3)
-- Mensaje de error actualizada para los usuarios que intentan autenticarse mediante una contraseña expirada.
-- Fuente actualizada la interfaz de usuario en la página de todos los recursos.
-- Vuelva a conectar resueltos diálogos superpuestos que se produjeron durante la sesión.
-- Se ha corregido el ajuste de tamaño de icono de recurso remoto en la barra de tareas de recursos.
+- Se agregó la configuración del método de inicio del recurso en la pestaña Configuración, lo que permite que los usuarios abran recursos en el explorador o descarguen un archivo .rdp para administrarlo con otro cliente. Esta opción la puede configurar el administrador. Puedes encontrar detalles sobre las configuraciones del administrador para esta característica en la [documentación de instalación del cliente web](remote-desktop-web-client-admin.md).
+- Se corrigieron problemas de representación del color, lo que permite usar colores más vívidos en la sesión remota.
+- Se revisaron los mensajes de error relacionados con errores de fuente de los recursos remotos. 
+- Se agregó compatibilidad con más combinaciones de teclas de Office, como el pegado especial (Ctrl + Alt + V).
+- Se agregó una combinación de teclas para que los usuarios invoquen la tecla Windows en la sesión remota (Alt + F3).
+- Se actualizó el mensaje de error para los usuarios que intentan autenticarse con una contraseña expirada.
+- Se actualizó la interfaz de usuario de fuente en la página Todos los recursos.
+- Se resolvieron los cuadros de diálogo superpuestos que se producían durante la reconexión de la sesión.
+- Se corrigió el cambio de tamaño de los iconos de los recursos remotos en la barra de tareas de recursos.
 
-## <a name="updates-for-version-1011"></a>Actualizaciones de versión 1.0.11
-*Fecha de publicación: 2/22/2019*
+## <a name="updates-for-version-1011"></a>Actualizaciones de la versión 1.0.11
+*Fecha de publicación: 22/02/2019*
 
-- Habilitar conexión a Escritorio remoto Broker sin una puerta de enlace de escritorio remoto en Windows Server 2019.
-- Ordena alfabéticamente las fuentes de distribución (es decir, RemoteApps en primer lugar, escritorios segundo).
-- Se han corregido varios errores de accesibilidad mejora de la compatibilidad de lector de pantalla.
-- Actualiza nuestras herramientas de compilación.
-- Varias correcciones de errores.
+- Se habilitó una conexión con un agente de Escritorio remoto sin una puerta de enlace de Escritorio remoto en Windows Server 2019.
+- Las fuentes se ordenaron alfabéticamente (es decir, primero las aplicaciones remotas y luego los escritorios).
+- Se corrigieron varios problemas de accesibilidad, con lo que se mejora la compatibilidad del lector de pantalla.
+- Se actualizaron las herramientas de compilación.
+- Se corrigieron varios errores.
 
-## <a name="updates-for-version-107"></a>Actualizaciones de versión 1.0.7
-*Fecha de publicación: 1/24/2019*
+## <a name="updates-for-version-107"></a>Actualizaciones de la versión 1.0.7
+*Fecha de publicación: 24/01/2019*
 
-- Ahora se admite el uso sin conexión en redes internas.
-- Representación mejorada en los exploradores que no sea Microsoft Edge.
-- Límite implementado para reintento de fuente recuperación intenta evitar la denegación de servicio.
-- Errores de accesibilidad fijo, permitiendo a los usuarios con discapacidades visuales usar al cliente web.
-- Mejorado los mensajes de error que se muestra al usuario para los errores de fuente.
-- Se ha agregado Ctrl + Alt + final (Windows) y fn + control + opción + accesos directos de eliminación (Mac) para invocar Ctrl + Alt + Supr en el equipo remoto.
-- Telemetría mejorada para eventos de bloqueo.
-- Mejorado nuestra canalización de compilación y las herramientas de compilación.
-- Varias correcciones de errores.
+- Ahora se admite el uso sin conexión en las redes internas.
+- Se mejoró la representación en exploradores distintos de Microsoft Edge.
+- Se implementó un límite para los reintentos de recuperación de fuentes para evitar la denegación de servicio.
+- Se corrigieron errores de accesibilidad, lo que permite que los usuarios con discapacidades visuales usen el cliente web.
+- Se mejoraron los mensajes de error que se muestran al usuario en caso de errores de fuentes.
+- Se agregaron las combinaciones de teclas Ctrl + Alt + Fin (Windows) y fn + control + opción + suprimir (Mac) para invocar Ctrl + Alt + Supr en la máquina remota.
+- Se mejoró la telemetría para los eventos de bloqueo.
+- Se mejoró la canalización de compilación y las herramientas de compilación.
+- Se corrigieron varios errores.
 
-## <a name="updates-for-version-101"></a>Actualizaciones para la versión 1.0.1
-*Fecha de publicación: 10/29/2018*
+## <a name="updates-for-version-101"></a>Actualizaciones de la versión 1.0.1
+*Fecha de publicación: 29/10/2018*
 
-- Se agregó una opción a **captura información de soporte técnico** en la página About para diagnosticar problemas.
-- Ahora se admite el modo inPrivate.
-- Compatibilidad mejorada para teclados no ingleses.
-- Se ha corregido un problema donde se mostraba incorrectamente información sobre herramientas con caracteres no válidos.
-- Problema de representación de gráficos fijo que Chrome usuarios afectados.
-- Actualiza la redirección de zona horaria con compatibilidad total con el horario de verano.
-- Ha mejorado el mensaje de error para errores de memoria insuficiente.
-- Varias correcciones de errores.
+- Se agregó una opción para **capturar información de soporte técnico** en la página Acerca de para diagnosticar problemas.
+- Ahora se admite el modo InPrivate.
+- Se mejoró la compatibilidad con teclados en idiomas distintos del inglés.
+- Se corrigió un problema en el que la información sobre herramientas con caracteres que no pertenecen al inglés no se mostraba correctamente.
+- Se corrigió un problema de representación de gráficos que afectaba a los usuarios de Chrome.
+- Se actualizó el redireccionamiento de las zonas horarias con compatibilidad total con el horario de verano.
+- Se mejoró el mensaje de error en caso de memoria insuficiente.
+- Se corrigieron varios errores.
 
-## <a name="updates-for-version-100"></a>Actualizaciones de versión 1.0.0
-*Fecha de publicación: 07/16/2018*
+## <a name="updates-for-version-100"></a>Actualizaciones de la versión 1.0.0
+*Fecha de publicación: 16/07/2018*
 
-- Cliente web de escritorio remoto está disponible con carácter general.
-- Los administradores pueden desactivar globalmente telemetría para el cliente web.
-- Varias correcciones de errores.
+- El cliente web de Escritorio remoto ya está disponible con carácter general.
+- Los administradores pueden desactivar de manera global la telemetría para el cliente web.
+- Se corrigieron varios errores.
 
-## <a name="updates-for-version-090"></a>Actualizaciones de versión 0.9.0
-*Fecha de publicación: 07/05/2018*
+## <a name="updates-for-version-090"></a>Actualizaciones de la versión 0.9.0
+*Fecha de publicación: 05/07/2018*
 
-- Inicio de sesión nueva experiencia en el cliente web.
-- Ya no se le solicite las credenciales al iniciar una conexión de escritorio o aplicación (inicio de sesión único).
-- Mover al cliente web a una nueva dirección URL: <https://server_FQDN/RDWeb/webclient/index.html>
-- Redirección de zona horaria se ha agregado.
-- Varias correcciones de errores.
+- Nueva experiencia de inicio de sesión dentro del cliente web.
+- Ya no se solicitan credenciales al iniciar una conexión de escritorio o aplicación (inicio de sesión único).
+- El cliente web se movió a una dirección URL nueva: <https://server_FQDN/RDWeb/webclient/index.html>
+- Se agregó el redireccionamiento de las zonas horarias.
+- Se corrigieron varios errores.
 
-## <a name="updates-for-version-081"></a>Actualizaciones de versión 0.8.1
-*Fecha de publicación: 05/17/2018*
+## <a name="updates-for-version-081"></a>Actualizaciones de la versión 0.8.1
+*Fecha de publicación: 17/05/2018*
 
-- Actualizaciones para tratar la corrección de oracle cifrado CredSSP que se describe en CVE-2018-0886.
-- Se ha corregido los errores de conexión para algunos idiomas cuando está habilitada la impresión.
-- Mensaje de error mejorado cuando una puerta de enlace no forma parte de la implementación.
-- **Ayudar a** y **comentarios** se agregaron opciones.
+- Actualizaciones para abordar la corrección de oráculo de cifrado de CredSSP que se describe en CVE-2018-0886.
+- Se corrigieron errores de conexión en algunos idiomas cuando está habilitada la impresión.
+- Se mejoró el mensaje de error para cuando una puerta de enlace no forma parte de la implementación.
+- Se agregaron las opciones **Ayuda** y **Comentarios**.
 
-## <a name="updates-for-version-080"></a>Actualizaciones de versión 0.8.0
-*Fecha de publicación: 03/28/2018*
+## <a name="updates-for-version-080"></a>Actualizaciones de la versión 0.8.0
+*Fecha de publicación: 28/03/2018*
 
 - Versión preliminar pública inicial del cliente web.
-- Copiar y pegar texto mediante el Portapapeles con **CTRL + C** y **CTRL+V**.
-- Imprimir en un archivo PDF.
-- En 18 idiomas.
+- Copia y pega texto mediante el Portapapeles con **CTRL + C** y **CTRL + V**.
+- Imprime en un archivo PDF.
+- Localizado en 18 idiomas.
  

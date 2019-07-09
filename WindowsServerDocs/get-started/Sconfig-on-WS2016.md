@@ -1,5 +1,5 @@
 ---
-title: Configurar una instalación de Server Core de Windows Server con Sconfig.cmd
+title: Configuración de una instalación básica de Windows Server con Sconfig.cmd
 description: Explica cómo usar Sconfig.cmd
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -15,21 +15,21 @@ ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
 ms.openlocfilehash: 617005fd2d4e63c3cfc11bed28404656b2a81d6e
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66749580"
 ---
-# <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>Configurar una instalación de Server Core de Windows Server 2016 o Windows Server, versión 1709, con Sconfig.cmd
+# <a name="configure-a-server-core-installation-of-windows-server-2016-or-windows-server-version-1709-with-sconfigcmd"></a>Configuración de una instalación básica de Windows Server 2016 o Windows Server, versión 1709, con Sconfig.cmd
 
-> Se aplica a: Windows Server (canal semianual) y Windows Server 2016
+> Se aplica a: Windows Server (canal semianual) y Windows Server 2016
 
-En Windows Server 2016 y Windows Server, versión 1709 puedes usar la herramienta de configuración de servidores (Sconfig.cmd)para configurar y administrar varios aspectos comunes de las instalaciones de Server Core. Para usar esta herramienta, debe ser miembro del grupo de administradores.
+En Windows Server 2016 y Windows Server, versión 1709 puedes usar la herramienta de configuración de servidores (Sconfig.cmd) para configurar y administrar varios aspectos comunes de las instalaciones básicas. Para usar esta herramienta, debe ser miembro del grupo de administradores.
 
-Puedes usar Sconfig.cmd en las instalaciones de Server Core y de Servidor con Experiencia de escritorio (solo Windows Server 2016).
+Puedes usar Sconfig.cmd en las instalaciones básicas y de Servidor con Experiencia de escritorio (solo Windows Server 2016).
 
-## <a name="start-the-server-configuration-tool"></a>Iniciar la herramienta de configuración de servidores
+## <a name="start-the-server-configuration-tool"></a>Inicio de la herramienta de configuración de servidores
 
 1. Cambie a la unidad del sistema.
 
@@ -39,19 +39,19 @@ Puedes usar Sconfig.cmd en las instalaciones de Server Core y de Servidor con Ex
 
 ## <a name="domainworkgroup-settings"></a>Configuración del dominio o grupo de trabajo
 
-La configuración actual del dominio o grupo de trabajo se muestra en la pantalla predeterminada de la herramienta Configuración del servidor. Puede unirse a un dominio o un grupo de trabajo mediante el acceso a la **dominio/grupo de trabajo** página de configuración en el menú principal y siga las instrucciones, proporcionando toda la información necesaria.
+La configuración actual del dominio o grupo de trabajo se muestra en la pantalla predeterminada de la herramienta Configuración del servidor. Para unirse a un dominio o a un grupo de trabajo, obtén acceso a la página de configuración **Dominio o grupo de trabajo** en el menú principal y sigue las instrucciones, proporcionando toda la información requerida.
 
-Si un usuario de dominio no se ha agregado al grupo de administradores Local, no podrá realizar cambios al sistema, como cambiar el nombre del equipo, mediante el usuario de dominio. Para agregar un usuario del dominio al grupo de administradores locales, permita que el equipo se reinicie. A continuación, inicie sesión en el equipo como administrador local y siga los pasos descritos en la [configuración del administrador Local](#local-administrator-settings) sección más adelante en este artículo.
+Si un usuario del dominio no se agregó al grupo de administradores locales, no podrás realizar cambios en el sistema, como cambiar el nombre del equipo, usando ese usuario del dominio. Para agregar un usuario del dominio al grupo de administradores locales, permita que el equipo se reinicie. A continuación, inicia sesión en el equipo como administrador local y sigue los pasos de la sección [Configuración del administrador local](#local-administrator-settings) de este documento.
 
 > [!NOTE]
-> Es necesario reiniciar el servidor para aplicar los cambios en la pertenencia al dominio o grupo de trabajo. Sin embargo, puede realizar cambios adicionales y reiniciar el servidor después de todos los cambios para evitar tener que reiniciar el servidor varias veces. De forma predeterminada, las máquinas virtuales en ejecución se guardan automáticamente antes de reiniciar el servidor Hyper-V.
+> Se te pedirá que reinicies el servidor para aplicar cualquier cambio en la pertenencia al dominio o grupo de trabajo. Sin embargo, puede realizar cambios adicionales y reiniciar el servidor después de todos los cambios para evitar tener que reiniciar el servidor varias veces. De forma predeterminada, las máquinas virtuales en ejecución se guardan automáticamente antes de reiniciar el servidor Hyper-V.
 
 ## <a name="computer-name-settings"></a>Configuración del nombre del equipo
 
-El nombre actual del equipo se muestra en la pantalla predeterminada de la herramienta Configuración del servidor. Puede cambiar el nombre del equipo mediante el acceso a la **nombre_equipo** página de configuración en el menú principal y siga las instrucciones.
+El nombre actual del equipo se muestra en la pantalla predeterminada de la herramienta Configuración del servidor. Para cambiar el nombre del equipo, obtén acceso a la página de configuración **Nombre de equipo** desde el menú principal y sigue las instrucciones.
 
 > [!NOTE]
-> Es necesario reiniciar el servidor para aplicar los cambios en la pertenencia al dominio o grupo de trabajo. Sin embargo, puede realizar cambios adicionales y reiniciar el servidor después de todos los cambios para evitar tener que reiniciar el servidor varias veces. De forma predeterminada, las máquinas virtuales en ejecución se guardan automáticamente antes de reiniciar el servidor Hyper-V.
+> Se te pedirá que reinicies el servidor para aplicar cualquier cambio en la pertenencia al dominio o grupo de trabajo. Sin embargo, puede realizar cambios adicionales y reiniciar el servidor después de todos los cambios para evitar tener que reiniciar el servidor varias veces. De forma predeterminada, las máquinas virtuales en ejecución se guardan automáticamente antes de reiniciar el servidor Hyper-V.
 
 ## <a name="local-administrator-settings"></a>Configuración del administrador local
 
@@ -62,7 +62,7 @@ Para agregar usuarios adicionales al grupo de administradores local, use la opci
 Puede configurar la dirección IP para que un servidor DHCP la asigne automáticamente, o puede asignar manualmente una dirección IP estática. Esta opción le permite configurar las opciones del servidor DNS también para el servidor.
 
 > [!NOTE]
-> Estas opciones y muchas otras están ahora disponibles con los cmdlets de Windows PowerShell de funciones de red. Para obtener más información, consulta [Network Adapter Cmdlets](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps) (Cmdlets de adaptadores de red) en la biblioteca de Windows Server.
+> Estas opciones y muchas otras están ahora disponibles con los cmdlets de Windows PowerShell de funciones de red. Para obtener más información, consulte [cmdlets de adaptador de red](https://docs.microsoft.com/powershell/module/netadapter/?view=win10-ps) en la biblioteca de Windows Server.
 
 ## <a name="windows-update-settings"></a>Configuración de Windows Update
 
@@ -78,15 +78,15 @@ La opción **Solo descarga** buscará actualizaciones, descargará las que esté
 
 La configuración actual del estado del escritorio remoto se muestra en la pantalla predeterminada de la herramienta Configuración del servidor. Para configurar los siguientes valores de Escritorio remoto, obtenga acceso a la opción **Escritorio remoto** del menú principal y siga las instrucciones en pantalla.
 
-- Habilitar Escritorio remoto para clientes que ejecuten Escritorio remoto con autenticación a nivel de red
+- Habilita Escritorio remoto para clientes que ejecuten Escritorio remoto con Autenticación a nivel de red.
 
-- Habilitar Escritorio remoto para clientes que ejecuten cualquier versión de Escritorio remoto
+- Habilita Escritorio remoto para clientes que ejecuten cualquier versión de Escritorio remoto.
 
-- Deshabilitar Escritorio remoto
+- Deshabilita Remoto.
 
 ## <a name="date-and-time-settings"></a>Configuración de fecha y hora
 
-Puede acceder y cambiar la fecha y configuración de tiempo mediante el acceso a la **fecha y hora** opción de menú principal.
+Para obtener acceso y cambiar la configuración de fecha y hora, usa la opción **Fecha y hora** del menú principal.
 
 ## <a name="telemetry-settings"></a>Configuración de la telemetría
 
@@ -108,8 +108,8 @@ Puede habilitar varios escenarios de administración remota desde la opción **C
 
 ## <a name="to-log-off-restart-or-shut-down-the-server"></a>Para cerrar sesión, reiniciar o apagar el servidor
 
-Para cerrar sesión, reiniciar o apagar el servidor, obtenga acceso al elemento del menú correspondiente en el menú principal. Estas opciones también están disponibles en el **Windows Security** menú que se puede acceder desde cualquier aplicación en cualquier momento presionando CTRL + ALT + SUPR.  
+Para cerrar sesión, reiniciar o apagar el servidor, obtenga acceso al elemento del menú correspondiente en el menú principal. Estas opciones también están disponibles en el menú **Seguridad de Windows**, al que se puede obtener acceso desde cualquier aplicación en cualquier momento si presionas Ctrl + Alt + Supr.  
 
 ## <a name="to-exit-to-the-command-line"></a>Para salir a la línea de comandos
   
-Seleccione la opción **Salir a la línea de comandos** y presione ENTRAR para salir a la línea de comandos. Para volver a la herramienta de configuración del servidor, escriba **Sconfig.cmd**, y, a continuación, presione ENTRAR.
+Seleccione la opción **Salir a la línea de comandos** y presione ENTRAR para salir a la línea de comandos. Para volver a la herramienta Configuración del servidor, escribe **Sconfig.cmd** y, a continuación, presiona ENTRAR.

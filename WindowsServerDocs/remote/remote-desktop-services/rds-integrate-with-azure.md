@@ -1,6 +1,6 @@
 ---
-title: RDS - integración con servicios de Azure
-description: Obtenga información sobre cómo integrar RDS en la implementación de Azure y Azure en su implementación de RDS.
+title: 'Servicios de Escritorio remoto: integración con servicios de Azure'
+description: Aprende a integrar Servicios de Escritorio remoto en tu implementación de Azure, y a Azure en tu implementación de RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,20 +12,20 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 ms.openlocfilehash: e582612496591356ed96b34522333d0e8bf34093
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59879606"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712610"
 ---
-# <a name="remote-desktop-services---integrating-with-azure-services"></a>Servicios de escritorio remoto: la integración con servicios de Azure
+# <a name="remote-desktop-services---integrating-with-azure-services"></a>Servicios de Escritorio remoto: integración con servicios de Azure
 
-Windows Server 2016 combina la entrega segura eficaz de los escritorios y aplicaciones a través de servicios de escritorio remoto con los servicios flexibles, escalables proporcionados por Microsoft Azure. Puede implementar RDS con servicios de Azure para ayudar a reducir los costos de mantenimiento de infraestructura para servidores locales, aumentar la estabilidad mediante el uso de servicios de Azure para garantizar una alta disponibilidad, mejorar la seguridad mediante la autenticación multifactor y mejorar su experiencia de los usuarios mediante el uso de las identidades existentes para tener acceso a los recursos de RDS.
+Windows Server 2016 combina la eficaz entrega segura de escritorios y aplicaciones mediante Servicios de Escritorio remoto con los servicios flexibles y escalables proporcionados por Microsoft Azure. Puedes implementar RDS con servicios Azure para ayudar a reducir el costo de mantenimiento de la infraestructura de los servidores locales, aumentar la estabilidad mediante el uso de los servicios Azure para garantizar una alta disponibilidad, mejorar la seguridad mediante el uso de la autenticación multifactor y mejorar la experiencia de los usuarios mediante el uso de las identidades existentes para acceder a los recursos en RDS.
 
-Use la siguiente información para la integración de Azure en la implementación de escritorio remoto:
+Usa la siguiente información para integrar Azure en la implementación de Escritorio remoto:
 
-- [Aprenda a usar la autenticación multifactor con RDS](/azure/multi-factor-authentication/nps-extension-remote-desktop-gateway)
-- [Integrar Azure AD Domain Services con su implementación de RDS](rds-azure-adds.md)
-- [Publicación de escritorio remoto con el Proxy de aplicación de Azure AD](/azure/active-directory/application-proxy-publish-remote-desktop)
+- [Obtén información sobre cómo usar autenticación multifactor con RDS](/azure/multi-factor-authentication/nps-extension-remote-desktop-gateway)
+- [Integrar Azure AD Domain Services con la implementación de RDS](rds-azure-adds.md)
+- [Publicar el Escritorio remoto con el proxy de aplicación de Azure AD](/azure/active-directory/application-proxy-publish-remote-desktop)
 
-Para ver cómo estos servicios simplifican la arquitectura de la implementación de escritorio remoto, consulte [arquitecturas RDS con roles de PaaS de Azure únicos](desktop-hosting-logical-architecture.md#rds-architectures-with-unique-azure-paas-roles).
+Para ver cómo estos servicios simplifican la arquitectura de la implementación del Escritorio remoto, consulta la sección [Arquitecturas RDS con funciones exclusivas de PaaS de Azure](desktop-hosting-logical-architecture.md#rds-architectures-with-unique-azure-paas-roles).
