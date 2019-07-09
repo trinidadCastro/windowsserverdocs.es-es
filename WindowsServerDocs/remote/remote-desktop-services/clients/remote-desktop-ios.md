@@ -1,6 +1,6 @@
 ---
 title: Introducción a Escritorio remoto en iOS
-description: Obtenga información sobre cómo configurar el cliente de escritorio remoto para iOS
+description: Aprenda a configurar el cliente de Escritorio remoto para iOS
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,191 +15,191 @@ ms.author: elizapo
 date: 01/13/2017
 ms.localizationpriority: medium
 ms.openlocfilehash: 71fe969de4d21f7fa3c134b0f80fc7f69e5b2da8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66446706"
 ---
 # <a name="get-started-with-remote-desktop-on-ios"></a>Introducción a Escritorio remoto en iOS
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016 y Windows Server 2012 R2
 
-Puede usar al cliente de escritorio remoto para iOS para trabajar con aplicaciones, recursos y equipos de escritorio de Windows desde el dispositivo iOS (iPhone e iPad).
+El cliente Escritorio remoto para iOS se puede usar para trabajar con aplicaciones, recursos y equipos de escritorio de Windows desde un dispositivo iOS (iPhone e iPad).
 
-Use la siguiente información para empezar a trabajar. Asegúrese de consultar la [preguntas más frecuentes sobre](remote-desktop-client-faq.md) si tiene alguna pregunta.
+Usa la siguiente información para comenzar. Asegúrate de consultar la sección de [Preguntas frecuentes](remote-desktop-client-faq.md) si te surge alguna duda.
 
 > [!NOTE]
-> - ¿Tiene curiosidad acerca de las nuevas versiones para el cliente de iOS? ¿Consulte [Novedades de escritorio remoto en iOS?](ios-whatsnew.md)
-> - El cliente de iOS es compatible con dispositivos que ejecutan iOS 6.x y versiones más recientes.
+> - ¿Tienes curiosidad acerca de las nuevas versiones para el cliente iOS? Consulta [Novedades de Escritorio remoto en iOS](ios-whatsnew.md)
+> - El cliente iOS admite dispositivos que usen iOS 6.x, y cualquier versión posterior.
 
-## <a name="get-the-remote-desktop-client-and-start-using-it"></a>Obtener al cliente de escritorio remoto y empezar a usar
+## <a name="get-the-remote-desktop-client-and-start-using-it"></a>Obtención del cliente de Escritorio remoto y su primer uso
 
-### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>Descargar al cliente de escritorio remoto desde la tienda de iOS
-Siga estos pasos para empezar a trabajar con Escritorio remoto en el dispositivo iOS:
+### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>Descarga del cliente de Escritorio remoto de la tienda iOS
+Sigue estos pasos para empezar a usar Escritorio remoto en un dispositivo iOS:
 
-1. Descargue el cliente de escritorio remoto de Microsoft desde [iTunes](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8).
-2. [Configuración de su PC para aceptar conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop).
-3. Agregar un [conexión a Escritorio remoto](#add-a-remote-desktop-connection) o un [recurso remoto](#add-a-remote-resource). Usar una conexión para conectarse a una a un equipo Windows y un recurso remoto para usar un programa RemoteApp, basados en sesión de escritorio o un escritorio virtual publica directamente en el entorno local mediante la conexión de RemoteApp y escritorio. Esta característica está disponible normalmente en entornos corporativos.
+1. Descarga el cliente de Escritorio remoto de Microsoft de [iTunes](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8).
+2. [Configura el equipo para que acepte conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop).
+3. Agrega una [conexión a Escritorio remoto](#add-a-remote-desktop-connection) o un [recurso remoto](#add-a-remote-resource). Usa una conexión para conectarte directamente a un equipo Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado de forma local mediante Conexión de RemoteApp y Escritorio. Esta característica está disponible habitualmente en entornos corporativos.
 
-### <a name="download-the-remote-desktop-ios-beta-client"></a>Descargue al cliente de escritorio remoto de iOS versión Beta
-En el dispositivo iOS, siga [estas instrucciones](https://aka.ms/rdiosbeta) para descargar el cliente de escritorio remoto de iOS versión Beta.
+### <a name="download-the-remote-desktop-ios-beta-client"></a>Descarga del cliente beta de Escritorio remoto para iOS
+En el dispositivo iOS, siga [estas instrucciones](https://aka.ms/rdiosbeta) para descargar el cliente beta de Escritorio remoto para iOS.
 
-### <a name="add-a-remote-desktop-connection"></a>Agregar una conexión a Escritorio remoto
+### <a name="add-a-remote-desktop-connection"></a>Adición de una conexión a Escritorio remoto
 
-Para crear una conexión a escritorio remota: 
-1. En la derivación de centro de conexiones **+** y, a continuación, puntee en **Agregar PC o servidor**.
-2. Escriba la siguiente información para la conexión a escritorio remota:
-   - **Nombre de equipo** : el nombre del equipo. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede anexar información del puerto en el nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
-   - **Nombre de usuario** : el nombre de usuario a usar para obtener acceso al equipo remoto. Puede usar los siguientes formatos: *user_name*, *DOMINIO\nombre_de_usuario*, o <em>user_name@domain.com</em>. También puede especificar si se le solicitará un nombre de usuario y una contraseña.
-3. También puede establecer las siguientes opciones adicionales:
-   - **Nombre descriptivo (opcional)** : un nombre fácil de recordar para el equipo se conecta a. Puede utilizar cualquier cadena, pero si no especifica un nombre descriptivo, se muestra el nombre de equipo.
-   - **(Opcional) de la puerta de enlace** : puerta de enlace de escritorio remoto el que desea usar para conectarse a escritorios virtuales, programas RemoteApp y escritorios basados en una red corporativa interna. Obtenga la información acerca de la puerta de enlace desde el administrador del sistema.
-   - **Sonido** : seleccione el dispositivo que se usará para audio durante la sesión remota. Puede reproducir un sonido en los dispositivos locales, el dispositivo remoto, o no en absoluto.
-   - **Intercambiar botones del mouse** : cada vez que un gesto del mouse tendría que enviar un comando con el botón primario del mouse, envía el mismo comando con el botón secundario del mouse en su lugar. Esto es necesario si el equipo remoto está configurado para el modo del mouse zurdo.
-   - **Modo de administrador** -conectarse a una sesión de administración en un servidor que ejecuta Windows Server 2003 o posterior.
-4. Pulse **guardar**.
+Para crear una conexión a Escritorio remoto: 
+1. En el Centro de conexión, pulsa **+** y luego **Agregar equipo o servidor**.
+2. Escribe la siguiente información de la conexión a Escritorio remoto:
+   - **Nombre del equipo**: el nombre del equipo. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes anexar la información del puerto al nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
+   - **Nombre de usuario**: el nombre de usuario que se utiliza para acceder al equipo remoto. Puedes usar los siguientes formatos: *nombre_de_usuario*, *dominio\nombre_de_usuario* o <em>user_name@domain.com</em>. También puedes especificar si deseas que se soliciten el nombre de usuario y la contraseña.
+3. También puedes establecer las siguientes opciones adicionales:
+   - **Nombre descriptivo (opcional)** : un nombre fácil de recordar para el equipo al que se conecta. Puedes utilizar cualquier cadena, pero si no especificas un nombre descriptivo, se muestra el nombre del equipo.
+   - **Puerta de enlace (opcional)** : la puerta de enlace de Escritorio remoto que deseas usar para conectarte a escritorios virtuales, programas RemoteApp y escritorios basados en sesión de una red corporativa interna. La información acerca de la puerta de enlace te la puede proporcionar el administrador del sistema.
+   - **Sonido**: selecciona el dispositivo que se usa para audio durante la sesión remota. Puedes elegir reproducir el sonido en los dispositivos locales, en el dispositivo remoto o no reproducirlo.
+   - **Intercambiar botones del ratón**: cada vez que un gesto del ratón enviaría un comando con el botón izquierdo, envía el mismo comando con el botón derecho. Es necesario si el equipo remoto está configurado para el modo de ratón para zurdos.
+   - **Modo de administrador**: conéctate a una sesión de administración en un servidor que usa Windows Server 2003 o posterior.
+4. Pulsa **Guardar**.
 
-¿Es necesario modificar esta configuración? Mantenga presionado el escritorio que desea editar y, a continuación, puntee en el icono de configuración. 
+¿Es necesario editar esta configuración? Mantén presionado el escritorio que deseas editar y, a continuación, pulsa el icono de configuración. 
 
-### <a name="add-a-remote-resource"></a>Agregar un recurso remoto
-Los recursos remotos son programas RemoteApp, escritorios basados en sesión y escritorios virtuales publicados utilizando la conexión de RemoteApp y escritorio.
+### <a name="add-a-remote-resource"></a>Adición de recursos remotos
+Los recursos remotos son programas RemoteApp, escritorios basados en sesión y escritorios virtuales publicados mediante Conexión de RemoteApp y Escritorio.
 
-- La dirección URL muestra el vínculo en el servidor de acceso Web de escritorio remoto que proporciona acceso a conexión de RemoteApp y escritorio.
-- Se enumeran los configurado conexiones de RemoteApp y escritorio.
+- La dirección URL muestra el vínculo al servidor de Acceso web a Escritorio remoto que proporciona acceso a Conexión de RemoteApp y Escritorio.
+- Se enumeran los configurado conexiones de Conexión de RemoteApp y Escritorio configuradas.
 
 Para agregar un recurso remoto:
 
-1. En la pantalla del centro de conexiones, pulse **+** y, a continuación, puntee en **agregar recursos remotos**. 
-2. Escriba la información para el recurso remoto:
-   - **Dirección URL de fuente** -la dirección URL del servidor de acceso Web de escritorio remoto. También puede especificar la cuenta de correo electrónico corporativo en este campo: Esto indica al cliente para buscar el servidor de acceso Web de escritorio remoto asociado con su dirección de correo electrónico.
-   - **Nombre de usuario** -el nombre de usuario que se usará para el servidor de acceso Web de escritorio remoto que se conecta.
-   - **Contraseña** -la contraseña que se usará para el servidor de acceso Web de escritorio remoto que se conecta.
-3. Pulse **guardar**.
+1. En la pantalla Centro de conexión, pulsa **+** y, después, pulsa  **Add Remote Resources (Agregar recursos remotos)** . 
+2. Escribe información para el recurso remoto:
+   - **Dirección URL de fuente**: la dirección URL del servidor de Acceso web a Escritorio remoto. En este campo también puedes escribir la cuenta de correo electrónico corporativa (esto indica al cliente que busque el servidor de Acceso web a Escritorio remoto asociado con la dirección de correo electrónico).
+   - **Nombre de usuario**: el nombre de usuario que se usa para servidor de Acceso web a Escritorio remoto al que se conecta.
+   - **Contraseña**la contraseña que se usa para servidor de Acceso web a Escritorio remoto al que se conecta.
+3. Pulsa **Guardar**.
 
-Los recursos remotos se mostrará en el centro de conexiones.
-
-
-## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>Conectarse a una puerta de enlace de escritorio remoto para tener acceso a recursos internos
-
-Una puerta de enlace de escritorio remoto (puerta de enlace de RD) le permite conectarse a un equipo remoto en una red corporativa desde cualquier lugar en Internet. Puede crear y administrar las puertas de enlace mediante el cliente de escritorio remoto.
-
-Para configurar una puerta de enlace:
-
-1. En el centro de conexiones, pulse **configuración > puertas de enlace**. 
-2. Pulse **puerta de enlace de escritorio remoto agregar**.
-3. Escriba la siguiente información:
-   - **Nombre del servidor** : el nombre del equipo que desea usar como una puerta de enlace. Esto puede ser un nombre de equipo de Windows, un nombre de dominio de Internet o una dirección IP. También puede agregar información de puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
-   - **Nombre de usuario** -el nombre de usuario y la contraseña que se usará para la puerta de enlace de escritorio remoto que se conecta. También puede seleccionar **usar las credenciales de conexión** para usar el mismo nombre de usuario y la contraseña que se utilizaron para la conexión a escritorio remota.
+Los recursos remotos se mostrarán en el Centro de conexión.
 
 
-## <a name="manage-your-user-accounts"></a>Administrar las cuentas de usuario 
+## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>Conexión a una puerta de enlace de Escritorio remoto para acceder a recursos internos
 
-Cuando se conecta a un recursos remotos o de escritorio, puede guardar las cuentas de usuario para seleccionar de nuevo. Puede administrar sus cuentas de usuario mediante el cliente de escritorio remoto.
+Las puertas de enlace de Escritorio remoto te permiten conectarte a equipos remotos de una red corporativa desde cualquier lugar de Internet. Para crear y administrar dichas puertas de enlace, usa el cliente de Escritorio remoto.
 
-Para crear una nueva cuenta de usuario:
+Para configurar una puerta de enlace nueva:
 
-1. En el centro de conexiones, pulse **configuración**y, a continuación, puntee en **los nombres de usuario**.
-2. Pulse **Agregar cuenta de usuario**.
-3. Escriba la siguiente información:
-   - **Nombre de usuario** -el nombre del usuario para guardar para su uso con una conexión remota. Puede escribir el nombre de usuario en cualquiera de los siguientes formatos: user_name, DOMINIO\nombre_de_usuario, o user_name@domain.com.
-   - **Contraseña** -la contraseña para el usuario especificado. Cada cuenta de usuario que desea guardar si desea para utilizar para las conexiones remotas debe tener una contraseña asociada con él.
-4. Pulse **guardar**y, a continuación, puntee en **configuración**.
-5. Pulse **realiza** para guardar la nueva configuración.
+1. En el Centro de conexión, pulsa **Configuración > Puerta de enlace**. 
+2. Pulsa **Agregar puerta de enlace de Escritorio remoto**.
+3. Escribe la siguiente información:
+   - **Nombre del servidor**: el nombre del equipo que quieres usar como puerta de enlace. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes agregar información del puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
+   - **Nombre de usuario**: el nombre de usuario y la contraseña que se van a usar para la puerta de enlace de Escritorio remoto a la que se va a conectar. También puedes seleccionar **Usar credenciales de conexión** para usar el mismo nombre de usuario y la misma contraseña que para la conexión a Escritorio remoto.
+
+
+## <a name="manage-your-user-accounts"></a>Administración de cuentas de usuario 
+
+Cuando te conectas a un escritorio o a recursos remotos, puedes guardar las cuentas de usuario para volver a seleccionarlas más adelante. Las cuentas de usuario se pueden administrar mediante el cliente de Escritorio remoto.
+
+Para crear una cuenta de usuario:
+
+1. En el Centro de conexión, pulsa **Configuración**y luego  **Nombres de usuario**.
+2. Pulsa **Agregar cuenta de usuario**.
+3. Escribe la siguiente información:
+   - **Nombre de usuario**: el nombre del usuario que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario user_name@domain.com.
+   - **Contraseña**: la contraseña del usuario que has especificado. Todas las cuentas de usuario que quieras guardar para usarlas para las conexiones remotas deben tener una contraseña asociada.
+4. Pulsa **Guardar** y, después, **Configuración**.
+5. Pulsa **Listo** para guardar la configuración nueva.
 
 Para eliminar una cuenta de usuario:
 
-1. En el centro de conexiones, pulse **configuración > los nombres de usuario**.
-2. Deslice el dedo hacia la fila de derecha a izquierda para seleccionar el usuario.
-3. Pulse **eliminar**.
+1. En el Centro de conexión, pulsa **Configuración > Nombres de usuario**.
+2. Desliza el dedo por la fila de derecha a izquierda para seleccionar el usuario.
+3. Pulsa **Eliminar**.
 
 
 
-## <a name="navigate-the-remote-desktop-session"></a>Navegar por la sesión de escritorio remoto
-Al iniciar una sesión de escritorio remoto, hay herramientas disponibles que puede usar para navegar por la sesión.
+## <a name="navigate-the-remote-desktop-session"></a>Desplazamiento a la sesión de Escritorio remoto
+Al iniciar una sesión de Escritorio remoto, hay varias herramientas disponibles que se pueden usar para desplazarse por la sesión.
 
-### <a name="start-a-remote-desktop-connection"></a>Iniciar una conexión a escritorio remota
+### <a name="start-a-remote-desktop-connection"></a>Inicio de una conexión a Escritorio remoto
 
-1. Puntee en la conexión a escritorio remota para iniciar la sesión de escritorio remota. 
-2. Si se le pide que compruebe el certificado para el escritorio remoto, pulse **Accept**. Puede elegir Aceptar siempre deslizando el **no volver a preguntar para las conexiones a este equipo** alternar a **ON**. 
+1. Pulsa en la conexión con Escritorio remoto para iniciar la sesión de escritorio remota. 
+2. Si se te pide que compruebes el certificado del escritorio remoto, pulsa **Aceptar**. Puedes elegir aceptar siempre, para lo que debes deslizar el botón de alternancia **No volver a preguntar las conexiones a este equipo** a **Activado**. 
 
 ### <a name="connection-bar"></a>Barra de conexión
 
-La conexión barra da como resultado que el acceso a los controles de navegación adicionales. 
+La barra de conexión te permite acceder a más controles de navegación. 
 
-- **Control de panorámica**: El control de panorámica permite a se amplía y se mueven por la pantalla. Tenga en cuenta que el control de panorámica solo está disponible mediante toque directo con.
-   - Habilitar o deshabilitar el control de panorámica: Pulse el icono de panorámica en la barra de conexión para mostrar el control de panorámica y zoom en la pantalla. Pulse el icono de panorámica en la barra de conexión nuevo para ocultar el control y devolver la pantalla para su resolución original.
-   - Use el control de panorámica: Pulse y mantenga el control de panorámica y, a continuación, arrastre en la dirección que desea mover la pantalla.
-   - Mueva el control de panorámica: Double pulse y mantenga el control de panorámica para mover el control en la pantalla.
-- **Nombre de la conexión**: Se muestra el nombre de la conexión actual. Pulse el nombre de conexión para mostrar la barra de selección de la sesión.
-- **Teclado**: Pulse el icono de teclado para mostrar u ocultar el teclado. El control de panorámica se muestra automáticamente cuando se muestra el teclado.
-- **Mueva la barra de conexión**: Pulse y mantenga presionada la barra de conexión y, a continuación, arrastre y coloque en una nueva ubicación en la parte superior de la pantalla.
+- **Pan Control** (Control de panorámica): el control de panorámica permite ampliar la pantalla y moverse alrededor de ella. Ten en cuenta que el control de panorámica solo está disponible si se usa el toque directo.
+   - Habilitar o deshabilitar el control de panorámica: pulsa el icono de panorámica de la barra de conexión para mostrar el control de panorámica y aplicar zoom a la pantalla. Vuelve a pulsar el icono de panorámica en la barra de conexión nuevo para ocultar el control y devolver la pantalla a su resolución original.
+   - Usar el control de panorámica: mantén pulsado el control de panorámica y arrástralo en la dirección que deseas mover la pantalla.
+   - Mover el control de panorámica: pulsa dos veces y mantén pulsado el control de panorámica para mover el control en la pantalla.
+- **Nombre de la conexión**: se muestra el nombre de la conexión actual. Pulsa el nombre de conexión para mostrar la barra de selección de la sesión.
+- **Teclado**: pulsa el icono del teclado para mostrar u ocultar el teclado. El control de panorámica se muestra automáticamente cuando se muestra el teclado.
+- **Mover la barra de conexión**: Mantén pulsada la barra de conexión, arrástrala y colócala en una nueva ubicación en la parte superior de la pantalla.
 
 ### <a name="session-selection"></a>Selección de la sesión
-Puede tener varias conexiones abra en equipos diferentes al mismo tiempo. Puntee en la barra de conexión para mostrar la barra de selección de la sesión en el lado izquierdo de la pantalla. La barra de selección de sesión permite ver sus conexiones abiertas y cambiar entre ellas. 
+Puede tener varias conexiones abiertas en equipos diferentes al mismo tiempo. Pulsa la barra de conexión para mostrar la barra de selección de sesión en el lado izquierdo de la pantalla. La barra de selección de sesión permite ver las conexiones abiertas y cambiar de una a otra. 
 
-- Cambiar entre las aplicaciones en una sesión de abrir el recurso remoto.
+- Cambia entre aplicaciones en una sesión de recursos remotos abierta.
 
-    Cuando se conectan a recursos remotos, puede cambiar entre las aplicaciones abiertas dentro de esa sesión, pulse el menú del botón de expansión y elegir en la lista de elementos disponibles.
-- Inicie una nueva sesión
+    Cuando estás conectado a recursos remotos, para cambiar entre las distintas aplicaciones abiertas de la esa sesión, pulsa el menú del expansor y elige en la lista de elementos disponibles el que desees.
+- Inicio de una nueva sesión
 
-  Puede iniciar nuevas aplicaciones o las sesiones de escritorio desde dentro de la conexión actual: pulse **iniciar nuevo**y, a continuación, elija en la lista de elementos disponibles.
+  Es posible iniciar nuevas aplicaciones o sesiones de escritorio desde dentro de la conexión actual: pulsa **Iniciar nuevo**y, después, elija en la lista de elementos disponibles el que desee.
 
 - Desconexión de una sesión
 
-  Para desconectar una derivación de la sesión X en el lado izquierdo del icono de la sesión.
+  Para desconectar una sesión, pulsa X en el lado izquierdo del icono de la sesión.
 
 ### <a name="command-bar"></a>Barra de comandos
 
-La barra de comandos reemplaza la utilidad de la barra a partir de la versión 8.0.1. Puede cambiar entre los modos de mouse y volver al centro de conexión de la barra de comandos.
+La barra de comandos ha reemplazado a la barra de utilidad, que comenzó en la versión 8.0.1. Desde la barra de comandos puede cambiar de un modo del ratón a otro y volver al centro de conexión.
 
-## <a name="use-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Use gestos táctiles y los modos de mouse (ratón) en una sesión remota
+## <a name="use-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Uso de gestos táctiles y de modos de ratón en una sesión remota
 
-El cliente utiliza gestos táctiles estándar. También puede usar gestos táctiles para replicar las acciones del mouse en el escritorio remoto. Los modos de mouse disponibles se definen en la tabla siguiente.
+El cliente utiliza gestos táctiles estándar. También se pueden usar gestos táctiles para replicar acciones del ratón en el escritorio remoto. Los modos del ratón disponibles se definen en la tabla siguiente.
 
 > [!NOTE]
-> Interactúan con Windows 8 o versiones más recientes se admiten los gestos táctiles nativas en toque directo con el modo. Para obtener más información sobre Windows 8 Consulte gestos [Touch: Deslice el dedo, pulse y mucho más](https://windows.microsoft.com/en-US/windows-8/touch-swipe-tap-beyond).
+> En la interacción con Windows 8, o las versiones más recientes, se admiten los gestos táctiles nativos en modo de toque directo. Para más información acerca de los gestos de Windows 8, consulta[Entrada táctil: deslizar el dedo, pulsar y mucho más](https://windows.microsoft.com/en-US/windows-8/touch-swipe-tap-beyond).
 
-| Modo de mouse    | Operación del mouse      | Gesto                                                    |
+| Modo de mouse    | Operación del ratón      | Gesto                                                    |
 |---------------|----------------------|------------------------------------------------------------|
-| Toque directo con  | El botón primario           | Pulse 1 dedo                                               |
-| Toque directo con  | Hacer clic con el botón derecho          | 1 tap dedo y suspensión                                      |
-| Puntero del mouse | El botón primario           | Pulse 1 dedo                                               |
-| Puntero del mouse | Hacer clic con el botón primario y arrastrar  | pulsar dos veces 1 dedo y mantener presionado, arrastre                    |
-| Puntero del mouse | Hacer clic con el botón derecho          | Pulse dedo 2                                               |
-| Puntero del mouse | Hacer clic con el botón derecho y arrastrar | 2 pulsar dos veces dedo y mantener presionado, arrastre                    |
-| Puntero del mouse | Rueda del mouse          | dedo 2 pulse y mantenga presionado, y luego arrastre hacia arriba o hacia abajo                |
-| Puntero del mouse | Zoom                 | Alejar 2 dedos para acercar o distribuir 2 dedos para alejar |
+| Toque directo  | Hacer clic con el botón izquierdo           | Pulsación con un dedo                                               |
+| Toque directo  | Hacer clic con el botón derecho          | Mantener pulsado con un dedo                                      |
+| Puntero | Hacer clic con el botón izquierdo           | Pulsación con un dedo                                               |
+| Puntero | Hacer clic con el botón izquierdo y arrastrar  | Pulsar dos veces con un dedo y mantener pulsado, y luego arrastrar                    |
+| Puntero | Hacer clic con el botón derecho          | Pulsación con dos dedos                                               |
+| Puntero | Hacer clic con el botón derecho y arrastrar | Pulsar dos veces con dos dedos y mantener pulsado, y luego arrastrar                    |
+| Puntero | Rueda del ratón          | Pulsar con dos dedos y mantener pulsado, y luego arrastrar hacia arriba o abajo                |
+| Puntero | Zoom                 | Acercar dos dedos para acercar la imagen o alejar dos dedos para alejar la imagen |
 
-## <a name="supported-input-devices"></a>Admite dispositivos de entrada
+## <a name="supported-input-devices"></a>Dispositivos de entrada compatibles
 
-El [de cliente de escritorio remoto iOS beta](https://aka.ms/rdiosbeta) es compatible con los ratones Swiftpoint GT y ProPoint físicos. Swiftpoint está ofreciendo un [descuento exclusivo](https://www.swiftpoint.com/microsoft/) en el GT para los usuarios del cliente de iOS versión beta.
+El [cliente beta iOS de Escritorio remoto](https://aka.ms/rdiosbeta) es compatible con los ratones físicos Swiftpoint GT y ProPoint. Swiftpoint ofrece un [descuento exclusivo](https://www.swiftpoint.com/microsoft/) en el GT a los usuarios del cliente de la versión beta de iOS.
 
-El cliente de iOS actualmente solo admite Swiftpoint mice. Hacer referencia a la [cuáles son las novedades en el cliente de iOS](ios-whatsnew.md) página y el [iOS App Store](https://aka.ms/rdios) para noticias sobre la compatibilidad con otros dispositivos en el futuro.
+Actualmente, el cliente de iOS solo admite ratones Swiftpoint. Consulte la página [Novedades del cliente de iOS](ios-whatsnew.md) y el [App Store de iOS](https://aka.ms/rdios) para obtener información acerca de la compatibilidad con otros dispositivos en el futuro.
 
-## <a name="use-a-keyboard-in-a-remote-session"></a>Usar un teclado en una sesión remota
+## <a name="use-a-keyboard-in-a-remote-session"></a>Uso de un teclado en una sesión remota
 
-Se puede usar una que aparecen en pantalla o teclado físico en una sesión remota.
+En la sesión remota puede usar tanto un teclado en pantalla como un teclado físico.
 
-En la pantalla teclados, use el botón en el borde derecho de la barra encima del teclado para cambiar entre el teclado estándar y adicional.
+En los teclados en pantalla, use el botón del borde derecho de la barra que hay encima del teclado para cambiar entre el teclado estándar y el adicional.
 
-Si es compatible con Bluetooth para el dispositivo iOS, el cliente detecta automáticamente el teclado Bluetooth.
+Si el Bluetooth está habilitado en el dispositivo iOS, el cliente detecta automáticamente el teclado Bluetooth.
 
-Tenga en cuenta que, debido a limitaciones en el sistema operativo, las teclas especiales, como Ctrl, la opción y la función no funcionará según lo previsto con un teclado Bluetooth. El trabajo de las claves siguientes:
+Ten en cuenta que, debido a las limitaciones del sistema operativo, las teclas especiales, como Ctrl, Opción y Función no funcionará como cabría esperar con un teclado Bluetooth. Las siguientes teclas funcionan:
 
 - Teclas alfanuméricas
-- Teclas de dirección
-- Pestaña: Pestaña funciona, pero no funciona Mayús + Tab
-- Inicio / Pos1: Alt+flecha izquierda = Home
-- Fin: Alt+flecha derecha = final
-- RE PÁG: Alt+flecha arriba = RE PÁG
-- AV PÁG: Alt+flecha abajo = AV PÁG
-- Seleccionar todo: Comando + A = CTRL+a (Seleccionar todo en la mayoría de los programas)
-- Cortar: Comando + X = CTRL+x (Cortar en la mayoría de los programas)
-- Copiar: Comando + C = CTRL+c (copiar en la mayoría de los programas)
-- Pegar: Comando + V = CTRL+v (pegar en la mayoría de los programas)
-- Símbolos: Teclas ALT + alfanumérica generará símbolos diferentes dependiendo del idioma configurado
+- Teclas del cursor
+- Tabulador: Tabulador funciona, pero Mayús + Tabulador no
+- Inicio/Pos1: Alt+izquierda = Inicio
+- Fin: Alt+derecha = Fin
+- Re Pág: Alt+arriba = Re Pág
+- Av Pág: Alt+abajo = Av Pág
+- Seleccionar todo: Comando + A = Ctrl+A (seleccionar todo en la mayoría de los programas)
+- Cortar: Comando+X = Ctrl+X (cortar en la mayor parte de programas)
+- Copiar: Comando+C = Ctrl+C (copiar en la mayor parte de programas)
+- Pegar: Comando+V = Ctrl+V (pegar en la mayor parte de programas)
+- Símbolos: Alt + Teclas alfanuméricas generará símbolos diferentes en función del idioma configurado
 
 > [!TIP]
-> Preguntas y comentarios siempre son bienvenidos. Sin embargo, no publique una solicitud de ayuda para solucionar problemas con la característica de comentario al final de este artículo. En su lugar, vaya a la [foro de cliente de escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e iniciar un nuevo subproceso. ¿Tiene alguna sugerencia de característica? Díganos en el [foro de uservoice cliente](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, vete al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
 

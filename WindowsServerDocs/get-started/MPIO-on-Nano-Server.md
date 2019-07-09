@@ -13,18 +13,18 @@ author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
 ms.openlocfilehash: 15d9ebfe72744ed26239587ef297b06361233425
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59874046"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63687678"
 ---
 # <a name="mpio-on-nano-server"></a>MPIO en Nano Server
 
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como una [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para obtener más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Consulta [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
 
 En este tema se habla sobre el uso de E/S de múltiples rutas (MPIO) en las instalaciones de Nano Server de Windows Server 2016. Para obtener información general sobre MPIO en Windows Server, vea [Introducción a E/S de múltiples rutas](https://technet.microsoft.com/library/cc725907.aspx).  
 

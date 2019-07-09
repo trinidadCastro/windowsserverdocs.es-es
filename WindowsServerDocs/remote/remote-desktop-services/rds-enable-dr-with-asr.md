@@ -1,6 +1,6 @@
 ---
-title: Habilitar la recuperación ante desastres de RDS con Azure Site Recovery
-description: Obtenga información sobre cómo habilitar la recuperación ante desastres de RDS con Azure Site Recovery.
+title: Habilitar la recuperación ante desastres de RDS mediante Azure Site Recovery
+description: Aprende a habilitar la recuperación ante desastres de RDS mediante Azure Site Recovery.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,44 +13,44 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.openlocfilehash: 7aa25602c71e5d114be7ae59c5e3ce168844d700
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66446551"
 ---
-# <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>Habilitar la recuperación ante desastres de RDS con Azure Site Recovery
+# <a name="enable-disaster-recovery-of-rds-using-azure-site-recovery"></a>Habilitar la recuperación ante desastres de RDS mediante Azure Site Recovery
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
-Para asegurarse de que la implementación de RDS está configurada correctamente para la recuperación ante desastres, es preciso proteger todos los componentes que constituyen la implementación de RDS:
+Para asegurarse de que la implementación de RDS está configurada correctamente para la recuperación ante desastres, es preciso proteger todos los componentes que la constituyen:
 
 - Active Directory
 - Nivel de SQL Server
 - Componentes de RDS
 - Componentes de red
 
-## <a name="configure-active-directory-and-dns-replication"></a>Configurar la replicación de Active Directory y DNS
+## <a name="configure-active-directory-and-dns-replication"></a>Configuración de la replicación de Active Directory y DNS
 
-Necesita Active Directory en el sitio de recuperación ante desastres para la implementación de RDS para que funcione. Tiene dos opciones, según la complejidad de la implementación de RDS es:
+Necesitas Active Directory en el sitio de recuperación ante desastres para que la implementación de RDS funcione. Tienes dos opciones según la complejidad de la implementación de RDS:
 
-- Opción 1: si tiene un número pequeño de aplicaciones y un controlador de dominio para todo el sitio local y se conmuta de todo el sitio, use replicación de ASR para replicar el controlador de dominio en el sitio secundario (true para ambos escenarios sitio a sitio y sitio a Azure).
-- Opción 2: si tiene un gran número de aplicaciones y ejecuta un bosque de Active Directory y verá conmutación por error pocas aplicaciones a la vez, configurar un controlador de dominio adicional en el sitio de recuperación ante desastres (ya sea un sitio secundario o en Azure).
+- Opción 1: si tienes un número pequeño de aplicaciones y un único controlador de dominio para todo el sitio local y vas a realizar una conmutación por error de todo el sitio, usa ASR-Replication para replicar el controlador de dominio en el sitio secundario (lo cual es cierto en los escenarios de sitio a sitio y de sitio a Azure).
+- Opción 2: si tienes un gran número de aplicaciones y ejecutas un bosque de Active Directory y vas a realizar una conmutación por error de pocas aplicaciones a la vez, configura un controlador de dominio adicional en el sitio de recuperación ante desastres (ya sea un sitio secundario o en Azure).
 
-Consulte [protección de Active Directory y DNS con Azure Site Recovery](/azure/site-recovery/site-recovery-active-directory) para obtener más información acerca de cómo realizar un controlador de dominio disponible en el sitio de recuperación ante desastres. El resto de esta guía, se supone que ha seguido estos pasos y que tiene el controlador de dominio disponible.
+Consulta [Protección de Active Directory y DNS con Azure Site Recovery](/azure/site-recovery/site-recovery-active-directory) para más información acerca de cómo hacer que un controlador de dominio esté disponible en el sitio de recuperación ante desastres. Para el resto de esta guía, se supone que has seguido estos pasos y que el controlador de dominio está disponible.
 
-## <a name="set-up-sql-server-replication"></a>Configurar la replicación de SQL Server
+## <a name="set-up-sql-server-replication"></a>Configuración de la replicación de SQL Server
 
-Consulte [proteger SQL Server con la recuperación ante desastres de SQL Server y Azure Site Recovery](/azure/site-recovery/site-recovery-sql) para conocer los pasos configurar la replicación de SQL Server.
+Consulta [Protección de SQL Server con la recuperación ante desastres de SQL Server y Azure Site Recovery](/azure/site-recovery/site-recovery-sql) para conocer los pasos de configuración de la replicación de SQL Server.
 
-## <a name="enable-protection-for-the-rds-application-components"></a>Habilitar la protección de los componentes de aplicación de RDS
+## <a name="enable-protection-for-the-rds-application-components"></a>Habilitar la protección de los componentes de la aplicación de RDS
 
-Según el tipo de implementación de RDS puede habilitar la protección de máquinas virtuales de diferentes componentes (como se muestra en la tabla siguiente) en Azure Site Recovery. Configure los elementos correspondientes de Azure Site Recovery en función de si están implementadas las máquinas virtuales en Hyper-V o VMWare.
+Según el tipo de implementación de RDS puedes habilitar la protección de las máquinas virtuales de diferentes componentes (como se muestra en la tabla siguiente) en Azure Site Recovery. Configura los elementos correspondientes de Azure Site Recovery en función de si las máquinas virtuales están implementadas en Hyper-V o VMWare.
 
 
 |               Tipo de implementación                |                                                                                                     Pasos de protección                                                                                                     |
 |----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     Escritorio virtual personal (no administrado)     | 1. Asegúrese de que todos los hosts de virtualización están preparados con la función RDVH instalada.    </br>2. Agente de conexión.  </br>3. Escritorios personales. </br>4. Gold plantilla de máquina virtual. </br>5. Web Access, servidor de licencias y el servidor de puerta de enlace |
-| Escritorio virtual agrupado (administrado con sin UPD) |                    1. Todos los hosts de virtualización están preparados con la función RDVH instalada.  </br>2. Agente de conexión.  </br>3. Gold plantilla de máquina virtual. </br>4. Web Access, servidor de licencias y el servidor de puerta de enlace.                    |
-|   RemoteApps y sesiones de escritorio (sin UPD)   |                                                          1. Hosts de sesión.  </br>2. Agente de conexión. </br>3. Web Access, servidor de licencias y el servidor de puerta de enlace.                                                           |
+|     Escritorio virtual personal (no administrado)     | 1. Asegúrate de que todos los hosts de virtualización están preparados con el rol RDVH instalado.    </br>2. Agente de conexión.  </br>3. Escritorios personales. </br>4. Máquina virtual de plantilla Gold. </br>5. Acceso web, servidor de licencias y servidor de puerta de enlace. |
+| Escritorio virtual agrupado (administrado, sin UPD) |                    1. Todos los hosts de virtualización están preparados con el rol RDVH instalado.  </br>2. Agente de conexión.  </br>3. Máquina virtual de plantilla Gold. </br>4. Acceso web, servidor de licencias y servidor de puerta de enlace.                    |
+|   Sesiones de RemoteApps y escritorio (sin UPD)   |                                                          1. Hosts de sesión.  </br>2. Agente de conexión. </br>3. Acceso web, servidor de licencias y servidor de puerta de enlace.                                                           |
 

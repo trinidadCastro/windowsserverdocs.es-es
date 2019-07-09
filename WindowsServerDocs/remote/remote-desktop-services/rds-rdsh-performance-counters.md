@@ -1,6 +1,6 @@
 ---
-title: Utilice los contadores de rendimiento para diagnosticar problemas de la capacidad de respuesta de aplicación en los Hosts de sesión de escritorio remoto
-description: ¿Se ejecuta demasiado lento su aplicación en RDS? Obtenga información sobre los contadores de rendimiento que puede utilizar para diagnosticar problemas de rendimiento de aplicaciones en RDSH
+title: Uso de contadores de rendimiento para diagnosticar problemas de capacidad de respuesta de las aplicaciones en los hosts de sesión de Escritorio remoto
+description: ¿Funcionan muy lentamente las aplicaciones en la sesión de Escritorio remoto? Obtén información acerca de los contadores de rendimiento que puede utilizar para diagnosticar problemas de rendimiento de aplicaciones en RDSH
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: elizapo
@@ -11,102 +11,102 @@ author: lizap
 manager: dougkim
 ms.localizationpriority: medium
 ms.openlocfilehash: f9aafaa34d5c16e45681e88b1ce60e99a9ad2842
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66447096"
 ---
-# <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Utilice los contadores de rendimiento para diagnosticar problemas de rendimiento de aplicaciones en Hosts de sesión de escritorio remoto
+# <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Uso de contadores de rendimiento para diagnosticar problemas de rendimiento de las aplicaciones en los hosts de sesión de Escritorio remoto
 
-Uno de los problemas más difíciles de diagnosticar es rendimiento deficiente de las aplicaciones, las aplicaciones se ejecutan lentamente o no responde. Tradicionalmente, inicie el diagnóstico mediante la recopilación de CPU, memoria, entrada/salida de disco y otras métricas y, a continuación, usar herramientas como Windows Performance Analyzer para intentar averiguar qué está causando el problema. Por desgracia en la mayoría de los casos estos datos no ayuda a identificar la causa raíz porque los contadores de consumo de recursos tienen variaciones frecuentes y grandes. Esto resulta difícil de leer los datos y correlacionarlos con el problema notificado. Para ayudarle a más resolución rápidamente los problemas de rendimiento de aplicaciones, hemos agregado algunos nuevos contadores de rendimiento (disponible [descargar](#download-windows-server-insider-software) a través de la [Windows Insider programa](https://insider.windows.com)) flujos de entrada de ese usuario de la medida.
+Uno de los problemas más difíciles de diagnosticar es que el rendimiento de las aplicaciones sea deficiente (las aplicaciones funcionan con lentitud o no responden). Tradicionalmente, el primer paso del diagnóstico es recopilar los datos de la CPU, memoria, entrada/salida del disco, y otras métricas y, después, usar herramientas como Windows Performance Analyzer para intentar averiguar qué es lo que provoca el problema. Por desgracia, en la mayoría de los casos estos datos no ayuda a identificar la causa raíz, ya que los contadores de consumo de recursos tienen variaciones frecuentes y grandes, lo que dificulta la lectura de los datos y su correlación con el problema notificado. Para ayudarle a solucionar más rápidamente los problemas de rendimiento de las aplicaciones, hemos agregado varios contadores de rendimiento nuevos (se pueden [descargar](#download-windows-server-insider-software) a través del [programa Windows Insider](https://insider.windows.com)) que miden los flujos de entrada del usuario.
 
-El contador de retraso de entrada del usuario puede ayudarle a identificar rápidamente la causa raíz para RDP experiencias de usuario final incorrectos. Este contador mide cuánto tiempo cualquier entrada (por ejemplo, el uso del mouse o teclado) del usuario permanece en la cola antes de recoge un proceso y el contador funciona en sesiones locales y remotas.
+El contador User Input Delay puede ayudarle a identificar rápidamente la causa raíz de los problemas que tienen los usuarios finales en RDP. Este contador mide el tiempo que una entrada de usuario cualquiera (por ejemplo, el uso del ratón o del teclado) permanece en la cola antes de que la recoja un proceso y el contador funciona en sesiones tanto locales como remotas.
 
-La siguiente imagen muestra una representación aproximada del flujo de entrada de usuario de cliente para la aplicación.
+La siguiente imagen muestra una representación somera del flujo de entrada del usuario del cliente a la aplicación.
 
-![Escritorio remoto: flujos de entrada de usuario desde el cliente de escritorio remoto a los usuarios a la aplicación](./media/rds-user-input.png)
+![Escritorio remoto: flujos de entrada de usuario desde el cliente de Escritorio remoto del usuario a la aplicación](./media/rds-user-input.png)
 
-El contador de retraso de entrada del usuario mide la diferencia máxima (dentro de un intervalo de tiempo) entre la entrada que se está poniendo en cola y cuando lo recoge la aplicación en un [bucle de mensajes tradicional](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop), tal y como se muestra en el siguiente diagrama de flujo:
+El contador User Input Delay (Retraso de entrada del usuario) mide la diferencia máxima (en un intervalo dado) entre la entrada que está en la cola y el momento en que la recoge la aplicación en un [bucle de mensajes tradicional](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop), tal como se muestra en el siguiente diagrama de flujo:
 
-![Entrada de usuario de escritorio remoto: flujo de contador de rendimiento de retraso](./media/rds-user-input-delay.png)
+![Escritorio remoto: flujo del contador de rendimiento de User Input Delay (Retraso de entrada del usuario)](./media/rds-user-input-delay.png)
 
-Un detalle importante de este contador es el que informa el retraso máximo de usuarios entrada dentro de un intervalo configurable. Este es el mayor tiempo que tarda una entrada llegar a la aplicación, que puede afectar a la velocidad de importantes y visibles acciones como escribir.
+Un detalle importante de este contador es que indica el retraso máximo de la entrada del usuario en un intervalo configurable. Es el tiempo máximo que tarda una entrada en llegar a la aplicación, lo que puede afectar a la velocidad de acciones importantes y visibles, como escribir.
 
-Por ejemplo, en la tabla siguiente, el retraso de entrada del usuario se notificarían como 1.000 ms dentro de este intervalo. El contador registra el usuario más lento de entrada retraso en el intervalo porque la percepción del usuario de "lento" viene determinada por la hora de entrada más lenta (el máximo) experimentan, no la velocidad promedio de todas las entradas total.
+Por ejemplo, en la siguiente tabla, la demora de la entrada del usuario se notificaría como 1000 ms dentro de este intervalo. El contador registra el retraso de entrada de usuario en el intervalo, porque la percepción del usuario de "lento" viene determinada por el máximo tiempo de entrada que experimentan, no por la velocidad media de todas las entradas totales.
 
 |Número| 0 | 1 | 2 |
 |------|---|---|---|
 |Retraso |16 ms| 20 ms| 1000 ms|
 
-## <a name="enable-and-use-the-new-performance-counters"></a>Habilitar y usar los nuevos contadores de rendimiento
+## <a name="enable-and-use-the-new-performance-counters"></a>Habilitación y uso de los nuevos contadores de rendimiento
 
-Para utilizar estos nuevos contadores de rendimiento, primero debe habilitar una clave del registro, ejecute este comando:
+Para utilizar estos nuevos contadores de rendimiento, primero se debe habilitar una clave del Registro, para lo que hay que ejecutar este comando:
 
 ```
 reg add "HKLM\System\CurrentControlSet\Control\Terminal Server" /v "EnableLagCounter" /t REG_DWORD /d 0x1 /f
 ```
 
 >[!NOTE]
-> Si usa Windows 10, versión 1809 o posterior o Windows Server 2019 o versiones posteriores, no tendrá que habilitar la clave del registro.
+> Si se usa la versión 1809 de Windows 10, o cualquier versión posterior, o Windows Server 2019, o cualquier versión posteriores, no será preciso habilitar la clave del Registro.
 
-A continuación, reinicie el servidor. A continuación, abra al Monitor de rendimiento y seleccione el signo más (+), como se muestra en la siguiente captura de pantalla.
+A continuación, reinicie el servidor. Luego, abre al Monitor de rendimiento y selecciona el signo más (+), como se muestra en la siguiente captura de pantalla.
 
-![Contador de rendimiento retraso de la entrada de escritorio remoto: una captura de pantalla que muestra cómo agregar el usuario](./media/rds-add-user-input-counter-screen.png)
+![Escritorio remoto: captura de pantalla que muestra cómo agregar el contador de rendimiento User Input Delay (Retraso de entrada del usuario)](./media/rds-add-user-input-counter-screen.png)
 
-Después de hacer eso, debería ver el cuadro de diálogo Agregar contadores, donde puede seleccionar **retraso de entrada de usuario por proceso** o **retraso de entrada del usuario por sesión**.
+Tras ello, deberías ver el cuadro de diálogo Agregar contadores, donde puedes seleccionar **User Input Delay per Process** (Retraso de entrada del usuario por proceso) o **User Input Delay per Session** (Retraso de entrada de usuario por sesión).
 
-![Escritorio remoto: una captura de pantalla que muestra cómo agregar la entrada de retraso del usuario por sesión](./media/rds-user-delay-per-session.png)
+![Escritorio remoto: captura de pantalla que muestra cómo agregar el retraso de la entrada del usuario por sesión](./media/rds-user-delay-per-session.png)
 
-![Escritorio remoto: una captura de pantalla que muestra cómo agregar el retraso de entrada de usuario por proceso](./media/rds-user-delay-per-process.png)
+![Escritorio remoto: captura de pantalla que muestra cómo agregar el retraso de la entrada del usuario por proceso](./media/rds-user-delay-per-process.png)
 
-Si selecciona **retraso de entrada de usuario por proceso**, verá el **instancias del objeto seleccionado** (en otras palabras, los procesos) en ```SessionID:ProcessID <Process Image>``` formato.
+Si seleccionas **User Input Delay per Process** (Retraso de entrada del usuario por proceso), verás **Instances of the selected object** (Instancias del objeto seleccionado), es decir, los procesos, en formato ```SessionID:ProcessID <Process Image>```.
 
-Por ejemplo, si la aplicación de calculadora se está ejecutando en un [Id. de sesión 1](https://msdn.microsoft.com/library/ms524326.aspx), verá ```1:4232 <Calculator.exe>```.
+Por ejemplo, si la aplicación Calculadora se ejecuta en [Session ID 1](https://msdn.microsoft.com/library/ms524326.aspx), verá ```1:4232 <Calculator.exe>```.
 
 > [!NOTE]
-> No todos los procesos se incluyen. No verá todos los procesos que se ejecutan como sistema.
+> No están incluidos todos los procesos. No verás ningún proceso que se ejecute como SISTEMA.
 
-El contador empiece a enviar notificaciones de retraso de entrada del usuario en cuanto lo agregue. Tenga en cuenta que la escala máxima se establece en 100 (ms) de forma predeterminada. 
+El contador empieza a notificar el retraso en la entrada del usuario en cuanto se agrega. Ten en cuenta que la escala máxima se establece en 100 (ms) de manera predeterminada. 
 
-![Escritorio remoto: un ejemplo de actividad para el retraso de la entrada de usuario por proceso en el Monitor de rendimiento](./media/rds-sample-user-input-delay-perfmon.png)
+![Escritorio remoto: un ejemplo de actividad de Retraso de entrada del usuario por proceso en el Monitor de rendimiento](./media/rds-sample-user-input-delay-perfmon.png)
 
-A continuación, echemos un vistazo a la **retraso de entrada del usuario por sesión**. Hay instancias para cada identificador de sesión y sus contadores muestran el retraso de entrada de usuario de cualquier proceso dentro de la sesión especificada. Además, hay dos instancias denominadas "Max" (el retraso entrada máximo de usuarios en todas las sesiones) y "Average" (la acorss de promedio todas las sesiones).
+A continuación, se va a examinar **Retraso de entrada del usuario por sesión**. Hay instancias de cada identificador de sesión y sus contadores muestran el retraso de entrada de usuario de todos los procesos dentro de la sesión especificada. Además, hay dos instancias denominadas "Max" (el retraso máximo en la entrada de usuario en todas las sesiones) y "Average" (el promedio de promedio todas las sesiones).
 
-Esta tabla muestra un ejemplo visual de estas instancias. (Puede obtener la misma información en el Monitor de rendimiento mediante el cambio para el tipo de gráfico del informe.)
+Esta tabla muestra un ejemplo visual de estas instancias. (La misma información se puede obtener en el Monitor de rendimiento si se cambia al tipo de gráfico de informe.)
 
-|Tipo de contador|Nombre de instancia|Retraso notificada (ms)|
+|Tipo de contador|Nombre de instancia|Retraso notificado (ms)|
 |---------------|-------------|-------------------|
-|Retraso de entrada de usuario por proceso|1:4232 < Calculator.exe >|  200|
-|Retraso de entrada de usuario por proceso|2:1000 < Calculator.exe >|  16|
-|Retraso de entrada de usuario por proceso|1: 2 000 < Calculator.exe >|  32|
-|Retraso de la entrada de usuario por sesión|1|    200|
-|Retraso de la entrada de usuario por sesión|2|    16|
-|Retraso de la entrada de usuario por sesión|Media|  108|
-|Retraso de la entrada de usuario por sesión|Máx.|  200|
+|Retraso de entrada de usuario por proceso|1:4232 <Calculator.exe>|  200|
+|Retraso de entrada de usuario por proceso|2:1000 <Calculator.exe>|  16|
+|Retraso de entrada de usuario por proceso|1:2000 <Calculator.exe>|  32|
+|Retraso de entrada de usuario por sesión|1|    200|
+|Retraso de entrada de usuario por sesión|2|    16|
+|Retraso de entrada de usuario por sesión|Media|  108|
+|Retraso de entrada de usuario por sesión|Máx.|  200|
 
 ## <a name="counters-used-in-an-overloaded-system"></a>Contadores que se usan en un sistema sobrecargado
 
-Ahora Echemos un vistazo a lo que verá en el informe si se degrada el rendimiento de una aplicación. El siguiente gráfico muestra las lecturas de los usuarios que trabajan de forma remota en Microsoft Word. En este caso, el rendimiento del servidor RDSH empeora con el tiempo como más de los usuarios inician sesión.
+Ahora vamos a examinar lo que verá en el informe si empeora el rendimiento de una aplicación. El siguiente gráfico muestra las lecturas de usuarios que trabajan de forma remota en Microsoft Word. En este caso, el rendimiento del servidor de RDSH empeora con el paso del tiempo, ya que inician sesión más usuarios.
 
-![Escritorio remoto: un gráfico de rendimiento de ejemplo para el servidor RDSH ejecutando Microsoft Word](./media/rds-user-input-perf-graph.png)
+![Escritorio remoto: un gráfico de rendimiento de ejemplo del servidor de RDSH en el que se ejecuta Microsoft Word](./media/rds-user-input-perf-graph.png)
 
-Aquí le mostramos cómo leer las líneas del gráfico:
+Así es como se deben leer las líneas del gráfico:
 
-- La línea rosa muestra el número de sesiones que inician sesión en el servidor.
-- La línea roja es el uso de CPU.
-- La línea verde es el retraso máximo de usuarios entrada en todas las sesiones.
-- (Se muestra como negro en este gráfico) en la línea azul representa el retraso de entrada de usuario medio en todas las sesiones.
+- La línea rosa muestra el número de sesiones que se han iniciado en el servidor.
+- La línea roja es el uso de la CPU.
+- La línea verde es el retraso máximo en la entrada del usuario en todas las sesiones.
+- La línea azul (que se muestra como negra en este gráfico) representa el promedio de retraso de entrada de usuario en todas las sesiones.
 
-Observará que hay una correlación entre los picos de CPU y el retraso de entrada del usuario, como la CPU obtiene más uso, el usuario de entrada aumenta de retraso. Además, como más usuarios se agregan a del sistema, el uso de CPU obtiene más cercano al 100%, dando lugar a picos de retraso de entrada de usuario más frecuentes. Si bien este contador es muy útil en casos donde el servidor se ejecuta fuera de los recursos, también puede usar para realizar el seguimiento de retraso de entrada del usuario relacionada con una aplicación específica.
+Observarás que hay una correlación entre los picos de la CPU y el retraso de la entrada del usuario (al usarse más la CPU, el retraso de la entrada del usuario aumenta). Además, como se agregan más usuarios al sistema, el uso de la CPU se acerca al 100 %, lo que dando lugar a picos de retraso de la entrada del usuario más frecuentes. Aunque este contador es muy útil en aquellos casos en los que el servidor se queda sin recursos, también se puede usar para realizar un seguimiento del retraso de la entrada del usuario, en relación con un programa específico.
 
 ## <a name="configuration-options"></a>Opciones de configuración
 
-Algo importante a recordar cuando use este contador de rendimiento es que informa de retraso de entrada del usuario en un intervalo de 1000 ms de forma predeterminada. Si establece la propiedad de intervalo de ejemplo de contador de rendimiento (como se muestra en la siguiente captura de pantalla) en algo diferente, el valor notificado es incorrecto.
+Algo importante que no hay que olvidar cuando se usa este contador de rendimiento es que informa del retraso de la entrada del usuario en un intervalo de 1000 ms de manera predeterminada. Si establece otro valor para la propiedad del intervalo de ejemplo del contador de rendimiento (como se muestra en la siguiente captura de pantalla), el valor notificado será incorrecto.
 
-![Escritorio remoto: las propiedades para el monitor de rendimiento](./media/rds-user-input-perfmon-properties.png)
+![Escritorio remoto: las propiedades del monitor de rendimiento](./media/rds-user-input-perfmon-properties.png)
 
-Para solucionar este problema, puede establecer la siguiente clave del registro para que coincida con el intervalo (en milisegundos) que desea usar. Por ejemplo, si cambiamos ejemplo cada x segundos a 5 segundos, es necesario establecer esta clave a 5000 ms.
+Para solucionar este problema, puede establecer la siguiente clave del Registro de forma que coincida con el intervalo (en milisegundos) que quieres usar. Por ejemplo, si se cambia Muestreo cada x segundos a 5 segundos, será preciso establecer esta clave en 5000 ms.
 
 ```
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server]
@@ -115,28 +115,28 @@ Para solucionar este problema, puede establecer la siguiente clave del registro 
 ```
 
 >[!NOTE]
->Si usa Windows 10, versión 1809 o posterior o Windows Server 2019 o versiones posteriores, no es necesario establecer LagCounterInterval para corregir el contador de rendimiento.
+>Si se usa la versión 1809 de Windows 10, o cualquier versión posterior, o Windows Server 2019, o cualquier versión posterior, no es preciso establecer el valor de LagCounterInterval para corregir el contador de rendimiento.
 
-También hemos agregado un par de claves que puede resultarle útiles en la misma clave del registro:
+También hemos agregado un par de claves que quizás te resulten útiles en la misma clave del Registro:
 
-**LagCounterImageNameFirst** : establezca esta clave en `DWORD 1` (valor predeterminado 0 o la clave no existe). Esto cambia los nombres de contador al "Nombre de imagen < SessionID:ProcessId >". Por ejemplo, "explorador < 1:7964 >". Esto es útil si desea ordenar por nombre de la imagen.
+**LagCounterImageNameFirst**: establece esta clave en `DWORD 1` (el valor predeterminado es 0 o la clave no existe). Esto cambia los nombres de los contadores a "Nombre de imagen <SessionID:ProcessId >". Por ejemplo, "explorer < 1:7964 >". Esto resulta útil para ordenar por nombre de imagen.
 
-**LagCounterShowUnknown** : establezca esta clave en `DWORD 1` (valor predeterminado 0 o la clave no existe). Esto muestra todos los procesos que se ejecutan como servicios o del sistema. Se mostrarán algunos procesos con su sesión establecido como "?."
+**LagCounterShowUnknown**: establece esta clave en `DWORD 1` (el valor predeterminado es 0 o la clave no existe). Muestra todos los procesos que se ejecutan como servicios o como SISTEMA. Algunos de ellos mostrarán que su sesión se ha establecido como "?".
 
-Este es su aspecto si activa las dos claves:
+Este es su aspecto si se activan las dos claves:
 
-![Escritorio remoto: el monitor de rendimiento con las dos claves en](./media/rds-user-input-delay-with-two-counters.png)
+![Escritorio remoto: el monitor de rendimiento con las dos claves activadas](./media/rds-user-input-delay-with-two-counters.png)
 
 ## <a name="using-the-new-counters-with-non-microsoft-tools"></a>Uso de los nuevos contadores con herramientas ajenas a Microsoft
 
-Herramientas de supervisión pueden consumir este contador mediante el [API Perfmon](https://msdn.microsoft.com/library/windows/desktop/aa371903.aspx).
+Las herramientas de supervisión pueden consumir este contador mediante el uso de [API Perfmon](https://msdn.microsoft.com/library/windows/desktop/aa371903.aspx).
 
-## <a name="download-windows-server-insider-software"></a>Descargar el software de Windows Server Insider
+## <a name="download-windows-server-insider-software"></a>Descarga del software Windows Server Insider
 
-Insider registrado puede navegar directamente a la [página de descarga de Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) para obtener el software más reciente de Insider descargas.  Para obtener información sobre cómo registrar como una persona interna, consulte [Introducción a Server](https://insider.windows.com/en-us/for-business-getting-started-server/).
+Los usuarios registrados de Insider puede ir directamente a la [página de descarga de Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) para obtener las descargas más recientes del software Insider.  Para aprender a registrarse como usuario de Insider, consulte [Introducción a Windows Server](https://insider.windows.com/en-us/for-business-getting-started-server/).
 
-## <a name="share-your-feedback"></a>Comparta sus comentarios
+## <a name="share-your-feedback"></a>Comparte tus comentarios
 
-Puede enviar comentarios para esta característica a través del centro de comentarios. Seleccione **aplicaciones > todas las demás aplicaciones** e incluya "los contadores de rendimiento de RDS, el monitor de rendimiento" en el título de la publicación.
+Puedes enviar tus comentarios acerca de esta característica a través del Centro de opiniones. Selecciona **Aplicaciones > Todas las demás aplicaciones** e incluya "contadores de rendimiento de RDS (Monitor de rendimiento)" en el título de la publicación.
 
-Para obtener ideas de características general, visite la [página UserVoice de RDS](https://aka.ms/uservoice-rds).
+Para obtener ideas acerca de las características generales, visite la [página de UserVoice de RDS](https://aka.ms/uservoice-rds).

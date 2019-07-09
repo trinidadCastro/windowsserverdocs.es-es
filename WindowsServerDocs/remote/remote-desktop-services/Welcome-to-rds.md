@@ -1,6 +1,6 @@
 ---
-title: Servicios de escritorio remota en Windows Server 2016
-description: Proporciona información general de servicios de escritorio remoto
+title: Introducción a Servicios de Escritorio remoto en Windows Server 2016
+description: Proporciona información general acerca de Servicios de Escritorio remoto
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,38 +15,38 @@ author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
 ms.openlocfilehash: 3d148c99911be0cebfc29429d93241f24c2b9606
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66453009"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>Bienvenida a Servicios de Escritorio remoto 
 
-Servicios de escritorio remoto (RDS) es la plataforma de elección para la creación de soluciones de virtualización para cada necesidad del cliente final, incluyendo la entrega de aplicaciones virtualizadas individuales, proporcionar acceso seguro de escritorio remoto y móvil y proporcionar a los usuarios finales el capacidad para ejecutar sus aplicaciones y escritorios desde la nube.
+Servicios de Escritorio remoto (RDS) es la plataforma elegida para la creación de soluciones de virtualización que cubran todas las necesidades del cliente final, lo que incluye la entrega de aplicaciones virtualizadas individuales, proporcionar acceso seguro al escritorio remoto y a dispositivos móviles, y proporcionar a los usuarios finales el capacidad para ejecutar sus aplicaciones y escritorios desde la nube.
 
-![Información general de servicios de escritorio remoto](./media/rds-overview.png)
+![Introducción a Servicios de Escritorio remoto](./media/rds-overview.png)
 
-RDS ofrece flexibilidad de implementación, extensibilidad y la eficacia de costos: ofrecida a través de una variedad de opciones de implementación, incluido Windows Server 2016 para las implementaciones locales, Microsoft Azure para implementaciones en la nube y una matriz sólida de asociados soluciones.
+RDS ofrece flexibilidad de implementación, reducción de gastos y capacidad de ampliación (y todo ello se ofrece a través de varias de opciones de implementación, que incluyen Windows Server 2016 para implementaciones locales, Microsoft Azure para implementaciones en la nube y una sólida matriz de soluciones de asociados).
 
-Dependiendo de su entorno y preferencias, puede configurar la solución RDS para la virtualización basada en sesión, como una infraestructura de escritorio virtual (VDI), o como una combinación de ambos:
+En función de tu entorno y preferencias, puedes configurar la solución RDS para la virtualización basada en sesión, como una infraestructura de escritorio virtual (VDI), o como una combinación de ambos:
 
-- **Virtualización basada en sesión**: Aproveche la potencia de proceso de Windows Server para proporcionar un entorno multisesión rentable para cargas de trabajo de usuarios diario de unidad
-- **VDI**: Aproveche el cliente de Windows para proporcionar el alto rendimiento, la compatibilidad de aplicaciones y la familiaridad que los usuarios han llegado a esperar de su experiencia de escritorio de Windows.
+- **Virtualización basada en sesión**: Aprovecha la eficacia de proceso de Windows Server para proporcionar un entorno multisesión rentable que impulse las cargas de trabajo diarias de los usuarios
+- **VDI**: Aprovecha el cliente de Windows para proporcionar el alto rendimiento, la compatibilidad de aplicaciones y la familiaridad que los usuarios esperan de su experiencia de escritorio de Windows.
 
-En estos entornos de virtualización tienen mayor flexibilidad en lo que publica para los usuarios:
+En estos entornos de virtualización tienes mayor flexibilidad con respecto a lo que publicas para los usuarios:
 
-- **Escritorios**: Ofrecer una experiencia de escritorio completa con una variedad de aplicaciones que instalar y administrar a los usuarios. Ideal para los usuarios que se basan en estos equipos como sus estaciones de trabajo principales o que proceden de clientes ligeros, como con MultiPoint Services.
-- **RemoteApps**: Especifique las aplicaciones individuales que están hospedados o ejecutar en el equipo virtualizado, pero aparecen como si se están ejecutando en el escritorio del usuario, como las aplicaciones locales. Las aplicaciones tiene su propia entrada de la barra de tareas y se pueden cambiar el tamaño y moverse en varios monitores. Ideal para implementar y administrar las aplicaciones clave en el entorno remoto seguro al tiempo que permite a los usuarios trabajar desde y personalizar sus propios escritorios.
+- **Escritorios**: Ofrece a los usuarios una experiencia de escritorio completa con varias aplicaciones que se instala y administran. Es ideal para aquellos usuarios que usan estos equipos como sus estaciones de trabajo principales o que proceden de clientes ligeros, como con MultiPoint Services.
+- **RemoteApps**: Especifica aplicaciones individuales que se hospedan o ejecutan en la máquina virtualizada, pero aparecen como si se ejecutaran en el escritorio del usuario como aplicaciones locales. Las aplicaciones tiene su propia entrada de la barra de tareas y se pueden cambiar de tamaño y moverse de un monitor a otro. Es ideal para implementar y administrar aplicaciones clave en un entorno remoto seguro, al tiempo que permite a los usuarios no solo trabajar desde sus escritorios, sino también personalizarlos.
 
-Para entornos donde la rentabilidad es crucial y desea extender las ventajas de la implementación de escritorios completas en un entorno de virtualización basada en sesión, puede usar [MultiPoint Services](../multipoint-services/multipoint-services.md) para ofrecer el mejor valor. 
+En aquellos entornos en los que la contención de costos es crucial y en los que quieres aumentar las ventajas de implementar de escritorios completos en un entorno de virtualización basado en sesión, puedes usar [MultiPoint Services](../multipoint-services/multipoint-services.md) para ofrecer el máximo valor. 
 
-Con estas opciones y configuraciones, tiene la flexibilidad de implementar los escritorios y aplicaciones que necesitan los usuarios en un control remoto, seguro y forma rentable.
+Con estas opciones y configuraciones, tienes la flexibilidad de implementar los escritorios y aplicaciones que necesitan los usuarios de forma remota, segura y rentable.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-Estos son algunos pasos que le ayudarán a obtener una mejor comprensión de RDS e incluso empezar a implementar su propio entorno:
--   Comprender la [configuraciones admitidas](rds-supported-config.md) para RDS con las versiones de distintos de Windows y Windows Server
--   [Planear y diseñar](rds-plan-and-design.md) un entorno de RDS para adaptarse a distintos requisitos, como alta disponibilidad y la autenticación multifactor.
--   Revise el [los modelos de arquitectura de servicios de escritorio remoto](desktop-hosting-logical-architecture.md) que funcionará mejor en su entorno deseado.
--   Empezar a [implementar el entorno de RDS con ARM y Azure Marketplace](rds-in-azure.md).
+Estos son los pasos que te ayudarán a conocer mejor RDS, e incluso a empezar a implementar tu propio entorno:
+-   Conocer las [configuraciones admitidas](rds-supported-config.md) para RDS en las distintas versiones de Windows y Windows Server
+-   [Planear y diseñar](rds-plan-and-design.md) un entorno de RDS que se adapte a distintos requisitos, como una alta disponibilidad y autenticación multifactor.
+-   Examinar los [modelos de arquitectura de Servicios de Escritorio remoto](desktop-hosting-logical-architecture.md) que mejor funcionan para un entorno concreto.
+-   Empezar a [implementar un entorno de RDS con ARM and Azure Marketplace](rds-in-azure.md).

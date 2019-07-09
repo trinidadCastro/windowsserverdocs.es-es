@@ -1,6 +1,6 @@
 ---
-title: 'RDS: ejecución y optimización'
-description: Proporciona información de administración de servicios de escritorio remoto.
+title: 'RDS: Ejecución y ajuste'
+description: Proporciona información de administración de los Servicios de Escritorio remoto.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -14,37 +14,37 @@ ms.assetid: 79909767-a4c3-4ecf-8d3f-77d37a663153
 author: spatnaik
 manager: scottman
 ms.openlocfilehash: 40f8dbd560da359e8764ed715e7776cc2d230a7f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862186"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712049"
 ---
-# <a name="run-and-tune-your-remote-desktop-services-environment"></a>Ejecutar y optimizar su entorno de servicios de escritorio remoto
+# <a name="run-and-tune-your-remote-desktop-services-environment"></a>Ejecución y ajuste del entorno de Servicios de Escritorio remoto
 
-Optimización de la implementación lleva tiempo y requiere la instrumentación y supervisión. Use los procesos siguientes para mejorar la implementación de escritorio remoto, siga ejecutándose y permiten (escalado y reducción horizontal) según sea necesario. 
+La optimización de la implementación lleva tiempo y requiere instrumentación y supervisión. Usa los procesos siguientes para mejorar la implementación de Escritorio remoto, mantenerla en funcionamiento y permitir el escalado horizontal (y la reducción horizontal) según sea necesario. 
 
-Es una buena práctica evaluar continuamente las métricas y equilibrar frente a los costos de ejecución.
+Es recomendable evaluar continuamente las métricas y el equilibrio en comparación con los costos de funcionamiento.
 
 ## <a name="management-and-monitoring"></a>Administración y supervisión
 
-Desproteger [administrar usuarios en la colección de RDS](rds-user-management.md) para obtener información sobre cómo administrar el acceso a recursos remotos y escritorios.
+Consulta [Administración de usuarios de la colección de RDS](rds-user-management.md) para obtener información sobre cómo administrar el acceso a recursos remotos y escritorios.
 
-Use **Microsoft Operations Management Suite (OMS)** para supervisar las implementaciones de escritorio remoto para posibles cuellos de botella y administrarlos mediante una de las maneras siguientes: 
+Usa **Microsoft Operations Management Suite (OMS)** para supervisar las implementaciones de Escritorio remoto y detectar posibles cuellos de botella, y administrarlas mediante una de las siguientes maneras: 
 
-- **El administrador del servidor**: Use la herramienta de administración de escritorio remoto que está integrada Windows Server para administrar las implementaciones con hasta 500 simultáneas remoto a los usuarios finales. 
-- **PowerShell**: Usar el módulo de PowerShell de escritorio remoto, también integrado en Windows Server, para administrar las implementaciones con hasta 5000 simultáneas remoto a los usuarios finales.
+- **Administrador del servidor**: Usa la herramienta de administración de Escritorio remoto que está integrada en Windows Server para administrar las implementaciones con hasta 500 usuarios finales remotos simultáneos. 
+- **PowerShell**: Usa el módulo de PowerShell de Escritorio remoto que está integrado en Windows Server para administrar las implementaciones con hasta 5000 usuarios finales remotos simultáneos.
 
-## <a name="scale-bigger-better-faster"></a>Escala: Más grande, mejor, más rápido
+## <a name="scale-bigger-better-faster"></a>Escalado: Más grande, mejor, más rápido
 
-Visibilidad de la implementación, puede controlar la escala con más precisión. Agregar o quitar servidores de host de escritorio remoto en función de las necesidades de escala fácilmente. 
+Con visibilidad sobre la implementación, puedes controlar el escalado con más precisión. Agrega o quita fácilmente servidores host de Escritorio remoto en función de las necesidades del escalado. 
 
-Las implementaciones de escritorio remotas que se basan en Azure pueden hacer uso de servicios de Azure, como SQL Azure, para escalar automáticamente a petición.
+Las implementaciones de Escritorio remoto que se crean en Azure pueden utilizar los servicios de Azure, como Azure SQL, para escalar automáticamente a petición.
 
-## <a name="automation-script-for-success"></a>Automatización: Secuencia de comandos para el éxito
+## <a name="automation-script-for-success"></a>Automatización: Scripts para tener éxito
 
-Mantener una aplicación de ejecución, con mucho escalada consiste en repetir las operaciones de forma periódica. Use los cmdlets de PowerShell de servicios de escritorio remoto y los proveedores de WMI para desarrollar scripts que se pueden ejecutar en varias implementaciones cuando sea necesario. Ejecutar las reglas del analizador de procedimientos recomendados (BPA) para servicios de escritorio remoto en las implementaciones para optimizar las implementaciones.
+Mantener una aplicación en ejecución y muy escalada conlleva la repetición de operaciones de manera regular. Usa los cmdlets de PowerShell para los Servicios de Escritorio remoto y los proveedores de WMI para desarrollar scripts que se puedan ejecutar en varias implementaciones cuando sea necesario. Ejecuta las reglas del Analizador de procedimientos recomendados (BPA) para optimizar las implementaciones.
 
-## <a name="load-testing-avoid-surprises"></a>Pruebas de carga: Evitar sorpresas
+## <a name="load-testing-avoid-surprises"></a>Pruebas de carga: Evita sorpresas
 
-Prueba de carga de la implementación con las pruebas de esfuerzo y simulación de uso reales. ¡Cambiar el tamaño de carga para evitar sorpresas! Asegúrese de que la capacidad de respuesta cumple los requisitos del usuario, y que todo el sistema es resistente. Crear pruebas de carga con las herramientas de simulación, como LoginVSI, que comprueban la capacidad de su implementación para satisfacer las necesidades del usuario. 
+Haz una prueba de carga de la implementación con pruebas de esfuerzo y simulación de uso real. ¡Cambia el tamaño de la carga para evitar sorpresas! Asegúrate de que la capacidad de respuesta cumpla los requisitos del usuario y que todo el sistema sea resistente. Crea pruebas de carga con herramientas de simulación, como LoginVSI, que comprueban la capacidad de la implementación para satisfacer las necesidades de los usuarios. 

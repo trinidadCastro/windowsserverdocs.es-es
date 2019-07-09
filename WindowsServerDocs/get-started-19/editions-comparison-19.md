@@ -1,5 +1,5 @@
 ---
-title: Comparación de las ediciones Standard y Datacenter de Windows Server 2019
+title: Comparación de las ediciones Standard y Datacenter de Windows Server 2019
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: ba7487a7e063775219182645a273d49c473f52e2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6ec6934b5c2cfcc33a95a0336e22a20dbd60d82
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854136"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "64772395"
 ---
-# <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Comparación de las ediciones Standard y Datacenter de Windows Server 2019
+# <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2019"></a>Comparación de las ediciones Standard y Datacenter de Windows Server 2019
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Windows Server 2019
   
 ## <a name="locks-and-limits"></a>Bloqueos y límites
 |Bloqueos y límites|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
@@ -30,7 +30,7 @@ ms.locfileid: "59854136"
 |Número máximo de conexiones SMB|16 777 216|16 777 216|
 |Número máximo de conexiones RRAS|sin límite|sin límite|
 |Número máximo de conexiones IAS|2 147 483 647|2 147 483 647|
-|Número máximo de conexiones RDS|65535|65535|
+|Número máximo de conexiones RDS|65 535|65 535|
 |Número máximo de sockets de 64 bits|64|64|
 |Número máximo de núcleos|sin límite|sin límite|
 |RAM máxima|24 TB|24 TB|
@@ -66,7 +66,6 @@ ms.locfileid: "59854136"
 |Servicios de archivos y almacenamiento|Servicios de almacenamiento|Sí|Sí|
 |Servicio de protección de host| |Sí|Sí|
 |Hyper-V| |Sí|Sí; incluye máquinas virtuales blindadas|
-|MultiPoint Services| |Sí|Sí|
 |Controladora de red| |No|Sí|
 |Servicios de acceso y directivas de redes| |Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Servicios de impresión y documentos| |Sí|Sí|
@@ -78,7 +77,7 @@ ms.locfileid: "59854136"
 |Experiencia con Windows Server Essentials| |Sí|Sí|
 |Windows Server Update Services| |Sí|Sí|
 
-* Servidor de transporte WDS es nueva en las instalaciones Server Core en Windows Server 2019 (también en el canal semestral a partir de Windows Server, versión 1803)
+\* El servidor de transporte WDS es nuevo en las instalaciones básicas de Windows Server 2019 (también en el Canal semianual a partir de Windows Server, versión 1803)
 
 
 ## <a name="features"></a>Características
@@ -125,7 +124,7 @@ ms.locfileid: "59854136"
 |Servidor SMTP|Sí|Sí|
 |Servicio SNMP|Sí|Sí|
 |Equilibrador de carga de software|Sí|Sí|
-|Réplica de almacenamiento|No|Sí|
+|Réplica de almacenamiento|Sí|Sí|
 |Cliente Telnet|Sí|Sí|
 |Cliente TFTP|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Herramientas de blindaje de máquinas virtuales para la administración de tejidos|Sí|Sí|
@@ -150,7 +149,7 @@ ms.locfileid: "59854136"
 |Características que por lo general están disponibles|Windows Server 2019 Standard|Windows Server 2019 Datacenter|  
 |-------------------|----------|---------------------------|  
 |Analizador de procedimientos recomendados|Sí|Sí|
-|Réplica de almacenamiento restringida|Sí, (1 asociación y 1 grupo de recursos con el volumen de solo 2TB)|Sí, ilimitado|
+|Réplica de almacenamiento restringida|Sí, (1 asociación y 1 grupo de recursos con un volumen único de 2TB)|Sí, sin límite|
 |Direct Access|Sí|Sí|
 |Memoria dinámica (en virtualización)|Sí|Sí|
 |RAM de agregado o reemplazo en caliente|Sí|Sí|

@@ -1,6 +1,6 @@
 ---
-title: Directrices de seguridad para los servicios del sistema en Windows Server 2016
-description: Directrices de seguridad para deshabilitar los servicios en Windows Server 2016 con la experiencia de escritorio
+title: Directrices de seguridad para los servicios del sistema en Windows Server 2016
+description: Directrices de seguridad para deshabilitar los servicios en Windows Server 2016 con Experiencia de escritorio
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: techgroup-security
@@ -11,54 +11,54 @@ ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
 ms.openlocfilehash: 1a9496a121fc45df0b788ea56d50db922fd24536
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66749450"
 ---
-## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Orientación acerca de cómo deshabilitar los servicios del sistema en Windows Server 2016 con experiencia de escritorio
+## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio
 
 Se aplica a: Windows Server 2016
 
-El sistema operativo de Windows incluye muchos servicios del sistema que proporcionan una funcionalidad importante. Servicios diferentes tienen directivas de inicio predeterminada diferente: algunas se inician de forma predeterminada (automático), algunos cuando sea necesario (manuales), y algunos están deshabilitados de forma predeterminada y deben habilitarse explícitamente antes de poder ejecutarlos. Estos valores predeterminados se eligieron cuidadosamente para que cada servicio equilibrar el rendimiento, funcionalidad y seguridad para clientes.
+El sistema operativo Windows incluye muchos servicios del sistema que proporcionan una funcionalidad importante. Los distintos servicios tienen directivas de inicio diferentes: algunos se inician de manera predeterminada (automáticamente), algunos cuando es necesario (manualmente) y otros están deshabilitados de manera predeterminada y se deben habilitar de forma explícita antes de poder ejecutarse. Estos valores predeterminados se eligieron cuidadosamente para cada servicio a fin de equilibrar el rendimiento, la funcionalidad y la seguridad para los clientes típicos.
 
-Sin embargo, algunos clientes empresariales que prefiera un equilibrio más especializado en seguridad para sus equipos de Windows y servidores, uno que reduce su ataque expuesta al mínimo absoluto y, por lo tanto, quizás desee deshabilitar totalmente todos los servicios que no son necesarios en su específico entornos. Para los clientes, Microsoft® proporciona las instrucciones que lo acompaña respecto a qué servicios se pueden deshabilitar con seguridad para este propósito.
+Sin embargo, es posible que algunos clientes empresariales prefieran un equilibrio más centrado en la seguridad para sus servidores y PC Windows, uno que disminuya la superficie expuesta a ataques al mínimo absoluto y, por lo tanto, deseen deshabilitar por completo todos los servicios que no son necesarios en sus entornos específicos. Para esos clientes, Microsoft® brinda estas directrices relacionadas con los servicios que se pueden deshabilitar de manera seguridad para este fin.
 
-Las instrucciones son solo para Windows Server 2016 con experiencia de escritorio (a menos que se usa como un sustituto de sobremesa a los usuarios finales). A partir de Windows Server 2019, estas instrucciones se configuran de forma predeterminada. Cada servicio en el sistema se clasifica por categorías como sigue:
+Las directrices solo se aplican a Windows Server 2016 con Experiencia de escritorio (a menos que se use como un reemplazo del escritorio para los usuarios finales). A partir de Windows Server 2019, estas directrices están configuradas de manera predeterminada. Cada servicio del sistema se clasifica por categorías como se indica a continuación:
 
--   **Debe deshabilitar:** Una empresa especializado en seguridad probablemente preferirán deshabilitar este servicio y Prescinda de su funcionalidad (vea los detalles adicionales a continuación).
-- **Clic en Aceptar para deshabilitar:** Este servicio proporciona la funcionalidad que es útil para algunos, pero no todas las empresas y las empresas centrados en la seguridad que no se usa lo pueden deshabilitar sin riesgos.
-- **No deshabilite:** Si se deshabilita este servicio se afecta a la funcionalidad esencial o impedir que funcione correctamente las características o roles específicos. Por lo tanto no debe deshabilitarse.
--  **(No hay instrucciones):** Las consecuencias de deshabilitar estos servicios no se ha evaluado totalmente. Por lo tanto, no debe cambiar la configuración predeterminada de estos servicios.
+-   **Se debe deshabilitar:** una empresa centrada en la seguridad probablemente preferirá deshabilitar este servicio y prescindir de su funcionalidad (más abajo aparecen otros detalles).
+- **Se puede deshabilitar:** este servicio proporciona una funcionalidad útil para algunas empresas, pero no para todas, y las empresas centradas en la seguridad que no lo utilicen pueden deshabilitarlo sin problemas.
+- **No deshabilitar:** la deshabilitación de este servicio afectará una funcionalidad fundamental o impedirá que características o roles específicos funcionen correctamente. Por lo tanto, no se debe deshabilitar.
+-  **(Sin instrucciones):** las consecuencias de deshabilitar estos servicios no se han evaluado completamente. Por lo tanto, no se debe modificar la configuración predeterminada de estos servicios.
 
 
-Los clientes pueden configurar sus equipos de Windows y los servidores para deshabilitar los servicios seleccionados mediante las plantillas de seguridad en sus directivas de grupo o mediante la automatización de PowerShell. En algunos casos, la guía incluye valores específicos de directiva de grupo que deshabilita la funcionalidad del servicio directamente, como alternativa al deshabilitar el propio servicio.
+Los clientes pueden configurar sus servidores y PC Windows para deshabilitar los servicios seleccionados mediante las plantillas de seguridad de sus directivas de grupo o a través de la automatización de PowerShell. En algunos casos, las instrucciones incluyen una configuración específica de las directivas de grupo que deshabilita directamente la funcionalidad del servicio, como una alternativa a la deshabilitación del servicio mismo.
 
-Microsoft recomienda que los clientes deshabiliten los siguientes servicios y sus respectivas tareas programadas en Windows Server 2016 con experiencia de escritorio:
+Microsoft recomienda que los clientes deshabiliten los servicios siguientes y sus tareas programadas respectivas en Windows Server 2016 con Experiencia de escritorio:
 
 Servicios: 
-1. Administrador de Xbox Live Auth
-2. Guardar juego de Xbox Live
+1. Administración de autenticación de Xbox Live
+2. Partida guardada en Xbox Live
 
 Tareas programadas: 
 1. \Microsoft\XblGameSave\XblGameSaveTask
 2. \Microsoft\XblGameSave\XblGameSaveTaskLogon
 
-(También puede tener acceso a la información en todos los servicios descritos en este artículo mediante la visualización de la hoja de cálculo de Microsoft Excel adjunto: [Orientación acerca de cómo deshabilitar los servicios del sistema en Windows Server 2016 con experiencia de escritorio](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx))
+(También puedes acceder a la información sobre todos los servicios detallados en este artículo si consultas la hoja de cálculo de Microsoft Excel adjunta: [Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio](https://msdnshared.blob.core.windows.net/media/2017/05/Service-management-WS2016.xlsx))
 
 <br />
 
-### <a name="disabling-services-not-installed-by-default"></a>Deshabilitación de los servicios que no se instala de forma predeterminada
+### <a name="disabling-services-not-installed-by-default"></a>Deshabilitación de los servicios no instalados de manera predeterminada
 
-Microsoft recomienda no aplicar directivas para deshabilitar los servicios que no se instalan de forma predeterminada.
--  El servicio suele ser necesario si está instalada la característica. Instalar el servicio o la característica requiere derechos administrativos. No permitir la instalación de características, no el inicio del servicio.
--  Bloquea el servicio de Microsoft Windows no detiene un administrador (o sin derechos administrativos en algunos casos) de instalación de un equivalente de terceros similar, quizás uno con un mayor riesgo de seguridad.
--  Una línea base o un banco de pruebas que se deshabilita un servicio de Windows no predeterminado (por ejemplo, W3SVC) proporcionará a algunos auditores la impresión equivocada de que la tecnología (por ejemplo, IIS) es inherentemente insegura y nunca debe utilizarse.
--  Si nunca se instalen la característica (y el servicio), esto agrega simplemente masiva innecesario a la línea base y al trabajo de comprobación.
+Microsoft no recomienda aplicar las directivas para deshabilitar los servicios no instalados de manera predeterminada.
+-  Si se instala la característica, el servicio suele ser necesario. La instalación del servicio o de la característica requiere derechos administrativos. Impide la instalación de la característica, no el inicio del servicio.
+-  Bloquear el servicio de Microsoft Windows no impide que un administrador (o, en algunos casos, un usuario no administrador) instale un equivalente de terceros similar, quizás uno con un riesgo de seguridad mayor.
+-  Una línea base o banco de pruebas que deshabilite un servicio de Windows no predeterminado (por ejemplo, W3SVC) dará a algunos auditores la impresión errónea de que la tecnología (por ejemplo, IIS) es inherentemente insegura y que no se debería usar nunca.
+-  Si nunca se instala la característica (ni el servicio), esto solo agrega elementos innecesarios a la línea base y al trabajo de verificación.
 
 <br />
-Para todos los servicios del sistema aparecen en este documento, las dos tablas siguientes ofrecen una explicación de las columnas y las recomendaciones de Microsoft para habilitar y deshabilitar servicios del sistema en Windows Server 2016 con experiencia de escritorio: 
+En el caso de todos los servicios del sistema que se mencionan en este documentos, las dos tablas siguientes ofrecen una explicación de las columnas y las recomendaciones de Microsoft para habilitar y deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio: 
 
 <br />
 
@@ -66,12 +66,12 @@ Para todos los servicios del sistema aparecen en este documento, las dos tablas 
 
 | | |
 |---|---|
-|**Descripción del servicio**|   La descripción del servicio, desde qdescription sc.exe.|
-|**Name** |Nombre de la clave (interno) del servicio|
-|**Instalación** |Siempre se instala: Servicio está en Server Core y Server con experiencia de escritorio  <br /> Solo con la experiencia de escritorio: Servicio en Windows Server 2016 con experiencia de escritorio, pero es ***no*** en Server Core |
-|**StartType**  |Tipo de inicio en Windows Server 2016|
-|**Recomendación** |Recomendación de Microsoft o aviso acerca de cómo deshabilitar este servicio en Windows Server 2016 en una implementación empresarial típico y bien administrado y donde el servidor no se se utiliza como un reemplazo de escritorio del usuario final.|
-|**Comentarios** |Explicación adicional|
+|**Descripción del servicio**|   La descripción del servicio desde sc.exe qdescription.|
+|**Nombre** |Nombre clave (interno) del servicio.|
+|**Instalación** |Siempre instalado: el servicio está en Server Core y Server con Experiencia de escritorio.  <br /> Solo con Experiencia de escritorio: el servicio está en Windows Server 2016 con Experiencia de escritorio, pero ***no*** está en Server Core |
+|**StartType**  |Tipo de inicio del servicio en Windows Server 2016|
+|**Recomendación** |La recomendación o el consejo de Microsoft sobre la deshabilitación de este servicio en Windows Server 2016 es una implementación empresarial típica bien administrada y donde el servidor no se usa como un reemplazo del escritorio del usuario final.|
+|**Comentarios** |Una explicación adicional.|
 
 <br />
 
@@ -79,14 +79,14 @@ Para todos los servicios del sistema aparecen en este documento, las dos tablas 
 
 | | |
 |---|---|
-|**No deshabilite** |No se debe deshabilitar este servicio|
-|**Aceptar para deshabilitar**| Este servicio puede deshabilitarse si no se utiliza la característica que admite.|
-|**Ya se ha deshabilitado**|  Este servicio está deshabilitado de forma predeterminada; no es necesario aplicar la directiva|
-|**Debe estar deshabilitada** |Este servicio no debe habilitarse nunca en un sistema empresariales bien administrados.|
+|**No deshabilitar** |Este servicio no se debe deshabilitar.|
+|**Se puede deshabilitar**| Este servicio se puede deshabilitar si no se usa la característica que admite.|
+|**Ya deshabilitado**|  Este servicio está deshabilitado de manera predeterminada, por lo que no es necesario aplicar la directiva.|
+|**Debe estar deshabilitado** |Este servicio nunca se debe habilitar en un sistema empresarial bien administrado.|
 
 <br />
 
-Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabilitar los servicios del sistema en Windows Server 2016 con experiencia de escritorio:
+En las tablas siguientes se brindan las directrices de Microsoft sobre cómo deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio:
 
 <br />
 
@@ -94,39 +94,39 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |
 |---|---|
-|   **Descripción del servicio** |   Proporciona la validación de Control de cuentas de usuario para la instalación de controles ActiveX de Internet y permite la administración de la instalación del control ActiveX según la configuración de directiva de grupo. Este servicio se inicia a petición y si deshabilita la instalación de controles ActiveX se comportará según la configuración predeterminada del explorador.    |
+|   **Descripción del servicio** |   Proporciona la validación del Control de cuentas de usuario de la instalación de los controles ActiveX desde Internet y permite administrar la instalación de los controles ActiveX en función de la configuración de la directiva de grupo. Este servicio se inicia a petición y, si está deshabilitado, la instalación de los controles ActiveX se comportarán según la configuración predeterminada del explorador.    |
 |   **Nombre del servicio**    |   AxInstSV    |
-|   **Instalación**    |   Solo con la experiencia de escritorio    |
+|   **Instalación**    |   Solo con Experiencia de escritorio    |
 |   **StartType**   |   Manual  |
-|   **Recomendación**  |   Aceptar para deshabilitar   |
-|   **Comentarios**    |   Aceptar para deshabilitar si no necesita la característica |
+|   **Recomendación**  |   Se puede deshabilitar   |
+|   **Comentarios**    |   Se puede deshabilitar si no se necesita la característica |
 
 
 <br />
 
-## <a name="alljoyn-router-service"></a>Servicio AllJoyn Router   
+## <a name="alljoyn-router-service"></a>Servicio del enrutador de AllJoyn   
 
 | | |
 |---|---|
-|   **Descripción del servicio** |   Enruta los mensajes de AllJoyn para los clientes de AllJoyn locales. Si se detiene este servicio los clientes de AllJoyn que no tienen sus propios enrutadores integrados no se pueden ejecutar. |
+|   **Descripción del servicio** |   Enruta los mensajes de AllJoyn para los clientes locales de AllJoyn. Si este servicio se detiene, los clientes de AllJoyn que no tengan sus propios enrutadores integrados no podrán ejecutarse. |
 |   **Nombre del servicio**    |   AJRouter    |
-|   **Instalación**    |   Solo con la experiencia de escritorio    |
+|   **Instalación**    |   Solo con Experiencia de escritorio    |
 |   **StartType**   |   Manual  |
-|   **Recomendación**  | No hay instrucciones       |
+|   **Recomendación**  | Sin instrucciones       |
 |   **Comentarios**    |       |
 | | |
 
 <br />
 
-## <a name="app-readiness"></a>Preparación de la aplicación
+## <a name="app-readiness"></a>Preparación de las aplicaciones
 
 | | |
 |---|---|
-**Descripción del servicio** |   Obtiene las aplicaciones para su uso la primera vez que un usuario inicia sesión en este equipo y al agregar nuevas aplicaciones.
+**Descripción del servicio** |   Prepara las aplicaciones para usarlas la primera vez que un usuario inicia sesión en este equipo y cuando se agregan aplicaciones nuevas.
 **Nombre del servicio**    |   AppReadiness
-**Instalación**    |   Solo con la experiencia de escritorio
+**Instalación**    |   Solo con Experiencia de escritorio
 **StartType**   |   Manual
-**Recomendación**  |   No deshabilite
+**Recomendación**  |   No deshabilitar
 **Comentarios**    |   
 | | |
 
@@ -136,39 +136,39 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |       
 |---|---|   
-**Descripción del servicio** |   Determina y comprueba la identidad de una aplicación. Si se deshabilita este servicio impedirá que AppLocker que se apliquen.
+**Descripción del servicio** |   Determina y comprueba la identidad de una aplicación. La deshabilitación de este servicio impedirá que se apliquen las directivas de AppLocker.
 **Nombre del servicio**    |   AppIDSvc
 **Instalación**    |   Siempre instalado
 **StartType**   |   Manual
-**Recomendación**  |No hay instrucciones    
+**Recomendación**  |Sin instrucciones    
 **Comentarios**    |   
 |||     
 
 <br />
 
-##  <a name="application-information"></a>Información de la aplicación 
+##  <a name="application-information"></a>Información de las aplicaciones 
 
 | | |       
 |---|---|   
-|   **Descripción del servicio** |   Facilita la ejecución de aplicaciones interactivas con privilegios administrativos adicionales.  Si se detiene este servicio, los usuarios no podrán iniciar aplicaciones con los privilegios administrativos adicionales que puedan necesitar para realizar tareas de usuario deseado.
+|   **Descripción del servicio** |   Facilita la ejecución de aplicaciones interactivas con privilegios administrativos adicionales.  Si se detiene este servicio, los usuarios no podrán iniciar las aplicaciones con los privilegios administrativos adicionales que podrían necesitar para realizar las tareas de usuario deseadas.
 |   **Nombre del servicio**    |   Appinfo
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
-|   **Comentarios**    |   Admite la elevación de UAC mismo escritorio
+|   **Recomendación**  | Sin instrucciones   
+|   **Comentarios**    |   Admite la elevación del control de cuentas de usuario en el mismo escritorio
 |||     
 
 <br />
 
-##  <a name="application-layer-gateway-service"></a>Servicio de puerta de enlace de capa de aplicación       
+##  <a name="application-layer-gateway-service"></a>Servicio de puerta de enlace de nivel de aplicación       
 
 | | |           
 |---|---|           
-|   **Descripción del servicio** |   Proporciona compatibilidad para complementos de protocolo de terceros para la conexión compartida a Internet
+|   **Descripción del servicio** |   Proporciona compatibilidad con los complementos de protocolos de terceros para la Conexión compartida a Internet.
 |   **Nombre del servicio**    |   ALG
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |No hay instrucciones    
+|   **Recomendación**  |Sin instrucciones    
 |   **Comentarios**    |   
 |||     
 
@@ -178,11 +178,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Procesa las solicitudes de instalación, eliminación y enumeración para el software implementado a través de la directiva de grupo. Si el servicio está deshabilitado, los usuarios no podrán instalar, quitar o enumerar el software implementado a través de la directiva de grupo. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Procesa las solicitudes de instalación, eliminación y enumeración del software implementado a través de la directiva de grupo. Si el servicio está deshabilitado, los usuarios no podrán instalar, quitar ni enumerar el software implementado a través de la directiva de grupo. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   AppMgmt
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -192,25 +192,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|
-|   **Descripción del servicio** |   Proporciona compatibilidad con la infraestructura para implementar aplicaciones de Store. Este servicio se inicia a petición y, si las aplicaciones de Store deshabilitadas no se implementará en el sistema y es posible que no funcionen correctamente.
+|   **Descripción del servicio** |   Proporciona compatibilidad con la infraestructura para implementar las aplicaciones de Microsoft Store. Este servicio se inicia a petición y, si está deshabilitado, las aplicaciones de Microsoft Store no se implementarán en el sistema y es posible que no funcionen correctamente.
 |   **Nombre del servicio**    |   AppXSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="auto-time-zone-updater"></a>Actualizador de zona horaria automática           
+## <a name="auto-time-zone-updater"></a>Actualizador automático de la zona horaria.           
 
 | | |           
 |---|---|           
 |   **Descripción del servicio** |   Establece automáticamente la zona horaria del sistema.
 |   **Nombre del servicio**    |   tzautoupdate
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Deshabilitada
-|   **Recomendación**  |   Ya se ha deshabilitado
+|   **Recomendación**  |   Ya deshabilitado
 |   **Comentarios**    |   
 |||         
 
@@ -220,26 +220,26 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Las transferencias de archivos en segundo plano mediante el ancho de banda de red inactivo. Si el servicio está deshabilitado, las aplicaciones que dependen de BITS, como Windows Update o MSN Explorer, podrá descargar automáticamente programas y otra información.
+|   **Descripción del servicio** |   Transfiere los archivos en segundo plano mediante el ancho de banda de red inactivo. Si el servicio se deshabilita, las aplicaciones que dependen de BITS, como Windows Update o MSN Explorer, no podrán descargar automáticamente programas ni otro tipo de información.
 |   **Nombre del servicio**    |   BITS
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
 
-## <a name="background-tasks-infrastructure-service"></a>Servicio de infraestructura de tareas en segundo plano      
+## <a name="background-tasks-infrastructure-service"></a>Servicio de la infraestructura de tareas en segundo plano      
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Puede ejecutar el servicio de infraestructura de Windows que controla qué tareas en segundo plano en el sistema.
+|   **Descripción del servicio** |   El servicio de la infraestructura de Windows que controla cuáles son las tareas en segundo plano que se pueden ejecutar en el sistema.
 |   **Nombre del servicio**    |   BrokerInfrastructure
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -249,26 +249,26 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Base Filtering Engine (BFE) es un servicio que administra el firewall y directivas de seguridad (IPsec) de protocolo de Internet e implementa el filtrado de modo de usuario. Detener o deshabilitar el servicio BFE reducirá significativamente la seguridad del sistema. También se producirá un comportamiento imprevisible en aplicaciones de servidor de seguridad y administración de IPsec.
+|   **Descripción del servicio** |   El Motor de filtrado de base (BFE) es un servicio que administra las directivas del protocolo de seguridad de Internet (IPsec) y del firewall e implementa el filtrado en modo usuario. Detener o deshabilitar el servicio BFE disminuirá considerablemente la seguridad del sistema. También se generará un comportamiento imprevisible en las aplicaciones de firewall y administración de IPsec.
 |   **Nombre del servicio**    |   BFE
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="bluetooth-support-service"></a>Servicio de soporte técnico de Bluetooth            
+## <a name="bluetooth-support-service"></a>Servicio de compatibilidad con Bluetooth            
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   El servicio de Bluetooth admite descubrimiento y la asociación de dispositivos Bluetooth remotos.  Detener o deshabilitar este servicio puede provocar los dispositivos Bluetooth ya instalados pueden no funcionar correctamente e impedir nuevos dispositivos detectados o asociados.
+|   **Descripción del servicio** |   El servicio de Bluetooth admite la detección y la asociación de dispositivos Bluetooth remotos.  Detener o deshabilitar este servicio podría provocar que los dispositivos Bluetooth ya instalados no funcionen correctamente e impedir que se detecten o asocien dispositivos nuevos.
 |   **Nombre del servicio**    |   bthserv
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Aceptar para deshabilitar si no usa. Otro mecanismo de deshabilitación: https://technet.microsoft.com/library/dd252791.aspx
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Se puede deshabilitar si no se usa. Otro mecanismo de deshabilitación: https://technet.microsoft.com/library/dd252791.aspx
 |||         
 
 <br />          
@@ -278,11 +278,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Este servicio de usuario se utiliza para escenarios de la plataforma de dispositivos conectados
+|   **Descripción del servicio** |   Este servicio de usuario se usa en los escenarios de la plataforma de dispositivos conectados.
 |   **Nombre del servicio**    |   CDPUserSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
@@ -293,11 +293,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|
-|   **Descripción del servicio** |   Copia los certificados de usuario y los certificados raíz de las tarjetas inteligentes en el almacén de certificados del usuario actual, detecta cuando se inserta una tarjeta inteligente en un lector de tarjeta inteligente y si es necesario, instala al Minicontrolador de tarjetas inteligentes Plug and Play.
+|   **Descripción del servicio** |   Copia los certificados del usuario y los certificados raíz de las tarjetas inteligentes en el almacén de certificados del usuario actual, detecta cuando una tarjeta inteligente se inserta en un lector de tarjeta inteligente y, si es necesario, instala el minicontrolador Plug and Play de tarjetas inteligentes.
 |   **Nombre del servicio**    |   CertPropSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -307,11 +307,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona compatibilidad de infraestructura con la Microsoft Store. Este servicio se inicia a petición y si las aplicaciones deshabilitadas compraron utilizando Microsoft Store no funcione correctamente.
+|   **Descripción del servicio** |   Proporciona compatibilidad de infraestructura con Microsoft Store. Este servicio se inicia a petición y, si está deshabilitado, las aplicaciones que se compran a través de Microsoft Store no funcionarán correctamente.
 |   **Nombre del servicio**    |   ClipSVC
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -321,53 +321,53 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   El servicio de aislamiento de claves CNG se hospeda en el proceso LSA. El servicio proporciona aislamiento de procesos clave para las claves privadas y las operaciones criptográficas asociadas según sea necesario el criterio común. El servicio almacena y usa claves de larga duración en un proceso seguro que cumpla los requisitos de criterio común.
+|   **Descripción del servicio** |   El servicio de aislamiento de claves CNG está hospedado en el proceso LSA. El servicio proporciona aislamiento de proceso de claves para las claves privadas y las operaciones criptográficas asociadas según lo requieren los criterios comunes. El servicio almacena y usa claves de larga duración en un proceso seguro que cumple los requisitos de los criterios comunes.
 |   **Nombre del servicio**    |   KeyIso
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="com-event-system"></a>Sistema de eventos COM +       
+##  <a name="com-event-system"></a>Sistema de eventos COM+       
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Es compatible con el sistema Event Notification Service (SENS), que proporciona la distribución automática de eventos a los componentes de modelo de objetos componentes (COM). Si el servicio está detenido, SENS se cerrará y no podrá proporcionar notificaciones de inicio de sesión y cierre de sesión. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Admite el Servicio de notificación de eventos del sistema (SENS), que proporciona la distribución automática de eventos a los componentes del Modelo de objetos componentes (COM). Si se detiene este servicio, SENS se cerrará y no podrá ofrecer notificaciones de inicio ni de cierre de sesión. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   EventSystem
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="com-system-application"></a>Aplicación del sistema COM +     
+##  <a name="com-system-application"></a>Aplicación del sistema COM+     
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Administra la configuración y el seguimiento de los componentes de + basado en modelo de objetos componentes (COM). Si el servicio se detiene, la mayoría de COM +-basado en componentes no funcionarán correctamente. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Administra la configuración y el seguimiento de los componentes basados en el Modelo de objetos componentes (COM+). Si se detiene el servicio, la mayoría de los componentes COM+ no funcionarán correctamente. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   COMSysApp
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="computer-browser"></a>Examinador de equipos        
+##  <a name="computer-browser"></a>Explorador de equipos        
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Mantiene una lista actualizada de los equipos de la red y proporciona esta lista a los equipos designados como exploradores. Si se detiene este servicio, esta lista no se actualiza o se mantienen. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Mantiene una lista actualizada de los equipos en la red y proporciona esta lista a los equipos designados como exploradores. Si se detiene este servicio, esta lista no se actualizará ni mantendrá. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   Browser
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Deshabilitada
-|   **Recomendación**  |   Ya se ha deshabilitado
+|   **Recomendación**  |   Ya deshabilitado
 |   **Comentarios**    |   
 |||         
 
@@ -377,39 +377,39 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Este servicio se utiliza para escenarios de dispositivos conectados y vidrio Universal
+|   **Descripción del servicio** |   Este servicio se usa en escenarios de dispositivos conectados y Universal Glass.
 |   **Nombre del servicio**    |   CDPSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="connected-user-experiences-and-telemetry"></a>Telemetría y experiencias del usuario conectado     
+## <a name="connected-user-experiences-and-telemetry"></a>Experiencias del usuario y telemetría asociadas     
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio de telemetría y experiencias del usuario conectado habilita características que admiten las experiencias de usuario en la aplicación y está conectado. Además, este servicio administra la colección orientada a eventos y la transmisión de información de diagnóstico y uso (que se usa para mejorar la experiencia y la calidad de la plataforma de Windows) cuando está habilitados los diagnósticos y la configuración de opciones de privacidad de uso bajo Comentarios y diagnósticos.
+|   **Descripción del servicio** |   El servicio Experiencias del usuario y telemetría asociadas proporciona características compatibles con las experiencia del usuario conectado y en aplicación. Asimismo, este servicio administra la recopilación y transmisión de la información de diagnóstico y uso basada en los eventos (se usa para mejorar la experiencia y la calidad de la plataforma de Windows) cuando la configuración de opciones de diagnóstico y privacidad de uso está habilitada en la opción Comentarios y diagnósticos.
 |   **Nombre del servicio**    |   DiagTrack
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="contact-data"></a>Póngase en contacto con los datos        
+##  <a name="contact-data"></a>Datos de contacto        
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Los índices de los datos de contacto para la búsqueda rápida de contacto. Si detiene o deshabilita este servicio, es posible que falte contactos desde los resultados de búsqueda.
+|   **Descripción del servicio** |   Indexa los datos de contacto para poder buscar los contactos rápidamente. Si detienes o deshabilitas este servicio, es posible que falten contactos en tus resultados de búsqueda.
 |   **Nombre del servicio**    |   PimIndexMaintenanceSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
@@ -423,7 +423,7 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 |   **Nombre del servicio**    |   CoreMessagingRegistrar
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -433,11 +433,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona un almacenamiento seguro y la recuperación de credenciales a los usuarios, aplicaciones y paquetes de servicio de seguridad.
+|   **Descripción del servicio** |   Proporciona un almacenamiento seguro y la recuperación de credenciales para usuarios, aplicaciones y paquetes de servicios de seguridad.
 |   **Nombre del servicio**    |   VaultSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -447,11 +447,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona tres servicios de administración: Servicio de base de datos de catálogo, que confirma las firmas de archivos de Windows y permite a los nuevos programas a instalarse; Servicio de raíz, que agrega y quita los certificados de entidad de certificación raíz de confianza de este equipo; protegida y el servicio de actualización automática de certificados de raíz, que recupera los certificados raíz de Windows Update y habilitar en escenarios tales como SSL. Si se detiene este servicio, estos servicios de administración no funcionará correctamente. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Proporciona tres servicios de administración: Servicio de catálogo de base de datos, que confirma las firmas de los archivos de Windows y permite la instalación de programas nuevos; Servicio de raíz protegida, que agrega y quita certificados de entidades de certificación raíz de confianza del equipo, y Servicio automático de actualización de certificados raíz, que recupera certificados raíz de Windows Update y habilita escenarios como SSL. Si se detiene este servicio, los servicios de administración mencionados no funcionarán correctamente. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   CryptSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -461,11 +461,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona datos de intermediación entre aplicaciones.
+|   **Descripción del servicio** |   Proporciona servicios de administración de datos entre aplicaciones.
 |   **Nombre del servicio**    |   DsSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -475,11 +475,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio DCP (recopilación de datos y publicación) es compatible con aplicaciones propias para cargar datos en la nube.
+|   **Descripción del servicio** |   El servicio DCP (Recopilación y publicación de datos) admite aplicaciones de origen para cargar los datos a la nube.
 |   **Nombre del servicio**    |   DcpSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -489,11 +489,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio DCOMLAUNCH inicia servidores COM y DCOM en respuesta a las solicitudes de activación de objeto. Si este servicio está detenido o deshabilitado, los programas que utilizan COM o DCOM no funcionará correctamente. Se recomienda encarecidamente que tienen el servicio en ejecución DCOMLAUNCH.
+|   **Descripción del servicio** |   El servicio DCOMLAUNCH inicia los servidores COM y DCOM en respuesta a las solicitudes de activación de objetos. Si este servicio se detiene o se deshabilita, los programas que usen COM o DCOM no funcionarán correctamente. Por ello, es muy recomendable que ejecutes el servicio DCOMLAUNCH.
 |   **Nombre del servicio**    |   DcomLaunch
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  |No hay instrucciones    
+|   **Recomendación**  |Sin instrucciones    
 |   **Comentarios**    |   
 |||         
 
@@ -503,11 +503,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Habilita el emparejamiento entre el sistema y los dispositivos de red cableados o inalámbricos.
+|   **Descripción del servicio** |   Habilita el emparejamiento entre el sistema y los dispositivos cableados o inalámbricos.
 |   **Nombre del servicio**    |   DeviceAssociationService
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -517,11 +517,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |
 |---|---|
-|   **Descripción del servicio** |   Permite a un equipo reconocer y adaptarse a los cambios de hardware con poca o ninguna intervención del usuario. Detener o deshabilitar este servicio dará como resultado inestabilidad del sistema.
+|   **Descripción del servicio** |   Habilita un equipo para que reconozca y se adapte a los cambios de hardware con el menor esfuerzo por parte del usuario. Si se detiene o deshabilita este servicio, el sistema se volverá inestable.
 |   **Nombre del servicio**    |   DeviceInstall
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones
+|   **Recomendación**  | Sin instrucciones
 |   **Comentarios**    |
 |||
 
@@ -531,39 +531,39 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Realiza actividades de inscripción de dispositivos para administración de dispositivos
+|   **Descripción del servicio** |   Realiza actividades de inscripción de dispositivos para la administración de dispositivos.
 |   **Nombre del servicio**    |   DmEnrollmentSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="device-setup-manager"></a>Administrador del programa de instalación de dispositivos         
+## <a name="device-setup-manager"></a>Administrador de configuración del dispositivo         
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Permite la detección, descarga e instalación de software relacionados con el dispositivo. Si se deshabilita este servicio, los dispositivos pueden configurarse con software obsoleto y no funcionen correctamente.
+|   **Descripción del servicio** |   Habilita la detección, descarga e instalación de software relacionado con el dispositivo. Si se deshabilita este servicio, es posible que los dispositivos se configuren con software obsoleto y no funcionen correctamente.
 |   **Nombre del servicio**    |   DsmSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="devquery-background-discovery-broker"></a>Agente de detección DevQuery en segundo plano         
+## <a name="devquery-background-discovery-broker"></a>Agente de detección en segundo plano de DevQuery         
 
 | | |           
 |---|---|           
-|   **Descripción del servicio** |   Permite que las aplicaciones detectar dispositivos con una tarea en segundo plano
+|   **Descripción del servicio** |   Permite a las aplicaciones detectar dispositivos con una tarea en segundo plano.
 |   **Nombre del servicio**    |   DevQueryBroker
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -573,11 +573,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Registra y actualiza las direcciones IP y los registros DNS para este equipo. Si se detiene este servicio, este equipo no recibirá direcciones IP dinámicas y las actualizaciones de DNS. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
-|   **Nombre del servicio**    |   DHCP
+|   **Descripción del servicio** |   Registra y actualiza las direcciones IP y los registros DNS de este equipo. Si este servicio se detiene, el equipo no recibirá direcciones IP dinámicas ni actualizaciones de DNS. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
+|   **Nombre del servicio**    |   Dhcp
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -587,11 +587,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio directiva de diagnóstico se habilita la detección de problemas, solución de problemas y resolución para los componentes de Windows.  Si se detiene este servicio, diagnóstico dejará de funcionar.
+|   **Descripción del servicio** |   El servicio de directivas de diagnóstico permite la detección, solución y resolución de problemas para componentes de Windows.  Si este servicio se detiene, los diagnósticos ya no funcionarán.
 |   **Nombre del servicio**    |   DPS
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -601,11 +601,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El Host de servicio de diagnóstico se usa el servicio directiva de diagnóstico para diagnósticos de host que se deben ejecutar en un contexto de servicio Local.  Si se detiene este servicio, los diagnósticos que dependen de él dejará de funcionar.
+|   **Descripción del servicio** |   El Servicio de directivas de diagnóstico usa el Host de servicio de diagnóstico para hospedar los diagnósticos que deben ejecutarse en un contexto de servicio local.  Si se detiene este servicio, los diagnósticos que dependan de él dejarán de funcionar.
 |   **Nombre del servicio**    |   WdiServiceHost
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -615,25 +615,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El Host del sistema de diagnóstico se usa el servicio directiva de diagnóstico para diagnósticos de host que se deben ejecutar en un contexto de sistema Local.  Si se detiene este servicio, los diagnósticos que dependen de él dejará de funcionar.
+|   **Descripción del servicio** |   El Servicio de directivas de diagnóstico usa el Host de sistema de diagnóstico para hospedar los diagnósticos que deben ejecutarse en un contexto de sistema local.  Si se detiene este servicio, los diagnósticos que dependan de él dejarán de funcionar.
 |   **Nombre del servicio**    |   WdiSystemHost
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="distributed-link-tracking-client"></a>Cliente de seguimiento de vínculos distribuidos            
+##  <a name="distributed-link-tracking-client"></a>Cliente de seguimiento de vínculos distribuidos.            
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Mantiene los vínculos entre los archivos NTFS en un equipo o en varios equipos en una red.
+|   **Descripción del servicio** |   Mantiene los vínculos entre archivos NTFS dentro de un equipo o entre los equipos de una red.
 |   **Nombre del servicio**    |   TrkWks
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -643,11 +643,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Coordina las transacciones que abarcan varios administradores de recursos, como las bases de datos, las colas de mensajes y los sistemas de archivos. Si se detiene este servicio, se producirá un error en estas transacciones. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Coordina las transacciones que abarcan varios administradores de recursos, como las bases de datos, las colas de mensajes y los sistemas de archivos. Si se detiene este servicio, se producirá un error en estas transacciones. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   MSDTC
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -659,10 +659,10 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 |---|---|       
 |   **Descripción del servicio** |   Servicio de enrutamiento de mensajes de inserción WAP
 |   **Nombre del servicio**    |   dmwappushservice
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Servicio necesario en los dispositivos cliente para Intune, MDM y tecnologías similares de administración y para Unified Write Filter. No es necesario para el servidor.
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   El servicio es necesario en dispositivos cliente para Intune, MDM y tecnologías de administración similares y también para el Filtro de escritura unificado. No es necesario para el servidor.
 |||         
 
 <br />      
@@ -671,26 +671,26 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio Cliente DNS (dnscache) almacena en caché nombres del Sistema de nombres de dominio (DNS) y registra el nombre completo del equipo para este equipo. Si el servicio se para, los nombres DNS seguirán resolviéndose. Sin embargo, los resultados de consultas de nombres DNS no se almacenarán en caché y no se registrará el nombre del equipo. Si el servicio se deshabilita, cualquier servicio que dependa explícitamente de él no se podrá iniciar.
+|   **Descripción del servicio** |   El servicio Cliente DNS (dnscache) almacena en caché nombres del Sistema de nombres de dominio (DNS) y registra el nombre completo del equipo para este equipo. Si el servicio se para, los nombres DNS seguirán resolviéndose. Sin embargo, los resultados de las consultas de nombres DNS no se almacenarán en caché y el nombre de los equipos no se registrará. Si el servicio se deshabilita, cualquier servicio que dependa explícitamente de él no se podrá iniciar.
 |   **Nombre del servicio**    |   Dnscache
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="downloaded-maps-manager"></a>Administrador de mapas descargado     
+##  <a name="downloaded-maps-manager"></a>Administrador de mapas descargados     
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Servicio de Windows para el acceso a las aplicaciones a maps descargados. Este servicio se inicia a petición mediante la aplicación acceso a descarga asignaciones. Si se deshabilita este servicio impedirá que las aplicaciones acceso a los mapas.
+|   **Descripción del servicio** |   Servicio de Windows para que las aplicaciones obtengan acceso a mapas descargados. Este servicio lo pide la aplicación que accederá a los mapas descargados. Si deshabilitas este servicio, las aplicaciones no obtendrán acceso a los mapas.
 |   **Nombre del servicio**    |   MapsBroker
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Deshabilitación de las aplicaciones de saltos que se basan en el servicio; Aceptar deshabilitar si no depender de aplicaciones
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Si se deshabilita, se interrumpen las aplicaciones que se basan en el servicio; se puede deshabilitar si las aplicaciones no se basan en él.
 |||         
 
 <br />          
@@ -699,11 +699,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio en modo incrustado habilita escenarios relacionados con las aplicaciones en segundo plano.  Si se deshabilita este servicio impedirá que las aplicaciones en segundo plano desde que se está activando.
+|   **Descripción del servicio** |   El servicio de modo incrustado habilita escenarios relacionados con las aplicaciones en segundo plano.  Si se deshabilita este servicio, se impedirá que se activen las aplicaciones en segundo plano.
 |   **Nombre del servicio**    |   embeddedmode
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -713,25 +713,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |                   
 |---|---|           
-|   **Descripción del servicio** | Proporciona la tecnología de cifrado de archivos principal utilizada para almacenar archivos cifrados en volúmenes de sistema de archivos NTFS. Si este servicio está detenido o deshabilitado, las aplicaciones no se pueden obtener acceso a archivos cifrados.            
+|   **Descripción del servicio** | Proporciona la tecnología de cifrado de archivos principal que se usa para almacenar archivos cifrados en volúmenes con el sistema de archivos NTFS. Si este servicio se detiene o se deshabilita, las aplicaciones no podrán tener acceso a los archivos cifrados.            
 |   **Nombre del servicio**  |  EFS            
 |   **Instalación**  |  Siempre instalado           
 |   **StartType**   |  Manual           
-|   **Recomendación**  | No hay instrucciones           
+|   **Recomendación**  | Sin instrucciones           
 |   **Comentarios**   |
 |||                 
 
 <br />  
 
-## <a name="enterprise-app-management-service"></a>Servicio de administración de aplicación empresarial            
+## <a name="enterprise-app-management-service"></a>Servicio de administración de aplicaciones de empresa            
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Permite la administración de aplicaciones empresariales.
+|   **Descripción del servicio** |   Permite la administración de aplicaciones de empresa.
 |   **Nombre del servicio**    |   EntAppSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -741,11 +741,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   El servicio de protocolo de autenticación Extensible (EAP) proporciona autenticación de red en escenarios como 802.1X con cable e inalámbricos, VPN y Network Access Protection (NAP).  EAP también proporciona interfaces de programación de aplicaciones (API) que se usan los clientes de acceso de red, incluidos los clientes inalámbricos y VPN, durante el proceso de autenticación.  Si deshabilita este servicio, se impide que este equipo tengan acceso a redes que requieren autenticación de EAP.
+|   **Descripción del servicio** |   El servicio Protocolo de autenticación extensible (EAP) proporciona autenticación de red en escenarios como 802.1x con cable e inalámbrica, VPN y Protección de acceso a redes (NAP).  EAP también proporciona interfaces de programación de aplicaciones (API) usadas por clientes de acceso a redes, incluidos clientes inalámbricos y VPN, durante el proceso de autenticación.  Si deshabilitas este servicio, este equipo no podrá obtener acceso a redes que requieran autenticación EAP.
 |   **Nombre del servicio**    |   EapHost
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -755,11 +755,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio FDPHOST hospeda los proveedores de detección de red de detección de función (FD). Estos proveedores FD proporcionan servicios de detección de red para el protocolo Simple de detección de servicios (SSDP) y servicios Web - Protocolo Discovery (WS-D). Detener o deshabilitar el servicio FDPHOST deshabilitará la detección de redes para estos protocolos al usar FD. Cuando este servicio no está disponible, servicios de red mediante FD y uso de estos protocolos de detección no se pueden encontrar los dispositivos de red o de recursos.
+|   **Descripción del servicio** |   El servicio FDPHOST hospeda los proveedores de detección de redes FD (detección de funciones). Estos proveedores FD proporcionan servicios de detección de redes para el protocolo de detección de servicios simple (SSDP) y el protocolo de detección de servicios web (WS-D). Si se detiene o deshabilita el servicio FDPHOST, se deshabilitará la detección de redes para estos protocolos cuando se use FD. Si este servicio no está disponible, los servicios de red que usen FD y estén basados en estos protocolos de detección no podrán encontrar dispositivos o recursos de red.
 |   **Nombre del servicio**    |   fdPHost
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -769,11 +769,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Publica este equipo y los recursos conectados a este equipo, por lo que se pueden detectar a través de la red.  Si se detiene este servicio, ya no se va a publicar los recursos de red y no se detectarán otros equipos de la red.
+|   **Descripción del servicio** |   Publica este equipo y los recursos conectados a él para poder detectarlos a través de la red.  Si se detiene este servicio, los recursos de red dejarán de publicarse y no podrán detectarlos otros equipos de la red.
 |   **Nombre del servicio**    |   FDResPub
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -783,12 +783,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Este servicio supervisa la ubicación actual del sistema y administra las geovallas (una ubicación geográfica con eventos asociados).  Si desactiva este servicio, las aplicaciones no se pueden usar o recibir notificaciones de geolocalización o las geovallas.
+|   **Descripción del servicio** |   Este servicio supervisa la ubicación actual del sistema y administra las geovallas (una ubicación geográfica con eventos asociados).  Si desactivas este servicio, las aplicaciones no podrán usar ni recibir notificaciones de geolocalización o geovallas.
 |   **Nombre del servicio**    |   lfsvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Deshabilitación de las aplicaciones de saltos que se basan en el servicio; Aceptar deshabilitar si no depender de aplicaciones
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Si se deshabilita, se interrumpen las aplicaciones que se basan en el servicio; se puede deshabilitar si las aplicaciones no se basan en él.
 |||         
 
 <br />          
@@ -797,11 +797,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio es responsable de aplicar la configuración establecida por los administradores del equipo y los usuarios a través del componente de directiva de grupo. Si el servicio está deshabilitado, no se aplicará la configuración y las aplicaciones y componentes no se pueden administrables a través de la directiva de grupo. Los componentes o aplicaciones que dependen del componente de directiva de grupo no sea funcionales si el servicio está deshabilitado.
+|   **Descripción del servicio** |   El servicio es responsable de la aplicación de la configuración establecida por los administradores para el equipo y los usuarios mediante el componente de la directiva de grupo. Si el servicio se deshabilita, la configuración no se aplicará y las aplicaciones y componentes no se podrán administrar mediante la directiva de grupo. Todo componente o aplicación que dependa del componente de la directiva de grupo podrían no funcionar si se deshabilita el servicio.
 |   **Nombre del servicio**    |   gpsvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -812,26 +812,26 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Activa y mantiene el uso de botones de acceso frecuente de teclados, controles remotos y otros dispositivos multimedia. Se recomienda que mantenga este servicio se está ejecutando.
+|   **Descripción del servicio** |   Activa y mantiene el uso de botones de acceso directo predefinidos en los teclados, controles remotos y otros dispositivos multimedia. Se recomienda mantener este servicio en ejecución.
 |   **Nombre del servicio**    |   hidserv
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="hv-host-service"></a>Servicio de Host HV     
+##  <a name="hv-host-service"></a>Servicio de host HV     
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona una interfaz para el hipervisor de Hyper-V proporcionar los contadores de rendimiento por partición para el sistema operativo host.
+|   **Descripción del servicio** |   Proporciona una interfaz para que el hipervisor de Hyper-V proporcione contadores de rendimiento por partición al sistema operativo del host.
 |   **Nombre del servicio**    |   HvHost
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Potenciadores para las máquinas virtuales invitadas. No se usa hoy en día, excepto para explícitamente rellena las máquinas virtuales, pero se usará en la protección de aplicaciones
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Optimizadores de rendimiento de las máquinas virtuales invitadas. Hoy no se usa, excepto en las máquinas virtuales rellenadas explícitamente, pero se usará en Protección de aplicaciones.
 |||         
 
 <br />          
@@ -844,8 +844,8 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 |   **Nombre del servicio**    |   vmickvpexchange
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Consulte HvHost
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Consulta HvHost
 |||         
 
 <br />      
@@ -854,12 +854,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona una interfaz para el host de Hyper-V interactuar con servicios específicos que se ejecutan dentro de la máquina virtual.
+|   **Descripción del servicio** |   Proporciona una interfaz para que el host de Hyper-V interactúe con servicios específicos que se ejecutan en la máquina virtual.
 |   **Nombre del servicio**    |   vmicguestinterface
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Consulte HvHost
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Consulta HvHost
 |||         
 
 <br />  
@@ -868,12 +868,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona un mecanismo para apagar el sistema operativo de esta máquina virtual desde las interfaces de administración en el equipo físico.
+|   **Descripción del servicio** |   Ofrece un mecanismo para apagar el sistema operativo de esta máquina virtual desde las interfaces de administración del equipo físico.
 |   **Nombre del servicio**    |   vmicshutdown
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Consulte HvHost
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Consulta HvHost
 |||         
 
 <br />
@@ -881,12 +881,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 ## <a name="hyper-v-heartbeat-service"></a>Servicio de latido de Hyper-V
 | | |
 |---|---|
-|   **Descripción del servicio** |   Supervisa el estado de esta máquina virtual mediante la notificación de un latido a intervalos regulares. Este servicio le ayuda a identificar las máquinas virtuales en ejecución que ha dejado de responder.
+|   **Descripción del servicio** |   Supervisa el estado de la máquina virtual mediante la notificación de un latido a intervalos regulares. Este servicio ayuda a identificar las máquinas virtuales en ejecución que dejaron de responder.
 |   **Nombre del servicio**    |   vmicheartbeat
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Consulte HvHost
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Consulta HvHost
 |||
 
 <br />          
@@ -895,12 +895,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona un mecanismo para administrar la máquina virtual con PowerShell a través de la sesión de máquina virtual sin una red virtual.
+|   **Descripción del servicio** |   Proporciona un mecanismo para administrar la máquina virtual con PowerShell a través de una sesión de máquina virtual sin una red virtual.
 |   **Nombre del servicio**    |   vmicvmsession
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Consulte HvHost
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Consulta HvHost
 |||         
 
 <br />          
@@ -913,8 +913,8 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 |   **Nombre del servicio**    |   vmicrdv
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Consulte HvHost
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Consulta HvHost
 |||         
 
 <br />          
@@ -927,8 +927,8 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 |   **Nombre del servicio**    |   vmictimesync
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Consulte HvHost
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Consulta HvHost
 |||         
 
 <br />          
@@ -937,12 +937,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|           
-|   **Descripción del servicio** |   Coordina las comunicaciones que son necesarios para usar el servicio de instantáneas de volumen para realizar una copia de seguridad de aplicaciones y datos en esta máquina virtual desde el sistema operativo en el equipo físico.
+|   **Descripción del servicio** |   Coordina las comunicaciones que requieren el uso del Servicio de instantáneas de volumen para realizar copias de seguridad de las aplicaciones y los datos de esta máquina virtual desde el sistema operativo del equipo físico.
 |   **Nombre del servicio**    |   vmicvss
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Consulte HvHost
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Consulta HvHost
 |||         
 
 <br />          
@@ -951,11 +951,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio IKEEXT hospeda el intercambio de claves de Internet (IKE) y protocolo de Internet autenticado (AuthIP) módulos de incrustación. Estos módulos de generación de claves se utilizan para la autenticación y el intercambio de claves de seguridad de protocolo Internet (IPsec). Detener o deshabilitar el servicio IKEEXT deshabilitará el intercambio de claves IKE y AuthIP con equipos del mismo nivel. IPsec normalmente está configurado para usar IKE o AuthIP; por lo tanto, detener o deshabilitar el servicio IKEEXT puede dar lugar a un error de IPsec y podría poner en peligro la seguridad del sistema. Se recomienda encarecidamente que tendrá que ejecutar el servicio IKEEXT.
+|   **Descripción del servicio** |   El servicio IKEEXT hospeda los módulos de creación de claves de Intercambio de claves por red (IKE) y protocolo de Internet autenticado (AuthIP). Estos módulos de creación de claves se usan para la autenticación y el intercambio de claves en el protocolo de seguridad de Internet (IPsec). Si se detiene o deshabilita el servicio IKEEXT, se deshabilitará el intercambio de claves IKE y AuthIP con equipos del mismo nivel. Normalmente, IPsec está configurado para usar IKE o AuthIP; es posible que detener o deshabilitar el servicio IKEEXT provoque errores de IPsec y ponga en peligro la seguridad del sistema. Por ello, es muy recomendable que ejecutes el servicio IKEEXT.
 |   **Nombre del servicio**    |   IKEEXT
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |    
 |||         
 
@@ -965,11 +965,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Habilita la notificación de usuario del usuario de entrada para los servicios interactivos, lo que permite el acceso a los cuadros de diálogo creados por servicios interactivos cuando aparecen. Si se detiene este servicio, las notificaciones de cuadros de diálogo nuevo servicio interactivo dejarán de funcionar y no habrá acceso a los cuadros de diálogo servicio interactivo. Si se deshabilita este servicio, las notificaciones de y acceso a cuadros de diálogo nuevo servicio interactivo dejará de funcionar.
+|   **Descripción del servicio** |   Habilita la notificación al usuario sobre la entrada de usuario para los servicios interactivos; esto habilita el acceso a los cuadros de diálogo creados por los servicios interactivos cuando aparecen. Si se detiene este servicio, dejarán de funcionar las notificaciones de cuadros de diálogo de nuevos servicios interactivos y es posible que no se pueda obtener acceso a los cuadros de diálogo de servicios interactivos. Si se deshabilita este servicio, dejarán de funcionar las notificaciones y el acceso a los cuadros de diálogo de nuevos servicios interactivos.
 |   **Nombre del servicio**    |   UI0Detect
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -979,12 +979,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|           
-|   **Descripción del servicio** |   Proporciona la traducción de direcciones de red, direccionamiento de servicios de prevención de intrusiones o de resolución de nombre de una red doméstica o de pequeña oficina.
+|   **Descripción del servicio** |   Proporciona servicios de traducción de direcciones de red, direccionamiento, resolución de nombres y prevención de intrusiones para una red doméstica o de oficina pequeña.
 |   **Nombre del servicio**    |   SharedAccess
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Se requiere para los clientes que se utiliza como puntos de conexión Wi-Fi y también en ambos extremos de la proyección de Miracast. ICS puede bloquearse con la configuración de GPO, "Prohibir el uso de la conexión compartida a Internet en su red de dominio DNS"
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Se requiere para los clientes que se usan como zonas Wi-Fi y también en ambos extremos de la proyección de Miracast. Es posible bloquear la Conexión compartida a Internet con la configuración de GPO, "Prohibir el uso de Conexión compartida a Internet en su red de dominio DNS".
 |||         
 
 <br />          
@@ -993,11 +993,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona conectividad de túnel mediante tecnologías de transición IPv6 (6to4, Teredo, ISATAP y puerto de Proxy) e IP-HTTPS. Si se detiene este servicio, el equipo no tendrán las ventajas de una conectividad mejorada que ofrecen estas tecnologías.
+|   **Descripción del servicio** |   Proporciona conectividad de túnel con tecnologías de transición IPv6 (6to4, ISATAP, Proxy de puerto y Teredo) e IP-HTTPS. Si se detiene este servicio, el equipo no contará con los beneficios de conectividad mejorada que ofrecen estas tecnologías.
 |   **Nombre del servicio**    |   iphlpsvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1008,25 +1008,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Protocolo de Internet (IPsec) de seguridad admite la autenticación de nivel de red del mismo nivel, autenticación del origen de datos, integridad de los datos, confidencialidad (cifrado) de datos y protección contra la reproducción.  Este servicio aplica directivas de IPsec creadas mediante el complemento Directivas de seguridad IP o la herramienta de línea de comandos "netsh ipsec".  Si se detiene este servicio, puede experimentar problemas de conectividad de red si la directiva requiere que las conexiones usen IPsec.  Además, administración remota de Firewall de Windows no está disponible cuando se detiene este servicio.
+|   **Descripción del servicio** |   El protocolo de seguridad de Internet (IPsec) admite la autenticación del mismo nivel de la red, la autenticación de los orígenes de los datos, la integridad de los datos, la confidencialidad de los datos (cifrado) y la protección de la reproducción.  Este servicio aplica las directivas IPSec creadas a través del complemento Directivas de seguridad IP o de la herramienta de la línea de comandos "netsh ipsec".  Si detienes este servicio, es posible que experimentes problemas de conectividad de red si la directiva requiere que las conexiones usen IPSec.  Además, la administración remota del Firewall de Windows no está disponible cuando se detiene este servicio.
 |   **Nombre del servicio**    |   PolicyAgent
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />
 
-##  <a name="kdc-proxy-server-service-kps"></a>Servicio de servidor Proxy KDC (KPS)      
+##  <a name="kdc-proxy-server-service-kps"></a>Servicio de servidor proxy KDC (KPS)      
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Servicio de servidor Proxy KDC ejecuta en los servidores perimetrales al proxy Kerberos mensajes de protocolo para los controladores de dominio en la red corporativa.
+|   **Descripción del servicio** |   El servicio de servidor proxy KDC se ejecuta en servidores perimetrales para actuar como proxy para mensajes de protocolo de Kerberos para controladores de dominio en la red corporativa.
 |   **Nombre del servicio**    |   KPSSVC
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones    
+|   **Recomendación**  | Sin instrucciones    
 |   **Comentarios**    |   
 |||         
 
@@ -1036,26 +1036,26 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Coordina las transacciones entre el Coordinador de transacciones distribuidas (MSDTC) y el Administrador de transacciones de Kernel (KTM). Si no es necesario, se recomienda que este servicio siguen detenido. Si es necesario, MSDTC y KTM iniciará este servicio automáticamente. Si se deshabilita este servicio, se producirá un error en cualquier transacción de MSDTC interactuar con un administrador de recursos del núcleo y podrán iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Coordina transacciones entre el coordinador de transacciones distribuidas (MSDTC) y el administrador de transacciones de kernel (KTM). Si no es necesario, es recomendable que este servicio permanezca detenido. Si es necesario, tanto MSDTC como KTM iniciarán el servicio automáticamente. Si se deshabilita este servicio, cualquier transacción de MSDTC que interactúe con un administrador de transacciones de kernel no se podrá realizar y cualquier servicio que dependa explícitamente de él no podrá iniciarse.
 |   **Nombre del servicio**    |   KtmRm
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />
 
-##  <a name="link-layer-topology-discovery-mapper"></a>Asignador de detección de topología de nivel de vínculo        
+##  <a name="link-layer-topology-discovery-mapper"></a>Asignador de detección de topologías de nivel de vínculo        
 
 | | |       
 |---|---|       
-|   **Descripción del servicio** |   Crea un mapa de red, que consta de PC e información de topología (conectividad) de dispositivo y los metadatos que describen cada PC y dispositivos.  Si se deshabilita este servicio, el mapa de red no funcionará correctamente.
+|   **Descripción del servicio** |   Crea un mapa de red con información sobre la topología de dispositivos y de equipos (conectividad) y los metadatos que describen cada equipo y dispositivo.  Si se deshabilita este servicio, el mapa de red no funcionará correctamente.
 |   **Nombre del servicio**    |   lltdsvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Aceptar deshabilitar si ninguna dependencia en el mapa de red
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Se puede deshabilitar si no existen dependencias del mapa de red.
 |||         
 
 <br />
@@ -1064,52 +1064,52 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |                   
 |---|---|   
-|   **Descripción del servicio** |   Servicio de Windows Core que administra las sesiones de usuario local. Detener o deshabilitar este servicio dará como resultado inestabilidad del sistema.    
+|   **Descripción del servicio** |   Servicio central de Windows que administra las sesiones de usuario locales. Si se detiene o deshabilita este servicio, el sistema se volverá inestable.    
 |   **Nombre del servicio**    |   LSM |
 |   **Instalación**    |   Siempre instalado    |
 |   **StartType**   |   Automático   |
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||                 
 
 <br />                  
 
-## <a name="microsoft-r-diagnostics-hub-standard-collector"></a>Concentrador de diagnósticos Microsoft (R) recolector estándar         
+## <a name="microsoft-r-diagnostics-hub-standard-collector"></a>Recopilador estándar del concentrador de diagnósticos de Microsoft (R)         
 
 | | |           
 |---|---|           
-|   **Descripción del servicio** |   Servicio de Windows Core que administra las sesiones de usuario local. Detener o deshabilitar este servicio dará como resultado inestabilidad del sistema.
+|   **Descripción del servicio** |   Servicio central de Windows que administra las sesiones de usuario locales. Si se detiene o deshabilita este servicio, el sistema se volverá inestable.
 |   **Nombre del servicio**    |   LSM
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />
 
-## <a name="microsoft-account-sign-in-assistant"></a>Ayudante para el inicio de sesión de cuenta de Microsoft
+## <a name="microsoft-account-sign-in-assistant"></a>Ayudante para el inicio de sesión de cuenta Microsoft
 | | |
 |---|---|
-|   **Descripción del servicio** |   Permite el inicio de sesión de usuario a través de servicios de identidad de cuenta de Microsoft. Si se detiene este servicio, los usuarios no podrán iniciar sesión en el equipo con su cuenta de Microsoft.
+|   **Descripción del servicio** |   Permite al usuario iniciar sesión mediante los servicios de identidad de cuentas Microsoft. Si se detiene este servicio, los usuarios no podrán iniciar sesión en el equipo con sus cuentas Microsoft.
 |   **Nombre del servicio**    |   wlidsvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Microsoft Accounts son N/D en Windows Server
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Las cuentas Microsoft no están disponibles en Windows Server.
 |||
 
 <br />          
 
-##  <a name="microsoft-app-v-client"></a>Microsoft App-V Client      
+##  <a name="microsoft-app-v-client"></a>Cliente de Microsoft App-V      
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Administra los usuarios de App-V y las aplicaciones virtuales
+|   **Descripción del servicio** |   Administra aplicaciones virtuales y usuarios de App-V.
 |   **Nombre del servicio**    |   AppVClient
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Deshabilitada
-|   **Recomendación**  |   Ya se ha deshabilitado
+|   **Recomendación**  |   Ya deshabilitado
 |   **Comentarios**    |   
 |||         
 
@@ -1119,12 +1119,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Administra las sesiones de Internet SCSI (iSCSI) desde este equipo a dispositivos de destino iSCSI remoto. Si se detiene este servicio, este equipo no podrá iniciar sesión o tener acceso a los destinos iSCSI. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Administra las sesiones SCSI de Internet (iSCSI) desde este equipo hacia los dispositivos de destino iSCSI remotos. Si se detiene este servicio, el equipo no podrá iniciar sesión en los destinos iSCSI ni tener acceso a ellos. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   MSiSCSI
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Nuestros datos de diagnóstico indican que se usa en el cliente, así como el servidor. Ningún beneficio para deshabilitarlo.
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Los datos de diagnóstico indican que se usa en un cliente y también en un servidor. Deshabilitarlo no brinda ningún beneficio.
 |||         
 
 <br />          
@@ -1133,12 +1133,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona aislamiento de procesos para las claves criptográficas utilizadas para autenticar a los proveedores de identidad asociada de un usuario. Si se deshabilita este servicio, todos los usos y la administración de estas claves no estará disponibles, que incluye el inicio de sesión de máquina y el inicio de sesión único en para aplicaciones y sitios Web. Este servicio se inicia y detiene automáticamente. Se recomienda que no vuelva a configurar este servicio.
+|   **Descripción del servicio** |   Proporciona aislamiento de procesos de claves criptográficas usadas para autenticarse en los proveedores de identidades asociados de un usuario. Si se deshabilita este servicio, todos los usos y administración de estas claves dejarán de estar disponibles, lo cual incluye el inicio de sesión de máquina y el inicio de sesión único para aplicaciones y sitios web. Este servicio se inicia y detiene automáticamente. Es recomendable no reconfigurar el servicio.
 |   **Nombre del servicio**    |   NgcSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Es necesario para los inicios de sesión PIN/Hello, que no se admiten en el servidor
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Es necesario para los inicios de sesión de PIN/Hello, que no son compatibles en el servidor.
 |||         
 
 <br />          
@@ -1147,40 +1147,40 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Administra las claves de identidad de usuario local utilizadas para autenticar el usuario a los proveedores de identidades, así como las tarjetas inteligentes virtuales de TPM. Si se deshabilita este servicio, las claves de identidad de usuario local y las tarjetas inteligentes virtuales de TPM no será accesibles. Se recomienda que no vuelva a configurar este servicio.
+|   **Descripción del servicio** |   Administra las claves de identidad de usuario locales para autenticar al usuario en los proveedores de identidad, así como las tarjetas inteligentes virtuales del TPM. Si se deshabilita este servicio, no se podrá acceder a las claves de identidad de usuario locales y las tarjetas inteligentes virtuales del TPM. Es recomendable no reconfigurar el servicio.
 |   **Nombre del servicio**    |   NgcCtnrSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="microsoft-software-shadow-copy-provider"></a>Proveedor de instantáneas de Software de Microsoft          
+## <a name="microsoft-software-shadow-copy-provider"></a>Proveedor de instantáneas de software de Microsoft          
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Administra las instantáneas de volumen basado en software tomadas por el servicio de instantáneas de volumen. Si se detiene este servicio, no puede administrar instantáneas de volumen basado en software. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Administra las instantáneas de volumen basadas en software y tomadas por el Servicio de instantáneas de volumen. Si se detiene el servicio, no se podrán administrar las instantáneas de volumen basadas en software. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   swprv
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="microsoft-storage-spaces-smp"></a>SMP de espacios de almacenamiento de Microsoft         
+## <a name="microsoft-storage-spaces-smp"></a>SMP de Espacios de almacenamiento de Microsoft         
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Servicio de host para el proveedor de administración de espacios de almacenamiento de Microsoft. Si este servicio está detenido o deshabilitado, no puede administrar espacios de almacenamiento.
+|   **Descripción del servicio** |   Servicio host para el proveedor de administración de Espacios de almacenamiento de Microsoft. Si se detiene o deshabilita este servicio, Espacios de almacenamiento no se puede administrar.
 |   **Nombre del servicio**    |   smphost
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Las API de administración de almacenamiento producirá un error sin este servicio. Por ejemplo: "Get-WmiObject-clase MSFT_Disk - Namespace Root\Microsoft\Windows\Storage".
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Sin este servicio, las API de administración de almacenamiento presentarán errores. Por ejemplo: "Get-WmiObject -class MSFT_Disk -Namespace Root\Microsoft\Windows\Storage".
 |||         
 
 <br />          
@@ -1189,11 +1189,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona la capacidad de compartir puertos TCP a través del protocolo de net.tcp.
+|   **Descripción del servicio** |   Ofrece la posibilidad de compartir puertos TCP a través del protocolo net.tcp.
 |   **Nombre del servicio**    |   NetTcpPortSharing
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Deshabilitada
-|   **Recomendación**  |   Ya se ha deshabilitado
+|   **Recomendación**  |   Ya deshabilitado
 |   **Comentarios**    |   
 |||         
 
@@ -1203,11 +1203,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|           
-|   **Descripción del servicio** |   Mantiene un canal seguro entre el equipo y el controlador de dominio para autenticar usuarios y servicios. Si se detiene este servicio, el equipo no puede autenticar a los usuarios y servicios y el controlador de dominio no pueden registrar los registros DNS. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Mantiene un canal seguro entre este equipo y el controlador de dominio para la autenticación de usuarios y servicios. Si se detiene este servicio, el equipo no podrá autenticar usuarios y servicios y el controlador de dominio no puede registrar registros DNS. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   Netlogon
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1217,11 +1217,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Conexiones de agentes que permitir que las aplicaciones de Microsoft Store recibir notificaciones de internet.
+|   **Descripción del servicio** |   Conexiones de los agentes que permiten que las aplicaciones de Microsoft Store reciban notificaciones de Internet.
 |   **Nombre del servicio**    |   NcbService
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -1231,39 +1231,39 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Administra los objetos en la carpeta Conexiones de red y acceso telefónico, en el que puede ver la red de área local y las conexiones remotas.
+|   **Descripción del servicio** |   Administra objetos en la carpeta Conexiones de red y acceso telefónico, donde se pueden ver conexiones de red de área local y remotas.
 |   **Nombre del servicio**    |   Netman
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="network-connectivity-assistant"></a>Asistente de conectividad de red      
+##  <a name="network-connectivity-assistant"></a>Asistente para la conectividad de red      
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona notificación de estado de DirectAccess para los componentes de interfaz de usuario
+|   **Descripción del servicio** |   Proporciona la notificación de estado de DirectAccess para componentes de UI.
 |   **Nombre del servicio**    |   NcaSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />  
 
-##  <a name="network-list-service"></a>Servicio de lista de red        
+##  <a name="network-list-service"></a>Servicio de lista de redes        
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Identifica las redes a la que el equipo se ha conectado, recopila y almacena las propiedades de estas redes y notifica a las aplicaciones cuando cambian estas propiedades.
+|   **Descripción del servicio** |   Identifica las redes a las que se conectó el equipo, recopila y almacena las propiedades de estas redes y notifica a las aplicaciones cuando estas propiedades cambian.
 |   **Nombre del servicio**    |   netprofm
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1273,11 +1273,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Recopila y almacena la información de configuración de la red y notifica a los programas cuando se modifica esta información. Si se detiene este servicio, la información de configuración podría no estar disponible. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Recopila y almacena información de configuración de la red y notifica a los programas cuando esta información se modifica. Si se detiene este servicio, es posible que la información de configuración no esté disponible. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   NlaSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1287,25 +1287,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio de configuración de red administra la instalación de controladores de red y permite la configuración de red de bajo nivel.  Si se detiene este servicio, se pueden cancelar las instalaciones de controlador que están en curso.
+|   **Descripción del servicio** |   El servicio de configuración de red administra la instalación de controladores de red y permite la configuración de valores de red de bajo nivel.  Si se detiene este servicio, pueden cancelarse las instalaciones de controladores que estén en curso.
 |   **Nombre del servicio**    |   NetSetupSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="network-store-interface-service"></a>Servicio Network Store Interface      
+## <a name="network-store-interface-service"></a>Servicio Interfaz de almacenamiento en red      
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Este servicio ofrece notificaciones de la red (por ejemplo, interfaz Adición/eliminación etcetera) a los clientes de modo de usuario. Si detiene este servicio hará que la pérdida de conectividad de red. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de este servicio.
+|   **Descripción del servicio** |   Este servicio entrega notificaciones de red (por ejemplo, interfaces agregadas/eliminadas, etc.) a los clientes en modo usuario. Si se detiene este servicio, se perderá la conectividad de la red. Si se deshabilita este servicio, no se iniciará ningún servicio que dependa de él de manera explícita.
 |   **Nombre del servicio**    |   nsi
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1315,11 +1315,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Los archivos sin conexión de servicio realiza actividades de mantenimiento en la caché de archivos sin conexión, responde a eventos de inicio de sesión y cierre de sesión de usuario, implementa los aspectos internos de la API pública, y envía eventos a los interesantes que está interesado en los archivos sin conexión las actividades y cambios de estado de la memoria caché.
+|   **Descripción del servicio** |   El servicio de archivos sin conexión realiza actividades de mantenimiento en la caché de archivos sin conexión, responde a eventos de inicio y cierre de sesión del usuario, implementa la información interna de la API pública y procesa eventos interesantes para los interesados en las actividades de archivos sin conexión y los cambios de estado de la caché.
 |   **Nombre del servicio**    |   CscService
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Deshabilitada
-|   **Recomendación**  |   Ya se ha deshabilitado
+|   **Recomendación**  |   Ya deshabilitado
 |   **Comentarios**    |   
 |||         
 
@@ -1329,54 +1329,54 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Ayuda a que el equipo ejecute de forma más eficaz mediante la optimización de archivos en unidades de almacenamiento.
+|   **Descripción del servicio** |   Permite que el equipo funcione de manera más eficiente al optimizar los archivos en las unidades de almacenamiento.
 |   **Nombre del servicio**    |   defragsvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />
 
-## <a name="performance-counter-dll-host"></a>Host DLL de contador de rendimiento         
+## <a name="performance-counter-dll-host"></a>DLL de host del Contador de rendimiento         
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Permite a los usuarios remotos y los procesos de 64 bits consultar los contadores de rendimiento proporcionados por archivos DLL de 32 bits. Si se detiene este servicio, solo los usuarios locales y los procesos de 32 bits podrá consultar los contadores de rendimiento proporcionados por archivos DLL de 32 bits.
+|   **Descripción del servicio** |   Habilita a los usuarios remotos y los procesos de 64 bits para consultar los contadores de rendimiento proporcionados por las DLL de 32 bits. Si se detiene este servicio, solo los usuarios locales y los procesos de 32 bits podrán consultar los contadores de rendimiento proporcionados por las DLL de 32 bits.
 |   **Nombre del servicio**    |   PerfHost
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones    
+|   **Recomendación**  | Sin instrucciones    
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="performance-logs--alerts"></a>Alertas y registros de rendimiento            
+## <a name="performance-logs--alerts"></a>Registros y alertas de rendimiento            
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Los registros de rendimiento y alertas recopila datos de rendimiento de los equipos locales o remotos según los parámetros de programación preconfigurada, a continuación, escribe los datos en un registro o desencadena una alerta. Si se detiene este servicio, no se recopilará información sobre el rendimiento. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Registros y alertas de rendimiento recopila los datos de rendimiento de equipos locales o remotos según parámetros de programación preconfigurados y, después, escribe los datos en un registro o activa una alerta. Si se detiene este servicio, no se recopilará información de rendimiento. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   pla
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="phone-service"></a>Servicio de teléfono       
+##  <a name="phone-service"></a>Servicio telefónico       
 
 | | |           
 |---|---|   
 |   **Descripción del servicio** |   Administra el estado de telefonía en el dispositivo
 |   **Nombre del servicio**    |   PhoneSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Utilizado por aplicaciones modernas de VoIP
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Usado por aplicaciones VoIP modernas
 |||         
 
 <br />          
@@ -1385,25 +1385,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Permite a un equipo reconocer y adaptarse a los cambios de hardware con poca o ninguna intervención del usuario. Detener o deshabilitar este servicio dará como resultado inestabilidad del sistema.
+|   **Descripción del servicio** |   Habilita un equipo para que reconozca y se adapte a los cambios de hardware con el menor esfuerzo por parte del usuario. Si se detiene o deshabilita este servicio, el sistema se volverá inestable.
 |   **Nombre del servicio**    |   PlugPlay
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="portable-device-enumerator-service"></a>Servicio de enumerador de dispositivo portátil           
+## <a name="portable-device-enumerator-service"></a>Servicio enumerador de dispositivos portátiles           
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Aplica la directiva de grupo para los dispositivos de almacenamiento extraíbles. Permite que las aplicaciones, como Windows Media Player y Asistente para importación de imágenes para transferir y sincronizar el contenido con dispositivos de almacenamiento extraíbles.
+|   **Descripción del servicio** |   Exige el cumplimiento de directivas de grupo para dispositivos de almacenamiento extraíble. Permite que aplicaciones como el Reproductor de Windows Media y el Asistente para la importación de imágenes transfieran y sincronicen el contenido mediante el uso de dispositivos de almacenamiento extraíble.
 |   **Nombre del servicio**    |   WPDBusEnum
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1413,11 +1413,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Administra la directiva de energía y entrega de notificaciones de directiva de energía.
+|   **Descripción del servicio** |   Administra la directiva de energía y la entrega de notificaciones de dicha directiva.
 |   **Nombre del servicio**    |   Alimentación
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1427,53 +1427,53 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Este servicio se pone en cola los trabajos de impresión y administra la interacción con la impresora.  Si desactiva este servicio, no podrá imprimir o ver las impresoras.
+|   **Descripción del servicio** |   Este servicio pone en cola los trabajos de impresión y administra la interacción con la impresora.  Si lo desactiva, no podrá imprimir ni ver las impresoras.
 |   **Nombre del servicio**    |   Cola de impresión
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  |   Aceptar para deshabilitar si no un servidor de impresión o un controlador de dominio
-|   **Comentarios**    |   En un controlador de dominio, la instalación del rol de controlador de dominio agrega un subproceso para el servicio de cola que es responsable de realizar la eliminación de impresión: quitar los objetos de la cola de impresión obsoletos de Active Directory.  Si el servicio de cola no se está ejecutando en al menos un controlador de dominio en cada sitio, el anuncio no tiene ningún medio para quitar colas antiguas que ya no existen. https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/
+|   **Recomendación**  |   Se puede deshabilitar si no se trata de un servidor de impresión ni un controlador de dominio.
+|   **Comentarios**    |   En un controlador de dominio, la instalación del rol del controlador de dominio agrega un subproceso al servicio del administrador de trabajos en cola que es responsable de realizar la eliminación de las impresiones, quitando de Active Directory los objetos de la cola de impresión obsoleta.  Si el servicio del administrador de trabajos en cola no se ejecuta en al menos un controlador de dominio de cada sitio, AD no tiene ninguna forma de quitar las colas antiguas que ya no existen. https://blogs.technet.microsoft.com/askperf/2008/11/18/disabling-unnecessary-services-a-word-to-the-wise/
 |||         
 
 <br />          
 
-##  <a name="printer-extensions-and-notifications"></a>Las notificaciones y las extensiones de impresora        
+##  <a name="printer-extensions-and-notifications"></a>Extensiones y notificaciones de impresora        
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Este servicio abre los cuadros de diálogo personalizados de impresora y controla las notificaciones desde un servidor de impresión remoto o una impresora. Si desactiva este servicio, no podrá ver las extensiones de la impresora o notificaciones.
+|   **Descripción del servicio** |   Este servicio abre cuadros de diálogo personalizados de la impresora y administra notificaciones desde un servidor de impresión o una impresora remotos. Si lo desactiva, no podrá ver las extensiones ni las notificaciones de impresora.
 |   **Nombre del servicio**    |   PrintNotify
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar si no es un servidor de impresión
+|   **Recomendación**  |   Se puede deshabilitar si no se trata de un servidor de impresión.
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="problem-reports-and-solutions-control-panel-support"></a>Informes de problemas y soporte técnico de Panel de Control de soluciones     
+##  <a name="problem-reports-and-solutions-control-panel-support"></a>Ayuda del Panel de control de Informes de problemas y soluciones     
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Este servicio proporciona soporte técnico para ver, enviar y la eliminación de informes de problemas de nivel de sistema para el panel de control informes de problemas y soluciones.
+|   **Descripción del servicio** |   Este servicio proporciona ayuda para ver, enviar y eliminar los informes de problemas del nivel de sistema para el Panel de control de Informes de problemas y soluciones.
 |   **Nombre del servicio**    |   wercplsupport
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="program-compatibility-assistant-service"></a>Servicio de compatibilidad de programas     
+##  <a name="program-compatibility-assistant-service"></a>Servicio Asistente para la compatibilidad de programas     
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Este servicio proporciona compatibilidad con el Asistente para compatibilidad de programas (PCA).  PCA supervisa los programas instalado y ejecutado por el usuario y detecta problemas de compatibilidad conocidos. Si se detiene este servicio, el PCA no funcionará correctamente.
+|   **Descripción del servicio** |   Este servicio proporciona soporte al Asistente para la compatibilidad de programas (PCA).  El PCA supervisa los programas que instala y ejecuta el usuario, y detecta los problemas de compatibilidad conocidos. Si se detiene este servicio, el PCA no funcionará correctamente.
 |   **Nombre del servicio**    |   PcaSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -1483,12 +1483,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Experiencia de vídeo de calidad de Audio de Windows (qWave) es una plataforma de red para Audio vídeo (AV), transmisión de aplicaciones en redes domésticas IP. qWave mejora el rendimiento y confiabilidad mediante la red calidad de servicio (QoS) para aplicaciones de AV de transmisión de AV. Proporciona un mecanismo para el control de admisión, ejecutar la supervisión en tiempo y cumplimiento, comentarios de la aplicación y la priorización del tráfico.
+|   **Descripción del servicio** |   Windows Audio Video Experience (qWave) es una plataforma de red para aplicaciones de streaming de audio y vídeo (AV) en redes domésticas IP. qWave mejora el rendimiento y la confiabilidad del streaming de audio y vídeo al garantizar la calidad de servicio (QoS) de las aplicaciones de AV en la red. Proporciona mecanismos para control de admisión, supervisión y cumplimiento en tiempo de ejecución, recopilación de comentarios acerca de aplicaciones y establecimiento de la prioridad del tráfico.
 |   **Nombre del servicio**    |   QWAVE
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Servicio de calidad de servicio de cliente
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Servicio de calidad de servicio del lado cliente
 |||         
 
 <br />          
@@ -1497,25 +1497,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Servicio de modo de avión y administración de radio
+|   **Descripción del servicio** |   Servicio de administración de radio y modo avión
 |   **Nombre del servicio**    |   RmSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="remote-access-auto-connection-manager"></a>Administrador de conexión automática de acceso remoto            
+## <a name="remote-access-auto-connection-manager"></a>Administrador de conexiones automáticas de acceso remoto            
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Crea una conexión a una red remota siempre que un programa hace referencia a un nombre DNS o NetBIOS o la dirección remota.
+|   **Descripción del servicio** |   Crea una conexión a una red remota cada vez que un programa hace referencia a un DNS remoto o a un nombre o una dirección NetBIOS.
 |   **Nombre del servicio**    |   RasAuto
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1525,11 +1525,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Administra las conexiones de red privada virtual y de acceso telefónico (VPN) desde este equipo a Internet o a otras redes remotas. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Administra conexiones de acceso telefónico y de red privada virtual (VPN) desde este equipo a Internet u otras redes remotas. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   RasMan
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1539,11 +1539,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Servicio de configuración de escritorio remoto (RDC) es responsable de la configuración relacionada con todos los servicios de escritorio remoto y escritorio remoto y actividades de mantenimiento de la sesión que requieren el contexto del sistema. Estos incluyen carpetas temporales por sesión, los temas de escritorio remoto y los certificados de escritorio remoto.
+|   **Descripción del servicio** |   El servicio Configuración de Escritorio remoto (RDCS) se encarga de todas las actividades de mantenimiento de sesiones y configuración relacionadas con Servicios de Escritorio remoto y Escritorio remoto que requieran el contexto SYSTEM. Entre ellas, se incluyen las carpetas temporales por sesión, los temas de Escritorio remoto y los certificados de Escritorio remoto.
 |   **Nombre del servicio**    |   SessionEnv
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
+|   **Recomendación**  |   No deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -1553,26 +1553,26 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Permite a los usuarios conectarse de forma interactiva a un equipo remoto. Escritorio remoto y servidor de Host de sesión de escritorio remoto dependen de este servicio.  Para evitar el uso remoto de este equipo, desactive las casillas de verificación en la ficha acceso remoto del elemento de panel de control de las propiedades del sistema.
+|   **Descripción del servicio** |   Esta característica permite a los usuarios conectarse de manera interactiva a un equipo remoto. Escritorio remoto y el servidor host de sesión de Escritorio remoto dependen de este servicio.  Para impedir el uso remoto de este equipo, desactive las casillas de la pestaña Acceso remoto, en el elemento Propiedades del sistema del Panel de control.
 |   **Nombre del servicio**    |   TermService
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
+|   **Recomendación**  |   No deshabilitar
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="remote-desktop-services-usermode-port-redirector"></a>Redirector de puerto de modo de usuario de servicios de escritorio remoto        
+##  <a name="remote-desktop-services-usermode-port-redirector"></a>Redirector de puerto en modo usuario de Servicios de Escritorio remoto        
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Permite la redirección de impresoras unidades o los puertos para las conexiones RDP
+|   **Descripción del servicio** |   Permite la redirección de impresoras, unidades o puertos para conexiones RDP.
 |   **Nombre del servicio**    |   UmRdpService
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Admite las redirecciones del servidor de la conexión.
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Admite los redireccionamientos en el lado servidor de la conexión.
 |||         
 
 <br />          
@@ -1581,25 +1581,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   El servicio RPCSS es el Administrador de Control de servicio para servidores COM y DCOM. Realiza las solicitudes de activaciones de objetos, las soluciones exportador de objeto y colección de elementos no utilizados distribuida para los servidores COM y DCOM. Si este servicio está detenido o deshabilitado, los programas que utilizan COM o DCOM no funcionará correctamente. Se recomienda encarecidamente que tiene la ejecución del servicio RPCSS.
+|   **Descripción del servicio** |   El servicio RPCSS es el Administrador de control de servicios para los servidores COM y DCOM. Realiza solicitudes de activación de objetos, resoluciones del exportador de objetos y recolección distribuida de elementos no usados para servidores COM y DCOM. Si este servicio se detiene o se deshabilita, los programas que usen COM o DCOM no funcionarán correctamente. Por ello, es muy recomendable que ejecute el servicio RPCSS.
 |   **Nombre del servicio**    |   RpcSs
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="remote-procedure-call-rpc-locator"></a>Localizador de procedimiento remoto (RPC) de la llamada             
+##  <a name="remote-procedure-call-rpc-locator"></a>Localizador de llamada a procedimiento remoto (RPC)             
 
 | | |               
 |---|---|   
-|   **Descripción del servicio** |   En Windows 2003 y versiones anteriores de Windows, el servicio de ubicación de la llamada a procedimiento remoto (RPC) administra la base de datos del servicio de nombres RPC. En Windows Vista y versiones posteriores de Windows, este servicio no proporciona ninguna funcionalidad y está presente para compatibilidad de aplicaciones.   |
+|   **Descripción del servicio** |   En Windows 2003 y versiones anteriores de Windows, el servicio Localizador de llamada a procedimiento remoto (RPC) administra la base de datos del servicio de nombres RPC. En Windows Vista y versiones posteriores de Windows, este servicio no ofrece ninguna funcionalidad y existe para la compatibilidad de aplicaciones.   |
 |   **Nombre del servicio**    |   RpcLocator  |
-|   **Instalación**    |   Solo con la experiencia de escritorio    |
+|   **Instalación**    |   Solo con Experiencia de escritorio    |
 |   **StartType**   |   Manual  |
-|   **Recomendación**  | No hay instrucciones   |
+|   **Recomendación**  | Sin instrucciones   |
 |   **Comentarios**    |       |
 |||             
 
@@ -1609,11 +1609,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Permite a los usuarios remotos modificar la configuración del registro en este equipo. Si se detiene este servicio, se puede modificar el registro solo por usuarios en este equipo. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Permite que los usuarios remotos modifiquen la configuración del Registro en este equipo. Si se detiene este servicio, solo los usuarios de este equipo podrán modificar el Registro. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   RemoteRegistry
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  |   No deshabilite
+|   **Recomendación**  |   No deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -1623,11 +1623,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona un servicio de red que procesa las solicitudes para simular la aplicación de la configuración de directiva de grupo para un usuario de destino o el equipo en diferentes situaciones y calcula los valores del conjunto resultante de directivas.
+|   **Descripción del servicio** |   Proporciona un servicio de red que procesa las solicitudes para simular la aplicación en varias situaciones de cierta configuración de directiva de grupo en un usuario o equipo de destino, y procesa la configuración del Conjunto resultante de directivas.
 |   **Nombre del servicio**    |   RSoPProv
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |No hay instrucciones    
+|   **Recomendación**  |Sin instrucciones    
 |   **Comentarios**    |   
 |||         
 
@@ -1637,12 +1637,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Ofrece servicios de enrutamiento a las empresas en entornos de red de área extensa y de área local.
+|   **Descripción del servicio** |   Ofrece servicios de enrutamiento a empresas en entornos de red de área local y extensa.
 |   **Nombre del servicio**    |   RemoteAccess
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Deshabilitada
-|   **Recomendación**  |   Ya se ha deshabilitado
-|   **Comentarios**    |   Ya se ha deshabilitado
+|   **Recomendación**  |   Ya deshabilitado
+|   **Comentarios**    |   Ya deshabilitado
 |||         
 
 <br />          
@@ -1651,11 +1651,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Resuelve los identificadores de las interfaces RPC a puntos de conexión de transporte. Si este servicio está detenido o deshabilitado, los programas que utilizan servicios de llamada a procedimiento remoto (RPC) no funcionará correctamente.
+|   **Descripción del servicio** |   Resuelve los identificadores de las interfaces de RPC en los puntos de conexión de transporte. Si se detiene o deshabilita este servicio, los programas que usen los servicios de Llamada a procedimiento remoto (RPC) no funcionarán correctamente.
 |   **Nombre del servicio**    |   RpcEptMapper
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1665,11 +1665,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Permite iniciar procesos con credenciales alternativas. Si se detiene este servicio, este tipo de acceso de inicio de sesión estará disponible. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Permite iniciar procesos con credenciales alternativas. Si se detiene este servicio, este tipo de acceso de inicio de sesión no estará disponible. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   seclogon
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1679,12 +1679,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |               
 |---|---|       
-|   **Descripción del servicio** |   Proporciona compatibilidad para la Secure Socket de protocolo de túnel (SSTP) para conectarse a equipos remotos a través de VPN. Si se deshabilita este servicio, los usuarios no podrán usar SSTP para acceder a servidores remotos.    |
+|   **Descripción del servicio** |   Ofrece compatibilidad con el protocolo de túnel de sockets seguros (SSTP) para conectarse con equipos remotos usando VPN. Si se deshabilita este servicio, los usuarios no podrán usar SSTP para tener acceso a servidores remotos.    |
 |   **Nombre del servicio**    |   SstpSvc |
 |   **Instalación**    |   Siempre instalado    |
 |   **StartType**   |   Manual  |
-|   **Recomendación**  |   No deshabilite  |
-|   **Comentarios**    |   Deshabilitar los saltos de RRAS   |
+|   **Recomendación**  |   No deshabilitar  |
+|   **Comentarios**    |   La deshabilitación interrumpe a RRAS.   |
 |||             
 
 <br />              
@@ -1693,11 +1693,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El inicio de este servicio indica que el Administrador de cuentas de seguridad (SAM) está listo para aceptar las solicitudes a otros servicios.  Si se deshabilita este servicio impedirá que otros servicios en el sistema que se le notifique cuando esté listo SAM, lo que a su vez puede producir esos servicios no se pueda iniciar correctamente. No se debe deshabilitar este servicio.
+|   **Descripción del servicio** |   El inicio de este servicio indica a otros servicios que el Administrador de cuentas de seguridad (SAM) está listo para aceptar solicitudes.  Si deshabilita este servicio, impedirá que se notifique a otros servicios del sistema cuándo está listo SAM, lo que a su vez puede provocar un error de inicio de dichos servicios. No debes deshabilitar este servicio.
 |   **Nombre del servicio**    |   SamSs
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No deshabilite
+|   **Recomendación**  | No deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -1707,56 +1707,56 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona datos desde una variedad de sensores
+|   **Descripción del servicio** |   Entrega datos de varios sensores.
 |   **Nombre del servicio**    |   SensorDataService
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
 <br />  
 
-## <a name="sensor-monitoring-service"></a>Servicio de supervisión del sensor            
+## <a name="sensor-monitoring-service"></a>Servicio de supervisión de sensores            
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Supervisa varios sensores con el fin de exponer los datos y se adaptan al estado de usuario y del sistema.  Si este servicio está detenido o deshabilitado, el brillo de la pantalla no se pueden adaptar a las condiciones de iluminación. Si detiene este servicio puede afectar a otras funciones del sistema y también las características.
+|   **Descripción del servicio** |   Supervisa los diversos sensores para exponer los datos y adaptarse al sistema y el estado del usuario.  Si se detiene o se deshabilita, el brillo de la pantalla no se adaptará a las condiciones de iluminación. Al detenerlo, probablemente también se vean afectadas otras características y funcionalidades.
 |   **Nombre del servicio**    |   SensrSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
 <br /><br/>
-## <a name="sensor-servicebr--br------br---strongservice-descriptionstrong----a-service-for-sensors-that-manages-different-sensors39-functionality-manages-simple-device-orientation-sdo-and-history-for-sensors-loads-the-sdo-sensor-that-reports-device-orientation-changes--if-this-service-is-stopped-or-disabled-the-sdo-sensor-will-not-be-loaded-and-so-auto-rotation-will-not-occur-history-collection-from-sensors-will-also-be-stopped"></a>Servicio del sensor<br/>| | |<br/>|---|---|<br/>|   <strong>Descripción del servicio</strong> |   Un servicio para los sensores que administra los diferentes sensores&#39; funcionalidad. Administra la orientación de dispositivo Simple (SDO) y el historial para los sensores. Carga el sensor SDO que informa de los cambios de orientación del dispositivo.  Si este servicio está detenido o deshabilitado, no se cargará el sensor SDO y por lo que no se producirá la rotación automática. También se detendrá la colección de historiales de sensores.
-|   <strong>Nombre del servicio</strong> |   SensorService |   <strong>Instalación</strong> |   Solo con la experiencia de escritorio |   <strong>StartType</strong> |   Manual |   <strong>Recomendación</strong> |   Aceptar para deshabilitar |   <strong>Comentarios</strong>    |<br/>|||<br/>
+## <a name="sensor-servicebr--br------br---strongservice-descriptionstrong----a-service-for-sensors-that-manages-different-sensors39-functionality-manages-simple-device-orientation-sdo-and-history-for-sensors-loads-the-sdo-sensor-that-reports-device-orientation-changes--if-this-service-is-stopped-or-disabled-the-sdo-sensor-will-not-be-loaded-and-so-auto-rotation-will-not-occur-history-collection-from-sensors-will-also-be-stopped"></a>Servicio de sensores<br/>| | |<br/>|---|---|<br/>|   <strong>Descripción del servicio</strong> | Un servicio para sensores que administra la funcionalidad de distintos sensores. Administra la orientación de dispositivo simple (SDO) y el historial de los sensores. Carga el sensor SDO que notifica los cambios en la orientación del dispositivo.  Si se detiene o deshabilita este servicio, no se cargará el sensor SDO y no se producirá la rotación automática. También se detendrá la recopilación del historial de los sensores.
+|   <strong>Nombre del servicio</strong>    |   SensorService |   <strong>Instalación</strong>    |   Solo con Experiencia de escritorio |   <strong>StartType</strong>   |   Manual |   <strong>Recomendación</strong>  |   Se puede deshabilitar |   <strong>Comentarios</strong>    |<br/>|||<br/>
 <br />          
 
 ## <a name="server"></a>Servidor           
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Es compatible con archivos, impresión y canalización con nombre comparten a través de la red para este equipo. Si se detiene este servicio, estas funciones no estará disponibles. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Admite el uso compartido de canalizaciones con nombre, impresiones y archivos a través de la red para este equipo. Si se detiene este servicio, estas funciones no estarán disponibles. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   LanmanServer
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Es necesario para la administración remota, IPC$, uso compartido de archivos SMB
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Es necesario para la administración remota, IPC$ y el uso compartido de archivos SMB.
 |||         
 
 <br />          
 
-## <a name="shell-hardware-detection"></a>Detección de Hardware shell             
+## <a name="shell-hardware-detection"></a>Detección de hardware shell             
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona notificaciones de eventos de hardware de reproducción automática.
+|   **Descripción del servicio** |   Proporciona notificaciones sobre los eventos de hardware de Reproducción automática.
 |   **Nombre del servicio**    |   ShellHWDetection
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -1766,11 +1766,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Administra el acceso a las tarjetas inteligentes leídos por este equipo. Si se detiene este servicio, este equipo no se puede leer las tarjetas inteligentes. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Administra el acceso a las tarjetas inteligentes que lee este equipo. Si se detiene este servicio, este equipo no podrá leer las tarjetas inteligentes. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   SCardSvr
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Deshabilitada
-|   **Recomendación**  |   Ya se ha deshabilitado
+|   **Recomendación**  |   Ya deshabilitado
 |   **Comentarios**    |   
 |||         
 
@@ -1780,25 +1780,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |               
 |---|---|       
-|   **Descripción del servicio** |   Crea los nodos de dispositivo de software para todos los lectores de tarjetas inteligentes puede tener acceso a una sesión determinada. Si se deshabilita este servicio, WinRT APIs no podrán enumerar los lectores de tarjetas inteligentes.   |
+|   **Descripción del servicio** |   Crea nodos de dispositivos de software para todos los lectores de tarjetas inteligentes accesibles a una sesión determinada. Si se deshabilita este servicio, las API de WinRT no podrán enumerar los lectores de tarjetas inteligentes.   |
 |   **Nombre del servicio**    |   ScDeviceEnum    |
 |   **Instalación**    |   Siempre instalado    |
 |   **StartType**   |   Manual  |
-|   **Recomendación**  |   Aceptar para deshabilitar   |
-|   **Comentarios**    |   Es necesario casi exclusivamente para las aplicaciones de WinRT    |
+|   **Recomendación**  |   Se puede deshabilitar   |
+|   **Comentarios**    |   Es necesario casi exclusivamente para las aplicaciones de WinRT.    |
 |||             
 
 <br />              
 
-## <a name="smart-card-removal-policy"></a>Directiva de eliminación de tarjeta inteligente        
+## <a name="smart-card-removal-policy"></a>Directiva de extracción de tarjetas inteligentes        
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Permite que el sistema deberá estar configurado para bloquear el escritorio del usuario tras la eliminación de la tarjeta inteligente.
+|   **Descripción del servicio** |   Permite configurar el sistema para bloquear el escritorio del usuario al quitar la tarjeta inteligente.
 |   **Nombre del servicio**    |   SCPolicySvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1808,11 +1808,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Recibe mensajes de captura generados por los agentes de Protocolo Simple de administración de redes (SNMP) local o remoto y reenvía los mensajes a los programas de administración SNMP que se ejecutan en este equipo. Si se detiene este servicio, los programas basados en SNMP en este equipo no recibirá mensajes de captura SNMP. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Recibe mensajes de captura generados por agentes locales o remotos del Servicio de Protocolo simple de administración de redes (SNMP) y retransmite los mensajes a programas de administración de SNMP que se ejecutan en este equipo. Si se detiene este servicio, los programas basados en SNMP en este equipo no recibirán mensajes de captura SNMP. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   SNMPTRAP
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1822,25 +1822,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Permite la descarga, instalación y cumplimiento de licencias digitales para Windows y Windows aplicaciones. Si el servicio está deshabilitado, el sistema operativo y las aplicaciones con licencia pueden ejecutar en un modo de notificación. Se recomienda que deshabilite el servicio de protección de Software.
+|   **Descripción del servicio** |   Permite la descarga, instalación y aplicación de las licencias digitales de Windows y aplicaciones de Windows. Si el servicio está deshabilitado, el sistema operativo y las aplicaciones con licencia se pueden ejecutar en modo de notificación. Es muy recomendable que no deshabilites el servicio de protección de software.
 |   **Nombre del servicio**    |   sppsvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="special-administration-console-helper"></a>Ayudante de la consola de administración especial        
+## <a name="special-administration-console-helper"></a>Aplicación auxiliar especial de la consola de administración        
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Permite a los administradores tener acceso remoto a un símbolo del sistema mediante los servicios de administración de emergencia.
+|   **Descripción del servicio** |   Permite que los administradores obtengan acceso de manera remota al símbolo del sistema mediante los Servicios de administración de emergencia.
 |   **Nombre del servicio**    |   sacsvr
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1850,53 +1850,53 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Comprueba posibles daños del sistema de archivos.
+|   **Descripción del servicio** |   Comprueba posibles daños en el sistema de archivos.
 |   **Nombre del servicio**    |   svsvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="ssdp-discovery"></a>Descubrimiento SSDP           
+## <a name="ssdp-discovery"></a>Detección SSDP           
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Detecta los dispositivos de red y los servicios que utilizan el protocolo de descubrimiento SSDP, como los dispositivos UPnP. También anuncia dispositivos SSDP y servicios que se ejecutan en el equipo local. Si se detiene este servicio, no se detectarán los dispositivos basados en SSDP. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Detecta dispositivos y servicios en red que usan el protocolo de detección SSDP, como los dispositivos UPnP. También anuncia dispositivos y servicios SSDP que se ejecutan en el equipo local. Si se detiene este servicio, no se detectarán los dispositivos basados en SSDP. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   SSDPSRV
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="state-repository-service"></a>Servicio de estado del repositorio         
+## <a name="state-repository-service"></a>Servicio de repositorio de estado         
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona compatibilidad con la infraestructura necesaria para el modelo de aplicación.
+|   **Descripción del servicio** |   Proporciona soporte a la infraestructura necesaria para el modelo de aplicación.
 |   **Nombre del servicio**    |   StateRepository
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="still-image-acquisition-events"></a>Eventos de adquisición de imagen fija
+##  <a name="still-image-acquisition-events"></a>Eventos de adquisición de imágenes estáticas
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Inicia las aplicaciones asociadas a eventos de adquisición de imagen todavía.
+|   **Descripción del servicio** |   Inicia las aplicaciones asociadas con eventos de adquisición de imágenes estáticas.
 |   **Nombre del servicio**    |   WiaRpc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -1906,11 +1906,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona servicios de habilitación para la configuración de almacenamiento y la expansión de almacenamiento externo
+|   **Descripción del servicio** |   Ofrece servicios de habilitación para la configuración del almacenamiento y la expansión del almacenamiento externo.
 |   **Nombre del servicio**    |   StorSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1920,11 +1920,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Optimiza la colocación de datos en niveles de almacenamiento de todos los espacios de almacenamiento en capas en el sistema.
+|   **Descripción del servicio** |   Optimiza la colocación de los datos en capas de almacenamiento en todos los espacios de almacenamiento en capas del sistema.
 |   **Nombre del servicio**    |   TieringEngineService
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1934,11 +1934,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Mantiene y mejora el rendimiento del sistema con el tiempo.
+|   **Descripción del servicio** |   Mantiene y mejora el rendimiento del sistema a lo largo del tiempo.
 |   **Nombre del servicio**    |   SysMain
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1948,11 +1948,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Este servicio sincroniza el correo electrónico, contactos, calendario y varios otros datos de usuario. Correo electrónico y otras aplicaciones que dependen de esta funcionalidad no funcionará correctamente cuando no se está ejecutando este servicio.
+|   **Descripción del servicio** |   Este servicio sincroniza el correo, los contactos, el calendario y varios otros datos del usuario. El correo y otras aplicaciones que dependen de esta funcionalidad no funcionarán correctamente si este servicio no se está ejecutando.
 |   **Nombre del servicio**    |   OneSyncSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
@@ -1962,11 +1962,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Supervisa los eventos del sistema y notifica a los suscriptores al sistema de eventos COM + de estos eventos.
+|   **Descripción del servicio** |   Supervisa los eventos del sistema y notifica de estos eventos a los suscripciones del sistema de eventos COM+.
 |   **Nombre del servicio**    |   SENS
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -1976,12 +1976,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Coordina la ejecución del trabajo en segundo plano para aplicaciones de WinRT. Si este servicio está detenido o deshabilitado, trabajo en segundo plano no es posible que se desencadene.
+|   **Descripción del servicio** |   Coordina la ejecución del trabajo en segundo plano para la aplicación WinRT. Si se deshabilita o se detiene este servicio, el trabajo en segundo plano podría no desencadenarse.
 |   **Nombre del servicio**    |   SystemEventsBroker
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   A pesar del hecho de que su descripción implica es únicamente para las aplicaciones de WinRT, que es necesario para el programador de tareas, servicio de infraestructura de agente y otros componentes internos.
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   A pesar de que su descripción implica que solamente es para las aplicaciones de WinRT, es necesario para el programador de tareas, el servicio de infraestructura del agente y otros componentes internos.
 |||         
 
 <br />          
@@ -1990,25 +1990,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Permite que un usuario configurar y programar tareas automatizadas en este equipo. El servicio también hospeda varias tareas críticas del sistema de Windows. Si este servicio está detenido o deshabilitado, estas tareas no se ejecutará en sus programada veces. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Permite que un usuario configure y programe tareas automatizadas en este equipo. El servicio también hospeda varias tareas críticas del sistema de Windows. Si se detiene o deshabilita este servicio, estas tareas no se ejecutarán a la hora programada. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   Programa
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="tcpip-netbios-helper"></a>Aplicación auxiliar de NetBIOS de TCP/IP            
+## <a name="tcpip-netbios-helper"></a>Aplicación auxiliar de NetBIOS sobre TCP/IP            
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona compatibilidad con NetBIOS a través del servicio TCP/IP (NetBT) y resolución de nombres NetBIOS para clientes de la red, por lo tanto, permitiendo a los usuarios compartir archivos, imprimir e iniciar sesión en la red. Si se detiene este servicio, estas funciones podrían no estar disponibles. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Proporciona compatibilidad para el servicio NetBIOS sobre TCP/IP (NetBT) y resolución de nombres NetBIOS para los clientes de la red, lo que permite a los usuarios compartir archivos, imprimir e iniciar sesión en la red. Si se detiene este servicio, puede que estas funciones no estén disponibles. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   lmhosts
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2018,12 +2018,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona compatibilidad con la API de telefonía (TAPI) para programas que controlan dispositivos de telefonía en el equipo local y, a través de la LAN, en servidores que también estén ejecutando el servicio.
+|   **Descripción del servicio** |   Ofrece compatibilidad con la API de telefonía (TAPI) para programas que controlan dispositivos de telefonía en el equipo local y, a través de la LAN, en servidores que también usan el servicio.
 |   **Nombre del servicio**    |   TapiSrv
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Deshabilitar los saltos de RRAS
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   La deshabilitación interrumpe a RRAS.
 |||         
 
 <br />          
@@ -2034,66 +2034,66 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 |---|---|
 |   **Descripción del servicio** |   Proporciona administración de temas de experiencia de usuario.
 |   **Nombre del servicio**    |   Temas
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   No se puede establecer los temas de accesibilidad cuando se deshabilita este servicio
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Si este servicio está deshabilitado, no se pueden establecer los temas de accesibilidad.
 |||         
 
 <br />  
 
-## <a name="tile-data-model-server"></a>Servidor de mosaicos de modelo de datos           
+## <a name="tile-data-model-server"></a>Servidor del modelo de datos de mosaicos           
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Los iconos del servidor de actualizaciones de icono.
+|   **Descripción del servicio** |   Servidor de mosaicos para las actualizaciones de los mosaicos.
 |   **Nombre del servicio**    |   tiledatamodelsvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Iniciar los saltos de menú si se deshabilita este servicio
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Si este servicio está deshabilitado, el menú Inicio se interrumpe.
 |||         
 
 <br />          
 
-##  <a name="time-broker"></a>Broker de tiempo     
+##  <a name="time-broker"></a>Agente de eventos de tiempo     
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Coordina la ejecución del trabajo en segundo plano para aplicaciones de WinRT. Si este servicio está detenido o deshabilitado, trabajo en segundo plano no es posible que se desencadene.
+|   **Descripción del servicio** |   Coordina la ejecución del trabajo en segundo plano para la aplicación WinRT. Si se deshabilita o se detiene este servicio, el trabajo en segundo plano podría no desencadenarse.
 |   **Nombre del servicio**    |   TimeBrokerSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   A pesar del hecho de que su descripción implica es únicamente para las aplicaciones de WinRT, que es necesario para el programador de tareas, servicio de infraestructura de agente y otros componentes internos.
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   A pesar de que su descripción implica que solamente es para las aplicaciones de WinRT, es necesario para el programador de tareas, el servicio de infraestructura del agente y otros componentes internos.
 |||         
 
 <br />          
 
-## <a name="touch-keyboard-and-handwriting-panel-service"></a>Teclado táctil y el servicio del Panel de escritura a mano         
+## <a name="touch-keyboard-and-handwriting-panel-service"></a>Servicio de teclado táctil y panel de escritura a mano         
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Habilita la funcionalidad de lápiz y entrada manuscrita teclado táctil y el Panel de escritura a mano
+|   **Descripción del servicio** |   Habilita las funciones de lápiz y entradas de lápiz del teclado táctil y del panel de escritura a mano.
 |   **Nombre del servicio**    |   TabletInputService
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="update-orchestrator-service-for-windows-update"></a>Servicio de actualización de Orchestrator para Windows Update           
+## <a name="update-orchestrator-service-for-windows-update"></a>Servicio de actualizaciones Orchestrator para Windows Update           
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Administra las actualizaciones de Windows. Si se detiene, los dispositivos no pueda descargar e instalar las actualizaciones más recientes.
+|   **Descripción del servicio** |   Administra las actualizaciones de Windows. Si se detiene, los dispositivos no podrán descargar ni instalar las actualizaciones más recientes.
 |   **Nombre del servicio**    |   UsoSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Descripción del servicio que faltaba en v1607; Actualización de Windows (incluido WSUS) depende de este servicio.
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   La descripción del servicio faltaba en la versión 1607; Windows Update (incluido WSUS) depende de este servicio.
 |||         
 
 <br />          
@@ -2102,11 +2102,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Permite a los dispositivos UPnP hospedarse en este equipo. Si se detiene este servicio, los dispositivos UPnP hospedados dejará de funcionar y no se puede agregar ningún dispositivo hospedado adicional. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
-|   **Nombre del servicio**    |   UPnPHost
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Descripción del servicio** |   Permite hospedar los dispositivos UPnP en este equipo. Si se detiene este servicio, cualquier dispositivo UPnP hospedado dejará de funcionar y no se podrá agregar ningún dispositivo hospedado adicional. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
+|   **Nombre del servicio**    |   upnphost
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -2116,11 +2116,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Este servicio registra las solicitudes de acceso de cliente único, en forma de direcciones IP y los nombres de usuario de roles en el servidor local y productos instalados. Esta información se puede consultar, a través de Powershell, los administradores que necesitan cuantificar la demanda del cliente de software de servidor para la administración de licencias de acceso de cliente (CAL) sin conexión. Si el servicio está deshabilitado, las solicitudes de cliente no se registrarán y no podrá recuperarse mediante consultas de Powershell. Deteniendo el servicio no afectará a la consulta de datos históricos (consulte la documentación para conocer los pasos eliminar los datos históricos correspondiente). El administrador del sistema local debe consultar los términos de licencia de Windows Server, sonará sus, para determinar el número de CAL que son necesarios para la licencia adecuada; el software de servidor utilizar el servicio UAL y datos no modifica esta obligación.
+|   **Descripción del servicio** |   Este servicio registra solicitudes de acceso de cliente únicas, como direcciones IP y nombres de usuario, de productos y roles instalados en el servidor local. Los administradores que necesitan cuantificar la demanda de clientes de software de servidor de administración de licencia de acceso de cliente (CAL) sin conexión pueden consultar esta información por medio de PowerShell. Si el servicio se deshabilita, las solicitudes de los clientes no se registrarán y no podrán recuperarse por medio de consultas de PowerShell. La detención del servicio no afectará la consulta de datos históricos (consulte en la documentación de soporte técnico los pasos para eliminar datos históricos). El administrador del sistema local debe consultar los términos de licencia de Windows Server para determinar el número de CAL que el software de servidor necesita para tener la licencia apropiada; el uso del servicio y datos UAL no afecta a esta obligación.
 |   **Nombre del servicio**    |   UALSVC
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2130,39 +2130,39 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona acceso a datos de usuario estructurado, incluida la información de contacto, calendarios, los mensajes y otro contenido. Si detiene o deshabilita este servicio, las aplicaciones que usan estos datos podrían no funcionar correctamente.
+|   **Descripción del servicio** |   Proporciona a las aplicaciones acceso a datos de usuario estructurados, incluida la información de contacto, los calendarios, los mensajes y otro tipo de contenido. Si detienes o deshabilitas este servicio, puede que las aplicaciones que usen estos datos no funcionen correctamente.
 |   **Nombre del servicio**    |   UserDataSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
 <br />          
 
-## <a name="user-data-storage"></a>Almacenamiento de datos de usuario            
+## <a name="user-data-storage"></a>Almacenamiento de datos de usuarios            
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Controla el almacenamiento de datos de usuario estructurado, incluida la información de contacto, calendarios, los mensajes y otro contenido. Si detiene o deshabilita este servicio, las aplicaciones que usan estos datos podrían no funcionar correctamente.
+|   **Descripción del servicio** |   Controla el almacenamiento de datos de usuario estructurados, incluida la información de contacto, los calendarios, los mensajes y otro tipo de contenido. Si detienes o deshabilitas este servicio, puede que las aplicaciones que usen estos datos no funcionen correctamente.
 |   **Nombre del servicio**    |   UnistoreSvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
 <br />          
 
-## <a name="user-experience-virtualization-service"></a>Servicio de virtualización de experiencia de usuario           
+## <a name="user-experience-virtualization-service"></a>Servicio de virtualización de la experiencia de usuario           
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona compatibilidad con aplicaciones y configuraciones del sistema operativo móvil
+|   **Descripción del servicio** |   Proporciona compatibilidad para la itinerancia de configuración de las aplicaciones y del sistema operativo.
 |   **Nombre del servicio**    |   UevAgentService
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Deshabilitada
-|   **Recomendación**  |   Ya se ha deshabilitado
+|   **Recomendación**  |   Ya deshabilitado
 |   **Comentarios**    |   
 |||         
 
@@ -2172,25 +2172,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   El Administrador de usuarios proporciona los componentes de tiempo de ejecución necesarios para la interacción de varios usuario.  Si se detiene este servicio, es posible que algunas aplicaciones no funcionan correctamente.
+|   **Descripción del servicio** |   El administrador de usuarios proporciona los componentes de tiempo de ejecución necesarios para la interacción con múltiples usuarios.  Si se detiene este servicio, es posible que algunas aplicaciones no funcionen correctamente.
 |   **Nombre del servicio**    |   UserManager
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="user-profile-service"></a>Servicio de perfil de usuario         
+## <a name="user-profile-service"></a>Servicio de perfiles de usuario         
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Este servicio es responsable de la carga y descarga de perfiles de usuario. Si este servicio está detenido o deshabilitado, los usuarios ya no podrán iniciar sesión correctamente, o cierre la sesión, aplicaciones podrían tener problemas para obtener datos de los usuarios y los componentes registrados para recibir notificaciones de eventos de perfil no recibirán.
+|   **Descripción del servicio** |   Este servicio es responsable de cargar y descargar los perfiles de usuario. Si se detiene o se deshabilita, los usuarios no podrán iniciar ni cerrar la sesión, las aplicaciones podrían experimentar problemas para obtener los datos de los usuarios y no recibirán notificaciones de eventos de perfil los componentes registrados para recibirlas.
 |   **Nombre del servicio**    |   ProfSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2200,25 +2200,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona servicios de administración de discos, volúmenes, los sistemas de archivos y las matrices de almacenamiento.
+|   **Descripción del servicio** |   Proporciona servicios de administración para discos, volúmenes, sistemas de archivos y matrices de almacenamiento.
 |   **Nombre del servicio**    |   vds
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No hay instrucciones
+|   **Recomendación**  |   Sin instrucciones
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="volume-shadow-copy"></a>Instantáneas de volumen           
+## <a name="volume-shadow-copy"></a>Instantánea de volumen           
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Administra e implementa instantáneas de volumen utilizadas para la copia de seguridad y otros fines. Si se detiene este servicio, no estará disponibles para la copia de seguridad de instantáneas y la copia de seguridad puede producir un error. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Administra e implementa instantáneas de volumen usadas para copias de seguridad y otros propósitos. Si este servicio se detiene, las instantáneas se deshabilitarán para la copia de seguridad y esta podría generar un error. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   VSS
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No hay instrucciones
+|   **Recomendación**  |   Sin instrucciones
 |   **Comentarios**    |   
 |||         
 
@@ -2228,11 +2228,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Objetos de hosts usados por los clientes de wallet
+|   **Descripción del servicio** |   Hospeda objetos usados por los clientes de la cartera.
 |   **Nombre del servicio**    |   WalletService
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -2242,25 +2242,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Administra el audio para programas basados en Windows.  Si se detiene este servicio, los dispositivos de audio y efectos no funcionará correctamente.  Si se deshabilita este servicio, se producirá un error en todos los servicios que dependan explícitamente de él iniciar
+|   **Descripción del servicio** |   Administra el audio de los programas basados en Windows.  Si se detiene este servicio, los efectos y los dispositivos de audio no funcionarán correctamente.  Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   Audiosrv
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="windows-audio-endpoint-builder"></a>Generador de extremo de Audio de Windows           
+## <a name="windows-audio-endpoint-builder"></a>Compilador del punto de conexión de audio de Windows           
 
 | | |           
 |---|---|
-|   **Descripción del servicio** |   Administra dispositivos de audio para el servicio Audio de Windows.  Si se detiene este servicio, los dispositivos de audio y efectos no funcionará correctamente.  Si se deshabilita este servicio, se producirá un error en todos los servicios que dependan explícitamente de él iniciar
+|   **Descripción del servicio** |   Administra los dispositivos de audio del servicio de audio de Windows.  Si se detiene este servicio, los efectos y los dispositivos de audio no funcionarán correctamente.  Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   AudioEndpointBuilder
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -2270,25 +2270,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   El servicio biométrico de Windows ofrece la capacidad de capturar, comparar, manipular y almacenar datos biométricos sin acceder directamente a cualquier hardware biométrico o samples de las aplicaciones cliente. El servicio se hospeda en un proceso SVCHOST privilegiado.
+|   **Descripción del servicio** |   El Servicio biométrico de Windows les proporciona a las aplicaciones cliente la capacidad de capturar, comparar, manipular y almacenar datos biométricos sin acceder directamente a muestras biométricas ni a hardware biométrico. El servicio se hospeda en un proceso SVCHOST con privilegios.
 |   **Nombre del servicio**    |   WbioSrvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="windows-camera-frame-server"></a>Servidor de marco de cámara de Windows         
+##  <a name="windows-camera-frame-server"></a>Servicio FrameServer de la Cámara de Windows         
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Permite que varios clientes accedan a fotogramas de vídeo desde dispositivos de cámara.
+|   **Descripción del servicio** |   Permite que varios clientes tengan acceso a los fotogramas de vídeo de las cámaras.
 |   **Nombre del servicio**    |   FrameServer
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -2298,11 +2298,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Hace automática para conectar o desconectar decisiones según las opciones de conectividad de red disponibles actualmente para el equipo y permite la administración de conectividad de red según la configuración de directiva de grupo.
+|   **Descripción del servicio** |   Toma decisiones de conexión/desconexión automáticas en función de las opciones de conectividad de red disponibles actualmente para el equipo y permite administrar la conectividad de red basándose en la configuración de una directiva de grupo.
 |   **Nombre del servicio**    |   Wcmsvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2312,11 +2312,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Ayuda a protegerse de intentos de intrusión destinadas a vulnerabilidades conocidas y recién detectadas en los protocolos de red
+|   **Descripción del servicio** |   Ayuda a proteger contra intentos de intrusión dirigidos a vulnerabilidades conocidas o recientemente descubiertas en los protocolos de red.
 |   **Nombre del servicio**    |   WdNisSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones    
+|   **Recomendación**  | Sin instrucciones    
 |   **Comentarios**    |   
 |||         
 
@@ -2326,39 +2326,39 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Ayuda a protege a los usuarios contra malware y otro software potencialmente no deseado
+|   **Descripción del servicio** |   Ayuda a proteger a los usuarios contra malware y otro software potencialmente no deseado.
 |   **Nombre del servicio**    |   WinDefend
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="windows-driver-foundation---user-mode-driver-framework"></a>Windows Driver Foundation: marco de controlador en modo de usuario           
+## <a name="windows-driver-foundation---user-mode-driver-framework"></a>Windows Driver Foundation: marco de controlador en modo usuario           
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Crea y administra los procesos de controlador de modo de usuario. No se puede detener este servicio.
+|   **Descripción del servicio** |   Crea y administra los procesos de controlador en modo usuario. No es posible detener este servicio.
 |   **Nombre del servicio**    |   wudfsvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="windows-encryption-provider-host-service"></a>Servicio de Host del proveedor de cifrado de Windows     
+## <a name="windows-encryption-provider-host-service"></a>Servicio host de proveedor de cifrado de Windows     
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Cifrado de los agentes de servicio de Host de proveedor de cifrado de Windows relacionadas con funcionalidades de proveedores de cifrado de terceros para los procesos que necesitan para evaluar y aplicar directivas de EAS. Si se detiene pondrá en peligro las comprobaciones de cumplimiento EAS que se han establecido las cuentas de correo conectado
+|   **Descripción del servicio** |   El servicio host de proveedor de cifrado de Windows sirve como intermediario para proporcionar funcionalidades de cifrado de proveedores de cifrado de terceros a los procesos que necesitan evaluar y aplicar directivas EAS. Si lo detienes, se verán afectadas las comprobaciones de cumplimiento de EAS que han establecido las cuentas de correo conectadas.
 |   **Nombre del servicio**    |   WEPHOSTSVC
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2368,12 +2368,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Permite errores cuando los programas dejan de funcionar o de responder y para entregar las soluciones existentes. También permite que los registros que se generará para el diagnóstico y reparación de servicios. Si se detiene este servicio, informes de errores podrían no funcionar correctamente y no se muestren los resultados de servicios de diagnóstico y reparación.
+|   **Descripción del servicio** |   Permite que se informe acerca de los errores cuando los programas dejan de funcionar o responder y permite que se entreguen las soluciones existentes. También permite generar registros para los servicios de diagnóstico y reparaciones. Si se detiene este servicio, es posible que el informe de errores no funcione correctamente y que no se muestren los resultados de los servicios de diagnóstico y reparaciones.
 |   **Nombre del servicio**    |   WerSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Recopila y envía datos de bloqueo o utilizados por Microsoft y terceros ISV o IHV. Los datos se usan para diagnosticar errores inducción de bloqueo, que pueden incluir errores de seguridad. También es necesario para el informe de errores corporativo
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Recopila y envía los datos sobre bloqueo usados por los ISV o IHV de Microsoft o de terceros. Los datos se usan para diagnosticar errores que generan bloqueos, los que pueden incluir errores de seguridad. También es necesario para generar los informes de errores corporativos.
 |||         
 
 <br />          
@@ -2382,12 +2382,12 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Este servicio administra suscripciones persistentes a eventos de orígenes remotos que admiten el protocolo WS-Management. Esto incluye los registros de eventos de Windows Vista, hardware y orígenes de eventos con IPMI. El servicio almacena los eventos reenviados en un registro de eventos local. Si este servicio está detenido o deshabilitado no se puede crear suscripciones a eventos y eventos reenviados no se puede aceptar.
+|   **Descripción del servicio** |   Este servicio administra suscripciones persistentes a eventos desde orígenes remotos que admiten el protocolo de administración remota de Windows (WS-Management). Esto incluye registros de eventos de Windows Vista, hardware y orígenes de eventos con la interfaz IPMI habilitada. El servicio almacena los eventos reenviados en un registro de eventos local. Si se detiene o deshabilita este servicio, no podrán crearse suscripciones de eventos y no podrán aceptarse los eventos reenviados.
 |   **Nombre del servicio**    |   Wecsvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Recopila eventos ETW (incluidos los eventos de seguridad) para la administración de diagnósticos.  Una gran cantidad de características y herramientas de terceros que se basa en ella, incluidas las herramientas de auditoría de seguridad
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Recopila eventos de ETW (incluidos eventos de seguridad) para la capacidad de administración y los diagnósticos.  Son muchas las características y las herramientas de terceros que se basan en el servicio, incluidas herramientas de auditoría de seguridad.
 |||         
 
 <br />          
@@ -2396,11 +2396,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Este servicio administra los eventos y registros de eventos. Es compatible con sucesos de registro, consultar eventos, suscribirse a eventos, archivar los registros de eventos y administración de metadatos del evento. Puede mostrar los eventos en formato XML y texto sin formato. Puede poner en peligro al detener este servicio de seguridad y confiabilidad del sistema.
-|   **Nombre del servicio**    |   Registro de eventos
+|   **Descripción del servicio** |   Este servicio administra los eventos y los registros de eventos. Permite registrar los eventos, consultar los eventos, suscribirse a los eventos, archivar los registros de eventos y administrar los metadatos de eventos. Puede mostrar los eventos en formato XML y de texto sin formato. Si detienes este servicio, puedes poner en peligro la seguridad y confiabilidad del sistema.
+|   **Nombre del servicio**    |   EventLog
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2410,25 +2410,25 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Firewall de Windows ayuda a proteger el equipo al impedir que los usuarios no autorizados obtengan acceso al equipo a través de Internet o una red.
+|   **Descripción del servicio** |   Firewall de Windows ayuda a proteger el equipo, ya que evita que usuarios no autorizados accedan a él a través de Internet o de una red.
 |   **Nombre del servicio**    |   MpsSvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-##  <a name="windows-font-cache-service"></a>Servicio de caché de fuente de Windows      
+##  <a name="windows-font-cache-service"></a>Servicio de caché de fuentes de Windows      
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Optimiza el rendimiento de las aplicaciones almacenando en caché datos de fuente más usados. Las aplicaciones iniciarán este servicio si no se está ejecutando. Se puede deshabilitar, aunque si lo hace por lo que afectará negativamente al rendimiento de la aplicación.
+|   **Descripción del servicio** |   Optimiza el rendimiento de las aplicaciones almacenando en caché los datos de las fuentes más usadas. Las aplicaciones iniciarán este servicio si no se está ejecutando. Es posible deshabilitarlo, aunque si se hace, el rendimiento de las aplicaciones disminuirá.
 |   **Nombre del servicio**    |   FontCache
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2438,11 +2438,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona servicios de adquisición de imágenes para escáneres y cámaras
+|   **Descripción del servicio** |   Ofrece servicios de adquisición de imágenes para escáneres y cámaras.
 |   **Nombre del servicio**    |   stisvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -2456,8 +2456,8 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 |   **Nombre del servicio**    |   wisvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Servidor no admite la distribución de paquetes piloto, por lo que es una operación inefectiva en servidor. También se puede deshabilitar característica a través de la directiva de grupo.
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   El servidor no admite la distribución de paquetes piloto, .por lo que no opera en el servidor. La característica también se puede deshabilitar a través de la directiva de grupo.
 |||         
 
 <br />          
@@ -2466,11 +2466,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|
-|   **Descripción del servicio** |   Agrega, modifica y quita aplicaciones proporcionadas como un paquete de Windows Installer (*.msi, *.msp). Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Agrega, modifica y quita las aplicaciones proporcionadas como un paquete de Windows Installer (*.msi, *.msp). Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   msiserver
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2480,11 +2480,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona compatibilidad de infraestructura con la Microsoft Store.  Este servicio se inicia a petición y si está deshabilitada, el contenido adquirido a través de la Microsoft Store no funcionará correctamente.
+|   **Descripción del servicio** |   Proporciona compatibilidad de infraestructura con Microsoft Store.  Este servicio se inicia a petición y, si se deshabilita, el contenido adquirido a través de Microsoft Store no funcionará correctamente.
 |   **Nombre del servicio**    |   LicenseManager
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2494,11 +2494,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona un modelo común de interfaz y el objeto de obtener acceso a información de administración sobre el sistema operativo, dispositivos, aplicaciones y servicios. Si se detiene este servicio, la mayoría del software basado en Windows no funcionará correctamente. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
-|   **Nombre del servicio**    |   WinMgmt
+|   **Descripción del servicio** |   Proporciona una interfaz común y un modelo de objeto para tener acceso a la información de administración acerca del sistema operativo, los dispositivos, las aplicaciones y los servicios. Si se detiene este servicio, la mayoría del software basado en Windows no funcionará correctamente. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
+|   **Nombre del servicio**    |   Winmgmt
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2510,9 +2510,9 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 |---|---|       
 |   **Descripción del servicio** |   Proporciona la capacidad de compartir una conexión de datos móviles con otro dispositivo.
 |   **Nombre del servicio**    |   icssvc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   
 |||         
 
@@ -2522,39 +2522,39 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Permite la instalación, modificación y eliminación de las actualizaciones de Windows y componentes opcionales. Si se deshabilita este servicio, instalar o desinstalar de Windows podrían producir un error de las actualizaciones para este equipo.
+|   **Descripción del servicio** |   Permite la instalación, la modificación y la eliminación de componentes opcionales y de las actualizaciones de Windows. Si se deshabilita este servicio, la instalación o desinstalación de las actualizaciones de Windows podría presentar un error en este equipo.
 |   **Nombre del servicio**    |   TrustedInstaller
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="windows-push-notifications-system-service"></a>Servicio de sistema de notificaciones de inserción de Windows            
+## <a name="windows-push-notifications-system-service"></a>Servicio del sistema de notificaciones de inserción de Windows            
 
 | | |           
 |---|---|
-|   **Descripción del servicio** |   Este servicio se ejecuta en la sesión 0 y hospeda el proveedor de conexión y la plataforma de notificación que controla la conexión entre el dispositivo y el servidor WNS.
+|   **Descripción del servicio** |   Este servicio se ejecuta en la sesión 0 y hospeda la plataforma de notificaciones y el proveedor de conexiones que controla la conexión entre el dispositivo y el servidor WNS.
 |   **Nombre del servicio**    |   WpnService
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Automático
-|   **Recomendación**  |   Aceptar para deshabilitar
-|   **Comentarios**    |   Es necesario para los iconos dinámicos y otras características
+|   **Recomendación**  |   Se puede deshabilitar
+|   **Comentarios**    |   Es necesario para los iconos dinámicos y otras características.
 |||         
 
 <br />      
 
-## <a name="windows-push-notifications-user-service"></a>Servicio de usuario de las notificaciones de inserción de Windows          
+## <a name="windows-push-notifications-user-service"></a>Servicio de usuario de notificaciones de inserción de Windows          
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Este servicio hospeda la plataforma de notificación de Windows que proporciona compatibilidad para local y envío de notificaciones push. Notificaciones admitidas son icono, del sistema y sin formato.
+|   **Descripción del servicio** |   Este servicio hospeda la plataforma de notificaciones de Windows, que proporciona compatibilidad para las notificaciones locales y las de inserción. Las notificaciones admitidas son los iconos, las notificaciones del sistema y las sin procesar.
 |   **Nombre del servicio**    |   WpnUserService
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Aceptar para deshabilitar
+|   **Recomendación**  |   Se puede deshabilitar
 |   **Comentarios**    |   Plantilla de servicio de usuario
 |||         
 
@@ -2567,8 +2567,8 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 |   **Nombre del servicio**    |   WinRM
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Es necesario para la administración remota
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Necesario para la administración remota.
 |||
 
 <br />          
@@ -2577,11 +2577,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Proporciona la indización de contenido, el almacenamiento en caché de propiedad y los resultados de búsqueda para archivos, correo electrónico y otros contenidos.
+|   **Descripción del servicio** |   Proporciona la indexación del contenido, el almacenamiento en caché de las propiedades y los resultados de la búsqueda de archivos, correo electrónico y otro contenido.
 |   **Nombre del servicio**    |   WSearch
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Deshabilitada
-|   **Recomendación**  |   Ya se ha deshabilitado
+|   **Recomendación**  |   Ya deshabilitado
 |   **Comentarios**    |   
 |||         
 
@@ -2591,11 +2591,11 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Mantiene la sincronización de fecha y hora en todos los clientes y servidores de la red. Si se detiene este servicio, la sincronización de fecha y hora no estará disponible. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Mantiene la sincronización de fecha y hora en todos los clientes y servidores de la red. Si este servicio está detenido, la sincronización de fecha y hora no estará disponible. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   W32Time
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones
+|   **Recomendación**  | Sin instrucciones
 |   **Comentarios**    |   
 |||         
 
@@ -2605,39 +2605,39 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   Habilita la detección, la descarga y la instalación de actualizaciones de Windows y otros programas. Si se deshabilita este servicio, los usuarios de este equipo no podrán usar su característica de actualización automática o de actualización de Windows y programas no podrá usar la API de Windows Update Agent (WUA).
+|   **Descripción del servicio** |   Habilita la detección, descarga e instalación de las actualizaciones de Windows y de otros programas. Si el servicio está deshabilitado, los usuarios de este equipo no podrán usar Windows Update ni su característica de actualización automática y los programas no podrán usar la API del Agente de Windows Update (WUA).
 |   **Nombre del servicio**    |   wuauserv
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="winhttp-web-proxy-auto-discovery-service"></a>Servicio de detección automática de Proxy Web de WinHTTP         
+## <a name="winhttp-web-proxy-auto-discovery-service"></a>Servicio de detección automática del proxy web WinHTTP         
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   WinHTTP implementa la pila HTTP de cliente y proporciona a los desarrolladores con una API de Win32 y un componente de automatización COM para enviar solicitudes HTTP y recibir respuestas. Además, WinHTTP proporciona compatibilidad con detección automática de una configuración de proxy a través de su implementación del protocolo de detección automática de Proxy Web (WPAD).
+|   **Descripción del servicio** |   WinHTTP implementa la pila HTTP de cliente y proporciona a los desarrolladores una API Win32 y un componente de automatización COM para enviar solicitudes HTTP y recibir respuestas. Además, WinHTTP ofrece compatibilidad con la detección automática de una configuración proxy mediante la implementación del protocolo de detección automática de proxy web (WPAD).
 |   **Nombre del servicio**    |   WinHttpAutoProxySvc
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  |   No deshabilite
-|   **Comentarios**    |   Todo lo que usa la pila de red puede tener una dependencia funcional en este servicio. Muchas organizaciones confían en esta opción para configurar el proxy HTTP de sus redes internas de enrutamiento.  Sin él, que se originan internamente las conexiones HTTP a Internet todo producirá un error.
+|   **Recomendación**  |   No deshabilitar
+|   **Comentarios**    |   Todo lo que usa la pila de red puede tener una dependencia funcional de este servicio. Muchas de las organizaciones se basan en esto para configurar el enrutamiento de proxy HTTP de sus redes internas.  Sin el servicio, todas las conexiones HTTP a Internet originadas internamente presentarán un error.
 |||         
 
 <br />          
 
-## <a name="wired-autoconfig"></a>Redes cableadas         
+## <a name="wired-autoconfig"></a>Servicio de configuración automática de redes cableadas         
 
 | | |           
 |---|---|       
-|   **Descripción del servicio** |   El servicio cableadas (DOT3SVC) es responsable de IEEE 802.1X de realizar la autenticación en las interfaces Ethernet. Si su implementación actual de la red cableada exige la autenticación 802.1X, el servicio DOT3SVC debe configurarse para ejecutarse para establecer conectividad de capa 2 o proporcionar acceso a recursos de red. No se ven afectadas por el servicio DOT3SVC redes conectadas por cable que no exigen la autenticación 802.1X.
+|   **Descripción del servicio** |   El Servicio de configuración automática de redes cableadas (DOT3SVC) es responsable de realizar la autenticación IEEE 802.1X en las interfaces de Ethernet. Si la implementación de la red cableada actual exige la autenticación 802.1X, el servicio DOT3SVC debe configurarse de modo que se ejecute para establecer la conectividad de nivel 2 o proporcionar acceso a los recursos de red. Las redes cableadas que no exigen autenticación 802.1X no se verán afectadas por el servicio DOT3SVC.
 |   **Nombre del servicio**    |   dot3svc
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones   
+|   **Recomendación**  | Sin instrucciones   
 |   **Comentarios**    |   
 |||         
 
@@ -2647,54 +2647,54 @@ Las tablas siguientes ofrecen instrucciones de Microsoft acerca de cómo deshabi
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona información de la biblioteca de rendimiento de los proveedores de Instrumental de administración de Windows (WMI) a los clientes en la red. Este servicio se ejecuta solo cuando se activa la aplicación auxiliar de datos de rendimiento.
+|   **Descripción del servicio** |   Proporciona información de la biblioteca de rendimiento de proveedores WMI (Instrumental de administración de Windows) a clientes en la red. Este servicio solo se ejecuta si la Aplicación auxiliar de datos de rendimiento está activado.
 |   **Nombre del servicio**    |   wmiApSrv
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual
-|   **Recomendación**  | No hay instrucciones       
+|   **Recomendación**  | Sin instrucciones       
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="workstation"></a>estación de trabajo          
+## <a name="workstation"></a>Estación de trabajo          
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Crea y mantiene conexiones de red de cliente a servidores remotos mediante el protocolo SMB. Si se detiene este servicio, estas conexiones no estará disponibles. Si se deshabilita este servicio, no podrá iniciar los servicios que dependan explícitamente de él.
+|   **Descripción del servicio** |   Crea y mantiene conexiones de red de cliente para los servidores remotos mediante el protocolo SMB. Si se detiene este servicio, estas conexiones no estarán disponibles. Si el servicio se deshabilita, los servicios que dependen explícitamente de él no se podrán iniciar.
 |   **Nombre del servicio**    |   LanmanWorkstation
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Automático
-|   **Recomendación**  | No hay instrucciones       
+|   **Recomendación**  | Sin instrucciones       
 |   **Comentarios**    |   
 |||         
 
 <br />
 
-## <a name="xbox-live-auth-manager"></a>Administrador de Xbox Live Auth           
+## <a name="xbox-live-auth-manager"></a>Administración de autenticación de Xbox Live           
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona servicios de autenticación y autorización para interactuar con Xbox Live. Si se detiene este servicio, es posible que algunas aplicaciones no funcionan correctamente.
+|   **Descripción del servicio** |   Proporciona servicios de autenticación y de autorización para interactuar con Xbox Live. Si se detiene este servicio, es posible que algunas aplicaciones no funcionen correctamente.
 |   **Nombre del servicio**    |   XblAuthManager
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Debe estar deshabilitada
+|   **Recomendación**  |   Debe estar deshabilitado
 |   **Comentarios**    |   
 |||         
 
 <br />          
 
-## <a name="xbox-live-game-save"></a>Guardar juego de Xbox Live          
+## <a name="xbox-live-game-save"></a>Partida guardada en Xbox Live          
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Las sincronizaciones de este servicio guardar datos de Xbox Live guardar juegos habilitados.  Si se detiene este servicio, juego guardar datos no se cargue en o descargar de Xbox Live.
+|   **Descripción del servicio** |   Este servicio sincroniza los datos guardados para los juegos que pueden guardarse en Xbox Live.  Si se detiene el servicio, la partida guardada no se cargará a Xbox Live ni se descargará desde ahí.
 |   **Nombre del servicio**    |   XblGameSave
-|   **Instalación**    |   Solo con la experiencia de escritorio
+|   **Instalación**    |   Solo con Experiencia de escritorio
 |   **StartType**   |   Manual
-|   **Recomendación**  |   Debe estar deshabilitada
-|   **Comentarios**    |   Las sincronizaciones de este servicio guardar datos de Xbox Live guardar juegos habilitados.  Si se detiene este servicio, juego guardar datos no se cargue en o descargar de Xbox Live.
+|   **Recomendación**  |   Debe estar deshabilitado
+|   **Comentarios**    |   Este servicio sincroniza los datos guardados para los juegos que pueden guardarse en Xbox Live.  Si se detiene el servicio, la partida guardada no se cargará a Xbox Live ni se descargará desde ahí.
 |||         
 
 <br /> 

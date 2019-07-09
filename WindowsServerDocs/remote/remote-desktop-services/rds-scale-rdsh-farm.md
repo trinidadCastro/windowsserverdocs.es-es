@@ -1,6 +1,6 @@
 ---
-title: Escalar horizontalmente la implementación de RDS mediante la adición de una granja de servidores Host de sesión de escritorio remoto
-description: Agregar a un segundo Host de sesión de escritorio remoto a su entorno de RDS.
+title: Escalado horizontal de la implementación de Servicios de Escritorio remoto (RDS) mediante la incorporación de una granja de hosts de sesión de Escritorio remoto
+description: Agrega un segundo host de sesión de Escritorio remoto al entorno de RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,55 +13,55 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.openlocfilehash: 0e3852b4ea5f1080a3798c0806e5c87ca808c3be
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66446521"
 ---
-# <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>Escalar horizontalmente la implementación de servicios de escritorio remoto mediante la adición de una granja de servidores Host de sesión de escritorio remoto
+# <a name="scale-out-your-remote-desktop-services-deployment-by-adding-an-rd-session-host-farm"></a>Escalado horizontal de la implementación de Servicios de Escritorio remoto (RDS) mediante la incorporación de una granja de hosts de sesión de Escritorio remoto
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
-Puede mejorar la disponibilidad y escalabilidad de la implementación de RDS mediante la adición de una granja de servidores Host de sesión de escritorio remoto (RDSH).   
+Puedes mejorar la disponibilidad y el escalado de la implementación de RDS mediante la incorporación de una granja de hosts de sesión de Escritorio remoto (RDSH).   
   
  
-Use los pasos siguientes para agregar otro Host de sesión de escritorio remoto a la implementación:  
+Usa los pasos siguientes para agregar otro host de sesión de Escritorio remoto a la implementación:  
   
-1. Crear un servidor para hospedar al segundo Host de sesión de escritorio remoto. Si usa máquinas virtuales de Azure, asegúrese de incluir la nueva máquina virtual en el mismo conjunto de disponibilidad que contiene al primer Host de sesión de escritorio remoto.
-2. Habilitar la administración remota en el nuevo servidor o máquina virtual:
-   1. En el administrador del servidor, haga clic en **servidor Local > configuración actual de administración remota (deshabilitado)** . 
-   2. Seleccione **habilitar la administración remota para este servidor**y, a continuación, haga clic en **Aceptar**. 
-   3. Opcional: Windows Update para descargar e instalar actualizaciones automáticamente no se puede establecer temporalmente. Esto ayuda a evitar que los cambios y los reinicios del sistema mientras se implementa el servidor RDSH. En el administrador del servidor, haga clic en **servidor Local > configuración actual de Windows Update**. Haga clic en **opciones avanzadas > aplazar actualizaciones**. 
-3. Agregue el servidor o máquina virtual al dominio:
-   1. En el administrador del servidor, haga clic en **servidor Local > configuración de grupo de trabajo actual**. 
-   2. Haga clic en **cambio > dominio**y, a continuación, escriba el nombre de dominio (por ejemplo, Contoso.com). 
-   3. Escriba las credenciales de administrador de dominio. 
-   4. Reinicie el servidor o máquina virtual.
-4. Agregue al Host de sesión de escritorio remoto nuevo a la granja de servidores:
+1. Crea un servidor para hospedar al segundo host de sesión de Escritorio remoto. Si vas a usar máquinas virtuales de Azure, no olvides incluir la nueva máquina virtual en el mismo conjunto de disponibilidad que contiene el primer host de sesión de Escritorio remoto.
+2. Habilita la administración remota en el nuevo servidor o máquina virtual:
+   1. En Administrador del servidor, haz clic en **Servidor local > Configuración actual de administración remota (deshabilitado)** . 
+   2. Selecciona **Habilitar la administración remota para este servidor** y, a continuación, haz clic en **Aceptar**. 
+   3. Opcional: Puedes configurar temporalmente Windows Update para que no descargue e instale actualizaciones de forma automática. Esto ayuda a evitar cambios y reinicios del sistema mientras implementas el servidor de RDSH. En Administrador del servidor, haz clic en **Servidor local > Configuración actual de Windows Update**. Haz clic en **Opciones avanzadas > Aplazar actualizaciones**. 
+3. Agrega el servidor o la máquina virtual al dominio:
+   1. En Administrador del servidor, haz clic en **Servidor local > Configuración actual del grupo de trabajo**. 
+   2. Haz clic en **Cambiar > Dominio** y, a continuación, escribe el nombre del dominio (por ejemplo, Contoso.com). 
+   3. Especifica las credenciales del administrador de dominio. 
+   4. Reinicia el servidor o la máquina virtual.
+4. Agrega el nuevo host de sesión de Escritorio remoto a la granja:
    >[!NOTE] 
-   > Paso 1: creación de una dirección IP pública para la máquina virtual RDMS, solo es necesario si está usando una máquina virtual para el RDMS y si aún no tiene una dirección IP asignada.
+   > El paso 1, de creación de una dirección IP pública para la máquina virtual de RDMS, solo es necesario si vas a usar una máquina virtual para RDMS y si estos no tienen ya asignada una dirección IP.
    
-   1. Cree una dirección IP pública para la máquina virtual ejecuta Servicios de administración de escritorio remoto (RDMS). La máquina virtual RDMS normalmente será la máquina virtual ejecuta la primera instancia del rol de agente de conexión a Escritorio remoto.  
-       1. En el portal de Azure, haga clic en **examinar > grupos de recursos**, haga clic en el grupo de recursos para la implementación y, a continuación, haga clic en la máquina virtual RDMS (por ejemplo, Contoso-Cb1).  
-       2. Haga clic en **configuración > interfaces de red**y, a continuación, haga clic en la interfaz de red correspondiente.   
-       3. Haga clic en **configuración > dirección IP**.
-       4. Para **dirección IP pública**, seleccione **habilitado**y, a continuación, haga clic en **dirección IP**.   
-       5. Si tiene una dirección IP pública existente que desea usar, selecciónelo en la lista. En caso contrario, haga clic en **crear nuevo**, escriba un nombre y, a continuación, haga clic en **Aceptar** y, a continuación, **guardar**.   
-   2. Inicio de sesión en el RDMS.
-   3. Agregue un nuevo servidor RDSH al administrador del servidor:   
-       1. Inicie el administrador del servidor, haga clic en **administrar > Agregar servidores**.   
-       2. En el cuadro de diálogo Agregar servidores, haga clic en **Buscar ahora**.   
-       3. Seleccione el servidor que desea usar para el Host de sesión de escritorio remoto o la máquina virtual recién creada (por ejemplo, Contoso-Sh2) y haga clic en **Aceptar**.
+   1. Crea una dirección IP pública para la máquina virtual que ejecuta los servicios de administración de Escritorio remoto (RDMS). La máquina virtual de RDMS normalmente será la máquina virtual que ejecute la primera instancia del rol de Agente de conexión a Escritorio remoto.  
+       1. En Azure Portal, haz clic en **Examinar > Grupos de recursos**, haz clic en el grupo de recursos de la implementación y, luego, en la máquina virtual de RDMS (por ejemplo, Contoso-Cb1).  
+       2. Haz clic en **Configuración > Interfaces de red** y luego en la interfaz de red correspondiente.   
+       3. Haz clic en **Configuración> Dirección IP**.
+       4. Para la **dirección IP pública**, selecciona **Habilitado** y haz clic en **Dirección IP**.   
+       5. Si tienes una dirección IP pública existente que quieras usar, selecciónala de la lista. De lo contrario, haz clic en **Crear nuevo**, escribe un nombre y haz clic en **Aceptar** y **Guardar**.   
+   2. Inicia sesión en RDMS.
+   3. Agrega el nuevo servidor RDSH al Administrador del servidor:   
+       1. Inicia Administrador del servidor, haz clic en **Administrar > Agregar servidores**.   
+       2. En el cuadro de diálogo Agregar servidores, haz clic en **Buscar ahora**.   
+       3. Selecciona el servidor que deseas usar para el host de sesión de Escritorio remoto o la máquina virtual recién creada (por ejemplo, Contoso-Sh2) y haz clic en **Aceptar**.
    4. Adición del servidor RDSH a la implementación
-       1. Launch Server Manager .  
-       2. Haga clic en **servicios de escritorio remoto > información general > servidores de implementación > tareas > Agregar servidores de Host de sesión de escritorio remoto**.   
-       3. Seleccione el nuevo servidor (por ejemplo, Contoso-Sh2) y, a continuación, haga clic en **siguiente**.  
-       4. En la página de confirmación, seleccione **reiniciar los equipos remotos según sea necesario**y, a continuación, haga clic en **agregar**.   
-   5. Agregar servidor RDSH a la granja de servidores de recopilación:
+       1. Inicia el Administrador del servidor.  
+       2. Haz clic en **Servicios de escritorio remoto > Información general > Servidores de implementación > Tareas > Agregar servidores de host de sesión a Escritorio remoto**.   
+       3. Selecciona el nuevo servidor (por ejemplo, Contoso-Sh2) y haz clic en **Siguiente**.  
+       4. En la página de confirmación, selecciona **Reiniciar equipos remotos según sea necesario** y, a continuación, haz clic en **Agregar**.   
+   5. Adición del servidor RDSH a la granja de colecciones:
        1. Inicia el Administrador del servidor.   
-       2. Haga clic en **servicios de escritorio remoto** y, a continuación, haga clic en la colección a la que desea agregar el servidor RDSH recién creado (por ejemplo, ContosoDesktop).   
-       3. En **servidores Host**, haga clic en **tareas > Agregar servidores de Host de sesión de escritorio remoto**.   
-       4. Seleccione el servidor recién creado (por ejemplo, Contoso-Sh2) y, a continuación, haga clic en **siguiente**.   
-       5. En la página de confirmación, haga clic en **agregar**.   
+       2. Haz clic en **Servicios de Escritorio remoto** y, a continuación, haz clic en la colección a la que deseas agregar el servidor RDSH recién creado (por ejemplo, ContosoDesktop).   
+       3. En **Servidores host**, haz clic en **Tareas > Agregar servidores de host de sesión a Escritorio remoto**.   
+       4. Selecciona el servidor recién creado (por ejemplo, Contoso-Sh2) y haz clic en **Siguiente**.   
+       5. En la página Confirmación, haz clic en **Agregar**.   
 

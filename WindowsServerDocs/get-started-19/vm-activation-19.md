@@ -1,7 +1,7 @@
 ---
 title: Activación automática de máquina virtual
 TOCTitle: Automatic VM Activation
-description: Cómo activar las máquinas virtuales en Windows Server 2012 R2, Windows Server 2016 y Windows Server 2019
+description: Activación de máquinas virtuales en Windows Server 2019, Windows Server 2016 y Windows Server 2012 R2
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,15 +13,15 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.openlocfilehash: 18e20433050371dc02782fb8630a885e53ae31ad
-ms.sourcegitcommit: 2977c707a299929c6ab0d1e0adab2e1c644b8306
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/24/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "63688705"
 ---
 # <a name="automatic-virtual-machine-activation"></a>Activación automática de máquina virtual
 
-> Se aplica a: Windows Server 2019, canal semianual de Windows Server, Windows Server 2016, Windows Server 2012 R2
+> Se aplica a: Windows Server 2019, Windows Server (Canal semianual), Windows Server 2016, Windows Server 2012 R2
 
 La activación automática de máquina virtual (AVMA) actúa como un mecanismo de prueba de compra y ayuda a garantizar que los productos Windows se utilicen en conformidad con los Derechos de uso del producto y los Términos de licencia del software de Microsoft.
 
@@ -45,25 +45,25 @@ Los partners de Contrato de licencia de proveedor de servicios (SPLA) y otros pr
 
 ## <a name="system-requirements"></a>Requisitos del sistema
 
-AVMA requiere un servidor de virtualización de Microsoft que ejecutan Windows Server 2012 R2, Windows Server 2016 Datacenter o Windows Server Datacenter de 2019. 
+AVMA requiere una instancia de Microsoft Virtualization Server que ejecute Windows Server 2019, Windows Server 2016 Datacenter o Windows Server 2012 R2. 
 
-Estos son los invitados que pueden activar los hosts de versión diferentes:
+Estos son los invitados que los hosts de diferentes versiones pueden activar:
 
-|Versión del servidor host|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
+|Versión del servidor host|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
 |-|-|-|-|
-|Windows Server 2019|X|X|X|
+|Windows Server 2019|X|X|X|
 |Windows Server 2016| |X|X|
 |Windows Server 2012 R2| ||X|
 
-Tenga en cuenta que estos activación todas las ediciones (Essentials, Standard o Datacenter).
+Observa que estas activan todas las ediciones (Datacenter, Standard o Essentials).
 
 Esta herramienta no funciona con otras tecnologías de servidor de virtualización.
 
 ## <a name="how-to-implement-avma"></a>Cómo implementar AVMA
 
-1.  En un servidor de virtualización de Windows Server Datacenter, instale y configure el rol de servidor de Hyper-V de Microsoft. Para obtener más información, consulte [instalar Hyper-V Server](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md).
+1.  En un servidor de virtualización Windows Server Datacenter, instala y configura el rol de Microsoft Hyper-V Server. Para más información, consulta el tema sobre la [instalación de Hyper-V Server](../virtualization/hyper-v/get-started/install-the-hyper-v-role-on-windows-server.md).
 
-2.  [Crear una máquina virtual](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md) e instalar un sistema operativo de servidor admitidos en ella.
+2.  [Crea una máquina virtual](../virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v.md) e instala en ella un sistema operativo de servidor compatible.
 
 3.  Instale la clave de AVMA en la máquina virtual. Desde un símbolo del sistema con privilegios elevados, ejecute el siguiente comando:
     
@@ -80,7 +80,7 @@ La máquina virtual activará automáticamente la licencia frente al servidor de
 
 ## <a name="avma-keys"></a>Claves de AVMA
 
-Las siguientes claves AVMA pueden utilizarse para Windows Server 2019.
+Pueden utilizarse las siguientes claves de AVMA para Windows Server 2019.
 
 |Edición|   Clave de AVMA|
 |-|-|
@@ -88,14 +88,14 @@ Las siguientes claves AVMA pueden utilizarse para Windows Server 2019.
 |Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
 |Essentials|    2CTP7-NHT64-BP62M-FV6GG-HFV28|
  
-Las siguientes claves AVMA pueden utilizarse para Windows Server, versión 1809.
+Pueden utilizarse las siguientes claves de AVMA para Windows Server, versión 1809.
 
 |Edición|   Clave de AVMA|
 |-|-|
 |Datacenter|    H3RNG-8C32Q-Q8FRX-6TDXV-WMBMW|
 |Standard|  TNK62-RXVTB-4P47B-2D623-4GF74|
 
-Las siguientes claves AVMA pueden utilizarse para Windows Server, versión 1803 y 1709.
+Pueden utilizarse las siguientes claves de AVMA para Windows Server, versiones 1803 y 1709.
 
 |Edición|Clave de AVMA|
 |-|-|
@@ -103,7 +103,7 @@ Las siguientes claves AVMA pueden utilizarse para Windows Server, versión 1803 
 |Standard|C3RCX-M6NRP-6CXC9-TW2F2-4RHYD|
 
 
-Las siguientes claves AVMA pueden utilizarse para Windows Server 2016.
+Pueden utilizarse las siguientes claves de AVMA para Windows Server 2016.
 
 |Edición|Clave de AVMA|
 |-|-|
@@ -134,7 +134,7 @@ El Registro (KVP) en el servidor de virtualización proporciona datos de seguimi
 
   - Direcciones RDP
 
-Para obtener más información acerca de cómo obtener esta información, consulte [Hyper-V Script: Observación de GuestIntrinsicExchangeItems KVP en](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx).
+Para más información sobre cómo obtener esta información, consulta el tema acerca del [script de Hyper-V: observación de GuestIntrinsicExchangeItems en KVP](http://blogs.msdn.com/b/virtual_pc_guy/archive/2008/11/18/hyper-v-script-looking-at-kvp-guestintrinsicexchangeitems.aspx).
 
 
 > [!NOTE]
@@ -150,7 +150,7 @@ Los datos históricos acerca de las solicitudes de AVMA están disponibles en un
 
 Dado que el proceso de activación de AVMA es transparente, los mensajes de error no se muestran. No obstante, los eventos siguientes se capturan en un archivo de registro en las máquinas virtuales (id. de evento 12309).
 
-|Notification|Descripción|
+|Notificación|Descripción|
 |-|-|
 |Éxito de AVMA|El equipo virtual se ha activado.|
 |Host no válido|El servidor de virtualización deja de responder. Esto puede suceder cuando el servidor no ejecuta una versión compatible de Windows.|

@@ -1,6 +1,6 @@
 ---
-title: Clientes de escritorio remoto preguntas más frecuentes
-description: Preguntas más frecuentes acerca de los clientes de escritorio remoto
+title: Preguntas más frecuentes sobre los clientes de Escritorio remoto
+description: Preguntas más frecuentes sobre los clientes de Escritorio remoto
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -15,227 +15,227 @@ ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
 ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66804950"
 ---
-# <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Preguntas más frecuentes acerca de los clientes de escritorio remoto
+# <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Preguntas más frecuentes sobre los clientes de Escritorio remoto
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
+>Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2
 
-Ahora que ha configurado el cliente de escritorio remoto en el dispositivo (Android, Mac, iOS o Windows), es posible que tenga dudas. Aquí encontrará respuestas a las preguntas más frecuentes acerca de los clientes de escritorio remoto. 
+Ahora que configuraste el cliente de Escritorio remoto en tu dispositivo (Android, Mac, iOS o Windows), puede que tengas algunas preguntas. Aquí encontrarás las respuestas a las preguntas más frecuentes sobre los clientes de Escritorio remoto. 
 
-- [Configurar](#setting-up)
-- [Conexiones de puerta de enlace y redes](#connection-gateway-and-networks)
-- [cliente Web](#web-client)
+- [Configuración](#setting-up)
+- [Conexiones, puertas de enlace y redes](#connection-gateway-and-networks)
+- [Cliente web](#web-client)
 - [Monitores, audio y mouse](#monitors-audio-and-mouse)
 - [Hardware de Mac](#mac-client---hardware-questions)
 - [Mensajes de error específicos](#specific-errors)
 
-La mayoría de estas preguntas se aplican a todos los clientes, pero hay algunos elementos específicos de cliente.
+La mayoría de estas preguntas se aplican a todos los clientes, pero hay algunos elementos específicos para algún cliente.
 
-Si tiene preguntas adicionales que le gustaría respondamos a, dejarlos como comentarios en este artículo.
+Si tienes más preguntas que quieres que respondamos, déjalas como comentarios sobre este artículo.
 
-## <a name="setting-up"></a>Configurar
+## <a name="setting-up"></a>Configuración
 
-### <a name="which-pcs-can-i-connect-to"></a>¿Qué equipos me conecto a?
+### <a name="which-pcs-can-i-connect-to"></a>¿A qué equipos me puedo conectar?
 
-Consulte la [admite configuración](remote-desktop-supported-config.md) artículo para obtener información acerca de qué equipos se puede conectar a.
+Revisa el artículo sobre la [configuración admitida](remote-desktop-supported-config.md) para obtener información sobre los equipos a los que te puedes conectar.
 
-### <a name="how-do-i-set-up-a-pc-for-remote-desktop"></a>¿Cómo configuro un PC de escritorio remoto?
+### <a name="how-do-i-set-up-a-pc-for-remote-desktop"></a>¿Cómo configuro un equipo para Escritorio remoto?
 
-Tengo mi dispositivo configurado, pero no creo listo del equipo. ¿Ayuda?
+Mi dispositivo está configurado, pero no creo que el equipo esté listo. ¿Necesitas ayuda?
 
-¿En primer lugar, ha visto al Asistente para configuración de escritorio remoto? Le guía a través de preparación de su PC para acceso remoto. Descarga y ejecución que la herramienta en su PC para que todo el conjunto. 
+En primer lugar, ¿has visto el Asistente para la instalación de Escritorio remoto? Te guía por el proceso de preparar tu equipo para el acceso remoto. Descarga y ejecuta esa herramienta en tu equipo para instalar y configurar todo. 
 
-En caso contrario, si prefiere hacer cosas manualmente, siga leyendo.
+En caso contrario, si prefieres seguir los procesos manualmente, sigue leyendo.
 
-Para Windows 10, haga lo siguiente:
+En Windows 10, haz lo siguiente:
 
-1. En el dispositivo que desea conectarse, abra **configuración**.
-2. Seleccione **sistema** y, a continuación, **escritorio remoto**.
-3. Use el control deslizante para habilitar Escritorio remoto.
-4. En general, es mejor mantener el equipo activo y reconocible para facilitar las conexiones. Haga clic en **Mostrar configuración** para ir a la configuración de energía de su PC, donde puede cambiar esta configuración.
+1. En el dispositivo al que quieres conectarte, abre **Configuración**.
+2. Selecciona **Sistema** y, después, **Escritorio remoto**.
+3. Utiliza el control deslizante para habilitar Escritorio remoto.
+4. En general, lo mejor es el equipo activo y reconocible para facilitar las conexiones. Haz clic en **Mostrar configuración** para ir a la configuración de energía del equipo, donde puedes cambiar esta configuración.
    > [!NOTE]
-   > No puede conectarse a un equipo que está en suspensión o hibernación, así que asegúrese de que la configuración de suspensión e hibernación en el equipo remoto se establecen en **nunca**. (Modo de hibernación no está disponible en todos los equipos).
+   > No puedes conectarte a un equipo que está en suspensión o en hibernación, así es que asegúrate de que la configuración de suspensión o hibernación del equipo remoto esté establecida en **Nunca**. (La hibernación no está disponible en todos los equipos).
 
 
-Tome nota del nombre de este equipo bajo **cómo conectarse a este equipo**. Las necesitará para configurar a los clientes.
+Toma nota del nombre de este equipo en **How to connect to this PC** (Cómo conectarse a este equipo). Lo necesitarás para configurar a los clientes.
 
-Puede conceder permiso a usuarios específicos tener acceso a este equipo: para ello, haga clic en **seleccione los usuarios que pueden obtener acceso remoto a este equipo**.
-Los miembros del grupo de administradores automáticamente tienen acceso.
+Puedes conceder permiso para que usuarios específicos accedan a este equipo; para hacerlo, haz clic en **Select users that can remotely access this PC** (Seleccionar los usuarios que pueden obtener acceso remoto a este equipo).
+Los miembros del grupo de administradores tienen acceso de forma automática.
 
-Para Windows 8.1, siga las instrucciones para permitir conexiones remotas en [conectarse a otro de escritorio con conexiones a Escritorio remoto](https://support.microsoft.com/en-us/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8).
+En Windows 8.1, sigue las instrucciones para permitir conexiones remotas que aparecen en [Conectarse a otro equipo mediante Conexión a Escritorio remoto](https://support.microsoft.com/en-us/help/17463/windows-7-connect-to-another-computer-remote-desktop-connection#1TC=windows-8).
 
 
 
-## <a name="connection-gateway-and-networks"></a>Conexión de puerta de enlace y redes
+## <a name="connection-gateway-and-networks"></a>Conexiones, puertas de enlace y redes
 
-### <a name="why-cant-i-connect-using-remote-desktop"></a>¿Por qué no puedo conectar utilizando Escritorio remoto?
+### <a name="why-cant-i-connect-using-remote-desktop"></a>¿Por qué no me puedo conectar mediante Escritorio remoto?
 
-Estas son algunas posibles soluciones a problemas comunes que puede surgir al intentar conectarse a un equipo remoto. Si estas soluciones no funcionan, puede buscar más ayuda en el [sitio Web de Microsoft Community](https://go.microsoft.com/fwlink/p/?LinkId=242079).
+Estas son algunas de las soluciones posibles a los problemas comunes que podrías encontrar al intentar conectarte a un equipo remoto. Si estas soluciones no funcionan, puedes encontrar más ayuda en el [sitio web de la Comunidad Windows](https://go.microsoft.com/fwlink/p/?LinkId=242079).
 
-- **No se encuentra el equipo remoto.** Asegúrese de que tiene el nombre de equipo correcto y, a continuación, compruebe si escribió correctamente ese nombre. Si sigue sin poder conectarse, pruebe a usar la dirección IP del equipo remoto en lugar del nombre de equipo.
-- **Hay un problema con la red.** Asegúrese de que tiene conexión a internet. 
-- **El puerto de escritorio remoto podría estar bloqueado por un firewall.** Si usa Firewall de Windows, siga estos pasos:
+- **No se encuentra el equipo remoto.** Asegúrate de tener el nombre del equipo correcto y revisa si lo escribiste correctamente. Si sigues sin poder conectarte, trata de usar la dirección IP del equipo remoto en lugar el nombre del equipo.
+- **Hay un problema con la red.** Asegúrate de tener conexión a Internet. 
+- **El puerto de Escritorio remoto puede estar bloqueado por un firewall.** Sigue estos pasos si usas el Firewall de Windows:
 
   1. Abra Firewall de Windows. 
-  2. Haga clic en **permitir una aplicación o característica a través de Firewall de Windows**. 
-  3. Haga clic en **cambiar la configuración de**. Puede que se le pida una contraseña de administrador o para confirmar su elección.
-  4. En **aplicaciones y características permitidas**, seleccione **escritorio remoto**y, a continuación, pulse o haga clic en **Aceptar**.
+  2. Haz clic en **Permitir una aplicación o una característica a través del Firewall de Windows**. 
+  3. Haz clic en **Cambiar configuración**. Es posible que se te pida una contraseña de administrador o que confirmes la selección.
+  4. En **Allowed apps and features** (Aplicaciones y características permitidas), selecciona **Escritorio remoto** y pulsa o haz clic en **Aceptar**.
 
-     Si usa otro firewall, asegúrese de que el puerto de escritorio remoto (normalmente 3389) esté abierto.
-- **Las conexiones remotas no se pueden configurar en el equipo remoto.** Para solucionar este problema, desplácese hacia atrás hasta [¿Cómo configuro un PC de escritorio remoto?](#how-do-i-set-up-a-pc-for-remote-desktop) pregunta en este tema.
-- **El equipo remoto podría permitir sólo conectar los equipos que tienen la configuración de autenticación a nivel de red.** 
-- **El equipo remoto podría estar desactivado.** No puede conectarse a un equipo que está apagado, suspensión o hibernación, así que asegúrese de que la configuración de suspensión e hibernación en el equipo remoto se establecen en **nunca** (modo de hibernación no está disponible en todos los equipos.).
+     Si usas otro firewall, asegúrate de que el puerto de Escritorio remoto (por lo general, 3389) está abierto.
+- **Es posible que las conexiones remotas no estén configuradas en el equipo remoto.** Para solucionar este problema, desplázate hacia atrás hasta la pregunta [¿Cómo configuro un equipo para Escritorio remoto?](#how-do-i-set-up-a-pc-for-remote-desktop) en este tema.
+- **Es posible que el equipo remoto solo permita que se conecten equipos que tienen configurada la Autenticación a nivel de red.** 
+- **Puede que el equipo remoto esté apagado.** No puedes conectarte a un equipo apagado, en suspensión o en hibernación, así es que asegúrate de que la configuración de la suspensión o la hibernación en el equipo remoto esté establecida en **Nunca** (la hibernación no está disponible en todos los equipos).
 
-### <a name="why-cant-i-find-or-connect-to-my-pc"></a>¿Por qué no puedo encontrar o conectarse a su PC?
+### <a name="why-cant-i-find-or-connect-to-my-pc"></a>¿Por qué no puedo encontrar mi equipo ni conectarme a él?
 
 Compruebe lo siguiente:
 
-- ¿Es el PC y Active?
-- ¿Escriba la dirección IP o el nombre correcto?
+- ¿El equipo está encendido y activo?
+- ¿Escribiste la dirección IP o el nombre correcto?
 
    > [!IMPORTANT]
-   > Con el nombre de equipo requiere que la red para resolver el nombre correctamente a través de DNS. En muchas redes domésticas, tendrá que usar la dirección IP en lugar del nombre de host para conectarse.
-- ¿Es el PC en una red diferente? ¿Si configuró el equipo para permitir que fuera de las conexiones a través?  Desproteger [permitir el acceso a su equipo desde fuera de la red](remote-desktop-allow-outside-access.md) para obtener ayuda.
-- ¿Está conectado a una versión compatible de Windows? 
+   > Para usar el nombre del equipo, tu red debe resolver correctamente el nombre a través de DNS. En muchas redes domésticas, tienes que usar la dirección IP en lugar del nombre de host para conectarte.
+- ¿El equipo está en otra red? ¿Configuraste el equipo para permitir las conexiones externas?  Si necesitas ayuda, revisa [Permitir el acceso a tu PC desde fuera de la red](remote-desktop-allow-outside-access.md).
+- ¿Estás conectado a una versión compatible de Windows? 
 
    > [!NOTE]
-   > Windows XP Home, Windows Media Center Edition, Windows Vista Home y Windows 7 Home o Starter no se admiten sin 3rd software de terceros.
+   > Windows XP Home, Windows Media Center Edition, Windows Vista Home ni Windows 7 Home o Starter son compatibles sin software de terceros.
 
 ### <a name="why-cant-i-sign-in-to-a-remote-pc"></a>¿Por qué no puedo iniciar sesión en un equipo remoto?
 
-Si puede ver la pantalla de inicio de sesión del equipo remoto, pero no puede iniciar sesión, es posible que no se agregaron al grupo de usuarios de escritorio remoto o a cualquier grupo con derechos de administrador en el equipo remoto. Pídale al administrador del sistema para hacer esto por usted.
+Si puedes ver la pantalla de inicio de sesión del equipo remoto pero no puedes iniciar sesión, es posible que no te hayan agregado al grupo de usuarios de Escritorio remoto ni a ningún grupo con derechos de administrador del equipo remoto. Pídele al administrador del sistema que te agregue.
 
-### <a name="which-connection-methods-are-supported-for-company-networks"></a>¿Los métodos de conexión se admiten para redes de empresa?
+### <a name="which-connection-methods-are-supported-for-company-networks"></a>¿Cuáles son los métodos de conexión admitidos para las redes de la empresa?
 
-Si desea obtener acceso al escritorio de office desde fuera de la red de empresa, su empresa debe proporcionar un medio de acceso remoto. Actualmente, el cliente de escritorio remoto admite lo siguiente:
+Si quieres acceder al escritorio de la oficina desde fuera de la red de la empresa, la empresa debe brindarte un medio de acceso remoto. El cliente de Escritorio remoto actualmente admite lo siguiente:
 
-- Puerta de enlace de Terminal Server o la puerta de enlace de escritorio remoto
-- Acceso Web a Escritorio remoto
-- VPN (a través de opciones de VPN de iOS integradas)
+- Puerta de enlace de Terminal Server o Puerta de enlace de Escritorio remoto.
+- Acceso web de Escritorio remoto.
+- VPN (a través de opciones de VPN integradas de iOS).
 
-### <a name="vpn-doesnt-work"></a>VPN no funciona
+### <a name="vpn-doesnt-work"></a>La VPN no funciona
 
-Problemas de VPN pueden tener varias causas. El primer paso es comprobar que la conexión VPN funciona en la misma red que un equipo PC o Mac. Si no se puede probar con un PC o Mac, puede intentar obtener acceso a una página de web de intranet de la compañía con el explorador del dispositivo.
+Los problemas de VPN pueden tener varias causas. El primer paso es comprobar que la VPN funciona en la misma red que el equipo PC o Mac. Si no puedes probar con un equipo PC o Mac, puedes intentar acceder a una página web de la intranet de la empresa con el explorador del dispositivo.
 
-Para comprobar otras cosas:
-- **La red 3G se bloquea o daña la VPN.** Hay varios proveedores de 3G en el mundo que parecen dañados tráfico de 3G o bloque. Compruebe la conectividad VPN funciona correctamente para más de un minuto.
-- **L2TP o PPTP VPN.** Si usa L2TP o PPTP en la VPN, establezca enviar todo el tráfico en ON en la configuración de VPN.
-- **VPN está mal configurada.** Un servidor VPN mal configurado puede ser la razón por la las conexiones VPN nunca funcionaban o dejó de funcionar más tarde. Asegúrese de probar con iOS explorador web del dispositivo o un PC o Mac en la misma red, si esto ocurre.
+Otros aspectos que debes comprobar:
+- **La red 3G bloquea o daña la VPN.** Hay varios proveedores de 3G que parecen bloquear o dañar el tráfico de 3G. Comprueba que la conectividad de la VPN funciona correctamente durante más de un minuto.
+- **VPN de L2TP o PPTP.** Si usas L2TP o PPTP en la VPN, establece Enviar todo el tráfico en ON (Activado) en la configuración de la VPN.
+- **La VPN está mal configurada.** Un servidor de VPN mal configurado puede ser la razón de por qué las conexiones de VPN no funcionaron nunca o dejaron de funcionar después de un tiempo. Si esto sucede, asegúrate de probar con el explorador web del dispositivo iOS o un equipo PC o Mac en la misma red.
 
-### <a name="how-can-i-test-if-vpn-is-working-properly"></a>¿Cómo se puede probar si VPN está funcionando correctamente?
+### <a name="how-can-i-test-if-vpn-is-working-properly"></a>¿Cómo puedo probar si la VPN funciona correctamente?
 
-Compruebe que la VPN está habilitada en el dispositivo. Puede probar la conexión VPN a una página Web en su red interna o mediante un servicio web que solo está disponible a través de la VPN.
+Comprueba que la VPN está habilitada en tu dispositivo. Para probar la conexión VPN, ve a una página web en la red interna o usa un servicio web que solo esté disponible a través de la VPN.
 
-### <a name="how-do-i-configure-l2tp-or-pptp-vpn-connections"></a>¿Cómo se puede configurar las conexiones L2TP o PPTP VPN?
+### <a name="how-do-i-configure-l2tp-or-pptp-vpn-connections"></a>¿Cómo configuro las conexiones VPN de L2TP o PPTP?
 
-Si usa L2TP o PPTP en la VPN, asegúrese de establecer **enviar todo el tráfico** a **ON** en la configuración de VPN.
+Si usas L2TP o PPTP en la VPN, asegúrate de establecer **Enviar todo el tráfico** en **ON** (Activado) en la configuración de la VPN.
 
-## <a name="web-client"></a>cliente Web
+## <a name="web-client"></a>Cliente web
 
 ### <a name="which-browsers-can-i-use"></a>¿Qué exploradores puedo usar?
 
-El cliente web es compatible con Microsoft Edge, Internet Explorer 11, Mozilla Firefox (v55.0 y versiones posteriores), Safari y Google Chrome.
+El cliente web es compatible con Microsoft Edge, Internet Explorer 11, Mozilla Firefox (versión 55.0 y posteriores), Safari y Google Chrome.
 
-### <a name="what-pcs-can-i-use-to-access-the-web-client"></a>¿Qué equipos puedo usar para tener acceso a los clientes web?
+### <a name="what-pcs-can-i-use-to-access-the-web-client"></a>¿Qué equipos puedo usar para acceder al cliente web?
 
-El cliente web es compatible con Windows, macOS, Linux y ChromeOS. No se admiten los dispositivos móviles en este momento.
+El cliente web admite Windows, macOS, Linux y ChromeOS. En este momento no se admiten dispositivos móviles.
 
-### <a name="can-i-use-the-web-client-in-a-remote-desktop-deployment-without-a-gateway"></a>¿Puedo usar al cliente web en una implementación de escritorio remoto sin una puerta de enlace?
+### <a name="can-i-use-the-web-client-in-a-remote-desktop-deployment-without-a-gateway"></a>¿Puedo usar el cliente web en una implementación de Escritorio remoto sin una puerta de enlace?
 
-No. El cliente requiere una puerta de enlace de escritorio remoto para conectarse. ¿No sabe lo que significa? Consulte al administrador sobre él.
+No. El cliente requiere una puerta de enlace de Escritorio remoto para conectarse. ¿No sabes qué significa eso? Pregúntale al administrador.
 
-### <a name="does-the-remote-desktop-web-client-replace-the-remote-desktop-web-access-page"></a>¿El cliente web de escritorio remoto reemplaza la página acceso Web a Escritorio remoto?
+### <a name="does-the-remote-desktop-web-client-replace-the-remote-desktop-web-access-page"></a>¿El cliente web de Escritorio remoto reemplaza la página de acceso web de Escritorio remoto?
 
-No. El cliente web de escritorio remoto se hospeda en una dirección URL diferente que la página acceso Web a Escritorio remoto. Puede usar el cliente web o en la página Web Access para ver los recursos remotos en un explorador.
+No. El cliente web de Escritorio remoto está hospedado en una dirección URL distinta de la página de acceso web de Escritorio remoto. Puedes usar el cliente web o la página de acceso web para ver los recursos remotos en un explorador.
 
-### <a name="can-i-embed-the-web-client-in-another-web-page"></a>¿Se puede incrustar al cliente web en otra página web?
+### <a name="can-i-embed-the-web-client-in-another-web-page"></a>¿Puedo insertar el cliente web en otra página web?
 
-Esta característica no se admite en este momento.
+Por el momento, no se admite esta característica.
 
 ## <a name="monitors-audio-and-mouse"></a>Monitores, audio y mouse
 
-### <a name="how-do-i-use-all-of-my-monitors"></a>Cómo usar todos mis monitores
-Para usar dos o más pantallas, realice lo siguiente:
+### <a name="how-do-i-use-all-of-my-monitors"></a>¿Cómo uso todos mis monitores?
+Para usar dos o más pantallas, haz lo siguiente:
 
-1. Haga clic en el escritorio remoto que desea habilitar varias pantallas para y, a continuación, haga clic en **editar**.
-2. Habilitar **usar todos los monitores** y **pantalla completa**.
+1. Haz clic con el botón derecho en el Escritorio remoto para el que quieres habilitar varias pantallas y, luego, haz clic en **Editar**.
+2. Habilita **Use all monitors** (Usar todos los monitores) y **Full screen** (Pantalla completa).
 
-### <a name="is-bi-directional-sound-supported"></a>¿Es compatible con sonido bidireccional?
-Sonido ascendente (del cliente al servidor, para micrófonos) no es compatible con el cliente de escritorio remoto.
+### <a name="is-bi-directional-sound-supported"></a>¿Se admite el sonido bidireccional?
+El cliente de Escritorio remoto no admite el sonido ascendente (desde el cliente al servidor, para los micrófonos).
 
 ### <a name="what-can-i-do-if-the-sound-wont-play"></a>¿Qué puedo hacer si no se reproduce el sonido?
-Cierre la sesión de la sesión (no solo desconectar, cerrar sesión completamente) y, a continuación, vuelva a iniciarla.
+Cierra la sesión (no solo te desconectes, sino que cierra totalmente la sesión) y vuelve a iniciarla.
 
-## <a name="mac-client---hardware-questions"></a>Cliente de Mac - preguntas de hardware
-### <a name="is-retina-resolution-supported"></a>¿Se admite la resolución retina?
-Sí, el cliente de escritorio remoto admite resolución retina.
+## <a name="mac-client---hardware-questions"></a>Cliente de Mac: preguntas de hardware
+### <a name="is-retina-resolution-supported"></a>¿Se admite la resolución Retina?
+Sí, el cliente de Escritorio remoto admite la resolución Retina.
 
-### <a name="how-do-i-enable-secondary-right-click"></a>¿Cómo habilito contextual secundaria?
-Para asegurarse de usar el botón secundario dentro de una sesión abierta tiene tres opciones:
+### <a name="how-do-i-enable-secondary-right-click"></a>¿Cómo habilito el clic con el botón derecho secundario?
+Tienes tres opciones para usar el clic con el botón derecho en una sesión abierta:
 
-- Mouse de estándar PC dos botones USB
-- Mouse mágica de Apple: Para habilitar el botón derecho, haga clic en **preferencias del sistema** en el dock, haga clic en **Mouse**y, a continuación, habilite **clic secundaria**.
-- Apple mágica Trackpad o MacBook Trackpad: Para habilitar el botón derecho, haga clic en **preferencias del sistema** en el dock, haga clic en **Mouse**y, a continuación, habilite **clic secundaria**.
+- Mouse USB de PC estándar con dos botones.
+- Magic Mouse de Apple: Para habilitar el clic con el botón derecho, haz clic en **Preferencias del sistema** en la base de acoplamiento, haz clic en **Mouse** y habilita **Clic secundario**.
+- Magic Trackpad o MacBook Trackpad de Apple: Para habilitar el clic con el botón derecho, haz clic en **Preferencias del sistema** en la base de acoplamiento, haz clic en **Mouse** y habilita **Clic secundario**.
 
-### <a name="is-airprint-supported"></a>¿Es compatible con AirPrint?
-No, el cliente de escritorio remoto no admite AirPrint. (Esto es cierto para los clientes Mac e iOS).
+### <a name="is-airprint-supported"></a>¿Se admite AirPrint?
+No, el cliente de Escritorio remoto no admite AirPrint. (Esto ocurre tanto en clientes Mac como iOS).
 
 ### <a name="why-do-incorrect-characters-appear-in-the-session"></a>¿Por qué aparecen caracteres incorrectos en la sesión?
-Si usa un teclado internacional, puede aparecer un problema donde los caracteres que aparecen en la sesión coincide con los caracteres que escribió en el teclado de Mac.
+Si usas un teclado internacional, es posible que tengas el problema de que los caracteres que aparecen en la sesión no coinciden con los caracteres que escribiste en el teclado Mac.
 
-Esto puede ocurrir en los siguientes escenarios:
+Esto puede ocurrir en los escenarios siguientes:
 
-- Usa un teclado que no reconoce la sesión remota. Al escritorio remoto no reconoce el teclado, el valor predeterminado es el idioma utilizado por última vez en el equipo remoto.
-- Se conecta a una sesión desconectada previamente en un equipo remoto y que el equipo remoto usa un lenguaje de teclado diferente que el lenguaje que está actualmente intentando usar.
+- Estás usando un teclado que la sesión remota no reconoce. Cuando Escritorio remoto no reconoce el teclado, se establece de manera predeterminada en el último idioma usado con el equipo remoto.
+- Te estás conectando a una sesión que se desconectó previamente en un equipo remoto y ese equipo remoto usa un idioma de teclado distinto del idioma que actualmente intentas usar.
 
-Puede solucionar este problema estableciendo manualmente el idioma del teclado para la sesión remota. Consulte los pasos descritos en la sección siguiente.
+Para corregir este problema, establece de manera manual el idioma del teclado de la sesión remota. Consulta los pasos en la sección siguiente.
 
-### <a name="how-do-language-settings-affect-keyboards-in-a-remote-session"></a>¿Cómo afecta la configuración de idioma teclados en una sesión remota?
-Hay muchos tipos de diseños de teclado de Mac. Algunas de ellas son diseños específicos de Mac o diseños personalizados para que una coincidencia exacta no estén disponible en la versión de Windows están en comunicación remota de. La sesión remota asigna el teclado a la mejor coincidencia de idioma de teclado disponible en el equipo remoto. 
+### <a name="how-do-language-settings-affect-keyboards-in-a-remote-session"></a>¿Cómo afecta la configuración del idioma a los teclados durante una sesión remota?
+Hay muchos tipos de distribuciones del teclado de Mac. Algunas son distribuciones específicas de Mac o distribuciones personalizadas para las que es posible que no haya disponible una coincidencia exacta en la versión de Windows con la que te comunicas de manera remota. La sesión remota asigna el teclado a la mejor coincidencia de idioma de teclado disponible en el equipo remoto. 
 
-Si la distribución del teclado de Mac está establecida en la versión de PC de su teclado y el teclado del idioma (por ejemplo, francés – PC) todas las claves se deben asignar correctamente debería funcionar.
+Si la distribución del teclado Mac está establecida en la versión de PC del teclado de idioma (por ejemplo, Francés - PC), todas las teclas deberían estar correctamente asignadas y el teclado debería funcionar.
 
-Si la distribución del teclado de Mac está establecida en la versión de Mac de un teclado (por ejemplo, francés) la sesión remota asignará a la versión de PC de francés. Algunos de los métodos abreviados de teclado de Mac que estén acostumbrados a utilizar en OSX no funcionará en la sesión remota de Windows.
+Si la distribución del teclado Mac está establecida en la versión de MAC de un teclado (por ejemplo, Francés), la sesión remota te asignará a la versión de PC del idioma francés. Algunas de las combinaciones de teclas de Mac que estás acostumbrado a usar en OSX no van a funcionar en la sesión remota de Windows.
 
-Si la distribución del teclado está establecida en una variación de un idioma (por ejemplo, francés canadiense) y la sesión remota no puede asignar a ese variación exacta, la sesión remota asignará al idioma más cercano (por ejemplo, francés). Algunos de los métodos abreviados de teclado de Mac que estén acostumbrados a utilizar en OSX no funcionará en la sesión remota de Windows.
+Si la distribución del teclado está establecida en una variación de un idioma (por ejemplo, Francés canadiense) y si la sesión remota no te puede asignar a esa variación exacta, la sesión remota te asignará al idioma más cercano (por ejemplo, Francés). Algunas de las combinaciones de teclas de Mac que estás acostumbrado a usar en OSX no van a funcionar en la sesión remota de Windows.
 
-Si la distribución del teclado está establecida en un diseño de que la sesión remota no puede hacer coincidir en absoluto, predeterminado de la sesión remota para darle el idioma que se utilizó por última vez con ese equipo. En este caso, o en casos donde es necesario cambiar el idioma de la sesión remota para que coincida con el teclado de Mac, puede establecer manualmente el idioma del teclado en la sesión remota en el idioma que es la coincidencia más cercana a la que desea usar como sigue.
+Si la distribución del teclado está establecida en una distribución con la que la sesión remota no puede coincidir para nada, la sesión remota se establecerá en el valor predeterminado para ofrecerte el último idioma que usaste con ese PC. En este caso, o en casos donde necesitas cambiar el idioma de la sesión remota para que coincida con el teclado de Mac, puedes establecer manualmente el idioma del teclado de la sesión remota en el idioma más cercano al que quieres usar de la siguiente manera.
 
-Utilice las instrucciones siguientes para cambiar la distribución del teclado dentro de la sesión de escritorio remota:
+Usa estas instrucciones para cambiar la distribución del teclado dentro de la sesión de Escritorio remoto:
 
-**En Windows 10 o Windows 8:**
+**En Windows 10 o Windows 8:**
 
-1. Desde dentro de la sesión remota, abra región e idioma. Haga clic en **Inicio > Configuración > hora e idioma**. Abra **región e idioma**.
-2. Agregue el idioma que desea usar. A continuación, cierre la ventana de región e idioma.
-3. Ahora, en la sesión remota, verá la posibilidad de cambiar entre lenguajes. (En el lado derecho de la sesión remota, cerca del reloj.) Haga clic en el idioma que desea cambiar a (como **Eng**).
+1. Desde dentro de la sesión remota, abre Región e idioma. Haz clic en **Inicio > Configuración > Hora e idioma**. Abre **Región e idioma**.
+2. Agrega el idioma que quieres usar. Luego, cierra la ventana Región e idioma.
+3. Ahora, en la sesión remota, verás la capacidad de cambiar entre los distintos idiomas. (Al lado derecho de la sesión remota, cerca del reloj). Haz clic en el idioma al que quieres cambiar (como **Eng**).
 
-Es posible que deba cerrar y reiniciar la aplicación que usa actualmente para que los cambios de teclado surta efecto.
+Puede que tengas que cerrar y reiniciar la aplicación que usas actualmente para que se apliquen los cambios del teclado.
 
 
-## <a name="specific-errors"></a>Errores concretos
+## <a name="specific-errors"></a>Errores específicos
 
-### <a name="why-do-i-get-an-insufficient-privileges-error"></a>¿Por qué obtengo un error "No tiene privilegios suficientes"?
-No se permiten para tener acceso a la sesión que desea conectarse. La causa más probable es que está intentando conectarse a una sesión de administrador. Solo los administradores pueden conectarse a la consola. Compruebe que el conmutador de consola está desactivada en la configuración avanzada de escritorio remoto. Si esto no es el origen del problema, póngase en contacto con el administrador del sistema para obtener más ayuda.
+### <a name="why-do-i-get-an-insufficient-privileges-error"></a>¿Por qué recibo un error sobre "Privilegios insuficientes"?
+No tienes permiso para acceder a la sesión a la que te quieres conectar. La causa más probable es que te intentas conectar a una sesión de administrador. Solo los administradores pueden conectarse a la consola. Comprueba que el modificador de la consola está desactivado en la configuración avanzada del Escritorio remoto. Si este no es el origen del problema, ponte en contacto con el administrador del sistema para obtener más ayuda.
 
-### <a name="why-does-the-client-say-that-there-is-no-cal"></a>¿Por qué el cliente indica que no hay ninguna CAL?
-Cuando un cliente de escritorio remoto se conecta a un servidor de escritorio remoto, el servidor emite un escritorio servicios de cliente de licencia de acceso remoto (CAL de RDS) almacenados por el cliente. Cada vez que se conecta el cliente nuevo va a usar sus CAL de RDS y el servidor no emitirá otra licencia. El servidor emitirá otra licencia si la CAL de RDS en el dispositivo que falta o está dañado. Cuando se alcanza el número máximo de dispositivos con licencia de servidor no emitirá nueva CAL de RDS. Para obtener ayuda, póngase en contacto con el Administrador de red.
+### <a name="why-does-the-client-say-that-there-is-no-cal"></a>¿Por qué el cliente dice que no hay licencia CAL?
+Cuando un cliente de Escritorio remoto se conecta a un servidor de Escritorio remoto, el servidor emite una licencia de acceso de cliente para los Servicios de Escritorio remoto (RDS CAL) que el cliente almacena. Cada vez que el cliente se vuelve a conectar, usará su RDS CAL y el servidor no emitirá otra licencia. El servidor emitirá otra licencia si falta la RDS CAL del dispositivo o si está dañada. Cuando se alcanza el número máximo de dispositivos con licencia, el servidor no emitirá RDS CAL nuevas. Para obtener ayuda, ponte en contacto con el administrador de red.
 
-### <a name="why-did-i-get-an-access-denied-error"></a>¿Por qué obtengo un error "Acceso denegado"?
-El error "Acceso denegado" es una generada por la puerta de enlace de escritorio remoto y el resultado de credenciales incorrectas durante el intento de conexión. Compruebe el nombre de usuario y la contraseña. Si la conexión trabajado antes y recientemente se produjo el error, posiblemente cambiado su contraseña de cuenta de usuario de Windows y aún no ha actualizado aún en la configuración de escritorio remoto.
+### <a name="why-did-i-get-an-access-denied-error"></a>¿Por qué recibo un error de "Acceso denegado"?
+El error de "Acceso denegado" lo genera la puerta de enlace de Escritorio remoto y es el resultado del uso de credenciales incorrectas durante el intento de conexión. Comprueba tu nombre de usuario y contraseña. Si la conexión funcionaba antes y el error se produjo recientemente, es posible que hayas cambiado la contraseña de tu cuenta de usuario de Windows y no la hayas actualizado todavía en la configuración de Escritorio remoto.
 
-### <a name="what-does-rpc-error-23014-or-error-0x59e6-mean"></a>¿Qué significa "Error 0x59e6" o "Error RPC 23014"?
-En caso de un **error RPC 23014** o **Error 0x59E6 inténtelo de nuevo después de esperar unos minutos**, el servidor de puerta de enlace de escritorio remoto ha alcanzado el número máximo de conexiones activas. Dependiendo de la versión de Windows que se ejecutan en la puerta de enlace de escritorio remoto el número máximo de conexiones es diferente: La implementación de Windows Server 2008 R2 Standard limita el número de conexiones a 250. La implementación de Windows Server 2008 R2 Foundation limita el número de conexiones en 50. Todas las otras implementaciones de Windows permiten a un número ilimitado de conexiones.
+### <a name="what-does-rpc-error-23014-or-error-0x59e6-mean"></a>¿Qué significa "Error 23014 de RPC" o "Error 0x59e6"?
+En caso de recibir un **error 23014 de RPC** o un **Error 0x59E6, vuelve a intentarlo después de unos minutos**, es porque el servidor de puerta de enlace de Escritorio remoto alcanzó el número máximo de conexiones activas. El número máximo de conexiones difiere en función de la versión de Windows que se ejecuta en la puerta de enlace de Escritorio remoto: La implementación de Windows Server 2008 R2 Standard limita el número de conexiones a 250. La implementación de Windows Server 2008 R2 Foundation limita el número de conexiones a 50. Todas las demás implementaciones de Windows permiten un número ilimitado de conexiones.
 
-### <a name="what-does-the-failed-to-parse-ntlm-challenge-error-mean"></a>¿Qué significa el error "No se pudo analizar el desafío NTLM"?
-Este error se debe a una configuración incorrecta en el equipo remoto. Asegúrese de que la configuración de nivel de seguridad RDP en el equipo remoto se establece en "Cliente Compatible." (Consulte con el administrador del sistema si necesita ayuda para hacerlo).
+### <a name="what-does-the-failed-to-parse-ntlm-challenge-error-mean"></a>¿Qué significa el error "Failed to parse NTLM challenge" (Error al analizar el desafío NTLM)?
+Este error se debe a una configuración incorrecta en el equipo remoto. Asegúrate de que la configuración de nivel de seguridad de RDP en el equipo remoto esté establecida en "Compatible con cliente". (Consulta con el administrador del sistema si necesitas ayuda para hacer esto).
 
-### <a name="what-does-tsrap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>¿Qué "TS_RAP no puedan conectarse al host dado" significa?
-Este error se produce cuando una directiva de autorización de recursos en el servidor de puerta de enlace deja el nombre de usuario de la conexión al equipo remoto. Esto puede ocurrir en los casos siguientes:
+### <a name="what-does-tsrap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>¿Qué significa "TS_RAP You are not allowed to connect to the given host" (TS_RAP No estás autorizado a conectarte con el host determinado)?
+Este error se produce cuando una directiva de autorización de recursos en el servidor de puerta de enlace impide que tu nombre de usuario se conecte al equipo remoto. Esto puede ocurrir en las siguientes instancias:
 
-- El nombre del equipo remoto es el mismo que el nombre de la puerta de enlace. A continuación, al intentar conectar con el equipo remoto, la conexión va a la puerta de enlace en su lugar, que probablemente no tiene permiso de acceso. Si necesita conectarse a la puerta de enlace, no use el nombre de la puerta de enlace externa como nombre de equipo. En su lugar, use "localhost" o la dirección IP (127.0.0.1) o el nombre del servidor interno.
-- Su cuenta de usuario no es un miembro del grupo de usuarios para el acceso remoto.
+- El nombre del equipo remoto es el mismo de la puerta de enlace. Luego, cuando intentas conectarte al equipo remoto, la conexión va en su lugar a la puerta de enlace, a la que probablemente no tienes permiso para acceder. Si necesitas conectarte a la puerta de enlace, no uses el nombre de la puerta de enlace externa como el nombre del equipo. En su lugar, usa "localhost", la dirección IP (127.0.0.1) o el nombre del servidor interno.
+- Tu cuenta de usuario no es miembro del grupo de usuarios para acceso remoto.

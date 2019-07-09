@@ -1,6 +1,6 @@
 ---
-title: Agregar alta disponibilidad a la parte delantera de web Web de escritorio remoto y puerta de enlace
-description: Proporciona los pasos necesarios para instalar a los servidores Web de escritorio remoto y puerta de enlace en una implementación de RDS.
+title: Adición de alta disponibilidad al front-end web de la puerta de enlace y de la web de Escritorio remoto
+description: Proporciona los pasos necesarios para instalar los servidores de puerta de enlace y web de Escritorio remoto en una implementación de RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,104 +13,104 @@ ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
 ms.openlocfilehash: 4e185e51b09d2e2f8ac4527f9de339de27e02f24
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66805137"
 ---
-# <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>Agregar alta disponibilidad a la parte delantera de web Web de escritorio remoto y puerta de enlace
+# <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>Adición de alta disponibilidad al front-end web de la puerta de enlace y de la web de Escritorio remoto
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
 
 
-Puede implementar un acceso Web a Escritorio remoto (RD Web Access) y la granja de servidores de puerta de enlace de escritorio remoto (puerta de enlace de escritorio remoto) para mejorar la disponibilidad y escalabilidad de una implementación de servicios de escritorio remoto (RDS) de Windows Server 
+Puede implementar un acceso web de Escritorio remoto y una granja de puerta de enlace de Escritorio remoto para mejorar la disponibilidad y escalar una implementación de los Servicios de Escritorio remoto (RDS) de Windows. 
 
-Siga estos pasos para agregar un servidor Web de escritorio remoto y puerta de enlace a una implementación básica de servicios de escritorio remoto existente.  
+Siga estos pasos para agregar un servidor de puerta de enlace y de web de Escritorio remoto a una implementación básica de Servicios de Escritorio remoto existente.  
 
 ## <a name="pre-requisites"></a>Requisitos previos
 
-Configurar un servidor para que actúe como un adicionales Web de escritorio remoto y puerta de enlace de escritorio remoto: Esto puede ser un servidor físico o máquina virtual. Esto incluye unir el servidor al dominio y habilitar la administración remota.
+Configura un servidor para que actúe como una puerta de enlace de Escritorio remoto y de acceso web de Escritorio remoto: puede ser un servidor físico o una máquina virtual. Esto incluye unir el servidor al dominio y habilitar la administración remota.
 
-## <a name="step-1-configure-the-new-server-to-be-part-of-the-rds-environment"></a>Paso 1: Configurar el nuevo servidor para que sea parte del entorno de RDS
+## <a name="step-1-configure-the-new-server-to-be-part-of-the-rds-environment"></a>Paso 1: Configuración del nuevo servidor para que forme parte del entorno de RDS
 
-1. Conéctese al servidor RDMS en Azure portal, mediante el cliente conexión a Escritorio remoto.
-2. Agregue un nuevo servidor Web de escritorio remoto y puerta de enlace al administrador del servidor:
-    1. Inicie el administrador del servidor, haga clic en **administrar > Agregar servidores**.   
-    2. En el cuadro de diálogo Agregar servidores, haga clic en **Buscar ahora**.   
-    3. Seleccione el servidor Web de escritorio remoto y puerta de enlace recién creado (por ejemplo, Contoso-WebGw2) y haga clic en **Aceptar**.
-3. Agregar servidores Web de escritorio remoto y puerta de enlace a la implementación  
-    1. Launch Server Manager .  
-    2. Haga clic en **servicios de escritorio remoto > información general > servidores de implementación > tareas > Agregar servidores de acceso Web de escritorio remoto**.   
-    3. Seleccione el servidor recién creado (por ejemplo, Contoso-WebGw2) y, a continuación, haga clic en **siguiente**.  
-    4. En la página de confirmación, seleccione **reiniciar los equipos remotos según sea necesario**y, a continuación, haga clic en **agregar**.  
-    5. Repita estos pasos para agregar el servidor de puerta de enlace de escritorio remoto, pero elija **servidores de puerta de enlace de escritorio remoto** en el paso b.
-4. Volver a instalar certificados para los servidores de puerta de enlace de escritorio remoto:
-   1. Haga clic en Administrador del servidor en el servidor RDMS, **servicios de escritorio remoto > información general > tareas > Editar las propiedades de implementación**.  
-   2. Expanda **certificados**.  
-   3. Desplácese hacia abajo hasta la tabla. Haga clic en el escritorio remoto **servicio de rol puerta de enlace > Seleccionar certificado existente.**  
-   4. Haga clic en **elegir otro certificado** y, a continuación, vaya a la ubicación del certificado. Por ejemplo, \Contoso-CB1\Certificates). Seleccione el archivo de certificado para el servidor Web de escritorio remoto y puerta de enlace que se creó durante los requisitos previos (p. ej., ContosoRdGwCert) y, a continuación, haga clic en **abierto**.  
-   5. Escriba la contraseña del certificado, seleccione **permitir que el certificado que se agregarán al almacén de certificados entidades emisoras de certificados raíz de confianza en los equipos de destino**y, a continuación, haga clic en **Aceptar**.  
+1. Conéctate al servidor RDMS en Azure Portal, mediante el cliente de Conexión a Escritorio remoto.
+2. Agrega un nuevo servidor de acceso web y de puerta de enlace de Escritorio remoto a Administrador del servidor:
+    1. Inicia Administrador del servidor, haz clic en **Administrar > Agregar servidores**.   
+    2. En el cuadro de diálogo Agregar servidores, haz clic en **Buscar ahora**.   
+    3. Selecciona el servidor de acceso web y de puerta de enlace de Escritorio remoto recién creado (por ejemplo, Contoso-WebGw2) y haz clic en **Aceptar**.
+3. Adición de los servidores de puerta de enlace y acceso web de Escritorio remoto a la implementación  
+    1. Inicia el Administrador del servidor.  
+    2. Haz clic en **Servicios de Escritorio remoto > Información general > Servidores de implementación > Tareas > Agregar servidores de Acceso web a Escritorio remoto**.   
+    3. Selecciona el servidor recién creado (por ejemplo, Contoso-WebGw2) y haz clic en **Siguiente**.  
+    4. En la página de confirmación, selecciona **Reiniciar equipos remotos según sea necesario** y, a continuación, haz clic en **Agregar**.  
+    5. Repite estos pasos para agregar el servidor de Puerta de enlace de Escritorio remoto, pero elige **Servidores de Puerta de enlace de Escritorio remoto** en el paso b.
+4. Vuelve a instalar los certificados para los servidores de Puerta de enlace de Escritorio remoto:
+   1. En el Administrador del servidor en el servidor de RDMS, haz clic en **Servicios de Escritorio remoto > Información general > Tareas > Editar propiedades de implementación**.  
+   2. Expande **Certificados**.  
+   3. Desplázate hacia abajo por la tabla. Haz clic en **Servicio de rol Puerta de enlace de Escritorio remoto > Seleccionar certificado existente.**  
+   4. Haz clic en **Elija un certificado distinto** y, después, dirígete a la ubicación del certificado. Por ejemplo, \Contoso-CB1\Certificates. Selecciona el archivo de certificado para el servidor de acceso web y de puerta de enlace de Escritorio remoto que se creó durante los requisitos previos (p. ej., ContosoRdGwCert) y, después, haz clic en **Abrir**.  
+   5. Escribe la contraseña del certificado, selecciona **Permitir agregar el certificado al almacén de certificados Entidades de certificación raíz de confianza en los equipos de destino** y haz clic en **Aceptar**.  
    6. Haga clic en **Aplicar**.
       > [!NOTE] 
-      > Es posible que deba reiniciar manualmente el servicio TSGateway que se ejecutan en cada servidor de puerta de enlace de escritorio remoto, ya sea a través del administrador del servidor o el Administrador de tareas.
-   7. Repita los pasos para el servicio de rol de acceso Web de escritorio remoto.
+      > Es posible que tengas que reiniciar manualmente el servicio TSGateway que se ejecuta en cada servidor de Puerta de enlace de Escritorio remoto, ya sea a través del Administrador del servidor o del Administrador de tareas.
+   7. Repite los pasos de la a a la f para el servicio de rol de acceso web de Escritorio remoto.
 
-## <a name="step-2-configure-rd-web-and-rd-gateway-properties-on-the-new-server"></a>Paso 2: Configurar las propiedades Web de escritorio remoto y puerta de enlace de escritorio remoto en el nuevo servidor
-1. Configurar el servidor para formar parte de una granja de servidores de puerta de enlace de escritorio remoto:
-    1.  Haga clic en Administrador del servidor en el servidor RDMS, **todos los servidores**. Haga clic en uno de los servidores de puerta de enlace de escritorio remoto y, a continuación, haga clic en **conexión a Escritorio remoto**.
-    2.  Inicie sesión en el servidor de puerta de enlace de escritorio remoto con una cuenta de administrador de dominio.  
-    3.  En Administrador del servidor en el servidor de puerta de enlace de escritorio remoto, haga clic en **Herramientas > Servicios de escritorio remoto > Administrador de puerta de enlace de escritorio remoto**.  
-    4.  En el panel de navegación, haga clic en el equipo local (por ejemplo, Contoso-WebGw1).  
-    5.  Haga clic en **los miembros de la granja de servidores de puerta de enlace de escritorio remoto de agregar**.  
-    6.  En el **granja de servidores** pestaña, escriba el nombre de cada servidor de puerta de enlace de escritorio remoto y, a continuación, haga clic en **agregar** y **aplicar**.  
-    7.  Repita los pasos hasta la f en cada servidor de puerta de enlace de escritorio remoto para que reconocerse mutuamente como servidores de puerta de enlace de escritorio remoto en una granja de servidores. No se alarme si hay advertencias, como podría llevar tiempo para la configuración de DNS se propaguen.
-2. Configurar el servidor para formar parte de una granja de servidores de acceso Web de escritorio remoto. El procedimiento siguiente configura la validación y descifrado de las claves de equipo para que sean iguales en ambos sitios RDWeb.
-    1.  Haga clic en Administrador del servidor en el servidor RDMS, **todos los servidores**. Haga clic en el primer servidor de acceso Web de escritorio remoto (por ejemplo, Contoso-WebGw1) y, a continuación, haga clic en **conexión a Escritorio remoto**.  
-    2.  Inicie sesión en el servidor de acceso Web de escritorio remoto con una cuenta de administrador de dominio.  
-    3.  En Administrador del servidor en el servidor de acceso Web de escritorio remoto, haga clic en **Herramientas > Administrador de Internet Information Services (IIS)** .  
-    4.  En el panel izquierdo del Administrador de IIS, expanda el **Server (por ejemplo, Contoso-WebGw1) > sitios > sitio Web predeterminado**y, a continuación, haga clic en **RDWeb**.  
-    5.  Haga clic en **machineKey**y, a continuación, haga clic en **abrir característica**.
-    6.  En la página clave del equipo, en el **acciones** panel, seleccione **Generate Keys**y, a continuación, haga clic en **aplicar**.
-    7.  Copie la clave de validación (puede haga clic en la clave y, a continuación, haga clic en **copia**.)
-    8.  En el Administrador de IIS, en **sitio Web predeterminado**, seleccione **fuente**, **FeedLogon** y **páginas** a su vez.
+## <a name="step-2-configure-rd-web-and-rd-gateway-properties-on-the-new-server"></a>Paso 2: Configuración de las propiedades de Puerta de enlace de Escritorio remoto y de Acceso web de Escritorio remoto en el nuevo servidor
+1. Configura el servidor para que forme parte de una granja de servidores de Puerta de enlace de Escritorio remoto:
+    1.  En Administrador del servidor en el servidor RDMS, haz clic en **Todos los servidores**. Haz clic con el botón derecho en uno de los servidores de Puerta de enlace de Escritorio remoto y, después, haz clic en **Conexión a Escritorio remoto**.
+    2.  Inicia sesión en el servidor de Puerta de enlace de Escritorio remoto mediante una cuenta de administrador de dominio.  
+    3.  En Administrador del servidor en el servidor de Puerta de enlace de Escritorio remoto, haz clic en **Herramientas > Servicios de Escritorio remoto > Administrador de puerta de enlace de Escritorio remoto**.  
+    4.  En el panel de navegación, haz clic en el equipo local (por ejemplo, Contoso-WebGw1).  
+    5.  Haz clic en **Agregar miembros de la granja de servidores de puerta de enlace de Escritorio remoto**.  
+    6.  En la pestaña **Granja de servidores**, escribe el nombre de cada servidor de Puerta de enlace de Escritorio remoto y haz clic en **Agregar** y **Aplicar**.  
+    7.  Repite los pasos de la a a la f en cada servidor de Puerta de enlace de Escritorio remoto para que se reconozcan entre sí como servidores de Puerta de enlace de Escritorio remoto en una granja de servidores. No te alarmes si hay advertencias, ya que la propagación de la configuración de DNS puede llevar tiempo.
+2. Configura el servidor para que forme parte de una granja de servidores de Acceso web de Escritorio remoto. Los siguientes pasos configuran las claves de la máquina de validación y descifrado para que sean las mismas en ambos sitios web de Escritorio remoto.
+    1.  En Administrador del servidor en el servidor RDMS, haz clic en **Todos los servidores**. Haz clic con el botón derecho en el primer servidor de Acceso web de Escritorio remoto (por ejemplo, Contoso-WebGw1) y, después, haz clic en **Conexión a Escritorio remoto**.  
+    2.  Inicia sesión en el servidor de Acceso web de Escritorio remoto mediante una cuenta de administrador de dominio.  
+    3.  En Administrador del servidor, en el servidor de Acceso web de Escritorio remoto, haz clic en **Herramientas > Administrador de Internet Information Services (IIS)** .  
+    4.  En el panel izquierdo del Administrador de IIS, expande el **servidor (por ejemplo, Contoso-WebGw1) > Sitios > Sitio web predeterminado** y, a continuación, haz clic en **RDWeb**.  
+    5.  Haz clic con el botón derecho en **Clave del equipo** y, después, haz clic en **Abrir característica**.
+    6.  En la página Clave del equipo, en el panel **Acciones**, selecciona **Generar claves** y, después, haz clic en **Aplicar**.
+    7.  Copia la clave de validación (puedes hacer clic con el botón derecho en la clave y, después, haz clic en **Copiar**).
+    8.  En el Administrador de IIS, en **Default Web Site** (Sitio web predeterminado), selecciona sucesivamente **Feed** (Fuente), **FeedLogon** y **Pages** (Páginas).
     9. Para cada uno:
-        1.  Haga clic en **machineKey**y, a continuación, haga clic en **abrir característica**.
-        2.  Para la clave de validación, desactive **generar automáticamente en tiempo de ejecución**y, a continuación, pegue la clave que copió en el paso g.
-    10.  Minimizar la ventana conexión a Escritorio remoto a un servidor Web de escritorio remoto.  
-    11.  Repita los pasos del b al e para el segundo servidor de acceso Web de RD, finalizando en la vista de características de **machineKey**.
-    12. Para la clave de validación, desactive **generar automáticamente en tiempo de ejecución**y, a continuación, pegue la clave que copió en el paso g.
+        1.  Haz clic con el botón derecho en **Clave del equipo** y, después, haz clic en **Abrir característica**.
+        2.  Para la clave de validación, desactiva **Generar automáticamente en tiempo de ejecución** y, después, pega la clave copiada del paso g.
+    10.  Minimiza la ventana Conexión a Escritorio remoto a este servidor web de Escritorio remoto.  
+    11.  Repite los pasos del b al e para el segundo servidor de Acceso web de Escritorio remoto, finalizando en la vista de características de **Clave del equipo**.
+    12. Para la clave de validación, desactiva **Generar automáticamente en tiempo de ejecución** y, después, pega la clave copiada del paso g.
     13. Haga clic en **Aplicar**.
-    14. Completar este proceso para el **RDWeb**, **fuente**, **FeedLogon** y **páginas** páginas.
-    15. Minimizar la ventana conexión a Escritorio remoto en el segundo servidor de acceso Web de escritorio remoto y, a continuación, maximice la ventana de conexión a Escritorio remoto para el primer servidor de acceso Web de escritorio remoto.  
-    16. Repita los pasos g a n para copiar la clave de descifrado.
-    17. Cuando las claves de validación y descifrado son idénticas en ambos servidores de acceso Web de escritorio remoto para el **RDWeb**, **fuente**, **FeedLogon** y **páginas**páginas, cierre la sesión de todas las ventanas de conexión a Escritorio remoto.
+    14. Completa este proceso para las páginas **RDWeb**, **Feed** (Fuente), **FeedLogon** y **Pages** (Páginas).
+    15. Minimice la ventana de conexión a Escritorio remoto al segundo servidor de Acceso web de Escritorio remoto y, después, maximiza la ventana de la conexión al Escritorio remoto al primer servidor de Acceso web de Escritorio remoto.  
+    16. Repite los pasos g al n para copiar la clave de descifrado.
+    17. Cuando las claves de validación y de descifrado son idénticas en ambos servidores de Acceso web de Escritorio remoto para las páginas **RDWeb**, **Feed** (Fuente), **FeedLogon** y **Pages** (Páginas), sal de todas las ventanas de conexión a Escritorio remoto.
 
-## <a name="step-3-configure-load-balancing-for-the-rd-web-and-rd-gateway-servers"></a>Paso 3: Configurar Equilibrio de carga para los servidores Web de escritorio remoto y puerta de enlace de escritorio remoto
+## <a name="step-3-configure-load-balancing-for-the-rd-web-and-rd-gateway-servers"></a>Paso 3: Configuración de equilibrio de carga para los servidores de Acceso web de Escritorio remoto y de Puerta de enlace de Escritorio remoto
 
-Si usa la infraestructura de Azure, puede crear un equilibrador de carga externo; Si no es así, puede configurar un equilibrador de carga de hardware o software independiente. Equilibrio de carga es clave para que sea tráfico uniformemente distribuido las conexiones de clientes de escritorio remoto, a través de la puerta de enlace de escritorio remoto a los servidores que los usuarios se ejecutarán sus cargas de trabajo de larga duración.
+Si usas la infraestructura de Azure, puedes crear un equilibrador de carga externo de Azure; si no, puedes configurar un equilibrador de carga de hardware o software independiente. El equilibrio de carga es clave para que el tráfico distribuya uniformemente las conexiones de larga duración de los clientes de Escritorio remoto, mediante la Puerta de enlace de Escritorio remoto, a los servidores en los que los usuarios ejecutarán sus cargas de trabajo.
 
 > [!NOTE] 
-> Si el servidor anterior ejecuta Web de escritorio remoto y puerta de enlace de escritorio remoto ya se ha configurado detrás de un equilibrador de carga externo, ir directamente para el paso 4, seleccione el grupo de back-end existente y agregue un nuevo servidor al grupo.
+> Si tu servidor anterior que ejecutaba Acceso web de Escritorio remoto y Puerta de enlace de Escritorio remoto ya estaba configurado detrás de un equilibrador de carga externo, vete al paso 4, selecciona el grupo de back-end existente y agrega el nuevo servidor al grupo.
 
-1.  Crear un equilibrador de carga:  
-    1.  En el portal Azure, haga clic en **examinar > equilibradores de carga > agregar**.  
-    2.  Escriba un nombre, por ejemplo **WebGwLB**.  
-    3.  Seleccione **pública** para el **esquema**, **dirección IP pública**y un **dirección IP pública**. Puede seleccionar una dirección IP pública existente o crear uno nuevo. 
-    4.  Seleccione la **suscripción**, **grupo de recursos**, y **ubicación**.
+1.  Crea un equilibrador de carga de Azure:  
+    1.  En Azure Portal, haz clic en **Examinar > Equilibradores de carga > Agregar**.  
+    2.  Escribe un nombre, por ejemplo **WebGwLB**.  
+    3.  Selecciona **Público** en **Esquema**, **Dirección IP pública** y una **Dirección IP pública**. Puedes seleccionar una dirección IP pública existente o crear una nueva. 
+    4.  Selecciona los valores apropiados para la **suscripción**, el **grupo de recursos** y la **ubicación**.
     5.  Haga clic en **Crear**.  
-2. Crear un [sondeo](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) para supervisar los servidores que están activos:  
-    1.  En el portal Azure, haga clic en **examinar > equilibradores de carga**., el equilibrador de carga que acaba de crear, por ejemplo, WebGwLB y configuración  
-    2.  Haga clic en **sondeos > agregar**.  
-    3.  Escriba un nombre, por ejemplo, **HTTPS**, para el sondeo. Seleccione **TCP** como el **protocolo**y escriba **443** para el **puerto**, a continuación, haga clic en **Aceptar**.   
-3.  Cree las reglas de equilibrio de carga HTTPS y UDP:  
-    1.  En **configuración**, haga clic en **reglas de equilibrio de carga**.  
-    2.  Seleccione **agregar** para el **regla HTTPS**.  
-    3.  Escriba un nombre para la regla, por ejemplo, HTTPS y seleccione **TCP** para el **protocolo**. Escriba **443** para ambos **puerto** y **puerto back-end**y haga clic en **Aceptar**.  
-    4.  En **reglas de equilibrio de carga**, haga clic en **agregar** para el **regla UDP**.  
-    5.  Escriba un nombre para la regla, por ejemplo, **UDP**y seleccione **UDP** para el **protocolo**. Escriba **3391** para ambos **puerto** y **puerto back-end**y haga clic en **Aceptar**.  
-4. Cree el grupo de back-end para los servidores Web de escritorio remoto y puerta de enlace de escritorio remoto:
-      1. En **configuración**, haga clic en **grupos de direcciones de back-end > agregar**.   
-      2. Escriba un nombre (por ejemplo, **WebGwBackendPool**), a continuación, haga clic en **agregar una máquina virtual**.  
-      3. Elija un conjunto de disponibilidad (por ejemplo, WebGwAvSet) y, a continuación, haga clic en **Aceptar**.   
-      4. Haga clic en **elegir las máquinas virtuales**, seleccione cada máquina virtual y, a continuación, haga clic en **Seleccionar > Aceptar > Aceptar**.
+2. Crea un [sondeo](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) para supervisar los servidores que están activos:  
+    1.  En Azure Portal, haz clic en **Examinar > Equilibradores de carga** y busca el equilibrador de carga que acabas de crear, por ejemplo, WebGwLB y, finalmente, en Configuración  
+    2.  Haz clic en **Sondeos > Agregar**.  
+    3.  Escribe un nombre, por ejemplo, **HTTPS**, para el sondeo. Selecciona **TCP** en **Protocolo** y escribe **443** para **Puerto**; a continuación,haz clic en **Aceptar**.   
+3.  Crea las reglas de equilibrio de carga de HTTPS y UDP:  
+    1.  En **Configuración**, haz clic en **Reglas de equilibrio de carga**.  
+    2.  Selecciona **Agregar** para la **regla HTTPS**.  
+    3.  Escribe un nombre para la regla, por ejemplo, HTTPS y selecciona **TCP** en **Protocolo**. Escribe **443** en **Puerto** y **Puerto back-end** y haz clic en **Aceptar**.  
+    4.  En **Reglas de equilibrio de carga**, haz clic en **Agregar** para la **regla UDP**.  
+    5.  Escribe un nombre para la regla, por ejemplo, **UDP** y selecciona **UDP** en **Protocolo**. Escribe **3391** en **Puerto** y **Puerto back-end** y haz clic en **Aceptar**.  
+4. Crea el grupo de back-end para los servidores de Acceso web de Escritorio remoto y Puerta de enlace de Escritorio remoto:
+      1. En **Configuración**, haz clic en **Grupos de direcciones de back-end > Agregar**.   
+      2. Escribe un nombre (por ejemplo, **WebGwBackendPool**) y haz clic en **Agregar una máquina virtual**.  
+      3. Elige un conjunto de disponibilidad (por ejemplo, WebGwAvSet) y haz clic en **Aceptar**.   
+      4. Haz clic en **Elegir las máquinas virtuales**, selecciona cada máquina virtual y haz clic en **Seleccionar > Aceptar > Aceptar**.

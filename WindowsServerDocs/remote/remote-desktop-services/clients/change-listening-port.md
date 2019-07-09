@@ -1,6 +1,6 @@
 ---
-title: Cambiar el puerto de escucha en el escritorio remoto
-description: Obtenga información sobre cómo cambiar el puerto de escucha para el cliente de escritorio remoto.
+title: Cambio del puerto de escucha en Escritorio remoto
+description: Aprende a cambiar el puerto de escucha para el cliente de Escritorio remoto.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,23 +12,23 @@ author: lizap
 ms.author: elizapo
 ms.date: 07/19/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 5bf90010143e742f7a0c9b5c262be01e6ccf8c5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b70479b644f4984c93136d6493483c372703244d
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59882726"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63749026"
 ---
-# <a name="change-the-listening-port-for-remote-desktop-on-your-computer"></a>Cambiar el puerto de escucha para escritorio remoto en el equipo
+# <a name="change-the-listening-port-for-remote-desktop-on-your-computer"></a>Cambia el puerto de escucha para Escritorio remoto en el equipo
 
->Se aplica a: Windows 10, Windows 8.1, Windows 8, Windows Server 2016, Windows Server 2012 R2, Windows Server 2008 R2
+>Se aplica a: Windows 10, Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2008 R2
 
-Cuando se conecta a un equipo (un cliente de Windows o Windows Server) a través del cliente de escritorio remoto, la característica de escritorio remoto en el equipo "escucha" la solicitud de conexión a través de un puerto de escucha definido (3389 de forma predeterminada). Puede cambiar ese puerto de escucha en los equipos de Windows modificando el registro.
+Cuando te conectas a un equipo (ya sea un cliente de Windows o Windows Server) mediante el cliente de Escritorio remoto, la característica de Escritorio remoto del equipo "escucha" la solicitud de conexión a través de un puerto de escucha definido (el puerto 3389 de forma predeterminada). Puedes cambiar ese puerto de escucha en los equipos de Windows modificando el registro.
 
-1. Inicie el editor del registro. (En el cuadro de búsqueda, escriba regedit).
-2. Navegue hasta la siguiente subclave del registro: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\PortNumber
-3. Haga clic en **Editar > modificar**y, a continuación, haga clic en **Decimal**.
-4. Escriba el nuevo número de puerto y, a continuación, haga clic en **Aceptar**. 
-5. Cierre el editor del registro y reinicie el equipo.
+1. Inicia el Editor del Registro. (Escribe regedit en el cuadro de búsqueda).
+2. Ve hasta la siguiente subclave del Registro: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\PortNumber
+3. Haz clic en **Editar > Modificar**y, a continuación, haz clic en **Decimal**.
+4. Escribe el nuevo número de puerto y, a continuación, haz clic en **Aceptar**. 
+5. Cierra el Editor del Registro y reinicia el equipo.
 
-La próxima vez que se conecten a este equipo mediante el uso de la conexión a Escritorio remoto, debe escribir el nuevo puerto. Si usa un firewall, asegúrese de configurar el firewall para permitir las conexiones para el nuevo número de puerto.
+La próxima vez que te conectes a este equipo mediante el uso de Conexión a Escritorio remoto, deberás escribir el nuevo puerto. Si usas un firewall, asegúrate de configurarlo para que permita las conexiones al nuevo número de puerto.

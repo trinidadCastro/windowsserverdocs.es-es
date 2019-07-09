@@ -1,6 +1,6 @@
 ---
-title: Cambios en Nano Server en el canal semianual de Windows Server
-description: En el nuevo modelo de mantenimiento de Windows Server, Nano Server es solo un sistema operativo del contenedor con algunos cambios de características.
+title: Cambios en Nano Server en la versión de Windows Server del Canal semianual
+description: En el nuevo modelo de servicio de Windows Server, Nano Server es solo un sistema operativo del contenedor con algunos cambios de características.
 ms.prod: Windows Server
 ms.mktglfcycl: manage
 ms.sitesec: library
@@ -12,28 +12,28 @@ ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: a270334d-42a7-46ff-8eed-d8656a276544
 ms.openlocfilehash: c12ca84826a92fa045eb84b55e7406392161280b
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66452803"
 ---
-# <a name="changes-to-nano-server-in-windows-server-semi-annual-channel"></a>Cambios en Nano Server en el canal semianual de Windows Server
+# <a name="changes-to-nano-server-in-windows-server-semi-annual-channel"></a>Cambios en Nano Server en la versión de Windows Server del Canal semianual
 
->Se aplica a: Windows Server, canal semianual
+>Se aplica a: Windows Server, Canal semianual
 
-Si ya está ejecutando Nano Server, el [canal semianual de ventana Server](../get-started-19/servicing-channels-19.md) modelo de servicio le resultarán familiar, ya que anteriormente se atendió la rama actual para el modelo de empresas (CBB). Canal semianual de Windows Server es simplemente un nombre nuevo para el mismo modelo. En este modelo, las actualizaciones de características de Nano Server se publicarán de dos a tres veces al año.
+Si ya estás ejecutando Nano Server, el modelo de servicio del [Canal semianual de Windows Server](../get-started-19/servicing-channels-19.md) te resultará familiar, ya que anteriormente era atendido por el modelo Rama actual para empresas (CBB). El Canal semianual de Windows Server no es más que el mismo modelo, pero con distinto nombre. En este modelo, las actualizaciones de características de Nano Server se publicarán de dos a tres veces al año.
 
-Sin embargo, a partir de Windows Server, versión 1803, Nano Server solo está disponible como un **imagen de sistema operativo base del contenedor**. Debes ejecutarlo como un contenedor en un host de contenedor, como por ejemplo, una instalación Server Core de Windows Server. Ejecuta un contenedor basado en servidor Nano en esta versión difiere de las versiones anteriores de las siguientes maneras:
+Sin embargo, a partir de la versión 1803 de Windows Server, Nano Server solo está disponible como **imagen del sistema operativo base del contenedor**. Debes ejecutarlo como un contenedor en un host de contenedor, como por ejemplo, una instalación básica de Windows Server. La ejecución de un contenedor basado en Nano Server en esta versión difiere de las versiones anteriores en lo siguiente:
 
-- Nano Server se ha optimizado para las aplicaciones de .NET Core.
-- Nano Server es incluso más pequeño que la versión de Windows Server 2016.
+- Nano Server se ha optimizado para los programas de .NET Core.
+- Nano Server es aún menor que la versión de Windows Server 2016.
 - Ya no se incluyen de forma predeterminada PowerShell Core, .NET Core y WMI, pero puedes incluir paquetes del contenedor de [PowerShell Core](https://hub.docker.com/r/microsoft/powershell/) y [.NET Core](https://hub.docker.com/r/microsoft/dotnet/) al crear el contenedor.
-- En Nano Server ya no está incluida una pila de servicio. Microsoft publica un contenedor de Nano actualizado en Docker Hub que debes volver a implementar.
-- Con Docker puedes solucionar los problemas que tengas con el nuevo contenedor Nano.
+- En Nano Server ya no está incluida una pila de servicio. Microsoft publica un contenedor Nano actualizado en Docker Hub que debes volver a implementar.
+- Mediante Docker puedes solucionar los problemas que tengas con el nuevo contenedor Nano.
 - Ahora puedes ejecutar contenedores Nano en IoT Core.
 
 ## <a name="related-topics"></a>Temas relacionados
 
-- [Documentación de contenedores de Windows](http://aka.ms/windowscontainers)
-- [Información general del canal semianual de ventana Server](../get-started-19/servicing-channels-19.md)
+- [Documentación acerca de los contenedores de Windows](http://aka.ms/windowscontainers)
+- [Introducción al Canal semianual de Windows Server](../get-started-19/servicing-channels-19.md)

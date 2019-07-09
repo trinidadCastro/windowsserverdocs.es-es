@@ -14,26 +14,26 @@ ms.assetid: ''
 author: ''
 manager: ''
 ms.openlocfilehash: 3aa582df6728d46b1f5f3ac13469ae7af52da28e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862956"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63684588"
 ---
 # <a name="technology-in-windows-server-2016"></a>Tecnología de Windows Server 2016 
 
-<img src="media/6-networking.png" style='align:left'> *Introducción a la tecnología. Esto le ayudará a conectar la posición de marketing de la tecnología con el contenido. Cambiar el icono a la usada para el área de tecnología en la página de inicio.*
+<img src="media/6-networking.png" style='align:left'> *Introducción a la tecnología. Esto le ayudará a conectar la posición de marketing de la tecnología con el contenido. Cambia el icono por el que se usa en su área de tecnología en la página de aterrizaje*.
 
-*El objetivo es llevar al cliente desde la historia de marketing de la tecnología en el contenido que les ayuda a implementarla en su entorno.*
+*El objetivo consiste en llevar al cliente desde la historia de marketing de la tecnología hasta el contenido que le ayuda a implementarla en su entorno.*
 
 
 
 >[!Note]
 > Para descargar Windows Server 2016, vea [Evaluaciones de Windows Server](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016).
 
-*Introducir características nuevas y emocionantes aquí.*
+*Introduce aquí características nuevas e interesantes.*
 
-*Proporcionan vínculos a contenido: cada vínculo debe ser de tipo H2 o H3 (en lugar de tablas o viñetas). Consulte el artículo de redes para obtener un ejemplo.*
+*Proporciona vínculos al contenido. Cada vínculo debe ser de tipo H2 o H3 (en lugar de tablas o viñetas). Consulta el artículo sobre redes para obtener un ejemplo.*
 ## <a name="sub-technology"></a>Subtecnología
 
 ### <a name="link-to-article-about-sub-technology"></a>Vínculo a un artículo sobre la subtecnología

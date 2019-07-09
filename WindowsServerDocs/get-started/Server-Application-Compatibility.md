@@ -15,11 +15,11 @@ ms.author: jaimeo
 manager: ''
 ms.localizationpriority: medium
 ms.openlocfilehash: a4c1e104c4f2b5c270f36dc8d5789e00b5a30bdf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828166"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63687350"
 ---
 # <a name="windows-server-2016-and-microsoft-server-application-compatibility"></a>Compatibilidad de aplicaciones de servidor de Microsoft y Windows Server 2016
 
@@ -27,24 +27,24 @@ ms.locfileid: "59828166"
 
 En esta tabla se enumeran las aplicaciones de servidor de Microsoft que admiten la instalación y la funcionalidad en Windows Server 2016. Esta información es para referencia rápida y no está diseñada para reemplazar las especificaciones de productos individuales, los requisitos, los anuncios o las comunicaciones generales de cada aplicación de servidor individual. Consulta la documentación oficial de cada producto para comprender perfectamente las opciones y la compatibilidad.
 
-Para los clientes y asociados de proveedores de software que desea obtener más información sobre la compatibilidad de Windows Server con aplicaciones que no son de Microsoft, visite la [portal de certificación de aplicaciones comerciales](https://commercialappcertification.microsoft.com/).
+Para clientes y proveedores de software asociados que buscan más información sobre la compatibilidad de Windows Server con aplicaciones que no son de Microsoft, visita el [portal de certificación de aplicaciones comerciales](https://commercialappcertification.microsoft.com/).
 
 |Aplicación de servidor de Microsoft|  ¿Publicada?|  Enlace del producto|
 |-------------------------------------|--------------------------------------------|-------------------|
-|Microsoft SQL Server 2012|Sí| [Requisitos de hardware y Software para instalar SQL Server 2012](https://msdn.microsoft.com/library/ms143506(v=sql.110).aspx)|
-|Microsoft SQL Server 2014|Sí|[Requisitos de hardware y Software para instalar SQL Server 2014](https://msdn.microsoft.com/library/ms143506(SQL.120).aspx)|
+|Microsoft SQL Server 2012|Sí| [Requisitos de hardware y software para instalar SQL Server 2012](https://msdn.microsoft.com/library/ms143506(v=sql.110).aspx)|
+|Microsoft SQL Server 2014|Sí|[Requisitos de hardware y software para instalar SQL Server 2014](https://msdn.microsoft.com/library/ms143506(SQL.120).aspx)|
 |Microsoft SQL Server 2016| Sí|    [SQL Server 2016](https://www.microsoft.com/en-us/cloud-platform/sql-server)| 
-|Microsoft System Center Virtual Machine Manager 2016|  Sí|    [Novedades en System Center](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
-|Microsoft System Center Operations Manager 2016|   Sí|    [Novedades en System Center](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
-|Microsoft System Center Data Protection Manager 2016|  Sí|    [Novedades en System Center](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
+|Microsoft System Center Virtual Machine Manager 2016|  Sí|    [Novedades de System Center](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
+|Microsoft System Center Operations Manager 2016|   Sí|    [Novedades de System Center](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
+|Microsoft System Center Data Protection Manager 2016|  Sí|    [Novedades de System Center](https://technet.microsoft.com/system-center-docs/get-started/what-s-new-in-system-center)|
 |Microsoft System Center Configuration Manager (versión 1606)|  Sí|    [Novedades de la versión 1606 de System Center Configuration Manager](https://technet.microsoft.com/library/mt752488.aspx)|  
-|SharePoint Server 2016|    Sí|    [Requisitos de hardware y software para SharePoint Server 2016](https://technet.microsoft.com/library/cc262485(v=office.16).aspx)|
-|Project Server 2016|   Sí|    [Requisitos de software para Project Server 2016](https://technet.microsoft.com/library/ee683978(v=office.16).aspx)|
+|SharePoint Server 2016|    Sí|    [Requisitos de hardware y software de SharePoint Server 2016](https://technet.microsoft.com/library/cc262485(v=office.16).aspx)|
+|Project Server 2016|   Sí|    [Requisitos de software de Project Server 2016](https://technet.microsoft.com/library/ee683978(v=office.16).aspx)|
 |Exchange Server 2016|  Sí|    [Actualizaciones para Exchange 2016](https://technet.microsoft.com/library/jj907309(v=exchg.160).aspx)| 
 |BizTalk Server 2016|   Sí|    [Microsoft BizTalk Server](https://www.microsoft.com/en-us/cloud-platform/biztalk)|
 |Host Integration Server 2016|  Sí|    [Novedades de HIS 2016](https://msdn.microsoft.com/library/mt670807.aspx)|
 |Visual Studio Team Foundation Server 2017| Sí|    [Team Foundation Server 2017](https://www.visualstudio.com/news/releasenotes/tfs2017-relnotes)| 
-|Skype Empresarial Server 2015|    Sí|    [Instalación de Skype empresarial Server 2015 en Windows Server 2016](https://support.microsoft.com/en-gb/help/4015888/how-to-install-skype-for-business-server-2015-on-windows-server-2016)|
-|Office Online Server|   Sí|  [Plan de Office Online Server](https://technet.microsoft.com/library/jj219435(v=office.16).aspx)|
+|Skype Empresarial Server 2015|    Sí|    [Instalación de Skype Empresarial Server 2015 en Windows Server 2016](https://support.microsoft.com/en-gb/help/4015888/how-to-install-skype-for-business-server-2015-on-windows-server-2016)|
+|Office Online Server|   Sí|  [Plan para Office Online Server](https://technet.microsoft.com/library/jj219435(v=office.16).aspx)|
 
 

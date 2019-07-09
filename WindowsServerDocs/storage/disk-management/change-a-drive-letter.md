@@ -1,6 +1,6 @@
 ---
-title: Cambiar una letra de unidad
-description: Cómo cambiar o asignar una letra de unidad en Windows mediante administración de discos.
+title: Cambio de una letra de unidad
+description: Cómo cambiar o asignar una letra de unidad en Windows mediante Administración de discos.
 ms.date: 10/24/2018
 ms.prod: windows-server-threshold
 ms.technology: storage
@@ -9,34 +9,34 @@ author: JasonGerend
 manager: brianlic
 ms.author: jgerend
 ms.openlocfilehash: b972ab05c192dca9a9a0a2bda4f083d2906acadb
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
-ms.translationtype: MT
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
+ms.lasthandoff: 06/17/2019
 ms.locfileid: "66812475"
 ---
-# <a name="change-a-drive-letter"></a>Cambiar una letra de unidad
+# <a name="change-a-drive-letter"></a>Cambio de una letra de unidad
 
-> **Se aplica a:** Windows 10, Windows 8.1, Windows 7, Windows Server (canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
+> **Se aplica a:** Windows 10, Windows 8.1, Windows 7, Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012
 
-Si no le gusta la letra de unidad asignada a una unidad, o si tiene una unidad que todavía no tiene una letra de unidad, puede usar Administración de discos para cambiarlo.
+Si no te gusta la letra que se ha asignado a una unidad o si tienes alguna unidad que aún no tenga una letra, puedes usar Administración de discos para cambiarla.
 
 > [!IMPORTANT]
-> Si cambia la letra de unidad de una unidad donde están instaladas Windows o aplicaciones, aplicaciones podrían tener problemas para ejecutar o buscar esa unidad. Por este motivo, se recomienda que no cambie la letra de unidad de una unidad en que están instaladas Windows o aplicaciones.
+> Si cambias la letra de una unidad en la que estén instalados Windows o aplicaciones, es posible que estas últimas tengan problemas a la hora de ejecutarse o de encontrar dicha unidad. Por eso es aconsejable no cambiar la letra de la unidad en la que estén instalados Windows o aplicaciones.
 
-Aquí le mostramos cómo cambiar la letra de unidad (que en su lugar para montar la unidad en un valor vacío carpeta para que aparezca como otra carpeta, consulte [asignar una ruta de acceso de carpeta de punto de montaje a una unidad](assign-a-mount-point-folder-path-to-a-drive.md)).
+Aquí se muestra cómo cambiar una letra de unidad (para montar la unidad en una carpeta vacía para que aparezca como otra carpeta, consulte [Asignar una ruta de acceso de carpeta de punto de montaje a una unidad](assign-a-mount-point-folder-path-to-a-drive.md)).
 
-1. Abra Administración de discos con permisos de administrador. 
-    Para ello, en el cuadro de búsqueda en la barra de tareas, escriba **administración de discos**, seleccione y mantenga (o secundario) **administración de discos**, a continuación, seleccione **ejecutar como administrador**  >  **Sí**. Si no puede abrirlo como administrador, escriba **administración de equipos** en su lugar y, a continuación, vaya a **almacenamiento** > **administración de discos**.
-1. En administración de discos, haga clic en la unidad para el que desea cambiar o agregar una letra de unidad y, a continuación, seleccione **cambiar la letra de unidad y las rutas de acceso**.
+1. Abre Administración de discos con permisos de administrador. 
+    Para ello, en el cuadro de búsqueda de la barra de tareas, escribe **Administración de discos**, selecciona y mantén pulsado (o haz clic con el botón derecho) **Administración de discos** y, después, selecciona **Ejecutar como administrador**  >  **Sí**. Si no puedes abrirlo como administrador, escribe **en Administración de equipos** en su lugar y, a continuación, vete a **Almacenamiento** > **Administración de discos**.
+1. En Administración de discos, haz clic con el botón derecho en la unidad en la que deseas agrega una letra, o cambiarla, y selecciona **Cambiar la letra y rutas de acceso de unidad...** .
 
-    ![Administración de discos que se muestra una unidad](media/change-drive-letter.png)
+    ![Administración de discos muestra una unidad](media/change-drive-letter.png)
     > [!TIP]
-    > Si no ve el **cambiar la letra de unidad y las rutas de acceso** opción o bien está atenuada, es posible el volumen no está listo para recibir una letra de unidad, que puede ser el caso si la unidad está sin asignar y debe ser [inicializado](initialize-new-disks.md). O bien, quizá lo ha no diseñados para tener acceso, que es el caso de las particiones de sistema EFI y de recuperación. Si ha confirmado que tiene un volumen formateado con una letra de unidad que se puede acceder y que todavía no puede cambiarlo, lamentablemente en este tema probablemente no le puede ayudar, por lo que se recomienda [ponerse en contacto con Microsoft](https://support.microsoft.com/contactus/) o el fabricante de su PC para obtener más ayuda.
+    > Si no ves la opción **Cambiar la letra y rutas de acceso de unidad...** o bien está atenuada, es posible el volumen no esté listo para recibir una letra de unidad, algo que puede suceder si la unidad está sin asignar y debe [inicializarse](initialize-new-disks.md). También existe la posibilidad de que no se haya diseñado para que se pueda acceder a ella, lo que sucede en las particiones del sistema EFI y las particiones de recuperación. Si has confirmado que el volumen tiene formato y que puedes acceder a la letra de unidad, pero sigues sin poder cambiarla, es probable que este artículo no te sirva de ayuda, por lo que es aconsejable que te [pongas en contacto con Microsoft](https://support.microsoft.com/contactus/) o con el fabricante del equipo si necesitas más ayuda.
 
-1. Para cambiar la letra de unidad, seleccione **cambiar**. Para agregar una letra de unidad si la unidad todavía no tiene uno, seleccione **agregar**.
+1. Para cambiar la letra de una unidad, selecciona **Cambiar**. Para agregar una letra de unidad, en caso de que la unidad aún no tenga, selecciona **Agregar**.
 
-    ![El cuadro de diálogo Cambiar la letra de unidad y rutas de acceso](media/change-drive-letter2.png)
-1. Seleccione la nueva letra de unidad, seleccione **Aceptar**y, a continuación, seleccione **Sí** cuando se le solicite acerca de cómo los programas que dependen de la letra de unidad podrían no ejecutarse correctamente.
+    ![El cuadro de diálogo Cambiar la letra y rutas de acceso de unidad](media/change-drive-letter2.png)
+1. Selecciona la nueva letra de unidad, selecciona **Aceptar**y, finalmente, selecciona **Sí** cuando se te avise que los programas que dependen de la letra de unidad podrían no ejecutarse correctamente.
 
-    ![El cuadro de diálogo Cambiar la letra de unidad o ruta de acceso que se muestra si cambia la letra de unidad](media/change-drive-letter3.png)
+    ![El cuadro de diálogo Cambiar la letra y rutas de acceso de unidad que muestra el cambio de letra de unidad](media/change-drive-letter3.png)

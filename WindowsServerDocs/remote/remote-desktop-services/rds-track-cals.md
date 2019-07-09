@@ -1,6 +1,6 @@
 ---
-title: Realizar un seguimiento de las licencias de acceso de cliente de servicios de escritorio remoto (CAL de RDS)
-description: Aprenda a realizar un seguimiento de CAL a través de la implementación de RDS.
+title: Seguimiento de las licencias de acceso de cliente para Servicios de Escritorio remoto (CAL de RDS)
+description: Aprende a realizar un seguimiento de las licencias de acceso de cliente (CAL) en la implementación de RDS.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,40 +13,40 @@ author: lizap
 ms.author: elizapo
 ms.date: 05/11/2017
 manager: dongill
-ms.openlocfilehash: ed7490b2b61eb516d43b280b67fcefaeedb3e225
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a3b106a23660e1608231623bfd048669d97f9719
+ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890626"
+ms.lasthandoff: 06/17/2019
+ms.locfileid: "63712015"
 ---
-# <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>Realizar un seguimiento de las licencias de acceso de cliente de servicios de escritorio remoto (CAL de RDS)
+# <a name="track-your-remote-desktop-services-client-access-licenses-rds-cals"></a>Seguimiento de las licencias de acceso de cliente para Servicios de Escritorio remoto (CAL de RDS)
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (Canal semianual), Windows Server 2019 y Windows Server 2016
 
-Puede usar la herramienta Administrador de licencias de escritorio remoto para crear informes para realizar un seguimiento de las RDS CAL por usuario que ha emitido un servidor de licencias de escritorio remoto.
+Puedes usar la herramienta Administrador de licencias de Escritorio remoto para crear informes de seguimiento de las licencias de acceso de cliente por usuario para Servicios de Escritorio remoto que un servidor de licencias de Escritorio remoto haya emitido.
 
 > [!NOTE]
->  Si usa Azure AD Domain Services en su entorno, la herramienta Administrador de licencias de escritorio remoto no funcionará para obtener las CAL por usuario. En su lugar, deberá realizar un seguimiento de licencias manualmente, ya sea a través de los eventos de inicio de sesión, el sondeo conexiones activas de escritorio remoto mediante el agente de conexión, u otro mecanismo que funcione para usted. 
+>  Si usas Azure AD Domain Services en el entorno, la herramienta Administrador de licencias de Escritorio remoto no funcionará para obtener las CAL por usuario. En vez de eso, deberás realizar un seguimiento de licencias manualmente, ya sea a través de los eventos de inicio de sesión, el sondeo de conexiones activas a Escritorio remoto mediante el agente de conexión o cualquier otro mecanismo que te funcione. 
 
-Siga estos pasos para generar un informe de CAL de usuario por:
+Usa estos pasos para generar un informe de CAL por usuario:
 
-1. En el Administrador de licencias de escritorio remoto, haga clic en el servidor de licencias, haga clic en **crear informe**y, a continuación, haga clic en **uso de CAL por usuario**.
-2. Establecer el ámbito para el informe: seleccione uno de los siguientes:
-   - Todo el dominio: el dominio en el que el servidor de licencias es miembro.
-   - Unidades organizativas: cualquier unidad organizativa del dominio en el que el servidor de licencias es miembro.
-   - Todo el dominio y los dominios de confianza - puede incluir dominios de otros bosques. Si selecciona esta opción puede aumentar el tiempo que se tarda en crear el informe.
+1. En el Administrador de licencias de Escritorio remoto, haz clic con el botón derecho en el servidor de licencias, haz clic en **Crear informe** y, finalmente, haz clic en **Uso de CAL por usuario**.
+2. Establece el ámbito del informe. Para ello, selecciona una de las opciones siguientes:
+   - Dominio completo: el dominio en el que el servidor de licencias es miembro.
+   - Unidad organizativa: cualquier unidad organizativa del dominio en el que el servidor de licencias es miembro.
+   - Todo el dominio y los dominios de confianza: puede incluir dominios de otros bosques. Si seleccionas esta opción puede aumentar el tiempo que se tarda en crear el informe.
 
-   La selección que realice Determina qué cuentas de usuario en AD DS se buscan información de CAL de RDS por usuario generar el informe.
-3. Haga clic en **crear informe**. El informe se crea y aparece un mensaje para confirmar que el informe se creó correctamente. Haga clic en **Aceptar** para cerrar el mensaje.
+   La selección que realices determinará en qué cuentas de usuario de AD DS se buscará la información de CAL por usuario de RDS para generar el informe.
+3. Haz clic en **Crear informe**. El informe se crea y aparece un mensaje para confirmar que se ha creado correctamente. Haga clic en **Aceptar** para cerrar el mensaje.
 
-El informe que ha creado aparece en la sección de informes en el nodo del servidor de licencias. El informe proporciona la siguiente información:
+El informe que has creado aparece en la sección de informes en el nodo del servidor de licencias. El informe proporciona la siguiente información:
 
 - Fecha y hora en que se creó el informe
-- El ámbito del informe (p. ej., dominio, OU = Ventas o los dominios de confianza)
-- El número de RDS CAL por usuario que están instalados en el servidor de licencias
-- El número de RDS CAL por usuario que ha emitido el servidor de licencias específico para el ámbito del informe
+- El ámbito del informe (por ejemplo, dominio, unidad organizativa = Ventas, o todos los dominios de confianza)
+- El número de CAL por usuario de RDS que están instalados en el servidor de licencias
+- El número de CAL por usuario de RDS que ha emitido el servidor de licencias específico para el ámbito del informe
 
-También puede guardar el informe como un archivo CSV en una ubicación de carpeta en el equipo. Para guardar el informe, haga clic en el informe que desea guardar, haga clic en Guardar como y, a continuación, especifique el nombre de archivo y la ubicación para guardar el informe.
+También puedes guardar el informe como un archivo CSV en una ubicación de carpeta en el equipo. Para guardar el informe, haz clic con el botón derecho en el informe que deseas guardar, haz clic en Guardar como y, a continuación, especifica el nombre del archivo y la ubicación para guardar el informe.
 
-Los informes creados se muestran en el nodo de informes en el nodo del servidor de licencias en el Administrador de licencias de escritorio remoto. Si ya no necesita un informe, puede eliminarlo.
+Los informes creados se muestran en el nodo de informes del nodo del servidor de licencias en el Administrador de licencias de Escritorio remoto. Si ya no necesitas un informe, puedes eliminarlo.
