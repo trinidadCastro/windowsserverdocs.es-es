@@ -4,16 +4,16 @@ description: Problemas conocidos y solución de problemas de soporte técnico pa
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 05/14/2019
+ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: e1cfd2b0ea3bc4d7802cb4a6d2a8c1493d5511a1
-ms.sourcegitcommit: 0099873d69bd23495d275d7bcb464594de09ee3c
+ms.openlocfilehash: 08156a09491d66016b5fcfe6056ed318d682b987
+ms.sourcegitcommit: 514d659c3bcbdd60d1e66d3964ede87b85d79ca9
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65699695"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735160"
 ---
 # <a name="storage-migration-service-known-issues"></a>Servicio de migración de almacenamiento problemas conocidos
 
@@ -173,12 +173,39 @@ Se espera que este error si no ha habilitado la regla de firewall "Compartir arc
 
 ## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transfering-from-windows-server-2008-r2"></a>Error "no pudo transferir almacenamiento en cualquiera de los puntos de conexión" al transferir desde Windows Server 2008 R2
 
-Cuando se intenta transferir datos desde un equipo de origen de Windows Server 2008 R2, no trasnfers de datos y se recibe el error:  
+Cuando se intenta transferir datos desde un equipo de origen de Windows Server 2008 R2, no las transferencias de datos y se recibe el error:  
 
   No se pudo transferir el almacenamiento en cualquiera de los puntos de conexión.
 0x9044
 
 Se espera que este error si el equipo de Windows Server 2008 R2 no está totalmente al día con todas las críticas e importantes actualizaciones desde Windows Update. Con independencia del servicio de migración de almacenamiento, siempre se recomienda un equipo de Windows Server 2008 R2 por motivos de seguridad de la aplicación de revisiones como ese sistema operativo no contiene las mejoras de seguridad de las versiones más recientes de Windows Server.
+
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-and-check-if-the-source-device-is-online---we-couldnt-access-it"></a>Error "no pudo transferir almacenamiento en cualquiera de los puntos de conexión" y "Comprobar si el dispositivo de origen está en línea - se ha podido acceder a él".
+
+Cuando se intenta transferir datos desde un equipo de origen, no transferir algunos o todos los recursos compartidos, con el resumen de error:
+
+   No se pudo transferir el almacenamiento en cualquiera de los puntos de conexión.
+0x9044
+
+Examinando los detalles de la transferencia SMB muestra el error:
+
+   Compruebe si el dispositivo de origen está en línea - se ha podido acceder a él.
+
+Examinar el registro de eventos StorageMigrationService/Admin muestra:
+
+   No se pudo transferir el almacenamiento.
+
+   Trabajo: Id. de Job1:  
+   Estado: Error con errores: Mensaje de error 36931: 
+
+   Orientación: Compruebe el error detallado y asegúrese de que se cumplen los requisitos de la transferencia. El trabajo de transferencia no pudo transferir todos los equipos de origen y destino. Esto podría deberse a que el equipo de orchestrator no pudo comunicarse con los equipos de origen o destino, posiblemente debido a una regla de firewall, o falta de permisos.
+
+Examinar se muestra en el registro StorageMigrationService-Proxy/Debug:
+
+   Error de validación de transferencia 07/02/2019-13:35:57.231 [ERROR]. ErrorCode: 40961, punto de conexión de origen no está accesible o no existe, o credenciales de origen no son válidas o usuario autenticado no tiene permisos suficientes para acceder a él.
+en Microsoft.StorageMigration.Proxy.Service.Transfer.TransferOperation.Validate() en Microsoft.StorageMigration.Proxy.Service.Transfer.TransferRequestHandler.ProcessRequest (FileTransferRequest fileTransferRequest, operationId Guid)    [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
+
+Se espera que este error si la cuenta de migración no tiene al menos permisos de acceso de lectura a los recursos compartidos SMB. Para solucionar este error, agregue un grupo de seguridad que contiene la cuenta de migración de código fuente a los recursos compartidos SMB en el equipo de origen y concédale lectura, cambio o Control total. Una vez completada la migración, puede quitar este grupo. Una versión futura de Windows Server puede cambiar este comportamiento, ya no necesita permisos explícitos para los recursos compartidos de origen.
 
 ## <a name="see-also"></a>Vea también
 

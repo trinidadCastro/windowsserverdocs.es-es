@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: Cómo implementar Carpetas de trabajo, incluyendo la instalación del rol de servidor, la creación de recursos compartidos de sincronización y la creación de registros DNS.
-ms.openlocfilehash: 1ed26c9949fa3f4b53b9f650ca5a3649d5261d65
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d2ba117a021cfc7361c0f7c8df2ed9f3c4bc9d94
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447852"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792341"
 ---
 # <a name="deploying-work-folders"></a>Implementar Carpetas de trabajo
 
@@ -51,7 +51,7 @@ En este tema se describen los pasos necesarios para implementar Carpetas de trab
 ## <a name="step-2-create-dns-records"></a>Paso 2: Crear registros de DNS  
  Para que los usuarios puedan realizar la sincronización por Internet, debe crear un registro Host (A) en el DNS público para que los clientes de Internet puedan resolver la URL de Carpetas de trabajo. La resolución del registro de DNS debe ser la interfaz externa del servidor proxy inverso.  
   
- En la red interna, debes crear un registro CNAME en DNS denominado "workfolders" y que se resuelva en el nombre de dominio completo (FDQN) de un servidor de Carpetas de trabajo. Cuando los clientes de carpetas de trabajo usan la detección automática, la dirección URL que se usa para detectar el servidor de carpetas de trabajo es https://workfolders.domain.com. Si tienes previsto usar la detección automática, el registro CNAME denominado "workfolders" debe existir en DNS.  
+ En la red interna, debes crear un registro CNAME en DNS denominado "workfolders" y que se resuelva en el nombre de dominio completo (FDQN) de un servidor de Carpetas de trabajo. Cuando los clientes de carpetas de trabajo usan la detección automática, la dirección URL que se usa para detectar el servidor de carpetas de trabajo es https:\//workfolders.domain.com. Si tienes previsto usar la detección automática, el registro CNAME denominado "workfolders" debe existir en DNS.  
   
 ## <a name="step-3-install-work-folders-on-file-servers"></a>Paso 3: instalar Carpetas de trabajo en los servidores de archivos  
  Puede instalar Carpetas de trabajo en un servidor unido a un dominio con el Administrador del servidor o con Windows PowerShell, localmente o de forma remota a través de una red. Esto resulta útil si está configurando varios servidores de sincronización por su red.  
@@ -251,7 +251,7 @@ En el ejemplo anterior se crea un nuevo recurso compartido de sincronización co
 6.  En el cuadro **Valor para agregar**, escriba la URL del servidor de sincronización con el cual desea que se sincronice este usuario, haga clic en **Agregar**, haga clic en **Aceptar** y posteriormente haga clic en **Aceptar** de nuevo.  
   
     > [!NOTE]
-    >  La URL del servidor de sincronización es simplemente `https://` o `http://` (en función de si desea requerir una conexión segura) seguido del nombre de dominio completo del servidor de sincronización. Por ejemplo, **https://sync1.contoso.com** .
+    >  La URL del servidor de sincronización es simplemente `https://` o `http://` (en función de si desea requerir una conexión segura) seguido del nombre de dominio completo del servidor de sincronización. Por ejemplo, **https:\//sync1.contoso.com**.
 
 Para rellenar el atributo para varios usuarios, utilice Active Directory PowerShell. A continuación se proporciona un ejemplo que rellena el atributo para todos los miembros del grupo *Usuarios del recurso compartido de sincronización de RRHH* , tratado en el paso 5.
   

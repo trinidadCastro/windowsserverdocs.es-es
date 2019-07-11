@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 9cc40920d366c973ace06a0b6d438a1c2d84b03e
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 03792d7ae5fec3c209cf1abfaa7af3fdfdb75f08
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190511"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792269"
 ---
 # <a name="where-to-place-a-federation-server-proxy"></a>Dónde colocar a un servidor proxy de federación
 
@@ -34,7 +34,7 @@ Además, Internet\-accesible desde el servidor de seguridad, como un equipo que 
   
 Las reglas de publicación de servidor determinan el funcionamiento de la publicación de servidor, básicamente, filtrando todas las solicitudes entrantes y salientes a través del equipo que ejecuta ISA Server. Las reglas de publicación de servidor asignan las solicitudes de cliente entrantes a los servidores adecuados que hay detrás del equipo que ejecuta ISA Server. Para obtener información acerca de cómo configurar ISA Server para publicar un servidor, consulte [crear una regla de publicación Web segura](https://go.microsoft.com/fwlink/?LinkId=75182).  
   
-En el mundo federado de AD FS, estas solicitudes de cliente suelen realizarse en una dirección URL específica, por ejemplo, una dirección de URL de identificador de servidor de federación como http://fs.fabrikam.com. Dado que estas solicitudes de cliente provienen de desde Internet, Internet\-accesible desde el servidor de seguridad debe estar configurado para publicar la URL de identificador del servidor de federación para cada servidor proxy de federación que se implementa en la red perimetral.  
+En el mundo federado de AD FS, estas solicitudes de cliente suelen realizarse en una dirección URL específica, por ejemplo, una dirección de URL de identificador de servidor de federación como http:\//fs.fabrikam.com. Dado que estas solicitudes de cliente provienen de desde Internet, Internet\-accesible desde el servidor de seguridad debe estar configurado para publicar la URL de identificador del servidor de federación para cada servidor proxy de federación que se implementa en la red perimetral.  
   
 ### <a name="configuring-isa-server-to-allow-ssl"></a>Configuración de ISA Server para permitir SSL  
 Para facilitar las comunicaciones seguras de AD FS, debe configurar ISA Server para permitir que la capa de Sockets seguros \(SSL\) las comunicaciones entre los elementos siguientes:  

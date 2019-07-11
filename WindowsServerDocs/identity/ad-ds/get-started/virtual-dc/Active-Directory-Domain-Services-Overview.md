@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adds
-ms.openlocfilehash: 069cdb493cd0ad442e8922ec67c2b9cc6b2ec5fc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ed8a22881cd20633e6fcd61b146f3b0aad7a757b
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858176"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792280"
 ---
 # <a name="active-directory-domain-services-overview"></a>Introducción a Active Directory Domain Services
 
@@ -46,11 +46,11 @@ Active Directory también incluye:
  
 * [Estructura de Active Directory y las tecnologías de almacenamiento](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
 * [Roles de controlador de dominios](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
-* Esquema de Active Directory 
-* [Descripción de confianzas](https://technet.microsoft.com/library/cc771294(v=ws.10).aspx) 
+* [Active Directory Schema](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771796(v=ws.10))
+* [Descripción de confianzas](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771568(v=ws.10)) 
 * [Tecnologías de replicación de Active Directory](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
 * [Búsqueda de Active Directory y las tecnologías de publicación](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx) 
-* Interoperación con DNS y directiva de grupo 
+* [Interoperación con DNS y directiva de grupo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197486(v=ws.10))
 * [Descripción del esquema](https://technet.microsoft.com/library/cc759402(v=ws.10).aspx) 
 
 Para obtener una lista detallada de los conceptos de Active Directory, consulte [descripción de Active Directory](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx). 

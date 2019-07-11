@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: e5ea9d22-a503-4ed4-96b3-0ee2ccf4fd17
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 16a2dcdc573fac2631b5a9890ee04f2efb08d90a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 973ef70614f056adac1463918cc425d82b21ac62
+ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282537"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67792312"
 ---
 # <a name="step-3-plan-the-multisite-deployment"></a>Paso 3 Plan la implementación multisitio
 
@@ -162,11 +162,11 @@ En una implementación multisitio enrutamiento simétrico se aplica mediante Ter
   
    3. Prefijo de Teredo (opcional). Este prefijo solo es pertinente si el servidor de acceso remoto está configurado con dos direcciones de IPv4 públicas consecutivas en el adaptador externo. El prefijo se basa en la primera dirección IPv4 pública del par de direcciones. Por ejemplo, si las direcciones externas son:  
   
-      1. www.xxx.yyy.zzz  
+      1. www\.xxx.yyy.zzz  
   
-      2. www.xxx.yyy.zzz+1  
+      2. www\.xxx.yyy.zzz+1  
   
-      A continuación, configure el prefijo de Teredo es 2001:0:WWXX:YYZZ:: / 64, donde WWXX: YYZZ es la representación hexadecimal de la www.xxx.yyy.zzz dirección IPv4.  
+      A continuación, configure el prefijo de Teredo es 2001:0:WWXX:YYZZ:: / 64, donde WWXX: YYZZ es la representación hexadecimal de la dirección IPv4, World Wide Web\.xxx.yyy.zzz.  
   
       Tenga en cuenta que puede usar el siguiente script para calcular el prefijo de Teredo:  
   
@@ -270,7 +270,7 @@ Cuando haya completado la transición, puede desinstalar la primera implementaci
   
     -   Dirección IP::: 1  
   
-    -   Tipo: AAAA  
+    -   Escriba:  AAAA  
   
   
   
