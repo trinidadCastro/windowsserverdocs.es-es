@@ -45,7 +45,7 @@ Cuando usas enviar atributos LDAP como plantilla de reglas de notificaciones, pu
   
 Esta plantilla permite agregar varios atributos, que se enviarán como notificaciones múltiples, de una sola regla. Por ejemplo, puede usar esta plantilla de regla para crear una regla que buscará valores de atributo para los usuarios autenticados de los atributos **company** y **departament** de Active Directory y, después, enviará estos valores como dos notificaciones salientes diferentes.  
   
-También puede utilizar esta regla para enviar todas las pertenencias a grupos del usuario. Si desea enviar solo pertenencias a grupos individuales, use la plantilla de regla de envío de pertenencia a grupos como una notificación. Para obtener más información, consulte [When to Use a Send Group Membership as a Claim Rule](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md).  
+También puede utilizar esta regla para enviar todas las pertenencias a grupos del usuario. Si desea enviar solo pertenencias a grupos individuales, use la plantilla de regla de envío de pertenencia a grupos como una notificación. Para obtener más información, consulte [cuándo se debe usar una pertenencia al grupo de envío como una regla de notificación](When-to-Use-a-Send-Group-Membership-as-a-Claim-Rule.md).  
   
 ## <a name="how-to-create-this-rule"></a>Cómo crear esta regla  
 Puede crear esta regla mediante el lenguaje de reglas de notificación o mediante el uso de enviar atributos LDAP como plantilla de regla de notificaciones en la administración de AD FS ajustar\-en. Esta plantilla de regla permite las siguientes opciones de configuración:  

@@ -69,7 +69,7 @@ Antes de Windows 8, Windows Server 2012, los usuarios podrían realizar una tran
 
 Con el modo siempre sin conexión, los equipos nunca hacen la transición al modo en línea cuando la **configurar el modo de vínculo de baja velocidad** está configurada la directiva de grupo y la **latencia** parámetro de umbral se establece en 1 milisegundo. Los cambios se sincronizan en segundo plano cada 120 minutos, de manera predeterminada, pero la sincronización puede definirse mediante la configuración de directiva de grupo **Configurar sincronización en segundo plano**.
 
-Para obtener más información, consulte [Enable the Always Offline Mode to Provide Faster Access to Files](enable-always-offline.md).
+Para obtener más información, consulte el tema sobre [habilitar el modo Siempre sin conexión para proporcionar un acceso más rápido a los archivos](enable-always-offline.md).
 
 ## <a name="cost-aware-synchronization"></a>Sincronización con control costo
 
@@ -112,7 +112,7 @@ Para limitar la descarga de datos de usuario privados en equipos principales, la
     1. Si el equipo es uno de los equipos principales del usuario, Windows aplica la configuración de perfiles de usuarios móviles y redireccionamiento de carpetas.
     2. Si el equipo no es uno de los equipos principales del usuario, Windows carga el perfil local almacenado en memoria caché del usuario, si está presente, o crea un nuevo perfil local. Windows también quita las carpetas redireccionadas existentes de acuerdo con la acción de eliminación que especificó la configuración de directiva de grupo aplicada previamente, que se mantiene en la configuración de redireccionamiento de carpeta local.
 
-Para obtener más información, vea [Deploy Primary Computers for Folder Redirection and Roaming User Profiles](deploy-primary-computers.md)
+Para obtener más información, consulte [implementar equipos principales para redirección de carpetas y perfiles de usuario móviles](deploy-primary-computers.md)
 
 ## <a name="hardware-requirements"></a>Requisitos de hardware
 

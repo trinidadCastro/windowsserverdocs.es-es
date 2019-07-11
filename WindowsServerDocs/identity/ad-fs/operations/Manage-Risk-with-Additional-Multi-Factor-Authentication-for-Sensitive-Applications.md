@@ -72,7 +72,7 @@ Una directiva de autenticación global se aplica a todos los usuarios de confian
 
 -   Configuración y métodos para MFA
 
--   Si se habilita la autenticación de dispositivos. Para obtener más información, consulte [Join to Workplace from Any Device for SSO and Seamless Second Factor Authentication Across Company Applications](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
+-   Si se habilita la autenticación de dispositivos. Para obtener más información, consulte [unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía](../../ad-fs/operations/Join-to-Workplace-from-Any-Device-for-SSO-and-Seamless-Second-Factor-Authentication-Across-Company-Applications.md).
 
 Las directivas de autenticación por relación de confianza para usuario autenticado se aplican de forma concreta a los intentos de acceso a esa relación de confianza para usuario autenticado (aplicación o servicio). Puede configurar las siguientes opciones como parte de la directiva de autenticación por relación de confianza para usuario autenticado:
 

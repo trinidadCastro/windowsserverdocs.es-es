@@ -36,7 +36,7 @@ Puede usar los temas siguientes para revisar los requisitos previos y otra infor
 En este escenario, un equipo que ejecuta Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012, se configura como un servidor de DirectAccess con configuración avanzada.  
   
 > [!NOTE]  
-> Si quieres configurar una implementación básica solo con ajustes básicos, consulta [Deploy a Single DirectAccess Server Using the Getting Started Wizard](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md). En el escenario de configuración sencilla, DirectAccess se configura con opciones de configuración predeterminadas mediante un asistente, sin necesidad de establecer la configuración de infraestructura, como una entidad de certificación (CA) o grupos de seguridad de Active Directory.  
+> Si solo quieres configurar una implementación básica con la configuración sencilla, consulta [Implementar un único servidor de acceso remoto con el Asistente para introducción](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md). En el escenario de configuración sencilla, DirectAccess se configura con opciones de configuración predeterminadas mediante un asistente, sin necesidad de establecer la configuración de infraestructura, como una entidad de certificación (CA) o grupos de seguridad de Active Directory.  
   
 ## <a name="in-this-scenario"></a>En este escenario  
 Para configurar un único servidor de DirectAccess con configuración avanzada, debes realizar varios pasos de planificación e implementación.  

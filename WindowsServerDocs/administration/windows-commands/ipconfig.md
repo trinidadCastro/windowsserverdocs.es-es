@@ -53,7 +53,7 @@ ipconfig [/allcompartments] [/all] [/renew [<Adapter>]] [/release [<Adapter>]] [
 
 - Este comando es muy útil en los equipos que están configurados para obtener una dirección IP automáticamente. Esto permite a los usuarios a determinar qué valores de configuración de TCP/IP se han configurado por DHCP, direcciones IP privada automática (APIPA) o una configuración alternativa.
 - Si el nombre que se suministran a *adaptador* contiene espacios, utilice comillas alrededor del nombre de adaptador (ejemplo: **"** <em>Nombre de adaptador</em> **"** ).
-- Para los nombres de adaptador, **ipconfig** admite el uso del asterisco ( *) carácter comodín para especificar los adaptadores con nombres que comienzan con una cadena especificada o los adaptadores con nombres que contienen la cadena especificada. Por ejemplo, **Local\\** *   coincide con todos los adaptadores que comienzan con la cadena Local y  **\*Con\\** * coincide con todos los adaptadores que contienen el cadena Con.
+- Para los nombres de adaptador, **ipconfig** admite el uso del asterisco ( *) carácter comodín para especificar los adaptadores con nombres que comienzan con una cadena especificada o los adaptadores con nombres que contienen la cadena especificada. Por ejemplo, **Local\\***   coincide con todos los adaptadores que comienzan con la cadena Local y  **\*Con\\** * coincide con todos los adaptadores que contienen el cadena Con.
 
 ## <a name="examples"></a>Ejemplos
 
