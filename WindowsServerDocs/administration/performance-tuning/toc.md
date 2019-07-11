@@ -7,8 +7,10 @@
 #### [Parámetros recomendados del plan de energía equilibrado](hardware/power/recommended-balanced-plan-parameters.md)
 ## Ajuste del rol de servidor
 ### [Servidor Active Directory](role/active-directory-server/index.md)
+#### [Planeamiento de capacidad para AD DS](role/active-directory-server/capacity-planning-for-active-directory-domain-services.md)
 #### [Consideraciones sobre la definición de sitios](role/active-directory-server/site-definition-considerations.md)
 #### [Consideraciones de hardware](role/active-directory-server/hardware-considerations.md).
+#### [Consideraciones de uso de memoria](role/active-directory-server/memory-usage-considerations.md)
 #### [Consideraciones de LDAP](role/active-directory-server/ldap-considerations.md)
 #### [Solución de problemas de rendimiento de AD DS](role/active-directory-server/troubleshoot.md)
 ### [Servidor de archivos](role/file-server/index.md)
