@@ -75,5 +75,5 @@ Para completar este procedimiento, se requiere como mínimo pertenecer al grupo 
 
 ## <a name="additional-references"></a>Referencias adicionales
 
-[Comprender las carpetas compartidas y el Firewall de Windows](https://technet.microsoft.com/library/cc731402.aspx)()https://technet.microsoft.com/library/cc731402.aspx)
+[Comprender las carpetas compartidas y el Firewall de Windows](https://technet.microsoft.com/library/cc731402.aspx)(https://technet.microsoft.com/library/cc731402.aspx)
 
