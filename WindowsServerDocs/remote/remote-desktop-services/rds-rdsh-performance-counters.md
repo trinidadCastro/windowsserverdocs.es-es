@@ -4,22 +4,29 @@ description: ¿Funcionan muy lentamente las aplicaciones en la sesión de Escrit
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: elizapo
-ms.date: 09/19/2018
+ms.date: 07/11/2019
 ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: f9aafaa34d5c16e45681e88b1ce60e99a9ad2842
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a302e775d3304db9304cc51e09ede19fa2eba802
+ms.sourcegitcommit: f75d9496f345d73fdda88037617763e7a2f614b7
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66447096"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863105"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Uso de contadores de rendimiento para diagnosticar problemas de rendimiento de las aplicaciones en los hosts de sesión de Escritorio remoto
 
-Uno de los problemas más difíciles de diagnosticar es que el rendimiento de las aplicaciones sea deficiente (las aplicaciones funcionan con lentitud o no responden). Tradicionalmente, el primer paso del diagnóstico es recopilar los datos de la CPU, memoria, entrada/salida del disco, y otras métricas y, después, usar herramientas como Windows Performance Analyzer para intentar averiguar qué es lo que provoca el problema. Por desgracia, en la mayoría de los casos estos datos no ayuda a identificar la causa raíz, ya que los contadores de consumo de recursos tienen variaciones frecuentes y grandes, lo que dificulta la lectura de los datos y su correlación con el problema notificado. Para ayudarle a solucionar más rápidamente los problemas de rendimiento de las aplicaciones, hemos agregado varios contadores de rendimiento nuevos (se pueden [descargar](#download-windows-server-insider-software) a través del [programa Windows Insider](https://insider.windows.com)) que miden los flujos de entrada del usuario.
+> Se aplica a: Windows Server 2019, Windows 10
+
+Uno de los problemas más difíciles de diagnosticar es que el rendimiento de las aplicaciones sea deficiente (las aplicaciones funcionan con lentitud o no responden). Tradicionalmente, el primer paso del diagnóstico es recopilar los datos de la CPU, memoria, entrada/salida del disco, y otras métricas y, después, usar herramientas como Windows Performance Analyzer para intentar averiguar qué es lo que provoca el problema. Por desgracia, en la mayoría de los casos, estos datos no ayudan a identificar la causa raíz, ya que los contadores de consumo de recursos tienen variaciones frecuentes y grandes, lo que dificulta la lectura de los datos y su correlación con el problema notificado. Para ayudarle a solucionar rápidamente los problemas de rendimiento de las aplicaciones, hemos agregado varios contadores de rendimiento nuevos (se pueden [descargar](#download-windows-server-insider-software) a través del [programa Windows Insider](https://insider.windows.com)) que miden los flujos de entrada del usuario.
+
+>[!NOTE]
+>El contador de retraso de entrada de usuario solo es compatible con:
+> - Windows Server 2019 o posterior
+> - Windows 10, versión 1809 o posterior
 
 El contador User Input Delay puede ayudarle a identificar rápidamente la causa raíz de los problemas que tienen los usuarios finales en RDP. Este contador mide el tiempo que una entrada de usuario cualquiera (por ejemplo, el uso del ratón o del teclado) permanece en la cola antes de que la recoja un proceso y el contador funciona en sesiones tanto locales como remotas.
 
