@@ -29,9 +29,9 @@ Las secciones siguientes describen algunas de las decisiones claves para determi
 ## <a name="determine-the-organizational-role-for-the-federation-server"></a>Determinar la función organizativa del servidor de federación  
 Para tomar una decisión fundamentada sobre cuándo se debe crear un nuevo servidor de federación, primero debe determinar en qué organización van a residir el servidor. La función que desempeña un servidor de federación en una organización depende de si se coloca el servidor de federación en la organización del asociado de cuenta o en la organización del asociado de recurso.  
   
-Cuando un servidor de federación se coloca en la red corporativa del asociado de cuenta, su función es autenticar las credenciales de usuario del explorador, el servicio Web o los clientes del selector de identidad y enviar los tokens de seguridad a los clientes. Para obtener más información, consulte [Review the Role of the Federation Server in the Account Partner](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md).  
+Cuando un servidor de federación se coloca en la red corporativa del asociado de cuenta, su función es autenticar las credenciales de usuario del explorador, el servicio Web o los clientes del selector de identidad y enviar los tokens de seguridad a los clientes. Para obtener más información, consulte [revisar el rol del servidor de federación del asociado de cuenta](Review-the-Role-of-the-Federation-Server-in-the-Account-Partner.md).  
   
-Cuando un servidor de federación se coloca en la red corporativa del asociado de recurso, su función es autenticar usuarios, según un token de seguridad emitido por un servidor de federación de la organización del asociado de recurso, o su función es redirigir solicitudes de token configurar aplicaciones Web o servicios Web para la organización del asociado de cuenta que pertenece el cliente. Para obtener más información, consulte [Review the Role of the Federation Server in the Resource Partner](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md).  
+Cuando un servidor de federación se coloca en la red corporativa del asociado de recurso, su función es autenticar usuarios, según un token de seguridad emitido por un servidor de federación de la organización del asociado de recurso, o su función es redirigir solicitudes de token configurar aplicaciones Web o servicios Web para la organización del asociado de cuenta que pertenece el cliente. Para obtener más información, consulte [revisar el rol del servidor de federación del asociado de recurso](Review-the-Role-of-the-Federation-Server-in-the-Resource-Partner.md).  
   
 ## <a name="determine-which-ad-fs-design-to-deploy"></a>Determinar qué diseño de AD FS implementar  
 Crear servidores de federación de su organización siempre que desee implementar cualquiera de los diseños AD FS:  
@@ -66,13 +66,13 @@ Puede crear un servidor de federación mediante el Asistente para configuración
   
 -   Crear el primer servidor de federación en una granja de servidores de federación  
   
-    Para obtener más información acerca de cómo configurar el primer servidor de federación o agregar un servidor de federación a una granja de servidores, consulte [Create the First Federation Server in a Federation Server Farm](../../ad-fs/deployment/Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md).  
+    Para obtener más información acerca de cómo configurar el primer servidor de federación o agregar un servidor de federación a una granja de servidores, consulte [crear el primer servidor de federación en una granja de servidores de federación](../../ad-fs/deployment/Create-the-First-Federation-Server-in-a-Federation-Server-Farm.md).  
   
 -   Agregar un servidor de federación a una granja de servidores de federación  
   
-    Para obtener más información sobre cómo agregar un servidor de federación a una granja de servidores, consulte [Add a Federation Server to a Federation Server Farm](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md).  
+    Para obtener más información acerca de cómo agregar un servidor de federación a una granja de servidores, consulte [agregar un servidor de federación a una granja de servidores de federación](../../ad-fs/deployment/Add-a-Federation-Server-to-a-Federation-Server-Farm.md).  
   
-Para obtener más información detallada acerca de cómo funciona cada una de estas opciones, consulte [The Role of the AD FS Configuration Database](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
+Para obtener más información acerca de cómo funciona cada una de estas opciones, consulte [el papel de la base de datos de configuración de AD FS](../../ad-fs/technical-reference/The-Role-of-the-AD-FS-Configuration-Database.md).  
   
 Para obtener más información acerca de cómo configurar todos los requisitos previos necesarios para implementar un servidor de federación, consulte [lista de comprobación: Configuración de un servidor de federación](../../ad-fs/deployment/Checklist--Setting-Up-a-Federation-Server.md).  
   
