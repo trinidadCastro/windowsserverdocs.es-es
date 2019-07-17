@@ -159,9 +159,9 @@ A partir de Windows Server 2008, los controladores de dominio también tienen la
 |-|-|-|-|  
 |Directiva o tipo de cifrado|Windows Server 2008 predeterminado|Windows Server 2012 y Windows Server 2008 R2 predeterminado|Comentario|  
 |AllowNT4Crypto|Deshabilitada|Deshabilitada|Los clientes de Bloque de mensajes del servidor (SMB) de terceros pueden no ser compatibles con la configuración predeterminada de seguridad en los controladores de dominio. En todos los casos, esta configuración se puede relajar para permitir la interoperabilidad, pero solamente a costa de la seguridad. Para obtener más información, consulte [artículo 942564](https://go.microsoft.com/fwlink/?LinkId=164558) en Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkId=164558).|  
-|DES|Enabled|Deshabilitada|[Artículo 977321](https://go.microsoft.com/fwlink/?LinkId=177717) en el artículo de Microsoft Knowledge Base ()https://go.microsoft.com/fwlink/?LinkId=177717)|  
+|DES|Enabled|Deshabilitada|[Artículo 977321](https://go.microsoft.com/fwlink/?LinkId=177717) en el artículo de Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkId=177717)|  
 |Protección extendida/CBT para autenticación integrada|N/D|Enabled|Consulte [documento informativo sobre seguridad de Microsoft (937811)](https://go.microsoft.com/fwlink/?LinkId=164559) (https://go.microsoft.com/fwlink/?LinkId=164559) y [artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) en Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkId=178251).<br /><br />Revise e instale la revisión en [artículo 977073](https://go.microsoft.com/fwlink/?LinkId=186394) (https://go.microsoft.com/fwlink/?LinkId=186394) en Microsoft Knowledge Base, según sea necesario.|  
-|LMv2|Enabled|Deshabilitada|[Artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) en el artículo de Microsoft Knowledge Base ()https://go.microsoft.com/fwlink/?LinkId=178251)|  
+|LMv2|Enabled|Deshabilitada|[Artículo 976918](https://go.microsoft.com/fwlink/?LinkId=178251) en el artículo de Microsoft Knowledge Base ( https://go.microsoft.com/fwlink/?LinkId=178251)|  
 
 ## <a name="BKMK_SysReqs"></a>Requisitos del sistema operativo
 
