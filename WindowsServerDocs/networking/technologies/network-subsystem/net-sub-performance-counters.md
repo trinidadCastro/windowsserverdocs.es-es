@@ -123,7 +123,7 @@ Los siguientes contadores de rendimiento son relevantes a los posibles problemas
 
 Los siguientes contadores de rendimiento son relevantes para el rendimiento de RSC.  
   
--   Adaptador de red  
+-   Adaptador de red(*)  
   
     -   Conexiones de TCP RSC activo  
   
