@@ -1,6 +1,6 @@
 ---
-title: Introducción a Windows Admin Center
-description: Introducción a Windows Admin Center
+title: Introducción al centro de administración de Windows
+description: Introducción al centro de administración de Windows
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,151 +8,150 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
 ms.date: 02/15/2019
-ms.openlocfilehash: bd35e439ee3c76af1306bbbd712d754dd79f555f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 25f97e614d2c7ea8ae1799a04e7675dc1e60af00
+ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446091"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68300731"
 ---
-# <a name="get-started-with-windows-admin-center"></a>Introducción a Windows Admin Center
+# <a name="get-started-with-windows-admin-center"></a>Introducción al centro de administración de Windows
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 > [!Tip]
 > ¿Novedad en Windows Admin Center?
 > [Obtén más información acerca de Windows Admin Center](../understand/windows-admin-center.md) o [descárgalo ahora](https://aka.ms/windowsadmincenter).
 
-## <a name="windows-admin-center-installed-on-windows-10"></a>Windows Admin Center instalados en Windows 10
+## <a name="windows-admin-center-installed-on-windows-10"></a>Centro de administración de Windows instalado en Windows 10
 
 > [!IMPORTANT]
-> Debe ser miembro del grupo de administradores locales usen Windows Admin Center en Windows 10
+> Debe ser miembro del grupo de administradores locales para usar el centro de administración de Windows en Windows 10.
 
 ### <a name="selecting-a-client-certificate"></a>Seleccionar un certificado de cliente
 
-La primera vez que abra Windows Admin Center en Windows 10, asegúrese de seleccionar el *Windows Admin Center cliente* certificado (en caso contrario, obtendrá un error HTTP 403 que dice "no se puede obtener a esta página").
+La primera vez que abra el centro de administración de Windows en Windows 10, asegúrese de seleccionar el certificado de *cliente del centro de administración de Windows* (de lo contrario, recibirá un error http 403 que indica "no se puede obtener acceso a esta página").
 
-En Microsoft Edge, cuando se le pida con este cuadro de diálogo:
+En Microsoft Edge, cuando se le pregunte con este cuadro de diálogo:
  
 1. Haga clic en **más opciones**
 
     ![](../media/launch-cert-1.png)
 
-2. Seleccione el certificado con la etiqueta **Windows Admin Center cliente** y haga clic en **Aceptar**
+2. Seleccione el certificado etiquetado **cliente del centro de administración de Windows** y haga clic en **Aceptar** .
 
     ![](../media/launch-cert-2.png)
 
-3. Asegúrese de que **permitir el acceso siempre** está seleccionada y haga clic en **permitir**
+3. Asegúrese de que la opción **permitir el acceso siempre** está seleccionada y haga clic en **permitir** .
 
     ![](../media/launch-cert-3.png)
 
 ## <a name="connecting-to-managed-nodes-and-clusters"></a>Conectarse a clústeres y nodos administrados
 
-Después de haber completado la instalación de Windows Admin Center, puede agregar servidores o clústeres para administrar desde la página información general principal.
+Después de haber completado la instalación del centro de administración de Windows, puede agregar servidores o clústeres para administrarlos desde la página de información general principal.
 
- **Agregar un solo servidor o un clúster como un nodo administrado**
+ **Agregar un solo servidor o un clúster como nodo administrado**
 
-1. Haga clic en **+ agregar** en **todas las conexiones**.
+1. Haga clic en **+ Agregar** en **todas las conexiones**.
 
    ![](../media/launch/addserver0.png)
 
-2. Elija esta opción Agregar una conexión de servidor, clúster de conmutación por error o un clúster de Hyper-Converged:
+2. Elija Agregar un servidor, un clúster de conmutación por error o una conexión de clúster hiperconvergida:
     
    ![](../media/launch/addserver1.png)
 
-3. Escriba el nombre del servidor o clúster para administrar y haga clic en **enviar**. El servidor o clúster se agregarán a la lista de conexiones en la página información general.
+3. Escriba el nombre del servidor o clúster que desea administrar y haga clic en **submit (enviar**). El servidor o clúster se agregará a la lista de conexiones en la página información general.
 
    ![](../media/launch/addserver2.png)
 
    **--O BIEN--**
 
-**Una importación masiva de varios servidores**
+**Importación en bloque de varios servidores**
 
- 1. En el **Agregar conexión de servidor** página, elija el **importar servidores** ficha.
+ 1. En la página **Agregar conexión de servidor** , elija la pestaña **servidores de importación** .
 
     ![](../media/launch/import-servers.png)
 
- 2. Haga clic en **examinar** y seleccione un archivo de texto que contiene una coma o nueva línea separados, lista de FQDN para los servidores que desea agregar.
+ 2. Haga clic en **examinar** y seleccione un archivo de texto que contenga una coma o una nueva lista de FQDN para los servidores que desea agregar.
 
-    **--O BIEN--**
+> [!Note]
+> El archivo. csv que se crea al [exportar las conexiones con PowerShell](#use-powershell-to-import-or-export-your-connections-with-tags) contiene información adicional más allá de los nombres de servidor y no es compatible con este método de importación.
 
-**Agregar servidores de búsqueda en Active Directory**
+  **--O BIEN--**
 
- 1. En el **Agregar conexión de servidor** página, elija el **buscar en Active Directory** ficha.
+**Agregar servidores buscando Active Directory**
+
+ 1. En la página **Agregar conexión de servidor** , elija la pestaña **Active Directory de búsqueda** .
 
     ![](../media/launch/search-ad.png)
 
- 2. Escriba los criterios de búsqueda y haga clic en **búsqueda**. Se admiten caracteres comodín (*).
+ 2. Escriba los criterios de búsqueda y haga clic en **Buscar**. Se admiten caracteres comodín (*).
 
- 3. Una vez finalizada la búsqueda: seleccione uno o varios de los resultados, si lo desea agregar etiquetas y haga clic en **agregar**.
+ 3. Una vez completada la búsqueda, seleccione uno o varios de los resultados, agregue etiquetas de forma opcional y haga clic en **Agregar**.
 
-## <a name="authenticate-with-the-managed-node"></a>Autenticar con el nodo administrado ##
+## <a name="authenticate-with-the-managed-node"></a>Autenticación con el nodo administrado ##
 
-Windows Admin Center admite varios mecanismos para autenticar con un nodo administrado. Inicio de sesión único es el valor predeterminado.
+El centro de administración de Windows admite varios mecanismos para la autenticación con un nodo administrado. El inicio de sesión único es el valor predeterminado.
 
 **Inicio de sesión único**
 
-Puede usar sus credenciales actuales de Windows para autenticarse con el nodo administrado. Este es el valor predeterminado, y Windows Admin Center trata el inicio de sesión cuando se agrega un servidor. 
+Puede usar sus credenciales actuales de Windows para autenticarse con el nodo administrado. Este es el valor predeterminado y el centro de administración de Windows intenta iniciar sesión al agregar un servidor. 
 
-**De sesión único cuando se implementa como un servicio de Windows Server**
+**Inicio de sesión único cuando se implementa como un servicio en Windows Server**
 
-Si ha instalado Windows Admin Center en Windows Server, configuración adicional es necesaria para el inicio de sesión único.  [Configurar el entorno para la delegación](../configure/user-access-control.md)
+Si ha instalado el centro de administración de Windows en Windows Server, se requiere una configuración adicional para el inicio de sesión único.  [Configurar el entorno para la delegación](../configure/user-access-control.md)
 
 **--O BIEN--**
 
-**Use *administrar como* para especificar credenciales**
+**Usar *administrar como* para especificar credenciales**
 
-En **todas las conexiones**, seleccione un servidor de la lista y elija **administrar como** para especificar las credenciales que utilizará para autenticarse en el nodo administrado:
+En **todas las conexiones**, seleccione un servidor de la lista y elija **administrar como** para especificar las credenciales que usará para autenticarse en el nodo administrado:
 
 ![](../media/launch-use-6.png)
 
-Si se está ejecutando en modo de servicio de Windows Admin Center en Windows Server, pero no tiene configurada la delegación Kerberos, debe volver a escribir sus credenciales de Windows:
+Si el centro de administración de Windows se ejecuta en modo de servicio en Windows Server, pero no tiene configurada la delegación Kerberos, debe volver a escribir las credenciales de Windows:
 
 ![](../media/launch-use-7.png)
 
-Las credenciales se pueden aplicar a todas las conexiones, que se almacenará en memoria caché ellos para esa sesión de explorador específico. Si se vuelve a cargar el explorador, debe volver a escribir su **administrar como** credenciales.
+Puede aplicar las credenciales a todas las conexiones, que se almacenarán en caché para esa sesión de explorador específica. Si recarga el explorador, debe volver a escribir las credenciales de **administrar como** .
 
-**Solución de contraseña de administrador local (LAP)**
+**Solución de contraseña de administrador local (LAPS)**
 
-Si su entorno usa [LAPS](https://technet.microsoft.com/mt227395.aspx)y tiene Windows Admin Center instalados en los equipos Windows 10, puede usar las credenciales de LAPS para autenticarse con el nodo administrado. **Si usa este escenario, por favor,** [proporcionar comentarios](http://aka.ms/WACFeedback).
+Si su entorno usa [laps](https://technet.microsoft.com/mt227395.aspx)y tiene instalado el centro de administración de Windows en el equipo con Windows 10, puede usar las credenciales de laps para autenticarse con el nodo administrado. **Si usa este escenario,** [proporcione comentarios](http://aka.ms/WACFeedback).
 
-## <a name="using-tags-to-organize-your-connections"></a>Uso de etiquetas para organizar sus conexiones
+## <a name="using-tags-to-organize-your-connections"></a>Uso de etiquetas para organizar las conexiones
 
-Puede utilizar etiquetas para identificar y filtrar los servidores relacionados en la lista de conexiones.  Esto le permite ver un subconjunto de los servidores en la lista de conexiones.  Esto es especialmente útil si tiene muchas conexiones.
+Puede usar etiquetas para identificar y filtrar los servidores relacionados en la lista de conexiones.  Esto le permite ver un subconjunto de los servidores en la lista de conexiones.  Esto es especialmente útil si tiene muchas conexiones.
 
 ### <a name="edit-tags"></a>Editar etiquetas
 
-* Seleccione un servidor o varios servidores en la lista de todas las conexiones
-* En **todas las conexiones**, haga clic en **editar etiquetas**
+* Seleccionar un servidor o varios servidores en la lista todas las conexiones
+* En **todas las conexiones**, haga clic en **editar etiquetas** .
 
 ![](../media/launch/tags-5.png)
 
-El **editar etiquetas de conexión** panel le permite modificar, agregar o quitar etiquetas de sus conexiones seleccionadas:
+El panel **editar etiquetas de conexión** permite modificar, agregar o quitar etiquetas de las conexiones seleccionadas:
 
-* Para agregar una nueva etiqueta para sus conexiones seleccionadas, seleccione **Agregar etiqueta** y escriba el nombre de la etiqueta a la que le gustaría utilizar.
+* Para agregar una nueva etiqueta a las conexiones seleccionadas, seleccione **Agregar etiqueta** y escriba el nombre de etiqueta que desea usar.
 
 * Para etiquetar las conexiones seleccionadas con un nombre de etiqueta existente, active la casilla situada junto al nombre de etiqueta que desea aplicar.
 
-* Para quitar una etiqueta de seleccionado todas las conexiones, desactive la casilla situada junto a la etiqueta a la que desea quitar.
+* Para quitar una etiqueta de todas las conexiones seleccionadas, desactive la casilla situada junto a la etiqueta que desea quitar.
 
-* Si una etiqueta se aplica a un subconjunto de las conexiones seleccionadas, se muestra la casilla de verificación en un estado intermedio. Puede hacer clic en el cuadro para protegerlo y aplicar la etiqueta a todas las conexiones seleccionadas o hacer clic para desactivarla y quitar la etiqueta de todas las conexiones seleccionadas.
+* Si se aplica una etiqueta a un subconjunto de las conexiones seleccionadas, la casilla se muestra en un estado intermedio. Puede hacer clic en el cuadro para comprobarlo y aplicar la etiqueta a todas las conexiones seleccionadas, o bien hacer clic de nuevo para desactivarla y quitar la etiqueta de todas las conexiones seleccionadas.
 
 ![](../media/launch/tags-6.png)
 
-### <a name="filter-connections-by-tag"></a>Filtrar las conexiones por etiqueta
+### <a name="filter-connections-by-tag"></a>Filtrar conexiones por etiqueta
 
-Una vez que se han agregado etiquetas a una o varias conexiones de servidor, puede ver las etiquetas en la lista de conexiones y filtrar la lista de conexiones por etiquetas.
+Una vez que se han agregado etiquetas a una o más conexiones de servidor, puede verlas en la lista de conexiones y filtrar la lista de conexiones por etiquetas.
 
 * Para filtrar por una etiqueta, seleccione el icono de filtro situado junto al cuadro de búsqueda.
 ![](../media/launch/tags-7.png)
-* Puede seleccionar "o", "y" o "no" para modificar el comportamiento de los filtros de las etiquetas seleccionadas.
+* Puede seleccionar "or", "and" o "not" para modificar el comportamiento de filtro de las etiquetas seleccionadas.
 ![](../media/launch/tags-8.png)
 
 ## <a name="use-powershell-to-import-or-export-your-connections-with-tags"></a>Usar PowerShell para importar o exportar las conexiones (con etiquetas)
-
-> Se aplica a: Versión preliminar de Windows Admin Center
-
-Versión preliminar de Windows Admin Center incluye un módulo de PowerShell para importar o exportar la lista de conexiones.
 
 ```powershell
 # Load the module
@@ -165,26 +164,26 @@ Export-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 Import-Connection "https://wac.contoso.com" -fileName "WAC-connections.csv"
 ```
 
-### <a name="csv-file-format-for-importing-connections"></a>Formato de archivo CSV para la importación de conexiones
+### <a name="csv-file-format-for-importing-connections"></a>Formato de archivo CSV para importar conexiones
 
-El formato del archivo CSV se inicia con los encabezados de cuatro ```"name","type","tags","groupId"```, seguido por cada conexión en una nueva línea.
+El formato del archivo CSV comienza con los cuatro encabezados ```"name","type","tags","groupId"```, seguido de cada conexión en una línea nueva.
 
-**nombre** es el FQDN de la conexión
+**Name** es el FQDN de la conexión.
 
-**tipo** es el tipo de conexión. Para las conexiones de forma predeterminada incluidas con Windows Admin Center, usará uno de los siguientes:
+el **tipo** es el tipo de conexión. En el caso de las conexiones predeterminadas incluidas con el centro de administración de Windows, utilizará una de las siguientes opciones:
 
 | Tipo de conexión | Cadena de conexión |
 |------|-------------------------------|
-| Windows Server | msft.sme.connection-type.server |
-| PC con Windows 10 | msft.sme.connection-type.windows-client |
-| Clúster de conmutación por error | msft.sme.connection-type.cluster |
-| Clúster Hiperconvergido | msft.sme.connection-type.hyper-converged-cluster |
+| Windows Server | msft. SME. Connection-Type. Server |
+| EQUIPO Windows 10 | msft. SME. Connection-Type. Windows-Client |
+| Clúster de conmutación por error | msft. SME. Connection-Type. Cluster |
+| Clúster hiperconvergido | msft. SME. Connection-Type. hiperconvergid-Cluster |
 
-**etiquetas** están separados mediante la canalización.
+las **etiquetas** se separan por canalización.
 
-**groupId** se usa para las conexiones compartidas. Use el valor ```global``` en esta columna para hacer esto una conexión compartida.
+**GROUPID** se usa para las conexiones compartidas. Use el valor ```global``` de esta columna para establecer esta conexión compartida.
 
-### <a name="example-csv-file-for-importing-connections"></a>Archivo CSV de ejemplo para la importación de conexiones
+### <a name="example-csv-file-for-importing-connections"></a>Archivo CSV de ejemplo para importar conexiones
 
 ```
 "name","type","tags","groupId"
@@ -196,9 +195,9 @@ El formato del archivo CSV se inicia con los encabezados de cuatro ```"name","ty
 "myHCIclusterNode.contoso.com","msft.sme.connection-type.server","myHCIcluster|hyperv|JIT|WS2019"
 ```
 
-## <a name="import-rdcman-connections"></a>Importación de conexiones RDCman
+## <a name="import-rdcman-connections"></a>Importar conexiones RDCman
 
-Use el siguiente script para exportar las conexiones guardadas en [RDCman](https://blogs.technet.microsoft.com/rmilne/2014/11/19/remote-desktop-connection-manager-download-rdcman-2-7/) a un archivo. A continuación, puede importar el archivo en Windows Admin Center, para mantener la jerarquía de agrupación RDCMan mediante etiquetas. ¡Pruébelo!
+Use el script siguiente para exportar las conexiones guardadas en [RDCman](https://blogs.technet.microsoft.com/rmilne/2014/11/19/remote-desktop-connection-manager-download-rdcman-2-7/) a un archivo. Después, puede importar el archivo en el centro de administración de Windows y mantener la jerarquía de agrupación de RDCMan mediante etiquetas. Pruébelo.
 
 1. Copie y pegue el código siguiente en la sesión de PowerShell:
 
@@ -275,16 +274,16 @@ Use el siguiente script para exportar las conexiones guardadas en [RDCman](https
    }
    ```
 
-2. Para crear una. Archivo CSV, ejecute el siguiente comando:
+2. Para crear un. Archivo CSV, ejecute el siguiente comando:
 
    ```powershell
    RdgToWacCsv -RDGfilepath "path\to\myRDCManfile.rdg"
    ```
 
-3. Importar resultante. Archivo CSV en Windows Admin Center y toda la jerarquía de agrupación RDCMan se representará mediante etiquetas en la lista de conexiones. Para obtener más información, consulte [usar PowerShell para importar o exportar las conexiones (con etiquetas)](#use-powershell-to-import-or-export-your-connections-with-tags).
+3. Importe el resultante. En el centro de administración de Windows y todas las jerarquías de agrupación de RDCMan se representarán mediante etiquetas en la lista de conexiones. Para obtener más información, consulte [uso de PowerShell para importar o exportar las conexiones (con etiquetas)](#use-powershell-to-import-or-export-your-connections-with-tags).
 
-## <a name="view-powershell-scripts-used-in-windows-admin-center"></a>Ver los scripts de PowerShell usados en Windows Admin Center
+## <a name="view-powershell-scripts-used-in-windows-admin-center"></a>Ver scripts de PowerShell usados en el centro de administración de Windows
 
-Una vez que se ha conectado a un servidor, el clúster o el equipo, puede buscar en los scripts de PowerShell que impulsan las acciones de interfaz de usuario disponibles en Windows Admin Center. Desde una herramienta, haga clic en el icono de PowerShell en la barra de aplicaciones principales. Seleccione un comando de interés en la lista desplegable para desplazarse a la secuencia de comandos de PowerShell correspondiente.
+Una vez que se haya conectado a un servidor, un clúster o un equipo, puede consultar los scripts de PowerShell que alimentan las acciones de la interfaz de usuario disponibles en el centro de administración de Windows. En una herramienta, haga clic en el icono de PowerShell en la barra de la aplicación superior. Seleccione un comando de interés en la lista desplegable para navegar hasta el script de PowerShell correspondiente.
 
 ![](../media/launch/showscript.png)
