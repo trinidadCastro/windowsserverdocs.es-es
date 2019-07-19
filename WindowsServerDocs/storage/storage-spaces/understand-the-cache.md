@@ -7,25 +7,25 @@ ms.manager: dongill
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
-ms.date: 07/18/2017
+ms.date: 07/17/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 62fa33d08af25c424c786c10191fe6ae2b3d02bc
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0050a8931162e37408895ef664293be2349d1bde
+ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59855516"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68315003"
 ---
 # <a name="understanding-the-cache-in-storage-spaces-direct"></a>Descripción de la memoria caché de Espacios de almacenamiento directo
 
->Se aplica a: Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server 2019 y Windows Server 2016
 
 [Espacios de almacenamiento directo](storage-spaces-direct-overview.md) presenta una memoria caché del lado del servidor integrada para maximizar el rendimiento del almacenamiento. Se trata de una caché de lectura *y* escritura grande, persistente y en tiempo real. La memoria caché se configura automáticamente cuando se habilita Espacios de almacenamiento directo. En la mayoría de los casos, no se necesita administración manual.
 El funcionamiento de la memoria caché depende de los tipos de unidades presentes.
 
 En el siguiente vídeo se explica detenidamente cómo el almacenamiento en caché funciona para Espacios de almacenamiento directo, así como otras consideraciones de diseño.
 
-<strong>Consideraciones de diseño de almacenamiento directo en espacios</strong><br>(20 minutos)<br>
+<strong>Consideraciones sobre el diseño de Espacios de almacenamiento directo</strong><br>(20 minutos)<br>
 <iframe src="https://channel9.msdn.com/Blogs/windowsserver/Design-Considerations-for-Storage-Spaces-Direct/player" width="960" height="540" allowFullScreen frameBorder="0"></iframe>
 
 ## <a name="drive-types-and-deployment-options"></a>Tipos de unidades y opciones de implementación
@@ -88,7 +88,7 @@ Si tienes unidades SSD y HDD, las SSD almacenarán en caché para las HDD.
    >[!NOTE]
    > Las unidades de caché no aportan capacidad de almacenamiento utilizable. Todos los datos almacenados en la memoria caché también están almacenados en otro lugar (o se almacenarán cuando se muevan). Esto significa que la capacidad de almacenamiento total sin procesar de la implementación es la suma de las unidades de capacidad únicamente.
 
-Cuando todas las unidades son del mismo tipo, no se configura automáticamente ninguna memoria caché. Tienes posibilidad de configurar manualmente unidades de mayor resistencia para caché en el caso de unidades de menor resistencia del mismo tipo. Consulta la sección [Configuración manual](#manual) para aprender a hacerlo.
+Cuando todas las unidades son del mismo tipo, no se configura automáticamente ninguna memoria caché. Tienes posibilidad de configurar manualmente unidades de mayor resistencia para caché en el caso de unidades de menor resistencia del mismo tipo. Consulta la sección [Configuración manual](#manual-configuration) para aprender a hacerlo.
 
    >[!TIP]
    > En el caso de implementaciones del tipo todo NVMe o todo SSD, en especial a escala muy pequeña, si no "dedicas" ninguna unidad a memoria caché, puedes mejorar significativamente la eficiencia del almacenamiento.
@@ -109,7 +109,7 @@ Como resultado, las características de escritura, como la latencia de escritura
 
 ### <a name="readwrite-caching-for-hybrid-deployments"></a>Almacenamiento en caché de lecturas y escrituras para implementaciones híbridas
 
-Al almacenar en caché para unidades de disco duro (HDD), las lecturas *y* las escrituras se almacenan en caché, con el propósito de ofrecer una latencia similar a la memoria flash (suele ser ~10 veces mejor) para ambas. La caché de lectura almacena datos tanto leídos recientemente como leídos con frecuencia para permitir un acceso rápido y minimizar el tráfico aleatorio hacia las unidades de disco duro. (Debido a retrasos de rotación y búsqueda, la latencia y pérdida de tiempo que se incurre por el acceso aleatorio a un disco duro es significativo.) Escribe se almacenan en caché absorber ráfagas y, como antes, va a fusionar escribe y vuelve a escribir y minimizar el tráfico acumulativo en las unidades de capacidad.
+Al almacenar en caché para unidades de disco duro (HDD), las lecturas *y* las escrituras se almacenan en caché, con el propósito de ofrecer una latencia similar a la memoria flash (suele ser ~10 veces mejor) para ambas. La caché de lectura almacena datos tanto leídos recientemente como leídos con frecuencia para permitir un acceso rápido y minimizar el tráfico aleatorio hacia las unidades de disco duro. (Debido a los retrasos de búsqueda y rotación, la latencia y el tiempo perdido incurrido por el acceso aleatorio a una unidad de disco duro son significativos). Las escrituras se almacenan en la memoria caché para absorber ráfagas y, como antes, fusionar las escrituras y volver a escribir y minimizar el tráfico acumulativo a las unidades de capacidad.
 
 Espacios de almacenamiento directo implementa un algoritmo que elimina la aleatoriedad de las escrituras antes de moverlas, para emular un modelo de E/S en disco que parezca secuencial aunque la E/S real proveniente de la carga de trabajo (por ejemplo, máquinas virtuales) sea aleatoria. Esto maximiza la E/S por segundo (IOPS) y el rendimiento en las unidades de disco duro.
 
@@ -121,13 +121,13 @@ Cuando hay unidades de los tres tipos, las unidades NVMe proporcionan almacenami
 
 En la siguiente tabla se resumen qué unidades se usan para almacenar en caché, cuáles se usan para capacidad y cuál es el comportamiento del almacenamiento en caché para cada posibilidad de implementación.
 
-| Implementación       | Unidades de caché                        | Unidades de capacidad | Comportamiento de la caché (predeterminado)                  |
-|------------------|-------------------------------------|-----------------|-------------------------------------------|
-| Todas las unidades NVMe         | Ninguna (opcional: configurar manualmente) | NVMe            | Solo escritura (si está configurado)                |
-| Todas las unidades SSD          | Ninguna (opcional: configurar manualmente) | SSD             | Solo escritura (si está configurado)                |
-| NVMe + SSD       | NVMe                                | SSD             | Solo escritura                                |
-| NVMe + HDD       | NVMe                                | HDD             | Lectura + escritura                              |
-| SSD + HDD        | SSD                                 | HDD             | Lectura + escritura                              |
+| Implementación     | Unidades de caché                        | Unidades de capacidad | Comportamiento de la caché (predeterminado)  |
+| -------------- | ----------------------------------- | --------------- | ------------------------- |
+| Todas las unidades NVMe         | Ninguna (opcional: configurar manualmente) | NVMe            | Solo escritura (si está configurado)  |
+| Todas las unidades SSD          | Ninguna (opcional: configurar manualmente) | SSD             | Solo escritura (si está configurado)  |
+| NVMe + SSD       | NVMe                                | SSD             | Solo escritura                  |
+| NVMe + HDD       | NVMe                                | HDD             | Lectura + escritura                |
+| SSD + HDD        | SSD                                 | HDD             | Lectura + escritura                |
 | NVMe + SSD + HDD | NVMe                                | SSD + HDD       | Lectura + escritura para HDD, solo escritura para SSD  |
 
 ## <a name="server-side-architecture"></a>Arquitectura del lado del servidor
@@ -171,11 +171,13 @@ Hay varias memorias caché no relacionadas en la pila de almacenamiento definido
 
 Con Espacios de almacenamiento directos, no se debe modificar el comportamiento predeterminado de la caché con reescritura de Espacios de almacenamiento. Por ejemplo, los parámetros como **-WriteCacheSize** del cmdlet **New-Volume** no deben usarse.
 
-Puedes optar por usar o no la caché de CSV según tus preferencias. Está desactivada de forma predeterminada en Espacios de almacenamiento directo, pero no entra en conflicto con la nueva caché descrita en este tema en absoluto. En determinados escenarios puede proporcionar mejoras importantes en el rendimiento. Para obtener más información, consulta [How to Enable CSV Cache](https://blogs.msdn.microsoft.com/clustering/2013/07/19/how-to-enable-csv-cache/) (Cómo habilitar la caché de CSV).
+Puedes optar por usar o no la caché de CSV según tus preferencias. Está desactivada de forma predeterminada en Espacios de almacenamiento directo, pero no entra en conflicto con la nueva caché descrita en este tema en absoluto. En determinados escenarios puede proporcionar mejoras importantes en el rendimiento. Para obtener más información, consulta [How to Enable CSV Cache](../../failover-clustering/failover-cluster-csvs.md#enable-the-csv-cache-for-read-intensive-workloads-optional) (Cómo habilitar la caché de CSV).
 
-## <a name="manual"></a> Configuración manual
+## <a name="manual-configuration"></a>Configuración manual
 
-Para la mayoría de las implementaciones, no se requiere de configuración manual. Si la necesitas, sigue leyendo este documento.
+Para la mayoría de las implementaciones, no se requiere de configuración manual. En caso de que lo necesite, consulte las secciones siguientes. 
+
+Si necesita realizar cambios en el modelo de dispositivo de caché después de la instalación, edite el documento de componentes de soporte de Servicio de mantenimiento, como se describe en [servicio de mantenimiento información general](../../failover-clustering/health-service-overview.md#supported-components-document).
 
 ### <a name="specify-cache-drive-model"></a>Especificar el modelo de unidad de caché
 
@@ -188,18 +190,28 @@ Si quieres usar unidades de mayor resistencia para almacenar en caché para unid
 
 ####  <a name="example"></a>Ejemplo
 
-```
-PS C:\> Get-PhysicalDisk | Group Model -NoElement
+En primer lugar, obtenga una lista de discos físicos:
 
+```PowerShell
+Get-PhysicalDisk | Group Model -NoElement
+```
+
+Este es un ejemplo de los resultados:
+
+```
 Count Name
 ----- ----
     8 FABRIKAM NVME-1710
    16 CONTOSO NVME-1520
-
-PS C:\> Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
 ```
 
-Puedes comprobar que las unidades que propones están en uso para almacenamiento en caché al ejecutar **Get-PhysicalDisk** en PowerShell y comprobar que su propiedad **Usage** indica **"Journal"**.
+A continuación, escriba el siguiente comando, especificando el modelo de dispositivo de caché:
+
+```PowerShell
+Enable-ClusterS2D -CacheDeviceModel "FABRIKAM NVME-1710"
+```
+
+Puedes comprobar que las unidades que propones están en uso para almacenamiento en caché al ejecutar **Get-PhysicalDisk** en PowerShell y comprobar que su propiedad **Usage** indica **"Journal"** .
 
 ### <a name="manual-deployment-possibilities"></a>Posibilidades de implementación manual
 
@@ -211,26 +223,38 @@ La configuración manual ofrece las posibilidades de implementación siguientes:
 
 Es posible invalidar el comportamiento predeterminado de la memoria caché. Por ejemplo, puedes establecerlo para que almacene en caché las lecturas incluso en una implementación íntegramente en memoria flash. No es conveniente modificar el comportamiento a menos que estés seguro de que el valor predeterminado no es adecuado para la carga de trabajo.
 
-Para invalidar el comportamiento, usa el cmdlet **Set-ClusterS2D** y sus parámetros **-CacheModeSSD** y **-CacheModeHDD**. El parámetro **CacheModeSSD** establece el comportamiento de la memoria caché al almacenar en caché para unidades de estado sólido. El parámetro **CacheModeHDD** establece el comportamiento de la memoria caché al almacenar en caché para unidades de disco duro. Esto puede hacerse en cualquier momento después de habilitar la característica Espacios de almacenamiento directo.
+Para invalidar el comportamiento, use el cmdlet **set-ClusterStorageSpacesDirect** y sus parámetros **-CacheModeSSD** y **-CacheModeHDD** . El parámetro **CacheModeSSD** establece el comportamiento de la memoria caché al almacenar en caché para unidades de estado sólido. El parámetro **CacheModeHDD** establece el comportamiento de la memoria caché al almacenar en caché para unidades de disco duro. Esto puede hacerse en cualquier momento después de habilitar la característica Espacios de almacenamiento directo.
 
-Puedes usar **Get-ClusterS2D** para comprobar que se ha establecido el comportamiento.
+Puede usar **Get-ClusterStorageSpacesDirect** para comprobar que el comportamiento está establecido.
 
 #### <a name="example"></a>Ejemplo
 
-```
-PS C:\> Get-ClusterS2D
+En primer lugar, obtenga la configuración de Espacios de almacenamiento directo:
 
+```PowerShell
+Get-ClusterStorageSpacesDirect
+```
+
+Este es un ejemplo de los resultados:
+
+```
 CacheModeHDD : ReadWrite
 CacheModeSSD : WriteOnly
-...
+```
 
-PS C:\> Set-ClusterS2D -CacheModeSSD ReadWrite
+A continuación, haga lo siguiente:
 
-PS C:\> Get-ClusterS2D
+```PowerShell
+Set-ClusterStorageSpacesDirect -CacheModeSSD ReadWrite
 
+Get-ClusterS2D
+```
+
+Este es un ejemplo de los resultados:
+
+```
 CacheModeHDD : ReadWrite
 CacheModeSSD : ReadWrite
-...
 ```
 
 ## <a name="sizing-the-cache"></a>Cambiar el tamaño de la memoria caché
@@ -249,6 +273,6 @@ No hay ninguna regla universal, pero si faltan demasiadas lecturas en la memoria
 
 ## <a name="see-also"></a>Vea también
 
-- [Elección de las unidades y tipos de resistencia](choosing-drives.md)
-- [Eficacia de almacenamiento y la tolerancia a errores](storage-spaces-fault-tolerance.md)
-- [Requisitos de hardware de almacenamiento directo en espacios](storage-spaces-direct-hardware-requirements.md)
+- [Elección de unidades y tipos de resistencia](choosing-drives.md)
+- [Tolerancia a errores y eficiencia del almacenamiento](storage-spaces-fault-tolerance.md)
+- [Requisitos de hardware Espacios de almacenamiento directo](storage-spaces-direct-hardware-requirements.md)
