@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 45164e9eca0873c82148aa3b7baa179a3f626dd7
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 02c7098c8e3f93ce315e7d9a881613a03924e78b
+ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804976"
+ms.lasthandoff: 07/17/2019
+ms.locfileid: "68300695"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configuración del cliente web de Escritorio remoto para los usuarios
 
@@ -259,7 +259,7 @@ De forma predeterminada, los usuarios pueden elegir habilitar o deshabilitar la 
 Como administrador, puedes elegir suprimir la recopilación de datos de telemetría para la implementación mediante el siguiente cmdlet de PowerShell:
 
    ```PowerShell
-    Set-RDWebClientDeploymentSetting -SuppressTelemetry $true
+    Set-RDWebClientDeploymentSetting -Name "SuppressTelemetry" $true
    ```
 
 De forma predeterminada, el usuario puede seleccionar habilitar o deshabilitar la telemetría. Un valor booleano **$false** coincidirá con el comportamiento del cliente predeterminado. Un valor booleano **$true** deshabilita la telemetría e impide que el usuario la habilite.
@@ -268,15 +268,15 @@ De forma predeterminada, el usuario puede seleccionar habilitar o deshabilitar l
 De forma predeterminada, los usuarios pueden elegir iniciar los recursos remotos (1) en el explorador o (2) descargar un archivo .rdp para controlar con otro cliente instalado en el equipo. Como administrador, puedes optar por restringir el método de inicio del recurso remoto para la implementación con el siguiente comando de Powershell:
 
    ```PowerShell
-    Set-RDWebClientDeploymentSetting -LaunchResourceInBrowser ($true|$false)
+    Set-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser" ($true|$false)
    ```
  De forma predeterminada, el usuario puede seleccionar cualquiera de estos métodos de inicio. Un valor booleano **$true** obligará al usuario a iniciar los recursos en el explorador. Un valor booleano **$false** obligará al usuario a iniciar los recursos mediante la descarga de un archivo .rdp para tratarlo con un cliente RDP instalado localmente.
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>Restablecimiento de las configuraciones RDWebClientDeploymentSetting a los valores predeterminados
-Para restablecer la configuración completa del cliente web a nivel de implementación a las configuraciones predeterminadas, ejecuta el siguiente cmdlet de PowerShell:
-
+Para restablecer un valor del cliente web en el nivel de implementación a la configuración predeterminada, ejecuta el siguiente cmdlet de PowerShell y utiliza el parámetro --Name para especificar el valor que deseas configurar:
    ```PowerShell
-    Reset-RDWebClientDeploymentSetting 
+    Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
+    Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
 
 ## <a name="troubleshooting"></a>Solución de problemas
