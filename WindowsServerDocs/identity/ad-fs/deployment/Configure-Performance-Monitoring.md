@@ -41,7 +41,7 @@ AD FS incluye sus propios contadores de rendimiento dedicado para ayudarle a sup
   
 7. Cuando se le solicite para agregar las claves del registro para supervisar, haga clic en **siguiente**.  
   
-8. Cuando se le pida que especifique la ubicación para guardar los datos de rendimiento, puede aceptar la ubicación predeterminada \( * *% systemdrive %\\PerfLogs\\Admin\\*** < datos\_recopilador\_establecer >* y, a continuación, haga clic en **siguiente**.  
+8. Cuando se le pida que especifique la ubicación para guardar los datos de rendimiento, puede aceptar la ubicación predeterminada \(* *%systemdrive%\\PerfLogs\\Admin\\** *<datos\_recopilador\_establecer>* y, a continuación, haga clic en **siguiente**.  
   
 9. Cuando se le pida para crear el conjunto de recopiladores de datos, seleccione **guardar y cerrar**y, a continuación, haga clic en **finalizar**.  
   

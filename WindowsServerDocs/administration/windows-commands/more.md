@@ -63,7 +63,7 @@ more [/c] [/p] [/s] [/t<N>] [+<N>] [<Files>]
     |p \<N >|Muestra la siguiente *N* líneas.|
     |s \<N>|Omite la próxima *N* líneas.|
     |?|Muestra los comandos que están disponibles en el **más** símbolo del sistema.|
--Cuando se usa el carácter de redirección ( **<** ), debe especificar un nombre de archivo como origen. Cuando se usa la canalización (**|*), puede usar estos comandos como **dir**, **ordenación**, y **tipo**.
+-Cuando se usa el carácter de redirección ( **<** ), debe especificar un nombre de archivo como origen. Cuando se usa la canalización (**|**), puede usar estos comandos como **dir**, **ordenación**, y **tipo**.
 -   El **más** comando, con diferentes parámetros, está disponible en la consola de recuperación.
 
 ## <a name="BKMK_examples"></a>Ejemplos
