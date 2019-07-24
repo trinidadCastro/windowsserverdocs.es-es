@@ -26,7 +26,7 @@ Este tema proporciona información general sobre servicios de dominio de Active 
 El método recomendado de actualización de un dominio es promover controladores de dominio que ejecuten versiones más recientes de Windows Server y degradar controladores de dominio anteriores según sea necesario. Ese método es preferible a actualizar el sistema operativo de un controlador de dominios existente. Esta lista describen los pasos generales a seguir antes de promover un controlador de dominio que ejecuta una versión más reciente de Windows Server:  
   
 1. Confirme que el servidor de destino reúne los [requisitos del sistema](https://technet.microsoft.com/library/dn303418.aspx).  
-2. Compruebe [Application compatibility](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat).  
+2. Comprobar [compatibilidad de aplicaciones](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_AppCompat).  
 3. Compruebe la configuración de seguridad. Para obtener más información, consulte [Características desusadas y cambios de comportamiento relativos a AD DS en Windows Server 2012](../../ad-ds/deploy/Upgrade-Domain-Controllers-to-Windows-Server-2012-R2-and-Windows-Server-2012.md#BKMK_DeprecatedFeatures) y [Secure default settings in Windows Server 2008 y Windows Server 2008 R2](https://technet.microsoft.com/library/upgrade-domain-controllers-to-windows-server-2008-r2(WS.10).aspx#BKMK_SecureDefault).  
 4. Compruebe la conectividad del servidor de destino desde el equipo donde tenga intención de realizar la instalación.  
 5. Compruebe la disponibilidad de los roles de maestro de operaciones necesarios:  
