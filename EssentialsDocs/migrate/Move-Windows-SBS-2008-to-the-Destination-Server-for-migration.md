@@ -131,7 +131,7 @@ Se actualizan los objetos de directiva de grupo (GPO) para Windows Server Essent
  
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**. 
  
-3. En el panel de navegación, haga clic en **administración avanzada de**, haga clic en **Group Policy Management**y, a continuación, haga clic en **bosque: *** < Nombredesudominio\>* . 
+3. En el panel de navegación, haga clic en **administración avanzada de**, haga clic en **Group Policy Management**y, a continuación, haga clic en **bosque:** *<Nombredesudominio\>* . 
  
 4. Haga clic en **dominios**, haga clic en *< Nombredesudominio\>* y, a continuación, haga clic en **Group Policy Objects**. 
  
@@ -173,7 +173,7 @@ Se recomienda que configurar la directiva de contraseñas en Windows Server Esse
  
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**. 
  
-3. En el panel de navegación, haga clic en **administración avanzada de**, haga clic en **Group Policy Management**y, a continuación, haga clic en **bosque: *** < Nombredominiored\>* 
+3. En el panel de navegación, haga clic en **administración avanzada de**, haga clic en **Group Policy Management**y, a continuación, haga clic en **bosque:** *<Nombredominiored\>* 
  
 4. Haga clic en **dominios**, haga clic en *< Nombredominiored\>* y, a continuación, haga clic en **filtros WMI**. 
  

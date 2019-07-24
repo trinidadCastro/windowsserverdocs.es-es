@@ -1,6 +1,6 @@
 ---
 title: tsecimp
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a5ed2ef8b1d0238a3608dabdd165a255855a304d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 85fea84ed9dcb0f85bfa80e56f0c2c04d2c8e85b
+ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440873"
+ms.lasthandoff: 07/18/2019
+ms.locfileid: "68314314"
 ---
 # <a name="tsecimp"></a>tsecimp
 
 
 
-Importa información de asignación de un archivo de lenguaje de marcado Extensible (XML) en el archivo de seguridad de servidor TAPI (Tsec.ini). También puede usar este comando para mostrar la lista de proveedores TAPI y los dispositivos de línea asociados a cada uno de ellos, validar la estructura del archivo XML sin importar el contenido y comprobar la pertenencia a dominio.
+Importa la información de asignación de un archivo lenguaje de marcado extensible (XML) en el archivo de seguridad del servidor TAPI (TSEC. ini). También puede usar este comando para mostrar la lista de proveedores TAPI y los dispositivos de línea asociados a cada uno de ellos, validar la estructura del archivo XML sin importar el contenido y comprobar la pertenencia al dominio.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,39 +37,39 @@ tsecimp /d
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/f \<nombreDeArchivo >|Obligatorio. Especifica el nombre del archivo XML que contiene la información de asignación que desea importar.|
-|/v|Valida la estructura del archivo XML sin importar la información al archivo Tsec.ini.|
-|/u|Comprueba si cada usuario es miembro del dominio especificado en el archivo XML. El equipo en el que se usa este parámetro debe estar conectado a la red. Este parámetro podría Reduzca considerablemente el rendimiento si se procesan una gran cantidad de información de asignación de usuario.|
-|/d|Muestra una lista de proveedores de telefonía instalados. Para cada proveedor de telefonía, se enumeran los dispositivos de línea asociados, así como las direcciones y los usuarios asociados con cada dispositivo de línea.|
+|/f \<nombre de archivo >|Necesario. Especifica el nombre del archivo XML que contiene la información de asignación que desea importar.|
+|/v|Valida la estructura del archivo XML sin importar la información en el archivo TSEC. ini.|
+|/u|Comprueba si cada usuario es miembro del dominio especificado en el archivo XML. El equipo en el que se usa este parámetro debe estar conectado a la red. Este parámetro puede reducir significativamente el rendimiento si se está procesando una gran cantidad de información de asignación de usuarios.|
+|/d|Muestra una lista de proveedores de telefonía instalados. Para cada proveedor de telefonía, se enumeran los dispositivos de línea asociados, así como las direcciones y los usuarios asociados a cada dispositivo de línea.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   El archivo XML desde el que desea importar información de asignación debe seguir la estructura descrita a continuación.  
-    -   **UserList** elemento
+-   El archivo XML desde el que desea importar la información de asignación debe seguir la estructura que se describe a continuación.  
+    -   Elemento **userList**
 
-        El **UserList** es el elemento superior del archivo XML.
-    -   **Usuario** elemento
+        **UserList** es el elemento superior del archivo XML.
+    -   Elemento **User**
 
-        Cada **usuario** elemento contiene información sobre un usuario que sea miembro de un dominio. Cada usuario puede asignarse a uno o varios dispositivos de línea.
+        Cada elemento de **usuario** contiene información acerca de un usuario que es miembro de un dominio. A cada usuario se le puede asignar uno o varios dispositivos de línea.
 
-        Además, cada **usuario** elemento podría tener un atributo denominado **NoMerge**. Cuando se especifica este atributo, se quitan todas las asignaciones de dispositivo de línea actual del usuario antes de realizar nuevas. Puede usar este atributo para quitar fácilmente las asignaciones de usuario no deseado. De forma predeterminada, no se establece este atributo.
+        Además, cada elemento de **usuario** podría tener un atributo denominado NoMerge. Cuando se especifica este atributo, se quitan todas las asignaciones de dispositivos de línea actuales para el usuario antes de que se realicen otras nuevas. Puede usar este atributo para quitar fácilmente las asignaciones de usuario no deseadas. De forma predeterminada, este atributo no está establecido.
 
-        El **usuario** elemento debe contener un único **DomainUserName** elemento, que especifica el nombre de usuario y dominio del usuario. El **usuario** elemento también puede contener un **FriendlyName** elemento, que especifica un nombre descriptivo para el usuario.
+        El elemento **User** debe contener un único elemento **DomainUserName** , que especifica el dominio y el nombre de usuario del usuario. El elemento **User** también puede contener un elemento **FriendlyName** , que especifica un nombre descriptivo para el usuario.
 
-        El **usuario** elemento podría contener un **LineList** elemento. Si un **LineList** elemento no está presente, se quitan todos los dispositivos de línea para este usuario.
-    -   **LineList** elemento
+        El elemento **User** podría contener un elemento **LineList** . Si un elemento **LineList** no está presente, se quitan todos los dispositivos de línea de este usuario.
+    -   Elemento **LineList**
 
-        El **LineList** elemento contiene información acerca de cada línea o dispositivo que puedan estar asignado al usuario. Cada **LineList** elemento puede contener más de un **línea** elemento.
-    -   **Línea** elemento
+        El elemento **LineList** contiene información acerca de cada línea o dispositivo que podría estar asignado al usuario. Cada elemento **LineList** puede contener más de un elemento de **línea** .
+    -   Elemento **line**
 
-        Cada **línea** elemento especifica un dispositivo de línea. Debe identificar cada dispositivo de línea mediante la inclusión un **dirección** elemento o un **PermanentID** elemento bajo el **línea** elemento.
+        Cada elemento de **línea** especifica un dispositivo de línea. Debe identificar cada dispositivo de línea agregando un elemento de **Dirección** o un elemento **PermanentID** en el elemento de **línea** .
 
-        Para cada **línea** elemento, puede establecer el **quitar** atributo. Si establece este atributo, el usuario ya no está asignado ese dispositivo de línea. Si no se establece este atributo, el usuario obtiene acceso al dispositivo de línea. No se proporciona ningún error si el dispositivo de línea no está disponible para el usuario.
+        Para cada elemento de **línea** , puede establecer el atributo **Remove** . Si establece este atributo, el usuario ya no tiene asignado ese dispositivo de línea. Si no se establece este atributo, el usuario obtiene acceso a ese dispositivo de línea. No se proporciona ningún error si el dispositivo de línea no está disponible para el usuario.
 
 ## <a name="examples"></a>Ejemplos
-- Los siguientes segmentos de código XML de ejemplo muestran el uso correcto de los elementos definidos anteriormente.  
-  - El código siguiente quita todos los dispositivos de línea asignados a usuario1.  
+- En los siguientes segmentos de código XML de ejemplo se muestra el uso correcto de los elementos definidos anteriormente.  
+  - El siguiente código quita todos los dispositivos de línea asignados a user1.  
     ```
     <UserList>
       <User NoMerge="1">
@@ -77,7 +77,7 @@ tsecimp /d
       </User>
     </UserList>
     ```  
-  - El código siguiente quita todos los dispositivos de línea asignados a Usuario1 antes de asignar una línea con la dirección 99999. Este User1 no tendría ningún otros dispositivos de línea asignados, con independencia de si los dispositivos de línea se asignaron previamente.  
+  - El siguiente código quita todos los dispositivos de línea asignados a user1 antes de asignar una línea con la dirección 99999. User1 no tendrá ningún otro dispositivo de líneas asignado, independientemente de si se asignó previamente algún dispositivo de línea.  
     ```
     <UserList>
       <User NoMerge="1">
@@ -91,7 +91,7 @@ tsecimp /d
       </User>
     </UserList>
     ```  
-  - El código siguiente agrega un dispositivo de línea para usuario1 sin eliminar los dispositivos de línea asignados anteriormente.  
+  - El código siguiente agrega un dispositivo de línea para user1 sin eliminar ningún dispositivo de línea asignado previamente.  
     ```
     <UserList>
       <User>
@@ -105,7 +105,7 @@ tsecimp /d
       </User>
     </UserList>
     ```  
-  - El código siguiente agrega la dirección de línea 99999 y quita la dirección de línea 88888 del acceso de User1.  
+  - En el código siguiente se agrega la dirección de línea 99999 y se quita la dirección de línea 88888 del acceso de Usuario1.  
     ```
     <UserList>
       <User>
@@ -122,7 +122,7 @@ tsecimp /d
       </User>
     </UserList>
     ```  
-  - El código siguiente agrega el dispositivo permanente 1000 y quita la línea 88888 del acceso de User1.  
+  - El código siguiente agrega el dispositivo permanente 1000 y quita la línea 88888 del acceso de Usuario1.  
     ```
     <UserList>
       <User>
@@ -138,12 +138,9 @@ tsecimp /d
         </LineList>
       </User>
     </UserList>
+    ```
 
-
-~~~
-    ```  
-~~~
--   The following sample output appears after the **/d** command-line option is specified to display the current TAPI configuration. For each telephony provider, the associated line devices are listed, as well as the addresses and users associated with each line device.  
+-   La siguiente salida de ejemplo aparece después de especificar la opción de línea de comandos **/d** para mostrar la configuración actual de TAPI. Para cada proveedor de telefonía, se enumeran los dispositivos de línea asociados, así como las direcciones y los usuarios asociados a cada dispositivo de línea.  
     ```
     NDIS Proxy TAPI Service Provider
             Line: "WAN Miniport (L2TP)"
@@ -161,8 +158,8 @@ tsecimp /d
 
     ```
 
-#### Additional references
+#### <a name="additional-references"></a>Referencias adicionales
 
-[Command-Line Syntax Key](command-line-syntax-key.md)
+[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 
-[Command shell overview](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)
+[Información general del shell de comandos](https://technet.microsoft.com/library/cc737438(v=ws.10).aspx)

@@ -44,7 +44,7 @@ Para habilitar el modo siempre sin conexión, use Directiva de grupo para habili
 6. Seleccione **Habilitado**.
 7. En el **opciones** cuadro, seleccione **mostrar**. El **ventana Mostrar contenido** aparecerá.
 8. En el **nombre del valor** , especifique el recurso compartido de archivos para el que desea habilitar el modo siempre sin conexión.
-9. Para habilitar el modo siempre sin conexión en todos los recursos compartidos de archivos, escriba **\\***.
+9. Para habilitar el modo siempre sin conexión en todos los recursos compartidos de archivos, escriba **\\** *.
 10. En el **valor** , escriba **latencia = 1** para establecer el umbral de latencia a un milisegundo y, a continuación, seleccione **Aceptar**.
 
 >[!NOTE]
