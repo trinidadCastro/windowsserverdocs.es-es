@@ -1,6 +1,6 @@
 ---
-title: Planear la implementación de dispositivos mediante la asignación discreta de dispositivos
-description: Obtenga información sobre cómo funciona la DDA en Windows Server
+title: Planeación de la implementación de dispositivos mediante la asignación discreta de dispositivos
+description: Más información sobre cómo funciona DDA en Windows Server
 ms.prod: windows-server-threshold
 ms.service: na
 ms.technology: hyper-v
@@ -9,112 +9,137 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.date: 02/06/2018
-ms.openlocfilehash: c64c2b75c00f97622278c3e590db46995e108218
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7df7dbd1e7252f5bab451ed9272f9cbede63d223
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840206"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476498"
 ---
-# <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>Planear la implementación de dispositivos mediante la asignación discreta de dispositivos
->Se aplica a: Microsoft Hyper-V Server 2016, Windows Server 2016, Microsoft Hyper-V Server, Windows Server 2019 de 2019
+# <a name="plan-for-deploying-devices-using-discrete-device-assignment"></a>Planeación de la implementación de dispositivos mediante la asignación discreta de dispositivos
+>Se aplica a: Microsoft Hyper-V Server 2016, Windows Server 2016, Microsoft Hyper-V Server 2019, Windows Server 2019
 
-Asignación discreta de dispositivos permite hardware físico de PCIe ser accesible directamente desde dentro de una máquina virtual.  Esta guía describirá el tipo de dispositivos que puede utilizar la asignación de dispositivo discretos, requisitos del sistema host, han impuesto limitaciones en las máquinas virtuales, así como las implicaciones de seguridad de la asignación discreta de dispositivos.
+La asignación discreta de dispositivos permite que el hardware físico de PCIe sea accesible directamente desde una máquina virtual.  En esta guía se describe el tipo de dispositivos que pueden usar la asignación discreta de dispositivos, los requisitos del sistema host, las limitaciones impuestas en las máquinas virtuales, así como las implicaciones de seguridad de la asignación discreta de dispositivos.
 
-Versión inicial de la asignación dispositivo discretos, nos hemos centrado en dos clases de dispositivos que formalmente sea compatible con Microsoft: Adaptadores de gráficos y el almacenamiento de NVMe dispositivos.  Otros dispositivos son más probabilidades de funcionar y los proveedores de hardware pueden ofrecer instrucciones de compatibilidad para los dispositivos.  Para estos otros dispositivos, póngase en contacto con los proveedores de hardware para obtener soporte técnico.
+En el caso de la versión inicial de la asignación de dispositivos discretos, hemos centrado en dos clases de dispositivos para que Microsoft las admita formalmente: Adaptadores de gráficos y dispositivos de almacenamiento de NVMe.  Es probable que otros dispositivos funcionen y los proveedores de hardware puedan ofrecer instrucciones de soporte técnico para esos dispositivos.  Para estos otros dispositivos, póngase en contacto con los proveedores de hardware para obtener soporte técnico.
 
-Si está listo para probar la asignación discreta de dispositivos, también puede avanzar a través a [implementar gráficos dispositivos utilizando discretos dispositivo asignación](../deploy/Deploying-graphics-devices-using-dda.md) o [implementar dispositivos de almacenamiento mediante la asignación discreta de dispositivos](../deploy/Deploying-storage-devices-using-dda.md) Para empezar a trabajar.
+Si está listo para probar la asignación discreta de dispositivos, puede ir a la implementación de [dispositivos de gráficos mediante la asignación discreta](../deploy/Deploying-graphics-devices-using-dda.md) de dispositivos o la [implementación de dispositivos de almacenamiento mediante la asignación discreta](../deploy/Deploying-storage-devices-using-dda.md) de dispositivos para comenzar.
 
-## <a name="supported-virtual-machines-and-guest-operating-systems"></a>Las máquinas virtuales compatibles y los sistemas operativos invitados
-Se admite la asignación de dispositivo discretos para la generación 1 o 2 máquinas virtuales.  Además, los invitados compatibles incluyen Windows 10, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 con [KB 3133690](https://support.microsoft.com/kb/3133690) aplicado y varias distribuciones de la [del sistema operativo Linux.](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)
+## <a name="supported-virtual-machines-and-guest-operating-systems"></a>Sistemas operativos invitados y Virtual Machines admitidos
+La asignación de dispositivos discretos se admite para las máquinas virtuales de generación 1 o 2.  Además, los invitados admitidos son Windows 10, Windows Server 2019, Windows Server 2016, Windows Server 2012r2 con [KB 3133690](https://support.microsoft.com/kb/3133690) aplicado y diversas distribuciones del [sistema operativo Linux.](../supported-linux-and-freebsd-virtual-machines-for-hyper-v-on-windows.md)
 
 ## <a name="system-requirements"></a>Requisitos del sistema
-Además el [requisitos del sistema para Windows Server](../../../get-started/System-Requirements--and-Installation.md) y [requisitos del sistema para Hyper-V](../System-requirements-for-Hyper-V-on-Windows.md), asignación discreta de dispositivos requiere hardware de clase de servidor que es capaz de conceder la control del sistema operativo a través de configuración del tejido PCIe (Control nativo de Express de PCI). Además, la compleja de PCIe raíz debe ser compatible con "Access Control Services" (ACS), lo que permite a Hyper-V forzar que todo el tráfico a través de la E/S de MMU PCIe.
+Además de los [requisitos del sistema para Windows Server](../../../get-started/System-Requirements--and-Installation.md) y los [requisitos del sistema para Hyper-V](../System-requirements-for-Hyper-V-on-Windows.md), la asignación discreta de dispositivos requiere hardware de clase de servidor capaz de conceder el control del sistema operativo sobre la configuración de la tarjeta PCIe tejido (control nativo de PCI Express). Además, el complejo raíz de PCIe tiene que admitir "Access Control Services" (ACS), que permite a Hyper-V forzar todo el tráfico de PCIe a través de la MMU de e/s.
 
-Normalmente estas funcionalidades no se exponen directamente en el BIOS del servidor y a menudo están ocultos detrás de otros valores de configuración.  Por ejemplo, las mismas funcionalidades son necesarias para el soporte de SR-IOV y en el BIOS es posible que deba establecer "Habilitar SR-IOV."  Póngase en contacto con el proveedor del sistema si no puede identificar la configuración correcta en el BIOS.
+Estas funcionalidades normalmente no se exponen directamente en el BIOS del servidor y suelen estar ocultas detrás de otras configuraciones.  Por ejemplo, se requieren las mismas capacidades para la compatibilidad con SR-IOV y, en el BIOS, puede que tenga que establecer "habilitar SR-IOV".  Póngase en contacto con el proveedor del sistema si no puede identificar la configuración correcta en el BIOS.
 
-Para ayudar a garantizar que el hardware de hardware es capaz de asignación discreta de dispositivos, nuestros ingenieros han reunido una [Script de perfil de equipo](#machine-profile-script) que puede ejecutar en un host de Hyper-V habilitado para probar si el servidor está correctamente el programa de instalación y qué los dispositivos son capaces de asignación discreta de dispositivos.
+Para ayudar a garantizar que el hardware sea capaz de realizar la asignación discreta de dispositivos, nuestros ingenieros han unido un [script de Perfil de equipo](#machine-profile-script) que puede ejecutar en un host habilitado para Hyper-V para probar si el servidor se configura correctamente y qué dispositivos son capaces Asignación discreta de dispositivos.
 
 ## <a name="device-requirements"></a>Requisitos del dispositivo
-No todos los dispositivos PCIe pueden utilizarse con asignación discreta de dispositivos.  Por ejemplo, no se admiten dispositivos antiguos que aprovechan las interrupciones de PCI (INTx) heredado. De Jake Oshin [entradas de blog](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/) vaya con más detalle: sin embargo, para el consumidor, ejecutando el [Script de perfil de equipo](#machine-profile-script) mostrará qué dispositivos son capaces de que se usa para la asignación de dispositivo discretos.
+No todos los dispositivos PCIe se pueden usar con la asignación discreta de dispositivos.  Por ejemplo, no se admiten los dispositivos más antiguos que aprovechan interrupciones PCI heredadas (INTx). Las entradas de [blog](https://blogs.technet.microsoft.com/virtualization/2015/11/20/discrete-device-assignment-machines-and-devices/) de Juan OSHIN tienen más detalles. sin embargo, para el consumidor, al ejecutar el [script de Perfil de equipo](#machine-profile-script) se mostrarán los dispositivos que pueden usarse para la asignación discreta de dispositivos.
 
-Fabricantes de dispositivos pueden establecer contacto con su representante de Microsoft para obtener más detalles.
+Los fabricantes de dispositivos pueden ponerse en contacto con su representante de Microsoft para obtener más información.
 
 ## <a name="device-driver"></a>Controlador de dispositivo
-Como asignación discreta de dispositivo pasa todo el dispositivo PCIe en la máquina virtual invitada, un controlador de host no es necesario para instalarse antes que el dispositivo que se va a montar dentro de la máquina virtual.  El único requisito en el host es que el dispositivo [ruta de acceso de ubicación de PCIe](#pcie-location-path) puede determinarse.  Opcionalmente se puede instalar el controlador del dispositivo si esto ayuda a identificar el dispositivo.  Por ejemplo, una GPU sin su controlador de dispositivo instalado en el host puede aparecer como un dispositivo de representación básica de Microsoft.  Si está instalado el controlador de dispositivo, es probable que se mostrará su fabricante y modelo.
+Como la asignación de dispositivos discretos pasa todo el dispositivo PCIe a la máquina virtual invitada, no es necesario instalar un controlador de host antes de montar el dispositivo dentro de la máquina virtual.  El único requisito en el host es que se pueda determinar la ruta de acceso de la [Ubicación de PCIe](#pcie-location-path) del dispositivo.  Opcionalmente, se puede instalar el controlador del dispositivo si esto ayuda a identificar el dispositivo.  Por ejemplo, una GPU sin su controlador de dispositivo instalado en el host puede aparecer como un dispositivo de representación básica de Microsoft.  Si el controlador del dispositivo está instalado, es probable que se muestre el fabricante y el modelo.
 
-Una vez que el dispositivo se monta dentro del invitado, ahora se pueden instalar controladores de dispositivo del fabricante como lo haría normalmente dentro de la máquina virtual invitada.  
+Una vez que el dispositivo se monta dentro del invitado, el controlador de dispositivo del fabricante se puede instalar ahora como normal dentro de la máquina virtual invitada.  
 
-## <a name="virtual-machine-limitations"></a>Limitaciones de la máquina virtual
-Dada la naturaleza de cómo se implementa la asignación discreta de dispositivos, algunas características de una máquina virtual están restringidos mientras esté conectado a un dispositivo.  No están disponibles las siguientes características:
-- Guardar ni restaurar la máquina virtual
+## <a name="virtual-machine-limitations"></a>Limitaciones de las máquinas virtuales
+Debido a la naturaleza de la implementación discreta de la asignación de dispositivos, algunas características de una máquina virtual están restringidas mientras se conecta un dispositivo.  Las siguientes características no están disponibles:
+- Almacenamiento y restauración de máquinas virtuales
 - Migración en vivo de una máquina virtual
 - El uso de memoria dinámica
-- Agregar la máquina virtual a un clúster de alta disponibilidad (HA)
+- Adición de la máquina virtual a un clúster de alta disponibilidad (HA)
 
 ## <a name="security"></a>Seguridad
-Asignación discreta de dispositivo pasa todo el dispositivo a la máquina virtual.  Esto significa que todas las funcionalidades de dichos dispositivos son accesibles desde el sistema operativo invitado. Algunas capacidades, como la actualización de firmware, pueden afectar negativamente a la estabilidad del sistema. Por lo tanto, se presentan varias advertencias al administrador que al desmontar el dispositivo desde el host. Se recomienda encarecidamente que sólo se utiliza asignación discreta de dispositivos, donde los inquilinos de las máquinas virtuales son de confianza.  
+La asignación de dispositivos discretos pasa todo el dispositivo a la máquina virtual.  Esto significa que se puede tener acceso a todas las funciones de ese dispositivo desde el sistema operativo invitado. Algunas funciones, como la actualización de firmware, pueden afectar negativamente a la estabilidad del sistema. Como tal, se presentan numerosas advertencias al administrador al desmontar el dispositivo del host. Se recomienda encarecidamente que la asignación de dispositivos discretos solo se use cuando se confíe en los inquilinos de las máquinas virtuales.  
 
-Si el administrador desea usar un dispositivo con un inquilino de confianza, proporcionamos los fabricantes de dispositivos con la capacidad para crear un controlador de mitigación de dispositivo que se puede instalar en el host.  Póngase en contacto con el fabricante del dispositivo para obtener más información sobre si proporciona un controlador de mitigación de dispositivo.
+Si el administrador desea usar un dispositivo con un inquilino que no es de confianza, hemos proporcionado fabricantes de dispositivos con la posibilidad de crear un controlador de mitigación de dispositivos que se pueda instalar en el host.  Póngase en contacto con el fabricante del dispositivo para obtener más información sobre si proporcionan un controlador de mitigación de dispositivos.
 
-Si desea omitir las comprobaciones de seguridad para un dispositivo que no tiene un controlador de mitigación de dispositivo, tendrá que pasar el `-Force` parámetro para el `Dismount-VMHostAssignableDevice` cmdlet.  Comprender que haciendo esto, ha cambiado el perfil de seguridad de dicho sistema y esto solo se recomienda durante la creación de prototipos o de confianza entornos.
+Si desea omitir las comprobaciones de seguridad de un dispositivo que no tiene un controlador de mitigación de dispositivos, tendrá que pasar el `-Force` parámetro `Dismount-VMHostAssignableDevice` al cmdlet.  Tenga en cuenta que, al hacerlo, ha cambiado el perfil de seguridad de ese sistema y esto solo se recomienda durante los entornos de prototipo o de confianza.
 
 ## <a name="pcie-location-path"></a>Ruta de acceso de ubicación de PCIe
-La ruta de acceso de ubicación de PCIe debe desmontar y montar el dispositivo desde el Host.  Una ruta de acceso de ubicación de ejemplo es similar al siguiente: `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`.   El [Script de perfil de equipo](#machine-profile-script) también devolverá la ruta de acceso de ubicación de los dispositivos de PCIe.
+La ruta de acceso de ubicación de PCIe es necesaria para desmontar y montar el dispositivo del host.  Una ruta de acceso de ubicación de ejemplo tiene `"PCIROOT(20)#PCI(0300)#PCI(0000)#PCI(0800)#PCI(0000)"`el siguiente aspecto:.   El [script de Perfil de equipo](#machine-profile-script) también devolverá la ruta de acceso de la ubicación del dispositivo PCIe.
 
-### <a name="getting-the-location-path-by-using-device-manager"></a>Obtener la ruta de acceso de ubicación mediante el Administrador de dispositivos
+### <a name="getting-the-location-path-by-using-device-manager"></a>Obtener la ruta de acceso de ubicación mediante Device Manager
 ![Administrador de dispositivos](../deploy/media/dda-devicemanager.png)
-- Abra el Administrador de dispositivos y busque el dispositivo.  
-- A la derecha, haga clic en el dispositivo y seleccione "Propiedades".
-- Vaya a la pestaña Detalles y seleccione "Rutas de acceso de ubicación" en la lista desplegable de la propiedad.  
-- Haga clic en la entrada que comienza con "PCIROOT" y seleccione "Copiar".  Ahora tiene la ruta de acceso de ubicación para dicho dispositivo.
+- Abra Device Manager y busque el dispositivo.  
+- Haga clic con el botón derecho en el dispositivo y seleccione "propiedades".
+- Vaya a la pestaña detalles y seleccione "rutas de acceso de ubicación" en la lista desplegable de propiedades.  
+- Haga clic con el botón derecho en la entrada que empieza por "PCIROOT" y seleccione "copiar".  Ahora tiene la ruta de acceso de la ubicación para ese dispositivo.
 
 ## <a name="mmio-space"></a>Espacio MMIO
-Algunos dispositivos, especialmente las GPU, requieren espacio MMIO adicional que se asignará a la máquina virtual para la memoria de ese dispositivo sea accesible. De forma predeterminada, cada máquina virtual comienza con 128MB de espacio MMIO baja y 512MB de espacio MMIO alta asignados a él. Sin embargo, un dispositivo puede requerir más espacio MMIO, o se pueden pasar varios dispositivos a través de modo que los requisitos combinados superan estos valores.  Cambiar el espacio de MMIO es muy sencillo y se puede realizar en PowerShell mediante los comandos siguientes:
+Algunos dispositivos, especialmente las GPU, requieren espacio MMIO adicional para asignarse a la máquina virtual para que la memoria de ese dispositivo sea accesible. De forma predeterminada, cada máquina virtual se inicia con 128 MB de espacio de enmmio bajo y 512 MB de espacio de MMIO elevado asignado. Sin embargo, un dispositivo puede requerir más espacio MMIO, o bien se pueden pasar varios dispositivos a través de tal que los requisitos combinados superen estos valores.  Cambiar el espacio MMIO es sencillo y se puede realizar en PowerShell mediante los siguientes comandos:
 
-```
+```PowerShell
 Set-VM -LowMemoryMappedIoSpace 3Gb -VMName $vm
 Set-VM -HighMemoryMappedIoSpace 33280Mb -VMName $vm
 ```
-La manera más fácil de determinar cuánto espacio MMIO asignar consiste en usar el [Script de perfil de equipo](#machine-profile-script).  Como alternativa, puede calcular mediante el Administrador de dispositivos. Consulte el blog de TechNet registrar [asignación discreta de dispositivos - GPU](https://blogs.technet.microsoft.com/virtualization/2015/11/23/discrete-device-assignment-gpus/) para obtener más detalles.
 
-## <a name="machine-profile-script"></a>Script de perfil de equipo
-Con el fin de simplificar que identifica si el servidor está configurado correctamente y los dispositivos que están disponibles para pasarse a través de la asignación discreta de dispositivos, uno de nuestros ingenieros poner juntos el siguiente script de PowerShell: [SurveyDDA.ps1.](https://github.com/Microsoft/Virtualization-Documentation/blob/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1)
+La forma más fácil de determinar la cantidad de espacio MMIO que se va a asignar es usar el [script de Perfil de equipo](#machine-profile-script). Para descargar y ejecutar el script de Perfil de equipo, ejecute los siguientes comandos en una consola de PowerShell:
 
-Antes de usar el script, asegúrese de tener instalado el rol de Hyper-V y ejecute el script desde una ventana de comandos de PowerShell que tenga privilegios de administrador.
+```PowerShell
+curl -o SurveyDDA.ps1 https://raw.githubusercontent.com/MicrosoftDocs/Virtualization-Documentation/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1
+.\SurveyDDA.ps1
+```
 
-Si el sistema está configurado correctamente para admitir la asignación discreta de dispositivos, la herramienta mostrará un mensaje de error sobre cuál es el problema. Si la herramienta encuentra el sistema configurado correctamente, se enumerarán todos los dispositivos que puede encontrar en el PCIe Bus.
+En el caso de los dispositivos que se pueden asignar, el script mostrará los requisitos de MMIO de un dispositivo determinado, como en el ejemplo siguiente:
 
-Para cada dispositivo que encuentra, la herramienta mostrará ya sea que puede usar con la asignación discreta de dispositivos. Si un dispositivo se identifica como compatible con la asignación discreta de dispositivos, la secuencia de comandos proporcionará una razón.  Cuando un dispositivo se identifica correctamente como compatible, se mostrará la ruta de acceso de ubicación del dispositivo.  Además, si requiere que el dispositivo [espacio MMIO](#mmio-space), se mostrará también.
+```PowerShell
+NVIDIA GRID K520
+Express Endpoint -- more secure.
+    ...
+    And it requires at least: 176 MB of MMIO gap space
+...
+```
 
-![SurveyDDA.ps1](./images/hyper-v-surveydda-ps1.png)
+El espacio bajo MMIO solo lo usan los sistemas operativos de 32 bits y los dispositivos que usan direcciones de 32 bits. En la mayoría de los casos, la configuración del espacio MMIO máximo de una máquina virtual será suficiente, ya que las configuraciones de 32 bits no son muy comunes.
+
+> [!IMPORTANT]
+> Al asignar espacio MMIO a una máquina virtual, el usuario debe asegurarse de establecer el espacio de MMIO en la suma del espacio de MMIO solicitado para todos los dispositivos asignados deseados más un búfer adicional si hay otros dispositivos virtuales que requieren unos pocos MB de espacio de MMIO. Use los valores de MMIO predeterminados descritos anteriormente como búfer para enmmio bajo y alto (128 MB y 512 MB, respectivamente).
+
+Si un usuario asignara una sola GPU de K520 como en el ejemplo anterior, debe establecer el espacio de MMIO de la máquina virtual en el valor que genera el script de Perfil de equipo más un búfer, 176 MB + 512 MB. Si un usuario asignara tres GPU de K520, debe establecer el espacio de MMIO en tres veces 176 MB más un búfer, o 528 MB + 512 MB.
+
+Para ver información más detallada sobre el espacio de MMIO, consulte [asignación de dispositivos discretos: GPU](https://techcommunity.microsoft.com/t5/Virtualization/Discrete-Device-Assignment-GPUs/ba-p/382266) en el blog de TechCommunity.
+
+## <a name="machine-profile-script"></a>Script de Perfil de equipo
+Con el fin de simplificar la identificación si el servidor está configurado correctamente y los dispositivos que están disponibles para pasarlos mediante la asignación discreta de dispositivos, uno de nuestros ingenieros reúnen el siguiente script de PowerShell: [SurveyDDA. ps1.](https://github.com/Microsoft/Virtualization-Documentation/blob/live/hyperv-tools/DiscreteDeviceAssignment/SurveyDDA.ps1)
+
+Antes de usar el script, asegúrese de que tiene instalado el rol de Hyper-V y ejecute el script desde una ventana de comandos de PowerShell que tenga privilegios de administrador.
+
+Si el sistema está configurado incorrectamente para admitir la asignación discreta de dispositivos, la herramienta mostrará un mensaje de error en lo que se repasa. Si la herramienta encuentra el sistema configurado correctamente, enumerará todos los dispositivos que puede encontrar en el bus de PCIe.
+
+Para cada dispositivo que encuentre, la herramienta mostrará si se puede usar con la asignación discreta de dispositivos. Si un dispositivo se identifica como compatible con la asignación discreta de dispositivos, el script proporcionará un motivo.  Cuando un dispositivo se identifica correctamente como compatible, se mostrará la ruta de acceso de la ubicación del dispositivo.  Además, si ese dispositivo requiere [espacio MMIO](#mmio-space), también se mostrará.
+
+![SurveyDDA. ps1](./images/hyper-v-surveydda-ps1.png)
 
 ## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
-### <a name="how-does-remote-desktops-remotefx-vgpu-technology-relate-to-discrete-device-assignment"></a>¿Cómo se relacionan con tecnología de vGPU de RemoteFX del escritorio remoto para la asignación discreta de dispositivo?
-Son tecnologías completamente independientes. RemoteFX vGPU no deben instalarse para que la asignación de dispositivo discretos para que funcione. Además, no hay roles adicionales se debe estar instalada. RemoteFX vGPU requiere el rol RDVH para instalarse en orden para el controlador de la vGPU de RemoteFX esté presente en la máquina virtual. Para la asignación de dispositivo discretos, puesto que va a instalar a los controladores del fabricante del Hardware en la máquina virtual, roles adicionales no deben estar presente.  
+### <a name="how-does-remote-desktops-remotefx-vgpu-technology-relate-to-discrete-device-assignment"></a>¿Cómo se relaciona la tecnología de vGPU de RemoteFX de Escritorio remoto con la asignación discreta de dispositivos?
+Son tecnologías completamente independientes. No es necesario instalar vGPU de RemoteFX para que funcione la asignación discreta de dispositivos. Además, no es necesario que se instalen roles adicionales. VGPU de RemoteFX requiere que el rol de RDVH esté instalado para que el controlador de vGPU de RemoteFX esté presente en la máquina virtual. En el caso de la asignación discreta de dispositivos, dado que va a instalar el controlador del proveedor de hardware en la máquina virtual, no es necesario que haya ningún rol adicional.  
 
-### <a name="ive-passed-a-gpu-into-a-vm-but-remote-desktop-or-an-application-isnt-recognizing-the-gpu"></a>He pasado una GPU en una máquina virtual, pero una aplicación o escritorio remoto no reconoce la GPU
-Hay una serie de motivos, que esto podría suceder, pero varios problemas comunes se enumeran a continuación.
-- Asegúrese de controlador del proveedor GPU más reciente está instalado y no notifica un error al comprobar el estado del dispositivo en el Administrador de dispositivos.
-- Asegúrese de que el dispositivo tiene suficiente [espacio MMIO](#mmio-space) asignado para él en la máquina virtual.
-- Asegúrese de que está usando una GPU compatibles con el proveedor que se va a usar en esta configuración. Por ejemplo, algunos proveedores impide sus tarjetas de consumidor funcionar cuando se pasa a una máquina virtual.
-- Asegúrese de la aplicación que se ejecuta admite la ejecución dentro de una máquina virtual y que la GPU y sus controladores asociados son compatibles con la aplicación. Algunas aplicaciones tienen listas blancas de GPU y entornos.
-- Si usa el rol de Host de sesión de escritorio remoto o Windows Multipoint Services en el invitado, deberá asegurarse de que se establece una entrada específica de la directiva de grupo para permitir el uso de la GPU de forma predeterminada. Mediante un objeto de directiva de grupo aplicado en el invitado (o el Editor de directivas de grupo Local en el invitado), vaya al siguiente elemento de directiva de grupo:
+### <a name="ive-passed-a-gpu-into-a-vm-but-remote-desktop-or-an-application-isnt-recognizing-the-gpu"></a>He pasado una GPU a una máquina virtual, pero Escritorio remoto o una aplicación no reconoce la GPU
+Hay varias razones por las que esto puede ocurrir, pero a continuación se enumeran varios problemas comunes.
+- Asegúrese de que el controlador del proveedor de la GPU más reciente está instalado y no informa de un error comprobando el estado del dispositivo en el Device Manager.
+- Asegúrese de que el dispositivo tiene asignado [espacio MMIO](#mmio-space) suficiente en la máquina virtual.
+- Asegúrese de que está usando una GPU que el proveedor admite en esta configuración. Por ejemplo, algunos proveedores impiden que sus tarjetas de consumidor funcionen cuando pasan a una máquina virtual.
+- Asegúrese de que la aplicación que se ejecuta admite la ejecución dentro de una máquina virtual y que la aplicación admite tanto la GPU como sus controladores asociados. Algunas aplicaciones tienen listas blancas de GPU y entornos.
+- Si usa el rol host de sesión de Escritorio remoto o Windows MultiPoint Services en el invitado, deberá asegurarse de que una entrada de directiva de grupo específica está establecida para permitir el uso de la GPU predeterminada. Con un objeto de directiva de grupo aplicado al invitado (o al Editor de directivas de grupo local en el invitado), navegue hasta el siguiente elemento de directiva de grupo:
    - Configuración del equipo
    - Plantillas de administrador
    - Componentes de Windows
    - Servicios de Escritorio remoto
    - Host de sesión de Escritorio remoto
-   - Entorno de la sesión remota
-   - Utilice el adaptador de gráficos de hardware predeterminado para todas las sesiones de servicios de escritorio remoto
+   - Entorno de sesión remota
+   - Usar el adaptador de gráficos predeterminado de hardware para todas las sesiones de Servicios de Escritorio remoto
 
-    Establecer este valor en habilitado, a continuación, reinicie la máquina virtual una vez que se ha aplicado la directiva.
+    Establezca este valor en habilitado y, a continuación, reinicie la máquina virtual una vez que se haya aplicado la Directiva.
 
-### <a name="can-discrete-device-assignment-take-advantage-of-remote-desktops-avc444-codec"></a>¿Asignación discreta de dispositivos puede sacar partido de códec de AVC444 del escritorio remoto?
-Sí, visite esta entrada de blog para obtener más información: [Mejoras de AVC/H.264 Desktop Protocol (RDP) 10 remotas en Windows 10 y Windows Server 2016 Technical Preview.](https://blogs.technet.microsoft.com/enterprisemobility/2016/01/11/remote-desktop-protocol-rdp-10-avch-264-improvements-in-windows-10-and-windows-server-2016-technical-preview/)
+### <a name="can-discrete-device-assignment-take-advantage-of-remote-desktops-avc444-codec"></a>¿Puede la asignación discreta de dispositivos aprovechar el códec AVC444 de Escritorio remoto?
+Sí, visite esta entrada de blog para obtener más información: [Las mejoras de Protocolo de escritorio remoto (RDP) 10 AVC/H. 264 en Windows 10 y Windows Server 2016 Technical Preview.](https://blogs.technet.microsoft.com/enterprisemobility/2016/01/11/remote-desktop-protocol-rdp-10-avch-264-improvements-in-windows-10-and-windows-server-2016-technical-preview/)
 
-### <a name="can-i-use-powershell-to-get-the-location-path"></a>¿Puedo usar PowerShell para obtener la ruta de acceso de ubicación?
+### <a name="can-i-use-powershell-to-get-the-location-path"></a>¿Puedo usar PowerShell para obtener la ruta de acceso de la ubicación?
 Sí, hay varias maneras de hacerlo. Este es un ejemplo:
 ```
 #Enumerate all PNP Devices on the system
@@ -125,5 +150,5 @@ $gpudevs = $pnpdevs |where-object {$_.Class -like "Display" -and $_.Manufacturer
 $locationPath = ($gpudevs | Get-PnpDeviceProperty DEVPKEY_Device_LocationPaths).data[0]
 ```
 
-### <a name="can-discrete-device-assignment-be-used-to-pass-a-usb-device-into-a-vm"></a>¿Asignación discreta de dispositivos permite pasar un dispositivo USB en una máquina virtual?
-Aunque oficialmente no se admite, nuestros clientes han usado asignación discreta de dispositivos para hacer esto al pasar todo el controlador USB3 a una máquina virtual.  Como se pasa en el controlador de todo, cada dispositivo USB conectado a ese controlador también serán accesible en la máquina virtual.  Tenga en cuenta que es posible que funcione solo algunos controladores USB3 y controladores USB 2 no se puede usar con la asignación discreta de dispositivos.
+### <a name="can-discrete-device-assignment-be-used-to-pass-a-usb-device-into-a-vm"></a>¿Se puede usar la asignación de dispositivos discreta para pasar un dispositivo USB a una máquina virtual?
+Aunque no se admite oficialmente, nuestros clientes han usado la asignación discreta de dispositivos para hacerlo pasando todo el controlador de USB3 a una máquina virtual.  A medida que se pasa todo el controlador, cada dispositivo USB conectado a ese controlador también será accesible en la máquina virtual.  Tenga en cuenta que solo pueden funcionar algunos controladores de USB3 y los controladores USB2 no se pueden usar con la asignación discreta de dispositivos.

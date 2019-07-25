@@ -1,43 +1,43 @@
 ---
-title: Aplicación de revisiones de Server Core
-description: Obtenga información sobre cómo actualizar una instalación Server Core de Windows Server
+title: Revisión de Server Core
+description: Obtener información sobre cómo actualizar una instalación Server Core de Windows Server
 ms.prod: windows-server-threshold
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: b19512a6f34e13469433aba6051f1232824beb0e
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: b649a3cc16bc1a527c5df0b4a0d543da22a882d2
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034157"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476484"
 ---
 # <a name="patch-a-server-core-installation"></a>Revisión de una instalación Server Core
 
-> Se aplica a: Windows Server (canal semianual) y Windows Server 2016
+> Se aplica a: Windows Server 2019, Windows Server 2016 y Windows Server (canal semianual)
 
-Puede aplicar revisiones a un servidor que ejecuta la instalación Server Core de las maneras siguientes:
+Puede aplicar una revisión a un servidor que ejecute la instalación Server Core de las siguientes maneras:
 
-- **Mediante Windows Update automáticamente o con Windows Server Update Services (WSUS)** . Mediante Windows Update, ya sea automáticamente o con herramientas de línea de comandos o Windows Server Update Services (WSUS), puede atender los servidores que ejecutan una instalación Server Core.
+- **Usar Windows Update de forma automática o con Windows Server Update Services (WSUS)** . Mediante el uso de Windows Update, ya sea de forma automática o con herramientas de línea de comandos o Windows Server Update Services (WSUS), puede usar servidores de servicio que ejecuten una instalación Server Core.
 
-- **Manualmente**. Incluso en las organizaciones que no usan Windows update o WSUS, puede aplicar manualmente las actualizaciones.
+- **Manualmente**. Incluso en organizaciones que no usan Windows Update o WSUS, puede aplicar las actualizaciones manualmente.
 
 ## <a name="view-the-updates-installed-on-your-server-core-server"></a>Ver las actualizaciones instaladas en el servidor Server Core
-Antes de agregar una nueva actualización para Server Core, es una buena idea para ver qué actualizaciones se han instalado.
+Antes de agregar una nueva actualización a Server Core, es una buena idea ver qué actualizaciones ya se han instalado.
 
 Para ver las actualizaciones mediante Windows PowerShell, ejecute **Get-Hotfix**.
 
-Para ver las actualizaciones mediante la ejecución de un comando, ejecute **systeminfo.exe**. Puede haber un breve retraso mientras la herramienta inspecciona el sistema.
+Para ver las actualizaciones mediante la ejecución de un comando, ejecute **SystemInfo. exe**. Puede haber un breve retraso mientras la herramienta inspecciona el sistema.
 
-También puede ejecutar **wmic qfe lista** desde la línea de comandos. 
+También puede ejecutar la **lista de WMIC QFE** desde la línea de comandos. 
 
-## <a name="patch-server-core-automatically-with-windows-update"></a>Revisión de Server Core automáticamente con Windows Update
+## <a name="patch-server-core-automatically-with-windows-update"></a>Patch Server Core automáticamente con Windows Update
 
-Para revisar el servidor de forma automática con Windows Update, siga estos pasos:
+Siga estos pasos para aplicar una revisión automática del servidor con Windows Update:
 
-1. Comprobar la configuración actual de Windows Update:
+1. Compruebe la configuración de Windows Update actual:
    ```
    %systemroot%\system32\Cscript scregedit.wsf /AU /v 
    ```
@@ -58,7 +58,7 @@ Para revisar el servidor de forma automática con Windows Update, siga estos pas
    Net start wuauserv 
    ```
 
-Si el servidor es miembro de un dominio, también puedes configurar Windows Update mediante directivas de grupo. Para obtener más información, consulta https://go.microsoft.com/fwlink/?LinkId=192470. Sin embargo, cuando se usa este método, solo la opción 4 ("Descargar automáticamente y programar la instalación") es relevante para las instalaciones Server Core debido a la falta de una interfaz gráfica. Para tener un mayor control sobre qué actualizaciones están instaladas y dónde, puede usar un script que funciona como el equivalente en línea de comandos para la mayor parte de la interfaz gráfica de Windows Update. Para obtener información acerca de la secuencia de comandos, consulte https://go.microsoft.com/fwlink/?LinkId=192471.
+Si el servidor es miembro de un dominio, también puedes configurar Windows Update mediante directivas de grupo. Para obtener más información, consulta https://go.microsoft.com/fwlink/?LinkId=192470. Sin embargo, cuando se usa este método, solo la opción 4 ("descargar automáticamente y programar la instalación") es pertinente para las instalaciones Server Core debido a la falta de una interfaz gráfica. Para tener un mayor control sobre qué actualizaciones están instaladas y dónde, puede usar un script que funciona como el equivalente en línea de comandos para la mayor parte de la interfaz gráfica de Windows Update. Para obtener información sobre el script, https://go.microsoft.com/fwlink/?LinkId=192471 vea.
 
 Para obligar a Windows Update a detectar e instalar inmediatamente cualquier actualización disponible, ejecute el siguiente comando:
 
@@ -66,15 +66,15 @@ Para obligar a Windows Update a detectar e instalar inmediatamente cualquier act
 Wuauclt /detectnow 
 ```
 
-En función de las actualizaciones que estén instaladas, es posible que deba reiniciar el equipo, aunque el sistema no se lo notificará. Para determinar si se ha completado el proceso de instalación, use el Administrador de tareas para comprobar que la **Wuauclt** o **instalador de confianza** procesos no se están ejecutando. También puede usar los métodos de [ver las actualizaciones instaladas en el servidor Server Core](#view-the-updates-installed-on-your-server-core-server) para comprobar la lista de actualizaciones instaladas.
+En función de las actualizaciones que estén instaladas, es posible que deba reiniciar el equipo, aunque el sistema no se lo notificará. Para determinar si el proceso de instalación se ha completado, use el administrador de tareas para comprobar que los procesos de **wuauclt** o **instalador de confianza** no se están ejecutando de forma activa. También puede usar los métodos de para [ver las actualizaciones instaladas en el servidor Server Core](#view-the-updates-installed-on-your-server-core-server) para comprobar la lista de actualizaciones instaladas.
 
-## <a name="patch-the-server-with-wsus"></a>Revisión del servidor con WSUS 
+## <a name="patch-the-server-with-wsus"></a>Revisar el servidor con WSUS 
 
-Si el servidor Server Core es miembro de un dominio, puede configurarlo para que use un servidor WSUS con directivas de grupo. Para obtener más información, descargue el [información de referencia de directiva de grupo](https://www.microsoft.com/download/details.aspx?id=25250). También puede revisar [configurar configuración de directiva de grupo para actualizaciones automáticas](../windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates.md)
+Si el servidor Server Core es miembro de un dominio, puede configurarlo para que use un servidor WSUS con directivas de grupo. Para obtener más información, descargue la [información de referencia de directiva de grupo](https://www.microsoft.com/download/details.aspx?id=25250). También puede revisar [configurar opciones de directiva de grupo para actualizaciones automáticas](../windows-server-update-services/deploy/4-configure-group-policy-settings-for-automatic-updates.md)
 
-## <a name="patch-the-server-manually"></a>Patch manualmente el servidor
+## <a name="patch-the-server-manually"></a>Revisar el servidor manualmente
 
-Descargue la actualización y esté disponible para la instalación Server Core.
+Descargue la actualización y haga que esté disponible para la instalación Server Core.
 En un símbolo del sistema, ejecute el siguiente comando:
 
 ```
@@ -83,7 +83,7 @@ Wusa <update>.msu /quiet
 
 En función de las actualizaciones que estén instaladas, es posible que deba reiniciar el equipo, aunque el sistema no se lo notificará.
 
-Para desinstalar manualmente una actualización, ejecute el siguiente comando:
+Para desinstalar una actualización manualmente, ejecute el siguiente comando:
 
 ```
 Wusa /uninstall <update>.msu /quiet 
