@@ -1,6 +1,6 @@
 ---
-title: Admite máquinas virtuales de Debian en Hyper-V
-description: Enumera los servicios de integración de Linux y características incluidas en cada versión
+title: Máquinas virtuales de Debian compatibles en Hyper-V
+description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
 ms.prod: windows-server-threshold
 ms.service: na
 manager: dongill
@@ -11,99 +11,100 @@ ms.assetid: 3cc62c10-02a3-4633-960c-23bf91a45bd5
 author: shirgall
 ms.author: kathydav
 ms.date: 10/03/2016
-ms.openlocfilehash: 129783dc980be6e471ecadb2cdbffee900e3396e
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: 35603d47439b0bc8702dbaba09dea9d449964026
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222837"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544737"
 ---
-# <a name="supported-debian-virtual-machines-on-hyper-v"></a>Admite máquinas virtuales de Debian en Hyper-V
+# <a name="supported-debian-virtual-machines-on-hyper-v"></a>Máquinas virtuales de Debian compatibles en Hyper-V
 
->Se aplica a: Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7.1, Windows 7
+>Se aplica a: Windows Server 2016, Hyper-V Server 2016, Windows Server 2012 R2, Hyper-V Server 2012 R2, Windows Server 2012, Hyper-V Server 2012, Windows Server 2008 R2, Windows 10, Windows 8.1, Windows 8, Windows 7,1, Windows 7
 
-El siguiente mapa de distribución de la característica indica las características que están presentes en cada versión. Después de la tabla se enumeran los problemas conocidos y soluciones alternativas para cada distribución.
+El siguiente mapa de distribución de características indica las características que se encuentran en cada versión. Los problemas conocidos y las soluciones alternativas para cada distribución se enumeran después de la tabla.
 
-## <a name="table-legend"></a>Leyenda de la tabla
+## <a name="table-legend"></a>Leyenda de tabla
 
-* **Integrado** -LIS se incluye como parte de esta distribución de Linux. El paquete de descarga LIS proporcionada por Microsoft no funciona para esta distribución, por lo que no lo instale. Los números de versión del módulo de kernel para la compilación en LIS (tal como se muestra por **lsmod**, por ejemplo) son diferentes desde el número de versión del paquete de descarga LIS proporcionada por Microsoft. Un error de coincidencia no indica que la compilación en LIS está obsoleta.
+* La **compilación en** LIS se incluye como parte de esta distribución de Linux. El paquete de descarga de LIS proporcionado por Microsoft no funciona para esta distribución, por lo que no se debe instalar. Los números de versión del módulo de kernel para el LIS integrado (como se muestra en **lsmod**, por ejemplo) son diferentes del número de versión del paquete de descarga de lis proporcionado por Microsoft. Un error de coincidencia no indica que el LIS integrado no está actualizado.
 
 * &#10004;-Característica disponible
 
-* (*en blanco*)-característica no está disponible
+* (*en blanco*): característica no disponible
 
-|**Característica**|**Versión del sistema operativo Windows Server**|**9.0-9.6 (stretch)**|**8.0-8.11 (jessie)**|**7.0-7.11 (wheezy)**|
-|-|-|-|-|-|
-|**Disponibilidad**||Integrado|Integrado|Integrada (Nota 6)|
-|**[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|
-|Hora exacta de Windows Server 2016|2019, 2016|&#10004;Tenga en cuenta 8||
-|**[Funciones de red](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**|
-|Tramas gigantes|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|
-|Etiquetado de VLAN y enlace troncal|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|
-|Migración en vivo|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|
-|Inserción de la dirección IP estática|2019, 2016, 2012 R2, 2012|||
-|vRSS|2019, 2016, 2012 R2|&#10004;Tenga en cuenta 8|||
-|Segmentación de TCP y las descargas de suma de comprobación|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;Tenga en cuenta 8|||
-|SR-IOV|2019, 2016|&#10004;Tenga en cuenta 8||
-|**[Storage](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**|
-|Cambio de tamaño de VHDX|2019, 2016, 2012 R2|&#10004;Nota 1|&#10004;Nota 1|&#10004;Nota 1|
-|Canal de fibra virtual|2019, 2016, 2012 R2|||
-|Copia de seguridad de máquina virtual en vivo|2019, 2016, 2012 R2|&#10004;Tenga en cuenta 4,5|&#10004;Tenga en cuenta 4,5|&#10004;Nota 4|
-|RECORTAR el soporte técnico|2019, 2016, 2012 R2|&#10004;Tenga en cuenta 8|||
-|SCSI WWN|2019, 2016, 2012 R2|&#10004;Tenga en cuenta 8||
-|**[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**|
-|Soporte técnico de núcleo PAE|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;|&#10004;|
-|Configuración de gap MMIO|2019, 2016, 2012 R2|&#10004;|&#10004;|&#10004;|
-|Memoria dinámica - agregado en caliente|2019, 2016, 2012 R2, 2012|&#10004;Tenga en cuenta 8|||
-|Memoria dinámica - incremento|2019, 2016, 2012 R2, 2012|&#10004;Tenga en cuenta 8|||
-|Cambio de tamaño de memoria en tiempo de ejecución|2019, 2016|&#10004;Tenga en cuenta 8|||
-|**[Video](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**|
-|Dispositivo de vídeo específico de Hyper-V|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;|&#10004;||
-|**[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**|
-|Par clave-valor|2019, 2016, 2012 R2, 2012, 2008 R2|&#10004;Nota 4|&#10004;Nota 4||
-|Interrupción no enmascarable|2019, 2016, 2012 R2|&#10004;|&#10004;|
-|Copia de archivos de host a invitado|2019, 2016, 2012 R2|&#10004;Nota 4|&#10004;Nota 4||
-|comando lsvmbus|2019, 2016, 2012 R2, 2012, 2008 R2|||
-|Sockets de Hyper-V|2019, 2016|&#10004;Tenga en cuenta 8|||
-|Acceso directo/DDA de PCI|2019, 2016|&#10004;Tenga en cuenta 8|||
-|**[Máquinas virtuales de generación 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)**|
-|Arrancar con UEFI|2019, 2016, 2012 R2|&#10004;Nota 7|&#10004;Nota 7||
-|Arranque seguro|2019, 2016|||
+| **Característica**                                                                                                                                  | **Versión del sistema operativo Windows Server** | **10 (validador)** | **9.0-9.6 (Stretch)** | **8.0-8.11 (Jessie)** | **7.0-7.11 (Wheezy)** |
+|----------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------|-----------------------|-----------------------|-----------------------|-----------------------|
+| **Disponibilidad**                                                                                                                             |                                             | Integrado              | Integrado              | Integrado              | Integrado (Nota 6)     |
+| **[Core](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#core)**                                                   | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| Windows Server 2016 hora precisa                                                                                                            | 2019, 2016                                  | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| **[Soluciona](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#networking)**                                       |                                             |                       |                       |                       |                       |
+| Tramas gigantes                                                                                                                                 | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| Etiquetado y Troncalización de VLAN                                                                                                                    | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| Migración en vivo                                                                                                                               | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| Inyección de IP estática                                                                                                                          | 2019, 2016, 2012 R2, 2012                   |                       |                       |                       |                       |
+| vRSS                                                                                                                                         | 2019, 2016, 2012 R2                         | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| Segmentación y descarga de sumas de comprobación TCP                                                                                                       | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| SR-IOV                                                                                                                                       | 2019, 2016                                  | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| **[Discos](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#storage)**                                             |                                             |                       |                       |                       |                       |
+| Cambiar el tamaño de VHDX                                                                                                                                  | 2019, 2016, 2012 R2                         | &#10004;Nota 1       | &#10004;Nota 1       | &#10004;Nota 1       | &#10004;Nota 1       |
+| Canal de fibra virtual                                                                                                                        | 2019, 2016, 2012 R2                         |                       |                       |                       |                       |
+| Copia de seguridad de máquinas virtuales en vivo                                                                                                                  | 2019, 2016, 2012 R2                         | &#10004;Nota 4, 5     | &#10004;Nota 4, 5     | &#10004;Nota 4, 5     | &#10004;Nota 4       |
+| Compatibilidad con TRIM                                                                                                                                 | 2019, 2016, 2012 R2                         | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| WWN SCSI                                                                                                                                     | 2019, 2016, 2012 R2                         | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| **[Memoria](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#memory)**                                               |                                             |                       |                       |                       |                       |
+| Compatibilidad con el kernel PAE                                                                                                                           | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| Configuración de la brecha de MMIO                                                                                                                    | 2019, 2016, 2012 R2                         | &#10004;              | &#10004;              | &#10004;              | &#10004;              |
+| Memoria dinámica: agregar en caliente                                                                                                                     | 2019, 2016, 2012 R2, 2012                   | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| Memoria dinámica: globos                                                                                                                  | 2019, 2016, 2012 R2, 2012                   | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| Tamaño de memoria en tiempo de ejecución                                                                                                                        | 2019, 2016                                  | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| **[Cámara](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#video)**                                                 |                                             |                       |                       |                       |                       |
+| Dispositivo de vídeo específico de Hyper-V                                                                                                                | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;              | &#10004;              | &#10004;              |                       |
+| **[Varios](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#miscellaneous)**                                 |                                             |                       |                       |                       |                       |
+| Par clave-valor                                                                                                                               | 2019, 2016, 2012 R2, 2012, 2008 R2          | &#10004;Nota 4       | &#10004;Nota 4       | &#10004;Nota 4       |                       |
+| Interrupción no enmascarable                                                                                                                       | 2019, 2016, 2012 R2                         | &#10004;              | &#10004;              | &#10004;              |                       |
+| Copia de archivos de host a invitado                                                                                                                 | 2019, 2016, 2012 R2                         | &#10004;Nota 4       | &#10004;Nota 4       | &#10004;Nota 4       |                       |
+| comando lsvmbus                                                                                                                              | 2019, 2016, 2012 R2, 2012, 2008 R2          |                       |                       |                       |                       |
+| Sockets de Hyper-V                                                                                                                              | 2019, 2016                                  | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| Acceso directo/DDA de PCI                                                                                                                          | 2019, 2016                                  | &#10004;Nota 8       | &#10004;Nota 8       |                       |                       |
+| **[Máquinas virtuales de generación 2](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md#generation-2-virtual-machines)** |                                             |                       |                       |                       |                       |
+| Arranque mediante UEFI                                                                                                                              | 2019, 2016, 2012 R2                         | &#10004;Nota 7       | &#10004;Nota 7       | &#10004;Nota 7       |                       |
+| Arranque seguro                                                                                                                                  | 2019, 2016                                  |                       |                       |                       |                       |
 
-## <a name="BKMK_notes"></a>Notas de la
 
-1. No se admite la creación de sistemas de archivos en discos duros virtuales mayores de 2TB.
+## <a name="BKMK_notes"></a>Apunte
 
-2. En Windows Server 2008 R2 SCSI discos crean 8 entradas diferentes en/dev/sd *.
+1. No se admite la creación de sistemas de archivos en VHD de más de 2 TB.
 
-3. Windows Server 2012 R2 una máquina virtual con 8 núcleos o más tendrá todas las interrupciones que se enruta a una única vCPU.
+2. En los discos SCSI de Windows Server 2008 R2, cree 8 entradas diferentes en/dev/SD *.
 
-4. A partir de Debian 8.3, el paquete de Debian instalados de forma manual "Hyper-v-demonios" contiene el par clave-valor, fcopy y los demonios de VSS. En Debian 7.x y 8.0 8.2 el paquete demonios de Hyper-v debe proceder de [backports Debian](https://wiki.debian.org/Backports).
+3. Windows Server 2012 R2 una máquina virtual con 8 núcleos o más tendrá todas las interrupciones enrutadas a un único vCPU.
 
-5. Copia de seguridad de máquina virtual en vivo no funcionará con los sistemas de archivos ext2. El diseño predeterminado creado por el instalador de Debian incluye filesystems ext2, debe personalizar el diseño para no crear este tipo de sistema de archivos.
+4. A partir de Debian 8,3, el paquete de Debian instalado manualmente "HyperV-daemons" contiene el par clave-valor, el fcopy y los demonios de VSS. En Debian 7. x y 8.0-8.2, el paquete de demonio de HyperV debe proviene de los puertos de subpuertos de [Debian](https://wiki.debian.org/Backports).
 
-6. Aunque Debian 7.x está fuera del soporte técnico y usa una versión anterior del kernel, incluido el kernel en [backports Debian](https://wiki.debian.org/Backports) para Debian 7.x ha mejorado las capacidades de Hyper-V.
+5. La copia de seguridad de máquinas virtuales en vivo no funcionará con sistemas de archivos ext2. El diseño predeterminado creado por el instalador de Debian incluye los sistemas de archivos de ext2, por lo que debe personalizar el diseño para no crear este tipo de sistema de archivos.
 
-7. En Windows Server 2012 R2 generación 2 máquinas virtuales tienen el arranque seguro habilitado de forma predeterminada y algunas máquinas virtuales de Linux no se iniciará a menos que la opción de arranque seguro está deshabilitada. Puede deshabilitar arranque seguro en el **Firmware** sección de la configuración de la máquina virtual en **Administrador de Hyper-V** o se puede deshabilitar con Powershell:
+6. Aunque Debian 7. x no es compatible y usa un kernel anterior, el kernel incluido en los [puertos](https://wiki.debian.org/Backports) de salida de Debian para Debian 7. x ha mejorado las funciones de Hyper-V.
+
+7. En las máquinas virtuales con Windows Server 2012 R2 de segunda generación 2, el arranque seguro está habilitado de forma predeterminada y algunas máquinas virtuales Linux no se iniciarán a menos que se deshabilite la opción de arranque seguro. Puede deshabilitar el arranque seguro en la sección **firmware** de la configuración de la máquina virtual en el **Administrador de Hyper-V** o puede deshabilitarla mediante PowerShell:
 
    ```Powershell
    Set-VMFirmware -VMName "VMname" -EnableSecureBoot Off
 
    ```
-8. Las últimas funcionalidades de nivel superior de kernel solo están disponibles mediante el kernel incluido [backports Debian](https://wiki.debian.org/Backports).
+8. Las funcionalidades más recientes del kernel de nivel superior solo están disponibles mediante el uso de los puertos de subpuertos de [Debian](https://wiki.debian.org/Backports)de kernel incluidos.
 
 Vea también
 
-* [Admite CentOS y Red Hat Enterprise Linux virtual machines en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
+* [Compatibilidad con máquinas virtuales de alta y Red Hat Enterprise Linux en Hyper-V](Supported-CentOS-and-Red-Hat-Enterprise-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Máquinas de virtuales Oracle Linux compatibles en Hyper-V](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
+* [Oracle Linux compatibles con máquinas virtuales en Hyper-V](Supported-Oracle-Linux-virtual-machines-on-Hyper-V.md)
 
-* [Máquinas de virtuales SUSE compatibles en Hyper-V](Supported-SUSE-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuales de SUSE compatibles en Hyper-V](Supported-SUSE-virtual-machines-on-Hyper-V.md)
 
-* [Máquinas de virtuales de Ubuntu compatibles en Hyper-V](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuales de Ubuntu admitidas en Hyper-V](Supported-Ubuntu-virtual-machines-on-Hyper-V.md)
 
-* [Máquinas de virtuales de FreeBSD compatibles en Hyper-V](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
+* [Máquinas virtuales de FreeBSD compatibles en Hyper-V](Supported-FreeBSD-virtual-machines-on-Hyper-V.md)
 
-* [Descripciones de características para las máquinas virtuales de Linux y FreeBSD en Hyper-V](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
+* [Descripciones de características de máquinas virtuales Linux y FreeBSD en Hyper-V](Feature-Descriptions-for-Linux-and-FreeBSD-virtual-machines-on-Hyper-V.md)
 
-* [Procedimientos recomendados para ejecutar Linux en Hyper-V](Best-Practices-for-running-Linux-on-Hyper-V.md)
+* [Prácticas recomendadas para ejecutar Linux en Hyper-V](Best-Practices-for-running-Linux-on-Hyper-V.md)

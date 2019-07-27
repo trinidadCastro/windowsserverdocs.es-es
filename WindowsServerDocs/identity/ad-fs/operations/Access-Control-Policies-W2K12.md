@@ -9,345 +9,347 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: cc3de72aa993546151b103d6eeacd160f81a4270
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 610d2f9f2a159751b86782a07b3474469253aa2c
+ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444384"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68523922"
 ---
-# <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Directivas de Control de acceso en Windows Server 2012 R2 y Windows Server 2012 AD FS
+# <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Access Control directivas en Windows Server 2012 R2 y Windows Server 2012 AD FS
 
 
-Las directivas descritas en este artículo hacen que el uso de dos tipos de notificaciones  
+Las directivas descritas en este artículo hacen uso de dos tipos de notificaciones  
 
-1.  Las notificaciones de que AD FS crea basándose en la información del proxy de AD FS y la aplicación Web puede inspeccionar y comprobar, por ejemplo, la dirección IP del cliente que se conecta directamente a AD FS o el WAP.  
+1.  Las notificaciones AD FS crean basándose en la información que los AD FS y el proxy de aplicación Web pueden inspeccionar y comprobar, como la dirección IP del cliente que se conecta directamente a AD FS o a WAP.  
 
-2.  Notificaciones de AD FS crea basándose en la información transmitida a AD FS por el cliente como encabezados HTTP  
+2.  Las notificaciones AD FS crean en función de la información reenviada a AD FS por el cliente como encabezados HTTP  
 
->**Importantes**: Las directivas, tal como se describe a continuación se bloquea la unión a un dominio de Windows 10 e inicie sesión en escenarios que requieren acceso a los siguientes puntos de conexión adicionales
+>**Importante**: Las directivas que se describen a continuación bloquearán los escenarios de inicio de sesión y de unión a un dominio de Windows 10 que requieran acceso a los siguientes puntos de conexión adicionales.
 
-Puntos de conexión de AD FS necesarios para la unión de dominios de Windows 10 e inicie sesión en
-- [federation service name]/adfs/services/trust/2005/windowstransport
-- [nombre de servicio de federación] / adfs/services/trust/13/windowstransport
-- [federation service name]/adfs/services/trust/2005/usernamemixed
-- [federation service name]/adfs/services/trust/13/usernamemixed 
-- [nombre de servicio de federación] / adfs/services/trust/2005/certificatemixed
-- [nombre de servicio de federación] / adfs/services/trust/13/certificatemixed
+AD FS puntos de conexión necesarios para la Unión a un dominio de Windows 10 y el inicio de sesión
+- [nombre del servicio de Federación]/ADFS/Services/Trust/2005/windowstransport
+- [nombre del servicio de Federación]/ADFS/Services/Trust/13/windowstransport
+- [nombre del servicio de Federación]/ADFS/Services/Trust/2005/usernamemixed
+- [nombre del servicio de Federación]/ADFS/Services/Trust/13/usernamemixed 
+- [nombre del servicio de Federación]/ADFS/Services/Trust/2005/certificatemixed
+- [nombre del servicio de Federación]/ADFS/Services/Trust/13/certificatemixed
 
-Para resolver, actualice las directivas que deniegan en función de la notificación de punto de conexión para permitir excepción de los puntos de conexión anteriores.
+>**Importante**: los extremos/ADFS/Services/Trust/2005/windowstransport y/ADFS/Services/Trust/13/windowstransport solo se deben habilitar para el acceso a la intranet, ya que están diseñados para ser puntos de conexión orientados a la intranet que usan el enlace WIA en https. Exponerlos a la extranet podría permitir que las solicitudes a estos puntos de conexión omitan las protecciones de bloqueo. Estos extremos deben deshabilitarse en el proxy (es decir, deshabilitarse de la extranet) para proteger el bloqueo de cuentas de AD. 
+
+Para resolverlo, actualice las directivas que deniegan en función de la demanda del punto de conexión para permitir la excepción para los puntos de conexión anteriores.
 
 Por ejemplo, la regla siguiente:
 
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 
-se actualizaría para:
+se actualizaría a:
 
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "(/adfs/ls/)|(/adfs/services/trust/2005/windowstransport)|(/adfs/services/trust/13/windowstransport)|(/adfs/services/trust/2005/usernamemixed)|(/adfs/services/trust/13/usernamemixed)|(/adfs/services/trust/2005/certificatemixed)|(/adfs/services/trust/13/certificatemixed)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`
 
 
 
 > [!NOTE]
->  Notificaciones de esta categoría solo deben usarse para implementar directivas empresariales y no como directivas de seguridad para proteger el acceso a la red.  Es posible que los clientes no autorizados envíen encabezados con información falsa como una forma de obtener acceso.  
+>  Las notificaciones de esta categoría solo deben usarse para implementar directivas empresariales y no como directivas de seguridad para proteger el acceso a la red.  Es posible que los clientes no autorizados envíen encabezados con información falsa como una manera de obtener acceso.  
 
-Siempre se deben usar las directivas descritas en este artículo con otro método de autenticación, como la autenticación de factor de nombre de usuario y una contraseña o múltiple.  
+Las directivas descritas en este artículo deben usarse siempre con otro método de autenticación, como el nombre de usuario y la contraseña o la autenticación multifactor.  
 
 ## <a name="client-access-policies-scenarios"></a>Escenarios de directivas de acceso de cliente  
 
 |**Escenario**|**Descripción**| 
 | --- | --- | 
-|Escenario 1: Bloquear todo acceso externo a Office 365|Se permite el acceso a Office 365 desde todos los clientes en la red corporativa interna, pero se denegarán las solicitudes de clientes externos según la dirección IP del cliente externo.|  
-|Escenario 2: Bloquear todo acceso externo a Office 365 excepto Exchange ActiveSync|Se permite el acceso de Office 365 desde todos los clientes en la red corporativa interna, así como de los dispositivos cliente externo, como los teléfonos inteligentes, que hacen uso de Exchange ActiveSync. Todos los otros clientes externos, como aquellas que usan Outlook, se bloquean.|  
-|Escenario 3: Bloquear todo acceso externo a Office 365 excepto las aplicaciones basadas en explorador|Bloquea el acceso externo a Office 365, excepto para aplicaciones pasivas (basada en el explorador), como Outlook Web Access o SharePoint Online.|  
-|Escenario 4: Bloquear todo acceso externo a Office 365, excepto los grupos de Active Directory designados|Este escenario se usa para probar y validar la implementación de directivas de acceso de cliente. Bloquea el acceso externo a Office 365 solo para los miembros de uno o más grupos de Active Directory. También puede utilizarse para proporcionar acceso externo solo a los miembros de un grupo.|  
+|Escenario 1: Bloquear todo el acceso externo a Office 365|Se permite el acceso a Office 365 desde todos los clientes de la red corporativa interna, pero las solicitudes de los clientes externos se deniegan en función de la dirección IP del cliente externo.|  
+|Escenario 2: Bloquear todo el acceso externo a Office 365 excepto Exchange ActiveSync|Se permite el acceso a Office 365 desde todos los clientes de la red corporativa interna, así como desde cualquier dispositivo cliente externo, como smartphones, que utilizan Exchange ActiveSync. Todos los demás clientes externos, como los que usan Outlook, están bloqueados.|  
+|Escenario 3: Bloquear todo el acceso externo a Office 365 excepto las aplicaciones basadas en explorador|Bloquea el acceso externo a Office 365, excepto para las aplicaciones pasivas (basadas en explorador) como Outlook Web Access o SharePoint Online.|  
+|Escenario 4: Bloquear todo el acceso externo a Office 365, excepto los grupos de Active Directory designados|Este escenario se usa para probar y validar la implementación de directivas de acceso de cliente. Bloquea el acceso externo a Office 365 solo para miembros de uno o más grupos de Active Directory. También se puede usar para proporcionar acceso externo solo a los miembros de un grupo.|  
 
-## <a name="enabling-client-access-policy"></a>Habilitar directiva de acceso de cliente  
- Para habilitar la directiva de acceso de cliente de AD FS en Windows Server 2012 R2, debe actualizar la plataforma de identidad de Microsoft Office 365 confianza. Elija uno de los escenarios de ejemplo siguientes para configurar las reglas de notificación en el **plataforma de identidad de Microsoft Office 365** de confianza que mejor satisfaga las necesidades de su organización.  
+## <a name="enabling-client-access-policy"></a>Habilitar la Directiva de acceso de cliente  
+ Para habilitar la Directiva de acceso de cliente en AD FS en Windows Server 2012 R2, debe actualizar la relación de confianza para usuario autenticado de Microsoft Office 365 de la plataforma de identidad. Elige uno de los siguientes escenarios de ejemplo para configurar las reglas de notificaciones en la **Microsoft Office 365** confianza del usuario de confianza de la plataforma de identidad que mejor se adapte a las necesidades de tu organización.  
 
-###  <a name="scenario1"></a> Escenario 1: Bloquear todo acceso externo a Office 365  
- Este escenario de directiva de acceso de cliente permite el acceso de todos los clientes internos y bloques de todos los clientes externos según la dirección IP del cliente externo. Puede usar los procedimientos siguientes para agregar las reglas de autorización de emisión correctas a la confianza para la situación elegida de Office 365.  
+###  <a name="scenario1"></a>Escenario 1: Bloquear todo el acceso externo a Office 365  
+ Este escenario de directiva de acceso de cliente permite el acceso desde todos los clientes internos y bloquea todos los clientes externos en función de la dirección IP del cliente externo. Puede usar los procedimientos siguientes para agregar las reglas de autorización de emisión correctas a la relación de confianza para usuario autenticado de Office 365 para el escenario elegido.  
 
-##### <a name="to-create-rules-to-block-all-external-access-to-office-365"></a>Para crear reglas para bloquear todo acceso externo a Office 365  
+##### <a name="to-create-rules-to-block-all-external-access-to-office-365"></a>Para crear reglas para bloquear todo el acceso externo a Office 365  
 
-1.  Desde **administrador del servidor**, haga clic en **herramientas**, a continuación, haga clic en **administración de AD FS**.  
+1.  En **Administrador del servidor**, haga clic en **herramientas**y, a continuación, en **Administración de AD FS**.  
 
-2.  En el árbol de consola, bajo **AD Fs\relaciones**, haga clic en **autenticado**, haga clic en el **plataforma de identidad de Microsoft Office 365** confiar y, a continuación, haga clic en **Editar reglas de notificación**.  
+2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de **confianza**para usuario autenticado, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas**de notificaciones.  
 
-3.  En el **editar reglas de notificación** cuadro de diálogo, seleccione el **reglas de autorización de emisión** pestaña y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para la regla de notificación.  
+3.  En el cuadro de diálogo **editar reglas** de notificaciones, seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
 
-4.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+4.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-5.  En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "Si no hay ninguna notificación IP fuera del rango deseado, denegar". En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación (sustituya el valor por encima de la "x-ms-reenviados-client-ip" con una expresión válida de IP):  
+5.  En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna demanda IP fuera del intervalo deseado, denegar". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista de reglas de autorización de emisión antes de que el valor predeterminado **permitir el acceso a todos los usuarios** regla (la regla de denegación tendrá prioridad aunque aparezca en la lista anteriormente).  Si no tiene el valor predeterminado Permitir regla de acceso, puede agregar uno al final de la lista mediante el lenguaje de reglas de notificación como sigue:  </br>
+6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  </br>
 
     `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
-7.  Para guardar las nuevas reglas, en el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar**. La lista resultante debe ser similar al siguiente.  
+7.  Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas** de notificaciones, haga clic en **Aceptar**. La lista resultante debería tener un aspecto similar al siguiente.  
 
-     ![Reglas de autorización de emisión](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
+     ![Reglas de autenticación de emisión](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
 
-###  <a name="scenario2"></a> Escenario 2: Bloquear todo acceso externo a Office 365 excepto Exchange ActiveSync  
- El ejemplo siguiente permite el acceso a todas las aplicaciones de Office 365, incluidos Exchange Online, de los clientes internos, incluido Outlook. Bloquea el acceso de los clientes que se encuentran fuera de la red corporativa, tal y como indica la dirección IP del cliente, excepto para los clientes de Exchange ActiveSync, como teléfonos inteligentes.  
+###  <a name="scenario2"></a>Escenario 2: Bloquear todo el acceso externo a Office 365 excepto Exchange ActiveSync  
+ En el ejemplo siguiente se permite el acceso a todas las aplicaciones de Office 365, incluido Exchange Online, desde clientes internos, incluido Outlook. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa, como indica la dirección IP del cliente, excepto en el caso de los clientes de Exchange ActiveSync, como smartphones.  
 
-##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-exchange-activesync"></a>Para crear reglas para bloquear todo acceso externo a Office 365 excepto Exchange ActiveSync  
+##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-exchange-activesync"></a>Para crear reglas para bloquear todo el acceso externo a Office 365 excepto Exchange ActiveSync  
 
-1.  Desde **administrador del servidor**, haga clic en **herramientas**, a continuación, haga clic en **administración de AD FS**.  
+1.  En **Administrador del servidor**, haga clic en **herramientas**y, a continuación, en **Administración de AD FS**.  
 
-2.  En el árbol de consola, bajo **AD Fs\relaciones**, haga clic en **autenticado**, haga clic en el **plataforma de identidad de Microsoft Office 365** confiar y, a continuación, haga clic en **Editar reglas de notificación**.  
+2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de **confianza**para usuario autenticado, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas**de notificaciones.  
 
-3.  En el **editar reglas de notificación** cuadro de diálogo, seleccione el **reglas de autorización de emisión** pestaña y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para la regla de notificación.  
+3.  En el cuadro de diálogo **editar reglas** de notificaciones, seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
 
-4.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+4.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-5.  En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "Si no hay ninguna notificación IP fuera del rango deseado, emitir ipoutsiderange notificación". En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación (sustituya el valor por encima de la "x-ms-reenviados-client-ip" con una expresión válida de IP):  
+5.  En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
 
     `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en el **reglas de autorización de emisión** lista.  
+6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-7.  A continuación, en el **editar reglas de notificación** cuadro de diálogo el **reglas de autorización de emisión** , haga clic **Agregar regla** volver a iniciar el Asistente para la regla de notificación.  
+7.  A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
-8.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+8.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-9. En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "si hay una dirección IP fuera del intervalo deseado y no hay una notificación de x-ms-client-application no EAS, denegar ". En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación:  
+9. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay una dirección IP fuera del intervalo deseado y hay una solicitud de aplicación, denegar, no EAS x-MS-Client. En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
 
 ~~~
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 ~~~
 
-10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en el **reglas de autorización de emisión** lista.  
+10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-11. A continuación, en el **editar reglas de notificación** cuadro de diálogo el **reglas de autorización de emisión** , haga clic **Agregar regla** volver a iniciar el Asistente para la regla de notificación.  
+11. A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
-12. En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+12. En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-13. En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "comprobar si existe la notificación de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación:  
+13. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo "comprobar si existe la solicitud de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
    ```  
    NOT EXISTS([Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
    ```  
 
-14. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en el **reglas de autorización de emisión** lista.  
+14. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-15. A continuación, en el **editar reglas de notificación** cuadro de diálogo el **reglas de autorización de emisión** , haga clic **Agregar regla** volver a iniciar el Asistente para la regla de notificación.  
+15. A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
-16. En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+16. En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-17. En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "denegar a los usuarios con ipoutsiderange true y la aplicación producirá un error". En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación:  
+17. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo "denegar a los usuarios con ipoutsiderange true y error de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
-18. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de regla en el valor predeterminado de permitir el acceso a todos los usuarios en la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca en la lista anteriormente).  </br>Si no tiene el valor predeterminado Permitir regla de acceso, puede agregar uno al final de la lista mediante el lenguaje de reglas de notificación como sigue:</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
-19. Para guardar las nuevas reglas, en el **editar reglas de notificación** diálogo cuadro, haga clic en Aceptar. La lista resultante debe ser similar al siguiente.  
+18. Haga clic en **Finalizar** Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
+19. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas** de notificaciones, haga clic en Aceptar. La lista resultante debería tener un aspecto similar al siguiente.  
 
     ![Reglas de autorización de emisión](media/Access-Control-Policies-W2K12/clientaccess2.png )  
 
-###  <a name="scenario3"></a> Escenario 3: Bloquear todo acceso externo a Office 365 excepto las aplicaciones basadas en explorador  
+###  <a name="scenario3"></a>Escenario 3: Bloquear todo el acceso externo a Office 365 excepto las aplicaciones basadas en explorador  
 
-##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-browser-based-applications"></a>Para crear reglas para bloquear todo acceso externo a Office 365 excepto las aplicaciones basadas en explorador  
+##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-browser-based-applications"></a>Para crear reglas para bloquear todo el acceso externo a Office 365 excepto las aplicaciones basadas en explorador  
 
-1.  Desde **administrador del servidor**, haga clic en **herramientas**, a continuación, haga clic en **administración de AD FS**.  
+1.  En **Administrador del servidor**, haga clic en **herramientas**y, a continuación, en **Administración de AD FS**.  
 
-2.  En el árbol de consola, bajo **AD Fs\relaciones**, haga clic en **autenticado**, haga clic en el **plataforma de identidad de Microsoft Office 365** confiar y, a continuación, haga clic en **Editar reglas de notificación**.  
+2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de **confianza**para usuario autenticado, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas**de notificaciones.  
 
-3.  En el **editar reglas de notificación** cuadro de diálogo, seleccione el **reglas de autorización de emisión** pestaña y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para la regla de notificación.  
+3.  En el cuadro de diálogo **editar reglas** de notificaciones, seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
 
-4.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+4.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-5.  En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "Si no hay ninguna notificación IP fuera del rango deseado, emitir ipoutsiderange notificación". En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación (sustituya el valor por encima de la "x-ms-reenviados-client-ip" con una expresión válida de IP):  </br>
+5.  En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  </br>
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
-6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en el **reglas de autorización de emisión** lista.  
+6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-7.  A continuación, en el **editar reglas de notificación** cuadro de diálogo el **reglas de autorización de emisión** , haga clic **Agregar regla** volver a iniciar el Asistente para la regla de notificación.  
+7.  A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
-8.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+8.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-9. En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "si hay una dirección IP fuera del intervalo deseado y el punto de conexión no es/adfs/ls, denegar". En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación:  
+9. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay una IP fuera del intervalo deseado y el extremo no es/ADFS/LS, deny". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
 
 ~~~
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 ~~~
 
-10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista de reglas de autorización de emisión antes de que el valor predeterminado **permitir el acceso a todos los usuarios** regla (la regla de denegación tendrá prioridad aunque aparezca en la lista anteriormente).  </br></br> Si no tiene el valor predeterminado Permitir regla de acceso, puede agregar uno al final de la lista mediante el lenguaje de reglas de notificación como sigue:  
+10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br> Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
 
    `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
-11. Para guardar las nuevas reglas, en el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar**. La lista resultante debe ser similar al siguiente.  
+11. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas** de notificaciones, haga clic en **Aceptar**. La lista resultante debería tener un aspecto similar al siguiente.  
 
     ![Emisión](media/Access-Control-Policies-W2K12/clientaccess3.png)  
 
-###  <a name="scenario4"></a> Escenario 4: Bloquear todo acceso externo a Office 365, excepto los grupos de Active Directory designados  
- El ejemplo siguiente habilita el acceso de clientes internos en función de la dirección IP. Bloquea el acceso de los clientes que se encuentran fuera de la red corporativa que tengan una dirección IP de cliente externo, excepto para aquellas personas en un Group.Use de Active Directory especificado las reglas de los pasos siguientes para agregar la autorización de emisión correcto a la  **Plataforma de identidad de Microsoft Office 365** confianza mediante el Asistente para la regla de notificación:  
+###  <a name="scenario4"></a>Escenario 4: Bloquear todo el acceso externo a Office 365, excepto los grupos de Active Directory designados  
+ En el ejemplo siguiente se habilita el acceso desde clientes internos basados en la dirección IP. Bloquea el acceso desde los clientes que se encuentran fuera de la red corporativa que tienen una dirección IP de cliente externa, excepto para las personas de un grupo de Active Directory especificado. Siga estos pasos para agregar las reglas de autorización de emisión correctas al  **Microsoft Office** relación de confianza para usuario autenticado de la plataforma de identidad de 365 mediante el Asistente para reglas de notificaciones:  
 
-##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a>Para crear reglas para bloquear todo acceso externo a Office 365, excepto para designado grupos de Active Directory  
+##### <a name="to-create-rules-to-block-all-external-access-to-office-365-except-for-designated-active-directory-groups"></a>Para crear reglas para bloquear todo el acceso externo a Office 365, excepto los grupos de Active Directory designados  
 
-1.  Desde **administrador del servidor**, haga clic en **herramientas**, a continuación, haga clic en **administración de AD FS**.  
+1.  En **Administrador del servidor**, haga clic en **herramientas**y, a continuación, en **Administración de AD FS**.  
 
-2.  En el árbol de consola, bajo **AD Fs\relaciones**, haga clic en **autenticado**, haga clic en el **plataforma de identidad de Microsoft Office 365** confiar y, a continuación, haga clic en **Editar reglas de notificación**.  
+2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de **confianza**para usuario autenticado, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas**de notificaciones.  
 
-3.  En el **editar reglas de notificación** cuadro de diálogo, seleccione el **reglas de autorización de emisión** pestaña y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para la regla de notificación.  
+3.  En el cuadro de diálogo **editar reglas** de notificaciones, seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
 
-4.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+4.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-5.  En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "Si no hay ninguna notificación IP fuera del rango deseado, emitir notificaciones ipoutsiderange." En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación (sustituya el valor por encima de la "x-ms-reenviados-client-ip" con una expresión válida de IP):  
+5.  En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
 
 
 ~~~
 `c1:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 ~~~
 
-6. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en el **reglas de autorización de emisión** lista.  
+6. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-7. A continuación, en el **editar reglas de notificación** cuadro de diálogo el **reglas de autorización de emisión** , haga clic **Agregar regla** volver a iniciar el Asistente para la regla de notificación.  
+7. A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
-8. En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+8. En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-9. En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "comprobación de SID de grupo". En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación (reemplace "groupsid" con el SID real del grupo de AD que usa):  
+9. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo "comprobar SID de grupo". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (reemplace "GroupSID" por el SID real del grupo de ad que está usando):  
 
     `NOT EXISTS([Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
-10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en el **reglas de autorización de emisión** lista.  
+10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-11. A continuación, en el **editar reglas de notificación** cuadro de diálogo el **reglas de autorización de emisión** , haga clic **Agregar regla** volver a iniciar el Asistente para la regla de notificación.  
+11. A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
-12. En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante regla personalizada**y, a continuación, haga clic en **siguiente**.  
+12. En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-13. En el **configurar regla** página, en **nombre de la regla de notificación**, escriba el nombre para mostrar para esta regla, por ejemplo "denegar a los usuarios con ipoutsiderange true y groupsid producirá un error". En **regla personalizada**, escriba o pegue la siguiente sintaxis de lenguaje de reglas de notificación:  
+13. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "denegar a los usuarios con ipoutsiderange true y GroupSID FAIL". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
    `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
-14. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de regla en el valor predeterminado de permitir el acceso a todos los usuarios en la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca en la lista anteriormente).  </br></br>Si no tiene el valor predeterminado Permitir regla de acceso, puede agregar uno al final de la lista mediante el lenguaje de reglas de notificación como sigue:  
+14. Haga clic en **Finalizar** Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
 
    `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 
-15. Para guardar las nuevas reglas, en el **editar reglas de notificación** diálogo cuadro, haga clic en Aceptar. La lista resultante debe ser similar al siguiente.  
+15. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas** de notificaciones, haga clic en Aceptar. La lista resultante debería tener un aspecto similar al siguiente.  
 
      ![Emisión](media/Access-Control-Policies-W2K12/clientaccess4.png)  
 
-##  <a name="buildingip"></a> Creación de la expresión de intervalo de direcciones IP  
- La notificación de x-ms-reenviados-ip del cliente se rellena con un encabezado HTTP que está establecido actualmente solo mediante Exchange Online, que llena el encabezado al pasar la solicitud de autenticación para AD FS. El valor de la notificación puede ser uno de los siguientes:  
+##  <a name="buildingip"></a>Compilar la expresión de intervalo de direcciones IP  
+ La solicitud x-MS-forwarded-Client-IP se rellena a partir de un encabezado HTTP que está establecido actualmente en Exchange Online, que rellena el encabezado al pasar la solicitud de autenticación a AD FS. El valor de la demanda puede ser uno de los siguientes:  
 
 > [!NOTE]
->  Exchange Online solo direcciones IPV4 e IPV6 no admite actualmente.  
+>  Actualmente, Exchange Online solo admite direcciones IPV4 y no IPV6.  
 
--   Una única dirección IP: La dirección IP del cliente que se conecta directamente a Exchange Online  
-
-> [!NOTE]
-> - La dirección IP de un cliente en la red corporativa aparecerá como la dirección IP de interfaz externa de la puerta de enlace o proxy de salida de la organización.  
->   -   Los clientes que están conectados a la red corporativa mediante una VPN o por Microsoft DirectAccess (DA) pueden aparecer como clientes corporativos internos o clientes externos según la configuración de VPN o DA.  
-
--   Una o varias direcciones IP: Cuando Exchange Online no puede determinar la dirección IP del cliente que se conecta, establecerá el valor en función del valor del encabezado x-forwarded-for, un encabezado no estándar que puede incluirse en las solicitudes basadas en HTTP y es compatible con muchos clientes, los equilibradores de carga y servidores proxy en el mercado.  
+-   Una única dirección IP: La dirección IP del cliente que está conectado directamente a Exchange Online  
 
 > [!NOTE]
-> 1. Varias direcciones IP, que indica la dirección IP del cliente y la dirección de cada servidor proxy que pasa la solicitud, estarán separadas por una coma.  
->    2. Las direcciones IP relacionadas con la infraestructura de Exchange Online no funcionará en la lista.  
+> - La dirección IP de un cliente de la red corporativa aparecerá como la dirección IP de la interfaz externa del proxy o la puerta de enlace de salida de la organización.  
+>   -   Los clientes que están conectados a la red corporativa mediante una VPN o Microsoft DirectAccess (DA) pueden aparecer como clientes corporativos internos o como clientes externos, en función de la configuración de VPN o DA.  
+
+-   Una o más direcciones IP: Cuando Exchange online no puede determinar la dirección IP del cliente que se conecta, establecerá el valor según el valor del encabezado x-forwarded-for, un encabezado no estándar que se puede incluir en las solicitudes basadas en HTTP y es compatible con muchos clientes, equilibradores de carga, y servidores proxy en el mercado.  
+
+> [!NOTE]
+> 1. Varias direcciones IP, que indican la dirección IP del cliente y la dirección de cada proxy que pasó la solicitud, se separan con una coma.  
+>    2. Las direcciones IP relacionadas con la infraestructura de Exchange online no se mostrarán en la lista.  
 
 ### <a name="regular-expressions"></a>Expresiones regulares  
- Una vez para que coincida con un intervalo de direcciones IP, es necesario construir una expresión regular para llevar a cabo la comparación. En la siguiente serie de pasos, proporcionamos ejemplos sobre cómo construir una expresión para que coincida con los siguientes intervalos de direcciones (tenga en cuenta que tendrá que cambiar estos ejemplos para que coincida con el intervalo IP público):  
+ Cuando tiene que coincidir con un intervalo de direcciones IP, es necesario construir una expresión regular para realizar la comparación. En la siguiente serie de pasos, proporcionaremos ejemplos sobre cómo construir una expresión de este tipo para que coincida con los intervalos de direcciones siguientes (tenga en cuenta que tendrá que cambiar estos ejemplos para que coincidan con el intervalo de IP pública):  
 
 - 192.168.1.1 – 192.168.1.25  
 
-- 10.0.0.1 – 10.0.0.14  
+- 10.0.0.1:10.0.0.14  
 
-  En primer lugar, el patrón básico que coincidirá con una única dirección IP es como sigue: \b###\\. ###\\. ###\\. ### \b  
+  En primer lugar, el patrón básico que coincidirá con una sola dirección IP es el siguiente: \b\\# # #.\\# # #.\\# # #. # # # \b  
 
-  Al ampliar esto, podemos hacer coincidir dos direcciones IP diferentes con una expresión OR como sigue: \b###\\. ###\\. ###\\. ### \b&#124;\b###\\. ###\\. ###\\. ### \b  
+  Extendiendo esto, podemos hacer coincidir dos direcciones IP diferentes con una expresión or como se indica a continuación\\: \b # #\\#. # #\\#. # # #&#124;. # # #\\\b \b #\\#\\#. # # #. # # #. # # # \b  
 
-  Por lo tanto, sería un ejemplo para que coincida con solo dos direcciones (por ejemplo, 192.168.1.1 o 10.0.0.1): \b192\\.168\\.1\\. 1\b&#124;\b10\\.0\\.0\\. 1\b  
+  Por lo tanto, un ejemplo para hacer coincidir solo dos direcciones (por ejemplo, 192.168.1.1 o 10.0.0.1\\) sería\\:\\\b192.168&#124;,1\\,1\\\\\b \b10.0  
 
-  Esto le ofrece la técnica que puede escribir cualquier número de direcciones. Cuando un intervalo de direcciones deben permitir, por ejemplo, 192.168.1.1 – 192.168.1.25, la coincidencia debe realizarse carácter por carácter: \b192\\.168\\.1\\. () [1-9] &#124;1 [0-9]&#124;2 [0-5]) \b  
+  Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En los casos en los que es necesario permitir un intervalo de direcciones, por ejemplo 192.168.1.1 – 192.168.1.25, la coincidencia se debe hacer carácter\\por carácter\\:\\\b192.168. [1-9] &#124;1 [0-9]&#124;2 [0-5]) \b  
 
   Tenga en cuenta lo siguiente:  
 
-- La dirección IP se trata como cadena y no un número.  
+- La dirección IP se trata como una cadena y no como un número.  
 
-- La regla se desglosa como sigue: \b192\\.168\\.1\\.  
+- La regla se desglosa de la siguiente manera:\\\b192.\\\\168.  
 
-- Esto coincide con cualquier valor que empieza por 192.168.1.  
+- Coincide con cualquier valor que comience por 192.168.1.  
 
-- El siguiente coincide con los intervalos necesarios para la parte de la dirección después del separador decimal final:  
+- El siguiente valor coincide con los intervalos necesarios para la parte de la dirección después del último separador decimal:  
 
-  -   ([1-9] coincide con las direcciones que terminen en 1-9  
+  -   ([1-9] coincide con las direcciones que terminan en 1-9  
 
   -   &#124;1 [0-9] coincide con las direcciones que terminan en 10-19  
 
-  -   &#124;Direcciones de coincidencias de 2[0-5]) terminen en 20 a 25  
+  -   &#124;2 [0-5]) coincide con las direcciones que terminan en 20-25  
 
-- Tenga en cuenta que los paréntesis se deben colocar correctamente, no se inician otras partes de direcciones IP coincidentes.  
+- Tenga en cuenta que los paréntesis deben estar colocados correctamente, de modo que no empiece a buscar coincidencias con otras partes de direcciones IP.  
 
-- Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque de 10: \b10\\.0\\.0\\. () [1-9] &#124;1 [0-4]) \b  
+- Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque 10: \b10\\\\. 0\\. ( [1-9] &#124;1 [0-4]) \b  
 
-- Y colocarlos juntos, la siguiente expresión debe coincidir todas las direcciones de "192.168.1.1~25" y "10.0.0.1~14": \b192\\.168\\.1\\. () [1-9] &#124;1 [0-9]&#124;2 [0-5]) \b&#124;\b10\\.0\\.0\\. () [1-9] &#124;1 [0-4]) \b  
+- Además de colocarlas juntas, la siguiente expresión debe coincidir con todas las direcciones de "192.168.1.1 ~ 25" y "10.0.0.1 ~\\14"\\:\\\b192.168. [1-9] &#124;1 [0-9]&#124;2 [0-&#124;5])\\\\\b \b10\\. 0. ( [1-9] &#124;1 [0-4]) \b  
 
 ### <a name="testing-the-expression"></a>Probar la expresión  
- Las expresiones de Regex pueden ser bastante complicadas, por lo que se recomienda usar una herramienta de comprobación de regex. Si lo hace una búsqueda de "generador de expresiones de regex en línea" internet, encontrará varias utilidades buena en línea que le permitirá probar las expresiones con datos de ejemplo.  
+ Las expresiones regex pueden resultar bastante complicadas, por lo que se recomienda encarecidamente usar una herramienta de comprobación de Regex. Si realiza una búsqueda en Internet de "generador de expresiones regex en línea", encontrará varias utilidades en línea adecuadas que le permitirán probar sus expresiones con datos de ejemplo.  
 
- Al probar la expresión, es importante que comprenda lo que puede esperar que deben coincidir. El sistema de Exchange online puede enviar muchas direcciones IP separadas por comas. Las expresiones proporcionadas anteriormente funcionará para esto. Sin embargo, es importante pensar en esto al probar las expresiones de regex. Por ejemplo, se podría usar el siguiente ejemplo de entrada para comprobar los ejemplos anteriores:  
+ Al probar la expresión, es importante que comprenda qué se espera que coincida. El sistema de Exchange Online puede enviar muchas direcciones IP, separadas por comas. Las expresiones proporcionadas anteriormente funcionarán para este. Sin embargo, es importante pensar en esto al probar las expresiones Regex. Por ejemplo, puede usar la siguiente entrada de ejemplo para comprobar los ejemplos anteriores:  
 
  192.168.1.1, 192.168.1.2, 192.169.1.1. 192.168.12.1, 192.168.1.10, 192.168.1.25, 192.168.1.26, 192.168.1.30, 1192.168.1.20  
 
- 10.0.0.1, 10.0.0.5, 10.0.0.10, 10.0.1.0, 10.0.1.1, 110.0.0.1, 10.0.0.14, 10.0.0.15, 10.0.0.10, 10,0.0.1  
+ 10.0.0.1, 10.0.0.5, 10.0.0.10, 10.0.1.0, 10.0.1.1, 110.0.0.1, 10.0.0.14, 10.0.0.15, 10.0.0.10, 10, 0.0.1  
 
 ## <a name="claim-types"></a>Tipos de notificación  
- AD FS en Windows Server 2012 R2 proporciona la información de contexto de solicitud utilizando los siguientes tipos de notificación:  
+ AD FS en Windows Server 2012 R2 proporciona información de contexto de la solicitud con los siguientes tipos de notificaciones:  
 
-### <a name="x-ms-forwarded-client-ip"></a>X-MS-Forwarded-Client-IP  
- Tipo de notificación: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
+### <a name="x-ms-forwarded-client-ip"></a>X-MS-forwarded-Client-IP  
+ Tipo de Claim:`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip`  
 
- Esta notificación de AD FS representa un "mejor intento" en determinar la dirección IP del usuario (por ejemplo, el cliente de Outlook) que realiza la solicitud. Esta notificación puede contener varias direcciones IP, incluida la dirección de cada servidor proxy que reenvía la solicitud.  Esta notificación se rellena con HTTP. El valor de la notificación puede ser uno de los siguientes:  
+ Esta demanda AD FS representa un "mejor intento" en la dirección IP del usuario (por ejemplo, el cliente de Outlook) que realiza la solicitud. Esta solicitud puede contener varias direcciones IP, incluida la dirección de cada proxy que reenvió la solicitud.  Esta demanda se rellena desde un HTTP. El valor de la demanda puede ser uno de los siguientes:  
 
--   Una única dirección IP: dirección IP del cliente que está conectado directamente a Exchange Online  
+-   Una dirección IP única: la dirección IP del cliente que está conectada directamente a Exchange Online.  
 
 > [!NOTE]
->  La dirección IP de un cliente en la red corporativa aparecerá como la dirección IP de interfaz externa de la puerta de enlace o proxy de salida de la organización.  
+>  La dirección IP de un cliente de la red corporativa aparecerá como la dirección IP de la interfaz externa del proxy o la puerta de enlace de salida de la organización.  
 
 -   Una o varias direcciones IP  
 
-    -   Si no se puede determinar la dirección IP del cliente de conexión de Exchange Online, establecerá el valor según el valor del encabezado x-forwarded-for, las solicitudes de un encabezado no estándar que puede incluirse en basado en HTTP y es compatible con muchos clientes, equilibradores de carga, y servidores proxy en el mercado.  
+    -   Si Exchange online no puede determinar la dirección IP del cliente que se conecta, establecerá el valor según el valor del encabezado x-forwarded-for, un encabezado no estándar que se puede incluir en las solicitudes basadas en HTTP y es compatible con muchos clientes, equilibradores de carga y servidores proxy en el mercado.  
 
-    -   Varias direcciones IP que indica la dirección IP del cliente y la dirección de cada servidor proxy que pasa la solicitud estarán separadas por una coma.  
+    -   Varias direcciones IP que indican la dirección IP del cliente y la dirección de cada proxy que pasó la solicitud se separan con una coma.  
 
 > [!NOTE]
->  Las direcciones IP relacionadas con la infraestructura de Exchange Online no estará presentes en la lista.  
+>  Las direcciones IP relacionadas con la infraestructura de Exchange online no estarán presentes en la lista.  
 
 > [!WARNING]
->  Exchange Online actualmente admite solo las direcciones IPV4; no admite direcciones IPV6.  
+>  Actualmente, Exchange Online solo admite direcciones IPV4; no es compatible con las direcciones IPV6.  
 
 ### <a name="x-ms-client-application"></a>X-MS-Client-Application  
- Tipo de notificación: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
+ Tipo de Claim:`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application`  
 
- Esta notificación de AD FS representa el protocolo utilizado por el cliente final, que imprecisa corresponde a la aplicación que se va a usar.  Esta notificación se rellena a partir de un encabezado HTTP que está actualmente establecido sólo por Exchange Online, que llena el encabezado al pasar la solicitud de autenticación para AD FS. Dependiendo de la aplicación, el valor de esta notificación será uno de los siguientes:  
+ Esta demanda AD FS representa el protocolo usado por el cliente final, que se corresponde de forma flexible a la aplicación que se está usando.  Esta solicitud se rellena a partir de un encabezado HTTP que actualmente solo está establecido en Exchange Online, que rellena el encabezado al pasar la solicitud de autenticación a AD FS. En función de la aplicación, el valor de esta demanda será uno de los siguientes:  
 
--   En el caso de los dispositivos que usan Exchange Active Sync, el valor es Microsoft.Exchange.ActiveSync.  
+-   En el caso de los dispositivos que usan Exchange Active Sync, el valor es Microsoft. Exchange. ActiveSync.  
 
--   Uso del cliente Microsoft Outlook puede producir en cualquiera de los siguientes valores:  
+-   El uso del cliente de Microsoft Outlook puede dar lugar a cualquiera de los siguientes valores:  
 
-    -   Microsoft.Exchange.Autodiscover  
+    -   Microsoft. Exchange. Autodiscover  
 
-    -   Microsoft.Exchange.OfflineAddressBook  
+    -   Microsoft. Exchange. OfflineAddressBook  
 
-    -   Microsoft.Exchange.RPCMicrosoft.Exchange.WebServices  
+    -   Microsoft. Exchange. RPCMicrosoft. Exchange. webservices  
 
-    -   Microsoft.Exchange.RPCMicrosoft.Exchange.WebServices  
+    -   Microsoft. Exchange. RPCMicrosoft. Exchange. webservices  
 
--   Otros valores posibles para este encabezado incluyen lo siguiente:  
+-   Otros valores posibles para este encabezado son los siguientes:  
 
-    -   Microsoft.Exchange.Powershell  
+    -   Microsoft. Exchange. PowerShell  
 
-    -   Microsoft.Exchange.SMTP  
+    -   Microsoft. Exchange. SMTP  
 
-    -   Microsoft.Exchange.Pop  
+    -   Microsoft. Exchange. pop  
 
-    -   Microsoft.Exchange.Imap  
+    -   Microsoft. Exchange. IMAP  
 
 ### <a name="x-ms-client-user-agent"></a>X-MS-Client-User-Agent  
- Tipo de notificación: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
+ Tipo de Claim:`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent`  
 
- Esta notificación de AD FS proporciona una cadena que represente el tipo de dispositivo que usa el cliente para tener acceso al servicio. Esto se puede usar cuando los clientes deseen evitar el acceso a determinados dispositivos (por ejemplo, determinados tipos de teléfonos inteligentes).  Los valores de esta notificación de ejemplo incluyen (pero no están limitados a) los siguientes valores.  
+ Esta AD FS Claim proporciona una cadena que representa el tipo de dispositivo que el cliente está usando para obtener acceso al servicio. Se puede usar cuando los clientes deseen evitar el acceso a determinados dispositivos (por ejemplo, tipos particulares de teléfonos inteligentes).  Los valores de ejemplo de esta demanda incluyen (pero no se limitan a) los valores siguientes.  
 
- El a continuación se muestran algunos ejemplos de lo que podría contener el valor de x-ms-user-agent para un cliente cuyo x-ms-client-application es "Microsoft.Exchange.ActiveSync"  
+ A continuación se muestran ejemplos de lo que puede contener el valor x-ms-User-Agent para un cliente cuya x-MS-Client-Application es "Microsoft. Exchange. ActiveSync"  
 
 - Vortex/1.0  
 
@@ -361,28 +363,28 @@ Siempre se deben usar las directivas descritas en este artículo con otro métod
 
 - SAMSUNGSPHD700/100.202  
 
-- Android/0.3  
+- Android/0,3  
 
-  También es posible que este valor está vacío.  
+  También es posible que este valor esté vacío.  
 
-### <a name="x-ms-proxy"></a>X-MS-Proxy  
- Tipo de notificación: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
+### <a name="x-ms-proxy"></a>X-MS-proxy  
+ Tipo de Claim:`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy`  
 
- Esta notificación de AD FS indica que la solicitud se pasa a través del proxy de aplicación Web.  Esta notificación se rellena con el proxy de aplicación Web, que rellena el encabezado al pasar la solicitud de autenticación para el back-end del servicio de federación. AD FS, a continuación, lo convierte en una notificación.  
+ Esta AD FS notificaciones indica que la solicitud ha pasado a través del proxy de aplicación Web.  Esta solicitud se rellena mediante el proxy de aplicación Web, que rellena el encabezado al pasar la solicitud de autenticación al back-end Servicio de federación. A continuación, AD FS lo convierte en una demanda.  
 
- El valor de la notificación es el nombre DNS del proxy de aplicación Web que pasa la solicitud.  
+ El valor de la demanda es el nombre DNS del proxy de aplicación web que pasó la solicitud.  
 
 ### <a name="insidecorporatenetwork"></a>InsideCorporateNetwork  
- Tipo de notificación: `http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
+ Tipo de Claim:`http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork`  
 
- Tipo de notificación de forma similar a la anterior x-ms-proxy, este tipo de notificación indica si la solicitud se pasa a través del proxy de aplicación web. A diferencia de x-ms-proxy insidecorporatenetwork es un valor booleano True que indica una solicitud directamente al servicio de federación desde dentro de la red corporativa.  
+ Similar al tipo de notificaciones x-MS-proxy anterior, este tipo de demanda indica si la solicitud se ha pasado a través del proxy de aplicación Web. A diferencia de x-MS-proxy, insidecorporatenetwork es un valor booleano con true que indica una solicitud directamente al servicio de Federación desde dentro de la red corporativa.  
 
-### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-Endpoint-absoluto-Path (activa o pasiva)  
- Tipo de notificación: `http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
+### <a name="x-ms-endpoint-absolute-path-active-vs-passive"></a>X-MS-Endpoint-Absolute-Path (activo frente a pasivo)  
+ Tipo de Claim:`http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path`  
 
- Este tipo de notificación puede utilizarse para determinar las solicitudes procedentes de clientes (avanzados) "activos" frente a los clientes "pasivos" (explorador basadas en web). Esto permite que las solicitudes externas desde aplicaciones basadas en explorador como Outlook Web Access, SharePoint Online o el portal de Office 365 se permite mientras se bloquean las solicitudes procedentes de clientes enriquecidos, como Microsoft Outlook.  
+ Este tipo de notificaciones se puede usar para determinar las solicitudes que se originan en clientes "activos" (enriquecidos) frente a clientes "pasivos" (basados en explorador Web). Esto permite que se permitan las solicitudes externas desde aplicaciones basadas en explorador como Outlook Web Access, SharePoint Online o el portal de Office 365 mientras se bloquean las solicitudes procedentes de clientes enriquecidos como Microsoft Outlook.  
 
- El valor de la notificación es el nombre del servicio AD FS que recibió la solicitud.  
+ El valor de la demanda es el nombre del servicio AD FS que recibió la solicitud.  
 
 ## <a name="see-also"></a>Vea también  
  [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)

@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 5ef487ce9799c1f09660cdfcd6fba71336fc4d9a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8371a67ba1b8dc7d5f02272c809f916aae3df584
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442139"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544555"
 ---
 # <a name="prompt"></a>prompt
 
 
 
-Cambia el símbolo del sistema Cmd.exe. Si se utiliza sin parámetros, **símbolo del sistema** restablece el símbolo del sistema a la configuración predeterminada, que es la letra de unidad actual y el directorio seguido por el símbolo mayor que ( **>** ).
+Cambia el símbolo del sistema cmd. exe. Si se usa sin parámetros, **prompt** restablece el símbolo del sistema a la configuración predeterminada, que es la letra de unidad y el directorio actuales seguidos del símbolo **>** mayor que ().
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,60 +38,60 @@ prompt [<Text>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Text>|Especifica el texto y la información que desea incluir en el símbolo del sistema.|
+|\<> De texto|Especifica el texto y la información que desea incluir en el símbolo del sistema.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-Puede personalizar el símbolo del sistema para mostrar el texto que desee, incluida información como el nombre del directorio actual, el tiempo y fecha y el número de versión de Microsoft Windows.
+Puede personalizar el símbolo del sistema para mostrar el texto que desee, incluida la información como el nombre del directorio actual, la fecha y la hora, y el número de versión de Microsoft Windows.
 
-En la tabla siguiente se enumera las combinaciones de caracteres que se pueden incluir en lugar de, o además de uno o más cadenas de caracteres en el *texto* parámetro. La lista incluye una breve descripción de la información que cada combinación de caracteres que se agrega a la línea de comandos o de texto.  
+En la tabla siguiente se enumeran las combinaciones de caracteres que se pueden incluir en lugar de una o más cadenas de caracteres en el parámetro de *texto* . La lista incluye una breve descripción del texto o la información que cada combinación de caracteres agrega al símbolo del sistema.  
 
-| Carácter |                                 Descripción                                 |
+| Óptico |                                 Descripción                                 |
 |-----------|-----------------------------------------------------------------------------|
-|    $q     |                               signo igual (=)                                |
-|    $$     |                               $ (dólar)                               |
+|    $q     |                               = (signo igual)                                |
+|    $$     |                               $ (signo de dólar)                               |
 |    $t     |                                Hora actual                                 |
 |    $d     |                                Fecha actual                                 |
-|    $p     |                           Ruta de acceso y la unidad actual                            |
+|    $p     |                           Unidad y ruta de acceso actuales                            |
 |    $v     |                           Número de versión de Windows                            |
 |    $n     |                                Unidad actual                                |
-|    $g     |                            > (mayor que el inicio de sesión)                            |
-|    $l     |                             < (menor que el inicio de sesión)                              |
-|    $b     |                                                                             |
-|    $_     |                               ESCRIBA O SALTO DE LÍNEA                                |
+|    $g     |                            > (mayor que signo)                            |
+|    $l     |                             < (menor que signo)                              |
+|    $b     |                              \|(símbolo de barra vertical)                               |
+|    $_     |                               ENTRAR-AVANCE DE LA                                |
 |    $e     |                         Código de escape ANSI (código 27)                          |
 |    $h     | Retroceso (para eliminar un carácter que se ha escrito en la línea de comandos) |
 |    $a     |                                & (y comercial)                                |
-|    $c     |                            ((paréntesis de apertura)                             |
-|    $f     |                            ) (paréntesis)                            |
-|    $s     |                                    Espacio                                    |
+|    $c     |                            ((paréntesis izquierdo)                             |
+|    $f     |                            ) (paréntesis derecho)                            |
+|    $s     |                                    Espacia                                    |
 
-Cuando se habilitan las extensiones de comando (es decir, el valor predeterminado) el **símbolo del sistema** comando admite los caracteres de formato siguientes:  
+Cuando las extensiones de comando están habilitadas (es decir, el valor predeterminado), el comando **prompt** admite los siguientes caracteres de formato:  
 
-|Carácter|Descripción|
+|Óptico|Descripción|
 |---------|-----------|
-|$+|Cero o más en el signo ( **+** ) caracteres, según la profundidad de la **pushd** pila de directorio (un carácter para cada nivel insertado).|
-|$m|El nombre remoto asociado con la letra de unidad actual o una cadena vacía si la unidad actual no es una unidad de red.|
+|$+|Cero o más caracteres de signo **+** más (), en función de la profundidad de la pila de directorios **insertada** (un carácter por cada nivel insertado).|
+|$m|Nombre remoto asociado a la letra de unidad actual o cadena vacía si la unidad actual no es una unidad de red.|
 
-Si incluye el **$p** caracteres en el parámetro de texto, se lee el disco después de escribir cada comando (para determinar la unidad actual y la ruta de acceso). Esto puede tardar más tiempo, especialmente para las unidades de disco.
+Si incluye el carácter **$p** en el parámetro de texto, el disco se lee después de escribir cada comando (para determinar la unidad y la ruta de acceso actuales). Esto puede tardar más tiempo, especialmente en el caso de las unidades de disquete.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para establecer una línea de comandos de dos líneas con la fecha y hora actual en la primera línea y el signo mayor que en la línea siguiente, escriba:
+Para establecer un símbolo del sistema de dos líneas con la hora y fecha actuales en la primera línea y el signo mayor que en la línea siguiente, escriba:
 ```
 prompt $d$s$s$t$_$g 
 ```
-Cambia el símbolo del sistema como se indica a continuación, donde la fecha y hora están actualizadas:
+El mensaje se cambia como se indica a continuación, donde la fecha y la hora son actuales:
 ```
 Fri 06/01/2007  13:53:28.91
 >
 ```
-Para establecer el símbolo del sistema para mostrar como una flecha (`-->`), escriba:
+Para establecer que el símbolo del sistema se muestre como una`-->`flecha (), escriba:
 ```
 prompt --$g
 ```
-Para cambiar manualmente el símbolo del sistema para la configuración predeterminada (la unidad actual y la ruta de acceso seguido por el signo mayor que), escriba:
+Para cambiar manualmente el símbolo del sistema a la configuración predeterminada (la unidad y la ruta de acceso actuales seguidos del signo mayor que), escriba:
 ```
 prompt $p$g
 ```

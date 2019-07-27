@@ -1,6 +1,6 @@
 ---
 title: Limitar el acceso web
-description: Obtenga información sobre cómo restringir el acceso a Internet en MultiPoint Services
+description: Obtenga información acerca de cómo limitar el acceso de los usuarios a Internet en Multipoint Services
 ms.custom: na
 ms.date: 07/08/2016
 ms.prod: windows-server-threshold
@@ -13,19 +13,19 @@ ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 4274569f76b01c1793f7af7562a87f01ba1bdc07
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: cb91914608110d26ff2db8eff1cd28d26d04669b
+ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446134"
+ms.lasthandoff: 07/27/2019
+ms.locfileid: "68590349"
 ---
 # <a name="limit-web-access"></a>Limitar el acceso web
-Además de supervisar las actividades del usuario en escritorios individuales, como usuario administrativo, puede limitar el acceso de usuarios a sitios Web especificados indicando los sitios Web permitidos y sitios Web a la que desea bloquear el acceso de usuario.  
+Además de supervisar las actividades de los usuarios en equipos de escritorio individuales, usted, como usuario administrativo, puede limitar el acceso de los usuarios a sitios web especificados indicando sitios web y sitios web permitidos en los que desea bloquear el acceso de los usuarios.  
   
 ## <a name="to-limit-web-access-on-a-station"></a>Limitar el acceso web en una estación  
   
-1. En MultiPoint Dashboard, en el **restricción Web** , haga clic **configurar**. Se abre la página **Configurar restricción web**. Se enumeran los sitios a los que el usuario puede obtener acceso.  
+1. En el panel de Multipoint, en la pestaña **restricción web** , haga clic en **configurar**. Se abre la página **Configurar restricción web**. Se enumeran los sitios a los que el usuario puede obtener acceso.  
   
 2. Haga clic en la imagen en miniatura de la estación de usuario en la que quiera limitar el acceso web.  
   
@@ -34,13 +34,13 @@ Además de supervisar las actividades del usuario en escritorios individuales, c
 4. Para agregar un sitio permitido, escriba la dirección web y después haga clic en **Agregar**.  
   
    > [!NOTE]
-   > Por ejemplo, si escribe "Contoso.com" permite o bloquea los sitios que son relativas a www.contoso.com (por ejemplo, www.newpage.contoso.com). Escribir "Contoso" permitirá o limitar todos los sitios relacionados con Contoso (como contoso.com, contoso.uk y así sucesivamente).  
+   > Por ejemplo, al escribir "contoso.com" permite o bloquea sitios que son relativos a\.www contoso.com (por ejemplo,\.www NewPage.contoso.com). Si escribe "Contoso", se permitirá o se limitarán todos los sitios relacionados con contoso (incluidos contoso.com, contoso.uk, etc.).  
   
 5. Para quitar una dirección web de la lista de sitios permitidos, haga clic en la dirección web a la que quiere quitar el acceso y después haga clic en **Quitar**.  
   
 ## <a name="to-limit-web-access-on-all-stations"></a>Limitar el acceso web en todas las estaciones  
   
-1. En MultiPoint Dashboard, en el **restricción Web** pestaña, haga clic en el menú Inicio\-menú desplegable y, a continuación, haga clic en **limitar acceso Web en todos los escritorios**.  
+1. En Multipoint Dashboard, en la pestaña **restricción web** , haga clic en\-el menú desplegable iniciar y, a continuación, haga clic en **limitar acceso web en todos los equipos de escritorio**.  
   
    Se abre la página **Configurar restricción web**. Se enumeran los sitios a los que el usuario puede obtener acceso. Realiza una de las siguientes acciones:  
   
@@ -49,7 +49,7 @@ Además de supervisar las actividades del usuario en escritorios individuales, c
    Para agregar un sitio que no quiere que visiten los usuarios, haga clic en **No permitir solo estos sitios**, escriba la dirección web que no quiere que visiten los usuarios y después haga clic en **Agregar**.  
   
    > [!NOTE]
-   > Por ejemplo, si escribe "Contoso.com" permite o bloquea los sitios que son relativas a www.contoso.com (por ejemplo, www.newpage.contoso.com). Escribir "Contoso" permitirá o limitar todos los sitios relacionados con Contoso (como contoso.com, contoso.uk y así sucesivamente).  
+   > Por ejemplo, al escribir "Contoso.com" permite o bloquea sitios que son relativos a www.contoso.com (por ejemplo, www.newpage.contoso.com). Si escribe "Contoso", se permitirá o se limitarán todos los sitios relacionados con contoso (incluidos contoso.com, contoso.uk, etc.).  
   
 3. Para quitar una dirección web de la lista de sitios permitidos o no permitidos, seleccione la dirección web y después haga clic en **Quitar**.  
   

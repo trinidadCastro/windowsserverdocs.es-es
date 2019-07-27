@@ -10,12 +10,12 @@ ms.topic: article
 ms.assetid: 8e7b77a4-1c6a-4c21-8844-0df89b63f68d
 author: brianlic-msft
 ms.date: 10/12/2016
-ms.openlocfilehash: 4ee77fba1e82179f6998959b494628e97ac23390
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 888992366f8a722c4834f23e08a393c829b47a26
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284226"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544628"
 ---
 # <a name="device-health-attestation"></a>Certificación de estado del dispositivo
 
@@ -98,7 +98,7 @@ Cuando DHA se ejecuta en modo de validación EKCert, depende de una cadena de ad
 
 Microsoft publica paquetes agregados de raíces de confianza y a una CA intermedia para los fabricantes de TPM aprobados (cuando estén disponibles) en un archivo .cab accesible públicamente. Debe descargar la fuente, validar su integridad e instalarla en el servidor que ejecuta la Atestación de estado de dispositivo.
 
-Es un archivo de ejemplo [ https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab ](https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab).
+Un archivo de ejemplo [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)es.
 
 #### <a name="aikcert-validation-mode"></a>Modo de validación AIKCert
 
@@ -137,7 +137,7 @@ Después de instalar Windows Server 2016, el dispositivo se reinicia y se abre e
 4.  En la página **Seleccionar servidor de destino**, haga clic en **Seleccionar un servidor del grupo de servidores**, seleccione un servidor y haga clic en **Siguiente**.
 5.  En la página **Seleccionar roles de servidor**, active la casilla **Atestación de mantenimiento del dispositivo**.
 6.  Haga clic en **Agregar características** para instalar otros servicios de rol y características necesarios.
-7.  Haz clic en **Siguiente**.
+7.  Haga clic en **Next**.
 8.  En la página **Seleccionar características**, haga clic en **Siguiente**.
 9.  En la página **Rol Servidor web (IIS)** , haz clic en **Siguiente**.
 10. En la página **Seleccionar servicios de rol**, haga clic en **Siguiente**.
@@ -147,7 +147,7 @@ Después de instalar Windows Server 2016, el dispositivo se reinicia y se abre e
 
 ### <a name="install-the-signing-and-encryption-certificates"></a>Instalación de los certificados de firma y cifrado
 
-Utilice el script de Windows PowerShell siguiente para instalar los certificados de firma y cifrado. Para obtener más información acerca de la huella digital, consulte [Cómo: Recuperar la huella digital de un certificado](https://msdn.microsoft.com/library/ms734695.aspx).
+Utilice el script de Windows PowerShell siguiente para instalar los certificados de firma y cifrado. Para obtener más información acerca de la huella [digital, consulte How to: Recupera la huella digital de un](https://msdn.microsoft.com/library/ms734695.aspx)certificado.
 
 ```
 $key = Get-ChildItem Cert:\LocalMachine\My | Where-Object {$_.Thumbprint -like "<thumbprint>"}
@@ -165,7 +165,7 @@ Para instalar el paquete de certificado raíz TPM de confianza, debe extraerlo, 
 
 #### <a name="download-the-trusted-tpm-roots-certificate-package"></a>Descarga del paquete de certificado raíz TPM de confianza
 
-Antes de instalar el paquete de certificado, puede descargar la última lista de raíces de confianza de TPM desde [ https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab ](https://tpmsec.microsoft.com/OnPremisesDHA/TrustedTPM.cab).
+Antes de instalar el paquete de certificado, puede descargar la lista más reciente de raíces de TPM [https://go.microsoft.com/fwlink/?linkid=2097925](https://go.microsoft.com/fwlink/?linkid=2097925)de confianza de.
 
 > **Importante:** Antes de instalar el paquete, compruebe que está firmado digitalmente por Microsoft.
 
@@ -180,7 +180,7 @@ expand -F:* .\TrustedTpm.cab .\TrustedTpm
 
 Elimine las carpetas de cualquier cadena de confianza de proveedor TPM que no sea de confianza para su organización.
 
-> **Nota:** Si utiliza el modo de certificado AIK, la carpeta de Microsoft es necesario para validar los certificados AIK emitido de Microsoft.
+> **Nota:** Si usa el modo de certificado de AIK, se requiere la carpeta Microsoft para validar los certificados AIK de Microsoft emitidos.
 
 #### <a name="install-the-trusted-certificate-package"></a>Instalación del paquete de certificado de confianza
 Instale el paquete de certificado de confianza mediante la ejecución del script de instalación desde el archivo .cab.
@@ -238,7 +238,7 @@ Get-DHASActiveSigningCertificate
 Set-DHASActiveSigningCertificate -Thumbprint "<hex>" -Force
 ```
 
-> **Nota:** Este certificado debe implementarse en el servidor que ejecuta el servicio DHA el **LocalMachine\My** almacén de certificados. Cuando se establece el certificado de firma activo, el certificado de firma activo existente se mueve a la lista de certificados de firma inactivos.
+> **Nota:** Este certificado debe implementarse en el servidor que ejecuta el servicio DHA en el almacén de certificados **LocalMachine\My** . Cuando se establece el certificado de firma activo, el certificado de firma activo existente se mueve a la lista de certificados de firma inactivos.
 
 ### <a name="list-the-inactive-signing-certificates"></a>Lista de los certificados de firma inactivos
 ```
@@ -251,7 +251,7 @@ Remove-DHASInactiveSigningCertificates -Force
 Remove-DHASInactiveSigningCertificates  -Thumbprint "<hex>" -Force
 ```
 
-> **Nota:** Solo *uno* certificado inactivo (de cualquier tipo) puede existir en el servicio en cualquier momento. Los certificados deben quitarse de la lista de certificados inactivos cuando ya no sean necesarios.
+> **Nota:** En cualquier momento solo puede existir *un* certificado inactivo (de cualquier tipo) en el servicio. Los certificados deben quitarse de la lista de certificados inactivos cuando ya no sean necesarios.
 
 ### <a name="get-the-active-encryption-certificate"></a>Obtención del certificado de cifrado activo
 

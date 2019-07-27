@@ -1,6 +1,6 @@
 ---
 title: mountvol
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 03e7cefc7c7a00338972fc365b7c25d9c795c83e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 07c57f7ab9c41d6155e4a8d38322176aabf3868f
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437282"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544592"
 ---
 # <a name="mountvol"></a>mountvol
 
 
 
-Crea, elimina o muestra un punto de montaje del volumen.
+Crea, elimina o enumera un punto de montaje de volumen.
 
-Para obtener ejemplos de cómo utilizar este comando, consulte [ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -42,26 +42,26 @@ mountvol <Drive>: /s
 
 ## <a name="parameters"></a>Parámetros
 
-|     Parámetro     |                                                                                                                           Descripción                                                                                                                            |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive>:]<Path> |                                                                                             Especifica el directorio NTFS donde residirá el punto de montaje.                                                                                             |
-|   \<VolumeName>   |                     Especifica el nombre del volumen que es el destino del punto de montaje. El nombre del volumen usa la sintaxis siguiente, donde *GUID* es un identificador único global:</br>`\\\\?\Volume\{GUID}\`</br>Se requieren las llaves {}.                      |
-|        /d         |                                                                                                    Quita el punto de montaje de volumen de la carpeta especificada.                                                                                                     |
-|        /l         |                                                                                                     Muestra el nombre de volumen montado para la carpeta especificada.                                                                                                      |
-|        /p         | Quita el punto de montaje del volumen del directorio especificado, desmonta el volumen básico y pone el volumen básico sin conexión, lo que puede montar. Si otros procesos están usando el volumen, **mountvol** cerrará los identificadores abiertos antes de desmontar el volumen. |
-|        /r         |             Quita los directorios del punto de montaje de volumen y la configuración del registro para los volúmenes que ya no están en el sistema, impide que se monten automáticamente y reciban su volumen anteriores puntos cuando se agrega al sistema de montaje.              |
-|        /n         |                                                                      Deshabilita el montaje automático de nuevos volúmenes básicos. Los volúmenes nuevos no se montan automáticamente cuando se agregan al sistema.                                                                       |
-|        /e         |                                                                                                       Vuelve a habilitar el montaje automático de nuevos volúmenes básicos.                                                                                                        |
-|        /s         |                                                                                Monta la partición del sistema EFI en la unidad especificada. Está disponible en equipos basados en Itanium sólo.                                                                                |
-|        /?         |                                                                                                               Muestra la ayuda en el símbolo del sistema.                                                                                                               |
+|Parámetro|Descripción|
+|---------|-----------|
+|[\<> De unidad:]<Path>|Especifica el directorio NTFS existente donde residirá el punto de montaje.|
+|\<VolumeName >|Especifica el nombre del volumen que es el destino del punto de montaje. El nombre del volumen utiliza la sintaxis siguiente, donde *GUID* es un identificador único global:</br>`\\\\?\Volume\{GUID}\`</br>Los corchetes {} son obligatorios.|
+|/d|Quita el punto de montaje del volumen de la carpeta especificada.|
+|/l|Muestra el nombre del volumen montado para la carpeta especificada.|
+|/p|Quita el punto de montaje del volumen del directorio especificado, desmonta el volumen básico y desconecta el volumen básico, lo que hace que sea desmontable. Si otros procesos están usando el volumen, **Mountvol** cierra los identificadores abiertos antes de desmontar el volumen.|
+|/r|Quita los directorios de punto de montaje de volumen y la configuración del registro para los volúmenes que ya no están en el sistema, evitando que se monten automáticamente y se les proporcionen los puntos de montaje de volumen anteriores cuando se vuelvan a agregar al sistema.|
+|/n|Deshabilita el montaje automático de nuevos volúmenes básicos. Los nuevos volúmenes no se montan automáticamente cuando se agregan al sistema.|
+|/e|Vuelve a habilitar el montaje automático de nuevos volúmenes básicos.|
+|/s|Monta la partición del sistema EFI en la unidad especificada.|
+|/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   **Mountvol** permite vincular los volúmenes sin necesidad de una letra de unidad.
--   Los volúmenes que se desmontan utilizando **/p** se muestran en la lista de volúmenes como "Se CREÓ no montado hasta un punto de montaje". Si el volumen tiene más de un montaje de punto, utilice **/d** para quitar los puntos de montaje adicionales antes de usar **/p**. Puede hacer que se puede montar nuevamente el volumen básico mediante la asignación de un punto de montaje del volumen.
--   Si necesita ampliar el espacio del volumen sin volver a formatear o sustituir un disco duro, puede agregar una ruta de acceso de montaje a otro volumen. La ventaja de uso de un volumen con varias rutas de acceso de montaje es que puede tener acceso a todos los volúmenes locales mediante el uso de una letra de unidad (como `C:`). No es necesario que recuerde qué volumen corresponde a qué letra de unidad, aunque todavía puede montar volúmenes locales y asignarles letras de unidad.
+-   **Mountvol** le permite vincular volúmenes sin necesidad de una letra de unidad.
+-   Los volúmenes que se desmontan con **/p** se enumeran en la lista de volúmenes como "no montado hasta que se crea un punto de montaje de volumen". Si el volumen tiene más de un punto de montaje, use **/d** para quitar los puntos de montaje adicionales antes de usar **/p**. Puede volver a hacer que se pueda montar el volumen básico si asigna un punto de montaje de volumen.
+-   Si necesita expandir el espacio de volumen sin volver a formatear o reemplazar una unidad de disco duro, puede Agregar una ruta de acceso de montaje a otro volumen. La ventaja de usar un volumen con varias rutas de acceso de montaje es que puede acceder a todos los volúmenes locales mediante una sola letra de `C:`unidad (como). No es necesario recordar qué volumen corresponde a la letra de unidad, aunque todavía puede montar volúmenes locales y asignarles letras de unidad.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para crear un punto de montaje, escriba:
 ```
