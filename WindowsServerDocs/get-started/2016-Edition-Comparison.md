@@ -14,12 +14,12 @@ author: jaimeo
 ms.author: jaimeo
 manager: dongill
 ms.localizationpriority: medium
-ms.openlocfilehash: 2c26d6d0c4c4465b5f9073dbcac951fc0adce1d5
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4a305141b839772bb024140bd803073a67e266b2
+ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63688540"
+ms.lasthandoff: 07/26/2019
+ms.locfileid: "68544580"
 ---
 # <a name="comparison-of-standard-and-datacenter-editions-of-windows-server-2016"></a>Comparación de las ediciones Standard y Datacenter de Windows Server 2016
 
@@ -91,7 +91,7 @@ ms.locfileid: "63688540"
 |Desbloqueo de BitLocker en red|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |BranchCache|Sí|Sí|
 |Cliente para NFS|Sí|Sí|
-|Contenedores|Sí (contenedores de Windows ilimitados; hasta 2 contenedores de Hyper-V)|Sí (todos los tipos de contenedor ilimitados)|
+|Contenedores|Sí (contenedores de Windows ilimitados; hasta 2 contenedores de Hyper-V)|Sí (todos los tipos de contenedor ilimitados)|
 |Protocolo de puente del centro de datos|Sí|Sí|
 |DirectPlay|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
 |Almacenamiento mejorado|Sí|Sí|
@@ -123,7 +123,7 @@ ms.locfileid: "63688540"
 |Límite de ancho de banda SMB|Sí|Sí|
 |Servidor SMTP|Sí|Sí|
 |Servicio SNMP|Sí|Sí|
-|Equilibrador de carga de software|Sí|Sí|
+|Equilibrador de carga de software|No|Sí|
 |Réplica de almacenamiento|No|Sí|
 |Cliente Telnet|Sí|Sí|
 |Cliente TFTP|Sí, si se instala como servidor con Experiencia de escritorio|Sí, si se instala como servidor con Experiencia de escritorio|
