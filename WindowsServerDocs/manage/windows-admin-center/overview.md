@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/20/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: d00051f59eb39c6a7c668d00034f72879b0b097f
-ms.sourcegitcommit: 078304c4b92bb57eb85ba29634afc92cc028c644
+ms.openlocfilehash: 0612f4ff102d6b5d1fd24372ac20a98c3ec02edb
+ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67298139"
+ms.lasthandoff: 07/24/2019
+ms.locfileid: "68476563"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -129,6 +129,7 @@ Puedes tener Windows Admin Center en funcionamiento y en ejecución en tu entorn
 
 Obtén información sobre las últimas funciones publicadas:
 
+- Versión [1907](https://aka.ms/wac1907): se han agregado vínculos de estimación de costos de Azure y se han realizado mejoras en la importación, exportación y etiquetado de máquinas virtuales.
 - Versión [1906](https://aka.ms/wac1906): se han agregado máquinas virtuales de importación y exportación, cambiado las cuentas de Azure, agregado conexiones de Azure, el experimento de configuración de la conectividad, las mejoras de rendimiento y las herramientas de generación de perfiles.
 - La versión 1904.1 es la versión más reciente con disponibilidad general: una actualización de mantenimiento para mejorar la estabilidad de los complementos de puerta de enlace.
 - La versión [1904](https://aka.ms/wac1904) era una versión con disponibilidad general que introdujo la herramienta Azure Hybrid Services y que trajo las características que anteriormente se encontraban en la versión preliminar al canal de disponibilidad general.

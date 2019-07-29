@@ -66,13 +66,21 @@
 
 ## [Compatibilidad adicional de Escritorio remoto](rds-get-support.md)
 ## [Clientes de Escritorio remoto](clients/remote-desktop-clients.md)
+### Problemas conocidos de Escritorio remoto
+#### [Solución de problemas generales de conexión con Escritorio remoto](troubleshoot/rdp-error-general-troubleshooting.md)
+#### [Los clientes no se pueden conectar y reciben el mensaje "Clase no registrada"](troubleshoot/rdp-error-class-not-registered.md).
+#### [Los clientes no se pueden conectar y reciben el error "No hay licencias disponibles"](troubleshoot/rdp-error-no-licenses-available.md)
+#### [Los usuarios no se pueden autenticar o deben autenticarse dos veces](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
+#### [Al conectarse, se produce el error "Remote Desktop Service is currently busy"](troubleshoot/remote-desktop-service-currently-busy.md) (El servicio Escritorio remoto está ocupado actualmente)
+#### [El cliente de Escritorio remoto se desconecta y no puede volver a conectarse a la misma sesión](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
+#### [Los portátiles remotos se desconectan de la red inalámbrica](troubleshoot/remote-laptop-disconnects-wireless-network.md)
+#### [Problemas de bajo rendimiento o de aplicaciones durante la conexión a escritorio remoto](troubleshoot/poor-performance-or-application-problems.md)
 ### Información general
 #### [¿Qué clientes funcionan mejor para usted?](clients/remote-desktop-app-compare.md)
 #### [Configuración del archivo RDP de Escritorio remoto](clients/rdp-files.md)
 #### [Esquema de URI de Escritorio remoto](clients/remote-desktop-uri.md)
 #### [Preguntas más frecuentes del cliente de Escritorio remoto](clients/remote-desktop-client-faq.md)
 #### [Configuración de privacidad de las aplicaciones y escritorios administrados](clients/remote-privacy-settings.md)
-#### [Solución de problemas de conexión a Escritorio remoto](clients/troubleshoot-remote-desktop-connections.md)
 ### Cliente de Escritorio remoto para Windows
 #### [Introducción](clients/windows.md)
 #### [Novedades del cliente de Windows](clients/windows-whatsnew.md)
