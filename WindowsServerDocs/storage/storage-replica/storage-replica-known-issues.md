@@ -293,7 +293,7 @@ Si reinicias un servidor que se encuentre en una asociación, puede ocurrir que 
 
     Guidance: Possible causes include network failures, share creation failures for the remote replication group, or firewall settings. Make sure SMB traffic is allowed and there are no connectivity issues between the local computer and the remote computer. You should expect this event when suspending replication or removing a replication partnership.
 
-Tenga en `Status: "{Access Denied}"` cuenta el y `A process has requested access to an object, but has not been granted those access rights.` el mensaje este es un problema conocido dentro de la réplica de almacenamiento y se corrigió en la actualización de la calidad 12 de septiembre de 2017: KB4038782 (compilación del sistema operativo 14393,1715)https://support.microsoft.com/help/4038782/windows-10-update-kb4038782 
+Tenga en `Status: "{Access Denied}"` cuenta el y `A process has requested access to an object, but has not been granted those access rights.` el mensaje este es un problema conocido dentro de la réplica de almacenamiento y se corrigió en la actualización de la calidad 12 de septiembre de 2017: KB4038782 (compilación del sistema operativo 14393,1715) https://support.microsoft.com/help/4038782/windows-10-update-kb4038782 
 
 ## <a name="error-failed-to-bring-the-resource-cluster-disk-x-online-with-a-stretch-cluster"></a>Error "No se pudo conectar el recurso "Disco de clúster x" en línea". con un clúster extendido
 
