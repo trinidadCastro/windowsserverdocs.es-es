@@ -1,6 +1,6 @@
 ---
 title: Configuración de Hyper-V
-description: Consideraciones sobre la configuración de Hyper-V para la optimización de rendimiento
+description: Consideraciones de configuración de Hyper-V para el ajuste del rendimiento
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
@@ -8,83 +8,83 @@ ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
 ms.openlocfilehash: baea091482818c581414ba1d9c1c01db2a52e3d7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 07/31/2019
 ms.locfileid: "66435666"
 ---
 # <a name="hyper-v-configuration"></a>Configuración de Hyper-V
 
 ## <a name="hardware-selection"></a>Selección de hardware
 
-Las consideraciones de hardware para servidores que ejecutan Hyper-V normalmente se parecen a las de los servidores no virtualizados, pero los servidores que ejecutan Hyper-V pueden presentar un mayor uso de CPU, consume más memoria y necesita mayor ancho de banda de E/S debido a la consolidación de servidores.
+Las consideraciones de hardware para los servidores que ejecutan Hyper-V suelen ser similares a las de los servidores no virtualizados, pero los servidores que ejecutan Hyper-V pueden mostrar un aumento del uso de CPU, consumir más memoria y necesitar mayor ancho de banda de e/s debido a la consolidación del servidor.
 
--   **Procesadores**
+-   **Incrustrados**
 
-    Hyper-V en Windows Server 2016 presenta los procesadores lógicos como uno o más procesadores virtuales a cada máquina virtual activa. Hyper-V requiere ahora procesadores que admiten las tecnologías de traducción de direcciones de segundo nivel (SLAT) como las tablas de página extendida (EPT) o las tablas de página anidadas (NPT).
+    Hyper-V en Windows Server 2016 presenta los procesadores lógicos como uno o más procesadores virtuales para cada máquina virtual activa. Hyper-V requiere ahora procesadores que admiten tecnologías de traducción de direcciones de segundo nivel (SLAT), como tablas de páginas extendidas (EPT) o tablas de páginas anidadas (NPT).
 
--   **Cache**
+-   **Almacenar**
 
-    Hyper-V puede beneficiarse de mayores memorias caché de procesador, especialmente para las cargas que tienen un gran espacio de trabajo en memoria y en configuraciones de máquina virtual en el que la proporción de procesadores virtuales y los procesadores lógicos es alta.
+    Hyper-V puede beneficiarse de cachés de procesador más grandes, especialmente para cargas que tienen un gran espacio de trabajo en la memoria y en configuraciones de máquinas virtuales en las que la proporción de procesadores virtuales a procesadores lógicos es alta.
 
 -   **Memoria**
 
-    El servidor físico requiere suficiente memoria para las particiones de la raíz y el secundario. La partición raíz necesita memoria para realizar las operaciones de E/s de manera eficaz en nombre de las máquinas virtuales y las operaciones como una instantánea de máquina virtual. Hyper-V garantiza que haya memoria suficiente está disponible para la partición raíz y permite restantes de la memoria que se asignará a las particiones secundarias. Las particiones secundarias deben ajustarse según las necesidades de la carga esperada para cada máquina virtual.
+    El servidor físico requiere suficiente memoria para las particiones raíz y secundaria. La partición raíz requiere memoria para realizar operaciones de e/s de forma eficaz en nombre de las máquinas virtuales y las operaciones como, por ejemplo, una instantánea de máquina virtual. Hyper-V garantiza que haya suficiente memoria disponible para la partición raíz y permite asignar la memoria restante a las particiones secundarias. Se debe ajustar el tamaño de las particiones secundarias en función de las necesidades de la carga esperada para cada máquina virtual.
 
--   **Almacenamiento**
+-   **Storage**
 
-    El hardware de almacenamiento debe tener suficiente ancho de banda de E/S y la capacidad para satisfacer las necesidades actuales y futuras de virtual machines que los hosts de servidor físico. Tenga en cuenta estos requisitos cuando seleccione discos y controladores de almacenamiento y elija la configuración de RAID. Colocación de máquinas virtuales con cargas de trabajo intensivas de disco alta en distintos discos físicos probablemente mejorará el rendimiento general. Por ejemplo, si cuatro máquinas virtuales comparten un único disco y usarlo de forma activa, cada máquina virtual pueden producir solo el 25 por ciento del ancho de banda de dicho disco.
+    El hardware de almacenamiento debe tener suficiente ancho de banda y capacidad de e/s para satisfacer las necesidades actuales y futuras de las máquinas virtuales que hospeda el servidor físico. Tenga en cuenta estos requisitos al seleccionar controladores de almacenamiento y discos y elegir la configuración de RAID. La colocación de las máquinas virtuales con cargas de trabajo con un gran consumo de disco en diferentes discos físicos probablemente mejorará el rendimiento general. Por ejemplo, si cuatro máquinas virtuales comparten un único disco y lo usan activamente, cada máquina virtual puede producir solo el 25 por ciento del ancho de banda de ese disco.
 
-## <a name="power-plan-considerations"></a>Consideraciones del plan de energía
+## <a name="power-plan-considerations"></a>Consideraciones sobre el plan de energía
 
-Como una tecnología principal, la virtualización es una eficaz herramienta útil para aumentar la densidad de carga de trabajo de servidor, lo que reduce el número de servidores físicos necesarios en su centro de datos, aumentar la eficacia operativa y reduce los costos de consumo de energía. Administración de energía es fundamental para la administración de costos. 
+Como tecnología básica, la virtualización es una herramienta muy útil para aumentar la densidad de la carga de trabajo del servidor, lo que reduce el número de servidores físicos necesarios en el centro de trabajo, lo que aumenta la eficacia operativa y reduce los costos de consumo de energía. La administración de energía es fundamental para cost Management. 
 
-En un entorno ideal del centro de datos, consumo de energía se administra mediante la consolidación de trabajo en equipos hasta que está prácticamente ocupados y, a continuación, al desactivar máquinas inactivas. Si este enfoque no es práctico, los administradores pueden aprovechar los planes de energía en los hosts físicos para asegurarse de que no consumen más energía que es necesario. 
+En un entorno de centro de información ideal, el consumo de energía se administra mediante la consolidación del trabajo en las máquinas hasta que estén más ocupados y, a continuación, desactive los equipos inactivos. Si este enfoque no es práctico, los administradores pueden aprovechar los planes de energía en los hosts físicos para asegurarse de que no consumen más energía de lo necesario. 
 
-Las técnicas de administración de energía de servidor conlleva un costo, especialmente como inquilino cargas de trabajo no son de confianza para dictar directiva sobre la infraestructura física del proveedor de hospedaje. El software de nivel de host se deja para deducir cómo maximizar el rendimiento minimizando el consumo de energía. En máquinas inactivo principalmente, esto puede causar la infraestructura física concluir es adecuado, lo que las cargas de trabajo de inquilinos individuales ejecutan más despacio de lo contrario, puede que dicho consumo de energía moderados.
+Las técnicas de administración de energía de servidor incluyen un costo, especialmente porque las cargas de trabajo de inquilinos no son de confianza para dictar la Directiva sobre la infraestructura física del anfitrión. Se deja el software de nivel de host para deducir cómo maximizar el rendimiento a la vez que se minimiza el consumo de energía. En las máquinas que se encuentran en un estado inactivo, esto puede hacer que la infraestructura física concluya que el dibujo de energía moderado es adecuado, lo que da lugar a cargas de trabajo de inquilinos individuales que se ejecutan más lentamente de lo contrario.
 
-Windows Server utiliza la virtualización en una amplia variedad de escenarios. Desde un servidor IIS con poca carga a un servidor SQL moderadamente ocupado, en un host en la nube con Hyper-V que ejecuta cientos de máquinas virtuales por servidor. Cada uno de estos escenarios puede tener requisitos de hardware, software y rendimiento únicos. De forma predeterminada, usa Windows Server y recomienda la **equilibrado** plan de energía, lo que permite la conservación de energía mediante el escalado de rendimiento del procesador en función del uso de CPU.
+Windows Server usa la virtualización en una amplia variedad de escenarios. Desde un servidor IIS con poca carga hasta un SQL Server de disponibilidad moderada, a un host de nube con Hyper-V que ejecuta cientos de máquinas virtuales por servidor. Cada uno de estos escenarios puede tener requisitos de hardware, software y rendimiento únicos. De forma predeterminada, Windows Server usa y recomienda el plan de energía equilibrado, que permite la conservación de energía mediante el escalado del rendimiento del procesador en función del uso de la CPU.
 
-Con el **equilibrado** plan de energía, los Estados de energía más altos (y latencias de respuesta más bajas en las cargas de trabajo de inquilino) se aplican solo cuando el host físico es relativamente ocupado. Si el valor determinista, baja latencia de respuesta para todas las cargas de trabajo de inquilino, considere la posibilidad de cambiar el valor predeterminado **equilibrado** plan de energía para el **de alto rendimiento** plan de energía. El **de alto rendimiento** plan de energía ejecutará los procesadores a máxima velocidad todo el tiempo, deshabilitando conmutación basada en demanda junto con otras técnicas de administración de energía y optimizar el rendimiento a través de ahorro de energía.
+Con el plan de energía equilibrado, los Estados de energía más altos (y las latencias de respuesta más bajas en cargas de trabajo de inquilino) solo se aplican cuando el host físico está relativamente ocupado. Si tiene valor de respuesta determinista y de baja latencia para todas las cargas de trabajo de inquilinos, considere la posibilidad de cambiar del plan de energía equilibrado predeterminado al plan de energía de **alto rendimiento** . El plan de energía de **alto rendimiento** ejecutará los procesadores a toda velocidad todo el tiempo, deshabilitando eficazmente el cambio basado en demanda junto con otras técnicas de administración de energía y optimizará el rendimiento a través del ahorro de energía.
 
-Para los clientes, que están satisfecho con el ahorro de costos de reducir el número de servidores físicos y desean asegurarse de que obtener el máximo rendimiento para sus cargas de trabajo virtualizadas, debe considerar el uso del **de alto rendimiento** plan de energía.
+En el caso de los clientes, que están satisfechos con el ahorro de costos de reducir el número de servidores físicos y desean garantizar el máximo rendimiento de sus cargas de trabajo virtualizadas, considere la posibilidad de usar el plan de energía de **alto rendimiento** .
 
-Para obtener más recomendaciones e información sobre el aprovechamiento de los planes de energía para optimizar su infraestructura, leer [recomienda equilibrada Power planear parámetros para los tiempos de respuesta rápida](../../hardware/power/recommended-balanced-plan-parameters.md)
+Para obtener recomendaciones adicionales y obtener información sobre cómo aprovechar los planes de energía para optimizar la infraestructura, consulte [los parámetros del plan de energía equilibrado recomendado para tiempos de respuesta rápidos](../../hardware/power/recommended-balanced-plan-parameters.md) .
 
 
 
 ## <a name="server-core-installation-option"></a>Opción de instalación Server Core
 
-La opción de instalación Server Core de características de Windows Server 2016. Server Core ofrece un entorno mínimo para un conjunto seleccionado de roles de servidor, incluido Hyper-V de hospedaje. Ofrece un espacio de disco más pequeño para el sistema operativo host y un ataque más pequeño y mantenimiento de la superficie. Por lo tanto, recomendamos encarecidamente que los servidores de virtualización de Hyper-V usen la opción de instalación Server Core.
+Windows Server 2016 incluyen la opción de instalación Server Core. Server Core ofrece un entorno mínimo para hospedar un conjunto seleccionado de roles de servidor, incluido Hyper-V. Presenta una superficie de disco más pequeña para el sistema operativo del host y un ataque y una superficie de servicio más pequeños. Por lo tanto, se recomienda encarecidamente que los servidores de virtualización de Hyper-V usen la opción de instalación Server Core.
 
-Una instalación Server Core ofrece una ventana de consola sólo cuando el usuario haya iniciado sesión, pero Hyper-V expone las características de administración remota como [Windows Powershell](https://technet.microsoft.com/library/hh848559.aspx) por lo que los administradores pueden administrarlo de forma remota.
+Una instalación Server Core solo ofrece una ventana de consola cuando el usuario ha iniciado sesión, pero Hyper-V expone características de administración remota, incluido [Windows PowerShell](https://technet.microsoft.com/library/hh848559.aspx) para que los administradores puedan administrarla de forma remota.
 
 ## <a name="dedicated-server-role"></a>Rol de servidor dedicado
 
-La partición raíz debe estar dedicada a Hyper-V. Ejecuta otros roles de servidor en un servidor que ejecuta Hyper-V puede afectar negativamente al rendimiento del servidor de virtualización, especialmente si se consumen mucho ancho de banda de CPU, memoria o E/S. Minimizar los roles de servidor en la partición raíz tiene ventajas adicionales como la reducción de la superficie de ataque.
+La partición raíz debe estar dedicada a Hyper-V. La ejecución de roles de servidor adicionales en un servidor que ejecuta Hyper-V puede afectar negativamente al rendimiento del servidor de virtualización, especialmente si consumen una gran cantidad de CPU, memoria o ancho de banda de e/s. Minimizar los roles de servidor en la partición raíz tiene ventajas adicionales, como reducir la superficie expuesta a ataques.
 
-Los administradores del sistema deben considerar detenidamente qué software está instalado en la partición raíz porque algunos programas de software pueden afectar negativamente al rendimiento general del servidor que ejecuta Hyper-V.
+Los administradores del sistema deben considerar detenidamente qué software está instalado en la partición raíz porque algún software puede afectar negativamente al rendimiento general del servidor que ejecuta Hyper-V.
 
 ## <a name="guest-operating-systems"></a>Sistemas operativos invitados
 
-Hyper-V admite y se ha ajustado para un número de sistemas operativos invitados diferentes. El número de procesadores virtuales que se admiten por invitado depende del sistema operativo invitado. Para obtener una lista de los sistemas operativos invitados admitidos, consulte [Introducción a Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
+Hyper-V admite y se ha optimizado para varios sistemas operativos invitados diferentes. El número de procesadores virtuales que se admiten por invitado depende del sistema operativo invitado. Para obtener una lista de los sistemas operativos invitados admitidos, consulte [información general de Hyper-V](https://technet.microsoft.com/library/hh831531.aspx).
 
 ## <a name="cpu-statistics"></a>Estadísticas de CPU
 
-Hyper-V publica contadores de rendimiento para ayudar a caracterizar el comportamiento del servidor de virtualización y el uso de recursos de informes. El conjunto estándar de herramientas para ver los contadores de rendimiento en Windows incluye Monitor de rendimiento y Logman.exe, que se pueden mostrar y registrar los contadores de rendimiento de Hyper-V. Los nombres de los objetos de contador pertinentes tienen el prefijo **Hyper-V**.
+Hyper-V publica los contadores de rendimiento para ayudar a caracterizar el comportamiento del servidor de virtualización e informar del uso de recursos. El conjunto estándar de herramientas para ver contadores de rendimiento en Windows incluye el monitor de rendimiento y Logman. exe, que puede mostrar y registrar los contadores de rendimiento de Hyper-V. Los nombres de los objetos de contador relevantes tienen el prefijo **Hyper-V**.
 
-Siempre debe medir el uso de CPU del sistema físico mediante los contadores de rendimiento de procesador lógico del hipervisor de Hyper-V. El uso de CPU de contadores de ese informe del Administrador de tareas y el Monitor de rendimiento en la raíz y las particiones secundarias no reflejan el uso de CPU físico real. Use los siguientes contadores de rendimiento para supervisar el rendimiento:
+Siempre debe medir el uso de CPU del sistema físico mediante los contadores de rendimiento del procesador lógico de hipervisor de Hyper-V. Los contadores de uso de CPU que el administrador de tareas y el monitor de rendimiento notifican en las particiones raíz y secundarias no reflejan el uso de CPU físico real. Use los siguientes contadores de rendimiento para supervisar el rendimiento:
 
-- **Procesadores lógicos del hipervisor de Hyper-V (\*)\\% de tiempo de ejecución Total** el tiempo no inactivo total de los procesadores lógicos
+- **Procesador lógico de hipervisor de Hyper-\*V\\()% total de tiempo de ejecución** el tiempo de inactividad total de los procesadores lógicos
 
-- **Procesadores lógicos del hipervisor de Hyper-V (\*)\\% tiempo de ejecución de invitado** el tiempo invertido en ciclos de ejecución dentro de un invitado o el host
+- **Procesador lógico de hipervisor de Hyper-\*V\\()% tiempo de ejecución del invitado** tiempo dedicado a ejecutar ciclos dentro de un invitado o en el host
 
-- **Procesadores lógicos del hipervisor de Hyper-V (\*)\\% tiempo de ejecución del hipervisor** el tiempo dedicado a ejecutar en el hipervisor
+- **Procesador lógico de hipervisor de Hyper-\*V\\()% tiempo de ejecución del hipervisor** el tiempo empleado en ejecutarse dentro del hipervisor
 
-- **Procesador Virtual de raíz de hipervisor de Hyper-V (\*)\\\\** * mide el uso de CPU de la partición raíz
+- El **procesador virtual raíz del hipervisor de Hyper\*-\\V ()\\** * mide el uso de CPU de la partición raíz
 
-- **Procesador Virtual del hipervisor de Hyper-V (\*)\\\\** * mide el uso de CPU de las particiones de invitado
+- **Procesador virtual del hipervisor de Hyper-\*V\\()\\** * mide el uso de CPU de las particiones de invitado
 
 
 ## <a name="see-also"></a>Vea también
