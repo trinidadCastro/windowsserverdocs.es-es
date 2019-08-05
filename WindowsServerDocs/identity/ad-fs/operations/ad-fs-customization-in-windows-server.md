@@ -69,9 +69,9 @@ En el caso de los temas personalizados, consulte Personalización de las [págin
 Para asignar un tema personalizado por RP, use el procedimiento siguiente:  
   
 1. Cree un nuevo tema como una copia para el tema global predeterminado en AD FS  
-<code>New-AdfsWebTheme -Name AppSpecificTheme -SourceName default</code>2. Exportar el tema para la personalización<code>Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme</code>  
-3.Personalice los archivos de tema (imágenes, CSS, onload. js): en su editor favorito o reemplace 4. el archivo importar archivos personalizados del sistema de archivos a AD FS (con el objetivo del nuevo tema)<code>Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}</code>  
-5.Aplicar el nuevo tema personalizado al RP específico (o RP)<code>Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme</code>  
+<code>New-AdfsWebTheme -Name AppSpecificTheme -SourceName default</code> 2. Exportar el tema para la personalización <code>Export-AdfsWebTheme -Name AppSpecificTheme -DirectoryPath c:\appspecifictheme</code>  
+3. Personalice los archivos de tema (imágenes, CSS, onload. js): en su editor favorito o reemplace 4. el archivo importar archivos personalizados del sistema de archivos a AD FS (con el objetivo del nuevo tema)<code>Set-AdfsWebTheme -TargetName AppSpecificTheme -AdditionalFileResource @{Uri='/adfs/portal/script/onload.js';Path="c:\appspecifictheme\script\onload.js"}</code>  
+5. Aplicar el nuevo tema personalizado al RP específico (o RP) <code>Set-AdfsRelyingPartyWebTheme -TargetRelyingPartyName urn:app1 -SourceWebThemeName AppSpecificTheme</code>  
   
 ## <a name="home-realm-discovery"></a>Detección del dominio de inicio  
 Para la personalización de la detección del dominio de inicio [, consulte Personalización de las páginas de inicio de sesión AD FS](https://technet.microsoft.com/library/dn280950.aspx).  
