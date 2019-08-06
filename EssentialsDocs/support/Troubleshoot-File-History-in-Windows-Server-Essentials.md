@@ -12,12 +12,12 @@ ms.assetid: ed062945-27e9-4572-b1bb-6c8cf1b9c2f4
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: f080bed5714ae4426cc6d0ca8edb5fab2d3c65b2
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 99467cb5be7a71ce8b080223e8a89db4d9b6eabd
+ms.sourcegitcommit: d83933c6a2e180b747c2db910392117569348901
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66432474"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807889"
 ---
 # <a name="troubleshoot-file-history-in-windows-server-essentials"></a>Solucionar problemas del historial de archivos en Windows Server Essentials
 
@@ -29,13 +29,13 @@ ms.locfileid: "66432474"
 ### <a name="file-history-data-is-not-automatically-deleted"></a>Los datos del historial de archivos no se eliminan automáticamente  
  Los datos del historial de archivos podrían no eliminarse automáticamente si:  
   
-- Al eliminar una cuenta de usuario, decide no eliminar la cuenta de usuario s de datos de historial de archivos y optar por eliminar los datos manualmente.  
+- Al eliminar una cuenta de usuario, decide no eliminar los datos del historial de archivos de la cuenta de usuario y opta por eliminar los datos manualmente.  
   
 - Al intentar eliminar los datos del historial de archivos, otro proceso está usando los datos del historial de archivos.  
   
   Para resolver este problema, debe eliminar manualmente el historial de archivos siguiendo el procedimiento que se indica a continuación:  
   
-####  <a name="BKMK_manuallyDelete"></a> Para eliminar manualmente las copias de seguridad del historial de archivos para un usuario o un equipo  
+####  <a name="BKMK_manuallyDelete"></a>Para eliminar manualmente las copias de seguridad del historial de archivos de un usuario o un equipo  
   
 1.  Inicie sesión en el servidor como administrador.  
   
@@ -45,9 +45,9 @@ ms.locfileid: "66432474"
   
 4.  Elimine la carpeta compartida que almacena la copia de seguridad del historial de archivos:  
   
-    -   Para eliminar el historial de archivos para un usuario, elimine la carpeta de copia de seguridad secundario de historial de archivos que tiene el nombre de usuario s.  
+    -   Para eliminar el historial de archivos de un usuario, elimine la carpeta secundaria de copia de seguridad del historial de archivos que tiene el nombre del usuario.  
   
-    -   Para eliminar el historial de archivos de un equipo, elimine la carpeta secundaria de copia de seguridad del historial de archivos que tiene el nombre del equipo. Por ejemplo, si un usuario retiró < MyComputer01\> después de que empezó a trabajar en su equipo portátil nuevo, < MyComputer02\>, debe eliminar C:\ServerFolders\File History Backups\\< MyAccount\> \\ < MyComputer01\> después de comprobar con el usuario que se le ha transferido todos los archivos y carpetas de su equipo portátil nuevo y no tiene necesidad de para el historial de archivos en el futuro.  
+    -   Para eliminar el historial de archivos de un equipo, elimine la carpeta secundaria de copia de seguridad del historial de archivos que tiene el nombre del equipo. Por ejemplo, si un usuario retiró <\> MyComputer01 después de empezar a trabajar en su nuevo portátil,\>< MyComputer02,\\eliminaría las copias de seguridad del historial\> de C:\ServerFolders\File < mi cuenta\\ < MyComputer01\> después de comprobarlo con el usuario que ha transferido todos los archivos y carpetas a su nuevo portátil y no necesita el historial de archivos en el futuro.  
   
 ### <a name="cannot-apply-file-history-setting-to-a-new-user"></a>No se puede aplicar la configuración del historial de archivos a un nuevo usuario  
  Si agrega un usuario nuevo con un nombre idéntico al nombre de un usuario que se eliminó de Windows Server Essentials, puede producirse un error en la configuración del historial de archivos del usuario nuevo, debido a un conflicto de nomenclatura cuando Windows Server Essentials intenta crear una carpeta para almacenar el historial de archivos del usuario nuevo. Para resolver este problema, puede cambiar el nombre de la carpeta del historial de archivos del usuario eliminado.  
@@ -58,7 +58,7 @@ ms.locfileid: "66432474"
   
 2.  En el panel de Windows Server Essentials, haga clic en **Almacenamiento**.  
   
-3.  En la pestaña **Carpetas del servidor**, anote la ubicación de la carpeta de copias de seguridad del historial de archivos. La ubicación predeterminada es %SystemDrive%\ServerFolders\File History Backups\\.  
+3.  En la pestaña **Carpetas del servidor**, anote la ubicación de la carpeta de copias de seguridad del historial de archivos. La ubicación predeterminada es%SystemDrive%\ServerFolders\File History backups\\.  
   
 ##### <a name="to-resolve-file-history-issues-for-a-new-user-with-a-name-conflict"></a>Para resolver problemas del historial de archivos de un usuario nuevo con un conflicto de nomenclatura  
   
@@ -70,15 +70,15 @@ ms.locfileid: "66432474"
   
      La carpeta de copias de seguridad del historial de archivos tiene una subcarpeta para cada cuenta de usuario que se agregó a Windows Server Essentials. Por ejemplo, el historial de archivos del usuario John Smith se almacenaría en la subcarpeta File History Backups\JohnSmith.  
   
-4.  Cambiar el nombre de la subcarpeta para el usuario que se eliminó, por ejemplo,  **< *UserName*> _Deleted**. Si ya no necesita historial de archivos del usuario, puede eliminar la carpeta.  
+4.  Cambie el nombre de la subcarpeta del usuario que eliminó, por ejemplo,  **<** nombre de usuario > _Deleted. Si ya no necesita historial de archivos del usuario, puede eliminar la carpeta.  
   
 
-5.  Ahora puede agregar el usuario nuevo. ¿Para obtener instrucciones, consulte Agregar una cuenta de usuario? en [administrar cuentas de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
+5.  Ahora puede agregar el usuario nuevo. Para obtener instrucciones, consulte Agregar una cuenta de usuario. en [administrar cuentas de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>Se quitó una cuenta de usuario, pero sigue estando de historial de archivos del usuario  
  En algunos casos, el administrador de red puede decidir quitar un usuario o un equipo del servidor, pero conservar la copia de seguridad del historial de archivos para usarlo en el futuro. Cuando ya no necesite el historial de archivos, quite de las carpetas compartidas del servidor la carpeta de copias de seguridad del historial de archivos del usuario o del equipo. Para ello, consulte [To manually delete File History backups for a user or a computer](Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  
 
-5. Ahora puede agregar el usuario nuevo. ¿Para obtener instrucciones, consulte Agregar una cuenta de usuario? en [administrar cuentas de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
+5. Ahora puede agregar el usuario nuevo. Para obtener instrucciones, consulte Agregar una cuenta de usuario. en [administrar cuentas de usuario](../manage/Manage-User-Accounts-in-Windows-Server-Essentials.md).  
   
 ### <a name="a-user-account-was-removed-but-the-users-file-history-remains"></a>Se quitó una cuenta de usuario, pero sigue estando de historial de archivos del usuario  
  En algunos casos, el administrador de red puede decidir quitar un usuario o un equipo del servidor, pero conservar la copia de seguridad del historial de archivos para usarlo en el futuro. Cuando ya no necesite el historial de archivos, quite de las carpetas compartidas del servidor la carpeta de copias de seguridad del historial de archivos del usuario o del equipo. Para ello, consulte [To manually delete File History backups for a user or a computer](../support/Troubleshoot-File-History-in-Windows-Server-Essentials.md#BKMK_manuallyDelete).  
@@ -86,7 +86,7 @@ ms.locfileid: "66432474"
   
 ## <a name="see-also"></a>Vea también  
   
--   [Administrar copias de seguridad de cliente](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)  
+-   [Administrar copia de seguridad de cliente](../manage/Manage-Client-Computer-Backup-in-Windows-Server-Essentials.md)  
   
 
 -   [Soporte técnico de Windows Server Essentials](Support-Windows-Server-Essentials.md)
