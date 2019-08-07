@@ -7,101 +7,108 @@ ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: eldenchristensen
-ms.date: 06/13/2019
+ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 7fa4560e0c050c8decbcb4e9456a884976e447e2
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: d899ec41b9a87089f03a576fa11dfa7d210fe194
+ms.sourcegitcommit: b68ff64ecd87959cd2acde4a47506a01035b542a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284420"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68830894"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
-En este tema se describe los requisitos mínimos de hardware para espacios de almacenamiento directo.
+En este tema se describen los requisitos mínimos de hardware para Espacios de almacenamiento directo.
 
-Para producción, Microsoft recomienda adquirir una solución validada de hardware y software de nuestros asociados, que se incluyen los procedimientos y herramientas de implementación. Estas soluciones son diseñadas, ensamblar y validadas con respecto a nuestra arquitectura de referencia para garantizar la compatibilidad y confiabilidad, por lo que ponerse en marcha rápidamente. Para las soluciones de Windows Server 2019, visite la [sitio Web de soluciones de Azure Stack HCI](https://azure.microsoft.com/overview/azure-stack/hci). Para las soluciones de Windows Server 2016, obtenga más información en [definido por el Software de Windows Server](https://microsoft.com/wssd).
+En el caso de producción, Microsoft recomienda adquirir una solución de hardware/software validada de nuestros asociados, que incluyen herramientas y procedimientos de implementación. Estas soluciones se diseñan, ensamblan y validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda ponerse en marcha rápidamente. Para obtener soluciones de Windows Server 2019, visite el [sitio web de soluciones de hcl Azure Stack](https://azure.microsoft.com/overview/azure-stack/hci). En el caso de las soluciones de Windows Server 2016, obtenga más información en [Windows Server Software-Defined](https://microsoft.com/wssd).
 
    > [!TIP]
-   > Desea evaluar espacios de almacenamiento directo, pero no tienen hardware? Usar máquinas virtuales de Hyper-V o Azure, como se describe en [usando espacios de almacenamiento directo en clústeres invitados de máquina virtual](storage-spaces-direct-in-vm.md).
+   > ¿Desea evaluar Espacios de almacenamiento directo pero no tiene hardware? Use Hyper-V o máquinas virtuales de Azure como se describe en [uso de espacios de almacenamiento directo en clústeres de máquinas virtuales invitadas](storage-spaces-direct-in-vm.md).
 
 ## <a name="base-requirements"></a>Requisitos básicos
 
-Los sistemas, componentes, dispositivos y controladores deben ser **certificado para Windows Server 2016** por la [Windows Server Catalog](https://www.windowsservercatalog.com). Además, se recomienda que los adaptadores de red, unidades, adaptadores de bus host y servidores tengan la **estándar del centro de datos definidas mediante software (SDDC)** o **Premium de centro de datos definidas mediante software (SDDC)** calificaciones adicionales (AQs), como se muestra a continuación. Hay más de 1.000 componentes con el AQs SDDC.
+Los sistemas, los componentes, los dispositivos y los controladores deben tener **Windows server 2016 certificado** por el [Catálogo de Windows Server](https://www.windowsservercatalog.com). Además, se recomienda que los servidores, las unidades, los adaptadores de bus host y los adaptadores de red tengan el **estándar del centro de datos definido por software (SDDC)** o el **centro de datos definido por software (SDDC) Premium** calificaciones adicionales (AQS), como se indica menor. Hay más de 1.000 componentes con la AQs de SDDC.
 
-![captura de pantalla del catálogo de Windows Server que se muestra el AQs SDDC](media/hardware-requirements/sddc-aqs.png)
+![captura de pantalla del catálogo de Windows Server que muestra la AQs de SDDC](media/hardware-requirements/sddc-aqs.png)
 
-El clúster configurado completamente (servidores, redes y almacenamiento) debe superar todas [las pruebas de validación de clúster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por el Asistente en el Administrador de clústeres de conmutación por error o con el `Test-Cluster` [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) en PowerShell.
+El clúster totalmente configurado (servidores, redes y almacenamiento) debe pasar todas las [pruebas de validación del clúster](https://technet.microsoft.com/library/cc732035(v=ws.10).aspx) por el asistente en Administrador de clústeres de conmutación por error o `Test-Cluster` con el [cmdlet](https://docs.microsoft.com/powershell/module/failoverclusters/test-cluster?view=win10-ps) de PowerShell.
 
 Además, se aplican los siguientes requisitos:
 
 ## <a name="servers"></a>Servidores
 
 - Mínimo de 2 servidores y máximo de 16 servidores
-- Recomienda que todos los servidores del mismo fabricante y modelo
+- Se recomienda que todos los servidores sean del mismo fabricante y modelo
 
 ## <a name="cpu"></a>CPU
 
-- Intel Nehalem o procesador compatible más adelante; o
-- AMD EPYC o procesador compatible más tarde
+- Procesador compatible con Intel Nehalem o posterior; de
+- Procesador compatible con AMD EPYC o posterior
 
 ## <a name="memory"></a>Memoria
 
-- Memoria de Windows Server, las máquinas virtuales y otras aplicaciones o cargas de trabajo; signo más
-- 4 GB de RAM por cada terabyte (TB) de la capacidad de unidad de caché en cada servidor, para los metadatos de espacios de almacenamiento directo
+- Memoria para Windows Server, máquinas virtuales y otras aplicaciones o cargas de trabajo; signos
+- 4 GB de RAM por terabyte (TB) de capacidad de la unidad de caché en cada servidor, para metadatos de Espacios de almacenamiento directo
 
 ## <a name="boot"></a>Arranque
 
 - Cualquier dispositivo de arranque compatible con Windows Server, que [ahora incluye SATADOM](https://cloudblogs.microsoft.com/windowsserver/2017/08/30/announcing-support-for-satadom-boot-drives-in-windows-server-2016/)
-- RAID 1 es reflejado **no** necesarios, pero se admite para el arranque
-- Recomendado: Tamaño mínimo de 200 GB
+- El reflejo RAID 1 **no** es necesario, pero se admite para el arranque
+- Se recomienda: tamaño mínimo de 200 GB
 
-## <a name="networking"></a>Funciones de red
+## <a name="networking"></a>Redes
 
-Valor mínimo (para el nodo de pequeña escala de 2-3)
-- Interfaz de red de 10 Gbps
-- Conexión directa (cluster sin Switch) es compatible con 2 nodos
+Espacios de almacenamiento directo requiere una conexión de red de baja latencia y ancho de banda alto confiable entre cada nodo.  
 
-Se recomienda (para alto rendimiento, en la escala o las implementaciones de nodos 4 +)
-- NIC que son remotos acceso directo a memoria (RDMA) capaz, iWARP (recomendado) o RoCE
-- Dos o varias NIC para obtener redundancia y rendimiento
-- Interfaz de red de 25 GB/s o posterior
+Interconexión mínima para el nodo 2-3 de pequeña escala
+- tarjeta de interfaz de red (NIC) de 10 Gbps o más rápido
+- Se recomiendan dos o más conexiones de red de cada nodo para redundancia y rendimiento
+
+Interconexión recomendada para un alto rendimiento, a escala o a implementaciones de 4 + 
+- NIC que son compatibles con el acceso directo a memoria remota (RDMA), iWARP (recomendado) o RoCE
+- Se recomiendan dos o más conexiones de red de cada nodo para redundancia y rendimiento
+- NIC de 25 Gbps o más rápido
+
+Interconexiones de nodo conmutado o sin conmutador
+- Activado Los conmutadores de red deben estar configurados correctamente para administrar el ancho de banda y el tipo de red.  Si usa RDMA que implementa el protocolo RoCE, la configuración del dispositivo y del conmutador de red es aún más importante. 
+- No modificado: Los nodos se pueden interconectar mediante conexiones directas, evitando el uso de un modificador.  Es necesario que todos los nodos tengan una conexión directa con todos los demás nodos del clúster.
+
 
 ## <a name="drives"></a>Unidades
 
-Espacios de almacenamiento directo funciona con conexión directa SATA, SAS o NVMe unidades que se conectan físicamente a un solo servidor. Para obtener más ayuda para elegir las unidades, consulte el tema [Elegir las unidades](choosing-drives.md).
+Espacios de almacenamiento directo funciona con unidades SATA, SAS o NVMe conectadas directamente que están conectadas físicamente a un solo servidor. Para obtener más ayuda para elegir las unidades, consulte el tema [Elegir las unidades](choosing-drives.md).
 
-- Las unidades SATA, SAS y NVMe (M.2, U.2 y agregar tarjeta) son compatibles todos
-- se admiten 512n, 512e y las unidades nativas de 4K
-- Deben proporcionar las unidades de estado sólidas [protección de pérdida de energía](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
-- Consulte el mismo número y tipos de unidades en cada servidor: [unidad consideraciones de simetría](drive-symmetry-considerations.md)
-- Dispositivos de memoria caché deben ser 32 GB o superior
-- Al usar dispositivos de memoria persistente como dispositivos de memoria caché, debe usar dispositivos de capacidad de NVMe o SSD (no se puede usar unidades de disco duro)
-- Controlador de NVMe es en el cuadro de Microsoft o NVMe controlador actualizado.
-- Recomendado: Número de unidades de capacidad es un múltiplo entero del número de unidades de caché
-- Recomendado: Unidades de caché deben tener la escritura alta resistencia: al menos 3 unidad escrituras por día (DWPD) o al menos 4 terabytes escritos (TBW) por día: consulte [unidad descripción se escribe al día (DWPD), terabytes escrito (TBW) y el mínimo recomiendan para el almacenamiento Espacios directo](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
+- Se admiten todas las unidades SATA, SAS y NVMe (M. 2, U. 2 y de agregación).
+- se admiten todas las unidades nativas de 512n, 512e y 4K
+- Las unidades de estado sólido deben proporcionar [protección contra la pérdida de energía](https://blogs.technet.microsoft.com/filecab/2016/11/18/dont-do-it-consumer-ssd/)
+- El mismo número y tipos de unidades en cada servidor: consulte [consideraciones sobre la simetría de unidades](drive-symmetry-considerations.md)
+- Los dispositivos de caché deben tener 32 GB o más.
+- Al usar dispositivos de memoria persistentes como dispositivos de caché, debe usar dispositivos de capacidad de NVMe o SSD (no puede usar HDD).
+- El controlador de NVMe es el controlador de Microsoft en caja o actualizado.
+- Se recomienda: El número de unidades de capacidad es un múltiplo entero del número de unidades de caché
+- Se recomienda: Las unidades de caché deben tener una gran resistencia de escritura: al menos 3 unidades-escrituras por día (DWPD) o al menos 4 terabytes escritas (TBW) al día; vea Descripción de las [escrituras de unidad al día (DWPD), terabytes escritos (TBW) y el mínimo recomendado para espacios de almacenamiento directo ](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 
-Le mostramos cómo se pueden conectar unidades de espacios de almacenamiento directo:
+A continuación se muestra cómo se pueden conectar las unidades de Espacios de almacenamiento directo:
 
-- Unidades SATA de conexión directa
-- Unidades de NVMe de conexión directa
-- Adaptador de bus host (HBA) de SAS con unidades SAS
-- Adaptador de bus host (HBA) de SAS con unidades SATA
-- **NO SE ADMITE:** RAID de SAN (canal de fibra, iSCSI, FCoE) o tarjetas controladoras de almacenamiento. Las tarjetas de bus host (HBA) del adaptador deben implementar el modo de acceso directo sencillo.
+- Unidades SATA conectadas directamente
+- Unidades de NVMe conectadas directamente
+- Adaptador de bus host (HBA) SAS con unidades SAS
+- Adaptador de bus host (HBA) SAS con unidades SATA
+- **NO COMPATIBLE:** Tarjetas de controlador RAID o almacenamiento SAN (Canal de fibra, iSCSI, FCoE). Las tarjetas del adaptador de bus host (HBA) deben implementar el modo de paso a través simple.
 
-![diagrama de unidad compatible interconexiones](media/hardware-requirements/drive-interconnect-support-1.png)
+![diagrama de interconexiones de unidad compatibles](media/hardware-requirements/drive-interconnect-support-1.png)
 
-Unidades pueden ser internas del servidor o en un revestimiento externo está conectado a un solo servidor. Es necesario para la identificación y asignación de espacio de SCSI Enclosure Services (SES). Cada contenedor externo debe presentar un identificador único (Id. único).
+Las unidades pueden ser internas en el servidor o en un contenedor externo que esté conectado a un solo servidor. Se requiere SCSI Enclosure Services (SES) para la asignación e identificación de ranuras. Cada contenedor externo debe presentar un identificador único (ID. único).
 
-- Unidades internas al servidor
-- Las unidades en un revestimiento externo ("JBOD") conectado a un servidor
-- **NO SE ADMITE:** Contenedores SAS compartidos conectan a varios servidores o cualquier forma de múltiples rutas de acceso E/S (MPIO), donde las unidades son accesibles por varias rutas de acceso.
+- Unidades internas del servidor
+- Unidades en un contenedor externo ("JBOD") conectadas a un servidor
+- **NO COMPATIBLE:** Alojamientos compartidos de SAS conectados a varios servidores o a cualquier forma de e/s de múltiples rutas (MPIO) en las que se puede tener acceso a las unidades mediante múltiples rutas.
 
-![diagrama de unidad compatible interconexiones](media/hardware-requirements/drive-interconnect-support-2.png)
+![diagrama de interconexiones de unidad compatibles](media/hardware-requirements/drive-interconnect-support-2.png)
 
-### <a name="minimum-number-of-drives-excludes-boot-drive"></a>Número mínimo de unidades de disco (excluye la unidad de arranque)
+### <a name="minimum-number-of-drives-excludes-boot-drive"></a>Número mínimo de unidades (excluye la unidad de arranque)
 
 - Si hay unidades que se usan como memoria caché, debe haber al menos 2 por servidor.
 - Debe haber al menos 4 unidades de capacidad (no de caché) por servidor.
@@ -111,18 +118,18 @@ Unidades pueden ser internas del servidor o en un revestimiento externo está co
 | Toda la memoria persistente (mismo modelo) | 4 memoria persistente |
 | Todas las NVMe (mismo modelo) | 4 NVMe                  |
 | Todas las SSD (mismo modelo)  | 4 SSD                   |
-| Memoria persistente + NVMe o SSD | memoria persistente 2 + 4 NVMe o SSD |
+| Memoria persistente + NVMe o SSD | 2 memoria persistente + 4 NVMe o SSD |
 | NVMe + SSD            | 2 NVMe + 4 SSD          |
 | NVMe + HDD            | 2 NVMe + 4 HDD          |
 | SSD + HDD             | 2 SSD + 4 HDD           |
 | NVMe + SSD + HDD      | 2 NVMe + otras 4       |
 
    >[!NOTE]
-   > Esta tabla proporciona el mínimo para las implementaciones de hardware. Si tiene que implementar con máquinas virtuales y virtualizados almacenamiento, como se muestra en Microsoft Azure, vea [usando espacios de almacenamiento directo en clústeres invitados de máquina virtual](storage-spaces-direct-in-vm.md).
+   > En esta tabla se proporciona el mínimo para las implementaciones de hardware. Si va a realizar la implementación con máquinas virtuales y almacenamiento virtualizado, como en Microsoft Azure, consulte [uso de espacios de almacenamiento directo en clústeres de máquinas virtuales invitadas](storage-spaces-direct-in-vm.md).
 
 ### <a name="maximum-capacity"></a>Capacidad máxima
 
 | Valores máximos                | Windows Server 2019  | Windows Server 2016  |
 | ---                     | ---------            | ---------            |
 | Capacidad sin procesar por servidor | 100 TB               | 100 TB               |
-| Capacidad del grupo           | 4 PB (4.000 TB)      | 1 PB                 |
+| Capacidad de grupo           | 4 PB (4.000 TB)      | 1 PB                 |

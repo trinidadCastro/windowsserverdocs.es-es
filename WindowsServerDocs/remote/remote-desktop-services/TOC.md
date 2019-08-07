@@ -68,7 +68,7 @@
 ## [Clientes de Escritorio remoto](clients/remote-desktop-clients.md)
 ### Problemas conocidos de Escritorio remoto
 #### [Solución de problemas generales de conexión con Escritorio remoto](troubleshoot/rdp-error-general-troubleshooting.md)
-#### [Los clientes no se pueden conectar y reciben el mensaje "Clase no registrada"](troubleshoot/rdp-error-class-not-registered.md).
+#### [Los clientes no se pueden conectar y reciben el mensaje "Clase no registrada"](troubleshoot/rdp-error-class-not-registered.md)
 #### [Los clientes no se pueden conectar y reciben el error "No hay licencias disponibles"](troubleshoot/rdp-error-no-licenses-available.md)
 #### [Los usuarios no se pueden autenticar o deben autenticarse dos veces](troubleshoot/cannot-authenticate-or-must-authenticate-twice.md)
 #### [Al conectarse, se produce el error "Remote Desktop Service is currently busy"](troubleshoot/remote-desktop-service-currently-busy.md) (El servicio Escritorio remoto está ocupado actualmente)
