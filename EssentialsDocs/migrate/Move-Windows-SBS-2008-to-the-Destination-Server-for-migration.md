@@ -12,12 +12,12 @@ ms.assetid: 4950469d-d800-430d-8d10-53bafc4a9932
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 2e393f184f1abfa79647432bd592975cae3fdc6c
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: 82a7a5b3ce3662574260379bc893da484baf1caa
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828539"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863409"
 ---
 # <a name="move-windows-sbs-2008-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos de Windows SBS 2008 al servidor de destino para la migración a Windows Server Essentials
 
@@ -27,15 +27,15 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
 
 1. [Copiar datos en el servidor de destino](#copy-data-to-the-destination-server)
 
-2. [Importar cuentas de usuario de Active Directory al panel de Windows Server Essentials (opcional)](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [Importar Active Directory cuentas de usuario en el panel de Windows Server Essentials (opcional)](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
-3. [Mover el rol servidor DHCP del servidor de origen al enrutador](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
+3. [Trasladar el rol de servidor DHCP del servidor de origen al enrutador](#move-the-dhcp-server-role-from-the-source-server-to-the-router)
 
 4. [Configurar la red](#configure-the-network)
 
 5. [Quitar objetos de directiva de grupo de Active Directory heredados (opcional)](#remove-legacy-active-directory-group-policy-objects)
 
-6. [Asignar los equipos permitidos a cuentas de usuario](#map-permitted-computers-to-user-accounts)
+6. [Asignar equipos permitidos a cuentas de usuario](#map-permitted-computers-to-user-accounts)
 
 ## <a name="copy-data-to-the-destination-server"></a>Copiar los datos en el servidor de destino
 Antes de copiar los datos del servidor de origen en el servidor de destino, realice las siguientes tareas:
@@ -55,17 +55,17 @@ Antes de copiar los datos del servidor de origen en el servidor de destino, real
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt` 
 
  Donde:
- - \<Nombreservidororigen\> es el nombre del servidor de origen
- - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen
- - \<NombreDeServidorDeDestino\> es el nombre del servidor de destino,
- - \<Nombredecarpetadedestinocompartida\> es la carpeta compartida del servidor de destino al que se copiarán los datos. 
+ - \<Nombreservidororigen\> es el nombre del servidor de origen.
+ - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen.
+ - \<Nombreservidordestino\> es el nombre del servidor de destino.
+ - \<Nombredecarpetadedestinocompartida\> es la carpeta compartida en el servidor de destino en la que se copiarán los datos. 
 
 3. Repita el paso anterior para cada carpeta compartida que vaya a migrar desde el servidor de origen. 
 
-## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Importar cuentas de usuario de Active Directory en el panel de Windows Server Essentials
+## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Importar Active Directory cuentas de usuario en el panel de Windows Server Essentials
  De forma predeterminada, todas las cuentas de usuario creadas en el servidor de origen se migran automáticamente al panel en Windows Server Essentials. Sin embargo, si algunas de las propiedades no cumplen los requisitos de migración, se producirá un error en la migración automática de una cuenta de usuario de Active Directory. Puede usar el siguiente cmdlet de Windows PowerShell para importar usuarios de Active Directory. 
 
-#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar una cuenta de usuario de Active Directory en el panel de Windows Server Essentials 
+#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar una cuenta de usuario Active Directory en el panel de Windows Server Essentials 
  
 1. Inicie sesión en el servidor de destino como administrador del dominio. 
  
@@ -119,8 +119,8 @@ Antes de copiar los datos del servidor de origen en el servidor de destino, real
 > [!NOTE]
 > Si ha configurado un servidor local de Exchange en un segundo servidor debe asegurarse de que el puerto 25 (para SMTP) también está abierto y de que se redirige a la dirección IP del servidor local de Exchange.
  
-## <a name="remove-legacy-active-directory-group-policy-objects"></a>Quitar los objetos de directiva de grupo de Active Directory heredados
-Se actualizan los objetos de directiva de grupo (GPO) para Windows Server Essentials. Son un superconjunto de los GPO de Windows SBS 2008. Para Windows Server Essentials, se debe eliminar manualmente una serie de los filtros de GPO de Windows SBS 2008 y Windows Management Instrumentation (WMI) para evitar conflictos con los filtros de GPO de Windows Server Essentials y WMI. 
+## <a name="remove-legacy-active-directory-group-policy-objects"></a>Quitar objetos de directiva de grupo de Active Directory heredados
+Los objetos de directiva de grupo (GPO) se actualizan para Windows Server Essentials. Son un superconjunto de los GPO de Windows SBS 2008. En Windows Server Essentials, se deben eliminar de forma manual una serie de los GPO de Windows SBS 2008 y los filtros de Instrumental de administración de Windows (WMI) para evitar conflictos con los GPO y los filtros WMI de Windows Server Essentials. 
  
 > [!NOTE]
 > Si ha modificado los objetos de directiva de grupo originales de Windows SBS 2008 debe guardar copias en una ubicación diferente y eliminarlos de Windows SBS 2008. 
@@ -131,9 +131,9 @@ Se actualizan los objetos de directiva de grupo (GPO) para Windows Server Essent
  
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**. 
  
-3. En el panel de navegación, haga clic en **administración avanzada de**, haga clic en **Group Policy Management**y, a continuación, haga clic en **bosque:** *<Nombredesudominio\>* . 
+3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _< sudominio\>_ . 
  
-4. Haga clic en **dominios**, haga clic en *< Nombredesudominio\>* y, a continuación, haga clic en **Group Policy Objects**. 
+4. Haga clic en **dominios**, haga clic en *<\>sudominio*y, a continuación, haga clic en **Directiva de grupo objetos**. 
  
 5. Haga clic con el botón secundario en **Directiva de auditoría de Small Business Server**, en **Eliminar** y, a continuación, en **Aceptar**. 
  
@@ -143,7 +143,7 @@ Se actualizan los objetos de directiva de grupo (GPO) para Windows Server Essent
  
  - Directiva de contraseña de dominio de Small Business Server 
  
-Se recomienda que configurar la directiva de contraseñas en Windows Server Essentials para aplicar unas contraseñas seguras. Para configurar la directiva de contraseñas use el panel, que escribe la configuración en la directiva de dominio predeterminada. La configuración de la directiva de contraseña no se escribe en el objeto de directiva de contraseña de dominio de Small Business Server, como ocurría en Windows SBS 2008. 
+Se recomienda configurar la Directiva de contraseñas en Windows Server Essentials para aplicar contraseñas seguras. Para configurar la directiva de contraseñas use el panel, que escribe la configuración en la directiva de dominio predeterminada. La configuración de la directiva de contraseña no se escribe en el objeto de directiva de contraseña de dominio de Small Business Server, como ocurría en Windows SBS 2008. 
  
  - Firewall de conexión a Internet de Small Business Server 
  
@@ -173,9 +173,9 @@ Se recomienda que configurar la directiva de contraseñas en Windows Server Esse
  
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**. 
  
-3. En el panel de navegación, haga clic en **administración avanzada de**, haga clic en **Group Policy Management**y, a continuación, haga clic en **bosque:** *<Nombredominiored\>* 
+3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _< nombredominiored\>_ 
  
-4. Haga clic en **dominios**, haga clic en *< Nombredominiored\>* y, a continuación, haga clic en **filtros WMI**. 
+4. Haga clic en **dominios**, haga clic en *<\>nombredominiored*y, a continuación, en **filtros WMI**. 
  
 5. Haga clic con el botón secundario en **PostSP2**, haga clic en **Eliminar**y, a continuación, haga clic en **Sí**. 
  
@@ -184,7 +184,7 @@ Se recomienda que configurar la directiva de contraseñas en Windows Server Esse
 7. Compruebe que se hayan eliminado los tres filtros WMI. 
  
 ## <a name="map-permitted-computers-to-user-accounts"></a>Asignar los equipos permitidos a cuentas de usuario
-En Windows SBS 2008, si un usuario se conecta a Acceso Web remoto, se muestran todos los equipos de la red. Puede incluir los equipos a los que el usuario no puede acceder. En Windows Server Essentials, un usuario debe haber asignado explícitamente a un equipo para que se muestre en acceso Web remoto. Todas las cuentas de usuario que se migren desde Windows SBS 2008 deben asignarse a uno o más equipos. 
+En Windows SBS 2008, si un usuario se conecta a Acceso Web remoto, se muestran todos los equipos de la red. Puede incluir los equipos a los que el usuario no puede acceder. En Windows Server Essentials, un usuario debe estar asignado explícitamente a un equipo para que se muestre en acceso Web remoto. Todas las cuentas de usuario que se migren desde Windows SBS 2008 deben asignarse a uno o más equipos. 
  
 #### <a name="to-map-user-accounts-to-computers"></a>Para asignar las cuentas de usuario a equipos: 
  
