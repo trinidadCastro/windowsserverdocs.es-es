@@ -12,72 +12,72 @@ ms.assetid: 47ea21a0-5e05-4b4b-8fa4-338c82601276
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: b78d6abbaf287fc56336ff8d16127ce249b97519
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f6a5d6fd42c5cd7e92821e1157748054c741ef04
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66435916"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68914681"
 ---
 # <a name="use-remote-web-access-in-windows-server-essentials"></a>Administrar Acceso web remoto en Windows Server Essentials
 
 >Se aplica a: Windows Server 2016 Essentials, Windows Server 2012 R2 Essentials, Windows Server 2012 Essentials
   
-  Acceso Web remoto es una característica de los fundamentos de los servidores de Windows que puede obtener acceso a archivos o carpetas y los equipos de la red a través de un explorador web desde cualquier lugar con conexión a Internet. 
+  Acceso Web remoto es una característica de Windows Server Essentials que permite tener acceso a archivos, carpetas y equipos de la red a través de un explorador Web desde cualquier lugar con conectividad a Internet. 
   
-  El Acceso web remoto le permite estar conectado a la red de Windows Server Essentials cuando lo utilice. Cuando inicie sesión acceso Web remoto, puede conectarse a los equipos de la red de Windows Server Essentials, abrir el panel para administrar la red de Windows Server Essentials y acceder a todos los archivos multimedia y carpetas compartidos en el servidor.  
+  El Acceso web remoto le permite estar conectado a la red de Windows Server Essentials cuando lo utilice. Al iniciar sesión en acceso Web remoto, puede conectarse a los equipos de la red de Windows Server Essentials, abrir el panel para administrar la red de Windows Server Essentials y acceder a todas las carpetas compartidas y archivos multimedia del servidor.  
   
  Este tema incluye las siguientes secciones:  
   
 
--   [Conectarse a acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
+-   [Conectarse al acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
 -   [Compartir archivos y carpetas](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
 -   [Conectarse desde un dispositivo móvil](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
   
-##  <a name="BKMK_Connect"></a> Conectarse a acceso Web remoto  
+##  <a name="BKMK_Connect"></a>Conectarse al acceso Web remoto  
   
--   [Inicie sesión en acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [Iniciar sesión en acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Acceso remoto a su equipo](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
+-   [Acceder de forma remota al equipo](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
 
--   [Conectarse a acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
+-   [Conectarse al acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_Connect)  
   
 -   [Compartir archivos y carpetas](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_SharedFolders)  
   
 -   [Conectarse desde un dispositivo móvil](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_ConnectMobile)  
   
-##  <a name="BKMK_Connect"></a> Conectarse a acceso Web remoto  
+##  <a name="BKMK_Connect"></a>Conectarse al acceso Web remoto  
   
--   [Inicie sesión en acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
+-   [Iniciar sesión en acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Acceso remoto a su equipo](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
+-   [Acceder de forma remota al equipo](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_1.5)  
 
   
-###  <a name="BKMK_1"></a> Inicie sesión en acceso Web remoto  
- Cuando inicie sesión acceso Web remoto desde un equipo local o remoto, puede tener acceso a recursos en el servidor que ejecuta Windows Server Essentials y equipos de la red.  
+###  <a name="BKMK_1"></a>Iniciar sesión en acceso Web remoto  
+ Al iniciar sesión en el acceso Web remoto desde un equipo local o remoto, puede tener acceso a los recursos del servidor que ejecuta Windows Server Essentials y los equipos de la red.  
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-network-computer"></a>Para iniciar sesión en el Acceso web remoto desde un equipo de red  
   
-1.  Abra un explorador Web, escriba **https://***< nombreDeSuServidor\>***/remoto** en la barra de direcciones y, a continuación, presione ENTRAR.  
+1.  Abra un explorador Web, escriba **https://** _< nombreservidor\>_ **/Remote** en la barra de direcciones y, a continuación, presione Entrar.  
   
     > [!NOTE]
-    >  Asegúrese de que incluir la s de https.  
+    >  Asegúrese de incluir s en https.  
   
-2.  En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha.  
+2.  En la página inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha.  
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-remote-computer"></a>Para iniciar sesión en el Acceso web remoto desde un equipo remoto  
   
-1.  Abra un explorador Web, escriba **https://***< Nombredesudominio\>***/remoto** en la barra de direcciones y, a continuación, presione ENTRAR.  
+1.  Abra un explorador Web, escriba **https://** _< sudominio\>_ **/Remote** en la barra de direcciones y, a continuación, presione Entrar.  
   
     > [!NOTE]
-    >  El administrador de red puede proporcionarle la información del nombre de dominio. Asegúrese de que incluir la s de https.  
+    >  El administrador de red puede proporcionarle la información del nombre de dominio. Asegúrese de incluir s en https.  
   
-2.  En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha.  
+2.  En la página inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha.  
   
-###  <a name="BKMK_1.5"></a> Acceso remoto a su equipo  
- Cuando esté fuera de la oficina, puede usar el explorador Web para iniciar sesión en el sitio de acceso Web remoto para tener acceso remoto a su panel de Windows Server Essentials, las carpetas compartidas y equipos de la red.  
+###  <a name="BKMK_1.5"></a>Acceder de forma remota al equipo  
+ Cuando esté fuera de la oficina, puede usar el explorador Web para iniciar sesión en el sitio de acceso Web remoto para acceder de forma remota al panel de Windows Server Essentials, las carpetas compartidas y los equipos de la red.  
   
  Cuando se conecte al panel, puede administrar Windows Server Essentials tal como lo haría si estuviera en la oficina. Puede realizar todas las tareas administrativas habituales, como agregar cuentas de usuario, agregar carpetas compartidas, configurar el acceso a carpetas compartidas, etc. Cuando se conecte a equipos en la red, puede tener acceso a sus escritorios como si estuviera frente a ellos en la oficina.  
   
@@ -91,7 +91,7 @@ ms.locfileid: "66435916"
   
      El equipo se apaga o está en modo de hibernación o de suspensión. Si un equipo está sin conexión o en modo de suspensión, el estado se actualiza en tiempo real para que sepa cuándo está disponible el equipo.  
   
--   **Sistema operativo no compatible**  
+-   **Sistema operativo no admitido**  
   
      El sistema operativo en el equipo no es compatible con el Escritorio remoto. Este estado puede tardar hasta 6 horas en actualizarse en el servidor si se produce algún cambio.  
   
@@ -105,19 +105,19 @@ ms.locfileid: "66435916"
 #### <a name="to-connect-to-the-server-dashboard"></a>Para conectarse al panel del servidor  
  En la pestaña **DISPOSITIVOS** , haga clic en el nombre de su servidor. Puede seleccionar solo los equipos con estado **Disponible**. Debe ser capaz de proporcionar una cuenta de usuario administrador y la contraseña en el servidor para usar el panel.  
   
-##  <a name="BKMK_SharedFolders"></a> Compartir archivos y carpetas  
+##  <a name="BKMK_SharedFolders"></a>Compartir archivos y carpetas  
   
 
 -   [Cargar y descargar archivos en acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
   
--   [Crear, cambiar el nombre, mover, eliminar o copiar archivos y carpetas en acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Crear, cambiar el nombre, trasladar, eliminar o copiar archivos y carpetas en acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
 
 -   [Cargar y descargar archivos en acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_UploadRWA)  
   
--   [Crear, cambiar el nombre, mover, eliminar o copiar archivos y carpetas en acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Crear, cambiar el nombre, trasladar, eliminar o copiar archivos y carpetas en acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2)  
 
   
-###  <a name="BKMK_UploadRWA"></a> Cargar y descargar archivos en acceso Web remoto  
+###  <a name="BKMK_UploadRWA"></a>Cargar y descargar archivos en acceso Web remoto  
  En la pestaña **Carpetas compartidas** del Acceso web remoto, puede hacer lo siguiente:  
   
 -   Cargar (enviar) archivos desde el equipo a Windows Server Essentials.  
@@ -130,9 +130,9 @@ ms.locfileid: "66435916"
 -   Cree una carpeta dentro de una carpeta compartida en Windows Server Essentials.  
   
 
--   Mueva, elimine y cambie nombres de archivos y carpetas en Windows Server Essentials. Para obtener más información, consulte [crear, cambiar el nombre, move, delete, o copiar archivos y carpetas en acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2).  
+-   Mueva, elimine y cambie nombres de archivos y carpetas en Windows Server Essentials. Para obtener más información, vea [crear, cambiar el nombre, trasladar, eliminar o copiar archivos y carpetas en acceso Web remoto](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2).  
 
--   Mueva, elimine y cambie nombres de archivos y carpetas en Windows Server Essentials. Para obtener más información, consulte [crear, cambiar el nombre, move, delete, o copiar archivos y carpetas en acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2).  
+-   Mueva, elimine y cambie nombres de archivos y carpetas en Windows Server Essentials. Para obtener más información, vea [crear, cambiar el nombre, trasladar, eliminar o copiar archivos y carpetas en acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_2).  
 
   
 #### <a name="upload-files"></a>Cargar archivos  
@@ -193,17 +193,17 @@ ms.locfileid: "66435916"
 > [!NOTE]
 >  Estas opciones solo están disponibles cuando se descarga varios archivos o carpetas en el equipo.  
   
-- **Archivo ejecutable autoextraíble (.exe)**  
+- **Archivo ejecutable autoextraíble (. exe)**  
   
   > [!NOTE]
-  >   En esta sección se aplica a un servidor que ejecuta Windows Server Essentials.  
+  >   Esta sección se aplica a un servidor que ejecuta Windows Server Essentials.  
   
    Un archivo ejecutable autoextraíble es un archivo que se puede descargar y que combina el programa (ejecutable) de descompresión con los archivos comprimidos. Al ejecutar el programa ejecutable, se descomprimen automáticamente los archivos comprimidos (autoextraíble). Se trata de un método habitual de distribuir los datos comprimidos sin preocuparse de si el destinatario tiene la utilidad de descompresión adecuada.  
   
   > [!NOTE]
   >  Esta opción admite los caracteres Unicode.  
   
-- **Carpeta comprimida de Windows (.zip)**  
+- **Carpeta comprimida de Windows (. zip)**  
   
    Al comprimir un archivo se crea una versión comprimida del archivo, que es menor que el archivo original. La versión comprimida del archivo tiene la extensión de nombre de archivo .zip. Los tipos de archivo que se reducen al máximo al comprimirlos son los de texto, como .txt, .doc, .xls, y archivos de gráficos que usan tipos de archivo no comprimidos, como .bmp. Algunos archivos de gráficos, como por ejemplo los archivos .jpg y .gif, ya emplean la compresión, y el tamaño del archivo se reduce muy poco durante la compresión. Además, un documento de Word que contiene una gran cantidad de gráficos no se reduce tanto como un documento que está formado principalmente por texto.  
   
@@ -229,7 +229,7 @@ ms.locfileid: "66435916"
 #### <a name="retrieve-compressed-files-downloaded-to-your-computer"></a>Recuperar archivos comprimidos descargados en su equipo  
   
 > [!NOTE]
->   En esta sección se aplica a un servidor que ejecuta Windows Server Essentials.  
+>   Esta sección se aplica a un servidor que ejecuta Windows Server Essentials.  
   
  Si selecciona varios archivos o carpetas para descargar, puede recibir un archivo ejecutable comprimido autoextraíble (.exe) o un archivo comprimido (.zip).  
   
@@ -248,7 +248,7 @@ ms.locfileid: "66435916"
     > [!NOTE]
     >  Si usa un programa de compresión de archivos de terceros, siga los procedimientos de ese programa para extraer los archivos del archivo comprimido.  
   
-###  <a name="BKMK_2"></a> Crear, cambiar el nombre, mover, eliminar o copiar archivos y carpetas en acceso Web remoto  
+###  <a name="BKMK_2"></a>Crear, cambiar el nombre, trasladar, eliminar o copiar archivos y carpetas en acceso Web remoto  
  Puede usar el Acceso web remoto para crear nuevas carpetas en una carpeta compartida existente, cambiar el nombre de archivos y carpetas, moverlos y copiarlos y eliminarlos del servidor.  
   
 > [!NOTE]
@@ -294,19 +294,19 @@ ms.locfileid: "66435916"
   
 3.  Haga clic con el botón secundario en la carpeta a la que quiera copiar los archivos o carpetas y, a continuación, haga clic en **Pegar**.  
   
-##  <a name="BKMK_ConnectMobile"></a> Conectarse desde un dispositivo móvil  
+##  <a name="BKMK_ConnectMobile"></a>Conectarse desde un dispositivo móvil  
   
 
--   [Usar acceso Web remoto desde un dispositivo móvil](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [Usar el acceso Web remoto desde un dispositivo móvil](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
   
 -   [Exploradores Web compatibles para dispositivos móviles](Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
 
--   [Usar acceso Web remoto desde un dispositivo móvil](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [Usar el acceso Web remoto desde un dispositivo móvil](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_8)  
   
 -   [Exploradores Web compatibles para dispositivos móviles](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md#BKMK_9)  
 
   
-###  <a name="BKMK_8"></a> Usar acceso Web remoto desde un dispositivo móvil  
+###  <a name="BKMK_8"></a>Usar el acceso Web remoto desde un dispositivo móvil  
  Puede iniciar sesión en el Acceso web remoto desde el smartphone para ver los archivos y las carpetas de las carpetas compartidas en el servidor.  
   
 > [!NOTE]
@@ -314,27 +314,27 @@ ms.locfileid: "66435916"
   
 ##### <a name="to-log-on-to-remote-web-access-from-a-mobile-device"></a>Para iniciar sesión en el Acceso web remoto desde un dispositivo móvil  
   
-1.  Abra un explorador Web y escriba **https://***<Nombredesudominio\>***/remoto** en la barra de direcciones.  Asegúrese de que incluir la s de https.  
+1.  Abra un explorador Web y escriba **https://** _< sudominio\>_ **/Remote** en la barra de direcciones.  Asegúrese de incluir s en https.  
   
-2.  En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión móvil del Acceso web remoto.  
+2.  En la página inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión móvil del Acceso web remoto.  
   
 ##### <a name="to-switch-to-the-desktop-version-of-remote-web-access"></a>Para cambiar a la versión de escritorio del Acceso web remoto  
   
-1.  Abra un explorador Web y escriba **https://***<Nombredesudominio\>***/remoto** en la barra de direcciones.  Asegúrese de que incluir la s de https.  
+1.  Abra un explorador Web y escriba **https://** _< sudominio\>_ **/Remote** en la barra de direcciones.  Asegúrese de incluir s en https.  
   
-2.  En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto, haga clic en **ver versión de escritorio**y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión de escritorio del acceso Web remoto.  
+2.  En la página inicio de sesión de acceso Web remoto, escriba su nombre de usuario y contraseña en los cuadros de texto, haga clic en **Ver versión de escritorio**y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión de escritorio del acceso Web remoto.  
   
 ##### <a name="to-return-to-the-mobile-version-of-remote-web-access"></a>Para volver a la versión móvil del Acceso web remoto  
   
 1. Cierre la sesión.  
   
-2. Abra un explorador Web y escriba **https://***<Nombredesudominio\>***/remoto/m** en la barra de direcciones. Asegúrese de que incluir la s de https.  
+2. Abra un explorador Web y escriba **https://** _< sudominio\>_ **/remoto/m** en la barra de direcciones. Asegúrese de incluir s en https.  
   
-3. Se muestra la versión móvil del acceso Web remoto. En la página de inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Se registran la versión móvil del acceso Web remoto.  
+3. Se muestra la versión móvil del acceso Web remoto. En la página inicio de sesión de acceso Web remoto, escriba el nombre de usuario y la contraseña en los cuadros de texto y, a continuación, haga clic en la flecha. Ha iniciado sesión en la versión móvil del acceso Web remoto.  
   
    Puede buscar archivos y carpetas en las carpetas compartidas en el servidor.  
   
-###  <a name="BKMK_9"></a> Exploradores Web compatibles para dispositivos móviles  
+###  <a name="BKMK_9"></a>Exploradores Web compatibles para dispositivos móviles  
  Entre los exploradores web compatibles para dispositivos móviles se incluyen los siguientes:  
   
 -   Internet Explorer Mobile 6.0 o posterior  
@@ -353,7 +353,7 @@ ms.locfileid: "66435916"
   
 ## <a name="see-also"></a>Vea también  
   
--   [Administrar acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar el acceso Web remoto](../manage/Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 
 -   [Trabajar de forma remota](Work-Remotely-in-Windows-Server-Essentials.md)  

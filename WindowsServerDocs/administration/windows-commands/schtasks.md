@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7f898c67755fb8e7874932ea06a7cdf461d1e4bd
-ms.sourcegitcommit: e40fce7b8b4bc0bef278e676435306f14078cf00
+ms.openlocfilehash: fdda956a5da9ec50e44002cd8ab38373396d5713
+ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68787196"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68914642"
 ---
 # <a name="schtasks"></a>schtasks
 
@@ -479,7 +479,7 @@ schtasks /create /tn <TaskName> /tr <TaskRun> /sc monthly /mo {FIRST | SECOND | 
 
 #### <a name="remarks"></a>Comentarios
 
-En este tipo de programación, es necesario el parámetro **/SC Monthly** , el parámetro **/mo** (modificador) y el parámetro **/d** (Day). El parámetro **/mo** (modificador) especifica la semana en la que se ejecuta la tarea. El parámetro **/d** especifica el día de la semana. (Solo puede especificar un día de la semana para este tipo de programación). Esta programación también tiene un parámetro **/m** (mes) opcional que le permite programar la tarea para meses concretos o cada mes (<em>). El valor predeterminado del parámetro **/m</em>* es cada mes (* ).
+En este tipo de programación, es necesario el parámetro **/SC Monthly** , el parámetro **/mo** (modificador) y el parámetro **/d** (Day). El parámetro **/mo** (modificador) especifica la semana en la que se ejecuta la tarea. El parámetro **/d** especifica el día de la semana. (Solo puede especificar un día de la semana para este tipo de programación). Esta programación también tiene un parámetro **/m** (mes) opcional que le permite programar la tarea para meses concretos o cada mes (\*). El valor predeterminado del parámetro **/m** es cada mes (\*).
 
 #### <a name="examples"></a>Ejemplos
 
