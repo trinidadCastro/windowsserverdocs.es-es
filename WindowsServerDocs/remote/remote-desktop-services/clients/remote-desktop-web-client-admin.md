@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 02c7098c8e3f93ce315e7d9a881613a03924e78b
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: d6761c43eefe04430603a1a16e9e8d256176a736
+ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300695"
+ms.lasthandoff: 08/02/2019
+ms.locfileid: "68729537"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configuración del cliente web de Escritorio remoto para los usuarios
 
@@ -251,7 +251,7 @@ Si el servidor del host de sesión de Escritorio remoto es diferente del servido
 * Debe establecerse el **nombre alternativo del firmante (SAN)** de cada certificado en el **nombre de dominio completo (FQDN)** de la máquina. El **nombre común (CN)** debe coincidir con el nombre alternativo del firmante de cada certificado.
 
 ## <a name="how-to-pre-configure-settings-for-remote-desktop-web-client-users"></a>Configuración previa para usuarios del cliente web de Escritorio remoto
-En esta sección se te indicará cómo usar PowerShell para configurar los ajustes para la implementación del cliente web de Escritorio remoto. Estos cmdlets de PowerShell controlan la capacidad de un usuario para cambiar la configuración en función de las preocupaciones de seguridad de la organización o del flujo de trabajo previsto. La siguiente configuración se encuentra en el panel lateral **Configuraciones** del cliente web. 
+En esta sección se te indicará cómo usar PowerShell para configurar los ajustes para la implementación del cliente web de Escritorio remoto. Estos cmdlets de PowerShell controlan la capacidad de un usuario para cambiar la configuración en función de las preocupaciones de seguridad de la organización o del flujo de trabajo previsto. La siguiente configuración se encuentra en el panel lateral **Configuraciones** del cliente web.
 
 ### <a name="suppress-telemetry"></a>Supresión de la telemetría
 De forma predeterminada, los usuarios pueden elegir habilitar o deshabilitar la recopilación de datos de telemetría que se envían a Microsoft. Para más información sobre los datos de telemetría que recopila Microsoft, consulta nuestra declaración de privacidad en el vínculo del panel lateral **Acerca de**.
@@ -274,7 +274,8 @@ De forma predeterminada, los usuarios pueden elegir iniciar los recursos remotos
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>Restablecimiento de las configuraciones RDWebClientDeploymentSetting a los valores predeterminados
 Para restablecer un valor del cliente web en el nivel de implementación a la configuración predeterminada, ejecuta el siguiente cmdlet de PowerShell y utiliza el parámetro --Name para especificar el valor que deseas configurar:
-   ```PowerShell
+  
+  ```PowerShell
     Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
     Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```
@@ -316,4 +317,4 @@ También puedes tener acceso a la consola directamente mediante el explorador. L
 
 ## <a name="get-help-with-the-web-client"></a>Obtención de ayuda con el cliente web
 
-Si has encontrado un problema que no puede resolverse con la información de este artículo, [envíanos un correo electrónico](mailto:rdwbclnt@microsoft.com) para informar de ello. También puedes solicitar o votar nuevas características en nuestro [cuadro de sugerencias](https://aka.ms/rdwebfbk).
+Si ha encontrado un problema que no puede resolverse con la información de este artículo, puede notificárnoslo en la [Comunidad técnica](https://aka.ms/wvdtc). También puedes solicitar o votar nuevas características en nuestro [cuadro de sugerencias](https://remotedesktop.uservoice.com/forums/911494-remote-desktop-web-client).
