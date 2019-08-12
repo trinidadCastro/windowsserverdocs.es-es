@@ -7,12 +7,12 @@ ms.topic: landing-page
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: b06875f0fa175c1fcf4f60cbba9de3dbd10d06b1
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: b8ab1eed003294e3396bcea21b31b7c084180b9c
+ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792164"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863447"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Optimización del rendimiento para servidores de Active Directory
 
@@ -26,7 +26,8 @@ Esto requiere prestar atención adecuada a tres áreas diferentes:
 - Optimización del cliente/aplicación de Active Directory: para garantiza que los clientes y las aplicaciones usen Active Directory de manera óptima
 
 ## <a name="start-with-capacity-planning"></a>Comenzar con el planeamiento de la capacidad
-Implementar correctamente un número suficiente de controladores de dominio, en el dominio adecuado, en las configuraciones regionales correctas, y para dar cabida a la redundancia es esencial para garantizar atender las solicitudes de los clientes de manera oportuna. Se trata de un tema profundo que escapa al ámbito de esta guía. Se anima a los lectores a leer y entender las recomendaciones y guías que se encuentran en [Capacity Planning for Active Directory Domain Services](capacity-planning-for-active-directory-domain-services.md) (Planeamiento de la capacidad para Active Directory Domain Services) para comenzar la optimización del rendimiento de su instancia de Active Directory.
+
+Implementar correctamente un número suficiente de controladores de dominio, en el dominio adecuado, en las configuraciones regionales correctas, y para dar cabida a la redundancia es esencial para garantizar atender las solicitudes de los clientes de manera oportuna. Se trata de un tema profundo que escapa al ámbito de esta guía. Se anima a los lectores a leer y entender las recomendaciones y guías que se encuentran en [Planeamiento de la capacidad para Active Directory Domain Services](capacity-planning-for-active-directory-domain-services.md) para comenzar la optimización del rendimiento de su instancia de Active Directory.
 
 >[!Important]
 > La configuración y el tamaño correctos de Active Directory tienen una repercusión considerable en el rendimiento general del sistema y de las cargas de trabajo. Se recomienda encarecidamente a los lectores a que lean primero [Capacity Planning for Active Directory Domain Services](capacity-planning-for-active-directory-domain-services.md).

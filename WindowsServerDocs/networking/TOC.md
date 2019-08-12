@@ -83,6 +83,10 @@
 #### [Uso de la directiva de DNS para aplicar filtros en las consultas DNS](dns/deploy/apply-filters-on-dns-queries.md)
 #### [Uso de la directiva de DNS para el equilibrio de carga de aplicación](dns/deploy/app-lb.md)
 #### [Uso de la directiva de DNS para equilibrio de carga de aplicación con reconocimiento de ubicación geográfica](dns/deploy/app-lb-geo.md)
+### [Solución de problemas de DNS](dns/troubleshoot/troubleshoot-dns-data-collection.md)
+#### [Solución de problemas de clientes DNS](dns/troubleshoot/troubleshoot-dns-client.md)
+##### [Deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS](dns/troubleshoot/disable-dns-client-side-caching.md)
+#### [Solución de problemas de servidores DNS](dns/troubleshoot/troubleshoot-dns-server.md)
 
 ## [Protocolo de configuración dinámica de host (DHCP)](technologies/dhcp/dhcp-top.md)
 ### [Novedades del DHCP](technologies/dhcp/What-s-New-in-DHCP.md)
