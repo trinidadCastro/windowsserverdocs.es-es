@@ -1,6 +1,6 @@
 ---
-title: Wbadmin start backup
-description: 'Tema de los comandos de Windows para ***- '
+title: copia de seguridad de inicio de Wbadmin
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ac602506960b92333750e7a37692c44c92aae22
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: cdd63d0a3a813b32a212b09eb93a64ea1429ee06
+ms.sourcegitcommit: a9625758fbfb066494fe62e0da5f9570ccb738a3
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440276"
+ms.lasthandoff: 08/12/2019
+ms.locfileid: "68952452"
 ---
-# <a name="wbadmin-start-backup"></a>Wbadmin start backup
+# <a name="wbadmin-start-backup"></a>copia de seguridad de inicio de Wbadmin
 
 
 
-Crea una copia de seguridad mediante los parámetros especificados. Si se especifica ningún parámetro y que ha creado una copia de seguridad diaria programada, este subcomando crea la copia de seguridad mediante la configuración de la copia de seguridad programada. Si se especifican parámetros, crea una copia de seguridad de servicio de instantáneas de volumen (VSS) y no se actualizará el historial de los archivos que se copia de seguridad.
+Crea una copia de seguridad con los parámetros especificados. Si no se especifica ningún parámetro y se ha creado una copia de seguridad diaria programada, este subcomando crea la copia de seguridad mediante la configuración de la copia de seguridad programada. Si se especifican parámetros, se crea una copia de seguridad de copia de Servicio de instantáneas de volumen (VSS) y no se actualizará el historial de los archivos de los que se realiza una copia de seguridad.
 
-Para crear una copia de seguridad de un solo uso con este subcomando, debe ser miembro de la **operadores de copia de seguridad** grupo o la **administradores** grupo, o bien debe haber sido delegar los permisos adecuados. Además, debe ejecutar **wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados de contextual **símbolo** y, a continuación, haga clic en **ejecutar como administrador**.)
+Para crear una copia de seguridad única con este subcomando, debe ser miembro del grupo operadores de **copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados. Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema** y haga clic en **Ejecutar como administrador**).
 
-Para obtener ejemplos de cómo usar este subcomando, consulte [ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo usar este subcomando, vea [ejemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -45,7 +45,7 @@ wbadmin start backup
 [-vssFull]
 [-quiet]
 ```
-Sintaxis para Windows 7 y Windows Server 2008 R2 y versiones posteriores:
+Sintaxis para Windows ° 7 y Windows Server 2008 R2 y versiones posteriores:
 ```
 Wbadmin start backup
 [-backupTarget:{<BackupTargetLocation> | <TargetNetworkShare>}]
@@ -67,42 +67,42 @@ Wbadmin start backup
 
 |Parámetro|Descripción|
 |---------|-----------|
-|-backupTarget|Especifica la ubicación de almacenamiento para esta copia de seguridad. Requiere una letra de unidad de disco duro (f:), una ruta basada en GUID de volumen en el formato de \\ \\? \Volume{GUID}, o una ruta de convención de nomenclatura Universal (UNC) a una carpeta compartida remota (\\\\\<servername > \<sharename >\). De forma predeterminada, la copia de seguridad se guardará en: \\ \\ <servername> \<sharename >\** WindowsImageBackup **\\<ComputerBackedUp>\.</br>Importante: Si guarda una copia de seguridad en una carpeta compartida remota, esa copia de seguridad se sobrescribirá si usa la misma carpeta para rastrear agrupando el mismo equipo. Además, si se produce un error en la operación de copia de seguridad, puede acabar con ninguna copia de seguridad porque se sobrescribirá la copia de seguridad anterior, pero no se podrá usar la copia de seguridad más reciente. Para evitarlo, puede crear subcarpetas en la carpeta compartida remota para organizar las copias de seguridad. Si lo hace, las subcarpetas necesitarán el doble del espacio que la carpeta principal.|
-|-incluir|Para Windows ° Vista y Windows Server 2008, especifica la lista delimitada por comas de las letras de unidad, puntos de montaje o nombres basados en GUID de volumen para incluir en la copia de seguridad. Este parámetro debe usarse solo cuando la **- backupTarget** se usa el parámetro.</br>Para Windows 7 y Windows Server 2008 R2 y versiones posteriores, especifica la lista delimitada por comas de elementos que desea incluir en la copia de seguridad. Se pueden incluir varios archivos, carpetas o volúmenes. Las rutas de acceso a los volúmenes se pueden especificar mediante letras de unidad, puntos de montaje o nombres basados en identificadores GUID. Si usa un nombre de volumen basada en GUID, debe finalizar con una barra diagonal inversa (\\). Puede usar el carácter comodín (\*) en el nombre de archivo al especificar una ruta de acceso a un archivo. Debe usarse solo cuando la **- backupTarget** se usa el parámetro.|
-|-excluir|Para Windows 7 y Windows Server 2008 R2 y versiones posteriores, especifica la lista delimitada por comas de elementos que se van a excluir de la copia de seguridad. Puede excluir archivos, carpetas o volúmenes. Las rutas de acceso a los volúmenes se pueden especificar mediante letras de unidad, puntos de montaje o nombres basados en identificadores GUID. Si usa un nombre de volumen basada en GUID, debe finalizar con una barra diagonal inversa (\\). Puede usar el carácter comodín (\*) en el nombre de archivo al especificar una ruta de acceso a un archivo. Debe usarse solo cuando la **- backupTarget** se usa el parámetro.|
-|-nonRecurseInclude|Para Windows 7 y Windows Server 2008 R2 y versiones posteriores, se especifica el no recursivo, una lista delimitada por comas de elementos que se va a incluir en la copia de seguridad. Se pueden incluir varios archivos, carpetas o volúmenes. Las rutas de acceso a los volúmenes se pueden especificar mediante letras de unidad, puntos de montaje o nombres basados en identificadores GUID. Si usa un nombre de volumen basada en GUID, debe finalizar con una barra diagonal inversa (\\). Puede usar el carácter comodín (\*) en el nombre de archivo al especificar una ruta de acceso a un archivo. Debe usarse solo cuando la **- backupTarget** se usa el parámetro.|
-|-nonRecurseExclude|Para Windows 7 y Windows Server 2008 R2 y versiones posteriores, se especifica el no recursivo, una lista delimitada por comas de elementos que se van a excluir de la copia de seguridad. Puede excluir archivos, carpetas o volúmenes. Las rutas de acceso a los volúmenes se pueden especificar mediante letras de unidad, puntos de montaje o nombres basados en identificadores GUID. Si usa un nombre de volumen basada en GUID, debe finalizar con una barra diagonal inversa (\\). Puede usar el carácter comodín (\*) en el nombre de archivo al especificar una ruta de acceso a un archivo. Debe usarse solo cuando la **- backupTarget** se usa el parámetro.|
-|-allCritical|Especifica que todos los volúmenes críticos (volúmenes que contienen el estado del sistema operativo) se incluirán en las copias de seguridad. Este parámetro es útil si va a crear una copia de seguridad de reconstrucción completa. Debe usarse solo cuando **- backupTarget** está especificado, en caso contrario, el comando generará un error. Se puede usar con el **-incluyen** opción.</br>Sugerencia: El volumen de destino para una copia de seguridad de volumen críticos puede ser una unidad local, pero no puede ser cualquiera de los volúmenes que se incluyen en la copia de seguridad.|
-|-systemState|Para Windows 7 y Windows Server 2008 R2 y versiones posteriores, crea una copia de seguridad que incluye el estado del sistema, además de otros elementos que ha especificado con el **-incluyen** parámetro. El estado del sistema contiene los archivos de arranque (Boot.ini, NDTLDR, NTDetect.com), el registro de Windows, incluida la configuración de COM, SYSVOL (directivas de grupo y Scripts de inicio de sesión), Active Directory y NTDS. DIT en controladores de dominio y, si está instalado el servicio de certificados, el certificado de Store. Si el servidor tiene instalada la función de servidor Web, IIS metadirectorio se incluirán. Si el servidor forma parte de un clúster, también se incluirá información de servicio de Cluster Server.|
-|-noVerify|Especifica que las copias de seguridad que se guarda en medios extraíbles (por ejemplo, un DVD) no se comprueban si hay errores. Si no usa este parámetro, copias de seguridad guardadas en medios extraíbles se comprueban si hay errores.|
+|-backupTarget|Especifica la ubicación de almacenamiento para esta copia de seguridad. Requiere una letra de \\ \\unidad de disco duro (f:), una ruta de acceso basada en GUID de volumen\\ con el formato? Volumen {GUID} o una ruta de acceso UNC (Convención de nomenclatura universal) a una carpeta compartida\\remota (\\\\\<ServerName >\\\<ShareName >). De forma predeterminada, la copia de seguridad se guardará en\\: \<\\ \\ \\\< \\ServerName > ShareName >\< **WindowsImageBackup** >\\ComputerBackedUp.</br>Importante: Si guarda una copia de seguridad en una carpeta compartida remota, la copia de seguridad se sobrescribirá si usa la misma carpeta para hacer una copia de seguridad del mismo equipo de nuevo. Además, si se produce un error en la operación de copia de seguridad, es posible que no se realice ninguna copia de seguridad porque se sobrescribirá la copia de seguridad anterior, pero no se podrá usar la copia de seguridad más reciente. Para evitar esto, puede crear subcarpetas en la carpeta compartida remota para organizar las copias de seguridad. Si lo hace, las subcarpetas necesitarán el doble de espacio que la carpeta principal.|
+|-incluir|En Windows ° Vista y Windows Server 2008, especifica la lista delimitada por comas de las letras de unidad del volumen, los puntos de montaje del volumen o los nombres de los volúmenes basados en GUID que se van a incluir en la copia de seguridad. Este parámetro solo se debe usar cuando se usa el parámetro **-backupTarget** .</br>En Windows ° 7 y Windows Server 2008 R2 y versiones posteriores, especifica la lista de elementos delimitados por comas que se van a incluir en la copia de seguridad. Se pueden incluir varios archivos, carpetas o volúmenes. Las rutas de acceso a los volúmenes se pueden especificar mediante letras de unidad, puntos de montaje o nombres basados en identificadores GUID. Si usa un nombre de volumen basado en GUID, debe terminar con una barra diagonal inversa (\\). Puede usar el carácter comodín (\*) en el nombre de archivo al especificar una ruta de acceso a un archivo. Solo se debe usar cuando se usa el parámetro **-backupTarget** .|
+|-excluir|En Windows ° 7 y Windows Server 2008 R2 y versiones posteriores, especifica la lista de elementos delimitados por comas que se van a excluir de la copia de seguridad. Puede excluir archivos, carpetas o volúmenes. Las rutas de acceso a los volúmenes se pueden especificar mediante letras de unidad, puntos de montaje o nombres basados en identificadores GUID. Si usa un nombre de volumen basado en GUID, debe terminar con una barra diagonal inversa (\\). Puede usar el carácter comodín (\*) en el nombre de archivo al especificar una ruta de acceso a un archivo. Solo se debe usar cuando se usa el parámetro **-backupTarget** .|
+|-nonRecurseInclude|En Windows ° 7 y Windows Server 2008 R2 y versiones posteriores, especifica la lista de elementos no recursivos delimitados por comas que se van a incluir en la copia de seguridad. Se pueden incluir varios archivos, carpetas o volúmenes. Las rutas de acceso a los volúmenes se pueden especificar mediante letras de unidad, puntos de montaje o nombres basados en identificadores GUID. Si usa un nombre de volumen basado en GUID, debe terminar con una barra diagonal inversa (\\). Puede usar el carácter comodín (\*) en el nombre de archivo al especificar una ruta de acceso a un archivo. Solo se debe usar cuando se usa el parámetro **-backupTarget** .|
+|-nonRecurseExclude|En Windows ° 7 y Windows Server 2008 R2 y versiones posteriores, especifica la lista de elementos no recursivos delimitados por comas que se van a excluir de la copia de seguridad. Puede excluir archivos, carpetas o volúmenes. Las rutas de acceso a los volúmenes se pueden especificar mediante letras de unidad, puntos de montaje o nombres basados en identificadores GUID. Si usa un nombre de volumen basado en GUID, debe terminar con una barra diagonal inversa (\\). Puede usar el carácter comodín (\*) en el nombre de archivo al especificar una ruta de acceso a un archivo. Solo se debe usar cuando se usa el parámetro **-backupTarget** .|
+|-allCritical|Especifica que todos los volúmenes críticos (volúmenes que contienen el estado del sistema operativo) se incluyan en las copias de seguridad. Este parámetro es útil si va a crear una copia de seguridad para la reconstrucción completa. Solo debe usarse cuando se especifica **-backupTarget** , de lo contrario se producirá un error en el comando. Se puede usar con la opción **-include** .</br>Sugerencia: El volumen de destino de una copia de seguridad de un volumen crítico puede ser una unidad local, pero no puede ser ninguno de los volúmenes incluidos en la copia de seguridad.|
+|-systemState|En Windows ° 7 y Windows Server 2008 R2 y versiones posteriores, crea una copia de seguridad que incluye el estado del sistema además de cualquier otro elemento que se haya especificado con el parámetro **-include** . El estado del sistema contiene los archivos de arranque (boot. ini, NDTLDR, NTDetect.com), el registro de Windows, incluida la configuración de COM, SYSVOL (directivas de grupo y scripts de inicio de sesión), el Active Directory y NTDS. DIT en controladores de dominio y, si el servicio de certificados está instalado, el almacén de certificados. Si el servidor tiene instalado el rol de servidor Web, se incluirá el metadirectorio de IIS. Si el servidor forma parte de un clúster, también se incluirá la información del servicio de Cluster Server.|
+|-noverify|Especifica que las copias de seguridad guardadas en medios extraíbles (por ejemplo, un DVD) no se comprueban en busca de errores. Si no usa este parámetro, se comprueba si hay errores en las copias de seguridad guardadas en un medio extraíble.|
 |-usuario|Si la copia de seguridad se guarda en una carpeta compartida remota, especifica el nombre de usuario con permiso de escritura en la carpeta.|
-|-contraseña|Especifica la contraseña del nombre de usuario proporcionado por el parámetro **-usuario**.|
-|-noInheritAcl|Se aplica a los permisos de lista (ACL) de control de acceso que corresponden a las credenciales proporcionadas por el **-usuario** y **-contraseña** parámetros \\ \\ \< ServerName >\<sharename > \WindowsImageBackup\<equipoCopiado > \ (la carpeta que contiene la copia de seguridad). Para obtener acceso a la copia de seguridad más adelante, debe usar estas credenciales o ser miembro del grupo Administradores o del grupo Operadores de copia de seguridad en el equipo con la carpeta compartida. Si **- noInheritAcl** no es utilizado, se aplican los permisos de ACL de la carpeta compartida remota a la \<equipoCopiado > carpeta de forma predeterminada, por lo que cualquier usuario con acceso a la carpeta compartida remota puede tener acceso a la copia de seguridad.|
-|-vssFull|Realiza una copia de seguridad utilizando el servicio de instantáneas de volumen (VSS) completa. Todos los archivos se copian, historial de cada archivo se actualiza para reflejar que se realizó la copia y se pueden truncar los registros de copias de seguridad anteriores. Si no se usa este parámetro **wbadmin start backup** hace una copia de seguridad, pero el historial de archivos no se actualiza la copia de seguridad.</br>Precaución: No utilice este parámetro si usas un producto que no sea la copia de seguridad de Windows Server para realizar una copia de seguridad de aplicaciones que se encuentran en los volúmenes incluidos en la copia de seguridad actual. Si lo hace por lo que potencialmente puede interrumpir la incremental, diferencial u otro tipo de copias de seguridad que está creando el otro producto de copia de seguridad porque el historial que confía en para determinar la cantidad de datos para copia de seguridad podría faltar y pueden realizar una completa de copia de seguridad innecesariamente.|
-|-vssCopy|Para Windows 7 y Windows Server 2008 R2 y versiones posteriores, realiza una copia de seguridad mediante VSS. Todos los archivos se copian pero no se actualiza el historial de los archivos que se va a copia de seguridad para conservar toda la información en los archivos a los que cambió, eliminado etc., así como los archivos de registro de aplicación. Usar este tipo de copia de seguridad no afecta a la secuencia de copias de seguridad incrementales diferenciales que puede ocurrir independientemente de esta copia de seguridad. Este es el valor predeterminado.</br>Advertencia: No se puede usar una copia de seguridad para las copias de seguridad incrementales o diferenciales o de las restauraciones.|
-|-quiet|Se ejecuta el subcomando sin solicitudes para el usuario.|
+|-contraseña|Especifica la contraseña para el nombre de usuario proporcionado por el parámetro **-User**.|
+|-noInheritAcl|Aplica los permisos de la lista de control de acceso (ACL) que corresponden a las credenciales proporcionadas por los parámetros \\ **-User** y **-password** a \< \\ServerName >\\ \< nombreDeRecursoCompartido >\\WindowsImageBackup\\ComputerBackedUp\<>\\ (la carpeta que contiene la copia de seguridad). Para tener acceso a la copia de seguridad más adelante, debe usar estas credenciales o ser miembro del grupo administradores o del grupo operadores de copia de seguridad en el equipo con la carpeta compartida. Si no se usa **-noInheritAcl** , los permisos de la ACL de la carpeta compartida remota se aplican a la \\ \<carpeta ComputerBackedUp > de forma predeterminada para que cualquier persona con acceso a la carpeta compartida remota pueda tener acceso a la copia de seguridad.|
+|-vssFull|Realiza una copia de seguridad completa mediante el Servicio de instantáneas de volumen (VSS). Se realiza una copia de seguridad de todos los archivos, el historial de cada archivo se actualiza para reflejar que se ha realizado una copia de seguridad y se pueden truncar los registros de las copias de seguridad anteriores. Si no se usa este parámetro, **Wbadmin Start Backup** realiza una copia de seguridad de copia, pero no se actualiza el historial de archivos de los que se realiza la copia de seguridad.</br>Precaución: No use este parámetro si usa un producto que no sea Copias de seguridad de Windows Server para realizar copias de seguridad de las aplicaciones que se encuentran en los volúmenes incluidos en la copia de seguridad actual. Si lo hace, es posible que se interrumpa el tipo incremental, diferencial u otro tipo de copias de seguridad que crea el otro producto de copia de seguridad, ya que el historial en el que están confiando determina la cantidad de datos que se van a crear y podrían llevar a cabo una copia de seguridad completa. innecesariamente.|
+|-vssCopy|En Windows 7 y Windows Server 2008 R2 y versiones posteriores, realiza una copia de seguridad de copia mediante VSS. Se realiza una copia de seguridad de todos los archivos, pero el historial de los archivos de los que se hace la copia de seguridad no se actualiza, de modo que se conserva toda la información sobre los archivos que se han modificado, eliminado, etc., así como los archivos de registro de la aplicación. El uso de este tipo de copia de seguridad no afecta a la secuencia de copias de seguridad incrementales y diferenciales que podrían producirse independientemente de esta copia de seguridad de copia. Este es el valor predeterminado.</br>Advertencia: No se puede usar una copia de seguridad de copia para copias de seguridad o restauraciones incrementales o diferenciales.|
+|-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Los ejemplos siguientes muestran cómo el **wbadmin start backup** comando puede utilizarse en diferentes escenarios de copia de seguridad:
+En los siguientes ejemplos se muestra cómo se puede usar el comando **Wbadmin Start Backup** en distintos escenarios de copia de seguridad:
 
-Escenario 1 #
-- Crear una copia de seguridad de volúmenes e:, d:\mountpoint, y \\ \\? \Volume{cc566d14-4410-11d9-9d93-806e6f6e6963}
-- Guardar la copia de seguridad en el volumen f:
+Escenario #1
+- Cree una copia de seguridad de volúmenes e:,\\d: mountpoint \\y\\ \\? Volumen {cc566d14-4410-11d9-9d93-806e6f6e6963}
+- Guarde la copia de seguridad en el volumen f:
   ```
   wbadmin start backup -backupTarget:f: -include:e:,d:\mountpoint,\\?\Volume{cc566d14-44a0-11d9-9d93-806e6f6e6963}\
   ```
-  Escenario 2 #
-- Realizar una copia de seguridad única de *f:\folder1* y *h:\folder2* al volumen *d:* .
+  Escenario #2
+- Realice una copia de seguridad única de *f:\\carpeta1* y *h:\\Carpeta2* en el volumen *d:* .
 - Copia de seguridad del estado del sistema
-- Realizar una copia de seguridad para que la copia de seguridad diferencial normalmente programada no se ve afectada.
+- Realice una copia de seguridad de copia para que la copia de seguridad diferencial programada normalmente no se vea afectada.
   ```
   wbadmin start backup –backupTarget:d: -include:g\folder1,h:\folder2 –systemstate -vsscopy
   ```
-  Escenario 3 #
-- Realizar una copia de seguridad única de *d:\folder1* que realizar copias de seguridad de forma no recursiva.
-- La carpeta a la ubicación de red de copia de seguridad  *\\ \\backupshare\backup1*
-- Restringir el acceso a la copia de seguridad a los miembros de la **administradores** o **operadores de copia de seguridad** grupo.
+  Escenario #3
+- Realice una copia de seguridad única de *d:\\carpeta1* de la que se debe realizar una copia de seguridad de forma no recursiva.
+- Haga una copia de seguridad de la carpeta en la ubicación  *\\ \\de red\\copiaseguridad 1*
+- Restrinja el acceso a la copia de seguridad a los miembros del grupo **administradores** o **operadores de copia de seguridad** .
   ```
   wbadmin start backup –backupTarget: \\backupshare\backup1 -noinheritacl -nonrecurseinclude:d:\folder1
   ```
