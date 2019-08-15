@@ -8,12 +8,12 @@ ms.topic: article
 ms.author: delhan
 ms.date: 8/8/2019
 author: Deland-Han
-ms.openlocfilehash: 0b20400029b462798587c2291431b5a7c3d61775
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: 3aeb7cb06f82b6f2220e42866682ce918389bf1d
+ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68917812"
+ms.lasthandoff: 08/14/2019
+ms.locfileid: "69023897"
 ---
 # <a name="disable-dns-client-side-caching-on-dns-clients"></a>Deshabilitar el almacenamiento en caché del lado cliente DNS en clientes DNS
 
@@ -49,6 +49,53 @@ ipconfig /displaydns
 
 Este comando muestra el contenido de la memoria caché de resolución DNS, incluidos los registros de recursos DNS que se cargan previamente desde el archivo de hosts y los nombres consultados recientemente que el sistema resolvió. Después de un tiempo, el solucionador descarta el registro de la memoria caché. El período de tiempo se especifica mediante el valor de período **de vida (TTL)** asociado al registro de recursos DNS. También puede vaciar la memoria caché manualmente. Después de vaciar la memoria caché, el equipo debe consultar de nuevo los servidores DNS para cualquier registro de recursos DNS que el equipo haya resuelto previamente. Para eliminar las entradas de la memoria caché de la resolución DNS, `ipconfig /flushdns` ejecute en un símbolo del sistema.
 
-## <a name="next-step"></a>Paso siguiente
+## <a name="using-the-registry-to-control-the-caching-time"></a>Usar el registro para controlar el tiempo de almacenamiento en caché
 
-Consulte deshabilitación del [almacenamiento en caché de DNS de cliente en Windows](https://support.microsoft.com/kb/318803) para obtener más información.
+> [!IMPORTANT]  
+> Sigue meticulosamente los pasos que se describen en esta sección. Pueden producirse problemas graves si modifica el Registro de manera incorrecta. Antes de modificarlo, [haz una copia de seguridad del registro para restaurarlo](https://support.microsoft.com/help/322756), por si se produjeran problemas.
+
+El período de tiempo durante el que una respuesta positiva o negativa se almacena en caché depende de los valores de las entradas de la siguiente clave del registro:
+
+**HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNSCache\Parameters**
+
+El TTL para las respuestas positivas es el menor de los siguientes valores: 
+
+- El número de segundos especificado en la respuesta de la consulta que recibió la resolución
+
+- El valor de la configuración del registro **MaxCacheTtl** .
+
+>[!Note]
+>- El TTL predeterminado para las respuestas positivas es de 86.400 segundos (1 día).
+>- El TTL para las respuestas negativas es el número de segundos especificado en la configuración del registro MaxNegativeCacheTtl.
+>- El TTL predeterminado para las respuestas negativas es de 900 segundos (15 minutos).
+Si no desea almacenar en caché las respuestas negativas, establezca el valor del registro MaxNegativeCacheTtl en 0.
+
+Para establecer la hora de almacenamiento en caché en un equipo cliente:
+
+1. Inicie el editor del registro (regedit. exe).
+
+2. Busque y, a continuación, haga clic en la clave siguiente en el registro:
+
+   **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters**
+
+3. En el menú Edición, seleccione nuevo, haga clic en valor DWORD y, a continuación, agregue los siguientes valores del registro:
+
+   - Nombre del valor: MaxCacheTtl
+
+     Tipo de datos: REG_DWORD
+
+     Información del valor: Valor predeterminado 86400 segundos. 
+     
+     Si reduce el valor de TTL máximo en la memoria caché de DNS del cliente a 1 segundo, esto da la impresión de que la memoria caché de DNS del cliente se ha deshabilitado.    
+
+   - Nombre del valor: MaxNegativeCacheTtl
+
+     Tipo de datos: REG_DWORD
+
+     Información del valor: Valor predeterminado 900 segundos. 
+     
+     Establezca el valor en 0 si no desea que se almacenen en caché las respuestas negativas.
+
+4. Escriba el valor que desea utilizar y, a continuación, haga clic en Aceptar.
+
+5. Salga del Editor del Registro.
