@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: d899ec41b9a87089f03a576fa11dfa7d210fe194
-ms.sourcegitcommit: b68ff64ecd87959cd2acde4a47506a01035b542a
+ms.openlocfilehash: 59c04a858ceae44ee51c1de10fc40b27dc22ef90
+ms.sourcegitcommit: e04565e4a1fb7aaed04addd2bc87cc6ec4c82e81
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68830894"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529895"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
@@ -131,5 +131,5 @@ Las unidades pueden ser internas en el servidor o en un contenedor externo que e
 
 | Valores máximos                | Windows Server 2019  | Windows Server 2016  |
 | ---                     | ---------            | ---------            |
-| Capacidad sin procesar por servidor | 100 TB               | 100 TB               |
+| Capacidad sin procesar por servidor | 400 TB               | 100 TB               |
 | Capacidad de grupo           | 4 PB (4.000 TB)      | 1 PB                 |

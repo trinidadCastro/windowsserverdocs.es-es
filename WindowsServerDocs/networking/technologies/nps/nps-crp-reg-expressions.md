@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 34488a7f1a9d8ccd04de0aae35cbe98ec162c93f
-ms.sourcegitcommit: 107b801af9603be9268a8f459478e212319f7f06
+ms.openlocfilehash: fec546e0608c36f9b3d907e486a0a3a24e7d1728
+ms.sourcegitcommit: e04565e4a1fb7aaed04addd2bc87cc6ec4c82e81
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68995262"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69529901"
 ---
 # <a name="use-regular-expressions-in-nps"></a>Usar expresiones regulares de NPS
 
@@ -90,7 +90,7 @@ En un escenario de acceso telefónico de origen en el que un proveedor \(\) de s
 
 
 
-**Para reemplazar *dominio\usuario* por _specific_domain\user_**
+**Para reemplazar _dominio\usuario_ por _specific_domain\user_**
 
 - Localización`(.*)\\(.*)`
 
