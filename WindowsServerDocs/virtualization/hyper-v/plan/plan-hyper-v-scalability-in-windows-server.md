@@ -10,12 +10,12 @@ ms.topic: article
 author: KBDAzure
 ms.author: kathydav
 ms.date: 09/28/2016
-ms.openlocfilehash: 534de49e50d7b415c9d64c32927418a4395f6f4f
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: b54d3e655d10d2dbb015d57f2b1be86a803d9911
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544742"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546637"
 ---
 # <a name="plan-for-hyper-v-scalability-in-windows-server-2016"></a>Planear la escalabilidad de Hyper-V en Windows Server 2016
 
@@ -44,7 +44,7 @@ Estos valores máximos se aplican a cada máquina virtual. No todos los componen
 |Procesadores virtuales|240 para la generación 2;<br>64 para la generación 1;<br>320 disponible para el sistema operativo del host (partición raíz)|El número de procesadores virtuales compatibles con un sistema operativo invitado podría incluso ser menor. Para obtener más información, consulte la información publicada para el sistema operativo específico.|
 |Controladoras SCSI virtuales|4|El uso de dispositivos SCSI virtuales requiere Integration Services, que están disponibles para los sistemas operativos invitados admitidos. Para obtener más información sobre qué sistemas operativos se admiten, consulte [máquinas virtuales Linux y FreeBSD compatibles](../Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md) y [los sistemas operativos invitados de Windows admitidos](../supported-windows-guest-operating-systems-for-hyper-v-on-windows.md).|  
 |Discos SCSI virtuales|256|Cada controladora SCSI admite hasta 64 discos y eso significa que cada máquina virtual se puede configurar con un máximo de 256 discos SCSI virtuales. (4 controladoras x 64 discos por controladora)|  
-|Adaptadores de red virtuales|Windows Server 2016 admite 12 en total:<br> -8 adaptadores de red específicos de Hyper-V<br>-4 adaptadores de red heredados <br> Windows Server 2019 admite 72 en total: <br> -64 adaptadores de red específicos de Hyper-V<br>-4 adaptadores de red heredados  |El adaptador de red específico de Hyper-V proporciona un mejor rendimiento y requiere un controlador incluido en Integration Services. Para obtener más información, vea [planear la red de Hyper-V en Windows Server](plan-hyper-v-networking-in-windows-server.md).|  
+|Adaptadores de red virtuales|Windows Server 2016 admite 12 en total:<br> -8 adaptadores de red específicos de Hyper-V<br>-4 adaptadores de red heredados <br> Windows Server 2019 admite 68 en total: <br> -64 adaptadores de red específicos de Hyper-V<br>-4 adaptadores de red heredados  |El adaptador de red específico de Hyper-V proporciona un mejor rendimiento y requiere un controlador incluido en Integration Services. Para obtener más información, vea [planear la red de Hyper-V en Windows Server](plan-hyper-v-networking-in-windows-server.md).|  
   
 ## <a name="maximums-for-hyper-v-hosts"></a>Máximos para hosts de Hyper-V  
 Estos valores máximos se aplican a cada host de Hyper-V.  

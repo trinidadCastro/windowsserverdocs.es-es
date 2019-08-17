@@ -1,5 +1,5 @@
 ---
-Title: 'SMB: Deben abrirse los puertos de compartir archivos e impresoras'
+title: PEQUEÑAS Los puertos de uso compartido de impresoras y archivos deben estar abiertos
 TOCTitle: 'SMB: File and printer sharing ports should be open'
 ms.date: 07/02/2012
 ms.prod: windows-server-threshold
@@ -7,21 +7,21 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: fae579347a43dfa361206e65032b1f3da512ec4a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: a22801be6ec73b6819a190c793d28feae4edcf69
+ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284375"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560422"
 ---
-# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>SMB: Deben abrirse los puertos de compartir archivos e impresoras
+# <a name="smb-file-and-printer-sharing-ports-should-be-open"></a>PEQUEÑAS Los puertos de uso compartido de impresoras y archivos deben estar abiertos
 
 
 Actualizado: 2 de febrero de 2011
 
 Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y Windows Server 2012, Windows Server 2008 R2
 
-*En este tema está pensado para abordar un problema específico identificado por un análisis del analizador de procedimientos recomendados. Debe aplicar la información de este tema únicamente a los equipos que han tenido la ejecutó el archivo Services Best Practices Analyzer y están experimentando el problema mencionado en este tema. Para obtener más información sobre análisis y los procedimientos recomendados, consulte* [Best Practices Analyzer](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
+*El objetivo de este tema es resolver un problema específico identificado por un análisis de Analizador de procedimientos recomendados. Debe aplicar la información de este tema únicamente a los equipos que tienen los servicios de archivo Analizador de procedimientos recomendados ejecutarse en ellos y que experimentan el problema que se trata en este tema. Para obtener más información sobre los análisis y los procedimientos recomendados* , consulte [analizador de procedimientos recomendados](http://go.microsoft.com/fwlink/?linkid=122786%0d%0a).
 
 
 <table>
@@ -32,10 +32,10 @@ Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y 
 <tbody>
 <tr class="odd">
 <td><p><strong>Sistema operativo</strong></p></td>
-<td><p>Windows Server</p></td>
+<td><p>Windows Server</p></td>
 </tr>
 <tr class="even">
-<td><p><strong>Característica del producto</strong></p></td>
+<td><p><strong>Producto o característica</strong></p></td>
 <td><p>Servicios de archivos</p></td>
 </tr>
 <tr class="odd">
@@ -51,27 +51,27 @@ Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 y 
 
 ## <a name="issue"></a>Problema
 
-> *Los puertos de firewall son necesarios para compartir archivos e impresoras no abren (puertos 445 y 139).*
+> *Los puertos de Firewall necesarios para compartir archivos e impresoras no están abiertos (puertos 445 y 139).*
 
 ## <a name="impact"></a>Impacto
 
-> *Los equipos no podrán tener acceso a las carpetas compartidas y otros servicios de red basada en bloque de mensajes del servidor SMB en este servidor.*
+> *Los equipos no podrán tener acceso a las carpetas compartidas y a otros servicios de red basados en bloque de mensajes del servidor (SMB) en este servidor.*
 
 ## <a name="resolution"></a>Resolución
 
-> *Habilite Compartir archivos e impresoras para comunicarse a través del firewall del equipo.*
+> *Habilite el uso compartido de archivos e impresoras para comunicarse a través del firewall del equipo.*
 
 Para completar este procedimiento, se requiere como mínimo pertenecer al grupo **Administradores** o uno equivalente.
 
-## <a name="to-open-the-firewall-ports-to-enable-file-and-printer-sharing"></a>Para abrir los puertos de firewall para permitir compartir archivos e impresoras
+## <a name="to-open-the-firewall-ports-to-enable-file-and-printer-sharing"></a>Para abrir los puertos de Firewall para habilitar el uso compartido de archivos e impresoras
 
-1.  Abra el Panel de Control, haga clic en **sistema y seguridad**y, a continuación, haga clic en **Windows Firewall**.
+1.  Abra el panel de control, haga clic en **sistema y seguridad**y, a continuación, haga clic en **firewall de Windows**.
 
-2.  En el panel izquierdo, haga clic en **configuración avanzada**y en el árbol de consola, haga clic en **reglas de entrada**.
+2.  En el panel izquierdo, haga clic en **Configuración avanzada**y, en el árbol de consola, haga clic en **reglas de entrada**.
 
-3.  En **reglas de entrada**, busque las reglas **compartir archivos e impresoras (sesión NB de entrada)** y **compartir archivos e impresoras (SMB de entrada)** .
+3.  En **reglas de entrada**, busque las reglas **compartir archivos e impresoras (sesión NB)** e **compartir impresoras y archivos (SMB de entrada)** .
 
-4.  Para cada regla, haga clic en la regla y, a continuación, haga clic en **Habilitar regla**.
+4.  Para cada regla, haga clic con el botón secundario en la regla y, a continuación, haga clic en **Habilitar regla**.
 
 ## <a name="additional-references"></a>Referencias adicionales
 

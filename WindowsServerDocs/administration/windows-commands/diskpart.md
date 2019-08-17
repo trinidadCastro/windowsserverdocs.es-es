@@ -1,75 +1,75 @@
 ---
-Title: Comandos de DiskPart
+title: Comandos Diskpart
 ms.prod: windows-server-threshold
 ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: e04af7b6425e208013277d1aaa6f28af62871bcc
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 7155dbf34f9986b3ebdd8b549b6a861cf7fcfe3a
+ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280078"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69560437"
 ---
-# <a name="diskpart-commands"></a>Comandos de DiskPart
+# <a name="diskpart-commands"></a>Comandos Diskpart
 
 Se aplica a: Windows 10, Windows 8.1, Windows 8, Windows 7, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012 y Windows Server 2008 R2, Windows Server 2008
 
-Comandos de DiskPart ayudan a administrar las unidades de su PC (discos, particiones, volúmenes o discos duros virtuales). Para poder usar comandos de DiskPart, debe enumerar primero y, a continuación, seleccione un objeto para transferirle el foco. Cuando un objeto tiene el foco, los comandos de DiskPart que se escriben actuará en ese objeto.
+Los comandos de Diskpart le ayudan a administrar las unidades del equipo (discos, particiones, volúmenes o discos duros virtuales). Antes de poder usar comandos de DiskPart, primero debe enumerar y, a continuación, seleccionar un objeto para darle el foco. Cuando un objeto tiene el foco, los comandos de Diskpart que escriba actuarán en ese objeto.
 
-Puede enumerar los objetos disponibles y determinar la letra de unidad o el número de un objeto mediante el **disco de la lista, el volumen de lista, la partición de la lista**, y **lista vdisk** comandos. El **disco de la lista, lista vdisk** y **lista volumen** comandos mostrarán todos los discos y volúmenes en el equipo. Sin embargo, el **lista partición** comando sólo muestra las particiones del disco que tiene el foco. Cuando se usa el **lista** comandos, un asterisco (\*) aparece junto al objeto con el foco.
+Puede enumerar los objetos disponibles y determinar el número o la letra de la unidad de un objeto mediante los comandos **List Disk, List Volume, List Partition**y **List vDisk** . Los comandos **List Disk, List vDisk** y **List Volume** muestran todos los discos y volúmenes del equipo. Sin embargo, el comando **List Partition** solo muestra las particiones en el disco que tiene el foco. Cuando se usan los comandos de **lista** , aparece un\*asterisco () junto al objeto que tiene el foco.
 
-Cuando se selecciona un objeto, el foco permanece en ese objeto hasta que haya seleccionado un objeto diferente. Por ejemplo, si se establece el foco en el disco 0 y selecciona el volumen 8 del disco 2, el foco cambiará del disco 0 a 2, volumen 8 del disco. Algunos comandos cambian automáticamente el foco. Por ejemplo, cuando se crea una nueva partición, el foco cambia automáticamente a la nueva partición.
+Al seleccionar un objeto, el foco permanece en ese objeto hasta que se selecciona otro objeto. Por ejemplo, si el foco se establece en el disco 0 y selecciona volumen 8 en el disco 2, el foco se desplaza desde el disco 0 al disco 2, volumen 8. Algunos comandos cambian automáticamente el foco. Por ejemplo, al crear una nueva partición, el foco cambia automáticamente a la nueva partición.
 
-Solo puede dar el foco a una partición en el disco seleccionado. Cuando una partición tiene el foco, el volumen relacionado (si existe) también tiene el foco. Cuando un volumen tiene el foco, el disco asociado y la partición también tiene el foco si el volumen se asigna a una única partición específica. Si esto no es así, se centran en el disco y partición se pierde.
+Solo puede dar el foco a una partición en el disco seleccionado. Cuando una partición tiene el foco, el volumen relacionado (si existe) también tiene el foco. Cuando un volumen tiene el foco, el disco y la partición relacionados también tienen el foco si el volumen se asigna a una única partición específica. Si no es así, se perderá el foco en el disco y la partición.
 
-## <a name="diskpart-commands"></a>Comandos de DiskPart
+## <a name="diskpart-commands"></a>Comandos Diskpart
 
-Para iniciar el intérprete de comandos de DiskPart, en el símbolo del sistema, escriba:
+Para iniciar el intérprete de comandos Diskpart, en el símbolo del sistema, escriba:
 
 `diskpart`
 
 > [!IMPORTANT]
-> Pertenecer al grupo local **administradores** , o equivalente, es lo mínimo necesario para ejecutar DiskPart. 
+> La pertenencia al grupo local **administradores** , o equivalente, es lo mínimo necesario para ejecutar Diskpart. 
 
-Puede ejecutar los comandos siguientes en el intérprete de comandos de Diskpart:
+Puede ejecutar los siguientes comandos en el intérprete de comandos Diskpart:
 
   - [Active](active.md)  
       
   - [Agregar](add.md)  
       
-  - [Asignar](assign.md)  
+  - [Quitar](assign.md)  
       
-  - [Attach vdisk](attach-vdisk.md)  
+  - [Attach vDisk](attach-vdisk.md)  
       
-  - [Atributos](attributes.md)  
+  - [Sus](attributes.md)  
       
   - [Montaje automático](automount.md)  
       
-  - [salto](break.md)  
+  - [Eliminar](break.md)  
       
-  - [Clean](clean.md)  
+  - [Principio](clean.md)  
       
-  - [Compactar vdisk](compact-vdisk.md)  
+  - [Compact vDisk](compact-vdisk.md)  
       
-  - [Convertir](convert.md)  
+  - [Verso](convert.md)  
       
-  - [Crear](create.md)  
+  - [A](create.md)  
       
   - [Eliminar](delete.md)  
       
-  - [Desasociar vdisk](detach-vdisk.md)  
+  - [Detach vDisk](detach-vdisk.md)  
       
   - [Detalle](detail.md)  
       
   - [Salir](exit.md)  
       
-  - [Expandir vdisk](expand-vdisk.md)  
+  - [Expandir vDisk](expand-vdisk.md)  
       
-  - [Ampliar](extend.md)  
+  - [Allá](extend.md)  
       
-  - [Filesystems](filesystems.md)  
+  - [Sistemas](filesystems.md)  
       
   - [Format](format.md)  
       
@@ -77,39 +77,39 @@ Puede ejecutar los comandos siguientes en el intérprete de comandos de Diskpart
       
   - [Ayuda](help.md)  
       
-  - [Importar](import.md)  
+  - [Importaciónación](import.md)  
       
-  - [inactivo](inactive.md)  
+  - [Inactiva](inactive.md)  
       
   - [Lista](list.md)  
       
-  - [Combinar vdisk](merge-vdisk.md)  
+  - [Merge vDisk](merge-vdisk.md)  
       
-  - [Sin conexión](offline.md)  
+  - [N](offline.md)  
       
-  - [Online](online.md)  
+  - [Pantalla](online.md)  
       
-  - [Recover](recover.md)  
+  - [Corregir](recover.md)  
       
-  - [Rem](rem.md)  
+  - [Real](rem.md)  
       
   - [Quitar](remove.md)  
       
-  - [Reparación](repair.md)  
+  - [Resolver](repair.md)  
       
-  - [Rescan](rescan.md)  
+  - [Volver a examinar](rescan.md)  
       
-  - [Retain](retain.md)  
+  - [Tain](retain.md)  
       
-  - [San](san.md)  
+  - [Red](san.md)  
       
-  - [Select](select.md)  
+  - [No](select.md)  
       
-  - [Id. de conjunto](set-id.md)  
+  - [Identificador de conjunto](set-id.md)  
       
-  - [Shrink](shrink.md)  
+  - [Prime](shrink.md)  
       
-  - [Uniqueid](uniqueid.md)  
+  - [UniqueID](uniqueid.md)  
       
 
 ## <a name="additional-references"></a>Referencias adicionales

@@ -8,12 +8,12 @@ author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
 ms.date: 12/18/2018
-ms.openlocfilehash: b144127de2ceea99e36549974101d190154aaeaf
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 78006dbbd2bdc569c15ac9967d8c5c542664312c
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476526"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546289"
 ---
 # <a name="administer-a-server-core-server"></a>Administrar un servidor Server Core
 
@@ -34,7 +34,7 @@ Para ver las direcciones IP que ya está usando, use **Get-NetIPAddress**.
 Para establecer una dirección IP estática, haga lo siguiente: 
 
 1. Ejecute **Get-NetIPInterface**. 
-2. Anote el número de la **columna de** tipo de dirección de la interfaz IP o la cadena **InterfaceDescription** . Si tiene más de un adaptador de red, tenga en cuenta el número o la cadena correspondiente a la interfaz para la que desea establecer la dirección IP estática.
+2. Anote el número de la columna de tipo de dirección de la interfaz IP o la cadena **InterfaceDescription** . Si tiene más de un adaptador de red, tenga en cuenta el número o la cadena correspondiente a la interfaz para la que desea establecer la dirección IP estática.
 3. Ejecute el siguiente cmdlet para establecer la dirección IP estática:
 
    ```powershell
@@ -42,7 +42,7 @@ Para establecer una dirección IP estática, haga lo siguiente:
    ```
 
    Donde:
-   - **InterfaceIndex** es el **valor de debajo** del paso 2. (En nuestro ejemplo, 12)
+   - **InterfaceIndex** es el valor de debajo del paso 2. (En nuestro ejemplo, 12)
    - **IPAddress** es la dirección IP estática que desea establecer. (En nuestro ejemplo, 191.0.2.2)
    - **PrefixLength** es la longitud del prefijo (otra forma de máscara de subred) para la dirección IP que está estableciendo. (En nuestro ejemplo, 24)
    - **DefaultGateway** es la dirección IP de la puerta de enlace predeterminada. (En nuestro ejemplo, 192.0.2.1)
@@ -90,8 +90,8 @@ Ejecute **slmgr. vbs – IPK\<ProductKey\>** . A continuación, ejecute **slmgr.
 > [!NOTE]
 > También puede activar el servidor por teléfono, mediante un [servidor de servicio de administración de claves (kms)](../../get-started/server-2016-activation.md)o de forma remota. Para activar de forma remota, ejecute el siguiente cmdlet desde un equipo remoto: 
 > 
-> ```powershell
-> **cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato**
+> ```
+> cscript windows\system32\slmgr.vbs <ServerName> <UserName> <password>:-ato
 > ```
  
 ### <a name="configure-windows-firewall"></a>Configurar el Firewall de Windows
@@ -136,7 +136,7 @@ Use la siguiente información de referencia para realizar tareas administrativas
 |Tarea|Comando| 
 |----|-------|
 |Configurar el servidor para que use un servidor proxy|**netsh WinHTTP Set proxy \<ServerName\>:\<número de Puerto\>** <br>**Nota:** Las instalaciones Server Core no pueden tener acceso a Internet a través de un proxy que requiera una contraseña para permitir conexiones.|
-|Configurar el servidor para omitir el proxy para direcciones de Internet|**netsh winttp Set proxy \<ServerName\>:\<número\> de Puerto bypass-List =\<"\>local"**| 
+|Configurar el servidor para omitir el proxy para direcciones de Internet|**netsh WinHTTP Set proxy \<ServerName\>:\<número\> de Puerto bypass-List =\<"\>local"**| 
 |Mostrar o modificar la configuración de IPSEC|**netsh ipsec**| 
 |Mostrar o modificar la configuración de NAP|**netsh NAP**| 
 |Mostrar o modificar la traducción de direcciones IP a física|**arp**| 
@@ -147,7 +147,7 @@ Use la siguiente información de referencia para realizar tareas administrativas
 |Mostrar saltos para conexiones de red|**pathping**| 
 |Seguimiento de saltos para conexiones de red|**tracert**| 
 |Mostrar la configuración del router multidifusión|**mrinfo**| 
-|Habilitar la administración remota del firewall|**netsh advfirewall firewall set Rule Group = "administración remota de Firewall de Windows" New enable = Yes**| 
+|Habilitar la administración remota del firewall|**netsh advfirewall firewall set Rule Group = "administración remota de Firewall de Windows Defender" New enable = Yes**| 
  
 
 ### <a name="updates-error-reporting-and-feedback"></a>Actualizaciones, informes de errores y comentarios

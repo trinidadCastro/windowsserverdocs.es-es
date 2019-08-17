@@ -9,12 +9,12 @@ ms.topic: article
 author: eldenchristensen
 ms.date: 08/05/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 59c04a858ceae44ee51c1de10fc40b27dc22ef90
-ms.sourcegitcommit: e04565e4a1fb7aaed04addd2bc87cc6ec4c82e81
+ms.openlocfilehash: 2f3f8bff39550108b0417b9513bee4a248dca432
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529895"
+ms.locfileid: "69546372"
 ---
 # <a name="storage-spaces-direct-hardware-requirements"></a>Requisitos de hardware de Espacios de almacenamiento directo
 
@@ -86,7 +86,7 @@ Espacios de almacenamiento directo funciona con unidades SATA, SAS o NVMe conect
 - El mismo número y tipos de unidades en cada servidor: consulte [consideraciones sobre la simetría de unidades](drive-symmetry-considerations.md)
 - Los dispositivos de caché deben tener 32 GB o más.
 - Al usar dispositivos de memoria persistentes como dispositivos de caché, debe usar dispositivos de capacidad de NVMe o SSD (no puede usar HDD).
-- El controlador de NVMe es el controlador de Microsoft en caja o actualizado.
+- El controlador de NVMe es el proporcionado por Microsoft que se incluye en Windows. (stornvme. sys)
 - Se recomienda: El número de unidades de capacidad es un múltiplo entero del número de unidades de caché
 - Se recomienda: Las unidades de caché deben tener una gran resistencia de escritura: al menos 3 unidades-escrituras por día (DWPD) o al menos 4 terabytes escritas (TBW) al día; vea Descripción de las [escrituras de unidad al día (DWPD), terabytes escritos (TBW) y el mínimo recomendado para espacios de almacenamiento directo ](https://blogs.technet.microsoft.com/filecab/2017/08/11/understanding-dwpd-tbw/)
 

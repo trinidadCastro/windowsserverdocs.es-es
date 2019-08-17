@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fec546e0608c36f9b3d907e486a0a3a24e7d1728
-ms.sourcegitcommit: e04565e4a1fb7aaed04addd2bc87cc6ec4c82e81
+ms.openlocfilehash: 2a47403d4f88d5487fb4ffb0e35c46438aadcd8a
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: MT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/16/2019
-ms.locfileid: "69529901"
+ms.locfileid: "69546523"
 ---
 # <a name="use-regular-expressions-in-nps"></a>Usar expresiones regulares de NPS
 
@@ -28,7 +28,7 @@ Puede utilizar la tabla siguiente como origen de referencia al crear expresiones
 
 |  Óptico  |                                                                                 Descripción                                                                                  |                                                                 Ejemplo                                                                 |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-|     `\`|                                                              Marca el carácter siguiente como un carácter que debe coincidir.                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
+|     `\ `     |                                                              Marca el carácter siguiente como un carácter que debe coincidir.                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
 |     `^`     |                                                                 Coincide con el principio de la entrada o de la línea.                                                                  |                                                                 &nbsp;                                                                  |
 |     `$`     |                                                                    Coincide con el final de la entrada o de la línea.                                                                     |                                                                 &nbsp;                                                                  |
 |     `*`     |                                                             Coincide con el carácter anterior cero o más veces.                                                              |                                                  `/zo*/ matches either "z" or "zoo."`                                                   |
