@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 date: 01/13/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 71fe969de4d21f7fa3c134b0f80fc7f69e5b2da8
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ebb169ee3b733bd5e7aade6636e078d54a6f09b3
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446706"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546398"
 ---
 # <a name="get-started-with-remote-desktop-on-ios"></a>Introducción a Escritorio remoto en iOS
 
@@ -38,7 +38,7 @@ Usa la siguiente información para comenzar. Asegúrate de consultar la sección
 ### <a name="download-the-remote-desktop-client-from-the-ios-store"></a>Descarga del cliente de Escritorio remoto de la tienda iOS
 Sigue estos pasos para empezar a usar Escritorio remoto en un dispositivo iOS:
 
-1. Descarga el cliente de Escritorio remoto de Microsoft de [iTunes](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8).
+1. Descarga el cliente de Escritorio remoto de Microsoft de [iTunes](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8).
 2. [Configura el equipo para que acepte conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop).
 3. Agrega una [conexión a Escritorio remoto](#add-a-remote-desktop-connection) o un [recurso remoto](#add-a-remote-resource). Usa una conexión para conectarte directamente a un equipo Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado de forma local mediante Conexión de RemoteApp y Escritorio. Esta característica está disponible habitualmente en entornos corporativos.
 
@@ -102,7 +102,7 @@ Para crear una cuenta de usuario:
 1. En el Centro de conexión, pulsa **Configuración**y luego  **Nombres de usuario**.
 2. Pulsa **Agregar cuenta de usuario**.
 3. Escribe la siguiente información:
-   - **Nombre de usuario**: el nombre del usuario que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario user_name@domain.com.
+   - **Nombre de usuario**: el nombre del usuario que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario o user_name@domain.com.
    - **Contraseña**: la contraseña del usuario que has especificado. Todas las cuentas de usuario que quieras guardar para usarlas para las conexiones remotas deben tener una contraseña asociada.
 4. Pulsa **Guardar** y, después, **Configuración**.
 5. Pulsa **Listo** para guardar la configuración nueva.
@@ -201,5 +201,5 @@ Ten en cuenta que, debido a las limitaciones del sistema operativo, las teclas e
 - Símbolos: Alt + Teclas alfanuméricas generará símbolos diferentes en función del idioma configurado
 
 > [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, vete al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
 

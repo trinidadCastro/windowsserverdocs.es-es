@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 10/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: a54ffd3d5596ba8c71deab668e4952da445ca12e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 17df3ca3b88404a2775790d7a4a8206b7aa5befa
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804942"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546343"
 ---
 # <a name="get-started-with-remote-desktop-on-mac"></a>Introducción a Escritorio remoto en Mac
 
@@ -35,7 +35,7 @@ Puedes usar el cliente de Escritorio remoto para Mac para trabajar con aplicacio
 ## <a name="get-the-remote-desktop-client"></a>Obtención del cliente de Escritorio remoto
 Sigue estos pasos para empezar a usar Escritorio remoto en un equipo Mac:
 
-1. Descarga el cliente de Escritorio remoto de Microsoft desde [Mac App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12).
+1. Descarga el cliente de Escritorio remoto de Microsoft desde [Mac App Store](https://itunes.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12).
 2. [Configura tu equipo para que acepte conexiones remotas](remote-desktop-client-faq.md#how-do-i-set-up-a-pc-for-remote-desktop). (Si omites este paso, no te podrás conectar a tu equipo).
 3. Agrega una conexión a Escritorio remoto o un recurso remoto. Usa una conexión para conectarte directamente a un PC Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado de forma local mediante Conexión de RemoteApp y Escritorio. Esta característica está disponible habitualmente en entornos corporativos.
 
@@ -127,7 +127,7 @@ Para crear una cuenta de usuario:
 2. Haz clic en **Agregar cuenta de usuario**.
 3. Escribe la siguiente información:
    - **Nombre de usuario**: el nombre del usuario que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario o user_name@domain.com.
-   - **Contraseña**: la contraseña del usuario que especificaste. Todas las cuentas de usuario que quieras guardar para usarlas para las conexiones remotas deben tener una contraseña asociada.
+   - **Contraseña**: la contraseña del usuario que has especificado. Todas las cuentas de usuario que quieras guardar para usarlas para las conexiones remotas deben tener una contraseña asociada.
    - **Nombre descriptivo**: si usas la misma cuenta de usuario con distintas contraseñas, establece un nombre descriptivo para distinguir dichas cuentas de usuario.
 4. Pulsa **Guardar** y, después, **Configuración**.
 

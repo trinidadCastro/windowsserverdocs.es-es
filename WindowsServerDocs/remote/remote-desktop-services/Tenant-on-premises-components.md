@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: b3eebb38-a835-4fa6-9e41-1966014bf2cb
 author: lizap
 manager: dongill
-ms.openlocfilehash: ff584533eef70144e3bb6ba595fd0f8db89697e9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 191d2247af5d5f63a203415af13f8d3370b3c6f6
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63744043"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546480"
 ---
 # <a name="tenant-on-premises-components"></a>Componentes locales de inquilino
 
@@ -35,8 +35,8 @@ Información adicional:
 [Clientes de Escritorio remoto de Microsoft](https://technet.microsoft.com/library/dn473009.aspx)  
 [Aplicación Escritorio remota para Windows en Microsoft Store](https://apps.microsoft.com/windows/app/remote-desktop/051f560e-5e9b-4dad-8b2e-fa5e0b05a480)  
 [Escritorio remoto de Microsoft; aplicaciones Android en Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android)  
-[Escritorio remoto de Microsoft en Mac App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12)  
-[Escritorio remoto de Microsoft en App Store](https://itunes.apple.com/us/app/microsoft-remote-desktop/id714464092?mt=8)  
+[Escritorio remoto de Microsoft en Mac App Store](https://itunes.apple.com/app/microsoft-remote-desktop/id715768417?mt=12)  
+[Escritorio remoto de Microsoft en App Store](https://itunes.apple.com/app/microsoft-remote-desktop/id714464092?mt=8)  
   
 ##  <a name="active-directory-domain-services"></a>Active Directory Domain Services  
 Algunos inquilinos más grandes y más sofisticados pueden elegir hospedar un servidor de Active Directory Domain Services (AD DS) en su entorno local. En este caso, el servidor de AD DS en el entorno del inquilino normalmente será una réplica del servidor de AD DS que se encuentra en el entorno local del inquilino. Esto se admite al crear una red virtual en el entorno del inquilino y usar la VPN de Azure para crear una conexión de sitio a sitio desde la red local del inquilino a la red virtual del inquilino en el centro de datos de Azure.  
