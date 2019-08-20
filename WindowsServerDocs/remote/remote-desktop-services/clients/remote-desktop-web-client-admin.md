@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: d6761c43eefe04430603a1a16e9e8d256176a736
-ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
+ms.openlocfilehash: d167fb5dfdfbb2a302c2b0fca9286dc034b730e3
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729537"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546333"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configuración del cliente web de Escritorio remoto para los usuarios
 
@@ -273,9 +273,10 @@ De forma predeterminada, los usuarios pueden elegir iniciar los recursos remotos
  De forma predeterminada, el usuario puede seleccionar cualquiera de estos métodos de inicio. Un valor booleano **$true** obligará al usuario a iniciar los recursos en el explorador. Un valor booleano **$false** obligará al usuario a iniciar los recursos mediante la descarga de un archivo .rdp para tratarlo con un cliente RDP instalado localmente.
 
 ### <a name="reset-rdwebclientdeploymentsetting-configurations-to-default"></a>Restablecimiento de las configuraciones RDWebClientDeploymentSetting a los valores predeterminados
-Para restablecer un valor del cliente web en el nivel de implementación a la configuración predeterminada, ejecuta el siguiente cmdlet de PowerShell y utiliza el parámetro --Name para especificar el valor que deseas configurar:
-  
-  ```PowerShell
+
+Para restablecer un valor del cliente web en el nivel de implementación a la configuración predeterminada, ejecuta el siguiente cmdlet de PowerShell y utiliza el parámetro -name para especificar el valor que deseas configurar:
+
+   ```PowerShell
     Reset-RDWebClientDeploymentSetting -Name "LaunchResourceInBrowser"
     Reset-RDWebClientDeploymentSetting -Name "SuppressTelemetry"
    ```

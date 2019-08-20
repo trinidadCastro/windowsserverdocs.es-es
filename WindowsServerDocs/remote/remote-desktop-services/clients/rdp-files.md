@@ -13,18 +13,18 @@ manager: dongill
 ms.author: helohr
 ms.date: 05/20/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 2b11f4356496607d59e6c1b8dff2fb8edc0535cb
-ms.sourcegitcommit: 25376e261ebd5e85355c298cfd0bbd6b578a6a0c
+ms.openlocfilehash: ecc3236d44146015564fa593aaf8a20d3bfa42ff
+ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/02/2019
-ms.locfileid: "68729557"
+ms.lasthandoff: 08/16/2019
+ms.locfileid: "69546466"
 ---
 # <a name="supported-remote-desktop-rdp-file-settings"></a>Configuración admitida del archivo RDP de Escritorio remoto
 
 En la tabla siguiente se incluye la lista de configuraciones admitidas del archivo RDP que puedes usar con los clientes de Windows y HTML. Una “x” en la columna de plataforma indica que la configuración es compatible. Sin embargo, esta no es una lista completa de las configuraciones admitidas para los clientes de Windows y HTML5. Seguiremos actualizando esta tabla para incluir más configuración de RDP compatibles para los clientes de Windows y HTML5, así como los clientes de macOS, iOS y Android.
 
-Para más información sobre cómo usar PowerShell para personalizar las propiedades de RDP, consulta [Customize Remote Desktop Protocol properties for a host pool (Personalización de propiedades del Protocolo de escritorio remoto de un grupo de hosts](https://docs.microsoft.com/azure/virtual-desktop/customize-rdp-properties).
+Consulta [esta documentación](https://go.microsoft.com/fwlink/?linkid=2098243&clcid=0x409) para obtener información sobre cómo usar PowerShell para personalizar las propiedades de RDP para un grupo host.
 
 | Configuración de RDP                        | Descripción            | Valores                 | Valor predeterminado          | Escritorio virtual de Windows | Windows | HTML5   |
 |------------------------------------|------------------------|------------------------|:----------------------:|:-----------------------:|:-------:|:-------:|
