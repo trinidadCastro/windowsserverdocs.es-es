@@ -1,34 +1,34 @@
 ---
 title: Usar expresiones regulares de NPS
-description: En este tema se explica el uso de expresiones regulares para la coincidencia de patrones en NPS en Windows Server 2016. Puede usar esta sintaxis para especificar las condiciones de los atributos de directiva de red y los dominios RADIUS.
+description: En este tema se explica el uso de expresiones regulares para la coincidencia de patrones en NPS en Windows Server. Puede usar esta sintaxis para especificar las condiciones de los atributos de directiva de red y los dominios RADIUS.
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking
 ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
-ms.author: pashort
-author: shortpatti
-ms.openlocfilehash: 2a47403d4f88d5487fb4ffb0e35c46438aadcd8a
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.author: jgerend
+author: jasongerend
+msdate: 08/16/2019
+ms.openlocfilehash: 76615fcccfe06333a76f872b52d2e88182fd60e5
+ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546523"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584791"
 ---
 # <a name="use-regular-expressions-in-nps"></a>Usar expresiones regulares de NPS
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+> Se aplica a:  Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
-En este tema se explica el uso de expresiones regulares para la coincidencia de patrones en NPS en Windows Server 2016. Puede usar esta sintaxis para especificar las condiciones de los atributos de directiva de red y los dominios RADIUS.
+En este tema se explica el uso de expresiones regulares para la coincidencia de patrones en NPS en Windows Server. Puede usar esta sintaxis para especificar las condiciones de los atributos de directiva de red y los dominios RADIUS.
 
 ## <a name="pattern-matching-reference"></a>Referencia de coincidencia de patrones
 
-Puede utilizar la tabla siguiente como origen de referencia al crear expresiones regulares con sintaxis de coincidencia de patrones.
+Puede utilizar la tabla siguiente como origen de referencia al crear expresiones regulares con sintaxis de coincidencia de patrones. Tenga en cuenta que los patrones de expresiones regulares suelen estar rodeados por barras diagonales (/).
 
-
-|  Óptico  |                                                                                 Descripción                                                                                  |                                                                 Ejemplo                                                                 |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-|     `\ `     |                                                              Marca el carácter siguiente como un carácter que debe coincidir.                                                               |                      `/n/ matches the character "n". The sequence /\n/ matches a line feed or newline character.`                       |
+|  Óptico  |  Descripción  |   Ejemplo                                                                 |
+| ----------- | ------------- | ------------------------------------------------------------------------  |
+|     `\ `     | Indica que el carácter que sigue es un carácter especial o que se debe interpretar literalmente.  | `/n/ matches the character "n" while the sequence /\n/ matches a line feed or newline character.`  |
 |     `^`     |                                                                 Coincide con el principio de la entrada o de la línea.                                                                  |                                                                 &nbsp;                                                                  |
 |     `$`     |                                                                    Coincide con el final de la entrada o de la línea.                                                                     |                                                                 &nbsp;                                                                  |
 |     `*`     |                                                             Coincide con el carácter anterior cero o más veces.                                                              |                                                  `/zo*/ matches either "z" or "zoo."`                                                   |

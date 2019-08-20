@@ -12,12 +12,12 @@ ms.assetid: 67087ccb-d820-4642-8ca2-7d2d38714014
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 9fd9cdfaea641a0aee615befb5d400fa45160d97
-ms.sourcegitcommit: 9a4ab3a0d00b06ff16173aed616624c857589459
+ms.openlocfilehash: ba6fbf0237a16451403a7d4618b935c7c01f7064
+ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66828559"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584783"
 ---
 # <a name="move-windows-sbs-2003-settings-and-data-to-the-destination-server-for-windows-server-essentials-migration"></a>Mover la configuración y los datos de Windows SBS 2003 al servidor de destino para la migración a Windows Server Essentials
 
@@ -27,15 +27,15 @@ Para mover la configuración y los datos al servidor de destino, haga lo siguien
 
 1. [Copiar datos en el servidor de destino](#copy-data-to-the-destination-server)
 
-2. [Importar cuentas de usuario de Active Directory al panel de Windows Server Essentials (opcional)](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
+2. [Importar Active Directory cuentas de usuario en el panel de Windows Server Essentials (opcional)](#import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard)
 
-3. [Quitar los scripts de inicio de sesión anteriores (opcionales)](#remove-old-logon-scripts)
+3. [Quitar scripts de inicio de sesión antiguos (opcional)](#remove-old-logon-scripts)
 
-4. [Quitar heredado Active Directory objetos directiva de grupo (opcional)](#remove-legacy-active-directory-group-policy-objects) 
+4. [Quitar objetos de directiva de grupo de Active Directory heredados (opcional)](#remove-legacy-active-directory-group-policy-objects) 
 
 5. [Configurar la red](#configure-the-network) 
 
-6. [Asignar los equipos permitidos a cuentas de usuario](#map-permitted-computers-to-user-accounts)
+6. [Asignar equipos permitidos a cuentas de usuario](#map-permitted-computers-to-user-accounts)
 
 ## <a name="copy-data-to-the-destination-server"></a>Copiar los datos en el servidor de destino
 Antes de copiar los datos del servidor de origen en el servidor de destino, realice las siguientes tareas: 
@@ -57,17 +57,17 @@ Antes de copiar los datos del servidor de origen en el servidor de destino, real
     `robocopy \\<SourceServerName> \<SharedSourceFolderName> \\<DestinationServerName> \<SharedDestinationFolderName> /E /B /COPY:DATSOU /LOG:C:\Copyresults.txt` 
 
 Donde:
- - \<Nombreservidororigen\> es el nombre del servidor de origen
- - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen
- - \<NombreDeServidorDeDestino\> es el nombre del servidor de destino,
- - \<Nombredecarpetadedestinocompartida\> es la carpeta compartida del servidor de destino al que se copiarán los datos. 
+ - \<Nombreservidororigen\> es el nombre del servidor de origen.
+ - \<Nombredecarpetadeorigencompartida\> es el nombre de la carpeta compartida en el servidor de origen.
+ - \<Nombreservidordestino\> es el nombre del servidor de destino.
+ - \<Nombredecarpetadedestinocompartida\> es la carpeta compartida en el servidor de destino en la que se copiarán los datos. 
 
 4. Repita el paso anterior para cada carpeta compartida que vaya a migrar desde el servidor de origen.
 
-## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Importar cuentas de usuario de Active Directory en el panel de Windows Server Essentials
+## <a name="import-active-directory-user-accounts-to-the-windows-server-essentials-dashboard"></a>Importar Active Directory cuentas de usuario en el panel de Windows Server Essentials
  De forma predeterminada, todas las cuentas de usuario creadas en el servidor de origen se migran automáticamente al panel en Windows Server Essentials. Sin embargo, si algunas de las propiedades no cumplen los requisitos de migración, se producirá un error en la migración automática de una cuenta de usuario de Active Directory. Puede usar el siguiente cmdlet de Windows PowerShell para importar usuarios de Active Directory.
 
-#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar una cuenta de usuario de Active Directory en el panel de Windows Server Essentials
+#### <a name="to-import-an-active-directory-user-account-to-the-windows-server-essentials-dashboard"></a>Para importar una cuenta de usuario Active Directory en el panel de Windows Server Essentials
 
 1. Inicie sesión en el servidor de destino como administrador del dominio.
 
@@ -77,8 +77,8 @@ Donde:
 
     `Import-WssUser SamAccountName [AD username]`
 
-## <a name="remove-old-logon-scripts"></a>Quitar los scripts de inicio de sesión anteriores
-Windows SBS 2003 usa scripts de inicio de sesión para algunas tareas, como por ejemplo la instalación de software y la personalización de escritorios. Windows Server Essentials reemplaza los scripts de inicio de sesión de Windows SBS 2003 por una combinación de estas secuencias de comandos y objetos de directiva de grupo.
+## <a name="remove-old-logon-scripts"></a>Quitar scripts de inicio de sesión antiguos
+Windows SBS 2003 usa scripts de inicio de sesión para algunas tareas, como por ejemplo la instalación de software y la personalización de escritorios. Windows Server Essentials reemplaza los scripts de inicio de sesión de Windows SBS 2003 por una combinación de scripts de inicio de sesión y objetos de directiva de grupo.
 
 > [!NOTE]
 > Si ha modificado los scripts de inicio de sesión de Windows SBS 2003 debe cambiar el nombre de los scripts para conservar las personalizaciones.
@@ -98,7 +98,7 @@ Windows SBS 2003 usa scripts de inicio de sesión para algunas tareas, como por 
 5. Repita los pasos 3 y 4 para cada usuario.
 
 ## <a name="remove-legacy-active-directory-group-policy-objects"></a>Quitar objetos de directiva de grupo de Active Directory heredados
-Se actualizan los objetos de directiva de grupo (GPO) para Windows Server Essentials. Son un superconjunto de los GPO de Windows SBS 2003. Para Windows Server Essentials, se debe eliminar manualmente una serie de los filtros de GPO de Windows SBS 2003 y Windows Management Instrumentation (WMI) para evitar conflictos con los filtros de GPO de Windows Server Essentials y WMI. 
+Los objetos de directiva de grupo (GPO) se actualizan para Windows Server Essentials. Son un superconjunto de los GPO de Windows SBS 2003. En Windows Server Essentials, se deben eliminar de forma manual una serie de los GPO de Windows SBS 2003 y los filtros de Instrumental de administración de Windows (WMI) para evitar conflictos con los GPO y los filtros WMI de Windows Server Essentials. 
 
 > [!NOTE]
 > Si ha modificado los objetos de directiva de grupo originales de Windows SBS 2003 debe guardar copias en una ubicación diferente y eliminarlos de Windows SBS 2003.
@@ -109,9 +109,9 @@ Se actualizan los objetos de directiva de grupo (GPO) para Windows Server Essent
 
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**. 
 
-3. En el panel de navegación, haga clic en **administración avanzada de**, haga clic en **Group Policy Management**y, a continuación, haga clic en **bosque: *** < Nombredesudominio\>* . 
+3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _< sudominio\>_ . 
 
-4. Haga clic en **dominios**, haga clic en *< Nombredesudominio\>* y, a continuación, haga clic en **Group Policy Objects**. 
+4. Haga clic en **dominios**, haga clic en *<\>sudominio*y, a continuación, haga clic en **Directiva de grupo objetos**. 
 
 5. Haga clic con el botón secundario en **Directiva de auditoría de Small Business Server**, en **Eliminar** y, a continuación, en **Aceptar**. 
 
@@ -121,7 +121,7 @@ Se actualizan los objetos de directiva de grupo (GPO) para Windows Server Essent
 
  - Directiva de contraseña de dominio de Small Business Server 
 
-Se recomienda que configurar la directiva de contraseñas en Windows Server Essentials para aplicar unas contraseñas seguras. Para configurar la directiva de contraseñas use el panel, que escribe la configuración en la directiva de dominio predeterminada. La configuración de la directiva de contraseña no se escribe en el objeto de directiva de contraseña de dominio de Small Business Server, como ocurría en Windows SBS 2003. 
+Se recomienda configurar la Directiva de contraseñas en Windows Server Essentials para aplicar contraseñas seguras. Para configurar la directiva de contraseñas use el panel, que escribe la configuración en la directiva de dominio predeterminada. La configuración de la directiva de contraseña no se escribe en el objeto de directiva de contraseña de dominio de Small Business Server, como ocurría en Windows SBS 2003. 
 
  - Firewall de conexión a Internet de Small Business Server 
 
@@ -151,9 +151,9 @@ Se recomienda que configurar la directiva de contraseñas en Windows Server Esse
 
 2. Haga clic en **Inicio** y, después, en **Administración de servidores**.
 
-3. En el panel de navegación, haga clic en **administración avanzada de**, haga clic en **Group Policy Management**y, a continuación, haga clic en **bosque: *** < Nombredominiored\>*
+3. En el panel de navegación, haga clic en **Administración avanzada**, en **Administración de directiva de grupo**y, a continuación, en **bosque:** _< nombredominiored\>_
 
-4. Haga clic en **dominios**, haga clic en *< Nombredominiored\>* y, a continuación, haga clic en **filtros WMI**.
+4. Haga clic en **dominios**, haga clic en *<\>nombredominiored*y, a continuación, en **filtros WMI**.
 
 5. Haga clic con el botón secundario en **PostSP2**, haga clic en **Eliminar**y, a continuación, haga clic en **Sí**.
 
@@ -181,7 +181,7 @@ Se recomienda que configurar la directiva de contraseñas en Windows Server Esse
 > Si ha configurado un servidor local de Exchange en un segundo servidor debe asegurarse de que el puerto 25 (para SMTP) también está abierto y de que se redirige a la dirección IP del servidor local de Exchange.
 
 ## <a name="map-permitted-computers-to-user-accounts"></a>Asignar los equipos permitidos a cuentas de usuario
- En Windows SBS 2003, si un usuario se conecta a Acceso Web remoto, se muestran todos los equipos de la red. Puede incluir los equipos a los que el usuario no puede acceder. En Windows Server Essentials, un usuario debe haber asignado explícitamente a un equipo para que se muestre en acceso Web remoto. Todas las cuentas de usuario que se migren desde Windows SBS 2003 deben asignarse a uno o más equipos. 
+ En Windows SBS 2003, si un usuario se conecta a Acceso Web remoto, se muestran todos los equipos de la red. Puede incluir los equipos a los que el usuario no puede acceder. En Windows Server Essentials, un usuario debe estar asignado explícitamente a un equipo para que se muestre en acceso Web remoto. Todas las cuentas de usuario que se migren desde Windows SBS 2003 deben asignarse a uno o más equipos. 
 
 #### <a name="to-map-user-accounts-to-computers"></a>Para asignar las cuentas de usuario a equipos: 
 

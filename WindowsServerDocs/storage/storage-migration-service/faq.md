@@ -1,162 +1,161 @@
 ---
-title: Servicio de migración de almacenamiento preguntas más frecuentes (P+F)
-description: Preguntas más frecuentes acerca del servicio de migración de almacenamiento, por ejemplo, qué archivos se excluyen de las transferencias al migrar desde un servidor a otro.
+title: Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
+description: Preguntas más frecuentes sobre el servicio de migración de almacenamiento, como qué archivos se excluyen de las transferencias al migrar de un servidor a otro.
 author: nedpyle
 ms.author: nedpyle
 manager: siroy
-ms.date: 06/04/2019
+ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 8f0f16f14ccf9099af8ff8bb8b27209c75c87cfc
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: f086143ae2e02a2d049189ff248e02fc44fe3cb2
+ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284467"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584801"
 ---
-# <a name="storage-migration-service-frequently-asked-questions-faq"></a>Servicio de migración de almacenamiento preguntas más frecuentes (P+F)
+# <a name="storage-migration-service-frequently-asked-questions-faq"></a>Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
 
-Este tema contiene respuestas a las preguntas más frecuentes (P+f) sobre el uso de [Storage Migration Service](overview.md) para migrar los servidores.
+Este tema contiene respuestas a las preguntas más frecuentes (p + f) sobre el uso del [servicio de migración de almacenamiento](overview.md) para migrar servidores.
 
-## <a name="excluded-files"></a> ¿Qué archivos y carpetas se excluirán de las transferencias?
+## <a name="what-files-and-folders-are-excluded-from-transfers"></a>¿Qué archivos y carpetas se excluyen de las transferencias?
 
-Servicio de migración de almacenamiento no transferencia de archivos o carpetas que sabemos que podría interferir con la operación de Windows. En concreto, aquí es lo que nos no transferir o mover a la carpeta PreExistingData en el destino:
+El servicio de migración de almacenamiento no transferirá los archivos o carpetas que sabemos que podrían interferir con el funcionamiento de Windows. En concreto, aquí se indica lo que no se transferirá ni se moverá a la carpeta PreExistingData en el destino:
 
-- Programa de Windows, archivos, archivos de programa (x86), datos de programa, los usuarios
-- $Recycle.bin, recycler, la Papelera de reciclaje, la información de volumen del sistema, $UpgDrv$, $SysReset, Windows $. ~ BT, Windows $. ~ LS, Windows.old, arranque, documentos, configuración y recuperación
-- Pagefile.sys, hiberfil.sys, swapfile.sys, winpepge.sys, config.sys, bootsect.bak, bootmgr, bootnxt
-- Los archivos o carpetas en el servidor de origen que entra en conflicto con las carpetas excluidas de la de destino. <br>Por ejemplo, si hay una carpeta N:\Windows en el origen y se asignan a la C:\ volumen en el destino, no se transfieren, independientemente de lo que lo contiene, ya que podría interferir con la carpeta C:\Windows del sistema en el destino.
+- Windows, archivos de programa, archivos de programa (x86), datos de programa, usuarios
+- $Recycle. bin, Recycler, reciclado, información del volumen del sistema, $UpgDrv $, $SysReset, $Windows. ~ BT, $Windows. ~ LS, Windows. Old, boot, Recovery, Documents and Settings
+- pagefile. sys, Hiberfil. sys, el archivo de paginación. sys, winpepge. sys, config. sys, Bootsect. bak, BOOTMGR, bootnxt
+- Cualquier archivo o carpeta del servidor de origen que esté en conflicto con las carpetas excluidas en el destino. <br>Por ejemplo, si hay una carpeta N:\Windows en el origen y se asigna a C:\ volumen en el destino, no se transferirá, independientemente de lo que contenga, ya que interferiría con la carpeta del sistema C:\Windows. en el destino.
 
-## <a name="domain-migration"></a> ¿Se admiten las migraciones de dominio?
+## <a name="are-domain-migrations-supported"></a>¿Se admiten las migraciones de dominio?
 
-Servicio de migración de almacenamiento no permite migrar entre dominios de Active Directory. Las migraciones entre servidores siempre unirá el servidor de destino al mismo dominio. Puede usar las credenciales de la migración desde diferentes dominios del bosque de Active Directory. El servicio de migración de almacenamiento es compatible con migración entre grupos de trabajo.  
+El servicio de migración de almacenamiento no permite la migración entre dominios Active Directory. Las migraciones entre servidores siempre unirán el servidor de destino al mismo dominio. Puede utilizar las credenciales de migración de distintos dominios en el bosque de Active Directory. El servicio de migración de almacenamiento admite la migración entre grupos de trabajo.  
 
-## <a name="cluster-support"></a> ¿Se admiten como orígenes o destinos clústeres?
+## <a name="are-clusters-supported-as-sources-or-destinations"></a>¿Se admiten clústeres como orígenes o destinos?
 
-Servicio de migración de almacenamiento no actualmente la migración entre clústeres en Windows Server 2019. Tenemos previsto agregar compatibilidad con clústeres en una versión futura del servicio de migración de almacenamiento.
+El servicio de migración de almacenamiento no se migra actualmente entre clústeres en Windows Server 2019. Tenemos previsto agregar compatibilidad con clústeres en una versión futura del servicio de migración de almacenamiento.
 
-## <a name="local-principals"></a> ¿No grupos locales y migran los usuarios locales?
+## <a name="do-local-groups-and-local-users-migrate"></a>¿Migran los grupos locales y los usuarios locales?
 
-Servicio de migración de almacenamiento actualmente no migrar usuarios locales o grupos locales de Windows Server 2019. Tenemos previsto agregar compatibilidad con usuario local y migración de grupo local en una versión futura del servicio de migración de almacenamiento.
+El servicio de migración de almacenamiento no migra actualmente usuarios locales o grupos locales en Windows Server 2019. Tenemos previsto agregar compatibilidad con la migración de usuarios locales y grupos locales en una futura versión del servicio de migración de almacenamiento.
 
-## <a name="domain-controller"></a> ¿Se admite la migración del controlador de dominio?
+## <a name="is-domain-controller-migration-supported"></a>¿Se admite la migración del controlador de dominio?
 
-Servicio de migración de almacenamiento actualmente no migrar controladores de dominio de Windows Server 2019. Como alternativa, siempre que tengan más de un controlador de dominio en el dominio de Active Directory, disminuir de nivel el controlador de dominio antes de migrarlos, debe promoverla el destino una vez completada la implantación. Tenemos previsto agregar compatibilidad con la migración de controlador de dominio en una versión futura del servicio de migración de almacenamiento.
+El servicio de migración de almacenamiento no migra actualmente controladores de dominio en Windows Server 2019. Como solución alternativa, siempre que tenga más de un controlador de dominio en el dominio Active Directory, disminuya el nivel del controlador de dominio antes de migrarlo y, a continuación, promueva el destino después de que se complete el corte. Tenemos previsto agregar compatibilidad con la migración de controladores de dominio en una futura versión del servicio de migración de almacenamiento.
 
-## <a name="share-attributes"></a> ¿Los atributos que se migran mediante el servicio de migración de almacenamiento?
+## <a name="what-attributes-are-migrated-by-the-storage-migration-service"></a>¿Qué atributos migra el servicio de migración de almacenamiento?
 
-Servicio de migración de almacenamiento migra todos los indicadores, configuración y seguridad de recursos compartidos de SMB. Esa lista de marcas que migra el servicio de migración de almacenamiento incluye:
+El servicio de migración de almacenamiento migra todas las marcas, la configuración y la seguridad de los recursos compartidos de SMB. La lista de marcas que migra el servicio de migración de almacenamiento incluye:
 
-    - Estado del recurso compartido
+    - Estado compartido
     - Tipo de disponibilidad
     - Tipo de recurso compartido
-    - Modo de enumeración de la carpeta *(también conocido como Access según la enumeración o ABE)*
+    - Modo de enumeración *de carpetas (también conocido como enumeración basada en el acceso o Abe)*
     - Modo de almacenamiento en caché
     - Modo de concesión
     - Instancia de SMB
     - Tiempo de espera de CA
     - Límite de usuarios simultáneos
-    - Disponibilidad continua
+    - Disponible continuamente
     - Descripción           
     - Cifrar datos
     - Comunicación remota de identidad
     - Infraestructura
-    - Nombre
+    - NOMBRE
     - Path
-    - El ámbito
+    - Ámbito
     - Nombre de ámbito
     - Descriptor de seguridad
     - Instantánea
-    - Especial
+    - Special
     - Temporal
 
-## <a name="move-db"></a> ¿Puedo mover la base de datos del servicio de migración de almacenamiento?
+## <a name="can-i-consolidate-multiple-servers-into-one-server"></a>¿Puedo consolidar varios servidores en un solo servidor?
 
-El servicio de migración de almacenamiento usa una base de datos de almacenamiento extensible (ESE) del motor que se instala de forma predeterminada en la carpeta c:\programdata\microsoft\storagemigrationservice oculto. Esta base de datos crecerá a medida que se agregan los trabajos y las transferencias se completan y pueden consumir el espacio en disco significativo después de migrar millones de archivos si no elimina los trabajos. Si necesita mover la base de datos, realice los pasos siguientes:
+La versión del servicio de migración de almacenamiento incluida en Windows Server 2019 no admite la consolidación de varios servidores en un solo servidor. Un ejemplo de consolidación sería la migración de tres servidores de origen independientes, que pueden tener los mismos nombres de recursos compartidos y rutas de acceso de archivo local: en un único servidor nuevo que virtualizó esas rutas y recursos compartidos para evitar cualquier superposición o colisión, respondiendo los tres nombres y direcciones IP de los servidores anteriores. Se puede Agregar esta funcionalidad en una versión futura del servicio de migración de almacenamiento. 
 
-1. Detenga el servicio "Servicio de migración de almacenamiento" en el equipo de orchestrator.
-2. Tomar posesión de la `%programdata%/Microsoft/StorageMigrationService` carpeta
-3. Agregue su cuenta de usuario tiene control total sobre el se comparten y todos sus archivos y subcarpetas.
-4. Mover la carpeta a otra unidad en el equipo de orchestrator.
-5. Establezca el valor REG_SZ de registro siguiente:
+## <a name="can-i-migrate-from-sources-other-than-windows-server"></a>¿Puedo migrar desde orígenes distintos de Windows Server?
 
-    DatabasePath HKEY_Local_Machine\Software\Microsoft\SMS = *ruta de acceso a la nueva carpeta de base de datos en un volumen diferente* . 
-6. Asegúrese de que el sistema tenga control total a todos los archivos y subcarpetas de la carpeta
-7. Quitar sus propios permisos de cuentas.
-8. Inicie el servicio "Servicio de migración de almacenamiento".
+La versión del servicio de migración de almacenamiento incluida en Windows Server 2019 admite la migración desde Windows Server 2003 y los sistemas operativos posteriores. También puede migrar el almacenamiento desde un servidor o dispositivo Linux que use Samba. para ello, ejecute el servicio de migración de almacenamiento en un servidor que ejecute Windows Server, versión 1903 o posterior.
 
-## <a name="non-windows"></a> ¿Puedo migrar desde orígenes que no sean de Windows Server?
+## <a name="can-i-migrate-previous-file-versions"></a>¿Puedo migrar las versiones anteriores de los archivos?
 
-La versión del servicio de migración de almacenamiento se incluye en Windows Server 2019 admite la migración desde Windows Server 2003 y sistemas operativos posteriores. Actualmente no puede migrar desde Linux, Samba, NetApp, EMC u otros dispositivos de almacenamiento SAN y NAS. Tenemos previsto permitir esto en una versión futura del servicio de migración de almacenamiento, a partir de soporte técnico de Linux Samba.
+La versión del servicio de migración de almacenamiento incluida en Windows Server 2019 no admite la migración de versiones anteriores (realizadas con el servicio de instantáneas de volumen) de archivos. Solo se migrará la versión actual. 
 
-## <a name="previous-versions"></a> ¿Puedo migrar versiones anteriores del archivo?
+## <a name="optimizing-inventory-and-transfer-performance"></a>Optimizar el rendimiento del inventario y de la transferencia
 
-La versión del servicio de migración de almacenamiento se incluye en Windows Server 2019 no es compatible con migración versiones anteriores (realizadas con el servicio de instantáneas de volumen) de archivos. Solo la versión actual se migrará. 
+El servicio de migración de almacenamiento contiene un motor de lectura y copia multiproceso denominado servicio de proxy de migración de almacenamiento que se ha diseñado para que sea rápido y, además, ofrece una fidelidad de datos perfecta que carece de muchas herramientas de copia de archivos. Aunque la configuración predeterminada será óptima para muchos clientes, hay formas de mejorar el rendimiento de SMS durante el inventario y la transferencia.
 
-## <a name="ntfs-refs"></a> ¿Puedo migrar de NTFS a REFS?
+- **Use Windows Server 2019 para el sistema operativo de destino.** Windows Server 2019 contiene el servicio de proxy del servicio de migración de almacenamiento. Al instalar esta característica y migrar a destinos de Windows Server 2019, todas las transferencias funcionan como línea directa de visión entre el origen y el destino. Este servicio se ejecuta en el orquestador durante la transferencia si los equipos de destino son Windows Server 2012 R2 o Windows Server 2016, lo que significa que las transferencias de doble salto y serán mucho más lentas. Si hay varios trabajos que se ejecutan con los destinos Windows Server 2012 R2 o Windows Server 2016, el orquestador se convertirá en un cuello de botella. 
 
-La versión del servicio de migración de almacenamiento se incluye en Windows Server 2019 no admite la migración de NTFS a los sistemas de archivos REFS. Puede migrar de NTFS a NTFS y REFS Refs. Esto es así por diseño, debido a las numerosas diferencias de funcionalidad, metadatos y otros aspectos que ReFS no duplique de NTFS. ReFS está diseñado como un sistema de archivos de carga de trabajo de aplicación, no es un sistema de archivos generales. Para obtener más información, consulte [información general del sistema de archivos resistente (ReFS)](../refs/refs-overview.md)
-
-## <a name="consolidate-servers"></a> ¿Puedo consolidar varios servidores en un servidor?
-
-No admite la versión del servicio de migración de almacenamiento se incluye en Windows Server 2019 consolidar varios servidores en un servidor. Muestra un ejemplo de consolidación podría migrar tres servidores de origen independiente - que pueden tener los mismos nombres de recurso compartido y las rutas de acceso de archivo local: en un único servidor nuevo que esas rutas de acceso y recursos compartidos para evitar colisiones, ni se superponen a virtualizar, a continuación, responden las tres los nombres de los servidores anteriores y la dirección IP. Podemos agregar esta funcionalidad en una versión futura del servicio de migración de almacenamiento.  
-
-## <a name="optimize"></a> Optimizar el rendimiento de inventario y la transferencia
-
-El servicio de migración de almacenamiento contiene una lectura multiproceso y el motor de copia llamado servicio de Proxy de servicio de migración de almacenamiento que se ha diseñado para ser rápido así como llevar datos perfectos que carecen de fidelidad en muchas herramientas de copia de archivo. Aunque la configuración predeterminada sea óptima para muchos clientes, hay formas de mejorar el rendimiento de SMS durante el inventario y la transferencia.
-
-- **Usar Windows Server 2019 para el sistema operativo de destino.** Windows Server 2019 contiene el servicio de Proxy de servicio de migración de almacenamiento. Al instalar esta característica y migrar a Windows Server 2019 destinos, todas las transferencias funcionan como línea de visión directa entre el origen y destino. Este servicio se ejecuta en el orquestador durante la transferencia si los equipos de destino son de Windows Server 2012 R2 o Windows Server 2016, lo que significa que a las transferencias de salto doble y serán mucho más lentos. Si hay varios trabajos que se ejecutan con Windows Server 2012 R2 o Windows Server 2016 destinos, el orquestador se convertirá en un cuello de botella. 
-
-- **Modificar los subprocesos de transferencia de forma predeterminada.** El servicio de Proxy de servicio de migración de almacenamiento copia 8 archivos simultáneamente en un trabajo determinado. Puede aumentar el número de subprocesos de copia simultáneas ajustando el nombre del valor REG_DWORD del registro siguiente en formato decimal en cada nodo ejecuta al Proxy de SMS:
+- **Modifique los subprocesos de transferencia predeterminados.** El servicio del proxy del servicio de migración de almacenamiento copia ocho archivos simultáneamente en un trabajo determinado. Puede aumentar el número de subprocesos de copia simultáneos si ajusta el siguiente nombre de valor REG_DWORD del registro en decimal en cada nodo que ejecute el proxy de SMS:
 
     HKEY_Local_Machine\Software\Microsoft\SMSProxy FileTransferThreadCount
 
-   El intervalo válido es 1 y 128 en Windows Server 2019. Después de cambiar debe reiniciar el servicio de Proxy de servicio de migración de almacenamiento en todos los equipos que participan en una migración. Sea precavido al usar esta opción. configuración posterior puede requerir núcleos adicionales, el rendimiento de almacenamiento y ancho de banda de red. Si se establece demasiado alto puede provocar un rendimiento reducido en comparación con la configuración predeterminada. La capacidad para cambiar la configuración de subprocesos basada en CPU, memoria, red y almacenamiento de heurísticamente está prevista para una versión posterior de SMS.
+   El intervalo válido es de 1 a 128 en Windows Server 2019. Después de cambiar, debe reiniciar el servicio del proxy del servicio de migración de almacenamiento en todos los equipos que participan en una migración. Tenga cuidado con esta configuración; Si se establece en un valor superior, es posible que se necesiten núcleos adicionales, rendimiento de almacenamiento y ancho de banda de red. Si se establece en un valor demasiado alto, se puede producir un rendimiento reducido en comparación con la configuración predeterminada. La capacidad de cambiar la configuración de subprocesos de forma heurística en función de la CPU, la memoria, la red y el almacenamiento está prevista para una versión posterior de SMS.
 
-- **Agregue los núcleos y memoria.**  Se recomienda encarecidamente que los equipos de origen, orchestrator y destino tienen al menos dos núcleos de procesador o dos vCPU y significativamente más pueden ayudar al rendimiento de inventario y la transferencia, especialmente cuando se combina con FileTransferThreadCount (arriba). Al transferir los archivos que son más grandes que los formatos Office habituales (gigabytes o superior) se beneficiará de rendimiento de la transferencia más memoria que el valor mínimo de 2GB.
+- **Agregue núcleos y memoria.**  Se recomienda encarecidamente que los equipos de origen, orquestador y destino tengan al menos dos núcleos de procesador o dos vCPU, y más pueden ayudar significativamente al inventario y a la transferencia de rendimiento, especialmente cuando se combinan con FileTransferThreadCount (arriba). Cuando se transfieren archivos que son mayores que los formatos de oficina habituales (gigabytes o superior), el rendimiento de la transferencia se beneficiará de más memoria que los 2 GB como mínimo.
 
-- **Crear varios trabajos.** Al crear un trabajo con varios orígenes de servidor, se contacta con cada servidor en modo serie para el inventario de transferencia y el traslado. Esto significa que cada servidor debe completar su fase antes de inicia otro servidor. Para ejecutar más servidores en paralelo, simplemente cree varios trabajos, con cada trabajo que contiene solo uno servidores. SMS admite hasta 100 que se ejecutan simultáneamente los trabajos, lo que significa que una sola orchestrator puede establecer paralelismos en varios equipos de destino de Windows Server 2019. No recomendamos ejecutar varios trabajos paralelos si los equipos de destino son Windows Server 2016 o Windows Server 2012 R2 como sin que el servicio de proxy SMS que se ejecutan en el destino, el orquestador debe realizar todas las transferencias propio y podría convertirse en un cuello de botella. La capacidad de servidores para ejecutarlas en paralelo en un único trabajo es una característica que vamos a agregar en una versión posterior de SMS.
+- **Crear varios trabajos.** Al crear un trabajo con varios orígenes de servidor, se Contacta con cada servidor en serie para el inventario, la transferencia y el traslado. Esto significa que cada servidor debe completar su fase antes de que se inicie otro servidor. Para ejecutar más servidores en paralelo, simplemente cree varios trabajos, con cada trabajo que contenga solo un servidor. SMS admite hasta 100 trabajos que se ejecutan simultáneamente, lo que significa que un único orquestador puede paralelizar muchos equipos de destino de Windows Server 2019. No se recomienda ejecutar varios trabajos paralelos si los equipos de destino son Windows Server 2016 o Windows Server 2012 R2, ya que sin que el servicio de proxy de SMS se ejecute en el destino, el orquestador debe realizar todas las transferencias y convertirse en cuello. La capacidad de los servidores de ejecutarse en paralelo dentro de un solo trabajo es una característica que tenemos previsto agregar en una versión posterior de SMS.
 
-- **Usar SMB 3 con redes RDMA.** Si se transfiere de un Windows Server 2012 o posterior equipo de origen, SMB 3.x admite SMB directo el modo y las redes RDMA. RDMA mueve costo de CPU de la mayoría de transferencia desde la placa base CPU a incorporarlos procesadores NIC, lo que reduce la latencia y el servidor de la CPU. Además, las redes RDMA como ROCE y iWARP suelen tener un ancho de banda mucho más alto que típico TCP/ethernet, incluyendo 25, 50 y velocidades de 100Gb por interfaz. Mediante SMB directo, normalmente, mueve el límite de velocidad de transferencia de la red hasta el almacenamiento de información.   
+- **Use SMB 3 con redes RDMA.** Si se transfiere desde un equipo de origen con Windows Server 2012 o posterior, SMB 3. x es compatible con la red RDMA y el modo SMB directo. RDMA mueve la mayor parte del costo de la CPU de la transferencia de las CPU de la placa base a la incorporación de procesadores NIC, lo que reduce la latencia y el uso de la CPU Además, las redes RDMA como ROCE y iWARP suelen tener un ancho de banda considerablemente superior al de TCP/Ethernet típico, que incluye 25, 50 y 100 GB de velocidad por interfaz. El uso de SMB directo normalmente mueve el límite de velocidad de transferencia de la red al almacenamiento en sí.   
 
-- **Utiliza 3 SMB multicanal.** Si la transferencia de un Windows Server 2012 o de equipo de origen más adelante, SMB 3.x admite multicanal copias que pueden mejorar considerablemente el archivo rendimiento de la copia. Esta característica funciona automáticamente siempre que tengan el origen y destino:
+- **Use SMB 3 multicanal.** Si se transfiere desde un equipo de origen con Windows Server 2012 o posterior, SMB 3. x admite copias multicanal que pueden mejorar considerablemente el rendimiento de la copia de archivos. Esta característica funciona automáticamente siempre y cuando el origen y el destino tengan:
 
    - Adaptadores de red múltiples
-   - Uno o más adaptadores de red que admiten el escalado de lado de recepción (RSS)
-   - Uno de varios adaptadores de red que se configuran mediante la formación de equipos NIC
+   - Uno o más adaptadores de red que admiten el ajuste de escala en lado de recepción (RSS)
+   - Uno o más adaptadores de red que se configuran mediante la formación de equipos NIC
    - Un adaptador de red o más que admita RDMA
 
-- **Actualizar los controladores.** Según corresponda, instale el almacenamiento de proveedor más reciente y firmware de alojamiento y controladores, controladores HBA más recientes de proveedor, firmware de BIOS o UEFI proveedor más reciente, controladores de red de proveedor más recientes y controladores más recientes de conjunto de chips de placa base en el origen, destino y de orchestrator servidores. Reinicie los nodos según sea necesario. Consulte la documentación del proveedor de hardware para configurar el almacenamiento compartido y el hardware de red.
+- **Actualice los controladores.** Según corresponda, instale el firmware y los controladores más recientes de almacenamiento y alojamiento de proveedores, los controladores de HBA de proveedor más recientes, el firmware UEFI o BIOS de proveedor más reciente, los últimos controladores de red de proveedor y los controladores de conjunto de chips de placa base más recientes en origen, destino servidores. Reinicie los nodos según sea necesario. Consulte la documentación del proveedor de hardware para configurar el almacenamiento compartido y el hardware de red.
 
-- **Habilitar el procesamiento de alto rendimiento.** Asegúrese de que la configuración de BIOS o UEFI para los servidores permite un alto rendimiento; por ejemplo, deshabilite el estado C, establezca la velocidad de QPI, habilite NUMA y configure la frecuencia de la memoria en el valor más elevado. Asegúrese de que la administración de energía en Windows Server se establece en alto rendimiento. Reinicie si es necesario. No olvide devolver estos Estados adecuada después de completar la migración. 
+- **Habilitar el procesamiento de alto rendimiento.** Asegúrese de que la configuración de BIOS o UEFI para los servidores permite un alto rendimiento; por ejemplo, deshabilite el estado C, establezca la velocidad de QPI, habilite NUMA y configure la frecuencia de la memoria en el valor más elevado. Asegúrese de que la administración de energía en Windows Server está establecida en alto rendimiento. Reinicie si es necesario. No olvide devolverlos a los Estados correspondientes después de completar la migración. 
 
-- **Ajustar el hardware** revisión el [Performance Tuning directrices para Windows Server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/) para optimizar el orquestador y equipos de destino que ejecuta Windows Server 2019 y Windows Server 2016. El [ajuste de rendimiento del subsistema de red](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) sección contiene información especialmente valiosa.
+- **Ajustar hardware** Revise las [directrices para la optimización del rendimiento de Windows server 2016](https://docs.microsoft.com/windows-server/administration/performance-tuning/) para optimizar el orquestador y los equipos de destino que ejecutan windows Server 2019 y windows Server 2016. La sección de [ajuste del rendimiento del subsistema de red](https://docs.microsoft.com/windows-server/networking/technologies/network-subsystem/net-sub-performance-tuning-nics) contiene información especialmente valiosa.
 
-- **Usar el almacenamiento más rápido.** Aunque puede ser difícil de actualizar la velocidad de almacenamiento del equipo de origen, debe asegurarse que el almacenamiento de destino sea al menos tan rápido en el rendimiento de E/S de escritura, como el origen está en el rendimiento de E/S de lectura para asegurarse de que no hay ningún cuello de botella innecesario en las transferencias. Si el destino es una máquina virtual, asegúrese de que, al menos para los fines de migración, se ejecuta en la capa de almacenamiento más rápida de los hosts de hipervisor, como en el nivel de flash o con el uso de memoria flash reflejado o espacios híbrida de clústeres de HCI directa de espacios de almacenamiento. Una vez completada la migración de SMS la máquina virtual puede ser en vivo migra a un host o un nivel más lento.
+- **Use un almacenamiento más rápido.** Aunque puede ser difícil actualizar la velocidad de almacenamiento del equipo de origen, debe asegurarse de que el almacenamiento de destino sea al menos tan rápido como el rendimiento de e/s de escritura, ya que el origen está en el rendimiento de e/s de lectura para asegurarse de que no hay ningún cuello de botella innecesario en las transferencias. Si el destino es una máquina virtual, asegúrese de que, al menos para los fines de la migración, se ejecute en la capa de almacenamiento más rápida de los hosts del hipervisor, como en el nivel de Flash o en los clústeres de HCI de Espacios de almacenamiento directo que usan espacios de ejecución o de todo el flash reflejados. Una vez completada la migración de SMS, la máquina virtual se puede migrar en vivo a un nivel o host más lento.
 
-- **Actualización de antivirus.** Asegúrese siempre de origen y destino están ejecutando la versión de revisión más reciente del software antivirus para asegurar una sobrecarga de rendimiento mínimo. Como una prueba, puede *temporalmente* excluir el examen de carpetas es realizar un inventario o migrar los servidores de origen y destino. Si se ha mejorado el rendimiento de la transferencia, póngase en contacto con su proveedor de software antivirus para obtener instrucciones, o para una versión actualizada del software antivirus o una explicación de degradación del rendimiento esperado.
+- **Actualizar antivirus.** Asegúrese siempre de que el origen y el destino ejecutan la última versión de revisión del software antivirus para garantizar una sobrecarga de rendimiento mínima. Como prueba, puede excluir *temporalmente* el examen de las carpetas de las que está realizando un inventario o de la migración en los servidores de origen y de destino. Si se mejora el rendimiento de la transferencia, póngase en contacto con el proveedor del software antivirus para obtener instrucciones o una versión actualizada del software antivirus o una explicación de la degradación del rendimiento esperado.
 
-## <a name="give-feedback"></a> ¿Qué opciones tengo para proporcionar comentarios, archivar errores, u obtener soporte técnico?
+## <a name="can-i-migrate-from-ntfs-to-refs"></a>¿Puedo migrar de NTFS a REFS?
 
-Para enviar comentarios sobre el servicio de migración de almacenamiento:
+La versión del servicio de migración de almacenamiento incluida en Windows Server 2019 no admite la migración desde los sistemas de archivos NTFS a REFS. Puede migrar de NTFS a NTFS y REFS a ReFS. Esto es así por diseño, debido a las numerosas diferencias en la funcionalidad, los metadatos y otros aspectos que ReFS no duplica de NTFS. ReFS está pensado como un sistema de archivos de carga de trabajo de la aplicación, no como un sistema de archivos general. Para obtener más información, vea [información general sobre el sistema de archivos resistente (ReFS)](../refs/refs-overview.md) . 
 
-- Use la herramienta Centro de comentarios incluida en Windows 10, haga clic en "Sugerir una característica" y especificar la categoría de "Windows Server" y subcategoría de "Migración de almacenamiento"
-- Use la [UserVoice de Windows Server](https://windowsserver.uservoice.com) sitio
-- Correo electrónico smsfeed@microsoft.com
+## <a name="can-i-move-the-storage-migration-service-database"></a>¿Puedo trasladar la base de datos del servicio de migración de almacenamiento?
 
-Errores de archivo:
+El servicio de migración de almacenamiento utiliza una base de datos del motor de almacenamiento extensible (ESE) que se instala de forma predeterminada en la carpeta c:\programdata\microsoft\storagemigrationservice oculta. Esta base de datos crecerá a medida que se agreguen los trabajos y se completen las transferencias, y puede consumir mucho espacio en la unidad después de migrar millones de archivos si no se eliminan los trabajos. Si la base de datos debe moverse, realice los pasos siguientes:
 
-- Use la herramienta Centro de comentarios incluida en Windows 10, haga clic en "Notificar un problema" y especificar la categoría de "Windows Server" y subcategoría de "Migración de almacenamiento"
-- Abra una incidencia de soporte técnico a través de [Microsoft Support](https://support.microsoft.com)
+1. Detenga el servicio de "servicio de migración de almacenamiento" en el equipo de Orchestrator.
+2. Tomar posesión de la `%programdata%/Microsoft/StorageMigrationService` carpeta
+3. Agregue su cuenta de usuario para tener control total sobre ese recurso compartido y todos sus archivos y subcarpetas.
+4. Mueva la carpeta a otra unidad del equipo del orquestador.
+5. Establezca el siguiente valor REG_SZ del registro:
+
+    HKEY_Local_Machine\Software\Microsoft\SMS DatabasePath = *path a la nueva carpeta de base de datos en un volumen diferente* . 
+6. Asegúrese de que el sistema tenga control total sobre todos los archivos y subcarpetas de la carpeta.
+7. Quite los permisos de sus propias cuentas.
+8. Inicie el servicio de "servicio de migración de almacenamiento".
+
+## <a name="give-feedback"></a>¿Cuáles son mis opciones para proporcionar comentarios, errores de archivos u obtener soporte técnico?
+
+Para proporcionar comentarios sobre el servicio de migración de almacenamiento:
+
+- Use la herramienta centro de comentarios que se incluye en Windows 10, haciendo clic en "sugerir una característica" y especificando la categoría de "Windows Server" y la subcategoría de "migración de almacenamiento".
+- Usar el sitio web de [Windows Server UserVoice](https://windowsserver.uservoice.com)
+- Correo electrónicosmsfeed@microsoft.com
+
+Para archivos errores:
+
+- Use la herramienta centro de comentarios que se incluye en Windows 10, haciendo clic en "Notificar un problema" y especificando la categoría de "Windows Server" y la subcategoría de "migración de almacenamiento".
+- Abra un caso de soporte técnico a través de [soporte técnico de Microsoft](https://support.microsoft.com)
 
 Para obtener soporte técnico:
 
- - Publicar una pregunta en el [comunidad tecnológica de Windows Server](https://techcommunity.microsoft.com/t5/Windows-Server/ct-p/Windows-Server)
- - Publicar en el [foro de Technet de Windows Server de 2019](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc) 
- - Abra una incidencia de soporte técnico a través de [Microsoft Support](https://support.microsoft.com)
-
+ - Publicar una pregunta en la [comunidad de tecnología de Windows Server](https://techcommunity.microsoft.com/t5/Windows-Server/ct-p/Windows-Server)
+ - Publicación en el [Foro de TechNet de Windows Server 2019](https://social.technet.microsoft.com/Forums/en-US/home?forum=ws2019&filter=alltypes&sort=lastpostdesc) 
+ - Abra un caso de soporte técnico a través de [soporte técnico de Microsoft](https://support.microsoft.com)
 
 ## <a name="see-also"></a>Vea también
 
-- [Información general sobre el servicio de migración de almacenamiento](overview.md)
+- [Información general del servicio de migración de almacenamiento](overview.md)

@@ -1,19 +1,19 @@
 ---
-Title: Información general del servicio de migración de almacenamiento
+title: Información general del servicio de migración de almacenamiento
 description: El servicio de migración de almacenamiento facilita la migración de servidores a una versión más reciente de Windows Server. Proporciona una herramienta gráfica que hace un inventario de los datos en los servidores y, a continuación, transfiere los datos y la configuración a los servidores más recientes, todo ello sin que los usuarios o las aplicaciones tengan que cambiar nada.
 author: jasongerend
 ms.author: jgerend
 manager: elizapo
-ms.date: 05/21/2019
+ms.date: 08/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 8118b58268e88a173a6219631e109ed1c436fea0
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: dae64b81c48b9ae6bf84c3558066ebbdf9c06ace
+ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560555"
+ms.lasthandoff: 08/19/2019
+ms.locfileid: "69584827"
 ---
 # <a name="storage-migration-service-overview"></a>Información general del servicio de migración de almacenamiento
 
@@ -58,7 +58,7 @@ Para usar el servicio de migración de almacenamiento, necesita lo siguiente:
 
 Se recomienda encarecidamente que el orquestador y los equipos de destino tengan al menos dos núcleos o dos vCPU, y al menos 2 GB de memoria. Las operaciones de inventario y transferencia son significativamente más rápidas con más procesadores y memoria.
 
-### <a name="security-requirements"></a>Requisitos de seguridad
+### <a name="security-requirements-the-storage-migration-service-proxy-service-and-firewall-ports"></a>Requisitos de seguridad, el servicio de proxy del servicio de migración de almacenamiento y los puertos del firewall
 
 - Una cuenta de migración que sea un administrador en los equipos de origen y el equipo de Orchestrator.
 - Una cuenta de migración que sea un administrador en los equipos de destino y el equipo de Orchestrator.
@@ -70,7 +70,9 @@ Se recomienda encarecidamente que el orquestador y los equipos de destino tengan
   - Instrumental de administración de Windows (WMI-In)
   
   > [!TIP]
-  > Al instalar el servicio de servidor proxy de migración de almacenamiento en un equipo con Windows Server 2019, se abren automáticamente los puertos de Firewall necesarios en dicho equipo.
+  > Al instalar el servicio de servidor proxy de migración de almacenamiento en un equipo con Windows Server 2019, se abren automáticamente los puertos de Firewall necesarios en dicho equipo. Para ello, conéctese al servidor de destino en el centro de administración de Windows y, a continuación, vaya a **Administrador del servidor** (en el centro de administración de windows) > **roles y características**, seleccione **proxy de servicio de migración de almacenamiento**y, a continuación, seleccione **instalar**.
+
+
 - Si los equipos pertenecen a un dominio de Active Directory Domain Services, todos deben pertenecer al mismo bosque. El servidor de destino también debe estar en el mismo dominio que el servidor de origen si desea transferir el nombre de dominio del origen al destino al realizar la reducción. El traslado técnicamente funciona entre dominios, pero el nombre de dominio completo del destino será diferente del origen...
 
 ### <a name="requirements-for-source-servers"></a>Requisitos para los servidores de origen
