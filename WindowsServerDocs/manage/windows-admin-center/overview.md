@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 06/20/2019
+ms.date: 08/22/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 0612f4ff102d6b5d1fd24372ac20a98c3ec02edb
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 7af852ba934de2dd29a76972d7a7ec73606e9b4c
+ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476563"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70009118"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -129,6 +129,7 @@ Puedes tener Windows Admin Center en funcionamiento y en ejecución en tu entorn
 
 Obtén información sobre las últimas funciones publicadas:
 
+- Versión [1908](https://aka.ms/wac1908): incluye actualizaciones visuales, Packetmon, FlowLog Audit, incorporación de Azure Monitor para clústeres y compatibilidad con WinRM a través de HTTPS (puerto 5986).
 - Versión [1907](https://aka.ms/wac1907): se han agregado vínculos de estimación de costos de Azure y se han realizado mejoras en la importación, exportación y etiquetado de máquinas virtuales.
 - Versión [1906](https://aka.ms/wac1906): se han agregado máquinas virtuales de importación y exportación, cambiado las cuentas de Azure, agregado conexiones de Azure, el experimento de configuración de la conectividad, las mejoras de rendimiento y las herramientas de generación de perfiles.
 - La versión 1904.1 es la versión más reciente con disponibilidad general: una actualización de mantenimiento para mejorar la estabilidad de los complementos de puerta de enlace.

@@ -11,7 +11,9 @@
 ## [Compatibilidad de aplicaciones de servidor de Microsoft y Windows Server 2019](app-compat-19.md)
 ## [Característica de compatibilidad de aplicación de Server Core a petición (FOD)](install-fod-19.md)
 ## [Comparación de ediciones Estándar | Datacenter](editions-comparison-19.md)
-## [Características eliminadas o planificadas para su reemplazo a partir de Windows Server 2019](removed-features-19.md)
-## [Características eliminadas o planificadas para su reemplazo a partir de Windows Server versión 1903](removed-features-1903.md)
+## Características eliminadas
+### [Características eliminadas o cuyo reemplazo está planeado en Windows Server](removed-features.md)
+### [Características eliminadas o planificadas para su reemplazo a partir de Windows Server 2019](removed-features-19.md)
+### [Características eliminadas o planificadas para su reemplazo a partir de Windows Server versión 1903](removed-features-1903.md)
 ## [Información de versión de Windows Server](../get-started/windows-server-release-info.md)
 ## [Términos de licencia de Windows Server](../windows-server-licensing/windows-server-licensing.md)
