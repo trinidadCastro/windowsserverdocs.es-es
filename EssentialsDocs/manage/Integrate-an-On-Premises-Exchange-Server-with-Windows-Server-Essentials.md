@@ -14,7 +14,7 @@ ms.author: coreyp
 manager: dongill
 ms.openlocfilehash: 142ae8514a6a480f8181ce193c2f437e2f286e2d
 ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: es-ES
 ms.lasthandoff: 08/09/2019
 ms.locfileid: "68914609"
