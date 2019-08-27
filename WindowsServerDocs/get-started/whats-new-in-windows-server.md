@@ -2,22 +2,22 @@
 title: Novedades de Windows Server
 description: ¿Cuáles son las nuevas características de proceso, identidad, administración, automatización, redes, seguridad y almacenamiento?
 ms.prod: windows-server
-ms.date: 06/03/2019
+ms.date: 08/22/2019
 ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: medium
-ms.openlocfilehash: 8e19c7a51ef1f50f974dc380e00315f9980da560
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a6a093f873ee925a2763ba5243f868204bd077f3
+ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66501364"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70000648"
 ---
 # <a name="whats-new-in-windows-server"></a>Novedades de Windows Server
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 Puedes encontrar las nuevas características para cada una de estas versiones de Windows Server.  
 
@@ -39,3 +39,4 @@ Las versiones del Canal semianual de Windows Server ofrecen nuevas funcionalida
 
 - [Notas de la versión: Problemas importantes en Windows Server 2019](../get-started-19/rel-notes-19.md)
 - [Notas de la versión: Problemas importantes en Windows Server 2016](Windows-Server-2016-GA-Release-Notes.md)
+- [Características eliminadas o cuyo reemplazo está planeado en Windows Server](../get-started-19/removed-features.md)

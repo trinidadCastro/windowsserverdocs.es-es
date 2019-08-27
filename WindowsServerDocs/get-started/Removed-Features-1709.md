@@ -1,24 +1,20 @@
 ---
 title: Características eliminadas o que está previsto su reemplazo a partir de Windows Server (versión 1709)
 description: Características y funcionalidades se han quitado o planeado para su eliminación en las versiones.
-ms.custom: na
 ms.prod: windows-server-threshold
-ms.reviewer: na
-ms.suite: na
 ms.technology: server-general
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 06/05/2018
-author: jaimeo
-ms.author: jaimeo
+ms.date: 08/22/2019
+author: jasongerend
+ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 37970f3bee2070cffc77bff855a8f28641196b24
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: b4303d05a87fe06e84df0cc55e2c1af8b34047e6
+ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66452860"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "70000636"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1709"></a>Características eliminadas o que está previsto su reemplazo a partir de Windows Server, versión 1709
 
@@ -26,7 +22,12 @@ ms.locfileid: "66452860"
 
 A continuación se enumeran las características y funcionalidades de Windows Server, versión 1709 que se quitaron del producto en dicha versión o se está empezando a considerar su posible reemplazo en versiones posteriores. Este artículo está orientado a profesionales de TI que actualizan sus sistemas operativos en un entorno comercial. **Esta lista está sujeta a cambios en versiones posteriores y es posible que no incluya todas las características o funcionalidades afectadas.** 
 
+> [!TIP]
+> - Para obtener acceso rápido a las versiones de Windows Server, puedes unirte al [Programa Windows Insider](https://insider.windows.com). Esta es una excelente manera de probar los cambios de características.
+> - ¿Tienes preguntas acerca de otras versiones? Consulta [Características eliminadas o cuyo reemplazo está planeado en Windows Server](../get-started-19/removed-features.md).
+
 ## <a name="features-removed-from-windows-server-version-1709"></a>Características quitadas de Windows Server, versión 1709
+
 Windows Server, versión 1709 incluye las mismas características presentes en Windows Server 2016. Sin embargo, esta versión ofrece opciones de instalación diferentes que Windows Server 2016:
 
 - Como un lanzamiento del Canal semianual, Windows Server, versión 1709 ofrece solo la opción de instalación básica. Para más información, consulta [Comparación de los canales de mantenimiento](../get-started-19/servicing-channels-19.md).
