@@ -366,7 +366,7 @@
 
 
 ### Desarrollo de AD FS
-#### [Conceptos modernos de autenticación de AD FS](ad-fs/development/ad-fs-openid-connect-oauth-concepts.md)
+#### [Conceptos de AD FS OpenID Connect/OAuth](ad-fs/development/ad-fs-openid-connect-oauth-concepts.md)
 #### [Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación](ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
 
 #### [Compilación de un método de autenticación personalizado para AD FS](ad-fs/development/ad-fs-build-custom-auth-method.md)
