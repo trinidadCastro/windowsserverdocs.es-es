@@ -4,23 +4,23 @@ description: ''
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 48e4626f52ef7af19da6d3e0bb28799665498fe5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0eb620fe52de5ee98a247e17ed73304b2325c7c8
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884856"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031494"
 ---
 # <a name="rpc-context-handles-for-hcn"></a>Identificadores de contexto RPC para HCN
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019
 
 
-## <a name="hcnnetwork"></a>HCN_Network
+## <a name="hcn_network"></a>HCN_Network
 
-Una red (HCN) es una entidad que se utiliza para representar un host de red y sus recursos del sistema asociados y las directivas de proceso. Por ejemplo, una red (HCN) normalmente constará de un conjunto de metadatos (por ejemplo, Id., nombre, tipo), un conmutador virtual, un adaptador de red virtual de host (que actúa como puerta de enlace predeterminada para la red), una instancia NAT (si es necesario por el tipo de red), un conjunto de subred y los grupos de direcciones MAC , y las directivas de toda la red aplican (por ejemplo, ACL).
+Una red HCN es una entidad que se usa para representar una red de proceso de host y sus recursos y directivas de sistema asociados. Por ejemplo, una red HCN normalmente se compone de un conjunto de metadatos (por ejemplo, ID., nombre, tipo), un conmutador virtual, un adaptador de red virtual del host (que actúa como puerta de enlace predeterminada para la red), una instancia de NAT (si es necesario para el tipo de red), un conjunto de grupos de subred y equipos MAC y todas las directivas de red que se van a aplicar (por ejemplo, ACL).
 
-Entidades de red (HCN) se representan mediante identificadores de contexto HCN_NETWORK RPC.
+Las entidades de red HCN se representan mediante identificadores de contexto RPC de HCN_NETWORK.
 
 ```
 
@@ -149,10 +149,10 @@ HcnCloseNetwork(
     ); 
 ```
 
-## <a name="hcnendpoint"></a>HCN_Endpoint
+## <a name="hcn_endpoint"></a>HCN_Endpoint
 
-Un punto de conexión (HCN) es una entidad que se utiliza para representar un punto de conexión IP en una red (HCN) y sus recursos del sistema asociados y las directivas. Por ejemplo, un punto de conexión (HCN) normalmente consistirá en un conjunto de metadatos (por ejemplo, Id., nombre, Id. de red principal), su identidad de red (por ejemplo, dirección IP, dirección MAC) y las directivas específicas de punto de conexión aplican (por ejemplo, ACL, las rutas).
-Las entidades de punto de conexión (HCN) se representan mediante identificadores de contexto HCN_ENDPOINT RPC.
+Un punto de conexión de HCN es una entidad que se usa para representar un punto de conexión de IP en una red de HCN y sus recursos y directivas de sistema asociados. Por ejemplo, un punto de conexión de HCN normalmente se compone de un conjunto de metadatos (por ejemplo, identificador, nombre, identificador de red principal), su identidad de red (por ejemplo, la dirección IP, la dirección MAC) y cualquier directiva específica del punto de conexión que se va a aplicar (por ejemplo, ACL, rutas).
+Las entidades del punto de conexión HCN se representan mediante identificadores de contexto RPC de HCN_ENDPOINT.
 
 ```
 
@@ -283,11 +283,11 @@ HcnCloseEndpoint(
  
 ```
 
-## <a name="hcnnamespace"></a>HCN_Namespace
+## <a name="hcn_namespace"></a>HCN_Namespace
 
-Un Namespace (HCN) es una entidad que se utiliza para representar un espacio de nombres de red de proceso de host. Los espacios de nombres permiten tener entornos de red en un único host, donde cada espacio de nombres tiene su propia tabla de enrutamiento e interfaces de red, aislados separan de otros espacios de nombres.
+Un espacio de nombres HCN es una entidad que se usa para representar un espacio de nombres de red de proceso host. Los espacios de nombres permiten tener entornos de red aislados en un solo host, donde cada espacio de nombres tiene sus propias interfaces de red y su tabla de enrutamiento, separadas de otros espacios de nombres.
 
-Namespace (HCN) entidades se representan mediante identificadores de contexto HCN_NAMESPACE RPC.
+Las entidades de espacio de nombres HCN se representan mediante identificadores de contexto RPC HCN_NAMESPACE.
 
 ```
 /// Handle to an operation
@@ -419,10 +419,10 @@ HcnCloseNamespace(
 
 ```
 
-## <a name="hcnloadbalancer"></a>HCN_LoadBalancer
+## <a name="hcn_loadbalancer"></a>HCN_LoadBalancer
 
-Un equilibrador de carga (HCN) es una entidad que se utiliza para representar un equilibrador de carga de red de proceso de host. Los equilibradores de carga permiten disponer de calcular los puntos de conexión de red host con equilibrio de carga.
-Las entidades de equilibrador de carga (HCN) se representan mediante identificadores de contexto HCN_LOADBALANCER RPC.
+Un HCN LoadBalancer es una entidad que se usa para representar un loadbalancer de la red de proceso de host. LoadBalancers permite tener puntos de conexión de red de proceso de host con equilibrio de carga.
+Las entidades HCN LoadBalancer se representan mediante identificadores de contexto RPC de HCN_LOADBALANCER.
 
 ```
 /// Handle to an operation
@@ -558,9 +558,9 @@ HcnCloseLoadBalancer(
 
 ```
 
-## <a name="hcnnotificationcallback"></a>HCN_Notification_Callback
+## <a name="hcn_notification_callback"></a>HCN_Notification_Callback
 
-Hay funciones proporcionan acceso a las operaciones de todo el servicio como las notificaciones (por ejemplo, recibir notificaciones de una nueva creación de redes).
+Las funciones proporcionan acceso a las operaciones de todo el servicio, como las notificaciones (por ejemplo, la recepción de notificaciones de una nueva creación de red).
 
 ```
 /// Registers a callback function to receive notifications of service-wide events such as network

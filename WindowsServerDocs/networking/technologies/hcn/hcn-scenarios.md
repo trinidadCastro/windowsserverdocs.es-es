@@ -1,26 +1,26 @@
 ---
-title: Escenarios de host de proceso red ((HCN))
+title: Escenarios de host de proceso de red (HCN)
 description: ''
 ms.author: jmesser
 author: jmesser81
 ms.date: 11/05/2018
-ms.openlocfilehash: 2a81b09c41c3b665d6a026da4b63a6119fbe202d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 91cdafa9699cd213156d872090034dd4ea67108e
+ms.sourcegitcommit: 213989f29cc0c30a39a78573bd4396128a59e729
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59816306"
+ms.lasthandoff: 08/26/2019
+ms.locfileid: "70031532"
 ---
 # <a name="common-scenarios"></a>Escenarios comunes
 
->Se aplica a: Windows Server (canal semianual), Windows Server 2016
+>Se aplica a: Windows Server (canal semianual), Windows Server 2019
 
 ## <a name="scenario-hcn"></a>Escenario: HCN 
 
 
-### <a name="create-an-hcn"></a>Crear una (HCN)
+### <a name="create-an-hcn"></a>Creación de un HCN
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para crear una red de Host de proceso del host que se puede usar para conectar la NIC virtuales a máquinas virtuales o contenedores.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para crear una red de proceso de host en el host que se puede usar para conectar NIC virtuales a Virtual Machines o contenedores.
 
 ```C++
 using unique_hcn_network = wil::unique_any< 
@@ -117,9 +117,9 @@ void CreateHcnNetwork()
 }
 ```
 
-### <a name="delete-an-hcn"></a>Eliminar un (HCN)
+### <a name="delete-an-hcn"></a>Eliminar un HCN
 
-Este ejemplo muestra cómo usar la API del servicio de red de Host de proceso para abrir y eliminar una red de Host de proceso 
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para abrir & eliminar una red de proceso de host 
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -136,7 +136,7 @@ Este ejemplo muestra cómo usar la API del servicio de red de Host de proceso pa
 
 ### <a name="enumerate-all-networks"></a>Enumerar todas las redes
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para enumerar todas las redes del proceso de host.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para enumerar todas las redes de proceso del host.
 
 ```C++
      wil::unique_cotaskmem_string resultNetworks;
@@ -157,9 +157,9 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-### <a name="query-network-properties"></a>Propiedades de red de la consulta
+### <a name="query-network-properties"></a>Consultar propiedades de red
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso al consultar las propiedades de red.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para consultar las propiedades de red.
 
 ```C++
     unique_hcn_network hcnnetwork;
@@ -189,11 +189,11 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-## <a name="scenario-hcn-endpoint"></a>Escenario: Punto de conexión (HCN)
+## <a name="scenario-hcn-endpoint"></a>Escenario: Punto de conexión HCN
 
-### <a name="create-an-hcn-endpoint"></a>Crear un punto de conexión (HCN)
+### <a name="create-an-hcn-endpoint"></a>Creación de un punto de conexión de HCN
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para crear un extremo de red de Host de proceso y, a continuación, agregar sin interrupción en la máquina Virtual o en un contenedor.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para crear un punto de conexión de red de proceso de host y, a continuación, agregarlo en caliente a la máquina virtual o a un contenedor.
 
 ```C++
 using unique_hcn_endpoint = wil::unique_any< 
@@ -268,7 +268,7 @@ void CreateAndHotAddEndpoint()
 
 ### <a name="delete-an-endpoint"></a>Eliminar un punto de conexión
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para eliminar un extremo de red de Host de proceso.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para eliminar un punto de conexión de red de proceso de host.
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -285,7 +285,7 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 
 ### <a name="modify-and-endpoint"></a>Modificar y punto de conexión
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para modificar un extremo de red de Host de proceso.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para modificar un punto de conexión de red de proceso host.
 
 ```C++
     unique_hcn_endpoint hcnendpoint;
@@ -323,9 +323,9 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-### <a name="enumerate-all-enpoints"></a>Enumerar todos los enpoints
+### <a name="enumerate-all-enpoints"></a>Enumerar todos los enpuntos
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para enumerar todos los Host de proceso extremos de red.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para enumerar todos los puntos de conexión de red de proceso host.
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -346,9 +346,9 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-### <a name="query-endpoint-properties"></a>Propiedades de punto de conexión de consulta
+### <a name="query-endpoint-properties"></a>Propiedades de extremo de consulta
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para todas las propiedades de un extremo de red de Host de proceso de consulta.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para consultar todas las propiedades de un punto de conexión de red de proceso host.
 
 ```C++
     unique_hcn_endpoint hcnendpoint;
@@ -381,11 +381,11 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-## <a name="scenario-hcn-namespace"></a>Escenario: Espacio de nombres (HCN)
+## <a name="scenario-hcn-namespace"></a>Escenario: Espacio de nombres HCN
 
-### <a name="create-an-hcn-namespace"></a>Crear un espacio de nombres (HCN)
+### <a name="create-an-hcn-namespace"></a>Creación de un espacio de nombres HCN
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para crear un Namespace de red de Host de proceso del host que se puede usar para conectar el punto de conexión y contenedores.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para crear un espacio de nombres de red de proceso de host en el host que se puede usar para conectar el punto de conexión y los contenedores.
 
 ```C++
 using unique_hcn_namespace = wil::unique_any< 
@@ -445,9 +445,9 @@ void CreateHcnNamespace()
 ```
 
 
-### <a name="delete-an-hcn-namespace"></a>Eliminar un espacio de nombres (HCN)
+### <a name="delete-an-hcn-namespace"></a>Eliminación de un espacio de nombres HCN
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para eliminar un Namespace de red de Host de proceso.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para eliminar un espacio de nombres de red de proceso de host.
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -463,9 +463,9 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-### <a name="modify-an-hcn-namespace"></a>Modificar un espacio de nombres (HCN)
+### <a name="modify-an-hcn-namespace"></a>Modificar un espacio de nombres HCN
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para modificar un Namespace de red de Host de proceso.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para modificar un espacio de nombres de red de proceso host.
 
 ```C++
     unique_hcn_namespace handle;
@@ -510,7 +510,7 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 
 ### <a name="enumerate-all-namespaces"></a>Enumerar todos los espacios de nombres
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para enumerar todos los Host de proceso red espacios de nombres.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para enumerar todos los espacios de nombres de red de proceso host.
 
 ```C++
     wil::unique_cotaskmem_string resultNamespaces;
@@ -530,9 +530,9 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-### <a name="query-namespace-properties"></a>Propiedades de espacio de nombres de consulta
+### <a name="query-namespace-properties"></a>Propiedades del espacio de nombres de consulta
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso a las propiedades Namespace de red de Host de proceso de consulta
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para consultar las propiedades de espacio de nombres de red de proceso host.
 
 ```C++
     unique_hcn_namespace handle;
@@ -564,11 +564,11 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-## <a name="scenario-hcn-load-balancer"></a>Escenario: Equilibrador de carga (HCN)
+## <a name="scenario-hcn-load-balancer"></a>Escenario: Equilibrador de carga de HCN
 
-### <a name="create-an-hcn-load-balancer"></a>Creación de un equilibrador de carga (HCN)
+### <a name="create-an-hcn-load-balancer"></a>Creación de un equilibrador de carga de HCN
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para crear un equilibrador de carga de red de Host de proceso del host que se puede usar para equilibrio de carga punto de conexión en proceso.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para crear una red de proceso de host Load Balancer en el host que se puede usar para equilibrar la carga del extremo en el proceso.
 
 ```C++
 using unique_hcn_loadbalancer = wil::unique_any< 
@@ -641,9 +641,9 @@ void CreateHcnLoadBalancer()
 ```
 
 
-### <a name="delete-an-hcn-load-balancer"></a>Eliminar un equilibrador de carga (HCN)
+### <a name="delete-an-hcn-load-balancer"></a>Eliminación de un equilibrador de carga de HCN
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para eliminar un LoadBalancer de red de Host de proceso.
+En este ejemplo se muestra cómo usar la API de servicio de red de proceso de host para eliminar una red de proceso de host LoadBalancer.
 
 ```C++
     wil::unique_cotaskmem_string errorRecord;
@@ -658,9 +658,9 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-### <a name="modify-an-hcn-load-balancer"></a>Modificar un equilibrador de carga (HCN)
+### <a name="modify-an-hcn-load-balancer"></a>Modificación de un equilibrador de carga de HCN
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para modificar un Namespace de red de Host de proceso.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para modificar un espacio de nombres de red de proceso host.
 
 ```C++
     unique_hcn_loadbalancer handle;
@@ -705,7 +705,7 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 
 ### <a name="enumerate-all-load-balancers"></a>Enumerar todos los equilibradores de carga
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso para enumerar todos los Host de proceso red equilibrador de carga.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para enumerar todos los Load Balancer de red de proceso host.
 
 ```C++
     wil::unique_cotaskmem_string resultLoadBalancers;
@@ -726,9 +726,9 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-### <a name="query-load-balancer-properties"></a>Propiedades del equilibrador de carga de consulta
+### <a name="query-load-balancer-properties"></a>Consultar las propiedades del equilibrador de carga
 
-En este ejemplo se muestra cómo usar la API del servicio de red de Host de proceso al consultar las propiedades de equilibrador de carga de red de proceso de Host.
+En este ejemplo se muestra cómo usar la API de servicio de red de compute de host para consultar las propiedades de LoadBalancer de la red de proceso del host.
 
 ```C++
     unique_hcn_loadbalancer handle;
@@ -761,11 +761,11 @@ En este ejemplo se muestra cómo usar la API del servicio de red de Host de proc
 ```
 
 
-## <a name="scenario-hcn-notifications"></a>Escenario: Notificaciones (HCN)
+## <a name="scenario-hcn-notifications"></a>Escenario: Notificaciones de HCN
 
-### <a name="register-and-unregister-service-wide-notifications"></a>Registrar y anular el registro de notificaciones de todo el servicio
+### <a name="register-and-unregister-service-wide-notifications"></a>Registro y anulación del registro de notificaciones de todo el servicio
 
-Este ejemplo muestra cómo usar la API de servicios de red de proceso de Host para registrar y anular el registro para las notificaciones de todo el servicio. Esto permite que el llamador reciba una notificación (a través de la función de devolución de llamada que especificó durante el registro) cada vez que se ha producido una operación de todo el servicio como un nuevo evento de creación de la red.
+En este ejemplo se muestra cómo usar la API de servicio de red de proceso de host para registrar y anular el registro para las notificaciones de todo el servicio. Esto permite que el llamador reciba una notificación (a través de la función de devolución de llamada que especificó durante el registro) cada vez que se ha producido una operación de servicio, como un nuevo evento de creación de red.
 
 ```C++
 using unique_hcn_callback = wil::unique_any< 
@@ -834,6 +834,6 @@ void UnregisterForServiceNotifications()
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Obtenga más información sobre la [manipuladores del contexto RPC (HCN)](hcn-declaration-handles.md).
+- Obtenga más información sobre los [identificadores de contexto RPC para HCN](hcn-declaration-handles.md).
 
-- Obtenga más información sobre la [esquemas de documentos JSON HCN](hcn-json-document-schemas.md).
+- Más información sobre los [esquemas de documento JSON de HCN](hcn-json-document-schemas.md).
