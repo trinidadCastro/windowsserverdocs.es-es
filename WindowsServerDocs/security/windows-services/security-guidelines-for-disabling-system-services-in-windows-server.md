@@ -1832,7 +1832,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 <br />          
 
-## <a name="special-administration-console-helper"></a>Aplicación auxiliar especial de la consola de administración        
+## <a name="special-administration-console-helper"></a>Asistente especial de la consola de administración        
 
 | | |           
 |---|---|   
@@ -2000,7 +2000,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 <br />          
 
-## <a name="tcpip-netbios-helper"></a>Aplicación auxiliar de NetBIOS sobre TCP/IP            
+## <a name="tcpip-netbios-helper"></a>Asistente NetBIOS sobre TCP/IP            
 
 | | |           
 |---|---|   
@@ -2647,7 +2647,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona información de la biblioteca de rendimiento de proveedores WMI (Instrumental de administración de Windows) a clientes en la red. Este servicio solo se ejecuta si la Aplicación auxiliar de datos de rendimiento está activado.
+|   **Descripción del servicio** |   Proporciona información de la biblioteca de rendimiento de proveedores WMI (Instrumental de administración de Windows) a clientes en la red. Este servicio solo se ejecuta si el Asistente de datos de rendimiento está activado.
 |   **Nombre del servicio**    |   wmiApSrv
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual

@@ -238,7 +238,7 @@ Dado que Server Core es una instalación mínima, tiene una superficie menor de 
 | LanmanServer  | Servidor  | Automático | LocalSystem |
 | LanmanWorkstation  | Workstatione  | Automático | LocalService |
 | lltdsvc  | Asignador de detección de topología de nivel de vínculo  | Manual | LocalService |
-| lmhosts  | Aplicación auxiliar de NetBIOS de TCP/IP  | Automático | LocalService |
+| lmhosts  | Asistente NetBIOS sobre TCP/IP  | Automático | LocalService |
 | MpsSvc  | Firewall de Windows  | Automático | LocalService |
 | MSDTC  | Coordinador de transacciones distribuidas  | Automático | Servicio de red |
 | MSiSCSI  | Servicio del iniciador iSCSI de Microsoft  | Manual | LocalSystem |
@@ -256,7 +256,7 @@ Dado que Server Core es una instalación mínima, tiene una superficie menor de 
 | RemoteRegistry  | Registro remoto  | Automático | LocalService |
 | RpcSs  | Llamada a procedimiento remoto (RPC)  | Automático | Servicio de red |
 | RSoPProv | Conjunto resultante de proveedor de directivas  | Manual | LocalSystem |
-| sacsvr  | Ayudante de la consola de administración especial  | Manual | LocalSystem |
+| sacsvr  | Asistente especial de la consola de administración  | Manual | LocalSystem |
 | SamSs  | Administrador de cuentas de seguridad  | Automático | LocalSystem |
 | SCardSvr | Tarjeta inteligente  | Manual | LocalService |
 | Programa | Programador de tareas  | Automático | LocalSystem |
