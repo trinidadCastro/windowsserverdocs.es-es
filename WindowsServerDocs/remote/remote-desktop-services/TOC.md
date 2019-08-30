@@ -64,9 +64,35 @@
 ### [Personalizar el título de RDS "Recursos de trabajo" con PowerShell en Windows Server](rds-work-resources.md)
 ### [Diagnosticar problemas de rendimiento de aplicaciones con contadores de rendimiento](rds-rdsh-performance-counters.md)
 
-## [Compatibilidad adicional de Escritorio remoto](rds-get-support.md)
-## [Clientes de Escritorio remoto](clients/remote-desktop-clients.md)
-### Problemas conocidos de Escritorio remoto
+## Obtener acceso a los recursos de Escritorio remoto
+### [Clientes de Escritorio remoto disponibles](clients/remote-desktop-clients.md)
+### Cliente de Microsoft Store
+#### [Introducción al cliente de Microsoft Store](clients/windows.md)
+#### [Novedades del cliente de Microsoft Store](clients/windows-whatsnew.md)
+### Cliente de Android
+#### [Introducción al cliente de Android](clients/remote-desktop-android.md)
+#### [Novedades del cliente de Android](clients/android-whatsnew.md)
+### Cliente de iOS
+#### [Introducción al cliente de iOS](clients/remote-desktop-ios.md)
+#### [Novedades del cliente de iOS](clients/ios-whatsnew.md)
+### Cliente de macOS
+#### [Introducción al cliente de macOS](clients/remote-desktop-mac.md)
+#### [Novedades del cliente de macOS](clients/mac-whatsnew.md)
+### Cliente web
+#### [Introducción al cliente web](clients/remote-desktop-web-client.md)
+#### [Novedades del cliente web](clients/web-client-whatsnew.md)
+### Configuración de su PC para Escritorio remoto
+#### [Equipos compatibles](clients/remote-desktop-supported-config.md)
+#### [Otorgar acceso de Escritorio remoto a su PC](clients/remote-desktop-allow-access.md)
+#### [Conceder acceso a su PC desde fuera de la red](clients/remote-desktop-allow-outside-access.md)
+#### [Cambiar el puerto de escucha de Escritorio remoto en su PC](clients/change-listening-port.md)
+### Información avanzada
+#### [¿Qué clientes funcionan mejor para usted?](clients/remote-desktop-app-compare.md)
+#### [Configuración del archivo RDP de Escritorio remoto](clients/rdp-files.md)
+#### [Esquema de URI de Escritorio remoto](clients/remote-desktop-uri.md)
+#### [Preguntas más frecuentes del cliente de Escritorio remoto](clients/remote-desktop-client-faq.md)
+#### [Configuración de privacidad de las aplicaciones y escritorios administrados](clients/remote-privacy-settings.md)
+### Problemas conocidos
 #### [Solución de problemas generales de conexión con Escritorio remoto](troubleshoot/rdp-error-general-troubleshooting.md)
 #### [Los clientes no se pueden conectar y reciben el mensaje "Clase no registrada"](troubleshoot/rdp-error-class-not-registered.md)
 #### [Los clientes no se pueden conectar y reciben el error "No hay licencias disponibles"](troubleshoot/rdp-error-no-licenses-available.md)
@@ -75,29 +101,5 @@
 #### [El cliente de Escritorio remoto se desconecta y no puede volver a conectarse a la misma sesión](troubleshoot/rdp-client-disconnects-cannot-reconnect-same-session.md)
 #### [Los portátiles remotos se desconectan de la red inalámbrica](troubleshoot/remote-laptop-disconnects-wireless-network.md)
 #### [Problemas de bajo rendimiento o de aplicaciones durante la conexión a escritorio remoto](troubleshoot/poor-performance-or-application-problems.md)
-### Información general
-#### [¿Qué clientes funcionan mejor para usted?](clients/remote-desktop-app-compare.md)
-#### [Configuración del archivo RDP de Escritorio remoto](clients/rdp-files.md)
-#### [Esquema de URI de Escritorio remoto](clients/remote-desktop-uri.md)
-#### [Preguntas más frecuentes del cliente de Escritorio remoto](clients/remote-desktop-client-faq.md)
-#### [Configuración de privacidad de las aplicaciones y escritorios administrados](clients/remote-privacy-settings.md)
-### Cliente de Escritorio remoto para Windows
-#### [Introducción](clients/windows.md)
-#### [Novedades del cliente de Windows](clients/windows-whatsnew.md)
-### Cliente de Escritorio remoto para Android
-#### [Introducción](clients/remote-desktop-android.md)
-#### [Novedades del cliente Android](clients/android-whatsnew.md)
-### Cliente de Escritorio remoto para iOS
-#### [Introducción](clients/remote-desktop-ios.md)
-#### [Novedades del cliente de iOS](clients/ios-whatsnew.md)
-### Cliente de Escritorio remoto para Mac
-#### [Introducción](clients/remote-desktop-mac.md)
-#### [Novedades del cliente de macOS](clients/mac-whatsnew.md)
-### Cliente web de Escritorio remoto
-#### [Acceso al cliente web de Escritorio remoto](clients/remote-desktop-web-client.md)
-#### [Novedades del cliente web](clients/web-client-whatsnew.md)
-### Configuración de su PC para Escritorio remoto
-#### [Equipos compatibles](clients/remote-desktop-supported-config.md)
-#### [Otorgar acceso de Escritorio remoto a su PC](clients/remote-desktop-allow-access.md)
-#### [Conceder acceso a su PC desde fuera de la red](clients/remote-desktop-allow-outside-access.md)
-#### [Cambiar el puerto de escucha de Escritorio remoto en su PC](clients/change-listening-port.md)
+
+## [Recursos adicionales](rds-get-support.md)

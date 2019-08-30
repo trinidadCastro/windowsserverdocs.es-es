@@ -174,7 +174,7 @@
 #### [Planear NPS como servidor RADIUS](technologies/nps/nps-plan-server.md)
 #### [Planear NPS como proxy RADIUS](technologies/nps/nps-plan-proxy.md)
 ### [Implementar NPS](technologies/nps/nps-deploy.md)
-### [Administrar NPS](technologies/nps/nps-manage-top.md)
+### [Administración de NPS](technologies/nps/nps-manage-top.md)
 #### [Administración del Servidor de directivas de redes con Herramientas de administración](technologies/nps/nps-admintools.md)
 #### [Configuración de las directivas de solicitud de conexión](technologies/nps/nps-crp-configure.md)
 #### [Configuración del firewall para el tráfico RADIUS](technologies/nps/nps-firewalls-configure.md)
