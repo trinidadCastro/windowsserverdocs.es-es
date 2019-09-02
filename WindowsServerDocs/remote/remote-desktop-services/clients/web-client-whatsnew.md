@@ -1,5 +1,5 @@
 ---
-title: Novedades del cliente web de Escritorio remoto
+title: Novedades del cliente web
 description: Obtén información sobre los cambios recientes en el cliente web de Escritorio remoto.
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -11,16 +11,16 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/20/2019
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 5be9b05da1e78cc54e12254f43d0f44f7ff65c5d
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4eaa9a187b4a8f7879cabf15724bfcfe3f625939
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804884"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150964"
 ---
-# <a name="whats-new-for-the-remote-desktop-web-client"></a>Novedades del cliente web de Escritorio remoto
+# <a name="whats-new-in-the-web-client"></a>Novedades del cliente web
 
 El [cliente web de Escritorio remoto](remote-desktop-web-client.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Consulta las actualizaciones más recientes a continuación.
 

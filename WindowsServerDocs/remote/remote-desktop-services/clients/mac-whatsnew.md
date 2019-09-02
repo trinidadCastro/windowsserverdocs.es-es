@@ -1,5 +1,5 @@
 ---
-title: Novedades de Escritorio remoto en Mac
+title: Novedades del cliente de macOS
 description: Obtén información sobre los cambios recientes en el cliente de Escritorio remoto para Mac
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -11,29 +11,49 @@ ms.topic: article
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 04/29/2019
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 6cfd8a6338d283b7ff42b091e686a31b044a6b7b
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 9ae58103b00941bb71d447641b1cdab7c02fa20b
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "65564764"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70151020"
 ---
-# <a name="whats-new-for-the-remote-desktop-client-on-macos"></a>Novedades del cliente de Escritorio remoto en macOS
+# <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
 El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Consulta las actualizaciones más recientes a continuación.
 
 Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda > Notificar un problema**.
 
+## <a name="updates-for-version-1030"></a>Actualizaciones de la versión 10.3.0
+*Fecha de publicación: 27/8/19*
+
+Han pasado algunas semanas desde la última actualización, pero estamos trabajando durante este tiempo. La versión 10.3.0 ofrece algunas nuevas características y muchas correcciones técnicas.
+
+ - Ahora es posible el redireccionamiento de la cámara al conectarse a Windows 10 1809, Windows Server 2019 y versiones posteriores.
+ - En Mojave y Catalina, hemos agregado un nuevo cuadro de diálogo que te pide permiso para usar el micrófono y la cámara para el redireccionamiento de dispositivos.
+ - Se ha reescrito el flujo de suscripción de fuentes para que sea más sencillo y más rápido.
+ - El redireccionamiento del Portapapeles incluye ahora el formato de texto enriquecido (RTF).
+ - Al escribir la contraseña, tienes la opción de revelarla con una casilla "Mostrar contraseña".
+ - Se abordaron los escenarios donde la ventana de la sesión saltaba entre monitores.
+ - El Centro de conexión muestra iconos de aplicaciones remotas de alta resolución (si están disponibles).
+ - CMD+A se asigna a Ctrl+A cuando se usan accesos directos del Portapapeles de Mac.
+ - CMD+R ahora actualiza todas las fuentes suscritas.
+ - Se han agregado nuevas opciones de clic secundario para expandir o contraer todos los grupos o fuentes del Centro de conexión.
+ - Se ha agregado una nueva opción de clic secundario para cambiar el tamaño de los iconos en la pestaña Fuentes del Centro de conexiones.
+ - Un nuevo icono de aplicación simplificado y más claro.
+
 ## <a name="updates-for-version-10213"></a>Actualizaciones de la versión 10.2.13
+
 *Fecha de publicación: 08/05/2019*
 
 - Se corrigió un bloqueo que ocurría al conectarse a través de una Puerta de enlace de Escritorio remoto.
 - Se agregó un aviso de privacidad en el cuadro de diálogo "Agregar fuente".
 
 ## <a name="updates-for-version-10212"></a>Actualizaciones de la versión 10.2.12
-*Fecha de publicación: 16/04/2019* 
+
+*Fecha de publicación: 16/04/2019*
 
 - Se resolvieron desconexiones aleatorias (con el código de error 0x904) que tenían lugar al conectarse a través de una Puerta de enlace de Escritorio remoto.
 - Se corrigió un error que provocaba que la lista de resoluciones de las preferencias de aplicación estuviera vacía después de la instalación.
@@ -41,17 +61,20 @@ Si tienes algún problema, puedes ponerte en contacto con nosotros a través **A
 - Se abordó un bucle de mensajes de autenticación de ADAL al conectarse a implementaciones de Escritorio virtual de Windows.
 
 ## <a name="updates-for-version-10210"></a>Actualizaciones de la versión 10.2.10
+
 *Fecha de publicación: 30/03/2019*
 
 - En esta versión se resolvió una inestabilidad causada por la actualización reciente de macOS 10.14.4. También corregimos errores de impresión que aparecían al descodificar datos de códec AVC codificados por un servidor con hardware NVIDIA.
 
 ## <a name="updates-for-version-1029"></a>Actualizaciones de la versión 10.2.9
+
 *Fecha de publicación: 06/03/2019*
 
 - En esta versión se corrigió un problema de conectividad de Puerta de enlace de Escritorio remoto que se puede producir cuando tiene lugar el redireccionamiento del servidor.
 - También se corrigió una regresión de Puerta de enlace de Escritorio remoto causada por la actualización 10.2.8.
 
 ## <a name="updates-for-version-1028"></a>Actualizaciones de la versión 10.2.8
+
 *Fecha de publicación: 03/01/2019*
 
 - Se resolvieron problemas de conectividad que aparecían al usar una Puerta de enlace de Escritorio remoto.
@@ -61,11 +84,13 @@ Si tienes algún problema, puedes ponerte en contacto con nosotros a través **A
 - Se corrigió un error que provocaba que el centro de conexiones se desplazara innecesariamente al iniciar una conexión.
 
 ## <a name="updates-for-version-1027"></a>Actualizaciones de la versión 10.2.7
+
 *Fecha de publicación: 06/02/2019*
 
 - En esta versión se resolvieron errores de impresión de gráficos (causados por un error de codificación del servidor) que aparecían al usar el modo AVC444.
 
 ## <a name="updates-for-version-1026"></a>Actualizaciones de la versión 10.2.6
+
 *Fecha de publicación: 28/01/2019*
 
 - Se agregó compatibilidad para el códec AVC (420 y 444), disponible al conectarse a las versiones actuales de Windows 10.
@@ -79,6 +104,7 @@ Si tienes algún problema, puedes ponerte en contacto con nosotros a través **A
 >Hay un error en macOS 10.14.0 y 10.14.1 que puede provocar que la carpeta ".com.microsoft.rdc.application-data_SUPPORT/_EXTERNAL_DATA" (anidada en lo profundo de la carpeta ~/Library) consuma una gran cantidad de espacio en disco. Para resolver este problema, elimina el contenido de la carpeta y actualiza a macOS 10.14.2. Ten en cuenta que un efecto secundario de eliminar el contenido de la carpeta es que las imágenes instantáneas asignadas a los marcadores se eliminarán. Estas imágenes se volverán a generar al volver a conectarse al equipo remoto.
 
 ## <a name="updates-for-version-1024"></a>Actualizaciones de la versión 10.2.4
+
 *Fecha de publicación: 18/12/2018*
 
 - Se agregó compatibilidad con el modo oscuro para macOS Mojave 10.14.
@@ -90,6 +116,7 @@ Si tienes algún problema, puedes ponerte en contacto con nosotros a través **A
 - Se mejoró el desplazamiento basado en mouse para diferencias de desplazamiento pequeño.
 
 ## <a name="updates-for-version-1023"></a>Actualizaciones de la versión 10.2.3
+
 *Fecha de publicación: 06/11/2018*
 
 - Se agregó compatibilidad para la configuración del archivo RDP "remoteapplicationcmdline" para escenarios de aplicación remota.
@@ -100,11 +127,12 @@ Si tienes algún problema, puedes ponerte en contacto con nosotros a través **A
 - Se mejoró el control de aplicaciones remotas de pantalla completa al ocultar la barra de menús y el Dock de manera inteligente.
 - Se corrigieron escenarios en los que aplicaciones remotas permanecían ocultas después de iniciarlas.
 - Se abordaron las actualizaciones de representación lenta cuando al usar "Ajustar a la ventana" con la aceleración de hardware deshabilitada.
-- Se controlaron los errores de creación de bases de datos causados por permisos incorrectos cuando se inicia el cliente. 
+- Se controlaron los errores de creación de bases de datos causados por permisos incorrectos cuando se inicia el cliente.
 - Se corrigió un problema donde el cliente se bloqueaba constantemente en el inicio y no se iniciaba para algunos usuarios.
 - Se corrigió un escenario donde las conexiones se importaban incorrectamente como pantalla completa desde Escritorio remoto 8.
 
 ## <a name="updates-for-version-1022"></a>Actualizaciones de la versión 10.2.2
+
 *Fecha de publicación: 09/10/2018*
 
 - Un nuevo centro de conexiones que admite arrastrar y colocar, la disposición manual de escritorio, columnas a las que se cambiar el tamaño en modo de vista de lista, ordenación basada en columnas y una administración de grupos más simple.
@@ -133,12 +161,14 @@ Si tienes algún problema, puedes ponerte en contacto con nosotros a través **A
 - Se corrigió un problema que impedía la descarga de los recursos de fuente que tenían espacios en la dirección URL.
 
 ## <a name="updates-for-version-1021"></a>Actualizaciones de la versión 10.2.1
+
 *Fecha de publicación: 06/08/2018*
 
 - Se habilitó la conectividad equipos unidos a Azure Active Directory (AAD). Para conectarse a un equipo unido a AAD, el nombre de usuario debe tener uno de los siguientes formatos: “AzureAD\usuario” o “AzureAD\user@domain”.
 - Se abordaron algunos errores al usar tarjetas inteligentes en una sesión remota.
 
 ## <a name="updates-for-version-1020"></a>Actualizaciones de la versión 10.2.0
+
 *Fecha de publicación: 24/07/2018*
 
 - Se incorporaron actualizaciones para el cumplimiento del RGPD.
@@ -167,6 +197,7 @@ Si tienes algún problema, puedes ponerte en contacto con nosotros a través **A
 - Se corrigieron algunos problemas de alineación en el centro de conexiones al ejecutarse en Mojave.
 
 ## <a name="updates-for-version-1018"></a>Actualizaciones de la versión 10.1.8
+
 *Fecha de publicación: 04/05/2018*
 
 - Se agregó compatibilidad para cambiar la resolución remota al cambiar el tamaño de la ventana de sesión.
@@ -174,6 +205,7 @@ Si tienes algún problema, puedes ponerte en contacto con nosotros a través **A
 - Se resolvió el error 0x207 que podía producirse al conectarse a servidores en los que no se había aplicado la corrección de oráculo de cifrado de CredSSP (CVE-2018-0886).
 
 ## <a name="updates-for-version-1017"></a>Actualizaciones de la versión 10.1.7
+
 *Fecha de publicación: 05/04/2018*
 
 - Se hicieron correcciones de seguridad para incorporar las actualizaciones de corrección de oráculo de cifrado de CredSSP, como se describe en CVE-2018-0886.
@@ -185,8 +217,9 @@ Si tienes algún problema, puedes ponerte en contacto con nosotros a través **A
 - Las ventanas Connection Center (Centro de conexiones), Preferences (Preferencias) y About (Acerca de) ahora responden a CMD+M.
 - Ahora puedes comenzar a detectar fuentes al presionar ENTRAR en la página **Adding Remote Resources** (Agregando recursos remotos).
 - Se corrigió un problema donde una nueva fuente de los recursos remotos aparecía vacía en el centro de conexiones hasta después de actualizar.
- 
+
 ## <a name="updates-for-version-1016"></a>Actualizaciones de la versión 10.1.6
+
 *Fecha de publicación: 26/03/2018*
 
 - Se corrigió un problema por el que las ventanas de RemoteApp se reordenaban a sí mismas.

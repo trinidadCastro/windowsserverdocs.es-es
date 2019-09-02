@@ -1,6 +1,6 @@
 ---
-title: Introducción a Escritorio remoto en Windows
-description: Los pasos básicos para la configuración del cliente de Escritorio remoto para Windows.
+title: Introducción al cliente de Microsoft Store
+description: Los pasos básicos para la configuración del cliente de Escritorio remoto para Microsoft Store.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -12,18 +12,18 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 05/07/2018
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b2141a6a57629ccbb585b2f74c581eba5ba2b1b1
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 03927cd531617c6e0c9572fc4ce74768e10bc66a
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446686"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150930"
 ---
-# <a name="get-started-with-remote-desktop-on-windows"></a>Introducción a Escritorio remoto en Windows
+# <a name="get-started-with-the-windows-store-client"></a>Introducción al cliente de Microsoft Store
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016 y Windows Server 2012 R2
+>Se aplica a: Windows 10
 
 El cliente de Escritorio remoto para Windows se puede usar con aplicaciones de Windows y escritorios de forma remota desde otro dispositivo de Windows.
 
@@ -69,16 +69,16 @@ Para crear una conexión a Escritorio remoto:
 ¿Quieres eliminar la conexión? Vuelve a pulsar el menú de desbordamiento ( **...** ) y, después, pulsa **Quitar**.
 
 ### <a name="add-a-remote-resource"></a>Adición de recursos remotos
+
 Los recursos remotos son programas RemoteApp, escritorios basados en sesión y escritorios virtuales publicados por el administrador mediante Servicios de Escritorio remoto.
 
 Para agregar un recurso remoto:
 
-1. En la pantalla del Centro de conexión, pulsa **+ Agregar** y, después, pulsa **Recursos remotos**. 
+1. En la pantalla del Centro de conexión, pulsa **+ Agregar** y, después, pulsa **Recursos remotos**.
 2. Escribe la **URL de fuente**, que te ha proporcionado el administrador, y pulsa **Buscar fuentes**.
 3. Cuando se soliciten, especifica las credenciales para suscribirse a la fuente.
 
 Los recursos remotos se mostrarán en el Centro de conexión.
-
 
 Para eliminar los recursos remotos:
 
@@ -109,11 +109,13 @@ Para configurar una puerta de enlace nueva:
 Para establecer la siguiente configuración global en el cliente, pulsa **Configuración**:
 
 ELEMENTOS ADMINISTRADOS
+
 - **Cuenta de usuario**: permite agregar, editar y eliminar cuentas de usuario guardadas en el cliente. Esta es una buena forma de actualizar la contraseña de una cuenta después de que haya cambiado.
 - **Puerta de enlace**: permite agregar, editar y eliminar servidores de puerta de enlace guardados en el cliente.
 - **Grupo**: permite agregar, editar y eliminar grupos guardados en el cliente. Estos elementos permiten agrupar conexiones fácilmente.
 
 CONFIGURACIÓN DE SESIÓN
+
 - **Iniciar conexiones en modo de pantalla completa**: si se habilita, cada vez que se inicie una conexión, el cliente utilizará toda la pantalla del monitor actual.
 - **Empezar cada conexión en una ventana nueva**: si se habilita, cada conexión se inicia en una ventana independiente, lo que permite colocarlas en distintos monitores y cambiar de una a otra desde la barra de tareas.
 - **Al cambiar el tamaño de la aplicación:** : permite controlar lo que sucede cuando se cambia el tamaño de la ventana del cliente. El valor predeterminado es **Ampliar el contenido, manteniendo la relación de aspecto**.
@@ -121,6 +123,7 @@ CONFIGURACIÓN DE SESIÓN
 - **Impedir que se agote el tiempo de espera de la pantalla**: permite que la pantalla nunca supere el tiempo de espera cuando una sesión está activa. Resulta muy útil cuando la conexión no requiere ninguna interacción durante períodos prolongados.
 
 CONFIGURACIÓN DE APLICACIONES
+
 - **Mostrar vistas previas de escritorio**: permite obtener una vista previa de un escritorio en el Centro de conexión antes de conectarse a él. De manera predeterminada, se establece en **Activado**.
 - **Ayudar a mejorar Escritorio remoto**: envía datos anónimos a Microsoft. Estos datos se usan para mejorar el cliente. Para más información acerca de cómo se tratan estos datos privados anónimos, consulta la [declaración de privacidad de Microsoft](https://privacy.microsoft.com/en-us/privacystatement). De manera predeterminada, este valor está en la posición **Activado**.
 
@@ -181,13 +184,14 @@ Pulsa el botón **...**  en la barra de conexión para mostrar la barra de coman
 ### <a name="use-direct-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Uso de gestos de toque directo y de modos de ratón en una sesión remota
 
 Existen dos modos de ratón para interactuar con la sesión.
+
 - **Toque directo**: pasa todos los contactos táctiles a la sesión para que se interpreten de forma remota.
   - Se usa en la misma manera que utilizaría Windows con una pantalla táctil.
 - **Puntero**: Transforma la pantalla táctil local en un panel táctil grande que permite mover el puntero en la sesión.
-  - Se usa en la misma manera que utilizaría Windows con un panel táctil.
+  - Se usa en la misma manera que usarías Windows con un panel táctil.
 
 > [!NOTE]
-> En la interacción con Windows 8, o las versiones más recientes, se admiten los gestos táctiles nativos en modo de toque directo. 
+> En la interacción con Windows 8, o las versiones más recientes, se admiten los gestos táctiles nativos en modo de toque directo.
 
 | Modo de mouse    | Operación del ratón      | Gesto                                                               |
 |---------------|----------------------|-----------------------------------------------------------------------|
@@ -201,4 +205,4 @@ Existen dos modos de ratón para interactuar con la sesión.
 | Puntero | Zoom                 | Utiliza dos dedos y acércalos para acercar o sepáralos para alejar. |
 
 > [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, vete al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Para indicárnoslo, utiliza el [Centro de opiniones](feedback-hub://?tabid=2&contextid=605).
+> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Para indicárnoslo, utiliza el [Centro de opiniones](feedback-hub://?tabid=2&contextid=605).

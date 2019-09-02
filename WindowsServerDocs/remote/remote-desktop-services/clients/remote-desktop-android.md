@@ -1,5 +1,5 @@
 ---
-title: Introducción al cliente de Escritorio remoto en Android
+title: Introducción al cliente de Android
 description: Los pasos básicos para la configuración del cliente de Escritorio remoto para Android.
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -12,16 +12,16 @@ ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.date: 07/24/2018
+ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: b4b188eb8148b2f4e5c6672b07884af8fdcd0c60
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ccc96013efb71a2403f9be2df03461eba5ff1fc1
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66446742"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70151016"
 ---
-# <a name="get-started-with-remote-desktop-on-android"></a>Introducción al cliente de Escritorio remoto en Android
+# <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
 >Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016 y Windows Server 2012 R2
 
@@ -127,7 +127,7 @@ Para crear una cuenta de usuario:
 1. En el Centro de conexión, pulsa **Configuración**y luego pulsa  **Cuenta de usuario**.
 2. Pulsa **+** para agregar una cuenta de usuario nueva.
 3. Escribe la siguiente información:
-   - **Nombre de usuario**: el nombre del usuario que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario user_name@domain.com.
+   - **Nombre de usuario**: el nombre del usuario que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario o user_name@domain.com.
    - **Contraseña**: la contraseña del usuario que has especificado. Todas las cuentas de usuario que quieras guardar para usarlas para las conexiones remotas deben tener una contraseña asociada.
 4. Pulsa **Guardar**.
 
@@ -198,4 +198,4 @@ El cliente utiliza gestos táctiles estándar. También se pueden usar gestos t�
 | Puntero | Rueda del ratón          | Pulsar con dos dedos y mantener pulsado, y luego arrastrar hacia arriba o abajo                           |
 
 > [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, vete al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).

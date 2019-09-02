@@ -1,21 +1,21 @@
 ---
-title: Acceso al cliente web de Escritorio remoto
+title: Introducción al cliente web
 description: Describe cómo iniciar sesión en el cliente web de Escritorio remoto.
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
-ms.date: 07/20/2018
+ms.date: 08/27/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: f4433ad592219d6ed15b28fd0514790b078525fd
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 11e68821fb095617cea19ee83c057d247a909604
+ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743838"
+ms.lasthandoff: 08/29/2019
+ms.locfileid: "70150971"
 ---
-# <a name="access-the-remote-desktop-web-client"></a>Acceso al cliente web de Escritorio remoto
+# <a name="get-started-with-the-web-client"></a>Introducción al cliente web
 
 El cliente web de Escritorio remoto te permite usar un explorador web compatible para acceder a los recursos remotos de tu organización (aplicaciones y escritorios) publicados para ti por el administrador. Podrás interactuar con las aplicaciones y escritorios remotos como lo harías con un equipo local, independientemente de dónde te encuentres, sin tener que cambiar a otro PC de escritorio. Una vez que el administrador configura los recursos remotos, todo lo que necesitas es tu dominio, nombre de usuario, contraseña, la dirección URL que te ha enviado el administrador y un explorador web compatible, y estás listo para continuar.
 
