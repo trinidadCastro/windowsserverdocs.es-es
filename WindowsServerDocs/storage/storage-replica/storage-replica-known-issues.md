@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 06/25/2019
 ms.assetid: ceddb0fa-e800-42b6-b4c6-c06eb1d4bc55
-ms.openlocfilehash: ad08d8716819773484fc1d1fbe3cc79dd203c498
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.openlocfilehash: 681e07b85af603d11295bf1ca2a08f0eb7181725
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590559"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865252"
 ---
 # <a name="known-issues-with-storage-replica"></a>Problemas conocidos de Réplica de almacenamiento
 

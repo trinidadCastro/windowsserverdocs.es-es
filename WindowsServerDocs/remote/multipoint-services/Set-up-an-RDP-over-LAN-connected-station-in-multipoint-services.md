@@ -1,6 +1,6 @@
 ---
-title: Configurar una estación de RDP a través de LAN conectados en MultiPoint Services
-description: Obtenga información sobre cómo configurar un sistema RDP a través de LAN en MultiPoint Services
+title: Configuración de una estación conectada RDP a través de LAN en Multipoint Services
+description: Aprenda a configurar un sistema RDP a través de LAN en Multipoint Services
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,45 +13,45 @@ ms.assetid: 60e1a025-c2fb-4708-a3ff-c44c223a3224
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 8d2f1644918f1a581c1bcab181cd084e12c6b576
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 40899b277ae60169a0eca34b359172941e5391fb
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843706"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871562"
 ---
-# <a name="set-up-an-rdp-over-lan-connected-station-in-multipoint-services"></a>Configurar una estación de RDP a través de LAN conectados en MultiPoint Services
-Una estación de RDP a través de LAN conectados es un cliente ligero, de escritorio tradicional o equipo portátil que se conecta a MultiPoint Services en una red de área local (LAN) mediante el protocolo de escritorio remoto (RDP). Para obtener más información sobre este y otros tipos de estación, vea [estaciones de MultiPoint](MultiPoint-services-Stations.md).  
+# <a name="set-up-an-rdp-over-lan-connected-station-in-multipoint-services"></a>Configuración de una estación conectada RDP a través de LAN en Multipoint Services
+Una estación conectada RDP a través de LAN es un cliente ligero, un escritorio tradicional o un equipo portátil que se conecta a multipoint Services en una red de área local (LAN) mediante el Protocolo de escritorio remoto (RDP). Para obtener más información sobre este y otros tipos de estación, consulte [estaciones Multipoint](MultiPoint-services-Stations.md).  
   
-## <a name="to-set-up-a-multipoint-station-using-a-computer-or-thin-client-on-a-lan"></a>Para configurar una estación de MultiPoint mediante un equipo o un cliente ligero en una LAN  
+## <a name="to-set-up-a-multipoint-station-using-a-computer-or-thin-client-on-a-lan"></a>Para configurar una estación Multipoint mediante un equipo o un cliente ligero en una LAN  
   
-1.  Encienda el equipo que está ejecutando MultiPoint Services.  
+1.  Encienda el equipo que ejecuta Multipoint Services.  
   
-2.  Asegúrese de que el equipo del servidor MultiPoint está conectado a la LAN mediante un conmutador, enrutador u otro dispositivo de red y tiene una dirección IP correcta. (Una dirección IP que comienza por 169.254 (una dirección APIPA) podría indicar un problema con la conexión LAN o que el servidor DHCP no se puede alcanzar o no funciona correctamente).  
+2.  Asegúrese de que el equipo de MultiPoint Server esté conectado a la LAN mediante un conmutador, un enrutador u otro dispositivo de red y que tenga una dirección IP adecuada. (Una dirección IP que empieza por 169,254 (una dirección APIPA) puede indicar que hay un problema con la conexión LAN o que el servidor DHCP no se puede alcanzar o no funciona correctamente.)  
   
-3.  Conecte el equipo cliente o cliente ligero para la LAN.  
+3.  Conecte el equipo cliente o el cliente ligero a la LAN.  
   
-4.  Encienda el equipo cliente o un cliente ligero.  
+4.  Encienda el equipo cliente o el cliente ligero.  
   
-5.  En el equipo cliente o un cliente ligero, inicie conexión a Escritorio remoto o una aplicación equivalente y escriba el nombre o dirección IP del equipo que ejecuta MultiPoint Services.
+5.  En el equipo cliente o en el cliente ligero, inicie Conexión a Escritorio remoto o una aplicación equivalente y escriba el nombre o la dirección IP del equipo que ejecuta Multipoint Services.
 
-## <a name="set-up-a-windows-10-device-for-remote-management-by-using-connector-services"></a>Configurar un dispositivo Windows 10 para la administración remota mediante servicios del conector
-Cualquier equipo PC o portátil con Windows 10 se puede administrar de forma remota siempre que:
+## <a name="set-up-a-windows-10-device-for-remote-management-by-using-connector-services"></a>Configurar un dispositivo de Windows 10 para la administración remota mediante servicios de conector
+Cualquier equipo o portátil que ejecute Windows 10 se puede administrar de forma remota siempre que:
 - se han habilitado los servicios del conector  
-- la máquina se agregó en los equipos administrados en el servidor MultiPoint.  
+- la máquina se ha agregado a los equipos administrados en MultiPoint Server.  
 
-En el equipo que ejecuta Windows 10, siga estos pasos para habilitar el conector de MultiPoint:
+En el equipo que ejecuta Windows 10, siga estos pasos para habilitar el conector Multipoint:
 
-1. En el cuadro de búsqueda, escriba "Windows activar o desactivar las características" y seleccione el resultado de búsqueda adecuada. 
+1. En el cuadro de búsqueda, escriba "activar o desactivar las características de Windows" y seleccione el resultado de búsqueda adecuado. 
 
-2. En la lista de características habilitar **MultiPoint conector**. Esto permitirá a los servicios del conector de MultiPoint que son necesarias para administrar el dispositivo. 
+2. En la lista de características, habilite el **conector Multipoint**. Esto habilitará los servicios de Multipoint Connector necesarios para administrar el dispositivo. 
 
-En el servidor MultiPoint:
-1. Abra MultiPoint Manager y seleccione **agregar o quitar equipos personales** o **Add o remove MultiPoint Services**.
+En MultiPoint Server:
+1. Abra Multipoint Manager y seleccione **Agregar o quitar equipos personales** o **Agregar o quitar Multipoint Services**.
 
-2. Seleccione los equipos remotos que desea administrar y haga clic en **Aceptar**.  Se le pedirá las credenciales de administrador en los equipos remotos.  Una vez hecho esto, verá los equipos remotos en la ficha Inicio MultiPoint Manager.
+2. Seleccione los equipos remotos que desea administrar y haga clic en **Aceptar**.  Se le pedirán las credenciales de administrador en los equipos remotos.  Una vez hecho esto, verá los equipos remotos en la pestaña Inicio de Multipoint Manager.
 
-Correctamente cuando el Administrador de panel de conjunto puede supervisar los usuarios que trabajan en el dispositivo administrado.
+Cuando el administrador de paneles se configura correctamente, puede supervisar los usuarios que trabajan en el dispositivo administrado.
 
 > [!IMPORTANT]  
-> Cuando la supervisión administrados no se puede supervisar a los usuarios de Windows 10 dispositivos administratrive excepto el servidor de configuración se han cambiado en consecuencia. Consulte [editar la configuración del servidor](Edit-Server-Settings.md)
+> Al supervisar dispositivos Windows 10 administrados, los usuarios de administratrive no se pueden supervisar, salvo que se ha cambiado la configuración del servidor en consecuencia. Consulte [Editar configuración del servidor](Edit-Server-Settings.md)

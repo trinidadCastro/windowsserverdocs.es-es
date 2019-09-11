@@ -1,6 +1,6 @@
 ---
 title: Crear escritorios virtuales de Windows 10 Enterprise para las estaciones
-description: Aprenda a crear los equipos de escritorio de Windows Server 2016 para la estación
+description: Aprenda a crear escritorios de Windows Server 2016 para la estación
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,153 +13,153 @@ ms.assetid: 63f08b5b-c735-41f4-b6c8-411eff85a4ab
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: 0aa81ef3633adf27a25b45b3b7c00082d83bf0bb
-ms.sourcegitcommit: 21165734a0f37c4cd702c275e85c9e7c42d6b3cb
+ms.openlocfilehash: e68412808e037b788d5b25c1c2c7b14253e40ea6
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65034627"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871732"
 ---
 # <a name="create-windows-10-enterprise-virtual-desktops-for-stations"></a>Crear escritorios virtuales de Windows 10 Enterprise para las estaciones
-Esta configuración opcional en MultiPoint Services sirve principalmente para situaciones donde una aplicación esencial requiere su propia instancia de un sistema operativo cliente para cada usuario. Algunos ejemplos son las aplicaciones que no se puede instalar en Windows Server y aplicaciones que no se ejecutarán varias instancias en el mismo equipo host.  
+Esta configuración opcional en Multipoint Services está destinada principalmente a situaciones en las que una aplicación esencial requiere su propia instancia de un sistema operativo cliente para cada usuario. Algunos ejemplos son las aplicaciones que no se pueden instalar en Windows Server y las aplicaciones que no ejecutarán varias instancias en el mismo equipo host.  
   
 > [!NOTE]  
-> Estos escritorios virtuales, también conocido como VDI, son mucho más recursos que las sesiones de escritorio de MultiPoint Services de forma predeterminada, por lo que le recomendamos que use las sesiones de MultiPoint Services de forma predeterminada cuando sea posible.  
+> Estos escritorios virtuales, también conocidos como VDI, son mucho más intensivo de recursos que las sesiones de escritorio de Multipoint Services predeterminadas, por lo que se recomienda usar sesiones de Multipoint Services predeterminadas siempre que sea posible.  
   
 ## <a name="prerequisites"></a>Requisitos previos  
-Para preparar la creación de estación de escritorios virtuales, asegúrese de que los servicios de MultiPoint sistema cumple los requisitos siguientes:      
+Para preparar la creación de escritorios virtuales de estación, asegúrese de que el sistema Multipoint Services cumple los requisitos siguientes:      
   
 |Hardware|Requisitos|         |
 |------------|----------------|----------------| 
-|CPU (multimedia)|1 núcleo o subproceso por cada máquina virtual|  
-|Unidades de estado sólido (SSD)|Capacidad de > = 20GB cada estación + 40GB para sistema operativo de hosts de los servicios de MultiPoint<br /><br />Operaciones aleatorias de lectura\/IOPS de escritura > = 3 K cada estación|  
-|RAM|2GB por estación + 2GB para el sistema operativo de host de Windows MultiPoint Server|  
+|CPU (multimedia)|1 núcleo o subproceso por máquina virtual|  
+|Unidad de estado sólido (SSD)|Capacidad > = 20 GB por estación + 40 GB para el sistema operativo host de Multipoint Services<br /><br />IOPS de\/escritura de lectura aleatoria > = 3K por estación|  
+|RAM|2 GB por estación + 2 GB para el sistema operativo host de Windows MultiPoint Server|  
 |Gráficos|DX11|  
-|BIOS|Configuración de CPU de BIOS para habilitar la virtualización, traducción de direcciones de segundo nivel (SLAT)|  
+|BIOS|Configuración de CPU de BIOS configurada para habilitar la virtualización: traducción de direcciones de segundo nivel (SLAT)|  
   
--   **Las estaciones** -configurar las estaciones para su sistema MultiPoint Services. Para obtener más información, consulte [adjuntar adicionales estaciones en MultiPoint Services](Attach-additional-stations-to-your-MultiPoint-services-computer.md).  
+-   **Estaciones** : Configure las estaciones del sistema Multipoint Services. Para más información, consulte [Asociación de estaciones adicionales a multipoint Services](Attach-additional-stations-to-your-MultiPoint-services-computer.md).  
   
--   **Dominio** : en un entorno de dominio, el equipo de Windows MultiPoint Server se ha agregado al dominio y un usuario de dominio se agregó al grupo Administradores local en el sistema operativo de host de MultiPoint Services.  
+-   **Dominio** : en un entorno de dominio, el equipo con Windows MultiPoint Server se ha agregado al dominio y se ha agregado un usuario de dominio al grupo de administradores locales en el sistema operativo host de Multipoint Services.  
   
 ## <a name="procedures"></a>Procedimientos  
 Use los siguientes procedimientos para:  
   
 -   [Crear una plantilla para escritorios virtuales](#create-a-template-for-virtual-desktops)  
   
--   [Creación de escritorios virtuales de la plantilla](#create-virtual-machine-desktops-from-the-template)  
+-   [Crear escritorios virtuales a partir de la plantilla](#create-virtual-machine-desktops-from-the-template)  
   
--   [Copiar una plantilla de escritorio virtual existente](#copy-an-existing-virtual-desktop-template)  
+-   [Copia de una plantilla de escritorio virtual existente](#copy-an-existing-virtual-desktop-template)  
   
 ### <a name="create-a-template-for-virtual-desktops"></a>Crear una plantilla para escritorios virtuales  
-Para poder crear una plantilla para los escritorios virtuales, debe habilitar la característica de Escritorio Virtual en MultiPoint Server.  
+Antes de poder crear una plantilla para los escritorios virtuales, debe habilitar la característica de escritorio virtual en MultiPoint Server.  
   
-##### <a name="to-enable-the-virtual-desktop-feature"></a>Para habilitar la característica de Escritorio Virtual  
+##### <a name="to-enable-the-virtual-desktop-feature"></a>Para habilitar la característica de escritorio virtual  
   
-1.  Inicie sesión en el sistema de operativo del host de MultiPoint Server con una cuenta de administrador local o, en un dominio, con una cuenta de dominio que sea miembro del grupo Administradores local.  
+1.  Inicie sesión en el sistema operativo host de servidor multipoint con una cuenta de administrador local o, en un dominio, con una cuenta de dominio que sea miembro del grupo local de administradores.  
   
-2.  Desde el **iniciar** pantalla, abra MultiPoint Manager.  
+2.  En la pantalla **Inicio** , abra Multipoint Manager.  
   
-3.  Haga clic en el **escritorios virtuales** , haga clic **Habilitar escritorios virtuales**y, a continuación, haga clic en **Aceptar**y espere a que el reinicio del sistema.  
+3.  Haga clic en la pestaña **escritorios** virtuales, haga clic en **Habilitar escritorios virtuales**y, a continuación, haga clic en **Aceptar**y espere a que se reinicie el sistema.  
   
-El siguiente paso es crear una plantilla de Escritorio Virtual. Literalmente, va a crear un archivo de disco duro virtual (VHD) que puede usar como plantilla para crear escritorios virtuales de estación de MultiPoint Manager. Puede usar los medios de instalación física de Windows o un. Archivo de imagen ISO a como origen para la plantilla. También puede usar una. Disco duro virtual de la instalación de Windows. Tenga en cuenta que para utilizar un disco de instalación física, debe insertar el disco antes de iniciar al asistente.  
+El siguiente paso consiste en crear una plantilla de escritorio virtual. Está creando literalmente un archivo de disco duro virtual (VHD) que puede usar como plantilla para crear escritorios virtuales de estación para Multipoint Manager. Puede usar los medios de instalación física para Windows o un. Archivo de imagen ISO como origen de la plantilla. También puede utilizar un. VHD de la instalación de Windows. Tenga en cuenta que para utilizar un disco de instalación física, debe insertar el disco antes de iniciar el asistente.  
   
-##### <a name="to-create-a-virtual-desktop-template"></a>Para crear una plantilla de Escritorio Virtual  
+##### <a name="to-create-a-virtual-desktop-template"></a>Para crear una plantilla de escritorio virtual  
   
-1.  Inicie sesión en el sistema de operativo del host de MultiPoint Server con una cuenta de administrador local o, en el dominio, una cuenta de dominio que sea miembro del grupo Administradores local.  
+1.  Inicie sesión en el sistema operativo host de servidor multipoint con una cuenta de administrador local o, en el dominio, una cuenta de dominio que sea miembro del grupo de administradores locales.  
   
-2.  Desde el **iniciar** pantalla, abra MultiPoint Manager.  
+2.  En la pantalla **Inicio** , abra Multipoint Manager.  
   
-3.  Haga clic en el **escritorios virtuales** ficha.  
+3.  Haga clic en la pestaña **escritorios virtuales** .  
   
-4.   Copie un archivo .iso de Windows 10 Enterprise en el SSD local.  
+4.   Copie un archivo. ISO de Windows 10 Enterprise en el SSD local.  
   
-5.  En la pestaña escritorios virtuales, haga clic en **crear plantilla de escritorio virtual.**   
+5.  En la pestaña escritorios virtuales, haga clic en **Crear plantilla de escritorio virtual.**   
   
-6.  En **prefijo**, escriba un prefijo que se utiliza para identificar la plantilla y los escritorios virtuales creados con la plantilla. El prefijo predeterminado es el nombre del equipo host.  
+6.  En **prefijo**, escriba el prefijo que se usará para identificar la plantilla y los escritorios virtuales creados con la plantilla. El prefijo predeterminado es el nombre del equipo host.  
   
-    El prefijo se usa para dar nombre a la plantilla y a las estaciones de escritorios virtuales. La plantilla estará <*prefijo*>-t. Las estaciones de escritorios virtuales se denominarán <*prefijo*>-*n*, donde *n* es el identificador de estación.  
+    El prefijo se usa para dar nombre a la plantilla y a las estaciones de escritorios virtuales. La plantilla será <*prefijo*>-t. Las estaciones de escritorios virtuales se denominarán <*prefijo*>-*n*, donde *n* es el identificador de la estación.  
   
-7.  Escriba un nombre de usuario y contraseña para la cuenta de administrador local para la plantilla. En un dominio, escriba las credenciales para una cuenta de dominio que se agregarán al grupo de administradores local. Esta cuenta puede usarse para iniciar sesión en la plantilla y todas las estaciones de escritorios virtuales crean a partir de la plantilla.  
+7.  Escriba un nombre de usuario y una contraseña que se usarán para la cuenta de administrador local para la plantilla. En un dominio, escriba las credenciales de una cuenta de dominio que se agregará al grupo de administradores locales. Esta cuenta puede usarse para iniciar sesión en la plantilla y en todas las estaciones de escritorios virtuales creadas a partir de la plantilla.  
   
-8. Haga clic en **Aceptar**y espere a que finalice la creación de plantilla.  
+8. Haga clic en **Aceptar**y espere a que se complete la creación de la plantilla.  
   
-9. La nueva plantilla se mostrará en el **escritorios virtuales** ficha. La plantilla se desactivará.  
+9. La nueva plantilla se mostrará en la pestaña **escritorios virtuales** . La plantilla se desactivará.  
   
-El siguiente paso es configurar la plantilla con el software y la configuración que desee en los escritorios virtuales. Debe hacerlo antes de crear los escritorios virtuales desde la plantilla.  
+El siguiente paso consiste en configurar la plantilla con el software y la configuración que desee en los escritorios virtuales. Debe hacerlo antes de crear los escritorios virtuales a partir de la plantilla.  
   
 ##### <a name="to-customize-a-virtual-desktop-template"></a>Para personalizar una plantilla de escritorio virtual  
   
-1.  Inicie sesión en el sistema de operativo del host de MultiPoint server con una cuenta de administrador local o, en un dominio, con una cuenta de dominio en el grupo de administradores local.  
+1.  Inicie sesión en el sistema operativo host de servidor multipoint con una cuenta de administrador local o, en un dominio, con una cuenta de dominio en el grupo de administradores locales.  
   
-2.  Desde el **iniciar** pantalla, abra MultiPoint Manager.  
+2.  En la pantalla **Inicio** , abra Multipoint Manager.  
   
-3.  Haga clic en el **escritorios virtuales** ficha.  
+3.  Haga clic en la pestaña **escritorios virtuales** .  
   
-4.  Seleccione la plantilla que desee personalizar, haga clic en **Personalizar plantilla**y, a continuación, haga clic en **Aceptar**.  
-  
-    > [!NOTE]  
-    > Solo las plantillas que no se usaron para crear estaciones de escritorios virtuales están disponibles. Si desea actualizar una plantilla que ya está en uso, debe hacer una copia de la plantilla mediante el uso de la **Importar plantilla** tarea, se describe más adelante, en [copiar una plantilla existente de escritorio virtual](#copy-an-existing-virtual-desktop-template).  
-  
-    La plantilla se abre en un Hyper-V **conectar VM** ventana e inicio de sesión automático se realiza mediante la cuenta Administrador integrado.  
-  
-5.  En este momento puede instalar aplicaciones y actualizaciones de software, cambiar la configuración y actualizar el perfil de administrador. Todos los cambios realizados en perfil de administrador integrada la plantilla se copiarán en el perfil de usuario de forma predeterminada en las estaciones de escritorios virtuales que se crean a partir de la plantilla.  
-  
-    Si va a conectar sus emisoras a través de un dominio, se recomienda que cree una cuenta de usuario local y agregar al grupo de administradores local durante la personalización.  
+4.  Seleccione la plantilla que desea personalizar, haga clic en **personalizar plantilla**y, a continuación, haga clic en **Aceptar**.  
   
     > [!NOTE]  
-    > Si se reinicia el sistema mientras que se va a personalizar una plantilla, puede producir un error en Inicio de sesión automático con la cuenta de administrador integrada tras reiniciar el sistema. Para solucionar este problema, manualmente el registro sobre el uso de la cuenta de administrador local que ha creado, cambie la contraseña de la cuenta predefinida Administrador, cierre la sesión y, a continuación, volver a iniciar sesión con la cuenta predefinida Administrador y la contraseña nueva. (Debe eliminar el perfil que se creó cuando inicie sesión con la cuenta de administrador local.)  
+    > Solo están disponibles las plantillas que no se han usado para crear estaciones de escritorios virtuales. Si desea actualizar una plantilla que ya está en uso, debe hacer una copia de la plantilla mediante la tarea **Importar plantilla** , que se describe más adelante, en [copiar una plantilla de escritorio virtual existente](#copy-an-existing-virtual-desktop-template).  
   
-6.  Cuando termine de configurar el sistema, haga doble clic en el **CompleteCustomization** acceso directo en el escritorio del administrador para ejecutar Sysprep y, a continuación, cierre la plantilla. Durante la personalización, la herramienta Sysprep elimina toda la información única del sistema para preparar la instalación de Windows para crear la imagen.  
+    La plantilla se abre en una ventana de **conexión de máquina virtual** de Hyper-V y el inicio de sesión automático se realiza mediante la cuenta de administrador integrada.  
   
-### <a name="create-virtual-machine-desktops-from-the-template"></a>Crear equipos de escritorio de máquina virtual de la plantilla  
-Con la plantilla de escritorio virtual configurada como desea que sus equipos de escritorio sea, está listo para empezar a crear escritorios virtuales. Para cada estación que está conectado al equipo de MultiPoint Server, se creará un escritorio virtual. La próxima vez que un usuario inicia sesión en una estación, verá el escritorio virtual en lugar del escritorio basado en sesión que se mostró antes.  
+5.  En este momento puede instalar aplicaciones y actualizaciones de software, cambiar la configuración y actualizar el perfil de administrador. Todos los cambios realizados en el perfil de administrador integrado de la plantilla se copiarán en el perfil de usuario predeterminado en las estaciones de escritorios virtuales que se crean a partir de la plantilla.  
+  
+    Si va a conectar sus estaciones a través de un dominio, se recomienda crear una cuenta de usuario local y agregarla al grupo de administradores locales durante la personalización.  
+  
+    > [!NOTE]  
+    > Si el sistema se reinicia mientras se personaliza una plantilla, puede producirse un error en el inicio de sesión automático con la cuenta de administrador integrada después de reiniciar el sistema. Para solucionar este problema, inicie sesión manualmente con la cuenta de administrador local que creó, cambie la contraseña de la cuenta de administrador integrada, cierre la sesión y vuelva a iniciarla con la cuenta predefinida Administrador y la nueva contraseña. (Tendrá que eliminar el perfil que se creó al iniciar sesión con la cuenta de administrador local).  
+  
+6.  Cuando termine de configurar el sistema, haga doble clic en el acceso directo **CompleteCustomization** en el escritorio del administrador para ejecutar Sysprep y, a continuación, cierre la plantilla. Durante la personalización, la herramienta Sysprep quita toda la información única del sistema para preparar la instalación de Windows para la imagen.  
+  
+### <a name="create-virtual-machine-desktops-from-the-template"></a>Crear escritorios de máquinas virtuales a partir de la plantilla  
+Con la plantilla de escritorio virtual configurada de la forma en que desea que los escritorios estén, está listo para empezar a crear escritorios virtuales. Se creará un escritorio virtual para cada estación que esté conectada al equipo de MultiPoint Server. La próxima vez que un usuario inicie sesión en una estación, verá el escritorio virtual en lugar del escritorio basado en sesión que se mostró antes.  
   
 > [!NOTE]  
-> Este procedimiento solo funciona cuando servidor MultiPoint está en *modo de estación*. Si el sistema está en *modo de consola*, puede cambiar al modo de estación de MultiPoint Manager. Si usa la configuración predeterminada de MultiPoint, también puede iniciar el modo de estación, reinicie el equipo. De forma predeterminada, el equipo de MultiPoint Server siempre se inicia en modo de estación  
+> Este procedimiento solo funciona cuando MultiPoint Server está en *modo de estación*. Si el sistema está en *modo de consola*, puede cambiar al modo de estación de Multipoint Manager. Si usa la configuración de Multipoint predeterminada, también puede iniciar el modo de estación reiniciando el equipo. De forma predeterminada, el equipo de MultiPoint Server siempre se inicia en modo de estación  
   
-##### <a name="to-create-virtual-desktops-for-your-stations"></a>Para crear escritorios virtuales para sus estaciones  
+##### <a name="to-create-virtual-desktops-for-your-stations"></a>Para crear escritorios virtuales para las estaciones  
   
-1.  Inicie sesión en el servidor de Windows MultiPoint desde una estación remota (por ejemplo, desde un equipo Windows con conexión a Escritorio remoto) mediante un administrador local de la cuenta o, en un dominio, un dominio de la cuenta del grupo Administradores local.  
+1.  Inicie sesión en Windows MultiPoint Server desde una estación remota (por ejemplo, desde un equipo Windows con Conexión a Escritorio remoto) mediante una cuenta de administrador local o, en un dominio, una cuenta de dominio en el grupo de administradores locales.  
   
     > [!NOTE]  
-    > Como alternativa, puede iniciar sesión en el servidor mediante una estación local. Sin embargo, cuando se crea un escritorio virtual de la estación, tendrá que cerrar la estación que usó para crear el escritorio virtual con el fin de conectarse al nuevo escritorio virtual en otra estación.  
+    > Como alternativa, puede iniciar sesión en el servidor con una estación local. Sin embargo, cuando cree un escritorio virtual de estación, tendrá que cerrar la estación que usó para crear el escritorio virtual con el fin de conectar la otra estación al nuevo escritorio virtual.  
   
-2.  Desde el **iniciar** pantalla, abra MultiPoint Manager.  
+2.  En la pantalla **Inicio** , abra Multipoint Manager.  
   
 3.  Si el equipo está en modo de consola, cambie al modo de estación:  
   
-    1.  En el **inicio** , haga clic **cambiar al modo de estación**.  
+    1.  En la pestaña **Inicio** , haga clic en **cambiar al modo de estación**.  
   
-    2.  Cuando se reinicia el equipo, inicie sesión como administrador.  
+    2.  Cuando se reinicie el equipo, inicie sesión como administrador.  
   
-4.  Haga clic en el **escritorios virtuales** ficha.  
+4.  Haga clic en la pestaña **escritorios virtuales** .  
   
 5.  Seleccione la plantilla de escritorio virtual que desea usar con las estaciones, haga clic en **crear estaciones de escritorios virtuales**y, a continuación, haga clic en **Aceptar**.  
   
-Cuando se complete la tarea, cada estación local se conectará a un escritorio virtual basado en la máquina virtual.  
+Cuando se complete la tarea, cada estación local se conectará a un escritorio virtual basado en máquina virtual.  
   
 > [!NOTE]  
-> Si una cuenta de usuario ha iniciado sesión en cualquiera de las estaciones locales, deberá cerrar la sesión para obtener la estación para conectarse a uno de los escritorios virtuales estación recién creado.  
+> Si una cuenta de usuario ha iniciado sesión en cualquiera de las estaciones locales, deberá cerrar sesión en la sesión para que la estación se conecte a uno de los escritorios virtuales de la estación recién creados.  
   
-### <a name="copy-an-existing-virtual-desktop-template"></a>Copiar una plantilla de escritorio virtual existente  
+### <a name="copy-an-existing-virtual-desktop-template"></a>Copia de una plantilla de escritorio virtual existente  
 Use el procedimiento siguiente para crear una copia de una plantilla de escritorio virtual existente que puede personalizar y usar. Esto puede ser útil en las situaciones siguientes:  
   
--   Para copiar una plantilla maestra desde un recurso compartido de red en un equipo de MultiPoint Server host para que las estaciones de escritorios virtuales se pueden crear a partir de la plantilla principal.  
+-   Para copiar una plantilla maestra desde un recurso compartido de red en un equipo host de MultiPoint Server para que se puedan crear estaciones de escritorios virtuales a partir de la plantilla maestra.  
   
--   Para crear una copia de una plantilla que está actualmente en uso, por lo que puede realizar personalizaciones adicionales.  
+-   Para crear una copia de una plantilla que se está usando actualmente para poder crear personalizaciones adicionales.  
   
 ##### <a name="to-import-a-virtual-desktop-template"></a>Para importar una plantilla de escritorio virtual  
   
-1.  Inicie sesión como administrador el servidor MultiPoint.  
+1.  Inicie sesión en el servidor Multipoint como administrador.  
   
-2.  Desde el **iniciar** pantalla, abra MultiPoint Manager.  
+2.  En la pantalla **Inicio** , abra Multipoint Manager.  
   
-3.  Haga clic en el **escritorios virtuales** ficha.  
+3.  Haga clic en la pestaña **escritorios virtuales** .  
   
-4.  Haga clic en **Importar plantilla de escritorio virtual**y usar **examinar** para seleccionar el archivo .vhd (plantilla) que se va a importar. Al importar una plantilla, se realiza una copia de VHD original. De forma predeterminada, MultiPoint Services almacena archivos .vhd en la unidad C:\\usuarios\\pública\\documentos\\Hyper\-V\\discos duros virtuales\\ carpeta.  
+4.  Haga clic en **Importar plantilla de escritorio virtual**y use **examinar** para seleccionar el archivo. vhd (plantilla) que desea importar. Al importar una plantilla, se realiza una copia del archivo. vhd original. De forma predeterminada, Multipoint Services almacena archivos. vhd en la\\carpeta\\C\\: users\\Public\\Hard Disks\\ de Hyper\-V.  
   
 5.  Escriba un prefijo para la nueva plantilla y, a continuación, haga clic en **Aceptar**.  
   
-6.  Si va a realizar más personalizaciones en una plantilla local, puede cambiar el nombre del prefijo al incrementar un número de versión al final del prefijo. O bien, si va a importar una plantilla principal, es posible que desea agregar la versión de la plantilla principal hasta el final del nombre de prefijo predeterminado.  
+6.  Si va a realizar más personalizaciones en una plantilla local, puede cambiar el nombre del prefijo incrementando un número de versión al final del prefijo. O bien, si va a importar una plantilla maestra, puede que desee agregar la versión de la plantilla maestra al final del nombre del prefijo predeterminado.  
   
-7.  Cuando se complete la tarea, puede personalizar la plantilla o usarlo y sirve crear estaciones.  
+7.  Cuando la tarea se completa, puede personalizar la plantilla o usarla como si se creara.  

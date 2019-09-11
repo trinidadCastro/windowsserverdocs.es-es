@@ -1,6 +1,6 @@
 ---
 title: Adición de una puerta de enlace virtual a una red virtual de inquilino
-description: Obtenga información sobre cómo usar los scripts y cmdlets de Windows PowerShell para proporcionar conectividad de sitio a sitio para redes virtuales del inquilino.
+description: Obtenga información sobre cómo usar los cmdlets y scripts de Windows PowerShell para proporcionar conectividad de sitio a sitio para las redes virtuales del inquilino.
 manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,37 +13,37 @@ ms.assetid: b9552054-4eb9-48db-a6ce-f36ae55addcd
 ms.author: pashort
 author: shortpatti
 ms.date: 08/23/2018
-ms.openlocfilehash: 768a25c8c452a8c4bc85b38736b4241fa2570b32
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 39199a96b1f3cd5a62e60f676e8ab47ad4acb4a8
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446364"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869951"
 ---
 # <a name="add-a-virtual-gateway-to-a-tenant-virtual-network"></a>Adición de una puerta de enlace virtual a una red virtual de inquilino 
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016 
 
-Obtenga información sobre cómo usar los scripts y cmdlets de Windows PowerShell para proporcionar conectividad de sitio a sitio para redes virtuales del inquilino. En este tema, agrega puertas de enlace virtual de inquilino a instancias de puerta de enlace RAS que son miembros de grupos de puertas de enlace, con la controladora de red. Puerta de enlace RAS admite a hasta 100 inquilinos, según el ancho de banda utilizado por cada inquilino. Controladora de red determina automáticamente la mejor puerta de enlace de RAS que se usará al implementar una puerta de enlace virtual para los inquilinos.  
+Obtenga información sobre cómo usar los cmdlets y scripts de Windows PowerShell para proporcionar conectividad de sitio a sitio para las redes virtuales del inquilino. En este tema, agregará puertas de enlace virtuales de inquilino a instancias de puerta de enlace RAS que son miembros de los grupos de puertas de enlace, con el controlador de red. La puerta de enlace de RAS admite hasta 100 inquilinos, según el ancho de banda usado por cada inquilino. Controladora de red determina automáticamente la mejor puerta de enlace de RAS que se usará al implementar una nueva puerta de enlace virtual para los inquilinos.  
 
-Cada puerta de enlace virtual corresponde a un inquilino determinado y consta de uno o más conexiones de red (túneles VPN de sitio a sitio) y, opcionalmente, las conexiones de protocolo de puerta de enlace de borde (BGP). Al proporcionar conectividad de sitio a sitio, los clientes pueden conectar su red virtual de inquilino a una red externa, como Internet, una red de proveedor de servicio o una red de empresa del inquilino.
+Cada puerta de enlace virtual corresponde a un inquilino determinado y consta de una o más conexiones de red (túneles VPN de sitio a sitio) y, opcionalmente, de Protocolo de puerta de enlace de borde (BGP). Al proporcionar conectividad de sitio a sitio, los clientes pueden conectar su red virtual de inquilino a una red externa, como una red de empresa de inquilino, una red de proveedor de servicios o Internet.
 
-**Al implementar una puerta de enlace Virtual de inquilino, tiene las siguientes opciones de configuración:**  
+**Al implementar una puerta de enlace virtual de inquilino, tiene las siguientes opciones de configuración:**  
 
 
 |                                                        Opciones de conexión de red                                                         |                                              Opciones de configuración de BGP                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
-| <ul><li>Red privada virtual (VPN) de IPSec sitio a sitio</li><li>Encapsulación de enrutamiento genérico (GRE)</li><li>Reenvío de capa 3</li></ul> | <ul><li>Configuración del enrutador BGP</li><li>Configuración de BGP del mismo nivel</li><li>Configuración de directivas de enrutamiento de BGP</li></ul> |
+| <ul><li>Red privada virtual (VPN) de sitio a sitio de IPSec</li><li>Encapsulación de enrutamiento genérico (GRE)</li><li>Reenvío de capa 3</li></ul> | <ul><li>Configuración del enrutador BGP</li><li>Configuración de BGP del mismo nivel</li><li>Configuración de directivas de enrutamiento de BGP</li></ul> |
 
 ---
 
-El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran cómo implementar una puerta de enlace virtual de inquilino en una puerta de enlace de RAS con cada una de estas opciones.  
+En los scripts y comandos de ejemplo de Windows PowerShell de este tema se muestra cómo implementar una puerta de enlace virtual de inquilino en una puerta de enlace RAS con cada una de estas opciones.  
 
 
 >[!IMPORTANT]  
->Antes de ejecutar cualquiera de los comandos de Windows PowerShell de ejemplo y scripts que se proporcionan, debe cambiar todos los valores de variable para que los valores son adecuados para su implementación.  
+>Antes de ejecutar cualquiera de los comandos y scripts de Windows PowerShell de ejemplo que se proporcionan, debe cambiar todos los valores de las variables para que los valores sean adecuados para su implementación.  
 
-1.  Compruebe que existe el objeto de grupo de servidores de puerta de enlace en la controladora de red. 
+1.  Compruebe que el objeto de grupo de puerta de enlace existe en la controladora de red. 
 
     ```PowerShell
     $uri = "https://ncrest.contoso.com"   
@@ -56,7 +56,7 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
 
     ```  
 
-2.  Comprobar la existencia de la subred usada para enrutar paquetes fuera de la red virtual del inquilino en la controladora de red. También recupera la subred virtual usada para el enrutamiento entre la puerta de enlace de inquilino y la red virtual.  
+2.  Compruebe que la subred que se usa para enrutar paquetes fuera de la red virtual del inquilino existe en la controladora de red. También recupera la subred virtual que se usa para el enrutamiento entre la puerta de enlace de inquilino y la red virtual.  
 
     ```PowerShell 
     $uri = "https://ncrest.contoso.com"   
@@ -75,7 +75,7 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
 
     ```  
 
-3.  Cree un nuevo objeto para la puerta de enlace virtual de inquilino y, a continuación, actualice la referencia de grupo de servidores de puerta de enlace.  También especifica la subred virtual usada para el enrutamiento entre la puerta de enlace y la red virtual.  Después de especificar la subred virtual actualizar el resto de las propiedades del objeto de puerta de enlace virtual y, a continuación, agregue la nueva puerta de enlace virtual para el inquilino.
+3.  Cree un nuevo objeto para la puerta de enlace virtual de inquilino y, a continuación, actualice la referencia del grupo de puerta de enlace.  También se especifica la subred virtual que se usa para el enrutamiento entre la puerta de enlace y la red virtual.  Después de especificar la subred virtual, actualice el resto de las propiedades del objeto de puerta de enlace virtual y, a continuación, agregue la nueva puerta de enlace virtual para el inquilino.
 
     ```PowerShell  
     # Create a new object for Tenant Virtual Gateway  
@@ -99,10 +99,10 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
 
     ```  
 
-4. Crear una conexión VPN de sitio a sitio con GRE, IPsec o capa 3 reenvío (L3).  
+4. Cree una conexión VPN de sitio a sitio con el reenvío de IPsec, GRE o nivel 3 (L3).  
 
    >[!TIP]
-   >Si lo desea, puede combinar todos los pasos anteriores y configurar una puerta de enlace virtual de inquilino con todas las opciones de conexión de tres.  Para obtener más información, consulte [configurar una puerta de enlace con todos los tipos de conexión de tres (L3 GRE, IPsec) y BGP](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp).
+   >Opcionalmente, puede combinar todos los pasos anteriores y configurar una puerta de enlace virtual de inquilino con las tres opciones de conexión.  Para obtener más información, consulte [configuración de una puerta de enlace con los tres tipos de conexión (IPSec, GRE, L3) y BGP](#optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp).
 
    **Conexión de red de sitio a sitio de VPN de IPsec**
 
@@ -154,7 +154,7 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
 
    ```  
 
-   **Conexión de red de sitio a sitio VPN GRE**
+   **Conexión de red de sitio a sitio de VPN GRE**
 
    ```PowerShell  
    # Create a new object for the Tenant Network Connection  
@@ -190,9 +190,9 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
    ```  
 
    **Conexión de red de reenvío L3**<p>
-   Para un L3 reenvío de conexión de red funcione correctamente, debe configurar una red lógica correspondiente.   
+   Para que una conexión de red de reenvío L3 funcione correctamente, debe configurar una red lógica correspondiente.   
 
-   1. Configurar una red lógica para L3 de la conexión de red de reenvío.  <br>
+   1. Configure una red lógica para la conexión de red de reenvío L3.  <br>
 
       ```PowerShell  
       # Create a new object for the Logical Network to be used for L3 Forwarding  
@@ -216,7 +216,7 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
 
       ```  
 
-   2. Cree un objeto JSON de conexión de red y agregarla a la controladora de red.  
+   2. Cree un objeto JSON de conexión de red y agréguelo a la controladora de red.  
 
       ```PowerShell 
       # Create a new object for the Tenant Network Connection  
@@ -254,7 +254,7 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
 
       ```  
 
-5. Configurar la puerta de enlace como un enrutador BGP y agregarlo a la controladora de red. 
+5. Configurar la puerta de enlace como un enrutador BGP y agregarla a la controladora de red. 
 
    1. Agregue un enrutador BGP para el inquilino.  
 
@@ -272,7 +272,7 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
 
       ```  
 
-   2. Agregue a un par BGP para este inquilino, correspondiente a la conexión de red VPN de sitio a sitio agregadas anteriormente.  
+   2. Agregue un par BGP para este inquilino, que se corresponda con la conexión de red VPN de sitio a sitio agregada anteriormente.  
 
       ```PowerShell
       # Create a new object for Tenant BGP Peer  
@@ -288,8 +288,8 @@ El ejemplo de scripts de Windows PowerShell y comandos de este tema muestran có
 
       ```  
 
-## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a>(Paso opcional) Configurar una puerta de enlace con todos los tipos de conexión de tres (L3 GRE, IPsec) y BGP  
-Si lo desea, puede combinar todos los pasos anteriores y configurar una puerta de enlace virtual de inquilino con todas las opciones de conexión de tres:   
+## <a name="optional-step-configure-a-gateway-with-all-three-connection-types-ipsec-gre-l3-and-bgp"></a>(Paso opcional) Configuración de una puerta de enlace con los tres tipos de conexión (IPsec, GRE, L3) y BGP  
+Opcionalmente, puede combinar todos los pasos anteriores y configurar una puerta de enlace virtual de inquilino con las tres opciones de conexión:   
 
 ```PowerShell  
 # Create a new Virtual Gateway Properties type object  
@@ -458,22 +458,22 @@ New-NetworkControllerVirtualGateway -ConnectionUri $uri  -ResourceId "Contoso_Vi
 
 ```  
 
-## <a name="modify-a-gateway-for-a-virtual-network"></a>Modificar una puerta de enlace para una red virtual  
+## <a name="modify-a-gateway-for-a-virtual-network"></a>Modificación de una puerta de enlace para una red virtual  
 
 
-**Recuperar la configuración del componente y almacenarla en una variable**
+**Recuperación de la configuración del componente y su almacenamiento en una variable**
 
 ```PowerShell  
 $nwConnection = Get-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW"  
 ```  
 
-**Navegar por la estructura de variable para llegar a la propiedad necesaria y establézcalo como el valor de las actualizaciones**
+**Navegue por la estructura de variables para llegar a la propiedad requerida y establecerla en el valor de actualizaciones**
 
 ```PowerShell  
 $nwConnection.properties.IpSecConfiguration.SharedSecret = "C0mplexP@ssW0rd"  
 ```  
 
-**Agregue la configuración modificada para reemplazar la configuración anterior en la controladora de red**
+**Agregar la configuración modificada para reemplazar la configuración anterior en el controlador de red**
 
 ```PowerShell  
 New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId $nwConnection.ResourceId -Properties $nwConnection.Properties -Force  
@@ -481,14 +481,14 @@ New-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -Virtua
 
 
 ## <a name="remove-a-gateway-from-a-virtual-network"></a>Quitar una puerta de enlace de una red virtual 
-Puede usar los siguientes comandos de Windows PowerShell para quitar características individuales de la puerta de enlace o la puerta de enlace completo.  
+Puede usar los siguientes comandos de Windows PowerShell para quitar las características de puerta de enlace individuales o toda la puerta de enlace.  
 
 **Quitar una conexión de red**  
 ```PowerShell  
 Remove-NetworkControllerVirtualGatewayNetworkConnection -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -ResourceId "Contoso_IPSecGW" -Force  
 ```  
 
-**Quitar a un par BGP** 
+**Quitar un par BGP** 
 ```PowerShell  
 Remove-NetworkControllerVirtualGatewayBgpPeer -ConnectionUri $uri -VirtualGatewayId "Contoso_VirtualGW" -BgpRouterName "Contoso_BgpRouter1" -ResourceId "Contoso_IPSec_Peer" -Force  
 ```  

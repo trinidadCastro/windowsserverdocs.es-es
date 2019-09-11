@@ -1,6 +1,6 @@
 ---
-title: Introducción a MultiPoint Services
-description: Presenta MultiPoint Services y le permite comenzar a usarlo.
+title: Introducción con Multipoint Services
+description: Presenta Multipoint Services y le ayuda a empezar a usarlo.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,101 +13,101 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 03dcbc97fac91dfec83b257a8e50bfe49ff3bc14
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2ed2084038236dc8914eefe6bdafc133817b7b41
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884906"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871681"
 ---
-# <a name="getting-started-with-multipoint-services"></a>Introducción a MultiPoint Services
-El sistema MultiPoint Services permite a los usuarios muchas utilizar varias estaciones que están físicamente conectadas mediante el uso de concentradores de estaciones a un solo equipo. Cada estación normalmente consta de un concentrador de estaciones, mouse, teclado y monitor de vídeo. Cada usuario en una estación de MultiPoint Services experimenta una única sesión informática de Windows que se puede administrar mediante MultiPoint Manager.  
+# <a name="getting-started-with-multipoint-services"></a>Introducción con Multipoint Services
+El sistema Multipoint Services permite a muchos usuarios usar varias estaciones que están conectadas físicamente mediante concentradores de estaciones a un solo equipo. Cada estación consta normalmente de un concentrador de estaciones, un mouse, un teclado y un monitor de vídeo. Cada usuario de una estación de Multipoint Services experimenta una sesión de computación de Windows única que puede administrar mediante Multipoint Manager.  
   
-Los componentes de un sistema MultiPoint Services incluyen lo siguiente:  
+Entre los componentes de un sistema Multipoint Services se incluyen los siguientes:  
   
--   Software del sistema multiPoint Services, que es compatible con varios monitores, teclados, los dispositivos de mouse y otros dispositivos en el equipo.  
+-   Software del sistema Multipoint Services, que admite varios monitores, teclados, dispositivos de mouse y otros dispositivos del equipo.  
   
--   La aplicación MultiPoint Manager, lo que permite supervisar y realizar acciones en estaciones de MultiPoint Services.  
+-   La aplicación Multipoint Manager, que le permite supervisar y realizar acciones en las estaciones de Multipoint Services.  
   
--   Herramientas de administración y mantenimiento.  
+-   Herramientas de mantenimiento y administración.  
   
--   La aplicación de panel de MultiPoint, lo que permite completar las tareas diarias, como la comunicación con otros usuarios.  
+-   La aplicación Multipoint Dashboard, que permite completar las tareas diarias, como la comunicación con otros usuarios.  
   
-En este archivo de ayuda se proporciona información sobre cómo administrar estaciones de MultiPoint Services con MultiPoint Manager y el panel de MultiPoint.  
+En este archivo de ayuda se proporciona información sobre cómo administrar las estaciones de Multipoint Services con Multipoint Manager y Multipoint Dashboard.  
   
-## <a name="overview-of-multipoint-manager"></a>Introducción a MultiPoint Manager  
-MultiPoint Manager proporciona cuatro pestañas para usar cuando se administran las estaciones de MultiPoint Services. Cada pestaña y las tareas que puede realizar en ellos, se describe con más detalle en cada tema de ayuda.  
+## <a name="overview-of-multipoint-manager"></a>Información general de Multipoint Manager  
+Multipoint Manager proporciona cuatro pestañas para usar al administrar las estaciones de Multipoint Services. Cada pestaña y las tareas que puede realizar en ellas se describen con más detalle en cada tema de ayuda.  
   
-Las pestañas son los siguientes:  
+Las pestañas son las siguientes:  
   
--   **Pestaña Inicio:** Cambiar los modos de realizar tareas administrativas, agregar o quitar servidores MultiPoint, reiniciar o apagar el equipo, habilitar la protección de disco, agregar licencias de acceso de cliente, reasignar las estaciones y obtener ayuda o soporte técnico. Para obtener más información, consulte el [Administrar sistema tareas mediante MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md) tema.  
+-   **Pestaña Inicio:** Cambiar los modos para realizar tareas administrativas, agregar o quitar servidores Multipoint, reiniciar o apagar el equipo, habilitar la protección de disco, agregar licencias de acceso de cliente, reasignar estaciones y obtener ayuda o soporte técnico. Para obtener más información, consulte el tema [administrar tareas del sistema mediante Multipoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md) .  
   
--   **Pestaña estaciones:** Ver usuarios *desktop* estado y *final* o *suspender* las sesiones de usuario. Para obtener más información, consulte el [administrar estaciones de usuario](Manage-User-Stations.md) tema.  
+-   **Pestaña estaciones:** Ver el estado del *escritorio* de los usuarios y *Finalizar* o *suspender* las sesiones de usuario. Para obtener más información, consulte el tema [administrar estaciones de usuario](Manage-User-Stations.md) .  
   
--   **Pestaña usuarios:** Crear y administrar *cuentas de usuario estándar* y *cuentas de usuario administrativo*. Para más información, vea el tema [Administrar cuentas de usuario](Manage-User-Accounts.md).  
+-   **Pestaña usuarios:** Crear y administrar *cuentas de usuario estándar* y *cuentas de usuario administrativas*. Para más información, vea el tema [Administrar cuentas de usuario](Manage-User-Accounts.md).  
   
--   **Pestaña de escritorios virtual:** Habilite las funciones de escritorio virtuales. Para obtener más información, consulte el [administrar escritorios virtuales](Manage-Virtual-Desktops.md) tema.  
+-   **Pestaña escritorios virtuales:** Habilitar roles de escritorio virtual. Para obtener más información, consulte el tema [administrar escritorios virtuales](Manage-Virtual-Desktops.md) .  
   
-## <a name="multipoint-server-management-and-maintenance"></a>Mantenimiento y administración de multiPoint Server  
-Después de configurar el sistema MultiPoint Services, puede usar MultiPoint Manager para administrar MultiPoint Services.  
+## <a name="multipoint-server-management-and-maintenance"></a>Administración y mantenimiento de MultiPoint Server  
+Una vez configurado el sistema Multipoint Services, puede usar Multipoint Manager para administrar Multipoint Services.  
   
-Tipos de acciones que puede realizar mediante MultiPoint Manager incluyen lo siguiente:  
+Entre los tipos de acciones que puede realizar con Multipoint Manager se incluyen los siguientes:  
   
--   **Agregar cuentas de usuario:** Usar MultiPoint Manager para crear cuentas de usuario estándar y administrativos.  
+-   **Agregar cuentas de usuario:** Use Multipoint Manager para crear cuentas de usuario estándar y administrativas.  
   
--   **Editar configuración del servidor:** Puede configurar el sistema MultiPoint Services para iniciar en modo de consola, permitir que una cuenta tener varias sesiones, asigne una dirección IP única a cada estación y otras tareas.  
+-   **Editar la configuración del servidor:** Puede configurar el sistema Multipoint Services para que se inicie en el modo de consola, permitir que una cuenta tenga varias sesiones, asignar una dirección IP única a cada estación y otras tareas.  
   
--   **Cambiar a modo de consola:** Puede cambiar el sistema MultiPoint Services a modo de consola con el fin de instalar nuevo software en el sistema MultiPoint Services. Puede especificar que todos los usuarios pueden ejecutar el software o que solo se puede usar el software, dependiendo de la instalación y las opciones del software de licencia.  
+-   **Cambiar al modo de consola:** Puede cambiar el sistema Multipoint Services al modo de consola para instalar software nuevo en el sistema Multipoint Services. Puede especificar que todos los usuarios puedan ejecutar el software o que solo pueda usar el software, en función de las opciones de instalación y licencia del software.  
   
--   **Solución de problemas:** Si experimenta problemas con MultiPoint Services, vea el [Troubleshooting](Troubleshooting.md) sección para buscar temas que pueden ayudar a solucionar el problema.  
+-   **Solución** Si tiene problemas con Multipoint Services, consulte la sección de [solución de problemas](Troubleshooting.md) para buscar temas que puedan ayudarle a solucionar el problema.  
   
-## <a name="overview-of-multipoint-dashboard"></a>Información general de MultiPoint Dashboard  
-Panel de multiPoint ofrece una experiencia de la cinta de opciones donde puede elegir entre dos fichas para tener acceso a las tareas diarias comunes.  
+## <a name="overview-of-multipoint-dashboard"></a>Información general sobre el panel de Multipoint  
+Multipoint Dashboard incluye una experiencia de cinta en la que puede elegir entre dos pestañas para tener acceso a las tareas diarias habituales.  
   
-Las pestañas son los siguientes:  
+Las pestañas son las siguientes:  
   
--   **Pestaña Inicio:** Bloquear o desbloquear estaciones, establecer web limitar las opciones, proyecto escritorios a otros equipos de escritorio, iniciar o cerrar las aplicaciones, se comunican a través de mensajería instantánea, ayudar a otros usuarios a través del control de escritorio remoto, ajustar las vistas en miniatura de escritorio y habilitar o deshabilitar mensajería instantánea y aplicaciones iniciar automáticamente. Para obtener más información, consulte el [administrar escritorios de usuario utilizando el panel de MultiPoint](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) tema.  
+-   **Pestaña Inicio:** Bloquear o desbloquear estaciones, establecer opciones de limitación Web, proyectar escritorios en otros equipos de escritorio, iniciar o cerrar aplicaciones, comunicarse a través de mensajería instantánea, ayudar a otros usuarios a través de control de escritorio remoto, ajustar vistas de miniatura del escritorio y habilitar o deshabilitar mensajería instantánea y el inicio automático de aplicaciones. Para obtener más información, consulte el tema [administrar escritorios de usuario mediante Multipoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md) .  
   
--   **Pestaña de sistemas:** Reiniciar, apagar, o la reasignación de todos los sistemas o los seleccionados. Para obtener más información, consulte el [administrar MultiPoint sistemas mediante MultiPoint Dashboard](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md) tema.  
+-   **Pestaña sistemas:** Reiniciar, apagar o reasignar todos los sistemas seleccionados o todos ellos. Para más información, consulte el tema [Administración de sistemas Multipoint mediante Multipoint Dashboard](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md) .  
   
 ## <a name="daily-use-of-your-multipoint-server-system"></a>Uso diario del sistema MultiPoint Server  
-Cuando empiece a usar MultiPoint Services diariamente, hay información sobre cómo usar MultiPoint Services que desea compartir con los usuarios en el sistema MultiPoint Services. Esta información incluye lo siguiente:  
+Cuando empiece a usar Multipoint Services cada día, hay información sobre cómo usar Multipoint Services que podría querer compartir con los usuarios del sistema Multipoint Services. Esta información incluye lo siguiente:  
   
-**Uso compartido de contenido y mantener privados:**  
+**Compartir contenido y mantener el contenido privado:**  
   
--   Un usuario puede guardar un archivo o documento en una carpeta privada que solamente puede ver que el usuario.  
+-   Un usuario puede guardar un archivo o un documento en una carpeta privada que solo pueda ver el usuario.  
   
--   Los usuarios también pueden guardar documentos en una carpeta pública que sea accesible para todos los usuarios en el sistema MultiPoint Services.  
+-   Los usuarios también pueden guardar documentos en una carpeta pública a la que puedan acceder todos los usuarios del sistema Multipoint Services.  
   
--   Es importante para los usuarios de MultiPoint Services saber que los usuarios administrativos tienen acceso a todos los archivos y documentos en el sistema, incluso si se almacenan de forma privada en la carpeta personal de un usuario.  
+-   Es importante que los usuarios de Multipoint Services sepan que los usuarios administrativos tienen acceso a todos los archivos y documentos del sistema, incluso si se almacenan de forma privada en la carpeta personal de un usuario.  
   
-Para obtener más información acerca de cómo guardar y administrar el contenido privado y público, consulte el [administrar archivos de usuario](Manage-User-Files.md) tema.  
+Para obtener más información sobre cómo guardar y administrar contenido público y privado, vea el tema [administrar archivos de usuario](Manage-User-Files.md) .  
   
-**Información acerca de una sesión de usuario MultiPoint Services:**  
+**Información sobre la sesión de Multipoint Services de un usuario:**  
   
--   Cada usuario tiene un nombre de usuario y contraseña y un único escritorio *sesión* en el sistema MultiPoint Services.  
+-   Cada usuario tiene un nombre de usuario y una contraseña, y una *sesión* de escritorio única en el sistema Multipoint Services.  
   
--   Un *usuario estándar* no es un *usuario administrativo* en el sistema MultiPoint Services. Los usuarios estándar no se pueden instalar a algunos tipos de software, pero puede guardar archivos y cambiar la configuración de escritorio, excepto para la resolución de pantalla. Todos los cambios realizados por el usuario en el escritorio siguen vigentes cuando vuelve a iniciar sesión.  
+-   Un *usuario estándar* no es un *usuario administrativo* en el sistema Multipoint Services. Los usuarios estándar no pueden instalar algunos tipos de software, pero pueden guardar archivos y cambiar la configuración del escritorio, excepto la resolución de pantalla. Todos los cambios realizados por el usuario en el escritorio siguen vigentes cuando vuelve a iniciar sesión.  
   
--   Los usuarios pueden desconectarse de una estación y volver a iniciarla su sesión en una estación diferente sin perder su trabajo. Para más información, vea el tema [Suspender y dejar activa la sesión de usuario](Suspend-and-Leave-User-Session-Active.md).  
+-   Los usuarios pueden desconectarse de una estación y volver a iniciarla en su sesión en otra estación sin perder su trabajo. Para más información, vea el tema [Suspender y dejar activa la sesión de usuario](Suspend-and-Leave-User-Session-Active.md).  
   
--   Sesión de un usuario estándar (o todas las sesiones de usuario) pueden ser desconectadas o cerradas sesión el usuario administrativo mediante MultiPoint Manager. Para obtener más información, consulte el [administrar escritorios de usuario](manage-user-desktops-using-multipoint-dashboard.md) tema.  
+-   El usuario administrativo puede desconectar o cerrar la sesión de un usuario estándar (o todas las sesiones de usuario) a través de Multipoint Manager. Para obtener más información, consulte el tema [administrar escritorios de usuario](manage-user-desktops-using-multipoint-dashboard.md) .  
   
--   Si un usuario olvida su contraseña, puede restablecer la contraseña de la **usuarios** ficha, que usa la funcionalidad de administración de cuentas de usuario de Windows estándar. Para obtener más información, consulte el [actualizar o eliminar una cuenta de usuario](Update-or-Delete-a-User-Account.md) tema.  
+-   Si un usuario olvida una contraseña, puede restablecer la contraseña en la pestaña **usuarios** , que usa la funcionalidad de administración de cuentas de usuario estándar de Windows. Para obtener más información, vea el tema [actualizar o eliminar una cuenta de usuario](Update-or-Delete-a-User-Account.md) .  
   
 ## <a name="see-also"></a>Vea también  
-[Administración del sistema de MultiPoint Server](managing-your-multipoint-services-system.md)  
-[Información importante sobre el cumplimiento de licencia de Software](Important-Information-about-Software-License-Compliance.md)  
-[Administrar tareas del sistema mediante MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md)  
+[Administración del sistema MultiPoint Server](managing-your-multipoint-services-system.md)  
+[Información importante sobre el cumplimiento de la licencia de software](Important-Information-about-Software-License-Compliance.md)  
+[Administrar tareas del sistema mediante MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md)  
 [Administrar archivos de usuario](Manage-User-Files.md)  
 [Administrar escritorios de usuario](manage-user-desktops-using-multipoint-dashboard.md)  
 [Suspender y dejar activa la sesión de usuario](Suspend-and-Leave-User-Session-Active.md)  
-[Ver el estado de conexión de usuario](View-User-Connection-Status.md)  
-[Administrar Hardware de la estación](Manage-Station-Hardware.md)  
+[Ver el estado de la conexión de usuario](View-User-Connection-Status.md)  
+[Administrar hardware de la estación](Manage-Station-Hardware.md)  
 [Configurar una estación](Set-Up-a-Station.md)  
 [Administrar cuentas de usuario](Manage-User-Accounts.md)  
 [Actualizar o eliminar una cuenta de usuario](Update-or-Delete-a-User-Account.md)  
-[Administrar escritorios de usuario mediante MultiPoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)  
-[Administrar sistemas MultiPoint mediante MultiPoint Dashboard](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md)  
+[Administrar escritorios de usuario mediante MultiPoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)  
+[Administrar sistemas MultiPoint mediante el panel de MultiPoint](Manage-MultiPoint-Systems-Using-MultiPoint-Dashboard.md)  
 [Solución de problemas](Troubleshooting.md)    
   

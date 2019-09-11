@@ -9,16 +9,16 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c6aa91956f4a90b32b82e6c970e68b3164c732f0
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 91a1d69e4f7a77633d460f594ad3091f359df9c3
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191714"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867846"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos de AD FS
 
-Los siguientes son los distintos requisitos que deben ajustarse al implementar AD FS:  
+A continuación se indican los diversos requisitos que se deben cumplir al implementar AD FS:  
   
 -   [Requisitos de certificado](AD-FS-Requirements.md#BKMK_1)  
   
@@ -42,193 +42,193 @@ Los siguientes son los distintos requisitos que deben ajustarse al implementar A
   
 -   [Requisitos de autenticación](AD-FS-Requirements.md#BKMK_10)  
   
--   [Requisitos de unión al área de trabajo](AD-FS-Requirements.md#BKMK_11)  
+-   [Requisitos de la Unión al área de trabajo](AD-FS-Requirements.md#BKMK_11)  
   
 -   [Requisitos de criptografía](AD-FS-Requirements.md#BKMK_12)  
   
 -   [Requisitos de permisos](AD-FS-Requirements.md#BKMK_13)  
   
-## <a name="BKMK_1"></a>Requisitos de certificados  
-Los certificados desempeñan el papel más importante en asegurar las comunicaciones entre federación notificaciones de servidores, servidores proxy de aplicación Web,\-aplicaciones compatibles y los clientes Web. Los requisitos de certificados varían en función de si está configurando un servidor de federación o un equipo proxy, como se describe en esta sección.  
+## <a name="BKMK_1"></a>Requisitos de certificado  
+Los certificados desempeñan el rol más importante en la protección de las comunicaciones entre los servidores de Federación,\-los servidores proxy de aplicación Web, las aplicaciones compatibles con notificaciones y los clientes Web. Los requisitos de los certificados varían en función de si está configurando un servidor de Federación o un equipo proxy, como se describe en esta sección.  
   
-**Certificados de servidor de federación**  
+**Certificados de servidor de Federación**  
   
 |||  
 |-|-|  
-|**Tipo de certificado**|**Los requisitos, soporte técnico y aspectos que debe conocer**|  
-|**Capa de Sockets seguros \(SSL\) certificado:** Se trata de un certificado SSL estándar que se usa para proteger las comunicaciones entre clientes y servidores de federación.|-Este certificado debe ser de confianza pública\* X509 certificado v3.<br />-Todos los clientes que tienen acceso a cualquier punto de conexión de AD FS deben confiar en este certificado. Se recomienda encarecidamente usar certificados emitidos por una pública \(tercer\-entidad\) entidad de certificación \(CA\). Puede usar un autoservicio\-firmado SSL certificate correctamente en servidores de federación en un entorno de laboratorio de prueba. Sin embargo, para un entorno de producción, recomendamos que obtenga el certificado de una entidad de certificación pública.<br />-Admite cualquier tamaño de clave compatible con Windows Server 2012 R2 para los certificados SSL.<br />-No no admite certificados que utilizan claves CNG.<br />-Cuando se usa junto con unión\/Device Registration Service, el nombre alternativo del sujeto del certificado SSL para el servicio AD FS debe contener el enterpriseregistration de valor está seguido por el nombre Principal de usuario \(UPN\) sufijo de su organización, por ejemplo, registroempresa.contoso.com.<br />-Se admiten certificados comodín. Cuando se crea la granja de AD FS, se le pedirá que proporcione el nombre del servicio para el servicio AD FS \(por ejemplo, **adfs.contoso.com**.<br />-Se recomienda encarecidamente utilizar el mismo certificado SSL para el Proxy de aplicación Web. Sin embargo es **requiere** sea el mismo cuando se admiten puntos de conexión de autenticación integrada de Windows a través del Proxy de aplicación Web y cuando está activada la autenticación de protección extendida \(configuración predeterminada\).<br />-El nombre de asunto de este certificado se utiliza para representar el nombre de servicio de federación para cada instancia de AD FS que implementes. Por este motivo, es posible que desee considere la posibilidad de elegir un nombre de firmante en cualquier entidad de certificación nueva\-emite certificados que mejor representa el nombre de su compañía u organización a los socios comerciales.<br />    La identidad del certificado debe coincidir con el nombre del servicio de federación \(por ejemplo, fs.contoso.com\). La identidad es una extensión de nombre alternativo de sujeto de tipo dNSName, o bien, si no hay ninguna entrada de nombre alternativo de asunto, el nombre del sujeto especificado como un nombre común. Varias entradas de nombre alternativo del sujeto pueden estar presentes en el certificado, siempre que uno de ellos coincide con el nombre del servicio de federación.<br />-   **Importante:** se recomienda encarecidamente utilizar el mismo certificado SSL en todos los nodos de la granja de AD FS, así como todos los servidores proxy de aplicación Web en la granja de AD FS.|  
-|**Certificado de comunicación de servicio:** Este certificado habilita la seguridad de mensajes WCF para proteger las comunicaciones entre los servidores de federación.|: De forma predeterminada, el certificado SSL se utiliza como el certificado de comunicaciones de servicio.  Pero también tiene la opción para configurar otro certificado como certificado de comunicación de servicio.<br />-   **Importante:** si usas el certificado SSL como certificado de comunicación de servicio, cuando expire el certificado SSL, asegúrese de configurar el certificado SSL renovado como su certificado de comunicación de servicio. Esto no se realiza automáticamente.<br />-En este certificado debe ser de confianza por los clientes de AD FS que utilizan la seguridad de mensaje de WCF.<br />-Se recomienda usar un certificado de autenticación de servidor emitido por una pública \(tercer\-entidad\) entidad de certificación \(CA\).<br />-El certificado de comunicación de servicio no puede ser un certificado que usa claves CNG.<br />-En este certificado se puede administrar mediante la consola de administración de AD FS.|  
-|**Token\-certificado de firma:** Se trata de un certificado X509 estándar que se utiliza para firmar de manera segura todos los tokens que emite el servidor de federación.|: De forma predeterminada, AD FS crea un autoservicio\-certificado autofirmado con las claves de 2048 bits.<br />-Certificados CA emitida también se admiten y se puede cambiar mediante el complemento Administración de AD FS\-en<br />-CA emitida certificados debe almacenado & se tiene acceso a través de un proveedor criptográfico de CSP.<br />-El certificado de firma de tokens no pueden ser un certificado que usa claves CNG.<br />-AD FS no requiere certificados inscritos externamente de firma de tokens.<br />    AD FS renueva automáticamente estos self\-certificados autofirmados antes de que expiren, configurando primero los nuevos certificados como certificados secundarios para permitir asociados para utilizarlos, y luego Voltear a principal en un proceso llamado automática sustitución del certificado. Se recomienda que utilice el valor predeterminado, los certificados generados automáticamente para la firma de tokens.<br />    Si su organización tiene directivas que requieren certificados diferentes para configurarse para la firma de tokens, puede especificar los certificados durante la instalación con Powershell \(use el parámetro – SigningCertificateThumbprint de la instalación \-AdfsFarm cmdlet\).  Después de la instalación, puede ver y administrar certificados de firmas de tokens mediante la consola de administración de AD FS o el conjunto de cmdlets de Powershell\-AdfsCertificate y Get\-AdfsCertificate.<br />    Cuando se usan certificados inscritos externamente para la firma de tokens, AD FS no lleva a cabo la renovación automática de certificados o sustitución.  Este proceso debe realizarla un administrador.<br />    Para permitir que la sustitución de certificados cuando un certificado está a punto de expirar, se pueden configurar un certificado de firma de tokens secundario en AD FS. De forma predeterminada, todos los certificados de firmas de tokens se publican en los metadatos de federación, pero solo el token primario\-certificado de firma se usa para firmar los tokens de AD FS.|  
-|**Token\-descifrado\/certificado de cifrado:** Se trata de un estándar X509 certificado que se utiliza para descifrar\/cifrar los tokens entrantes. También se publica en los metadatos de federación.|: De forma predeterminada, AD FS crea un autoservicio\-certificado autofirmado con las claves de 2048 bits.<br />-Certificados CA emitida también se admiten y se puede cambiar mediante el complemento Administración de AD FS\-en<br />-CA emitida certificados debe almacenado & se tiene acceso a través de un proveedor criptográfico de CSP.<br />-El token\-descifrado\/certificado de cifrado no puede ser un certificado que usa claves CNG.<br />: De forma predeterminada, AD FS genera y usa su propio, internamente generado y self\-firmado de certificados de descifrado de tokens.  AD FS no requiere certificados inscritos externamente para este propósito.<br />    Además, AD FS renueva automáticamente estos self\-certificados autofirmados antes de que caduquen.<br />    **Se recomienda que utilice el valor predeterminado, los certificados generados automáticamente para el descifrado de tokens.**<br />    Si su organización tiene directivas que requieren certificados diferentes para configurarse para el descifrado de tokens, puede especificar los certificados durante la instalación con Powershell \(use el parámetro – DecryptionCertificateThumbprint de la Instalar\-AdfsFarm cmdlet\).  Después de la instalación, puede ver y administrar certificados de descifrado de tokens mediante la consola de administración de AD FS o el conjunto de cmdlets de Powershell\-AdfsCertificate y Get\-AdfsCertificate.<br />    **Cuando se usan certificados inscritos externamente para el descifrado de tokens, AD FS no realiza la renovación automática de certificados.  Este proceso debe realizarla un administrador**.<br />-La cuenta de servicio de AD FS debe tener acceso al token\-firma de clave privada del certificado en el almacén personal del equipo local. Esto se ocupa del programa de instalación. También puede usar el complemento Administración de AD FS\-para asegurarse de este acceso si se cambia posteriormente el token\-certificado de firma.|  
+|**Tipo de certificado**|**Requisitos, compatibilidad & aspectos que se deben conocer**|  
+|**Capa de sockets seguros \(certificado\) SSL:** Se trata de un certificado SSL estándar que se usa para proteger las comunicaciones entre los servidores de Federación y los clientes.|: Este certificado debe ser un certificado X509\* V3 de confianza pública.<br />-Todos los clientes que tienen acceso a cualquier extremo de AD FS deben confiar en este certificado. Se recomienda encarecidamente \(usar certificados emitidos por una \(CA\)de entidad de\-\) certificación pública de terceros. Puede usar un\-certificado SSL autofirmado correctamente en los servidores de Federación en un entorno de laboratorio de pruebas. Sin embargo, para un entorno de producción, le recomendamos que obtenga el certificado de una CA pública.<br />-Admite cualquier tamaño de clave compatible con Windows Server 2012 R2 para los certificados SSL.<br />-No admite certificados que usan claves CNG.<br />-Cuando se usa junto con\/Workplace join servicio de registro de dispositivos, el nombre alternativo del sujeto del certificado SSL para el servicio AD FS debe contener el valor enterpriseregistration seguido del nombre \(principaldeusuario.Sufijo\) UPN de su organización, por ejemplo, enterpriseregistration.contoso.com.<br />-Se admiten los certificados comodín. Al crear la granja de AD FS, se le pedirá que proporcione el nombre del servicio AD FS \(, por ejemplo, **ADFS.contoso.com**.<br />-Se recomienda encarecidamente utilizar el mismo certificado SSL para el proxy de aplicación Web. Sin embargo, esto es **necesario** para que sea el mismo cuando se admiten puntos de conexión de autenticación integrada de Windows a través del proxy de \(aplicación web y cuando la autenticación de protección ampliada está activada en la configuración\)predeterminada.<br />-El nombre de sujeto de este certificado se usa para representar el nombre de Servicio de federación para cada instancia de AD FS que implemente. Por esta razón, es posible que desee considerar la posibilidad de elegir un nombre de sujeto\-en los certificados emitidos por una nueva entidad de certificación que represente mejor el nombre de la empresa u organización a los asociados.<br />    La identidad del certificado debe coincidir con el nombre \(del servicio de Federación, por ejemplo, FS.contoso.com.\) La identidad es una extensión de nombre alternativo del firmante del tipo dNSName o, si no hay ninguna entrada de nombre alternativo del firmante, el nombre de sujeto especificado como nombre común. Pueden existir varias entradas de nombre alternativo del sujeto en el certificado, siempre que una de ellas coincida con el nombre del servicio de Federación.<br />-   **Importante:** se recomienda encarecidamente usar el mismo certificado SSL en todos los nodos de la granja de AD FS, así como todos los proxies de aplicación Web de la granja de AD FS.|  
+|**Certificado de comunicación de servicio:** Este certificado habilita la seguridad de mensajes WCF para proteger las comunicaciones entre los servidores de federación.|: De forma predeterminada, el certificado SSL se usa como el certificado de comunicaciones de servicio.  Pero también tiene la opción de configurar otro certificado como certificado de comunicación de servicio.<br />-   **Importante:** si utiliza el certificado SSL como certificado de comunicación de servicio, cuando expire el certificado SSL, asegúrese de configurar el certificado SSL renovado como certificado de comunicación de servicio. Esto no se produce automáticamente.<br />-Este certificado debe ser de confianza para los clientes de AD FS que utilizan la seguridad de mensajes de WCF.<br />-Se recomienda usar un certificado de autenticación de servidor emitido por una \(CA\)pública de entidad\- \(de\) certificación de terceros.<br />-El certificado de comunicación de servicio no puede ser un certificado que usa claves CNG.<br />: Este certificado se puede administrar mediante la consola de administración de AD FS.|  
+|**Certificado\-de firma de tokens:** Se trata de un certificado X509 estándar que se utiliza para firmar de manera segura todos los tokens que emite el servidor de federación.|: De forma predeterminada, AD FS crea un\-certificado autofirmado con claves de 2048 bits.<br />-También se admiten certificados emitidos por CA y se pueden cambiar con el\-complemento de administración de AD FS en<br />-Los certificados emitidos por la CA deben almacenarse & tener acceso a través de un proveedor de cifrado de CSP.<br />-El certificado de firma de tokens no puede ser un certificado que usa claves CNG.<br />-AD FS no requiere certificados inscritos externamente para la firma de tokens.<br />    AD FS renueva automáticamente estos\-certificados autofirmados antes de que expiren, primero configure los nuevos certificados como certificados secundarios para permitir que los asociados los consuman y, a continuación, se invierten a principal en un proceso llamado automático. sustitución del certificado. Se recomienda usar los certificados generados automáticamente de forma predeterminada para la firma de tokens.<br />    Si su organización tiene directivas que requieren la configuración de certificados diferentes para la firma de tokens, puede especificar los certificados en el momento \(de la instalación mediante PowerShell. Use el parámetro – SigningCertificateThumbprint de la instalación. \-Cmdlet\)AdfsFarm.  Después de la instalación, puede ver y administrar certificados de firma de tokens mediante la consola de administración de\-AD FS o cmdlets de PowerShell Set AdfsCertificate y Get\-AdfsCertificate.<br />    Cuando los certificados inscritos externamente se usan para la firma de tokens, AD FS no realiza la renovación o sustitución automática de certificados.  Este proceso lo debe realizar un administrador.<br />    Para permitir la sustitución de certificados cuando un certificado está a la expiración, puede configurarse un certificado de firma de tokens secundario en AD FS. De forma predeterminada, todos los certificados de firma de tokens se publican en los metadatos de Federación, pero el certificado de firma de tokens\-principal lo usa AD FS para firmar los tokens.|  
+|**Certificado\-de\/cifrado de descifrado de tokens:** Se trata de un certificado X509 estándar que se usa para\/descifrar el cifrado de los tokens entrantes. También se publica en los metadatos de federación.|: De forma predeterminada, AD FS crea un\-certificado autofirmado con claves de 2048 bits.<br />-También se admiten certificados emitidos por CA y se pueden cambiar con el\-complemento de administración de AD FS en<br />-Los certificados emitidos por la CA deben almacenarse & tener acceso a través de un proveedor de cifrado de CSP.<br />-El certificado\-de\/cifrado de descifrado de tokens no puede ser un certificado que usa claves CNG.<br />: De forma predeterminada, AD FS genera y usa sus propios certificados\-autofirmados y generados internamente para el descifrado de tokens.  AD FS no requiere certificados inscritos externamente para este fin.<br />    Además, AD FS renueva automáticamente estos\-certificados autofirmados antes de que expiren.<br />    **Se recomienda usar los certificados generados automáticamente de forma predeterminada para el descifrado de tokens.**<br />    Si su organización tiene directivas que requieren que se configuren certificados diferentes para el descifrado de tokens, puede especificar los certificados en el \(momento de la instalación con PowerShell use el parámetro – DecryptionCertificateThumbprint del Instale\-el cmdlet\)AdfsFarm.  Después de la instalación, puede ver y administrar los certificados de descifrado de tokens mediante la consola de administración\-de AD FS o\-los cmdlets de PowerShell Set AdfsCertificate y Get AdfsCertificate.<br />    **Cuando los certificados inscritos externamente se usan para descifrar el token, AD FS no realiza la renovación automática del certificado.  Este proceso lo debe realizar un administrador**.<br />-La cuenta de servicio de AD FS debe tener acceso a\-la clave privada del certificado de firma de tokens en el almacén personal del equipo local. Esto se encarga del programa de instalación. También puede usar el complemento\-de administración de AD FS en para garantizar este acceso si posteriormente cambia el certificado de firma de tokens.\-|  
   
 > [!CAUTION]  
-> Los certificados que se usan para el token\-token y firma\-descifrar\/cifrar son fundamentales para la estabilidad del servicio de federación. Los clientes que administran su propio token\-firma & token\-descifrar\/cifrar los certificados debe asegurarse de que estos certificados son una copia de seguridad y están disponibles por separado durante un evento de recuperación.  
+> Los certificados que se usan para\-la firma de\-tokens y\/el cifrado de descifrado de tokens son fundamentales para la estabilidad del servicio de Federación. Los clientes que administran\-su propia firma\-de tokens\/& el descifrado de los certificados deben asegurarse de que se realiza una copia de seguridad de estos certificados y están disponibles de forma independiente durante un evento de recuperación.  
   
 > [!NOTE]  
-> En AD FS puede cambiar el algoritmo Hash seguro \(SHA\) nivel que se usa para las firmas digitales para cualquier SHA\-1 o SHA\-256 \(más seguro\). AD FS no admite el uso de certificados con otros métodos hash, como MD5 \(el algoritmo hash predeterminado que se usa con el comando Makecert.exe\-herramienta de línea de\). Como práctica recomendada de seguridad, le recomendamos que use SHA\-256 \(que se establece de forma predeterminada\) para todas las firmas. SHA\-1 se recomienda para su uso solo en los casos en que se debe interoperar con un producto que no es compatible con las comunicaciones mediante SHA\-256, por ejemplo, una que no sean\-las versiones de producto o heredado de Microsoft de AD FS.  
+> En AD FS puede cambiar el \(nivel Sha\) de algoritmo hash seguro que se usa para las firmas digitales a Sha\-1 o Sha\-256 \(de forma más\)segura. AD FS no admite el uso de certificados con otros métodos hash, como MD5 \(es el algoritmo hash predeterminado que se usa con la herramienta\)de línea de comandos\-Makecert. exe. Como práctica recomendada de seguridad, se recomienda usar Sha\-256 \(, que se establece de forma predeterminada\) para todas las firmas. Se\-recomienda usar SHA 1 solo en escenarios en los que se debe interoperar con un producto que no admite las comunicaciones que\-usan SHA 256, como un\-producto que no es de Microsoft o versiones heredadas de AD FS.  
   
 > [!NOTE]  
-> Después de recibir un certificado de una CA, asegúrate de que todos los certificados se importen al almacén de certificados personales del equipo local. Puede importar certificados al almacén personal con el complemento MMC certificados\-en.  
+> Después de recibir un certificado de una CA, asegúrate de que todos los certificados se importen al almacén de certificados personales del equipo local. Puede importar certificados al almacén personal con el complemento\-certificados de MMC.  
   
 ## <a name="BKMK_2"></a>Requisitos de hardware  
-Los siguientes requisitos de hardware mínimos y recomendados se aplican a los servidores de federación de AD FS en Windows Server 2012 R2:  
+Los siguientes requisitos de hardware mínimos y recomendados se aplican a los servidores de Federación de AD FS en Windows Server 2012 R2:  
   
 ||||  
 |-|-|-|  
 |**Requisito de hardware**|**Requisito mínimo**|**Requisito recomendado**|  
-|Velocidad de CPU|64 de 1,4 GHz\-procesador de bits|Cuádruple\-núcleo, 2 GHz|  
+|Velocidad de CPU|procesador de 1,4\-GHz de 64 bits|Cuádruple\-núcleo, 2 GHz|  
 |RAM|512 MB|4 GB|  
-|Espacio en disco|32 GB|100 GB|  
+|Espacio en disco|32 GB|100 GB|  
   
 ## <a name="BKMK_3"></a>Requisitos de software  
-Son los siguientes requisitos de AD FS para la funcionalidad del servidor que está integrada en el sistema operativo Windows Server® 2012 R2:  
+Los siguientes requisitos de AD FS son para la funcionalidad de servidor integrada en el sistema operativo Windows Server® 2012 R2:  
   
--   Para el acceso de extranet, debe implementar el servicio de rol Proxy de aplicación Web \- forma parte de la función de servidor de acceso remoto de Windows Server® 2012 R2. No se admiten las versiones anteriores de un servidor proxy de federación con AD FS en Windows Server® 2012 R2.  
+-   Para el acceso de extranet, debe implementar la parte del servicio \- de rol proxy de aplicación web del rol de servidor de acceso remoto de Windows Server® 2012 R2. Las versiones anteriores de un servidor proxy de Federación no se admiten con AD FS en Windows Server® 2012 R2.  
   
--   No se puede instalar un servidor de federación y el servicio de rol Proxy de aplicación Web en el mismo equipo.  
+-   Un servidor de Federación y el servicio de rol de proxy de aplicación web no se pueden instalar en el mismo equipo.  
   
 ## <a name="BKMK_4"></a>Requisitos de AD DS  
 **Requisitos del controlador de dominio**  
   
-Controladores de dominio en todos los dominios de usuario y el dominio al que se unen los servidores de AD FS deben ejecutar Windows Server 2008 o posterior.  
+Los controladores de dominio de todos los dominios de usuario y el dominio al que se unen los servidores AD FS deben ejecutar Windows Server 2008 o posterior.  
   
 > [!NOTE]  
-> Compatibilidad con todos los entornos con controladores de dominio de Windows Server 2003 de finalizará después del extendidos admiten final fecha para Windows Server 2003. Los clientes se recomiendan encarecidamente actualizar sus controladores de dominio tan pronto como sea posible. Visite [esta página](https://support.microsoft.com/lifecycle/search/default.aspx?sort=PN&alpha=Windows+Server+2003&Filter=FilterNO) para obtener más información sobre el ciclo de vida de soporte técnico de Microsoft. Para los problemas detectados que son específicas para entornos de controlador de dominio de Windows Server 2003, correcciones se emitirá solo para problemas de seguridad y si se puede emitir una corrección antes de la expiración de extendidos soporte técnico para Windows Server 2003.  
+> Toda la compatibilidad con entornos con controladores de dominio de Windows Server 2003 finalizará después de la fecha de finalización de soporte extendido de Windows Server 2003. Se recomienda encarecidamente a los clientes que actualicen los controladores de dominio lo antes posible. Visite [esta página](https://support.microsoft.com/lifecycle/search/default.aspx?sort=PN&alpha=Windows+Server+2003&Filter=FilterNO) para obtener información adicional sobre el ciclo de vida de soporte técnico de Microsoft. En el caso de los problemas detectados que son específicos de los entornos de controlador de dominio de Windows Server 2003, solo se emitirán correcciones para los problemas de seguridad y si se puede emitir una corrección antes de la expiración del soporte extendido para Windows Server 2003.  
   
-**Funcional del dominio\-requisitos de niveles**  
+**Requisitos de\-nivel funcional de dominio**  
   
-Todos los dominios de cuentas de usuario y el dominio al que se unen los servidores de AD FS deben estar funcionando en el nivel funcional del dominio de Windows Server 2003 o superior.  
+Todos los dominios de cuentas de usuario y el dominio al que se unen los servidores AD FS deben funcionar en el nivel funcional de dominio de Windows Server 2003 o posterior.  
   
-La mayoría de las características de AD FS no necesitan AD DS funcional\-nivel modificaciones para que funcione correctamente. Sin embargo, se requiere un nivel funcional de dominio de Windows Server 2008 o superior para que la autenticación del certificado de cliente funcione correctamente, si dicho certificado está asignado explícitamente a una cuenta de usuario en AD DS.  
+La mayoría de las características de AD FS no\-requieren modificaciones de nivel funcional AD DS para que funcionen correctamente. Sin embargo, se requiere un nivel funcional de dominio de Windows Server 2008 o superior para que la autenticación del certificado de cliente funcione correctamente, si dicho certificado está asignado explícitamente a una cuenta de usuario en AD DS.  
   
 **Requisitos de esquema**  
   
--   AD FS no requiere cambios de esquema o funcional\-nivel modificaciones en AD DS.  
+-   AD FS no requiere cambios de esquema o modificaciones\-de nivel funcional en AD DS.  
   
--   Para usar la funcionalidad de unión, el esquema del bosque que se unen servidores de AD FS para debe establecerse en Windows Server 2012 R2.  
+-   Para usar la funcionalidad de Workplace Join, el esquema del bosque al que se unen AD FS servidores se debe establecer en Windows Server 2012 R2.  
   
 **Requisitos de la cuenta de servicio**  
   
--   Cualquier cuenta de servicio estándar se puede usar como una cuenta de servicio de AD FS. También se admiten cuentas de servicio administradas de grupo. Esto requiere al menos un controlador de dominio \(, se recomienda que implemente dos o más\) que ejecuta Windows Server 2012 o posterior.  
+-   Se puede usar cualquier cuenta de servicio estándar como cuenta de servicio para AD FS. También se admiten las cuentas de servicio administradas de grupo. Esto requiere al menos un controlador \(de dominio. se recomienda implementar dos o más\) que ejecuten Windows Server 2012 o posterior.  
   
--   Para la autenticación Kerberos funcione entre dominio\-reunido a los clientes y AD FS, el "HOST\/< adfs\_servicio\_nombre >' debe estar registrado como un SPN en la cuenta de servicio. De forma predeterminada, AD FS para configurar esto al crear una nueva granja de AD FS si tiene permisos suficientes para realizar esta operación.  
+-   Para que la autenticación Kerberos funcione entre\-clientes Unidos a un dominio y AD FS,\/se debe registrar\_el nombre del servicio "host < ADFS\_>" como SPN en la cuenta de servicio. De forma predeterminada, AD FS lo configurará al crear una nueva granja de AD FS si tiene permisos suficientes para realizar esta operación.  
   
--   La cuenta de servicio de AD FS debe ser de confianza en cada dominio del usuario que contiene los usuarios autenticarse en el servicio AD FS.  
+-   La cuenta de servicio de AD FS debe ser de confianza en todos los dominios de usuario que contengan usuarios que se autentiquen en el servicio AD FS.  
   
 **Requisitos de dominio**  
   
--   Todos los servidores de AD FS deben ser un unido a un dominio de AD DS.  
+-   Todos los servidores AD FS deben estar Unidos a un dominio AD DS.  
   
--   Todos los servidores de AD FS en una granja de servidores deben implementarse en un solo dominio.  
+-   Todos los servidores de AD FS de una granja de servidores se deben implementar en un único dominio.  
   
--   Cada dominio de la cuenta de usuario que contenga los usuarios autenticarse en el servicio AD FS debe confiar en que los servidores de AD FS están unidos al dominio.  
+-   El dominio al que se unen los servidores AD FS debe confiar en todos los dominios de cuentas de usuario que contengan usuarios que se autentiquen en el servicio AD FS.  
   
 **Requisitos de varios bosques**  
   
--   Cada dominio de la cuenta de usuario o el bosque que contiene los usuarios autenticarse en el servicio AD FS debe confiar en que los servidores de AD FS están unidos al dominio.  
+-   El dominio al que se unen los servidores AD FS debe confiar en todos los dominios o bosques de cuentas de usuario que contengan usuarios que se autentiquen en el servicio AD FS.  
   
--   La cuenta de servicio de AD FS debe ser de confianza en cada dominio del usuario que contiene los usuarios autenticarse en el servicio AD FS.  
+-   La cuenta de servicio de AD FS debe ser de confianza en todos los dominios de usuario que contengan usuarios que se autentiquen en el servicio AD FS.  
   
 ## <a name="BKMK_5"></a>Requisitos de la base de datos de configuración  
-Los siguientes son los requisitos y restricciones que se aplican en función del tipo de almacén de configuración:  
+A continuación se indican los requisitos y las restricciones que se aplican en función del tipo de almacén de configuración:  
   
 **WID**  
   
--   Una granja WID tiene un límite de 30 servidores de federación si tiene 100 o menos relaciones de confianza.  
+-   Una granja WID tiene un límite de 30 servidores de Federación si tiene 100 o menos relaciones de confianza para usuario autenticado.  
   
--   Perfil de resolución de artefactos de SAML 2.0 no se admite en la base de datos de configuración de WID.  No se admite la detección de reproducción de tokens en la base de datos de configuración de WID. Esta funcionalidad solo se usa solo en escenarios donde se actúa como proveedor de federación de AD FS y consumir tokens de seguridad de proveedores de notificaciones externo.  
+-   No se admite el perfil de resolución de artefactos en SAML 2,0 en la base de datos de configuración de WID.  No se admite la detección de reproducción de tokens en la base de datos de configuración de WID. Esta funcionalidad solo se usa en escenarios donde AD FS actúa como proveedor de Federación y consume tokens de seguridad de proveedores de notificaciones externos.  
   
--   Implementación de servidores de AD FS en datos distintos centros de conmutación por error o equilibrio de carga geográfico se admite como el número de servidores no superar los 30.  
+-   Se admite la implementación de servidores de AD FS en centros de datos distintos para la conmutación por error o el equilibrio de carga geográfica, siempre que el número de servidores no supere los 30.  
   
-En la tabla siguiente proporciona un resumen de uso de una granja WID.  Usar para planear su implementación.  
+En la tabla siguiente se proporciona un resumen del uso de una granja de servidores WID.  Úselo para planear la implementación.  
   
 ||||  
 |-|-|-|  
-||1 \- 100 de RP de confianzas|Más de 100 de RP de confianzas|  
-|1 \- 30 AD FS nodos|WID admitida|No se admite con WID \- SQL necesario|  
-|Nodos de más de 30 AD FS|No se admite con WID \- SQL necesario|No se admite con WID \- SQL necesario|  
+||1 \- 100 RP confianzas|Más de 100 confianzas RP|  
+|1 \- 30 nodos AD FS|WID compatible|No se admite el \- uso de SQL WID requerido|  
+|Más de 30 nodos AD FS|No se admite el \- uso de SQL WID requerido|No se admite el \- uso de SQL WID requerido|  
   
 **SQL Server**  
   
-Para AD FS en Windows Server 2012 R2, puede usar SQL Server 2008 y versiones posterior  
+Por AD FS en Windows Server 2012 R2, puede usar SQL Server 2008 y versiones posteriores.  
   
 ## <a name="BKMK_6"></a>Requisitos del explorador  
-Cuando se realiza la autenticación de AD FS a través de un explorador o el control del explorador, el explorador debe ser compatible con los siguientes requisitos:  
+Cuando AD FS la autenticación se realiza a través de un explorador o un control de explorador, el explorador debe cumplir los siguientes requisitos:  
   
 -   JavaScript debe estar habilitado  
   
--   Deben estar activadas las cookies  
+-   Las cookies deben estar activadas  
   
--   Indicación de nombre de servidor \(SNI\) deben ser compatibles  
+-   Indicación de nombre de servidor \(SNI\) debe ser compatible  
   
--   Para la autenticación de certificados de dispositivo de & certificado de usuario \(funcionalidad para unirse a área de trabajo\), el explorador debe admitir la autenticación de certificado de cliente SSL  
+-   Para el certificado de usuario & la \(funcionalidad\)de unión al área de trabajo de autenticación de certificado de dispositivo, el explorador debe admitir la autenticación de certificados de cliente SSL  
   
-Varias plataformas y exploradores principales han sido objeto de validación para la representación y funcionalidad de los detalles de los cuales se enumeran a continuación. Exploradores y dispositivos que no se tratan en esta tabla todavía se admiten si cumplen los requisitos descritos anteriormente:  
+Varios exploradores y plataformas clave se han sometido a la validación de la representación y la funcionalidad que se enumeran a continuación. Todavía se admiten los exploradores y dispositivos que no se cubren en esta tabla si cumplen los requisitos mencionados anteriormente:  
   
 |||  
 |-|-|  
-|**Exploradores**|**Plataformas**|  
-|IE 10.0|Windows 7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2|  
-|IE 11.0|Windows7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2|  
-|Agente de autenticación Web de Windows|Windows 8.1|  
-|Firefox \[v21\]|Windows 7, Windows 8.1|  
-|Safari \[v7\]|iOS 6, Mac OS\-X 10.7|  
-|Chrome \[v27\]|Windows 7, Windows 8.1, Windows Server 2012, Windows Server 2012 R2, Mac OS\-X 10.7.|  
+|**Exploradores**|**Select**|  
+|IE 10,0|Windows 7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2|  
+|IE 11,0|Windows7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2|  
+|Agente de autenticación Web de Windows|Windows 8.1|  
+|V21 \[de Firefox\]|Windows 7, Windows 8.1|  
+|Safari \[V7\]|iOS 6, Mac OS\-X 10,7|  
+|V27 \[de Chrome\]|Windows 7, Windows 8.1, Windows Server 2012, Windows Server 2012 R2 Mac OS\-X 10,7|  
   
 > [!IMPORTANT]  
-> Problema conocido \- Firefox: Funcionalidad de unión al área de trabajo que identifica el dispositivo mediante el certificado de dispositivo no es funcional en plataformas de Windows. Firefox no admite actualmente realizar la autenticación de certificado de cliente SSL mediante certificados de aprovisionamiento en el almacén de certificados de usuario en clientes de Windows.  
+> Problema \- conocido Firefox: Workplace Join funcionalidad que identifica el dispositivo con el certificado de dispositivo no funciona en las plataformas de Windows. Firefox no admite actualmente la autenticación de certificados de cliente SSL mediante certificados aprovisionados en el almacén de certificados de usuario en los clientes Windows.  
   
 **Cookies**  
   
-AD FS crea sesión\-cookies persistentes y función que se deben almacenar en los equipos cliente para proporcionar inicio de sesión\-, iniciar sesión\-, inicio de sesión único\-en \(SSO\)y otras funciones. Por lo tanto, el explorador cliente debe estar configurado para aceptar cookies. Las cookies que se usan para la autenticación siempre son Protocolo seguro de transferencia de hipertexto \(HTTPS\) las cookies de sesión que se escriben para el servidor de origen. Si el explorador cliente no está configurado para permitir estas cookies, AD FS no funcionará correctamente. Las cookies persistentes se usan para conservar la selección del usuario del proveedor de notificaciones. Puede deshabilitar mediante el uso de un valor de configuración en el archivo de configuración para el inicio de sesión de AD FS\-en páginas. Compatibilidad con TLS\/SSL es necesario por motivos de seguridad.  
+AD FS crea\-cookies persistentes y basadas en sesión que deben almacenarse en los equipos cliente para proporcionar inicio de sesión\-,\-cierre \(\-de\)sesión, Inicio de sesión único (SSO) y otras funciones. Por lo tanto, el explorador cliente debe estar configurado para aceptar cookies. Las cookies que se usan para la autenticación son siempre cookies\) de sesión https del protocolo \(seguro de transferencia de hipertexto que se escriben para el servidor de origen. Si el explorador cliente no está configurado para permitir estas cookies, AD FS no funcionará correctamente. Las cookies persistentes se usan para conservar la selección del usuario del proveedor de notificaciones. Puede deshabilitarlos mediante una opción de configuración en el archivo de configuración de las páginas\-de inicio de sesión AD FS. La compatibilidad con\/TLS SSL es necesaria por motivos de seguridad.  
   
 ## <a name="BKMK_extranet"></a>Requisitos de extranet  
-Para proporcionar acceso a extranet para el servicio AD FS, debe implementar el servicio de rol Proxy de aplicación Web como el rol accesible desde extranet que las solicitudes de autenticación de servidores proxy de forma segura para el servicio AD FS. Esto proporciona aislamiento de los puntos de conexión de servicio de AD FS, así como el aislamiento de todas las claves de seguridad \(como certificados de firma de tokens\) de solicitudes que se originan desde internet. Además, características como el bloqueo de cuenta de Extranet temporal requieren el uso del Proxy de aplicación Web. Para obtener más información sobre el Proxy de aplicación Web, consulte [Proxy de aplicación Web](https://technet.microsoft.com/library/dn584107.aspx).  
+Para proporcionar acceso a la extranet al servicio AD FS, debe implementar el servicio de rol de proxy de aplicación web como el rol orientado a extranet que pone en proxy las solicitudes de autenticación de forma segura para el servicio AD FS. Esto proporciona aislamiento de los puntos de conexión del servicio AD FS, así como el aislamiento de \(todas las claves de seguridad\) , como los certificados de firma de tokens de las solicitudes que se originan en Internet. Además, características como el bloqueo de la cuenta de extranet de software requieren el uso del proxy de aplicación Web. Para obtener más información sobre el proxy de aplicación Web, vea [proxy de aplicación web](https://technet.microsoft.com/library/dn584107.aspx).  
   
-Si desea utilizar una tercera\-terceros proxy para el acceso de extranet, este tercero\-proxy de entidad debe admitir el protocolo definido en [http:\/\/download.microsoft.com\/descargar\/9\/5\/E\/95EF66AF\-9026\-4BB0\-A41D\-A4F81802D92C\/% 5bMS\-ADFSPIP%5d.pdf](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf).  
+Si desea usar un proxy de terceros\-para el acceso a Extranet, este proxy\-de terceros debe admitir el protocolo definido en [http:\/\/download.Microsoft.com\/download\/ 9\/5E\/95EF66AF\-90264BB0\-A41DA4F81802D92C%5bMS\-ADFSPIP% 5 d.pdf.\/\-\-\/](https://download.microsoft.com/download/9/5/E/95EF66AF-9026-4BB0-A41D-A4F81802D92C/%5bMS-ADFSPIP%5d.pdf)  
   
 ## <a name="BKMK_7"></a>Requisitos de red  
-Configurar los siguientes servicios de red de forma adecuada es crítico para la correcta implementación de AD FS en su organización:  
+La configuración adecuada de los siguientes servicios de red es fundamental para la correcta implementación de AD FS en la organización:  
   
-**Configurar el Firewall corporativo**  
+**Configuración del Firewall corporativo**  
   
-El firewall situado entre el Proxy de aplicación Web y la granja de servidores de federación y el firewall entre los clientes y el Proxy de aplicación Web debe tener el puerto TCP 443 habilitado entrante.  
+Tanto el firewall que se encuentra entre el proxy de aplicación web y la granja de servidores de Federación como el Firewall entre los clientes y el proxy de aplicación web deben tener el puerto TCP 443 habilitado de entrada.  
   
-Además, si la autenticación de certificado de usuario del cliente \(autenticación de clientTLS mediante X509 certificados de usuario\) es necesario, AD FS en Windows Server 2012 R2 requiere que el puerto TCP 49443 esté habilitado entrantes en el firewall entre el los clientes y el Proxy de aplicación Web. Esto no es necesario en el firewall entre el Proxy de aplicación Web y los servidores de federación\).  
+Además, si se requiere la autenticación de \(certificados de usuario de cliente de\) clientTLS mediante certificados de usuario X509, AD FS en Windows Server 2012 R2 requiere que el puerto TCP 49443 esté habilitado en el Firewall entre los clientes y el proxy de aplicación Web. Esto no es necesario en el Firewall entre el proxy de aplicación web y los servidores\)de Federación.  
   
 **Configuración de DNS**  
   
--   Obtener acceso a la intranet, todos los clientes tener acceso a AD FS del servicio dentro de la red corporativa interna \(intranet\) debe ser capaz de resolver el nombre del servicio AD FS \(nombre proporcionado por el certificado SSL\) a la carga equilibrador para los servidores de AD FS o el servidor de AD FS.  
+-   Para el acceso a la intranet, todos los clientes que tienen acceso a AD FS \(servicio\) dentro de la intranet interna de la red corporativa \(deben poder resolver el nombre del\) nombre del servicio AD FS proporcionado por el certificado SSL para la carga. equilibrador para los servidores de AD FS o el servidor de AD FS.  
   
--   Para el acceso de extranet, todos los clientes tener acceso a AD FS del servicio desde fuera de la red corporativa \(extranet\/internet\) debe ser capaz de resolver el nombre del servicio AD FS \(nombre proporcionado por el certificado SSL\) al equilibrador de carga para los servidores Proxy de aplicación Web o el servidor de Proxy de aplicación Web.  
+-   Para el acceso de extranet, todos los clientes que tienen acceso a AD FS servicio \(desde\/fuera\) de la extranet de la red corporativa Internet deben \(poder resolver el nombre del nombre de servicio AD FS proporcionado por el certificadoSSL.\) al equilibrador de carga para los servidores proxy de aplicación web o el servidor proxy de aplicación Web.  
   
--   Para que obtener acceso a extranet funcionar correctamente, cada servidor Proxy de aplicación Web en la red Perimetral debe ser capaz de resolver el nombre del servicio AD FS \(nombre proporcionado por el certificado SSL\) al equilibrador de carga para los servidores de AD FS o el servidor de AD FS. Esto puede lograrse mediante un servidor DNS alternativo en la red Perimetral o cambiando la resolución del servidor local mediante el archivo de HOSTS.  
+-   Para que el acceso de extranet funcione correctamente, cada servidor proxy de aplicación Web de la red perimetral debe ser capaz de \(resolver AD FS nombre de servicio proporcionado\) por el certificado SSL para el equilibrador de carga para los servidores de AD FS o el servidor de AD FS. Esto puede lograrse mediante un servidor DNS alternativo en la red DMZ o cambiando la resolución del servidor local mediante el archivo de hosts.  
   
--   Para que la autenticación integrada de Windows para que funcione dentro de la red y fuera de la red para un subconjunto de los extremos expuestos a través del Proxy de aplicación Web, debe usar un registro \(CNAME no\) para que apunte a los equilibradores de carga.  
+-   Para que la autenticación integrada de Windows funcione dentro de la red y fuera de la red para un subconjunto de puntos de conexión expuestos a través del proxy de aplicación \(Web,\) debe usar un registro a no CNAME para apuntar a los equilibradores de carga.  
   
-Para obtener información sobre cómo configurar DNS corporativo para el servicio de federación y el servicio registro de dispositivos, consulte [configurar DNS corporativo para el servicio de federación y DRS](https://technet.microsoft.com/library/dn486786.aspx).  
+Para obtener información sobre cómo configurar el DNS corporativo para el servicio de Federación y el servicio de registro de dispositivos, consulte [configuración de DNS corporativo para el servicio de Federación y DRS](https://technet.microsoft.com/library/dn486786.aspx).  
   
-Para obtener información sobre cómo configurar DNS corporativo para servidores proxy de aplicación Web, vea la sección "Configuración de DNS" en [paso 1: Configurar la infraestructura del Proxy de aplicación Web](https://technet.microsoft.com/library/dn383644.aspx).  
+Para obtener información sobre la configuración de DNS corporativo para proxies de aplicación Web, consulte la sección " [configuración de DNS" en el paso 1: Configurar la infraestructura](https://technet.microsoft.com/library/dn383644.aspx)del proxy de aplicación Web.  
   
-¿Para obtener información acerca de cómo configurar una dirección IP o FQDN de clúster con NLB, consulte Especificación de los parámetros de clúster en [http:\/\/go.microsoft.com\/fwlink\/? LinkId\=75282](https://go.microsoft.com/fwlink/?LinkId=75282).  
+Para obtener información sobre cómo configurar una dirección IP de clúster o un FQDN de clúster con NLB, vea especificación de los parámetros de clúster en [\/http:\/\/go.Microsoft.com\/fwlink? LinkId\=75282](https://go.microsoft.com/fwlink/?LinkId=75282).  
   
 ## <a name="BKMK_8"></a>Requisitos del almacén de atributos  
-AD FS requiere al menos un almacén de atributos que se usará para autenticar a los usuarios y extraer notificaciones de seguridad para esos usuarios. Para obtener una lista de atributos almacenes compatibles con AD FS, vea [The Role of Attribute Stores](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md).  
+AD FS requiere que se use al menos un almacén de atributos para autenticar a los usuarios y extraer notificaciones de seguridad para esos usuarios. Para obtener una lista de almacenes de atributos que AD FS admite, vea [el rol de almacenes de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md).  
   
 > [!NOTE]  
-> AD FS crea automáticamente un almacén de atributos "Active Directory", de forma predeterminada. Requisitos del almacén de atributos dependen de si la organización actúa como el asociado de cuenta \(hospedaje a los usuarios federados\) o el asociado de recurso \(hospeda la aplicación federada\).  
+> De forma predeterminada AD FS crea automáticamente un almacén de atributos "Active Directory". Los requisitos del almacén de atributos dependen de si la organización actúa como el \(asociado de cuenta que\) hospeda a los usuarios \(federados o el asociado\)de recurso que hospeda la aplicación federada.  
   
-**Los almacenes de atributos LDAP**  
+**Almacenes de atributos LDAP**  
   
-Cuando se trabaja con otros Lightweight Directory Access Protocol \(LDAP\)\-en función de los almacenes de atributos, debe conectarse a un servidor LDAP que admite la autenticación integrada de Windows. Además, la cadena de conexión de LDAP debe estar escrita con el formato de una dirección URL de LDAP, tal y como se describe en RFC 2255.  
+Cuando trabaja con otros almacenes de atributos basados en \(LDAP\)\-de Protocolo ligero de acceso a directorios, debe conectarse a un servidor LDAP que admita la autenticación integrada de Windows. Además, la cadena de conexión de LDAP debe estar escrita con el formato de una dirección URL de LDAP, tal y como se describe en RFC 2255.  
   
-También es necesario que la cuenta de servicio para el servicio AD FS tiene el derecho a recuperar la información de usuario en el almacén de atributos LDAP.  
+También es necesario que la cuenta de servicio para el servicio de AD FS tenga derecho a recuperar información de usuario en el almacén de atributos LDAP.  
   
-**Almacenes de atributos de SQL Server**  
+**SQL Server almacenes de atributos**  
   
-Para AD FS en Windows Server 2012 R2 para que funcione correctamente, los equipos que hospedan el almacén de atributos de SQL Server deben ejecutar Microsoft SQL Server 2008 o posterior. Cuando se trabaja con SQL\-en función de los almacenes de atributos, también debe configurar una cadena de conexión.  
+Para que AD FS en Windows Server 2012 R2 funcione correctamente, los equipos que hospedan el almacén de atributos de SQL Server deben ejecutar Microsoft SQL Server 2008 o posterior. Al trabajar con almacenes de\-atributos basados en SQL, también debe configurar una cadena de conexión.  
   
-**Los almacenes de atributos personalizados**  
+**Almacenes de atributos personalizados**  
   
 Puedes desarrollar almacenes de atributos personalizados para habilitar escenarios avanzados.  
   
@@ -242,108 +242,108 @@ Puedes desarrollar almacenes de atributos personalizados para habilitar escenari
   
     -   Autorizar a un servicio a obtener un token del comportamiento de un usuario  
   
-    -   Emitir datos adicionales en los tokens de seguridad emitidos por AD FS para los usuarios autenticados.  
+    -   Emisión de datos adicionales en los tokens de seguridad emitidos por AD FS a los usuarios de confianza.  
   
--   Todos los almacenes de atributos personalizados deben compilarse sobre .NET 4.0 o superior.  
+-   Todos los almacenes de atributos personalizados se deben basar en .NET 4,0 o superior.  
   
-Cuando se trabaja con un almacén de atributos personalizados, es posible que deba configurar una cadena de conexión. En ese caso, puede escribir un código personalizado de su elección que habilita una conexión a su almacén de atributos personalizados. La cadena de conexión en esta situación es un conjunto de nombre\/valor pares que se interpretan como implementados por el desarrollador del almacén de atributos personalizados. Para obtener más información sobre el desarrollo y uso de almacenes de atributos personalizados, consulte [Introducción a Store los atributos](https://go.microsoft.com/fwlink/?LinkId=190782).  
+Al trabajar con un almacén de atributos personalizado, es posible que también tenga que configurar una cadena de conexión. En ese caso, puede escribir un código personalizado de su elección que permita una conexión al almacén de atributos personalizado. La cadena de conexión en esta situación es un conjunto de\/pares nombre-valor que se interpretan como implementados por el desarrollador del almacén de atributos personalizado. Para obtener más información sobre el desarrollo y el uso de almacenes de atributos personalizados, vea [información general](https://go.microsoft.com/fwlink/?LinkId=190782)sobre el almacén de atributos.  
   
 ## <a name="BKMK_9"></a>Requisitos de la aplicación  
-AD FS admite notificaciones\-compatible con aplicaciones que usan los siguientes protocolos:  
+AD FS admite aplicaciones\-compatibles con notificaciones que utilizan los protocolos siguientes:  
   
--   WS\-federación  
+-   Federación\-de WS  
   
--   WS\-de confianza  
+-   Confianza\-de WS  
   
--   Protocolo de SAML 2.0 mediante perfiles IDPLite, SPLite & eGov1.5.  
+-   Protocolo SAML 2,0 con IDPLite, SPLit & perfiles eGov 1.5.  
   
--   Perfil de concesión de autorización de OAuth 2.0  
+-   Perfil de concesión de autorización de OAuth 2,0  
   
-AD FS también admite la autenticación y autorización para cualquiera que no sean\-notificaciones\-compatible con aplicaciones que son compatibles con el Proxy de aplicación Web.  
+AD FS también admite la autenticación y autorización para las\-aplicaciones\-no compatibles con notificaciones que son compatibles con el proxy de aplicación Web.  
   
 ## <a name="BKMK_10"></a>Requisitos de autenticación  
-**Autenticación de AD DS \(autenticación principal\)**  
+**Autenticación principal \(de autenticación de AD DS\)**  
   
 Para el acceso a la intranet, se admiten los siguientes mecanismos de autenticación estándar para AD DS:  
   
--   Autenticación integrada de Windows mediante negociación de Kerberos y NTLM  
+-   Autenticación integrada de Windows con Negotiate para Kerberos & NTLM  
   
--   Autenticación mediante nombre de usuario de formularios\/contraseñas  
+-   Autenticación de formularios mediante\/contraseñas de nombre de usuario  
   
--   Autenticación de certificado mediante los certificados que se asignan a las cuentas de usuario en AD DS  
+-   Autenticación de certificados mediante certificados asignados a cuentas de usuario en AD DS  
   
-Para el acceso de extranet, se admiten los siguientes mecanismos de autenticación:  
+Para el acceso a la extranet, se admiten los siguientes mecanismos de autenticación:  
   
--   Autenticación mediante nombre de usuario de formularios\/contraseñas  
+-   Autenticación de formularios mediante\/contraseñas de nombre de usuario  
   
--   Autenticación de certificado mediante los certificados que se asignan a las cuentas de usuario en AD DS  
+-   Autenticación de certificados mediante certificados asignados a cuentas de usuario en AD DS  
   
--   Autenticación integrada de Windows utiliza Negotiate \(solo NTLM\) para WS\-confiar en los puntos de conexión que aceptan la autenticación integrada de Windows.  
+-   La autenticación integrada de Windows \(que usa\) Negotiate NTLM\-solo para extremos de WS Trust que aceptan la autenticación integrada de Windows.  
   
-Para la autenticación de certificado:  
+Para la autenticación de certificados:  
   
--   Se extiende a las tarjetas inteligentes que pueden estar protegido de pin.  
+-   Se extiende a las tarjetas inteligentes que pueden estar protegidas mediante PIN.  
   
--   La interfaz gráfica de usuario para el usuario que escriba su pin no se proporciona por AD FS y es necesario para formar parte del sistema operativo de cliente que se muestra cuando se usa TLS de cliente.  
+-   La GUI para que el usuario escriba su PIN no es proporcionada por AD FS y es necesario que forme parte del sistema operativo del cliente que se muestra al usar el cliente TLS.  
   
--   El lector y el proveedor de servicios criptográficos \(CSP\) para la tarjeta inteligente debe trabajar en el equipo donde está ubicado el explorador.  
+-   El lector y el CSP \(\) del proveedor de servicios de cifrado para la tarjeta inteligente deben funcionar en el equipo donde se encuentra el explorador.  
   
--   El certificado de tarjeta inteligente debe encadenarse a una raíz de confianza en todos los servidores de AD FS y servidores Proxy de aplicación Web.  
+-   El certificado de la tarjeta inteligente debe encadenarse a una raíz de confianza en todos los servidores de AD FS y servidores proxy de aplicación Web.  
   
 -   El certificado debe asignarse a la cuenta de usuario de AD DS mediante uno de los siguientes métodos:  
   
     -   El nombre del firmante del certificado se corresponde con el nombre distintivo de LDAP de una cuenta de usuario en AD DS.  
   
-    -   El certificado extensión NombreAlt del tiene el nombre principal de usuario \(UPN\) de una cuenta de usuario en AD DS.  
+    -   La extensión nombrealt del firmante del certificado tiene el nombre \(principal\) de usuario UPN de una cuenta de usuario en AD DS.  
   
-Uso de Kerberos en la intranet, para la autenticación integrada de Windows  
+Para la autenticación integrada de Windows con Kerberos en la intranet,  
   
--   Es necesario para el nombre del servicio formar parte de los sitios de confianza o los sitios de Intranet Local.  
+-   Es necesario que el nombre del servicio forme parte de los sitios de confianza o de los sitios de la Intranet local.  
   
--   Además, el HOST\/< adfs\_servicio\_nombre > se debe establecer el SPN en la cuenta de servicio que se ejecuta la granja de servidores de AD FS.  
+-   Además, el nombre del\/servicio\_ADFS\_del host < > SPN debe establecerse en la cuenta de servicio en la que se ejecuta la granja de AD FS.  
   
-**Múltiples\-Factor de autenticación**  
+**Multi\--factor Authentication**  
   
-AD FS admite la autenticación adicional \(más allá de la autenticación principal compatible con AD DS\) mediante un modelo de proveedor mediante el cual los proveedores\/los clientes pueden crear su propios multi\-adaptador de autenticación de factor que un administrador puede registrar y usar durante el inicio de sesión.  
+AD FS admite la autenticación \(adicional más allá de la autenticación\) principal que admite AD DS mediante\/un modelo de proveedor que permite a\-los clientes crear su propio adaptador de multi-factor Authentication. que un administrador puede registrarse y usar durante el inicio de sesión.  
   
-Cada adaptador de MFA debe se basa en .NET 4.5.  
+Cada adaptador de MFA debe basarse en .NET 4,5.  
   
-Para obtener más información sobre MFA, consulte [administración de riesgos con autenticación multifactor adicional para aplicaciones confidenciales](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md).  
+Para obtener más información sobre MFA, consulte [Administración de riesgos con multi-factor Authentication adicionales para aplicaciones confidenciales](../../ad-fs/operations/Manage-Risk-with-Additional-Multi-Factor-Authentication-for-Sensitive-Applications.md).  
   
 **Autenticación de dispositivos**  
   
-AD FS admite la autenticación de dispositivos mediante certificados aprovisionados por el servicio de registro de dispositivos durante la acción de un usuario final al área de trabajo unir su dispositivo.  
+AD FS admite la autenticación de dispositivos mediante certificados aprovisionados por el servicio de registro de dispositivos durante la acción de un área de trabajo del usuario final que se une a su dispositivo.  
   
-## <a name="BKMK_11"></a>Requisitos de unión al área de trabajo  
-Los usuarios finales pueden unión sus dispositivos a una organización con AD FS. Esto es compatible con el servicio de registro de dispositivos en AD FS. Como resultado, los usuarios finales obtienen la ventaja adicional de inicio de sesión único en todas las aplicaciones compatibles con AD FS. Además, los administradores pueden administrar el riesgo al restringir el acceso a las aplicaciones solo a los dispositivos que se han unido a la organización. A continuación son los siguientes requisitos para habilitar este escenario.  
+## <a name="BKMK_11"></a>Requisitos de la Unión al área de trabajo  
+Los usuarios finales pueden unir sus dispositivos a una organización mediante AD FS. Esto es compatible con el servicio de registro de dispositivos en AD FS. Como resultado, los usuarios finales obtienen las ventajas adicionales del inicio de sesión único en las aplicaciones compatibles con AD FS. Además, los administradores pueden administrar el riesgo restringiendo el acceso a las aplicaciones solo a los dispositivos que se han unido al área de trabajo de la organización. A continuación se muestran los siguientes requisitos para habilitar este escenario.  
   
--   AD FS admite la unión para Windows 8.1 e iOS 5\+ dispositivos  
+-   AD FS admite la Unión al área de trabajo para\+ dispositivos Windows 8.1 y iOS 5  
   
--   Para usar la funcionalidad de unión, el esquema del bosque que se unen servidores de AD FS a debe ser Windows Server 2012 R2.  
+-   Para usar la funcionalidad de Workplace Join, el esquema del bosque al que se unen los servidores AD FS debe ser Windows Server 2012 R2.  
   
--   Nombre alternativo del sujeto del certificado SSL para el servicio AD FS debe contener el enterpriseregistration de valor está seguido por el nombre Principal de usuario \(UPN\) sufijo de su organización, por ejemplo, enterpriseregistration.corp.contoso.com.  
+-   El nombre alternativo del sujeto del certificado SSL para AD FS servicio debe contener el valor enterpriseregistration seguido del sufijo UPN \(\) del nombre principal de usuario de la organización, por ejemplo, enterpriseregistration.corp.contoso.com.  
   
 ## <a name="BKMK_12"></a>Requisitos de criptografía  
-En la tabla siguiente proporciona información de soporte técnico de criptografía adicionales en el token de AD FS firma, cifrado de tokens\/funcionalidad de descifrado:  
+En la tabla siguiente se proporciona información adicional sobre la compatibilidad con la criptografía en la AD FS\/la funcionalidad de firma de tokens, descifrado de cifrado de tokens:  
   
 ||||  
 |-|-|-|  
-|**algoritmo**|**Longitudes de clave**|**Protocolos\/aplicaciones\/comentarios**|  
-|TripleDES – Default 192 \(admite 192, 256\) \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\# TripleDES\-cbc](http://www.w3.org/2001/04/xmlenc)|>\= 192|Se admite el algoritmo para descifrar el token de seguridad. El token de seguridad con este algoritmo de cifrado no es compatible.|  
-|AES128 \- http:\/\/www.w3.org\/2001\/04\/xmlenc\#aes128\-cbc|128|Se admite el algoritmo para descifrar el token de seguridad. El token de seguridad con este algoritmo de cifrado no es compatible.|  
-|AES192 \- http:\/\/www.w3.org\/2001\/04\/xmlenc\#aes192\-cbc|192|Se admite el algoritmo para descifrar el token de seguridad. El token de seguridad con este algoritmo de cifrado no es compatible.|  
-|AES256 \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#aes256\-cbc](http://www.w3.org/2001/04/xmlenc)|256|**Predeterminado**. Se admite el algoritmo para cifrar el token de seguridad.|  
-|TripleDESKeyWrap \- http:\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-tripledes|Todos los tamaños de clave admitidos por .NET 4.0\+|Admite el algoritmo para cifrar la clave simétrica que cifra un token de seguridad.|  
-|AES128KeyWrap \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes128](http://www.w3.org/2001/04/xmlenc)|128|Admite el algoritmo para cifrar la clave simétrica que cifra el token de seguridad.|  
-|AES192KeyWrap \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes192](http://www.w3.org/2001/04/xmlenc)|192|Admite el algoritmo para cifrar la clave simétrica que cifra el token de seguridad.|  
-|AES256KeyWrap \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#kw\-aes256](http://www.w3.org/2001/04/xmlenc)|256|Admite el algoritmo para cifrar la clave simétrica que cifra el token de seguridad.|  
-|RsaV15KeyWrap \- http:\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-1\_5|1024|Admite el algoritmo para cifrar la clave simétrica que cifra el token de seguridad.|  
-|RsaOaepKeyWrap \- [http:\/\/www.w3.org\/2001\/04\/xmlenc\#rsa\-oaep\-mgf1p](http://www.w3.org/2001/04/xmlenc)|1024|Default. Admite el algoritmo para cifrar la clave simétrica que cifra el token de seguridad.|  
-|SHA1\-http:\/\/www.w3.org\/PICS\/DSig\/SHA1\_1\_0.html|N\/A|Utilizado por el servidor de AD FS en la generación de SourceId artefacto:  En este escenario, el STS usa SHA1 \(por la recomendación en el estándar SAML 2.0\) para crear un valor de 160 bits corto para el identificador de origen del artefacto.<br /><br />También usa el agente web de ADFS \(componente heredado desde el período de tiempo de 2003\) para identificar cambios en un tiempo de "última actualización" de valor para que sepa cuándo se debe actualizar la información del STS.|  
-|SHA1withRSA\-<br /><br />http:\/\/www.w3.org\/PICS\/DSig\/RSA\-SHA1\_1\_0.html|N\/A|Se utiliza en los casos al servidor de AD FS valida la firma de SAML AuthenticationRequest, firmar la solicitud de resolución de artefacto o de respuesta, crear token\-certificado de firma.<br /><br />En estos casos, SHA256 es el valor predeterminado, y solo se utiliza SHA1 si el socio \(confianza\) no puede admitir SHA256 y deben usar SHA1.|  
+|**Algoritmo**|**Longitudes de clave**|**Protocolos\/aplicaciones\/comentarios**|  
+|TripleDES: valor predeterminado \(192 compatible 192 –\) \- 256 [http\/:\/www.w3.org\/2001\/04xmlenc\/TripleDES\#CBC\-](http://www.w3.org/2001/04/xmlenc)|>\=192|Algoritmo admitido para descifrar el token de seguridad. No se admite el cifrado del token de seguridad con este algoritmo.|  
+|AES128 \- http:\/www.w3.org2001\/04 xmlencAES128\#CBC\/\/\/\-|128|Algoritmo admitido para descifrar el token de seguridad. No se admite el cifrado del token de seguridad con este algoritmo.|  
+|AES192 \- http:\/www.w3.org2001\/04 xmlencAES192\#CBC\/\/\/\-|192|Algoritmo admitido para descifrar el token de seguridad. No se admite el cifrado del token de seguridad con este algoritmo.|  
+|AES256 \- [http:\/www.w3.org\/200104\/xmlencAES256\#CBC\/\/\-](http://www.w3.org/2001/04/xmlenc)|256|**Predeterminado**. Algoritmo admitido para el cifrado del token de seguridad.|  
+|Predeterminado tripledeskeywrap \- http:\/www.w3.org2001\/04 xmlenckW\#TripleDES\/\/\/\-|Todos los tamaños de clave admitidos por .NET 4,0\+|Algoritmo admitido para cifrar la clave simétrica que cifra un token de seguridad.|  
+|Predeterminado aes128keywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#AES128\/\/\-](http://www.w3.org/2001/04/xmlenc)|128|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|Predeterminado aes192keywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#aes192\/\/\-](http://www.w3.org/2001/04/xmlenc)|192|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|Predeterminado aes256keywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#AES256\/\/\-](http://www.w3.org/2001/04/xmlenc)|256|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|RsaV15KeyWrap \- http:\/www.w3.org2001\/04 xmlenc RSA1\-5\/\/\/\#\_|1024|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|Predeterminado rsaoaepkeywrap \- [http:\/www.w3.org\/200104\/xmlencRSAOAEP\-mgf1p\/\/\#\-](http://www.w3.org/2001/04/xmlenc)|1024|Default. Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|SHA1\-http:\/www.w3.orgpics\/dsig SHA1 10\_. html\/\/\/\_|N\/A|Usado por AD FS Server en la generación de artefactos SourceId:  En este escenario, el STS usa SHA1 \(según la recomendación del estándar\) SAML 2,0 para crear un valor corto de 160 bits para el artefacto sourceiD.<br /><br />También lo usa el componente heredado \(del agente Web de ADFS\) de WS2003 período de tiempo para identificar los cambios en un valor de hora de "última actualización" para que sepa cuándo actualizar la información del STS.|  
+|SHA1withRSA\-<br /><br />http:\/\/www.w3.orgpicsdsig\/RSA SHA1 10\_. html\-\/\/\_|N\/A|Se utiliza en casos en los que AD FS servidor valida la firma de AuthenticationRequest de SAML, firmar la solicitud de resolución de artefactos o la respuesta, crear un certificado de firma de tokens\-.<br /><br />En estos casos, SHA256 es el valor predeterminado y SHA1 solo se usa si el usuario \(\) de confianza del asociado no puede admitir SHA256 y debe usar SHA1.|  
   
 ## <a name="BKMK_13"></a>Requisitos de permisos  
-El administrador que realiza la instalación y la configuración inicial de AD FS debe tener permisos de administrador de dominio en el dominio local \(en otras palabras, el dominio al que está unido el servidor de federación a.\)  
+El administrador que realiza la instalación y la configuración inicial de AD FS deben tener permisos de administrador de dominio en el \(dominio local en otras palabras, el dominio al que se une el servidor de Federación.\)  
   
 ## <a name="see-also"></a>Vea también  
 [Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)  

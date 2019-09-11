@@ -1,6 +1,6 @@
 ---
 title: Opciones de vista de miniaturas de sesión en MultiPoint Dashboard
-description: Obtenga información sobre cómo personalizar las opciones de vista de MultiPoint Services
+description: Aprenda a personalizar las opciones de vista para Multipoint Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,19 +13,19 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: febd5c4a5d5fdcf5ad2a27eec13bb7439ea0ee4f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a11f2f2bbafe4d21e1cd5d56d66a97e08cf35b11
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875496"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871470"
 ---
 # <a name="view-options-for-session-thumbnails-in-multipoint-dashboard"></a>Opciones de vista de miniaturas de sesión en MultiPoint Dashboard
-Una manera sencilla de supervisar las actividades de los usuarios en escritorios individuales es ver imágenes en miniatura de cada escritorio activo en el sistema MultiPoint Services. De forma predeterminada, se muestran las imágenes de escritorios en MultiPoint Dashboard en el **inicio** ficha.  
+Una manera sencilla de supervisar las actividades de los usuarios en escritorios individuales es ver imágenes en miniatura de cada escritorio activo en el sistema MultiPoint Services. De forma predeterminada, las imágenes de los equipos de escritorio se muestran en el panel de Multipoint en la pestaña **Inicio** .  
   
-Mediante MultiPoint Dashboard, puede hacer lo siguiente:  
+Con el panel de Multipoint, puede hacer lo siguiente:  
   
-- Ver el escritorio de un usuario con más detalle ampliando la vista en el panel.  
+- Vea el escritorio de un usuario más detenidamente ampliando su vista en el panel.  
 - Cambiar el tamaño de las imágenes en miniatura que se muestran en el panel. Hay disponibles tres tamaños: pequeño, mediano y grande. La configuración predeterminada es el tamaño mediano.  
 - Ver todos los escritorios del sistema MultiPoint Services o elegir una vista filtrada que muestre los escritorios.  
   
@@ -43,7 +43,7 @@ Mediante MultiPoint Dashboard, puede hacer lo siguiente:
   
 2.  En la pestaña **Inicio**, haga clic en **Enlarge Selected** (Ampliar seleccionado). Se abre la página **Change Desktop Size** (Cambiar tamaño de escritorio).  
   
-3.  Haga clic en el tamaño que desee (**pequeño**, **medio**, o **grande**) y, a continuación, haga clic en **Aceptar**.  
+3.  Haga clic en el tamaño que desee (**pequeño**, **mediano**o **grande**) y, a continuación, haga clic en **Aceptar**.  
   
 ## <a name="to-show-all-desktops-in-multipoint-dashboard"></a>Para mostrar todos los escritorios en MultiPoint Dashboard  
   
@@ -57,4 +57,4 @@ Mediante MultiPoint Dashboard, puede hacer lo siguiente:
 > Haga clic con el botón derecho en una o varias miniaturas para tener acceso a más acciones que se pueden realizar en las sesiones activas o inactivas, como **Cerrar la sesión de los usuarios seleccionados**. Vea [Cerrar sesiones de usuario](Log-Off-User-Sessions.md) para más información.
 
 ## <a name="see-also"></a>Vea también  
-[Administrar escritorios de usuario mediante MultiPoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)
+[Administrar escritorios de usuario mediante MultiPoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)

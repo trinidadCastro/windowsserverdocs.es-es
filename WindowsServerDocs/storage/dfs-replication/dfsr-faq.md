@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: ee4dfe223635b176f10691c186144ed5360e3af7
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 5bf85938f242ec29d75b32cdcb8b03c5f34bd1bb
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560524"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871974"
 ---
 # <a name="dfs-replication-frequently-asked-questions-faq"></a>Replicación DFS: Preguntas más frecuentes
 
@@ -125,7 +125,7 @@ No utilice Replicación DFS con Archivos sin conexión en un entorno de varios u
 
 ### <a name="what-antivirus-applications-are-compatible-with-dfs-replication"></a>¿Qué aplicaciones antivirus son compatibles con Replicación DFS?
 
-Las aplicaciones antivirus pueden provocar una replicación excesiva si sus actividades de exploración modifican los archivos de una carpeta replicada. Para obtener más información, pruebe la interoperabilidad de las http://go.microsoft.com/fwlink/?LinkId=73990) [aplicaciones antivirus con replicación DFS](http://go.microsoft.com/fwlink/?linkid=73990) (.
+Las aplicaciones antivirus pueden provocar una replicación excesiva si sus actividades de exploración modifican los archivos de una carpeta replicada. Para obtener más información, [pruebe la interoperabilidad de las aplicaciones antivirus con replicación DFS](http://go.microsoft.com/fwlink/?linkid=73990) (http://go.microsoft.com/fwlink/?LinkId=73990).
 
 ### <a name="what-are-the-benefits-of-using-dfs-replication-instead-of-windows-sharepoint-services"></a>¿Cuáles son las ventajas de usar Replicación DFS en lugar de Windows SharePoint Services?
 
@@ -191,7 +191,7 @@ No. Replicación DFS solo admite volúmenes formateados con el sistema de archiv
 
 ### <a name="does-dfs-replication-work-with-sparse-files"></a>¿Replicación DFS funciona con archivos dispersos?
 
-Sí. Puede replicar archivos dispersos. El atributo Sparse se conserva en el miembro receptor.
+Sí. Puede replicar archivos dispersos. El atributo **Sparse** se conserva en el miembro receptor.
 
 ### <a name="do-i-need-to-log-in-as-administrator-to-replicate-files"></a>¿Es necesario iniciar sesión como administrador para replicar archivos?
 
@@ -247,7 +247,7 @@ La lista siguiente proporciona un conjunto de instrucciones de escalabilidad pro
 <br>
 
 
-Para obtener una lista de las instrucciones de escalabilidad probadas por Microsoft para Windows Server 2003 R2, consulte [instrucciones](http://go.microsoft.com/fwlink/?linkid=75043) de escalabilidad http://go.microsoft.com/fwlink/?LinkId=75043) de replicación DFS (.
+Para obtener una lista de las instrucciones de escalabilidad probadas por Microsoft para Windows Server 2003 R2, consulte [instrucciones de escalabilidad de replicación DFS](http://go.microsoft.com/fwlink/?linkid=75043) (. http://go.microsoft.com/fwlink/?LinkId=75043)
 
 ### <a name="when-should-i-not-use-dfs-replication"></a>¿Cuándo no se debe utilizar Replicación DFS?
 
@@ -265,7 +265,7 @@ Replicación DFS usa nuevos objetos en el contexto de nombres de dominio de Acti
 
 Sí. Existen tres formas de automatizar los informes de mantenimiento:
 
-  - Use el módulo de Windows PowerShell de DFSR incluido en Windows Server 2012 R2 o DfsrAdmin. exe junto con las tareas programadas para generar informes de mantenimiento con regularidad. Para obtener más información, vea automatizar informes de estado http://go.microsoft.com/fwlink/?LinkId=74010) de [replicación DFS](http://go.microsoft.com/fwlink/?linkid=74010) (.  
+  - Use el módulo de Windows PowerShell de DFSR incluido en Windows Server 2012 R2 o DfsrAdmin. exe junto con las tareas programadas para generar informes de mantenimiento con regularidad. Para obtener más información, vea [automatizar informes de estado de replicación DFS](http://go.microsoft.com/fwlink/?linkid=74010) (. http://go.microsoft.com/fwlink/?LinkId=74010)  
       
   - Utilice el módulo de administración de Replicación DFS para System Center Operations Manager con el fin de crear alertas basadas en condiciones especificadas.  
       

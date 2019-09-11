@@ -9,12 +9,12 @@ ms.topic: article
 author: chrishuybregts
 ms.author: chrihu
 ms.assetid: 67a01889-fa36-4bc6-841d-363d76df6a66
-ms.openlocfilehash: 2f9d283f5f80d6bb0851b2abd93be0f4c10899c8
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 94ba561f35ea257a897f51cb3522196f7988eb71
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476586"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872100"
 ---
 # <a name="deploy-graphics-devices-using-discrete-device-assignment"></a>Implementación de dispositivos de gráficos mediante la asignación discreta de dispositivos
 

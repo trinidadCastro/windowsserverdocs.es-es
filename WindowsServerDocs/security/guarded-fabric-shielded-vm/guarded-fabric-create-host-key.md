@@ -1,5 +1,5 @@
 ---
-title: Crear una clave de host y su incorporación a HGS
+title: Crear una clave de host y agregarla a HGS
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.topic: article
@@ -8,54 +8,54 @@ manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 0526831fb0648e7f8f6fb1a081180f2e2aa9f09f
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 655ebae66b234d62e5863e2a22e785d5a0028da7
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447489"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870543"
 ---
-# <a name="create-a-host-key-and-add-it-to-hgs"></a>Crear una clave de host y su incorporación a HGS
+# <a name="create-a-host-key-and-add-it-to-hgs"></a>Crear una clave de host y agregarla a HGS
 
 >Se aplica a: Windows Server 2019
 
 
-En este tema se explica cómo preparar los hosts de Hyper-V para convertirse en hosts protegidos con la atestación de clave de host (modo de clave). Deberá crear un par de claves de host (o usar un certificado existente) y agregue la mitad de la clave pública para HGS.
+En este tema se describe cómo preparar hosts de Hyper-V para que se conviertan en hosts protegidos mediante la atestación de clave de host (modo de clave). Creará un par de claves de host (o usará un certificado existente) y agregará la mitad pública de la clave a HGS.
 
 ## <a name="create-a-host-key"></a>Crear una clave de host
 
-1.  En el equipo host de Hyper-V, instale Windows Server 2019.
-2.  Instalar las características de Hyper-V y compatibilidad de Hyper-V de guardián de Host:
+1.  Instale Windows Server 2019 en el equipo host de Hyper-V.
+2.  Instale las características de compatibilidad con Hyper-V y protección de host de Hyper-V:
 
     ```powershell
     Install-WindowsFeature Hyper-V, HostGuardian -IncludeManagementTools -Restart
     ``` 
 
-3.  Generar automáticamente una clave de host, o seleccione un certificado existente. Si utiliza un certificado personalizado, debe tener al menos una clave RSA de 2048 bits, el EKU de autenticación de cliente y uso de claves de firma Digital.
+3.  Generar una clave de host automáticamente o seleccionar un certificado existente. Si usa un certificado personalizado, debe tener al menos una clave RSA de 2048 bits, un EKU de autenticación de cliente y el uso de la clave de firma digital.
 
     ```powershell
     Set-HgsClientHostKey
     ```
 
-    Como alternativa, puede especificar una huella digital si desea usar su propio certificado. 
-    Esto puede ser útil si desea compartir un certificado en varias máquinas, o use un certificado enlazado a un HSM o de un TPM. Este es un ejemplo de cómo crear un certificado enlazado a TPM (que impide tener la clave privada robado y usarse en otra máquina y requiere un TPM 1.2):
+    También puede especificar una huella digital si desea utilizar su propio certificado. 
+    Esto puede ser útil si desea compartir un certificado entre varios equipos o usar un certificado enlazado a un TPM o a un HSM. A continuación se muestra un ejemplo de creación de un certificado enlazado a TPM (que impide que se robe y se use la clave privada en otra máquina y que solo requiera un TPM 1,2):
 
     ```powershell
     $tpmBoundCert = New-SelfSignedCertificate -Subject “Host Key Attestation ($env:computername)” -Provider “Microsoft Platform Crypto Provider”
     Set-HgsClientHostKey -Thumbprint $tpmBoundCert.Thumbprint
     ```
 
-4.  Obtener la mitad pública de la clave para proporcionar a un servidor HGS. Puede usar el siguiente cmdlet o, si tiene el certificado almacenado en otra parte, proporcione un archivo .cer que contiene el público en la mitad de la clave. Tenga en cuenta que solo estamos almacenar y validar la clave pública en HGS; no mantenemos ninguna información del certificado ni verificamos la fecha de cadena o la expiración del certificado.
+4.  Obtenga la mitad pública de la clave que se va a proporcionar al servidor HGS. Puede usar el siguiente cmdlet de o, si tiene el certificado almacenado en otro lugar, proporcione un. cer que contenga la mitad pública de la clave. Tenga en cuenta que solo almacenamos y validamos la clave pública en HGS; no se conserva ninguna información de certificado ni se valida la cadena de certificados o la fecha de expiración.
 
     ```powershell
     Get-HgsClientHostKey -Path "C:\temp\$env:hostname-HostKey.cer"
     ```
 
-5.  Copie el archivo .cer en el servidor HGS.
+5.  Copie el archivo. cer en el servidor de HGS.
 
-## <a name="add-the-host-key-to-the-attestation-service"></a>Agregue la clave de host para el servicio de atestación
+## <a name="add-the-host-key-to-the-attestation-service"></a>Agregar la clave de host al servicio de atestación
 
-Este paso se realiza en el servidor HGS y permite que el host ejecutar máquinas virtuales blindadas. Se recomienda que establezca el nombre para el FQDN o identificador de recurso de la máquina host, por lo que puede hacer referencia fácilmente al host que la clave se instala en.
+Este paso se realiza en el servidor HGS y permite al host ejecutar máquinas virtuales blindadas. Se recomienda establecer el nombre en el FQDN o el identificador de recursos del equipo host, de modo que pueda hacer referencia fácilmente al host en el que está instalada la clave.
 
 ```powershell
 Add-HgsAttestationHostKey -Name MyHost01 -Path "C:\temp\MyHost01-HostKey.cer"
@@ -64,8 +64,8 @@ Add-HgsAttestationHostKey -Name MyHost01 -Path "C:\temp\MyHost01-HostKey.cer"
 ## <a name="next-step"></a>Paso siguiente
 
 > [!div class="nextstepaction"]
-> [Confirmar hosts atestigua correctamente](guarded-fabric-confirm-hosts-can-attest-successfully.md)
+> [Confirmar que los hosts pueden atestiguarse correctamente](guarded-fabric-confirm-hosts-can-attest-successfully.md)
 
 ## <a name="see-also"></a>Vea también
 
-- [Implementar el servicio de protección de Host para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-deploying-hgs-overview.md)
+- [Implementación del servicio de protección de host para hosts protegidos y máquinas virtuales blindadas](guarded-fabric-deploying-hgs-overview.md)

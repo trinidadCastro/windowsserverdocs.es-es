@@ -9,81 +9,81 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c9c4cdb881d77fe902776551b4e99061e67660ea
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 86111f8f7da7be1d33bd6ce07385805a9a3b3df8
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189385"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865927"
 ---
 # <a name="create-a-rule-to-send-group-membership-as-a-claim"></a>Crear una regla para enviar la pertenencia a grupos como una notificación
 
-Mediante la pertenencia al grupo de envío como una plantilla de regla de notificación en los servicios de federación de Active Directory \(AD FS\), puede crear una regla que hará posible para seleccionar un grupo de seguridad de Active Directory que se envían como una notificación. Se va a emitir solo una notificación única de esta regla, según el grupo que seleccione. Por ejemplo, puede usar esta plantilla de regla para crear una regla que va a enviar una notificación de grupo con un valor de administrador si el usuario es miembro del grupo de seguridad Admins. del dominio. Esta regla se debe usar solo para los usuarios del dominio de Active Directory local.  
+Mediante la pertenencia al grupo de envío como una plantilla de \(regla\)de notificaciones en servicios de Federación de Active Directory (AD FS) AD FS, puede crear una regla que le permita seleccionar un grupo de seguridad de Active Directory para enviarlo como una demanda. Solo se emitirá una única demanda desde esta regla, según el grupo que seleccione. Por ejemplo, puede usar esta plantilla de reglas para crear una regla que enviará una demanda de grupo con un valor de admin si el usuario es miembro del grupo de seguridad Admins. del dominio. Esta regla solo debe usarse para los usuarios del dominio de Active Directory local.  
   
-Puede usar el procedimiento siguiente para crear una regla de notificación con el complemento Administración de AD FS\-en.  
+Puede usar el procedimiento siguiente para crear una regla de notificaciones con el complemento\-de administración de AD FS en.  
   
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).   
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).   
 
-## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para enviar la pertenencia a grupos como una notificación en una confianza de Windows Server 2016 
+## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-on-a-relying-party-trust-in-windows-server-2016"></a>Para crear una regla para enviar la pertenencia a grupos como una demanda en una relación de confianza para usuario autenticado en Windows Server 2016 
 
-1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
+1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
   
-2.  En el árbol de consola, bajo **AD FS**, haga clic en **autenticado**. 
-![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
+2.  En el árbol de consola, en **AD FS**, haga clic en relaciones de confianza para usuario **autenticado**. 
+![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule9.PNG)  
   
-3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **Editar directiva de emisión de notificación**.
-![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
+3.  Haga\-clic con el botón derecho en la confianza seleccionada y luego haga clic en **Editar Directiva de emisión de notificaciones**.
+![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule10.PNG)   
   
-4.  En el **Editar directiva de emisión de notificación** cuadro de diálogo **reglas de transformación de emisión** haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
-![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
+4.  En el cuadro de diálogo **Editar Directiva de emisión de notificaciones** , en **reglas de transformación de emisión** , haga clic en **Agregar regla** para iniciar el Asistente para reglas. 
+![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule11.PNG)    
 
-5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar pertenencia a grupo como notificación** en la lista y, a continuación, haga clic en **siguiente**.  
-![Crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)      
+5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **Enviar pertenencia a grupos como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.  
+![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)      
 
-6.   En el **configurar regla** página **nombre de la regla de notificación** escriba el nombre para mostrar para esta regla, en **grupo del usuario** haga clic en **examinar** y seleccione un grupo, bajo **tipo de notificación saliente** seleccione el tipo de notificación deseada y, a continuación, en **tipo de notificación saliente** escriba un valor.
-![Crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group4.PNG)   
+6.   En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en el **Grupo del usuario** , haga clic en **examinar** y seleccione un grupo, en **tipo de notificaciones salientes** , seleccione el tipo de notificaciones que desee y, a continuación, en  **Tipo de notificaciones salientes** escriba un valor.
+![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group4.PNG)   
 
-7.  Haga clic en el **finalizar** botón.  
+7.  Haga clic en el botón **Finalizar** .  
   
-8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.
+8.  En el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar** para guardar la regla.
   
-## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-on-a-claims-provider-trust-in-windows-server-2016"></a>Para crear una regla para enviar la pertenencia a grupos como una notificación en una confianza del proveedor de notificaciones en Windows Server 2016 
+## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-on-a-claims-provider-trust-in-windows-server-2016"></a>Para crear una regla para enviar la pertenencia a grupos como una notificación en una confianza de proveedor de notificaciones en Windows Server 2016 
   
-1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
+1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
   
-2.  En el árbol de consola, bajo **AD FS**, haga clic en **confianzas de proveedor de notificaciones**. 
-![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
+2.  En el árbol de consola, en **AD FS**, haga clic en **confianzas de proveedor de notificaciones**. 
+![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule1.PNG)  
   
-3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **editar reglas de notificación**.
-![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
+3.  Haga\-clic con el botón secundario en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
+![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule2.PNG)   
   
-4.  En el **editar reglas de notificación** cuadro de diálogo **reglas de transformación de aceptación** haga clic en **Agregar regla** para iniciar el Asistente para reglas.
-![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
+4.  En el cuadro de diálogo **editar reglas de notificaciones** , en **reglas de transformación de aceptación** , haga clic en **Agregar regla** para iniciar el Asistente para reglas.
+![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule3.PNG)    
 
-5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar pertenencia a grupo como notificación** en la lista y, a continuación, haga clic en **siguiente**.  
-![Crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)     
+5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **Enviar pertenencia a grupos como notificaciones** en la lista y, a continuación, haga clic en **siguiente**.  
+![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group3.PNG)     
 
-6.   En el **configurar regla** página **nombre de la regla de notificación** escriba el nombre para mostrar para esta regla, en **grupo del usuario** haga clic en **examinar** y seleccione un grupo, bajo **tipo de notificación saliente** seleccione el tipo de notificación deseada y, a continuación, en **tipo de notificación saliente** escriba un valor. 
-![Crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group4.PNG)      
+6.   En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en el **Grupo del usuario** , haga clic en **examinar** y seleccione un grupo, en **tipo de notificaciones salientes** , seleccione el tipo de notificaciones que desee y, a continuación, en  **Tipo de notificaciones salientes** escriba un valor. 
+![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group4.PNG)      
 
-7.  Haga clic en el **finalizar** botón.  
+7.  Haga clic en el botón **Finalizar** .  
   
-8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
-
-
+8.  En el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar** para guardar la regla.  
 
 
+
+
   
-## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-in-windows-server-2012-r2"></a>Para crear una regla para enviar la pertenencia a grupos como una notificación en Windows Server 2012 R2 
+## <a name="to-create-a-rule-to-send-group-membership-as-a-claim-in-windows-server-2012-r2"></a>Para crear una regla para enviar la pertenencia a grupos como una demanda en Windows Server 2012 R2 
   
-1.  En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**.  
+1.  En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**.  
   
-2.  En el árbol de consola, bajo **AD FS\\relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o **autenticado**y, a continuación, haga clic en un determinado confiar en la lista donde desea crear esta regla.  
+2.  En el árbol de consola, **en\\AD FS relaciones de confianza**, haga clic en **confianzas de proveedor de notificaciones** o en **confianzas**de usuario de confianza y, a continuación, haga clic en una confianza específica en la lista en la que desea crear esta regla.  
   
-3.  Derecha\-haga clic en la relación de confianza seleccionada y, a continuación, haga clic en **editar reglas de notificación**.
-![Crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
+3.  Haga\-clic con el botón secundario en la confianza seleccionada y, a continuación, haga clic en **editar reglas de notificaciones**.
+![crear regla](media/Create-a-Rule-to-Pass-Through-or-Filter-an-Incoming-Claim/claimrule6.PNG)  
   
-4.  En el **editar reglas de notificación** cuadro de diálogo, seleccione una de las fichas siguientes, dependiendo de la relación de confianza que va a editar y establezca la regla a la desea crear esta regla en y, a continuación, haga clic en **Agregar regla** para iniciar la regla Asistente para la que está asociado con ese conjunto de reglas:  
+4.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione una de las siguientes pestañas, en función de la confianza que esté editando y el conjunto de reglas en el que desee crear esta regla y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas que está asociado con ese conjunto de reglas. :  
   
     -   **Reglas de transformación de aceptación**  
   
@@ -92,17 +92,17 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
     -   **Reglas de autorización de emisión**  
   
     -   **Reglas de autorización de delegación**  
-![Crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
+![crear regla](media/Create-a-Rule-to-Permit-All-Users/permitall5.PNG)
     
-5.  En el **Seleccionar plantilla de regla** página, en **plantilla de regla de notificación**, seleccione **enviar pertenencia a grupo como notificación** en la lista y, a continuación, haga clic en **siguiente**.  
-![Crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
+5.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificaciones**, seleccione **Enviar pertenencia a grupos como una demanda** de la lista y, a continuación, haga clic en **siguiente**.  
+![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group1.PNG)
 
-6.  En el **configurar regla** página **nombre de la regla de notificación** escriba el nombre para mostrar para esta regla, en **grupo del usuario** haga clic en **examinar** y seleccione un grupo, bajo **tipo de notificación saliente** seleccione el tipo de notificación deseada y, a continuación, en **tipo de notificación saliente** escriba un valor.  
-![Crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group2.PNG)  
+6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en el **Grupo del usuario** , haga clic en **examinar** y seleccione un grupo, en **tipo de notificaciones salientes** , seleccione el tipo de notificaciones que desee y, a continuación, en  **Tipo de notificaciones salientes** escriba un valor.  
+![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group2.PNG)  
 
-7.  Haga clic en **Finalizar**.  
+7.  Haga clic en **Finalizar**  
   
-8.  En el **editar reglas de notificación** cuadro de diálogo, haga clic en **Aceptar** para guardar la regla.  
+8.  En el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar** para guardar la regla.  
 
 
 
@@ -113,7 +113,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
 [Lista de comprobación: Lista de comprobación: crear reglas de notificación para confianza de proveedores de notificaciones](https://technet.microsoft.com/library/ee913564.aspx)  
   
-[Cuándo usar una regla de notificación de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
+[Cuándo usar una regla de notificaciones de autorización](../../ad-fs/technical-reference/When-to-Use-an-Authorization-Claim-Rule.md)  
 
 [El papel de las notificaciones](../../ad-fs/technical-reference/The-Role-of-Claims.md)  
   

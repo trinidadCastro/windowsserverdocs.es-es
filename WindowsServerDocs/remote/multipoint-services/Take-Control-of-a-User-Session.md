@@ -1,6 +1,6 @@
 ---
 title: Tomar el control de una sesión de usuario
-description: Obtenga información sobre cómo acceder y aprovechar el control de la estación de otro usuario de MultiPoint Services
+description: Obtenga información sobre cómo acceder y tomar el control de la estación de otro usuario en Multipoint Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,25 +13,25 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 6cf72bea861f391241b66656ec062455a2004a81
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fbf50d2a30bdae1665fed2ed4f1b223c6505c699
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862336"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871545"
 ---
 # <a name="take-control-of-a-user-session"></a>Tomar el control de una sesión de usuario
 Como usuario de MultiPoint Dashboard, puede ayudar a otro usuario obteniendo acceso remoto a su escritorio mediante la característica Tomar el control.  
   
-1.  En MultiPoint Dashboard, en el **inicio** pestaña, haga clic en la imagen en miniatura del escritorio del usuario que quiera asistir.  
+1.  En Multipoint Dashboard, en la pestaña **Inicio** , haga clic en la imagen en miniatura del escritorio del usuario al que desea ayudar.  
   
-2.  En la pestaña **Assist** (Asistir), haga clic en la pestaña **Take Control** (Tomar control). El escritorio del usuario se abre en su escritorio y, de este modo, podrá navegar por él usando el teclado y el mouse.  
+2.  En la pestaña **Assist** (Asistir), haga clic en la pestaña **Take Control** (Tomar control). El escritorio del usuario se abre en el escritorio y, a continuación, puede navegar por el escritorio con el teclado y el mouse.  
   
-3.  Cuando haya terminado de asistir al usuario, haga clic en **detener**.  
+3.  Cuando haya terminado de ayudar al usuario, haga clic en **detener**.  
   
     > [!NOTE]  
-    > Necesita minimizar el escritorio del usuario para ver el panel de MultiPoint.  
+    > Es posible que tenga que minimizar el escritorio del usuario para ver el panel de multipoint.  
   
 ## <a name="see-also"></a>Vea también  
-[Administrar escritorios de usuario mediante MultiPoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)  
+[Administrar escritorios de usuario mediante MultiPoint Dashboard](Manage-User-Desktops-Using-MultiPoint-Dashboard.md)  
   

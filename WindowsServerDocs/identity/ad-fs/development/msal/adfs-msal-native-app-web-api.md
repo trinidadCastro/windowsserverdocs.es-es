@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f1de6229d5360a4ea95d285f34ad32532762edca
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 588d717b8f03987b86af7dc0576d537ebd88c4ba
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983563"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867619"
 ---
 # <a name="scenario-native-app-calling-web-api"></a>Escenario: API Web de llamada de aplicaciones nativas 
 >Se aplica a: AD FS 2019 y versiones posteriores 
@@ -49,7 +49,7 @@ En esta sección se muestra cómo registrar la aplicación nativa como cliente p
   
       ![REG. de aplicación](media/adfs-msal-native-app-web-api/native2.png)  
 
-  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ClientID** en el archivo **app. config** de la aplicación. Escriba lo siguiente para el URI de redirección **:** https://ToDoListClient. Haga clic en **Agregar**. Haga clic en **Next**.  
+  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ClientID** en el archivo **app. config** de la aplicación. Escriba lo siguiente para el **URI de redirección:** https://ToDoListClient. Haga clic en **Agregar**. Haga clic en **Next**.  
  
      ![REG. de aplicación](media/adfs-msal-native-app-web-api/native3.png) 
 
@@ -85,7 +85,7 @@ En esta sección se muestra cómo registrar la aplicación nativa como cliente p
   
       ![REG. de aplicación](media/adfs-msal-native-app-web-api/native10.png) 
 
-  13. Escriba **NameID** en **el campo Nombre de regla de notificaciones:** . Seleccione **el nombre** para el **tipo de notificaciones entrantes:** , **ID. de nombre** para el tipo de notificaciones salientes **:** y **nombre común** para **el formato de identificador de nombre saliente:** . Haga clic en **Finalizar**.
+  13. Escriba **NameID** en **el campo Nombre de regla de notificaciones:** . Seleccione **el nombre** para el **tipo de notificaciones entrantes:** , **ID. de nombre** para el **tipo de notificaciones salientes:** y **nombre común** para **el formato de identificador de nombre saliente:** . Haga clic en **Finalizar**.
   
       ![REG. de aplicación](media/adfs-msal-native-app-web-api/native11.png) 
 
@@ -101,7 +101,7 @@ En esta sección se muestra cómo configurar una aplicación nativa para iniciar
 3. Abra el archivo app. config. Modifique lo siguiente: 
    - ida: autoridad: escriba https://[su nombre de host de AD FS]/ADFS
    - ida: ClientId: escriba el valor del **identificador de cliente** de #3 en el registro de la aplicación en AD FS sección anterior. 
-   - ida: RedirectUri: escriba el valor de **URI** de redirección de #3 en el registro de la aplicación en AD FS sección anterior.
+   - ida: RedirectUri: escriba el valor de **URI de redirección** de #3 en el registro de la aplicación en AD FS sección anterior.
    - todo: TodoListResourceId: escriba el valor del **identificador** de #4 en el registro de la aplicación en AD FS sección anterior 
    - ida: todo: TodoListBaseAddress: escriba el valor del **identificador** de #4 en el registro de la aplicación en AD FS sección anterior. 
  
@@ -146,5 +146,5 @@ En esta sección se muestra cómo probar el ejemplo configurado anteriormente.
        ![Prueba de la aplicación](media/adfs-msal-native-app-web-api/native19.png)
  
 ## <a name="next-steps"></a>Pasos siguientes
-[AD FS los flujos de OpenID Connect/OAuth y los escenarios de aplicación](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
+[Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  

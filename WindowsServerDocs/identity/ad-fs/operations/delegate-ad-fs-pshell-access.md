@@ -9,12 +9,12 @@ ms.date: 01/31/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 86bbb562e223fdf61dac3ce5646d97a57b2eba4c
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: f4b8f09e5c75f3b9086847a47d33bd76775f3cd1
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546306"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865498"
 ---
 # <a name="delegate-ad-fs-powershell-commandlet-access-to-non-admin-users"></a>Delegación AD FS acceso Commandlet de PowerShell a usuarios que no son administradores 
 De forma predeterminada, la administración de AD FS a través de PowerShell solo la pueden realizar los administradores de AD FS. En el caso de muchas organizaciones de gran tamaño, es posible que no sea un modelo operativo viable al tratar con otros usuarios, como el personal del Departamento de soporte técnico.  

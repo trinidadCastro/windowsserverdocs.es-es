@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: Cómo implementar Carpetas de trabajo, incluyendo la instalación del rol de servidor, la creación de recursos compartidos de sincronización y la creación de registros DNS.
-ms.openlocfilehash: d2ba117a021cfc7361c0f7c8df2ed9f3c4bc9d94
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: 45b25befcde328e38f694b64fa7536a2b5c7f232
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792341"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867026"
 ---
 # <a name="deploying-work-folders"></a>Implementar Carpetas de trabajo
 
@@ -51,7 +51,7 @@ En este tema se describen los pasos necesarios para implementar Carpetas de trab
 ## <a name="step-2-create-dns-records"></a>Paso 2: Crear registros de DNS  
  Para que los usuarios puedan realizar la sincronización por Internet, debe crear un registro Host (A) en el DNS público para que los clientes de Internet puedan resolver la URL de Carpetas de trabajo. La resolución del registro de DNS debe ser la interfaz externa del servidor proxy inverso.  
   
- En la red interna, debes crear un registro CNAME en DNS denominado "workfolders" y que se resuelva en el nombre de dominio completo (FDQN) de un servidor de Carpetas de trabajo. Cuando los clientes de carpetas de trabajo usan la detección automática, la dirección URL que se usa para detectar el servidor de carpetas de trabajo es https:\//workfolders.domain.com. Si tienes previsto usar la detección automática, el registro CNAME denominado "workfolders" debe existir en DNS.  
+ En la red interna, debes crear un registro CNAME en DNS denominado "workfolders" y que se resuelva en el nombre de dominio completo (FDQN) de un servidor de Carpetas de trabajo. Cuando los clientes de carpetas de trabajo usan la detección automática, la dirección URL que se usa para detectar\/el servidor de carpetas de trabajo es https:/workfolders.domain.com. Si tienes previsto usar la detección automática, el registro CNAME denominado "workfolders" debe existir en DNS.  
   
 ## <a name="step-3-install-work-folders-on-file-servers"></a>Paso 3: instalar Carpetas de trabajo en los servidores de archivos  
  Puede instalar Carpetas de trabajo en un servidor unido a un dominio con el Administrador del servidor o con Windows PowerShell, localmente o de forma remota a través de una red. Esto resulta útil si está configurando varios servidores de sincronización por su red.  
@@ -229,7 +229,7 @@ En el ejemplo anterior se crea un nuevo recurso compartido de sincronización co
  Si está hospedando varios servidores de sincronización en su entorno, debe configurar el descubrimiento automático del servidor rellenando la propiedad **msDS-SyncServerURL** en las cuentas de usuario de AD DS.  
   
 >[!NOTE]
->No se debe definir la propiedad msDS-SyncServerURL en Active Directory para usuarios remotos que tienen acceso a Carpetas de trabajo a través de una solución de proxy inverso, como por ejemplo, Proxy de aplicación web o Proxy de aplicación de Azure AD. Si se define la propiedad msDS-SyncServerURL, el cliente de Carpetas de trabajo intentará obtener acceso a una dirección URL interna que no es accesible a través de la solución de proxy inverso. Al usar el Proxy de aplicación web o el Proxy de aplicación de Azure AD, debes crear aplicaciones de proxy únicas para cada servidor de Carpetas de trabajo. Para obtener más información, consulte [implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Información general sobre](deploy-work-folders-adfs-overview.md) o [implementar carpetas de trabajo con Azure AD Application Proxy](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/).
+>No se debe definir la propiedad msDS-SyncServerURL en Active Directory para usuarios remotos que tienen acceso a Carpetas de trabajo a través de una solución de proxy inverso, como por ejemplo, Proxy de aplicación web o Proxy de aplicación de Azure AD. Si se define la propiedad msDS-SyncServerURL, el cliente de carpetas de trabajo intentará obtener acceso a una dirección URL interna a la que no se puede acceder a través de la solución de proxy inverso. Al usar el Proxy de aplicación web o el Proxy de aplicación de Azure AD, debes crear aplicaciones de proxy únicas para cada servidor de Carpetas de trabajo. Para obtener más información, [Vea implementar carpetas de trabajo con AD FS y proxy de aplicación web: Información](deploy-work-folders-adfs-overview.md) general o [implementación de carpetas de trabajo con Azure ad proxy de aplicación](https://blogs.technet.microsoft.com/filecab/2017/05/31/enable-remote-access-to-work-folders-using-azure-active-directory-application-proxy/).
 
 
  Para poder hacerlo, debes instalar un controlador de dominio de Windows Server 2012 R2 o actualizar los esquemas de dominio y bosque con los comandos `Adprep /forestprep` y `Adprep /domainprep`. Para obtener información acerca de cómo ejecutar con seguridad estos comandos, consulte [Ejecutar Adprep](https://technet.microsoft.com/library/dd464018.aspx).  
@@ -264,7 +264,7 @@ Set-ADUser –Add @{"msDS-SyncServerURL"=$SyncServerURL}
   
 ```  
   
-## <a name="step-10-optionally-configure-web-application-proxy-azure-ad-application-proxy-or-another-reverse-proxy"></a>Paso 10: Opcionalmente, configurar Proxy de aplicación Web, Azure AD Application Proxy u otro proxy inverso  
+## <a name="step-10-optionally-configure-web-application-proxy-azure-ad-application-proxy-or-another-reverse-proxy"></a>Paso 10: Opcionalmente, puede configurar el proxy de aplicación Web, Azure AD proxy de aplicación u otro proxy inverso  
 
 Para permitir que los usuarios remotos tengan acceso a sus archivos, debes publicar el servidor de Carpetas de trabajo a través de un proxy inverso; gracias a ello, Carpetas de trabajo estará disponible en Internet de manera externa. Puedes usar el Proxy de aplicación web, el Proxy de aplicación de Azure Active Directory u otra solución de proxy inverso.  
   
@@ -289,12 +289,12 @@ Si tiene un número elevado de equipos unidos a dominios a los que desea impleme
 > [!NOTE]
 >  Estas configuraciones de seguridad únicamente están disponibles cuando se edita la directiva de grupo desde un equipo que ejecuta la Administración de directivas de grupo en Windows 8.1, Windows Server 2012 R2 o posterior. Las versiones de Administración de directivas de grupo de sistemas operativos anteriores no tienen esta configuración disponible. Esta configuración de directiva se aplica a equipos con Windows 7 en los que se haya instalado la aplicación [Carpetas de trabajo para Windows 7](http://blogs.technet.com/b/filecab/archive/2014/04/24/work-folders-for-windows-7.aspx) .  
   
-##  <a name="BKMK_LINKS"></a> Vea también  
+##  <a name="BKMK_LINKS"></a>Vea también  
  Para obtener más información relacionada, vea los siguientes recursos.  
   
 |Tipo de contenido|Referencias|  
 |------------------|----------------|  
-|**Descripción**|-   [Carpetas de trabajo](work-folders-overview.md)|  
+|**Explicación**|-   [Carpetas de trabajo](work-folders-overview.md)|  
 |**Planeamiento**|-   [Diseñar una implementación de carpetas de trabajo](plan-work-folders.md)|
-|**Implementación**|-   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web (WAP)](deploy-work-folders-adfs-overview.md)<br />-   [Implementación de laboratorio de prueba de carpetas de trabajo](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (entrada de blog)<br />-   [Un nuevo atributo de usuario para la dirección Url del servidor de carpetas de trabajo](http://blogs.technet.com/b/filecab/archive/2013/10/09/a-new-user-attribute-for-work-folders-server-url.aspx) (entrada de blog)|  
+|**Implementación**|-   [Implementación de carpetas de trabajo con AD FS y proxy de aplicación web (WAP)](deploy-work-folders-adfs-overview.md)<br />-   [Implementación del laboratorio de pruebas de carpetas de trabajo](http://blogs.technet.com/b/filecab/archive/2013/07/10/work-folders-test-lab-deployment.aspx) (entrada de blog)<br />-   [Un nuevo atributo de usuario para la dirección URL del servidor de carpetas de trabajo](http://blogs.technet.com/b/filecab/archive/2013/10/09/a-new-user-attribute-for-work-folders-server-url.aspx) (entrada de blog)|  
 |**Referencia técnica**|-   [Inicio de sesión interactivo: Umbral de bloqueo de cuenta de equipo](https://technet.microsoft.com/library/jj966264(v=ws.11).aspx)<br />-   [Cmdlets de recurso compartido de sincronización](https://docs.microsoft.com/powershell/module/syncshare/?view=win10-ps)|

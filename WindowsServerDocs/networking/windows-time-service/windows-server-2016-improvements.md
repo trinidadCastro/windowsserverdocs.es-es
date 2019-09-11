@@ -8,12 +8,12 @@ ms.date: 10/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: networking
-ms.openlocfilehash: 34d05a8058db366714c0ff4fed0b7d80b9150aa4
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: 2b8c6148af21e94e4a56661402f36dcb2e636461
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69626396"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871829"
 ---
 ## <a name="windows-server-2016-improvements"></a>Mejoras en Windows Server 2016
 
@@ -40,7 +40,7 @@ Recuento de orígenes de cliente NTP|    Número activo de orígenes de tiempo N
 Solicitudes entrantes del servidor NTP|   Número de solicitudes recibidas por el servidor NTP (solicitudes por segundo).|
 Respuestas salientes del servidor NTP|  Número de solicitudes respondidas por el servidor NTP (respuestas/seg.).|
 
-Los tres primeros contadores son escenarios de destino para solucionar problemas de precisión.  En las prácticas recomendadas, la precisión del tiempo de solución de problemas y la sección NTP, en [procedimientos recomendados](#BestPractices), tiene más detalles.
+Los tres primeros contadores son escenarios de destino para solucionar problemas de precisión.  En las [prácticas recomendadas](#BestPractices), la precisión del tiempo de solución de problemas y la sección NTP, en procedimientos recomendados, tiene más detalles.
 Los tres últimos contadores cubren los escenarios de servidor NTP y son útiles cuando se determina la carga y se establece una línea de su rendimiento actual.
 
 ### <a name="configuration-updates-per-environment"></a>Actualizaciones de configuración por entorno

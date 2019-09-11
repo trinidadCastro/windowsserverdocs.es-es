@@ -1,5 +1,5 @@
 ---
-title: Autenticación multifactor y personalización de los proveedores de autenticación externa
+title: Personalización de proveedores de autenticación multifactor y autenticación externa
 description: ''
 author: billmath
 ms.author: billmath
@@ -9,46 +9,46 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.assetid: 08724d45-9be4-4c56-a5f1-2cf40864e136
 ms.technology: identity-adfs
-ms.openlocfilehash: 347b4783e82a6561334f8757029b1fddec6a85a3
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 23ec5acbe442527b4eb44c4b857e183b5e0c37ea
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189084"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865716"
 ---
-# <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>Autenticación multifactor y personalización de los proveedores de autenticación externa 
+# <a name="multi-factor-authentication-and-external-authentication-providers-customization"></a>Personalización de proveedores de autenticación multifactor y autenticación externa 
 
 
 
-En AD FS, se proporciona la compatibilidad con la autenticación multifactor out\-de\-el\-cuadro. Por ejemplo, puede configurar AD FS para uso integrada\-en la autenticación de certificado como el segundo factor de autenticación. También puedes usar proveedores de autenticación externos. Este enfoque puede habilitar AD FS para integrarse con servicios adicionales, como Azure Multi-factor Authentication, o puede desarrollar su propio proveedor. Consulte [Guía de soluciones: Administración de riesgos con múltiples\-factorizar el Control de acceso](https://technet.microsoft.com/library/dn280937.aspx) para obtener más información sobre cómo registrar el proveedor de autenticación externo con AD FS.  
+En AD FS, la compatibilidad con la autenticación multifactor se proporciona\-\-de\-forma integrada. Por ejemplo, puede configurar AD FS para usar la autenticación\-de certificado integrada como autenticación de segundo factor. También puedes usar proveedores de autenticación externos. Este enfoque puede habilitar AD FS para integrarse con servicios adicionales, como Azure multi-factor Authentication, o puede desarrollar su propio proveedor. Vea [la guía de soluciones: Administrar el riesgo con\-Access control](https://technet.microsoft.com/library/dn280937.aspx) multifactor para obtener más información sobre cómo registrar un proveedor de autenticación externo mediante AD FS.  
   
-Se recomienda que el proveedor de autenticación externo utilice las clases que se definen en el archivo .css que proporciona AD FS para crear el interfaz de usuario de autenticación. Puedes usar el siguiente cmdlet para exportar el tema web predeterminado e inspeccionar los elementos y las clases de la interfaz de usuario definidos en el archivo .css. El archivo .css se puede usar en el desarrollo de la sesión\-en la interfaz de usuario del proveedor de autenticación externo.  
+Se recomienda que un proveedor de autenticación externo utilice las clases definidas en el archivo. CSS que AD FS proporciona para crear la interfaz de usuario de autenticación. Puedes usar el siguiente cmdlet para exportar el tema web predeterminado e inspeccionar los elementos y las clases de la interfaz de usuario definidos en el archivo .css. El archivo. CSS se puede usar en el desarrollo de la interfaz\-de usuario de inicio de sesión de un proveedor de autenticación externo.  
   
 
     Export-AdfsWebTheme -Name default -DirectoryPath C:\theme  
  
   
-El siguiente es un ejemplo de la sesión\-de interfaz de usuario que está resaltado en rojo, por un proveedor de autenticación externo. La interfaz de usuario utiliza las clases de interfaz de usuario en el archivo .css de AD FS.  
+El siguiente es un ejemplo de la interfaz\-de usuario de inicio de sesión, que está resaltada en rojo, por un proveedor de autenticación externo. La interfaz de usuario utiliza las clases de interfaz de usuario en el archivo AD FS. CSS.  
   
-![MFA y AD FS](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom8.png)  
+![AD FS y MFA](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom8.png)  
   
-Antes de escribir un nuevo método de autenticación personalizada, se recomienda que revise atentamente las definiciones de estilos y el tema de AD FS para comprender los requisitos de la creación de contenido.  
+Antes de escribir un nuevo método de autenticación personalizado, le recomendamos que estudie el tema AD FS las definiciones de estilo para comprender los requisitos de creación de contenido.  
   
--   Métodos de autenticación personalizados solo crean un segmento HTML en el inicio de sesión de AD FS\-en la página y no en la página completa. Debe usar la definición de estilo de AD FS para obtener una apariencia coherente y comportamiento.  
+-   Un método de autenticación personalizado solo crea un segmento HTML en la página\-de inicio de sesión AD FS y no en la página completa. Debe usar la definición de estilo de AD FS para obtener una apariencia y un comportamiento coherentes.  
   
-![MFA y AD FS](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom9.png)  
+![AD FS y MFA](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom9.png)  
   
--   Tenga en cuenta que los administradores de AD FS pueden personalizar los estilos de AD FS. . Te recomendamos que no escribas a mano tus propios estilos: En su lugar, se recomienda utilizar estilos de AD FS, siempre que sea posible.  
+-   Tenga en cuenta que los administradores de AD FS pueden personalizar los estilos de AD FS. . Te recomendamos que no escribas a mano tus propios estilos: En su lugar, se recomienda usar los estilos de AD FS siempre que sea posible.  
   
--   Out\-de\-el cuadro, estilos de AD FS se crean con una a la izquierda\-a\-derecho \(LTR\) estilo y un derecho\-a\-izquierdo \(RTL\). Los administradores pueden personalizar estos dos y puede proporcionar el lenguaje\-estilos específicos a través de la definición del tema web. Cada hoja de estilos contiene tres secciones con sus respectivos comentarios:  
+-   \(\-\- \(\-\-\) \-De un lado a otro, los estilos de AD FS se crean con un estilo de izquierda a derecha LTR y un de derecha a izquierda RTL\-\). Los administradores pueden personalizar ambos y pueden proporcionar estilos específicos\-del lenguaje a través de la definición del tema Web. Cada hoja de estilos contiene tres secciones con sus respectivos comentarios:  
   
-    -   **estilos de tema** \- estos estilos no se debe y no se puede usar. Sirven para definir el tema en todas las páginas. Están definidos deliberadamente por un identificador de elemento para que no se reutilicen.  
+    -   **estilos de tema** \- Estos estilos no deben y no se pueden usar. Sirven para definir el tema en todas las páginas. Están definidos deliberadamente por un identificador de elemento para que no se reutilicen.  
   
-    -   **estilos comunes** \- son los estilos que se deben usar para su contenido.  
+    -   **estilos comunes** \- Estos son los estilos que se deben usar para el contenido.  
   
-    -   **estilos de factor de forma** \- son estilos para diferentes factores de forma. Debes entender esta sección para asegurarte de que tu contenido funcione con distintos factores de forma como, por ejemplo, teléfonos y tabletas.  
+    -   **estilos de factor de forma** \- Son estilos para diferentes factores de forma. Debes entender esta sección para asegurarte de que tu contenido funcione con distintos factores de forma como, por ejemplo, teléfonos y tabletas.  
   
-Para obtener más información, consulte [Guía de soluciones: Administración de riesgos con múltiples\-factorizar el Control de acceso](https://technet.microsoft.com/library/dn280937.aspx) y [Guía de soluciones: Administración de riesgos con múltiples adicionales\-Factor de autenticación para aplicaciones confidenciales](https://tnstage.redmond.corp.microsoft.com/library/dn280949.aspx).  
+Para obtener más información, [consulte la guía de soluciones: Administración de riesgos con\-multi-](https://technet.microsoft.com/library/dn280937.aspx) factor [Access Control y guía de soluciones: Administración de riesgos con autenticación\-multifactor adicional para aplicaciones](https://tnstage.redmond.corp.microsoft.com/library/dn280949.aspx)confidenciales.  
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[AD FS Sign-personalización de usuario](AD-FS-user-sign-in-customization.md) 
+[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md) 

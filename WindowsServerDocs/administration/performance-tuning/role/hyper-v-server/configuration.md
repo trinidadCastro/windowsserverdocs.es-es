@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: baea091482818c581414ba1d9c1c01db2a52e3d7
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 0c608d3762c45a0b1478bcb3303159feef963291
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "66435666"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866615"
 ---
 # <a name="hyper-v-configuration"></a>Configuración de Hyper-V
 
@@ -44,9 +44,9 @@ En un entorno de centro de información ideal, el consumo de energía se adminis
 
 Las técnicas de administración de energía de servidor incluyen un costo, especialmente porque las cargas de trabajo de inquilinos no son de confianza para dictar la Directiva sobre la infraestructura física del anfitrión. Se deja el software de nivel de host para deducir cómo maximizar el rendimiento a la vez que se minimiza el consumo de energía. En las máquinas que se encuentran en un estado inactivo, esto puede hacer que la infraestructura física concluya que el dibujo de energía moderado es adecuado, lo que da lugar a cargas de trabajo de inquilinos individuales que se ejecutan más lentamente de lo contrario.
 
-Windows Server usa la virtualización en una amplia variedad de escenarios. Desde un servidor IIS con poca carga hasta un SQL Server de disponibilidad moderada, a un host de nube con Hyper-V que ejecuta cientos de máquinas virtuales por servidor. Cada uno de estos escenarios puede tener requisitos de hardware, software y rendimiento únicos. De forma predeterminada, Windows Server usa y recomienda el plan de energía equilibrado, que permite la conservación de energía mediante el escalado del rendimiento del procesador en función del uso de la CPU.
+Windows Server usa la virtualización en una amplia variedad de escenarios. Desde un servidor IIS con poca carga hasta un SQL Server de disponibilidad moderada, a un host de nube con Hyper-V que ejecuta cientos de máquinas virtuales por servidor. Cada uno de estos escenarios puede tener requisitos de hardware, software y rendimiento únicos. De forma predeterminada, Windows Server usa y recomienda el plan de energía **equilibrado** , que permite la conservación de energía mediante el escalado del rendimiento del procesador en función del uso de la CPU.
 
-Con el plan de energía equilibrado, los Estados de energía más altos (y las latencias de respuesta más bajas en cargas de trabajo de inquilino) solo se aplican cuando el host físico está relativamente ocupado. Si tiene valor de respuesta determinista y de baja latencia para todas las cargas de trabajo de inquilinos, considere la posibilidad de cambiar del plan de energía equilibrado predeterminado al plan de energía de **alto rendimiento** . El plan de energía de **alto rendimiento** ejecutará los procesadores a toda velocidad todo el tiempo, deshabilitando eficazmente el cambio basado en demanda junto con otras técnicas de administración de energía y optimizará el rendimiento a través del ahorro de energía.
+Con el plan de energía **equilibrado** , los Estados de energía más altos (y las latencias de respuesta más bajas en cargas de trabajo de inquilino) solo se aplican cuando el host físico está relativamente ocupado. Si tiene valor de respuesta determinista y de baja latencia para todas las cargas de trabajo de inquilinos, considere la posibilidad de cambiar del plan de energía **equilibrado** predeterminado al plan de energía de **alto rendimiento** . El plan de energía de **alto rendimiento** ejecutará los procesadores a toda velocidad todo el tiempo, deshabilitando eficazmente el cambio basado en demanda junto con otras técnicas de administración de energía y optimizará el rendimiento a través del ahorro de energía.
 
 En el caso de los clientes, que están satisfechos con el ahorro de costos de reducir el número de servidores físicos y desean garantizar el máximo rendimiento de sus cargas de trabajo virtualizadas, considere la posibilidad de usar el plan de energía de **alto rendimiento** .
 

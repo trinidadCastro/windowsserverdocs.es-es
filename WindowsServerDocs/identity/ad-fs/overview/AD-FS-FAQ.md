@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 46e8548e24f0d0991f69427741b0e04da6398334
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: 8444e417fe089c1a3cf2acc2648b222ec5c9774c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009096"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865467"
 ---
 # <a name="ad-fs-frequently-asked-questions-faq"></a>AD FS preguntas más frecuentes (p + f)
 
@@ -99,7 +99,7 @@ En particular, debe comprobar que los servidores WAP y AD FS admiten TLS 1,2 y q
 
 Puede habilitar y deshabilitar SSL 2,0 y las versiones 3,0 y TLS 1,0, 1,1 y 1,2 mediante los [protocolos de administración SSL en AD FS](../operations/Manage-SSL-Protocols-in-AD-FS.md).
 
-Para asegurarse de que los servidores de AD FS y WAP negocian solo los conjuntos de cifrado TLS que admiten ATP, puede deshabilitar todos los conjuntos de cifrado que no estén en la [lista de conjuntos de cifrado compatibles con ATP](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57).  Para ello, use los cmdlets de [PowerShell de Windows TLS](https://technet.microsoft.com/itpro/powershell/windows/tls/index).
+Para asegurarse de que los servidores de AD FS y WAP negocian solo los conjuntos de cifrado TLS que admiten ATP, puede deshabilitar todos los conjuntos de cifrado que no estén en la [lista de conjuntos de cifrado compatibles con ATP](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW57).  Para ello, use los [cmdlets de PowerShell de Windows TLS](https://technet.microsoft.com/itpro/powershell/windows/tls/index).
 
 ## <a name="developer"></a>Desarrollador
 
@@ -110,7 +110,7 @@ El valor de la demanda "sub" es el hash del identificador de cliente y el valor 
 La duración del token de actualización será la duración del token que ADFS recibió de la confianza del proveedor de notificaciones remotas. La duración del token de acceso será la duración del token del usuario de confianza para el que se emite el token de acceso.
 
 ### <a name="i-need-to-return-profile-and-email-scopes-as-well-in-addition-to-the-openid-scope-can-i-obtain-additional-information-using-scopes-how-to-do-it-in-ad-fs"></a>También necesito devolver los ámbitos de perfil y correo electrónico, además del ámbito de OpenId. ¿Puedo obtener información adicional mediante el uso de ámbitos? ¿Cómo hacerlo en AD FS?
-Puede usar ID_token personalizadas para agregar información relevante en el mismo ID_token. Para obtener más información, consulte el artículo personalización de [notificaciones que se van a emitir en ID_token](../development/Custom-Id-Tokens-in-AD-FS.md).
+Puede usar ID_token personalizadas para agregar información relevante en el mismo ID_token. Para obtener más información, consulte el artículo [Personalización de notificaciones que se van a emitir en ID_token](../development/Custom-Id-Tokens-in-AD-FS.md).
 
 ### <a name="how-to-issue-json-blobs-inside-jwt-tokens"></a>¿Cómo se emiten blobs JSON dentro de tokens JWT?
 Se agregó un ValueType especial<http://www.w3.org/2001/XMLSchema#json>("") y un carácter de escape (\x22) para este en AD FS 2016. En el ejemplo siguiente se muestra la regla de emisión y también la salida final del token de acceso.
@@ -134,7 +134,7 @@ AD FS en el servidor 2019 admite la clave de prueba para el intercambio de códi
 - AZA: si se usan [las extensiones de protocolo de OAuth 2,0 para los clientes de Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) y si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el campo refresh_token de la respuesta, así como la configuración de refresh_token_ expires_in el campo a la duración del nuevo token de actualización principal si se aplica uno.
 - OpenID: permite que la aplicación solicite el uso del Protocolo de autorización OpenID Connect.
 - logon_cert: el ámbito logon_cert permite a una aplicación solicitar certificados de inicio de sesión, que se pueden usar para iniciar sesión de forma interactiva en usuarios autenticados. El servidor de AD FS omite el parámetro access_token de la respuesta y, en su lugar, proporciona una cadena de certificados CMS codificada en base64 o una respuesta de PKI completa de CMC. Puede encontrar más información [aquí](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e). 
-- user_impersonation: el ámbito user_impersonation es necesario para solicitar correctamente un token de acceso en nombre de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte compilar [una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md).
+- user_impersonation: el ámbito user_impersonation es necesario para solicitar correctamente un token de acceso en nombre de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte [compilar una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](../../ad-fs/development/ad-fs-on-behalf-of-authentication-in-windows-server.md).
 - vpn_cert: el ámbito vpn_cert permite a una aplicación solicitar certificados VPN, que se pueden usar para establecer conexiones VPN mediante la autenticación EAP-TLS. Esto ya no se admite.
 - correo electrónico: permite que la aplicación solicite una solicitud de correo electrónico para el usuario que ha iniciado sesión. Esto ya no se admite. 
 - Perfil: permite que la aplicación solicite notificaciones relacionadas con el perfil para el usuario de inicio de sesión. Esto ya no se admite. 

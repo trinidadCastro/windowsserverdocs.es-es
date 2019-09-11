@@ -11,12 +11,12 @@ ms.assetid: 930e758f-bd50-46b4-a3a4-9857110f17b4
 author: shirgall
 ms.author: kathydav
 ms.date: 08/30/2017
-ms.openlocfilehash: a6e9c6e3bec2001c73254ffd813954f04a37a714
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 3ca1de87469c30a8cadbf047e77aff441145a499
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544719"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869482"
 ---
 # <a name="supported-freebsd-virtual-machines-on-hyper-v"></a>Máquinas virtuales de FreeBSD compatibles en Hyper-V
 
@@ -73,11 +73,11 @@ El siguiente mapa de distribución de características indica las característic
 
 ## <a name="BKMK_notes"></a>Apunte
 
-1. Sugerimos que etiquete los [dispositivos de disco]( https://www.freebsd.org/doc/handbook/geom-glabel.html) para evitar un error de montaje raíz durante el inicio.
+1. Sugerimos que [etiquete los dispositivos de disco]( https://www.freebsd.org/doc/handbook/geom-glabel.html) para evitar un error de montaje raíz durante el inicio.
 
 2. Es posible que la unidad de DVD virtual no se reconozca cuando se carguen controladores de BIS en FreeBSD 8. x y 9. x a menos que habilite el controlador ATA heredado mediante el siguiente comando.
     ```sh
-    # echo ‘hw.ata.disk_enable=1’ >> /boot/loader.conf
+    # echo ‘hw.ata.disk_enable=1' >> /boot/loader.conf
     # shutdown -r now
     ```
 

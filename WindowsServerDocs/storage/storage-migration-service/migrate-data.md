@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 7cec2a9c805208baceff8a8afe22a20fd2859edd
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: 0b5b473460bf72143f517443eadad831dd2502c5
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584841"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865150"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar el servicio de migración de almacenamiento para migrar un servidor
 
@@ -81,7 +81,7 @@ Si su objetivo es sincronizar los archivos con Azure, puede configurar los servi
 En este paso, se recortan de los servidores de origen a los servidores de destino y se mueven las direcciones IP y los nombres de equipo a los servidores de destino. Una vez finalizado este paso, las aplicaciones y los usuarios accederán a los nuevos servidores a través de los nombres y las direcciones de los servidores desde los que migró.
 
  1. Si ha navegado fuera del trabajo de migración, en el centro de administración de Windows, vaya a **Administrador del servidor** > **servicio de migración de almacenamiento** y, a continuación, seleccione el trabajo que desea completar. 
- 1. En la página resaltar **a los nuevos servidores** > ,**Escriba** las credenciales, seleccione **siguiente** para usar las credenciales que escribió anteriormente.
+ 1. En la página **resaltar a los nuevos servidores** > ,**Escriba las credenciales** , seleccione **siguiente** para usar las credenciales que escribió anteriormente.
  1. En la página **configurar traslado** , especifique los adaptadores de red que se van a usar para la configuración de cada dispositivo de origen. Esto mueve la dirección IP del origen al destino como parte de la transferencia.
  1. Especifique la dirección IP que se usará para el servidor de origen después de que el traslado traslade su dirección al destino. Puede usar DHCP o una dirección estática. Si usa una dirección estática, la nueva subred debe ser la misma que la antigua o bien se producirá un error en la misma.
     ![Captura de pantalla que muestra un servidor de origen y sus direcciones IP y nombres de equipo y de qué se reemplazarán después de la figura 4 de la transferencia](media/migrate/cutover.png)

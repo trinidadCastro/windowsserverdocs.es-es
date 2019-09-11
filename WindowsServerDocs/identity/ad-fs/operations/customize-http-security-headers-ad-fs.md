@@ -9,12 +9,12 @@ ms.date: 02/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 3c497cbafb8f9313f988a1b892d2b8fef68115eb
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 4fd1e62e67f66a217a1d4f3a26933723a4645a31
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68523903"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865567"
 ---
 # <a name="customize-http-security-response-headers-with-ad-fs-2019"></a>Personalización de encabezados de respuesta de seguridad HTTP con AD FS 2019 
  
@@ -179,7 +179,7 @@ Este encabezado de respuesta de seguridad HTTP se usa para evitar ataques de ins
 #### <a name="csp-customization"></a>Personalización de CSP 
 La personalización del encabezado de CSP implica la modificación de la Directiva de seguridad que define el explorador de recursos que se puede cargar para la Página Web. La Directiva de seguridad predeterminada es  
  
-`Content-Security-Policy: default-src ‘self’ ‘unsafe-inline’ ‘’unsafe-eval’; img-src ‘self’ data:;` 
+`Content-Security-Policy: default-src ‘self' ‘unsafe-inline' ‘'unsafe-eval'; img-src ‘self' data:;` 
  
 La directiva **default-src** se usa para modificar las [directivas-src](https://developer.mozilla.org/docs/Web/HTTP/Headers/Content-Security-Policy/default-src) sin enumerar cada directiva explícitamente. Por ejemplo, en el ejemplo siguiente, la directiva 1 es la misma que la Directiva 2.  
 
@@ -190,14 +190,14 @@ Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue
  
 Directiva 2
 ```PowerShell 
-Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self’; img-src ‘self’; font-src 'self';  
+Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "script-src ‘self'; img-src ‘self'; font-src 'self';  
 frame-src 'self'; manifest-src 'self'; media-src 'self';" 
 ```
 
 Si una directiva se muestra explícitamente, el valor especificado invalida el valor especificado para default-src. En el ejemplo siguiente, img-src tomará el valor como ' * ' (permitiendo que las imágenes se carguen desde cualquier origen) mientras que otras directivas-src tomarán el valor como ' Self ' (restringiendo el mismo origen que la página web).  
 
 ```PowerShell
-Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self’; img-src *" 
+Set-AdfsResponseHeaders -SetHeaderName "Content-Security-Policy" -SetHeaderValue "default-src ‘self'; img-src *" 
 ```
 Se pueden definir los siguientes orígenes para la directiva predeterminada de src 
  

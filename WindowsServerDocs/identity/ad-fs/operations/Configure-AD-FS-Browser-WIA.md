@@ -1,6 +1,6 @@
 ---
-title: Configurar los exploradores para utilizar autenticación integrada de Windows (WIA) con AD FS
-description: Este documento describe cómo configurar los exploradores para utilizar WIA con AD FS
+title: Configurar exploradores para usar la autenticación integrada de Windows (WIA) con AD FS
+description: En este documento se describe cómo configurar los exploradores para que usen WIA con AD FS
 author: billmath
 ms.author: billmath
 manager: femila
@@ -9,56 +9,56 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f71680bb721635bd37197dca9d3ae4726099525f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c1413e4fa9d86b3c2204b9ed7337389437b93952
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845486"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865883"
 ---
-# <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>Configurar los exploradores para utilizar autenticación integrada de Windows (WIA) con AD FS
+# <a name="configure-browsers-to-use-windows-integrated-authentication-wia-with-ad-fs"></a>Configurar exploradores para usar la autenticación integrada de Windows (WIA) con AD FS
 
-De forma predeterminada, está habilitada la autenticación integrada de Windows (WIA) en Active Directory Federation Services (AD FS) en Windows Server 2012 R2 para las solicitudes de autenticación que se producen dentro de la red interna de la organización (intranet) para cualquier aplicación que usa un explorador para su autenticación.
+De forma predeterminada, la autenticación integrada de Windows (WIA) está habilitada en Servicios de federación de Active Directory (AD FS) (AD FS) en Windows Server 2012 R2 para las solicitudes de autenticación que se producen dentro de la red interna de la organización (Intranet) para cualquier aplicación que use un explorador para su autenticación.
 
-AD FS 2016 ahora tiene una configuración predeterminada mejorada que permite que el explorador Microsoft Edge realizar WIA mientras no también se capturan (incorrectamente) de Windows Phone, así:
+AD FS 2016 ahora tiene una configuración predeterminada mejorada que permite que el explorador de Edge realice WIA y no también (incorrectamente) la detección de Windows Phone:
 
     =~Windows\s*NT.*Edge
 
-Lo anterior significa que ya no tendrá que configurar cadenas de agente de usuario individual para admitir escenarios comunes de Edge, aunque se actualizan con bastante frecuencia.
+Lo anterior significa que ya no tiene que configurar cadenas de agente de usuario individuales para admitir escenarios perimetrales comunes, aunque se actualicen con bastante frecuencia.
 
-Para otros exploradores, configure la propiedad de AD FS **WiaSupportedUserAgents** para agregar los valores necesarios en función de los exploradores que está usando.  Puede usar los procedimientos siguientes.
+Para otros exploradores, configure la propiedad AD FS **WiaSupportedUserAgents** para agregar los valores necesarios en función de los exploradores que esté usando.  Puede usar los procedimientos siguientes.
 
 
 
 ### <a name="view-wiasupporteduseragent-settings"></a>Ver la configuración de WIASupportedUserAgent
-El **WIASupportedUserAgents** define los agentes de usuario que son compatibles con WIA. AD FS analiza la cadena de agente de usuario al realizar inicios de sesión en un explorador o el control del explorador.
+**WIASupportedUserAgents** define los agentes de usuario que admiten WIA. AD FS analiza la cadena del agente de usuario al realizar inicios de sesión en un explorador o control del explorador.
 
 Puede ver la configuración actual mediante el siguiente ejemplo de PowerShell:
 
 ```powershell
-    $strings = Get-AdfsProperties | select -ExpandProperty WiaSupportedUserAgents
+    Get-AdfsProperties | select -ExpandProperty WiaSupportedUserAgents
 ```
 
 ![Compatibilidad con WIA](../operations/media/Configure-AD-FS-Browser-WIA/wiasupport.png)
 
 ### <a name="change-wiasupporteduseragent-settings"></a>Cambiar la configuración de WIASupportedUserAgent
-De forma predeterminada, una nueva instalación de AD FS tiene un conjunto de coincidencias de la cadena de agente usuario creado. Sin embargo, estos pueden ser actualizados según los cambios realizados en los exploradores y dispositivos. Especialmente, los dispositivos de Windows tienen cadenas de agente de usuario similares con pequeñas variaciones en los tokens. El siguiente ejemplo de Windows PowerShell proporciona las instrucciones recomendadas para el conjunto actual de los dispositivos que están en el mercado hoy en día que son compatibles con WIA sin problemas:
+De forma predeterminada, una nueva instalación de AD FS tiene un conjunto de coincidencias de cadena de agente de usuario creadas. Sin embargo, es posible que no estén actualizados según los cambios en los exploradores y dispositivos. En particular, los dispositivos de Windows tienen cadenas de agente de usuario similares con pequeñas variaciones en los tokens. El siguiente ejemplo de Windows PowerShell proporciona la mejor orientación para el conjunto actual de dispositivos que se encuentran en el mercado hoy en día que admiten WIA sin problemas:
 
 ```powershell
     Set-AdfsProperties -WIASupportedUserAgents @("MSIE 6.0", "MSIE 7.0; Windows NT", "MSIE 8.0", "MSIE 9.0", "MSIE 10.0; Windows NT 6", "Windows NT 6.3; Trident/7.0", "Windows NT 6.3; Win64; x64; Trident/7.0", "Windows NT 6.3; WOW64; Trident/7.0", "Windows NT 6.2; Trident/7.0", "Windows NT 6.2; Win64; x64; Trident/7.0", "Windows NT 6.2; WOW64; Trident/7.0", "Windows NT 6.1; Trident/7.0", "Windows NT 6.1; Win64; x64; Trident/7.0", "Windows NT 6.1; WOW64; Trident/7.0", "MSIPC", "Windows Rights Management Client")
 ```
 
-El comando anterior se asegurará de que AD FS solo cubre los siguientes casos de uso para WIA:
+El comando anterior garantizará que AD FS solo cubre los siguientes casos de uso para WIA:
 
 Agentes de usuario|Casos de uso|
 -----|-----|
-MSIE 6.0|IE 6.0|
-MSIE 7.0; Windows NT|IE 7, Internet Explorer en la zona de intranet. El fragmento "Windows NT" se envía al sistema operativo de escritorio.|
-MSIE 8.0|Internet Explorer 8.0 (no hay ningún dispositivo enviar este, por lo que deberá hacer más específico)|
-MSIE 9.0|9.0 de Internet Explorer (no hay ningún dispositivo enviar esto, no es necesario hacerlo más específico)|
-MSIE 10.0; Windows NT 6|Internet Explorer 10.0 para Windows XP y versiones más recientes del sistema operativo de escritorio</br></br>Se excluyen los dispositivos Windows Phone 8.0 (con preferencia definida a dispositivos móviles) porque envían</br></br>User-Agent: Mozilla/5.0 (compatible con; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Entrada táctil; NOKIA; Lumia 920)|
-Windows NT 6.3; Trident/7.0</br></br>Windows NT 6.3; Win64; x64; Trident/7.0</br></br>Windows NT 6.3; WOW64; Trident/7.0| Sistema de operativo de escritorio de Windows 8.1, distintas plataformas|
-Windows NT 6.2; Trident/7.0</br></br>Windows NT 6.2; Win64; x64; Trident/7.0</br></br>Windows NT 6.2; WOW64; Trident/7.0|Sistema de operativo de escritorio de Windows 8, distintas plataformas|
-Windows NT 6.1; Trident/7.0</br></br>Windows NT 6.1; Win64; x64; Trident/7.0</br></br>Windows NT 6.1; WOW64; Trident/7.0|Sistema de operativo de escritorio de Windows 7, distintas plataformas|
-MSIPC| Cliente de Control y protección de la información de Microsoft|
+MSIE 6,0|IE 6,0|
+MSIE 7,0; Windows NT|IE 7, IE en la zona de intranet. El sistema operativo de escritorio envía el fragmento "Windows NT".|
+MSIE 8,0|IE 8,0 (ningún dispositivo envía esto, por lo que debe hacer más específico)|
+MSIE 9,0|IE 9,0 (ningún dispositivo envía esto, por lo que no es necesario hacer esto más específico)|
+MSIE 10,0; Windows NT 6|IE 10,0 para Windows XP y versiones más recientes del sistema operativo de escritorio</br></br>Los dispositivos Windows Phone 8,0 (con la preferencia establecida en móvil) se excluyen porque envían</br></br>Agente de usuario: Mozilla/5.0 (compatible; MSIE 10,0; Windows Phone 8,0; Trident/6.0; IEMobile/10.0; TOPOLOGÍA Entradas ADMITI Lumia 920)|
+Windows NT 6,3; Trident/7.0</br></br>Windows NT 6,3; Win64 bits Trident/7.0</br></br>Windows NT 6,3; WOW64 Trident/7.0| Sistema operativo de escritorio Windows 8.1, distintas plataformas|
+Windows NT 6,2; Trident/7.0</br></br>Windows NT 6,2; Win64 bits Trident/7.0</br></br>Windows NT 6,2; WOW64 Trident/7.0|Sistema operativo de escritorio de Windows 8, distintas plataformas|
+Windows NT 6,1; Trident/7.0</br></br>Windows NT 6,1; Win64 bits Trident/7.0</br></br>Windows NT 6,1; WOW64 Trident/7.0|Sistema operativo de escritorio de Windows 7, distintas plataformas|
+MSIPC| Cliente de Microsoft Information Protection and Control|
 Cliente de Windows Rights Management|Cliente de Windows Rights Management|

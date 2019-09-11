@@ -9,12 +9,12 @@ ms.date: 01/18/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 058433f98d986c0daa720dd19f283135763cfe30
-ms.sourcegitcommit: c307886e96622e9595700c94128103b84f5722ce
+ms.openlocfilehash: 1616a1fe2e28534cc30c8955b0309c233555fa14
+ms.sourcegitcommit: ee8e0b217be6f6b2532ee7265fb4be00c106e124
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70108753"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70878145"
 ---
 # <a name="configuring-ad-fs-for-user-certificate-authentication"></a>Configuración de AD FS para la autenticación de certificados de usuario
 
@@ -36,7 +36,7 @@ La autenticación de certificados de usuario se usa principalmente en dos casos 
 
 Habilite la autenticación de certificados de usuario como método de autenticación de intranet o extranet en AD FS, mediante la consola de administración de `Set-AdfsGlobalAuthenticationPolicy`AD FS o el cmdlet de PowerShell.
 
-Si está configurando AD FS para la autenticación de certificados de Azure AD, asegúrese de que ha configurado la [Azure ad](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities) y las reglas de notificaciones de [AD FS necesarias](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements) para el emisor y el número de serie del certificado.
+Si está configurando AD FS para la autenticación de certificados de Azure AD, asegúrese de que ha configurado la [Azure ad](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-get-started#step-2-configure-the-certificate-authorities) y las [reglas de notificaciones de AD FS necesarias](https://docs.microsoft.com/azure/active-directory/active-directory-certificate-based-authentication-ios#requirements) para el emisor y el número de serie del certificado.
 
 Además, hay algunos aspectos opcionales.
 - Si desea usar notificaciones basadas en campos y extensiones de certificado además de EKU (tipo https://schemas.microsoft.com/2012/12/certificatecontext/extension/eku) de notificación, configure las reglas de paso de notificación adicionales en la Active Directory confianza del proveedor de notificaciones.  A continuación encontrará una lista completa de las notificaciones de certificado disponibles.  
@@ -54,7 +54,7 @@ Para obtener más información sobre cómo configurar esto para Chrome, consulte
 Este documento se centra en problemas comunes de solución de problemas cuando AD FS está configurado para la autenticación de certificados para los usuarios. 
 
 ### <a name="check-if-certificate-trusted-issuers-is-configured-properly-in-all-the-ad-fswap-servers"></a>Comprobar si los emisores de confianza de certificados están configurados correctamente en todos los servidores AD FS/WAP
-*Síntoma común: HTTP 204 "sin contenido de https://certuath.adfs.contoso.com "*
+*Síntoma común: HTTP 204 "sin contenido de HTTPS\://certuath.ADFS.contoso.com"*
 
 AD FS utiliza el sistema operativo Windows subyacente para demostrar la posesión del certificado de usuario y asegurarse de que coincide con un emisor de confianza mediante la validación de la cadena de confianza de certificados. Para que coincida con el emisor de confianza, debe asegurarse de que todas las autoridades raíz e intermedias estén configuradas como emisores de confianza en el almacén de entidades de certificación del equipo local. Para validar esto automáticamente, use la [herramienta analizador de diagnóstico de AD FS](https://adfshelp.microsoft.com/DiagnosticsAnalyzer/Analyze). La herramienta consulta todos los servidores y garantiza que los certificados correctos se hayan aprovisionado correctamente. 
 1)  Descargue y ejecute la herramienta según las instrucciones proporcionadas en el vínculo anterior.
@@ -76,7 +76,7 @@ Cada AD FS y el servidor WAP deberán alcanzar el punto de conexión de CRL para
 2)  En cada servidor AD FS/WAP, asegúrese de que los extremos de CRL son accesibles a través del protocolo usado (normalmente HTTPS o HTTP).
 3)  Para la validación avanzada, [habilite el registro de eventos CAPI2](https://blogs.msdn.microsoft.com/benjaminperkins/2013/09/30/enable-capi2-event-logging-to-troubleshoot-pki-and-ssl-certificate-issues/) en cada servidor AD FS/WAP.
 4) Busque el ID. de evento 41 (comprobar la revocación) en los registros operativos de CAPI2
-5) Comprobar`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>’`
+5) Comprobar`‘\<Result value="80092013"\>The revocation function was unable to check revocation because the revocation server was offline.\</Result\>'`
 
 ***Sugerencia***: Puede tener como destino un solo servidor AD FS o WAP para facilitar la solución de problemas mediante la configuración de la resolución de DNS (archivo de host en Windows) para que apunte a un servidor específico. Esto le permite habilitar el seguimiento dirigido a un servidor. 
 

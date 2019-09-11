@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 06/07/2019
 description: En este tema se describen los espacios de nombres DFS, que es un servicio de rol de Windows Server que te permite agrupar las carpetas compartidas ubicadas en distintos servidores en uno o varios espacios de nombres estructurados lógicamente.
-ms.openlocfilehash: 2d91cb7197d2deecd96ebb29a951ef96ceefd9aa
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 8507961749bee6d01541029e33c8095470792b8a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284284"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870221"
 ---
 # <a name="dfs-namespaces-overview"></a>Información general de Espacios de nombres DFS
 
@@ -26,11 +26,11 @@ Espacios de nombres DFS es un servicio de rol de Windows Server que te permite a
 Aquí se muestra una descripción de los elementos que componen un espacio de nombres DFS:
 
 - **Servidor de espacio de nombres**: un servidor de espacio de nombres que aloja un espacio de nombre. El servidor de espacio de nombres puede ser un servidor miembro o un controlador de dominio.
-- **Raíz de espacio de nombres**: la raíz de espacio de nombres es el punto inicial del espacio de nombres. En la ilustración anterior, el nombre de la raíz es Public y la ruta de acceso del espacio de nombres es \\ \\Contoso\\pública. Este tipo de espacio de nombres es un espacio de nombres basado en dominio porque comienza con un nombre de dominio (por ejemplo, Contoso) y sus metadatos se almacenan en Active Directory Domain Services (AD DS). Aunque en la figura anterior se muestra un único servidor de espacio de nombres, un espacio de nombres basado en dominio puede alojarse en varios servidores de espacio de nombres para aumentar la disponibilidad del espacio de nombres.
+- **Raíz de espacio de nombres**: la raíz de espacio de nombres es el punto inicial del espacio de nombres. En la ilustración anterior, el nombre de la raíz es público y la ruta de acceso del \\espacio\\de nombres es \\contoso Public. Este tipo de espacio de nombres es un espacio de nombres basado en dominio porque comienza con un nombre de dominio (por ejemplo, contoso) y sus metadatos se almacenan en Active Directory Domain Services (AD DS). Aunque en la figura anterior se muestra un único servidor de espacio de nombres, un espacio de nombres basado en dominio puede alojarse en varios servidores de espacio de nombres para aumentar la disponibilidad del espacio de nombres.
 - **Carpeta**: las carpetas sin destinos de carpeta agregan estructura y jerarquía al espacio de nombres y las carpetas con destinos de carpeta ofrecen a los usuarios contenido real. Cuando los usuarios exploran una carpeta que incluye los destinos de carpeta en el espacio de nombres, el equipo cliente recibe una referencia que redirige de forma transparente al equipo cliente a uno de los destinos de carpeta.
-- **Destinos de carpeta**: un destino de carpeta es la ruta de acceso de UNC de una carpeta compartida u otro espacio de nombres que está asociado a una carpeta de un espacio de nombres. El destino de carpeta es donde se almacenan los datos y el contenido. En la figura anterior, la carpeta denominada Herramientas (Tools) tiene dos destinos de carpeta, uno en Londres (London) y otro en Nueva York (New York), y la carpeta denominada Guías de aprendizaje (Training Guides) tiene un sola carpeta de destino en Nueva York (New York). Los usuarios que examinan a \\ \\Contoso\\pública\\Software\\herramientas se redirige de forma transparente a la carpeta compartida \\ \\LDN-SVR-01\\herramientas o \\ \\NYC-SVR-01\\herramientas, dependiendo de qué sitio se encuentra actualmente el usuario en.
+- **Destinos de carpeta**: un destino de carpeta es la ruta de acceso de UNC de una carpeta compartida u otro espacio de nombres que está asociado a una carpeta de un espacio de nombres. El destino de carpeta es donde se almacenan los datos y el contenido. En la figura anterior, la carpeta denominada Herramientas (Tools) tiene dos destinos de carpeta, uno en Londres (London) y otro en Nueva York (New York), y la carpeta denominada Guías de aprendizaje (Training Guides) tiene un sola carpeta de destino en Nueva York (New York). Un \\usuario que examina \\las herramientas de\\software\\ \\ \\\\público de Contoso se redirige de forma transparente a las herramientas de la carpeta compartida LDN-SVR-01 o\\ Herramientas Nueva York-SVR-\\01, según el sitio en el que esté ubicado actualmente el usuario. \\ \\
 
-En este tema se describe la instalación de DFS, las novedades y dónde encontrar información de evaluación e implementación.
+En este tema se describe cómo instalar DFS, las novedades y dónde encontrar información de evaluación e implementación.
 
 Puedes administrar espacios de nombres mediante la opción Administración de DFS, los [Cmdlets de espacios de nombres DFS (DFSN) en Windows PowerShell](https://docs.microsoft.com/powershell/module/dfsn/?view=win10-ps), el comando **DfsUtil** o scripts que llaman a WMI.
 
@@ -44,7 +44,7 @@ Los servidores que ejecutan los siguientes sistemas operativos pueden alojar var
 
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2012
 - Windows Server 2008 R2 Datacenter y Enterprise Edition
 - Windows Server (Canal semianual)
@@ -65,7 +65,7 @@ En la siguiente tabla se describen factores adicionales a tener en cuenta al ele
 
 Espacios de nombres DFS y Replicación DFS forman parte del rol Servicios de archivos y almacenamiento. Las herramientas de administración de DFS (Administración de DFS, el módulo Espacios de nombres DFS para Windows PowerShell y las herramientas de línea de comandos) se instalan por separado como parte de las Herramientas de administración remota del servidor.
 
-Instalar los espacios de nombres DFS mediante [Windows Admin Center](../../manage/windows-admin-center/understand/windows-admin-center.md), el administrador del servidor o PowerShell, tal como se describe en las secciones siguientes.
+Instale espacios de nombres DFS mediante el [centro de administración de Windows](../../manage/windows-admin-center/understand/windows-admin-center.md), administrador del servidor o PowerShell, tal como se describe en las secciones siguientes.
 
 ### <a name="to-install-dfs-by-using-server-manager"></a>Para instalar DFS mediante el Administrador del servidor
 
@@ -83,13 +83,13 @@ Instalar los espacios de nombres DFS mediante [Windows Admin Center](../../manag
 
 ### <a name="to-install-dfs-by-using-windows-powershell"></a>Para instalar DFS mediante Windows PowerShell
 
-Abra una sesión de Windows PowerShell con derechos de usuario con privilegios elevados y, a continuación, escriba el siguiente comando, donde < nombre\> es el servicio de rol o característica que desea instalar (consulte la tabla siguiente para obtener una lista de nombres de característica o servicio de rol relevantes):
+Abra una sesión de Windows PowerShell con permisos de usuario elevados y, a continuación, escriba el siguiente\> comando, donde < nombre es el servicio de rol o la característica que desea instalar (vea la tabla siguiente para obtener una lista de los nombres de servicio de rol o de características relevantes):
 
 ```PowerShell
 Install-WindowsFeature <name>
 ```
 
-| Servicio de rol o característica | Nombre |
+| Servicio de rol o característica | NOMBRE |
 | ----------------------- | ---- |
 | Espacios de nombres DFS          | `FS-DFS-Namespace` |
 | Herramientas de administración de DFS    | `RSAT-DFS-Mgmt-Con` |
@@ -110,9 +110,9 @@ Install-WindowsFeature "FS-DFS-Namespace", "RSAT-DFS-Mgmt-Con"
 
 Se ha probado el uso de Espacios de nombres DFS en una máquina virtual de Microsoft Azure, pero hay algunas limitaciones y requisitos que se deben seguir.
 
-- No se pueden agrupar en clústeres los espacios de nombres independientes en máquinas virtuales de Azure.
+- No se pueden agrupar en clúster espacios de nombres independientes en máquinas virtuales de Azure.
 
-- Puede hospedar espacios de nombres basados en dominio en Azure virtual machines, incluidos los entornos con Azure Active Directory.
+- Puede hospedar espacios de nombres basados en dominio en máquinas virtuales de Azure, incluidos los entornos con Azure Active Directory.
 
 Para obtener más información sobre cómo comenzar a usar las máquinas virtuales de Azure, consulta la [Documentación de máquinas virtuales de Azure](https://docs.microsoft.com/azure/virtual-machines/).
 
@@ -122,10 +122,10 @@ Para obtener más información relacionada, vea los siguientes recursos.
 
 | Tipo de contenido        | Referencias |
 | ------------------  | ----------------|
-| **Evaluación del producto** | [Novedades de espacios de nombres DFS y replicación DFS en Windows Server](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
-| **Implementación**    | [Consideraciones de escalabilidad DFS Namespace](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
+| **Evaluación del producto** | [Novedades de los espacios de nombres DFS y Replicación DFS en Windows Server](https://technet.microsoft.com/library/dn281957(v=ws.11).aspx) |
+| **Implementación**    | [Consideraciones sobre la escalabilidad de espacios de nombres DFS](http://blogs.technet.com/b/filecab/archive/2012/08/26/dfs-namespace-scalability-considerations.aspx) |
 | **Operaciones**    | [Espacios de nombres DFS: Preguntas más frecuentes](https://technet.microsoft.com/library/ee404780.aspx) |
-| **Recursos de la comunidad** | [El foro de TechNet sobre almacenamiento y servicios de archivos](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
-| **Protocolos**        | [Protocolos de Windows Server de servicios de archivo](https://msdn.microsoft.com/library/cc239318.aspx) (en desuso) |
+| **Recursos de la comunidad** | [Foro de TechNet sobre servicios de archivos y almacenamiento](https://social.technet.microsoft.com/forums/winserverfiles/threads/) |
+| **Protocolos**        | [Protocolos de servicios de archivo en Windows Server](https://msdn.microsoft.com/library/cc239318.aspx) En desuso |
 | **Tecnologías relacionadas** | [Clúster de conmutación por error](../../failover-clustering/failover-clustering-overview.md)|
-| **Soporte técnico** | [Windows TI soporte técnico profesional](https://www.microsoft.com/itpro/windows/support)|
+| **Soporte técnico** | [Soporte técnico de profesionales de TI de Windows](https://www.microsoft.com/itpro/windows/support)|

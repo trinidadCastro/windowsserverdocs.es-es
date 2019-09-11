@@ -1,6 +1,6 @@
 ---
 title: Finalizar una sesión de usuario
-description: Obtenga información sobre cuándo y cómo finalizar una sesión de usuario manualmente en MultiPoint Services
+description: Aprenda Cuándo y cómo finalizar manualmente la sesión de un usuario en Multipoint Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -12,15 +12,15 @@ ms.assetid: 51b1076b-cce5-45a7-8cf2-ecc6aa390d14
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: e55198787a1bf851c6bb81ba7afab5010765fdfe
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2b290dbe14129a2d5fe297c5c95479e764dc55de
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859776"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871698"
 ---
 # <a name="end-a-user-session"></a>Finalizar una sesión de usuario
-Debe finalizar una sesión de usuario cuando tenga que cerrar la sesión de dicho usuario del sistema MultiPoint Services para que el escritorio vuelva a su configuración predeterminada. El usuario recibe una advertencia que le indica que la conexión está a punto de finalizar. Debe finalizar una conexión de usuario cuando quiera:  
+Debe finalizar la sesión de un usuario cuando tenga que cerrar la sesión del usuario desde el sistema Multipoint Services para devolver el escritorio a su configuración predeterminada. El usuario recibe una advertencia que le indica que la conexión está a punto de finalizar. Debe finalizar la conexión de un usuario cuando quiera:  
   
 -   Reiniciar el equipo del sistema MultiPoint Services  
   
@@ -30,9 +30,9 @@ Debe finalizar una sesión de usuario cuando tenga que cerrar la sesión de dich
   
 -   Cerrar la sesión de un usuario que se olvidó de hacerlo  
   
-Para finalizar sesiones de usuario:  
+Para las sesiones de usuario final:  
   
-1.  Abra MultiPoint Manager en modo de estación y, a continuación, haga clic en el **estaciones** ficha.  
+1.  Abra Multipoint Manager en modo de estación y, después, haga clic en la pestaña **estaciones** .  
   
 2.  Realiza una de las siguientes acciones:  
   
@@ -42,4 +42,4 @@ Para finalizar sesiones de usuario:
   
 ## <a name="see-also"></a>Vea también  
 [Administrar escritorios de usuario](manage-user-desktops-using-multipoint-dashboard.md)  
-[Cierre la sesión o desconectar sesiones de usuario](Log-off-or-Disconnect-User-Sessions.md)
+[Cerrar sesión o desconectar sesiones de usuario](Log-off-or-Disconnect-User-Sessions.md)

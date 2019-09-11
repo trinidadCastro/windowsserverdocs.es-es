@@ -9,12 +9,12 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 7cc5709723b300f46ce108b36501e7ace272cd45
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 30fdda5ada01510027100efce1e95f310f69c6a1
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544566"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865095"
 ---
 # <a name="troubleshoot-storage-spaces-direct"></a>Solucionar problemas Espacios de almacenamiento directo
 
@@ -203,7 +203,7 @@ La **tarea análisis de integridad de datos para recuperación de bloqueos** se 
 
 Para obtener más información, consulte [solución de problemas de estado de espacios de almacenamiento directo y Estados operativos](storage-spaces-states.md).
 
-## <a name="event-5120-with-statusiotimeout-c00000b5"></a>Evento 5120 con STATUS_IO_TIMEOUT c00000b5 
+## <a name="event-5120-with-status_io_timeout-c00000b5"></a>Evento 5120 con STATUS_IO_TIMEOUT c00000b5 
 
 > [!Important]
 > **Para Windows Server 2016:** Para reducir la posibilidad de experimentar estos síntomas mientras se aplica la actualización con la corrección, se recomienda usar el procedimiento de modo de mantenimiento del almacenamiento que se indica a continuación para instalar el [18 de octubre de 2018, la actualización acumulativa para Windows Server 2016](https://support.microsoft.com/help/4462928) o una versión posterior. Cuando los nodos hayan instalado actualmente una actualización acumulativa de Windows Server 2016 publicada del [8 de mayo de 2018](https://support.microsoft.com/help/4103723) al [9 de octubre de 2018](https://support.microsoft.com/help/KB4462917).
@@ -217,7 +217,7 @@ Event Source: Microsoft-Windows-FailoverClustering
 Event ID: 5120
 Description:    Cluster Shared Volume 'CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_IO_TIMEOUT(c00000b5)'. All I/O will temporarily be queued until a path to the volume is reestablished. 
 
-Cluster Shared Volume ‘CSVName’ ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
+Cluster Shared Volume ‘CSVName' ('Cluster Virtual Disk (CSVName)') has entered a paused state because of 'STATUS_CONNECTION_DISCONNECTED(c000020c)'. All I/O will temporarily be queued until a path to the volume is reestablished.    
 ```
 
 Cuando se registra un evento 5120, se genera un volcado de memoria en directo para recopilar información de depuración que puede provocar síntomas adicionales o tener un efecto en el rendimiento. La generación del volcado en vivo crea una breve pausa para habilitar la toma de una instantánea de la memoria para escribir el archivo de volcado. Los sistemas que tienen una gran cantidad de memoria y que están sobrecargados pueden provocar que los nodos salgan de la pertenencia al clúster y que también se registre el siguiente evento 1135.
@@ -246,7 +246,7 @@ Un cambio introducido en el 8 de mayo de 2018 a Windows Server 2016, que era una
    Get-StorageFaultDomain -type StorageScaleUnit | Where-Object {$_.FriendlyName -eq "<NodeName>"} | Enable-StorageMaintenanceMode
    ```
 4. Ejecute el cmdlet **Get-PhysicalDisk** y asegúrese de que el valor de OperationalStatus está en modo de mantenimiento.
-5. Ejecute el cmdlet restart **-Computer** para reiniciar el nodo.
+5. Ejecute el cmdlet **restart-Computer** para reiniciar el nodo.
 6. Después de reiniciar el nodo, quite los discos de ese nodo del modo de mantenimiento de almacenamiento mediante la ejecución del siguiente cmdlet:
 
    ```powershell

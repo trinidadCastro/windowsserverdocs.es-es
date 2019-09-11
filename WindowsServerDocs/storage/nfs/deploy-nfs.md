@@ -8,12 +8,12 @@ ms.author: jgerend
 ms.technology: storage
 ms.date: 07/09/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: cc02f0a82b4143b80fc1107a63d234b117502d2d
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 761394f3190f02eedfea27a7d873c4c36535f23b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544644"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865116"
 ---
 # <a name="deploy-network-file-system"></a>Implementar el sistema de archivos de red
 
@@ -34,7 +34,7 @@ A continuación se explican los cambios de NFS en Windows Server 2012:
 
 - **Módulo NFS para Windows PowerShell**. La disponibilidad de los cmdlets integrados de NFS facilita la automatización de diversas operaciones. Los nombres de los cmdlets son coherentes con otros cmdlets de Windows PowerShell (mediante verbos como "Get" y "SET"), lo que facilita que los usuarios familiarizados con Windows PowerShell aprendan a usar nuevos cmdlets.
 - **Mejoras**en la administración de NFS. Una nueva consola de administración centralizada basada en interfaz de usuario simplifica la configuración y la administración de recursos compartidos de SMB y NFS, cuotas, filtros de archivos y clasificaciones, además de administrar servidores de archivos en clúster.
-- **Mejoras**en la asignación de identidades. Nueva compatibilidad con la interfaz de usuario y cmdlets de Windows PowerShell basados en tareas para configurar la asignación de identidades, lo que permite a los administradores configurar rápidamente un origen de asignación de identidades y, a continuación, crear identidades asignadas individuales para los usuarios. Las mejoras facilitan a los administradores la configuración de un recurso compartido para el acceso de varios protocolos a través de NFS y SMB.
+- **Mejoras en la asignación de identidades**. Nueva compatibilidad con la interfaz de usuario y cmdlets de Windows PowerShell basados en tareas para configurar la asignación de identidades, lo que permite a los administradores configurar rápidamente un origen de asignación de identidades y, a continuación, crear identidades asignadas individuales para los usuarios. Las mejoras facilitan a los administradores la configuración de un recurso compartido para el acceso de varios protocolos a través de NFS y SMB.
 - **Reestructuración del modelo de recursos del clúster**. Esta mejora aporta coherencia entre el modelo de recursos de clúster para los servidores de protocolo NFS y SMB de Windows y simplifica la administración. En el caso de los servidores NFS que tienen muchos recursos compartidos, la red de recursos y el número de llamadas WMI necesarias conmutarán por error un volumen que contenga un gran número de recursos compartidos de NFS.
 - **Integración con el administrador de claves de reanudación**. El administrador de claves de reanudación es un componente que realiza un seguimiento del servidor de archivos y el estado del sistema de archivos y permite que los servidores de protocolo SMB y NFS de Windows conmuten por error sin interrumpir a los clientes o aplicaciones de servidor que almacenan sus datos en el servidor de archivos. Esta mejora es un componente clave de la capacidad de disponibilidad continua del servidor de archivos que ejecuta Windows Server 2012.
 
@@ -113,7 +113,7 @@ Puede crear un recurso compartido de archivos NFS mediante Administrador del ser
 
 1. Inicie sesión en el servidor como miembro del grupo Administradores local.
 2. El Administrador del servidor se iniciará de manera automática. Si no se inicia automáticamente, seleccione **iniciar**, escriba **ServerManager. exe**y, a continuación, seleccione **Administrador del servidor**.
-3. A la izquierda, seleccione **servicios de archivos y almacenamiento**y, a continuación, seleccione **recursos**compartidos.
+3. A la izquierda, seleccione **servicios de archivos y almacenamiento**y, a continuación, seleccione **recursos compartidos**.
 4. Seleccione **esta acción para crear un recurso compartido de archivos, inicie el Asistente para nuevo recurso compartido**.
 5. En la página **Seleccionar perfil** , seleccione **recurso compartido de NFS – rápido** o **recurso compartido de NFS-avanzado**y, a continuación, seleccione **siguiente**.
 6. En la página **Ubicación del recurso compartido** , seleccione un servidor y un volumen y seleccione **siguiente**.

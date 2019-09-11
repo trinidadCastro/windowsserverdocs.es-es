@@ -1,6 +1,6 @@
 ---
-title: Escenarios de uso de servicios común MultiPoint
-description: Obtenga información sobre los usos habituales de MultiPoint Services
+title: Escenarios comunes de uso de Multipoint Services
+description: Más información sobre los usos comunes de Multipoint Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,23 +13,23 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 5172927e087b49ec8a81ee84e58d58bdfa1d7e31
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b0f8ea649382675a162572fcdafcfacc480a5f6
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865176"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871763"
 ---
 # <a name="common-usage-scenarios"></a>Escenarios de uso comunes
-MultiPoint Services ofrece escritorios de usuario individual con los elementos más importantes de la experiencia de escritorio de Windows 10. También ofrece una herramienta de administración simple, el Administrador de MultiPoint, que los administradores del sistema pueden usar para la detección y control de varios servidores MultiPoint y los clientes. Además, MultiPoint Services incluye MultiPoint Dashboard para obtener visibilidad en tiempo real. Ejemplos de lo que puede con MultiPoint Services incluyen lo siguiente:  
+Multipoint Services ofrece escritorios de usuario individuales con los elementos más importantes de la experiencia de escritorio de Windows 10. También ofrece una sencilla herramienta de administración, Multipoint Manager, que los administradores del sistema pueden usar para la detección y el control de varios servidores multipoint y clientes. Además, Multipoint Services incluye el panel de Multipoint para la visibilidad en tiempo real. Entre los ejemplos de lo que puede hacer con Multipoint Services se incluyen los siguientes:  
   
-- Asigne a cada usuario una experiencia informática personal y las carpetas privadas sin necesidad de un equipo independiente para cada persona.  
-- Administrar varios sistemas MultiPoint en un laboratorio de informática, aula, centro de aprendizaje o entorno de pequeña empresa.  
-- Instalar un programa una vez y acceder a ella desde cualquier estación.  
-- Supervisar la actividad de escritorio de cada usuario.  
-- Pantallas de bloque con un mensaje personalizable que llama la atención del grupo.  
-- Restringir el grupo de acceso solo a uno o más sitios Web.  
-- Proyecto de la pantalla para que las otras pantallas para demostrar una tarea determinada.  
-- Comunicarse de forma privada con un usuario estándar que es pedir ayuda.  
-- Tome el control de una sesión de usuario para demostrar una tarea.  
-- Realice todos los elementos enumerados anteriormente para un usuario que está usando un PC tradicionales, portátil o cualquier otro dispositivo móvil. 
+- Proporcione a cada usuario una experiencia informática personal y carpetas privadas sin necesidad de un equipo independiente para cada persona.  
+- Administre varios sistemas Multipoint en un entorno de laboratorio, aula, centro de aprendizaje o pequeña empresa.  
+- Instale un programa una vez y acceda a él desde cualquier estación.  
+- Supervise la actividad del escritorio de cada usuario.  
+- Bloquear pantallas con un mensaje personalizable para obtener la atención del grupo.  
+- Restrinja el grupo para que solo tenga acceso a uno o más sitios Web.  
+- Proyectar la pantalla en las demás pantallas para mostrar una tarea determinada.  
+- Comunicarse de forma privada con un usuario estándar que solicita ayuda.  
+- Tome el control de la sesión de un usuario para mostrar una tarea.  
+- Realice todos los elementos enumerados anteriormente para un usuario que use un equipo tradicional, un portátil o cualquier otro dispositivo móvil. 

@@ -10,12 +10,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
-ms.openlocfilehash: 5b2b42c0a1878a2d9f5f9002dd36e0124e2101cc
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: fb36f0ff804b139149922596a05d1ff649884bdd
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546553"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868974"
 ---
 # <a name="networking"></a>Redes
 
@@ -26,7 +26,7 @@ ms.locfileid: "69546553"
 
 La red es una \(parte fundamental de la\) plataforma de centro de centros de recursos definido por software, y Windows Server 2016 proporciona\) tecnologías de \(red de redes definidas por software nuevas y mejoradas que le ayudarán a pasar a una solución de SDDC completa para su organización.
 
-Al administrar las redes como un recurso definido por software, puede describir una vez los requisitos de infraestructura de la aplicación y, después, elegir dónde se ejecuta la aplicación: localmente o en la nube. 
+Al administrar redes como un recurso definido por software, puede describir los requisitos de infraestructura de una aplicación una vez y, después, elegir dónde se ejecuta la aplicación en el entorno local o en la nube. 
 
 Esta coherencia significa que las aplicaciones son ahora más fáciles de escalar y que puedes ejecutar sin problemas las aplicaciones, en cualquier lugar, con la misma confianza en lo que respecta a la seguridad, el rendimiento, la calidad del servicio y la disponibilidad.
 
@@ -514,6 +514,7 @@ Puede usar tecnologías de acceso remoto, como DirectAccess y redes privadas vir
                                         <h3><a href="https://docs.microsoft.com/virtualization/windowscontainers/container-networking/architecture">Redes de contenedores de Windows</a><hr /></h3>
                                         <p>
 Redes de contenedores de Windows te permite crear y administrar redes para conectar terminales de contenedores en hosts de Windows 10 y Windows Server, usando herramientas y flujos de trabajo estándares del sector. Las redes de contenedores de Windows admiten varias topologías, incluyendo la privada, la plana L2 y la enrutada L3.</p>
+
                                         <p>También se admiten las superposiciones que se pueden crear localmente en el host mediante Docker, Kubernetes o Windows PowerShell a través de complementos que se comunican con el servicio de red de host de Windows (SNP). Puede crear y administrar redes de clúster de varios nodos a través de sistemas de orquestación de nivel superior mediante la comunicación a través de un agente local con el SNP de cada nodo.</p>
                     </div>
                 </div>

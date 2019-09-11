@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 7c25a2faba9b660ddba9439c519dcbf51847ef0a
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 6a0a1da3dd5c92dff885478c1669bbda5ae07fe5
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983673"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867479"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS de los conceptos de OpenID Connect/OAuth
 Se aplica a AD FS 2016 y versiones posteriores
@@ -55,7 +55,7 @@ La autenticación moderna usa los siguientes tipos de token:
  
 Al registrar un recurso en AD FS, se pueden configurar ámbitos para permitir que AD FS realice acciones específicas. Además de configurar el ámbito, también se requiere que el valor de ámbito se envíe en la solicitud de AD FS para realizar la acción. Por ejemplo, el administrador debe configurar el ámbito como OpenID durante el registro de recursos y la aplicación (cliente) debe enviar el ámbito = OpenID en la solicitud de autenticación para que AD FS emita el token de identificador. A continuación se proporcionan detalles sobre los ámbitos disponibles en AD FS 
  
-- AZA: si se usan [las extensiones de protocolo de OAuth 2,0 para los clientes](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) de Broker y si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el campo refresh_token de la respuesta, así como el establecimiento del parámetro refresh_token_expires_in el campo a la duración del nuevo token de actualización principal si se aplica uno. 
+- AZA: si se usan  [las extensiones de protocolo de OAuth 2,0 para los clientes de Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)y si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el campo refresh_token de la respuesta, así como el establecimiento del parámetro refresh_token_expires_in el campo a la duración del nuevo token de actualización principal si se aplica uno. 
 - OpenID: permite que la aplicación solicite el uso del Protocolo de autorización OpenID Connect. 
 - logon_cert: el ámbito logon_cert permite a una aplicación solicitar certificados de inicio de sesión, que se pueden usar para iniciar sesión de forma interactiva en usuarios autenticados. El servidor de AD FS omite el parámetro access_token de la respuesta y, en su lugar, proporciona una cadena de certificados CMS codificada en base64 o una respuesta de PKI completa de CMC. Puede encontrar más información [aquí](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
 - user_impersonation: el ámbito user_impersonation es necesario para solicitar correctamente un token de acceso en nombre de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte [creación de una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](ad-fs-on-behalf-of-authentication-in-windows-server.md). 
@@ -131,7 +131,7 @@ En algunos escenarios es posible que la aplicación web (cliente) necesite notif
 
 ![AD FS la opción de token de personalización 2](media/adfs-modern-auth-concepts/option2.png)
 
-Para comprender mejor cómo configurar una aplicación web en ADFS para adquirir un token de identificador personalizado, consulte Personalización de [notificaciones que se emitirán en ID_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior](Custom-Id-Tokens-in-AD-FS.md).
+Para comprender mejor cómo configurar una aplicación web en ADFS para adquirir un token de identificador personalizado, consulte [Personalización de notificaciones que se emitirán en ID_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior](Custom-Id-Tokens-in-AD-FS.md).
 
 ## <a name="single-log-out"></a>Cierre de sesión único
 

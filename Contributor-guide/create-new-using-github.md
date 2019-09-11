@@ -4,12 +4,12 @@ description: Cómo crear nuevos artículos relacionados con Windows Server, medi
 author: eross-msft
 ms.author: lizross
 ms.date: 05/02/2019
-ms.openlocfilehash: f5e7e3d0cd17c64175fddaaac73c12daa2c2a32c
-ms.sourcegitcommit: ffd9c42374c7448deb5f53f7a865cb427b5e4e9e
+ms.openlocfilehash: 3f09c36c1e3960728ff016f5801deb854e3d3c96
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887946"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865068"
 ---
 # <a name="create-new-windows-server-articles-using-github-and-visual-studio-code"></a>Cree nuevos artículos de Windows Server mediante GitHub y Visual Studio Code
 
@@ -69,7 +69,7 @@ Debe clonar el repositorio para obtener una copia local del repositorio en el di
 
 #### <a name="to-clone-the-repository"></a>Para clonar el repositorio
 
-1. Vaya a https://github.com/settings/developers y, a continuación, seleccione tokens de **acceso personal** en el panel izquierdo.
+1. Vaya a https://github.com/settings/developers y, a continuación, seleccione **tokens de acceso personal** en el panel izquierdo.
 
 2. Seleccione **generar nuevo token**, asigne un nombre significativo y único al token, seleccione todos los ámbitos disponibles y, a continuación, seleccione **generar token**.
 
@@ -193,7 +193,7 @@ Después de completar el artículo, debe obtener la aprobación del escritor (de
 
 1. Vaya a https://github.com/MicrosoftDocs/windowsserverdocs-pr y seleccione la pestaña **solicitudes de incorporación** de cambios.
 
-2. En el área revisores del panel derecho, seleccione el icono de engranaje y, a continuación, escriba el alias _windowsservercontent_ para revisarlo.
+2. En el área **revisores** del panel derecho, seleccione el icono de engranaje y, a continuación, escriba el alias _windowsservercontent_ para revisarlo.
 
     Un miembro del alias _windowsservercontent_ revisará los cambios o agregará comentarios sobre las cosas que deben cambiarse antes de que se produzca la combinación.
 
@@ -222,7 +222,7 @@ Para obtener más información sobre GitHub y el lenguaje Markdown, consulte:
 
 - [Guías de GitHub: Descripción del flujo de GitHub](https://guides.github.com/introduction/flow/)
 
-- [Aprendizaje] de la bifurcación de Git (https://learngitbranching.js.org/ (Excelente para los aprendizajes visuales.))
+- [Aprendizaje de la bifurcación de Git] (https://learngitbranching.js.org/ (Excelente para los aprendizajes visuales.))
 
 ### <a name="markdown"></a>Markdown
 

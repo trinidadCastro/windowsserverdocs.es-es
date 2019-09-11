@@ -13,12 +13,12 @@ ms.assetid: f9f9d618-ccfe-41ea-a52c-00c3c7adb51a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 43386f0f4d4020d5e127e7b7cbd918e4c48cec6e
-ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
+ms.openlocfilehash: 4aa08f58f8fdf6d6fce816ee090275b0bf46a844
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863456"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871629"
 ---
 # <a name="multipoint--stations"></a>Estaciones Multipoint
 En un entorno del sistema Multipoint Services, las *estaciones* son los puntos de conexión de usuario para conectarse al equipo que ejecuta Multipoint Services. Cada estación proporciona al usuario una experiencia independiente de Windows 10. Se admiten los siguientes tipos de estación:  
@@ -121,7 +121,7 @@ Una vez que se divide una estación, un usuario puede iniciar sesión en la esta
 |Limitaciones físicas|Limitado por la longitud del cable de vídeo y el concentrador USB y la longitud del cable (se recomienda una longitud máxima de 15 medidor)|Limitado por el concentrador USB y la longitud del cable (se recomienda una longitud máxima de 15 medidor)|Limitado por distribución de LAN|  
 |Número de estaciones permitidas |Limitado por el número de ranuras PCIe disponibles en la placa base, los puertos de vídeo por tarjeta de vídeo|El número total puede estar limitado por el fabricante del cliente USB cero (para obtener más información, consulte la nota que sigue a esta tabla).|Limitado por los puertos disponibles en el conmutador de red|  
 |Pantalla dividida|Sí|Sí|Sin|  
-|Estado de periféricos de la estación de Multipoint Manager, configuración de inicio de sesión automático, cambio de nombre de estación|Sí|Sí|No|  
+|Estado de periféricos de la estación de Multipoint Manager, configuración de inicio de sesión automático, cambio de nombre de estación|Sí|Sí|Sin|  
 |Acceso a los menús de inicio del servidor|Sí|No|Sin|  
   
 > [!NOTE]  

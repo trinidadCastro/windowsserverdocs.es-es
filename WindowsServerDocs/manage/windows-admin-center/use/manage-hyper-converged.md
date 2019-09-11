@@ -1,6 +1,6 @@
 ---
-title: Administrar infraestructuras Hiperconvergidas con Windows Admin Center
-description: Administrar infraestructuras Hiperconvergidas con Windows Admin Center (proyecto Honolulu)
+title: Administrar la infraestructura hiperconvergida con el centro de administración de Windows
+description: Administrar la infraestructura hiperconvergida con el centro de administración de Windows (proyecto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: daniellee-msft
@@ -8,56 +8,56 @@ ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 4d156820781d2a9defc989fa1acf35d4289fb24f
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 5df035b448b80aa147067004c6a2f14aa03a9684
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67284090"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869087"
 ---
-# <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Administrar infraestructuras Hiperconvergidas con Windows Admin Center
+# <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Administrar la infraestructura hiperconvergida con el centro de administración de Windows
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-## <a name="what-is-hyper-converged-infrastructure"></a>¿Qué es la infraestructura de Hyper-Converged
+## <a name="what-is-hyper-converged-infrastructure"></a>Qué es la infraestructura hiperconvergida
 
-Infraestructura Hiperconvergida consolida red en un clúster para proporcionar alto rendimiento, rentable y la virtualización fácilmente escalable, almacenamiento y proceso definidas por software. Esta funcionalidad se introdujo en Windows Server 2016 con [espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview), [redes definidas por Software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking) y [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server).
+La infraestructura hiperconvergida consolida el proceso, el almacenamiento y la red definidos por software en un clúster para proporcionar una virtualización de alto rendimiento, rentable y fácilmente escalable. Esta funcionalidad se presentó en Windows Server 2016 con [espacios de almacenamiento directo](https://docs.microsoft.com/windows-server/storage/storage-spaces/storage-spaces-direct-overview), las [redes definidas por software](https://docs.microsoft.com/windows-server/networking/sdn/software-defined-networking) y [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-on-windows-server).
 
 > [!Tip]
-> ¿Desea para adquirir Hyper-Converged infraestructura? Microsoft recomienda estos [definido por el Software de Windows Server](https://microsoft.com/wssd) soluciones de nuestros asociados. Están diseñadas, ensambla y validadas con respecto a nuestra arquitectura de referencia para garantizar la compatibilidad y confiabilidad, por lo que ponerse en marcha rápidamente.
+> ¿Desea adquirir una infraestructura hiperconvergida? Microsoft recomienda estas soluciones [definidas por software de Windows Server](https://microsoft.com/wssd) de nuestros asociados. Se diseñan, ensamblan y validan con nuestra arquitectura de referencia para garantizar la compatibilidad y la confiabilidad, de modo que pueda ponerse en marcha rápidamente.
 
 > [!IMPORTANT]
-> Algunas de las características descritas en este artículo solo están disponibles en versión preliminar de Windows Admin Center. [¿Cómo se puede obtener esta versión?](http://aka.ms/windowsadmincenter)
+> Algunas de las características que se describen en este artículo solo están disponibles en la versión preliminar del centro de administración de Windows. [¿Cómo obtener esta versión?](http://aka.ms/windowsadmincenter)
 
 ## <a name="what-is-windows-admin-center"></a>Qué es Windows Admin Center
 
-[Windows Admin Center](../understand/windows-admin-center.md) es la herramienta de administración de próxima generación para Windows Server, el sucesor de las herramientas tradicionales de "en el cuadro" como administrador del servidor. Es gratuito y se puede instalar y usar sin una conexión a Internet. Puede usar Windows Admin Center para administrar y supervisar la infraestructura de Hyper-Converged que ejecutan Windows Server 2016 o Windows Server 2019.
+El [centro de administración de Windows](../understand/windows-admin-center.md) es la herramienta de administración de la próxima generación para Windows Server, la sucesora de herramientas "integradas" tradicionales como administrador del servidor. Es gratuito y se puede instalar y usar sin conexión a Internet. Puede usar el centro de administración de Windows para administrar y supervisar la infraestructura hiperconvergida que ejecuta Windows Server 2016 o Windows Server 2019.
 
 ![Panel de clúster hiperconvergido](../media/manage-hyper-converged/hci-dashboard-v1809.png)
 
 ## <a name="key-features"></a>Principales características
 
-Aspectos destacados de Windows Admin Center Hyper-Converged infraestructura incluyen:
+Los aspectos destacados del centro de administración de Windows para la infraestructura hiperconvergida incluyen:
 
-- **Unificada único-de-consola de proceso, almacenamiento y redes pronto.** Ver las máquinas virtuales, servidores de host, volúmenes, unidades etc. dentro de una experiencia diseñados específicamente, coherente y conectadas entre sí.
-- **Crear y administrar máquinas virtuales de Hyper-V y espacios de almacenamiento.** Los flujos de trabajo más sencillas para crear, abrir, cambiar el tamaño y eliminar volúmenes; crear, iniciar, conectarse a y mover las máquinas virtuales; y mucho más.
-- **Supervisión eficaz de todo el clúster.** El panel de gráficos de memoria y uso de CPU, capacidad de almacenamiento, IOPS, rendimiento y latencia en tiempo real, en todos los servidores del clúster, desactive alertas cuando algo no es correcto.
-- **Soporte técnico de software Defined Networking (SDN).** Administrar y supervisar redes virtuales, subredes, conectar máquinas virtuales a las redes virtuales y supervisar la infraestructura de SDN.
+- **Una sola sección de vidrio unificada para proceso, almacenamiento y redes en breve.** Vea las máquinas virtuales, los servidores host, los volúmenes, las unidades y mucho más dentro de una experiencia de uso interconectada, coherente y compilada.
+- **Crear y administrar espacios de almacenamiento y máquinas virtuales de Hyper-V.** Flujos de trabajo radicalmente simples para crear, abrir, cambiar de tamaño y eliminar volúmenes; y crear, iniciar, conectar y trasladar máquinas virtuales. y mucho más.
+- **Supervisión eficaz en todo el clúster.** En el panel se representan el uso de la CPU y la memoria, la capacidad de almacenamiento, la IOPS, el rendimiento y la latencia en tiempo real, en todos los servidores del clúster, con alertas claras cuando algo no es correcto.
+- **Compatibilidad con redes definidas por software (SDN).** Administrar y supervisar redes virtuales, subredes, conectar máquinas virtuales a redes virtuales y supervisar la infraestructura de SDN.
 
-Windows Admin Center Hyper-Converged infraestructura está siendo desarrollado activamente por Microsoft. Recibe actualizaciones frecuentes que mejoran las características existentes y agregan nuevas características.
+Microsoft está desarrollando activamente el centro de administración de Windows para la infraestructura hiperconvergida. Recibe actualizaciones frecuentes que mejoran las características existentes y agregan nuevas características.
 
-## <a name="before-you-start"></a>Antes de empezar
+## <a name="before-you-start"></a>Antes de comenzar
 
-Para administrar el clúster como infraestructura Hyper-Converged en Windows Admin Center, debe estar ejecutando Windows Server 2016 o Windows Server 2019 y han habilitado Hyper-V y espacios de almacenamiento directo. Si lo desea, también puede tener redes definidas por Software puede habilitar y administrar a través de Windows Admin Center.
+Para administrar el clúster como una infraestructura hiperconvergida en el centro de administración de Windows, debe ejecutar Windows Server 2016 o Windows Server 2019 y tener habilitado Hyper-V y Espacios de almacenamiento directo. Opcionalmente, también puede tener habilitadas las redes definidas por software y administradas a través del centro de administración de Windows.
 
 > [!Tip]
-> Windows Admin Center también ofrece la experiencia de administración de uso general para los clústeres que admiten cualquier carga de trabajo disponible para Windows Server 2012 y versiones posteriores. Si esto suena como una solución mejor, cuando se agrega el clúster a Windows Admin Center, seleccione [ **clúster de conmutación por error** ](manage-failover-clusters.md) en lugar de **Hyper-Converged clúster**.
+> El centro de administración de Windows también ofrece una experiencia de administración de uso general para cualquier clúster que admita cualquier carga de trabajo, disponible para Windows Server 2012 y versiones posteriores. Si esto suena mejor, al agregar el clúster al centro de administración de Windows, seleccione clúster de [**conmutación por error**](manage-failover-clusters.md) en lugar de **clúster hiperconvergido**.
 
-### <a name="prepare-your-windows-server-2016-cluster-for-windows-admin-center"></a>Preparar el clúster de Windows Server 2016 para Windows Admin Center
+### <a name="prepare-your-windows-server-2016-cluster-for-windows-admin-center"></a>Preparar el clúster de Windows Server 2016 para el centro de administración de Windows
 
-Windows Admin Center para infraestructura Hyper-Converged depende después del lanzamiento de Windows Server 2016 se ha agregado las API de administración. Antes de poder administrar el clúster de Windows Server 2016 con Windows Admin Center, deberá realizar estos dos pasos:
+El centro de administración de Windows para la infraestructura hiperconvergida depende de las API de administración agregadas después de que se publicara Windows Server 2016. Antes de poder administrar el clúster de Windows Server 2016 con el centro de administración de Windows, deberá realizar estos dos pasos:
 
-1. Compruebe que todos los servidores del clúster se ha instalado el [2018-05 de la actualización acumulativa para Windows Server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723) o una versión posterior. Para descargar e instalar esta actualización, vaya a **configuración** > **actualización y seguridad** > **actualizar Windows** y seleccione  **Buscar actualizaciones desde Microsoft Update en línea**.
+1. Compruebe que todos los servidores del clúster hayan instalado la [actualización acumulativa 2018-05 para Windows server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723) o posterior. Para descargar e instalar esta actualización, vaya a **configuración** > **Actualizar & seguridad** > **Windows Update** y seleccione **Buscar actualizaciones en línea desde Microsoft Update**.
 2. Ejecute el siguiente cmdlet de PowerShell como administrador en el clúster:
 
 ```powershell
@@ -65,99 +65,99 @@ Windows Admin Center para infraestructura Hyper-Converged depende después del l
 ```
 
 > [!Tip]
-> Solo deberá ejecutar el cmdlet una vez, en cualquier servidor en el clúster. Puede ejecutarla localmente en Windows PowerShell o use el proveedor de servicio de seguridad de credenciales (CredSSP) para ejecutar de forma remota. Según la configuración, puede no ser capaz de ejecutar este cmdlet desde dentro de Windows Admin Center.
+> Solo tiene que ejecutar el cmdlet una vez, en cualquier servidor del clúster. Puede ejecutarlo localmente en Windows PowerShell o usar el proveedor de servicios de seguridad de credenciales (CredSSP) para ejecutarlo de forma remota. En función de la configuración, es posible que no pueda ejecutar este cmdlet desde el centro de administración de Windows.
 
-### <a name="prepare-your-windows-server-2019-cluster-for-windows-admin-center"></a>Preparar el clúster de Windows Server 2019 para Windows Admin Center
+### <a name="prepare-your-windows-server-2019-cluster-for-windows-admin-center"></a>Preparar el clúster de Windows Server 2019 para el centro de administración de Windows
 
-Si el clúster ejecuta Windows Server 2019, los pasos anteriores no son necesarios. Solo tiene que agregar el clúster a Windows Admin Center como se describe en la sección siguiente y estará listo para continuar.
+Si el clúster ejecuta Windows Server 2019, no es necesario realizar los pasos anteriores. Solo tiene que agregar el clúster al centro de administración de Windows como se describe en la sección siguiente y está listo.
 
-### <a name="configure-software-defined-networking-optional"></a>Configurar definidas por Software de red (opcional) ###
+### <a name="configure-software-defined-networking-optional"></a>Configurar redes definidas por software (opcional) ###
 
-Puede configurar la infraestructura de Hyper-Converged ejecuta Windows Server 2016 o 2019 para usar redes definidas por Software (SDN) con los pasos siguientes:
+Puede configurar la infraestructura hiperconvergida que ejecuta Windows Server 2016 o 2019 para usar redes definidas por software (SDN) con los siguientes pasos:
 
-1. Prepare el VHD del SO que es el mismo sistema operativo ha instalado en los hosts de infraestructuras hiperconvergidas. Este disco duro virtual se usará para todas las máquinas virtuales de NC, SLB/GW.
-2. Descargar todas las carpetas y archivos en SDN Express desde [ https://github.com/Microsoft/SDN/tree/master/SDNExpress ](https://github.com/Microsoft/SDN/tree/master/SDNExpress).
-3. Preparar una máquina virtual diferente mediante la consola de implementación. Esta máquina virtual debería poder tener acceso a los hosts SDN. Además, la máquina virtual debe tener instalada la herramienta de Hyper-V de RSAT.
-4. Copie todo el contenido descargado para SDN Express en la consola de implementación de máquina virtual. Compartir **SDNExpress** carpeta. Asegúrese de que todos los hosts pueden tener acceso a la **SDNExpress** carpeta compartida, como se define en la línea 8 del archivo de configuración:
+1. Prepare el VHD del sistema operativo que es el mismo sistema operativo que instaló en los hosts de la infraestructura hiperconvergida. Este VHD se usará para todas las máquinas virtuales de NC/SLB/GW.
+2. Descargue todos los archivos y carpetas de SDN Express desde [https://github.com/Microsoft/SDN/tree/master/SDNExpress](https://github.com/Microsoft/SDN/tree/master/SDNExpress).
+3. Preparar una máquina virtual diferente mediante la consola de implementación. Esta máquina virtual debe poder tener acceso a los hosts de SDN. Además, la máquina virtual debe tener instalada la herramienta de Hyper-V de RSAT.
+4. Copie todo lo que descargó para SDN Express en la máquina virtual de la consola de implementación. Y comparta esta carpeta **SDNExpress** . Asegúrese de que todos los hosts puedan tener acceso a la carpeta compartida **SDNExpress** , tal como se define en la línea 8 del archivo de configuración:
    ```
     \\$env:Computername\SDNExpress
    ```
-5. Copiar el VHD del SO para la **imágenes** carpeta bajo la **SDNExpress** carpeta en la consola de implementación de máquina virtual.
-6. Modificar la configuración de SDN Express con la configuración del entorno. Finalizar los dos pasos siguientes después de modificar la configuración de SDN Express basada en información de su entorno.
-7. Ejecute PowerShell con privilegios de administrador para la implementación de SDN:
+5. Copie el VHD del sistema operativo en la carpeta **images** en la carpeta **SDNExpress** de la máquina virtual de la consola de implementación.
+6. Modifique la configuración de SDN Express con la configuración de su entorno. Complete los dos pasos siguientes después de modificar la configuración de SDN Express según la información del entorno.
+7. Ejecute PowerShell con privilegios de administrador para implementar SDN:
 
 ```powershell
     .\SDNExpress.ps1 -ConfigurationDataFile .\your_fabricconfig.PSD1 -verbose 
 ```
 
-La implementación tardará aproximadamente 30 y 45 minutos.
+La implementación tardará aproximadamente entre 30 y 45 minutos.
 
-## <a name="get-started"></a>Comenzar
+## <a name="get-started"></a>Introducción
 
-Una vez implementada la infraestructura de Hyper-Converged, se puede administrar con Windows Admin Center.
+Una vez implementada la infraestructura hiperconvergida, puede administrarla mediante el centro de administración de Windows.
 
 ### <a name="install-windows-admin-center"></a>Instalar Windows Admin Center
 
-Si no lo ha hecho ya, descargue e instale Windows Admin Center. Lo más rápido hasta ponerse en marcha y ejecución es instalarlo en el equipo de Windows 10 y administrar los servidores de forma remota. Esto tarda menos de cinco minutos. [Descargar ahora](https://aka.ms/windowsadmincenter) o [más información sobre otras opciones de instalación](../deploy/install.md).
+Si todavía no lo ha hecho, descargue e instale el centro de administración de Windows. La forma más rápida de empezar a trabajar es instalarla en el equipo con Windows 10 y administrar los servidores de forma remota. Esto tarda menos de cinco minutos. [Descargue ahora](https://aka.ms/windowsadmincenter) u [Obtenga más información sobre otras opciones de instalación](../deploy/install.md).
 
-### <a name="add-hyper-converged-cluster"></a>Agregar clúster Hiperconvergido
+### <a name="add-hyper-converged-cluster"></a>Agregar clúster hiperconvergido
 
-Para agregar el clúster a Windows Admin Center:
+Para agregar el clúster al centro de administración de Windows:
 
-1. Haga clic en **+ agregar** en todas las conexiones.
-2. Optar por agregar una **conexión del clúster Hyper-Converged**.
-3. Escriba el nombre del clúster y, si se le pide las credenciales para usar.
-4. Haga clic en **agregar** para finalizar.
+1. Haga clic en **+ Agregar** en todas las conexiones.
+2. Elija Agregar una **conexión de clúster hiperconvergida**.
+3. Escriba el nombre del clúster y, si se le solicita, las credenciales que se usarán.
+4. Haga clic en **Agregar** para finalizar.
 
-El clúster se agregarán a la lista de conexiones. Haga clic en él para iniciar el panel.
+El clúster se agregará a la lista de conexiones. Haga clic en él para iniciar el panel.
 
-![Agregar conexión de clúster hiperconvergido](../media/manage-hyper-converged/add-hyper-converged-cluster-connection.gif)
+![Agregar una conexión de clúster hiperconvergida](../media/manage-hyper-converged/add-hyper-converged-cluster-connection.gif)
 
-### <a name="add-sdn-enabled-hyper-converged-cluster-windows-admin-center-preview"></a>Agregar clúster Hiperconvergido habilitado SDN (versión preliminar de Windows Admin Center)
+### <a name="add-sdn-enabled-hyper-converged-cluster-windows-admin-center-preview"></a>Agregar clúster hiperconvergido con SDN habilitado (versión preliminar del centro de administración de Windows)
 
-La última versión preliminar de Windows Admin Center admite la administración de redes definidas por Software de infraestructura Hyper-Converged. Mediante la adición de un URI de REST de controladora de red para la conexión de clúster Hiperconvergido, puede usar el Administrador de clústeres hiperconvergidos para administrar los recursos de SDN y supervisar la infraestructura de SDN.
+La versión más reciente del centro de administración de Windows es compatible con la administración de redes definidas por software para la infraestructura hiperconvergida. Al agregar un URI de REST de la controladora de red a la conexión de clúster hiperconvergida, puede usar el administrador de clústeres hiperconvergido para administrar los recursos de SDN y supervisar la infraestructura de SDN.
 
-1. Haga clic en **+ agregar** en todas las conexiones.
-2. Optar por agregar una **conexión del clúster Hyper-Converged**.
-3. Escriba el nombre del clúster y, si se le pide las credenciales para usar.
-4. Comprobar **configurar la controladora de red** para continuar.
-5. Escriba el **URI del controlador de red** y haga clic en **validar**.
-6. Haga clic en **agregar** para finalizar.
+1. Haga clic en **+ Agregar** en todas las conexiones.
+2. Elija Agregar una **conexión de clúster hiperconvergida**.
+3. Escriba el nombre del clúster y, si se le solicita, las credenciales que se usarán.
+4. Active **la casilla configurar la controladora de red** para continuar.
+5. Escriba el **URI de la controladora de red** y haga clic en **validar**.
+6. Haga clic en **Agregar** para finalizar.
 
-El clúster se agregarán a la lista de conexiones. Haga clic en él para iniciar el panel.
+El clúster se agregará a la lista de conexiones. Haga clic en él para iniciar el panel.
 
-![Agregar conexión habilitada para SDN clúster hiperconvergido](../media/manage-hyper-converged/add-snd-enabled-hci-connection.png)
+![Agregar una conexión de clúster hiperconvergida habilitada para SDN](../media/manage-hyper-converged/add-snd-enabled-hci-connection.png)
 
 > [!Important]
-> Actualmente no se admiten entornos de SDN con la autenticación Kerberos para la comunicación de Northbound.
+> Actualmente no se admiten los entornos de SDN con autenticación Kerberos para la comunicación de Northbound.
 
-## <a name="frequently-asked-questions"></a>Preguntas frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
-### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>¿Hay diferencias entre la administración de Windows Server 2016 y Windows Server 2019?
+### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>¿Existen diferencias entre la administración de Windows Server 2016 y Windows Server 2019?
 
-Sí. Windows Admin Center Hyper-Converged infraestructura recibe actualizaciones frecuentes que mejoran la experiencia de Windows Server 2016 y Windows Server 2019. Sin embargo, algunas características nuevas solo están disponibles para Windows Server 2019: por ejemplo, el modificador para alternar de desduplicación y compresión.
+Sí. El centro de administración de Windows para la infraestructura hiperconvergida recibe actualizaciones frecuentes que mejoran la experiencia de Windows Server 2016 y Windows Server 2019. Sin embargo, algunas características nuevas solo están disponibles para Windows Server 2019, por ejemplo, el modificador de alternancia para la desduplicación y la compresión.
 
-### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>¿Puedo usar Windows Admin Center para administrar espacios de almacenamiento directo para otros casos de uso (no hiperconvergido), como servidor de archivos de escalabilidad horizontal (SoFS) o Microsoft SQL Server?
+### <a name="can-i-use-windows-admin-center-to-manage-storage-spaces-direct-for-other-use-cases-not-hyper-converged-such-as-converged-scale-out-file-server-sofs-or-microsoft-sql-server"></a>¿Puedo usar el centro de administración de Windows para administrar Espacios de almacenamiento directo para otros casos de uso (no hiperconvergidos), como Servidor de archivos de escalabilidad horizontal convergente (SoFS) o Microsoft SQL Server?
 
-Windows Admin Center para infraestructura Hyper-Converged no proporciona administración o las opciones de supervisión específicamente para otros casos de uso de espacios de almacenamiento directo: por ejemplo, no puede crear recursos compartidos de archivos. Sin embargo, las características de panel y core, como crear volúmenes o reemplazando unidades, funcionan para cualquier clúster de espacios de almacenamiento directo.
+El centro de administración de Windows para la infraestructura hiperconvergida no proporciona opciones de administración o supervisión específicamente para otros casos de uso de Espacios de almacenamiento directo; por ejemplo, no puede crear recursos compartidos de archivos. Sin embargo, el panel y las características principales, como la creación de volúmenes o la sustitución de unidades, funcionan para cualquier clúster de Espacios de almacenamiento directo.
 
-### <a name="whats-the-difference-between-a-failover-cluster-and-a-hyper-converged-cluster"></a>¿Qué es la diferencia entre un clúster de conmutación por error y Hyper-Converged?
+### <a name="whats-the-difference-between-a-failover-cluster-and-a-hyper-converged-cluster"></a>¿Cuál es la diferencia entre un clúster de conmutación por error y un clúster hiperconvergido?
 
-En general, el término "hiperconvergido" se refiere a la ejecución de Hyper-V y espacios de almacenamiento directo en el mismo en el clúster de servidores para virtualizar los recursos de proceso y almacenamiento. En el contexto de Windows Admin Center, al hacer clic en **+ agregar** en la lista de conexiones, puede elegir entre agregar un **conexión del clúster de conmutación por error** o un **Hyper-Converged clúster conexión**:
+En general, el término "hiperconvergido" hace referencia a la ejecución de Hyper-V y Espacios de almacenamiento directo en los mismos servidores en clúster para virtualizar los recursos de proceso y almacenamiento. En el contexto del centro de administración de Windows, al hacer clic en **+ Agregar** en la lista de conexiones, puede elegir entre agregar una **conexión de clúster de conmutación por error** o una **conexión de clúster hiperconvergida**:
 
-- El **conexión del clúster de conmutación por error** es el sucesor de la aplicación de escritorio del Administrador de clústeres de conmutación por error. Proporciona una experiencia de administración familiares y de uso general para los clústeres que admiten cualquier carga de trabajo, incluido Microsoft SQL Server. Está disponible para Windows Server 2012 y posterior.
+- La **conexión de clúster de conmutación por error** es la sucesora de la aplicación de escritorio administrador de clústeres de conmutación por error. Proporciona una experiencia de administración familiar y de uso general para cualquier clúster que admita cualquier carga de trabajo, incluido Microsoft SQL Server. Está disponible para Windows Server 2012 y versiones posteriores.
 
-- El **conexión del clúster Hyper-Converged** se adapta una experiencia completamente nueva para Hyper-V y espacios de almacenamiento directo. Presenta el Panel y enfatiza gráficos y alertas para la supervisión. Está disponible para Windows Server 2016 y Windows Server 2019.
+- La **conexión de clúster hiperconvergida** es una experiencia de todo-nuevo adaptada a espacios de almacenamiento directo e Hyper-V. Presenta el Panel y enfatiza gráficos y alertas para la supervisión. Está disponible para Windows Server 2016 y Windows Server 2019.
 
-### <a name="why-do-i-need-the-latest-cumulative-update-for-windows-server-2016"></a>¿Por qué necesito la actualización acumulativa más reciente para Windows Server 2016?
+### <a name="why-do-i-need-the-latest-cumulative-update-for-windows-server-2016"></a>¿Por qué se necesita la actualización acumulativa más reciente para Windows Server 2016?
 
-Windows Admin Center Hyper-Converged infraestructura depende de la administración de que API desarrolladas desde el lanzamiento de Windows Server 2016. Estas API se agregan en el [2018-05 de la actualización acumulativa para Windows Server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723), disponible a partir del 8 de mayo de 2018.
+El centro de administración de Windows para la infraestructura hiperconvergida depende de las API de administración desarrolladas desde que se lanzó Windows Server 2016. Estas API se agregan en la [actualización acumulativa 2018-05 para Windows Server 2016 (KB4103723)](https://support.microsoft.com/help/4103723/windows-10-update-kb4103723), disponibles a partir del 8 de mayo de 2018.
 
 ### <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>¿Cuánto cuesta usar Windows Admin Center?
 
 Windows Admin Center no tiene ningún coste adicional más allá de Windows.
 
-Puede usar Windows Admin Center (disponible como descarga independiente) con licencias válidas de Windows Server o Windows 10 sin ningún costo adicional: arreglo un CLUF adicional de Windows.
+Puede usar el centro de administración de Windows (disponible como una descarga independiente) con licencias válidas de Windows Server o Windows 10 sin costo adicional, ya que se le otorga licencia en virtud de un CLUF complementario de Windows.
 
 ### <a name="does-windows-admin-center-require-system-center"></a>¿Necesita Windows Admin Center System Center?
 
@@ -167,47 +167,47 @@ No.
 
 No.
 
-Aunque Windows Admin Center ofrece eficaces y de integración conveniente con la nube de Microsoft Azure, la administración central y la experiencia de supervisión de infraestructura Hyper-Converged está completamente en el entorno local. Se puede instalar y usar sin una conexión a Internet.
+Aunque el centro de administración de Windows ofrece una integración eficaz y cómoda con la nube de Microsoft Azure, la experiencia de administración y supervisión básica para la infraestructura hiperconvergida es totalmente local. Se puede instalar y usar sin conexión a Internet.
 
-## <a name="things-to-try"></a>Opciones que puede probar
+## <a name="things-to-try"></a>Cosas que debe probar
 
-Si acaba de empezar, aquí tiene algunos tutoriales rápidos para ayudarle a aprender cómo Windows Admin Center Hyper-Converged infraestructura está organizada y funciona. Por favor, ejecute buen juicio y debe tener cuidado con los entornos de producción. Estos vídeos se grabaron con Windows Admin Center versión 1804 y una compilación de Insider Preview de Windows Server 2019.
+Si acaba de empezar, estos son algunos tutoriales rápidos que le ayudarán a saber cómo se organiza y funciona el centro de administración de Windows para la infraestructura hiperconvergida. Utilice buenos juicios y tenga cuidado con los entornos de producción. Estos vídeos se grabaron con la versión 1804 del centro de administración de Windows y una compilación de Insider Preview de Windows Server 2019.
 
-### <a name="manage-storage-spaces-direct-volumes"></a>Administrar volúmenes de espacios de almacenamiento directo
+### <a name="manage-storage-spaces-direct-volumes"></a>Administración de volúmenes de Espacios de almacenamiento directo
 
 <ul>
-               <li>(0:37) <a href="https://youtu.be/o66etKq70N8">cómo crear un volumen triple</a></li>
-               <li>(1:17) <a href="https://youtu.be/R72QHudqWpE">cómo crear un volumen reflejado acelerada paridad</a></li>
-               <li>(1:02) <a href="https://youtu.be/j59z7ulohs4">cómo abrir un volumen y agregar archivos</a></li>
-               <li>(0:51) <a href="https://youtu.be/PRibTacyKko">cómo activar la compresión y desduplicación</a></li>
-               <li>(0:47) <a href="https://youtu.be/hqyBzipBoTI">cómo expandir un volumen</a></li>
-               <li>(0:26) <a href="https://youtu.be/DbjF8r2F6Jo">cómo eliminar un volumen</a></li>
+               <li>(0:37) <a href="https://youtu.be/o66etKq70N8">creación de un volumen de reflejo triple</a></li>
+               <li>(1:17) <a href="https://youtu.be/R72QHudqWpE">creación de un volumen de paridad acelerado para reflejo</a></li>
+               <li>(1:02) <a href="https://youtu.be/j59z7ulohs4">Cómo abrir un volumen y agregar archivos</a></li>
+               <li>(0:51) <a href="https://youtu.be/PRibTacyKko">Cómo activar la desduplicación y la compresión</a></li>
+               <li>(0:47) <a href="https://youtu.be/hqyBzipBoTI">Cómo expandir un volumen</a></li>
+               <li>(0:26) <a href="https://youtu.be/DbjF8r2F6Jo">eliminación de un volumen</a></li>
 </ul>
 
 <table>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>Crear volumen, triple</strong>
+            <strong>Crear volumen, reflejo triple</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/o66etKq70N8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>Crear volumen reflejado acelerada paridad</strong>
+            <strong>Crear volumen, paridad de reflejo acelerado</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/R72QHudqWpE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>Abra el volumen y agregar archivos</strong>
+            <strong>Abrir volumen y agregar archivos</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/j59z7ulohs4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
-            <strong>Activar la compresión y desduplicación</strong>
+            <strong>Activar la desduplicación y la compresión</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/PRibTacyKko" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
     </tr>
     <tr style="border: 0;">
         <td style="padding: 5px; border: 0;">
-            <strong>Expanda el volumen</strong>
+            <strong>Expandir volumen</strong>
             <iframe width="375" height="210" src="https://www.youtube-nocookie.com/embed/hqyBzipBoTI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen="allowfullscreen"></iframe>
         </td>
         <td style="padding: 5px; border: 0;">
@@ -219,72 +219,72 @@ Si acaba de empezar, aquí tiene algunos tutoriales rápidos para ayudarle a apr
 
 ### <a name="create-a-new-virtual-machine"></a>Crear una máquina virtual nueva
 
-1. Haga clic en el **máquinas virtuales** herramienta desde el panel de navegación del lado izquierdo.
-2. En la parte superior de la herramienta de máquinas virtuales, elija el **inventario** y, después, haga clic en **New** para crear una nueva máquina virtual.
+1. Haga clic en la herramienta **virtual machines** del panel de navegación del lado izquierdo.
+2. En la parte superior de la herramienta Virtual Machines, elija la pestaña **inventario** y, a continuación, haga clic en **nuevo** para crear una nueva máquina virtual.
 3. Escriba el nombre de la máquina virtual y elija entre las máquinas virtuales de generación 1 y 2.
-4. Con qué facilidad puede, a continuación, puede elegir qué host para crear la máquina virtual en inicialmente o utilizar el host recomendado.
-5. Elija una ruta de acceso para los archivos de máquina virtual. Elija un volumen en la lista desplegable o haga clic en **examinar** para elegir una carpeta con el selector de carpeta. Los archivos de configuración de máquina virtual y el archivo de disco duro virtual se guardarán en una sola carpeta en el `\Hyper-V\[virtual machine name]` ruta de acceso de la ruta de acceso o el volumen seleccionado.
-6. Elija el número de procesadores virtuales, si desea habilitar la virtualización anidada, configurar opciones de memoria, adaptadores de red, discos duros virtuales y elija si desea instalar un sistema operativo desde un archivo de imagen .iso o desde la red.
+4. A continuación, uou puede elegir en qué host se debe crear inicialmente la máquina virtual o usar el host recomendado.
+5. Elija una ruta de acceso para los archivos de la máquina virtual. Elija un volumen en la lista desplegable o haga clic en **examinar** para elegir una carpeta con el selector de carpetas. Los archivos de configuración de la máquina virtual y el archivo de disco duro virtual se guardarán en `\Hyper-V\[virtual machine name]` una sola carpeta en la ruta de acceso del volumen o la ruta de acceso seleccionados.
+6. Elija el número de procesadores virtuales, si desea que la virtualización anidada esté habilitada, configure las opciones de memoria, los adaptadores de red, los discos duros virtuales y elija si desea instalar un sistema operativo desde un archivo de imagen. ISO o desde la red.
 7. Haga clic en **Crear** para crear la máquina virtual.
-8. Una vez que la máquina virtual se crea y aparece en la lista de máquinas virtuales, puede iniciar la máquina virtual.
-9. Una vez que se inicia la máquina virtual, puede conectarse a la consola de la máquina virtual mediante VMConnect para instalar el sistema operativo. Seleccione la máquina virtual en la lista, haga clic en **más** > **Connect** para descargar el archivo RDP. Abra el archivo .rdp en la aplicación de conexión a Escritorio remoto. Puesto que este se conecta a la consola de la máquina virtual, deberá especificar las credenciales de administrador del host de Hyper-V.
+8. Una vez creada la máquina virtual y aparece en la lista de máquinas virtuales, puede iniciar la máquina virtual.
+9. Una vez que se inicia la máquina virtual, puede conectarse a la consola de la máquina virtual a través de VMConnect para instalar el sistema operativo. Seleccione la máquina virtual en la lista, haga clic en **más** > **conectar** para descargar el archivo. RDP. Abra el archivo. RDP en la aplicación Conexión a Escritorio remoto. Puesto que se está conectando a la consola de la máquina virtual, deberá escribir las credenciales de administrador del host de Hyper-V.
 
-[Más información sobre la administración de máquinas virtuales con Windows Admin Center](manage-virtual-machines.md).
+[Más información acerca de la administración de máquinas virtuales con el centro de administración de Windows](manage-virtual-machines.md).
 
 ### <a name="pause-and-safely-restart-a-server"></a>Pausar y reiniciar un servidor de forma segura
 
-1. Desde el **panel**, seleccione **servidores** desde el panel de navegación a la izquierda o haga clic en el **ver servidores >** vínculo en el icono en la esquina inferior derecha del panel .
-2. En la parte superior, cambiar de **resumen** a la **inventario** ficha.
-3. Seleccione un servidor, haga clic en su nombre para abrir el **Server** página de detalles.
-4. Haga clic en **pausar el servidor para el mantenimiento**. Si es seguro continuar, esto moverá las máquinas virtuales a otros servidores del clúster. El servidor tendrá estado Purgando mientras se realiza. Si lo desea, puede ver las máquinas virtuales mover el **máquinas virtuales > inventario** página, donde se muestra claramente su servidor de host en la cuadrícula. Cuando se han movido todas las máquinas virtuales, el estado del servidor será **en pausa**.
-5. Haga clic en **Administrar servidor** para tener acceso a todas las herramientas de administración de cada servidor en Windows Admin Center.
-6. Haga clic en **reiniciar**, a continuación, **Sí**. Le expulsado volver a la lista de conexiones.
-7. En el **panel**, el servidor está de color rojo mientras está inactivo.
-8. Una vez que se copia de seguridad, vaya de nuevo el **Server** página y haga clic en **server reanudación de mantenimiento** para establecer el estado del servidor a simplemente arriba. En el tiempo, las máquinas virtuales se moverá: se requiere ninguna acción del usuario.
+1. En el **Panel**, seleccione **servidores** en la navegación en el lado izquierdo o haga clic en el vínculo **Ver servidores >** en el icono de la esquina inferior derecha del panel.
+2. En la parte superior, cambie de **Resumen** a la pestaña **inventario** .
+3. Seleccione un servidor haciendo clic en su nombre para abrir la página de detalles del **servidor** .
+4. Haga clic en **pausar servidor para mantenimiento**. Si es seguro continuar, se moverán las máquinas virtuales a otros servidores del clúster. El servidor tendrá un agotamiento del estado mientras esto sucede. Si lo desea, puede ver las máquinas virtuales que se mueven en la página **máquinas virtuales > inventario** , donde su servidor host se muestra claramente en la cuadrícula. Cuando todas las máquinas virtuales se hayan cambiado, el estado del servidor será en **pausa**.
+5. Haga clic en **administrar servidor** para tener acceso a todas las herramientas de administración por servidor en el centro de administración de Windows.
+6. Haga clic en **reiniciar**y, a continuación, en **sí**. Se volverá a poner en la lista de conexiones.
+7. De nuevo en el **Panel**, el servidor está coloreado en rojo mientras está inactivo.
+8. Una vez que haya realizado una copia de seguridad, vaya de nuevo a la página del **servidor** y haga clic en **reanudar servidor desde mantenimiento** para volver a establecer el estado del servidor en simple. En el tiempo, las máquinas virtuales se moverán: no se requiere ninguna acción por parte del usuario.
 
 ### <a name="replace-a-failed-drive"></a>Reemplazar una unidad con errores
 
-1. Cuando falla una unidad, aparece una alerta en la parte superior izquierda **alertas** área de la **panel**.
-2. También puede seleccionar **unidades** desde el panel de navegación del lado izquierdo o haga clic en el **unidades de vista >** vínculo en el icono en la esquina inferior derecha para examinar las unidades y ver su estado por sí mismo. En el **inventario** ficha, la cuadrícula admite la ordenación, agrupación y búsqueda de palabra clave.
-3. Desde el **panel**, haga clic en la alerta para ver los detalles, como la ubicación física de la unidad.
-4. Para obtener más información, haga clic en el **ir a la unidad** acceso directo a la **unidad** página de detalles.
-5. Si el hardware lo admite, haga clic en **activar luz activado/desactivado** para controlar la luz del indicador de la unidad.
-6. Espacios de almacenamiento directo automáticamente retira y evacua unidades con errores. Cuando esto sucede, se retira el estado de la unidad y la barra de capacidad de almacenamiento está vacía.
+1. Cuando se produce un error en una unidad, aparece una alerta en el área de **alertas** superior izquierda del **Panel**.
+2. También puede seleccionar **unidades** de navegación en el lado izquierdo o hacer clic en el vínculo **ver unidades >** en el icono de la esquina inferior derecha para examinar las unidades y ver su estado por sí mismo. En la pestaña **inventario** , la cuadrícula admite la ordenación, la agrupación y la búsqueda de palabras clave.
+3. En el **Panel**, haga clic en la alerta para ver los detalles, como la ubicación física de la unidad.
+4. Para obtener más información, haga clic en el acceso directo **ir a la unidad** a la página de detalles de la **unidad** .
+5. Si el hardware lo admite, puede hacer clic en **activar o desactivar luz** para controlar la luz del indicador de la unidad.
+6. Espacios de almacenamiento directo retira y evacua automáticamente las unidades con errores. Cuando esto sucede, el estado de la unidad es retirado y su barra de capacidad de almacenamiento está vacía.
 7. Quite la unidad con errores e inserte su reemplazo.
-8. En **unidades > inventario**, aparecerá la nueva unidad. En el tiempo, se borrará la alerta, reparación volúmenes al estado correcto y reequilibra el almacenamiento en la nueva unidad: se requiere ninguna acción del usuario.
+8. En **unidades > inventario**, aparecerá la nueva unidad. En el tiempo, la alerta se borrará, los volúmenes se repararán al estado correcto y el almacenamiento se reequilibrará en la nueva unidad: no se requiere ninguna acción del usuario.
 
-### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>Administración de redes virtuales (clústeres HCI basadas en SDN con Windows Admin Center Preview)
+### <a name="manage-virtual-networks-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>Administrar redes virtuales (clústeres HCI habilitados para SDN mediante la versión preliminar del centro de administración de Windows)
 
-1. Seleccione **redes virtuales** desde el panel de navegación del lado izquierdo.
-2. Haga clic en **New** para crear una nueva red virtual y subredes, o elegir una red virtual existente y haga clic en **configuración** para modificar su configuración.
-3. Haga clic en una red virtual existente para ver las conexiones de la máquina virtual a las subredes de red virtual y tener acceso a listas de control que se aplica a las subredes de red virtual.
+1. Seleccione **redes virtuales** en la navegación del lado izquierdo.
+2. Haga clic en **nuevo** para crear una nueva red virtual y subredes, o elija una red virtual existente y haga clic en **configuración** para modificar su configuración.
+3. Haga clic en una red virtual existente para ver las conexiones de máquinas virtuales a las subredes de la red virtual y a las listas de control de acceso aplicadas a las subredes de la red virtual.
 
-![Administración de redes virtuales](../media/manage-hyper-converged/manage-virtual-networks.png)
+![Administrar redes virtuales](../media/manage-hyper-converged/manage-virtual-networks.png)
 
-### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>Conectar una máquina virtual a una red virtual (clústeres HCI basadas en SDN con Windows Admin Center Preview)
+### <a name="connect-a-virtual-machine-to-a-virtual-network-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>Conectar una máquina virtual a una red virtual (clústeres HCI habilitados para SDN mediante la versión preliminar del centro de administración de Windows)
 
-1. Seleccione **máquinas virtuales** desde el panel de navegación del lado izquierdo.
-2. Elija una máquina virtual existente > haga clic en **configuración** > Abra el **redes** pestaña **configuración**.
-3. Configurar la **red Virtual** y **subred Virtual** campos para conectar la máquina virtual a una red virtual.
+1. Seleccione **virtual machines** en la navegación del lado izquierdo.
+2. Elija una máquina virtual existente > haga clic en **configuración** > Abra la pestaña **redes** en **configuración**.
+3. Configure los campos **Virtual Network** y **subred virtual** para conectar la máquina virtual a una red virtual.
 
 También puede configurar la red virtual al crear una máquina virtual.
 
-![Conectar una máquina virtual a una red virtual](../media/manage-hyper-converged/connect-vm-to-virtual-network.png)
+![Conexión de una máquina virtual a una red virtual](../media/manage-hyper-converged/connect-vm-to-virtual-network.png)
 
-### <a name="monitor-software-defined-networking-infrastructure-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>Supervisar la infraestructura de redes definidas por Software (clústeres HCI basadas en SDN con Windows Admin Center Preview)
+### <a name="monitor-software-defined-networking-infrastructure-sdn-enabled-hci-clusters-using-windows-admin-center-preview"></a>Supervisar la infraestructura de red definida por software (clústeres HCI habilitados para SDN mediante la versión preliminar del centro de administración de Windows)
 
-1. Seleccione **SDN supervisión** desde el panel de navegación del lado izquierdo.
-2. Ver información detallada sobre el estado de la puerta de enlace Virtual de controladora de red, equilibrador de carga de Software y supervisar el uso de grupo de servidores de puerta de enlace Virtual, público y grupo de direcciones IP privadas y el estado del host SDN.
+1. Seleccione **supervisión de Sdn** en la navegación del lado izquierdo.
+2. Vea información detallada sobre el estado de la controladora de red, el Load Balancer de software, la puerta de enlace virtual y supervise el grupo de puerta de enlace virtual, el uso del grupo de direcciones IP públicas y privadas y el estado del host de SDN.
 
-![Supervisar la infraestructura de SDN](../media/manage-hyper-converged/sdn-monitoring.png)
+![Supervisión de la infraestructura de SDN](../media/manage-hyper-converged/sdn-monitoring.png)
 
 ## <a name="feedback"></a>Comentarios
 
-¡Es toda la información sobre sus comentarios! La ventaja más importante de las actualizaciones frecuentes es saber qué funciona y qué hay que mejorar. Estas son algunas formas para hacernos saber lo que está pensando:
+¡ Es todo lo que tiene que hacer! La ventaja más importante de las actualizaciones frecuentes es oír lo que está trabajando y lo que se debe mejorar. Estas son algunas formas de hacernos saber lo que está pensando:
 
-- [Envíe y vote para solicitudes de características en UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
-- [Únase al foro de Windows Admin Center en la comunidad tecnológica de Microsoft](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
-- Para un tweet `@servermgmt`
+- [Envíe y vote solicitudes de características en UserVoice](https://windowsserver.uservoice.com/forums/295071/category/319162?query=%5Bhci%5D)
+- [Únase al foro del centro de administración de Windows en Microsoft Tech Community](https://techcommunity.microsoft.com/t5/Windows-Server-Management/bd-p/WindowsServerManagement)
+- Tweet hasta`@servermgmt`
 
 ### <a name="see-also"></a>Vea también
 

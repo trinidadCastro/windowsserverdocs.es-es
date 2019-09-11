@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: v-tea; kenbrunf
 author: Teresa-Motiv
 ms.date: 7/3/2019
-ms.openlocfilehash: 5a9e2d39d4eedd1e8fdb4bfeaf267ad4cb4c596a
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: dac13ac94e38cf671239d35507e07d7ac3a0c1ab
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "67799837"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866728"
 ---
 # <a name="capacity-planning-for-active-directory-domain-services"></a>Planeación de la capacidad para Active Directory Domain Services
 
@@ -839,7 +839,7 @@ En RAID 5, a veces denominado RAID *n* + 1, los datos se dividen en *n* ejes y l
 
 Dado que cada solicitud de e/s de escritura que el sistema operativo envía al controlador de la matriz requiere que se completen cuatro operaciones de e/s, las solicitudes de escritura enviadas tardan cuatro veces en completarse como una sola e/s de lectura. Para derivar una fórmula para traducir las solicitudes de e/s desde la perspectiva del sistema operativo a las que experimentan los ejes:  
 
-> E/s de e/ &times; s de e/s de *escritura* =  *+ 4*  
+> *E/* s de e/ &times; s de e */s de* *escritura* = + 4  
 
 De forma similar en un conjunto de RAID 1, cuando se conoce la proporción de lecturas en las escrituras y el número de ejes, la siguiente ecuación se puede derivar de la ecuación anterior para identificar la e/s máxima que puede admitir la matriz (tenga en cuenta que el número total de ejes no incluye e la "unidad" se perdió en la paridad):  
 

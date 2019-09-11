@@ -6,12 +6,12 @@ ms.technology: storage
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: ac1f963fd369a5b18414ffcdf9b05519a2e33e14
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 7c092547688bed01d3d588116badf6191e87b1ed
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560507"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871965"
 ---
 # <a name="dfs-replication-overview"></a>Información general de Replicación DFS
 
@@ -50,7 +50,7 @@ Para poder implementar Replicación DFS, debe configurar los servidores del modo
 
 El uso de Replicación DFS en una máquina virtual de Azure se ha probado con Windows Server; sin embargo, hay algunas limitaciones y requisitos que debe seguir.
 
-- El uso de instantáneas o estados guardados para restaurar un servidor que ejecuta Replicación DFS para la replicación de todo salvo la carpeta SYSVOL hace que Replicación DFS no pueda llevarse a cabo, lo que requiere pasos de recuperación de bases de datos especiales. De forma similar, no exporte, clone ni copie las máquinas virtuales. Para obtener más información, consulte el artículo [2517913](http://support.microsoft.com/kb/2517913) de Microsoft Knowledge Base y [Virtualización segura de DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/).
+- El uso de instantáneas o estados guardados para restaurar un servidor que ejecuta Replicación DFS para la replicación de todo salvo la carpeta SYSVOL hace que Replicación DFS no pueda llevarse a cabo, lo que requiere pasos de recuperación de bases de datos especiales. Del mismo modo, no exporte, Clone ni Copie las máquinas virtuales. Para obtener más información, consulte el artículo [2517913](http://support.microsoft.com/kb/2517913) de Microsoft Knowledge Base y [Virtualización segura de DFSR](https://blogs.technet.microsoft.com/filecab/2013/04/05/safely-virtualizing-dfsr/).
 - Cuando realice copias de seguridad de los datos en una carpeta replicada hospedada en una máquina virtual, deberá usar software de copia de seguridad de la máquina virtual invitada.
 - Replicación DFS requiere acceso a los controladores de dominio físicos o virtualizados: no se puede comunicar directamente con Azure AD.
 - Replicación DFS requiere una conexión VPN entre los miembros del grupo de replicación local y cualquier miembro hospedado en máquinas virtuales de Azure. También deberá configurar el enrutador local en (por ejemplo, Forefront Threat Management Gateway) para permitir el asignador de extremos de RPC (el puerto 135) y un puerto asignado de forma aleatoria entre 49152 y 65535 para pasar a través de la conexión VPN. Puede usar el cmdlet Set-DfsrMachineConfiguration o la herramienta de línea de comandos Dfsrdiag para especificar un puerto estático en lugar del puerto aleatorio. Para obtener más información sobre cómo especificar un puerto estático para la Replicación DFS, consulte [Set DfsrServiceConfiguration](https://docs.microsoft.com/powershell/module/dfsr/set-dfsrserviceconfiguration). Para obtener información sobre los puertos relacionados que deben abrirse para administrar Windows Server, consulte el artículo [832017](http://support.microsoft.com/kb/832017) en Microsoft Knowledge Base.

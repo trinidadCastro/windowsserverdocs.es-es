@@ -9,12 +9,12 @@ ms.date: 06/05/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 610d2f9f2a159751b86782a07b3474469253aa2c
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 43a42c211557a41400fada17baaab6a0d5ab822a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68523922"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866095"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Access Control directivas en Windows Server 2012 R2 y Windows Server 2012 AD FS
 
@@ -73,19 +73,19 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y, a continuación, en **Administración de AD FS**.  
 
-2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de **confianza**para usuario autenticado, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas**de notificaciones.  
+2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de confianza para usuario **autenticado**, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas de notificaciones**.  
 
-3.  En el cuadro de diálogo **editar reglas** de notificaciones, seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
+3.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
 
 4.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-5.  En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna demanda IP fuera del intervalo deseado, denegar". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
+5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna demanda IP fuera del intervalo deseado, denegar". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
 6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  </br>
 
     `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
-7.  Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas** de notificaciones, haga clic en **Aceptar**. La lista resultante debería tener un aspecto similar al siguiente.  
+7.  Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar**. La lista resultante debería tener un aspecto similar al siguiente.  
 
      ![Reglas de autenticación de emisión](media/Access-Control-Policies-W2K12/clientaccess1.png "ADFS_Client_Access_1")  
 
@@ -96,23 +96,23 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y, a continuación, en **Administración de AD FS**.  
 
-2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de **confianza**para usuario autenticado, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas**de notificaciones.  
+2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de confianza para usuario **autenticado**, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas de notificaciones**.  
 
-3.  En el cuadro de diálogo **editar reglas** de notificaciones, seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
+3.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
 
 4.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-5.  En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
+5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
 
     `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
 6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-7.  A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
+7.  A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
 8.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-9. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay una dirección IP fuera del intervalo deseado y hay una solicitud de aplicación, denegar, no EAS x-MS-Client. En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
+9. En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay una dirección IP fuera del intervalo deseado y hay una solicitud de aplicación, denegar, no EAS x-MS-Client. En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
 
 ~~~
@@ -121,11 +121,11 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-11. A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
+11. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
 12. En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-13. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo "comprobar si existe la solicitud de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
+13. En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo "comprobar si existe la solicitud de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
    ```  
    NOT EXISTS([Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
@@ -133,15 +133,15 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 14. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-15. A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
+15. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
 16. En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-17. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo "denegar a los usuarios con ipoutsiderange true y error de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
+17. En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo "denegar a los usuarios con ipoutsiderange true y error de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
 18. Haga clic en **Finalizar** Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
-19. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas** de notificaciones, haga clic en Aceptar. La lista resultante debería tener un aspecto similar al siguiente.  
+19. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas de notificaciones** , haga clic en Aceptar. La lista resultante debería tener un aspecto similar al siguiente.  
 
     ![Reglas de autorización de emisión](media/Access-Control-Policies-W2K12/clientaccess2.png )  
 
@@ -151,21 +151,21 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y, a continuación, en **Administración de AD FS**.  
 
-2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de **confianza**para usuario autenticado, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas**de notificaciones.  
+2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de confianza para usuario **autenticado**, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas de notificaciones**.  
 
-3.  En el cuadro de diálogo **editar reglas** de notificaciones, seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
+3.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
 
 4.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-5.  En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  </br>
+5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  </br>
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
 6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-7.  A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
+7.  A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
 8.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-9. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay una IP fuera del intervalo deseado y el extremo no es/ADFS/LS, deny". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
+9. En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay una IP fuera del intervalo deseado y el extremo no es/ADFS/LS, deny". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
 
 ~~~
@@ -176,7 +176,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
    `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
-11. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas** de notificaciones, haga clic en **Aceptar**. La lista resultante debería tener un aspecto similar al siguiente.  
+11. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar**. La lista resultante debería tener un aspecto similar al siguiente.  
 
     ![Emisión](media/Access-Control-Policies-W2K12/clientaccess3.png)  
 
@@ -187,13 +187,13 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 1.  En **Administrador del servidor**, haga clic en **herramientas**y, a continuación, en **Administración de AD FS**.  
 
-2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de **confianza**para usuario autenticado, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas**de notificaciones.  
+2.  En el árbol de consola, en **relaciones de ad fs\relaciones**, haga clic en relaciones de confianza para usuario **autenticado**, haga clic con el botón secundario en la **Microsoft Office 365 Identity Platform** Trust y, a continuación, haga clic en **editar reglas de notificaciones**.  
 
-3.  En el cuadro de diálogo **editar reglas** de notificaciones, seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
+3.  En el cuadro de diálogo **editar reglas de notificaciones** , seleccione la pestaña **reglas de autorización de emisión** y, a continuación, haga clic en **Agregar regla** para iniciar el Asistente para reglas de notificaciones.  
 
 4.  En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación**, seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-5.  En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
+5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
 
 
 ~~~
@@ -202,21 +202,21 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 6. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-7. A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
+7. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
 8. En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-9. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo "comprobar SID de grupo". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (reemplace "GroupSID" por el SID real del grupo de ad que está usando):  
+9. En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo "comprobar SID de grupo". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (reemplace "GroupSID" por el SID real del grupo de ad que está usando):  
 
     `NOT EXISTS([Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
 10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
-11. A continuación, en el cuadro de diálogo **editar reglas** de notificaciones, en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
+11. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
 12. En la **página Seleccionar plantilla de regla** , en **plantilla de regla de notificación,** seleccione **enviar notificaciones mediante una regla personalizada**y, a continuación, haga clic en **siguiente**.  
 
-13. En la página **configurar regla** , en **nombre**de la regla de notificaciones, escriba el nombre para mostrar de esta regla, por ejemplo, "denegar a los usuarios con ipoutsiderange true y GroupSID FAIL". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
+13. En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "denegar a los usuarios con ipoutsiderange true y GroupSID FAIL". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
    `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
@@ -224,7 +224,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
    `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 
-15. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas** de notificaciones, haga clic en Aceptar. La lista resultante debería tener un aspecto similar al siguiente.  
+15. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas de notificaciones** , haga clic en Aceptar. La lista resultante debería tener un aspecto similar al siguiente.  
 
      ![Emisión](media/Access-Control-Policies-W2K12/clientaccess4.png)  
 

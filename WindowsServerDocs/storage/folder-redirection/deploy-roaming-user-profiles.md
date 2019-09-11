@@ -8,12 +8,12 @@ author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 1fcabf890c0c54e12c1650c31a072d17a33e292f
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 3442ad46590add695fb3fed607c6f728e2bc5ee1
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560543"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867292"
 ---
 # <a name="deploying-roaming-user-profiles"></a>Implementación de perfiles de usuario móviles
 
@@ -64,7 +64,7 @@ Si vas a usar perfiles de usuario móviles en diferentes versiones de Windows, t
 - Usa la redirección de carpetas para almacenar archivos de usuario, como documentos e imágenes, fueran de los perfiles de usuario. Esto permite que los mismos archivos estén disponibles para usuarios de diferentes versiones de sistemas operativos. Además, reduce el tamaño de los perfiles y hace que los inicios de sesión sean más rápidos.
 - Asigna espacio suficiente para perfiles de usuario móviles. Si permites el uso de dos versiones distintas del sistema operativo, los perfiles se doblarán en número (y, por lo tanto, el espacio total consumido), ya que se mantiene un perfil separado para cada versión del sistema operativo.
 - No use perfiles de usuario móviles en equipos que ejecuten Windows Vista/Windows Server 2008 y Windows 7/Windows Server 2008 R2. No se admite la itinerancia entre estas versiones de sistema operativo debido a las incompatibilidades en sus versiones de perfil.
-- Informa a tus usuarios que los cambios realizados en una versión del sistema operativo no se transferirán a la otra versión del sistema operativo.
+- Informar a los usuarios de que los cambios realizados en una versión del sistema operativo no se desplazarán a otra versión del sistema operativo.
 - Al mover el entorno a una versión de Windows que usa una versión de perfil diferente (por ejemplo, de Windows 10 a Windows 10, versión 1607 [), consulte el Apéndice B: Información](#appendix-b-profile-version-reference-information) de referencia de la versión de Perfil de una lista), los usuarios reciben un nuevo perfil de usuario móvil vacío. Puede minimizar el impacto de obtener un nuevo perfil mediante el redireccionamiento de carpetas para redirigir carpetas comunes. No existe un método compatible para migrar perfiles de usuario móviles de una versión de perfil a otra.
 
 ## <a name="step-1-enable-the-use-of-separate-profile-versions"></a>Paso 1: Habilitar el uso de versiones de perfiles separadas
@@ -73,7 +73,7 @@ Si va a implementar perfiles de usuario móviles en equipos que ejecutan Windows
 
 Para realizar estos cambios, haz lo siguiente.
 
-1. Descarga e instala la actualización de software correspondiente en todos los equipos donde vayas a usar perfiles móviles, obligatorios, superobligatorios o perfiles de dominio predeterminados:
+1. Descargue e instale la actualización de software correspondiente en todos los equipos en los que vaya a usar perfiles móviles, obligatorios, superobligatorios o de dominio predeterminados:
 
     - Windows 8.1 o Windows Server 2012 R2: Instale la actualización de software que se describe en el artículo [2887595](http://support.microsoft.com/kb/2887595) de Microsoft Knowledge base (cuando se publique).
     - Windows 8 o Windows Server 2012: instale la actualización de software que se describe en el artículo [2887239](http://support.microsoft.com/kb/2887239) de Microsoft Knowledge Base.
@@ -118,7 +118,7 @@ Si aún no tiene un recurso compartido de archivos independiente para los perfil
 
 Aquí se muestra cómo crear un recurso compartido de archivos en Windows Server:
 
-1. En el panel de navegación Administrador del servidor, seleccione **servicios de archivos y almacenamiento**y, a continuación, seleccione **recursos** compartidos para mostrar la página recursos compartidos.
+1. En el panel de navegación Administrador del servidor, seleccione **servicios de archivos y almacenamiento**y, a continuación, seleccione **recursos compartidos** para mostrar la página recursos compartidos.
 2. En el icono recursos compartidos, seleccione **tareas**y, después, seleccione **nuevo recurso compartido**. Se abrirá el Asistente para nuevo recurso compartido.
 3. En la página **Seleccionar perfil** , seleccione **recurso compartido SMB-rápido**. Si tiene instalado Administrador de recursos servidor de archivos y está usando las propiedades de administración de carpetas, en su lugar seleccione **recurso compartido SMB-avanzado**.
 4. En la página **Ubicación del recurso compartido** , selecciona el servidor y el volumen donde quieras crear el recurso compartido.
@@ -211,7 +211,7 @@ Aquí se muestra cómo configurar perfiles de usuario móviles en equipos:
 5. Haga clic con el botón secundario en **establecer ruta de acceso de perfil móvil para todos los usuarios que inician sesión en este equipo** y seleccione **Editar**.
     > [!TIP]
     > Si se configura una carpeta particular para los usuarios, esta será la carpeta predeterminada usada por algunos programas como Windows PowerShell. Puedes configurar una ubicación alternativa, ya sea local o de red, por usuario en la sección **Carpeta particular** de las propiedades de la cuenta de usuario en AD DS. Para configurar la ubicación de la carpeta principal para todos los usuarios de un equipo que ejecute Windows 8.1, Windows 8, Windows Server 2019, Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 en un entorno de escritorio virtual, habilite la **carpeta de inicio del usuario** . y, a continuación, especifique el recurso compartido de archivos y la letra de unidad que desea asignar (o especifique una carpeta local). No uses variables de entorno ni puntos suspensivos. El alias del usuario se anexa al final de la ruta de acceso especificada durante el inicio de sesión del usuario.
-6. En el cuadro de diálogo **propiedades** , seleccione habilitado.
+6. En el cuadro de diálogo **propiedades** , seleccione **habilitado** .
 7. En el cuadro **los usuarios que inician sesión en este equipo deben usar esta ruta de acceso de perfil móvil** , escriba la ruta de acceso al recurso compartido de archivos donde desea almacenar el perfil de `%username%` usuario móvil del usuario, seguido de (que se reemplaza automáticamente por el nombre de usuario la primera vez que el usuario inicia sesión). Por ejemplo:
 
     `\\fs1.corp.contoso.com\User Profiles$\%username%`
@@ -269,7 +269,7 @@ Si configuras perfiles de usuario móviles en equipos mediante Directiva de grup
 Aquí se muestra cómo habilitar el GPO de Perfil de usuario móvil:
 
 1. Abra Administración de directivas de grupo.
-2. Haga clic con el botón secundario en el GPO que creóy seleccione vincular habilitado. Aparecerá una casilla junto al elemento de menú.
+2. Haga clic con el botón secundario en el GPO que creó y seleccione **vincular habilitado**. Aparecerá una casilla junto al elemento de menú.
 
 ## <a name="step-9-test-roaming-user-profiles"></a>Paso 9: Los perfiles de usuario móviles
 

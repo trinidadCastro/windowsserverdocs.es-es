@@ -1,44 +1,44 @@
 ---
 title: Comandos comunes de Git Bash para su uso con GitHub
-description: Una lista de algunos de los comandos usados con más frecuencia en Git Bash al trabajar con GitHub.
+description: Una lista de algunos de los comandos de Git bash que se usan con más frecuencia cuando se trabaja con GitHub.
 author: eross-msft
 ms.author: lizross
 ms.date: 05/06/2019
-ms.openlocfilehash: 210acaf2b7911892bcfd81b6bbe1975f141308a1
-ms.sourcegitcommit: 7e54a1bcd31cd2c6b18fd1f21b03f5cfb6165bf3
+ms.openlocfilehash: 4ce5d4d8ce382e9ba421c20595715ec473cca241
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65461688"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70864998"
 ---
 # <a name="common-git-bash-commands"></a>Comandos comunes de Git Bash
 
-Estos son algunos de los comandos más usados en Git Bash, en función de cuándo se va a utilizar en la creación de contenido y el proceso de edición.
+Estos son algunos de los comandos más usados en Git Bash, en función de cuándo los usará en el proceso de creación y edición de contenido.
 
-## <a name="master-branch-related"></a>Patrón relacionadas con la rama
+## <a name="master-branch-related"></a>Principales relacionadas con la rama
 
-Siempre debe utilizar a master como base para cualquier nueva rama.
+Siempre debe usar Master como base para cualquier rama nueva.
 
 | Comando | Descripción |
 |---------|-------------|
-| `git checkout master` | Cambiar al patrón de cualquier otra rama |
-| `git pull upstream master` | Actualice su copia local del maestro desde el repositorio de producción |
+| `git checkout master` | Cambiar a la maestra desde cualquier otra rama |
+| `git pull upstream master` | Actualización de la copia local del maestro desde el repositorio de producción |
 
-## <a name="branch-related"></a>Relacionadas con la rama
+## <a name="branch-related"></a>Relacionado con la rama
 
 | Comando | Descripción |
 |---------|-------------|
 | `git branch` | Ver las ramas existentes |
 | `git checkout -B <name-of-branch>` | Crear una nueva rama |
-| `git checkout <name-of-branch>` | Cambiar a otra bifurcación |
-| `git status` | Compruebe lo que está ocurriendo en su rama |
+| `git checkout <name-of-branch>` | Cambiar a otra rama |
+| `git status` | Comprobar lo que está ocurriendo en la rama |
 | `git branch -D <name-of-branch>` | Eliminar una rama existente (asegurándose de que no está en ella) |
 
-## <a name="check-in-related-done-as-a-group-in-order"></a>Verificación en relacionadas (realiza como un grupo, en orden)
+## <a name="check-in-related-done-as-a-group-in-order"></a>Protección relacionada (se realiza como un grupo, en orden)
 
 | Comando | Descripción |
 |---------|-------------|
-| `git add --all` | Después de guardar su trabajo, puede agregarlo a una rama |
-| `git commit -m “public comment, including quotes”` | Confirme los cambios en la rama |
-| `git pull upstream master` | Actualice su copia local del maestro desde el repositorio de producción |
-| `git push origin <name-of-branch>` | Insertar en la versión remota de la rama local |
+| `git add --all` | Después de guardar el trabajo, agréguelo a una rama |
+| `git commit -m “public comment, including quotes”` | Confirmar los cambios en la rama |
+| `git pull upstream master` | Actualización de la copia local del maestro desde el repositorio de producción |
+| `git push origin <name-of-branch>` | Inserte la versión remota de la rama local |

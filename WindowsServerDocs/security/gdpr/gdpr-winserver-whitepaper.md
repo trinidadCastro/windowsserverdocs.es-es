@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/25/2017
 ms.author: nirb
 author: nirb-ms
-ms.openlocfilehash: f196be152e339b229c4c476f73a2d4b0e7a644d5
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 506cd5cb44d93c9d7d221917505f76a2c5625baa
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69980313"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870555"
 ---
 # <a name="beginning-your-general-data-protection-regulation-gdpr-journey-for-windows-server"></a>Inicio del viaje de Reglamento general de protección de datos (RGPD) para Windows Server 
 
@@ -48,7 +48,7 @@ Como parte de tu esfuerzo por cumplir con la GDPR, debes comprender de qué mane
 
 La GDPR considera que los datos personales son cualquier información relacionada con una persona física identificada o identificable. Eso puede incluir tanto identificación directa (por ejemplo, la razón social) como la identificación indirecta (por ejemplo, información específica que hace que resulte evidente que es a ti a quien se refieren los datos). La GDPR también deja claro que el concepto de datos personales incluye identificadores en línea (por ejemplo, direcciones IP, id. de dispositivos móviles) y datos de ubicación.
 
-La GDPR presenta definiciones específicas de datos genéticos (por ejemplo, la secuencia genética de una persona) y datos biométricos. Los datos genéticos y biométricos junto con otras subcategorías de datos personales (datos personales que revelan el origen étnico o racial, las opiniones políticas, las convicciones religiosas o filosóficas o la afiliación sindical: datos relativos a la salud; o datos relacionados con la vida sexual de la persona o la orientación sexual) se tratan como datos personales confidenciales según la GDPR. Los datos personales confidenciales requieren protecciones mejoradas y suelen requerir el consentimiento explícito de la persona de la que se van a procesar estos datos.
+RGPD introduce definiciones específicas para datos genéticos (como, por ejemplo, una secuencia de genes de un individuo) y datos biométricos. Datos genéticos y datos biométricos junto con otras subcategorías de datos personales (datos personales que revelan el origen racial o étnico, opiniones políticas, creencias religiosas o filosóficas o pertenencia a la Unión comercial: datos relativos al mantenimiento; o datos relativos a la vida sexual o la orientación sexual de la persona se trata como datos personales confidenciales en RGPD. Los datos personales confidenciales ofrecen protecciones mejoradas y, por lo general, requieren el consentimiento explícito de un individuo en el que se van a procesar estos datos.
 
 ### <a name="examples-of-info-relating-to-an-identified-or-identifiable-natural-person-data-subject"></a>Ejemplos de información relacionada con una persona natural identificada o identificable (interesado)
 En esta lista se proporcionan ejemplos de varios tipos de información que se regularán a través de GDPR. No se trata de una lista exhaustiva.
@@ -85,7 +85,7 @@ Para cada uno de los pasos, hemos descrito herramientas de ejemplo, recursos y c
 ## <a name="windows-server-security-and-privacy"></a>Seguridad y privacidad de Windows Server
 RGPD requiere la implementación de las medidas de seguridad técnicas y organizativas adecuadas para proteger los datos personales y los sistemas de procesamiento. En el contexto del RGPD, los entornos de servidores físicos y virtuales pueden procesar potencialmente datos personales y confidenciales. El procesamiento puede significar cualquier operación o conjunto de operaciones, como la recopilación, el almacenamiento y la recuperación de datos.
 
-La capacidad de cumplir este requisito y de implementar las medidas de seguridad técnicas adecuadas debe reflejar las amenazas a las que se enfrentan en el entorno de ti cada vez más hostil. El panorama actual de las amenazas de seguridad es el de unas amenazas agresivas y tenaces. En años anteriores, los atacantes malintencionados se centraban principalmente en obtener el reconocimiento de la comunidad a través de sus ataques la emoción que resulta de desconectar un sistema temporalmente. Desde entonces, la intención del atacante ha pasado a ser ganar dinero, por ejemplo, la retención de dispositivos y datos hasta que el propietario pague el rescate solicitado.
+La capacidad de cumplir este requisito y de implementar las medidas de seguridad técnicas adecuadas debe reflejar las amenazas a las que se enfrentan en el entorno de ti cada vez más hostil. El panorama de amenazas de seguridad de hoy en día es una de las amenazas agresivas y Tenacious. En años anteriores, los atacantes malintencionados se centraban principalmente en obtener el reconocimiento de la comunidad a través de sus ataques la emoción que resulta de desconectar un sistema temporalmente. Desde entonces, el motivos del atacante ha desplazado hacia el dinero, incluidos los dispositivos de retención y los Hostage de datos hasta que el propietario paga el Ransom solicitado.
 
 Los ataques modernos se centran cada vez más en el robo de propiedad intelectual a gran escala, la degradación de los sistemas dirigidos, que se pueden traducir en pérdidas financieras y, ahora, incluso el ciberterrorismo, que amenaza la seguridad de personas, empresas e intereses nacionales en todo el mundo. Estos atacantes suelen ser individuos con una alta formación y expertos en seguridad, algunos de los cuales están contratados por Estados nación con grandes presupuestos y recursos humanos aparentemente ilimitados. Estos tipos de amenaza requieren un enfoque que pueda hacer frente a este desafío.
 
@@ -139,7 +139,7 @@ El chip incluye varios mecanismos de seguridad física que hacen que sea resiste
 
 -   Generar, almacenar y limitar el uso de claves criptográficas.
 
--   Usar la tecnología del TPM para la autenticación de dispositivos de plataforma mediante el uso de la clave RSA exclusiva del TPM, que se grabará en sí misma.
+-   Use la tecnología TPM para la autenticación de dispositivos de plataforma mediante la clave RSA única del TPM, que se graba en sí misma.
 
 -   Garantizar la integridad de la plataforma llevando y almacenando medidas de seguridad.
 
@@ -187,7 +187,7 @@ Imagínese este escenario si se robaron las credenciales del administrador de DN
 
 Además, muchas organizaciones usan la solución de [contraseña de administrador local gratuita (laps)](http://aka.ms/laps) como un mecanismo de administración JIT sencillo pero eficaz para sus sistemas de servidor y cliente. La capacidad de LAPS proporciona la administración de contraseñas de cuentas locales de equipos Unidos a un dominio. Las contraseñas se almacenan en Active Directory (AD) y se protegen mediante y Access Control lista (ACL), por lo que solo los usuarios válidos pueden leerla o solicitar su restablecimiento.
 
-Como se indica en la guía de mitigación de robo de credenciales de [Windows](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54095), 
+Como se indica en la [Guía de mitigación de robo de credenciales de Windows](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54095), 
 
 > "_las herramientas y las técnicas que los delincuentes usan para llevar a cabo el robo de credenciales y los ataques de reutilización mejoran, los atacantes malintencionados están encontrando más fácilmente alcanzar sus objetivos. El robo de credenciales suele basarse en prácticas operativas o en la exposición de credenciales de usuario, de modo que las mitigaciones eficaces requieren un enfoque holístico que aborda personas, procesos y tecnología. Además, estos ataques se basan en el ataque de robo de credenciales después de poner en peligro un sistema para expandir o conservar el acceso, por lo que las organizaciones deben contener infracciones rápidamente mediante la implementación de estrategias que impidan que los atacantes se muevan libremente y no se detecten en una red en peligro._ "
 
@@ -227,7 +227,7 @@ Con Credential Guard remoto de Windows Defender, Windows Server 2016 implementa 
 
 - Se requiere la aplicación de Windows clásica Escritorio remoto. La aplicación de Plataforma universal de Windows de Escritorio remoto no es compatible con Credential Guard remoto de Windows Defender.
 
-Puede habilitar Credential Guard remoto de Windows Defender mediante una configuración del registro en el servidor de Escritorio remoto y directiva de grupo o un parámetro Conexión a Escritorio remoto en el cliente de Escritorio remoto. Para obtener más información sobre cómo habilitar la protección de credenciales remotas de Windows Defender, consulte protección de credenciales de [escritorio remoto con protección de credenciales remotas de Windows Defender](https://docs.microsoft.com/windows/access-protection/remote-credential-guard). Al igual que con la protección de credenciales de Windows Defender, puede usar Credential Guard remoto de Windows Defender para ayudar a proteger las identidades con privilegios en Windows Server 2016.
+Puede habilitar Credential Guard remoto de Windows Defender mediante una configuración del registro en el servidor de Escritorio remoto y directiva de grupo o un parámetro Conexión a Escritorio remoto en el cliente de Escritorio remoto. Para obtener más información sobre cómo habilitar la protección de credenciales remotas de Windows Defender, consulte [protección de credenciales de escritorio remoto con protección de credenciales remotas de Windows Defender](https://docs.microsoft.com/windows/access-protection/remote-credential-guard). Al igual que con la protección de credenciales de Windows Defender, puede usar Credential Guard remoto de Windows Defender para ayudar a proteger las identidades con privilegios en Windows Server 2016.
 
 ### <a name="secure-the-operating-system-to-run-your-apps-and-infrastructure"></a>Protección del sistema operativo para ejecutar las aplicaciones y la infraestructura
 La prevención de amenazas de Cyber también requiere la búsqueda y el bloqueo de malware y ataques que buscan obtener control mediante la reversión de las prácticas operativas estándar de la infraestructura. Si los atacantes pueden obtener un sistema operativo o una aplicación para que se ejecuten de manera no predeterminada y no viable, es probable que utilicen ese sistema para realizar acciones malintencionadas. Windows Server 2016 proporciona capas de protección que bloquean a los atacantes externos que ejecutan software malintencionado o vulnerabilidades de seguridad. El sistema operativo toma un rol activo en la protección de la infraestructura y las aplicaciones al avisar a los administradores de la actividad que indica que se ha infringido el sistema.
@@ -259,7 +259,7 @@ AV de Windows Defender es una solución antimalware integrada que ofrece adminis
 
 - Los **sensores globales extensivos** ayudan a mantener el AV de Windows Defender actualizado y a reconocer incluso el malware más reciente. Esto se logra de dos maneras: mediante la recopilación de los datos de contexto local enriquecido de extremos y analizando los datos de forma centralizada.
 
-- La **prueba** de alteración ayuda a proteger el antivirus de Windows defender contra ataques de malware. Por ejemplo, Windows Defender AV usa procesos protegidos, que evitan que los procesos que no son de confianza intenten alterar los componentes de AV de Windows Defender, las claves del registro, etc.
+- La **prueba de alteración** ayuda a proteger el antivirus de Windows defender contra ataques de malware. Por ejemplo, Windows Defender AV usa procesos protegidos, que evitan que los procesos que no son de confianza intenten alterar los componentes de AV de Windows Defender, las claves del registro, etc.
 
 - **Las características de nivel empresarial** proporcionan a los profesionales de ti las herramientas y las opciones de configuración necesarias para que Windows Defender AV sea una solución antimalware de clase empresarial.
 
@@ -334,7 +334,7 @@ Entre las principales ventajas de ATP de Windows Defender se encuentran las sigu
 
 - **Eficacia de Microsoft Graph.** Aprovecha el gráfico de seguridad de Microsoft Intelligence para integrar la detección y la exploración con la suscripción de ATP de Office 365, para realizar un seguimiento de los ataques y responder a ellos.
 
-Lee más información en [What’s new in the Windows Defender ATP Creators Update preview](https://blogs.microsoft.com/microsoftsecure/2017/03/13/whats-new-in-the-windows-defender-atp-creators-update-preview/).
+Obtenga más información en [novedades de la versión preliminar de Windows Defender ATP Creators Update](https://blogs.microsoft.com/microsoftsecure/2017/03/13/whats-new-in-the-windows-defender-atp-creators-update-preview/).
 
 ATA es un producto local que ayuda a detectar el riesgo de identidad en una organización. ATA puede capturar y analizar el tráfico de red para la autenticación, autorización y protocolos de recopilación de información (como Kerberos, DNS, RPC, NTLM y otros protocolos). ATA usa estos datos para crear un perfil de comportamiento sobre los usuarios y otras entidades de una red para que pueda detectar anomalías y patrones de ataque conocidos. En la tabla siguiente se enumeran los tipos de ataque detectados por ATA.
 
@@ -362,7 +362,7 @@ Puede usar ATA para ayudar a detectar atacantes que intenten poner en peligro la
 - **Seguridad y garantía:** https://docs.microsoft.com/windows-server/security/security-and-assurance
 
 ## <a name="disclaimer"></a>Declinación de responsabilidades
-Este artículo es un comentario sobre la GDPR, como la interpreta Microsoft, desde la fecha de publicación. Hemos dedicado mucho tiempo a la GDPR y creemos que hemos tenido muy en cuenta su propósito y significado. Pero la aplicación de GDPR se refiere a hechos muy concretos y no todos los aspectos y las interpretaciones de la GDPR están bien establecidos.
+Este artículo es un comentario sobre la GDPR, como la interpreta Microsoft, desde la fecha de publicación. Hemos dedicado mucho tiempo a RGPD y me gustaría pensar en su intención y el significado. Pero la aplicación de GDPR se refiere a hechos muy concretos y no todos los aspectos y las interpretaciones de la GDPR están bien establecidos.
 
 Como resultado, este artículo se proporciona solo con fines informativos y no se debería usar como asesoramiento legal o para determinar la manera en que la GDPR puede aplicarse para ti y tu organización. Te animamos a trabajar con un profesional con cualificación legal para hablar de la GDPR, de cómo se aplica de manera específica a tu organización y de la mejor manera para garantizar el cumplimiento.
 

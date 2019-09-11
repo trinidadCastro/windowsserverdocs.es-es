@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: cdad5f0cc3b0e49ae46e975e3acc2c48a18e5f70
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: a0d6d263b344cde412ee4dd3caa80305742d56e7
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "63722882"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866597"
 ---
 # <a name="detecting-bottlenecks-in-a-virtualized-environment"></a>Detección de cuellos de botella en un entorno virtualizado
 
@@ -94,9 +94,9 @@ Puede usar los siguientes contadores de rendimiento de la máquina virtual:
 
 -   Adaptador de Virtual Network de Hyper-V (*GUID&lt;&gt;de nombre de máquina virtual*)\\bytes por segundo
 
-Si el contador de bytes de **NIC/s físicos** es mayor o igual que el 90% de la capacidad, debe agregar adaptadores de red adicionales, migrar máquinas virtuales a otro host y configurar QoS de red.
+Si el contador de **bytes de NIC/s físicos** es mayor o igual que el 90% de la capacidad, debe agregar adaptadores de red adicionales, migrar máquinas virtuales a otro host y configurar QoS de red.
 
-Si el contador de bytes de **adaptador de Virtual Network de Hyper-V** es mayor o igual que 250 Mbps, debe agregar adaptadores de red agrupados adicionales en la máquina virtual, habilitar vRSS y usar SR-IOV.
+Si el contador de **bytes de adaptador de Virtual Network de Hyper-V** es mayor o igual que 250 Mbps, debe agregar adaptadores de red agrupados adicionales en la máquina virtual, habilitar vRSS y usar SR-IOV.
 
 Si las cargas de trabajo no pueden cumplir su latencia de red, habilite SR-IOV para presentar recursos de adaptador de red físico a la máquina virtual.
 

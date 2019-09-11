@@ -1,6 +1,6 @@
 ---
 title: Configurar una estación
-description: Obtenga información sobre cómo configurar un una estación de MultiPoint Services
+description: Obtenga información sobre cómo configurar una estación de Multipoint Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,26 +13,26 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 2bba32f27ae01052a693d78f152d4487a04bd9bd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 043b0d8dba844f40569a854a4f4f2a2efb38a870
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880686"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871613"
 ---
 # <a name="set-up-a-station"></a>Configurar una estación
 Una *estación* de MultiPoint Services consta normalmente de un *concentrador de estaciones*, mouse, teclado y monitor de vídeo. En este tema, se describe cómo conectar los dispositivos de hardware al concentrador de estaciones para crear una estación de MultiPoint Services.  
   
 El concentrador de estaciones es un dispositivo de hardware que conecta dispositivos periféricos a un equipo en un sistema MultiPoint Services. MultiPoint Services admite dos tipos de concentradores de estación:  
   
--   **Concentrador USB:** Un concentrador USB multipuerto genérico expansión que cumpla con las especificaciones de bus serie universal 2.0 o posterior. Estos concentradores normalmente tienen dos, cuatro o más puertos USB que permiten que estén conectados varios dispositivos USB a un único puerto USB en el equipo. Concentradores USB son normalmente dispositivos independientes que pueden estar con tecnología o alimentado por bus externamente. Cuando se use como un concentrador de estaciones con MultiPoint Services, le recomendamos que use un concentrador con cuatro puertos o más.  
+-   **Concentrador USB:** Un concentrador de expansión USB multipuerto genérico que cumple con las especificaciones de bus serie universal 2,0 o posterior. Estos concentradores normalmente tienen dos, cuatro o más puertos USB que permiten que estén conectados varios dispositivos USB a un único puerto USB en el equipo. Los concentradores USB son normalmente dispositivos independientes que pueden estar alimentados externamente o en buses. Cuando se use como un concentrador de estaciones con MultiPoint Services, le recomendamos que use un concentrador con cuatro puertos o más.  
   
     > [!IMPORTANT]  
     > Si tiene previsto conectar al concentrador dispositivos USB que no son un teclado y un mouse, le recomendamos que use un concentrador alimentado de forma externa para mejorar el rendimiento.  
   
--   **Concentrador multifunción:** Un concentrador de expansión que se conecta al equipo mediante un puerto USB y permite la conexión de una variedad de dispositivos que no sean USB al concentrador, incluido a un monitor de vídeo. Concentradores multifunción generados por los fabricantes de hardware específico y pueden requerir la instalación de un controlador específico del dispositivo.  
+-   **Concentrador multifunción:** Un concentrador de expansión que se conecta al equipo a través de un puerto USB y permite la conexión de una variedad de dispositivos que no sean USB al concentrador, incluido un monitor de vídeo. Los concentradores multifunción los generan los fabricantes de hardware específicos y pueden requerir la instalación de un controlador específico del dispositivo.  
   
-Si quiere agregar una estación a su sistema MultiPoint Services, primero debe asegurarse de que tiene suficientes puertos de conexión disponibles para el hardware de la estación que quiera usar. Además, debe proteger el número apropiado de *licencias de acceso de cliente (CAL)* para su sistema MultiPoint Services.  
+Si quiere agregar una estación a su sistema MultiPoint Services, primero debe asegurarse de que tiene suficientes puertos de conexión disponibles para el hardware de la estación que quiera usar. Además, debe proteger el número adecuado de licencias de *acceso de cliente (cal)* para el sistema Multipoint Services.  
   
 ## <a name="setting-up-station-hardware"></a>Configuración del hardware de la estación  
 Los procedimientos de esta sección describen cómo conectar el hardware de la estación de MultiPoint Services a los distintos tipos de concentradores de estaciones.  
@@ -57,7 +57,7 @@ Los procedimientos de esta sección describen cómo conectar el hardware de la e
   
 6.  Encienda el equipo.  
   
-7.  Se inicia MultiPoint Services. Siga las instrucciones que aparecen en el nuevo monitor de vídeo de la estación para asociar los dispositivos a la nueva estación.  
+7.  Se inicia MultiPoint Services. Siga las instrucciones que aparecen en el monitor de vídeo de la nueva estación para asociar los dispositivos a la nueva estación.  
   
 ### <a name="to-set-up-a-station-with-a-multifunction-hub"></a>Para configurar una estación con un concentrador multifunción  
   
@@ -79,10 +79,10 @@ Los procedimientos de esta sección describen cómo conectar el hardware de la e
   
 6.  Encienda el equipo.  
   
-7.  Se inicia MultiPoint Services. Si se le pide, siga las instrucciones que aparecen en el nuevo monitor de vídeo de la estación para *asociar* los dispositivos a la nueva estación.  
+7.  Se inicia MultiPoint Services. Si se le solicita, siga las instrucciones que aparecen en el monitor de vídeo de la nueva estación para *asociar* los dispositivos a la nueva estación.  
   
 ## <a name="see-also"></a>Vea también  
 [Finalizar una sesión de usuario](End-a-User-Session.md)  
 [Reiniciar o apagar](Restart-or-Shut-Down.md)  
-[Administrar Hardware de la estación](Manage-Station-Hardware.md)  
+[Administrar hardware de la estación](Manage-Station-Hardware.md)  
 [Trabajar con dispositivos USB](Work-with-USB-Devices.md)

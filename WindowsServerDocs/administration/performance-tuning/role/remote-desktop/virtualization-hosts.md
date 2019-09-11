@@ -1,23 +1,23 @@
 ---
-title: Hosts de virtualización de escritorio remoto de optimización del rendimiento
-description: Optimizar el rendimiento de Hosts de virtualización de escritorio remoto
+title: Optimización del rendimiento Escritorio remoto hosts de virtualización
+description: Optimización del rendimiento para hosts de virtualización de Escritorio remoto
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: da528a742a7f49513c50b22a25970d65b9e1885f
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 24e3243d4e9791c8941729d396e0a96cd8b11a7d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811374"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866438"
 ---
-# <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Hosts de virtualización de escritorio remoto de optimización del rendimiento
+# <a name="performance-tuning-remote-desktop-virtualization-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de virtualización
 
 
-Host de virtualización de escritorio remoto (Host de virtualización de escritorio remoto) es un servicio de rol que admite escenarios de infraestructura de Escritorio Virtual (VDI) y permite que varios usuarios simultáneos ejecutar aplicaciones basadas en Windows en máquinas virtuales que se hospedan en un servidor que ejecuta E Hyper-V de Windows Server 2016.
+Host de virtualización de Escritorio remoto (host de virtualización de escritorio remoto) es un servicio de rol que admite escenarios de infraestructura de escritorio virtual (VDI) y permite que varios usuarios simultáneos ejecuten aplicaciones basadas en Windows en máquinas virtuales que se hospedan en un servidor que ejecuta Windows Server 2016 e Hyper-V.
 
 Windows Server 2016 admite dos tipos de escritorios virtuales, escritorios virtuales personales y escritorios virtuales agrupados.
 
@@ -32,198 +32,198 @@ Windows Server 2016 admite dos tipos de escritorios virtuales, escritorios virtu
 
 ### <a name="storage"></a>Almacenamiento
 
-El almacenamiento es el cuello de botella de rendimiento más probable, y es importante cambiar el tamaño de su almacenamiento para tratar la carga de E/S generada por los cambios de estado de máquina virtual. Si una prueba piloto o simulación no es posible, es una buena directriz aprovisionar un cilindro de discos para cuatro máquinas virtuales activas. Utilice las configuraciones de disco que tienen un rendimiento de escritura buena (tales como RAID 1 + 0).
+El almacenamiento es el cuello de botella de rendimiento más probable y es importante ajustar el tamaño del almacenamiento para administrar correctamente la carga de e/s generada por los cambios de estado de la máquina virtual. Si una prueba piloto o simulación no es factible, una buena directriz es aprovisionar un eje de disco para cuatro máquinas virtuales activas. Use configuraciones de disco que tengan un buen rendimiento de escritura (por ejemplo, RAID 1 + 0).
 
-Cuando sea adecuado, use la desduplicación de disco y el almacenamiento en caché para reducir la carga de lectura del disco y habilitar la solución de almacenamiento acelerar el rendimiento al almacenar en caché una parte importante de la imagen.
+Cuando sea necesario, use la desduplicación de disco y el almacenamiento en caché para reducir la carga de lectura del disco y habilitar la solución de almacenamiento para acelerar el rendimiento mediante el almacenamiento en caché de una parte importante de la imagen.
 
-### <a name="data-deduplication-and-vdi"></a>VDI y desduplicación de datos
+### <a name="data-deduplication-and-vdi"></a>Desduplicación de datos e VDI
 
-Se introdujo en Windows Server 2012 R2, desduplicación de datos admite la optimización de archivos abiertos. Para poder usar las máquinas virtuales que se ejecutan en un volumen desduplicado, los archivos de máquina virtual deben almacenarse en un host desde el host de Hyper-V independiente. Si están ejecutando Hyper-V y la desduplicación en el mismo equipo, las dos características se competir por los recursos del sistema y afectar negativamente al rendimiento general.
+En Windows Server 2012 R2, la desduplicación de datos admite la optimización de archivos abiertos. Para poder usar máquinas virtuales que se ejecutan en un volumen desduplicado, los archivos de la máquina virtual deben almacenarse en un host independiente del host de Hyper-V. Si Hyper-V y la desduplicación se ejecutan en el mismo equipo, las dos características compiten por los recursos del sistema y afectan negativamente al rendimiento general.
 
-El volumen también debe configurarse para usar el tipo de optimización de la desduplicación de "infraestructura de Escritorio Virtual (VDI)". Puede configurar mediante el administrador del servidor (**File and Storage Services**  - &gt; **volúmenes**  - &gt; **deconfiguracióndedesduplicación**) o bien, mediante el siguiente comando de Windows PowerShell comando:
+El volumen también debe estar configurado para usar el tipo de optimización de desduplicación de la infraestructura de escritorio virtual (VDI). Puede configurarlo mediante administrador del servidor ( **configuración de desduplicación**de **volúmenes**  - &gt; de - &gt; **servicios de archivos y almacenamiento** ) o mediante el siguiente comando de Windows PowerShell:
 
 ``` syntax
 Enable-DedupVolume <volume> -UsageType HyperV
 ```
 
 > [!NOTE]
-> Optimización de la desduplicación de datos de archivos abiertos solo se admite para escenarios VDI con Hyper-V utiliza almacenamiento remoto sobre SMB 3.0.
+> La optimización de desduplicación de datos de archivos abiertos solo se admite en escenarios de VDI con Hyper-V mediante el almacenamiento remoto a través de SMB 3,0.
 
 ### <a name="memory"></a>Memoria
 
-Uso de memoria de servidor se controla mediante los tres factores principales:
+El uso de memoria del servidor está controlado por tres factores principales:
 
 -   Sobrecarga del sistema operativo
 
--   Servicio de Hyper-V sobrecarga por máquina virtual
+-   Sobrecarga del servicio Hyper-V por máquina virtual
 
 -   Memoria asignada a cada máquina virtual
 
-Cargas de trabajo trabajador del conocimiento típica, invitado virtual máquinas x86 ejecutando Windows 8 o Windows 8.1 se indicarán ~ 512 MB de memoria como la línea base. Sin embargo, la memoria dinámica probablemente aumentará la memoria de la máquina virtual de invitado a alrededor de 800 MB, dependiendo de la carga de trabajo. Para x64, vemos acerca de cómo iniciar de 800 MB, si se aumenta a 1024 MB.
+En el caso de una carga de trabajo típica del trabajador de conocimientos, las máquinas virtuales invitadas que ejecutan la ventana 8 o Windows 8.1 de x86 deben tener ~ 512 MB de memoria como línea de base. Sin embargo, es probable que Memoria dinámica aumente la memoria de la máquina virtual invitada a aproximadamente 800 MB, en función de la carga de trabajo. En el caso de x64, vemos aproximadamente 800 MB a partir de, aumentando hasta 1024 MB.
 
-Por lo tanto, es importante proporcionar suficiente memoria de servidor para satisfacer la memoria requerida por el número esperado de las máquinas virtuales invitadas, además de permitir una cantidad suficiente de memoria para el servidor.
+Por lo tanto, es importante proporcionar suficiente memoria del servidor para satisfacer la memoria necesaria para el número esperado de máquinas virtuales invitadas, además de permitir una cantidad de memoria suficiente para el servidor.
 
 ### <a name="cpu"></a>CPU
 
-Al planear la capacidad del servidor para un servidor Host de virtualización de escritorio remoto, el número de máquinas virtuales por núcleo físico dependerá de la naturaleza de la carga de trabajo. Como punto de partida, es razonable planear 12 máquinas virtuales por núcleo físico y, a continuación, ejecute los escenarios adecuados para validar el rendimiento y la densidad. Una mayor densidad puede ser factible según las particularidades de la carga de trabajo.
+Al planear la capacidad del servidor para un servidor host de virtualización de escritorio remoto, el número de máquinas virtuales por núcleo físico dependerá de la naturaleza de la carga de trabajo. Como punto de partida, es razonable planificar 12 máquinas virtuales por núcleo físico y, a continuación, ejecutar los escenarios adecuados para validar el rendimiento y la densidad. Se puede lograr una mayor densidad en función de los detalles de la carga de trabajo.
 
-Se recomienda habilitar hyper-threading, pero asegúrese de calcular la proporción de la suscripción excesiva según el número de núcleos físicos y no el número de procesadores lógicos. Esto garantiza que el nivel de rendimiento en una CPU por esperado.
+Se recomienda habilitar Hyper-Threading, pero asegúrese de calcular la proporción de sobresuscripción en función del número de núcleos físicos y no del número de procesadores lógicos. Esto garantiza el nivel de rendimiento esperado en cada CPU.
 
 ### <a name="virtual-gpu"></a>GPU virtual
 
-Microsoft RemoteFX para el Host de virtualización de escritorio remoto ofrece una experiencia gráfica enriquecida para codificar Virtual Desktop Infrastructure (VDI) a través del host remoto, una representación de capturar y codificar, muy eficaz basada en GPU, limitación basada en cliente actividad y una GPU virtual habilitada para DirectX. RemoteFX para el Host de virtualización de escritorio remoto actualiza la GPU virtual desde DirectX9 a DirectX11. También se mejora la experiencia del usuario admitiendo varios monitores con resoluciones más altas.
+Microsoft RemoteFX para el host de virtualización de escritorio remoto ofrece una experiencia de gráficos enriquecida para infraestructura de escritorio virtual (VDI) a través de la comunicación remota en el host, una canalización de representación-captura-codificación, una codificación muy eficaz basada en GPU, una limitación basada en el cliente. actividad y una GPU virtual habilitada para DirectX. RemoteFX para host de virtualización de Escritorio remoto actualiza la GPU virtual de DirectX9 a DirectX11. También mejora la experiencia del usuario al admitir más monitores con resoluciones más altas.
 
-La experiencia de RemoteFX DirectX11 está disponible sin un hardware GPU, a través de un controlador de software emulados. Aunque este software GPU proporciona una buena experiencia, la unidad de procesamiento de gráficos virtuales RemoteFX (VGPU) agrega una experiencia de aceleración de hardware a escritorios virtuales.
+La experiencia DirectX11 de RemoteFX está disponible sin una GPU de hardware, a través de un controlador emulado mediante software. Aunque esta GPU de software proporciona una buena experiencia, la unidad de procesamiento de gráficos virtuales (VGPU) de RemoteFX agrega una experiencia acelerada de hardware a los escritorios virtuales.
 
-Para aprovechar las ventajas de la experiencia de la VGPU de RemoteFX en un servidor que ejecuta Windows Server 2016, necesita un controlador de GPU (como DirectX11.1 o WDDM 1.2) en el servidor host. Para obtener más información acerca de las ofertas de GPU para usar con RemoteFX para el Host de virtualización de escritorio remoto, póngase en contacto con su proveedor de GPU.
+Para aprovechar la experiencia de VGPU de RemoteFX en un servidor que ejecuta Windows Server 2016, necesita un controlador de GPU (como DirectX 11.1 o WDDM 1,2) en el servidor host. Para obtener más información sobre las ofertas de GPU que se usan con RemoteFX para host de virtualización de Escritorio remoto, póngase en contacto con el proveedor de GPU.
 
-Si usa la GPU virtual RemoteFX en la implementación de VDI, la capacidad de implementación varían en función de los escenarios de uso y configuración de hardware. Al planear la implementación, tenga en cuenta lo siguiente:
+Si usa la GPU virtual de RemoteFX en la implementación de VDI, la capacidad de implementación variará en función de los escenarios de uso y la configuración de hardware. Cuando planee la implementación, tenga en cuenta lo siguiente:
 
 -   Número de GPU en el sistema
 
--   Capacidad de memoria de vídeo en la GPU
+-   Capacidad de memoria de vídeo en las GPU
 
--   Recursos de procesador y el hardware del sistema
+-   Recursos de hardware y procesador del sistema
 
-### <a name="remotefx-server-system-memory"></a>Memoria del sistema de servidor de RemoteFX
+### <a name="remotefx-server-system-memory"></a>Memoria del sistema del servidor RemoteFX
 
-Para cada escritorio virtual habilitado con una GPU virtual, RemoteFX utiliza memoria del sistema en el sistema operativo invitado y en el servidor habilitadas para RemoteFX. El hipervisor garantiza la disponibilidad de memoria del sistema para un sistema operativo invitado. En el servidor, cada escritorio virtual virtual habilitadas para GPU debe anunciar su requisito de memoria del sistema para el hipervisor. Cuando se inicia el escritorio virtual virtual basados en GPU, el hipervisor reserva memoria adicional del sistema en el servidor habilitadas para RemoteFX para el escritorio virtual VGPU habilitado.
+Para cada escritorio virtual habilitado con una GPU virtual, RemoteFX usa la memoria del sistema en el sistema operativo invitado y en el servidor habilitado para RemoteFX. El hipervisor garantiza la disponibilidad de la memoria del sistema para un sistema operativo invitado. En el servidor, cada escritorio virtual habilitado para GPU virtual debe anunciar su requisito de memoria del sistema al hipervisor. Cuando el escritorio virtual habilitado para GPU virtual se está iniciando, el hipervisor reserva memoria adicional del sistema en el servidor habilitado para VGPU para el escritorio virtual habilitado para VGPU.
 
-El requisito de memoria para el servidor habilitadas para RemoteFX es dinámico, dado que la cantidad de memoria consumida en el servidor habilitadas para RemoteFX es depende del número de monitores que están asociados a los escritorios virtuales VGPU habilitado y la resolución máxima de los monitores.
+Los requisitos de memoria para el servidor habilitado para RemoteFX es dinámico porque la cantidad de memoria consumida en el servidor habilitado para RemoteFX depende del número de monitores asociados a los escritorios virtuales habilitados para VGPU y la resolución máxima de esos monitores.
 
-### <a name="remotefx-server-gpu-video-memory"></a>Servidor RemoteFX memoria de vídeo de GPU
+### <a name="remotefx-server-gpu-video-memory"></a>Memoria de vídeo GPU de servidor RemoteFX
 
-Cada escritorio virtual habilitadas para GPU virtual usa la memoria de vídeo en el hardware GPU en el servidor host para representar el escritorio. Además de representación, la memoria de vídeo está usando un códec para comprimir la pantalla representada. La cantidad de memoria necesaria se basa directamente en la cantidad de monitores que se aprovisionan en la máquina virtual.
+Cada escritorio virtual con GPU virtual habilitada usa la memoria de vídeo del hardware de la GPU en el servidor host para representar el escritorio. Además de la representación, un códec usa la memoria de vídeo para comprimir la pantalla representada. La cantidad de memoria necesaria se basa directamente en la cantidad de monitores que se aprovisionan en la máquina virtual.
 
-La memoria de vídeo que se ha reservado varía en función del número de monitores y la resolución de pantalla del sistema. Algunos usuarios pueden requerir una mayor resolución de pantalla para tareas específicas. Hay una mayor escalabilidad con la configuración de resolución inferior si todas las demás opciones permanezcan constantes.
+La memoria de vídeo que se reserva varía en función del número de monitores y la resolución de pantalla del sistema. Algunos usuarios pueden necesitar una resolución de pantalla más alta para tareas específicas. Existe una mayor escalabilidad con una configuración de resolución inferior si todas las demás configuraciones permanecen constantes.
 
-### <a name="remotefx-processor"></a>Procesador de RemoteFX
+### <a name="remotefx-processor"></a>Procesador RemoteFX
 
-El hipervisor programa el servidor habilitadas para RemoteFX y el virtuales escritorios virtuales basados en GPU en la CPU. A diferencia de la memoria del sistema, no hay información relacionada con recursos adicionales que se debe compartir con el hipervisor RemoteFX. Está relacionado con la CPU adicional que sobrecarga que RemoteFX incorpora en el escritorio virtual habilitadas para GPU virtual que ejecuta el controlador de GPU virtual y una pila de protocolo de escritorio remoto de modo de usuario.
+El hipervisor programa el servidor habilitado para RemoteFX y los escritorios virtuales habilitados para GPU virtual en la CPU. A diferencia de la memoria del sistema, no hay información relacionada con recursos adicionales que RemoteFX debe compartir con el hipervisor. La sobrecarga de CPU adicional que RemoteFX aporta al escritorio virtual con GPU virtual habilitada está relacionada con la ejecución del controlador de GPU virtual y una pila de Protocolo de escritorio remoto de modo de usuario.
 
-En el servidor habilitadas para RemoteFX, la sobrecarga aumenta, porque el sistema ejecuta un proceso adicional (rdvgm.exe) por un escritorio virtual virtual habilitadas para GPU. Este proceso usa el controlador de dispositivo de gráficos para ejecutar comandos en la GPU. El códec usa también la CPU para comprimir los datos de pantalla que deben enviarse al cliente.
+En el servidor habilitado para RemoteFX, se aumenta la sobrecarga, ya que el sistema ejecuta un proceso adicional (rdvgm. exe) por escritorio virtual habilitado para GPU virtual. Este proceso usa el controlador de dispositivo gráfico para ejecutar comandos en la GPU. El códec también usa las CPU para comprimir los datos de pantalla que deben enviarse de vuelta al cliente.
 
-Más procesadores virtuales significan una mejor experiencia de usuario. Se recomienda asignar al menos dos CPU virtuales por escritorio virtual virtual habilitadas para GPU. También se recomienda usar el x64 arquitectura para escritorios virtuales habilitadas para GPU virtuales porque el rendimiento en las máquinas virtuales es mejor en comparación con x86 de x64 máquinas virtuales.
+Un mayor número de procesadores virtuales supone una mejor experiencia de usuario. Se recomienda asignar al menos dos CPU virtuales por el escritorio virtual habilitado para GPU virtual. También se recomienda usar la arquitectura x64 para escritorios virtuales habilitados para GPU virtual porque el rendimiento de las máquinas virtuales x64 es mejor en comparación con las máquinas virtuales x86.
 
-### <a name="remotefx-gpu-processing-power"></a>Capacidad de procesamiento de RemoteFX GPU
+### <a name="remotefx-gpu-processing-power"></a>Potencia de procesamiento de GPU de RemoteFX
 
-Para cada escritorio virtual habilitadas para GPU virtual, hay un proceso de DirectX correspondiente que se ejecutan en el servidor habilitadas para RemoteFX. Este proceso reproduce todos los comandos de gráficos que recibe desde el escritorio virtual RemoteFX en la GPU físico. Para la GPU física, es equivalente a ejecutar simultáneamente varias aplicaciones de DirectX.
+Para cada escritorio virtual con GPU virtual habilitada, se ejecuta un proceso de DirectX correspondiente en el servidor habilitado para RemoteFX. Este proceso reproduce todos los comandos de gráficos que recibe del escritorio virtual de RemoteFX en la GPU física. En el caso de la GPU física, es equivalente a ejecutar simultáneamente varias aplicaciones de DirectX.
 
-Normalmente, los controladores y dispositivos de gráficos se ajustan para ejecutar algunas aplicaciones en el escritorio. RemoteFX ajusta las GPU que se usará de forma única. Para medir el funcionamiento de la GPU en un servidor RemoteFX, se han agregado los contadores de rendimiento para medir la respuesta de la GPU a las solicitudes de RemoteFX.
+Normalmente, los dispositivos y controladores de gráficos están optimizados para ejecutar algunas aplicaciones en el escritorio. RemoteFX expande las GPU que se usarán de forma única. Para medir el rendimiento de la GPU en un servidor RemoteFX, se han agregado contadores de rendimiento para medir la respuesta de GPU a las solicitudes de RemoteFX.
 
-Normalmente, cuando un recurso de la GPU está quedando sin recursos, lea y las operaciones de escritura para la toma GPU mucho tiempo en completarse. Mediante el uso de contadores de rendimiento, los administradores pueden adoptar medidas preventivas, lo que elimina la posibilidad de que los tiempos de inactividad para sus usuarios finales.
+Normalmente, cuando un recurso de GPU tiene pocos recursos, las operaciones de lectura y escritura en la GPU tardan mucho tiempo en completarse. Mediante el uso de contadores de rendimiento, los administradores pueden tomar medidas preventivas, lo que elimina la posibilidad de que se produzcan tiempos de inactividad para los usuarios finales.
 
-Los siguientes contadores de rendimiento están disponibles en el servidor de RemoteFX para medir el rendimiento de la GPU virtual:
+Los siguientes contadores de rendimiento están disponibles en el servidor RemoteFX para medir el rendimiento de la GPU virtual:
 
-**Gráficos de RemoteFX**
+**Gráficos RemoteFX**
 
--   **Marcos omitidos por segundo - insuficientes recursos del cliente** omite el número de fotogramas por segundo debido a insuficiente de recursos
+-   **Tramas omitidas/segundo: recursos de cliente insuficientes** Número de fotogramas omitidos por segundo debido a insuficientes recursos del cliente
 
--   **Razón de compresión de gráficos** proporción del número de bytes codificados en el número de bytes de entrada
+-   **Relación de compresión de gráficos** Relación del número de bytes codificados con el número de bytes de entrada
 
-**RemoteFX raíz administración de GPU**
+**Administración de GPU raíz de RemoteFX**
 
--   **Recursos: Los TdR en servidor GPU** número Total de veces que los TDR se agota el tiempo en la GPU en el servidor
+-   **Recursos TDRS en GPU** de servidor número total de veces que el TDR agotó el tiempo de espera en la GPU en el servidor
 
--   **Recursos: Máquinas virtuales que ejecutan RemoteFX** número Total de máquinas virtuales que tengan el adaptador de vídeo RemoteFX 3D instalado
+-   **Recursos Máquinas virtuales que ejecutan el número total de máquinas virtuales de RemoteFX** que tienen instalado el adaptador de vídeo RemoteFX 3D
 
--   **VRAM: MB disponible por GPU** cantidad de memoria de vídeo dedicada que no se está usando.
+-   **VRAM MB disponibles por cada** cantidad de memoria de vídeo dedicada que no se está usando
 
--   **VRAM: % Reservada por GPU** por ciento de memoria de vídeo dedicada que se ha reservado para RemoteFX
+-   **VRAM % Reservado por porcentaje** de GPU de memoria de vídeo dedicada que se ha reservado para RemoteFX
 
-**Software de RemoteFX**
+**Software RemoteFX**
 
--   **Tasa de captura de monitor** \[1-4\] muestra la tasa de captura de RemoteFX para monitores 1-4
+-   **Velocidad de captura para el monitor** \[1-4\] muestra la velocidad de captura de RemoteFX para monitores 1-4
 
--   **Razón de compresión** funcionalidades desusadas en Windows 8 y se sustituye por **razón de compresión de gráficos**
+-   **Razón de compresión** Desusado en Windows 8 y reemplazado por el **Índice de compresión de gráficos**
 
--   **Retrasa fotogramas/segundo** número de fotogramas por segundo que no se ha enviado datos de gráficos en un período de tiempo determinado
+-   **Tramas retrasadas/s** Número de fotogramas por segundo en los que no se enviaron datos de gráficos en un período de tiempo determinado
 
--   **Tiempo de respuesta GPU de captura** medir la latencia en la captura de RemoteFX (en microsegundos) para que completar las operaciones de GPU
+-   **Tiempo de respuesta de GPU de la captura** Latencia medida en la captura de RemoteFX (en microsegundos) para que se completen las operaciones de GPU
 
--   **Tiempo de respuesta GPU de representación** medir la latencia en la representación de RemoteFX (en microsegundos) para que completar las operaciones de GPU
+-   **Tiempo de respuesta de GPU desde Render** Latencia medida dentro de la representación de RemoteFX (en microsegundos) para que se completen las operaciones de GPU
 
--   **Bytes de salida** bytes de salida del número Total de RemoteFX
+-   **Bytes de salida** Número total de bytes de salida de RemoteFX
 
--   **Esperando los recuentos de cliente/seg.** funcionalidades desusadas en Windows 8 y se sustituye por **fotogramas omitidos por segundo - insuficientes recursos del cliente**
+-   **Esperando recuento de clientes/s** Desusado en Windows 8 y reemplazado por **fotogramas omitidos/segundo: recursos de cliente insuficientes**
 
-**Administración de la vGPU de RemoteFX**
+**Administración de vGPU de RemoteFX**
 
--   **Recursos: Local a las máquinas virtuales de los TdR** número Total de los TdR que se han producido en esta máquina virtual (de que el servidor que se propaga a las máquinas virtuales no se incluyen los TdR)
+-   **Recursos TDRS el número total de** TDRS de máquinas virtuales que se han producido en esta máquina virtual (TDRS que el servidor propagado a las máquinas virtuales no se incluyen)
 
--   **Recursos: Los TdR propagados servidor** número Total de los TdR que se produjo en el servidor y que se han propagado a la máquina virtual
+-   **Recursos TDRS propagado por** el número total de TDRS del servidor que se produjeron en el servidor y que se han propagado a la máquina virtual
 
-**Rendimiento de vGPU de RemoteFX máquinas virtuales**
+**Rendimiento de vGPU de máquina virtual de RemoteFX**
 
--   **Datos: Invoca presenta/seg.** número Total (en segundos) de operaciones está presentes para que se van a representar en el escritorio de la máquina virtual por segundo
+-   **Data La invocación presenta el** número total (en segundos) de las operaciones presentes en el escritorio de la máquina virtual por segundo.
 
--   **Datos: Presenta/seg. de salida** número Total de operaciones presentes enviados por la máquina virtual a la GPU del servidor por segundo
+-   **Data Saliente presenta/s** el número total de operaciones presentes enviadas por la máquina virtual a la GPU del servidor por segundo
 
--   **Datos: Bytes leídos/s** número Total de bytes leídos desde el servidor habilitadas para RemoteFX por segundo
+-   **Data Bytes de lectura/** s número total de bytes de lectura del servidor habilitado para RemoteFX por segundo
 
--   **Datos: Bytes/seg. de envío** número Total de bytes enviados en el servidor habilitadas para RemoteFX GPU por segundo
+-   **Data Bytes de envío/** s número total de bytes enviados a la GPU del servidor habilitado para RemoteFX por segundo
 
--   **DMA: Los búferes de comunicaciones promedio de latencia (s)** promedio de tiempo (en segundos) empleado en los búferes de comunicación
+-   **DMA Promedio de tiempo (en segundos) de** latencia de búferes de comunicación (s) en los búferes de comunicación
 
--   **DMA: Latencia de búfer DMA (s)** cantidad de tiempo (en segundos) desde el DMA se envía hasta que haya completado
+-   **DMA Tiempo (en segundos) de** latencia del búfer DMA (en segundos) desde el momento en que se envía el DMA hasta que se completa
 
--   **DMA: Longitud de cola** longitud de cola de DMA para un adaptador de vídeo RemoteFX 3D
+-   **DMA Longitud de** cola DMA de longitud de cola para un adaptador de vídeo RemoteFX 3D
 
--   **Recursos: Tiempos de espera TDR por GPU** tiempos de espera del recuento de TDR que se han producido por GPU en la máquina virtual
+-   **Recursos Tiempo de espera de TDR** por número de GPU de tiempo de espera de TDR que se han producido por GPU en la máquina virtual
 
--   **Recursos: Tiempos de espera TDR por el motor de GPU** del motor de tiempos de espera del recuento de TDR que se han producido por GPU en la máquina virtual
+-   **Recursos Tiempo de espera de TDR por** el número de tiempos de espera del motor de GPU por cada motor de GPU en la máquina virtual
 
-Además de los contadores de rendimiento de GPU de virtual RemoteFX, también puede medir el uso de GPU mediante el uso de Process Explorer, que muestra el uso de memoria de vídeo y el uso de GPU.
+Además de los contadores de rendimiento de la GPU virtual de RemoteFX, también puede medir el uso de la GPU mediante el explorador de procesos, que muestra el uso de la memoria de vídeo y la utilización de la GPU.
 
 ## <a name="performance-optimizations"></a>Optimizaciones de rendimiento
 
 ### <a name="dynamic-memory"></a>Memoria dinámica
 
-Memoria dinámica permite con mayor eficacia de uso de los recursos de memoria del servidor que ejecuta Hyper-V mediante Equilibrio de cómo se distribuye la memoria entre las máquinas virtuales en ejecución. Memoria se puede reasignar de manera dinámica entre las máquinas virtuales en respuesta a las cambiantes cargas de trabajo.
+Memoria dinámica permite el uso más eficaz de los recursos de memoria del servidor que ejecuta Hyper-V mediante el equilibrio de la distribución de la memoria entre las máquinas virtuales en ejecución. La memoria se puede reasignar dinámicamente entre máquinas virtuales en respuesta a sus cargas de trabajo variables.
 
-Memoria dinámica permite aumentar la densidad de la máquina virtual con los recursos que ya tiene sin sacrificar el rendimiento o escalabilidad. El resultado es un uso más eficaz de los recursos de hardware de servidor costoso, que se puede traducir a facilitar la administración y reducir los costos.
+Memoria dinámica le permite aumentar la densidad de las máquinas virtuales con los recursos que ya tiene sin sacrificar el rendimiento o la escalabilidad. El resultado es un uso más eficaz de los recursos de hardware de servidor caros, lo que puede traducirse en una administración más sencilla y reducir los costos.
 
-En sistemas operativos invitados que ejecutan Windows 8 y anteriormente con procesadores virtuales que abarcan varios procesadores lógicos, tenga en cuenta el equilibrio entre la ejecución con la memoria dinámica para ayudar a minimizar el uso de memoria y deshabilitar la memoria dinámica para mejorar el rendimiento de una aplicación que es consciente de topología de equipos. Este tipo de aplicación puede aprovechar la información de topología para decisiones de programación y la memoria asignación.
+En los sistemas operativos invitados que ejecutan Windows 8 y versiones posteriores con procesadores virtuales que abarcan varios procesadores lógicos, tenga en cuenta el equilibrio entre ejecutar con Memoria dinámica para minimizar el uso de memoria y deshabilitar Memoria dinámica para mejorar el rendimiento. de una aplicación que tenga en cuenta la topología del equipo. Este tipo de aplicación puede aprovechar la información de la topología para tomar decisiones sobre la programación y la asignación de memoria.
 
 ### <a name="tiered-storage"></a>Almacenamiento en capas
 
-Host de virtualización de escritorio remoto admite el almacenamiento en capas para grupos de escritorios virtuales. El equipo físico que se comparte entre todos los escritorios virtuales dentro de una colección puede usar una solución de almacenamiento de tamaño pequeño y de alto rendimiento, como una unidad reflejada de estado sólida (SSD). Los escritorios virtuales se pueden colocar en un almacenamiento menos costoso y tradicionales como RAID 1 + 0.
+El host de virtualización de escritorio remoto admite el almacenamiento en capas para los grupos de escritorios virtuales. El equipo físico compartido por todos los escritorios virtuales agrupados de una colección puede usar una solución de almacenamiento de tamaño pequeño y alto rendimiento, como una unidad de estado sólido (SSD) reflejada. Los escritorios virtuales agrupados se pueden colocar en un almacenamiento más económico y tradicional, como RAID 1 + 0.
 
-El equipo físico debe colocarse en una unidad SSD es porque la mayoría de la lectura-/ Os de escritorios virtuales van al sistema operativo de administración. Por lo tanto, el almacenamiento utilizado por el equipo físico debe admitir más altas de lectura de E/s por segundo.
+El equipo físico debe colocarse en una SSD porque la mayor parte de las operaciones de e/s de lectura de los escritorios virtuales agrupados van al sistema operativo de administración. Por lo tanto, el almacenamiento utilizado por el equipo físico debe admitir e/s de lectura mucho más altas por segundo.
 
-Esta configuración de implementación garantiza el rendimiento más rentable que se necesita el rendimiento. El SSD ofrece un mayor rendimiento en un disco de tamaño más pequeño (aproximadamente 20 GB por colección, según la configuración). Almacenamiento tradicional para escritorios virtuales agrupados (RAID 1 + 0) utiliza aproximadamente 3 GB por máquina virtual.
+Esta configuración de implementación garantiza un rendimiento rentable en el que se necesita rendimiento. El SSD proporciona mayor rendimiento en un disco de menor tamaño (~ 20 GB por colección, en función de la configuración). El almacenamiento tradicional para escritorios virtuales agrupados (RAID 1 + 0) usa aproximadamente 3 GB por máquina virtual.
 
-### <a name="csv-cache"></a>Memoria caché de CSV
+### <a name="csv-cache"></a>Caché de CSV
 
-Agrupación en clústeres de conmutación por error en Windows Server 2012 y versiones posteriores proporciona almacenamiento en caché en volúmenes compartidos de clúster (CSV). Esto es extremadamente útil para las colecciones de escritorios virtuales agrupados que proceden de las operaciones de E/s de la mayor parte de la lectura desde el sistema operativo de administración. La caché de CSV proporciona un mayor rendimiento en varios órdenes de magnitud porque almacena en caché de bloques que se leen varias veces y entrega de la memoria del sistema, lo que reduce la E/S. Para obtener más información sobre la memoria caché de CSV, consulte [cómo habilitar la memoria caché de CSV](http://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx).
+Los clústeres de conmutación por error en Windows Server 2012 y versiones posteriores proporcionan almacenamiento en caché en volúmenes compartidos de clúster (CSV). Esto resulta muy ventajoso para las colecciones de escritorios virtuales agrupados, donde la mayoría de las operaciones de e/s de lectura proceden del sistema operativo de administración. La memoria caché de CSV proporciona mayor rendimiento en varios órdenes de magnitud porque almacena en caché bloques que se leen más de una vez y los entrega desde la memoria del sistema, lo que reduce la e/s. Para obtener más información sobre la memoria caché de CSV, consulte [Cómo habilitar la caché de CSV](http://blogs.msdn.com/b/clustering/archive/2012/03/22/10286676.aspx).
 
 ### <a name="pooled-virtual-desktops"></a>Escritorios virtuales agrupados
 
-De forma predeterminada, escritorios virtuales agrupados se revierten al estado original una vez que un usuario cierra la sesión, por lo que los cambios realizados al sistema operativo Windows desde el último inicio de sesión del usuario se abandonan.
+De forma predeterminada, los escritorios virtuales agrupados se revierten al estado original después de que un usuario cierre la sesión, por lo que se abandonan los cambios realizados en el sistema operativo Windows desde el último inicio de sesión de usuario.
 
-Aunque es posible deshabilitar la reversión, todavía es una condición temporal porque normalmente una colección de escritorios virtuales agrupados se vuelve a crear debido a varias actualizaciones a la plantilla de escritorio virtual.
+Aunque es posible deshabilitar la reversión, sigue siendo una condición temporal, ya que normalmente se vuelve a crear una colección de escritorios virtuales agrupados debido a varias actualizaciones de la plantilla de escritorio virtual.
 
-Tiene sentido para desactivar las características de Windows y servicios que dependen de un estado persistente. Además, tiene sentido para desactivar todos los servicios que son principalmente para escenarios de clientes no empresariales.
+Tiene sentido desactivar las características y servicios de Windows que dependen del estado persistente. Además, tiene sentido desactivar los servicios que se encuentran principalmente en escenarios que no son de empresa.
 
-Cada servicio específico se debe evaluar adecuadamente antes de cualquier implementación amplia. Estos son algunos aspectos que deben considerarse iniciales:
+Cada servicio específico debe evaluarse correctamente antes de cualquier implementación amplia. A continuación se indican algunos aspectos iniciales que se deben tener en cuenta:
 
 | Servicio                                      | ¿Por qué?                                                                                                                                                                                                      |
 |----------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Actualización automática                                  | Escritorios virtuales agrupados se actualizan volviendo a crear la plantilla de escritorio virtual.                                                                                                                          |
-| Archivos sin conexión                                | Escritorios virtuales están siempre en línea y conectado desde una red punto de vista.                                                                                                                         |
-| Desfragmentación en segundo plano                            | Después de que un usuario apruebe (debido a una reversión al estado original, o volver a crear la plantilla de escritorio virtual, lo que resulta en volver a crear todos los escritorios virtuales), se descartan los cambios del sistema de archivos. |
-| Modo de hibernación o suspensión                           | Ningún concepto de VDI                                                                                                                                                                                   |
-| Volcado de memoria de comprobación de errores                        | Sin esos conceptos para escritorios virtuales agrupados. Se iniciará una comprobación de errores escritorios virtuales desde el estado original.                                                                                       |
-| Configuración automática de WLAN                              | No hay ninguna interfaz de dispositivo Wi-Fi para VDI                                                                                                                                                                 |
-| Servicio de uso compartido de red de Windows Media Player | Centrado en el servicio de consumidor                                                                                                                                                                                  |
-| Proveedor de grupo en el hogar                          | Centrado en el servicio de consumidor                                                                                                                                                                                  |
-| Conexión compartida a Internet                  | Centrado en el servicio de consumidor                                                                                                                                                                                  |
-| Servicios ampliados de Media Center               | Centrado en el servicio de consumidor                                                                                                                                                                                  |
+| Actualización automática                                  | Los escritorios virtuales agrupados se actualizan volviendo a crear la plantilla de escritorio virtual.                                                                                                                          |
+| Archivos sin conexión                                | Los escritorios virtuales siempre están en línea y se conectan desde un punto de vista de red.                                                                                                                         |
+| Desfragmentación en segundo plano                            | Los cambios del sistema de archivos se descartan después de que un usuario cierre la sesión (debido a una reversión al estado original o al volver a crear la plantilla de escritorio virtual, lo que hace que se vuelvan a crear todos los escritorios virtuales agrupados). |
+| Hibernar o suspender                           | No se trata de un concepto de VDI                                                                                                                                                                                   |
+| Error al comprobar el volcado de memoria                        | No se trata de ningún concepto para escritorios virtuales agrupados. Una comprobación de errores: el escritorio virtual agrupado se iniciará desde el estado original.                                                                                       |
+| Configuración automática de WLAN                              | No hay ninguna interfaz de dispositivo WiFi para VDI                                                                                                                                                                 |
+| Servicio de uso compartido de red de Windows Media Player | Servicio centrado en el consumidor                                                                                                                                                                                  |
+| Proveedor de grupo de inicio                          | Servicio centrado en el consumidor                                                                                                                                                                                  |
+| Conexión compartida a Internet                  | Servicio centrado en el consumidor                                                                                                                                                                                  |
+| Servicios extendidos de Media Center               | Servicio centrado en el consumidor                                                                                                                                                                                  |
 > [!NOTE]
-> Esta lista no pretende ser una lista completa, porque los cambios afectarán a los objetivos previstos y escenarios. Para obtener más información, consulte [caliente desactivado el presiona, Obténgalo ahora, la secuencia de comandos de la optimización de Windows 8 VDI, cortesía de PFE!](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx).
+> Esta lista no pretende ser una lista completa, ya que los cambios afectarán a los objetivos y escenarios previstos. Para obtener más información, vea [las prensas más calientes, obtenerla ahora, el script de optimización de VDI de Windows 8, cortesía de PFE!](http://blogs.technet.com/b/jeff_stokes/archive/2013/04/09/hot-off-the-presses-get-it-now-the-windows-8-vdi-optimization-script-courtesy-of-pfe.aspx).
 
  
 > [!NOTE]
-> SuperFetch en Windows 8 está habilitado de forma predeterminada. Es compatible con VDI y no debe deshabilitarse. SuperFetch puede reducir aún más el consumo de memoria a través de memoria compartida en la página, que es beneficioso para VDI. Se debe deshabilitar escritorios virtuales agrupados que ejecutan Windows 7, SuperFetch, pero para los escritorios virtuales personales que ejecutan Windows 7, debe dejarse en.
+> La supercaptura en Windows 8 está habilitada de forma predeterminada. Es compatible con VDI y no debe deshabilitarse. Superfetch puede reducir aún más el consumo de memoria a través del uso compartido de páginas de memoria, lo que es beneficioso para VDI. Los escritorios virtuales agrupados que ejecutan Windows 7, SuperFetch deben estar deshabilitados, pero para escritorios virtuales personales que ejecutan Windows 7, debe dejarse en.
 
  

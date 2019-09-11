@@ -1,6 +1,6 @@
 ---
 title: Administración del sistema en MultiPoint Services
-description: Tema de exploración para obtener información de administración de MultiPoint Services
+description: Tema de navegación para información de administración de Multipoint Services
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,17 +13,17 @@ ms.assetid: 8fce1bcf-5459-43a2-957e-c1bc1749bca2
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 815121b158e47e4a2f6a068949953f259dfec549
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 07a00033fb79861470f2874e3c069107e39b9d77
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59864506"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871518"
 ---
 # <a name="system-administration-in-multipoint-services"></a>Administración del sistema en MultiPoint Services
-Para empezar a usar el sistema MultiPoint Services, es una buena idea hacer algún tipo de administración básica del sistema.  
+Antes de empezar a usar el sistema Multipoint Services, se recomienda realizar una administración básica del sistema.  
   
 Use la siguiente información:
 
 [Configurar la protección de disco](Configure-Disk-Protection-in-MultiPoint-services.md)  
-[Instale copias de seguridad de servidor en el equipo de MultiPoint Services](Install-Server-Backup-on-your-MultiPoint-services-computer.md) 
+[Instalación de la copia de seguridad del servidor en el equipo de Multipoint Services](Install-Server-Backup-on-your-MultiPoint-services-computer.md) 

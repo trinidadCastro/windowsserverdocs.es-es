@@ -9,12 +9,12 @@ ms.date: 11/14/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 220b409b2e0bcc5e5a01aeb9f244ebaa55ac0e1e
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 586f2d7b73c6017f8b69103a09f6b38bb31f542d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544605"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865796"
 ---
 # <a name="configuring-alternate-login-id"></a>Configuración de identificador de inicio de sesión alternativo
 
@@ -25,7 +25,7 @@ En la mayoría de los escenarios, los usuarios usan sus UPN (nombres de entidad 
 >[!NOTE]
 >Los procedimientos recomendados de Microsoft hacen coincidir el UPN con la dirección SMTP principal. En este artículo se aborda el pequeño porcentaje de clientes que no pueden corregir los UPN para que coincidan.
 
-Por ejemplo, pueden utilizar su identificador de correo electrónico para el inicio de sesión y que pueden ser diferentes de sus UPN. Esto es especialmente frecuente en escenarios en los que su UPN no es enrutable. Considere la posibilidad de que un usuario jdoe@contoso.local Jane Doe con jdoe@contoso.comel UPN y la dirección de correo electrónico. Es posible que Julia no sea aún consciente del UPN, ya que siempre ha usado su identificador de correo electrónico para iniciar sesión. El uso de cualquier otro método de inicio de sesión en lugar de UPN constituye un identificador alternativo. Para obtener más información sobre cómo se crea el UPN, consulte Azure AD rellenado de [UserPrincipalName](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-userprincipalname).
+Por ejemplo, pueden utilizar su identificador de correo electrónico para el inicio de sesión y que pueden ser diferentes de sus UPN. Esto es especialmente frecuente en escenarios en los que su UPN no es enrutable. Considere la posibilidad de que un usuario jdoe@contoso.local Jane Doe con jdoe@contoso.comel UPN y la dirección de correo electrónico. Es posible que Julia no sea aún consciente del UPN, ya que siempre ha usado su identificador de correo electrónico para iniciar sesión. El uso de cualquier otro método de inicio de sesión en lugar de UPN constituye un identificador alternativo. Para obtener más información sobre cómo se crea el UPN, consulte [Azure ad rellenado de UserPrincipalName](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-userprincipalname).
 
 Servicios de federación de Active Directory (AD FS) (AD FS) permite que las aplicaciones federadas usen AD FS para iniciar sesión con el identificador alternativo. Esto permite a los administradores especificar una alternativa al UPN predeterminado que se usará para el inicio de sesión. AD FS ya admite el uso de cualquier forma de identificador de usuario aceptada por Active Directory Domain Services (AD DS). Cuando se configura para el identificador alternativo, AD FS permite a los usuarios iniciar sesión con el valor de identificador alternativo configurado, por ejemplo, el identificador de correo electrónico. El uso del identificador alternativo permite adoptar proveedores de SaaS, como Office 365 sin modificar los UPN locales. También permite admitir aplicaciones de servicio de línea de negocio con identidades aprovisionadas por el consumidor.
 
@@ -39,7 +39,7 @@ Una organización puede tener que usar un identificador alternativo en los escen
 La experiencia del usuario final varía en función del método de autenticación usado con el identificador de inicio de sesión alternativo.  Actualmente existen tres maneras diferentes en las que se puede lograr el uso del identificador de inicio de sesión alternativo.  Estas sobrecargas son:
 
 - **Autenticación normal (heredada)** : usa el protocolo de autenticación básica.
-- **Autenticación moderna** : proporciona inicio de sesión basado en biblioteca de autenticación de Active Directory (Adal) a las aplicaciones. Esto permite características de inicio de sesión como multi-factor Authentication (MFA), proveedores de identidades de terceros basados en SAML con aplicaciones cliente de Office, tarjetas inteligentes y autenticación basada en certificados.
+- **Autenticación moderna** : proporciona inicio de sesión basado en biblioteca de autenticación de Active Directory (Adal) a las aplicaciones. Esto permite características de inicio de sesión como Multi-Factor Authentication (MFA), proveedores de identidades de terceros basados en SAML con aplicaciones cliente de Office, tarjetas inteligentes y autenticación basada en certificados.
 - **Autenticación moderna híbrida** : proporciona todas las ventajas de la autenticación moderna y proporciona a los usuarios la capacidad de acceder a aplicaciones locales mediante tokens de autorización obtenidos de la nube.
 
 >[!NOTE]
@@ -145,7 +145,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 
 ![Flujo de autenticación](media/Configure-Alternate-Login-ID/alt1a.png)
 
-1. un El usuario se aprovisiona en Azure AD mediante el identificador alternativo
+1. Un El usuario se aprovisiona en Azure AD mediante el identificador alternativo
    </br>b El administrador de directorios envía la configuración de RegKey necesaria a los equipos cliente afectados
 2. El usuario se autentica en el equipo local y abre una aplicación de Office
 3. La aplicación de Office toma las credenciales de la sesión local
@@ -168,7 +168,7 @@ HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zo
 |Cliente|Declaración de soporte: con HMA|Instrucción de soporte técnico: sin HMA|
 | ----- |----- | ----- |
 |Outlook|Compatible, sin mensajes adicionales|Compatible</br></br>Con **autenticación moderna** para Exchange Online: Compatible</br></br>Con **autenticación normal** para Exchange Online: Compatible con las siguientes advertencias:</br><li>Debe estar en un equipo unido a un dominio y estar conectado a la red corporativa </li><li>Solo se puede usar un identificador alternativo en entornos que no permiten el acceso externo a los usuarios de buzones. Esto significa que los usuarios solo pueden autenticarse en su buzón de una manera compatible cuando están conectados y Unidos a la red corporativa, en una VPN o conectados a través de máquinas de acceso directo, pero obtiene un par de mensajes adicionales al configurar el perfil de Outlook.| 
-|Carpetas públicas híbridas|Compatible, no hay ningún mensaje adicional.|Con **autenticación moderna** para Exchange Online: Compatible</br></br>Con **autenticación normal** para Exchange Online: No se admite</br></br><li>Las carpetas públicas híbridas no pueden expandirse si se usan IDENTIFICADOres alternativos y, por lo tanto, no deben usarse actualmente con métodos de autenticación normales.|
+|Carpetas públicas híbridas|Compatible, no hay ningún mensaje adicional.|Con **autenticación moderna** para Exchange Online: Compatible</br></br>Con **autenticación normal** para Exchange Online: No admitido</br></br><li>Las carpetas públicas híbridas no pueden expandirse si se usan IDENTIFICADOres alternativos y, por lo tanto, no deben usarse actualmente con métodos de autenticación normales.|
 |Delegación entre locales|Consulte [configuración de Exchange para admitir permisos de buzón delegados en una implementación híbrida](https://technet.microsoft.com/library/mt784505.aspx)|Consulte [configuración de Exchange para admitir permisos de buzón delegados en una implementación híbrida](https://technet.microsoft.com/library/mt784505.aspx)|
 |Acceso al buzón de archivo (buzón local: archivar en la nube)|Compatible, sin mensajes adicionales|Compatible: los usuarios obtienen una solicitud adicional de credenciales al acceder al archivo, por lo que deben proporcionar su identificador alternativo cuando se le solicite.| 
 |Outlook Web Access|Compatible|Compatible|

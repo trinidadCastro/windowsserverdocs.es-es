@@ -1,6 +1,6 @@
 ---
-title: Tareas de administración de MultiPoint Services
-description: Enumera todas las tareas implicadas en la implementación de MultiPoint Services, junto con vínculos a instrucciones
+title: Tareas para implementar Multipoint Services
+description: Enumera todas las tareas implicadas en la implementación de Multipoint Services, junto con vínculos a instrucciones
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,31 +13,31 @@ ms.assetid: e08c5784-5b3e-4028-86c1-96deaee41f09
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: ccbd3cc48d50aa55dfb7958a1f7e18ac30d96574
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9f0b69da06fb783ac7cccc2dc5bc7337dae59d66
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844306"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871446"
 ---
 # <a name="task-lists-multipoint-services"></a>Listas de tareas: MultiPoint Services
-Uso están la implementación del sistema MultiPoint Services y el seguimiento de las listas de tareas en este tema para ayudarle a completa las tareas. No todas las tareas se aplican a todos los entornos. Por ejemplo, algunas tareas se realizan solo si implementa un servidor MultiPoint en un dominio de Active Directory. Otros, como crear estaciones de pantalla dividida o implementar escritorios virtuales de las estaciones, son opcionales. Para conocer los procedimientos que explican cómo realizar estas tareas, consulte [implementación de MultiPoint Services](deploying-multipoint-services.md).  
+Use las listas de tareas de este tema para ayudarle a implementar el sistema Multipoint Services y realizar un seguimiento de las tareas completadas. No todas las tareas se aplican a todos los entornos. Por ejemplo, algunas tareas solo se realizan si implementa un servidor Multipoint en un dominio de Active Directory. Otros, como la creación de estaciones de pantalla dividida o la implementación de escritorios virtuales para estaciones, son opcionales. Para ver los procedimientos que explican cómo realizar estas tareas, vea [Deploying Multipoint Services](deploying-multipoint-services.md).  
   
 ## <a name="task-list-deploy-the-server"></a>Lista de tareas: Implementar el servidor  
 
 |Tarea|Descripción|  
 |--------|---------------|  
-|**1**|[Planear la implementación de MultiPoint Services](planning-a-multipoint-services-deployment.md)|  
-|**2**|[Recopilar el hardware y controladores de dispositivos necesarios para la instalación](Collect-hardware-and-device-drivers-needed-for-the-installation.md)|  
-|**3**|[Configurar la estación principal y un equipo físico](Set-up-the-physical-computer-and-primary-station.md)|  
-|**4**|[Instalar MultiPoint Services](Install-MultiPoint-services.md)|  
-|**5**|[Actualizar e instalar a controladores de dispositivo, si es necesario](Update-and-install-device-drivers-if-needed.md)|  
-|**6**|[Establecer la fecha, hora y zona horaria](Set-the-date--time--and-time-zone.md)|  
-|**7**|[Unir el equipo de MultiPoint Services a un dominio - opcional](Join-the-MultiPoint-services-computer-to-a-domain--optional-.md)|  
+|**1**|[Planeación de la implementación de Multipoint Services](planning-a-multipoint-services-deployment.md)|  
+|**2**|[Recopilar controladores de hardware y de dispositivo necesarios para la instalación](Collect-hardware-and-device-drivers-needed-for-the-installation.md)|  
+|**3**|[Configurar el equipo físico y la estación principal](Set-up-the-physical-computer-and-primary-station.md)|  
+|**4**|[Instalar MultiPoint Services](Install-MultiPoint-services.md)|  
+|**5**|[Actualizar e instalar a controladores de dispositivo si es necesario](Update-and-install-device-drivers-if-needed.md)|  
+|**6**|[Establecer la fecha, la hora y la zona horaria](Set-the-date--time--and-time-zone.md)|  
+|**7**|[Unir el equipo de Multipoint Services a un dominio: opcional](Join-the-MultiPoint-services-computer-to-a-domain--optional-.md)|  
 |**8**|[Instalar actualizaciones.](Install-updates.md)|  
-|**9**|[Adjuntar emisoras adicionales para el equipo de MultiPoint Services](Attach-additional-stations-to-your-MultiPoint-services-computer.md)|  
-|**10**|[Activar MultiPoint Services y agregar CAL](manage-client-access-licenses-with-multipoint-services.md)|  
-|**11**|[Instalar el software en su sistema MultiPoint Services](Install-software-on-your-MultiPoint-services-system.md)|  
+|**9**|[Conexión de estaciones adicionales al equipo de Multipoint Services](Attach-additional-stations-to-your-MultiPoint-services-computer.md)|  
+|**10**|[Activación de Multipoint Services y adición de cal](manage-client-access-licenses-with-multipoint-services.md)|  
+|**11**|[Instalación del software en el sistema Multipoint Services](Install-software-on-your-MultiPoint-services-system.md)|  
   
 ## <a name="task-list-optional-configurations"></a>Lista de tareas: Configuraciones opcionales  
   
@@ -45,22 +45,22 @@ Uso están la implementación del sistema MultiPoint Services y el seguimiento d
 |--------|  
 |[Configurar una estación de pantalla dividida](Set-up-a-split-screen-station-in-MultiPoint-services.md)|  
 |[Agregar impresoras](Add-printers.md)|  
-|[Creación de escritorios virtuales para las estaciones](Create-Windows-10-Enterprise-virtual-desktops-for-stations.md)|  
+|[Crear escritorios virtuales para estaciones](Create-Windows-10-Enterprise-virtual-desktops-for-stations.md)|  
   
 ## <a name="task-list-prepare-your-system-for-users"></a>Lista de tareas: Preparar el sistema para los usuarios  
   
 |Tarea|  
 |--------|  
-|[Plan de cuentas de usuario](Plan-user-accounts-for-your-MultiPoint-services-environment.md)|  
-|[Crear cuentas de usuario local](Create-local-user-accounts.md)|  
-|[Limitar el acceso de usuarios al servidor](Limit-users--access-to-the-server-in-MultiPoint-services.md)|  
+|[Planeación de cuentas de usuario](Plan-user-accounts-for-your-MultiPoint-services-environment.md)|  
+|[Crear cuentas de usuario locales](Create-local-user-accounts.md)|  
+|[Limitar el acceso de los usuarios al servidor](Limit-users--access-to-the-server-in-MultiPoint-services.md)|  
 |[Configurar estaciones de inicio de sesión automático](Configure-stations-for-automatic-logon.md)|  
-|[Permitir que una cuenta para tener varias sesiones](Allow-one-account-to-have-multiple-sessions.md)|  
-|[Habilitar uso compartido de archivos](Enable-file-sharing-in-MultiPoint-services.md)|  
+|[Permitir que una cuenta tenga varias sesiones](Allow-one-account-to-have-multiple-sessions.md)|  
+|[Habilitar el uso compartido de archivos](Enable-file-sharing-in-MultiPoint-services.md)|  
   
 ## <a name="task-list-server-administration"></a>Lista de tareas: Administración del servidor  
   
 |Tarea|  
 |--------|  
 |[Configurar la protección de disco](Configure-Disk-Protection-in-MultiPoint-services.md)|  
-|[Instale copias de seguridad de servidor](Install-Server-Backup-on-your-MultiPoint-services-computer.md)|
+|[Instalar copia de seguridad del servidor](Install-Server-Backup-on-your-MultiPoint-services-computer.md)|

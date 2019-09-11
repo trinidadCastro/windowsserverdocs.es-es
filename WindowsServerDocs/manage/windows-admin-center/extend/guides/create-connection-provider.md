@@ -1,6 +1,6 @@
 ---
-title: Crear un proveedor de conexión para una extensión de la solución
-description: 'Desarrollar una extensión de la solución Windows Admin Center SDK (proyecto Honolulu): creación de un proveedor de conexión'
+title: Crear un proveedor de conexión para una extensión de solución
+description: 'Desarrollo de una extensión de solución SDK del centro de administración de Windows (proyecto Honolulu): creación de un proveedor de conexiones'
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,41 +8,41 @@ ms.author: niwashbu
 ms.date: 06/06/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: b79e832ee45990d18baf4c211ab68b907134ceb7
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: c1f3a7f7004b573fece71cdaf2f43661c13ad496
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811834"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869633"
 ---
-# <a name="create-a-connection-provider-for-a-solution-extension"></a>Crear un proveedor de conexión para una extensión de la solución
+# <a name="create-a-connection-provider-for-a-solution-extension"></a>Crear un proveedor de conexión para una extensión de solución
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Proveedores de conexión desempeñan un papel importante en cómo Windows Admin Center define y se comunica con los objetos conectables o destinos. Principalmente, un proveedor de conexión realiza acciones mientras se realiza una conexión, como asegurarse de que el destino está en línea y disponibles y también lo que garantiza que el usuario que se conecta tiene permiso para tener acceso al destino.
+Los proveedores de conexión desempeñan un papel importante en el modo en que el centro de administración de Windows define y se comunica con objetos o destinos conectables. Principalmente, un proveedor de conexiones realiza acciones mientras se realiza una conexión, como asegurarse de que el destino está en línea y disponible, y también garantiza que el usuario que se conecta tiene permiso para obtener acceso al destino.
 
-De forma predeterminada, Windows Admin Center incluye los siguientes proveedores de conexión:
+De forma predeterminada, el centro de administración de Windows se distribuye con los siguientes proveedores de conexión:
 
-* Servidor
+* Server
 * Cliente de Windows
 * Clúster de conmutación por error
-* Clúster de HCL
+* Clúster de HCI
 
 Para crear su propio proveedor de conexión personalizado, siga estos pasos:
 
-* Agregar detalles del proveedor de conexión para ```manifest.json```
-* Defina el proveedor de estado de conexión
-* Implementar el proveedor de conexión de capa de aplicación
+* Agregar detalles del proveedor de conexión a```manifest.json```
+* Definir el proveedor de estado de conexión
+* Implementar el proveedor de conexiones en el nivel de aplicación
 
-## <a name="add-connection-provider-details-to-manifestjson"></a>Agregar detalles del proveedor de conexión a manifest.json
+## <a name="add-connection-provider-details-to-manifestjson"></a>Agregar detalles del proveedor de conexión a manifest. JSON
 
-Ahora le guiaremos a través de lo que necesita saber para definir un proveedor de conexión en el proyecto ```manifest.json``` archivo.
+Ahora veremos lo que necesita saber para definir un proveedor de conexión en el archivo del ```manifest.json``` proyecto.
 
-### <a name="create-entry-in-manifestjson"></a>Crear entrada en manifest.json
+### <a name="create-entry-in-manifestjson"></a>Crear entrada en manifest. JSON
 
-El ```manifest.json``` archivo se encuentra en la carpeta \src y contiene, entre otras cosas, las definiciones de puntos de entrada en el proyecto. Tipos de puntos de entrada incluyen herramientas, soluciones y proveedores de conexión. Se va a definir un proveedor de conexión.
+El ```manifest.json``` archivo se encuentra en la carpeta \src y contiene, entre otras cosas, definiciones de puntos de entrada en el proyecto. Los tipos de puntos de entrada incluyen herramientas, soluciones y proveedores de conexión. Vamos a definir un proveedor de conexión.
 
-Un ejemplo de una entrada del proveedor de conexión en manifest.json está por debajo:
+A continuación se muestra un ejemplo de una entrada de proveedor de conexión en manifest. JSON:
 
 ``` json
     {
@@ -71,33 +71,33 @@ Un ejemplo de una entrada del proveedor de conexión en manifest.json está por 
     },
 ```
 
-Un punto de entrada de tipo "connnectionProvider" indica al shell de Windows Admin Center que el elemento que se está configurando es un proveedor que se usará para validar un estado de conexión por una solución. Puntos de entrada del proveedor de conexión contiene un número de propiedades importantes, que se definen a continuación:
+Un punto de entrada de tipo "connnectionProvider" indica al shell del centro de administración de Windows que el elemento que se está configurando es un proveedor que usará una solución para validar un estado de conexión. Los puntos de entrada del proveedor de conexión contienen varias propiedades importantes, que se definen a continuación:
 
 | Property | Descripción |
 | -------- | ----------- |
-| entryPointType | Se trata de una propiedad necesaria. Hay tres valores válidos: "herramienta", "solución" y "connectionProvider". | 
-| name | Identifica el proveedor de conexión dentro del ámbito de una solución. Este valor debe ser único dentro de una instancia completa de Windows Admin Center (no sólo una solución). |
-| ruta de acceso | Representa la ruta de acceso de dirección URL para el "Agregar conexión" interfaz de usuario, si se configurará la solución. Este valor debe asignar a una ruta que se configura en el archivo de aplicación routing.module.ts. Cuando el punto de entrada de la solución está configurado para usar el rootNavigationBehavior conexiones, esta ruta cargará el módulo que se usa el shell para mostrar la interfaz de usuario de conexión de agregar. Más información disponible en la sección sobre rootNavigationBehavior. |
-| displayName | El valor introducido aquí se muestra en el lado derecho del shell, debajo de la barra negra de Windows Admin Center cuando un usuario carga la página de conexiones de la solución. |
-| icono | Representa el icono utilizado en el menú desplegable de soluciones para representar la solución. |
+| entryPointType | Esta es una propiedad obligatoria. Hay tres valores válidos: "Tool", "Solution" y "connectionProvider". | 
+| name | Identifica el proveedor de conexión dentro del ámbito de una solución. Este valor debe ser único dentro de una instancia completa del centro de administración de Windows (no solo una solución). |
+| path | Representa la ruta de acceso de la dirección URL para la interfaz de usuario "agregar conexión", si se va a configurar mediante la solución. Este valor se debe asignar a una ruta configurada en el archivo app-Routing. Module. TS. Cuando el punto de entrada de la solución está configurado para usar las conexiones rootNavigationBehavior, esta ruta cargará el módulo que usa el shell para mostrar la interfaz de usuario de la conexión. Más información disponible en la sección sobre rootNavigationBehavior. |
+| displayName | El valor especificado aquí se muestra en el lado derecho del shell, debajo de la barra negra del centro de administración de Windows cuando un usuario carga la página de conexiones de una solución. |
+| icono | Representa el icono usado en el menú desplegable soluciones para representar la solución. |
 | description | Escriba una breve descripción del punto de entrada. |
-| connectionType | Representa el tipo de conexión que se cargará el proveedor. El valor especificado aquí también se usará en el punto de entrada de la solución para especificar que la solución puede cargar esas conexiones. El valor especificado aquí también se utilizará en la herramienta o los puntos de entrada para indicar que la herramienta es compatible con este tipo. Este valor introducido aquí se usará también en el objeto de conexión que se envía a la RPC llamar en la "ventana de agregar", en el paso de implementación de capa de aplicación. |
-| connectionTypeName | Se utiliza en la tabla de conexiones para representar una conexión que utiliza el proveedor de la conexión. Esto se espera que el nombre plural del tipo. |
-| connectionTypeUrlName | Se utiliza en la creación de la dirección URL para representar la solución cargada, después de que Windows Admin Center se ha conectado a una instancia. Esta entrada se utiliza después de las conexiones y antes del destino. En este ejemplo, "connectionexample" es donde este valor aparece en la dirección URL: `http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
-| connectionTypeDefaultSolution | Representa el componente predeterminado que se debe cargar el proveedor de conexión. Este valor es una combinación de: <br>[a] el nombre del paquete de extensión definido en la parte superior del manifiesto; <br>signo de exclamación (!); [b] <br>[c], el nombre de punto de entrada de solución.    <br>Para un proyecto con el nombre "msft.sme.mySample-extension" y un punto de entrada de la solución con el nombre "example", este valor sería "msft.sme.solutionExample extensión! ejemplo". |
-| connectionTypeDefaultTool | Representa el valor predeterminado de herramienta que se debe cargar en una conexión correcta. Este valor de propiedad se compone de dos partes, similares a la connectionTypeDefaultSolution. Este valor es una combinación de: <br>[a] el nombre del paquete de extensión definido en la parte superior del manifiesto; <br>signo de exclamación (!); [b] <br>[c], el nombre del punto de entrada de herramienta para la herramienta que se debe cargar inicialmente. <br>Para un proyecto con el nombre "msft.sme.solutionExample-extension" y un punto de entrada de la solución con el nombre "example", este valor sería "msft.sme.solutionExample extensión! ejemplo". |
-| connectionStatusProvider | Consulte la sección "Definir proveedor de estado de la conexión" |
+| connectionType | Representa el tipo de conexión que cargará el proveedor. El valor especificado aquí también se utilizará en el punto de entrada de la solución para especificar que la solución puede cargar esas conexiones. El valor especificado aquí también se utilizará en los puntos de entrada de la herramienta para indicar que la herramienta es compatible con este tipo. Este valor especificado aquí también se utilizará en el objeto de conexión que se envía a la llamada RPC en la "agregar ventana", en el paso de implementación de la capa de aplicación. |
+| Tipo | Se usa en la tabla de conexiones para representar una conexión que utiliza el proveedor de conexión. Se espera que sea el nombre en plural del tipo. |
+| connectionTypeUrlName | Se usa en la creación de la dirección URL para representar la solución cargada, después de que el centro de administración de Windows se haya conectado a una instancia de. Esta entrada se utiliza después de las conexiones y antes del destino. En este ejemplo, "connectionexample" es donde aparece este valor en la dirección URL:`http://localhost:6516/solutionexample/connections/connectionexample/con-fake1.corp.contoso.com` |
+| connectionTypeDefaultSolution | Representa el componente predeterminado que debe cargar el proveedor de conexión. Este valor es una combinación de: <br>[a] el nombre del paquete de extensión definido en la parte superior del manifiesto; <br>[b] signo de exclamación (!); <br>[c] nombre del punto de entrada de la solución.    <br>En el caso de un proyecto con el nombre "msft. SME. solutionExample-Extension" y un punto de entrada de la solución con el nombre "example", este valor sería "msft. SME.-Extension! example". |
+| connectionTypeDefaultTool | Representa la herramienta predeterminada que se debe cargar en una conexión correcta. Este valor de propiedad se compone de dos partes, similar a connectionTypeDefaultSolution. Este valor es una combinación de: <br>[a] el nombre del paquete de extensión definido en la parte superior del manifiesto; <br>[b] signo de exclamación (!); <br>[c] el nombre del punto de entrada de la herramienta que se debe cargar inicialmente. <br>En el caso de un proyecto con el nombre "msft. SME. solutionExample-Extension" y un punto de entrada de la solución con el nombre "example", este valor sería "msft. SME. solutionExample-Extension! example". |
+| connectionStatusProvider | Vea la sección "definir el proveedor de estado de conexión". |
 
-## <a name="define-connection-status-provider"></a>Defina el proveedor de estado de conexión
+## <a name="define-connection-status-provider"></a>Definir el proveedor de estado de conexión
 
-Proveedor de estado de conexión es el mecanismo por el que se valida un destino para estar en línea y disponibles, también lo que garantiza que el usuario que se conecta tiene permiso para tener acceso al destino. Actualmente hay dos tipos de proveedores de estado de conexión:  PowerShell y RelativeGatewayUrl.
+El proveedor de estado de conexión es el mecanismo por el que se valida que un destino esté en línea y disponible, asegurándose también de que el usuario que se conecta tiene permiso para obtener acceso al destino. Actualmente hay dos tipos de proveedores de estado de conexión:  PowerShell y RelativeGatewayUrl.
 
-*   <strong>Proveedor de estado de conexión de PowerShell</strong> -determina si un destino está en línea y accesible con un script de PowerShell. El resultado se debe devolver en un objeto con una sola propiedad "estado", que define a continuación.
-*   <strong>El proveedor de estado de conexión RelativeGatewayUrl</strong> -determina si un destino está en línea y accesible con una llamada de rest. El resultado se debe devolver en un objeto con una sola propiedad "estado", que define a continuación.
+*   <strong>Proveedor de estado de conexión de PowerShell</strong> : determina si un destino está en línea y accesible con un script de PowerShell. El resultado se debe devolver en un objeto con una sola propiedad "status", que se define a continuación.
+*   <strong>Proveedor de estado de conexión de RelativeGatewayUrl</strong> : determina si un destino está en línea y accesible con una llamada REST. El resultado se debe devolver en un objeto con una sola propiedad "status", que se define a continuación.
 
-### <a name="define-status"></a>Definir estado
+### <a name="define-status"></a>Definir el estado
 
-Proveedores de estado de conexión son necesarios para devolver un objeto con una sola propiedad ```status``` que se ajusta al formato siguiente:
+Los proveedores de estado de conexión son necesarios para devolver un objeto con ```status``` una sola propiedad que se ajusta al formato siguiente:
 
 ``` json
 {
@@ -111,26 +111,26 @@ Proveedores de estado de conexión son necesarios para devolver un objeto con un
 
 Propiedades de estado:
 
-* <strong>Etiqueta</strong> : una etiqueta que describe el tipo de valor devuelto del estado. Tenga en cuenta que se pueden asignar valores de etiqueta en tiempo de ejecución. Consulte la entrada siguiente para asignar valores en tiempo de ejecución.
+* <strong>Etiqueta</strong> : etiqueta que describe el tipo de valor devuelto de estado. Tenga en cuenta que los valores de la etiqueta se pueden asignar en tiempo de ejecución. Vea la entrada siguiente para asignar valores en tiempo de ejecución.
 
-* <strong>Tipo</strong> -tipo de valor devuelto del estado. Tipo tiene los siguientes valores de enumeración. Para cualquier valor de 2 o posterior, la plataforma no se le remitirá a objeto conectado y se mostrará un error en la interfaz de usuario.
+* <strong>Tipo</strong> : el tipo de valor devuelto de estado. El tipo tiene los siguientes valores de enumeración. Para cualquier valor 2 o superior, la plataforma no navegará hasta el objeto conectado y se mostrará un error en la interfaz de usuario.
 
-   Tipos:
+   Distintos
 
-  | Valor | Descripción |
+  | Valor | DESCRIPCIÓN |
   | ----- | ----------- |
-  | 0 | Online |
+  | 0 | En línea |
   | 1 | Advertencia |
   | 2 | Sin autorización |
   | 3 | Error |
-  | 4 | Fatal |
+  | 4 | Crítico |
   | 5 | Unknown |
 
-* <strong>Detalles</strong> : detalles adicionales que describe el tipo de valor devuelto del estado.
+* <strong>Detalles</strong> : detalles adicionales que describen el tipo de valor devuelto de estado.
 
-### <a name="powershell-connection-status-provider-script"></a>Secuencia de comandos de proveedor de estado de conexión de PowerShell
+### <a name="powershell-connection-status-provider-script"></a>Script del proveedor de estado de conexión de PowerShell
 
-El script de PowerShell de proveedor de estado de conexión determina si un destino está en línea y accesible con un script de PowerShell. El resultado se debe devolver en un objeto con una sola propiedad "estado". A continuación se muestra un script de ejemplo.
+El script de PowerShell del proveedor de estado de conexión determina si un destino está en línea y accesible con un script de PowerShell. El resultado se debe devolver en un objeto con una sola propiedad "status". A continuación se muestra un script de ejemplo.
 
 Script de PowerShell de ejemplo:
 
@@ -160,9 +160,9 @@ function Get-Status()
 Get-Status
 ```
 
-### <a name="define-relativegatewayurl-connection-status-provider-method"></a>Definir el método de proveedor de estado de conexión RelativeGatewayUrl
+### <a name="define-relativegatewayurl-connection-status-provider-method"></a>Definir método de proveedor de estado de conexión de RelativeGatewayUrl
 
-El proveedor de estado de conexión ```RelativeGatewayUrl``` método llama a una API para determinar si un destino está en línea y accesibles de rest. El resultado se debe devolver en un objeto con una sola propiedad "estado". Un ejemplo de la entrada del proveedor de conexión en manifest.json de un RelativeGatewayUrl se muestra a continuación.
+El método de proveedor ```RelativeGatewayUrl``` de estado de conexión llama a una API de REST para determinar si un destino está en línea y accesible. El resultado se debe devolver en un objeto con una sola propiedad "status". A continuación se muestra un ejemplo de entrada de proveedor de conexión en manifest. JSON de un RelativeGatewayUrl.
 
 ``` json
     {
@@ -191,33 +191,33 @@ El proveedor de estado de conexión ```RelativeGatewayUrl``` método llama a una
 
 Notas sobre el uso de RelativeGatewayUrl:
 
-* "relativeGatewayUrl" especifica dónde obtener el estado de conexión desde una dirección URL de puerta de enlace. Este URI es relativa con respecto a/API. Si $connectionName se encuentra en la dirección URL, se reemplazará con el nombre de la conexión.
-* Todas las propiedades de relativeGatewayUrl deben ejecutarse con la puerta de enlace de host, que puede realizarse mediante la creación de una extensión de la puerta de enlace
+* "relativeGatewayUrl" especifica dónde obtener el estado de conexión de una dirección URL de puerta de enlace. Este URI es relativo a/API. Si $connectionName se encuentra en la dirección URL, se reemplazará por el nombre de la conexión.
+* Todas las propiedades de relativeGatewayUrl deben ejecutarse en la puerta de enlace del host, lo que se puede lograr mediante la creación de una extensión de puerta de enlace.
 
-### <a name="map-values-in-runtime"></a>Asignar los valores de tiempo de ejecución
+### <a name="map-values-in-runtime"></a>Asignar valores en tiempo de ejecución
 
-Los valores de etiqueta y los detalles en el estado del objeto de valor devuelto se puede dar formato al optimización el tiempo mediante la inclusión de las claves y valores en la propiedad "defaultValueMap" del proveedor.
+Se puede dar formato a los valores de etiqueta y detalles del objeto de devolución de estado en tiempo de optimización incluyendo las claves y los valores en la propiedad "defaultValueMap" del proveedor.
 
-Por ejemplo, si agrega el siguiente valor, siempre que ese "defaultConnection_test" aparecían como un valor para la etiqueta o detalles, Windows Admin Center reemplazará automáticamente la clave con el valor de cadena de recursos configurados.
+Por ejemplo, si agrega el valor siguiente, siempre que "defaultConnection_test" se muestre como un valor de etiqueta o de detalles, el centro de administración de Windows reemplazará automáticamente la clave con el valor de cadena de recurso configurado.
 
 ``` json
     "defaultConnection_test": "resources:strings:addServer_status_defaultConnection_label"
 ```
 
-## <a name="implement-connection-provider-in-application-layer"></a>Implementar el proveedor de conexión de capa de aplicación
+## <a name="implement-connection-provider-in-application-layer"></a>Implementar el proveedor de conexiones en el nivel de aplicación
 
-Ahora vamos a implementar el proveedor de conexión en el nivel de aplicación, mediante la creación de una clase TypeScript que implementa OnInit. La clase tiene las siguientes funciones:
+Ahora vamos a implementar el proveedor de conexión en el nivel de aplicación mediante la creación de una clase TypeScript que implementa OnInit. La clase tiene las siguientes funciones:
 
 | Función | Descripción |
 | -------- | ----------- |
-| constructor(private appContextService: AppContextService, ruta privada: ActivatedRoute) |  |
-| public ngOnInit() |  |
-| onSubmit() pública | Contiene la lógica para actualizar el shell cuando se realiza un intento de agregar conexión |
-| onCancel() pública | Contiene la lógica para actualizar el shell cuando se cancela un intento de agregar conexión |
+| constructor (Private appContextService: AppContextService, ruta privada: ActivatedRoute) |  |
+| Public ngOnInit () |  |
+| Public onSubmit () | Contiene la lógica para actualizar el shell cuando se realiza un intento de agregar conexión |
+| Public OnCancel () | Contiene la lógica para actualizar el shell cuando se cancela un intento de agregar conexión |
 
 ### <a name="define-onsubmit"></a>Definir onSubmit
 
-```onSubmit``` problemas de una llamada RPC volver a llamar en el contexto de la aplicación para notificar al shell de una "conexión agregar". La llamada básica usa "updateData" similar al siguiente:
+```onSubmit```emite una llamada RPC al contexto de la aplicación para notificar a la shell de una "agregar conexión". La llamada básica utiliza "updateData" similar a la siguiente:
 
 ``` ts
 this.appContextService.rpc.updateData(
@@ -301,9 +301,9 @@ export const connectionTypeConstants = {
 };
 ```
 
-### <a name="define-oncancel"></a>Definir onCancel
+### <a name="define-oncancel"></a>Definición de OnCancel
 
-```onCancel``` cancela un intento de "Agregar conexión" pasando una matriz vacía de conexiones:
+```onCancel```cancela un intento de "agregar conexión" pasando una matriz de conexiones vacía:
 
 ``` ts
 this.appContextService.rpc.updateData(EnvironmentModule.nameOfShell, '##', <RpcUpdateData>{ results: { connections: [] } });
@@ -311,7 +311,7 @@ this.appContextService.rpc.updateData(EnvironmentModule.nameOfShell, '##', <RpcU
 
 ## <a name="connection-provider-example"></a>Ejemplo de proveedor de conexión
 
-La clase completa de TypeScript para implementar un proveedor de conexión está por debajo. Tenga en cuenta que la cadena "connectionType" coincide con el "tipo de conexión como se define en el proveedor de conexión en manifest.json.
+A continuación se muestra la clase de TypeScript completa para implementar un proveedor de conexiones. Tenga en cuenta que la cadena "connectionType" coincide con el "connectionType" tal y como se define en el proveedor de conexión en manifest. JSON.
 
 ``` ts
 import { Component, OnInit } from '@angular/core';

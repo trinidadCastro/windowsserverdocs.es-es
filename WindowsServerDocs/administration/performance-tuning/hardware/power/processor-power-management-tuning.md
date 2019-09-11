@@ -1,132 +1,132 @@
 ---
-title: Administración de energía de procesador (PPM) ajuste para el Plan de energía equilibrada de Windows Server
-description: Administración de energía de procesador (PPM) ajuste para el Plan de energía equilibrada de Windows Server
+title: Optimización de la administración de energía del procesador (PPM) para el plan de energía del equilibrio de Windows Server
+description: Optimización de la administración de energía del procesador (PPM) para el plan de energía del equilibrio de Windows Server
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b8af89992f01712e16d0ef503c8cbbac915df1d
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: f98e8f3b64bd91837b6cc9b62777bebd57c0ec00
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811592"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866756"
 ---
-# <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Administración de energía de procesador (PPM) ajuste para el Plan de energía equilibrada de Windows Server
+# <a name="processor-power-management-ppm-tuning-for-the-windows-server-balanced-power-plan"></a>Optimización de la administración de energía del procesador (PPM) para el plan de energía del equilibrio de Windows Server
 
-A partir de Windows Server 2008, Windows Server proporciona tres planes de energía: **Equilibrada**, **de alto rendimiento**, y **Economizador de energía**. El **equilibrado** plan de energía es la opción predeterminada que apunta a brindar a la mejor eficiencia de energía para un conjunto de cargas de trabajo de servidor típica. En este tema se describe las cargas de trabajo que se han utilizado para determinar la configuración predeterminada para el **equilibrado** esquema para las distintas versiones anteriores de Windows.
+A partir de Windows Server 2008, Windows Server proporciona tres planes de energía: **Equilibrado**, **alto rendimiento**y **ahorro de energía**. El plan de energía **equilibrado** es la opción predeterminada que pretende ofrecer la mejor eficacia energética para un conjunto de cargas de trabajo de servidor típicas. En este tema se describen las cargas de trabajo que se han utilizado para determinar la configuración predeterminada del esquema **equilibrado** en las últimas versiones de Windows.
 
-Si ejecuta un sistema de servidor que tiene características muy diferente de la carga de trabajo o un rendimiento y los requisitos de energía que estas cargas de trabajo, desea considere la posibilidad de ajustar la configuración de energía predeterminados (es decir, crear un plan de energía personalizado). Una fuente de información de optimización útil es el [consideraciones de energía del Hardware de servidor](../power.md). Como alternativa, puede decidir que la **de alto rendimiento** plan de energía es la elección correcta para su entorno, reconociendo que probablemente tendrá una gran cantidad de energía de visitas a cambio de un cierto nivel de mayor capacidad de respuesta.
+Si ejecuta un sistema de servidor que tiene características de carga de trabajo drásticamente diferentes o requisitos de rendimiento y energía que estas cargas de trabajo, puede que desee considerar la posibilidad de optimizar la configuración de energía predeterminada (es decir, crear un plan de energía personalizado). Un origen de información útil sobre la optimización es el [rendimiento del servidor](../power.md). Como alternativa, puede decidir que el plan de energía de **alto rendimiento** es la opción adecuada para su entorno, reconociendo que probablemente tendrá un importante impacto energético en Exchange para algún nivel de mayor capacidad de respuesta.
 
 > [!IMPORTANT]
-> Deben aprovechar las directivas de energía que se incluyen con Windows Server a menos que tenga una necesidad concreta para crear uno personalizado y tener una muy buena comprensión que sus resultados variarán según las características de la carga de trabajo.
+> Debe aprovechar las directivas de energía que se incluyen con Windows Server, a menos que tenga una necesidad específica de crear una personalizada y tenga una buena idea de que los resultados variarán en función de las características de la carga de trabajo.
 
-## <a name="windows-processor-power-tuning-methodology"></a>Metodología de optimización de energía de Windows procesador
+## <a name="windows-processor-power-tuning-methodology"></a>Metodología de optimización de energía del procesador de Windows
 
 
-### <a name="tested-workloads"></a>Cargas de trabajo probados
+### <a name="tested-workloads"></a>Cargas de trabajo probadas
 
-Las cargas de trabajo se seleccionan para cubrir un conjunto de mejor esfuerzo de las cargas de trabajo de Windows Server "típicas". Obviamente, este conjunto no pretende ser representativos de toda la riqueza de entornos de servidor reales.
+Las cargas de trabajo se seleccionan para cubrir un mejor conjunto de cargas de trabajo de Windows Server "típicas". Obviamente, este conjunto no pretende ser representativo de toda la amplitud de entornos de servidor del mundo real.
 
-El ajuste en cada directiva de energía es datos controlados por las cargas de trabajo de cinco siguientes:
+La optimización de cada directiva de energía se basa en las cinco cargas de trabajo siguientes:
 
--   **Carga de trabajo de servidor Web de IIS**
+-   **Carga de trabajo del servidor Web de IIS**
 
-    Un comparativas internas de Microsoft denominada Fundamentos de Web se utilizan para optimizar la eficiencia de energía de las plataformas de servidor Web de IIS. El programa de instalación contiene un servidor web y varios clientes que simulan el tráfico de acceso web. La distribución de dynamic, hot estático (en memoria) y estático en frío (acceso de disco necesario) las páginas web se basa en los estudios estadísticos de los servidores de producción. Para insertar los núcleos de CPU del servidor en pleno uso (un extremo del espectro probado), el programa de instalación necesita recursos de red y disco lo suficientemente rápidos.
+    Se utiliza una prueba comparativa interna de Microsoft denominada aspectos básicos web para optimizar la eficacia energética de las plataformas que ejecutan el servidor Web de IIS. El programa de instalación contiene un servidor Web y varios clientes que simulan el tráfico de acceso web. La distribución de páginas web dinámicas, estáticas activas (en memoria) y estáticas en frío (acceso al disco necesario) se basa en los estudios estadísticos de los servidores de producción. Para que los núcleos de CPU del servidor se inserten en el uso completo (un extremo del espectro probado), el programa de instalación necesita suficientes recursos de red y de disco.
 
--   **Carga de trabajo de base de datos de SQL Server**
+-   **SQL Server carga de trabajo de base de datos**
 
-    El [TPC-E](http://www.tpc.org/tpce/default.asp) banco de pruebas es una prueba comparativa popular para el análisis de rendimiento de base de datos. Sirve para generar una carga de trabajo OLTP para optimizaciones de optimización de PPM. Esta carga de trabajo tiene E/S de disco significativo y, por tanto, tiene un requisito de alto rendimiento para el tamaño de almacenamiento del sistema y la memoria.
+    La prueba comparativa [TPC-E](http://www.tpc.org/tpce/default.asp) es un punto de referencia común para el análisis de rendimiento de bases de datos. Se usa para generar una carga de trabajo OLTP para optimizaciones de optimización de PPM. Esta carga de trabajo tiene una e/s de disco significativa y, por tanto, tiene un requisito de alto rendimiento para el sistema de almacenamiento y el tamaño de la memoria.
 
--   **Carga de trabajo de servidor de archivos**
+-   **Carga de trabajo del servidor de archivos**
 
-    Llama una prueba comparativa de Microsoft desarrolló [FSCT](http://www.snia.org/sites/default/files2/sdc_archives/2009_presentations/tuesday/BartoszNyczkowski-JianYan_FileServerCapacityTool.pdf) se usa para generar una carga de trabajo del servidor de archivos SMB. Crea un archivo grande que se establezca en el servidor y usa muchos sistemas cliente (reales o virtualizados) para generar el archivo abrir, cerrar, leer y escribir las operaciones. La combinación de la operación se basa en los estudios estadísticos de los servidores de producción. Hace hincapié en CPU, disco y los recursos de red.
+    Una prueba comparativa desarrollada por Microsoft denominada [FSCT](http://www.snia.org/sites/default/files2/sdc_archives/2009_presentations/tuesday/BartoszNyczkowski-JianYan_FileServerCapacityTool.pdf) se usa para generar una carga de trabajo de servidor de archivos SMB. Crea un conjunto de archivos grandes en el servidor y utiliza muchos sistemas cliente (reales o virtualizados) para generar operaciones de apertura, cierre, lectura y escritura de archivos. La combinación de operaciones se basa en los estudios estadísticos de los servidores de producción. Enfatiza los recursos de CPU, disco y red.
 
 -   **SPECpower: carga de trabajo de JAVA**
 
-    [SPECpower\_ssj2008](http://spec.org/power_ssj2008/) es el primer estándar del sector SPEC pruebas comparativas que en conjunto se evalúa como las características de capacidad y rendimiento. Es una carga de trabajo de Java del lado servidor con distintos niveles de carga de CPU. No requiere muchos recursos de disco o de red, pero tiene determinados requisitos de ancho de banda de memoria. Casi toda la actividad de CPU se realiza en modo de usuario; actividad de modo kernel no tiene un impacto mucho de alimentación de los bancos de pruebas y las características de rendimiento excepto para las decisiones de administración de energía.
+    [SPECpower\_ssj2008](http://spec.org/power_ssj2008/) es el primer Benchmark de especificación estándar del sector que evalúa conjuntamente las características de potencia y rendimiento. Es una carga de trabajo de Java del lado servidor con distintos niveles de carga de CPU. No requiere muchos recursos de disco o de red, pero tiene ciertos requisitos para el ancho de banda de memoria. Casi toda la actividad de la CPU se realiza en modo de usuario; la actividad de modo kernel no tiene un gran impacto en las características de potencia y rendimiento de las pruebas comparativas, excepto en las decisiones de administración de energía.
 
--   **Carga de trabajo de servidor de aplicaciones**
+-   **Carga de trabajo del servidor de aplicaciones**
 
-    El [SAP SD](http://global.sap.com/campaigns/benchmark/index.epx) banco de pruebas se usa para generar una carga de trabajo del servidor de aplicaciones. Se usa un programa de instalación de dos niveles, con la base de datos y el servidor de aplicaciones en el mismo host de servidor. Esta carga de trabajo también utiliza el tiempo de respuesta como una métrica de rendimiento, que es diferente de otras cargas de trabajo probados. Por lo tanto se usa para comprobar el efecto de los parámetros PPM en la capacidad de respuesta. No obstante, no está pensado para ser representativos de todas las cargas de trabajo de producción sensibles a la latencia.
+    La prueba comparativa [de SAP-SD](http://global.sap.com/campaigns/benchmark/index.epx) se usa para generar una carga de trabajo del servidor de aplicaciones. Se utiliza una configuración de dos niveles, con la base de datos y el servidor de aplicaciones en el mismo host de servidor. Esta carga de trabajo también emplea el tiempo de respuesta como una métrica de rendimiento, que difiere de otras cargas de trabajo probadas. Por lo tanto, se usa para comprobar el impacto de los parámetros PPM en la capacidad de respuesta. No obstante, no pretende ser representativa de todas las cargas de trabajo de producción sensibles a la latencia.
 
-Todas las pruebas comparativas excepto SPECpower se diseñaron originalmente para el análisis de rendimiento y, por tanto, se crearon para ejecutarse en los niveles de carga máxima. Sin embargo, los niveles de medianas y carga ligera son más comunes para los servidores de producción del mundo real y son más interesante para **equilibrado** planear las optimizaciones. Intencionadamente ejecutamos las pruebas comparativas en diferentes niveles de carga de 100% hasta el 10% (en los pasos del 10%) mediante varios métodos de limitación (por ejemplo, al reducir el número de usuarios/clientes activos).
+Todas las pruebas comparativas excepto SPECpower se diseñaron originalmente para el análisis de rendimiento y, por tanto, se crearon para ejecutarse en niveles de carga máxima. Sin embargo, los niveles de carga medio a ligero son más comunes para los servidores de producción del mundo real y son más interesantes para las optimizaciones de planes **equilibrados** . Ejecutamos intencionadamente las pruebas comparativas en diferentes niveles de carga desde el 100% hasta el 10% (en un 10% de los pasos) mediante el uso de varios métodos de limitación (por ejemplo, reduciendo el número de usuarios o clientes activos).
 
 ### <a name="hardware-configurations"></a>Configuraciones de hardware
 
-Para cada versión de Windows, se usan los servidores de producción más recientes en el proceso de análisis y la optimización de plan de energía. En algunos casos, las pruebas se realizaron en los sistemas de preproducción cuya programación versión coincidente de la próxima versión de Windows.
+En cada versión de Windows, se usan los servidores de producción más recientes en el proceso de análisis y optimización del plan de energía. En algunos casos, las pruebas se realizaron en sistemas de preproducción cuya programación de versión coincidía con la de la siguiente versión de Windows.
 
-Dado que la mayoría de los servidores se vende con sockets de procesador de 1 a 4, y puesto que los servidores de escalado vertical están menos probables que tiene la eficiencia de energía como una preocupación principal, las pruebas de optimización del plan de energía se ejecutan principalmente en sistemas de 2 y 4 sockets. La cantidad de RAM, disco y los recursos de red para cada prueba se eligen para permitir que cada sistema ejecutar hasta su capacidad máxima, teniendo en cuenta las restricciones de costo que normalmente estarían en su lugar para entornos de servidor reales, como mantener la configuraciones razonables.
+Dado que la mayoría de los servidores se venden con 1 a 4 sockets de procesador, y como los servidores de escalado vertical tienen menos probabilidades de tener eficiencia energética como preocupación principal, las pruebas de optimización del plan de energía se ejecutan principalmente en sistemas de 2 y 4 sockets. La cantidad de recursos de RAM, de disco y de red para cada prueba se eligen para permitir que cada sistema se ejecute hasta su capacidad máxima, al tiempo que se tienen en cuenta las restricciones de costos que normalmente se aplicarían a los entornos de servidor reales, como mantener el configuraciones razonables.
 
 > [!IMPORTANT]
-> Aunque el sistema puede ejecutar en su carga máxima, normalmente optimizamos para los niveles inferiores de carga, ya que los servidores que ejecutan de forma coherente en los niveles de su carga pico es muy recomendable que use el **de alto rendimiento** plan de energía a menos energía la eficiencia es una prioridad alta.
+> Aunque el sistema puede ejecutarse en su carga máxima, normalmente se optimiza para niveles de carga inferiores, ya que los servidores que se ejecutan de forma coherente en sus niveles de carga máxima serían muy aconsejables usar el plan de energía de **alto rendimiento** , a menos que la eficiencia energética sea un alto Prior.
 
 ### <a name="metrics"></a>metrics
 
-Todas las pruebas comparativas probadas utilizan rendimiento como la métrica de rendimiento. Tiempo de respuesta se considera como un requisito del SLA para estas cargas de trabajo (excepto para SAP, donde es una métrica principal). Por ejemplo, una ejecución de pruebas comparativas se considera "valid" si la media o el tiempo de respuesta máximo es menor que el valor determinado.
+Todas las pruebas comparativas probadas usan el rendimiento como la métrica de rendimiento. El tiempo de respuesta se considera un requisito de acuerdo de nivel de servicio para estas cargas de trabajo (excepto para SAP, donde es una métrica principal). Por ejemplo, una ejecución de pruebas comparativas se considera "válida" si el tiempo de respuesta medio o máximo es menor que cierto valor.
 
-Por lo tanto, el análisis de optimización también de PPM consume rendimiento como su métrica de rendimiento.  En el nivel de carga superior (uso de CPU del 100%), nuestro objetivo es que el rendimiento no debe reducir más de un pequeño porcentaje debido a optimizaciones de administración de energía. Pero la consideración principal es maximizar la eficiencia de energía (tal y como se define a continuación) en los niveles de carga media y baja.
+Por lo tanto, el análisis de optimización de PPM también utiliza el rendimiento como su métrica de rendimiento.  En el nivel de carga más alto (100% de uso de CPU), nuestro objetivo es que el rendimiento no debe disminuir más que un porcentaje debido a las optimizaciones de administración de energía. Pero la principal consideración es maximizar la eficacia de la energía (como se define a continuación) en los niveles de carga medio y bajo.
 
-![fórmula de la eficiencia de energía](../../media/serverperf-ppm-formula.jpg)
+![fórmula de eficiencia de energía](../../media/serverperf-ppm-formula.jpg)
 
-Ejecución de los núcleos de CPU a frecuencias bajas reduce el consumo de energía. Sin embargo, frecuencias bajas suele reducir el rendimiento y aumentan el tiempo de respuesta. Para el **equilibrado** plan de energía, hay una correlación intencionada de la capacidad de respuesta y de la eficiencia. Las pruebas de carga de trabajo SAP, así como el SLA de tiempo de respuesta de las otras cargas de trabajo, asegúrese de que el aumento del tiempo de respuesta no supere cierto umbral (5% como ejemplo) para estas cargas de trabajo específicas.
+La ejecución de núcleos de CPU a frecuencias bajas reduce el consumo energético. Sin embargo, las frecuencias bajas suelen disminuir el rendimiento y aumentar el tiempo de respuesta. Para el plan de energía **equilibrado** , existe un equilibrio intencionado de la capacidad de respuesta y la eficacia de la energía. Las pruebas de carga de trabajo de SAP, así como los acuerdos de nivel de rendimiento de tiempo de respuesta de las otras cargas de trabajo, asegúrese de que el aumento del tiempo de respuesta no supera el umbral (5% como ejemplo) para estas cargas de trabajo específicas.
 
 > [!NOTE]
-> Si la carga de trabajo usa el tiempo de respuesta como la métrica de rendimiento, el sistema debe cambiar a la **de alto rendimiento** plan de energía o cambiar **equilibrado** plan de energía como se sugiere en [ Recomienda los parámetros del Plan de energía equilibrada para el tiempo de respuesta rápida](recommended-balanced-plan-parameters.md).
+> Si la carga de trabajo utiliza el tiempo de respuesta como la métrica de rendimiento, el sistema debe cambiar al plan **de energía de** **alto rendimiento** o cambiar el plan de energía como se sugiere en parámetros de [plan de energía equilibrado recomendado para una respuesta rápida. Hora](recommended-balanced-plan-parameters.md).
 
-### <a name="tuning-results"></a>Resultados de optimización
+### <a name="tuning-results"></a>Resultados de la optimización
 
-A partir de Windows Server 2008, Microsoft ha trabajado con Intel y AMD para optimizar los parámetros PPM para los procesadores del servidor actualizados para cada versión de Windows. Una gran cantidad de combinaciones de parámetros PPM se probaron en cada una de las cargas de trabajo tratadas anteriormente para encontrar la mejor eficiencia de energía en niveles diferentes de carga. Como software algoritmos se han perfeccionado y arquitecturas de hardware power evolucionadas, cada nuevo Windows Server siempre tenía mejor o igual a la eficiencia de energía que en sus versiones anteriores en la gama de cargas de trabajo probados.
+A partir de Windows Server 2008, Microsoft trabajó con Intel y AMD para optimizar los parámetros de PPM para los procesadores de servidor más actualizados para cada versión de Windows. Se probó un gran número de combinaciones de parámetros PPM en cada una de las cargas de trabajo descritas anteriormente para encontrar la mejor eficacia energética en diferentes niveles de carga. A medida que se refinan los algoritmos de software y se evolucionen las arquitecturas de energía de hardware, cada Windows Server nuevo siempre tenía una eficiencia de energía mejor o igual que sus versiones anteriores en el intervalo de cargas de trabajo probadas.
 
-La ilustración siguiente proporciona un ejemplo de la eficiencia de energía en diferentes niveles de carga de TPC-E en un servidor de producción de 4 sockets con Windows Server 2008 R2. Muestra una mejora del 8% en los niveles de carga Media en comparación con Windows Server 2008.
+En la ilustración siguiente se proporciona un ejemplo de la eficacia energética en diferentes niveles de carga TPC-E en un servidor de producción de 4 sockets que ejecuta Windows Server 2008 R2. Muestra una mejora del 8% en los niveles de carga media en comparación con Windows Server 2008.
 
-![comparación de la eficiencia de energía](../../media/serverperf-ppm-figure1.jpg)
+![comparación de eficiencia energética](../../media/serverperf-ppm-figure1.jpg)
 
-## <a name="customized-tuning-suggestions"></a>Personalizar las sugerencias de ajuste
+## <a name="customized-tuning-suggestions"></a>Sugerencias de optimización personalizadas
 
-Si las características de la carga de trabajo principal difieren significativamente de las cinco cargas de trabajo utilizados para el valor predeterminado **equilibrado** plan de energía PPM optimización, puede experimentar modificando uno o más parámetros PPM para encontrar la mejor opción para su entorno.
+Si las características de la carga de trabajo principal difieren significativamente de las cinco cargas de trabajo que se usan para el **ajuste predeterminado del** plan de energía en ppm, puede experimentar modificando uno o varios parámetros de ppm para encontrar el mejor ajuste para su entorno.
 
-Debido a la cantidad y complejidad de los parámetros, esto puede ser una tarea complicada, pero si desea obtener el mejor equilibrio entre eficacia de carga de trabajo y el consumo de energía para su entorno particular, es posible que vale la pena el esfuerzo.
+Debido al número y la complejidad de los parámetros, puede tratarse de una tarea desafiante, pero si busca el mejor equilibrio entre el consumo de energía y la eficacia de la carga de trabajo para su entorno concreto, puede merecer la pena el esfuerzo.
 
- El conjunto completo de los parámetros ajustables de PPM puede encontrarse en [optimización de administración de energía de procesador](https://msdn.microsoft.com/windows/hardware/gg566941.aspx). Algunos de los parámetros de energía más simple para comenzar podrían ser:
+ El conjunto completo de parámetros de PPM ajustables puede encontrarse en la optimización de la [Administración de energía del procesador](https://msdn.microsoft.com/windows/hardware/gg566941.aspx). Algunos de los parámetros de energía más sencillos para empezar pueden ser:
 
--   **Aumentar el umbral de rendimiento de procesador y la hora de aumentar el rendimiento de procesador** : valores mayores ralentizar la respuesta de rendimiento al aumento de la actividad
+-   Aumento del **rendimiento del procesador y tiempo de aumento del rendimiento del procesador** : los valores mayores ralentizan la respuesta de rendimiento a la actividad mayor
 
--   **Umbral de reducir el rendimiento de procesador** : la respuesta de energía para los períodos de inactividad de quicken de valores grandes
+-   **Umbral de reducción de rendimiento de procesador** : valores grandes Quicken la respuesta de energía a períodos de inactividad
 
--   **Tiempo de reducir el rendimiento de procesador** : valores mayores reducen gradualmente más el rendimiento durante los períodos de inactividad
+-   **Tiempo de reducción del rendimiento del procesador** : los valores más grandes reducen gradualmente el rendimiento durante los períodos de inactividad
 
--   **Directiva de aumentar el rendimiento del procesador** : la directiva "Única" ralentiza la respuesta de rendimiento sostenido y una mayor actividad; la directiva "Rocket" reacciona rápidamente a una mayor actividad
+-   **Directiva de aumento de rendimiento del procesador** : la Directiva "única" reduce la respuesta de rendimiento a la actividad aumentada y sostenida. la Directiva "Rocket" reacciona rápidamente a la mayor actividad
 
--   **Directiva de reducir el rendimiento del procesador** : la directiva "Única" reduce gradualmente más rendimiento durante los períodos de inactividad ya; la directiva "Rocket" quita power muy rápidamente al entrar en un periodo de inactividad
+-   **Directiva de reducción de rendimiento del procesador** : la Directiva "única" reduce gradualmente el rendimiento durante períodos de inactividad más largos. la política "Rocket" reduce la potencia rápidamente al entrar en un período de inactividad.
 
 >[!Important]
-> Antes de comenzar cualquier experimentos, primero debe conocer las cargas de trabajo, que le ayudarán a tomar las decisiones adecuadas de parámetro PPM y reducir el esfuerzo de optimización.
+> Antes de comenzar cualquier experimento, primero debe comprender las cargas de trabajo, lo que le ayudará a tomar las opciones correctas del parámetro PPM y reducir el esfuerzo de optimización.
 
-### <a name="understand-high-level-performance-and-power-requirements"></a>Comprender los requisitos de potencia y rendimiento de alto nivel
+### <a name="understand-high-level-performance-and-power-requirements"></a>Comprender los requisitos de rendimiento y energía de alto nivel
 
-Si la carga de trabajo es "tiempo real" (p. ej., susceptibles de sufrir problemas técnicos con u otros visible para el usuario final afecta a) o tiene requisitos muy estrictos de la capacidad de respuesta (por ejemplo, un bursátil) y, si el consumo de energía no es un criterio principal para su entorno, probablemente deberá simplemente cambie a la **de alto rendimiento** plan de energía. En caso contrario, debe comprender los requisitos de tiempo de respuesta de las cargas de trabajo y, a continuación, ajuste los parámetros PPM para la mejor eficiencia de energía posibles que todavía cumple esos requisitos.
+Si la carga de trabajo es "tiempo real" (por ejemplo, es susceptible a problemas o a otros impactos visibles para el usuario final) o tiene un requisito de capacidad de respuesta muy estrecho (por ejemplo, un valor bursátil), y si el consumo de energía no es un criterio principal para su entorno, probablemente simplemente cambie al plan de energía de **alto rendimiento** . De lo contrario, debe comprender los requisitos de tiempo de respuesta de las cargas de trabajo y, a continuación, ajustar los parámetros de PPM para lograr la mejor eficacia de energía posible que aún cumpla esos requisitos.
 
-### <a name="understand-underlying-workload-characteristics"></a>Comprender las características de carga de trabajo subyacente
+### <a name="understand-underlying-workload-characteristics"></a>Comprender las características de la carga de trabajo subyacente
 
-Debe conocer las cargas de trabajo y los conjuntos de parámetros de experimento para la optimización de diseño. Por ejemplo, si las frecuencias de los núcleos de CPU deben ser aplicar rampas muy rápida (es posible que tenga una carga de trabajo por ráfagas con períodos de inactividad significativo, pero necesita la capacidad de respuesta muy rápido cuando surja una nueva transacción) y, a continuación, el rendimiento del procesador aumenta directiva es posible que debe establecerse en "rocket" (que, como el nombre implica, tira la frecuencia de núcleo de CPU a su valor máximo, en lugar de paso a través de un período de tiempo).
+Debe conocer sus cargas de trabajo y diseñar los conjuntos de parámetros del experimento para la optimización. Por ejemplo, si es necesario aumentar la velocidad de las frecuencias de los núcleos de CPU (quizás tenga una carga de trabajo incremental con períodos de inactividad significativos, pero necesita una capacidad de respuesta muy rápida cuando llega una nueva transacción), la Directiva de aumento del rendimiento del procesador es posible que deba establecerse en "Rocket" (que, como su nombre implica, toma la frecuencia de núcleo de CPU en su valor máximo en lugar de ejecutarla en un período de tiempo).
 
-Si la carga de trabajo está muy por ráfagas, se puede reducir el intervalo de comprobación PPM para hacer que la frecuencia de CPU iniciar paso antes una vez que llega una ráfaga. Si la carga de trabajo no tiene simultaneidad excesiva de subprocesos, entonces estacionamiento core puede habilitarse para forzar la carga de trabajo para ejecutar en un menor número de núcleos, lo que podría mejorar potencialmente la frecuencia de aciertos caché del procesador.
+Si la carga de trabajo es muy alta, el intervalo de comprobación de PPM puede reducirse para que la frecuencia de la CPU empiece a ejecutarse antes de que llegue una ráfaga. Si la carga de trabajo no tiene una simultaneidad alta de subprocesos, se puede habilitar el estacionamiento principal para forzar la ejecución de la carga de trabajo en un número menor de núcleos, lo que también podría mejorar las proporciones de aciertos de caché del procesador.
 
-Si desea aumentar las frecuencias de CPU en los niveles de uso medio (es decir, los niveles de carga de trabajo no claro), se pueden ajustar los umbrales de aumentar o disminuir de rendimiento de procesador para reaccionar no hasta que se observan determinados niveles de actividad.
+Si solo desea aumentar las frecuencias de la CPU en niveles de uso medio (es decir, no en niveles de carga de trabajo ligeros), los umbrales de aumento o disminución del rendimiento del procesador pueden ajustarse para no reaccionar hasta que se observen ciertos niveles de actividad.
 
 ### <a name="understand-periodic-behaviors"></a>Comprender los comportamientos periódicos
 
-Puede haber requisitos de rendimiento diferente para el día y por la noche o durante los fines de semana, o puede haber diferentes cargas de trabajo que se ejecutan en momentos diferentes. En este caso, un conjunto de parámetros PPM podría no ser óptimo para todos los períodos de tiempo. Puesto que pueden desarrollarse varios planes de energía personalizados, es posible incluso optimizar para distintos períodos de tiempo y cambiar entre los planes de energía mediante scripts u otro medio de configuración dinámica del sistema.
+Puede haber diferentes requisitos de rendimiento para el día y el nocturno, o durante los fines de semana, o puede haber diferentes cargas de trabajo que se ejecuten en momentos diferentes. En este caso, un conjunto de parámetros de PPM podría no ser óptimo para todos los períodos de tiempo. Dado que se pueden diseñar varios planes de energía personalizados, es posible incluso ajustar los distintos períodos de tiempo y cambiar entre los planes de energía a través de scripts u otros medios de configuración dinámica del sistema.
 
-Nuevamente, esto aumenta la complejidad del proceso de optimización, por lo que es una pregunta se obtenerse el valor de este tipo de optimización, que es probable que deba repetir cuando hay actualizaciones importantes de hardware o los cambios de carga de trabajo.
+Una vez más, esto se suma a la complejidad del proceso de optimización, por lo que es una cuestión de cuánto se ganará en este tipo de optimización, lo que probablemente tendrá que repetirse cuando haya importantes actualizaciones de hardware o cambios de carga de trabajo.
 
-Es por esta razón Windows proporciona un **equilibrado** plan de energía en primer lugar, porque en muchos casos es probablemente no vale la pena el esfuerzo de optimización de mano las cargas de trabajo específico en un servidor específico.
+Esta es la razón por la que Windows proporciona un plan de energía **equilibrado** en primer lugar, porque en muchos casos probablemente no merece la pena el esfuerzo de la optimización manual para una carga de trabajo específica en un servidor específico.
 
 ## <a name="see-also"></a>Vea también
-- [Consideraciones de rendimiento del Hardware de servidor](../index.md)
+- [Consideraciones de rendimiento de hardware de servidor](../index.md)
 - [Server Hardware Power Considerations](../power.md) (Consideraciones de alimentación del hardware de servidor)
 - [Power and Performance Tuning](power-performance-tuning.md) (Optimización de potencia y rendimiento)
 - [Processor Power Management Tuning](processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)

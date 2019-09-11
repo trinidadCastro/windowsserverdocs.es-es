@@ -1,6 +1,6 @@
 ---
-title: Personalización de notificaciones emitido en id_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior
-description: Una introducción técnica de los conceptos de token de identificador personalizado en AD FS 2016 o posterior
+title: Personalización de notificaciones para que se emitan en ID_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior.
+description: Información general técnica sobre los conceptos del token de identificador personalizado en AD FS 2016 o posterior.
 author: anandyadavmsft
 ms.author: billmath
 manager: mtillman
@@ -9,100 +9,100 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.reviewer: anandy
 ms.technology: identity-adfs
-ms.openlocfilehash: 04573aa13689a0e6744b01a0fbf8b11b622b2706
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: d2577be364d7bb2e74ab7e06490b7bc3f150441a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445472"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867694"
 ---
-# <a name="customize-claims-to-be-emitted-in-idtoken-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>Personalización de notificaciones emitido en id_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior
+# <a name="customize-claims-to-be-emitted-in-id_token-when-using-openid-connect-or-oauth-with-ad-fs-2016-or-later"></a>Personalización de notificaciones para que se emitan en ID_token al usar OpenID Connect o OAuth con AD FS 2016 o posterior.
 
 ## <a name="overview"></a>Información general
-El artículo [aquí](native-client-with-ad-fs.md) muestra cómo crear una aplicación que utiliza AD FS para OpenID Connect inicio de sesión. Sin embargo, de forma predeterminada hay solo un conjunto fijo de notificaciones disponibles en id_token. AD FS 2016 y versiones posteriores tienen la capacidad para personalizar el valor de id_token en escenarios de OpenID Connect.
+En este [artículo se](native-client-with-ad-fs.md) muestra cómo compilar una aplicación que usa AD FS para el inicio de sesión de OpenID Connect. Sin embargo, de forma predeterminada solo hay un conjunto fijo de notificaciones disponibles en ID_token. AD FS 2016 y versiones posteriores tienen la capacidad de personalizar ID_token en escenarios de OpenID Connect.
 
-## <a name="when-are-custom-id-token-used"></a>¿Cuando están identificador personalizado token que se usa?
-En determinados escenarios es posible que la aplicación cliente no tiene un recurso que está intentando obtener acceso. Por lo tanto, realmente no necesita un token de acceso. En tales casos, la aplicación cliente necesita básicamente solo un identificador token, pero con algunas notificaciones adicionales para ayudar en la funcionalidad.
+## <a name="when-are-custom-id-token-used"></a>¿Cuándo se usa el token de identificador personalizado?
+En algunos escenarios, es posible que la aplicación cliente no tenga un recurso al que intente tener acceso. Por lo tanto, realmente no necesita un token de acceso. En tales casos, la aplicación cliente solo necesita un token de identificador, pero con algunas notificaciones adicionales para ayudar en la funcionalidad.
 
-## <a name="what-are-the-restrictions-on-getting-custom-claims-in-id-token"></a>¿Cuáles son las restricciones sobre la obtención de notificaciones personalizadas en el identificador de token?
+## <a name="what-are-the-restrictions-on-getting-custom-claims-in-id-token"></a>¿Cuáles son las restricciones en la obtención de notificaciones personalizadas en el token de identificador?
 
 ### <a name="scenario-1"></a>Escenario 1
 
-![restringir](media/Custom-Id-Tokens-in-AD-FS/res1.png)
+![impedir](media/Custom-Id-Tokens-in-AD-FS/res1.png)
 
 1.  response_mode se establece como form_post
-2.  Solo los clientes públicos pueden obtener notificaciones personalizadas en el identificador de token
-3.  Identificador del usuario autenticado (identificador de la API Web) debe coincidir con el identificador de cliente
+2.  Solo los clientes públicos pueden obtener notificaciones personalizadas en el token de identificador
+3.  El identificador del usuario de confianza (identificador de la API Web) debe ser el mismo que el identificador de cliente
 
 ### <a name="scenario-2"></a>Escenario 2
 
-![restringir](media/Custom-Id-Tokens-in-AD-FS/restrict2.png)
+![impedir](media/Custom-Id-Tokens-in-AD-FS/restrict2.png)
 
-Con [KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) instalados en los servidores de AD FS
+Con [KB4019472](https://support.microsoft.com/help/4019472/windows-10-update-kb4019472) instalado en los servidores de AD FS
 1.  response_mode se establece como form_post
-2.  Los clientes públicos y confidenciales pueden obtener notificaciones personalizadas en el Id. de token
-3.  Asignar allatclaims de ámbito para el cliente: un par RP.
-Puede asignar el ámbito mediante el cmdlet Grant ADFSApplicationPermission tal como se indica en el ejemplo siguiente:
+2.  Tanto los clientes públicos como los confidenciales pueden obtener notificaciones personalizadas en el token de identificador
+3.  Asigne el ámbito allatclaims al par cliente-RP.
+Puede asignar el ámbito mediante el cmdlet Grant-ADFSApplicationPermission como se indica en el ejemplo siguiente:
 
 ``` powershell
 Grant-AdfsApplicationPermission -ClientRoleIdentifier "https://my/privateclient" -ServerRoleIdentifier "https://rp/fedpassive" -ScopeNames "allatclaims","openid"
 ```
 
-## <a name="creating-and-configuring-an-oauth-application-to-handle-custom-claims-in-id-token"></a>Crear y configurar una aplicación de OAuth para controlar las notificaciones personalizadas en el token de identificador
-Siga estos pasos para crear y configurar la aplicación en AD FS para recibir el token de identificador con las notificaciones personalizadas.
+## <a name="creating-and-configuring-an-oauth-application-to-handle-custom-claims-in-id-token"></a>Crear y configurar una aplicación de OAuth para administrar notificaciones personalizadas en el token de identificador
+Siga los pasos que se indican a continuación para crear y configurar la aplicación en AD FS para recibir el token de identificador con notificaciones personalizadas.
 
 ### <a name="create-and-configure-an-application-group-in-ad-fs-2016-or-later"></a>Crear y configurar un grupo de aplicaciones en AD FS 2016 o posterior
 
-1. Administración de AD FS, haga doble clic en grupos de aplicaciones y seleccione **Agregar grupo de aplicaciones**.
+1. En administración de AD FS, haga clic con el botón derecho en grupos de aplicaciones y seleccione **Agregar grupo de aplicaciones**.
 
-2. En el Asistente para grupo de aplicaciones, como nombre escriba **ADFSSSO** y en el cliente / servidor, seleccione las aplicaciones la **aplicación nativa accediendo a una aplicación web** plantilla. Haz clic en **Siguiente**.
+2. En el Asistente para grupos de aplicaciones, en nombre, escriba **ADFSSSO** y en aplicaciones cliente-servidor seleccione la plantilla **aplicación nativa que tiene acceso a una aplicación web** . Haga clic en **Next**.
 
-   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
+   ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap1.png)
 
-3. Copia el **identificador de cliente** valor.  Se usará más adelante como el valor de ida: ClientId en el archivo web.config de aplicaciones.
+3. Copie el valor del **identificador de cliente** .  Se usará más adelante como valor de ida: ClientId en el archivo Web. config de aplicaciones.
 
-4. Escriba lo siguiente para **URI de redirección:**  -  **https://localhost:44320/** .  Haz clic en **Agregar**. Haz clic en **Siguiente**.
+4. Escriba lo siguiente para el **URI de redirección:**  -  **https://localhost:44320/** .  Haga clic en **Agregar**. Haga clic en **Next**.
 
-   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
+   ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap2.png)
 
-5. En el **configurar Web API** pantalla, escriba lo siguiente para **identificador** -  **https://contoso.com/WebApp** .  Haz clic en **Agregar**. Haz clic en **Siguiente**.  Este valor se usará más adelante para **ida: ResourceID** en el archivo web.config de aplicaciones.
+5. En la pantalla **configurar API Web** , escriba lo siguiente para -  **https://contoso.com/WebApp** Identifier.  Haga clic en **Agregar**. Haga clic en **Next**.  Este valor se usará más adelante para **ida: ResourceID** en el archivo Web. config de aplicaciones.
 
-   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
+   ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap3.png)
 
-6. En el **elegir directiva de Control de acceso** pantalla, seleccione **permitir todos los usuarios** y haga clic en **siguiente**.
+6. En la pantalla **elegir Directiva de Access Control** , seleccione **permitir todos** y haga clic en **siguiente**.
 
-   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
+   ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap4.png)
 
-7. En el **configurar permisos de la aplicación** pantalla, asegúrese de que **openid** y **allatclaims** están seleccionadas y haga clic en **siguiente**.
+7. En la pantalla **configurar permisos de aplicación** , asegúrese de que **OpenID** y **allatclaims** están seleccionados y haga clic en **siguiente**.
 
-   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.png)
+   ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap5.png)
 
-8. En el **resumen** pantalla, haga clic en **siguiente**.  
+8. En la pantalla **Resumen** , haga clic en **siguiente**.  
 
-   ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.png)
+   ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap6.png)
 
-9. En el **completar** pantalla, haga clic en **cerrar**.
+9. En la pantalla **completa** , haga clic en **cerrar**.
 
-10. Administración de AD FS, haga clic en grupos de aplicaciones para obtener la lista de todos los grupos de aplicaciones. Haga doble clic en **ADFSSSO** y seleccione **propiedades**. Seleccione **ADFSSSO - API Web** y haga clic en **editar...**
+10. En administración de AD FS, haga clic en grupos de aplicaciones para obtener una lista de todos los grupos de aplicaciones. Haga clic con el botón derecho en **ADFSSSO** y seleccione **propiedades**. Seleccione **ADFSSSO-Web API** y haga clic en **Editar..** .
 
-    ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap7.png)
+    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap7.png)
 
-11. En **ADFSSSO - propiedades de la API Web** pantalla, seleccione **reglas de transformación de emisión** ficha y haga clic en **Agregar regla...**
+11. En **la pantalla ADFSSSO-propiedades de la API Web** , seleccione la pestaña **reglas de transformación de emisión** y haga clic en **Agregar regla..** .
 
-    ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.png)
+    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap8.png)
 
-12. En **transformar notificaciones Asistente para agregar regla** pantalla, seleccione **enviar notificaciones mediante regla personalizada** en la lista desplegable y haga clic en **siguiente**
+12. En la pantalla **Asistente para agregar regla de notificación de transformación** , seleccione **enviar notificaciones mediante una regla personalizada** en la lista desplegable y haga clic en **siguiente** .
 
-    ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.png)
+    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap9.png)
 
-13. En **transformar notificaciones Asistente para agregar regla** pantalla, escriba **ForCustomIDToken** en **nombre de la regla de notificación** y la siguiente regla de notificación **regla personalizada**. Haga clic en **finalizar**
+13. En la pantalla **Asistente para agregar regla de notificaciones de transformación** , escriba **ForCustomIDToken** en **nombre de regla de notificaciones** y la siguiente regla de notificaciones en **regla personalizada**. Haga clic en **Finalizar**
 
     ```  
     x:[]
     => issue(claim=x);  
     ```
 
-    ![Remoto](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.png)
+    ![Cliente](media/Custom-Id-Tokens-in-AD-FS/clientsnap10.png)
 
 ```
 
@@ -112,11 +112,11 @@ Siga estos pasos para crear y configurar la aplicación en AD FS para recibir el
 Grant-AdfsApplicationPermission -ClientRoleIdentifier "[Client ID from #3 above]" -ServerRoleIdentifier "[Identifier from #5 above]" -ScopeNames "allatclaims","openid"
 ```
 
-### <a name="download-and-modify-the-sample-application-to-emit-custom-claims-in-idtoken"></a>Descargue y modifique la aplicación de ejemplo para emitir notificaciones personalizadas en id_token
+### <a name="download-and-modify-the-sample-application-to-emit-custom-claims-in-id_token"></a>Descargar y modificar la aplicación de ejemplo para emitir notificaciones personalizadas en ID_token
 
-En esta sección se explica cómo descargar el ejemplo de aplicación Web y modificarla en Visual Studio.   Vamos a usar el ejemplo de Azure AD que se [aquí](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect).  
+En esta sección se describe cómo descargar la aplicación Web de ejemplo y modificarla en Visual Studio.   Vamos a usar el ejemplo Azure AD que se encuentra [aquí](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect).  
 
-Para descargar el proyecto de ejemplo, use Git Bash y escriba lo siguiente:  
+Para descargar el proyecto de ejemplo, use git bash y escriba lo siguiente:  
 
 ```  
 git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect  
@@ -126,11 +126,11 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
 #### <a name="to-modify-the-app"></a>Para modificar la aplicación
 
-1.  Abra el ejemplo mediante Visual Studio.  
+1.  Abra el ejemplo con Visual Studio.  
 
-2.  Vuelva a compilar la aplicación para que se restauran todos los paquetes de NuGet que faltan.  
+2.  Vuelva a compilar la aplicación para que se restauren todos los paquetes Nuget que faltan.  
 
-3.  Abra el archivo web.config.  Modifique los valores siguientes para el aspecto siguiente:  
+3.  Abra el archivo Web. config.  Modifique los valores siguientes para que tengan el aspecto siguiente:  
 
     ```  
     <add key="ida:ClientId" value="[Replace this Client Id from #3 above under section Create and configure an Application Group in AD FS 2016 or later]" />  
@@ -145,7 +145,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
 4.  Abra el archivo Startup.Auth.cs y realice los cambios siguientes:  
 
-    -   Ajustar la lógica de inicialización de middleware de OpenId Connect con los cambios siguientes:  
+    -   Retoque la lógica de inicialización del middleware de OpenId Connect con los siguientes cambios:  
 
         ```  
         private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];  
@@ -156,7 +156,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
         private static string postLogoutRedirectUri = ConfigurationManager.AppSettings["ida:PostLogoutRedirectUri"];  
         ```  
 
-    -   Comente la siguiente:  
+    -   Comente lo siguiente:  
 
             ```  
             //string Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);  
@@ -164,7 +164,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
           ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_3.PNG)
 
-    -   Más abajo, modificar las opciones de middleware de OpenId Connect como se muestra en la siguiente:  
+    -   Más adelante, modifique las opciones de middleware de OpenId Connect como se indican a continuación:  
 
         ```  
         app.UseOpenIdConnectAuthentication(  
@@ -180,7 +180,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
         ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_4.PNG)
 
-5.  Abra el archivo HomeController.cs y realice los siguientes cambios:  
+5.  Abra el archivo HomeController.cs y realice los cambios siguientes:  
 
     -   Agrega lo siguiente:  
 
@@ -188,7 +188,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
             using System.Security.Claims;  
             ```
 
-    -   Actualice el método About () como se muestra a continuación:  
+    -   Actualice el método about () como se muestra a continuación:  
 
         ```  
         [Authorize]
@@ -203,21 +203,21 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
         ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_5.PNG)
 
-### <a name="test-the-custom-claims-in-id-token"></a>Probar las notificaciones personalizadas en el token de identificador
+### <a name="test-the-custom-claims-in-id-token"></a>Prueba de las notificaciones personalizadas en el token de identificador
 
-Una vez realizados los cambios anteriores, presione la tecla F5. Se abrirá la página de ejemplo. Haga clic en Inicio de sesión.
+Una vez realizados los cambios anteriores, presione F5. Se abrirá la página de ejemplo. Haga clic en iniciar sesión.
 
 ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_6.PNG)
 
-Se redirige a la página de inicio de sesión de AD FS. Continúe e inicie sesión.
+Se le redirigirá a la página de inicio de sesión de AD FS. Continúe e inicie sesión.
 
 ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_7.PNG)
 
-Cuando esto se realice correctamente, verá que ahora ha iniciado sesión.
+Una vez que esto se realice correctamente, verá que ya ha iniciado sesión.
 
 ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_8.PNG)
 
-Haga clic en acerca de vínculo. Verá Hello [Username] que se recupera de la notificación de nombre de usuario en el token de identificador
+Haga clic en el vínculo acerca de. Verá Hola [nombre de usuario] que se recupera de la demanda de nombre de usuario en el token de identificador.
 
 ![AD FS OpenID](media/Custom-Id-Tokens-in-AD-FS/AD_FS_OpenID_9.PNG)
 

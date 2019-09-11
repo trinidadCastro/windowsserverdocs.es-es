@@ -9,17 +9,17 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 154e6e986bd0e78936a985ce7b80ee533ea5c82a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 44b8fef82e2f758e99ef0f8d9b28a55d36f0cfdf
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191827"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868001"
 ---
 # <a name="windows-server-ad-fs-deployment-guide"></a>Guía de implementación de Windows Server AD FS
 
 
-Puede usar los servicios de federación de Active Directory \(AD FS\) con Windows Server 2016 y sistema operativo 2012 R2 para generar una identidad federada en soluciones de administración que amplían la identificación distribuida, autenticación, y Servicios de autorización en Web\-en función de las aplicaciones a través de límites de la organización y la plataforma. Al implementar AD FS puede ampliar las capacidades existentes administración de identidades de su organización en Internet.  
+Puede usar servicios de Federación de Active Directory (AD FS) \(AD FS\) con el sistema operativo Windows Server 2016 y 2012 R2 para crear una solución de administración de identidades federadas que amplíe la identificación distribuida, la autenticación y servicios de autorización para\-aplicaciones basadas en Web a través de los límites de la organización y la plataforma. Mediante la implementación de AD FS, puede ampliar las capacidades existentes de administración de identidades de su organización a Internet.  
   
 -   [Implementar una granja de servidores de federación](Deploying-a-Federation-Server-Farm.md)  
   

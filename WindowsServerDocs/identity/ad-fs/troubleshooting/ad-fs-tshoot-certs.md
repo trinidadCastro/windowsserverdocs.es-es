@@ -1,6 +1,6 @@
 ---
-title: Solución de AD FS - certificados
-description: Este documento describe los problemas típicos de certificado.
+title: 'Solución de problemas de AD FS: certificados'
+description: En este documento se describen los problemas típicos de los certificados.
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -8,62 +8,62 @@ ms.date: 02/21/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 42fdce936bb4a6f25b456c4a96c7b99f650e6033
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cee87ce864e333b98e92fa64e939f2ead7edc156
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59860586"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869190"
 ---
-# <a name="ad-fs-troubleshooting---certificates"></a>Solución de AD FS - certificados
-AD FS requiere los siguientes certificados para poder funcionar correctamente.  Si cualquiera de ellos no se han de programa de instalación o configurado correctamente, a continuación, pueden surgir problemas.  
+# <a name="ad-fs-troubleshooting---certificates"></a>Solución de problemas de AD FS: certificados
+AD FS requiere los certificados siguientes para funcionar correctamente.  Si alguno de estos no se ha configurado o configurado correctamente, pueden surgir problemas.  
 
 ## <a name="required-certificates"></a>Certificados necesarios
 AD FS requiere los siguientes certificados:
 
 
 
-- **Confianza de federación** : Esto requiere que un certificado encadenado a una raíz de confianza mutua Internet entidad de certificación (CA) está presente en el almacén raíz de confianza del proveedor de notificaciones y de confianza en los servidores de federación, un se ha implementado el diseño de la certificación cruzada en el que cada lado tiene intercambiar su entidad de certificación raíz con su asociado o certificados que se han importado en cada lado donde corresponda autofirmados.
-- **Firma de tokens** : el equipo de cada servicio de federación requiere un certificado de firma de tokens.  El certificado de firma de tokens del proveedor de notificaciones debe ser de confianza del servidor de federación de confianza. El certificado de firma de tokens de usuario de confianza entidad debe ser de confianza todas las aplicaciones que reciben tokens desde el servidor de federación de RP.
-- **Secure Sockets Layer (SSL)** : el certificado SSL para el servicio de federación debe estar presente en un almacén de confianza en el equipo proxy de servidor de federación y tiene una cadena válida para un almacén de la entidad de certificación (CA) de confianza.
-- **Lista de revocación (CRL) de certificados** : para cualquier certificado que tenga una CRL publicada, la CRL debe ser accesible para todos los clientes y servidores que necesitan tener acceso al certificado.
+- **Confianza de Federación** : requiere que un certificado encadenado a una entidad de certificación (CA) raíz de Internet de confianza mutua esté presente en el almacén raíz de confianza del proveedor de notificaciones y de los servidores de Federación de usuario de confianza, un se ha implementado el diseño de certificación cruzada en el que cada lado ha intercambiado su CA raíz con su asociado, o los certificados autofirmados que se han importado en cada lado cuando sea necesario.
+- **Firma de tokens** : cada equipo servicio de Federación requiere un certificado de firma de tokens.  El certificado de firma de tokens del proveedor de notificaciones debe ser de confianza para el servidor de Federación de usuario de confianza. El certificado de firma de tokens de usuario de confianza debe ser de confianza para todas las aplicaciones que reciben tokens del servidor de Federación de RP.
+- **Capa de sockets seguros (SSL)** : el certificado SSL para la servicio de Federación debe estar presente en un almacén de confianza del equipo de servidor proxy de Federación y tener una cadena válida a un almacén de entidades de certificación (CA) de confianza.
+- **Lista de revocación de certificados (CRL)** : para cualquier certificado que tenga publicada una CRL, la CRL debe ser accesible para todos los clientes y servidores que necesitan tener acceso al certificado.
 
-Si cualquiera de los pasos anteriores no están configurado correctamente, AD FS no funcionará.
+Si alguno de los anteriores no se ha configurado correctamente, AD FS no funcionará.
 
-## <a name="common-things-to-check-with-certificates"></a>Comprobaciones habituales con certificados
-La siguiente es una lista de las cosas que pueden surgir y deben comprobarse al intentar resolver un problema de certificado.
+## <a name="common-things-to-check-with-certificates"></a>Aspectos comunes que se deben comprobar con los certificados
+A continuación se muestra una lista de las cosas que pueden surgir y deben comprobarse al intentar resolver un problema de certificado.
 
-- Asegúrese de que el certificado es de confianza
-    - Deben ser de confianza para los clientes de certificados SSL
-    - Certificados de firmas de tokens deben ser de confianza para los usuarios de confianza
-- Compruebe la cadena de confianza - cada certificado en las necesidades de la cadena sea válido.
-- Compruebe la fecha de expiración del certificado
-- Comprobar la accesibilidad de la lista de revocación de certificados (CRL)
-    - Asegúrese de que se rellena el campo CDP
-    - Busque de forma manual el CDP
-- Asegúrese de que no se revocó el certificado
+- Asegúrese de que el certificado es de confianza.
+    - Los clientes deben confiar en los certificados SSL
+    - Los certificados de firma de tokens deben ser de confianza para los usuarios de confianza
+- Compruebe la cadena de confianza: todos los certificados de la cadena deben ser válidos.
+- Comprobar la fecha de expiración del certificado
+- Comprobar accesibilidad de lista de revocación de certificados (CRL)
+    - Asegúrese de que el campo CDP está rellenado
+    - Examinar manualmente el CDP
+- Asegúrese de que el certificado no se haya revocado.
 
-## <a name="common-certificate-errors"></a>Errores comunes de certificado
-En la tabla siguiente es una lista de errores comunes y las posibles causas.
+## <a name="common-certificate-errors"></a>Errores comunes de certificados
+En la tabla siguiente se muestra una lista de errores comunes y posibles causas.
 
 |Evento|Causa|Resolución
 |-----|-----|-----|
-|Evento 249 - un certificado no se encontró en el almacén de certificados. En escenarios de sustitución del certificado, esto puede causar un error cuando el servicio de federación es firmar o descifrar utilizando este certificado.|El certificado en cuestión no está presente en el almacén de certificados local o la cuenta de servicio no tiene permiso para la clave privada del certificado.|Asegúrese de que el certificado está instalado en el almacén LocalMAchine\My en el servidor de AD FS. Asegúrese de que la cuenta de servicio de AD FS tenga acceso de lectura a la clave privada del certificado.|
-|Evento 315 - se produjo un error al intentar compilar la cadena de certificados para el certificado de firma de confianza de proveedor de notificaciones.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o todavía no es válido.|Asegúrese de que el certificado es válido y no se ha revocado.</br></br>Asegúrese de que la CRL es accesible.|
-|Evento 316 - se produjo un error al intentar compilar la cadena de certificados para la relación de confianza certificado de firma.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o todavía no es válido.|Asegúrese de que el certificado es válido y no se ha revocado.</br></br>Asegúrese de que la CRL es accesible.|
-|Evento 317 - se produjo un error al intentar compilar la cadena de certificados para el certificado de cifrado de confianza para usuario autenticado de entidad.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o todavía no es válido.|Asegúrese de que el certificado es válido y no se ha revocado.</br></br>Asegúrese de que la CRL es accesible.|
-|Evento 319 - error se produjo mientras se está creando la cadena de certificados para el certificado de cliente.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o todavía no es válido.|Asegúrese de que el certificado es válido y no se ha revocado.</br></br>Asegúrese de que la CRL es accesible.|
-|Evento 360 - se realizó una solicitud a un punto de conexión de transporte de certificado, pero la solicitud no incluía un certificado de cliente.|La CA raíz que emitió el certificado de cliente no es de confianza.</br></br>Ha expirado el certificado de cliente.</br></br>El certificado de cliente es autofirmado y no es de confianza.|Asegúrese de que la CA raíz que emitió el certificado de cliente está presente en el almacén raíz de confianza.</br></br>Asegúrese de que el certificado de cliente no ha expirado.</br></br>Si el certificado de cliente es un certificado autofirmado, asegúrese de que se ha agregado a la lista de certificados de confianza o reemplazar el certificado autofirmado por un certificado de confianza.|
-|Evento 374 - se produjo un error durante la compilación de la cadena de certificados para el proveedor de notificaciones de certificado de cifrado de confianza.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o todavía no es válido.|Asegúrese de que el certificado es válido y no se ha revocado.</br></br>Asegúrese de que la CRL es accesible.|
-|Evento 381 - se produjo un error durante un intento de crear la cadena de certificados para el certificado de configuración.|Uno de los certificados configurados para su uso en el servidor de AD FS ha expirado o se ha revocado.|Asegúrese de que todos los certificados configurados no se han revocado y no hayan expirado.|
-|Evento 385 - AD FS ha detectado que uno o varios certificados en la base de datos de configuración de AD FS debe actualizarse manualmente.|Uno de los certificados configurados para su uso en el servidor de AD FS ha expirado o está a punto su fecha de expiración.|Actualice el certificado expirado o pronto-a-caducar con un reemplazo. (Si está utilizando certificados autofirmados y está habilitada la sustitución automática de certificados, este error se puede omitir tal como resolverá automáticamente.)|
-|Evento 387 - AD FS ha detectado que uno o varios de los certificados que se especifican en el servicio de federación no eran accesibles para la cuenta de servicio que usa el servicio de Windows de AD FS.|La cuenta de servicio de AD FS no tiene permisos de lectura a la clave privada de uno o varios certificados configurados.|Asegúrese de que la cuenta de servicio de AD FS tiene el permiso a la clave privada de todos los certificados configurados de lectura.|
-|Evento 389 - AD FS ha detectado que uno o varios de las confianzas requieren sus certificados que actualizarse manualmente porque han expirado o expirará pronto.|Uno de los certificados de su socio configurado ha expirado o está a punto de expirar. Esto se puede aplicar a una confianza de proveedor de notificaciones o a una relación de confianza para usuario autenticado.|Si ha creado manualmente esta relación de confianza, actualice manualmente la configuración de certificado. Si usa los metadatos de federación para crear la relación de confianza, el certificado se actualizará automáticamente tan pronto como el asociado de actualiza el certificado.|
+|Evento 249: no se encontró un certificado en el almacén de certificados. En escenarios de sustitución de certificados, esto puede producir un error si el Servicio de federación está firmando o descifrando con este certificado.|El certificado en cuestión no está presente en el almacén de certificados local o la cuenta de servicio no tiene permiso para la clave privada del certificado.|Asegúrese de que el certificado está instalado en el almacén de LocalMAchine\My en el servidor de AD FS. Asegúrese de que la cuenta de servicio de AD FS tenga acceso de lectura a la clave privada del certificado.|
+|Evento 315: error al intentar crear la cadena de certificados para el certificado de firma de confianza del proveedor de notificaciones.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o aún no es válido.|Asegúrese de que el certificado es válido y que no se ha revocado.</br></br>Asegúrese de que la CRL sea accesible.|
+|Evento 316: error al intentar crear la cadena de certificados para el certificado de firma de confianza del usuario de confianza.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o aún no es válido.|Asegúrese de que el certificado es válido y que no se ha revocado.</br></br>Asegúrese de que la CRL sea accesible.|
+|Evento 317: error al intentar crear la cadena de certificados para el certificado de cifrado de la relación de confianza para usuario autenticado.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o aún no es válido.|Asegúrese de que el certificado es válido y que no se ha revocado.</br></br>Asegúrese de que la CRL sea accesible.|
+|Evento 319: se produjo un error durante la creación de la cadena de certificados para el certificado de cliente.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o aún no es válido.|Asegúrese de que el certificado es válido y que no se ha revocado.</br></br>Asegúrese de que la CRL sea accesible.|
+|Evento 360: se realizó una solicitud a un extremo de transporte de certificado, pero la solicitud no incluía un certificado de cliente.|La CA raíz que emitió el certificado de cliente no es de confianza.</br></br>El certificado de cliente ha expirado.</br></br>El certificado de cliente es autofirmado y no es de confianza.|Asegúrese de que la CA raíz que emitió el certificado de cliente está presente en el almacén raíz de confianza.</br></br>Asegúrese de que el certificado de cliente no haya expirado.</br></br>Si el certificado de cliente es autofirmado, asegúrese de que se ha agregado a la lista de certificados de confianza o reemplace el certificado autofirmado por un certificado de confianza.|
+|Evento 374: se produjo un error al compilar la cadena de certificados para el certificado de cifrado de confianza del proveedor de notificaciones.|El certificado se ha revocado.</br></br>No se puede comprobar la cadena de certificados.</br></br>El certificado ha expirado o aún no es válido.|Asegúrese de que el certificado es válido y que no se ha revocado.</br></br>Asegúrese de que la CRL sea accesible.|
+|Evento 381: error al intentar crear la cadena de certificados para el certificado de configuración.|Uno de los certificados configurados para su uso en el servidor de AD FS ha expirado o se ha revocado.|Asegúrese de que todos los certificados configurados no se han revocado y no han expirado.|
+|Evento 385: AD FS detectó que uno o varios certificados de la base de datos de configuración AD FS deben actualizarse manualmente.|Uno de los certificados configurados para su uso en el servidor de AD FS ha expirado o está llegando a su fecha de expiración.|Actualice el certificado expirado o pronto para expirar con un reemplazo. (Si usa certificados autofirmados y la sustitución automática de certificados está habilitada, este error puede omitirse, ya que se resolverá automáticamente).|
+|Evento 387: AD FS detectó que uno o varios de los certificados especificados en el Servicio de federación no eran accesibles para la cuenta de servicio que usa el servicio de Windows de AD FS.|La cuenta de servicio de AD FS no tiene permisos de lectura para la clave privada de uno o más certificados configurados.|Asegúrese de que la cuenta de servicio de AD FS tiene permiso de lectura para la clave privada de todos los certificados configurados.|
+|Evento 389: AD FS detectó que una o varias de sus confianzas requieren que sus certificados se actualicen manualmente porque han expirado o expirarán pronto.|Uno de los certificados de su socio configurado ha expirado o está a punto de expirar. Esto puede aplicarse a una relación de confianza para proveedor de notificaciones o a una relación de confianza para usuario autenticado.|Si ha creado manualmente esta confianza, actualice la configuración del certificado manualmente. Si usó metadatos de Federación para crear la confianza, el certificado se actualizará automáticamente en cuanto el socio actualice el certificado.|
 
 
 
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)
+- [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)
  

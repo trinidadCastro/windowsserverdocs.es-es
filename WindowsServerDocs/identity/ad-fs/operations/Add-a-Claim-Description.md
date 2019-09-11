@@ -9,40 +9,40 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 1023ca7da02d2a1f6af42f68892dc4c5c8f1a2bf
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 00ae720a933289e3cd4bde5fe9d20610e38ae726
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444370"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866035"
 ---
 # <a name="add-a-claim-description"></a>Agregar una descripción de notificación
 
 
-En una organización del asociado de cuenta, los administradores crear notificaciones para representar la pertenencia de un usuario en un grupo o rol o para representar algunos datos sobre un usuario, por ejemplo, el número de identificación del empleado de un usuario.
+En una organización de asociado de cuenta, los administradores crean notificaciones para representar la pertenencia de un usuario a un grupo o rol, o para representar algunos datos sobre un usuario, por ejemplo, el número de identificación de empleado de un usuario.
 
-En una organización del asociado de recurso, los administradores crear notificaciones correspondientes para representar grupos y usuarios que se pueden reconocer como los usuarios de recursos. Dado que de salida de notificaciones en el mapa de organización de asociado de cuenta para notificaciones entrantes en la organización del asociado de recurso, el asociado de recurso es capaz de aceptar las credenciales que proporciona el asociado de cuenta. 
+En una organización del asociado de recurso, los administradores crean las notificaciones correspondientes para representar grupos y usuarios que se pueden reconocer como usuarios de recursos. Dado que las notificaciones salientes de la organización del asociado de cuenta se asignan a las notificaciones entrantes en la organización del asociado de recurso, el asociado de recurso puede aceptar las credenciales proporcionadas por el asociado de cuenta. 
 
-Puede usar el siguiente procedimiento para agregar una notificación.
+Puede usar el siguiente procedimiento para agregar una demanda.
 
-El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas adecuadas y pertenencia a grupos en [dominio grupos predeterminados locales y](https://go.microsoft.com/fwlink/?LinkId=83477).
+El requisito mínimo para realizar este procedimiento es pertenecer al grupo **Administradores** o un grupo equivalente en el equipo local.  Revise los detalles sobre el uso de las cuentas y pertenencias a grupos adecuadas en [grupos predeterminados locales y de dominio](https://go.microsoft.com/fwlink/?LinkId=83477).
 
-## <a name="to-add-a-claim-description"></a>Para agregar una descripción de notificación
+## <a name="to-add-a-claim-description"></a>Para agregar una descripción de la demanda
 
-1. En el administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **administración de AD FS**. 
+1. En Administrador del servidor, haga clic en **herramientas**y, a continuación, seleccione **Administración de AD FS**. 
 
-2. Expanda **servicio** y haga clic derecho en **Agregar descripción de notificación**.
-   ![Agregar descripción de notificación.](media/Add-a-Claim-Description/claimdesc1.png)
+2. Expanda **servicio** y, a la derecha, haga clic en **Agregar Descripción de notificaciones**.
+   ![Agregar Descripción de notificaciones](media/Add-a-Claim-Description/claimdesc1.png)
 
-3. En la agregar un descripción de notificación de cuadro de diálogo **nombre para mostrar**, escriba un nombre único que identifica el grupo o rol de esta notificación.
+3. En el cuadro de diálogo Agregar una descripción de notificaciones, en **nombre para mostrar**, escriba un nombre único que identifique el grupo o el rol para esta demanda.
 
-4. Agregar un **nombre corto**.
+4. Agregue un **nombre corto**.
 
-5. En **de notificación de identificador**, escriba un URI que está asociado con el grupo o rol de la notificación que se va a usar.
+5. En **identificador de notificaciones**, escriba un URI asociado al grupo o rol de la demanda que va a usar.
 
-6. En **descripción**, escriba el texto que mejor describa el propósito de esta notificación.
+6. En **Descripción**, escriba el texto que mejor describa el propósito de esta demanda.
 
-7. Según las necesidades de su organización, seleccione cualquiera de las casillas de verificación siguientes, según corresponda, al publicar esta notificación en los metadatos de federación:
+7. En función de las necesidades de su organización, seleccione una de las siguientes casillas, según corresponda, para publicar esta demanda en metadatos de Federación:
 
 
 ~~~
@@ -52,7 +52,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 
 8. Haga clic en **Aceptar**.
 
-![Agregar descripción de notificación.](media/Add-a-Claim-Description/claimdesc2.png)
+![Agregar Descripción de notificaciones](media/Add-a-Claim-Description/claimdesc2.png)
 
 
 ## <a name="see-also"></a>Vea también  

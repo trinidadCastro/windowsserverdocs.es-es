@@ -1,6 +1,6 @@
 ---
 title: Recopilar controladores de hardware y de dispositivo necesarios para la instalación
-description: Información acerca de los controladores que necesita para instalar para MultiPoint Services
+description: Información sobre los controladores que debe instalar para Multipoint Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,25 +13,25 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: a9d902e2599cdcd69e156d1fabec87a067b1d8ea
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f7fec373bc62c93fbf31bbb24bf1a11a42c0736d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59833426"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871432"
 ---
 # <a name="collect-hardware-and-device-drivers-needed-for-the-installation"></a>Recopilar controladores de hardware y de dispositivo necesarios para la instalación
-Para empezar a implementar el sistema MultiPoint Services, necesitará:  
+Antes de empezar a implementar el sistema Multipoint Services, necesitará lo siguiente:  
   
--   **Componentes de hardware para el servidor** -instalar otros componentes del sistema o las tarjetas de vídeo adicionales en este momento.  
+-   **Componentes de hardware para el servidor** : Instale las tarjetas de vídeo adicionales u otros componentes del sistema en este momento.  
   
--   **Componentes de hardware para las estaciones** : para obtener información acerca de las estaciones de planeación para su entorno, consulte [seleccionar Hardware para su sistema de MultiPoint Services](Selecting-Hardware-for-Your-MultiPoint-services-System.md).
--   **Los controladores más recientes para las tarjetas de vídeo** -si el fabricante OEM o el dispositivo no proporcionó estos, deberá descargarlos desde el sitio Web del fabricante del dispositivo.  
+-   **Componentes de hardware para las estaciones** : para obtener información sobre las estaciones de planeación de su entorno, consulte [selección de hardware para el sistema Multipoint Services](Selecting-Hardware-for-Your-MultiPoint-services-System.md).
+-   **Los controladores más recientes para las tarjetas de vídeo** : Si el OEM o el fabricante del dispositivo no lo han proporcionado, deberá descargarlos desde el sitio web del fabricante del dispositivo.  
   
--   **Los controladores de cliente más recientes de USB cero** -si usa las estaciones de cliente de cero USB, debe instalar los controladores más recientes de cliente USB cero.  
+-   **Los controladores de cliente cero USB más recientes** : Si usa estaciones de cliente USB sin, debe instalar los controladores de cliente USB más recientes.  
   
     > [!IMPORTANT]  
-    > Para una instalación de MultiPoint Services, debe instalar la versión de 64 bits de todos los controladores.  
+    > En el caso de una instalación de Multipoint Services, debe instalar la versión de 64 bits de los controladores.  
   
 > [!TIP]  
-> Si va a instalar MultiPoint Services en un equipo con una versión diferente de Windows ya instalada, debe averiguar la marca de la tarjeta de vídeo y modelo en el Administrador de dispositivos antes de iniciar la instalación de Windows Server y asegúrese de que puede obtener los controladores que son está disponible para Windows Server 2016. Abra el Administrador de dispositivos, abrir **administración de equipos** desde el **iniciar** pantalla. A continuación, en el árbol de consola, haga clic en **Device Manager**.
+> Si va a instalar Multipoint Services en un equipo con una versión diferente de Windows ya instalada, debe averiguar la marca y el modelo de la tarjeta de vídeo en Device Manager antes de iniciar la instalación de Windows Server y asegurarse de que puede obtener los controladores disponible para Windows Server 2016. Abra Device Manager, Abra **Administración de equipos** en la pantalla **Inicio** . A continuación, en el árbol de consola, haga clic en **Device Manager**.

@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 12bc8e11-d63c-4aef-8129-f92324b2bf1b
-ms.openlocfilehash: d4eb2ad65f436db28264650b8c8d7b0cf69b2cee
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 89676ba821b99d44865bc6f45c34c05edb771d9d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544673"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865258"
 ---
 # <a name="frequently-asked-questions-about-storage-replica"></a>Preguntas frecuentes acerca de Réplica de almacenamiento
 
@@ -188,8 +188,8 @@ Nota: El cmdlet test-SRTopology requiere ICMPv4/ICMPv6, pero no para la replicac
 ## <a name="FAQ15.5"></a>¿Cuáles son los procedimientos recomendados para el volumen de registro?
 El tamaño óptimo del registro varía considerablemente en función del entorno y de la carga de trabajo, y viene determinado por la cantidad de e/s de escritura que realiza la carga de trabajo. 
 
-1.  Un registro de mayor o menor tamaño no hace que vayas más rápido o más lento
-2.  Un registro de mayor o menor tamaño no tiene ningún impacto en un volumen de datos de 10 GB frente a un volumen de datos de 10 TB, por ejemplo
+1.  Un registro mayor o menor no hace que sea más rápido o más lento
+2.  Un registro mayor o menor no tiene ningún espacio en el volumen de datos de 10 GB en lugar de un volumen de datos de 10 TB, por ejemplo
 
 Un registro de mayor tamaño simplemente recopila y conserva las E/S de escritura antes de enviarlas a su destino. Esto permite que una interrupción en el servicio entre el equipo de origen y de destino, como por ejemplo, una interrupción de la red o una desconexión del equipo de destino, se prolongue más. Si el registro puede conservar 10 horas de escrituras y la red se desconecta durante 2 horas, cuando la red se vuelve a conectar, el equipo de origen puede simplemente volver a reproducir la diferencia de los cambios no sincronizados al equipo de destino y volverás a estar protegido de forma muy rápida. Si el registro conserva 10 horas y la interrupción tiene una duración de 2 días, el equipo de origen ahora tiene que reproducir desde un registro distinto denominado mapa de bits y probablemente tardará más en sincronizarse. Una vez sincronizado, vuelve a usar el registro.
 
@@ -218,7 +218,7 @@ Réplica de almacenamiento también tiene un modo de servidor al propio disposit
 
 Sí, se admite la Deduplcation de datos con réplica de almacenamiento. Habilite la desduplicación de datos en un volumen del servidor de origen y, durante la replicación, el servidor de destino recibirá una copia desduplicada del volumen.
 
-Aunque debe *instalar* la desduplicación de datos en los servidores de origen y de destino (consulte [instalación y habilitación](../data-deduplication/install-enable.md)de la desduplicación de datos), es importante no *Habilitar* la desduplicación de datos en el servidor de destino. Réplica de almacenamiento permite la escritura solo en el servidor de origen. Dado que la desduplicación de datos realiza operaciones de escritura en el volumen, solo debe ejecutarse en el servidor de origen. 
+Aunque debe *instalar* la desduplicación de datos en los servidores de origen y de destino (consulte [instalación y habilitación de la desduplicación de datos](../data-deduplication/install-enable.md)), es importante no *Habilitar* la desduplicación de datos en el servidor de destino. Réplica de almacenamiento permite la escritura solo en el servidor de origen. Dado que la desduplicación de datos realiza operaciones de escritura en el volumen, solo debe ejecutarse en el servidor de origen. 
 
 ## <a name="FAQ19"></a>¿Puedo replicar entre Windows Server 2019 y Windows Server 2016?
 

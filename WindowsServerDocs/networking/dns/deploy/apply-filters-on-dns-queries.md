@@ -1,6 +1,6 @@
 ---
 title: Uso de la directiva de DNS para aplicar filtros en las consultas DNS
-description: En este tema forma parte de las DNS directiva escenario guía para Windows Server 2016
+description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
 manager: brianlic
 ms.prod: windows-server-threshold
 ms.technology: networking-dns
@@ -8,89 +8,89 @@ ms.topic: article
 ms.assetid: b86beeac-b0bb-4373-b462-ad6fa6cbedfa
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: e9322da3142c584c7b9d0a28396a1d1fd62ce6ee
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 71e6bb5bf5fd439682277a9a8304aa785eba658d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446407"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868909"
 ---
 # <a name="use-dns-policy-for-applying-filters-on-dns-queries"></a>Uso de la directiva de DNS para aplicar filtros en las consultas DNS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para aprender a configurar la directiva DNS en Windows Server&reg; 2016 para crear filtros de consulta que se basan en los criterios especificados. 
+Puede usar este tema para obtener información sobre cómo configurar la Directiva de DNS en&reg; Windows Server 2016 para crear filtros de consulta basados en los criterios que proporcione. 
 
-Filtros de consulta en la directiva DNS permiten configurar el servidor DNS para responder de manera personalizada basada en la consulta DNS y el cliente DNS que envía la consulta DNS.
+Los filtros de consulta de la Directiva de DNS permiten configurar el servidor DNS para responder de forma personalizada en función de la consulta DNS y el cliente DNS que envía la consulta DNS.
 
-Por ejemplo, puede configurar la directiva de DNS con el filtro de consulta lista de bloques que bloquea las consultas DNS de dominios malintencionados conocidos, lo que impide que responde a las consultas de estos dominios DNS. Dado que no hay respuesta se envía desde el servidor DNS, DNS consulta del miembro dominio malintencionado agote el tiempo.
+Por ejemplo, puede configurar la Directiva DNS con la lista de bloques de filtros de consulta que bloquea las consultas DNS de dominios malintencionados conocidos, lo que impide que DNS responda a las consultas de estos dominios. Dado que no se envía ninguna respuesta desde el servidor DNS, se agota el tiempo de espera de la consulta DNS del miembro de dominio malintencionado.
 
-Otro ejemplo consiste en crear un lista de permitidos que permite solo un conjunto específico de los clientes a resolver algunos nombres de filtro de consulta.
+Otro ejemplo es crear una lista de permitidos de filtro de consulta que solo permita a un conjunto específico de clientes resolver determinados nombres.
 
-## <a name="bkmk_criteria"></a> Criterios de filtro de consulta
-Puede crear filtros de consulta con cualquier combinación lógica (Y/O/no) de los siguientes criterios.
+## <a name="bkmk_criteria"></a>Criterios de filtro de consulta
+Puede crear filtros de consulta con cualquier combinación lógica (y/o/no) de los criterios siguientes.
 
-|Nombre|Descripción|
+|NOMBRE|Descripción|
 |-----------------|---------------------|
-|Subred de cliente|Nombre de una subred de cliente predefinido. Se usa para comprobar la subred desde la que se envió la consulta.|
-|Protocolo de transporte|Transporte de protocolo usado en la consulta. Los valores posibles son TCP y UDP.|
+|Subred de cliente|Nombre de una subred de cliente predefinida. Se utiliza para comprobar la subred desde la que se envió la consulta.|
+|Protocolo de transporte|Protocolo de transporte utilizado en la consulta. Los valores posibles son UDP y TCP.|
 |Protocolo de Internet|Protocolo de red utilizado en la consulta. Los valores posibles son IPv4 e IPv6.|
-|Dirección IP de interfaz del servidor|Dirección IP de la interfaz de red del servidor DNS que recibió la solicitud DNS.|
+|Dirección IP de la interfaz de servidor|Dirección IP de la interfaz de red del servidor DNS que recibió la solicitud DNS.|
 |FQDN|Nombre de dominio completo del registro en la consulta, con la posibilidad de usar un carácter comodín.|
-|Tipo de consulta|Tipo de registro que se está consultando \(A, SRV, TXT, etc.\).|
-|Hora del día|Hora del día en que se recibe la consulta.|
+|Tipo de consulta|Tipo de registro al que \(se consulta un, SRV, txt,\)etc.|
+|Hora del día|Hora del día a la que se recibe la consulta.|
 
-Los ejemplos siguientes muestran cómo crear filtros para la directiva DNS bloquear o permitir las consultas de resolución de nombres DNS.
+En los siguientes ejemplos se muestra cómo crear filtros para la Directiva DNS que bloquean o permiten consultas de resolución de nombres DNS.
 
 >[!NOTE]
->Los comandos de ejemplo en este tema usan el comando de Windows PowerShell **agregar DnsServerQueryResolutionPolicy**. Para obtener más información, consulte [agregar DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps). 
+>Los comandos de ejemplo de este tema usan el comando de Windows PowerShell **Add-DnsServerQueryResolutionPolicy**. Para obtener más información, consulte [Add-DnsServerQueryResolutionPolicy](https://docs.microsoft.com/powershell/module/dnsserver/add-dnsserverqueryresolutionpolicy?view=win10-ps). 
 
-## <a name="bkmk_block1"></a>Consultas de bloqueo de un dominio
+## <a name="bkmk_block1"></a>Bloquear consultas desde un dominio
 
-En algunas circunstancias puede bloquear la resolución de nombres DNS para dominios que se han identificado como malintencionada o dominios que no son compatibles con las instrucciones de uso de su organización. Puede realizar consultas de bloqueo para dominios mediante la directiva DNS.
+En algunas circunstancias, es posible que desee bloquear la resolución de nombres DNS para los dominios identificados como malintencionados o para los dominios que no cumplan las directrices de uso de su organización. Puede realizar consultas de bloqueo de dominios mediante la Directiva DNS.
 
-La directiva que se configura en este ejemplo no se crea en cualquier zona determinada, en su lugar cree una directiva de nivel de servidor que se aplica a todas las zonas configuradas en el servidor DNS. Directivas de nivel de servidor son los primeros en evaluar y, por tanto, primero debe coincidir cuando una consulta es recibido por el servidor DNS.
+La Directiva que configure en este ejemplo no se crea en ninguna zona determinada; en su lugar, cree una directiva de nivel de servidor que se aplique a todas las zonas configuradas en el servidor DNS. Las directivas de nivel de servidor son las primeras que se evalúan y, por tanto, coinciden primero cuando el servidor DNS recibe una consulta.
 
-El siguiente comando de ejemplo configura una directiva de nivel de servidor para bloquear todas las consultas con el dominio **sufijo contosomalicious.com**.
+El siguiente comando de ejemplo configura una directiva de nivel de servidor para bloquear cualquier consulta con el **sufijo**de dominio contosomalicious.com.
 
 `
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicy" -Action IGNORE -FQDN "EQ,*.contosomalicious.com" -PassThru 
 `
 
 >[!NOTE]
->Al configurar el **acción** parámetro con el valor **omitir**, el servidor DNS está configurado para quitar las consultas sin respuesta en absoluto. Esto hace que al cliente DNS del dominio malintencionado en tiempo de espera.
+>Cuando se configura el parámetro de **acción** con el valor **omitir**, el servidor DNS se configura para quitar las consultas sin respuesta. Esto hace que el cliente DNS del dominio malintencionado agote el tiempo de espera.
 
-## <a name="bkmk_block2"></a>Consultas de bloqueo de una subred
-Con este ejemplo, puede bloquear las consultas de una subred si se encuentra infectados por malware y está intentando ponerse en contacto con los sitios malintencionados mediante su servidor DNS. 
+## <a name="bkmk_block2"></a>Bloquear consultas desde una subred
+Con este ejemplo, puede bloquear las consultas desde una subred si detecta algún malware y está intentando ponerse en contacto con sitios malintencionados mediante el servidor DNS. 
 
-` Add-DnsServerClientSubnet -Name "MaliciousSubnet06" -IPv4Subnet 172.0.33.0/24 -PassThru
+' Add-DnsServerClientSubnet-name "MaliciousSubnet06"-IPv4Subnet 172.0.33.0/24-PassThru
 
-DnsServerQueryResolutionPolicy Agregar-nombre "BlockListPolicyMalicious06"-acción Omitir - ClientSubnet "EQ, MaliciousSubnet06" - PassThru '
+Add-DnsServerQueryResolutionPolicy-name "BlockListPolicyMalicious06"-Action IGNORE-ClientSubnet "EQ, MaliciousSubnet06"-PassThru "
 
-El ejemplo siguiente muestra cómo puede usar los criterios de la subred en combinación con los criterios FQDN para bloquea las consultas para ciertos dominios malintencionados desde subredes infectadas.
+En el ejemplo siguiente se muestra cómo puede usar los criterios de subred en combinación con los criterios de FQDN para bloquear consultas de determinados dominios malintencionados de subredes infectadas.
 
 `
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyMalicious06" -Action IGNORE -ClientSubnet  "EQ,MaliciousSubnet06" –FQDN “EQ,*.contosomalicious.com” -PassThru
 `
 
 ## <a name="bkmk_block3"></a>Bloquear un tipo de consulta
-Es posible que deba bloquear la resolución de nombres para ciertos tipos de consultas en los servidores. Por ejemplo, puede bloquear la consulta 'ANY', que se puede usar de forma malintencionada para crear ataques de amplificación.
+Es posible que tenga que bloquear la resolución de nombres para determinados tipos de consultas en los servidores. Por ejemplo, puede bloquear la consulta "ANY", que se puede usar de forma malintencionada para crear ataques de amplificación.
 
 `
 Add-DnsServerQueryResolutionPolicy -Name "BlockListPolicyQType" -Action IGNORE -QType "EQ,ANY" -PassThru
 `
 
-## <a name="bkmk_allow1"></a>Permitir consultas solo desde un dominio
-No puede usar solo de directiva para bloquear las consultas DNS, puede usar para aprobar automáticamente las consultas entre subredes o dominios específicos. Al configurar listas de permitir, el servidor DNS solo procesa las consultas de dominios permitidos, mientras se bloquea todas las consultas de otros dominios.
+## <a name="bkmk_allow1"></a>Permitir solo consultas desde un dominio
+No solo puede usar la Directiva de DNS para bloquear consultas, sino que puede usarlas para aprobar automáticamente las consultas de dominios o subredes específicos. Cuando se configuran las listas de permitidos, el servidor DNS solo procesa las consultas de dominios permitidos mientras se bloquea el resto de consultas desde otros dominios.
 
-El siguiente comando de ejemplo permite que solo los equipos y dispositivos en los dominios contoso.com y secundario para consultar el servidor DNS.
+El siguiente comando de ejemplo permite que solo los equipos y dispositivos de los dominios contoso.com y secundarios consulten el servidor DNS.
 
 `
 Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicyDomain" -Action IGNORE -FQDN "NE,*.contoso.com" -PassThru 
 `
 
-## <a name="bkmk_allow2"></a>Permitir consultas solo desde una subred
-También puede crear listas de permitir para las subredes IP, para que se omiten todas las consultas no que se origina en estas subredes.
+## <a name="bkmk_allow2"></a>Permitir solo consultas desde una subred
+También puede crear listas de permitidos para subredes IP, de modo que todas las consultas que no se originen en estas subredes se omitan.
 
 `
 Add-DnsServerClientSubnet -Name "AllowedSubnet06" -IPv4Subnet 172.0.33.0/24 -PassThru
@@ -99,13 +99,13 @@ Add-DnsServerClientSubnet -Name "AllowedSubnet06" -IPv4Subnet 172.0.33.0/24 -Pas
 Add-DnsServerQueryResolutionPolicy -Name "AllowListPolicySubnet” -Action IGNORE -ClientSubnet  "NE, AllowedSubnet06" -PassThru
 `
 
-## <a name="bkmk_allow3"></a>Permitir solo determinadas QTypes
-Permitir que se muestran se puede aplicar a QTYPEs. 
+## <a name="bkmk_allow3"></a>Permitir solo determinados QTypes
+Puede aplicar listas de permitidos a QTYPEs. 
 
-Por ejemplo, si tiene clientes externos consultar la interfaz del servidor DNS 164.8.1.1, sólo ciertos QTYPEs se permiten consultar, aunque hay otros QTYPEs similares a los registros SRV o TXT que se usan los servidores internos para la resolución o con fines de supervisión.
+Por ejemplo, si tiene clientes externos que consultan la interfaz del servidor DNS 164.8.1.1, solo se permite consultar ciertos QTYPEs, mientras que hay otros QTYPEs como registros SRV o TXT que usan los servidores internos para la resolución de nombres o con fines de supervisión.
 
 `
 Add-DnsServerQueryResolutionPolicy -Name "AllowListQType" -Action IGNORE -QType "NE,A,AAAA,MX,NS,SOA" –ServerInterface “EQ,164.8.1.1” -PassThru
 `
 
-Puede crear miles de las directivas DNS según el tráfico de los requisitos de administración y todas las nuevas directivas se aplican dinámicamente - sin necesidad de reiniciar el servidor DNS, en las consultas entrantes. 
+Puede crear miles de directivas DNS según los requisitos de administración del tráfico y todas las directivas nuevas se aplican de forma dinámica, sin necesidad de reiniciar el servidor DNS, en las consultas entrantes. 

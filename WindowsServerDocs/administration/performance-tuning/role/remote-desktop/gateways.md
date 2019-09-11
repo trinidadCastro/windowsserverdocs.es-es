@@ -1,42 +1,42 @@
 ---
-title: Las puertas de enlace de escritorio remotos de optimización del rendimiento
-description: Recomendaciones para las puertas de enlace de escritorio remoto de optimización del rendimiento
+title: Puertas de enlace de Escritorio remoto de optimización del rendimiento
+description: Recomendaciones para la optimización del rendimiento para puertas de enlace de Escritorio remoto
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: f3ac020b3137621f6b2535c973ab7759443e1535
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: ad314fbf6701da3f96ddc68a598bf3024eaafe16
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811428"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866470"
 ---
-# <a name="performance-tuning-remote-desktop-gateways"></a>Las puertas de enlace de escritorio remotos de optimización del rendimiento
+# <a name="performance-tuning-remote-desktop-gateways"></a>Puertas de enlace de Escritorio remoto de optimización del rendimiento
 
 > [!NOTE]
-> En Windows 8 y versiones posteriores y Windows Server 2012 R2 y versiones posteriores, puerta de enlace de escritorio remoto (puerta de enlace de escritorio remoto) es compatible con TCP, UDP y los transportes RPC heredados. La mayoría de los siguientes datos está relacionado con el transporte RPC heredado. Si no se utiliza el transporte RPC heredado, esta sección no es aplicable.
+> En Windows 8 + y Windows Server 2012 R2 +, la puerta de enlace de Escritorio remoto (puerta de enlace de escritorio remoto) admite TCP, UDP y los transportes de RPC heredados. La mayoría de los datos siguientes se refieren al transporte RPC heredado. Si no se utiliza el transporte RPC heredado, esta sección no es aplicable.
 
-En este tema se describe los parámetros relacionados con el rendimiento que ayudan a mejorar el rendimiento de una implementación de cliente y los ajustes que se basan en patrones de uso de red del cliente.
+En este tema se describen los parámetros relacionados con el rendimiento que ayudan a mejorar el rendimiento de la implementación de un cliente y las optimizaciones que se basan en los patrones de uso de red del cliente.
 
-En esencia, la puerta de enlace de escritorio remoto lleva a cabo muchas operaciones entre las instancias de la conexión a Escritorio remoto y las instancias del servidor Host de sesión de escritorio remoto en la red del cliente de reenvío.
+En su núcleo, la puerta de enlace de escritorio remoto realiza muchas operaciones de reenvío de paquetes entre Conexión a Escritorio remoto instancias y las instancias de servidor host de sesión de escritorio remoto dentro de la red del cliente.
 
 > [!NOTE]
-> Los parámetros siguientes se aplican a sólo el transporte RPC.
+> Los parámetros siguientes se aplican solo al transporte RPC.
 
-Internet Information Services (IIS) y la puerta de enlace de escritorio remoto de exportación de los parámetros del registro siguientes para ayudar a mejorar el rendimiento del sistema en la puerta de enlace de escritorio remoto.
+Internet Information Services (IIS) y puerta de enlace de escritorio remoto exportan los siguientes parámetros del registro para ayudar a mejorar el rendimiento del sistema en la puerta de enlace de escritorio remoto.
 
-**Ajustes del subproceso**
+**Optimizaciones de subprocesos**
 
--   **MaxIoThreads**
+-   **MaxIOThreads**
 
     ``` syntax
     HKLM\Software\Microsoft\Terminal Server Gateway\Maxiothreads (REG_DWORD)
     ```
 
-    Este grupo de subprocesos específicos de la aplicación especifica el número de subprocesos que crea la puerta de enlace de escritorio remoto para controlar las solicitudes entrantes. Si este valor del registro está presente, entrará en vigor. El número de subprocesos es igual al número de procesos lógicos. Si el número de procesadores lógicos es menor que 5, el valor predeterminado es 5 subprocesos.
+    Este grupo de subprocesos específicos de la aplicación especifica el número de subprocesos que la puerta de enlace de escritorio remoto crea para controlar las solicitudes entrantes. Si esta configuración del registro está presente, surte efecto. El número de subprocesos es igual al número de procesos lógicos. Si el número de procesadores lógicos es menor que 5, el valor predeterminado es 5 subprocesos.
 
 -   **MaxPoolThreads**
 
@@ -44,19 +44,11 @@ Internet Information Services (IIS) y la puerta de enlace de escritorio remoto d
     HKLM\System\CurrentControlSet\Services\InetInfo\Parameters\MaxPoolThreads (REG_DWORD)
     ```
 
-    Este parámetro especifica el número de subprocesos del grupo IIS pueden crear por cada procesador lógico. El grupo de subprocesos IIS inspeccionar la red para las solicitudes y procesa todas las solicitudes entrantes. El **MaxPoolThreads** recuento no incluye los subprocesos que consume la puerta de enlace de escritorio remoto. El valor predeterminado es 4.
+    Este parámetro especifica el número de subprocesos del grupo de IIS que se va a crear por procesador lógico. Los subprocesos del grupo de IIS ven la red en busca de solicitudes y procesan todas las solicitudes entrantes. El número de **MaxPoolThreads** no incluye los subprocesos que usa la puerta de enlace de escritorio remoto. El valor predeterminado es 4.
 
-**Ajustes de llamada a procedimiento remoto para la puerta de enlace de escritorio remoto**
+**Optimizaciones de llamadas a procedimientos remotos para puerta de enlace de escritorio remoto**
 
-Los parámetros siguientes pueden ayudarle a ajustar las llamadas a procedimiento remoto (RPC) que se reciben los equipos de puerta de enlace de escritorio remoto y conexión a Escritorio remoto. Cambiar el windows ayuda a limitar la cantidad de datos se envíen a través de cada conexión y puede mejorar el rendimiento de RPC a través de escenarios HTTP v2.
-
--   **ServerReceiveWindow**
-
-    ``` syntax
-    HKLM\Software\Microsoft\Rpc\ServerReceiveWindow (REG_DWORD)
-    ```
-
-    El valor predeterminado es 64 KB. Este valor especifica el período que el servidor utiliza para los datos que se reciben desde el proxy RPC. El valor mínimo se establece en 8 KB y el valor máximo se establece en 1 GB. Si un valor no está presente, se usa el valor predeterminado. Cuando se realizan cambios en este valor, IIS debe reiniciarse para que el cambio surta efecto.
+Los parámetros siguientes pueden ayudar a ajustar las llamadas a procedimiento remoto (RPC) recibidas por Conexión a Escritorio remoto y equipos de puerta de enlace de escritorio remoto. Cambiar las ventanas ayuda a limitar la cantidad de datos que fluyen a través de cada conexión y puede mejorar el rendimiento de los escenarios de RPC a través de HTTP V2.
 
 -   **ServerReceiveWindow**
 
@@ -64,13 +56,21 @@ Los parámetros siguientes pueden ayudarle a ajustar las llamadas a procedimient
     HKLM\Software\Microsoft\Rpc\ServerReceiveWindow (REG_DWORD)
     ```
 
-    El valor predeterminado es 64 KB. Este valor especifica el período que el cliente utiliza para los datos que se reciben desde el proxy RPC. El valor mínimo es de 8 KB y el valor máximo es 1 GB. Si un valor no está presente, se usa el valor predeterminado.
+    El valor predeterminado es 64 KB. Este valor especifica la ventana que el servidor utiliza para los datos que se reciben del proxy RPC. El valor mínimo se establece en 8 KB y el valor máximo se establece en 1 GB. Si un valor no está presente, se utiliza el valor predeterminado. Cuando se realizan cambios en este valor, se debe reiniciar IIS para que el cambio surta efecto.
+
+-   **ServerReceiveWindow**
+
+    ``` syntax
+    HKLM\Software\Microsoft\Rpc\ServerReceiveWindow (REG_DWORD)
+    ```
+
+    El valor predeterminado es 64 KB. Este valor especifica la ventana que el cliente usa para los datos que se reciben del proxy RPC. El valor mínimo es de 8 KB y el valor máximo es 1 GB. Si un valor no está presente, se utiliza el valor predeterminado.
 
 ## <a name="monitoring-and-data-collection"></a>Supervisión y recopilación de datos
 
 La siguiente lista de contadores de rendimiento se considera un conjunto básico de contadores al supervisar el uso de recursos en la puerta de enlace de escritorio remoto:
 
--   \\Terminal Service Gateway\\\*
+-   \\Puerta de enlace de Terminal Services\\\*
 
 -   \\Proxy RPC/HTTP\\\*
 
@@ -80,32 +80,32 @@ La siguiente lista de contadores de rendimiento se considera un conjunto básico
 
 -   \\W3SVC\_W3WP\\\*
 
--   \\IPv4\\\*
+-   \\IPv6\\\*
 
 -   \\Memoria\\\*
 
--   \\Interfaz de red (\*)\\\*
+-   \\Interfaz de red\*()\\\*
 
 -   \\Proceso (\*)\\\*
 
--   \\Información del procesador (\*)\\\*
+-   \\Información del procesador\*()\\\*
 
 -   \\Sincronización (\*)\\\*
 
--   \\Sistema\\\*
+-   \\Integrado\\\*
 
 -   \\TCPv4\\\*
 
-Los siguientes contadores de rendimiento son aplicables solo para el transporte RPC antiguo:
+Los siguientes contadores de rendimiento solo son aplicables para el transporte RPC heredado:
 
--   \\Proxy RPC/HTTP\\ \* RPC
+-   \\RPC de RPC/\\ proxy\* http
 
--   \\Proxy RPC/HTTP por servidor\\ \* RPC
+-   \\Proxy RPC/HTTP por RPC\\ de servidor\*
 
--   \\Servicio Web\\ \* RPC
+-   \\RPC del\\ servicio\* Web
 
--   \\W3SVC\_W3WP\\\* RPC
+-   \\W3SVC\_RPC\\ W3WP\*
 
 > [!NOTE]
-> Si procede, agregue el \\IPv6\\ \* y \\TCPv6\\ \* objetos. ReplaceThisText
+> Si es aplicable, agregue \\los\\ objetos \\IPv6\* y TCPv6\\ \* . ReplaceThisText
 

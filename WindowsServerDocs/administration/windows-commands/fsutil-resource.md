@@ -9,12 +9,12 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: d4d2782a1d0ce4329feee03d6c3cb2e6b6a6dc55
-ms.sourcegitcommit: 0e3c2473a54f915d35687d30d1b4b1ac2bae4068
+ms.openlocfilehash: ea97f7f71d1b484c7ac63c7c429f291fba607bba
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68914664"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867070"
 ---
 # <a name="fsutil-resource"></a>Fsutil (recurso)
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7, Windows 2008, Windows Vista
@@ -60,7 +60,7 @@ fsutil resource [stop] <RmRootPathname>
 |      <containers>       |                                                                                                                                                                                                      Especifica los objetos de datos utilizados por el Administrador de recursos transaccional.                                                                                                                                                                                                       |
 |        maxextent        |                                                                                                                                                                                                Especifica el número máximo de contenedores para el Administrador de recursos transaccional especificado.                                                                                                                                                                                                |
 |        minextent        |                                                                                                                                                                                                Especifica el número mínimo de contenedores para el Administrador de recursos transaccional especificado.                                                                                                                                                                                                |
-|  modo {full&#124;Undo}  |                                                                                                                                                                                        Especifica si todas las transacciones están registradas ( **completo**) o solo se registran los eventos revertidos (Deshacer).                                                                                                                                                                                         |
+|  modo {full&#124;Undo}  |                                                                                                                                                                                        Especifica si todas las transacciones están registradas ( **completo**) o solo se registran los eventos revertidos (**Deshacer**).                                                                                                                                                                                         |
 |         rename          |                                                                                                                                                                                                                  Cambia el GUID del Administrador de recursos transaccional.                                                                                                                                                                                                                  |
 |         shrink          |                                                                                                                                                                                              Especifica el porcentaje por el que se puede reducir automáticamente el registro de Administrador de recursos transaccionales.                                                                                                                                                                                              |
 |          size           |                                                                                                                                                                                              Especifica el tamaño de la Administrador de recursos transaccional como un número especificado de *contenedores*.                                                                                                                                                                                               |

@@ -1,6 +1,6 @@
 ---
-title: Caso práctico de Windows Admin Center SDK - cuadrado
-description: Caso práctico de Windows Admin Center SDK - cuadrado
+title: 'Caso práctico de SDK del centro de administración de Windows: cuadrado arriba'
+description: 'Caso práctico de SDK del centro de administración de Windows: cuadrado arriba'
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
@@ -8,49 +8,49 @@ ms.author: jol
 ms.date: 05/23/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: ab0a7bdcf2388ffc867763c04e183b7388fd13e9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0d4469684ad9cbdadec5c40cb3b5178345b64a6d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863946"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865337"
 ---
-# <a name="squared-up-extension"></a>Cuadrado de extensión
+# <a name="squared-up-extension"></a>Extensión cuadrada
 
-## <a name="bringing-scom-based-monitoring-server-dependency-visibility-and-external-data-insights-into-windows-admin-center"></a>Usar supervisión basada en SCOM, visibilidad de la dependencia de servidor y perspectivas sobre los datos externos en Windows Admin Center
+## <a name="bringing-scom-based-monitoring-server-dependency-visibility-and-external-data-insights-into-windows-admin-center"></a>Incorporación de supervisión basada en SCOM, visibilidad de dependencia del servidor e información externa sobre datos en el centro de administración de Windows
 
-Cuadrado de fue fundada con la visión del uso de visualización de datos para ayudar a resolver los desafíos de la complejidad de TI empresarial. Único, ligero del cuadrado copia, software de sólo interfaz de usuario que se basa en Microsoft eficaz plataforma de System Center Operations Manager, así como la integración con orígenes de datos adicionales: de Azure Log Analytics de Microsoft, Application Insights y del sistema Centro de Service Manager para productos de terceros, como ServiceNow, Splunk y muchos más - para proporcionar visibilidad de la empresa a gran escala parques de infraestructura y las aplicaciones, tanto en el entorno local y en entornos de nube híbrida.
+En el cuadrado se fundó la visión del uso de la visualización de datos para ayudar a resolver los desafíos de la complejidad de TI de la empresa. Las compilaciones de software únicas, ligeras y exclusivas de la interfaz de usuario de Microsoft, además de la potente plataforma de System Center Operations Manager de Microsoft, así como la integración con orígenes de datos adicionales, desde Azure Log Analytics, Application Insights y System de Microsoft. Centre Service Manager en productos de terceros, como ServiceNow, Splunk y muchos más, para proporcionar visibilidad en infraestructura empresarial a gran escala y en las inmuebles de aplicaciones, tanto locales como en entornos de nube híbrida.
 
-> <cite>"Nos hemos estado muy utilizando Windows Admin Center a lo largo de su vista previa técnica y ha sido un impacto enorme ya, realmente ayudar a resolver desafíos como nuestros ingenieros de obtener acceso fácil a nuestros laboratorios de configuración, pero tenemos previsto facilitar la administración principal una vez que llega a una versión completa de la consola. Nos encanta el potencial de la integración con el cuadrado de seguridad y la capacidad de exponer todos nuestros datos en un solo lugar."</cite>
+> <cite>"Hemos usado ampliamente el centro de administración de Windows en su versión Technical Preview y ya ha sido un gran éxito, ayudando a la solución de desafíos como nuestros ingenieros a obtener un acceso fácil a nuestros laboratorios de configuración y nos gustaría convertirlo en la administración principal. consola una vez que llega a la versión completa. Nos encanta el potencial de la integración con un cuadrado y la capacidad de exponer todos los datos en un único lugar ".</cite>
 >
-> --David Acevedo, puedo / S especialista en energía NuStar L.P.
+> --David Acevedo, especialista de I/S en NuStar Energy L.P.
 
-De clientes cuadrado administran cientos, miles a menudo, de servidores de Windows y la diversas carteras entregadas por ellos y al cuadrado de y Microsoft se encuentran en una misión de reunir los equipos de TI de la aplicación lo mejor en la web moderna, de rápida, la interfaz de usuario para proporcionar la información que necesitan. Como resultado, el equipo en el cuadrado de vio inmediatamente una alineación emocionante con Windows Admin Center que ofrece los mismos valores y las entidades de seguridad en la próxima generación de administración de Windows Server. En concreto, el equipo considera que los datos de rendimiento a largo plazo, información de dependencia de servidor en tiempo real y obtenidas por el cuadrado de contexto de la aplicación complementan perfectamente los datos elegantes, en tiempo real y proporcionadas capacidades de administración de servidor Windows Admin Center.
+Los clientes del cuadrado hacia arriba administran cientos, a menudo miles, de servidores de Windows y las diversas carteras de aplicaciones que ofrecen, y ambos se han cuadrado y Microsoft está en una misión para ofrecer a los equipos de ti la mejor interfaz de usuario Web rápida y moderna para proporcionar la información que necesitan. Como resultado, el equipo con un cuadrado de arriba vio una excelente alineación con el centro de administración de Windows, que proporciona los mismos valores y entidades de seguridad a la próxima generación de administración de Windows Server. En concreto, el equipo consideró que los datos de rendimiento a largo plazo, la información de dependencia de los servidores en tiempo real y el contexto de la aplicación que se muestran por el cuadrado se complementaban perfectamente con las capacidades de administración de datos y servidores en tiempo real proporcionadas por Centro de administración de Windows.
 
-![Cuadrado de extensión](../../media/extend-case-study-squared-up/squared-up-1.png)
+![Extensión cuadrada](../../media/extend-case-study-squared-up/squared-up-1.png)
 
-> <cite>"Como una organización que administra un estado del servidor a gran escala, en el cuadrado Up / integración de Windows Admin Center es el matrimonio perfecta de nuestras herramientas traducida y centralizada y cosas como la que se va a lanzar un servidor directamente en modo de mantenimiento desde Windows Admin Center son excelentes wins poco para nosotros"</cite>
+> <cite>"Como organización que administra un servidor a gran escala, la integración del centro de administración de Windows o el cuadrado es el matrimonio perfecto de nuestras herramientas localizadas y centralizadas, y aspectos como poder iniciar un servidor directamente en modo de mantenimiento desde El centro de administración de Windows es muy pequeño para nosotros</cite>
 >
-> -– Omitir Granson, administrador del sistema de virtualización en la Universidad Purdue
+> --Kip Granson, administrador de sistemas de virtualización en Purdue University
 
-Contar con una visión clara de que desea presentar esos datos a la perfección en Windows Admin Center, al cuadrado de había trabajado con la versión de vista previa privada temprana de los SDK de Windows Admin Center y resultó sencillo, flexible y bien documentado.
+Gracias a una visión clara de la idea de presentar los datos sin problemas en el centro de administración de Windows, con un cuadrado de trabajo con la versión preliminar de la versión preliminar privada del SDK del centro de administración de Windows, y lo encontramos sencillo, bien documentado y flexible.
 
-Con el SDK de Windows Admin Center, al cuadrado de fue capaz de crear una extensión que incrusta dinámicamente pertinentes al cuadrado de experimentan las vistas dentro de la Windows Admin Center. Por ejemplo, dentro del contexto de un servidor específico o un clúster, al cuadrado de vistas se incrustan automáticamente en proporciona mayor visibilidad. Vistas incluyen las tendencias históricas de clave de rendimiento y las métricas de capacidad (por ejemplo, CPU, memoria y disco), hospedaje de pila (plataforma o centro de datos de virtualización de nube), componentes de la aplicación, como bases de datos SQL y servicios e incluso el análisis de registro en la nube y los datos ITSM.
+Al usar el SDK del centro de administración de Windows, con el cuadrado, se podía crear una extensión que incrustara dinámicamente las vistas cuadradas correspondientes dentro de la experiencia del centro de administración de Windows. Por ejemplo, en el contexto de un servidor o clúster específico, las vistas cuadradas se incrustan automáticamente en la visibilidad extendida proporcionada. Las vistas incluyen tendencias históricas de métricas clave de rendimiento y capacidad (como CPU, memoria y disco), pila de hospedaje (virtualización de centros de datos o plataforma en la nube), componentes de aplicación como bases de datos y servicios SQL e incluso análisis de registros basados en la nube. y datos de ITSM.
 
-![Cuadrado de extensión](../../media/extend-case-study-squared-up/squared-up-2.png)
+![Extensión cuadrada](../../media/extend-case-study-squared-up/squared-up-2.png)
 
-Cuadrado de seguridad y Windows Admin Center comparten una web moderna arquitectura y diseño ethos, que se ha habilitado una integración sencilla técnica y una experiencia de usuario sin problemas. Con la administración basada en web que se está volviendo cada vez más a la norma, creemos que este método de integración entre distintos sistemas es la clave para desbloquear una experiencia de administración moderna y unificada.
+Centrado y el centro de administración de Windows comparten una arquitectura web moderna y un diseño Ethos, que ha habilitado tanto una integración técnica sencilla como una experiencia de usuario sin problemas. Con la administración basada en web cada vez que se convierte en la norma, creemos que este método de integración entre distintos sistemas es la clave para desbloquear una experiencia de administración unificada y moderna.
 
-> <cite>"Consideramos que Windows Admin Center la vanguardia de la administración moderna de Windows Server, por lo que ha sido una gran experiencia para que podamos trabajar estrechamente con el equipo y el hecho de que funcionan con dicha velocidad, entusiasmo, flexibilidad y dentro de tales fundamentalmente paradigmas de desarrollo modernos hizo una elección excelente con la forma, como una compañía de desarrollo de software lean, ágil y rápido, trabajamos nosotros mismos. "</cite>
+> <cite>"Vemos el centro de administración de Windows como la vanguardia de la administración moderna de Windows Server, por lo que ha sido una excelente experiencia para que podamos trabajar tan cerca con el equipo y el hecho de que están trabajando con esa velocidad, entusiasmo, flexibilidad y, en esencia. los paradigmas de desarrollo modernos les han hecho un gran ajuste con la forma en que somos una compañía de desarrollo de software eficiente, ágil y rápida, trabajaremos ".</cite>
 >
-> --Richard Benwell, arquitecto de producto en el cuadrado
+> --Richard Benwell, arquitecto de productos en un cuadrado
 
-Desde esta alineación natural, el equipo de desarrollo en el cuadrado de fue capaz de avanzar rápidamente a una integración de prototipo mostrar al cuadrado de forma nativa dentro de la experiencia de Windows Admin Center y poner eso en manos de sus primeras, técnica obtener una vista previa de los clientes. Desde las reacciones de los clientes, era que la historia era ganador claro inmediatamente.
+A partir de esta alineación natural, el equipo de desarrollo en un cuadrado hacia arriba podía progresar rápidamente a una integración de prototipos que se muestra de forma nativa en la experiencia del centro de administración de Windows y para que llegue a su propio pionero, técnico obtener una vista previa de los clientes. A partir de las reacciones de los clientes, se deshizo inmediatamente que la historia era ganador.
 
-> <cite>"Uno de los principales retos de mantenimiento de un servicio pendiente a través de nuestro entorno de más de 3.500 servidores es unificar nuestro diverso panorama de administración y supervisión de las herramientas de modo que la integración entre cuadrado copias de seguridad y Windows Admin Center - que aporta juntos tantos datos, desde muchos orígenes dispares, en una única consola – están masivos para nosotros".</cite>
+> <cite>"Uno de los principales desafíos de mantener un servicio extraordinario en nuestro entorno de más de 3.500 servidores es unificar nuestro diverso panorama de herramientas de administración y supervisión, así como la integración entre el centro de administración de Windows y el cuadrado. juntos, tantos datos, desde muchos orígenes dispares, en una sola consola, son enormes para nosotros ".</cite>
 >
-> --Ehrnst Martin, director técnico de Azure en Intility A/S
+> --Martin Ehrnst, responsable técnico de Azure en Intility A/S
 
-Con ese tipo de entusiasmo de cuadrado de clientes ya y con numerosas características nuevas muy útiles todavía para llegar a Windows Admin Center, cuadrado copia se videoclip complace acerca del futuro de esta integración y las increíbles posibilidades lo abre para sus clientes y sus viaje hacia una true solo de-consola de administración de sus operaciones de TI.
+Con ese tipo de entusiasmo de los clientes con un cuadrado en vertical y con una gran cantidad de características nuevas todavía para el centro de administración de Windows, el cuadrado se encuentra muy entusiasmado sobre el futuro de esta integración y las posibilidades formidables que se abre para sus clientes y su viaje a una verdadera sección de vidrio para su administración de operaciones de ti.
 
-El cuadrado Up / integración de Windows Admin Center está actualmente en versión Beta; Si desea que el acceso, consulte [la página dedicada de cuadrado copia](https://squaredup.com/product/honolulu/windows-admin-center-extension/?utm_source=microsoft-wac&utm_medium=public-relations&utm_campaign=honolulu) para obtener más detalles. Si su organización usa Microsoft System Center Operations Manager y no tiene todavía al cuadrado hacia arriba (que es esencial para que funcione la extensión), también puede obtener sus manos en una con características completas, 30 días gratuita desde la misma ubicación. 
+La integración del centro de administración de Windows o el cuadrado está actualmente en versión beta. Si desea obtener acceso, consulte [la página dedicada del cuadrado arriba](https://squaredup.com/product/honolulu/windows-admin-center-extension/?utm_source=microsoft-wac&utm_medium=public-relations&utm_campaign=honolulu) para obtener más detalles. Si su organización usa Microsoft System Center Operations Manager y aún no se ha puesto en marcha (lo que es esencial para que la extensión funcione), también puede obtener una evaluación gratuita de 30 días de la misma ubicación. 

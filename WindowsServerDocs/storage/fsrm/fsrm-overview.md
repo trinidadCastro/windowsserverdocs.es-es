@@ -7,33 +7,33 @@ ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
-description: Administrador de recursos de servidor de archivos (FSRM) es una herramienta que le permite administrar y clasificar los datos en un servidor de archivos de Windows Server.
-ms.openlocfilehash: 8488c7418ac03be53db7164678fad353bc7c637d
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+description: Administrador de recursos de servidor de archivos (FSRM) es una herramienta que permite administrar y clasificar los datos en un servidor de archivos de Windows Server.
+ms.openlocfilehash: 49e7731c9f1e0f312728894e99bc88b0391738d8
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476126"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866948"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Introducción al Administrador de recursos del servidor de archivos (FSRM)
 
 > Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2, Windows Server (canal semianual), 
 
-El Administrador de recursos del servidor (FSRM) es un servicio de rol de Windows Server que te permite administrar y clasificar los datos almacenados en los servidores de archivos. Puede usar el Administrador de recursos del servidor de archivos para clasificar archivos, realizar tareas basadas en estas clasificaciones, establecer cuotas en carpetas y crear informes de supervisión del uso de almacenamiento automáticamente.
+El Administrador de recursos del servidor (FSRM) es un servicio de rol de Windows Server que te permite administrar y clasificar los datos almacenados en los servidores de archivos. Puede usar Administrador de recursos de servidor de archivos para clasificar archivos automáticamente, realizar tareas basadas en estas clasificaciones, establecer cuotas en carpetas y crear informes que supervisan el uso del almacenamiento.
 
-También es un punto de pequeño, pero debemos [agregó la capacidad de deshabilitar cambios diarios](#whats-new) en Windows Server, versión 1803.
+Es un punto pequeño, pero también hemos [agregado la posibilidad de deshabilitar los diarios de cambios](#whats-new) en Windows Server, versión 1803.
 
 ## <a name="features"></a>Características
 
 El Administrador de recursos del servidor de archivos incluye las siguientes características:
 
--   [Administración de cuotas](quota-management.md) le permite limitar el espacio permitido para un volumen o carpeta, y se pueden aplicar automáticamente a las nuevas carpetas que se crean en un volumen. También puede definir plantillas de cuota que se apliquen a los nuevos volúmenes o carpetas.  
--   [La infraestructura de clasificación de archivos](classification-management.md) proporciona información sobre los datos automatizando los procesos de clasificación para que pueda administrar los datos de forma más eficaz. Puede clasificar archivos y aplicar directivas según esta clasificación. Entre las directivas de ejemplo está el control de acceso dinámico para restringir el acceso a archivos, el cifrado de archivos y la expiración de archivos. Los archivos pueden clasificarse de manera automática mediante reglas de clasificación de archivos o de forma manual, modificando las propiedades de un archivo o carpeta que se haya seleccionado.
--   [Tareas de administración de archivos](file-management-tasks.md) le permite aplicar una acción o directiva condicional en los archivos según su clasificación. Entre las condiciones de una tarea de administración de archivos están la ubicación del archivo, las propiedades de clasificación, la fecha en que se creó el archivo, la fecha de la última modificación del archivo o la última vez que se accedió al archivo. Las acciones que una tarea de administración de archivos puede llevar a cabo incluyen la capacidad de expirar archivos, cifrar archivos o ejecutar un comando personalizado.
--   [Administración del filtrado de archivo](file-screening-management.md) le permite controlar los tipos de archivos que el usuario puede almacenar en un servidor de archivos. Puede limitar la extensión que se puede almacenar en los archivos compartidos. Por ejemplo, puede crear un filtrado de archivos que no permita que se almacenen archivos con extensión MP3 en las carpetas compartidas personales en un servidor de archivos.
--   [Informes de almacenamiento](storage-reports-management.md) le ayudarán a identificar las tendencias de uso de disco y cómo se clasifican los datos. También puede supervisar un grupo de usuarios en concreto para detectar los intentos de guardar archivos no autorizados.  
+-   La [Administración de cuotas](quota-management.md) permite limitar el espacio permitido para un volumen o una carpeta, y se pueden aplicar automáticamente a las nuevas carpetas que se creen en un volumen. También puede definir plantillas de cuota que se apliquen a los nuevos volúmenes o carpetas.  
+-   La [infraestructura de clasificación de archivos](classification-management.md) proporciona una visión general de los datos mediante la automatización de los procesos de clasificación para que pueda administrar los datos de forma más eficaz. Puede clasificar archivos y aplicar directivas según esta clasificación. Entre las directivas de ejemplo está el control de acceso dinámico para restringir el acceso a archivos, el cifrado de archivos y la expiración de archivos. Los archivos pueden clasificarse de manera automática mediante reglas de clasificación de archivos o de forma manual, modificando las propiedades de un archivo o carpeta que se haya seleccionado.
+-   [Las tareas de administración de archivos](file-management-tasks.md) permiten aplicar una acción o directiva condicional a los archivos en función de su clasificación. Entre las condiciones de una tarea de administración de archivos están la ubicación del archivo, las propiedades de clasificación, la fecha en que se creó el archivo, la fecha de la última modificación del archivo o la última vez que se accedió al archivo. Las acciones que una tarea de administración de archivos puede llevar a cabo incluyen la capacidad de expirar archivos, cifrar archivos o ejecutar un comando personalizado.
+-   La [Administración del filtrado de archivos](file-screening-management.md) le ayuda a controlar los tipos de archivos que el usuario puede almacenar en un servidor de archivos. Puede limitar la extensión que se puede almacenar en los archivos compartidos. Por ejemplo, puede crear un filtrado de archivos que no permita que se almacenen archivos con extensión MP3 en las carpetas compartidas personales en un servidor de archivos.
+-   Los [informes de almacenamiento](storage-reports-management.md) le ayudan a identificar las tendencias en el uso de disco y el modo en que se clasifican los datos. También puede supervisar un grupo de usuarios en concreto para detectar los intentos de guardar archivos no autorizados.  
   
-Las características incluidas con el Administrador de recursos del servidor de archivos se pueden configurar y administrar mediante la aplicación Administrador de recursos del servidor de archivos o usando Windows PowerShell.
+Las características incluidas en el servidor de archivos Administrador de recursos se pueden configurar y administrar mediante la aplicación de Administrador de recursos de servidor de archivos o mediante Windows PowerShell.
   
 > [!IMPORTANT]
 >  El Administrador de recursos del servidor de archivos admite únicamente volúmenes que estén formateados con el sistema de archivos NTFS. El sistema de archivos resistente no se admite.  
@@ -47,40 +47,40 @@ Las características incluidas con el Administrador de recursos del servidor de 
   
 -   Establezca la expiración de cualquier archivo que no se haya modificado en los últimos 10 años.  
   
--   Establezca una cuota de 200 megabytes para el directorio principal de cada usuario y envíeles una notificación cuando lleguen a los 180 megabytes de uso.  
+-   Cree una cuota de 200 megabytes para el directorio principal de cada usuario y notifíquelo cuando utilicen 180 megabytes.  
   
 -   No deje almacenar archivos de música en las carpetas personales compartidas.  
   
 -   Programe que todos los domingos a medianoche se ejecute un informe que genere una lista de los últimos archivos a los que se ha accedido en los dos últimos días. Este informe puede servir de ayuda para conocer la actividad de almacenamiento durante el fin de semana y planear el tiempo de inactividad del servidor según esa información.  
 
-## <a name="whats-new"></a>Novedades: evitar que FSRM crear diarios de cambios
+## <a name="whats-new"></a>Novedades: impedir que FSRM cree diarios de cambios
 
-A partir de Windows Server, versión 1803, puede evitar ahora el servicio Administrador de recursos del servidor de archivos desde la creación de un diario de cambios (también conocido como un diario USN) en volúmenes cuando se inicia el servicio. Esto puede ahorrar un poco de espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real.
+A partir de Windows Server, versión 1803, ahora puede impedir que el servidor de archivos Administrador de recursos servicio cree un diario de cambios (también conocido como un diario USN) en los volúmenes cuando se inicia el servicio. Esto puede ahorrar un poco de espacio en cada volumen, pero deshabilitará la clasificación de archivos en tiempo real.
 
-Para las características nuevas más antiguas, consulte [Novedades en el Administrador de recursos del servidor de archivos](https://technet.microsoft.com/library/dn383587.aspx).
+Para conocer las nuevas características anteriores, consulte [novedades en el administrador de recursos del servidor de archivos](https://technet.microsoft.com/library/dn383587.aspx).
 
-Para evitar que crear un diario de cambios en algunos o todos los volúmenes cuando se inicia el servicio Administrador de recursos del servidor de archivos, siga estos pasos: 
+Para evitar que el servidor de archivos Administrador de recursos cree un diario de cambios en algunos o en todos los volúmenes cuando se inicie el servicio, siga estos pasos: 
 
 1. Detenga el servicio SRMSVC. Por ejemplo, abra una sesión de PowerShell como administrador y escriba `Stop-Service SrmSvc`.
-2. Eliminar el diario USN para los volúmenes que desea conservar el espacio en mediante el comando fsutil: 
+2. Elimine el diario USN para los volúmenes en los que desea ahorrar espacio mediante el comando fsutil: 
 
       ```
       fsutil usn deletejournal /d <VolumeName>
       ```
     Por ejemplo: `fsutil usn deletejournal /d c:`
 
-3. Abra el Editor del registro, por ejemplo, escribiendo `regedit` en la misma sesión de PowerShell.
+3. Abra el editor del registro, por ejemplo, `regedit` escribiendo en la misma sesión de PowerShell.
 4. Vaya a la siguiente clave: **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings**
-5. Si lo desea para omitir cambie la creación de diario para todo el servidor (omitir este paso si desea deshabilitarlo sólo en volúmenes específicos):
-    1. Haga clic en el **configuración** clave y, a continuación, seleccione **New** > **valor DWORD (32 bits)** . 
-    1. Asigne el valor `SkipUSNCreationForSystem`.
+5. Para omitir opcionalmente la creación del diario de cambios para todo el servidor (Omita este paso si desea deshabilitarlo solo en volúmenes específicos):
+    1. Haga clic con el botón secundario en la clave de **configuración** y seleccione **nuevo** > **valor DWORD (32 bits)** . 
+    1. Asigne un nombre `SkipUSNCreationForSystem`al valor.
     1. Establezca el valor en **1** (en hexadecimal).
-6. Para omitir la creación del diario de cambios para volúmenes específicos:
-    1. Obtener las rutas de acceso del volumen que desea omitir mediante el `fsutil volume list` comando o el siguiente comando de PowerShell:
+6. Para omitir opcionalmente la creación del diario de cambios para volúmenes específicos:
+    1. Obtenga las rutas de acceso de volumen que desea omitir `fsutil volume list` mediante el comando o el siguiente comando de PowerShell:
         ```PowerShell
         Get-Volume | Format-Table DriveLetter,FileSystemLabel,Path
         ```
-       Este es un ejemplo de salida:
+       A continuación se muestra un ejemplo de salida:
 
        ```
         DriveLetter FileSystemLabel Path
@@ -88,9 +88,9 @@ Para evitar que crear un diario de cambios en algunos o todos los volúmenes cua
                     System Reserved \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
         C                           \\?\Volume{8d3c9e8a-0000-0000-0000-501f00000000}\
        ```
-    2. Nuevo en el Editor del registro, haga clic en el **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings** clave y, a continuación, seleccione **New** > **cadena múltiple Valor**.
-    3. Asigne el valor `SkipUSNCreationForVolumes`.
-    4. Escriba la ruta de acceso de cada volumen en el que se omiten la creación de un diario de cambios, coloque cada ruta de acceso en una línea independiente. Por ejemplo:
+    2. De nuevo en el editor del registro, haga clic con el botón derecho en la clave **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SrmSvc\Settings** y seleccione **nuevo** > **valor de cadena múltiple**.
+    3. Asigne un nombre `SkipUSNCreationForVolumes`al valor.
+    4. Escriba la ruta de acceso de cada volumen en el que omitir la creación de un diario de cambios y coloque cada trazado en una línea independiente. Por ejemplo:
 
         ```
         \\?\Volume{8d3c9e8a-0000-0000-0000-100000000000}\
@@ -98,12 +98,12 @@ Para evitar que crear un diario de cambios en algunos o todos los volúmenes cua
         ```
 
         > [!NOTE] 
-        > Editor del registro podría indicarle que quite las cadenas vacías, mostrar esta advertencia que puede omitir de forma segura: *Datos de tipo REG_MULTI_SZ no pueden contener cadenas vacías. Editor del registro se quitarán todas las cadenas vacías que se encuentra.*
+        > El editor del registro puede indicarle que quitó cadenas vacías y que muestra esta advertencia que se puede pasar por alto sin ningún problema: *Los datos de tipo REG_MULTI_SZ no pueden contener cadenas vacías. El editor del registro quitará todas las cadenas vacías encontradas.*
 
-7. Inicie el servicio SRMSVC. Por ejemplo, en una sesión de PowerShell, escriba `Start-Service SrmSvc`.
+7. Inicie el servicio SRMSVC. Por ejemplo, en una sesión de PowerShell `Start-Service SrmSvc`, escriba.
 
 
 
 ## <a name="see-also"></a>Vea también
 
-- [Control de acceso dinámico](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx) 
+- [Access Control dinámico](https://technet.microsoft.com/library/dn408191(v=ws.11).aspx) 

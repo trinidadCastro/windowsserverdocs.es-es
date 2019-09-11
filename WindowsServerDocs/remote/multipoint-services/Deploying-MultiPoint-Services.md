@@ -1,6 +1,6 @@
 ---
 title: Implementación de MultiPoint Services
-description: Información general del proceso de implementación de MultiPoint Services
+description: Información general sobre el proceso de implementación de Multipoint Services
 ms.custom: na
 ms.date: 07/22/2016
 ms.prod: windows-server-threshold
@@ -13,38 +13,38 @@ ms.assetid: 594bc09e-5d2d-4984-a9de-79d40b1308d6
 author: evaseydl
 ms.author: evas
 manager: scottman
-ms.openlocfilehash: e2d71d691c61f5e1208d97ad77d3a5ba9c207c0a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 19e1b52c79e0d87804a76ec8963662b96c82b41b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830716"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871724"
 ---
 # <a name="deploying-multipoint-services"></a>Implementación de MultiPoint Services
-Esta guía describe cómo implementar un servidor que ejecuta MultiPoint Services y configurar estaciones MultiPoint, instalar y configurar el sistema, configurar cuentas de usuario y realizar algunas tareas de administración básicas, como activar la protección de disco y la configuración de copias de seguridad, Para empezar a usar el sistema.  
+En esta guía se describe cómo implementar un servidor que ejecuta Multipoint Services y configurar estaciones Multipoint, instalar y configurar el sistema, configurar cuentas de usuario y realizar algunas tareas de administración básicas, como la activación de la protección de disco y la configuración de copias de seguridad. antes de empezar a usar el sistema.  
   
 > [!NOTE]  
-> Para obtener ayuda adicional, consulte la Ayuda del MultiPoint Services, que se puede abrir haciendo clic en el icono de ayuda o F1 en cualquier pantalla MultiPoint Manager o el panel de MultiPoint.  
+> Para obtener soporte técnico adicional, consulte la ayuda de Multipoint Services, que se puede abrir haciendo clic en el icono de ayuda o en F1 en cualquier pantalla de Multipoint Manager o Multipoint Dashboard.  
   
-Se organiza la información de implementación de la manera siguiente. Como mínimo, debe completar las tareas para implementar el sistema y preparar el entorno para los usuarios. Otras tareas podrían o no es posible que se aplican a su entorno. 
--   [Implementar un nuevo sistema de MultiPoint Services](Deploy-a-new-MultiPoint-services-system.md)  
+La información de implementación se organiza de la siguiente manera. Como mínimo, debe completar las tareas para implementar el sistema y preparar el entorno para los usuarios. Es posible que otras tareas no se apliquen a su entorno. 
+-   [Implementar un nuevo sistema de MultiPoint Services](Deploy-a-new-MultiPoint-services-system.md)  
   
-    Configurar el equipo de MultiPoint Services y las estaciones. Instalar y configurar servicios de MultiPoint; Configure sus emisoras; instalar controladores, actualizaciones y software; Si lo desea unirse a un dominio; Agregar licencias de cliente (CAL) para cada estación.  
+    Configure el equipo y las estaciones de Multipoint Services. Instalación y configuración de Multipoint Services; configurar las estaciones; instalar controladores, actualizaciones y software; unirse opcionalmente a un dominio; Agregue licencias de cliente (cal) para cada estación.  
   
--   [Tareas de configuración opcional para una implementación de MultiPoint Services](Optional-configuration-tasks-for-a-MultiPoint-services-deployment.md)  
+-   [Tareas de configuración opcionales para una implementación de MultiPoint Services](Optional-configuration-tasks-for-a-MultiPoint-services-deployment.md)  
   
-    Realizar tareas de configuración opcional. Configurar una estación de pantalla dividida; agregar impresoras; habilitar el acceso a través de una LAN inalámbrica; creación de escritorios virtuales para las estaciones con Windows 10, Windows 8 o del sistema operativo de Windows 7; cambiar el idioma para mostrar para el sistema o para usuarios individuales.  
+    Realizar tareas de configuración opcionales. Configuración de una estación de pantalla dividida; agregar impresoras; habilitar el acceso a través de una LAN inalámbrica; cree escritorios virtuales para estaciones con el sistema operativo Windows 10, Windows 8 o Windows 7; cambiar el idioma para mostrar del sistema o para usuarios individuales.  
   
--   [Preparación del sistema MultiPoint Services para los usuarios](Prepare-your-MultiPoint-services-system-for-users.md)  
+-   [Preparación del sistema Multipoint Services para los usuarios](Prepare-your-MultiPoint-services-system-for-users.md)  
   
-    Planear y crear cuentas de usuario; restringir el acceso de los usuarios al servidor. se abre el acceso, configurar estaciones de inicio de sesión automático; Permitir varias sesiones para las cuentas de usuario compartidas; implementar archivos compartidos para los usuarios.  
+    Planear y crear cuentas de usuario; restrinja el acceso de los usuarios al servidor; para el acceso abierto, configure las estaciones para el inicio de sesión automático. permitir varias sesiones para cuentas de usuario compartidas; implementar el uso compartido de archivos para los usuarios.  
   
--   [Administración del sistema en MultiPoint Services](System-administration-in-MultiPoint-services.md)  
+-   [Administración del sistema en MultiPoint Services](System-administration-in-MultiPoint-services.md)  
   
-    Realizar algunas tareas de administración de servidor básico para empezar a usar el servidor. Activar la protección de disco; instalar el servidor de copia de seguridad; para ahorrar energía, establecer la configuración de suspensión. configurar directivas de grupo y el registro para una implementación de dominio.  
+    Realice algunas tareas básicas de administración del servidor antes de empezar a usar el servidor. Activar la protección de disco; instalar copia de seguridad del servidor; para ahorrar energía, configure las opciones de suspensión; configurar directivas de grupo y el registro para una implementación de dominio.  
   
 ## <a name="see-also"></a>Vea también  
   
-- [MultiPoint Services](MultiPoint-Services.md)
--   [Foro de multiPoint Services](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)  
+- [MultiPoint Services](MultiPoint-Services.md)
+-   [Foro de Multipoint Services](https://social.technet.microsoft.com/Forums/windowsserver/home?forum=windowsmultipointserver&filter=alltypes&sort=lastpostdesc)  
   

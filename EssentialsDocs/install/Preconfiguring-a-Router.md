@@ -12,12 +12,12 @@ ms.assetid: 9153ac90-bb0c-4b8d-93b2-e2121ed13636
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: 7dc66c8a439552c2087d0348b0115adba04027ee
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bbff22c03b7bf4310b86048848ded276547b911f
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433503"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865198"
 ---
 # <a name="preconfiguring-a-router"></a>Configuración previa del enrutador
 
@@ -32,8 +32,8 @@ Normalmente, una nueva instalación del sistema operativo requiere un enrutador 
 |Ajuste de configuración|Detalles|  
 |---------------------------|-------------|  
 |DHCP|Activado|  
-|Reenvío de puerto|Debe reenviar los siguientes puertos a la dirección del servidor:<br /><br /> -80 (para la configuración hospedado, utilice solo 443)<br />-   443|  
-|Compatibilidad con UPnP|Debe habilitar la compatibilidad de UPnP™ proporcionar la configuración de enrutador más sencilla para el cliente y la mejor experiencia del cliente durante la instalación.<br /><br /> **Advertencia:** La arquitectura UPnP puede implicar un riesgo para la seguridad si se deja habilitada.|  
+|Reenvío de puerto|Debe reenviar los siguientes puertos a la dirección del servidor:<br /><br /> -80 (para la configuración hospedada, use solo 443)<br />-443|  
+|Compatibilidad con UPnP|Debe habilitar la compatibilidad con UPnP para proporcionar la configuración de enrutador más sencilla para el cliente y la mejor experiencia de cliente durante la instalación.<br /><br /> **Advertencia:** La arquitectura UPnP puede implicar un riesgo para la seguridad si se deja habilitada.|  
   
  Además de la configuración previa básica del enrutador, complete las tareas que se indican a continuación para ofrecer una experiencia del usuario integrada para la administración del enrutador:  
   
@@ -43,14 +43,14 @@ Normalmente, una nueva instalación del sistema operativo requiere un enrutador 
   
 -   Si el enrutador es compatible con varias subredes, la dirección IP del servidor debe entregarse como un servidor DNS a través de DHCP.  
   
--   Si el enrutador tiene una característica de control de acceso integrado para servicios de dominio de Active DirectoryÂ®, puede automatizar la integración de Active Directory durante la configuración inicial del servidor. También debería exponer esta función mediante el complemento de gestión del enrutador en el Panel.  
+-   Si el enrutador tiene una característica de control de acceso integrada para Active DirectoryÂ® Domain Services, puede automatizar la integración de Active Directory durante la configuración inicial del servidor. También debería exponer esta función mediante el complemento de gestión del enrutador en el Panel.  
   
 > [!NOTE]
 >  Para obtener más información acerca de la configuración de conexiones inalámbricas, consulte [Configure Support for a Wireless Network](Configure-Support-for-a-Wireless-Network.md).  
   
 ## <a name="see-also"></a>Vea también  
- [Introducción al ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
- [Crear y personalizar la imagen](Creating-and-Customizing-the-Image.md)   
+ [Introducción con el ADK de Windows Server Essentials](Getting-Started-with-the-Windows-Server-Essentials-ADK.md)   
+ [Creación y personalización de la imagen](Creating-and-Customizing-the-Image.md)   
  [Personalizaciones adicionales](Additional-Customizations.md)   
  [Preparar la imagen para la implementación](Preparing-the-Image-for-Deployment.md)   
  [Probar la experiencia del cliente](Testing-the-Customer-Experience.md)

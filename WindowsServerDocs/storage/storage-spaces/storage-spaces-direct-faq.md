@@ -1,6 +1,6 @@
 ---
-title: Espacios de almacenamiento directo - preguntas más frecuentes
-description: Obtenga información sobre cómo aproximadamente espacios de almacenamiento directo
+title: Preguntas más frecuentes sobre Espacios de almacenamiento directo
+description: Más información sobre Espacios de almacenamiento directo
 keywords: Espacios de almacenamiento
 ms.prod: windows-server-threshold
 ms.author: kaushik
@@ -9,82 +9,82 @@ ms.topic: article
 author: kaushika-msft
 ms.date: 10/24/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: b17aa7ddc783e95fbcc19fe3913192d245133c7f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1aafac9a994e907e8b8ee3b556618d630cdf8418
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818916"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872068"
 ---
-# <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>Espacios de almacenamiento directo - preguntas más frecuentes (P+F)
+# <a name="storage-spaces-direct---frequently-asked-questions-faq"></a>Espacios de almacenamiento directo preguntas más frecuentes (p + f)
 
-Este artículo enumeran algunos comunes y preguntas más frecuentes relacionadas con [espacios de almacenamiento directo](storage-spaces-direct-overview.md).
+En este artículo se enumeran algunas preguntas frecuentes y frecuentes relacionadas con [espacios de almacenamiento directo](storage-spaces-direct-overview.md).
 
-## <a name="when-you-use-storage-spaces-direct-with-3-nodes-can-you-get-both-performance-and-capacity-tiers"></a>¿Al utilizar espacios de almacenamiento directo con 3 nodos, se pueden obtener rendimiento y los niveles de capacidad?
+## <a name="when-you-use-storage-spaces-direct-with-3-nodes-can-you-get-both-performance-and-capacity-tiers"></a>Al usar Espacios de almacenamiento directo con 3 nodos, ¿puede obtener niveles de rendimiento y capacidad?
 
-Sí, puede obtener un nivel de capacidad y rendimiento en una configuración de espacios de almacenamiento directo de 2 o 3 nodos. Sin embargo, debe asegurarse de que tiene 2 dispositivos de capacidad. Esto significa que debe usar los tres tipos de dispositivos: NVME, SSD y HDD.
+Sí, puede obtener un nivel de rendimiento y capacidad en una configuración de Espacios de almacenamiento directo de dos o tres nodos. Sin embargo, debe asegurarse de que tiene 2 dispositivos de capacidad. Esto significa que debe usar los tres tipos de dispositivos: NVME, SSD y HDD.
  
-## <a name="refs-file-system-provides-real-time-tiaring-with-storage-spaces-direct-does-refs-provides-the-same-functionality-with-shared-storage-spaces-in-2016"></a>Sistema de archivos Refs proporciona tiaring en tiempo real con espacios de almacenamiento directo. ¿REFS proporciona la misma funcionalidad con espacios de almacenamiento compartido en 2016?
+## <a name="refs-file-system-provides-real-time-tiaring-with-storage-spaces-direct-does-refs-provides-the-same-functionality-with-shared-storage-spaces-in-2016"></a>El sistema de archivos Refs proporciona tiaring en tiempo real con Espacios de almacenamiento directo. ¿La función REFS proporciona la misma funcionalidad con espacios de almacenamiento compartido en 2016?
 
-No, no obtendrá los niveles con espacios de almacenamiento compartido con 2016 en tiempo real. Se trata sólo de espacios de almacenamiento directo. 
+No, no obtendrá niveles en tiempo real con espacios de almacenamiento compartido con 2016. Esto solo es para Espacios de almacenamiento directo. 
  
-## <a name="can-i-use-an-ntfs-file-system-with-storage-spaces-direct"></a>¿Puedo usar un sistema de archivos NTFS con espacios de almacenamiento directo?
+## <a name="can-i-use-an-ntfs-file-system-with-storage-spaces-direct"></a>¿Puedo usar un sistema de archivos NTFS con Espacios de almacenamiento directo?
   
-Sí, puede usar el sistema de archivos NTFS con espacios de almacenamiento directo. Sin embargo, se recomienda REFS. NTFS no proporciona los niveles en tiempo real. 
+Sí, puede usar el sistema de archivos NTFS con Espacios de almacenamiento directo. Sin embargo, se recomienda REFS. NTFS no proporciona niveles en tiempo real. 
  
-## <a name="i-have-configured-2-node-storage-spaces-direct-clusters-where-the-virtual-disk-is-configured-as-2-way-mirror-resiliency-if-i-add-a-new-fault-domain-will-the-resiliency-of-the-existing-virtual-disk-change"></a>He configurado 2 clústeres de espacios de almacenamiento directo de nodos, donde se configura el disco virtual como resistencia reflejada 2 vías. ¿Si agrego un nuevo dominio de error, cambiará la resistencia del disco virtual existente?
+## <a name="i-have-configured-2-node-storage-spaces-direct-clusters-where-the-virtual-disk-is-configured-as-2-way-mirror-resiliency-if-i-add-a-new-fault-domain-will-the-resiliency-of-the-existing-virtual-disk-change"></a>He configurado dos clústeres de Espacios de almacenamiento directo de nodos, donde el disco virtual está configurado como resistencia de reflejo bidireccional. Si agrego un nuevo dominio de error, ¿cambiará la resistencia del disco virtual existente?
 
-Después de haber agregado el nuevo dominio de error, los nuevos discos virtuales que cree se ubicará en 3-way mirror. Sin embargo, el disco virtual existente seguirá siendo un disco reflejado 2 vías. Puede copiar los datos a los nuevos discos virtuales desde los volúmenes existentes para aprovechar las ventajas de la resistencia nuevo.
+Después de agregar el nuevo dominio de error, los nuevos discos virtuales que cree pasarán a reflejo triple. Sin embargo, el disco virtual existente seguirá siendo un disco reflejado de dos vías. Puede copiar los datos en los nuevos discos virtuales desde los volúmenes existentes para obtener las ventajas de la nueva resistencia.
  
-## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>Espacios de almacenamiento directo se creó mediante el autoconfig:0 conmutador y el grupo creado manualmente. Cuando se intenta consultar el grupo de espacios de almacenamiento directo para crear un nuevo volumen, obtengo un mensaje que dice: "Enable-ClusterS2D nuevo." ¿Qué debo hacer?
+## <a name="the-storage-spaces-direct-was-created-using-the-autoconfig0-switch-and-the-pool-created-manually-when-i-try-to-query-the-storage-spaces-direct-pool-to-create-a-new-volume-i-get-a-message-that-says-enable-clusters2d-again-what-should-i-do"></a>El Espacios de almacenamiento directo se creó con la configuración automática: 0 modificador y el grupo creado manualmente. Cuando intento consultar el grupo de Espacios de almacenamiento directo para crear un nuevo volumen, aparece un mensaje que dice "Enable-ClusterS2D de nuevo". ¿Qué debo hacer?
 
-De forma predeterminada, al configurar espacios de almacenamiento directo mediante el cmdlet enable-S2D, el cmdlet hace todo para usted. Crea el grupo y los niveles. Cuando se usa autoconfig:0, todo lo que debe realizarse manualmente. Si ha creado solo el grupo, el nivel no es necesario crear. Si no creó los niveles de en absoluto o no crear niveles de forma correspondiente a los dispositivos conectados, recibirá un mensaje de error "Enable-ClusterS2D nuevo". Se recomienda que no utilice el modificador de configuración automática en un entorno de producción. 
+De forma predeterminada, al configurar Espacios de almacenamiento directo mediante el cmdlet enable-S2D, el cmdlet hace todo lo posible. Crea el grupo y los niveles. Al usar AutoConfig: 0, todo debe realizarse manualmente. Si solo ha creado el grupo, no se crea necesariamente el nivel. Recibirá un mensaje de error "Enable-ClusterS2D de nuevo" si no ha creado niveles en todos los niveles o no creados de la manera correspondiente a los dispositivos conectados. Se recomienda no usar el modificador de configuración automática en un entorno de producción. 
  
-## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>¿Es posible agregar un disco de giro (HDD) al bloque de espacios de almacenamiento directo después de haber creado espacios de almacenamiento directo con dispositivos SSD?
+## <a name="is-it-possible-to-add-a-spinning-disk-hdd-to-the-storage-spaces-direct-pool-after-you-have-created-storage-spaces-direct-with-ssd-devices"></a>¿Es posible agregar un disco girado (HDD) al grupo de Espacios de almacenamiento directo después de haber creado Espacios de almacenamiento directo con dispositivos SSD?
 
-No. De forma predeterminada, si usa el tipo de dispositivo único para crear el grupo, no necesitará configurar discos de la memoria caché y todos los discos se usaría para la capacidad. Puede agregar discos NVME a la configuración y discos NVME se configuraría para caché.
+No. De forma predeterminada, si usa el tipo de dispositivo único para crear el grupo, no configurará los discos de caché y se usarán todos los discos para la capacidad. Puede agregar discos de NVME a la configuración y los discos de NVME se configurarán para la memoria caché.
  
-## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>He configurado un dominio de error 2 rack: BASTIDOR 1 tiene 2 dominios de error, bastidor 2 tiene 1 dominio de error. Cada servidor tiene 4 dispositivos de 100 GB de capacidad. ¿Usar todos los 1200 GB de espacio del grupo?
+## <a name="i-have-configured-a-2-rack-fault-domain-rack-1-has-2-fault-domains-rack-2-has-1-fault-domain-each-server-has-4-capacity-100-gb-devices-can-i-use-all-1200-gb-of-space-from-the-pool"></a>He configurado un dominio de error de 2 bastidores: El bastidor 1 tiene 2 dominios de error, el bastidor 2 tiene un dominio de error. Cada servidor tiene 4 dispositivos de capacidad 100 GB. ¿Puedo usar todos los 1.200 GB de espacio del grupo?
 
-No, puede usar solo 800 GB. En un dominio de error bastidor, debe asegurarse de que tiene una configuración de 2-way mirror, por lo que cada chuck y su land duplicado en un bastidor diferentes.
+No, solo puede usar 800 GB. En un dominio de error de bastidor, debe asegurarse de que tiene una configuración de reflejo bidireccional para que cada Chuck y sus elementos duplicados se coloquen en un bastidor diferente.
  
-## <a name="what-should-the-cache-size-be-when-i-am-configuring-storage-spaces-direct"></a>¿Cuál debe ser el tamaño de caché al voy a configurar espacios de almacenamiento directo?
+## <a name="what-should-the-cache-size-be-when-i-am-configuring-storage-spaces-direct"></a>¿Cuál debe ser el tamaño de la memoria caché cuando se configura Espacios de almacenamiento directo?
 
-Se debe ajustar el tamaño de la memoria caché para alojar el espacio de trabajo (los datos que se está usando activamente leídos o escritos en un momento dado) de las aplicaciones y cargas de trabajo.
+La memoria caché debe ajustarse para adaptarse al espacio de trabajo (los datos que se leen o escriben activamente en un momento dado) de las aplicaciones y las cargas de trabajo.
 
-## <a name="how-can-i-determine-the-size-of-cache-that-is-being-used-by-storage-spaces-direct"></a>¿Cómo puedo determinar el tamaño de caché que se está usando espacios de almacenamiento directo?
+## <a name="how-can-i-determine-the-size-of-cache-that-is-being-used-by-storage-spaces-direct"></a>¿Cómo se puede determinar el tamaño de la memoria caché que usa Espacios de almacenamiento directo?
 
-Use la utilidad integrada PerfMon para inspeccionar los errores de caché. Revise la memoria caché se pierda lecturas por segundo del contador de disco de clúster almacenamiento híbrido. Recuerde que si hay demasiados lecturas falta la memoria caché, la memoria caché es demasiado pequeña y desea expandirlo. 
+Use la utilidad integrada PerfMon para inspeccionar los errores de caché. Revise las lecturas de errores de caché por segundo del contador de discos híbridos de almacenamiento de clúster. Recuerde que si faltan demasiadas lecturas en la memoria caché, la memoria caché está insuficiente y es posible que desee expandirla. 
  
-## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>¿Hay una calculadora que muestra el tamaño exacto de los discos que se se reservan para la memoria caché, la capacidad y resistencia que me permitirían a planear mejor?
+## <a name="is-there-a-calculator-that-shows-the-exact-size-of-the-disks-that-are-being-set-aside-for-cache-capacity-and-resiliency-that-would-enable-me-to-plan-better"></a>¿Hay una calculadora que muestre el tamaño exacto de los discos que se reservan para la caché, la capacidad y la resistencia que me permitan planear mejor?
 
-Puede usar la calculadora de espacios de almacenamiento para ayudar a planear la. Está disponible en http://aka.ms/s2dcalc.
+Puede usar la calculadora de espacios de almacenamiento para ayudarle con la planeación. Está disponible en http://aka.ms/s2dcalc.
  
-## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>¿Qué es la mejor configuración recomendaría al configurar 6 servidores y 3 bastidores?
+## <a name="what-is-the-best-configuration-that-you-would-recommend-when-configuring-6-servers-and-3-racks"></a>¿Cuál es la mejor configuración que se recomienda al configurar 6 servidores y 3 bastidores?
 
-Usar 2 servidores en cada uno de los bastidores para obtener la resistencia de disco virtual de un reflejo de la manera de 3. Recuerde que la configuración de bastidor funcionaría correctamente solo si va a proporcionar la configuración del sistema operativo de la manera en que se coloca en el bastidor. 
+Use 2 servidores en cada uno de los bastidores para obtener la resistencia de los discos virtuales de un reflejo tridimensional. Recuerde que la configuración del bastidor funcionaría correctamente solo si proporciona la configuración al sistema operativo de la forma en que se coloca en el bastidor. 
  
-## <a name="can-i-enable-maintenance-mode-for-a-specific-disk-on-a-specific-server-in-storage-spaces-direct-cluster"></a>¿Puedo habilitar el modo de mantenimiento de un disco concreto en un servidor específico en el clúster de espacios de almacenamiento directo?
+## <a name="can-i-enable-maintenance-mode-for-a-specific-disk-on-a-specific-server-in-storage-spaces-direct-cluster"></a>¿Puedo habilitar el modo de mantenimiento para un disco específico en un servidor específico en Espacios de almacenamiento directo clúster?
 
-Sí, puede habilitar el modo de mantenimiento de almacenamiento en un disco específico y un dominio de error específico. El comando Enable-StorageMaintenanceMode se invoca automáticamente cuando se pausa un nodo. Puede habilitarlo para un disco concreto, ejecute el comando siguiente:
+Sí, puede habilitar el modo de mantenimiento de almacenamiento en un disco específico y un dominio de error específico. El comando enable-StorageMaintenanceMode se invoca automáticamente al pausar un nodo. Puede habilitarlo para un disco específico ejecutando el comando siguiente:
 
 ```powershell
 Get-PhysicalDisk -SerialNumber <SerialNumber> | Enable-StorageMaintenanceMode
 ```
 
-## <a name="is-storage-spaces-direct-supported-on-my-hardware"></a>¿Espacios de almacenamiento directo estará en mi hardware?
+## <a name="is-storage-spaces-direct-supported-on-my-hardware"></a>¿Es Espacios de almacenamiento directo compatible con el hardware?
 
-Se recomienda que póngase en contacto con su proveedor de hardware para comprobar la compatibilidad. Los proveedores de hardware probar la solución en su hardware y un comentario sobre si se admite o no. Por ejemplo, en el momento de redactar este artículo, los servidores como R730 / R730xd / R630 que tienen más de 8 ranuras de la unidad puede admitir SES y son compatibles con espacios de almacenamiento directo. Dell admite solo la HBA330 con espacios de almacenamiento directo. R620 no admite SES y no es compatible con espacios de almacenamiento directo.
+Se recomienda que se ponga en contacto con el proveedor de hardware para comprobar la compatibilidad. Los proveedores de hardware prueban la solución en su hardware y comentan si es compatible o no. Por ejemplo, en el momento de redactar este documento, los servidores como R730/R730xd/R630 con más de 8 ranuras de unidad pueden admitir SES y son compatibles con Espacios de almacenamiento directo. Dell solo admite el HBA330 con Espacios de almacenamiento directo. R620 no admite SES y no es compatible con Espacios de almacenamiento directo.
 
-Para el hardware más información de soporte técnico, visite el sitio Web siguiente: Catálogo de Windows Server
+Para obtener más información de compatibilidad de hardware, visite el siguiente sitio web: Catálogo de Windows Server
  
-## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>¿Cómo hace espacios de almacenamiento directo que el uso de SES?
+## <a name="how-does-storage-spaces-direct-make-use-of-ses"></a>¿Cómo Espacios de almacenamiento directo usar SES?
 
-Espacios de almacenamiento directo usa la asignación de SCSI Enclosure Services (SES) para asegurarse de que los bloques de datos y los metadatos se reparten entre los dominios de error de forma resistente. Si el hardware no admite SES, no hay ninguna asignación de los contenedores y la colocación de los datos no es resistente.
+Espacios de almacenamiento directo usa la asignación de los servicios de alojamiento SCSI (SES) para asegurarse de que los bloques de datos y los metadatos se reparten entre los dominios de error de un modo resistente. Si el hardware no es compatible con SES, no hay ninguna asignación de los alojamientos y la ubicación de los datos no es resistente.
  
-## <a name="what-command-can-you-use-to-check-the-physical-extent-for-a-virtual-disk"></a>¿Qué comando se puede utilizar para comprobar la extensión física de un disco virtual?
+## <a name="what-command-can-you-use-to-check-the-physical-extent-for-a-virtual-disk"></a>¿Qué comando se puede usar para comprobar la extensión física de un disco virtual?
   
-Esta:
+Este:
 
 ```powershell
 get-virtualdisk -friendlyname “xyz” | get-physicalextent

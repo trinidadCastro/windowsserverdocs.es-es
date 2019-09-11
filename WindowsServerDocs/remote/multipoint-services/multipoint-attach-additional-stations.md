@@ -1,6 +1,6 @@
 ---
-title: Asociar estaciones adicionales a su servidor MultiPoint
-description: Agregar estaciones más a la implementación de MultiPoint Services
+title: Conexión de estaciones adicionales a MultiPoint Server
+description: Agregar más estaciones a la implementación de Multipoint Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,39 +13,39 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 57fc8ed6774c3266298ecd98e8f609ec01f63ef6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 70609d491f5eb60daf89df219c06c8b9d4c3cd3e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889266"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871411"
 ---
-# <a name="attach-additional-stations-to-multipoint-services"></a>Adjuntar adicionales estaciones en MultiPoint Services
-En su entorno de MultiPoint Services, los usuarios utilizan estaciones para conectar con MultiPoint Services y realizar su trabajo. Las estaciones son los puntos de conexión de usuario para conectarse al equipo que ejecuta Multipoint Services.  
+# <a name="attach-additional-stations-to-multipoint-services"></a>Conexión de estaciones adicionales a multipoint Services
+En el entorno de Multipoint Services, los usuarios usan estaciones para conectarse a multipoint Services y realizar su trabajo. Las estaciones son los puntos de conexión de usuario para conectarse al equipo que ejecuta Multipoint Services.  
   
-MultiPoint services admite tres tipos de estación:  
+Multipoint Services admite tres tipos de estación:  
   
--   Estaciones de vídeo directamente conectados  
+-   Estaciones conectadas a vídeo directo  
   
--   USB cero cliente conectado estaciones (y USB a través de las estaciones de cliente conectado Ethernet cero)  
+-   Estaciones conectadas por el cliente USB a través de las estaciones conectadas al cliente USB a través de Ethernet  
   
 -   Estaciones conectadas de RDP a través de LAN  
   
-Las clasificaciones se basan en hardware de la estación y el tipo de conexión que utiliza. Se puede mezclar y combinar los tipos de conexión para sus estaciones. El único requisito es que la estación principal (que instaló anteriormente) debe ser una estación de vídeo directamente conectados. Para obtener más información acerca de las configuraciones de estación, vea [estaciones de MultiPoint](MultiPoint-services-Stations.md).  
+Las clasificaciones se basan en el hardware de una estación y en el tipo de conexión que usa. Puede mezclar y hacer coincidir los tipos de conexión de las estaciones. El único requisito es que la estación primaria (que instaló anteriormente) debe ser una estación conectada directamente a vídeo. Para obtener más información sobre las configuraciones de la estación, consulte [estaciones Multipoint](MultiPoint-services-Stations.md).  
   
-Para obtener instrucciones que explican cómo configurar cada tipo de estación, vea lo siguiente:  
+Para obtener instrucciones que explican cómo configurar cada tipo de estación, consulte lo siguiente:  
   
--   [Configurar una estación de vídeo directamente conectados](Set-up-a-direct-video-connected-station-in-MultiPoint-services.md)  
+-   [Configurar una estación conectada mediante de vídeo en directo](Set-up-a-direct-video-connected-station-in-MultiPoint-services.md)  
   
--   [Configurar un puerto USB cero estación cliente conectado](Set-up-a-USB-zero-client-connected-station-in-MultiPoint-services.md)  
+-   [Configurar una estación conectada a un cliente cero mediante USB](Set-up-a-USB-zero-client-connected-station-in-MultiPoint-services.md)  
   
--   [Configurar una estación de RDP a través de LAN conectados](Set-up-an-RDP-over-LAN-connected-station-in-MultiPoint-services.md)  
+-   [Configurar una estación conectada mediante RDP a través de LAN](Set-up-an-RDP-over-LAN-connected-station-in-MultiPoint-services.md)  
   
-Para obtener una comparación detallada de los tipos de estación, vea [comparación de tipo estación](multipoint-services-stations.md#BKMK_StationTypeComparison).  
+Para obtener una comparación detallada de los tipos de estación, vea comparación de tipos de [estación](multipoint-services-stations.md#BKMK_StationTypeComparison).  
   
 > [!NOTE]  
-> -   Los procedimientos para asociar las estaciones no describen cómo configurar centros intermedios o a centros de nivel inferiores. Para obtener información sobre dónde instalar estos centros, consulte [estaciones de MultiPoint](MultiPoint-services-Stations.md).  
-> -   En algunos casos, es posible que necesita crear estaciones de escritorios virtuales, que se ejecutan en máquinas virtuales. Por ejemplo, usa las aplicaciones que no se puede instalar en Windows Server o aplicaciones que no se ejecutarán varias instancias en el mismo equipo host. Para obtener más información, consulte [escritorios virtuales de creación de Windows 10 Enterprise para estaciones](Create-Windows-10-Enterprise-virtual-desktops-for-stations.md).  
+> -   Los procedimientos para asociar estaciones no describen cómo configurar concentradores intermedios o concentradores de bajada. Para obtener información sobre dónde instalar estos centros, consulte [estaciones Multipoint](MultiPoint-services-Stations.md).  
+> -   En algunos casos, es posible que tenga que crear escritorios virtuales de estación, que se ejecutan en máquinas virtuales. Por ejemplo, se usan aplicaciones que no se pueden instalar en Windows Server o en aplicaciones que no ejecutan varias instancias en el mismo equipo host. Para obtener más información, consulte [crear escritorios virtuales de Windows 10 Enterprise para estaciones](Create-Windows-10-Enterprise-virtual-desktops-for-stations.md).  
   
 > [!TIP]  
-> Es útil crear sus estaciones en el orden de sus ubicaciones físicas para que se identifican de forma secuencial en MultiPoint Server. Si posteriormente desea cambiar el nombre de una estación, puede hacerlo en MultiPoint Manager. Para obtener más información, consulte la reasignación de todas las estaciones de MultiPoint Server ayuda y soporte técnico.
+> Resulta útil para crear sus estaciones en el orden de sus ubicaciones físicas, de modo que se identifiquen secuencialmente en MultiPoint Server. Si más adelante desea cambiar el nombre de una estación, puede hacerlo en Multipoint Manager. Para obtener más información, consulte reasignación de todas las estaciones en ayuda y soporte técnico de MultiPoint Server.

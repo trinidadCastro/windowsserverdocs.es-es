@@ -1,6 +1,6 @@
 ---
-title: AD FS paginado inicio de sesión
-description: Este documento describe la nueva experiencia de inicio de sesión de AD FS de 2019.
+title: AD FS inicio de sesión paginado
+description: En este documento se describe la nueva experiencia de inicio de sesión para AD FS 2019.
 author: billmath
 ms.author: billmath
 manager: mtillman
@@ -8,60 +8,60 @@ ms.date: 09/19/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: c528b9c4e944849b7ed9a2fc5213a7b263be70c7
-ms.sourcegitcommit: ccc802338b163abdad2e53b55f39addcfea04603
+ms.openlocfilehash: 41938aef1c22f78a49e2817d0764b8110ef30f54
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66687381"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866145"
 ---
-# <a name="ad-fs-paginated-sign-in"></a>AD FS paginado inicio de sesión
+# <a name="ad-fs-paginated-sign-in"></a>AD FS inicio de sesión paginado
 
 
-Para AD FS en Windows Server 2019, hemos rediseñado la interfaz de inicio de sesión de usuario.  Ahora, el inicio de sesión de AD FS tendrán la misma apariencia y comportamiento de Azure AD.  Esto proporcionará a los usuarios una experiencia más coherente de inicio de sesión, que incorpora un flujo de usuario paginados y centrado.
+Por AD FS en Windows Server 2019, hemos rediseñado la interfaz de usuario de inicio de sesión.  Ahora, el inicio de sesión AD FS tendrá la misma apariencia y funcionamiento de Azure AD.  Esto proporcionará a los usuarios una experiencia de inicio de sesión más coherente, incorporando un flujo de usuario centrado y paginado.
 
-## <a name="whats-changing"></a>¿Qué está cambiando
-En AD FS en Windows Server 2012 R2 y 2016, la pantalla de inicio de sesión tenía algo parecido a esto:
+## <a name="whats-changing"></a>Qué está cambiando
+En AD FS en Windows Server 2012 R2 y 2016, la pantalla de inicio de sesión tiene un aspecto similar al siguiente:
 
 ![oldsignin](media/AD-FS-paginated-sign-in/signin1.png)
 
-Nos estamos alejándose de mostrar un único formulario ubicado en el lado derecho de la pantalla.
+Estamos pasando de mostrar un único formulario situado en el lado derecho de la pantalla.
 
-En AD FS en Windows Server 2019, éstos son los cambios de diseño importante que verá:
+En AD FS en Windows Server 2019, estos son los principales cambios de diseño que verá:
 
 
-- **Centrado de una interfaz de usuario**. Anteriormente, la interfaz de inicio de sesión de usuario existía en el lado derecho de la pantalla, como se indicó anteriormente. Nos hemos movido la interfaz de usuario protagonista modernizar la experiencia.
-- **Paginación**. En lugar de proporcionar un formato largo a rellenar, hemos incorporado un nuevo flujo que le llevarán a través de la experiencia de inicio de sesión de paso a paso. La telemetría muestra que, con este enfoque, nuestros clientes tienen más éxito inicios de sesión. Lo también nos proporciona mayor flexibilidad para incorporar varios métodos de autenticación, tales como autenticación de factor de teléfono.
+- **Interfaz de usuario centrada**. Anteriormente, la interfaz de usuario de inicio de sesión existía en el lado derecho de la pantalla, como se mostró anteriormente. Hemos mudado la interfaz de usuario y el centro para modernizar la experiencia.
+- **Paginación**. En lugar de proporcionar una forma larga de rellenar, hemos incorporado un nuevo flujo que le guiará a través de la experiencia de inicio de sesión paso a paso. Nuestra telemetría muestra que, con este enfoque, nuestros clientes tienen inicios de sesión más correctos. También nos proporciona más flexibilidad para incorporar varios métodos de autenticación, como la autenticación de factor de teléfono de EE. UU.
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin2.png)
 
-En la primera página, le pedirá que escriba su nombre de usuario. También puede seleccionar la opción "Mantener la sesión iniciada" para reducir la frecuencia de solicitudes de inicio de sesión y seguir conectado cuándo es seguro hacerlo. (Esta opción está deshabilitada de forma predeterminada).
+En la primera página, se le pedirá que escriba su nombre de usuario. También puede seleccionar la opción "mantener la sesión iniciada" para reducir la frecuencia de los mensajes de inicio de sesión y permanecer con la sesión iniciada cuando sea seguro hacerlo. (Esta opción está deshabilitada de forma predeterminada).
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin3.png)
 
-En la segunda página, se mostrarán con las opciones de autenticación configuradas por el administrador. Si está habilitado el permiso de autenticación externa como principal, esto se incluirán también.
+En la segunda página, se mostrarán las opciones de autenticación, configuradas por el administrador. Si permitir la autenticación externa como principal está habilitada, también se incluirá.
 
 ![newsignin](media/AD-FS-paginated-sign-in/signin4.png)
 
-En la tercera página, le pedirá que escriba su contraseña (suponiendo que ha seleccionado "Password" como opción de autenticación).
+En la tercera página, se le pedirá que escriba su contraseña (suponiendo que ha seleccionado "contraseña" como opción de autenticación).
 
 ## <a name="how-to-get-the-new-experience"></a>Cómo obtener la nueva experiencia
 
 ### <a name="new-installation-of-ad-fs"></a>Nueva instalación de AD FS
-Si es un nuevo cliente a AD FS, recibirá el nuevo diseño de forma predeterminada.
+Si es un cliente nuevo para AD FS, recibirá el nuevo diseño de forma predeterminada.
 
-### <a name="upgrading-a-farm"></a>Actualizar una granja de servidores
-Si es un cliente existente de AD FS 2012 R2 o 2016, hay dos maneras de recibir el nuevo diseño después de actualizar los servidores a AD FS 2019 y habilitar el FBL para 2019.
+### <a name="upgrading-a-farm"></a>Actualización de una granja de servidores
+Si es un cliente existente AD FS 2012 R2 o 2016, hay dos maneras de recibir el nuevo diseño después de actualizar los servidores a AD FS 2019 y habilitar FBL en 2019.
 
-- Permitir el nuevo inicio de sesión a través de Powershell. Ejecute el siguiente comando para habilitar la paginación: ``Set-AdfsGlobalAuthenticationPolicy -EnablePaginatedAuthenticationPages $true``
+- Permita el nuevo inicio de sesión a través de PowerShell. Ejecute el siguiente comando para habilitar la paginación:``Set-AdfsGlobalAuthenticationPolicy -EnablePaginatedAuthenticationPages $true``
 
- - Habilitar autenticación externa como principal, ya sea a través de Powershell o mediante el administrador del servidor de AD FS. Cuando esta característica está habilitada, se habilitará el inicio de sesión nuevo paginado en páginas.
-Si es un nuevo cliente a AD FS, recibirá el nuevo diseño de forma predeterminada. Sin embargo, si es un cliente existente con AD FS 2012 R2 o 2016, hay varios pasos que deberá tomar para recibir el nuevo diseño: ``Set-AdfsGlobalAuthenticationPolicy -AllowAdditionalAuthenticationAsPrimary $true``
+ - Habilite la autenticación externa como principal, ya sea a través de PowerShell o a través del Administrador del servidor de AD FS. La nueva página de inicio de sesión paginada se habilitará cuando se habilite esta característica.
+Si es un cliente nuevo para AD FS, recibirá el nuevo diseño de forma predeterminada. Sin embargo, si es un cliente existente con AD FS 2012 R2 o 2016, debe realizar varios pasos para recibir el nuevo diseño:``Set-AdfsGlobalAuthenticationPolicy -AllowAdditionalAuthenticationAsPrimary $true``
 
 ## <a name="customization"></a>Personalización
-Las opciones de personalización todavía serán aplicables para AD FS de 2019.
+Las opciones de personalización seguirán siendo aplicables en AD FS 2019.
 A continuación se muestran algunos vínculos a otros documentos para su referencia.
 
-• Para quienes no previsto actualizar sus servidores a AD FS 2019 pero todavía desea que el nuevo diseño: [Uso de un tema de sitio Web de la experiencia de usuario de Azure AD en servicios de federación de Active Directory](azure-ux-web-theme-in-ad-fs.md)
+• Para aquellos que no tienen previsto actualizar sus servidores a AD FS 2019 pero desean el nuevo diseño: [Usar un tema Web de Azure AD UX en Servicios de federación de Active Directory (AD FS)](azure-ux-web-theme-in-ad-fs.md)
 
 • Una ubicación central para la personalización: [Personalización de inicio de sesión del usuario de AD FS](ad-fs-user-sign-in-customization.md)

@@ -1,6 +1,6 @@
 ---
 title: Ver el estado de la conexión de usuario
-description: Obtenga información sobre cómo ver el estado de usuario de MultiPoint Services
+description: Obtenga información sobre cómo ver el estado de usuario en Multipoint Services
 ms.custom: na
 ms.date: 07/08/2016
 ms.prod: windows-server-threshold
@@ -13,25 +13,25 @@ ms.assetid: 426df382-07a0-4be1-a87a-12e63bd8157b
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 8ac5d18d9e85680861f48b4ce215f0abd411a122
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ea162c24dd9fe68e9492dea007583a6b1293da2d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850426"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871460"
 ---
 # <a name="view-user-connection-status"></a>Ver el estado de la conexión de usuario
-Use la **estaciones** tab para determinar el estado de un estándar o conexión de otros usuarios administrativos a una estación de MultiPoint Services.  
+Use la pestaña **estaciones** para determinar el estado de la conexión de un usuario administrativo estándar o de otro tipo a una estación de Multipoint Services.  
   
 Los valores de estado son los siguientes:  
   
--   **Ha iniciado sesión**: Una sesión de usuario que está activa en una estación  
+-   **Sesión iniciada**: Una sesión de usuario que está activa en una estación  
   
--   **Suspende**: Una sesión de usuario que se suspende, pero sigue activa en el equipo. La sesión del escritorio del usuario se conserva hasta que el usuario vuelve a iniciar sesión.  
+-   **Suspendida**: Una sesión de usuario que está suspendida, pero que todavía está activa en el equipo. La sesión de escritorio del usuario se conserva hasta que el usuario vuelve a iniciar sesión  
   
--   **Ha iniciado desactivar**: Un usuario que se cierra la sesión no se muestra en el **estaciones** ficha  
+-   **Sesión cerrada**: Un usuario que ha cerrado la sesión no se muestra en la pestaña **estaciones**  
   
-Para ver el estado de la estación, abra MultiPoint Manager en modo de las estaciones y, a continuación, haga clic en **estaciones**.
+Para ver el estado de la estación, abra Multipoint Manager en modo de estaciones y, a continuación, haga clic en **estaciones**.
 
 ## <a name="see-also"></a>Vea también  
 [Administrar escritorios de usuario](manage-user-desktops-using-multipoint-dashboard.md)  

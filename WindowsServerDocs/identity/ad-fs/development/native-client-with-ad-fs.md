@@ -1,6 +1,6 @@
 ---
-title: Crear a un cliente nativo de aplicación de uso de los clientes públicos de OAuth con AD FS 2016 o posterior
-description: Un tutorial que proporciona instrucciones al crear a un cliente nativo de aplicación mediante clientes públicos de OAuth y AD FS 2016 o posterior
+title: Compilar una aplicación cliente nativa con clientes de OAuth público con AD FS 2016 o posterior
+description: Un tutorial que proporciona instrucciones para crear una aplicación de cliente nativo mediante los clientes de OAuth público y AD FS 2016 o posterior.
 author: billmath
 ms.author: billmath
 ms.reviewer: anandy
@@ -9,27 +9,27 @@ ms.date: 07/17/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 15bb6f1e39f64ff19ebb5515188ee944e277d3b7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2eb2d0a3cfa6763d308bbd73f1ccf50795b06e77
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445480"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866338"
 ---
-# <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>Crear a un cliente nativo de aplicación de uso de los clientes públicos de OAuth con AD FS 2016 o posterior
+# <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>Compilar una aplicación cliente nativa con clientes de OAuth público con AD FS 2016 o posterior
 
 ## <a name="overview"></a>Información general
 
-En este artículo se muestra cómo crear una aplicación nativa que interactúa con una API Web protegido por AD FS 2016 o posterior.
+En este artículo se muestra cómo crear una aplicación nativa que interactúe con una API Web protegida por AD FS 2016 o posterior.
 
-1. .Net aplicación TodoListClient WPF usa Active Directory Authentication Library (ADAL) para obtener un token de acceso JWT de Azure Active Directory (Azure AD) a través del protocolo OAuth 2.0
-2. El token de acceso se utiliza como un token de portador para autenticar al usuario al llamar al punto de conexión de Todolist de la API web TodoListService.
- Se utiliza el ejemplo de aplicación para Azure AD aquí y, a continuación, modificarlo para AD FS 2016 o posterior.
+1. La aplicación WPF TodoListClient de .net usa el Biblioteca de autenticación de Active Directory (ADAL) para obtener un token de acceso de JWT de Azure Active Directory (Azure AD) a través del protocolo OAuth 2,0.
+2. El token de acceso se usa como un token de portador para autenticar al usuario cuando se llama al punto de conexión/ToDoList de la API Web de TodoListService.
+ Vamos a usar el ejemplo de aplicación para Azure AD aquí y, a continuación, modificarlo para AD FS 2016 o posterior.
 
-![Información geneal sobre la aplicación](media/native-client-with-ad-fs-2016/appoverview.png)
+![Overivew de aplicación](media/native-client-with-ad-fs-2016/appoverview.png)
 
 ## <a name="pre-requisites"></a>Requisitos previos
-La siguiente es una lista de requisitos previos necesarios antes de completar este documento. Este documento se supone que se ha instalado AD FS y se ha creado una granja de AD FS.
+A continuación se muestra una lista de los requisitos previos necesarios antes de completar este documento. En este documento se supone que se ha instalado AD FS y se ha creado una granja de AD FS.
 
 * Herramientas de cliente de GitHub
 * AD FS en Windows Server 2016 o posterior
@@ -39,37 +39,37 @@ La siguiente es una lista de requisitos previos necesarios antes de completar es
 
 ### <a name="create-the-application-group-in-ad-fs"></a>Cree el grupo de aplicaciones en AD FS
 
-1. Administración de AD FS, haga doble clic en **grupos de aplicaciones** y seleccione **Agregar grupo de aplicaciones**.
+1. En administración de AD FS, haga clic con el botón derecho en **grupos de aplicaciones** y seleccione **Agregar grupo de aplicaciones**.
 
-2. En el Asistente para grupo de aplicaciones, como nombre, escriba cualquier nombre que prefiera, por ejemplo, NativeToDoListAppGroup. Seleccione el **aplicación nativa accediendo a una API web** plantilla. Haz clic en **Siguiente**.
+2. En el Asistente para grupos de aplicaciones, en nombre, escriba el nombre que prefiera, por ejemplo, NativeToDoListAppGroup. Seleccione la **aplicación nativa que tiene acceso a una plantilla de API Web** . Haga clic en **Next**.
  ![Agregar grupo de aplicaciones](media/native-client-with-ad-fs-2016/addapplicationgroup1.png)
 
-3. En el **aplicación nativa** página, tenga en cuenta el identificador generado por AD FS. Este es el identificador con el que AD FS reconocerá la aplicación de cliente público. Copia el **identificador de cliente** valor. Se usará más adelante como el valor de **ida: ClientId** en el código de aplicación. Si lo desea, que puede dar cualquier identificador personalizado aquí. El URI de redireccionamiento es cualquier valor arbitrario, ejemplo, coloque https://ToDoListClient ![aplicación nativa](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
+3. En la página **aplicación nativa** , tenga en cuenta el identificador generado por AD FS. Este es el identificador con el que AD FS reconocerá la aplicación cliente pública. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ida: ClientID** en el código de la aplicación. Si quiere, puede asignar aquí cualquier identificador personalizado. El URI de redirección es cualquier valor arbitrario, ejemplo, https://ToDoListClient Put ![ aplicación nativa](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)
 
-4. En el **configurar Web API** página, establezca el valor de identificador de la API Web. En este ejemplo, debe ser el valor de la **dirección URL de SSL** donde la aplicación Web se supone que se ejecuta. Puede obtener este valor haciendo clic en las propiedades del proyecto TooListServer en la solución. Esto se usará más adelante como el **todo:TodoListResourceId** valor en **App.config** archivo de la aplicación cliente nativa y también como el **todo:TodoListBaseAddress**.
+4. En la página **configurar API Web** , establezca el valor de identificador de la API Web. En este ejemplo, debe ser el valor de la **dirección URL de SSL** donde se supone que la aplicación web se está ejecutando. Para obtener este valor, haga clic en las propiedades del proyecto TooListServer en la solución. Se usará más adelante como el valor **todo: TodoListResourceId** en el archivo **app. config** de la aplicación cliente nativa y también como **todo: TodoListBaseAddress**.
 ![API Web](media/native-client-with-ad-fs-2016/addapplicationgroup3.png)
 
-5. Vaya a través de la **aplicar directiva de Control de acceso** y **configurar permisos de la aplicación** con los valores predeterminados en su lugar. La página de resumen debería ser similar al siguiente.
+5. Recorra la **Directiva aplicar Access Control** y **Configure los permisos** de la aplicación con los valores predeterminados en su lugar. La página de resumen debe ser similar a la siguiente.
 ![Resumen](media/native-client-with-ad-fs-2016/addapplicationgroupsummary.png)
 
-Haga clic en siguiente y, a continuación, complete el asistente.
+Haga clic en siguiente y complete el asistente.
 
-### <a name="add-the-nameidentifier-claim-to-the-list-of-claims-issued"></a>Agregue la notificación NameIdentifier a la lista de notificaciones emitidas
-La aplicación de demostración usa el valor de la notificación NameIdentifier en varios lugares. A diferencia de Azure AD, AD FS no emite una notificación NameIdentifier de forma predeterminada. Por lo tanto, necesitamos agregar una regla de notificación para emitir la notificación NameIdentifier para que la aplicación puede utilizar el valor correcto. En este ejemplo, el nombre dado del usuario se emite como el valor NameIdentifier para el usuario en el token.
-Para configurar la regla de notificación, abra el grupo de aplicaciones que acaba de crear y haga doble clic en la API Web. Seleccione la ficha reglas de transformación de emisión y, a continuación, haga clic en el botón Agregar regla. En el tipo de regla de notificación, elija la regla de notificación personalizada y, a continuación, agregue la regla de notificación, tal como se muestra a continuación.
+### <a name="add-the-nameidentifier-claim-to-the-list-of-claims-issued"></a>Agregar la notificación NameIdentifier a la lista de notificaciones emitidas
+La aplicación de demostración usa el valor de la demanda de NameIdentifier en varios lugares. A diferencia de Azure AD, AD FS no emite una declaración NameIdentifier de forma predeterminada. Por lo tanto, es necesario agregar una regla de notificaciones para emitir la solicitud NameIdentifier de modo que la aplicación pueda usar el valor correcto. En este ejemplo, el nombre de usuario especificado se emite como el valor de NameIdentifier para el usuario en el token.
+Para configurar la regla de notificaciones, abra el grupo de aplicaciones que acaba de crear y haga doble clic en la API Web. Seleccione la pestaña reglas de transformación de emisión y haga clic en el botón Agregar regla. En el tipo de regla de notificaciones, elige regla de notificaciones personalizadas y después agrega la regla de notificaciones, como se muestra a continuación.
 
 ```  
 c:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname", Issuer == "AD AUTHORITY"]
  => issue(store = "Active Directory", types = ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"), query = ";givenName;{0}", param = c.Value);
 ```
 
-![Regla de notificación NameIdentifier](media/native-client-with-ad-fs-2016/addnameidentifierclaimrule.png)
+![Regla de notificaciones de NameIdentifier](media/native-client-with-ad-fs-2016/addnameidentifierclaimrule.png)
 
-### <a name="modify-the-application-code"></a>Modificar el código de aplicación
+### <a name="modify-the-application-code"></a>Modificación del código de la aplicación
 
-En esta sección se explica cómo descargar el ejemplo de API Web y modificarla en Visual Studio.   Vamos a usar el ejemplo de Azure AD que se [aquí](https://github.com/Azure-Samples/active-directory-dotnet-native-desktop).  
+En esta sección se describe cómo descargar la API Web de ejemplo y modificarla en Visual Studio.   Vamos a usar el ejemplo Azure AD que se encuentra [aquí](https://github.com/Azure-Samples/active-directory-dotnet-native-desktop).  
 
-Para descargar el proyecto de ejemplo, use Git Bash y escriba lo siguiente:  
+Para descargar el proyecto de ejemplo, use git bash y escriba lo siguiente:  
 
 ```  
 git clone https://github.com/Azure-Samples/active-directory-dotnet-native-desktop  
@@ -77,65 +77,65 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-native-deskto
 
 #### <a name="modify-todolistclient"></a>Modificar ToDoListClient
 
-Este proyecto en la solución representa la aplicación cliente nativa. Es necesario asegurarse de que conoce la aplicación cliente:
+Este proyecto de la solución representa la aplicación cliente nativa. Necesitamos asegurarnos de que la aplicación cliente sepa:
 
-1. ¿Dónde debe ir para obtener el usuario autenticado cuando sea necesario?
-2. ¿Qué es el identificador que el cliente necesita proporcionar a la autoridad de autenticación (AD FS)?
-3. ¿Qué es el identificador del recurso que se solicita el token de acceso?
-4. ¿Qué es la dirección base de la API Web?
+1. ¿Adónde ir para que el usuario se autentique cuando sea necesario?
+2. ¿Cuál es el identificador que el cliente debe proporcionar a la entidad de autenticación (AD FS)?
+3. ¿Cuál es el identificador del recurso para el que se solicita el token de acceso?
+4. ¿Cuál es la dirección base de la API Web?
 
-Se necesitan los siguientes cambios de código con el fin de obtener la información anterior a la aplicación cliente nativa.
+Los siguientes cambios de código son necesarios para obtener la información anterior a la aplicación cliente nativa.
 
-**App.config**
+**App. config**
 
-* Agregue la clave **ida: autoridad** con el valor que representan el servicio AD FS. Por ejemplo, https://fs.contoso.com/adfs/
-* Modificar **ida: ClientId** clave con el valor de **identificador de cliente** en el **aplicación nativa** página durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, 3f07368b-6efd-4f50-a330-d93853f4c855
-* Modificar el **todo:todo:TodoListResourceId** con el valor de **identificador** en el **configurar Web API** página durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, https://localhost:44321/
-* Modificar el **todo:TodoListBaseAddress** con el valor de **identificador** en el **configurar Web API** página durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, https://localhost:44321/
-* Establezca el valor de **ida: RedirectUri** con el valor de **URI de redireccionamiento** en el **aplicación nativa** página durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, https://ToDoListClient
-* Para facilitar la lectura se puede quitar / comment la clave para **ida: inquilino** y **ida: AADInstance**.
+* Agregue la clave **ida: Authority** con el valor que describe el servicio AD FS. Por ejemplo, https://fs.contoso.com/adfs/
+* Modifique la clave **ida: ClientID** con el valor de **identificador de cliente** en la página **aplicación nativa** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, 3f07368b-6efd-4f50-A330-d93853f4c855
+* Modifique **todo: todo: TodoListResourceId** con el valor de **identificador** en la página **configurar API Web** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, https://localhost:44321/
+* Modifique la página **todo: TodoListBaseAddress** con el valor de **identificador** en la página **configurar API Web** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, https://localhost:44321/
+* Establezca el valor de **ida: RedirectUri** con el valor de **URI de redirección** en la página **aplicación nativa** durante la creación del grupo de aplicaciones en AD FS. Por ejemplo, https://ToDoListClient
+* Para facilitar la lectura, puede quitar o comentar la clave de **ida: tenant** y **ida: AADInstance**.
 
   ![Configuración de la aplicación](media/native-client-with-ad-fs-2016/app_configfile.PNG)
 
 
 **MainWindow.xaml.cs**
 
-* Comente la línea para aadInstance como aparece a continuación
+* Comente la línea para aadInstance como se indica a continuación
 
         // private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];
 
-* Agregue el valor de la entidad como la siguiente
+* Agregue el valor de autoridad como se indica a continuación.
 
         private static string authority = ConfigurationManager.AppSettings["ida:Authority"];
 
-* Elimine la línea para crear el **autoridad** valor desde aadInstance y de inquilinos
+* Elimine la línea para crear el valor de la **entidad** de aadInstance y el inquilino.
 
         private static string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);
 
-* En la función **MainWindow**, cambiar la creación de instancias de authContext a
+* En la función **MainWindow**, cambie la instancia de authContext a
 
         authContext = new AuthenticationContext(authority,false);
 
-    ADAL no admite la validación de AD FS como entidad y, por tanto, tenemos que pasar un indicador de valor false para el parámetro validateAuthority.
+    ADAL no admite la validación de AD FS como autoridad y, por lo tanto, tenemos que pasar una marca de valor false para el parámetro validateAuthority.
 
   ![Ventana principal](media/native-client-with-ad-fs-2016/mainwindow.PNG)
 
 #### <a name="modify-todolistservice"></a>Modificar TodoListService
-Dos archivos necesitan cambios en este proyecto: Web.config y Startup.Auth.cs. Para obtener los valores correctos de los parámetros, se requieren cambios de Web.Config. Se requieren cambios de Startup.Auth.cs para establecer la API Web para autenticarse en AD FS, en lugar de Azure AD.
+Dos archivos necesitan cambios en este proyecto: Web. config y Startup.Auth.cs. Los cambios de Web. config son necesarios para obtener los valores correctos de los parámetros. Los cambios de Startup.Auth.cs son necesarios para establecer que WebAPI se autentique en AD FS en lugar de Azure AD.
 
 **Web.config**
 
-* Comentario de la clave **ida: inquilino** como no se necesita
-* Agregue la clave para **ida: autoridad** con el valor que indica el FQDN de la federación de servicio, el ejemplo, https://fs.contoso.com/adfs/
-* Modificar clave **ida: audiencia** con el valor del identificador de API Web que especificó en el **configurar Web API** página durante Agregar grupo de aplicaciones en AD FS.
-* Agregar clave **ida: AdfsMetadataEndpoint** con el valor correspondiente a la dirección URL de metadatos de federación de AD FS servicio para p. ej.: https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
+* Comentario de la clave **ida: tenant** , ya que no es necesaria
+* Agregue la clave para **ida: Authority** con el valor que indica el FQDN del servicio de Federación, por ejemplo, https://fs.contoso.com/adfs/
+* Modifique clave **ida: Audience** con el valor del identificador de la API Web que especificó en la página de configuración de la **API Web** durante el agregar grupo de aplicaciones en AD FS.
+* Agregue la clave **ida: AdfsMetadataEndpoint** con el valor correspondiente a la dirección URL de metadatos de Federación del servicio AD FS, por ejemplo: https://fs.contoso.com/federationmetadata/2007-06/federationmetadata.xml
 
 ![Configuración Web](media/native-client-with-ad-fs-2016/webconfig.PNG)
 
 
 **Startup.Auth.cs**
 
-Modifique la función configureauth esté como aparece a continuación
+Modifique la función ConfigureAuth como se indica a continuación
 
     public void ConfigureAuth(IAppBuilder app)
     {
@@ -152,18 +152,18 @@ Modifique la función configureauth esté como aparece a continuación
             });
     }
 
-En esencia, vamos a configurar la autenticación para usar AD FS y proporcionar más información acerca de los metadatos de AD FS y para validar el token, la notificación de audiencia debe ser el valor esperado por la API Web.
+En esencia, configuramos la autenticación para usar AD FS y proporcionamos más información sobre los metadatos de AD FS y para validar el token, la demanda de audiencia debe ser el valor esperado por la API Web.
 Ejecutar la aplicación
 
-1. En la solución NativeClient-DotNet, haga clic en y vaya a propiedades. Cambie el proyecto de inicio como se muestra a continuación para proyectos de inicio múltiples y establezca tanto TodoListClient como TodoListService de inicio.
+1. En la solución NativeClient-DotNet, haga clic con el botón derecho y vaya a propiedades. Cambie el proyecto de inicio como se muestra a continuación a varios proyectos de inicio y establezca TodoListClient y TodoListService en Start (iniciar).
 ![Propiedades de la solución](media/native-client-with-ad-fs-2016/solutionproperties.png)
 
-2.  Presione el botón F5 o seleccione Depurar > continuar en la barra de menús. Esto iniciará la aplicación nativa y la API Web. Haga clic en el botón de inicio de sesión en la aplicación nativa y aparecerá un inicio de sesión interactivo desde AD AL y redirigir al servicio de AD FS. Escriba las credenciales de un usuario válido.
+2.  Presione el botón F5 o seleccione Depurar > continuar en la barra de menús. Esto iniciará la aplicación nativa y el WebAPI. Haga clic en el botón iniciar sesión de la aplicación nativa para que aparezca un inicio de sesión interactivo desde AD AL y redirija a su servicio de AD FS. Escriba las credenciales de un usuario válido.
 ![Inicio de sesión](media/native-client-with-ad-fs-2016/sign-in.png)
 
-En este paso, la aplicación nativa redirige a AD FS y tiene un token de identificador y un token de acceso para la API Web
+En este paso, la aplicación nativa se redirigió a AD FS y tenía un token de identificador y un token de acceso para la API Web.
 
-3. Escriba un elemento en el cuadro de texto y haga clic en Agregar elemento. En este paso, la aplicación llega a la API Web para agregar el elemento de tareas pendientes y para ello, presentan el token de acceso a la API Web obtenida de AD FS. La API Web coincide con el valor de audiencia para asegurarse de que el token está destinado a él y comprueba la firma del token con la información de los metadatos de federación.
+3. Escriba un elemento pendiente en el cuadro de texto y haga clic en Agregar elemento. En este paso, la aplicación llega a la API Web para agregar el elemento de tareas pendientes y, para ello, presenta el token de acceso a la WebAPI obtenida de AD FS. La API Web coincide con el valor de la audiencia para asegurarse de que el token está destinado y comprueba la firma del token con la información de los metadatos de Federación.
 
 ![Iniciar sesión](media/native-client-with-ad-fs-2016/clienttodoadd.png)
 

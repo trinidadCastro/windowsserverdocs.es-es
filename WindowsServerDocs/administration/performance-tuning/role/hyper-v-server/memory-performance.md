@@ -1,49 +1,49 @@
 ---
 title: Rendimiento de la memoria de Hyper-V
-description: Consideraciones de memoria de Hyper-V de optimización del rendimiento
+description: Consideraciones de memoria en el ajuste del rendimiento en Hyper-V
 ms.prod: windows-server-threshold
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 63a1b654b8ac52725cc5dd87c8b245f9dfaf40f0
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ddb336e0d6e16342dd60f2f61e50afeda61837e9
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848076"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866577"
 ---
 # <a name="hyper-v-memory-performance"></a>Rendimiento de la memoria de Hyper-V
 
 
-El hipervisor virtualiza la memoria física del invitado para aislar las máquinas virtuales entre sí y para proporcionar un espacio de memoria contiguo y basado en cero para cada sistema operativo invitado, como en los sistemas no virtualizados.
+El hipervisor virtualiza la memoria física invitada para aislar las máquinas virtuales entre sí y proporcionar un espacio de memoria de base cero contiguo para cada sistema operativo invitado, al igual que en los sistemas no virtualizados.
 
-## <a name="correct-memory-sizing-for-child-partitions"></a>Ajuste de tamaño de memoria correcta para las particiones secundarias
+## <a name="correct-memory-sizing-for-child-partitions"></a>Corregir el tamaño de la memoria para las particiones secundarias
 
-Debe cambiar el tamaño de memoria de máquina virtual como lo haría normalmente para aplicaciones de servidor en un equipo físico. Debe cambiar su tamaño para controlar razonablemente la carga esperada en períodos normales y las horas pico, porque no hay memoria suficiente puede aumentar significativamente los tiempos de respuesta y el uso de CPU o E/S.
+Debe cambiar el tamaño de la memoria de la máquina virtual como lo haría normalmente para las aplicaciones de servidor en un equipo físico. Debe cambiar su tamaño para controlar razonablemente la carga esperada en horas normales y máximas, ya que la memoria insuficiente puede aumentar significativamente los tiempos de respuesta y el uso de la CPU o de e/s.
 
-Puede habilitar la memoria dinámica permitir que Windows cambiar dinámicamente el tamaño de memoria de máquina virtual. Con la memoria dinámica, si las aplicaciones en la máquina virtual teniendo problemas para realizar asignaciones de memoria repentino grande, puede aumentar el tamaño del archivo de paginación para la máquina virtual para asegurarse de respaldo temporal mientras la memoria dinámica responde a la presión de memoria.
+Puede habilitar Memoria dinámica para permitir que Windows cambie la memoria de la máquina virtual de forma dinámica. Con Memoria dinámica, si las aplicaciones de la máquina virtual experimentan problemas al realizar grandes asignaciones de memoria repentinas, puede aumentar el tamaño del archivo de paginación de la máquina virtual para garantizar la copia de seguridad temporal mientras Memoria dinámica responde a la presión de memoria.
 
-Para obtener más información sobre la memoria dinámica, consulte [Hyper-V Dynamic Memory Overview]( https://go.microsoft.com/fwlink/?linkid=834434) y [Guía de configuración de memoria dinámica de Hyper-V](https://go.microsoft.com/fwlink/?linkid=834435).
+Para obtener más información sobre Memoria dinámica, consulte [la introducción a Hyper-v memoria dinámica]( https://go.microsoft.com/fwlink/?linkid=834434) y [la guía de configuración de hyper-v memoria dinámica](https://go.microsoft.com/fwlink/?linkid=834435).
 
-Cuando se ejecuta Windows en la partición secundaria, puede usar los siguientes contadores de rendimiento dentro de una partición secundaria para identificar si la partición secundaria está experimentando la presión de memoria y es probable que funcionan mejor con un tamaño superior de memoria de máquina virtual.
+Al ejecutar Windows en la partición secundaria, puede usar los siguientes contadores de rendimiento en una partición secundaria para identificar si la partición secundaria está experimentando presión de memoria y es probable que funcione mejor con un mayor tamaño de memoria de la máquina virtual.
 
 | Contador de rendimiento                                                         | Valor de umbral sugerido                                                                                                                                                           |
 |-----------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Memoria: Bytes de reserva de caché en espera                                        | Suma de Bytes de reserva de caché en espera y libre y cero Bytes de lista de página debe ser 200 MB o más en sistemas con 1 GB y 300 MB o más en los sistemas con 2 GB de RAM o más visible. |
-| Memoria: libre y cero Bytes de la lista de páginas                                        | Suma de Bytes de reserva de caché en espera y libre y cero Bytes de lista de página debe ser 200 MB o más en sistemas con 1 GB y 300 MB o más en los sistemas con 2 GB de RAM o más visible. |
-| Memoria: entrada de páginas/seg.                                                    | Promedio durante un período de 1 hora es inferior a 10.                                                                                                                                       | 
+| Memoria: bytes de reserva de caché en espera                                        | La suma de los bytes de reserva de caché en espera y los bytes de lista de páginas libres y cero deben ser de 200 MB o más en sistemas con 1 GB y 300 MB o más en sistemas con 2 GB o más de RAM visible. |
+| Memoria: bytes de lista de & de páginas cero libres                                        | La suma de los bytes de reserva de caché en espera y los bytes de lista de páginas libres y cero deben ser de 200 MB o más en sistemas con 1 GB y 300 MB o más en sistemas con 2 GB o más de RAM visible. |
+| Memoria: entrada de páginas/seg.                                                    | El promedio de un período de 1 hora es inferior a 10.                                                                                                                                       | 
 
-## <a name="correct-memory-sizing-for-root-partition"></a>Ajuste de tamaño de memoria correcto para la partición raíz
+## <a name="correct-memory-sizing-for-root-partition"></a>Corregir el tamaño de la memoria para la partición raíz
 
-La partición raíz debe tener suficiente memoria para prestar servicios como virtualización de E/S, instantánea de máquina virtual y administración para admitir las particiones secundarias.
+La partición raíz debe tener suficiente memoria para proporcionar servicios como la virtualización de e/s, la instantánea de máquina virtual y la administración para admitir las particiones secundarias.
 
-Hyper-V en Windows Server 2016 supervisa el estado de tiempo de ejecución del sistema operativo de administración de la partición raíz para determinar cuánta memoria segura se puede asignar a las particiones secundarias, sin comprometer el alto rendimiento y confiabilidad de la partición raíz.
+Hyper-V en Windows Server 2016 supervisa el estado de tiempo de ejecución del sistema operativo de administración de la partición raíz para determinar cuánta memoria se puede asignar con seguridad a las particiones secundarias, al tiempo que se garantiza un alto rendimiento y confiabilidad de la partición raíz.
 
 ## <a name="see-also"></a>Vea también
 
--   [Terminología de Hyper-v.](terminology.md)
+-   [Terminología de Hyper-V](terminology.md)
 
 -   [Arquitectura de Hyper-V](architecture.md)
 

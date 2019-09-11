@@ -8,12 +8,12 @@ ms.date: 08/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: d2ac36180992d44f837ce74ace40cf95533309c9
-ms.sourcegitcommit: 2082335e1260826fcbc3dccc208870d2d9be9306
+ms.openlocfilehash: 03328ff8c94d96fcf34dcef29ac1a1daefc9d14a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69983433"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867492"
 ---
 # <a name="scenario-web-app-server-app-calling-web-api"></a>Escenario: Aplicación web (aplicación de servidor) llamada a Web API 
 >Se aplica a: AD FS 2019 y versiones posteriores 
@@ -51,7 +51,7 @@ En esta sección se muestra cómo registrar la aplicación web como cliente conf
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp2.png)
   
-  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ida: ClientID** en el archivo **Web. config** de aplicaciones. Escriba lo siguiente para el URI de redirección **:**  - https://localhost:44326. Haz clic en Agregar. Haga clic en **Next**. 
+  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ida: ClientID** en el archivo **Web. config** de aplicaciones. Escriba lo siguiente para el **URI de redirección:**  - https://localhost:44326. Haz clic en Agregar. Haga clic en **Next**. 
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp3.png)
   
@@ -88,7 +88,7 @@ En esta sección se muestra cómo configurar una aplicación Web de ASP.NET para
   3. Abra el archivo Web. config. Modifique lo siguiente: 
        - ida: ClientId: escriba el valor del **identificador de cliente** de #3 en el registro de la aplicación en AD FS sección anterior. 
        - ida: ClientSecret: escriba el valor del **secreto** en #4 en el registro de la aplicación en AD FS sección anterior. 
-       - ida: RedirectUri: escriba el valor de **URI** de redirección de #3 en el registro de la aplicación en AD FS sección anterior. 
+       - ida: RedirectUri: escriba el valor de **URI de redirección** de #3 en el registro de la aplicación en AD FS sección anterior. 
        - ida: autoridad: escriba https://[su nombre de host de AD FS]/ADFS. Por ejemplo, https://adfs.contoso.com/adfs 
        - ida: Resource: escriba el valor del **identificador** de #5 en el registro de la aplicación en AD FS sección anterior. 
       
@@ -121,5 +121,5 @@ En esta sección se muestra cómo probar el ejemplo configurado anteriormente.
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp13.png)
  
  ## <a name="next-steps"></a>Pasos siguientes
-[AD FS los flujos de OpenID Connect/OAuth y los escenarios de aplicación](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
+[Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación](../../overview/ad-fs-openid-connect-oauth-flows-scenarios.md)
  

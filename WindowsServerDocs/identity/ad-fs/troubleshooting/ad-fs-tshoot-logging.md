@@ -8,12 +8,12 @@ ms.date: 02/21/2018
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: bfa305103e81f316dc5ad5df22cd238f6fb5ec31
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: da3214b715b415eed2cbce351cae93eff14a88c7
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314345"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865526"
 ---
 # <a name="ad-fs-troubleshooting---events-and-logging"></a>Solución de problemas de AD FS: eventos y registro
 AD FS proporciona dos registros principales que se pueden usar en la solución de problemas.  Estas sobrecargas son:
@@ -99,7 +99,7 @@ Para abrir el complemento Administración de AD FS, haga clic en Inicio, selecci
  
 6. En el panel acciones, haga clic en Editar Servicio de federación propiedades.
 7. En el cuadro de diálogo Propiedades de Servicio de federación, haga clic en la pestaña eventos.
-8. Active las  casillas auditorías de aciertos y auditorías de **errores** .
+8. Active las casillas auditorías de aciertos y auditorías de **errores** .
 9. Haga clic en Aceptar.
 
 ![mejoras de auditoría](media/ad-fs-tshoot-logging/event4.PNG)  

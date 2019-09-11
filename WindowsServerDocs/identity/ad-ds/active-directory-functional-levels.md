@@ -11,221 +11,221 @@ ms.prod: windows-server-threshold
 ms.custom: it-pro
 ms.reviewer: maheshu
 ms.technology: identity-adds
-ms.openlocfilehash: cb9b5b9448f364760c3d2a7e43edd01a5a9f7f9d
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: c1e2108084b03fabbf7c6a18c2ecbcaf3cbd1dd9
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719664"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868256"
 ---
-# <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de bosque y dominio
+# <a name="forest-and-domain-functional-levels"></a>Niveles funcionales de dominios y bosques
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
-Los niveles funcionales determinan las funcionalidades disponibles de dominio o bosque de Active Directory Domain Services (AD DS). También determinan qué sistemas operativos de Windows Server puede ejecutar en controladores de dominio en el dominio o bosque. Sin embargo, los niveles funcionales no afectan a qué sistemas operativos se pueden ejecutar en las estaciones de trabajo y los servidores miembro que están unidos al dominio o bosque.
+Los niveles funcionales determinan las capacidades disponibles de dominio o bosque de Active Directory Domain Services (AD DS). También determinan los sistemas operativos Windows Server que se pueden ejecutar en los controladores de dominio del dominio o bosque. Sin embargo, los niveles funcionales no afectan a los sistemas operativos que se pueden ejecutar en estaciones de trabajo y servidores miembro que se unen al dominio o bosque.
 
-Al implementar AD DS, Establece los niveles funcionales de dominio y bosque en el valor más alto que admita su entorno. De este modo, puede usar características de AD DS tantos como sea posible. Al implementar un nuevo bosque, deberá establecer el nivel funcional del bosque y, a continuación, establezca el nivel funcional del dominio. Puede establecer el nivel funcional del dominio en un valor que es mayor que el nivel funcional del bosque, pero no se puede establecer el nivel funcional del dominio en un valor que es menor que el nivel funcional del bosque.
+Al implementar AD DS, establezca los niveles funcionales de dominio y bosque en el valor más alto que pueda admitir el entorno. De este modo, puede usar tantas características AD DS como sea posible. Al implementar un nuevo bosque, se le pedirá que establezca el nivel funcional del bosque y, a continuación, establezca el nivel funcional del dominio. Puede establecer el nivel funcional del dominio en un valor superior al nivel funcional del bosque, pero no puede establecer el nivel funcional del dominio en un valor inferior al nivel funcional del bosque.
 
-Con el final del ciclo de vida de Windows 2003, controladores de dominio (DC) de Windows 2003 deben actualizarse a Windows Server 2008, 2008R2, 2012, 2012 R2, 2016 o 2019. Como resultado, cualquier controlador de dominio que ejecuta Windows Server 2003 debe quitarse del dominio.
+Con el fin de la vida de Windows 2003, los controladores de dominio (DC) de Windows 2003 deben actualizarse a Windows Server 2008, 2008R2, 2012, 2012R2, 2016 o 2019. Como resultado, todos los controladores de dominio que ejecuten Windows Server 2003 deben quitarse del dominio.
 
-En el Windows Server 2008 y los niveles funcionales de dominio más altos, replicación de servicio de archivos distribuido (DFS) se usa para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si crea un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o posterior, se usa automáticamente la replicación DFS para replicar SYSVOL. Si ha creado el dominio en un nivel funcional inferior, deberá migrar del uso de FRS a replicación DFS para SYSVOL. Para conocer los pasos de migración, puede seguir el [procedimientos en TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) o puede hacer referencia a la [simplificado de conjunto de pasos en el blog de contenedor de archivos del equipo de almacenamiento](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
+En los niveles funcionales de dominio de Windows Server 2008 y superior, se usa la replicación del servicio de archivos distribuido (DFS) para replicar el contenido de la carpeta SYSVOL entre controladores de dominio. Si crea un nuevo dominio en el nivel funcional del dominio de Windows Server 2008 o superior, se usa automáticamente Replicación DFS para replicar SYSVOL. Si ha creado el dominio en un nivel funcional inferior, tendrá que migrar desde el uso de FRS a la replicación DFS para SYSVOL. En el caso de los pasos de migración, puede seguir los [procedimientos de TechNet](https://technet.microsoft.com/library/dd640019(v=WS.10).aspx) o puede consultar el [conjunto de pasos simplificado en el blog del archivo. cab del equipo de almacenamiento](http://blogs.technet.com/b/filecab/archive/2014/06/25/streamlined-migration-of-frs-to-dfsr-sysvol.aspx).
 
 ## <a name="windows-server-2019"></a>Windows Server 2019
 
-No hay ningún nuevo bosque o los niveles funcionales de dominio agregados en esta versión.
+No hay ningún nuevo nivel funcional de bosque o dominio agregado en esta versión.
 
-El requisito mínimo para agregar un controlador de dominio de Windows Server 2019 es un nivel funcional de Windows Server 2008. El dominio también tiene que usar DFS-R como el motor para replicar SYSVOL.
+El requisito mínimo para agregar un controlador de dominio de Windows Server 2019 es el nivel funcional de Windows Server 2008. El dominio también tiene que usar DFS-R como motor para replicar SYSVOL.
 
 ## <a name="windows-server-2016"></a>Windows Server 2016
 
-Sistema de operativo del controlador de dominio admitidos:
+Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2019
 * Windows Server 2016
 
-### <a name="windows-server-2016-forest-functional-level-features"></a>Características de nivel funcional de bosque de Windows Server 2016
+### <a name="windows-server-2016-forest-functional-level-features"></a>Características del nivel funcional del bosque de Windows Server 2016
 
-* Todas las características que están disponibles en el nivel funcional del bosque de Windows Server 2012 R2 y las siguientes características están disponibles:
-   * [Administración de acceso con privilegios (PAM) mediante Microsoft Identity Manager (MIM)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
+* Todas las características que están disponibles en el nivel funcional del bosque de Windows Server 2012R2 y las siguientes características están disponibles:
+   * [Privileged Access Management (PAM) mediante Microsoft Identity Manager (MIM)](https://docs.microsoft.com/windows-server/identity/whats-new-active-directory-domain-services#a-namebkmkpamaprivileged-access-management)
 
 ### <a name="windows-server-2016-domain-functional-level-features"></a>Características de nivel funcional de dominio de Windows Server 2016
 
-* Todas las características predeterminadas de Active Directory, todas las características desde el nivel funcional del dominio de Windows Server 2012 R2, además de las siguientes características:
-   * Los controladores de dominio pueden admitir graduales automáticas de NTLM y otros secretos basada en contraseña en una cuenta de usuario configurado para requerir la autenticación PKI. Esta configuración también es conocido como "Tarjeta inteligente es necesaria para el inicio de sesión interactivo"
-   * Los controladores de dominio pueden admitir la red permitiendo NTLM cuando un usuario está restringido a determinados dispositivos Unidos a dominio.
-   * Los clientes de Kerberos para autenticar correctamente con la extensión de la actualización de PKInit obtendrá la identidad de clave pública nueva SID.
+* Todas las características de Active Directory predeterminadas, todas las características del nivel funcional del dominio de Windows Server 2012R2, además de las siguientes características:
+   * Los controladores de sesión pueden admitir el desplazamiento automático de NTLM y otros secretos basados en contraseña en una cuenta de usuario configurada para requerir la autenticación de PKI. Esta configuración también se conoce como "tarjeta inteligente requerida para el inicio de sesión interactivo".
+   * Los controladores de dominio pueden admitir la red NTLM cuando un usuario está restringido a determinados dispositivos Unidos a un dominio.
+   * Los clientes Kerberos que se autentican correctamente con la extensión de actualización PKInit obtendrán el SID de identidad de clave pública nuevo.
 
-    Para obtener más información, consulte [What ' s New in Kerberos Authentication](https://docs.microsoft.com/windows-server/security/kerberos/whats-new-in-kerberos-authentication) y [cuáles son las novedades en protección de credenciales](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection)
+    Para obtener más información, vea [novedades de la autenticación Kerberos](https://docs.microsoft.com/windows-server/security/kerberos/whats-new-in-kerberos-authentication) y [novedades de la protección de credenciales](https://docs.microsoft.com/windows-server/security/credentials-protection-and-management/whats-new-in-credential-protection) .
 
 ## <a name="windows-server-2012r2"></a>Windows Server 2012R2
 
-Sistema de operativo del controlador de dominio admitidos:
+Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 
-### <a name="windows-server-2012r2-forest-functional-level-features"></a>Características de nivel funcionales de Windows Server 2012 R2 bosque
+### <a name="windows-server-2012r2-forest-functional-level-features"></a>Características del nivel funcional del bosque de Windows Server 2012R2
 
-* Todas las características que están disponibles en Windows Server 2012 funcionales nivel, pero no características adicionales del bosque.
+* Todas las características que están disponibles en el nivel funcional del bosque de Windows Server 2012, pero sin características adicionales.
 
-### <a name="windows-server-2012r2-domain-functional-level-features"></a>Características de nivel funcionales de Windows Server 2012R2 dominio
+### <a name="windows-server-2012r2-domain-functional-level-features"></a>Características de nivel funcional de dominio de Windows Server 2012R2
 
-* Todas las características predeterminadas de Active Directory, todas las características desde el nivel funcional del dominio de Windows Server 2012, además de las siguientes características:
-   * Protecciones de lado del controlador de dominio para los usuarios protegidos. La protección de autenticación de usuarios en un dominio ya no puede de Windows Server 2012 R2:
-      * Autenticar con la autenticación NTLM
-      * Usar conjuntos de cifrado DES o RC4 en la autenticación Kerberos previa
-      * Se puede delegar con delegación limitada o no
-      * Renovación de vales de usuario (TGT) más allá de la duración inicial de 4 horas
+* Todas las características de Active Directory predeterminadas, todas las características del nivel funcional del dominio de Windows Server 2012, además de las siguientes características:
+   * Protecciones del controlador de dominio para usuarios protegidos. Los usuarios protegidos que se autentiquen en un dominio de Windows Server 2012 R2 ya no podrán:
+      * Autenticarse con autenticación NTLM
+      * Uso de conjuntos de cifrado DES o RC4 en la autenticación previa de Kerberos
+      * Delegados con delegación restringida o sin restricciones
+      * Renovar los vales de usuario (TGT) más allá de la duración inicial de 4 horas
    * Authentication Policies
-      * Directivas de Active Directory basado en un bosque nuevo que se pueden aplicar a cuentas en dominios de Windows Server 2012 R2 para controlar qué hosts una cuenta puede inicio de sesión de y se aplican las condiciones de control de acceso para la autenticación a servicios que se ejecutan como una cuenta.
+      * Nuevas directivas de Active Directory basadas en bosques que se pueden aplicar a las cuentas de dominios de Windows Server 2012 R2 para controlar a qué hosts puede iniciar sesión una cuenta y aplicar condiciones de control de acceso para la autenticación en los servicios que se ejecutan como una cuenta.
    * Authentication Policy Silos
-      * Basado en un bosque nuevo objeto de Active Directory, que puede crear una relación entre cuentas de usuario, un servicio administrado y equipo, que se utilizará para clasificar las cuentas para las directivas de autenticación o para el aislamiento de la autenticación.
+      * Nuevo objeto de Active Directory basado en bosque, que puede crear una relación entre el usuario, el servicio administrado y el equipo, las cuentas que se van a usar para clasificar las cuentas de las directivas de autenticación o el aislamiento de autenticación.
 
 ## <a name="windows-server-2012"></a>Windows Server 2012
 
-Sistema de operativo del controlador de dominio admitidos:
+Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 
-### <a name="windows-server-2012-forest-functional-level-features"></a>Características de nivel funcional de bosque de Windows Server 2012
+### <a name="windows-server-2012-forest-functional-level-features"></a>Características del nivel funcional del bosque de Windows Server 2012
 
-* Todas las características que están disponibles en Windows Server 2008 R2 del bosque funcionales nivel, pero no características adicionales.
+* Todas las características que están disponibles en el nivel funcional del bosque de Windows Server 2008 R2, pero sin características adicionales.
 
 ### <a name="windows-server-2012-domain-functional-level-features"></a>Características de nivel funcional de dominio de Windows Server 2012
 
-* Todas las características predeterminadas de Active Directory, todas las características desde el nivel funcional del dominio de Windows Server 2008 R2, además de las siguientes características:
-   * La compatibilidad del KDC con notificaciones, autenticación compuesta y protección directiva de plantillas administrativas KDC tiene dos configuraciones (siempre proporcionar notificaciones y producirá un error en solicitudes de autenticación) que requieren el nivel funcional del dominio de Windows Server 2012 de Kerberos. Para obtener más información, consulte [What ' s New in Kerberos Authentication](https://technet.microsoft.com/library/hh831747.aspx)
+* Todas las características de Active Directory predeterminadas, todas las características del nivel funcional del dominio de Windows Server 2008R2, además de las siguientes características:
+   * La compatibilidad de KDC con notificaciones, autenticación compuesta y protección de Kerberos de la Directiva de plantillas administrativas de KDC tiene dos configuraciones (proporcionar siempre notificaciones y generar un error en las solicitudes de autenticación sin protección) que requieren el nivel funcional de dominio de Windows Server 2012. Para obtener más información, vea [novedades de la autenticación Kerberos](https://technet.microsoft.com/library/hh831747.aspx) .
 
 ## <a name="windows-server-2008r2"></a>Windows Server 2008R2
 
-Sistema de operativo del controlador de dominio admitidos:
+Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 
-### <a name="windows-server-2008r2-forest-functional-level-features"></a>Características de nivel funcionales de Windows Server 2008 R2 bosque
+### <a name="windows-server-2008r2-forest-functional-level-features"></a>Características del nivel funcional del bosque de Windows Server 2008R2
 
 * Todas las características disponibles en el nivel funcional del bosque de Windows Server 2003, más las siguientes características:
    * Papelera de reciclaje de Active Directory, que proporciona la capacidad de restaurar completamente objetos eliminados mientras se ejecuta AD DS.
 
-### <a name="windows-server-2008r2-domain-functional-level-features"></a>Características de nivel funcionales de Windows Server 2008 R2 dominio
+### <a name="windows-server-2008r2-domain-functional-level-features"></a>Características de nivel funcional de dominio de Windows Server 2008R2
 
-* Todas las características predeterminadas de Active Directory, todas las características desde el nivel funcional del dominio de Windows Server 2008, además de las siguientes características:
-   * La comprobación del mecanismo de autenticación, que empaqueta la información sobre el tipo de método de inicio de sesión (tarjeta inteligente o nombre de usuario/contraseña) empleado para autenticar a usuarios del dominio dentro del token de Kerberos de cada usuario. Cuando esta característica está habilitada en un entorno de red que ha implementado una infraestructura de administración de identidades federadas, como servicios de federación de Active Directory (AD FS), la información del token, a continuación, se puede extraer siempre que un usuario intenta acceder a ninguno aplicación para notificaciones que se ha desarrollado para determinar la autorización basada en el método de inicio de sesión del usuario.
-   * Administración automática de SPN para servicios que se ejecutan en un equipo determinado en el contexto de una cuenta de servicio administrada cuando el nombre DNS de host o nombre de los cambios de la cuenta de equipo. Para obtener más información sobre las cuentas de servicio administradas, vea [guía paso a paso de las cuentas de servicio](https://go.microsoft.com/fwlink/?LinkId=180401).
+* Todas las características de Active Directory predeterminadas, todas las características del nivel funcional del dominio de Windows Server 2008, además de las siguientes características:
+   * La garantía del mecanismo de autenticación, que empaqueta la información sobre el tipo de método de inicio de sesión (tarjeta inteligente o nombre de usuario/contraseña) que se usa para autenticar a los usuarios del dominio dentro del token de Kerberos de cada usuario. Cuando esta característica está habilitada en un entorno de red que ha implementado una infraestructura de administración de identidades federada, como Servicios de federación de Active Directory (AD FS) (AD FS), se puede extraer la información del token cada vez que un usuario intente acceder a cualquier aplicación compatible con notificaciones que se ha desarrollado para determinar la autorización basada en el método de inicio de sesión de un usuario.
+   * Administración automática de SPN para servicios que se ejecutan en un equipo determinado en el contexto de una cuenta de servicio administrada cuando el nombre o el nombre de host DNS de la cuenta de equipo cambia. Para obtener más información sobre las cuentas de servicio administradas, vea [la guía paso a paso de las cuentas de servicio](https://go.microsoft.com/fwlink/?LinkId=180401).
 
 ## <a name="windows-server-2008"></a>Windows Server 2008
 
-Sistema de operativo del controlador de dominio admitidos:
+Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2019
 * Windows Server 2016
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 * Windows Server 2008
 
-### <a name="windows-server-2008-forest-functional-level-features"></a>Características de nivel funcional de bosque de Windows Server 2008
+### <a name="windows-server-2008-forest-functional-level-features"></a>Características del nivel funcional del bosque de Windows Server 2008
 
-* Todas las características que están disponibles en el nivel funcional del bosque de Windows Server 2003, pero no características adicionales están disponibles. 
+* Todas las características que están disponibles en el nivel funcional del bosque de Windows Server 2003, pero no hay características adicionales disponibles. 
 
 ### <a name="windows-server-2008-domain-functional-level-features"></a>Características de nivel funcional de dominio de Windows Server 2008
 
-* Todos los de la predeterminada de AD DS características, todas las características desde el nivel funcional del dominio de Windows Server 2003, y están disponibles las siguientes características:
-  * Compatibilidad con la replicación de Distributed File System (DFS) para el volumen de sistema de Windows Server 2003 (SYSVOL)
-    * Compatibilidad con la replicación DFS proporciona una replicación más sólida y detallada del contenido de SYSVOL.
+* Todas las características predeterminadas de AD DS, todas las características del nivel funcional del dominio de Windows Server 2003 y las siguientes características están disponibles:
+  * Compatibilidad de la replicación de Sistema de archivos distribuido (DFS) con el volumen del sistema de Windows Server 2003 (SYSVOL)
+    * La compatibilidad con la replicación DFS proporciona una replicación más sólida y detallada del contenido de SYSVOL.
 
       > [!NOTE]
-      > A partir de Windows Server 2012 R2, servicio de replicación de archivos (FRS) está en desuso. Un dominio nuevo que se crea en un controlador de dominio que ejecute al menos Windows Server 2012 R2 debe establecerse en el nivel funcional del dominio de Windows Server 2008 o posterior.
+      > A partir de Windows Server 2012 R2, el servicio de replicación de archivos (FRS) está en desuso. Un dominio nuevo que se crea en un controlador de dominio que ejecute como mínimo Windows Server 2012 R2 debe establecerse en el nivel funcional del dominio de Windows Server 2008 o superior.
 
-  * Basado en dominio espacios de nombres DFS que se ejecuta en modo de Windows Server 2008, que incluye soporte técnico para aumentar la escalabilidad y el acceso según la enumeración. Espacios de nombres basados en dominio en modo Windows Server 2008 también requieren el bosque que desea utilizar el nivel funcional del bosque de Windows Server 2003. Para obtener más información, consulte [elegir un tipo de Namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
-  * Advanced Encryption Standard (AES 128 y AES 256) compatibilidad con el protocolo Kerberos. En el orden de los TGT que se emitan mediante AES, el nivel funcional del dominio debe ser Windows Server 2008 o posterior y debe cambiarse la contraseña de dominio. 
-    * Para obtener más información, consulte [mejoras de Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
+  * Espacios de nombres DFS basados en dominio que se ejecutan en modo Windows Server 2008, que incluye compatibilidad con la enumeración basada en el acceso y una mayor escalabilidad. Los espacios de nombres basados en dominio en modo Windows Server 2008 también requieren que el bosque use el nivel funcional del bosque de Windows Server 2003. Para obtener más información, vea [elegir un tipo de espacio de nombres](https://go.microsoft.com/fwlink/?LinkId=180400).
+  * Estándar de cifrado avanzado (AES 128 y AES 256) para el protocolo Kerberos. Para que se emitan TGT mediante AES, el nivel funcional del dominio debe ser Windows Server 2008 o superior y debe cambiarse la contraseña del dominio. 
+    * Para obtener más información, vea [mejoras de Kerberos](https://technet.microsoft.com/library/cc749438(ws.10).aspx).
 
       > [!NOTE]
-      >Errores de autenticación pueden producirse en un controlador de dominio después de eleva el nivel funcional del dominio a Windows Server 2008 o posterior si el controlador de dominio ya ha replicado el cambio del nivel funcional de dominio, pero no ha actualizado la contraseña de krbtgt todavía. En este caso, un reinicio del servicio KDC en el controlador de dominio desencadenará una actualización en la memoria de la nueva contraseña de krbtgt y resolver errores de autenticación relacionadas.
+      >Los errores de autenticación pueden producirse en un controlador de dominio después de que el nivel funcional del dominio se eleve a Windows Server 2008 o superior si el controlador de dominio ya ha replicado el cambio de nivel funcional pero aún no ha actualizado la contraseña de krbtgt. En este caso, si se reinicia el servicio KDC en el controlador de dominio, se desencadenará una actualización en memoria de la nueva contraseña de krbtgt y se resolverán los errores de autenticación relacionados.
 
-  * [Último inicio de sesión interactivo](https://go.microsoft.com/fwlink/?LinkId=180387) información muestra la siguiente información:
-     * El número total de intentos de inicio de sesión en un servidor unido a un dominio de Windows Server 2008 o una estación de trabajo de Windows Vista
-     * El número total de intentos de inicio de sesión después de iniciar sesión correctamente en un servidor de Windows Server 2008 o una estación de trabajo de Windows Vista
-     * La hora del último intento de inicio de sesión en un equipo con Windows Server 2008 o una estación de trabajo de Windows Vista
-     * Intento de la hora del último inicio de sesión correcto en un servidor de Windows Server 2008 o una estación de trabajo de Windows Vista
-  * Directivas de contraseña específica permiten especificar directivas de bloqueo de cuentas y contraseñas para usuarios y grupos de seguridad global en un dominio. Para obtener más información, consulte [guía paso a paso para la configuración de directiva de bloqueo de cuenta y contraseña específica](https://go.microsoft.com/fwlink/?LinkID=91477).
+  * [Último inicio de sesión interactivo](https://go.microsoft.com/fwlink/?LinkId=180387) Información muestra la siguiente información:
+     * El número total de intentos de inicio de sesión erróneos en un servidor Windows Server 2008 o una estación de trabajo de Windows Vista Unidos a un dominio
+     * El número total de intentos de inicio de sesión erróneos después de un inicio de sesión correcto en un servidor Windows Server 2008 o una estación de trabajo de Windows Vista
+     * La hora del último intento de inicio de sesión incorrecto en Windows Server 2008 o una estación de trabajo de Windows Vista
+     * La hora del último intento de inicio de sesión correcto en un servidor de Windows Server 2008 o una estación de trabajo de Windows Vista
+  * Las directivas de contraseña específica permiten especificar directivas de bloqueo de cuentas y contraseñas para usuarios y grupos de seguridad global en un dominio. Para obtener más información, consulte la [Guía paso a paso para la configuración de directivas de bloqueo de cuentas y contraseñas específicas](https://go.microsoft.com/fwlink/?LinkID=91477).
   * Escritorios virtuales personales
-     * Para usar la funcionalidad agregada proporcionada por la ficha de Escritorio Virtual Personal en el cuadro de diálogo Propiedades de la cuenta de usuario en usuarios y equipos de usuarios de Active Directory, se debe extender el esquema de AD DS para Windows Server 2008 R2 (versión de esquema de objeto = 47). Para obtener más información, consulte [implementar escritorios virtuales personales usando RemoteApp y Guía paso a paso de conexión de escritorio](https://go.microsoft.com/fwlink/?LinkId=183552).
+     * Para usar la funcionalidad agregada proporcionada por la pestaña escritorio virtual personal del cuadro de diálogo Propiedades de cuenta de usuario de Active Directory usuarios y equipos, el esquema de AD DS debe ampliarse para Windows Server 2008 R2 (versión de objeto de esquema = 47). Para obtener más información, consulte [implementación de escritorios virtuales personales mediante conexión de RemoteApp y escritorio guía paso a paso](https://go.microsoft.com/fwlink/?LinkId=183552).
 
 ## <a name="windows-server-2003"></a>Windows Server 2003
 
-Sistema de operativo del controlador de dominio admitidos:
+Sistema operativo del controlador de dominio admitido:
 
-* Windows Server 2012 R2
+* Windows Server 2012 R2
 * Windows Server 2012
 * Windows Server 2008 R2
 * Windows Server 2008
 * Windows Server 2003
 
-### <a name="windows-server-2003-forest-functional-level-features"></a>Características de nivel funcional de bosque de Windows Server 2003
+### <a name="windows-server-2003-forest-functional-level-features"></a>Características del nivel funcional del bosque de Windows Server 2003
 
-* Todas las características predeterminadas de AD DS y las siguientes características están disponibles:
+* Todas las características de AD DS predeterminadas y las siguientes características están disponibles:
    * Confianza de bosque
    * Cambio de nombre de dominio
    * Replicación de valor vinculado
-      - Replicación de valor vinculado permite cambiar la pertenencia a grupo para almacenar y replicar los valores para miembros individuales en lugar de replicar toda la pertenencia como una sola unidad. Almacenar y replicar los valores de los miembros individuales usa menos ancho de banda de red y menos ciclos de procesador durante la replicación y evita perder actualizaciones cuando se agregan o quitan a varios miembros simultáneamente en diferentes controladores de dominio.
+      - La replicación de valor vinculado permite cambiar la pertenencia a grupos para almacenar y replicar valores para miembros individuales en lugar de replicar toda la pertenencia como una sola unidad. El almacenamiento y la replicación de los valores de miembros individuales utiliza menos ancho de banda de red y menos ciclos de procesador durante la replicación, y evita que se pierdan actualizaciones cuando se agregan o quitan varios miembros simultáneamente en diferentes controladores de dominio.
    * La capacidad de implementar un controlador de dominio de solo lectura (RODC)
-   * Los algoritmos del Comprobador de coherencia de la información (KCC) y la escalabilidad mejorada
-      - El generador de topología entre sitios (ISTG) usa algoritmos mejorados que se escalan para admitir bosques con un número mayor de sitios de AD DS puede admitir en el nivel funcional del bosque de Windows 2000. El algoritmo mejorado de elección de ISTG es un mecanismo menos intrusivo para elegir el ISTG en el nivel funcional del bosque de Windows 2000.
-   * La capacidad de crear instancias de la clase auxiliar dinámica llamada **dynamicObject** en una partición de directorio de dominio
-   * La capacidad de convertir un **inetOrgPerson** instancia del objeto en un **usuario** instancia de objeto y para completar la conversión en la dirección opuesta
-   * La capacidad de crear instancias de tipos de grupo nuevas para admitir la autorización basada en roles. 
-      - Estos tipos se denominan grupos básicos de aplicación y los grupos de consulta LDAP.
+   * Algoritmos y escalabilidad mejorados del comprobador de coherencia de la información (KCC)
+      - El generador de topología entre sitios (ISTG) usa algoritmos mejorados que se escalan para admitir bosques con un número mayor de sitios que AD DS pueden admitir en el nivel funcional del bosque de Windows 2000. El algoritmo de elección de ISTG mejorado es un mecanismo menos intrusivo para elegir el ISTG en el nivel funcional del bosque de Windows 2000.
+   * La capacidad de crear instancias de la clase auxiliar dinámica denominada **dynamicObject** en una partición de directorio de dominio
+   * La capacidad de convertir una instancia de objeto **inetOrgPerson** en una instancia de objeto de **usuario** y de completar la conversión en la dirección opuesta.
+   * La capacidad de crear instancias de nuevos tipos de grupo para admitir la autorización basada en roles. 
+      - Estos tipos se denominan grupos básicos de aplicación y grupos de consulta LDAP.
    * Desactivación y nueva definición de atributos y clases en el esquema. Se pueden reutilizar los siguientes atributos: ldapDisplayName, schemaIdGuid, OID y mapiID.
-   * Basado en dominio espacios de nombres DFS que se ejecuta en modo de Windows Server 2008, que incluye soporte técnico para aumentar la escalabilidad y el acceso según la enumeración. Para obtener más información, consulte [elegir un tipo de Namespace](https://go.microsoft.com/fwlink/?LinkId=180400).
+   * Espacios de nombres DFS basados en dominio que se ejecutan en modo Windows Server 2008, que incluye compatibilidad con la enumeración basada en el acceso y una mayor escalabilidad. Para obtener más información, vea [elegir un tipo de espacio de nombres](https://go.microsoft.com/fwlink/?LinkId=180400).
 
 ### <a name="windows-server-2003-domain-functional-level-features"></a>Características de nivel funcional de dominio de Windows Server 2003
 
-* Todas las características de AD DS de forma predeterminada, todas las características que están disponibles en el nivel funcional del dominio en modo nativo de Windows 2000 y las características siguientes están disponibles:
-   * La herramienta de administración de dominios, Netdom.exe, lo que permite cambiar el nombre de los controladores de dominio
-   * Actualiza la marca de tiempo de inicio de sesión
+* Todas las características de AD DS predeterminadas, todas las características que están disponibles en el nivel funcional de dominio nativo de Windows 2000 y las siguientes características están disponibles:
+   * La herramienta de administración de dominios, Netdom. exe, que permite cambiar el nombre de los controladores de dominio.
+   * Actualizaciones de marca de tiempo de inicio de sesión
       * El atributo **lastLogonTimestamp** se actualiza con la hora en que el usuario o equipo inició sesión por última vez. Este atributo se replica dentro del dominio.
-   * La capacidad de establecer el **userPassword** atributo como la contraseña efectiva en **inetOrgPerson** y objetos de usuario
-   * La capacidad de redirigir los usuarios y equipos de contenedores
-      * De forma predeterminada, se proporcionan dos contenedores conocidos para la caja de cuentas de usuario y equipo, a saber, cn = Computers,<domain root> y cn = Users,<domain root>. Esta característica permite la definición de una ubicación nueva conocida para estas cuentas.
-   * La capacidad para el Administrador de autorización para almacenar sus directivas de autorización en AD DS
+   * La capacidad de establecer el atributo **userPassword** como la contraseña efectiva en objetos **inetOrgPerson** y User
+   * La capacidad de redirigir los contenedores de usuarios y equipos
+      * De forma predeterminada, se proporcionan dos contenedores conocidos para albergar cuentas de equipo y de usuario, es decir, CN =<domain root> Computers, y CN<domain root>= users,. Esta característica permite definir una ubicación nueva y conocida para estas cuentas.
+   * La capacidad de administrador de autorización para almacenar sus directivas de autorización en AD DS
    * Delegación restringida
-      * La delegación restringida hace posible para que las aplicaciones aprovechen la delegación segura de credenciales de usuario por medio de autenticación basada en Kerberos.
-      * Puede restringir la delegación en servicios de destino específicas solo.
+      * La delegación restringida permite que las aplicaciones aprovechen la delegación segura de credenciales de usuario por medio de la autenticación basada en Kerberos.
+      * Solo puede restringir la delegación a servicios de destino específicos.
    * Autenticación selectiva
-      * Autenticación selectiva hace posible especificar los usuarios y grupos de un bosque de confianza que se les permite autenticarse en servidores de recursos en un bosque que confía.
+      * La autenticación selectiva permite especificar los usuarios y grupos de un bosque de confianza que tienen permiso para autenticarse en servidores de recursos en un bosque que confía.
 
 ## <a name="windows-2000"></a>Windows 2000
 
-Sistema de operativo del controlador de dominio admitidos:
+Sistema operativo del controlador de dominio admitido:
 
 * Windows Server 2008 R2
 * Windows Server 2008
 * Windows Server 2003
 * Windows 2000
 
-### <a name="windows-2000-native-forest-functional-level-features"></a>Características de nivel funcional de bosque nativo de Windows 2000
+### <a name="windows-2000-native-forest-functional-level-features"></a>Características del nivel funcional del bosque nativo de Windows 2000
 
-* Todas las características de valor predeterminado de AD DS están disponibles.
+* Todas las características de AD DS predeterminadas están disponibles.
 
-### <a name="windows-2000-native-domain-functional-level-features"></a>Características de nivel funcional de dominio en modo nativo de Windows 2000
+### <a name="windows-2000-native-domain-functional-level-features"></a>Características de nivel funcional de dominio nativo de Windows 2000
 
-* Todas las características predeterminadas de AD DS y las siguientes características de directorio son incluidos disponibles:
-   * Grupos universales para grupos de distribución y seguridad.
-   * Anidamiento de grupos
-   * Conversión de grupos, lo que permite la conversión entre grupos de seguridad y distribución
-   * Historial de seguridad (SID) de identificador
+* Todas las características de AD DS predeterminadas y las siguientes características de directorio están disponibles, entre las que se incluyen:
+   * Grupos universales para los grupos de distribución y de seguridad.
+   * Anidación de grupos
+   * Conversión de grupos, que permite la conversión entre grupos de seguridad y distribución
+   * Historial de identificadores de seguridad (SID)
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-* [Elevar el nivel funcional de dominio](https://technet.microsoft.com/library/cc753104.aspx)  
-* [Elevar el nivel funcional de bosque](https://technet.microsoft.com/library/cc730985.aspx)
+* [Elevar el nivel funcional del dominio](https://technet.microsoft.com/library/cc753104.aspx)  
+* [Elevar el nivel funcional del bosque](https://technet.microsoft.com/library/cc730985.aspx)

@@ -1,6 +1,6 @@
 ---
 title: taskkill
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 13366307bbf685d1e4af8c0a58d5b9d6643111dc
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 9050788a06b66e54be59c69dd8cc837092123b00
+ms.sourcegitcommit: ee8e0b217be6f6b2532ee7265fb4be00c106e124
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811047"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70878133"
 ---
 # <a name="taskkill"></a>taskkill
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Finaliza uno o más procesos o tareas. Los procesos se pueden finalizar por el identificador del proceso o el nombre de la imagen. **taskkill** reemplaza el **kill** herramienta.
-Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#examples).
+Finaliza uno o más procesos o tareas. Los procesos se pueden finalizar por el identificador del proceso o el nombre de la imagen. **Taskkill** reemplaza la herramienta **Kill** .
+Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,58 +37,58 @@ taskkill [/s <computer> [/u [<Domain>\]<UserName> [/p [<Password>]]]] {[/fi <Fil
 
 |         Parámetro         |                                                                                                                                        Descripción                                                                                                                                        |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|      /s \<equipo >       |                                                                                    Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                     |
-| /u \<dominio >\\\<nombre de usuario > | Ejecuta el comando con los permisos de cuenta del usuario que se especifica mediante *UserName* o *dominio*\\*UserName*. **/u** se puede especificar sólo si **/s** se especifica. El valor predeterminado es los permisos del usuario que ha iniciado sesión actualmente en el equipo que está emitiendo el comando. |
-|      /p \<contraseña >       |                                                                                                   Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.                                                                                                   |
-|       /Fi \<filtro >       |          Se aplica un filtro para seleccionar un conjunto de tareas. Puede usar más de un filtro o use el carácter comodín ( **\\** \*) para especificar todas las tareas o los nombres de imágenes. Vea el siguiente [tabla para los nombres de filtro válido](#filter-names-operators-and-values), operadores y valores.           |
-|     /PID \<ProcessID >     |                                                                                                                 Especifica el identificador de proceso del proceso que se finalice.                                                                                                                 |
-|     /im \<ImageName>      |                                                                                Especifica el nombre de la imagen del proceso que se finalice. Use el carácter comodín ( **\\** \*) para especificar todos los nombres de imagen.                                                                                |
-|            /f             |                                                                    Especifica que los procesos terminar forzosamente. Este parámetro se omite para los procesos remotos; fuerza se terminan todos los procesos remotos.                                                                     |
-|            /t             |                                                                                                          Finaliza el proceso especificado y cualquier proceso secundario iniciado por ella.                                                                                                          |
+|      /s \<equipo >       |                                                                                    Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                                                                     |
+| /u \<dominio >\\nombreDeUsuario>\< | Ejecuta el comando con los permisos de cuenta del usuario que se especifica mediante *el nombre de usuario o el* *dominio*\\*nombreDeUsuario*. **/u** solo se puede especificar si se especifica **/s** . El valor predeterminado son los permisos del usuario que ha iniciado sesión actualmente en el equipo que emite el comando. |
+|      /p \<contraseña >       |                                                                                                   Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                                                   |
+|       /fi \<> de filtro       |          Aplica un filtro para seleccionar un conjunto de tareas. Puede usar más de un filtro o usar el carácter comodín ( **\\** \*) para especificar todas las tareas o los nombres de las imágenes. Vea la tabla siguiente para ver los nombres de filtro, los operadores y los valores [válidos](#filter-names-operators-and-values).           |
+|     /PID \<ProcessId >     |                                                                                                                 Especifica el identificador de proceso del proceso que se va a terminar.                                                                                                                 |
+|     /im \<ImageName >      |                                                                                Especifica el nombre de la imagen del proceso que se va a terminar. Use el carácter comodín ( **\\** \*) para especificar todos los nombres de imagen.                                                                                |
+|            /f             |                                                                    Especifica que los procesos se terminan forzosamente. Este parámetro se omite para los procesos remotos; todos los procesos remotos se terminan forzosamente.                                                                     |
+|            /t             |                                                                                                          Finaliza el proceso especificado y los procesos secundarios iniciados por él.                                                                                                          |
 
-#### <a name="filter-names-operators-and-values"></a>Los nombres de filtro, operadores y valores
+#### <a name="filter-names-operators-and-values"></a>Filtrar nombres, operadores y valores
 
-| Nombre de filtro |    Operadores válidos     |                                                                Valores válidos                                                                |
+| Nombre del filtro |    Operadores válidos     |                                                                Valores válidos                                                                |
 |-------------|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-|   STatUS    |         eq, ne         |                                                 EJECUTANDO &AMP;#124; NO RESPONDE &AMP;#124; DESCONOCIDO                                                 |
-|  IMAGENAME  |         eq, ne         |                                                                  Nombre de la imagen                                                                  |
+|   ESTATUS    |         eq, ne         |                                                 EJECUCIÓN &#124; NO RESPONDE &#124; DESCONOCIDA                                                 |
+|  /IM  |         eq, ne         |                                                                  Nombre de la imagen                                                                  |
 |     PID     | eq, ne, gt, lt, ge, le |                                                                  Valor de PID                                                                   |
 |   SESIÓN   | eq, ne, gt, lt, ge, le |                                                                Número de sesión                                                                |
-|   CpuTime   | eq, ne, gt, lt, ge, le | Tiempo de CPU en el formato <em>HH</em> **:** <em>MM</em> **:** <em>SS</em>, donde *MM* y *SS* están comprendidos entre 0 y 59 y *HH* es cualquiera sin signo de número |
+|   CpuTime   | eq, ne, gt, lt, ge, le | Tiempo de CPU con el formato <em>HH</em> **:** <em>mm</em> **:** <em>SS</em>, donde *mm* y *SS* están entre 0 y 59 y *HH* es cualquier número sin signo. |
 |  MEMUSAGE   | eq, ne, gt, lt, ge, le |                                                              Uso de memoria en KB                                                              |
-|  NOMBRE DE USUARIO   |         eq, ne         |                                               Cualquier nombre de usuario válido (*usuario* o *dominio*\\*usuario*)                                               |
-|  SERVICIOS   |         eq, ne         |                                                                 Nombre del servicio                                                                 |
+|  NOMBRE   |         eq, ne         |                                               Cualquier nombre de usuario válido *(usuario o* *usuario*de *dominio*\\)                                               |
+|  SERVER   |         eq, ne         |                                                                 Nombre del servicio                                                                 |
 | WINDOWTITLE |         eq, ne         |                                                                 Título de ventana                                                                 |
-|   MÓDULOS   |         eq, ne         |                                                                   Nombre de DLL                                                                   |
+|   ADICIONALES   |         eq, ne         |                                                                   Nombre de DLL                                                                   |
 
 ## <a name="remarks"></a>Comentarios
-* No se admiten los filtros WINDOWTITLE y el estado cuando se especifica un sistema remoto.
-* El carácter comodín ( **\\** <em>) se acepta para la * */im</em>*  opción solo cuando se aplica un filtro.
-* Finalización de procesos remotos es siempre lleva a cabo de manera forzada, independientemente de si el **/f** se especifica la opción.
-* Proporciona un nombre de equipo para el filtro de nombre de host produce un cierre y se detienen todos los procesos.
-* Puede usar **tasklist** para determinar el identificador de proceso (PID) terminar el proceso.
+* Los filtros WINDOWTITLE y STATUs no se admiten cuando se especifica un sistema remoto.
+* El carácter comodín ( **\\** <em>) se acepta para la opción * */im</em>*  solo cuando se aplica un filtro.
+* La terminación de los procesos remotos siempre se lleva a cabo forzosamente, independientemente de si se especifica la opción **/f** .
+* El suministro de un nombre de equipo al filtro hostname provoca un cierre y se detienen todos los procesos.
+* Puede usar **TaskList** para determinar el identificador de proceso (PID) del proceso que se va a finalizar.
 
 ## <a name="examples"></a>Ejemplos
 
-Para finalizar los procesos con 1230 identificadores de proceso, 1241 y 1253, escriba:
+Para finalizar los procesos con los identificadores de proceso 1230, 1241 y 1253, escriba:
 
 ```
 taskkill /pid 1230 /pid 1241 /pid 1253
 ```
 
-Para terminar forzosamente el proceso "Notepad.exe" que se ha iniciado por el sistema, escriba:
+Para forzar la finalización del proceso "Notepad. exe" si lo inició el sistema, escriba:
 
 ```
 taskkill /f /fi "USERNAME eq NT AUTHORITY\SYSTEM" /im notepad.exe
 ```
 
-Para finalizar todos los procesos en el equipo remoto "Srvmain" con una imagen nombre comienza por "Nota", mientras que con las credenciales de la cuenta de usuario Hiropln, escriba:
+Para finalizar todos los procesos del equipo remoto "Srvmain" con un nombre de imagen que empiece por "Note", mientras usa las credenciales de la cuenta de usuario Hiropln, escriba:
 
 ```
 taskkill /s srvmain /u maindom\hiropln /p p@ssW23 /fi "IMAGENAME eq note*" /im *
 ```
 
-Para terminar el proceso con el proceso de Id. de 2134 y todos los procesos que se inició, pero solo si los procesos iniciados por la cuenta de administrador, escriba:
+Para finalizar el proceso con el identificador de proceso 2134 y los procesos secundarios que inició, pero solo si los procesos se iniciaron con la cuenta de administrador, escribe:
 
 ```
 taskkill /pid 2134 /t /fi "username eq administrator"

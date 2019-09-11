@@ -1,6 +1,6 @@
 ---
 title: Iniciar o cerrar aplicaciones en una estación
-description: Obtenga información sobre cómo trabajar con aplicaciones en MultiPoint Services
+description: Aprenda a trabajar con aplicaciones en Multipoint Services
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.technology: multipoint-services
@@ -13,19 +13,19 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 4b11d71f5a34fa4b5127b62544945655b6703f15
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 14c0c6ad7605453bdf97b52c59a1299b1aed533f
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845186"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871674"
 ---
 # <a name="launch-or-close-applications-on-a-station"></a>Iniciar o cerrar aplicaciones en una estación
-Como usuario de MultiPoint Dashboard, puede abrir o cerrar una aplicación en el escritorio, escritorios seleccionados o todos los equipos de escritorio de un usuario.  
+Como usuario de Multipoint Dashboard, puede abrir o cerrar una aplicación en el escritorio de un usuario, en escritorios seleccionados o en todos los equipos de escritorio.  
   
 ## <a name="launch-an-application-on-a-user-station"></a>Iniciar una aplicación en una estación de usuario  
   
-1.  En el panel de MultiPoint, haga clic en la imagen en miniatura del escritorio del usuario en el que desea iniciar la aplicación y, a continuación, haga clic en el menú desplegable de **iniciar** en la cinta de opciones bajo **aplicaciones**.  
+1.  En el panel de Multipoint, haga clic en la imagen en miniatura del escritorio del usuario en el que desea iniciar la aplicación y, a continuación, haga clic en el menú desplegable para **iniciarlo** en la cinta de opciones en **aplicaciones**.  
   
 2.  Haga clic en **Launch an Application on Selected Desktops** (Iniciar una aplicación en escritorios seleccionados). Se abre la página **Iniciar aplicación**.  
   
@@ -33,7 +33,7 @@ Como usuario de MultiPoint Dashboard, puede abrir o cerrar una aplicación en el
   
 ## <a name="launch-an-application-on-all-user-stations"></a>Iniciar una aplicación en todas las estaciones de usuario  
   
-1.  En MultiPoint Dashboard, haga clic en el menú desplegable **iniciar** (en la cinta de opciones bajo **aplicaciones**).  
+1.  En el panel de Multipoint, haga clic en el menú desplegable para **iniciar** (en la cinta de opciones en **aplicaciones**).  
   
 2.  Haga clic en **Launch an Application on All Desktops** (Iniciar una aplicación en todos los escritorios). Se abre la página **Iniciar aplicación**.  
   
@@ -41,7 +41,7 @@ Como usuario de MultiPoint Dashboard, puede abrir o cerrar una aplicación en el
   
 ## <a name="close-an-application-on-a-user-station"></a>Cerrar una aplicación en una estación de usuario  
   
-1.  En el panel de MultiPoint, haga clic en la imagen en miniatura del escritorio en el que desea cerrar una aplicación.  
+1.  En el panel de Multipoint, haga clic en la imagen en miniatura del escritorio en el que desea cerrar una aplicación.  
   
 2.  Haga clic en **Cerrar** en la cinta, en **Aplicaciones**, para abrir la página **Cerrar aplicación**.  
   

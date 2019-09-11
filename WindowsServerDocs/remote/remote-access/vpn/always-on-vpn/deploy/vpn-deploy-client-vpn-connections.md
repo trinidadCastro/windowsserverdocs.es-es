@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.reviewer: deverette
-ms.openlocfilehash: eab81443ba91b229495a124aae642570608c6bba
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: c3ac8295d048c599a1cb6d1ed141cd63a7a73f47
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658891"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871340"
 ---
 # <a name="step-6-configure-windows-10-client-always-on-vpn-connections"></a>Paso 6. Configuración de conexiones VPN de Always On cliente de Windows 10
 
@@ -318,7 +318,7 @@ $ProfileXML = @("
 ")
 ```
 
-### <a name="output-vpnprofilexml-for-intune"></a>Salida de VPN_Profile. XML para Intune
+### <a name="output-vpn_profilexml-for-intune"></a>Salida de VPN_Profile. XML para Intune
 
 Puede usar el siguiente comando de ejemplo para guardar el archivo XML de perfil:
 
@@ -326,7 +326,7 @@ Puede usar el siguiente comando de ejemplo para guardar el archivo XML de perfil
 $ProfileXML | Out-File -FilePath ($env:USERPROFILE + '\desktop\VPN_Profile.xml')
 ```
 
-### <a name="output-vpnprofileps1-for-the-desktop-and-system-center-configuration-manager"></a>Salida VPN_Profile. PS1 para el escritorio y System Center Configuration Manager
+### <a name="output-vpn_profileps1-for-the-desktop-and-system-center-configuration-manager"></a>Salida VPN_Profile. PS1 para el escritorio y System Center Configuration Manager
 
 En el código de ejemplo siguiente se configura una conexión VPN de IKEv2 AlwaysOn mediante el nodo ProfileXML en el CSP VPNv2.
 
@@ -603,7 +603,7 @@ El siguiente script de ejemplo incluye todos los ejemplos de código de las secc
 
 ## <a name="configure-the-vpn-client-by-using-windows-powershell"></a>Configuración del cliente VPN mediante Windows PowerShell
 
-Para configurar el CSP de VPNv2 en un equipo cliente de Windows 10, ejecute el script de Windows PowerShell VPN_Profile. PS1 que creó en la sección [creación del perfil XML](#create-the-profile-xml) . Abra Windows PowerShell como administrador. de lo contrario, recibirá un error que indica que se denegó el _acceso_.
+Para configurar el CSP de VPNv2 en un equipo cliente de Windows 10, ejecute el script de Windows PowerShell VPN_Profile. PS1 que creó en la sección [creación del perfil XML](#create-the-profile-xml) . Abra Windows PowerShell como administrador. de lo contrario, recibirá un error que indica que se _denegó el acceso_.
 
 Después de ejecutar VPN_Profile. PS1 para configurar el perfil de VPN, puede comprobar en cualquier momento que se ejecutó correctamente ejecutando el siguiente comando en el Windows PowerShell ISE:
 

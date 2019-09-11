@@ -10,12 +10,12 @@ ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
 ms.reviewer: deverette
-ms.openlocfilehash: b954419904f97102cef14fbd4a7a68496e8730af
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 260d5c6273d877386dc1cd8833b2f226533127c3
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546514"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871298"
 ---
 # <a name="step-2-configure-the-server-infrastructure"></a>Paso 2. Configurar la infraestructura de servidor
 

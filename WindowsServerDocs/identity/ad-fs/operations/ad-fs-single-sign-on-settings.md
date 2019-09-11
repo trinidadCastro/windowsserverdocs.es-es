@@ -9,127 +9,127 @@ ms.date: 08/17/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 97e1fa441c5fe4fb7d23743387392732663326de
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 1a2e70251837c88c3220c3d7593108eba5afb1ca
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501586"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869426"
 ---
-# <a name="ad-fs-single-sign-on-settings"></a>AD FS único inicio de sesión en la configuración
+# <a name="ad-fs-single-sign-on-settings"></a>AD FS la configuración de inicio de sesión único
 
-Inicio de sesión único (SSO) permite a los usuarios autenticarse una vez y tener acceso a varios recursos sin que se le pidan credenciales adicionales.  Este artículo describe el comportamiento de AD FS predeterminado para el inicio de sesión único, así como los valores de configuración que le permiten personalizar este comportamiento.  
+El inicio de sesión único (SSO) permite a los usuarios autenticarse una vez y acceder a varios recursos sin que se le soliciten credenciales adicionales.  En este artículo se describe el comportamiento de AD FS predeterminado para SSO, así como los valores de configuración que le permiten personalizar este comportamiento.  
 
-## <a name="supported-types-of-single-sign-on"></a>Tipos admitidos de Single Sign-On
+## <a name="supported-types-of-single-sign-on"></a>Tipos admitidos del inicio de sesión único
 
 AD FS admite varios tipos de experiencias de inicio de sesión único:  
   
--   **Sesión de inicio de sesión único**  
+-   **SSO de sesión**  
   
-     Se escriben las cookies de inicio de sesión único de sesión del usuario autenticado, lo que elimina los mensajes adicionales cuando el usuario cambia las aplicaciones durante una sesión determinada. Sin embargo, si se finaliza una sesión determinada, el usuario se pedirá sus credenciales de nuevo.  
+     Las cookies de SSO de sesión se escriben para el usuario autenticado, lo que elimina los mensajes adicionales cuando el usuario cambia las aplicaciones durante una sesión determinada. Sin embargo, si una sesión determinada finaliza, se le solicitarán sus credenciales de nuevo al usuario.  
   
-     AD FS establecerá sesión las cookies de SSO de forma predeterminada si no se registran los dispositivos de los usuarios. Si la sesión del explorador ha finalizado y se reinicia, esta cookie de sesión se elimina y más no es válida.  
+     De forma predeterminada, AD FS establecerá las cookies de SSO de sesión si no se registran los dispositivos de los usuarios. Si la sesión del explorador ha finalizado y se ha reiniciado, esta cookie de sesión se elimina y no es válida.  
   
--   **Inicio de sesión único persistente**  
+-   **SSO persistente**  
   
-     Se escriben las cookies persistentes de inicio de sesión único para el usuario autenticado, lo que elimina aún más mensajes cuando el usuario cambia las aplicaciones para siempre y cuando la cookie de inicio de sesión único persistente es válida. La diferencia entre persistente SSO y la sesión de inicio de sesión único es que puede mantenerse el inicio de sesión único persistente entre distintas sesiones.  
+     Las cookies de SSO persistentes se escriben para el usuario autenticado, lo que elimina los mensajes adicionales cuando el usuario cambia de aplicación mientras la cookie de SSO persistente sea válida. La diferencia entre SSO persistente y SSO de sesión es que el SSO persistente puede mantenerse en distintas sesiones.  
   
-     AD FS establecerá las cookies persistentes de inicio de sesión único si el dispositivo está registrado. AD FS también establecerá una cookie persistente de inicio de sesión único si el usuario selecciona la opción "mantener la sesión iniciada". Si la cookie de inicio de sesión único persistente más no es válida, se rechaza y se eliminará.  
+     AD FS establecerá cookies de SSO persistentes si el dispositivo está registrado. AD FS también establecerá una cookie de SSO persistente si un usuario selecciona la opción "mantener la sesión iniciada". Si la cookie de SSO persistente no es válida, se rechazará y se eliminará.  
   
--   **SSO específico de aplicación**  
+-   **SSO específico de la aplicación**  
   
-     En el escenario de OAuth, se usa un token de actualización para mantener el estado de inicio de sesión único del usuario dentro del ámbito de una aplicación determinada.  
+     En el escenario de OAuth, se usa un token de actualización para mantener el estado de SSO del usuario dentro del ámbito de una aplicación determinada.  
   
-     Si se registra un dispositivo, AD FS establece la hora de expiración de un token de actualización según la duración de las cookies de inicio de sesión único persistente para un dispositivo registrado que es de 7 días de forma predeterminada hasta un máximo de 90 días con AD FS 2016 y 2012 R2 AD FS si usan sus dispositivos acceso a recursos de AD FS durante un período de 14 días. 
+     Si se registra un dispositivo, AD FS establecerá la hora de expiración de un token de actualización en función de la duración de las cookies de SSO persistentes para un dispositivo registrado que tenga siete días de forma predeterminada para AD FS 2012R2 y hasta un máximo de 90 días con AD FS 2016 si usan su dispositivo para acceder a AD FS recursos en un período de 14 días. 
 
-Si el dispositivo no está registrado, pero un usuario selecciona la opción "mantener la sesión iniciada", será igual a la hora de expiración del token de actualización de la duración de las cookies de inicio de sesión único persistente para "mantener la que sesión iniciada" que es 1 día de forma predeterminada con el máximo de 7 días. En caso contrario, la vigencia del token es igual a sesión SSO cookie duración de la actualización que es 8 horas de forma predeterminada  
+Si el dispositivo no está registrado pero un usuario selecciona la opción "mantener la sesión iniciada", la fecha de expiración del token de actualización será igual a la duración de las cookies de SSO persistentes para "mantener la sesión iniciada", que es 1 día de forma predeterminada con un máximo de 7 días. De lo contrario, la vigencia del token de actualización es igual a la duración de la cookie de SSO de sesión, que es de 8 horas  
   
- Como se mencionó anteriormente, los usuarios en los dispositivos registrados siempre obtendrá un inicio de sesión único persistente a menos que el inicio de sesión único persistente está deshabilitado. Dispositivos no registrados, inicio de sesión único persistente puede lograrse habilitando la "mantener la sesión iniciada" característica (KMSI). 
+ Como se mencionó anteriormente, los usuarios de los dispositivos registrados siempre obtendrán un SSO persistente a menos que el SSO persistente esté deshabilitado. En el caso de los dispositivos no registrados, se puede lograr SSO persistente habilitando la característica "mantener la sesión iniciada" (KMSI). 
  
- Para Windows Server 2012 R2, para habilitar PSSO para el escenario "Mantener la sesión iniciada", debe instalar esta [revisión](https://support.microsoft.com/en-us/kb/2958298/) que también es parte de la de [paquete acumulativo de actualizaciones de agosto de 2014 para Windows RT 8.1, Windows 8.1 y Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2975719).   
+ En Windows Server 2012 R2, para habilitar PSSO para el escenario "mantener la sesión iniciada", debe instalar esta [revisión](https://support.microsoft.com/en-us/kb/2958298/) , que también forma parte del [paquete acumulativo de actualizaciones de agosto de 2014 para Windows RT 8,1, Windows 8.1 y Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2975719).   
 
 Tarea | PowerShell | Descripción
 ------------ | ------------- | -------------
-Habilitar o deshabilitar el inicio de sesión único persistente | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| Inicio de sesión único persistente está habilitada de forma predeterminada. Si está deshabilitado, no se escribirá ninguna cookie PSSO.
-"Habilitar o deshabilitar"mantener la sesión iniciada" | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | Característica "Mantener la sesión iniciada" está deshabilitada de forma predeterminada. Si está habilitado, usuario final verá una opción "mantener la sesión iniciada" en la página de inicio de sesión de AD FS
+Habilitar o deshabilitar SSO persistente | ```` Set-AdfsProperties –EnablePersistentSso <Boolean> ````| SSO persistente está habilitado de forma predeterminada. Si está deshabilitada, no se escribirá ninguna cookie PSSO.
+"Habilitar/deshabilitar" mantener la sesión iniciada " | ```` Set-AdfsProperties –EnableKmsi <Boolean> ```` | La característica "mantener la sesión iniciada" está deshabilitada de forma predeterminada. Si está habilitada, el usuario final verá una opción "mantener la sesión iniciada" en AD FS página de inicio de sesión
 
 
 
-## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016 - dispositivos autenticados y Single Sign-On
-AD FS 2016 cambia el PSSO si el solicitante se autentica desde un dispositivo registrado aumentar al máximo 90 días, pero que requiere una autenticación en un período de 14 días (ventana de uso de dispositivos).
-Después de proporcionar las credenciales por primera vez, de forma predeterminada a los usuarios con dispositivos registrados obtención inicio de sesión único para un período máximo de 90 días, suponiendo que usen el dispositivo para tener acceso a los recursos de AD FS con al menos una vez cada 14 días.  Si se esperan de 15 días después de proporcionar las credenciales, se pedirá a los usuarios las credenciales de nuevo.  
+## <a name="ad-fs-2016---single-sign-on-and-authenticated-devices"></a>AD FS 2016: Inicio de sesión único y dispositivos autenticados
+AD FS 2016 cambia el PSSO cuando el solicitante realiza la autenticación desde un dispositivo registrado que se incrementa hasta un máximo de 90 días, pero requiere una autenticación en un período de 14 días (ventana uso del dispositivo).
+Después de proporcionar las credenciales por primera vez, de forma predeterminada, los usuarios con dispositivos registrados obtienen un inicio de sesión único durante un período máximo de 90 días, siempre que usen el dispositivo para tener acceso a AD FS recursos al menos una vez cada 14 días.  Si esperan 15 días después de proporcionar las credenciales, se solicitarán de nuevo a los usuarios las credenciales.  
 
-Inicio de sesión único persistente está habilitada de forma predeterminada. Si está deshabilitado, no se escribirá ninguna cookie PSSO. |  
+SSO persistente está habilitado de forma predeterminada. Si está deshabilitada, no se escribirá ninguna cookie PSSO. |  
 
 ``` powershell
 Set-AdfsProperties –EnablePersistentSso <Boolean\>
 ```     
   
-La ventana de uso del dispositivo (14 días de forma predeterminada) se rige por la propiedad de AD FS **DeviceUsageWindowInDays**.
+La ventana uso del dispositivo (14 días de forma predeterminada) se rige por la propiedad AD FS **DeviceUsageWindowInDays**.
 
 ``` powershell
 Set-AdfsProperties -DeviceUsageWindowInDays
 ```   
-El único inicio de sesión período máximo (90 días de forma predeterminada) se rige por la propiedad de AD FS **PersistentSsoLifetimeMins**.
+El período de inicio de sesión único máximo (90 días de forma predeterminada) se rige por la propiedad AD FS **PersistentSsoLifetimeMins**.
 
 ``` powershell
 Set-AdfsProperties -PersistentSsoLifetimeMins
 ```    
 
-## <a name="keep-me-signed-in-for-unauthenticated-devices"></a>Mantener la sesión iniciada para dispositivos no autenticados. 
-Para los dispositivos no registrados, el período de inicio de sesión único viene determinada por la **mantener Me inicien sesión en (KMSI)** la configuración de características.  KMSI está deshabilitada de forma predeterminada y se puede habilitar estableciendo la propiedad de AD FS KmsiEnabled en True.
+## <a name="keep-me-signed-in-for-unauthenticated-devices"></a>Mantener la sesión iniciada en dispositivos no autenticados 
+En el caso de los dispositivos no registrados, el período de inicio de sesión único viene determinado por la configuración de la característica **mantener la sesión iniciada (KMSI)** .  KMSI está deshabilitado de forma predeterminada y se puede habilitar estableciendo la propiedad de la AD FS KmsiEnabled en true.
 
 ``` powershell
 Set-AdfsProperties -EnableKmsi $true  
 ```    
 
-Con KMSI deshabilitado, el período predeterminado único inicio de sesión es 8 horas.  Esto se puede configurar mediante la propiedad SsoLifetime.  La propiedad se mide en minutos, por lo que su valor predeterminado es 480.  
+Con KMSI deshabilitado, el período de inicio de sesión único predeterminado es de 8 horas.  Se puede configurar mediante la propiedad SsoLifetime.  La propiedad se mide en minutos, por lo que su valor predeterminado es 480.  
 
 ``` powershell
 Set-AdfsProperties –SsoLifetime <Int32\> 
 ```   
 
-Con KMSI habilitado, el período predeterminado único inicio de sesión es de 24 horas.  Esto se puede configurar mediante la propiedad KmsiLifetimeMins.  La propiedad se mide en minutos, por lo que su valor predeterminado es 1440.
+Con KMSI habilitado, el período de inicio de sesión único predeterminado es de 24 horas.  Se puede configurar mediante la propiedad KmsiLifetimeMins.  La propiedad se mide en minutos, por lo que su valor predeterminado es 1440.
 
 ``` powershell
 Set-AdfsProperties –KmsiLifetimeMins <Int32\> 
 ```   
 
-## <a name="multi-factor-authentication-mfa-behavior"></a>Comportamiento de la autenticación multifactor (MFA)  
-Es importante tener en cuenta que, proporcionando relativamente largos períodos de inicio de sesión único en AD FS le solicitará la autenticación adicional (autenticación multifactor) cuando un inicio de sesión anterior se basaba en las credenciales principales y no MFA, pero el inicio de sesión actual requiere MFA.  Esto es así independientemente de la configuración de SSO. En primer lugar, AD FS, cuando recibe una solicitud de autenticación, determina si hay un contexto de inicio de sesión único (por ejemplo, una cookie) y, a continuación, si se requiere MFA (por ejemplo, si la solicitud proviene de fuera) evaluarán si el contexto SSO contiene MFA.  Si no es así, se le pedirá MFA.  
+## <a name="multi-factor-authentication-mfa-behavior"></a>Comportamiento de multi-factor Authentication (MFA)  
+Es importante tener en cuenta que, a la vez que se proporcionan períodos relativamente largos de inicio de sesión único, AD FS solicitará autenticación adicional (autenticación multifactor) cuando un inicio de sesión anterior se basaba en las credenciales principales y no en MFA, pero el inicio de sesión actual requiere MFA.  Esto es independiente de la configuración de SSO. AD FS, cuando recibe una solicitud de autenticación, primero determina si hay un contexto de SSO (como una cookie) y, a continuación, si se requiere MFA (por ejemplo, si la solicitud está llegando desde fuera), se evaluará si el contexto de SSO contiene MFA.  Si no es así, se le solicitará MFA.  
 
 
   
-## <a name="psso-revocation"></a>Revocación PSSO  
- Para proteger la seguridad, AD FS rechazará cualquier cookie persistente de SSO emitido anteriormente cuando se cumplen las condiciones siguientes. Esto requerirá al usuario que proporcione sus credenciales para autenticarse con AD FS de nuevo. 
+## <a name="psso-revocation"></a>Revocación de PSSO  
+ Para proteger la seguridad, AD FS rechazará todas las cookies de SSO persistentes que se hayan emitido anteriormente cuando se cumplan las siguientes condiciones. Esto requerirá que el usuario proporcione sus credenciales para autenticarse con AD FS de nuevo. 
   
-- Usuario cambia la contraseña  
+- El usuario cambia la contraseña  
   
-- Configuración de inicio de sesión único persistente está deshabilitada en AD FS  
+- La configuración de SSO persistente está deshabilitada en AD FS  
   
-- Dispositivo está deshabilitado por el administrador en caso de pérdida o robo  
+- El administrador deshabilitó el dispositivo en caso de pérdida o robo  
   
-- AD FS recibe una cookie persistente de SSO que se emitió para un usuario registrado, pero el usuario o el dispositivo no está registrado ya  
+- AD FS recibe una cookie de SSO persistente que se emite para un usuario registrado pero el usuario o el dispositivo ya no está registrado  
   
-- AD FS recibe una cookie persistente de inicio de sesión único para un usuario registrado, pero el usuario volver a registrar  
+- AD FS recibe una cookie de SSO persistente para un usuario registrado, pero el usuario se ha vuelto a registrar  
   
-- AD FS recibe una cookie persistente de SSO que se emite como resultado "mantener la sesión iniciada" pero "mantener la sesión iniciada" se deshabilita la configuración de AD FS  
+- AD FS recibe una cookie de SSO persistente que se emite como resultado de "mantener la sesión iniciada" pero está deshabilitada la opción "mantener la sesión iniciada" en AD FS  
   
-- AD FS recibe una cookie persistente de SSO que se emitió para un usuario registrado pero el certificado de dispositivo se encuentra o modificado durante la autenticación  
+- AD FS recibe una cookie de SSO persistente que se emite para un usuario registrado, pero el certificado de dispositivo falta o se modifica durante la autenticación  
   
-- Administrador de AD FS estableció una hora límite para el inicio de sesión único persistente. Cuando esto se configura, AD FS rechazará cualquier cookie persistente de SSO emitido antes de esta hora  
+- AD FS administrador ha establecido un límite de tiempo para SSO persistente. Cuando se configura, AD FS rechazará todas las cookies de SSO persistentes emitidas antes de esta hora.  
   
-  Para establecer la hora límite, ejecute el siguiente cmdlet de PowerShell:  
+  Para establecer el tiempo límite, ejecute el siguiente cmdlet de PowerShell:  
   
 
 ``` powershell
 Set-AdfsProperties -PersistentSsoCutoffTime <DateTime>
 ```
   
-## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>Habilitar PSSO para los usuarios de Office 365 tener acceso a SharePoint Online  
- Una vez PSSO está habilitado y configurado en AD FS, AD FS escribirá una cookie persistente después de que un usuario autenticado. La próxima vez que el usuario entra en acción, si una cookie persistente es aún válida, un usuario no tiene que proporcionar credenciales para autenticarse de nuevo. También puede evitar el aviso de autenticación adicionales para Office 365 y SharePoint Online a los usuarios mediante la configuración de los siguientes dos reglas en AD FS para la persistencia de desencadenador en Microsoft Azure AD y SharePoint Online de notificaciones.  Para habilitar PSSO para los usuarios de Office 365 acceder a SharePoint online, necesita instalar esta [revisión](https://support.microsoft.com/en-us/kb/2958298/) que también es parte de la de [paquete acumulativo de actualizaciones de agosto de 2014 para Windows RT 8.1, Windows 8.1 y Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2975719).  
+## <a name="enable-psso-for-office-365-users-to-access-sharepoint-online"></a>Habilitación de PSSO para que los usuarios de Office 365 tengan acceso a SharePoint Online  
+ Una vez que PSSO está habilitado y configurado en AD FS, AD FS escribirá una cookie persistente después de que un usuario se haya autenticado. La próxima vez que el usuario entra en, si una cookie persistente sigue siendo válida, no es necesario que el usuario proporcione credenciales para autenticarse de nuevo. También puede evitar el aviso de autenticación adicional para los usuarios de Office 365 y SharePoint Online mediante la configuración de las dos siguientes reglas de notificaciones en AD FS para desencadenar la persistencia en Microsoft Azure AD y SharePoint Online.  Para permitir que los usuarios de PSSO para Office 365 tengan acceso a SharePoint Online, debe instalar esta [revisión](https://support.microsoft.com/en-us/kb/2958298/) , que también forma parte del [paquete acumulativo de actualizaciones de agosto de 2014 para Windows RT 8,1, Windows 8.1 y Windows Server 2012 R2](https://support.microsoft.com/en-us/kb/2975719).  
   
- Una regla de transformación de emisión para pasar a través de la notificación InsideCorporateNetwork  
+ Una regla de transformación de emisión para pasar a través de la demanda de InsideCorporateNetwork  
   
 ```  
 @RuleTemplate = "PassThroughClaims"  
@@ -143,13 +143,13 @@ c:[Type == "http://schemas.microsoft.com/2014/03/psso"]
   
 ```
   
-Para resumir:
+En Resumen:
 <table>
   <tr>
     <th colspan="1">Experiencia de inicio de sesión único</th>
-    <th colspan="3">ADFS 2012 R2 <br> ¿Está registrado el dispositivo?</th>
+    <th colspan="3">ADFS 2012 R2 <br> ¿El dispositivo está registrado?</th>
         <th colspan="1"></th>
-    <th colspan="3">ADFS 2016 <br> ¿Está registrado el dispositivo?</th>
+    <th colspan="3">ADFS 2016 <br> ¿El dispositivo está registrado?</th>
   </tr>
 
   <tr align="center">
@@ -163,7 +163,7 @@ Para resumir:
     <th>SÍ</th>
   </tr>
  <tr align="center">
-    <td>SSO =&gt;establecer Token de actualización =&gt;</td>
+    <td>SSO =&gt;establecer token de actualización =&gt;</td>
     <td>8 horas</td>
     <td>N/D</td>
     <td>N/D</td>
@@ -174,18 +174,18 @@ Para resumir:
   </tr>
 
  <tr align="center">
-    <td>PSSO =&gt;establecer Token de actualización =&gt;</td>
+    <td>PSSO =&gt;establecer token de actualización =&gt;</td>
     <td>N/D</td>
     <td>24 horas</td>
     <td>7 días</td>
     <th></th>
     <td>N/D</td>
     <td>24 horas</td>
-    <td>Máximo 90 días con la ventana de 14 días</td>
+    <td>Ventana máx. 90 días con 14 días</td>
   </tr>
 
  <tr align="center">
-    <td>Duración del token</td>
+    <td>Vigencia del token</td>
     <td>1 h</td>
     <td>1 h</td>
     <td>1 h</td>
@@ -196,13 +196,13 @@ Para resumir:
   </tr>
 </table>
 
-**¿Dispositivo registrado?** Obtener un PSSO / inicio de sesión único persistente <br>
-**¿Dispositivo no está registrado?** Obtener un inicio de sesión único <br>
-**¿Dispositivo no está registrado, pero KMSI?** Obtener un PSSO / inicio de sesión único persistente <p>
-IF:
- - [x] administrador ha habilitado la característica KMSI [y]
- - [x] usuario hace clic en la casilla para KMSI en la página de inicio de sesión de formularios
+**¿El dispositivo está registrado?** Obtiene un SSO PSSO/persistente. <br>
+**¿No se ha registrado el dispositivo?** Obtiene un inicio de sesión único (SSO) <br>
+**¿No se ha registrado el dispositivo pero KMSI?** Obtiene un SSO PSSO/persistente. <p>
+CUANDO
+ - [x] el administrador ha habilitado la característica KMSI [y]
+ - [x] el usuario hace clic en la casilla KMSI en la página de inicio de sesión de formularios.
  
-**Bueno, a saber:** <br>
-Los usuarios federados que no tiene el **LastPasswordChangeTimestamp** atributo sincronizado se emiten cookies de sesión y tokens de actualización que tienen un **valor Max Age de 12 horas**.<br>
-Esto ocurre porque Azure AD no puede determinar cuándo se deben revocar los tokens que están relacionados con una credencial antigua (por ejemplo, una contraseña que se ha cambiado). Por lo tanto, Azure AD debe comprobar con más frecuencia para asegurarse de que el usuario y los tokens asociados están aún en buena reputación.
+**Bueno para saberlo:** <br>
+Los usuarios federados que no tengan el atributo **LastPasswordChangeTimestamp** sincronizado reciben cookies de sesión y tokens de actualización que tienen un **valor de antigüedad máximo de 12 horas**.<br>
+Esto se debe a que Azure AD no puede determinar cuándo revocar los tokens relacionados con una credencial anterior (como una contraseña que se ha cambiado). Por lo tanto, Azure AD debe comprobar con mayor frecuencia para asegurarse de que el usuario y los tokens asociados todavía están en buen estado.

@@ -12,12 +12,12 @@ ms.assetid: f5fe1088-ebe7-4799-a47d-075b0048dea1
 author: nnamuhcs
 ms.author: coreyp
 manager: dongill
-ms.openlocfilehash: a66f98b0896e706f520aa057b91cce2fe662d22d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 48eb7009215e484fb00e704c7b328340240321d2
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66433323"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70865154"
 ---
 # <a name="manage-devices-in-windows-server-essentials"></a>Administrar dispositivos en Windows Server Essentials
 
@@ -27,17 +27,17 @@ ms.locfileid: "66433323"
   
 -   [Administrar dispositivos mediante el panel](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_1)  
   
--   [Asignar cuentas de usuario permiso para iniciar sesión en equipos específicos de la red](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2)  
+-   [Asignar permisos de cuentas de usuario para iniciar sesión en equipos de red específicos](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_2)  
   
 -   [Quitar un equipo del servidor](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_3)  
   
--   [Configurar opciones de directiva de grupo para redirección de carpetas y seguridad](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_5)  
+-   [Configuración de directiva de grupo para la redirección de carpetas y la seguridad](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_5)  
   
--   [Conectarse a un equipo de red mediante una sesión de escritorio remoto](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_7)  
+-   [Conexión a un equipo de red mediante una sesión de Escritorio remoto](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_7)  
   
--   [Ver las propiedades de equipo](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
+-   [Ver las propiedades del equipo](Manage-Devices-in-Windows-Server-Essentials.md#BKMK_8)  
   
-##  <a name="BKMK_1"></a> Administrar dispositivos mediante el panel  
+##  <a name="BKMK_1"></a>Administrar dispositivos mediante el panel  
  Windows Server Essentials permite realizar tareas administrativas comunes mediante su panel. En la página **Dispositivos** del panel encontrará lo siguiente:  
   
 -   Una lista de equipos de la red, que muestra:  
@@ -89,7 +89,7 @@ ms.locfileid: "66433323"
 |¿Cómo conecto equipos al servidor?|Se abre un tema de ayuda que describen los pasos necesarios para realizar para unir un equipo a la red.|  
 |Implementar la directiva de grupo|Se aplica la configuración de directiva a los equipos de Windows 8 y Windows 7 que están unidos al dominio.|  
   
-##  <a name="BKMK_2"></a> Asignar cuentas de usuario permiso para iniciar sesión en equipos específicos de la red  
+##  <a name="BKMK_2"></a>Asignar permisos de cuentas de usuario para iniciar sesión en equipos de red específicos  
  Puede asignar permisos a las cuentas de usuario para que los usuarios inicien sesión en solo determinados equipos de la red al obtener acceso a la red de Windows Server Essentials desde una ubicación remota.  
   
 #### <a name="to-change-the-computer-access-for-a-user-account"></a>Para cambiar el acceso al equipo de una cuenta de usuario  
@@ -100,15 +100,15 @@ ms.locfileid: "66433323"
   
 3.  En la lista de cuentas de usuario, seleccione la cuenta de usuario que quiera cambiar.  
   
-4.  En el **< cuenta de usuario\> tareas** panel, haga clic en **ver las propiedades de cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.  
+4.  En el panel **tareas de\> la cuenta de usuario de <** , haga clic en **ver las propiedades de la cuenta**. Aparece la página **Propiedades** de la cuenta de usuario.  
   
 5.  En la pestaña **Acceso al equipo**, seleccione el equipo al que este usuario puede acceder de forma remota y, a continuación, haga clic en **Aceptar**.  
   
-##  <a name="BKMK_3"></a> Quitar un equipo del servidor  
+##  <a name="BKMK_3"></a>Quitar un equipo del servidor  
  Al quitar un equipo de un servidor que ejecuta Windows Server Essentials utilizando el panel, el servidor deja de administrar el equipo. Por lo tanto, el servidor detendrá la creación de copias de seguridad del equipo o supervisará su estado después de quitarse de la red.  
   
 > [!NOTE]
->  La eliminación de un equipo desde el servidor no desconecta el equipo de la red. El equipo puede acceder a recursos de la red de la misma manera que podía antes de conectarse al servidor. Para evitar que el equipo acceda a los recursos del servidor y desconectarlo de este, debe quitar el equipo del dominio. Además, la eliminación del equipo del servidor no desinstala automáticamente el software del Conector o el Launchpad del equipo que se está quitando. Debe quitar el software del Conector manualmente desde el equipo. Para obtener más información, vea la sección de desinstalar el software del conector en [conéctate](../use/Get-Connected-in-Windows-Server-Essentials.md).  
+>  La eliminación de un equipo desde el servidor no desconecta el equipo de la red. El equipo puede acceder a recursos de la red de la misma manera que podía antes de conectarse al servidor. Para evitar que el equipo acceda a los recursos del servidor y desconectarlo de este, debe quitar el equipo del dominio. Además, la eliminación del equipo del servidor no desinstala automáticamente el software del Conector o el Launchpad del equipo que se está quitando. Debe quitar el software del Conector manualmente desde el equipo. Para obtener más información, consulte la sección desinstalar el software del conector en [Get Connected](../use/Get-Connected-in-Windows-Server-Essentials.md).  
   
 #### <a name="to-remove-a-computer-from-the-network-by-using-the-dashboard"></a>Para quitar un equipo de la red mediante el panel  
   
@@ -118,7 +118,7 @@ ms.locfileid: "66433323"
   
 3.  En la lista de equipos, haga clic en el equipo que quiera quitar de la red y, a continuación, haga clic en **Quitar el equipo**.  
   
-##  <a name="BKMK_5"></a> Configurar opciones de directiva de grupo para redirección de carpetas y seguridad  
+##  <a name="BKMK_5"></a>Configuración de directiva de grupo para la redirección de carpetas y la seguridad  
  Puede configurar la directiva de grupo e implementarla en los equipos de la red de Windows Server Essentials utilizando el panel de Windows Server Essentials. La directiva de grupo en Windows Server Essentials incluye la configuración de seguridad y redirección de carpetas que afecta a Windows Update, Windows Defender y al firewall de red.  
   
 #### <a name="to-configure-group-policy-in-windows-server-essentials"></a>Para configurar la directiva de grupo en Windows Server Essentials  
@@ -139,8 +139,8 @@ ms.locfileid: "66433323"
   
 7.  Haga clic en **Finalizar** para implementar la configuración de directiva de grupo.  
   
-##  <a name="BKMK_7"></a> Conectarse a un equipo de red mediante una sesión de escritorio remoto  
- Para obtener acceso remoto a su equipo de red de Windows Server Essentials cuando esté fuera de la oficina, use el explorador Web para iniciar sesión en su organización acceso Web remoto del sitio Web y en el **equipos** pestaña, haga clic en el nombre de la equipo.  
+##  <a name="BKMK_7"></a>Conexión a un equipo de red mediante una sesión de Escritorio remoto  
+ Para acceder de forma remota al equipo de red de Windows Server Essentials cuando esté fuera de la oficina, use el explorador Web para iniciar sesión en el sitio web de acceso Web remoto de su organización y, en la pestaña **equipos** , haga clic en el nombre del equipo.  
   
  La columna **Estado** indica si puede conectarse a un equipo en la red, y puede incluir los siguientes valores:  
   
@@ -152,7 +152,7 @@ ms.locfileid: "66433323"
   
      El equipo se apaga o está en modo de hibernación o de suspensión. Si un equipo está sin conexión o en modo de suspensión, el estado se actualiza en tiempo real para que sepa cuándo está disponible el equipo.  
   
--   **Sistema operativo no compatible**  
+-   **Sistema operativo no admitido**  
   
      El sistema operativo en el equipo no es compatible con el Escritorio remoto. Este estado puede tardar hasta 6 horas en actualizarse en el servidor si se produce algún cambio.  
   
@@ -160,7 +160,7 @@ ms.locfileid: "66433323"
   
      La conexión del equipo está bloqueada por un firewall o el escritorio remoto está deshabilitado en el equipo o por la directiva de grupo. Este estado puede tardar hasta 6 horas en actualizarse en el servidor si se produce algún cambio.  
   
-##  <a name="BKMK_8"></a> Ver las propiedades de equipo  
+##  <a name="BKMK_8"></a>Ver las propiedades del equipo  
  La sección **Dispositivos** del panel de Windows Server Essentials muestra una lista de equipos de red. La lista también proporciona información adicional sobre cada equipo.  
   
 #### <a name="to-view-a-list-of-computers"></a>Para ver una lista de equipos  
@@ -175,7 +175,7 @@ ms.locfileid: "66433323"
   
 1.  En la lista de equipos, seleccione la cuenta en la que quiera ver o cambiar las propiedades.  
   
-2.  En el **< nombreDeEquipo\> tareas** panel, haga clic en **ver las propiedades del equipo**. Aparece la página **Propiedades** para los equipos.  
+2.  En el panel **tareas\> de < nombreDeEquipo** , haga clic en **ver las propiedades del equipo**. Aparece la página **Propiedades** para los equipos.  
   
 3.  Haga clic en una pestaña para ver las propiedades de ese equipo.  
   
@@ -183,7 +183,7 @@ ms.locfileid: "66433323"
   
 ## <a name="see-also"></a>Vea también  
   
--   [Administrar acceso Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
+-   [Administrar el acceso Web remoto](Manage-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   
 -   [Usar acceso Web remoto](../use/Use-Remote-Web-Access-in-Windows-Server-Essentials.md)  
   

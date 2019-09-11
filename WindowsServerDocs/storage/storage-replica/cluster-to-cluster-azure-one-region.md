@@ -1,7 +1,7 @@
 ---
-title: Clúster al clúster de réplica de almacenamiento en la misma región de Azure
-description: Clúster al clúster de replicación de almacenamiento en la misma región de Azure
-keywords: Réplica de almacenamiento, el administrador del servidor, Windows Server, Azure, clúster, la misma región
+title: Réplica de almacenamiento de clúster a clúster en la misma región de Azure
+description: Replicación de almacenamiento de clúster a clúster en la misma región de Azure
+keywords: Réplica de almacenamiento, Administrador del servidor, Windows Server, Azure, clúster, la misma región
 author: arduppal
 ms.author: arduppal
 ms.date: 04/26/2019
@@ -9,57 +9,57 @@ ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage-replica
 manager: mchad
-ms.openlocfilehash: 9cf998087e23f45fe5981aef6d1ff5b7b4e85b9b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 7e9418e398175a6b1caf63a36593f36d66a7c943
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447615"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869790"
 ---
-# <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Clúster al clúster de réplica de almacenamiento en la misma región de Azure
+# <a name="cluster-to-cluster-storage-replica-within-the-same-region-in-azure"></a>Réplica de almacenamiento de clúster a clúster en la misma región de Azure
 
-> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+> Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
-Puede configurar la replicación de almacenamiento de clúster a clúster dentro de la misma región de Azure. En los ejemplos siguientes, usamos un clúster de dos nodos, pero la réplica de almacenamiento de clúster a clúster no está restringido a un clúster de dos nodos. La ilustración siguiente es un clúster de espacio de almacenamiento directo de dos nodos que puede comunicarse entre sí, se encuentran en el mismo dominio y en la misma región.
+Puede configurar la replicación de clúster a almacenamiento de clúster en la misma región de Azure. En los ejemplos siguientes, usamos un clúster de dos nodos, pero la réplica de almacenamiento de clúster a clúster no está restringida a un clúster de dos nodos. La ilustración siguiente es un clúster de espacio de almacenamiento directo de dos nodos que se puede comunicar entre sí, que se encuentra en el mismo dominio y dentro de la misma región.
 
-Vea los vídeos a continuación para ver un tutorial completo del proceso.
+Vea los vídeos siguientes para ver un tutorial completo del proceso.
 
-Primera parte
+Parte uno
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE26f2Y]
 
-Segunda parte
+Parte dos
 > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE269Pq]
 
-![El diagrama de arquitectura que muestra la réplica de almacenamiento de clúster a clúster de Azure dentro de la misma región.](media/Cluster-to-cluster-azure-one-region/architecture.png)
+![El diagrama de arquitectura que muestra la réplica de almacenamiento de clúster a clúster en Azure dentro de la misma región.](media/Cluster-to-cluster-azure-one-region/architecture.png)
 > [!IMPORTANT]
-> Todos los ejemplos que se hace referencia son específicos de la ilustración anterior.
+> Todos los ejemplos a los que se hace referencia son específicos de la ilustración anterior.
 
-1. Crear un [grupo de recursos](https://ms.portal.azure.com/#create/Microsoft.ResourceGroup) en el portal de Azure en una región (**SR-AZ2AZ** en **oeste de EE.UU. 2**). 
-2. Cree dos [conjuntos de disponibilidad](https://ms.portal.azure.com/#create/Microsoft.AvailabilitySet-ARM) en el grupo de recursos (**SR-AZ2AZ**) creado anteriormente, uno para cada clúster. 
+1. Cree un [grupo de recursos](https://ms.portal.azure.com/#create/Microsoft.ResourceGroup) en el Azure portal en una región (**Sr-AZ2AZ** en el **oeste de EE. UU. 2**). 
+2. Cree dos [conjuntos de disponibilidad](https://ms.portal.azure.com/#create/Microsoft.AvailabilitySet-ARM) en el grupo de recursos (**Sr-AZ2AZ**) creado anteriormente, uno para cada clúster. 
     a. Conjunto de disponibilidad (**az2azAS1**) b. Conjunto de disponibilidad (**az2azAS2**)
-3. Crear un [red virtual](https://ms.portal.azure.com/#create/Microsoft.VirtualNetwork-ARM) (**az2az Vnet**) en el grupo de recursos creado anteriormente (**SR-AZ2AZ**), tener al menos una subred. 
-4. Crear un [grupo de seguridad de red](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM) (**az2az NSG**) y agregue una regla de seguridad de entrada para RDP:3389. Puede quitar esta regla después de finalizar el programa de instalación. 
-5. Creación de Windows Server [máquinas virtuales](https://ms.portal.azure.com/#create/Microsoft.WindowsServer2016Datacenter-ARM) en el grupo de recursos creado anteriormente (**SR-AZ2AZ**). Usar la red virtual creada previamente (**az2az Vnet**) y el grupo de seguridad de red (**az2az NSG**). 
+3. Cree una [red virtual](https://ms.portal.azure.com/#create/Microsoft.VirtualNetwork-ARM) (**az2az-Vnet**) en el grupo de recursos creado anteriormente (**Sr-az2az**) y tenga al menos una subred. 
+4. Cree un [grupo de seguridad de red](https://ms.portal.azure.com/#create/Microsoft.NetworkSecurityGroup-ARM) (**az2az-NSG**) y agregue una regla de seguridad de entrada para RDP: 3389. Puede optar por quitar esta regla una vez finalizada la instalación. 
+5. Cree [máquinas virtuales](https://ms.portal.azure.com/#create/Microsoft.WindowsServer2016Datacenter-ARM) de Windows Server en el grupo de recursos creado anteriormente (**Sr-AZ2AZ**). Use la red virtual creada anteriormente (**az2az-Vnet**) y el grupo de seguridad de red (**az2az-NSG**). 
    
-   Controlador de dominio (**az2azDC**). Puede elegir crear un tercer conjunto de disponibilidad para el controlador de dominio o agregar el controlador de dominio en uno de los dos conjuntos de disponibilidad. Si va a agregar al conjunto de disponibilidad creado para los dos clústeres, asignar, una dirección IP pública estándar durante la creación de máquinas virtuales. 
-   - Instalar servicio de dominio de Active Directory.
+   Controlador de dominio (**az2azDC**). Puede optar por crear un tercer conjunto de disponibilidad para el controlador de dominio o agregar el controlador de dominio en uno de los dos conjuntos de disponibilidad. Si va a agregar esto al conjunto de disponibilidad creado para los dos clústeres, asígnele una dirección IP pública estándar durante la creación de la máquina virtual. 
+   - Instale el servicio Dominio de Active Directory.
    - Crear un dominio (Contoso.com)
-   - Crear un usuario con privilegios de administrador (contosoadmin) 
-   - Cree dos máquinas virtuales (**az2az1**, **az2az2**) en la disponibilidad del primer conjunto (**az2azAS1**). Asignar una dirección IP pública estándar para cada máquina virtual durante la creación propia.
+   - Creación de un usuario con privilegios de administrador (contosoadmin) 
+   - Cree dos máquinas virtuales (**az2az1**, **az2az2**) en el primer conjunto de disponibilidad (**az2azAS1**). Asigne una dirección IP pública estándar a cada máquina virtual durante la creación propiamente dicha.
    - Agregar al menos 2 discos administrados a cada máquina
-   - Instalar la característica de agrupación en clústeres de conmutación por error y réplica de almacenamiento
-   - Cree dos máquinas virtuales (**az2az3**, **az2az4**) en la disponibilidad del segundo conjunto (**az2azAS2**). Asignar dirección IP pública estándar para cada máquina virtual durante la creación propia. 
-   - Agregue al menos 2 discos administrados a cada máquina. 
-   - Instalar la característica de agrupación en clústeres de conmutación por error y réplica de almacenamiento. 
+   - Instalar la característica de clúster de conmutación por error y réplica de almacenamiento
+   - Cree dos máquinas virtuales (**az2az3**, **az2az4**) en el segundo conjunto de disponibilidad (**az2azAS2**). Asigne una dirección IP pública estándar a cada máquina virtual durante la creación propiamente dicha. 
+   - Agregue al menos 2 discos administrados a cada equipo. 
+   - Instalar la característica de clúster de conmutación por error y réplica de almacenamiento. 
    
-6. Conectar todos los nodos al dominio y proporcionar los privilegios de administrador para el usuario creado anteriormente. 
+6. Conecte todos los nodos al dominio y proporcione privilegios de administrador al usuario creado anteriormente. 
 
-7. Cambie el servidor DNS de la red virtual a la dirección IP privada de controlador de dominio. 
-8. En nuestro ejemplo, el controlador de dominio **az2azDC** tiene la dirección IP privada (10.3.0.8). En la red Virtual (**az2az Vnet**) cambiar el servidor DNS 10.3.0.8. Conecte todos los nodos para "Contoso.com" y proporcionar los privilegios de administrador para "contosoadmin".
-   - Inicie sesión como contosoadmin de todos los nodos. 
+7. Cambie el servidor DNS de la red virtual a la dirección IP privada del controlador de dominio. 
+8. En nuestro ejemplo, el controlador de dominio **az2azDC** tiene una dirección IP privada (10.3.0.8). En el Virtual Network (**az2az-Vnet**), cambie el servidor DNS 10.3.0.8. Conecte todos los nodos a "Contoso.com" y proporcione privilegios de administrador a "contosoadmin".
+   - Inicie sesión como contosoadmin desde todos los nodos. 
     
-9. Crear los clústeres (**SRAZC1**, **SRAZC2**). 
-   A continuación encontrará los comandos de PowerShell para nuestro ejemplo
+9. Cree los clústeres (**SRAZC1**, **SRAZC2**). 
+   A continuación se muestran los comandos de PowerShell para nuestro ejemplo
    ```PowerShell
     New-Cluster -Name SRAZC1 -Node az2az1,az2az2 –StaticAddress 10.3.0.100
    ```
@@ -71,21 +71,21 @@ Segunda parte
     Enable-clusterS2D
     ```   
    
-    Para cada clúster crear volúmenes y discos virtuales. Uno de los datos y otro para el registro. 
+    Para cada clúster, cree un disco virtual y un volumen. Uno para los datos y otro para el registro. 
    
-11. Creación de una SKU estándar interno [equilibrador de carga](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) para cada clúster (**azlbr1**,**azlbr2**). 
+11. Cree una SKU estándar interna [load balancer](https://ms.portal.azure.com/#create/Microsoft.LoadBalancer-ARM) para cada clúster (**azlbr1**,**azlbr2**). 
    
-    Proporcionar la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-    - azlbr1 => Frontend IP: 10.3.0.100 (seleccionar una dirección IP no utilizada de la red Virtual (**az2az Vnet**) subred)
-    - Crear grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociado.
-    - Cree el sondeo de estado: puerto 59999
-    - Crear regla de equilibrio de carga: Permitir que los puertos de alta disponibilidad, con IP flotante habilitada. 
+    Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
+    - azlbr1 = > IP de front-end: 10.3.0.100 (seleccione una dirección IP no usada de la subred de la red virtual (**az2az-Vnet**))
+    - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
+    - Crear sondeo de estado: Puerto 59999
+    - Cree una regla de equilibrio de carga: Permita puertos de alta disponibilidad con IP flotante habilitada. 
    
-    Proporcionar la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
-    - azlbr2 => Frontend IP: 10.3.0.101 (seleccionar una dirección IP no utilizada de la red Virtual (**az2az Vnet**) subred)
-    - Crear grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociado.
-    - Cree el sondeo de estado: puerto 59999
-    - Crear regla de equilibrio de carga: Permitir que los puertos de alta disponibilidad, con IP flotante habilitada. 
+    Proporcione la dirección IP del clúster como dirección IP privada estática para el equilibrador de carga.
+    - azlbr2 = > IP de front-end: 10.3.0.101 (seleccione una dirección IP no usada de la subred de la red virtual (**az2az-Vnet**))
+    - Cree un grupo de back-end para cada equilibrador de carga. Agregue los nodos de clúster asociados.
+    - Crear sondeo de estado: Puerto 59999
+    - Cree una regla de equilibrio de carga: Permita puertos de alta disponibilidad con IP flotante habilitada. 
    
 12. En cada nodo del clúster, abra el puerto 59999 (sondeo de estado). 
    
@@ -93,10 +93,10 @@ Segunda parte
     ```PowerShell
     netsh advfirewall firewall add rule name=PROBEPORT dir=in protocol=tcp action=allow localport=59999 remoteip=any profile=any 
     ```   
-13. Indicar al clúster para escuchar mensajes de sondeo de estado en el puerto 59999 y responder desde el nodo que posee actualmente este recurso. 
-    Ejecútelo una vez desde cualquier nodo de clúster, para cada clúster. 
+13. Indique al clúster que escuche los mensajes de sondeo de estado en el puerto 59999 y que responda desde el nodo que actualmente posee este recurso. 
+    Ejecútelo una vez desde cualquier nodo del clúster, para cada clúster. 
     
-    En nuestro ejemplo, asegúrese de cambiar el "ILBIP" según los valores de configuración. Ejecute el siguiente comando desde cualquier uno nodo **az2az1**/**az2az2**:
+    En nuestro ejemplo, asegúrese de cambiar "ILBIP" según los valores de configuración. Ejecute el siguiente comando desde un nodo **az2az1**/**az2az2**:
 
     ```PowerShell
      $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -106,7 +106,7 @@ Segunda parte
      Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";”ProbeFailureThreshold”=5;"EnableDhcp"=0}
     ```
 
-14. Ejecute el siguiente comando desde cualquier uno nodo **az2az3**/**az2az4**. 
+14. Ejecute el siguiente comando desde un nodo **az2az3**/**az2az4**. 
 
     ```PowerShell
     $ClusterNetworkName = "Cluster Network 1" # Cluster network name (Use Get-ClusterNetwork on Windows Server 2012 or higher to find the name. And use Get-ClusterResource to find the IPResourceName).
@@ -117,7 +117,7 @@ Segunda parte
     ```   
     Asegúrese de que ambos clústeres pueden conectarse o comunicarse entre sí. 
 
-    O bien, usar la característica de "Conectarse al clúster" en el Administrador de clústeres de conmutación por error para conectarse al otro clúster o comprobar que responde otro clúster de uno de los nodos del clúster actual.  
+    Use la característica "conectar con el clúster" en el administrador de clústeres de conmutación por error para conectarse al otro clúster o comprobar si hay otras respuestas de clúster de uno de los nodos del clúster actual.  
    
     ```PowerShell
      Get-Cluster -Name SRAZC1 (ran from az2az3)
@@ -126,33 +126,33 @@ Segunda parte
      Get-Cluster -Name SRAZC2 (ran from az2az1)
     ```   
 
-15. Cree a los testigos de la nube para ambos clústeres. Cree dos [cuentas de almacenamiento](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM) (**az2azcw**, **az2azcw2**) en azure es para cada clúster en el mismo grupo de recursos (**SR-AZ2AZ**).
+15. Cree testigos en la nube para ambos clústeres. Cree dos [cuentas de almacenamiento](https://ms.portal.azure.com/#create/Microsoft.StorageAccount-ARM) (**az2azcw**, **az2azcw2**) en Azure una para cada clúster del mismo grupo de recursos (**Sr-AZ2AZ**).
 
-    - Copiar el nombre de la cuenta de almacenamiento y la clave de "claves de acceso"
-    - Cree al testigo en la nube de "Administrador de clústeres de conmutación por error" y use el nombre de cuenta y la clave anterior para crearlo.
+    - Copie el nombre y la clave de la cuenta de almacenamiento de "claves de acceso"
+    - Cree el testigo en la nube desde el "Administrador de clústeres de conmutación por error" y use el nombre de cuenta y la clave anteriores para crearlo.
 
-16. Ejecute [las pruebas de validación de clúster](../../failover-clustering/create-failover-cluster.md#validate-the-configuration) antes de continuar con el paso siguiente.
+16. Ejecute las [pruebas de validación del clúster](../../failover-clustering/create-failover-cluster.md#validate-the-configuration) antes de continuar con el siguiente paso.
 
-17. Inicie Windows PowerShell y use el cmdlet [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en un modo de solo requisitos para una prueba rápida, así como un modo de evaluación del rendimiento de larga ejecución.
+17. Inicie Windows PowerShell y use el cmdlet [Test-SRTopology](https://docs.microsoft.com/powershell/module/storagereplica/test-srtopology?view=win10-ps) para determinar si satisface todos los requisitos de la Réplica de almacenamiento. Puede usar el cmdlet en un modo de solo requisitos para una prueba rápida, así como un modo de evaluación del rendimiento de ejecución prolongada.
 
-18. Configurar réplica de almacenamiento de clúster a clúster.
+18. Configure la réplica de almacenamiento de clúster a clúster.
    
-    Conceder acceso de un clúster a otro clúster en ambas direcciones:
+    Conceder acceso de un clúster a otro en ambas direcciones:
 
     En nuestro ejemplo:
 
     ```PowerShell
       Grant-SRAccess -ComputerName az2az1 -Cluster SRAZC2
     ```
-    Si usa Windows Server 2016, a continuación, también se ejecute este comando:
+    Si usa Windows Server 2016, ejecute también este comando:
 
     ```PowerShell
       Grant-SRAccess -ComputerName az2az3 -Cluster SRAZC1
     ```   
    
-19. Crear SRPartnership para los clústeres:</ol>
+19. Cree SRPartnership para los clústeres:</ol>
 
-    - Para clúster **SRAZC1**.
+    - Para el clúster **SRAZC1**.
     - Ubicación del volumen:-c:\ClusterStorage\DataDisk1
     - Ubicación del registro:-g:
     - Para clúster **SRAZC2**

@@ -1,6 +1,6 @@
 ---
 title: Uso de PowerShell de la extensión
-description: Uso de PowerShell en el SDK de Windows Admin Center (proyecto Honolulu) de la extensión
+description: Uso de PowerShell en la extensión SDK del centro de administración de Windows (proyecto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
@@ -8,32 +8,32 @@ ms.author: niwashbu
 ms.date: 05/09/2019
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 7375732fd464519cd1533043d271065e488fd46a
-ms.sourcegitcommit: 7cb939320fa2613b7582163a19727d7b77debe4b
+ms.openlocfilehash: c30f8a9b856db8250a16210931e6f8dd73c07aa7
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65621357"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869607"
 ---
 # <a name="using-powershell-in-your-extension"></a>Uso de PowerShell de la extensión #
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Vamos allá más detallada en el SDK de extensiones de Windows Admin Center: vamos a hablar acerca de cómo agregar comandos de PowerShell para la extensión.
+Vamos a profundizar en el SDK de extensiones del centro de administración de Windows. vamos a hablar sobre cómo agregar comandos de PowerShell a la extensión.
 
 ## <a name="powershell-in-typescript"></a>PowerShell en TypeScript ##
 
-El proceso de compilación gulp tiene un paso de generar que va a realizar cualquier ```{!ScriptName}.ps1``` que se coloca en el ```\src\resources\scripts``` carpeta y compilarlos en la ```powershell-scripts``` clase bajo el ```\src\generated``` carpeta.
+El proceso de compilación de Gulp tiene un paso de generación que ```{!ScriptName}.ps1``` tomará cualquier que se ```\src\resources\scripts``` Coloque en la carpeta y los ```powershell-scripts``` compilará ```\src\generated``` en la clase bajo la carpeta.
 
 >[!NOTE] 
-> No se actualiza manualmente el ```powershell-scripts.ts``` ni ```strings.ts``` archivos. Se sobrescribirá cualquier cambio realizado en la siguiente generar.
+> No actualice ```powershell-scripts.ts``` manualmente ```strings.ts``` ni los archivos. Cualquier cambio que realice se sobrescribirá en la siguiente generación.
 
-## <a name="running-a-powershell-script"></a>Ejecutar un Script de PowerShell ##
-Los scripts que desea ejecutar en un nodo pueden colocarse en ```\src\resources\scripts\{!ScriptName}.ps1```. 
+## <a name="running-a-powershell-script"></a>Ejecución de un script de PowerShell ##
+Cualquier script que desee ejecutar en un nodo se puede colocar en ```\src\resources\scripts\{!ScriptName}.ps1```. 
 >[!IMPORTANT] 
-> Los cambios que realice en un ```{!ScriptName}.ps1``` no se reflejarán en el proyecto hasta el archivo ```gulp generate``` se ha ejecutado.
+> Los cambios efectuados en ```{!ScriptName}.ps1``` un archivo no se reflejarán en el proyecto ```gulp generate``` hasta que se haya ejecutado.
 
-La API funciona creando primero una sesión de PowerShell en los nodos de destino, crear el script de PowerShell con los parámetros que deben pasarse en y, a continuación, ejecutar el script en las sesiones que se crearon.
+La API funciona creando primero una sesión de PowerShell en los nodos de destino, creando el script de PowerShell con los parámetros que se deben pasar y ejecutando el script en las sesiones que se crearon.
 
 Por ejemplo, tenemos este script ```\src\resources\scripts\Get-NodeName.ps1```:
 ``` ps1
@@ -49,11 +49,11 @@ Se creará una sesión de PowerShell para el nodo de destino:
 ``` ts
 const session = this.appContextService.powerShell.createSession('{!TargetNode}'); 
 ```
-A continuación, se creará el script de PowerShell con un parámetro de entrada:
+A continuación, crearemos el script de PowerShell con un parámetro de entrada:
 ```ts
 const script = PowerShell.createScript(PowerShellScripts.Get_NodeName, {stringFormat: 'The name of the node is {0}!'});
 ```
-Por último, necesitamos ejecutar ese script en la sesión que se creó:
+Por último, necesitamos ejecutar ese script en la sesión que hemos creado:
 ``` ts
   public ngOnInit(): void {
     this.session = this.appContextService.powerShell.createAutomaticSession('{!TargetNode}');
@@ -79,7 +79,7 @@ Por último, necesitamos ejecutar ese script en la sesión que se creó:
   }
 
 ```
-Ahora necesitamos suscribirse a la función observable que acabamos de crear. Coloque la donde debe llamar a la función para ejecutar el script de PowerShell:
+Ahora se debe suscribir a la función observable que acabamos de crear. Colóquelo en la ubicación en la que necesita llamar a la función para ejecutar el script de PowerShell:
 ```ts
 this.getNodeName().subscribe(
      response => {
@@ -87,38 +87,38 @@ this.getNodeName().subscribe(
      }
 );
 ```
-Proporcionando el nombre del nodo al método createSession una nueva sesión de PowerShell se crea, utiliza y, a continuación, se destruye inmediatamente tras la finalización de la llamada de PowerShell. 
+Al proporcionar el nombre de nodo al método createSession, se crea una nueva sesión de PowerShell, se usa y, a continuación, se destruye inmediatamente después de la finalización de la llamada de PowerShell. 
 
-### <a name="key-options"></a>Opciones de clave ###
-Algunas opciones están disponibles cuando se llama a la API de PowerShell. Cada vez que se crea una sesión se puede crear con o sin una clave. 
+### <a name="key-options"></a>Opciones clave ###
+Hay algunas opciones disponibles cuando se llama a la API de PowerShell. Cada vez que se crea una sesión, se puede crear con o sin una clave. 
 
-**Clave:** Esto crea una sesión con clave que se puede buscar y reutilizar, incluso en componentes (es decir, que Component1 puede crear una sesión con la clave "SME-ROCKS" y Component2 puede usar esa misma sesión). Si se proporciona una clave, la sesión que se crea debe eliminarse de Dispose() que realiza la llamada como se hizo en el ejemplo anterior. No se debe mantener una sesión sin desecharlos de más de 5 minutos. 
+**Clave** Esto crea una sesión con clave que se puede buscar y reutilizar, incluso entre los componentes (lo que significa que Component1 puede crear una sesión con la clave "SME-ROCKs" y Component2 puede usar esa misma sesión). Si se proporciona una clave, la sesión creada debe desecharse llamando a Dispose () como se hizo en el ejemplo anterior. No se debe mantener una sesión sin que se elimine durante más de 5 minutos. 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNode}', '{!Key}');
 ```
 
-**Sin llaves:** Automáticamente se creará una clave para la sesión. Esta sesión con se elimine automáticamente después de 3 minutos. El uso sin llaves, permite la extensión reciclar el uso de cualquier espacio de ejecución que ya está disponible en el momento de creación de una sesión. Si no hay espacio de ejecución está disponible en el que se creará una nueva. Esta funcionalidad es buena para llamadas de uso único, pero el uso repetido puede afectar al rendimiento. Una sesión tarda aproximadamente 1 segundo para crear, reciclar continuamente por lo que las sesiones puede provocar una ralentización.
+**Llave** Se creará automáticamente una clave para la sesión. Esta sesión con se eliminará automáticamente después de 3 minutos. El uso de la entrada sin llave permite que la extensión recicle el uso de cualquier espacio de ejecución que ya esté disponible en el momento de la creación de una sesión. Si no hay ningún espacio de ejecución disponible, se creará uno nuevo. Esta funcionalidad es adecuada para las llamadas de un solo uso, pero el uso repetido puede afectar al rendimiento. Una sesión tarda aproximadamente un segundo en crearse, de modo que las sesiones que se reciclan continuamente pueden provocar ralentizaciones.
 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNodeName}');
 ```
-o bien 
+o 
 ``` ts 
 const session = this.appContextService.powerShell.createAutomaticSession('{!TargetNodeName}');
 ```
-En la mayoría de los casos, crear una sesión con clave en el ```ngOnInit()``` método y, a continuación, elimínela en ```ngOnDestroy()```. Siga este patrón cuando hay varios scripts de PowerShell en un componente, pero la sesión subyacente que es no se comparten entre los componentes.
-Para obtener mejores resultados, asegúrese de crear la sesión se administra dentro de los componentes en lugar de servicios: Esto permite garantizar esa duración y limpieza puede administrarse correctamente.
+En la mayoría de los casos, cree una sesión ```ngOnInit()``` con clave en el método y, a ```ngOnDestroy()```continuación, deseche en. Siga este patrón cuando haya varios scripts de PowerShell en un componente, pero la sesión subyacente no se comparta entre los componentes.
+Para obtener los mejores resultados, asegúrese de que la creación de la sesión se administra dentro de componentes en lugar de servicios. esto ayuda a garantizar que la duración y la limpieza se pueden administrar correctamente.
 
-Para obtener mejores resultados, asegúrese de crear la sesión se administra dentro de los componentes en lugar de servicios: Esto permite garantizar esa duración y limpieza puede administrarse correctamente.
+Para obtener los mejores resultados, asegúrese de que la creación de la sesión se administra dentro de componentes en lugar de servicios. esto ayuda a garantizar que la duración y la limpieza se pueden administrar correctamente.
 
-### <a name="powershell-stream"></a>Stream de PowerShell ###
-Si tiene una larga secuencia de comandos y los datos se genera de forma progresiva, que una secuencia de PowerShell, podrá procesar los datos sin tener que esperar a que finalice la secuencia de comandos. Se llamará el observable next() en cuanto se reciben datos.
+### <a name="powershell-stream"></a>Secuencia de PowerShell ###
+Si tiene un script de ejecución prolongada y los datos se generan de forma progresiva, un flujo de PowerShell le permitirá procesar los datos sin tener que esperar a que finalice el script. Se llamará al siguiente objeto observable () en cuanto se reciban los datos.
 ```ts
 this.appContextService.powerShellStream.run(session, script);
 ```
 
-### <a name="long-running-scripts"></a>Scripts de ejecución prolongada ###
-Si tiene una larga secuencia de comandos que le gustaría ejecutar en segundo plano, se puede enviar un elemento de trabajo. Se realizará un seguimiento del estado de la secuencia de comandos de la puerta de enlace y el estado de las actualizaciones se pueden enviar a una notificación. 
+### <a name="long-running-scripts"></a>Scripts de larga ejecución ###
+Si tiene un script de larga ejecución que le gustaría ejecutar en segundo plano, se puede enviar un elemento de trabajo. La puerta de enlace realizará el seguimiento del estado del script y las actualizaciones del estado se pueden enviar a una notificación. 
 ```ts
 const workItem: WorkItemSubmitRequest = {
     typeId: 'Long Running Script',
@@ -151,23 +151,23 @@ return this.appContextService.workItem.submit('{!TargetNode}', workItem);
 ```
 
 >[!NOTE] 
-> Para que se mostrará el progreso, Write-Progress deben incluirse en la secuencia de comandos que se ha escrito. Por ejemplo:
+> Para que se muestre el progreso, la escritura se debe incluir en el script que ha escrito. Por ejemplo:
 > ``` ps1
->  Write-Progress -Activity ‘The script is almost done!’ -percentComplete 95
+>  Write-Progress -Activity ‘The script is almost done!' -percentComplete 95
 >```
 
 #### <a name="workitem-options"></a>Opciones de elemento de trabajo ####
 
-| function | Explicación |
+| función | Explicación |
 | ----- | ----------- |
-| submit() | Envía el elemento de trabajo 
-| submitAndWait() | Enviar el elemento de trabajo y esperar la finalización de su ejecución.
-| wait() | Espere a que un trabajo existente elemento completar
-| Query() | Consulta de un elemento de trabajo existente por Id.
-| find() | Busque y existente de elemento de trabajo con TargetNodeName, ModuleName o typeId.
+| enviar () | Envía el elemento de trabajo. 
+| submitAndWait() | Enviar el elemento de trabajo y esperar a que se complete la ejecución
+| Wait () | Esperar a que se complete el elemento de trabajo existente
+| consulta () | Consulta de un elemento de trabajo existente por identificador
+| buscar () | Busque el elemento de trabajo existente por TargetNodeName, ModuleName o typeId.
 
-### <a name="powershell-batch-apis"></a>API de Batch PowerShell ###
-Si tiene que ejecutar la misma secuencia de comandos en varios nodos, puede usar una sesión de PowerShell de batch. Por ejemplo:
+### <a name="powershell-batch-apis"></a>API de batch de PowerShell ###
+Si necesita ejecutar el mismo script en varios nodos, se puede usar una sesión de PowerShell de batch. Por ejemplo:
 ```ts
 const batchSession = this.appContextService.powerShell.createBatchSession(
     ['{!TargetNode1}', '{!TargetNode2}', sessionKey);
@@ -188,8 +188,8 @@ const batchSession = this.appContextService.powerShell.createBatchSession(
 
 
 #### <a name="powershellbatch-options"></a>Opciones de PowerShellBatch ####
-| Opción | Explicación |
+| Desea | Explicación |
 | ----- | ----------- |
-| runSingleCommand | Ejecutar un comando único en todos los nodos de la matriz 
-| ejecutar | Ejecute el comando correspondiente en el nodo emparejado
-| Cancelar | Cancelar el comando en todos los nodos de la matriz
+| runSingleCommand | Ejecutar un solo comando en todos los nodos de la matriz 
+| Realizar | Ejecutar comando correspondiente en el nodo emparejado
+| Cancelación | Cancelar el comando en todos los nodos de la matriz

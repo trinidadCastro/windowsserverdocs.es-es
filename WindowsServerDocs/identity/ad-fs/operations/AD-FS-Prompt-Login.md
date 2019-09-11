@@ -9,12 +9,12 @@ ms.topic: article
 ms.custom: it-pro
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: f4f284d4d970af8f8a672bd88be53f65ba70893f
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: cc116701f9d03e6ca2e6d086ac7a93b0df595366
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544637"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70866179"
 ---
 # <a name="active-directory-federation-services-promptlogin-parameter-support"></a>Servicios de federación de Active Directory (AD FS) prompt = compatibilidad con parámetros de inicio de sesión
 
@@ -75,4 +75,4 @@ A continuación se muestran los valores `PromptLoginBehavior` posibles del pará
 
 - **TranslateToFreshPasswordAuth**: indica el comportamiento predeterminado Azure ad de traducir `prompt=login` a `wauth=http://schemas.microsoft.com/ws/2008/06/identity/authenticationmethod/password` y `wfresh=0`.
 - **NativeSupport**: significa que el `prompt=login` parámetro se enviará tal cual para AD FS. Este es el valor recomendado si AD FS está en Windows Server 2012 R2 con el paquete acumulativo de actualizaciones del 2016 de julio o superior.
-- Deshabilitado: significa `wfresh=0` que solo se envía a AD FS.
+- **Deshabilitado**: significa `wfresh=0` que solo se envía a AD FS.

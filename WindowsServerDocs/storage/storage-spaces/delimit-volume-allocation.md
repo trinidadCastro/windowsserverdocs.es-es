@@ -1,87 +1,87 @@
 ---
-title: Delimitar la asignación de volúmenes en espacios de almacenamiento directo
+title: Delimite la asignación de volúmenes en Espacios de almacenamiento directo
 ms.author: cosmosdarwin
 ms.manager: eldenc
 ms.technology: storage-spaces
 ms.topic: article
 author: cosmosdarwin
 ms.date: 03/29/2018
-ms.openlocfilehash: c93cbf4ba418f6702cf8747508605952d993508d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: faf9547833764e9075e86515d1f486a5a3f61ff8
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889056"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70872081"
 ---
-# <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimitar la asignación de volúmenes en espacios de almacenamiento directo
-> Se aplica a: Windows Server Insider Preview, compilación 17093 y versiones posterior
+# <a name="delimit-the-allocation-of-volumes-in-storage-spaces-direct"></a>Delimite la asignación de volúmenes en Espacios de almacenamiento directo
+> Se aplica a: Windows Server 2019
 
-Windows Server Insider Preview incluye una opción para delimitar manualmente la asignación de volúmenes en espacios de almacenamiento directo. Si lo hace por lo que puede aumentar considerablemente la tolerancia a errores en determinadas condiciones, pero impone algunas consideraciones sobre la administración se ha agregado y la complejidad. En este tema se explica cómo funciona y ofrece ejemplos de PowerShell.
+Windows Server 2019 presenta una opción para delimitar manualmente la asignación de volúmenes en Espacios de almacenamiento directo. Esto puede aumentar significativamente la tolerancia a errores en determinadas condiciones, pero impone algunas consideraciones y complejidad de administración agregadas. En este tema se explica cómo funciona y se proporcionan ejemplos de PowerShell.
 
    > [!IMPORTANT]
-   > Esta característica es nueva en Windows Server Insider Preview, compilación 17093 y versiones posterior. No está disponible en Windows Server 2016. Le invitamos a unirse a los profesionales de TI la [Windows Server Insider programa](https://aka.ms/serverinsider) para proporcionarnos sus comentarios sobre lo que podemos hacer para que Windows Server funcione mejor para su organización.
+   > Esta característica es nueva en Windows Server 2019. No está disponible en Windows Server 2016. 
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-### <a name="green-checkmark-iconmediadelimit-volume-allocationsupportedpng-consider-using-this-option-if"></a>![Icono de marca de verificación verde.](media/delimit-volume-allocation/supported.png) Considere el uso de esta opción si:
+### <a name="green-checkmark-iconmediadelimit-volume-allocationsupportedpng-consider-using-this-option-if"></a>![Icono de marca de verificación verde.](media/delimit-volume-allocation/supported.png) Considere la posibilidad de usar esta opción si:
 
-- El clúster tiene seis o más servidores; y
-- El clúster solo usa [triple](storage-spaces-fault-tolerance.md#mirroring) resistencia
+- El clúster tiene seis o más servidores; etc
+- El clúster solo usa resistencia [de reflejo triple](storage-spaces-fault-tolerance.md#mirroring)
 
-### <a name="red-x-iconmediadelimit-volume-allocationunsupportedpng-do-not-use-this-option-if"></a>![Icono X rojo.](media/delimit-volume-allocation/unsupported.png) No use esta opción si:
+### <a name="red-x-iconmediadelimit-volume-allocationunsupportedpng-do-not-use-this-option-if"></a>![Icono X de color rojo.](media/delimit-volume-allocation/unsupported.png) No use esta opción si:
 
-- El clúster tiene menos de seis servidores; o
-- El clúster usa [paridad](storage-spaces-fault-tolerance.md#parity) o [acelerada reflejado paridad](storage-spaces-fault-tolerance.md#mirror-accelerated-parity) resistencia
+- El clúster tiene menos de seis servidores; de
+- El [clúster utiliza la](storage-spaces-fault-tolerance.md#parity) resistencia de paridad de paridad o [de reflejos](storage-spaces-fault-tolerance.md#mirror-accelerated-parity)
 
 ## <a name="understand"></a>Comprender
 
 ### <a name="review-regular-allocation"></a>Revisión: asignación normal
 
-Con reflejo triple regular, el volumen se divide en muchos pequeños "bloques" que se copian tres veces y se distribuyen uniformemente en cada unidad en todos los servidores del clúster. Para obtener más información, lea [esta entrada de blog de profundización](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/).
+Con la creación de reflejos tridireccionales normal, el volumen se divide en muchos "bloques" pequeños que se copian tres veces y se distribuyen uniformemente en todas las unidades de cada servidor del clúster. Para obtener más información, lea [este blog en profundidad](https://blogs.technet.microsoft.com/filecab/2016/11/21/deep-dive-pool-in-spaces-direct/).
 
-![Diagrama que muestra el volumen que se divide en tres pilas de bloques y distribuyen uniformemente entre todos los servidores.](media/delimit-volume-allocation/regular-allocation.png)
+![Diagrama que muestra el volumen que se divide en tres pilas de bloques y se distribuye uniformemente en cada servidor.](media/delimit-volume-allocation/regular-allocation.png)
 
-Esta asignación predeterminada maximiza paralelo lee y escribe, dando lugar a un mejor rendimiento y es atractiva en su simplicidad: cada servidor está ocupado por igual, cada unidad es igualmente completa y todos los volúmenes permanecen en línea o se desconectan entre sí. Se garantiza que todos los volúmenes para sobrevivir a un máximo de dos errores simultáneos, como [estos ejemplos](storage-spaces-fault-tolerance.md#examples) ilustrar.
+Esta asignación predeterminada maximiza las lecturas y escrituras en paralelo, lo que conduce a un mejor rendimiento y es atractivo en su simplicidad: cada servidor está igualmente ocupado, cada unidad está igualmente llena y todos los volúmenes permanecen en línea o sin conexión juntos. Se garantiza que todos los volúmenes sobreviven a dos errores simultáneos, como se muestra en [estos ejemplos](storage-spaces-fault-tolerance.md#examples) .
 
-Sin embargo, con esta asignación, los volúmenes no pueden sobrevivir tres errores simultáneos. Si tres servidores, se producen errores al mismo tiempo, o si las unidades en tres servidores producirá un error al mismo tiempo, los volúmenes inaccesible porque al menos algunos bloques (con una probabilidad muy alta) asignados al exactamente tres unidades o los servidores que no se pudo.
+Sin embargo, con esta asignación, los volúmenes no pueden sobrevivir a tres errores simultáneos. Si se produce un error en tres servidores a la vez, o si las unidades de tres servidores producen errores al mismo tiempo, los volúmenes se vuelven inaccesibles porque al menos algunos bloques eran (con una probabilidad muy alta) asignados a las tres unidades o servidores exactos con errores.
 
-En el ejemplo siguiente, los servidores de 1, 3 y 5 producirá un error al mismo tiempo. Aunque muchos bloques tienen sobrevivir copias, otros no:
+En el ejemplo siguiente, los servidores 1, 3 y 5 generan un error al mismo tiempo. Aunque muchos bloques tienen copias supervivientes, algunos no:
 
-![Diagrama que muestra tres de seis servidores resaltados en rojo y el volumen global está en rojo.](media/delimit-volume-allocation/regular-does-not-survive.png)
+![Diagrama que muestra tres de los seis servidores resaltados en rojo y el volumen total es rojo.](media/delimit-volume-allocation/regular-does-not-survive.png)
 
 El volumen se queda sin conexión y deja de estar accesible hasta que se recuperan los servidores.
 
-### <a name="new-delimited-allocation"></a>Novedad: delimitado por asignación
+### <a name="new-delimited-allocation"></a>Nuevo: asignación delimitada
 
-Con la asignación delimitada, especifique un subconjunto de servidores para usar (mínimo tres para reflejo triple). El volumen se divide en bloques que se copian tres veces, como antes, pero en lugar de asignar a través de todos los servidores, **los bloques se asignan sólo al subconjunto de servidores que especifique**.
+Con la asignación delimitada, se especifica un subconjunto de servidores que se usarán (mínimo tres para reflejo triple). El volumen se divide en bloques que se copian tres veces, como antes, pero en lugar de asignarse a todos los servidores, **los bloques solo se asignan al subconjunto de servidores que especifique**.
 
-![Diagrama que muestra el volumen que se divide en tres pilas de bloques y distribuido solo a tres de seis servidores.](media/delimit-volume-allocation/delimited-allocation.png)
+![Diagrama que muestra el volumen que se divide en tres pilas de bloques y se distribuye solo a tres de seis servidores.](media/delimit-volume-allocation/delimited-allocation.png)
 
 #### <a name="advantages"></a>Ventajas
 
-Con esta asignación, el volumen es probable que sobreviven a tres errores simultáneos: de hecho, la probabilidad de supervivencia aumenta de 0% (con asignación normal) al 95% (con asignación delimitado) en este caso. Forma intuitiva, esto es porque no depende de los servidores de 4, 5 o 6 por lo que no se ve afectada por los errores.
+Con esta asignación, es probable que el volumen sobreviva a tres errores simultáneos: de hecho, su probabilidad de supervivencia aumenta desde 0% (con asignación normal) hasta 95% (con asignación delimitada) en este caso. De forma intuitiva, esto se debe a que no depende de los servidores 4, 5 o 6, por lo que no se ve afectado por los errores.
 
-En el ejemplo anterior, los servidores de 1, 3 y 5 producirá un error al mismo tiempo. Dado que delimitado asignación garantiza que el servidor 2 contiene una copia de cada cemento, cada sección tiene una copia que permanece y el volumen permanece en línea y accesibles:
+En el ejemplo anterior, los servidores 1, 3 y 5 generan un error al mismo tiempo. Dado que la asignación delimitada garantiza que el servidor 2 contiene una copia de cada losa, cada losa tiene una copia superviviente y el volumen permanece en línea y accesible:
 
-![Diagrama que muestra tres de seis servidores resaltados en rojo, sin embargo, el volumen global es verde.](media/delimit-volume-allocation/delimited-does-survive.png)
+![Diagrama que muestra tres de los seis servidores resaltados en rojo, pero el volumen total es verde.](media/delimit-volume-allocation/delimited-does-survive.png)
 
-Probabilidad de supervivencia depende del número de servidores y otros factores – vea [Analysis](#analysis) para obtener más información.
+La probabilidad de supervivencia depende del número de servidores y otros factores; consulte [análisis](#analysis) para obtener más información.
 
 #### <a name="disadvantages"></a>Desventajas
 
-Asignación delimitado impone algunas consideraciones sobre la administración se ha agregado y la complejidad:
+La asignación delimitada impone algunas consideraciones y complejidad de administración agregadas:
 
-1. El administrador es responsable de delimitación de la asignación de cada volumen para equilibrar el uso del almacenamiento en servidores y mantener la alta probabilidad de supervivencia, como se describe en el [procedimientos recomendados](#best-practices) sección.
+1. El administrador es responsable de delimitar la asignación de cada volumen para equilibrar el uso de almacenamiento en los servidores y mantener una probabilidad alta de supervivencia, tal como se describe en la sección de [procedimientos](#best-practices) recomendados.
 
-2. Con la asignación delimitada, reservar el equivalente de **unidad de capacidad de una por servidor (con ningún máximo)**. Esto es más que [publicado la recomendación](plan-volumes.md#choosing-the-size-of-volumes) para la asignación normal, que usa al máximo la capacidad de cuatro unidades en total.
+2. Con la asignación delimitada, Reserve el equivalente de **una unidad de capacidad por servidor (sin máximo)** . Esto es algo más que la [recomendación publicada](plan-volumes.md#choosing-the-size-of-volumes) para la asignación normal, que se llegar al máximo en un total de cuatro unidades de capacidad.
 
-3. Si un servidor se produce un error y debe reemplazarse, como se describe en [quitar un servidor y sus unidades](remove-servers.md#remove-a-server-and-its-drives), el administrador es responsable de actualizar la delimitación de los volúmenes afectados al agregar el nuevo servidor y quitar el error: ejemplo a continuación.
+3. Si se produce un error en un servidor y es necesario reemplazarlo, tal y como se describe en [quitar un servidor y sus unidades](remove-servers.md#remove-a-server-and-its-drives), el administrador es responsable de actualizar la delimitación de los volúmenes afectados agregando el nuevo servidor y quitando el error uno de los siguientes: ejemplo.
 
 ## <a name="usage-in-powershell"></a>Uso en PowerShell
 
-Puede usar el `New-Volume` para crear volúmenes en espacios de almacenamiento directo.
+Puede usar el `New-Volume` cmdlet para crear volúmenes en espacios de almacenamiento directo.
 
-Por ejemplo, para crear un volumen normal de triple:
+Por ejemplo, para crear un volumen de reflejo triple normal:
 
 ```PowerShell
 New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
@@ -89,26 +89,26 @@ New-Volume -FriendlyName "MyRegularVolume" -Size 100GB
 
 ### <a name="create-a-volume-and-delimit-its-allocation"></a>Crear un volumen y delimitar su asignación
 
-Para crear un volumen reflejado de tres vías y delimitar la asignación:
+Para crear un volumen de reflejo triple y delimitar su asignación:
 
-1. Asignar a los servidores del clúster a la variable `$Servers`:
+1. En primer lugar, asigne los servidores del clúster a `$Servers`la variable:
 
     ```PowerShell
     $Servers = Get-StorageFaultDomain -Type StorageScaleUnit | Sort FriendlyName
     ```
 
    > [!TIP]
-   > Espacios de almacenamiento directo, el término 'Unidad de escalado de almacenamiento' hace referencia a todo el almacenamiento sin formato asociado a un servidor, incluidas unidades de conexión directa y conexión directa alojamientos externos con unidades. En este contexto, es igual que 'server'.
+   > En Espacios de almacenamiento directo, el término "unidad de escala de almacenamiento" hace referencia a todo el almacenamiento sin procesar conectado a un servidor, incluidas las unidades conectadas directamente y los alojamientos externos con conexión directa con las unidades. En este contexto, es lo mismo que ' Server '.
 
-2. Especificar qué servidores para usar con el nuevo `-StorageFaultDomainsToUse` parámetro y mediante la indización en `$Servers`. Por ejemplo, para delimitar la asignación a la primera, segunda y terceros servidores (índices 0, 1 y 2):
+2. Especifique los servidores que se van a usar `-StorageFaultDomainsToUse` con el nuevo parámetro e indexando en. `$Servers` Por ejemplo, para delimitar la asignación al primer, segundo y tercer servidor (índices 0, 1 y 2):
 
     ```PowerShell
     New-Volume -FriendlyName "MyVolume" -Size 100GB -StorageFaultDomainsToUse $Servers[0,1,2]
     ```
 
-### <a name="see-a-delimited-allocation"></a>Vea una asignación delimitada
+### <a name="see-a-delimited-allocation"></a>Ver una asignación delimitada
 
-Para ver cómo *MyVolume* está asignado, use el `Get-VirtualDiskFootprintBySSU.ps1` crear scripts de [apéndice](#appendix):
+Para ver cómo se asigna el *volumen* , use el `Get-VirtualDiskFootprintBySSU.ps1` script del [Apéndice](#appendix):
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
@@ -118,37 +118,37 @@ VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 S
 MyVolume                300 GB         100 GB  100 GB  100 GB  0       0       0      
 ```
 
-Tenga en cuenta que solo Servidor1, servidor2 y Server3 contiene bloques de *MyVolume*.
+Tenga en cuenta que solo server1, server2 y Server3 contienen bloques de mi *volumen*.
 
 ### <a name="change-a-delimited-allocation"></a>Cambiar una asignación delimitada
 
-Use la nueva `Add-StorageFaultDomain` y `Remove-StorageFaultDomain` para cambiar cómo se delimita la asignación.
+Use los cmdlets `Remove-StorageFaultDomain` New `Add-StorageFaultDomain` y para cambiar cómo se delimita la asignación.
 
-Por ejemplo, para mover *MyVolume* un servidor de la tecla TAB:
+Por ejemplo, para subir un *volumen* en un servidor:
 
-1. Especificar que el servidor cuarto **puede** almacenar bloques de *MyVolume*:
+1. Especifica que el cuarto servidor **puede** almacenar los bloques de mi *volumen*:
 
     ```PowerShell
     Get-VirtualDisk MyVolume | Add-StorageFaultDomain -StorageFaultDomains $Servers[3]
     ```
 
-2. Especificar que el primer servidor **no** almacenar bloques de *MyVolume*:
+2. Especifica que el primer servidor **no puede** almacenar los bloques de mi *volumen*:
 
     ```PowerShell
     Get-VirtualDisk MyVolume | Remove-StorageFaultDomain -StorageFaultDomains $Servers[0]
     ```
 
-3. Volver a equilibrar el bloque de almacenamiento para que el cambio surta efecto:
+3. Reequilibrar el grupo de almacenamiento para que el cambio surta efecto:
 
     ```PowerShell
     Get-StoragePool S2D* | Optimize-StoragePool
     ```
 
-![Diagrama que muestra que los bloques de migración en masa de los servidores de 1, 2 y 3 servidores 2, 3 y 4.](media/delimit-volume-allocation/move.gif)
+![Diagrama que muestra los bloques migre en masa desde los servidores 1, 2 y 3 a los servidores 2, 3 y 4.](media/delimit-volume-allocation/move.gif)
 
-Puede supervisar el progreso de la reequilibrio con `Get-StorageJob`.
+Puede supervisar el progreso del reequilibrio con `Get-StorageJob`.
 
-Una vez completado, compruebe que *MyVolume* mediante la ejecución se ha movido `Get-VirtualDiskFootprintBySSU.ps1` nuevo.
+Una vez que haya finalizado, Compruebe que se ha deshecho `Get-VirtualDiskFootprintBySSU.ps1` la ejecución de mi volumen.
 
 ```PowerShell
 PS C:\> .\Get-VirtualDiskFootprintBySSU.ps1
@@ -158,25 +158,25 @@ VirtualDiskFriendlyName TotalFootprint Server1 Server2 Server3 Server4 Server5 S
 MyVolume                300 GB         0       100 GB  100 GB  100 GB  0       0      
 ```
 
-Tenga en cuenta que no contienen Server1 desbastes planos de *MyVolume* ya: en su lugar, Server04.
+Tenga en cuenta que server1 ya no contiene bloques de mi *volumen* ; en su lugar, Server04 sí.
 
-## <a name="best-practices"></a>Procedimiento recomendado
+## <a name="best-practices"></a>Procedimientos recomendados
 
-Estos son los procedimientos recomendados para seguir al usar delimitados por la asignación de volúmenes:
+Estos son los procedimientos recomendados que se deben seguir al usar la asignación de volúmenes delimitados:
 
-### <a name="choose-three-servers"></a>Elija los tres servidores
+### <a name="choose-three-servers"></a>Elegir tres servidores
 
-Delimitar cada volumen triple para los tres servidores, no más.
+Delimite cada volumen de reflejo triple en tres servidores, no más.
 
 ### <a name="balance-storage"></a>Equilibrar el almacenamiento
 
-Equilibrar la cantidad de almacenamiento se asigna a cada servidor, teniendo en cuenta el tamaño de volumen.
+Equilibre la cantidad de almacenamiento que se asigna a cada servidor, teniendo en cuenta el tamaño del volumen.
 
-### <a name="every-delimited-allocation-unique"></a>Cada asignación delimitado único
+### <a name="every-delimited-allocation-unique"></a>Cada asignación delimitada es única
 
-Para maximizar la tolerancia a errores, asegúrese de asignación de cada volumen único, lo que significa no comparte *todas* sus servidores con otro volumen (cierta superposición es correcto). Con servidores de N, hay combinaciones únicas de "N Elija 3": aquí es lo que significa para algunos tamaños de clúster comunes:
+Para maximizar la tolerancia a errores, haga que la asignación de cada volumen sea única, lo que significa que no comparte *todos* sus servidores con otro volumen (la superposición es correcta). Con N servidores, hay "N elección 3" combinaciones únicas; esto es lo que significa para algunos tamaños de clúster comunes:
 
-| Número de servidores (N) | Número del único delimitado asignaciones (N Elija 3) |
+| Número de servidores (N) | Número de asignaciones delimitadas únicas (N seleccione 3) |
 |-----------------------|-----------------------------------------------------|
 | 6                     | 20                                                  |
 | 8                     | 56                                                  |
@@ -184,101 +184,101 @@ Para maximizar la tolerancia a errores, asegúrese de asignación de cada volume
 | 16                    | 560                                                 |
 
    > [!TIP]
-   > Tenga en cuenta esta revisión útil de [combinatorics y elija notación](https://betterexplained.com/articles/easy-permutations-and-combinations/).
+   > Tenga en cuenta esta revisión útil de [Combinatorics y elija notación](https://betterexplained.com/articles/easy-permutations-and-combinations/).
 
-Este es un ejemplo que maximiza la tolerancia a errores, cada volumen tiene una única asignación delimitada:
+Este es un ejemplo que maximiza la tolerancia a errores: cada volumen tiene una asignación delimitada única:
 
-![unique-allocation](media/delimit-volume-allocation/unique-allocation.png)
+![asignación única](media/delimit-volume-allocation/unique-allocation.png)
 
-Por el contrario, en el ejemplo siguiente, los tres primeros volúmenes usan la misma asignación delimitada (para servidores de 1, 2 y 3) y los últimos tres volúmenes usan la misma asignación delimitada (para servidores de 4, 5 y 6). Esto no maximizar la tolerancia a errores: si se producen errores en tres servidores, varios volúmenes se quedan sin conexión y dejan de estar accesibles a la vez.
+Por el contrario, en el ejemplo siguiente, los tres primeros volúmenes usan la misma asignación delimitada (a los servidores 1, 2 y 3) y los últimos tres volúmenes usan la misma asignación delimitada (a los servidores 4, 5 y 6). Esto no maximiza la tolerancia a errores: si se produce un error en tres servidores, varios volúmenes podrían desconectarse y dejar de estar accesible a la vez.
 
-![no único-asignación](media/delimit-volume-allocation/non-unique-allocation.png)
+![asignación no única](media/delimit-volume-allocation/non-unique-allocation.png)
 
-## <a name="analysis"></a>Análisis
+## <a name="analysis"></a>Analizar
 
-En esta sección se deriva la probabilidad matemática que un volumen permanece en línea y accesibles (o forma equivalente, la fracción esperada de almacenamiento general que permanece en línea y accesibles) como una función del número de errores y el tamaño del clúster.
+En esta sección se deriva la probabilidad matemática de que un volumen permanezca en línea y accesible (o equivalente, la fracción esperada de almacenamiento general que permanece en línea y accesible) como función del número de errores y del tamaño del clúster.
 
    > [!NOTE]
-   > Esta sección es opcional de lectura. Si está ansioso por ver las matemáticas, siga leyendo. Pero si no, no se preocupe: [Uso de PowerShell](#usage-in-powershell) y [procedimientos recomendados](#best-practices) es todo lo que necesita para implementar la asignación delimitado correctamente.
+   > Esta sección es de lectura opcional. Si le interesa ver las matemáticas, siga leyendo. Pero si no es así, no se preocupe: El [uso de PowerShell](#usage-in-powershell) y los [procedimientos recomendados](#best-practices) es todo lo que necesita para implementar correctamente la asignación delimitada.
 
-### <a name="up-to-two-failures-is-always-okay"></a>Hasta dos errores siempre es correcto
+### <a name="up-to-two-failures-is-always-okay"></a>Un máximo de dos errores siempre es correcto.
 
-Todos los volúmenes reflejados tridireccionales pueden sobrevivir a fallos de hasta dos al mismo tiempo, como [estos ejemplos](storage-spaces-fault-tolerance.md#examples) ilustrar, independientemente de su asignación. Si se producirá un error en dos unidades, producirá un error de dos servidores o uno de cada, cada volumen triple permanece en línea y accesibles, incluso con la asignación normal.
+Cada volumen de reflejo triple puede sobrevivir a dos errores al mismo tiempo, como muestran [estos ejemplos](storage-spaces-fault-tolerance.md#examples) , independientemente de su asignación. Si se produce un error en dos unidades, o se produce un error en dos servidores, o uno de cada, cada volumen de reflejo triple permanece en línea y accesible, incluso con la asignación normal.
 
-### <a name="more-than-half-the-cluster-failing-is-never-okay"></a>Error de más de la mitad del clúster nunca es correcto
+### <a name="more-than-half-the-cluster-failing-is-never-okay"></a>Más de la mitad del error del clúster nunca está bien
 
-Por el contrario, en el caso extremo que más de la mitad de los servidores o las unidades en el clúster al mismo tiempo, no [se perdió el quórum](understand-quorum.md) y todos los volúmenes reflejados tridireccionales se queda sin conexión y deja de estar accesible, independientemente de su asignación.
+Por el contrario, en el caso extremo en el que se produce un error en una vez más de la mitad de servidores o unidades del clúster, el [cuórum se pierde](understand-quorum.md) y cada volumen de reflejo triple se queda sin conexión y deja de estar accesible, independientemente de su asignación.
 
-### <a name="what-about-in-between"></a>¿Qué sucede entre?
+### <a name="what-about-in-between"></a>¿Qué ocurre en entre?
 
-Si se producen errores de tres o más a la vez, pero al menos la mitad de los servidores y las unidades están aún activos, los volúmenes con asignación delimitado pueden permanecer en línea y accesibles, dependiendo de qué servidores tienen errores. Vamos a ejecutar los números para determinar las probabilidades precisas.
+Si se producen tres o más errores al mismo tiempo, pero al menos la mitad de los servidores y las unidades de discos siguen funcionando, los volúmenes con asignación delimitada pueden permanecer en línea y accesibles, en función de los servidores que tengan errores. Vamos a ejecutar los números para determinar las probabilidades precisas.
 
-Por motivos de simplicidad, suponen los volúmenes son por separado y distribuido de forma idéntica (IID) según las recomendaciones anteriores y ese combinaciones únicas suficientemente están disponibles para la asignación de cada volumen que sea único. La probabilidad de que sobrevive cualquier volumen determinado es también la fracción de almacenamiento general que sobrevive a linealidad de expectativa esperada. 
+Por motivos de simplicidad, supongamos que los volúmenes se distribuyen de manera independiente y idéntica (IID) según las prácticas recomendadas anteriores, y que hay suficientes combinaciones únicas disponibles para que la asignación de cada volumen sea única. La probabilidad de que un volumen determinado sobreviva sea también la fracción esperada de almacenamiento general que sobrevive por la linealidad de la expectativa. 
 
-Dado **N** servidores de los cuales **F** tienen errores, un volumen asignado a **3** de ellos se queda sin conexión if-y-solo-if todas **3** se encuentran entre la  **F** con errores. Hay **(N Elija F)** formas para **F** errores que se produzca, de los cuales **(F elegir 3)** como resultado el volumen está quedándose sin conexión y se está convirtiendo en inaccesible. La probabilidad se puede expresar como:
+Dados **N** servidores de los que **F** tienen errores, un volumen asignado a **3** de ellos se queda sin conexión solo si los **tres** están entre **f** con errores. Hay **(N Choose f)** para que se produzcan errores de **F** , de los cuales **(F Choose 3)** hacen que el volumen quede sin conexión y se vuelva inaccesible. La probabilidad se puede expresar de la siguiente manera:
 
-![P_offline = Fc3 / NcF](media/delimit-volume-allocation/probability-volume-offline.png)
+![P_offline = Fc3/NcF](media/delimit-volume-allocation/probability-volume-offline.png)
 
-En todos los demás casos, el volumen permanece en línea y accesibles:
+En todos los demás casos, el volumen permanece en línea y accesible:
 
-![P_online = 1 – (Fc3 / NcF)](media/delimit-volume-allocation/probability-volume-online.png)
+![P_online = 1 – (Fc3/NcF)](media/delimit-volume-allocation/probability-volume-online.png)
 
-Las siguientes tablas evalúan la probabilidad para algunos tamaños de clúster comunes y un máximo de 5 errores, revela que la asignación delimitado aumenta tolerancia a errores en comparación con una asignación normal en todos los casos considera.
+En las tablas siguientes se evalúa la probabilidad de que se produzcan algunos tamaños de clúster comunes y hasta cinco errores, lo que revela que la asignación delimitada aumenta la tolerancia a errores en comparación con la asignación normal en todos los casos considerados.
 
 ### <a name="with-6-servers"></a>Con 6 servidores
 
-| Asignación                           | Probabilidad de sobrevivir a 1 error | Probabilidad de superación de 2 errores | Probabilidad de superación de 3 errores | Probabilidad de superación de 4 errores | Probabilidad de superación de 5 errores |
+| Asignación                           | Probabilidad de supervivencia 1 error | Probabilidad de supervivencia de 2 errores | Probabilidad de supervivencia de 3 errores | Probabilidad de sobrevivir a 4 errores | Probabilidad de sobrevivir a 5 errores |
 |--------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| Regular, se reparten entre 6 todos los servidores | 100%                               | 100%                                | 0%                                  | 0%                                  | 0%                                  |
-| Delimitado en solo 3 servidores          | 100%                               | 100%                                | 95.0%                               | 0%                                  | 0%                                  |
+| Normal, repartidos por los 6 servidores | 100%                               | 100%                                | 0,1                                  | 0,1                                  | 0,1                                  |
+| Solo se delimitan a 3 servidores          | 100%                               | 100%                                | 95,0%                               | 0,1                                  | 0,1                                  |
 
    > [!NOTE]
-   > Después de más de 3 errores fuera de 6 total de servidores, el clúster pierde el quórum.
+   > Después de más de 3 errores de 6 servidores en total, el clúster pierde el cuórum.
 
 ### <a name="with-8-servers"></a>Con 8 servidores
 
-| Asignación                           | Probabilidad de sobrevivir a 1 error | Probabilidad de superación de 2 errores | Probabilidad de superación de 3 errores | Probabilidad de superación de 4 errores | Probabilidad de superación de 5 errores |
+| Asignación                           | Probabilidad de supervivencia 1 error | Probabilidad de supervivencia de 2 errores | Probabilidad de supervivencia de 3 errores | Probabilidad de sobrevivir a 4 errores | Probabilidad de sobrevivir a 5 errores |
 |--------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| Regular, se reparten entre todos los servidores de 8 | 100%                               | 100%                                | 0%                                  | 0%                                  | 0%                                  |
-| Delimitado en solo 3 servidores          | 100%                               | 100%                                | 98.2%                               | 94.3%                               | 0%                                  |
+| Normal, repartidos por los 8 servidores | 100%                               | 100%                                | 0,1                                  | 0,1                                  | 0,1                                  |
+| Solo se delimitan a 3 servidores          | 100%                               | 100%                                | 98,2%                               | 94.3%                               | 0,1                                  |
 
    > [!NOTE]
-   > Después de más de 4 errores fuera 8 servidores total, el clúster pierde el quórum.
+   > Después de más de 4 errores de 8 servidores en total, el clúster pierde el cuórum.
 
 ### <a name="with-12-servers"></a>Con 12 servidores
 
-| Asignación                            | Probabilidad de sobrevivir a 1 error | Probabilidad de superación de 2 errores | Probabilidad de superación de 3 errores | Probabilidad de superación de 4 errores | Probabilidad de superación de 5 errores |
+| Asignación                            | Probabilidad de supervivencia 1 error | Probabilidad de supervivencia de 2 errores | Probabilidad de supervivencia de 3 errores | Probabilidad de sobrevivir a 4 errores | Probabilidad de sobrevivir a 5 errores |
 |---------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| Regular, se reparten entre 12 todos los servidores | 100%                               | 100%                                | 0%                                  | 0%                                  | 0%                                  |
-| Delimitado en solo 3 servidores           | 100%                               | 100%                                | 99.5%                               | 99.2%                               | 98.7%                               |
+| Normal, repartidos por los 12 servidores | 100%                               | 100%                                | 0,1                                  | 0,1                                  | 0,1                                  |
+| Solo se delimitan a 3 servidores           | 100%                               | 100%                                | 99,5%                               | 99,2%                               | 98,7%                               |
 
 ### <a name="with-16-servers"></a>Con 16 servidores
 
-| Asignación                            | Probabilidad de sobrevivir a 1 error | Probabilidad de superación de 2 errores | Probabilidad de superación de 3 errores | Probabilidad de superación de 4 errores | Probabilidad de superación de 5 errores |
+| Asignación                            | Probabilidad de supervivencia 1 error | Probabilidad de supervivencia de 2 errores | Probabilidad de supervivencia de 3 errores | Probabilidad de sobrevivir a 4 errores | Probabilidad de sobrevivir a 5 errores |
 |---------------------------------------|------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| Regular, se reparten entre 16 todos los servidores | 100%                               | 100%                                | 0%                                  | 0%                                  | 0%                                  |
-| Delimitado en solo 3 servidores           | 100%                               | 100%                                | 99.8%                               | 99.8%                               | 99.8%                               |
+| Normal, repartidos por los 16 servidores | 100%                               | 100%                                | 0,1                                  | 0,1                                  | 0,1                                  |
+| Solo se delimitan a 3 servidores           | 100%                               | 100%                                | 99,8%                               | 99,8%                               | 99,8%                               |
 
-## <a name="frequently-asked-questions"></a>Preguntas frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
 
-### <a name="can-i-delimit-some-volumes-but-not-others"></a>¿Se puede delimitar algunos volúmenes pero no para otras?
+### <a name="can-i-delimit-some-volumes-but-not-others"></a>¿Puedo delimitar algunos volúmenes, pero no otros?
 
-Sí. Puede elegir por volumen si se deben delimitar la asignación.
+Sí. Puede elegir por volumen si quiere o no delimitar la asignación.
 
-### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>¿Asignación delimitado cambia cómo funciona la sustitución de la unidad?
+### <a name="does-delimited-allocation-change-how-drive-replacement-works"></a>¿Cambia la asignación delimitada el funcionamiento de la sustitución de la unidad?
 
-No, es el mismo que con la asignación normal.
+No, es lo mismo que con la asignación normal.
 
 ## <a name="see-also"></a>Vea también
 
-- [Información general de espacios directo de almacenamiento](storage-spaces-direct-overview.md)
-- [Tolerancia a errores en los espacios de almacenamiento directo](storage-spaces-fault-tolerance.md)
+- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Tolerancia a errores en Espacios de almacenamiento directo](storage-spaces-fault-tolerance.md)
 
-## <a name="appendix"></a>Apéndice
+## <a name="appendix"></a>Anexo
 
-Este script le permite ver cómo se asignan los volúmenes.
+Este script le ayuda a ver cómo se asignan los volúmenes.
 
-Para usarla como se describió anteriormente, copiar y pegar y guardar como `Get-VirtualDiskFootprintBySSU.ps1`.
+Para usarlo como se describió anteriormente, Copie/pegue y guarde `Get-VirtualDiskFootprintBySSU.ps1`como.
 
 ```PowerShell
 Function ConvertTo-PrettyCapacity {

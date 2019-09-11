@@ -8,12 +8,12 @@ ms.technology: storage
 ms.topic: article
 author: toklima
 ms.date: 04/18/2017
-ms.openlocfilehash: 7ee5c57839f32d71053e983fc14f76c481236779
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8283b87e9505b1d3f47ddc823016fbcc7c0c29e6
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884166"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70867048"
 ---
 # <a name="troubleshooting-drive-firmware-updates"></a>Solución de problemas de las actualizaciones de firmware de unidad
 
@@ -23,8 +23,8 @@ Windows 10, versión 1703 y versiones más recientes, y Windows Server (canal se
 
 Puedes encontrar más información acerca de esta característica aquí:
 
-- [Actualización de firmware de la unidad en Windows Server 2016](update-firmware.md)
-- [Actualizar el Firmware de unidad sin tiempo de inactividad en espacios de almacenamiento directo](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
+- [Actualización del firmware de la unidad en Windows Server 2016](update-firmware.md)
+- [Actualice el firmware de la unidad sin tiempo de inactividad en Espacios de almacenamiento directo](https://channel9.msdn.com/Blogs/windowsserver/Update-Drive-Firmware-Without-Downtime-in-Storage-Spaces-Direct)
 
 Las actualizaciones de firmware pueden sufrir errores por varias razones. La finalidad de este artículo es ayudar en la solución avanzada de problemas.
 
@@ -64,7 +64,7 @@ El campo SupportsUpdate siempre notificará "True" para los dispositivos conecta
 
 Para validar si un dispositivo SAS admite el conjunto de comandos necesarios, existen dos opciones:
 1.  Probarlo mediante el cmdlet Update-StorageFirmware con una imagen del firmware adecuada.
-2.  Consulte el catálogo de servidor de Windows para identificar qué dispositivos SAS han obtenido correctamente el (FW actualización AQ https://www.windowsservercatalog.com/)
+2.  Consulte el catálogo de Windows Server para identificar qué dispositivos SAS han conseguido correctamente la actualización de FW AQ (https://www.windowsservercatalog.com/)
 
 ### <a name="remediation-options"></a>Opciones de corrección
 Si un dispositivo determinado que se está probando no admite el conjunto de comandos adecuado, consulta con el proveedor para ver si hay disponible un firmware actualizado que proporcione el conjunto de comandos necesarios, o consulte el catálogo de Windows Server para identificar los dispositivos que implementan dicho conjunto de comando adecuado.
@@ -119,7 +119,7 @@ CdbBytes    3B0E0000000001000000
 NumberOfRetriesDone 0
 ```
 
-El evento ETW 507 del canal de muestra que una solicitud SCSI SRB ha sufrido un error y proporciona la información adicional de que SenseKey era '5' (solicitud no válida) y de que la información de AdditionalSense era '36' (campo no válido en CDB).
+El evento de ETW 507 del canal muestra que se ha producido un error en una solicitud SRB de SCSI y proporciona la información adicional que SenseKey era ' 5 ' (solicitud no válida) y que la información de AdditionalSense era ' 36 ' (campo no válido en CDB).
 
    > [!Note]
    > Esta información la proporciona directamente el minipuerto en cuestión, y su precisión dependerá de la implementación y de la sofisticación del controlador del minipuerto.
@@ -134,7 +134,7 @@ Si se identifica que el controlador de terceros no implementa las API o las conv
 ## <a name="additional-troubleshooting-with-microsoft-drivers-satanvme"></a>Solución de problemas adicional para los controladores de Microsoft (SATA/NVMe)
 Si se usan los controladores nativos de Windows, como StorAHCI.sys o StorNVMe.sys, para dispositivos de almacenamiento, es posible obtener información adicional acerca de los posibles casos de error durante las operaciones de actualización del firmware.
 
-Además del canal operativo ClassPnP, StorAHCI y StorNVMe registrarán los códigos de retorno específicos del protocolo del dispositivo en el siguiente canal ETW:
+Más allá del canal operativo ClassPnP, StorAHCI y StorNVMe registrarán los códigos de retorno específicos del protocolo del dispositivo en el siguiente canal ETW:
 
 Visor de eventos - Registros de aplicaciones y servicios - Microsoft - Windows - StorDiag - **Microsoft-Windows-Storage-StorPort/Diagnose**
 
@@ -142,7 +142,7 @@ Los registros de diagnóstico no se muestran de forma predeterminada; si quieres
 
 Para recopilar estas entradas del registro avanzadas, habilita el registro, reproduce el error de actualización del firmware y guarda el registro de diagnóstico.
 
-Este es un ejemplo de una actualización de firmware en un error de dispositivo SATA, porque la imagen que se descargan no era válida (Id. de evento: 258):
+Este es un ejemplo de una actualización de firmware en un dispositivo SATA que no se puede realizar porque la imagen que se va a descargar no era válida (ID. de evento: 258):
 
 ``` 
 EventData
@@ -174,11 +174,11 @@ Parameter8Value 0
 ```
 
 El evento anterior contiene información detallada del dispositivo en los valores de parámetro del 2 al 6. Aquí podemos observar distintos valores de registro de ATA. La especificación ATA ACS puede usarse para descodificar los siguientes de valores correspondientes a errores de un comando Download Microcode:
-- Código de retorno: 0 (0000 0000) (N/D: no tiene sentido ya que se ha transferido no carga)
-- Características: 15 (0000 1111) (1 bit se establece en '1' e indica "Anular")
-- SectorCount: 0 (0000 0000) (N/D)
-- DriveHead: 160 (1010 0000) (N/D: solo obsoletos bits se establecen)
-- Comando: 146 (1001 0010) (1 bit se establece en '1', que indica la disponibilidad de datos de detección)
+- Código de retorno: 0 (0000 0000) (N/A-no tiene sentido porque no se transfirió ninguna carga)
+- Características: 15 (0000 1111) (bit 1 se establece en ' 1 ' e indica "Abort")
+- SectorCount: 0 (0000 0000) (N/A)
+- DriveHead: 160 (1010 0000) (N/A: solo se establecen los bits obsoletos)
+- Command 146 (1001 0010) (bit 1 está establecido en "1" que indica la disponibilidad de los datos de detección)
 
 Esto nos indica que el dispositivo ha cancelado la operación de actualización del firmware.
 

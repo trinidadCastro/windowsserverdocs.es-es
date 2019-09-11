@@ -1,6 +1,6 @@
 ---
-title: Publicación de extensiones para Windows Admin Center
-description: Publicación de extensiones para Windows Admin Center (proyecto Honolulu)
+title: Publicar extensiones para el centro de administración de Windows
+description: Publicar extensiones para el centro de administración de Windows (proyecto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: daniellee-msft
@@ -8,76 +8,76 @@ ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 762bd4613fa8ad6cdfb5b44745a7ce78b331499d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2bb97fb65e3fbf5c7809317a8565ff7051d0447
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59820426"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869699"
 ---
-# <a name="publishing-extensions"></a>Publicación de extensiones
+# <a name="publishing-extensions"></a>Extensiones de publicación
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Una vez que ha desarrollado su extensión, desea publicarlo y ponerla a disposición de otros usuarios para probar o utilizar. Dependiendo de su audiencia y propósito de la publicación, hay algunas opciones que presentaremos a continuación, junto con los pasos y requisitos para la publicación.
+Una vez que haya desarrollado la extensión, querrá publicarla y ponerla a disposición de otros usuarios para que la prueben o usen. En función de la audiencia y el propósito de la publicación, existen algunas opciones que se presentan a continuación, junto con los pasos y los requisitos para la publicación.
 
 ## <a name="publishing-options"></a>Opciones de publicación
 
-Hay tres opciones principales para orígenes de paquetes configurables que admita Windows Admin Center:
-* Fuente de NuGet pública Windows Admin Center de Microsoft
-* Su propia fuente NuGet privado
-* Local o recurso compartido de red
+Existen tres opciones principales para los orígenes de paquetes configurables que el centro de administración de Windows admite:
+* Fuente de NuGet del centro de administración público de Windows de Microsoft
+* Su propia fuente de NuGet privada
+* Recurso compartido de archivos de red o local
 
-### <a name="publishing-to-the-windows-admin-center-extension-feed"></a>Publicar en la extensión de Windows Admin Center fuente
+### <a name="publishing-to-the-windows-admin-center-extension-feed"></a>Publicar en la fuente de extensión del centro de administración de Windows
 
-De forma predeterminada, Windows Admin Center está conectado a NuGet fuente mantenida por el equipo del producto Windows Admin Center en Microsoft. Las primeras versiones de vista previa de las extensiones nuevas desarrolladas por Microsoft pueden ser publicado a esta fuente y está disponible para los usuarios de Windows Admin Center. Los desarrolladores externos, planeación de la compilación y versión extensiones públicamente, es posible que también [enviar una solicitud](#publishing-your-extension-to-the-windows-admin-center-feed) para publicar en esta fuente.
+De forma predeterminada, el centro de administración de Windows está conectado a una fuente de NuGet mantenida por el equipo de productos del centro de administración de Windows en Microsoft. Las primeras versiones preliminares de las nuevas extensiones desarrolladas por Microsoft pueden publicarse en esta fuente y estar disponibles para los usuarios del centro de administración de Windows. Los desarrolladores externos que planean compilar y liberar extensiones públicamente también pueden [enviar una solicitud](#publishing-your-extension-to-the-windows-admin-center-feed) para publicar en esta fuente.
 
-### <a name="publishing-to-a-different-nuget-feed"></a>Publicación en NuGet diferentes fuentes de distribución
+### <a name="publishing-to-a-different-nuget-feed"></a>Publicación en una fuente de NuGet diferente
 
-También puede crear su propia fuente NuGet para publicar sus extensiones a uno de los muchos [diferentes opciones para configurar un origen privado o mediante un servicio de hospedaje de NuGet](https://docs.microsoft.com/nuget/hosting-packages/overview). La fuente NuGet debe admitir la API de NuGet v2. Puesto que Windows Admin Center no es compatible con las fuentes autenticación, la fuente debe configurarse para permitir el acceso de lectura a cualquier persona.
+También puede crear su propia fuente de NuGet para publicar sus extensiones en usando una de las muchas [opciones diferentes para configurar una fuente privada o mediante un servicio de hospedaje de NuGet](https://docs.microsoft.com/nuget/hosting-packages/overview). La fuente de NuGet debe admitir la API de NuGet V2. Puesto que el centro de administración de Windows no admite actualmente la autenticación de fuentes, la fuente debe estar configurada para permitir el acceso de lectura a todos los usuarios.
 
 ### <a name="publishing-to-a-file-share"></a>Publicar en un recurso compartido de archivos
 
-Para restringir el acceso de la extensión de la organización o a un grupo limitado de personas, puede usar un recurso compartido de archivos SMB como una extensión de fuente. En este caso, se aplicará a los permisos de carpetas y recursos compartidos de archivos para permitir el acceso a la fuente.
+Para restringir el acceso de la extensión a su organización o a un grupo limitado de personas, puede usar un recurso compartido de archivos SMB como una fuente de extensión. En este caso, se aplicarán los permisos de carpetas y recursos compartidos de archivos para permitir el acceso a la fuente.
 
-## <a name="preparing-your-extension-for-release"></a>Preparar la extensión para su lanzamiento
+## <a name="preparing-your-extension-for-release"></a>Preparar la extensión para la versión
 
-Asegúrese de leer y tenga en cuenta los siguientes temas de desarrollo:
+Asegúrese de leer y tener en cuenta los siguientes temas de desarrollo:
 
 - [Controlar la visibilidad de la herramienta](guides/dynamic-tool-display.md)
-- [Las cadenas y localización](guides/strings-localization.md)
+- [Cadenas y localización](guides/strings-localization.md)
 
-### <a name="consider-releasing-as-a-preview-release"></a>Considere la posibilidad de liberar como una versión preliminar
+### <a name="consider-releasing-as-a-preview-release"></a>Considere la posibilidad de publicar como versión preliminar
 
-Si va a publicar una versión de vista previa de la extensión para fines de evaluación, se recomienda:
+Si está lanzando una versión preliminar de la extensión para fines de evaluación, se recomienda:
 
-- Anexe "(versión preliminar)" al final del título de la extensión en el archivo .nuspec
-- Explica las limitaciones en la descripción de la extensión en el archivo .nuspec
+- Anexe "(vista previa)" al final del título de la extensión en el archivo. nuspec.
+- Explicar las limitaciones de la descripción de la extensión en el archivo. nuspec
 
-## <a name="creating-an-extension-package"></a>Creación de un paquete de extensión
+## <a name="creating-an-extension-package"></a>Crear un paquete de extensión
 
-Windows Admin Center utiliza paquetes de NuGet y las fuentes de distribución y la descarga de extensiones.  En orden para el paquete que se van a enviar, deberá generar un paquete de NuGet que contiene sus complementos y extensiones.  Un solo paquete puede contener una extensión de interfaz de usuario así como un complemento de puerta de enlace y la siguiente sección le guiará a través del proceso.
+El centro de administración de Windows emplea paquetes y fuentes de NuGet para distribuir y descargar extensiones.  Para poder enviar el paquete, debe generar un paquete de NuGet que contenga los complementos y las extensiones.  Un solo paquete puede contener una extensión de interfaz de usuario, así como un complemento de puerta de enlace, y la siguiente sección le guiará a través del proceso.
 
 ### <a name="1-build-your-extension"></a>1. Compilar la extensión
 
-Tan pronto como esté listo para comenzar a empaquetar la extensión, cree un nuevo directorio en el sistema de archivos, abra una consola y CD en él.  Este será el directorio raíz que se usará para contener todos los directorios que formarán parte de nuestro paquete de nuspec y contenido.  Esta carpeta se hará referencia como "Paquete de NuGet" para la duración de este documento.
+En cuanto esté listo para empezar a empaquetar la extensión, cree un nuevo directorio en el sistema de archivos, abra una consola de y el CD en él.  Este será el directorio raíz que se utilizará para contener todos los directorios de contenido y nuspec que compondrán el paquete.  Haremos referencia a esta carpeta como "paquete NuGet" mientras dure este documento.
 
-#### <a name="ui-extensions"></a>Extensiones de interfaz de usuario
+#### <a name="ui-extensions"></a>Extensiones de la interfaz de usuario
 
-Para comenzar el proceso de recopilación de todo el contenido necesario para una extensión de interfaz de usuario, ejecute "gulp compilación" en la herramienta y asegúrese de que la compilación es correcta.  Paquetes de este proceso todos los componentes juntos en una carpeta denominada "agrupar" se encuentran en el directorio raíz de la extensión (en el mismo nivel del directorio src).  Copie este directorio y todo lo del contenido en la carpeta "Paquete de NuGet".
+Para comenzar el proceso de recopilación de todo el contenido necesario para una extensión de interfaz de usuario, ejecute "Gulp Build" en la herramienta y asegúrese de que la compilación se ha realizado correctamente.  Este proceso empaqueta todos los componentes en una carpeta denominada "bundle" que se encuentra en el directorio raíz de la extensión (en el mismo nivel del directorio SRC).  Copie este directorio y todo su contenido en la carpeta "NuGet Package".
 
-#### <a name="gateway-plugins"></a>Complementos de la puerta de enlace
+#### <a name="gateway-plugins"></a>Complementos de puerta de enlace
 
-Con la infraestructura de compilación (puede ser tan sencillo como abrir Visual Studio y hacer clic en el botón de compilación), compile y compilar el complemento.  Abra el directorio de salida de compilación y copiar los archivos DLL que representan el complemento y colocarlas en una carpeta nueva dentro del directorio "Paquete de NuGet" denominado "paquete".  No es necesario copiar la dll FeatureInterface, solo los archivos DLL que representan el código.
+Con la infraestructura de compilación (esto podría ser tan sencillo como abrir Visual Studio y hacer clic en el botón compilar), compilar y compilar el complemento.  Abra el directorio de salida de la compilación y copie los archivos DLL que representan el complemento, y colóquelos en una nueva carpeta dentro del directorio del "paquete NuGet" denominado "paquete".  No es necesario copiar el archivo dll de FeatureInterface, solo los archivos DLL que representan el código.
 
-### <a name="2-create-the-nuspec-file"></a>2. Crear el archivo .nuspec
+### <a name="2-create-the-nuspec-file"></a>2. Creación del archivo. nuspec
 
-Para crear el paquete de NuGet, deberá crear primero un archivo .nuspec. Un archivo .nuspec es un manifiesto XML que contiene los metadatos del paquete NuGet. Este manifiesto se usa para generar el paquete y proporcionar información a los consumidores.  Coloque este archivo en la raíz de la carpeta "Paquete de NuGet".
+Para crear el paquete NuGet, primero debe crear un archivo. nuspec. Un archivo. nuspec es un manifiesto XML que contiene metadatos del paquete NuGet. Este manifiesto se utiliza para compilar el paquete y proporcionar información a los consumidores.  Coloque este archivo en la raíz de la carpeta "paquete NuGet".
 
-Este es un archivo .nuspec de ejemplo y la lista de propiedades necesarias o recomendadas. Para el esquema completo, vea el [referencia de .nuspec](https://docs.microsoft.com/nuget/reference/nuspec). Guarde el archivo .nuspec a la carpeta del proyecto raíz con un nombre de archivo de su elección.
+A continuación se muestra un archivo. nuspec de ejemplo y la lista de propiedades necesarias o recomendadas. Para obtener el esquema completo, consulte la [referencia de. nuspec](https://docs.microsoft.com/nuget/reference/nuspec). Guarde el archivo. nuspec en la carpeta raíz del proyecto con un nombre de archivo de su elección.
 
 > [!IMPORTANT]
-> El ```<id>``` debe coincidir con el valor en el archivo .nuspec el ```"name"``` valor en el proyecto ```manifest.json``` archivo, o bien su extensión publicada no se pudo cargar correctamente en Windows Admin Center.
+> El ```<id>``` valor del archivo. nuspec debe coincidir con el ```"name"``` valor del archivo del ```manifest.json``` proyecto o, de lo contrario, la extensión publicada no se cargará correctamente en el centro de administración de Windows.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -106,49 +106,49 @@ Este es un archivo .nuspec de ejemplo y la lista de propiedades necesarias o rec
 </package>
 ```
 
-#### <a name="required-or-recommended-properties"></a>Necesarios o recomendados propiedades
+#### <a name="required-or-recommended-properties"></a>Propiedades necesarias o recomendadas
 
-| Nombre de la propiedad | Se recomienda / necesarios | Descripción |
+| Nombre de la propiedad | Requerido/recomendado | Descripción |
 | ---- | ---- | ---- |
-| packageType | Requerido | Use "WindowsAdminCenterExtension", que es el tipo de paquete de NuGet definido para las extensiones de Windows Admin Center. |
-| id | Requerido | Identificador de paquete único dentro de la fuente. Este valor debe coincidir con el valor "name" en el archivo manifest.json del proyecto.  Consulte [elección de un identificador de paquete único](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para obtener instrucciones. |
-| title | Necesario para la publicación en el de Windows Admin Center fuente | Nombre descriptivo para el paquete que se muestra en el Administrador de extensiones de Windows Admin Center. |
-| version | Requerido | Versión de la extensión. Uso de [Versionamiento semántico (SemVer convention)](http://semver.org/spec/v1.0.0.html) es recomendable, pero no es necesario. |
-| Autores | Requerido | Si se publica en el nombre de su empresa, use el nombre de la empresa. |
-| description | Requerido | Proporcione una descripción de la funcionalidad de la extensión. |
-| iconUrl | Recomendado cuando se publica en el de Windows Admin Center fuente | Dirección URL de icono para mostrar en el Administrador de extensiones. |
-| projectUrl | Necesario para la publicación en el de Windows Admin Center fuente | Dirección URL al sitio Web de la extensión. Si no tiene un sitio Web independiente, use la dirección URL de la página Web de paquete en la fuente de NuGet. |
-| licenseUrl | Necesario para la publicación en el de Windows Admin Center fuente | Dirección URL para el contrato de licencia de usuario final de la extensión. |
-| archivos | Requerido | Estos dos valores de configuración de la estructura de carpetas que Windows Admin Center espera para las extensiones de interfaz de usuario y los complementos de puerta de enlace. |
+| PackageType | Obligatorio | Use "WindowsAdminCenterExtension", que es el tipo de paquete de NuGet definido para las extensiones del centro de administración de Windows. |
+| id | Obligatorio | Identificador de paquete único dentro de la fuente. Este valor debe coincidir con el valor "Name" en el archivo manifest. JSON del proyecto.  Vea [elegir un identificador de paquete único](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para obtener instrucciones. |
+| title | Se requiere para la publicación en la fuente del centro de administración de Windows | Nombre descriptivo para el paquete que se muestra en el administrador de extensiones del centro de administración de Windows. |
+| version | Obligatorio | Versión de la extensión. Se recomienda usar el [control de versiones semántico (Convención SemVer)](http://semver.org/spec/v1.0.0.html) , pero no es necesario. |
+| editores | Obligatorio | Si publica en nombre de su empresa, use el nombre de su empresa. |
+| description | Obligatorio | Proporcione una descripción de la funcionalidad de la extensión. |
+| iconUrl | Recomendado al publicar en la fuente del centro de administración de Windows | Dirección URL del icono que se va a mostrar en el administrador de extensiones. |
+| projectUrl | Se requiere para la publicación en la fuente del centro de administración de Windows | Dirección URL del sitio web de la extensión. Si no tiene un sitio web independiente, utilice la dirección URL de la página web del paquete en la fuente de NuGet. |
+| licenseUrl | Se requiere para la publicación en la fuente del centro de administración de Windows | Dirección URL del contrato de licencia para el usuario final de la extensión. |
+| files | Obligatorio | Estos dos valores configuran la estructura de carpetas que el centro de administración de Windows espera para las extensiones de la interfaz de usuario y los complementos de puerta de enlace. |
 
-### <a name="3-build-the-extension-nuget-package"></a>3. Crear el paquete de extensión de NuGet
+### <a name="3-build-the-extension-nuget-package"></a>3. Compilar el paquete NuGet de la extensión
 
-Mediante el archivo .nuspec que creó anteriormente, ahora creará el archivo .nupkg del paquete NuGet que puede cargar y publicar en la fuente de NuGet.
+Con el archivo. nuspec que creó anteriormente, ahora creará el archivo. nupkg de paquete NuGet que puede cargar y publicar en la fuente de NuGet.
 
-1. Descargue la herramienta CLI de nuget.exe desde el [sitio Web de herramientas de cliente de NuGet](https://docs.microsoft.com/nuget/install-nuget-client-tools).
-2. Para crear el archivo .nupkg, ejecute "nuget.exe pack [nombre de archivo .nuspec]".
+1. Descargue la herramienta de la CLI de Nuget. exe desde el [sitio web de herramientas de cliente de Nuget](https://docs.microsoft.com/nuget/install-nuget-client-tools).
+2. Ejecute "Nuget. exe Pack [. nuspec File name]" para crear el archivo. nupkg.
 
-### <a name="4-signing-your-extension-nuget-package"></a>4. Firma el paquete NuGet de extensión
+### <a name="4-signing-your-extension-nuget-package"></a>4. Firmar el paquete NuGet de la extensión
 
-Cualquier archivo .dll que se incluyen en la extensión se debe estar firmado con un certificado de una autoridad de certificado de confianza (CA). De forma predeterminada, se bloqueará los archivos .dll sin signo que se ejecute cuando se está ejecutando Windows Admin Center en modo de producción.
+Los archivos. dll incluidos en la extensión deben estar firmados con un certificado de una entidad de certificación (CA) de confianza. De forma predeterminada, los archivos. dll sin firmar se bloquearán para que no se ejecuten cuando el centro de administración de Windows se ejecute en modo de producción.
 
-También recomendamos que firmar el paquete de extensión de NuGet para garantizar la integridad del paquete, pero esto no es un paso necesario.
+También recomendamos encarecidamente que firme el paquete NuGet de la extensión para garantizar la integridad del paquete, pero este no es un paso necesario.
 
-### <a name="5-test-your-extension-nuget-package"></a>5. Probar el paquete NuGet de extensión
+### <a name="5-test-your-extension-nuget-package"></a>5. Probar el paquete NuGet de la extensión
 
-Paquete de extensión ya está listo para probarlo. Cargue el archivo .nupkg en una fuente NuGet o cópielo en un recurso compartido de archivos. Para ver y descargar paquetes desde una fuente diferente o el recurso compartido de archivos, deberá [cambiar la configuración de fuente](../configure/using-extensions.md#installing-extensions-from-a-different-feed) para que señale a la fuente de NuGet o recurso compartido de archivos. Al realizar pruebas, asegúrese de que las propiedades se muestran correctamente en el Administrador de extensiones y puede instalar y desinstalar la extensión correctamente.
+El paquete de extensión ya está listo para las pruebas. Cargue el archivo. nupkg en una fuente de NuGet o cópielo en un recurso compartido de archivos. Para ver y descargar paquetes de una fuente o recurso compartido de archivos diferente, deberá [cambiar la configuración de la fuente](../configure/using-extensions.md#installing-extensions-from-a-different-feed) para que apunte a la fuente de NuGet o al recurso compartido de archivos. Al realizar las pruebas, asegúrese de que las propiedades se muestran correctamente en el administrador de extensiones y puede instalar y desinstalar correctamente la extensión.
 
-## <a name="publishing-your-extension-to-the-windows-admin-center-feed"></a>Publicar la extensión en el Windows Admin Center fuente
+## <a name="publishing-your-extension-to-the-windows-admin-center-feed"></a>Publicar la extensión en la fuente del centro de administración de Windows
 
-Al realizar la publicación a la de Windows Admin Center fuente, puede hacer la extensión disponible para cualquier usuario de Windows Admin Center. Puesto que el SDK de Windows Admin Center todavía está en versión preliminar, nos gustaría trabajar estrechamente con usted para ayudar a resolver problemas de desarrollo, asegúrese de que puede proporcionar un producto de calidad y experiencia a los usuarios.
+Al publicar en la fuente del centro de administración de Windows, puede hacer que la extensión esté disponible para cualquier usuario del centro de administración de Windows. Dado que el SDK del centro de administración de Windows todavía está en versión preliminar, nos gustaría trabajar en estrecha colaboración con usted para ayudarle a resolver los problemas de desarrollo y asegurarse de que puede ofrecer un producto de calidad y una experiencia a los usuarios.
 
-Antes de lanzar la versión inicial de la extensión, se recomienda enviar una solicitud de revisión de la extensión a Microsoft al menos 2-3 semanas antes de la versión para asegurarse de que tiene suficiente tiempo para revisar y para que pueda realizar cambios en la extensión, si es necesario. Una vez que la extensión está lista para publicarse, deberá enviarla para su revisión y, si se aprueba, se podrá publicar en la fuente para.
+Antes de publicar la versión inicial de la extensión, se recomienda que envíe una solicitud de revisión de extensión a Microsoft al menos 2-3 semanas antes del lanzamiento para asegurarse de que tenemos tiempo suficiente para revisar y realizar cambios en la extensión si es necesario. Una vez que la extensión esté lista para publicarse, deberá enviarla a nosotros para su revisión y, si la aprueba, la publicaremos en la fuente.
 
-Después, si desea publicar una actualización a la extensión, deberá enviar otra solicitud para su revisión. Mientras según el ámbito de cambio, el tiempo de respuesta para las revisiones de actualización debe ser generalmente más corto.
+Posteriormente, si desea publicar una actualización de la extensión, deberá enviar otra solicitud de revisión. Aunque según el ámbito del cambio, el tiempo de respuesta para las revisiones de actualización debe ser generalmente más corto.
 
-### <a name="submit-an-extension-review-request-to-microsoft"></a>Enviar una solicitud de revisión de la extensión a Microsoft
+### <a name="submit-an-extension-review-request-to-microsoft"></a>Enviar una solicitud de revisión de extensión a Microsoft
 
-Para enviar una solicitud de revisión de la extensión, escriba la siguiente información y enviar un correo electrónico a [ wacextensionrequest@microsoft.com ](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request). Responderemos a su correo electrónico dentro de una semana.
+Para enviar una solicitud de revisión de extensión, escriba la siguiente información y envíela como [wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Review%20Request)un correo electrónico a. Responderemos a su correo electrónico dentro de una semana.
 
 ```
 Windows Admin Center Extension Review Request
@@ -162,9 +162,9 @@ Windows Admin Center Extension Review Request
 
 ### <a name="submit-your-extension-package-for-review-and-publishing"></a>Enviar el paquete de extensión para su revisión y publicación
 
-Asegúrese de seguir las instrucciones anteriores para [crear un paquete de extensión](#creating-an-extension-package) y el archivo .nuspec se ha definido correctamente y se firman los archivos. Se recomienda también que tiene un sitio Web del proyecto incluido lo siguiente:
+Asegúrese de seguir las instrucciones anteriores para [crear un paquete de extensión](#creating-an-extension-package) y de que el archivo. nuspec esté definido correctamente y los archivos estén firmados. También se recomienda que tenga un sitio web de proyecto que incluya lo siguiente:
 
-- Descripción detallada de la extensión como capturas de pantalla o de vídeo
-- Característica de dirección o el sitio Web de correo electrónico para recibir comentarios o preguntas
+- Descripción detallada de la extensión, incluidas las capturas de pantalla o el vídeo
+- Dirección de correo electrónico o característica de sitio web para recibir comentarios o preguntas
 
-Cuando esté listo para publicar su extensión, envíe un correo electrónico a [ wacextensionrequest@microsoft.com ](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review) y proporcionaremos instrucciones sobre cómo enviar el paquete de extensión. Una vez que recibamos su paquete, revisaremos y si se aprueba, publicar en el de Windows Admin Center fuente.
+Cuando esté listo para publicar la extensión, envíe un correo electrónico a [wacextensionrequest@microsoft.com](mailto:wacextensionrequest@microsoft.com?subject=Windows%20Admin%20Center%20Extension%20Package%20Review) y proporcionaremos instrucciones sobre cómo enviarnos el paquete de extensión. Una vez que recibamos el paquete, revisaremos y, si lo aprueba, publicaremos en la fuente del centro de administración de Windows.

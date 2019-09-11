@@ -1,6 +1,6 @@
 ---
 title: Formación de equipos NIC
-description: En este tema, le proporcionamos una visión general de formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. Formación de equipos NIC permite agrupar entre 1 y 32 adaptadores de red Ethernet físicos en uno o más adaptadores de red virtual basada en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.
+description: En este tema se proporciona información general sobre la formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. La formación de equipos NIC le permite agrupar entre uno y 32 adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.
 manager: dougkim
 ms.custom: na
 ms.prod: windows-server-threshold
@@ -13,153 +13,153 @@ ms.assetid: abded6f3-5708-4e35-9a9e-890e81924fec
 ms.author: pashort
 author: shortpatti
 ms.date: 09/10/2018
-ms.openlocfilehash: 7e7ae609d41fc41770c43283033b623881b2d48e
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: acbb01acb39990126d5dce1d0811aefb8c931164
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283791"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871911"
 ---
 # <a name="nic-teaming"></a>Formación de equipos NIC
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema, le proporcionamos una visión general de formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. Formación de equipos NIC permite agrupar entre 1 y 32 adaptadores de red Ethernet físicos en uno o más adaptadores de red virtual basada en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.  
+En este tema se proporciona información general sobre la formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. La formación de equipos NIC le permite agrupar entre uno y 32 adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.  
   
 > [!IMPORTANT]
-> Debe instalar a adaptadores de red del miembro de equipo NIC en el mismo equipo host físico. 
+> Debe instalar los adaptadores de red de miembros del equipo NIC en el mismo equipo host físico. 
 
 > [!TIP]  
-> Un equipo NIC que contiene solo un adaptador de red no puede proporcionar equilibrio de carga y conmutación por error. Sin embargo, con un adaptador de red, puede usar la formación de equipos NIC para separar el tráfico de red cuando también se usa redes de área Local virtual (VLAN).  
+> Un equipo NIC que solo contiene un adaptador de red no puede proporcionar equilibrio de carga y conmutación por error. Sin embargo, con un adaptador de red, puede usar la formación de equipos NIC para separar el tráfico de red cuando también usa redes de área local virtual (VLAN).  
   
-Al configurar los adaptadores de red en un equipo NIC, se conectan a la NIC formación de equipos solución base común, que, a continuación, presenta uno o más adaptadores virtuales (también denominados equipo NIC [tNICs] o interfaces del equipo) en el sistema operativo. 
+Cuando se configuran los adaptadores de red en un equipo NIC, se conectan a la solución de formación de equipos NIC núcleo común, que luego presenta uno o más adaptadores virtuales (también denominados NIC de equipo [tNICs] o interfaces de equipo) al sistema operativo. 
 
-Dado que Windows Server 2016 admite hasta 32 interfaces del equipo por equipo, hay una variedad de algoritmos que distribuyen el tráfico saliente (cargar) entre las NIC.  La siguiente ilustración muestra un equipo NIC con varias tNICs.  
+Dado que Windows Server 2016 admite hasta 32 interfaces de equipo por equipo, hay una variedad de algoritmos que distribuyen el tráfico saliente (carga) entre las NIC.  En la ilustración siguiente se muestra un equipo NIC con varios tNICs.  
   
-![Equipo de NIC con varias tNICs](../../media/NIC-Teaming/nict_overview.jpg)  
+![Equipo NIC con varios tNICs](../../media/NIC-Teaming/nict_overview.jpg)  
   
-Además, puede conectar su las NIC asociadas al mismo conmutador o distintos conmutadores. Si se conecten la NIC a diferentes conmutadores, deben ser ambos modificadores en la misma subred.  
+Además, puede conectar las NIC del equipo al mismo conmutador o a distintos conmutadores. Si conecta las NIC a diferentes conmutadores, ambos conmutadores deben estar en la misma subred.  
   
 ## <a name="availability"></a>Disponibilidad  
-Formación de equipos NIC está disponible en todas las versiones de Windows Server 2016. Puede usar una variedad de herramientas para administrar la formación de equipos NIC desde equipos que ejecutan un sistema operativo de cliente, como: • los cmdlets de Windows PowerShell • escritorio remoto • herramientas de administración remota del servidor  
+La formación de equipos NIC está disponible en todas las versiones de Windows Server 2016. Puede usar diversas herramientas para administrar la formación de equipos NIC desde equipos que ejecutan un sistema operativo cliente, como: • cmdlets de Windows PowerShell • Escritorio remoto • Herramientas de administración remota del servidor  
   
-## <a name="supported-and-unsupported-nics"></a>NIC compatibles y no compatibles   
-Puede usar cualquier NIC de Ethernet que ha transcurrido la calificación de Hardware de Windows y el logotipo de prueba (pruebas WHQL) en un equipo NIC en Windows Server 2016.  
+## <a name="supported-and-unsupported-nics"></a>NIC admitidas y no admitidas   
+Puede usar cualquier NIC Ethernet que haya superado la prueba de logotipo y de calificación de hardware de Windows (pruebas de WHQL) en un equipo NIC en Windows Server 2016.  
   
-Las siguientes NIC no se pueden colocar en un equipo NIC:
+No puede colocar las siguientes NIC en un equipo NIC:
   
--   Adaptadores de red virtual de Hyper-V que están expuestos como NIC en la partición del host de los puertos de conmutador Virtual de Hyper-V.  
+-   Adaptadores de red virtual de Hyper-V que son puertos de conmutador virtual de Hyper-V expuestos como NIC en la partición del host.  
   
     > [!IMPORTANT]  
-    > No coloque las NIC virtuales de Hyper-V expuestas en la partición del host (VNIC) en un equipo. Formación de equipos de VNIC dentro de la partición del host no se admite en ninguna otra configuración. Intentos de VNIC de equipo podrían causar una pérdida completa de comunicación si se producen errores de red.  
+    > No coloque las NIC virtuales de Hyper-V expuestas en la partición de host (VNIC) en un equipo. La formación de equipos de VNIC dentro de la partición del host no se admite en ninguna configuración. Los intentos de VNIC de equipo pueden provocar una pérdida completa de la comunicación si se producen errores en la red.  
   
 -   Adaptador de red de depuración de kernel (KDNIC).  
   
--   NIC que se usa para el arranque de red.  
+-   NIC usadas para el arranque de red.  
   
--   NIC que usan tecnologías diferentes de Ethernet, como WWAN, WLAN, Wi-Fi, Bluetooth e Infiniband, incluido el protocolo de Internet a través de las NIC de Infiniband (IPoIB).  
+-   Las NIC que usan tecnologías distintas de Ethernet, como WWAN, WLAN/Wi-Fi, Bluetooth e InfiniBand, incluidas las NIC del Protocolo de Internet sobre Infiniband (IPoIB).  
   
 ## <a name="compatibility"></a>Compatibilidad  
-Formación de equipos NIC es compatible con todas las tecnologías de red en Windows Server 2016 con las siguientes excepciones.  
+La formación de equipos NIC es compatible con todas las tecnologías de red de Windows Server 2016 con las excepciones siguientes.  
   
--   **Virtualización de E/S de raíz única (SR-IOV)** . Para SR-IOV, los datos se entregan directamente a la NIC sin que pasen a través de la pila de red (en el sistema operativo de host, en el caso de virtualización). Por lo tanto, no es posible que el equipo NIC para inspeccionar o redirigir los datos a otra ruta de acceso en el equipo.  
+-   **Virtualización de e/s de raíz única (SR-IOV)** . En el caso de SR-IOV, los datos se entregan directamente a la NIC sin pasarlos a través de la pila de red (en el sistema operativo host, en el caso de la virtualización). Por lo tanto, no es posible que el equipo NIC Inspeccione o Redirija los datos a otra ruta de acceso del equipo.  
   
--   **Calidad de servicio (QoS) del host nativo**. Al establecer directivas de QoS en nativo o el sistema host y esas directivas invocan las limitaciones de ancho de banda mínimo, el rendimiento general de un equipo NIC es menor que sería sin las directivas de ancho de banda en su lugar.  
+-   **Calidad de servicio (QoS) del host nativo**. Cuando se establecen directivas de QoS en un sistema host o nativo, y esas directivas invocan limitaciones de ancho de banda mínimo, el rendimiento general de un equipo NIC es inferior al que sería sin las directivas de ancho de banda vigentes.  
   
--   **TCP Chimney**. TCP Chimney no es compatible con la formación de equipos NIC porque descarga de TCP Chimney toda la pila de red directamente a la NIC.  
+-   **TCP Chimney**. TCP Chimney no es compatible con la formación de equipos NIC, ya que TCP Chimney descarga toda la pila de red directamente en la NIC.  
   
--   **Autenticación mediante 802.1X**. No debe usar la autenticación 802.1X con formación de equipos NIC porque algunos modificadores no permiten la configuración de autenticación 802.1X y formación de equipos NIC en el mismo puerto.  
+-   **autenticación de 802.1 x**. No debe usar la autenticación 802.1 X con la formación de equipos NIC porque algunos conmutadores no permiten la configuración de la autenticación 802.1 X y la formación de equipos NIC en el mismo puerto.  
   
-Para obtener información sobre cómo usar la formación de equipos NIC dentro de máquinas virtuales (VM) que se ejecutan en un host de Hyper-V, consulte [crear un nuevo equipo NIC en un equipo host o máquina virtual](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md).
+Para obtener información sobre el uso de la formación de equipos NIC en máquinas virtuales (VM) que se ejecutan en un host de Hyper-V, consulte [creación de un nuevo equipo NIC en un equipo host o máquina virtual](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md).
   
-## <a name="virtual-machine-queues-vmqs"></a>Colas de máquina virtual (Vmq)  
+## <a name="virtual-machine-queues-vmqs"></a>Colas de máquinas virtuales (VMQ)  
 
-Vmq es una característica NIC que se asigna una cola para cada máquina virtual.  Siempre que tenga habilitado; de Hyper-V También debe habilitar VMQ. En Windows Server 2016, Vmq usa puertos de conmutador de NIC virtuales con una sola cola asignada a la vPort para proporcionar la misma funcionalidad. 
+VMQ es una característica de NIC que asigna una cola para cada máquina virtual.  Siempre que haya habilitado Hyper-V; también debe habilitar VMQ. En Windows Server 2016, VMQ usar el conmutador NIC vPorts con una sola cola asignada a vPort para proporcionar la misma funcionalidad. 
 
-Según el modo de configuración del conmutador y el algoritmo de distribución de carga, la formación de equipos NIC presenta el menor número de colas disponibles y se admite ningún adaptador en el equipo (modo de Min-colas) o el número total de las colas disponibles a través de todos los equipo miembros (modo de suma de colas).  
+Según el modo de configuración del conmutador y el algoritmo de distribución de la carga, la formación de equipos NIC presenta el número más pequeño de colas disponibles y admitidas por cualquier adaptador del equipo (modo min-Queues) o el número total de colas disponibles en todo el equipo. Members (modo de suma de colas).  
 
-Si el equipo está en modo de formación de equipos independientes y establecer la distribución de carga al modo de puerto de Hyper-V o dinámico, el número de colas notificados es la suma de todas las colas disponibles en los miembros del equipo (modo de suma de colas). En caso contrario, el número de colas notificado es el menor número de colas admitidos por cualquier miembro del equipo (modo de Min-colas).
+Si el equipo está en modo de formación de equipos independiente del conmutador y establece la distribución de la carga en modo de puerto de Hyper-V o en modo dinámico, el número de colas que se indican es la suma de todas las colas disponibles en los miembros del equipo (modo de suma de colas). De lo contrario, el número de colas indicado es el número más pequeño de colas admitidas por cualquier miembro del equipo (modo min-Queues).
 
-Aquí es la razón:  
+Este es el motivo:  
   
--   Cuando el equipo independiente del conmutador está en modo de puerto de Hyper-V o en modo dinámico el tráfico entrante para un puerto de conmutador de Hyper-V (VM) siempre llega en el mismo miembro de equipo. El host puede predecir y control qué miembro recibe el tráfico para una máquina virtual específica para que la formación de equipos NIC puede ser un estudio más profundo acerca de las colas que VMQ desea asignar a un miembro del equipo determinado. Formación de equipos NIC, trabajar con el conmutador de Hyper-V, se establece el VMQ para una máquina virtual en exactamente un miembro del equipo y se sabe que el tráfico entrante llega a esa cola.  
+-   Cuando el equipo independiente del conmutador está en modo de puerto de Hyper-V o en modo dinámico, el tráfico entrante para un puerto de conmutador de Hyper-V siempre llega al mismo miembro del equipo. El host puede predecir o controlar qué miembro recibe el tráfico de una máquina virtual determinada, por lo que la formación de equipos NIC puede ser más meditada sobre qué colas de VMQ se asignan a un miembro del equipo determinado. Formación de equipos NIC, trabajar con el conmutador de Hyper-V, establece VMQ para una máquina virtual en un miembro del equipo precisamente y sabe que el tráfico entrante llega a esa cola.  
   
--   Cuando el equipo está en cualquier modo dependientes del conmutador (formación de equipos estática o LACP la formación de equipos), el conmutador al que el equipo está conectado a controla la distribución del tráfico entrante. El software de formación de equipos NIC del host no puede predecir qué equipo miembro Obtiene el tráfico entrante para una máquina virtual y es posible que el conmutador distribuye el tráfico de una máquina virtual a través de todos los miembros del equipo. Como consecuencia de que el software de formación de equipos NIC, trabajar con el conmutador de Hyper-V, programas de una cola para la máquina virtual en cada miembro del equipo, no solo uno integrante del grupo.  
+-   Cuando el equipo está en cualquier modo dependiente del conmutador (formación de equipos estáticos o de formación de equipos), el conmutador al que está conectado el equipo controla la distribución del tráfico entrante. El software de formación de equipos NIC del host no puede predecir qué miembro del equipo obtiene el tráfico entrante para una máquina virtual y puede ser que el conmutador distribuya el tráfico de una máquina virtual entre todos los miembros del equipo. Como resultado del software de formación de equipos NIC, al trabajar con el conmutador de Hyper-V, programa una cola para la máquina virtual en cada miembro del equipo, no solo un miembro del equipo.  
   
--   Cuando el equipo está en modo independiente del conmutador y el hash de dirección usa equilibrio de carga, el tráfico entrante siempre se incluye en una NIC (el miembro del equipo principal) - todo en miembro de un solo equipo. Dado que otros miembros del equipo no se tratan con el tráfico entrante, obtener programarse con las mismas colas como el miembro principal para que si se produce un error en el miembro principal, se puede usar cualquier otro miembro del equipo para recoger el tráfico entrante y las colas ya están instalados.  
+-   Cuando el equipo está en modo independiente del conmutador y usa el equilibrio de carga de hash de dirección, el tráfico entrante siempre entra en una NIC (el miembro del equipo principal), todo ello en un solo miembro del equipo. Dado que otros miembros del equipo no están tratando con el tráfico entrante, se programan con las mismas colas que el miembro principal, de modo que si se produce un error en el miembro principal, cualquier otro miembro del equipo puede usarse para recoger el tráfico entrante y las colas ya están en su lugar.  
 
-- La mayoría de las NIC tienen colas para escalado de lado de recepción (RSS) o VMQ, pero no al mismo tiempo. Algunas opciones de configuración de VMQ parecen ser la configuración de colas RSS, pero están la configuración en las colas genéricas que use RSS y VMQ dependiendo de qué característica está actualmente en uso. Cada NIC tiene en sus propiedades avanzadas, los valores para * RssBaseProcNumber y \*MaxRssProcessors. Siguientes son algunas opciones de configuración de VMQ que proporcionan un mejor rendimiento del sistema.  
+- La mayoría de las NIC tienen colas usadas para el ajuste de escala en lado de recepción (RSS) o VMQ, pero no al mismo tiempo. Parece que algunas opciones de VMQ son la configuración de las colas de RSS pero que son la configuración de las colas genéricas que usan RSS y VMQ, dependiendo de qué característica esté actualmente en uso. Cada NIC tiene, en sus propiedades avanzadas, los valores de * RssBaseProcNumber \*y MaxRssProcessors. A continuación se muestran algunos valores de VMQ que proporcionan un mejor rendimiento del sistema.  
   
--   Idealmente, cada NIC debe tener el * RssBaseProcNumber establecido en un número par mayor o igual a dos (2). El primer procesador físico, Core 0 (procesadores lógicos 0 y 1), normalmente realiza la mayor parte del procesamiento del sistema por lo que debe dirigir el procesamiento de red fuera de este procesador físico. Algunas arquitecturas de equipo no tienen dos procesadores lógicos por procesador físico, por lo que para dichas máquinas, el procesador de base debe ser mayor o igual que 1. Si tiene dudas suponer el host está usando un procesador lógico 2 según la arquitectura de procesador físico.  
+-   Idealmente, cada NIC debe tener el valor * RssBaseProcNumber establecido en un número par mayor o igual que dos (2). El primer procesador físico, Core 0 (procesadores lógicos 0 y 1), normalmente realiza la mayor parte del procesamiento del sistema, por lo que el procesamiento de la red debe dirigirse fuera de este procesador físico. Algunas arquitecturas de máquina no tienen dos procesadores lógicos por procesador físico, por lo que para tales máquinas, el procesador base debe ser mayor o igual que 1. En caso de duda, supongamos que el host usa un procesador lógico 2 por cada arquitectura de procesador física.  
   
--   Si el equipo está en modo de suma de colas procesadores de los miembros del equipo deben ser no superpuestos. Por ejemplo, en un host de 4 núcleos (8 procesadores lógicos) con un equipo de 2 NIC de 10 Gbps, establecer la primera de ellas para utilizar el procesador de 2 base y usar 4 núcleos; el segundo se establecería en Utilice procesador base 6 y 2 núcleos.  
+-   Si el equipo está en modo de suma de colas, los procesadores de los miembros del equipo no se superponen. Por ejemplo, en un host de 4 núcleos (8 procesadores lógicos) con un equipo de 2 NIC de 10 Gbps, podría establecer el primero para que use el procesador base de 2 y para usar 4 núcleos; la segunda se establecería para usar el procesador base 6 y usar 2 núcleos.  
   
--   Si el equipo está en modo de colas de Min los conjuntos de procesadores utilizados por los miembros del equipo deben ser idénticos.  
+-   Si el equipo está en modo de colas mín., los conjuntos de procesadores que usan los miembros del equipo deben ser idénticos.  
 
   
 ## <a name="hyper-v-network-virtualization-hnv"></a>Virtualización de red de Hyper-V (HNV)  
-Formación de equipos NIC es totalmente compatible con la virtualización de red de Hyper-V (HNV).  El sistema de administración de HNV proporciona información del controlador de formación de equipos NIC que permite la formación de equipos NIC distribuir la carga de forma que optimiza el tráfico de HNV.  
+La formación de equipos NIC es totalmente compatible con virtualización de red de Hyper-V (HNV).  El sistema de administración de HNV proporciona información al controlador de formación de equipos NIC que permite a la formación de equipos NIC distribuir la carga de forma que optimice el tráfico de HNV.  
   
 ## <a name="live-migration"></a>Migración en vivo  
-Formación de equipos NIC en máquinas virtuales no afecta a la migración en vivo. Las mismas reglas existen para la migración en vivo, si la configuración de formación de equipos NIC en la máquina virtual.  
+La formación de equipos NIC en máquinas virtuales no afecta a Migración en vivo. Existen las mismas reglas para Migración en vivo tanto si se configura la formación de equipos NIC en la máquina virtual como si no.  
 
 
-## <a name="virtual-local-area-networks-vlans"></a>Redes de área Local virtual (VLAN)
-Cuando se usa la formación de equipos NIC, la creación de varias interfaces de equipo permite a un host para conectarse a distintas VLAN simultáneamente. Configure su entorno mediante las siguientes directrices:
+## <a name="virtual-local-area-networks-vlans"></a>Redes de área local virtual (VLAN)
+Cuando se usa la formación de equipos NIC, la creación de varias interfaces de equipo permite a un host conectarse a distintas VLAN al mismo tiempo. Configure el entorno con las siguientes directrices:
   
-- Antes de habilitar la formación de equipos NIC, configurar los puertos de conmutador físico conectados al host de formación de equipos para usar el modo de tronco (promiscuo). El conmutador físico debe pasar todo el tráfico al host para el filtrado sin modificar el tráfico.  
+- Antes de habilitar la formación de equipos NIC, configure los puertos de conmutador físico conectados al host de formación de equipos para usar el modo troncal (promiscuo). El conmutador físico debe pasar todo el tráfico al host para filtrar sin modificar el tráfico.  
 
-- No configure filtros VLAN en las tarjetas NIC mediante el uso de la NIC de propiedades Configuración avanzada. Permitir que el conmutador Virtual de Hyper-V (si existe) o el software de formación de equipos NIC realizar el filtrado de VLAN.  
+- No configure filtros de VLAN en las NIC mediante la configuración de propiedades avanzadas de la NIC. Permita que el software de formación de equipos NIC o el conmutador virtual de Hyper-V (si existe) realice el filtrado de VLAN.  
   
-### <a name="use-vlans-with-nic-teaming-in-a-vm"></a>Use redes VLAN con formación de equipos NIC en una máquina virtual  
-Cuando un equipo se conecta a un conmutador Virtual de Hyper-V, la segregación de todas las VLAN debe realizarse en el conmutador Virtual de Hyper-V en lugar de formación de equipos NIC.  
+### <a name="use-vlans-with-nic-teaming-in-a-vm"></a>Uso de redes VLAN con formación de equipos NIC en una máquina virtual  
+Cuando un equipo se conecta a un conmutador virtual de Hyper-V, todas las segregaciones de VLAN deben realizarse en el conmutador virtual de Hyper-V en lugar de en la formación de equipos NIC.  
 
-Va a usar las VLAN en una máquina virtual configurada con un equipo de NIC con las siguientes directrices:
+Planea el uso de redes VLAN en una máquina virtual configurada con un equipo NIC mediante las siguientes directrices:
   
--   El método preferido de admitir varias VLAN en una máquina virtual es configurar la máquina virtual con varios puertos en el conmutador Virtual de Hyper-V y asociar cada puerto a una VLAN. Porque si lo hace a problemas de comunicación de red del equipo nunca estos puertos en la máquina virtual.  
+-   El método preferido para admitir varias VLAN en una máquina virtual es configurar la máquina virtual con varios puertos en el conmutador virtual de Hyper-V y asociar cada puerto a una VLAN. Nunca debe agrupar estos puertos en la máquina virtual porque esto provoca problemas de comunicación de red.  
 
--   Si la máquina virtual tiene varias funciones virtuales de SR-IOV (VFs), asegúrese de que están en la misma VLAN antes de formación de equipos de ellos en la máquina virtual. Es posible configurar la VFs diferentes en distintas VLAN fácilmente y si lo hace a problemas de comunicación de red.  
+-   Si la máquina virtual tiene varias funciones virtuales de SR-IOV (VFs), asegúrese de que se encuentran en la misma VLAN antes de agruparlas en la máquina virtual. Es fácil configurar el VFs diferente para que esté en diferentes VLAN y hacerlo provoca problemas de comunicación de red.  
  
   
-### <a name="manage-network-interfaces-and-vlans"></a>Administrar interfaces de red y redes VLAN 
-Si debe tener más de una VLAN que se expone en un sistema operativo invitado, considere la posibilidad de cambiar el nombre de las interfaces Ethernet para clarificar la VLAN asignada a la interfaz. Por ejemplo, si asocia **Ethernet** interfaz con VLAN 12 y el **Ethernet 2** interfaz con VLAN 48, cambie el nombre de la interfaz Ethernet para **EthernetVLAN12** y el otro a **EthernetVLAN48**. 
+### <a name="manage-network-interfaces-and-vlans"></a>Administrar interfaces de red y VLAN 
+Si debe tener más de una VLAN expuesta en un sistema operativo invitado, considere la posibilidad de cambiar el nombre de las interfaces Ethernet para aclarar la VLAN asignada a la interfaz. Por ejemplo, si asocia la interfaz **Ethernet** a la VLAN 12 y la interfaz **Ethernet 2** con la VLAN 48, cambie el nombre de la interfaz Ethernet a **EthernetVLAN12** y la otra a **EthernetVLAN48**. 
 
-Cambiar el nombre de las interfaces mediante el comando de Windows PowerShell **Rename-NetAdapter** o mediante el procedimiento siguiente:
+Cambie el nombre de las interfaces con el comando **de Windows PowerShell Rename-NetAdapter** o mediante el procedimiento siguiente:
   
-1.  En el administrador del servidor, en **propiedades** para el adaptador de red que desea cambiar el nombre, haga clic en el vínculo a la derecha del nombre del adaptador de red. 
+1.  En Administrador del servidor, en las **propiedades** del adaptador de red al que desea cambiar el nombre, haga clic en el vínculo situado a la derecha del nombre del adaptador de red. 
   
-2.  Haga clic en el adaptador de red que desea cambiar y seleccione **cambiar el nombre**.  
+2.  Haga clic con el botón secundario en el adaptador de red cuyo nombre desea cambiar y seleccione **cambiar nombre**.  
   
-3.  Escriba el nuevo nombre para el adaptador de red y presione ENTRAR.  
+3.  Escriba el nuevo nombre del adaptador de red y presione Entrar.  
 
 
-## <a name="virtual-machines-vms"></a>Máquinas virtuales (VM)
+## <a name="virtual-machines-vms"></a>Virtual Machines (VM)
 
-Si desea usar la formación de equipos NIC en una máquina virtual, debe conectarse a Hyper-V conmutadores virtuales externos sólo los adaptadores de red virtual en la máquina virtual. Esto permite que la máquina virtual mantener la conectividad de red incluso en el caso cuando uno de los adaptadores de red físico conectado a un conmutador virtual se produce un error o se desconecta. Adaptadores de red virtuales conectados a conmutadores virtuales de Hyper-V interno o privado no están posible conectarse al conmutador cuando están en un equipo y se produce un error en la red para la máquina virtual.  
+Si desea usar la formación de equipos NIC en una máquina virtual, debe conectar los adaptadores de red virtual de la máquina virtual solo a conmutadores virtuales de Hyper-V externos. Esto permite que la máquina virtual mantenga la conectividad de red incluso en caso de que se produzca un error en uno de los adaptadores de red físicos conectados a un conmutador virtual o se desconecte. Los adaptadores de red virtual conectados a conmutadores virtuales de Hyper-V internos o privados no pueden conectarse al conmutador cuando están en un equipo y se produce un error de red en la máquina virtual.  
   
-Formación de equipos NIC en Windows Server 2016 es compatible con los equipos con dos miembros en las máquinas virtuales. Puede crear los equipos más grandes, pero no hay compatibilidad para los equipos más grandes. Cada miembro del equipo debe conectarse a un externo otro conmutador Virtual de Hyper-V y las interfaces de red de la máquina virtual deben configurarse para permitir la formación de equipos.
+La formación de equipos NIC en Windows Server 2016 admite equipos con dos miembros en máquinas virtuales. Puede crear equipos más grandes, pero no se admiten equipos más grandes. Cada miembro del equipo debe conectarse a un conmutador virtual externo de Hyper-V y las interfaces de red de la máquina virtual deben configurarse para permitir la formación de equipos.
 
   
-Si está configurando un equipo NIC en una máquina virtual, debe seleccionar un **modo de formación de equipos** de _independiente del conmutador_ y un **modo de equilibrio de carga** de _deHashdedirección_.   
+Si está configurando un equipo NIC en una máquina virtual, debe seleccionar un **modo de formación de equipos** _independiente_ y un modo de **equilibrio de carga** de hash de _Dirección_.   
   
   
-## <a name="sr-iov-capable-network-adapters"></a>Adaptadores de red compatible con SR-IOV  
-Un equipo NIC en o en el host de Hyper-V no puede proteger el tráfico de SR-IOV, ya que no pasa a través del conmutador de Hyper-V.  Con la opción de formación de equipos NIC de máquina virtual, puede configurar dos conmutadores virtuales de Hyper-V externo, cada uno conectado a su propio NIC compatible con SR-IOV.  
+## <a name="sr-iov-capable-network-adapters"></a>Adaptadores de red compatibles con SR-IOV  
+Un equipo NIC en o en el host de Hyper-V no puede proteger el tráfico de SR-IOV porque no pasa por el conmutador de Hyper-V.  Con la opción de formación de equipos NIC de VM, puede configurar dos conmutadores virtuales de Hyper-V externos, cada uno conectado a su propia NIC compatible con SR-IOV.  
   
-![Formación de equipos con adaptadores de red compatible con SR-IOV NIC](../../media/NIC-Teaming-in-Virtual-Machines--VMs-/nict_in_vm.jpg)  
+![Formación de equipos NIC con adaptadores de red compatibles con SR-IOV](../../media/NIC-Teaming-in-Virtual-Machines--VMs-/nict_in_vm.jpg)  
   
-Cada máquina virtual puede tener una función virtual (VF) de uno o ambos NIC SR-IOV y, si se produce una desconexión NIC, conmutación por error desde el VF principal para el adaptador de copia de seguridad (VF). Como alternativa, la máquina virtual puede tener un VF de una NIC y una vmNIC-VF no conectados a otro conmutador virtual. Si se desconecta la NIC asociada con el VF, el tráfico puede conmutar por error a otro conmutador sin pérdida de conectividad.  
+Cada máquina virtual puede tener una función virtual (VF) de una o ambas NIC de SR-IOV y, en el caso de una desconexión de la NIC, la conmutación por error del VF principal al adaptador de copia de seguridad (VF). Como alternativa, la máquina virtual puede tener un FV de una NIC y un vmNIC que no sea de VF conectado a otro conmutador virtual. Si la NIC asociada con el VF se desconecta, el tráfico puede conmutar por error al otro conmutador sin pérdida de conectividad.  
   
-Dado que el tráfico enviado con la dirección MAC de lo otro vmNIC puede provocar conmutación por error entre las NIC de una máquina virtual, cada puerto de conmutador Virtual de Hyper-V asociado a una máquina virtual con la formación de equipos NIC debe establecerse para permitir la formación de equipos. 
+Dado que la conmutación por error entre las NIC de una máquina virtual puede provocar que el tráfico se envíe con la dirección MAC del otro vmNIC, cada puerto de conmutador virtual de Hyper-V asociado a una máquina virtual que usa la formación de equipos NIC debe configurarse para permitir la formación de equipos. 
 
 
 ## <a name="related-topics"></a>Temas relacionados
 
-- [Administración y uso de direcciones MAC de la formación de equipos NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Al configurar un equipo NIC con el modo independiente de conmutador y hash de dirección o distribución de carga dinámica, el equipo usa que la media access control dirección (MAC) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo desde el conjunto inicial de los miembros del equipo.
+- [Administración y uso de direcciones MAC de formación de equipos NIC](NIC-Teaming-MAC-Address-Use-and-Management.md): Al configurar un equipo NIC con el modo independiente del conmutador y la distribución de la carga dinámica o el hash de la dirección, el equipo usa la dirección Media Access Control (MAC) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo del conjunto inicial de miembros del equipo.
 
-- [Configuración de formación de equipos NIC](nic-teaming-settings.md): En este tema, nos ofrecerle una visión general de las propiedades del equipo NIC como formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles sobre la configuración del adaptador en espera y la propiedad de la interfaz principal del equipo. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador de modo de espera para tolerancia a errores.
+- [Configuración de la formación de equipos NIC](nic-teaming-settings.md): En este tema se proporciona información general sobre las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
   
-- [Crear un nuevo equipo NIC en un equipo host o máquina virtual](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md): En este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual de Hyper-V (VM) que ejecuta Windows Server 2016.
+- [Cree un nuevo equipo NIC en un equipo host o una máquina virtual](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md): En este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual (VM) de Hyper-V que ejecuta Windows Server 2016.
 
-- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): En este tema, se describen formas de solucionar la formación de equipos NIC, como hardware, los valores de conmutador físico y habilitación o deshabilitación de los adaptadores de red mediante Windows PowerShell. 
+- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): En este tema se describen las formas de solucionar problemas de formación de equipos NIC, como hardware, los valores de los conmutadores físicos y la deshabilitación o habilitación de adaptadores de red con Windows PowerShell. 
  
