@@ -8,12 +8,12 @@ ms.date: 02/13/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 0b5b473460bf72143f517443eadad831dd2502c5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f90ffe5b6a81ab1b4c2616dce08c98cbd8c065b4
+ms.sourcegitcommit: a35ce5b166175c905edd09005b94e96ad48c57a7
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865150"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70936975"
 ---
 # <a name="use-storage-migration-service-to-migrate-a-server"></a>Usar el servicio de migración de almacenamiento para migrar un servidor
 
@@ -44,12 +44,20 @@ Antes de empezar, instale el servicio de migración de almacenamiento y asegúre
 En este paso, especificará qué servidores se van a migrar y, a continuación, los examinará para recopilar información sobre sus archivos y configuraciones.
 
 1. Seleccione **nuevo trabajo**, asigne un nombre al trabajo y, a continuación, seleccione **Aceptar**.
-1. En la página **escribir credenciales** , escriba las credenciales de administrador que funcionan en los servidores desde los que desea migrar y, a continuación, seleccione **siguiente**.
-1. Seleccione **Agregar un dispositivo**, escriba un nombre de servidor de origen y, luego, haga clic en **Aceptar**. <br>Repita este paso para cualquier otro servidor que desee inventariar.
-1. Seleccione **iniciar examen**.<br>La página se actualiza para mostrar Cuándo se completa el análisis.
+2. En la página **escribir credenciales** , escriba las credenciales de administrador que funcionan en los servidores desde los que desea migrar y, a continuación, seleccione **siguiente**.
+
+   > [!NOTE]
+   > Si decide migrar desde servidores Samba de Linux, habrá un paso adicional para proporcionar la contraseña SSH o la clave privada.
+
+3. Seleccione **Agregar un dispositivo**, escriba un nombre de servidor de origen y, luego, haga clic en **Aceptar**. <br>Repita este paso para cualquier otro servidor que desee inventariar.
+
+   > [!NOTE]
+   > Si decide migrar desde un clúster de conmutación por error, proporcione el nombre del recurso de servidor de archivos en clúster.
+
+4. Seleccione **iniciar examen**.<br>La página se actualiza para mostrar Cuándo se completa el análisis.
     ![Captura de pantalla en la que se muestra un](media/migrate/inventory.png) servidor listo para analizar **la figura 2: Inventario de servidores**
-1. Seleccione cada servidor para revisar los recursos compartidos, la configuración, los adaptadores de red y los volúmenes inventariados. <br><br>El servicio de migración de almacenamiento no transferirá los archivos o carpetas que sabemos que podrían interferir con el funcionamiento de Windows, por lo que en esta versión verá ADVERTENCIAS para los recursos compartidos ubicados en la carpeta del sistema de Windows. Tendrá que omitir estos recursos compartidos durante la fase de transferencia. Para obtener más información, consulte [qué archivos y carpetas se excluyen de las transferencias](faq.md#what-files-and-folders-are-excluded-from-transfers).
-1. Seleccione **siguiente** para pasar a transferir datos.
+5. Seleccione cada servidor para revisar los recursos compartidos, la configuración, los adaptadores de red y los volúmenes inventariados. <br><br>El servicio de migración de almacenamiento no transferirá los archivos o carpetas que sabemos que podrían interferir con el funcionamiento de Windows, por lo que en esta versión verá ADVERTENCIAS para los recursos compartidos ubicados en la carpeta del sistema de Windows. Tendrá que omitir estos recursos compartidos durante la fase de transferencia. Para obtener más información, consulte [qué archivos y carpetas se excluyen de las transferencias](faq.md#what-files-and-folders-are-excluded-from-transfers).
+6. Seleccione **siguiente** para pasar a transferir datos.
 
 ## <a name="step-2-transfer-data-from-your-old-servers-to-the-destination-servers"></a>Paso 2: Transferencia de datos de los servidores antiguos a los servidores de destino
 
@@ -57,6 +65,10 @@ En este paso, transferirá los datos después de especificar dónde colocarlos e
 
 1. En la página **transferir datos** > **Escriba las credenciales** , escriba las credenciales de administrador que funcionan en los servidores de destino a los que desea migrar y, a continuación, seleccione **siguiente**.
 2. En la página **Agregar un dispositivo de destino y asignaciones** , se muestra el primer servidor de origen. Escriba el nombre del servidor al que desea migrar y, a continuación, seleccione **scan Device**.
+
+   > [!NOTE]
+   > Si decide migrar a un clúster de conmutación por error, proporcione el nombre del recurso de servidor de archivos en clúster.
+
 3. Asigne los volúmenes de origen a los volúmenes de destino, desactive la casilla **incluir** para los recursos compartidos que no desea transferir (incluidos los recursos compartidos administrativos ubicados en la carpeta del sistema de Windows) y, a continuación, seleccione **siguiente**.
    ![Captura de pantalla que muestra un servidor de origen y sus volúmenes y recursos compartidos y donde se](media/migrate/transfer.png) transferirán a la figura 3 de destino **: Un servidor de origen y la ubicación a la que se transferirá el almacenamiento**
 4. Agregue un servidor de destino y asignaciones para más servidores de origen y, a continuación, seleccione **siguiente**.
@@ -66,7 +78,7 @@ En este paso, transferirá los datos después de especificar dónde colocarlos e
 8. Una vez completada la transferencia, revise el servidor de destino para asegurarse de que todo se ha transferido correctamente. Seleccione **registro de errores solo** si desea descargar un registro de los archivos que no se han transferido.
 
    > [!NOTE]
-   > Si desea mantener un rastro de auditoría de las transferencias o planea realizar más de una transferencia en un trabajo, haga clic en **transferir registro** para guardar una copia de CSV. Cada transferencia subsiguiente sobrescribe la información de base de datos de una ejecución anterior. 
+   > Si desea mantener un rastro de auditoría de las transferencias o tiene previsto realizar más de una transferencia en un trabajo, haga clic en **transferir registro** o en las demás opciones para guardar el registro para guardar una copia de CSV. Cada transferencia subsiguiente sobrescribe la información de base de datos de una ejecución anterior. 
 
 En este momento, tiene tres opciones:
 
@@ -76,20 +88,23 @@ En este momento, tiene tres opciones:
 
 Si su objetivo es sincronizar los archivos con Azure, puede configurar los servidores de destino con Azure File Sync después de transferir los archivos o después de recurrir a los servidores de destino (consulte [planeación de una implementación de Azure File Sync](https://docs.microsoft.com/azure/storage/files/storage-sync-files-planning)).
 
-## <a name="step-3-optionally-cut-over-to-the-new-servers"></a>Paso 3: Opcionalmente, puede pasar a los nuevos servidores.
+## <a name="step-3-cut-over-to-the-new-servers"></a>Paso 3: Recorte a los nuevos servidores
 
 En este paso, se recortan de los servidores de origen a los servidores de destino y se mueven las direcciones IP y los nombres de equipo a los servidores de destino. Una vez finalizado este paso, las aplicaciones y los usuarios accederán a los nuevos servidores a través de los nombres y las direcciones de los servidores desde los que migró.
 
- 1. Si ha navegado fuera del trabajo de migración, en el centro de administración de Windows, vaya a **Administrador del servidor** > **servicio de migración de almacenamiento** y, a continuación, seleccione el trabajo que desea completar. 
- 1. En la página **resaltar a los nuevos servidores** > ,**Escriba las credenciales** , seleccione **siguiente** para usar las credenciales que escribió anteriormente.
- 1. En la página **configurar traslado** , especifique los adaptadores de red que se van a usar para la configuración de cada dispositivo de origen. Esto mueve la dirección IP del origen al destino como parte de la transferencia.
- 1. Especifique la dirección IP que se usará para el servidor de origen después de que el traslado traslade su dirección al destino. Puede usar DHCP o una dirección estática. Si usa una dirección estática, la nueva subred debe ser la misma que la antigua o bien se producirá un error en la misma.
-    ![Captura de pantalla que muestra un servidor de origen y sus direcciones IP y nombres de equipo y de qué se reemplazarán después de la figura 4 de la transferencia](media/migrate/cutover.png)
-    :** Un servidor de origen y cómo se moverá su configuración de red al destino**
- 1. Especifique cómo cambiar el nombre del servidor de origen después de que el servidor de destino adopte el nombre. Puede usar un nombre generado de forma aleatoria o escribir uno personalmente. Después, seleccione **siguiente**.
- 1. Seleccione **siguiente** en la página **ajustar la configuración de transferencia** .
- 1. Seleccione **validar** en la página **validar el dispositivo de origen y de destino** y, a continuación, seleccione **siguiente**.
- 1. Cuando esté listo para realizar el traslado, seleccione **iniciar el traslado**. <br>Es posible que los usuarios y las aplicaciones experimenten una interrupción mientras se mueven la dirección y los nombres y los servidores se reinician varias veces, pero no se verán afectados por la migración. El tiempo que tarda la transferencia depende de la rapidez con que se reinicien los servidores, así como de los tiempos de replicación de DNS y Active Directory.
+1. Si ha navegado fuera del trabajo de migración, en el centro de administración de Windows, vaya a **Administrador del servidor** > **servicio de migración de almacenamiento** y, a continuación, seleccione el trabajo que desea completar. 
+2. En la página **resaltar a los nuevos servidores** > ,**Escriba las credenciales** , seleccione **siguiente** para usar las credenciales que escribió anteriormente.
+
+    > [!NOTE]
+   > Si el destino es un servidor de archivos en clúster, es posible que tenga que proporcionar credenciales con permisos para quitar el clúster del dominio y, a continuación, volver a agregarlo con el nuevo nombre. 
+
+3. En la página **configurar traslado** , especifique los adaptadores de red que se van a usar para la configuración de cada dispositivo de origen. Esto mueve la dirección IP del origen al destino como parte de la transferencia. Tiene la opción de omitir todas las migraciones de red o ciertas interfaces. Siempre debe especificar DHCP o una nueva dirección IP estática para las interfaces de origen si va a recortar el servidor.
+4. Especifique la dirección IP que se usará para el servidor de origen después de que el traslado traslade su dirección al destino. Puede usar DHCP o una dirección estática. Si usa una dirección estática, la nueva subred debe ser la misma que la antigua o bien se producirá un error en la misma.
+    ![Captura de pantalla que muestra un servidor de origen y sus direcciones IP y nombres de equipo y de qué se reemplazarán después de la figura 4 de la transferencia](media/migrate/cutover.png):  **Un servidor de origen y cómo se moverá su configuración de red al destino**
+5. Especifique cómo cambiar el nombre del servidor de origen después de que el servidor de destino adopte el nombre. Puede usar un nombre generado de forma aleatoria o escribir uno personalmente. Después, seleccione **siguiente**.
+6. Seleccione **siguiente** en la página **ajustar la configuración de transferencia** .
+7. Seleccione **validar** en la página **validar el dispositivo de origen y de destino** y, a continuación, seleccione **siguiente**.
+8. Cuando esté listo para realizar el traslado, seleccione **iniciar el traslado**. <br>Es posible que los usuarios y las aplicaciones experimenten una interrupción mientras se mueven la dirección y los nombres y los servidores se reinician varias veces, pero no se verán afectados por la migración. El tiempo que tarda la transferencia depende de la rapidez con que se reinicien los servidores, así como de los tiempos de replicación de DNS y Active Directory.
 
 ## <a name="see-also"></a>Vea también
 

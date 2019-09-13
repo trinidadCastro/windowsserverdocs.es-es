@@ -8,12 +8,12 @@ ms.date: 08/19/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: f086143ae2e02a2d049189ff248e02fc44fe3cb2
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: a1e195ab755dfd0b61cc4201f43373421ce51aa2
+ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584801"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923547"
 ---
 # <a name="storage-migration-service-frequently-asked-questions-faq"></a>Preguntas más frecuentes sobre el servicio de migración de almacenamiento (p + f)
 
@@ -89,11 +89,13 @@ El servicio de migración de almacenamiento contiene un motor de lectura y copia
 
 - **Use Windows Server 2019 para el sistema operativo de destino.** Windows Server 2019 contiene el servicio de proxy del servicio de migración de almacenamiento. Al instalar esta característica y migrar a destinos de Windows Server 2019, todas las transferencias funcionan como línea directa de visión entre el origen y el destino. Este servicio se ejecuta en el orquestador durante la transferencia si los equipos de destino son Windows Server 2012 R2 o Windows Server 2016, lo que significa que las transferencias de doble salto y serán mucho más lentas. Si hay varios trabajos que se ejecutan con los destinos Windows Server 2012 R2 o Windows Server 2016, el orquestador se convertirá en un cuello de botella. 
 
-- **Modifique los subprocesos de transferencia predeterminados.** El servicio del proxy del servicio de migración de almacenamiento copia ocho archivos simultáneamente en un trabajo determinado. Puede aumentar el número de subprocesos de copia simultáneos si ajusta el siguiente nombre de valor REG_DWORD del registro en decimal en cada nodo que ejecute el proxy de SMS:
+- **Modifique los subprocesos de transferencia predeterminados.** El servicio del proxy del servicio de migración de almacenamiento copia ocho archivos simultáneamente en un trabajo determinado. Puede aumentar el número de subprocesos de copia simultáneos si ajusta el siguiente nombre de valor REG_DWORD del registro en decimal en cada nodo que ejecute el proxy del servicio de migración de almacenamiento:
 
-    HKEY_Local_Machine\Software\Microsoft\SMSProxy FileTransferThreadCount
+    HKEY_Local_Machine\Software\Microsoft\SMSProxy
+    
+    FileTransferThreadCount
 
-   El intervalo válido es de 1 a 128 en Windows Server 2019. Después de cambiar, debe reiniciar el servicio del proxy del servicio de migración de almacenamiento en todos los equipos que participan en una migración. Tenga cuidado con esta configuración; Si se establece en un valor superior, es posible que se necesiten núcleos adicionales, rendimiento de almacenamiento y ancho de banda de red. Si se establece en un valor demasiado alto, se puede producir un rendimiento reducido en comparación con la configuración predeterminada. La capacidad de cambiar la configuración de subprocesos de forma heurística en función de la CPU, la memoria, la red y el almacenamiento está prevista para una versión posterior de SMS.
+   El intervalo válido es de 1 a 128 en Windows Server 2019. Después de cambiar, debe reiniciar el servicio del proxy del servicio de migración de almacenamiento en todos los equipos que participan en una migración. Tenga cuidado con esta configuración; Si se establece en un valor superior, es posible que se necesiten núcleos adicionales, rendimiento de almacenamiento y ancho de banda de red. Si se establece en un valor demasiado alto, se puede producir un rendimiento reducido en comparación con la configuración predeterminada.
 
 - **Agregue núcleos y memoria.**  Se recomienda encarecidamente que los equipos de origen, orquestador y destino tengan al menos dos núcleos de procesador o dos vCPU, y más pueden ayudar significativamente al inventario y a la transferencia de rendimiento, especialmente cuando se combinan con FileTransferThreadCount (arriba). Cuando se transfieren archivos que son mayores que los formatos de oficina habituales (gigabytes o superior), el rendimiento de la transferencia se beneficiará de más memoria que los 2 GB como mínimo.
 

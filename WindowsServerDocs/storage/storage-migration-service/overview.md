@@ -8,12 +8,12 @@ ms.date: 08/16/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: dae64b81c48b9ae6bf84c3558066ebbdf9c06ace
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: 50165f5e5dcb5e3fd83da8e6156869c61aeb68ca
+ms.sourcegitcommit: 825c2c17d227fec75335254edaa4efbb89ebcba2
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584827"
+ms.lasthandoff: 09/11/2019
+ms.locfileid: "70905069"
 ---
 # <a name="storage-migration-service-overview"></a>Información general del servicio de migración de almacenamiento
 
@@ -51,8 +51,8 @@ servidor listo para analizar**la figura 2: Servidores de inventario del servicio
 
 Para usar el servicio de migración de almacenamiento, necesita lo siguiente:
 
-- Un **servidor de origen** del que migrar archivos y datos
-- Un **servidor de destino** que ejecuta windows Server 2019 para migrar a: windows Server 2016 y windows Server 2012 R2 funcionan también, pero están en torno a un 50% más lento
+- Un **servidor de origen** o un **clúster de conmutación por error** del que migrar archivos y datos
+- Un **servidor de destino** que ejecuta Windows Server 2019 (en clúster o independiente) al que migrar. Windows Server 2016 y Windows Server 2012 R2 funcionan también, pero son aproximadamente del 50% más lento
 - Un **servidor de Orchestrator** que ejecute Windows Server 2019 para administrar la migración  <br>Si va a migrar solo unos pocos servidores y uno de ellos ejecuta Windows Server 2019, puede usarlo como el orquestador. Si va a migrar más servidores, se recomienda usar un servidor de Orchestrator independiente.
 - Un **equipo o servidor que ejecute el [centro de administración de Windows](../../manage/windows-admin-center/understand/windows-admin-center.md)**  para ejecutar la interfaz de usuario del servicio de migración de almacenamiento, a menos que prefiera usar PowerShell para administrar la migración. La versión del centro de administración de Windows y de Windows Server 2019 debe ser al menos la versión 1809.
 
@@ -98,7 +98,7 @@ El servidor de origen debe ejecutar uno de los siguientes sistemas operativos:
 
 Nota: Windows Small Business Server y Windows Server Essentials son controladores de dominio. El servicio de migración de almacenamiento todavía no puede pasar de los controladores de dominio, pero puede inventariar y transferir archivos de ellos.   
 
-Si el orquestador ejecuta Windows Server, versión 1903 o posterior, puede migrar los siguientes tipos de origen adicionales:
+Puede migrar los siguientes tipos de origen adicionales si el orquestador ejecuta Windows Server, versión 1903 o posterior, o si el orquestador está ejecutando una versión anterior de Windows Server con [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
 
 - Clústeres de conmutación por error
 - Servidores Linux que usan Samba. Hemos probado lo siguiente:
@@ -115,14 +115,14 @@ El servidor de destino debe ejecutar uno de los siguientes sistemas operativos:
 - Windows Server 2012 R2
 
 > [!TIP]
-> Los servidores de destino que ejecutan Windows Server 2019 o Windows Server, la versión de canal semianual 1809 o posterior tienen el doble de rendimiento de transferencia de versiones anteriores de Windows Server. Esta mejora del rendimiento se debe a la inclusión de un servicio de proxy de servicio de migración de almacenamiento integrado, que también abre los puertos de Firewall necesarios si aún no están abiertos.
+> Los servidores de destino que ejecutan Windows Server 2019 o Windows Server, canal semianual o posterior, tienen el doble de rendimiento de transferencia de versiones anteriores de Windows Server. Esta mejora del rendimiento se debe a la inclusión de un servicio de proxy de servicio de migración de almacenamiento integrado, que también abre los puertos de Firewall necesarios si aún no están abiertos.
 
 ## <a name="whats-new-in-storage-migration-service"></a>Novedades de Storage Migration Service
 
-Windows Server, versión 1903 agrega las siguientes características nuevas, cuando se ejecutan en el servidor de Orchestrator:
+Las siguientes características nuevas están disponibles al ejecutar el orquestador del servidor de migración de almacenamiento en Windows Server, versión 1903 o posterior, o una versión anterior de Windows Server con [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534) instalado:
 
 - Migrar usuarios y grupos locales al nuevo servidor.
-- Migrar el almacenamiento de los clústeres de conmutación por error.
+- Migrar el almacenamiento de clústeres de conmutación por error, migrar a clústeres de conmutación por error y migrar entre servidores independientes y clústeres de conmutación por error
 - Migrar el almacenamiento desde un servidor Linux que usa Samba.
 - Sincronizar más fácilmente los recursos compartidos migrados en Azure mediante Azure File Sync.
 - Migrar a nuevas redes, como Azure.

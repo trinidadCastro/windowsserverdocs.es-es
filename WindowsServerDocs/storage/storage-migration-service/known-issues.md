@@ -8,12 +8,12 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: efd92e9f6a199ad901e95b18718f3b448c3207e2
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 2200c41bfc6f7e50d4f85f48591a12ad35720062
+ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560586"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70923360"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -89,7 +89,7 @@ Para solucionar este problema:
 3. En el equipo de Orchestrator, inicie regedit. exe.
 4. Busque y haga clic en la siguiente subclave del Registro: 
 
-   `HKEY_LOCAL_MACHINE\\Software\\Microsoft\\SMSPowershell`
+   `HKEY_LOCAL_MACHINE\Software\Microsoft\SMSPowershell`
 
 5. En el menú Edición, seleccione Nuevo y haga clic en Valor DWORD. 
 6. Escriba "WcfOperationTimeoutInMinutes" como nombre de la DWORD y, a continuación, presione Entrar.
@@ -206,6 +206,44 @@ El examen del registro StorageMigrationService-proxy/Debug muestra:
 en Microsoft. StorageMigration. proxy. Service. Transfer. TransferOperation. Validate () en Microsoft. StorageMigration. proxy. Service. Transfer. TransferRequestHandler. ProcessRequest (FileTransferRequest fileTransferRequest, GUID operationId)    [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
 Este error se espera si la cuenta de migración no tiene al menos permisos de acceso de lectura para los recursos compartidos de SMB. Para solucionar este error, agregue un grupo de seguridad que contenga la cuenta de migración de origen a los recursos compartidos de SMB en el equipo de origen y concédale la lectura, el cambio o el control total. Una vez finalizada la migración, puede quitar este grupo. Una versión futura de Windows Server puede cambiar este comportamiento para ya no requerir permisos explícitos para los recursos compartidos de origen.
+
+## <a name="error-0x80005000-when-running-inventory"></a>Error 0x80005000 al ejecutar el inventario
+
+Después de instalar [KB4512534](https://support.microsoft.com/en-us/help/4512534/windows-10-update-kb4512534) e intentar ejecutar el inventario, se produce un error en el inventario con errores:
+
+  EXCEPCIÓN DE HRESULT: 0x80005000
+  
+  Nombre de registro:      Origen de Microsoft-Windows-StorageMigrationService/admin:        Microsoft-Windows-StorageMigrationService fecha:          9/9/2019 5:21:42 PM ID. de evento:      2503 categoría de tareas: Nivel ninguno:         Palabras clave de error:      
+  Usuario:          Equipo de servicio de red:      FS02. Descripción de TailwindTraders.net: No se pudo realizar un inventario de los equipos.
+Trabajo: ID. de foo2: Estado de 20ac3f75-4945-41d1-9A79-d11dbb57798b: Error: Mensaje de error 36934: Error en el inventario de todos los dispositivos: Compruebe el error detallado y asegúrese de que se cumplen los requisitos de inventario. El trabajo no pudo inventariar ninguno de los equipos de origen especificados. Esto puede deberse a que el equipo del orquestador no pudo acceder a él a través de la red, posiblemente a causa de una regla de firewall o a falta de permisos.
+  
+  Nombre de registro:      Origen de Microsoft-Windows-StorageMigrationService/admin:        Microsoft-Windows-StorageMigrationService fecha:          9/9/2019 5:21:42 PM ID. de evento:      2509 categoría de tareas: Nivel ninguno:         Palabras clave de error:      
+  Usuario:          Equipo de servicio de red:      FS02. Descripción de TailwindTraders.net: No se pudo realizar el inventario de un equipo.
+Trabajo: foo2 equipo: FS01. Estado de TailwindTraders.net: Error:-2147463168 mensaje de error: Orientación: Compruebe el error detallado y asegúrese de que se cumplen los requisitos de inventario. El inventario no pudo determinar ningún aspecto del equipo de origen especificado. Esto puede deberse a que faltan permisos o privilegios en el puerto de firewall o en el de origen.
+  
+Este error se debe a un defecto de código en el servicio de migración de almacenamiento cuando se proporcionan credenciales de migración en forma de nombre principal de usuario (UPNmeghan@contoso.com), como ' '. El servicio del orquestador de servicio de migración de almacenamiento no puede analizar correctamente este formato, lo que conduce a un error en una búsqueda de dominio que se agregó para la compatibilidad con la migración de clústeres en KB4512534 y 19H1.
+
+Para solucionar este problema, proporcione credenciales con el formato dominio\usuario, como "Contoso\Meghan".
+
+## <a name="error-serviceerror0x9006-or-the-proxy-isnt-currently-available-when-migrating-to-a-windows-server-failover-cluster"></a>Error "ServiceError0x9006" o "el proxy no está disponible actualmente". al migrar a un clúster de conmutación por error de Windows Server
+
+Al intentar transferir datos a un servidor de archivos en clúster, recibirá errores como: 
+
+   Asegúrese de que el servicio de proxy está instalado y en ejecución, y vuelva a intentarlo. El proxy no está disponible actualmente.
+0x9006 ServiceError0x9006, Microsoft. StorageMigration. Commands. UnregisterSmsProxyCommand
+
+Este error se espera si el recurso del servidor de archivos ha pasado del nodo propietario del clúster original de Windows Server 2019 a un nuevo nodo y la característica de proxy del servicio de migración de almacenamiento no estaba instalada en ese nodo.
+
+Como solución alternativa, mueva el recurso del servidor de archivos de destino de nuevo al nodo de clúster de propietario original que estaba en uso la primera vez que configuró emparejamientos de transferencia.
+
+Como alternativa alternativa:
+
+1. Instale la característica proxy de servicio de migración de almacenamiento en todos los nodos de un clúster.
+2. Ejecute el siguiente comando de PowerShell del servicio de migración de almacenamiento en el equipo de Orchestrator: 
+
+   ```PowerShell
+   Register-SMSProxy -ComputerName *destination server* -Force
+   ```
 
 ## <a name="see-also"></a>Vea también
 
