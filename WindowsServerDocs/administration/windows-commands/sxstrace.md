@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 396d06bf079c0cfa8ba4864f71333eec39f7b255
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dbc8dad642e15dede1ce89105a501fd90224610b
+ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814106"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975308"
 ---
 # <a name="sxstrace"></a>sxstrace
 
@@ -28,32 +28,32 @@ Diagnostica problemas en paralelo.
 
 ## <a name="syntax"></a>Sintaxis  
 ```  
-sxstrace [{[trace /logfile:<FileName> [/nostop]|[parse /logfile:<FileName> /outfile:<ParsedFile>  [/filter:<AppName>]}]  
+sxstrace [{[trace -logfile:<FileName> [-nostop]|[parse -logfile:<FileName> -outfile:<ParsedFile>  [-filter:<AppName>]}]  
 ```  
 
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|seguimiento|Habilita el seguimiento de sxs (side-by-side)|  
-|/logfile|Especifica el archivo de registro sin procesar.|  
-|\<FileName>|Guarda el registro de seguimiento *FileName*.|  
-|/nostop|Especifica que no hay símbolo para detener el seguimiento.|  
-|Analizar|Convierte el archivo de seguimiento sin procesar.|  
-|/ outfile|Especifica el nombre de archivo de salida.|  
-|\<ParsedFile>|Especifica el nombre de archivo del archivo analizado.|  
-|/filter|Permite filtrar el resultado.|  
-|\<AppName>|Especifica el nombre de la aplicación.|  
-|stoptrace|Si no se detiene antes, detenga el seguimiento.|  
-|/?|Muestra la ayuda en el símbolo del sistema.|  
+|Seguimiento|Habilita el seguimiento para SxS (en paralelo)|  
+|-logfile|Especifica el archivo de registro sin procesar.|  
+|\<Nombre de archivo >|Guarda el registro de seguimiento en el *nombre de archivo*.|  
+|-NoStop|No especifica ningún aviso para detener el seguimiento.|  
+|Analiza|Traduce el archivo de seguimiento sin procesar.|  
+|-OUTFILE|Especifica el nombre de archivo de salida.|  
+|\<> ParsedFile|Especifica el nombre de archivo del archivo analizado.|  
+|-filtro|Permite filtrar la salida.|  
+|\<AppName >|Especifica el nombre de la aplicación.|  
+|stoptrace|Detenga el seguimiento si no se ha detenido antes de.|  
+|-?|Muestra la ayuda en el símbolo del sistema.|  
 
-## <a name="BKMK_Examples"></a>Ejemplos  
-Habilitar el seguimiento y guardar el archivo de seguimiento **sxstrace.etl**:  
+## <a name="BKMK_Examples"></a>Example  
+Habilite el seguimiento y guarde el archivo de seguimiento en **sxstrace. ETL**:  
 ```  
-sxstrace trace /logfile:sxstrace.etl  
+sxstrace trace -logfile:sxstrace.etl  
 ```  
-Traducir el archivo de seguimiento sin procesar en un formato legible y guardar el resultado a **sxstrace.txt**:  
+Traduzca el archivo de seguimiento sin procesar en un formato legible para el usuario y guarde el resultado en **sxstrace. txt**:  
 ```  
-sxstrace parse /logfile:sxstrace.etl /outfile:sxstrace.txt  
+sxstrace parse -logfile:sxstrace.etl -outfile:sxstrace.txt  
 ```  
 
 ## <a name="additional-references"></a>Referencias adicionales  

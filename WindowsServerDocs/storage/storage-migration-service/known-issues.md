@@ -8,16 +8,20 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 2200c41bfc6f7e50d4f85f48591a12ad35720062
-ms.sourcegitcommit: 86350de764b89ebcac2a78ebf32631b7b5ce409a
+ms.openlocfilehash: 16e62d9232d0ec1b01333d73bc5b4a1555ffbad0
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923360"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987405"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
 Este tema contiene respuestas a problemas conocidos al usar el [servicio de migración de almacenamiento](overview.md) para migrar servidores de.
+
+El servicio de migración de almacenamiento se publica en dos partes: el servicio en Windows Server y la interfaz de usuario en el centro de administración de Windows. El servicio está disponible en Windows Server, el canal de mantenimiento a largo plazo, así como el canal semianual de Windows Server. Aunque el centro de administración de Windows está disponible como descarga independiente. También incluimos periódicamente cambios en las actualizaciones acumulativas de Windows Server, que se publican a través de Windows Update. 
+
+Por ejemplo, Windows Server, versión 1903 incluye nuevas características y correcciones para el servicio de migración de almacenamiento, que también están disponibles para Windows Server 2019 y Windows Server, versión 1809 mediante la instalación de [KB4512534](https://support.microsoft.com/help/4512534/windows-10-update-kb4512534).
 
 ## <a name="collecting-logs"></a>Cómo recopilar archivos de registro al trabajar con Soporte técnico de Microsoft
 
@@ -109,7 +113,7 @@ Este comportamiento es así por diseño, para evitar problemas de conectividad d
 
 Para solucionar este problema, realice una migración a un equipo en la misma red. A continuación, mueva el equipo a una nueva red y reasigne su información de IP. Por ejemplo, si va a migrar a IaaS de Azure, migre primero a una máquina virtual local y luego use Azure Migrate para desplazar la máquina virtual a Azure.  
 
-Hemos corregido este problema en una versión posterior del centro de administración de Windows. Ahora le permitiremos especificar migraciones que no modifiquen la configuración de red del servidor de destino. La extensión actualizada se mostrará aquí cuando se lance. 
+Hemos corregido este problema en una versión posterior del centro de administración de Windows. Ahora le permite especificar las migraciones que no modifican la configuración de red del servidor de destino. La extensión actualizada se mostrará aquí cuando se lance. 
 
 ## <a name="validation-warnings-for-destination-proxy-and-credential-administrative-privileges"></a>Advertencias de validación para los privilegios de administrador de credenciales y proxy de destino
 
@@ -120,7 +124,7 @@ Al validar un trabajo de transferencia, verá las siguientes advertencias:
  > **El proxy de destino está registrado.**
  > Advertencia: No se encontró el proxy de destino.
 
-Si no ha instalado el servicio de proxy de migración de almacenamiento en el equipo de destino de Windows Server 2019 o si el equipo destino es Windows Server 2016 o Windows Server 2012 R2, este comportamiento es así por diseño. Se recomienda migrar a un equipo con Windows Server 2019 con el proxy instalado para mejorar significativamente el rendimiento de la transferencia.  
+Si no ha instalado el servicio de proxy de migración de almacenamiento en el equipo de destino de Windows Server 2019 o si el equipo de destino es Windows Server 2016 o Windows Server 2012 R2, este comportamiento es así por diseño. Se recomienda migrar a un equipo con Windows Server 2019 con el proxy instalado para mejorar significativamente el rendimiento de la transferencia.  
 
 ## <a name="certain-files-do-not-inventory-or-transfer-error-5-access-is-denied"></a>Determinados archivos no realizan el inventario o la transferencia, error 5 "acceso denegado"
 
@@ -129,7 +133,7 @@ Al realizar un inventario o transferir archivos de los equipos de origen a desti
   Nombre de registro:      Microsoft-Windows-StorageMigrationService-proxy/origen de depuración:        Microsoft-Windows-StorageMigrationService-proxy fecha:          2/26/2019 9:00:04 AM ID. de evento:      10000 categoría de tareas: Nivel ninguno:         Palabras clave de error:      
   Usuario:          Equipo de servicio de red: Descripción de srv1.contoso.com:
 
-  02/26/2019-09:00:04.860 [paso] error de transferencia \\de SRV1. contoso. com\public\indy.png: (5) se denegó el acceso.
+  02/26/2019-09:00:04.860 [error] error de transferencia \\de SRV1. contoso. com\public\indy.png: (5) se denegó el acceso.
 Seguimiento de la pila: en Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. OpenFile (String fileName, DesiredAccess desiredAccess, ShareMode shareMode, CreationDisposition creationDisposition, FlagsAndAttributes flagsAndAttributes) at Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. GetTargetFile (ruta de acceso de cadena) en Microsoft. StorageMigration. proxy. Service. Transfer. FileDirUtils. GetTargetFile (archivo FileInfo) en Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. InitializeSourceFileInfo () en Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. Transfer () en Microsoft. StorageMigration. proxy. Service. Transfer. FileTransfer. TryTransfer () [d:\os\src\base\dms\proxy\transfer\transferproxy\FileTransfer.cs:: TryTransfer:: 55]
 
 
@@ -139,7 +143,7 @@ Para resolver este problema, instale [Windows Update el 2 de abril de 2019: KB44
 
 ## <a name="dfsr-hashes-mismatch-when-using-storage-migration-service-to-preseed-data"></a>Los hashes de DFSR no coinciden al usar el servicio de migración de almacenamiento para preinicializar datos
 
-Al usar el servicio de migración de almacenamiento para transferir archivos a un nuevo destino, configurando el Replicación DFS (DFSR) para replicar los datos con un servidor DFSR existente a través de la replicación presionada o la clonación de la base de datos DFSR, todos los archivos experiemce un hash no coinciden y se vuelven a replicar. Parece que todos los flujos de datos, secuencias de seguridad, tamaños y atributos están exactamente coincidentes después de usar SMS para transferirlos. El examen de los archivos con ICACLS o el registro de depuración de la clonación de la base de datos de DFSR revela:
+Al usar el servicio de migración de almacenamiento para transferir archivos a un nuevo destino, configurando el Replicación DFS (DFSR) para replicar los datos con un servidor DFSR existente a través de la replicación preinicializada o la clonación de la base de datos DFSR, todos los archivos experiemce un hash no coinciden y se vuelven a replicar. Parece que todos los flujos de datos, secuencias de seguridad, tamaños y atributos están exactamente coincidentes después de usar SMS para transferirlos. El examen de los archivos con ICACLS o el registro de depuración de la clonación de la base de datos de DFSR revela:
 
 Archivo de origen:
 
@@ -171,7 +175,7 @@ Al intentar descargar los registros de transferencia o de errores al final de un
 
 Este error se espera si no ha habilitado la regla de firewall "uso compartido de archivos e impresoras (SMB-in)" en el servidor de Orchestrator. Las descargas de archivos del centro de administración de Windows requieren el puerto TCP/445 (SMB) en los equipos conectados.  
 
-## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transfering-from-windows-server-2008-r2"></a>Error "no se pudo transferir el almacenamiento en ninguno de los puntos de conexión" al transferir desde Windows Server 2008 R2
+## <a name="error-couldnt-transfer-storage-on-any-of-the-endpoints-when-transferring-from-windows-server-2008-r2"></a>Error "no se pudo transferir el almacenamiento en ninguno de los puntos de conexión" al transferir desde Windows Server 2008 R2
 
 Al intentar transferir datos de un equipo de origen de Windows Server 2008 R2, no se transfiere ninguna transferencia de datos y recibe el error:  
 
@@ -202,10 +206,10 @@ En el examen del registro de eventos StorageMigrationService/admin se muestra:
 
 El examen del registro StorageMigrationService-proxy/Debug muestra:
 
-   07/02/2019-13:35:57.231 [error] no se pudo realizar la validación de transferencia. ErrorCode 40961, el punto de conexión de origen no es accesible o no existe, las credenciales de origen no son válidas o el usuario autenticado no tiene permisos suficientes para acceder a ella.
+   07/02/2019-13:35:57.231 [error] error de validación de transferencia. ErrorCode 40961, el punto de conexión de origen no es accesible o no existe, las credenciales de origen no son válidas o el usuario autenticado no tiene permisos suficientes para acceder a ella.
 en Microsoft. StorageMigration. proxy. Service. Transfer. TransferOperation. Validate () en Microsoft. StorageMigration. proxy. Service. Transfer. TransferRequestHandler. ProcessRequest (FileTransferRequest fileTransferRequest, GUID operationId)    [d:\os\src\base\dms\proxy\transfer\transferproxy\TransferRequestHandler.cs::
 
-Este error se espera si la cuenta de migración no tiene al menos permisos de acceso de lectura para los recursos compartidos de SMB. Para solucionar este error, agregue un grupo de seguridad que contenga la cuenta de migración de origen a los recursos compartidos de SMB en el equipo de origen y concédale la lectura, el cambio o el control total. Una vez finalizada la migración, puede quitar este grupo. Una versión futura de Windows Server puede cambiar este comportamiento para ya no requerir permisos explícitos para los recursos compartidos de origen.
+Este error se espera si la cuenta de migración no tiene al menos permisos de acceso de lectura para los recursos compartidos de SMB. Para solucionar este error, agregue un grupo de seguridad que contenga la cuenta de migración de origen a los recursos compartidos de SMB en el equipo de origen y concédale la lectura, el cambio o el control total. Una vez finalizada la migración, puede quitar este grupo.
 
 ## <a name="error-0x80005000-when-running-inventory"></a>Error 0x80005000 al ejecutar el inventario
 

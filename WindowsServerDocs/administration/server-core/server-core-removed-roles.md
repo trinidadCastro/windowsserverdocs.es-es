@@ -7,12 +7,12 @@ ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 02/23/2018
-ms.openlocfilehash: ce5107e8e0ab573df7588428db65c8b223cf1f13
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 882410792c7b8df8a8275c357d64fc17c9f3479e
+ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476513"
+ms.lasthandoff: 09/13/2019
+ms.locfileid: "70975260"
 ---
 # <a name="roles-role-services-and-features-not-in-windows-server---server-core"></a>Roles, servicios de función y características que no están en Windows Server: Server Core
 
@@ -25,68 +25,67 @@ Los siguientes roles, servicios de rol y características se han quitado de la o
 
 ## <a name="roles-not-in-server-core"></a>Roles no en Server Core
 
-- Fax
-- MultiPointServerRole
-- NPAS
-- WDS
+- Servidor de fax (**fax**)
+- Multipoint Services (**MultiPointServerRole**)
+- Servicios de acceso y directivas de redes (**NPAS**)
+- Servicios de implementación de Windows (**WDS**) *(antes de la versión 1803 de Windows Server)*
 
 ## <a name="role-services-not-in-server-core"></a>Servicios de rol que no están en Server Core
 Tenga en cuenta que algunos servicios de rol de Escritorio remoto se incluyen en Server Core (agente de conexión, licencias, host de virtualización), pero otros no (puerta de enlace, host de sesión de escritorio remoto, acceso web).
 
-- Print-Scan-Server
-- Imprimir: Internet
-- Puerta de enlace de RDS
-- RDS-RD-Server
-- RDS: acceso web
-- Web-MGMT-Console
-- Web-LGCY-MGMT-Console
-- WDS: implementación
-- WDS-transporte *(antes de la versión 1803 de Windows Server)*
+- Servicios de impresión y documentos \ Servidor de digitalización distribuida (**Print-Scan-Server**)
+- Servicios de impresión y documentos \ impresión en Internet (**Print-Internet**)
+- Servicios de Escritorio remoto \ Escritorio remoto puerta de enlace (**RDS-Gateway**)
+- Servicios de Escritorio remoto \ Escritorio remoto host de sesión (**RDS-Rd-Server**)
+- Servicios de Escritorio remoto \ Escritorio remoto Web Access (**RDS-Web-Access**)
+- Servicio de rol de servidor Web (IIS) \ herramientas de administración \ consola**de administración de IIS (Web-MGMT-Console**)
+- Servicio de rol servidor Web (IIS) \ herramientas de administración \ compatibilidad con la administración de IIS 6 \ consola de administración de IIS 6 (**Web-LGCY-MGMT-Console**)
+- Servicios de implementación de Windows \ servidor**de implementación (WDS-implementación**)
+- Servicios de implementación de Windows \ servidor**de transporte (WDS-Transport**) *(antes de la versión 1803 de Windows Server)*
 
 ## <a name="features-not-in-server-core"></a>Características no en Server Core
-
-- BITS-IIS-ext
-- BitLocker-NetworkUnlock
-- Reproducción directa
-- Internet-Print-Client
-- LPR: monitor de Puerto
-- MSMQ-multidifusión
-- CMAK
-- Asistencia remota
-- RSAT-SMTP
-- RSAT-Feature-Tools-BitLocker-RemoteAdminTool
-- RSAT-bits-servidor
-- RSAT: NLB
-- RSAT: SNMP
-- RSAT-WINS
-- Hyper-V-herramientas
-- RSAT: herramientas de RDS
-- RSAT: puerta de enlace de RDS
-- RSAT-RDS-Licensing-diagnosis-UI
-- RDS-licencias-interfaz de usuario
-- UpdateServices-UI
-- RSAT: ADCS
-- RSAT-ADCS-MGMT
-- RSAT: respondedor en línea
-- RSAT: ADRMS
-- RSAT: fax
-- RSAT-File-Services
-- RSAT-DFS-MGMT-con
-- RSAT-FSRM-MGMT
-- RSAT-NFS-admin
-- RSAT: NPAS
-- RSAT-Print-Services
-- RSAT-VA-herramientas
-- AdminPack de WDS
-- SMTP-servidor
-- TFTP-cliente
-- WebDAV-redirector
-- Biométrico: marco de trabajo
-- Windows-Defender-GUI
-- Windows-Identity-Foundation
-- PowerShell-ISE
-- Servicio de búsqueda
-- Windows-TIFF-IFilter
-- Redes inalámbricas
-- Visor de XPS
-
+- Servicio de transferencia inteligente en segundo plano (BITS) \ extensión del servidor IIS (**bits-IIS-ext**)
+- Desbloqueo de red de BitLocker (**BitLocker-NetworkUnlock**)
+- Direct Play (**Direct-Play**)
+- Cliente de impresión en Internet (**Internet-Print-Client**)
+- Monitor de puerto de LPR (**LPR: monitor de Puerto**)
+- Message Queue Server \ compatibilidad con multidifusión de servicios de Message Queue Server (**MSMQ-multidifusión**)
+- Kit de administración del administrador de conexiones RAS (**CMAK**)
+- Asistencia remota (**asistencia remota**)
+- Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas del servidor SMTP (**rsat-SMTP**)
+- Herramientas de administración remota del servidor \ herramientas de administración de características \ Cifrado de unidad BitLocker utilidades de administración \ Cifrado de unidad BitLocker herramientas (**rsat-Feature-Tools-BitLocker-RemoteAdminTool**)
+- Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas de extensiones de servidor BITS (**rsat-bits-servidor**)
+- Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas de equilibrio**de carga de red (RSAT-NLB**)
+- Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas**de SNMP (RSAT-SNMP**)
+- Herramientas de administración remota del servidor \ herramientas de administración de características \ herramientas del servidor WINS (**rsat-WINS**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de administración de Hyper-V \ herramientas de administración de GUI de Hyper-V (**Hyper-v-Tools**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de Escritorio remoto Tools \ Escritorio remoto Gateway Tools (**rsat-RDS-Tools**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de Escritorio remoto Tools \ Escritorio remoto Gateway Tools (**rsat-RDS-Gateway**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de Escritorio remoto Tools \ Escritorio remoto herramientas de diagnóstico de licencias (**rsat-RDS-Licensing-Diagnostics-UI**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de Escritorio remoto Tools \ Escritorio remoto Licensing Tools (**RDS-Licensing-UI**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Windows Server Update Services Tools \ consola de administración**de interfaz de usuario (UpdateServices-UI**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Active Directory herramientas de servicios de certificados (**rsat-ADCS**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Active Directory herramientas de servicios de certificados \ herramientas**de administración de entidades de certificación (RSAT-ADCS-MGMT**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Active Directory herramientas de servicios de certificados \ herramientas de respuesta en línea (**rsat-online-respondedor**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Active Directory Rights Management Services Tools (**rsat-ADRMS**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas del servidor de fax (**rsat-fax**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de archivo (**rsat-File-Services**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de archivos \ herramientas de administración de DFS (**rsat-DFS-MGMT-con**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de archivo \ herramientas**de administrador de recursos de servidor de archivos (RSAT-FSRM-MGMT**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de archivo \ servicios para Network File System Management Tools (**rsat-NFS-admin**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios de acceso y directivas de redes (**rsat-NPAS**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ Servicios de impresión y documentos herramientas (**rsat-Print-Services**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de activación por volumen (**rsat-va-Tools**)
+- Herramientas de administración remota del servidor \ herramientas de administración de roles \ herramientas de servicios**de implementación de Windows (WDS-AdminPack**)
+- Servicios simples de TCP/IP (**simple-TCPIP**)
+- Servidor SMTP (**servidor SMTP**)
+- Cliente TFTP (**TFTP-Client**)
+- Redirector de WebDAV (**WebDAV-redirector**)
+- Plataforma de biometría de Windows (**Biometric-Framework**)
+- Características de Windows Defender \ GUI para Windows Defender (**Windows-Defender-GUI**)
+- Windows Identity Foundation 3,5 (**Windows-Identity-Foundation**)
+- Windows PowerShell \ Windows PowerShell ISE (**PowerShell-ISE**)
+- Search Service de Windows (**servicio de búsqueda**)
+- Windows TIFF IFilter (**Windows-TIFF-IFilter**)
+- Servicio de LAN inalámbrica (**redes inalámbricas**)
+- Visor de XPS (**visor de XPS**)
