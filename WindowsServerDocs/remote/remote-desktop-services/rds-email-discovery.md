@@ -8,12 +8,12 @@ ms.date: 3/27/2018
 ms.localizationpriority: medium
 ms.topic: article
 author: christianmontoya
-ms.openlocfilehash: 5b3f162b8eee70fbc452b7400b737454c3fffb59
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ca9484cc8abffcc21b4ed11756fb009b55046a0c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63712654"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870971"
 ---
 # <a name="set-up-email-discovery-to-subscribe-to-your-rds-feed"></a>Configuración de la detección de correo electrónico para suscribirte a la fuente de RDS
 
@@ -38,4 +38,4 @@ Ahora, sigue estos pasos para configurar la detección de correo electrónico:
 
    Los nombres de los campos de los registros DNS varían según el registrador del nombre de dominio, pero este proceso dará lugar a un registro TXT llamado _msradc.\<nombre_dominio\>. (como _msradc.contoso.com) que tiene un valor de la fuente web de Escritorio remoto completa.
 
-Ahora ya puede Ahora, inicia la aplicación Escritorio remoto en el dispositivo y suscríbete.
+Eso es todo. Ahora, inicia la aplicación Escritorio remoto en el dispositivo y suscríbete.
