@@ -8,12 +8,12 @@ ms.topic: article
 author: greg-lindsay
 ms.author: greg-lindsay
 ms.localizationpriority: high
-ms.openlocfilehash: 62821abc6c9eec660fa6af832bb1aba151708021
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 187abe06b469abe511d4bbbfb0aac9237d3c650a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63686441"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868522"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Ventaja híbrida de Azure para Windows Server
 
@@ -73,13 +73,13 @@ Para ver y contar todas las máquinas virtuales implementadas con Ventaja híbri
     foreach ($vm in $vms) {"VM Name: " + $vm.Name, "   Azure Hybrid Benefit for Windows Server: "+ $vm.LicenseType}
     ```
 
-3.  Mira tu factura de Microsoft Azure para determinar cuántas máquinas virtuales estás ejecutando con Ventaja híbrida de Azure para Windows Server. La información sobre el número de instancias con la ventaja aparece en ‘Información adicional’:
+3.  Mira tu factura de Microsoft Azure para determinar cuántas máquinas virtuales estás ejecutando con Ventaja híbrida de Azure para Windows Server. La información sobre el número de instancias con la ventaja aparece en "Información adicional":
 
     ```
     "{"ImageType":"WindowsServerBYOL","ServiceType":"Standard_A1","VMName":"","UsageType":"ComputeHR"}" 
     ```
 
-Ten en cuenta que la facturación no se aplica en tiempo real, es decir, habrá algunas horas de retardo desde el momento en que hayas activado una VM con la ventaja híbrida hasta que aparezca en la factura.
+Ten en cuenta que la facturación no se aplica en tiempo real; es decir, pasarán algunas horas desde que actives una VM con la ventaja híbrida hasta que aparezca en la factura.
 A continuación, puedes rellenar los resultados en la **Herramienta de recuento de Microsoft Software Assurance de Ventaja híbrida de Azure para Windows Server** que viene a continuación para obtener el número de licencias de WS cubiertas con Microsoft Software Assurance o suscripciones que son necesarias.
 
 Asegúrate de realizar un inventario en cada suscripción que poseas para generar una vista completa de la posición de la licencia.
@@ -101,7 +101,7 @@ Microsoft se reserva el derecho a auditar al cliente final en cualquier momento,
 
 ## <a name="deployment-guidance"></a>Guía de implementación 
 
-Hemos habilitado la disponibilidad de imágenes de galería pregeneradas para todos nuestros clientes que tengan licencias elegibles, independientemente de dónde las hubieran comprado, y también hemos habilitado a los asociados para que puedan realizar las implementaciones en nombre de los clientes. 
+Hemos habilitado la disponibilidad de imágenes de galería pregeneradas para todos nuestros clientes con licencias elegibles, independientemente de dónde las hayan comprado, y también hemos habilitado a los asociados para que puedan realizar implementaciones en nombre de los clientes. 
 
 Encontrarás las instrucciones para todas las opciones de implementación disponibles [aquí](https://azure.microsoft.com/pricing/hybrid-use-benefit/), incluyendo: 
 -   Vídeo detallado que destaca la nueva experiencia de implementación usando imágenes de galería pregeneradas

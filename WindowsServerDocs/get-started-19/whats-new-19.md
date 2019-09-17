@@ -8,16 +8,16 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 06/04/2019
-ms.openlocfilehash: 7110fe78982fec616174a93514d86fb2e1cf9fa5
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 665363c17cf5cb8d8ad52872128f2f63c07ea683
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810770"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868552"
 ---
 # <a name="whats-new-in-windows-server-2019"></a>Novedades de Windows Server 2019
 
-> Se aplica a: Windows Server 2019
+> Se aplica a: Windows Server 2019
 
 En este tema se describen algunas de las nuevas características de Windows Server 2019. Windows Server 2019 se basa en Windows Server 2016 e incluye numerosas innovaciones en cuatro temas claves: nube híbrida, seguridad, plataforma de aplicaciones e infraestructuras hiperconvergidas (HCI).
 
@@ -79,7 +79,7 @@ Para solucionar esta problemática, se crearon directivas de CI predeterminadas 
 
 Estas mejoras de seguridad están integradas en la plataforma completa de SDN que se introdujo en Windows Server 2016.
 
-Para obtener una lista completa de las novedades de SDN, consulta [Novedades de SDN para Windows Server 2019](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new).
+Para obtener una lista completa de las novedades de SDN, consulta [Novedades de SDN para Windows Server 2019](https://docs.microsoft.com/windows-server/networking/sdn/sdn-whats-new).
 
 ### <a name="shielded-virtual-machines-improvements"></a>Mejoras de las máquinas virtuales blindadas
 
@@ -103,7 +103,7 @@ Para obtener una lista completa de las novedades de SDN, consulta [Novedades de 
 
 - Fusión mejorada de las conexiones para ofrecer una experiencia de exploración sin interrupciones y cifrada correctamente.
 
-- Negociación mejorada de conjunto de aplicaciones de cifrado de lado de servidor de HTTP/2 para mitigación automática de errores de conexión y facilidad de implementación.
+- Negociación mejorada del conjunto de aplicaciones de cifrado de lado de servidor HTTP/2 para la mitigación automática de errores de conexión y la facilidad de implementación.
 
 - Nuestro proveedor de congestión TCP predeterminado es ahora Cubic, para ofrecerte un mayor rendimiento.
 
@@ -214,7 +214,7 @@ El [Servicio de hora de Windows](https://docs.microsoft.com/windows-server/netwo
 
 ### <a name="new-deployment-ui-and-windows-admin-center-extension-for-sdn"></a>Nueva extensión de Windows Admin Center e interfaz de usuario de implementación para SDN
 
-Ahora, gracias a Windows Server 2019, la implementación y administración son fáciles a través de una nueva interfaz de usuario de implementación y una extensión de Windows Admin Center que permiten que cualquier persona aproveche la capacidad de SDN. 
+Ahora, con Windows Server 2019, la implementación y administración son fáciles a través de una nueva interfaz de usuario de implementación y una extensión de Windows Admin Center que permiten que cualquier persona pueda aprovechar la capacidad de SDN. 
 
 ### <a name="persistent-memory-support-for-hyper-v-vms"></a>Soporte de memoria persistente para máquinas virtuales de Hyper-V
 

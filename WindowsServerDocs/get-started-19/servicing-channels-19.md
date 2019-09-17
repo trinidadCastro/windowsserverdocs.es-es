@@ -8,12 +8,12 @@ author: jasongerend
 ms.author: jgerend
 ms.localizationpriority: high
 ms.date: 05/21/2019
-ms.openlocfilehash: cdb831eb772114b86e6260063dff6ad881f2f37b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 639623b4ebb21a4f6a0025a71721204cbfc4f496
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280344"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868600"
 ---
 # <a name="windows-server-servicing-channels-ltsc-and-sac"></a>Canales de servicio de Windows Server: LTSC y SAC
 
@@ -25,7 +25,7 @@ Puedes mantener los servidores en el Canal de mantenimiento a largo plazo (LTSC)
 
 ## <a name="long-term-servicing-channel-ltsc"></a>Canal de mantenimiento a largo plazo (LTSC)
 
-Este es el modelo de distribución con el que ya está familiarizado (anteriormente denominado "*Rama* de mantenimiento a largo plazo"), donde se publica una nueva versión principal de Windows Server cada 2 o 3 años. Los usuarios tienen derecho a 5 años de soporte estándar y 5 años de soporte extendido. Este canal es adecuado para los sistemas que requieren una opción de mantenimiento prolongado y una estabilidad funcional. Las implementaciones de Windows Server 2016 y las versiones anteriores de Windows Server no se verán afectadas por las nuevas versiones del canal semianual. El Canal de mantenimiento a largo plazo seguirá recibiendo actualizaciones de seguridad y no relacionadas con la seguridad, pero no recibirá las nuevas funciones y funcionalidades.
+Este es el modelo de distribución con el que ya estás familiarizado (anteriormente denominado "*Rama* de mantenimiento a largo plazo"), en que se publica una nueva versión principal de Windows Server cada 2 o 3 años. Los usuarios tienen derecho a 5 años de soporte estándar y 5 años de soporte extendido. Este canal es adecuado para los sistemas que requieren una opción de mantenimiento prolongado y una estabilidad funcional. Las implementaciones de Windows Server 2016 y las versiones anteriores de Windows Server no se verán afectadas por las nuevas versiones del canal semianual. El Canal de mantenimiento a largo plazo seguirá recibiendo actualizaciones de seguridad y no relacionadas con la seguridad, pero no recibirá las nuevas funciones y funcionalidades.
 
 > [!Note]  
 > **El producto LTSC actual es Windows Server 2019**. Si quieres mantenerte en este canal, debes instalar (o seguir usando) Windows Server 2019, que puede instalarse en la opción de instalación básica de servidor o en la opción de instalación de experiencia de escritorio.
@@ -78,7 +78,7 @@ Existen muchas herramientas con las que los profesionales de TI pueden realizar 
 - **Windows Server Update Services (WSUS)** ofrece un amplio control sobre las actualizaciones de Windows 10 y Windows Server, y se encuentra disponible de forma nativa en el sistema operativo Windows Server. Además de la posibilidad de aplazar actualizaciones, las organizaciones pueden agregar una capa de aprobación para las actualizaciones y optar por implementarlas en equipos específicos o grupos de equipos cuando estén preparados.
 - **System Center Configuration Manager** ofrece un control más amplio sobre el mantenimiento. Los profesionales de TI pueden aplazar y aprobar actualizaciones, y tienen varias opciones para seleccionar el destino de las implementaciones y administrar el uso del ancho de banda y los tiempos de implementación.
 
-Es probable que ya hayas elegido usar al menos una de estas opciones en función de los recursos, el personal y la experiencia. Puedes seguir usando el mismo proceso para los lanzamientos del Canal semianual: por ejemplo, si ya usas System Center Configuration Manager para administrar las actualizaciones, puedes seguir usándolo. De manera similar, si usas WSUS, puedes seguir usándolo.
+Es probable que ya hayas elegido usar al menos una de estas opciones en función de tus recursos, personal y experiencia. Puedes seguir usando el mismo proceso para los lanzamientos del Canal semianual: por ejemplo, si ya usas System Center Configuration Manager para administrar las actualizaciones, puedes seguir usándolo. De manera similar, si usas WSUS, puedes seguir usándolo.
 
 ## <a name="where-to-obtain-semi-annual-channel-releases"></a>¿Dónde conseguir las versiones del Canal semianual?
 
@@ -102,9 +102,9 @@ Las versiones del Canal semianual que se publicaron antes de Windows Server 2019
 
 ## <a name="why-do-semi-annual-channel-releases-offer-only-the-server-core-installation-option"></a>¿Por qué las versiones del Canal semianual ofrecen solo la opción de instalación básica?
 
-Uno de los pasos más importantes que tomamos en la planificación de todas las versiones de Windows Server es escuchar las opiniones de los clientes: ¿cómo utilizas Windows Server? ¿Qué nuevas características tendrán el mayor impacto en las implementaciones de Windows Server y, por extensión, en tus actividades cotidianas? Los comentarios nos indican que ofrecer innovación de la forma más rápida y eficaz posible es una prioridad clave. Al mismo tiempo, en el caso de los clientes que quieren innovar de forma más rápida, nos has comentado que principalmente usas un scripting de línea de comandos con PowerShell para administrar los centros de datos y, como tal, no necesitas que la GUI de escritorio esté disponible en la instalación de Windows Server con experiencia de escritorio, especialmente ahora que [Windows Admin Center](../manage/windows-admin-center/overview.md) está disponible para administrar los servidores de forma remota.
+Uno de los pasos más importantes que tomamos en la planificación de todas las versiones de Windows Server es escuchar las opiniones de los clientes: ¿cómo utilizas Windows Server? ¿Qué nuevas características tendrán el mayor impacto en las implementaciones de Windows Server y, por extensión, en tus actividades cotidianas? Los comentarios nos indican que ofrecer innovación de la forma más rápida y eficaz posible es una prioridad clave. Al mismo tiempo, en el caso de los clientes que quieren innovar más rápidamente, nos has comentado que, principalmente, usas un scripting de línea de comandos con PowerShell para administrar los centros de datos y, como tal, no necesitas que la GUI de escritorio esté disponible en la instalación de Windows Server con experiencia de escritorio, especialmente ahora que [Windows Admin Center](../manage/windows-admin-center/overview.md) está disponible para administrar los servidores de forma remota.
 
-Al centrarnos en la opción de instalación básica, podemos dedicar más recursos a estas nuevas innovaciones, a la vez que mantenemos la funcionalidad de la plataforma tradicional Windows Server y la compatibilidad de aplicaciones. Si tienes comentarios sobre este u otros problemas relativos a Windows Server y nuestras versiones futuras, puedes hacer sugerencias y comentarios a través del [Centro de opiniones](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
+Al centrarnos en la opción de instalación básica de servidor, podemos dedicar más recursos a estas nuevas innovaciones, a la vez que mantenemos la funcionalidad de la plataforma tradicional de Windows Server y la compatibilidad de aplicaciones. Si tienes comentarios sobre este u otros problemas relativos a Windows Server y nuestras versiones futuras, puedes hacer sugerencias y comentarios a través del [Centro de opiniones](https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app).
 
 ## <a name="what-about-nano-server"></a>¿Qué sucede con Nano Server?
 

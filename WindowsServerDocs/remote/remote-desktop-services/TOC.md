@@ -66,6 +66,9 @@
 
 ## Obtener acceso a los recursos de Escritorio remoto
 ### [Clientes de Escritorio remoto disponibles](clients/remote-desktop-clients.md)
+### Cliente de escritorio de Windows
+#### [Introducción al cliente de escritorio de Windows](clients/windowsdesktop.md)
+#### [Novedades del cliente de escritorio de Windows](clients/windowsdesktop-whatsnew.md)
 ### Cliente de Microsoft Store
 #### [Introducción al cliente de Microsoft Store](clients/windows.md)
 #### [Novedades del cliente de Microsoft Store](clients/windows-whatsnew.md)
