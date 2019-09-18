@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 7f73bb0a-ce98-48a4-9d9f-cf7438936ca1
 author: lizap
 manager: dongill
-ms.openlocfilehash: 14c32831445b12b314c71e538320c2ce5a9b7ee4
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: f70cfbf7d65ee0a8fb4439ea51a995e6428ede5e
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63749422"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871360"
 ---
 # <a name="remote-desktop-services-architecture"></a>Arquitectura de Servicios de Escritorio remoto
 
@@ -49,7 +49,7 @@ Aunque las arquitecturas estándar de implementación de RDS se adaptan a la may
 
 ### <a name="rds-deployment-with-azure-ad-domain-services"></a>Implementación de RDS con Azure AD Domain Services
 
-Los dos diagramas de arquitecturas estándar anteriores se basan en una instancia tradicional de Active Directory (AD) implementada en una máquina virtual de Windows Server. Si no dispones de una instancia tradicional de AD y solo tienes un inquilino de Azure AD a través de servicios como Office 365, pero quieres sacar el máximo partido a los Servicios de Escritorio remoto, puedes usar [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) para crear un dominio totalmente administrado en el entorno de IaaS de Azure que utilice los mismos usuarios que ya existen en el inquilino de Azure AD. Esto acaba con la dificultad a la hora de sincronizar manualmente usuarios y de administrar más máquinas virtuales. Azure AD Domain Services puede funcionar con cualquier tipo de implementación: básica o de alta disponibilidad.
+Los dos diagramas de arquitecturas estándar anteriores se basan en una instancia tradicional de Active Directory (AD) implementada en una máquina virtual de Windows Server. Sin embargo, si no dispones de una instancia tradicional de AD y solo tienes un inquilino de Azure AD a través de servicios como Office 365, pero quieres sacar el máximo partido a los Servicios de Escritorio remoto, puedes usar [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) para crear un dominio totalmente administrado en el entorno de IaaS de Azure que utilice los mismos usuarios que ya existen en el inquilino de Azure AD. Esto acaba con la dificultad a la hora de sincronizar manualmente usuarios y de administrar más máquinas virtuales. Azure AD Domain Services puede funcionar con cualquier tipo de implementación: básica o de alta disponibilidad.
 
 ![Azure AD e implementación de RDS](./media/aadds-rds.png)
 

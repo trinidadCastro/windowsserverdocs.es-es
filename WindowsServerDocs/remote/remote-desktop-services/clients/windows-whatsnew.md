@@ -8,21 +8,21 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a8ecdf217f847f495b2cb90dd3511a8db9e72c95
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 6a4a6ae860dc8eabc4856ff3aa66268ed8d588de
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150983"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987362"
 ---
 # <a name="whats-new-in-the-windows-store-client"></a>Novedades del cliente de Microsoft Store
 
-El [cliente de Escritorio remoto para Windows](windows.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Consulta las actualizaciones más recientes a continuación.
+El [cliente de Microsoft Store](windows.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
 ## <a name="updates-for-version-1011098"></a>Actualizaciones de la versión 10.1.1098
 
@@ -30,7 +30,7 @@ El [cliente de Escritorio remoto para Windows](windows.md) se actualiza periódi
 
 - Ahora puedes establecer un nombre para mostrar para las cuentas de usuario, de modo que puedes guardar el mismo nombre de usuario con contraseñas diferentes.
 - Ahora es posible seleccionar una cuenta de usuario existente al agregar recursos remotos.
-- Se ha corregido un problema por el cual el cliente no se terminaba correctamente.
+- Se ha corregido un problema que provocaba que el cliente no finalizase correctamente.
 - El cliente ahora controla correctamente la suspensión cuando se abren ventanas secundarias.
 - Corrección de errores adicionales.
 

@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 ms.assetid: b886b2fd-3567-4f0a-8aa3-4ba7923d2d21
 author: nirb
 ms.author: nirb
-ms.openlocfilehash: 1a9496a121fc45df0b788ea56d50db922fd24536
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: fe2f82c373b0014a3f385dcfad77ec11a0b1e6c0
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66749450"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870210"
 ---
 ## <a name="guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience"></a>Guía para deshabilitar los servicios del sistema en Windows Server 2016 con Experiencia de escritorio
 
@@ -33,7 +33,7 @@ Las directrices solo se aplican a Windows Server 2016 con Experiencia de escri
 -  **(Sin instrucciones):** las consecuencias de deshabilitar estos servicios no se han evaluado completamente. Por lo tanto, no se debe modificar la configuración predeterminada de estos servicios.
 
 
-Los clientes pueden configurar sus servidores y PC Windows para deshabilitar los servicios seleccionados mediante las plantillas de seguridad de sus directivas de grupo o a través de la automatización de PowerShell. En algunos casos, las instrucciones incluyen una configuración específica de las directivas de grupo que deshabilita directamente la funcionalidad del servicio, como una alternativa a la deshabilitación del servicio mismo.
+Los clientes pueden configurar sus servidores y PC Windows para deshabilitar los servicios seleccionados mediante las plantillas de seguridad de sus directivas de grupo o a través de la automatización de PowerShell. En algunos casos, las instrucciones incluyen una configuración específica de las directivas de grupo que deshabilita directamente la funcionalidad del servicio, como alternativa a la deshabilitación del servicio en sí.
 
 Microsoft recomienda que los clientes deshabiliten los servicios siguientes y sus tareas programadas respectivas en Windows Server 2016 con Experiencia de escritorio:
 
@@ -1832,7 +1832,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 <br />          
 
-## <a name="special-administration-console-helper"></a>Asistente especial de la consola de administración        
+## <a name="special-administration-console-helper"></a>Aplicación auxiliar especial de la consola de administración        
 
 | | |           
 |---|---|   
@@ -2000,7 +2000,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 <br />          
 
-## <a name="tcpip-netbios-helper"></a>Asistente NetBIOS sobre TCP/IP            
+## <a name="tcpip-netbios-helper"></a>Aplicación auxiliar de NetBIOS sobre TCP/IP            
 
 | | |           
 |---|---|   
@@ -2647,7 +2647,7 @@ En las tablas siguientes se brindan las directrices de Microsoft sobre cómo des
 
 | | |           
 |---|---|   
-|   **Descripción del servicio** |   Proporciona información de la biblioteca de rendimiento de proveedores WMI (Instrumental de administración de Windows) a clientes en la red. Este servicio solo se ejecuta si el Asistente de datos de rendimiento está activado.
+|   **Descripción del servicio** |   Proporciona información de la biblioteca de rendimiento de proveedores WMI (Instrumental de administración de Windows) a clientes en la red. Este servicio solo se ejecuta si la Aplicación auxiliar de datos de rendimiento está activado.
 |   **Nombre del servicio**    |   wmiApSrv
 |   **Instalación**    |   Siempre instalado
 |   **StartType**   |   Manual

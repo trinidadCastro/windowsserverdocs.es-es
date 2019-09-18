@@ -8,21 +8,21 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 4eaa9a187b4a8f7879cabf15724bfcfe3f625939
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 14d5eab00271ea825bb84a2d8189a44c38fa5388
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150964"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987377"
 ---
 # <a name="whats-new-in-the-web-client"></a>Novedades del cliente web
 
-El [cliente web de Escritorio remoto](remote-desktop-web-client.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Consulta las actualizaciones más recientes a continuación.
+El [cliente web de Escritorio remoto](remote-desktop-web-client.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
 > [!NOTE]
 > Cambiamos el sistema de control de versiones del cliente web. A partir de la versión 1.0.18.0, todas las versiones del cliente web incluirán números (con el formato "W.X.Y.Z"). Los números de versión del cliente web de Escritorio remoto siempre terminarán en 0 (por ejemplo, W.X.Y.0). Cada versión del cliente web de Windows Virtual Desktop cambiará el último dígito hasta la próxima versión del cliente web de Escritorio remoto (por ejemplo, 1.0.18.1).

@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 08/27/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 03927cd531617c6e0c9572fc4ce74768e10bc66a
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 14df478c681074f8081190048fb5579d7fa9f653
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70150930"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987325"
 ---
 # <a name="get-started-with-the-windows-store-client"></a>Introducción al cliente de Microsoft Store
 
@@ -30,8 +30,8 @@ El cliente de Escritorio remoto para Windows se puede usar con aplicaciones de W
 Usa la siguiente información para comenzar. Asegúrate de consultar la sección de [Preguntas frecuentes](remote-desktop-client-faq.md) si te surge alguna duda.
 
 > [!NOTE]
-> - ¿Quieres más información acerca de las nuevas versiones del cliente Windows? Consulta [Novedades de Escritorio remoto en Windows](windows-whatsnew.md)
-> - El cliente se puede ejecutar en cualquier versión de Windows 10.
+> - ¿Quieres más información acerca de las nuevas versiones del cliente de Microsoft Store? Consulta las [Novedades del cliente de Microsoft Store](windows-whatsnew.md)
+> - El cliente se puede ejecutar en cualquier versión compatible de Windows 10.
 
 ## <a name="get-the-rd-client-and-start-using-it"></a>Obtención del cliente de Escritorio remoto y primer uso
 

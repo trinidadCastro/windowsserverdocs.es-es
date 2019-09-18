@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: ae9767e3-864a-4eb2-96c0-626759ce6d60
 author: lizap
 manager: dongill
-ms.openlocfilehash: 87de04e3ca34217fbbc3ec451dc061ee228a1a60
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: ca43a37bff28a035d9f7292da830a23ca29d23bc
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743827"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871026"
 ---
 # <a name="create-a-remote-desktop-services-collection-for-desktops-and-apps-to-run"></a>Creación de una colección de servicios de Escritorio remoto para que se ejecuten escritorios y aplicaciones
 
@@ -28,7 +28,7 @@ Sigue los pasos a continuación para crear una colección de sesiones de Servici
 
 Antes de crear una colección, debes decidir qué tipo de colección necesitas: sesiones de escritorio agrupadas o sesiones de escritorio personales. 
 
-- **Usa sesiones de escritorio agrupadas para virtualización basada en sesiones**: Aprovecha la eficacia de proceso de Windows Server para proporcionar un entorno multisesión rentable para impulsar las cargas de trabajo diarias de los usuarios.
+- **Usa sesiones de escritorio agrupadas para virtualización basada en sesiones**: Aprovecha la eficacia de proceso de Windows Server para proporcionar un entorno multisesión rentable que impulse las cargas de trabajo diarias de los usuarios.
 - **Usa sesiones de escritorio personales para crear una infraestructura de escritorio virtual (VDI)** : Aprovecha el cliente de Windows para proporcionar el alto rendimiento, la compatibilidad de aplicaciones y la familiaridad que los usuarios esperan de su experiencia de escritorio de Windows.
  
 Con una sesión agrupada, varios usuarios acceden a un grupo compartido de recursos, mientras que con una sesión de escritorio personal, se asigna a cada usuario su propio escritorio dentro del grupo. La sesión agrupada proporciona un menor costo general, mientras que las sesiones personales permiten a los usuarios personalizar su experiencia de escritorio.

@@ -8,12 +8,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 ms.localizationpriority: medium
 ms.date: 06/03/2019
-ms.openlocfilehash: e17a636c5bf06d194abd1bfe9b6d20970773e993
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: b5391677397660e3beacb9a71189bf3ffe2aeaab
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66501400"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868343"
 ---
 # <a name="whats-new-in-windows-server-version-1709"></a>Novedades de Windows Server, versión 1709
 
@@ -44,7 +44,7 @@ Para más información, consulta la [comparación de canales de mantenimiento](h
 
 ## <a name="application-containers-and-micro-services"></a>Microservicios y contenedores de aplicaciones
 
-- La imagen del contenedor de Server Core se ha optimizado aún más para escenarios de tipo "lift-and-shift" donde se pueden migrar bases de código existentes o aplicaciones en contenedores con cambios mínimos, y también es un 60 % más reducida. 
+- La imagen del contenedor de Server Core se ha optimizado aún más para escenarios de tipo "lift-and-shift", donde se pueden migrar bases de código existentes o aplicaciones en contenedores con cambios mínimos, y también es un 60 % más reducida. 
 - La imagen de contenedor de Nano Server es casi un 80 % más reducida.
     - En el Canal semianual de Windows Server, Nano Server como imagen de sistema operativo base de contenedor disminuye de 390 MB a 80 MB.
 - Contenedores Linux con aislamiento de Hyper-V 
@@ -70,9 +70,9 @@ Host de **Server Core como contenedor** (e infraestructura) proporciona mejor fl
 
 **La memoria persistente virtualizada (vPMEM)** se habilita mediante la creación de un archivo VHD (.vhdpmem) en un volumen de acceso directo en un host, mediante la adición de un controlador vPMEM a una máquina virtual y del dispositivo creado (.vhdpmem) a una máquina virtual. El uso de archivos vhdpmem en volúmenes de acceso directo en un host para respaldar vPMEM permite la flexibilidad de asignación y saca partido del modelo de administración conocido para agregar discos a las máquinas virtuales.
 
-**Almacenamiento de contenedor: volúmenes de datos persistentes en volúmenes compartidos de clúster (CSV)** . En Windows Server, versión 1709, así como Windows Server 2016 con las últimas actualizaciones, hemos agregado soporte de contenedores para tener acceso a los volúmenes de datos persistentes ubicados en CSV, incluidos CSV en Espacios de almacenamiento directo. Esto ofrece acceso persistente del contenedor de aplicaciones al volumen sin importar el nodo de clúster en el que se ejecuta la instancia de contenedor. Para más información, consulta [Container Storage Support with Cluster Shared Volumes (CSV), Storage Spaces Direct (S2D), SMB Global Mapping](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/) (Soporte de almacenamiento de contenedor con volúmenes compartidos de clúster (CSV), Espacios de almacenamiento directo (S2D), Asignación global de SMB).
+**Almacenamiento de contenedor: volúmenes de datos persistentes en volúmenes compartidos de clúster (CSV)** . En Windows Server, versión 1709, así como Windows Server 2016 con las últimas actualizaciones, hemos agregado compatibilidad con los contenedores para tener acceso a los volúmenes de datos persistentes ubicados en CSV, incluidos CSV en Espacios de almacenamiento directo. Esto ofrece acceso persistente del contenedor de aplicaciones al volumen sin importar el nodo de clúster en el que se ejecuta la instancia de contenedor. Para más información, consulta [Container Storage Support with Cluster Shared Volumes (CSV), Storage Spaces Direct (S2D), SMB Global Mapping](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/) (Soporte de almacenamiento de contenedor con volúmenes compartidos de clúster (CSV), Espacios de almacenamiento directo (S2D), Asignación global de SMB).
 
-**Almacenamiento de contenedor: volúmenes de datos persistentes con asignación global de SMB**. En Windows Server, versión 1709 hemos agregado soporte para asignar un uso compartido de archivos de SMB a una letra de unidad de un contenedor; esto se denomina asignación global de SMB. Esta unidad asignada es accesible para todos los usuarios en el servidor local para que dicho contenedor de E/S del volumen de datos pueda atravesar la unidad montada hacia el uso compartido de archivos subyacente. Para más información, consulta [Container Storage Support with Cluster Shared Volumes (CSV), Storage Spaces Direct (S2D), SMB Global Mapping](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/) (Soporte de almacenamiento de contenedor con volúmenes compartidos de clúster (CSV), Espacios de almacenamiento directo (S2D), Asignación global de SMB).
+**Almacenamiento de contenedor: volúmenes de datos persistentes con asignación global de SMB**. En Windows Server, versión 1709 hemos agregado compatibilidad para asignar un recurso compartido de archivos de SMB a una letra de unidad de un contenedor; esto se denomina asignación global de SMB. Esta unidad asignada es accesible para todos los usuarios en el servidor local para que dicho contenedor de E/S del volumen de datos pueda atravesar la unidad montada hacia el uso compartido de archivos subyacente. Para más información, consulta [Container Storage Support with Cluster Shared Volumes (CSV), Storage Spaces Direct (S2D), SMB Global Mapping](https://blogs.msdn.microsoft.com/clustering/2017/08/10/container-storage-support-with-cluster-shared-volumes-csv-storage-spaces-direct-s2d-smb-global-mapping/) (Soporte de almacenamiento de contenedor con volúmenes compartidos de clúster (CSV), Espacios de almacenamiento directo (S2D), Asignación global de SMB).
 
 **Formato de archivo de configuración de máquina virtual (actualizado)** . Se ha agregado un archivo (.vmgs) adicional para máquinas virtuales con una versión de la configuración de 8.2 y superior. VMGS significa estado de invitado de máquina virtual y es un nuevo archivo interno que incluye el estado del dispositivo que anteriormente formaba parte del archivo de estado en tiempo de ejecución de máquina virtual.
 

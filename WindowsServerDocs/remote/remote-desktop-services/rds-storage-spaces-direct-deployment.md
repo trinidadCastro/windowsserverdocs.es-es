@@ -13,18 +13,18 @@ author: haley-rowland
 ms.author: harowl
 ms.date: 07/17/2018
 manager: scottman
-ms.openlocfilehash: 792c9320f6976a4fc7f2ccd235f66daa0cb19b19
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 30f2d97c93c3df72eaf21896d596a4a10666013c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805192"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870755"
 ---
 # <a name="deploy-a-two-node-storage-spaces-direct-scale-out-file-server-for-upd-storage-in-azure"></a>Implementar un servidor de archivos de escalabilidad horizontal de Espacios de almacenamiento directo de dos nodos para almacenar UPD en Azure
 
 >Se aplica a: Windows Server (Canal semianual), Windows Server 2019, Windows Server 2016
 
-Los Servicios de Escritorio remoto (RDS) requieren un servidor de archivos unido al dominio para los discos de perfil de usuario (UPD). Para implementar un servidor de archivos de escalabilidad horizontal unido al dominio de alta disponibilidad (SOFS) en Azure, usa Espacios de almacenamiento directo con Windows Server 2016. Si no estás familiarizado con los UPD o los Servicios de Escritorio Remoto, consulta [Welcome to Remote Desktop Services](welcome-to-rds.md) (Bienvenido a Servicios de Escritorio Remoto).
+Los Servicios de Escritorio remoto (RDS) requieren un servidor de archivos unido al dominio para los discos de perfil de usuario (UPD). Para implementar un servidor de archivos de escalabilidad horizontal unido al dominio de alta disponibilidad (SOFS) en Azure, usa Espacios de almacenamiento directo con Windows Server 2016. Si no estás familiarizado con los UPD o los Servicios de Escritorio Remoto, consulta [Bienvenida a Servicios de Escritorio remoto](welcome-to-rds.md).
 
 > [!NOTE] 
 > Microsoft acaba de publicar una [plantilla de Azure para implementar un servidor de archivos de escalabilidad horizontal de Espacios de almacenamiento directo](https://azure.microsoft.com/documentation/templates/301-storage-spaces-direct/). Puedes usar la plantilla para crear tu implementación o seguir los pasos de este artículo. 

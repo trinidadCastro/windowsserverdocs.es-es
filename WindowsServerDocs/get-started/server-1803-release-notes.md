@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: e9bd860769ec375a6d89ac452e3430b791fff3ad
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 506236cbb3893fe200b39aa1d58ed44cdbd9704a
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63688733"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868377"
 ---
 # <a name="release-notes-important-issues-in-windows-server-version-1803"></a>Notas de la versión: Problemas importantes en Windows Server, versión 1803
 
@@ -33,7 +33,7 @@ Este artículo se actualiza continuamente. Si se identifican problemas conocidos
 
 ## <a name="software-defined-datacenter"></a>Centro de datos definido por software
 
-Las características de centro de datos definido por software como, por ejemplo, espacios de almacenamiento directo, redes definidas por software y máquinas virtuales blindadas no están incluidas en Windows Server, versión 1803. Como se ha descrito en [Actualización del Canal semianual de Windows Server](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/), el Canal semianual de Windows Server se centra en contenedores y escenarios de aplicación que se benefician de una innovación más rápida. 
+Las características de centro de datos definidas por software como, por ejemplo, Espacios de almacenamiento directo, redes definidas por software y máquinas virtuales blindadas no están incluidas en Windows Server, versión 1803. Como se ha descrito en [Actualización del Canal semianual de Windows Server](https://cloudblogs.microsoft.com/windowsserver/2018/03/29/windows-server-semi-annual-channel-update/), el Canal semianual de Windows Server se centra en contenedores y escenarios de aplicación que se benefician de una innovación más rápida. 
 
 Si necesitas roles de infraestructura, usa una versión de Canal de mantenimiento a largo plazo: Windows Server 2016 (ya está disponible) o [Windows Server 2019](https://cloudblogs.microsoft.com/windowsserver/2018/03/20/introducing-windows-server-2019-now-available-in-preview) (que se lanzará más adelante en este año).
 

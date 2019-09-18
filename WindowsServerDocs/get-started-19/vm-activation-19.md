@@ -12,12 +12,12 @@ ms.topic: article
 author: lizap
 ms.author: elizapo
 ms.localizationpriority: medium
-ms.openlocfilehash: 18e20433050371dc02782fb8630a885e53ae31ad
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4d1cdcfe8325a246e2752e1d1f2a3ad536598658
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63688705"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868570"
 ---
 # <a name="automatic-virtual-machine-activation"></a>Activación automática de máquina virtual
 
@@ -41,7 +41,7 @@ Los administradores de centros de datos de servidores pueden usar AVMA para hace
 
 No hay que administrar claves de producto ni leer adhesivos en los servidores. La máquina virtual se activa y sigue funcionando incluso cuando se migra entre una matriz de servidores de virtualización.
 
-Los partners de Contrato de licencia de proveedor de servicios (SPLA) y otros proveedores de hospedaje no tienen que compartir claves de producto con inquilinos ni tener acceso a la máquina virtual de un inquilino para activarla. La activación de máquinas virtuales es transparente para el inquilino cuando se usa AVMA. Los proveedores de hospedaje pueden usar los registros del servidor para comprobar el cumplimiento de las licencias y hacer un seguimiento del historial de uso de clientes.
+Los asociados de Contrato de licencia de proveedor de servicios (SPLA) y otros proveedores de hospedaje no tienen que compartir claves de producto con inquilinos ni tener acceso a la máquina virtual de un inquilino para activarla. La activación de máquinas virtuales es transparente para el inquilino cuando se usa AVMA. Los proveedores de hospedaje pueden usar los registros del servidor para comprobar el cumplimiento de las licencias y hacer un seguimiento del historial de uso de clientes.
 
 ## <a name="system-requirements"></a>Requisitos del sistema
 
@@ -49,9 +49,9 @@ AVMA requiere una instancia de Microsoft Virtualization Server que ejecute Windo
 
 Estos son los invitados que los hosts de diferentes versiones pueden activar:
 
-|Versión del servidor host|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
+|Versión del servidor host|Windows Server 2019|Windows Server 2016|Windows Server 2012 R2|
 |-|-|-|-|
-|Windows Server 2019|X|X|X|
+|Windows Server 2019|X|X|X|
 |Windows Server 2016| |X|X|
 |Windows Server 2012 R2| ||X|
 

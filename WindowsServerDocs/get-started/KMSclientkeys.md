@@ -9,12 +9,12 @@ ms.author: jgerend
 ms.localizationpriority: medium
 ms.date: 05/21/2019
 ms.topic: get-started-article
-ms.openlocfilehash: c0d85da8a51a43acd7765957b34220829a43b086
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 964139ac5fdaee4d580d29ab0f7543c7d5f15d0b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810703"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868457"
 ---
 # <a name="kms-client-setup-keys"></a>Claves de configuración del cliente KMS
 
@@ -25,13 +25,13 @@ Los ordenadores que ejecutan ediciones con licencias por volumen de Windows Serv
 > [!NOTE]
 > En las tablas siguientes, "LTSC" se refiere a "Canal de mantenimiento a largo plazo", mientras que "LTSB" hace referencia a la "Rama de mantenimiento a largo plazo". 
 
-**Para usar las claves que aquí se indican (que son GVLK), en la implementación debe haber un host de KMS en ejecución**. Si aún no ha configurado un host de KMS, consulte [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) para ver los pasos para configurar uno.
+**Para usar las claves que aquí se indican (que son GVLK), en la implementación debe haber un host de KMS en ejecución**. Si aún no has configurado un host de KMS, consulta [Deploy KMS Activation](https://technet.microsoft.com/library/dn502531(v=ws.11).aspx) (Implementar la activación de KMS) para ver los pasos para configurar uno.
 
 Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a un cliente de KMS, instale la clave de configuración correspondiente (GVLK) que se incluye en las tablas siguientes. Para instalar una clave de configuración de cliente, abre un símbolo del sistema administrativo en el cliente, escriba **slmgr /ipk \<setup key\>** y después presione **ENTRAR**.
 
 | Si desea...    | ...use estos recursos   |
 |--------------------|------------------------|
-| Activar Windows fuera de un escenario de activación por volumen (es decir, está intentando activar una versión comercial de Windows), **estas claves no funcionarán**. | Use estos vínculos para versiones comerciales de Windows: |
+| Activar Windows fuera de un escenario de activación por volumen (es decir, estás intentando activar una versión comercial de Windows), **estas claves no funcionarán**. | Use estos vínculos para versiones comerciales de Windows: |
 | Resolver este error que aparece al intentar activar un sistema Windows 8.1, Windows Server 2012 R2 o un sistema más reciente: "Error: 0xC004F050 El Servicio de licencias de software notificó que la clave de producto no es válida"… | [Instale esta actualización](https://support.microsoft.com/en-us/help/3172614/july-2016-update-rollup-for-windows-8-1-and-windows-server-2012-r2) en el host de KMS si está ejecutando Windows 8.1, Windows Server 2012 R2, Windows 8 o Windows Server 2012. |
 
 -   [Obtener Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10)
@@ -68,7 +68,7 @@ Si convierte un equipo de un host de KMS, MAK o edición comercial de Windows a 
 
 ## <a name="windows-server-ltscltsb-versions"></a>Versiones LTSC/LTSB de Windows Server
 
-### <a name="windows-server-2019"></a>Windows Server 2019
+### <a name="windows-server-2019"></a>Windows Server 2019
 | Edición de sistema operativo       | Clave de configuración de cliente de KMS          |
 |--------------------------------|-------------------------------|
 | Windows Server 2019 Datacenter | WMDGN-G9PQG-XVVXX-R3X43-63DFG  | 

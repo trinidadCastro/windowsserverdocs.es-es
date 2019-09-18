@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: heidilohr
 manager: dougkim
-ms.openlocfilehash: 597016ecf10da0febb7ba1bb099da0c1dddf96ce
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 025b5d8791d0b847a38798d36ffa4bfa86e0b00c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63749223"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871293"
 ---
 # <a name="desktop-hosting-service"></a>Servicio de hospedaje de escritorio
 
@@ -33,13 +33,13 @@ El servicio de hospedaje de escritorio del proveedor se implementa como un conju
 
 ## <a name="active-directory-domain-services"></a>Active Directory Domain Services
 
-Active Directory Domain Services (AD DS) proporciona información sobre el dominio y el bosque de tal forma que los usuarios del inquilino pueden iniciar sesión en los escritorios y aplicaciones para realizar sus cargas de trabajo. Esto también te permite configurar los recursos compartidos de archivos y bases de datos (o conectarte a ellos) que necesitan las aplicaciones de Windows.
+Active Directory Domain Services (AD DS) proporciona información sobre el dominio y el bosque de tal forma que los usuarios del inquilino pueden iniciar sesión en los escritorios y aplicaciones para realizar sus cargas de trabajo. Esto también te permite configurar los recursos compartidos de archivos y bases de datos (o conectarte a ellos) que necesitan las aplicaciones de Windows.
 
 El bosque del inquilino no requiere ninguna relación de confianza con el bosque de administración del proveedor. Puede configurarse una cuenta de administrador de dominio en el dominio del inquilino para permitir que el personal técnico del proveedor realice tareas administrativas en el entorno del inquilino (por ejemplo, supervisar el estado del sistema y aplicar las actualizaciones de software) y ayude con la solución de problemas y la configuración.
 
 Hay varias maneras de implementar AD DS:
 
-1. Habilita Azure Active Directory Domain Services en el entorno de red virtual del inquilino. Esto creará una instancia administrada de AD DS para el inquilino basada en los usuarios y grupos que existen en Azure AD.
+1. Habilita Azure Active Directory Domain Services en el entorno de red virtual del inquilino. Esto creará una instancia administrada de AD DS para el inquilino basada en los usuarios y grupos que existen en Azure AD.
 2. Configura un servidor de AD DS independiente en el entorno de red virtual del inquilino. Esto te proporciona el control completo de la instancia de AD DS en ejecución en las máquinas virtuales.
 3. Crea una conexión VPN de sitio a sitio a un servidor de AD DS que se encuentre en las instalaciones del inquilino. Esto permite que el inquilino se conecte a su instancia de AD DS existente y esto reduzca la duplicación de usuarios, grupos, unidades organizativas, etc.
 

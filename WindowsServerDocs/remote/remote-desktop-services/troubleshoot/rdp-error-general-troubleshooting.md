@@ -13,12 +13,12 @@ manager: ''
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: a1a2e325f3860f0b06353a59c5d37f6b5b2a1d11
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 39b11dac044c38f1ae80d4401fbb66af0317ab56
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529935"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870697"
 ---
 # <a name="general-remote-desktop-connection-troubleshooting"></a>Solución de problemas generales de conexión con Escritorio remoto
 
@@ -123,7 +123,7 @@ Para este procedimiento, usa una instancia de PowerShell que tenga permisos admi
     ![El comando qwinsta enumera los procesos que escuchan en los puertos del equipo.](../media/troubleshoot-remote-desktop-connections/WPS_qwinsta.png)
 3. Si la lista incluye **rdp-tcp** con el estado **Escuchar**, significa que el cliente de escucha de RDP está trabajando. Pasa a [Comprobación del puerto del cliente de escucha de RDP](#check-the-rdp-listener-port). De lo contrario, vete al paso 4.
 4. Exporta la configuración del cliente de escucha de RDP desde un equipo de trabajo.
-    1. Inicia sesión en un equipo que tenga la misma versión del sistema operativo que el equipo afectado y acceso al Registro de dicho equipo (por ejemplo, mediante el Editor del Registro).
+    1. Inicia sesión en un equipo que tenga la misma versión del sistema operativo que el equipo afectado y accede al Registro de dicho equipo (por ejemplo, mediante el Editor del Registro).
     2. Vete a la siguiente entrada del Registro:  
         **HKEY\_LOCAL\_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Terminal Server\\WinStations\\RDP-Tcp**
     3. Exporta la entrada a un archivo. reg. Por ejemplo, en el Editor del registro, haz clic con el botón derecho en la entrada, selecciona **Exportar**y escriba un nombre de archivo para la configuración exportada.

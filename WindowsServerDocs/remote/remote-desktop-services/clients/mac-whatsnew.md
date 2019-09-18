@@ -8,21 +8,21 @@ ms.suite: na
 ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 9ae58103b00941bb71d447641b1cdab7c02fa20b
-ms.sourcegitcommit: 51eaab0f860312d97293fd90f3e632e7caee3df1
+ms.openlocfilehash: 9fbd3e9c5f7938fbf6a80e9f5dc950a2c0a9a257
+ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70151020"
+ms.lasthandoff: 09/14/2019
+ms.locfileid: "70987339"
 ---
 # <a name="whats-new-in-the-macos-client"></a>Novedades del cliente de macOS
 
-El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Consulta las actualizaciones más recientes a continuación.
+El [cliente de Escritorio remoto para macOS](remote-desktop-mac.md) se actualiza periódicamente, con lo que se agregan nuevas características y se corrigen problemas. Aquí puedes encontrar las actualizaciones más recientes.
 
 Si tienes algún problema, puedes ponerte en contacto con nosotros a través **Ayuda > Notificar un problema**.
 
@@ -174,7 +174,7 @@ Han pasado algunas semanas desde la última actualización, pero estamos trabaja
 - Se incorporaron actualizaciones para el cumplimiento del RGPD.
 - MicrosoftAccount\username@domain ahora se acepta como nombre de usuario válido.
 - El uso compartido del Portapapeles se ha reescrito para que sea más rápido y admita más formatos.
-- Copiar y pegar texto, imágenes o archivos entre sesiones ahora omite el Portapapeles del equipo local.
+- Al copiar y pegar texto, imágenes o archivos entre sesiones, ahora se omite el portapapeles del equipo local.
 - Ahora puedes conectarte a través de un servidor de puerta de enlace de Escritorio remoto con un certificado que no sea de confianza (si aceptas los mensajes de advertencia).
 - Ahora se usa la aceleración de hardware de Metal (si se admite) para acelerar la representación y optimizar el uso de la batería.
 - Al usar la aceleración de hardware de Metal, intentamos algunas soluciones para que los gráficos de la sesión aparecieran más nítidos.

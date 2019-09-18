@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 24b5fdaa815b6d2e84606cd8e681634eb3d0f4e9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 79e0364bcb9d2ed899568a6699c61b43d84044e5
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63713077"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871011"
 ---
 # <a name="set-up-disaster-recovery-for-rds-using-azure-site-recovery"></a>Configuración de la recuperación ante desastres para RDS mediante Azure Site Recovery
 
@@ -25,7 +25,7 @@ ms.locfileid: "63713077"
 
 Puedes usar Azure Site Recovery para crear una solución de recuperación ante desastres para la implementación de Servicios de Escritorio remoto. 
 
-[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) es un servicio basado en Azure que ofrece funcionalidades de recuperación ante desastres mediante la coordinación de la replicación, conmutación por error y recuperación de máquinas virtuales. Azure Site Recovery admite varias tecnologías de replicación para replicar, proteger y conmutar por erro de forma coherente y sin problemas máquinas virtuales y aplicaciones en nubes públicas o privadas o en las del proveedor de hospedaje. 
+[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) es un servicio basado en Azure que ofrece funcionalidades de recuperación ante desastres mediante la coordinación de la replicación, conmutación por error y recuperación de máquinas virtuales. Azure Site Recovery admite varias tecnologías de replicación para replicar, proteger y conmutar por error de forma coherente y sin problemas máquinas virtuales y aplicaciones en nubes públicas o privadas o en las del proveedor de hospedaje. 
 
 Utiliza la siguiente información para crear y validar la solución de recuperación ante desastres.
 

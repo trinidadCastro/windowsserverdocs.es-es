@@ -8,12 +8,12 @@ ms.date: 07/06/2018
 ms.topic: article
 author: heidilohr
 manager: dougkim
-ms.openlocfilehash: 717f6c714ce95793a9a7b5fcf0ddd304c77daa32
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e8b5928db1acf00abdeac1b7bfd4d435bc8f0a17
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63753174"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870770"
 ---
 # <a name="remote-desktop-services-roles"></a>Roles de Servicios de Escritorio remoto
 
@@ -72,9 +72,9 @@ Para obtener más información, consulta los artículos siguientes:
 * [Servicios de Escritorio remoto: Acceso desde cualquier lugar](rds-plan-access-from-anywhere.md)
 * [Servicios de Escritorio remoto: Autenticación multifactor](rds-plan-mfa.md)
 
-## <a name="remote-desktop-web-access"></a>Acceso web de Escritorio remoto
+## <a name="remote-desktop-web-access"></a>Acceso web de Escritorio remoto.
 
-Acceso web de Escritorio remoto permite a los usuarios acceder a escritorios y aplicaciones por medio de un portal web y les inicia mediante la aplicación cliente de Escritorio remoto de Microsoft nativa del dispositivo. Puedes usar el portal web para publicar los escritorios y aplicaciones de Windows en dispositivos cliente de Windows y en otros que no son de Windows, y puedes también publicar selectivamente escritorios o aplicaciones para usuarios o grupos específicos.
+Acceso web de Escritorio remoto permite a los usuarios acceder a escritorios y aplicaciones por medio de un portal web y los inicia mediante la aplicación cliente de Escritorio remoto de Microsoft nativa del dispositivo. Puedes usar el portal web para publicar los escritorios y aplicaciones de Windows en dispositivos cliente de Windows y en otros que no son de Windows, y puedes también publicar selectivamente escritorios o aplicaciones para usuarios o grupos específicos.
 
 El acceso web de Escritorio remoto necesita Internet Information Services (IIS) para funcionar correctamente. Una conexión segura de protocolo de transferencia de hipertexto (HTTPS) proporciona un canal de comunicación cifrado entre los clientes y el servidor web de Escritorio remoto. La máquina virtual de acceso web de Escritorio remoto debe ser accesible mediante una dirección IP pública que permita las conexiones TCP entrantes al puerto 443 de forma que los usuarios del inquilino puedan conectarse desde Internet mediante el protocolo de transporte de comunicaciones HTTPS.
 

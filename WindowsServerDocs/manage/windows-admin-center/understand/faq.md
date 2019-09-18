@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.localizationpriority: medium
 ms.date: 06/07/2019
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 53f34992b875730be80ba479f387095aebbc8132
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: d2a2acc9261ac1a25e140cc298cc58e4b0fb6e52
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469560"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869049"
 ---
 # <a name="windows-admin-center-frequently-asked-questions"></a>Preguntas más frecuentes acerca de Windows Admin Center
 
@@ -27,13 +27,13 @@ Windows Admin Center es una plataforma de GUI basada en explorador y un conjunto
 
 ## <a name="can-i-use-windows-admin-center-in-production-environments"></a>¿Puedo usar Windows Admin Center en entornos de producción?
 
-Sí. Windows Admin Center generalmente está disponible y listo para implementaciones amplias de uso y de producción. Las capacidades de la plataforma actual y las herramientas básicas cumplen los criterios de versión estándar de Microsoft y nuestra barra de calidad de facilidad de uso, confiabilidad, rendimiento, accesibilidad, seguridad y adopción.
+Sí. Windows Admin Center generalmente está disponible y listo para implementaciones amplias de uso y de producción. Las funcionalidades de la plataforma actual y las herramientas básicas cumplen los criterios de versión estándar de Microsoft y nuestra barra de calidad de facilidad de uso, confiabilidad, rendimiento, accesibilidad, seguridad y adopción.
 
 [!INCLUDE [support-policy](../includes/support-policy.md)]
 
 ## <a name="how-much-does-it-cost-to-use-windows-admin-center"></a>¿Cuánto cuesta usar Windows Admin Center?
 
-Windows Admin Center no tiene ningún coste adicional más allá de Windows. Puedes usar Windows Admin Center (disponible como una descarga independiente) con licencias válidas de Windows Server o Windows 10 sin coste adicional; se concede bajo licencia en un EULA complementario de Windows.
+Windows Admin Center no tiene ningún coste adicional más allá de Windows. Puedes usar Windows Admin Center (disponible como una descarga independiente) con licencias válidas de Windows Server o Windows 10 sin coste adicional; se concede bajo licencia en un EULA complementario de Windows.
 
 ## <a name="what-versions-of-windows-server-can-i-manage-with-windows-admin-center"></a>¿Qué versiones de Windows Server puedo administrar con Windows Admin Center?
 
@@ -86,7 +86,7 @@ Sí. Se agregó la [característica Showscript](../use/get-started.md#view-power
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-windows-server-2008-r2-or-earlier"></a>¿Existen planes para que Windows Admin Center administre Windows Server 2008 R2 o una versión anterior?
 
-Windows Admin Center ahora admite una funcionalidad **limitada** para administrar Windows Server 2008 R2. Windows Admin Center se basa en funciones de PowerShell y las tecnologías de plataforma que no existen en Windows Server 2008 R2 y versiones anteriores, lo que hace que el soporte completo no sea factible. Windows Server 2008/2008 R2 llegará al final de su soporte en enero de 2020, por lo que Microsoft recomienda a los clientes [trasladarse a Azure o actualizar a Windows Server 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008).
+Windows Admin Center ahora admite una funcionalidad **limitada** para administrar Windows Server 2008 R2. Windows Admin Center se basa en funcionalidades de PowerShell y tecnologías de plataforma que no existen en Windows Server 2008 R2 y versiones anteriores, lo que hace que la compatibilidad total no sea factible. Windows Server 2008/2008 R2 llegará al final de su soporte en enero de 2020, por lo que Microsoft recomienda a los clientes [trasladarse a Azure o actualizar a Windows Server 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server-2008).
 
 ## <a name="are-there-any-plans-for-windows-admin-center-to-manage-linux-connections"></a>¿Existen planes para que Windows Admin Center administre conexiones de Linux?
 

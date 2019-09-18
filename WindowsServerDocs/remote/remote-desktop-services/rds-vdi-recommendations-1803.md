@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: 6320e9459e1460225a9920c2a23d596fa6bb4aa7
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 9e3b6640ac4da1226e708719e07076f872a5e503
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805203"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870728"
 ---
 # <a name="optimizing-windows-10-version-1803-for-a-virtual-desktop-infrastructure-vdi-role"></a>Optimización de Windows 10, versión 1803, para un rol de infraestructura de escritorio virtual (VDI)
 

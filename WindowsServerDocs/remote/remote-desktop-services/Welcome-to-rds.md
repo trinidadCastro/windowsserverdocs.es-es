@@ -14,12 +14,12 @@ ms.assetid: 52b9e09f-39e0-41a9-9d3b-4d5f4eacf3e0
 author: christianmontoya
 manager: scottman
 ms.localizationpriority: medium
-ms.openlocfilehash: 3d148c99911be0cebfc29429d93241f24c2b9606
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 74ec3d9bfbdb435c5bcb93ea1ef2cd9cdf2dd9d2
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66453009"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871279"
 ---
 # <a name="welcome-to-remote-desktop-services"></a>Bienvenida a Servicios de Escritorio remoto 
 
@@ -31,7 +31,7 @@ RDS ofrece flexibilidad de implementación, reducción de gastos y capacidad de 
 
 En función de tu entorno y preferencias, puedes configurar la solución RDS para la virtualización basada en sesión, como una infraestructura de escritorio virtual (VDI), o como una combinación de ambos:
 
-- **Virtualización basada en sesión**: Aprovecha la eficacia de proceso de Windows Server para proporcionar un entorno multisesión rentable que impulse las cargas de trabajo diarias de los usuarios
+- **Virtualización basada en sesión**: Aprovecha la eficacia de proceso de Windows Server para proporcionar un entorno multisesión rentable que impulse las cargas de trabajo diarias de los usuarios.
 - **VDI**: Aprovecha el cliente de Windows para proporcionar el alto rendimiento, la compatibilidad de aplicaciones y la familiaridad que los usuarios esperan de su experiencia de escritorio de Windows.
 
 En estos entornos de virtualización tienes mayor flexibilidad con respecto a lo que publicas para los usuarios:

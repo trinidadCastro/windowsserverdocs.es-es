@@ -11,12 +11,12 @@ author: jasongerend
 ms.author: jgerend
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: 6f685ce29088b56bb243d21315787ab90e6863a4
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 542eeea4bfae53defc2624b3b56a7db5ae454c2c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "65976721"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70868446"
 ---
 # <a name="install-server-core"></a>Instalación de Server Core
 
@@ -88,7 +88,7 @@ Los pasos de instalación para Windows Server (canal semianual) son los mismos q
 
 - No se admiten actualizaciones desde versiones anteriores de Windows Server hasta Windows Server, versión 1709. Siempre es necesaria una instalación nueva.
    Esto significa que cuando se ejecuta setup.exe desde el escritorio de un equipo Windows, la experiencia de configuración no permite la opción de actualización (aparece atenuada).
-- No hay ninguna versión de evaluación de Windows Server (canal semianual).
+- No hay ninguna versión de evaluación de Windows Server (canal semianual).
 - No hay ninguna versión de OEM ni comercial. Se pueden obtener licencias de Windows Server (canal semianual) a través de Software Assurance o los programas de fidelidad.
 
 Para más información sobre el canal semianual, consulta [Comparación de los canales de mantenimiento](../get-started-19/servicing-channels-19.md).

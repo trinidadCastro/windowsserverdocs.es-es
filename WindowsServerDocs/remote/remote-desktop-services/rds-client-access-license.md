@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 09/20/2018
 manager: dongill
-ms.openlocfilehash: 0254c03396cba69a86eed021319ca2e2483ca625
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 7783fd19c3dedde81514512f0c81f54eada33dc4
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743866"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871060"
 ---
 # <a name="license-your-rds-deployment-with-client-access-licenses-cals"></a>Licencia para la implementación de RDS con licencias de acceso de cliente (CAL)
 
@@ -56,7 +56,7 @@ En la tabla siguiente se describen las diferencias entre los dos tipos de CAL:
 
 Cuando se usa el modelo por dispositivo, se emite una licencia temporal la primera vez que un dispositivo se conecta al host de sesión de Escritorio remoto. La segunda vez que el dispositivo se conecta, siempre que el servidor de licencias esté activado y haya CAL disponibles, el servidor de licencias emite una CAL permanente de RDS por dispositivo.
 
-Cuando se usa el modelo por usuario, no se exige la concesión de licencias y se concede una licencia a cada usuario para que se conecte a un host de sesión de Escritorio remoto desde cualquier cantidad de dispositivos. El servidor de licencias emite licencias desde el grupo de CAL disponible o el grupo de CAL Over-Used. Es tu responsabilidad asegurarte de que todos los usuarios tengan una licencia válida y ninguna CAL Over-Used; en caso contrario, estarás en infracción de los términos de licencia de los Servicios de escritorio remoto.
+Cuando se usa el modelo por usuario, no se exige la concesión de licencias y se concede una licencia a cada usuario para que se conecte a un host de sesión de Escritorio remoto desde cualquier cantidad de dispositivos. El servidor de licencias emite licencias desde el grupo de CAL disponible o el grupo de CAL Over-Used. Es tu responsabilidad asegurarte de que todos los usuarios tengan una licencia válida y ninguna CAL usada en exceso. En caso contrario, estarás en infracción de los términos de licencia de los Servicios de Escritorio remoto.
 
 Para asegurarte de que cumples con los términos de licencia de los Servicios de escritorio remoto, haz un seguimiento del número de CAL de RDS por usuario en tu organización y asegúrate de tener suficientes CAL por usuario instaladas en el servidor de licencias para todos los usuarios.
 

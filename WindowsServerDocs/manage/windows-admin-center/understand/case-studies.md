@@ -8,12 +8,12 @@ ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
 ms.prod: windows-server-threshold
-ms.openlocfilehash: 61f447f68ec6c85ed1554e176c78c4caec5dfde4
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 4707a6b54ad7a216f18c22367985e55d07e7a2eb
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63747883"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70869509"
 ---
 # <a name="windows-admin-center-case-studies"></a>Casos prácticos de Windows Admin Center
 
@@ -46,7 +46,7 @@ Windows Admin Center ayuda a Ava6 a administrar Windows Server implementado en C
 
 Ava6 tiene Windows Admin Center implementado como una sola instancia para la administración de VM.
 
-Los clientes del Ava6 han quedado impresionados con Windows Admin Center y prefieren sus capacidades de administración para Hyper-V y clústeres de conmutación por error por sobre otras opciones.  Antes de Windows Admin Center, la administración de controladores era excesivamente complicada en un servidor principal.  Windows Admin Center también ha ayudado a presentan a los clientes de S2D Ava6 una oferta similar a competidores como Nutanix y VMWare.
+Los clientes de Ava6 han quedado impresionados con Windows Admin Center y prefieren sus funcionalidades de administración para Hyper-V y clústeres de conmutación a otras opciones.  Antes de Windows Admin Center, la administración de controladores era excesivamente complicada en un servidor principal.  Windows Admin Center también ha ayudado a presentar a los clientes de S2D Ava6, con una oferta similar a competidores como Nutanix y VMWare.
 
 ## <a name="comparex"></a>Comparex
 

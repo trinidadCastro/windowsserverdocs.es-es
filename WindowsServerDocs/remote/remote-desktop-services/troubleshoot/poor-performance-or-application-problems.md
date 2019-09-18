@@ -13,12 +13,12 @@ manager: ''
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 63e28cba6669e6a6bb604fbfd19650fb461fe575
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: c65683a69633a950630b7fd74e1181da767ae35b
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529915"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870581"
 ---
 # <a name="poor-performance-or-application-problems-during-remote-desktop-connection"></a>Problemas de bajo rendimiento o de aplicaciones durante la conexión a Escritorio remoto
 
@@ -26,7 +26,7 @@ En este artículo se abordan varios problemas comunes que los usuarios pueden ex
 
 ### <a name="intermittent-problems-with-new-microsoft-azure-virtual-machines"></a>Problemas intermitentes con nuevas máquinas virtuales de Microsoft Azure
 
-Este problema afecta a las máquinas virtuales que se han aprovisionado recientemente. Después de que el usuario se conecta a la máquina virtual, la sesión de Escritorio remoto no carga toda la configuración del usuario correctamente.
+Este problema afecta a las máquinas virtuales que se han aprovisionado recientemente. Después de que el usuario se conecte a la máquina virtual, la sesión de escritorio remoto no carga toda la configuración del usuario correctamente.
 
 Para solucionar este problema, desconecte la máquina virtual, espere al menos 20 minutos y vuelva a conectarla.
 

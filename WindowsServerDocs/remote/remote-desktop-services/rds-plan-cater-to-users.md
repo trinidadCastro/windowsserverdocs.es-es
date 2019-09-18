@@ -13,12 +13,12 @@ author: spatnaik
 ms.author: spatnaik
 ms.date: 09/23/2016
 manager: scottman
-ms.openlocfilehash: 9d16989cc3ecbf0170081bb8cb52a9103f979741
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 05b9dcfdb28613e4f8a815e78a84ba1f70c35b97
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63743462"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870935"
 ---
 # <a name="remote-desktop-services---cater-to-different-kinds-of-users"></a>Servicios de Escritorio remoto: Destinado a distintos tipos de usuarios
 
@@ -27,4 +27,4 @@ ms.locfileid: "63743462"
 Escala la implementación según la necesidad esperada de cada tipo de usuario.
 Por ejemplo, los usuarios pueden realizar la entrada de datos en aplicaciones ligeras, manipular grandes conjuntos de datos con aplicaciones de productividad como Office, o trabajar con aplicaciones pesadas de ingeniería o gráficos.
 
-Se recomienda hacer una prueba de carga de la implementación con las pruebas de esfuerzo y simulación de uso real. ¡Cambia el tamaño de la carga para evitar sorpresas! Asegúrate de que la capacidad de respuesta cumpla los requisitos del usuario, y que todo el sistema sea resistente. Crea pruebas de carga con herramientas de simulación, como LoginVSI, que comprobar la capacidad de la implementación de satisfacer las necesidades de los usuarios. 
+Se recomienda hacer una prueba de carga de la implementación con las pruebas de esfuerzo y simulación de uso real. ¡Cambia el tamaño de la carga para evitar sorpresas! Asegúrate de que la capacidad de respuesta cumpla los requisitos del usuario y que todo el sistema sea resistente. Crea pruebas de carga con herramientas de simulación, como LoginVSI, que comprueban la capacidad de la implementación para satisfacer las necesidades de los usuarios. 

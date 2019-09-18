@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/21/2016
 manager: dongill
-ms.openlocfilehash: c3c7be624e3b093347807a5ee131270d3c802f1a
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: d681530f849fe55495de0f4d4b564921d3b0bb3d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805161"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870872"
 ---
 # <a name="remote-desktop-services---secure-data-storage-with-upds"></a>Servicios de Escritorio remoto: almacenamiento de datos seguro con UPD
 
@@ -26,7 +26,7 @@ ms.locfileid: "66805161"
 
 Recursos empresariales de Store, datos de personalización del usuario y configuración segura en el entorno local o en Azure. Los hosts de sesión de Escritorio remoto usan la autenticación de AD y otorgan a los usuarios los recursos que necesitan en un entorno personalizado, de forma segura. 
 
-Asegurar que los usuarios tengan una experiencia consistente, independientemente del punto de conexión desde el que acceden a sus recursos remotos, es un aspecto importante de la administración de una implementación del Servicio de Escritorio remoto. Los Discos de perfil de usuario (UPD) permiten que los datos de los usuarios, las personalizaciones y la configuración de la aplicación sigan a un usuario en una sola colección. Un UPD es un archivo VHD creado en función de la colección y el usuario, que se guarda en un recurso compartido central que se monta en la sesión de un usuario cuando este inicia sesión: el UPD se trata como una unidad de disco local durante la duración de esa sesión. 
+Asegurar que los usuarios tengan una experiencia consistente, independientemente del punto de conexión desde el que acceden a sus recursos remotos, es un aspecto importante de la administración de una implementación del Servicio de Escritorio remoto. Los Discos de perfil de usuario (UPD) permiten que los datos de los usuarios, las personalizaciones y la configuración de la aplicación sigan a un usuario en una sola colección. Un UPD es un archivo VHD creado en función de la colección y el usuario, que se guarda en un recurso compartido central que se monta en la sesión de un usuario cuando este inicia sesión: el UPD se trata como una unidad de disco local durante esa sesión. 
 
 Desde la perspectiva del usuario, el UPD proporciona una experiencia familiar: guarda sus documentos en la carpeta Documentos (en lo que parece ser una unidad de disco local), cambia la configuración de la aplicación como de costumbre y realiza las personalizaciones en el entorno de Windows. Todos estos datos, incluido el subárbol del Registro, se almacenan en el UPD y persisten en un recurso compartido de red central. Los UPD solo están disponibles para el usuario cuando está conectado a un escritorio o RemoteApp. Igualmente, los UPD solo pueden desplazarse dentro de una colección porque el directorio completo `C:\Users\<username\>` del usuario (incluido AppData\Local) está almacenado en el UPD.
 

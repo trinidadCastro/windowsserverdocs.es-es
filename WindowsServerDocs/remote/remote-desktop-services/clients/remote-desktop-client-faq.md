@@ -14,12 +14,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 07/16/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: e6f91aa02cd0f19d480c24309be5797c273b0f2e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: e0dbe709681cf679347ccad2677ff3cda6690f3d
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66804950"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871233"
 ---
 # <a name="frequently-asked-questions-about-the-remote-desktop-clients"></a>Preguntas más frecuentes sobre los clientes de Escritorio remoto
 
@@ -59,7 +59,7 @@ En Windows 10, haz lo siguiente:
 3. Utiliza el control deslizante para habilitar Escritorio remoto.
 4. En general, lo mejor es el equipo activo y reconocible para facilitar las conexiones. Haz clic en **Mostrar configuración** para ir a la configuración de energía del equipo, donde puedes cambiar esta configuración.
    > [!NOTE]
-   > No puedes conectarte a un equipo que está en suspensión o en hibernación, así es que asegúrate de que la configuración de suspensión o hibernación del equipo remoto esté establecida en **Nunca**. (La hibernación no está disponible en todos los equipos).
+   > No puedes conectarte a un equipo que está en suspensión o en hibernación, así que asegúrate de que la configuración de suspensión o hibernación del equipo remoto esté establecida en **Nunca**. (La hibernación no está disponible en todos los equipos).
 
 
 Toma nota del nombre de este equipo en **How to connect to this PC** (Cómo conectarse a este equipo). Lo necesitarás para configurar a los clientes.
@@ -89,7 +89,7 @@ Estas son algunas de las soluciones posibles a los problemas comunes que podría
      Si usas otro firewall, asegúrate de que el puerto de Escritorio remoto (por lo general, 3389) está abierto.
 - **Es posible que las conexiones remotas no estén configuradas en el equipo remoto.** Para solucionar este problema, desplázate hacia atrás hasta la pregunta [¿Cómo configuro un equipo para Escritorio remoto?](#how-do-i-set-up-a-pc-for-remote-desktop) en este tema.
 - **Es posible que el equipo remoto solo permita que se conecten equipos que tienen configurada la Autenticación a nivel de red.** 
-- **Puede que el equipo remoto esté apagado.** No puedes conectarte a un equipo apagado, en suspensión o en hibernación, así es que asegúrate de que la configuración de la suspensión o la hibernación en el equipo remoto esté establecida en **Nunca** (la hibernación no está disponible en todos los equipos).
+- **Puede que el equipo remoto esté apagado.** No puedes conectarte a un equipo apagado, en suspensión o en hibernación, así que asegúrate de que la configuración de la suspensión o la hibernación en el equipo remoto esté establecida en **Nunca** (la hibernación no está disponible en todos los equipos).
 
 ### <a name="why-cant-i-find-or-connect-to-my-pc"></a>¿Por qué no puedo encontrar mi equipo ni conectarme a él?
 
@@ -234,7 +234,7 @@ En caso de recibir un **error 23014 de RPC** o un **Error 0x59E6, vuelve a inten
 ### <a name="what-does-the-failed-to-parse-ntlm-challenge-error-mean"></a>¿Qué significa el error "Failed to parse NTLM challenge" (Error al analizar el desafío NTLM)?
 Este error se debe a una configuración incorrecta en el equipo remoto. Asegúrate de que la configuración de nivel de seguridad de RDP en el equipo remoto esté establecida en "Compatible con cliente". (Consulta con el administrador del sistema si necesitas ayuda para hacer esto).
 
-### <a name="what-does-tsrap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>¿Qué significa "TS_RAP You are not allowed to connect to the given host" (TS_RAP No estás autorizado a conectarte con el host determinado)?
+### <a name="what-does-ts_rap-you-are-not-allowed-to-connect-to-the-given-host-mean"></a>¿Qué significa "TS_RAP You are not allowed to connect to the given host" (TS_RAP No estás autorizado a conectarte con el host determinado)?
 Este error se produce cuando una directiva de autorización de recursos en el servidor de puerta de enlace impide que tu nombre de usuario se conecte al equipo remoto. Esto puede ocurrir en las siguientes instancias:
 
 - El nombre del equipo remoto es el mismo de la puerta de enlace. Luego, cuando intentas conectarte al equipo remoto, la conexión va en su lugar a la puerta de enlace, a la que probablemente no tienes permiso para acceder. Si necesitas conectarte a la puerta de enlace, no uses el nombre de la puerta de enlace externa como el nombre del equipo. En su lugar, usa "localhost", la dirección IP (127.0.0.1) o el nombre del servidor interno.

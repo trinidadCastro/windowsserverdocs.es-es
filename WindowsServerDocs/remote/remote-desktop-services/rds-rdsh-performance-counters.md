@@ -10,12 +10,12 @@ ms.topic: article
 author: lizap
 manager: dougkim
 ms.localizationpriority: medium
-ms.openlocfilehash: a302e775d3304db9304cc51e09ede19fa2eba802
-ms.sourcegitcommit: f75d9496f345d73fdda88037617763e7a2f614b7
+ms.openlocfilehash: 3eb1e4b6da971d788383b8facbf8bbcbe00a5953
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67863105"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870910"
 ---
 # <a name="use-performance-counters-to-diagnose-app-performance-problems-on-remote-desktop-session-hosts"></a>Uso de contadores de rendimiento para diagnosticar problemas de rendimiento de las aplicaciones en los hosts de sesión de Escritorio remoto
 
@@ -34,13 +34,13 @@ La siguiente imagen muestra una representación somera del flujo de entrada del 
 
 ![Escritorio remoto: flujos de entrada de usuario desde el cliente de Escritorio remoto del usuario a la aplicación](./media/rds-user-input.png)
 
-El contador User Input Delay (Retraso de entrada del usuario) mide la diferencia máxima (en un intervalo dado) entre la entrada que está en la cola y el momento en que la recoge la aplicación en un [bucle de mensajes tradicional](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop), tal como se muestra en el siguiente diagrama de flujo:
+El contador de retraso de entrada del usuario mide la diferencia máxima (en un intervalo dado) entre la entrada que está en la cola y el momento en que la recoge la aplicación en un [bucle de mensajes tradicional](https://msdn.microsoft.com/library/windows/desktop/ms644927.aspx#loop), tal como se muestra en el siguiente diagrama de flujo:
 
 ![Escritorio remoto: flujo del contador de rendimiento de User Input Delay (Retraso de entrada del usuario)](./media/rds-user-input-delay.png)
 
 Un detalle importante de este contador es que indica el retraso máximo de la entrada del usuario en un intervalo configurable. Es el tiempo máximo que tarda una entrada en llegar a la aplicación, lo que puede afectar a la velocidad de acciones importantes y visibles, como escribir.
 
-Por ejemplo, en la siguiente tabla, la demora de la entrada del usuario se notificaría como 1000 ms dentro de este intervalo. El contador registra el retraso de entrada de usuario en el intervalo, porque la percepción del usuario de "lento" viene determinada por el máximo tiempo de entrada que experimentan, no por la velocidad media de todas las entradas totales.
+Por ejemplo, en la siguiente tabla, la demora de la entrada del usuario se notificaría como 1000 ms dentro de este intervalo. El contador registra el retraso de entrada del más lento del intervalo porque la percepción del usuario de "lento" viene determinada por el máximo tiempo de entrada que experimentan, no por la velocidad media de todas las entradas totales.
 
 |Número| 0 | 1 | 2 |
 |------|---|---|---|
@@ -78,7 +78,7 @@ El contador empieza a notificar el retraso en la entrada del usuario en cuanto s
 
 ![Escritorio remoto: un ejemplo de actividad de Retraso de entrada del usuario por proceso en el Monitor de rendimiento](./media/rds-sample-user-input-delay-perfmon.png)
 
-A continuación, se va a examinar **Retraso de entrada del usuario por sesión**. Hay instancias de cada identificador de sesión y sus contadores muestran el retraso de entrada de usuario de todos los procesos dentro de la sesión especificada. Además, hay dos instancias denominadas "Max" (el retraso máximo en la entrada de usuario en todas las sesiones) y "Average" (el promedio de promedio todas las sesiones).
+A continuación, se va a examinar el **retraso de entrada del usuario por sesión**. Hay instancias de cada identificador de sesión y sus contadores muestran el retraso de entrada de usuario de todos los procesos dentro de la sesión especificada. Además, hay dos instancias denominadas "Max" (el retraso máximo en la entrada de usuario en todas las sesiones) y "Average" (el promedio de promedio todas las sesiones).
 
 Esta tabla muestra un ejemplo visual de estas instancias. (La misma información se puede obtener en el Monitor de rendimiento si se cambia al tipo de gráfico de informe.)
 

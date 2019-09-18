@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 5aed8ba7-f541-4416-b01c-4d3b1712e2b1
 author: spatnaik
 manager: scottman
-ms.openlocfilehash: 9e624517e5e7910a32a68d1ebc38b3f8d5ab8459
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a58231d908ff1ac32eca7d4ba3f1d5a6a18dd7fe
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805212"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870569"
 ---
 # <a name="upgrading-your-remote-desktop-virtualization-host-to-windows-server-2016"></a>Actualización del host de virtualización de Escritorio remoto a Windows Server 2016
 
@@ -47,7 +47,7 @@ Estos servidores deben actualizarse a la vez. Sigue los pasos indicados a contin
 4. Actualiza los servidores RDVH aislados. 
 5. Después de actualizar correctamente los servidores de destino RDVH, crea un nuevo clúster y CSV, que debe estar en un volumen SAN completamente diferente.
 6. Une todos los servidores RDVH actualizados al nuevo clúster. 
-7. Crea una estructura de carpetas en el nuevo archivo CSV que imite la estructura de carpetas existente en el archivo CSV existente. Esto incluye las carpetas de colecciones y las subcarpetas de nivel superiores para la todas las VM. 
+7. Crea una estructura de carpetas en el nuevo archivo CSV que imite la estructura de carpetas existente en el archivo CSV existente. Esto incluye las carpetas de colecciones y las subcarpetas de nivel superior para la todas las VM. 
 8. De las distintas carpetas de recopilación de VM en el archivo CSV original, copia la carpeta /IMGS y el contenido en las nuevas carpetas de la colección en las mismas ubicaciones en el nuevo CSV. 
 9. En la máquina RDVH de origen, usa el Administrador de clústeres para quitar la configuración de la VM para alta disponibilidad:
     1. Inicia el Administrador de clústeres. 

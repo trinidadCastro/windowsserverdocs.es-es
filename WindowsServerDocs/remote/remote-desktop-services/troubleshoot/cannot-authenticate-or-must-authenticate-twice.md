@@ -13,12 +13,12 @@ manager: ''
 ms.author: delhan
 ms.date: 07/24/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 85e332f5f66b59676ddd3b5383b1e5844c2b4c83
-ms.sourcegitcommit: f6503e503d8f08ba8000db9c5eda890551d4db37
+ms.openlocfilehash: 8af2b1a171a77def2bbb74cc7301e0562cb5b92c
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68529925"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70870598"
 ---
 # <a name="user-cant-authenticate-or-must-authenticate-twice"></a>El usuario no se puede autenticar o debe autenticarse dos veces
 
@@ -35,7 +35,7 @@ Este problema se produce cuando se requiere autenticación a nivel de red (NLA) 
 
 Para resolver este problema, sigue uno de estos pasos:
 
-  - [Modifica la asignación de permisos del usuario o la pertenencia a un grupo del usuario](#modify-the-users-group-membership-or-user-rights-assignment).
+  - [Modificación de la asignación de permisos del usuario o la pertenencia a un grupo del usuario](#modify-the-users-group-membership-or-user-rights-assignment)
   - Desactiva NLA (no se recomienda).
   - Usa clientes de escritorio remoto que no sean de Windows 10. Por ejemplo, los clientes de Windows 7 no tienen este problema.
 
@@ -53,9 +53,9 @@ Si el usuario ya es miembro de este grupo (o si varios miembros del grupo tienen
 
 ## <a name="access-denied-a-remote-call-to-the-sam-database-has-been-denied"></a>Acceso denegado, se ha denegado una llamada remota a la base de datos de SAM
 
-Es muy probable que este comportamiento se produzca si el controlador de dominio utiliza Windows Server 2016, o cualquier versión o posterior, y los usuarios intentan conectarse mediante una aplicación de conexión personalizada. En concreto, se denegará el acceso a las aplicaciones que acceden a la información del perfil del usuario en Active Directory.
+Es muy probable que este comportamiento se produzca si el controlador de dominio utiliza Windows Server 2016, o cualquier versión o posterior, y los usuarios intentan conectarse mediante una aplicación de conexión personalizada. En concreto, se denegará el acceso a las aplicaciones que acceden a la información del perfil del usuario en Active Directory.
 
-Este comportamiento es consecuencia de un cambio en Windows. En Windows Server 2012 R2 y versiones anteriores, cuando un usuario inicia sesión en un escritorio remoto, el Administrador de conexiones remotas (RCM) se pone en contacto con el controlador de dominio (DC) para consultar las configuraciones que son específicas de Escritorio remoto en el objeto de usuario en Active Directory Domain Services (AD DS). Esta información se muestra en la pestaña Perfil de Servicios de Escritorio remoto de las propiedades del objeto de un usuario en el complemento MMC Usuarios y equipos de Active Directory.
+Este comportamiento es consecuencia de un cambio en Windows. En Windows Server 2012 R2 y versiones anteriores, cuando un usuario inicia sesión en un escritorio remoto, el Administrador de conexiones remotas (RCM) se pone en contacto con el controlador de dominio (DC) para consultar las configuraciones que son específicas de Escritorio remoto en el objeto de usuario en Active Directory Domain Services (AD DS). Esta información se muestra en la pestaña Perfil de Servicios de Escritorio remoto de las propiedades del objeto de un usuario en el complemento MMC Usuarios y equipos de Active Directory.
 
 A partir de Windows Server 2016, RCM ya no consulta el objeto del usuario en AD DS. Si necesitas que RCM consulte AD DS porque usas los atributos de Servicios de Escritorio remoto, debes habilitar la consulta de forma manual.
 

@@ -8,12 +8,12 @@ ms.date: 11/2/2018
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: d167fb5dfdfbb2a302c2b0fca9286dc034b730e3
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 7de392b049fbe910688a4b950e1ca870b6ba3f46
+ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546333"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70871166"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configuración del cliente web de Escritorio remoto para los usuarios
 
@@ -318,4 +318,4 @@ También puedes tener acceso a la consola directamente mediante el explorador. L
 
 ## <a name="get-help-with-the-web-client"></a>Obtención de ayuda con el cliente web
 
-Si ha encontrado un problema que no puede resolverse con la información de este artículo, puede notificárnoslo en la [Comunidad técnica](https://aka.ms/wvdtc). También puedes solicitar o votar nuevas características en nuestro [cuadro de sugerencias](https://remotedesktop.uservoice.com/forums/911494-remote-desktop-web-client).
+Si tienes un problema que no puede resolverse con la información de este artículo, puedes notificárnoslo en la [Comunidad técnica](https://aka.ms/wvdtc). También puedes solicitar o votar nuevas características en nuestro [cuadro de sugerencias](https://remotedesktop.uservoice.com/forums/911494-remote-desktop-web-client).
