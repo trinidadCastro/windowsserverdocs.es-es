@@ -68,6 +68,7 @@
 ### [Clientes de Escritorio remoto disponibles](clients/remote-desktop-clients.md)
 ### Cliente de escritorio de Windows
 #### [Introducción al cliente de escritorio de Windows](clients/windowsdesktop.md)
+#### [Cliente de escritorio de Windows para administradores](clients/windowsdesktop-admin.md)
 #### [Novedades del cliente de escritorio de Windows](clients/windowsdesktop-whatsnew.md)
 ### Cliente de Microsoft Store
 #### [Introducción al cliente de Microsoft Store](clients/windows.md)
