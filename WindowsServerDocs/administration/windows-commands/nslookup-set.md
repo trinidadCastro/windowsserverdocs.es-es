@@ -1,6 +1,6 @@
 ---
 title: nslookup set
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -13,32 +13,32 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 99ac8736ca8223a1a444784c4cf605a973a9e4dd
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 928d222714bf01cac1585a25e8cac3ec6c8b0233
+ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436541"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105052"
 ---
 # <a name="nslookup-set"></a>nslookup set
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-cambia los valores de configuración que afectan a cómo las búsquedas.
+Cambia los valores de configuración que afectan a cómo funcionan las búsquedas.
 ## <a name="syntax"></a>Sintaxis
 ```
 set <KeyWord>[=<Value>]
 ```
 ## <a name="parameters"></a>Parámetros
 
-|    Parámetro    |                                                                                                                    Descripción                                                                                                                    |
+|    Parámetro    |                                                                                                                    DESCRIPCIÓN                                                                                                                    |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <KeyWord>    | Identifica los subcomandos que se derivan los **establecer** subcomando. Por ejemplo, el subcomando **set d2** tiene la palabra clave [**ningún**]**d2**. Para obtener la lista de los subcomandos que se derivan de la **establecer** subcomando, consulte la sección referencias adicionales. |
-|     <Value>     |                                                                                      Especifica el valor de configuración de la configuración de nslookup para cada subcomando.                                                                                      |
-| {help &#124; ?} |                                                                                               Muestra un resumen breve de **nslookup** subcomandos.                                                                                               |
+|    <KeyWord>    | Identifica los subcomandos que se derivan del subcomando **set** . Por ejemplo, el subcomando **set D2** tiene la palabra clave [**no**]**D2**. Para obtener la lista de subcomandos que se derivan del subcomando **set** , consulte referencias adicionales. |
+|     <Value>     |                                                                                      Especifica el valor de configuración de Nslookup para cada subcomando.                                                                                      |
+| {ayuda &#124; ?} |                                                                                               Muestra un breve resumen de los subcomandos de **nslookup** .                                                                                               |
 
 ## <a name="remarks"></a>Comentarios
-Use **establecer todo** para ver una lista de las configuraciones actuales.
+Use **establecer todo** para ver una lista de los valores actuales.
 ## <a name="additional-references"></a>Referencias adicionales
-[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[nslookup establece todas](nslookup-set-all.md)
+[Clave de sintaxis de línea de comandos](command-line-syntax-key.md)[nslookup SET ALL](nslookup-set-all.md) 
+
