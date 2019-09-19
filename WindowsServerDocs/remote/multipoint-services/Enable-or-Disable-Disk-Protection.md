@@ -24,7 +24,7 @@ La característica Protección de disco permite restablecer el sistema MultiPoin
   
 ## <a name="enable-disk-protection"></a>Habilitar protección de disco  
   
-1.  En Multipoint Manager, haga clic en la pestaña **Inicio** y, a continuación, en * nombre del equipo ***tareas**, haga clic en **Habilitar protección de disco**.  
+1.  En Multipoint Manager, haga clic en la pestaña **Inicio** y, a continuación, en *nombre del equipo* **tareas**, haga clic en **Habilitar protección de disco**.  
   
 2.  Revise la información y, después, haga clic en **Siguiente**.  
   
@@ -32,7 +32,7 @@ Después de reiniciarse el sistema, los cambios realizados en el mismo, incluida
   
 ## <a name="disable-disk-protection"></a>Deshabilitar la protección de disco  
   
-1.  En Multipoint Manager, haga clic en la pestaña **Inicio** y, a continuación, en * nombre del equipo ***tareas**, haga clic en **deshabilitar protección de disco**.  
+1.  En Multipoint Manager, haga clic en la pestaña **Inicio** y, a continuación, en *nombre del equipo* **tareas**, haga clic en **deshabilitar protección de disco**.  
   
 2.  Revise la información y, después, haga clic en **Siguiente**.  
   

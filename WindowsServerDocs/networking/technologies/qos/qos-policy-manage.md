@@ -62,9 +62,9 @@ Para crear una directiva de QoS, edite la configuración de un objeto de directi
 
 Los nombres de las directivas QoS deben ser exclusivos. La forma en que se aplican las directivas a los servidores y los usuarios finales depende de dónde se almacena la Directiva de QoS en el Editor de objetos de directiva de grupo:
 
-- Una directiva de QoS de la Directiva de Settings\QoS de equipo \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Por lo general, se utilizan directivas Qos basadas en equipos para los equipos de servidores.
+- Una directiva QoS ubicada en Configuración del equipo\Configuración de Windows\QoS basada en directivas se aplica a equipos, independientemente del usuario que tenga iniciada la sesión actualmente. Por lo general, se utilizan directivas Qos basadas en equipos para los equipos de servidores.
 
-- Una directiva de QoS de la Directiva de Settings\QoS de usuario \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+- Una directiva QoS ubicada en Configuración de usuario\Configuración de Windows\QoS basada en directivas se aplica a los usuarios después de que iniciaron sesión, independientemente del equipo en el que iniciaron sesión.
 
 #### <a name="to-create-a-new-qos-policy-with-the-qos-policy-wizard"></a>Para crear una nueva Directiva de QoS con el Asistente para directivas de QoS
 
