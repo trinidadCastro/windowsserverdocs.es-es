@@ -13,12 +13,12 @@ ms.assetid: 044f2fd5-5b87-42bb-ba0d-c06516ac48c8
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: 97d9e671823dade9e488922561c4c6a925719830
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9f3524261e8e93439ff48a3e6666fa7680a76a29
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871660"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143736"
 ---
 # <a name="limit-web-access"></a>Limitar el acceso web
 Además de supervisar las actividades de los usuarios en equipos de escritorio individuales, usted, como usuario administrativo, puede limitar el acceso de los usuarios a sitios web especificados indicando sitios web y sitios web permitidos en los que desea bloquear el acceso de los usuarios.  
@@ -49,7 +49,7 @@ Además de supervisar las actividades de los usuarios en equipos de escritorio i
    Para agregar un sitio que no quiere que visiten los usuarios, haga clic en no **permitir solo estos sitios**, escriba la dirección web que no quiere que visiten los usuarios y, a continuación, haga clic en **Agregar**.  
   
    > [!NOTE]
-   > Por ejemplo, al escribir "Contoso.com" permite o bloquea sitios que son relativos a www.contoso.com (por ejemplo, www.newpage.contoso.com). Si escribe "Contoso", se permitirá o se limitarán todos los sitios relacionados con contoso (incluidos contoso.com, contoso.uk, etc.).  
+   > Por ejemplo, al escribir "contoso.com" permite o bloquea sitios que son relativos a www.contoso.com (por ejemplo,\.www NewPage.contoso.com). Si escribe "Contoso", se permitirá o se limitarán todos los sitios relacionados con contoso (incluidos contoso.com, contoso.uk, etc.).  
   
 3. Para quitar una dirección web de la lista de sitios permitidos o no permitidos, seleccione la dirección web y después haga clic en **Quitar**.  
   

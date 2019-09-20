@@ -9,12 +9,12 @@ ms.date: 05/31/2017
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: identity-adfs
-ms.openlocfilehash: 91a1d69e4f7a77633d460f594ad3091f359df9c3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 247381b35a038627b5d8c91ac4dda0cc4fab6195
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867846"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143781"
 ---
 # <a name="ad-fs-requirements"></a>Requisitos de AD FS
 
@@ -170,7 +170,7 @@ Varios exploradores y plataformas clave se han sometido a la validación de la r
 |**Exploradores**|**Select**|  
 |IE 10,0|Windows 7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2|  
 |IE 11,0|Windows7, Windows 8.1, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2|  
-|Agente de autenticación Web de Windows|Windows 8.1|  
+|Agente de autenticación Web de Windows|Windows 8.1|  
 |V21 \[de Firefox\]|Windows 7, Windows 8.1|  
 |Safari \[V7\]|iOS 6, Mac OS\-X 10,7|  
 |V27 \[de Chrome\]|Windows 7, Windows 8.1, Windows Server 2012, Windows Server 2012 R2 Mac OS\-X 10,7|  
@@ -178,7 +178,7 @@ Varios exploradores y plataformas clave se han sometido a la validación de la r
 > [!IMPORTANT]  
 > Problema \- conocido Firefox: Workplace Join funcionalidad que identifica el dispositivo con el certificado de dispositivo no funciona en las plataformas de Windows. Firefox no admite actualmente la autenticación de certificados de cliente SSL mediante certificados aprovisionados en el almacén de certificados de usuario en los clientes Windows.  
   
-**Cookies**  
+**Propias**  
   
 AD FS crea\-cookies persistentes y basadas en sesión que deben almacenarse en los equipos cliente para proporcionar inicio de sesión\-,\-cierre \(\-de\)sesión, Inicio de sesión único (SSO) y otras funciones. Por lo tanto, el explorador cliente debe estar configurado para aceptar cookies. Las cookies que se usan para la autenticación son siempre cookies\) de sesión https del protocolo \(seguro de transferencia de hipertexto que se escriben para el servidor de origen. Si el explorador cliente no está configurado para permitir estas cookies, AD FS no funcionará correctamente. Las cookies persistentes se usan para conservar la selección del usuario del proveedor de notificaciones. Puede deshabilitarlos mediante una opción de configuración en el archivo de configuración de las páginas\-de inicio de sesión AD FS. La compatibilidad con\/TLS SSL es necesaria por motivos de seguridad.  
   
@@ -329,18 +329,18 @@ En la tabla siguiente se proporciona información adicional sobre la compatibili
 ||||  
 |-|-|-|  
 |**Algoritmo**|**Longitudes de clave**|**Protocolos\/aplicaciones\/comentarios**|  
-|TripleDES: valor predeterminado \(192 compatible 192 –\) \- 256 [http\/:\/www.w3.org\/2001\/04xmlenc\/TripleDES\#CBC\-](http://www.w3.org/2001/04/xmlenc)|>\=192|Algoritmo admitido para descifrar el token de seguridad. No se admite el cifrado del token de seguridad con este algoritmo.|  
-|AES128 \- http:\/www.w3.org2001\/04 xmlencAES128\#CBC\/\/\/\-|128|Algoritmo admitido para descifrar el token de seguridad. No se admite el cifrado del token de seguridad con este algoritmo.|  
-|AES192 \- http:\/www.w3.org2001\/04 xmlencAES192\#CBC\/\/\/\-|192|Algoritmo admitido para descifrar el token de seguridad. No se admite el cifrado del token de seguridad con este algoritmo.|  
-|AES256 \- [http:\/www.w3.org\/200104\/xmlencAES256\#CBC\/\/\-](http://www.w3.org/2001/04/xmlenc)|256|**Predeterminado**. Algoritmo admitido para el cifrado del token de seguridad.|  
-|Predeterminado tripledeskeywrap \- http:\/www.w3.org2001\/04 xmlenckW\#TripleDES\/\/\/\-|Todos los tamaños de clave admitidos por .NET 4,0\+|Algoritmo admitido para cifrar la clave simétrica que cifra un token de seguridad.|  
-|Predeterminado aes128keywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#AES128\/\/\-](http://www.w3.org/2001/04/xmlenc)|128|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
-|Predeterminado aes192keywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#aes192\/\/\-](http://www.w3.org/2001/04/xmlenc)|192|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
-|Predeterminado aes256keywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#AES256\/\/\-](http://www.w3.org/2001/04/xmlenc)|256|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
-|RsaV15KeyWrap \- http:\/www.w3.org2001\/04 xmlenc RSA1\-5\/\/\/\#\_|1024|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
-|Predeterminado rsaoaepkeywrap \- [http:\/www.w3.org\/200104\/xmlencRSAOAEP\-mgf1p\/\/\#\-](http://www.w3.org/2001/04/xmlenc)|1024|Default. Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
-|SHA1\-http:\/www.w3.orgpics\/dsig SHA1 10\_. html\/\/\/\_|N\/A|Usado por AD FS Server en la generación de artefactos SourceId:  En este escenario, el STS usa SHA1 \(según la recomendación del estándar\) SAML 2,0 para crear un valor corto de 160 bits para el artefacto sourceiD.<br /><br />También lo usa el componente heredado \(del agente Web de ADFS\) de WS2003 período de tiempo para identificar los cambios en un valor de hora de "última actualización" para que sepa cuándo actualizar la información del STS.|  
-|SHA1withRSA\-<br /><br />http:\/\/www.w3.orgpicsdsig\/RSA SHA1 10\_. html\-\/\/\_|N\/A|Se utiliza en casos en los que AD FS servidor valida la firma de AuthenticationRequest de SAML, firmar la solicitud de resolución de artefactos o la respuesta, crear un certificado de firma de tokens\-.<br /><br />En estos casos, SHA256 es el valor predeterminado y SHA1 solo se usa si el usuario \(\) de confianza del asociado no puede admitir SHA256 y debe usar SHA1.|  
+|TripleDES: valor predeterminado \(192 compatible 192 –\) \- 256 [http\/:\/www.w3.org\/2001\/04xmlenc\/TripleDES\#CBC\-](http://www.w3.org/2001/04/xmlenc#tripledes-cbc)|>\=192|Algoritmo admitido para descifrar el token de seguridad. No se admite el cifrado del token de seguridad con este algoritmo.|  
+|AES128 \- [http:\/www.w3.org\/200104\/xmlencAES128\#CBC\/\/\-](http://www.w3.org/2001/04/xmlenc#aes128-cbc)|128|Algoritmo admitido para descifrar el token de seguridad. No se admite el cifrado del token de seguridad con este algoritmo.|  
+|AES192 \- [http:\/www.w3.org\/200104\/xmlencAES192\#CBC\/\/\-](http://www.w3.org/2001/04/xmlenc#aes192-cbc)|192|Algoritmo admitido para descifrar el token de seguridad. No se admite el cifrado del token de seguridad con este algoritmo.|  
+|AES256 \- [http:\/www.w3.org\/200104\/xmlencAES256\#CBC\/\/\-](http://www.w3.org/2001/04/xmlenc#aes256-cbc)|256|**Predeterminado**. Algoritmo admitido para el cifrado del token de seguridad.|  
+|Predeterminado tripledeskeywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#TripleDES\/\/\-](http://www.w3.org/2001/04/xmlenc#kw-tripledes)|Todos los tamaños de clave admitidos por .NET 4,0\+|Algoritmo admitido para cifrar la clave simétrica que cifra un token de seguridad.|  
+|Predeterminado aes128keywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#AES128\/\/\-](http://www.w3.org/2001/04/xmlenc#kw-aes128)|128|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|Predeterminado aes192keywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#aes192\/\/\-](http://www.w3.org/2001/04/xmlenc#kw-aes192)|192|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|Predeterminado aes256keywrap \- [http:\/www.w3.org\/200104\/xmlenckW\#AES256\/\/\-](http://www.w3.org/2001/04/xmlenc#kw-aes256)|256|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|RsaV15KeyWrap \- [http:\/www.w3.org\/200104\/xmlencRSA1\-5\/\/\#\_](http://www.w3.org/2001/04/xmlenc#rsa-1_5)|1024|Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|Predeterminado rsaoaepkeywrap \- [http:\/www.w3.org\/200104\/xmlencRSAOAEP\-mgf1p\/\/\#\-](http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p)|1024|Default. Algoritmo admitido para cifrar la clave simétrica que cifra el token de seguridad.|  
+|SHA1\-[http:\/www.w3.org\/picsdsig\/SHA110.\_HTML\/\/\_](http://www.w3.org/PICS/DSig/SHA1_1_0.html)|N\/A|Usado por AD FS Server en la generación de artefactos SourceId:  En este escenario, el STS usa SHA1 \(según la recomendación del estándar\) SAML 2,0 para crear un valor corto de 160 bits para el artefacto sourceiD.<br /><br />También lo usa el componente heredado \(del agente Web de ADFS\) de WS2003 período de tiempo para identificar los cambios en un valor de hora de "última actualización" para que sepa cuándo actualizar la información del STS.|  
+|SHA1withRSA\-<br /><br />[http:\/\/www.w3.orgpicsdsig\/RSA SHA1 10\_. html\-\/\/\_](http://www.w3.org/PICS/DSig/RSA-SHA1_1_0.html)|N\/A|Se utiliza en casos en los que AD FS servidor valida la firma de AuthenticationRequest de SAML, firmar la solicitud de resolución de artefactos o la respuesta, crear un certificado de firma de tokens\-.<br /><br />En estos casos, SHA256 es el valor predeterminado y SHA1 solo se usa si el usuario \(\) de confianza del asociado no puede admitir SHA256 y debe usar SHA1.|  
   
 ## <a name="BKMK_13"></a>Requisitos de permisos  
 El administrador que realiza la instalación y la configuración inicial de AD FS deben tener permisos de administrador de dominio en el \(dominio local en otras palabras, el dominio al que se une el servidor de Federación.\)  

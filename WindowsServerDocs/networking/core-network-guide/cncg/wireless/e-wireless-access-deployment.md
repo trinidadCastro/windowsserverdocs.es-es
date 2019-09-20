@@ -8,12 +8,12 @@ ms.topic: article
 ms.assetid: 4b66f517-b17d-408c-828f-a3793086bc1f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: bd951f221f1cf1c5715e26830b7da644d685634a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 64098a152d9ba485cfed80e0d0541f0e5ea72bf2
+ms.sourcegitcommit: 47a9514a68e42ac236065fd6b641204b769223d1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868975"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71127679"
 ---
 # <a name="wireless-access-deployment"></a>Implementación de acceso inalámbrico
 
@@ -471,7 +471,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
 
 3. Haga clic en **configurar 802.1 x**. Se abre el Asistente para configurar 802.1 X.
 
-4.  En la página del asistente **Seleccionar tipo de conexión de 802.1 x** , en **tipo de conexiones de 802.1 x**, seleccione **conexiones inalámbricas seguras**y, en **nombre**, escriba un nombre para la Directiva o deje el nombre predeterminado **conexiones inalámbricas seguras** . . Haga clic en **Next**.
+4.  En la página del asistente **Seleccionar tipo de conexión de 802.1 x** , en **tipo de conexiones de 802.1 x**, seleccione **conexiones inalámbricas seguras**y, en **nombre**, escriba un nombre para la Directiva o deje el nombre predeterminado **conexiones inalámbricas seguras** . . Haz clic en **Siguiente**.
 
 5.  En la página **especificar modificadores de 802.1 x** del asistente, en **clientes RADIUS**, se muestran todos los conmutadores 802.1 x y los puntos de acceso inalámbrico que ha\-agregado como clientes RADIUS en el complemento NPS. Lleve a cabo cualquiera de las siguientes acciones:
 
@@ -484,7 +484,7 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
         >[!WARNING]
         >Al quitar un cliente RADIUS en el Asistente para **configurar 802.1 x** , se elimina el cliente de la configuración de NPS. Todas las adiciones, modificaciones y eliminaciones que realice en el asistente **para configurar 802.1 x** en clientes RADIUS se reflejan en el\-complemento NPS, en el nodo **clientes RADIUS** en clientes \/ RADIUS NPS.  **Servidores de y**. Por ejemplo, si usa el Asistente para quitar un conmutador 802.1 x, el conmutador también se quita del complemento\-NPS.
 
-6. Haga clic en **Next**. En la página del asistente **configurar un método de autenticación** , en  **\(tipo según el método de acceso y\)la configuración de red**, seleccione **Microsoft: EAP \(protegido PEAP\)y,a continuación, haga clic en **configurar.****
+6. Haz clic en **Siguiente**. En la página del asistente **configurar un método de autenticación** , en  **\(tipo según el método de acceso y\)la configuración de red**, seleccione **Microsoft: EAP \(protegido PEAP\)y,a continuación, haga clic en **configurar.****
 
     >[!TIP]
     >Si recibe un mensaje de error que indica que no se puede encontrar un certificado para su uso con el método de autenticación y ha configurado Active Directory servicios de Certificate Server para emitir automáticamente certificados a servidores RAS e IAS de la red, primero Asegúrese de que ha seguido los pasos para registrar NPS en Active Directory Domain Services y, a continuación, siga estos pasos para actualizar directiva de grupo: Haga clic en **Inicio**, en **sistema de Windows**, en **Ejecutar**y, en **abrir**, escriba **gpupdate**y, a continuación, presione Entrar. Cuando el comando devuelve resultados que indican que el usuario y el equipo Directiva de grupo han actualizado correctamente **, seleccione Microsoft: Proteja EAP \(PEAP\) de** nuevo y, a continuación, haga clic en **configurar**.
@@ -502,11 +502,11 @@ Para completar este procedimiento, se requiere como mínimo la pertenencia a **A
 
     -   Para modificar la configuración de directiva para el tipo de EAP, en **tipos de EAP**, haga clic en **Editar**, en **propiedades de EAP MSCHAPv2**, modifique la configuración según sea necesario y, a continuación, haga clic en **Aceptar**.  
 
-8.  Haga clic en **Aceptar**. El cuadro de diálogo Editar propiedades de EAP protegido se cierra y vuelve al Asistente para **configurar 802.1 x** . Haga clic en **Next**.
+8.  Haga clic en **Aceptar**. El cuadro de diálogo Editar propiedades de EAP protegido se cierra y vuelve al Asistente para **configurar 802.1 x** . Haz clic en **Siguiente**.
 
-9. En **especificar grupos de usuarios**, haga clic en **Agregar**y, a continuación, escriba el nombre del grupo de seguridad que configuró para los clientes inalámbricos en\-el complemento Active Directory usuarios y equipos. Por ejemplo, si se denomina Grupo inalámbrico de grupo de seguridad inalámbrica, escriba **Grupo inalámbrico**. Haga clic en **Next**.
+9. En **especificar grupos de usuarios**, haga clic en **Agregar**y, a continuación, escriba el nombre del grupo de seguridad que configuró para los clientes inalámbricos en\-el complemento Active Directory usuarios y equipos. Por ejemplo, si se denomina Grupo inalámbrico de grupo de seguridad inalámbrica, escriba **Grupo inalámbrico**. Haz clic en **Siguiente**.
 
-10. Haga clic en **configurar** para configurar los atributos estándar\-de RADIUS y los atributos \(específicos\) del proveedor para la VLAN de LAN virtual según sea necesario, y según se especifica en la documentación proporcionada por el proveedor de hardware de AP inalámbrico. Haga clic en **Next**.
+10. Haga clic en **configurar** para configurar los atributos estándar\-de RADIUS y los atributos \(específicos\) del proveedor para la VLAN de LAN virtual según sea necesario, y según se especifica en la documentación proporcionada por el proveedor de hardware de AP inalámbrico. Haz clic en **Siguiente**.
 
 11. Revise los detalles del Resumen de configuración y, a continuación, haga clic en **Finalizar**.
 
