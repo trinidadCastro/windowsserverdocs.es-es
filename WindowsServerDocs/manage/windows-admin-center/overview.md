@@ -5,15 +5,15 @@ ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
-ms.date: 08/22/2019
+ms.date: 09/18/2019
 ms.localizationpriority: high
 ms.prod: windows-server-threshold
-ms.openlocfilehash: cdd7986486fd3cad07f5e4577aaf0ab404bfb5d3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 943026c04055919fefd7002c50144d28413de1a7
+ms.sourcegitcommit: 27f0caf74e88781054250455c3c1adf06deb6234
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869585"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71124339"
 ---
 # <a name="windows-admin-center"></a>Windows Admin Center
 
@@ -129,9 +129,10 @@ Puedes tener Windows Admin Center en funcionamiento y en ejecución en tu entorn
 
 Obtén información sobre las últimas funciones publicadas:
 
-- Versión [1908](https://aka.ms/wac1908): incluye actualizaciones visuales, Packetmon, FlowLog Audit, incorporación de Azure Monitor para clústeres y compatibilidad con WinRM a través de HTTPS (puerto 5986).
-- Versión [1907](https://aka.ms/wac1907): se han agregado vínculos de estimación de costos de Azure y se han realizado mejoras en la importación, exportación y etiquetado de máquinas virtuales.
-- Versión [1906](https://aka.ms/wac1906): se han agregado máquinas virtuales de importación y exportación, cambiado las cuentas de Azure, agregado conexiones de Azure, el experimento de configuración de la conectividad, las mejoras de rendimiento y las herramientas de generación de perfiles.
+- En la versión [1909](https://aka.ms/wac1909) se incorpora el tipo de conexión específico de la máquina virtual de Azure y se unifican los tipos de conexión para los clústeres de conmutación por error tradicionales y los clústeres de HCI.
+- En la versión [1908](https://aka.ms/wac1908) se agregaron actualizaciones visuales, Packetmon, FlowLog Audit, la incorporación de Azure Monitor para clústeres y compatibilidad con WinRM a través de HTTPS (puerto 5986).
+- En la versión [1907](https://aka.ms/wac1907) se agregaron vínculos de estimación de costos de Azure y se realizaron mejoras en la importación, exportación y etiquetado de máquinas virtuales.
+- En la versión [1906](https://aka.ms/wac1906) se agregaron VM de importación y exportación, se cambiaron las cuentas de Azure y se incluyeron conexiones de Azure, el experimento de configuración de la conectividad, mejoras de rendimiento y las herramientas de generación de perfiles de rendimiento.
 - La versión 1904.1 es la versión más reciente con disponibilidad general: una actualización de mantenimiento para mejorar la estabilidad de los complementos de puerta de enlace.
 - La versión [1904](https://aka.ms/wac1904) era una versión con disponibilidad general que introdujo la herramienta Azure Hybrid Services y que trajo las características que anteriormente se encontraban en la versión preliminar al canal de disponibilidad general.
 - En la versión [1903](https://aka.ms/wac1903) se agregaron notificaciones por correo electrónico desde Azure Monitor, la posibilidad de agregar conexiones de servidor o de PC desde Active Directory y nuevas herramientas para administrar Active Directory, DHCP y DNS.
