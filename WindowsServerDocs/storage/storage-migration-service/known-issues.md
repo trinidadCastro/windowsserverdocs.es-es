@@ -8,12 +8,12 @@ ms.date: 07/09/2019
 ms.topic: article
 ms.prod: windows-server-threshold
 ms.technology: storage
-ms.openlocfilehash: 16e62d9232d0ec1b01333d73bc5b4a1555ffbad0
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: d8437e0e33a370ab698d25f25b43fbbcbae97792
+ms.sourcegitcommit: 45415ba58907d650cfda45f4c57f6ddf1255dcbf
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987405"
+ms.lasthandoff: 09/24/2019
+ms.locfileid: "71206911"
 ---
 # <a name="storage-migration-service-known-issues"></a>Problemas conocidos del servicio de migración de almacenamiento
 
@@ -248,6 +248,15 @@ Como alternativa alternativa:
    ```PowerShell
    Register-SMSProxy -ComputerName *destination server* -Force
    ```
+## <a name="error-dll-was-not-found-when-running-inventory-from-a-cluster-node"></a>Error "no se encontró el archivo dll" al ejecutar el inventario desde un nodo de clúster
+
+Al intentar ejecutar el inventario con el orquestador del servicio de migración de almacenamiento instalado en un nodo de clúster de conmutación por error de Windows Server 2019 y establecer como destino un clúster de conmutación por error de Windows Server general usar el origen del servidor de archivos, recibirá el siguiente error:
+
+    DLL not found
+    [Error] Failed device discovery stage VolumeInfo with error: (0x80131524) Unable to load DLL 'Microsoft.FailoverClusters.FrameworkSupport.dll': The specified module could not be found. (Exception from HRESULT: 0x8007007E)   
+
+Para solucionar este problema, instale las "herramientas de administración del clúster de conmutación por error" (RSAT-clustering-MGMT) en el servidor que ejecuta el orquestador del servicio de migración de almacenamiento. 
+
 
 ## <a name="see-also"></a>Vea también
 
