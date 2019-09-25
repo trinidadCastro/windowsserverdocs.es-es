@@ -6,15 +6,14 @@ ms.technology: storage-failover-clustering
 author: JasonGerend
 manager: elizapo
 ms.author: jgerend
-ms.openlocfilehash: 3cc7449c8fbbad2ed4a3cd27513fcbe74b617e36
-ms.sourcegitcommit: 23a6e83b688119c9357262b6815c9402c2965472
+ms.openlocfilehash: 06fcb7ee7d05b85c1e7d1c6752268ea7e5dbbdb2
+ms.sourcegitcommit: 94ba5a33e783fdfb965c612943d0bfe35f9fcaa1
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69560516"
+ms.lasthandoff: 09/25/2019
+ms.locfileid: "71250227"
 ---
 # <a name="configuring-cluster-accounts-in-active-directory"></a>Configuración de cuentas de clúster en Active Directory
-
 
 Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008
 
@@ -106,7 +105,7 @@ Tal y como se describe en las tres secciones anteriores, se deben cumplir cierto
           
       - La cuenta debe tener permisos administrativos en los servidores que se convertirán en nodos de clúster. La manera más sencilla de proporcionar esto es crear una cuenta de usuario de dominio y, a continuación, agregar esa cuenta al grupo local Administradores en cada uno de los servidores que se convertirán en nodos de clúster. Para obtener más información, vea [Pasos para configurar la cuenta para la persona que instala el clúster](#steps-for-configuring-the-account-for-the-person-who-installs-the-cluster), más adelante en esta guía.  
           
-      - La cuenta (o el grupo del que la cuenta es miembro) debe tener concedidos los permisos **Crear objetos de equipo** y **Leer todas las propiedades** en el contenedor que se utiliza para las cuentas de equipo del dominio. Otra alternativa es convertir la cuenta en una cuenta de administrador de dominio. Para obtener más información, vea [Pasos para configurar la cuenta para la persona que instala el clúster](#steps-for-configuring-the-account-for-the-person-who-installs-the-cluster), más adelante en esta guía.  
+      - La cuenta (o el grupo del que la cuenta es miembro) debe tener concedidos los permisos **Crear objetos de equipo** y **Leer todas las propiedades** en el contenedor que se utiliza para las cuentas de equipo del dominio. Para obtener más información, vea [Pasos para configurar la cuenta para la persona que instala el clúster](#steps-for-configuring-the-account-for-the-person-who-installs-the-cluster), más adelante en esta guía.  
           
       - Si su organización elige preconfigurar la cuenta de nombre de clúster (una cuenta de equipo con el mismo nombre que el clúster), la cuenta de nombre de clúster preconfigurada debe conceder el permiso "Control total" a la cuenta de la persona que instala el clúster. Para obtener otros detalles importantes sobre cómo preconfigurar la cuenta de nombre de clúster, vea [Pasos para preconfigurar la cuenta de nombre de clúster](#steps-for-prestaging-the-cluster-name-account), más adelante en esta guía.  
           
@@ -119,13 +118,13 @@ A veces, los administradores de clústeres de conmutación por error pueden nece
 
 La cuenta de la persona que instala el clúster es importante porque proporciona la base a partir de la cual se crea una cuenta de equipo para el propio clúster.
 
-La pertenencia a grupos mínima necesaria para completar el procedimiento siguiente depende de si está creando la cuenta de dominio y asignándole los permisos necesarios en el dominio, o si solo está poniendo la cuenta (creada por otra persona) en el grupo local **Administradores** en los servidores que serán nodos del clúster de conmutación por error. En el primer caso, la pertenencia a **Opers. de cuentas** o **Admins. del dominio**, o equivalente, es el mínimo necesario para completar este procedimiento. En el segundo caso, la pertenencia al grupo local **Administradores** de los servidores que serán nodos del clúster de conmutación por error, o un equivalente, es todo lo necesario. Revise los detalles sobre el uso de las cuentas adecuadas y [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)las pertenencias a grupos en.
+La pertenencia a grupos mínima necesaria para completar el procedimiento siguiente depende de si está creando la cuenta de dominio y asignándole los permisos necesarios en el dominio, o si solo está poniendo la cuenta (creada por otra persona) en el grupo local **Administradores** en los servidores que serán nodos del clúster de conmutación por error. Si la primera, la pertenencia a **operadores de cuenta** o equivalente, es el requisito mínimo para completar este procedimiento. En el segundo caso, la pertenencia al grupo local **Administradores** de los servidores que serán nodos del clúster de conmutación por error, o un equivalente, es todo lo necesario. Revise los detalles sobre el uso de las cuentas adecuadas y [http://go.microsoft.com/fwlink/?LinkId=83477](http://go.microsoft.com/fwlink/?linkid=83477)las pertenencias a grupos en.
 
 #### <a name="to-configure-the-account-for-the-person-who-installs-the-cluster"></a>Para configurar la cuenta para la persona que instala el clúster
 
-1.  Cree u obtenga una cuenta de dominio para la persona que instala el clúster. Esta cuenta puede ser una cuenta de usuario de dominio o una cuenta de administrador de dominio (en **Admins. del dominio** o un grupo equivalente).
+1.  Cree u obtenga una cuenta de dominio para la persona que instala el clúster. Esta cuenta puede ser una cuenta de usuario de dominio o una cuenta de **operadores de cuentas** . Si utiliza una cuenta de usuario estándar, tendrá que concederle algunos permisos adicionales posteriormente en este procedimiento.
 
-2.  Si la cuenta que se creó u obtuvo en el paso 1 es una cuenta de usuario de dominio, o si las cuentas de administrador de dominio de su dominio no se incluyen automáticamente en el grupo local **Administradores** en los equipos del dominio, agregue la cuenta al grupo local **Administradores** en los servidores que serán nodos del clúster de conmutación por error:
+2.  Si la cuenta que se creó u obtuvo en el paso 1 no se incluye automáticamente en el grupo de **administradores** locales en los equipos del dominio, agregue la cuenta al grupo local **administradores** en los servidores que serán nodos de la conmutación por error. por
     
     1.  Haga clic en **Inicio**, **Herramientas administrativas** y **Administrador del servidor**.  
           
@@ -136,8 +135,6 @@ La pertenencia a grupos mínima necesaria para completar el procedimiento siguie
     4.  En **Escriba los nombres de objeto que desea seleccionar**, escriba el nombre de la cuenta de usuario que se creó u obtuvo en el paso 1. Si se le solicita, escriba un nombre de cuenta y una contraseña con permisos suficientes para esta acción. A continuación, haga clic en **Aceptar**.  
           
     5.  Repita estos pasos en cada servidor que será un nodo del clúster de conmutación por error.  
-          
-    
 
 > [!IMPORTANT]
 > Estos pasos se deben repetir en todos los servidores que serán nodos del clúster. 
