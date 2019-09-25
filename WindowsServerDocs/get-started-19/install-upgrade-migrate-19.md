@@ -9,12 +9,12 @@ author: jasongerend
 ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 7e90738a157f620124bfca3d5f1f4c12789d3bf2
-ms.sourcegitcommit: b17ccf7f81e58e8f4dd844be8acf784debbb20ae
+ms.openlocfilehash: 1c0c6ca10e7ebac16d81fe1393e471a7878fd0ca
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/14/2019
-ms.locfileid: "69023915"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143759"
 ---
 # <a name="install-upgrade-or-migrate-to-windows-server"></a>Instalación, actualización o migración a Windows Server 2019
 
@@ -33,9 +33,7 @@ La manera más sencilla de instalar Windows Server es realizar una instalación
 
 Si quieres mantener el mismo hardware y todos los roles de servidor que has configurado sin reducir el servidor, conviene realizar una **actualización local**, mediante la que se pasa de un antiguo sistema operativo a uno más reciente, manteniendo la configuración, los roles y los datos del servidor intactos. Por ejemplo, si su servidor ejecuta Windows Server 2012 R2, puedes actualizarlo a Windows Server 2016 o Windows Server 2019. Sin embargo, no todos los sistemas operativos antiguos tienen una ruta de actualización a todas las versiones más recientes. 
 
-Para obtener instrucciones detalladas sobre cómo realizar la actualización, visita el [Centro de actualizaciones de Windows Server](http://aka.ms/upgradecenter):
-
-[![Captura de pantalla del Centro de actualizaciones de Windows Server](media/upgrade-center.png)](http://aka.ms/upgradecenter)
+Para obtener instrucciones detalladas sobre cómo realizar la actualización, consulta el [contenido acerca de las actualizaciones de Windows Server](../upgrade/upgrade-overview.md).
 
 ## <a name="cluster-os-rolling-upgrade"></a>Actualización gradual del sistema operativo del clúster
 

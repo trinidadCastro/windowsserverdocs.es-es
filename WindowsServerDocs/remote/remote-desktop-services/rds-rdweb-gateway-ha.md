@@ -12,12 +12,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/08/2016
 manager: dongill
-ms.openlocfilehash: 4e185e51b09d2e2f8ac4527f9de339de27e02f24
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 869d47be73a39114ecc05080f8da16f460fb8198
+ms.sourcegitcommit: 6423dfa9cecb3b06bdd563cae113c3e80a4ec330
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805137"
+ms.lasthandoff: 09/18/2019
+ms.locfileid: "71105036"
 ---
 # <a name="add-high-availability-to-the-rd-web-and-gateway-web-front"></a>Adición de alta disponibilidad al front-end web de la puerta de enlace y de la web de Escritorio remoto
 
@@ -96,12 +96,13 @@ Si usas la infraestructura de Azure, puedes crear un equilibrador de carga exter
 1.  Crea un equilibrador de carga de Azure:  
     1.  En Azure Portal, haz clic en **Examinar > Equilibradores de carga > Agregar**.  
     2.  Escribe un nombre, por ejemplo **WebGwLB**.  
-    3.  Selecciona **Público** en **Esquema**, **Dirección IP pública** y una **Dirección IP pública**. Puedes seleccionar una dirección IP pública existente o crear una nueva. 
-    4.  Selecciona los valores apropiados para la **suscripción**, el **grupo de recursos** y la **ubicación**.
-    5.  Haga clic en **Crear**.  
+    3.  Selecciona el valor **Público** para el **Esquema.** .
+    4.  En **Dirección IP pública**, selecciona **Elegir una dirección IP pública** y, a continuación, elige una dirección IP pública existente o crea una nueva.
+    5.  Selecciona los valores apropiados para la **suscripción**, el **grupo de recursos** y la **ubicación**.
+    6.  Haga clic en **Crear**.  
 2. Crea un [sondeo](https://azure.microsoft.com/documentation/articles/load-balancer-custom-probe-overview/) para supervisar los servidores que están activos:  
-    1.  En Azure Portal, haz clic en **Examinar > Equilibradores de carga** y busca el equilibrador de carga que acabas de crear, por ejemplo, WebGwLB y, finalmente, en Configuración  
-    2.  Haz clic en **Sondeos > Agregar**.  
+    1.  En Azure Portal, selecciona **Examinar** > **Equilibradores de carga** y, a continuación, elige el equilibrador de carga que creaste en el paso anterior.
+    2.  Selecciona **Toda la configuración** > **Sondeos** > **Agregar**.  
     3.  Escribe un nombre, por ejemplo, **HTTPS**, para el sondeo. Selecciona **TCP** en **Protocolo** y escribe **443** para **Puerto**; a continuación,haz clic en **Aceptar**.   
 3.  Crea las reglas de equilibrio de carga de HTTPS y UDP:  
     1.  En **Configuración**, haz clic en **Reglas de equilibrio de carga**.  

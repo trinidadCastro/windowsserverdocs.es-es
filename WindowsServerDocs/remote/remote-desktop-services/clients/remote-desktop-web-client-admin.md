@@ -4,16 +4,16 @@ description: Describe cómo un administrador puede configurar el cliente web de 
 ms.prod: windows-server-threshold
 ms.technology: remote-desktop-services
 ms.author: helohr
-ms.date: 11/2/2018
+ms.date: 09/19/2019
 ms.topic: article
 author: Heidilohr
 ms.localizationpriority: medium
-ms.openlocfilehash: 7de392b049fbe910688a4b950e1ca870b6ba3f46
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 86667c744acfd340c2608609323b95c159e1279d
+ms.sourcegitcommit: ccec91c1d32a978159f9b8bb5e39ead5805c26c4
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871166"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143751"
 ---
 # <a name="set-up-the-remote-desktop-web-client-for-your-users"></a>Configuración del cliente web de Escritorio remoto para los usuarios
 
@@ -265,6 +265,10 @@ Como administrador, puedes elegir suprimir la recopilación de datos de telemetr
 De forma predeterminada, el usuario puede seleccionar habilitar o deshabilitar la telemetría. Un valor booleano **$false** coincidirá con el comportamiento del cliente predeterminado. Un valor booleano **$true** deshabilita la telemetría e impide que el usuario la habilite.
 
 ### <a name="remote-resource-launch-method"></a>Método de inicio del recurso remoto
+
+>[!NOTE]
+>Actualmente, esta configuración solo funciona con el cliente web de RDS y no con el cliente web de Windows Virtual Desktop.
+
 De forma predeterminada, los usuarios pueden elegir iniciar los recursos remotos (1) en el explorador o (2) descargar un archivo .rdp para controlar con otro cliente instalado en el equipo. Como administrador, puedes optar por restringir el método de inicio del recurso remoto para la implementación con el siguiente comando de Powershell:
 
    ```PowerShell
