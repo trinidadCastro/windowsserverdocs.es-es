@@ -34,6 +34,7 @@
 #### [Actualizar la versión de la máquina virtual](hyper-v/deploy/Upgrade-virtual-machine-version-in-Hyper-V-on-Windows-or-Windows-Server.md)
 #### [Implementar dispositivos gráficos con DDA](hyper-v/deploy/deploying-graphics-devices-using-dda.md)
 #### [Implementar dispositivos de almacenamiento con DDA](hyper-v/deploy/deploying-storage-devices-using-dda.md)
+
 ### [Administrar](hyper-v/manage/Manage-Hyper-V-on-Windows-Server.md)
 #### [Configuración de dispositivos de memoria persistente para VM Hyper-V](hyper-v/manage/persistent-memory-cmdlets.md)
 #### [Seleccionar puntos de control estándares o de producción](hyper-v/manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md)
@@ -46,11 +47,14 @@
 #### [Acerca de la selección de tipos de programador de Hyper-V](hyper-v/manage/about-hyper-v-scheduler-type-selection.md)
 #### [Administrar los servicios de integración](hyper-v/manage/Manage-Hyper-V-integration-services.md)
 #### [Administrar VM de Windows con PowerShell Direct](hyper-v/manage/Manage-Windows-virtual-machines-with-powershell-direct.md)
-#### [Configurar la réplica de Hyper-V](hyper-v/manage/Set-up-Hyper-V-Replica.md) 
-#### [Mover VM con la migración en vivo](hyper-v/manage/Live-migration-overview.md) 
-##### [Información general sobre la migración en vivo](hyper-v/manage/Live-migration-overview.md) 
+#### [Configurar la réplica de Hyper-V](hyper-v/manage/Set-up-Hyper-V-Replica.md)
+#### [Habilitar el hardware de supervisión de rendimiento de Intel](hyper-v/manage/Performance-Monitoring-Hardware.md)
+#### [Mover VM con la migración en vivo](hyper-v/manage/Live-migration-overview.md)
+##### [Información general sobre la migración en vivo](hyper-v/manage/Live-migration-overview.md)
 ##### [Configurar hosts para la migración en vivo](hyper-v/deploy/Set-up-hosts-for-live-migration-without-Failover-Clustering.md) 
-##### [Uso de una migración en vivo sin clústeres de conmutación por error](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md) 
+##### [Uso de una migración en vivo sin clústeres de conmutación por error](hyper-v/manage/Use-live-migration-without-Failover-Clustering-to-move-a-virtual-machine.md)
+
+
 ### [Ajuste del rendimiento de Hyper-V](../administration/performance-tuning/role/hyper-v-server/index.md)
 ## [Conmutador virtual de Hyper-V](hyper-v-virtual-switch/Hyper-V-Virtual-Switch.md)
 ### [Acceso directo a memoria remota (RDMA) y Switch Embedded Teaming (SET)](hyper-v-virtual-switch/rdMA-and-Switch-Embedded-Teaming.md)
