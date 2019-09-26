@@ -1,6 +1,6 @@
 ---
 title: Introducción al cliente de Android
-description: Los pasos básicos para la configuración del cliente de Escritorio remoto para Android.
+description: Información general acerca del cliente de Android.
 ms.custom: na
 ms.prod: windows-server-threshold
 ms.reviewer: na
@@ -9,84 +9,89 @@ ms.technology: remote-desktop-services
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.assetid: 64f038e1-40ec-4c67-938b-72edea49e5d8
-author: lizap
-manager: dongill
-ms.author: elizapo
-ms.date: 08/27/2019
+author: heidilohr
+manager: daveba
+ms.author: helohr
+ms.date: 09/16/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1099f1c8bb635ee1b4bb33c6483f128ee0ecdfb9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f9e8eb861961dc714a964012960e8742b721d4de
+ms.sourcegitcommit: 081661f50d6dafb77180149956a02e679270c710
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871245"
+ms.lasthandoff: 09/17/2019
+ms.locfileid: "71037599"
 ---
 # <a name="get-started-with-the-android-client"></a>Introducción al cliente de Android
 
->Se aplica a: Windows 10, Windows 8.1, Windows Server 2019, Windows Server 2016 y Windows Server 2012 R2
+>Se aplica a: Android 4.1 y versiones posteriores
 
-El cliente de Escritorio remoto para Android se puede usar con aplicaciones de Windows y escritorios directamente desde un dispositivo Android.
+El cliente de Escritorio remoto para Android se puede usar con aplicaciones de Windows y escritorios directamente desde un dispositivo Android o Chromebook que sea compatible con Google Play Store.
 
 Usa la siguiente información para comenzar. Asegúrate de consultar la sección de [Preguntas frecuentes](remote-desktop-client-faq.md) si te surge alguna duda.
 
 > [!NOTE]
-> - ¿Tienes curiosidad acerca de las nuevas versiones para el cliente Android? Consulta [Novedades de Escritorio remoto en Android](android-whatsnew.md)
-> El cliente se puede ejecutar en Android 4.1, y dispositivos más recientes, así como en Chromebooks con ChromeOS 53 instalado. [Aquí](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps) encontrará más información acerca de aplicaciones Android en Chrome.
+> - ¿Tienes curiosidad acerca de las nuevas versiones para el cliente Android? Consulta las [Novedades del cliente de Android](android-whatsnew.md).
+> - El cliente de Android es compatible con dispositivos que ejecutan Android 4.1 y versiones posteriores, así como Chromebooks con ChromeOS 53 y versiones posteriores. [Aquí](https://sites.google.com/a/chromium.org/dev/chromium-os/chrome-os-systems-supporting-android-apps) encontrará más información acerca de aplicaciones Android en Chrome.
 
-## <a name="get-the-rd-client-and-start-using-it"></a>Obtención del cliente de Escritorio remoto y primer uso
+## <a name="get-the-remote-desktop-client-and-start-using-it"></a>Obtención del cliente de Escritorio remoto y su primer uso
 
-Sigue estos pasos para empezar a usar Escritorio remoto en un dispositivo Android:
+### <a name="download-the-remote-desktop-client-from-the-google-play-store"></a>Descarga del cliente de Escritorio remoto desde Google Play Store
 
-1. Descarga del cliente de Escritorio remoto de [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android). 
-2. [Configura el equipo para que acepte conexiones remotas](remote-desktop-allow-access.md).
-3. Agrega una conexión a Escritorio remoto o un recurso remoto. Usa una conexión para conectarse directamente a un equipo Windows y un recurso remoto para usar un programa de RemoteApp, un escritorio basado en sesión o un escritorio virtual publicado de forma local. 
-4. Crea un widget para poder acceder a Escritorio remoto rápidamente.
+A continuación, te mostramos cómo configurar el cliente de Escritorio remoto en tu dispositivo Android:
+
+1. Descarga el cliente de Escritorio remoto de Microsoft de [Google Play](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android).
+2. Inicia **el cliente de Escritorio remoto** desde la lista de aplicaciones.
+3. Agrega una [conexión a Escritorio remoto](#add-a-remote-desktop-connection) o [recursos remotos](#add-remote-resources). La conexión se usa para que puedas conectarte directamente a un equipo Windows y a los recursos remotos a fin de acceder a las aplicaciones y los escritorios que publica un administrador para ti.
 
 > [!NOTE]
-> Si deseas probar las nuevas características con anterioridad, es aconsejable que descargue la aplicación [Microsoft Remote Desktop Beta](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android.beta) de Google Play Store. 
+> Si quieres probar las nuevas características de forma anticipada, te recomendamos que descargues el cliente [Microsoft Remote Desktop Beta](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android.beta) de Google Play Store.
 
 ### <a name="add-a-remote-desktop-connection"></a>Adición de una conexión a Escritorio remoto
 
+[Configura el equipo para que acepte conexiones remotas](remote-desktop-allow-access.md) si aún no lo has hecho.
+
 Para crear una conexión a Escritorio remoto:
 
-1. En el Centro de conexión, pulsa **+** y, después, pulsa **Escritorio**.
-2. Escribe la siguiente información del equipo al que quieres conectarte:
-   - **Nombre del equipo**: el nombre del equipo. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes anexar la información del puerto al nombre de equipo (por ejemplo, **MyDesktop:3389** o **10.0.0.1:3389**).
-   - **Nombre de usuario**: el nombre de usuario que se utiliza para acceder al equipo remoto. Puedes usar los siguientes formatos: *nombre_de_usuario*, *dominio\nombre_de_usuario* o <em>user_name@domain.com</em>. También puedes especificar si deseas que se soliciten el nombre de usuario y la contraseña.
-3. También puedes establecer las siguientes opciones adicionales:
-   - **Nombre descriptivo**: un nombre fácil de recordar para el equipo al que se conecta. Puedes utilizar cualquier cadena, pero si no especificas un nombre descriptivo, se muestra el nombre del equipo.
-   - **Puerta de enlace**: la puerta de enlace de Escritorio remoto que quieres usar para conectarte a escritorios virtuales, programas RemoteApp y escritorios basados en sesión de una red corporativa interna. La información acerca de la puerta de enlace te la puede proporcionar el administrador del sistema.
-    ¿Necesita configurar una puerta de enlace de Escritorio remoto?
-   - **Sonido**: selecciona el dispositivo que se usa para audio durante la sesión remota. Puedes elegir reproducir el sonido en los dispositivos locales, en el dispositivo remoto o no reproducirlo.
-   - **Personalizar la resolución de pantalla**: establezca una resolución personalizada para una conexión mediante la habilitación de este valor. Cuando fuera de la resolución se aplica lo que ha definido en la configuración global de la aplicación.
-   - **Intercambiar botones del mouse**: esta opción se usa para cambiar las funciones del botón izquierdo del ratón al botón derecho. (es especialmente útil si el equipo remoto está configurado para usuarios zurdos, pero usa un ratón para diestros).
-   - **Conectar a sesión del administrador**: esta opción se utiliza para conectarse a una sesión de consola para administrar un servidor de Windows.
-   - **Redirigir a almacenamiento local**: monta el almacenamiento local como un sistema de archivos remoto en el equipo remoto.
-4. Pulsa **Guardar**.
+1. En Connection Center (Centro de conexión), pulsa y, después, pulsa Escritorio.
+2. Escribe el nombre del equipo remoto en **Nombre de PC**. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes anexar la información del puerto al nombre de equipo (por ejemplo, MyDesktop:3389 o 10.0.0.1:3389). Este es el único campo obligatorio.
+3. Selecciona el **nombre de usuario** que utilizas para acceder al equipo remoto.
+   - Selecciona **Escribir siempre** para que el cliente te pida las credenciales cada vez que te conectes al equipo remoto.
+   - Selecciona **Agregar cuenta de usuario** para guardar una cuenta que usas con frecuencia. Así, no tendrás que escribir las credenciales cada vez que inicies sesión en esta. Consulta [Administración de cuentas de usuario](#manage-your-user-accounts) para obtener más detalles.
+4. También puedes pulsar **Show additional options** (Mostrar opciones adicionales) para configurar los siguientes parámetros opcionales:
+   - En **Nombre descriptivo**, puedes escribir un nombre fácil de recordar para el equipo al que te conectas. Si no especificas ningún nombre descriptivo, se mostrará el nombre del equipo en su lugar.
+   - **Puerta de enlace** es la puerta de enlace del Escritorio remoto que usarás para conectarte a un equipo desde una red externa. Para más información, ponte en contacto con el administrador del sistema.
+   - **Sonido** selecciona el dispositivo que usa la sesión remota para el audio. Puedes elegir reproducir el sonido en un dispositivo local, en el dispositivo remoto o no reproducirlo.
+   - La opción **Customize display resolution** (Personalizar la resolución de la pantalla) establece la resolución de la sesión remota. Cuando esta opción está desactivada, se usa la resolución especificada en la configuración global.
+   - La opción **Intercambiar botones del mouse** cambia los comandos enviados por los movimientos del mouse a la derecha y a la izquierda. Ideal para los usuarios zurdos.
+   - La opción **Conectar a sesión del administrador** te permite conectarte a una sesión de administrador en el equipo remoto.
+   - La opción **Redirect local storage** (Redirigir el almacenamiento local) permite redireccionar el almacenamiento local. Esta opción está deshabilitada de forma predeterminada.
+5. Cuando termines, pulsa **Guardar**.
 
 ¿Es necesario editar esta configuración? Pulsa el menú de desbordamiento ( **...** ) junto al nombre del escritorio y, después, pulsa **Editar**.
 
-¿Quieres eliminar la conexión? Vuelve a pulsar el menú de desbordamiento ( **...** ) y, después, pulsa **Quitar**.
+¿Quieres quitar la conexión? Vuelve a pulsar el menú de desbordamiento ( **...** ) y, después, pulsa **Quitar**.
 
 >[!TIP]
 > Si aparece el error 0xf07, que tiene relación con una contraseña incorrecta ["We couldn't connect to the remote PC because the password associated with the user account has expired" (No ha sido posible conectarse al equipo remoto porque la contraseña asociada a la cuenta de usuario ha expirado)], cambie la contraseña y pruebe de nuevo.
 
-### <a name="add-a-remote-resource"></a>Adición de recursos remotos
-Los recursos remotos son programas RemoteApp, escritorios basados en sesión y escritorios virtuales publicados mediante Conexión de RemoteApp y Escritorio.
+### <a name="add-remote-resources"></a>Agregar recursos remotos
 
-Para agregar un recurso remoto:
+Los recursos remotos son programas RemoteApp, escritorios basados en sesión y escritorios virtuales publicados por el administrador. El cliente de Android admite los recursos publicados desde **Servicios de Escritorio remoto** y las implementaciones de **Windows Virtual Desktop**. Para agregar recursos remotos:
 
-1. En la pantalla Centro de conexión, pulsa **+** y, después, pulsa **Remote Resources Feed** (Fuente de recursos remotos). 
-2. Escribe información para el recurso remoto:
-   - **Email or URL** (Correo electrónico o URL): la dirección URL del servidor de Acceso web a Escritorio remoto. En este campo también puedes escribir la cuenta de correo electrónico corporativa (esto indica al cliente que busque el servidor de Acceso web a Escritorio remoto asociado con la dirección de correo electrónico).
-   - **Nombre de usuario**: el nombre de usuario que se usa para servidor de Acceso web a Escritorio remoto al que se conecta.
-   - **Contraseña**la contraseña que se usa para servidor de Acceso web a Escritorio remoto al que se conecta.
-3. Pulsa **Guardar**.
+1. En Connection Center (Centro de conexión), pulsa **+** y, después, **Remote Resources Feed** (Fuente de recursos remotos).
+2. Escribe la **Dirección URL de fuente**. Puede ser una dirección URL o una dirección de correo electrónico:
+   - La **dirección URL** es el servidor de acceso web de Escritorio remoto que te proporciona el administrador. Si tienes acceso a recursos de Windows Virtual Desktop, puedes usar `https://rdweb.wvd.microsoft.com`.
+   - Si tienes previsto usar **Correo electrónico**, escribe tu dirección de correo electrónico en este campo. Esto indica al cliente que busque un servidor de acceso web de Escritorio remoto asociado a tu dirección de correo electrónico si el administrador lo ha configurado.
+3. Pulsa **Siguiente**.
+4. Escribe la información de inicio de sesión cuando se te pida. Esto puede variar en función de la implementación y puede incluir:
+   - El **Nombre de usuario** que tiene permiso para acceder a los recursos.
+   - La **Contraseña** asociada con el nombre de usuario.
+   - **Additional factor** (Factor adicional), que se te puede pedir si el administrador ha configurado la autenticación de este modo.
+5. Cuando termines, pulsa **Guardar**.
 
 Los recursos remotos se mostrarán en el Centro de conexión.
 
-
-Para eliminar los recursos remotos:
+Para quitar los recursos remotos:
 
 1. En el Centro de conexión, pulsa el menú de desbordamiento ( **...** ) que hay al lado del recurso remoto.
 2. Pulsa **Quitar**.
@@ -94,10 +99,10 @@ Para eliminar los recursos remotos:
 
 ### <a name="widgets--pin-a-saved-desktop-to-your-home-screen"></a>Widgets: ancla un escritorio guardado a la pantalla de inicio
 
-Las aplicaciones de Escritorio remoto admiten el anclaje de conexiones a la pantalla de inicio mediante la característica de widgets de Android. La forma en que se agregan los widgets depende del tipo de dispositivo Android que se use y de su sistema operativo. Esta es la manera más común de agregar widgets: 
+El cliente de Escritorio remoto admite el anclaje de conexiones a la pantalla de inicio mediante la característica de widgets de Android. La forma en que se agregan los widgets depende del tipo de dispositivo Android que se use y de su sistema operativo. Esta es la manera más común de agregar widgets:
 
-1. Pulsa **aplicaciones** para iniciar el menú de aplicaciones.
-2. Pulsa **widgets**.
+1. Pulsa **Aplicaciones** para iniciar el menú de aplicaciones.
+2. Pulsa **Widgets**.
 3. Desliza el dedo por los widgets y busca el icono de Escritorio remoto con la descripción, "Pin Remote Desktop" (Anclar a Escritorio remoto).
 4. Mantén pulsado el widget de Escritorio remoto y muévelo a la pantalla de inicio.
 5. Al soltar el icono, verás los escritorios remotos guardados. Elige la conexión que quieres guardar en la pantalla de inicio.
@@ -105,97 +110,120 @@ Las aplicaciones de Escritorio remoto admiten el anclaje de conexiones a la pant
 Ya puedes iniciar la conexión a Escritorio remoto directamente desde la pantalla de inicio pulsando en ella.
 
 > [!NOTE]
-> Si cambias el nombre de la conexión de escritorio en la aplicación Escritorio remoto, la etiqueta de este escritorio remoto anclado no se actualizará.
+> Si cambias el nombre de la conexión de escritorio en el cliente de Escritorio remoto, la etiqueta anclada no se actualizará.
 
-## <a name="connect-to-an-rd-gateway-to-access-internal-assets"></a>Conexión a una puerta de enlace de Escritorio remoto para acceder a recursos internos
+## <a name="manage-general-app-settings"></a>Administración de la configuración general de aplicaciones
 
-Las puertas de enlace de Escritorio remoto te permiten conectarte a equipos remotos de una red corporativa desde cualquier lugar de Internet. Para crear y administrar dichas puertas de enlace, usa el cliente de Escritorio remoto.
+Para cambiar la configuración general de la aplicación, pulsa **Configuración** y, después, pulsa **General** en Connection Center (Centro de conexión).
+
+Puedes configurar las siguientes opciones generales:
+
+- **Mostrar vistas previas de escritorio**, que permite obtener una vista previa de un escritorio en Connection Center (Centro de conexión) antes de conectarse a él. Esta opción está habilitada de forma predeterminada.
+- **Pinch to zoom remote session** (Gesto de reducir o ampliar la sesión remota), que permite usar gestos de reducir o ampliar para aplicar zoom. Si la aplicación que estás usando a través de Escritorio remoto admite la funcionalidad multitáctil (incluida en Windows 8), desactiva esta característica.
+- Habilita la opción **Use scancode input when available** (Usar entrada de código de tecla cuando esté disponible) si la aplicación remota no responde correctamente a la entrada de teclado enviada como código de tecla. La entrada se envía como Unicode cuando esta opción está deshabilitada.
+- **Ayudar a mejorar Escritorio remoto**, que envía datos anónimos a Microsoft. Estos datos se usan para mejorar el cliente. Puedes obtener más información acerca de cómo se tratan estos datos privados anónimos en la [declaración de privacidad de Microsoft](https://privacy.microsoft.com/privacystatement). Esta opción está habilitada de forma predeterminada.
+
+## <a name="manage-display-settings"></a>Administración de la configuración de pantalla
+
+Para cambiar la configuración de pantalla, pulsa **Configuración** y, después, **Pantalla** en Connection Center (Centro de conexión).
+
+Puedes configurar las siguientes opciones de configuración de la pantalla:
+
+- **Orientación**, que establece la orientación preferida (horizontal o vertical) de la sesión.
+  >[!NOTE]
+  > Si te conectas a un equipo con Windows 8 o cualquier versión anterior de Windows, la sesión no se escalará correctamente cuando se cambie la orientación del dispositivo. La mejor opción es desconectarse del equipo y, después, volverse a conectar en la orientación que se desea utilizar. Aunque una opción mejor sería actualizar el equipo a Windows 10.
+
+- **Resolución**, que establece la resolución remota que se quiere usar para las conexiones de escritorio globalmente. Si ya estableciste una resolución personalizada para una conexión individual, este valor no la cambiará.
+  >[!NOTE]
+  >Cuando cambias uno de los valores de visualización, dicho cambio solo se aplica a las conexiones que se establecen desde ese momento. Para ver el cambio en una sesión en la que ya estés conectado, desconéctate y vuelve a conectarte.
+
+## <a name="manage-your-rd-gateways"></a>Administración de puertas de enlace de Escritorio remoto
+
+Las puerta de enlace de Escritorio remoto te permite conectarte a un equipo remoto de una red privada desde cualquier lugar de Internet. Para crear y administrar dichas puertas de enlace, usa el cliente de Escritorio remoto.
 
 Para configurar una puerta de enlace nueva:
 
-1. En el Centro de conexión, pulsa **Configuración > Puerta de enlace**. Pulsa **+** para agregar una nueva puerta de enlace.
-2. Escribe la siguiente información:
-   - **Nombre del servidor**: el nombre del equipo que quieres usar como puerta de enlace. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes agregar información del puerto al nombre del servidor (por ejemplo: **RDGateway:443** o **10.0.0.1:443**).
-   - **Nombre de usuario**: el nombre de usuario y la contraseña que se van a usar para la puerta de enlace de Escritorio remoto a la que se va a conectar. También puedes seleccionar **Usar la cuenta de usuario de escritorio** para usar las mismas credenciales que se utilizaron para la conexión a Escritorio remoto.
+1. En Connection Center (Centro de conexión), pulsa **Configuración** y, luego,  **Puertas de enlace**.
+1. Pulsa **+** para agregar una nueva puerta de enlace.
+1. Escribe la siguiente información:
+   - Escribe el nombre del equipo que quieres usar como puerta de enlace en el campo **Nombre del servidor**. Puede ser un nombre de equipo Windows, un nombre de dominio de Internet o una dirección IP. También puedes agregar información del puerto al nombre del servidor (por ejemplo: RDGateway:443 o 10.0.0.1:443).
+   - Selecciona la **cuenta de usuario** que usarás para acceder a la puerta de enlace de Escritorio remoto.
+     - Selecciona **Use desktop user account** (Usar la cuenta de usuario de escritorio) para usar las mismas credenciales que especifiques para el equipo remoto.
+     - Selecciona **Agregar cuenta de usuario** para guardar una cuenta que usas con frecuencia. Así, no tendrás que escribir las credenciales cada vez que inicies sesión en esta. Sigue estas instrucciones para [administrar las cuentas de usuario](#manage-your-user-accounts).
+
+Para eliminar una puerta de enlace:
+
+1. En Connection Center (Centro de conexión), pulsa **Configuración** y, luego,  **Puertas de enlace**.
+2. Mantén pulsada una puerta de enlace en la lista para seleccionarla. Puedes seleccionar varias puertas de enlace a la vez.
+3. Pulsa la papelera para eliminar la puerta de enlace seleccionada.
 
 ## <a name="manage-your-user-accounts"></a>Administración de cuentas de usuario
 
-Cuando te conectas a un escritorio o a recursos remotos, puedes guardar las cuentas de usuario para volver a seleccionarlas más adelante. Las cuentas de usuario también se pueden definir en el propio cliente, en lugar de guardar los datos del usuario al conectarse a un escritorio.
+Cuando te conectas a un escritorio o a recursos remotos, puedes guardar las cuentas de usuario para volver a seleccionarlas más adelante.
 
 Para crear una cuenta de usuario:
 
 1. En el Centro de conexión, pulsa **Configuración**y luego pulsa  **Cuenta de usuario**.
 2. Pulsa **+** para agregar una cuenta de usuario nueva.
 3. Escribe la siguiente información:
-   - **Nombre de usuario**: el nombre del usuario que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario o user_name@domain.com.
-   - **Contraseña**: la contraseña del usuario que has especificado. Todas las cuentas de usuario que quieras guardar para usarlas para las conexiones remotas deben tener una contraseña asociada.
-4. Pulsa **Guardar**.
+   - El **nombre de usuario** que se guarda para usarlo con una conexión remota. El nombre de usuario se puede escribir en cualquiera de los siguientes formatos: nombre_de_usuario, dominio\nombre_de_usuario o user_name@domain.com.
+   - La **contraseña** del usuario que has especificado. Todas las cuentas de usuario que quieras guardar para usarlas para las conexiones remotas deben tener una contraseña asociada.
+4. Cuando termines, pulsa **Guardar**.
 
 Para eliminar una cuenta de usuario:
 
-1. En el Centro de conexión, pulsa **Configuración > Cuenta de usuario**.
+1. En el Centro de conexión, pulsa **Configuración**y luego pulsa  **Cuenta de usuario**.
 2. Mantén pulsada una cuenta de usuario en la lista para seleccionarla. Puede seleccionar varios usuarios.
 3. Pulsa la Papelera para eliminar el usuario seleccionado.
 
 ## <a name="navigate-the-remote-desktop-session"></a>Desplazamiento a la sesión de Escritorio remoto
+
 Al iniciar una conexión con Escritorio remoto, hay varias herramientas disponibles que se pueden usar para desplazarse por la sesión.
 
 ### <a name="start-a-remote-desktop-connection"></a>Inicio de una conexión a Escritorio remoto
 
-1. Pulsa en la conexión con Escritorio remoto para iniciar la sesión. 
-2. Si se te pide que compruebes el certificado del escritorio remoto, pulsa **Conectar**. También puedes seleccionar **No volver a preguntar las conexiones a este equipo** para aceptar siempre el certificado.
-
-### <a name="manage-global-app-settings"></a>Administración de la configuración global de aplicaciones
-
-Para establecer la siguiente configuración global en el cliente Android:
-
-- **Mostrar vistas previas de escritorio**: permite obtener una vista previa de un escritorio en el Centro de conexión antes de conectarse a él. De manera predeterminada, se establece en **Activado**.
-- **Acercar los dedos para aplicar zoom**: le permite usar gestos de acercar los dedos para aplicar zoom. Si la aplicación que usa a través de Escritorio remoto admite un uso multitáctil (algo que se ha introducido en Windows 8), cambie este valor a**Desactivado**.
-- **Ayudar a mejorar Escritorio remoto**: envía datos anónimos a Microsoft. Estos datos se usan para mejorar el cliente. Puede obtener más información acerca de cómo se tratan estos datos privados anónimos, consulte la [declaración de privacidad del cliente de Escritorio remoto](https://www.microsoft.com/privacystatement/RemoteApp/Default.aspx). De manera predeterminada, este valor está en la posición **Activado**.
-- **Mostrar**: hay dos configuraciones globales para la presentación:
-  - **Orientación**: establece la orientación preferida (horizontal o vertical) de la sesión. 
-    >[!NOTE]
-    > Si se conecta a un equipo en que use Windows 8 o cualquier versión anterior de Windows, la sesión no se escalara correctamente. La mejor opción es desconectarse del equipo y, después, volverse a conectar en la orientación que se desea utilizar. Aunque una opción mejor aún consiste en actualizar el equipo a, al menos, Windows 8.1.
-
-  - **Resolución**: establece la resolución que se desea utilizar para las conexiones de escritorio globalmente. Si ya has establecido una resolución personalizada para una aplicación individual o una conexión, este valor no cambia.
-    >[!NOTE]
-    >Cuando cambias uno de los valores de visualización, dicho cambio solo se aplica a las conexiones que se establecen desde ese momento. Para ver el cambio en una sesión en la que ya estés conectado, desconéctate y vuelve a conectarte.
+1. Pulsa en la conexión con Escritorio remoto para iniciar la sesión.
+2. Si se te pide que verifiques el certificado del escritorio remoto, pulsa **Conectar**. También puedes seleccionar **No volver a preguntar las conexiones a este equipo** para aceptar siempre el certificado.
 
 ### <a name="connection-bar"></a>Barra de conexión
 
-La barra de conexión te permite acceder a más controles de navegación. De manera predeterminada, la barra de conexión se coloca en la parte central de la parte superior de la pantalla. Pulsa dos veces la barra y arrástrala hacia la izquierda o derecha para moverla.
+La barra de conexión te permite acceder a más controles de navegación. De manera predeterminada, la barra de conexión se coloca en la parte central de la parte superior de la pantalla. Arrastra la barra hacia la izquierda o derecha para moverla.
 
-- **Pan Control** (Control de panorámica): el control de panorámica permite ampliar la pantalla y moverse alrededor de ella. Ten en cuenta que el control de panorámica solo está disponible si se usa el toque directo.
-   - Habilitar o deshabilitar el control de panorámica: pulsa el icono de panorámica de la barra de conexión para mostrar el control de panorámica y aplicar zoom a la pantalla. Vuelve a pulsar el icono de panorámica en la barra de conexión nuevo para ocultar el control y devolver la pantalla a su resolución original.
-   - Usar el control de panorámica: mantén pulsado el control de panorámica y arrástralo en la dirección que deseas mover la pantalla.
-   - Mover el control de panorámica: pulsa dos veces y mantén pulsado el control de panorámica para mover el control en la pantalla.
-- **Opciones adicionales**: pulsa el icono de opciones adicionales para mostrar la barra de selección y la barra de comandos de la sesión (ver abajo).
+- **Pan Control** (Control de panorámica): el control de panorámica permite ampliar la pantalla y moverse alrededor de ella. El control de panorámica solo está disponible para el toque directo.
+  - Para mostrar el control de panorámica, pulsa el icono de panorámica de la barra de conexión y aplica zoom a la pantalla. Vuelve a pulsar el icono de panorámica para ocultar el control y devolver la pantalla a su tamaño original.
+  - Para usar el control de panorámica, mantenlo pulsado y arrástralo en la dirección que quieres mover la pantalla.
+  - Para mover el control de panorámica, pulsa dos veces y mantén pulsado para mover el control por la pantalla.
+- **Opciones adicionales**: pulsa el icono de opciones adicionales para mostrar la barra de selección y la barra de comandos de la sesión.
 - **Teclado**: pulsa el icono del teclado para mostrar u ocultar el teclado. El control de panorámica se muestra automáticamente cuando se muestra el teclado.
-- **Mover la barra de conexión**: Mantén pulsada la barra de conexión, arrástrala y colócala en una nueva ubicación en la parte superior de la pantalla.
 
+### <a name="session-selection-bar"></a>Barra de selección de sesión
+
+Puede tener varias conexiones abiertas en equipos diferentes al mismo tiempo. Pulsa la barra de conexión para mostrar la barra de selección de sesión en el lado izquierdo de la pantalla. La barra de selección de sesión te permite ver las conexiones abiertas y cambiar de una a otra.
+
+Cuando estás conectado a recursos remotos, para cambiar entre las aplicaciones de esa sesión, pulsa el menú del expansor **>** y elige un elemento de la lista de elementos disponibles.
+
+Para iniciar una nueva sesión desde dentro de la conexión actual, pulsa **Iniciar nueva** y, después, elige un elemento de la lista de elementos disponibles.
+
+Para desconectar una sesión, pulsa **X** en el lado izquierdo del icono de la sesión.
 
 ### <a name="command-bar"></a>Barra de comandos
 
-Pulsa la barra de conexión para mostrar la barra de comandos en el lado derecho de la pantalla. Puedes cambiar entre los modos de ratón (puntero y toque directo). Usa el botón de inicio para volver al Centro de conexión desde la barra de comandos. También puedes usar el botón Atrás para realizar la misma acción. La sesión activa no se desconectará. 
+Pulsa la barra de conexión para mostrar la barra de comandos en el lado derecho de la pantalla. En la barra de comandos, puedes cambiar entre los modos del mouse (toque directo y puntero del mouse) o pulsar el botón Inicio para volver a Connection Center (Centro de conexión). También puedes pulsar el botón Atrás para volver a Connection Center (Centro de conexión). Al volver a Connection Center (Centro de conexión), no se desconectará la sesión activa.
 
+### <a name="use-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Uso de gestos táctiles y de modos de ratón en una sesión remota
 
-### <a name="use-direct-touch-gestures-and-mouse-modes-in-a-remote-session"></a>Uso de gestos de toque directo y de modos de ratón en una sesión remota
-
-El cliente utiliza gestos táctiles estándar. También se pueden usar gestos táctiles para replicar acciones del ratón en el escritorio remoto. Los modos del ratón disponibles se definen en la tabla siguiente.
+El cliente utiliza gestos táctiles estándar. También se pueden usar gestos táctiles para replicar acciones del ratón en el escritorio remoto. En la tabla siguiente se explica qué gestos coinciden con las acciones del mouse en cada modo del mouse.
 
 > [!NOTE]
-> En la interacción con Windows 8, o las versiones más recientes, se admiten los gestos táctiles nativos en modo de toque directo. 
+> Los gestos táctiles nativos se admiten en el modo de toque directo de Windows 8 o versiones posteriores.
 
-| Modo de mouse    | Operación del ratón      | Gesto                                                               |
-|---------------|----------------------|-----------------------------------------------------------------------|
-| Toque directo  | Hacer clic con el botón izquierdo           | Pulsación con un dedo                                                          |
-| Toque directo  | Hacer clic con el botón derecho          | Mantener pulsado con un dedo                                                 |
-| Puntero | Zoom                 | Utiliza dos dedos y acércalos para acercar o sepáralos para alejar. |
-| Puntero | Hacer clic con el botón izquierdo           | Pulsación con un dedo                                                          |
-| Puntero | Hacer clic con el botón izquierdo y arrastrar  | Pulsar dos veces con un dedo y mantener pulsado, y luego arrastrar                               |
-| Puntero | Hacer clic con el botón derecho          | Pulsación con dos dedos                                                          |
-| Puntero | Hacer clic con el botón derecho y arrastrar | Pulsar dos veces con dos dedos y mantener pulsado, y luego arrastrar                               |
-| Puntero | Rueda del ratón          | Pulsar con dos dedos y mantener pulsado, y luego arrastrar hacia arriba o abajo                           |
-
-> [!TIP]
-> Tanto las preguntas como los comentarios son siempre bienvenidos. Sin embargo, NO publiques una solicitud de ayuda para solucionar problemas con la característica de comentario del final de este artículo. En su lugar, ve al [foro del cliente de Escritorio remoto](https://social.technet.microsoft.com/forums/windowsserver/en-us/home?forum=winrdc) e inicia una nueva conversación. ¿Tienes alguna sugerencia de característica? Realízala en el [foro de usuarios de clientes](https://remotedesktop.uservoice.com/forums/272085-remote-desktop-for-android).
+| Modo de mouse    | Acción del mouse         | Gesto                                                                 |
+|---------------|----------------------|-------------------------------------------------------------------------|
+| Toque directo  | Clic con el botón izquierdo           | Pulsar con un dedo                                                     |
+| Toque directo  | Haz clic con el botón secundario          | Mantener pulsado con un dedo y soltar después                              |
+| Puntero | Zoom                 | Usar dos dedos y acercarlos para acercar o separarlos para alejar |
+| Puntero | Clic con el botón izquierdo           | Pulsar con un dedo                                                     |
+| Puntero | Hacer clic con el botón izquierdo y arrastrar  | Pulsar dos veces con un dedo y mantener pulsado y, a continuación, arrastrar                          |
+| Puntero | Haz clic con el botón secundario          | Pulsar con dos dedos                                                    |
+| Puntero | Clic con el botón derecho y arrastrar | Pulsar dos veces con dos dedos y mantener pulsado y, a continuación, arrastrar                         |
+| Puntero | Rueda del ratón          | Mantener pulsado con dos dedos y, a continuación, arrastrar hacia arriba o hacia abajo.                     |
