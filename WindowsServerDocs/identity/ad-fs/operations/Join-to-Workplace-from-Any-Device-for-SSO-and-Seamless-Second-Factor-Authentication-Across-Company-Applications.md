@@ -7,20 +7,20 @@ ms.author: billmath
 manager: femila
 ms.date: 12/05/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e9d6161666be89673cff6ef1a975d3205fa4b5c9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 05a8b8bb5685c31ece29ed8eb38d37a424e478b8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189092"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357943"
 ---
 # <a name="join-to-workplace-from-any-device-for-sso-and-seamless-second-factor-authentication-across-company-applications"></a>unirse a un área de trabajo desde cualquier dispositivo para SSO y autenticación de segundo factor sin problemas en todas las aplicaciones de la compañía
 
 
 
-El rápido aumento en el número de dispositivos de consumo y el acceso a la información desde cualquier lugar está cambiando la manera en que las personas perciben su tecnología. El uso constante de tecnologías de la información durante todo el día, junto con el fácil acceso a la información, está difuminando los límites tradicionales entre trabajo y vida privada. Estos límites cambiantes están acompañados por la creencia ese personal seleccionado a la tecnología y personalizada para ajustarse a los usuarios personalidades, actividades y programaciones-debe extenderse al área de trabajo. Para satisfacer la creciente demanda de que los dispositivos de consumo personal se conecten a las redes empresariales, estamos incorporando las siguientes propuestas:
+El rápido aumento en el número de dispositivos de consumo y el acceso a la información desde cualquier lugar está cambiando la manera en que las personas perciben su tecnología. El uso constante de tecnologías de la información durante todo el día, junto con el fácil acceso a la información, está difuminando los límites tradicionales entre trabajo y vida privada. Estos límites de cambio van acompañados de la creencia de que la tecnología personal (seleccionada y personalizada para adaptarse a las personalidades, actividades y programaciones de los usuarios) debe extenderse al lugar de trabajo. Para satisfacer la creciente demanda de que los dispositivos de consumo personal se conecten a las redes empresariales, estamos incorporando las siguientes propuestas:
 
 -   Los administradores pueden controlar quién tiene acceso a los recursos de la compañía según la aplicación, el usuario, el dispositivo y la ubicación.
 
@@ -31,7 +31,7 @@ El rápido aumento en el número de dispositivos de consumo y el acceso a la inf
 ### <a name="workplace-join"></a>Unión al área de trabajo
 Con la unión al área de trabajo, los trabajadores de la información pueden unir sus dispositivos personales con sus equipos de trabajo de la compañía para acceder a los recursos y servicios de la compañía. Cuando unas tu dispositivo personal al área de trabajo, se convertirá en un dispositivo conocido y proporciona autenticación de segundo factor sin problemas e inicio de sesión único para las aplicaciones y los recursos del área de trabajo. Cuando un dispositivo se une mediante unión al área de trabajo, los atributos del dispositivo se pueden recuperar del directorio para controlar el acceso condicional con el fin de autorizar la emisión de tokens de seguridad para las aplicaciones. Los dispositivos Windows 8.1, iOS 6.0+ y Android 4.0+ se pueden unir mediante unión al área de trabajo.
 
-### <a name="BKMK_DRS"></a>Servicio de registro de dispositivo de Active Directory de Azure
+### <a name="BKMK_DRS"></a>Servicio de Registro de dispositivos de Azure Active Directory
 Unión al área de trabajo se realiza mediante el servicio de registro de dispositivo de Azure Active Directory. Cuando un dispositivo se une mediante unión al área de trabajo, el servicio aprovisiona un objeto de dispositivo en Active Directory y establece una clave en el dispositivo local que se usa para representar la identidad del dispositivo. Esta identidad de dispositivo puede usarse con las reglas de control de acceso para las aplicaciones que se hospedan en la nube y localmente.
 
 Para obtener más información, consulte [Introducción a la administración de dispositivos en Azure Active Directory](https://docs.microsoft.com/azure/active-directory/device-management-introduction).
@@ -61,7 +61,7 @@ Esta solución te lleva por los siguientes pasos del tutorial:
 3.  [Tutorial: Workplace Join con un dispositivo Android](../../ad-fs/operations/walkthrough--workplace-join-to-an-android-device.md)
 
 ## <a name="see-also"></a>Vea también
-[Configurar un servidor de federación con el servicio de registro de dispositivos](../deployment/configure-a-federation-server-with-device-registration-service.md)
+[Configuración de un servidor de Federación con el servicio de registro de dispositivos](../deployment/configure-a-federation-server-with-device-registration-service.md)
 
 
 

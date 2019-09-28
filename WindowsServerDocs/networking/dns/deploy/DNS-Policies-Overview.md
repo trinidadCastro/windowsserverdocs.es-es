@@ -2,33 +2,33 @@
 title: Información general de las directivas DNS
 description: Este tema forma parte de la guía del escenario de la Directiva DNS para Windows Server 2016
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 566bc270-81c7-48c3-a904-3cba942ad463
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 687864619c981b3ab8d24ef540c759bc29314c90
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 613bb7f43b382389dc0db953a48668147cfaee88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544666"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356046"
 ---
 # <a name="dns-policies-overview"></a>Información general de las directivas DNS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información acerca de la Directiva de DNS, que es nueva en Windows Server 2016. Puede usar la Directiva de DNS para la administración del tráfico basada en la ubicación geográfica, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un\-solo servidor DNS configurado para la implementación de cerebro dividido, aplicar filtros en consultas DNS, etc. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
+Puede usar este tema para obtener información acerca de la Directiva de DNS, que es nueva en Windows Server 2016. Puede usar la Directiva DNS para la administración del tráfico basada en la ubicación geográfica, las respuestas de DNS inteligentes basadas en la hora del día, para administrar un solo servidor DNS configurado para la implementación de Split @ no__t-0brain, aplicar filtros en consultas DNS, etc. Los elementos siguientes proporcionan más detalles acerca de estas capacidades.
 
 -   **Equilibrio de carga de la aplicación.** Cuando haya implementado varias instancias de una aplicación en diferentes ubicaciones, puede usar la Directiva de DNS para equilibrar la carga de tráfico entre las distintas instancias de aplicación, asignando dinámicamente la carga de tráfico para la aplicación.
 
--   **Administración\-del tráfico basada en la ubicación geográfica.** Puede usar la Directiva de DNS para permitir que los servidores DNS principal y secundario respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando al cliente la dirección IP del recurso. 
+-   **Administración del tráfico basado en Geo @ no__t-1Location.** Puede usar la Directiva de DNS para permitir que los servidores DNS principal y secundario respondan a las consultas de cliente DNS en función de la ubicación geográfica del cliente y el recurso al que el cliente intenta conectarse, proporcionando al cliente la dirección IP del recurso. 
 
--   **Divida DNS de cerebro.** Con DNS\-de cerebro dividido, los registros DNS se dividen en diferentes ámbitos de zona en el mismo servidor DNS y los clientes DNS reciben una respuesta basada en si los clientes son internos o externos. Puede configurar DNS de\-cerebro dividido para zonas integradas de Active Directory o para zonas en servidores DNS independientes.
+-   **Divida DNS de cerebro.** Con el DNS dividido @ no__t-0brain, los registros DNS se dividen en diferentes ámbitos de zona en el mismo servidor DNS y los clientes DNS reciben una respuesta en función de si los clientes son internos o externos. Puede configurar el DNS dividido @ no__t-0brain para las zonas integradas Active Directory o para las zonas de los servidores DNS independientes.
 
 -   **Filtra.** Puede configurar la Directiva de DNS para crear filtros de consulta basados en los criterios que proporcione. Los filtros de consulta de la Directiva de DNS permiten configurar el servidor DNS para responder de forma personalizada en función de la consulta DNS y el cliente DNS que envía la consulta DNS. 
--   **Análisis forense.** Puede usar la Directiva de DNS para redirigir a los clientes DNS malintencionados a una dirección IP que no\-existe, en lugar de dirigirlos al equipo al que intentan tener acceso.
+-   **Análisis forense.** Puede usar la Directiva de DNS para redirigir a los clientes DNS malintencionados a una dirección IP que no sea de no__t-0existent en lugar de dirigirlos al equipo al que intentan acceder.
 
 -   **Hora del redireccionamiento basado en el día.** Puede usar la Directiva de DNS para distribuir el tráfico de aplicaciones entre diferentes instancias distribuidas geográficamente de una aplicación mediante el uso de directivas DNS basadas en la hora del día.
 
@@ -51,7 +51,7 @@ Puede usar las directivas de resolución de consultas DNS para especificar cómo
 
 |Campo|Descripción|Posibles valores|  
 |---------|---------------|-------------------|  
-|**Name**|Nombre de la directiva|-Hasta 256 caracteres<br />-Puede contener cualquier carácter válido para un nombre de archivo|  
+|**Name**|Nombre de directiva|-Hasta 256 caracteres<br />-Puede contener cualquier carácter válido para un nombre de archivo|  
 |**Estado**|Estado de la Directiva|-Enable (valor predeterminado)<br />-Deshabilitado|  
 |**Dosis**|Nivel de Directiva|-Servidor<br />-Zona|  
 |**Orden de procesamiento**|Una vez que una consulta se clasifica por nivel y se aplica en, el servidor encuentra la primera Directiva para la que la consulta coincide con los criterios y la aplica a la consulta.|-Valor numérico<br />-Valor único por directiva que contiene el mismo nivel y se aplica al valor|  
@@ -60,24 +60,24 @@ Puede usar las directivas de resolución de consultas DNS para especificar cómo
 |**Ámbito**|Lista de ámbitos de zona y valores ponderados por ámbito. Los valores ponderados se usan para la distribución del equilibrio de carga. Por ejemplo, si esta lista incluye centrodedatos1 con un peso de 3 y centrodedatos2 con un peso de 5, el servidor responderá con un registro de datacentre1 tres veces de ocho solicitudes|-Lista de ámbitos de zona (por nombre) y pesos|  
 
 > [!NOTE]
-> Las directivas de nivel de servidor solo pueden  tener los valores denegar u **omitir** como acción.
+> Las directivas de nivel de servidor solo pueden tener los valores **denegar** u **omitir** como acción.
 
 El campo criterios de la Directiva de DNS se compone de dos elementos:
 
 
-|              NOMBRE               |                                         Descripción                                          |                                                                                                                               Valores de ejemplo                                                                                                                               |
+|              Nombre               |                                         Descripción                                          |                                                                                                                               Valores de ejemplo                                                                                                                               |
 |---------------------------------|----------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|        **Subred de cliente**        | Nombre de una subred de cliente predefinida. Se utiliza para comprobar la subred desde la que se envió la consulta. |                             -   **EQ, España, Francia** : se resuelve como true si la subred se identifica como España o Francia<br />-   **NE, Canadá, México** : se resuelve como true si la subred del cliente es cualquier subred que no sea Canadá y México.                             |
+|        **Subred de cliente**        | Nombre de una subred de cliente predefinida. Se utiliza para comprobar la subred desde la que se envió la consulta. |                             -   **EQ, España, Francia** : se resuelve como true si la subred se identifica como España o Francia<br />-   **NE, Canadá, México,** se resuelve como true si la subred del cliente es cualquier subred que no sea Canadá y México.                             |
 |     **Protocolo de transporte**      |        Protocolo de transporte utilizado en la consulta. Las entradas posibles son **UDP** y **TCP**        |                                                                                                                    -   **EQ, TCP**<br />-   **EQ, UDP**                                                                                                                     |
 |      **Protocolo de Internet**      |        Protocolo de red utilizado en la consulta. Las entradas posibles son **IPv4** e **IPv6**        |                                                                                                                   -   **EQ, IPv4**<br />-   **EQ, IPv6**                                                                                                                    |
 | **Dirección IP de la interfaz de servidor** |                   Dirección IP de la interfaz de red del servidor DNS entrante                   |                                                                                                              -   **EQ, 10.0.0.1**<br />-   **EQ, 192.168.1.1**                                                                                                              |
-|            **SEAN**             |            FQDN del registro en la consulta, con la posibilidad de usar un carácter comodín            | -   **EQ, www. contoso. com** : se resuelve como true solo si la consulta está intentando resolver el FQDN de <em>www.contoso.com</em><br />-   **EQ,\*. contoso.com,\*. Woodgrove.com** : se resuelve como true si la consulta es para cualquier registro que termine en *contoso.com***o***Woodgrove.com* |
-|         **Tipo de consulta**          |                          Tipo de registro que se consulta (A, SRV, TXT)                          |                                                  -   **EQ, txt, SRV** : se resuelve como true si la consulta solicita un registro TXT **o** SRV<br />-   **EQ, mx** : se resuelve como true si la consulta solicita un registro MX                                                   |
-|         **Hora del día**         |                              Hora del día en que se recibe la consulta                               |                                                                    -   **EQ, 10:00-12:00, 22:00-23:00** -se resuelve como true si la consulta se recibe entre 10 AM y mediodía, **o** entre 10PM y 11 p.m.                                                                    |
+|            **SEAN**             |            FQDN del registro en la consulta, con la posibilidad de usar un carácter comodín            | -   **EQ, www. contoso. com** : se resuelve como true solo si la consulta está intentando resolver el FQDN <em>www.contoso.com</em><br />-   **EQ, \*.contoso.com, \*.Woodgrove.com** -se resuelve como true si la consulta es para cualquier registro que termine en *contoso.com***o***Woodgrove.com* |
+|         **Tipo de consulta**          |                          Tipo de registro que se consulta (A, SRV, TXT)                          |                                                  -   **EQ, txt, SRV** -se resuelve como true si la consulta solicita un registro TXT **o** SRV<br />-   **EQ, mx** -se resuelve como true si la consulta solicita un registro MX                                                   |
+|         **Hora del día**         |                              Hora del día en que se recibe la consulta                               |                                                                    -   **EQ, 10:00-12:00, 22:00-23:00** -se resuelve como true si la consulta se recibe entre 10 a.m. y mediodía, **o** entre 10PM y 11 p.m.                                                                    |
 
 Con la tabla anterior como punto de partida, la tabla siguiente podría usarse para definir un criterio que se usa para hacer coincidir las consultas para cualquier tipo de registro, pero los registros SRV del dominio contoso.com proceden de un cliente en la subred 10.0.0.0/24 a través de TCP entre 8 y 10 PM a través de i Interfa 10.0.0.3:  
 
-|NOMBRE|Valor|  
+|Nombre|Valor|  
 |--------|---------|  
 |Subred de cliente|EQ, 10.0.0.0/24|  
 |Protocolo de transporte|EQ, TCP|  
@@ -97,7 +97,7 @@ Puede usar directivas de recursividad para implementar una configuración de DNS
 
 Las directivas de recursividad contienen los mismos elementos que contiene una directiva de resolución de consultas DNS normal, junto con los elementos de la tabla siguiente:  
 
-|NOMBRE|Descripción|  
+|Nombre|Descripción|  
 |--------|---------------|  
 |**Aplicar en la recursividad**|Especifica que esta directiva solo se debe usar para la recursividad.|  
 |**Ámbito de recursividad**|Nombre del ámbito de recursividad.|  

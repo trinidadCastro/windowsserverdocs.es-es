@@ -1,50 +1,50 @@
 ---
-title: Consideraciones de rendimiento de secuencias de comandos de PowerShell
-description: Secuencias de comandos para el rendimiento en PowerShell
-ms.prod: windows-server-threshold
+title: Consideraciones sobre el rendimiento del scripting de PowerShell
+description: Scripting para rendimiento en PowerShell
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: JasonSh
 author: lzybkr
 ms.date: 10/16/2017
-ms.openlocfilehash: df406c7e382907ca32006ec4dae6537a140a91cf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2898cf5ee965da77c9f6a3473e55c1cee6b53f2b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830376"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71354980"
 ---
-# <a name="powershell-scripting-performance-considerations"></a>Consideraciones de rendimiento de secuencias de comandos de PowerShell
+# <a name="powershell-scripting-performance-considerations"></a>Consideraciones sobre el rendimiento del scripting de PowerShell
 
-Scripts de PowerShell que aprovechan .NET directamente y evitar la canalización tienden a ser más rápido que PowerShell idiomático. PowerShell idiomático normalmente usa cmdlets y funciones de PowerShell muy a menudo aprovechamiento de la canalización y desplegando en .NET solo cuando sea necesario.
+Los scripts de PowerShell que aprovechan .NET directamente y evitan que la canalización tenga más rapidez que idiomático PowerShell. Idiomático PowerShell usa normalmente cmdlets y funciones de PowerShell en gran medida, a menudo aprovechando la canalización, y se coloca en .NET solo cuando sea necesario.
 
 >[!Note] 
-> Muchas de las técnicas descritas aquí no son idiomático PowerShell y pueden reducir la legibilidad de un script de PowerShell. Los autores de scripts se aconseja usar PowerShell idiomático a menos que el rendimiento dicte lo contrario.
+> Muchas de las técnicas descritas aquí no son idiomático PowerShell y pueden reducir la legibilidad de un script de PowerShell. Se recomienda a los autores de scripts que usen idiomático PowerShell a menos que el rendimiento dicte lo contrario.
 
 ## <a name="suppressing-output"></a>Suprimir salida
 
-Hay muchas maneras de evitar la escritura de objetos a la canalización:
+Hay muchas maneras de evitar escribir objetos en la canalización:
 
 ```PowerShell
 $null = $arrayList.Add($item)
 [void]$arrayList.Add($item)
 ```
 
-Asignación a `$null` o casting a `[void]` son aproximadamente equivalentes y por lo general debe preferirse donde es importante el rendimiento.
+La asignación a `$null` o a `[void]` son aproximadamente equivalentes y, por lo general, deben ser preferibles donde sea importante el rendimiento.
 
 ```PowerShell
 $arrayList.Add($item) > $null
 ```
 
-Redirección a archivos `$null` es casi tan bueno como las alternativas anteriores, más scripts no observaría nunca la diferencia.
-Según el escenario, redirección de archivos presente aunque un poco de sobrecarga.
+La redirección de archivos a `$null` es casi tan buena como las alternativas anteriores, la mayoría de los scripts nunca observarían la diferencia.
+En función del escenario, el redireccionamiento de archivos introduce un poco de sobrecarga.
 
 ```PowerShell
 $arrayList.Add($item) | Out-Null
 ```
 
-Canaliza a `Out-Null` tiene una sobrecarga significativa en comparación con las alternativas.
-Lo se debe evitar en código sensible de rendimiento.
+La canalización a `Out-Null` tiene una sobrecarga importante en comparación con las alternativas.
+Debe evitar el código sensible al rendimiento.
 
 ```PowerShell
 $null = . {
@@ -53,14 +53,14 @@ $null = . {
 }
 ```
 
-Introducción a un bloque de script y llamarlo (mediante el punto de origen o en caso contrario), a continuación, asignar el resultado a `$null` es una técnica conveniente para suprimir la salida de un bloque grande de secuencia de comandos.
-Esta técnica se lleva a cabo más o menos, así como el tipo de canalización para `Out-Null` y debe evitarse en script confidenciales de rendimiento.
-La sobrecarga adicional en este ejemplo procede de la creación de y la invocación de un bloque de script que era anteriormente el script en línea.
+Al introducir un bloque de script y llamarlo (mediante el uso de un punto de partida o de otro modo), asignar el resultado a `$null` es una técnica adecuada para suprimir la salida de un bloque grande de script.
+Esta técnica realiza aproximadamente la canalización a `Out-Null` y debe evitarse en el script sensible al rendimiento.
+La sobrecarga adicional en este ejemplo procede de la creación y la invocación de un bloque de scripts que anteriormente se encontraban en línea.
 
 
-## <a name="array-addition"></a>Adición de matriz
+## <a name="array-addition"></a>Adición de matrices
 
-Generar una lista de elementos se suele hacer uso de una matriz con el operador de suma:
+La generación de una lista de elementos suele realizarse mediante una matriz con el operador de suma:
 
 ```PowerShell
 $results = @()
@@ -70,12 +70,12 @@ $results
 ```
 
 Esto puede ser muy inefficent porque las matrices son inmutables.
-Cada adición a la matriz realmente crea una nueva matriz lo suficientemente grande como para contener todos los elementos de los operandos izquierdos y derecho y luego copia los elementos de ambos operandos en la nueva matriz.
-Para colecciones pequeñas, esta sobrecarga puede no ser importante.
-Para las colecciones grandes, esto puede ser definitivamente un problema.
+Cada adición a la matriz crea realmente una nueva matriz lo suficientemente grande como para contener todos los elementos de los operandos izquierdo y derecho, y después copia los elementos de ambos operandos en la nueva matriz.
+En el caso de las colecciones pequeñas, esta sobrecarga puede no ser importante.
+En el caso de las colecciones de gran tamaño, esto puede ser un problema.
 
 Hay un par de alternativas.
-Si realmente no requiere una matriz, en su lugar considere la posibilidad de usar un objeto ArrayList:
+Si realmente no necesita una matriz, considere la posibilidad de usar una ArrayList:
 
 ```PowerShell
 $results = [System.Collections.ArrayList]::new()
@@ -84,8 +84,8 @@ $results.AddRange((Do-SomethingElse))
 $results
 ```
 
-Si es necesario que una matriz, puede usar su propio `ArrayList` y basta con llamar a `ArrayList.ToArray` cuando desee que la matriz.
-Como alternativa, puede permitir que PowerShell crear el `ArrayList` y `Array` para usted:
+Si requiere una matriz, puede usar su propio `ArrayList` y simplemente llamar a `ArrayList.ToArray` cuando desee la matriz.
+Como alternativa, puede permitir que PowerShell cree el `ArrayList` y `Array`:
 
 ```PowerShell
 $results = @(
@@ -94,18 +94,18 @@ $results = @(
 )
 ```
 
-En este ejemplo, PowerShell crea un `ArrayList` para almacenar los resultados que se escriben en la canalización dentro de la expresión de matriz.
+En este ejemplo, PowerShell crea un `ArrayList` que contiene los resultados que se escriben en la canalización dentro de la expresión de matriz.
 Justo antes de asignar a `$results`, PowerShell convierte el `ArrayList` a un `object[]`.
 
-## <a name="processing-large-files"></a>Procesamiento de archivos de gran tamaño
+## <a name="processing-large-files"></a>Archivos grandes de procesamiento
 
-La manera idiomática de procesar un archivo en PowerShell podría ser similar:
+La forma idiomático de procesar un archivo en PowerShell puede ser similar a la siguiente:
 
 ```PowerShell
 Get-Content $path | Where-Object { $_.Length -gt 10 }
 ```
 
-Esto puede ser casi un orden de magnitud más lenta que la API de .NET directamente:
+Esto puede ser casi un orden de magnitud más lento que el uso de las API de .NET directamente:
 
 ```PowerShell
 try
@@ -125,11 +125,11 @@ finally
 }
 ```
 
-## <a name="avoid-write-host"></a>Evitar Write-Host
+## <a name="avoid-write-host"></a>Evitar write-host
 
-Por lo general se considera una práctica deficiente para escribir la salida directamente a la consola, pero cuando sea conveniente, usan muchos scripts `Write-Host`.
+Por lo general, se considera mala práctica escribir la salida directamente en la consola, pero cuando tiene sentido, muchos scripts usan `Write-Host`.
 
-Si debe escribir el número de mensajes en la consola, `Write-Host` puede ser un orden de magnitud más lenta que `[Console]::WriteLine()`. Sin embargo, tenga en cuenta que `[Console]::WriteLine()` es sólo una alternativa adecuada para los hosts específicos como powershell.exe o powershell_ise.exe: no se garantiza que funcione en todos los hosts.
+Si debe escribir muchos mensajes en la consola, `Write-Host` puede ser un orden de magnitud más lento que `[Console]::WriteLine()`. Sin embargo, tenga en cuenta que `[Console]::WriteLine()` solo es una alternativa adecuada para hosts específicos, como PowerShell. exe o powershell_ise. exe, no se garantiza que funcione en todos los hosts.
 
-En lugar de usar `Write-Host`, considere el uso de [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1).
+En lugar de usar `Write-Host`, considere la posibilidad de usar [Write-Output](/powershell/module/Microsoft.PowerShell.Utility/Write-Output?view=powershell-5.1).
 

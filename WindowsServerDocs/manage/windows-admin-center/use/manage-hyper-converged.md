@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 03/01/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 5df035b448b80aa147067004c6a2f14aa03a9684
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: d692251e1ba0fef43e4eeee6f259f26f4347f3c0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869087"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356875"
 ---
 # <a name="manage-hyper-converged-infrastructure-with-windows-admin-center"></a>Administrar la infraestructura hiperconvergida con el centro de administración de Windows
 
@@ -92,7 +92,7 @@ Puede configurar la infraestructura hiperconvergida que ejecuta Windows Server 2
 
 La implementación tardará aproximadamente entre 30 y 45 minutos.
 
-## <a name="get-started"></a>Introducción
+## <a name="get-started"></a>Comenzar
 
 Una vez implementada la infraestructura hiperconvergida, puede administrarla mediante el centro de administración de Windows.
 
@@ -131,7 +131,7 @@ El clúster se agregará a la lista de conexiones. Haga clic en él para iniciar
 > [!Important]
 > Actualmente no se admiten los entornos de SDN con autenticación Kerberos para la comunicación de Northbound.
 
-## <a name="frequently-asked-questions"></a>Preguntas más frecuentes
+## <a name="frequently-asked-questions"></a>Preguntas frecuentes
 
 ### <a name="are-there-differences-between-managing-windows-server-2016-and-windows-server-2019"></a>¿Existen diferencias entre la administración de Windows Server 2016 y Windows Server 2019?
 
@@ -157,7 +157,7 @@ El centro de administración de Windows para la infraestructura hiperconvergida 
 
 Windows Admin Center no tiene ningún coste adicional más allá de Windows.
 
-Puede usar el centro de administración de Windows (disponible como una descarga independiente) con licencias válidas de Windows Server o Windows 10 sin costo adicional, ya que se le otorga licencia en virtud de un CLUF complementario de Windows.
+Puedes usar Windows Admin Center (disponible como una descarga independiente) con licencias válidas de Windows Server o Windows 10 sin coste adicional; se concede bajo licencia en un EULA complementario de Windows.
 
 ### <a name="does-windows-admin-center-require-system-center"></a>¿Necesita Windows Admin Center System Center?
 

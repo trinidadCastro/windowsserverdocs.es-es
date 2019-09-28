@@ -1,25 +1,25 @@
 ---
 ms.assetid: d282bb4e-38a0-4c7c-83d8-f6ea89278057
-title: Compilar una aplicación web con OpenID Connect con AD FS 2016 y posterior
+title: Compilación de una aplicación web con OpenID Connect con AD FS 2016 y versiones posteriores
 description: ''
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: dbd42941f8952fc7f649636d2f3645f941240d49
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 9b3d64558c27e7b4bda20b6af27e02d55431c94d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190416"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358791"
 ---
-# <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>Compilar una aplicación web con OpenID Connect con AD FS 2016 y posterior
+# <a name="build-a-web-application-using-openid-connect-with-ad-fs-2016-and-later"></a>Compilación de una aplicación web con OpenID Connect con AD FS 2016 y versiones posteriores
 
 ## <a name="pre-requisites"></a>Requisitos previos  
-La siguiente es una lista de requisitos previos necesarios antes de completar este documento. Este documento se supone que se ha instalado AD FS y se ha creado una granja de AD FS.  
+A continuación se muestra una lista de los requisitos previos necesarios antes de completar este documento. En este documento se supone que se ha instalado AD FS y se ha creado una granja de AD FS.  
 
 -   Herramientas de cliente de GitHub  
 
@@ -28,32 +28,32 @@ La siguiente es una lista de requisitos previos necesarios antes de completar es
 -   Visual Studio 2013 o posterior.  
 
 ## <a name="create-an-application-group-in-ad-fs-2016-and-later"></a>Crear un grupo de aplicaciones en AD FS 2016 y versiones posteriores
-La siguiente sección describe cómo configurar la aplicación en el grupo de AD FS 2016 y versiones posterior.  
+En la siguiente sección se describe cómo configurar el grupo de aplicaciones en AD FS 2016 y versiones posteriores.  
 
 #### <a name="create-application-group"></a>Crear grupo de aplicaciones  
 
-1.  Administración de AD FS, haga doble clic en grupos de aplicaciones y seleccione **Agregar grupo de aplicaciones**.  
+1.  En administración de AD FS, haga clic con el botón derecho en grupos de aplicaciones y seleccione **Agregar grupo de aplicaciones**.  
 
-2.  En el Asistente para grupo de aplicaciones, como nombre escriba **ADFSSSO** y en **aplicaciones cliente / servidor** seleccione la **explorador Web acceso a una aplicación web** plantilla.  Haz clic en **Siguiente**.
+2.  En el Asistente para grupos de aplicaciones, en nombre, escriba **ADFSSSO** y **, en aplicaciones cliente-servidor** , seleccione el **explorador Web que tiene acceso a una plantilla de aplicación web** .  Haz clic en **Siguiente**.
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_1.PNG)  
 
-3.  Copia el **identificador de cliente** valor.  Se usará más adelante como el valor de ida: ClientId en el archivo web.config de aplicaciones.  
+3.  Copie el valor del **identificador de cliente** .  Se usará más adelante como valor de ida: ClientId en el archivo Web. config de aplicaciones.  
 
-4.  Escriba lo siguiente para **URI de redirección:**  -  **https://localhost:44320/** .  Haz clic en **Agregar**. Haz clic en **Siguiente**.  
+4.  Escriba lo siguiente para el **URI de redirección:**  -  **https://localhost:44320/** .  Haz clic en **Agregar**. Haz clic en **Siguiente**.  
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_2.PNG)  
 
-5.  En el **resumen** pantalla, haga clic en **siguiente**.  
+5.  En la pantalla **Resumen** , haga clic en **siguiente**.  
 
     ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_3.PNG)
 
-6.  En el **completar** pantalla, haga clic en **cerrar**.  
+6.  En la pantalla **completa** , haga clic en **cerrar**.  
 
-## <a name="download-and-modify-sample-application-to-authenticate-via-openid-connect-and-ad-fs"></a>Descargue y modifique la aplicación de ejemplo para autenticarse mediante OpenID Connect y AD FS  
-En esta sección se explica cómo descargar el ejemplo de aplicación Web y modificarla en Visual Studio.   Vamos a usar el ejemplo de Azure AD que se [aquí](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect).  
+## <a name="download-and-modify-sample-application-to-authenticate-via-openid-connect-and-ad-fs"></a>Descargue y modifique la aplicación de ejemplo para autenticarse a través de OpenID Connect y AD FS  
+En esta sección se describe cómo descargar la aplicación Web de ejemplo y modificarla en Visual Studio.   Vamos a usar el ejemplo Azure AD que se encuentra [aquí](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect).  
 
-Para descargar el proyecto de ejemplo, use Git Bash y escriba lo siguiente:  
+Para descargar el proyecto de ejemplo, use git bash y escriba lo siguiente:  
 
 ```  
 git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect  
@@ -63,11 +63,11 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
 #### <a name="to-modify-the-app"></a>Para modificar la aplicación  
 
-1.  Abra el ejemplo mediante Visual Studio.  
+1.  Abra el ejemplo con Visual Studio.  
 
-2.  Vuelva a compilar la aplicación para que se restauran todos los paquetes de NuGet que faltan.  
+2.  Vuelva a compilar la aplicación para que se restauren todos los paquetes Nuget que faltan.  
 
-3.  Abra el archivo web.config.  Modifique los valores siguientes para el aspecto siguiente:  
+3.  Abra el archivo Web. config.  Modifique los valores siguientes para que tengan el aspecto siguiente:  
 
     ```  
     <add key="ida:ClientId" value="[Replace this Client Id from #3 in above section]" />  
@@ -81,13 +81,13 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
 4.  Abra el archivo Startup.Auth.cs y realice los cambios siguientes:  
 
-    -   Comente la siguiente:  
+    -   Comente lo siguiente:  
 
         ```  
         //string Authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);  
         ```  
 
-    -   Ajustar la lógica de inicialización de middleware de OpenId Connect con los cambios siguientes:  
+    -   Retoque la lógica de inicialización del middleware de OpenId Connect con los siguientes cambios:  
 
         ```  
         private static string clientId = ConfigurationManager.AppSettings["ida:ClientId"];  
@@ -99,7 +99,7 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
         ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_10.PNG)  
 
-    -   Más abajo, modificar las opciones de middleware de OpenId Connect como se muestra en la siguiente:  
+    -   Más adelante, modifique las opciones de middleware de OpenId Connect como se indican a continuación:  
 
         ```  
         app.UseOpenIdConnectAuthentication(  
@@ -114,22 +114,22 @@ git clone https://github.com/Azure-Samples/active-directory-dotnet-webapp-openid
 
         ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_11.PNG)  
 
-        Cambiando el anterior que estamos realizando lo siguiente:  
+        Al cambiar lo anterior, haremos lo siguiente:  
 
-        -   En lugar de la autoridad para comunicar datos sobre el emisor de confianza, se especifique la ubicación de documento de descubrimiento directamente a través de MetadataAddress  
+        -   En lugar de usar la autoridad para comunicar datos sobre el emisor de confianza, se especifica la ubicación del documento de detección directamente a través de MetadataAddress  
 
-        -   Azure AD no exige la presencia de un URI de redirección en la solicitud, pero sí de ADFS. Por lo tanto, es necesario agregarla aquí  
+        -   Azure AD no exige la presencia de un redirect_uri en la solicitud, pero ADFS sí lo hace. Por lo tanto, es necesario agregarlo aquí  
 
-## <a name="verify-the-app-is-working"></a>Compruebe que la aplicación funciona  
-Una vez realizados los cambios anteriores, presione la tecla F5.  Se abrirá la página de ejemplo.  Haga clic en Inicio de sesión.  
+## <a name="verify-the-app-is-working"></a>Comprobar que la aplicación funciona  
+Una vez realizados los cambios anteriores, presione F5.  Se abrirá la página de ejemplo.  Haga clic en iniciar sesión.  
 
 ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_12.PNG)  
 
-Se redirige a la página de inicio de sesión de AD FS.  Continúe e inicie sesión.  
+Se le redirigirá a la página de inicio de sesión de AD FS.  Continúe e inicie sesión.  
 
 ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_13.PNG)  
 
-Cuando esto se realice correctamente, verá que ahora ha iniciado sesión.  
+Una vez que esto se realice correctamente, verá que ya ha iniciado sesión.  
 
 ![AD FS OpenID](media/Enabling-OpenId-Connect-with-AD-FS-2016/AD_FS_OpenID_14.PNG)  
 

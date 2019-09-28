@@ -7,22 +7,22 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fb186c3ba5cfb3acb9bfd0c3139b09b992fb8863
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1673e6ee6357a9d59e8ac5891625d453bb434088
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190207"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358458"
 ---
 # <a name="add-help-desk-link"></a>Adición del vínculo al Servicio de asistencia 
 
 
-## <a name="to-add-a-help-desk-link"></a>Para agregar un vínculo de Ayuda del servicio de asistencia  
-Para agregar el vínculo de Ayuda del servicio de asistencia que se muestra en el inicio de sesión\-en la página, use el siguiente cmdlet de Windows PowerShell y la sintaxis.  
+## <a name="to-add-a-help-desk-link"></a>Para agregar un vínculo al Departamento de soporte técnico  
+Para agregar el vínculo del Departamento de soporte técnico que se muestra en la página Sign @ no__t-0in, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
 
-![agregar soporte técnico](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
+![Agregar Departamento de soporte técnico](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   
 
 `Set-AdfsGlobalWebContent -HelpDeskLink https://fs1.contoso.com/help/ -HelpDeskLinkText Help`  
@@ -33,4 +33,4 @@ Para agregar el vínculo de Ayuda del servicio de asistencia que se muestra en e
 
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[AD FS Sign-personalización de usuario](AD-FS-user-sign-in-customization.md)  
+[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)  

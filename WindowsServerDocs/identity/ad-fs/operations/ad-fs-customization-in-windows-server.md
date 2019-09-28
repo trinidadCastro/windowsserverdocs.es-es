@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b8832e7e53e94761a489e850726bbd206b8be62b
-ms.sourcegitcommit: 02f1e11ba37a83e12d8ffa3372e3b64b20d90d00
+ms.openlocfilehash: 4b0ea70bd9346bf8abee4e0d96a8915e29cac462
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68863431"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357782"
 ---
 # <a name="ad-fs-customization-in-windows-server-2016"></a>Personalización de AD FS en Windows Server 2016
 
@@ -62,7 +62,7 @@ PS C:\>Set-AdfsRelyingPartyWebTheme
   
 ## <a name="custom-themes-and-advanced-custom-themes"></a>Temas personalizados y temas personalizados avanzados  
   
-En el caso de los temas personalizados, consulte Personalización de las [páginas de inicio de sesión de AD FS](https://technet.microsoft.com/library/dn280950.aspx) y personalización [avanzada de las páginas de inicio de sesión de AD FS.](https://technet.microsoft.com/library/dn636121.aspx)  
+En el caso de los temas personalizados, consulte [Personalización](https://technet.microsoft.com/library/dn280950.aspx) de las páginas de inicio de sesión de AD FS y [Personalización avanzada de las páginas de inicio de sesión de AD FS.](https://technet.microsoft.com/library/dn636121.aspx)  
   
 ## <a name="assigning-custom-web-themes-per-rp"></a>Asignar temas web personalizados por RP  
   
@@ -85,7 +85,7 @@ Para la personalización de la detección del dominio de inicio [, consulte Pers
 Para obtener información sobre cómo personalizar la página de actualización de contraseña [, consulte Personalización de las páginas de inicio de sesión AD FS](https://technet.microsoft.com/library/dn280950.aspx).  
   
 ## <a name="customizing-and-alternate-ids"></a>Personalizar e identificadores alternativos  
-Los usuarios pueden iniciar sesión en aplicaciones habilitadas para Servicios de federación de Active Directory (AD FS) (AD FS) con cualquier forma de identificador de usuario aceptada por Active Directory Domain Services (AD DS). Entre ellos se incluyen los nombres principales de usuariojohndoe@contoso.com(UPN) () o los nombres de cuenta SAM (contoso\johndoe o contoso. com\johndoe).  Para obtener más información, consulte [configuración del identificador de inicio de sesión alternativo.](Configuring-Alternate-Login-ID.md)  
+Los usuarios pueden iniciar sesión en aplicaciones habilitadas para Servicios de federación de Active Directory (AD FS) (AD FS) con cualquier forma de identificador de usuario aceptada por Active Directory Domain Services (AD DS). Estos incluyen nombres principales de usuario (UPN) (johndoe@contoso.com) o nombres de cuenta SAM (contoso\johndoe o contoso. com\johndoe).  Para obtener más información, consulte [configuración del identificador de inicio de sesión alternativo.](Configuring-Alternate-Login-ID.md)  
   
 Además, puede que desee personalizar la página de inicio de sesión de AD FS para proporcionar a los usuarios finales alguna sugerencia sobre el ID. de inicio de sesión alternativo. Para ello, agregue la descripción de la página de inicio de sesión personalizada para obtener más información, consulte [Personalización de las páginas de inicio de sesión de AD FS.](https://technet.microsoft.com/library/dn280950.aspx)   
   

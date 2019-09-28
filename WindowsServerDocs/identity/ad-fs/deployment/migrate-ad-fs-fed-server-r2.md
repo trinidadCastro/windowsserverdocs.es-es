@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: d72217d9e8dc3b0f47382e08346dca977ac14b67
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9e947f1894516de232a0db50bcbb56c7452098cd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867924"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359423"
 ---
 # <a name="migrate-the-ad-fs-20-federation-server-to-ad-fs-on-windows-server-2012-r2"></a>Migrar el servidor de Federación AD FS 2,0 a AD FS en Windows Server 2012 R2
 
@@ -103,14 +103,14 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
   
 ###  <a name="to-export-claims-provider-trusts-and-relying-party-trusts"></a>Exportar las relaciones de confianza para proveedor de notificaciones y las relaciones de confianza para usuario autenticado  
   
-1.  Para exportar AD FS confianzas del proveedor de notificaciones y las relaciones de confianza para usuario autenticado, debe iniciar sesión como administrador (no obstante, no como administrador de dominio) en el servidor de Federación y ejecutar el siguiente script de Windows PowerShell que se encuentra en el **medio/server_support carpeta/ADFS** del CD de instalación de Windows Server 2012 R2 `export-federationconfiguration.ps1`:.  
+1.  Para exportar AD FS confianzas del proveedor de notificaciones y las relaciones de confianza para usuario autenticado, debe iniciar sesión como administrador (no obstante, no como administrador de dominio) en el servidor de Federación y ejecutar el siguiente script de Windows PowerShell que se encuentra en el **medio/server_support carpeta/ADFS** del CD de instalación de Windows Server 2012 R2: `export-federationconfiguration.ps1`.  
   
 > [!IMPORTANT]
 >  El script de exportación admite los siguientes parámetros:  
 > 
-> - Export-federationconfiguration. PS1-PATH < cadena\> [-COMPUTERNAME < cadena\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < SecureString\>]  
->   -   Export-federationconfiguration. PS1-PATH < cadena\> [-COMPUTERNAME < cadena\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < SecureString\>] [- RelyingPartyTrustIdentifier < String [] >] [-ClaimsProviderTrustIdentifier < String [] >]  
->   -   Export-federationconfiguration. PS1-PATH < cadena\> [-COMPUTERNAME < cadena\>] [-Credential < pscredential\>] [-Force] [-CertificatePassword < SecureString\>] [- RelyingPartyTrustName < String [] >] [-ClaimsProviderTrustName < String [] >]  
+> - Export-federationconfiguration. PS1-PATH < cadena @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < SecureString @ no__t-3]  
+>   -   Export-federationconfiguration. PS1-PATH < cadena @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < SecureString @ no__t-3] [-RelyingPartyTrustIdentifier < String [] >] [-ClaimsProviderTrustIdentifier < String [] >]  
+>   -   Export-federationconfiguration. PS1-PATH < cadena @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-CertificatePassword < SecureString @ no__t-3] [-RelyingPartyTrustName < String [] >] [- ClaimsProviderTrustName < cadena [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** : el cmdlet solo exporta las relaciones de confianza para usuario autenticado cuyos identificadores se hayan especificado en la matriz de cadena. El valor predeterminado es no exportar ninguna de las relaciones de confianza para usuario autenticado. Si no se especifica ninguno de los parámetros RelyingPartyTrustIdentifier, ClaimsProviderTrustIdentifier, RelyingPartyTrustName y ClaimsProviderTrustName, el script exportará todas las relaciones de confianza para usuario autenticado y todas las relaciones de confianza para proveedor de notificaciones.  
 > 
@@ -130,7 +130,7 @@ Get-ADFSClaimDescription | Out-File “.\claimtypes.txt”`.
 > 
 >   **-CertificatePassword < SecureString\>**  : especifica una contraseña para exportar las claves privadas de los certificados de AD FS. Si no se especifica, el script solicitará una contraseña si se debe exportar un certificado de AD FS con una clave privada.  
 > 
->   **Entradas**: None  
+>   **Entradas**: Ninguno  
 > 
 >   **Salida**: un valor de cadena; este cmdlet devuelve la ruta de acceso a la carpeta de exportación. Puede canalizar el objeto devuelto a Import-FederationConfiguration.  
   
@@ -193,9 +193,9 @@ import-federationconfiguration.ps1
 > [!IMPORTANT]
 >  El script de importación admite los siguientes parámetros:  
 > 
-> - Import-federationconfiguration. PS1-PATH < cadena\> [-COMPUTERNAME < cadena\>] [-Credential < pscredential\>] [-Force] [-LogPath < cadena\>] [-CertificatePassword < SecureString \>]  
->   -   Import-federationconfiguration. PS1-PATH < cadena\> [-COMPUTERNAME < cadena\>] [-Credential < pscredential\>] [-Force] [-LogPath < cadena\>] [-CertificatePassword < SecureString \>] [-RelyingPartyTrustIdentifier < String [] >] [-ClaimsProviderTrustIdentifier < String [] >  
->   -   Import-federationconfiguration. PS1-PATH < cadena\> [-COMPUTERNAME < cadena\>] [-Credential < pscredential\>] [-Force] [-LogPath < cadena\>] [-CertificatePassword < SecureString \>] [-RelyingPartyTrustName < String [] >] [-ClaimsProviderTrustName < String [] >]  
+> - Import-federationconfiguration. PS1-PATH < cadena @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < String @ no__t-3] [-CertificatePassword < SecureString @ no__t-4]  
+>   -   Import-federationconfiguration. PS1-PATH < cadena @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < String @ no__t-3] [-CertificatePassword < SecureString @ no__t-4] [- RelyingPartyTrustIdentifier < String [] >] [-ClaimsProviderTrustIdentifier < String [] >  
+>   -   Import-federationconfiguration. PS1-PATH < cadena @ no__t-0 [-ComputerName < String @ no__t-1] [-Credential < pscredential @ no__t-2] [-Force] [-LogPath < String @ no__t-3] [-CertificatePassword < SecureString @ no__t-4] [- RelyingPartyTrustName < String [] >] [-ClaimsProviderTrustName < String [] >]  
 > 
 >   **-RelyingPartyTrustIdentifier <string[]>** : el cmdlet solo importa las relaciones de confianza para usuario autenticado cuyos identificadores se hayan especificado en la matriz de cadena. El valor predeterminado es no importar ninguna de las relaciones de confianza para usuario autenticado. Si no se especifica ninguno de los parámetros RelyingPartyTrustIdentifier, ClaimsProviderTrustIdentifier, RelyingPartyTrustName y ClaimsProviderTrustName, el script importará todas las relaciones de confianza para usuario autenticado y todas las relaciones de confianza para proveedor de notificaciones.  
 > 

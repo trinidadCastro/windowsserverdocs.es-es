@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 6a0a1da3dd5c92dff885478c1669bbda5ae07fe5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0e680e07ce1ee27a73791e310a71b85ad76d6318
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867479"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358758"
 ---
 # <a name="ad-fs-openid-connectoauth-concepts"></a>AD FS de los conceptos de OpenID Connect/OAuth
 Se aplica a AD FS 2016 y versiones posteriores
@@ -23,7 +23,7 @@ Se aplica a AD FS 2016 y versiones posteriores
 |Actor| Descripción|
 |-----|-----|
 |Usuario final|Esta es la entidad de seguridad (usuarios, aplicaciones, servicios y grupos) que necesita tener acceso al recurso.|  
-|Cliente|Se trata de la aplicación Web, identificada por su identificador de cliente. El cliente es normalmente la entidad con la que el usuario final interactúa y solicita tokens del servidor de autorización.
+|Remoto|Se trata de la aplicación Web, identificada por su identificador de cliente. El cliente es normalmente la entidad con la que el usuario final interactúa y solicita tokens del servidor de autorización.
 |Servidor de autorización/proveedor de identidades (IdP)| Este es el servidor de AD FS. Es responsable de comprobar la identidad de las entidades de seguridad que existen en el directorio de una organización. Emite tokens de seguridad (token de acceso de portador, token de identificador y token de actualización) tras la autenticación correcta de esas entidades de seguridad.
 |Servidor de recursos/proveedor de recursos/usuario de confianza| Aquí es donde residen el recurso o los datos. Confía en el servidor de autorización para autenticar y autorizar de forma segura al cliente y usa tokens de acceso de portador para asegurarse de que se puede conceder el acceso a un recurso.
 
@@ -38,7 +38,7 @@ En el siguiente diagrama se proporciona la relación más básica entre los acto
 |-----|-----|-----|
 |Aplicación nativa|A veces denominado **cliente público**, se ha diseñado para ser una aplicación cliente que se ejecuta en un equipo o dispositivo y con el que interactúa el usuario.|Solicita tokens del servidor de autorización (AD FS) para el acceso de los usuarios a los recursos. Envía solicitudes HTTP a recursos protegidos, utilizando los tokens como encabezados HTTP.| 
 |Aplicación de servidor (aplicación web)|Una aplicación web que se ejecuta en un servidor y a la que los usuarios suelen tener acceso a través de un explorador. Dado que es capaz de mantener su propia credencial o "secreto" de cliente, a veces se denomina **cliente confidencial**. |Solicita tokens del servidor de autorización (AD FS) para el acceso de los usuarios a los recursos. Antes de solicitar el token, el cliente (aplicación web) debe autenticarse con su secreto. | 
-|Web API|El recurso final al que tiene acceso el usuario. Considérelos como la nueva representación de "usuarios de confianza".|Consume tokens de acceso de portador obtenidos por los clientes| 
+|API Web|El recurso final al que tiene acceso el usuario. Considérelos como la nueva representación de "usuarios de confianza".|Consume tokens de acceso de portador obtenidos por los clientes| 
 
 ## <a name="application-group"></a>Grupo de aplicaciones 
  
@@ -55,7 +55,7 @@ La autenticación moderna usa los siguientes tipos de token:
  
 Al registrar un recurso en AD FS, se pueden configurar ámbitos para permitir que AD FS realice acciones específicas. Además de configurar el ámbito, también se requiere que el valor de ámbito se envíe en la solicitud de AD FS para realizar la acción. Por ejemplo, el administrador debe configurar el ámbito como OpenID durante el registro de recursos y la aplicación (cliente) debe enviar el ámbito = OpenID en la solicitud de autenticación para que AD FS emita el token de identificador. A continuación se proporcionan detalles sobre los ámbitos disponibles en AD FS 
  
-- AZA: si se usan  [las extensiones de protocolo de OAuth 2,0 para los clientes de Broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706)y si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el campo refresh_token de la respuesta, así como el establecimiento del parámetro refresh_token_expires_in el campo a la duración del nuevo token de actualización principal si se aplica uno. 
+- AZA: si se usan [las extensiones de protocolo de OAuth 2,0 para los clientes de broker](https://docs.microsoft.com/openspecs/windows_protocols/ms-oapxbc/2f7d8875-0383-4058-956d-2fb216b44706) and si el parámetro de ámbito contiene el ámbito "AZA", el servidor emite un nuevo token de actualización principal y lo establece en el campo refresh_token de la respuesta, así como establecer refresh_ token_expires_in el campo a la duración del nuevo token de actualización principal si se aplica uno. 
 - OpenID: permite que la aplicación solicite el uso del Protocolo de autorización OpenID Connect. 
 - logon_cert: el ámbito logon_cert permite a una aplicación solicitar certificados de inicio de sesión, que se pueden usar para iniciar sesión de forma interactiva en usuarios autenticados. El servidor de AD FS omite el parámetro access_token de la respuesta y, en su lugar, proporciona una cadena de certificados CMS codificada en base64 o una respuesta de PKI completa de CMC. Puede encontrar más información [aquí](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-oapx/32ce8878-7d33-4c02-818b-6c9164cc731e).
 - user_impersonation: el ámbito user_impersonation es necesario para solicitar correctamente un token de acceso en nombre de AD FS. Para obtener más información sobre cómo usar este ámbito, consulte [creación de una aplicación de varios niveles con on-behalf-of (OBO) mediante OAuth con AD FS 2016](ad-fs-on-behalf-of-authentication-in-windows-server.md). 

@@ -7,14 +7,14 @@ ms.reviewer: anandy
 manager: mtillman
 ms.date: 07/17/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: active-directory-federation-services
-ms.openlocfilehash: 2eb2d0a3cfa6763d308bbd73f1ccf50795b06e77
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 442aef6daccda2ab3e95690a82f43f642e5a3f73
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866338"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358750"
 ---
 # <a name="build-a-native-client-application-using-oauth-public-clients-with-ad-fs-2016-or-later"></a>Compilar una aplicación cliente nativa con clientes de OAuth público con AD FS 2016 o posterior
 
@@ -41,7 +41,7 @@ A continuación se muestra una lista de los requisitos previos necesarios antes 
 
 1. En administración de AD FS, haga clic con el botón derecho en **grupos de aplicaciones** y seleccione **Agregar grupo de aplicaciones**.
 
-2. En el Asistente para grupos de aplicaciones, en nombre, escriba el nombre que prefiera, por ejemplo, NativeToDoListAppGroup. Seleccione la **aplicación nativa que tiene acceso a una plantilla de API Web** . Haga clic en **Next**.
+2. En el Asistente para grupos de aplicaciones, en nombre, escriba el nombre que prefiera, por ejemplo, NativeToDoListAppGroup. Seleccione la **aplicación nativa que tiene acceso a una plantilla de API Web** . Haz clic en **Siguiente**.
  ![Agregar grupo de aplicaciones](media/native-client-with-ad-fs-2016/addapplicationgroup1.png)
 
 3. En la página **aplicación nativa** , tenga en cuenta el identificador generado por AD FS. Este es el identificador con el que AD FS reconocerá la aplicación cliente pública. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ida: ClientID** en el código de la aplicación. Si quiere, puede asignar aquí cualquier identificador personalizado. El URI de redirección es cualquier valor arbitrario, ejemplo, https://ToDoListClient Put ![ aplicación nativa](media/native-client-with-ad-fs-2016/addapplicationgroup2.png)

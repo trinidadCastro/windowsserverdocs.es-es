@@ -1,7 +1,7 @@
 ---
 title: Protección del acceso con privilegios
 description: Enfoque por fases para proteger el acceso con privilegios
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: conceptual
 ms.assetid: f5dec0c2-06fe-4c91-9bdc-67cc6a3ede60
 ms.date: 02/25/2019
@@ -9,16 +9,16 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: 9080f7209660b225d795219127a71ece479855d1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e6ff22d0563fa11aa633004966b2cd2648ba5877
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869231"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357704"
 ---
 # <a name="securing-privileged-access"></a>Protección del acceso con privilegios
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 La protección del acceso con privilegios es un primer paso crítico para establecer controles de seguridad para los recursos empresariales de una organización moderna. La seguridad de la mayoría o de todos los activos empresariales de una organización de ti depende de la integridad de las cuentas con privilegios que se usan para administrar, administrar y desarrollar. Los atacantes a menudo dirigen estas cuentas y otros elementos de acceso con privilegios para obtener acceso a los datos y sistemas mediante ataques de robo de credenciales como [Pass-The-hash y pass-The-ticket](https://www.microsoft.com/pth).
 

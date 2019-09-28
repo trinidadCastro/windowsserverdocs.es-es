@@ -1,9 +1,9 @@
 ---
-title: Usar el control de acceso (ACL) enumera para administrar el flujo de tráfico de red de centro de datos
-description: En este tema, obtendrá información sobre cómo configurar listas de control de acceso (ACL) para administrar el flujo de tráfico de datos con Firewall de centro de datos y las ACL en subredes virtuales. Habilitar y configurar Firewall de centro de datos mediante la creación de ACL que se aplique a una subred virtual o una interfaz de red.
+title: Usar listas de control de acceso (ACL) para administrar el flujo de tráfico de red del centro de recursos
+description: En este tema, aprenderá a configurar las listas de control de acceso (ACL) para administrar el flujo de tráfico de datos mediante el firewall y las ACL del centro de datos en subredes virtuales. Para habilitar y configurar el firewall del centro de seguridad, puede crear ACL que se apliquen a una subred virtual o a una interfaz de red.
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,42 +13,42 @@ ms.assetid: 6a7ac5af-85e9-4440-a631-6a3a38e9015d
 ms.author: pashort
 author: shortpatti
 ms.date: 08/27/2018
-ms.openlocfilehash: 7bfb74e0964735d357226ab1e5af826796c48d81
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6a1d210d25309be322359add20da4eb8d0eee091
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446305"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355810"
 ---
-# <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>Usar el control de acceso (ACL) enumera para administrar el flujo de tráfico de red de centro de datos
+# <a name="use-access-control-lists-acls-to-manage-datacenter-network-traffic-flow"></a>Usar listas de control de acceso (ACL) para administrar el flujo de tráfico de red del centro de recursos
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema, obtendrá información sobre cómo configurar listas de control de acceso (ACL) para administrar el flujo de tráfico de datos con Firewall de centro de datos y las ACL en subredes virtuales. Habilitar y configurar Firewall de centro de datos mediante la creación de ACL que se aplique a una subred virtual o una interfaz de red.   
+En este tema, aprenderá a configurar las listas de control de acceso (ACL) para administrar el flujo de tráfico de datos mediante el firewall y las ACL del centro de datos en subredes virtuales. Para habilitar y configurar el firewall del centro de seguridad, puede crear ACL que se apliquen a una subred virtual o a una interfaz de red.   
 
-Los siguientes ejemplos de este tema muestran cómo usar Windows PowerShell para crear estas ACL.  
+En los siguientes ejemplos de este tema se muestra cómo usar Windows PowerShell para crear estas ACL.  
 
-## <a name="configure-datacenter-firewall-to-allow-all-traffic"></a>Configurar Firewall de centro de datos para permitir todo el tráfico  
+## <a name="configure-datacenter-firewall-to-allow-all-traffic"></a>Configuración del firewall del centro de seguridad para permitir todo el tráfico  
 
-Una vez que implemente SDN, debe probar la conectividad de red básica en su nuevo entorno.  Para ello, cree una regla de Firewall de centro de datos que permite que todo el tráfico de red, sin restricciones.   
+Una vez que implemente SDN, debe probar la conectividad de red básica en el nuevo entorno.  Para ello, cree una regla para el firewall del centro de seguridad que permita todo el tráfico de red, sin restricciones.   
 
-Use las entradas en la tabla siguiente para crear un conjunto de reglas que permiten todo el tráfico de red entrante y saliente.
+Use las entradas de la tabla siguiente para crear un conjunto de reglas que permitan todo el tráfico de red entrante y saliente.
 
 
-| IP de origen | IP de destino | Protocol | Puerto de origen | Puerto de destino | Direction | Acción | Prioridad |
+| IP de origen | IP de destino | Protocol | Puerto de origen | Puerto de destino | Direction | . | Prioridad |
 |:---------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
 |    \*     |       \*       |   Todos    |     \*      |        \*        |  Entrante  | Permitir  |   100    |
 |    \*     |       \*       |   Todos    |     \*      |        \*        | Saliente  | Permitir  |   110    |
 
 ---       
 
-### <a name="example-create-an-acl"></a>Por ejemplo: Crear una ACL 
-En este ejemplo, crear una ACL con dos reglas:
+### <a name="example-create-an-acl"></a>Ejemplo: Crear una ACL 
+En este ejemplo, creará una ACL con dos reglas:
 
-1. **AllowAll_Inbound** -permite todo el tráfico de red que se pasará a la interfaz de red donde está configurada esta ACL.    
-2. **AllowAllOutbound** -permite todo el tráfico a pasar fuera de la interfaz de red. Esta ACL, identificada por el identificador de recurso "AllowAll-1" ya está lista para su uso en interfaces de red y subredes virtuales.  
+1. **AllowAll_Inbound** : permite que todo el tráfico de red pase a la interfaz de red donde está configurada esta ACL.    
+2. **AllowAllOutbound** : permite que todo el tráfico pase fuera de la interfaz de red. Esta ACL, identificada por el identificador de recurso "AllowAll-1" ya está lista para usarse en subredes virtuales e interfaces de red.  
 
-El siguiente script de ejemplo usa los comandos de Windows PowerShell exportados desde el **NetworkController** módulo para crear esta ACL.  
+En el siguiente script de ejemplo se usan los comandos de Windows PowerShell exportados desde el módulo **NetworkController** para crear esta ACL.  
 
 
 ```PowerShell
@@ -84,13 +84,13 @@ New-NetworkControllerAccessControlList -ResourceId "AllowAll" -Properties $aclli
 ```  
 
 >[!NOTE]  
->La referencia de comandos de Windows PowerShell para la controladora de red se encuentra en el tema [Cmdlets de controlador de red](https://technet.microsoft.com/library/mt576401.aspx).  
+>La referencia de comandos de Windows PowerShell para controladora de red se encuentra en el tema [cmdlets de la controladora de red](https://technet.microsoft.com/library/mt576401.aspx).  
 
-## <a name="use-acls-to-limit-traffic-on-a-subnet"></a>Utilice ACL para limitar el tráfico en una subred  
-En este ejemplo, cree una ACL que impide que las máquinas virtuales dentro de la subred 192.168.0.0/24 comunicarse entre sí. Este tipo de ACL es útil para limitar la posibilidad de que un atacante para distribuir lateralmente dentro de la subred, mientras sigue permitiendo que las máquinas virtuales para recibir las solicitudes desde fuera de la subred, así como para comunicarse con otros servicios de otras subredes.   
+## <a name="use-acls-to-limit-traffic-on-a-subnet"></a>Usar ACL para limitar el tráfico en una subred  
+En este ejemplo, creará una ACL que impide que las máquinas virtuales de la subred 192.168.0.0/24 se comuniquen entre sí. Este tipo de ACL es útil para limitar la posibilidad de que un atacante se extienda posteriormente dentro de la subred, a la vez que permite que las máquinas virtuales reciban solicitudes desde fuera de la subred, así como para comunicarse con otros servicios en otras subredes.   
 
 
-|   IP de origen    | IP de destino | Protocol | Puerto de origen | Puerto de destino | Direction | Acción | Prioridad |
+|   IP de origen    | IP de destino | Protocol | Puerto de origen | Puerto de destino | Direction | . | Prioridad |
 |:--------------:|:--------------:|:--------:|:-----------:|:----------------:|:---------:|:------:|:--------:|
 |  192.168.0.1   |       \*       |   Todos    |     \*      |        \*        |  Entrante  | Permitir  |   100    |
 |       \*       |  192.168.0.1   |   Todos    |     \*      |        \*        | Saliente  | Permitir  |   101    |
@@ -101,9 +101,9 @@ En este ejemplo, cree una ACL que impide que las máquinas virtuales dentro de l
 
 --- 
 
-La ACL creada por el script de ejemplo siguiente, identificado por el identificador de recurso **subred 192 168 0 0**, ahora se pueden aplicar a una subred de red virtual que usa la dirección de subred "192.168.0.0/24".  Cualquier interfaz de red que se adjunta automáticamente a esa subred de red virtual obtiene aplica las reglas ACL anteriores.  
+La ACL creada por el siguiente script de ejemplo, identificada por el identificador de recurso **subnet-192-168-0-0**, ahora se puede aplicar a una subred de red virtual que use la dirección de subred "192.168.0.0/24".  Cualquier interfaz de red que esté conectada a la subred de la red virtual obtiene automáticamente las reglas de ACL aplicadas.  
 
-Este es un script de ejemplo mediante los comandos de Windows Powershell para crear esta ACL mediante la API de REST de controladora de red:  
+El siguiente es un script de ejemplo que usa comandos de Windows PowerShell para crear esta ACL mediante la API de REST de la controladora de red:  
 
 ```PowerShell  
 import-module networkcontroller  

@@ -4,17 +4,17 @@ description: Este tema forma parte de la guía de implementación de certificado
 manager: dougkim
 ms.topic: article
 ms.assetid: a1b5fa23-9cb1-4c32-916f-2d75f48b42c7
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
 ms.date: 07/19/2018
-ms.openlocfilehash: 9dbe14bec1c39ab5b967276c4faf3e9fc5a9aae3
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 335efc4fae1f12f2af8443e91c67ff6ba936edb0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546535"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356211"
 ---
 # <a name="copy-the-ca-certificate-and-crl-to-the-virtual-directory"></a>Copiar el certificado de entidad de certificación y la CRL en el directorio virtual
 
@@ -30,11 +30,11 @@ Para llevar a cabo este procedimiento, debe ser miembro del **grupo Admins**. de
   
     - Escriba `certutil -crl` y presione ENTRAR.  
 
-    - Para copiar el certificado CA1 en el recurso compartido de archivos del servidor Web, `copy C:\Windows\system32\certsrv\certenroll\*.crt \\WEB1\pki`escriba y, a continuación, presione Entrar.  
+    - Para copiar el certificado CA1 en el recurso compartido de archivos del servidor Web, escriba `copy C:\Windows\system32\certsrv\certenroll\*.crt \\WEB1\pki` y, a continuación, presione Entrar.  
     
-    - Para copiar las listas de revocación de certificados en el recurso compartido de archivos del servidor `copy C:\Windows\system32\certsrv\certenroll\*.crl \\WEB1\pki`Web, escriba y, a continuación, presione Entrar.  
+    - Para copiar las listas de revocación de certificados en el recurso compartido de archivos del servidor Web, escriba `copy C:\Windows\system32\certsrv\certenroll\*.crl \\WEB1\pki` y, a continuación, presione Entrar.  
   
-2.  Para comprobar que las ubicaciones de las extensiones de CDP y AIA están configuradas correctamente, escriba `pkiview.msc`y, a continuación, presione Entrar. Se abre el MMC de pkiview Enterprise PKI.  
+2.  Para comprobar que las ubicaciones de las extensiones de CDP y AIA están configuradas correctamente, escriba `pkiview.msc` y, a continuación, presione Entrar. Se abre el MMC de pkiview Enterprise PKI.  
   
 3.  En el panel izquierdo, haga clic en el nombre de la entidad de certificación.<p>Por ejemplo, si el nombre de la CA es Corp-CA1-CA, haga clic en **Corp-CA1-CA**. 
 

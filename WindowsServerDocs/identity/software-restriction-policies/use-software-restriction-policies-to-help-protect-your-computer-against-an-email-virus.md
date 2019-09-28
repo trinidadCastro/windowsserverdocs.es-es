@@ -2,7 +2,7 @@
 title: Uso de directivas de restricción de software para ayudar a proteger equipos frente a virus de correo electrónico
 description: Seguridad de Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-software-restriction-policies
@@ -13,58 +13,58 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 41b4c2399a86ef96d34b62295eda4a1ce9300609
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4c691255683eb37eecdbeaa55c094b7ce5c4e26d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850676"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357652"
 ---
 # <a name="use-software-restriction-policies-to-help-protect-your-computer-against-an-email-virus"></a>Uso de directivas de restricción de software para ayudar a proteger equipos frente a virus de correo electrónico
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tema proporciona información de directivas de cómo establecer el control de aplicaciones mediante directivas de restricción de Software (SRP) para ayudar a proteger su equipo contra el principio de virus de correo electrónico con Windows Server 2008 y Windows Vista.
+En este tema se proporciona información sobre cómo establecer directivas de control de aplicaciones mediante directivas de restricción de software (SRP) para ayudar a proteger el equipo frente a virus de correo electrónico a partir de Windows Server 2008 y Windows Vista.
 
 ## <a name="introduction"></a>Introducción
-Las directivas de restricción de software (SRP) son una característica basada en directivas de grupo que identifica los programas de software que se ejecutan en los equipos de un dominio y controla la capacidad de ejecución de dichos programas. Puede usar las directivas de restricción de software para crear una configuración muy restringida para los equipos, en los que solamente pueden ejecutarse aquellas aplicaciones específicamente identificadas. Se integran con Microsoft Active Directory Domain Services y directiva de grupo, pero también puede configurarse en equipos independientes. Para un punto de partida para SRP, consulte el [Software Restriction Policies](software-restriction-policies.md).
+Las directivas de restricción de software (SRP) son una característica basada en directivas de grupo que identifica los programas de software que se ejecutan en los equipos de un dominio y controla la capacidad de ejecución de dichos programas. Puede usar las directivas de restricción de software para crear una configuración muy restringida para los equipos, en los que solamente pueden ejecutarse aquellas aplicaciones específicamente identificadas. Se integran con Microsoft Active Directory Domain Services y directiva de grupo, pero también se pueden configurar en equipos independientes. Para obtener un punto de partida de SRP, consulte las [directivas de restricción de software](software-restriction-policies.md).
 
-Empezando por Windows Server 2008 R2 y Windows 7, Windows AppLocker puede usarse en lugar de o junto con SRP para una parte de su estrategia de control de la aplicación. 
+A partir de Windows Server 2008 R2 y Windows 7, se puede usar Windows AppLocker en lugar de o junto con SRP para una parte de la estrategia de control de la aplicación. 
 
-#### <a name="configure-srp-to-help-protect-against-an-e-mail-virus"></a>Configurar SRP para ayudar a proteger contra los virus de correo electrónico
+#### <a name="configure-srp-to-help-protect-against-an-e-mail-virus"></a>Configuración de SRP para ayudar a protegerse frente a un virus de correo electrónico
 
-1.  Revise las prácticas recomendadas para las directivas de restricción de software comprender el funcionamiento de SRP.
+1.  Revise los procedimientos recomendados para las directivas de restricción de software para comprender el funcionamiento de SRP.
 
     -   [Procedimientos recomendados](software-restriction-policies-technical-overview.md#BKMK_Best_Practices)
 
-    -   [Cómo funcionan las directivas de restricción de Software](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)
+    -   [Cómo funcionan las directivas de restricción de software](https://technet.microsoft.com/library/cc786941(v=WS.10).aspx)
 
 2.  Abra Directivas de restricción de software.
 
     -   [Para el equipo local](administer-software-restriction-policies.md#BKMK_1)
 
-    -   [Para un dominio, sitio o unidad organizativa y está en un servidor miembro o una estación de trabajo que se ha unido a un dominio](administer-software-restriction-policies.md#BKMK_2)
+    -   [Para un dominio, un sitio o una unidad organizativa, y se encuentra en un servidor miembro o en una estación de trabajo que está unida a un dominio](administer-software-restriction-policies.md#BKMK_2)
 
-3.  Si no se ha definido previamente las directivas de restricción de software, crear nuevas directivas de restricción de software.
+3.  Si no ha definido previamente las directivas de restricción de software, cree nuevas directivas de restricción de software.
 
     -   [Para crear nuevas directivas de restricción de software](administer-software-restriction-policies.md#BKMK_Create_SRP)
 
-4.  Crear una regla de ruta de acceso de la carpeta que el programa de correo electrónico se usa para ejecutar los datos adjuntos de correo electrónico y, a continuación, establezca la seguridad de nivel a **no permitido**.
+4.  Cree una regla de ruta de acceso para la carpeta que utiliza su programa de correo electrónico para ejecutar datos adjuntos de correo electrónico y, a continuación, establezca el nivel de seguridad en no **permitido**.
 
     -   [Trabajar con reglas de ruta de acceso](work-with-software-restriction-policies-rules.md#BKMK_Path_Rules)
 
-5.  Especificar los tipos de archivo al que se aplica la regla.
+5.  Especifique los tipos de archivo a los que se aplica la regla.
 
     -   [Para agregar o eliminar un tipo de archivo designado](administer-software-restriction-policies.md#BKMK_Add_Del)
 
-6.  Modificar la configuración de directiva para que se apliquen a los usuarios y grupos que desee:
+6.  Modifique la configuración de directiva para que se aplique a los usuarios y grupos que desee:
 
-    -   Especificar usuarios o grupos a los que no desea que el objeto de directiva de grupo (GPO) que se aplican configuraciones de directiva.
+    -   Especifique los usuarios o grupos a los que no desea que se aplique la configuración de directiva (GPO) del objeto directiva de grupo.
 
-    -   Excluir los administradores locales de las directivas de restricción de software de una configuración de directiva específica en la directiva de grupo y seguir teniendo el resto de la directiva de grupo se aplican a los administradores.
+    -   Excluya los administradores locales de las directivas de restricción de software de una configuración de directiva específica en directiva de grupo y siga teniendo el resto de directiva de grupo se apliquen a los administradores.
 
-        -   [Para impedir que los administradores locales apliquen las directivas de restricción de software](administer-software-restriction-policies.md#BKMK_Prevent_Admin)
+        -   [Para evitar que las directivas de restricción de software se apliquen a los administradores locales](administer-software-restriction-policies.md#BKMK_Prevent_Admin)
 
-7.  Probar la directiva.
+7.  Pruebe la Directiva.
 
 
