@@ -2,7 +2,7 @@
 title: Directivas de restricción de software
 description: Seguridad de Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-software-restriction-policies
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: ab44013b947d33adc12c54b527415bf16c46a4c6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b06d038e919e2f4904d60b88ad223493c4f818eb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875826"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357673"
 ---
 # <a name="software-restriction-policies"></a>Directivas de restricción de software
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En este tema para profesionales de TI describe las directivas de restricción de Software (SRP) en Windows Server 2012 y Windows 8 y proporciona vínculos a información técnica sobre SRP a partir Windows Server 2003.
+En este tema para profesionales de TI se describen las directivas de restricción de software (SRP) en Windows Server 2012 y Windows 8, y se proporcionan vínculos a información técnica sobre SRP a partir de Windows Server 2003.
 
-Para los procedimientos y sugerencias para solucionar problemas, consulte [administrar directivas de restricción de Software](administer-software-restriction-policies.md) y [solucionar problemas de directivas de restricción de Software](troubleshoot-software-restriction-policies.md).
+Para conocer los procedimientos y las sugerencias para solucionar problemas, vea [Administrar directivas de restricción de software](administer-software-restriction-policies.md) y [solucionar problemas de directivas de restricción de software](troubleshoot-software-restriction-policies.md).
 
 ## <a name="BKMK_OVER"></a>Descripción de las directivas de restricción de software
 Las directivas de restricción de software (SRP) son una característica basada en directivas de grupo que identifica los programas de software que se ejecutan en los equipos de un dominio y controla la capacidad de ejecución de dichos programas. Las directivas de restricción de software forman parte de la estrategia de administración y seguridad de Microsoft para ayudar a las empresas a aumentar la confiabilidad, la integridad y la capacidad de administración de los equipos.
@@ -61,7 +61,7 @@ Concretamente, los administradores pueden usar las directivas de restricción de
 ## <a name="BKMK_NEW"></a>Funcionalidad nueva y modificada
 No hay cambios de funcionalidad en las directivas de restricción de software.
 
-## <a name="BKMK_DEP"></a>Funcionalidad desusada o eliminada
+## <a name="BKMK_DEP"></a>Funcionalidad eliminada o desusada
 No hay funcionalidades eliminadas ni desusadas en las directivas de restricción de software.
 
 ## <a name="BKMK_SOFT"></a>Requisitos de software
@@ -81,7 +81,7 @@ Si el diseño requiere la implementaciones de estas directivas en el dominio, ad
 
 -   Directiva de grupo
 
-## <a name="BKMK_INSTALL"></a>Información del administrador del servidor
+## <a name="BKMK_INSTALL"></a>Información de Administrador del servidor
 Las directivas de restricción de software son una extensión del Editor de directivas de grupo local y no se instalan a través de Administrador del servidor, Agregar roles y características.
 
 ## <a name="BKMK_LINKS"></a>Vea también
@@ -89,14 +89,14 @@ En la tabla siguiente se proporcionan vínculos a recursos importantes para comp
 
 |Tipo de contenido|Referencias|
 |--------|-------|
-|**Evaluación del producto**|[Bloqueo de la aplicación con directivas de restricción de Software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
-|**Planeamiento**|[Introducción técnica de directivas de restricción de software](software-restriction-policies-technical-overview.md) (Windows Server 2012)<br /><br />[Referencia técnica de directivas de restricción de software](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx) (Windows Server 2003)|
+|**Evaluación del producto**|[Bloqueo de aplicaciones con directivas de restricción de software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
+|**Planeamiento**|[Información técnica de directivas de restricción de software](software-restriction-policies-technical-overview.md) (Windows Server 2012)<br /><br />[Referencia técnica de directivas de restricción de software](https://technet.microsoft.com/library/cc728085(v=WS.10).aspx) (Windows Server 2003)|
 |**Implementación**|No hay recursos disponibles.|
-|**Operaciones**|[Administrar las directivas de restricción de Software](administer-software-restriction-policies.md) (Windows Server 2012)<br /><br />[Ayuda del producto de las directivas de restricción de software](https://technet.microsoft.com/library/cc779607(v=WS.10).aspx) (Windows Server 2003)|
-|**Solución de problemas**|[Solucionar problemas de directivas de restricción de Software](troubleshoot-software-restriction-policies.md) (Windows Server 2012)<br /><br />[Solución de problemas de las directivas de restricción de software](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx) (Windows Server 2003)|
+|**Operaciones**|[Administrar directivas de restricción de software](administer-software-restriction-policies.md) (Windows Server 2012)<br /><br />[Ayuda del producto de las directivas de restricción de software](https://technet.microsoft.com/library/cc779607(v=WS.10).aspx) (Windows Server 2003)|
+|**Solución de problemas**|[Solucionar problemas de directivas de restricción de software](troubleshoot-software-restriction-policies.md) (Windows Server 2012)<br /><br />[Solución de problemas de las directivas de restricción de software](https://technet.microsoft.com/library/cc737011(v=WS.10).aspx) (Windows Server 2003)|
 |**Seguridad**|[Amenazas y contramedidas para las directivas de restricción de software](https://technet.microsoft.com/library/dd349795(v=WS.10).aspx) (Windows Server 2008)<br /><br />[Amenazas y contramedidas para las directivas de restricción de software](https://technet.microsoft.com/library/hh125926(v=WS.10).aspx) (Windows Server 2008 R2)|
 |**Herramientas y configuración**|[Herramientas y configuraciones de las directivas de restricción de software](https://technet.microsoft.com/library/cc782454(v=WS.10).aspx) (Windows Server 2003)|
-|**Recursos de la comunidad**|[Bloqueo de la aplicación con directivas de restricción de Software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
+|**Recursos de la comunidad**|[Bloqueo de aplicaciones con directivas de restricción de software](https://technet.microsoft.com/magazine/2008.06.srp.aspx?pr=blog)|
 
 
 
