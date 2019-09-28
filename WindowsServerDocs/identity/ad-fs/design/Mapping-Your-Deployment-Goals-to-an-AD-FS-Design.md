@@ -7,23 +7,23 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 13d8ae8b8f3e4c8160f61284e5fb97e21b6a51b6
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: ca10f8e784fea3b99a60b2117f65ba1ccaf6501e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191248"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359092"
 ---
 # <a name="mapping-your-deployment-goals-to-an-ad-fs-design"></a>Asignar los objetivos de implementación a un diseño de AD FS
 
 
-Cuando termines de revisar los servicios de federación de Active Directory existente \(AD FS\) objetivos de implementación y Determines qué objetivos están relacionados con la implementación, puede asignar esos objetivos a un diseño específico de AD FS. Para obtener más información acerca de AD FS predefinidos objetivos de implementación, consulte [identificar los objetivos de implementación de AD FS](Identifying-Your-AD-FS-Deployment-Goals.md).  
+Una vez que haya terminado de revisar los objetivos de implementación de los Servicios de federación de Active Directory (AD FS) existentes \(AD FS @ no__t-1 y determine qué objetivos están relacionados con la implementación, puede asignar esos objetivos a un diseño de AD FS específico. Para obtener más información sobre AD FS objetivos de implementación predefinidos, vea [identificar los objetivos de implementación de AD FS](Identifying-Your-AD-FS-Deployment-Goals.md).  
   
-Utilice la siguiente tabla para determinar qué diseño de AD FS que asigna a la combinación adecuada de AD FS objetivos de implementación para su organización. Esta tabla solo hace referencia a los dos diseños AD FS principales, como se describe en esta guía. Sin embargo, puede crear un híbrido o diseño personalizado de AD FS mediante cualquier combinación de los objetivos de implementación de AD FS para satisfacer las necesidades de su organización.  
+Use la tabla siguiente para determinar qué diseño de AD FS se asigna a la combinación adecuada de los objetivos de implementación de AD FS para su organización. Esta tabla solo hace referencia a los dos diseños de AD FS principales, tal y como se describe en esta guía. Sin embargo, puede crear un diseño híbrido o personalizado de AD FS mediante el uso de cualquier combinación de los objetivos de implementación AD FS para satisfacer las necesidades de su organización.  
   
-|Objetivo de implementación de AD FS|[Diseño de SSO web](Web-SSO-Design.md)|[Diseño de SSO web federado](Federated-Web-SSO-Design.md)|  
+|AD FS objetivo de implementación|[Diseño de SSO web](Web-SSO-Design.md)|[Diseño de SSO web federado](Federated-Web-SSO-Design.md)|  
 |---------------------------------------------------------------------------|----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|  
 |[Proporcionar a los usuarios de Active Directory acceso a aplicaciones y servicios habilitados para notificaciones](Provide-Your-Active-Directory-Users-Access-to-Your-Claims-Aware-Applications-and-Services.md)|No|Sí, en el asociado de cuenta|  
 |[Proporcionar a los usuarios de Active Directory acceso a aplicaciones y servicios de otras organizaciones](Provide-Your-Active-Directory-Users-Access-to-the-Applications-and-Services-of-Other-Organizations.md)|No|Sí, opcional en el asociado de cuenta|  

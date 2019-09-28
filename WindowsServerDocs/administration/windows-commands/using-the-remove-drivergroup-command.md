@@ -1,8 +1,8 @@
 ---
-title: Con el comando remove-DriverGroup
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando Remove-DriverGroup
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b56f162861caf4493550f9e063065e9544e52eae
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d22ae4e191c2110a0b8d4cc50c24c2f3ec4a7e60
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885756"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362934"
 ---
-# <a name="using-the-remove-drivergroup-command"></a>Con el comando remove-DriverGroup
+# <a name="using-the-remove-drivergroup-command"></a>Usar el comando Remove-DriverGroup
 
 
 
@@ -36,10 +36,10 @@ WDSUTIL /Remove-DriverGroup /DriverGroup:<Group Name> [/Server:<Server name>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/ DriverGroup:\<nombre de grupo >|Especifica el nombre del grupo para quitar controlador.|
-|[/ Server:\<nombre del servidor >]|Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se usa el servidor local.|
+|/DriverGroup: \<Group nombre >|Especifica el nombre del grupo de controladores que se va a quitar.|
+|[/Server: \<Server nombre >]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para quitar un grupo de controladores, escriba uno de los siguientes:
 ```

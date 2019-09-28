@@ -7,26 +7,26 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 15a6c095648795badfae6f68f1ba2f9270219db8
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 0cc7a9202813cd3f8d45a72305d13ad197f5b04d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191463"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359165"
 ---
 # <a name="determine-your-federated-application-strategy-in-the-resource-partner"></a>Determinar la estrategia de aplicación federada en el asociado de recurso
 
-Una parte importante del diseño de un nuevo Active Directory Federation Services \(AD FS\) infraestructura en la organización del asociado de recurso es determinar el conjunto completo de aplicaciones y servicios que se usará para participar en el federación y los asociados de cuenta serán los destinatarios de esos recursos. Antes de diseñar una estrategia de servicios y aplicación federada, plantéese las siguientes cuestiones:  
+Una parte importante del diseño de una nueva infraestructura de Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 en la organización del asociado de recurso es determinar el conjunto completo de aplicaciones y servicios que se usarán para participar en la Federación. los asociados de cuenta serán los destinatarios de esos recursos. Antes de diseñar una estrategia de servicios y aplicación federada, plantéese las siguientes cuestiones:  
   
--   ¿Se habilitará e implementar una aplicación ASP.NET o un Windows Communication Foundation \(WCF\) servicio de federación?  
+-   ¿Habilitará e implementará una aplicación ASP.NET o un servicio Windows Communication Foundation \(WCF @ no__t-1 para la Federación?  
   
 -   ¿Necesitarán los usuarios de la red corporativa obtener acceso al servicio o la aplicación federada mediante la autenticación integrada de Windows?  
   
 -   ¿Utilizarán los usuarios de la red perimetral el servicio o la aplicación federada? Si es así, ¿será necesaria la autenticación integrada de Windows?  
   
--   ¿Son todos los servidores Web que hospedan aplicaciones federadas que ejecutan un sistema operativo Windows Server e Internet Information Services \(IIS\)?  
+-   ¿Todos los servidores web que hospedan aplicaciones federadas ejecutan un sistema operativo Windows Server y Internet Information Services \(IIS @ no__t-1?  
   
 -   ¿A quién proporcionará recursos el servicio o la aplicación federada?  
   
@@ -38,7 +38,7 @@ Responder a estas preguntas le ayudará a planear un diseño sólido de AD FS. T
   
 -   [Proporcionar a los usuarios de otra organización acceso a aplicaciones y servicios habilitados para notificaciones](Provide-Users-in-Another-Organization-Access-to-Your-Claims-Aware-Applications-and-Services.md)  
   
-Para obtener más información sobre cómo crear un notificaciones\-compatible con aplicaciones de ASP.NET o servicio WCF, vea [SDK de Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=122266).  
+Para obtener más información sobre cómo crear una aplicación de notificaciones @ no__t-0aware ASP.NET o un servicio WCF, consulte el [SDK de Windows Identity Foundation](https://go.microsoft.com/fwlink/?LinkId=122266).  
   
 ## <a name="see-also"></a>Vea también
 [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)

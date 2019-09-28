@@ -1,74 +1,74 @@
 ---
-title: Recuperación de bosques de AD - servicio de configuración de servidor DNS
+title: 'Recuperación de bosque de AD: configurar el servicio servidor DNS'
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b2c37428a0fb685e6a7fa4875366f3cd13401bd9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2c1f2f68509c9136735fb13e24c86a1da40660eb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842966"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369252"
 ---
-# <a name="ad-forest-recovery---configuring-the-dns-server-service"></a>Recuperación de bosques de AD - configurar el servicio servidor DNS
+# <a name="ad-forest-recovery---configuring-the-dns-server-service"></a>Recuperación del bosque de AD: configurar el servicio servidor DNS
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 y 2012 R2, Windows Server 2008 y 2008 R2
 
-Si el rol de servidor DNS no está instalado en el controlador de dominio que va a restaurar desde copia de seguridad, debe instalar y configurar el servidor DNS. 
+Si el rol de servidor DNS no está instalado en el controlador de dominio que se restaura a partir de una copia de seguridad, debe instalar y configurar el servidor DNS. 
 
 ## <a name="install-and-configure-the-dns-server-service"></a>Instalar y configurar el servicio servidor DNS
 
-Complete este paso para cada controlador de dominio restaurado que no se ejecuta como un servidor DNS una vez completada la restauración. 
+Complete este paso para cada controlador de dominio restaurado que no se ejecute como un servidor DNS una vez finalizada la restauración. 
 
 > [!NOTE]
-> Si el controlador de dominio que puede restaurar desde copia de seguridad se está ejecutando Windows Server 2008 R2, debe conectar el controlador de dominio a una red aislada para instalar el servidor DNS. A continuación, conectar cada uno de los servidores DNS restaurados a una red aislada y mutuamente compartida. Ejecute repadmin/Replsum para comprobar que la replicación funciona entre los servidores DNS restaurados. Después de comprobar la replicación, los controladores de dominio restaurados puede conectarse a la red de producción si el rol de servidor DNS ya está instalado, puede aplicar una revisión que permite que un servidor DNS iniciar mientras el servidor no está conectado a ninguna red. Debe incluir el hotfix en imagen de instalación del sistema operativo durante los procesos de compilación automatizado. Para obtener más información acerca de la revisión, consulte [artículo 975654](https://go.microsoft.com/fwlink/?LinkId=184691) en Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkId=184691). 
+> Si el controlador de dominio restaurado a partir de una copia de seguridad ejecuta Windows Server 2008 R2, debe conectar el controlador de dominio a una red aislada para poder instalar el servidor DNS. A continuación, Conecte cada uno de los servidores DNS restaurados a una red aislada mutuamente compartida. Ejecute repadmin/replsum para comprobar que funciona la replicación entre los servidores DNS restaurados. Después de comprobar la replicación, puede conectar los DC restaurados a la red de producción si el rol del servidor DNS ya está instalado, puede aplicar una revisión que permita que un servidor DNS se inicie mientras el servidor no está conectado a ninguna red. Debe integrar la revisión en la imagen de instalación del sistema operativo durante los procesos de compilación automatizada. Para obtener más información acerca de la revisión, consulte el [artículo 975654](https://go.microsoft.com/fwlink/?LinkId=184691) de Microsoft Knowledge Base (https://go.microsoft.com/fwlink/?LinkId=184691). 
 
-Complete los pasos de instalación y la configuración siguiente.
+Complete los pasos de instalación y configuración que se indican a continuación.
 
-### <a name="to-install-and-the-dns-server-service-using-server-manager"></a>Instalación y el servicio servidor DNS mediante el administrador del servidor  
+### <a name="to-install-and-the-dns-server-service-using-server-manager"></a>Para instalar y el servicio servidor DNS mediante Administrador del servidor  
 
-1. Abra el administrador del servidor y haga clic en **agregar roles y características**. 
+1. Abra Administrador del servidor y haga clic en **Agregar roles y características**. 
 2. En el Asistente para agregar roles, si aparece la página **Antes de comenzar**, haga clic en **Siguiente**. 
-3. En el **tipo de instalación** pantalla select **basada en roles o instalación basada en características** y haga clic en **siguiente**.
-4. En el **selección de servidor** pantalla Seleccione el servidor y haga clic en **siguiente**.
-5. En el **Roles de servidor** pantalla select **servidor DNS**, si se le solicite clic **agregar características** y haga clic en **siguiente**.
-6. En el **características** pantalla clic **siguiente**.
-7. Lea la información de la **servidor DNS** página y, a continuación, haga clic en **siguiente**.
-   ![Servidor DNS](media/AD-Forest-Recovery-Configure-DNS/dns1.png)  
-8. En el **confirmación** página, compruebe que se instalará el rol de servidor DNS y, a continuación, haga clic en **instalar**. 
+3. En la pantalla **tipo de instalación** , seleccione Instalación basada en **características o en roles** y haga clic en **siguiente**.
+4. En la pantalla **selección de servidor** , seleccione el servidor y haga clic en **siguiente**.
+5. En la pantalla **roles de servidor** , seleccione **servidor DNS**. Si se le pide, haga clic en **Agregar características** y en **siguiente**.
+6. En la pantalla **características** , haga clic en **siguiente**.
+7. Lea la información de la página **servidor DNS** y, a continuación, haga clic en **siguiente**.
+   ![DNS Server @ no__t-1  
+8. En la página **confirmación** , compruebe que se instalará el rol de servidor DNS y, a continuación, haga clic en **instalar**. 
 
 ### <a name="to-configure-the-dns-server-service"></a>Para configurar el servicio servidor DNS
 
-1. Abra el administrador del servidor, haga clic en **herramientas** y haga clic en **DNS**.
-   ![Servidor DNS](media/AD-Forest-Recovery-Configure-DNS/dns2.png)
-2. Crear zonas DNS para los mismos nombres de dominio DNS que se hospedan en los servidores DNS antes de funcionamiento defectuoso crítico. Para obtener más información, vea Agregar una zona de búsqueda directa ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)).
-3. Configurar los datos DNS tal como se encontraba antes el mal funcionamiento crítico. Por ejemplo:  
+1. Abra Administrador del servidor, haga clic en **herramientas** y en **DNS**.
+   ![DNS Server @ no__t-1
+2. Cree zonas DNS para los mismos nombres de dominio DNS que se hospedaron en los servidores DNS antes de que el funcionamiento sea crítico. Para obtener más información, consulte Agregar una zona de búsqueda directa ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)).
+3. Configure los datos DNS tal como existían antes de que el funcionamiento sea crítico. Por ejemplo:  
 
-   - Configurar zonas DNS que se almacenan en AD DS. Para obtener más información, consulte Cambiar el tipo de zona ([https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579)).
-   - Configurar la zona DNS es autoritativa para registros de recursos del localizador (Ubicador de DC) del controlador de dominio permitir la actualización dinámica segura. Para obtener más información, consulte permitir sólo actualizaciones dinámicas seguras ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)).
+   - Configure las zonas DNS que se van a almacenar en AD DS. Para obtener más información, consulte cambiar el tipo de zona ([https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579)).
+   - Configure la zona DNS que sea autoritativa para los registros de recursos del localizador de controladores de dominio (Ubicador de DC) para permitir la actualización dinámica segura. Para obtener más información, consulte permitir solo actualizaciones dinámicas seguras ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)).
 
-4. Asegúrese de que la zona DNS primaria contiene registros de recursos de la delegación (nombre del servidor (NS) y pegar recursos de host (A) registros) para la zona secundaria que se hospeda en este servidor DNS. Para obtener más información, vea Crear una delegación de zona ([https://go.microsoft.com/fwlink/?LinkId=74562](https://go.microsoft.com/fwlink/?LinkId=74562)).
-5. Después de configurar DNS, puede acelerar el proceso de registro de los registros de NETLOGON.
+4. Asegúrese de que la zona DNS primaria contiene registros de recursos de delegación (registros de recursos de servidor de nombres (NS) y de host de adherencia (A) para la zona secundaria hospedada en este servidor DNS. Para obtener más información, consulte crear una delegación de zona ([https://go.microsoft.com/fwlink/?LinkId=74562](https://go.microsoft.com/fwlink/?LinkId=74562)).
+5. Después de configurar DNS, puede acelerar el registro de los registros de NETLOGON.
 
    > [!NOTE]
-   > Las actualizaciones dinámicas seguras sólo funcionan cuando está disponible un servidor de catálogo global. 
+   > Las actualizaciones dinámicas seguras solo funcionan cuando hay disponible un servidor de catálogo global. 
 
    En el símbolo del sistema, escriba el siguiente comando y presione ENTRAR:  
 
-   **net stop netlogon**  
+   **net stop Netlogon**  
 
 6. Escriba el siguiente comando y presione ENTRAR:  
 
-   **Net start netlogon**  
+   **net start Netlogon**  
 
    ![Servidor DNS](media/AD-Forest-Recovery-Configure-DNS/dns3.png)  
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Guía de recuperación de bosque de AD](AD-Forest-Recovery-Guide.md)
-- [Recuperación de bosques de AD: procedimientos](AD-Forest-Recovery-Procedures.md)
+- [Guía de recuperación del bosque de AD](AD-Forest-Recovery-Guide.md)
+- [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)
