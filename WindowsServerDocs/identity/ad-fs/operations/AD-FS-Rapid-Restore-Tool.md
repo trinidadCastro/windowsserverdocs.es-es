@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 07/02/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fc924f5e5bdd7dabecac4fdd6805ad261a0fc634
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 77655ab414f83f2c74873b12719f9718c6fb59e5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866168"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358523"
 ---
 # <a name="ad-fs-rapid-restore-tool"></a>Herramienta de restauración rápida de AD FS
 
@@ -88,7 +88,7 @@ Conjuntos de parámetros
 
 - **ServiceAccountCredential&lt;pscredential&gt;** : especifica la cuenta de servicio que se usa para el servicio AD FS que se ejecuta actualmente. Este parámetro solo es necesario si el usuario desea realizar una copia de seguridad del DKM y no es un administrador de dominio o no tiene acceso al contenido del contenedor. 
 
-- **BackupComment&lt;String []&gt;** : cadena informativa sobre la copia de seguridad que se mostrará durante la restauración, similar al concepto de nomenclatura de los puntos de comprobación de Hyper-V. El valor predeterminado es una cadena vacía.
+- **BackupComment &lt;string [] &gt;** -una cadena informativa sobre la copia de seguridad que se mostrará durante la restauración, similar al concepto de nomenclatura de los puntos de comprobación de Hyper-V. El valor predeterminado es una cadena vacía.
 
  
 ## <a name="backup-examples"></a>Ejemplos de copia de seguridad

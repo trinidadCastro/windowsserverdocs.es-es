@@ -1,8 +1,8 @@
 ---
 title: waitfor
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21ced4a9ef0dd7dac5f6c4fc6f171d99fa516c07
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: aecea0ad19ee42e61396eb8b8ccd579b9ce2057b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440314"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362603"
 ---
 # <a name="waitfor"></a>waitfor
 
 
 
-Envía o espera una señal en un sistema. **WAITFOR** se utiliza para sincronizar los equipos a través de una red.
+Envía o espera una señal en un sistema. **WAITFOR** se usa para sincronizar los equipos a través de una red.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -39,33 +39,33 @@ waitfor [/t <Timeout>] <SignalName>
 
 |       Parámetro       |                                                                                         Descripción                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s \<equipo >     | Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificadas en el comando. |
-| /u [\<Domain>\]<User> |                              Ejecuta el script con las credenciales de cuenta de usuario especificada. De forma predeterminada, **waitfor** usa las credenciales del usuario actual.                               |
-|   /p [\<Password>]    |                                                    Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.                                                     |
-|          /si          |                                                                        Envía la señal especificada a través de la red.                                                                        |
-|     /t \<tiempo de espera >     |                                              Especifica el número de segundos que esperar una señal. De forma predeterminada, **waitfor** espera indefinidamente.                                               |
-|     \<SignalName>     |                                                Especifica la señal que **waitfor** espera o envía. *NombreDeSeñal* no distingue mayúsculas de minúsculas.                                                 |
+|    /s \<Computer >     | Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificados en el comando. |
+| /u [\<Domain > \] @ no__t-2 |                              Ejecuta el script con las credenciales de la cuenta de usuario especificada. De forma predeterminada, **WAITFOR** usa las credenciales del usuario actual.                               |
+|   /p [\<Password >]    |                                                    Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                     |
+|          /Si          |                                                                        Envía la señal especificada a través de la red.                                                                        |
+|     /t \<Timeout >     |                                              Especifica el número de segundos que hay que esperar una señal. De forma predeterminada, **WAITFOR** espera indefinidamente.                                               |
+|     @no__t 0SignalName >     |                                                Especifica la señal que **WAITFOR** espera o envía. *SignalName* no distingue entre mayúsculas y minúsculas.                                                 |
 |          /?           |                                                                             Muestra la ayuda en el símbolo del sistema.                                                                             |
 
 ## <a name="remarks"></a>Comentarios
 
--   Los nombres de señal no pueden superar los 225 caracteres. Caracteres válidos son 0-9, a-z, A-z y el ASCII extendido el juego de caracteres (128-255).
--   Si no usas **/s**, la señal se difunde a todos los sistemas en un dominio. Si usas **/s**, se envía una señal solo con el sistema especificado.
--   Puede ejecutar varias instancias de **waitfor** en un único equipo, pero cada instancia de **waitfor** debe esperar una señal diferente. Solo una instancia de **waitfor** puede esperar una señal determinada en un equipo determinado.
--   Puede activar una señal manualmente mediante el **/si** opción de línea de comandos.
--   **WAITFOR** se ejecuta solo en XP de Windows y los servidores que ejecutan un sistema operativo Windows Server 2003, pero pueden enviar señales a cualquier equipo que ejecute un sistema operativo de Windows.
--   Los equipos pueden recibir señales sólo si están en el mismo dominio que el equipo que envía la señal.
--   Puede usar **waitfor** al probar las compilaciones de software. Por ejemplo, el equipo que compila puede enviar una señal a varios equipos que ejecutan **waitfor** después de la compilación se ha completado correctamente. Al recibir la señal, el archivo por lotes que incluye **waitfor** puede indicar a los equipos para iniciar inmediatamente la instalación de software o ejecutar pruebas en la compilación.
+-   Los nombres de señal no pueden superar los 225 caracteres. Los caracteres válidos son a-z, A-Z, 0-9 y el juego de caracteres extendidos ASCII (128-255).
+-   Si no usa **/s**, la señal se difundirá a todos los sistemas de un dominio. Si utiliza **/s**, la señal se envía solo al sistema especificado.
+-   Puede ejecutar varias instancias de **WAITFOR** en un único equipo, pero cada instancia de **WAITFOR** debe esperar una señal diferente. Solo una instancia de **WAITFOR** puede esperar una señal determinada en un equipo determinado.
+-   Puede activar una señal manualmente mediante la opción de línea de comandos **/si** .
+-   **WAITFOR** solo se ejecuta en Windows XP y en los servidores que ejecutan un sistema operativo windows Server 2003, pero puede enviar señales a cualquier equipo que ejecute un sistema operativo Windows.
+-   Los equipos solo pueden recibir señales si están en el mismo dominio que el equipo que envía la señal.
+-   Puede usar **WAITFOR** al probar las compilaciones de software. Por ejemplo, el equipo de compilación puede enviar una señal a varios equipos que ejecuten **WAITFOR** después de que la compilación se haya completado correctamente. Al recibir la señal, el archivo por lotes que incluye **WAITFOR** puede indicar a los equipos que inicien inmediatamente la instalación de software o la ejecución de pruebas en la compilación compilada.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para esperar hasta que se recibe la señal "espresso\build007", escriba:
+Para esperar hasta que se reciba la señal "espresso\build007", escriba:
 ```
 waitfor espresso\build007
 ```
-De forma predeterminada, **waitfor** espera indefinidamente una señal.
+De forma predeterminada, **WAITFOR** espera indefinidamente una señal.
 
-Para esperar 10 segundos para la señal "espresso\compile007" poder recibir antes de agotar el tiempo, escriba:
+Para esperar 10 segundos a que se reciba la señal "espresso\compile007" antes de que se agote el tiempo de espera, escriba:
 ```
 waitfor /t 10 espresso\build007
 ```

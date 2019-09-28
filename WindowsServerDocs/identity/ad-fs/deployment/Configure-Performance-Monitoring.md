@@ -6,15 +6,15 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 82added5018d83aeb9fe7d8033204a0d19bd047a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 37dd52b8771eda695069dd996fbd920e31f80ef1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868102"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359808"
 ---
 # <a name="configure-performance-monitoring"></a>Configurar la supervisión de rendimiento
   
@@ -41,7 +41,7 @@ AD FS incluye sus propios contadores de rendimiento específicos para ayudarle a
   
 7. Cuando se le pida que agregue las claves del registro que desea supervisar, haga clic en **siguiente**.  
   
-8. Cuando se le pida que especifique la ubicación para guardar los datos de rendimiento, puede aceptar \(la ubicación predeterminada **% SystemDrive%\\\\\\** perflogss admin _< recopilador de\_datos. establezca\_>_ y, a continuación, haga clic en **siguiente**.  
+8. Cuando se le pida que especifique la ubicación para guardar los datos de rendimiento, puede aceptar la ubicación predeterminada \( **% SystemDrive% \\PerfLogs @ no__t-3Admin @ no__t-4** _< Data @ no__t-6collector @ no__t-7SET >_ y, a continuación, haga clic en **Siguiente**.  
   
 9. Cuando se le pregunte si desea crear el conjunto de recopiladores de datos, seleccione **Guardar y cerrar**y, a continuación, haga clic en **Finalizar**.  
   

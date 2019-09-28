@@ -1,9 +1,9 @@
 ---
-title: PASO 5 comprobar el estado OTP en EDGE1
-description: 'En este tema forma parte de la Guía del laboratorio de pruebas: demostrar DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
+title: Paso 5-comprobar el estado de OTP en EDGE1
+description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,26 +12,26 @@ ms.topic: article
 ms.assetid: 013df067-e2a0-4cd5-a08b-29238663ebf8
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b807e2a647cc9eb39351c0ba7a69e5c04750f000
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 773862f2bec0826f12cd3bf55025243583c20114
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281324"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367514"
 ---
-# <a name="step-5-verify-otp-health-on-edge1"></a>PASO 5 comprobar el estado OTP en EDGE1
+# <a name="step-5-verify-otp-health-on-edge1"></a>Paso 5-comprobar el estado de OTP en EDGE1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Los procedimientos siguientes comprobación que OTP está configurado y funciona correctamente mediante la supervisión de estado del servidor de DirectAccess EDGE1.  
+Los procedimientos siguientes comprueban que OTP está configurado y funciona correctamente mediante la supervisión de estado del servidor de DirectAccess en EDGE1.  
   
-### <a name="verify-otp-health-on-edge1-using-directaccess-server-health-monitoring"></a>Comprobar el estado de la OTP en EDGE1 mediante la supervisión de estado del servidor de DirectAccess  
+### <a name="verify-otp-health-on-edge1-using-directaccess-server-health-monitoring"></a>Comprobar el estado de OTP en EDGE1 con la supervisión de estado del servidor de DirectAccess  
   
-1.  En EDGE1, abra el **administración de acceso remoto** consola.  
+1.  En EDGE1, abra la consola de **Administración de acceso remoto** .  
   
-2.  Haga clic en **estado de las operaciones**.  
+2.  Haga clic en **Estado de las operaciones**.  
   
-3.  Compruebe que el estado de OTP es **trabajar**.  
+3.  Compruebe que el estado de OTP **funciona**.  
   
 
 

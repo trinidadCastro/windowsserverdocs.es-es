@@ -1,93 +1,93 @@
 ---
-title: Implementar a un testigo de recurso compartido de archivos en Windows Server de 2019
-ms.prod: windows-server-threshold
+title: Implementar un testigo de recurso compartido de archivos en Windows Server 2019
+ms.prod: windows-server
 ms.manager: eldenc
 ms.technology: failover-clustering
 ms.topic: article
 author: johnmarlin-msft
 ms.date: 01/24/2019
-description: Testigos de recurso compartido de archivos le permiten usar un recurso compartido de archivos de voto de quórum de clúster. Este tema describe los testigos de recurso compartido de archivo y la nueva funcionalidad, incluido el uso de una unidad USB conectada a un enrutador como un testigo de recurso compartido de archivos.
+description: Los testigos de recurso compartido de archivos permiten usar un recurso compartido de archivos para votar en el cuórum del clúster. En este tema se describen testigos de recurso compartido de archivos y la nueva funcionalidad, incluido el uso de una unidad USB conectada a un enrutador como testigo de recurso compartido de archivos.
 ms.localizationpriority: medium
-ms.openlocfilehash: 47371be946c08cac2f271138d701922fc340a89d
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.openlocfilehash: 9f0a0c5b48f7c382367e4b1100ff649fe73d3be9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66453037"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369764"
 ---
-# <a name="deploy-a-file-share-witness"></a>Implementar un testigo del recurso compartido de archivos
+# <a name="deploy-a-file-share-witness"></a>Implementación de un testigo de recurso compartido de archivos
 
 > Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Un testigo del recurso compartido de archivos es un recurso compartido SMB que usa el clúster de conmutación por error como un voto de quórum del clúster. En este tema se proporciona información general de la tecnología y la nueva funcionalidad en Windows Server 2019, incluido el uso de una unidad USB conectada a un enrutador como un testigo de recurso compartido de archivos.
+Un testigo de recurso compartido de archivos es un recurso compartido de SMB que el clúster de conmutación por error usa como voto en el cuórum del clúster. En este tema se proporciona información general sobre la tecnología y la nueva funcionalidad de Windows Server 2019, incluido el uso de una unidad USB conectada a un enrutador como testigo de recurso compartido de archivos.
 
-Testigos de recurso compartido de archivos son útiles en las siguientes circunstancias:  
+Los testigos de recurso compartido de archivos son útiles en las siguientes circunstancias:  
 
-- No se puede usar un testigo en la nube porque no todos los servidores del clúster tienen una conexión a Internet segura
-- No se puede usar un testigo de disco porque no existe ningún unidades compartidas que se usará para un testigo de disco. Podría tratarse de un clúster de espacios de almacenamiento directo, SQL Server siempre en disponibilidad grupos (AG), del grupo de disponibilidad de base de datos (DAG) etcetera.  Ninguno de estos tipos de clústeres utiliza discos compartidos.
+- No se puede usar un testigo en la nube porque no todos los servidores del clúster tienen una conexión a Internet confiable
+- No se puede usar un testigo de disco porque no hay ninguna unidad compartida para usar en un testigo de disco. Podría ser un clúster de Espacios de almacenamiento directo, SQL Server Always On de grupos de disponibilidad (AG), un grupo de disponibilidad de base de datos de Exchange (DAG), etc.  Ninguno de estos tipos de clústeres usa discos compartidos.
 
-## <a name="file-share-witness-requirements"></a>Requisitos de testigo de recurso compartido de archivos
+## <a name="file-share-witness-requirements"></a>Requisitos del testigo del recurso compartido de archivos
 
-Puede hospedar a un testigo del recurso compartido de archivos en un servidor de Windows unido al dominio, o si el clúster se está ejecutando Windows Server 2019, cualquier dispositivo que puede host un SMB 2 o posterior archivo compartir.
+Puede hospedar un testigo de recurso compartido de archivos en un servidor Windows unido a un dominio o, si el clúster ejecuta Windows Server 2019, cualquier dispositivo que pueda hospedar un recurso compartido de archivos SMB 2 o posterior.
 
 |Tipo de servidor de archivos                 | Clústeres admitidos |
 |---------------------------------|--------------------|
-|Cualquier dispositivo w/un SMB 2 recurso compartido de archivos | Windows Server 2019|
-|Unido al dominio de Windows Server     | Windows Server 2008 y versiones posterior|
+|Cualquier dispositivo con un recurso compartido de archivos SMB 2 | Windows Server 2019|
+|Windows Server unido a un dominio     | Windows Server 2008 y versiones posteriores|
 
-Si el clúster se está ejecutando Windows Server 2019, estos son los requisitos:
+Si el clúster ejecuta Windows Server 2019, estos son los requisitos:
 
-- Un recurso compartido de archivos SMB *en cualquier dispositivo que usa el protocolo más adelante o SMB 2*, incluidos:
+- Un recurso compartido de archivos SMB *en cualquier dispositivo que use el protocolo SMB 2 o posterior*, incluido:
     - Dispositivos de almacenamiento conectado a la red (NAS)
-    - Equipos de Windows Unidos a un grupo de trabajo
-    - Enrutadores, con el almacenamiento USB conectado localmente
+    - Equipos Windows Unidos a un grupo de trabajo
+    - Enrutadores con almacenamiento USB conectado localmente
 - Una cuenta local en el dispositivo para autenticar el clúster
-- Si en su lugar usa Active Directory para autenticar el clúster con el recurso compartido de archivos, el objeto de nombre de clúster (CNO) debe tener permisos de escritura en el recurso compartido y el servidor debe estar en el mismo bosque de Active Directory que el clúster
-- El recurso compartido de archivos tiene un mínimo de 5 MB de espacio libre
+- Si en su lugar usa Active Directory para autenticar el clúster con el recurso compartido de archivos, el objeto de nombre de clúster (CNO) debe tener permisos de escritura en el recurso compartido y el servidor debe estar en el mismo bosque Active Directory que el clúster.
+- El recurso compartido de archivos tiene un mínimo de 5 MB de espacio disponible
 
-Si el clúster se está ejecutando Windows Server 2016 o versiones anteriores, estos son los requisitos:
+Si el clúster ejecuta Windows Server 2016 o una versión anterior, estos son los requisitos:
 
 - Recurso compartido de archivos SMB *en un servidor de Windows unido al mismo bosque de Active Directory que el clúster*
 - El objeto de nombre de clúster (CNO) debe tener permisos de escritura en el recurso compartido
-- El recurso compartido de archivos tiene un mínimo de 5 MB de espacio libre
+- El recurso compartido de archivos tiene un mínimo de 5 MB de espacio disponible
 
 Otras notas:
-- Para usar un testigo de recurso compartido de archivo alojado en los dispositivos que no sea un servidor de Windows unido al dominio, actualmente debe usar el **Set-ClusterQuorum-Credential** cmdlet de PowerShell para establecer el testigo, tal como se describe más adelante en este tema.
-- Para lograr alta disponibilidad, puede usar a un testigo del recurso compartido de archivos en un clúster de conmutación por error independiente
-- El recurso compartido de archivos puede usarse por varios clústeres
-- No se admite el uso de un recurso compartido de sistema de archivos distribuido (DFS) o almacenamiento replicado con cualquier versión de agrupación en clústeres de conmutación por error.  Pueden provocar una situación de cerebro dividido, donde los servidores en clúster se ejecutan independientemente unas de otras y podrían provocar la pérdida de datos.
+- Para usar un testigo de recurso compartido de archivos hospedado en dispositivos que no sean un servidor Windows unido a un dominio, actualmente debe usar el cmdlet **set-ClusterQuorum-Credential de** PowerShell para establecer el testigo, como se describe más adelante en este tema.
+- Para lograr una alta disponibilidad, puede usar un testigo de recurso compartido de archivos en un clúster de conmutación por error independiente.
+- Varios clústeres pueden usar el recurso compartido de archivos
+- El uso de un recurso compartido de Sistema de archivos distribuido (DFS) o almacenamiento replicado no es compatible con ninguna versión de clústeres de conmutación por error.  Pueden provocar una situación de cerebro dividida en la que los servidores agrupados se ejecutan de forma independiente y podrían provocar la pérdida de datos.
 
 ## <a name="creating-a-file-share-witness-on-a-router-with-a-usb-device"></a>Creación de un testigo de recurso compartido de archivos en un enrutador con un dispositivo USB
 
-En [2018 de Microsoft Ignite](https://azure.microsoft.com/ignite/), [almacenamiento de datos](http://www.dataonstorage.com/) tenía un clúster de espacios de almacenamiento directo en su área de pantalla completa.  Este clúster se ha conectado a un [NetGear](https://www.netgear.com) Nighthawk X4S Wi-Fi enrutador mediante el puerto USB como un archivo de recurso compartido testigo similar al siguiente.
+En el [2018 de Microsoft](https://azure.microsoft.com/ignite/), el almacenamiento de [datos](http://www.dataonstorage.com/) tenía un clúster espacios de almacenamiento directo en su área de quiosco.  Este clúster se conectó a un enrutador Wi-Fi de [Netgear](https://www.netgear.com) Nighthawk X4S mediante el puerto USB como testigo de recurso compartido de archivos similar a este.
 
-![NetGear testigo](media/File-Share-Witness/FSW1.png)
+![Testigo de NetGear](media/File-Share-Witness/FSW1.png)
 
-Los pasos para crear un testigo del recurso compartido de archivos mediante un dispositivo USB en este enrutador concreto se enumeran a continuación.  Tenga en cuenta que los pasos en otros enrutadores y los dispositivos NAS variarán y deben realizarse mediante el proveedor había proporcionado instrucciones.
+A continuación se indican los pasos para crear un testigo de recurso compartido de archivos mediante un dispositivo USB en este enrutador determinado.  Tenga en cuenta que los pasos de otros enrutadores y dispositivos NAS variarán y deben realizarse con las direcciones proporcionadas por el proveedor.
 
 
 1. Inicie sesión en el enrutador con el dispositivo USB conectado.
 
-   ![Interfaz NetGear](media/File-Share-Witness/FSW2.png)
+   ![Interfaz de NetGear](media/File-Share-Witness/FSW2.png)
 
-2. En la lista de opciones, seleccione ReadySHARE que es donde se pueden crear recursos compartidos.
+2. En la lista de opciones, seleccione ReadySHARE, que es donde se pueden crear los recursos compartidos.
 
-   ![NetGear ReadySHARE](media/File-Share-Witness/FSW3.png)
+   ![ReadySHARE de NetGear](media/File-Share-Witness/FSW3.png)
 
-3. Para un testigo de recurso compartido de archivos, un recurso compartido de básico es todo lo que es necesario.  Seleccione el botón de edición se abrirá un cuadro de diálogo donde se puede crear el recurso compartido en el dispositivo USB.
+3. En el caso de un testigo de recurso compartido de archivos, todo lo que se necesita es un recurso compartido básico.  Al seleccionar el botón Editar aparecerá un cuadro de diálogo en el que se puede crear el recurso compartido en el dispositivo USB.
 
-   ![Interfaz NetGear compartir](media/File-Share-Witness/FSW4.png)
+   ![Interfaz de recurso compartido de NetGear](media/File-Share-Witness/FSW4.png)
 
-4. Una vez que seleccione el botón Aplicar, el recurso compartido se crea y se puede ver en la lista.
+4. Una vez que seleccione el botón aplicar, se creará el recurso compartido y podrá verse en la lista.
 
    ![Recursos compartidos de NetGear](media/File-Share-Witness/FSW5.png)
 
-5. Una vez creado el recurso compartido, el testigo de recurso compartido de archivos para clúster se crean con PowerShell.
+5. Una vez creado el recurso compartido, la creación del testigo del recurso compartido de archivos para el clúster se realiza con PowerShell.
 
    ```PowerShell
    Set-ClusterQuorum -FileShareWitness \\readyshare\Witness -Credential (Get-Credential)
    ```
 
-   Esto muestra un cuadro de diálogo para especificar la cuenta local en el dispositivo.
+   Se muestra un cuadro de diálogo para especificar la cuenta local en el dispositivo.
 
-Estos mismos pasos similares pueden realizarse en otros enrutadores con capacidades USB, dispositivos NAS u otros dispositivos de Windows.
+Estos mismos pasos similares se pueden realizar en otros enrutadores con capacidades USB, dispositivos NAS u otros dispositivos Windows.

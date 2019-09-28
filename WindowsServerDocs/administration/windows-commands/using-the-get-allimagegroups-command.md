@@ -1,8 +1,8 @@
 ---
-title: Mediante el comando get-AllImageGroups
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando Get-AllImageGroups
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 917f61327a3d39ee97c5fd59072884f7844c487e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 54e302dca5014d084c7277154eb491f9e33a536b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822356"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363314"
 ---
-# <a name="using-the-get-allimagegroups-command"></a>Mediante el comando get-AllImageGroups
+# <a name="using-the-get-allimagegroups-command"></a>Usar el comando Get-AllImageGroups
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Recupera información sobre todos los grupos de imágenes en un servidor y todas las imágenes de esos grupos de imágenes.
+Recupera información sobre todos los grupos de imágenes de un servidor y todas las imágenes de esos grupos de imágenes.
 ## <a name="syntax"></a>Sintaxis
 ```
 wdsutil [Options] /Get-AllImageGroups [/Server:<Server name>] [/detailed]
@@ -32,10 +32,10 @@ wdsutil [Options] /Get-AllImageGroups [/Server:<Server name>] [/detailed]
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usará el servidor local.|
-|[/ detallada]|Devuelve los metadatos de imagen de cada imagen. Si no se usa este parámetro, el comportamiento predeterminado es devolver el nombre de la imagen, descripción y nombre de archivo para cada imagen.|
-## <a name="BKMK_examples"></a>Ejemplos
-Para ver información acerca de los grupos de la imagen, escriba uno de los siguientes:
+|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
+|[/detailed]|Devuelve los metadatos de la imagen de cada imagen. Si no se utiliza este parámetro, el comportamiento predeterminado es devolver solo el nombre de la imagen, la descripción y el nombre de archivo de cada imagen.|
+## <a name="BKMK_examples"></a>Example
+Para ver información acerca de los grupos de imágenes, escriba uno de los siguientes:
 ```
 wdsutil /Get-AllImageGroups
 wdsutil /verbose /Get-AllImageGroups /Server:MyWDSServer /detailed
@@ -43,6 +43,6 @@ wdsutil /verbose /Get-AllImageGroups /Server:MyWDSServer /detailed
 #### <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 [con el comando add-ImageGroup](using-the-add-imagegroup-command.md)
-[con el comando get-ImageGroup](using-the-get-imagegroup-command.md)
-[mediante el Comando Remove-ImageGroup](using-the-remove-imagegroup-command.md)
-[subcomando: set-ImageGroup](subcommand-set-imagegroup.md)
+[mediante el comando Get-ImageGroup](using-the-get-imagegroup-command.md)
+[mediante el comando Remove-ImageGroup](using-the-remove-imagegroup-command.md)
+[Subcommand: set-ImageGroup](subcommand-set-imagegroup.md)

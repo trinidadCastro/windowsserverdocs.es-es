@@ -1,7 +1,7 @@
 ---
-title: 'Paso 1: instalar el rol de servidor WSUS'
-description: 'Tema de Windows Server Update Service (WSUS): describe cómo instalar el rol de servidor con el administrador del servidor'
-ms.prod: windows-server-threshold
+title: 'Paso 1: instalar el rol de servidor de WSUS'
+description: 'Tema de Windows Server Update Service (WSUS): describe cómo instalar el rol de servidor mediante Administrador del servidor'
+ms.prod: windows-server
 ms.reviewer: na
 ms.technology: manage-wsus
 ms.topic: article
@@ -10,14 +10,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4027f7656c17b2ba46fdf44e3af4de42bb056a6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 22554a9669c30cc827c509824f187fbaaedb1272
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814006"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361700"
 ---
-# <a name="step-1-install-the-wsus-server-role"></a>Paso 1: Instalar el rol de servidor WSUS
+# <a name="step-1-install-the-wsus-server-role"></a>Paso 1: Instalar el rol de servidor de WSUS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -30,17 +30,17 @@ El siguiente paso en la implementación del servidor WSUS es instalar el rol de 
 
 1.  Inicie sesión en el servidor donde tiene previsto instalar el rol de servidor de WSUS, con una cuenta que sea miembro del grupo local Administradores.
 
-2.  En **administrador del servidor**, haga clic en **administrar**y, a continuación, haga clic en **agregar Roles y características**.
+2.  En **Administrador del servidor**, haga clic en **administrar**y, a continuación, haga clic en **Agregar roles y características**.
 
 3.  En la página **Antes de comenzar** , haga clic en **Siguiente**.
 
-4.  En el **Seleccionar tipo de instalación** página, confirme que **instalación basada en roles o basada en características** opción está seleccionada y haga clic en **siguiente**.
+4.  En la página **Seleccionar tipo de instalación** , confirme que la opción instalación basada en **características o en roles** está seleccionada y haga clic en **siguiente**.
 
-5.  En el **Seleccionar servidor de destino** página, elija dónde se encuentra el servidor (desde un grupo de servidores o desde un disco duro virtual). Una vez que selecciones la ubicación, elige el servidor en el que quieres instalar el rol de servidor de WSUS y después haz clic en **Siguiente**.
+5.  En la página **Seleccionar servidor de destino** , elija dónde se encuentra el servidor (de un grupo de servidores o de un disco duro virtual). Una vez que selecciones la ubicación, elige el servidor en el que quieres instalar el rol de servidor de WSUS y después haz clic en **Siguiente**.
 
-6.  En el **seleccionar roles de servidor** página, seleccione **Windows Server Update Services**.  Se abre **Agregar características requeridas para Windows Server Update Services**. Haz clic en **Agregar características requeridas**y, a continuación, haz clic en **Siguiente**.
+6.  En la página **Seleccionar roles de servidor** , seleccione **Windows Server Update Services**.  Se abre **Agregar características requeridas para Windows Server Update Services**. Haz clic en **Agregar características requeridas**y, a continuación, haz clic en **Siguiente**.
 
-7.  En el **seleccionar características**página. conservar las selecciones predeterminadas y, a continuación, haga clic en **siguiente**.
+7.  En la página **seleccionar características**. Conserve las selecciones predeterminadas y, a continuación, haga clic en **siguiente**.
 
     > [!IMPORTANT]
     > WSUS solo requiere la configuración predeterminada del rol de servidor web. Si se le solicita una configuración adicional para el rol de servidor web mientras configura WSUS, acepte con seguridad los valores predeterminados y continúe la instalación de WSUS.
@@ -54,7 +54,7 @@ El siguiente paso en la implementación del servidor WSUS es instalar el rol de 
 
 10. En la página **Selección de ubicación de contenido**, escribe una ubicación válida para almacenar las actualizaciones. Por ejemplo, puedes crear una carpeta llamada WSUS_database en la raíz de la unidad K específicamente para este propósito y escribir **k:\WSUS_database** como una ubicación válida.
 
-11. Haz clic en **Siguiente**. Se abre la página **Rol Servidor web (IIS)** . Revisa la información y, a continuación, haz clic en **Siguiente**. En **seleccionar servicios de rol para instalar para el servidor Web (IIS)**, conserva los valores predeterminados y, a continuación, haga clic en **siguiente**.
+11. Haz clic en **Siguiente**. Se abre la página **Rol Servidor web (IIS)** . Revisa la información y, a continuación, haz clic en **Siguiente**. En **Seleccione los servicios de función que desea instalar para el servidor Web (IIS)** , conserve los valores predeterminados y, a continuación, haga clic en **siguiente**.
 
 12. En la página **Confirmar selecciones de instalación** , revise las opciones seleccionadas y haga clic en **Instalar**. Se ejecuta el Asistente para la instalación de WSUS. Esto puede llevar varios minutos.
 
@@ -63,5 +63,5 @@ El siguiente paso en la implementación del servidor WSUS es instalar el rol de 
 14. En **Administrador del servidor**, compruebe si aparece una notificación que le informa que es necesario reiniciar el servidor. Esta puede variar según el rol de servidor instalado. Si se requiere el reinicio, asegúrese de reiniciar el servidor para que finalice la instalación.
 
 > [!IMPORTANT]
-> En este punto se finaliza el proceso de instalación, sin embargo, para que WSUS ser funcional que necesita continuar a [paso 2: Configurar WSUS](2-configure-wsus.md).
+> En este momento, el proceso de instalación ha finalizado, pero para que WSUS sea funcional, debe continuar en @no__t 0Step 2: Configure WSUS @ no__t-0.
 

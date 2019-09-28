@@ -1,148 +1,148 @@
 ---
-title: Recuperación de bosques de AD - determinar cómo recuperar el bosque
+title: 'Recuperación del bosque de AD: determinar cómo recuperar el bosque'
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/09/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 30d23d977b4d7cd320d78ff340120df7013dee4c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d604efded5b6a2ff3911a92f52817498f43c9933
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817736"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369166"
 ---
 # <a name="determine-how-to-recover-the-forest"></a>Determinar cómo recuperar el bosque
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 y 2012 R2, Windows Server 2008 y 2008 R2
 
-Recuperación de un bosque de Active Directory completo implica restaurarla a partir de copia de seguridad o volver a instalar los servicios de dominio de Active Directory (AD DS) en cada controlador de dominio (DC) en el bosque. Recuperación del bosque restaura cada dominio del bosque a su estado en el momento de la última copia de seguridad de confianza. Por lo tanto, la operación de restauración dará como resultado la pérdida de al menos los siguientes datos de Active Directory:
+La recuperación de un bosque de Active Directory completo implica su restauración a partir de una copia de seguridad o la reinstalación de Active Directory Domain Services (AD DS) en cada controlador de dominio (DC) del bosque. La recuperación del bosque restaura cada dominio del bosque a su estado en el momento de la última copia de seguridad de confianza. Por consiguiente, la operación de restauración producirá la pérdida de al menos los siguientes datos de Active Directory:
 
-- Todos los objetos (por ejemplo, los usuarios y equipos) que se agregaron después de la última copia de seguridad de confianza
-- Todas las actualizaciones que se han realizado a los objetos existentes desde la confianza de la última copia de seguridad
-- Todos los cambios realizados a la partición de configuración o la partición del esquema en AD DS (por ejemplo, los cambios de esquema) desde la última copia de seguridad de confianza
+- Todos los objetos (como usuarios y equipos) que se agregaron después de la última copia de seguridad de confianza
+- Todas las actualizaciones que se realizaron en los objetos existentes desde la última copia de seguridad de confianza
+- Todos los cambios que se realizaron en la partición de configuración o en la partición de esquema en AD DS (por ejemplo, cambios de esquema) desde la última copia de seguridad de confianza
 
-Para cada dominio del bosque, debe conocer la contraseña de una cuenta de administrador de dominio. Si es posible, se trata de la contraseña de la cuenta de administrador integrada. También debe conocer la contraseña de DSRM para realizar una restauración del estado del sistema de un controlador de dominio. En general, resulta una buena práctica para archivar la cuenta de administrador y el historial de la contraseña DSRM en un lugar seguro para siempre y cuando las copias de seguridad son válidas, es decir, en el período de vigencia del objeto de desecho o dentro de la duración del objeto eliminado si Active Directory reciclaje Está habilitada la Papelera. También puede sincronizar la contraseña de DSRM con una cuenta de usuario de dominio para que resulte más fácil de recordar. Para obtener más información, consulte el artículo de KB [961320](https://support.microsoft.com/kb/961320). Sincronización de la cuenta de DSRM debe realizarse antes de la recuperación del bosque, como parte de preparación.
+Para cada dominio del bosque, debe conocerse la contraseña de una cuenta de administrador de dominio. Preferiblemente, se trata de la contraseña de la cuenta de administrador integrada. También debe conocer la contraseña de DSRM para realizar una restauración del estado del sistema de un controlador de dominio. En general, es recomendable archivar la cuenta de administrador y el historial de la contraseña de DSRM en un lugar seguro mientras las copias de seguridad sean válidas, es decir, dentro del período de duración de objetos de desecho o en el período de vigencia del objeto eliminado, si Active Directory reciclaje Bin está habilitado. También puede sincronizar la contraseña de DSRM con una cuenta de usuario de dominio para que sea más fácil de recordar. Para obtener más información, consulte el artículo [961320](https://support.microsoft.com/kb/961320)de Knowledge base. La sincronización de la cuenta DSRM debe realizarse antes de la recuperación del bosque, como parte de la preparación.
 
 > [!NOTE]
-> La cuenta Administrador es miembro del grupo de administradores integrado de forma predeterminada, como son los grupos Admins. del dominio y administradores de empresa. Este grupo tiene control total de todos los controladores de dominio en el dominio.
+> De forma predeterminada, la cuenta Administrador es miembro del grupo administradores integrado, como son los grupos Admins. del dominio y administradores de organización. Este grupo tiene control total sobre todos los controladores de dominio del dominio.
 
-## <a name="determining-which-backups-to-use"></a>Determinar qué copias de seguridad para usar
+## <a name="determining-which-backups-to-use"></a>Determinación de las copias de seguridad que se van a usar
 
-Copia de seguridad al menos dos controladores de dominio grabables para cada dominio con regularidad para que tenga varias copias de seguridad que puede elegir. Tenga en cuenta que no se puede usar la copia de seguridad de un controlador de dominio de solo lectura (RODC) para restaurar un controlador de dominio grabable. Se recomienda que restaure los controladores de dominio mediante el uso de copias de seguridad que se tomaron durante unos días antes de la aparición del error. En general, debe determinar un equilibrio entre la recentness y la safeness de los datos restaurados. Elección de una copia de seguridad más reciente recupera los datos más útiles, pero podría aumentar el riesgo de volver a introducir datos peligrosos en el bosque restaurado.
+Realice una copia de seguridad de al menos dos controladores de dominio grabables para cada dominio con regularidad para que pueda elegir entre varias copias de seguridad. Tenga en cuenta que no puede usar la copia de seguridad de un controlador de dominio de solo lectura (RODC) para restaurar un controlador de dominio grabable. Se recomienda restaurar los controladores de seguridad mediante el uso de copias de seguridad que se realizaron unos días antes de que se produjera el error. En general, debe determinar un equilibrio entre la reciente y la seguridad de los datos restaurados. La elección de una copia de seguridad más reciente recupera datos más útiles, pero podría aumentar el riesgo de reintroducir los datos peligrosos en el bosque restaurado.
 
-Restaurar copias de seguridad de estado del sistema depende del sistema operativo y el servidor de la copia de seguridad original. Por ejemplo, no debe restaurar una copia de seguridad del estado del sistema a un servidor diferente. En este caso, es posible que vea la advertencia siguiente:
+La restauración de las copias de seguridad del estado del sistema depende del sistema operativo y del servidor de la copia de seguridad. Por ejemplo, no debe restaurar una copia de seguridad de estado del sistema en un servidor diferente. En este caso, puede ver la siguiente ADVERTENCIA:
 
-"La copia de seguridad especificada es de un servidor distinto al actual. No se recomienda realizar una recuperación del estado del sistema con la copia de seguridad en un servidor alternativo, porque el servidor podría quedar inutilizable. ¿Está seguro de que desea utilizar esta copia de seguridad para recuperar el servidor actual? "
+"La copia de seguridad especificada es de un servidor diferente del actual. No se recomienda realizar una recuperación del estado del sistema con la copia de seguridad en un servidor alternativo, ya que el servidor podría quedar inutilizable. ¿Está seguro de que desea usar esta copia de seguridad para recuperar el servidor actual? "
 
-Si necesita restaurar Active Directory a un hardware diferente, cree copias de seguridad de servidor completo y planea realizar una recuperación del servidor completo.
+Si necesita restaurar Active Directory en hardware diferente, cree copias de seguridad completas del servidor y planee realizar una recuperación completa del servidor.
 
 > [!IMPORTANT]
-> A partir de Windows Server 2008, no se admite para restaurar la copia de seguridad de estado del sistema a una nueva instalación de Windows Server en el nuevo hardware o el mismo hardware. Si se vuelve a instalar Windows Server en el mismo hardware, como se recomienda más adelante en esta guía, a continuación, puede restaurar el controlador de dominio en este orden:
+> A partir de Windows Server 2008, no se admite la restauración de la copia de seguridad del estado del sistema en una nueva instalación de Windows Server en hardware nuevo o en el mismo hardware. Si Windows Server se vuelve a instalar en el mismo hardware, como se recomienda más adelante en esta guía, puede restaurar el controlador de dominio en este orden:
 >
-> 1. Realizar una restauración completa del servidor para restaurar el sistema operativo y todos los archivos y aplicaciones.
-> 2. Realizar una restauración del estado del sistema con wbadmin.exe para marcar SYSVOL como autoritativo.
+> 1. Realice una restauración completa del servidor para restaurar el sistema operativo y todos los archivos y aplicaciones.
+> 2. Realice una restauración del estado del sistema con Wbadmin. exe para marcar SYSVOL como autoritativo.
 >
-> Para obtener más información, vea Microsoft el artículo [249694](https://support.microsoft.com/kb/249694).
+> Para obtener más información, consulte el artículo [249694](https://support.microsoft.com/kb/249694)de Microsoft Knowledge base.
 
-Si la hora de la aparición del error es desconocida, investigar en profundidad para identificar las copias de seguridad que contienen el último estado de prueba de errores del bosque. Este enfoque es menos deseable. Por lo tanto, se recomienda encarecidamente mantener registros detallados sobre el estado de mantenimiento de AD DS a diario para que, si se produce un error de todo el bosque, se puede identificar el tiempo aproximado de error. También debe tener una copia local de las copias de seguridad para permitir una recuperación más rápida.
+Si no se conoce la hora de la aparición del error, investigue más para identificar las copias de seguridad que contienen el último estado de seguridad del bosque. Este enfoque es menos deseable. Por lo tanto, se recomienda encarecidamente que mantenga registros detallados sobre el estado de mantenimiento de AD DS diariamente, de modo que, si se produce un error en todo el bosque, se pueda identificar el tiempo aproximado de error. También debe mantener una copia local de las copias de seguridad para permitir una recuperación más rápida.
 
-Si está habilitada la Papelera de reciclaje de Active Directory, la duración de la copia de seguridad es igual a la **deletedObjectLifetime** valor o el **tombstoneLifetime** valor, lo que sea menor. Para obtener más información, consulte [Active Directory guía Papelera de reciclaje paso a paso](https://go.microsoft.com/fwlink/?LinkId=178657) (https://go.microsoft.com/fwlink/?LinkId=178657).
+Si Active Directory papelera de reciclaje está habilitada, la duración de la copia de seguridad es igual al valor de **deletedObjectLifetime** o al valor de **tombstoneLifetime** , lo que sea menor. Para obtener más información, vea [Active Directory guía paso a paso](https://go.microsoft.com/fwlink/?LinkId=178657) de la papelera de reciclaje (https://go.microsoft.com/fwlink/?LinkId=178657).
 
-Como alternativa, también puede usar la herramienta de montaje de base de datos de Active Directory (Dsamain.exe) y una herramienta de protocolo ligero de acceso a directorios (LDAP), como Ldp.exe o usuarios de Active Directory y los equipos, para identificar qué copia de seguridad tiene el último estado de seguridad de la bosque. La herramienta de montaje de base de datos de Active Directory, que se incluye en Windows Server 2008 y sistemas operativos de servidor de Windows posteriores, expone los datos de Active Directory que se almacenan en instantáneas o copias de seguridad como un servidor LDAP. A continuación, puede usar una herramienta LDAP para examinar los datos. Este enfoque tiene la ventaja de que no requiere que se reinicie cualquier controlador de dominio en modo de restauración de servicios de directorio (DSRM) para examinar el contenido de la copia de seguridad de AD DS.
+Como alternativa, también puede usar la herramienta de montaje de bases de datos Active Directory (DSAMain. exe) y una herramienta LDAP (Protocolo ligero de acceso a directorios), como LDP. exe o Active Directory usuarios y equipos, para identificar qué copia de seguridad tiene el último estado de seguridad de la bosque. La herramienta de montaje de bases de datos de Active Directory, que se incluye en los sistemas operativos Windows Server 2008 y versiones posteriores, expone Active Directory datos almacenados en copias de seguridad o instantáneas como un servidor LDAP. A continuación, puede usar una herramienta LDAP para examinar los datos. Este enfoque tiene la ventaja de que no requiere reiniciar ningún controlador de dominio en Modo de restauración de servicios de directorio (DSRM) para examinar el contenido de la copia de seguridad de AD DS.
 
-Para obtener más información sobre cómo usar la herramienta de montaje de la base de datos de Active Directory, consulte el [Guía de paso a paso de herramienta de montaje de base de datos de Active Directory](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx).
+Para obtener más información sobre el uso de la herramienta de montaje de bases de datos de Active Directory, consulte la [Guía paso a paso de la herramienta de montaje de Active Directory Database](https://technet.microsoft.com/library/cc753609\(WS.10\).aspx).
 
-También puede usar el **ntdsutil instantánea** comando para crear instantáneas de la base de datos de Active Directory. Mediante la programación de una tarea para crear instantáneas de forma periódica, puede obtener copias adicionales de la base de datos de Active Directory con el tiempo. Puede usar para identificar mejor cuando se produjo el error de todo el bosque y, a continuación, elija la mejor copia de seguridad para restaurar estas copias. Para crear las instantáneas, use la versión de **ntdsutil** que se incluye con Windows Server 2008 o el servidor de administración remota herramientas (RSAT) para Windows Vista o posterior. El controlador de dominio de destino puede ejecutar cualquier versión de Windows Server. Para obtener más información sobre el uso de la **ntdsutil instantánea** de comandos, consulte [instantánea](https://technet.microsoft.com/library/cc731620\(WS.10\).aspx).
+También puede usar el comando de **instantánea de Ntdsutil** para crear instantáneas de la base de datos de Active Directory. Mediante la programación de una tarea para crear instantáneas periódicamente, puede obtener copias adicionales de la base de datos Active Directory a lo largo del tiempo. Puede usar estas copias para identificar mejor Cuándo se ha producido el error en todo el bosque y, a continuación, elegir la mejor copia de seguridad para restaurar. Para crear instantáneas, utilice la versión de **Ntdsutil** que se incluye con windows Server 2008 o el herramientas de administración remota del servidor (RSAT) para Windows Vista o posterior. El controlador de dominio de destino puede ejecutar cualquier versión de Windows Server. Para obtener más información acerca del uso del comando de **instantánea de Ntdsutil** , consulte [Snapshot](https://technet.microsoft.com/library/cc731620\(WS.10\).aspx).
 
-## <a name="determining-which-domain-controllers-to-restore"></a>Determinar qué controladores de dominio para restaurar
+## <a name="determining-which-domain-controllers-to-restore"></a>Determinar los controladores de dominio que se van a restaurar
 
-Facilitar el proceso de restauración es un factor importante al decidir qué controlador de dominio para restaurar. Se recomienda tener un controlador de dominio dedicado para cada dominio que es el controlador de dominio preferido para una restauración. Una restauración dedicada DC facilita a planear y ejecutar la recuperación de bosque debido a que usa la misma configuración de origen que se usó para realizar de forma confiable restaurar las pruebas. Puede incluir la recuperación y no competir con distintas configuraciones, como si el controlador de dominio contiene las operaciones de roles de maestro o no, o bien, ya sea un servidor DNS o GC o no.
+La facilidad del proceso de restauración es un factor importante a la hora de decidir qué controlador de dominio desea restaurar. Se recomienda tener un DC dedicado para cada dominio que sea el controlador de dominio preferido para una restauración. Un controlador de dominio de restauración dedicado facilita el planeamiento y la ejecución de la recuperación del bosque, ya que se usa la misma configuración de origen que se utilizó para realizar pruebas de restauración. Puede crear un script para la recuperación y no lidiar con distintas configuraciones, como si el DC contiene roles de maestro de operaciones o no, o si es un servidor de GC o DNS o no.
 
 > [!NOTE]
-> Aunque no se recomienda para restaurar un titular de la función de maestro de operaciones por simplificar, algunas organizaciones pueden optar por restaurar uno para otras ventajas. Por ejemplo restaurar al maestro de RID puede ayudar a evitar problemas con la administración de RID durante la recuperación.  
+> Aunque no se recomienda restaurar el titular de la función de maestro de operaciones en aras de la simplicidad, algunas organizaciones pueden optar por restaurar una para otras ventajas. Por ejemplo, restaurar el maestro RID puede ayudar a evitar problemas con la administración de RID durante la recuperación.  
 
-Elija un controlador de dominio que mejor se adapte a los siguientes criterios:
+Elija un controlador de dominio que se adapte mejor a los siguientes criterios:
 
-- Un controlador de dominio es grabable. Esto es obligatorio.
+- Un controlador de dominio que se va A escribir. Esto es obligatorio.
 
-- Un controlador de dominio que ejecutan Windows Server 2012 como una máquina virtual en un hipervisor que admita VM-GenerationID. Este controlador de dominio puede usarse como origen de clonación.
-- Un controlador de dominio que es accesibles, ya sea físicamente o en una red virtual y, preferiblemente, ubicado en un centro de datos. De este modo, se puede fácilmente aislarla de la red durante la recuperación del bosque.
-- Un controlador de dominio que tenga una copia de seguridad buena completa del servidor. Una buena copia de seguridad es una copia de seguridad que se puede restaurar correctamente, se toma unos días antes del error y que incluye como datos demasiado útiles como sea posible.
-- Un controlador de dominio que era un servidor de sistema de nombres de dominio (DNS) antes del error. Esto reduce el tiempo necesario para volver a instalar DNS.
-- Si también utiliza servicios de implementación de Windows, elija un controlador de dominio que no está configurado para usar el desbloqueo de BitLocker en red. En este caso, el desbloqueo de BitLocker en red no se admite que se usará para el primer controlador de dominio que va a restaurar desde copia de seguridad durante la recuperación del bosque.
+- Un controlador de dominio que ejecuta Windows Server 2012 como una máquina virtual en un hipervisor que admite VM-GenerationID. Este controlador de dominio se puede usar como origen para la clonación.
+- Un controlador de dominio al que se puede tener acceso, ya sea físicamente o en una red virtual, y que, preferiblemente, se encuentra en un centro de recursos. De este modo, puede aislarla fácilmente de la red durante la recuperación del bosque.
+- Un controlador de dominio que tenga una buena copia de seguridad completa del servidor. Una buena copia de seguridad es una copia de seguridad que se puede restaurar correctamente, se tomó unos días antes del error y contiene tantos datos útiles como sea posible.
+- Un DC que era un servidor de sistema de nombres de dominio (DNS) antes de que se produjera el error. Esto ahorra el tiempo necesario para reinstalar DNS.
+- Si también usa servicios de implementación de Windows, elija un controlador de dominio que no esté configurado para usar el desbloqueo de red de BitLocker. En este caso, no se admite el desbloqueo de red de BitLocker para el primer controlador de dominio que se restaura a partir de una copia de seguridad durante la recuperación de un bosque.
 
-   BitLocker desbloqueo en red como el *sólo* protector de clave *no* utilizarse en controladores de dominio donde ha implementado los servicios de implementación de Windows (WDS) porque hacerlo resultaría en un escenario donde se requiere el primer controlador de dominio Active Directory y WDS a trabajar con el fin de desbloquear. Pero antes de restaurar el primer controlador de dominio, Active Directory aún no está disponible para WDS, por lo que no se puede desbloquear.
+   Desbloqueo de red de BitLocker como el *único* protector de clave *no se puede* usar en controladores de dominio en los que ha implementado los servicios de implementación de Windows (WDS) porque al hacerlo se produce un escenario en el que el primer DC requiere Active Directory y que WDS funcione para Pulsa. Pero antes de restaurar el primer controlador de dominio, Active Directory todavía no está disponible para WDS, por lo que no se puede desbloquear.
 
-   Para determinar si un controlador de dominio está configurado para usar el desbloqueo de BitLocker en red, compruebe que se identifica un certificado de desbloqueo en red en la siguiente clave del registro:
+   Para determinar si un controlador de dominio está configurado para usar el desbloqueo de red de BitLocker, compruebe que se ha identificado un certificado de desbloqueo de red en la siguiente clave del registro:
 
    HKEY_LOCAL_MACHINESoftwarePoliciesMicrosoftSystemCertificatesFVE_NKP
 
-Mantener los procedimientos de seguridad al control o restaurar los archivos de copia de seguridad que incluyen Active Directory. La urgencia que acompaña a la recuperación de bosques puede provocar accidentalmente pasando por alto los procedimientos recomendados de seguridad. Para obtener más información, vea la sección titulada "Establecimiento de controlador de copia de seguridad y restaurar estrategias de dominios" en [Best Practice Guide for Securing Active Directory Installations y las operaciones cotidianas: Parte II](https://technet.microsoft.com/library/bb727066.aspx).
+Mantenga los procedimientos de seguridad al administrar o restaurar archivos de copia de seguridad que incluyan Active Directory. La urgencia que acompaña a la recuperación del bosque puede conducir involuntariamente a las prácticas recomendadas de seguridad. Para obtener más información, vea la sección titulada "establecer estrategias de copia de seguridad y restauración del controlador de dominio" en @no__t guía de prácticas recomendadas de 0Best para proteger las instalaciones de Active Directory y las operaciones cotidianas: Parte II @ no__t-0.
 
-## <a name="identify-the-current-forest-structure-and-dc-functions"></a>Identificar la estructura del bosque actual y las funciones de controlador de dominio
+## <a name="identify-the-current-forest-structure-and-dc-functions"></a>Identificación de la estructura del bosque actual y las funciones del controlador de dominio
 
-Determinar la estructura del bosque actual mediante la identificación de todos los dominios del bosque. Realice una lista de todos los controladores de dominio en cada dominio, especialmente los controladores de dominio que tienen copias de seguridad y los controladores de dominio virtualizados que pueden ser un origen de clonación. Una lista de controladores de dominio para el dominio raíz del bosque será el más importante porque recuperará en este dominio, en primer lugar. Después de restaurar el dominio raíz del bosque, puede obtener una lista de los demás dominios, los controladores de dominio y los sitios del bosque mediante los complementos de Active Directory.
+Determinar la estructura del bosque actual identificando todos los dominios del bosque. Cree una lista de todos los controladores de dominio de cada dominio, especialmente los controladores de dominio que tienen copias de seguridad, y los controladores de dominio virtualizados que pueden ser un origen para la clonación. Una lista de controladores de dominio para el dominio raíz del bosque será la más importante porque recuperará primero este dominio. Después de restaurar el dominio raíz del bosque, puede obtener una lista de los demás dominios, controladores de dominio y sitios del bosque mediante el uso de complementos de Active Directory.
 
-Preparación de una tabla que muestra las funciones de cada controlador de dominio en el dominio, tal como se muestra en el ejemplo siguiente. Esto le permitirá volver a la configuración de un error previo del bosque después de la recuperación.
+Prepare una tabla que muestre las funciones de cada DC del dominio, tal como se muestra en el ejemplo siguiente. Esto le ayudará a volver a la configuración de error previa del bosque después de la recuperación.
 
-|Nombre de controlador de dominio|Sistema operativo|FSMO|GC|RODC|Copias de seguridad|DNS|Server Core|Máquina virtual|VM-GenID|  
+|Nombre del controlador de dominio|Sistema operativo|FSMO|COLECTOR|RODC|Copias de seguridad|DNS|Server Core|Máquina virtual|VM: genio|  
 |-------------|----------------------|----------|--------|----------|------------|---------|-----------------|--------|---------------|  
-|DC_1|Windows Server 2012|Maestro de esquema, maestro de nomenclatura de dominio|Sí|No|Sí|No|No|Sí|Sí|  
+|DC_1|Windows Server 2012|Maestro de esquema, maestro de nomenclatura de dominios|Sí|No|Sí|No|No|Sí|Sí|  
 |DC_2|Windows Server 2012|Ninguno|Sí|No|Sí|Sí|No|Sí|Sí|  
 |DC_3|Windows Server 2012|Maestro de infraestructura|No|No|No|Sí|Sí|Sí|Sí|  
-|DC_4|Windows Server 2012|Emulador de PDC, maestro de RID|Sí|No|No|No|No|Sí|No|  
+|DC_4|Windows Server 2012|Emulador de PDC, maestro RID|Sí|No|No|No|No|Sí|No|  
 |DC_5|Windows Server 2012|Ninguno|No|No|Sí|Sí|No|Sí|Sí|  
 |RODC_1|Windows Server 2008 R2|Ninguno|Sí|Sí|Sí|Sí|Sí|Sí|No|  
 |RODC_2|Windows Server 2008|Ninguno|Sí|Sí|No|Sí|Sí|Sí|No|  
 
-Para cada dominio del bosque, identificar un controlador de dominio grabable único que tiene una copia de seguridad de confianza de la base de datos de Active Directory para ese dominio. Tenga cuidado al elegir una copia de seguridad para restaurar un controlador de dominio. Si se conocen aproximadamente el día y la causa del error, la recomendación general es usar una copia de seguridad que se realizó unos días antes de esa fecha.
+Para cada dominio del bosque, identifique un solo DC grabable que tenga una copia de seguridad de confianza de la base de datos de Active Directory para ese dominio. Tenga cuidado al elegir una copia de seguridad para restaurar un controlador de dominio. Si el día y la causa del error son aproximadamente conocidos, la recomendación general es usar una copia de seguridad que se haya realizado unos días antes de esa fecha.
   
-En este ejemplo, hay cuatro candidatos de copia de seguridad: DC_1, DC_2, DC_4 y DC_5. De estos candidatos de copia de seguridad, restaurar solo uno. El controlador de dominio recomendada es DC_5 por las razones siguientes:  
+En este ejemplo, hay cuatro candidatos de copia de seguridad: DC_1, DC_2, DC_4 y DC_5. De estos candidatos de copia de seguridad, solo se restaura uno. El controlador de dominio recomendado es DC_5 por las razones siguientes:  
 
-- Cumple los requisitos para usarlo como origen para la clonación de controlador de dominio virtualizado, que es, ejecuta Windows Server 2012 como un controlador de dominio virtual en un hipervisor que admita VM-GenerationID, se ejecuta software que puede ser clonado (o que se puede quitar si no puede ser clon (d). Después de la restauración, el rol de emulador PDC se asumirse a que server y se pueden agregar al grupo de dominio clonables para el dominio.  
-- Se ejecuta una instalación completa de Windows Server 2012. Un controlador de dominio que ejecuta una instalación Server Core puede ser poco práctica como destino para la recuperación.  
-- Es un servidor DNS. Por lo tanto, DNS no tiene que volver a instalarse.  
+- Cumple los requisitos para usarlo como origen de la clonación de controladores de dominio virtualizados, es decir, ejecuta Windows Server 2012 como un controlador de dominio virtual en un hipervisor que admite VM-GenerationID, ejecuta el software que se permite clonar (o que puede quitarse si no se puede clonar). d). Después de la restauración, el rol de emulador de PDC se asumirá para ese servidor y se puede Agregar al grupo controladores de dominio clonables del dominio.  
+- Ejecuta una instalación completa de Windows Server 2012. Un controlador de dominio que ejecute una instalación Server Core puede ser menos práctico como destino de la recuperación.  
+- Es un servidor DNS. Por lo tanto, no es necesario volver a instalar DNS.  
 
 > [!NOTE]
-> Dado que DC_5 no es un servidor de catálogo global, también tiene una ventaja que no deben quitarse después de la restauración del catálogo global. Pero si el controlador de dominio también es que un servidor de catálogo global no es un factor decisivo porque a partir de Windows Server 2012, todos los controladores de dominio son servidores de catálogo global de forma predeterminada y quitando y el catálogo global se agrega después de que la restauración se recomienda como parte del bosque en cualquier caso procesos de recuperación.  
+> Dado que DC_5 no es un servidor de catálogo global, también tiene la ventaja de que no es necesario quitar el catálogo global después de la restauración. Pero si el controlador de dominio es o no un servidor de catálogo global no es un factor decisivo, ya que a partir de Windows Server 2012, todos los controladores de dominio son servidores de catálogo global de forma predeterminada, y quitar y agregar el catálogo global una vez que se recomienda la restauración como parte del bosque proceso de recuperación en cualquier caso.  
 
-## <a name="recover-the-forest-in-isolation"></a>Recuperar el bosque de forma aislada
+## <a name="recover-the-forest-in-isolation"></a>Recuperación del bosque en aislamiento
 
-El escenario preferido es apagar todos los controladores de dominio grabables antes del primer controlador de dominio restaurado vuelve a producción. Esto garantiza que todos los datos peligrosos no se replican en el bosque recuperado. Es especialmente importante apagar todos los titulares de función de maestro de operaciones.  
+El escenario preferido es apagar todos los controladores de dominio grabables antes de que el primer controlador de dominio restaurado vuelva a producción. Esto garantiza que los datos peligrosos no se vuelvan a replicar en el bosque recuperado. Es especialmente importante apagar todos los titulares de la función de maestro de operaciones.  
 
 > [!NOTE]
-> Puede haber casos donde se mueva el primer controlador de dominio que va a recuperar para cada dominio a una red aislada, al tiempo que permite a otros controladores de dominio permanezcan en línea con el fin de minimizar el tiempo de inactividad del sistema. Por ejemplo, si va a recuperar de una actualización con errores de esquema, puede mantener controladores de dominio que se ejecutan en la red de producción mientras realiza los pasos de recuperación de forma aislada.
+> Puede haber casos en los que mueva el primer DC que planea recuperar para cada dominio a una red aislada, a la vez que permite que otros controladores de dominio permanezcan en línea para minimizar el tiempo de inactividad del sistema. Por ejemplo, si va a realizar la recuperación a partir de una actualización de esquema con errores, puede optar por mantener los controladores de dominio que se ejecutan en la red de producción mientras realiza los pasos de recuperación de aislamiento.
 
-Si utiliza controladores de dominio virtualizados, puede moverlos a una red virtual que está aislada de la red de producción donde realizará la recuperación. Mover controladores de dominio virtualizados a una red independiente ofrece dos ventajas:  
+Si está ejecutando controladores de red virtualizados, puede moverlos a una red virtual que esté aislada de la red de producción en la que realizará la recuperación. Mover los controladores de red virtualizados a una red independiente ofrece dos ventajas:  
 
-- Los controladores de dominio recuperados se impide que se reproduzca el problema que provocó la recuperación de bosques, ya que están aislados.  
-- Clonación de controlador de dominio virtualizado puede realizada en la red independiente para que se puede ejecutar un número de controladores de dominio crítico y probada antes de que regresa a la red de producción.
+- Los controladores de DC recuperados no se pueden reproducir el problema que provocó la recuperación del bosque porque están aislados.  
+- La clonación de controladores de dominio virtualizados se puede realizar en la red independiente para que se pueda ejecutar y probar un número crítico de controladores de dominio antes de que vuelvan a la red de producción.
 
-Si utiliza controladores de dominio en el hardware físico, desconecte el cable de red del primer controlador de dominio que va a restaurar en el dominio raíz del bosque. Si es posible, también desconecte los cables de red de todos los demás controladores de dominio. Esto impide que los controladores de dominio replicar, si se han iniciado por accidente durante el proceso de recuperación del bosque.  
+Si está ejecutando controladores de dominio en hardware físico, desconecte el cable de red del primer controlador de dominio que vaya a restaurar en el dominio raíz del bosque. Si es posible, desconecte también los cables de red de los demás controladores de red. Esto impide que los controladores de la replicación se repliquen si se inician accidentalmente durante el proceso de recuperación del bosque.  
 
-En un bosque de gran tamaño que se reparte entre varias ubicaciones, puede ser difícil garantizar que todos los controladores de dominio grabables se apagan. Por este motivo, los pasos de recuperación, como el restablecimiento de la cuenta de equipo y la cuenta krbtgt, además a la limpieza de metadatos: están diseñados para garantizar que los controladores de dominio grabables recuperados no se replican con controladores de dominio grabables peligrosos (en caso de algunos aún están en línea en el bosque).  
+En un bosque grande que está distribuido en varias ubicaciones, puede ser difícil garantizar que todos los controladores de DC que se pueden escribir están apagados. Por esta razón, los pasos de recuperación, como el restablecimiento de la cuenta de equipo y la cuenta de krbtgt, además de la limpieza de metadatos, están diseñados para garantizar que los controladores de seguridad de escritura recuperados no se replican con controladores de seguridad de escritura peligrosos (en caso de que algunos estén todavía en línea en el bosque).  
   
-Sin embargo, sólo al desconectar los controladores de dominio grabables puede se garantiza que la replicación no se produce. Por lo tanto, siempre que sea posible, debe implementar la tecnología de administración remota que puede ayudarle a apagar y aislar físicamente los controladores de dominio grabables durante la recuperación del bosque.  
+Sin embargo, solo si los DC que se pueden escribir están sin conexión, puede garantizar que no se produzca la replicación. Por lo tanto, siempre que sea posible, debe implementar tecnología de administración remota que pueda ayudarle a apagar y aislar físicamente los controladores de DC grabables durante la recuperación del bosque.  
   
-Los RODC pueden continuar funcionando mientras los controladores de dominio grabables están sin conexión. Directamente ningún otro DC replicará los cambios de los RODC, especialmente, ningún cambio de contenedor de esquema o la configuración, por lo que no supongan un riesgo mismo como controladores de dominio grabables durante la recuperación. Una vez recuperada y en línea todos los controladores de dominio grabables, debe volver a generar todos los RODC.  
+Los RODC pueden seguir funcionando mientras los DC grabables están sin conexión. Ningún otro controlador de dominio replicará directamente ningún cambio de ningún RODC, especialmente, no cambia el esquema ni el contenedor de configuración, por lo que no suponen el mismo riesgo que los controladores de dominio grabables durante la recuperación. Después de que todos los controladores de seguridad que se pueden escribir se recuperen y estén en línea, debe volver a generar todos los RODC.  
   
-Los RODC continuará permitir el acceso a los recursos locales que se almacenan en caché en sus respectivos sitios mientras que las operaciones de recuperación están ocurriendo en paralelo. Los recursos locales que se almacenan en caché en el RODC no tendrán las solicitudes de autenticación que se reenvían a un controlador de dominio grabable. Estas solicitudes se producirá un error porque los controladores de dominio grabables están sin conexión. Algunas operaciones, como los cambios de contraseña también no funcionará hasta que recuperar los controladores de dominio grabables.  
+Los RODC seguirán permitiendo el acceso a los recursos locales que se almacenan en caché en sus sitios respectivos mientras las operaciones de recuperación se están realizando en paralelo. Los recursos locales que no estén almacenados en caché en el RODC tendrán solicitudes de autenticación reenviadas a un controlador de dominio grabable. Estas solicitudes producirán un error porque los DC que se pueden escribir están sin conexión. Algunas operaciones, como los cambios de contraseña, no funcionarán hasta que recupere los controladores de DC que se pueden escribir.  
   
-Si usa una arquitectura de red de concentrador y radio, puede concentrarse primero en la recuperación de los controladores de dominio grabables en los sitios de concentrador. Más adelante, puede volver a generar el RODC en sitios remotos.  
+Si usa una arquitectura de red de concentrador y radio, puede concentrarse primero en la recuperación de los controladores de red que se pueden escribir en los sitios del concentrador. Posteriormente, puede volver a generar los RODC en sitios remotos.  
   
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Recuperación de bosques de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)  
-- [Recuperación de bosques de AD - idear un plan de recuperación personalizada del bosque](AD-Forest-Recovery-Devising-a-Plan.md)  
-- [Recuperación de bosques de AD: identificar el problema](AD-Forest-Recovery-Identify-the-Problem.md)
-- [Recuperación de bosques de AD - determinar cómo recuperar](AD-Forest-Recovery-Determine-how-to-Recover.md)
-- [Recuperación de bosques de AD - realizar una recuperación inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
-- [Recuperación de bosques de AD: procedimientos](AD-Forest-Recovery-Procedures.md)  
-- [Recuperación de bosques de AD - preguntas más frecuentes](AD-Forest-Recovery-FAQ.md)  
-- [Recuperación de bosques de AD - recuperar un único dominio dentro de un bosque Multidomain](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
-- [Recuperación de bosques de AD: recuperación del bosque con controladores de dominio de Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md)  
+- [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)  
+- [Recuperación de bosque de AD: diseño de un plan de recuperación de bosque personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  
+- [Recuperación del bosque de AD: identificación del problema](AD-Forest-Recovery-Identify-the-Problem.md)
+- [Recuperación del bosque de AD: determinar cómo recuperar](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [Recuperación de bosque de AD: realizar la recuperación inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
+- [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)  
+- [Recuperación de bosque de AD: preguntas más frecuentes](AD-Forest-Recovery-FAQ.md)  
+- [Recuperación de bosque de AD: recuperación de un solo dominio en un bosque de varios dominios](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
+- [Recuperación de bosque de AD: recuperación de bosque con controladores de dominio de Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md)  

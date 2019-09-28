@@ -1,47 +1,47 @@
 ---
-title: Caso práctico de Windows Admin Center SDK - QCT
-description: Caso práctico de Windows Admin Center SDK - QCT
+title: 'Caso práctico del SDK del centro de administración de Windows: QCT'
+description: 'Caso práctico del SDK del centro de administración de Windows: QCT'
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/14/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 2e0ed4a122a3cb26ce4c6e05ee3b808dd6fe2d07
-ms.sourcegitcommit: 214e827934e7b3e8987e9e0ab2cf00047d332c89
+ms.prod: windows-server
+ms.openlocfilehash: 2922bcdd08fac7bf2179a0ebbad37c7151d660b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "67153605"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357248"
 ---
-# <a name="qct-management-suite-extension"></a>Extensión QCT Management Suite
+# <a name="qct-management-suite-extension"></a>Extensión de QCT Management Suite
 
-## <a name="a-simple-path-to-server-infrastructure-management"></a>Un método sencillo para la administración de la infraestructura de servidor
+## <a name="a-simple-path-to-server-infrastructure-management"></a>Una ruta de acceso simple a la administración de la infraestructura de servidor
 
-La extensión QCT Management Suite para Windows Admin Center ofrece un panel único del panel de vidrio para supervisar las configuraciones del sistema y administrar el estado del servidor de [QCT Azure Stack HCI sistemas certificados](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/windows-server-software-defined-solution-wssd/) : [QuantaGrid D52BQ-2U](https://www.qct.io/product/index/Server/rackmount-server/2U-Rackmount-Server/QuantaGrid-D52BQ-2U), [QuantaGrid D52T-1ULH](https://www.qct.io/product/index/Storage/Storage-Server/1U-Storage-Server/QuantaGrid-D52T-1ULH) y [QuantaPlex T21P-4U](https://www.qct.io/product/index/Storage/Storage-Server/4U-Storage-Server/QuantaPlex-T21P-4U).
+La extensión de QCT Management Suite para el centro de administración de Windows proporciona un panel de cristal para supervisar las configuraciones del sistema y administrar el estado del servidor de [los sistemas certificados de QCT Azure Stack HCl](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/windows-server-software-defined-solution-wssd/) : [QUANTAGRID D52BQ-2U](https://www.qct.io/product/index/Server/rackmount-server/2U-Rackmount-Server/QuantaGrid-D52BQ-2U), [QUANTAGRID D52T-1ULH](https://www.qct.io/product/index/Storage/Storage-Server/1U-Storage-Server/QuantaGrid-D52T-1ULH) y [QuantaPlex T21P-4U](https://www.qct.io/product/index/Storage/Storage-Server/4U-Storage-Server/QuantaPlex-T21P-4U).
 
-Controlado por los puntos vulnerables de alrededor de supervisión y administración, QCT proporciona características complementarias, exclusivas y funciones, que incluye una visión general de los registros de eventos del sistema, controladores y el estado de componentes de hardware para mejorar el general de supervisión experiencia de administración.
+Basado en los Pain Points de los clientes en torno a la supervisión y la administración existentes, QCT proporciona características y funciones exclusivas y complementarias, que incluyen información general sobre los registros de eventos del sistema, los controladores de supervisión y el estado de los componentes de hardware para mejorar el Experiencia de administración.
 
 ![Extensión QCT](../../media/extend-case-study-qct/D52T_DarkMode_Disk-Detail-General.PNG)
 
-La aplicación de gestión QCT amplía la funcionalidad de Windows Admin Center con las características clave siguientes:
-- **Administración de hardware de un solo clic exclusivo** -una interfaz de usuario intuitiva muestra información de hardware, incluido el nombre del modelo, procesador, memoria y BIOS. Los administradores de TI pueden reiniciar el BMC con una sencilla interfaz de usuario con un solo clic.
+QCT Management Suite amplía la funcionalidad del centro de administración de Windows con las siguientes características clave:
+- **Administración de hardware exclusiva con un clic** : una interfaz de usuario intuitiva muestra información de hardware, como el nombre del modelo, el procesador, la memoria y el BIOS. Los administradores de TI pueden reiniciar el BMC con una interfaz de usuario sencilla con un solo clic.
 
 ![Extensión QCT](../../media/extend-case-study-qct/D52T_Overview.PNG)
 
-- **LED de identificación para la compatibilidad con el servicio eficaz y de asignación de disco** -diseño de interfaz de usuario del asistente QCT Management Suite muestra el espacio de cada disco seleccionado con información general sobre los perfiles de disco y controles de la luz LED de los discos seleccionados para el reemplazo eficaz.
+- **Asignación de disco e identificación LED para una compatibilidad de servicio eficaz** : diseño de la interfaz de usuario del asistente de QCT Management Suite muestra la ranura de cada disco seleccionado con información general de los perfiles de disco y los controles luminosos LED de los discos seleccionados para un reemplazo eficaz.
 
 ![Extensión QCT](../../media/extend-case-study-qct/T21P_disk_mapping.png)
 
-- Fácil de usar la herramienta de supervisión para el registro de eventos de hardware y el estado de mantenimiento.
+- Herramienta de supervisión fácil de usar para el registro de eventos de hardware y el estado de mantenimiento.
 
 ![Extensión QCT](../../media/extend-case-study-qct/D52T_event_log.PNG)
 
-- **Administración de discos predictivo** -evaluar la condición del sistema con S.M.A.R.T información y notificaciones en mal estado que permiten a las organizaciones que tome medidas antes de que se produce un error total.
+- **Administración de discos predictivo** : evalúe la condición del sistema con la información de S. M. A. R. T y las notificaciones en mal estado que permiten a las organizaciones tomar medidas antes de que se produzca el error total.
 
 ![Extensión QCT](../../media/extend-case-study-qct/T21P_SMART.PNG)
 
-Más información sobre QCT Management Suite para Windows Admin Center:
-- [Página web de QCT Management Suite](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/)
-- [Hoja de datos QCT Management Suite](https://go.qct.io/wp-content/uploads/2019/04/WAC-data-sheet_v04222019.pdf)
+Obtenga más información sobre el centro de administración de QCT Management Suite para Windows:
+- [Página Web de QCT Management Suite](https://go.qct.io/solutions/enterprise-private-cloud/qxstack-windows-server-cloud-ready-appliances/)
+- [Hoja de de QCT Management Suite](https://go.qct.io/wp-content/uploads/2019/04/WAC-data-sheet_v04222019.pdf)

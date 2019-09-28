@@ -1,6 +1,6 @@
 ---
-title: Servicio de mantenimiento de Windows Server
-ms.prod: windows-server-threshold
+title: Servicio de mantenimiento en Windows Server
+ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
@@ -8,34 +8,34 @@ ms.topic: article
 ms.assetid: 5bc71e71-920e-454f-8195-afebd2a23725
 author: cosmosdarwin
 ms.date: 02/09/2018
-ms.openlocfilehash: 5afb64dcf0c59697ed55d7cf51ef1bc36e7e0e36
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: df455dfb0d2936192a3c2d7825e2d6d031cfe892
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863816"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361068"
 ---
-# <a name="health-service-in-windows-server"></a>Servicio de mantenimiento de Windows Server
+# <a name="health-service-in-windows-server"></a>Servicio de mantenimiento en Windows Server
 
-> Se aplica a Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
-El servicio de mantenimiento es una característica nueva en Windows Server 2016 que mejora la supervisión diaria y la experiencia operativa para los clústeres que ejecutan espacios de almacenamiento directo.
+El Servicio de mantenimiento es una nueva característica de Windows Server 2016 que mejora la supervisión cotidiana y la experiencia operativa de los clústeres que ejecutan Espacios de almacenamiento directo.
 
 ## <a name="prerequisites"></a>Requisitos previos  
 
-Servicio de mantenimiento está habilitado de forma predeterminada con Espacios de almacenamiento directo. No se requiere ninguna acción adicional para instalarlo o iniciarlo. Para obtener más información acerca de espacios de almacenamiento directo, vea [espacios de almacenamiento directo en Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md).  
+Servicio de mantenimiento está habilitado de forma predeterminada con Espacios de almacenamiento directo. No se requiere ninguna acción adicional para instalarlo o iniciarlo. Para obtener más información acerca de Espacios de almacenamiento directo, consulte [espacios de almacenamiento directo en Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md).  
 
 ## <a name="reports"></a>Informes
 
-Consulte [informa del servicio de mantenimiento](health-service-reports.md).
+Vea [informes de servicio de mantenimiento](health-service-reports.md).
 
 ## <a name="faults"></a>Errores
 
-Consulte [errores del servicio de mantenimiento](health-service-faults.md).
+Vea [errores de servicio de mantenimiento](health-service-faults.md).
 
 ## <a name="actions"></a>Acciones
 
-Consulte [acciones de servicio de mantenimiento](health-service-actions.md).
+Consulte [servicio de mantenimiento acciones](health-service-actions.md).
 
 ## <a name="automation"></a>Automatización  
 
@@ -76,34 +76,34 @@ Si es posible, el servicio de mantenimiento comenzará a hacer parpadear la luz 
 
 #### <a name="physical-replacement"></a>Reemplazo físico  
 
-Debe reemplazar el disco físico retirado cuando sea posible. A menudo, consta de un intercambio directo: es decir, apagar el alojamiento de almacenamiento o nodo no es necesario. Consulte el error para conocer información útil sobre la ubicación y la pieza.  
+Debe reemplazar el disco físico retirado cuando sea posible. La mayoría de las veces, se compone de un intercambio activo, es decir, no es necesario apagar el nodo o el contenedor de almacenamiento. Consulte el error para conocer información útil sobre la ubicación y la pieza.  
 
 #### <a name="verification"></a>Comprobación
 
-Cuando se inserta el disco de reemplazo, se comprobará en el documento de componentes compatibles (consulte la sección siguiente).
+Cuando se inserte el disco de reemplazo, se comprobará con el documento componentes admitidos (consulte la sección siguiente).
 
 #### <a name="pooling"></a>Agrupación  
 
 Si se permite, el disco de reemplazo se sustituye automáticamente en el grupo de su predecesor para su uso. En este punto, el sistema vuelve a su estado inicial perfecto y el error desaparece.  
 
-## <a name="supported-components-document"></a>Documento de componentes compatibles  
+## <a name="supported-components-document"></a>Documento de componentes admitidos  
 
-El servicio de mantenimiento proporciona un mecanismo de cumplimiento para restringir los componentes usados por espacios de almacenamiento directo a los que están en un documento de componentes admite proporcionada por el administrador o el proveedor de la solución. Esta lista se puede utilizar para evitar el uso erróneo de hardware no compatible por cualquier usuario, que puede ayudar con el cumplimiento de los contratos de soporte técnico o garantía. Esta funcionalidad está actualmente limitada a los dispositivos de disco físico, incluidas unidades SSD, unidades de disco duro, y unidades de NVMe. Puede restringir el documento de componentes compatibles en el modelo, fabricante (opcional) y versión de firmware (opcional).
+El Servicio de mantenimiento proporciona un mecanismo de cumplimiento para restringir los componentes que usa Espacios de almacenamiento directo a los de un documento de componentes admitidos proporcionado por el administrador o el proveedor de la solución. Esta lista se puede utilizar para evitar el uso erróneo de hardware no compatible por cualquier usuario, que puede ayudar con el cumplimiento de los contratos de soporte técnico o garantía. Esta funcionalidad está limitada actualmente a los dispositivos de disco físico, incluidas las unidades SSD, HDD y NVMe. El documento de componentes admitidos puede restringir el modelo, el fabricante (opcional) y la versión de firmware (opcional).
 
 ### <a name="usage"></a>Uso  
 
-El documento de componentes admite usa una sintaxis basada en XML. Se recomienda usar el editor de texto que prefiera, como la versión gratuita [Visual Studio Code](http://code.visualstudio.com/) o el Bloc de notas, para crear un documento XML que puede guardar y reutilizar.
+El documento de componentes compatibles utiliza una sintaxis inspirada en XML. Se recomienda usar su editor de texto favorito, como el [Visual Studio Code](http://code.visualstudio.com/) gratuito o el Bloc de notas, para crear un documento XML que puede guardar y volver a usar.
 
-#### <a name="sections"></a>Secciones
+#### <a name="sections"></a>Sección
 
 El documento tiene dos secciones independientes: `Disks` y `Cache`.
 
-Si el `Disks` sección es siempre muestran solo las unidades (como `Disk`) tienen permitido unirse a grupos. Las unidades no enumeradas no podrán unirse a los grupos, lo que imposibilita eficazmente su uso en producción. Si esta sección se deja vacía, se permitirá cualquier unidad unirse a los grupos.
+Si se proporciona la sección `Disks`, solo se permite a las unidades enumeradas (como `Disk`) unirse a grupos. Las unidades que no figuran en la lista no se pueden unir a grupos, lo que impide su uso en producción. Si esta sección se deja vacía, se permitirá a cualquier unidad unirse a grupos.
 
-Si el `Cache` sección es siempre muestran solo las unidades (como `CacheDisk`) se usan para almacenar en caché. Si esta sección se deja vacía, espacios de almacenamiento directo intenta [estimación en función de tipo de medio y el tipo de bus](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically). Unidades que aparecen aquí también deben aparecer en `Disks`.
+Si se proporciona la sección `Cache`, solo se usan las unidades enumeradas (como `CacheDisk`) para el almacenamiento en caché. Si esta sección se deja vacía, Espacios de almacenamiento directo intenta [adivinar según el tipo de medio y el tipo de bus](../storage/storage-spaces/understand-the-cache.md#cache-drives-are-selected-automatically). Las unidades que se enumeran aquí deben aparecer también en `Disks`.
 
 >[!IMPORTANT]
-> El documento de componentes compatibles no se aplica con carácter retroactivo a las unidades ya agrupadas y en uso.  
+> El documento componentes admitidos no se aplica de forma retroactiva a las unidades ya agrupadas y en uso.  
 
 #### <a name="example"></a>Ejemplo
 
@@ -141,16 +141,16 @@ Si el `Cache` sección es siempre muestran solo las unidades (como `CacheDisk`) 
 
 ```
 
-Para obtener una lista de varias unidades, basta con agregar más `<Disk>` o `<CacheDisk>` etiquetas.
+Para enumerar varias unidades, simplemente agregue etiquetas `<Disk>` o `<CacheDisk>` adicionales.
 
-Para insertar este código XML al implementar espacios de almacenamiento directo, use el `-XML` parámetro:
+Para insertar este XML al implementar Espacios de almacenamiento directo, use el parámetro `-XML`:
 
 ```PowerShell
 $MyXML = Get-Content <Filepath> | Out-String  
 Enable-ClusterS2D -XML $MyXML
 ```
 
-Para establecer o modificar el documento de componentes admite una vez que se ha implementado espacios de almacenamiento directo:
+Para establecer o modificar el documento de componentes admitidos una vez que se ha implementado Espacios de almacenamiento directo:
 
 ```PowerShell
 $MyXML = Get-Content <Filepath> | Out-String  
@@ -172,8 +172,8 @@ Consulte [configuración de servicio de mantenimiento](health-service-settings.m
 
 ## <a name="see-also"></a>Vea también
 
-- [Informes de servicio de mantenimiento](health-service-reports.md)
-- [Errores del servicio de mantenimiento](health-service-faults.md)
-- [Acciones de servicio de mantenimiento](health-service-actions.md)
-- [Configuración del servicio de mantenimiento](health-service-settings.md)
+- [Servicio de mantenimiento informes](health-service-reports.md)
+- [Errores de Servicio de mantenimiento](health-service-faults.md)
+- [Servicio de mantenimiento acciones](health-service-actions.md)
+- [Configuración de Servicio de mantenimiento](health-service-settings.md)
 - [Espacios de almacenamiento directo en Windows Server 2016](../storage/storage-spaces/storage-spaces-direct-overview.md)

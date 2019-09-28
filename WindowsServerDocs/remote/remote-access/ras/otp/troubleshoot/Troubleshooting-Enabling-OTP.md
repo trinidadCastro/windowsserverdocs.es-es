@@ -1,9 +1,9 @@
 ---
 title: Solucionar problemas relacionados con la activación de OTP
-description: En este tema forma parte de la Guía de implementación de acceso remoto con autenticación OTP en Windows Server 2016.
+description: Este tema forma parte de la guía deploy Remote Access with OTP Authentication in Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,98 +12,98 @@ ms.topic: article
 ms.assetid: b58252ca-4c1d-4664-a3c4-7301e2121517
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 55314f3bd5e3500847beed256580b1924521abc9
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: a1c18f264a6a8d263f3e9f50bc325ef97f4240af
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280797"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366918"
 ---
 # <a name="troubleshooting-enabling-otp"></a>Solucionar problemas relacionados con la activación de OTP
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Este tema contiene información para solucionar problemas relacionados con la habilitación de la autenticación de OTP de DirectAccess mediante el **Enable DAOtpAuthentication** cmdlet de PowerShell o la consola de administración de acceso remoto.
+Este tema contiene información para la solución de problemas relacionados con la habilitación de la autenticación OTP de DirectAccess mediante el cmdlet **de PowerShell enable-DAOtpAuthentication** o la consola de administración de acceso remoto.
   
 ## <a name="failed-to-enroll-the-otp-signing-certificate"></a>No se pudo inscribir el certificado de firma de OTP  
-**Recibidas el error** (registro de eventos de servidor). No se puede inscribir un certificado de firma de OTP con plantilla de certificado < OTP_signing_template_name >  
+**Error recibido** (registro de eventos de servidor). No se puede inscribir un certificado de firma de OTP con la plantilla de certificado < OTP_signing_template_name >  
   
 **Causa**  
   
-Existen tres posibles causas de este error:  
+Hay tres causas posibles de este error:  
   
 -   La plantilla no existe.  
   
--   Los permisos establecidos en la plantilla no permitir que el servidor de DirectAccess a inscribir.  
+-   Los permisos establecidos en la plantilla no permiten inscribir el servidor de DirectAccess.  
   
--   No hay ninguna conectividad de red a la entidad de certificación emisora (CA).  
+-   No hay conectividad de red a la entidad de certificación (CA) emisora.  
   
 **Solución**  
   
-1.  Asegúrese de que la firma de OTP plantilla de certificado con el nombre especificado:  
+1.  Asegúrese de que la plantilla de certificado de firma de OTP con el nombre especificado:  
   
     1.  Existe y tiene los permisos adecuados.  
   
-    2.  Se establece para ser emitidos por al menos una entidad emisora de certificados que puede emitir certificados para el servidor de DirectAccess.  
+    2.  Está configurado para ser emitido por al menos una entidad de certificación que pueda emitir certificados para el servidor de DirectAccess.  
   
-2.  Si la plantilla no existe, crearlo tal como se describe en el Plan 3.3 el certificado de autoridad de registro o si existe otra plantilla coincidente, volver a configurar OTP de DirectAccess con el nuevo nombre de plantilla.  
+2.  Si la plantilla no existe, créela como se describe en 3,3 planear el certificado de la autoridad de registro, o bien, si existe otra plantilla que coincida, vuelva a configurar OTP de DirectAccess con el nuevo nombre de plantilla.  
   
-## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>No se pudo habilitar OTP de DirectAccess cuando se instala WebDAV  
-**Escenario**. Al intentar aplicar la configuración de OTP de DirectAccess en la consola de administración de acceso remoto o mediante el `Enable-DAOtpAuthentication` cmdlet de PowerShell, la operación se produce un error.  
+## <a name="failed-to-enable-directaccess-otp-when-webdav-is-installed"></a>No se pudo habilitar OTP de DirectAccess al instalar WebDAV  
+**Escenario**. Al intentar aplicar la configuración de OTP de DirectAccess en la consola de administración de acceso remoto o mediante el cmdlet de PowerShell `Enable-DAOtpAuthentication`, se produce un error en la operación.  
   
-**Recibidas el error** (registro de eventos de servidor). No se puede aplicar la configuración de OTP de DirectAccess porque la extensión WebDAV IIS se está ejecutando en el servidor. Quitar WebDAV y vuelva a aplicar la configuración.  
+**Error recibido** (registro de eventos de servidor). No se puede aplicar la configuración de OTP de DirectAccess porque la extensión de IIS WebDAV se está ejecutando en el servidor. Quite WebDAV y vuelva a aplicar la configuración.  
   
 **Causa**  
   
-El servicio de OTP de DirectAccess no es compatible con la característica de publicación en WebDAV y no se puede habilitar si WebDAV está instalado.  
+El servicio OTP de DirectAccess no es compatible con la característica de publicación de WebDAV y no se puede habilitar mientras WebDAV está instalado.  
   
 **Solución**  
   
-Desinstalar el rol de WebDAV:  
+Desinstale el rol de WebDAV:  
   
-1.  En la consola de administrador del servidor, en el panel izquierdo, haga clic en **IIS**.  
+1.  En la consola de Administrador del servidor, en el panel izquierdo, haga clic en **IIS**.  
   
-2.  En el panel principal, desplácese a **ROLES y características**.  
+2.  En el panel principal, desplácese a **roles y características**.  
   
-3.  Haga clic en **publicación en WebDAV**y, a continuación, haga clic en **quitar rol o característica**.  
+3.  Haga clic con el botón secundario en **publicación WebDAV**y, a continuación, haga clic en **quitar rol o característica**.  
   
-4.  Complete el quitar Roles y características Asistente.  
+4.  Complete el Asistente para quitar roles y características.  
   
 5.  Vuelva a aplicar la configuración de OTP de DirectAccess.  
   
 ## <a name="no-templates-available-in-the-remote-access-management-console"></a>No hay plantillas disponibles en la consola de administración de acceso remoto  
-**Escenario**. Al configurar OTP o el registro de plantillas de certificado de entidad mediante la consola de administración de acceso remoto, algunas o todas las plantillas no están en las ventanas de selección.  
+**Escenario**. Al configurar las plantillas de certificado de OTP o de autoridad de registro mediante la consola de administración de acceso remoto, algunas o todas las plantillas no se encuentran en las ventanas de selección.  
   
 **Causa**  
   
-Hay dos causas posibles para este error:  
+Hay dos causas posibles de este error:  
   
--   La plantilla no está configurada según los requisitos de OTP de DirectAccess y, por lo que no se pueden seleccionar.  
+-   La plantilla no se configura según los requisitos de OTP de DirectAccess y, por tanto, no se puede seleccionar.  
   
--   Las CA seleccionadas en **servidores de CA OTP** no están configuradas para emitir las plantillas necesarias.  
+-   Las CA seleccionadas en **servidores de CA de OTP** no están configuradas para emitir las plantillas necesarias.  
   
 **Solución**  
   
-1.  Asegúrese de que la plantilla de inicio de sesión OTP y la plantilla de certificado de firma de OTP están configurados correctamente, como se describe en el Plan 3.2 de la plantilla de certificado OTP y 3.3 planear el certificado de autoridad de registro.  
+1.  Asegúrese de que la plantilla de inicio de sesión de OTP y la plantilla de certificado de firma de OTP están configuradas correctamente, tal y como se describe en 3,2 planeamiento de la plantilla de certificado OTP y 3,3 planear el certificado de la entidad de registro.  
   
-2.  Asegúrese de que las CA configuradas en el **servidores de CA OTP** lista son configurado para problemas de las plantillas pertinentes:  
+2.  Asegúrese de que las CA configuradas en la lista **servidores de CA de OTP** estén configuradas para emitir las plantillas relevantes:  
   
-    1.  En el servidor de CA, abra la consola de entidad de certificación.  
+    1.  En el servidor de CA, abra la consola entidad de certificación.  
   
     2.  En el panel izquierdo, expanda el servidor de CA elegido.  
   
-    3.  Haga clic en **plantillas de certificado** y asegúrese de que están habilitadas las plantillas necesarias. Si no, haga clic en **plantillas de certificado**, haga clic en **New**, haga clic en **plantilla de certificado para emitir**y, a continuación, seleccione las plantillas que desea habilitar.  
+    3.  Haga clic en **plantillas de certificado** y asegúrese de que las plantillas necesarias estén habilitadas. Si no es así, haga clic con el botón secundario en **plantillas de certificado**, haga clic en **nuevo**, haga clic en **plantilla de certificado para emitir**y, a continuación, seleccione las plantillas que desea habilitar.  
   
-## <a name="cannot-set-renewal-period-of-otp-template-to-1-hour"></a>No se puede establecer el período de renovación de la plantilla OTP a 1 hora  
-**Escenario**. Al configurar la plantilla de inicio de sesión de OTP de DirectAccess mediante Windows 2003 CA, no es posible establecer el período de renovación de la plantilla a 1 hora.  
+## <a name="cannot-set-renewal-period-of-otp-template-to-1-hour"></a>No se puede establecer el período de renovación de la plantilla OTP en 1 hora  
+**Escenario**. Al configurar la plantilla de inicio de sesión OTP de DirectAccess con la CA de Windows 2003, no es posible establecer el período de renovación de la plantilla en 1 hora.  
   
 **Causa**  
   
-El complemento MMC de plantillas de certificado en Windows Server 2003 no permite establecer el período de renovación de una plantilla a 1 hora.  
+El complemento MMC plantillas de certificado de Windows Server 2003 no permite establecer el período de renovación de una plantilla en 1 hora.  
   
 **Solución**  
   
-Instalar complemento de plantillas de certificado en un servidor de posteriores a Windows Server 2003 y usarlo para configurar la plantilla de inicio de sesión OTP, consulte [instalar el complemento Plantillas de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
+Instalar el complemento plantillas de certificado en un servidor posterior a Windows Server 2003 y usarlo para configurar la plantilla de inicio de sesión de OTP, vea [instalar el complemento plantillas de certificado](https://technet.microsoft.com/library/cc732445.aspx).  
   
 
 

@@ -7,35 +7,35 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 36cdacec27e64586c359146b858a9d68750e5026
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ffc2849fa5e18f7984814d6187cf83d68566409b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858266"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369642"
 ---
 # <a name="simplified-administration-appendix"></a>Anexo de administración simplificada
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
   
--   [El administrador del servidor agregar servidores de cuadro de diálogo (Active Directory)](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
+-   [Administrador del servidor cuadro de diálogo Agregar servidores (Active Directory)](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_AddServers)  
   
--   [Estado del servidor de administrador del servidor remoto](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)  
+-   [Administrador del servidor el estado del servidor remoto](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_ServerMgrStatus)  
   
--   [Carga de módulos de PowerShell de Windows](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_PSLoadModule)  
+-   [Carga del módulo de Windows PowerShell](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_PSLoadModule)  
   
--   [Las revisiones de emisión de RID para sistemas operativos anteriores](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_Rid)  
+-   [Revisiones de emisión de RID para sistemas operativos anteriores](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_Rid)  
   
--   [Ntdsutil.exe Install from Media Changes](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
+-   [Instalación de Ntdsutil. exe desde cambios de medios](../../ad-ds/deploy/Simplified-Administration-Appendix.md#BKMK_IFM)  
   
-## <a name="BKMK_AddServers"></a>El administrador del servidor agregar servidores de cuadro de diálogo (Active Directory)  
+## <a name="BKMK_AddServers"></a>Administrador del servidor cuadro de diálogo Agregar servidores (Active Directory)  
 
-El **agregar servidores** cuadro de diálogo permite búsquedas en Active Directory para los servidores, por el sistema operativo, con caracteres comodín y por ubicación. El cuadro de diálogo también permite mediante consultas DNS por nombre de dominio completo o el nombre de prefijo. Estas búsquedas usar protocolos DNS y LDAP nativos implementados a través de. NET, no AD Windows PowerShell con la puerta de enlace de administración de AD a través de SOAP - lo que significa que los controladores de dominio puesto en contacto con el administrador del servidor incluso pueden ejecutar Windows Server 2003. También puede importar un archivo con los nombres de servidor para fines de aprovisionamiento.  
+El cuadro de diálogo **agregar servidores** permite buscar Active Directory servidores, por sistema operativo, mediante caracteres comodín y por ubicación. El cuadro de diálogo también permite el uso de consultas DNS por nombre de dominio completo o por nombre de prefijo. Estas búsquedas usan protocolos DNS y LDAP nativos implementados mediante .NET, no AD Windows PowerShell en la puerta de enlace de administración de AD a través de SOAP, lo que significa que los controladores de dominio a los que se ha puesto en contacto con Administrador del servidor pueden incluso ejecutar Windows Server 2003. También puede importar un archivo con nombres de servidor para fines de aprovisionamiento.  
   
-La búsqueda de Active Directory utiliza los siguientes filtros LDAP:  
+La búsqueda de Active Directory usa los siguientes filtros LDAP:  
   
 ```  
 (&(ObjectCategory=computer)  
@@ -57,15 +57,15 @@ La búsqueda de Active Directory devuelve los siguientes atributos:
   
 ```  
   
-## <a name="BKMK_ServerMgrStatus"></a>Estado del servidor de administrador del servidor remoto  
-El administrador del servidor comprueba la accesibilidad del servidor remoto mediante el protocolo de enrutamiento de direcciones. No se muestran todos los servidores no responde a las solicitudes ARP, incluso si se encuentran en el grupo.  
+## <a name="BKMK_ServerMgrStatus"></a>Administrador del servidor el estado del servidor remoto  
+Administrador del servidor comprueba la accesibilidad del servidor remoto mediante el protocolo de enrutamiento de direcciones. Los servidores que no responden a las solicitudes ARP no aparecen en la lista, aunque estén en el grupo.  
   
-Si responde ARP, las conexiones DCOM y WMI se realizan en el servidor para devolver información de estado. Si RPC, DCOM y WMI se encuentran accesibles, el administrador del servidor no puede administrar completamente el servidor.  
+Si ARP responde, las conexiones DCOM y WMI se realizan en el servidor para devolver información de estado. Si no se puede tener acceso a RPC, DCOM y WMI, el administrador del servidor no podrá administrar el servidor por completo.  
   
-## <a name="BKMK_PSLoadModule"></a>Carga de módulos de PowerShell de Windows  
-Windows PowerShell 3.0 implementa la carga del módulo dinámico. Mediante el **Import-Module** cmdlet normalmente ya no es necesario; en su lugar, basta con invocar el cmdlet, alias o función automáticamente carga el módulo.  
+## <a name="BKMK_PSLoadModule"></a>Carga del módulo de Windows PowerShell  
+Windows PowerShell 3,0 implementa la carga dinámica de módulos. Normalmente ya no se requiere el uso del cmdlet **Import-Module** ; en su lugar, basta con invocar el cmdlet, el alias o la función para cargar automáticamente el módulo.  
   
-Para ver los módulos cargados, use el **Get-Module** cmdlet.  
+Para ver los módulos cargados, use el cmdlet **Get-Module** .  
   
 ```  
 Get-Module  
@@ -74,14 +74,14 @@ Get-Module
   
 ![Administración simplificada](media/Simplified-Administration-Appendix/ADDS_PSGetModule.gif)  
   
-Para ver todos los módulos instalados con sus funciones exportadas y los cmdlets, use:  
+Para ver todos los módulos instalados con sus funciones y cmdlets exportados, use:  
   
 ```  
 Get-Module -ListAvailable  
   
 ```  
   
-El caso principal para usar el **import-module** comando es cuando se necesita acceso a la "AD:" Unidad virtual de Windows PowerShell y nada más, ya ha cargado el módulo. Por ejemplo, mediante los siguientes comandos:  
+El caso principal de usar el comando **Import-Module** es cuando se necesita acceso a la sección "ad:" La unidad virtual de Windows PowerShell y ningún otro usuario ya ha cargado el módulo. Por ejemplo, con los siguientes comandos:  
   
 ```  
 import-module activedirectory  
@@ -90,19 +90,19 @@ dir
   
 ```  
   
-## <a name="BKMK_Rid"></a>Las revisiones de emisión de RID para sistemas operativos anteriores  
-Consulte [una actualización está disponible para detectar y evitar demasiada consumo del grupo RID global en un controlador de dominio que ejecuta Windows Server 2008 R2](https://support.microsoft.com/kb/2618669).  
+## <a name="BKMK_Rid"></a>Revisiones de emisión de RID para sistemas operativos anteriores  
+Vea [que hay disponible una actualización para detectar y evitar demasiado consumo del grupo de RID global en un controlador de dominio que ejecuta Windows Server 2008 R2](https://support.microsoft.com/kb/2618669).  
   
-## <a name="BKMK_IFM"></a>Ntdsutil.exe Install from Media Changes  
-Windows Server 2012 agrega dos opciones adicionales a la herramienta de línea de comandos de Ntdsutil.exe para el **IFM (creación de medios IFM)** menú. Estos permiten crear almacenes de IFM sin realizar antes una desfragmentación sin conexión del archivo exportado NTDS. Archivo de base de datos DIT. Cuando el espacio en disco no es obligatorio, esto ahorra tiempo a crear el IFM.  
+## <a name="BKMK_IFM"></a>Instalación de Ntdsutil. exe desde cambios de medios  
+Windows Server 2012 agrega dos opciones adicionales a la herramienta de línea de comandos Ntdsutil. exe para el menú **IFM (creación de medios IFM)** . Estos permiten crear almacenes IFM sin realizar primero una desfragmentación sin conexión del NTDS exportado. Archivo de base de datos DIT. Cuando el espacio en disco no es un nivel Premium, se ahorra tiempo al crear el IFM.  
   
-En la tabla siguiente se describe los dos nuevos elementos de menú:  
+En la tabla siguiente se describen los dos nuevos elementos de menú:  
   
 |||  
 |-|-|  
 |Elemento de menú|Explicación|  
-|Creación completa NoDefrag %s|Crear medios de IFM prolongado sin desfragmentar un DC de AD completo o una instancia de AD/LDS en la carpeta %s|  
-|Creación de Sysvol completo NoDefrag %s|Crear medios de IFM con SYSVOL y sin desfragmentar un DC de AD completa en la carpeta %s|  
+|Crear la nodefrag% s completa|Crear medios IFMs sin desfragmentación para un DC de AD completo o una instancia de AD/LDS en la carpeta% s|  
+|Crear SYSVOL total nodefrag% s|Crear medios IFMs con SYSVOL y sin desfragmentar un DC de AD completo en la carpeta% s|  
   
 ![Administración simplificada](media/Simplified-Administration-Appendix/ADDS_PSIFM.png)  
   

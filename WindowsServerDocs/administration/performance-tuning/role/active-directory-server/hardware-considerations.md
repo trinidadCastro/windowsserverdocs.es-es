@@ -1,18 +1,18 @@
 ---
 title: Consideraciones de hardware en la optimización del rendimiento de AD
 description: Consideraciones de hardware en la optimización del rendimiento de AD
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d1e6c2744cfe0d16b034e6511144bef92a46b2e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8e9b121036d33bc36cabb92ca682407bc2382fca
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866662"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355102"
 ---
 # <a name="hardware-considerations-in-adds-performance-tuning"></a>Consideraciones de hardware en agrega optimización del rendimiento 
 
@@ -61,7 +61,7 @@ Los procesadores que no tienen suficientes ciclos libres pueden provocar tiempos
 
 -   Agregue hardware, optimice la carga, dirija a los clientes en otro lugar o quite la carga del entorno para reducir la carga de la CPU.
 
--   Use el contador de rendimiento\_información del\\procesador (total &lt; )% de uso del procesador 60%.
+-   Use la información del procesador (\_Total) \\% de utilización del procesador @no__t el contador de rendimiento del 2 60%.
 
 ## <a name="avoid-overloading-the-network-adapter"></a>Evitar sobrecargar el adaptador de red
 

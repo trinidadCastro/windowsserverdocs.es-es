@@ -1,27 +1,27 @@
 ---
 ms.assetid: f7f6bac2-1100-4b00-a248-4ca3eb3cdbe9
-title: Cambiar el logotipo de empresa en la página de inicio de sesión de AD FS
+title: Cambiar el logotipo de la empresa en la página de inicio de sesión de AD FS
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 03/08/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: fe5c138466ea288b5dfb8c7c284603150ab9d874
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: b22c969e0113081e1ca8a662ae81a2ee24829835
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66190029"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358306"
 ---
-# <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>Cambiar el logotipo de empresa en la página de inicio de sesión de AD FS
+# <a name="changing-the-company-logo-on-the-ad-fs-sign-in-page"></a>Cambiar el logotipo de la empresa en la página de inicio de sesión de AD FS
 
 #### <a name="change-company-logo"></a>Cambio del logotipo de la compañía  
-Para cambiar el logotipo de la compañía que se muestra en el inicio de sesión\-en la página, use el siguiente cmdlet de PowerShell de Windows PowerShell y la sintaxis.  
+Para cambiar el logotipo de la empresa que se muestra en la página Sign @ no__t-0in, use el siguiente cmdlet de PowerShell de Windows PowerShell y la siguiente sintaxis.  
 
-![cambiar el logotipo de](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
+![cambiar logotipo](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom2.png)
   
 > [!IMPORTANT]  
 > Recomendamos que las dimensiones del logotipo sean 260 × 35 a 96 ppp con un tamaño de archivo máximo de 10 kB.  
@@ -31,7 +31,7 @@ Para cambiar el logotipo de la compañía que se muestra en el inicio de sesión
 
   
 > [!NOTE]  
-> El parámetro `TargetName` es obligatorio. El tema predeterminado que se incluyó con AD FS se denomina *predeterminada*.  
+> El parámetro `TargetName` es obligatorio. El tema predeterminado que se publica con AD FS se denomina *default*.  
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[AD FS Sign-personalización de usuario](AD-FS-user-sign-in-customization.md)  
+[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)  

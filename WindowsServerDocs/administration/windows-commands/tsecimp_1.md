@@ -2,7 +2,7 @@
 title: tsecimp
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 85fea84ed9dcb0f85bfa80e56f0c2c04d2c8e85b
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: 1c596d6d24a611882c0ecf234c22c83a268ec53c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314314"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363934"
 ---
 # <a name="tsecimp"></a>tsecimp
 
@@ -37,7 +37,7 @@ tsecimp /d
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/f \<nombre de archivo >|Necesario. Especifica el nombre del archivo XML que contiene la información de asignación que desea importar.|
+|/f \<nombre de archivo >|Obligatorio. Especifica el nombre del archivo XML que contiene la información de asignación que desea importar.|
 |/v|Valida la estructura del archivo XML sin importar la información en el archivo TSEC. ini.|
 |/u|Comprueba si cada usuario es miembro del dominio especificado en el archivo XML. El equipo en el que se usa este parámetro debe estar conectado a la red. Este parámetro puede reducir significativamente el rendimiento si se está procesando una gran cantidad de información de asignación de usuarios.|
 |/d|Muestra una lista de proveedores de telefonía instalados. Para cada proveedor de telefonía, se enumeran los dispositivos de línea asociados, así como las direcciones y los usuarios asociados a cada dispositivo de línea.|
@@ -53,7 +53,7 @@ tsecimp /d
 
         Cada elemento de **usuario** contiene información acerca de un usuario que es miembro de un dominio. A cada usuario se le puede asignar uno o varios dispositivos de línea.
 
-        Además, cada elemento de **usuario** podría tener un atributo denominado NoMerge. Cuando se especifica este atributo, se quitan todas las asignaciones de dispositivos de línea actuales para el usuario antes de que se realicen otras nuevas. Puede usar este atributo para quitar fácilmente las asignaciones de usuario no deseadas. De forma predeterminada, este atributo no está establecido.
+        Además, cada elemento de **usuario** podría tener un atributodenominado NoMerge. Cuando se especifica este atributo, se quitan todas las asignaciones de dispositivos de línea actuales para el usuario antes de que se realicen otras nuevas. Puede usar este atributo para quitar fácilmente las asignaciones de usuario no deseadas. De forma predeterminada, este atributo no está establecido.
 
         El elemento **User** debe contener un único elemento **DomainUserName** , que especifica el dominio y el nombre de usuario del usuario. El elemento **User** también puede contener un elemento **FriendlyName** , que especifica un nombre descriptivo para el usuario.
 

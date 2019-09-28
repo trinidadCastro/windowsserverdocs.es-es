@@ -1,8 +1,8 @@
 ---
-title: Con el comando copy DriverGroup
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando copy-DriverGroup
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 68d9c6f4ca78991bb4c286042a6172211161dd1e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c08ce616c9b0e2bf79c7f13f922e27d7f7f7ca62
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59842086"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363593"
 ---
-# <a name="using-the-copy-drivergroup-command"></a>Con el comando copy DriverGroup
+# <a name="using-the-copy-drivergroup-command"></a>Usar el comando copy-DriverGroup
 
 
 
-Duplica un grupo de controladores existente en el servidor incluidos el estado habilitado o deshabilitado, filtros y paquetes de controladores.
+Duplica un grupo de controladores existente en el servidor, incluidos los filtros, los paquetes de controladores y el estado habilitado o deshabilitado.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ WDSUTIL /Copy-DriverGroup [/Server:<Server name>] /DriverGroup:<Source Group Nam
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[/ Server:\<nombre del servidor >]|Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se usa el servidor local.|
-|/ DriverGroup:\<nombre del grupo de origen >|Especifica el nombre del grupo de controladores de origen.|
-|/ GroupName:\<nuevo nombre de grupo >|Especifica el nombre del nuevo grupo de controladores.|
+|[/Server: \<Server nombre >]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
+|/DriverGroup: \<Source nombre de grupo >|Especifica el nombre del grupo de controladores de origen.|
+|/GroupName: \<New nombre de grupo >|Especifica el nombre del nuevo grupo de controladores.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para copiar un grupo de controladores, escriba uno de los siguientes:
 ```

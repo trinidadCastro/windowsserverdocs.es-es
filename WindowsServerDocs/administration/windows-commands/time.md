@@ -1,8 +1,8 @@
 ---
 title: time
-description: Obtenga información sobre cómo establecer y mostrar la hora del sistema.
+description: Obtenga información acerca de cómo establecer y mostrar la hora del sistema.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b5c1f43be98a19c4b150c247cc7fd48d62edeb5c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 484653ed65d5e5c16d74b2cb45b2c9da71aa62aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861916"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369950"
 ---
 # <a name="time"></a>time
 
 
 
-Muestra o establece la hora del sistema. Si se utiliza sin parámetros, **tiempo** muestra la hora actual del sistema y le pide que escriba un nuevo tiempo.
+Muestra o establece la hora del sistema. Si se usa sin parámetros, **Time** muestra la hora actual del sistema y le pide que especifique una nueva hora.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,34 +38,34 @@ time [/t | [<HH>[:<MM>[:<SS>]] [am|pm]]]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<HH>[:\<MM>[:\<SS>[.\<NN>]]] [am\|pm]|Establece la hora del sistema en el nuevo horario especificado, donde *HH* es en horas (obligatorio), *MM* es en minutos, y *SS* es en segundos. *NN* puede utilizarse para especificar las centésimas de segundo. Si **estoy** o **pm** no se especifica, **tiempo** utiliza el formato de 24 horas de forma predeterminada.|
-|/t|Muestra la hora actual sin pedir una nueva hora.|
+|\<HH > [: \<MM > [: \<SS > [. \<NN >]]] [AM @ no__t-16:00]|Establece la hora del sistema en la nueva hora especificada, donde *HH* se encuentra en horas (obligatorio), *mm* es en minutos y *SS* está en segundos. *Nn* se puede usar para especificar centésimas de segundo. Si no se especifica **AM** o **PM** , **Time** usa el formato de 24 horas de forma predeterminada.|
+|/t|Muestra la hora actual sin pedirle una nueva hora.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
 -   Para cambiar la hora actual, debe tener credenciales administrativas.
--   Debe separar los valores de *HH*, *MM*, y *SS* con dos puntos (:). *SS* y *NN* deben separarse con un punto (.).
--   Válido *HH* los valores son 0 y 24.
--   Válido *MM* y *SS* los valores son de 0 a 59.
+-   Debe separar los valores de *HH*, *mm*y *SS* con dos puntos (:). *SS* y *nn* se deben separar con un punto (.).
+-   Los valores de *HH* válidos son de 0 a 24.
+-   Los valores válidos *mm* y *SS* son de 0 a 59.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Si se habilitan las extensiones de comando, para mostrar la hora actual del sistema, escriba:
+Si las extensiones de comando están habilitadas, para mostrar la hora actual del sistema, escriba:
 ```
 time /t
 ```
-Para cambiar la hora actual del sistema a 5:30 P.M., escriba cualquiera de las siguientes acciones:
+Para cambiar la hora actual del sistema a 5:30 P.M., escriba una de las opciones siguientes:
 ```
 time 17:30:00
 time 5:30 pm
 ```
-Para mostrar la hora del sistema actual, seguida por un símbolo del sistema que escriba una nueva hora, escriba:
+Para mostrar la hora del sistema actual, seguido de una solicitud para especificar una nueva hora, escriba:
 ```
 The current time is: 17:33:31.35
 Enter the new time:
 ```
-Para mantener la hora actual y volver a la línea de comandos, presione ENTRAR. Para cambiar la hora actual, escriba la nueva hora y, a continuación, presione ENTRAR.
+Para mantener la hora actual y volver al símbolo del sistema, presione Entrar. Para cambiar la hora actual, escriba la nueva hora y, a continuación, presione Entrar.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

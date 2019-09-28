@@ -1,8 +1,8 @@
 ---
-title: Wbadmin delete systemstatebackup
-description: 'Tema de los comandos de Windows para ***- '
+title: Wbadmin Delete systemstatebackup
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,23 +13,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6801ca5985af626ccb7f6170fbcd6f8fc8305ba1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 1f324cba3fcdae8639009395c4df734a2db6b814
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813156"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362523"
 ---
-# <a name="wbadmin-delete-systemstatebackup"></a>Wbadmin delete systemstatebackup
+# <a name="wbadmin-delete-systemstatebackup"></a>Wbadmin Delete systemstatebackup
 
 
 
-Elimina las copias de seguridad del estado del sistema que especifique. Si el volumen especificado contiene copias de seguridad que no sea de copias de seguridad del estado del sistema del servidor local, no se eliminarán esas copias de seguridad.
+Elimina las copias de seguridad de estado del sistema que especifique. Si el volumen especificado contiene copias de seguridad distintas de las copias de seguridad de estado del sistema del servidor local, esas copias de seguridad no se eliminarán.
 
 > [!NOTE]
-> Copia de seguridad de Windows Server no copia de seguridad o recuperar subárboles del registro de usuario (HKEY_CURRENT_USER) como parte de la copia de seguridad o recuperación del estado del sistema.
+> Copias de seguridad de Windows Server no realiza copias de seguridad ni recupera secciones de usuarios del registro (HKEY_CURRENT_USER) como parte de la copia de seguridad del estado del sistema o de la recuperación del estado del sistema.
 
-Para eliminar una copia de seguridad del estado del sistema con este subcomando, debe ser miembro de la **operadores de copia de seguridad** grupo o la **administradores** grupo, o bien debe haber sido delegar los permisos adecuados. Además, debe ejecutar **wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados de contextual **símbolo**y, a continuación, haga clic en **ejecutar como administrador**.)
+Para eliminar una copia de seguridad de estado del sistema con este subcomando, debe ser miembro del grupo **operadores de copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados. Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**).
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -44,30 +44,30 @@ wbadmin delete systemstatebackup
 ```
 
 > [!IMPORTANT]
-> Deben especificarse uno y solo uno de estos parámetros: **- keepVersions**, **-versión**, o **- deleteOldest**.
+> Se debe especificar uno y solo uno de estos parámetros: **-keepVersions**, **-version**o **-deleteOldest**.
 
 ## <a name="parameters"></a>Parámetros
 
 |Parámetro|Descripción|
 |---------|-----------|
-|-keepVersions|Especifica el número de las copias de seguridad de estado del sistema más recientes para mantener. El valor debe ser un entero positivo. El valor del parámetro **- keepVersions: 0** elimina todas las copias de seguridad de estado del sistema.|
-|-versión|Especifica el identificador de la versión de la copia de seguridad de MM/DD/AAAA-formato hh: mm. Si no conoce el identificador de versión, escriba **wbadmin obtener versiones**.</br>Las versiones que son exclusivamente sistema estado copias de seguridad pueden eliminarse mediante este comando. Use **wbadmin obtener elementos** para ver el tipo de versión.|
-|-deleteOldest|Elimina la copia de seguridad del estado del sistema más antigua.|
-|-backupTarget|Especifica la ubicación de almacenamiento para la copia de seguridad que desea eliminar. La ubicación de almacenamiento para copias de seguridad de discos puede ser una letra de unidad, un punto de montaje o una ruta de acceso basado en GUID de volumen. Este valor solo debe especificarse para la localización de las copias de seguridad que no son del equipo local. Información acerca de las copias de seguridad para el equipo local estará disponible en el catálogo de copia de seguridad en el equipo local.|
-|-machine|Especifica el equipo cuya copia de seguridad del estado del sistema que desea eliminar. Resulta útil cuando varios equipos se incluyeron en la misma ubicación. Debe usarse cuando la **- backupTarget** se especifica el parámetro.|
-|-quiet|Se ejecuta el subcomando sin solicitudes para el usuario.|
+|-keepVersions|Especifica el número de las copias de seguridad de estado del sistema más recientes que se van a conservar. El valor debe ser un entero positivo. El valor del parámetro **-keepVersions: 0** elimina todas las copias de seguridad de estado del sistema.|
+|-versión|Especifica el identificador de la versión de la copia de seguridad en formato MM/DD/AAAA-HH: MM. Si no conoce el identificador de la versión, escriba **Wbadmin get Versions**.</br>Las versiones que son exclusivamente copias de seguridad de estado del sistema se pueden eliminar con este comando. Use **Wbadmin get items** para ver el tipo de versión.|
+|-deleteOldest|Elimina la copia de seguridad de estado del sistema más antigua.|
+|-backupTarget|Especifica la ubicación de almacenamiento de la copia de seguridad que desea eliminar. La ubicación de almacenamiento de las copias de seguridad de los discos puede ser una letra de unidad, un punto de montaje o una ruta de acceso de volumen basada en GUID. Este valor solo debe especificarse para buscar copias de seguridad que no sean del equipo local. La información sobre las copias de seguridad del equipo local estará disponible en el catálogo de copias de seguridad del equipo local.|
+|-equipo|Especifica el equipo cuya copia de seguridad de estado del sistema desea eliminar. Resulta útil cuando se realizó una copia de seguridad de varios equipos en la misma ubicación. Debe usarse cuando se especifica el parámetro **-backupTarget** .|
+|-quiet|Ejecuta el subcomando sin preguntar al usuario.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para eliminar la copia de seguridad del estado del sistema creado el 31 de marzo de 2013 a las 10:00 a. M., escriba:
+Para eliminar la copia de seguridad del estado del sistema creada el 31 de marzo de 2013 a las 10:00 AM, escriba:
 ```
 wbadmin delete systemstatebackup -version:03/31/2013-10:00
 ```
-Para eliminar todos los sistema estado copias de seguridad, excepto los tres últimos, escriba:
+Para eliminar todas las copias de seguridad de estado del sistema, excepto las tres más recientes, escriba:
 ```
 wbadmin delete systemstatebackup -keepVersions:3
 ```
-Para eliminar la más antigua copia de seguridad almacenado en el disco f, escriba:
+Para eliminar la copia de seguridad de estado del sistema más antigua almacenada en el disco f, escriba:
 ```
 wbadmin delete systemstatebackup -backupTarget:f -deleteOldest
 ```

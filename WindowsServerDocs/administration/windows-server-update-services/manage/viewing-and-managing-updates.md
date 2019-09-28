@@ -1,7 +1,7 @@
 ---
 title: Visualización y administración de actualizaciones
-description: Tema de Windows Server Update Service (WSUS) - cómo ver y administrar las actualizaciones en la consola de WSUS
-ms.prod: windows-server-threshold
+description: 'Tema de Windows Server Update Service (WSUS): visualización y administración de actualizaciones en la consola de WSUS'
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -12,12 +12,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f2ffc6680239fa468b058b74f9acf26d22f2b65f
-ms.sourcegitcommit: 8ba2c4de3bafa487a46c13c40e4a488bf95b6c33
+ms.openlocfilehash: de2d12ad34ba11f948baa390546747a6bf4b635c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/25/2019
-ms.locfileid: "66222609"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361495"
 ---
 # <a name="viewing-and-managing-updates"></a>Visualización y administración de actualizaciones
 
@@ -25,18 +25,18 @@ ms.locfileid: "66222609"
 
 Puede usar la consola de WSUS para ver y administrar las actualizaciones.
 
-## <a name="viewing-updates"></a>Ver las actualizaciones
-En el **actualizaciones** página, puede hacer lo siguiente:
+## <a name="viewing-updates"></a>Ver actualizaciones
+En la página **actualizaciones** , puede hacer lo siguiente:
 
--   Ver las actualizaciones. La información general de actualizaciones muestra las actualizaciones que se han sincronizado desde el origen de actualización en el servidor WSUS y están disponibles para su aprobación.
+-   Ver actualizaciones. La información general de la actualización muestra las actualizaciones que se han sincronizado desde el origen de la actualización al servidor WSUS y están disponibles para su aprobación.
 
--   Filtrar las actualizaciones. En la vista predeterminada puede filtrar las actualizaciones por estado de aprobación y el estado de la instalación. El valor predeterminado es sin aprobar actualizaciones que son necesarios para algunos clientes o que han tenido errores de instalación en algunos clientes. Puede cambiar esta vista cambiando los filtros de estado de instalación y el estado de aprobación y, a continuación, haga clic en **actualizar**.
+-   Filtrar actualizaciones. En la vista predeterminada, puede filtrar las actualizaciones por estado de aprobación y estado de instalación. La configuración predeterminada es para las actualizaciones no aprobadas que necesitan algunos clientes o que han tenido errores de instalación en algunos clientes. Puede cambiar esta vista cambiando los filtros estado de aprobación y estado de la instalación y, a continuación, haciendo clic en **Actualizar**.
 
--   Crear nuevas vistas de actualización. En el **acciones** panel, haga clic en **nueva vista de actualización**. Puede filtrar las actualizaciones por clasificación, producto, el grupo para el que se han aprobado y fecha de sincronización. Puede ordenar la lista, haga clic en el encabezado de columna correspondiente en la barra de título.
+-   Crear nuevas vistas de actualización. En el panel **acciones** , haga clic en **nueva vista de actualización**. Puede filtrar las actualizaciones por clasificación, producto, grupo para el que se han aprobado y fecha de sincronización. Para ordenar la lista, haga clic en el encabezado de columna correspondiente en la barra de título.
 
--   Buscar actualizaciones. Puede buscar una actualización individual o un conjunto de actualizaciones por título, descripción, el artículo de Knowledge Base o el número de Microsoft Security Response Center para la actualización.
+-   Buscar actualizaciones. Puede buscar una actualización individual o un conjunto de actualizaciones por título, descripción, artículo de Knowledge base o el número del centro de respuesta de seguridad de Microsoft para la actualización.
 
--   Ver detalles, el estado y el historial de revisiones para cada actualización.
+-   Vea los detalles, el estado y el historial de revisiones de cada actualización.
 
 -   Aprobar y rechazar actualizaciones.
 
@@ -44,49 +44,49 @@ En el **actualizaciones** página, puede hacer lo siguiente:
 
 1.  En la consola de administración de WSUS, expanda el nodo actualizaciones y, a continuación, haga clic en todas las actualizaciones.
 
-2.  De forma predeterminada, las actualizaciones se muestran con su título, clasificación, porcentaje aplicable/no instalado y el estado de aprobación. Si desea mostrar las propiedades de la actualización más o diferentes, haga clic en la barra de título de columna y seleccione las columnas apropiadas.
+2.  De forma predeterminada, las actualizaciones se muestran con su título, clasificación, porcentaje instalado/no aplicable y estado de aprobación. Si desea mostrar más propiedades de actualización o distintas, haga clic con el botón secundario en la barra de encabezado de columna y seleccione las columnas adecuadas.
 
-3.  Para ordenar según criterios diferentes, por ejemplo, el estado de la descarga, título, clasificación, fecha de lanzamiento o estado de aprobación, haga clic en el encabezado de columna correspondiente.
+3.  Para ordenar por criterios diferentes, como estado de descarga, título, clasificación, fecha de lanzamiento o estado de aprobación, haga clic en el encabezado de columna correspondiente.
 
-#### <a name="to-filter-the-list-of-updates-displayed-on-the-updates-page"></a>Para filtrar la lista de actualizaciones que se muestra en la página actualizaciones
+#### <a name="to-filter-the-list-of-updates-displayed-on-the-updates-page"></a>Para filtrar la lista de actualizaciones que se muestran en la página actualizaciones
 
 1.  En la consola de administración de WSUS, expanda **actualizaciones**y, a continuación, haga clic en **todas las actualizaciones**.
 
-2.  En el panel central junto a **aprobación**, seleccione el estado de aprobación deseado y, junto a **estado** seleccione el estado de instalación deseada. Haz clic en **Actualizar**.
+2.  En el panel central junto a **aprobación**, seleccione el estado de aprobación deseado y, junto a **Estado** , seleccione el estado de la instalación que desee. Haz clic en **Actualizar**.
 
 #### <a name="to-create-a-new-update-view-on-wsus"></a>Para crear una nueva vista de actualización en WSUS
 
 1.  En la consola de administración de WSUS, expanda **actualizaciones**y, a continuación, haga clic en **todas las actualizaciones**.
 
-2.  En el **acciones** panel, haga clic en **nueva vista de actualización**.
+2.  En el panel **acciones** , haga clic en **nueva vista de actualización**.
 
-3.  En el **agregar vista actualizar** ventana, en **paso 1: seleccionar propiedades**, seleccione las propiedades que necesita para filtrar la vista de actualización:
+3.  En la ventana **Agregar vista de actualización** , en **paso 1: seleccionar propiedades**, seleccione las propiedades que necesita para filtrar la vista de actualización:
 
-    -   Las actualizaciones seleccionadas están en una clasificación específica para filtrar las actualizaciones que pertenecen a uno o más clasificaciones de actualizaciones.
+    -   Seleccione las actualizaciones están en una clasificación específica para filtrar las actualizaciones que pertenecen a una o más clasificaciones de actualización.
 
-    -   Seleccione las actualizaciones son para que un producto específico filtrar las actualizaciones para uno o varios productos o familias de productos.
+    -   Seleccione las actualizaciones para un producto específico para filtrar las actualizaciones de uno o varios productos o familias de productos.
 
-    -   Seleccione las actualizaciones se aprueban para que un grupo específico filtrar según las actualizaciones aprobadas para uno o varios grupos de equipos.
+    -   Seleccione se aprueban las actualizaciones para un grupo específico para filtrar según las actualizaciones aprobadas para uno o más grupos de equipos.
 
-    -   Seleccione las actualizaciones se sincronizan en un período de tiempo concreto para filtrar según las actualizaciones sincronizadas en un momento determinado.
+    -   Seleccione las actualizaciones se sincronizaron dentro de un período de tiempo específico para filtrar por las actualizaciones sincronizadas en un momento determinado.
 
-    -   Seleccione las actualizaciones son actualizaciones WSUS para filtrar las actualizaciones de WSUS.
+    -   Seleccione las actualizaciones son actualizaciones de WSUS para filtrar en las actualizaciones de WSUS.
 
-4.  En **paso 2: editar las propiedades**, haga clic en las palabras subrayadas para elegir los valores que desee.
+4.  En **paso 2: editar las propiedades**, haga clic en las palabras subrayadas para seleccionar los valores que desee.
 
-5.  Bajo **paso 3: Especifique un nombre**, asigne un nombre a la nueva vista.
+5.  En @no__t 0Step 3: Especifique un nombre @ no__t-0, asigne un nombre a la nueva vista.
 
 6.  Haga clic en **Aceptar**.
 
-La nueva vista aparecerá en el panel de vista de árbol en las actualizaciones. Se mostrará, como las vistas estándar en el panel central cuando lo selecciona.
+La nueva vista aparecerá en el panel vista de árbol en actualizaciones. Se mostrará, como las vistas estándar, en el panel central al seleccionarlo.
 
 #### <a name="to-search-for-an-update"></a>Para buscar una actualización
 
-1.  Seleccione el **actualizaciones** nodo (o cualquier nodo situado debajo de él).
+1.  Seleccione el nodo **actualizaciones** (o cualquier nodo situado debajo).
 
-2.  En el **acciones** panel, haga clic en **búsqueda**.
+2.  En el panel **acciones** , haga clic en **Buscar**.
 
-3.  En el **búsqueda** ventana, en el **actualizaciones** ficha, especifique los criterios de búsqueda. Puede usar el texto de la **título**, **descripción**, y **número de artículo de Microsoft Knowledge Base (KB)** campos. Cada uno de estos elementos es una propiedad que se muestran en el **detalles** ficha en las propiedades de actualización.
+3.  En la ventana **Buscar** , en la pestaña **actualizaciones** , escriba los criterios de búsqueda. Puede usar el texto de los campos **título**, **Descripción**y **número de artículo de Microsoft Knowledge base (KB)** . Cada uno de estos elementos es una propiedad que se muestra en la pestaña **detalles** de las propiedades de la actualización.
 
 #### <a name="to-view-the-properties-for-an-update"></a>Para ver las propiedades de una actualización
 
@@ -94,110 +94,110 @@ La nueva vista aparecerá en el panel de vista de árbol en las actualizaciones.
 
 2.  En la lista de actualizaciones, haga clic en la actualización que desea ver.
 
-3.  En el panel inferior, verá las secciones de propiedad diferentes:
+3.  En el panel inferior, verá las distintas secciones de propiedades:
 
-    -   La barra de título muestra el título de la actualización; Por ejemplo, la actualización para Windows Media Player 9 de seguridad (KB911565).
+    -   La barra de título muestra el título de la actualización. por ejemplo, la actualización de seguridad para Windows Media Player 9 (KB911565).
 
-    -   La sección Estado muestra el estado de instalación de la actualización (los equipos en el que debe instalarse, equipos en los que se instaló con errores, los equipos en los que se se ha instalado o no es aplicable y los equipos que no han notificado el estado de la actualización), así como información general (fecha de lanzamiento de números KB y MSRC, etcetera).
+    -   La sección estado muestra el estado de instalación de la actualización (los equipos en los que se debe instalar, los equipos en los que se instaló con errores, los equipos en los que se ha instalado o no es aplicable y los equipos que no han comunicado Estado de la actualización), así como información general (fecha de lanzamiento de los números de KB y MSRC, etc.).
 
-    -   La sección de descripción muestra una breve descripción de la actualización.
+    -   La sección Descripción muestra una breve descripción de la actualización.
 
-    -   La sección de detalles adicionales, muestra la siguiente información:
+    -   La sección detalles adicionales muestra la siguiente información:
 
-        -   El comportamiento de instalación de la actualización (o no es extraíble, solicita un reinicio, requiere la intervención del usuario o debe instalarse exclusivamente).
+        -   El comportamiento de la instalación de la actualización (ya sea extraíble o no, solicita un reinicio, requiere la intervención del usuario o debe instalarse exclusivamente).
 
-        -   Si tiene o no la actualización de los términos de licencia de Software de Microsoft
+        -   Si la actualización tiene o no términos de licencia del software de Microsoft
 
-        -   Los productos a los que se aplica la actualización
+        -   Productos a los que se aplica la actualización
 
-        -   Las actualizaciones que sustituyen a esta actualización
+        -   Actualizaciones que sustituyen a esta actualización
 
-        -   Las actualizaciones que sustituye esta actualización
+        -   Actualizaciones reemplazadas por esta actualización
 
         -   Los idiomas admitidos por la actualización
 
-        -   El Id. de actualización
+        -   El identificador de la actualización
 
-Tenga en cuenta que puede realizar este procedimiento en solo una actualización a la vez. Si selecciona varias actualizaciones, solo la primera actualización de la lista se mostrará en el **propiedades** panel.
+Tenga en cuenta que este procedimiento solo se puede realizar en una actualización cada vez. Si selecciona varias actualizaciones, en el panel **propiedades** solo se mostrará la primera actualización de la lista.
 
 ## <a name="managing-updates-with-wsus"></a>Administración de actualizaciones con WSUS
-Las actualizaciones se utilizan para actualizar o proporcionar un reemplazo completo para el software que está instalado en un equipo. Todas las actualizaciones que está disponible en Microsoft Update se compone de dos componentes:
+Las actualizaciones se usan para actualizar o proporcionar una sustitución completa de archivos para el software instalado en un equipo. Cada actualización que está disponible en Microsoft Update se compone de dos componentes:
 
--   Metadata: Proporciona información acerca de la actualización. Por ejemplo, los metadatos suministran información para las propiedades de una actualización, lo que permite averiguar para qué es útil la actualización. Los metadatos incluyen también los términos de licencia del Software de Microsoft. El paquete de metadatos descargado para una actualización es normalmente mucho menor que el paquete de archivos de actualización real.
+-   Repositorio Proporciona información acerca de la actualización. Por ejemplo, los metadatos proporcionan información para las propiedades de una actualización, lo que le permite averiguar cuál es la utilidad de actualización. Los metadatos también incluyen términos de licencia del software de Microsoft. El paquete de metadatos descargado para una actualización suele ser mucho menor que el paquete del archivo de actualización real.
 
--   Archivos de actualización: Los archivos reales de necesarios para instalar una actualización en un equipo.
+-   Archivos de actualización: Los archivos reales necesarios para instalar una actualización en un equipo.
 
-Cuando se sincronizan las actualizaciones con su servidor WSUS, los archivos de actualización y los metadatos se almacenan en dos ubicaciones independientes. Los metadatos se almacenan en la base de datos de WSUS. Los archivos de actualización pueden almacenarse en el servidor WSUS o en servidores de Microsoft Update, dependiendo de cómo haya configurado las opciones de sincronización. Si decide almacenar los archivos de actualización en servidores de Microsoft Update, sólo se descargan los metadatos en el momento de la sincronización; aprobar las actualizaciones a través de la consola de WSUS y, a continuación, los equipos cliente obtención los archivos de actualización directamente desde Microsoft Update en el momento de la instalación. Para obtener más información acerca de las opciones para almacenar las actualizaciones, consulte la sección [1.3. Elegir una estrategia de almacenamiento WSUS](../plan/plan-your-wsus-deployment.md#13-choose-a-wsus-storage-strategy) del paso 1: Preparar la implementación de WSUS, en la Guía de implementación de WSUS.
+Cuando se sincronizan las actualizaciones con su servidor WSUS, los archivos de actualización y los metadatos se almacenan en dos ubicaciones independientes. Los metadatos se almacenan en la base de datos de WSUS. Los archivos de actualización se pueden almacenar en el servidor WSUS o en servidores de Microsoft Update, en función de cómo haya configurado las opciones de sincronización. Si decide almacenar los archivos de actualización en servidores de Microsoft Update, solo se descargan los metadatos en el momento de la sincronización; las actualizaciones se aprueban a través de la consola de WSUS y, a continuación, los equipos cliente obtienen los archivos de actualización directamente desde Microsoft Update en el momento de la instalación. Para obtener más información sobre las opciones de almacenamiento de actualizaciones, consulte la sección [1,3. Elija una estrategia de almacenamiento de WSUS @ no__t-0 del paso 1: Prepárese para la implementación de WSUS, en la guía de implementación de WSUS.
 
-Va a configurar y ejecutar sincronizaciones, adición de equipos y grupos de equipos y la implementación de actualizaciones de forma periódica. En la lista siguiente se proporciona ejemplos de tareas generales que puede llevar a cabo en la actualización de los equipos con WSUS.
+Podrá configurar y ejecutar sincronizaciones, agregar equipos y grupos de equipos e implementar actualizaciones de forma periódica. En la lista siguiente se proporcionan ejemplos de tareas generales que se pueden llevar a cabo en la actualización de equipos con WSUS.
 
--   Determinar un plan general de administración de actualización según la topología de red y ancho de banda, las necesidades de la empresa y estructura organizativa.
+-   Determine un plan general de administración de actualizaciones en función de la topología de red y el ancho de banda, las necesidades de la empresa y la estructura organizativa.
 
-    -   Si se configura una jerarquía de servidores WSUS y cómo se debe estructurar la jerarquía.
+    -   Si se va a configurar una jerarquía de servidores WSUS y cómo se debe estructurar la jerarquía.
 
-    -   ¿Qué equipo agrupa para crear y cómo asignar equipos a ellos (destinatarios del lado servidor o cliente).
+    -   Los grupos de equipos que se van a crear y cómo asignarles equipos (destinatarios del lado servidor o del lado cliente).
 
-    -   La base de datos que se usará para los metadatos de actualización (por ejemplo, Windows Internal Database, SQL Server).
+    -   Qué base de datos se va a usar para actualizar los metadatos (por ejemplo, Windows Internal Database, SQL Server).
 
-    -   Si se deben sincronizar las actualizaciones automáticamente y en qué momento.
+    -   Si las actualizaciones se deben sincronizar automáticamente y en qué momento.
 
--   Establecer las opciones de sincronización, como origen de actualización, clasificación de productos y actualizaciones, idioma, configuración de conexión, ubicación de almacenamiento y programación de sincronización.
+-   Establezca las opciones de sincronización, como el origen de la actualización, la clasificación del producto y la actualización, el idioma, la configuración de conexión, la ubicación de almacenamiento y la programación de sincronización.
 
--   Obtenga las actualizaciones y los metadatos asociados en el servidor WSUS mediante la sincronización desde Microsoft Update o un servidor WSUS ascendente.
+-   Obtener las actualizaciones y los metadatos asociados en el servidor WSUS a través de la sincronización desde Microsoft Update o un servidor WSUS ascendente.
 
--   Aprobar o rechazar las actualizaciones. Tiene la opción de permitir que los usuarios para instalar las actualizaciones mismas (si son administradores locales en sus equipos cliente).
+-   Aprobar o rechazar actualizaciones. Tiene la opción de permitir que los usuarios instalen las actualizaciones (si son administradores locales en sus equipos cliente).
 
--   Configurar aprobaciones automáticas. También puede configurar si desea habilitar la aprobación automática de revisiones de actualizaciones existentes o aprobar manualmente las revisiones. Si decide aprobar manualmente las revisiones, el servidor WSUS continuará usando la versión más antigua hasta que se apruebe manualmente la nueva revisión.
+-   Configurar aprobaciones automáticas. También puede configurar si desea habilitar la aprobación automática de las revisiones para las actualizaciones existentes o aprobar las revisiones manualmente. Si decide aprobar las revisiones manualmente, el servidor WSUS seguirá usando la versión anterior hasta que apruebe manualmente la nueva revisión.
 
--   Compruebe el estado de las actualizaciones. Puede ver el estado de actualización, imprimir un informe de estado o configurar el correo electrónico para los informes de estado periódicas.
+-   Compruebe el estado de las actualizaciones. Puede ver el estado de las actualizaciones, imprimir un informe de estado o configurar el correo electrónico para los informes de estado normales.
 
 ## <a name="update-products-and-classifications"></a>Actualizar productos y clasificaciones
-Las actualizaciones disponibles en Microsoft Update se diferencian por producto (o familia de productos) y la clasificación.
+Las actualizaciones disponibles en Microsoft Update se diferencian en el producto (o la familia de productos) y la clasificación.
 
-Un producto es una edición específica de un sistema operativo o la aplicación, por ejemplo, Windows Server 2012. Una familia de productos es el sistema operativo o la aplicación de base de los cuales se derivan los productos individuales. Un ejemplo de una familia de productos es Microsoft Windows, de los cuales Windows Server 2012 es un miembro. Puede seleccionar los productos o familias de productos para el que desea que el servidor para sincronizar las actualizaciones. Puede especificar una familia de productos o productos individuales dentro de la familia. Selección de cualquier producto o familia de productos, obtendrá las actualizaciones de versiones actuales y futuras del producto.
+Un producto es una edición específica de un sistema operativo o una aplicación, por ejemplo, Windows Server 2012. Una familia de productos es el sistema operativo o la aplicación de base de los cuales se derivan los productos individuales. Un ejemplo de una familia de productos es Microsoft Windows, de la que Windows Server 2012 es miembro. Puede seleccionar los productos o familias de productos para los que desea que el servidor Sincronice las actualizaciones. Puede especificar una familia de productos o productos individuales dentro de la familia. La selección de cualquier producto o familia de productos recibirá actualizaciones de las versiones actuales y futuras del producto.
 
-Clasificaciones de actualización representan el tipo de actualización. Para cualquier determinado producto o familia de productos, las actualizaciones podrían estar disponibles entre varias clasificaciones de actualización (por ejemplo, la familia de Windows 7 actualizaciones críticas y actualizaciones de seguridad). En la tabla siguiente se enumera las clasificaciones de actualizaciones.
+Las clasificaciones de actualizaciones representan el tipo de actualización. En el caso de una familia de productos o productos determinada, las actualizaciones pueden estar disponibles entre varias clasificaciones de actualización (por ejemplo, actualizaciones críticas de la familia de Windows 7 y actualizaciones de seguridad). En la tabla siguiente se enumeran las clasificaciones de actualizaciones.
 
 | Clasificaciones de actualizaciones  | Descripción   |
 |--|--|
-|Actualizaciones críticas|Correcciones para problemas específicos que solucionan los errores relacionados con no de seguridad críticos.|
+|Actualizaciones críticas|Revisiones de amplia difusión para problemas específicos que solucionan errores críticos no relacionados con la seguridad.|
 |Actualizaciones de definiciones|Actualizaciones de virus u otros archivos de definición.|
 |Controladores|Componentes de software diseñados para admitir el nuevo hardware.|
-|Feature packs de|Nuevas versiones de características, normalmente se acumulan en los productos en la próxima versión.|
-|Actualizaciones de seguridad|Correcciones de productos específicos, problemas de seguridad.|
-|Service Packs|Conjuntos acumulativos de todas las revisiones, actualizaciones de seguridad, actualizaciones críticas y actualizaciones creadas desde el lanzamiento del producto. Los Service packs también podrían contener un número limitado de características o cambios de diseño solicitadas por el cliente.|
-|Herramientas|Utilidades o características que ayudan a llevar a cabo una tarea o un conjunto de tareas.|
-|Paquetes acumulativos de actualizaciones|Un conjunto acumulativo de revisiones, actualizaciones de seguridad, actualizaciones críticas y otras actualizaciones que se recopilan para facilitar la implementación. Un paquete acumulativo de actualizaciones por lo general tiene como destino un área específica, como seguridad o un componente específico, como Internet Information Services (IIS).|
-|Actualizaciones|Correcciones para problemas específicos que solucionan errores relacionados que no son críticas, no de seguridad.|
+|Paquetes de características|Nuevas versiones de características, que normalmente se han incorporado en productos en la próxima versión.|
+|Actualizaciones de seguridad|Revisiones ampliamente publicadas para productos específicos que abordan los problemas de seguridad.|
+|Service Packs|Conjuntos acumulativos de todas las revisiones, actualizaciones de seguridad, actualizaciones críticas y actualizaciones creadas desde el lanzamiento del producto. Los Service Pack también pueden contener un número limitado de características o cambios de diseño solicitados por el cliente.|
+|Herramientas|Utilidades o características que ayudan a realizar una tarea o un conjunto de tareas.|
+|Paquetes acumulativos de actualizaciones|Un conjunto acumulativo de revisiones, actualizaciones de seguridad, actualizaciones críticas y otras actualizaciones que se empaquetan para facilitar la implementación. Generalmente, un resumen tiene como destino un área específica, como la seguridad, o un componente específico, como Internet Information Services (IIS).|
+|Actualizaciones|Revisiones de amplia difusión para problemas específicos que solucionan errores no críticos no relacionados con la seguridad.|
 
-## <a name="icons-used-for-updates-in-windows-server-update-services"></a>Iconos que se usan para las actualizaciones de Windows Server Update Services
- Actualizaciones en WSUS se representan mediante uno de los siguientes iconos.  
- Para ver estos iconos, deberá habilitar la columna de sustitución en la consola Update Services.
+## <a name="icons-used-for-updates-in-windows-server-update-services"></a>Iconos usados para las actualizaciones en Windows Server Update Services
+ Las actualizaciones en WSUS se representan mediante uno de los siguientes iconos.  
+ Para ver estos iconos, debe habilitar la columna sustitución en la consola de Update Services.
  
 ### <a name="no-icon"></a>Sin icono
- La actualización no tiene ninguna relación de sustitución con cualquier otra actualización.
+ La actualización no tiene ninguna relación de sustitución con ninguna otra actualización.
 
  **Preocupaciones operativas:**  
 
- No hay ninguna preocupación operativa.  
+ No hay ningún problema operativo.  
  
 ### <a name="superseding-icon"></a>Icono de sustitución
  ![icono](../../media/wsus/wsus-superseding.png) Esta actualización sustituye a otras actualizaciones.
 
  **Preocupaciones operativas:**  
 
- No hay ninguna preocupación operativa.  
+ No hay ningún problema operativo.  
 
-### <a name="superseded--superseding-icon"></a>Icono reemplazo y reemplazada
- ![icono](../../media/wsus/wsus-superseded.png) Esta actualización se ha reemplazado por otra actualización y reemplaza a otras actualizaciones.
+### <a name="superseded--superseding-icon"></a>Icono de sustitución de & reemplazado
+ ![icono](../../media/wsus/wsus-superseded.png) Esta actualización se sustituye por otra actualización y sustituye a otras actualizaciones.
 
  **Preocupaciones operativas:**  
 
- Reemplazar estas actualizaciones con las actualizaciones reemplaza cuando sea posible.
+ Reemplace estas actualizaciones por las actualizaciones de reemplazo cuando sea posible.
  
-### <a name="superseded-icon"></a>Icono de sustituido
- ![icono](../../media/wsus/wsus-superseded-leaf.png) Esta actualización es reemplazada por otra actualización.
+### <a name="superseded-icon"></a>Icono de reemplazo
+ ![icono](../../media/wsus/wsus-superseded-leaf.png) Esta actualización se ha sustituido por otra actualización.
 
  **Preocupaciones operativas:**  
 
- Reemplazar estas actualizaciones con las actualizaciones reemplaza cuando sea posible.
+ Reemplace estas actualizaciones por las actualizaciones de reemplazo cuando sea posible.

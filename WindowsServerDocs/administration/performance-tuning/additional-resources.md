@@ -1,18 +1,18 @@
 ---
 title: Recursos adicionales de optimización del rendimiento del servidor
 description: Recursos adicionales de optimización del rendimiento del servidor
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: phstee
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 8fd1546519f9269732c743012215bb7c5646a677
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 498e72377197bd2185a518949520275c36295a77
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866776"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355078"
 ---
 # <a name="additional-performance-tuning-resources"></a>Recursos adicionales para ajustar el rendimiento
 

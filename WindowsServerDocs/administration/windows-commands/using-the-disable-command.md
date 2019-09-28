@@ -1,8 +1,8 @@
 ---
-title: Mediante el comando Disable
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando DISABLE
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9ee32827dc08c60003f06377fae0d81497477d8d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 52e1bdf48d682c06356cd2cc52cb8ca3f65a89f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829526"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363548"
 ---
-# <a name="using-the-disable-command"></a>Mediante el comando Disable
+# <a name="using-the-disable-command"></a>Usar el comando DISABLE
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -28,5 +28,5 @@ Deshabilita todos los servicios para servicios de implementación de Windows.
 ## <a name="subcommands"></a>Subcomandos
 |Subcomando|Descripción|
 |-------|--------|
-|[Mediante el comando disable-servidor](using-the-disable-server-command.md)|Deshabilita todos los servicios de servicios de implementación de Windows en un servidor especificado (servidor de implementación).|
-|[Mediante el comando disable-TransportServer](using-the-disable-transportserver-command.md)|Deshabilita todos los servicios de servicios de implementación de Windows en un servidor de transporte especificado.|
+|[Usar el comando DISABLE-Server](using-the-disable-server-command.md)|Deshabilita todos los servicios de implementación de Windows en un servidor especificado (servidor de implementación).|
+|[Usar el comando DISABLE-TransportServer](using-the-disable-transportserver-command.md)|Deshabilita todos los servicios de implementación de Windows en un servidor de transporte especificado.|

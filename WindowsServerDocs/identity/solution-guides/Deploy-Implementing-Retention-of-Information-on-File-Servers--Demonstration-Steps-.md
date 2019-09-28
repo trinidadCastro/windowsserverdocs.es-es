@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0acfa6eec1d83c246c43ad32f7548ea771eb3c11
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 994eadfa205b62c5a512ab130c71fa6c22d1cff6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445759"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357545"
 ---
 # <a name="deploy-implementing-retention-of-information-on-file-servers-demonstration-steps"></a>Deploy Implementing Retention of Information on File Servers (Demonstration Steps)
 
@@ -26,13 +26,13 @@ Puedes establecer períodos de retención para carpetas e imponer una retención
   
 -   [Requisitos previos](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Prereqs)  
   
--   [Paso 1: Crear definiciones de propiedad de recurso](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step1)  
+-   [Paso 1: Crear definiciones de propiedad de recurso @ no__t-0  
   
--   [Paso 2: Configurar notificaciones](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step2)  
+-   [Paso 2: Configurar notificaciones @ no__t-0  
   
--   [Paso 3: Crear una tarea de administración de archivos](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_Step3)  
+-   [Paso 3: Crear una tarea de administración de archivos @ no__t-0  
   
--   [Paso 4: Clasificar un archivo manualmente](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md#BKMK_Step4)  
+-   [Paso 4: Clasificar un archivo manualmente @ no__t-0  
   
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
@@ -43,7 +43,7 @@ Los pasos de este tema dan por supuesto que tienes un servidor SMTP configurado 
 ## <a name="BKMK_Step1"></a>Paso 1: crear definiciones de propiedad de recurso  
 En este paso, se habilitan las propiedades de recurso Período de retención y Detectabilidad, de modo que la Infraestructura de clasificación de archivos utilice estas propiedades de recurso para etiquetar los archivos que se analizan en una carpeta compartida en red.  
   
-[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
+[Realice este paso con Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep1)  
   
 #### <a name="to-create-resource-property-definitions"></a>Para crear definiciones de propiedad de recurso  
   
@@ -57,7 +57,7 @@ En este paso, se habilitan las propiedades de recurso Período de retención y D
   
 5.  Haz clic con el botón secundario en **Detectabilidad**y, después, haz clic en **Habilitar**.  
   
-![guías de solución](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+@no__t guías 0solution](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -69,7 +69,7 @@ Set-ADResourceProperty -Enabled:$true -Identity:'CN=Discoverability_MS,CN=Resour
 ## <a name="BKMK_Step2"></a>Paso 2: Configurar notificaciones  
 En este paso, se utiliza la consola del Administrador de recursos del servidor de archivos para configurar el servidor SMTP, la dirección de correo electrónico del administrador predeterminado y la dirección de correo electrónico predeterminada desde la que se envían los informes.  
   
-[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
+[Realice este paso con Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep2)  
   
 #### <a name="to-configure-notifications"></a>Cómo configurar notificaciones  
   
@@ -87,11 +87,11 @@ En este paso, se utiliza la consola del Administrador de recursos del servidor d
   
     -   En el cuadro **Administradores receptores predeterminados** , escribe la dirección de correo electrónico del administrador que debe recibir la notificación.  
   
-    -   En el **predeterminado "De" dirección de correo electrónico** , escriba la dirección de correo electrónico que debe usarse para enviar las notificaciones.  
+    -   En el cuadro **dirección de correo electrónico predeterminada "desde"** , escriba la dirección de correo electrónico que se debe usar para enviar las notificaciones.  
   
 6.  Haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+@no__t guías 0solution](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -108,7 +108,7 @@ En este paso, se utiliza la consola del Administrador de recursos del servidor d
   
 -   El archivo no se ha modificado en los últimos 10 años.  
   
-[Realice este paso mediante Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
+[Realice este paso con Windows PowerShell](assetId:///4a96cdaf-0081-4824-aab8-f0d51be501ac#BKMK_PSstep3)  
   
 #### <a name="to-create-a-file-management-task"></a>Para crear una tarea de administración de archivos  
   
@@ -142,7 +142,7 @@ En este paso, se utiliza la consola del Administrador de recursos del servidor d
   
 11. Haga clic en **Aceptar**.  
   
-![guías de solución](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+@no__t guías 0solution](media/Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -187,7 +187,7 @@ En este paso, se clasifica manualmente un archivo con el estado de retención le
   
 -   [Escenario: Implementar la retención de información en servidores de archivos](Scenario--Implement-Retention-of-Information-on-File-Servers.md)  
   
--   [Planificar la retención de información en servidores de archivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
+-   [Planeación de la retención de información en servidores de archivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c)  
   
 -   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   

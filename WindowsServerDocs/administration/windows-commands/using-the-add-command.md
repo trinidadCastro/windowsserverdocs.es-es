@@ -1,8 +1,8 @@
 ---
-title: Con el comando Agregar
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando Add
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,28 +13,28 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 14b9249116a4a1415ecbf5747cff9311b4cca521
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fb60d0790fb4f8ab08e02664e26bc7ca6697b5c5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817306"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363873"
 ---
-# <a name="using-the-add-command"></a>Con el comando Agregar
+# <a name="using-the-add-command"></a>Usar el comando Add
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 ## <a name="subcommands"></a>Subcomandos
 |Subcomando|Descripción|
 |-------|--------|
-|[Mediante el comando Agregar dispositivo](using-the-add-device-command.md)|Preconfigura un equipo en active directory.|
-|[Usar el comando add-Image](using-the-add-image-command.md)|Agrega imágenes de arranque o instalación.|
-|[Con el comando add-ImageGroup](using-the-add-imagegroup-command.md)|Agrega un grupo de imágenes.|
-|[Con el comando add-DriverGroupPackage](using-the-add-drivergrouppackage-command.md)|Agrega un paquete de controladores a un grupo de controladores.|
-|[Con el comando add-DriverGroupPackages](using-the-add-drivergrouppackages-command.md)|Agrega paquetes de controladores a un grupo de controladores.|
-|[Con el comando add-DriverPackage](using-the-add-driverpackage-command.md)|Agrega un paquete de controladores al servidor.|
-|[Con el comando add-ImageDriverPackage](using-the-add-imagedriverpackage-command.md)|Agrega un paquete de controladores que se encuentra en el almacén de controladores a una imagen de arranque existente en el servidor. La versión de la imagen debe ser Windows 7 o Windows Server 2008 R2 o posterior.|
-|[Con el comando add-ImageDriverPackages](using-the-add-imagedriverpackages-command.md)|Agrega paquetes de controladores del almacén de controladores a una imagen de arranque en el servidor. La versión de la imagen debe ser Windows 7 o Windows Server 2008 R2 o posterior.|
-|[Con el subcomando add AllDriverPackages](using-the-add-alldriverpackages-subcommand.md)|Agrega paquetes de controladores desde una carpeta a un servidor.|
-|[Con el comando add-DriverGroup](using-the-add-drivergroup-command.md)|Agrega un grupo de controladores a un servidor.|
-|[Con el comando add-DriverGroupFilter](using-the-add-drivergroupfilter-command.md)|Agrega un filtro a un grupo de controladores en un servidor.|
+|[Usar el comando add-device](using-the-add-device-command.md)|Preconfigura un equipo en Active Directory.|
+|[Usar el comando Add-image](using-the-add-image-command.md)|agrega imágenes de arranque o de instalación.|
+|[Uso del comando Add-ImageGroup](using-the-add-imagegroup-command.md)|agrega un grupo de imágenes.|
+|[Uso del comando Add-DriverGroupPackage](using-the-add-drivergrouppackage-command.md)|agrega un paquete de controladores a un grupo de controladores.|
+|[Uso del comando Add-DriverGroupPackages](using-the-add-drivergrouppackages-command.md)|agrega paquetes de controladores a un grupo de controladores.|
+|[Uso del comando Add-DriverPackage](using-the-add-driverpackage-command.md)|agrega un paquete de controladores al servidor.|
+|[Uso del comando Add-ImageDriverPackage](using-the-add-imagedriverpackage-command.md)|agrega un paquete de controladores que se encuentra en el almacén de controladores a una imagen de arranque existente en el servidor. La versión de la imagen debe ser Windows 7 o Windows Server 2008 R2 o posterior.|
+|[Uso del comando Add-ImageDriverPackages](using-the-add-imagedriverpackages-command.md)|agrega paquetes de controladores del almacén de controladores a una imagen de arranque en el servidor. La versión de la imagen debe ser Windows 7 o Windows Server 2008 R2 o posterior.|
+|[Usar el subcomando add-AllDriverPackages](using-the-add-alldriverpackages-subcommand.md)|agrega paquetes de controladores de una carpeta a un servidor.|
+|[Uso del comando Add-DriverGroup](using-the-add-drivergroup-command.md)|agrega un grupo de controladores a un servidor.|
+|[Uso del comando Add-DriverGroupFilter](using-the-add-drivergroupfilter-command.md)|agrega un filtro a un grupo de controladores en un servidor.|

@@ -1,8 +1,8 @@
 ---
-title: Con el comando Export-Image
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando export-Image
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efa9b2d09c37a383a91883ee02c995eedb2f235e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 838d84cb5f604eea710c364ed0d4a14efdc16fec
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59823146"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363397"
 ---
-# <a name="using-the-export-image-command"></a>Con el comando Export-Image
+# <a name="using-the-export-image-command"></a>Usar el comando export-Image
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Exporta una imagen existente del almacén de imágenes a otro archivo de imagen de Windows (.wim).
+Exporta una imagen existente del almacén de imágenes a otro archivo de imagen de Windows (. wim).
 ## <a name="syntax"></a>Sintaxis
-para las imágenes de arranque:
+para imágenes de arranque:
 ```
 wdsutil [Options] /Export-Imagmedia:<Image name> [/Server:<Server name>]
    mediatype:Boot /Architecture:{x86 | ia64 | x64} [/Filename:<File name>]
@@ -36,7 +36,7 @@ wdsutil [Options] /Export-Imagmedia:<Image name> [/Server:<Server name>]
          [/Description:<Description>]
      [/Overwrite:{Yes | No}]
 ```
-las imágenes de instalación:
+para imágenes de instalación:
 ```
 wdsutil [Options] /Export-Imagmedia:<Image name> [/Server:<Server name>]
    mediatype:InstallmediaGroup:<Image group name>]
@@ -50,22 +50,22 @@ wdsutil [Options] /Export-Imagmedia:<Image name> [/Server:<Server name>]
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-Medio:<Image name>|Especifica el nombre de la imagen que se exportarán.|
-|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usará el servidor local.|
-tipo de medio: {arranque &#124; instalar}|Especifica el tipo de imagen que se exportarán.|
-|\mediaGroup:<Image group name>]|Especifica el grupo de imágenes que contiene la imagen que se exportarán. Si se especifica ningún nombre de grupo de imágenes y grupo de solo imágenes existe en el servidor, se usará ese grupo de imágenes de forma predeterminada. Si existe más de un grupo de imágenes en el servidor, se debe especificar el grupo de imágenes.|
-|/ Arquitectura: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen que se exportarán. Dado que es posible tener el mismo nombre de imagen para las imágenes de arranque en distintas arquitecturas, especificando el valor de la arquitectura garantiza que se devolverá la imagen correcta.|
-|[/Filename:<Filename>]|Si la imagen no se identifica por nombre, debe especificarse el nombre de archivo.|
-|/DestinationImage|Especifica la configuración de la imagen de destino. Puede especificar estas opciones mediante las siguientes opciones:<br /><br />-/ FilePath:<File path and name> -especifica la ruta de acceso completa para la nueva imagen.<br />-[/ Name:<Name>]-establece el nombre para mostrar de la imagen. Si se especifica ningún nombre, se usará el nombre para mostrar de la imagen de origen.<br />-[/ Descripción: <Description>]-Establece la descripción de la imagen.|
-|[/ Overwrite: {Sí &#124; No &#124; anexar}]|Determina si el archivo especificado en el **/DestinationImage** opción, se sobrescribirá si ya existe un archivo existente con ese nombre en/filepath.<br /><br />-   **Sí** hace que se puede sobrescribir el archivo existente.<br />-   **No** (opción predeterminada) hace que un error si ya existe un archivo con el mismo nombre.<br />-   **anexar** hace que la imagen generada que se debe anexar como una nueva imagen en el archivo .wim existente.|
-## <a name="BKMK_examples"></a>Ejemplos
+medios: <Image name>|Especifica el nombre de la imagen que se va a exportar.|
+|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
+mediatype: {boot &#124; install}|Especifica el tipo de imagen que se va a exportar.|
+|\mediaGroup: <Image group name>]|Especifica el grupo de imágenes que contiene la imagen que se va a exportar. Si no se especifica ningún nombre de grupo de imágenes y solo existe un grupo de imágenes en el servidor, se utilizará ese grupo de imágenes de forma predeterminada. Si existe más de un grupo de imágenes en el servidor, se debe especificar el grupo de imágenes.|
+|/Architecture: {x86 &#124; ia64 &#124; x64}|Especifica la arquitectura de la imagen que se va a exportar. Dado que es posible tener el mismo nombre de imagen para imágenes de arranque en distintas arquitecturas, la especificación del valor de arquitectura garantiza que se devolverá la imagen correcta.|
+|[/Filename:<Filename>]|Si la imagen no se puede identificar de forma única por nombre, se debe especificar el nombre de archivo.|
+|/DestinationImage|Especifica la configuración de la imagen de destino. Puede especificar esta configuración con las siguientes opciones:<br /><br />-/Filepath: <File path and name>-especifica la ruta de acceso completa del archivo para la nueva imagen.<br />-[/Name: <Name>]: establece el nombre para mostrar de la imagen. Si no se especifica ningún nombre, se usará el nombre para mostrar de la imagen de origen.<br />-[/Description: <Description>]: Establece la descripción de la imagen.|
+|[/Overwrite: {Yes &#124; no &#124; Append}]|Determina si el archivo especificado en la opción **/DestinationImage** se sobrescribirá si ya existe un archivo con ese nombre en el/FilePath.<br /><br />-   **sí** hace que se sobrescriba el archivo existente.<br />-   **no** (la opción predeterminada) produce un error si ya existe un archivo con el mismo nombre.<br />-   **Append** hace que la imagen generada se anexe como una nueva imagen dentro del archivo. Wim existente.|
+## <a name="BKMK_examples"></a>Example
 Para exportar una imagen de arranque, escriba uno de los siguientes:
 ```
 wdsutil /Export-Imagmedia:"WinPE boot imagemediatype:Boot /Architecture:x86 /DestinationImage /Filepath:"C:\temp\boot.wim"
 wdsutil /verbose /Progress /Export-Imagmedia:"WinPE boot image" /Server:MyWDSServemediatype:Boot /Architecture:x64 /Filename:boot.wim 
 /DestinationImage /Filepath:"\\Server\Share\ExportImage.wim" /Name:"Exported WinPE image" /Description:"WinPE Image from WDS server" /Overwrite:Yes
 ```
-Para exportar una imagen de instalación, escriba uno de los siguientes:
+Para exportar una imagen de instalación, escriba una de las siguientes opciones:
 ```
 wdsutil /Export-Imagmedia:"Windows Vista with Officemediatype:Install /DestinationImage /Filepath:"C:\Temp\Install.wim"
 wdsutil /verbose /Progress /Export-Imagmedia:"Windows Vista with Office" /Server:MyWDSServemediatype:InstalmediaGroup:ImageGroup1 
@@ -73,9 +73,8 @@ wdsutil /verbose /Progress /Export-Imagmedia:"Windows Vista with Office" /Server
 ```
 #### <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[mediante el comando add-Image](using-the-add-image-command.md)
-[mediante el comando de Copiar imagen](using-the-copy-image-command.md)
-[con la imagen de get Comando](using-the-get-image-command.md)
-[mediante el comando remove-Image](using-the-remove-image-command.md)
-[mediante el comando replace-Image](using-the-replace-image-command.md)
-[subcomando : Establecer imagen](subcommand-set-image.md)
+[con el comando add-Image](using-the-add-image-command.md)
+[mediante el comando copy-Image](using-the-copy-image-command.md)
+[mediante el comando Get-Image](using-the-get-image-command.md)
+[con el comando Remove-image](using-the-remove-image-command.md)
+ mediante el comando[ Comando Replace-Image](using-the-replace-image-command.md)1[subcomando: set-Image](subcommand-set-image.md)
