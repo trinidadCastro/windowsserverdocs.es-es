@@ -2,7 +2,7 @@
 title: 'Escritorio remoto: permitir el acceso a tu PC desde fuera de la red'
 description: Obtén información acerca de las opciones de acceso remoto a tu PC desde fuera de la red del equipo
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ manager: dongill
 ms.author: elizapo
 ms.date: 04/04/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 9e90a2faa14b65bc766c7d7ec47d5e815658c06e
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: a8062530d5ea546ebb822f1c1149aeca5799a023
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66805058"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387817"
 ---
 # <a name="remote-desktop---allow-access-to-your-pc-from-outside-your-pcs-network"></a>Escritorio remoto: permitir el acceso a tu PC desde fuera de la red del equipo
 

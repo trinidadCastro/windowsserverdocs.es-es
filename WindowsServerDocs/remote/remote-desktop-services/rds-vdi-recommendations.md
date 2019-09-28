@@ -2,7 +2,7 @@
 title: Configuración recomendada para equipos de escritorio VDI
 description: Configuración y ajustes recomendados para minimizar la sobrecarga de los dispositivos de escritorio Windows 10, versión 1607 (10.0.1393), que se usan como imágenes VDI
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 2a44dc9f-c221-4bf7-89c3-fb4c86a90f8c
 author: jaimeo
 manager: dougkim
-ms.openlocfilehash: ef13369fa325d136f9e3847db9872a80b650ca37
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 9e2c4012184614826ffd762394d89c25acabf374
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870635"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403869"
 ---
 # <a name="recommended-settings-for-vdi-desktops"></a>Configuración recomendada para dispositivos de escritorio VDI
 

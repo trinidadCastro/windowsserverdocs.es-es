@@ -2,7 +2,7 @@
 title: Introducción al entorno de hospedaje de escritorio
 description: Información general de una implementación de RDS con IaaS de Azure.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 author: lizap
 manager: dongill
-ms.openlocfilehash: 1bdf4e3e25facfa8cc49459ada8d9b1b6309a724
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 1bd672c52c892430339bb6c17c6324bf4d6d79a1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63744033"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387809"
 ---
 # <a name="understanding-the-desktop-hosting-environment"></a>Introducción al entorno de hospedaje de escritorio
 

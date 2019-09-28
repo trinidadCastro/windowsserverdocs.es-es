@@ -2,7 +2,7 @@
 title: Novedades del cliente de iOS
 description: Obtén información sobre los cambios recientes en el cliente de Escritorio remoto para iOS
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ manager: daveba
 ms.author: helohr
 ms.date: 09/11/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 3bdf50ed04e291014ed5b70b572b3123fa925d10
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: 0a13c7ccb7e1c72534ef63ba6d09f3055af174cb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987356"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387767"
 ---
 # <a name="whats-new-in-the-ios-client"></a>Novedades del cliente de iOS
 
