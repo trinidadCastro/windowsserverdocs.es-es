@@ -1,18 +1,18 @@
 ---
 title: Optimización del rendimiento para servidores de Active Directory
 description: Optimización del rendimiento para servidores de Active Directory
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: landing-page
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab; v-tea
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9fa01e7336953c4b2817535d1e50c0200b93e4fd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c4d14cfb4bfc8a6919683a360ec171de8250799a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866640"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370320"
 ---
 # <a name="performance-tuning-active-directory-servers"></a>Optimización del rendimiento para servidores de Active Directory
 
@@ -47,7 +47,7 @@ Para mantenerse al día con las noticias, las instrucciones y los procedimientos
 ## <a name="see-also"></a>Consulte también
 
 - [Planeamiento de capacidad para AD DS](capacity-planning-for-active-directory-domain-services.md)
-- [Consideraciones de hardware](hardware-considerations.md).
+- [Consideraciones de hardware](hardware-considerations.md)
 - [Consideraciones de uso de memoria](memory-usage-considerations.md)
 - [Consideraciones de LDAP](ldap-considerations.md)
 - [Colocación adecuada de los controladores de dominio y consideraciones de sitio](site-definition-considerations.md)

@@ -1,18 +1,18 @@
 ---
 title: Optimización del rendimiento para servidores Hyper-V
 description: Directrices de optimización del rendimiento para Hyper-V
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 0d850ba198d269888dfa0ad323546541983b88e1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8299164b4f08e9f625558eb0b28279529dba0595
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59891756"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370088"
 ---
 # <a name="performance-tuning-hyper-v-servers"></a>Optimización del rendimiento para servidores Hyper-V
 
