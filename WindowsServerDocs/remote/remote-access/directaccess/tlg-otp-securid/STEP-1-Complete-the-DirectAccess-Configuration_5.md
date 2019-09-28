@@ -1,9 +1,9 @@
 ---
-title: PASO 1 completar la configuración de DirectAccess
-description: 'En este tema forma parte de la Guía del laboratorio de pruebas: demostrar DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
+title: Paso 1 completar la configuración de DirectAccess
+description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de DirectAccess con autenticación OTP y RSA SecurID para Windows Server 2016'
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: a815bc0d-4b4f-432e-85f0-23b2cc67d827
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b3b8806186b5084d628e6239f1bd40ab53c4ca75
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 61d5dcc42dea79b67a6cceb5ad1574f02f1d9a1d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281346"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367572"
 ---
-# <a name="step-1-complete-the-directaccess-configuration"></a>PASO 1 completar la configuración de DirectAccess
+# <a name="step-1-complete-the-directaccess-configuration"></a>Paso 1 completar la configuración de DirectAccess
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Es el primer paso completar la [Test Lab Guide: Demostrar la instalación de servidor único de DirectAccess con IPv4 e IPv6 mixto](https://go.microsoft.com/fwlink/p/?LinkId=237004). Si ya ha completado los pasos en esa guía del laboratorio de pruebas y guardó una imagen de disco o de instantáneas del laboratorio de pruebas, puede restaurar la instantánea o la imagen y comenzar con el paso siguiente.  
+El primer paso consiste en completar la guía de laboratorio de @no__t 0Test: Mostrar la configuración de servidor único de DirectAccess con IPv4 e IPv6 no__t-0. Si ya ha completado los pasos de la guía del laboratorio de pruebas y ha guardado una instantánea o una imagen de disco del laboratorio de pruebas, puede restaurar la instantánea o la imagen y comenzar con el siguiente paso.  
   
 
 

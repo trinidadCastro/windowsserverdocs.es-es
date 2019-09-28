@@ -1,90 +1,90 @@
 ---
-title: Instalar y administrar extensiones
-description: Instalar y administrar extensiones de Windows Admin Center (proyecto Honolulu)
+title: Instalación y administración de extensiones
+description: Instalar y administrar extensiones en el centro de administración de Windows (proyecto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 9038fd480ed105aed3949b0c48dffc7eab94f970
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: d49e25591c705afa217b2332ee48eb42c5c2f7ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445896"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357243"
 ---
-# <a name="install-and-manage-extensions"></a>Instalar y administrar extensiones
+# <a name="install-and-manage-extensions"></a>Instalación y administración de extensiones
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Windows Admin Center se compila como una plataforma extensible donde cada tipo de conexión y la herramienta es una extensión que puede instalar, desinstalar y actualizar individualmente. Puede buscar si hay nuevas extensiones publicadas por Microsoft y otros desarrolladores y puede instalar y actualizarlas sin tener que actualizar toda la instalación de Windows Admin Center. También puede configurar una fuente NuGet independiente o recurso compartido de archivos y distribuir extensiones para uso interno dentro de su organización.
+El centro de administración de Windows se crea como una plataforma extensible en la que cada tipo de conexión y herramienta es una extensión que se puede instalar, desinstalar y actualizar de forma individual. Puede buscar nuevas extensiones publicadas por Microsoft y otros desarrolladores, así como instalarlas y actualizarlas de forma individual sin tener que actualizar toda la instalación del centro de administración de Windows. También puede configurar una fuente de NuGet independiente o un recurso compartido de archivos y distribuir extensiones para usarlos internamente en su organización.
 
-## <a name="installing-an-extension"></a>Instalar una extensión
+## <a name="installing-an-extension"></a>Instalación de una extensión
 
-Windows Admin Center mostrará las extensiones disponibles desde la fuente de NuGet especificado. De forma predeterminada, Windows Admin Center apunta a la fuente de NuGet oficial de Microsoft que hospeda las extensiones publicadas por Microsoft y otros desarrolladores.
+El centro de administración de Windows mostrará las extensiones disponibles en la fuente de NuGet especificada. De forma predeterminada, el centro de administración de Windows apunta a la fuente de NuGet oficial de Microsoft que hospeda extensiones publicadas por Microsoft y otros desarrolladores.
 
-1. Haga clic en el **configuración** botón en la parte superior derecha > en el panel izquierdo, haga clic en **extensiones**. 
-2. El **extensiones disponibles** ficha enumera las extensiones en la fuente que están disponibles para la instalación.
-3. Haga clic en una extensión para ver la descripción de la extensión, versión, publisher y otra información en el **detalles** panel.
-4. Haga clic en **instalar** instalar una extensión. Si la puerta de enlace debe ejecutar en modo con privilegios elevados para realizar este cambio, aparecerá una elevación de UAC. Una vez completada la instalación, el explorador se actualizarán automáticamente y se volverá a cargar en Windows Admin Center con la nueva extensión instalada. Si la extensión está intentando instalar es una actualización de una extensión instalada previamente, puede hacer clic en el **actualizar a la versión más reciente** botón para instalar la actualización. También puede ir a la **extensiones instaladas** tabulador para ir a ver instalado Extensiones y vea si hay alguna actualización disponible en el **estado** columna.
+1. Haga clic en el botón **configuración** en la parte superior derecha > en el panel izquierdo y, a continuación, haga clic en **extensiones**. 
+2. En la pestaña **extensiones disponibles** se enumeran las extensiones de la fuente que están disponibles para la instalación.
+3. Haga clic en una extensión para ver la descripción de la extensión, la versión, el publicador y otra información en el panel de **detalles** .
+4. Haga clic en **instalar** para instalar una extensión. Si la puerta de enlace debe ejecutarse en modo con privilegios elevados para realizar este cambio, se le presentará una petición de elevación de UAC. Una vez completada la instalación, el explorador se actualizará automáticamente y el centro de administración de Windows se volverá a cargar con la nueva extensión instalada. Si la extensión que está intentando instalar es una actualización de una extensión instalada previamente, puede hacer clic en el botón **actualizar a la versión más reciente** para instalar la actualización. También puede ir a la pestaña **extensiones instaladas** para ver las extensiones instaladas y ver si hay una actualización disponible en la columna **Estado** .
 
-## <a name="installing-extensions-from-a-different-feed"></a>Instalación de extensiones de otra fuente
+## <a name="installing-extensions-from-a-different-feed"></a>Instalación de extensiones desde una fuente diferente
 
-Windows Admin Center es compatible con varias fuentes de distribución y puede ver y administrar los paquetes de más de una fuente a la vez. Fuente de cualquier NuGet compatibles con las API de NuGet V2 o un recurso compartido de archivos se puede agregar a Windows Admin Center para instalar las extensiones de.
+El centro de administración de Windows admite varias fuentes y puede ver y administrar paquetes de más de una fuente a la vez. Cualquier fuente de NuGet que admita las API de NuGet V2 o un recurso compartido de archivos se puede Agregar al centro de administración de Windows para instalar las extensiones de.
 
-1. Haga clic en el **configuración** botón en la parte superior derecha > en el panel izquierdo, haga clic en **extensiones**.
-2. En el panel derecho, haga clic en el **fuentes** ficha.
-3. Haga clic en el **agregar** para agregar otra fuente. Para una fuente NuGet, escriba la versión de NuGet 2 dirección URL de fuente. Proveedor de fuentes de NuGet o administrador debe ser capaz de proporcionar la información de dirección URL. Un recurso compartido de archivos, escriba la ruta de acceso completa del archivo de recurso compartido en el que se almacenan los archivos de paquete de extensión (archivo .nupkg).
-4. Haz clic en **Agregar**. Si la puerta de enlace debe ejecutar en modo con privilegios elevados para realizar este cambio, aparecerá una elevación de UAC.
+1. Haga clic en el botón **configuración** en la parte superior derecha > en el panel izquierdo y, a continuación, haga clic en **extensiones**.
+2. En el panel derecho, haga clic en la pestaña **fuentes** .
+3. Haga clic en el botón **Agregar** para agregar otra fuente. Para una fuente de NuGet, escriba la dirección URL de la fuente de NuGet V2. El proveedor o el administrador de fuentes de NuGet deben ser capaces de proporcionar la información de la dirección URL. En un recurso compartido de archivos, escriba la ruta de acceso completa del recurso compartido de archivos en el que se almacenan los archivos de paquete de extensión (. nupkg).
+4. Haz clic en **Agregar**. Si la puerta de enlace debe ejecutarse en modo con privilegios elevados para realizar este cambio, se le presentará una petición de elevación de UAC.
 
-El **extensiones disponibles** lista mostrará las extensiones de todas las fuentes registradas. Puede comprobar qué fuente cada extensión es de uso de la **la fuente del paquete** columna.
+La lista **extensiones disponibles** mostrará las extensiones de todas las fuentes registradas. Puede comprobar en qué fuente se encuentra cada extensión mediante la columna **fuente de paquetes** .
 
-## <a name="uninstalling-an-extension"></a>Desinstalar una extensión
+## <a name="uninstalling-an-extension"></a>Desinstalación de una extensión
 
-Puede desinstalar las extensiones que ha instalado previamente, o incluso desinstalar las herramientas que se instalaron previamente como parte de la instalación de Windows Admin Center.
+Puede desinstalar las extensiones que haya instalado anteriormente o, incluso, desinstalar las herramientas que se instalaron previamente como parte de la instalación del centro de administración de Windows.
 
-1. Haga clic en el **configuración** botón en la parte superior derecha > en el panel izquierdo, haga clic en **extensiones**. 
-2. Haga clic en el **extensiones instaladas** pestaña para ver todas las extensiones instaladas.
-3. Elija una extensión al desinstalar, a continuación, haga clic en **desinstalar**.
+1. Haga clic en el botón **configuración** en la parte superior derecha > en el panel izquierdo y, a continuación, haga clic en **extensiones**. 
+2. Haga clic en la pestaña **extensiones instaladas** para ver todas las extensiones instaladas.
+3. Elija una extensión para desinstalar y, a continuación, haga clic en **desinstalar**.
 
-Después de desinstalar esté completo, el explorador se actualizarán automáticamente y se volverá a cargar en Windows Admin Center eliminado la extensión. Si desinstala una herramienta que se instalaron previamente como parte de Windows Admin Center, la herramienta estará disponible para su reinstalación en el **extensiones disponibles** ficha.
+Una vez completada la desinstalación, el explorador se actualizará automáticamente y el centro de administración de Windows se volverá a cargar con la extensión quitada. Si ha desinstalado una herramienta que se instaló previamente como parte del centro de administración de Windows, la herramienta estará disponible para su reinstalación en la pestaña **extensiones disponibles** .
 
-## <a name="installing-extensions-on-a-computer-without-internet-connectivity"></a>Instalar extensiones en un equipo sin conectividad a internet
+## <a name="installing-extensions-on-a-computer-without-internet-connectivity"></a>Instalación de extensiones en un equipo sin conectividad a Internet
 
-Si Windows Admin Center está instalado en un equipo que no está conectado a internet o está detrás de un proxy, no podrá tener acceso a e instalar las extensiones de la de Windows Admin Center fuente. Puede descargar los paquetes de extensión manualmente o con un script de PowerShell y configurar Windows Admin Center para recuperar los paquetes desde un recurso compartido de archivos o una unidad local.
+Si el centro de administración de Windows está instalado en un equipo que no está conectado a Internet o que está detrás de un proxy, es posible que no pueda obtener acceso e instalar las extensiones desde la fuente del centro de administración de Windows. Puede descargar paquetes de extensión manualmente o con un script de PowerShell, y configurar el centro de administración de Windows para recuperar paquetes desde un recurso compartido de archivos o una unidad local.
 
-### <a name="manually-downloading-extension-packages"></a>Descargar manualmente los paquetes de extensión
+### <a name="manually-downloading-extension-packages"></a>Descarga manual de paquetes de extensión
 
-1. En otro equipo que tenga conectividad a internet, abra un explorador web y vaya a la dirección URL siguiente: [https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) 
+1. En otro equipo que tenga conectividad a Internet, abra un explorador Web y vaya a la dirección URL siguiente: [https://msft-sme.myget.org/gallery/windows-admin-center-feed](https://msft-sme.myget.org/gallery/windows-admin-center-feed) 
 
-   * Es posible que deba crear una cuenta de msft sme.myget.org e inicie sesión para ver los paquetes de extensión.
+   * Es posible que tenga que crear una cuenta en msft-sme.myget.org e iniciar sesión para ver los paquetes de extensión.
 
 2. Haga clic en el nombre del paquete que desea instalar para ver la página de detalles del paquete.
-3. Haga clic en el **descargar** situado en el panel del lado derecho de la página de detalles del paquete y descargue el archivo .nupkg para la extensión.
-4. Repita los pasos 2 y 3 para todos los paquetes que desea descargar.
-5. Copie los archivos de paquete a un recurso compartido de archivos que se puede acceder desde el equipo en que Windows Admin Center está instalado, o en el disco local del equipo.
-6. [Siga las instrucciones para instalar extensiones desde otra fuente](#installing-extensions-from-a-different-feed).
+3. Haga clic en el vínculo **Descargar** en el panel derecho de la página de detalles del paquete y descargue el archivo. nupkg para la extensión.
+4. Repita los pasos 2 y 3 para todos los paquetes que desee descargar.
+5. Copie los archivos de paquete en un recurso compartido de archivos al que se pueda tener acceso desde el equipo en el que está instalado el centro de administración de Windows o en el disco local del equipo.
+6. [Siga las instrucciones para instalar extensiones desde una fuente diferente](#installing-extensions-from-a-different-feed).
 
 ### <a name="downloading-packages-with-a-powershell-script"></a>Descarga de paquetes con un script de PowerShell
 
-Hay muchas secuencias de comandos disponibles en Internet para descargar paquetes de NuGet desde una fuente NuGet. Vamos a usar el [script proporcionado por Jon Galloway](https://weblogs.asp.net/jongalloway/downloading-a-local-nuget-repository-with-powershell), director jefe de programas de Microsoft.
+Hay muchos scripts disponibles en Internet para descargar paquetes NuGet desde una fuente de NuGet. Usaremos el [script proporcionado por Jon Galloway](https://weblogs.asp.net/jongalloway/downloading-a-local-nuget-repository-with-powershell), Director de programas en Microsoft.
 
-1. Como se describe en el [entrada de blog](https://weblogs.asp.net/jongalloway/downloading-a-local-nuget-repository-with-powershell), el script se instala como un paquete de NuGet, o copie y pegue el script en PowerShell ISE.
-2. Dirección URL de v2 de la de la edición de que la fuente de la primera línea del script para su NuGet. Si va a descargar los paquetes desde el Windows Admin Center oficial de fuente, utilice la siguiente dirección URL.
+1. Tal como se describe en la [entrada de blog](https://weblogs.asp.net/jongalloway/downloading-a-local-nuget-repository-with-powershell), instale el script como un paquete de NuGet, o copie y pegue el script en PowerShell ISE.
+2. Edite la primera línea del script en la dirección URL V2 de la fuente de NuGet. Si está descargando paquetes desde la fuente oficial del centro de administración de Windows, use la dirección URL siguiente.
 
 ```powershell
 $feedUrlBase = "https://aka.ms/sme-extension-feed"
 ```
 
-3. Ejecute el script y descargará todos los paquetes de NuGet desde la fuente en la siguiente carpeta local: %USERPROFILE%\Documents\NuGetLocal
-4. [Siga las instrucciones para instalar extensiones desde otra fuente](#installing-extensions-from-a-different-feed).
+3. Ejecute el script y se descargarán todos los paquetes NuGet de la fuente en la siguiente carpeta local:%USERPROFILE%\Documents\NuGetLocal
+4. [Siga las instrucciones para instalar extensiones desde una fuente diferente](#installing-extensions-from-a-different-feed).
 
 ## <a name="manage-extensions-with-powershell"></a>Administrar extensiones con PowerShell
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Versión preliminar de Windows Admin Center incluye un módulo de PowerShell para administrar las extensiones de la puerta de enlace.
+La versión preliminar del centro de administración de Windows incluye un módulo de PowerShell para administrar las extensiones de puerta de enlace.
 
 ```powershell
 # Add the module to the current session
@@ -119,4 +119,4 @@ Uninstall-Extension "https://wac.contoso.com" "msft.sme.containers"
 Update-Extension "https://wac.contoso.com" "msft.sme.containers"
 ```
 
-### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdkextendextensibility-overviewmd"></a>[Más información sobre la creación de una extensión con el SDK de Windows Admin Center](../extend/extensibility-overview.md).
+### <a name="learn-more-about-building-an-extension-with-the-windows-admin-center-sdkextendextensibility-overviewmd"></a>[Obtenga más información sobre la creación de una extensión con el SDK del centro de administración de Windows](../extend/extensibility-overview.md).

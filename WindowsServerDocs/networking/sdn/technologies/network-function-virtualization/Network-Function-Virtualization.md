@@ -1,9 +1,9 @@
 ---
 title: Virtualización de función de red
-description: Puede utilizar este tema para obtener información acerca de la virtualización de función de red, lo que permite implementar aplicaciones virtuales de red como Datacenter Firewall, puerta de enlace RAS multiempresa y equilibrio de carga de Software (SLB) en Windows Server 2016.
+description: Puede usar este tema para obtener información sobre la virtualización de función de red, que le permite implementar aplicaciones de red virtual como firewall de centro de seguridad de red, puerta de enlace RAS multiempresa y equilibrio de carga de software (SLB) en Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,52 +12,52 @@ ms.topic: article
 ms.assetid: 79df3bbe-48fd-4eff-8df6-35f6317566f3
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 59474a13d1cbce6a607f025caf3f6c1b839c7eed
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 338d5a285f2524932a91a66db186554cd0f50e2a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59884556"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355663"
 ---
 # <a name="network-function-virtualization"></a>Virtualización de función de red
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información acerca de la virtualización de función de red, lo que permite implementar aplicaciones virtuales de red como el Firewall de centro de datos, para varios inquilinos puerta de enlace RAS y equilibrio de carga de Software \(SLB\) multiplexor \(MUX\).
+Puede usar este tema para obtener información acerca de la virtualización de función de red, que le permite implementar aplicaciones de red virtual como firewall de centro de centros de seguridad, puerta de enlace RAS multiempresa y equilibrio de carga de software \(SLB @ no__t-1 multiplexor \(MUX @ No_ _ t-3.
   
 >[!NOTE]  
->Además de este tema, está disponible la siguiente documentación de virtualización de función de la red.  
+>Además de este tema, está disponible la siguiente documentación sobre virtualización de funciones de red.  
 > - [Información general de Datacenter Firewall](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)  
 > - [Puerta de enlace RAS para SDN](../../../sdn/technologies/network-function-virtualization/RAS-Gateway-for-SDN.md)  
-> - [Software equilibrio de carga (SLB) para SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)  
+> - [Equilibrio de carga de software (SLB) para SDN](../../../sdn/technologies/network-function-virtualization/Software-Load-Balancing--SLB--for-SDN.md)  
   
-En el software de hoy en día centros de datos definidos, las funciones de red que se realizan mediante dispositivos de hardware (por ejemplo, equilibradores de carga, firewalls, enrutadores, conmutadores etc.) se están virtualizando como aplicaciones virtuales. Esta “virtualización de las funciones de red” es la progresión natural de la virtualización de los servidores y de la red. Dispositivos virtuales rápidamente se emergentes y creación de un mercado completamente nuevo. Se seguirán generando interés y obtener momentum en ambas plataformas de virtualización y servicios en la nube.  
+En los centros de recursos definidos por software de hoy en día, las funciones de red que realizan los dispositivos de hardware (como equilibradores de carga, firewalls, enrutadores, conmutadores, etc.) se virtualizan cada vez más como aplicaciones virtuales. Esta “virtualización de las funciones de red” es la progresión natural de la virtualización de los servidores y de la red. Las aplicaciones virtuales están surgiendo rápidamente y crean un nuevo mercado. Continúan generando interés y ganar impulsos en las plataformas de virtualización y en los servicios en la nube.  
   
-Microsoft incluye una puerta de enlace independiente como una aplicación virtual a partir de Windows Server 2012 R2. Para obtener más información, consulte [Puerta de enlace de Windows Server](https://technet.microsoft.com/library/dn313101.aspx). Ahora con Windows Server 2016, Microsoft continúa expanda e invertir en el mercado de virtualización de función de red.  
+Microsoft incluyó una puerta de enlace independiente como un dispositivo virtual a partir de Windows Server 2012 R2. Para obtener más información, consulte [Puerta de enlace de Windows Server](https://technet.microsoft.com/library/dn313101.aspx). Ahora con Windows Server 2016, Microsoft continúa expandiendo e invirtiendo en el mercado de virtualización de función de red.  
   
-## <a name="virtual-appliance-benefits"></a>Ventajas de la aplicación virtual  
-Un dispositivo virtual es dinámica y fácil de cambiar porque es una máquina virtual pregenerada y personalizada. Puede ser una o varias máquinas virtuales empaquetadas, actualiza y mantiene como una unidad. Junto con el software definido networking (SDN), obtendrá la agilidad y flexibilidad necesarias en la infraestructura en la nube de hoy. Por ejemplo:  
+## <a name="virtual-appliance-benefits"></a>Ventajas del dispositivo virtual  
+Un dispositivo virtual es dinámico y fácil de cambiar porque es una máquina virtual pregenerada y personalizada. Puede ser una o varias máquinas virtuales empaquetadas, actualizadas y mantenidas como una unidad. Junto con las redes definidas por software (SDN), obtiene la agilidad y la flexibilidad que se necesitan en la infraestructura basada en la nube de hoy en día. Por ejemplo:  
   
--   SDN presenta la red como un recurso dinámico o agrupado.  
+-   SDN presenta la red como un recurso agrupado y dinámico.  
   
 -   SDN facilita el aislamiento de inquilinos.  
   
--   SDN maximiza el rendimiento y escalabilidad.  
+-   SDN maximiza la escala y el rendimiento.  
   
--   Aplicaciones virtuales de permiten la movilidad de expansión y la carga de trabajo de la capacidad de conexión directa.  
+-   Los dispositivos virtuales permiten la expansión de la capacidad y la movilidad de la carga de trabajo.  
   
--   Las aplicaciones virtuales de minimizar la complejidad operacional.  
+-   Las aplicaciones virtuales minimizan la complejidad operativa.  
   
--   Aplicaciones virtuales permiten a los clientes adquirir, implementar y administrar soluciones preintegradas fácilmente.  
+-   Los dispositivos virtuales permiten a los clientes adquirir, implementar y administrar soluciones previamente integradas.  
   
-    -   Los clientes pueden mover fácilmente el dispositivo virtual en cualquier lugar en la nube.  
+    -   Los clientes pueden trasladar fácilmente el dispositivo virtual en cualquier parte de la nube.  
   
-    -   Los clientes pueden escalar las aplicaciones virtuales o abajo dinámicamente según la demanda.  
+    -   Los clientes pueden escalar o reducir verticalmente dispositivos virtuales de forma dinámica en función de la demanda.  
   
-Para obtener más información acerca de Microsoft SDN vea [redes definidas por Software](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking--sdn-).  
+Para obtener más información sobre Microsoft SDN, vea [redes definidas por software](https://technet.microsoft.com/windows-server-docs/networking/sdn/software-defined-networking--sdn-).  
   
-### <a name="what-network-functions-are-being-virtualized"></a>¿Qué funciones de red se estaba virtualizando?  
-El mercado para las funciones de red virtualizado está creciendo rápidamente. Las siguientes funciones de red virtualizadas:  
+### <a name="what-network-functions-are-being-virtualized"></a>¿Qué funciones de red se están virtualizando?  
+El Marketplace de las funciones de red virtualizada está creciendo rápidamente. Se virtualizan las siguientes funciones de red:  
   
 -   **Seguridad**  
   
@@ -65,11 +65,11 @@ El mercado para las funciones de red virtualizado está creciendo rápidamente. 
   
     -   Antivirus  
   
-    -   DDoS (denegación de servicio distribuido)  
+    -   DDoS (denegación de servicio distribuida)  
   
-    -   IPS/IDS (sistema de detección de intrusiones o sistema de prevención de intrusiones)  
+    -   IP/IDS (sistema de prevención de intrusiones/sistema de detección de intrusiones)  
   
--   **Optimizadores de WAN/aplicación**  
+-   **Optimizadores de aplicaciones/WAN**  
   
 -   **Edge**  
   
@@ -79,57 +79,57 @@ El mercado para las funciones de red virtualizado está creciendo rápidamente. 
   
     -   Enrutadores  
   
-    -   Modificadores  
+    -   Centrales  
   
     -   NAT  
   
-    -   Equilibradores de carga (no necesariamente en el borde)  
+    -   Equilibradores de carga (no necesariamente en el perímetro)  
   
     -   Proxy HTTP  
   
-## <a name="why-microsoft-is-a-great-platform-for-virtual-appliances"></a>¿Por qué Microsoft es una plataforma excelente para aplicaciones virtuales  
+## <a name="why-microsoft-is-a-great-platform-for-virtual-appliances"></a>Por qué Microsoft es una plataforma excelente para aplicaciones virtuales  
 ![Pila de red virtual](../../../media/Network-Function-Virtualization/Microsoft-Network-Function-Virtualization.png)  
   
-La plataforma de Microsoft se ha diseñado para que sea una plataforma excelente para compilar e implementar aplicaciones virtuales. Aquí es la razón:  
+La plataforma de Microsoft se ha diseñado para ser una plataforma excelente para compilar e implementar aplicaciones virtuales. Este es el motivo:  
   
--   Microsoft proporciona funciones clave virtualizada de red con Windows Server 2016.  
+-   Microsoft proporciona funciones clave de red virtualizada con Windows Server 2016.  
   
--   Puede implementar una aplicación virtual del proveedor de su elección.  
+-   Puede implementar un dispositivo virtual desde el proveedor de su elección.  
   
--   Puede implementar, configurar y administrar sus aplicaciones virtuales con la controladora de red de Microsoft que se incluye con Windows Server 2016. Para obtener más información acerca de la controladora de red, consulte [controladora de red](../../../sdn/technologies/network-controller/Network-Controller.md).  
+-   Puede implementar, configurar y administrar sus aplicaciones virtuales con la controladora de red de Microsoft que viene con Windows Server 2016. Para obtener más información acerca de la controladora de red, consulte [controladora de red](../../../sdn/technologies/network-controller/Network-Controller.md).  
   
 -   Hyper-V puede hospedar los sistemas operativos invitados principales que necesita.  
   
 ## <a name="network-function-virtualization-in-windows-server-2016"></a>Virtualización de función de red en Windows Server 2016  
   
-### <a name="virtual-appliances-functions-provided-by-microsoft"></a>Funciones de aplicaciones virtuales proporcionadas por Microsoft  
-Se proporcionan las siguientes aplicaciones virtuales con Windows Server 2016:  
+### <a name="virtual-appliances-functions-provided-by-microsoft"></a>Funciones de los dispositivos virtuales proporcionadas por Microsoft  
+En Windows Server 2016 se proporcionan las siguientes aplicaciones virtuales:  
   
 **Equilibrador de carga de software**  
   
-Un equilibrador de carga de nivel 4 trabaja a escala de centro de datos. Se trata de una versión similar de equilibrador de carga de Azure que se haya implementado a escala en el entorno de Azure. Para obtener más información sobre el equilibrador de carga de Software de Microsoft, consulte [equilibrio de carga de Software (SLB) para SDN](https://technet.microsoft.com/library/mt632286.aspx). Para obtener más información acerca de servicios de equilibrio de carga de Microsoft Azure, consulte [servicios de equilibrio de carga de Microsoft Azure](https://azure.microsoft.com/blog/2014/04/08/microsoft-azure-load-balancing-services/).  
+Un equilibrador de carga de nivel 4 que funciona en la escala del centro de recursos. Se trata de una versión similar del equilibrador de carga de Azure que se ha implementado a escala en el entorno de Azure. Para obtener más información sobre el Load Balancer de software de Microsoft, consulte [equilibrio de carga de software (SLB) para Sdn](https://technet.microsoft.com/library/mt632286.aspx). Para obtener más información acerca de los servicios de equilibrio de carga de Microsoft Azure, consulte [Microsoft Azure servicios de equilibrio de carga](https://azure.microsoft.com/blog/2014/04/08/microsoft-azure-load-balancing-services/).  
   
-**Puerta de enlace**. Puerta de enlace RAS proporciona todas las combinaciones de las siguientes funciones de puerta de enlace.  
+**Puerta de enlace**. La puerta de enlace RAS proporciona todas las combinaciones de las siguientes funciones de puerta de enlace.  
   
 -   **Puerta de enlace de sitio a sitio**  
   
-    Puerta de enlace RAS proporciona un protocolo de puerta de enlace de borde (BGP)-puerta de enlace para varios inquilinos, puede que permite a los inquilinos acceder y administrar sus recursos a través de conexiones de VPN de sitio a sitio desde sitios remotos y permite el flujo de tráfico de red entre recursos virtuales en las redes físicas en la nube y de inquilinos. Para obtener más información acerca de la puerta de enlace de RAS, consulte [alta disponibilidad de puerta de enlace de RAS](https://technet.microsoft.com/library/mt631692.aspx) y [puerta de enlace RAS](https://technet.microsoft.com/library/mt626650.aspx).  
+    La puerta de enlace RAS proporciona una puerta de enlace multiinquilino compatible con Protocolo de puerta de enlace de borde (BGP) que permite a los inquilinos tener acceso a sus recursos y administrarlos a través de conexiones VPN de sitio a sitio desde sitios remotos y que permite el flujo de tráfico de red entre recursos virtuales. en las redes físicas de nube y de inquilino. Para obtener más información sobre la puerta de enlace RAS, [consulte puerta de enlace ras y](https://technet.microsoft.com/library/mt626650.aspx) [alta disponibilidad](https://technet.microsoft.com/library/mt631692.aspx) .  
   
--   **Puerta de enlace de reenvío**  
+-   **Reenvío de puerta de enlace**  
   
-    Puerta de enlace RAS enruta el tráfico entre redes virtuales y la red física de proveedor de hospedaje. Por ejemplo, si los inquilinos creación uno o más redes virtuales y necesitan tener acceso a los recursos compartidos en la red física en el proveedor de hospedaje, la puerta de enlace de reenvío puede enrutar el tráfico entre la red virtual y la red física para proporcionar a los usuarios que trabajan en la red virtual con los servicios que necesitan. Para obtener más información, consulte [alta disponibilidad de puerta de enlace de RAS](https://technet.microsoft.com/library/mt631692.aspx) y [puerta de enlace RAS](https://technet.microsoft.com/library/mt626650.aspx).  
+    La puerta de enlace RAS enruta el tráfico entre las redes virtuales y la red física del proveedor de hospedaje. Por ejemplo, si los inquilinos crean una o más redes virtuales y necesitan acceso a recursos compartidos de la red física en el proveedor de hospedaje, la puerta de enlace de reenvío puede enrutar el tráfico entre la red virtual y la red física para proporcionar a los usuarios que trabajan en la red virtual con los servicios que necesitan. Para obtener más información, vea puerta de enlace [ras alta disponibilidad](https://technet.microsoft.com/library/mt631692.aspx) y [puerta de enlace ras](https://technet.microsoft.com/library/mt626650.aspx).  
   
 -   **Puertas de enlace de túnel GRE**  
   
-    Los túneles basados en GRE habilitan la conectividad entre redes virtuales de inquilinos y redes externas. Puesto que el protocolo GRE es ligero y compatibilidad con GRE se encuentra disponible en la mayoría de los dispositivos de red, se convierte en una opción ideal para el túnel donde no se requiere el cifrado de datos. La compatibilidad con GRE de los túneles de sitio a sitio (S2S) soluciona el problema de reenvío entre redes virtuales de inquilinos y redes externas de inquilinos mediante una puerta de enlace de varios inquilinos. Para obtener más información acerca de los túneles GRE, consulte [túneles GRE en Windows Server 2016](https://technet.microsoft.com/library/dn765485.aspx).  
+    Los túneles basados en GRE habilitan la conectividad entre redes virtuales de inquilinos y redes externas. Dado que el protocolo GRE es ligero y la compatibilidad con GRE está disponible en la mayoría de los dispositivos de red, se convierte en una opción ideal para el túnel donde no se requiere el cifrado de datos. La compatibilidad con GRE de los túneles de sitio a sitio (S2S) soluciona el problema de reenvío entre redes virtuales de inquilinos y redes externas de inquilinos mediante una puerta de enlace de varios inquilinos. Para obtener más información acerca de los túneles GRE, consulte [tunelización de GRE en Windows Server 2016](https://technet.microsoft.com/library/dn765485.aspx).  
   
 **Plano de control de enrutamiento con BGP**  
   
-Control del enrutamiento de virtualización de red de Hyper-V (HNV) es la entidad lógica y centralizada en el plano de control, que lleva a cabo todas las rutas de dirección de cliente plano y aprende dinámicamente y, a continuación, actualiza los enrutadores de puerta de enlace RAS distribuidos en la red virtual. Para obtener más información, consulte [alta disponibilidad de puerta de enlace de RAS](https://technet.microsoft.com/library/mt631692.aspx) y [puerta de enlace RAS](https://technet.microsoft.com/library/mt626650.aspx).  
+El control de enrutamiento de virtualización de red de Hyper-V (HNV) es la entidad lógica y centralizada en el plano de control, que incluye todas las rutas de plano de dirección del cliente y aprende dinámicamente y, a continuación, actualiza los enrutadores de puerta de enlace RAS distribuidos en la red virtual. Para obtener más información, vea puerta de enlace [ras alta disponibilidad](https://technet.microsoft.com/library/mt631692.aspx) y [puerta de enlace ras](https://technet.microsoft.com/library/mt626650.aspx).  
   
-**Firewall distribuido de varios inquilinos**  
+**Firewall multiinquilino distribuido**  
   
-El servidor de seguridad protege la capa de red de redes virtuales. Las directivas se aplican en el puerto de SDN vSwitch de cada máquina virtual del inquilino. Protege todos los flujos de tráfico: Asia occidental y norte sur. Las directivas se insertan a través del portal del inquilino y la controladora de red distribuye a todos los hosts aplicables. Para obtener más información sobre el firewall distribuido de varios inquilinos, consulte [información general de Datacenter Firewall](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md).  
+El Firewall protege el nivel de red de las redes virtuales. Las directivas se aplican en el puerto SDN-vSwitch de cada máquina virtual de inquilino. Protege todos los flujos de tráfico: este-oeste y norte-sur. Las directivas se insertan a través del portal del inquilino y la controladora de red las distribuye a todos los hosts aplicables. Para obtener más información sobre el Firewall multiinquilino distribuido, vea [información general](../../../sdn/technologies/network-function-virtualization/../../../sdn/technologies/network-function-virtualization/Datacenter-Firewall-Overview.md)sobre el Firewall de centros de datos.  
   
 
 

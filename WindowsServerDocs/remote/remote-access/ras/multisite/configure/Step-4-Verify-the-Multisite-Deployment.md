@@ -1,9 +1,9 @@
 ---
-title: Paso 4 comprobar la implementación multisitio
-description: Este tema forma parte de la Guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+title: Paso 4 comprobación de la implementación multisitio
+description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: 345b676a-a397-4d51-9973-8b25bc05fa55
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f186084e9d2dbeabbc560ce7631e7d63ff1b99b8
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 3574ef57d18e23668f08dee8b768f0114790f0b8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281022"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367131"
 ---
-# <a name="step-4-verify-the-multisite-deployment"></a>Paso 4 comprobar la implementación multisitio
+# <a name="step-4-verify-the-multisite-deployment"></a>Paso 4 comprobación de la implementación multisitio
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Este tema describe cómo comprobar que ha configurado correctamente la implementación multisitio de acceso remoto.  
+En este tema se describe cómo comprobar que ha configurado correctamente la implementación multisitio de acceso remoto.  
   
 ### <a name="to-verify-access-to-internal-resources-through-the-multisite-deployment"></a>Para comprobar el acceso a los recursos internos a través de la implementación multisitio  
   
@@ -33,21 +33,21 @@ Este tema describe cómo comprobar que ha configurado correctamente la implement
   
     Debe poder tener acceso a todos los recursos corporativos.  
   
-3.  Probar la conectividad a través de cada servidor en la implementación multisitio por apagar o desconectar de la red externa, todos menos uno de los servidores de acceso remoto. En el equipo cliente, intente acceder a recursos corporativos. Repita la prueba en un servidor distinto de multisitio. Pueden tardar hasta 10 minutos para el equipo cliente para conectarse al nuevo punto de entrada. Esto es porque el sondeo se ha desactivado durante 10 minutos para un punto de entrada después de que se considera están inaccesibles, con el fin de optimizar el ancho de banda y duración de batería. Como alternativa, puede cambiar entre los diversos puntos de entrada manualmente al elegir el punto de entrada deseado en el cuadro combinado se muestra al ejecutar **daprop.exe**.  
+3.  Pruebe la conectividad a través de cada servidor en la implementación multisitio desactivando o desconectando de la red externa, excepto uno de los servidores de acceso remoto. En el equipo cliente, intente tener acceso a los recursos corporativos. Repita la prueba en un servidor multisitio diferente. El equipo cliente puede tardar hasta 10 minutos en conectarse al nuevo punto de entrada. Esto se debe a que el sondeo está desactivado durante 10 minutos para un punto de entrada después de que no se pueda tener acceso a él, con el fin de optimizar el ancho de banda y la duración de la batería. Como alternativa, puede cambiar entre los diversos puntos de entrada manualmente eligiendo el punto de entrada deseado en el cuadro combinado que se muestra al ejecutar **daprop. exe**.  
   
     Debe poder tener acceso a todos los recursos corporativos a través de cada servidor multisitio.  
   
-4.  Conectarse a Windows 7&reg; equipo cliente a la empresa de red y obtener la directiva de grupo.  
+4.  Conecte un equipo cliente Windows 7 @ no__t-0 a la red corporativa y obtenga la Directiva de grupo.  
   
-5.  Conectar el equipo cliente Windows 7 a la red externa e intente acceder a recursos internos.  
+5.  Conecte el equipo cliente de Windows 7 a la red externa e intente acceder a los recursos internos.  
   
     Debe poder tener acceso a todos los recursos corporativos.  
   
-6.  Probar la conectividad para los clientes de Windows 7 a través de cada servidor de la implementación multisitio, acceso a la consola de equipos y usuarios de Active Directory y mover el equipo cliente al grupo de seguridad que corresponde a cada servidor. Después de que los cambios se han replicado en todo el dominio, reinicie el equipo cliente mientras está conectado a la red corporativa para obtener la nueva directiva de grupo. Intento de acceder a recursos corporativos. Repita la prueba en un servidor distinto de multisitio.  
+6.  Pruebe la conectividad de los clientes de Windows 7 a través de cada servidor en la implementación multisitio. para ello, acceda a la consola de Active Directory usuarios y equipos y mueva el equipo cliente al grupo de seguridad correspondiente a cada servidor. Una vez que los cambios se hayan replicado en todo el dominio, reinicie el equipo cliente mientras está conectado a la red corporativa para obtener la nueva Directiva de grupo. Intente tener acceso a los recursos corporativos. Repita la prueba en un servidor multisitio diferente.  
   
     Debe poder tener acceso a todos los recursos corporativos a través de cada servidor multisitio.  
   
-    Este método puede no ser factible debido a la cantidad de tiempo necesario para que los cambios se repliquen en todo el dominio en un entorno de producción. Es posible que desee forzar la replicación siempre que sea posible. Las pruebas también pueden realizarse desde varios equipos cliente Windows 7 diferentes que ya son miembros de los diferentes grupos de seguridad de Windows 7 en la implementación multisitio.  
+    En un entorno de producción, es posible que este método no sea factible debido a la cantidad de tiempo necesario para replicar los cambios en todo el dominio. Puede que desee forzar la replicación siempre que sea posible. Las pruebas también se pueden realizar desde varios equipos cliente de Windows 7 diferentes que ya son miembros de los distintos grupos de seguridad de Windows 7 en la implementación multisitio.  
   
 
 

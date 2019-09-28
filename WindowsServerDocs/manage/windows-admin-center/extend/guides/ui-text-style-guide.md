@@ -7,13 +7,13 @@ author: jasongerend
 ms.author: jgerend
 ms.date: 10/17/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 229a911039ba88847de42e542f47b344d7a032c2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 159202fcb8c6125134154094e67e862ce8eb12ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869597"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357032"
 ---
 # <a name="windows-admin-center-ui-text-and-design-style-guide"></a>Guía de estilo de texto y diseño de la interfaz de usuario de Windows Admin Center
 
@@ -151,7 +151,7 @@ Los desarrolladores de Microsoft deben usar un FWLink, excepto cuando se trata d
     - No es nuestro estilo
         - ¿Cuáles son los [riesgos de permitir excepciones]()? 
 
-## <a name="error-messages"></a>mensajes de error
+## <a name="error-messages"></a>Mensajes de error
 
 Esta es una guía que se adapta a la guía de estilo de Windows:
 
@@ -234,7 +234,7 @@ A continuación presentamos algunas recomendaciones detalladas para mensajes de 
 
 |Tipo de cadena         | Notas                               |
 |------------        |-------------------------------------|
-|Started             |Omítelo siempre que sea posible: normalmente puedes saltar al mensaje en curso para minimizar el número de distracciones.|
+|Iniciado             |Omítelo siempre que sea posible: normalmente puedes saltar al mensaje en curso para minimizar el número de distracciones.|
 |En curso         |Empieza por el verbo de la acción que estés realizando y termina con puntos suspensivos para indicar una operación en curso. Por ejemplo:<br> *Creando el volumen "datos de cliente"...*|
 |Correcto             |Empieza con lo que el software acaba de hacer y termina con "correctamente". Por ejemplo:<br> *Se creó correctamente el volumen "datos del cliente".*|
 |Error             |Empieza por "No se ha podido" y termina con lo que no ha podido hacer el software. Por ejemplo:<br> *No se pudo crear el volumen "datos del cliente".*|
@@ -245,7 +245,7 @@ Una buena información sobre herramientas describe brevemente los controles sin 
 
 La información sobre herramientas debe usarse con moderación o no. Pueden ser una interrupción para el cliente, por lo que no incluya una información sobre herramientas que simplemente repite una etiqueta o indica el obvio. Siempre debe agregar información valiosa.
 
-|    Context                                 |    Cómo escribir la información sobre herramientas    |
+|    Contexto                                 |    Cómo escribir la información sobre herramientas    |
 |    -----------------------                 |    -------------------------    |
 |Cuando un control o un elemento de la interfaz de usuario no tiene etiqueta...|Use una frase de nombre simple y descriptiva. Por ejemplo:<br> Lápiz de resaltado |
 |Cuando se etiqueta un elemento de la interfaz de usuario, pero su propósito necesita aclaración...|<ul><li>Describa brevemente lo que puede hacer con este elemento de la interfaz de usuario. </li><li>Use el formulario de verbo imperativo. Por ejemplo, "buscar texto en este archivo" (no "busca texto en este archivo").</li><li>No incluya signos de puntuación finales a menos que haya varias oraciones completas.</li> </ul>|

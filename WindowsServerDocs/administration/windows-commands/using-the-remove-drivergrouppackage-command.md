@@ -1,8 +1,8 @@
 ---
-title: Con el comando remove-DriverGroupPackage
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando Remove-DriverGroupPackage
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 82a8fb8fbe9e713c3e22c08839bc4bc22fe900db
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 122f82b22fd72dc09d4703552cb7b6ac5662aa07
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883996"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362903"
 ---
-# <a name="using-the-remove-drivergrouppackage-command"></a>Con el comando remove-DriverGroupPackage
+# <a name="using-the-remove-drivergrouppackage-command"></a>Usar el comando Remove-DriverGroupPackage
 
 
 
-Quita un paquete de controladores de un grupo de controladores en un servidor.
+Quita un paquete de controladores de un grupo de controladores de un servidor.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ WDSUTIL /Remove-DriverGroupPackage /DriverGroup:<Group Name> [/Server:<Server Na
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[/ Server:\<nombre del servidor >]|Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se usa el servidor local.|
-|[/DriverPackage:\<Name>]|Especifica el nombre del paquete de controladores para quitar.|
-|[/ PackageId:\<Id. >]|Especifica el identificador de servicios de implementación de Windows del paquete de controladores para quitar. Debe especificar esta opción si el paquete de controladores no se identifica por nombre.|
+|[/Server: \<Server nombre >]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.|
+|[/DriverPackage: \<Name >]|Especifica el nombre del paquete de controladores que se va a quitar.|
+|[/PackageId: \<ID >]|Especifica el ID. de servicios de implementación de Windows del paquete de controladores que se va a quitar. Debe especificar esta opción si el paquete de controladores no se puede identificar de forma única por nombre.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 ```
 WDSUTIL /Remove-DriverGroupPackage /DriverGroup:PrinterDrivers /PackageId:{4D36E972-E325-11CE-BFC1-08002BE10318}

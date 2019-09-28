@@ -1,8 +1,8 @@
 ---
-title: Mediante el comando get-AllServers
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando Get-AllServers
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: dbccb834f9058f2c3cca097cdf998455f2a6892e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8dd7f9917a54a80b3c570b07fe1a87bd3bcbe4d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440496"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363262"
 ---
-# <a name="using-the-get-allservers-command"></a>Mediante el comando get-AllServers
+# <a name="using-the-get-allservers-command"></a>Usar el comando Get-AllServers
 
 
 
 Recupera información sobre todos los servidores de servicios de implementación de Windows.
 
 > [!NOTE]
-> Este comando puede tardar un período prolongado de tiempo en completarse si hay muchos servidores de servicios de implementación de Windows en su entorno o si la conexión de red los servidores de la vinculación es lenta.
+> Este comando puede tardar mucho tiempo en completarse si hay muchos servidores de servicios de implementación de Windows en su entorno o si la conexión de red que vincula los servidores es lenta.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -39,17 +39,17 @@ WDSUTIL [Options] /Get-AllServers /Show:{Config | Images | All} [/Detailed] [/Fo
 
 |   Parámetro   |                                                                                                                 Descripción                                                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| / Mostrar: {Config |                                                                                                                    Imágenes                                                                                                                    |
-|  [/ Detallada]  | Cuando se usa junto con el **/Show:Images** o **/Show:All**, devuelve todos los metadatos de cada imagen de la imagen. Si el **/detallada** opción no se especifica, el comportamiento predeterminado es devolver el nombre de la imagen, descripción y nombre de archivo. |
-| [/ Forest: {Sí |                                                                                                                     No}]                                                                                                                     |
+| /Show: {config |                                                                                                                    Imágenes                                                                                                                    |
+|  [/Detailed]  | Cuando se usa junto con **/Show: images** o **/Show: ALL**, devuelve todos los metadatos de imagen de cada imagen. Si no se especifica la opción **/Detailed** , el comportamiento predeterminado es devolver el nombre de la imagen, la descripción y el nombre de archivo. |
+| [/Forest: {Yes |                                                                                                                     No}]                                                                                                                     |
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para ver información acerca de todos los servidores, escriba:
 ```
 WDSUTIL /Get-AllServers /Show:Config
 ```
-Para ver información detallada sobre todos los servidores, escriba:
+Para ver información detallada acerca de todos los servidores, escriba:
 ```
 WDSUTIL /Verbose /Get-AllServers /Show:All /Detailed /Forest:Yes
 ```

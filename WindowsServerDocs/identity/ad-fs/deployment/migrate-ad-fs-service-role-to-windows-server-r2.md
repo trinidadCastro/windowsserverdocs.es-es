@@ -6,35 +6,35 @@ ms.author: billmath
 manager: femila
 ms.date: 07/10/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 34eab7d5e0325a4ad8268a900738eea30b944ebb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 2a3cf6cd523f5cfd69785104fed7aa3938d79525
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444560"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359391"
 ---
 # <a name="migrate-active-directory-federation-services-role-services-to-windows-server-2012-r2"></a>Migrar los servicios de rol de Servicios de federación de Active Directory (AD FS) a Windows Server 2012 R2
- Este documento proporciona instrucciones para migrar los siguientes servicios de rol a Active Directory Federation Services (AD FS) que se instala con Windows Server 2012 R2:  
+ En este documento se proporcionan instrucciones para migrar los siguientes servicios de rol a Servicios de federación de Active Directory (AD FS) (AD FS) que se instala con Windows Server 2012 R2:  
   
--   Servidor de federación de AD FS 2.0 instalado en Windows Server 2008 o Windows Server 2008 R2  
+-   AD FS servidor de Federación 2,0 instalado en Windows Server 2008 o Windows Server 2008 R2  
   
--   Servidor de federación de AD FS instalado en Windows Server 2012  
+-   AD FS servidor de Federación instalado en Windows Server 2012  
   
 ## <a name="supported-migration-scenarios"></a>Escenarios de migración compatibles  
  Las instrucciones de migración de esta guía constan de las siguientes tareas:  
   
-- Exportar los datos de AD FS 2.0 configuración desde el servidor que ejecuta Windows Server 2008, Windows Server 2008 R2 o Windows Server 2012  
+- Exportar los datos de configuración de AD FS 2,0 desde el servidor que ejecuta Windows Server 2008, Windows Server 2008 R2 o Windows Server 2012  
   
-- Realizar una actualización en contexto del sistema operativo de este servidor de Windows Server 2008, Windows Server 2008 R2 o Windows Server 2012 a Windows Server 2012 R2. 
+- Realización de una actualización local del sistema operativo de este servidor de Windows Server 2008, Windows Server 2008 R2 o Windows Server 2012 a Windows Server 2012 R2. 
   
-- Volver a crear la configuración de AD FS original y restaurar el resto de AD FS del servicio configuración en este servidor, que ahora se está ejecutando el rol de servidor de AD FS que se instala con Windows Server 2012 R2.  
+- Volver a crear la configuración de AD FS original y restaurar la configuración del servicio AD FS restante en este servidor, que ahora ejecuta el rol de servidor AD FS que se instala con Windows Server 2012 R2.  
   
   Esta guía no incluye instrucciones para migrar un servidor que ejecute varios roles. Si el servidor ejecuta varios roles, se recomienda que diseñe un proceso de migración personalizado específico para el entorno del servidor, de acuerdo con la información que se proporciona en otras guías de migración de roles. Podrá encontrar guías sobre migración para roles adicionales en el [Portal de migración de Windows Server](https://go.microsoft.com/fwlink/?LinkId=247608).  
   
 ### <a name="supported-operating-systems"></a>Sistemas operativos compatibles  
- Sistema de operativo del servidor de destino:  
+ Sistema operativo del servidor de destino:  
   
  Windows Server 2012 R2 (opciones de instalación completa y Server Core)  
   
@@ -44,26 +44,26 @@ ms.locfileid: "66444560"
   
 |Procesador del servidor de origen|Sistema operativo del servidor de origen|  
 |-----------------------------|------------------------------------|  
-|Basado en x86 o en x64| Windows Server 2008, completo y las opciones de instalación de Server Core|  
+|Basado en x86 o en x64| Windows Server 2008, opciones de instalación completa y Server Core|  
 |Basado en x64|Windows Server 2008 R2|  
-|Basado en x64|Opción de instalación de Server Core de Windows Server 2008 R2|  
-|Basado en x64|Opciones de instalación completa de Windows Server 2012 y Server Core|  
+|Basado en x64|Opción de instalación Server Core de Windows Server 2008 R2|  
+|Basado en x64|Opciones de instalación completa y Server Core de Windows Server 2012|  
   
 > [!NOTE]
 > - Las versiones de los sistemas operativos que se muestran en la tabla anterior corresponden a las combinaciones de sistemas operativos y Service Packs más antiguos que se admiten.  
->   -   Se admiten las ediciones Foundation, Standard, Enterprise y Datacenter del sistema operativo Windows Server como el origen o el servidor de destino.  
+>   -   Las ediciones Foundation, Standard, Enterprise y Datacenter del sistema operativo Windows Server se admiten como servidor de origen o de destino.  
 >   -   Se admiten las migraciones entre sistemas operativos físicos y virtuales.  
   
-### <a name="supported-ad-fs-role-services-and-features"></a>Los servicios de rol de AD FS y las características compatibles  
- En la tabla siguiente se describe los escenarios de migración de los servicios de rol de AD FS y su configuración respectiva descritos en esta guía.  
+### <a name="supported-ad-fs-role-services-and-features"></a>Características y servicios de rol de AD FS admitidos  
+ En la tabla siguiente se describen los escenarios de migración de los servicios de rol de AD FS y su configuración respectiva que se describen en esta guía.  
   
-|De|Para AD FS instalado con Windows Server 2012 R2|  
+|De|Para AD FS instala con Windows Server 2012 R2|  
 |----------|----------------------------------------------------------------------------------------------|  
-|Servidor de federación de AD FS 2.0 instalado en Windows Server 2008 o Windows Server 2008 R2|Se admite la migración en el mismo servidor. Para obtener más información, vea:<br /><br /> [Preparar la migración del servidor de federación de AD FS](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [Migración del servidor de federación de AD FS](migrate-ad-fs-fed-server-r2.md)|  
-|Servidor de federación de AD FS instalado en Windows Server 2012|Se admite la migración en el mismo servidor.  Para obtener más información, consulta:<br /><br /> [Preparar la migración del servidor de federación de AD FS](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [Migración del servidor de federación de AD FS](migrate-ad-fs-fed-server-r2.md)|  
+|AD FS servidor de Federación 2,0 instalado en Windows Server 2008 o Windows Server 2008 R2|Se admite la migración en el mismo servidor. Para obtener más información, vea:<br /><br /> [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)|  
+|AD FS servidor de Federación instalado en Windows Server 2012|Se admite la migración en el mismo servidor.  Para obtener más información, consulta:<br /><br /> [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)<br /><br /> [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)|  
   
 ## <a name="next-steps"></a>Pasos siguientes
- [Preparar la migración del servidor de federación de AD FS](prepare-migrate-ad-fs-server-r2.md)   
- [Migración del servidor de federación de AD FS](migrate-ad-fs-fed-server-r2.md)   
- [Migración del servidor Proxy de federación de AD FS](migrate-fed-server-proxy-r2.md)   
+ [Preparación de la migración del servidor de Federación de AD FS](prepare-migrate-ad-fs-server-r2.md)   
+ [Migración del servidor de Federación de AD FS](migrate-ad-fs-fed-server-r2.md)   
+ [Migración del servidor proxy de Federación de AD FS](migrate-fed-server-proxy-r2.md)   
  [Comprobar la migración de AD FS a Windows Server 2012 R2](verify-ad-fs-migration.md)
