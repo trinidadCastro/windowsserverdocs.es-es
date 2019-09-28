@@ -1,19 +1,19 @@
 ---
 title: Introducción al redireccionamiento de carpetas, archivos sin conexión y perfiles de usuario móvil
 description: Información general de las tecnologías de redirección de carpetas, Archivos sin conexión y perfiles de usuario móviles.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage
 ms.date: 04/05/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: d6c980cd9e7d96261ffe467f4d9da627e3c50102
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ae1b23244f141cd0806ee14d3c40117ba72aeebb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867237"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402061"
 ---
 # <a name="folder-redirection-offline-files-and-roaming-user-profiles-overview"></a>Introducción al redireccionamiento de carpetas, archivos sin conexión y perfiles de usuario móvil
 

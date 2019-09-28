@@ -6,29 +6,29 @@ author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
 ms.author: billmath
-ms.openlocfilehash: 02311522ee229eeaf0b27ce8d39090a9529b99ae
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: c6af319283de72963691ae3e91c3db5992bdec72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192202"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408404"
 ---
 # <a name="deploying-federation-server-proxies"></a>Implementación de servidores proxy de federación
 
-Para implementar servidores proxy de federación de Active Directory Federation Services \(AD FS\), realice cada una de las tareas de [lista de comprobación: Configurar un servidor Proxy de federación](Checklist--Setting-Up-a-Federation-Server-Proxy.md).  
+Para implementar los servidores proxy de Federación en Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1, complete cada una de las tareas en [Checklist: Configuración de un servidor proxy de Federación @ no__t-0.  
   
 > [!NOTE]  
-> Cuando se usa esta lista de comprobación, se recomienda que lea primero las referencias al servidor proxy de federación instrucciones de planeamiento la [Guía de diseño de AD FS en Windows Server 2012](https://technet.microsoft.com/library/dd807036.aspx) antes de comenzar los procedimientos para configurar los servidores. La lista de comprobación proporciona una mejor comprensión del proceso de diseño e implementación de la federación proxies de servidor.  
+> Cuando use esta lista de comprobación, recomendamos que lea primero las referencias a la guía de planeamiento del servidor proxy de Federación en la [Guía de diseño de AD FS en Windows server 2012](https://technet.microsoft.com/library/dd807036.aspx) antes de comenzar los procedimientos para configurar los servidores. La siguiente lista de comprobación proporciona una mejor comprensión del proceso de diseño e implementación de los servidores proxy de Federación.  
   
-## <a name="about-federation-server-proxies"></a>Acerca de servidores proxy de federación  
-Servidores proxy de federación son equipos que ejecutan Windows Server® 2012 y el software AD FS que se han configurado manualmente para que actúe en el rol de proxy. Puedes usar proxies de servidor de federación de la organización para ofrecer servicios intermediarios entre un cliente de Internet y un servidor de federación que está detrás de un firewall de la red corporativa.  
+## <a name="about-federation-server-proxies"></a>Acerca de los servidores proxy de Federación  
+Los servidores proxy de Federación son equipos que ejecutan Windows Server® 2012 y AD FS software que se han configurado manualmente para que actúen en el rol de proxy. Puedes usar proxies de servidor de federación de la organización para ofrecer servicios intermediarios entre un cliente de Internet y un servidor de federación que está detrás de un firewall de la red corporativa.  
   
 > [!NOTE]  
-> Aunque el servidor de federación y los roles de servidor proxy de federación no pueden instalarse en el mismo equipo, un servidor de federación puede realizar funciones de proxy de servidor de federación. Para obtener más información, consulte [When to Create a Federation Server](https://technet.microsoft.com/library/dd807101.aspx).  
+> Aunque el servidor de Federación y los roles de servidor proxy de Federación no se pueden instalar en el mismo equipo, un servidor de Federación puede realizar funciones de proxy de servidor de Federación. Para obtener más información, consulte [When to Create a Federation Server](https://technet.microsoft.com/library/dd807101.aspx).  
   
-El hecho de instalar el software AD FS en un equipo de Windows Server® 2012 y configurarlo para que actúe como proxy de lo convierte en un servidor proxy de federación.  
+La acción de instalar el software de AD FS en un equipo con Windows Server® 2012 y configurarlo para que actúe en el rol de proxy hace que ese equipo sea un servidor proxy de Federación.  
   
 

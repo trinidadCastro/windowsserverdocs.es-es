@@ -1,8 +1,8 @@
 ---
-title: Subcomando detención del servidor
-description: 'Tema de los comandos de Windows para ***- '
+title: Subcomando STOP-Server
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ddb681234cfcbe6d02e56f2e366167faeeb25280
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7584dcbca5bfc52d303f187f62be24cbad407416
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834736"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383744"
 ---
-# <a name="subcommand-stop-server"></a>Subcomando: detención del servidor
+# <a name="subcommand-stop-server"></a>Subcomando: Stop-Server
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -32,8 +32,8 @@ wdsutil [Options] /Stop-Server [/Server:<Server name>]
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usará el servidor local.|
-## <a name="BKMK_examples"></a>Ejemplos
+|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
+## <a name="BKMK_examples"></a>Example
 Para detener los servicios, escriba uno de los siguientes:
 ```
 wdsutil /Stop-Server
@@ -41,10 +41,8 @@ wdsutil /verbose /Stop-Server /Server:MyWDSServer
 ```
 #### <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[mediante el comando disable-servidor](using-the-disable-server-command.md)
-[mediante el comando enable-servidor](using-the-enable-server-command.md)
-[mediante el Comando Get-Server](using-the-get-server-command.md)
-[con el comando Initialize-Server](using-the-initialize-server-command.md)
-[subcomando: set-Server](subcommand-set-server.md) 
- [ Subcomando: start-Server](subcommand-start-server.md)
-[la opción de servidor uninitialize](the-uninitialize-server-option.md)
+[con el comando DISABLE-Server](using-the-disable-server-command.md)
+[mediante el comando Enable-Server](using-the-enable-server-command.md)
+[mediante el comando Get-Server](using-the-get-server-command.md)
+[mediante el comando Initialize-Server](using-the-initialize-server-command.md)
+[ Subcomando: set-Server](subcommand-set-server.md)1[subcomando: Start-Server](subcommand-start-server.md)3[The UnInitialize-Server Option](the-uninitialize-server-option.md)

@@ -1,7 +1,7 @@
 ---
-title: Todos los adaptadores de red virtual deben estar habilitados
-description: Versión en línea del texto para esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+title: Todos los adaptadores de red virtuales deben estar habilitados
+description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,14 +10,14 @@ ms.topic: article
 ms.assetid: b17d647d-a34a-44de-ada6-01a2bf5eeb48
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 0a769c3203f6c6946f01cd91b66fbec38af83bbd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fce564fdb47d0677b36078f3d8446579bc06816c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837136"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366595"
 ---
-# <a name="all-virtual-network-adapters-should-be-enabled"></a>Todos los adaptadores de red virtual deben estar habilitados
+# <a name="all-virtual-network-adapters-should-be-enabled"></a>Todos los adaptadores de red virtuales deben estar habilitados
 
 >Se aplica a: Windows Server 2016
 
@@ -26,25 +26,25 @@ ms.locfileid: "59837136"
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Advertencia|  
 |**Categoría**|Configuración|  
   
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.  
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  
   
 ## <a name="issue"></a>Problema  
   
-*Uno o más adaptadores de red virtual asociados con un adaptador de red físicos están deshabilitados en el sistema operativo de administración.*  
+*Uno o más adaptadores de red virtuales asociados a un adaptador de red físico están deshabilitados en el sistema operativo de administración.*  
   
 ## <a name="impact"></a>Impacto  
   
 *La configuración de este servidor no es óptima.*  
   
-El sistema operativo de administración no se puede conectar a una red (externa) física mediante uno de los adaptadores de red físico en este equipo porque tiene asociados con un adaptador de red virtual deshabilitados.  
+El sistema operativo de administración no se puede conectar a una red física (externa) mediante uno de los adaptadores de red físicos del equipo porque está asociado a un adaptador de red virtual deshabilitado.  
   
 ## <a name="resolution"></a>Resolución  
   
-*Use la configuración de Internet y red para habilitar al adaptador de red virtual. También puede usar el Administrador de conmutadores virtuales para volver a configurar el conmutador virtual externo para que no se comparte con el sistema operativo de administración.*  
+Configuración de Internet de la red @no__t 0Use & para habilitar el adaptador de red virtual. O bien, use el administrador de conmutadores virtuales para volver a configurar el conmutador virtual externo de modo que no se comparta con el sistema operativo de administración. *  
   
 
 

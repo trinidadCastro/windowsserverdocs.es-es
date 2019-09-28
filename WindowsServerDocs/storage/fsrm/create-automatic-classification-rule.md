@@ -2,18 +2,18 @@
 title: Crear una regla de clasificación automática
 description: En este artículo se describe cómo crear una regla de clasificación para una propiedad.
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: c472949228184c6202681d257412c046bbc90d37
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8907c15106f4615ce26ba830e11e5f887a3f22aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812306"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402051"
 ---
 # <a name="create-an-automatic-classification-rule"></a>Crear una regla de clasificación automática
 
@@ -42,9 +42,9 @@ El siguiente procedimiento te guiará por el proceso de crear una regla de clasi
 
 5.  También puedes hacer clic en el botón **Avanzadas** para seleccionar más opciones. En la pestaña **Tipo de evaluación**, la casilla de verificación **Volver a evaluar los archivos** está desactivada de forma predeterminada. Las opciones que pueden seleccionarse aquí son las siguientes:
 
-    -   **Volver a evaluar archivos** desactivada: Una regla se aplica a un archivo si y solo si no se ha establecido la propiedad especificada por la regla en cualquier valor en el archivo.
+    -   **Volver a evaluar archivos** sin activar: Una regla se aplica a un archivo si, y solo si, la propiedad especificada por la regla no se ha establecido en ningún valor del archivo.
     -   Opción **Volver a evaluar los archivos** activada y opción **Sobrescribir el valor existente** seleccionada: la regla se aplicará a los archivos cada vez que se ejecute el proceso de clasificación automática. Por ejemplo, si un archivo tiene una propiedad booleana que está establecida en **Sí**, una regla que use el clasificador de carpetas para establecer todos los archivos en **No** con esta opción establecida dejará la propiedad establecida en **No**.
-    -   **Volver a evaluar archivos** activada y el **los valores de agregado** opción seleccionada: La regla se aplicará a los archivos de cada vez que se ejecuta el proceso de clasificación automática. Pero cuando la regla ha decidido qué valor establecer en el archivo de propiedad, agrega ese valor con el que ya está establecido en el archivo. Por ejemplo, si un archivo tiene una propiedad booleana que está establecida en **Sí**, una regla que use el clasificador de carpetas para establecer todos los archivos en **No** con esta opción establecida dejará la propiedad establecida en **Sí**.
+    -   **Vuelva a evaluar los archivos** activados y la opción **Agregar los valores** seleccionada: La regla se aplicará a los archivos cada vez que se ejecute el proceso de clasificación automática. Pero cuando la regla ha decidido qué valor establecer en el archivo de propiedad, agrega ese valor con el que ya está establecido en el archivo. Por ejemplo, si un archivo tiene una propiedad booleana que está establecida en **Sí**, una regla que use el clasificador de carpetas para establecer todos los archivos en **No** con esta opción establecida dejará la propiedad establecida en **Sí**.
 
     En la pestaña **Parámetros de clasificación adicionales**, puedes especificar parámetros adicionales reconocidos por el método de clasificación seleccionado si introduces el nombre y el valor y haces clic en el botón **Insertar**.
 

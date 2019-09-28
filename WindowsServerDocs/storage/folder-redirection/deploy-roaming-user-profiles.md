@@ -1,19 +1,19 @@
 ---
 title: Implementación de perfiles de usuario móviles
 TOCTitle: Deploying Roaming User Profiles
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.date: 06/07/2019
 ms.author: jgerend
-ms.openlocfilehash: 3442ad46590add695fb3fed607c6f728e2bc5ee1
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b7a89ce8d72cf4f060e83b3653b3b2d93eed5cfd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867292"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402034"
 ---
 # <a name="deploying-roaming-user-profiles"></a>Implementación de perfiles de usuario móviles
 
@@ -287,7 +287,7 @@ Aquí se muestra cómo probar perfiles de usuario móviles:
 
 ## <a name="appendix-a-checklist-for-deploying-roaming-user-profiles"></a>Apéndice A: Lista de comprobación para la implementación de perfiles de usuario móviles
 
-| Status                     | .                                                |
+| Estado                     | .                                                |
 | ---                        | ------                                                |
 | ☐<br>☐<br>☐<br>☐<br>☐   | 1. Preparar el dominio<br>-Unir equipos al dominio<br>-Habilitar el uso de versiones de perfil independientes<br>-Crear cuentas de usuario<br>-(Opcional) implementar redirección de carpetas |
 | ☐<br><br><br>             | 2. Crear un grupo de seguridad para perfiles de usuario móviles<br>-Nombre del Grupo:<br>Registrados |
@@ -339,7 +339,7 @@ Estas son algunas formas de solucionar los diseños del menú Inicio que se rest
 
 En la tabla siguiente se resumen los cambios más importantes realizados en este tema.
 
-| Date | Descripción |Reason|
+| Fecha | Descripción |Reason|
 | --- | ---         | ---   |
 | 1 de mayo de 2019 | Se han agregado actualizaciones para Windows Server 2019 |
 | 10 de abril de 2018 | Se ha agregado una descripción de Cuándo se pierden las personalizaciones de usuario después de una actualización local del sistema operativo|Problema conocido de llamada. |

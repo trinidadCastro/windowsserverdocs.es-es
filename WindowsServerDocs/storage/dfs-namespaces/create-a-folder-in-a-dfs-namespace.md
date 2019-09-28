@@ -2,18 +2,18 @@
 title: Crear una carpeta en un espacio de nombres DFS
 description: En este artículo se describe cómo crear una carpeta en un espacio de nombres DFS
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 47bb13aa404cdf4fef86b7250425a92cc208ba9d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7389b825afe5ccae3059f50ffdedac72ecd5ac9a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856856"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402247"
 ---
 # <a name="create-a-folder-in-a-dfs-namespace"></a>Crear una carpeta en un espacio de nombres DFS
 
@@ -40,7 +40,7 @@ Usa el siguiente procedimiento para crear una carpeta en un espacio de nombres m
 
 ## <a name="see-also"></a>Vea también
 
--   [Implementación de espacios de nombres DFS](deploying-dfs-namespaces.md)
+-   [Implementar espacios de nombres DFS](deploying-dfs-namespaces.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)
 
 

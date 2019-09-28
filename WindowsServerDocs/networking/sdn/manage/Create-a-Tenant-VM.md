@@ -1,9 +1,9 @@
 ---
 title: Creación de una máquina virtual y conexión a una red VLAN o red virtual de inquilino
-description: En este tema, se muestra cómo crear una máquina virtual del inquilino y conectarla a una red virtual que ha creado con la virtualización de red de Hyper-V o a una red de área Local virtual (VLAN).
+description: En este tema, se muestra cómo crear una máquina virtual de inquilino y conectarla a una red virtual creada con virtualización de red de Hyper-V o a una red de área local virtual (VLAN).
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,38 +13,38 @@ ms.assetid: 3c62f533-1815-4f08-96b1-dc271f5a2b36
 ms.author: pashort
 author: shortpatti
 ms.date: 08/24/2018
-ms.openlocfilehash: e23e6c020c12dd4900caa368daae0cc6dbeceaf4
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3e0678fb204e0895bf4429e8bb877a3f1c0e7a97
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856816"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355860"
 ---
 # <a name="create-a-vm-and-connect-to-a-tenant-virtual-network-or-vlan"></a>Creación de una máquina virtual y conexión a una red VLAN o red virtual de inquilino
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema, cree una máquina virtual del inquilino y conectarse a una red virtual que ha creado con la virtualización de red de Hyper-V o a una red de área Local virtual (VLAN). Puede usar los cmdlets de controladora de red de Windows PowerShell para conectarse a una red virtual o NetworkControllerRESTWrappers para conectarse a una VLAN.
+En este tema, creará una máquina virtual de inquilino y la conectará a una red virtual que creó con virtualización de red de Hyper-V o a una red de área local virtual (VLAN). Puede usar los cmdlets de la controladora de red de Windows PowerShell para conectarse a una red virtual o NetworkControllerRESTWrappers para conectarse a una VLAN.
 
-Use los procesos descritos en este tema para implementar aplicaciones virtuales. Con unos pocos pasos adicionales, puede configurar dispositivos para procesar o inspeccionar los paquetes de datos que fluyen hacia o desde otras máquinas virtuales en la red Virtual.
+Use los procesos descritos en este tema para implementar aplicaciones virtuales. Con unos cuantos pasos adicionales, puede configurar los dispositivos para que procesen o inspeccionen los paquetes de datos que fluyen hacia o desde otras máquinas virtuales en el Virtual Network.
 
-Las secciones de este tema incluyen comandos de Windows PowerShell de ejemplo que contienen valores de ejemplo para muchos parámetros. Asegúrese de sustituir los valores de ejemplo de estos comandos con los valores adecuados para su implementación antes de ejecutar estos comandos. 
+Las secciones de este tema incluyen comandos de Windows PowerShell de ejemplo que contienen valores de ejemplo para muchos parámetros. Asegúrese de reemplazar los valores de ejemplo de estos comandos por los valores adecuados para su implementación antes de ejecutar estos comandos. 
 
 
 ## <a name="prerequisites"></a>Requisitos previos
 
-1. Adaptadores de red de máquina virtual creados con direcciones MAC estáticas para la duración de la máquina virtual.<p>Si cambia la dirección MAC durante la vigencia de la máquina virtual, la controladora de red no se puede configurar la directiva necesaria para el adaptador de red. No configurar la directiva para la red impide que el adaptador de red procesa el tráfico de red y se produce un error en toda la comunicación con la red.  
+1. Adaptadores de red de VM creados con direcciones MAC estáticas durante la vigencia de la máquina virtual.<p>Si la dirección MAC cambia durante la vigencia de la máquina virtual, la controladora de red no puede configurar la Directiva necesaria para el adaptador de red. Si no se configura la Directiva para la red, el adaptador de red no podrá procesar el tráfico de red y se producirá un error en la comunicación con la red.  
 
-2. Si la máquina virtual requiere acceso de red en Inicio, no inicie la máquina virtual hasta después de establecer el identificador de interfaz en la máquina virtual de puerto de adaptador de red. Si inicia la máquina virtual antes de establecer el identificador de interfaz y la interfaz de red no existe, la máquina virtual no puede comunicarse en la red en la controladora de red y todas las directivas aplicadas.
+2. Si la máquina virtual requiere acceso a la red en el inicio, no inicie la máquina virtual hasta después de establecer el identificador de interfaz en el puerto del adaptador de red de la máquina virtual. Si inicia la máquina virtual antes de establecer el identificador de interfaz y la interfaz de red no existe, la máquina virtual no puede comunicarse en la red de la controladora de red y se aplican todas las directivas.
 
-3. Si necesita ACL personalizadas para esta interfaz de red, a continuación, cree la ACL ahora con instrucciones en el tema [usar Access Control Lists (ACL) para el flujo de tráfico de red de centro de datos de administrar](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md)
+3. Si necesita ACL personalizadas para esta interfaz de red, cree la ACL ahora con las instrucciones del tema uso de [listas de Access Control (ACL) para administrar el flujo de tráfico de red del centro de](../../sdn/manage/Use-Access-Control-Lists--ACLs--to-Manage-Datacenter-Network-Traffic-Flow.md) información.
 
-Asegúrese de que ya ha creado una red Virtual antes de usar este comando de ejemplo. Para obtener más información, consulte [Create, Delete o Update las redes virtuales de inquilino](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks).
+Asegúrese de que ya ha creado un Virtual Network antes de usar este comando de ejemplo. Para obtener más información, consulte [creación, eliminación o actualización de redes virtuales de inquilino](https://technet.microsoft.com/windows-server-docs/networking/sdn/manage/create%2c-delete%2c-or-update-tenant-virtual-networks).
 
-## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>Crear una máquina virtual y conectarse a una red Virtual mediante los cmdlets de controladora de red de Windows PowerShell
+## <a name="create-a-vm-and-connect-to-a-virtual-network-by-using-the-windows-powershell-network-controller-cmdlets"></a>Creación de una máquina virtual y conexión a un Virtual Network mediante los cmdlets de la controladora de red de Windows PowerShell
 
 
-1. Cree una máquina virtual con un adaptador de red de máquina virtual que tiene una dirección MAC estática. 
+1. Cree una máquina virtual con un adaptador de red de máquina virtual con una dirección MAC estática. 
 
    ```PowerShell    
    New-VM -Generation 2 -Name "MyVM" -Path "C:\VMs\MyVM" -MemoryStartupBytes 4GB -VHDPath "c:\VMs\MyVM\Virtual Hard Disks\WindowsServer2016.vhdx" -SwitchName "SDNvSwitch" 
@@ -63,7 +63,7 @@ Asegúrese de que ya ha creado una red Virtual antes de usar este comando de eje
 3. Cree un objeto de interfaz de red en la controladora de red.
 
    >[!TIP]
-   >En este paso, usará la ACL personalizada.
+   >En este paso, utilizará la ACL personalizada.
 
    ```PowerShell
    $vmnicproperties = new-object Microsoft.Windows.NetworkController.NetworkInterfaceProperties
@@ -87,16 +87,16 @@ Asegúrese de que ya ha creado una red Virtual antes de usar este comando de eje
    New-NetworkControllerNetworkInterface –ResourceID “MyVM_Ethernet1” –Properties $vmnicproperties –ConnectionUri $uri
    ```
 
-4. Obtener el identificador de instancia para la interfaz de red de controladora de red.
+4. Obtiene el InstanceId para la interfaz de red de la controladora de red.
 
    ```PowerShell 
     $nic = Get-NetworkControllerNetworkInterface -ConnectionUri $uri -ResourceId "MyVM-Ethernet1"
    ```
 
-5. Establecer el identificador de interfaz en la máquina virtual de Hyper-V de puerto de adaptador de red.
+5. Establezca el identificador de interfaz en el puerto del adaptador de red de la máquina virtual de Hyper-V.
 
    >[!NOTE]
-   >Debe ejecutar estos comandos en el host de Hyper-V está instalada en la máquina virtual.
+   >Debe ejecutar estos comandos en el host de Hyper-V en el que está instalada la máquina virtual.
 
    ```PowerShell 
    #Do not change the hardcoded IDs in this section, because they are fixed values and must not change.
@@ -137,9 +137,9 @@ Asegúrese de que ya ha creado una red Virtual antes de usar este comando de eje
     Get-VM -Name “MyVM” | Start-VM 
    ```
 
-Ha creado una máquina virtual, conectado la máquina virtual a un red Virtual de inquilino y haya iniciado la máquina virtual para que pueda procesar las cargas de trabajo de inquilino.
+Ha creado correctamente una máquina virtual, ha conectado la máquina virtual a un inquilino Virtual Network e iniciado la máquina virtual para que pueda procesar las cargas de trabajo de inquilinos.
 
-## <a name="create-a-vm-and-connect-to-a-vlan-by-using-networkcontrollerrestwrappers"></a>Crear una máquina virtual y conectarse a una VLAN con NetworkControllerRESTWrappers
+## <a name="create-a-vm-and-connect-to-a-vlan-by-using-networkcontrollerrestwrappers"></a>Creación de una máquina virtual y conexión a una VLAN mediante NetworkControllerRESTWrappers
 
 
 1. Cree la máquina virtual y asigne una dirección MAC estática a la máquina virtual.
@@ -152,13 +152,13 @@ Ha creado una máquina virtual, conectado la máquina virtual a un red Virtual d
    Set-VMNetworkAdapter -VMName "MyVM" -StaticMacAddress "00-11-22-33-44-55" 
    ```
 
-2. Establecer el identificador de VLAN en el adaptador de red de máquina virtual.
+2. Establezca el identificador de VLAN en el adaptador de red de la máquina virtual.
 
    ```PowerShell
    Set-VMNetworkAdapterIsolation –VMName “MyVM” -AllowUntaggedTraffic $true -IsolationMode VLAN -DefaultIsolationId 123
    ```
 
-3. Obtenga la subred de red lógica y crear la interfaz de red. 
+3. Obtenga la subred de red lógica y cree la interfaz de red. 
 
    ```PowerShell
     $logicalnet = get-networkcontrollerLogicalNetwork -connectionuri $uri -ResourceId "00000000-2222-1111-9999-000000000002"
@@ -186,7 +186,7 @@ Ha creado una máquina virtual, conectado la máquina virtual a un red Virtual d
     $vnic.InstanceId
    ```
 
-4. Establecer el identificador de instancia en el puerto de Hyper-V.
+4. Establezca InstanceId en el puerto de Hyper-V.
 
    ```PowerShell  
    #The hardcoded Ids in this section are fixed values and must not change.
@@ -226,7 +226,7 @@ Ha creado una máquina virtual, conectado la máquina virtual a un red Virtual d
    Get-VM -Name “MyVM” | Start-VM 
    ```
 
-Ha creado una máquina virtual, conectado a la máquina virtual a una VLAN y haya iniciado la máquina virtual para que pueda procesar las cargas de trabajo de inquilino.
+Ha creado correctamente una máquina virtual, ha conectado la máquina virtual a una VLAN y ha iniciado la máquina virtual para que pueda procesar las cargas de trabajo de inquilinos.
 
   
 

@@ -1,23 +1,23 @@
 ---
-title: Lista actual de los iconos de Windows Admin Center
-description: Lista actual de los iconos en el SDK de Windows Admin Center (proyecto Honolulu)
+title: Lista actual de iconos del centro de administración de Windows
+description: Lista actual de iconos en el SDK del centro de administración de Windows (proyecto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: e908e088cd92127a785004e22d51934c13afc1ff
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.prod: windows-server
+ms.openlocfilehash: 4b9ffe55b97bac93ab983b25e0971e2c07eeb520
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59844566"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357092"
 ---
-# <a name="current-list-of-icons-in-windows-admin-center"></a>Lista actual de los iconos de Windows Admin Center
+# <a name="current-list-of-icons-in-windows-admin-center"></a>Lista actual de iconos del centro de administración de Windows
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
 ```
 .icon-win-globalNavButton:before { content: "\E700"; }

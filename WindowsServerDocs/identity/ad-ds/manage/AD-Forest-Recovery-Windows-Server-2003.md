@@ -1,130 +1,130 @@
 ---
-title: Recuperación de bosques de AD - recuperación de Windows Server 2003
+title: 'Recuperación de bosque de AD: recuperación de Windows Server 2003'
 description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 07/07/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: 5a291f65-794e-4fc3-996e-094c5845a383
 ms.technology: identity-adds
-ms.openlocfilehash: 1a9db8b4cdfbb4cc7d7edc2a17a3e747943fb073
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 43a2034cb707d4333abdce5f5b2b09d6c4b5a33a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442804"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390061"
 ---
-# <a name="ad-forest-recovery---windows-server-2003-recovery"></a>Recuperación de bosques de AD - recuperación de Windows Server 2003
+# <a name="ad-forest-recovery---windows-server-2003-recovery"></a>Recuperación de bosque de AD: recuperación de Windows Server 2003
 
 >Se aplica a: Windows Server 2003
 
-Este tema incluyen procedimientos de recuperación de bosques para controladores de dominio (DC) que ejecutan Windows Server 2003. El proceso general para la recuperación del bosque no es diferente con controladores de dominio de Windows Server 2003, pero los procedimientos específicos pueden diferir debido a las herramientas diferentes. Por ejemplo, se puede usar Ntdsutil.exe copia de seguridad y restauración de controladores de dominio que ejecutan controladores de dominio de Windows Server 2003, mientras que la copia de seguridad de Windows Server o Wbadmin.exe se usa para los controladores de dominio que ejecutan Windows Server 2008 o posterior.  
+En este tema se incluyen los procedimientos de recuperación de bosques para controladores de dominio (DC) que ejecutan Windows Server 2003. El proceso general para la recuperación del bosque no es diferente con los controladores de DC de Windows Server 2003, pero los procedimientos específicos pueden diferir debido a las distintas herramientas. Por ejemplo, se puede usar Ntdsutil. exe para realizar una copia de seguridad y restaurar los controladores de archivo que ejecutan Windows Server 2003 DC, mientras que se usa Copias de seguridad de Windows Server o Wbadmin. exe para los controladores de DC que ejecutan Windows Server 2008 o posterior.  
   
-- [Copia los datos de estado del sistema](#backing-up-the-system-state-data)  
+- [Copia de seguridad de los datos de estado del sistema](#backing-up-the-system-state-data)  
 - [Realizar una restauración no autoritativa](#performing-a-nonauthoritative-restore)  
 - [Instalar y configurar el servicio servidor DNS](#install-and-configure-the-dns-server-service)
 
-## <a name="backing-up-the-system-state-data"></a>Copia los datos de estado del sistema
-Use el procedimiento siguiente para realizar una copia de seguridad de los datos de estado del sistema, junto con cualquier otro dato que seleccionó para la operación de copia de seguridad actual, de un controlador de dominio que ejecuta Windows Server 2003. Windows Server 2003 incluye la herramienta Ntbackup, que puede usar para realizar una copia de seguridad de los datos de estado del sistema.  
+## <a name="backing-up-the-system-state-data"></a>Copia de seguridad de los datos de estado del sistema
+Use el procedimiento siguiente para realizar una copia de seguridad de los datos de estado del sistema, junto con cualquier otro dato que haya seleccionado para la operación de copia de seguridad actual, de un controlador de dominio que ejecute Windows Server 2003. Windows Server 2003 incluye la herramienta ntbackup, que puede usar para realizar copias de seguridad de los datos de estado del sistema.  
   
-Pertenencia a **administradores** o **operadores de copia de seguridad**, o equivalente, es lo mínimo necesario para realizar una copia de seguridad de archivos y carpetas.   
+La pertenencia a **administradores** o **operadores de copia de seguridad**, o equivalente, es lo mínimo necesario para realizar una copia de seguridad de archivos y carpetas.   
   
-Si copia los datos de estado del sistema de seguridad en una cinta y el programa de copia de seguridad indica que no hay ningún medio sin usar disponible, es posible que deba usar almacenamiento extraíble. Esto agrega la cinta para el grupo de medios libres para que esa copia de seguridad pueda usarlo.  
+Si va a realizar una copia de seguridad de los datos de estado del sistema en una cinta y el programa de copia de seguridad indica que no hay ningún medio sin usar disponible, es posible que tenga que usar almacenamiento extraíble. Esto agrega la cinta al grupo de medios libres para que la copia de seguridad pueda usarla.  
   
-Solo puede realizar la copia de seguridad de los datos de estado del sistema en un equipo local. No se puede realizar backup en un equipo remoto.  
+Solo se pueden realizar copias de seguridad de los datos de estado del sistema en un equipo local. No se puede realizar una copia de seguridad en un equipo remoto.  
   
 ### <a name="to-back-up-the-system-state-data-on-a-domain-controller-that-runs-windows-server-2003"></a>Para realizar una copia de seguridad de los datos de estado del sistema en un controlador de dominio que ejecuta Windows Server 2003  
   
-1. Haga clic en **iniciar**, apunte a **todos los programas**, apunte a **Accesorios**, apunte a **herramientas del sistema**y, a continuación, haga clic en **copia de seguridad** .  
-2. En el **bienvenida** página, haga clic en **modo avanzado**.  
-3. En el **copia de seguridad** ficha, active la casilla de verificación para cualquier unidad, carpeta o archivo que desea realizar copias de seguridad.  
-4. Seleccione el **del estado del sistema** casilla de verificación.  
-5. Haga clic en **iniciar copia de seguridad**.  
+1. Haga clic en **Inicio**, seleccione **todos los programas**, **accesorios**, **herramientas del sistema**y, a continuación, haga clic en **copia de seguridad**.  
+2. En la página de **bienvenida** , haga clic en **modo avanzado**.  
+3. En la pestaña **copia de seguridad** , active la casilla de cualquier unidad, carpeta o archivo del que desee realizar una copia de seguridad.  
+4. Active la casilla **Estado del sistema** .  
+5. Haga clic en **Iniciar copia de seguridad**.  
   
 ## <a name="performing-a-nonauthoritative-restore"></a>Realizar una restauración no autoritativa  
 
-Use el procedimiento siguiente para realizar una restauración no autoritativa de un controlador de dominio que ejecuta Windows Server 2003. Al realizar una restauración no autoritativa de Active Directory en Windows Server 2003, realizar automáticamente una restauración no autoritativa de SYSVOL. Se requiere ningún paso adicional.  
+Use el procedimiento siguiente para realizar una restauración no autoritativa de un controlador de dominio que ejecute Windows Server 2003. Al realizar una restauración no autoritativa en Active Directory en Windows Server 2003, se realiza automáticamente una restauración no autoritativa de SYSVOL. No se requieren pasos adicionales.  
   
 > [!NOTE]
-> Si también va a reinstalar el sistema operativo Windows Server 2003, puede o no se puede unir el equipo al dominio y puede asignar cualquier nombre para el equipo durante la instalación del sistema operativo. No instale Active Directory. Después de reinstalar el sistema operativo, vaya directamente al paso 4.  
+> Si también está reinstalando el sistema operativo Windows Server 2003, es posible que el equipo se una al dominio o no, y que se pueda asignar cualquier nombre al equipo durante la instalación del sistema operativo. No instale Active Directory. Después de volver a instalar el sistema operativo, vaya directamente al paso 4.  
   
-En los controladores de dominio de Windows Server 2003 donde haya restaurado los datos de estado del sistema, deberá volver a instalar las aplicaciones de software que se estaban ejecutando en los controladores de dominio antes de recuperación. Restauración de AD DS en el primer controlador de dominio en el dominio también restaura el registro, ya que ambos forman parte de los datos de estado del sistema. Téngalo en cuenta si tuviera las aplicaciones que se ejecutan en estos controladores de dominio y si tuvieran que toda la información almacenada en el registro.  
+En los controladores de dominio de Windows Server 2003 en los que solo se han restaurado los datos de estado del sistema, debe volver a instalar las aplicaciones de software que se estaban ejecutando en los controladores de dominio antes de la recuperación. La restauración de AD DS en el primer DC del dominio también restaura el registro porque ambos forman parte de los datos de estado del sistema. Tenga esto en cuenta si tiene aplicaciones que se ejecutan en estos controladores de sistema y si tenían alguna información almacenada en el registro.  
   
-Para ahorrar tiempo requerido para volver a instalar el software, determinar si las aplicaciones que deben instalarse en los controladores de dominio son compatibles con la clonación de controlador de dominio virtual. Estas aplicaciones pueden instalarse en el DC de origen antes de la clonación con el fin de ahorrar el tiempo y esfuerzo requeridos para instalarlos en los controladores de dominio virtuales clonados.  
+Para ahorrar tiempo necesario para volver a instalar el software, determine si las aplicaciones que deben instalarse en los controladores de dominio son compatibles con la clonación de DC virtual. Estas aplicaciones se pueden instalar en el controlador de dominio de origen antes de la clonación para ahorrar el tiempo y el esfuerzo necesarios para instalarlos en los controladores de dominio virtuales clonados.  
   
 ### <a name="to-perform-a-nonauthoritative-restore"></a>Para realizar una restauración no autoritativa
   
-1. Después de iniciar el controlador de dominio, presione F8 para reiniciar el equipo en el modo de restauración de servicios de directorio (DSRM).  
+1. Después de iniciar el controlador de dominio, presione F8 para reiniciar el equipo en Modo de restauración de servicios de directorio (DSRM).  
 2. Seleccione **modo de restauración de servicios de directorio (solo controladores de dominio de Windows)** .  
 3. Seleccione el sistema operativo que desea iniciar en modo de restauración.  
-4. Inicie sesión como administrador (solo puede utilizar una cuenta de equipo local, ninguna opción de inicio de sesión de dominio está disponible).  
-5. En un símbolo del sistema, escriba **ntbackup**, y, a continuación, presione ENTRAR.  
-6. En el **bienvenida** página, haga clic en **modo avanzado**y, a continuación, seleccione el **restaurar y administrar medios** ficha. (No seleccione **Asistente para restauración**.)  
-7. Seleccione el archivo de copia de seguridad adecuado para restaurar a partir de y asegúrese de que el **disco del sistema** y **del estado del sistema** casillas están activadas.  
-8. Haga clic en **Iniciar restauración**.  
+4. Inicie sesión como administrador (solo puede usar una cuenta de equipo local, no hay disponible ninguna opción de inicio de sesión de dominio).  
+5. En un símbolo del sistema, escriba **NTBackup**y, a continuación, presione Entrar.  
+6. En la página de **bienvenida** , haga clic en **modo avanzado**y, a continuación, seleccione la pestaña **restaurar y administrar medios** . (No seleccione **Asistente para restauración**).  
+7. Seleccione el archivo de copia de seguridad que desea restaurar y asegúrese de que estén activadas las casillas **disco del sistema** y **Estado del sistema** .  
+8. Haga clic en **iniciar restauración**.  
 9. Una vez completada la operación de restauración, reinicie el equipo.  
   
-Utilice el procedimiento siguiente para realizar una restauración autoritativa (también conocido como principal) de SYSVOL en un controlador de dominio que ejecuta Windows Server 2003. Realice este procedimiento sólo en el primer controlador de dominio de Windows Server 2003 a la que se restaura en el dominio.  
+Use el procedimiento siguiente para realizar una restauración autoritativa (también conocida como principal) de SYSVOL en un controlador de dominio que ejecute Windows Server 2003. Realice este procedimiento solo en el primer DC de Windows Server 2003 que se restaure en el dominio.  
   
 ### <a name="to-perform-an-authoritative-restore-of-sysvol"></a>Para realizar una restauración autoritativa de SYSVOL  
   
-1. Realice los pasos 1 a 8 del procedimiento anterior.  
-2. En el **Confirmar restauración** cuadro de diálogo, haga clic en **avanzadas**.  
-3. Para llevar a cabo una restauración autoritativa de SYSVOL, active la casilla de verificación **al restaurar los conjuntos de datos replicados, marcar los datos restaurados como los datos para todas las réplicas principales**.  
+1. Realice los pasos del 1 al 8 del procedimiento anterior.  
+2. En el cuadro de diálogo **confirmar restauración** , haga clic en **Opciones avanzadas**.  
+3. Para realizar una restauración autoritativa de SYSVOL, active la casilla **al restaurar conjuntos de datos replicados, marque los datos restaurados como los datos principales de todas las réplicas**.  
 
    > [!NOTE]
-   > Marcar los datos restaurados como los datos principales en la copia de seguridad están equivalentes a establecer el **BurFlags** entrada a D4 bajo la subclave del registro siguiente:  
+   > Marcar los datos restaurados como datos principales en la copia de seguridad equivale a establecer la entrada **BurFlags** en D4 en la subclave del Registro siguiente:  
    >   
-   > **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtFrs\Parameters\Cumulative Replica Sets\\** *GUID*  
+   > *GUID* **de HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NtFrs\Parameters\Cumulative conjuntos de réplicas @ no__t-1**  
 
 4. Una vez completada la operación de restauración, reinicie el equipo.  
   
 ## <a name="install-and-configure-the-dns-server-service"></a>Instalar y configurar el servicio servidor DNS
 
-Si el controlador de dominio que puede restaurar desde copia de seguridad se está ejecutando Windows Server 2003, puede instalar el servidor DNS sin conectar el controlador de dominio a ninguna red.  
+Si el controlador de dominio restaurado a partir de una copia de seguridad ejecuta Windows Server 2003, puede instalar el servidor DNS sin conectar el controlador de dominio a ninguna red.  
   
 ### <a name="to-install-and-configure-the-dns-server-service"></a>Para instalar y configurar el servicio servidor DNS  
   
-1. Abra el Asistente para componentes de Windows. Para abrir al asistente:  
+1. Abra el Asistente para componentes de Windows. Para abrir el asistente:  
 
    - Haga clic en **Inicio**, haga clic en **Panel de Control** y, a continuación, haga clic en **Agregar o quitar programas**.  
-   - Haga clic en **agregar o quitar componentes de Windows**.  
+   - Haga clic en **Agregar o quitar componentes de Windows**.  
 
-2. En **componentes**, seleccione el **servicios de red** casilla de verificación y, a continuación, haga clic en **detalles**.  
-3. En **subcomponentes de servicios de red**, seleccione el **Domain Name System (DNS)** casilla de verificación, haga clic en **Aceptar**y, a continuación, haga clic en **siguiente**.  
-4. Si se le pide, en **copiar archivos desde**, escriba la ruta de acceso completa de los archivos de distribución y, a continuación, haga clic en **Aceptar**.  
+2. En **componentes**, active la casilla **servicios de red** y, a continuación, haga clic en **detalles**.  
+3. En **Subcomponentes de servicios de red**, active la casilla **sistema de nombres de dominio (DNS)** , haga clic en **Aceptar**y, a continuación, haga clic en **siguiente**.  
+4. Si se le solicita, en **copiar archivos de**, escriba la ruta de acceso completa de los archivos de distribución y, a continuación, haga clic en **Aceptar**.  
 
    Después de la instalación, complete los pasos siguientes para configurar el servidor DNS.  
 
-5. Haga clic en **iniciar**, apunte a **todos los programas**, apunte a **herramientas administrativas**y, a continuación, haga clic en **DNS**.  
-6. Crear zonas DNS para los mismos nombres de dominio DNS que se hospedan en los servidores DNS antes de funcionamiento defectuoso crítico. Para obtener más información, vea Agregar una zona de búsqueda directa ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)).  
-7. Configurar los datos DNS tal como se encontraba antes el mal funcionamiento crítico. Por ejemplo:  
+5. Haga clic en **Inicio**, seleccione **todos los programas**, seleccione **herramientas administrativas**y, a continuación, haga clic en **DNS**.  
+6. Cree zonas DNS para los mismos nombres de dominio DNS que se hospedaron en los servidores DNS antes de que el funcionamiento sea crítico. Para obtener más información, consulte Agregar una zona de búsqueda directa ([https://go.microsoft.com/fwlink/?LinkId=74574](https://go.microsoft.com/fwlink/?LinkId=74574)).  
+7. Configure los datos DNS tal como existían antes de que el funcionamiento sea crítico. Por ejemplo:  
 
-   - Configurar zonas DNS que se almacenan en AD DS. Para obtener más información, consulte Cambiar el tipo de zona ([https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579)).  
-   - Configurar la zona DNS es autoritativa para registros de recursos del localizador (Ubicador de DC) del controlador de dominio permitir la actualización dinámica segura. Para obtener más información, consulte permitir sólo actualizaciones dinámicas seguras ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)).  
+   - Configure las zonas DNS que se van a almacenar en AD DS. Para obtener más información, consulte cambiar el tipo de zona ([https://go.microsoft.com/fwlink/?LinkId=74579](https://go.microsoft.com/fwlink/?LinkId=74579)).  
+   - Configure la zona DNS que sea autoritativa para los registros de recursos del localizador de controladores de dominio (Ubicador de DC) para permitir la actualización dinámica segura. Para obtener más información, consulte permitir solo actualizaciones dinámicas seguras ([https://go.microsoft.com/fwlink/?LinkId=74580](https://go.microsoft.com/fwlink/?LinkId=74580)).  
 
-8. Asegúrese de que la zona DNS primaria contiene registros de recursos de la delegación (nombre del servidor (NS) y pegar recursos de host (A) registros) para la zona secundaria que se hospeda en este servidor DNS. Para obtener más información, vea Crear una delegación de zona ([https://go.microsoft.com/fwlink/?LinkId=74562](https://go.microsoft.com/fwlink/?LinkId=74562)).  
+8. Asegúrese de que la zona DNS primaria contiene registros de recursos de delegación (registros de recursos de servidor de nombres (NS) y de host de adherencia (A) para la zona secundaria hospedada en este servidor DNS. Para obtener más información, consulte crear una delegación de zona ([https://go.microsoft.com/fwlink/?LinkId=74562](https://go.microsoft.com/fwlink/?LinkId=74562)).  
 9. Después de configurar DNS, en el símbolo del sistema, escriba el siguiente comando y, a continuación, presione ENTRAR:  
 
-   **net stop netlogon**
+   **net stop Netlogon**
 
 10. Escriba el siguiente comando y presione ENTRAR:  
 
-    **Net start netlogon**
+    **net start Netlogon**
 
     > [!NOTE]
-    > Inicio de sesión registrará los registros de recursos de ubicador de DC en DNS para este controlador de dominio. Si va a instalar el servicio servidor DNS en un servidor en el dominio secundario, este controlador de dominio no podrá registrar sus registros de inmediato. Esto es porque está aislado en la actualidad como parte del proceso de recuperación y su servidor DNS principal es el servidor DNS de raíz de bosque. Configurar este equipo con la misma dirección IP que tenía antes del desastre para evitar errores de búsqueda del servicio de controlador de dominio.
+    > Net Logon registrará los registros de recursos del Ubicador de DC en DNS para este DC. Si va a instalar el servicio servidor DNS en un servidor del dominio secundario, este DC no podrá registrar sus registros inmediatamente. Esto se debe a que actualmente está aislado como parte del proceso de recuperación y su servidor DNS principal es el servidor DNS raíz del bosque. Configure este equipo con la misma dirección IP que tenía antes del desastre para evitar errores de búsqueda de servicio de DC.
 
 ## <a name="next-steps"></a>Pasos siguientes
 
 - [Recuperación del bosque de AD: requisitos previos](AD-Forest-Recovery-Prerequisties.md)  
-- [Recuperación de bosques de AD - idear un plan de recuperación personalizada del bosque](AD-Forest-Recovery-Devising-a-Plan.md)  
-- [Recuperación de bosques de AD: identificar el problema](AD-Forest-Recovery-Identify-the-Problem.md)
-- [Recuperación de bosques de AD - determinar cómo recuperar](AD-Forest-Recovery-Determine-how-to-Recover.md)
-- [Recuperación de bosques de AD - realizar una recuperación inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
+- [Recuperación de bosque de AD: diseño de un plan de recuperación de bosque personalizado](AD-Forest-Recovery-Devising-a-Plan.md)  
+- [Recuperación del bosque de AD: identificación del problema](AD-Forest-Recovery-Identify-the-Problem.md)
+- [Recuperación del bosque de AD: determinar cómo recuperar](AD-Forest-Recovery-Determine-how-to-Recover.md)
+- [Recuperación de bosque de AD: realizar la recuperación inicial](AD-Forest-Recovery-Perform-initial-recovery.md)  
 - [Recuperación del bosque de AD: procedimientos](AD-Forest-Recovery-Procedures.md)  
-- [Recuperación de bosques de AD - preguntas más frecuentes](AD-Forest-Recovery-FAQ.md)  
-- [Recuperación de bosques de AD - recuperar un único dominio dentro de un bosque Multidomain](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
-- [Recuperación de bosques de AD: recuperación del bosque con controladores de dominio de Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md) 
+- [Recuperación de bosque de AD: preguntas más frecuentes](AD-Forest-Recovery-FAQ.md)  
+- [Recuperación de bosque de AD: recuperación de un solo dominio en un bosque de varios dominios](AD-Forest-Recovery-Single-Domain-in-Multidomain-Recovery.md)  
+- [Recuperación de bosque de AD: recuperación de bosque con controladores de dominio de Windows Server 2003](AD-Forest-Recovery-Windows-Server-2003.md) 

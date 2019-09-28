@@ -4,16 +4,16 @@ description: El archivo CAPolicy. inf contiene varias opciones que se usan al in
 manager: alanth
 ms.topic: article
 ms.assetid: 65b36794-bb09-4c1b-a2e7-8fc780893d97
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fb2e25dcd27ed3046eeeb444a9f167ccff6e1dd3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 810f6f8ba9e33f1f26f49f542ad6d23819deb463
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868962"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406287"
 ---
 # <a name="capolicyinf-syntax"></a>Sintaxis de CAPolicy. inf
 >   Se aplica a: Windows Server (canal semianual), Windows Server 2016
@@ -42,7 +42,7 @@ Los siguientes términos se usan para describir la estructura del archivo. inf:
 
 -   _Valor_ : es el parámetro y aparece a la derecha del signo igual.
 
-En el ejemplo siguiente, **[Version]** es la sección, **Signature** es la clave y **"\$Windows\$NT"** es el valor.
+En el ejemplo siguiente, **[Version]** es la sección, **Signature** es la clave y **"\$Windows NT @ no__t-4"** es el valor.
 
 Ejemplo:
 

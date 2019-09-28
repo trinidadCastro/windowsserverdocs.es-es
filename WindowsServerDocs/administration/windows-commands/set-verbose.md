@@ -1,8 +1,8 @@
 ---
-title: Detallado
-description: 'Tema de los comandos de Windows para ***- '
+title: Establecer detallado
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec47dea822c338dfe1b809c662d1e31e9a5a9703
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: dcd9dbf5d3f2d371bc348400db932100de2c0523
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441331"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370941"
 ---
-# <a name="set-verbose"></a>Detallado
+# <a name="set-verbose"></a>Establecer detallado
 
 
 
-Especifica si se proporciona un resultado detallado durante la creación de instantáneas. Si se utiliza sin parámetros, **detallado** muestra la Ayuda en el símbolo del sistema.
+Especifica si se proporciona la salida detallada durante la creación de la instantánea. Si se usa sin parámetros, **set verbose** muestra la ayuda en el símbolo del sistema.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ set verbose {on | off}
 
 | Parámetro | Descripción |
 |-----------|-------------|
-|    {en    |    off}     |
+|    {activado    |    habilitar     |
 
 ## <a name="remarks"></a>Comentarios
 
--   Si el modo detallado está activado, **establecer** proporciona detalles de escritor inclusión o exclusión y detalles de la compresión de los metadatos y extracción.
+-   Si el modo detallado está activado, **set** proporciona detalles de inclusión o exclusión del escritor y detalles de la compresión y extracción de metadatos.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

@@ -1,8 +1,8 @@
 ---
-title: Desasociar vdisk
-description: 'Tema de los comandos de Windows para ***- '
+title: Detach vDisk
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0b6a1ecd3d787506c89f120bed204cc30e6d68d9
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4850f9f17218178f210820dd4c6ca96fd918accc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59822736"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378686"
 ---
-# <a name="detach-vdisk"></a>Desasociar vdisk
+# <a name="detach-vdisk"></a>Detach vDisk
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Detiene el disco duro virtual seleccionado \(VHD\) aparezca como una unidad de disco duro local en el equipo host. Cuando se desasocia un VHD, puede copiarlo en otras ubicaciones.  
+Detiene el disco duro virtual seleccionado \(VHD @ no__t-1 para que aparezca como una unidad de disco duro local en el equipo host. Cuando se desasocia un VHD, puede copiarlo en otras ubicaciones.  
   
 > [!NOTE]  
-> Este comando sólo es aplicable a Windows 7 y Windows Server 2008 R2.  
+> Este comando solo es aplicable a Windows 7 y Windows Server 2008 R2.  
   
 ## <a name="syntax"></a>Sintaxis  
   
@@ -39,13 +39,13 @@ detach vdisk [noerr]
   
 |Parámetro|Descripción|  
 |-------|--------|  
-|noerr|Se utiliza sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|  
+|Noerr|Se usa solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|  
   
 ## <a name="remarks"></a>Comentarios  
   
--   Un disco duro virtual debe estar seleccionado y desconectado para que esta operación se realice correctamente. Use la **seleccione vdisk** comando para seleccionar un disco duro virtual y desplace el foco a ella.  
+-   Para que esta operación se realice correctamente, se debe seleccionar y desasociar un disco duro virtual. Use el comando **Select vDisk** para seleccionar un disco duro virtual y desplazar el foco a él.  
   
-## <a name="BKMK_Examples"></a>Ejemplos  
+## <a name="BKMK_Examples"></a>Example  
 Para desasociar el disco duro virtual seleccionado, escriba:  
   
 ```  
@@ -56,19 +56,19 @@ detach vdisk
   
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
   
--   [attach vdisk](attach-vdisk.md)  
+-   [Attach vDisk](attach-vdisk.md)  
   
--   [compact vdisk](compact-vdisk.md)  
+-   [Compact vDisk](compact-vdisk.md)  
   
   
   
--   [vdisk detallado](detail-vdisk.md)  
+-   [detalles del vDisk](detail-vdisk.md)  
   
--   [Expandir vdisk](expand-vdisk.md)  
+-   [expandir vDisk](expand-vdisk.md)  
   
--   [Combinar vdisk](merge-vdisk.md)  
+-   [Merge vDisk](merge-vdisk.md)  
   
--   [select vdisk](select-vdisk.md)  
+-   [seleccionar vDisk](select-vdisk.md)  
   
 -   [list_1](list_1.md)  
   

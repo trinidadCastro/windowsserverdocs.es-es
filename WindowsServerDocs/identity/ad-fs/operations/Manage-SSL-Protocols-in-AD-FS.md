@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 951e7d74a3370d9863d747e349d7fe701615e225
-ms.sourcegitcommit: 2e38b26742f3b16c153170d6f5219c020a8e9383
+ms.openlocfilehash: 44fb4c02421a431edb502daecaa38f00fb4dd2ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69896821"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407539"
 ---
 # <a name="managing-ssltls-protocols-and-cipher-suites-for-ad-fs"></a>Administración de los protocolos SSL/TLS y los conjuntos de cifrado para AD FS
 La siguiente documentación proporciona información sobre cómo deshabilitar y habilitar determinados protocolos TLS/SSL y conjuntos de cifrado que se usan en AD FS
@@ -114,7 +114,7 @@ Use las siguientes claves del registro y sus valores para habilitar y deshabilit
 Use las siguientes claves del registro y sus valores para habilitar y deshabilitar TLS 1,0.
 
 > [!IMPORTANT]
-> Al deshabilitar TLS 1,0 se interrumpirá el WAP para AD FS confianza.  Si deshabilita TLS 1,0, debe habilitar la autenticación segura para las aplicaciones.  Consulte habilitación de la [autenticación segura](#enabling-strong-authentication-for-net-applications) 
+> Al deshabilitar TLS 1,0 se interrumpirá el WAP para AD FS confianza.  Si deshabilita TLS 1,0, debe habilitar la autenticación segura para las aplicaciones.  Consulte [habilitación de la autenticación segura](#enabling-strong-authentication-for-net-applications) 
 
 
 
@@ -256,20 +256,20 @@ Puede deshabilitar determinados cifrados específicos si los quita de HKEY_LOCAL
 
 Para habilitar un conjunto de cifrado, agregue su valor de cadena a la clave de valor de cadena múltiple de funciones.  Por ejemplo, si queremos habilitar TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521, lo agregaremos a la cadena.
 
-Para obtener una lista completa de los conjuntos de cifrado compatibles, consulte [conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx).  En este documento se proporciona una tabla de conjuntos que están habilitados de forma predeterminada y los que se admiten, pero que no están habilitados de forma predeterminada.  Para priorizar los conjuntos de cifrado, consulte priorización de [conjuntos de cifrado Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx).
+Para obtener una lista completa de los conjuntos de cifrado compatibles, consulte [conjuntos de cifrado en TLS/SSL (Schannel SSP)](https://msdn.microsoft.com/library/windows/desktop/aa374757.aspx).  En este documento se proporciona una tabla de conjuntos que están habilitados de forma predeterminada y los que se admiten, pero que no están habilitados de forma predeterminada.  Para priorizar los conjuntos de cifrado, consulte [priorización de conjuntos de cifrado Schannel](https://msdn.microsoft.com/library/windows/desktop/bb870930.aspx).
 
 ## <a name="enabling-strong-authentication-for-net-applications"></a>Habilitación de la autenticación segura para aplicaciones .NET
 Las aplicaciones .NET Framework 3.5/4.0/4.5. x pueden cambiar el protocolo predeterminado a TLS 1,2 habilitando la clave del registro SchUseStrongCrypto.  Esta clave del registro forzará a las aplicaciones .NET a usar TLS 1,2.
 
 > [!IMPORTANT]
-> Para AD FS en Windows Server 2016 y Windows Server 2012 R2, debe usar la clave .NET Framework 4.0/4.5. x:  HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\v4.0.30319
+> Para AD FS en Windows Server 2016 y Windows Server 2012 R2, debe usar la clave .NET Framework 4.0/4.5. x:  HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft @ no__t-0. NETFramework\v4.0.30319
 
 
 En el .NET Framework 3,5, use la siguiente clave del registro:
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\\. NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword: 00000001
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft @ no__t-0. NETFramework\v2.0.50727] "SchUseStrongCrypto" = dword: 00000001
 
-Para el .NET Framework 4.0/4.5. x, use la siguiente clave del registro: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\. NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword: 00000001
+Para el .NET Framework 4.0/4.5. x, use la siguiente clave del registro: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft @ no__t-0. NETFramework\v4.0.30319 "SchUseStrongCrypto" = dword: 00000001
 
 ![Autenticación segura](media/Managing-SSL-Protocols-in-AD-FS/strongauth.png)
 

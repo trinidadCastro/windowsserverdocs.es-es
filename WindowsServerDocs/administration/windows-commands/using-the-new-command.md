@@ -1,8 +1,8 @@
 ---
-title: Con el nuevo comando
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el nuevo comando
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4d61d1fe652f3b41e5a02f9ec8a0d204d4dc8324
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e8ca818468050cf21a55a4c9963ea2411ab018c7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873946"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392079"
 ---
-# <a name="using-the-new-command"></a>Con el nuevo comando
+# <a name="using-the-new-command"></a>Usar el nuevo comando
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-crea la captura y detectar las imágenes, las transmisiones de multidifusión y espacios de nombres.
+crea imágenes de captura y detección, transmisiones de multidifusión y espacios de nombres.
 ## <a name="subcommands"></a>Subcomandos
 |Subcomando|Descripción|
 |-------|--------|
-|[Con el comando nuevo Imagendecaptura](using-the-new-captureimage-command.md)|Crea una nueva imagen de captura de una imagen de arranque existente.|
-|[Con el comando nuevo Imagendedetección](using-the-new-discoverimage-command.md)|Crea una nueva imagen de detección desde una imagen de arranque existente.|
-|[Mediante el comando nueva-MulticastTransmission](using-the-new-multicasttransmission-command.md)|crea una nueva transmisión por multidifusión.|
-|[Con el comando nuevo Namespace](using-the-new-namespace-command.md)|crea un nuevo espacio de nombres.|
+|[Usar el comando New-Imagendecaptura](using-the-new-captureimage-command.md)|Crea una nueva imagen de captura a partir de una imagen de arranque existente.|
+|[Usar el comando New-Imagendedetección](using-the-new-discoverimage-command.md)|Crea una nueva imagen de detección a partir de una imagen de arranque existente.|
+|[Usar el comando New-MulticastTransmission](using-the-new-multicasttransmission-command.md)|crea una nueva transmisión de multidifusión.|
+|[Usar el comando New-namespace](using-the-new-namespace-command.md)|crea un espacio de nombres nuevo.|

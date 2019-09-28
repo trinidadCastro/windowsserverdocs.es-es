@@ -1,6 +1,6 @@
 ---
 title: Replicación de clúster extendido con almacenamiento compartido
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 manager: eldenc
 ms.author: nedpyle
 ms.technology: storage-replica
@@ -8,12 +8,12 @@ ms.topic: get-started-article
 author: nedpyle
 ms.date: 04/26/2019
 ms.assetid: 6c5b9431-ede3-4438-8cf5-a0091a8633b0
-ms.openlocfilehash: 3acfcfd13ee3f78bac59a96b6021e5489f4e39ac
-ms.sourcegitcommit: 6f8993e2180c4d3c177e3e1934d378959396b935
+ms.openlocfilehash: 654b4aea135c360f5fc5f59fdf85627fe8dd4cc2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70000752"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402967"
 ---
 # <a name="stretch-cluster-replication-using-shared-storage"></a>Replicación de clúster extendido con almacenamiento compartido
 
@@ -36,7 +36,7 @@ En este tutorial se utiliza como ejemplo el siguiente entorno:
 
 ![Diagrama que muestra dos nodos en Redmond que se replican con dos nodos del mismo clúster en el sitio de Bellevue.](./media/Stretch-Cluster-Replication-Using-Shared-Storage/Storage_SR_StretchClusterExample.png)  
 
-**FIGURA 1:  Replicación de almacenamiento en un clúster extendido**  
+@NO__T 0FIGURE 1:  Replicación de almacenamiento en un clúster extendido @ no__t-0  
 
 ## <a name="prerequisites"></a>Requisitos previos  
 -   Bosque de Active Directory Domain Services (no es necesario ejecutar Windows Server 2016).  
@@ -287,7 +287,7 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 
 9. **(Opcional)** Configure redes en clúster y Active Directory para una conmutación por error de sitio DNS más rápida. Puedes utilizar redes definidas por software de Hyper-V, VLAN extendidas, dispositivos de abstracción de red, TTL de DNS reducido y otras técnicas habituales.  
 
-   Para obtener más información, revise la sesión de Microsoft encendido: [Ajuste de clústeres de conmutación por error y uso de réplica de almacenamiento en Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) y habilitación de [notificaciones de cambio entre sitios: Cómo y por qué](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
+   Para obtener más información, revise la sesión de Microsoft encendido: [Ajuste de clústeres de conmutación por error y uso de réplica de almacenamiento en Windows Server vNext](http://channel9.msdn.com/Events/Ignite/2015/BRK3487) y [habilitación de notificaciones de cambio entre sitios: Cómo y por qué](http://blogs.technet.com/b/qzaidi/archive/2010/09/23/enable-change-notifications-between-sites-how-and-why.aspx).  
 
 10. **(Opcional)** Configure la resistencia de la máquina virtual para que los invitados no entren en pausas prolongadas durante los errores en nodos. En su lugar, estos aplican la conmutación por error al nuevo almacenamiento del origen de la replicación en el plazo de 10 segundos.  
 
@@ -340,7 +340,7 @@ Ahora creará un clúster de conmutación por error normal. Después de la confi
 
 11. Seleccione un disco para que sea el volumen de datos y haga clic en **Siguiente**.  
 
-12. Revise la configuración y haga clic en **Siguiente**. Haga clic en **Finalizar**  
+12. Revise la configuración y haga clic en **Siguiente**. Haga clic en **Finalizar**.  
 
 13. Haga clic con el botón derecho en el rol Servidor de archivos y, a continuación, haga clic en **Agregar recurso compartido de archivos**. Continúe con el asistente para configurar recursos compartidos.  
 

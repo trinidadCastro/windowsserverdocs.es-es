@@ -1,39 +1,39 @@
 ---
-title: Rendimiento de E/S de red de Hyper-V
-description: Consideraciones de rendimiento de e/s en Hyper-V optimización del rendimiento de red
-ms.prod: windows-server-threshold
+title: Rendimiento de e/s de red de Hyper-V
+description: Consideraciones de rendimiento de e/s de red en el ajuste del rendimiento de Hyper-V
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Asmahi; SandySp; JoPoulso
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 9f576963a93c8c0b9d6c05f406cc3331c407ceb9
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: e8f4261c11a63786c2d170105fb0fa65dc6966a3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811517"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385124"
 ---
-# <a name="hyper-v-network-io-performance"></a>Rendimiento de E/S de red de Hyper-V
+# <a name="hyper-v-network-io-performance"></a>Rendimiento de e/s de red de Hyper-V
 
-Server 2016 contiene varias mejoras y nuevas funcionalidades para optimizar el rendimiento en Hyper-V de la red.  Documentación sobre cómo optimizar el rendimiento de red se incluirá en una versión futura de este artículo.
+El servidor 2016 contiene varias mejoras y nuevas funciones para optimizar el rendimiento de la red en Hyper-V.  La documentación sobre cómo optimizar el rendimiento de la red se incluirá en una versión futura de este artículo.
 
 ## <a name="live-migration"></a>Migración en vivo
 
-Migración en vivo permite mover de manera transparente máquinas virtuales en ejecución de un nodo de un clúster de conmutación por error a otro nodo del mismo clúster sin una conexión de red ni tiempo de inactividad perceptible.
+Migración en vivo le permite trasladar de forma transparente máquinas virtuales en ejecución desde un nodo de un clúster de conmutación por error a otro nodo del mismo clúster sin que se interrumpa la conexión de red o se perciba tiempo de inactividad.
 
 > [!NOTE]
-> Agrupación en clústeres de conmutación por error requiere almacenamiento compartido para los nodos del clúster.
+> Los clústeres de conmutación por error requieren almacenamiento compartido para los nodos del clúster.
 
-El proceso de mover una máquina virtual se puede dividir en dos fases principales. La primera fase, copia la memoria de la máquina virtual desde el host actual al nuevo host. La segunda fase transfiere el estado de la máquina virtual desde el host actual al nuevo host. Las duraciones de las dos fases en gran medida viene determinada por la velocidad a la que se pueden transferir datos desde el host actual al nuevo host.
+El proceso de mover una máquina virtual en ejecución puede dividirse en dos fases principales. La primera fase copia la memoria de la máquina virtual del host actual al nuevo host. La segunda fase transfiere el estado de la máquina virtual del host actual al nuevo host. La duración de ambas fases viene determinada en gran medida por la velocidad a la que se pueden transferir los datos desde el host actual al nuevo host.
 
-Proporcionar una red dedicada tráfico de migración en vivo ayuda a minimizar el tiempo necesario para completar una migración en vivo y garantiza tiempos de migración coherente.
+Proporcionar una red dedicada para el tráfico de migración en vivo ayuda a minimizar el tiempo necesario para completar una migración en vivo y garantiza tiempos de migración coherentes.
 
-![ejemplo de configuración de migración en vivo de hyper-v](../../media/perftune-guide-live-migration.png)
+![ejemplo de configuración de la migración en vivo de Hyper-v](../../media/perftune-guide-live-migration.png)
 
-Además, aumentar el número de envío y recepción en cada red adaptador que está implicado en la migración puede mejorar el rendimiento de la migración.
+Además, el aumento del número de búferes de envío y recepción en cada adaptador de red implicado en la migración puede mejorar el rendimiento de la migración.
 
-Windows Server 2012 R2 introdujo una opción para acelerar la migración en vivo mediante la compresión de memoria antes de transferir a través de la red o use remoto memoria acceso directo (RDMA), si el hardware lo admite.
+Windows Server 2012 R2 presentó una opción para acelerar Migración en vivo al comprimir la memoria antes de transferirla a través de la red o usar el acceso directo a memoria remota (RDMA), si el hardware lo admite.
 
 ## <a name="see-also"></a>Vea también
 

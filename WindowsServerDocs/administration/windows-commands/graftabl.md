@@ -1,8 +1,8 @@
 ---
 title: graftabl
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 395873cf3dbeb574dd9abc69f45b410bece80c25
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ac7748b43eb8859a17a2c61ef9ef4444019ad51b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848446"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375627"
 ---
 # <a name="graftabl"></a>graftabl
 
 
 
-Permite a los sistemas operativos de Windows mostrar un carácter extendido en modo gráfico. Si se utiliza sin parámetros, **graftabl** muestra anterior y la página de códigos actual.
+Permite que los sistemas operativos Windows muestren un juego de caracteres extendido en el modo gráficos. Si se utiliza sin parámetros, **Graftabl** muestra las páginas de códigos anterior y actual.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -39,32 +39,32 @@ graftabl /status
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<CodePage>|Especifica una página de códigos para definir la apariencia de los caracteres extendidos en el modo de gráficos.</br>Números de identificación de página de código válidos son:</br>437: Estados Unidos</br>850: Multilingüe (Latín I)</br>852: Eslavo (Latín II)</br>855: Cirílico (ruso)</br>857: Turco</br>860: Portugués</br>861: Islandés</br>863: Y el francés canadiense</br>865: Nordic</br>866: Ruso</br>869: Griego moderno|
-|/status|Muestra la actual página de códigos que **graftabl** está usando.|
+|@no__t 0CodePage >|Especifica una página de códigos para definir el aspecto de los caracteres extendidos en el modo gráficos.</br>Los números de identificación válidos de la página de códigos son:</br>437: Estados Unidos</br>850: Multilingüe (Latín I)</br>852: Eslava (Latín II)</br>855: Cirílico (Ruso)</br>857: Turco</br>860: Portugués</br>861: Islandés</br>863: Canadá (Francés)</br>865: Guantes</br>866: Ruso</br>869: Griego moderno|
+|/status|Muestra la página de códigos actual que usa **Graftabl** .|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   **Graftabl** afecta solo la pantalla del monitor de caracteres extendidos de la página de códigos que especifique. No se cambia la página de códigos de entrada de consola real. Para cambiar la página de códigos de entrada de consola, use el **modo** o **chcp** comando.
--   En la tabla siguiente se enumera los códigos de salida y una breve descripción del mismo.  
+-   **Graftabl** solo afecta a la presentación del monitor de caracteres extendidos de la página de códigos que especifique. No cambia la página de código de entrada de la consola real. Para cambiar la página de códigos de entrada de la consola, use el comando **mode** o **chcp** .
+-   En la tabla siguiente se enumeran los códigos de salida y una breve descripción.  
     |Código de salida|Descripción|
     |---------|-----------|
-    |0|Juego de caracteres se cargó correctamente. No hay ninguna página de código anterior se cargó.|
+    |0|El juego de caracteres se cargó correctamente. No se cargó ninguna página de códigos anterior.|
     |1|Se especificó un parámetro incorrecto. No se realizó ninguna acción.|
-    |2|Se produjo un error de archivo.|
--   Puede usar la variable de entorno ERRORLEVEL en un programa por lotes para procesar los códigos de salida devueltos por **graftabl**.
+    |2|Error de archivo.|
+-   Puede usar la variable de entorno ERRORLEVEL en un programa por lotes para procesar códigos de salida devueltos por **Graftabl**.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para ver la página de códigos actual utilizada por **graftabl**, tipo:
+Para ver la página de códigos actual utilizada por **Graftabl**, escriba:
 ```
 graftabl /status
 ```
-Para cargar el conjunto de caracteres gráficos para la página de códigos 437 (Estados Unidos) en la memoria, escriba:
+Para cargar el juego de caracteres gráficos de la página de códigos 437 (Estados Unidos) en la memoria, escriba:
 ```
 graftabl 437
 ```
-Para cargar los gráficos de caracteres establecido para la página de códigos 850 (multilingual) en la memoria, escriba:
+Para cargar el juego de caracteres gráficos de la página de códigos 850 (multilingüe) en la memoria, escriba:
 ```
 graftabl 850
 ```

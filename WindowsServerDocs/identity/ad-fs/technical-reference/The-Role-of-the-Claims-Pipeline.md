@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: cd5ca15a9e098f60c6c82980e3148ebcf9ee9932
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 6aafa37b06599f4114cf076e87415fece128fb05
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869337"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407332"
 ---
 # <a name="the-role-of-the-claims-pipeline"></a>El papel de la canalización de notificaciones
 La canalización de notificaciones\) en servicios de Federación de Active Directory (AD FS) \(AD FS representa la ruta de acceso que deben seguir las notificaciones a través del servicio de Federación antes de que se puedan emitir. El servicio de Federación administra todo el proceso\-de\-un extremo a otro para el flujo de notificaciones a través de las distintas fases de la canalización de notificaciones, que también incluye el procesamiento de reglas de notificación por parte del motor de reglas de notificación.  

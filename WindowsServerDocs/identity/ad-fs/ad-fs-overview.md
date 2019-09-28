@@ -7,26 +7,26 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 0ab4152c28413f663dfcc4c5d43deee8a31c1ec2
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: 62dc6d16d840abab34876a471a7fd27ce01bbbf7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009111"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408542"
 ---
 # <a name="ad-fs-overview"></a>Introducción a AD FS
 
 
 
-Este documento contiene una lista de todas las información general de la documentación de AD FS para Windows Server. Incluye lo siguiente:
+Este documento contiene una lista de todas las información general de la documentación de AD FS para Windows Server. Esto incluye lo siguiente:
   
   
   
 * [Novedades de AD FS para Windows Server 2019](../ad-fs/overview/whats-new-active-directory-federation-services-windows-server.md)  
   
-* [AD FS los flujos de OpenID Connect/OAuth y los escenarios de aplicación](../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md) 
+* [Flujos de AD FS OpenID Connect/OAuth y escenarios de aplicación](../ad-fs/overview/ad-fs-openid-connect-oauth-flows-scenarios.md) 
 
 * [Requisitos de AD FS](../ad-fs/overview/AD-FS-2016-Requirements.md)
 

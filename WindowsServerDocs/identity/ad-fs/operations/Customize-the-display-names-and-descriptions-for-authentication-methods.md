@@ -1,27 +1,27 @@
 ---
 ms.assetid: 309d6358-777d-496a-856d-728246c7d9a1
-title: Personalizar los nombres para mostrar y descripciones para los métodos de autenticación
+title: Personalizar los nombres para mostrar y las descripciones de los métodos de autenticación
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b9702873d42e0a72e510ac022d8d7fb04b45dab9
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: cc0da10858ca6924a516fbf825206e376294209d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66189167"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407563"
 ---
-# <a name="customize-the-display-names-and-descriptions-for-authentication-methods"></a>Personalizar los nombres para mostrar y descripciones para los métodos de autenticación 
+# <a name="customize-the-display-names-and-descriptions-for-authentication-methods"></a>Personalizar los nombres para mostrar y las descripciones de los métodos de autenticación 
 
 
-Para personalizar los nombres para mostrar y las descripciones de los métodos de autenticación se puede usar el cmdlt de PowerShell `Set-AdfsAuthenticationProviderWebContent` .  Para poder usar este cmdlt, primero debe obtener el nombre del método de autenticación que desea personalizar.  Esto puede hacerse mediante `Get-AdfsGlobalAuthenticationPolicy`.  En el siguiente ejemplo vemos que, en nuestra sesión\-en la página, se muestra lo siguiente:  “Sign in using an X.509 certificate”.  Queremos simplificar este proceso para los usuarios.  
+Para personalizar los nombres para mostrar y las descripciones de los métodos de autenticación se puede usar el cmdlt de PowerShell `Set-AdfsAuthenticationProviderWebContent` .  Para poder usar este cmdlt, primero debe obtener el nombre del método de autenticación que desea personalizar.  Esto puede hacerse mediante `Get-AdfsGlobalAuthenticationPolicy`.  En el ejemplo siguiente, vemos que, en la página Sign @ no__t-0in, se muestra lo siguiente:  “Sign in using an X.509 certificate”.  Queremos simplificar este proceso para los usuarios.  
   
-![Personalizar displayname](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update1.PNG)  
+![personalizar DisplayName](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update1.PNG)  
   
 Para ello, obtenemos el nombre del método de autenticación y después editamos el texto mostrado.  
   
@@ -37,11 +37,11 @@ Para ello, obtenemos el nombre del método de autenticación y después editamos
     Set-AdfsAuthenticationProviderWebContent -Name CertificateAuthentication -DisplayName "Sign in with a certificate"  
   
   
-![Personalizar displayname](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update2.PNG)  
+![personalizar DisplayName](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update2.PNG)  
   
 Ahora vemos que el mensaje de la pantalla ha cambiado.  
   
-![Personalizar displayname](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update3.PNG)  
+![personalizar DisplayName](media/AD-FS-user-sign-in-customization/ADFS_Customize_Update3.PNG)  
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[AD FS Sign-personalización de usuario](AD-FS-user-sign-in-customization.md) 
+[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md) 

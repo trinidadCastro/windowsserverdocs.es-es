@@ -7,14 +7,14 @@ ms.author: billmath
 manager: mtillman
 ms.date: 02/22/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 89b2bf8422fb1151a7e502b381f9842f77009277
-ms.sourcegitcommit: 4fa147d552481d8279a5390f458a9f7788061977
+ms.openlocfilehash: 9c6c6e7d2c12b6b822989bba05370015f7cd1833
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "70009128"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407810"
 ---
 # <a name="build-a-multi-tiered-application-using-on-behalf-of-obo-using-oauth-with-ad-fs-2016-or-later"></a>Compilar una aplicación de varios niveles mediante "en nombre de" (OBO) mediante OAuth con AD FS 2016 o posterior.
 
@@ -44,7 +44,7 @@ A continuación se muestra el flujo de autenticación que obtendrá el ejemplo
 El ejemplo consta de tres módulos
 
 
-Module | Descripción
+Módulo | Descripción
 -------|------------
 ToDoClient | Cliente nativo con el que interactúa el usuario
 ToDoService | API Web de nivel intermedio que actúa como cliente de la WebAPI de back-end
@@ -277,9 +277,9 @@ Continúe con el resto del asistente, igual que cuando se configuró ToDoListSer
 | Key                      | Valor                                                                                                                                                                                                                   |
 |:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ida: audiencia             | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, https://localhost:44321/                                                                                         |
-| ida: ClientID             | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo,<https://localhost:44321/> </br>**Es muy importante que ida: Audience y ida: ClientID coincidan entre sí.** |
+| ida: ClientID             | IDENTIFICADOR de ToDoListService tal como se indica en AD FS al configurar ToDoListService WebAPI, por ejemplo, <https://localhost:44321/> </br>**Es muy importante que ida: Audience y ida: ClientID coincidan entre sí.** |
 | ida: ClientSecret         | Este es el secreto que AD FS genera al configurar el cliente de ToDoListService en AD FS                                                                                                                   |
-| ida: AdfsMetadataEndpoint | Esta es la dirección URL de los metadatos de AD FS, por ejemplo, https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
+| ida: AdfsMetadataEndpoint | Esta es la dirección URL de los metadatos de AD FS, por ejemplo https://fs.anandmsft.com/federationmetadata/2007-06/federationmetadata.xml                                                                                             |
 | ida: OBOWebAPIBase        | Esta es la dirección base que se utilizará para llamar a la API de back-end; por ejemplo, https://localhost:44300                                                                                                                     |
 | ida: autoridad            | Esta es la dirección URL del servicio de AD FS, ejemplo https://fs.anandmsft.com/adfs/                                                                                                                                          |
 
@@ -298,7 +298,7 @@ Todas las demás claves ida: XXXXXXX del nodo **appSettings** se pueden eliminar
                 TokenValidationParameters = new TokenValidationParameters{ SaveSigninToken = true }
             });
 
-with
+por
 
         app.UseActiveDirectoryFederationServicesBearerAuthentication(
             new ActiveDirectoryFederationServicesBearerAuthenticationOptions
@@ -335,7 +335,7 @@ Agregue una referencia a System. Web. Extensions. Modifique los miembros de clas
     private static string graphUserUrl = ConfigurationManager.AppSettings["ida:GraphUserUrl"];
     private const string TenantIdClaimType = "https://schemas.microsoft.com/identity/claims/tenantid";
 
-with
+por
 
     //
     // The Client ID is used by the application to uniquely identify itself to Azure AD.
@@ -494,10 +494,10 @@ Si la operación se realiza correctamente, verá que el elemento se ha agregado 
 ![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO27.PNG)
 
 También puede ver los seguimientos detallados de Fiddler. Inicie Fiddler y habilite el descifrado HTTPS. Puede ver que realizamos dos solicitudes al punto de conexión/ADFS/oautincludes.
-En la primera interacción, presentamos el código de acceso al punto de conexión del token y obtenemos https://localhost:44321/ un token de acceso para ![ AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO22.PNG)
+En la primera interacción, presentamos el código de acceso al punto de conexión del token y obtenemos un token de acceso para https://localhost:44321/ ![ AD FS OBO @ no__t-2
 
-En la segunda interacción con el punto de conexión del token, puede ver que el valor de **requested_token_use** está establecido como **on_behalf_of** y estamos usando el token de acceso obtenido para el servicio Web de nivel https://localhost:44321/ intermedio, es decir, como la aserción para obtener el token en nombre de.
-![AD FS OBO](media/AD-FS-On-behalf-of-Authentication-in-Windows-Server-2016/ADFS_OBO23.PNG)
+En la segunda interacción con el punto de conexión del token, puede ver que el valor de **requested_token_use** está establecido como **on_behalf_of** y estamos usando el token de acceso obtenido para el servicio Web de nivel intermedio, es decir, https://localhost:44321/ como la aserción para obtener el token en nombre de.
+![AD FS OBO @ NO__T-1
 
 ## <a name="next-steps"></a>Pasos siguientes
 [Desarrollo de AD FS](../../ad-fs/AD-FS-Development.md)  

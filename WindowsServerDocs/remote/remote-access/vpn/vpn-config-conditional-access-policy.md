@@ -1,8 +1,8 @@
 ---
 title: Configurar la directiva de acceso condicional
-description: Una vez creado un certificado raíz, la "conectividad VPN" desencadena la creación de la aplicación de 'Servidor VPN' en la nube en el inquilino del cliente.
+description: Una vez creado un certificado raíz, la ' conectividad VPN ' desencadena la creación de la aplicación de nube ' servidor VPN ' en el inquilino del cliente.
 services: active-directory
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 documentationcenter: ''
 ms.assetid: ''
@@ -15,83 +15,83 @@ ms.author: pashort
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: 466e76d01ca99a1e1ed72fa955ccd287ae63c5df
-ms.sourcegitcommit: 0948a1abff1c1be506216eeb51ffc6f752a9fe7e
+ms.openlocfilehash: 22983c085f2b9d9e7e16810e25c6fa50111f9fa6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66749499"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404345"
 ---
-# <a name="step-73-configure-the-conditional-access-policy"></a>Paso 7.3. Configurar la directiva de acceso condicional
+# <a name="step-73-configure-the-conditional-access-policy"></a>Paso 7.3. Configuración de la Directiva de acceso condicional
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows 10
 
-- [**Anterior:** Paso 7.2. Crear certificados raíz para la autenticación de VPN con Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
-- [**Siguiente:** Paso 7.4. Implementar certificados de raíz de acceso condicional en local AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md)
+- [**Previo** Paso 7.2. Crear certificados raíz para la autenticación de VPN con Azure AD](vpn-create-root-cert-for-vpn-auth-azure-ad.md)
+- [**Nueva** Paso 7.4. Implementar certificados raíz de acceso condicional en AD @ no__t-0 local
 
-En este paso, configure la directiva de acceso condicional para la conectividad VPN. Cuando se crea el primer certificado de raíz en la hoja "Conectividad de VPN", crea automáticamente una aplicación de nube 'Servidor VPN' en el inquilino.
+En este paso, configurará la Directiva de acceso condicional para la conectividad VPN. Cuando el primer certificado raíz se crea en la hoja "Conectividad VPN", crea automáticamente una aplicación en la nube "servidor VPN" en el inquilino.
 
-Crear una directiva de acceso condicional que se asigna al grupo de usuarios VPN y el ámbito del **aplicación en la nube** a **servidor VPN**:
+Cree una directiva de acceso condicional que esté asignada al grupo de usuarios de VPN y el ámbito de la **aplicación de nube** al **servidor VPN**:
 
-- **Usuarios**: Usuarios VPN
-- **Aplicación en la nube**: VPN Server
-- **GRANT (control de acceso)** : 'Requerir autenticación multifactor'. Si lo desea, pueden usarse otros controles.
+- **Usuarios**: Usuarios de VPN
+- **Aplicación en la nube**: Servidor VPN
+- **Grant (control de acceso)** : "Requerir multi-factor Authentication". Si lo desea, se pueden usar otros controles.
 
-**Procedimiento:** Este paso describe la creación de la directiva de acceso condicional más básica.  Si lo desea, pueden usar los controles y condiciones adicionales.
+**Pasos** En este paso se describe la creación de la Directiva de acceso condicional más básica.  Si lo desea, se pueden usar condiciones y controles adicionales.
 
 
-1. En el **acceso condicional** página, en la barra de herramientas en la parte superior, seleccione **agregar**.
+1. En la página **acceso condicional** , en la barra de herramientas de la parte superior, seleccione **Agregar**.
 
     ![Seleccione Agregar en la página de acceso condicional](../../media/Always-On-Vpn/07.png)
 
-2. En el **New** página, en el **nombre** , escriba un nombre para la directiva. Por ejemplo, escriba **Directiva VPN**.
+2. En la página **nuevo** , en el cuadro **nombre** , escriba un nombre para la Directiva. Por ejemplo, escriba **Directiva de VPN**.
 
-    ![Agregar nombre de directiva en la página de acceso condicional](../../media/Always-On-Vpn/08.png)
+    ![Agregar el nombre de la Directiva en la página de acceso condicional](../../media/Always-On-Vpn/08.png)
 
-3. En el **asignación** sección, seleccione **usuarios y grupos**.
+3. En la sección **asignación** , seleccione **usuarios y grupos**.
 
     ![Seleccionar usuarios y grupos](../../media/Always-On-Vpn/09.png)
 
-4. En el **usuarios y grupos** , realice los pasos siguientes:
+4. En la página **usuarios y grupos** , realice los pasos siguientes:
 
-    ![Usuario de prueba de SELECT](../../media/Always-On-Vpn/10.png)
+    ![Seleccionar usuario de prueba](../../media/Always-On-Vpn/10.png)
 
     a. Seleccione **Seleccionar usuarios y grupos**.
 
-    b. Seleccione **seleccione**.
+    b. Seleccione **seleccionar**.
 
-    c. En el **seleccione** , seleccione el **usuarios de VPN** de grupo y, a continuación, seleccione **seleccione**.
+    c. En la página **seleccionar** , seleccione el grupo **usuarios de VPN** y, a continuación, seleccione **seleccionar**.
 
-    d. En el **usuarios y grupos** página, seleccione **realiza**.
+    d. En la página **usuarios y grupos** , seleccione **listo**.
 
-5. En el **New** , realice los pasos siguientes:
+5. En la página **nuevo** , realice los pasos siguientes:
 
-    ![Seleccione las aplicaciones en la nube](../../media/Always-On-Vpn/11.png)
+    ![Seleccionar aplicaciones en la nube](../../media/Always-On-Vpn/11.png)
 
-    a. En el **asignaciones** sección, seleccione **aplicaciones en la nube**.
+    a. En la sección **asignaciones** , seleccione aplicaciones en la **nube**.
 
-    b. En el **aplicaciones en la nube** página, seleccione **seleccionar aplicaciones**.
+    b. En la página aplicaciones en la **nube** , seleccione **seleccionar aplicaciones**.
 
     d. Seleccione **servidor VPN**.
 
-6.  En el **New** página para abrir el **Grant** página, en el **controles** sección, seleccione **Grant**.
+6.  En la página **nuevo** , para abrir la página **conceder** , en la sección **controles** , seleccione **conceder**.
 
-    ![Seleccionar conceder](../../media/Always-On-Vpn/13.png)
+    ![Seleccionar concesión](../../media/Always-On-Vpn/13.png)
 
-7.  En el **Grant** , realice los pasos siguientes:
+7.  En la página **conceder** , realice los pasos siguientes:
 
-    ![Seleccionar requerir autenticación multifactor](../../media/Always-On-Vpn/14.png)
+    ![Seleccione requerir autenticación multifactor](../../media/Always-On-Vpn/14.png)
 
     a. Seleccione **requerir autenticación multifactor**.
 
-    b. Seleccione **seleccione**.
+    b. Seleccione **seleccionar**.
 
-8.  En el **New** página, en **Habilitar directiva**, seleccione **en**.
+8.  En la página **nuevo** , en **Habilitar Directiva**, seleccione **activado**.
 
-    ![Habilitar directiva](../../media/Always-On-Vpn/15.png)
+    ![Habilitar Directiva](../../media/Always-On-Vpn/15.png)
 
-9.  En el **New** página, seleccione **crear**.
+9.  En la página **nuevo** , seleccione **crear**.
 
 
 ## <a name="next-steps"></a>Pasos siguientes
-[Paso 7.4. Implementar certificados de raíz de acceso condicional en local AD](vpn-deploy-cond-access-root-cert-to-on-premise-ad.md): En este paso, implementará el certificado raíz de acceso condicional como certificado raíz de confianza para la autenticación de VPN a sus instalaciones en AD.
+[Paso 7.4. Implementar certificados raíz de acceso condicional en AD @ no__t-0 local: En este paso, implementará el certificado raíz de acceso condicional como certificado raíz de confianza para la autenticación de VPN en su instancia de AD local.

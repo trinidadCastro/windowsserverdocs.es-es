@@ -1,8 +1,8 @@
 ---
 title: title
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d1d1ea70849c3beb4503edfdaa5116384c14a2fd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 42094e0f1231fee5ac9ef0ec9184ba685c8846b1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59848506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385787"
 ---
 # <a name="title"></a>title
 
@@ -38,17 +38,17 @@ title [<String>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<String>|Especifica el título de la ventana de símbolo del sistema.|
+|@no__t 0String >|Especifica el título de la ventana del símbolo del sistema.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Para crear el título de la ventana programas por lotes, incluya el **título** comando al principio de un programa por lotes.
--   Después de establece un título de ventana, puede restablecer solo mediante la **título** comando.
+-   Para crear el título de una ventana para los programas por lotes, incluya el comando **título** al principio de un programa por lotes.
+-   Una vez establecido el título de una ventana, solo se puede restablecer mediante el comando **título** .
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el siguiente script de ejemplo, el título de la ventana de símbolo del sistema se cambia a "Archivos de actualización" mientras se ejecuta el archivo por lotes la **copia** comando. Después de ejecuta el comando, el texto `Files Updated` se muestra, y el título de la ventana de símbolo del sistema vuelve a cambiar a "Símbolo".
+En el siguiente script de ejemplo, el título de la ventana del símbolo del sistema cambia a "actualizando archivos", mientras que el archivo por lotes ejecuta el comando **Copy** . Después de ejecutar el comando, se muestra el texto `Files Updated` y el título de la ventana del símbolo del sistema se vuelve a cambiar a "símbolo del sistema".
 ```
 @echo off
 title Updating Files

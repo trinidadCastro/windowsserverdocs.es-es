@@ -1,8 +1,8 @@
 ---
-title: Crear volumen simple
-description: 'Tema de los comandos de Windows para ***- '
+title: crear volumen simple
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,21 +13,21 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a35d0de5110c0e1616c42921c8402ecc1aff8c41
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1afb97c5bdb167eaf6ecfcd34ca3607b7b5a4c71
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434053"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378882"
 ---
-# <a name="create-volume-simple"></a>Crear volumen simple
+# <a name="create-volume-simple"></a>crear volumen simple
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 crea un volumen simple en el disco dinámico especificado.  
   
 > [!IMPORTANT]  
-> para Windows Vista, este comando DiskPart sólo está disponible en las ediciones de Windows Vista Ultimate, Windows Vista Enterprise y Windows Vista Business.  
+> en Windows Vista, este comando DiskPart solo está disponible en las ediciones Windows Vista Ultimate, Windows Vista Enterprise y Windows Vista Business.  
   
   
   
@@ -41,16 +41,16 @@ create volume simple [size=<n>] [disk=<n>] [align=<n>] [noerr]
   
 | Parámetro  |                                                                                                                            Descripción                                                                                                                            |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| size\=<n>  |                                                                  El tamaño del volumen en megabytes \(MB\). Si no se especifica tamaño, el nuevo volumen ocupará todo el espacio libre restante en el disco.                                                                   |
-| disk\=<n>  |                                                                                El disco dinámico en el que se crea el volumen. Si no se especifica ningún disco, se usa el disco actual.                                                                                |
-| Alinear\=<n> | Alinea todas las extensiones de volumen para el límite de alineación más cercano. Se utiliza normalmente con el número de unidad lógica de RAID de hardware \(LUN\) matrices para mejorar el rendimiento. *n* es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano. |
-|   noerr    |                               sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.                                |
+| Size @ no__t-0 @ no__t-1  |                                                                  El tamaño del volumen en megabytes \(MB @ no__t-1. Si no se proporciona ningún tamaño, el nuevo volumen ocupará el espacio libre restante en el disco.                                                                   |
+| disco @ no__t-0 @ no__t-1  |                                                                                El disco dinámico en el que se crea el volumen. Si no se especifica ningún disco, se usa el disco actual.                                                                                |
+| align @ no__t-0 @ no__t-1 | Alinea todas las extensiones de volumen con el límite de alineación más cercano. Normalmente se usa con el número de unidad lógica RAID de hardware \(LUN @ no__t-1 para mejorar el rendimiento. *n* es el número de kilobytes \( KB @ no__t-2 desde el principio del disco hasta el límite de alineación más cercano. |
+|   Noerr    |                               Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                                |
   
 ## <a name="remarks"></a>Comentarios  
   
--   Después de crear el volumen, el foco automáticamente.  
+-   Después de crear el volumen, el foco se desplaza automáticamente al nuevo volumen.  
   
-## <a name="BKMK_examples"></a>Ejemplos  
+## <a name="BKMK_examples"></a>Example  
 Para crear un volumen de 1000 megabytes de tamaño, en el disco 1, escriba:  
   
 ```  

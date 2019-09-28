@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 86111f8f7da7be1d33bd6ce07385805a9a3b3df8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b8217302cc0ec5bc6972004cb2f26ffae1371614
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865927"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407588"
 ---
 # <a name="create-a-rule-to-send-group-membership-as-a-claim"></a>Crear una regla para enviar la pertenencia a grupos como una notificación
 
@@ -100,7 +100,7 @@ El requisito mínimo para realizar este procedimiento es pertenecer al grupo **A
 6.  En la página **configurar regla** , en nombre de la **regla de notificaciones** , escriba el nombre para mostrar de esta regla, en el **Grupo del usuario** , haga clic en **examinar** y seleccione un grupo, en **tipo de notificaciones salientes** , seleccione el tipo de notificaciones que desee y, a continuación, en  **Tipo de notificaciones salientes** escriba un valor.  
 ![crear regla](media/Create-a-Rule-to-Send-Group-Membership-as-a-Claim/group2.PNG)  
 
-7.  Haga clic en **Finalizar**  
+7.  Haga clic en **Finalizar**.  
   
 8.  En el cuadro de diálogo **editar reglas de notificaciones** , haga clic en **Aceptar** para guardar la regla.  
 

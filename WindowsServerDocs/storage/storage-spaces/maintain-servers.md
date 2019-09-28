@@ -1,6 +1,6 @@
 ---
 title: Desconectar el servidor de Espacios de almacenamiento directo para realizar trabajos de mantenimiento
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: eldenc
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,16 +10,16 @@ ms.date: 10/08/2018
 Keywords: Espacios de almacenamiento directo, S2D, mantenimiento
 ms.assetid: 73dd8f9c-dcdb-4b25-8540-1d8707e9a148
 ms.localizationpriority: medium
-ms.openlocfilehash: 96ae0ad0d1def12ab68466f0a9ae60d0afcc2c17
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 20439a06c255a73f20a297f765e6ed11abfde6f2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59871226"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402822"
 ---
 # <a name="taking-a-storage-spaces-direct-server-offline-for-maintenance"></a>Desconectar el servidor de Espacios de almacenamiento directo para realizar trabajos de mantenimiento
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
 En este tema se proporcionan instrucciones para reiniciar o apagar servidores de forma correcta con [Espacios de almacenamiento directo](storage-spaces-direct-overview.md).
 
@@ -97,7 +97,7 @@ MyVolume2    Mirror                Incomplete        Warning      True          
 MyVolume3    Mirror                Incomplete        Warning      True           1 TB
 ```
 
-Incompleto o degradado estado operativo es normal cuando se están cerrando los nodos o iniciar y detener el clúster en un nodo de servicio y no debería suponer un problema. Todos los volúmenes permanecen en línea y son accesibles.
+El estado operativo incompleto o degradado es normal cuando los nodos se están cerrando o iniciando o deteniendo el servicio de clúster en un nodo y no deben suponer un problema. Todos los volúmenes permanecen en línea y son accesibles.
 
 ## <a name="resuming-the-server"></a>Reanudar el servidor
 
@@ -121,7 +121,7 @@ Para hacer esto en el Administrador de clústeres de conmutación por error, ve 
 
 ## <a name="waiting-for-storage-to-resync"></a>Esperar a que se sincronice de nuevo el almacenamiento
 
-Cuando se reanuda el servidor, deben volver a sincronizar las escrituras nuevas que se produjeron mientras estaba disponible. Esto sucede automáticamente. Si usas la opción de seguimiento de cambios inteligente, no es necesario analizar o sincronizar *todos* los datos; solo deberás tener en cuenta los cambios. Este proceso está limitado para mitigar el impacto en las cargas de trabajo de producción. Dependiendo del tiempo que el servidor esté en pausa y la cantidad de datos nuevos escritos, es posible que el proceso tarde unos minutos en completarse.
+Cuando el servidor se reanuda, las nuevas escrituras que se hayan producido mientras no estaba disponible deben volver a sincronizarse. Esto sucede automáticamente. Si usas la opción de seguimiento de cambios inteligente, no es necesario analizar o sincronizar *todos* los datos; solo deberás tener en cuenta los cambios. Este proceso está limitado para mitigar el impacto en las cargas de trabajo de producción. Dependiendo del tiempo que el servidor esté en pausa y la cantidad de datos nuevos escritos, es posible que el proceso tarde unos minutos en completarse.
 
 Debes esperar a que la resincronización se complete antes de desactivar otros servidores del clúster.
 
@@ -167,24 +167,24 @@ MyVolume3    Mirror                OK                Healthy      True          
 
 Ya puedes pausar y reiniciar otros servidores del clúster.
 
-## <a name="how-to-update-storage-spaces-direct-nodes-offline"></a>Cómo actualizar los nodos de espacios de almacenamiento directo sin conexión
-Utilice los pasos siguientes para la ruta de acceso del sistema de espacios de almacenamiento directo rápidamente. Implica la programación de una ventana de mantenimiento y apagar el sistema para la revisión. Si hay una actualización de seguridad crítica que necesita aplica rápidamente o puede que necesite garantizar la aplicación de revisiones se completa en la ventana de mantenimiento, este método puede ser para usted. Este proceso reduce el clúster de espacios de almacenamiento directo, revisiones y pone todo a intentarlo. El inconveniente es el tiempo de inactividad en los recursos hospedados.
+## <a name="how-to-update-storage-spaces-direct-nodes-offline"></a>Actualización de nodos de Espacios de almacenamiento directo sin conexión
+Siga estos pasos para realizar una ruta de acceso al sistema de Espacios de almacenamiento directo rápidamente. Implica la programación de una ventana de mantenimiento y la desactivación del sistema para la revisión. Si hay una actualización de seguridad crítica que necesita aplicar rápidamente o quizás necesite asegurarse de que la revisión se completa en la ventana de mantenimiento, este método puede ser para usted. Este proceso desconecta el clúster de Espacios de almacenamiento directo, lo revisa y lo vuelve a poner en marcha. La desventaja es el tiempo de inactividad de los recursos hospedados.
 
 1. Planee la ventana de mantenimiento.
-2. Desconectar los discos virtuales.
-3. Detener el clúster para desconectar el grupo de almacenamiento. Ejecute el **Stop-Cluster** cmdlet o utilice el Administrador de clústeres de conmutación por error para detener el clúster.
-4. Establezca el servicio de clúster en **deshabilitado** en Services.msc en cada nodo. Esto impide que el servicio de clúster iniciarse al que se va a revisar.
-5. Aplique la actualización acumulativa de Windows Server y cualquier necesaria actualizaciones de la pila de servicio a todos los nodos. (Puede actualizar todos los nodos al mismo tiempo, sin necesidad de esperar, ya que el clúster está inactivo).  
-6. Reinicie los nodos y asegurarse de que todo es correcto.
-7. Establezca de nuevo el servicio de clúster en **automática** en cada nodo.
-8. Iniciar el clúster. Ejecute el **inicio clúster** cmdlet o utilice el Administrador de clústeres de conmutación por error. 
+2. Desconecte los discos virtuales.
+3. Detenga el clúster para desconectar el bloque de almacenamiento. Ejecute el cmdlet **Stop-Cluster** o use administrador de clústeres de conmutación por error para detener el clúster.
+4. Establezca el servicio de clúster en **deshabilitado** en Services. msc en cada nodo. Esto evita que se inicie el servicio de clúster mientras se aplica la revisión.
+5. Aplique la actualización acumulativa de Windows Server y cualquier actualización de pila de mantenimiento necesaria a todos los nodos. (Puede actualizar todos los nodos al mismo tiempo, sin necesidad de esperar, ya que el clúster está inactivo).  
+6. Reinicie los nodos y asegúrese de que todo es correcto.
+7. Vuelva a establecer el servicio de clúster en **automático** en cada nodo.
+8. Inicie el clúster. Ejecute el cmdlet **Start-Cluster** o use administrador de clústeres de conmutación por error. 
 
-   Espere unos minutos.  Asegúrese de que el grupo de almacenamiento está en buen estado.
-9. Poner en línea los discos virtuales.
-10. Supervisar el estado de los discos virtuales mediante la ejecución de la **Get-Volume** y **Get-VirtualDisk** cmdlets.
+   Asígnele unos minutos.  Asegúrese de que el grupo de almacenamiento esté en buen estado.
+9. Vuelva a poner en línea los discos virtuales.
+10. Supervise el estado de los discos virtuales mediante la ejecución de los cmdlets **Get-Volume** y **Get-VirtualDisk** .
 
 
 ## <a name="see-also"></a>Vea también
 
-- [Información general de espacios directo de almacenamiento](storage-spaces-direct-overview.md)
-- [Actualización compatible con (CAU) del clúster](https://technet.microsoft.com/library/hh831694.aspx)
+- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)
+- [Actualización compatible con clústeres (CAU)](https://technet.microsoft.com/library/hh831694.aspx)

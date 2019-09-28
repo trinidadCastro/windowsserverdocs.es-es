@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin homólogos y detectar
-description: Tema de los comandos de Windows para **bitsadmin homólogos y descubrir detalles que** -detecta de nuevo elementos del mismo nivel.
+title: bitsadmin pares y detectar
+description: En el tema comandos de Windows para el **elemento bitsadmin del mismo nivel y Discover** -detecta elementos del mismo nivel de nuevo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: c6fe6ea93e2bf8c103340feb1c9247130411c4d3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bad7458d9cace050a9d07fc5978dc9d048094b4b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832656"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380971"
 ---
-# <a name="bitsadmin-peers-and-discover"></a>Bitsadmin homólogos y detectar
+# <a name="bitsadmin-peers-and-discover"></a>bitsadmin pares y detectar
 
 
 
-Detecta equipos del mismo nivel de nuevo.
+Detecta elementos del mismo nivel de nuevo.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,9 +32,9 @@ Detecta equipos del mismo nivel de nuevo.
 bitsadmin /Peers /Discover 
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente detecta los elementos del mismo nivel.
+En el ejemplo siguiente se detectan los elementos del mismo nivel.
 ```
 C:\>bitsadmin /Peers /Discover
 ```

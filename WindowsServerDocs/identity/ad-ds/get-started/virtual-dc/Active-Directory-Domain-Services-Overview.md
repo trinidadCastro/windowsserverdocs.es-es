@@ -7,52 +7,52 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ed8a22881cd20633e6fcd61b146f3b0aad7a757b
-ms.sourcegitcommit: be243a92f09048ca80f85d71555ea6ee3751d712
+ms.openlocfilehash: 84ce4986d27884f817eb5e632ac8dc1c5a22b922
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67792280"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390482"
 ---
 # <a name="active-directory-domain-services-overview"></a>Introducción a Active Directory Domain Services
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
 
-Un directorio es una estructura jerárquica que almacena información acerca de los objetos de la red. Un servicio de directorio, como los servicios de dominio de Active Directory (AD DS), proporciona los métodos para almacenar datos de directorio y hacer que estos datos estén disponibles para los administradores y usuarios de la red. Por ejemplo, AD DS almacena información acerca de las cuentas de usuario, como nombres, contraseñas, números de teléfono y así sucesivamente y permite que otros usuarios autorizados en la misma red tener acceso a esta información.
+Un directorio es una estructura jerárquica que almacena información acerca de los objetos de la red. Un servicio de directorio, como Active Directory Domain Services (AD DS), proporciona los métodos para almacenar los datos de directorio y hacer que estos datos estén disponibles para los usuarios y administradores de la red. Por ejemplo, AD DS almacena información acerca de las cuentas de usuario, como nombres, contraseñas, números de teléfono, etc., y permite que otros usuarios autorizados de la misma red tengan acceso a esta información.
 
-Active Directory almacena información acerca de los objetos de la red y facilita esta información para administradores y usuarios a encontrar y usar. Active Directory utiliza un almacén de datos estructurado como base para una organización lógica y jerárquica de información del directorio.
+Active Directory almacena información acerca de los objetos de la red y facilita la búsqueda y el uso de esta información para los administradores y los usuarios. Active Directory usa un almacén de datos estructurado como base para una organización jerárquica lógica de información de directorio.
 
-Este almacén de datos, también conocido como el directorio contiene información acerca de los objetos de Active Directory. Normalmente, estos objetos incluyen los recursos compartidos, como servidores, volúmenes, impresoras y las cuentas de usuario y equipo de red. Para obtener más información sobre el almacén de datos de Active Directory, consulte [almacén de datos de directorio](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx).
+Este almacén de datos, también conocido como directorio, contiene información sobre los objetos de Active Directory. Estos objetos suelen incluir recursos compartidos como servidores, volúmenes, impresoras y las cuentas de equipo y usuario de red. Para obtener más información sobre el almacén de datos de Active Directory, vea [almacén de datos de directorio](https://technet.microsoft.com/library/cc736627(v=ws.10).aspx).
 
-Seguridad se integra con Active Directory mediante la autenticación de inicio de sesión y control de acceso a objetos en el directorio. Con un único inicio de sesión, los administradores pueden administrar datos de directorio y la organización a lo largo de su red y los usuarios autorizados pueden acceder a recursos en cualquier parte de la red. La administración basada en directiva facilita la administración de incluso las redes más complejas. Para obtener más información acerca de la seguridad de Active Directory, consulte [información general sobre seguridad](../../plan/security-best-practices/best-practices-for-securing-active-directory.md).
+La seguridad se integra con Active Directory a través de la autenticación de inicio de sesión y el control de acceso a los objetos del directorio. Con un único inicio de sesión de red, los administradores pueden administrar los datos de directorio y la organización a través de su red, y los usuarios de red autorizados pueden tener acceso a los recursos en cualquier parte de la red. La administración basada en directiva facilita la administración de incluso las redes más complejas. Para obtener más información sobre la seguridad de Active Directory, consulte [información general sobre seguridad](../../plan/security-best-practices/best-practices-for-securing-active-directory.md).
 
 Active Directory también incluye:
-* Un conjunto de reglas, **el esquema**, que define las clases de objetos y atributos incluidos en el directorio, las restricciones y límites de las instancias de estos objetos y el formato de sus nombres. Para obtener más información acerca del esquema, vea el esquema.
+* Conjunto de reglas, **el esquema**, que define las clases de objetos y atributos incluidos en el directorio, las restricciones y los límites de las instancias de estos objetos y el formato de sus nombres. Para obtener más información sobre el esquema, vea esquema.
 
 
-* Un **catálogo global** que contiene información sobre todos los objetos en el directorio. Esto permite que los usuarios y administradores para buscar información de directorio con independencia del dominio en el directorio contiene realmente los datos. Para obtener más información acerca del catálogo global, consulte el rol del catálogo global.
+* **Catálogo global** que contiene información sobre todos los objetos del directorio. Esto permite a los usuarios y administradores buscar información de directorio independientemente del dominio del directorio que contenga realmente los datos. Para obtener más información acerca del catálogo global, vea el rol del catálogo global.
 
 
-* Un **mecanismo de consulta e índice**, de modo que los objetos y sus propiedades se pueden publicar y encontrar los usuarios de red o las aplicaciones. Para obtener más información sobre cómo consultar el directorio, consulte Buscar información del directorio.
+* Un **mecanismo de consulta e índice**, de modo que los usuarios o las aplicaciones de red puedan publicar y encontrar los objetos y sus propiedades. Para obtener más información sobre cómo consultar el directorio, vea buscar información de directorio.
 
 
-* Un **servicio de replicación** que distribuye los datos de directorio en una red. Todos los controladores de dominio en un dominio participan en la replicación y contienen una copia completa de toda la información de directorio de su dominio. Cualquier cambio en los datos del directorio se replica en todos los controladores de dominio del dominio. Para obtener más información acerca de la replicación de Active Directory, consulte Introducción a la replicación.
+* Un **servicio de replicación** que distribuye los datos de directorio a través de una red. Todos los controladores de dominio de un dominio participan en la replicación y contienen una copia completa de toda la información de directorio de su dominio. Cualquier cambio en los datos del directorio se replica en todos los controladores de dominio del dominio. Para obtener más información acerca de la replicación de Active Directory, consulte información general sobre la replicación.
 
 ## <a name="understanding-active-directory"></a>Descripción de Active Directory
- Esta sección proporciona vínculos a los conceptos de Active Directory:
+ En esta sección se proporcionan vínculos a conceptos básicos de Active Directory:
  
-* [Estructura de Active Directory y las tecnologías de almacenamiento](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
-* [Roles de controlador de dominios](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
-* [Active Directory Schema](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771796(v=ws.10))
-* [Descripción de confianzas](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771568(v=ws.10)) 
-* [Tecnologías de replicación de Active Directory](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
-* [Búsqueda de Active Directory y las tecnologías de publicación](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx) 
-* [Interoperación con DNS y directiva de grupo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197486(v=ws.10))
+* [Tecnologías de almacenamiento y estructura de Active Directory](https://technet.microsoft.com/library/cc759186(v=ws.10).aspx)
+* [Roles de controlador de dominio](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
+* [Esquema de Active Directory](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771796(v=ws.10))
+* [Descripción de las confianzas](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771568(v=ws.10)) 
+* [Tecnologías de replicación Active Directory](https://technet.microsoft.com/library/cc786438(v=ws.10).aspx) 
+* [Active Directory tecnologías de búsqueda y publicación](https://technet.microsoft.com/library/cc775686(v=ws.10).aspx) 
+* [Interoperar con DNS y directiva de grupo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd197486(v=ws.10))
 * [Descripción del esquema](https://technet.microsoft.com/library/cc759402(v=ws.10).aspx) 
 
-Para obtener una lista detallada de los conceptos de Active Directory, consulte [descripción de Active Directory](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx). 
+Para obtener una lista detallada de los conceptos de Active Directory, vea [Descripción de Active Directory](https://technet.microsoft.com/library/cc781408(v=ws.10).aspx). 
 
 

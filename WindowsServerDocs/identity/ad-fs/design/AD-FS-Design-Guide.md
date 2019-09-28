@@ -7,20 +7,20 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 8cd7f6179d6747c995bf8d13c310280b4842d3da
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 1c080cef1211a059acf00afb15e6e904eb4fdcd5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191720"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408171"
 ---
 # <a name="ad-fs-2016-design-guide"></a>Guía de diseño de AD FS 2016
 
 
 
-La Guía de diseño de AD FS es una completa guía para diseñar implementaciones de AD FS.  Esta guía se compone de las siguientes acciones:
+La guía de diseño de AD FS es una guía completa para diseñar implementaciones de AD FS.  Esta guía se compone de lo siguiente:
 
 -   [Guía de diseño de AD FS en Windows Server 2012 R2](AD-FS-Design-Guide-in-Windows-Server-2012-R2.md)
 -   [Guía de diseño de AD FS en Windows Server 2012](AD-FS-Design-Guide-in-Windows-Server-2012.md)
@@ -28,6 +28,6 @@ La Guía de diseño de AD FS es una completa guía para diseñar implementacione
 
   
 ## <a name="see-also"></a>Vea también  
-Para planear la capacidad para AD FS en Windows Server 2016, consulte el [hoja de planificación de capacidad de AD FS.](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)  
+Para planear la capacidad de AD FS en Windows Server 2016, consulte la [hoja de cálculo de planeación de la AD FS capacidad.](http://adfsdocs.blob.core.windows.net/adfs/ADFSCapacity2016.xlsx)  
   
-[Introducción a servicios de federación de Active Directory](../../Active-Directory-Federation-Services.md)
+[Información general de Servicios de federación de Active Directory (AD FS)](../../Active-Directory-Federation-Services.md)

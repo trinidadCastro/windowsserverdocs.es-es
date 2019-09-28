@@ -2,19 +2,19 @@
 title: Configurar las cuentas de servidor de directivas de redes
 description: En este tema se proporciona información acerca del archivo de texto y el registro de SQL Server para el servidor de directivas de redes en Windows Server 2016.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: dfde2e21-f3d5-41e8-8492-cb3f0d028afb
 ms.author: pashort
 author: shortpatti
 ms.date: 05/25/2018
-ms.openlocfilehash: f16e4093ed58f2a2fadc4b9faa1fa42c0c157ca3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0c154d4d4534f4c343107eecd158974b92903e39
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871905"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405563"
 ---
 # <a name="configure-network-policy-server-accounting"></a>Configurar las cuentas de servidor de directivas de redes
 
@@ -55,7 +55,7 @@ Para evitar que los archivos de registro llenen la unidad de disco duro, se reco
 
 - Para enviar los datos del archivo de registro para la recopilación por otro proceso, puede configurar NPS para que escriba en una canalización con nombre. Para usar canalizaciones con nombre, establezca la carpeta de \\archivos de \\registro en .\pipe o ComputerName\pipe. El programa de servidor de canalización con nombre crea \\una canalización con nombre denominada .\pipe\iaslog.log para aceptar los datos. En el cuadro de diálogo Propiedades del archivo local, en crear un nuevo archivo de registro, seleccione nunca (tamaño de archivo ilimitado) al usar canalizaciones con nombre.
 
-- El directorio del archivo de registro se puede crear mediante variables de entorno del sistema (en lugar de variables de usuario), como% SystemDrive%,% SystemRoot% y% WINDIR%. Por ejemplo, la siguiente ruta de acceso, con la variable de entorno% WINDIR%, busca el archivo de registro en el directorio del sistema en la subcarpeta \System32\Logs (es\)decir,%WINDIR%\System32\Logs.
+- El directorio del archivo de registro se puede crear mediante variables de entorno del sistema (en lugar de variables de usuario), como% SystemDrive%,% SystemRoot% y% WINDIR%. Por ejemplo, la siguiente ruta de acceso, con la variable de entorno% WINDIR%, busca el archivo de registro en el directorio del sistema en la subcarpeta \System32\Logs (es decir,%windir%\System32\Logs @ no__t-0.
 
 - Cambiar los formatos de archivo de registro no hace que se cree un nuevo registro. Si cambia los formatos de archivo de registro, el archivo que está activo en el momento del cambio contendrá una mezcla de los dos formatos (los registros al principio del registro tendrán el formato anterior y los registros al final del registro tendrán el formato nuevo).
 
@@ -132,7 +132,7 @@ Un miembro del grupo local de administradores puede Agregar el nombre de usuario
 
 - **Nombre**:`ping user-name`
 - **Tipo**:`REG_SZ`
-- **Datos**:  *Nombre de usuario.*
+- **Datos**:  *Nombre de usuario*
 
 >[!TIP]
 >Para indicar más de un nombre de usuario para un valor de **nombre de usuario de ping** , escriba un patrón de nombre, como un nombre DNS, incluidos los caracteres comodín, en **datos**.

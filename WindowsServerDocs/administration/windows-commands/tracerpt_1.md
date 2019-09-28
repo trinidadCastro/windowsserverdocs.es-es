@@ -2,7 +2,7 @@
 title: tracerpt
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 25014d23c797f37dcc488b5fea20c73907eb6f4c
-ms.sourcegitcommit: feec5cbe983c8c5800ccd4fc214914084fcceaba
+ms.openlocfilehash: 1c8e85acc59383d0a027c8d5ec51e68942a76b85
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70975303"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385676"
 ---
 # <a name="tracerpt"></a>tracerpt
 
@@ -57,7 +57,7 @@ tracerpt <[-l] <value [value [...]]>|-rt <session_name [session_name [...]]>> [o
 |           -Report [nombre de archivo]           |                                  Generar un archivo de informe de salida de texto. FILENAME si no se especifica, es Workload. Xml.                                   |
 |                  -LR                   |                        Especifique "menos restrictivo". Esto utiliza los mejores esfuerzos para los eventos que no coinciden con el esquema de eventos.                         |
 |           -Export [nombre de archivo]           |                                  Generar un archivo de exportación del esquema de eventos. FILENAME si no se especifica es Schema. Man.                                   |
-|       [-l] \<valor [valor [...]] >        |                                                   Especifique el archivo de registro de seguimiento de eventos que se va a procesar.                                                    |
+|       [-l] \<value [valor [...]] >        |                                                   Especifique el archivo de registro de seguimiento de eventos que se va a procesar.                                                    |
 | -RT \<session_name [session_name [...]] > |                                                Especifique orígenes de datos de sesión de seguimiento de eventos en tiempo real.                                                |
 
 ## <a name="BKMK_EXAMPLES"></a>Example

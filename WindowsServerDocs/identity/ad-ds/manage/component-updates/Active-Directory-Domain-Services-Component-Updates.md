@@ -1,20 +1,20 @@
 ---
 title: Actualizaciones de componentes de Active Directory Domain Services
-description: Este documento describen las actualizaciones de componentes de AD DS para Windows Server 2012 R2
+description: En este documento se describen las actualizaciones de componentes de AD DS para Windows Server 2012 R2
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 09/08/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: a3a91034-a4da-4ad7-93f8-0cd2ec3e7824
 ms.technology: identity-adds
-ms.openlocfilehash: b0bd021863e1e25bd222baf9a633438153fe820b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e7bacf4f238144fca26776a729a5e4d5bf3444ab
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66442759"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389947"
 ---
 # <a name="active-directory-domain-services-component-updates"></a>Actualizaciones de componentes de Active Directory Domain Services
 
@@ -40,7 +40,7 @@ Tras finalizar este módulo, podrá:
 
     -   [Unicidad de SPN y UPN](../../../ad-ds/manage/component-updates/SPN-and-UPN-uniqueness.md)  
 
-    -   [Inicio de sesión con reinicio automático de Winlogon &#40;ARSO&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
+    -   [Inicio de sesión con reinicio &#40;automático de Winlogon Arso&#41;](../../../ad-ds/manage/component-updates/Winlogon-Automatic-Restart-Sign-On--ARSO-.md)  
 
     -   [Atestación de clave de TPM](../../../ad-ds/manage/component-updates/TPM-Key-Attestation.md)  
 

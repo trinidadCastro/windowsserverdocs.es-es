@@ -1,8 +1,8 @@
 ---
 title: diantz
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,19 +13,19 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f7c02cdaa7bc5376dc03a55f13b915b3395cb376
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c136a936a937e15eeca7e1badf1ba35ddbb6664a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845806"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377891"
 ---
 # <a name="diantz"></a>diantz
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este comando es el mismo que el **makecab** comando.
-Consulte [makecab](makecab.md) para la sintaxis y los parámetros.
+Este comando es el mismo que el comando **MAKECAB** .
+Vea [MAKECAB](makecab.md) para ver la sintaxis y los parámetros.
 ## <a name="additional-references"></a>Referencias adicionales
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 

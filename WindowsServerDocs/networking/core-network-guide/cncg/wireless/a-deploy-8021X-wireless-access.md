@@ -2,18 +2,18 @@
 title: Implementación del acceso inalámbrico autenticado mediante 802.1X basado en contraseña
 description: Este tema forma parte de la guía de redes de Windows Server 2016 "implementación de acceso inalámbrico autenticado mediante 802.1 X basado en contraseña".
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: ff06ba23-9c0f-49ec-8f7b-611cf8d73a1b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ee20e002aa8dad29eefcda87a7b949ffb0bb6e9b
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 90c2c6c4fbd0110724bc3950b11b3b2c09c5c604
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868941"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406266"
 ---
 # <a name="deploy-password-based-8021x-authenticated-wireless-access"></a>Implementación del\-acceso inalámbrico autenticado mediante 802.1 x basado en contraseña
 

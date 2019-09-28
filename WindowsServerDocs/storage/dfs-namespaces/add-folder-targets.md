@@ -1,19 +1,19 @@
 ---
 title: Agregar destinos de carpeta
 description: En este tema se describe cómo agregar destinos de carpeta (rutas UNC)
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: brianlic
 ms.technology: storage
 ms.topic: article
 author: jasongerend
 ms-date: 06/05/2017
-ms.openlocfilehash: 8cc61189076669d5c24244294b2f0eee2b783517
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b0685ea795d53b36fad92d54f817f67de57e3a82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59831006"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403185"
 ---
 # <a name="add-folder-targets"></a>Agregar destinos de carpeta
 
@@ -41,6 +41,6 @@ Para agregar un destino de carpeta mediante la administración de DFS, usa el si
 
 ## <a name="see-also"></a>Vea también
 
--   [Implementación de espacios de nombres DFS](deploying-dfs-namespaces.md)
+-   [Implementar espacios de nombres DFS](deploying-dfs-namespaces.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)
--   [Replicar destinos de carpeta mediante la replicación DFS](replicate-folder-targets-using-dfs-replication.md)
+-   [Replicar destinos de carpeta mediante Replicación DFS](replicate-folder-targets-using-dfs-replication.md)

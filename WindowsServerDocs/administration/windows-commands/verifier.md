@@ -1,8 +1,8 @@
 ---
 title: verifier
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2ab0833d4fdb11c4962d4916ec2e32097e08ca04
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: cc2482fa25d0236991889c3951cb522e27bf520d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59865876"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362689"
 ---
 # <a name="verifier"></a>verifier
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Administrador del Comprobador de controladores.  
+Administrador del comprobador de controladores.  
 
 ## <a name="syntax"></a>Sintaxis  
 ```  
@@ -44,12 +44,12 @@ verifier /log <LogFileName> [/interval <seconds>]
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|\<flags>|Debe ser un número decimal o hexadecimal, combinación de bits:<br /><br />-   **Valor: descripción**<br />-   **bit 0:** comprobación de grupos especiales<br />-   **bit 1:** forzar comprobación irql<br />-   **bit 2:** bajo la simulación de recursos<br />-   **bit 3:** grupo de seguimiento<br />-   **bits 4:** Comprobación de E/S<br />-   **bit 5:** detección de interbloqueo<br />-   **bit 6:** sin usar<br />-   **bit 7:** Comprobación de DMA<br />-   **bit 8:** comprobaciones de seguridad<br />-   **bit 9:** exigir las solicitudes de E/S pendientes<br />-   **10 bits:** Registro de IRP<br />-   **11 de bits:** cheques varios<br /><br />Por ejemplo, **/flags 27** equivalente con **/flags 0x1B**|  
-|/volatile|Se utiliza para cambiar la configuración del Comprobador dinámicamente sin necesidad de reiniciar el sistema. Cualquier nueva configuración se perderá cuando se reinicia el sistema.|  
-|\<probability>|Número comprendido entre 1 y 10.000 que especifica la probabilidad de inyección de código de error. Por ejemplo, el valor de 100 significa una probabilidad de inyección de código de error de % 1 (100/10 000).<br /><br />Si no se especifica este parámetro, a continuación, se usará la probabilidad de valor predeterminado de % 6.|  
-|\<tags>|Especifica las etiquetas de grupo que se insertará con errores, separados por caracteres de espacio. Si no se especifica este parámetro se puede insertar cualquier asignación de grupos con errores.|  
-|\<applications>|Especifica el nombre de archivo de imagen de las aplicaciones que se insertará con errores, separados por caracteres de espacio. Si no se especifica este parámetro, a continuación, simulación de escasez de recursos puede realizar en cualquier aplicación.|  
-|\<minutes>|Número positivo que especifica la longitud del período tras el reinicio, en minutos, durante los errores no se producirá por inyección de código. Si no se especifica este parámetro, a continuación, se utilizará la longitud predeterminada de 8 minutos.|  
+|@no__t 0flags >|Debe ser un número en notación decimal o hexadecimal, combinación de bits:<br /><br />-   **valor: Descripción**<br />-   **bit 0:** comprobación de grupo especial<br />-   **bit 1:** forzar la comprobación de IRQL<br />-   **bit 2:** simulación de recursos insuficientes<br />-   **bit 3:** seguimiento del grupo<br />-   **bit 4:** Comprobación de e/s<br />-   **bit 5:** detección de interbloqueos<br />-   **bit 6:** sin usar<br />-   **bit 7:** Comprobación de DMA<br />-   **bit 8:** comprobaciones de seguridad<br />-   **bit 9:** forzar solicitudes de e/s pendientes<br />-   **bit 10:** Registro IRP<br />-   **bit 11:** comprobaciones varias<br /><br />por ejemplo, **/Flags 27** es equivalente a **/Flags 0x1b**|  
+|/volatile|Se utiliza para cambiar la configuración del comprobador dinámicamente sin reiniciar el sistema. Cualquier nueva configuración se perderá cuando se reinicie el sistema.|  
+|@no__t 0probability >|Número comprendido entre 1 y 10.000 que especifica la probabilidad de inserción de errores. Por ejemplo, si se especifica 100, se indica una probabilidad de inserción de errores de 1% (100/10000).<br /><br />Si no se especifica este parámetro, se utilizará la probabilidad predeterminada de 6%.|  
+|@no__t 0tags >|Especifica las etiquetas de grupo que se insertarán con errores, separados por caracteres de espacio. Si no se especifica este parámetro, se puede insertar cualquier asignación de grupo con errores.|  
+|@no__t 0applications >|Especifica el nombre del archivo de imagen de las aplicaciones que se insertarán con errores, separados por caracteres de espacio. Si no se especifica este parámetro, la simulación de recursos bajos puede tener lugar en cualquier aplicación.|  
+|@no__t 0minutes >|Un número positivo que especifica la duración del período después del reinicio, en minutos, durante el que no se producirá ninguna inserción de errores. Si no se especifica este parámetro, se usará la longitud predeterminada de 8 minutos.|  
 |/?|Muestra la ayuda en el símbolo del sistema.|  
 
 ## <a name="additional-references"></a>Referencias adicionales  

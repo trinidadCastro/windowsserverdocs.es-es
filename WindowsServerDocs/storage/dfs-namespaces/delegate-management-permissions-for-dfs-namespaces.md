@@ -2,18 +2,18 @@
 title: Delegar permisos de administración para espacios de nombres DFS
 description: En este artículo se describe cómo delegar permisos de administración para espacios de nombres DFS y qué grupos pueden ejecutar tareas de espacio de nombres de manera predeterminada
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7895432ca16dd13c6425d966f99104fc03db100d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5bf23498c95d4b44d5c17aecd216921dc70819a3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829496"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402221"
 ---
 # <a name="delegate-management-permissions-for-dfs-namespaces"></a>Delegar permisos de administración para espacios de nombres DFS
 
@@ -32,4 +32,4 @@ En la siguiente tabla se describen los grupos que pueden realizar tareas básica
 
 <br />
 
-\*Delegar permisos de administración para administrar un espacio de nombres independiente no concede al usuario la capacidad de ver y administrar la seguridad mediante el uso de la **delegación** pestaña a menos que el usuario es miembro del grupo Administradores local en el servidor de espacio de nombres. Este problema se produce porque el complemento de administración DFS no puede recuperar las listas de control de acceso discrecional (DACL) para el espacio de nombres independiente desde el registro. Para habilitar el complemento mostrar información sobre la delegación, debe seguir los pasos descritos en el Microsoft<sup>®</sup> artículo de Knowledge Base: [KB314837: Cómo administrar el acceso remoto en el registro](https://go.microsoft.com/fwlink?linkid=46803)
+@no__t permisos de administración de 0Delegating para administrar un espacio de nombres independiente no concede al usuario la posibilidad de ver y administrar la seguridad mediante la pestaña **delegación** a menos que el usuario sea miembro del grupo Administradores local en el servidor de espacio de nombres. Este problema se produce porque el complemento de administración DFS no puede recuperar las listas de control de acceso discrecional (DACL) para el espacio de nombres independiente desde el registro. Para habilitar el complemento para que muestre información de delegación, debe seguir los pasos descritos en el artículo de Microsoft<sup>®</sup> Knowledge Base: @NO__T 0KB314837: Cómo administrar el acceso remoto al registro @ no__t-0

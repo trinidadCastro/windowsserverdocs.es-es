@@ -7,20 +7,20 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 7d78258d8f1db9889b6d2db8c497780940ed35a1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21ddcbd3b71a8d623950f1600b654e04ecc41f1e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890656"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357566"
 ---
 # <a name="deploy-claims-across-forests"></a>Implementación de notificaciones en bosques
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En Windows Server 2012, un tipo de notificación es una aserción sobre el objeto con el que está asociada. Los tipos de notificación se definen por cada bosque en Active Directory. Hay muchos escenarios en los que puede ser necesario que una entidad de seguridad atraviese un límite de confianza para tener acceso a los recursos de un bosque de confianza. Transformación de notificaciones entre bosques en Windows Server 2012 le permite transformar las notificaciones de entrada y salida que atraviesan bosques para que las notificaciones se ha reconocido y aceptadas en los bosques que confían y de confianza. Algunos de los escenarios reales para la transformación de notificaciones son:  
+En Windows Server 2012, un tipo de demanda es una aserción sobre el objeto con el que está asociado. Los tipos de notificación se definen por cada bosque en Active Directory. Hay muchos escenarios en los que puede ser necesario que una entidad de seguridad atraviese un límite de confianza para tener acceso a los recursos de un bosque de confianza. La transformación de notificaciones entre bosques en Windows Server 2012 permite transformar las notificaciones de entrada y salida que atraviesan bosques para que se reconozcan y acepten las notificaciones en los bosques que confían y de confianza. Algunos de los escenarios reales para la transformación de notificaciones son:  
   
 -   Los bosques que confían pueden usar la transformación de notificaciones como una protección frente a la elevación de privilegios mediante el filtrado de las notificaciones entrantes con valores específicos.  
   
@@ -45,11 +45,11 @@ De forma predeterminada, un bosque de confianza permite a todas las notificacion
 ## <a name="in-this-scenario"></a>En este escenario  
 Para este escenario está disponible la guía siguiente:  
   
--   [Implementar notificaciones en bosques &#40;pasos de demostración&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
+-   [Pasos de la demostración &#40;de implementación de notificaciones entre bosques&#41;](Deploy-Claims-Across-Forests--Demonstration-Steps-.md)  
   
 -   [Lenguaje de reglas de transformación de notificaciones](Claims-Transformation-Rules-Language.md)  
   
-## <a name="BKMK_NEW"></a>Roles y características que se incluyen en este escenario  
+## <a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
 En la tabla siguiente, se enumeran los roles y las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
 |Rol/característica|Compatibilidad con este escenario|  

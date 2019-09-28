@@ -1,8 +1,8 @@
 ---
 title: Administrar escritorios virtuales
-description: Aprenda a administrar equipos de escritorio virtuales (VDI) en MultiPoint Services
+description: Aprenda a administrar escritorios virtuales (VDI) en Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 7afc6d2a65cd5cd3b116db5d65fd97e4cc770690
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 45bb3e98779bc27913c7e675a9c9db7e575d9d72
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861446"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389589"
 ---
 # <a name="manage-virtual-desktops"></a>Administrar escritorios virtuales
-VDI de equipo único le permite configurar cada *local* estación MultiPoint Services para conectarse a un sistema operativo que se ejecuta en una máquina virtual de Hyper-V (VM) de Windows 10 Enterprise en el mismo equipo MultiPoint Services como el estación. Estas estaciones de escritorio virtual se pueden personalizar con aplicaciones que no se puede instalar en una versión de Windows Server.  
+VDI de un solo equipo permite configurar cada estación de Multipoint Services *local* para que se conecte a un sistema operativo invitado de Windows 10 Enterprise que se ejecute en una máquina virtual (VM) de Hyper-V en el mismo equipo de Multipoint Services que la estación. Estas estaciones de escritorio virtual se pueden personalizar con aplicaciones que no se puede instalar en una versión de Windows Server.  
   
 ## <a name="enable-the-virtual-desktop-feature"></a>Habilitar la característica de escritorio virtual  
   
@@ -76,18 +76,18 @@ La plantilla se abre en una ventana aparte y se presentan más instrucciones don
     > [!NOTE]  
     > Si el sistema MultiPoint Services no se está ejecutando en modo de estación, reinícielo antes de completar este procedimiento.  
   
-2.  Seleccione la plantilla de escritorio virtual en la izquierda\-panel. El nombre es <prefijo – t>.  
+2.  Seleccione la plantilla de escritorio virtual en el panel izquierdo @ no__t-0hand. El nombre es <prefijo – t>.  
   
 3.  En las tareas de plantilla, haga clic en **Create virtual desktop stations** (Crear estaciones de escritorios virtuales) y, luego, haga clic en **Aceptar**.  
   
     El proceso de creación de una estación de escritorios virtuales tarda varios minutos.  
   
     > [!NOTE]  
-    > Si cualquiera de las estaciones locales está conectada actualmente a una sesión\-virtual basado en escritorio, debe cerrar sesión en estas estaciones en orden para que puedan conectarse a una de las estaciones de escritorios virtuales recién creadas.  
+    > Si alguna de las estaciones locales está conectada actualmente a un escritorio virtual de sesión @ no__t-0based, debe cerrar sesión en estas estaciones para que se conecten a una de las estaciones de escritorios virtuales recién creadas.  
   
 ### <a name="validate-the-newly-created-customized-virtual-station-desktops"></a>Validar los escritorios virtuales personalizados recién creados en las estaciones  
   
-Puede validar los escritorios de estación virtual personalizados, inicie sesión en una o varias de las estaciones de escritorios virtuales mediante una cuenta de administrador local o una cuenta de dominio y, a continuación, compruebe que la nueva máquina virtual\-están trabajando en función de escritorios virtuales correctamente.  
+Para validar los escritorios de la estación virtual personalizada, inicie sesión en una o varias de las estaciones de escritorios virtuales mediante una cuenta de administrador local o una cuenta de dominio y, a continuación, compruebe que los nuevos escritorios virtuales de VM @ no__t-0based funcionan correctamente.  
   
 ## <a name="disable-virtual-desktops"></a>Deshabilitar escritorios virtuales  
   

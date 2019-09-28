@@ -1,22 +1,22 @@
 ---
 ms.assetid: 7e804590-6d6c-4cca-ac14-02d4dff06cec
-title: Personalización de la contraseña de actualización
+title: Actualización de la personalización de contraseñas
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: e67c04c98a53f4f1db36e6586fa77bcf181a8d5a
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: e007d4449cb62e7888c30f5b5929e393d7b571ef
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66188970"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407457"
 ---
-# <a name="update-password-customization"></a>Personalización de la contraseña de actualización 
+# <a name="update-password-customization"></a>Actualización de la personalización de contraseñas 
 
 
 En algunos casos, es posible que los usuarios no puedan conectarse a la red corporativa para cambiar la contraseña de su cuenta. Este factor puede causar problemas, especialmente a los empleados remotos que vivan lejos de la oficina corporativa más cercana. En esos casos concretos, la página de actualización de la contraseña se puede usar con solo conectarse a Internet.  
@@ -28,10 +28,10 @@ Puedes personalizar la página de actualización de la contraseña proporcionand
 ![actualización](media/AD-FS-user-sign-in-customization/ADFS_Blue_Custom5.png)  
   
 ## <a name="customize-the-update-password-page-description"></a>Personalización de la descripción de la página de actualización de la contraseña  
-Para personalizar la descripción de la página de actualización de contraseña, use el siguiente cmdlet de Windows PowerShell y la sintaxis.  
+Para personalizar la descripción de la página de actualización de la contraseña, use el siguiente cmdlet de Windows PowerShell y la siguiente sintaxis.  
   
 
     Set-AdfsGlobalWebContent -UpdatePasswordPageDescriptionText "This is the Contoso Update Password page."  
 
 ## <a name="additional-references"></a>Referencias adicionales 
-[AD FS Sign-personalización de usuario](AD-FS-user-sign-in-customization.md)  
+[Personalización de inicio de sesión de AD FS usuario](AD-FS-user-sign-in-customization.md)  

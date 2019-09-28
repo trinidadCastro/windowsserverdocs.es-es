@@ -1,8 +1,8 @@
 ---
-title: Con el comando nuevo Imagendecaptura
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando New-Imagendecaptura
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 00f15ae7ee1a7ab1ac1f71599d2cae9bb51d921e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fb48cb76ef99eac51b862a5e1a3d1999a1cfc89d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440416"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363047"
 ---
-# <a name="using-the-new-captureimage-command"></a>Con el comando nuevo Imagendecaptura
+# <a name="using-the-new-captureimage-command"></a>Usar el comando New-Imagendecaptura
 
 
 
-Crea una nueva imagen de captura de una imagen de arranque existente. Las imágenes de captura son de utilidad en lugar de iniciar el programa de instalación de la captura de imágenes de arranque que inicie los servicios de implementación de Windows. Cuando se arranca un equipo de referencia (que se ha preparado con Sysprep) desde una imagen de captura, un asistente crea una imagen de instalación del equipo de referencia y lo guarda como un archivo de imagen de Windows (.wim). Puede también agregar la imagen en los medios (por ejemplo, una unidad de CD, DVD o USB) y, a continuación, se arranca un equipo desde ese medio. Después de crear la imagen de instalación, puede agregar la imagen en el servidor para la implementación de arranque PXE. Para obtener más información, vea Creación de imágenes ([https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311)).
+Crea una nueva imagen de captura a partir de una imagen de arranque existente. Las imágenes de captura son imágenes de arranque que inician la utilidad de captura de servicios de implementación de Windows en lugar de iniciar el programa de instalación. Cuando se arranca un equipo de referencia (que se ha preparado con Sysprep) en una imagen de captura, un asistente crea una imagen de instalación del equipo de referencia y la guarda como un archivo de imagen de Windows (. wim). También puede Agregar la imagen a un medio (por ejemplo, un CD, un DVD o una unidad USB) y, a continuación, arrancar un equipo desde ese medio. Después de crear la imagen de instalación, puede Agregar la imagen al servidor para la implementación de arranque de PXE. Para obtener más información, consulte crear imágenes ([https://go.microsoft.com/fwlink/?LinkId=115311](https://go.microsoft.com/fwlink/?LinkId=115311)).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -45,15 +45,15 @@ WDSUTIL [Options] /New-CaptureImage [/Server:<Server name>]
 
 |        Parámetro         |                                                                                                                                                                                                                         Descripción                                                                                                                                                                                                                          |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/ Server:\<nombre del servidor >] |                                                                                                                                       Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usará el servidor local.                                                                                                                                        |
-|   / Image:\<nombre de la imagen >   |                                                                                                                                                                                                         Especifica el nombre de la imagen de arranque de origen.                                                                                                                                                                                                         |
-|   / Architecture: {x 86    |                                                                                                                                                                                                                             ia64                                                                                                                                                                                                                             |
-| [/Filename: \<Nombre de archivo >] |                                                                                                                                                                            Si la imagen no se identifica por nombre, debe usar esta opción para especificar el nombre de archivo.                                                                                                                                                                            |
-|    /DestinationImage     | Especifica la configuración de la imagen de destino. Especifique la configuración mediante las siguientes opciones:</br>-   /FilePath: \<Ruta de acceso y nombre del archivo > establece la ruta de acceso completa para la nueva imagen de captura.</br>-[/ Name: \<Nombre >]-establece el nombre para mostrar de la imagen. Si no se especifica ningún nombre para mostrar, se usará el nombre para mostrar de la imagen de origen.</br>-[/ Descripción: \<Descripción >]-establece la descripción de la imagen.</br>-[/ Overwrite: {Sí |
+| [/Server: \<Server nombre >] |                                                                                                                                       Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.                                                                                                                                        |
+|   /Image: @no__t nombre de 0Image >   |                                                                                                                                                                                                         Especifica el nombre de la imagen de arranque de origen.                                                                                                                                                                                                         |
+|   /Architecture: {x86    |                                                                                                                                                                                                                             64                                                                                                                                                                                                                             |
+| /FILENAME \<Filename >] |                                                                                                                                                                            Si la imagen no se puede identificar de forma única por nombre, debe usar esta opción para especificar el nombre de archivo.                                                                                                                                                                            |
+|    /DestinationImage     | Especifica la configuración de la imagen de destino. La configuración se especifica mediante las siguientes opciones:</br>/FilePath nombre y ruta de acceso de \<File > establece la ruta de acceso completa del archivo para la nueva imagen de captura.</br>-[/Name: \<Name >]: establece el nombre para mostrar de la imagen. Si no se especifica ningún nombre para mostrar, se usará el nombre para mostrar de la imagen de origen.</br>-[/Description: \<Description >]: establece la descripción de la imagen.</br>-[/Overwrite: {Yes |
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para crear una imagen de captura y asígnele el nombre WinPECapture.wim, escriba:
+Para crear una imagen de captura y asignarle el nombre WinPECapture. Wim, escriba:
 ```
 WDSUTIL /New-CaptureImage /Image:"WinPE boot image" /Architecture:x86 /DestinationImage /FilePath:"C:\Temp\WinPECapture.wim"
 ```

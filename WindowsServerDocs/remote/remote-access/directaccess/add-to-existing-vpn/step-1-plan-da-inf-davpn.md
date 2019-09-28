@@ -1,9 +1,9 @@
 ---
-title: Paso 1 Plan de la infraestructura de DirectAccess
-description: Este tema forma parte de la Guía de agregar DirectAccess a una implementación de acceso remoto existente (VPN) para Windows Server 2016
+title: Paso 1 planear la infraestructura de DirectAccess
+description: Este tema forma parte de la guía agregar DirectAccess a una implementación de acceso remoto (VPN) existente para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,14 +12,14 @@ ms.topic: article
 ms.assetid: 4ca50ea8-6987-4081-acd5-5bf9ead62acd
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 0a761f644fbae489124392f195465bf2acf8e66f
-ms.sourcegitcommit: d888e35f71801c1935620f38699dda11db7f7aad
+ms.openlocfilehash: 6c705f7ec09de1698870615dd1d9f9bd96c04442
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66805093"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388716"
 ---
-# <a name="step-1-plan-directaccess-infrastructure"></a>Paso 1 Plan de la infraestructura de DirectAccess
+# <a name="step-1-plan-directaccess-infrastructure"></a>Paso 1 planear la infraestructura de DirectAccess
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
@@ -42,7 +42,7 @@ No es necesario completar las tareas de planificación en un orden específico.
   
 1. Identifica la topología de adaptadores de red que quieres usar. El acceso remoto se puede configurar de las siguientes maneras:  
   
-    - Con dos adaptadores de red: Ya sea en el perímetro con un adaptador de red conectado a Internet y el otro a la red interna o detrás de NAT, firewall o un dispositivo enrutador, con un adaptador de red conectado a una red perimetral y el otro a la red interna.  
+    - Con dos adaptadores de red: En el perímetro con un adaptador de red conectado a Internet y el otro a la red interna, o detrás de un dispositivo NAT, firewall o enrutador, con un adaptador de red conectado a una red perimetral y el otro a la red interna.  
   
     - Detrás de un dispositivo NAT con un adaptador de red: El servidor de acceso remoto se instala detrás de un dispositivo NAT y el único adaptador de red está conectado a la red interna.  
   
@@ -52,14 +52,14 @@ No es necesario completar las tareas de planificación en un orden específico.
   
     - [Tecnologías de transición IPv6](https://technet.microsoft.com/library/bb726951.aspx)  
   
-    - [Especificación del protocolo de túnel IP-HTTPS](https://msdn.microsoft.com/library/dd358571.aspx)  
+    - [Especificación del Protocolo de túnel IP-HTTPS](https://msdn.microsoft.com/library/dd358571.aspx)  
   
-3. Configura los adaptadores y el direccionamiento obligatorios según la tabla siguiente. Para implementaciones detrás de un dispositivo NAT con un único adaptador de red, configure las direcciones IP utilizando solo la columna "adaptador de red interna".  
+3. Configura los adaptadores y el direccionamiento obligatorios según la tabla siguiente. Para las implementaciones detrás de un dispositivo NAT con un solo adaptador de red, configure las direcciones IP solo con la columna "adaptador de red interno".  
   
     |Tipo de dirección IP|Adaptador de red externo|Adaptador de red interno|Requisitos de enrutamiento|  
     |-|--------------|--------------------|------------|  
-    |Intranet IPv4 e Internet IPv4|Configura lo siguiente:<br/><br/>-Una dirección IPv4 pública estática con las máscaras de subred adecuada.<br/>-Puerta de enlace predeterminada dirección IPv4 del enrutador de proveedor (ISP) de servicios de Internet local o firewall de Internet.|Configura lo siguiente:<br/><br/>-Una dirección de intranet IPv4 con la máscara de subred adecuada.<br/>-Un sufijo DNS específico de la conexión del espacio de nombres de intranet. También se debe configurar el servidor DNS en la interfaz interna.<br/>-No configure una puerta de enlace predeterminada en las interfaces de la intranet.|Para configurar el servidor de acceso remoto de manera que tenga acceso a todas las subredes de la red IPv4 interna, haz lo siguiente:<br/><br/>1.  Enumere los espacios de direcciones IPv4 para todas las ubicaciones de la intranet.<br/>2.  Usa los comandos **route add -p** o **netsh interface ipv4 add route** para agregar los espacios de direcciones IPv4 como rutas estáticas a la tabla de enrutamiento IPv4 del servidor de acceso remoto.|  
-    |Internet IPv6 e intranet IPv6|Configura lo siguiente:<br/><br/>-Use la configuración de dirección configurada automáticamente proporcionada por su ISP.<br/>-Use el **enrutar impresión** comando para asegurarse de que existe una ruta de IPv6 predeterminada que apunta al enrutador del ISP en la tabla de enrutamiento de IPv6.<br/>-Determine si los enrutadores del ISP y de intranet están usando preferencias del enrutador predeterminadas descritas en RFC 4191 y usando una preferencia predeterminada mayor que los enrutadores de la intranet local. Si ambas condiciones se cumplen, no se necesita ninguna otra configuración para la ruta predeterminada. La preferencia mayor para el enrutador del ISP asegura que la ruta IPv6 predeterminada activa del servidor de acceso remoto apunta a Internet IPv6.<br/><br/>Como el servidor de acceso remoto es un enrutador IPv6, si tienes una infraestructura IPv6 nativa, la interfaz de Internet también puede tener acceso a los controladores de dominio de la intranet. En este caso, agrega filtros de paquetes al controlador de dominio de la red perimetral que impidan que el servidor de acceso remoto conecte con la dirección IPv6 de la interfaz accesible desde Internet.|Configura lo siguiente:<br/><br/>-Si no usas los niveles de preferencia de forma predeterminada, configura las interfaces de intranet con el **netsh interface ipv6 establecer InterfaceIndex ignoredefaultroutes = habilitado** comando. Este comando garantiza que las rutas predeterminadas adicionales que señalen a enrutadores de la intranet no se agregarán a la tabla de enrutamiento IPv6. Para conocer el índice de las interfaces de la intranet, usa el comando “netsh interface show interface”.|Si la intranet es IPv6, haz lo siguiente para configurar el servidor de acceso remoto para que tenga acceso a todas las ubicaciones IPv6:<br/><br/>1.  Enumere los espacios de direcciones IPv6 para todas las ubicaciones de la intranet.<br/>2.  Usa el comando **netsh interface ipv6 add route** para agregar los espacios de direcciones IPv6 como rutas estáticas a la tabla de enrutamiento IPv6 del servidor de acceso remoto.|  
+    |Intranet IPv4 e Internet IPv4|Configura lo siguiente:<br/><br/>-Una dirección IPv4 pública estática con las máscaras de subred adecuadas.<br/>-Una dirección IPv4 de puerta de enlace predeterminada del firewall de Internet o del enrutador del proveedor de servicios Internet (ISP) local.|Configura lo siguiente:<br/><br/>-Una dirección de intranet IPv4 con la máscara de subred adecuada.<br/>-Un sufijo DNS específico de la conexión del espacio de nombres de la intranet. También se debe configurar el servidor DNS en la interfaz interna.<br/>-No configure una puerta de enlace predeterminada en ninguna interfaz de la intranet.|Para configurar el servidor de acceso remoto de manera que tenga acceso a todas las subredes de la red IPv4 interna, haz lo siguiente:<br/><br/>1.  Enumere los espacios de direcciones IPv4 para todas las ubicaciones de la intranet.<br/>2.  Usa los comandos **route add -p** o **netsh interface ipv4 add route** para agregar los espacios de direcciones IPv4 como rutas estáticas a la tabla de enrutamiento IPv4 del servidor de acceso remoto.|  
+    |Internet IPv6 e intranet IPv6|Configura lo siguiente:<br/><br/>-Use la configuración de la dirección configurada de forma automática proporcionada por su ISP.<br/>-Use el comando **Route Print** para asegurarse de que existe una ruta IPv6 predeterminada que apunta al enrutador de ISP en la tabla de enrutamiento de IPv6.<br/>: Determine si los enrutadores de ISP e Intranet están usando las preferencias de enrutador predeterminadas descritas en RFC 4191 y el uso de una preferencia predeterminada mayor que los enrutadores de la Intranet local. Si ambas condiciones se cumplen, no se necesita ninguna otra configuración para la ruta predeterminada. La preferencia mayor para el enrutador del ISP asegura que la ruta IPv6 predeterminada activa del servidor de acceso remoto apunta a Internet IPv6.<br/><br/>Como el servidor de acceso remoto es un enrutador IPv6, si tienes una infraestructura IPv6 nativa, la interfaz de Internet también puede tener acceso a los controladores de dominio de la intranet. En este caso, agrega filtros de paquetes al controlador de dominio de la red perimetral que impidan que el servidor de acceso remoto conecte con la dirección IPv6 de la interfaz accesible desde Internet.|Configura lo siguiente:<br/><br/>-Si no está usando los niveles de preferencia predeterminados, configure las interfaces de la intranet con el comando **netsh interface ipv6 set InterfaceIndex ignoredefaultroutes = Enabled** . Este comando garantiza que las rutas predeterminadas adicionales que señalen a enrutadores de la intranet no se agregarán a la tabla de enrutamiento IPv6. Para conocer el índice de las interfaces de la intranet, usa el comando “netsh interface show interface”.|Si la intranet es IPv6, haz lo siguiente para configurar el servidor de acceso remoto para que tenga acceso a todas las ubicaciones IPv6:<br/><br/>1.  Enumere los espacios de direcciones IPv6 para todas las ubicaciones de la intranet.<br/>2.  Usa el comando **netsh interface ipv6 add route** para agregar los espacios de direcciones IPv6 como rutas estáticas a la tabla de enrutamiento IPv6 del servidor de acceso remoto.|  
     |Internet IPv6 e intranet IPv4|El servidor de acceso remoto reenvía el tráfico de la ruta IPv6 predeterminada a través del Adaptador 6to4 de Microsoft con una retransmisión 6to4 en Internet por IPv4. Puedes configurar un servidor de acceso remoto para la dirección IPv4 de la retransmisión 6to4 de Microsoft en Internet IPv4 (se usa cuando no hay implementado IPv6 nativo en la red corporativa) con el comando netsh interface ipv6 6to4 set relay name=192.88.99.1 state=enabled.|||  
   
     > [!NOTE]
@@ -70,9 +70,9 @@ No es necesario completar las tareas de planificación en un orden específico.
 
 Si el servidor de acceso remoto está detrás de un firewall perimetral, se necesitan las siguientes excepciones para el tráfico de acceso remoto cuando el servidor de acceso remoto se encuentre en Internet IPv4:  
   
-- 6to4 del tráfico IP - protocolo 41 de entrada y salida.  
+- tráfico 6to4: protocolo IP 41 entrante y saliente.  
   
-- IP-HTTPS-puerto de destino 443 de protocolo de Control de transmisión (TCP) y el puerto de origen TCP 443 de salida.  
+- IP-HTTPS-puerto de destino del Protocolo de control de transmisión (TCP) 443 y puerto de origen TCP 443 de salida.  
   
 - Si implementas el acceso remoto con un único adaptador de red y lo instalas en el servidor de ubicación de red en el servidor de acceso remoto, también deberás agregar el puerto TCP 62000 a las excepciones.  
   
@@ -84,15 +84,15 @@ Se necesitarán las siguientes excepciones para el tráfico de acceso remoto cua
   
 Si usa firewalls adicionales, aplique las siguientes excepciones de firewall de la red interna para el tráfico de acceso remoto:  
   
-- ISATAP: protocolo 41 de entrada y salida  
+- ISATAP-protocolo 41 entrante y saliente  
   
 - TCP/UDP para todo el tráfico IPv4/IPv6  
   
 ### <a name="plan-certificate-requirements"></a>Planear requisitos de certificados
 
-Entre los requisitos de certificados para IPsec se incluye un certificado de equipo que los equipos cliente de DirectAccess usan al establecer la conexión IPsec entre el cliente y el servidor de acceso remoto, y un certificado de equipo que los servidores de acceso remoto usan para establecer conexiones IPsec con los clientes de DirectAccess. Para DirectAccess en Windows Server 2012 no es obligatorio el uso de estos certificados IPsec. El Asistente para habilitar DirectAccess configura el servidor de acceso remoto para que actúe como proxy Kerberos a fin de realizar la autenticación de IPsec sin necesidad de certificados.  
+Entre los requisitos de certificados para IPsec se incluye un certificado de equipo que los equipos cliente de DirectAccess usan al establecer la conexión IPsec entre el cliente y el servidor de acceso remoto, y un certificado de equipo que los servidores de acceso remoto usan para establecer conexiones IPsec con los clientes de DirectAccess. Para DirectAccess en Windows Server 2012, no es obligatorio usar estos certificados IPsec. El Asistente para habilitar DirectAccess configura el servidor de acceso remoto para que actúe como proxy Kerberos a fin de realizar la autenticación de IPsec sin necesidad de certificados.  
   
-1. **Servidor IP-HTTPS**: Al configurar el acceso remoto, el servidor de acceso remoto se configura automáticamente para que actúe como el agente de escucha IP-HTTPS. El sitio IP-HTTPS requiere un certificado de sitio web y los equipos cliente deben poder ponerse en contacto con el sitio de la lista de revocación de certificados (CRL) para consultar el certificado. El Asistente para habilitar DirectAccess intenta usar el certificado SSTP de VPN. Si SSTP no está configurado, comprueba si en el almacén personal del equipo hay un certificado para IP-HTTPS. Si no hay ninguno disponible, crea automáticamente un certificado autofirmado.  
+1. **Servidor IP-https**: Al configurar el acceso remoto, el servidor de acceso remoto se configura automáticamente para que actúe como el agente de escucha de IP-HTTPS. El sitio IP-HTTPS requiere un certificado de sitio web y los equipos cliente deben poder ponerse en contacto con el sitio de la lista de revocación de certificados (CRL) para consultar el certificado. El Asistente para habilitar DirectAccess intenta usar el certificado SSTP de VPN. Si SSTP no está configurado, comprueba si en el almacén personal del equipo hay un certificado para IP-HTTPS. Si no hay ninguno disponible, crea automáticamente un certificado autofirmado.  
   
 2. **Servidor de ubicación de red**: El servidor de ubicación de red es un sitio web que se usa para detectar si los equipos cliente están ubicados en la red corporativa. El servidor de ubicación de red requiere un certificado de sitio web. Los clientes de DirectAccess deben poder contactar con el sitio de la CRL para obtener el certificado. El Asistente para habilitar DirectAccess comprueba si hay un servidor de ubicación de red en el almacén personal del equipo. Si no hay ninguno, creará automáticamente un certificado autofirmado.  
   
@@ -100,8 +100,8 @@ En la tabla siguiente encontrarás un resumen de los requisitos de certificació
   
 |Autenticación IPsec|Servidor IP-HTTPS|Servidor de ubicación de red|  
 |------------|----------|--------------|  
-|Una CA interna es necesaria para emitir certificados de equipo para el servidor de acceso remoto y los clientes para la autenticación IPsec si no se usa el proxy Kerberos para la autenticación|Entidad de certificación pública: Se recomienda usar una CA pública para emitir el certificado IP-HTTPS, esto garantiza que el punto de distribución CRL esté disponible externamente.|Entidad de certificación interna: Puedes usar una entidad de certificación interna para emitir el certificado de sitio web del servidor de ubicación de red. Asegúrate de que el punto de distribución de CRL tenga alta disponibilidad desde la red interna.|  
-||Entidad de certificación interna: Puedes usar una entidad de certificación interna para emitir el certificado IP-HTTPS; sin embargo, debes asegurarte de que el punto de distribución CRL esté disponible externamente.|Certificado autofirmado: Puede usar un certificado autofirmado para el sitio Web servidor de ubicación de red; Sin embargo, no puede usar un certificado autofirmado en implementaciones multisitio.|  
+|Se requiere una CA interna para emitir certificados de equipo al servidor de acceso remoto y los clientes para la autenticación IPsec cuando no se usa el proxy Kerberos para la autenticación.|Entidad de certificación pública: Se recomienda usar una entidad de certificación pública para emitir el certificado IP-HTTPS, lo que garantiza que el punto de distribución de CRL esté disponible externamente.|Entidad de certificación interna: Puedes usar una entidad de certificación interna para emitir el certificado de sitio web del servidor de ubicación de red. Asegúrate de que el punto de distribución de CRL tenga alta disponibilidad desde la red interna.|  
+||Entidad de certificación interna: Puedes usar una entidad de certificación interna para emitir el certificado IP-HTTPS; sin embargo, debes asegurarte de que el punto de distribución CRL esté disponible externamente.|Certificado autofirmado: Puede usar un certificado autofirmado para el sitio web del servidor de ubicación de red; sin embargo, no puede usar un certificado autofirmado en implementaciones multisitio.|  
 ||Certificado autofirmado: Puedes usar un certificado autofirmado para el servidor IP-HTTPS; sin embargo, debes asegurarte de que el punto de distribución CRL esté disponible externamente. Los certificados autofirmados no se pueden usar en implementaciones multisitio.||  
   
 #### <a name="plan-certificates-for-ip-https"></a>Planear certificados para IP-HTTPS
@@ -143,7 +143,7 @@ A la hora de planear el sitio web del servidor de ubicación de red, ten en cuen
 
 En una implementación de acceso remoto, se necesita DNS para lo siguiente:  
   
-- **Las solicitudes de cliente de DirectAccess**: DNS se usa para resolver las solicitudes de equipos cliente de DirectAccess que no están ubicados en la red interna. Los clientes de DirectAccess intentan conectarse al servidor de ubicación de red de DirectAccess para determinar si están ubicados en Internet o en la red corporativa: Si la conexión es correcta, se determinará que los clientes están en la intranet, por lo que no se usará DirectAccess y las solicitudes de clientes se resolverán mediante el servidor DNS configurado en el adaptador de red del equipo cliente. Si se producen errores de conexión, se da por hecho que los clientes están en Internet. Los clientes de DirectAccess usarán la tabla de directivas de resolución de nombres (NRPT) para determinar el servidor DNS que usarán para resolver solicitudes de nombres. Puedes especificar que los clientes tengan que usar DNS64 de DirectAccess para resolver nombres, o bien un servidor DNS interno alternativo. Para llevar a cabo la resolución de nombres, los clientes de DirectAccess usan la tabla NRPT para identificar cómo gestionar una solicitud. Los clientes solicitan un FQDN o nombre de etiqueta única, como <https://internal>. Si se solicita un nombre de etiqueta única, se anexa un sufijo DNS para crear un FQDN. Si la consulta DNS coincide con una entrada de la NRPT y se especifica DNS4 o un servidor DNS de intranet para la entrada, la consulta para la resolución de nombres se enviará mediante el servidor especificado. Si existe una coincidencia pero no se especifica ningún servidor DNS, esto indica una regla de exención y se aplicará la resolución de nombres normal.  
+- **Solicitudes de cliente de DirectAccess**: DNS se usa para resolver las solicitudes de equipos cliente de DirectAccess que no están ubicados en la red interna. Los clientes de DirectAccess intentan conectarse al servidor de ubicación de red de DirectAccess para determinar si están ubicados en Internet o en la red corporativa: Si la conexión es correcta, se determinará que los clientes están en la intranet, por lo que no se usará DirectAccess y las solicitudes de clientes se resolverán mediante el servidor DNS configurado en el adaptador de red del equipo cliente. Si se producen errores de conexión, se da por hecho que los clientes están en Internet. Los clientes de DirectAccess usarán la tabla de directivas de resolución de nombres (NRPT) para determinar el servidor DNS que usarán para resolver solicitudes de nombres. Puedes especificar que los clientes tengan que usar DNS64 de DirectAccess para resolver nombres, o bien un servidor DNS interno alternativo. Para llevar a cabo la resolución de nombres, los clientes de DirectAccess usan la tabla NRPT para identificar cómo gestionar una solicitud. Los clientes solicitan un FQDN o un nombre de etiqueta única, como <https://internal>. Si se solicita un nombre de etiqueta única, se anexa un sufijo DNS para crear un FQDN. Si la consulta DNS coincide con una entrada de la NRPT y se especifica DNS4 o un servidor DNS de intranet para la entrada, la consulta para la resolución de nombres se enviará mediante el servidor especificado. Si existe una coincidencia pero no se especifica ningún servidor DNS, esto indica una regla de exención y se aplicará la resolución de nombres normal.  
   
     Ten en cuenta que cuando se agrega un nuevo sufijo a la tabla NRPT en la consola Administración de acceso remoto, los servidores DNS predeterminados para el sufijo se pueden detectar automáticamente haciendo clic en el botón **Detectar**. La detección automática funciona de la siguiente manera:  
   
@@ -157,15 +157,15 @@ En una implementación de acceso remoto, se necesita DNS para lo siguiente:
   
         1. Una regla de sufijo DNS para el dominio raíz o el nombre de dominio del servidor de acceso remoto y las direcciones IPv6 correspondientes a los servidores DNS de la intranet configurados en el servidor de acceso remoto. Por ejemplo, si el servidor de acceso remoto es miembro del dominio corp.contoso.com, se crea una regla para el sufijo DNS .corp.contoso.com.  
   
-        2. Una regla de exención para el FQDN del servidor de ubicación de red. Por ejemplo, si la URL del servidor de ubicación de red es <https://nls.corp.contoso.com>, se crea una regla de exención para el FQDN nls.corp.contoso.com.  
+        2. Una regla de exención para el FQDN del servidor de ubicación de red. Por ejemplo, si la dirección URL del servidor de ubicación de red es <https://nls.corp.contoso.com>, se crea una regla de exención para el FQDN nls.corp.contoso.com.  
   
-        **Servidor IP-HTTPS**: El servidor de acceso remoto actúa como agente de escucha IP-HTTPS y usa su certificado de servidor para autenticar a los clientes IP-HTTPS. Los clientes de DirectAccess que usan servidores DNS públicos deben poder resolver el nombre IP-HTTPS.  
+        **Servidor IP-https**: El servidor de acceso remoto actúa como agente de escucha IP-HTTPS y usa su certificado de servidor para autenticarse en los clientes IP-HTTPS. Los clientes de DirectAccess que usan servidores DNS públicos deben poder resolver el nombre IP-HTTPS.  
   
-        **Comprobadores de conectividad**: Acceso remoto crea un sondeo web predeterminado utilizado por los equipos de cliente de DirectAccess usan para comprobar la conectividad a la red interna. Para comprobar si el sondeo funciona correctamente es necesario registrar de forma manual los nombres siguientes en DNS:  
+        **Comprobadores de conectividad**: Acceso remoto crea un sondeo Web predeterminado que los equipos cliente de DirectAccess usan para comprobar la conectividad a la red interna. Para comprobar si el sondeo funciona correctamente es necesario registrar de forma manual los nombres siguientes en DNS:  
   
-        1.  DirectAccess-webprobehost debe proporcionar la dirección IPv4 interna del servidor de acceso remoto, o la dirección IPv6 en un entorno de solo IPv6.  
+        1.  DirectAccess-webprobehost debe resolverse en la dirección IPv4 interna del servidor de acceso remoto o en la dirección IPv6 en un entorno de solo IPv6.  
   
-        2.  DirectAccess-corpconnectivityhost debe resolver en la dirección de host local (bucle invertido). Es necesario crear un registro A y un registro AAAA: el registro A con el valor 127.0.0.1 y el registro AAAA con el valor compuesto a partir del prefijo NAT64 con los últimos 32 bits como 127.0.0.1. El prefijo NAT64 se puede recuperar si se ejecuta el cmdlet get-netnattransitionconfiguration.  
+        2.  DirectAccess-corpconnectivityhost debe resolverse en la dirección localhost (bucle invertido). Es necesario crear un registro A y un registro AAAA: el registro A con el valor 127.0.0.1 y el registro AAAA con el valor compuesto a partir del prefijo NAT64 con los últimos 32 bits como 127.0.0.1. El prefijo NAT64 se puede recuperar si se ejecuta el cmdlet get-netnattransitionconfiguration.  
   
             > [!NOTE]  
             > Esto solo es válido en un entorno de solo IPv4. En un entorno de IPv4+IPv6 o en un entorno de solo IPv6, solo se debe crear un registro AAAA con la dirección IP de bucle invertido ::1.  
@@ -174,19 +174,19 @@ En una implementación de acceso remoto, se necesita DNS para lo siguiente:
   
 #### <a name="dns-server-requirements"></a>Requisitos del servidor DNS  
   
-- Para los clientes de DirectAccess, debe usar un servidor DNS que ejecutan Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, Windows Server 2012 o cualquier servidor DNS que admita IPv6.  
+- En el caso de los clientes de DirectAccess, debe usar un servidor DNS que ejecute Windows Server 2003, Windows Server 2008, Windows Server 2008 R2, Windows Server 2012 o cualquier servidor DNS que admita IPv6.  
   
 ### <a name="plan-active-directory"></a>Planear Active Directory
 
-Acceso remoto usa Active Directory y objetos de directiva de grupo de Active Directory como sigue:  
+El acceso remoto utiliza Active Directory y Active Directory objetos directiva de grupo de la siguiente manera:  
   
 - **Autenticación**: Active Directory se usa para la autenticación. El túnel de intranet usa la autenticación Kerberos para que el usuario acceda a los recursos internos.  
   
-- **Objetos de directiva de grupo**: Acceso remoto recopila las opciones de configuración en los objetos de directiva de grupo que se aplican a servidores de acceso remoto, clientes y servidores de aplicaciones internos.  
+- **Objetos de directiva de grupo**: El acceso remoto recopila opciones de configuración en objetos de directiva de grupo que se aplican a servidores de acceso remoto, clientes y servidores de aplicaciones internos.  
   
-- **Grupos de seguridad**: Acceso remoto usa grupos de seguridad para recopilar e identificar equipos cliente de DirectAccess y servidores de acceso remoto. Las directivas de grupo se aplican en el grupo de seguridad correspondiente.  
+- **Grupos de seguridad**: El acceso remoto usa grupos de seguridad para recopilar e identificar equipos cliente de DirectAccess y servidores de acceso remoto. Las directivas de grupo se aplican en el grupo de seguridad correspondiente.  
   
-- **Directivas IPsec extendidas**: Acceso remoto puede usar la autenticación de IPsec y el cifrado entre los clientes y el servidor de acceso remoto. Puedes extender el cifrado y la autenticación IPsec a los servidores de aplicaciones internos especificados.   
+- **Directivas IPSec extendidas**: El acceso remoto puede utilizar la autenticación y el cifrado IPsec entre clientes y el servidor de acceso remoto. Puedes extender el cifrado y la autenticación IPsec a los servidores de aplicaciones internos especificados.   
   
 #### <a name="active-directory-requirements"></a>Requisitos de Active Directory  
   
@@ -216,14 +216,14 @@ La configuración de DirectAccess se lleva a cabo al configurar el acceso remoto
   
 - **GPO de cliente de DirectAccess**: Este GPO contiene las opciones de configuración de clientes, incluida la configuración de las tecnologías de transición IPv6, las entradas de la tabla NRPT y las reglas de seguridad de Firewall de Windows con seguridad avanzada. El GPO se aplica a los grupos de seguridad especificados para los equipos cliente.  
   
-- **Servidor de DirectAccess GPO**: Este GPO contiene las opciones de configuración de DirectAccess que se aplican a cualquier servidor configurado como servidor de acceso remoto en la implementación. Asimismo, contiene las reglas de seguridad de conexión del Firewall de Windows con seguridad avanzada.  
+- **GPO de servidor de DirectAccess**: Este GPO contiene las opciones de configuración de DirectAccess que se aplican a cualquier servidor configurado como un servidor de acceso remoto en la implementación. Asimismo, contiene las reglas de seguridad de conexión del Firewall de Windows con seguridad avanzada.  
   
-- **GPO de servidores de aplicación**: Este GPO contiene la configuración de los servidores de aplicación seleccionados a los que opcionalmente extiendes la autenticación y el cifrado de los clientes de DirectAccess. Si la autenticación y el cifrado no están extendidos, no se usa este GPO.  
+- **GPO de servidores de aplicaciones**: Este GPO contiene la configuración de los servidores de aplicación seleccionados a los que opcionalmente extiendes la autenticación y el cifrado de los clientes de DirectAccess. Si la autenticación y el cifrado no están extendidos, no se usa este GPO.  
   
 El Asistente para habilitar DirectAccess crea automáticamente los GPO y se especifica un nombre predeterminado para cada GPO.  
   
 > [!CAUTION]  
-> Haz lo siguiente para realizar una copia de seguridad de todos los objetos de directiva de grupo de acceso remoto antes de ejecutar los cmdlets de DirectAccess: [Copia de seguridad y restaurar la configuración de acceso remoto](https://go.microsoft.com/fwlink/?LinkID=257928)  
+> Haz lo siguiente para realizar una copia de seguridad de todos los objetos de directiva de grupo de acceso remoto antes de ejecutar los cmdlets de DirectAccess: [Copia de seguridad y restauración de la configuración de acceso remoto](https://go.microsoft.com/fwlink/?LinkID=257928)  
   
 Los GPO se pueden configurar de dos maneras:  
   
@@ -273,11 +273,11 @@ Ten en cuenta que si no existen los permisos correctos para vincular GPO, se mos
 
 Si un GPO de servidor de acceso directo, de cliente o de servidor de aplicaciones se elimina accidentalmente y no hay una copia de seguridad disponible, tienes que quitar la configuración y volver a configurarlo. Si hay una copia de seguridad disponible, puedes usarla para restaurar el GPO.  
   
-**Administración de acceso remoto** mostrará el siguiente mensaje de error: **No se puede encontrar el GPO (nombre del GPO)** . Para quitar las opciones de configuración, sigue estos pasos:  
+**Administración de acceso remoto** mostrará el siguiente mensaje de error: **No se encuentra el GPO (nombre de GPO)** . Para quitar las opciones de configuración, sigue estos pasos:  
   
 1. Ejecuta el cmdlet de PowerShell **Uninstall-remoteaccess**.  
   
-2. Vuelva a abrir **administración de acceso remoto**.  
+2. Vuelva **a abrir Administración de acceso remoto**.  
   
 3. Verás un mensaje de error que indica que no se encontró el GPO. Haz clic en **Quitar opciones de configuración**. Cuando se complete la operación, el servidor se restaurará a un estado sin configurar.  
 

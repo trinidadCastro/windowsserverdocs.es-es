@@ -6,14 +6,14 @@ ms.author: billmath
 manager: femila
 ms.date: 09/07/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b67177c8bf0ce9869aa51c3012d57f3208ac02f5
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 78db6f8b6961cecea55b8d371e9abf952cafdab3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866291"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358666"
 ---
 # <a name="compound-authentication-and-ad-ds-claims-in-ad-fs"></a>Autenticación compuesta y notificaciones de AD DS en AD FS
 Windows Server 2012 mejora la autenticación Kerberos mediante la introducción de la autenticación compuesta.  La autenticación compuesta permite a una solicitud del servicio de concesión de vales (TGS) de Kerberos incluir dos identidades: 
@@ -62,7 +62,7 @@ Siga estos pasos para configurar la autenticación compuesta y las notificacione
 ### <a name="step-3-ensure-the-ad-fs-servers-have-been-updated"></a>Paso 3: Asegúrese de que se han actualizado los servidores de AD FS.
 Debe asegurarse de que las siguientes actualizaciones estén instaladas en los servidores de AD FS.
 
-|Actualizar|Descripción|
+|Actualización|Descripción|
 |----- | ----- |
 |[KB2919355](https://www.microsoft.com/download/details.aspx?id=42335)|Actualización de seguridad acumulativa (incluye KB2919355, KB2932046, KB2934018, KB2937592, KB2938439)|
 |[KB2959977](https://www.microsoft.com/download/details.aspx?id=42530)|Actualización para Server 2012 R2|
@@ -133,7 +133,7 @@ Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no
 3.  En **editar reglas de notificaciones para el director activo** , haga clic en **Agregar regla**.
 4.  En el **Asistente para agregar regla de notificaciones de transformación** , seleccione **pasar a través o filtrar una notificaciones entrantes** y haga clic en **siguiente**.
 5.  Agregue un nombre para mostrar y seleccione **grupo de dispositivos de Windows** en la lista desplegable tipo de **notificaciones entrantes** .
-6.  Haga clic en **Finalizar**  Haga clic en **aplicar** y en **Aceptar**. 
+6.  Haga clic en **Finalizar**.  Haga clic en **aplicar** y en **Aceptar**. 
 ![Descripción de la demanda](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc7.png)
 
 ### <a name="step-8-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>Paso 8: En el usuario de confianza en el que se esperan las notificaciones "WindowsDeviceGroup", agregue una regla de notificaciones de "paso a través" o "transformación" similar.
@@ -141,7 +141,7 @@ Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no
 3. En **reglas de transformación de emisión** , haga clic en **Agregar regla**.
 4. En el **Asistente para agregar regla de notificaciones de transformación** , seleccione **pasar a través o filtrar una notificaciones entrantes** y haga clic en **siguiente**.
 5. Agregue un nombre para mostrar y seleccione **grupo de dispositivos de Windows** en la lista desplegable tipo de **notificaciones entrantes** .
-6. Haga clic en **Finalizar**  Haga clic en **aplicar** y en **Aceptar**.
+6. Haga clic en **Finalizar**.  Haga clic en **aplicar** y en **Aceptar**.
    ![Descripción de la demanda](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc8.png)
 
 
@@ -204,7 +204,7 @@ Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no
 3.  En **editar reglas de notificaciones para el director activo** , haga clic en **Agregar regla**.
 4.  En el **Asistente para agregar regla de notificaciones de transformación** , seleccione **pasar a través o filtrar una notificaciones entrantes** y haga clic en **siguiente**.
 5.  Agregue un nombre para mostrar y seleccione **grupo de dispositivos de Windows** en la lista desplegable tipo de **notificaciones entrantes** .
-6.  Haga clic en **Finalizar**  Haga clic en **aplicar** y en **Aceptar**. 
+6.  Haga clic en **Finalizar**.  Haga clic en **aplicar** y en **Aceptar**. 
 
 
 ### <a name="step-6-on-the-relying-party-where-the-windowsdevicegroup-claims-are-expected-add-a-similar-pass-through-or-transform-claim-rule"></a>Paso 6: En el usuario de confianza en el que se esperan las notificaciones "WindowsDeviceGroup", agregue una regla de notificaciones de "paso a través" o "transformación" similar.
@@ -212,13 +212,13 @@ Deshabilitar CompoundIdentitySupported y, a continuación, volver a habilitar no
 3. En **reglas de transformación de emisión** , haga clic en **Agregar regla**.
 4. En el **Asistente para agregar regla de notificaciones de transformación** , seleccione **pasar a través o filtrar una notificaciones entrantes** y haga clic en **siguiente**.
 5. Agregue un nombre para mostrar y seleccione **grupo de dispositivos de Windows** en la lista desplegable tipo de **notificaciones entrantes** .
-6. Haga clic en **Finalizar**  Haga clic en **aplicar** y en **Aceptar**.
+6. Haga clic en **Finalizar**.  Haga clic en **aplicar** y en **Aceptar**.
 
-## <a name="validation"></a>Validación
+## <a name="validation"></a>Resultados
 Para validar la liberación de notificaciones de ' WindowsDeviceGroup ', cree una aplicación compatible con notificaciones de prueba mediante .net 4,6. Con WIF SDK 4,0.
 Configure la aplicación como un usuario de confianza en ADFS y actualícelo con la regla de notificaciones como se especifica en los pasos anteriores.
 Al autenticarse en la aplicación mediante el proveedor de autenticación integrada de Windows de ADFS, se convierten las siguientes notificaciones.
-![Validación](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc9.png)
+![Valida](media/AD-FS-Compound-Authentication-and-AD-DS-claims/gpmc9.png)
 
 Las notificaciones para el equipo o dispositivo ahora pueden usarse para controles de acceso más completos.
 

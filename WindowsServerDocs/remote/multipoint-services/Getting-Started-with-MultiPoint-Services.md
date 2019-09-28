@@ -2,7 +2,7 @@
 title: Introducción con Multipoint Services
 description: Presenta Multipoint Services y le ayuda a empezar a usarlo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 2ed2084038236dc8914eefe6bdafc133817b7b41
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: cf31e62345b006ef9572a2ea97a23e3e0bf41b64
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871681"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395373"
 ---
 # <a name="getting-started-with-multipoint-services"></a>Introducción con Multipoint Services
 El sistema Multipoint Services permite a muchos usuarios usar varias estaciones que están conectadas físicamente mediante concentradores de estaciones a un solo equipo. Cada estación consta normalmente de un concentrador de estaciones, un mouse, un teclado y un monitor de vídeo. Cada usuario de una estación de Multipoint Services experimenta una sesión de computación de Windows única que puede administrar mediante Multipoint Manager.  

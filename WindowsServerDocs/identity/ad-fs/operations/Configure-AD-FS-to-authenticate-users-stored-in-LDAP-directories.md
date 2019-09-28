@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 87ada412e6b4ab47aa18a62953b84d8a1369dffa
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 191ec0243c8c34c2084dd07f94f0b3f70b197756
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544520"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71358069"
 ---
 # <a name="configure-ad-fs-to-authenticate-users-stored-in-ldap-directories"></a>Configuración de AD FS para autenticar a los usuarios almacenados en directorios LDAP
 
@@ -27,7 +27,7 @@ En muchas organizaciones, las soluciones de administración de identidades const
 
 Para que AD FS autentique a los usuarios desde un directorio LDAP, debe conectar este directorio LDAP a su granja de AD FS mediante la creación de una **confianza de proveedor de notificaciones local**.  Una confianza de proveedor de notificaciones local es un objeto de confianza que representa un directorio LDAP en la granja de AD FS. Un objeto de confianza de proveedor de notificaciones local consta de una serie de identificadores, nombres y reglas que identifican este directorio LDAP para el servicio de Federación local.
 
-Puede admitir varios directorios LDAP, cada uno con su propia configuración, dentro de la misma granja de AD FS mediante la adición de varias confianzas de **proveedor de notificaciones locales**. Además, AD DS bosques que no son de confianza para el bosque en el que AD FS vive también se pueden modelar como confianzas de proveedor de notificaciones locales. Puede crear confianzas de proveedor de notificaciones locales mediante Windows PowerShell.
+Puede admitir varios directorios LDAP, cada uno con su propia configuración, dentro de la misma granja de AD FS mediante la adición de varias **confianzas de proveedor de notificaciones locales**. Además, AD DS bosques que no son de confianza para el bosque en el que AD FS vive también se pueden modelar como confianzas de proveedor de notificaciones locales. Puede crear confianzas de proveedor de notificaciones locales mediante Windows PowerShell.
 
 Los directorios LDAP (confianzas de proveedores de notificaciones locales) pueden coexistir con directorios de AD (confianzas de proveedor de notificaciones) en el mismo servidor de AD FS, dentro de la misma granja de AD FS, por lo tanto, una única instancia de AD FS es capaz de autenticar y autorizar el acceso para los usuarios que almacenado en directorios AD y no AD.
 
@@ -50,7 +50,7 @@ Para configurar la granja de AD FS para autenticar a los usuarios desde un direc
    > [!NOTE]
    > Se recomienda crear un nuevo objeto de conexión para cada servidor LDAP al que desee conectarse. AD FS puede conectarse a varios servidores LDAP de réplica y conmutar por error automáticamente en caso de que un servidor LDAP específico esté inactivo. En ese caso, puede crear un AdfsLdapServerConnection para cada uno de estos servidores LDAP de réplica y, a continuación, agregar la matriz de objetos de conexión mediante el parámetro-**LdapServerConnection** del cmdlet **Add-AdfsLocalClaimsProviderTrust** .
 
-   **NOTA:** El intento de usar Get-Credential y escribir el DN y la contraseña que se van a usar para enlazar a una instancia de LDAP podría producir un error debido a los requisitos de la interfaz de usuario para formatos de entrada user@domain.tldespecíficos, por ejemplo, DOMINIO\nombreDeUsuario o. En su lugar, puede usar el cmdlet ConvertTo-SecureString como se indica a continuación (en el ejemplo siguiente se supone que UID = admin, ou = System como el DN de las credenciales que se van a usar para enlazar a la instancia de LDAP):
+   **NOTA:** El intento de usar Get-Credential y escribir el DN y la contraseña que se van a usar para enlazar a una instancia de LDAP podría producir un error debido a los requisitos de la interfaz de usuario para formatos de entrada específicos, por ejemplo, DOMINIO\nombreDeUsuario o user@domain.tld. En su lugar, puede usar el cmdlet ConvertTo-SecureString como se indica a continuación (en el ejemplo siguiente se supone que UID = admin, ou = System como el DN de las credenciales que se van a usar para enlazar a la instancia de LDAP):
 
    ```
    $ldapuser = ConvertTo-SecureString -string "uid=admin,ou=system" -asplaintext -force
@@ -93,7 +93,7 @@ Para configurar la granja de AD FS para autenticar a los usuarios desde un direc
    -OrganizationalAccountSuffix "vendors.contoso.com"
    ```
 
-   En el ejemplo anterior, va a crear una confianza de proveedor de notificaciones local denominada "proveedores". Va a especificar la información de conexión para que AD FS se conecte al directorio LDAP que esta confianza del proveedor de notificaciones local `$vendorDirectory` representa mediante `-LdapServerConnection` la asignación al parámetro. Tenga en cuenta que, en el paso uno `$vendorDirectory` , ha asignado una cadena de conexión que se usará al conectarse a su directorio LDAP específico. Por último, está especificando que se `$GivenName`usarán los `$CommonName` atributos LDAP, `$Surname`y (asignados a las notificaciones de AD FS) para el control de acceso condicional, incluidas las directivas de autenticación multifactor y la emisión reglas de autorización, así como para la emisión a través de notificaciones en tokens de seguridad emitidos por AD FS. Con el fin de usar protocolos activos como WS-Trust con AD FS, debe especificar el parámetro OrganizationalAccountSuffix, que permite a AD FS eliminar la ambigüedad entre las confianzas de proveedor de notificaciones locales al atender una solicitud de autorización activa.
+   En el ejemplo anterior, va a crear una confianza de proveedor de notificaciones local denominada "proveedores". Va a especificar la información de conexión para que AD FS se conecte al directorio LDAP que esta confianza del proveedor de notificaciones local representa asignando `$vendorDirectory` al parámetro `-LdapServerConnection`. Tenga en cuenta que, en el paso uno, ha asignado `$vendorDirectory` a una cadena de conexión que se utilizará al conectarse a su directorio LDAP específico. Por último, está especificando que los atributos LDAP `$GivenName`, `$Surname` y `$CommonName` (asignados a las notificaciones de AD FS) se usarán para el control de acceso condicional, incluidas las directivas de autenticación multifactor y las reglas de autorización de emisión, así como para la emisión a través de notificaciones en tokens de seguridad emitidos por AD FS. Con el fin de usar protocolos activos como WS-Trust con AD FS, debe especificar el parámetro OrganizationalAccountSuffix, que permite a AD FS eliminar la ambigüedad entre las confianzas de proveedor de notificaciones locales al atender una solicitud de autorización activa.
 
 ## <a name="see-also"></a>Vea también
 [Operaciones de AD FS](../../ad-fs/AD-FS-2016-Operations.md)

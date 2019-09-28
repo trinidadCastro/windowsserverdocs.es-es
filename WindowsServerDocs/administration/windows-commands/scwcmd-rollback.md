@@ -1,8 +1,8 @@
 ---
-title: Scwcmd rollback
-description: 'Tema de los comandos de Windows para ***- '
+title: Reversión de scwcmd
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6d6cd79c7068d86915141a37b5a4510bddefc94c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3f089ea3e6e5d5b95080356dd239272b95a76b37
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852206"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371211"
 ---
 # <a name="scwcmd-rollback"></a>Scwcmd: rollback
 
 > Se aplica a: Windows Server 2012 R2, Windows Server 2012
 
-Se aplica la directiva de deshacer más reciente disponible y, a continuación, elimina dicha directiva.
+Aplica la Directiva de reversión más reciente disponible y, a continuación, elimina esa Directiva de reversión.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,18 +36,18 @@ scwcmd rollback /m:<ComputerName> [/u:<UserName>] [/pw:<Password>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/ m:\<nombreDeEquipo >|Especifica el nombre NetBIOS, nombre DNS o dirección IP de un equipo donde se debe realizar la operación de reversión.|
-|/ u:\<nombre de usuario >|Especifica una cuenta de usuario alternativa que se utilizará al realizar una recuperación remota. El valor predeterminado es el inicio de sesión de usuario.|
-|/ pw:\<contraseña >|Especifica una credencial de usuario alternativa que se utilizará al realizar una recuperación remota. El valor predeterminado es el inicio de sesión de usuario.|
+|/m: @no__t 0ComputerName >|Especifica el nombre NetBIOS, el nombre DNS o la dirección IP de un equipo en el que se debe realizar la operación de reversión.|
+|/u: @no__t 0UserName >|Especifica la cuenta de usuario alternativa que se va a usar al realizar una reversión remota. El valor predeterminado es el usuario que ha iniciado sesión.|
+|/PW: \<Password >|Especifica una credencial de usuario alternativa para usar al realizar una reversión remota. El valor predeterminado es el usuario que ha iniciado sesión.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-Scwcmd.exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
+Scwcmd. exe solo está disponible en equipos que ejecutan Windows Server 2008 R2, Windows Server 2008 o Windows Server 2003.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-Para revertir la directiva de seguridad en un equipo en la dirección IP 172.16.0.0, escriba:
+Para revertir la Directiva de seguridad en un equipo con la dirección IP 172.16.0.0, escriba:
 ```
 scwcmd rollback /m:172.16.0.0
 ```

@@ -2,18 +2,18 @@
 title: Establecer la prioridad de destino para anular el orden de referencias
 description: En este artículo se describe cómo establecer la prioridad de destino para anular el orden de referencias
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 59db08d5ef46b696f550a5fa0738c5c1f9375fda
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f0a6496802d2be16e84ef62c41fea6f0ae9f6438
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826366"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386122"
 ---
 # <a name="set-target-priority-to-override-referral-ordering"></a>Establecer la prioridad de destino para anular el orden de referencias
 
@@ -57,5 +57,5 @@ Para establecer la prioridad de destinos en un destino de carpeta, utilice el si
 
 ## <a name="see-also"></a>Vea también
 
--   [Optimización de espacios de nombres DFS](tuning-dfs-namespaces.md)
+-   [Ajustar espacios de nombres DFS](tuning-dfs-namespaces.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)

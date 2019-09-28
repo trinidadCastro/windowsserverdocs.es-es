@@ -1,8 +1,8 @@
 ---
-title: reg unload
-description: 'Tema de los comandos de Windows para ***- '
+title: descarga de reg
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: aaa7d7a9fa82db2968d988e3b7b3fb8275a72337
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 32df397b597291269dcfb1449d00e86b2f4f5836
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59834986"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384620"
 ---
-# <a name="reg-unload"></a>reg unload
+# <a name="reg-unload"></a>descarga de reg
 
 
 
-Quita una sección del registro que se cargaron utilizando la **reg carga** operación.
+Quita una sección del registro que se cargó con la operación de **carga de reg** .
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,27 +38,27 @@ reg unload <KeyName>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<KeyName>|Especifica la ruta de acceso completa de la subclave que se descargue. Para especificar los equipos remotos, incluya el nombre del equipo (con el formato \\ \\ComputerName\) como parte de la *KeyName*. Si se omite \\ \\ComputerName\ hace que la operación de forma predeterminada en el equipo local. El *KeyName* debe incluir una clave raíz válida. Las claves raíz válido para el equipo local son HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son HKLM y HKU.|
-|/?|Muestra la Ayuda de **reg unload** en el símbolo del sistema.|
+|@no__t 0KeyName >|Especifica la ruta de acceso completa de la subclave que se va a descargar. Para especificar equipos remotos, incluya el nombre del equipo (en el formato \\ @ no__t-1ComputerName @ no__t-2 como parte del nombre de *clave*. Si se omite \\ @ no__t-1ComputerName, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son HKLM y HKU.|
+|/?|Muestra ayuda para la **descarga de reg** en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-En la tabla siguiente se enumera los valores devueltos por la **reg unload** opción.
+En la tabla siguiente se enumeran los valores devueltos para la opción **reg Unload** .
 
 |Valor|Descripción|
 |-----|-----------|
 |0|Correcto|
 |1|Error|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para descargar el subárbol Subarbtemp en el archivo HKLM, escriba:
+Para descargar el subárbol TempHive en el archivo HKLM, escriba:
 ```
 REG UNLOAD HKLM\TempHive
 ```
 
 > [!CAUTION]
-> No modifique el registro directamente a menos que no haya ninguna alternativa. El editor del registro omite la seguridad estándar, lo que permite la configuración que puede degradar el rendimiento, dañar el sistema o incluso obligar a reinstalar Windows. Mayoría de las configuraciones del registro se puede modificar de forma segura mediante el uso de los programas en el Panel de Control o Microsoft Management Console (MMC). Si se debe modificar el registro directamente, copia de seguridad.
+> No edite el registro directamente a menos que no tenga ninguna alternativa. El editor del registro omite las medidas de seguridad estándar, lo que permite valores que pueden degradar el rendimiento, dañar el sistema o incluso requerir que se vuelva a instalar Windows. Puede modificar la mayoría de la configuración del registro de forma segura mediante los programas del panel de control o Microsoft Management Console (MMC). Si debe modificar el registro directamente, haga una copia de seguridad en primer lugar.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

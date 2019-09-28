@@ -1,8 +1,8 @@
 ---
-title: Wbadmin start systemstatebackup
-description: 'Tema de los comandos de Windows para ***- '
+title: Inicio de systemstatebackup de Wbadmin
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,25 +13,25 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d98ba295b2a76baf98e85a01a02677d57922877d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0244f984d29c8a802475d2dc08f1cdfe4495f0b9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440263"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362230"
 ---
-# <a name="wbadmin-start-systemstatebackup"></a>Wbadmin start systemstatebackup
+# <a name="wbadmin-start-systemstatebackup"></a>Inicio de systemstatebackup de Wbadmin
 
 
 
-Crea una copia de seguridad del estado del sistema del equipo local y lo almacena en la ubicación especificada.
+Crea una copia de seguridad del estado del sistema del equipo local y la almacena en la ubicación especificada.
 
 > [!NOTE]
-> Copia de seguridad de Windows Server no copia de seguridad o recuperar subárboles del registro de usuario (HKEY_CURRENT_USER) como parte de la copia de seguridad o recuperación del estado del sistema.
+> Copias de seguridad de Windows Server no realiza copias de seguridad ni recupera secciones de usuarios del registro (HKEY_CURRENT_USER) como parte de la copia de seguridad del estado del sistema o de la recuperación del estado del sistema.
 
-Para realizar una copia de seguridad del estado del sistema con este subcomando, debe ser miembro de la **operadores de copia de seguridad** grupo o la **administradores** grupo, o bien debe haber sido delegar los permisos adecuados. Además, debe ejecutar **wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados de contextual **símbolo**y, a continuación, haga clic en **ejecutar como administrador**.)
+Para realizar una copia de seguridad del estado del sistema con este subcomando, debe ser miembro del grupo **operadores de copia de seguridad** o del grupo **administradores** , o bien tener delegados los permisos adecuados. Además, debe ejecutar **Wbadmin** desde un símbolo del sistema con privilegios elevados. (Para abrir un símbolo del sistema con privilegios elevados, haga clic con el botón secundario en **símbolo del sistema**y, a continuación, haga clic en **Ejecutar como administrador**).
 
-Para obtener ejemplos de cómo usar este subcomando, consulte [ejemplos](#BKMK_examples).
+Para obtener ejemplos de cómo usar este subcomando, vea [ejemplos](#BKMK_examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -45,16 +45,16 @@ wbadmin start systemstatebackup
 
 |   Parámetro   |                                                                                                                                                                                                                      Descripción                                                                                                                                                                                                                      |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| -backupTarget | Especifica la ubicación donde desea almacenar la copia de seguridad. La ubicación de almacenamiento requiere una letra de unidad o un volumen basado en el GUID del formato: \\ \\? \Volume {*GUID*}.</br>Una copia de seguridad del estado del sistema en una carpeta compartida de red no se admite en un equipo que ejecuta Windows Server 2008. Si el servidor se está ejecutando Windows Server 2008 R2 o posterior puede usar el comando **- backuptarget:\\\\servername\sharedFolder\\**  para almacenar copias de seguridad de estado del sistema. |
-|    -quiet     |                                                                                                                                                                                                   Se ejecuta el subcomando sin solicitudes para el usuario.                                                                                                                                                                                                    |
+| -backupTarget | Especifica la ubicación en la que desea almacenar la copia de seguridad. La ubicación de almacenamiento requiere una letra de unidad o un volumen basado en GUID con el formato: \\ @ no__t-1? \Volume{*GUID*}.</br>Una copia de seguridad de estado del sistema en una carpeta de red compartida no se admite en un equipo que ejecute Windows Server 2008. Si el servidor ejecuta Windows Server 2008 R2 o una versión posterior, puede usar el comando **-backupTarget: \\ @ no__t-2servername\sharedFolder @ no__t-3** para almacenar copias de seguridad del estado del sistema. |
+|    -quiet     |                                                                                                                                                                                                   Ejecuta el subcomando sin preguntar al usuario.                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentarios
 
-Para obtener información acerca de cómo guardar una copia de seguridad del estado del sistema a un volumen que, a su vez, contiene los archivos de estado del sistema, consulte el artículo 944530 en Microsoft Knowledge Base ([https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439)).
+Para obtener información acerca de cómo guardar una copia de seguridad del estado del sistema en un volumen que, a su vez, contiene archivos de estado del sistema, consulte el artículo 944530 de Microsoft Knowledge base ([https://go.microsoft.com/fwlink/?LinkId=110439](https://go.microsoft.com/fwlink/?LinkId=110439)).
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para crear una copia de seguridad del estado del sistema y lo almacena en el volumen f, escriba:
+Para crear una copia de seguridad del estado del sistema y almacenarla en el volumen f, escriba:
 ```
 wbadmin start systemstatebackup -backupTarget:f:
 ```
@@ -63,4 +63,4 @@ wbadmin start systemstatebackup -backupTarget:f:
 
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
 -   [Wbadmin](wbadmin.md)
--   [Start-WBBackup](https://technet.microsoft.com/library/jj902459.aspx) cmdlet
+-   Cmdlet [Start-WBBackup](https://technet.microsoft.com/library/jj902459.aspx)

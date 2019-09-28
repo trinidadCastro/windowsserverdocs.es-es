@@ -1,8 +1,8 @@
 ---
-title: Subcomando conjunto DriverPackage
-description: 'Tema de los comandos de Windows para ***- '
+title: Subcomando set-DriverPackage
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 24acd672184b8df235e8de843961ac4adb2bd412
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 65751cf6e03baa87c7734b318a26111652bee0a1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441133"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370823"
 ---
 # <a name="subcommand-set-driverpackage"></a>Subcomando: set-DriverPackage
 
@@ -36,13 +36,13 @@ WDSUTIL /Set-DriverPackage [/Server:<Server name>] {/DriverPackage:<Name> | /Pac
 
 |        Parámetro         |                                                                                                                                                                                                               Descripción                                                                                                                                                                                                                |
 |--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [/ Server:\<nombre del servidor >] |                                                                                                                                                 Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se usa el servidor local.                                                                                                                                                 |
-| [/DriverPackage:\<Name>] |                                                                                                                                                                                       Especifica el nombre actual del paquete de controladores para modificar.                                                                                                                                                                                        |
-|    [/ PackageId:\<Id. >]    | Especifica el identificador de servicios de implementación de Windows del paquete de controladores. Debe especificar esta opción si el paquete de controladores no se identifica por nombre. Para encontrar este identificador de un paquete, haga clic en el grupo de controladores que se encuentra el paquete (o el **todos los paquetes** nodo), haga clic en el paquete y, a continuación, haga clic en **propiedades**. El identificador del paquete se muestra en el **General** ficha. Por ejemplo: {DD098D20-1850-4FC8-8E35-EA24A1BEFF5E}. |
-|   [/ Name:\<nuevo nombre >]    |                                                                                                                                                                                              Especifica el nuevo nombre para el paquete de controladores.                                                                                                                                                                                              |
-|      [/Enabled:{Yes      |                                                                                                                                                                                                                   No}                                                                                                                                                                                                                    |
+| [/Server: \<Server nombre >] |                                                                                                                                                 Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el FQDN. Si no se especifica un nombre de servidor, se utiliza el servidor local.                                                                                                                                                 |
+| [/DriverPackage: \<Name >] |                                                                                                                                                                                       Especifica el nombre actual del paquete de controladores que se va a modificar.                                                                                                                                                                                        |
+|    [/PackageId: \<ID >]    | Especifica el ID. de servicios de implementación de Windows del paquete de controladores. Debe especificar esta opción si el paquete de controladores no se puede identificar de forma única por nombre. Para encontrar este ID. para un paquete, haga clic en el grupo de controladores en el que se encuentra el paquete (o en el nodo **todos los paquetes** ), haga clic con el botón secundario en el paquete y, a continuación, haga clic en **propiedades**. El identificador del paquete se muestra en la pestaña **General** . Por ejemplo: {DD098D20-1850-4FC8-8E35-EA24A1BEFF5E}. |
+|   [/Name: @no__t nombre de 0New >]    |                                                                                                                                                                                              Especifica el nuevo nombre del paquete de controladores.                                                                                                                                                                                              |
+|      [/Enabled: {Yes      |                                                                                                                                                                                                                   ninguno                                                                                                                                                                                                                    |
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para cambiar la configuración de un paquete, escriba uno de los siguientes:
 ```

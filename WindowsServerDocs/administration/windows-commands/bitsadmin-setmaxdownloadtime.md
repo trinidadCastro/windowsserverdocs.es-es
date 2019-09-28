@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin setmaxdownloadtime
-description: Tema de los comandos de Windows para **setmaxdownloadtime bitsadmin** -establece el tiempo de espera de descarga en segundos.
+title: bitsadmin setmaxdownloadtime
+description: 'Temas de comandos de Windows para **bitsadmin setmaxdownloadtime** : establece el tiempo de espera de descarga en segundos.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f13b44429bec2718af1a648f273fead18d4e9e08
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 985453de5bd2f4a06b5635ae5b0a9794d30175b0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59830996"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380560"
 ---
-# <a name="bitsadmin-setmaxdownloadtime"></a>Bitsadmin setmaxdownloadtime
+# <a name="bitsadmin-setmaxdownloadtime"></a>bitsadmin setmaxdownloadtime
 
 
 
@@ -36,16 +36,16 @@ bitsadmin /SetMaxDownloadTime <Job> <Timeout>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
-|tiempoDeEspera|El tiempo de espera en segundos|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
+|tiempoDeEspera|Tiempo de espera en segundos|
 
 ## <a name="remarks"></a>Comentarios
 
 -   N/D
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se establece el tiempo de espera del trabajo denominado *myDownloadJob* en 10 segundos.
+En el ejemplo siguiente se establece el tiempo de espera para el trabajo denominado *myDownloadJob* en 10 segundos.
 ```
 C:\>bitsadmin /SetMaxDownloadTime myDownloadJob 10
 ```

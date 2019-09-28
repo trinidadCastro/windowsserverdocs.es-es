@@ -1,38 +1,38 @@
 ---
-title: Mejoras del Administrador de memoria y caché
-description: Memoria caché y las mejoras del Administrador de memoria en Windows Server 2016
-ms.prod: windows-server-threshold
+title: Mejoras en el administrador de memoria y caché
+description: Mejoras del administrador de memoria y caché en Windows Server 2016
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Pavel; ATales
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: bd15cfc0714d1992e6b15d716b6b96ce259786da
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5f66f43a0d1b003ab833c91538594510b44027d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868586"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384935"
 ---
-# <a name="cache-and-memory-manager-improvements"></a>Mejoras del Administrador de memoria y caché
+# <a name="cache-and-memory-manager-improvements"></a>Mejoras en el administrador de memoria y caché
 
-Este tema describe las mejoras del Administrador de caché y el Administrador de memoria en Windows Server 2012 y 2016.
+En este tema se describen las mejoras en el administrador de caché y en el administrador de memoria de Windows Server 2012 y 2016.
 
-## <a name="cache-manager-improvements-in-windows-server-2016"></a>Mejoras del Administrador de caché en Windows Server 2016
-Administrador de caché también se agregó compatibilidad para true asincrónica en caché lee.
-Potencialmente, esto podría mejorar el rendimiento de una aplicación si depende en gran medida en caché de lectura asincrónicas.  Mientras más sistemas de archivos en el cuadro admitieron Lecturas asincrónicas almacenamiento en caché durante un tiempo, a menudo eran las limitaciones del rendimiento debido a diversas opciones de diseño relacionadas con la administración de grupos de subprocesos y colas de trabajo interno de sistemas de archivos.  Con el soporte de kernel adecuada, Administrador de caché ahora oculta todo el grupo de subprocesos y las complicaciones de administración de cola de trabajo de lo que más eficaz en el control asincrónico de sistemas de archivos en caché lecturas. Administrador de caché tiene conjuntos de control datastructures para cada uno de (máximo sistema compatible) niveles de anidamiento de disco duro virtual para maximizar el paralelismo.
+## <a name="cache-manager-improvements-in-windows-server-2016"></a>Mejoras del administrador de caché en Windows Server 2016
+El administrador de caché también agregó compatibilidad con las lecturas asincrónicas en caché verdaderas.
+Esto podría mejorar el rendimiento de una aplicación si se basa en las lecturas asincrónicas almacenadas en caché.  Aunque la mayoría de los sistemas de archivos integrados han admitido lecturas en caché asincrónica durante un tiempo, a menudo había limitaciones de rendimiento debido a diversas opciones de diseño relacionadas con el control de los grupos de subprocesos y las colas de trabajo internas de los sistemas de archivos.  Con compatibilidad desde el kernel, el administrador de caché ahora oculta todas las complejidades de administración de colas de trabajos y grupos de subprocesos de los sistemas de archivos, lo que resulta más eficaz en el control de las lecturas asincrónicas almacenadas en caché. El administrador de caché tiene un conjunto de estructuras de control de memoria para cada uno de los niveles de anidamiento de VHD (máximo admitido por el sistema) para maximizar el paralelismo.
 
 
-## <a name="cache-manager-improvements-in-windows-server-2012"></a>Mejoras del Administrador de caché en Windows Server 2012
-Además de mejoras en el Administrador de caché lectura anticipada lógica para cargas de trabajo secuenciales, una nueva API [CcSetReadAheadGranularityEx](https://msdn.microsoft.com/library/windows/hardware/hh406341.aspx) se agregó para permitir que los controladores del sistema, como SMB de archivos, cambiar sus parámetros lecturas anticipadas. Permite un mejor rendimiento para escenarios de archivo remoto mediante el envío de que solicitudes de varios pequeña lectura anticipada en lugar de enviar que una gran lectura previa solicitud. Sólo los componentes del kernel, como los controladores del sistema de archivos, pueden configurar mediante programación estos valores en una base por archivo.
+## <a name="cache-manager-improvements-in-windows-server-2012"></a>Mejoras del administrador de caché en Windows Server 2012
+Además de las mejoras del administrador de caché para la lectura de la lógica de las cargas de trabajo secuenciales, se ha agregado un nuevo [CcSetReadAheadGranularityEx](https://msdn.microsoft.com/library/windows/hardware/hh406341.aspx) de API para permitir que los controladores del sistema de archivos, como SMB, cambien los parámetros de lectura previa. Permite mejorar el rendimiento de los escenarios de archivos remotos mediante el envío de varias solicitudes de lectura previa de pequeño tamaño en lugar de enviar una única solicitud de lectura previa grande. Solo los componentes del kernel, como los controladores del sistema de archivos, pueden configurar mediante programación estos valores por archivo.
 
-## <a name="memory-manager-improvements-in-windows-server-2012"></a>Mejoras del Administrador de memoria en Windows Server 2012
-Habilitar la combinación de página puede reducir el uso de memoria en los servidores que tiene una gran cantidad de páginas paginables privadas con contenido idéntico. Por ejemplo, los servidores que ejecutan varias instancias de la misma aplicación de gran cantidad de memoria o una única aplicación que funciona con datos muy repetitivos, puedan ser buenas candidatas para probar la combinación de página. La desventaja de la habilitación de la combinación de página es un mayor uso de CPU.
+## <a name="memory-manager-improvements-in-windows-server-2012"></a>Mejoras de Memory Manager en Windows Server 2012
+Habilitar la combinación de páginas puede reducir el uso de memoria en los servidores que tienen muchas páginas privadas y paginables con contenido idéntico. Por ejemplo, los servidores que ejecutan varias instancias de la misma aplicación con un uso intensivo de memoria o una sola aplicación que funciona con datos muy repetitivos, podrían ser buenos candidatos para probar la combinación de páginas. El inconveniente de habilitar la combinación de páginas aumenta el uso de la CPU.
 
-Estos son algunos ejemplos de roles de servidor donde página combinación no es probable que proporcionan muchas ventajas:
+Estos son algunos ejemplos de roles de servidor en los que no es probable que la combinación de páginas ofrezca muchas ventajas:
 
--   Servidores de archivos (las páginas del archivo que no son privados y, por tanto, no combinable consume la mayor parte de la memoria)
+-   Servidores de archivos (la mayoría de la memoria se utiliza en páginas de archivos que no son privadas y, por lo tanto, no se pueden combinar)
 
--   Servidores de Microsoft SQL Server que están configurados para utilizar AWE o páginas grandes (la mayoría de la memoria es privada, pero no paginable)
+-   Servidores de Microsoft SQL Server que están configurados para usar AWE o páginas grandes (la mayor parte de la memoria es privada pero no paginable)
 
-Combinación de página está deshabilitada de forma predeterminada, pero se puede habilitar mediante el uso de la [Enable MMAgent](https://technet.microsoft.com/library/jj658954.aspx) cmdlet de Windows PowerShell. Combinación de página se agregó en Windows Server 2012.
+La combinación de páginas está deshabilitada de forma predeterminada, pero se puede habilitar mediante el cmdlet [enable-MMAgent de](https://technet.microsoft.com/library/jj658954.aspx) Windows PowerShell. La combinación de páginas se agregó en Windows Server 2012.

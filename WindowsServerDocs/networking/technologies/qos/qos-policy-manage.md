@@ -1,19 +1,19 @@
 ---
 title: Administrar la directiva QoS
 description: En este tema se proporcionan instrucciones sobre cómo crear y administrar la Directiva de calidad de servicio (QoS) en Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 04fdfa54-6600-43d4-8945-35f75e15275a
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3cff51b3cf76d3224832bf99ff966bf473d6ff6c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ac717555d1ab751600527e294d32f10d1f05bfa5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871849"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395879"
 ---
 # <a name="manage-qos-policy"></a>Administrar la directiva QoS
 
@@ -82,7 +82,7 @@ En la primera página del Asistente para directivas de QoS, puede especificar un
 
 3. De forma opcional, use **Especificar velocidad del acelerador** para habilitar el límite de tráfico y configurar la velocidad del acelerador. El valor de velocidad del acelerador debe ser mayor que 1 y puede especificar unidades de kilobytes por \(segundo\) kbps o megabytes por \(segundo\)Mbps.
 
-4. Haga clic en **Next**.
+4. Haz clic en **Siguiente**.
 
 ### <a name="wizard-page-2---application-name"></a>Asistente (Página 2): nombre de la aplicación
 
@@ -111,7 +111,7 @@ Opcionalmente, puede activar **incluir subdirectorios y archivos** para realizar
 
 2. Si selecciona **Sólo las aplicaciones con el siguiente nombre de archivo ejecutable**, especifique un archivo ejecutable que termine con la extensión de nombre de archivo .exe.
 
-3. Haga clic en **Next**.
+3. Haz clic en **Siguiente**.
 
 ### <a name="wizard-page-3---ip-addresses"></a>Asistente página 3-direcciones IP
 
@@ -147,7 +147,7 @@ Esto es así porque la dirección IP de origen es la dirección del servidor HTT
 
 4. Si seleccionó **sólo para la siguiente dirección IP de destino**, especifique una dirección o un prefijo IPv4 o IPv6 que se corresponda con el tipo de dirección o prefijo especificado para la dirección de origen.
 
-5.  Haga clic en **Next**.  
+5.  Haz clic en **Siguiente**.  
 
 ### <a name="wizard-page-4---protocols-and-ports"></a>Asistente página 4: protocolos y puertos
 
@@ -280,7 +280,7 @@ De forma predeterminada, los equipos que ejecutan Windows Server 2016, Windows 1
 
 ##### <a name="wireless-multimedia-and-dscp-values"></a>Valores de valor de DSCP y de multimedia inalámbrico
 
-La [Alianza Wi-Fi](https://go.microsoft.com/fwlink/?LinkId=160769) ha establecido una certificación para la tecnología \(WMM\) de multimedia inalámbrica que define \(cuatro\) categorías de acceso WMM_AC para priorizar el tráfico de red transmitido en un\-Red inalámbrica de fi. Las categorías de acceso \(incluyen en orden de prioridad\)más alta a mínima: voz, vídeo, mejor esfuerzo y fondo; se abrevian respectivamente como VO, VI, ser y BK. La especificación de WMM define qué valores de DSCP se corresponden con cada una de las cuatro categorías de acceso:
+La [Alianza Wi-Fi](https://go.microsoft.com/fwlink/?LinkId=160769) ha establecido una certificación para los multimedia inalámbricos \(WMM @ no__t-2 que define cuatro categorías de acceso \(WMM_AC @ no__t-4 para priorizar el tráfico de red transmitido en una red inalámbrica de Wi @ No__t-5Fi. Las categorías de acceso \(incluyen en orden de prioridad\)más alta a mínima: voz, vídeo, mejor esfuerzo y fondo; se abrevian respectivamente como VO, VI, ser y BK. La especificación de WMM define qué valores de DSCP se corresponden con cada una de las cuatro categorías de acceso:
   
 |Valor de DSCP|Categoría de acceso de WMM|
 |----------|-------------------|
@@ -312,7 +312,7 @@ Cuando varias directivas de QoS coinciden con el tráfico específico, se aplica
 
 Como alternativa, se pueden aplicar varias directivas de QoS al mismo tráfico especificando condiciones no superpuestas. Entre las condiciones de las aplicaciones y el quíntuplo de red, la Directiva que especifica la aplicación se considera más específica y se aplica. 
 
-Por ejemplo, policy_A solo especifica un nombre de aplicación (App. exe) y policy_B especifica la dirección IP de destino 192.168.1.0/24. Cuando este conflicto \(de directivas de QoS envía el tráfico a una dirección IP dentro del intervalo de 192.168.4.0/24\), se aplica policy_A.
+Por ejemplo, policy_A solo especifica un nombre de aplicación (App. exe) y policy_B especifica la dirección IP de destino 192.168.1.0/24. Cuando estas directivas de QoS entran en conflicto @no__t -0app. exe envía el tráfico a una dirección IP dentro del intervalo de 192.168.4.0/24 @ no__t-1, se aplican policy_A.
 
  **Una mayor especificidad tiene prioridad en el quíntuplo de red**
 

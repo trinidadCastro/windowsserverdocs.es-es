@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 03328ff8c94d96fcf34dcef29ac1a1daefc9d14a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 870dbb4303d216f05bc372610f3121ff08fc8c25
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867492"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407840"
 ---
 # <a name="scenario-web-app-server-app-calling-web-api"></a>Escenario: Aplicación web (aplicación de servidor) llamada a Web API 
 >Se aplica a: AD FS 2019 y versiones posteriores 
@@ -47,19 +47,19 @@ Para comprender mejor cómo registrar una aplicación web en ADFS y configurarla
 En esta sección se muestra cómo registrar la aplicación web como cliente confidencial y API Web como un usuario de confianza (RP) en AD FS. 
 
   1. En administración de AD FS, haga clic con el botón derecho en **grupos de aplicaciones** y seleccione **Agregar grupo de aplicaciones**.  
-  2. En el Asistente para grupos de aplicaciones, en **nombre** , escriba **WebAppToWebApi** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación de servidor que tiene acceso a una API Web** . Haga clic en **Next**.  
+  2. En el Asistente para grupos de aplicaciones, en **nombre** , escriba **WebAppToWebApi** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación de servidor que tiene acceso a una API Web** . Haz clic en **Siguiente**.  
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp2.png)
   
-  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ida: ClientID** en el archivo **Web. config** de aplicaciones. Escriba lo siguiente para el **URI de redirección:**  - https://localhost:44326. Haz clic en Agregar. Haga clic en **Next**. 
+  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ida: ClientID** en el archivo **Web. config** de aplicaciones. Escriba lo siguiente para el **URI de redirección:**  - https://localhost:44326. Haz clic en Agregar. Haz clic en **Siguiente**. 
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp3.png)
   
-  4. En la pantalla configurar credenciales de aplicación, active la casilla **generar un secreto compartido** y copie el secreto. Se usará más adelante como valor de **ida: ClientSecret** en el archivo **Web. config** de aplicaciones. Haga clic en **Next**.  
+  4. En la pantalla configurar credenciales de aplicación, active la casilla **generar un secreto compartido** y copie el secreto. Se usará más adelante como valor de **ida: ClientSecret** en el archivo **Web. config** de aplicaciones. Haz clic en **Siguiente**.  
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp4.png)
   
-  5. En la pantalla configurar API Web, escriba el **identificador:** https://webapi. Haga clic en **Agregar**. Haga clic en **Next**. Este valor se usará más adelante para **ida: GraphResourceId** en el archivo **Web. config** de las aplicaciones. 
+  5. En la pantalla configurar API Web, escriba el **identificador:** https://webapi. Haz clic en **Agregar**. Haz clic en **Siguiente**. Este valor se usará más adelante para **ida: GraphResourceId** en el archivo **Web. config** de las aplicaciones. 
   
       ![Agregar grupo de aplicaciones](media/adfs-msal-web-app-web-api/webapp5.png)
   

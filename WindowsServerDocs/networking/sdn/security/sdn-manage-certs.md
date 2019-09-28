@@ -2,19 +2,19 @@
 title: Administrar certificados para redes definidas por software
 description: Puede usar este tema para aprender a administrar certificados de Northbound de controladora de red y comunicaciones de southbound al implementar redes definidas por software (SDN) en Windows Server 2016 Datacenter.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-sdn
 ms.topic: article
 ms.assetid: c4e2f6c7-0364-4bf8-bb66-9af59c0bbd74
 ms.author: pashort
 author: shortpatti
 ms.date: 08/22/2018
-ms.openlocfilehash: 8e2feba8232ae87d59478d3522c4e6f02baf27b8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b1cff080630c68ee8c4b7f0904f8fd0978330edc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870098"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405989"
 ---
 # <a name="manage-certificates-for-software-defined-networking"></a>Administrar certificados para redes definidas por software
 
@@ -129,7 +129,7 @@ Puede usar el complemento certificados para solicitar certificados. Puede solici
 
 1. Abra el complemento certificados de un equipo.
 2. En el árbol de consola, haga clic en  **\(certificados equipo\)local**. Seleccione el almacén de certificados **personal** .
-3. En el menú **acción** , seleccione * * todas las tareas<strong>y, a continuación, haga clic en * * solicitar nuevo certificado</strong> para iniciar el Asistente para inscripción de certificados. Haga clic en **Next**.
+3. En el menú **acción** , seleccione * * todas las tareas<strong>y, a continuación, haga clic en * * solicitar nuevo certificado</strong> para iniciar el Asistente para inscripción de certificados. Haz clic en **Siguiente**.
 4. Seleccione la Directiva de inscripción de certificados de **Administrador configurada** y haga clic en **siguiente**.
 5. Seleccione la **Directiva** \(de inscripción de Active Directory basada en la plantilla de CA que configuró en\)la sección anterior.
 6. Expanda la sección **detalles** y configure los siguientes elementos.
@@ -149,7 +149,7 @@ Después de crear un certificado\-autofirmado\-o firmado por una entidad de cert
 Después, debe copiar los dos archivos exportados en las carpetas **ServerCertificate.cr** y **NCCertificate.cr** que especificó en el momento en que importó la plantilla de servicio de NC.
 
 1. Abra el complemento certificados (certlm. msc) y busque el certificado en el almacén de certificados personal del equipo local.
-2. Haga\-clic con el botón secundario en el certificado, seleccione **todas las tareas**y, a continuación, haga clic en **exportar**. Se abre el Asistente para exportación de certificados. Haga clic en **Next**.
+2. Haga\-clic con el botón secundario en el certificado, seleccione **todas las tareas**y, a continuación, haga clic en **exportar**. Se abre el Asistente para exportación de certificados. Haz clic en **Siguiente**.
 3. Seleccione la opción exportar la clave **privada y haga**clic en **siguiente**.
 4. Elija **intercambio de información personal: PKCS #12 (. PFX)** y acepte el valor predeterminado para **incluir todos los certificados en la ruta de certificación** si es posible.
 5. Asigne los usuarios o grupos y una contraseña para el certificado que va a exportar, haga clic en **siguiente**.

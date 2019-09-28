@@ -1,19 +1,19 @@
 ---
 title: Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 description: Información general de la característica Servidor de archivos de escalabilidad horizontal para Windows Server 201 R2 y Windows Server 2012.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 author: JasonGerend
 ms.author: jgerend
 ms.technology: storage-failover-clustering
 ms.date: 04/26/2018
 ms.localizationpriority: medium
-ms.openlocfilehash: 80bf85caac6f84e0d6da0c6139e39f3823b3a961
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: da7c90bdb1c4a2fbdb2e518f34abe9cbfef2fc29
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868708"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392032"
 ---
 # <a name="scale-out-file-server-for-application-data-overview"></a>Introducción al servidor de archivos de escalabilidad horizontal para datos de aplicación
 
@@ -105,7 +105,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <td>Sistema de archivos</td>
 <td>NTFS</td>
 <td>Sí</td>
-<td>N/D</td>
+<td>N/A</td>
 </tr>
 <tr class="odd">
 <td>Sistema de archivos</td>
@@ -116,20 +116,20 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <tr class="even">
 <td>Sistema de archivos</td>
 <td>Sistema de archivos de Volúmen compartido de clúster (CSV)</td>
-<td>N/D</td>
+<td>N/A</td>
 <td>Sí</td>
 </tr>
 <tr class="odd">
 <td>Administración de archivos</td>
 <td>BranchCache</td>
 <td>Sí</td>
-<td>Sin</td>
+<td>No</td>
 </tr>
 <tr class="even">
 <td>Administración de archivos</td>
 <td>Desduplicación de datos (Windows Server 2012)</td>
 <td>Sí</td>
-<td>Sin</td>
+<td>No</td>
 </tr>
 <tr class="odd">
 <td>Administración de archivos</td>
@@ -141,7 +141,7 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <td>Administración de archivos</td>
 <td>Servidor de raíz de la raíz de Espacio de nombres DFS (DFSN)</td>
 <td>Sí</td>
-<td>Sin</td>
+<td>No</td>
 </tr>
 <tr class="odd">
 <td>Administración de archivos</td>
@@ -153,25 +153,25 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <td>Administración de archivos</td>
 <td>Replicación DFS (DFSR)</td>
 <td>Sí</td>
-<td>Sin</td>
+<td>No</td>
 </tr>
 <tr class="odd">
 <td>Administración de archivos</td>
 <td>Administrador de recursos del servidor de archivos (pantallas y cuotas)</td>
 <td>Sí</td>
-<td>Sin</td>
+<td>No</td>
 </tr>
 <tr class="even">
 <td>Administración de archivos</td>
 <td>Infraestructura de clasificación de archivos</td>
 <td>Sí</td>
-<td>Sin</td>
+<td>No</td>
 </tr>
 <tr class="odd">
 <td>Administración de archivos</td>
 <td>Control de acceso dinámico (acceso basado en notificaciones, CAP)</td>
 <td>Sí</td>
-<td>Sin</td>
+<td>No</td>
 </tr>
 <tr class="even">
 <td>Administración de archivos</td>
@@ -201,22 +201,22 @@ En la tabla siguiente se enumeran capacidades de SMB 3.0, sistemas de archivos c
 <td>Administración de archivos</td>
 <td>Carpetas de trabajo</td>
 <td>Sí</td>
-<td>Sin</td>
+<td>No</td>
 </tr>
 <tr class="odd">
 <td>NFS</td>
 <td>Servidor NFS</td>
 <td>Sí</td>
-<td>Sin</td>
+<td>No</td>
 </tr>
 <tr class="even">
-<td>APLICACIONES</td>
+<td>Aplicaciones</td>
 <td>Hyper-V</td>
 <td>No recomendada</td>
 <td>Sí</td>
 </tr>
 <tr class="odd">
-<td>APLICACIONES</td>
+<td>Aplicaciones</td>
 <td>Microsoft SQL Server</td>
 <td>No recomendada</td>
 <td>Sí</td>

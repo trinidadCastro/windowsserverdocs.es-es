@@ -2,18 +2,18 @@
 title: Establecer el método para ordenar destinos en las referencias
 description: En este artículo se describe cómo establecer el método para ordenar los destinos en las referencias.
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 52568944a98bed7960b37335b2e3cbbde61479ca
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bb42a98666941c5dfa50a8dfbf45635ad25dc767
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447204"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386138"
 ---
 # <a name="set-the-ordering-method-for-targets-in-referrals"></a>Establecer el método para ordenar destinos en las referencias
 
@@ -40,7 +40,7 @@ Usa el siguiente procedimiento para establecer el método para ordenar en la ra�
 >    -   **EnableInsiteReferrals** especifica el método para ordenar **Excluir destinos fuera del sitio del cliente**
 >    -   Si omites algún parámetro, especifica el método para ordenar referencias **Orden aleatorio**. 
 
-El módulo de DFSN Windows PowerShell se introdujo en Windows Server 2012.
+El módulo de Windows PowerShell DFSN se presentó en Windows Server 2012.
    
 ## <a name="to-set-the-ordering-method-for-targets-in-folder-referrals"></a>Para establecer el método para ordenar destinos en las referencias a las carpetas
 
@@ -67,7 +67,7 @@ Los tres métodos para ordenar son:
 
 En este método, los destinos se ordenan tal y como se indica a continuación:
 
-1.  Destinos en el mismo sitio de servicios de directorio de Active Directory (AD DS) que el cliente se enumeran en orden aleatorio en la parte superior de la referencia.
+1.  Los destinos en el mismo sitio de Active Directory servicios de directorio (AD DS) que el cliente se enumeran en orden aleatorio en la parte superior de la referencia.
 2.  Los destinos fuera del sitio del cliente se enumeran en orden aleatorio.
 
 Si no hay disponible ningún servidor de destino del mismo sitio, el equipo cliente hace referencia a un servidor de destino aleatorio independientemente del coste de la conexión o la distancia del destino.

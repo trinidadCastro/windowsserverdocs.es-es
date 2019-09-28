@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 873953155d22bafef5b042887b22e953ff580b5c
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: c825ae9c9b52068b58b99bc6ff597304c9643d17
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67280569"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390082"
 ---
 # <a name="how-ldap-server-cookies-are-handled"></a>Cómo se controlan las cookies de servidor LDAP
 
@@ -26,17 +26,17 @@ La recopilación y la creación de estos grandes conjuntos de resultados suponen
   
 Otro desafío es que el tamaño de los conjuntos de resultados con decenas de miles de objetos se vuelve enorme, llegando a tener fácilmente varios cientos de megabytes. Después, estos requieren de mucho espacio de dirección virtual y también la transferencia por red tiene problemas ya que se pierde todo el esfuerzo cuando la sesión TCP se desglosa en tránsito.  
   
-Estos problemas logísticos y capacidad han llevado a los desarrolladores de Microsoft LDAP a la creación de una extensión LDAP conocida como "Consulta paginada". Está implementando un control LDAP para separar una consulta enorme en fragmentos de conjuntos de resultados más pequeños. Se ha convertido en un estándar RFC como [RFC 2696](http://www.ietf.org/rfc/rfc2696).  
+Estos problemas logísticos y de capacidad han llevado a los desarrolladores de Microsoft LDAP a crear una extensión LDAP conocida como "consulta paginada". Está implementando un control LDAP para separar una consulta enorme en fragmentos de conjuntos de resultados más pequeños. Se ha convertido en un estándar RFC como [RFC 2696](http://www.ietf.org/rfc/rfc2696).  
   
 ## <a name="cookie-handling-on-client"></a>Administración de cookies en el cliente  
-El método de consulta paginada usa el tamaño de página establecido por el cliente o mediante un [directiva LDAP](https://support.microsoft.com/kb/315071/en-us) ("MaxPageSize"). El cliente siempre necesita habilitar la paginación enviando un control LDAP.  
+El método de consulta paginada usa el tamaño de página establecido por el cliente o a través de una [Directiva LDAP](https://support.microsoft.com/kb/315071/en-us) ("MaxPageSize"). El cliente siempre necesita habilitar la paginación enviando un control LDAP.  
 
   
 Al trabajar en una consulta con muchos resultados, en algún momento se alcanza el número máximo de objetos permitidos. El servidor LDAP empaqueta el mensaje de respuesta y agrega una cookie que contiene la información que necesita para continuar después la búsqueda.  
   
 La aplicación cliente debe tratar la cookie como blob opaco. Puede recuperar el recuento de objetos en la respuesta y continuar la búsqueda en función de la presencia de la cookie. El cliente continúa la búsqueda enviando la consulta al servidor LDAP de nuevo con los mismos parámetros como filtro y objeto base e incluye el valor de cookie devuelto en la respuesta anterior.  
   
-Si el número de objetos no llena una página, la consulta LDAP está completa y la respuesta no contiene ninguna cookie de página. Si el servidor no devuelve ninguna cookie, el cliente considera la búsqueda paginada como correctamente completada.  
+Si el número de objetos no llena una página, la consulta LDAP se completa y la respuesta no contiene ninguna cookie de página. Si el servidor no devuelve ninguna cookie, el cliente considera la búsqueda paginada como correctamente completada.  
   
 Si el servidor devuelve un error, el cliente debe considerar que la búsqueda paginada es incorrecta. Volver a intentar la búsqueda dará como resultado que se reinicie la búsqueda desde la primera página.  
   
@@ -48,15 +48,15 @@ En este caso, la cookie enviada al cliente por el servidor también la usa el se
 ## <a name="how-the-cookie-pool-is-managed"></a>Cómo se administra el grupo de cookies  
 Obviamente, el servidor LDAP está atendiendo a más de un cliente al mismo tiempo y también más de un cliente cada vez puede iniciar consultas que requieren el uso de la caché de cookies de servidor. Por lo tanto, la implementación de Windows Server ahí es un seguimiento del uso del grupo de cookies y se establecen límites para que el grupo de cookies no tome demasiados recursos. El Administrador puede establecer los límites mediante la siguiente configuración de la directiva LDAP. Los valores predeterminados y las explicaciones son:  
   
-**MinResultSets: 4**  
+@no__t 0MinResultSets: 4 @ no__t-0  
   
 El servidor LDAP no examinará el tamaño máximo del grupo que se describe a continuación, si hay menos de MinResultSets entradas en la caché de cookies del servidor.  
   
-**MaxResultSetSize: 262,144 bytes**  
+@no__t 0MaxResultSetSize: 262.144 bytes @ no__t-0  
   
 El tamaño total de caché de cookies en el servidor no puede superar el valor máximo de MaxResultSetSize en bytes. Si lo hace, se eliminan las cookies empezando por la más antigua hasta que el grupo es menor que MaxResultSetSize bytes o hay menos de MinResultSets cookies en el grupo. Esto significa que al usar la configuración predeterminada, el servidor LDAP considera que un grupo de 450 KB será correcto si solo hay 3 cookies almacenadas.  
   
-**MaxResultSetsPerConn: 10**  
+@no__t 0MaxResultSetsPerConn: 10 @ no__t-0  
   
 El servidor LDAP no permite más de MaxResultSetsPerConn cookies por conexión LDAP en el grupo.  
   
@@ -72,10 +72,10 @@ Algunas aplicaciones pueden pasar por una búsqueda de página y no completarla 
 ```  
   
 > [!NOTE]  
-> El valor hexadecimal detrás de "DSID" variará según la versión de compilación de los binarios del servidor LDAP.  
+> El valor hexadecimal que se encuentra detrás de "DSID" variará en función de la versión de compilación de los archivos binarios del servidor LDAP.  
   
 ## <a name="reporting-on-the-cookie-pool"></a>Informes sobre el grupo de cookies  
-El servidor LDAP tiene la capacidad de registrar eventos a través de la categoría "16 la interfaz Ldap" el [clave de diagnóstico NTDS](https://support.microsoft.com/kb/314980/en-us). Si establece esta categoría para "2", puede obtener los siguientes eventos:  
+El servidor LDAP tiene la capacidad de registrar eventos a través de la categoría "16 la interfaz LDAP" en la [clave de diagnóstico NTDS](https://support.microsoft.com/kb/314980/en-us). Si establece esta categoría en "2", puede obtener los siguientes eventos:  
   
 ```  
 Log Name:      Directory Service  
@@ -126,11 +126,11 @@ Los eventos 2898 y 2899 son las únicas maneras de saber que el servidor LDAP ha
   
 Si ve el evento 2898 en el servidor DC/LDAP, se recomienda establecer MaxResultSetsPerConn en 25. No es habitual que haya más de 25 búsquedas paginadas paralelas en una sola conexión LDAP. Si continúa viendo el evento 2898, considere la posibilidad de investigar la aplicación de cliente LDAP que encuentra el error. La conjetura sería que de algún modo se queda detenido al recuperar resultados paginados adicionales, deja la cookie pendiente y reinicia una nueva consulta. Por tanto, vea si la aplicación tendría en algún momento cookies suficientes para su finalidad; también puede aumentar el valor de MaxResultSetsPerConn más allá de 25. Cuando vea eventos 2899 registrados en los controladores de dominio, el plan sería diferente. Si su servidor DC/LDAP se ejecuta en una máquina con memoria suficiente (varios gigabytes de memoria libre), se recomienda establecer el MaxResultSetSize en el servidor LDAP en >= 250 MB Este límite es lo suficientemente grande como para dar cabida a grandes volúmenes de búsquedas de página LDAP incluso en directorios muy grandes.  
   
-Si todavía está viendo eventos 2899 con un grupo de 250 MB o más, probablemente tenga muchos clientes con un gran número de objetos devueltos, consultados con mucha frecuencia. Los datos que puede recopilar con el [Conjunto de recopiladores de datos de Active Directory](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) pueden ayudarle a encontrar consultas paginadas repetitivas que mantienen los servidores LDAP ocupados. Estas consultas se mostrarán con un número de "Entradas devueltas" que coincide con el tamaño de la página usada.  
+Si todavía está viendo eventos 2899 con un grupo de 250 MB o más, probablemente tenga muchos clientes con un gran número de objetos devueltos, consultados con mucha frecuencia. Los datos que puede recopilar con el [Conjunto de recopiladores de datos de Active Directory](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx) pueden ayudarle a encontrar consultas paginadas repetitivas que mantienen los servidores LDAP ocupados. Todas estas consultas se mostrarán con un número de "entradas devueltas" que coincida con el tamaño de la página usada.  
   
-Si es posible, se debe revisar el diseño de la aplicación e implementar un enfoque diferente con una frecuencia inferior, el volumen de datos o menos instancias de cliente consultar estos datos. En el caso de las aplicaciones para que tenga acceso al código de fuente, esta guía para [crear eficaces aplicaciones AD-Enabled](https://msdn.microsoft.com/library/ms808539.aspx) puede ayudarle a entender la forma óptima para las aplicaciones tengan acceso a AD.  
+Si es posible, debe revisar el diseño de la aplicación e implementar un enfoque diferente con una frecuencia inferior, un volumen de datos y/o menos instancias de cliente que consultan estos datos. En el caso de las aplicaciones para las que tiene acceso al código fuente, esta guía para [crear aplicaciones eficaces habilitadas para ad](https://msdn.microsoft.com/library/ms808539.aspx) puede ayudarle a entender la forma óptima para que las aplicaciones tengan acceso a ad.  
   
-Si no se puede cambiar el comportamiento de la consulta, un enfoque consiste en agregar también más instancias replicadas de los contextos de nombres necesarios y para redistribuir a los clientes y, finalmente, reducir la carga en los servidores LDAP individuales.  
+Si no se puede cambiar el comportamiento de la consulta, un enfoque también agrega más instancias replicadas de los contextos de nomenclatura necesarios y redistribuye los clientes y, finalmente, reduce la carga en los servidores LDAP individuales.  
   
 
 

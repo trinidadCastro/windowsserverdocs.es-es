@@ -1,9 +1,9 @@
 ---
 title: Implementación de un solo servidor de DirectAccess con la configuración avanzada
-description: Este tema forma parte de la Guía de implementación de un único servidor de DirectAccess con avanzada configuración para Windows Server 2016
+description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: b211a9ca-1208-4e1f-a0fe-26a610936c30
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f17e1c9dd1a4e2d064a4e5980904c524dc62fb72
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 8ccb91973dfb3493b534bdbc8fc4e2bcb26b26b8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283612"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404954"
 ---
 # <a name="deploy-a-single-directaccess-server-with-advanced-settings"></a>Implementación de un solo servidor de DirectAccess con la configuración avanzada
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema se proporciona una introducción al escenario de DirectAccess que usa un único servidor de DirectAccess y le permite implementar DirectAccess con configuración avanzada.  
+En este tema se proporciona una introducción al escenario de DirectAccess en el que se usa un único servidor de DirectAccess y que permite implementar DirectAccess con opciones avanzadas.  
   
 ## <a name="before-you-begin-deploying-see-the-list-of-unsupported-configurations-known-issues-and-prerequisites"></a>Antes de proceder a la implementación, consulte la siguiente lista de configuraciones no compatibles, problemas conocidos y requisitos previos.  
 Puede usar los temas siguientes para revisar los requisitos previos y otra información antes de implementar DirectAccess.  
@@ -33,7 +33,7 @@ Puede usar los temas siguientes para revisar los requisitos previos y otra infor
 -   [Requisitos previos para la implementación de DirectAccess](../../../remote-access/directaccess/Prerequisites-for-Deploying-DirectAccess.md)  
   
 ## <a name="BKMK_OVER"></a>Descripción del escenario  
-En este escenario, un equipo que ejecuta Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012, se configura como un servidor de DirectAccess con configuración avanzada.  
+En este escenario, un solo equipo que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012, se configura como un servidor de DirectAccess con configuración avanzada.  
   
 > [!NOTE]  
 > Si solo quieres configurar una implementación básica con la configuración sencilla, consulta [Implementar un único servidor de acceso remoto con el Asistente para introducción](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md). En el escenario de configuración sencilla, DirectAccess se configura con opciones de configuración predeterminadas mediante un asistente, sin necesidad de establecer la configuración de infraestructura, como una entidad de certificación (CA) o grupos de seguridad de Active Directory.  
@@ -76,17 +76,17 @@ Para obtener los pasos detallados de implementación, consulta [Install and Conf
 ## <a name="BKMK_APP"></a>Aplicaciones prácticas  
 La implementación de un único servidor de DirectAccess reporta lo siguiente:  
   
--   **Accesibilidad**. Equipos cliente administrados que ejecutan Windows 10, Windows 8.1, Windows 8 y Windows 7 pueden configurarse como equipos cliente de DirectAccess. Estos clientes pueden tener acceso a recursos de la red interna a través de DirectAccess en cualquier momento que estén ubicados en Internet sin necesidad de iniciar sesión con una conexión VPN. Los equipos cliente que no ejecuten uno de estos sistemas operativos pueden conectarse a la red interna a través de VPN.  
+-   **Accesibilidad**. Los equipos cliente administrados que ejecutan Windows 10, Windows 8.1, Windows 8 y Windows 7 pueden configurarse como equipos cliente de DirectAccess. Estos clientes pueden tener acceso a recursos de la red interna a través de DirectAccess en cualquier momento que estén ubicados en Internet sin necesidad de iniciar sesión con una conexión VPN. Los equipos cliente que no ejecuten uno de estos sistemas operativos pueden conectarse a la red interna a través de VPN.  
   
 -   **Administrabilidad**. Los equipos cliente de DirectAccess ubicados en Internet pueden administrarse de manera remota por administradores de acceso remoto en DirectAccess, aun cuando los equipos cliente no estén ubicados en la red corporativa interna. Los equipos cliente que no cumplan los requisitos corporativos pueden ser actualizados automáticamente por servidores de administración. Tanto DirectAccess como VPN se administran en la misma consola y con el mismo conjunto de asistentes. Además, se pueden administrar uno o más servidores de DirectAccess desde una sola consola de administración de acceso remoto.  
   
-## <a name="BKMK_NEW"></a>Roles y características necesarias para este escenario  
+## <a name="BKMK_NEW"></a>Roles y características necesarios para este escenario  
 En la siguiente tabla se recogen los roles y características necesarios en este escenario:  
   
 |Rol/característica|Compatibilidad con este escenario|  
 |---------|-----------------|  
-|Rol de acceso remoto|El rol se instala y desinstala con la consola del Administrador del servidor o con Windows PowerShell. Este rol engloba tanto DirectAccess como los Servicios de enrutamiento y acceso remoto (RRAS). El rol de acceso remoto consta de dos componentes:<br/><br/>1.  DirectAccess y VPN de RRAS. DirectAccess y VPN se administran conjuntamente en la consola de administración de acceso remoto.<br/>2.  Enrutamiento de RRAS. Las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<br /><br />El rol del servidor de acceso remoto depende de las siguientes características o roles del servidor:<br/><br/> -Internet Information Services (IIS) Web Server: esta característica es necesaria para configurar el servidor de ubicación de red en el servidor de DirectAccess y el sondeo web predeterminado.<br/> -Windows Internal Database. Se utiliza para las cuentas locales del servidor de DirectAccess.|  
-|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<br /><br />-Se instala de forma predeterminada en un servidor de DirectAccess cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de consola de administración remota y los cmdlets de Windows PowerShell.<br />-Se puede instalar opcionalmente en un servidor que no ejecuta el rol de servidor de DirectAccess. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<br /><br />La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<br /><br />-La opción remote Access interfaz gráfica de usuario)<br />-Módulo de acceso remoto para Windows PowerShell<br /><br />Las dependencias incluyen:<br /><br />: Consola de administración de directivas de grupo<br />-Kit de administración de Connection Manager (CMAK) de RAS<br />-Windows PowerShell 3.0<br />-Infraestructura y herramientas de administración gráfico|  
+|Rol de acceso remoto|El rol se instala y desinstala con la consola del Administrador del servidor o con Windows PowerShell. Este rol engloba tanto DirectAccess como los Servicios de enrutamiento y acceso remoto (RRAS). El rol de acceso remoto consta de dos componentes:<br/><br/>1.  DirectAccess y VPN de RRAS. DirectAccess y VPN se administran conjuntamente en la consola de administración de acceso remoto.<br/>2.  Enrutamiento de RRAS. Las características de enrutamiento RRAS se administran en la consola de enrutamiento y acceso remoto heredada.<br /><br />El rol del servidor de acceso remoto depende de las siguientes características o roles del servidor:<br/><br/> -Servidor web-Internet Information Services (IIS): esta característica es necesaria para configurar el servidor de ubicación de red en el servidor de DirectAccess y el sondeo Web predeterminado.<br/> -Windows Internal Database. Se usa para las cuentas locales en el servidor de DirectAccess.|  
+|Característica Herramientas de administración de acceso remoto|Esta característica se instala de la siguiente manera:<br /><br />-Se instala de forma predeterminada en un servidor de DirectAccess cuando se instala el rol de acceso remoto y es compatible con la interfaz de usuario de la consola de administración remota y con los cmdlets de Windows PowerShell.<br />-Se puede instalar opcionalmente en un servidor que no ejecute el rol de servidor de DirectAccess. En este caso, se usa para la administración remota de un equipo de acceso remoto que ejecuta DirectAccess y VPN.<br /><br />La característica de herramientas de administración de acceso remoto consiste de los siguientes elementos:<br /><br />-Interfaz gráfica de usuario (GUI) de acceso remoto<br />-Módulo de acceso remoto para Windows PowerShell<br /><br />Las dependencias incluyen:<br /><br />-Consola de administración de directivas de grupo<br />-Kit de administración del administrador de conexiones RAS (CMAK)<br />-Windows PowerShell 3,0<br />-Infraestructura y herramientas de administración de gráficos|  
   
 ## <a name="BKMK_HARD"></a>Requisitos de hardware  
 Los requisitos de hardware para este escenario incluyen los siguientes:  
@@ -110,7 +110,7 @@ Los requisitos de hardware para este escenario incluyen los siguientes:
     -   Un equipo cliente debe ejecutar Windows 10, Windows 8 o Windows 7.  
   
         > [!NOTE]  
-        > Los siguientes sistemas operativos se pueden usar como clientes de DirectAccess: Windows 10, Windows Server 2012 R2, Windows Server 2012, Windows 8 Enterprise, Windows 7 Enterprise o Ultimate de Windows 7.  
+        > Los siguientes sistemas operativos se pueden utilizar como clientes de DirectAccess: Windows 10, Windows Server 2012 R2, Windows Server 2012, Windows 8 Enterprise, Windows 7 Enterprise o Windows 7 Ultimate.  
   
 -   Requisitos de servidores de infraestructura y administración:  
   
@@ -141,17 +141,17 @@ Hay varios requisitos para este escenario:
         > Se recomienda crear un grupo de seguridad para cada dominio que contenga equipos cliente de DirectAccess.  
   
         > [!IMPORTANT]  
-        > Si habilitaste Teredo en la implementación de DirectAccess, y desea proporcionar acceso a los clientes de Windows 7, asegúrese de que los clientes se actualizan a Windows 7 con SP1. Los clientes que usan Windows 7 RTM no podrán conectarse a través de Teredo. pero sí seguir conectándose a la red corporativa mediante IP-HTTPS.  
+        > Si ha habilitado Teredo en la implementación de DirectAccess y desea proporcionar acceso a los clientes de Windows 7, asegúrese de que los clientes se actualizan a Windows 7 con SP1. Los clientes que usan Windows 7 RTM no podrán conectarse a través de Teredo. pero sí seguir conectándose a la red corporativa mediante IP-HTTPS.  
   
 ## <a name="BKMK_LINKS"></a>Vea también  
 En la siguiente tabla, se proporcionan los vínculos a recursos adicionales:  
   
 |Tipo de contenido|Referencias|  
 |--------|-------|  
-|**Implementación**|[Rutas de acceso de implementación de DirectAccess en Windows Server](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<br /><br />[Implementar un único servidor de DirectAccess mediante el Asistente para introducción](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
-|**Herramientas y configuración**|[Cmdlets de PowerShell de acceso remoto](https://technet.microsoft.com/library/hh918399.aspx)|  
-|**Recursos de la comunidad**|[Guía de supervivencia de DirectAccess](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<br /><br />[Entradas Wiki de DirectAccess](https://go.microsoft.com/fwlink/?LinkId=236871)|  
-|**Tecnologías relacionadas**|[Funcionamiento de IPv6](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
+|**Implementación**|[Rutas de acceso de implementación de DirectAccess en Windows Server](../../../remote-access/directaccess/DirectAccess-Deployment-Paths-in-Windows-Server.md)<br /><br />[Implementar un único servidor de DirectAccess con el Asistente para Introducción](../../../remote-access/directaccess/single-server-wizard/Deploy-a-Single-DirectAccess-Server-Using-the-Getting-Started-Wizard.md)|  
+|**Herramientas y configuración**|[Cmdlets de acceso remoto de PowerShell](https://technet.microsoft.com/library/hh918399.aspx)|  
+|**Recursos de la comunidad**|[Guía de supervivencia de DirectAccess](https://social.technet.microsoft.com/wiki/contents/articles/23210.directaccess-survival-guide.aspx)<br /><br />[Entradas de wiki de DirectAccess](https://go.microsoft.com/fwlink/?LinkId=236871)|  
+|**Tecnologías relacionadas**|[Cómo funciona IPv6](https://technet.microsoft.com/library/cc781672(v=WS.10).aspx)|  
   
 
 

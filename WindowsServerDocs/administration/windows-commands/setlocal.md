@@ -1,8 +1,8 @@
 ---
 title: setlocal
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70e58e3c3a7c3de594c620f7530816b57727d4c3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 997c996854f488bb1776f135e3288e3b094e683c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868866"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384090"
 ---
 # <a name="setlocal"></a>setlocal
 
 
 
-Inicia la localización de las variables de entorno en un archivo por lotes. La búsqueda continúa hasta que una coincidencia **endlocal** comando se encuentra o se alcanza el final del archivo por lotes.
+Inicia la localización de variables de entorno en un archivo por lotes. La localización continúa hasta que se encuentra un comando **endlocal** coincidente o hasta que se alcanza el final del archivo por lotes.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,36 +38,36 @@ setlocal [enableextensions | disableextensions] [enabledelayedexpansion | disabl
 
 |Argumento|Descripción|
 |--------|-----------|
-|enableextensions|Habilita las extensiones de comando hasta que la coincidencia de **endlocal** se encuentra el comando, independientemente de la configuración antes de la **setlocal** se ejecutó el comando.|
-|DISABLEEXTENSIONS|Deshabilita las extensiones de comando hasta que la coincidencia de **endlocal** se encuentra el comando, independientemente de la configuración antes de la **setlocal** se ejecutó el comando.|
-|enabledelayedexpansion|Permite la expansión de variables de entorno retrasada hasta que la coincidencia de **endlocal** se encuentra el comando, independientemente de la configuración antes de la **setlocal** se ejecutó el comando.|
-|disabledelayedexpansion|Deshabilita la expansión de variables de entorno retrasada hasta que la coincidencia de **endlocal** se encuentra el comando, independientemente de la configuración antes de la **setlocal** se ejecutó el comando.|
+|ENABLEEXTENSIONS|Habilita las extensiones de comando hasta que se encuentre el comando **endlocal** coincidente, independientemente de la configuración anterior a la ejecución del comando **setlocal** .|
+|disableextensions|Deshabilita las extensiones de comando hasta que se encuentre el comando **endlocal** coincidente, independientemente de la configuración anterior a la ejecución del comando **setlocal** .|
+|enabledelayedexpansion|Habilita la expansión de variables de entorno diferida hasta que se encuentre el comando **endlocal** coincidente, independientemente de la configuración anterior a la ejecución del comando **setlocal** .|
+|disabledelayedexpansion|Deshabilita la expansión de la variable de entorno diferida hasta que se encuentre el comando **endlocal** coincidente, independientemente de la configuración anterior a la ejecución del comando **setlocal** .|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Uso de **setlocal**
+-   Usar **setlocal**
 
-    Cuando usas **setlocal** fuera de un secuencia de comandos o archivo por lotes, no tiene ningún efecto.
--   Cambiar las variables de entorno
+    Cuando se usa **setlocal** fuera de un script o un archivo por lotes, no tiene ningún efecto.
+-   Cambio de variables de entorno
 
-    Use **setlocal** para cambiar las variables de entorno al ejecutar un archivo por lotes. Los cambios de entorno realizados después de ejecutar **setlocal** son locales en el archivo por lotes. El programa Cmd.exe restaura la configuración anterior cuando encuentra un **endlocal** comando o llega al final del archivo por lotes.
--   Comandos de anidamiento
+    Use **setlocal** para cambiar las variables de entorno cuando ejecute un archivo por lotes. Los cambios de entorno realizados después de ejecutar **setlocal** son locales para el archivo por lotes. El programa cmd. exe restaura la configuración anterior cuando encuentra un comando **endlocal** o alcanza el final del archivo por lotes.
+-   Anidar comandos
 
-    Puede tener más de un **setlocal** o **endlocal** comando en un programa por lotes (es decir, comandos anidados).
--   Las pruebas para las extensiones de comando en archivos por lotes
+    Puede tener más de un comando **setlocal** o **endlocal** en un programa por lotes (es decir, comandos anidados).
+-   Probar las extensiones de comandos en archivos por lotes
 
-    El **setlocal** comando establece la variable ERRORLEVEL. Si pasa {**enableextensions** | **disableextensions**} o {**enabledelayedexpansion**  |   **DISABLEDELAYEDEXPANSION**}, se establece la variable ERRORLEVEL en **0** (cero). En caso contrario, se establece en **1**. Puede usar esta información en scripts por lotes para determinar si las extensiones están disponibles, tal como se muestra en el ejemplo siguiente:  
+    El comando **setlocal** establece la variable errorlevel. Si pasa {**enableextensions** | **DISABLEEXTENSIONS**} o {**enabledelayedexpansion** | **disabledelayedexpansion**}, la variable ERRORLEVEL se establece en **0** (cero). De lo contrario, se establece en **1**. Puede usar esta información en scripts por lotes para determinar si las extensiones están disponibles, tal y como se muestra en el ejemplo siguiente:  
     ```
     setlocal enableextensions
     verify other 2>nul
     if errorlevel 1 echo Unable to enable extensions
     ```  
-    Dado que **cmd** no establece la variable ERRORLEVEL cuando se deshabilitan las extensiones de comando, el **comprobar** comando inicializa la variable ERRORLEVEL en un valor distinto de cero cuando se usa con un no válido argumento. Además, si usa el **setlocal** comando con argumentos {**enableextensions** | **disableextensions**} o {**enabledelayedexpansion**   |  **disabledelayedexpansion**} y no establece la variable ERRORLEVEL en **1**, las extensiones de comando no están disponibles.
+    Dado que **cmd** no establece la variable ERRORLEVEL cuando se deshabilitan las extensiones de comando, el comando **Verify** inicializa la variable ERRORLEVEL en un valor distinto de cero cuando se usa con un argumento no válido. Además, si usa el comando **setlocal** con argumentos {**ENABLEEXTENSIONS** | **disableextensions**} o {**enabledelayedexpansion** | **disabledelayedexpansion**} y no establece la variable ERRORLEVEL en **1**, las extensiones de comandos no están disponibles.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Puede localizar las variables de entorno en un archivo por lotes, como se muestra en el siguiente script de ejemplo:
+Puede localizar las variables de entorno en un archivo por lotes, tal y como se muestra en el siguiente script de ejemplo:
 ```
 rem *******Begin Comment**************
 rem This program starts the superapp batch program on the network,

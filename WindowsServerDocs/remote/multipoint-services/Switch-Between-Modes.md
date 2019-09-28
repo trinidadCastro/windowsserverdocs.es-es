@@ -1,8 +1,8 @@
 ---
 title: Cambiar entre modos
-description: Obtenga información sobre cómo cambiar entre el modo de estación y la consola en MultiPoint Services
+description: Obtenga información sobre cómo cambiar entre la estación y el modo de consola en Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,37 +13,37 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: a9c00d65ad1c59e91f4011ab932bf9f921957c59
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 181324bff3227f7b071b8ae32f756d365b059a74
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446150"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389244"
 ---
 # <a name="switch-between-modes"></a>Cambiar entre modos
-MultiPoint Manager incluye los siguientes modos para ayudarle a realizar diferentes tipos de administración del sistema MultiPoint Services:  
+Multipoint Manager incluye los siguientes modos para ayudarle a realizar diferentes tipos de administración del sistema Multipoint Services:  
   
--   *Modo de estación*: De forma predeterminada, el sistema MultiPoint Services se inicia en modo de estación. En el modo de estación, las estaciones de MultiPoint Services se comportan como si cada estación fuera un equipo independiente que ejecuta Windows y varios usuarios pueden usar el sistema a la vez. Usted y sus usuarios pueden compartir archivos y llevar a cabo las tareas que deben realizar.  
+-   *Modo de estación*: De forma predeterminada, el sistema Multipoint Services se inicia en modo de estación. En el modo de estación, las estaciones de MultiPoint Services se comportan como si cada estación fuera un equipo independiente que ejecuta Windows y varios usuarios pueden usar el sistema a la vez. Usted y sus usuarios pueden compartir archivos y llevar a cabo las tareas que deben realizar.  
   
--   *Modo de consola*: Cuando el sistema MultiPoint Services está en modo de consola, puede instalar y actualizar el software y los controladores o realizar otras tareas de mantenimiento. Cuando el sistema está en modo de consola, no está disponible ninguna *estación* para que la usen otros usuarios del equipo. No se muestran estas estaciones en MultiPoint Manager. Todos los monitores conectados directamente al servidor se tratan como pantallas de este equipo.   
+-   *Modo de consola*: Cuando el sistema Multipoint Services está en modo de consola, puede instalar y actualizar el software y los controladores o realizar otras tareas de mantenimiento. Cuando el sistema está en modo de consola, no está disponible ninguna *estación* para que la usen otros usuarios del equipo. Dichas estaciones no se muestran en Multipoint Manager. Todos los monitores conectados directamente al servidor se tratan como presentaciones de este sistema.   
   
 > [!NOTE]
 > Puede forzar el inicio del sistema en modo de consola al cambiar el valor predeterminado en la configuración del servidor.  
 > ## <a name="to-switch-from-station-mode-to-console-mode"></a>Cambiar del modo de estación al modo de consola  
   
-1.  Abra MultiPoint Manager en modo de estación y, a continuación, haga clic en el **inicio** ficha.  
+1.  Abra Multipoint Manager en modo de estación y, después, haga clic en la pestaña **Inicio** .  
   
 2.  En la columna **Equipo**, haga clic en el equipo del que quiere cambiar los modos.  
   
-3.  En *nombre_equipo* **tareas**, haga clic en **cambiar al modo de consola**. El equipo se reinicia y no hay ninguna estación disponible.  
+3.  En **tareas**de nombre de equipo, haga clic en **cambiar al modo de consola**. El equipo se reinicia y no hay ninguna estación disponible.  
   
 ## <a name="to-switch-from-console-mode-to-station-mode"></a>Cambiar del modo de consola al modo de estación  
   
-1.  Abra MultiPoint Manager en modo de consola y, a continuación, haga clic en el **inicio** ficha.  
+1.  Abra Multipoint Manager en el modo de consola y, a continuación, haga clic en la pestaña **Inicio** .  
   
 2.  En la columna **Equipo**, haga clic en el equipo del que quiere cambiar los modos.  
   
-3.  En *nombre_equipo* **tareas**, haga clic en **cambiar al modo de estación**. El equipo se reinicia y todas las estaciones están disponibles.  
+3.  En **tareas**de nombre de equipo, haga clic en **cambiar al modo de estación**. El equipo se reinicia y todas las estaciones están disponibles.  
   
 ## <a name="see-also"></a>Vea también  
 [Administrar tareas del sistema mediante MultiPoint Manager](Manage-System-Tasks-Using-MultiPoint-Manager.md)

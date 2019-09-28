@@ -1,54 +1,54 @@
 ---
 ms.assetid: 7f6b27e5-dc55-4ffc-8e76-6d57e65a870b
-title: 'Apéndice a: Glosario de Control de acceso dinámico'
+title: Apéndice A Dynamic Access Control Glosario
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b2044355812e95b9a5bfe90e33257f11ce78cf93
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5508c3397039a1a70c07f1dc5f29e06bd02234a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856706"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357609"
 ---
-# <a name="appendix-a-dynamic-access-control-glossary"></a>Apéndice A: Glosario de Control de acceso dinámico
+# <a name="appendix-a-dynamic-access-control-glossary"></a>Apéndice A: Glosario de Access Control dinámico
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Estos son la lista de términos y definiciones que se incluyen en el escenario de Control de acceso dinámico.  
+A continuación se muestra la lista de términos y definiciones que se incluyen en el escenario de Access Control dinámico.  
   
 |Término|Definición|  
 |--------|--------------|  
-|Clasificación automática|Clasificación que se produce según las propiedades de clasificación que vienen determinadas por las reglas de clasificación configuradas por un administrador.|  
-|CAPID|Identificador de directiva de acceso central. Este identificador hace referencia a una directiva de acceso central específica y se utiliza para hacer referencia a la directiva desde el descriptor de seguridad de archivos y carpetas.|  
+|Clasificación automática|Clasificación que se produce en función de las propiedades de clasificación determinadas por las reglas de clasificación configuradas por un administrador.|  
+|CAPID|IDENTIFICADOR de la Directiva de acceso central. Este identificador hace referencia a una directiva de acceso central específica y se usa para hacer referencia a la directiva desde el descriptor de seguridad de archivos y carpetas.|  
 |Regla de acceso central|Una regla que incluye una condición y una expresión de acceso.|  
-|Directiva de acceso central|Directivas que se crean y se hospedan en Active Directory.|  
-|Control de acceso basado en notificaciones|Un paradigma que utiliza notificaciones para tomar decisiones de control de acceso a los recursos.|  
-|Clasificación|El proceso de determinación de las propiedades de clasificación de recursos y asignación de estas propiedades a los metadatos que están asociados a los recursos. Vea también \h REF AutomaticClassification \\* la clasificación automática COMFORMATO, REF InheritedClassification \h \\ \* COMFORMATO heredan la clasificación y REF ManualClassification \h \\ \* Clasificación Manual COMFORMATO.|  
-|Notificación de dispositivo|Una notificación que está asociada con el sistema.  Con las notificaciones de usuario, se incluye en el símbolo (token) de un usuario intenta acceder a un recurso.|  
-|Lista de control de acceso discrecional (DACL)|Una lista de control de acceso que identifica los elementos de confianza que se permiten o deniegan el acceso a un recurso protegible. Se puede modificar a discreción del propietario del recurso.|  
-|Propiedad de recurso|Propiedades (por ejemplo, etiquetas) que describen un archivo y se asignan a los archivos mediante la clasificación automática o la clasificación manual. Algunos ejemplos son: Período de sensibilidad, proyecto y la retención.|  
-|Administrador de recursos del servidor de archivos|Una característica en el sistema operativo Windows Server que ofrece administración de cuotas de carpeta, filtrado de archivos, los informes de almacenamiento, la clasificación de archivos y los trabajos de administración de archivos en un servidor de archivos.|  
-|Las etiquetas y propiedades de la carpeta|Las propiedades y etiquetas que describen una carpeta y se asignan manualmente por los administradores y propietarios de las carpetas. Estas propiedades asignan valores de propiedad de predeterminada a los archivos dentro de estas carpetas, por ejemplo, la confidencialidad o el departamento.|  
-|Directiva de grupo|Un conjunto de reglas y directivas que controla el entorno de trabajo de usuarios y equipos en un entorno de Active Directory.|  
-|Cerca de la clasificación en tiempo real|Clasificación automática que se realiza poco después de que se crea o modifica un archivo.|  
-|Cerca de las tareas de administración de archivos en tiempo real|Tareas de administración que se realizan poco después de archivos (un archivo se crea o modifica. Estas tareas se desencadenan la clasificación casi en tiempo real.|  
-|Unidad organizativa (OU)|Un contenedor de Active Directory que representa las estructuras jerárquicas lógicas dentro de una organización. Es el ámbito más pequeño para la directiva de grupo de configuración se aplica.|  
-|Propiedad segura|Una propiedad de clasificación que puede confiar en el tiempo de ejecución de autorización para que sea una aserción válida sobre el recurso en un determinado en un momento. En el control de acceso basado en notificaciones, una propiedad segura que se asigna a un recurso se trata como una notificación de recursos.|  
-|descriptor de seguridad|Una estructura de datos que contiene información de seguridad asociada a un recurso protegible, como listas de control de acceso.|  
-|Lenguaje de definición de descriptores de seguridad|Una especificación que describe la información de un descriptor de seguridad como una cadena de texto.|  
-|Directiva de almacenamiento provisional|Una directiva de acceso central que no está aún en vigor.|  
-|Lista de control de acceso de sistema (SACL)|Una lista de control de acceso que especifica los tipos de personas de confianza determinadas para que los registros de auditoría deben generarse los intentos de acceso.|  
-|Notificación de usuario|Atributos de un usuario que se proporcionan en el token de seguridad del usuario. Algunos ejemplos son: Limpieza de departamento, compañía, proyecto y seguridad.  También se puede considerar la información del token de usuario desde sistemas anteriores a Windows Server 2012, como los grupos de seguridad que el usuario forma parte de las notificaciones de usuario. Se proporcionan algunas notificaciones de usuario a través de Active Directory y otros se calculan dinámicamente, por ejemplo, si el usuario ha iniciado sesión con una tarjeta inteligente.|  
-|Token de usuario|Un objeto de datos que identifica un usuario y las notificaciones de usuario y notificaciones de dispositivo que están asociadas a ese usuario. Sirve para autorizar el acceso del usuario a los recursos.|  
+|Directiva de acceso central|Las directivas que se crean y hospedan en Active Directory.|  
+|Control de acceso basado en notificaciones|Paradigma que emplea las notificaciones para tomar decisiones de control de acceso a los recursos.|  
+|Clasificación|Proceso de determinar las propiedades de clasificación de los recursos y asignar estas propiedades a los metadatos que están asociados a los recursos. Vea también REF AutomaticClassification \h \\ * MERGEFORMAT clasificación automática, REF InheritedClassification \h \\ @ no__t-2 clasificación heredada de comordenada y REF ManualClassification \h \\ @ no__t-4 MERGEFORMAT manual nomenclatura.|  
+|Notificaciones de dispositivo|Una demanda asociada al sistema.  Con las notificaciones de usuario, se incluye en el token de un usuario que intenta tener acceso a un recurso.|  
+|Lista de control de acceso discrecional (DACL)|Una lista de control de acceso que identifica a los usuarios de confianza a los que se permite o deniega el acceso a un recurso protegible. Se puede modificar a discreción del propietario del recurso.|  
+|Propiedad de recurso|Propiedades (como etiquetas) que describen un archivo y se asignan a archivos mediante la clasificación automática o la clasificación manual. Algunos ejemplos son: Sensibilidad, proyecto y período de retención.|  
+|Administrador de recursos del servidor de archivos|Característica del sistema operativo Windows Server que ofrece administración de cuotas de carpetas, filtrado de archivos, informes de almacenamiento, clasificación de archivos y trabajos de administración de archivos en un servidor de archivos.|  
+|Propiedades y etiquetas de la carpeta|Propiedades y etiquetas que describen una carpeta y que los administradores y propietarios de carpetas asignan manualmente. Estas propiedades asignan los valores de propiedad predeterminados a los archivos de estas carpetas, por ejemplo, la confidencialidad o el Departamento.|  
+|Directiva de grupo|Conjunto de reglas y directivas que controla el entorno de trabajo de usuarios y equipos en un entorno de Active Directory.|  
+|Clasificación casi en tiempo real|Clasificación automática que se realiza poco después de crear o modificar un archivo.|  
+|Tareas de administración de archivos casi en tiempo real|Tareas de administración de archivos que se realizan poco después (se crea o se modifica un archivo). Estas tareas se desencadenan por la clasificación casi en tiempo real.|  
+|Unidad organizativa (OU)|Active Directory contenedor que representa las estructuras lógicas jerárquicas dentro de una organización. Es el ámbito más pequeño al que se aplica la configuración de directiva de grupo.|  
+|Propiedad Secure|Propiedad de clasificación en la que el Runtime de autorización puede confiar para ser una aserción válida sobre el recurso en un momento determinado. En el control de acceso basado en notificaciones, una propiedad segura que se asigna a un recurso se trata como una notificación de recursos.|  
+|Descriptor de seguridad|Una estructura de datos que contiene información de seguridad asociada a un recurso protegible, como listas de control de acceso.|  
+|Lenguaje de definición de descriptores de seguridad|Especificación que describe la información de un descriptor de seguridad como una cadena de texto.|  
+|Directiva de ensayo|Una directiva de acceso central que aún no está en vigor.|  
+|Lista de control de acceso de sistema (SACL)|Una lista de control de acceso que especifica los tipos de intentos de acceso por parte de los datos de confianza específicos para los que se deben generar registros de auditoría.|  
+|Notificaciones de usuario|Atributos de un usuario que se proporcionan en el token de seguridad del usuario. Algunos ejemplos son: Departamento, compañía, proyecto y gálibo de seguridad.  La información del token de usuario de los sistemas anteriores a Windows Server 2012, como los grupos de seguridad de los que forma parte el usuario, también se puede considerar como notificaciones de usuario. Algunas notificaciones de usuario se proporcionan a través de Active Directory y otras se calculan dinámicamente, por ejemplo, si el usuario ha iniciado sesión con una tarjeta inteligente.|  
+|Token de usuario|Objeto de datos que identifica un usuario y las notificaciones de usuario y notificaciones de dispositivo asociadas a ese usuario. Se usa para autorizar el acceso del usuario a los recursos.|  
   
 ## <a name="see-also"></a>Vea también  
-[Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+[Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
 
 

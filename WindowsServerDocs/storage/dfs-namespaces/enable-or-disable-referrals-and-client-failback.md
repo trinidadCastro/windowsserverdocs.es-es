@@ -2,18 +2,18 @@
 title: Habilitar o deshabilitar las referencias y la conmutación por recuperación de clientes
 description: En este artículo se describe cómo habilitar o deshabilitar las referencias y la conmutación por recuperación de clientes.
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 20ac61f86ede938efd574fc6a048775437a51211
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e7dd11b530c61e2536db425d3e85e0fbe458d349
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835026"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386223"
 ---
 # <a name="enable-or-disable-referrals-and-client-failback"></a>Habilitar o deshabilitar las referencias y la conmutación por recuperación de clientes
 
@@ -39,11 +39,11 @@ Puedes impedir que se dirija a los usuarios a un servidor de espacio de nombres 
 
 
 > [!TIP]
-> Para habilitar o deshabilitar las referencias mediante el uso de Windows PowerShell, use el [conjunto DfsnRootTarget: estado](https://technet.microsoft.com/library/jj884266.aspx) o [conjunto DfsnServerConfiguration](https://technet.microsoft.com/library/jj884277.aspx) cmdlets, que se introdujeron en Windows Server 2012.
+> Para habilitar o deshabilitar las referencias mediante Windows PowerShell, use los cmdlets [set-DfsnRootTarget – State](https://technet.microsoft.com/library/jj884266.aspx) o [set-DfsnServerConfiguration](https://technet.microsoft.com/library/jj884277.aspx) , que se introdujeron en Windows Server 2012.
 
 ## <a name="enable-client-failback"></a>Habilitar la conmutación por recuperación de clientes
 
-Si un destino no está disponible, puede configurar los clientes para que conmuten por recuperación al destino en cuanto éste se restaure. La conmutación por recuperación funcione, los equipos cliente deben cumplir los requisitos enumerados en el tema siguiente: [Revise los requisitos del cliente de los espacios de nombres DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx).
+Si un destino no está disponible, puede configurar los clientes para que conmuten por recuperación al destino en cuanto éste se restaure. Para que la conmutación por recuperación funcione, los equipos cliente deben cumplir los requisitos que se indican en el tema siguiente: [Revise los requisitos del cliente de los espacios de nombres DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx).
 
 
 > [!NOTE]
@@ -70,6 +70,6 @@ Las carpetas con destinos heredan la configuración de conmutación por recupera
 
 ## <a name="see-also"></a>Vea también 
 
--   [Optimización de espacios de nombres DFS](tuning-dfs-namespaces.md)
--   [Revise los requisitos del cliente de los espacios de nombres DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
+-   [Ajustar espacios de nombres DFS](tuning-dfs-namespaces.md)
+-   [Revisar los requisitos del cliente de los espacios de nombres DFS](https://technet.microsoft.com/library/cc771913(v=ws.11).aspx)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)

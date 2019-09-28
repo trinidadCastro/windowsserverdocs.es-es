@@ -1,9 +1,9 @@
 ---
-title: Pasos para migrar servicios de MultiPoint
-description: Le guía por los pasos para migrar a MultiPoint Services en Windows Server 2016
+title: Pasos para migrar Multipoint Services
+description: Le guía por los pasos necesarios para migrar a multipoint Services en Windows Server 2016
 ms.custom: na
 ms.date: 07/29/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,39 +13,39 @@ ms.assetid: 3ee77efa-7cc5-4ddf-aaff-b5634a717014
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: b63ef4bf63ce990aa0b0ba7624905ba8f14dde98
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 862e9b70cfafa9de0928a4789c5d23dfa0fbb530
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854816"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389031"
 ---
-# <a name="migrate-to--multipoint-services-in-windows-server-2016"></a>Migrar a MultiPoint Services en Windows Server 2016
+# <a name="migrate-to--multipoint-services-in-windows-server-2016"></a>Migrar a multipoint Services en Windows Server 2016
 
 >Se aplica a: Windows Server 2016
 
-Utilice los siguientes pasos más la información que recopiló en la hoja de cálculo de planeación de migración para migrar a MultiPoint Services en Windows Server 2016.
+Use los pasos siguientes junto con la información que recopiló en la hoja de cálculo de planeamiento de la migración para migrar a multipoint Services en Windows Server 2016.
 
-## <a name="transfer-server-settings"></a>Transferir la configuración de servidor
-En el servidor de destino, abra MultiPoint Manager. Haga clic en **editar la configuración de servidor**. Aplicar la configuración de acuerdo con la hoja de cálculo de planeación de migración.
+## <a name="transfer-server-settings"></a>Transferir la configuración del servidor
+En el servidor de destino, abra Multipoint Manager. Haga clic en **Editar configuración del servidor**. Aplique la configuración de acuerdo con la hoja de cálculo de planeamiento de la migración.
 
 > [!NOTE]
-> Si tiene que habilitar la protección de disco en el servidor de destino, espere hasta después de configurar MultiPoint Services.
+> Si necesita habilitar la protección de disco en el servidor de destino, espere hasta que configure Multipoint Services.
 
-## <a name="transfer-station-settings"></a>Transferir la configuración de la estación
-Asegúrese de que las estaciones están conectadas al servidor de destino y a todas asignado antes de aplicar la configuración de la estación. Se detectarán automáticamente las estaciones. Siga las instrucciones en cada pantalla de la estación para definir la asignación de servidor de las estaciones de usuario y los dispositivos USB conectados. Aplicar la configuración de la estación preferido como se describe en la hoja de cálculo de planeación de migración.
+## <a name="transfer-station-settings"></a>Configuración de la estación de transferencia
+Asegúrese de que las estaciones estén conectadas al servidor de destino y todas se hayan asignado antes de aplicar la configuración de la estación. Las estaciones se detectarán automáticamente. Siga las instrucciones de cada pantalla de la estación para definir la asignación de servidor de las estaciones de usuario y los dispositivos USB conectados. Aplique la configuración de la estación que prefiera como se indica en la hoja de cálculo de planeamiento de la migración.
 
-## <a name="migrate-the-vdi-template"></a>Migrar la plantilla VDI
+## <a name="migrate-the-vdi-template"></a>Migración de la plantilla de VDI
 
-Para poder importar la plantilla VDI desde el servidor de origen, habilita escritorios virtuales del servidor de destino mediante MultiPoint Manager:
+Antes de poder importar la plantilla VDI desde el servidor de origen, habilite los escritorios virtuales en el servidor de destino mediante Multipoint Manager:
 
-1. Vaya a la **escritorios virtuales** ficha en MultiPoint Manager.
-2. Haga clic en **habilitado escritorios virtuales**. El servidor se instale el rol Hyper-V y, a continuación, reinicie.
-3. Abra MultiPoint Manager y vuelva a **escritorios virtuales**.
+1. Vaya a la pestaña **escritorios virtuales** de Multipoint Manager.
+2. Haga clic en **Habilitar escritorios virtuales**. El servidor instalará el rol de Hyper-V y, a continuación, se reiniciará.
+3. Abra Multipoint Manager y navegue de nuevo a **escritorios virtuales**.
 4. Haga clic en **Importar plantilla de escritorio virtual**. Siga las instrucciones para importar la plantilla desde el servidor de origen.
 
 > [!NOTE]
-> Al importar una plantilla de escritorio virtual, se restablecerá cualquier personalización que se aplica a la plantilla. 
+> Al importar una plantilla de escritorio virtual, se restablecerá cualquier personalización aplicada a la plantilla. 
 
 ## <a name="next-step"></a>Paso siguiente
-[Validar la nueva implementación de MultiPoint Services.](multipoint-services-post-migration-steps.md)
+[Valide la nueva implementación de Multipoint Services.](multipoint-services-post-migration-steps.md)

@@ -1,8 +1,8 @@
 ---
 title: bitsadmin setnotifyflags
-description: Tema de los comandos de Windows para **setnotifyflags bitsadmin** -establece el evento de marcas de notificación para el trabajo especificado.
+description: 'Windows Commands topic for **bitsadmin setnotifyflags** : establece las marcas de notificación de eventos para el trabajo especificado.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bc817e03e0f1916ea392830d14985a7a1377d69a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d9cfabf05610cbbe8fa65fd16b0d33e161dcef9b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59868796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380449"
 ---
 # <a name="bitsadmin-setnotifyflags"></a>bitsadmin setnotifyflags
 
-Establece el evento de marcas de notificación para el trabajo especificado.
+Establece las marcas de notificación de eventos para el trabajo especificado.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,18 +34,18 @@ bitsadmin /SetNotifyFlags <Job> <NotifyFlags>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
-|NotifyFlags|Vea la sección Comentarios|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
+|NotifyFlags|Ver comentarios|
 
 ## <a name="remarks"></a>Comentarios
 
-El **NotifyFlags** parámetro puede contener una o varias de las siguientes marcas de notificación.
+El parámetro **NotifyFlags** puede contener una o varias de las siguientes marcas de notificación.
 
-|---|---| | 1 | Generar un evento cuando se han transferido todos los archivos en el trabajo. | | 2 | Generar un evento cuando se produce un error. | | 4 | Deshabilitar las notificaciones. |
+|-----|-----| | 1 | Generar un evento cuando se hayan transferido todos los archivos del trabajo. | | 2 | Genera un evento cuando se produce un error. | | 4 | Deshabilitar notificaciones. |
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente establece las marcas de notificación para transferir y los eventos de error del trabajo de trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se establecen las marcas de notificación para el trabajo de eventos transferidos y de error para el trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /SetNotifyFlags myDownloadJob 3
 ```

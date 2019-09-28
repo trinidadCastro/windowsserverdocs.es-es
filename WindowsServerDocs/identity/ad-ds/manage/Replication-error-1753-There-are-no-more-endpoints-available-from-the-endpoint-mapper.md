@@ -7,18 +7,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 9c8efee98cc8128443d9c835ccc5cb6b7695a094
-ms.sourcegitcommit: a9625758fbfb066494fe62e0da5f9570ccb738a3
+ms.openlocfilehash: 64b479663dfc930ec9a6d2055b4c9ad5755b30fc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/12/2019
-ms.locfileid: "68952473"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389972"
 ---
 # <a name="replication-error-1753-there-are-no-more-endpoints-available-from-the-endpoint-mapper"></a>Error de replicación 1753: no hay más puntos de conexión disponibles desde el asignador de puntos de conexión
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 En este artículo se describen los síntomas, los pasos de la causa y la resolución de las operaciones de Active Directory que generan un error con Win32 1753: "No hay más extremos disponibles desde el asignador de extremos".
 
@@ -96,7 +96,7 @@ El comando **Replicar ahora** en Active Directory sitios y servicios devuelve "n
 Al hacer clic con el botón derecho en el objeto de conexión desde un controlador de dominio de origen y elegir **Replicar ahora** se produce el error "no hay más extremos disponibles desde el asignador de extremos".
 A continuación se muestra el mensaje de error en pantalla:
 
-Texto del título del cuadro de diálogo: Texto del mensaje de diálogo replicar ahora: Se produjo el siguiente error al intentar sincronizar el contexto \<de nomenclatura% nombre de la partición de directorio \<% > del DC de origen \<del controlador de dominio > con el DC de destino del controlador de dominio >:
+Texto del título del cuadro de diálogo: Texto del mensaje de diálogo replicar ahora: Se produjo el siguiente error al intentar sincronizar el contexto de nomenclatura \<% nombre de partición de directorio% > desde el controlador de dominio \<Source DC > al controlador de dominio \<Destination DC >:
 
 No hay más extremos disponibles desde el asignador de extremos.
 La operación no continuará
@@ -150,7 +150,7 @@ Comprobar que se ha iniciado el servicio que registra su servicio con el asignad
 
 Compruebe que el cliente RPC (DC de destino) está conectado al servidor RPC deseado (DC de origen).
 
-Todos los controladores de dominio de un bosque de Active Directory común registran un registro CNAME del controlador de dominio en el _ msdcs. \<dominio raíz del bosque > zona DNS independientemente del dominio en el que residen en el bosque. El registro CNAME de DC se deriva del atributo objectGUID del objeto de configuración NTDS para cada controlador de dominio.
+Todos los controladores de dominio de un bosque de Active Directory común registran un registro CNAME del controlador de dominio en el _ msdcs. \<forest dominio raíz > zona DNS independientemente del dominio en el que residen en el bosque. El registro CNAME de DC se deriva del atributo objectGUID del objeto de configuración NTDS para cada controlador de dominio.
 
 Al realizar operaciones basadas en la replicación, un controlador de dominio de destino consulta DNS para el registro CNAME de DC de origen. El registro CNAME contiene el nombre de equipo completo del DC de origen que se usa para derivar la dirección IP de los DC de origen a través de la búsqueda de caché del cliente DNS, la búsqueda de archivos host/LMHost, el host A/AAAA en DNS o WINS.
 
@@ -196,7 +196,7 @@ Si las pruebas anteriores o un seguimiento de red no muestran una consulta de no
 * Compruebe que la aplicación de servidor (Active Directory et al) se ha registrado con el asignador de extremos en el servidor RPC (DC de origen).
 * Active Directory usa una mezcla de puertos conocidos y registrados dinámicamente. En esta tabla se enumeran los puertos y protocolos conocidos usados por Active Directory controladores de dominio.
 
-| Aplicación de servidor RPC | Port | TCP | UDP |
+| Aplicación de servidor RPC | Puerto | TCP | UDP |
 | --- | --- | --- | --- |
 | Servidor DNS | 53 | X | X |
 | Kerberos | 88 | X | X |
@@ -295,11 +295,11 @@ Más adelante, el equipo miembro con la dirección IP x. x. 1.2 se promociona co
 
 Estas asignaciones de host a IP no válidas pueden deberse a entradas obsoletas en los archivos host/LMHost, los registros de host A/AAAA en DNS o WINS.
 
-Resumen: En este ejemplo se produjo un error porque una asignación de host a IP no válida (en el archivo de HOST en este caso) hizo que el controlador de dominio de destino se resolvera como un DC de "origen" que no tenía el servicio Active Directory Domain Services en ejecución (o incluso instalado para ese asunto) para que la replicación El SPN no se ha registrado aún y el controlador de dominio de origen devolvió el error 1753. En el segundo caso, una asignación de host a dirección IP no válida (de nuevo en el archivo HOST) causó que el controlador de dominio de destino se conectara a un controlador de dominio que había registrado el E351... SPN de replicación, pero el origen tenía un nombre de host y una identidad de seguridad distintos del DC de origen previsto para que se produjeron errores: 2146893022: El nombre de la entidad de seguridad de destino es incorrecto.
+Sumido En este ejemplo se produjo un error porque una asignación de host a IP no válida (en el archivo de HOST en este caso) hizo que el controlador de dominio de destino se resolvera como un DC de "origen" que no tenía el servicio Active Directory Domain Services en ejecución (o incluso instalado para ese asunto) para que la replicación El SPN no se ha registrado aún y el controlador de dominio de origen devolvió el error 1753. En el segundo caso, una asignación de host a dirección IP no válida (de nuevo en el archivo HOST) causó que el controlador de dominio de destino se conectara a un controlador de dominio que había registrado el E351... SPN de replicación, pero el origen tenía un nombre de host y una identidad de seguridad distintos del DC de origen previsto para que se produjeron errores: 2146893022: El nombre de la entidad de seguridad de destino es incorrecto.
 
 ## <a name="related-topics"></a>Temas relacionados
 
-* [Solución de problemas de operaciones de Active Directory que producen el error 1753: No hay más extremos disponibles desde el asignador de extremos.](https://support.microsoft.com/kb/2089874)
+* [Troubleshooting Active Directory operaciones que dan error 1753: No hay más extremos disponibles desde el asignador de extremos. ](https://support.microsoft.com/kb/2089874)
 * [Artículo de KB 839880 solución de errores del asignador de extremos de RPC con las herramientas de soporte de Windows Server 2003 desde el CD del producto](https://support.microsoft.com/kb/839880)
 * [Artículo de KB 832017 información general del servicio y requisitos de puerto de red para el sistema Windows Server](https://support.microsoft.com/kb/832017/)
 * [Artículo 224196 de Knowledge base sobre cómo restringir el tráfico de replicación de Active Directory y el tráfico RPC de cliente a un puerto específico](https://support.microsoft.com/kb/224196/)

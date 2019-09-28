@@ -1,7 +1,7 @@
 ---
 ms.assetid: 87174225-a60f-4718-b4cc-9b172f205b72
 title: Cambiar el historial de los temas de almacenamiento
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
@@ -9,12 +9,12 @@ manager: brianlic
 ms.author: jgerend
 ms.date: 08/19/2019
 description: Temas nuevos y actualizados de la documentación de almacenamiento local para Windows Server para profesionales de ti.
-ms.openlocfilehash: d5ab2d8ae4ca90e259f8bc996494439190bc5279
-ms.sourcegitcommit: e2b565ce85a97c0c51f6dfe7041f875a265b35dd
+ms.openlocfilehash: ce937dfb5c6c0b46c8085cbb202590567ea829d3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69584823"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393934"
 ---
 # <a name="change-history-for-storage-topics-in-windows-server"></a>Cambiar el historial de los temas de almacenamiento en Windows Server
 
@@ -60,7 +60,7 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 |---                                                         |---           |
 |[Problemas conocidos del servicio de migración de almacenamiento](storage-migration-service/known-issues.md)   | Se ha agregado un problema    |
 
-## <a name="january-2019"></a>Enero de 2019
+## <a name="january-2019"></a>2019 de enero
 
 |Tema nuevo o modificado                                        |Descripción|
 |---                                                         |---           |
@@ -103,7 +103,7 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 | [Servidor de destino iSCSI](iscsi/iscsi-target-server.md) | Se migró desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
 | [Límites de escalabilidad del servidor de destino iSCSI](iscsi/iscsi-target-server-limits.md) |Se migró desde la biblioteca de [versiones anterior](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012) .|
 
-## <a name="june-2018"></a>Junio de 2018
+## <a name="june-2018"></a>2018 de junio
 
 |Tema nuevo o modificado|Descripción|
 |---|---|
@@ -124,7 +124,7 @@ En este tema se enumeran los temas nuevos y actualizados de la documentación de
 |[Replicación de almacenamiento de servidor a servidor](storage-replica/server-to-server-storage-replication.md)|Se ha agregado información sobre el uso del centro de administración de Windows.|
 |[Problemas conocidos de réplica de almacenamiento](storage-replica/storage-replica-known-issues.md)|Se ha agregado nueva información.|
 
-## <a name="april-2018"></a>2018 de abril de 2018
+## <a name="april-2018"></a>Abril de 2018
 
 |Tema nuevo o modificado|Descripción|
 |---|---|

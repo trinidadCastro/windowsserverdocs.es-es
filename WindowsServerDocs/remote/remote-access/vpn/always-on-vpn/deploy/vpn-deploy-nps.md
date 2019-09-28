@@ -1,7 +1,7 @@
 ---
 title: Instalar y configurar el servidor NPS
 description: El procesamiento del servidor NPS de las solicitudes de conexión enviadas por el servidor VPN comprueba que el usuario tiene permiso para conectarse, la identidad del usuario y registra los aspectos de la solicitud de conexión que eligió al configurar cuentas RADIUS en NPS.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: ''
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 08/30/2018
-ms.openlocfilehash: 553f3327e6252d2b03744b2e0fc88f340701f3a9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5cb0d342afec9c28259efb7a2e15666358f3cb5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871334"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404260"
 ---
 # <a name="step-4-install-and-configure-the-network-policy-server-nps"></a>Paso 4. Instalación y configuración del servidor de directivas de redes (NPS)
 
@@ -88,7 +88,7 @@ Install-WindowsFeature NPAS -IncludeManagementTools
     
     En la página progreso de la instalación se muestra el estado durante el proceso de instalación. Una vez completado el proceso, se muestra el mensaje "instalación correcta en *NombreDeEquipo*", donde *NombreDeEquipo* es el nombre del equipo en el que instaló el servidor de directivas de redes.
 
-13. Seleccione **Cerrar**.
+13. Selecciona **Cerrar**.
 
 ## <a name="configure-nps"></a>Configuración de NPS
 
@@ -171,7 +171,7 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
 
 4. En especificar el servidor de acceso telefónico o VPN, en clientes RADIUS, seleccione el nombre del servidor VPN que agregó en el paso anterior. Por ejemplo, si el nombre NetBIOS del servidor VPN es RAS1, seleccione **RAS1**.
 
-5. Seleccione **Next** (Siguiente).
+5. Selecciona **Siguiente**.
 
 6. En configurar métodos de autenticación, realice los pasos siguientes:
 
@@ -191,7 +191,7 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
 
     7. Seleccione **Aceptar** para cerrar editar propiedades de EAP protegido.
 
-7. Seleccione **Next** (Siguiente).
+7. Selecciona **Siguiente**.
 
 8. En especificar grupos de usuarios, siga estos pasos:
 
@@ -199,7 +199,7 @@ En este procedimiento, configurará NPS como un servidor RADIUS en la red de la 
 
     2. Escriba **usuarios de VPN**y, luego, haga clic en **Aceptar**.
 
-    3. Seleccione **Next** (Siguiente).
+    3. Selecciona **Siguiente**.
 
 9. En especificar filtros IP, seleccione **siguiente**.
 

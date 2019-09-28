@@ -1,7 +1,7 @@
 ---
 title: Quitar servidores en Espacios de almacenamiento directo
 ms.assetid: 9d8499a7-1307-473d-9f00-8a051164fad2
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosdar
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,16 +10,16 @@ author: cosmosdarwin
 description: Cómo quitar servidores de un clúster de Espacios de almacenamiento directo en Windows Server.
 ms.date: 2/5/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: 9fcb67b3c5fbcff0ca2a48ee9a1d2e109af3e9a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: ce8caef2b51279c97cc012045750b7a73d97a4ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890786"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402808"
 ---
 # <a name="removing-servers-in-storage-spaces-direct"></a>Quitar servidores en Espacios de almacenamiento directo
 
->Se aplica a: Windows Server 2019, Windows Server 2016
+>Se aplica a: Windows Server 2019 y Windows Server 2016
 
 En este tema se describe cómo quitar servidores en [Espacios de almacenamiento directo](storage-spaces-direct-overview.md) mediante PowerShell.
 
@@ -81,4 +81,4 @@ En esta tabla se muestra el número mínimo de dominios de error necesario para 
 
 ## <a name="see-also"></a>Vea también
 
-- [Información general de espacios directo de almacenamiento](storage-spaces-direct-overview.md)
+- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)

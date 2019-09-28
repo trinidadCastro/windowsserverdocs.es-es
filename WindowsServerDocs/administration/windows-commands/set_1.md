@@ -1,8 +1,8 @@
 ---
 title: set
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 21661b30c5779907e8cac417439a0935a2126ad8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 12dce38bf8ad050c65a7a8c0fca4a71267cca93f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441273"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384105"
 ---
 # <a name="set"></a>set
 
 
 
-Muestra, Establece o quita CMD. Variables de entorno del archivo EXE. Si se utiliza sin parámetros, **establecer** muestra la configuración actual de la variable de entorno.
+Muestra, establece o quita CMD. Variables de entorno de EXE. Si se usa sin parámetros, **set** muestra la configuración actual de las variables de entorno.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -40,102 +40,102 @@ set /a <Variable>=<Expression>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<Variable>|Especifica la variable de entorno para establecer o modificar.|
-|\<String>|Especifica la cadena para asociar a la variable de entorno especificada.|
-|/p|Establece el valor de *Variable* a una línea de entrada especificado por el usuario.|
-|\<PromptString>|Opcional. Especifica un mensaje para pedir al usuario para la entrada. Este parámetro se usa con el **/p** opción de línea de comandos.|
-|/a|Conjuntos de *cadena* en una expresión numérica que se evalúa.|
-|\<expresión >|Especifica una expresión numérica. Vea la sección Comentarios para los operadores válidos que pueden usarse en *expresión*.|
+|@no__t 0Variable >|Especifica la variable de entorno que se va a establecer o modificar.|
+|@no__t 0String >|Especifica la cadena que se va a asociar a la variable de entorno especificada.|
+|/p|Establece el valor de la *variable* en una línea de entrada especificada por el usuario.|
+|@no__t 0PromptString >|Opcional. Especifica un mensaje para solicitar la intervención del usuario. Este parámetro se usa con la opción de línea de comandos **/p** .|
+|/a|Establece una *cadena* en una expresión numérica que se evalúa.|
+|@no__t 0Expression >|Especifica una expresión numérica. Vea la sección Comentarios para ver los operadores válidos que se pueden usar en la *expresión*.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-- Uso de **establecer** están habilitadas las extensiones de comando
+- Usar **set** con extensiones de comandos habilitadas
 
-  Cuando se habilitan las extensiones de comando (el valor predeterminado) y ejecutar **establecer** con un valor, muestra todas las variables que comienzan con ese valor.
-- Uso de caracteres especiales
+  Cuando se habilitan las extensiones de comando (valor predeterminado) y se ejecuta **set** con un valor, se muestran todas las variables que comienzan por ese valor.
+- Usar caracteres especiales
 
-  Los caracteres **<** , **>** , **|** , **&** , **^** son caracteres de shell de comandos especial, y deben ir precedidos por el carácter de escape ( **^** ) o entre comillas cuando se usa en *cadena* (por ejemplo, **"CadenaContiene & símbolo"** ). Si utiliza comillas para delimitar una cadena que contiene uno de los caracteres especiales, las comillas se establecen como parte del valor de variable de entorno.
+  Los caracteres **<** , **>** , **|** , **&** , **^** son caracteres de Shell de comandos especiales y deben ir precedidos del carácter de escape (**1**) o encerrarse entre comillas. Cuando se usa en una *cadena* (por ejemplo, **"StringContaining & Symbol"** ). Si utiliza comillas para incluir una cadena que contenga uno de los caracteres especiales, las comillas se establecerán como parte del valor de la variable de entorno.
 - Usar variables de entorno
 
-  Usar variables de entorno para controlar el comportamiento de algunos programas y archivos por lotes y para controlar la manera Windows y el subsistema de MS-DOS aparece y funciona. El **establecer** comando a menudo se usa en el archivo Autoexec.nt para establecer las variables de entorno.
+  Utilice variables de entorno para controlar el comportamiento de algunos archivos y programas por lotes y para controlar la manera en que Windows y el subsistema MS-DOS aparecen y funcionan. El comando **set** se usa a menudo en el archivo Autoexec. NT para establecer variables de entorno.
 - Mostrar la configuración del entorno actual
 
-  Cuando se escribe el **establecer** comando por sí solo, se muestra la configuración del entorno actual. Normalmente, estas opciones incluyen las variables de entorno COMSPEC y ruta de acceso, que se usan para buscar programas en el disco. Windows usa las variables de entorno son el símbolo del sistema y DIRCMD.
-- Uso de parámetros
+  Al escribir el comando **set** por sí solo, se muestra la configuración del entorno actual. Estos valores suelen incluir las variables de entorno comspec y PATH, que se usan para buscar programas en el disco. Otras dos variables de entorno usadas por Windows son PROMPT y DIRCMD.
+- Usar parámetros
 
-  Al especificar valores para *Variable* y *cadena*, especificado *variable* valor se agrega al entorno y *cadena* es asociado a esa variable. Si la variable ya existe en el entorno, el nuevo valor de cadena reemplaza el valor de cadena antiguos.
+  Cuando se especifican valores para *variable* y *cadena*, el valor de la *variable* especificada se agrega al entorno y la *cadena* se asocia a esa variable. Si la variable ya existe en el entorno, el nuevo valor de cadena reemplaza el valor de cadena anterior.
 
-  Si especifica solamente una variable y un signo igual (sin *cadena*) para el **establecer** comando, el *cadena* se borra el valor asociado a la variable (como si la variable no existe).
-- Uso de **/a**
+  Si especifica solo una variable y un signo igual (sin *cadena*) para el comando **set** , se borra el valor de *cadena* asociado a la variable (como si la variable no estuviera allí).
+- Usar **/a**
 
-  En la tabla siguiente se enumera los operadores admitidos para **/a** en orden descendente de prioridad.  
+  En la tabla siguiente se enumeran los operadores admitidos para **/a** en orden descendente de prioridad.  
 
   |        Operador         | Operación realizada  |
   |-------------------------|----------------------|
   |           ( )           |       Agrupar       |
   |          ! ~ -          |        Unario         |
-  |         \* / %          |      operaciones aritméticas      |
-  |           + -           |      operaciones aritméticas      |
-  |          << >>          |    Desplazamiento lógico     |
-  |            &            |     AND bit a bit      |
-  |            ^            | Bit a bit OR exclusivo |
+  |         \*/%          |      Operador      |
+  |           + -           |      Operador      |
+  |          < < > >          |    Desplazamiento lógico     |
+  |            &            |     And bit a bit      |
+  |            ^            | Or exclusivo bit a bit |
   |                         |                      |
-  | = \*= /= %= += -= &= ^= |      = <<= >>=       |
-  |            ,            | Separador de expresiones |
+  | =  @ no__t-1 =/=% = + =-= & = ^ = |      = < < = > > =       |
+  |            ,            | Separador de expresión |
 
-  Si usas lógico ( **&&** o **||** ) o de módulo ( **%** ) de los operadores, escriba la cadena de expresión entre comillas. Cualquier cadena no numérico de la expresión se considera nombres de variable de entorno y sus valores se convierten a números antes de ser procesados. Si especifica un nombre de variable de entorno que no está definido en el entorno actual, se asigna un valor de cero, lo que permite realizar operaciones aritméticas con valores de variables de entorno sin utilizar % para recuperar un valor.
+  Si usa operadores lógicos ( **&&** o **||** ) o módulo ( **%** ), incluya la cadena de expresión entre comillas. Las cadenas no numéricas de la expresión se consideran nombres de variable de entorno y sus valores se convierten en números antes de que se procesen. Si especifica un nombre de variable de entorno que no está definido en el entorno actual, se asigna un valor de cero, lo que le permite realizar operaciones aritméticas con valores de variables de entorno sin usar% para recuperar un valor.
 
-  Si ejecuta **set /a** desde la línea de comandos fuera de una secuencia de comandos, muestra el valor final de la expresión.
+  Si ejecuta **set/a** desde la línea de comandos fuera de un script de comandos, muestra el valor final de la expresión.
 
-  Los valores numéricos son números decimales comprendidos a menos que el prefijo 0 x para números hexadecimales o 0 para números octales. Por lo tanto, 0 x 12 es igual a 18, que es el mismo que 022.
-- Compatibilidad con la expansión de variables de entorno retrasada
+  Los valores numéricos son números decimales a menos que estén precedidos por 0 × para números hexadecimales o 0 para números octales. Por lo tanto, 0 × 12 es igual que 18, que es igual que 022.
+- Compatibilidad con la expansión de variables de entorno diferida
 
-  Compatibilidad con la expansión de variables de entorno retrasada está deshabilitada de forma predeterminada, pero puede habilitar o deshabilitar utilizando **cmd /v**.
-- Trabajar con las extensiones de comando
+  La compatibilidad con la expansión de variables de entorno diferida está deshabilitada de forma predeterminada, pero puede habilitarla o deshabilitarla mediante **cmd/v**.
+- Trabajar con extensiones de comandos
 
-  Cuando se habilitan las extensiones de comando (el valor predeterminado) y ejecutar **establecer** por sí solo, muestra todas las variables de entorno actual. Si ejecuta **establecer** con un valor, se muestran las variables que coinciden con ese valor.
-- Uso de **establecer** en archivos por lotes
+  Cuando las extensiones de comando están habilitadas (valor predeterminado) y se ejecuta **set** Byly, se muestran todas las variables de entorno actuales. Si ejecuta **set** con un valor, se muestran las variables que coinciden con ese valor.
+- Usar **set** en archivos por lotes
 
-  Al crear archivos por lotes, puede usar **establecer** crear variables y, a continuación, utilizarlas en la misma manera que utilizaría las variables numeradas **%0** a través de **%9**. También puede usar las variables **%0** a través de **%9** como entrada para **establecer**.
-- Una llamada a un **establecer** variable desde un archivo por lotes
+  Al crear archivos por lotes, puede usar **set** para crear variables y, a continuación, utilizarlos de la misma manera que usaría las variables numeradas **% 0** hasta **% 9**. También puede usar las variables **% 0** a **% 9** como entrada para **set**.
+- Llamar a una variable **set** desde un archivo por lotes
 
-  Cuando se llama a un valor de la variable desde un archivo por lotes, incluya el valor con signos de porcentaje ( **%** ). Por ejemplo, si el programa por lotes crea una variable de entorno denominada BAUD, puede usar la cadena asociada con la velocidad en baudios como un parámetro reemplazable escribiendo **baudios %** en el símbolo del sistema.
-- Uso de **establecer** en la consola de recuperación
+  Cuando llame a un valor de variable desde un archivo por lotes, incluya el valor entre signos de porcentaje ( **%** ). Por ejemplo, si el programa por lotes crea una variable de entorno denominada BAUD, puede usar la cadena asociada a BAUD como parámetro reemplazable escribiendo **% Baud%** en el símbolo del sistema.
+- Usar **set** en la consola de recuperación
 
-  El **establecer** comando, con diferentes parámetros, está disponible en la consola de recuperación.
+  El comando **set** , con diferentes parámetros, está disponible en la consola de recuperación.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para establecer una variable de entorno llamada TEST ^ 1, escriba:
+Para establecer una variable de entorno denominada TEST ^ 1, escriba:
 ```
 set testVar=test^^1
 ```
 
 > [!NOTE]
-> El **establecer** comando asigna todo lo que sigue el signo igual (=) en el valor de la variable. Si escribe:
+> El comando **set** asigna todo lo que sigue al signo igual (=) al valor de la variable. Si escribe:
 > ```
 > set testVar="test^1"
 > ```
-> Obtiene el siguiente resultado:
+> Obtendrá el siguiente resultado:
 > ```
 > testVar="test^1"
 > ```
-> Para establecer una variable de entorno llamada TEST & 1, escriba:
+> Para establecer una variable de entorno denominada TEST & 1, escriba:
 > ```
 > set testVar=test^&1
 > ```
-> Para establecer una variable de entorno denominada INCLUDE para que la cadena C:\Inc (el directorio \Inc en la unidad C) está asociada a ella, escriba:
+> Para establecer una variable de entorno denominada INCLUDE, de modo que la cadena C:\Inc (el directorio \Inc de la unidad C) esté asociada a ella, escriba:
 > ```
 > set include=c:\inc
 > ```
-> A continuación, puede usar la cadena C:\Inc en archivos por lotes, incluya el nombre de la inclusión con signos de porcentaje ( **%** ). Por ejemplo, es posible que incluya el siguiente comando en un archivo por lotes para que pueda mostrar el contenido del directorio que está asociado a la variable de entorno INCLUDE:
+> Después, puede usar la cadena C:\Inc en los archivos por lotes, para lo que debe incluir signos de porcentaje ( **%** ). Por ejemplo, puede incluir el siguiente comando en un archivo por lotes para que pueda mostrar el contenido del directorio asociado a la variable de entorno INCLUDE:
 > ```
 > dir %include%
 > ```
-> Cuando se procesa este comando, la cadena C:\Inc reemplaza **% include %** .
+> Cuando se procesa este comando, la cadena C:\Inc reemplaza **% include%** .
 
-También puede usar **establecer** en un programa por lotes que se agrega un nuevo directorio a la variable de entorno PATH. Por ejemplo:
+También puede usar **set** en un programa por lotes que agregue un nuevo directorio a la variable de entorno PATH. Por ejemplo:
 ```
 @echo off
 rem ADDPATH.BAT adds a new directory
@@ -149,7 +149,7 @@ set p
 ```
 
 > [!NOTE]
-> Este comando requiere las extensiones de comando, que están habilitadas de forma predeterminada.
+> Este comando requiere extensiones de comandos, que están habilitadas de forma predeterminada.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

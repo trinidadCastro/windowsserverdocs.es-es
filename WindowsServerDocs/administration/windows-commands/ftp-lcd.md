@@ -1,8 +1,8 @@
 ---
-title: ftp lcd
-description: 'Tema de los comandos de Windows para ***- '
+title: LCD de FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: eac028c8aa675e680dedefcfe9f0b8da18ce7179
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 47058cc62e4e87d1fcd951ec3b4a7885eeef2ae2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826896"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376308"
 ---
-# <a name="ftp-lcd"></a>ftp: lcd
+# <a name="ftp-lcd"></a>FTP: LCD
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-cambia el directorio de trabajo en el equipo local. De forma predeterminada, el directorio de trabajo es el directorio en el que **ftp** se inició.   
+cambia el directorio de trabajo en el equipo local. De forma predeterminada, el directorio de trabajo es el directorio en el que se inició **FTP** .   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 lcd [<directory>]  
@@ -32,9 +32,9 @@ lcd [<directory>]
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|[<directory>]|Especifica el directorio en el equipo local que se va a cambiar. Si *directorio* no se especifica, se cambia el directorio de trabajo actual en el directorio predeterminado.|  
-## <a name="BKMK_Examples"></a>Ejemplos  
-Cambie el directorio de trabajo en el equipo local para **C:\dir1**  
+|[<directory>]|Especifica el directorio del equipo local al que se va a cambiar. Si no se especifica *Directory* , el directorio de trabajo actual se cambia al directorio predeterminado.|  
+## <a name="BKMK_Examples"></a>Example  
+Cambie el directorio de trabajo en el equipo local a **C:\dir1**  
 ```  
 lcd C:\dir1  
 ```  

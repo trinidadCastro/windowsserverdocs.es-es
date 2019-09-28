@@ -2,7 +2,7 @@
 ms.assetid: 20dff664-2370-469b-96a8-df1acf7c7f12
 title: Recursos adicionales
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.service: ''
 ms.suite: na
@@ -13,36 +13,36 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
-ms.openlocfilehash: e50527358dbffa36f8f14e290a548568e3d0635e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 36fb987bae28edc6745227bc9ce9a51d16cce9b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66443263"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391139"
 ---
 # <a name="additional-resources"></a>Recursos adicionales
 
 >Se aplica a: Windows Server
 
-Para obtener información detallada sobre cómo usar Repadmin.exe para administrar la replicación de Active Directory, vea el siguiente recurso: 
+Para obtener información detallada acerca del uso de repadmin. exe para administrar Active Directory replicación, vea el siguiente recurso: 
 
-- [Supervisión y solución de problemas de replicación de Active Directory con Repadmin](https://go.microsoft.com/fwlink/?LinkId=122830)
+- [Supervisión y solución de problemas de replicación Active Directory mediante repadmin](https://go.microsoft.com/fwlink/?LinkId=122830)
 
-Para obtener información acerca de los eventos específicos que se registran para problemas de Active Directory, consulte el siguiente recurso:
+Para obtener información acerca de los eventos específicos que se registran para los problemas de Active Directory, vea el recurso siguiente:
 
 - [Active Directory](https://go.microsoft.com/fwlink/?LinkId=122877)
 
-Para obtener información sobre problemas conocidos y prácticas recomendadas de Active Directory, consulte los siguientes recursos:
+Para obtener información acerca de Active Directory problemas conocidos y prácticas recomendadas, consulte los siguientes recursos:
 
-- [Problemas conocidos para la creación de dominios y confianzas de bosque](https://go.microsoft.com/fwlink/?LinkId=128784)
-- [Procedimientos recomendados para administrar dominios y confianzas de bosque](https://go.microsoft.com/fwlink/?LinkId=128785)
-- [Problemas conocidos de la copia de seguridad de servicios de dominio de Active Directory](https://go.microsoft.com/fwlink/?LinkId=128793)
-- [Problemas conocidos de restauración autoritativa](https://go.microsoft.com/fwlink/?LinkId=128788)
-- [Procedimientos recomendados para una restauración autoritativa](https://go.microsoft.com/fwlink/?LinkId=128791) 
-- [Problemas conocidos para agregar controladores de dominio en sitios remotos](https://go.microsoft.com/fwlink/?LinkId=128794)
+- [Problemas conocidos de la creación de confianzas de bosque y dominio](https://go.microsoft.com/fwlink/?LinkId=128784)
+- [Prácticas recomendadas para administrar confianzas de dominio y bosque](https://go.microsoft.com/fwlink/?LinkId=128785)
+- [Problemas conocidos de la copia de seguridad de Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=128793)
+- [Problemas conocidos de la restauración autoritativa](https://go.microsoft.com/fwlink/?LinkId=128788)
+- [Prácticas recomendadas para la restauración autoritativa](https://go.microsoft.com/fwlink/?LinkId=128791) 
+- [Problemas conocidos de la adición de controladores de dominio en sitios remotos](https://go.microsoft.com/fwlink/?LinkId=128794)
 - [Prácticas recomendadas para agregar controladores de dominio en sitios remotos](https://go.microsoft.com/fwlink/?LinkId=128796)
 
-Para obtener información general acerca de cómo administrar y configurar servicios de dominio de Active Directory (AD DS) y cómo funciona, consulte los siguientes recursos:
+Para obtener información general sobre cómo administrar y configurar Active Directory Domain Services (AD DS) y cómo funciona, vea los siguientes recursos:
 
-- [Administración de operaciones de Active Directory](https://go.microsoft.com/fwlink/?LinkId=128798)
-- [Recopilación de Active Directory](https://go.microsoft.com/fwlink/?LinkId=34157)
+- [Administrar operaciones de Active Directory](https://go.microsoft.com/fwlink/?LinkId=128798)
+- [Active Directory colección](https://go.microsoft.com/fwlink/?LinkId=34157)

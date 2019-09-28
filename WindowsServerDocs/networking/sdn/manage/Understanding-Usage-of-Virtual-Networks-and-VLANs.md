@@ -1,9 +1,9 @@
 ---
-title: Entender el uso de las redes virtuales y VLAN
-description: En este tema, obtendrá información sobre redes virtuales de virtualización de red de Hyper-V y cómo se diferencian de redes de área local virtuales (VLAN). Con la virtualización de red de Hyper-V, cree redes virtuales de superposición, también llamadas redes virtuales.
+title: Comprender el uso de redes virtuales y VLAN
+description: En este tema, obtendrá información sobre las redes virtuales de virtualización de red de Hyper-V y cómo se diferencian de las redes de área local virtual (VLAN). Con virtualización de red de Hyper-V, cree redes virtuales de superposición, también denominadas redes virtuales.
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -13,32 +13,32 @@ ms.assetid: 84ac2458-3fcf-4c4f-acfe-6105443dd83f
 ms.author: pashort
 author: shortpatti
 ms.date: 08/26/2018
-ms.openlocfilehash: d126e97a91e4c61ecff00cc2b5a527618b2d4d0f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 854adf0e7bb2a8715e3d447c04e2f09c3470a781
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875536"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355827"
 ---
-# <a name="understand-the-usage-of-virtual-networks-and-vlans"></a>Entender el uso de las redes virtuales y VLAN
+# <a name="understand-the-usage-of-virtual-networks-and-vlans"></a>Comprender el uso de redes virtuales y VLAN
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema, obtendrá información sobre redes virtuales de virtualización de red de Hyper-V y cómo se diferencian de redes de área local virtuales (VLAN). Con la virtualización de red de Hyper-V, cree redes virtuales de superposición, también llamadas redes virtuales.
+En este tema, obtendrá información sobre las redes virtuales de virtualización de red de Hyper-V y cómo se diferencian de las redes de área local virtual (VLAN). Con virtualización de red de Hyper-V, cree redes virtuales de superposición, también denominadas redes virtuales.
 
 
 
   
-Definidas por software Networking (SDN) en Windows Server 2016 se basa en la directiva de redes virtuales de superposición en un conmutador Virtual de Hyper-V de programación. Puede crear redes virtuales de superposición, también llamadas redes virtuales, con virtualización de red de Hyper-V. 
+Las redes definidas por software (SDN) en Windows Server 2016 se basan en la Directiva de programación para redes virtuales de superposición en un conmutador virtual de Hyper-V. Puede crear redes virtuales de superposición, también denominadas redes virtuales, con virtualización de red de Hyper-V. 
   
-Al implementar la virtualización de red de Hyper-V, se crean redes superpuestas encapsulando el marco de Ethernet de capa 2 de los inquilinos la máquina virtual original con una superposición - o túnel - encabezado (por ejemplo, VXLAN o NVGRE) y 3 de la capa IP y Ethernet de capa 2 red de los encabezados del subposición (o físicos). Las redes virtuales de superposición se identifican por un 24 bits Virtual Network identificador (VNI) para mantener el aislamiento del tráfico de inquilinos y para permitir direcciones IP superpuestas. El VNI se compone de una subred virtual ID (VSID), el identificador de conmutador lógico y el identificador de túnel.  
+Al implementar la virtualización de red de Hyper-V, las redes de superposición se crean encapsulando el fotograma de Ethernet de capa 2 de la máquina virtual de inquilino original con un encabezado de túnel o de superposición (por ejemplo, VXLAN o NVGRE) y una dirección IP de nivel 3 y Ethernet de capa 2. encabezados de la red proporcionaban (o física). Las redes virtuales de superposición se identifican mediante un identificador de Virtual Network de 24 bits (VNI) para mantener el aislamiento del tráfico de inquilinos y permitir direcciones IP superpuestas. El VNI se compone de un identificador de subred virtual (un identificador de red), un identificador de conmutador lógico y un identificador de túnel.  
   
-Además, cada inquilino se asigna a un dominio de enrutamiento (similar a enrutamiento virtual y reenvío - VRF) para que varios prefijos de subred virtual (cada uno representado por un VNI) se pueden enrutar directamente entre sí. Varios inquilinos (o entre dominios de enrutamiento) no se admite el enrutamiento sin pasar por una puerta de enlace.   
+Además, a cada inquilino se le asigna un dominio de enrutamiento (similar a enrutamiento virtual y reenvío-VRF) para que se puedan enrutar directamente entre sí varios prefijos de subred virtual (cada uno representado por un VNI). No se admite el enrutamiento entre inquilinos (o el dominio de enrutamiento cruzado) sin pasar por una puerta de enlace.   
   
-La red física en el que se abren el tráfico encapsulado cada inquilino se representa mediante una red lógica denominada la red lógica del proveedor. Esta red lógica del proveedor se compone de una o varias subredes, cada uno representado por un prefijo IP y, opcionalmente, una VLAN 802.1q etiqueta.  
+La red física en la que se tuneliza el tráfico encapsulado de cada inquilino se representa mediante una red lógica denominada red lógica del proveedor. Esta red lógica de proveedor se compone de una o varias subredes, cada una de ellas representada por un prefijo IP y, opcionalmente, una etiqueta 802.1 q de VLAN.  
   
-Puede crear redes lógicas adicionales y las subredes por motivos de infraestructura transportar el tráfico de administración, el tráfico de almacenamiento en vivo tráfico de migración, etcetera.  
+Puede crear redes lógicas y subredes adicionales a efectos de infraestructura para llevar el tráfico de administración, el tráfico de almacenamiento, el tráfico de migración en vivo, etc.  
   
-Microsoft SDN no admite el aislamiento de redes de inquilinos mediante el uso de VLAN. Aislamiento de inquilinos se consigue únicamente mediante el uso de las redes virtuales de superposición de virtualización de red de Hyper-V y la encapsulación. 
+Microsoft SDN no admite el aislamiento de redes de inquilinos mediante el uso de VLAN. El aislamiento de inquilinos se logra únicamente mediante el uso de la encapsulación y las redes virtuales de superposición de virtualización de red de Hyper-V. 
 
 

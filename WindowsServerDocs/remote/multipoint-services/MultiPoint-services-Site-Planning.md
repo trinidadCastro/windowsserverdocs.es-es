@@ -3,7 +3,7 @@ title: Planeación del sitio de MultiPoint Services
 description: Información de planeación para implementaciones de Multipoint Services en Windows Server 2016
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 063783cd-d748-489e-b175-46eadc993f7a
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 3d49b2861d81a938fb20544c3edeb0976ac6d327
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 744e49f47f7144dac82dbe68c885060b0c08490d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871645"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389596"
 ---
 # <a name="multipoint-services-site-planning"></a>Planeación del sitio de MultiPoint Services
 Debe considerar la ubicación en la que se implementarán uno o más equipos que ejecuten Multipoint Services y sus estaciones asociadas.  
@@ -116,7 +116,7 @@ Los concentradores intermedios deben ser USB 2,0 o posterior, y deben alimentars
 ### <a name="downstream-hubs"></a>Downstream hubs  
 Un concentrador de bajada se conecta a un concentrador de estaciones para agregar más puertos disponibles para los dispositivos de estación. Un concentrador de bajada puede alimentarse externamente o de bus, dependiendo de los dispositivos que estén conectados al concentrador.  
   
-![Varias conexiones de cliente USB sin conexión](./media/WMS_diagram4.gif "WMS_diagram4")  
+![Varias conexiones de cliente USB sin](./media/WMS_diagram4.gif "WMS_diagram4")  
   
 **Figura 7** Sistema Multipoint Services con un concentrador intermedio, un concentrador de estaciones y un concentrador de nivel inferior  
   
@@ -126,7 +126,7 @@ El número de estaciones que necesitará depende del número de personas que ten
 ## <a name="power-considerations"></a>Consideraciones de energía  
 Los componentes siguientes requieren acceso a una franja de alimentación o una toma:  
   
--   Server  
+-   Servidor  
 -   Monitores
 -   Concentradores \(intermedios si se usan\) 
 -   Algunos clientes USB sin  

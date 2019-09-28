@@ -1,6 +1,6 @@
 ---
-title: Personalizar el panel de navegación del centro de administración de Active Directory
-ms.prod: windows-server-threshold
+title: Personalización del panel de navegación Centro de administración de Active Directory
+ms.prod: windows-server
 description: Seguridad de Windows Server
 ms.custom: na
 ms.reviewer: na
@@ -11,43 +11,43 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: a4cab0246226cf22a1b7212b832a902783952407
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 63038014207acd3846cb8db20c7836718615df51
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446505"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403758"
 ---
-# <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>Personalizar el panel de navegación del centro de administración de Active Directory
+# <a name="customize-the-active-directory-administrative-center-navigation-pane"></a>Personalización del panel de navegación Centro de administración de Active Directory
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-  Puede examinar el panel de navegación del centro de administración de Active Directory mediante el uso de la vista de árbol, que es similar al árbol de consola de equipos y usuarios de Active Directory, o mediante el uso de la vista de lista.
+  Puede examinar el panel de navegación Centro de administración de Active Directory mediante la vista de árbol, que es similar al árbol de consola de usuarios y equipos de Active Directory, o mediante la vista de lista.
 
- Si usa la vista de árbol o la vista de lista, puede personalizar el panel de navegación del centro de administración de Active Directory en cualquier momento mediante la adición de varios contenedores desde el dominio local o de cualquier dominio externo \(es decir, un dominio distinto del dominio local que tenga una confianza establecida con el dominio local\) al panel de navegación como nodos independientes. Personalizar el panel de navegación del centro de administración de Active Directory puede proporcionar un acceso más rápido a los objetos de Active Directory. Para obtener más información, consulte [administrar dominios diferentes en el centro de administración de Active Directory](manage-different-domains-in-active-directory-administrative-center.md).
+ Tanto si usa la vista de árbol como la vista de lista, puede personalizar el panel de navegación Centro de administración de Active Directory en cualquier momento si agrega varios contenedores del dominio local o cualquier dominio externo \(that es, un dominio que no sea el dominio local. tiene una confianza establecida con el dominio local @ no__t-1 en el panel de navegación como nodos independientes. La personalización del panel de navegación Centro de administración de Active Directory puede proporcionar un acceso más rápido a los objetos de Active Directory. Para obtener más información, vea [Administración de dominios diferentes en centro de administración de Active Directory](manage-different-domains-in-active-directory-administrative-center.md).
 
  Además, para personalizar aún más el panel de navegación, puede cambiar el nombre o quitar estos nodos del panel de navegación agregados manualmente, puede crear duplicados de estos nodos o moverlos arriba o abajo dentro del panel de navegación.
 
 > [!NOTE]
 >  No puede personalizar el nodo de dominio local predeterminado.
 
-### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>Para personalizar el panel de navegación del centro de administración de Active Directory
+### <a name="to-customize-the-active-directory-administrative-center-navigation-pane"></a>Para personalizar el panel de navegación Centro de administración de Active Directory
 
-1. En el panel de navegación del centro de administración de Active Directory, a la derecha\-haga clic en el nodo que desea modificar. Puede modificar la posición o el nombre del nodo, o puede crear un duplicado.
+1. En el panel de navegación Centro de administración de Active Directory, haga clic con el botón derecho en @ no__t-0click el nodo que desea modificar. Puede modificar la posición o el nombre del nodo, o puede crear un duplicado.
 
 2. Haga clic en uno de los siguientes comandos:
 
-   -   **Rename**
+   -   **Cambiar el nombre**
 
-   -   **Duplicar nodo**
+   -   **Crear nodo duplicado**
 
    -   **Quitar**
 
-   -   **Mover hacia arriba**
+   -   **Subir**
 
-   -   **Mover hacia abajo**
+   -   **Bajar**
 
-   Mediante el uso de la vista de lista, puede sacar partido de los usados más recientemente \(MRU\) lista. La lista de elementos utilizados Recientemente aparece automáticamente en un nodo de navegación cuando visita al menos un contenedor en este nodo de navegación. También puede ver la lista MRU actual mediante la expansión de la barra de ruta de navegación en la parte superior de la ventana del centro de administración de Active Directory. La lista de elementos utilizados Recientemente siempre contiene los últimos tres contenedores que visitó en un nodo de navegación determinado. Cada vez que selecciona un contenedor determinado, éste se agrega al principio de la lista de elementos utilizados recientemente y se quita el último contenedor de dicha lista.
+   Mediante el uso de la vista de lista, puede aprovechar las ventajas de la lista @no__t 0MRU @ no__t-1 utilizada más recientemente. La lista MRU aparece automáticamente bajo un nodo de navegación al visitar al menos un contenedor en este nodo de navegación. También puede ver la lista MRU actual expandiendo la barra de ruta de navegación en la parte superior de la ventana de Centro de administración de Active Directory. La lista MRU siempre contiene los tres últimos contenedores que visitó en un nodo de navegación determinado. Cada vez que selecciona un contenedor determinado, éste se agrega al principio de la lista de elementos utilizados recientemente y se quita el último contenedor de dicha lista.
 
   
 

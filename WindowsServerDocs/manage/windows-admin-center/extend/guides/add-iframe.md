@@ -1,45 +1,45 @@
 ---
 title: Agregar un iFrame a una extensión de herramienta
-description: 'Desarrollar una extensión de la herramienta Windows Admin Center SDK (proyecto Honolulu): adición de un iFrame en una extensión de herramienta'
+description: 'Desarrollar una extensión de herramienta SDK del centro de administración de Windows (proyecto Honolulu): agregar un iFrame a una extensión de herramienta'
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: da3850b75a0e069f9153d3c66baef9f00b67d61c
-ms.sourcegitcommit: 48bb3e5c179dc520fa879b16c9afe09e07c87629
+ms.prod: windows-server
+ms.openlocfilehash: 0833b2fd92f2bf4b512120783bb71295a3112745
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66452590"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406890"
 ---
 # <a name="add-an-iframe-to-a-tool-extension"></a>Agregar un iFrame a una extensión de herramienta
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-En este artículo, se agregará un iFrame en una extensión de herramienta nueva y vacía que hemos creado con la CLI de Windows Admin Center.
+En este artículo, se agregará un iFrame a una nueva extensión de herramienta vacía que se ha creado con la CLI del centro de administración de Windows.
 
 ## <a name="prepare-your-environment"></a>Preparar el entorno ##
 
-Si no lo ha hecho ya, siga las instrucciones de [desarrollar una extensión de la herramienta](../develop-tool.md) para preparar el entorno y crear un nuevo, vacíe la extensión de la herramienta.
+Si todavía no lo ha hecho, siga las instrucciones de [desarrollo de una extensión de herramienta](../develop-tool.md) para preparar el entorno y crear una nueva extensión de herramienta vacía.
 
-## <a name="add-a-module-to-your-project"></a>Agregue un módulo al proyecto ##
+## <a name="add-a-module-to-your-project"></a>Agregar un módulo al proyecto ##
 
-Agregue un nuevo [módulo vacío](add-module.md) al proyecto, a la que se agregará un elemento iFrame en el paso siguiente.  
+Agregue un nuevo [módulo vacío](add-module.md) al proyecto, en el que se agregará un iframe en el paso siguiente.  
 
-## <a name="add-an-iframe-to-your-module"></a>Agregue un elemento iFrame al módulo ##
+## <a name="add-an-iframe-to-your-module"></a>Agregar un iFrame al módulo ##
 
-Ahora vamos a agregar un iFrame para ese módulo nuevo y vacío que acabamos de crear.
+Ahora vamos a agregar un iFrame a ese nuevo módulo vacío que acabamos de crear.
 
-En \src\app\, examinar en la carpeta del módulo y, después, abra el archivo ```{!module-name}.component.html```, que se encuentra con la convención de nomenclatura siguiente:
+En \src\app @ no__t-0, examine la carpeta del módulo y abra el archivo ```{!module-name}.component.html```, que se encuentra con la siguiente Convención de nomenclatura:
 
 | Valor | Explicación | Ejemplo de nombre de archivo |
 | ----- | ----------- | ------- |
 | ```{!module-name}``` | El nombre del módulo (minúsculas, espacios reemplazados por guiones) | ```manage-foo-works-portal.component.html``` |
     
-En el archivo html, agregue el siguiente contenido:
+Agregue el siguiente contenido al archivo HTML:
 
 ``` html
 <div>
@@ -47,7 +47,7 @@ En el archivo html, agregue el siguiente contenido:
 </div>
 ```
 
-Eso es todo, ha agregado un elemento iFrame en su extensión.  A continuación, puede [de compilación y side carga](../develop-tool.md#build-and-side-load-your-extension) la extensión en Windows Admin Center para ver los resultados.
+Es decir, ha agregado un iFrame a la extensión.  Después, puede [compilar y cargar](../develop-tool.md#build-and-side-load-your-extension) la extensión en el centro de administración de Windows para ver los resultados.
 
 > [!Note]
-> Configuración de directiva de seguridad (CSP) de contenido podría impedir que algunos sitios representación en un iFrame dentro de Windows Admin Center. Puede aprender más sobre esto [aquí](https://content-security-policy.com/). 
+> La configuración de la Directiva de seguridad de contenido (CSP) podría impedir que algunos sitios se representen en un iFrame dentro del centro de administración de Windows. Puede obtener más información al respecto [aquí](https://content-security-policy.com/). 

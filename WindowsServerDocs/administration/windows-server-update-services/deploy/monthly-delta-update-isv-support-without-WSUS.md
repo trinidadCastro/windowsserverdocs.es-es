@@ -1,7 +1,7 @@
 ---
 title: Compatibilidad de ISV de actualización diferencial mensual sin WSUS
 description: 'Tema de Windows Server Update Service (WSUS): cómo los fabricantes de software independientes (ISV) pueden usar temporalmente la actualización diferencial mensual en lugar de la entrega de actualizaciones Express de WSUS para reducir el tamaño de los paquetes'
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -11,12 +11,12 @@ author: sakitong
 ms.author: coreyp
 manager: dougkim
 ms.date: 10/16/2017
-ms.openlocfilehash: 9077cb87d1d0f6d59ad037c93f5608d3b698feaa
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4607827d73c34f50f721a2774fa498eb95f9dbb8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868722"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361732"
 ---
 # <a name="monthly-delta-update-isv-support-without-wsus"></a>Compatibilidad de ISV de actualización diferencial mensual sin WSUS
 
