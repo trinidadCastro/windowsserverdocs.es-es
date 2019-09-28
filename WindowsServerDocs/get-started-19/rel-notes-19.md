@@ -1,7 +1,7 @@
 ---
 title: 'Notas de la versión: Problemas importantes en Windows Server 2019'
 description: Se resumen problemas críticos que requieren soluciones para evitar bloqueos, faltas de respuesta, errores de instalación y pérdida de datos.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 ms.assetid: 134aab85-664f-4d55-87ef-9e5fd098371f
@@ -10,16 +10,16 @@ ms.author: jgerend
 manager: jasgroce
 ms.localizationpriority: medium
 ms.date: 06/07/2019
-ms.openlocfilehash: 515255c301d343aa1b83bcfb506f2e3baa6ca969
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6f0a13401810adebb299f0b0c9607bfe58bb405d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66810738"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360812"
 ---
 # <a name="release-notes---important-issues-in-windows-server-2019"></a>Notas de la versión: Problemas importantes en Windows Server 2019
 
->Se aplica a: Windows Server 2019
+>Se aplica a: Windows Server 2019
 
 En estas notas se resumen los problemas más críticos del sistema operativo Windows Server 2019 junto con soluciones alternativas y formas de evitar los problemas, si se conocen. Para más información sobre los cambios por diseño, nuevas características y soluciones en esta versión, ve [Novedades de Windows Server 2019](whats-new-19.md) y anuncios de equipos de características específicas. A menos que se especifique lo contrario, cada problema notificado se aplica a todas las ediciones y opciones de instalación de Windows Server 2019.  
 

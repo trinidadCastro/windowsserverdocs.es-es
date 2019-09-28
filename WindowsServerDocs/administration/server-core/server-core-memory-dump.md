@@ -1,18 +1,18 @@
 ---
 title: Configurar archivos de volcado de memoria para la instalación Server Core
 description: Obtenga información acerca de cómo configurar archivos de volcado de memoria para una instalación Server Core de Windows Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: manage
 ms.sitesec: library
 author: lizap
 ms.localizationpriority: medium
 ms.date: 10/17/2017
-ms.openlocfilehash: 0cea3118abce156acdd9ad933518015a25f8afbf
-ms.sourcegitcommit: 216d97ad843d59f12bf0b563b4192b75f66c7742
+ms.openlocfilehash: 4f1baa52fc9f0ebfe8afae35d86b7a7238d56223
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/24/2019
-ms.locfileid: "68476558"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383391"
 ---
 # <a name="configure-memory-dump-files-for-server-core-installation"></a>Configurar archivos de volcado de memoria para la instalación Server Core
 
@@ -34,15 +34,15 @@ wmic computersystem set AutomaticManagedPagefile=False
 
 No es necesario tener el archivo de paginación en la partición en la que está instalado el sistema operativo. Para colocar el archivo de paginación en otra partición, debe crear una nueva entrada del registro denominada **DedicatedDumpFile**. Puede definir el tamaño del archivo de paginación mediante la entrada del registro **DumpFileSize** . Para crear las entradas del registro DedicatedDumpFile y DumpFileSize, siga estos pasos: 
 
-1. En el símbolo del sistema, ejecute  el comando regedit para abrir el editor del registro.
+1. En el símbolo del sistema, ejecute el comando **regedit** para abrir el editor del registro.
 2. Busque y haga clic en la siguiente subclave del Registro: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\CrashControl
 3. Haga clic en **editar > nuevo > valor de cadena**.
 4. Asigne al nuevo valor el nombre **DedicatedDumpFile**y, a continuación, presione Entrar.
 5. Haga clic con el botón secundario en **DedicatedDumpFile**y, a continuación, haga clic en **modificar**.
-6. En  el tipo   **\<de datos\>del\\valor unidad:\<Dedicateddumpfile\>. sys**y, a continuación, haga clic en Aceptar.
+6. En tipo de **datos del valor** **\<Drive @ no__t-3: @no__t -4\<Dedicateddumpfile.sys @ no__t-6**y, a continuación, haga clic en **Aceptar**.
 
    >[!NOTE] 
-   > Reemplace \< \<\> unidad\> por una unidad que tenga suficiente espacio en disco para el archivo de paginación y reemplace Dedicateddumpfile. DMP por la ruta de acceso completa al archivo dedicado.
+   > Reemplace \<Drive @ no__t-1 por una unidad que tenga suficiente espacio en disco para el archivo de paginación y reemplace @no__t -2Dedicateddumpfile. DMP @ no__t-3 por la ruta de acceso completa al archivo dedicado.
  
 7. Haga clic en **editar > nuevo valor DWORD >** .
 8. Escriba **DumpFileSize**y, a continuación, presione Entrar.
@@ -65,7 +65,7 @@ El destino predeterminado para **DebugFilePath** es%SystemRoot%\Memory.DMP. Para
 wmic RECOVEROS set DebugFilePath = <FilePath>
 ```
 
-Establezca \<filePath\> en la ruta de acceso de destino. Por ejemplo, el comando siguiente establece la ruta de acceso de destino de volcado de memoria en C:\WINDOWS\MEMORY. DMP 
+Establezca \<FilePath @ no__t-1 en la ruta de acceso de destino. Por ejemplo, el comando siguiente establece la ruta de acceso de destino de volcado de memoria en C:\WINDOWS\MEMORY. DMP 
 
 ```
 wmic RECOVEROS set DebugFilePath = C:\WINDOWS\MEMORY.DMP
@@ -85,7 +85,7 @@ Para cambiar el tipo de volcado de memoria actual, ejecute el siguiente comando:
 wmic RECOVEROS set DebugInfoType = <Value>
 ```
 
-\<El\> valor puede ser 0, 1, 2 o 3, tal y como se define a continuación.
+\<Value @ no__t-1 puede ser 0, 1, 2 o 3, tal como se define a continuación.
 
 - 0: Deshabilitar la eliminación de un volcado de memoria.
 - 1: Volcado de memoria completo. Registra todo el contenido de la memoria del sistema cuando el equipo se detiene de forma inesperada. Un volcado de memoria completo puede contener datos de los procesos que se estaban ejecutando cuando se recopiló el volcado de memoria.

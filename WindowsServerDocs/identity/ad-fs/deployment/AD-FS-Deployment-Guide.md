@@ -7,26 +7,26 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: b15bb55741ed6cde2e1884896d58fb2d361cd014
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 094ad9e2de21e1f89c35c914a1b327727c2b1439
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66192509"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360123"
 ---
 # <a name="ad-fs-2016-deployment-guide"></a>Guía de implementación de AD FS 2016
 
 
-La Guía de implementación de AD FS es una completa guía para implementar AD FS.  Esta guía se compone de las siguientes acciones:
+La guía de implementación de AD FS es una guía completa para implementar AD FS.  Esta guía se compone de lo siguiente:
 
   
-* [Actualización a AD FS en Windows Server 2016](Upgrading-to-AD-FS-in-Windows-Server-2016.md)  
+* [Actualizar a AD FS en Windows Server 2016](Upgrading-to-AD-FS-in-Windows-Server-2016.md)  
 
 * [Guía de implementación de Windows Server 2016 y 2012 R2](Windows-Server-2012-R2-AD-FS-Deployment-Guide.md)
 
 * [Guía de implementación de Windows Server 2012](Windows-Server-2012-AD-FS-Deployment-Guide.md)
 
-* [Supervisar los servicios de sincronización e infraestructura de identidad local en la nube](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
+* [Supervisión de la infraestructura de identidad local y los servicios de sincronización en la nube](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health)
   

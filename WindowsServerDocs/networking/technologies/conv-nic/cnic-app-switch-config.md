@@ -1,7 +1,7 @@
 ---
-title: Configuración del conmutador físico de NIC convergente
-description: En este tema, se proporcionan directrices para configurar los conmutadores físicos.
-ms.prod: windows-server-threshold
+title: Configuración del conmutador físico para la NIC convergente
+description: En este tema se proporcionan instrucciones para configurar los conmutadores físicos.
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 6d53c797-fb67-4b9e-9066-1c9a8b76d2aa
@@ -9,52 +9,52 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/14/2018
-ms.openlocfilehash: e31d7b83fee84d9055d938f77b49389205786244
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d10e8ca6e4689b89a8b9532f77613f17280282b1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829406"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71355474"
 ---
-# <a name="physical-switch-configuration-for-converged-nic"></a>Configuración del conmutador físico de NIC convergente
+# <a name="physical-switch-configuration-for-converged-nic"></a>Configuración del conmutador físico para la NIC convergente
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema, se proporcionan directrices para configurar los conmutadores físicos. 
+En este tema se proporcionan instrucciones para configurar los conmutadores físicos. 
 
 
-Estos son sólo los comandos y sus usos; debe determinar los puertos a la que está conectada la NIC en su entorno. 
+Estos son solo comandos y sus usos; debe determinar los puertos en los que las NIC están conectadas en su entorno. 
 
 >[!IMPORTANT]
->Asegúrese de que la VLAN y la directiva de no colocar está establecido para la prioridad sobre el que se configura SMB.
+>Asegúrese de que la Directiva de VLAN y no de eliminación está establecida para la prioridad en la que se configura SMB.
 
-## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Conmutador de arista \(controladores de dominio\-7050s\-EOS 64,\-4.13.7M\)
+## <a name="arista-switch-dcs-7050s-64-eos-4137m"></a>Arista modificador \(dcs @ no__t-17050s @ no__t-264, EOS @ no__t-34.13.7 M @ no__t-4
 
-1.  en \(ir al modo de administrador, normalmente solicitará una contraseña\)
-2.  configuración \(entrar en modo de configuración\)
-3.  Mostrar ejecución \(muestra la configuración de ejecución actual\)
-4.  Descubra los puertos de conmutador al que está conectada las NIC. En estos ejemplos, son 14/1,15/1,16/1,17/1.
-5.  int eth 14/1,15/1,16/1,17/1 \(entrar en modo de configuración para estos puertos\)
-6.  modo dcbx ieee
-7.  en el modo de control de flujo de prioridad
-8.  switchport tronco de vlan nativo 225
-9.  switchport tronco permite vlan 100-225
-10. tronco de modo switchport
-11. prioridad de control de flujo de prioridad 3 no colocar
-12. calidad de servicio de confianza cos
-13. Mostrar ejecución \(Compruebe que la configuración está configurado correctamente en los puertos\)
-14. wR \(para que la configuración se mantiene en el reinicio de conmutador\)
+1.  en \(go al modo de administrador, normalmente solicita una contraseña @ no__t-1
+2.  config \(to entrar en el modo de configuración @ no__t-1
+3.  Mostrar @no__t de ejecución-0shows configuración actual en ejecución @ no__t-1
+4.  Obtenga información sobre los puertos de conmutador a los que están conectados las NIC. En estos ejemplos, son 14/1, 15/1, 16/1, 17/1.
+5.  int ETH 14/1, 15/1, 16/1, 17/1 \(enter en modo de configuración para estos puertos @ no__t-1
+6.  IEEE de modo dcbx
+7.  modo de control de flujo de prioridad activado
+8.  enlace de switchport Native VLAN 225
+9.  tronco troncal permitido VLAN 100-225
+10. tronco del modo de switchport
+11. Priority-Flow-Control Priority 3 no-Drop
+12. confianza de QoS cos
+13. Mostrar ejecutar \(verify que la configuración está configurada correctamente en los puertos @ no__t-1
+14. WR \(to hacer que la configuración se mantenga en el reinicio del conmutador @ no__t-1
 
-### <a name="tips"></a>Sugerencias:
-1.  No hay command # niega un comando
-2.  Cómo agregar una nuevo VLAN: int vlan 100 \(si la red de almacenamiento está en la VLAN 100\)
-3.  Cómo comprobar las VLAN existentes: mostrar vlan
-4.  Para obtener más información sobre cómo configurar el conmutador de Arista, busque en línea: Manual de arista EOS
-5.  Use este comando para comprobar la configuración de PFC: mostrar los detalles de los contadores de control de flujo de prioridad
+### <a name="tips"></a>Útiles
+1.  No #command # niega un comando
+2.  Cómo agregar una nueva VLAN: int VLAN 100 \(If Storage Network está en VLAN 100 @ no__t-1
+3.  Comprobación de VLAN existentes: Mostrar VLAN
+4.  Para obtener más información acerca de cómo configurar el modificador arista, busque: Arista manual de EOS
+5.  Use este comando para comprobar la configuración de PFC: mostrar detalles de contadores de control de flujo de prioridad
 
 --- 
 
-## <a name="dell-switch-s4810-ftos-99-00"></a>Conmutador de Dell \(S4810, 9,9 FTOS \(0.0\)\)
+## <a name="dell-switch-s4810-ftos-99-00"></a>Conmutador Dell \(S4810, FTOS 9,9 \(0.0 @ no__t-2 @ no__t-3
 
     
     !
@@ -74,7 +74,7 @@ Estos son sólo los comandos y sus usos; debe determinar los puertos a la que es
     
 --- 
 
-## <a name="cisco-switch-nexus-3132-version-602u61"></a>Conmutador Cisco \(Nexus 3132, versión 6.0\(2\)U6\(1\)\)
+## <a name="cisco-switch-nexus-3132-version-602u61"></a>Cisco switch \(Nexus 3132, versión 6.0 @ no__t-12 @ no__t-2U6 @ no__t-31 @ no__t-4 @ no__t-5
 
 ### <a name="global"></a>Global
     
@@ -105,7 +105,7 @@ Estos son sólo los comandos y sus usos; debe determinar los puertos a la que es
     service-policy type network-qos QOS_NETWORK
     
 
-### <a name="port-specific"></a>Puerto específico
+### <a name="port-specific"></a>Específico del puerto
 
     
     switchport mode trunk
@@ -121,8 +121,8 @@ Estos son sólo los comandos y sus usos; debe determinar los puertos a la que es
 
 ## <a name="related-topics"></a>Temas relacionados
 
-- [Configuración de NIC convergentes con un único adaptador de red](cnic-single.md)
-- [Configuración de NIC convergente NIC asociadas](cnic-datacenter.md)
-- [Solución de problemas convergente configuraciones de NIC](cnic-app-troubleshoot.md)
+- [Configuración de NIC convergente con un solo adaptador de red](cnic-single.md)
+- [Configuración de NIC en equipo NIC convergente](cnic-datacenter.md)
+- [Solución de problemas de configuraciones de NIC convergentes](cnic-app-troubleshoot.md)
 
 --- 

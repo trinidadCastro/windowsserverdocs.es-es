@@ -1,7 +1,7 @@
 ---
 title: Oracle Linux compatibles con máquinas virtuales en Hyper-V
 description: Enumera las características y servicios de integración de Linux que se incluyen en cada versión
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: c02fdb5b-62f3-43cb-a190-ab74b3ebcf77
 author: shirgall
 ms.author: kathydav
 ms.date: 06/01/2017
-ms.openlocfilehash: 3005907a085d1769716105f570f47f0114eae68d
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 4b09b8e760ce716da7f5aa6abecbead52293e77b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544706"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365491"
 ---
 # <a name="supported-oracle-linux-virtual-machines-on-hyper-v"></a>Oracle Linux compatibles con máquinas virtuales en Hyper-V
 
@@ -40,7 +40,7 @@ En esta sección:
 
 * (*en blanco*): característica no disponible
 
-* **UEK R\*x qu\*y** -Unbreakable Enterprise kernel (UEK), donde *x* es el número de *versión e y* es la actualización trimestral.
+* **UEK R @ no__t-1x qu @ no__t-2Y** -Unbreakable Enterprise kernel (UEK), donde *x* es el *número de versión e y* es la actualización trimestral.
 
 ## <a name="BKMK_rhc"></a>Serie de kernel compatible con Red Hat
 
@@ -145,7 +145,7 @@ El Oracle Linux kernel de empresa ininterrumpible (UEK) es solo de 64 bits y tie
 
    1. Cree un archivo **/etc/udev/rules.d/100-Balloon.rules**. Puede usar cualquier otro nombre que desee para el archivo.
 
-   2. Agregue el siguiente contenido al archivo:`SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
+   2. Agregue el siguiente contenido al archivo: `SUBSYSTEM=="memory", ACTION=="add", ATTR{state}="online"`
 
    3. Reinicie el sistema para habilitar la compatibilidad con la adición en caliente.
 

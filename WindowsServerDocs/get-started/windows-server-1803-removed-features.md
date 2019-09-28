@@ -1,19 +1,19 @@
 ---
 title: 'Windows Server, versión 1803: Características que se han quitado'
 description: Obtén información acerca de las características eliminadas o en desuso en Windows Server, versión 1803 o una versión posterior
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.mktglfcycl: plan
 ms.localizationpriority: medium
 ms.sitesec: library
 author: jasongerend
 ms.author: jgerend
 ms.date: 08/22/2019
-ms.openlocfilehash: 8b871d6fa939271c7468a8b51a195539ee268e9c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 482897b31bfaf3c4fe1f6b44a184463e88c5ae65
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868290"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391315"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-with-windows-server-version-1803"></a>Características eliminadas o que está previsto eliminar a partir de Windows Server, versión 1803
 

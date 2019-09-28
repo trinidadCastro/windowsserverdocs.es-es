@@ -1,8 +1,8 @@
 ---
-title: Winrm.cmd
-description: 'Tema de los comandos de Windows para ***- '
+title: WinRM. cmd
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a63e8446631b89eecc74c5bb4cc9b790d390b151
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a1b84e23852877511bf81194178249167b469d3c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59814336"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361999"
 ---
-# <a name="winrmcmd"></a>Winrm.cmd
+# <a name="winrmcmd"></a>WinRM. cmd
 
 
 

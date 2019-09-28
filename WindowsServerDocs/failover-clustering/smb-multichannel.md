@@ -1,83 +1,83 @@
 ---
 ms.assetid: a6343f1c-e9dd-4a02-91ad-39bd519d66cd
 title: SMB multicanal simplificada y redes de clústeres de varias NIC
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-failover-clustering
 ms.topic: article
 author: RobHindman
 ms.author: robhind
 ms.date: 09/15/2016
-ms.openlocfilehash: 1b9271ceac99ac9b21cbfac902ba133d66815df4
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: 7816016daae1d06568cd6149791a9a368d8602f8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476116"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361115"
 ---
 # <a name="simplified-smb-multichannel-and-multi-nic-cluster-networks"></a>SMB multicanal simplificada y redes de clústeres de varias NIC
 
-> Se aplica a: Windows Server 2019, Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
-SMB multicanal y Multi - simplificada<abbr title="tarjeta de interfaz de red">NIC</abbr> redes del clúster es una característica que permite el uso de varias NIC en la misma subred de red del clúster y habilita automáticamente SMB multicanal.
+SMB multicanal simplificado y múltiples<abbr title="Tarjeta de interfaz de red">MBPS</abbr> Redes de clústeres es una característica que permite el uso de varias NIC en la misma subred de red del clúster y habilita automáticamente SMB multicanal.
 
-SMB multicanal simplificada y redes de clústeres de varias NIC proporciona las siguientes ventajas:  
-- Agrupación en clústeres de conmutación por error reconoce automáticamente todas las NIC en los nodos que se usan el mismo modificador / misma subred: no necesitan configuraciones adicionales.  
-- SMB multicanal está habilitado automáticamente.  
-- Las redes que solo tienen recursos de direcciones IP locales de vínculo IPv6 (fe80) se reconocen en clúster solo redes (privadas).  
-- Un único recurso de dirección IP se configura en cada nombre de red de punto de acceso de clúster (CAP) (NN) de forma predeterminada.  
-- Validación de clúster ya no emite mensajes de advertencia cuando se encuentran varias NIC en la misma subred.  
+Las redes de clústeres de varias NIC y de SMB multicanal simplificado ofrecen las siguientes ventajas:  
+- Los clústeres de conmutación por error reconocen automáticamente todas las NIC de los nodos que usan el mismo modificador o la misma subred; no se necesita ninguna configuración adicional.  
+- SMB multicanal se habilita automáticamente.  
+- Las redes que solo tienen recursos de direcciones IP locales de vínculo IPv6 (fe80) se reconocen en redes de solo clúster (privadas).  
+- De forma predeterminada, se configura un único recurso de dirección IP en cada nombre de red de punto de acceso de clúster (CAP).  
+- La validación del clúster ya no emite mensajes de advertencia cuando se encuentran varias NIC en la misma subred.  
 
 ## <a name="requirements"></a>Requisitos  
--   Varias NIC por servidor, con el mismo conmutador / subred.  
+-   Varias NIC por servidor, con el mismo conmutador o subred.  
 
-## <a name="how-to-take-advantage-of-multi-nic-clusters-networks-and-simplified-smb-multichannel"></a>SMB multicanal simplificada y redes de clústeres de cómo aprovechar las ventajas de tener varias NIC  
-En esta sección se describe cómo aprovechar las nuevas redes de clústeres de varias NIC y simplificadas características SMB multicanal.  
+## <a name="how-to-take-advantage-of-multi-nic-clusters-networks-and-simplified-smb-multichannel"></a>Cómo aprovechar las ventajas de las redes de clústeres de varias NIC y SMB multicanal simplificado  
+En esta sección se describe cómo aprovechar las ventajas de las nuevas redes de clústeres de varias NIC y las características simplificadas de SMB multicanal.  
 
-### <a name="use-at-least-two-networks-for-failover-clustering"></a>Utilice al menos dos redes para agrupar en clústeres de conmutación por error   
-Aunque es poco frecuente, pueden producir un error en los conmutadores de red: es aún mejor práctica usar al menos dos redes para agrupación en clústeres de conmutación por error. Todas las redes que se encuentran se usan para los latidos del clúster. Evite el uso de una sola red para el clúster de conmutación por error con el fin de evitar un único punto de error. Idealmente, debería haber varias rutas de acceso física de la comunicación entre los nodos del clúster y ningún punto único de error.  
+### <a name="use-at-least-two-networks-for-failover-clustering"></a>Usar al menos dos redes para la agrupación en clústeres de conmutación por error   
+Aunque es poco frecuente, los conmutadores de red pueden producir un error, pero se recomienda usar al menos dos redes para la agrupación en clústeres de conmutación por error. Todas las redes que se encuentran se usan para los latidos de clúster. Evite el uso de una única red para el clúster de conmutación por error con el fin de evitar un único punto de error. Idealmente, debería haber varias rutas de comunicación físicas entre los nodos del clúster y ningún punto único de error.  
 
-![Ilustración de dos redes de clústeres de conmutación por error](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig1.png)  
-**Figura 1: Utilice al menos dos redes para agrupar en clústeres de conmutación por error**  
+![Illustration de dos redes para el clúster de conmutación por error @ no__t-1  
+**Figura 1: Usar al menos dos redes para la agrupación en clústeres de conmutación por error @ no__t-0  
 
-### <a name="use-multiple-nics-across-clusters"></a>Usar varias NIC a través de clústeres  
+### <a name="use-multiple-nics-across-clusters"></a>Uso de varias NIC entre clústeres  
 
-Máximo beneficio de la SMB multicanal simplificada se logra cuando se usan varias NIC a través de clústeres - en el almacenamiento y clústeres de carga de trabajo de almacenamiento. Esto permite a los clústeres de carga de trabajo (Hyper-V, instancia de clúster de conmutación por error de SQL Server, réplica de almacenamiento, etc.) para usar SMB multicanal y los resultados en un uso más eficaz de la red. En convergente (también denominada desagregada) configuración donde se utiliza un clúster de servidor de archivos de escalabilidad horizontal para almacenar los datos de carga de trabajo de Hyper-V o clúster de instancia de clúster de conmutación por error de SQL Server, esta red se suele denominar "la subred norte-sur" del clúster o de red . Muchos clientes maximizar el rendimiento de esta red al invertir en conmutadores y las tarjetas NIC compatibles con RDMA.  
+Se consigue el máximo beneficio de la simplificación de SMB multicanal cuando se usan varias NIC en los clústeres, tanto en los clústeres de carga de almacenamiento como en los de almacenamiento. Esto permite que los clústeres de carga de trabajo (Hyper-V, SQL Server instancia de clúster de conmutación por error, réplica de almacenamiento, etc.) usen SMB multicanal y resulten un uso más eficaz de la red. En una configuración de clúster convergente (también conocida como desagregada) en la que se usa un clúster de servidores de archivos de escalabilidad horizontal para almacenar los datos de la carga de trabajo de un clúster de instancias de clúster de conmutación por error de Hyper-V o SQL Server, esta red se denomina a menudo "la subred norte-sur"/red . Muchos clientes maximizan el rendimiento de esta red al invertir en tarjetas y conmutadores NIC compatibles con RDMA.  
 
-![Ilustración de una subred norte-sur SMB](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig2.png)  
-**Figura 2: Para lograr un rendimiento de red máximo, use varias NIC en el clúster de servidor de archivos de escalabilidad horizontal y el clúster de Hyper-V o instancia de clúster de conmutación por error de SQL Server, que comparten la subred norte sur**  
+![Illustration de una subred de SMB de norte de sur de no__t-1  
+**Figura 2: Para lograr el máximo rendimiento de la red, use varias NIC en el clúster de servidores de archivos de escalabilidad horizontal y en el clúster de instancia de clúster de conmutación por error de Hyper-V o SQL Server, que comparten la subred norte-sur @ no__t-0  
 
-![Captura de pantalla de dos clústeres con varias NIC en la misma subred aprovechar SMB multicanal](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig3.png)  
-**Figura 3: Dos clústeres (servidor de archivos de escalabilidad horizontal para el almacenamiento, SQL Server <abbr title="instancia de agrupación en clústeres de conmutación por error">FCI</abbr> para cargas de trabajo) usan varias NIC en la misma subred aprovechar SMB multicanal y lograr un mejor red rendimiento.** 
+@no__t: 0Screencap de dos clústeres que usan varias NIC en la misma subred para aprovechar SMB multicanal @ no__t-1  
+**Figura 3: Dos clústeres (servidor de archivos de escalabilidad horizontal para almacenamiento, SQL Server instancia de agrupación en clústeres <abbr title="Failover @ no__t-1FCI @ no__t-2 para cargas de trabajo) usan varias NIC en la misma subred para aprovechar SMB multicanal y lograr un mejor rendimiento de la red.** 
 
-## <a name="automatic-recognition-of-ipv6-link-local-private-networks"></a>Reconocimiento automático de las redes privadas locales de vínculo IPv6  
-Cuando se detectan: redes privadas (sólo en clúster) con varias NIC, el clúster reconocerá automáticamente las direcciones IP locales de vínculo IPv6 (fe80) para cada NIC en cada subred. Este administradores ahorra tiempo porque ya no tienen que configurar manualmente los recursos de dirección IP Local de vínculo IPv6 (fe80).  
+## <a name="automatic-recognition-of-ipv6-link-local-private-networks"></a>Reconocimiento automático de redes privadas locales de vínculo IPv6  
+Cuando se detectan redes privadas (solo en clúster) con varias NIC, el clúster reconocerá automáticamente las direcciones IP de los vínculos IPv6 locales (fe80) de cada NIC de cada subred. Esto ahorra tiempo a los administradores, ya que ya no es necesario configurar manualmente los recursos de dirección IP de vínculo IPv6 local (fe80).  
 
-Cuando se usa más de una red privada (sólo en clúster), compruebe la configuración de enrutamiento de IPv6 para asegurarse de que el enrutamiento no está configurado para cruzar subredes, ya que esto reducirá el rendimiento de la red.  
+Cuando se usa más de una red privada (solo en clúster), Compruebe la configuración de enrutamiento IPv6 para asegurarse de que el enrutamiento no está configurado para cruzar subredes, ya que esto reducirá el rendimiento de la red.  
 
-![Captura de pantalla de configuración automática de redes en la UI del Administrador de clústeres de conmutación por error](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig4.png)  
-**Figura 4: Configuración automática de recurso de dirección Local de vínculo IPv6 (fe80)**  
+![Screencap de la configuración de red automática en la interfaz de usuario Administrador de clústeres de conmutación por error @ no__t-1  
+**Figura 4: Configuración de recursos de dirección local de vínculo IPv6 (fe80) @ no__t-0  
 
 ## <a name="throughput-and-fault-tolerance"></a>Rendimiento y tolerancia a errores  
-2019 de Windows Server y Windows Server 2016 automáticamente detectan las capacidades NIC y se intentarán usar cada NIC en la configuración más rápida posible. Las NIC que están agrupados, por NIC mediante RSS y NIC con la funcionalidad RDMA pueden utilizarse. En la tabla siguiente se resume las ventajas y desventajas al usar estas tecnologías. Rendimiento máximo se logra al usar varias NIC compatibles con RDMA. Para obtener más información, consulte [los aspectos básicos de SMB multicanal](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/).
+Windows Server 2019 y Windows Server 2016 detectan automáticamente las funciones de NIC e intentarán usar cada NIC en la configuración más rápida posible. Se pueden usar todas las NIC que se han agrupado, las NIC con RSS y las NIC con capacidad RDMA. En la tabla siguiente se resumen las ventajas e inconvenientes al usar estas tecnologías. El rendimiento máximo se consigue al usar varias NIC compatibles con RDMA. Para obtener más información, consulte [los conceptos básicos de SMB Mutlichannel](https://blogs.technet.microsoft.com/josebda/2012/06/28/the-basics-of-smb-multichannel-a-feature-of-windows-server-2012-and-smb-3-0/).
 
-![Ver una ilustración de rendimiento y tolerancia a errores en las diferentes configuraciones de NIC](media/Simplified-SMB-Multichannel-and-Multi-NIC-Cluster-Networks/Clustering_MulitNIC_Fig5.png)  
-**Figura 5: Rendimiento y tolerancia a errores para conifigurations de varias NIC**   
+@no__t ilustración del rendimiento y la tolerancia a errores para varias configuraciones de NIC @ no__t-1  
+@no__t 0Figure 5: Rendimiento y tolerancia a errores para varias NIC conifigurations @ no__t-0   
 
 ## <a name="frequently-asked-questions"></a>Preguntas frecuentes  
-**¿Todas las NIC en una red con varias NIC para se utilizan los latidos de clúster?**  
+**¿Son todas las NIC de una red de varias NIC que se usan para el latido del corazón del clúster?**  
     Sí.  
 
-**¿Una red con varias NIC se puede usar para la comunicación de clúster solo? ¿O bien, solo se puede usar para la comunicación de cliente y el clúster?**  
-    Ya sea configuración funcionará: todas las funciones de red de clúster funcionará en una red con varias NIC.  
+**Can se puede usar una red de varias NIC solo para la comunicación de clústeres? ¿O solo se puede usar para la comunicación entre el cliente y el clúster?**  
+    Cualquier configuración funcionará: todos los roles de red de clúster funcionarán en una red con varias NIC.  
 
-**¿SMB multicanal también se usa para el tráfico CSV y clúster?**  
-    Sí, de forma predeterminada todos los clúster y tráfico de CSV usará las redes disponibles con varias NIC. Los administradores pueden usar los cmdlets de PowerShell de agrupación en clústeres de conmutación por error o la interfaz de usuario de administrador de clústeres de conmutación por error para cambiar el rol de la red.  
+**¿Está SMB multicanal también se usa para el tráfico de clústeres y CSV?**  
+    Sí, de forma predeterminada todo el tráfico de clústeres y CSV usará redes de varias NIC disponibles. Los administradores pueden usar los cmdlets de PowerShell de clústeres de conmutación por error o Administrador de clústeres de conmutación por error interfaz de usuario para cambiar el rol de red.  
 
-**¿Cómo se puede ver la configuración de SMB multicanal?**  
-    Use la **Get SMBServerConfiguration** cmdlet, busque el valor de la propiedad EnableMultiChannel.  
+**¿Cómo se puede ver la configuración de multicanal de SMB?**  
+    Use el cmdlet **Get-SMBServerConfiguration** para buscar el valor de la propiedad EnableMultiChannel.  
 
-**¿Está PlumbAllCrossSubnetRoutes respeta la propiedad común del clúster en una red con varias NIC?**  
+**¿La propiedad común de clúster PlumbAllCrossSubnetRoutes respeta en una red de varias NIC?**  
      Sí.  
 
 ## <a name="see-also"></a>Vea también  
-- [Novedades de la conmutación por error en Windows Server](whats-new-in-failover-clustering.md)  
+- [Novedades de los clústeres de conmutación por error en Windows Server](whats-new-in-failover-clustering.md)  

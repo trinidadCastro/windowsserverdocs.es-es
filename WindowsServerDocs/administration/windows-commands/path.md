@@ -2,7 +2,7 @@
 title: ruta de acceso
 description: Obtenga información sobre cómo establecer la variable de entorno PATH.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: a637abc91dd3342afb3a2723d1b3a835be149122
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 81e8441e7c67e42bdf929e703c8fe780a6f8aff8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436319"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372425"
 ---
 # <a name="path"></a>ruta de acceso
 
 
 
-Establece la ruta de acceso en la variable de entorno PATH (el conjunto de directorios que se usa para buscar archivos ejecutables). Si se utiliza sin parámetros, **ruta** muestra la ruta de acceso actual.
+Establece la ruta de acceso del comando en la variable de entorno PATH (el conjunto de directorios que se usa para buscar archivos ejecutables). Si se usa sin parámetros, la **ruta de acceso** muestra la ruta de acceso del comando actual.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -39,24 +39,24 @@ path ;
 
 |     Parámetro     |                                                                                                     Descripción                                                                                                      |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [\<Drive>:]<Path> |                                                                            Especifica la unidad y directorio para establecer la ruta de acceso de comando.                                                                             |
-|         ;         | Separa los directorios en la ruta de acceso. Si se usa sin otros parámetros, **;** borra las rutas de acceso de comandos existentes de la variable de entorno PATH y dirige Cmd.exe para buscar sólo en el directorio actual. |
-|      % PATH %       |                                                         Anexa la ruta de acceso al conjunto existente de directorios se muestran en la variable de entorno PATH.                                                         |
+| [\<Drive >:] <Path> |                                                                            Especifica la unidad y el directorio que se establecerán en la ruta de acceso del comando.                                                                             |
+|         ;         | Separa los directorios en la ruta de acceso del comando. Si se usa sin otros parámetros **, se** borran las rutas de comandos existentes de la variable de entorno PATH y se indica a cmd. exe que busque solo en el directorio actual. |
+|      CAMINO       |                                                         Anexa la ruta de acceso del comando al conjunto de directorios existente que aparece en la variable de entorno PATH.                                                         |
 |        /?         |                                                                                         Muestra la ayuda en el símbolo del sistema.                                                                                         |
 
 ## <a name="remarks"></a>Comentarios
 
--   Al incluir **% PATH %** en la sintaxis, Cmd.exe lo reemplaza con los valores de ruta de acceso de comando que se encuentra en la variable de entorno PATH, lo que elimina la necesidad de escribir manualmente estos valores en el símbolo del sistema.
--   Siempre se busca en el directorio actual antes de los directorios especificados en la ruta de acceso.
--   Podría tener archivos en un directorio que comparten el mismo nombre pero con extensiones diferentes. Por ejemplo, podría tener un archivo denominado cuentas.com que inicia un programa de contabilidad y otro denominado cuentas.bat que conecta el servidor a la red del sistema de contabilidad.
+-   Cuando se incluye **% path%** en la sintaxis, cmd. exe lo reemplaza con los valores de ruta de acceso de comando que se encuentran en la variable de entorno PATH, lo que elimina la necesidad de escribir manualmente estos valores en el símbolo del sistema.
+-   Siempre se busca en el directorio actual antes de los directorios especificados en la ruta de acceso del comando.
+-   Es posible que tenga archivos en un directorio que compartan el mismo nombre de archivo, pero que tengan extensiones diferentes. Por ejemplo, podría tener un archivo denominado Accnt.com que inicia un programa de contabilidad y otro archivo denominado Accnt. bat que conecta el servidor a la red de sistema de contabilidad.
 
-    El sistema operativo de Windows busca un archivo mediante el uso de extensiones de nombre de archivo predeterminadas en el siguiente orden de prioridad: .exe, .com, .bat y. cmd. Para ejecutar cuentas.bat cuando cuentas.com esté en el mismo directorio, debe incluir la extensión .bat en el símbolo del sistema.
--   Si dos o más archivos en la ruta de acceso de comando tienen el mismo nombre de archivo y la extensión, **ruta** nombre busca primero el archivo especificado en el directorio actual. A continuación, busca los directorios en la ruta de acceso en el orden en que aparecen en la variable de entorno PATH.
--   Si coloca el **ruta** comando en el archivo Autoexec.nt, el sistema operativo de Windows agrega automáticamente la ruta de acceso de búsqueda de subsistema de MS-DOS especificado cada vez inicie sesión en el equipo. Cmd.exe no utiliza el archivo Autoexec.nt. Cuando se inicia desde un acceso directo, Cmd.exe hereda las variables de entorno establecidas en mi equipo/propiedades/avanzadas/entorno.
+    El sistema operativo Windows busca un archivo con las extensiones de nombre de archivo predeterminadas en el siguiente orden de prioridad:. exe,. com,. bat y. cmd. Para ejecutar Accnt. bat cuando Accnt.com existe en el mismo directorio, debe incluir la extensión. bat en el símbolo del sistema.
+-   Si dos o más archivos de la ruta de acceso de comandos tienen el mismo nombre de archivo y la misma extensión, **path** busca primero el nombre de archivo especificado en el directorio actual. A continuación, busca en los directorios de la ruta de comandos en el orden en que aparecen en la variable de entorno PATH.
+-   Si coloca el comando **path** en el archivo Autoexec. NT, el sistema operativo Windows anexará automáticamente la ruta de acceso de búsqueda del subsistema de ms-dos especificada cada vez que inicie sesión en el equipo. Cmd. exe no utiliza el archivo Autoexec. NT. Cuando se inicia desde un acceso directo, cmd. exe hereda las variables de entorno establecidas en Mi PC/propiedades/avanzado/entorno.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para buscar C:\User\Taxes, B:\User\Invest y B:\Bin las rutas de acceso para los comandos externos, escriba:
+Para buscar las rutas de acceso C:\User\Taxes, B:\User\Invest y B:\Bin para comandos externos, escriba:
 
 `path c:\user\taxes;b:\user\invest;b:\bin`
 

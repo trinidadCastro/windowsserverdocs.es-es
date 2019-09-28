@@ -1,8 +1,8 @@
 ---
-title: sistema de escritura
-description: 'Tema de los comandos de Windows para ***- '
+title: escritor
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8aee4ecca85c7d5f46ee79f3ad928b746c02e7bb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6c00f6067cd5f6cf741cddbd6d62c5bcbb1f37a9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439984"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361860"
 ---
-# <a name="writer"></a>sistema de escritura
+# <a name="writer"></a>escritor
 
 
 
-Comprueba que un sistema de escritura o un componente se incluye o excluye un componente o sistema de escritura de los procedimientos de copia de seguridad y restauración. Si se utiliza sin parámetros, **escritor** muestra la Ayuda en el símbolo del sistema.
+Comprueba que un escritor o componente está incluido o excluye un escritor o componente del procedimiento de copia de seguridad o restauración. Si se usa sin parámetros, el **escritor** muestra la ayuda en el símbolo del sistema.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,17 +37,17 @@ writer exclude [<Writer> | <Component>]
 
 | Parámetro  |                                                                                      Descripción                                                                                      |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   verify   | Comprueba que el sistema de escritura especificado o el componente se incluye en el procedimiento de copia de seguridad o restauración. El procedimiento de copia de seguridad o restauración se producirá un error si el sistema de escritura o el componente no se incluye. |
-|  excluye   |                                                   Excluye el escritor especificado o el componente de los procedimientos de copia de seguridad y restauración.                                                    |
-| [\<Escritor > |                                                                                     <Component>]                                                                                      |
+|   verify   | Comprueba que el escritor o el componente especificado está incluido en el procedimiento de copia de seguridad o restauración. Se producirá un error en el procedimiento de copia de seguridad o restauración si no se incluye el escritor o el componente. |
+|  excluye   |                                                   Excluye el escritor o componente especificado del procedimiento de copia de seguridad o restauración.                                                    |
+| [\<Writer > |                                                                                     <Component>]                                                                                      |
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para comprobar que un sistema de escritura mediante la especificación de su GUID (para este ejemplo, 4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f), escriba:
+Para comprobar un escritor especificando su GUID (en este ejemplo, 4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f), escriba:
 ```
 writer verify {4dc3bdd4-ab48-4d07-adb0-3bee2926fd7f}
 ```
-Para excluir un sistema de escritura con el nombre "Escritor del sistema", escriba:
+Para excluir un escritor con el nombre "escritor del sistema", escriba:
 ```
 writer exclude "System Writer"
 ```

@@ -1,8 +1,8 @@
 ---
-title: Dfsdiag TestDCs
-description: 'Tema de los comandos de Windows para ***- '
+title: dfsdiag TestDCs
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,24 +13,24 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 62956ae65d2311939ac0db6a4b86950f21dba407
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a193e68b6f015b1535a98e20b52deb2a4a14034c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59836606"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378440"
 ---
-# <a name="dfsdiag-testdcs"></a>Dfsdiag TestDCs
+# <a name="dfsdiag-testdcs"></a>dfsdiag TestDCs
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Comprueba la configuración de controladores de dominio mediante la realización de las siguientes pruebas en cada controlador de dominio en el dominio especificado:  
+Comprueba la configuración de los controladores de dominio mediante la realización de las siguientes pruebas en cada controlador de dominio del dominio especificado:  
   
--   comprueba que el sistema de archivos distribuido \(DFS\) Namespace servicio se está ejecutando y que su tipo de inicio esté establecido en automático.  
+-   comprueba que el servicio de espacio de nombres Sistema de archivos distribuido \(DFS @ no__t-1 se está ejecutando y que su tipo de inicio está establecido en automático.  
   
--   Comprueba la compatibilidad de sitio\-calcula el costo de las referencias de NETLOGON y SYSvol.  
+-   Comprueba la compatibilidad de las referencias de site @ no__t-0costed para NETLOGON y SYSvol.  
   
--   comprueba la coherencia de la asociación del sitio mediante el nombre de host y la dirección IP.  
+-   comprueba la coherencia de la Asociación del sitio por el nombre de host y la dirección IP.  
   
   
   
@@ -44,13 +44,13 @@ dfsdiag /TestDCs [/Domain:<Domain name>]
   
 |Parámetro|Descripción|  
 |-------|--------|  
-|\/Dominio:<Domain name>|Dominio que desea comprobar.|  
+|\/Domain: <Domain name>|Dominio que desea comprobar.|  
   
 ## <a name="remarks"></a>Comentarios  
-\/Dominio es un parámetro opcional. El valor predeterminado es el dominio local que forme parte de host local.  
+\/Domain es un parámetro opcional. El valor predeterminado es el dominio local al que está unido el host local.  
   
-## <a name="BKMK_Examples"></a>Ejemplos  
-Para comprobar la configuración de controladores de dominio en el dominio Contoso.com, escriba:  
+## <a name="BKMK_Examples"></a>Example  
+Para comprobar la configuración de los controladores de dominio en el dominio Contoso.com, escriba:  
   
 ```  
 dfsdiag /TestDCs /Domain:Contoso.com  

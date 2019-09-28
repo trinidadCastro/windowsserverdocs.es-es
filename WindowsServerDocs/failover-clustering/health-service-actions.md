@@ -1,6 +1,6 @@
 ---
-title: Acciones de servicio de mantenimiento
-ms.prod: windows-server-threshold
+title: Servicio de mantenimiento acciones
+ms.prod: windows-server
 manager: eldenc
 ms.author: cosdar
 ms.technology: storage-health-service
@@ -8,18 +8,18 @@ ms.topic: article
 ms.assetid: ''
 author: cosmosdarwin
 ms.date: 08/14/2017
-ms.openlocfilehash: efdf8f04e68fcbdc7051e78d6725cb919e740ffa
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 519f0321f36fb7afc86962950aeab729d7a38adb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59843026"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71361099"
 ---
-# <a name="health-service-actions"></a>Acciones de servicio de mantenimiento
+# <a name="health-service-actions"></a>Servicio de mantenimiento acciones
 
-> Se aplica a Windows Server 2016
+> Se aplica a: Windows Server 2019 y Windows Server 2016
 
-El servicio de mantenimiento es una característica nueva en Windows Server 2016 que mejora la supervisión diaria y la experiencia operativa para los clústeres que ejecutan espacios de almacenamiento directo.
+El Servicio de mantenimiento es una nueva característica de Windows Server 2016 que mejora la supervisión cotidiana y la experiencia operativa de los clústeres que ejecutan Espacios de almacenamiento directo.
 
 ## <a name="actions"></a>Acciones  
 
@@ -35,7 +35,7 @@ Get-StorageHealthAction
 
 ### <a name="coverage"></a>Cobertura  
 
-En Windows Server 2016, el **Get-StorageHealthAction** cmdlet puede devolver cualquiera de la siguiente información:  
+En Windows Server 2016, el cmdlet **Get-StorageHealthAction** puede devolver cualquiera de los siguientes datos:  
 
 -   Error en la retirada, conectividad perdida o disco físico no responde  
 
@@ -47,5 +47,5 @@ En Windows Server 2016, el **Get-StorageHealthAction** cmdlet puede devolver cua
 
 ## <a name="see-also"></a>Vea también
 
-- [Servicio de mantenimiento de Windows Server 2016](health-service-overview.md)
-- [Referencia de API en MSDN, código de ejemplo y documentación para desarrolladores](https://msdn.microsoft.com/windowshealthservice)
+- [Servicio de mantenimiento en Windows Server 2016](health-service-overview.md)
+- [Documentación para desarrolladores, código de ejemplo y referencia de API en MSDN](https://msdn.microsoft.com/windowshealthservice)

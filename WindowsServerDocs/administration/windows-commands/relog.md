@@ -1,8 +1,8 @@
 ---
 title: relog
-description: Obtenga información sobre cómo extraer información del contador de rendimiento de los archivos de registro de rendimiento coutner.
+description: Aprenda a extraer información de contadores de rendimiento de los archivos de registro de coutner de rendimiento.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 1b39952353ce619aee355ad43048ee2c142e939e
-ms.sourcegitcommit: 63926404009f9e1330a4a0aa8cb9821a2dd7187e
+ms.openlocfilehash: daedd85f1557c191a690e7eb750559cfd268d3a0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/29/2019
-ms.locfileid: "67469513"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371617"
 ---
 # <a name="relog"></a>relog
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Extrae los contadores de rendimiento de los registros de contador de rendimiento en otros formatos, como texto TSV (por texto delimitado por tabulaciones), texto CSV (por texto delimitado por comas), BIN binario o SQL.   
+Extrae los contadores de rendimiento de los registros de contadores de rendimiento en otros formatos, como text-TSV (para texto delimitado por tabuladores), Text-CSV (para texto delimitado por comas), Binary-BIN o SQL.   
 
 ## <a name="syntax"></a>Sintaxis  
 ```  
@@ -35,55 +35,55 @@ relog [<FileName> [<FileName> ...]] [/a] [/c <path> [<path> ...]] [/cf <FileName
 
 |                                         Parámetro                                          |                                                                                                                                                                  Descripción                                                                                                                                                                   |
 |--------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                                *Nombre de archivo* [*nombre de archivo...* ]                                 |                                                                                                                      Especifica la ruta de acceso de un registro de contador de rendimiento existente. Puede especificar varios archivos de entrada.                                                                                                                      |
-|                                             -a                                             |                                                                                                          Anexa el archivo de salida en lugar de sobrescribir. Esta opción no se aplica al formato SQL donde el valor predeterminado es siempre que se anexará.                                                                                                           |
-|                                   -c *ruta* [*ruta de acceso...* ]                                   |                                                       Especifica la ruta de acceso de contador de rendimiento para iniciar sesión. Para especificar varias rutas de acceso de contador, sepárelas con un espacio y encierre las rutas de acceso de contador entre comillas (por ejemplo, **"** <em>RutadeAccesoDeContador1</em> <em>RutadeAccesoDeContador2</em> **"** )                                                       |
-|                                       -cf *FileName*                                       |                                            Especifica la ruta de acceso del archivo de texto que se enumera los contadores de rendimiento que se incluirán en un archivo de volver a registrar. Use esta opción para las rutas de acceso del contador de lista en un archivo de entrada, uno por línea. Valor predeterminado es que volver a registrar todos los contadores en el archivo de registro original.                                            |
-|                                  -f {bin\| csv\|tsv\|SQL}                                  |                                       Especifica la ruta de acceso del formato de archivo de salida. El formato predeterminado es **bin**. Para una base de datos SQL, el archivo de salida especifica el *DSN! CounterLog*. Puede especificar la ubicación de la base de datos mediante el Administrador de ODBC para configurar el DSN (nombre de base de datos del sistema).                                        |
-|                                         -t *valor*                                         |                                                                                                           Especifica intervalos de muestra en "*N*" registros. Incluye cada n puntos de datos en el archivo de volver a registrar. Valor predeterminado es cada punto de datos.                                                                                                           |
-| -o {*OutputFile* \| *"SQL:DSN! RegistroContadorDSN*} donde DSN es un DSN ODMC definidos en el sistema. |                                                   Especifica la ruta de acceso del archivo de salida o la base de datos SQL donde se escribirán los contadores. <br>Nota: Para las versiones de 64 bits y 32 bits de Relog.exe, deberá definir un DSN en el origen de datos ODBC (64 bits y 32 bits, respectivamente)                                                   |
-|                          -b \< *M*/*d.* /*aaaa*> [[*HH*:]*MM*:]*SS*                           |                                                                          Especifica la hora para copiar el primer registro desde el archivo de entrada de inicio. fecha y hora deben estar en el formato exacto <em>M</em> **/** <em>d.</em> **/** <em>YYYYHH</em> **:** <em>MM</em> **:** <em>SS</em>.                                                                          |
-|                          -e \< *M*/*d.* /*aaaa*> [[*HH*:]*MM*:]*SS*                           |                                                                           Especifica la hora de finalización para copiar el último registro del archivo de entrada. fecha y hora deben estar en el formato exacto <em>M</em> **/** <em>d.</em> **/** <em>YYYYHH</em> **:** <em>MM</em> **:** <em>SS</em>.                                                                            |
-|                                -config {*FileName* \| *i*}                                 | Especifica la ruta de acceso del archivo de configuración que contiene los parámetros de línea de comandos. Use *-i* en el archivo de configuración como un marcador de posición para obtener una lista de archivos de entrada que se pueden colocar en la línea de comandos. En la línea de comandos, sin embargo, no deberá usar *i*. También puede usar caracteres comodín, como \*.blg para especificar varios nombres de archivo de entrada. |
-|                                             -q                                             |                                                                                                                          Muestra los contadores de rendimiento e intervalos de tiempo de archivos de registro especificados en el archivo de entrada.                                                                                                                           |
-|                                             -y                                             |                                                                                                                                            Mensajes de confirmación contestando "Sí" a todas las preguntas de omisiones.                                                                                                                                             |
+|                                *Nombre de archivo* [*nombrearchivo...* ]                                 |                                                                                                                      Especifica el directorio de un registro de contador de rendimiento existente. Puede especificar varios archivos de entrada.                                                                                                                      |
+|                                             -a                                             |                                                                                                          Anexa el archivo de salida en lugar de sobrescribirlo. Esta opción no se aplica al formato SQL, donde el valor predeterminado siempre es anexar.                                                                                                           |
+|                                   -c *ruta de acceso* [*ruta de acceso...* ]                                   |                                                       Especifica la ruta de acceso del contador de rendimiento que se va a registrar. Para especificar varias rutas de acceso de contador, sepárelas con un espacio y encierre las rutas de acceso de contador entre comillas (por ejemplo, **"** <em>Counterpath1</em> <em>Counterpath2</em> **"** )                                                       |
+|                                       -CF *nombre de archivo*                                       |                                            Especifica la ruta de acceso del archivo de texto que enumera los contadores de rendimiento que se van a incluir en un archivo de relog. Use esta opción para mostrar las rutas de acceso de contador en un archivo de entrada, una por línea. La configuración predeterminada es que se reinicien todos los contadores del archivo de registro original.                                            |
+|                                  -f {bin @ no__t-0 CSV @ no__t-1tsv @ no__t-2SQL}                                  |                                       Especifica la ruta de acceso del formato del archivo de salida. El formato predeterminado es **bin**. En el caso de una base de datos SQL, el archivo de salida especifica el *DSN. CounterLog*. Puede especificar la ubicación de la base de datos mediante el administrador de ODBC para configurar el DSN (nombre del sistema de la base de datos).                                        |
+|                                         *valor* -t                                         |                                                                                                           Especifica los intervalos de muestra en los registros "*N*". Incluye cada n punto de datos en el archivo relog. El valor predeterminado es cada punto de datos.                                                                                                           |
+| -o {*OutputFile* \| *"SQL: DSN! Counter_Log*}, donde DSN es un DSN de ODMC definido en el sistema. |                                                   Especifica la ruta de acceso del archivo de salida o la base de datos SQL donde se escribirán los contadores. <br>Nota: En el caso de las versiones de 64 y 32 bits de relog. exe, debe definir un DSN en el origen de datos ODBC (64 bits y 32 bits, respectivamente).                                                   |
+|                          -b \<*M*/*D*/*yyyy*> [[*HH*:]*mm*:]*SS*                           |                                                                          Especifica la hora de inicio para copiar el primer registro del archivo de entrada. la fecha y la hora deben tener el formato exacto <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em> **:** <em>mm</em> **:** <em>SS</em>.                                                                          |
+|                          -e \<*M*/*D*/*yyyy*> [[*HH*:]*mm*:]*SS*                           |                                                                           Especifica la hora de finalización para copiar el último registro del archivo de entrada. la fecha y la hora deben tener el formato exacto <em>M</em> **/** <em>D</em> **/** <em>YYYYHH</em> **:** <em>mm</em> **:** <em>SS</em>.                                                                            |
+|                                -config {*FileName* \| *i*}                                 | Especifica la ruta de acceso del archivo de configuración que contiene los parámetros de la línea de comandos. Use *-i* en el archivo de configuración como un marcador de posición para una lista de archivos de entrada que se pueden colocar en la línea de comandos. En la línea de comandos, sin embargo, no deberá usar *i*. También puede usar caracteres comodín, como @no__t -0. BLG, para especificar muchos nombres de archivo de entrada. |
+|                                             -q                                             |                                                                                                                          Muestra los contadores de rendimiento y los intervalos de tiempo de los archivos de registro especificados en el archivo de entrada.                                                                                                                           |
+|                                             -y                                             |                                                                                                                                            Omite preguntar al responder "sí" a todas las preguntas.                                                                                                                                             |
 |                                             /?                                             |                                                                                                                                                      Muestra la ayuda en el símbolo del sistema.                                                                                                                                                      |
 
 ## <a name="remarks"></a>Comentarios  
-Formato de ruta de acceso de contador:  
-- El formato general de las rutas de acceso de contador es como sigue: [\\\<equipo >] \\ \<objeto > [\<primario >\\< #Index >] \\ \< Contador >] donde el primario, instancia, índice y componentes del formato del contador pueden contener un nombre válido o un carácter comodín. El equipo, principal, instancia y componentes del índice no son necesarios para todos los contadores.  
-- Determinar las rutas de acceso de contador utilizar basándose en el propio contador. Por ejemplo, el objeto disco lógico tiene una instancia <Index>, por lo que debe proporcionar < #index > o un carácter comodín. Por lo tanto, podría utilizar el siguiente formato: **\LogicalDisk (\*/\*#\*)\\\\** *  
-- En comparación, el objeto de proceso no requiere una instancia \<índice >. Por lo tanto, podría utilizar el siguiente formato: **\process(waiishost)\Private (\*) \ID proceso**  
-- Si se especifica un carácter comodín en el nombre del elemento primario, se devolverán todas las instancias del objeto especificado que coinciden con los campos de contador y la instancia especificada.  
-- Si se especifica un carácter comodín en el nombre de instancia, se devolverán todas las instancias del objeto especificado y del objeto primario si todos los nombres de instancia correspondiente al índice especificado coincide con el carácter comodín.  
+Formato de la ruta de acceso del contador:  
+- El formato general de las rutas de acceso de contador es el siguiente: [\\ @ no__t-1computer >] \\ @ no__t-3Object > [\<Parent > \\ < instancia # index >] \\ @ no__t-7Counter >] donde el elemento primario, la instancia, el índice y el contador los componentes del formato pueden contener un nombre válido o un carácter comodín. Los componentes equipo, primario, instancia e índice no son necesarios para todos los contadores.  
+- Se determinan las rutas de acceso del contador que se van a usar en función del propio contador. Por ejemplo, el objeto LogicalDisk tiene una instancia <Index>, por lo que debe proporcionar el < #index > o un carácter comodín. Por lo tanto, puede usar el siguiente formato: **\LogicalDisk (\* @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5) \\ @ no__t-7***  
+- En comparación, el objeto de proceso no requiere una instancia @no__t 0Index >. Por lo tanto, puede usar el siguiente formato: **\Process (\*) \ID proceso**  
+- Si se especifica un carácter comodín en el nombre principal, se devolverán todas las instancias del objeto especificado que coincidan con la instancia y los campos de contador especificados.  
+- Si se especifica un carácter comodín en el nombre de instancia, se devolverán todas las instancias del objeto y el objeto primario especificados si todos los nombres de instancia correspondientes al índice especificado coinciden con el carácter comodín.  
 - Si se especifica un carácter comodín en el nombre del contador, se devuelven todos los contadores del objeto especificado.  
-- No se admiten las coincidencias de la cadena de ruta de acceso de contador parcial (por ejemplo, pro *).  
+- No se admiten las coincidencias de cadena de ruta de contador parcial (por ejemplo, Pro *).  
 
 Archivos de contador:  
--   Contador son archivos de texto que enumeran uno o varios de los contadores de rendimiento en el registro existente. Copie el nombre de contador completo del registro o el **/q** de salida en \<equipo >\\\<objeto >\\\<instancia >\\ \< Contador > formato. enumerar una ruta de acceso de contador en cada línea.  
+-   Los archivos de contador son archivos de texto que enumeran uno o varios de los contadores de rendimiento del registro existente. Copie el nombre completo del contador del registro o el resultado **/q** en \<computer > \\ @ No__t-3Object > \\ @ No__t-5Instance > \\ @ No__t-7Counter > formato. muestra una ruta de acceso de contador en cada línea.  
 
-Copiar contadores:  
--   Cuando se ejecuta, **volver a registrar** copia los contadores especificados de cada registro en el archivo de entrada, convertir el formato si es necesario. Se permiten rutas de acceso de comodín en el archivo de contador.  
-Guardando subconjuntos del archivo de entrada:  
--   Use la **/t** a intervalos de los archivos de salida de parámetro para especificar que los archivos de entrada se insertan en cada <n>registro th. De forma predeterminada, es volver a registrar los datos de cada registro.  
-Uso de **/b** y **/e** parámetros con archivos de registro  
--   Puede especificar que los registros de salida incluyen registros desde antes de la hora de inicio (es decir, **/b**) para proporcionar datos para contadores que requieren valores calculados del valor con formato. El archivo de salida tendrá los últimos registros de archivos de entrada con marcas de tiempo menor que el **/e** (es decir, hora de finalización) parámetro.  
-Mediante el **/config** opción:  
--   El contenido del archivo de configuración usado con el **/config** opción debe tener el formato siguiente:  
-    -   \<CommandOption >\\\<valor >, donde \<CommandOption > es una opción de línea de comandos y \<valor > especifica su valor.
+Copiando contadores:  
+-   Cuando se ejecuta, **relog** copia los contadores especificados de cada registro del archivo de entrada, lo que convierte el formato si es necesario. Se permiten las rutas de acceso comodín en el archivo de contador.  
+Guardar subconjuntos de archivos de entrada:  
+-   Use el parámetro **/t** para especificar que los archivos de entrada se inserten en los archivos de salida a intervalos de cada registro @no__t-enésimo desencadenamiento. De forma predeterminada, los datos se reinician desde cada registro.  
+Usar los parámetros **/b** y **/e** con los archivos de registro  
+-   Puede especificar que los registros de salida incluyan registros desde antes de que el tiempo de inicio (es decir, **/b**) proporcionen datos para los contadores que requieran valores de cálculo del valor con formato. El archivo de salida tendrá los últimos registros de los archivos de entrada con marcas de tiempo menores que el parámetro **/e** (es decir, hora de finalización).  
+Usar la opción **/config** :  
+-   El contenido del archivo de configuración que se usa con la opción **/config** debe tener el formato siguiente:  
+    -   \<CommandOption > \\ @ no__t-2Value >, donde \<CommandOption > es una opción de línea de comandos y \<Value > especifica su valor.
 
-Para obtener más información acerca de cómo incorporar **volver a registrar** en sus scripts de Windows Management Instrumentation (WMI), vea "Scripting WMI" en el [sitio Web del Kit de recursos de Microsoft Windows](https://go.microsoft.com/fwlink/?LinkId=4665).  
+Para obtener más información acerca de cómo incorporar **relog** en los scripts de instrumental de administración de Windows (WMI), vea el tema sobre el scripting de WMI en el [sitio web de los kits de recursos de Microsoft Windows](https://go.microsoft.com/fwlink/?LinkId=4665).  
 
-## <a name="BKMK_Examples"></a>Ejemplos  
-Para volver a muestrear los registros de seguimiento existentes a intervalos fijos de 30, enumerar las rutas de acceso de contador, archivos y formatos de salida:  
+## <a name="BKMK_Examples"></a>Example  
+Para volver a muestrear los registros de seguimiento existentes a intervalos fijos de 30, enumere las rutas de acceso de contador, los archivos de salida y los formatos:  
 ```  
 relog c:\perflogs\daily_trace_log.blg /cf counter_file.txt /o c:\perflogs\reduced_log.csv /t 30 /f csv  
 ```  
-Para volver a muestrear los registros de seguimiento existentes a intervalos fijos de 30, enumerar las rutas de acceso de contador y el archivo de salida:  
+Para volver a muestrear los registros de seguimiento existentes a intervalos fijos de 30, enumere las rutas de acceso del contador y el archivo de salida:  
 ```  
 relog c:\perflogs\daily_trace_log.blg /cf counter_file.txt /o c:\perflogs\reduced_log.blg /t 30  
 ```
-Volver a muestrear los registros de seguimiento existente en una base de datos, use:
+Para volver a muestrear los registros de seguimiento existentes en una base de datos, use:
 ```
 relog "c:\perflogs\daily_trace_log.blg" -f sql -o "SQL:sql2016x64odbc!counter_log"
 ```

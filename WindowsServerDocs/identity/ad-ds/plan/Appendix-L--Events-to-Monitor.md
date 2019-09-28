@@ -1,45 +1,45 @@
 ---
 ms.assetid: 99a68050-8d19-4c58-ad86-e08a3dcdb4f7
-title: L - apéndice de eventos para supervisar
+title: 'Apéndice L: eventos para supervisar'
 description: ''
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 07/30/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: c245c5a6b2165385096f32713a92916236cdddfb
-ms.sourcegitcommit: a3958dba4c2318eaf2e89c7532e36c78b1a76644
+ms.openlocfilehash: e069fe004d9256682e5754fc90ae6cba88ee7cb3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66719699"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402724"
 ---
 # <a name="appendix-l-events-to-monitor"></a>Apéndice L: Eventos para supervisar
 
 >Se aplica a: Windows Server
 
-En la tabla siguiente se enumera los eventos que debe supervisar en el entorno, según las recomendaciones proporcionadas en [supervisión de Active Directory para signos de peligro](../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md). En la tabla siguiente, la columna "ID de evento de Windows actual" muestra el identificador de evento tal y como se implementa en las versiones de Windows y Windows Server que están actualmente en soporte técnico.  
+En la tabla siguiente se enumeran los eventos que debe supervisar en su entorno, de acuerdo con las recomendaciones proporcionadas en [supervisión Active Directory para ver los signos de riesgo](../../ad-ds/plan/security-best-practices/Monitoring-Active-Directory-for-Signs-of-Compromise.md). En la tabla siguiente, la columna "ID. de evento de Windows actual" muestra el ID. de evento tal como se implementa en las versiones de Windows y Windows Server que se encuentran actualmente en soporte estándar.  
   
-La columna de "Identificador de evento de Windows heredado" muestra el identificador de evento correspondiente en las versiones heredadas de Windows como equipos cliente que ejecutan Windows XP o versiones anteriores y los servidores que ejecutan Windows Server 2003 o anterior. El "importancia crítica potencial" identifica si el evento debe considerarse de baja, Media o alta importancia en la detección de ataques y la columna "Resumen de eventos" proporciona una breve descripción del evento.  
+La columna "ID. de evento de Windows heredado" muestra el identificador de evento correspondiente en versiones heredadas de Windows, como equipos cliente que ejecutan Windows XP o versiones anteriores, y servidores que ejecutan Windows Server 2003 o una versión anterior. La columna "importancia crítica" identifica si el evento debe considerarse de importancia baja, media o alta en la detección de ataques, y la columna "Resumen de eventos" proporciona una breve descripción del evento.  
   
-Una importancia crítica potencial alta significa que una aparición del evento debe investigarse. Importancia crítica potencial Media o baja significa que solo se deben analizar estos eventos si se producen en los números que superan notablemente la línea base esperada en un período de tiempo medido o de forma inesperada. Todas las organizaciones deben probar estas recomendaciones en sus entornos antes de crear las alertas que requieren respuestas investigación obligatorias. Cada entorno es diferente y algunos de los eventos con una importancia crítica potencial alta pueden producirse debido a otros eventos inofensivos.  
+Una crítica potencial de alto significa que se debe investigar una aparición del evento. Una posible importancia media o baja significa que estos eventos solo deben investigarse si se producen de forma inesperada o en números que superan significativamente la línea de base esperada en un período de tiempo medido. Todas las organizaciones deben probar estas recomendaciones en sus entornos antes de crear las alertas que requieren respuestas investigación obligatorias. Cada entorno es diferente, y algunos de los eventos que se clasifican con una importancia crítica potencial se pueden producir debido a otros eventos inofensivos.  
   
 |||||  
 |-|-|-|-|  
-|**Id. de evento de Windows actual**|**Id. de evento de Windows heredado**|**Importancia crítica potencial**|**Resumen de eventos**|  
+|**ID. de evento de Windows actual**|**ID. de evento de Windows heredado**|**Posible importancia**|**Resumen de eventos**|  
 |4618|N/D|Alto|Se ha producido un patrón de evento de seguridad supervisado.|  
-|4649|N/D|Alto|Se detectó un ataque de reproducción. Puede ser un falso positivo inofensivo debido a un error de configuración incorrecta.|  
+|4649|N/D|Alto|Se detectó un ataque de reproducción. Puede ser un falso positivo inofensivo debido a un error de configuración erróneo.|  
 |4719|612|Alto|Se cambió la directiva de auditoría del sistema|  
 |4765|N/D|Alto|Se agregó el historial de SID a una cuenta.|  
 |4766|N/D|Alto|Se produjo un error al intentar agregar el historial de SID a una cuenta.|  
 |4794|N/D|Alto|Se intentó establecer el Modo de restauración de servicios de directorio.|  
 |4897|801|Alto|Separación de roles habilitada|  
 |4964|N/D|Alto|Se han asignado Grupos especiales un nuevo inicio de sesión.|  
-|5124|N/D|Alto|Se ha actualizado una configuración de seguridad en el servicio de respuesta de OCSP|  
-|N/D|550|Medio a alto|Ataque posible denegación de servicio (DoS)|  
-|1102|517|Medio a alto|Se ha borrado el registro de auditoría|  
+|5124|N/D|Alto|Se actualizó una configuración de seguridad en el servicio de respuesta de OCSP|  
+|N/D|550|De medio a alto|Posible ataque de denegación de servicio (DoS)|  
+|1102|517|De medio a alto|Se borró el registro de auditoría|  
 |4621|N/D|Medio|El administrador recuperó el sistema del error CrashOnAuditFail. Los usuarios que no sean administradores podrán iniciar sesión ahora. Es posible que no se haya registrado alguna actividad de auditoría.|  
 |4675|N/D|Medio|Se filtraron SID.|  
 |4692|N/D|Medio|Se intentó hacer una copia de seguridad de la clave maestra de protección de datos|  
@@ -56,7 +56,7 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |4739|643|Medio|Se cambió la directiva de dominio|  
 |4754|658|Medio|Se creó un grupo universal con la seguridad habilitada.|  
 |4755|659|Medio|Se cambió un grupo universal con la seguridad habilitada.|  
-|4764|667|Medio|Se eliminó un grupo de seguridad deshabilitada|  
+|4764|667|Medio|Se eliminó un grupo con seguridad deshabilitada|  
 |4764|668|Medio|Se cambió el tipo de un grupo.|  
 |4780|684|Medio|Se estableció la ACL en cuentas que son miembros de grupos de administradores.|  
 |4816|N/D|Medio|RPC detectó una infracción de integridad al descifrar un mensaje entrante.|  
@@ -91,10 +91,10 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |5035|N/D|Medio|No se pudo iniciar el controlador de Firewall de Windows.|  
 |5037|N/D|Medio|El controlador de Firewall de Windows detectó un error en tiempo de ejecución crítico. Finalizando.|  
 |5038|N/D|Medio|Integridad de código determinó que el hash de imagen de un archivo no es válido. El archivo pudo resultar dañado por una modificación no autorizada o el hash no válido podría indicar un posible error de dispositivo de disco.|  
-|5120|N/D|Medio|Servicio de respuesta OCSP iniciado|  
-|5121|N/D|Medio|Servicio de respuesta OCSP detenido|  
-|5122|N/D|Medio|Una entrada de configuración puede cambiada en el servicio de respuesta de OCSP|  
-|5123|N/D|Medio|Una entrada de configuración puede cambiada en el servicio de respuesta de OCSP|  
+|5120|N/D|Medio|Servicio de respuesta de OCSP iniciado|  
+|5121|N/D|Medio|Servicio de respuesta de OCSP detenido|  
+|5122|N/D|Medio|Una entrada de configuración cambiada en el servicio de respuesta de OCSP|  
+|5123|N/D|Medio|Una entrada de configuración cambiada en el servicio de respuesta de OCSP|  
 |5376|N/D|Medio|Se hizo una copia de seguridad de las credenciales del Administrador de credenciales.|  
 |5377|N/D|Medio|Se restauraron las credenciales del Administrador de credenciales desde una copia de seguridad.|  
 |5453|N/D|Medio|Error de negociación de IPsec con un equipo remoto. No se inició el servicio de Módulos de creación de claves de IPsec para IKE y AuthIP (IKEEXT).|  
@@ -102,7 +102,7 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |5483|N/D|Medio|Error de los servicios IPsec al inicializar el servidor RPC. No se pudieron iniciar los servicios IPsec.|  
 |5484|N/D|Medio|Los servicios IPsec experimentaron un error crítico y se cerraron. El cierre de los servicios IPsec puede suponer un mayor riesgo de ataque a la red para el equipo o exponerlo a posibles riesgos de seguridad.|  
 |5485|N/D|Medio|Error de los servicios IPsec al procesar algunos filtros IPsec en un evento de Plug and Play para interfaces de red. Esto supone un posible riesgo de seguridad porque puede que algunas interfaces de red no obtengan la protección proporcionada por los filtros IPsec aplicados. Usa el complemento Monitor de seguridad IP para diagnosticar el problema.|  
-|6145|N/D|Medio|Se ha producido uno o varios errores durante el procesamiento de directiva de seguridad de los objetos de directiva de grupo.|  
+|6145|N/D|Medio|Se produjeron uno o más errores al procesar la Directiva de seguridad en los objetos de directiva de grupo.|  
 |6273|N/D|Medio|El Servidor de directivas de redes denegó el acceso a un usuario.|  
 |6274|N/D|Medio|El Servidor de directivas de redes rechazó la solicitud de un usuario.|  
 |6275|N/D|Medio|El Servidor de directivas de redes rechazó la solicitud de cuentas de un usuario.|  
@@ -111,12 +111,12 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |6278|N/D|Medio|El Servidor de directivas de redes concedió acceso total a un usuario porque el host cumplía la directiva de mantenimiento definida.|  
 |6279|N/D|Medio|El Servidor de directivas de redes bloqueó la cuenta de usuario debido a varios intentos de autenticación erróneos.|  
 |6280|N/D|Medio|El Servidor de directivas de redes desbloqueó la cuenta de usuario.|  
-|-|640|Medio|Puede cambiar de base de datos de cuentas general|  
-|-|619|Medio|Puede cambiar la calidad de servicio de directiva|  
-|24586|N/D|Medio|Se detectó un error de conversión de volumen|  
-|24592|N/D|Medio|Error al intentar conversión de volumen %2 o se reinicie automáticamente.|  
-|24593|N/D|Medio|Escritura de metadatos: Volumen %2 devolver los errores al intentar modificar los metadatos. Si el error continúa, descifrar el volumen|  
-|24594|N/D|Medio|Volver a generar los metadatos: Un intento de escribir una copia de los metadatos de volumen %2 error y puede aparecer como daños en el disco. Si el error continúa, descifre el volumen.|  
+|-|640|Medio|Base de datos de cuentas generales modificada|  
+|-|619|Medio|Directiva de calidad de servicio modificada|  
+|24586|N/D|Medio|Se detectó un error al convertir el volumen|  
+|24592|N/D|Medio|Error al intentar reiniciar automáticamente la conversión en el volumen% 2.|  
+|24593|N/D|Medio|Escritura de metadatos: El volumen% 2 devolvió errores al intentar modificar los metadatos. Si continúan los errores, descifre el volumen|  
+|24594|N/D|Medio|Regeneración de metadatos: Error al intentar escribir una copia de metadatos en el volumen% 2 y puede aparecer como daños en el disco. Si los errores continúan, descifre el volumen.|  
 |4608|512|Bajo|Windows se está iniciando.|  
 |4609|513|Bajo|Windows se está apagando.|  
 |4610|514|Bajo|La Autoridad de seguridad local ha cargado un paquete de autenticación.|  
@@ -126,17 +126,17 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |4615|519|Bajo|Uso no válido de puerto LPC.|  
 |4616|520|Bajo|Se cambió la hora del sistema.|  
 |4622|N/D|Bajo|La Autoridad de seguridad local cargó un paquete de seguridad.|  
-|4624|528,540|Bajo|Se inició sesión correctamente en una cuenta.|  
-|4625|529-537,539|Bajo|No se pudo iniciar sesión en una cuenta.|  
+|4624|528.540|Bajo|Se inició sesión correctamente en una cuenta.|  
+|4625|529-537539|Bajo|No se pudo iniciar sesión en una cuenta.|  
 |4634|538|Bajo|Se cerró sesión en una cuenta.|  
-|4646|N/D|Bajo|Inicia el modo de prevención de denegación de servicio de IKE.|  
+|4646|N/D|Bajo|Se inició el modo de prevención DoS de IKE.|  
 |4647|551|Bajo|Cierre de sesión iniciada por el usuario.|  
 |4648|552|Bajo|Se intentó iniciar sesión con credenciales explícitas.|  
 |4650|N/D|Bajo|Se estableció una asociación de seguridad de modo principal de IPsec. No se habilitó el modo extendido. No se usó la autenticación de certificado.|  
 |4651|N/D|Bajo|Se estableció una asociación de seguridad de modo principal de IPsec. No se habilitó el modo extendido. Se usó un certificado para la autenticación.|  
 |4652|N/D|Bajo|Error de negociación de modo principal de IPsec.|  
 |4653|N/D|Bajo|Error de negociación de modo principal de IPsec.|  
-|4654|N/D|Bajo|No se pudo una negociación de modo rápido de IPsec.|  
+|4654|N/D|Bajo|Error de negociación de modo rápido de IPsec.|  
 |4655|N/D|Bajo|Finalizó una asociación de seguridad de modo principal de IPsec.|  
 |4656|560|Bajo|Se solicitó un identificador para un objeto.|  
 |4657|567|Bajo|Se modificó un valor del Registro.|  
@@ -162,8 +162,8 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |4691|595|Bajo|Se solicitó acceso indirecto a un objeto.|  
 |4694|N/D|Bajo|Se intentó proteger los datos protegidos que se pueden auditar|  
 |4695|N/D|Bajo|Se intentó desproteger los datos protegidos que se pueden auditar|  
-|4696|600|Bajo|Un token primario se asignó a procesar.|  
-|4697|601|Bajo|Intento de instalar un servicio|  
+|4696|600|Bajo|Se asignó un token primario al proceso.|  
+|4697|601|Bajo|Intentar instalar un servicio|  
 |4698|602|Bajo|Se creó una tarea programada.|  
 |4699|602|Bajo|Se eliminó una tarea programada.|  
 |4700|602|Bajo|Se habilitó una tarea programada.|  
@@ -174,7 +174,7 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |4707|611|Bajo|Se quitó una confianza de un dominio|  
 |4709|N/D|Bajo|Se iniciaron los Servicios IPsec.|  
 |4710|N/D|Bajo|Se deshabilitaron los Servicios IPsec.|  
-|4711|N/D|Bajo|Puede contener: El motor PAStore aplicó una copia almacenada en caché localmente de la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar una copia almacenada en caché localmente de la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar algunas reglas de la directiva IPsec activa en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento de directorio en el equipo. El motor PAStore cargó la directiva IPsec de almacenamiento de directorio en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento local en el equipo. El motor PAStore cargó la directiva de IPsec en el equipo de almacenamiento local. El motor PAStore sondeo de cambios en la directiva IPsec activa y no detectó ningún cambio. |  
+|4711|N/D|Bajo|Puede contener: El motor PAStore aplicó una copia almacenada en caché localmente de la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó la directiva IPsec de almacenamiento de Active Directory en el equipo. El motor PAStore aplicó una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar una copia almacenada en caché localmente de la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar la directiva IPsec de almacenamiento de Active Directory en el equipo. Error del motor PAStore al aplicar una directiva IPsec de almacenamiento del Registro local en el equipo. Error del motor PAStore al aplicar algunas reglas de la directiva IPsec activa en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento de directorio en el equipo. El motor PAStore cargó la directiva IPsec de almacenamiento de directorio en el equipo. Error del motor PAStore al cargar la directiva IPsec de almacenamiento local en el equipo. Motor de la restauración cargó la directiva IPsec de almacenamiento local en el equipo. El motor de la Pastore sondeó los cambios en la Directiva de IPsec activa y no detectó ningún cambio. |  
 |4712|N/D|Bajo|Los Servicios IPsec detectaron un error que puede ser importante.|  
 |4717|621|Bajo|Se concedió acceso de seguridad de sistema a una cuenta|  
 |4718|622|Bajo|Se quitó acceso de seguridad de sistema de una cuenta|  
@@ -213,25 +213,25 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |4761|665|Bajo|Se agregó un miembro a un grupo universal con la seguridad deshabilitada.|  
 |4762|666|Bajo|Se quitó un miembro de un grupo universal con la seguridad deshabilitada.|  
 |4767|671|Bajo|Se desbloqueó una cuenta de usuario.|  
-|4768|672,676|Bajo|Se solicitó un vale de autenticación (TGT) de Kerberos.|  
+|4768|672.676|Bajo|Se solicitó un vale de autenticación (TGT) de Kerberos.|  
 |4769|673|Bajo|Se solicitó un vale de servicio Kerberos.|  
 |4770|674|Bajo|Se renovó un vale de servicio Kerberos.|  
 |4771|675|Bajo|Error de autenticación previa de Kerberos.|  
 |4772|672|Bajo|Error de solicitud de vale de autenticación de Kerberos.|  
 |4774|678|Bajo|Se asignó una cuenta para inicio de sesión|  
 |4775|679|Bajo|No se pudo asignar una cuenta para inicio de sesión|  
-|4776|680,681|Bajo|El controlador de dominio intentó validar las credenciales para una cuenta|  
+|4776|680.681|Bajo|El controlador de dominio intentó validar las credenciales para una cuenta|  
 |4777|N/D|Bajo|Error del controlador de dominio al validar las credenciales para una cuenta|  
 |4778|682|Bajo|Se reconectó una sesión a una estación de ventana.|  
 |4779|683|Bajo|Se desconectó una sesión de una estación de ventana.|  
 |4781|685|Bajo|Se cambió el nombre de una cuenta:|  
-|4782|N/D|Bajo|El hash de contraseña de una cuenta se obtuvo acceso.|  
+|4782|N/D|Bajo|El hash de contraseña al que se obtuvo acceso a una cuenta.|  
 |4783|667|Bajo|Se creó un grupo de aplicaciones básicas|  
 |4784|N/D|Bajo|Se cambió un grupo de aplicaciones básicas|  
 |4785|689|Bajo|Se agregó un miembro a un grupo de aplicaciones básicas|  
 |4786|690|Bajo|Se quitó un miembro de un grupo de aplicaciones básicas|  
-|4787|691|Bajo|Se agregó un no miembro a un grupo de aplicación básico.|  
-|4788|692|Bajo|Se quitó un no miembro de un grupo de aplicación básico.|  
+|4787|691|Bajo|Se ha agregado un miembro a un grupo de aplicación básico.|  
+|4788|692|Bajo|Se quitó un miembro de un grupo de aplicación básico.|  
 |4789|693|Bajo|Se eliminó un grupo de aplicaciones básicas|  
 |4790|694|Bajo|Se creó un grupo de consultas LDAP|  
 |4793|N/D|Bajo|Se ha llamado a la API de comprobación de directiva de contraseñas|  
@@ -267,7 +267,7 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |4904|N/D|Bajo|Se intentó registrar un origen de evento de seguridad|  
 |4905|N/D|Bajo|Se intentó anular el registro de un origen de evento de seguridad|  
 |4909|N/D|Bajo|Se cambió la configuración de directiva local para TBS.|  
-|4910|N/D|Bajo|Se cambió la configuración de directiva de grupo para el TB.|  
+|4910|N/D|Bajo|Se ha cambiado la configuración de directiva de grupo para TBS.|  
 |4928|N/D|Bajo|Se estableció un contexto de nomenclatura de origen de réplica de Active Directory|  
 |4929|N/D|Bajo|Se quitó un contexto de nomenclatura de origen de réplica de Active Directory|  
 |4930|N/D|Bajo|Se modificó un contexto de nomenclatura de origen de réplica de Active Directory|  
@@ -313,15 +313,15 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |5046|N/D|Bajo|Se realizó un cambio en la configuración de IPsec. Se agregó un conjunto criptográfico.|  
 |5047|N/D|Bajo|Se realizó un cambio en la configuración de IPsec. Se ha modificado un conjunto criptográfico.|  
 |5048|N/D|Bajo|Se realizó un cambio en la configuración de IPsec. Se ha eliminado un conjunto criptográfico.|  
-|5050|N/D|Bajo|Un intento de deshabilitar mediante programación el Firewall de Windows mediante una llamada a InetFwProfile.FirewallEnabled(False)|  
+|5050|N/D|Bajo|Intento de deshabilitar mediante programación el Firewall de Windows mediante una llamada a Inetfwprofile y. FirewallEnabled (false)|  
 |5051|N/D|Bajo|Se virtualizó un archivo|  
-|5056|N/D|Bajo|Se realizó una prueba automática criptográfica.|  
+|5056|N/D|Bajo|Se realizó una prueba Self criptográfica.|  
 |5057|N/D|Bajo|Error de operación primitiva criptográfica.|  
 |5058|N/D|Bajo|Operación de archivo de clave.|  
 |5059|N/D|Bajo|Operación de migración de clave.|  
 |5060|N/D|Bajo|Error en la operación de comprobación.|  
 |5061|N/D|Bajo|Operación criptográfica.|  
-|5062|N/D|Bajo|Se realizó un cifrado autocomprobación en modo de núcleo.|  
+|5062|N/D|Bajo|Se realizó una prueba automática criptográfica de modo kernel.|  
 |5063|N/D|Bajo|Se intentó una operación de proveedor criptográfico.|  
 |5064|N/D|Bajo|Se intentó una operación de contexto criptográfico.|  
 |5065|N/D|Bajo|Se intentó modificar un contexto criptográfico.|  
@@ -330,9 +330,9 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |5068|N/D|Bajo|Se intentó una operación de proveedor de función criptográfica.|  
 |5069|N/D|Bajo|Se intentó una operación de propiedad de función criptográfica.|  
 |5070|N/D|Bajo|Se intentó modificar una propiedad de función criptográfica.|  
-|5125|N/D|Bajo|Se ha enviado una solicitud al servicio de respuesta de OCSP|  
-|5126|N/D|Bajo|Certificado de firma se actualizó automáticamente con el servicio de respuesta de OCSP|  
-|5127|N/D|Bajo|El proveedor de revocación de OCSP se actualizó correctamente la información de revocación|  
+|5125|N/D|Bajo|Se envió una solicitud al servicio de respuesta de OCSP|  
+|5126|N/D|Bajo|El servicio de respuesta de OCSP actualizó automáticamente el certificado de firma|  
+|5127|N/D|Bajo|El proveedor de revocación de OCSP actualizó correctamente la información de revocación|  
 |5136|566|Bajo|Se modificó un objeto de servicio de directorio|  
 |5137|566|Bajo|Se creó un objeto de servicio de directorio|  
 |5138|N/D|Bajo|Se recuperó un objeto de servicio de directorio|  
@@ -352,12 +352,12 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |5441|N/D|Bajo|El siguiente filtro estaba presente cuando se inició el Motor de filtro de base de la Plataforma de filtrado de Windows.|  
 |5442|N/D|Bajo|El siguiente proveedor estaba presente cuando se inició el Motor de filtro de base de la Plataforma de filtrado de Windows.|  
 |5443|N/D|Bajo|El siguiente contexto de proveedor estaba presente cuando se inició el Motor de filtro de base de la Plataforma de filtrado de Windows.|  
-|5444|N/D|Bajo|La siguiente subcapa estaba presente cuando inicia la plataforma de filtrado de Windows motor de filtrado Base.|  
+|5444|N/D|Bajo|La siguiente subcapa estaba presente cuando se inició el motor de filtrado de base de la plataforma de filtrado de Windows.|  
 |5446|N/D|Bajo|Se cambió una llamada de la Plataforma de filtrado de Windows.|  
 |5447|N/D|Bajo|Se cambió un filtro de la Plataforma de filtrado de Windows.|  
 |5448|N/D|Bajo|Se cambió un proveedor de la Plataforma de filtrado de Windows.|  
 |5449|N/D|Bajo|Se cambió un contexto de proveedor de la Plataforma de filtrado de Windows.|  
-|5450|N/D|Bajo|Se ha cambiado una subcapa Windows Filtering Platform.|  
+|5450|N/D|Bajo|Se ha cambiado una subcapa de la plataforma de filtrado de Windows.|  
 |5451|N/D|Bajo|Se estableció una asociación de seguridad de modo rápido de IPsec.|  
 |5452|N/D|Bajo|Finalizó una asociación de seguridad de modo rápido de IPsec.|  
 |5456|N/D|Bajo|El motor PAStore aplicó la directiva IPsec de almacenamiento de Active Directory en el equipo.|  
@@ -385,33 +385,33 @@ Una importancia crítica potencial alta significa que una aparición del evento 
 |5888|N/D|Bajo|Se modificó un objeto del catálogo COM+.|  
 |5889|N/D|Bajo|Se eliminó un objeto del catálogo COM+.|  
 |5890|N/D|Bajo|Se agregó un objeto al catálogo COM +.|  
-|6008|N/D|Bajo|Se esperaba el cierre del sistema anterior|  
-|6144|N/D|Bajo|Directiva de seguridad de los objetos de directiva de grupo se ha aplicado correctamente.|  
+|6008|N/D|Bajo|No se esperaba el cierre del sistema anterior|  
+|6144|N/D|Bajo|La Directiva de seguridad de los objetos directiva de grupo se ha aplicado correctamente.|  
 |6272|N/D|Bajo|El Servidor de directivas de redes concedió acceso a un usuario.|  
 |N/D|561|Bajo|Se solicitó un identificador para un objeto.|  
-|N/D|563|Bajo|Objeto abierto para su eliminación|  
-|N/D|625|Bajo|Puede cambiar el tipo de cuenta de usuario|  
-|N/D|613|Bajo|Se ha iniciado el agente de directiva de IPsec|  
-|N/D|614|Bajo|Deshabilita el agente de directivas de IPsec|  
+|N/D|563|Bajo|Objeto abierto para eliminación|  
+|N/D|625|Bajo|Tipo de cuenta de usuario cambiado|  
+|N/D|613|Bajo|Agente de directivas IPsec iniciado|  
+|N/D|614|Bajo|Agente de directivas IPsec deshabilitado|  
 |N/D|615|Bajo|Agente de directivas IPsec|  
-|N/D|616|Bajo|Agente de directivas IPsec detectó un posible error grave|  
-|24577|N/D|Bajo|Cifrado de volumen iniciado|  
-|24578|N/D|Bajo|Cifrado del volumen que se ha detenido|  
+|N/D|616|Bajo|El agente de directivas IPsec encontró un posible error grave|  
+|24577|N/D|Bajo|Se inició el cifrado del volumen|  
+|24578|N/D|Bajo|Se detuvo el cifrado del volumen|  
 |24579|N/D|Bajo|Cifrado del volumen completado|  
-|24580|N/D|Bajo|Descifrado de volumen iniciado|  
-|24581|N/D|Bajo|Descifrado de volumen detenido|  
-|24582|N/D|Bajo|Descifrado de volumen completado|  
-|24583|N/D|Bajo|Subproceso de trabajo de conversión de volumen iniciado|  
-|24584|N/D|Bajo|Detiene temporalmente el subproceso de trabajo de conversión de volumen|  
-|24588|N/D|Bajo|La operación de conversión del volumen %2 encontró un error de sector defectuoso. Valide los datos en este volumen|  
-|24595|N/D|Bajo|Volumen %2 contiene clústeres defectuosos. Estos clústeres se omitirá durante la conversión.|  
-|24621|N/D|Bajo|Comprobación de estado inicial: Revertir la transacción de conversión de volumen en %2.|  
+|24580|N/D|Bajo|Se inició el descifrado del volumen|  
+|24581|N/D|Bajo|Descifrado del volumen detenido|  
+|24582|N/D|Bajo|Descifrado del volumen completado|  
+|24583|N/D|Bajo|Subproceso de trabajo de conversión para el volumen iniciado|  
+|24584|N/D|Bajo|Subproceso de trabajo de conversión para el volumen detenido temporalmente|  
+|24588|N/D|Bajo|La operación de conversión en el volumen% 2 encontró un error de sector incorrecto. Valide los datos de este volumen.|  
+|24595|N/D|Bajo|El volumen% 2 contiene clústeres no válidos. Estos clústeres se omitirán durante la conversión.|  
+|24621|N/D|Bajo|Comprobación de estado inicial: Transvirtiendo la transacción de conversión de volumen en% 2.|  
 |5049|N/D|Bajo|Se eliminó una asociación de seguridad de IPsec.|  
 |5478|N/D|Bajo|Los servicios IPsec se iniciaron correctamente.|  
   
 > [!NOTE]  
-> Consulte [eventos de auditoría de seguridad de Windows](https://www.microsoft.com/download/details.aspx?id=50034) para obtener una lista de identificadores muchos de los eventos de seguridad y sus significados.  
+> Consulte [los eventos de auditoría de seguridad de Windows](https://www.microsoft.com/download/details.aspx?id=50034) para obtener una lista de muchos identificadores de eventos de seguridad y su significado.  
 >
-> Ejecute **wevtutil gp Microsoft-Windows-Security-Auditing /ge /gm:true** para obtener una lista muy detallada de seguridad de todos los Id. de evento  
+> Ejecute **wevtutil GP Microsoft-Windows-Security-Auditing/GE/GM: true** para obtener una lista detallada de todos los identificadores de eventos de seguridad.  
   
-Para obtener más información acerca de los identificadores de eventos de seguridad de Windows y sus significados, vea el artículo de Microsoft Support [descripción de los eventos de seguridad en Windows 7 y en Windows Server 2008 R2](https://support.microsoft.com/kb/977519). También puede descargar [eventos de auditoría de seguridad para Windows 7 y Windows Server 2008 R2](https://www.microsoft.com/download/details.aspx?id=21561) y [Windows 8 y detalles de eventos de seguridad de Windows Server 2012](https://www.microsoft.com/download/details.aspx?id=35753), que proporcionan información detallada de eventos para el sistemas operativos que se hace referencia en formato de hoja de cálculo.  
+Para obtener más información sobre los identificadores de eventos de seguridad de Windows y su significado, vea el artículo Soporte técnico de Microsoft [Descripción de los eventos de seguridad en Windows 7 y en Windows Server 2008 R2](https://support.microsoft.com/kb/977519). También puede descargar [eventos de auditoría de seguridad para los detalles de eventos de seguridad de Windows 7 y Windows server 2008 R2](https://www.microsoft.com/download/details.aspx?id=21561) y Windows [8 y Windows Server 2012](https://www.microsoft.com/download/details.aspx?id=35753), que proporcionan información detallada sobre los eventos de los sistemas operativos a los que se hace referencia en la hoja de cálculo. Aplique.  

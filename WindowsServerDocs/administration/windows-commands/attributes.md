@@ -1,8 +1,8 @@
 ---
 title: atributos
-description: Tema de los comandos de Windows para **atributos** -muestra, Establece o borra los atributos de un disco o volumen.
+description: 'Temas de comandos de Windows para **atributos** : muestra, establece o borra los atributos de un disco o volumen.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b60599180808354fd27c2faa58655734ef79d777
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d0cdfbc5bcc60596c7e42d2668d4c2b8a9b4450b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59883726"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382590"
 ---
 # <a name="attributes"></a>atributos
 
 
 
-Muestra, Establece o borra los atributos de un disco o volumen.
+Muestra, establece o borra los atributos de un disco o volumen.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -37,8 +37,8 @@ Attributes volume
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[Disco de atributos](attributes-disk.md)|Muestra, Establece o borra los atributos de un disco.|
-|[Volumen de atributos](attributes-volume.md)|Muestra, Establece o borra los atributos de un volumen.|
+|[Disco de atributos](attributes-disk.md)|Muestra, establece o borra los atributos de un disco.|
+|[Volumen de atributos](attributes-volume.md)|Muestra, establece o borra los atributos de un volumen.|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

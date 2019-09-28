@@ -1,7 +1,7 @@
 ---
 ms.assetid: e5f55f3e-8d2a-4526-8d67-36a539126c22
-title: los niveles de fsutil
-ms.prod: windows-server-threshold
+title: Niveles de fsutil
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,17 +9,17 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: dcb69e4e9c71a723bfd735eb7915472f1232a92b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6863940d69e30f4984897a7e03369a834da21d1d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59859256"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376784"
 ---
-# <a name="fsutil-tiering"></a>los niveles de fsutil
+# <a name="fsutil-tiering"></a>Niveles de fsutil
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10
 
-Permite la administración de las funciones de nivel de almacenamiento, como la configuración y deshabilitar las marcas y listado de los niveles.
+Habilita la administración de funciones de nivel de almacenamiento, como la configuración y deshabilitación de marcas y la lista de niveles.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -35,13 +35,13 @@ fsutil tiering [tierlist] <volume>
 
 |Parámetro|Descripción|
 |-------------|---------------|
-|clearflags|Deshabilita las marcas de comportamiento de los niveles de un volumen.|
-|\<volume>|Especifica el volumen.|
-|/TrNH|Para volúmenes de almacenamiento en capas, hace que calor de recopilación para que se deshabilite.<br /><br>Solo se aplica a NTFS y ReFS.|
-|queryflags|Consulta las marcas de comportamiento de los niveles de un volumen.|
-|regionlist|Enumera las regiones en capas de un volumen y sus niveles de almacenamiento correspondiente.|
-|setflags|Habilita las marcas de comportamiento de los niveles de un volumen.|
-|tierlist|Enumera el tieres almacenamiento asociado a un volumen.|
+|clearflags|Deshabilita las marcas de comportamiento de niveles de un volumen.|
+|@no__t 0volume >|Especifica el volumen.|
+|/TrNH|En el caso de los volúmenes con almacenamiento en capas, hace que la recopilación térmica se deshabilite.<br /><br>Solo se aplica a NTFS y ReFS.|
+|queryflags|Consulta las marcas de comportamiento de niveles de un volumen.|
+|regionlist|Enumera las regiones en capas de un volumen y sus respectivos niveles de almacenamiento.|
+|SetFlags|Habilita las marcas de comportamiento de niveles de un volumen.|
+|tierlist|Enumera los niveles de almacenamiento asociados a un volumen.|
 
 
 ### <a name="examples"></a>Ejemplos
@@ -58,19 +58,19 @@ Para establecer las marcas en el volumen C, escriba:
 fsutil tiering setflags C: /TrNH
 ```
 
-Para borrar las marcas en el volumen C, escriba:
+Para borrar las marcas del volumen C, escriba:
 
 ```
 fsutil tiering clearflags C: /TrNH
 ```
 
-Para enumerar las regiones del volumen C y sus niveles de almacenamiento correspondiente, escriba:
+Para enumerar las regiones del volumen C y sus respectivas capas de almacenamiento, escriba:
 
 ```
 fsutil tiering regionlist C:
 ```
 
-Para obtener una lista de los niveles de volumen C, escriba:
+Para enumerar los niveles del volumen C, escriba:
 
 ```
 fsutil tiering tierlist C:

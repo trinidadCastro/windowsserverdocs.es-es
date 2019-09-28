@@ -1,8 +1,8 @@
 ---
 title: bitsadmin getnoprogresstimeout
-description: Tema de los comandos de Windows para **getnoprogresstimeout bitsadmin** -recupera el período de tiempo, en segundos, que el servicio intenta transferir el archivo después de que se produce un error transitorio.
+description: 'Temas de comandos de Windows para **bitsadmin getnoprogresstimeout** : recupera el período de tiempo, en segundos, que el servicio intenta transferir el archivo después de que se produzca un error transitorio.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9563b68b8012a49471b56e3b8f2fbd60d1c69756
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7dcc0e445f4cae25c27f5ff70c73f4f2f23975aa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850806"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381502"
 ---
 # <a name="bitsadmin-getnoprogresstimeout"></a>bitsadmin getnoprogresstimeout
 
 
 
-Recupera el período de tiempo, en segundos, que el servicio intenta transferir el archivo después de que se produce un error transitorio.
+Recupera el período de tiempo, en segundos, que el servicio intenta transferir el archivo después de que se produzca un error transitorio.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,11 +36,11 @@ bitsadmin /GetNoProgressTimeout <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-En el ejemplo siguiente se recupera el valor de tiempo de espera del progreso del trabajo denominado *myDownloadJob*.
+En el ejemplo siguiente se recupera el valor de tiempo de espera de progreso para el trabajo denominado *myDownloadJob*.
 ```
 C:\>bitsadmin /GetNoProgressTimeout myDownloadJob
 ```

@@ -1,7 +1,7 @@
 ---
 title: Sugerencias para solucionar problemas y mensajes WSUS
-description: Tema de Windows Server Update Service (WSUS) - solución de problemas mediante mensajes WSUS
-ms.prod: windows-server-threshold
+description: 'Tema de Windows Server Update Service (WSUS): solución de problemas con mensajes de WSUS'
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-wsus
@@ -12,84 +12,84 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4acc5e284d5ca7a62335a1c52f341cda3dfb547e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 1e432a962662995cf570b28d0b9496594f3e10e6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66439733"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369860"
 ---
 # <a name="wsus-messages-and-troubleshooting-tips"></a>Sugerencias para solucionar problemas y mensajes WSUS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Este tema contiene información acerca de los siguientes mensajes WSUS:
+Este tema contiene información acerca de los siguientes mensajes de WSUS:
 
--   "Equipo no ha notificado el estado"
+-   "El equipo no ha comunicado el estado"
 
--   "Id. de mensaje 6703 - error de sincronización de WSUS"
+-   "ID. de mensaje 6703-error de sincronización de WSUS"
 
--   "Error 0x80070643: Error irrecuperable durante la instalación"
+-   "Error 0x80070643: Error irrecuperable durante la instalación "
 
--   "Algunos servicios no se está ejecutando. Compruebe los siguientes servicios [...]"
+-   "Algunos servicios no se están ejecutando. Compruebe los siguientes servicios [...] "
 
-## <a name="computer-has-not-reported-status"></a>Equipo no ha informado de su estado
-Cuando un equipo cliente WSUS no envía información al servidor WSUS para indicar su estado actual de la actualización, se genera este mensaje en la consola de WSUS. Este problema se suele producir por el equipo cliente WSUS, no en el servidor WSUS.
+## <a name="computer-has-not-reported-status"></a>El equipo no ha comunicado el estado
+Este mensaje se genera en la consola de WSUS cuando un equipo cliente WSUS no envía información al servidor WSUS para indicar su estado de actualización actual. Este problema se produce normalmente en el equipo cliente WSUS, no en el servidor WSUS.
 
-Las razones más comunes son:
+Los motivos más comunes son:
 
--   El equipo ha perdido la conectividad a la red:
-    -   Se desconecta el cable de red.
-    -   Un cable de red que intervengan es defectuoso.
+-   El equipo ha perdido la conectividad con la red:
+    -   El cable de red está desconectado.
+    -   Un cable de red intermedio es defectuoso.
     -   El equipo tiene un adaptador de red defectuoso.
-    -   Se deshabilitó el puerto de red al que se conecta el equipo.
-    -   El adaptador inalámbrico no puede asociar y conectarse al punto de acceso inalámbrico corporativa.
--   El equipo está apagado. (Se ha cerrado o está en modo de suspensión o hibernación.)
+    -   El puerto de red al que se conecta el equipo se ha deshabilitado.
+    -   El adaptador inalámbrico no puede asociarse con el punto de acceso inalámbrico corporativo y conectarse a él.
+-   El equipo está apagado. (Se ha cerrado o está en modo de suspensión o hibernación).
 
-## <a name="message-id-6703---wsus-synchronization-failed"></a>Id. de mensaje 6703 - sincronización de WSUS no se pudo
-> Mensaje: Error en la solicitud con estado HTTP 503: Servicio no disponible.
+## <a name="message-id-6703---wsus-synchronization-failed"></a>ID. de mensaje 6703-error de sincronización de WSUS
+> Mensaje: Error en la solicitud con el Estado HTTP 503: Servicio no disponible.
 > 
-> Origen: Microsoft.UpdateServices.Administration.AdminProxy.createUpdateServer.
+> Origen: Microsoft. UpdateServices. Administration. AdminProxy. createUpdateServer.
 
-Cuando se intenta abrir Servicios de actualización en el servidor WSUS recibirá el error siguiente:
+Cuando intente abrir los servicios de actualización en el servidor WSUS, recibirá el siguiente error:
 
 > Error: Error de conexión
 > 
-> Se produjo un error al intentar conectar con el servidor WSUS. Este error puede ocurrir por varios motivos. Si el problema persiste, póngase en contacto con el Administrador de red. Haga clic en el restablecimiento del nodo de servidor para volver a conectar con el servidor.
+> Error al intentar conectarse al servidor WSUS. Este error puede producirse por una serie de motivos. Si el problema persiste, póngase en contacto con el administrador de red. Haga clic en el nodo restablecer servidor para conectarse de nuevo al servidor.
 
-Además, intenta obtener acceso a la dirección URL para el sitio Web de administración de WSUS (es decir, `http://CM12CAS:8530`) genera el error:
+Además de lo anterior, los intentos de acceso a la dirección URL del sitio web de administración de WSUS (es decir, `http://CM12CAS:8530`) producen el error:
 
-> Error HTTP 503. El servicio no está disponible
+> Error 503 de HTTP. El servicio no está disponible
 
-En esta situación, la causa más probable es que el grupo de aplicaciones de WsusPool en IIS está en estado detenido.
+En esta situación, la causa más probable es que el grupo de aplicaciones WsusPool en IIS esté en un estado detenido.
 
-Además, el límite de memoria privada (KB) para el grupo de aplicaciones probablemente se establece en el valor predeterminado de 1843200 KB. Si se produce este problema, aumente el límite de memoria privada a 4GB (4000000 KB) y reinicie el grupo de aplicaciones. Para aumentar el límite de memoria privada, seleccione el grupo de aplicaciones de WsusPool y haga clic en Configuración avanzada en Editar grupo de aplicaciones. A continuación, establezca el límite de memoria privada a 4GB (4000000 KB). Una vez reiniciado el grupo de aplicaciones, supervisar el estado del componente SMS_WSUS_SYNC_MANAGER, wcm.log y wsyncmgr.log para errores. Tenga en cuenta que puede ser necesario aumentar el límite de memoria privada (KB 8000000) de 8 GB o superior, según el entorno.
+Además, es probable que el límite de memoria privada (KB) para el grupo de aplicaciones esté establecido en el valor predeterminado de 1843200 KB. Si se produce este problema, aumente el límite de memoria privada a 4 GB (4 millones KB) y reinicie el grupo de aplicaciones. Para aumentar el límite de memoria privada, seleccione el grupo de aplicaciones de WsusPool y haga clic en configuración avanzada en editar grupo de aplicaciones. A continuación, establezca el límite de memoria privada en 4 GB (4 millones KB). Una vez reiniciado el grupo de aplicaciones, supervise el estado del componente SMS_WSUS_SYNC_MANAGER, WCM. log y archivo wsyncmgr. log en busca de errores. Tenga en cuenta que puede ser necesario aumentar el límite de memoria privada a 8 GB (8 millones KB) o superior según el entorno.
 
-Para obtener más información, consulte: [Se produce un error de sincronización WSUS en Configuration Manager 2012 con errores HTTP 503](http://blogs.technet.com/b/sus/archive/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors.aspx)
+Para obtener más información, consulte: [Error de HTTP 503 en la sincronización de WSUS en ConfigMgr 2012](http://blogs.technet.com/b/sus/archive/2015/03/23/configmgr-2012-support-tip-wsus-sync-fails-with-http-503-errors.aspx)
 
-## <a name="error-0x80070643-fatal-error-during-installation"></a>Error 0x80070643: Error irrecuperable durante la instalación
-El programa de instalación de WSUS usa Microsoft SQL Server para realizar la instalación. Este problema se produce porque el usuario que se está ejecutando el programa de instalación de WSUS no tiene permisos de administrador del sistema en SQL Server.
+## <a name="error-0x80070643-fatal-error-during-installation"></a>0x80070643 de error: Error irrecuperable durante la instalación
+El programa de instalación de WSUS usa Microsoft SQL Server para realizar la instalación. Este problema se produce porque el usuario que ejecuta el programa de instalación de WSUS no tiene permisos de administrador del sistema en SQL Server.
 
-Para resolver este problema, conceda permisos de administrador del sistema para una cuenta de usuario o una cuenta de grupo en SQL Server y, a continuación, ejecute de nuevo el programa de instalación de WSUS.
+Para resolver este problema, conceda permisos de administrador del sistema a una cuenta de usuario o a una cuenta de grupo en SQL Server y, a continuación, ejecute de nuevo el programa de instalación de WSUS.
 
-## <a name="some-services-are-not-running-check-the-following-services"></a>Algunos servicios no se está ejecutando. Compruebe los siguientes servicios:
+## <a name="some-services-are-not-running-check-the-following-services"></a>Algunos servicios no se están ejecutando. Compruebe los servicios siguientes:
 
-- **SelfUpdate:** Consulte [automática las actualizaciones se deben actualizar](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obtener información sobre cómo solucionar problemas del servicio Selfupdate.
+- **Selfupdate** Consulte [actualizaciones automáticas se debe actualizar](https://technet.microsoft.com/library/cc708554(v=ws.10).aspx) para obtener información acerca de la solución de problemas del servicio selfupdate.
 
-- **WSSUService.exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceder a WSUSService.exe haciendo **iniciar**, seleccionando **herramientas administrativas**, haga clic en **servicios**y, a continuación, buscar **Windows Server Update Services** en la lista de servicios. Haga lo siguiente:
+- **WSSUService. exe:** Este servicio facilita la sincronización. Si tiene problemas con la sincronización, acceda a WSUSService. exe. para ello, haga clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque **Windows Server Update Service** en la lista de servicios. Haga lo siguiente:
     
-    -   Compruebe que este servicio se está ejecutando. Haga clic en **iniciar** si está detenido o **reiniciar** para actualizar el servicio.
+    -   Compruebe que este servicio se está ejecutando. Haga clic en **iniciar** si se detiene o en **reiniciar** para actualizar el servicio.
     
-    -   Use el Visor de eventos para comprobar la **aplicación**, **nivel de seguridad**y, y **sistema** registros de eventos para ver si hay cualquier evento que podría indicar un problema.
+    -   Utilice Visor de eventos para comprobar los registros de eventos de la **aplicación**, **securit**y **del sistema** para ver si hay algún evento que pueda indicar un problema.
     
-    -   También puede comprobar el registro SoftwareDistribution.log para ver si hay eventos que podrían indicar un problema.
+    -   También puede comprobar el archivo SoftwareDistribution. log para ver si hay eventos que puedan indicar un problema.
 
-- **ServicesSQL Web Service:** Servicios Web se hospedan en IIS. Si no se están ejecutando, asegúrese de que IIS está en ejecución (o iniciado). También puede intentar restablecer el servicio Web escribiendo **iisreset** en un símbolo del sistema.
+- **Servicio Web servicesSQL:** Los servicios web se hospedan en IIS. Si no se están ejecutando, asegúrese de que IIS se ejecuta (o se inicia). También puede intentar restablecer el servicio web escribiendo **iisreset** en un símbolo del sistema.
 
-- **Servicio SQL:** Todos los servicios excepto el servicio selfupdate requiere que se está ejecutando el servicio SQL. Si cualquiera de los archivos de registro indican problemas de conexión de SQL, compruebe primero el servicio SQL. Para obtener acceso al servicio SQL, haga clic en **iniciar**, apunte a **herramientas administrativas**, haga clic en **servicios**y, a continuación, seleccione una de las siguientes acciones:
+- **Servicio SQL:** Cada servicio, excepto el servicio selfupdate, requiere que el servicio SQL se esté ejecutando. Si alguno de los archivos de registro indica problemas de conexión de SQL, compruebe primero el servicio SQL. Para obtener acceso al servicio SQL, haga clic en **Inicio**, seleccione **herramientas administrativas**, haga clic en **servicios**y, a continuación, busque una de las siguientes opciones:
     
-  - **MSSQLSERver** (si está utilizando WMSDE o MSDE, o si está utilizando SQL Server y usa el nombre de instancia predeterminado para el nombre de instancia)
+  - **MSSQLSERver** (si usa WMSDE o MSDE, o si usa SQL Server y usa el nombre de instancia predeterminado para el nombre de instancia)
     
-  - **MSSQL$ WSUS** (si está usando una base de datos de SQL Server y ha denominado "WSUS" de la instancia de base de datos)
+  - **MSSQL $ WSUS** (si utiliza una base de datos de SQL Server y ha llamado a la instancia de base de datos "WSUS")
     
-    Haga clic en el servicio y, a continuación, haga clic en **iniciar** si no se está ejecutando el servicio, o **reiniciar** para actualizar el servicio si se está ejecutando.
+    Haga clic con el botón secundario en el servicio y, a continuación, haga clic en **iniciar** si el servicio no se está ejecutando o en **reiniciar** para actualizar el servicio si se está ejecutando.

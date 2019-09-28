@@ -7,32 +7,32 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 343a9a7aedf22e9c021249f00fb628f871a2ce1f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c902f9a438afd226dfb58dbde9f3c00d57b0ed58
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835756"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408598"
 ---
 # <a name="audit-policy-recommendations"></a>Recomendaciones de la directiva de auditoría
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows 10, Windows 8.1, Windows 7
 
-Esta sección trata sobre la configuración de directiva de auditoría de Windows de forma predeterminada, baseline recomienda configuraciones de directiva de auditoría y las recomendaciones más exigentes de Microsoft, para productos de estación de trabajo y el servidor.  
+En esta sección se trata la configuración de directiva de auditoría predeterminada de Windows, la configuración de directiva de auditoría recomendada de línea de base y las recomendaciones más agresivas de Microsoft para los productos de servidor y estación de trabajo.  
 
-Las recomendaciones de línea de base SCM que se muestra a continuación, junto con la configuración recomendada para ayudar a detectar riesgos, sólo pretenden ser una guía de línea base inicial a los administradores. Cada organización debe realizar sus propias decisiones con respecto a las amenazas que se enfrentan, sus las tolerancias al riesgo aceptable y qué categorías de directiva de auditoría o las subcategorías debe habilitar. Para obtener más información acerca de las amenazas, consulte el [Guía de amenazas y contramedidas](https://technet.microsoft.com/library/hh125921(v=ws.10).aspx). Los administradores sin una directiva de auditoría meditado en su lugar se recomienda comenzar con la configuración recomendada en este caso y a continuación, modificar y probar, antes de implementar en su entorno de producción.  
+Las recomendaciones de línea base de SCM que se muestran aquí, junto con la configuración que se recomienda para ayudar a detectar el riesgo, solo están destinadas a una guía básica de inicio para los administradores. Cada organización debe tomar sus propias decisiones con respecto a las amenazas a las que se encuentran, sus tolerancias de riesgo aceptables y qué categorías o subcategorías de directivas de auditoría deben habilitar. Para obtener más información acerca de las amenazas, consulte la [Guía de amenazas y contramedidas](https://technet.microsoft.com/library/hh125921(v=ws.10).aspx). Se recomienda que los administradores sin una directiva de auditoría exhaustiva se empiecen con la configuración recomendada aquí y, a continuación, modificar y probar, antes de la implementación en su entorno de producción.  
 
-Las recomendaciones son para equipos de clase empresarial, que Microsoft se define como los equipos que tienen requisitos de seguridad Media y requieren un alto nivel de funcionalidad operativa. Las entidades que necesitan una mayor seguridad que considere más agresivos los requisitos de directivas de auditoría.  
+Las recomendaciones son para equipos de clase empresarial, que Microsoft define como equipos que tienen requisitos de seguridad medios y requieren un alto nivel de funcionalidad operativa. Las entidades que necesitan más requisitos de seguridad deberían tener en cuenta directivas de auditoría más agresivas.  
 
 > [!NOTE]  
-> El valor predeterminado es Microsoft Windows y recomendaciones de línea base se han realizado desde la [herramienta Microsoft Security Compliance Manager](https://technet.microsoft.com/library/cc677002.aspx).  
+> Los valores predeterminados y las recomendaciones de línea de base de Microsoft se han tomado de la [herramienta Microsoft Security Compliance Manager](https://technet.microsoft.com/library/cc677002.aspx).  
 
-Se recomienda la siguiente configuración de directiva de auditoría de línea de base para los equipos de seguridad normal que no se sabe que esté siendo atacado correcta, active determinados adversarios o malware.  
+Se recomienda la siguiente configuración de la Directiva de auditoría de línea de base para los equipos de seguridad normales que no se sabe que están bajo ataque activo y correcto determinando los adversarios o malware.  
 
-## <a name="recommended-audit-policies-by-operating-system"></a>Recomienda las directivas de auditoría del sistema operativo  
-Esta sección contiene las tablas que enumeran las recomendaciones de configuración de auditoría que se aplican a los sistemas operativos siguientes:  
+## <a name="recommended-audit-policies-by-operating-system"></a>Directivas de auditoría recomendadas por sistema operativo  
+Esta sección contiene tablas que enumeran las recomendaciones de configuración de auditoría que se aplican a los siguientes sistemas operativos:  
 
 -   Windows Server 2016 
 
@@ -48,58 +48,58 @@ Esta sección contiene las tablas que enumeran las recomendaciones de configurac
 
 -   Windows 7  
 
-Estas tablas contienen la configuración predeterminada de Windows, las recomendaciones de línea base y las recomendaciones más fuertes para estos sistemas operativos.  
+Estas tablas contienen la configuración predeterminada de Windows, las recomendaciones de línea base y las recomendaciones más seguras para estos sistemas operativos.  
 
-**Leyenda de las tablas de directiva de auditoría**  
+**Leyenda de tablas de directivas de auditoría**  
 
 |||  
 |-|-|  
 |**Notación**|**Recomendación**|  
-|SÍ|En general habilitar escenarios|  
-|NO|Hacer **no** en general habilitar escenarios|  
-|IF|Habilitar si es necesario para un escenario concreto, o si un rol o característica para que la auditoría es el deseado está instalado en el equipo|  
-|DC|Habilitar en los controladores de dominio|  
-|[En blanco]|Ninguna recomendación|  
+|SÍ|Habilitar en escenarios generales|  
+|NO|**No** habilitar en escenarios generales|  
+|CUANDO|Habilitar si es necesario para un escenario concreto, o si se instala en el equipo un rol o característica para el que se desea la auditoría|  
+|DC|Habilitar en controladores de dominio|  
+|En blanco|Ninguna recomendación|  
 
-**Windows 10, Windows 8 y las recomendaciones de configuración de Windows 7 auditoría**  
+**Recomendaciones de configuración de auditoría de Windows 10, Windows 8 y Windows 7**  
 
-**La directiva de auditoría**  
+**Directiva de auditoría**  
 
-|Categoría de directiva de auditoría o subcategoría|Valor predeterminado de Windows<br /><br />Error de operación correcta|Recomendación de línea base<br /><br />Error de operación correcta|Recomendación más fuerte<br /><br />Error de operación correcta|  
+|Categoría o subcategoría de directiva de auditoría|Predeterminado de Windows<br /><br />Error de operación correcta|Recomendación de línea de base<br /><br />Error de operación correcta|Recomendación más fuerte<br /><br />Error de operación correcta|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**Inicio de sesión de cuenta**||||  
-|Auditar validación de credenciales|No    No|Sí No|Sí, sí|  
-|Auditar servicio de autenticación Kerberos|||Sí, sí|  
-|Auditar operaciones de vales de servicio Kerberos|||Sí, sí|  
-|Auditar otros eventos de inicio de sesión de cuentas|||Sí, sí|  
+|Auditar validación de credenciales|No no|Sí no|Sí sí|  
+|Auditar servicio de autenticación Kerberos|||Sí sí|  
+|Auditar operaciones de vales de servicio Kerberos|||Sí sí|  
+|Auditar otros eventos de inicio de sesión de cuentas|||Sí sí|  
 |**Administración de cuentas**||||  
 |Auditar administración de grupos de aplicaciones||||  
-|Auditar administración de cuentas de equipo||Sí No|Sí, sí|  
+|Auditar administración de cuentas de equipo||Sí no|Sí sí|  
 |Auditar administración de grupos de distribución||||  
-|Auditar otros eventos de administración de cuentas||Sí No|Sí, sí|  
-|Auditar administración de grupos de seguridad||Sí No|Sí, sí|  
-|Auditar administración de cuentas de usuario|Sí No|Sí No|Sí, sí|  
+|Auditar otros eventos de administración de cuentas||Sí no|Sí sí|  
+|Auditar administración de grupos de seguridad||Sí no|Sí sí|  
+|Auditar administración de cuentas de usuario|Sí no|Sí no|Sí sí|  
 |**Seguimiento detallado**||||  
-|Auditar actividad DPAPI|||Sí, sí|  
-|Auditar creación de procesos||Sí No|Sí, sí|  
+|Auditar actividad DPAPI|||Sí sí|  
+|Auditar creación de procesos||Sí no|Sí sí|  
 |Auditar finalización de procesos||||  
 |Auditar eventos de RPC||||  
-|**Acceso DS**||||  
+|**Acceso a DS**||||  
 |Auditar replicación de servicio de directorio detallada||||  
 |Auditar el acceso del servicio de directorio||||  
 |Auditar cambios de servicio de directorio||||  
 |Auditar replicación de servicio de directorio||||  
-|**Inicio de sesión y cierre de sesión**||||  
-|Auditar bloqueo de cuentas|Sí No||Sí No|  
+|**Inicio y cierre de sesión**||||  
+|Auditar bloqueo de cuentas|Sí no||Sí no|  
 |Auditar reclamaciones de usuario o dispositivo||||  
 |Auditar modo extendido de IPsec||||  
-|Auditar modo principal de IPsec|||IF     IF|  
+|Auditar modo principal de IPsec|||SI ES|  
 |Auditar modo rápido de IPsec||||  
-|Auditar cierre de sesión|Sí No|Sí No|Sí No|  
-|Inicio de sesión de auditoría <sup>1</sup>|Sí, sí|Sí, sí|Sí, sí|  
-|Auditar Servidor de directivas de redes|Sí, sí|||  
+|Auditar cierre de sesión|Sí no|Sí no|Sí no|  
+|Auditar inicio de sesión <sup>1</sup>|Sí sí|Sí sí|Sí sí|  
+|Auditar Servidor de directivas de redes|Sí sí|||  
 |Auditar otros eventos de inicio y cierre de sesión||||  
-|Auditar inicio de sesión especial|Sí No|Sí No|Sí, sí|  
+|Auditar inicio de sesión especial|Sí no|Sí no|Sí sí|  
 |**Acceso a objetos**||||  
 |Auditar aplicación generada||||  
 |Auditar servicios de certificación||||  
@@ -115,9 +115,9 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar almacenamiento extraíble||||  
 |Auditar SAM||||  
 |Auditar almacenamiento provisional de directiva de acceso central||||  
-|**Cambio de directiva**||||  
-|Auditar cambio de directiva de auditoría|Sí No|Sí, sí|Sí, sí|  
-|Auditar cambio de directiva de autenticación|Sí No|Sí No|Sí, sí|  
+|**Cambio de Directiva**||||  
+|Auditar cambio de directiva de auditoría|Sí no|Sí sí|Sí sí|  
+|Auditar cambio de directiva de autenticación|Sí no|Sí no|Sí sí|  
 |Auditar cambio de directiva de autorización||||  
 |Auditar cambio de directiva de la Plataforma de filtrado||||  
 |Auditar cambio de directiva del nivel de reglas de MPSSVC|||Sí  |  
@@ -126,58 +126,58 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar uso de privilegios no confidenciales||||  
 |Auditar otros eventos de uso de privilegios||||  
 |Auditar uso de privilegios confidenciales||||  
-|**Sistema**||||  
-|Auditar controlador IPsec||Sí, sí|Sí, sí|  
-|Auditar otros eventos del sistema|Sí, sí|||  
-|Auditar cambio de estado de seguridad|Sí No|Sí, sí|Sí, sí|  
-|Auditar extensión del sistema de seguridad||Sí, sí|Sí, sí|  
-|Auditar integridad del sistema|Sí, sí|Sí, sí|Sí, sí|  
-|**Acceso a objetos global de auditoría**||||  
+|**Integrado**||||  
+|Auditar controlador IPsec||Sí sí|Sí sí|  
+|Auditar otros eventos del sistema|Sí sí|||  
+|Auditar cambio de estado de seguridad|Sí no|Sí sí|Sí sí|  
+|Auditar extensión del sistema de seguridad||Sí sí|Sí sí|  
+|Auditar integridad del sistema|Sí sí|Sí sí|Sí sí|  
+|**Auditoría de acceso a objetos global**||||  
 |Auditar controlador IPsec||||  
 |Auditar otros eventos del sistema||||  
 |Auditar cambio de estado de seguridad||||  
 |Auditar extensión del sistema de seguridad||||  
 |Auditar integridad del sistema||||  
 
-<sup>1</sup> a partir de Windows 10 versión 1809, auditar inicio de sesión de forma predeterminada está habilitada para correctos y erróneos. En versiones anteriores de Windows, éxito solo está habilitada de forma predeterminada.
+<sup>1</sup> a partir de la versión 1809 de Windows 10, el inicio de sesión de auditoría está habilitado de forma predeterminada tanto para correcto como para error. En versiones anteriores de Windows, solo se habilitaba correctamente de forma predeterminada.
 
-**Recomendaciones de configuración de auditoría de Windows Server 2008, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2016**  
+**Recomendaciones de configuración de auditoría de Windows Server 2016, Windows Server 2012 R2, Windows Server 2012, Windows Server 2008 R2 y Windows Server 2008**  
 
-|Categoría de directiva de auditoría o subcategoría|Valor predeterminado de Windows<br /><br />Error de operación correcta|Recomendación de línea base<br /><br />Error de operación correcta|Recomendación más fuerte<br /><br />Error de operación correcta|  
+|Categoría o subcategoría de directiva de auditoría|Predeterminado de Windows<br /><br />Error de operación correcta|Recomendación de línea de base<br /><br />Error de operación correcta|Recomendación más fuerte<br /><br />Error de operación correcta|  
 |----------------------------------------|------------------------------------------|--------------------------------------------------|--------------------------------------------------|  
 |**Inicio de sesión de cuenta**||||  
-|Auditar validación de credenciales|No    No|Sí, sí|Sí, sí|  
-|Auditar servicio de autenticación Kerberos|||Sí, sí|  
-|Auditar operaciones de vales de servicio Kerberos|||Sí, sí|  
-|Auditar otros eventos de inicio de sesión de cuentas|||Sí, sí|  
+|Auditar validación de credenciales|No no|Sí sí|Sí sí|  
+|Auditar servicio de autenticación Kerberos|||Sí sí|  
+|Auditar operaciones de vales de servicio Kerberos|||Sí sí|  
+|Auditar otros eventos de inicio de sesión de cuentas|||Sí sí|  
 |**Administración de cuentas**||||  
 |Auditar administración de grupos de aplicaciones||||  
-|Auditar administración de cuentas de equipo||Sí DC|Sí, sí|  
+|Auditar administración de cuentas de equipo||Sí DC|Sí sí|  
 |Auditar administración de grupos de distribución||||  
-|Auditar otros eventos de administración de cuentas||Sí, sí|Sí, sí|  
-|Auditar administración de grupos de seguridad||Sí, sí|Sí, sí|  
-|Auditar administración de cuentas de usuario|Sí No|Sí, sí|Sí, sí|  
+|Auditar otros eventos de administración de cuentas||Sí sí|Sí sí|  
+|Auditar administración de grupos de seguridad||Sí sí|Sí sí|  
+|Auditar administración de cuentas de usuario|Sí no|Sí sí|Sí sí|  
 |**Seguimiento detallado**||||  
-|Auditar actividad DPAPI|||Sí, sí|  
-|Auditar creación de procesos||Sí No|Sí, sí|  
+|Auditar actividad DPAPI|||Sí sí|  
+|Auditar creación de procesos||Sí no|Sí sí|  
 |Auditar finalización de procesos||||  
 |Auditar eventos de RPC||||  
-|**Acceso DS**||||  
+|**Acceso a DS**||||  
 |Auditar replicación de servicio de directorio detallada||||  
-|Auditar el acceso del servicio de directorio||DC    DC|DC    DC|  
-|Auditar cambios de servicio de directorio||DC    DC|DC    DC|  
+|Auditar el acceso del servicio de directorio||DC DC|DC DC|  
+|Auditar cambios de servicio de directorio||DC DC|DC DC|  
 |Auditar replicación de servicio de directorio||||  
-|**Inicio de sesión y cierre de sesión**||||  
-|Auditar bloqueo de cuentas|Sí No||Sí No|  
+|**Inicio y cierre de sesión**||||  
+|Auditar bloqueo de cuentas|Sí no||Sí no|  
 |Auditar reclamaciones de usuario o dispositivo||||  
 |Auditar modo extendido de IPsec||||  
-|Auditar modo principal de IPsec|||IF     IF|  
+|Auditar modo principal de IPsec|||SI ES|  
 |Auditar modo rápido de IPsec||||  
-|Auditar cierre de sesión|Sí No|Sí No|Sí No|  
-|Auditar inicio de sesión|Sí, sí|Sí, sí|Sí, sí|  
-|Auditar Servidor de directivas de redes|Sí, sí|||  
-|Auditar otros eventos de inicio y cierre de sesión|||Sí, sí|  
-|Auditar inicio de sesión especial|Sí No|Sí No|Sí, sí|  
+|Auditar cierre de sesión|Sí no|Sí no|Sí no|  
+|Auditar inicio de sesión|Sí sí|Sí sí|Sí sí|  
+|Auditar Servidor de directivas de redes|Sí sí|||  
+|Auditar otros eventos de inicio y cierre de sesión|||Sí sí|  
+|Auditar inicio de sesión especial|Sí no|Sí no|Sí sí|  
 |**Acceso a objetos**||||  
 |Auditar aplicación generada||||  
 |Auditar servicios de certificación||||  
@@ -193,9 +193,9 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar almacenamiento extraíble||||  
 |Auditar SAM||||  
 |Auditar almacenamiento provisional de directiva de acceso central||||  
-|**Cambio de directiva**||||  
-|Auditar cambio de directiva de auditoría|Sí No|Sí, sí|Sí, sí|  
-|Auditar cambio de directiva de autenticación|Sí No|Sí No|Sí, sí|  
+|**Cambio de Directiva**||||  
+|Auditar cambio de directiva de auditoría|Sí no|Sí sí|Sí sí|  
+|Auditar cambio de directiva de autenticación|Sí no|Sí no|Sí sí|  
 |Auditar cambio de directiva de autorización||||  
 |Auditar cambio de directiva de la Plataforma de filtrado||||  
 |Auditar cambio de directiva del nivel de reglas de MPSSVC|||Sí  |  
@@ -204,106 +204,106 @@ Estas tablas contienen la configuración predeterminada de Windows, las recomend
 |Auditar uso de privilegios no confidenciales||||  
 |Auditar otros eventos de uso de privilegios||||  
 |Auditar uso de privilegios confidenciales||||  
-|**Sistema**||||  
-|Auditar controlador IPsec||Sí, sí|Sí, sí|  
-|Auditar otros eventos del sistema|Sí, sí|||  
-|Auditar cambio de estado de seguridad|Sí No|Sí, sí|Sí, sí|  
-|Auditar extensión del sistema de seguridad||Sí, sí|Sí, sí|  
-|Auditar integridad del sistema|Sí, sí|Sí, sí|Sí, sí|  
-|**Acceso a objetos global de auditoría**||||  
+|**Integrado**||||  
+|Auditar controlador IPsec||Sí sí|Sí sí|  
+|Auditar otros eventos del sistema|Sí sí|||  
+|Auditar cambio de estado de seguridad|Sí no|Sí sí|Sí sí|  
+|Auditar extensión del sistema de seguridad||Sí sí|Sí sí|  
+|Auditar integridad del sistema|Sí sí|Sí sí|Sí sí|  
+|**Auditoría de acceso a objetos global**||||  
 |Auditar controlador IPsec||||  
 |Auditar otros eventos del sistema||||  
 |Auditar cambio de estado de seguridad||||  
 |Auditar extensión del sistema de seguridad||||  
 |Auditar integridad del sistema||||  
 
-## <a name="set-audit-policy-on-workstations-and-servers"></a>Establecer directiva de auditoría en servidores y estaciones de trabajo  
-Todos los planes de administración de registro de eventos deben supervisar los servidores y estaciones de trabajo. Un error común es supervisar sólo servidores o controladores de dominio. Hacking malintencionado inicialmente a menudo se produce en estaciones de trabajo, las estaciones de trabajo de supervisión no está omitiendo el origen mejor y más antiguo de información.  
+## <a name="set-audit-policy-on-workstations-and-servers"></a>Establecer la Directiva de auditoría en estaciones de trabajo y servidores  
+Todos los planes de administración del registro de eventos deben supervisar estaciones de trabajo y servidores. Un error común es supervisar solo servidores o controladores de dominio. Dado que la piratería malintencionada suele producirse en las estaciones de trabajo, no la supervisión de las estaciones de trabajo omite la mejor fuente de información y la más temprana.  
 
-Los administradores deben revisar cuidadosamente y se probar cualquier directiva de auditoría antes de la implementación en su entorno de producción.  
+Los administradores deben revisar y probar atentamente cualquier directiva de auditoría antes de la implementación en su entorno de producción.  
 
 ## <a name="events-to-monitor"></a>Eventos para supervisar  
 Un identificador de evento perfecto para generar una alerta de seguridad debe contener los siguientes atributos:  
 
--   Alta probabilidad de aparición indica actividades no autorizadas  
+-   Alta probabilidad de que la ocurrencia indique una actividad no autorizada  
 
 -   Deben disponer de un número reducido de falsos positivos.  
 
--   Repetición debe tener como resultado una respuesta de investigación o forense.  
+-   La repetición debe dar como resultado una respuesta de investigación/análisis forense  
 
-Dos tipos de eventos se deben supervisar y recibir alertas:  
+Se deben supervisar y alertar dos tipos de eventos:  
 
-1.  Los eventos en las que incluso una sola aparición indica actividades no autorizadas  
+1.  Los eventos en los que incluso una única repetición indica actividad no autorizada.  
 
 2.  Una acumulación de eventos por encima de un punto de referencia esperado y aceptado.  
 
 Un ejemplo del primer evento es:  
 
-Si se prohíben Admins. del dominio (DAs) inicien sesión en equipos que no son controladores de dominio, una aparición única de un miembro DA inicio de sesión en una estación de trabajo del usuario final debe generar una alerta e investigarse. Este tipo de alerta es fácil generar mediante el evento de auditoría de inicio de sesión especial 4964 (grupos especiales se han asignado a un nuevo inicio de sesión). Otros ejemplos de las alertas de instancia única:  
+Si los administradores de dominio (DAs) no pueden iniciar sesión en equipos que no son controladores de dominio, una única repetición de un miembro de DA que inicie sesión en una estación de trabajo de usuario final debe generar una alerta y ser investigada. Este tipo de alerta es fácil de generar mediante el evento de inicio de sesión especial Audit 4964 (los grupos especiales se han asignado a un nuevo inicio de sesión). Otros ejemplos de alertas de instancia única incluyen:  
 
--   Si nunca debe conectar el servidor al servidor B, la alerta cuando se conectan entre sí.  
+-   Si el servidor a nunca se debe conectar al servidor B, avise cuando se conecte entre sí.  
 
--   Envía una alerta si una cuenta de usuario final normal inesperadamente se agrega a un grupo de seguridad confidenciales.  
+-   Alerta si una cuenta de usuario final normal se agrega de forma inesperada a un grupo de seguridad confidencial.  
 
--   Si los empleados en una ubicación de fábrica nunca funcionan durante la noche, alerta cuando un usuario inicia sesión a medianoche.  
+-   Si los empleados de la ubicación de fábrica nunca funcionan en la noche, alerta cuando un usuario inicia sesión a medianoche.  
 
--   Una alerta si se instala un servicio no autorizado en un controlador de dominio.  
+-   Alerta si se ha instalado un servicio no autorizado en un controlador de dominio.  
 
--   Investigue si un usuario final normal intenta iniciar sesión directamente en un servidor de SQL Server para el que no tengan ninguna razón para ello, desactive.  
+-   Investigue si un usuario final normal intenta iniciar sesión directamente en una SQL Server para la que no tiene ningún motivo claro para hacerlo.  
 
--   Si no tiene ningún miembro en el grupo DA y alguien agrega a sí mismos no existe, compruebe inmediatamente.  
+-   Si no tiene ningún miembro en el grupo de DA y alguien lo agrega a sí mismo, compruébelo inmediatamente.  
 
-Es un ejemplo del segundo evento:  
+Un ejemplo del segundo evento es:  
 
-Un número de inicios de sesión incorrectos aberrante podría indicar un ataque de averiguación de contraseñas. Para que una empresa proporcionar una alerta para un número inusualmente elevado de inicios de sesión incorrectos, primero deben comprender los niveles normales de inicios de sesión incorrectos dentro de su entorno antes de un evento de seguridad malintencionado.  
+Un número Aberrant de inicios de sesión erróneos podría indicar un ataque de adivinación de contraseñas. Para que una empresa proporcione una alerta para un número inusualmente alto de inicios de sesión con error, primero debe comprender los niveles normales de inicios de sesión con error dentro de su entorno antes de un evento de seguridad malintencionado.  
 
-Para obtener una lista completa de eventos que se deben incluir al supervisar en busca de indicios de riesgo, consulte [Apéndice L: Eventos para supervisar](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md).  
+Para obtener una lista completa de los eventos que se deben incluir al supervisar los síntomas de riesgo, consulte @no__t 0Appendix L: Eventos para supervisar @ no__t-0.  
 
-## <a name="active-directory-objects-and-attributes-to-monitor"></a>Objetos de Active Directory y los atributos para el Monitor  
-Los siguientes son las cuentas, grupos y atributos que se deben supervisar para ayudar a detectar intentos de poner en peligro la instalación de Active Directory Domain Services.  
+## <a name="active-directory-objects-and-attributes-to-monitor"></a>Active Directory objetos y atributos que se van a supervisar  
+A continuación se muestran las cuentas, los grupos y los atributos que debe supervisar para ayudarle a detectar los intentos de poner en peligro la instalación de Active Directory Domain Services.  
 
--   Sistemas de deshabilitación o eliminación de software antivirus y antimalware (automáticamente reiniciar la protección cuando se deshabilita manualmente)  
+-   Sistemas para deshabilitar o quitar software antivirus y antimalware (reiniciar automáticamente la protección cuando se deshabilita manualmente)  
 
--   Cuentas de administrador para los cambios no autorizados  
+-   Cuentas de administrador para cambios no autorizados  
 
--   Actividades que se realizan mediante el uso de las cuentas con privilegios (automáticamente la cuenta de eliminación cuando se completan o se asigna tiempo de actividades sospechosas ha expirado)  
+-   Las actividades que se realizan mediante cuentas con privilegios (quita automáticamente la cuenta cuando se completan las actividades sospechosas o el tiempo asignado ha expirado)  
 
--   Con privilegios y cuentas de VIP en AD DS. Supervise los cambios realizados, especialmente los cambios en atributos en la pestaña cuenta (por ejemplo, cn, nombre, sAMAccountName, userPrincipalName o userAccountControl). Además de supervisar las cuentas, restringir quién puede modificar las cuentas con como pequeños de un conjunto de usuarios administrativos como sea posible.  
+-   Cuentas con privilegios y VIP en AD DS. Supervise los cambios, especialmente los cambios en los atributos de la pestaña cuenta (por ejemplo, CN, Name, sAMAccountName, userPrincipalName o userAccountControl). Además de supervisar las cuentas, restrinja quién puede modificar las cuentas como un pequeño conjunto de usuarios administrativos como sea posible.  
 
-Consulte [Apéndice L: Eventos para supervisar](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) para obtener una lista de eventos recomendados para supervisar, sus clasificaciones de gravedad y un resumen de mensaje de evento.  
+Consulte @no__t 0Appendix L: Eventos para supervisar @ no__t-0 para obtener una lista de los eventos recomendados que se van a supervisar, su clasificación de importancia crítica y un resumen de mensajes de eventos.  
 
--   Servidores de grupo mediante la clasificación de sus cargas de trabajo, lo que permite identificar rápidamente los servidores que deben ser el mejor supervisado y configurado de forma más rigurosa  
+-   Agrupar servidores por la clasificación de sus cargas de trabajo, lo que le permite identificar rápidamente los servidores que deben ser los más supervisados y configurados de forma más rigurosa  
 
--   Cambios en las propiedades y la pertenencia de los siguientes grupos de AD DS: Los administradores de Enterprise (EA), Admins. del dominio (DA), los administradores (BA) y administradores de esquema (SA)  
+-   Cambios en las propiedades y pertenencia a los siguientes grupos de AD DS: Administradores de empresas (EA), Admins. del dominio (DA), administradores (BA) y administradores de esquema (SA)  
 
--   Deshabilitado las cuentas con privilegios (por ejemplo, cuentas de administrador integradas en Active Directory y en los sistemas de miembro) para habilitar las cuentas  
+-   Cuentas con privilegios deshabilitadas (como las cuentas de administrador integradas en Active Directory y en los sistemas miembro) para habilitar las cuentas  
 
--   Cuentas de administración para iniciar todas las escrituras en la cuenta  
+-   Cuentas de administración para registrar todas las escrituras en la cuenta  
 
--   Asistente de configuración de seguridad integrados para configurar el servicio, el registro, auditoría y configuración del firewall para reducir la superficie expuesta a ataques del servidor. Use este asistente si implementa servidores de salto como parte de su estrategia de host administrativo.  
+-   Asistente para configuración de seguridad integrado para configurar el servicio, el registro, la auditoría y la configuración del firewall para reducir la superficie expuesta a ataques del servidor. Use este asistente si implementa servidores de saltos como parte de su estrategia de hosts administrativos.  
 
-## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>Información adicional para la supervisión de servicios de dominio de Active Directory  
-Revise los siguientes vínculos para obtener más información sobre la supervisión de AD DS:  
+## <a name="additional-information-for-monitoring-active-directory-domain-services"></a>Información adicional para la supervisión de Active Directory Domain Services  
+Revise los siguientes vínculos para obtener información adicional sobre la supervisión de AD DS:  
   
--   [Auditoría de acceso a objetos global es la magia](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) -proporciona información sobre cómo configurar y usar la directiva de configuración de auditoría avanzada que se agregó a Windows 7 y Windows Server 2008 R2.  
+-   La [Auditoría de acceso a objetos global es mágica](http://blogs.technet.com/b/askds/archive/2011/03/10/global-object-access-auditing-is-magic.aspx) : proporciona información sobre la configuración y el uso de la configuración de directivas de auditoría avanzada que se agregó a Windows 7 y windows Server 2008 R2.  
 
--   [Introducción a la auditoría de cambios en Windows 2008](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) -presenta la auditorías cambios realizados en Windows 2008.  
+-   [Introducción a los cambios de auditoría en windows 2008](http://blogs.technet.com/b/askds/archive/2007/10/19/introducing-auditing-changes-in-windows-2008.aspx) : presenta los cambios de auditoría realizados en Windows 2008.  
 
--   [Niveles de acceso esporádico trucos de auditoría en la Vista y 2008](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) -explica las características más interesantes de la auditoría en Windows Vista y Windows Server 2008 que puede usarse para solucionar problemas o ver lo que sucede en su entorno.  
+-   [Trucos de auditoría fantásticos en vista y 2008](http://blogs.technet.com/b/askds/archive/2007/11/16/cool-auditing-tricks-in-vista-and-2008.aspx) : se explican las nuevas características interesantes de la auditoría en Windows Vista y windows Server 2008 que se pueden usar para solucionar problemas o ver lo que sucede en su entorno.  
 
--   [Tienda integral para la auditoría en Windows Server 2008 y Windows Vista](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) -contiene una compilación de la auditoría de las características y la información incluida en Windows Server 2008 y Windows Vista.  
+-   [Tienda única para la auditoría en Windows server 2008 y Windows Vista](http://blogs.technet.com/b/askds/archive/2008/03/27/one-stop-shop-for-auditing-in-windows-server-2008-and-windows-vista.aspx) : contiene una compilación de características de auditoría e información contenida en windows Server 2008 y Windows Vista.  
 
--   [Guía paso a paso para la auditoría de AD DS](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx) -describe la nueva característica de auditoría de los servicios de dominio de Active Directory (AD DS) en Windows Server 2008. También proporciona procedimientos para implementar esta nueva característica.  
+-   [AD DS guía paso a paso de auditoría](https://technet.microsoft.com/library/a9c25483-89e2-4202-881c-ea8e02b4b2a5.aspx) : describe la nueva característica de auditoría de Active Directory Domain Services (AD DS) en Windows Server 2008. También se proporcionan procedimientos para implementar esta nueva característica.  
 
-## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>Lista general de los elementos más importantes de seguridad Event ID recomendación  
-Todas las recomendaciones de Id. de evento están acompañadas por una importancia crítica de clasificación como sigue:  
+## <a name="general-list-of-security-event-id-recommendation-criticalities"></a>Lista general de críticas de recomendaciones de ID. de eventos de seguridad  
+Todas las recomendaciones de ID. de evento van acompañadas de una clasificación de importancia crítica de la siguiente manera:  
 
-**Alta:** Id. de evento con una puntuación de importancia alta debe siempre e inmediatamente una alerta e investigar.  
+**Calidad** Los identificadores de eventos con una clasificación de nivel de importancia alta siempre deben alertarse e investigarse inmediatamente.  
 
-**Medio:** Un identificador de evento con una clasificación de gravedad Media podría indicar una actividad malintencionada, pero debe ir acompañada de algún otro comportamiento anormal (por ejemplo, un número inusual que se producen en un período de tiempo determinado, repeticiones inesperadas o apariciones en un equipo que Normalmente no se espera que se registra el evento.). Un evento de importancia del medio, es posible que también recopilan como una métrica de r y en comparación con el tiempo.  
+**Medio** Un ID. de evento con una clasificación de gravedad media podría indicar actividad malintencionada, pero debe ir acompañado de otra anomalía (por ejemplo, un número inusual en un período de tiempo determinado, repeticiones inesperadas o ocurrencias en un equipo que Normalmente, no se esperaría registrar el evento). También se puede recopilar un evento de importancia media y compararlo con el tiempo.  
 
-**Baja:** Y no debe infunde atención o se generan alertas, a menos que se correlacionan con los eventos de importancia Media o alta Id. de evento con los eventos de importancia baja.  
+**Habilita** Y el ID. de evento con un bajo nivel de gravedad no deben obtener atención ni producir alertas, a menos que estén correlacionados con eventos de importancia media o alta.  
 
-Estas recomendaciones están diseñadas para proporcionar a una guía de la línea de base para el administrador. Todas las recomendaciones se deberían revisar completamente antes de la implementación en un entorno de producción.  
+Estas recomendaciones están pensadas para proporcionar una guía de línea de base para el administrador. Todas las recomendaciones deben revisarse minuciosamente antes de la implementación en un entorno de producción.  
 
-Consulte [Apéndice L: Eventos para supervisar](../../../ad-ds/plan/Appendix-L--Events-to-Monitor.md) para obtener una lista de los eventos recomendados al monitor, sus clasificaciones de gravedad y un resumen de mensaje de evento.  
+Consulte @no__t 0Appendix L: Eventos para supervisar @ no__t-0 para obtener una lista de los eventos recomendados que se van a supervisar, su clasificación de importancia crítica y un resumen de mensajes de eventos.  

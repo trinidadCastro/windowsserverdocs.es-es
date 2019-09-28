@@ -1,8 +1,8 @@
 ---
 title: pnpunattend
-description: Aprenda a auditar los controladores de dispositivos en un equipo, así como realizar instalaciones de controlador de modo silencioso.
+description: Obtenga información acerca de cómo auditar los controladores de dispositivos en un equipo, así como realizar instalaciones de controladores silenciosos.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 53b72459d497ac5d079336c2a00ba65634b2e3a6
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 77a6ab1ea45322e3c53e8b095c412cf8838be60d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436335"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372272"
 ---
 # <a name="pnpunattend"></a>pnpunattend
 
-Auditorías de un equipo para los controladores de dispositivos y realizar instalaciones desatendidas de controlador, o buscar controladores sin necesidad de instalar y, opcionalmente, notificar los resultados a la línea de comandos. Use este comando para especificar la instalación de controladores específicos para dispositivos de hardware específico. Consulta Observaciones.
+Audita un equipo para los controladores de dispositivos y realiza instalaciones de controladores desatendidas, o busca controladores sin instalar y, opcionalmente, notifica los resultados a la línea de comandos. Use este comando para especificar la instalación de controladores específicos para dispositivos de hardware específicos. Consulta Observaciones.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,25 +34,25 @@ PnPUnattend.exe auditSystem [/help] [/?] [/h] [/s] [/L]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|auditSystem|Especifica la instalación de controladores en línea.</br>¿Obligatorio, excepto cuando **pnpunattend** se ejecuta con cualquiera el **/ayuda** o **/?** parámetros.|
-|/s|Opcional. Especifica una búsqueda de controladores sin necesidad de instalar.|
-|/L|Opcional. Especifica que se muestre la información de registro para este comando en el símbolo del sistema.|
-|/?|Opcional. Muestra ayuda para este comando en el símbolo del sistema.|
+|auditSystem|Especifica la instalación del controlador en línea.</br>Obligatorio, excepto cuando se ejecuta **pnpunattend** con las opciones **/Help** o **/?** los.|
+|/s|Opcional. Especifica que se busquen controladores sin instalar.|
+|L|Opcional. Especifica que se muestre la información de registro de este comando en el símbolo del sistema.|
+|/?|Opcional. Muestra la ayuda de este comando en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-Preparación preliminar es necesario. Antes de usar este comando, debe completar las tareas siguientes:
+Se requiere la preparación preliminar. Antes de utilizar este comando, debe completar las siguientes tareas:
 
-1. Cree un directorio para los controladores que desea instalar. Por ejemplo, cree una carpeta en **C:\Drivers\Video** para controladores de adaptador de vídeo.
-2. Descargue y extraiga el paquete de controladores para el dispositivo. Copie el contenido de la subcarpeta que contiene el archivo INF para su versión del sistema operativo y todas las subcarpetas en la carpeta de vídeo que ha creado. Por ejemplo, copie los archivos de controlador de vídeo a C:\Drivers\Video.
-3. Agregar una variable de ruta de acceso de entorno del sistema a la carpeta que creó en el paso 1, por ejemplo, **C:\Drivers\Video**.
-4. Cree la siguiente clave del registro y, a continuación, para la **DriverPaths** clave se crea, configura el **datos del valor** a **1**.
-5. Para Windows® 7 navegar por la ruta de acceso del registro: **HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion\\** y, a continuación, cree las claves: **UnattendSettings\PnPUnattend\DriverPaths\\**
-6. Para Windows Vista, vaya a la ruta de acceso del registro: **NT\CurrentVersion HK_LM\Software\Microsoft\Windows\\** y, a continuación, cree las claves = **\UnattendSettings\PnPUnattend\DriverPaths**.
+1. Cree un directorio para los controladores que desea instalar. Por ejemplo, cree una carpeta en **C:\Drivers\Video** para los controladores del adaptador de vídeo.
+2. Descargue y extraiga el paquete de controladores del dispositivo. Copie el contenido de la subcarpeta que contiene el archivo INF de la versión del sistema operativo y de las subcarpetas que haya creado en la carpeta de vídeo. Por ejemplo, copie los archivos del controlador de vídeo en C:\Drivers\Video.
+3. Agregue una variable de ruta de acceso de entorno del sistema a la carpeta que creó en el paso 1. por ejemplo, **C:\Drivers\Video**.
+4. Cree la siguiente clave del registro y, a continuación, para la clave **DriverPaths** que cree, establezca los **datos del valor** en **1**.
+5. Para Windows® 7, navegue por la ruta de acceso del registro: **HKEY_LOCAL_Machine\Software\Microsoft\Windows NT\CurrentVersion @ no__t-1**y, a continuación, cree las claves: **UnattendSettings\PnPUnattend\DriverPaths @ no__t-1**
+6. En Windows Vista, vaya a la ruta de acceso del registro: **HK_LM\Software\Microsoft\Windows NT\CurrentVersion @ no__t-1**y, a continuación, cree las claves = **\UnattendSettings\PnPUnattend\DriverPaths**.
 
 ## <a name="examples"></a>Ejemplos
 
-El siguiente comando de ejemplo muestra cómo utilizar el **PNPUnattend.exe** auditar un equipo para posibles actualizaciones del controlador y, a continuación, informar las conclusiones a la línea de comandos.
+El siguiente comando de ejemplo muestra cómo usar **PNPUnattend. exe** para auditar un equipo en busca de posibles actualizaciones de controladores y, a continuación, notificar los hallazgos en el símbolo del sistema.
 
 ```
 pnpunattend auditsystem /s /l 

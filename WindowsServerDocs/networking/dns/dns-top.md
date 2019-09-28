@@ -1,41 +1,41 @@
 ---
 title: Sistema de nombres de dominio (DNS)
-description: Este tema proporciona información general de DNS en Windows Server 2016
+description: En este tema se proporciona información general sobre DNS en Windows Server 2016
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dns
 ms.topic: article
 ms.assetid: 1324ba18-4e28-4b9d-bbe7-75707e6d30ab
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 3d4ec63e904dd899a3ddc53a59274ad607136edd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6ad3b66ff0b271c3b6f6134a96aaf6b5171bc7d4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870826"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406171"
 ---
 # <a name="domain-name-system-dns"></a>Sistema de nombres de dominio (DNS)
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Sistema de nombres de dominio (DNS) es uno del conjunto de protocolos que incluyen TCP/IP estándar del sector, y juntos el cliente DNS y servidor DNS proporcionan servicios de resolución de nombres equipo una dirección IP del nombre de la asignación a equipos y usuarios.  
+El sistema de nombres de dominio (DNS) es uno de los conjuntos de protocolos estándar del sector que componen TCP/IP y, conjuntamente, el cliente DNS y el servidor DNS proporcionan servicios de resolución de nombres de nombre de equipo a dirección IP para equipos y usuarios.  
   
 > [!NOTE]  
-> Además de este tema, el siguiente contenido DNS está disponible.  
+> Además de este tema, está disponible el siguiente contenido DNS.  
 >   
-> -   [Novedades en el cliente DNS](What-s-New-in-DNS-Client.md)  
+> -   [Novedades del cliente DNS](What-s-New-in-DNS-Client.md)  
 > -   [Novedades en el servidor DNS](What-s-New-in-DNS-Server.md)  
-> -   [Guía del escenario de directiva DNS](deploy/DNS-Policy-Scenario-Guide.md)  
-> -   Video: [Windows Server 2016: Administración de DNS en IPAM](https://channel9.msdn.com/Blogs/windowsserver/Windows-Server-2016-DNS-management-in-IPAM)  
+> -   [Guía del escenario de la Directiva DNS](deploy/DNS-Policy-Scenario-Guide.md)  
+> -   Video: [Windows Server 2016: Administración de DNS en IPAM @ no__t-0  
   
-En Windows Server 2016, el DNS es un rol de servidor que se puede instalar mediante los comandos del administrador del servidor o Windows PowerShell. Si va a instalar un nuevo bosque de Active Directory y dominio, DNS se instala automáticamente con Active Directory que el servidor de catálogo Global para el bosque y dominio.  
+En Windows Server 2016, DNS es un rol de servidor que puede instalar mediante Administrador del servidor o comandos de Windows PowerShell. Si va a instalar un nuevo bosque y dominio de Active Directory, DNS se instala automáticamente con Active Directory como el servidor de catálogo global para el bosque y el dominio.  
   
-Los servicios de dominio de Active Directory (AD DS) utiliza DNS como mecanismo de ubicación de controlador de dominio. Cuando se realiza cualquiera de las principales operaciones de Active Directory, como la autenticación, actualización o la búsqueda, los equipos utilizan DNS para buscar controladores de dominio de Active Directory. Además, los controladores de dominio use DNS se localicen entre sí.  
+Active Directory Domain Services (AD DS) utiliza DNS como mecanismo de ubicación del controlador de dominio. Cuando se realiza alguna de las operaciones de Active Directory principal, como la autenticación, la actualización o la búsqueda, los equipos usan DNS para buscar Active Directory controladores de dominio. Además, los controladores de dominio usan DNS para localizarse entre sí.  
   
-El servicio cliente DNS se incluye en todas las versiones de cliente y servidor del sistema operativo Windows y se ejecuta de forma predeterminada tras la instalación del sistema operativo. Al configurar una conexión de red TCP/IP con la dirección IP de un servidor DNS, el cliente DNS consulta el servidor DNS para detectar los controladores de dominio y para resolver los nombres de equipo a direcciones IP. Por ejemplo, cuando un usuario de red con una cuenta de usuario de Active Directory inicia sesión en un dominio de Active Directory, el servicio cliente DNS consulta el servidor DNS para localizar un controlador de dominio para el dominio de Active Directory. Cuando el servidor DNS responde a la consulta y proporciona la dirección IP del controlador de dominio para el cliente, el cliente contacta con el controlador de dominio y puede comenzar el proceso de autenticación.  
+El servicio cliente DNS se incluye en todas las versiones de cliente y servidor del sistema operativo Windows y se ejecuta de forma predeterminada en la instalación del sistema operativo. Cuando se configura una conexión de red TCP/IP con la dirección IP de un servidor DNS, el cliente DNS consulta al servidor DNS para detectar controladores de dominio y resolver nombres de equipo en direcciones IP. Por ejemplo, cuando un usuario de red con una cuenta de usuario Active Directory inicia sesión en un dominio Active Directory, el servicio cliente DNS consulta al servidor DNS para encontrar un controlador de dominio para el dominio Active Directory. Cuando el servidor DNS responde a la consulta y proporciona la dirección IP del controlador de dominio al cliente, el cliente se pone en contacto con el controlador de dominio y puede comenzar el proceso de autenticación.  
   
-Los servicios de servidor DNS de Windows Server 2016 y el cliente DNS usan el protocolo DNS que se incluye en el conjunto de protocolos TCP/IP. DNS es parte de la capa de aplicación del modelo de referencia de TCP/IP, tal como se muestra en la siguiente ilustración.  
+Los servicios de cliente DNS y servidor DNS de Windows Server 2016 usan el protocolo DNS que se incluye en el conjunto de protocolos TCP/IP. DNS forma parte de la capa de aplicación del modelo de referencia de TCP/IP, tal y como se muestra en la siguiente ilustración.  
   
 ![DNS en TCP/IP](../media/Domain-Name-System--DNS-/dns_in_tcpip.jpg)  
   

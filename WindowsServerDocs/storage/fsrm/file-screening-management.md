@@ -2,18 +2,18 @@
 title: Administración del filtrado de archivos
 description: En este artículo se describe cómo crear filtros de archivos, generar notificaciones, definir plantillas de filtrado de archivos y crear excepciones al filtrado de archivos
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 05fcaf402347d16bf8c28528d402664ae5f99165
-ms.sourcegitcommit: ed27ddbe316d543b7865bc10590b238290a2a1ad
+ms.openlocfilehash: ac5032630f960329675f896a303ef197d6a4dbb3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65476050"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403110"
 ---
 # <a name="file-screening-management"></a>Administración del filtrado de archivos
 

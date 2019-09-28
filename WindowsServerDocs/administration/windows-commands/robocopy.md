@@ -1,8 +1,8 @@
 ---
 title: robocopy
-description: Obtenga información sobre cómo usar el comando robocopy en Windows y Windows Server para copiar archivos
+description: Obtenga información acerca de cómo usar el comando Robocopy en Windows y Windows Server para copiar archivos
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,16 +13,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: lizapo
 ms.date: 07/25/2018
-ms.openlocfilehash: 7ab2eff32b105916d979a954275e9c9122a06903
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: b814134dd8ca82a4338f80aba26c5a7dcee3b90a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441726"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384500"
 ---
 # <a name="robocopy"></a>robocopy
 
-Copia datos de archivo.
+Copia los datos de archivo.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,149 +34,149 @@ robocopy <Source> <Destination> [<File>[ ...]] [<Options>]
 
 |   Parámetro    |                                                                                            Descripción                                                                                             |
 |----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   \<origen >    |                                                                            Especifica la ruta de acceso al directorio de origen.                                                                             |
-| \<Destino > |                                                                          Especifica la ruta de acceso al directorio de destino.                                                                          |
-|    \<File>     | Especifica el archivo o archivos que se van a copiar. Puede usar caracteres comodín ( **&#42;** o **?** ), si desea. Si el **archivo** no se especifica el parámetro, **\*.\\** \* se utiliza como el valor predeterminado. |
-|   \<Opciones >   |                                                                    Especifica las opciones que se usará con el **robocopy** comando.                                                                     |
+|   @no__t 0Source >    |                                                                            Especifica la ruta de acceso al directorio de origen.                                                                             |
+| @no__t 0Destination > |                                                                          Especifica la ruta de acceso al directorio de destino.                                                                          |
+|    @no__t 0File >     | Especifica el archivo o los archivos que se van a copiar. Si lo desea, puede usar **&#42;** caracteres comodín (o **?** ). Si no se especifica el parámetro **File** , **\*. \\** \* se utiliza como valor predeterminado. |
+|   @no__t 0Options >   |                                                                    Especifica las opciones que se van a usar con el comando **Robocopy** .                                                                     |
 
 ### <a name="copy-options"></a>Opciones de copia
 
 |Opción|Descripción|
 |------|-----------|
-|/s|Subdirectorios de copias. Tenga en cuenta que esta opción excluye directorios vacíos.|
-|/e|Subdirectorios de copias. Tenga en cuenta que esta opción incluye directorios vacíos. Para obtener más información, consulte [comentarios](#remarks).|
-|/lev:\<N>|Copia únicamente la parte superior *N* niveles del árbol de directorio de origen.|
+|/s|Copia subdirectorios. Tenga en cuenta que esta opción excluye los directorios vacíos.|
+|/e|Copia subdirectorios. Tenga en cuenta que esta opción incluye directorios vacíos. Para obtener más información, vea la [sección Comentarios](#remarks).|
+|/Lev: \<n (>|Copia solo los *N* niveles principales del árbol de directorio de origen.|
 |/z|Copia los archivos en modo reiniciable.|
-|/b|Copia los archivos en modo de copia de seguridad.|
+|b|Copia los archivos en modo de copia de seguridad.|
 |/zb|Utiliza el modo reiniciable. Si se deniega el acceso, esta opción utiliza el modo de copia de seguridad.|
-|/efsraw|Copia todos los archivos cifrados en el modo RAW de EFS.|
-|/copy:\<CopyFlags>|Especifica las propiedades de archivo que va a copiar. Los siguientes son los valores válidos para esta opción:</br>**D.** datos</br>**Un** atributos</br>**T** marcas de tiempo</br>**S** lista de control de acceso (ACL) de NTFS</br>**O** información del propietario</br>**U** información de auditoría</br>El valor predeterminado de **marcadores** es **DAT** (datos, atributos y las marcas de tiempo).|
-|/dcopy:\<copyflags\>|Define lo que desea copiar los directorios. El valor predeterminado es DA. Las opciones son D = datos, A = atributos y T = marcas de tiempo.|
-|/sec|Copia los archivos con seguridad (equivalente a **/Copy: DATs**).|
-|/COPYALL|Copia toda la información de archivo (equivalente a **DATSOU**).|
-|/NOCOPY|No copia ninguna información de archivo (útil con **/purgar**).|
-|/secfix|Correcciones de seguridad de archivos de todos los archivos, incluso las omite.|
-|/timfix|Correcciones de la hora de todos los archivos, incluso las omite.|
-|/Purge|Elimina los archivos de destino y los directorios que ya no existen en el origen. Para obtener más información, consulte [comentarios](#remarks).|
-|/mir|Refleja un árbol de directorios (equivalente a **/e** plus **/purgar**). Para obtener más información, consulte [comentarios](#remarks).|
-|/mov|Mueve los archivos y los elimina del origen una vez que se copian.|
-|/Move|Mueve los archivos y directorios y los elimina del origen una vez que se copian.|
-|/a+:[RASHCNET]|Agrega los atributos especificados a los archivos copiados.|
-|/a-:[RASHCNET]|Quita los atributos especificados de los archivos copiados.|
-|/create|Crea un árbol de directorio y sólo los archivos de longitud cero.|
-|/ fat|Crea archivos de destino usando sólo los nombres de longitud de caracteres de archivos FAT 8.3.|
-|/256|Desactiva la compatibilidad con rutas de acceso muy largos (más de 256 caracteres).|
-|/ mon:\<N >|Supervisa el origen y se vuelve a ejecutar cuando más de *N* se detectan cambios.|
-|/MOT:\<M >|Supervisa el origen y se ejecuta de nuevo en *M* minutos si se detectan cambios.|
-|/MT[:N]|Crea copias multiproceso con *N* subprocesos. *N* debe ser un entero entre 1 y 128. El valor predeterminado de *N* es 8.</br>El **/MT** parámetro no se puede usar con el **/IPG** y **/EFSRAW** parámetros.</br>Redirigir el resultado mediante **/LOG** opción para mejorar el rendimiento.</br>Nota: El parámetro/MT se aplica a Windows Server 2008 R2 y Windows 7.|
-|/rh:hhmm-hhmm|Especifica los tiempos de ejecución cuando es posible que se puede iniciar nuevas copias.|
-|/pf|Ejecutar las comprobaciones veces en una base por archivo (no por los pasos).|
-|/ipg:n|Especifica el intervalo entre paquetes para liberar ancho de banda en líneas lentas.|
-|/sl|No siga los vínculos simbólicos y en su lugar, cree una copia del vínculo.|
+|/efsraw|Copia todos los archivos cifrados en modo RAW de EFS.|
+|/Copy: @no__t 0CopyFlags >|Especifica las propiedades de archivo que se van a copiar. Estos son los valores válidos para esta opción:</br>Datos **D**</br>**Atributos**</br>Marcas de tiempo de **T**</br>**S** lista de control de acceso (ACL) de NTFS</br>**O** información de propietario</br>**U** información de auditoría</br>El valor predeterminado de **CopyFlags** es **DAT** (datos, atributos y marcas de tiempo).|
+|/dcopy: \<copyflags @ no__t-1|Define qué copiar para los directorios. El valor predeterminado es DA. Las opciones son D = Data, A = Attributes y T = timestamps.|
+|s|Copia los archivos con seguridad (equivalente a **/Copy: DATS**).|
+|/copyall|Copia toda la información de archivo (equivalente a **/Copy: DATSOU**).|
+|/nocopy|No copia ninguna información de archivo (útil con **/Purge**).|
+|/secfix|Corrige la seguridad de los archivos en todos los archivos, incluso los omitidos.|
+|/timfix|Corrige los tiempos de archivo en todos los archivos, incluso los omitidos.|
+|/purge|Elimina los archivos y directorios de destino que ya no existen en el origen. Para obtener más información, vea la [sección Comentarios](#remarks).|
+|/mir|Refleja un árbol de directorios (equivalente a **/e** más **/Purge**). Para obtener más información, vea la [sección Comentarios](#remarks).|
+|/mov|Mueve archivos y los elimina del origen una vez copiados.|
+|/Move|Mueve archivos y directorios, y los elimina del origen una vez copiados.|
+|/a +: [RASHCNET]|Agrega los atributos especificados a los archivos copiados.|
+|/a-(: [RASHCNET]|Quita los atributos especificados de los archivos copiados.|
+|/Create|Solo crea un árbol de directorios y archivos de longitud cero.|
+|/fat|Crea archivos de destino usando únicamente nombres de archivo FAT de longitud de caracteres 8,3.|
+|/256|Desactiva la compatibilidad con rutas de acceso muy largas (más de 256 caracteres).|
+|/Mon: \<n (>|Supervisa el origen y vuelve a ejecutarse cuando se detectan más de *N* cambios.|
+|/MOT: \<M >|Supervisa el origen y vuelve a ejecutarse en *M* minutos si se detectan cambios.|
+|/MT [: N]|Crea copias multiproceso con *N* subprocesos. *N* debe ser un entero comprendido entre 1 y 128. El valor predeterminado de *N* es 8.</br>El parámetro **/MT** no se puede usar con los parámetros **/IPG** y **/EFSRAW** .</br>Redirija la salida mediante la opción **/log** para obtener un mejor rendimiento.</br>Nota: El parámetro/MT se aplica a Windows Server 2008 R2 y Windows 7.|
+|/RH: hhmm-hhmm|Especifica los tiempos de ejecución cuando se pueden iniciar nuevas copias.|
+|/PF|Comprueba los tiempos de ejecución por archivo (no por paso).|
+|/IPG: n|Especifica el intervalo entre paquetes para el ancho de banda libre en líneas lentas.|
+|/sl|No siga los vínculos simbólicos y, en su lugar, cree una copia del vínculo.|
 
 > [!IMPORTANT]
-> Cuando se usa el **/SECFIX** la opción de copia, especifique el tipo de información de seguridad que desea copiar también con una de estas opciones de copia adicional:
+> Al usar la opción de copia **/SECFIX** , especifique el tipo de información de seguridad que desea copiar también mediante una de estas opciones de copia adicionales:
 >- **/COPYALL**
->- **/COPY:O**
->- **/COPY:S**
->- **/COPY:U**
->- **/SEC**
+>- **/COPY: O**
+>- **/COPY: S**
+>- **/COPY: U**
+>- **S**
 
-### <a name="file-selection-options"></a>Opciones de selección de archivo
+### <a name="file-selection-options"></a>Opciones de selección de archivos
 
 |Opción|Descripción|
 |------|-----------|
-|/a|Copia solo archivos para el que el **archivo** está establecido.|
-|/m|Copia solo archivos para el que el **archivo** atributo está establecido y restablece el **archivo** atributo.|
-|/ia:[RASHCNETO]|Incluye solo los archivos para el que se establezca cualquiera de los atributos especificados.|
-|/xa:[RASHCNETO]|Excluye los archivos para el que se establezca cualquiera de los atributos especificados.|
-|/xf \<FileName>[ ...]|Excluye los archivos que coinciden con los nombres especificados o rutas de acceso. Tenga en cuenta que *FileName* puede incluir caracteres comodín ( **&#42;** y **?** ).|
-|/xd \<Directory>[ ...]|Excluye los directorios que coinciden con los nombres especificados y las rutas de acceso.|
+|/a|Copia solo los archivos para los que se establece el atributo de **archivo** .|
+|/m|Copia solo los archivos para los que se establece el atributo **Archive** y restablece el atributo **Archive** .|
+|/IA: [RASHCNETO]|Incluye solo los archivos para los que se establece cualquiera de los atributos especificados.|
+|/xa:[RASHCNETO]|Excluye los archivos para los que se establece cualquiera de los atributos especificados.|
+|/XF \<FileName > [...]|Excluye los archivos que coinciden con los nombres o rutas de acceso especificados. Tenga en cuenta que *filename* puede incluir caracteres **&#42;** comodín (y **?** ).|
+|/XD \<Directory > [...]|Excluye los directorios que coinciden con los nombres y rutas de acceso especificados.|
 |/xc|Excluye los archivos modificados.|
 |/xn|Excluye los archivos más recientes.|
-|/xo|Excluye los archivos antiguos.|
-|/xx|Excluye los directorios y archivos adicionales.|
-|/xl|Excluye los directorios y archivos "nada".|
+|/xo|Excluye los archivos más antiguos.|
+|/xx|Excluye archivos y directorios adicionales.|
+|/xl|Excluye los archivos y directorios "no hay nada".|
 |/is|Incluye los mismos archivos.|
-|/it|Incluye archivos "ajustado".|
-|/max:\<N>|Especifica el tamaño máximo de archivo (para excluir archivos mayores que *N* bytes).|
-|/min:\<N >|Especifica el tamaño mínimo de archivo (para excluir archivos menores de *N* bytes).|
-|/MaxAge:\<N >|Especifica el tiempo máximo de archivo (para excluir archivos anteriores a *N* días o fecha).|
-|/MINAGE:\<N >|Especifica la antigüedad mínima de archivo (excluir archivos más reciente que *N* días o fecha).|
-|/maxlad:\<N>|Especifica el número máximo de fecha del último acceso (excluye los archivos no usados desde *N*).|
-|/MINLAD:\<N >|Especifica el número mínimo de fecha del último acceso (excluye los archivos que se utilizan desde *N*) si *N* es inferior a 1900, *N* especifica el número de días. En caso contrario, *N* especifica una fecha en el formato AAAAMMDD.|
-|/xj|Excluye los puntos de unión, que normalmente se incluyen de forma predeterminada.|
-|/fft|Se da por supuesto de archivos FAT tiempos (precisión de dos segundos).|
-|/dst|Permite compensar las diferencias de tiempo de horario de verano de una hora.|
-|/xjd|Excluye los puntos de unión para directorios.|
-|/xjf|Excluye los puntos de unión para los archivos.|
+|/It|Incluye archivos "reajustados".|
+|/Max: \<n (>|Especifica el tamaño máximo de archivo (para excluir archivos de más de *N* bytes).|
+|/min: \<n (>|Especifica el tamaño mínimo de archivo (para excluir archivos de menos de *N* bytes).|
+|/maxage: \<n (>|Especifica la duración máxima del archivo (para excluir archivos de más de *N* días o fecha).|
+|/Minage: \<n (>|Especifica la antigüedad mínima del archivo (excluir archivos más recientes de *N* días o fecha).|
+|/maxlad: \<n (>|Especifica la última fecha de acceso máxima (excluye los archivos no usados desde *N*).|
+|/minlad: \<n (>|Especifica la última fecha de acceso mínima (excluye los archivos usados desde *n*) si *n* es menor que 1900, *n* especifica el número de días. De lo contrario, *N* especifica una fecha con el formato AAAAMMDD.|
+|/xj|Excluye los puntos de Unión, que normalmente se incluyen de forma predeterminada.|
+|/fft|Supone un tiempo de archivo FAT (precisión de dos segundos).|
+|/DST|Compensa las diferencias de hora de horario de verano de una hora.|
+|/xjd|Excluye los puntos de unión de los directorios.|
+|/xjf|Excluye los puntos de Unión para los archivos.|
 
-### <a name="retry-options"></a>Las opciones de reintento
+### <a name="retry-options"></a>Opciones de reintento
 
 |Opción|Descripción|
 |------|-----------|
-|/ r:\<N >|Especifica el número de reintentos de errores de copia. El valor predeterminado de *N* es 1.000.000 (un millón de reintentos).|
-|/w:\<N>|Especifica el tiempo de espera entre reintentos, en segundos. El valor predeterminado de *N* es 30 (30 segundos de tiempo de espera).|
-|/reg|Guarda los valores especificados en el **/r** y **/w** opciones como la configuración predeterminada en el registro.|
-|/tbd|Especifica que el sistema esperará para que nombres de recurso compartido que se defina (Reintentar error 67).|
+|/r: @no__t 0n (>|Especifica el número de reintentos en las copias con errores. El valor predeterminado de *N* es 1 millón (1 millón reintentos).|
+|/w: @no__t 0n (>|Especifica el tiempo de espera entre reintentos, en segundos. El valor predeterminado de *N* es 30 (tiempo de espera de 30 segundos).|
+|/reg|Guarda los valores especificados en las opciones **/r** y **/w** como valores predeterminados en el registro.|
+|/tbd|Especifica que el sistema esperará a que se definan los nombres de los recursos compartidos (error de reintento 67).|
 
 ### <a name="logging-options"></a>Opciones de registro
 
 |Opción|Descripción|
 |------|-----------|
-|/l|Especifica que se muestran solo los archivos (y no copiar, eliminar, o con marca de tiempo).|
-|/x|Notifica todos los archivos adicionales, no solo los seleccionados.|
-|/v|El resultado es detallado y muestra todos los archivos omitidos.|
-|/ts|Incluye las marcas de tiempo del archivo de origen en la salida.|
-|/fp|Incluye los nombres de ruta de acceso completa de los archivos en la salida.|
+|/l|Especifica que los archivos solo se mostrarán (y no se copiarán, se eliminarán ni se marcarán en el tiempo).|
+|/x|Informa de todos los archivos adicionales, no solo de los que están seleccionados.|
+|/v|Genera una salida detallada y muestra todos los archivos omitidos.|
+|/TS|Incluye marcas de tiempo de archivo de origen en el resultado.|
+|/FP|Incluye los nombres de ruta de acceso completa de los archivos en la salida.|
 |/bytes|Imprime los tamaños, como bytes.|
-|/ns|Especifica que los tamaños de archivo no se ha iniciado.|
-|/nc|Especifica que las clases de archivo no se ha iniciado.|
-|/nfl|Especifica que los nombres de archivo no se ha iniciado.|
-|/ndl|Especifica que los nombres de directorio no se ha iniciado.|
+|/NS|Especifica que no se van a registrar los tamaños de archivo.|
+|/nc|Especifica que no se registrarán las clases de archivo.|
+|/nfl|Especifica que no se van a registrar los nombres de archivo.|
+|/ndl|Especifica que no se van a registrar los nombres de directorio.|
 |/np|Especifica que no se mostrará el progreso de la operación de copia (el número de archivos o directorios copiados hasta el momento).|
 |/eta|Muestra el tiempo estimado de llegada (ETA) de los archivos copiados.|
-|/log:\<LogFile>|Escribe la salida del estado en el archivo de registro (sobrescribe el archivo de registro existente).|
-|/log+:\<LogFile>|Escribe la salida del estado en el archivo de registro (anexa la salida al archivo de registro existente).|
-|/Unicode|Muestra la salida del estado como texto Unicode.|
-|/unilog:\<LogFile>|Escribe el estado en el archivo de registro de salida como texto Unicode (sobrescribe el archivo de registro existente).|
-|/unilog+:\<LogFile>|Escribe el estado en el archivo de registro de salida como texto Unicode (anexa la salida al archivo de registro existente).|
-|/tee|Escribe la salida del estado de la ventana de consola, así como el archivo de registro.|
+|/log: @no__t 0LogFile >|Escribe la salida de estado en el archivo de registro (sobrescribe el archivo de registro existente).|
+|/log +: \<LogFile >|Escribe la salida de estado en el archivo de registro (anexa la salida al archivo de registro existente).|
+|/Unicode|Muestra la salida de estado como texto Unicode.|
+|/UNILOG: \<LogFile >|Escribe la salida de estado en el archivo de registro como texto Unicode (sobrescribe el archivo de registro existente).|
+|/UNILOG +: \<LogFile >|Escribe la salida de estado en el archivo de registro como texto Unicode (anexa la salida al archivo de registro existente).|
+|/tee|Escribe la salida de estado en la ventana de la consola, así como en el archivo de registro.|
 |/njh|Especifica que no hay ningún encabezado de trabajo.|
-|/njs|Especifica que no hay ningún resumen del trabajo.|
+|/njs|Especifica que no hay ningún Resumen del trabajo.|
 
 ### <a name="job-options"></a>Opciones de trabajo
 
 |Opción|Descripción|
 |------|-----------|
-|/job:\<JobName>|Especifica que los parámetros se va a derivar desde el archivo de trabajo con nombre.|
-|/ Guardar:\<JobName >|Especifica que los parámetros se guardan en el archivo de trabajo con nombre.|
-|/quit|Se cierra después de la línea de comandos de procesamiento (para ver los parámetros).|
+|/trabajo: \<JobName >|Especifica que los parámetros se van a derivar del archivo de trabajo con nombre.|
+|/Save: @no__t 0JobName >|Especifica que los parámetros se van a guardar en el archivo de trabajo con nombre.|
+|/quit|Sale después del procesamiento de la línea de comandos (para ver los parámetros).|
 |/nosd|Indica que no se ha especificado ningún directorio de origen.|
 |/nodd|Indica que no se ha especificado ningún directorio de destino.|
-|/if|Incluye los archivos especificados.|
+|/If|Incluye los archivos especificados.|
 
-### <a name="exit-return-codes"></a>Códigos de salida (devolución)
+### <a name="exit-return-codes"></a>Códigos de salida (Return)
 
 Valor | Descripción
 -- | --
-0 | Se copia ningún archivo. No se detectó ningún error.  No hay archivos no coinciden. Los archivos ya existen en el directorio de destino. por lo tanto, se omitió la operación de copia.
-1 | Todos los archivos se copiaron correctamente.
-2 | Hay algunos archivos adicionales en el directorio de destino que no están presentes en el directorio de origen. Se copia ningún archivo.
-3 | Algunos archivos se han copiado. Archivos adicionales estaban presentes. No se detectó ningún error.
-5 | Algunos archivos se han copiado. Algunos archivos no coinciden. No se detectó ningún error.
-6 | Existen archivos adicionales y los archivos que no coincidentes. Se copia ningún archivo y no hay errores encontrados. Esto significa que los archivos ya existen en el directorio de destino.
-7 | Se copiaron los archivos, estaba presente un error de coincidencia de archivos y archivos adicionales que estaban presentes.
-8 | No se copió varios archivos.
+0 | No se copió ningún archivo. No se encontró ningún error.  No hubo coincidencia de archivos. Los archivos ya existen en el directorio de destino; por lo tanto, se omitió la operación de copia.
+1 | Todos los archivos se han copiado correctamente.
+2 | Hay algunos archivos adicionales en el directorio de destino que no están presentes en el directorio de origen. No se copió ningún archivo.
+3 | Algunos archivos se han copiado. Existen archivos adicionales. No se encontró ningún error.
+5 | Algunos archivos se han copiado. Algunos archivos no coincidían. No se encontró ningún error.
+6 | Existen archivos adicionales y archivos no coincidentes. No se copió ningún archivo y no se encontró ningún error. Esto significa que los archivos ya existen en el directorio de destino.
+7 | Los archivos se han copiado, se ha producido un error de coincidencia de archivos y existen archivos adicionales.
+8 | No se copiaron varios archivos.
 
 > [!NOTE]
 > Cualquier valor mayor que 8 indica que se produjo al menos un error durante la operación de copia.
 
 ### <a name="remarks"></a>Comentarios
 
--   El **/mir** opción es equivalente a la **/e** plus **/purgar** opciones con una pequeña diferencia de comportamiento:  
-    -   Con el **/e** plus **/purgar** opciones, si existe el directorio de destino, la configuración de seguridad del directorio de destino no se sobrescriben.
-    -   Con el **/mir** opción, si existe el directorio de destino, la configuración de seguridad del directorio de destino se sobrescriben.
+-   La opción **/Mir** es equivalente a las opciones **/e** Plus **/Purge** con una pequeña diferencia en el comportamiento:  
+    -   Con las opciones **/e** Plus **/Purge** , si el directorio de destino existe, no se sobrescribe la configuración de seguridad del directorio de destino.
+    -   Con la opción **/Mir** , si existe el directorio de destino, se sobrescribe la configuración de seguridad del directorio de destino.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

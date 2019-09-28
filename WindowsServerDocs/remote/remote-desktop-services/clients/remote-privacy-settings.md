@@ -2,7 +2,7 @@
 title: Configuración de privacidad de las aplicaciones y escritorios administrados
 description: Información sobre la configuración de privacidad del sistema remoto cuando se usan aplicaciones y escritorios administrados.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ manager: daveba
 ms.author: davidbel
 ms.date: 04/12/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 1f9a4e7c9e74a7ef3c0c4f636dfd86bbf5bcbcab
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 277e099e94d3121f31f5eb98fbca61b84eea1163
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63748873"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387619"
 ---
 # <a name="privacy-settings-for-managed-apps-and-desktops"></a>Configuración de privacidad de las aplicaciones y escritorios administrados
 

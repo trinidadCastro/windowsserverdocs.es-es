@@ -2,7 +2,7 @@
 title: Preparación de máquinas virtuales para Escritorio remoto
 description: Preparación de las máquinas virtuales para los componentes de Escritorio remoto
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 2fc39dff-61ca-4eba-81ab-52289081bead
 author: lizap
 manager: dongill
-ms.openlocfilehash: f51fb057070ba84f93e00266018535b74ab45ae1
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 6a1f0bfef21351894d3b9c2cfd8d044491834f6c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63753208"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387252"
 ---
 # <a name="create-virtual-machines-for-remote-desktop"></a>Creación de máquinas virtuales para Escritorio remoto
 

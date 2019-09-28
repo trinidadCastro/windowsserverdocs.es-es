@@ -1,8 +1,8 @@
 ---
 title: cprofile
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,20 +13,20 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a581a01b95456c56c6cbf177dfd6049c3514f1d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: efc296d43ff6cbe0c409f244160a9c14786d3be0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434204"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378988"
 ---
 # <a name="cprofile"></a>cprofile
 
 
 
-Cprofile - Cprofile está en desuso y no se garantiza que se admiten en versiones futuras de Windows.
+Cprofile-cprofile está en desuso y no se garantiza que se admita en versiones futuras de Windows.
 
-Cprofile.exe: Perfil limpia. Esta herramienta se incluye en todos los sistemas operativos de Windows Server 2003, excepto Windows Server 2003, Web edition. Para obtener más información, consulte [configuración y herramientas de servicios de Terminal](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx).
+Cprofile. exe: Perfil limpio. Esta herramienta se incluye en todos los sistemas operativos Windows Server 2003 excepto Windows Server 2003, Web Edition. Para obtener más información [, vea Terminal Services herramientas y configuración](https://technet.microsoft.com/library/cc776289(v=ws.10).aspx).
 
 # #
 

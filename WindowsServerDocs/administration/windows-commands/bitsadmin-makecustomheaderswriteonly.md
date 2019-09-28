@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin makecustomheaderswriteonly
-description: Tema de los comandos de Windows para **makecustomheaderswriteonly bitsadmin** -realizar encabezados un trabajo HTTP personalizados de sólo escritura (no se puede deshacer).
+title: bitsadmin makecustomheaderswriteonly
+description: 'Temas de comandos de Windows para **bitsadmin makecustomheaderswriteonly** : hacer que los encabezados HTTP personalizados de un trabajo sean de solo escritura (no se puede deshacer).'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -12,16 +12,16 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 03/01/2019
-ms.openlocfilehash: 18d170098a5e913522b5daa42a22c66b67c2206b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 64bf048ddc76ad1d751509e95d09403db1de7883
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59861896"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381028"
 ---
-# <a name="bitsadmin-makecustomheaderswriteonly"></a>Bitsadmin makecustomheaderswriteonly
+# <a name="bitsadmin-makecustomheaderswriteonly"></a>bitsadmin makecustomheaderswriteonly
 
-Realizar encabezados un trabajo HTTP personalizados de sólo escritura (no se puede deshacer).
+Hacer que los encabezados HTTP personalizados de un trabajo sean de solo escritura (no se puede deshacer).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -33,7 +33,7 @@ bitsadmin /MakeCustomHeadersWriteOnly <Job>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

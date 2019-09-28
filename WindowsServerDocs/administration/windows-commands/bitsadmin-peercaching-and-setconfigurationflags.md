@@ -1,8 +1,8 @@
 ---
-title: setconfigurationflags y bitsadmin caché del mismo nivel
-description: Tema de los comandos de Windows para **bitsadmin caché del mismo nivel y setconfigurationflags** -establece las marcas de configuración que determinan si el equipo puede servir contenido a elementos del mismo nivel y puede descargar contenido de elementos del mismo nivel.
+title: bitsadmin-caché y setconfigurationflags
+description: 'Temas de comandos de Windows para la **caché de bitsadmin y setconfigurationflags** : establece las marcas de configuración que determinan si el equipo puede servir contenido a los equipos del mismo nivel y puede descargar contenido desde los equipos del mismo nivel.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 22408d4aab7f5ea374511bc16751d911a84644f2
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a65d54bcaa2bce26eb2b7c98250837ab09c7a423
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813336"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381114"
 ---
-# <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>setconfigurationflags y bitsadmin caché del mismo nivel
+# <a name="bitsadmin-peercaching-and-setconfigurationflags"></a>bitsadmin-caché y setconfigurationflags
 
 
 
-Establece las marcas de configuración que determinan si el equipo puede servir contenido a elementos del mismo nivel y puede descargar contenido de elementos del mismo nivel.
+Establece las marcas de configuración que determinan si el equipo puede servir contenido a los elementos del mismo nivel y puede descargar contenido de elementos del mismo nivel.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,12 +36,12 @@ bitsadmin /PeerCaching /SetConfigurationFlags <Job> <Value>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
-|Valor|El valor es un entero sin signo con la interpretación de la representación binaria los bits siguiente:</br>-Permitir que los datos del trabajo se descargan desde un punto: Establecer el bit menos significativo</br>-Permitir que los datos del trabajo proporcionarse a elementos del mismo nivel: Establezca el bit 2 de la derecha.|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
+|Valor|El valor es un entero sin signo con la siguiente interpretación de los bits en la representación binaria:</br>-Permitir la descarga de los datos del trabajo desde un nodo del mismo nivel: Establecer el bit menos significativo</br>: Permite que los datos del trabajo se atiendan a los elementos del mismo nivel: Establezca el segundo bit de la derecha.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente especifica los datos del trabajo descarga del mismo nivel para el trabajo denominado *myJob*.
+En el ejemplo siguiente se especifican los datos del trabajo que se van a descargar de los elementos del mismo nivel para el trabajo denominado *myJob*.
 ```
 C:\> Bitsadmin /PeerCaching /SetConfigurationFlags myJob 1
 ```

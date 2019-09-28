@@ -1,8 +1,8 @@
 ---
 title: nslookup help
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f413a34cbdb8f29528f1ddc59613d2ca929ef747
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8830813c4107efbed546d92e84262cfa6c2c9a91
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437002"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373112"
 ---
 # <a name="nslookup-help"></a>nslookup help
 
 
 
-Muestra un resumen breve de **nslookup** subcomandos.
+Muestra un breve resumen de los subcomandos de **nslookup** .
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,7 +36,7 @@ Muestra un resumen breve de **nslookup** subcomandos.
 
 | Parámetro | Descripción |
 |-----------|-------------|
-|   {Ayuda   |     ?}      |
+|   {ayuda   |     ?}      |
 
 #### <a name="additional-references"></a>Referencias adicionales
 

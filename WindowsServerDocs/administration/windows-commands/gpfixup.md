@@ -1,8 +1,8 @@
 ---
 title: gpfixup
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: efb30e243d9c165fdcf13943225eb90d38235070
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: e32427369f1664476c81a81353ae8869ec0c2ff3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438212"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375671"
 ---
 # <a name="gpfixup"></a>gpfixup
 
 
 
-Corregir las dependencias de nombre de dominio en los vínculos de objetos de directiva de grupo y directiva de grupo después de cambiar el nombre de un dominio de la operación. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Corrija las dependencias de nombre de dominio en directiva de grupo objetos y vínculos de directiva de grupo después de una operación de cambio de nombre de dominio. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -40,35 +40,35 @@ Gpfixup [/v]
 
 |       Parámetro       |                                                                                                                                                                                                                               Descripción                                                                                                                                                                                                                               |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|          /v           |                                                                                                                                                      Muestra los mensajes de estado detallado.</br>Si no se usa este parámetro, sólo los mensajes de error o un mensaje de estado de resumen de **éxito** o **error** aparece.                                                                                                                                                       |
-| /olddns:\<OLDDNSNAME > |                                                                                                           Especifica el nombre antiguo de DNS del dominio con el nombre cambiado como  *\<OLDDNSNAME >* cuando la operación de cambio de nombre de dominio cambia el nombre DNS de un dominio. Puede usar este parámetro solo si también usa el **/newdns** parámetro para especificar un nuevo nombre de dominio DNS.                                                                                                            |
-| /newdns:\<NEWDNSNAME > |                                                                                                          Especifica el nuevo nombre DNS del dominio con el nombre cambiado como  *\<NEWDNSNAME >* cuando la operación de cambio de nombre de dominio cambia el nombre DNS de un dominio. Puede usar este parámetro solo si también usa el **/olddns** parámetro para especificar el nombre de dominio DNS anterior.                                                                                                           |
-| /oldnb:\<OLDFLATNAME > |                                                                                                        Especifica el nombre antiguo de NetBIOS del dominio con el nombre cambiado como  *\<OLDFLATNAME >* cuando la operación de cambio de nombre de dominio cambia el nombre de NetBIOS de un dominio. Puede usar este parámetro solo si usa la **/newnb** parámetro para especificar un nuevo nombre de NetBIOS del dominio.                                                                                                        |
-| /newnb:\<NEWFLATNAME> |                                                                                                       Especifica el nuevo nombre de NetBIOS del dominio con el nombre cambiado como  *\<NEWFLATNAME >* cuando la operación de cambio de nombre de dominio cambia el nombre de NetBIOS de un dominio. Puede usar este parámetro solo si usa la **/oldnb** parámetro para especificar el nombre NetBIOS del dominio antiguo.                                                                                                       |
-|     / DC:\<DCNAME >     | Conectar con el controlador de dominio denominado  *\<DCNAME >* (un nombre DNS o un nombre NetBIOS). *\<DCNAME >* debe hospedar una réplica de escritura de la partición de directorio de dominio, como se indica mediante uno de los siguientes:</br>-El nombre DNS  *\<NEWDNSNAME >* utilizando **/newdns**</br>-El nombre de NetBIOS  *\<NEWFLATNAME >* utilizando **/newnb**</br>Si no se usa este parámetro, conectarse a cualquier controlador de dominio en el dominio ha cambiado el nombre indicado por  *\<NEWDNSNAME >* o  *\<NEWFLATNAME >* . |
-|        /sionly        |                                                                                                                           Realiza sólo la corrección de la directiva de grupo relacionada con la instalación de software administrado (la extensión de instalación de Software de directiva de grupo). Omitir las acciones que corrigen los vínculos de directiva de grupo y las rutas de acceso SYSVOL en los GPO.                                                                                                                           |
-|   / User:\<nombre de usuario >   |                                                                                                                                   Se ejecuta este comando en el contexto de seguridad del usuario  *\<USERNAME >* , donde  *\<USERNAME >* está en el formato dominio\usuario.</br>Si no se usa este parámetro, ejecuta este comando como el usuario que inició sesión.                                                                                                                                    |
-|   /pwd:{\<PASSWORD>   |                                                                                                                                                                                                                                   \*}                                                                                                                                                                                                                                   |
+|          /v           |                                                                                                                                                      Muestra mensajes de estado detallados.</br>Si no se usa este parámetro, solo se mostrarán los mensajes de error o el mensaje de Resumen de estado **correcto** o **error** .                                                                                                                                                       |
+| /olddns: \<OLDDNSNAME > |                                                                                                           Especifica el nombre DNS anterior del dominio cuyo nombre ha cambiado como *@no__t 1OLDDNSNAME >* cuando la operación de cambio de nombre de dominio cambia el nombre DNS de un dominio. Puede usar este parámetro solo si también usa el parámetro **/newdns** para especificar un nuevo nombre DNS de dominio.                                                                                                            |
+| /newdns: \<NEWDNSNAME > |                                                                                                          Especifica el nuevo nombre DNS del dominio cuyo nombre ha cambiado como *@no__t 1NEWDNSNAME >* cuando la operación de cambio de nombre de dominio cambia el nombre DNS de un dominio. Solo puede utilizar este parámetro si también usa el parámetro **/olddns** para especificar el nombre DNS del dominio anterior.                                                                                                           |
+| /oldnb: \<OLDFLATNAME > |                                                                                                        Especifica el nombre NetBIOS anterior del dominio cuyo nombre ha cambiado como *@no__t 1OLDFLATNAME >* cuando la operación de cambio de nombre de dominio cambia el nombre NetBIOS de un dominio. Puede usar este parámetro solo si usa el parámetro **/newnb** para especificar un nuevo nombre de NetBIOS de dominio.                                                                                                        |
+| /newnb: \<NEWFLATNAME > |                                                                                                       Especifica el nuevo nombre NetBIOS del dominio cuyo nombre ha cambiado como *\<NEWFLATNAME >* cuando la operación de cambio de nombre de dominio cambia el nombre NetBIOS de un dominio. Puede usar este parámetro solo si usa el parámetro **/oldnb** para especificar el nombre NetBIOS del dominio anterior.                                                                                                       |
+|     /DC: @no__t 0DCNAME >     | Conéctese al controlador de dominio denominado *\<DCNAME >* (un nombre DNS o un nombre NetBIOS). *\<DCNAME >* debe hospedar una réplica de escritura de la partición de directorio de dominio, como se indica en una de las siguientes opciones:</br>-El nombre DNS *\<NEWDNSNAME >* mediante **/newdns**</br>-El nombre NetBIOS *\<NEWFLATNAME >* mediante **/newnb**</br>Si no se usa este parámetro, conéctese a cualquier controlador de dominio en el dominio al que se ha cambiado el nombre indicado por *\<NEWDNSNAME >* o *\<NEWFLATNAME >* . |
+|        /sionly        |                                                                                                                           Realiza solo la directiva de grupo corrección relacionada con la instalación de software administrado (la extensión de instalación de software para directiva de grupo). Omitir las acciones que corrigen directiva de grupo vínculos y las rutas de acceso de SYSVOL en los GPO.                                                                                                                           |
+|   /User: @no__t 0USERNAME >   |                                                                                                                                   Ejecuta este comando en el contexto de seguridad del usuario *\<USERNAME >* , donde *\<USERNAME >* tiene el formato dominio\usuario.</br>Si no se usa este parámetro, ejecuta este comando como el usuario que ha iniciado sesión.                                                                                                                                    |
+|   /PWD: {\<PASSWORD >   |                                                                                                                                                                                                                                   \*}                                                                                                                                                                                                                                   |
 |          /?           |                                                                                                                                                                                                                  Muestra la Ayuda en el símbolo del sistema.                                                                                                                                                                                                                   |
 
 ## <a name="remarks"></a>Comentarios
 
--   El **gpfixup** comando está disponible en Windows Server 2008 R2 y Windows Server 2008, excepto en las instalaciones Server Core.
--   Aunque la consola de administración de directivas de grupo (GPMC) se distribuye con Windows Server 2008 R2 y Windows Server 2008, debe instalar Administración de directivas de grupo como una característica mediante el administrador del servidor.
+-   El comando **gpfixup** está disponible en windows Server 2008 R2 y windows Server 2008, excepto en las instalaciones Server Core.
+-   Aunque el Consola de administración de directivas de grupo (GPMC) se distribuye con Windows Server 2008 R2 y Windows Server 2008, debe instalar la administración de directiva de grupo como una característica a través de Administrador del servidor.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-En este ejemplo se da por supuesto que ya ha realizado una operación de cambio de nombre de dominio en el que ha cambiado el nombre DNS de **MyOldDnsName** a **MyNewDnsName**y el nombre de NetBIOS de  **MyOldNetBIOSName** a **MyNewNetBIOSName**. En este ejemplo, se usa el **gpfixup** comando para conectarse al controlador de dominio denominado **MyDcDnsName** y reparar GPO y directivas de grupo vínculos al actualizar el nombre de dominio antiguo incrustarán en el GPO y vínculos. Salida de error y de estado se guarda en un archivo denominado **gpfixup.log**.
+En este ejemplo se da por supuesto que ya ha realizado una operación de cambio de nombre de dominio en la que ha cambiado el nombre DNS de **MyOldDnsName** a **MyNewDnsName**y el nombre de NetBIOS de **MyOldNetBIOSName** a **MyNewNetBIOSName**. En este ejemplo, use el comando **gpfixup** para conectarse al controlador de dominio denominado **MyDcDnsName** y reparar los GPO y los vínculos de directiva de grupo actualizando el nombre de dominio anterior incrustado en los GPO y vínculos. El estado y la salida de error se guardan en un archivo denominado **gpfixup. log**.
 ```
 gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /oldnb:MyOldNetBIOSName /newnb:MyNewNetBIOSName /dc:MyDcDnsName 2>&1 >gpfixup.log
 ```
-Este ejemplo es el mismo que el anterior, excepto en que se supone que el nombre NetBIOS del dominio no se cambió durante el dominio de cambiar el nombre de operación.
+Este ejemplo es el mismo que el anterior, salvo que supone que el nombre NetBIOS del dominio no se ha cambiado durante la operación de cambio de nombre de dominio.
 ```
 gpfixup /olddns: MyOldDnsName /newdns:MyNewDnsName /dc:MyDcDnsName 2>&1 >gpfixup.log
 ```
 
 #### <a name="additional-references"></a>Referencias adicionales
 
--   [Administración de cambio de nombre de dominio de Active Directory](https://go.microsoft.com/fwlink/?LinkId=198385)
+-   [Administrar Dominio de Active Directory cambiar el nombre](https://go.microsoft.com/fwlink/?LinkId=198385)
 -   [TechCenter de directiva de grupo](https://go.microsoft.com/fwlink/?LinkID=145531)
 -   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

@@ -1,7 +1,7 @@
 ---
 ms.assetid: 9f3dc104-dd69-4b03-b824-a29896780164
-title: archivo de fsutil
-ms.prod: windows-server-threshold
+title: Fsutil (archivo)
+ms.prod: windows-server
 manager: dmoss
 ms.author: toklima
 author: toklima
@@ -9,17 +9,17 @@ ms.technology: storage
 audience: IT Pro
 ms.topic: article
 ms.date: 10/16/2017
-ms.openlocfilehash: ffaf02f74f20f4eb94b94d8f0ffc51f26a62390e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2b89d96535512f79c83c601be50327c24dc40787
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828126"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376978"
 ---
-# <a name="fsutil-file"></a>archivo de fsutil
+# <a name="fsutil-file"></a>Fsutil (archivo)
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows 10, Windows Server 2012 R2, Windows 8.1, Windows Server 2012, Windows 8, Windows Server 2008 R2, Windows 7
 
-Busca un archivo por el nombre de usuario (si están habilitadas las cuotas de disco), consulta los intervalos asignados para un archivo, Establece el nombre corto de un archivo, Establece la longitud de datos válidos de un archivo, Establece los datos de cero para un archivo o crea un nuevo archivo.
+Busca un archivo por su nombre de usuario (si las cuotas de disco están habilitadas), consulta los intervalos asignados de un archivo, establece el nombre corto de un archivo, establece la longitud de datos válidos de un archivo, establece cero datos para un archivo o crea un archivo nuevo.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -46,49 +46,49 @@ fsutil file [setzerodata] offset=<offset> length=<length> <filename>
 
 |Parámetro|Descripción|
 |-------------|---------------|
-|CreateNew|Crea un archivo del nombre especificado y el tamaño, con contenido formado por ceros.|
-|\<filename>|Especifica la ruta de acceso completa al archivo incluido el nombre de archivo y la extensión, por ejemplo C:\documents\filename.txt.|
-|\<length>|Especifica la longitud del archivo datos válidos.|
-|findbysid|Busca archivos que pertenecen a un usuario especificado en volúmenes NTFS donde están habilitadas las cuotas de disco.|
-|\<username>|Especifica el nombre de usuario o el nombre de inicio de sesión del usuario.|
-|\<directory>|Especifica la ruta de acceso completa al directorio, por ejemplo C:\users.|
-|optimizemetadata|Esto lleva a cabo una compactación inmediata de los metadatos de un archivo determinado.|
-|/A|Analizar los metadatos del archivo antes y después de la optimización.|
+|CreateNew|Crea un archivo con el nombre y el tamaño especificados, con contenido que consta de ceros.|
+|@no__t 0filename >|Especifica la ruta de acceso completa al archivo, incluido el nombre de archivo y la extensión, por ejemplo C:\documents\filename.txt.|
+|@no__t 0length >|Especifica la longitud de datos válidos del archivo.|
+|findbysid|Busca los archivos que pertenecen a un usuario especificado en volúmenes NTFS en los que se habilitan las cuotas de disco.|
+|@no__t 0username >|Especifica el nombre de usuario o el nombre de inicio de sesión del usuario.|
+|\<directory>|Especifica la ruta de acceso completa al directorio, por ejemplo C:\Users.|
+|optimizemetadata|Esto realiza una compactación inmediata de los metadatos de un archivo determinado.|
+|/A|Analizar metadatos de archivo antes y después de la optimización.|
 |queryallocranges|Consulta los intervalos asignados de un archivo en un volumen NTFS. Resulta útil para determinar si un archivo tiene regiones dispersas.|
-|offset=\<offset>|Especifica el inicio del intervalo que se debe establecer en ceros.|
-|length=\<length>|Especifica la longitud del intervalo (en bytes).|
-|queryextents|Extensiones de consultas para un archivo.|
-|/R|Si <filename> es un reanálisis punto, abrir, en lugar de su destino.|
-|\<startingvcn>|Especifica el primer VCN a la consulta. Si se omite, se iniciará en VCN 0.|
-|\<numvcns>|Número de VCNs para consultar. Si se omite o es 0, consulta hasta EOF.|
-|queryfileid|Consulta el Id. de archivo de un archivo en un volumen NTFS.<br /><br />Este parámetro se aplica a:  Windows Server 2008 R2 y Windows 7.|
-|\<volume>|Especifica el volumen como nombre de la unidad seguido de dos puntos.|
-|queryfilenamebyid|Muestra un nombre de vínculo aleatorio para un identificador de archivo especificado en un volumen NTFS. Puesto que un archivo puede tener más de un nombre de vínculo que apunta a ese archivo, no se garantiza qué archivo de vínculo se proporcionará como resultado de la consulta para el nombre de archivo.<br /><br />Este parámetro se aplica a:  Windows Server 2008 R2 y Windows 7.|
-|\<fileid>|Especifica el identificador del archivo en un volumen NTFS.|
+|offset = \<offset >|Especifica el inicio del intervalo que se debe establecer en ceros.|
+|Length = \<length >|Especifica la longitud del intervalo (en bytes).|
+|queryextents|Consulta extensiones para un archivo.|
+|/R|Si <filename> es un punto de repetición de análisis, ábralo en lugar de su destino.|
+|@no__t 0startingvcn >|Especifica el primer VCN que se va a consultar. Si se omite, empiece en VCN 0.|
+|@no__t 0numvcns >|Número de VCNs que se van a consultar. Si se omite o es 0, consulta hasta EOF.|
+|queryfileid|Consulta el ID. de archivo de un archivo en un volumen NTFS.<br /><br />Este parámetro se aplica a:  Windows Server 2008 R2 y Windows 7.|
+|@no__t 0volume >|Especifica el volumen como el nombre de la unidad seguido de dos puntos.|
+|queryfilenamebyid|Muestra un nombre de vínculo aleatorio para un identificador de archivo especificado en un volumen NTFS. Dado que un archivo puede tener más de un nombre de vínculo que apunta a ese archivo, no se garantiza que el vínculo de archivo se proporcione como resultado de la consulta para el nombre de archivo.<br /><br />Este parámetro se aplica a:  Windows Server 2008 R2 y Windows 7.|
+|@no__t 0fileid >|Especifica el identificador del archivo en un volumen NTFS.|
 |queryoptimizemetadata|Consulta el estado de los metadatos de un archivo.|
-|queryvaliddata|Consulta la longitud de datos válidos para un archivo.|
-|/D|Mostrar información detallada de datos válido.|
-|seteof|Establece el EOF del archivo dado.|
-|setshortname|Establece el nombre corto (nombre del archivo de longitud de caracteres con formato 8.3) para un archivo en un volumen NTFS.|
-|\<shortname>|Especifica el nombre corto del archivo.|
-|setvaliddata|Establece la longitud de datos válidos para un archivo en un volumen NTFS.|
-|\<datalength>|Especifica la longitud del archivo en bytes.|
-|setzerodata|Establece un intervalo (especificado por *desplazamiento* y *longitud*) del archivo en ceros, que vacía el archivo. Si el archivo es un archivo disperso, las unidades de asignación subyacente se anula la confirmación.|
+|queryvaliddata|Consulta la longitud de datos válida para un archivo.|
+|/D.|Muestra información detallada de los datos válidos.|
+|seteo|Establece el EOF del archivo especificado.|
+|setshortname|Establece el nombre corto (8,3 nombre de archivo de longitud de caracteres) para un archivo en un volumen NTFS.|
+|@no__t 0shortname >|Especifica el nombre corto del archivo.|
+|setvaliddata|Establece la longitud de datos válida para un archivo en un volumen NTFS.|
+|@no__t 0datalength >|Especifica la longitud del archivo en bytes.|
+|setzerodata|Establece un intervalo (especificado por el *desplazamiento* y la *longitud*) del archivo en ceros, que vacía el archivo. Si el archivo es un archivo disperso, las unidades de asignación subyacentes se desasignan.|
 
 ## <a name="remarks"></a>Comentarios
 
--   En NTFS, hay dos conceptos importantes de la longitud del archivo: el marcador de final de archivo (EOF) y la longitud de datos válidos (VDL). El EOF indica la longitud real del archivo. La VDL identifica la longitud de datos válidos en el disco. Las lecturas entre VDL y EOF automáticamente devuelven 0 para conservar el objeto C2 reutilizar el requisito.
+-   En NTFS, hay dos conceptos importantes de longitud de archivo: el marcador de fin de archivo (EOF) y la longitud de datos válida (VDL). EOF indica la longitud real del archivo. VDL identifica la longitud de los datos válidos en el disco. Las lecturas entre VDL y EOF devuelven automáticamente 0 para conservar el requisito de reutilización del objeto C2.
 
--   El **setvaliddata** parámetro solo está disponible para los administradores porque requiere el privilegio de tareas (SeManageVolumePrivilege) realizar mantenimiento de volumen. Esta característica solo es necesario para escenarios avanzados de área de contenido multimedia y el sistema de red. El **setvaliddata** parámetro debe ser un valor positivo que es mayor que la VDL actual, pero menor que el tamaño del archivo actual.
+-   El parámetro **setvaliddata** solo está disponible para los administradores porque requiere el privilegio realizar tareas de mantenimiento del volumen (SeManageVolumePrivilege). Esta característica solo es necesaria para escenarios avanzados de redes de área de sistema y multimedia. El parámetro **setvaliddata** debe ser un valor positivo mayor que el VDL actual, pero menor que el tamaño actual del archivo.
 
-    Resulta útil para los programas establecer una VDL cuando:
+    Es útil para los programas establecer un VDL cuando:
 
-    -   Escritura de los clústeres sin procesar directamente en el disco a través de un canal de hardware. Esto permite que el programa informar al sistema de archivos que este intervalo contiene datos válidos que se pueden devolver al usuario.
+    -   Escritura de clústeres sin procesar directamente en el disco a través de un canal de hardware. Esto permite al programa informar al sistema de archivos de que este intervalo contiene datos válidos que se pueden devolver al usuario.
 
-    -   Creación de archivos de gran tamaño cuando el rendimiento es un problema. Esto evita que el tiempo necesario para rellenar el archivo con ceros cuando se crean o se extienden el archivo.
+    -   Crear archivos grandes cuando el rendimiento es un problema. Esto evita el tiempo que se tarda en rellenar el archivo con ceros cuando se crea o se extiende el archivo.
 
-## <a name="BKMK_examples"></a>Ejemplos
-Para buscar los archivos que pertenecen a scottb en la unidad C, escriba:
+## <a name="BKMK_examples"></a>Example
+Para buscar archivos que son propiedad de scottb en la unidad C, escriba:
 
 ```
 fsutil file findbysid scottb c:\users  
@@ -106,31 +106,31 @@ Para optimizar los metadatos de un archivo, escriba:
 fsutil file optimizemetadata C:\largefragmentedfile.txt
 ```
 
-Para consultar las extensiones para un archivo, escriba:
+Para consultar las extensiones de un archivo, escriba:
 
 ```
 fsutil file queryextents C:\Temp\sample.txt
 ```
 
-Para establecer el EOF para un archivo, escriba:
+Para establecer EOF para un archivo, escriba:
 
 ```
 fsutil file seteof C:\testfile.txt 1000
 ```
 
-Para establecer el nombre corto del archivo nombreDeArchivoLargo.txt en la unidad C para nomLargo.txt, escriba:
+Para establecer el nombre corto del archivo Longfilename. txt de la unidad C en Longfile. txt, escriba:
 
 ```
 fsutil file setshortname c:\longfilename.txt longfile.txt  
 ```
 
-Para establecer la longitud de datos válida a 4096 bytes para un archivo denominado Testfile.txt en un volumen NTFS, escriba:
+Para establecer la longitud de datos válida en 4096 bytes para un archivo denominado TESTFILE. txt en un volumen NTFS, escriba:
 
 ```
 fsutil file setvaliddata c:\testfile.txt 4096  
 ```
 
-Para establecer un intervalo de un archivo en un volumen NTFS a los ceros a la vacía, escriba:
+Para establecer un intervalo de un archivo en un volumen NTFS en ceros para vaciarlo, escriba:
 
 ```
 fsutil file setzerodata offset=100 length=150 c:\temp\sample.txt  

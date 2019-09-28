@@ -1,8 +1,8 @@
 ---
-title: El comando Update-el servidor.
-description: 'Tema de los comandos de Windows para ***- '
+title: El comando UPDATE-ServerFiles
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: ec96e2ba9aea14ed9a203dabbb697187736b33a8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 93eeb0deaa527921db35f4ab955d2ccc46b57d7a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59817446"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385847"
 ---
-# <a name="the-update-serverfiles-command"></a>El comando Update-el servidor.
+# <a name="the-update-serverfiles-command"></a>El comando UPDATE-ServerFiles
 
 
 
-Actualiza los archivos en la carpeta compartida REMINST mediante el uso de los archivos más recientes que se almacenan en la carpeta del servidor %Windir%\System32\RemInst. Para garantizar la validez de la instalación de servicios de implementación de Windows, debe ejecutar este comando una vez después de cada actualización del servidor, la instalación del service pack o la actualización a los archivos de servicios de implementación de Windows.
+Actualiza los archivos de la carpeta compartida REMINST usando los archivos más recientes que se almacenan en la carpeta%Windir%\System32\RemInst del servidor. Para garantizar la validez de la instalación de servicios de implementación de Windows, debe ejecutar este comando una vez después de cada actualización de servidor, Service Pack instalación o actualización de los archivos de servicios de implementación de Windows.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,9 +36,9 @@ WDSUTIL [Options] /Update-ServerFiles [/Server:<Server name>]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[/ Server:\<nombre del servidor >]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usará el servidor local.|
+|[/Server: \<Server nombre >]|Especifica el nombre del servidor. Puede ser el nombre de NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utilizará el servidor local.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para actualizar los archivos, escriba uno de los siguientes:
 ```

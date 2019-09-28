@@ -1,8 +1,8 @@
 ---
 title: Administrar escritorios de usuario mediante MultiPoint Dashboard
-description: Proporciona información general de MultiPoint Dashboard
+description: Proporciona información general sobre el panel de Multipoint
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,17 +13,17 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 049910029f0ed2623ae34131d3755964d3499d0e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b250d820e7086054d18d62eebe8ce9d3686f8d5d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59837346"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405095"
 ---
 # <a name="manage-user-desktops-using-multipoint-dashboard"></a>Administrar escritorios de usuario mediante MultiPoint Dashboard
-En un sistema MultiPoint Services, el escritorio es la interfaz de usuario de software que se presenta en el monitor en cada *estación* de usuario. MultiPoint Dashboard es una herramienta que ayuda a administrar los equipos de escritorio.   
+En un sistema MultiPoint Services, el escritorio es la interfaz de usuario de software que se presenta en el monitor en cada *estación* de usuario. Multipoint Dashboard es una herramienta que le ayuda a administrar esos escritorios.   
   
-En MultiPoint Dashboard, en el **inicio** ficha, puede hacer lo siguiente:  
+En el panel de Multipoint, en la pestaña **Inicio** , puede hacer lo siguiente:  
   
 - Ver escritorios  
 Puede ver imágenes en miniatura de cada escritorio activo. Para información sobre cómo ver las miniaturas, vea el tema [View Options for Session Thumbnails](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md) (Opciones de visualización de miniaturas de sesión).  
@@ -40,7 +40,7 @@ Puede iniciar o cerrar aplicaciones en una estación. Para más información sob
 - Usar la mensajería instantánea  
 Puede conversar con los usuarios seleccionados. El mensaje de chat solo está visible para el usuario del panel y el usuario de la sesión seleccionada. Para más información, vea [Use IM](Use-IM.md) (Usar la mensajería instantánea).  
 - Cambiar el tamaño de las imágenes en miniatura  
-Puede cambiar el tamaño de las miniaturas que se muestran en MultiPoint Dashboard. Para más información sobre cómo cambiar el tamaño de las miniaturas, vea [View Options for Session Thumbnails](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md) (Opciones de visualización de miniaturas de sesión).
+Puede cambiar el tamaño de las miniaturas que se muestran en el panel de multipoint. Para más información sobre cómo cambiar el tamaño de las miniaturas, vea [View Options for Session Thumbnails](View-Options-for-Session-Thumbnails-in-MultiPoint-Dashboard.md) (Opciones de visualización de miniaturas de sesión).
 - Mostrar todas las estaciones  
 Puede ver todas las estaciones que están conectadas con el sistema, incluyendo las estaciones que no están activas. Para más información sobre cómo ver todas las estaciones, vea el tema [Mostrar todas las estaciones](Show-All-Stations.md).  
 - Buscar y ordenar miniaturas  

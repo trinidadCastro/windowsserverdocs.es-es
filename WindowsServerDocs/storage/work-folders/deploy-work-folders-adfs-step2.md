@@ -1,6 +1,6 @@
 ---
 title: 'Implementar Carpetas de trabajo con AD FS y el Proxy de aplicación web: paso 2; trabajo posterior a la configuración de AD FS'
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 manager: klaasl
@@ -8,31 +8,31 @@ ms.author: jeffpatt
 author: JeffPatt24
 ms.date: 06/06/2019
 ms.assetid: 0a48852e-48cc-4047-ae58-99f11c273942
-ms.openlocfilehash: 5497651f57a0276daced614687e89f8047af9116
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 6364c3f8dc35fbafa518a106780ae6b767d4d40c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812674"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365779"
 ---
-# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 2, trabajo posterior a la configuración de AD FS
+# <a name="deploy-work-folders-with-ad-fs-and-web-application-proxy-step-2-ad-fs-post-configuration-work"></a>Implementar carpetas de trabajo con AD FS y proxy de aplicación web: Paso 2: AD FS trabajo posterior a la configuración
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 En este tema se describe el segundo paso para implementar Carpetas de trabajo con los Servicios de federación de Active Directory (AD FS) y el Proxy de aplicación web. Puedes encontrar el resto de pasos de este proceso en estos temas:  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Información general](deploy-work-folders-adfs-overview.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Información general @ no__t-0  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 1: configuración de AD FS](deploy-work-folders-adfs-step1.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 1: configurar AD FS @ no__t-0  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 3, configurar carpetas de trabajo](deploy-work-folders-adfs-step3.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 3: configurar carpetas de trabajo @ no__t-0  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 4: configurar el Proxy de aplicación Web](deploy-work-folders-adfs-step4.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 4: configurar el proxy de aplicación web @ no__t-0  
   
--   [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: El paso 5, configure los clientes](deploy-work-folders-adfs-step5.md)  
+-   @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 5: configuración de los clientes @ no__t-0  
   
 > [!NOTE]
-> Las instrucciones descritas en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
+> Las instrucciones que se describen en esta sección son para un entorno de Windows Server 2019 o Windows Server 2016. Si estás usando Windows Server 2012 R2, lee el artículo en el que se detallan las [instrucciones para Windows Server 2012 R2](https://technet.microsoft.com/library/dn747208(v=ws.11).aspx).
 
 En el primer paso instalaste y configuraste AD FS. Ahora debes realizar los pasos posteriores a la configuración de AD FS.  
   
@@ -104,7 +104,7 @@ Para configurar la relación de confianza para usuario autenticado:
   
 7.  En la página **Configurar URL**, haz clic en **Siguiente**.  
   
-8. En el **configurar identificadores** página, agregue el siguiente identificador: `https://windows-server-work-folders/V1`. Este identificador es un valor codificado de forma rígida que usa Carpetas de trabajo y que el servicio de Carpetas de trabajo envía cuando se está comunicando con AD FS. Haz clic en **Siguiente**.  
+8. En la página **configurar identificadores** , agregue el siguiente identificador: `https://windows-server-work-folders/V1`. Este identificador es un valor codificado de forma rígida que usa Carpetas de trabajo y que el servicio de Carpetas de trabajo envía cuando se está comunicando con AD FS. Haz clic en **Siguiente**.  
   
 9. En la página Elegir la directiva de control de acceso, selecciona **Permitir todos los usuarios** y, a continuación, haz clic en **Siguiente**.  
   
@@ -124,13 +124,13 @@ Para configurar la relación de confianza para usuario autenticado:
   
 17. En la tabla de asignaciones, escribe estos valores:  
   
-    -   Entidad de seguridad-nombre de usuario: UPN  
+    -   Nombre principal de usuario: UPN  
   
     -   Nombre para mostrar: Nombre  
   
-    -   Apellido: Apellido  
+    -   2º Apellido  
   
-    -   Dado nombre: Nombre propio  
+    -   Nombre dado: Nombre propio  
   
 18. Haga clic en **Finalizar**. Verás que la regla WorkFolders aparece en la pestaña Reglas de transformación de emisión; haz clic en **Aceptar**.  
   
@@ -242,15 +242,15 @@ Debes asignar el permiso de cuenta de servicio de AD FS para acceder a la clave 
   
 13. En la ventana **Permisos**, concédele a la cuenta, como mínimo, permiso de lectura y haz clic en **Aceptar**.  
   
-Si no tiene la opción para administrar las claves privadas, necesita ejecutar el comando siguiente: `certutil -repairstore my *`  
+Si no tiene la opción de administrar claves privadas, puede que tenga que ejecutar el siguiente comando: `certutil -repairstore my *`  
   
 ## <a name="verify-that-ad-fs-is-operational"></a>Comprobar que AD FS funciona correctamente
 
-Para comprobar que AD FS esté funcionando, abra una ventana del explorador y vaya a `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`, cambiar la dirección URL para que coincida con su entorno.
+Para comprobar que AD FS está operativo, abra una ventana del explorador y vaya a `https://blueadfs.contoso.com/federationmetadata/2007-06/federationmetadata.xml`, y cambie la dirección URL para que coincida con su entorno.
   
 En la ventana del explorador verás los metadatos del servidor de federación sin formato. Si puedes ver los datos sin errores de SSL ni advertencias, eso quiere decir que el servidor de federación está operativo.  
   
-Paso siguiente: [Implementar carpetas de trabajo con AD FS y Proxy de aplicación Web: Paso 3, configurar carpetas de trabajo](deploy-work-folders-adfs-step3.md)  
+Paso siguiente: @no__t carpetas de trabajo de 0Deploy con AD FS y proxy de aplicación web: Paso 3: configurar carpetas de trabajo @ no__t-0  
   
 ## <a name="see-also"></a>Vea también  
-[Introducción a las carpetas de trabajo](Work-Folders-Overview.md)
+[Introducción a carpetas de trabajo](Work-Folders-Overview.md)

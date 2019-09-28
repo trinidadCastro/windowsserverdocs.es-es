@@ -7,24 +7,24 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: ec3b87eb7960853dabaad67d792ab6383268629e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b1c296de3b701d8a7eb8728c28a4997fd47d4fcb
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59828036"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71409073"
 ---
 # <a name="active-directory-replication-and-topology-management-using-windows-powershell"></a>Administración de la replicación y la topología de Active Directory con Windows PowerShell
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Windows PowerShell para Active Directory ahora incluye compatibilidad para la administración de replicación y la topología. Los temas siguientes ofrecen una introducción, así como información detallada adicional:  
+Windows PowerShell para Active Directory ahora incluye compatibilidad con la administración de la replicación y la topología. Los temas siguientes ofrecen una introducción, así como información detallada adicional:  
   
--   [Introducción a la replicación de Active Directory y administración de la topología mediante Windows PowerShell &#40;nivel 100&#41;](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)  
+-   [Introducción a la administración de la replicación y la topología de &#40;Active Directory con el nivel 100 de Windows PowerShell&#41;](../../../ad-ds/manage/powershell/Introduction-to-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-100-.md)  
   
--   [Avanzada de replicación de Active Directory y administración de la topología mediante Windows PowerShell &#40;nivel 200&#41;](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)  
+-   [Administración avanzada de la replicación y la topología de Active Directory &#40;con el nivel 200 de Windows PowerShell&#41;](../../../ad-ds/manage/powershell/Advanced-Active-Directory-Replication-and-Topology-Management-Using-Windows-PowerShell--Level-200-.md)  
   
 
 

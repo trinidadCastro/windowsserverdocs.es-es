@@ -2,18 +2,18 @@
 title: Introducción a la Administración de discos
 description: La Administración de discos es una utilidad del sistema de Windows que permite realizar tareas avanzadas de almacenamiento, como la inicialización de una nueva unidad, la ampliación de volúmenes, la reducción de particiones y el cambio de letras de unidad.
 ms.date: 06/07/2019
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: a3885ae6b09ad431fd1ea5e4c593e02c7bb274d9
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 46ed1256ed9039311939f9de12ea46416443be9c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66812549"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402143"
 ---
 # <a name="overview-of-disk-management"></a>Introducción a la Administración de discos
 

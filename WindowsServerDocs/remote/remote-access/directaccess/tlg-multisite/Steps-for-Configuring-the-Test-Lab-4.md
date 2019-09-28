@@ -1,9 +1,9 @@
 ---
 title: Pasos para configurar el laboratorio de pruebas
-description: 'En este tema forma parte de la Guía del laboratorio de pruebas: demostrar una implementación de multisitio de DirectAccess para Windows Server 2016'
+description: 'Este tema forma parte de la guía del laboratorio de pruebas: demostración de una implementación multisitio de DirectAccess para Windows Server 2016'
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,48 +12,48 @@ ms.topic: article
 ms.assetid: dc7205b4-a822-4038-ab67-ec0a870737f2
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: a3d01dd8002e28fb127ac6b1b4cea25c58953521
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: dd8b8864dff98e51bf55aad9307523df4a0c30bf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281396"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404701"
 ---
 # <a name="steps-for-configuring-the-test-lab"></a>Pasos para configurar el laboratorio de pruebas
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Los pasos siguientes describen cómo configurar la infraestructura de acceso remoto, los clientes y servidores de acceso remoto y probar la conectividad de DirectAccess desde las subredes de Internet y Homenet.  
+En los pasos siguientes se describe cómo configurar la infraestructura de acceso remoto, configurar los clientes y servidores de acceso remoto y probar la conectividad de DirectAccess desde las subredes Internet y HomeNet.  
   
-En esta guía de laboratorio de pruebas se compilará una implementación multisitio de acceso remoto mediante los pasos siguientes:  
+En esta guía del laboratorio de pruebas, creará una implementación de acceso remoto multisitio realizando los pasos siguientes:  
   
--   [PASO 1: Completar la configuración Base](assetId:///9eb4a9ba-9118-4ea3-8963-e643ec81c3ed). Complete los pasos descritos en el [Test Lab Guide: Demostrar la instalación de servidor único de DirectAccess con IPv4 e IPv6 mixto](https://go.microsoft.com/fwlink/p/?LinkId=237004).  
+-   [PASO 1: Complete la configuración de base @ no__t-0. Complete todos los pasos de la guía de laboratorio @no__t 0Test: Mostrar la configuración de servidor único de DirectAccess con IPv4 e IPv6 no__t-0.  
   
--   [PASO 2: Instalar y configurar ENRUTADOR1](assetId:///e4b1a298-d5b0-410e-970b-c5358a9378f9). ENRUTADOR1 proporciona funcionalidad entre las subredes de la red corporativa y 2 Corpnet de reenvío y enrutamiento.  
+-   [PASO 2: Instale y configure ENRUTADOR1 @ no__t-0. ENRUTADOR1 proporciona funcionalidad de enrutamiento y reenvío entre las subredes corporativas y 2-CorpNet.  
   
--   [PASO 3: Instalar y configurar CLIENT2](assetId:///6cbee1b5-f6f6-443f-8fa9-31cc5c05a0ee). Client2 es un equipo cliente de Windows 7 que se usa para demostrar la hacia atrás compatibilidad de una implementación de Windows Server 2016, Windows Server 2012 R2 o acceso remoto de Windows Server 2012.  
+-   [PASO 3: Instale y configure cliente2 @ no__t-0. Cliente2 es un equipo cliente de Windows 7 que se usa para mostrar la compatibilidad con versiones anteriores de una implementación de acceso remoto de Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012.  
   
--   [PASO 4: Configurar APP1](assetId:///a0ee655e-c01e-4bf3-a7b3-064e9614f810). Configurar APP1 con ENRUTADOR1 como la puerta de enlace predeterminada y 2-DC1 como el servidor DNS alternativo.  
+-   [PASO 4: Configure APP1 @ no__t-0. Configure APP1 con ENRUTADOR1 como la puerta de enlace predeterminada y 2-DC1 como servidor DNS alternativo.  
   
--   [PASO 5: Configurar DC1](assetId:///205ca795-93ce-4e53-aa6b-b44c87f0e14a). Configurar DC1 con grupos de seguridad adicional para los equipos cliente de Windows 7 y un sitio de Active Directory adicional.  
+-   [PASO 5: Configure DC1 @ no__t-0. Configure DC1 con un sitio de Active Directory adicional y grupos de seguridad adicionales para equipos cliente de Windows 7.  
   
--   [PASO 6: Instalar y configurar 2-DC1](assetId:///16752f61-edbf-4ff4-9d7a-e2077b66a127). En una implementación multisitio, tiene dos o más dominios y sitios. 2-DC1 proporciona servicios DNS para el dominio corp2.corp.contoso.com y controlador de dominio.  
+-   [PASO 6: Instale y configure 2-DC1 @ no__t-0. En una implementación multisitio, tiene dos o más dominios y sitios. 2-DC1 proporciona controladores de dominio y servicios DNS para el dominio corp2.corp.contoso.com.  
   
--   [PASO 7: Instalar y configurar 2-APP1](assetId:///7d04b54e-590a-4d33-9766-415789859f29). 2-APP1 es un servidor web y el archivo en la red Corpnet de 2.  
+-   [PASO 7: Instale y configure 2-APP1 @ no__t-0. 2-APP1 es un servidor Web y de archivos en la red 2-CorpNet.  
   
--   [PASO 8: Configurar INET1](assetId:///8ecc0b63-8626-4939-8d26-3d51d051d231). INET1 se simula Internet en esta guía de laboratorio de pruebas. Debe configurar una entrada DNS que se resuelve en la dirección IP pública de 2-EDGE1.  
+-   [PASO 8: Configure INET1 @ no__t-0. INET1 simula Internet en esta guía del laboratorio de pruebas. Debe configurar una entrada DNS que se resuelva en la dirección IP pública de 2-EDGE1.  
   
--   [PASO 9: Configurar EDGE1](assetId:///562744dc-30f6-42fa-bd5f-60a013b2179e). Configure el servidor DNS 2 Corpnet y enrutamiento en EDGE1.  
+-   [PASO 9: Configure EDGE1 @ no__t-0. Configure el servidor DNS de 2-CorpNet y el enrutamiento en EDGE1.  
   
--   [PASO 10: Instalar y configurar 2 EDGE1](assetId:///1938c4f3-ca96-475d-9f2e-6bea3b7a4130). Se requieren dos servidores de acceso remoto en una implementación multisitio. 2-EDGE1 proporciona servicios de acceso remoto para el dominio de segundo.  
+-   [PASO 10: Instale y configure 2-EDGE1 @ no__t-0. Se requieren dos servidores de acceso remoto en una implementación multisitio. 2-EDGE1 proporciona servicios de acceso remoto para el segundo dominio.  
   
--   [PASO 11: Configurar una implementación multisitio](assetId:///537e4b68-043f-49c9-94d8-15ce8c4b18e2). Después de configurar ambos servidores de acceso remoto, puede configurar la implementación multisitio.  
+-   [PASO 11: Configure la implementación multisitio @ no__t-0. Después de configurar ambos servidores de acceso remoto, puede configurar la implementación multisitio.  
   
--   [PASO 12: Probar la conectividad de DirectAccess](assetId:///aa293b5d-4b6f-4004-95f3-0ab54804b15c). Probar la conectividad de DirectAccess desde ambos equipos cliente desde la subred de Internet a través de EDGE1 y 2 EDGE1.  
+-   [PASO 12: Probar la conectividad de DirectAccess @ no__t-0. Pruebe la conectividad de DirectAccess desde ambos equipos cliente desde la subred de Internet a través de EDGE1 y 2-EDGE1.  
   
--   [PASO 13: Probar la conectividad de DirectAccess desde detrás de un dispositivo NAT](assetId:///41f8195b-00a1-4991-9db8-3703514dbe0c). Probar la conectividad de DirectAccess desde detrás de un dispositivo NAT.  
+-   [PASO 13: Probar la conectividad de DirectAccess desde detrás de un dispositivo NAT @ no__t-0. Pruebe la conectividad de DirectAccess desde detrás de un dispositivo NAT.  
   
--   [PASO 14: Instantánea de la configuración](assetId:///7b56d5c9-c334-463e-9e29-d652ca110d84). Después de completar el laboratorio de pruebas, tome una instantánea de la implementación multisitio de acceso remoto en funcionamiento para que puede volver a él más adelante para probar los escenarios adicionales.  
+-   [PASO 14: Una instantánea de la configuración @ no__t-0. Después de completar el laboratorio de pruebas, tome una instantánea de la implementación multisitio de acceso remoto en funcionamiento para poder volver a ella más adelante y probar escenarios adicionales.  
   
 
 

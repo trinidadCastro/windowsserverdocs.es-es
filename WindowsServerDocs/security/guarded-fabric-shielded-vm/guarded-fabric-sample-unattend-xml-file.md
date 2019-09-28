@@ -1,52 +1,52 @@
 ---
 title: Crear el archivo de respuesta de especialización del sistema operativo
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 299aa38e-28d2-4cbe-af16-5b8c533eba1f
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 5717fcc9e1732b6273620e633c140c6df58ec8b7
-ms.sourcegitcommit: 29ad32b9dea298a7fe81dcc33d2a42d383018e82
+ms.openlocfilehash: 4920f9a90bd0190d390a9d35b3d265023d69efac
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65624655"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386506"
 ---
 # <a name="create-os-specialization-answer-file"></a>Crear el archivo de respuesta de especialización del sistema operativo
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
-En preparación para implementar máquinas virtuales blindadas, necesita crear un archivo de respuesta de especialización del sistema operativo. En Windows, esto se conoce comúnmente como el archivo "unattend.xml". El **New-ShieldingDataAnswerFile** función de Windows PowerShell le ayuda a hacerlo. Puede, a continuación, use el archivo de respuesta al crear máquinas virtuales blindadas desde una plantilla mediante el uso de System Center Virtual Machine Manager (o cualquier otro controlador de tejido).
+Como preparación para la implementación de máquinas virtuales blindadas, puede que tenga que crear un archivo de respuesta de especialización del sistema operativo. En Windows, esto se conoce normalmente como el archivo "Unattend. xml". La función **New-ShieldingDataAnswerFile de** Windows PowerShell le ayuda a hacerlo. Después, puede usar el archivo de respuesta al crear máquinas virtuales blindadas a partir de una plantilla mediante System Center Virtual Machine Manager (o cualquier otro controlador de tejido).
 
-Para obtener directrices generales para los archivos de instalación desatendida para las máquinas virtuales blindadas, consulte [crear un archivo de respuesta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file).
+Para obtener instrucciones generales sobre los archivos de instalación desatendida para las máquinas virtuales blindadas, consulte [crear un archivo de respuesta](guarded-fabric-tenant-creates-shielding-data.md#create-an-answer-file).
  
 ## <a name="downloading-the-new-shieldingdataanswerfile-function"></a>Descarga de la función New-ShieldingDataAnswerFile
 
-Puede obtener el **New-ShieldingDataAnswerFile** funcionar desde el [Galería de PowerShell](https://aka.ms/gftools). Si el equipo tiene conectividad a Internet, puede instalarlo desde PowerShell con el siguiente comando:
+Puede obtener la función **New-ShieldingDataAnswerFile** de la [Galería de PowerShell](https://aka.ms/gftools). Si el equipo tiene conectividad a Internet, puede instalarlo desde PowerShell con el siguiente comando:
 
 ```powershell
 Install-Module GuardedFabricTools -Repository PSGallery -MinimumVersion 1.0.0
 ```
 
-El `unattend.xml` salida puede empaquetarse en los datos de blindaje, junto con artefactos adicionales, por lo que se puede usar para crear máquinas virtuales blindadas a partir de plantillas.
+La salida `unattend.xml` se puede empaquetar en los datos de blindaje, junto con artefactos adicionales, para que se pueda usar para crear máquinas virtuales blindadas a partir de plantillas.
 
-Las secciones siguientes muestran cómo puede utilizar los parámetros de función para un `unattend.xml` archivo que contiene varias opciones:
+En las secciones siguientes se muestra cómo puede usar los parámetros de función para un archivo `unattend.xml` que contiene varias opciones:
 
 - [Archivo de respuesta básico de Windows](#basic-windows-answer-file)
-- [Archivo con la unión a un dominio de la respuesta de Windows](#windows-answer-file-with-domain-join)
+- [Archivo de respuesta de Windows con Unión a un dominio](#windows-answer-file-with-domain-join)
 - [Archivo de respuesta de Windows con direcciones IPv4 estáticas](#windows-answer-file-with-static-ipv4-addresses)
 - [Archivo de respuesta de Windows con una configuración regional personalizada](#windows-answer-file-with-a-custom-locale)
 - [Archivo de respuesta básico de Linux](#basic-linux-answer-file)
 
 ## <a name="basic-windows-answer-file"></a>Archivo de respuesta básico de Windows
 
-Los siguientes comandos crean un archivo de respuesta de Windows que simplemente establece la contraseña de la cuenta de administrador y el nombre de host.
-Los adaptadores de red de máquina virtual usará DHCP para obtener las direcciones IP y la máquina virtual no se unirá a un dominio de Active Directory.
-Cuando se le pida que escriba una credencial de administrador, especifique el nombre de usuario deseado y la contraseña.
-Si desea configurar la cuenta de administrador integrada, utilice "Administrador" para el nombre de usuario.
+Los siguientes comandos crean un archivo de respuesta de Windows que simplemente establece la contraseña y el nombre de host de la cuenta de administrador.
+Los adaptadores de red de la máquina virtual usarán DHCP para obtener las direcciones IP y la máquina virtual no se unirá a un dominio de Active Directory.
+Cuando se le pida que escriba una credencial de administrador, especifique el nombre de usuario y la contraseña que desee.
+Si desea configurar la cuenta predefinida de administrador, use "administrador" para el nombre de usuario.
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"
@@ -54,17 +54,17 @@ $adminCred = Get-Credential -Message "Local administrator account"
 New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials $adminCred
 ```
 
-## <a name="windows-answer-file-with-domain-join"></a>Archivo con la unión a un dominio de la respuesta de Windows
+## <a name="windows-answer-file-with-domain-join"></a>Archivo de respuesta de Windows con Unión a un dominio
 
 Los siguientes comandos crean un archivo de respuesta de Windows que une la máquina virtual blindada a un dominio de Active Directory.
-Los adaptadores de red de máquina virtual usará DHCP para obtener las direcciones IP.
+Los adaptadores de red de la máquina virtual usarán DHCP para obtener direcciones IP.
 
-La primera solicitud de credencial solicitará la información de cuenta de administrador local.
-Si desea configurar la cuenta de administrador integrada, utilice "Administrador" para el nombre de usuario.
+La primera solicitud de credencial solicitará la información de la cuenta de administrador local.
+Si desea configurar la cuenta predefinida de administrador, use "administrador" para el nombre de usuario.
 
-La segunda petición de credenciales le pedirá las credenciales que tengan el derecho de unir la máquina al dominio de Active Directory.
+La segunda solicitud de credenciales solicitará las credenciales que tengan derecho a unir el equipo al dominio de Active Directory.
 
-No olvide cambiar el valor de la "-DomainName" parámetro para el FQDN del dominio de Active Directory.
+Asegúrese de cambiar el valor del parámetro "-DomainName" por el FQDN de su dominio de Active Directory.
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"
@@ -74,25 +74,25 @@ New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials
 ```
 ## <a name="windows-answer-file-with-static-ipv4-addresses"></a>Archivo de respuesta de Windows con direcciones IPv4 estáticas
 
-Los siguientes comandos crean un archivo de respuesta de Windows que utiliza direcciones IP estáticas proporcionadas por el Administrador de tejido, tales como System Center Virtual Machine Manager en el momento de la implementación.
+Los siguientes comandos crean un archivo de respuesta de Windows que usa las direcciones IP estáticas proporcionadas en el momento de la implementación por el administrador de tejido, como System Center Virtual Machine Manager.
 
-Virtual Machine Manager proporciona tres componentes a la dirección IP estática mediante el uso de un grupo de IP: Dirección IPv4, dirección IPv6, direcciones de puerta de enlace y dirección DNS. Si desea que los campos adicionales se incluirán o requerir una configuración de red personalizada, deberá editar manualmente el archivo de respuesta generado por la secuencia de comandos.
+Virtual Machine Manager proporciona tres componentes a la dirección IP estática mediante el uso de un grupo de direcciones IP: Dirección IPv4, dirección IPv6, dirección de puerta de enlace y dirección DNS. Si desea incluir campos adicionales o requerir una configuración de red personalizada, deberá modificar manualmente el archivo de respuesta generado por el script.
 
-Las capturas de pantalla siguientes se muestran los grupos de IP que se pueden configurar en Virtual Machine Manager. Estos grupos son necesarios si desea usar la dirección IP estática.
+Las capturas de pantallas siguientes muestran los grupos de direcciones IP que se pueden configurar en Virtual Machine Manager. Estos grupos son necesarios si desea utilizar una dirección IP estática.
 
-Actualmente, la función admite sólo un servidor DNS. Aquí es cuál sería el aspecto de la configuración de DNS:
+Actualmente, la función solo admite un servidor DNS. Este es el aspecto de la configuración de DNS:
 
-![Configurar el servidor DNS con el grupo de IP estáticas](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-dns-settings.png)
+![Configuración del servidor DNS con grupo de direcciones IP estáticas](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-dns-settings.png)
 
-Aquí es cuál sería el resumen para crear el grupo de direcciones IP estáticas. En resumen, debe tener una sola red route, una puerta de enlace y servidor DNS, y debe especificar la dirección IP.
+Este es el aspecto que tendría el resumen para crear el grupo de direcciones IP estáticas. En Resumen, solo debe tener una ruta de red, una puerta de enlace y un servidor DNS, y debe especificar la dirección IP.
 
-![Resumen de creación del grupo IP estática](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-summary.png)
+![Resumen de la creación de grupos de direcciones IP estáticas](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-summary.png)
 
-Deberá configurar el adaptador de red para la máquina virtual. Captura de pantalla siguiente muestra dónde establecer que la configuración y cómo cambiar a la dirección IP estática.
+Debe configurar el adaptador de red para la máquina virtual. En la captura de pantalla siguiente se muestra dónde establecer esa configuración y cómo cambiarla a una dirección IP estática.
 
 ![Configurar el hardware para usar la dirección IP estática](../media/Guarded-Fabric-Shielded-VM/guarded-host-unattend-static-ip-address-pool-network-adapter-settings.png)
 
-A continuación, puede usar el `-StaticIPPool` parámetro debe incluir los elementos IP estáticos en el archivo de respuesta. Los parámetros `@IPAddr-1@`, `@NextHop-1-1@`, y `@DNSAddr-1-1@` en la respuesta de archivo, a continuación, se reemplazará con los valores reales que especificó en tiempo de implementación de Virtual Machine Manager.
+Después, puede usar el parámetro `-StaticIPPool` para incluir los elementos IP estáticos en el archivo de respuesta. Los parámetros `@IPAddr-1@`, `@NextHop-1-1@` y `@DNSAddr-1-1@` en el archivo de respuesta se reemplazarán por los valores reales que especificó en Virtual Machine Manager en el momento de la implementación.
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"
@@ -104,8 +104,8 @@ New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials
 
 Los siguientes comandos crean un archivo de respuesta de Windows con una configuración regional personalizada.
 
-Cuando se le pida que escriba una credencial de administrador, especifique el nombre de usuario deseado y la contraseña.
-Si desea configurar la cuenta de administrador integrada, utilice "Administrador" para el nombre de usuario.
+Cuando se le pida que escriba una credencial de administrador, especifique el nombre de usuario y la contraseña que desee.
+Si desea configurar la cuenta predefinida de administrador, use "administrador" para el nombre de usuario.
 
 ```powershell
 $adminCred = Get-Credential -Message "Local administrator account"
@@ -116,10 +116,10 @@ New-ShieldingDataAnswerFile -Path '.\ShieldedVMAnswerFile.xml' -AdminCredentials
 
 ## <a name="basic-linux-answer-file"></a>Archivo de respuesta básico de Linux
 
-A partir de Windows Server versión 1709, puede ejecutar a determinados sistemas operativos invitados de Linux en máquinas virtuales blindadas.
-Si está utilizando al agente de System Center Virtual Machine Manager Linux especializar esas máquinas virtuales, el cmdlet New-ShieldingDataAnswerFile puede crear archivos de respuesta compatible para él.
+A partir de la versión 1709 de Windows Server, puede ejecutar algunos sistemas operativos invitados Linux en máquinas virtuales blindadas.
+Si usa el agente de System Center Virtual Machine Manager Linux para especializar esas máquinas virtuales, el cmdlet New-ShieldingDataAnswerFile puede crear archivos de respuesta compatibles para ella.
 
-En un archivo de respuesta de Linux, normalmente incluirá la contraseña raíz y clave SSH raíz información de grupo IP estática si lo desea.
+En un archivo de respuesta de Linux, normalmente incluirá la contraseña raíz, la clave SSH raíz y, opcionalmente, la información del grupo de direcciones IP estáticas.
 Reemplace la ruta de acceso a la mitad pública de la clave SSH antes de ejecutar el script siguiente.
 
 ```powershell

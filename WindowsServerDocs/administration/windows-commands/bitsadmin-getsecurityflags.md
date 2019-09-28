@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin getsecurityflags
-description: 'Tema de los comandos de Windows para **getsecurityflags bitsadmin** : notifica las marcas de seguridad HTTP para la redirección de URL y comprobaciones realizadas en el certificado de servidor durante la transferencia.'
+title: bitsadmin getsecurityflags
+description: 'Windows Commands topic for **bitsadmin getsecurityflags** : notifica las marcas de seguridad http para la redirección de direcciones URL y las comprobaciones realizadas en el certificado de servidor durante la transferencia.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6e1db167b12d47afccb8842da617f1e9fe72acff
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: fb53664a6366b411ae1eb9b0fe7c93392d60b542
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434963"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71381460"
 ---
-# <a name="bitsadmin-getsecurityflags"></a>Bitsadmin getsecurityflags
+# <a name="bitsadmin-getsecurityflags"></a>bitsadmin getsecurityflags
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Las marcas de seguridad de informes HTTP para la redirección de URL y las comprobaciones realizan en el certificado de servidor durante la transferencia.
+Notifica las marcas de seguridad HTTP para la redirección de direcciones URL y las comprobaciones realizadas en el certificado de servidor durante la transferencia.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,10 +36,10 @@ bitsadmin /GetSecurityFlags <Job>
 
 |Parámetro|Descripción|
 |-------|--------|
-|Trabajo|Nombre para mostrar o el GUID del trabajo|
+|Trabajo|El nombre para mostrar del trabajo o el GUID|
 
-## <a name="BKMK_examples"></a>Ejemplos
-El ejemplo siguiente recupera las marcas de securitly desde un trabajo denominado *myJob*.
+## <a name="BKMK_examples"></a>Example
+En el ejemplo siguiente se recuperan las marcas securitly de un trabajo denominado *myJob*.
 
 ```
 C:\>bitsadmin /GetSecurityFlags myJob 

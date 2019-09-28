@@ -1,8 +1,8 @@
 ---
-title: Conservar
-description: 'Tema de los comandos de Windows para ***- '
+title: Tain
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b437e9f0c8d671e4378311d450aa0ac7639219f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3b076e12c833645833f53a06476e62bbf44f2690
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852176"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384494"
 ---
-# <a name="retain"></a>Conservar
+# <a name="retain"></a>Tain
 
 
 
-Prepara un volumen simple dinámico existente que se usará como un arranque o volumen del sistema.
+Prepara un volumen dinámico simple existente para usarlo como volumen de arranque o del sistema.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,8 +34,8 @@ retain
 
 ## <a name="remarks"></a>Comentarios
 
--   En un disco dinámico de arranque maestro (MBR) del registro, este comando crea una entrada de partición en el registro de arranque maestro.
--   En un disco dinámico de la tabla (GPT) de particiones GUID, este comando crea una entrada de partición en la tabla de particiones GUID.
+-   En un disco dinámico de registro de arranque maestro (MBR), este comando crea una entrada de partición en el registro de arranque maestro.
+-   En un disco dinámico de tabla de particiones GUID (GPT), este comando crea una entrada de partición en la tabla de particiones GUID.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

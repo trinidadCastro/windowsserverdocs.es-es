@@ -1,35 +1,35 @@
 ---
-title: Preparación para migrar un servidor de federación AD FS
-description: Proporciona información sobre cómo prepararse para migrar un servidor de AD FS a Windows Server 2012.
+title: Preparar la migración de un servidor de Federación de AD FS independiente
+description: Proporciona información sobre cómo preparar la migración de un servidor de AD FS independiente a Windows Server 2012.
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 06/28/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 4d2b8a9c35b106a237b47d1bd062026469af59a0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 09b8cbd9097a95cd00b1413ce9e32ff9bf2f44c3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66444481"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71359319"
 ---
 #  <a name="prepare-to-migrate-a-stand-alone-ad-fs-federation-server-or-a-single-node-ad-fs-farm"></a>Preparar la migración de un servidor de federación de AD FS independiente o una granja de servidores de AD FS de un solo nodo  
  
-Para preparar la migración (migración del mismo servidor) un servidor de federación 2.0 de AD FS independiente o una granja de AD FS de nodo único a Windows Server 2012, debe exportar y realizar una copia de seguridad de los datos de configuración de AD FS desde este servidor.  
+Para preparar la migración (migración del mismo servidor) de un servidor de Federación AD FS 2,0 independiente o una granja de AD FS de un solo nodo a Windows Server 2012, debe exportar y realizar una copia de seguridad de los datos de configuración de AD FS desde este servidor.  
   
 Para exportar los datos de configuración de AD FS, realiza estas tareas:  
   
--   [Paso 1:  Exportar la configuración de servicio](#step-1-export-service-settings)  
+-   [Paso 1:  Exportar la configuración del servicio @ no__t-0  
   
--   [Paso 2:  Exportar las relaciones de confianza para proveedor de notificaciones](#step-2-export-claims-provider-trusts)  
+-   [Paso 2:  Exportar confianzas de proveedor de notificaciones @ no__t-0  
   
--   [Paso 3:  Exportar las relaciones de confianza](#step-3-export-relying-party-trusts)  
+-   [Paso 3:  Exportar las relaciones de confianza para usuario autenticado @ no__t-0  
   
--   [Paso 4:  Realizar una copia de seguridad de los almacenes de atributos personalizados](#step-4-back-up-custom-attribute-stores)  
+-   [Paso 4:  Copia de seguridad de almacenes de atributos personalizados @ no__t-0  
   
--   [Paso 5:  Realizar copias de seguridad de personalizaciones de páginas Web](#step-5-back-up-webpage-customizations)  
+-   [Paso 5:  Realizar copias de seguridad de las personalizaciones de páginas web @ no__t-0  
   
 ## <a name="step-1-export-service-settings"></a>Paso 1: Exportar la configuración del servicio  
  Para exportar la configuración del servicio, realiza el siguiente procedimiento:  
@@ -57,7 +57,7 @@ Para exportar las propiedades del Servicio de federación, abra Windows PowerShe
 El archivo de salida incluirá los siguientes valores de configuración importantes:  
   
     
-|**Nombre de propiedad del servicio de federación devuelto por Get-ADFSProperties**|**Nombre de propiedad del servicio de federación en la consola de administración de AD FS**|
+|**Servicio de federación nombre de la propiedad tal y como lo declara Get-ADFSProperties**|**Servicio de federación nombre de propiedad en la consola de administración de AD FS**|
 |------|------|
 |HostName|Nombre del Servicio de federación|  
 |Identificador|Identificador del Servicio de federación|  
@@ -108,8 +108,8 @@ Para ello, abra Windows PowerShell y ejecute el siguiente comando para agregar l
  Para hacer una copia de seguridad de las personalizaciones de páginas web, copie las páginas web de AD FS y el archivo **web.config** del directorio que está asignado a la ruta de acceso virtual **“/adfs/ls”** en IIS. De forma predeterminada, está en el directorio **%systemdrive%\inetpub\adfs\ls**.  
 
 ## <a name="next-steps"></a>Pasos siguientes
- [Preparar la migración del servidor de AD FS 2.0 Federation](prepare-to-migrate-ad-fs-fed-server.md)   
- [Preparar la migración del servidor Proxy de AD FS 2.0 Federation](prepare-to-migrate-ad-fs-fed-proxy.md)   
- [Migrar el servidor de AD FS 2.0 Federation](migrate-the-ad-fs-fed-server.md)   
- [Migrar al servidor Proxy de AD FS 2.0 Federation](migrate-the-ad-fs-2-fed-server-proxy.md)   
+ [Preparar la migración del servidor de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-server.md)   
+ [Preparar la migración del servidor proxy de Federación de AD FS 2,0](prepare-to-migrate-ad-fs-fed-proxy.md)   
+ [Migrar el servidor de federación AD FS 2,0](migrate-the-ad-fs-fed-server.md)   
+ [Migrar el servidor proxy de Federación de AD FS 2,0](migrate-the-ad-fs-2-fed-server-proxy.md)   
  [Migrar los agentes web de AD FS 1.1](migrate-the-ad-fs-web-agent.md)

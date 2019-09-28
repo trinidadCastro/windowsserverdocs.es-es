@@ -1,9 +1,9 @@
 ---
 title: Solucionar problemas relacionados con la adición de puntos de entrada
-description: Este tema forma parte de la Guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
+description: Este tema forma parte de la guía de implementación de varios servidores de acceso remoto en una implementación multisitio en Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: dcc1037f-1a65-4497-99e6-0df9aef748a8
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 51f49364aa4e7a6da6c51b1d8b7da7e37f842190
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 7e93c972dbbe2971796c12cdeea27474723a80ac
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282563"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404465"
 ---
 # <a name="troubleshooting-adding-entry-points"></a>Solucionar problemas relacionados con la adición de puntos de entrada
 
@@ -26,7 +26,7 @@ ms.locfileid: "67282563"
 En este tema encontrará información para solucionar problemas relacionados con el comando `Add-DAEntryPoint`. Para confirmar que el error recibido está relacionado con la adición de un punto de entrada, consulte el identificador de evento 10067 en el Registro de eventos de Windows.  
   
 ## <a name="missing-remoteaccessserver-parameter"></a>Falta el parámetro RemoteAccessServer  
-**Recibidas el error**. Debe proporcionar un valor para el parámetro RemoteAccessServer.  
+**Error recibido**. Debe proporcionar un valor para el parámetro RemoteAccessServer.  
   
 **Causa**  
   
@@ -37,20 +37,20 @@ Al agregar un punto de entrada nuevo a una implementación multisitio, hay que e
 Ejecute el comando y cuide de especificar el parámetro *RemoteAccessServer* con el nombre del servidor que se va a agregar como punto de entrada.  
   
 ## <a name="remote-access-is-not-configured"></a>Acceso remoto no está configurado  
-**Recibidas el error**. Acceso remoto no está configurado en < nombreDeServidor >. Especifique el nombre de un servidor que forme parte de una implementación multisitio.  
+**Error recibido**. El acceso remoto no está configurado en < SERVER_NAME >. Especifique el nombre de un servidor que forme parte de una implementación multisitio.  
   
 **Causa**  
   
 Acceso remoto no está configurado en el equipo especificado en el parámetro *ComputerName* o en el equipo en el que el comando se ha ejecutado.  
   
-Al agregar una nuevo punto de entrada a una implementación multisitio, debe especificar dos parámetros: *ComputerName* y *RemoteAccessServer*. *ComputerName* es el nombre de un servidor que ya forma parte de la implementación multisitio, mientras que *RemoteAccessServer* es el nombre del servidor que se quiere agregar como nuevo punto de entrada. Si realiza este proceso en un equipo que forme parte de una implementación multisitio, el parámetro ComputerName no es necesario.  
+Al agregar un punto de entrada nuevo a una implementación multisitio, debe especificar dos parámetros: *ComputerName* y *RemoteAccessServer*. *ComputerName* es el nombre de un servidor que ya forma parte de la implementación multisitio, mientras que *RemoteAccessServer* es el nombre del servidor que se quiere agregar como nuevo punto de entrada. Si realiza este proceso en un equipo que forme parte de una implementación multisitio, el parámetro ComputerName no es necesario.  
   
 **Solución**  
   
 Ejecute el comando y cuide de especificar el parámetro *ComputerName* con el nombre del servidor que ya está configurado como parte de la implementación multisitio, o bien ejecute el comando desde un equipo que forme parte de la implementación multisitio.  
   
 ## <a name="multisite-not-enabled"></a>La funcionalidad de multisitio no está habilitada  
-**Recibidas el error**. Debe habilitar una implementación multisitio antes de realizar esta operación. Para ello, use el cmdlet `Enable-DAMultiSite`.  
+**Error recibido**. Debe habilitar una implementación multisitio antes de realizar esta operación. Para ello, use el cmdlet `Enable-DAMultiSite`.  
   
 **Causa**  
   
@@ -58,13 +58,13 @@ La funcionalidad de multisitio no está habilitada en el servidor especificado e
   
 **Solución**  
   
-Habilite la funcionalidad de multisitio mediante el cmdlet `Enable-DaMultiSite`. Para obtener más información, consulte [implementar acceso remoto multisitio](https://technet.microsoft.com/library/hh831664.aspx).  
+Habilite la funcionalidad de multisitio mediante el cmdlet `Enable-DaMultiSite`. Para obtener más información, vea [implementar el acceso remoto multisitio](https://technet.microsoft.com/library/hh831664.aspx).  
   
 ## <a name="ipv6-prefix-issues"></a>Problemas de prefijo IPv6  
   
 -   **Problema 1**  
   
-    **Recibidas el error**. IPv6 está implementado en la red interna, pero no ha especificado un prefijo de IPv6 del cliente.  
+    **Error recibido**. IPv6 está implementado en la red interna, pero no se ha especificado un prefijo IPv6 de cliente.  
   
     **Causa**  
   
@@ -76,9 +76,9 @@ Habilite la funcionalidad de multisitio mediante el cmdlet `Enable-DaMultiSite`.
   
     2.  Ejecute el cmdlet `Add-DAEntryPoint` e indique el prefijo IP-HTTPS en el parámetro *ClientIPv6Prefix*.  
   
--   **Issue 2**  
+-   **Problema 2**  
   
-    **Recibidas el error**. El prefijo IPv6 del cliente ya está en uso por otro punto de entrada. Especifique un valor alternativo.  
+    **Error recibido**. El prefijo IPv6 del cliente ya está en uso por otro punto de entrada. Especifique un valor alternativo.  
   
     **Causa**  
   
@@ -91,7 +91,7 @@ Habilite la funcionalidad de multisitio mediante el cmdlet `Enable-DaMultiSite`.
     2.  Ejecute el cmdlet `Add-DAEntryPoint` e indique el prefijo IP-HTTPS en el parámetro *ClientIPv6Prefix*.  
   
 ## <a name="connectto-address"></a>Dirección ConnectTo  
-**Recibidas el error**. La dirección (< dirección_connect_to >) a la que los clientes de DirectAccess conectan en el servidor de acceso remoto es el mismo que la dirección del servidor de ubicación de red. Especifique un valor alternativo.  
+**Error recibido**. La dirección (< connect_to_address >) a la que se conectan los clientes de DirectAccess en el servidor de acceso remoto es la misma que la dirección del servidor de ubicación de red. Especifique un valor alternativo.  
   
 **Causa**  
   
@@ -102,11 +102,11 @@ La dirección ConnectTo y la dirección del servidor de ubicación de red son la
 La dirección ConnectTo se debe poder resolver a través de Internet para que los equipos cliente puedan conectarse mediante IP-HTTPS. Sin embargo, la dirección del servidor de ubicación de red se debe poder resolver a través de la red corporativa, pero no a través de Internet. Asegúrese de que las direcciones ConnectTo y del servidor de ubicación de red son distintas. Seleccione otras direcciones e inténtelo de nuevo.  
   
 ## <a name="directaccess-or-vpn-already-installed"></a>DirectAccess o VPN ya instalados  
-**Recibidas el error**. Se detectó una instalación de VPN en el servidor < nombre_servidor >. Especifique un servidor alternativo que no tenga instalado el acceso remoto o quite la configuración de VPN del servidor.  
+**Error recibido**. Se detectó una instalación de VPN en el servidor < SERVER_NAME >. Especifique un servidor alternativo que no tenga instalado el acceso remoto o quite la configuración de VPN del servidor.  
   
 O bien  
   
-Acceso remoto ya está instalado en el servidor < nombreDeServidor >. Especifique un servidor alternativo que no ejecute DirectAccess o quite la configuración de DirectAccess existente del servidor.  
+Acceso remoto ya está instalado en el servidor < nombre_servidor >. Especifique un servidor alternativo que no ejecute DirectAccess o quite la configuración de DirectAccess existente del servidor.  
   
 **Causa**  
   
@@ -119,7 +119,7 @@ Para agregar un servidor a una implementación multisitio, el rol Acceso remoto 
 Ejecute el comando y asegúrese de que el servidor que indique en el parámetro *RemoteAccessServer* no tiene DirectAccess o VPN configurados.  
   
 ## <a name="ipsec-root-certificate"></a>Certificado raíz IPsec  
-**Recibidas el error**. No se encuentra el certificado raíz IPsec configurado en el servidor < nombreDeServidor >.  
+**Error recibido**. No se encuentra el certificado raíz IPsec configurado en el servidor < nombre_servidor >.  
   
 **Causa**  
   
@@ -139,19 +139,19 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
 -   **Problema 1**  
   
-    **Advertencia**. El servidor de acceso remoto que se va a agregar está configurado con direcciones IPv4 e IPv6. Esta es una implementación solo para IPv4, por lo que Acceso remoto pasará por alto las direcciones IPv6.  
+    **ADVERTENCIA recibida**. El servidor de acceso remoto que se va a agregar se configura con direcciones IPv4 e IPv6. Esta es una implementación solo para IPv4, por lo que Acceso remoto pasará por alto las direcciones IPv6.  
   
     **Causa**  
   
-    Cuando esta implementación se instaló por primera vez, la red interna se detectó como una red solo para IPv4. En una implementación multisitio se da por hecho que los diversos puntos de entrada van a estar en subredes diferentes con características variadas. Por lo tanto, aunque la implementación está configurada como solo para IPv4, puede contener un punto de entrada ubicado en una subred de IPv6+IPv4. Sin embargo, aunque el punto de entrada se agregará a la implementación, DirectAccess omitirá las direcciones IPv6 configuradas en la interfaz interna del punto de entrada nueva.  
+    Cuando esta implementación se instaló por primera vez, la red interna se detectó como una red solo para IPv4. En una implementación multisitio se da por hecho que los diversos puntos de entrada van a estar en subredes diferentes con características variadas. Por lo tanto, aunque la implementación está configurada como solo para IPv4, puede contener un punto de entrada ubicado en una subred de IPv6+IPv4. Sin embargo, aunque el punto de entrada se agregará a la implementación, DirectAccess omitirá las direcciones IPv6 configuradas en la interfaz interna del nuevo punto de entrada.  
   
     **Solución**  
   
-    En caso de que toda la red interna esté configurada con direcciones IPv6 e IPv4, considere la posibilidad de pasar a una implementación de IPv6+IPv4 para disfrutar de las ventajas que reportan las tecnologías de IPv6. Consulte la sección "Transición desde un IPv4 pura a una red corporativa de IPv6 + IPv4" en [paso 3: Planear una implementación multisitio](assetId:///19d49dbf-1786-47bb-ab97-f0458c53d91d).  
+    En caso de que toda la red interna esté configurada con direcciones IPv6 e IPv4, considere la posibilidad de pasar a una implementación de IPv6+IPv4 para disfrutar de las ventajas que reportan las tecnologías de IPv6. Consulte "transición de una IPv4 pura a una red corporativa IPv6 + IPv4" en @no__t 0Step 3: Planee la implementación multisitio @ no__t-0.  
   
--   **Issue 2**  
+-   **Problema 2**  
   
-    **Recibidas el error**. Los adaptadores de red interna de los servidores de acceso remoto en esta implementación multisitio se configuran con direcciones IPv4. El punto de entrada que intenta agregar también debe estar configurado con una dirección IPv4 en el adaptador de red interno.  
+    **Error recibido**. Los adaptadores de red internos de los servidores de acceso remoto en esta implementación multisitio están configurados con direcciones IPv4. El punto de entrada que intenta agregar también debe estar configurado con una dirección IPv4 en el adaptador de red interno.  
   
     **Causa**  
   
@@ -159,11 +159,11 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
     **Solución**  
   
-    En caso de que toda la red ya esté configurada con direcciones IPv6, convendría pasar a una implementación de IPv6+IPv4 o solo para IPv6. Vea "Planear la transición a IPv6 cuando acceso remoto multisitio está implementado".  
+    En caso de que toda la red ya esté configurada con direcciones IPv6, convendría pasar a una implementación de IPv6+IPv4 o solo para IPv6. Vea "planear la transición a IPv6 cuando se implementa el acceso remoto multisitio".  
   
 -   **Problema 3**  
   
-    **Recibidas el error**. Este punto de entrada se encuentra en una red IPv4, pero los puntos de entrada anteriores se encuentran en una red IPv6. Conecte este punto de entrada a la red IPv6 antes de agregarlo a la misma implementación multisitio.  
+    **Error recibido**. Este punto de entrada se encuentra en una red IPv4, pero los puntos de entrada anteriores se encuentran en una red IPv6. Conecte este punto de entrada a la red IPv6 antes de agregarlo a la misma implementación multisitio.  
   
     **Causa**  
   
@@ -175,13 +175,13 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
 -   **Problema 4**  
   
-    **Advertencia**. El adaptador de red interna en el servidor de acceso remoto no está configurado con una dirección IPv4. DNS64 y NAT64 no se configurarán en este servidor y los clientes de DirectAccess solo podrán obtener acceso a servidores internos IPv6.  
+    **ADVERTENCIA recibida**. El adaptador de red interno del servidor de acceso remoto no está configurado con una dirección IPv4. DNS64 y NAT64 no se configurarán en este servidor y los clientes de DirectAccess solo podrán obtener acceso a servidores internos IPv6.  
   
     **Causa**  
   
     Cuando esta implementación se instaló por primera vez, se detectó que la red interna era IPv6+IPv4. En este tipo de implementación, DNS64 y NAT64 están habilitados para que los equipos cliente puedan acceder a los equipos de la red interna que están configurados únicamente con direcciones IPv4.  
   
-    Al agregar el nuevo punto de entrada, Acceso remoto detectó que la interfaz interna en el nuevo equipo solo tiene direcciones IPv6. Para configurar DNS64 y NAT64 se necesita una dirección IPv4, ya que así los paquetes se pueden enrutar desde el servidor de acceso remoto al equipo solo para IPv4. Dado que dicha IP no existe en el nuevo equipo, NAT64 y DNS64 no se configurarán en el servidor de acceso remoto. En consecuencia, los equipos cliente que accedan a la red corporativa mediante DirectAccess a través de este punto de entrada no tendrán acceso a los servidores solo para IPv4 de la red interna. Para obtener información sobre cómo realizar una transición a una red de IPv6 + IPv4 o a una red de sólo IPv6, vea "Planear la transición a IPv6 cuando acceso remoto multisitio está implementado".  
+    Al agregar el nuevo punto de entrada, Acceso remoto detectó que la interfaz interna en el nuevo equipo solo tiene direcciones IPv6. Para configurar DNS64 y NAT64 se necesita una dirección IPv4, ya que así los paquetes se pueden enrutar desde el servidor de acceso remoto al equipo solo para IPv4. Dado que dicha IP no existe en el nuevo equipo, NAT64 y DNS64 no se configurarán en el servidor de acceso remoto. En consecuencia, los equipos cliente que accedan a la red corporativa mediante DirectAccess a través de este punto de entrada no tendrán acceso a los servidores solo para IPv4 de la red interna. Para obtener información sobre cómo realizar la transición a una red IPv6 + IPv4 o a una red solo IPv6, vea "planear la transición a IPv6 cuando se implementa el acceso remoto multisitio".  
   
     **Solución**  
   
@@ -191,7 +191,7 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
 -   **Problema 1**  
   
-    **Recibidas el error**. El dominio especificado en el parámetro ServerGpoName < gpo_servidor > no existe. Especifique el dominio < nombreDeDominio > en su lugar.  
+    **Error recibido**. El dominio especificado en el parámetro ServerGpoName < server_GPO > no existe. En su lugar, especifique el dominio < nombre_dominio >.  
   
     **Causa**  
   
@@ -201,9 +201,9 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
   
     Confirme que ha escrito bien el nombre de dominio. Si está bien escrito, inténtelo de nuevo usando el nombre de dominio completo (FQDN).  
   
--   **Issue 2**  
+-   **Problema 2**  
   
-    **Recibidas el error**. El GPO de servidor debe encontrarse en el dominio del servidor de acceso remoto. Especifique el dominio < nombreDeDominio > en el parámetro ServerGpoName.  
+    **Error recibido**. El GPO de servidor debe estar ubicado en el dominio del servidor de acceso remoto. Especifique el dominio < nombre_dominio > en el parámetro ServerGpoName.  
   
     **Causa**  
   
@@ -214,7 +214,7 @@ Cuando DirectAccess se instala por primera vez, se inspecciona el adaptador de r
     El GPO de servidor debe estar en el mismo dominio que el servidor de acceso remoto. Use el nombre de dominio del servidor correspondiente al GPO de servidor e inténtelo de nuevo.  
   
 ## <a name="split-brain-dns"></a>DNS de cerebro dividido  
-**Advertencia**. La entrada NRPT para el sufijo DNS < sufijoDNS > contiene el nombre público usado por los equipos cliente para conectarse al servidor de acceso remoto. Agregue el nombre < dirección_connect_to > como exención en NRPT.  
+**ADVERTENCIA recibida**. La entrada de NRPT para el sufijo DNS < DNS_suffix > contiene el nombre público usado por los equipos cliente para conectarse al servidor de acceso remoto. Agregue el nombre < connect_to_address > como una exención en NRPT.  
   
 **Causa**  
   
@@ -235,12 +235,12 @@ Para eximir una dirección en las reglas NRPT:
 Cuando se agrega un sufijo de nombre sin indicar una dirección de servidor, dicho sufijo se considera una exención de NRPT.  
   
 ## <a name="saving-server-gpo-settings"></a>Guardar la configuración del GPO de servidor  
-**Recibidas el error**. Se produjo un error al guardar la configuración de acceso remoto en el GPO < nombre_gpo >.  
+**Error recibido**. Se produjo un error al guardar la configuración de acceso remoto en el GPO < GPO_name >.  
   
-Para solucionar este error, consulte guardar la configuración de GPO de servidor en [solución de problemas de habilitar la funcionalidad de multisitio](https://technet.microsoft.com/library/jj591658.aspx).  
+Para solucionar este error, consulte el tema sobre cómo guardar la configuración de GPO de servidor en [solución de problemas al habilitar multisitio](https://technet.microsoft.com/library/jj591658.aspx).  
   
 ## <a name="gpo-updates-cannot-be-applied"></a>No se pueden aplicar actualizaciones de GPO  
-**Advertencia**. No se puede aplicar actualizaciones de GPO en < nombreDeServidor >. Los cambios no surtirán efecto hasta la siguiente actualización de directiva.  
+**ADVERTENCIA recibida**. No se pueden aplicar actualizaciones de GPO en < SERVER_NAME >. Los cambios no surtirán efecto hasta la siguiente actualización de directiva.  
   
 **Causa**  
   

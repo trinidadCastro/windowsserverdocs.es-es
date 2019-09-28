@@ -1,20 +1,20 @@
 ---
 ms.assetid: 7be1f2cb-02d5-4209-ba79-edf496a88f47
-title: Auditoría de acceso de archivos de escenario
+title: Auditoría de acceso a archivos de escenario
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 93d78bbefce38173198f991543fb3a06d145b373
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 37a3b17360112d958b59a7e9c3f64aed5e6f6a5b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867686"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406998"
 ---
 # <a name="scenario-file-access-auditing"></a>Escenario: auditoría de acceso a archivos
 
@@ -36,7 +36,7 @@ Además, quizás el departamento de cumplimiento desee supervisar todos los camb
   
 Una de las principales consideraciones de las auditorías de seguridad es el costo de recopilar, almacenar y analizar los eventos de auditoría. Si las directivas de auditoría son demasiado amplias, aumenta el volumen de los eventos de auditoría recopilados y esto aumenta los costos. Si las directivas de auditoría son demasiado minuciosas, se corre el riesgo de pasar por alto eventos importantes.  
   
-Con Windows Server 2012, puede crear directivas de auditoría utilizando notificaciones y propiedades de recursos. Esto genera directivas de auditoría más avanzadas, más concretas y más fáciles de administrar. Habilita escenarios que, hasta el momento, eran imposibles o demasiado difíciles de llevar a cabo. A continuación se muestran ejemplos de directivas de auditoría que los administradores pueden crear:  
+Con Windows Server 2012, puede crear directivas de auditoría mediante el uso de notificaciones y propiedades de recursos. Esto genera directivas de auditoría más avanzadas, más concretas y más fáciles de administrar. Habilita escenarios que, hasta el momento, eran imposibles o demasiado difíciles de llevar a cabo. A continuación se muestran ejemplos de directivas de auditoría que los administradores pueden crear:  
   
 -   Auditar a todos los que no tienen permiso de alta seguridad e intentan obtener acceso a un documento HBI. Por ejemplo, Audit | Everyone | All-Access | Resource.BusinessImpact=HBI AND User.SecurityClearance!=High.  
   
@@ -44,9 +44,9 @@ Con Windows Server 2012, puede crear directivas de auditoría utilizando notific
   
 Estas directivas ayudan a regular el volumen de los eventos de auditoría y los limitan a la mayoría de los datos o usuarios relevantes.  
   
-Una vez que los administradores crearon y aplicaron las directivas de auditoría, deben tener en cuenta la recolección de información importante de los eventos de auditoría que recopilan. Las eventos de auditoría basados en expresiones pueden ayudar a reducir el volumen de auditorías. Sin embargo, los usuarios necesitan una manera de consultar esos eventos para obtener información importante y hacer preguntas como, "¿quién tiene acceso a Mis datos HBI?" o "¿Hubo un intento no autorizado para tener acceso a datos confidenciales?"  
+Una vez que los administradores crearon y aplicaron las directivas de auditoría, deben tener en cuenta la recolección de información importante de los eventos de auditoría que recopilan. Las eventos de auditoría basados en expresiones pueden ayudar a reducir el volumen de auditorías. Sin embargo, los usuarios necesitan una forma de consultar estos eventos para obtener información significativa y formular preguntas como "¿quién tiene acceso a mis datos de HBI?". o "¿hubo algún intento no autorizado de acceder a datos confidenciales?"  
   
- Windows Server 2012 mejora los eventos de acceso de datos existentes con notificaciones de usuario, equipo y recursos. Estos eventos se generan por servidor. Para proporcionar una vista completa de los eventos de la organización, Microsoft está trabajando con asociados que proporcionan herramientas de recopilación y análisis de eventos, como los Servicios de recopilación de auditorías de System Center Operations Manager.  
+ Windows Server 2012 mejora los eventos de acceso a datos existentes con notificaciones de usuario, equipo y recurso. Estos eventos se generan por servidor. Para proporcionar una vista completa de los eventos de la organización, Microsoft está trabajando con asociados que proporcionan herramientas de recopilación y análisis de eventos, como los Servicios de recopilación de auditorías de System Center Operations Manager.  
   
 La figura 4 muestra información general de una directiva de auditoría central.  
   
@@ -67,17 +67,17 @@ Configurar y utilizar auditorías de seguridad suele implicar los siguientes pas
 ## <a name="in-this-scenario"></a>En este escenario  
 Los siguientes temas proporcionan más información para este escenario:  
   
--   [Plan para el archivo de auditoría de acceso](Plan-for-File-Access-Auditing.md)  
+-   [Planear la auditoría de acceso a archivos](Plan-for-File-Access-Auditing.md)  
   
--   [Implementar la auditoría de seguridad con directivas de auditoría Central &#40;pasos de demostración&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
+-   [Pasos de la demostración de implementación de auditoría &#40;de seguridad con directivas de auditoría central&#41;](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md)  
   
-## <a name="BKMK_NEW"></a>Roles y características que se incluyen en este escenario  
+## <a name="BKMK_NEW"></a>Roles y características incluidos en este escenario  
 En la tabla siguiente, se enumeran los roles y las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
 |Rol/característica|Compatibilidad con este escenario|  
 |-----------------|---------------------------------|  
-|Rol de Servicios de dominio de Active Directory|AD DS en Windows Server 2012 presenta una plataforma de autorización basada en notificaciones que permite crear notificaciones de usuario y notificaciones de dispositivo, identidad compuesta, (usuario + notificaciones de dispositivo), nuevo modelo de acceso central (CAP) de las directivas y el uso de clasificación de archivos información de las decisiones de autorización.|  
-|Rol de servicios de archivos y almacenamiento|Servidores de archivos en Windows Server 2012 proporcionan una interfaz de usuario donde los administradores pueden ver los permisos vigentes para los usuarios de un archivo o carpeta y solucionar problemas de acceso y conceder acceso según sea necesario.|  
+|Rol de Servicios de dominio de Active Directory|AD DS en Windows Server 2012 presenta una plataforma de autorización basada en notificaciones que permite crear notificaciones de usuario y notificaciones de dispositivo, identidad compuesta (notificaciones de usuario más dispositivo), el nuevo modelo de directivas de acceso central (CAP) y el uso de la clasificación de archivos información en decisiones de autorización.|  
+|Rol de servicios de archivos y almacenamiento|Los servidores de archivos de Windows Server 2012 proporcionan una interfaz de usuario donde los administradores pueden ver los permisos vigentes para los usuarios de un archivo o carpeta, solucionar problemas de acceso y conceder acceso según sea necesario.|  
   
 
 

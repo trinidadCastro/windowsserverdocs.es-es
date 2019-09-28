@@ -1,24 +1,24 @@
 ---
-title: Caso práctico de Windows Admin Center SDK - BiitOps
-description: Caso práctico de Windows Admin Center SDK - BiitOps
+title: 'Caso práctico del SDK del centro de administración de Windows: BiitOps'
+description: 'Caso práctico del SDK del centro de administración de Windows: BiitOps'
 ms.technology: extend
 ms.topic: article
 author: daniellee-msft
 ms.author: jol
 ms.date: 06/2/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 5059bbc24894b897ea5cdf6b813fceb51762f4cc
-ms.sourcegitcommit: 3be280c8638214857dc355b201eb56a04499a5e5
+ms.prod: windows-server
+ms.openlocfilehash: 5a4ddc520581d7308366ea52838de32d87b1d21f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67396755"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357171"
 ---
-# <a name="biitops-changes-extension"></a>Extensión de los cambios de BiitOps
+# <a name="biitops-changes-extension"></a>Extensión de cambios de BiitOps
 
-BiitOps cambios para Windows Admin Center proporciona una visión de los cambios a la configuración de hardware, software y configuración en las máquinas físicas y virtuales de Windows Server. La extensión BiitOps cambios le permite de forma rápida y rentable, determinar los cambios que ocasionar problemas relacionados con la compatibilidad, confiabilidad o seguridad. Se mostrará con precisión cuáles son las novedades, lo que ha cambiado y qué se ha eliminado en un panel único de cristal. Funciona en servidores y servicios seleccionados en Microsoft Windows Server.
+BiitOps changes for Windows admin Center ofrece información sobre los cambios en el hardware, el software y la configuración de las máquinas físicas o virtuales de Windows Server. La extensión BiitOps Changes permite determinar de manera rápida y rentable los cambios que causan problemas relacionados con el cumplimiento, la confiabilidad o la seguridad. Mostrará exactamente las novedades, lo que ha cambiado y lo que se ha eliminado en una sola sección de cristal. Funciona tanto en servidores como en servicios seleccionados en Microsoft Windows Server.
 
-Más información, visite la [sitio del producto BiitOps](http://www.biitops.com/solutions/changes-for-wac/) o suscribirse para una [gratuita](http://www.biitops.com/solutions/register-changes-for-wac/).
+Para obtener más información, visite el [sitio del producto BiitOps](http://www.biitops.com/solutions/changes-for-wac/) o suscríbase a una [evaluación gratuita](http://www.biitops.com/solutions/register-changes-for-wac/).
 
 ![Extensión BiitOps](../../media/extend-case-study-biitops/biitops-1.png)

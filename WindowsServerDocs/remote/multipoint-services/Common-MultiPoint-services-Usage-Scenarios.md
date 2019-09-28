@@ -2,7 +2,7 @@
 title: Escenarios comunes de uso de Multipoint Services
 description: Más información sobre los usos comunes de Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 3b0f8ea649382675a162572fcdafcfacc480a5f6
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b6e1ce47be76d8df1d8c9079204106f51c9067b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871763"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395579"
 ---
 # <a name="common-usage-scenarios"></a>Escenarios de uso comunes
 Multipoint Services ofrece escritorios de usuario individuales con los elementos más importantes de la experiencia de escritorio de Windows 10. También ofrece una sencilla herramienta de administración, Multipoint Manager, que los administradores del sistema pueden usar para la detección y el control de varios servidores multipoint y clientes. Además, Multipoint Services incluye el panel de Multipoint para la visibilidad en tiempo real. Entre los ejemplos de lo que puede hacer con Multipoint Services se incluyen los siguientes:  

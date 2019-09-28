@@ -1,8 +1,8 @@
 ---
 title: Permitir que una cuenta tenga varias sesiones
-description: Permitir que los usuarios tener acceso a varios sistemas al mismo tiempo.
+description: Permita que un usuario tenga acceso a varios sistemas al mismo tiempo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,21 +13,21 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 69a8bc9080e13c3062bc287300620e24457265ad
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: dbc3f3b5a01f86cd1376cd4ecca59fd2951559e4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395607"
 ---
 # <a name="allow-one-account-to-have-multiple-sessions"></a>Permitir que una cuenta tenga varias sesiones
-Para habilitar un grupo de usuarios utilice una cuenta compartida en varias estaciones al mismo tiempo, configure el servidor para permitir que una cuenta iniciar sesión simultáneamente en varias estaciones MultiPoint. De forma predeterminada, si un usuario inicia sesión en una segunda estación con una cuenta de usuario compartida, la cuenta de usuario se desconecte la primera estación.  
+Para permitir que un grupo de usuarios use una cuenta compartida en varias estaciones al mismo tiempo, configure el servidor Multipoint para permitir que una cuenta inicie sesión en varias estaciones simultáneamente. De forma predeterminada, si un usuario inicia sesión en una segunda estación con una cuenta de usuario compartida, la cuenta de usuario se cierra en la primera estación.  
   
-1.  Desde el **iniciar** pantalla, abra **MultiPoint Manager**.  
+1.  En la pantalla **Inicio** , Abra **Multipoint Manager**.  
   
-2.  Haga clic en el **inicio** ficha.  
+2.  Haga clic en la pestaña **Inicio** .  
   
-3.  En el **equipo** columna, haga clic en el nombre del equipo servidor MultiPoint y, a continuación, en el panel derecho, haga clic en **editar la configuración de servidor**.  
+3.  En la columna **equipo** , haga clic en el nombre del equipo de MultiPoint Server y, a continuación, en el panel derecho, haga clic en **Editar configuración del servidor**.  
   
-4.  Seleccione el **permiten que una cuenta de tener varias sesiones** casilla de verificación y, a continuación, haga clic en **Aceptar**.  
+4.  Active la casilla **permitir que una cuenta tenga varias sesiones** y, a continuación, haga clic en **Aceptar**.  
   

@@ -1,8 +1,8 @@
 ---
-title: Eliminar partición
-description: 'Tema de los comandos de Windows para ***- '
+title: eliminar partición
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3b47338b74cf71a4754b7320d6b3842f342d324d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 46a214f26e7c21f6ae08eb16d95fd898bd949b0f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436144"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378656"
 ---
-# <a name="delete-partition"></a>Eliminar partición
+# <a name="delete-partition"></a>eliminar partición
 
 
 
-Elimina la partición tiene el foco.
+Elimina la partición que tiene el foco.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,19 +36,19 @@ delete partition [noerr] [override]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|invalidar|Permite que DiskPart elimine una partición, independientemente del tipo. Normalmente, DiskPart sólo permite eliminar particiones de datos conocidas.|
-|noerr|sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.|
+|estima|Permite que DiskPart elimine cualquier partición independientemente del tipo. Normalmente, DiskPart solo permite eliminar particiones de datos conocidas.|
+|Noerr|Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.|
 
 ## <a name="remarks"></a>Comentarios
 
 > [!CAUTION]
-> Al eliminar una partición en un disco dinámico, pueden eliminar todos los volúmenes dinámicos del disco, por lo tanto, se destruirán los datos y dejar el disco en un estado dañado. Para eliminar un volumen dinámico, utilice siempre el **Eliminar volumen** comando en su lugar. Se pueden eliminar las particiones de los discos dinámicos, pero no se debe crear. Por ejemplo, es posible eliminar una partición de tabla de particiones GUID (GPT) no reconocida en un disco GPT dinámico. Eliminar dicha partición no hace que el espacio libre resultante esté disponible. Este comando está diseñado para permitirle que espacio reclame en un disco dinámico sin conexión dañado en una situación de emergencia donde el **limpia** no se puede usar comandos de DiskPart.
-> -   No se puede eliminar la partición del sistema, partición de arranque o cualquier partición que contenga la active bloqueo o archivo de volcado de memoria información de paginación.
-> -   Debe seleccionarse una partición para que esta operación se realice correctamente. Use la **seleccione partición** comando para seleccionar una partición y desplace el foco a ella.
+> La eliminación de una partición en un disco dinámico puede eliminar todos los volúmenes dinámicos del disco, con lo que se destruirán los datos y el disco quedará en un estado dañado. Para eliminar un volumen dinámico, use siempre el comando **Eliminar volumen** en su lugar. Las particiones se pueden eliminar de los discos dinámicos, pero no se deben crear. Por ejemplo, es posible eliminar una partición de tabla de particiones GUID (GPT) no reconocida en un disco GPT dinámico. La eliminación de este tipo de partición no hace que el espacio libre resultante esté disponible. Este comando está pensado para que se reclame espacio en un disco dinámico sin conexión dañado en una situación de emergencia en la que no se puede usar el comando **Clean** en Diskpart.
+> -   No se puede eliminar la partición del sistema, la partición de arranque o cualquier partición que contenga el archivo de paginación activo o la información de volcado de memoria.
+> -   Se debe seleccionar una partición para que esta operación se realice correctamente. Use el comando **seleccionar partición** para seleccionar una partición y desplazar el foco a ella.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para eliminar la partición tiene el foco, escriba:
+Para eliminar la partición que tiene el foco, escriba:
 ```
 delete partition
 ```

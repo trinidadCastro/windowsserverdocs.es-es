@@ -1,9 +1,9 @@
 ---
-title: Paso 2 configurar el servidor VPN de DirectAccess
-description: Este tema forma parte de la Guía de agregar DirectAccess a una implementación de acceso remoto existente (VPN) para Windows Server 2016
+title: 'Paso 2: configurar el servidor VPN de DirectAccess'
+description: Este tema forma parte de la guía agregar DirectAccess a una implementación de acceso remoto (VPN) existente para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,20 +12,20 @@ ms.topic: article
 ms.assetid: fe221fc9-c7d9-4508-b8a1-000d2515283c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 83dfd5663a07bf10f7c27acb25d2dec9af3e7c7b
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 7ee691a02df385e29bdac9656d50bc2c6d3af087
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281837"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388738"
 ---
-#  <a name="step-2-configure-the-directaccess-vpn-server"></a>Paso 2 configurar el servidor VPN de DirectAccess
+#  <a name="step-2-configure-the-directaccess-vpn-server"></a>Paso 2: configurar el servidor VPN de DirectAccess
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
 En este tema se describe cómo configurar los ajustes de servidor y cliente necesarios para una implementación de acceso remoto básica mediante el asistente para habilitar DirectAccess.
 
-En la tabla siguiente proporciona información general de los pasos que puede completar mediante el uso de este tema.
+En la tabla siguiente se proporciona información general sobre los pasos que puede completar con este tema.
 
 |Tarea       |Descripción|
 |-----------|-----------|
@@ -36,9 +36,9 @@ En la tabla siguiente proporciona información general de los pasos que puede co
 
 ## <a name="to-start-the-enable-directacces-wizard"></a>Cómo iniciar el asistente para habilitar DirectAcces
 
-1. En el administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **acceso remoto**. El Asistente para habilitar DirectAccess se inicia automáticamente a menos que hayas seleccionado **no volver a mostrar esta pantalla**. 
+1. En Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **acceso remoto**. El Asistente para habilitar DirectAccess se inicia automáticamente a menos que haya seleccionado no **volver a mostrar esta pantalla**. 
 
-2. Si el asistente no se inicia automáticamente, haga clic en el nodo del servidor en el árbol de enrutamiento y acceso remoto y, a continuación, haga clic en **habilitar DirectAccess**.
+2. Si el asistente no se inicia automáticamente, haga clic con el botón secundario en el nodo del servidor en el árbol enrutamiento y acceso remoto y, a continuación, haga clic en **Habilitar DirectAccess**.
 
 3. Haz clic en **Siguiente**.
 
@@ -64,21 +64,21 @@ Para implementar el acceso remoto, debes configurar el servidor de acceso remoto
 
 ## <a name="configure-the-dns-suffix-search-list"></a>Configurar la lista de búsqueda de sufijos DNS
 
-En el caso de los clientes DNS, puedes configurar una lista de búsqueda de sufijos de dominio DNS que amplíe o revise sus capacidades de búsqueda DNS. Al añadir sufijos a la lista, puedes buscar nombres de equipos cortos e incompletos en más de un dominio DNS especificado. A continuación, si se produce un error en una consulta DNS, el servicio cliente DNS puede usar esta lista para agregar otras finalizaciones de sufijo de nombre a su nombre original y repetir las consultas DNS al servidor DNS para estos FQDN alternativos.
+En el caso de los clientes DNS, puedes configurar una lista de búsqueda de sufijos de dominio DNS que amplíe o revise sus capacidades de búsqueda DNS. Al añadir sufijos a la lista, puedes buscar nombres de equipos cortos e incompletos en más de un dominio DNS especificado. A continuación, si se produce un error en una consulta DNS, el servicio cliente DNS puede usar esta lista para anexar otros finales de sufijo de nombre al nombre original y repetir las consultas DNS en el servidor DNS para estos FQDN alternativos.
 
 1. Selecciona **Configurar clientes de DirectAccess con la lista de búsqueda de sufijos de cliente DNS** para especificar otros sufijos para las búsquedas de nombres de clientes.
 
-2. Escriba un nombre de sufijo nuevo en **nuevo sufijo** y, a continuación, haga clic en **agregar**. Además, puede cambiar el orden de búsqueda y eliminar sufijos desde **sufijos de dominio para usar**.
+2. Escriba un nuevo nombre de sufijo en **nuevo sufijo** y, a continuación, haga clic en **Agregar**. Además, puede cambiar el orden de búsqueda y quitar los sufijos de los **sufijos de dominio que se usarán**.
 
->[NOTA] En un escenario de espacio de nombres no contiguo \(donde uno o más equipos de dominio tiene un sufijo DNS que no coincide con el dominio de Active Directory al que pertenecen los equipos\), debe asegurarse de que la lista de búsqueda se personalice para incluir todos los sufijos necesarios. El asistente de acceso remoto configurará de manera predeterminada el nombre DNS de Active Directory como sufijo DNS principal en el cliente. El administrador debe asegurarse de que agrega el sufijo DNS que utilizan los clientes para la resolución de nombres.
+>Tenga en cuenta En un escenario de espacio de nombres no contiguo \(where uno o varios equipos del dominio tienen un sufijo DNS que no coincide con el Active Directory dominio al que pertenecen los equipos @ no__t-1, debe asegurarse de que la lista de búsqueda se personalice para incluir todos los requisitos sufijos. El asistente de acceso remoto configurará de manera predeterminada el nombre DNS de Active Directory como sufijo DNS principal en el cliente. El administrador debe asegurarse de que agrega el sufijo DNS que utilizan los clientes para la resolución de nombres.
 
-Para los equipos y servidores, el siguiente comportamiento de búsqueda DNS de forma predeterminada es predeterminado y usa para completar y resolver nombres cortos y no completos. Cuando la lista de búsqueda de sufijos está vacía o no especificado, el sufijo DNS principal del equipo está anexado a short nombres no completos y se usa una consulta DNS para resolver el FQDN resultante. 
+En el caso de los equipos y servidores, el siguiente comportamiento predeterminado de la búsqueda de DNS está predeterminado y se usa al completar y resolver nombres cortos y no completos. Cuando la lista de búsqueda de sufijos está vacía o no se especifica, el sufijo DNS principal del equipo se anexa a nombres cortos no completos y se usa una consulta DNS para resolver el FQDN resultante. 
 
-Si se produce un error en esta consulta, el equipo puede intentar consultas adicionales de FQDN alternativos mediante la anexión de cualquier sufijo DNS específico de la conexión configurada para las conexiones de red. Si hay configurado ningún sufijo específico de la conexión o las consultas de estos FQDN específicos de la conexión resultantes no pueden, a continuación, el cliente puede volver a intentar las consultas basadas en la reducción sistemática del sufijo primario (también denominado devolución).
+Si se produce un error en esta consulta, el equipo puede probar consultas adicionales para FQDN alternativos anexando cualquier sufijo DNS específico de la conexión configurado para las conexiones de red. Si no se configura ningún sufijo específico de la conexión o se produce un error en las consultas de los FQDN específicos de la conexión resultante, entonces el cliente puede comenzar a reintentar consultas en función de una reducción sistemática del sufijo principal (también conocido como devolución).
 
-Por ejemplo, si el sufijo primario es "ejemplo.Microsoft.com", el proceso de devolución puede volver a intentar las consultas del nombre corto, búsquelo en los dominios "microsoft.com" y "com".
+Por ejemplo, si el sufijo principal es "example.microsoft.com", el proceso de devolución puede reintentar las consultas para el nombre corto buscándolo en los dominios "microsoft.com" y "com".
 
-Cuando el sufijo de búsqueda lista no está vacía y tiene al menos un sufijo DNS especificado, los intentos de certificar y resolver nombres DNS cortos se limitan a la búsqueda únicamente aquellos FQDN que se realiza gracias a la lista de sufijos especificados. 
+Cuando la lista de búsqueda de sufijos no está vacía y tiene al menos un sufijo DNS especificado, los intentos de calificar y resolver nombres DNS cortos se limitan a buscar solo los FQDN que se permiten en la lista de sufijos especificada. 
 
 Si las consultas de todos los FQDN formados como resultado de anexar e intentar cada sufijo de la lista no se resuelven, el proceso de consulta produce un error y genera el resultado "nombre no encontrado". 
 
@@ -89,16 +89,16 @@ Si las consultas de todos los FQDN formados como resultado de anexar e intentar 
 
 ## <a name="gpo-configuration"></a>Configuración del GPO
 
-Al configurar el acceso remoto, la configuración de DirectAccess se recopila en los objetos de directiva de grupo (GPO). 
+Cuando se configura el acceso remoto, la configuración de DirectAccess se recopila en objetos de directiva de grupo (GPO). 
 
-En **configuración del GPO**, muestra el nombre de GPO de servidor de DirectAccess y el nombre de GPO de cliente. Además, permite modificar los ajustes de selección del GPO.
+En **configuración de GPO**, se muestran el nombre del GPO del servidor de DirectAccess y el nombre del GPO del cliente. Además, permite modificar los ajustes de selección del GPO.
 
-Dos GPO se rellenan automáticamente con la configuración de DirectAccess y distribuidos de esta manera:
+Dos GPO se rellenan automáticamente con la configuración de DirectAccess y se distribuyen de esta manera:
 
 1. **GPO de cliente de DirectAccess**. Este GPO contiene las opciones de configuración de clientes, incluida la configuración de las tecnologías de transición IPv6, las entradas de la tabla NRPT y las reglas de seguridad de Firewall de Windows con seguridad avanzada. El GPO se aplica a los grupos de seguridad especificados para los equipos cliente.
 
-2. **GPO de servidor de DirectAccess**. Este GPO contiene las opciones de configuración de DirectAccess que se aplican a cualquier servidor configurado como servidor de acceso remoto en la implementación. Asimismo, contiene las reglas de seguridad de conexión del Firewall de Windows con seguridad avanzada.
+2. **GPO de servidor de DirectAccess**. Este GPO contiene las opciones de configuración de DirectAccess que se aplican a cualquier servidor configurado como un servidor de acceso remoto en la implementación. Asimismo, contiene las reglas de seguridad de conexión del Firewall de Windows con seguridad avanzada.
 
 ## <a name="summary"></a>Resumen
 
-Una vez completada la configuración de acceso remoto el **resumen** se muestra. Puede cambiar la configuración o haga clic en **finalizar** para aplicar la configuración.
+Una vez completada la configuración de acceso remoto, se muestra el **Resumen** . Puede cambiar la configuración establecida o hacer clic en **Finalizar** para aplicar la configuración.

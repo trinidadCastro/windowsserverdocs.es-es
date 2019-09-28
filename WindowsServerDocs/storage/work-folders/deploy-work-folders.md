@@ -1,7 +1,7 @@
 ---
 ms.assetid: d2429185-9720-4a04-ad94-e89a9350cdba
 title: Implementar Carpetas de trabajo
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-work-folders
 ms.topic: article
 author: JasonGerend
@@ -9,12 +9,12 @@ manager: dongill
 ms.author: jgerend
 ms.date: 6/24/2017
 description: Cómo implementar Carpetas de trabajo, incluyendo la instalación del rol de servidor, la creación de recursos compartidos de sincronización y la creación de registros DNS.
-ms.openlocfilehash: 45b25befcde328e38f694b64fa7536a2b5c7f232
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7fe39ded6d262d9310bce30239345a9f42e43c04
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867026"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365861"
 ---
 # <a name="deploying-work-folders"></a>Implementar Carpetas de trabajo
 

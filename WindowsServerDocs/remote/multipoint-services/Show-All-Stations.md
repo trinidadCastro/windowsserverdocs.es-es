@@ -1,9 +1,9 @@
 ---
 title: Mostrar todas las estaciones
-description: Obtenga información sobre cómo ver todas las estaciones en MultiPoint Services
+description: Obtenga información sobre cómo ver todas las estaciones en Multipoint Services
 ms.custom: na
 ms.date: 07/07/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,15 +13,15 @@ ms.assetid: 4fcb5354-b7cd-4015-b9e7-42aef98b55f7
 author: lizap
 manager: dongill
 ms.author: elizapo
-ms.openlocfilehash: dcf74b1024f3c1344548a8b819c2a40725d1e71d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fc048746b21911e110227fd310990ba2101a9b25
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389308"
 ---
 # <a name="show-all-stations"></a>Mostrar todas las estaciones
-Como administrador en el sistema MultiPoint Services, es posible que desea ver todas las estaciones que están conectadas a su sistema, incluidos no\-activo o conectado desactivado las estaciones. Por ejemplo, según su contrato de licencia, es posible que deba Compruebe el número de las estaciones que están conectados el sistema MultiPoint Services. Puede ver esta información mediante MultiPoint Manager.  
+Como administrador en el sistema Multipoint Services, puede que desee ver todas las estaciones que están conectadas al sistema, incluidas las estaciones que no son @ no__t-0active o que han cerrado la sesión. Por ejemplo, según el contrato de licencia, puede que tenga que comprobar el número de estaciones que están conectadas al sistema Multipoint Services. Puede ver esta información mediante Multipoint Manager.  
   
 1.  En modo normal, haga clic en la pestaña **Escritorios**.  
   

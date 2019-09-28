@@ -7,45 +7,45 @@ author: MicrosoftGuyJFlo
 manager: mtillman
 ms.date: 08/07/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: bf8d9d164bf07151572785cda906be911f97b53e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41caeca82819eaea3d86d5f1eb4883ab8bbf53cc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835336"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408798"
 ---
 # <a name="identifying-forest-design-requirements"></a>Identificar los requisitos de diseño de bosque
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Para crear un diseño de bosque para su organización, debe identificar los requisitos empresariales que se debe dar cabida a la estructura de directorios. Esto implica determinar cuánta autonomía de los grupos de necesidades de su organización para administrar sus recursos de red y si no necesita aislar sus recursos de la red de otros grupos de cada grupo.  
+Para crear un diseño de bosque para su organización, debe identificar los requisitos empresariales que la estructura de directorios necesita acomodar. Esto implica determinar cuánta autonomía necesitan los grupos de su organización para administrar sus recursos de red y si cada grupo necesita aislar los recursos de la red de otros grupos.  
   
-Los servicios de dominio de Active Directory (AD DS) le permite diseñar una infraestructura de directorio que dé cabida a varios grupos dentro de una organización que tienen requisitos únicos de la administración y para lograr independencia estructural y en funcionamiento entre grupos según sea necesario.  
+Active Directory Domain Services (AD DS) permite diseñar una infraestructura de directorios que incluye varios grupos de una organización que tienen requisitos de administración únicos y para lograr independencia estructural y operativa entre grupos según sea necesario.  
   
-Grupos de la organización podrían tener algunos de los siguientes tipos de requisitos:  
+Los grupos de su organización pueden tener algunos de los siguientes tipos de requisitos:  
   
--   **Requisitos de la estructura organizativa**. Partes de una organización pueden participar en una infraestructura compartida para ahorrar costos, pero requieren la capacidad de funcionar de forma independiente del resto de la organización. Por ejemplo, un grupo de investigación de una organización grande es posible que deba mantener el control sobre todos sus propios datos de investigación.  
+-   **Requisitos de la estructura organizativa**. Las partes de una organización pueden participar en una infraestructura compartida para ahorrar costos, pero requieren la capacidad de operar de forma independiente del resto de la organización. Por ejemplo, un grupo de investigación dentro de una organización grande podría necesitar mantener el control sobre todos sus datos de investigación.  
   
--   **Los requisitos operativos**. Una parte de una organización podría colocar restricciones unique en la configuración del servicio de directorio, la disponibilidad o seguridad, o usar las aplicaciones que colocan restricciones únicas en el directorio. Por ejemplo, unidades de negocio individuales dentro de una organización podrían implementar aplicaciones habilitadas para directorio que modifican el esquema de directorio que no se implementan con otras unidades de negocio. Dado que el esquema de directorio se comparte entre todos los dominios del bosque, creación de varios bosques es una solución para este escenario. Otros ejemplos se encuentran en los escenarios y organizaciones siguientes:  
+-   **Requisitos operativos**. Una parte de una organización puede realizar restricciones únicas en la configuración del servicio de directorio, la disponibilidad o la seguridad, o bien usar aplicaciones que colocan restricciones únicas en el directorio. Por ejemplo, las unidades de negocio individuales dentro de una organización pueden implementar aplicaciones habilitadas para el directorio que modifican el esquema de directorio que no están implementadas por otras unidades de negocio. Dado que el esquema de directorio se comparte entre todos los dominios del bosque, la creación de varios bosques es una solución para este tipo de escenario. Otros ejemplos se encuentran en las siguientes organizaciones y escenarios:  
   
     -   Organizaciones militares  
   
     -   Escenarios de hospedaje  
   
-    -   Organizaciones que mantienen un directorio que está disponible tanto interna como externamente (por ejemplo, aquellas que sean accesibles públicamente por usuarios de Internet)  
+    -   Organizaciones que mantienen un directorio que está disponible tanto interna como externamente (por ejemplo, aquellos a los que los usuarios pueden acceder públicamente)  
   
--   **Los requisitos legales**. Algunas organizaciones tienen requisitos legales para operar de forma específica, por ejemplo, restringir el acceso a determinada información tal como se especifica en un contrato de negocio. Algunas organizaciones tienen requisitos de seguridad para operar en redes internas aisladas. Si no se cumplen estos requisitos puede dar lugar a pérdida del contrato y acciones legales posiblemente.  
+-   **Requisitos legales**. Algunas organizaciones tienen requisitos legales para operar de una manera determinada, por ejemplo, restringir el acceso a cierta información, tal como se especifica en un contrato de negocio. Algunas organizaciones tienen requisitos de seguridad para operar en redes internas aisladas. Si no se cumplen estos requisitos, se puede producir la pérdida del contrato y, posiblemente, de una acción legal.  
   
-Parte de identificar los requisitos de diseño de bosque consiste en identificar el grado al que pueden confiar en grupos de la organización los posibles propietarios del bosque y sus administradores de servicio e identificar los requisitos de aislamiento y autonomía para cada grupo de su organización.  
+Parte de la identificación de los requisitos de diseño de bosque implica la identificación del grado en que los grupos de su organización pueden confiar en los posibles propietarios de bosque y sus administradores de servicios, e identificar los requisitos de aislamiento y autonomía de cada uno Grupo de la organización.  
   
-El equipo de diseño debe documentar los requisitos de aislamiento y la autonomía de la administración de servicio y los datos para cada grupo de la organización que pretende usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que podrían afectar a la implementación de AD DS.  
+El equipo de diseño debe documentar los requisitos de aislamiento y autonomía del servicio y la administración de los datos para cada grupo de la organización que pretenda usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que puedan afectar a la implementación de AD DS.  
   
-El equipo de diseño debe documentar los requisitos de aislamiento y la autonomía de la administración de servicio y los datos para cada grupo de la organización que pretende usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que podrían afectar a la implementación de AD DS. Para que una hoja de cálculo que le ayudarán a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services.zip desde [trabajo ayudas para Windows Server 2003 Deployment Kit](https://go.microsoft.com/fwlink/?LinkID=102558) y abra "bosque Requisitos de diseño"(DSSLOGI_2.doc).  
+El equipo de diseño debe documentar los requisitos de aislamiento y autonomía del servicio y la administración de los datos para cada grupo de la organización que pretenda usar AD DS. El equipo también debe tener en cuenta las áreas de conectividad limitada que puedan afectar a la implementación de AD DS. Para obtener una hoja de cálculo que le ayude a documentar las regiones que identificó, descargue Job_Aids_Designing_and_Deploying_Directory_and_Security_Services. zip de la [ayuda del trabajo para el kit de implementación de Windows Server 2003](https://go.microsoft.com/fwlink/?LinkID=102558) y abra "requisitos de diseño de bosque" ( DSSLOGI_2. doc).  
   
 ## <a name="in-this-section"></a>En esta sección  
   
--   [Administrador de servicios de ámbito de autoridad](../../ad-ds/plan/Service-Administrator-Scope-of-Authority.md)  
+-   [Ámbito de autoridad del administrador de servicios](../../ad-ds/plan/Service-Administrator-Scope-of-Authority.md)  
   
--   [Autonomía frente a Aislamiento](../../ad-ds/plan/Autonomy-vs.-Isolation.md)  
+-   [Autonomía frente a aislamiento](../../ad-ds/plan/Autonomy-vs.-Isolation.md)  

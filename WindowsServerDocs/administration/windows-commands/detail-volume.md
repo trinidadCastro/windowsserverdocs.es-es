@@ -1,8 +1,8 @@
 ---
-title: Volumen de detalle
-description: 'Tema de los comandos de Windows para ***- '
+title: volumen detallado
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: b7cae6dc9b82992b58c4f94801f90c0b7072492b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f8cd5889bfd2aea835cb64ef1a4076faee0f39b3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856926"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378472"
 ---
-# <a name="detail-volume"></a>Volumen de detalle
+# <a name="detail-volume"></a>volumen detallado
 
 
 
-Muestra los discos en el que reside el volumen actual.
+Muestra los discos en los que reside el volumen actual.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,12 +34,12 @@ detail volume
 
 ## <a name="remarks"></a>Comentarios
 
--   Debe seleccionarse un volumen para que esta operación se realice correctamente. Use la **seleccione volumen** comando para seleccionar un volumen y desplace el foco a ella.
--   Los detalles de volumen no son aplicables a los volúmenes de solo lectura, como una unidad de CD-ROM o DVD-ROM.
+-   Se debe seleccionar un volumen para que esta operación se realice correctamente. Use el comando **seleccionar volumen** para seleccionar un volumen y cambiar el foco a él.
+-   Los detalles del volumen no se aplican a los volúmenes de solo lectura, como una unidad de CD-ROM o DVD-ROM.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para ver todos los discos en el que reside el volumen actual, escriba:
+Para ver todos los discos en los que reside el volumen actual, escriba:
 ```
 detail volume
 ```

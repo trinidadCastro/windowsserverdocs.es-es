@@ -1,7 +1,7 @@
 ---
 title: La extensión de conmutador virtual de WFP debe habilitarse si así lo requieren las extensiones de terceros
-description: Versión en línea del texto para esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,46 +10,46 @@ ms.topic: article
 ms.assetid: 8aa8a9a5-e3fa-4c9b-8331-ba5a3de22429
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 5afe706c246276597b32400109370ba3129e5a24
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 41ab2bac7c98608b051c74d2fbfb8359f493385c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59850626"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71364618"
 ---
 # <a name="the-wfp-virtual-switch-extension-should-be-enabled-if-it-is-required-by-third-party-extensions"></a>La extensión de conmutador virtual de WFP debe habilitarse si así lo requieren las extensiones de terceros
 
 >Se aplica a: Windows Server 2016
 
-Para obtener más información sobre análisis y los procedimientos recomendados, consulte [Run Best Practices Analyzer Scans y Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Advertencia|  
 |**Categoría**|Configuración|  
   
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.  
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  
   
 ## <a name="issue"></a>**Problema**  
-*La extensión de conmutador virtual de Windows Filtering Platform (WFP) está deshabilitada.*  
+*La extensión de conmutador virtual de la plataforma de filtrado de Windows (WFP) está deshabilitada.*  
   
-## <a name="impact"></a>**Impact**  
-*Algunas extensiones de conmutador virtual de terceros podrían no funcionar correctamente en los conmutadores virtuales siguientes:*  
+## <a name="impact"></a>**Impacto**  
+*Es posible que algunas extensiones de conmutador virtual de terceros no funcionen correctamente en los siguientes conmutadores virtuales:*  
   
-\<lista de máquinas virtuales >  
+\<list de máquinas virtuales >  
   
 ## <a name="resolution"></a>**Resolución**  
-*Use el cmdlet de Windows PowerShell, Enable-VMSwitchExtension, para habilitar la plataforma de filtrado de Windows si así lo requieren las extensiones de terceros.*  
+*Use el cmdlet de Windows PowerShell, enable-VMSwitchExtension, para habilitar la plataforma de filtrado de Windows si es necesaria para las extensiones de terceros.*  
   
 ### <a name="enable-the-windows-filtering-platform-using-windows-powershell"></a>Habilitar la plataforma de filtrado de Windows mediante Windows PowerShell  
   
-1.  Abra Windows PowerShell. (En el escritorio, haga clic en **iniciar** y comience a escribir **Windows PowerShell**.)  
+1.  Abra Windows PowerShell. (En el escritorio, haga clic en **Inicio** y comience a escribir **Windows PowerShell**).  
   
-2.  Haga clic en **Windows PowerShell** y haga clic en **ejecutar como administrador**.  
+2.  Haga clic con el botón derecho en **Windows PowerShell** y haga clic en **Ejecutar como administrador**.  
   
-3.  Ejecute este comando después de reemplazar externo con el nombre del conmutador externo:  
+3.  Ejecute este comando después de reemplazar external por el nombre del conmutador externo:  
   
 ```  
 Enable-VMSwitchExtension -VMSwitchName External -Name "Microsoft Windows Filtering Platform"  

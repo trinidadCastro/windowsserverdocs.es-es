@@ -1,8 +1,8 @@
 ---
 title: rsh
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,15 +13,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3ee2d4364f06a72b6314d96658d66b0b26ac1367
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: fe50e770810666b66bc9c9da6eae7be80407a33e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841076"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384459"
 ---
 # <a name="rsh"></a>rsh
 
 
 
-Ejecuta comandos en equipos remotos que ejecutan el servicio o demonio RSH. Este comando está desusado. Puede instalar el subsistema para aplicaciones basadas en UNIX mediante el Asistente para agregar características. Para obtener más información, consulte [componentes de interoperabilidad de UNIX de Windows Server 2008](https://go.microsoft.com/fwlink/?LinkId=191835) en el sitio Web de Microsoft. Después de la instalación, a continuación, puede abrir una ventana de comandos de Shell de C o en el Korn Shell y ejecutar **rsh**. Para obtener más información, escriba **man rsh** en el Shell de C o en el Korn Shell símbolo del sistema.
+Ejecuta comandos en equipos remotos que ejecutan el servicio RSH o el demonio. Este comando está en desuso. Puede instalar el subsistema para aplicaciones UNIX mediante el Asistente para agregar características. Para obtener más información, vea [componentes de interoperabilidad de Windows Server 2008 UNIX](https://go.microsoft.com/fwlink/?LinkId=191835) en el sitio web de Microsoft. Después de la instalación, puede abrir una ventana de comandos shell de C o shell de Korn y ejecutar **RSH**. Para obtener más información, escriba **Man RSH** en el símbolo del sistema Shell de C o shell de Korn.

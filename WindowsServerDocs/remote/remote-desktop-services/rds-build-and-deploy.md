@@ -2,7 +2,7 @@
 title: 'RDS: Creación e implementación'
 description: Pasos para crear una implementación de Escritorio remoto
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ ms.topic: article
 ms.assetid: 176ae424-96e9-4c78-88f5-da418e76c3d7
 author: lizap
 manager: dongill
-ms.openlocfilehash: 309ea068488d005eabfe22f8ea055f85dd098452
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 9c3962a830d9544e915a96f061e32bb9e037949b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66453072"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404041"
 ---
 # <a name="build-and-deploy-your-remote-desktop-services-deployment"></a>Crea e implementa la implementación de Servicios de Escritorio remoto.
 

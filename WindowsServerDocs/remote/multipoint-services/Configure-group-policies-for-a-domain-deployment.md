@@ -3,7 +3,7 @@ title: Configurar directivas de grupo para la implementación de un dominio
 description: Obtenga información sobre cómo configurar directivas de grupo en Multipoint Services
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 13e5fa90-d330-4155-a6b8-78eb650cbbfa
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 5c9d8efc1ed4a2f498ffce6c69d443ae819dced9
-ms.sourcegitcommit: 1bc3c229e9688ac741838005ec4b88e8f9533e8a
+ms.openlocfilehash: 5ac6524289d231d152e366d2ba750a59d27ce14f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/18/2019
-ms.locfileid: "68314319"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395522"
 ---
 # <a name="configure-group-policies-for-a-domain-deployment"></a>Configurar directivas de grupo para la implementación de un dominio
 Para asegurarse de que la implementación de su dominio de Multipoint Services funciona correctamente, aplique la siguiente configuración de directiva de grupo a la cuenta de usuario WMSshell en un sistema Multipoint Services.  
@@ -32,15 +32,15 @@ La cuenta de usuario de WMSshell es una cuenta del sistema que Multipoint Servic
 > [!NOTE]  
 > Para obtener información sobre cómo actualizar las directivas de grupo, consulte [Editor de directivas de grupo local](https://technet.microsoft.com/library/dn265982.aspx).  
   
-**DIRECTIVAS** Configuración de usuario > Plantillas administrativas > panel de  control > Personalización  
+**DIRECTIVAS** Configuración de usuario > Plantillas administrativas > panel de control > Personalización  
   
 Asigne los valores siguientes:  
   
 |Parámetro|Valores|  
 |-----------|----------|  
-|Habilitar protector de pantalla|Disabled|  
-|Tiempo de espera del protector de pantalla|Disabled<br /><br />Segundos: XXX|  
-|Proteger el protector de pantalla mediante contraseña|Disabled|  
+|Habilitar protector de pantalla|Deshabilitada|  
+|Tiempo de espera del protector de pantalla|Deshabilitada<br /><br />Segundos: XXX|  
+|Proteger el protector de pantalla mediante contraseña|Deshabilitada|  
   
 **DIRECTIVAS** Configuración del equipo > configuración de Windows > configuración de seguridad > directivas locales > asignación **de derechos de usuario > permitir el inicio de sesión local**  
   
@@ -63,7 +63,7 @@ Para una implementación de dominio de Multipoint Services, debe actualizar las 
   
 2.  En el panel izquierdo, busque la siguiente subclave del registro y selecciónela:  
   
-    HKEY_USERS\<SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
+    HKEY_USERS @ no__t-0SIDofWMSshell > \Software\Policies\Microsoft\Windows\Control Panel\Desktop  
   
     donde "<SIDofWMSshell>" es el identificador de seguridad (SID) de la cuenta WMSshell. Para averiguar cómo identificar el SID, consulte [cómo asociar un nombre de usuario a un identificador de seguridad (SID)](https://support.microsoft.com/kb/154599).  
   

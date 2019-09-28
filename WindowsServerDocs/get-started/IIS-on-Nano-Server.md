@@ -1,7 +1,7 @@
 ---
 title: IIS en Nano Server
 description: Detalles de configuración de IIS en Nano Server
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,19 +12,19 @@ ms.assetid: 16984724-2d77-4d7b-9738-3dff375ed68c
 author: jaimeo
 ms.author: jaimeo
 ms.localizationpriority: medium
-ms.openlocfilehash: 54c8d05c028cbca364b6a46052d12cdcb12c01b0
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 04c2d7eab2f149505758ab21f08cd6b8bdb74b85
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443616"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360305"
 ---
 # <a name="iis-on-nano-server"></a>IIS en Nano Server
 
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
 
 Puede instalar el rol de servidor de Internet Information Services (IIS) en Nano Server mediante el parámetro -Package con Microsoft-NanoServer-IIS-Package. Para obtener información sobre cómo configurar Nano Server, incluida la instalación de paquetes, vea [Instalación de Nano Server](Getting-Started-with-Nano-Server.md).  
 

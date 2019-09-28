@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 06/05/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 43a42c211557a41400fada17baaab6a0d5ab822a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 517582661374c388d44362538da6933a916b0039
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866095"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407751"
 ---
 # <a name="access-control-policies-in-windows-server-2012-r2-and-windows-server-2012-ad-fs"></a>Access Control directivas en Windows Server 2012 R2 y Windows Server 2012 AD FS
 
@@ -25,7 +25,7 @@ Las directivas descritas en este artículo hacen uso de dos tipos de notificacio
 
 2.  Las notificaciones AD FS crean en función de la información reenviada a AD FS por el cliente como encabezados HTTP  
 
->**Importante**: Las directivas que se describen a continuación bloquearán los escenarios de inicio de sesión y de unión a un dominio de Windows 10 que requieran acceso a los siguientes puntos de conexión adicionales.
+>**Importantes**: Las directivas que se describen a continuación bloquearán los escenarios de inicio de sesión y de unión a un dominio de Windows 10 que requieran acceso a los siguientes puntos de conexión adicionales.
 
 AD FS puntos de conexión necesarios para la Unión a un dominio de Windows 10 y el inicio de sesión
 - [nombre del servicio de Federación]/ADFS/Services/Trust/2005/windowstransport
@@ -81,7 +81,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna demanda IP fuera del intervalo deseado, denegar". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");` </br>
-6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  </br>
+6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  </br>
 
     `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true"); ` 
 
@@ -106,7 +106,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
     `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 
-6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 7.  A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -119,7 +119,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application", Value != "Microsoft.Exchange.ActiveSync"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 ~~~
 
-10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 11. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -131,7 +131,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
    NOT EXISTS([Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"]) => add(Type = "http://custom/xmsapplication", Value = "fail");  
    ```  
 
-14. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+14. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 15. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -140,7 +140,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 17. En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo "denegar a los usuarios con ipoutsiderange true y error de aplicación". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones:  
 
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/xmsapplication", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`</br>  
-18. Haga clic en **Finalizar** Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
+18. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:</br></br>      `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`</br></br>
 19. Para guardar las nuevas reglas, en el cuadro de diálogo **editar reglas de notificaciones** , haga clic en Aceptar. La lista resultante debería tener un aspecto similar al siguiente.  
 
     ![Reglas de autorización de emisión](media/Access-Control-Policies-W2K12/clientaccess2.png )  
@@ -159,7 +159,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 5.  En la página **configurar regla** , en **nombre de la regla de notificaciones**, escriba el nombre para mostrar de esta regla, por ejemplo, "si hay alguna Claim IP fuera del intervalo deseado, emita ipoutsiderange claim". En **regla personalizada**, escriba o pegue la siguiente sintaxis del lenguaje de reglas de notificaciones (Reemplace el valor anterior para "x-MS-forwarded-Client-IP" por una expresión IP válida):  </br>
 `c1:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`   
-6.  Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+6.  Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 7.  A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -172,7 +172,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path", Value != "/adfs/ls/"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = " DenyUsersWithClaim");`  
 ~~~
 
-10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br> Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
+10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista reglas de autorización de emisión antes de la regla **permitir el acceso predeterminado a todos los usuarios** (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br> Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
 
    `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`
 
@@ -200,7 +200,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 `c1:[Type == "http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip", Value =~ "^(?!192\.168\.1\.77|10\.83\.118\.23)"] && c2:[Type == "http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork", Value == "false"] => issue(Type = "http://custom/ipoutsiderange", Value = "true");`  
 ~~~
 
-6. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+6. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 7. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -210,7 +210,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
     `NOT EXISTS([Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid", Value == "S-1-5-32-100"]) => add(Type = "http://custom/groupsid", Value = "fail");`  
 
-10. Haga clic en **Finalizar** Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
+10. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece en la lista **reglas de autorización de emisión** .  
 
 11. A continuación, en el cuadro de diálogo **editar reglas de notificaciones** , en la pestaña **reglas de autorización de emisión** , haga clic en **Agregar regla** para iniciar de nuevo el Asistente para reglas de notificaciones.  
 
@@ -220,7 +220,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
    `c1:[Type == "http://custom/ipoutsiderange", Value == "true"] && c2:[Type == "http://custom/groupsid", Value == "fail"] => issue(Type = "http://schemas.microsoft.com/authorization/claims/deny", Value = "DenyUsersWithClaim");`  
 
-14. Haga clic en **Finalizar** Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
+14. Haga clic en **Finalizar**. Compruebe que la nueva regla aparece inmediatamente debajo de la regla anterior y antes de la regla permitir el acceso predeterminado a todos los usuarios de la lista de reglas de autorización de emisión (la regla de denegación tendrá prioridad aunque aparezca antes en la lista).  </br></br>Si no tiene la regla de permiso de acceso predeterminada, puede Agregar una al final de la lista mediante el lenguaje de reglas de notificaciones como se indica a continuación:  
 
    `c:[] => issue(Type = "http://schemas.microsoft.com/authorization/claims/permit", Value = "true");`  
 
@@ -259,7 +259,7 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
   Por lo tanto, un ejemplo para hacer coincidir solo dos direcciones (por ejemplo, 192.168.1.1 o 10.0.0.1\\) sería\\:\\\b192.168&#124;,1\\,1\\\\\b \b10.0  
 
-  Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En los casos en los que es necesario permitir un intervalo de direcciones, por ejemplo 192.168.1.1 – 192.168.1.25, la coincidencia se debe hacer carácter\\por carácter\\:\\\b192.168. [1-9] &#124;1 [0-9]&#124;2 [0-5]) \b  
+  Esto le ofrece la técnica por la que puede escribir cualquier número de direcciones. En el caso de que sea necesario permitir un intervalo de direcciones, por ejemplo 192.168.1.1 – 192.168.1.25, la coincidencia se debe hacer carácter por carácter: \b192 @ no__t-0.168 @ no__t-1.1 @ no__t-2. ([1-9]&#124;1 [0-9]&#124;2 [0-5]) \b  
 
   Tenga en cuenta lo siguiente:  
 
@@ -279,9 +279,9 @@ Las directivas descritas en este artículo deben usarse siempre con otro método
 
 - Tenga en cuenta que los paréntesis deben estar colocados correctamente, de modo que no empiece a buscar coincidencias con otras partes de direcciones IP.  
 
-- Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque 10: \b10\\\\. 0\\. ( [1-9] &#124;1 [0-4]) \b  
+- Con el bloque 192 coincidente, podemos escribir una expresión similar para el bloque 10: \b10 @ no__t-0.0 @ no__t-1.0 @ no__t-2. ([1-9]&#124;1 [0-4]) \b  
 
-- Además de colocarlas juntas, la siguiente expresión debe coincidir con todas las direcciones de "192.168.1.1 ~ 25" y "10.0.0.1 ~\\14"\\:\\\b192.168. [1-9] &#124;1 [0-9]&#124;2 [0-&#124;5])\\\\\b \b10\\. 0. ( [1-9] &#124;1 [0-4]) \b  
+- Además de colocarlas juntas, la expresión siguiente debe coincidir con todas las direcciones de "192.168.1.1 ~ 25" y "10.0.0.1 ~ 14": \b192 @ no__t-0.168 @ no__t-1.1 @ no__t-2. ([1-9]&#124;1 [0-9]&#124;2 [0-5]) \b&#124;\b10 @ no__t-6.0 @ no__t-7.0 @ no__t-8. ([1-9]&#124;1 [0-4]) \b  
 
 ### <a name="testing-the-expression"></a>Probar la expresión  
  Las expresiones regex pueden resultar bastante complicadas, por lo que se recomienda encarecidamente usar una herramienta de comprobación de Regex. Si realiza una búsqueda en Internet de "generador de expresiones regex en línea", encontrará varias utilidades en línea adecuadas que le permitirán probar sus expresiones con datos de ejemplo.  

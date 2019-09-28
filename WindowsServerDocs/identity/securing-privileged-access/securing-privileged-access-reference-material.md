@@ -1,7 +1,7 @@
 ---
 title: Protección del material de referencia de acceso con privilegios
-description: Controles de seguridad operativa para los dominios de Active Directory de Windows Server
-ms.prod: windows-server-threshold
+description: Controles de seguridad operativa para dominios de Active Directory de Windows Server
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: 22ee9a77-4872-4c54-82d9-98fc73a378c0
 ms.date: 02/14/2019
@@ -9,12 +9,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: mas
-ms.openlocfilehash: bcc06a3ccc4e95fa43a7f8f0ef7d110fd427f5a0
-ms.sourcegitcommit: cd12ace92e7251daaa4e9fabf1d8418632879d38
+ms.openlocfilehash: 56e1c028a9b18db7b23e8f04e943e4113837b66b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66501650"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407227"
 ---
 # <a name="active-directory-administrative-tier-model"></a>Modelo de nivel administrativo de Active Directory
 
@@ -111,7 +111,7 @@ El origen del software se debe validar a través de uno de los siguientes medios
 - El software se obtiene de Internet y se valida con los hashes de archivo proporcionado por el proveedor.
 - El software procede de Internet y se valida mediante la descarga y comparación de dos copias independientes:
    - Descargue los dos hosts sin relación de seguridad (no están en el mismo dominio y no están administrados por las mismas herramientas), preferiblemente de conexiones de Internet independientes.
-   - Compare los archivos descargados con una utilidad como certutil:  `certutil -hashfile <filename>`
+   - Compare los archivos descargados con una utilidad como certutil: `certutil -hashfile <filename>`
 
 Cuando sea posible, todo el software de aplicación, como instaladores de aplicaciones y herramientas, debe estar firmado digitalmente y comprobado con Windows Authenticode con la herramienta [Windows Sysinternals](https://www.microsoft.com/sysinternals), *sigcheck.exe*, con comprobación de revocación. Se pueden requerir algunos programas de software cuando el proveedor no pueda proporcionar este tipo de firma digital.
 
@@ -189,12 +189,12 @@ Cada estándar de este documento se desglosa en función de su importancia en cu
 
 ![Diagrama que muestra el estándar para niveles en capas determinados](../media/securing-privileged-access-reference-material/PAW_RM_Fig12.JPG)
 
-Todas las excepciones para los elementos obligatorios (marcados con octágono rojo o un triángulo naranja en este documento) se consideran temporales y deben ser aprobadas por el CAB. Las instrucciones son:
+Todas las excepciones para los elementos obligatorios (marcados con octágono rojo o un triángulo naranja en este documento) se consideran temporales y deben ser aprobados por el archivo CAB. Las instrucciones son:
 
 - La solicitud inicial requiere la aceptación del riesgo de justificación firmada por el supervisor inmediato del personal y caduca al cabo de seis meses.
 - Las renovaciones requieren la justificación y la aceptación del riesgo firmada por un director de unidad de negocio y caducan después de seis meses.
 
-Todas las excepciones para los elementos recomendados (marcados con un círculo amarillo en este documento) se consideran temporales y deben ser aprobadas por el CAB. Las instrucciones son:
+Todas las excepciones para los elementos recomendados (marcados con un círculo amarillo en este documento) se consideran temporales y deben ser aprobadas por el archivo CAB. Las instrucciones son:
 
 - La solicitud inicial requiere la aceptación del riesgo de justificación firmada por el supervisor inmediato del personal y caduca al cabo de doce meses.
 - Las renovaciones requieren la justificación y la aceptación del riesgo firmada por un director de unidad de negocio y caducan después de doce meses.
@@ -379,7 +379,7 @@ Las organizaciones de soporte técnico de usuario y el departamento de soporte t
 
 ###### <a name="no-browsing-the-public-internet-with-admin-accounts-or-from-admin-workstations"></a>Sin explorar Internet pública con cuentas de administrador o desde estaciones de administración
 
-El personal administrativo no puede explorar Internet abierta mientras inicia sesión con una cuenta administrativa o mientras ha iniciado sesión en una estación de trabajo administrativa. Las únicas excepciones autorizadas son el uso de un explorador web para administrar un servicio basado en la nube.
+El personal administrativo no puede explorar Internet abierta mientras inicia sesión con una cuenta administrativa o mientras ha iniciado sesión en una estación de trabajo administrativa. Las únicas excepciones autorizadas son el uso de un explorador Web para administrar un servicio basado en la nube.
 
 ###### <a name="no-accessing-email-with-admin-accounts-or-from-admin-workstations"></a>Sin acceder al correo electrónico con las cuentas de administrador o con estaciones de trabajo de administración
 
@@ -439,10 +439,10 @@ Para usar todas las cuentas de acceso de emergencia:
   - Realizar la solución de problemas y la corrección de los problemas técnicos que impiden el uso de las cuentas administrativas correctas.
   - Realizar tareas poco frecuentes, como:
     - Administración de esquema
-    - Tareas de todo el bosque que requieren privilegios de administrador de empresa
+    - Tareas para todo el bosque que requieren privilegios administrativos de empresa
 
       > [!NOTE]
-      > Administración de topologías, incluida la administración de sitios y subredes de Active Directory se delega a limitar el uso de estos privilegios.
+      > La administración de la topología, incluida Active Directory la administración de sitios y subredes, se delega para limitar el uso de estos privilegios.
 
 - El uso de una de estas cuentas debería contar con autorización escrita por el responsable del grupo de seguridad
 - El procedimiento de la hoja de seguimiento para cada cuenta de acceso de emergencia requiere que la contraseña se cambie en cada uso. Un miembro del equipo de seguridad debe validar que se ha realizado correctamente.
@@ -481,7 +481,7 @@ El diseño de un bosque administrativo debe incluir las consideraciones siguient
    - Una salvedad al uso de este grupo para conceder derechos es que, de forma predeterminada, no tiene acceso administrativo a los nuevos objetos de directiva de grupo. Esto se puede cambiar siguiendo el procedimiento descrito en [este artículo de Knowledge Base](https://support.microsoft.com/kb/321476) para cambiar los permisos predeterminados del esquema.
    - Las cuentas existentes en el bosque administrativo que se usan para administrar el entorno de producción no deben contar con privilegios administrativos para el bosque administrativo o los dominios o estaciones de trabajo que existen en él.
    - Un proceso sin conexión controlará rigurosamente los privilegios administrativos sobre el bosque administrativo, con el fin de disminuir la posibilidad de que un atacante o un infiltrado malintencionado borre los registros de auditoría. Esto también ayuda a asegurarse de que el personal con cuentas de administración de producción no flexibilice las restricciones sobre sus cuentas y aumente el riesgo para la organización.
-   - El bosque administrativo debe respetar las configuraciones de línea de base de cumplimiento de seguridad de Microsoft (SCB) para el dominio, incluidas configuraciones seguras para los protocolos de autenticación.
+   - El bosque administrativo debe seguir las configuraciones de línea de base de cumplimiento de seguridad de Microsoft (SCB) para el dominio, incluidas las configuraciones seguras para los protocolos de autenticación.
    - Las actualizaciones de seguridad se deben aplicar automáticamente a todos los hosts del bosque administrativo. Aunque esto puede generar un riesgo de interrumpir las operaciones de mantenimiento de los controladores de dominio, permite mitigar, en gran medida, el riesgo de seguridad de las vulnerabilidades a las que no se aplicó una revisión.
 
       > [!NOTE]
@@ -499,7 +499,7 @@ El diseño de un bosque administrativo debe incluir las consideraciones siguient
    - Las líneas base de seguridad se deben usar como configuraciones iniciales.
 
       > [!NOTE]
-      > Los clientes pueden usar el Kit de herramientas de compatibilidad de seguridad (SCT) de Microsoft para configurar las líneas de base en los hosts administrativos.
+      > Los clientes pueden usar el kit de herramientas de cumplimiento de seguridad (SCT) de Microsoft para configurar las líneas base en los hosts administrativos.
 
    - Arranque seguro, para mitigar el riesgo de atacantes o malware que intenten cargar código sin firma en el proceso de arranque.
 
@@ -539,7 +539,7 @@ Para más información concerniente a los servicios de Microsoft que se usan par
 
 ## <a name="tier-0-equivalency"></a>Equivalencia de nivel 0
 
-La mayoría de las organizaciones controlan la pertenencia a grupos de Active Directory de nivel 0 eficaces, como administradores, administradores de dominio y administradores de empresa.  Muchas organizaciones pasan por alto el riesgo de otros grupos que son eficazmente equivalentes con privilegios de un entorno típico de Active Directory. Estos grupos ofrecen una ruta de acceso de escalamiento relativamente sencilla para un atacante los mismos privilegios de nivel 0 explícitos mediante varios métodos de ataque diferentes.
+La mayoría de las organizaciones controlan la pertenencia a grupos de Active Directory de nivel 0 eficaces, como administradores, administradores de dominio y administradores de empresa.  Muchas organizaciones pasan por alto el riesgo de otros grupos que son eficazmente equivalentes con privilegios de un entorno típico de Active Directory. Estos grupos ofrecen una ruta de escalamiento relativamente sencilla para un atacante con los mismos privilegios de nivel 0 explícitos con distintos métodos de ataque.
 
 Por ejemplo, un operador de servidor podría obtener acceso a un medio de copia de seguridad de un controlador de dominio y extraer todas las credenciales de los archivos de ese medio y usarlas para aumentar los privilegios.
 
@@ -558,7 +558,7 @@ Las organizaciones deben controlar y supervisar la pertenencia en todos los grup
 - Propietarios del creador de directivas de grupo
 - Operadores criptográficos
 - Usuarios de COM distribuido
-- Otros grupos delegados - grupos personalizados que pueden ser creados por la organización para administrar las operaciones de directorio que también pueden tener acceso de nivel 0 efectivo.
+- Otros grupos delegados: grupos personalizados que se pueden crear en la organización para administrar las operaciones de directorio que también pueden tener un acceso eficaz de nivel 0.
 
 ## <a name="administrative-tools-and-logon-types"></a>Herramientas administrativas y tipos de inicio de sesión
 
@@ -568,7 +568,7 @@ En un escenario de administración remota, las credenciales siempre se exponen e
 
 En esta tabla se incluye orientación para las herramientas administrativas más comunes y los métodos de conexión:
 
-|Método de conexión|Tipo de inicio de sesión|Credenciales reutilizables en destino|Observaciones|
+|Método de conexión|Tipo de inicio de sesión|Credenciales reutilizables en destino|Comentarios|
 |-----------|-------|--------------------|------|
 |Iniciar sesión en consola|Interactive (Interactivo)|v|Incluye el acceso remoto de hardware y apaga los KVM de red y de tarjetas.|
 |RUNAS|Interactive (Interactivo)|v||
@@ -577,10 +577,10 @@ En esta tabla se incluye orientación para las herramientas administrativas más
 |Escritorio remoto (error: el tipo de inicio de sesión se ha denegado)|RemoteInteractive|-|De forma predeterminada, si se produce un error de sesión de RDP, solo se almacena durante un breve período. Esto puede no ser el caso si el equipo está en peligro.|
 |NET use * \\\SERVER|Red|-||
 |Net use * \\\SERVER /u:user|Red|-||
-|Complementos MMC para un equipo remoto|Red|-|Por ejemplo: Equipo de administración, el Visor de eventos, Administrador de dispositivos, servicios|
-|PowerShell WinRM|Red|-|Por ejemplo: Enter-PSSession server|
+|Complementos MMC para un equipo remoto|Red|-|Ejemplo: Administración de equipos, Visor de eventos, Device Manager, servicios|
+|PowerShell WinRM|Red|-|Ejemplo: Enter-PSSession Server|
 |PowerShell WinRM con CredSSP|NetworkClearText|v|New-PSSession<br />-Authentication Credssp<br />-Credential cred|
-|PsExec sin credenciales explícitas|Red|-|Por ejemplo: PsExec \\\server cmd|
+|PsExec sin credenciales explícitas|Red|-|Ejemplo: PsExec \\ \ Server cmd|
 |PsExec con credenciales explícitas|Red + interactivo|v|PsExec \\\server -u user -p pwd cmd<br />Crea varias sesiones de inicio de sesión.|
 |Registro remoto|Red|-||
 |Puerta de enlace de Escritorio remoto|Red|-|Autenticación en Puerta de enlace de Escritorio remoto.|
@@ -590,7 +590,7 @@ En esta tabla se incluye orientación para las herramientas administrativas más
 
 Para la autenticación web, utilice la referencia de la tabla siguiente:
 
-|Método de conexión|Tipo de inicio de sesión|Credenciales reutilizables en destino|Observaciones|
+|Método de conexión|Tipo de inicio de sesión|Credenciales reutilizables en destino|Comentarios|
 |-----------|-------|--------------------|------|
 |IIS "Autenticación básica"|NetworkCleartext<br />(IIS 6.0+)<br /><br />Interactive (Interactivo)<br />(anteriores a IIS 6.0)|v||
 |IIS "Autenticación de Windows integrada"|Red|-|Proveedores de NTLM y Kerberos.|
@@ -625,7 +625,7 @@ En los equipos basados en Windows, se procesan todas las autenticaciones como un
 Definiciones de columna:
 
 - **Tipo de inicio de sesión** es el tipo de inicio de sesión solicitado.
-- **#** es el identificador numérico para el tipo de inicio de sesión que se notifica los eventos de auditoría en el registro de eventos de seguridad.
+- **#** es el identificador numérico para el tipo de inicio de sesión que se registra en los eventos de auditoría en el registro de eventos de seguridad.
 - **Autenticadores aceptados** indica qué tipos de autenticadores podrán iniciar sesión de este tipo.
 - **Credenciales reutilizables** en la sesión de LSA indica si el tipo de inicio de sesión se produce en la sesión LSA que contiene las credenciales, como contraseñas de texto sin formato, hashes de NT o vales de Kerberos se podrían usar para autenticarse en otros recursos de red.
 - **Ejemplos** muestra los escenarios comunes en los que se utiliza el tipo de inicio de sesión.

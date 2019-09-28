@@ -1,8 +1,8 @@
 ---
 title: whoami
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6844ba001c2ebd7407b77f97204069a48a1b595b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9731ba3be3983eb53ade88fceaee863800229084
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59840156"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362145"
 ---
 # <a name="whoami"></a>whoami
 
 
 
-Muestra información de usuario, grupo y los privilegios del usuario que ha iniciado sesión actualmente en el sistema local. Si se utiliza sin parámetros, **whoami** muestra el nombre de dominio y usuario actual.
+Muestra información de usuarios, grupos y privilegios para el usuario que ha iniciado sesión actualmente en el sistema local. Si se usa sin parámetros, **whoami** muestra el dominio y el nombre de usuario actuales.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -40,28 +40,28 @@ whoami /all [/fo <Format>] [/nh]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/upn|Muestra el nombre de usuario en formato de nombre principal (UPN) del usuario.|
-|/fqdn|Muestra el nombre de usuario en formato de nombre de dominio completo (FQDN) del nombre.|
-|/LOGONID|Muestra el identificador de inicio de sesión del usuario actual.|
-|/user|Muestra el nombre de dominio y usuario actual y el identificador de seguridad (SID).|
-|/ Groups|Muestra los grupos de usuarios al que pertenece el usuario actual.|
+|/upn|Muestra el nombre de usuario en formato de nombre principal de usuario (UPN).|
+|/fqdn|Muestra el nombre de usuario en formato de nombre de dominio completo (FQDN).|
+|/logonid|Muestra el ID. de inicio de sesión del usuario actual.|
+|/User|Muestra el dominio y el nombre de usuario actuales y el identificador de seguridad (SID).|
+|/groups|Muestra los grupos de usuarios a los que pertenece el usuario actual.|
 |/priv|Muestra los privilegios de seguridad del usuario actual.|
-|/Fo \<formato >|Especifica el formato de salida. Los valores válidos se incluyen:</br>**tabla** muestra la salida en una tabla. Este es el valor predeterminado.</br>**lista** muestra la salida en una lista.</br>**CSV** muestra la salida en formato de valores separados por comas (CSV).|
-|/ all|Muestra toda la información en el token de acceso actual, incluidos el nombre de usuario actual, los identificadores de seguridad (SID), privilegios y grupos a los que pertenece el usuario actual.|
-|/nh|Especifica que el encabezado de columna no debe mostrarse en la salida. Esto sólo es válido para los formatos CSV y de tabla.|
+|/FO @no__t 0Format >|Especifica el formato de salida. Los valores válidos son:</br>**tabla** de Muestra la salida en una tabla. Este es el valor predeterminado.</br>**lista** de Muestra la salida en una lista.</br>**CSV** Muestra la salida en formato de valores separados por comas (CSV).|
+|/All|Muestra toda la información del token de acceso actual, incluidos el nombre de usuario actual, los identificadores de seguridad (SID), los privilegios y los grupos a los que pertenece el usuario actual.|
+|/NH|Especifica que el encabezado de columna no debe mostrarse en la salida. Esto solo es válido para los formatos de tabla y CSV.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para mostrar el nombre de usuario y dominio de la persona que ha iniciado sesión actualmente en este equipo, escriba:
+Para mostrar el dominio y el nombre de usuario de la persona que ha iniciado sesión actualmente en este equipo, escriba:
 ```
 whoami
 ```
-Aparecerá un resultado similar al siguiente:
+Aparece un resultado similar al siguiente:
 ```
 DOMAIN1\administrator
 ```
-Para mostrar toda la información en el token de acceso actual, escriba:
+Para mostrar toda la información del token de acceso actual, escriba:
 ```
 whoami /all
 ```

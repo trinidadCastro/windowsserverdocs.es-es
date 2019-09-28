@@ -1,8 +1,8 @@
 ---
-title: dir de FTP
-description: Tema de los comandos de Windows para dir de ftp
+title: DIR FTP
+description: Temas de comandos de Windows para el directorio FTP
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 78ac8ac5e9fc4894f55401bb234aa98de981adf7
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c47971c52135d79ce62f935bfed981f6eefcecaa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59835256"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376442"
 ---
-# <a name="ftp-dir"></a>ftp: dir
+# <a name="ftp-dir"></a>FTP: dir
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Muestra una lista de archivos del directorio y subdirectorios en un equipo remoto.   
+Muestra una lista de los archivos de directorio y los subdirectorios de un equipo remoto.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 dir [<remotedirectory>] [<LocalFile>]  
@@ -32,14 +32,14 @@ dir [<remotedirectory>] [<LocalFile>]
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|[<remotedirectory>]|Especifica el directorio para el que desea ver una lista. Si no se especifica ningún directorio, se usa el directorio de trabajo actual en el equipo remoto.|  
+|[<remotedirectory>]|Especifica el directorio para el que desea ver una lista. Si no se especifica ningún directorio, se utiliza el directorio de trabajo actual en el equipo remoto.|  
 |[<LocalFile>]|Especifica un archivo local en el que se va a almacenar la lista de directorios. Si no se especifica un archivo local, los resultados se muestran en la pantalla.|  
-## <a name="BKMK_Examples"></a>Ejemplos  
-Mostrar una lista de directorios de **dir1** en el equipo remoto.  
+## <a name="BKMK_Examples"></a>Example  
+Mostrar una lista de directorios para **dir1** en el equipo remoto.  
 ```  
 dir dir1  
 ```  
-Guardar una lista del directorio actual en el equipo remoto en el archivo local **ListaDir.txt**.  
+Guarde una lista del directorio actual en el equipo remoto en el archivo local **dirlist. txt**.  
 ```  
 dir . dirlist.txt  
 ```  

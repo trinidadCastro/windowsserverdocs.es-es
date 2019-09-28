@@ -1,8 +1,8 @@
 ---
 title: Usar la mensajería instantánea
-description: Obtenga información sobre cómo usar la mensajería instantánea en MultiPoint Services
+description: Aprenda a usar la mensajería instantánea en Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,19 +13,19 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 9c87024206f08c18915805a492de052caa8adcba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 202c5c1c336bb1692f819e5dfb9dba41914c288e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832836"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394859"
 ---
 # <a name="use-im"></a>Usar la mensajería instantánea
 Si se ha habilitado en la configuración del servidor, los usuarios de la estación y del panel de MultiPoint pueden intercambiar mensajes privados a través de mensajería instantánea.
   
 #### <a name="to-send-a-chat-message-from-the-multipoint-dashboard-to-a-user"></a>Para enviar un mensaje de chat a un usuario desde el panel de MultiPoint  
   
-1.  En el panel de MultiPoint, haga clic en la imagen en miniatura o imágenes de usuario al que desean enviar un mensaje.  
+1.  En el panel de Multipoint, haga clic en la imagen en miniatura o en las imágenes del usuario ypu desea enviar un mensaje.  
   
 2.  Haga clic en **Enviar** en la cinta. Se abrirá una ventana de chat de mensajería instantánea.  
 

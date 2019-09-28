@@ -1,60 +1,60 @@
 ---
-title: Entender y comprobar la resincronización de almacenamiento
-description: Información detallada sobre cuando ocurra la resincronización de almacenamiento y cómo verlo en Windows Server 2019.
-keywords: Espacios de almacenamiento directo, la resincronización de almacenamiento, vuelva a sincronizar, almacenamiento, S2D
-ms.prod: windows-server-threshold
+title: Comprender y ver la resincronización de almacenamiento
+description: Información detallada sobre cuándo se produce la resincronización de almacenamiento y cómo verla en Windows Server 2019.
+keywords: Espacios de almacenamiento directo, resincronización de almacenamiento, resincronización, almacenamiento, S2D
+ms.prod: windows-server
 ms.author: adagashe
 ms.technology: storage-spaces
 ms.topic: article
 author: adagashe
 ms.date: 01/14/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 81b1136a4b6a5cf8423a99e898b482a9b2849b5f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 53f48421bddd416d24c5f46e53652cc89c10c785
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59813466"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402843"
 ---
 # <a name="understand-and-monitor-storage-resync"></a>Comprender y controlar la resincronización de almacenamiento
 
 >Se aplica a: Windows Server 2019
 
-Las alertas de resincronización de almacenamiento son una nueva funcionalidad de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server 2019 que permite que el servicio de mantenimiento producir un error cuando se está resincronizando su almacenamiento. La alerta es útil para que le avise cuando se produce la resincronización, por lo que no tomar accidentalmente más servidores abajo (lo que podría provocar que varios dominios de error se ven afectadas, lo que resulta en el clúster deja de funcionar). 
+Las alertas de resincronización de almacenamiento son una nueva funcionalidad de [espacios de almacenamiento directo](storage-spaces-direct-overview.md) en Windows Server 2019 que permite a los servicio de mantenimiento producir un error cuando el almacenamiento se está resincronizando. La alerta es útil para notificarle cuando se está produciendo una resincronización, de modo que no se pueden reducir accidentalmente más servidores (lo que puede provocar que se vean afectados varios dominios de error, lo que provoca que el clúster se quede inactivo). 
 
-En este tema se proporciona en segundo plano y los pasos para entender y comprobar la resincronización de almacenamiento en un clúster de conmutación por error de Windows Server con espacios de almacenamiento directo.
+En este tema se proporciona información general y los pasos para entender y ver la resincronización de almacenamiento en un clúster de conmutación por error de Windows Server con Espacios de almacenamiento directo.
 
-## <a name="understanding-resync"></a>Resincronización de descripción
+## <a name="understanding-resync"></a>Descripción de resincronización
 
-Comencemos con un ejemplo sencillo para comprender cómo se queda sin sincronizarse almacenamiento. Tenga en cuenta que cualquier nada compartido (solo las unidades locales) solución de almacenamiento distribuido tiene este comportamiento. Como verá a continuación, si un nodo servidor deja de funcionar, a continuación, sus unidades no se actualizarán hasta que vuelva a conectarla - esto es cierto para cualquier arquitectura hiperconvergido. 
+Comencemos con un ejemplo sencillo para entender cómo el almacenamiento no está sincronizado. Tenga en cuenta que todas las soluciones de almacenamiento distribuido que no comparten nada (solo unidades locales) exhiben este comportamiento. Como verá a continuación, si un nodo de servidor deja de funcionar, sus unidades no se actualizarán hasta que vuelva a estar en línea; esto es cierto para cualquier arquitectura hiperconvergida. 
 
 Supongamos que queremos almacenar la cadena "HELLO". 
 
-![ASCII de la cadena "hello"](media/understand-storage-resync/hello.png)
+![ASCII de cadena "Hello"](media/understand-storage-resync/hello.png)
 
-Asssuming contamos con resistencia reflejada en tres vías, tenemos tres copias de esta cadena. Ahora, si tomamos servidor #1 temporalmente (por mantenimiento), a continuación, nos no podemos acceder a copia #1.
+Asssuming que tenemos una resistencia de reflejo triple, tenemos tres copias de esta cadena. Ahora, si tomamos #1 de servidor temporalmente (para mantenimiento), no podremos acceder a la copia #1.
 
 ![No se puede tener acceso a la copia #1](media/understand-storage-resync/copy1.png)
 
-¡Suponga que se actualice la cadena de "Hola" a "HELP"! en este momento.
+Supongamos que actualizamos nuestra cadena de "Hola" a "ayuda". en este momento.
 
-![ASCII de la cadena "help".](media/understand-storage-resync/help.png)
+![ASCII de cadena "ayuda"](media/understand-storage-resync/help.png)
 
-Una vez que se actualiza la cadena, copia #2 y 3 # será actualizado correctamente. Sin embargo, copia #1 aún no se puede tener acceso porque servidor #1 está inactivo temporalmente (por mantenimiento). 
+Una vez que actualice la cadena, copie #2 y #3 se actualizarán correctamente. Sin embargo, todavía no se puede tener acceso a la copia #1 porque el servidor #1 está inactivo temporalmente (para mantenimiento). 
 
-![GIF de escritura en copiar #2 y #2 "](media/understand-storage-resync/write.gif)
+![GIF de escritura para copiar #2 y #2 "](media/understand-storage-resync/write.gif)
 
-Ahora, tenemos copia #1, lo que tiene datos que no están sincronizados. El sistema operativo usa granular el seguimiento de regiones para realizar un seguimiento de los bits que no están sincronizados. Este modo al servidor #1 vuelve a conectarse, los cambios que podamos sincronizar por leer los datos de copia #2 o 3 # y sobrescribir los datos de copia #1. Las ventajas de este enfoque son que únicamente se necesita que se copiarán los datos que están obsoletas, en lugar de todos los datos desde el servidor #2 o 3 # resincronizar.
+Ahora tenemos copia #1 que tiene datos que no están sincronizados. El sistema operativo usa el seguimiento granular de regiones desfasadas para realizar un seguimiento de los bits que no están sincronizados. De este modo, cuando el servidor #1 vuelva a estar en línea, podremos sincronizar los cambios leyendo los datos de la copia #2 o #3 y sobrescribiendo los datos en la copia #1. Las ventajas de este enfoque son que solo necesitamos copiar los datos que están obsoletos, en lugar de resincronizar todos los datos de #2 de servidor o de servidor #3.
 
 ![GIF de sobrescritura para copiar #1 "](media/understand-storage-resync/overwrite.gif)
 
-Por lo tanto, esto explica cómo los datos se ponen sin sincronizar. Pero, ¿qué quiere decir esto en un nivel alto? Suponga para este ejemplo, tenemos un clúster hiperconvergido de tres servidores. Cuando el servidor #1 está en mantenimiento, lo verá como si estuviera inactivo. Cuando vuelve a poner el servidor #1 copia de seguridad, se iniciará resincronizar todo su almacenamiento usa el seguimiento de región sucia granular (que se explicaron anteriormente). Una vez que los datos son todos volvieron sincronizados, se mostrarán todos los servidores como máximo.
+Por lo tanto, esto explica cómo se dessincronizan los datos. Pero, ¿qué aspecto tiene en un nivel alto? En este ejemplo, supongamos que tenemos un clúster hiperconvergido de tres servidores. Cuando el servidor #1 esté en mantenimiento, lo verá como inactivo. Al hacer una copia de seguridad del servidor #1, se iniciará la resincronización de todo su almacenamiento mediante el seguimiento granular de la región desfasada (explicado anteriormente). Una vez que todos los datos se sincronizan de nuevo, se mostrarán todos los servidores.
 
-![GIF de vista de administración de resincronización"](media/understand-storage-resync/admin.gif)
+![GIF de la vista de administración de resincronización "](media/understand-storage-resync/admin.gif)
 
 ## <a name="how-to-monitor-storage-resync-in-windows-server-2019"></a>Cómo supervisar la resincronización de almacenamiento en Windows Server 2019
 
-Ahora que comprende cómo funciona la resincronización de almacenamiento, echemos un vistazo a cómo esto se muestra en Windows Server 2019. Hemos agregado un nuevo error en el [servicio de mantenimiento](../../failover-clustering/health-service-overview.md) que se mostrará cuando se está resincronizando su almacenamiento.
+Ahora que comprende cómo funciona la resincronización de almacenamiento, echemos un vistazo a cómo se muestra en Windows Server 2019. Hemos agregado un nuevo error al [servicio de mantenimiento](../../failover-clustering/health-service-overview.md) que se mostrará cuando el almacenamiento se esté resincronizando.
 
 Para ver este error en PowerShell, ejecute:
 
@@ -62,9 +62,9 @@ Para ver este error en PowerShell, ejecute:
 Get-HealthFault
 ```
 
-Esto es un nuevo error en Windows Server 2019 y aparecerá en PowerShell, en el informe de validación de clúster y cualquier otro que se basa en los errores de estado. 
+Se trata de un nuevo error en Windows Server 2019 y aparecerá en PowerShell, en el informe de validación de clúster y en cualquier otra parte que se compile en los errores de estado. 
 
-Para obtener una vista más detallada, puede consultar la base de datos de series temporales de PowerShell como sigue:
+Para obtener una vista más profunda, puede consultar la base de datos de la serie temporal en PowerShell de la siguiente manera:
 
 ```PowerShell
 Get-ClusterNode | Get-ClusterPerf -ClusterNodeSeriesName ClusterNode.Storage.Degraded
@@ -79,29 +79,29 @@ Series                       Time                Value Unit
 ClusterNode.Storage.Degraded 01/11/2019 16:26:48     214 GB
 ```
 
-En concreto, Windows Admin Center usa errores de estado para establecer el estado y el color de los nodos del clúster. Por lo tanto, este nuevo error hará que los nodos del clúster para realizar la transición de rojo (abajo) a amarillo (resincronizar) a verde (arriba), en lugar de pasar directamente de rojo a verde, en el panel de HCL.
+En particular, el centro de administración de Windows usa errores de estado para establecer el estado y el color de los nodos de clúster. Por lo tanto, este nuevo error hará que los nodos del clúster pasen de rojo (abajo) a amarillo (resincronizando) a verde (arriba), en lugar de ir directamente de rojo a verde, en el panel de HCI.
 
-![Imagen de vista de vs 2016 2019 de resincronización"](media/understand-storage-resync/compare.png)
+![Imagen de la vista de resincronización 2016 frente a 2019](media/understand-storage-resync/compare.png)
 
-Al mostrar el progreso de resincronización de almacenamiento general, puede saber con exactitud la cantidad de datos está sincronizada y si el sistema está realizando un progreso hacia delante. Al abrir Windows Admin Center y vaya a la *panel*, verá la nueva alerta como sigue:
+Al mostrar el progreso general de la resincronización de almacenamiento, puede saber con exactitud la cantidad de datos que no están sincronizados y si el sistema está progresando. Cuando abra el centro de administración de Windows y vaya al *Panel*, verá la nueva alerta de la siguiente manera:
 
-![Imagen de alerta en Windows Admin Center "](media/understand-storage-resync/alert.png)
+![Imagen de alerta en el centro de administración de Windows "](media/understand-storage-resync/alert.png)
 
-La alerta es útil para que le avise cuando se produce la resincronización, por lo que no tomar accidentalmente más servidores abajo (lo que podría provocar que varios dominios de error se ven afectadas, lo que resulta en el clúster deja de funcionar). 
+La alerta es útil para notificarle cuando se está produciendo una resincronización, de modo que no se pueden reducir accidentalmente más servidores (lo que puede provocar que se vean afectados varios dominios de error, lo que provoca que el clúster se quede inactivo). 
 
-Si navega a la *servidores* página Windows Admin Center, haga clic en *inventario*y, a continuación, elija un servidor específico, puede obtener una vista más detallada de cómo se ve esta resincronización de almacenamiento en cada servidor. Si navega a su servidor y examine el *almacenamiento* gráfico, verá la cantidad de datos que tiene que repararse en un *púrpura* línea con el número exacto justo arriba. Esta cantidad aumentará cuando el servidor está inactivo (más datos debe ser resynced) y reducir gradualmente cuando vuelve a conectar el servidor (se sincronizan datos). Cuando la cantidad de datos que deba estar reparación es 0, el almacenamiento está hecho resincronizar - ahora es libre de desconectar un servidor hacia abajo si necesita. A continuación se muestra una captura de pantalla de esta experiencia en Windows Admin Center:
+Si navega a la página *servidores* del centro de administración de Windows, hace clic en *inventario*y, a continuación, elige un servidor específico, puede obtener una vista más detallada de la apariencia de esta resincronización de almacenamiento por servidor. Si navega al servidor y observa el gráfico de *almacenamiento* , verá la cantidad de datos que deben repararse en una línea *púrpura* con el número exacto justo antes. Esta cantidad aumentará cuando el servidor esté inactivo (es necesario volver a sincronizar más datos) y disminuirá gradualmente cuando el servidor vuelva a estar en línea (los datos se están sincronizando). Cuando la cantidad de datos que es necesario reparar es 0, el almacenamiento se realiza de forma gratuita, ya que ahora puede dejar de funcionar un servidor si es necesario. A continuación se muestra una captura de pantalla de esta experiencia en el centro de administración de Windows:
 
-![Imagen de vista de servidor en Windows Admin Center "](media/understand-storage-resync/server.png)
+![Imagen de la vista de servidor en el centro de administración de Windows](media/understand-storage-resync/server.png)
 
-## <a name="how-to-see-storage-resync-in-windows-server-2016"></a>Visualización de resincronización de almacenamiento en Windows Server 2016
+## <a name="how-to-see-storage-resync-in-windows-server-2016"></a>Cómo ver la resincronización de almacenamiento en Windows Server 2016
 
-Como puede ver, esta alerta es especialmente útil para obtener una vista holística de lo que sucede en la capa de almacenamiento. Eficazmente resume la información que puede obtener desde el cmdlet Get-StorageJob, que devuelve información sobre los trabajos de módulo del almacenamiento de larga ejecución, como una operación de reparación en un espacio de almacenamiento. A continuación se muestra un ejemplo:
+Como puede ver, esta alerta es especialmente útil para obtener una vista holística de lo que está ocurriendo en la capa de almacenamiento. Resume eficazmente la información que puede obtener del cmdlet Get-StorageJob, que devuelve información sobre los trabajos del módulo de almacenamiento de ejecución prolongada, como una operación de reparación en un espacio de almacenamiento. A continuación se muestra un ejemplo:
 
 ```PowerShell
 Get-StorageJob
 ```
 
-Este es el resultado de ejemplo:
+Este es el resultado del ejemplo:
 
 ```
 Name                  ElapsedTime           JobState              PercentComplete       IsBackgroundTask
@@ -110,9 +110,9 @@ Regeneration          00:01:19              Running               50            
 
 ```
 
-Esta vista es mucho más granular, puesto que los trabajos de almacenamiento enumerados son por volumen, puede ver la lista de trabajos que se está ejecutando y puede realizar un seguimiento de su progreso individual. Este cmdlet funciona en Windows Server 2016 y de 2019.
+Esta vista es mucho más granular, ya que los trabajos de almacenamiento enumerados son por volumen, puede ver la lista de trabajos que se están ejecutando y puede realizar un seguimiento de su progreso individual. Este cmdlet funciona en Windows Server 2016 y 2019.
 
 ## <a name="see-also"></a>Vea también
 
-- [Poner un servidor sin conexión para el mantenimiento](maintain-servers.md)
-- [Información general de espacios directo de almacenamiento](storage-spaces-direct-overview.md)
+- [Desconectar un servidor para realizar labores de mantenimiento](maintain-servers.md)
+- [Información general de Espacios de almacenamiento directo](storage-spaces-direct-overview.md)

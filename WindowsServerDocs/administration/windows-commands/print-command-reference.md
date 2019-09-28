@@ -2,7 +2,7 @@
 title: Referencia de comandos de impresión
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 8a9b0ab1e3e9ecb170eb4535cb7e4e643d791e5b
-ms.sourcegitcommit: 6f968368c12b9dd699c197afb3a3d13c2211f85b
+ms.openlocfilehash: 73850c35b6f228c49496a2bb4505fe8203cb52ba
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68544536"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71372173"
 ---
 # <a name="print-command-reference"></a>Referencia de comandos de impresión
 
@@ -35,7 +35,7 @@ A continuación se muestra una lista de las herramientas de línea de comandos d
 |                  [prncnfg](prncnfg.md)                   |                                     Configura o muestra la información de configuración de una impresora.                                      |
 |                  [prndrvr](prndrvr.md)                   |                                                 agrega, elimina y enumera los controladores de impresora.                                                  |
 |                  [prnjobs](prnjobs.md)                   |                                              pausa, reanuda, cancela y enumera los trabajos de impresión.                                               |
-|                  [prnmngr](prnmngr.md)                   |            agrega, elimina y enumera impresoras o conexiones de impresora, además de establecer y mostrar la impresora predeterminada.            |
+|                  [prnmngr](prnmngr.md)                   |            Agrega, elimina y enumera impresoras o conexiones de impresora, además de establecer y mostrar la impresora predeterminada.            |
 |                  [prnport](prnport.md)                   |           crea, elimina y enumera los puertos de impresora TCP/IP estándar, además de mostrar y cambiar la configuración del puerto.            |
 |                  [prnqctl](prnqctl.md)                   |                                imprime una página de prueba, pausa o reanuda una impresora y borra una cola de impresión.                                |
 |                   [pubprn](pubprn.md)                    |                                       Publica una impresora en el servicio de directorio de Active Directory.                                       |

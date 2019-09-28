@@ -1,8 +1,8 @@
 ---
 title: ver
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 384a5e8adb6c8304033f7dc645184ff2b674ae39
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e48b3b1061edf793c88693b3353753c6a4cedcfc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59887176"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71362721"
 ---
 # <a name="ver"></a>ver
 
@@ -26,7 +26,7 @@ ms.locfileid: "59887176"
 
 Muestra el número de versión del sistema operativo.
 
-Este comando se admite en la línea de comandos de Windows (Cmd.exe), pero no en PowerShell.
+Este comando se admite en el símbolo del sistema de Windows (cmd. exe), pero no en PowerShell.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -42,15 +42,15 @@ ver
 |---------|-----------|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para obtener el número de versión del sistema operativo desde el shell de comandos (cmd.exe), escriba:
+Para obtener el número de versión del sistema operativo desde el shell de comandos (cmd. exe), escriba:
 
 ```
 ver
 ```
 
-El comando ver no funciona en PowerShell. Para obtener la versión del SO desde PowerShell, escriba:
+El comando ver no funciona en PowerShell. Para obtener la versión del sistema operativo de PowerShell, escriba:
 
 ```powershell
 $PSVersionTable.BuildVersion

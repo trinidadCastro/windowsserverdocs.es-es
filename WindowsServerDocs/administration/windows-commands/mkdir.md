@@ -1,8 +1,8 @@
 ---
 title: mkdir
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,15 +13,15 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e72c962fe1e78bb80d29cda5d63a9758f5f9e94e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: eda3e5e01e25b63a477ec37c712c9c9bcac19dbd
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59875086"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373666"
 ---
 # <a name="mkdir"></a>mkdir
 
 
 
-Este comando es el mismo que el **md** comando. Consulte [Md](md.md) para la sintaxis y los parámetros.
+Este comando es el mismo que el comando **MD** . Consulte [MD](md.md) para ver la sintaxis y los parámetros.

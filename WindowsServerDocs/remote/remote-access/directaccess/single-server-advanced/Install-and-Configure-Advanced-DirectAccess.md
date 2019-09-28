@@ -1,9 +1,9 @@
 ---
 title: Instalar y configurar una implementación avanzada de DirectAccess
-description: Este tema forma parte de la Guía de implementación de un único servidor de DirectAccess con avanzada configuración para Windows Server 2016
+description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,28 +12,28 @@ ms.topic: article
 ms.assetid: f45e5b6f-fc66-4deb-bed4-a1baa3cc6dae
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 2ff1e776dfb40f08f5dde1369eea1518bca5a772
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 971885b4e99b3ac83c26bf6df43c275a5b729510
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281769"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388640"
 ---
 # <a name="install-and-configure-advanced-directaccess"></a>Instalar y configurar una implementación avanzada de DirectAccess
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En esta introducción se enumera los pasos de configuración necesarios para implementar un único servidor de DirectAccess que ejecuta Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 con IPv4 e IPv6.  
+En esta información general se enumeran los pasos de configuración necesarios para implementar un único servidor de DirectAccess que ejecute Windows Server 2016, Windows Server 2012 R2 o Windows Server 2012 con IPv4 e IPv6.  
   
--   [Paso 1: Configurar la infraestructura de DirectAccess avanzada](da-adv-configure-s1-infrastructure.md).  
+-   [Paso 1: Configurar la infraestructura de DirectAccess avanzada @ no__t-0.  
   
     En esta fase, se definen la configuración de la red y del servidor, los requisitos de certificado, la configuración del Sistema de nombres de dominio (DNS), la implementación del servidor de ubicación de red, los servidores de administración de DirectAccess, la configuración de Active Directory y los objetos de directiva de grupo (GPO).  
   
--   [Paso 2: Configurar los servidores de DirectAccess avanzada](da-adv-configure-s2-servers.md).  
+-   [Paso 2: Configure los servidores de DirectAccess avanzados @ no__t-0.  
   
     En esta fase, se configuran los equipos cliente de DirectAccess, la configuración del servidor, los servidores de infraestructura y los servidores de aplicación.  
   
--   [Paso 3: Comprobar la implementación de DirectAccess avanzada](da-adv-configure-s3-verify.md).  
+-   [Paso 3: Compruebe la implementación de DirectAccess avanzada @ no__t-0.  
   
     En este paso se indica el procedimiento para comprobar la implementación.  
   

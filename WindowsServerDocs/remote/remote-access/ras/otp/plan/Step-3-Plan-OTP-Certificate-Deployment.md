@@ -1,9 +1,9 @@
 ---
-title: Paso 3 al planear la implementación del certificado OTP
-description: En este tema forma parte de la Guía de implementación de acceso remoto con autenticación OTP en Windows Server 2016.
+title: Paso 3 planear la implementación de certificados OTP
+description: Este tema forma parte de la guía deploy Remote Access with OTP Authentication in Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,70 +12,70 @@ ms.topic: article
 ms.assetid: eca02eeb-d92d-463e-aae0-1f7038ba26fe
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 4102fc4f7eacf0b407446717caa83e4e5f70ae57
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: e8406286599e5b03173ce1b5d6c34c35245a9094
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67282367"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366952"
 ---
-# <a name="step-3-plan-otp-certificate-deployment"></a>Paso 3 al planear la implementación del certificado OTP
+# <a name="step-3-plan-otp-certificate-deployment"></a>Paso 3 planear la implementación de certificados OTP
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Después de planear el servidor RADIUS, debe planear para los requisitos de certificación emisora (CA), incluidos la CA que emitirá certificados de la contraseña de un solo uso (OTP), la plantilla de certificado OTP y el certificado de autoridad de registro utilizado por el servidor remoto Servidor de acceso para firmar todas las solicitudes de certificado OTP de cliente de DirectAccess. Estos certificados se usan como sigue:  
+Después de planear el servidor RADIUS, debe planear los requisitos de entidad de certificación (CA), incluida la CA que emitirá certificados de contraseña de un solo uso (OTP), la plantilla de certificado OTP y el certificado de entidad de registro que usa el remoto. Acceso al servidor para firmar todas las solicitudes de certificado OTP de cliente de DirectAccess. Estos certificados se utilizan de la siguiente manera:  
   
-1.  El cliente de DirectAccess solicita un certificado OTP, y el servidor de acceso remoto recibe la solicitud.  
+1.  El cliente de DirectAccess solicita un certificado OTP y el servidor de acceso remoto recibe la solicitud.  
   
-2.  El servidor de acceso remoto comprueba las credenciales de OTP y si son válidos, el servidor actúa como una autoridad de registro y firma la solicitud de inscripción de certificado OTP con un certificado de firma de corta duración.  
+2.  El servidor de acceso remoto comprueba las credenciales de OTP y, si son válidas, el servidor actúa como una entidad de registro y firma la solicitud de inscripción de certificado OTP mediante un certificado de firma de corta duración.  
   
-3.  El servidor de acceso remoto envía la solicitud de inscripción de certificado firmado al cliente de DirectAccess  
+3.  El servidor de acceso remoto envía la solicitud de inscripción de certificado firmada de nuevo al cliente de DirectAccess  
   
-4.  El cliente, a continuación, inscriba el certificado OTP desde la CA con las solicitudes de inscripción de certificado firmadas por el servidor.  
+4.  Después, el cliente inscribe el certificado OTP de la entidad de certificación mediante las solicitudes de inscripción de certificados firmadas por el servidor.  
   
-5.  La CA comprueba las credenciales y la solicitud.  
+5.  La entidad de certificación comprueba las credenciales y la solicitud.  
   
 |Tarea|Descripción|  
 |----|--------|  
-|[3.1 planear la CA de OTP](#bkmk_3_1_CA)|Planee la entidad de certificación (CA) a usar para emitir certificados a los clientes de DirectAccess para la autenticación de OTP.|  
-|[3.2 Planear la plantilla de certificado OTP](#bkmk_3_2_OTP_Cert)|Planear la plantilla de certificado OTP.|
-|[3.3 planear el certificado de autoridad de registro](#bkmk_33RACert)|Planear el certificado de autoridad de registro para firmar todas las solicitudes de certificado de autenticación de OTP.|
+|[3,1 planear la CA de OTP](#bkmk_3_1_CA)|Planear la entidad de certificación (CA) que se va a usar para emitir certificados a los clientes de DirectAccess para la autenticación de OTP.|  
+|[3,2 planeamiento de la plantilla de certificado OTP](#bkmk_3_2_OTP_Cert)|Planee la plantilla de certificado OTP.|
+|[3,3 planear el certificado de la autoridad de registro](#bkmk_33RACert)|Planifique el certificado de la autoridad de registro para firmar todas las solicitudes de certificado de autenticación de OTP.|
 
-## <a name="bkmk_3_1_CA"></a>3.1 planear la CA de OTP  
-Para implementar DirectAccess con autenticación de contraseña de un solo uso (OTP), requieren una CA interna emitir los certificados de autenticación de OTP a equipos cliente de DirectAccess. Para ello, puede usar la misma CA interna que usan para emitir los certificados que se usan para la autenticación de equipo IPsec normal.  
+## <a name="bkmk_3_1_CA"></a>3,1 planear la CA de OTP  
+Para implementar DirectAccess con la autenticación de contraseña de un solo uso (OTP), necesita una CA interna para emitir los certificados de autenticación de OTP a los equipos cliente de DirectAccess. Para ello, puede usar la misma entidad de certificación interna que usa para emitir los certificados que se usan para la autenticación normal de equipos con IPsec.  
   
-## <a name="bkmk_3_2_OTP_Cert"></a>3.2 Planear la plantilla de certificado OTP  
-Cada cliente de DirectAccess requiere un certificado de autenticación de OTP con el fin de obtener acceso a la red interna. Debe configurar una plantilla en la CA interna para el certificado OTP. Al configurar la plantilla de certificado OTP, tenga en cuenta lo siguiente:  
+## <a name="bkmk_3_2_OTP_Cert"></a>3,2 planeamiento de la plantilla de certificado OTP  
+Cada cliente de DirectAccess requiere un certificado de autenticación de OTP para obtener acceso a la red interna. Debe configurar una plantilla en la entidad de certificación interna para el certificado OTP. Tenga en cuenta lo siguiente al configurar la plantilla de certificado OTP:  
   
--   Deben tener todos los usuarios que necesitan para realizar la autenticación de OTP de lectura y permisos de inscripción para esta plantilla.  
+-   Todos los usuarios que necesiten realizar la autenticación de OTP deben tener permisos de lectura e inscripción para esta plantilla.  
   
--   El nombre de sujeto debe generarse a partir de la información de Active Directory, para asegurarse de que el nombre del sujeto coincida con el nombre de usuario OTP y no el nombre del servidor de acceso remoto que realiza la solicitud de certificado. El nombre de sujeto debe tener el formato de nombre completo y el nombre alternativo del firmante debe estar en formato UPN. Esto garantiza que el certificado OTP inscrito es válido para la autenticación Smartcard Kerberos.  
+-   El nombre del firmante se debe crear a partir de Active Directory información, para asegurarse de que el nombre del sujeto coincide con el nombre de usuario de OTP, y no con el nombre del servidor de acceso remoto que realiza la solicitud de certificado. El nombre de sujeto debe tener el formato de nombre completo y el nombre alternativo del sujeto debe estar en formato UPN. Esto garantiza que el certificado de OTP inscrito sea válido para la autenticación de la tarjeta inteligente de Kerberos.  
   
 -   La finalidad prevista del certificado debe ser el inicio de sesión de tarjeta inteligente  
   
--   Emisión debe exigir una firma autorizada. La firma debe configurarse con la directiva de aplicación de OTP de DirectAccess predefinidos establecida en la plantilla de certificado de firma de autoridad de registro.  
+-   La emisión debe requerir una firma autorizada. La firma se debe configurar con la Directiva de aplicación OTP de DirectAccess predefinida en la plantilla de certificado de firma de autoridad de registro.  
   
 -   El período de validez debe establecerse en una hora.  
   
     > [!NOTE]  
-    > En situaciones donde el servidor de CA es un equipo con Windows Server 2003, a continuación, la plantilla debe configurarse en un equipo diferente. Esto es debido a que establecer el **período de validez** en horas no es posible cuando ejecuten versiones de Windows anteriores a Vista/2008. Si el equipo que use para configurar la plantilla no tiene instalada la función del servicio de certificación, o es un equipo cliente, es posible que deba instalar el complemento de plantillas de certificado. Para obtener más información sobre este tema, haga clic en [aquí](https://technet.microsoft.com/library/cc732445.aspx).  
+    > En situaciones en las que el servidor de CA es un equipo con Windows Server 2003, la plantilla debe estar configurada en un equipo diferente. Esto se debe al hecho de que no es posible establecer el **período de validez** en horas cuando se ejecutan versiones de Windows anteriores a 2008/vista. Si el equipo que utiliza para configurar la plantilla no tiene instalado el rol de servicio de certificación o es un equipo cliente, es posible que tenga que instalar el complemento plantillas de certificado. Para obtener más información sobre este tema, haga clic [aquí](https://technet.microsoft.com/library/cc732445.aspx).  
   
 -   El período de renovación debe establecerse en 0.  
   
--   (Opcional) Los certificados y las solicitudes no se almacenan en la base de datos de CA.  
+-   Opta Los certificados y las solicitudes no deben almacenarse en la base de datos de CA.  
   
--   El parámetro de uso mejorado de clave del certificado debe establecerse correctamente, como sigue:  
+-   El parámetro uso mejorado de clave de certificado debe establecerse correctamente, como se indica a continuación:  
   
     -   Para la plantilla de certificado de firma de registro de DirectAccess, use la clave 1.3.6.1.4.1.311.81.1.1.  
   
-    -   Para la plantilla de certificado de autenticación de OTP, use la clave 1.3.6.1.4.1.311.20.2.2.  
+    -   Para la plantilla de certificado de autenticación OTP, use la clave 1.3.6.1.4.1.311.20.2.2 de clave.  
   
-## <a name="bkmk_33RACert"></a>3.3 planear el certificado de autoridad de registro  
-Cuando los clientes de DirectAccess solicitan un certificado OTP, el servidor de acceso remoto recibe la solicitud del cliente. El servidor de acceso remoto inicia todas las solicitudes de certificado OTP de clientes que usen el certificado de autoridad de registro. La entidad de certificación emite certificados sólo si la solicitud está firmada por el certificado de autoridad de registro en el servidor de acceso remoto. El certificado debe emitirlo una CA interna, el certificado no es autofirmado. No tiene que ser emitido por la CA que emitió los certificados OTP, pero la CA que emite los certificados OTP debe confiar en la entidad de certificación que emite el certificado de firma de autoridad de registro.  
+## <a name="bkmk_33RACert"></a>3,3 planear el certificado de la autoridad de registro  
+Cuando los clientes de DirectAccess solicitan un certificado OTP, el servidor de acceso remoto recibe la solicitud del cliente. El servidor de acceso remoto firma todas las solicitudes de certificados OTP de los clientes que usan el certificado de la entidad de registro. La CA emite certificados solo si la solicitud está firmada por el certificado de la autoridad de registro en el servidor de acceso remoto. El certificado debe estar emitido por una CA interna, el certificado no se puede firmar automáticamente. No es necesario que lo emita la CA que emitió los certificados OTP, pero la CA que emite los certificados OTP debe confiar en la CA que emite el certificado de firma de autoridad de registro.  
   
 ## <a name="BKMK_Links"></a>Vea también  
   
--   [Paso 4: Planear la OTP para el servidor de acceso remoto](Step-4-Plan-for-OTP-on-the-Remote-Access-Server.md)  
+-   [Paso 4: Planear la OTP para el servidor de acceso remoto @ no__t-0  
   
 
 

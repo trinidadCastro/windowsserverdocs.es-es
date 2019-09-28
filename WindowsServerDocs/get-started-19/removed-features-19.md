@@ -2,7 +2,7 @@
 title: Características eliminadas o que está previsto eliminar en Windows Server 2019
 description: Obtén información sobre las características y funcionalidades que se han eliminado o que está previsto eliminar a partir de Windows Server 2019.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -13,12 +13,12 @@ ms.author: jgerend
 manager: jasgro
 ms.date: 08/22/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 0f6b6ac42c096c6c80404c2d650905e73da8a97a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 261023223b56e235320b7ad414fa91206420b1ed
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868649"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71360842"
 ---
 # <a name="features-removed-or-planned-for-replacement-starting-windows-server-2019"></a>Características eliminadas o que está previsto eliminar a partir de Windows Server 2019
 
@@ -50,7 +50,7 @@ Si tienes algún comentario acerca de la sustitución propuesta de cualquiera de
 
 | Característica     | En su lugar, puedes usar... |
 | ----------- | --------------------- |
-| Unidad de almacenamiento de claves de Hyper-V|Ya no trabajamos en la característica de unidad de almacenamiento de claves de Hyper-V. Si usas VM de generación 1, consulta [Seguridad de virtualización de máquinas virtuales de generación 1](../virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v.md) para obtener más información acerca de las opciones en el futuro. Si vas a crear nuevas VM, usa máquinas virtuales de generación 2 con dispositivos TPM para una solución más segura. |
+| Unidad de almacenamiento de claves de Hyper-V|Ya no trabajamos en la característica de unidad de almacenamiento de claves de Hyper-V. Si usas máquinas virtuales de generación 1, consulta [Seguridad de virtualización de máquinas virtuales de generación 1](../virtualization/hyper-v/learn-more/generation-1-virtual-machine-security-settings-for-hyper-v.md) para obtener más información acerca de las opciones en el futuro. Si vas a crear nuevas VM, usa máquinas virtuales de generación 2 con dispositivos TPM para usar una solución más segura. |
 | Consola de administración del módulo de plataforma segura (TPM)|La información que estaba disponible en la consola de administración de TPM ahora está disponible en la página [**Seguridad del dispositivo**](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/wdsc-device-security) en el [Centro de seguridad de Windows Defender](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-security-center/windows-defender-security-center). |
 | Modo de atestación de Active Directory en el servicio Host Guardian|Ya no desarrollamos el modo de atestación de Active Directory en el servicio Host Guardian. En su lugar, hemos agregado un nuevo modo de atestación, [atestación de clave de host](../security/guarded-fabric-shielded-vm/guarded-fabric-create-host-key.md), que es mucho más sencillo e igualmente compatible que la atestación basada en Active Directory.  Este nuevo modo proporciona una funcionalidad equivalente con una experiencia de instalación, una administración más simple y menos dependencias de infraestructura que la atestación de Active Directory. La atestación de claves de host no tiene ningún requisito de hardware diferente de la atestación de Active Directory, por lo que todos los sistemas existentes seguirán siendo compatibles con el nuevo modo. Consulta [Implementación de hosts protegidos](../security/guarded-fabric-shielded-vm/guarded-fabric-configure-hgs-with-authorized-hyper-v-hosts.md) para obtener más información acerca de las opciones de atestación. |
 | Servicio OneSync | El servicio OneSync sincroniza los datos de las aplicaciones Correo, Calendario y Contactos. Hemos agregado un motor de sincronización a la aplicación Outlook que proporciona la misma sincronización. |

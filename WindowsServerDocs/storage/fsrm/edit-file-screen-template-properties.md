@@ -2,18 +2,18 @@
 title: Editar las propiedades de la plantilla de filtro de archivos
 description: En este artículo se describe cómo editar las propiedades de la plantilla de filtro de archivos
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 31ca46707a32d23a5dd9606c57bcaec5d6e53a80
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9e84545be86bdb8fcba09d0ff49ac98b44cd7bdf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846896"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403123"
 ---
 # <a name="edit-file-screen-template-properties"></a>Editar las propiedades de la plantilla de filtro de archivos
 
@@ -28,7 +28,7 @@ Al realizar cambios en una plantilla de filtro de archivos, tienes la opción de
 
 1.  En **Plantillas de filtro de archivos**, selecciona la plantilla que quieres modificar.
 
-2.  Haga clic en la plantilla de filtro de archivo y haga clic en **editar propiedades de la plantilla** (o en el **acciones** panel, en **plantillas de pantalla de archivo seleccionado**, seleccione  **Editar propiedades de plantilla**.) Se abrirá el **propiedades de plantilla de filtro de archivos** cuadro de diálogo.
+2.  Haga clic con el botón derecho en la plantilla de filtro de archivos y haga clic en **Editar propiedades** de la plantilla (o en el panel **acciones** , en **plantillas de filtro de archivos seleccionadas**, seleccione **Editar propiedades de plantilla**). Se abrirá el cuadro de diálogo Propiedades de la **plantilla de filtro de archivos** .
 
 3.  Si quieres copiar las propiedades de otra plantilla para usarla como base de la plantilla modificada, selecciona una plantilla en la lista desplegable **Copiar propiedades de la plantilla**. Luego haz clic en **Copiar**.
 
@@ -47,6 +47,6 @@ Al realizar cambios en una plantilla de filtro de archivos, tienes la opción de
 ## <a name="see-also"></a>Vea también
 
 -   [Administración del filtrado de archivos](file-screening-management.md)
--   [Crear una plantilla de pantalla de archivo](create-file-screen-template.md)
+-   [Crear una plantilla de filtro de archivos](create-file-screen-template.md)
 
 

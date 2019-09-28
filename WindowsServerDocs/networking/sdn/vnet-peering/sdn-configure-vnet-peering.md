@@ -2,23 +2,23 @@
 title: Configurar el emparejamiento de la red virtual
 description: La configuración del emparejamiento de redes virtuales implica la creación de dos redes virtuales que se van a emparejar.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-hv-switch
 ms.topic: get-started-article
 ms.assetid: ''
 ms.author: pashort
 author: shortpatti
 ms.date: 08/08/2018
-ms.openlocfilehash: 417585ffbe1e8374be1560073d5636659eaf4332
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4d35501b8d876f2a178a4744d495125dea8da6c7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869880"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405820"
 ---
 # <a name="configure-virtual-network-peering"></a>Configurar el emparejamiento de la red virtual
 
->Se aplica a: Windows Server
+>Se aplica a: Windows Server
 
 En este procedimiento, usará Windows PowerShell para crear dos redes virtuales, cada una con una subred. A continuación, configure el emparejamiento entre las dos redes virtuales para habilitar la conectividad entre ellos.
 

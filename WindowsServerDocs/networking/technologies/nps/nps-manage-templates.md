@@ -1,85 +1,85 @@
 ---
 title: Administrar plantillas NPS
-description: Este tema proporciona instrucciones sobre cómo crear, aplicar, exportar e importar plantillas de NPS para el servidor de directivas de redes en Windows Server 2016.
+description: En este tema se proporcionan instrucciones sobre cómo crear, aplicar, exportar e importar plantillas de NPS para el servidor de directivas de redes en Windows Server 2016.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 989b00c5-4767-4081-ace5-6321f8b2c55e
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 170a0e86f7dcca77c6efe841318b522554f8e78e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 5ac733c11b277f09e64779c33d3392303fc34d98
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59845136"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396157"
 ---
 # <a name="manage-nps-templates"></a>Administrar plantillas NPS
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar el servidor de directivas de red \(NPS\) plantillas para crear elementos de configuración, como Remote Authentication Dial-in User Service \(RADIUS\) clientes o los secretos compartidos, que puede volver a usar en el equipo local NPS y exportación para su uso en otros NPSs. 
+Puede usar las plantillas del servidor de directivas de redes \(NPS @ no__t-1 para crear elementos de configuración, como Servicio de autenticación remota telefónica de usuario \(RADIUS @ no__t-3 o secretos compartidos, que puede reutilizar en el NPS local y exportar para su uso en otros NPSs. 
 
-Administración de plantillas proporciona un nodo en la consola NPS, donde puede crear, modificar, eliminar, duplicar y ver el uso de plantillas de NPS. Plantillas de NPS están diseñadas para reducir la cantidad de tiempo y el costo que se tarda en configuración de NPS en uno o varios servidores.
+La administración de plantillas proporciona un nodo en la consola de NPS donde puede crear, modificar, eliminar, duplicar y ver el uso de las plantillas de NPS. Las plantillas de NPS están diseñadas para reducir la cantidad de tiempo y el costo que se tarda en configurar NPS en uno o varios servidores.
 
-Los siguientes tipos de plantilla NPS están disponibles para la configuración de administración de plantillas.
+Los siguientes tipos de plantilla de NPS están disponibles para la configuración en la administración de plantillas.
 
-- **Secretos compartidos**. Este tipo de plantilla permite especificar un secreto compartido que puede volver a usar (seleccionando la plantilla en la ubicación adecuada en la consola de NPS) al configurar clientes y servidores RADIUS. 
+- **Secretos compartidos**. Este tipo de plantilla permite especificar un secreto compartido que se puede reutilizar (si se selecciona la plantilla en la ubicación adecuada en la consola NPS) al configurar clientes y servidores RADIUS. 
 
-- **Los clientes RADIUS**. Este tipo de plantilla permite configurar opciones de cliente RADIUS que se pueden volver a utilizar seleccionando la plantilla en la ubicación adecuada en la consola de NPS.
+- **Clientes RADIUS**. Este tipo de plantilla permite configurar las opciones de cliente RADIUS que se pueden reutilizar seleccionando la plantilla en la ubicación adecuada en la consola NPS.
 
-- **Servidores remotos RADIUS**. Esta plantilla permite configurar los valores de servidor RADIUS remotos que se pueden volver a utilizar seleccionando la plantilla en la ubicación adecuada en la consola de NPS. 
+- **Servidores RADIUS remotos**. Esta plantilla permite configurar las opciones del servidor RADIUS remoto que puede reutilizar seleccionando la plantilla en la ubicación adecuada en la consola NPS. 
 
-- **Filtros IP**. Esta plantilla permite crear el protocolo de Internet versión 4 (IPv4) y protocolo de Internet versión 6 \(IPv6\) filtros que puede reutilizar \(seleccionando la plantilla en la ubicación adecuada en NPS consola\) al configurar las directivas de red.
+- **Filtros IP**. Esta plantilla permite crear filtros del Protocolo de Internet versión 4 (IPv4) y del Protocolo de Internet versión 6 \(IPv6 @ no__t-1 que se pueden reutilizar \(by seleccionar la plantilla en la ubicación adecuada en la consola de NPS @ no__t-3 cuando se configurar directivas de red.
 
-## <a name="create-an-nps-template"></a>Crear una plantilla de NPS
+## <a name="create-an-nps-template"></a>Creación de una plantilla de NPS
 
-Configuración de una plantilla es diferente a la configuración de NPS directamente. Creación de una plantilla no afecta a la funcionalidad de NPS. Es sólo al seleccionar la plantilla en la ubicación adecuada en la consola de NPS y aplicar la plantilla que la plantilla afecta a la funcionalidad NPS. 
+La configuración de una plantilla es diferente de la configuración de NPS directamente. La creación de una plantilla no afecta a la funcionalidad del NPS. Solo cuando se selecciona la plantilla en la ubicación adecuada en la consola de NPS y se aplica la plantilla que la plantilla afecta a la funcionalidad de NPS. 
 
-Por ejemplo, si configura un cliente RADIUS en la consola NPS en **clientes y servidores RADIUS**, modificar la configuración de NPS y realizar un paso en la configuración de NPS para comunicarse con uno de los servidores de acceso de red. \(El siguiente paso es configurar el servidor de acceso de red \(NAS\) para comunicarse con NPS.\) 
+Por ejemplo, si configura un cliente RADIUS en la consola de NPS en **clientes y servidores RADIUS**, modifica la configuración de NPS y realiza un paso en la configuración de NPS para comunicarse con uno de los servidores de acceso a la red. @no__t paso siguiente consiste en configurar el servidor de acceso a la red \(NAS @ no__t-2 para comunicarse con NPS. \) 
 
-Sin embargo, si configura un nuevo **clientes RADIUS** plantilla en la consola NPS en **administración de plantillas** en lugar de crear un nuevo cliente RADIUS en **clientes RADIUS y servidores**, ha creado una plantilla, pero no se ha alterado la funcionalidad NPS todavía. Para modificar la funcionalidad NPS, debe aplicar la plantilla desde la ubicación correcta en la consola de NPS.
+Sin embargo, si configura una nueva plantilla de **clientes RADIUS** en la consola de NPS en **Administración de plantillas** en lugar de crear un nuevo cliente RADIUS en **clientes y servidores RADIUS**, ha creado una plantilla, pero no ha modificado el Funcionalidad de NPS todavía. Para modificar la funcionalidad de NPS, debe aplicar la plantilla desde la ubicación correcta en la consola de NPS.
 
-El siguiente procedimiento proporciona instrucciones sobre cómo crear una nueva plantilla.
+En el procedimiento siguiente se proporcionan instrucciones sobre cómo crear una nueva plantilla.
 
-Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.
+La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
-### <a name="to-create-an-nps-template"></a>Para crear una plantilla NPS
+### <a name="to-create-an-nps-template"></a>Para crear una plantilla de NPS
 
 
-1. En el NPS, en el administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de red**. Se abre la consola de NPS. 
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS. 
 
-2. En la consola NPS, expanda **administración de plantillas**, haga clic en un tipo de plantilla, como **clientes RADIUS**y, a continuación, haga clic en **New**.
+2. En la consola de NPS, expanda **Administración de plantillas**, haga clic con el botón secundario en un tipo de plantilla, como **clientes RADIUS**y, a continuación, haga clic en **nuevo**.
 
-3. Un nuevo cuadro de diálogo de propiedades de plantilla se abre que puede usar para configurar la plantilla.
+3. Se abre un cuadro de diálogo nuevas propiedades de plantilla que puede usar para configurar la plantilla.
 
-## <a name="apply-an-nps-template"></a>Aplicar una plantilla de NPS
+## <a name="apply-an-nps-template"></a>Aplicación de una plantilla de NPS
 
-Puede usar una plantilla que ha creado en **administración de plantillas** navegando a una ubicación en la consola NPS, donde puede aplicar la plantilla. Por ejemplo, si desea aplicar una plantilla de secretos compartidos a una configuración de cliente RADIUS, puede usar el procedimiento siguiente.
+Puede usar una plantilla que haya creado en la **Administración de plantillas** Si navega a una ubicación en la consola de NPS en la que puede aplicar la plantilla. Por ejemplo, si desea aplicar una plantilla de secretos compartidos a una configuración de cliente RADIUS, puede usar el procedimiento siguiente.
 
-Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.
+La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
-### <a name="to-apply-an-nps-template"></a>Para aplicar una plantilla NPS
+### <a name="to-apply-an-nps-template"></a>Para aplicar una plantilla de NPS
 
-1. En el NPS, en el administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de red**. Se abre la consola de NPS.
+1. En el NPS, en Administrador del servidor, haga clic en **herramientas**y, a continuación, haga clic en **servidor de directivas de redes**. Se abre la consola NPS.
 
 2. En la consola NPS, expanda **clientes y servidores RADIUS**y, a continuación, expanda **clientes RADIUS**.
 
-3. en **clientes RADIUS**, en el panel de detalles, haga clic en el cliente RADIUS a la que desea aplicar la plantilla NPS y, a continuación, haga clic en **propiedades**.
+3.In **clientes RADIUS**, en el panel de detalles, haga clic con el botón secundario en el cliente RADIUS al que desea aplicar la plantilla de NPS y, a continuación, haga clic en **propiedades**.
 
-4. En el cuadro de diálogo de propiedades cuadro para el cliente RADIUS, en **seleccionar una plantilla existente de secretos compartidos**, seleccione la plantilla que desea aplicar en la lista de plantillas.
+4. En el cuadro de diálogo Propiedades del cliente RADIUS, en **Seleccione una plantilla de secretos compartidos existente**, seleccione la plantilla que desea aplicar en la lista de plantillas.
 
 ## <a name="export-or-import-nps-templates"></a>Exportar o importar plantillas de NPS
 
-Puede exportar plantillas para su uso en otros NPSs, o bien puede importar plantillas en **administración de plantillas** para su uso en el equipo local. 
+Puede exportar plantillas para usarlas en otros NPSs, o puede importar plantillas en la **Administración de plantillas** para usarlas en el equipo local. 
 
-Pertenencia a **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.
+La pertenencia al grupo **administradores**, o equivalente, es lo mínimo necesario para completar este procedimiento.
 
 ### <a name="to-export-or-import-nps-templates"></a>Para exportar o importar plantillas de NPS
 
-1. Para exportar las plantillas NPS, en la consola NPS, haga clic en **administración de plantillas**y, a continuación, haga clic en **exportar plantillas a un archivo**.
+1. Para exportar plantillas NPS, en la consola NPS, haga clic con el botón derecho en **Administración de plantillas**y, a continuación, haga clic en **exportar plantillas a un archivo**.
 
-2. Para importar las plantillas NPS, en la consola NPS, haga clic en **administración de plantillas**y, a continuación, haga clic en **importar plantillas desde un equipo** o **importar plantillas desde un archivo**.
+2. Para importar plantillas NPS, en la consola NPS, haga clic con el botón derecho en **Administración de plantillas**y, a continuación, haga clic en **importar plantillas de un equipo** o **importar plantillas desde un archivo**.
 
 

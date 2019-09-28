@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 03/07/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 72524fcc71f722daeb8238bc3cffc6d38a611098
-ms.sourcegitcommit: 9f955be34c641b58ae8b3000768caa46ad535d43
+ms.prod: windows-server
+ms.openlocfilehash: c7f436ea9b2baa00294ccef52a5d7a27c7247e4a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/27/2019
-ms.locfileid: "68590581"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406784"
 ---
 # <a name="manage-servers-with-windows-admin-center"></a>Administrar servidores con el centro de administración de Windows
 
@@ -41,7 +41,7 @@ Para agregar un servidor al centro de administración de Windows:
 El servidor se agregará a la lista de conexiones en la página información general. Haga clic en él para conectarse al servidor.
 
 > [!NOTE]
-> También puede Agregar clústeres de [conmutación por error](manage-failover-clusters.md) o [clústeres](manage-hyper-converged.md) hiperconvergidos como una conexión independiente en el centro de administración de Windows.
+> También puede agregar [clústeres de conmutación por error](manage-failover-clusters.md) o [clústeres hiperconvergidos](manage-hyper-converged.md) como una conexión independiente en el centro de administración de Windows.
 
 ## <a name="tools"></a>Herramientas
 
@@ -71,7 +71,7 @@ Las siguientes herramientas están disponibles para las conexiones de servidor:
 | [Tareas programadas](#scheduled-tasks) | Ver y modificar las tareas programadas |
 | [Servicios](#services) | Ver y modificar servicios |
 | [Configuración](#settings) | Ver y modificar servicios |
-| [Storage](#storage) | Visualización y modificación de dispositivos de almacenamiento |
+| [Almacenamiento](#storage) | Visualización y modificación de dispositivos de almacenamiento |
 | [Servicio de migración de almacenamiento](#storage-migration-service) | Migración de servidores y recursos compartidos de archivos a Azure o Windows Server 2019 |
 | [Réplica de almacenamiento](#storage-replica) | Usar réplica de almacenamiento para administrar la replicación de almacenamiento de servidor a servidor |
 | [Conclusiones del sistema](#system-insights) | System Insights proporciona un mayor conocimiento del funcionamiento del servidor. |
@@ -119,7 +119,7 @@ Están disponibles las siguientes opciones de administración de Active Director
 
 [**Ver comentarios y características propuestas para Active Directory**](https://windowsserver.uservoice.com/forums/295071/filters/top?category_id=319162&query=%5BActive%20Directory%5D).
 
-## <a name="backup"></a>Copia de seguridad
+## <a name="backup"></a>Copias de seguridad
 
 La **copia de seguridad** le permite proteger su servidor de Windows frente a daños, ataques o desastres mediante la copia de seguridad del servidor directamente en Microsoft Azure.
 [Más información sobre Azure Backup.](https://aka.ms/windows-admin-center-backup)

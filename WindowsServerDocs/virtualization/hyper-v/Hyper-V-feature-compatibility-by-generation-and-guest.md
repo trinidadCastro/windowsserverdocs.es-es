@@ -1,7 +1,7 @@
 ---
-title: Compatibilidad de la característica Hyper-V mediante la generación e invitado
-description: Enumera las generaciones y sistemas operativos que son compatibles con las características clave de Hyper-V
-ms.prod: windows-server-threshold
+title: Compatibilidad de las características de Hyper-V por generación e invitado
+description: Enumera las generaciones y los sistemas operativos que son compatibles con las características de Hyper-V clave
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,86 +11,86 @@ ms.assetid: 81c1f32d-7814-4992-8a66-dd4b77c939b4
 author: KBDAzure
 ms.author: kathydav
 ms.date: 12/05/2016
-ms.openlocfilehash: 5950a75da4569979794a5848bd41ab349dc34676
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: cdca6c31ff14fe63e99ec4afa2581885677bb61d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66812653"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365537"
 ---
-# <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>Compatibilidad de la característica Hyper-V mediante la generación e invitado
+# <a name="hyper-v-feature-compatibility-by-generation-and-guest"></a>Compatibilidad de las características de Hyper-V por generación e invitado
 
 >Se aplica a: Windows Server 2016
   
-Las tablas en este artículo muestran las generaciones y sistemas operativos que son compatibles con algunas de las características de Hyper-V, agrupadas por categorías. En general, obtendrá la mejor disponibilidad de características con una máquina virtual de generación 2 que se ejecuta el sistema operativo más reciente.  
+En las tablas de este artículo se muestran las generaciones y los sistemas operativos que son compatibles con algunas de las características de Hyper-V, agrupadas por categorías. En general, obtendrá la mejor disponibilidad de las características con una máquina virtual de generación 2 que ejecute el sistema operativo más reciente.  
   
-Tenga en cuenta que algunas características dependen de hardware u otra infraestructura. Para obtener detalles de hardware, consulte [requisitos del sistema para Hyper-V en Windows Server 2016](System-requirements-for-Hyper-V-on-Windows.md). En algunos casos, una característica puede usarse con cualquier sistema operativo invitado admitido. Para obtener más información en el que se admiten sistemas operativos, consulte:  
+Tenga en cuenta que algunas características se basan en el hardware o en otra infraestructura. Para obtener información sobre el hardware, consulte [requisitos del sistema para Hyper-V en Windows Server 2016](System-requirements-for-Hyper-V-on-Windows.md). En algunos casos, una característica se puede usar con cualquier sistema operativo invitado compatible. Para obtener información detallada sobre qué sistemas operativos se admiten, consulte:  
   
-* [De máquinas virtuales Linux y FreeBSD compatibles](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)  
+* [Máquinas virtuales Linux y FreeBSD compatibles](Supported-Linux-and-FreeBSD-virtual-machines-for-Hyper-V-on-Windows.md)  
 * [Sistemas operativos invitados Windows compatibles](Supported-Windows-guest-operating-systems-for-Hyper-V-on-Windows.md)  
   
-## <a name="availability-and-backup"></a>Copia de seguridad y disponibilidad  
+## <a name="availability-and-backup"></a>Disponibilidad y copia de seguridad  
   
-Característica  | generación | Sistema operativo invitado  
+Característica  | Última | Sistema operativo invitado  
 ------------- | ------------- | -----------  
-Puntos de comprobación | 1 y 2 | Los invitados compatibles  
-Clústeres invitados | 1 y 2 | Invitados que ejecutan aplicaciones compatibles con clústeres y tienen instalado el software de destino iSCSI  
-Replicación | 1 y 2 | Los invitados compatibles  
-Controlador de dominio | 1 y 2 | Cualquier admitido con solo puntos de control de producción de invitado de Windows Server. Consulte [sistemas de operativos invitados compatibles con Windows Server](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows#supported-windows-server-guest-operating-systems)   
+Puntos de comprobación | 1 y 2 | Cualquier invitado compatible  
+Agrupación en clústeres invitados | 1 y 2 | Invitados que ejecutan aplicaciones compatibles con clústeres y tienen instalado el software de destino iSCSI  
+Replicación | 1 y 2 | Cualquier invitado compatible  
+Controlador de dominio | 1 y 2 | Cualquier invitado de Windows Server compatible con solo puntos de control de producción. Consulte [sistemas operativos invitados compatibles con Windows Server](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows#supported-windows-server-guest-operating-systems)   
   
 ## <a name="compute"></a>Cálculo  
   
-Característica  | generación | Sistema operativo invitado  
+Característica  | Última | Sistema operativo invitado  
 ------------- | ------------- | -----------  
-Memoria dinámica | 1 y 2 | Versiones específicas de los invitados compatibles. Consulte [Hyper-V Dynamic Memory Overview](https://technet.microsoft.com/library/hh831766.aspx) para las versiones anteriores a Windows Server 2016 y Windows 10.  
-Agregar/extracción en caliente de memoria | 1 y 2 | Windows Server 2016, Windows 10  
-NUMA virtual | 1 y 2 | Los invitados compatibles  
+Memoria dinámica | 1 y 2 | Versiones específicas de invitados admitidos. Vea [información general de memoria dinámica de Hyper-V](https://technet.microsoft.com/library/hh831766.aspx) para versiones anteriores a windows Server 2016 y Windows 10.  
+Adición o eliminación de memoria en caliente | 1 y 2 | Windows Server 2016, Windows 10  
+NUMA virtual | 1 y 2 | Cualquier invitado compatible  
   
 ## <a name="development-and-test"></a>Desarrollo y pruebas  
-Característica  | generación | Sistema operativo invitado  
+Característica  | Última | Sistema operativo invitado  
 ------------- | ------------- | -----------  
-Puertos COM/serie | 1 y 2 <br>**Nota:** Para la generación 2, use Windows PowerShell para configurar. Para obtener más información, consulte [agregar un puerto COM para la depuración de kernel](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#add-a-com-port-for-kernel-debugging). | Los invitados compatibles  
+Puertos COM/serie | 1 y 2 <br>**Nota:** Para la generación 2, use Windows PowerShell para configurar. Para obtener más información, vea [Agregar un puerto com para la depuración del kernel](./plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v.md#add-a-com-port-for-kernel-debugging). | Cualquier invitado compatible  
   
 ## <a name="mobility"></a>Movilidad  
   
-Característica  | generación | Sistema operativo invitado  
+Característica  | Última | Sistema operativo invitado  
 ------------- | ------------- | -----------  
-Migración en vivo  | 1 y 2 |  Los invitados compatibles  
-Import/export | 1 y 2 |  Los invitados compatibles  
+Migración en vivo  | 1 y 2 |  Cualquier invitado compatible  
+Importar o exportar | 1 y 2 |  Cualquier invitado compatible  
   
 ## <a name="networking"></a>Funciones de red  
   
-Característica  | generación | Sistema operativo invitado  
+Característica  | Última | Sistema operativo invitado  
 ------------- | ------------- | -----------  
-Agregar/extracción en caliente de adaptador de red virtual | 2 | Los invitados compatibles  
-Adaptador de red virtual heredado | 1 | Los invitados compatibles  
+Adición o eliminación en caliente del adaptador de red virtual | 2 | Cualquier invitado compatible  
+Adaptador de red virtual heredado | 1 | Cualquier invitado compatible  
 Virtualización de entrada/salida de raíz única (SR-IOV) | 1 y 2 | invitados de Windows de 64 bits, a partir de Windows Server 2012 y Windows 8.  
-Cola de la máquina virtual con varias (VMMQ) | 1 y 2  | Los invitados compatibles  
+Varias colas de máquinas virtuales (VMMQ) | 1 y 2  | Cualquier invitado compatible  
   
 ## <a name="remote-connection-experience"></a>Experiencia de conexión remota  
   
-Característica  | generación | Sistema operativo invitado  
+Característica  | Última | Sistema operativo invitado  
 ------------- | ------------- | -----------  
-Asignación discreta de dispositivos (DDA) | 1 y 2 | Windows Server 2016, Windows Server 2012 R2 sólo con actualización 3133690 instalada, Windows 10 <br> **Nota:** Para más información sobre la actualización 3133690, consulte [esto](https://support.microsoft.com/kb/3133690) artículo de soporte técnico.  
-Modo de sesión mejorada | 1 y 2 | Windows Server 2016, Windows Server 2012 R2, Windows 10 y Windows 8.1, con servicios de escritorio remoto habilitado <br>**Nota**: Es posible que deba también configurar el host. Para obtener más información, consulte [usar los recursos locales en la máquina virtual de Hyper-V con VMConnect](./learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md).  
-RemoteFx | 1 y 2 | Generación 1 en versiones de Windows de 32 bits y 64 bits a partir de Windows 8. <br> Generación 2 en las versiones de 64 bits de Windows 10  
+Asignación discreta de dispositivos (DDA) | 1 y 2 | Windows Server 2016, Windows Server 2012 R2 solo con Update 3133690 instalado, Windows 10 <br> **Nota:** Para obtener más información sobre la actualización 3133690, consulte [este](https://support.microsoft.com/kb/3133690) artículo de soporte técnico.  
+Modo de sesión mejorada | 1 y 2 | Windows Server 2016, Windows Server 2012 R2, Windows 10 y Windows 8.1, con Servicios de Escritorio remoto habilitado <br>**Nota**: Es posible que también tenga que configurar el host. Para obtener más información, consulte [uso de recursos locales en una máquina virtual de Hyper-V con VMConnect](./learn-more/Use-local-resources-on-Hyper-V-virtual-machine-with-VMConnect.md).  
+RemoteFx | 1 y 2 | Generación 1 en versiones de Windows de 32 bits y de 64 bits a partir de Windows 8. <br> Generación 2 en versiones de Windows 10 de 64 bits  
   
 ## <a name="security"></a>Seguridad  
   
-Característica  | generación | Sistema operativo invitado  
+Característica  | Última | Sistema operativo invitado  
 ------------- | ------------- | -----------  
-Arranque seguro | 2 | **Linux**: Ubuntu 14.04 y versiones posterior, SUSE Linux Enterprise Server 12 y versiones posterior, rojo Hat Enterprise Linux 7.0 y versiones posterior y CentOS 7.0 y versiones posteriores<br>**Windows**: Todas las versiones admitidas que se pueden ejecutar en una máquina virtual de generación 2  
-Máquinas virtuales blindadas | 2 | **Windows**: Todas las versiones admitidas que se pueden ejecutar en una máquina virtual de generación 2  
+Arranque seguro | 2 | **Linux**: Ubuntu 14,04 y versiones posteriores, SUSE Linux Enterprise Server 12 y versiones posteriores, Red Hat Enterprise Linux 7,0 y versiones posteriores, y versión 7,0 y versiones posteriores<br>**Windows**: Todas las versiones compatibles que se pueden ejecutar en una máquina virtual de generación 2  
+Máquinas virtuales blindadas | 2 | **Windows**: Todas las versiones compatibles que se pueden ejecutar en una máquina virtual de generación 2  
   
 ## <a name="storage"></a>Almacenamiento  
   
-Característica  | generación | Sistema operativo invitado  
+Característica  | Última | Sistema operativo invitado  
 ------------- | ------------- | -----------  
-Discos duros virtuales (sólo VHDX) compartidos | 1 y 2  | Windows Server 2016, Windows Server 2012 R2, Windows Server 2012  
-SMB3 | 1 y 2 | Todo lo que admiten SMB3  
+Discos duros virtuales compartidos (solo VHDX) | 1 y 2  | Windows Server 2016, Windows Server 2012 R2, Windows Server 2012  
+SMB3 | 1 y 2 | Todo eso es compatible con SMB3  
 Espacios de almacenamiento directo | 2 | Windows Server 2016  
 Canal de fibra virtual | 1 y 2 | Windows Server 2016, Windows Server 2012 R2, Windows Server 2012  
-Formato VHDX | 1 y 2 | Los invitados compatibles   
+Formato VHDX | 1 y 2 | Cualquier invitado compatible   
   
   
   

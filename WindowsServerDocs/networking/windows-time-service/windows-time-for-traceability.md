@@ -7,14 +7,14 @@ ms.author: dacuo
 manager: dougkim
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: 161188eccdd848cf50be1a4485beeb58935f643a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 307739042426088fa92c50e6ea4dc5d2a744f15a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871782"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405205"
 ---
 # <a name="windows-time-for-traceability"></a>Hora de Windows para rastreabilidad
 >Se aplica a: Windows Server 2016 versión 1709 o posterior y Windows 10 versión 1703 o posterior
@@ -110,7 +110,7 @@ Server1. fabrikam. com, 0x8 (NTP. m | 0x8 | [::]: 123-> [IPAddress]: 123) servid
 |||
 |---|---|
 |Descripción del evento |Estado y configuración del servicio de hora |
-|Detalles |W32time registra periódicamente su configuración y su estado. Este es el equivalente a llamar a:<br><br>`w32tm /query /configuration /verbose`<br>OR<br>`w32tm /query /status /verbose` |
+|Detalles |W32time registra periódicamente su configuración y su estado. Este es el equivalente a llamar a:<br><br>`w32tm /query /configuration /verbose`<br>O bien,<br>`w32tm /query /status /verbose` |
 |Mecanismo de limitación  |Se registra una vez cada 8 horas. |
 
 # <a name="261tab261"></a>[261](#tab/261)

@@ -2,7 +2,7 @@
 title: Características avanzadas de VPN de Always On
 description: Más allá del escenario de implementación que se proporciona en esta implementación, puede agregar otras características avanzadas de VPN para mejorar la seguridad y la disponibilidad de la conexión VPN.
 ms.assetid: 51a1ee61-3ffe-4f65-b8de-ff21903e1e74
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.date: 07/24/19
@@ -10,12 +10,12 @@ ms.author: pashort, v-tea
 author: shortpatti
 ms.localizationpriority: medium
 ms.reviewer: deverette
-ms.openlocfilehash: e09a23b6f1c14c4c14b00fd19d84d0abb71d0163
-ms.sourcegitcommit: e40fce7b8b4bc0bef278e676435306f14078cf00
+ms.openlocfilehash: aee2f14d0d99fd453fa6fb1f3147a515ca57abb1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68787214"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366915"
 ---
 # <a name="advanced-features-of-always-on-vpn"></a>Características avanzadas de Always On VPN
 
@@ -64,7 +64,7 @@ Después de instalar las actualizaciones, el servidor RRAS puede aplicar la revo
 
 En la tabla siguiente se enumeran las versiones de que contienen las correcciones para cada versión de Windows.
 
-|Versión del sistema operativo |Release  |
+|Versión del sistema operativo |Publicación  |
 |---------|---------|
 |Windows Server, versión 1903  |[KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) |
 |Windows Server 2019<br />Windows Server, versión 1809  |[KB4505658](https://support.microsoft.com/help/4505658/windows-10-update-kb4505658)  |

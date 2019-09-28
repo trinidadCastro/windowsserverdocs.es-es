@@ -6,14 +6,14 @@ ms.author: jgerend
 manager: elizapo
 ms.date: 08/16/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
-ms.openlocfilehash: 0dab57bffe8b0963bb91d0f9c2752014c6746c87
-ms.sourcegitcommit: 61767c405da44507bd3433967543644e760b20aa
+ms.openlocfilehash: 022b0c3445c007960c490159f6580a702233ee41
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70987389"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402973"
 ---
 # <a name="storage-migration-service-overview"></a>Información general del servicio de migración de almacenamiento
 
@@ -82,9 +82,9 @@ El servidor de origen debe ejecutar uno de los siguientes sistemas operativos:
 - Windows Server, Canal semianual
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2
+- Windows Server 2008 R2
 - Windows Server 2008
 - Windows Server 2003 R2
 - Windows Server 2003
@@ -116,7 +116,7 @@ El servidor de destino debe ejecutar uno de los siguientes sistemas operativos:
 - Windows Server, Canal semianual
 - Windows Server 2019
 - Windows Server 2016
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 
 > [!TIP]
 > Los servidores de destino que ejecutan Windows Server 2019 o Windows Server, canal semianual o posterior, tienen el doble de rendimiento de transferencia de versiones anteriores de Windows Server. Esta mejora del rendimiento se debe a la inclusión de un servicio de proxy de servicio de migración de almacenamiento integrado, que también abre los puertos de Firewall necesarios si aún no están abiertos.

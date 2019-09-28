@@ -7,14 +7,14 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 0203c6de55a4e691d7c484351a3280c49891f317
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 92324ef7c0fab81e80974a1f05eeec4833f09875
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866286"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71390432"
 ---
 # <a name="support-for-using-hyper-v-replica-for-virtualized-domain-controllers"></a>Compatibilidad de la réplica de Hyper-V con controladores de dominio virtualizados
 
@@ -31,14 +31,14 @@ Para obtener información adicional sobre la Réplica de Hyper-V, consulte [Intr
 > [!NOTE]  
 > Réplica de Hyper-V solo se puede ejecutar en Windows Server Hyper-V, y no en la versión de Hyper-V que se ejecuta en Windows 8.  
   
-## <a name="windows-server-2012-or-newer-domain-controllers-required"></a>Windows Server 2012 o versiones más recientes controladores de dominio requeridos
+## <a name="windows-server-2012-or-newer-domain-controllers-required"></a>Se requieren Windows Server 2012 o controladores de dominio más recientes
 
-Windows Server 2012 Hyper-V introdujo VM-GenerationID (VMGenID). VMGenID constituye una forma por parte del hipervisor de comunicarse con el SO invitado cuando han tenido lugar cambios reseñables. Por ejemplo, el hipervisor se puede comunicar con un DC virtualizado donde ha tenido lugar una restauración desde una instantánea (tecnología de restauración de instantánea de Hyper-V, no restauración de copia de seguridad). AD DS en Windows Server 2012 y versiones más recientes es compatible con tecnología de VM VMGenID y lo usa para detectar cuándo se realizan operaciones de hipervisor, tales como la restauración instantánea, lo que le permite protegerse mejor.  
+Windows Server 2012 Hyper-V presentó VM-GenerationID (VMGenID). VMGenID constituye una forma por parte del hipervisor de comunicarse con el SO invitado cuando han tenido lugar cambios reseñables. Por ejemplo, el hipervisor se puede comunicar con un DC virtualizado donde ha tenido lugar una restauración desde una instantánea (tecnología de restauración de instantánea de Hyper-V, no restauración de copia de seguridad). AD DS en Windows Server 2012 y versiones más recientes es consciente de la tecnología de máquina virtual VMGenID y la usa para detectar cuándo se realizan las operaciones de hipervisor, como la restauración de instantáneas, lo que le permite protegerse mejor.  
   
 > [!NOTE]
-> Solo AD DS en controladores de dominio de Windows Server 2012 o versiones más recientes proporcionan estas medidas de seguridad resultante de VMGenID; Los controladores de dominio que se ejecutan todas las versiones anteriores de Windows Server están sujetos a problemas, como la reversión de USN que pueden producirse cuando se restaura un controlador de dominio virtualizado con un mecanismo no admitido, como la restauración de instantáneas. Para obtener más información acerca de estas medidas de seguridad y cuándo se activan, consulte [arquitectura virtualizada de controlador de dominio](https://technet.microsoft.com/library/jj574118.aspx).  
+> Solo AD DS en controladores de DC de Windows Server 2012 o más recientes proporcionan estas medidas de seguridad resultantes de VMGenID; Los controladores de dominio que ejecutan todas las versiones anteriores de Windows Server están sujetos a problemas como la reversión de USN que puede producirse cuando se restaura un controlador de dominio virtualizado mediante un mecanismo no compatible, como la restauración de instantáneas. Para obtener más información sobre estas medidas de seguridad y cuándo se activan, consulte [arquitectura de controladores de dominio virtualizados](https://technet.microsoft.com/library/jj574118.aspx).  
   
-Cuando se produce una conmutación por error de réplica de Hyper-V (planeada o no), el controlador de dominio virtualizado detecta un restablecimiento de VMGenID, activar las características de seguridad arriba mencionadas. Tras esto, Active Directory prosigue con su funcionamiento habitual. La VM de réplica se ejecuta como la VM principal.  
+Cuando se produce una conmutación por error de réplica de Hyper-V (planeada o no planeada), el controlador de dominio virtualizado detecta un restablecimiento de VMGenID y desencadena las características de seguridad anteriores. Tras esto, Active Directory prosigue con su funcionamiento habitual. La VM de réplica se ejecuta como la VM principal.  
   
 > [!NOTE]  
 > Ahora que hay dos instancias de la misma identidad de DC, existe la posibilidad de que tanto la instancia principal como la replicada se ejecuten. Si bien Réplica de Hyper-V está dotado de mecanismos de control para garantizar que las VM principal y de réplica no se ejecutan al mismo tiempo, esto puede suceder si se produce un error en el vínculo entre ambas después de la replicación de la VM. En el improbable caso de que esto ocurra, los controles de dominio virtualizados que ejecutan Windows Server 2012 cuentan con medidas de seguridad para proteger AD DS, pero no así los controles de dominio virtualizados que ejecutan versiones anteriores de Windows Server.  
@@ -47,7 +47,7 @@ Al utilizar la réplica de Hyper-V, asegúrese de seguir las prácticas recomend
   
 ## <a name="supported-and-unsupported-scenarios"></a>Escenarios admitidos y no admitidos
 
-Solo las máquinas virtuales que ejecute Windows Server 2012 o versiones más reciente son compatibles para la conmutación por error imprevista y para probar la conmutación por error. Incluso para la conmutación por error planeada, se recomienda Windows Server 2012 o versiones más reciente para el controlador de dominio virtualizado con el fin de mitigar los riesgos en caso de que un administrador inicie inintencionadamente la VM principal y la VM replicada al mismo tiempo.  
+Solo se admiten las máquinas virtuales que ejecutan Windows Server 2012 o posterior para la conmutación por error no planeada y para probar la conmutación por error. Incluso en el caso de la conmutación por error planeada, se recomienda Windows Server 2012 o una versión más reciente para el controlador de dominio virtualizado a fin de mitigar los riesgos en caso de que un administrador inicie involuntariamente la máquina virtual principal y la máquina virtual replicada al mismo tiempo.  
   
 Las VM que ejecutan versiones anteriores de Windows Server se pueden usar en las conmutaciones por error planeadas, pero no en las no planeadas, dadas las probabilidades de que se produzca una reversión de USN. Para obtener más información acerca de la reversión de USN, vea [USN y reversión de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).  
   
@@ -64,7 +64,7 @@ En la siguiente tabla se detalla la compatibilidad de los controladores de domin
 |-|-|  
 |Conmutación por error planeada|Conmutación por error no planeada|  
 |Se admite|Se admite|  
-|Caso de prueba:<br /><br />-DC1 y DC2 ejecutan Windows Server 2012.<br /><br />-DC2 se apaga y se realiza una conmutación por error en DC2-Rec. La conmutación por error puede ser planeada o no planeada.<br /><br />-Una vez que se inicia DC2-Rec, comprueba si el valor de VMGenID que tiene en su base de datos es el mismo que el valor desde el controlador de máquina virtual guardado por el servidor de réplica de Hyper-V.<br /><br />-Como resultado, DC2-Rec desencadena las medidas de seguridad de virtualización; en otras palabras, restablece su InvocationID, descarta su grupo de RID y establece un requisito de sincronización inicial antes de asumir un rol de maestro de operaciones. Para obtener más información sobre el requisito de sincronización inicial, consulta .<br /><br />-DC2-Rec, a continuación, guarda el nuevo valor de VMGenID en su base de datos y confirma las actualizaciones subsiguientes en el contexto del nuevo InvocationID.<br /><br />-Como resultado de restablecimiento de InvocationID, DC1 converge todos los cambios de AD introducidos por DC2-Rec, incluso si se ha deshecho en el tiempo, lo que significa que cualquier actualización de AD efectuada en DC2-Rec después de la conmutación por error convergerá sin problema.|El caso de prueba es el mismo que el de una conmutación por error planeada, salvo por las siguientes excepciones:<br /><br />-Cualquier AD actualizaciones de software recibidas en DC2, pero no ha replicado por AD a un asociado de replicación antes de que el evento de conmutación por error se perderá.<br /><br />-Las actualizaciones de AD recibidas en DC2 tras la hora del punto de recuperación que se replicaron AD a DC1 se replicarán desde DC1 a DC2-Rec.|  
+|Caso de prueba:<br /><br />-DC1 y DC2 ejecutan Windows Server 2012.<br /><br />-DC2 se apaga y se realiza una conmutación por error en DC2-Rec. La conmutación por error puede ser planeada o no planeada.<br /><br />-Después de que DC2-REC se inicia, comprueba si el valor de VMGenID que tiene en su base de datos es el mismo que el valor del controlador de la máquina virtual guardado por el servidor de réplica de Hyper-V.<br /><br />-Como resultado, DC2-REC desencadena medidas de seguridad de virtualización; en otras palabras, restablece su identificador de invocación, descarta su grupo de RID y establece un requisito de sincronización inicial antes de asumir un rol de maestro de operaciones. Para obtener más información sobre el requisito de sincronización inicial, consulta .<br /><br />-DC2-REC guarda el nuevo valor de VMGenID en su base de datos y confirma las actualizaciones posteriores en el contexto del nuevo invocación.<br /><br />-Como resultado del restablecimiento del invocación de datos, DC1 convergirá en todos los cambios de AD introducidos por DC2-REC, incluso si se revirtió en el tiempo, lo que significa que las actualizaciones de AD realizadas en DC2-REC después de la conmutación por error convergerán de forma segura.|El caso de prueba es el mismo que el de una conmutación por error planeada, salvo por las siguientes excepciones:<br /><br />-Todas las actualizaciones de AD recibidas en DC2, pero que AD no haya replicado aún en un asociado de replicación antes de que se pierda el evento de conmutación por error.<br /><br />-Las actualizaciones de AD recibidas en DC2 después de la hora del punto de recuperación replicado por AD en DC1 se replicarán desde DC1 de vuelta a DC2-Rec.|  
   
 ### <a name="windows-server-2008-r2-and-earlier-versions"></a>Windows Server 2008 R2 y versiones anteriores
 
@@ -73,5 +73,5 @@ En la siguiente tabla se refleja la compatibilidad de los controladores de domin
 |||  
 |-|-|  
 |Conmutación por error planeada|Conmutación por error no planeada|  
-|Compatible, pero no recomendable, ya que los controladores de dominio que ejecutan estas versiones de Windows Server no admiten VMGenID y carecen de medidas de seguridad de virtualización asociadas. Esto supone un riesgo de reversión de USN. Para obtener más información, vea [USN y reversión de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).|No admite **Nota:** La conmutación por error no planeada podría ser compatible si la reversión de USN no supusiera un riesgo, como un único controlador de dominio en el bosque (configuración que no se recomienda).|  
-|Caso de prueba:<br /><br />-DC1 y DC2 ejecutan Windows Server 2008 R2.<br /><br />-DC2 se apaga y se realiza una conmutación por error planeada en DC2-Rec. Todos los datos en DC2 se replican en DC2-Rec antes de que el apagado finalice.<br /><br />-Después de que DC2-Rec se inicia, reanuda la replicación con DC1 usando el mismo invocationID como DC2.|N/D|  
+|Compatible, pero no recomendable, ya que los controladores de dominio que ejecutan estas versiones de Windows Server no admiten VMGenID y carecen de medidas de seguridad de virtualización asociadas. Esto supone un riesgo de reversión de USN. Para obtener más información, vea [USN y reversión de USN](https://technet.microsoft.com/library/d2cae85b-41ac-497f-8cd1-5fbaa6740ffe(v=ws.10)).|No se admite la **Nota:** La conmutación por error no planeada podría ser compatible si la reversión de USN no supusiera un riesgo, como un único controlador de dominio en el bosque (configuración que no se recomienda).|  
+|Caso de prueba:<br /><br />-DC1 y DC2 ejecutan Windows Server 2008 R2.<br /><br />-DC2 se apaga y se realiza una conmutación por error planeada en DC2-Rec. Todos los datos en DC2 se replican en DC2-Rec antes de que el apagado finalice.<br /><br />-Después de que DC2-REC se inicia, reanuda la replicación con DC1 usando el mismo invocación que DC2.|N/D|  

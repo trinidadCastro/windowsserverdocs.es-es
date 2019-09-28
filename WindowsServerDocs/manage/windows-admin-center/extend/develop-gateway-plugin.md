@@ -1,79 +1,79 @@
 ---
 title: Desarrollar un complemento de puerta de enlace
-description: Desarrollar un complemento de puerta de enlace Windows Admin Center SDK (proyecto Honolulu)
+description: Desarrollar un complemento de puerta de enlace SDK del centro de administración de Windows (proyecto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 66e36a349fc6bd38a77ccf4f00d380788ea4b422
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: 2b096b226190ad1ca3fd07c38b7b939d019ee30f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445956"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406930"
 ---
 # <a name="develop-a-gateway-plugin"></a>Desarrollar un complemento de puerta de enlace
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Un complemento de puerta de enlace de Windows Admin Center permite la comunicación de API desde la interfaz de usuario de la herramienta o la solución a un nodo de destino.  Windows Admin Center hospeda un servicio de puerta de enlace que retransmite los comandos y scripts de complementos de la puerta de enlace que se ejecuta en los nodos de destino. El servicio de puerta de enlace puede ampliarse para incluir complementos de puerta de enlace personalizados que admiten protocolos distintos de los valores predeterminados.
+Un complemento de puerta de enlace del centro de administración de Windows permite la comunicación de API desde la interfaz de usuario de la herramienta o solución a un nodo de destino.  El centro de administración de Windows hospeda un servicio de puerta de enlace que retransmite comandos y scripts de complementos de puerta de enlace que se ejecutan en nodos de destino. El servicio de puerta de enlace se puede extender para incluir complementos de puerta de enlace personalizados que admiten protocolos distintos de los predeterminados.
 
-Estos complementos de puerta de enlace se incluyen de forma predeterminada con Windows Admin Center:
+Estos complementos de puerta de enlace se incluyen de forma predeterminada con el centro de administración de Windows:
 
 * Complemento de puerta de enlace de PowerShell
 * Complemento de puerta de enlace WMI
 
-Si desea comunicarse con un protocolo distinto de PowerShell o WMI, como con REST, puede crear su propio complemento de puerta de enlace.  Complementos de la puerta de enlace se cargan en un AppDomain independiente desde el proceso de puerta de enlace existente, pero usar el mismo nivel de elevación de derechos.
+Si desea comunicarse con un protocolo distinto de PowerShell o WMI, como con REST, puede crear su propio complemento de puerta de enlace.  Los complementos de puerta de enlace se cargan en un AppDomain independiente del proceso de puerta de enlace existente, pero usan el mismo nivel de elevación para los derechos.
 
 > [!NOTE]
-> ¿No está familiarizado con los tipos de extensión diferente? Obtenga más información sobre la [tipos de arquitectura y la extensión de extensibilidad](understand-extensions.md).
+> ¿No está familiarizado con los distintos tipos de extensión? Obtenga más información sobre la [arquitectura de extensibilidad y los tipos de extensión](understand-extensions.md).
 
 ## <a name="prepare-your-environment"></a>Preparar el entorno
 
-Si no lo ha hecho ya, [preparar el entorno](prepare-development-environment.md) al instalar las dependencias y globales requisitos previos necesarios para todos los proyectos.
+Si todavía no lo ha hecho, [Prepare el entorno mediante la](prepare-development-environment.md) instalación de las dependencias y los requisitos previos globales necesarios para todos los proyectos.
 
-## <a name="create-a-gateway-plugin-c-library"></a>Crear un complemento de puerta de enlace (C# biblioteca)
+## <a name="create-a-gateway-plugin-c-library"></a>Crear un complemento de puertaC# de enlace (biblioteca)
 
-Para crear un complemento de puerta de enlace personalizado, cree un nuevo C# clase que implementa el ```IPlugIn``` interfaz desde el ```Microsoft.ManagementExperience.FeatureInterfaces``` espacio de nombres.  
+Para crear un complemento de puerta de enlace personalizado, C# cree una nueva clase que implemente la interfaz ```IPlugIn``` a partir del espacio de nombres ```Microsoft.ManagementExperience.FeatureInterfaces```.  
 
 > [!NOTE]
-> El ```IFeature``` interfaz, disponible en versiones anteriores del SDK, ahora está marcado como obsoleto.  Todas las programaciones de complemento de puerta de enlace deben usar IPlugIn (o, opcionalmente, la clase abstracta HttpPlugIn).
+> La interfaz ```IFeature```, disponible en versiones anteriores del SDK, ahora está marcada como obsoleta.  Todo el desarrollo del complemento de puerta de enlace debe usar IPlugIn (o, opcionalmente, la clase abstracta HttpPlugIn).
 
-### <a name="download-sample-from-github"></a>Descargue el ejemplo de GitHub
+### <a name="download-sample-from-github"></a>Descargar el ejemplo de GitHub
 
-Para empezar a trabajar rápidamente con un complemento de puerta de enlace personalizada, puede clonar o descargar una copia de nuestra [ejemplo C# proyecto de complemento](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin) desde nuestro SDK de Windows Admin Center [sitio de GitHub](https://aka.ms/wacsdk).
+Para empezar a trabajar rápidamente con un complemento de puerta de enlace personalizado, puede clonar o descargar una copia de nuestro [proyecto de complemento de C# ejemplo](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin) en nuestro sitio de [GitHub](https://aka.ms/wacsdk)del SDK del centro de administración de Windows.
 
 ### <a name="add-content"></a>Agregar contenido
 
-Agregar nuevo contenido a la copia clonada de la [ejemplo C# proyecto de complemento](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin) archivo de proyecto (o su propio proyecto) contiene las API personalizadas, a continuación, generar la DLL del complemento de puerta de enlace personalizada para su uso en los pasos siguientes.
+Agregue nuevo contenido a la copia clonada del proyecto [de C# proyecto de complemento de ejemplo](https://github.com/Microsoft/windows-admin-center-sdk/tree/master/GatewayPluginExample/Plugin) (o su propio proyecto) para que contenga las API personalizadas y, a continuación, cree el archivo DLL del complemento de puerta de enlace personalizado que se usará en los pasos siguientes.
 
-### <a name="deploy-plugin-for-testing"></a>Implementar el complemento de prueba
+### <a name="deploy-plugin-for-testing"></a>Implementar complemento para pruebas
 
-Probar su complemento de puerta de enlace personalizada DLL cargándola en el proceso de puerta de enlace de Windows Admin Center.
+Pruebe el archivo DLL del complemento de puerta de enlace personalizada cargándolo en el proceso de puerta de enlace del centro de administración de Windows.
 
-Windows Admin Center busca todos los complementos en un ```plugins``` en la carpeta de datos de la aplicación de la máquina actual (con el valor CommonApplicationData de la enumeración Environment.SpecialFolder). En Windows 10, esta ubicación es ```C:\ProgramData\Server Management Experience```.  Si el ```plugins``` carpeta no existe aún, puede crear la carpeta.
+El centro de administración de Windows busca todos los complementos en una carpeta ```plugins``` en la carpeta datos de la aplicación del equipo actual (mediante el valor CommonApplicationData de la enumeración Environment. SpecialFolder). En Windows 10, esta ubicación es ```C:\ProgramData\Server Management Experience```.  Si la carpeta ```plugins``` todavía no existe, puede crearla usted mismo.
 
 > [!NOTE]
-> Puede invalidar la ubicación del complemento en una compilación de depuración al actualizar el valor de configuración "StaticsFolder". Si depura localmente, esta opción está en el archivo App.Config de la solución de escritorio. 
+> Puede invalidar la ubicación del complemento en una compilación de depuración actualizando el valor de configuración "StaticsFolder". Si está depurando localmente, este valor se encuentra en el archivo app. config de la solución de escritorio. 
 
-Dentro de la carpeta de complementos (en este ejemplo, ```C:\ProgramData\Server Management Experience\plugins```)
+Dentro de la carpeta plugins (en este ejemplo, ```C:\ProgramData\Server Management Experience\plugins```)
 
-* Cree una carpeta con el mismo nombre que el ```Name``` valor de propiedad de la ```Feature``` en la DLL del complemento de puerta de enlace personalizada (en nuestro proyecto de ejemplo, el ```Name``` es "Uno de ejemplo")
-* Copie el archivo DLL de complemento de puerta de enlace personalizada para esta nueva carpeta
-* Reinicie el proceso de Windows Admin Center
+* Cree una nueva carpeta con el mismo nombre que el valor de la propiedad ```Name``` del ```Feature``` en el archivo DLL del complemento de puerta de enlace personalizada (en nuestro proyecto de ejemplo, el @no__t 2 es "uno de ejemplo").
+* Copie el archivo DLL del complemento de puerta de enlace personalizado en esta nueva carpeta.
+* Reiniciar el proceso del centro de administración de Windows
 
-Una vez reiniciado el proceso de administración de Windows, podrá ejercer las API en la DLL del complemento de puerta de enlace personalizada mediante la emisión de una operación GET, PUT, PATCH, DELETE o publicar en ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
+Una vez que se reinicie el proceso de administración de Windows, podrá ejercitar las API en el archivo DLL del complemento de puerta de enlace personalizada mediante la emisión de GET, PUT, PATCH, DELETE o POST en ```http(s)://{domain|localhost}/api/nodes/{node}/features/{feature name}/{identifier}```
 
-### <a name="optional-attach-to-plugin-for-debugging"></a>Opcional: Adjuntar al complemento para la depuración
+### <a name="optional-attach-to-plugin-for-debugging"></a>Opcional: Adjuntar a complemento para depurar
 
-En Visual Studio 2017, en el menú Depurar, seleccione "Asociar al proceso". En la siguiente ventana, desplácese por la lista procesos disponibles y haga clic en "Adjuntar" SMEDesktop.exe. Una vez se inicia el depurador, puede colocar un punto de interrupción en el código de función y, a continuación, ejercicio mediante el formato de dirección URL anterior. Para nuestro proyecto de ejemplo (nombre de la característica: "Uno de ejemplo") en la dirección URL es: "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
+En Visual Studio 2017, en el menú Depurar, seleccione "asociar al proceso". En la siguiente ventana, desplácese por la lista procesos disponibles y seleccione SMEDesktop. exe y, a continuación, haga clic en "adjuntar". Una vez que se inicia el depurador, puede colocar un punto de interrupción en el código de la característica y, a continuación, ejecutar el formato de dirección URL anterior. Para nuestro proyecto de ejemplo (nombre de característica: "Ejemplo uno") la dirección URL es: "<http://localhost:6516/api/nodes/fake-server.my.domain.com/features/Sample%20Uno>"
 
-## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>Crear una extensión de la herramienta con la CLI de Windows Admin Center ##
+## <a name="create-a-tool-extension-with-the-windows-admin-center-cli"></a>Crear una extensión de herramienta con la CLI del centro de administración de Windows ##
 
-Ahora es necesario crear una extensión de la herramienta se puede llamar a su complemento de puerta de enlace personalizada.  Cree o busque una carpeta donde desea almacenar los archivos de proyecto, abra un símbolo del sistema y establece dicha carpeta como el directorio de trabajo.  Mediante la CLI de Windows Admin Center que se instaló anteriormente, cree una nueva extensión con la sintaxis siguiente:
+Ahora debemos crear una extensión de herramienta desde la que puede llamar al complemento de puerta de enlace personalizada.  Cree o busque una carpeta donde desee almacenar los archivos del proyecto, abra un símbolo del sistema y establezca esa carpeta como el directorio de trabajo.  Con la CLI del centro de administración de Windows instalada anteriormente, cree una nueva extensión con la siguiente sintaxis:
 
 ```
 wac create --company "{!Company Name}" --tool "{!Tool Name}"
@@ -81,7 +81,7 @@ wac create --company "{!Company Name}" --tool "{!Tool Name}"
 
 | Valor | Explicación | Ejemplo |
 | ----- | ----------- | ------- |
-| ```{!Company Name}``` | Nombre de su compañía (con espacios) | ```Contoso Inc``` |
+| ```{!Company Name}``` | El nombre de su empresa (con espacios) | ```Contoso Inc``` |
 | ```{!Tool Name}``` | El nombre de la herramienta (con espacios) | ```Manage Foo Works``` |
 
 Observa el siguiente ejemplo de uso:
@@ -90,26 +90,26 @@ Observa el siguiente ejemplo de uso:
 wac create --company "Contoso Inc" --tool "Manage Foo Works"
 ```
 
-Esto crea una nueva carpeta en el directorio de trabajo actual con el nombre especificado para la herramienta, copia todos los archivos de plantilla necesarios en el proyecto y los archivos se configura con el nombre de empresa y la herramienta.  
+De esta forma, se crea una nueva carpeta dentro del directorio de trabajo actual con el nombre especificado para la herramienta, se copian todos los archivos de plantilla necesarios en el proyecto y se configuran los archivos con el nombre de la compañía y la herramienta.  
 
-A continuación, cambie el directorio a la carpeta que acaba de crear, a continuación, instalar las dependencias necesarias de locales, ejecute el comando siguiente:
+A continuación, cambie el directorio a la carpeta que acaba de crear y, a continuación, instale las dependencias locales necesarias mediante la ejecución del siguiente comando:
 
 ```
 npm install
 ```
 
-Una vez que se complete, ha configurado todo lo que necesita para cargar la nueva extensión en Windows Admin Center. 
+Una vez completado, habrá configurado todo lo que necesita para cargar la nueva extensión en el centro de administración de Windows. 
 
-## <a name="connect-your-tool-extension-to-your-custom-gateway-plugin"></a>Conectar su extensión con el complemento de puerta de enlace personalizada
+## <a name="connect-your-tool-extension-to-your-custom-gateway-plugin"></a>Conexión de la extensión de herramienta al complemento de puerta de enlace personalizada
 
-Ahora que ha creado una extensión con la CLI de Windows Admin Center, está listo para conectar su extensión con el complemento de puerta de enlace personalizada siguiendo estos pasos:
+Ahora que ha creado una extensión con la CLI del centro de administración de Windows, está listo para conectar la extensión de herramienta al complemento de puerta de enlace personalizada, para lo que debe seguir estos pasos:
 
 - Agregar un [módulo vacío](guides/add-module.md)
-- Use su [complemento de puerta de enlace personalizada](guides/use-custom-gateway-plugin.md) en su extensión
+- Usar el [complemento de puerta de enlace personalizado](guides/use-custom-gateway-plugin.md) en la extensión de la herramienta
  
-## <a name="build-and-side-load-your-extension"></a>Compilación y cargan la extensión
+## <a name="build-and-side-load-your-extension"></a>Compilar y cargar la extensión
 
-A continuación, compilación y cargan la extensión en Windows Admin Center.  Abra una ventana de comandos, cambie el directorio a su directorio de origen, a continuación, está listo para compilar.
+A continuación, compile y cargue la extensión en el centro de administración de Windows.  Abra una ventana de comandos, cambie el directorio al directorio de origen y, a continuación, estará listo para compilar.
 
 * Compila y sirve con Gulp:
 
@@ -134,6 +134,6 @@ Tu proyecto se puede cargar en una instancia local de Windows Admin Center para 
 
 Tu proyecto estará visible a partir de ahora en la lista Herramientas con (transferido localmente) junto al nombre.
 
-## <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>Tener como destino una versión diferente de los SDK de Windows Admin Center
+## <a name="target-a-different-version-of-the-windows-admin-center-sdk"></a>Usar como destino una versión diferente del SDK del centro de administración de Windows
 
-Es fácil mantener la extensión actualizada con los cambios SDK y plataforma.  Obtenga información sobre cómo [destino una versión diferente](target-sdk-version.md) del SDK Windows Admin Center.
+Es fácil mantener actualizada la extensión con los cambios de SDK y los cambios de plataforma.  Obtenga información acerca de cómo establecer como [destino una versión diferente](target-sdk-version.md) del SDK del centro de administración de Windows.

@@ -6,14 +6,14 @@ author: shortpatti
 ms.author: pashort
 ms.date: 09/05/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
-ms.openlocfilehash: a0c4d01d095e8052a2192d6b6352732a6fe60919
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 38682afa37a4c6882ee2e63a4abf4cd9fdbd2b27
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871792"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405214"
 ---
 # <a name="insider-preview"></a>Versión preliminar de Insider 
 
@@ -55,7 +55,7 @@ Para obtener más información, vea:
 
 Al recibir un paquete de control de tiempo a través de la red desde un servidor horario, debe ser procesado por la pila de red del sistema operativo antes de usarse en el servicio de hora. Cada componente de la pila de red introduce una cantidad variable de latencia que afecta a la precisión de la medición del tiempo.
 
-![marca de tiempo de software](../media/Windows-Time-Service/software-timestamping.png)
+![Marca de tiempo de software](../media/Windows-Time-Service/software-timestamping.png)
 
 Para solucionar este problema, la marca de tiempo de software nos permite marcar paquetes de marca de tiempo antes y después de "componentes de red de Windows" mostrados anteriormente para tener en cuenta el retraso en el sistema operativo.
 

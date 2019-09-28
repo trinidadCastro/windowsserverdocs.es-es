@@ -1,8 +1,8 @@
 ---
 title: verify
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: e5e99237c2bac93625dedec0254c274e4f8dbc9f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 840fd3609ed3aded1c9cfebd4e395ddcc6d5588b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827256"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71363100"
 ---
 # <a name="verify"></a>verify
 
 
 
-Indica a **cmd** si se deben comprobar que los archivos se escriben correctamente en un disco. Si se utiliza sin parámetros, **comprobar** muestra la configuración actual.
+Indica a **cmd** si desea comprobar que los archivos se escriben correctamente en un disco. Si se usa sin parámetros, **Verify** muestra el valor actual.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,16 +38,16 @@ verify [on | off]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[en \| off]|Modificadores de la **comprobar** establecer o desactivar.|
+|[on \| OFF]|Activa o desactiva la configuración de **comprobación** .|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para mostrar actual **comprobar** , escriba:
+Para mostrar la configuración de **verificación** actual, escriba:
 ```
 verify
 ```
-Para activar el **comprobar** en, escriba:
+Para activar la configuración de **comprobación** , escriba:
 ```
 Verify on
 ```

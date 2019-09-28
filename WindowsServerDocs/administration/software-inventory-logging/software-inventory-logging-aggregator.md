@@ -2,7 +2,7 @@
 title: Agregador de Registro de inventario de software
 description: Describe cómo instalar y administrar el agregador de registro de inventario de software
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: manage-software-inventory-logging
 ms.reviewer: na
 ms.suite: na
@@ -13,16 +13,16 @@ author: brentfor
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0edecb86c7d5afa7d267c75ec858ded9af36e4c0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 81dbfb89d2e72af57c070db8473fd3b0e521906c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866321"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382940"
 ---
 # <a name="software-inventory-logging-aggregator"></a>Agregador de Registro de inventario de software
 
->Se aplica a: Windows Server 2012 R2
+>Se aplica a: Windows Server 2012 R2
 
 ## <a name="what-is-software-inventory-logging-aggregator"></a>¿Qué es el agregador de registro de inventario de software?
 El agregador de Registro de inventario de software (SILA) recibe, agrega y genera informes básicos del número y los tipos de software de empresa de Microsoft instalado en servidores de Windows en un centro de datos.
@@ -162,7 +162,7 @@ Antes de instalar el agregador de SIL en Windows Server debe asegurarse de cumpl
 
 -   **Inicie sesión en el servidor con una cuenta que tiene privilegios sysadmin en el servidor de SQL Server**, si desea la autenticación de Windows.
 
-    OR
+    O bien,
 
     Si lo que desea es la autenticación de SQL, **tiene la contraseña de una cuenta que tenga privilegios administrativos de SQL**.
 

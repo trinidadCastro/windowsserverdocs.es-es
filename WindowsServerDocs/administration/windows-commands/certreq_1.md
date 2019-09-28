@@ -2,7 +2,7 @@
 title: certreq
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 19b4750b627a86a724b2a0f58ed7f9bde5ea1613
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 3098cb12379493a82c77412b2328f5312afb2c0c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867105"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379679"
 ---
 # <a name="certreq"></a>certreq
 
@@ -166,7 +166,7 @@ Esta sección es obligatoria para un archivo INF que actúa como plantilla para 
 |KeyProtection|Especifica un valor que indica cómo se protege una clave privada antes de su uso.|XCN_NCRYPT_UI_NO_PROTCTION_FLAG--0</br>XCN_NCRYPT_UI_PROTECT_KEY_FLAG--1</br>XCN_NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG--2|KeyProtection = NCRYPT_UI_FORCE_HIGH_PROTECTION_FLAG|
 |SuppressDefaults|Especifica un valor booleano que indica si las extensiones y atributos predeterminados se incluyen en la solicitud. Los valores predeterminados se representan mediante sus identificadores de objeto (OID).|true, false|SuppressDefaults = true|
 |FriendlyName|Un nombre descriptivo para el nuevo certificado.|Text|FriendlyName = "servidor1"|
-|ValidityPeriodUnits</br>Nota: Solo se usa cuando el tipo de solicitud = cert.|Especifica el número de unidades que se va a utilizar con ValidityPeriod.|Numeric|ValidityPeriodUnits = 3|
+|ValidityPeriodUnits</br>Nota: Solo se usa cuando el tipo de solicitud = cert.|Especifica el número de unidades que se va a utilizar con ValidityPeriod.|Numérico|ValidityPeriodUnits = 3|
 |ValidityPeriod</br>Nota: Solo se usa cuando el tipo de solicitud = cert.|VValidityPeriod debe ser un período de tiempo plural del Inglés de EE. UU.|Años, meses, semanas, días, horas, minutos, segundos|ValidityPeriod = años|
 
 Volver a [contenido](#BKMK_Contents)

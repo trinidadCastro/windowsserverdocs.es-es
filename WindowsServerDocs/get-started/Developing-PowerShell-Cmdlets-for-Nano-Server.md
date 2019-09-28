@@ -1,7 +1,7 @@
 ---
 title: Desarrollo de cmdlets de PowerShell para Nano Server
 description: 'traslado de CIM, cmdlets de.NET, C++ '
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: DonGill
 ms.technology: server-nano
@@ -12,19 +12,19 @@ author: jaimeo
 ms.author: jaimeo
 ms.date: 09/06/2017
 ms.localizationpriority: medium
-ms.openlocfilehash: c3376d03a2e9f02b20aba608de0228efd7dfddea
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 80d6cdd3056d9c7e0a0815ce5856f961d79fcc34
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66443620"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391783"
 ---
 # <a name="developing-powershell-cmdlets-for-nano-server"></a>Desarrollo de cmdlets de PowerShell para Nano Server
 
 >Se aplica a: Windows Server 2016
 
 > [!IMPORTANT]
-> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
+> A partir de Windows Server, versión 1709, Nano Server estará disponible solo como [imagen base del sistema operativo del contenedor](/virtualization/windowscontainers/quick-start/using-insider-container-images#install-base-container-image). Echa un vistazo a [Cambios en Nano Server](nano-in-semi-annual-channel.md) para más información. 
   
 ## <a name="overview"></a>Introducción  
 Nano Server incluye PowerShell Core de forma predeterminada en todas las instalaciones de Nano Server. PowerShell Core es una edición de superficie reducida de PowerShell que se basa en .NET Core y se ejecuta en las ediciones de superficie reducida de Windows, como Nano Server y Windows IoT Core. PowerShell Core funciona de la misma manera que otras ediciones de PowerShell, como Windows PowerShell se ejecutan en Windows Server 2016. Sin embargo, la superficie reducida de Nano Server significa que no todas las características de PowerShell de Windows Server 2016 están disponibles en PowerShell Core en Nano Server.  

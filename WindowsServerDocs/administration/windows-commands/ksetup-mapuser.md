@@ -1,8 +1,8 @@
 ---
-title: ksetup:mapuser
-description: 'Tema de los comandos de Windows para ***- '
+title: 'ksetup: mapuser'
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 5bc68fe9e8f4cbb9869cb74e4eb20a3400eb56ad
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6b80538999c364e9ed10ca0ed43387f603ac9ad3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437962"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374981"
 ---
-# <a name="ksetupmapuser"></a>ksetup:mapuser
+# <a name="ksetupmapuser"></a>ksetup: mapuser
 
 
 
-El nombre de una entidad de seguridad de Kerberos se asigna a una cuenta. Para obtener ejemplos de cómo se puede usar este comando, consulte [ejemplos](#BKMK_Examples).
+Asigna el nombre de una entidad de seguridad de Kerberos a una cuenta. Para obtener ejemplos de cómo se puede usar este comando, vea [ejemplos](#BKMK_Examples).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,36 +36,36 @@ ksetup /mapuser <Principal> <Account>
 
 |  Parámetro   |                                                   Descripción                                                   |
 |--------------|-----------------------------------------------------------------------------------------------------------------|
-| \<Principal> |              El nombre de dominio completo de cualquier entidad de seguridad; Por ejemplo, mike@corp.CONTOSO.COM.              |
-|  \<Cuenta >  | Cualquier nombre de grupo de seguridad o la cuenta de que existe en este equipo, como invitado, los usuarios del dominio o administrador. |
+| @no__t 0Principal > |              El nombre de dominio completo de cualquier entidad de seguridad; por ejemplo, mike@corp.CONTOSO.COM.              |
+|  @no__t 0Account >  | Cualquier cuenta o nombre de grupo de seguridad que exista en este equipo, como invitado, usuarios del dominio o administrador. |
 
 ## <a name="remarks"></a>Comentarios
 
-Una cuenta puede ser específicamente identificada, como invitados del dominio. O bien, puede usar el carácter comodín (*) para incluir todas las cuentas.
+Una cuenta se puede identificar específicamente, como los invitados del dominio. O bien, puede usar el carácter comodín (*) para incluir todas las cuentas.
 
-Si se omite un nombre de cuenta, se elimina la asignación para la entidad de seguridad especificada.
+Si se omite un nombre de cuenta, se elimina la asignación de la entidad de seguridad especificada.
 
-El equipo autenticará solo las entidades de seguridad del dominio Kerberos especificado si se presentan los vales de Kerberos válidos.
+El equipo solo autenticará las entidades de seguridad del dominio Kerberos dado si presentan vales de Kerberos válidos.
 
-Use **ksetup** sin los parámetros o los argumentos para ver asignadas a la actual configuración y el dominio Kerberos predeterminado.
+Use **ksetup** sin parámetros ni argumentos para ver la configuración asignada actual y el dominio Kerberos predeterminado.
 
-Cada vez que se realizan cambios en el centro de distribución de claves (KDC) externa y la configuración del dominio, se requiere un reinicio del equipo donde se ha cambiado la configuración.
+Siempre que se realicen cambios en el Centro de distribución de claves externo (KDC) y la configuración de dominio Kerberos, es necesario reiniciar el equipo en el que se cambió la configuración.
 
-## <a name="BKMK_Examples"></a>Ejemplos
+## <a name="BKMK_Examples"></a>Example
 
-Asignar cuenta Danseglio en el dominio Kerberos CONTOSO a la cuenta de invitado en este equipo, le concede todos los privilegios de un miembro de la cuenta de invitado sin tener que autenticarse en este equipo:
+Asigne la cuenta de Mike Danseglio en el dominio Kerberos de Kerberos a la cuenta de invitado de este equipo, y concédale todos los privilegios de un miembro de la cuenta de invitado integrada sin tener que autenticarse en este equipo:
 ```
 ksetup /mapuser mike@corp.CONTOSO.COM guest
 ```
-Quitar la asignación de cuenta Danseglio a la cuenta de invitado en el equipo para evitar que puede autenticar este equipo con sus credenciales de CONTOSO:
+Quite la asignación de la cuenta de Mike Danseglio a la cuenta invitado en este equipo para evitar que se autentique en este equipo con sus credenciales de CONTOSO:
 ```
 ksetup /mapuser mike@corp.CONTOSO.COM 
 ```
-Cuenta Danseglio en el dominio Kerberos de CONTOSO se asignan a cualquier cuenta existente en este equipo. (si solo el usuario estándar y las cuentas de invitado están activas en este equipo, privilegios de Mike se establecerá en aquellos):
+Asigne la cuenta de Mike Danseglio en el dominio Kerberos de CONTOSO a cualquier cuenta existente en este equipo. (si solo las cuentas de usuario estándar e invitado están activas en este equipo, los privilegios de Mike se establecerán en ellos):
 ```
 ksetup /mapuser mike@corp.CONTOSO.COM *
 ```
-Todas las cuentas en el dominio Kerberos de CONTOSO se asignan a cualquier cuenta existente del mismo nombre en este equipo:
+Asignar todas las cuentas del dominio Kerberos de CONTOSO a cualquier cuenta existente del mismo nombre en este equipo:
 ```
 ksetup /mapuser * *
 ```

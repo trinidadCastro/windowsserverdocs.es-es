@@ -1,7 +1,7 @@
 ---
 title: 'Implementar la nube híbrida de Windows Server impresión: autenticación de paso a través'
 description: Cómo configurar la impresión en la nube híbrida de Microsoft con la autenticación de paso a través
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: Windows Server 2016
@@ -12,12 +12,12 @@ author: msjimwu
 ms.author: coreyp
 manager: dongill
 ms.date: 3/15/2018
-ms.openlocfilehash: 8d4d842b917a52f2c6852cf5c3ed261c0be2cc1c
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e9d461e2e9442e9473a6d2c9b13d9ede17361348
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866858"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370400"
 ---
 # <a name="deploy-windows-server-hybrid-cloud-print-with-passthrough-authentication"></a>Implementar la impresión en la nube híbrida de Windows Server con autenticación de paso a través
 
@@ -230,7 +230,7 @@ En esta guía se describen cinco (5) pasos de instalación:
 3. Seleccione el conjunto de usuarios que quiera conceder acceso
 4. Guardar los cambios y cerrar la ventana Propiedades de la impresora
 5. Desde un equipo de actualización de Windows 10 Fall Creator, abra un símbolo del sistema de Windows PowerShell con privilegios elevados.
-   1. Ejecute los siguientes comandos
+   1. Ejecuta los siguientes comandos:
       - `find-module -Name "PublishCloudPrinter"`para confirmar que el equipo puede tener acceso al Galería de PowerShell (PSGallery)
       - `install-module -Name "PublishCloudPrinter"`
 
@@ -254,7 +254,7 @@ En esta guía se describen cinco (5) pasos de instalación:
 
         > Nota: También puede especificar todos los valores de parámetro necesarios en la línea de comandos.<br>
         **Publish-CloudPrinter** Sintaxis de comandos de PowerShell: <br>
-        Publish-CloudPrinter-Printer \<cadena\> -manufacturer \<\> cadena-Model \<cadena\> -OrgLocation \<cadena\> -SDDL \< String-DiscoveryEndpoint\<cadena -PrintServerEndpoint\<cadena -AzureClientId\<cadena-\> AzureTenantGuid\> \> \> \<cadena[\> - DiscoveryResourceId\<cadena]\> <br>
+        Publish-CloudPrinter-Printer \<string @ no__t-1-manufacturer \<string @ no__t-3-Model \<string @ no__t-5-OrgLocation \<string @ no__t-7-SDDL \<string @ no__t-9-DiscoveryEndpoint \>0string @ no__t-11- PrintServerEndpoint 2string @ no__t-13-AzureClientId 4string @ no__t-15-AzureTenantGuid 6string @ no__t-17 [-DiscoveryResourceId 8string @ no__t-19] <br>
         Comando de ejemplo:`publish-cloudprinter -Printer EcpPrintTest -Manufacturer Microsoft -Model FilePrinterEcp -OrgLocation '{"attrs": [{"category":"country", "vs":"USA", "depth":0}, {"category":"organization", "vs":"MyCompany", "depth":1}, {"category":"site", "vs":"MyCity, State", "depth":2}, {"category":"building", "vs":"Building 1", "depth":3}, {"category":"floor\_number", "vn":1, "depth":4}, {"category":"room\_name", "vs":"1111", "depth":5}]}' -Sddl "O:BAG:DUD:(A;OICI;FA;;;WD)" -DiscoveryEndpoint https://<services-machine-endpoint>/mcs -PrintServerEndpoint https://<services-machine-endpoint>/ecp -AzureClientId <Native Web App ID> -AzureTenantGuid <Azure AD Directory ID> -DiscoveryResourceId <Proxied Mopria Discovery Cloud Service App ID>`
 
 

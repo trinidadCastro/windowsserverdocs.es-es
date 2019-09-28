@@ -6,14 +6,14 @@ ms.author: billmath
 manager: daveba
 ms.date: 08/09/2019
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 2ab6141b84d03102c5dedd1ede0ba99e5adf3e4a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 106262b63b5aad0eddb08618eb808d2d9ff5b425
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867746"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407800"
 ---
 # <a name="scenario-web-api-calling-web-api-on-behalf-of-scenario"></a>Escenario: API Web de llamada de API Web (en nombre de escenario) 
 > Se aplica a: AD FS 2019 y versiones posteriores 
@@ -45,15 +45,15 @@ En esta sección se muestra cómo registrar la aplicación nativa como un client
 
   1. En administración de AD FS, haga clic con el botón derecho en **grupos de aplicaciones** y seleccione **Agregar grupo de aplicaciones**.  
   
-  2. En el Asistente para grupos de aplicaciones, en **nombre** , escriba **WebApiToWebApi** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación nativa que tiene acceso a una API Web** . Haga clic en **Next**.
+  2. En el Asistente para grupos de aplicaciones, en **nombre** , escriba **WebApiToWebApi** y en **aplicaciones cliente-servidor** seleccione la plantilla **aplicación nativa que tiene acceso a una API Web** . Haz clic en **Siguiente**.
 
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi2.png)
 
-  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ClientID** en el archivo **app. config** de la aplicación. Escriba lo siguiente para el **URI de redirección:**  - https://ToDoListClient. Haga clic en **Agregar**. Haga clic en **Next**. 
+  3. Copie el valor del **identificador de cliente** . Se usará más adelante como valor de **ClientID** en el archivo **app. config** de la aplicación. Escriba lo siguiente para el **URI de redirección:**  - https://ToDoListClient. Haz clic en **Agregar**. Haz clic en **Siguiente**. 
   
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi3.png)
   
-  4. En la pantalla configurar API Web, escriba el **identificador:** https://localhost:44321/. Haga clic en **Agregar**. Haga clic en **Next**. Este valor se usará más adelante en los archivos **app. config** y **Web. config** de la aplicación.  
+  4. En la pantalla configurar API Web, escriba el **identificador:** https://localhost:44321/. Haz clic en **Agregar**. Haz clic en **Siguiente**. Este valor se usará más adelante en los archivos **app. config** y **Web. config** de la aplicación.  
  
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi4.png)
 
@@ -61,7 +61,7 @@ En esta sección se muestra cómo registrar la aplicación nativa como un client
   
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi5.png)  
 
-  6. En la pantalla configurar permisos de aplicación, seleccione **OpenID** y **user_impersonation**. Haga clic en **Next**.  
+  6. En la pantalla configurar permisos de aplicación, seleccione **OpenID** y **user_impersonation**. Haz clic en **Siguiente**.  
   
       ![Registro de aplicaciones](media/adfs-msal-web-api-web-api/webapi6.png)  
 

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: a1210918067bbb71ea26dff4db11561bbeb09dbd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 08382a8eccaafac257165587fe7b6c18a8ecfbbc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869245"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407278"
 ---
 # <a name="when-to-use-a-send-ldap-attributes-as-claims-rule"></a>Cuándo usar una regla de envío de atributos LDAP como notificaciones
 Puede usar esta regla en \(servicios de Federación de Active Directory (AD FS) AD FS\) cuando desee emitir notificaciones salientes que contengan valores reales de atributo \(LDAP\) del Protocolo ligero de acceso a directorios que existen en un almacén de atributos y, a continuación, asociar un tipo de demanda a cada uno de los atributos LDAP. Para obtener más información sobre los almacenes de atributos, vea [el rol de almacenes de atributos](The-Role-of-Attribute-Stores.md).  

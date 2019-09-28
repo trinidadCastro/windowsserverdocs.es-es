@@ -1,7 +1,7 @@
 ---
 title: Ajuste de escala en lado de recepción virtual (vRSS)
 description: Obtenga información sobre el ajuste de escala en lado de recepción virtual (vRSS) en Windows Server y cómo configurar un adaptador de red virtual para equilibrar la carga del tráfico de red entrante entre varios núcleos de procesador lógico de una máquina virtual. También puede configurar varios núcleos físicos para una tarjeta de interfaz de red virtual (vNIC) del host.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 9be477b3-f81d-4e84-a6b0-ac4c1ea97715
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 manager: dougkim
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: ae017d7d78adea565942a952aaea3da1669f39a9
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b24cabe3597af35e7c7f3c6f81d360bb11675e23
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871798"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395788"
 ---
 # <a name="virtual-receive-side-scaling-vrss"></a>VRSS de ajuste de \(escala en lado de recepción virtual\)
 
@@ -42,7 +42,7 @@ Las máquinas virtuales multiprocesador o de varios núcleos que ejecutan los si
 
 - Windows Server 2016
 - Windows 10 Pro o Enterprise
-- Windows Server 2012 R2
+- Windows Server 2012 R2
 - Windows 8.1 Pro o Enterprise
 - Windows Server 2012 con los componentes de integración de Windows Server 2012 R2 instalados.
 - Windows 8 con los componentes de integración de Windows Server 2012 R2 instalados.

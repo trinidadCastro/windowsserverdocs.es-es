@@ -2,7 +2,7 @@
 title: 'Servicios de Escritorio remoto: Acceso desde cualquier lugar'
 description: Información de planificación de una Puerta de enlace de Escritorio remoto
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: remote-desktop-services
@@ -13,12 +13,12 @@ author: lizap
 ms.author: elizapo
 ms.date: 11/03/2016
 manager: dongill
-ms.openlocfilehash: 0d3d8ed036b3befd81da6d5bbe8702ee866c6aa8
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: c79afeb38ce0b196c0f1edddd01a6166df53583b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "63748825"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403918"
 ---
 # <a name="remote-desktop-services---access-from-anywhere"></a>Servicios de Escritorio remoto: Acceso desde cualquier lugar
 

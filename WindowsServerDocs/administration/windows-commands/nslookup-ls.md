@@ -1,8 +1,8 @@
 ---
 title: nslookup ls
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6a11867ff2ec69b1ef938149ac485ff8827b58de
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ecc419a72599b661865af6283821129a7021938a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66436923"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71373092"
 ---
 # <a name="nslookup-ls"></a>nslookup ls
 
@@ -33,13 +33,13 @@ ls [<Option>] <DNSDomain> [{[>] <FileName>|[>>] <FileName>}]
 
 |    Parámetro    |                                                                                                                                                                                                                                                                                                               Descripción                                                                                                                                                                                                                                                                                                                |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    <Option>     | En la tabla siguiente se enumera las opciones válidas.<br /><br />--t: enumera todos los registros del tipo especificado. Para obtener una descripción de <querytype>, consulte **setquerytype** en referencias adicionales.<br />--r: se enumeran los alias de equipos del dominio DNS. Este parámetro es un sinónimo de **- t CNAME**<br />--d: enumera todos los registros para el dominio DNS. Este parámetro es un sinónimo de **- t ANY**<br />--h: muestra información de CPU y el sistema operativo para el dominio DNS. Este parámetro es un sinónimo de **- t HINFO**<br />--s: enumera los servicios conocidos de los equipos del dominio DNS. Este parámetro es un sinónimo de **-t WKS**. |
+|    <Option>     | En la tabla siguiente se enumeran las opciones válidas.<br /><br />--t: enumera todos los registros del tipo especificado. Para obtener una descripción de <querytype>, consulte **SetQueryType** en referencias adicionales.<br />--a: enumera los alias de los equipos del dominio DNS. Este parámetro es un sinónimo de **-t CNAME**<br />--d: enumera todos los registros del dominio DNS. Este parámetro es un sinónimo de **-t any**<br />--h: muestra información de CPU y del sistema operativo para el dominio DNS. Este parámetro es un sinónimo de **-t HINFO**<br />--s: enumera los servicios conocidos de los equipos del dominio DNS. Este parámetro es un sinónimo de **-t WKS**. |
 |   <DNSDomain>   |                                                                                                                                                                                                                                                                                         Especifica el dominio DNS para el que desea obtener información.                                                                                                                                                                                                                                                                                         |
-|   <FileName>    |                                                                                                                                                                                                                                 Especifica un nombre de archivo en el que se va a guardar la salida. Puede utilizar el mayor que (>) y doble mayor que (>>) caracteres que se va a redirigir la salida de la manera habitual.                                                                                                                                                                                                                                  |
-| {help &#124; ?} |                                                                                                                                                                                                                                                                                          Muestra un resumen breve de **nslookup** subcomandos.                                                                                                                                                                                                                                                                                           |
+|   <FileName>    |                                                                                                                                                                                                                                 Especifica un nombre de archivo en el que se guardará la salida. Puede usar los caracteres mayor que (>) y Double mayor que (> >) para redirigir la salida de la manera habitual.                                                                                                                                                                                                                                  |
+| {ayuda &#124; ?} |                                                                                                                                                                                                                                                                                          Muestra un breve resumen de los subcomandos de **nslookup** .                                                                                                                                                                                                                                                                                           |
 
 ## <a name="remarks"></a>Comentarios
-- La salida predeterminada contiene los nombres de equipo y su IP direcciones. Cuando la salida se dirige a un archivo, se imprimen signos # cada 50 registros recibidos del servidor
+- La salida predeterminada contiene los nombres de equipo y sus direcciones IP. Cuando la salida se dirige a un archivo, se imprimen marcas de hash por cada 50 registros recibidos del servidor.
   ## <a name="additional-references"></a>Referencias adicionales
-  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-  [nslookup establece querytype](nslookup-set-querytype.md)
+  [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)[nslookup Set QueryType](nslookup-set-querytype.md) 
+  

@@ -2,18 +2,18 @@
 title: Crear un espacio de nombres DFS
 description: En este artículo se describe cómo crear un espacio de nombres DFS.
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 4256e124e75be72f94cbd35c182edfe38e92bc90
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f4d4b86dd1a105576ac4d1749213696b319ba528
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59847506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402205"
 ---
 # <a name="create-a-dfs-namespace"></a>Crear un nuevo espacio de nombres DFS
 
@@ -36,13 +36,13 @@ También puedes usar el siguiente procedimiento para crear un espacio de nombres
     Para crear un espacio de nombres independiente en un clúster de conmutación por error, especifica el nombre de una instancia de servidor de archivos agrupados en clúster en la página **Servidor de espacio de nombres** del **Asistente para crear nuevo espacio de nombres**.
 
 > [!IMPORTANT]
-> No intente crear un espacio de nombres basado en dominio con el modo de Windows Server 2008, a menos que el nivel funcional del bosque es Windows Server 2003 o superior. Si lo hace, puede dar lugar a un espacio de nombres para el que no se puede eliminar carpetas DFS, lo que produce el siguiente mensaje de error: "No se puede eliminar la carpeta. No se puede completar esta función".
+> No intente crear un espacio de nombres basado en dominio mediante el modo Windows Server 2008 a menos que el nivel funcional del bosque sea Windows Server 2003 o posterior. Si lo hace, se puede producir un espacio de nombres para el que no se pueden eliminar carpetas DFS, lo que produce el siguiente mensaje de error: "No se puede eliminar la carpeta. No se puede completar esta función".
 
 ## <a name="see-also"></a>Vea también
 
--   [Implementación de espacios de nombres DFS](deploying-dfs-namespaces.md)
--   [Elija un tipo de Namespace](choose-a-namespace-type.md)
--   [Agregar servidores de Namespace para un Namespace DFS basado en dominio](add-namespace-servers-to-a-domain-based-dfs-namespace.md)
+-   [Implementar espacios de nombres DFS](deploying-dfs-namespaces.md)
+-   [Elegir un tipo de espacio de nombres](choose-a-namespace-type.md)
+-   [Agregar servidores de espacio de nombres a un espacio de nombres DFS basado en dominio](add-namespace-servers-to-a-domain-based-dfs-namespace.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md).
 
 

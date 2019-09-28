@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin elementos del mismo nivel
-description: 'Tema de los comandos de Windows para **bitsadmin pares** : lista de los **elementos del mismo nivel** conmutadores.'
+title: bitsadmin pares
+description: 'Temas de comandos de Windows para **bitsadmin Peers** : enumeración de los conmutadores del **mismo nivel** .'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d3a741b44a9a62efda15f10adc4184f6b4344b8d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 3611afa3abde89b5eeab99a59994b7feae227a54
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59873426"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380895"
 ---
-# <a name="bitsadmin-peers"></a>Bitsadmin elementos del mismo nivel
+# <a name="bitsadmin-peers"></a>bitsadmin pares
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -33,9 +33,9 @@ bitsadmin /Peers /list
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|[Bitsadmin elementos del mismo nivel y la Ayuda](bitsadmin-peers-and-help.md)|Muestra el uso de la línea de comandos para los modificadores /Peers.|
-|[Bitsadmin homólogos y detectar](bitsadmin-peers-and-discover.md)|Detecta equipos del mismo nivel de nuevo.|
-|[Bitsadmin elementos del mismo nivel y clear](bitsadmin-peers-and-clear.md)|Borra la lista de elementos del mismo nivel.|
-|[Bitsadmin elementos del mismo nivel y lista](bitsadmin-peers-and-list.md)|lista de todos los elementos del mismo nivel.|
+|[bitsadmin peers y help](bitsadmin-peers-and-help.md)|Muestra el uso de la línea de comandos para los modificadores de/Peers.|
+|[bitsadmin peers y discover](bitsadmin-peers-and-discover.md)|Detecta elementos del mismo nivel de nuevo.|
+|[bitsadmin peers y clear](bitsadmin-peers-and-clear.md)|Borra la lista de elementos del mismo nivel.|
+|[bitsadmin peers y list](bitsadmin-peers-and-list.md)|enumera todos los elementos del mismo nivel.|
 ## <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)

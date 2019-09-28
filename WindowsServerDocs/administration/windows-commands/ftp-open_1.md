@@ -1,8 +1,8 @@
 ---
-title: open_1 de FTP
-description: 'Tema de los comandos de Windows para ***- '
+title: open_1 FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 45de8b3c210fe0925ac3cc43c41d3e092d5dfe16
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: c5da1c73362c0396300f712b2e45b906d1652604
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376186"
 ---
-# <a name="ftp-open1"></a>FTP: open_1
+# <a name="ftp-open_1"></a>FTP: open_1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Se conecta al servidor ftp especificada.   
+Se conecta al servidor FTP especificado.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 open <computer> [<Port>]  
@@ -34,16 +34,16 @@ open <computer> [<Port>]
 | Parámetro  |                                           Descripción                                            |
 |------------|--------------------------------------------------------------------------------------------------|
 | <computer> |                Especifica el equipo remoto al que está intentando conectarse.                 |
-|  [<Port>]  | Especifica un número de puerto TCP para conectarse a un servidor ftp. De forma predeterminada, se usa el puerto TCP 21. |
+|  [<Port>]  | Especifica el número de puerto TCP que se va a utilizar para conectarse a un servidor FTP. De forma predeterminada, se usa el puerto TCP 21. |
 
 ## <a name="remarks"></a>Comentarios  
-Puede usar un nombre de equipo o dirección IP (en cuyo caso debe estar disponible un servidor DNS o el archivo de Hosts) para especificar **equipo**.  
-## <a name="BKMK_Examples"></a>Ejemplos  
-Conectarse al servidor ftp en **ftp.microsoft.com**.  
+Puede usar una dirección IP o un nombre de equipo (en cuyo caso debe estar disponible un servidor DNS o un archivo hosts) para especificar el **equipo**.  
+## <a name="BKMK_Examples"></a>Example  
+Conéctese al servidor FTP en **FTP.Microsoft.com**.  
 ```  
 Open ftp.microsoft.com  
 ```  
-Conectarse al servidor ftp en **ftp.microsoft.com** que está escuchando en el puerto TCP 755.  
+Conéctese al servidor FTP en **FTP.Microsoft.com** que escucha en el puerto TCP 755.  
 ```  
 open ftp.microsoft.com 755  
 ```  

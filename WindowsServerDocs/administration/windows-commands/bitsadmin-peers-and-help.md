@@ -1,8 +1,8 @@
 ---
-title: Bitsadmin elementos del mismo nivel y la Ayuda
-description: Tema de los comandos de Windows para **bitsadmin homólogos y ayudar a** -muestra el uso de la línea de comandos para el **pares** conmutadores.
+title: bitsadmin elementos del mismo nivel y ayuda
+description: 'Temas de comandos de Windows para el **elemento bitsadmin del mismo nivel y ayuda** : muestra el uso de la línea de comandos para los conmutadores **del mismo nivel** .'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 90231e6bbc467b0798548e098491aae2de9616ca
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0a61c16c9fb390409697b11586ac05384b56f07e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856316"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380945"
 ---
-# <a name="bitsadmin-peers-and-help"></a>Bitsadmin elementos del mismo nivel y la Ayuda
+# <a name="bitsadmin-peers-and-help"></a>bitsadmin elementos del mismo nivel y ayuda
 
 
 
-Muestra el uso de la línea de comandos para el **pares** conmutadores.
+Muestra el uso de la línea de comandos para los conmutadores **del mismo nivel** .
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -32,9 +32,9 @@ Muestra el uso de la línea de comandos para el **pares** conmutadores.
 Bitsadmin /Peers /Help 
 ```
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El comando siguiente muestra la Ayuda de línea de comandos para el **pares** conmutadores.
+El siguiente comando muestra la ayuda de la línea de comandos para los conmutadores **del mismo nivel** .
 ```
 Bitsadmin /Peers /Help
 ```

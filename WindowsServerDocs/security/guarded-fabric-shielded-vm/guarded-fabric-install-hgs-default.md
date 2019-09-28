@@ -1,20 +1,20 @@
 ---
-title: Instalar HGS en un bosque nuevo
+title: Instalación de HGS en un nuevo bosque
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 84f88d96f1e16767dec3b21b34aa226e544afaac
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6dfbe24fb4d9011b48f366d7e5df92fdb80685d5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447404"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386591"
 ---
-# <a name="install-hgs-in-a-new-forest"></a>Instalar HGS en un bosque nuevo 
+# <a name="install-hgs-in-a-new-forest"></a>Instalación de HGS en un nuevo bosque 
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
@@ -30,9 +30,9 @@ Ejecute los siguientes comandos en una sesión de PowerShell con privilegios ele
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- Para que obtener los pasos siguientes configurar la atestación de TPM, consulte [inicializar utilizando el modo TPM en un bosque nuevo dedicado (valor predeterminado) el clúster HGS](guarded-fabric-initialize-hgs-tpm-mode-default.md).
-- Para que obtener los pasos siguientes configurar la atestación de clave de host, consulte [inicializar mediante el modo de clave en un bosque nuevo dedicado (valor predeterminado) el clúster de HGS](guarded-fabric-initialize-hgs-key-mode-default.md).
-- Durante los próximos pasos para configurar la atestación basada en Administrador (en desuso en Windows Server 2019), consulte [inicializar el clúster HGS utilizando el modo de AD en un bosque nuevo dedicado (valor predeterminado)](guarded-fabric-initialize-hgs-ad-mode-default.md).
+- Para conocer los pasos siguientes para configurar la atestación basada en TPM, consulte [inicializar el clúster de HGS mediante el modo TPM en un nuevo bosque dedicado (valor predeterminado)](guarded-fabric-initialize-hgs-tpm-mode-default.md).
+- Para conocer los pasos siguientes para configurar la atestación de clave de host, consulte [inicializar el clúster de HGS mediante el modo de clave en un nuevo bosque dedicado (valor predeterminado)](guarded-fabric-initialize-hgs-key-mode-default.md).
+- Para conocer los pasos siguientes para configurar la atestación basada en el administrador (en desuso en Windows Server 2019), consulte [inicializar el clúster de HGS mediante el modo ad en un nuevo bosque dedicado (valor predeterminado)](guarded-fabric-initialize-hgs-ad-mode-default.md).
 
 ## <a name="next-step"></a>Paso siguiente
 

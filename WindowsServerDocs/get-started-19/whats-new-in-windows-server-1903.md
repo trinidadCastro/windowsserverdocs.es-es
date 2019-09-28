@@ -1,18 +1,18 @@
 ---
 title: Novedades de Windows Server, versión 1903
 description: En este tema se describen algunas de las nuevas funciones de Windows Server, versión 1903.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: server-general
 ms.topic: article
 author: jasongerend
 ms.author: jgerend
 ms.date: 05/21/2019
-ms.openlocfilehash: cde394cd4e626466f17a27a68660e85f9fe55553
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: b8ef24aa62df0ea538a6ee34da17714ac9b4107f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868532"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71391896"
 ---
 # <a name="whats-new-in-windows-server-version-1903"></a>Novedades de Windows Server, versión 1903
 

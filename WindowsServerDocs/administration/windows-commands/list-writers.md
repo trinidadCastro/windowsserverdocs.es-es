@@ -1,8 +1,8 @@
 ---
-title: escritores de lista
-description: 'Tema de los comandos de Windows para ***- '
+title: enumerar escritores
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6fbab6644d46dbb352a5d5a51abefb293f3ffe6f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d00eebe4e562764e97794b3eb1b76ea96c2dc47c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866746"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374719"
 ---
-# <a name="list-writers"></a>escritores de lista
+# <a name="list-writers"></a>enumerar escritores
 
 
 
-Enumera los escritores que están en el sistema. Si se utiliza sin parámetros, **lista** muestra los resultados **lista metadatos** de forma predeterminada.
+Enumera los escritores que se encuentran en el sistema. Si se usa sin parámetros, **List** muestra la salida de los **metadatos de lista** de forma predeterminada.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,17 +38,17 @@ list writers [metadata | detailed | status]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|metadata|Enumera la identidad y el estado de los escritores y muestra los metadatos, como los detalles de los componentes y archivos excluidos. Este es el parámetro de forma predeterminada.|
-|Detallada|Muestra la misma información que **metadatos**, pero **detallada** incluye la lista de archivos completa para todos los componentes.|
+|Repositorio|Enumera la identidad y el estado de los escritores y muestra los metadatos, como los detalles de los componentes y los archivos excluidos. Este es el parámetro predeterminado.|
+|descrito|Muestra la misma información que los **metadatos**, pero **Detailed** incluye la lista completa de archivos de todos los componentes.|
 |status|Muestra solo la identidad y el estado de los escritores registrados.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para mostrar solo la identidad y el estado de los escritores, escriba:
 ```
 list writers status
 ```
-Resultado que es similar a la muestra siguiente:
+El resultado es similar al que se muestra a continuación:
 ```
 Listing writer status ...
 * WRITER "System Writer"

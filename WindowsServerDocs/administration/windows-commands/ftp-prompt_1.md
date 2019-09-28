@@ -1,8 +1,8 @@
 ---
-title: prompt_1 de FTP
-description: 'Tema de los comandos de Windows para ***- '
+title: prompt_1 FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 65f7505dfcb3677fcaace9bd645cca7e7ba70b7d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 08c7f9c14f4168bb5d3aa874711669eede8d0d87
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438594"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376202"
 ---
-# <a name="ftp-prompt1"></a>ftp: prompt_1
+# <a name="ftp-prompt_1"></a>FTP: prompt_1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Alterna entre **símbolo del sistema** activar y desactivar el modo.   
+Alterna entre el modo de **petición** activado y desactivado.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 prompt  
@@ -32,10 +32,10 @@ prompt
 ### <a name="parameters"></a>Parámetros  
 ninguno  
 ## <a name="remarks"></a>Comentarios  
-- De forma predeterminada, **símbolo del sistema** está activado.  
-- **FTP** solicita durante la transferencia de múltiples archivos para que pueda recuperar o almacenar archivos de forma selectiva.  **Mget** y **mput** transferir todos los archivos si **símbolo del sistema** está desactivada.  
-  ## <a name="BKMK_Examples"></a>Ejemplos  
-  Alternar modo de mensaje y desactivar.  
+- De forma predeterminada, **prompt** es on.  
+- los mensajes **FTP** durante varias transferencias de archivos le permiten recuperar o almacenar archivos de forma selectiva.  **Mget** y **mput** transfieren todos los archivos si el **aviso** está desactivado.  
+  ## <a name="BKMK_Examples"></a>Example  
+  Activar y desactivar el modo de mensaje.  
   ```  
   prompt  
   ```  

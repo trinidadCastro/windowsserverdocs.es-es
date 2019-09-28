@@ -1,8 +1,8 @@
 ---
-title: Crear partición extendida
-description: 'Tema de los comandos de Windows para ***- '
+title: crear partición extendida
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 0a1cca93a064cfb6e5c18f4a472ea837b922d07b
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 21620da46be0e1375f320172e7ccfe2edc338114
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434193"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378914"
 ---
-# <a name="create-partition-extended"></a>Crear partición extendida
+# <a name="create-partition-extended"></a>crear partición extendida
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-crea una partición extendida en el disco con el foco. Puede usar este comando solo en el registro de arranque maestro \(MBR\) discos.  
+crea una partición extendida en el disco que tiene el foco. Este comando solo se puede usar en discos de registro de arranque maestro \(MBR @ no__t-1.  
   
   
   
@@ -38,24 +38,24 @@ create partition extended [size=<n>] [offset=<n>] [align=<n>] [noerr]
   
 |  Parámetro  |                                                                                                                             Descripción                                                                                                                              |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  size\=<n>  |                                                  Especifica el tamaño de la partición en megabytes \(MB\). Si no se especifica tamaño, la partición continuará mientras haya espacio libre en la partición extendida.                                                  |
-| offset\=<n> |                     Especifica el desplazamiento en kilobytes \(KB\), que se crea la partición. Si se indica ningún desplazamiento, la partición comenzará al principio del espacio libre en el disco que es lo suficientemente grande como para contener la nueva partición.                      |
-| Alinear\=<n>  | Alinea todas las extensiones de partición para el límite de alineación más cercano. Se utiliza normalmente con el número de unidad lógica de RAID de hardware \(LUN\) matrices para mejorar el rendimiento. <n> es el número de kilobytes \(KB\) desde el principio del disco para el límite de alineación más cercano. |
-|    noerr    |                                 sólo para scripting. Cuando se produce un error, DiskPart sigue procesando comandos como si no hubiera habido ningún error. Sin este parámetro, un error provoca que DiskPart se cierre con un código de error.                                 |
+|  Size @ no__t-0 @ no__t-1  |                                                  Especifica el tamaño de la partición en megabytes \(MB @ no__t-1. Si no se proporciona ningún tamaño, la partición continuará hasta que no haya más espacio libre en la partición extendida.                                                  |
+| offset @ no__t-0 @ no__t-1 |                     Especifica el desplazamiento en kilobytes \(KB @ no__t-1, en el que se crea la partición. Si no se proporciona ningún desplazamiento, la partición se iniciará al principio del espacio libre en el disco que sea lo suficientemente grande como para contener la nueva partición.                      |
+| align @ no__t-0 @ no__t-1  | Alinea todas las extensiones de partición con el límite de alineación más cercano. Normalmente se usa con el número de unidad lógica RAID de hardware \(LUN @ no__t-1 para mejorar el rendimiento. <n> es el número de kilobytes \( KB @ no__t-2 desde el principio del disco hasta el límite de alineación más cercano. |
+|    Noerr    |                                 Solo para scripting. Cuando se encuentra un error, DiskPart sigue procesando comandos como si no se hubiera producido el error. Sin este parámetro, un error hace que DiskPart salga con un código de error.                                 |
   
 ## <a name="remarks"></a>Comentarios  
   
--   Una vez creada la partición, ésta recibe el foco automáticamente.  
+-   Una vez creada la partición, el foco se desplaza automáticamente a la nueva partición.  
   
--   Puede crearse solo una partición extendida por disco.  
+-   Solo se puede crear una partición extendida por disco.  
   
--   Este comando produce un error si intenta crear una partición extendida en otra partición extendida.  
+-   Este comando produce un error si intenta crear una partición extendida dentro de otra partición extendida.  
   
 -   Debe crear una partición extendida para poder crear unidades lógicas.  
   
--   Debe seleccionarse un disco MBR básico para que esta operación se realice correctamente. Use la **seleccione disco** comando para seleccionar un disco y cambiar el foco a ella.  
+-   Se debe seleccionar un disco MBR básico para que esta operación se realice correctamente. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.  
   
-## <a name="BKMK_examples"></a>Ejemplos  
+## <a name="BKMK_examples"></a>Example  
 Para crear una partición extendida de 1000 megabytes de tamaño, escriba:  
   
 ```  

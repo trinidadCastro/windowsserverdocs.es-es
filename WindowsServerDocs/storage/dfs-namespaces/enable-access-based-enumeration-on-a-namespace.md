@@ -2,18 +2,18 @@
 title: Habilitar la enumeración basada en el acceso en un espacio de nombres
 description: En este artículo se describe cómo habilitar la enumeración basada en el acceso en un espacio de nombres.
 ms.date: 6/5/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 7e9a5b397127e9eb88352fb4d7bc28955023d4b7
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 246df5b13a1dbea614886ab7fe445dd448ae1763
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447215"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402178"
 ---
 # <a name="enable-access-based-enumeration-on-a-namespace"></a>Habilitar la enumeración basada en el acceso en un espacio de nombres
 
@@ -21,12 +21,12 @@ ms.locfileid: "66447215"
 
 La enumeración basada en el acceso oculta los archivos y las carpetas para los que los usuarios no tienen permiso de acceso. De forma predeterminad, esta característica no está habilitada para los espacios de nombres DFS. Puedes habilitar la enumeración basada en el acceso de carpetas DFS mediante la opción de administración de DFS. Para controlar la enumeración basada en el acceso de archivos y carpetas en destinos de carpeta, debes habilitar la enumeración basada en el acceso en cada carpeta compartida mediante el uso compartido y la administración del almacenamiento.
 
-Para habilitar la enumeración basada en acceso en un espacio de nombres, todos los servidores de espacio de nombres deben ejecutar Windows Server 2008 o posterior. Además, los espacios de nombres basados en dominio deben usar el modo de Windows Server 2008. Para obtener información acerca de los requisitos del modo Windows Server 2008, consulte [elegir un tipo de Namespace](choose-a-namespace-type.md).
+Para habilitar la enumeración basada en el acceso en un espacio de nombres, todos los servidores de espacio de nombres deben ejecutar Windows Server 2008 o una versión más reciente. Además, los espacios de nombres basados en dominio deben usar el modo Windows Server 2008. Para obtener información acerca de los requisitos del modo Windows Server 2008, vea [elegir un tipo de espacio de nombres](choose-a-namespace-type.md).
 
 En algunos entornos, la habilitación de la enumeración basada en el acceso puede generar un uso elevado de la CPU en el servidor y tiempos de respuesta demasiado elevados para los usuarios.
 
 > [!NOTE]
-> Si actualiza el dominio funcional nivel en Windows Server 2008, aunque hay existente basado en dominio espacios de nombres, la administración de DFS, podrá habilitar enumeración basada en acceso en estos espacios de nombres. Sin embargo, no podrá editar los permisos para ocultar las carpetas de otros grupos o usuarios a menos que migre los espacios de nombres para el modo de Windows Server 2008. Para obtener más información, consulta [Migrar un espacio de nombres basado en dominio al modo Windows Server 2008](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md).
+> Si actualiza el nivel funcional del dominio a Windows Server 2008 mientras haya espacios de nombres basados en el dominio existentes, la administración de DFS le permitirá habilitar la enumeración basada en el acceso en estos espacios de nombres. Sin embargo, no podrá editar permisos para ocultar carpetas de grupos o usuarios a menos que migre los espacios de nombres al modo Windows Server 2008. Para obtener más información, consulta [Migrar un espacio de nombres basado en dominio al modo Windows Server 2008](migrate-a-domain-based-namespace-to-windows-server-2008-mode.md).
 
 
 Para usar la enumeración basada en el acceso con espacios de nombres DFS, debes seguir estos pasos:
@@ -51,7 +51,7 @@ Puedes Habilitar la enumeración basada en el acceso en un espacio de nombres me
 
 1.  Abre una ventana del símbolo del sistema en un servidor que tenga el servicio de rol **Sistema de archivos distribuido** o la característica **Herramientas del sistema de archivos distribuido**.
 
-2.  Escriba el comando siguiente, donde *< espacio de nombres\_raíz >* es la raíz del espacio de nombres:
+2.  Escriba el siguiente comando, donde *< espacio de nombres @ no__t-1root >* es la raíz del espacio de nombres:
 
     ```  
     dfsutil property abe enable \\ <namespace_root>
@@ -80,13 +80,13 @@ Puedes controlar los usuarios y grupos que pueden ver carpetas DFS individuales 
 
 1. Abre una ventana del símbolo del sistema en un servidor que tenga el servicio de rol **Sistema de archivos distribuido** o la característica **Herramientas del sistema de archivos distribuido**.
 
-2. Escriba el comando siguiente, donde *&lt;DFSPath&gt;* es la ruta de acceso de la carpeta DFS (vínculo), *< dominio\\cuenta >* es el nombre de la cuenta de usuario o grupo y *(...)*  se reemplaza por entradas de Control de acceso (ACE) adicionales:
+2. Escriba el siguiente comando, donde *&lt;DFSPath @ no__t-2* es la ruta de acceso de la carpeta DFS (vínculo), *< dominio @ no__t-4Account >* es el nombre de la cuenta de grupo o de usuario, y *(...)* se reemplaza por entradas de Access Control adicionales ( ACE):
 
    ```
    dfsutil property sd grant <DFSPath> DOMAIN\Account:R (...) Protect Replace
    ```
 
-   Por ejemplo, para reemplazar los permisos existentes con los permisos que permite los administradores de dominio y CONTOSO\\instructores grupos Read (R) acceso a la \\contoso.office\public\training carpeta, escriba el siguiente comando:
+   Por ejemplo, para reemplazar los permisos existentes con permisos que permitan a los grupos Admins. del dominio y CONTOSO @ no__t-0Trainers Groups Read (R) el acceso a la carpeta \\contoso. office\public\training, escriba el siguiente comando:
 
    ```
    dfsutil property sd grant \\contoso.office\public\training "CONTOSO\Domain Admins":R CONTOSO\Trainers:R Protect Replace 
@@ -97,13 +97,13 @@ Puedes controlar los usuarios y grupos que pueden ver carpetas DFS individuales 
 
 | Comando | Descripción |
 |---|---|
-|[Propiedad Dfsutil sd denegar](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|Deniega a un grupo o usuario la capacidad de ver la carpeta.|
-|[Propiedad Dfsutil sd restablecer](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |Quita todos los permisos de la carpeta.|
-|[Revoke de Dfsutil propiedad sd](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| Quita una ACE de grupo o usuario de la carpeta. |
+|[Propiedad Dfsutil SD deny](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)|Deniega a un grupo o usuario la capacidad de ver la carpeta.|
+|[Propiedad Dfsutil de SD RESET](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx) |Quita todos los permisos de la carpeta.|
+|[Propiedad Dfsutil SD REVOKE](https://msdn.microsoft.com/library/dd759150(v=ws.11).aspx)| Quita una ACE de grupo o usuario de la carpeta. |
 
 ## <a name="see-also"></a>Vea también
 
 -   [Crear un espacio de nombres DFS](create-a-dfs-namespace.md)
 -   [Delegar permisos de administración para espacios de nombres DFS](delegate-management-permissions-for-dfs-namespaces.md)
 -   [Instalación de DFS](https://technet.microsoft.com/library/cc731089(v=ws.11).aspx)
--   [Usar permisos heredados con enumeración basada en acceso](using-inherited-permissions-with-access-based-enumeration.md)
+-   [Usar permisos heredados con enumeración basada en el acceso](using-inherited-permissions-with-access-based-enumeration.md)

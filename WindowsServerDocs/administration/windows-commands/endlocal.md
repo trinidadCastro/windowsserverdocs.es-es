@@ -1,8 +1,8 @@
 ---
 title: endlocal
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 3e516b2bf9e8a45ada910dfbd93e3ed5e7d86c14
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 16d2b7b445a2220a10f88f21029948ed10ee96e4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862146"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377574"
 ---
 # <a name="endlocal"></a>endlocal
 
 
 
-Finaliza la localización de los cambios de entorno en un archivo por lotes y se restauran las variables de entorno en sus valores antes de la correspondiente **setlocal** se ejecutó el comando.
+Finaliza la localización de los cambios de entorno en un archivo por lotes y restaura las variables de entorno a sus valores antes de ejecutar el comando **setlocal** correspondiente.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -42,16 +42,16 @@ endlocal
 
 ## <a name="remarks"></a>Comentarios
 
--   El **endlocal** comando no tiene ningún efecto fuera de un secuencia de comandos o archivo por lotes.
--   Hay un modo implícito **endlocal** comando al final de un archivo por lotes.
--   Si se habilitan las extensiones de comando (extensiones de comando están habilitadas de forma predeterminada), el **endlocal** comando restaura el estado de las extensiones de comando (es decir, habilitado o deshabilitado) que tenía antes de la correspondiente  **Setlocal** se ejecutó el comando.
+-   El comando **endlocal** no tiene ningún efecto fuera de un script o un archivo por lotes.
+-   Hay un comando de **endlocal** implícito al final de un archivo por lotes.
+-   Si las extensiones de comandos están habilitadas (las extensiones de comandos están habilitadas de forma predeterminada), el comando **endlocal** restaura el estado de las extensiones de comando (es decir, habilitado o deshabilitado) a lo que estaba antes de que se ejecutara el comando **setlocal** correspondiente.
 
 > [!NOTE]
-> Para obtener más información sobre cómo habilitar y deshabilitar las extensiones de comando, consulte [Cmd](cmd.md).
+> Para obtener más información acerca de cómo habilitar y deshabilitar las extensiones de comandos, vea [cmd](cmd.md).
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Puede localizar las variables de entorno en un archivo por lotes. Por ejemplo, el programa siguiente inicia el programa de versión por lotes en la red, dirige la salida a un archivo y muestra el archivo en el Bloc de notas:
+Puede localizar las variables de entorno en un archivo por lotes. Por ejemplo, el siguiente programa inicia el programa por lotes superapp en la red, dirige la salida a un archivo y muestra el archivo en el Bloc de notas:
 ```
 @echo off
 setlocal

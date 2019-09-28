@@ -1,37 +1,37 @@
 ---
 title: Controlar la visibilidad de la herramienta en una solución
-description: Controlar la visibilidad de la herramienta en una solución Windows Admin Center SDK (proyecto Honolulu)
+description: Controlar la visibilidad de la herramienta en una solución SDK del centro de administración de Windows (proyecto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 3cce07ba5b3d2cc89f1363bbb2af5acd048c0466
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.prod: windows-server
+ms.openlocfilehash: 440ba3d11da671beedc2c2fb90caa3e176f83877
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445941"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385321"
 ---
 # <a name="control-your-tools-visibility-in-a-solution"></a>Controlar la visibilidad de la herramienta en una solución #
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Puede haber ocasiones cuando desee excluir (u ocultar) su extensión o la herramienta de la lista de herramientas disponibles. Por ejemplo, si la herramienta está destinada solo Windows Server 2016 (versiones anteriores no), es posible que no desea un usuario que se conecta a un servidor de Windows Server 2012 R2 para ver la herramienta en absoluto. (Imagine: la experiencia del usuario haga clic en él, espere a que la herramienta para cargar, solo para recibir un mensaje que sus características no están disponibles para su conexión.) Puede definir cuándo se debe mostrar la característica en el archivo manifest.json de la herramienta (u ocultar).
+Puede haber ocasiones en las que desee excluir (u ocultar) la extensión o herramienta de la lista de herramientas disponibles. Por ejemplo, si la herramienta solo tiene como destino Windows Server 2016 (no versiones anteriores), es posible que no quiera que un usuario se conecte a un servidor de Windows Server 2012 R2 para ver la herramienta. (Imagínese la experiencia del usuario: haga clic en ella y espere a que se cargue la herramienta, solo para obtener un mensaje que indica que sus características no están disponibles para su conexión). Puede definir cuándo Mostrar (u ocultar) la característica en el archivo manifest. JSON de la herramienta.
 
-## <a name="options-for-deciding-when-to-show-a-tool"></a>Opciones para decidir cuándo se debe mostrar una herramienta ##
+## <a name="options-for-deciding-when-to-show-a-tool"></a>Opciones para decidir cuándo mostrar una herramienta ##
 
-Hay tres opciones distintas que puede usar para determinar si la herramienta debe estar muestran y están disponibles para una conexión de clúster o servidor específico.
+Hay tres opciones diferentes que puede usar para determinar si la herramienta debe mostrarse y estar disponible para una conexión de clúster o servidor específica.
 
-* localhost
+* host
 * inventario (una matriz de propiedades)
 * secuencia de comandos
 
-### <a name="localhost"></a>LocalHost ###
+### <a name="localhost"></a>Host ###
 
-La propiedad de host local del objeto condiciones contiene un valor booleano que se puede evaluar para deducir si el nodo de conexión es el host local (el mismo equipo que está instalado Windows Admin Center en) o no. Al pasar un valor a la propiedad, indica cuándo (condición) para mostrar la herramienta. Por ejemplo, si solo desea que la herramienta para mostrar si el usuario en realidad se está conectando al host local, configurarla similar al siguiente:
+La propiedad localHost del objeto conditions contiene un valor booleano que se puede evaluar como inferencia si el nodo de conexión es localHost (el mismo equipo en el que está instalado el centro de administración de Windows). Al pasar un valor a la propiedad, se indica cuándo (condición) Mostrar la herramienta. Por ejemplo, si solo desea que se muestre la herramienta si el usuario está conectándose al host local, establézcalo de la siguiente manera:
 
 ``` json
 "conditions": [
@@ -40,7 +40,7 @@ La propiedad de host local del objeto condiciones contiene un valor booleano que
 }]
 ```
 
-Como alternativa, si sólo desea su herramienta para mostrar cuando el nodo conexión *no* localhost:
+Como alternativa, si solo desea que se muestre la herramienta cuando el nodo de conexión *no sea* localhost:
 
 ``` json
 "conditions": [
@@ -49,7 +49,7 @@ Como alternativa, si sólo desea su herramienta para mostrar cuando el nodo cone
 }]
 ```
 
-Aquí está la configuración de aspecto para mostrar solo una herramienta cuando el nodo de conexión no es localhost:
+Este es el aspecto de las opciones de configuración para mostrar solo una herramienta cuando el nodo que se conecta no es localhost:
 
 ``` json
 "entryPoints": [
@@ -81,21 +81,21 @@ Aquí está la configuración de aspecto para mostrar solo una herramienta cuand
 
 ### <a name="inventory-properties"></a>Propiedades de inventario ###
 
-El SDK incluye un conjunto mantenido previamente de las propiedades del inventario que puede usar para generar las condiciones para determinar cuándo la herramienta debe estar disponible o no. Hay nueve propiedades diferentes de la matriz 'inventariar':
+El SDK incluye un conjunto seleccionada de propiedades de inventario que puede usar para generar condiciones para determinar cuándo debe estar disponible la herramienta. Hay nueve propiedades diferentes en la matriz ' Inventory ':
 
-| Nombre de la propiedad | Tipo de valor esperado |
+| Nombre de la propiedad | Se esperaba un tipo de valor |
 | ------------- | ------------------- |
 | computerManufacturer | string |
 | operatingSystemSKU | número |
-| operatingSystemVersion | version_string (p. ej.: "10.1.*") |
+| operatingSystemVersion | version_string (por ejemplo: "10,1") |
 | productType | número |
 | clusterFqdn | string |
-| isHyperVRoleInstalled | boolean |
-| isHyperVPowershellInstalled | boolean |
-| isManagementToolsAvailable | boolean |
-| isWmfInstalled | boolean |
+| isHyperVRoleInstalled | booleano |
+| isHyperVPowershellInstalled | booleano |
+| isManagementToolsAvailable | booleano |
+| isWmfInstalled | booleano |
 
-La siguiente estructura json deben cumplir todos los objetos de la matriz de inventario:
+Cada objeto de la matriz de inventario debe ajustarse a la siguiente estructura JSON:
 
 ``` json
 "<property name>": {
@@ -109,37 +109,37 @@ La siguiente estructura json deben cumplir todos los objetos de la matriz de inv
 
 | Operador | Descripción |
 | -------- | ----------- |
-| gt | Mayor que |
-| ge | Mayor o igual que |
-| lt | Menor que |
-| le | Menor o igual a |
-| eq | Es igual a |
-| ne | No es igual a |
-| estará | Comprobando si el valor es true |
-| not | Comprobando si el valor es false |
-| Contiene | el elemento existe en una cadena |
-| notContains | elemento no existe en una cadena |
+| bruto | Mayor que |
+| GE | Mayor o igual que |
+| plazo | Menor que |
+| cuarto | Menor o igual que |
+| ajustes | Igual a |
+| & | No es igual a |
+| estará | comprobar si un valor es true |
+| not | comprobar si un valor es false |
+| tuviera | el elemento existe en una cadena |
+| notContains | el elemento no existe en una cadena |
 
 #### <a name="data-types"></a>Tipos de datos ####
 
-Opciones disponibles para la propiedad 'type':
+Opciones disponibles para la propiedad ' tipo ':
 
 | Tipo | Descripción |
 | ---- | ----------- |
-| version | un número de versión (p. ej.: 10.1.*) |
-| número | un valor numérico |
+| version | un número de versión (por ejemplo: 10,1. *) |
+| número | Un valor numérico |
 | string | un valor de cadena |
-| boolean | True o false |
+| booleano | true o false |
 
 #### <a name="value-types"></a>Tipos de valor ####
 
-La propiedad 'value' acepta estos tipos:
+La propiedad ' value ' acepta estos tipos:
 
 * string
 * número
-* boolean
+* booleano
 
-Un conjunto de condiciones de inventario bien formado tiene este aspecto:
+Un conjunto de condiciones de inventario con el formato correcto tiene el siguiente aspecto:
 
 ``` json
 "entryPoints": [
@@ -182,7 +182,7 @@ Un conjunto de condiciones de inventario bien formado tiene este aspecto:
 
 ### <a name="script"></a>Script ###
 
-Por último, puede ejecutar un script de PowerShell para identificar la disponibilidad y el estado del nodo. Todas las secuencias de comandos deben devolver un objeto con la estructura siguiente:
+Por último, puede ejecutar un script de PowerShell personalizado para identificar la disponibilidad y el estado del nodo. Todos los scripts deben devolver un objeto con la siguiente estructura:
 
 ``` ps
 @{
@@ -193,15 +193,15 @@ Por último, puede ejecutar un script de PowerShell para identificar la disponib
         @{Name='Prop2'; Value = 12345678; Type='number'; };
 }
 ```
-La propiedad State es el valor importante que controle la decisión para mostrar u ocultar la extensión en la lista de herramientas.  Los valores permitidos son:
+La propiedad State es el valor importante que controlará la decisión de mostrar u ocultar la extensión en la lista de herramientas.  Los valores permitidos son:
 
 | Valor | Descripción |
 | ---- | ----------- |
 | Disponible | La extensión se debe mostrar en la lista de herramientas. |
-| NotSupported | La extensión no debe mostrarse en la lista de herramientas. |
-| NotConfigured | Se trata de un valor de marcador de posición para el trabajo futuro que solicitará al usuario para la configuración adicional antes de la herramienta está disponible.  Actualmente, este valor dará como resultado de la herramienta que se muestran y es el equivalente funcional a 'Disponible'. |
+| NotSupported | La extensión no se debe mostrar en la lista de herramientas. |
+| NotConfigured | Se trata de un valor de marcador de posición para el trabajo futuro que solicitará al usuario una configuración adicional antes de que la herramienta esté disponible.  Actualmente, este valor hará que se muestre la herramienta y que sea funcional equivalente a "disponible". |
 
-Por ejemplo, si queremos una herramienta para cargar solo si el servidor remoto tiene instalado de BitLocker, la secuencia de comandos este aspecto:
+Por ejemplo, si queremos que una herramienta se cargue solo si el servidor remoto tiene instalado BitLocker, el script tiene el siguiente aspecto:
 
 ``` ps
 $response = @{
@@ -225,7 +225,7 @@ if($isGood) {
 $response
 ```
 
-Una configuración de punto de entrada mediante la opción de script tiene este aspecto:
+Una configuración de punto de entrada mediante la opción de script tiene el siguiente aspecto:
 
 ``` json
 "entryPoints": [
@@ -268,11 +268,11 @@ Una configuración de punto de entrada mediante la opción de script tiene este 
 }
 ```
 
-## <a name="supporting-multiple-requirement-sets"></a>Compatibilidad con varios conjuntos de requisito ##
+## <a name="supporting-multiple-requirement-sets"></a>Compatibilidad con varios conjuntos de requisitos ##
 
-Puede usar más de un conjunto de requisitos para determinar cuándo se debe mostrar su herramienta definiendo varios bloques "requisitos".
+Puede usar más de un conjunto de requisitos para determinar cuándo se debe mostrar la herramienta definiendo varios bloques "requirements".
 
-Por ejemplo, para mostrar la herramienta si "escenario A" o "escenario B" es true, defina dos bloques de los requisitos; Si se cumple cualquiera (es decir, se cumplen todas las condiciones dentro de un bloque de requisitos), se muestra la herramienta.
+Por ejemplo, para mostrar la herramienta si "escenario A" o "escenario B" es true, defina dos bloques de requisitos: Si es true (es decir, se cumplen todas las condiciones dentro de un bloque de requisitos), se muestra la herramienta.
 
 ``` json
 "entryPoints": [
@@ -305,13 +305,13 @@ Por ejemplo, para mostrar la herramienta si "escenario A" o "escenario B" es tru
 
 ```
 
-## <a name="supporting-condition-ranges"></a>Compatibilidad con los intervalos de condición ##
+## <a name="supporting-condition-ranges"></a>Intervalos de condiciones de compatibilidad ##
 
-También puede definir un intervalo de condiciones definiendo varios bloques "condiciones" con la misma propiedad, pero con diversos operadores.
+También puede definir un intervalo de condiciones definiendo varios bloques "conditions" con la misma propiedad, pero con distintos operadores.
 
-Cuando se define la misma propiedad con distintos operadores, se muestra la herramienta siempre y cuando el valor está comprendido entre las dos condiciones.
+Cuando se define la misma propiedad con distintos operadores, se muestra la herramienta siempre que el valor se encuentra entre las dos condiciones.
 
-Por ejemplo, se muestra esta herramienta siempre y cuando el sistema operativo es una versión entre 6.3.0 y 10.0.0:
+Por ejemplo, esta herramienta se muestra siempre que el sistema operativo sea una versión entre 6.3.0 y 10.0.0:
 
 ``` json
 "entryPoints": [

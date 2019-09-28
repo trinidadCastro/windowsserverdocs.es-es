@@ -1,119 +1,119 @@
 ---
 title: Rendimiento de túnel GRE de puerta de enlace de RAS
-description: En este tema, que está pensado para profesionales de tecnología de información (TI), se proporciona información de rendimiento de rendimiento acerca de los túneles de RAS puerta de enlace de enrutamiento encapsulación genérico (GRE).
+description: En este tema, destinado a los profesionales de tecnologías de la información (TI), se proporciona información de rendimiento sobre los túneles de encapsulación de enrutamiento genérico (GRE) de puerta de enlace RAS.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: ''
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: c051b2ec-de0f-49d1-82b9-5742b259cd7c
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 73ae4e573d926f4a77b076c880c1d74ed69f032d
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 79a6e822c3ff36f789a7a08b8cd56163014185a4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880766"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71404689"
 ---
 # <a name="ras-gateway-gre-tunnel-throughput-and-performance"></a>Rendimiento de túnel GRE de puerta de enlace de RAS
 
->Se aplica a: Windows Server \(canal semianual\)
+>Se aplica a: Windows Server \(Semi-canal anual @ no__t-1
 
-Puede usar este tema para obtener información sobre el servidor de acceso remoto \(RAS\) puerta de enlace de encapsulación de enrutamiento genérico \(GRE\) tunelizar el rendimiento en Windows Server, versión 1709, en un no - redes definidas por Software \( SDN\) entorno de prueba basada en.
+Puede usar este tema para obtener información sobre el servidor de acceso remoto \(RAS @ no__t-1 encapsulación de enrutamiento genérico de puerta de enlace \(GRE @ no__t-3 performance Tunnel in Windows Server, versión 1709, en una red no definida por software \(SDN @ no__t-5 test entorno.
 
-Puerta de enlace RAS es un enrutador de software y la puerta de enlace que puede usar en modo de inquilino único o en modo multiempresa. Este tema describe un modo único inquilino, la configuración de alta disponibilidad con clústeres de conmutación por error. Las estadísticas de rendimiento de túnel GRE que se presentan en este tema son válidas para la puerta de enlace de RAS en inquilinos singele y modos de varios inquilinos.
+La puerta de enlace RAS es un enrutador de software y una puerta de enlace que puede usar en el modo de un solo inquilino o en el modo multiempresa. En este tema se describe el modo de un solo inquilino, la configuración de alta disponibilidad con clústeres de conmutación por error. Las estadísticas de rendimiento del túnel GRE que se presentan en este tema son válidas para la puerta de enlace de RAS en los modos de inquilino de singele y multiinquilino.
 
 >[!NOTE]
->Agrupación en clústeres de conmutación por error es una característica de Windows Server que permite agrupar varios servidores en un clúster con tolerancia. Para obtener más información, consulte [agrupación en clústeres de conmutación por error](../../../failover-clustering/failover-clustering-overview.md)
+>Los clústeres de conmutación por error son una característica de Windows Server que permite agrupar varios servidores en un clúster tolerante a errores. Para obtener más información, consulte [clústeres de conmutación por error](../../../failover-clustering/failover-clustering-overview.md)
 
-Modo de un solo inquilino permite a las organizaciones de cualquier tamaño para implementar la puerta de enlace como un exterior o Internet\-orientado a la red privada virtual de edge \(VPN\) server. En el modo de un solo inquilino, puede implementar la puerta de enlace de RAS en un servidor físico o máquina virtual \(VM\). Este tema describe la implementación de puerta de enlace de RAS en dos máquinas virtuales \(máquinas virtuales\) que están configurados en un clúster de conmutación por error.
+El modo de un solo inquilino permite a las organizaciones de cualquier tamaño implementar la puerta de enlace como una red privada virtual de perímetro de Internet @ no__t-0facing \(VPN @ no__t-2. En el modo de un solo inquilino, puede implementar la puerta de enlace RAS en un servidor físico o en una máquina virtual @no__t 0VM @ no__t-1. En este tema se describe la implementación de puerta de enlace de RAS en dos Virtual Machines \(VMs @ no__t-1 que están configuradas en un clúster de conmutación por error.
 
 >[!IMPORTANT]
->Porque los túneles GRE proporcionan encapsulación, pero no cifrado, no debe usar la puerta de enlace de RAS configurada con GRE como una puerta de enlace de borde de Internet. Para obtener información acerca de los mejores usos de puerta de enlace de RAS con túneles GRE, consulte [túneles GRE en Windows Server](gre-tunneling-windows-server.md).
+>Dado que los túneles GRE proporcionan encapsulación pero no cifrado, no debe usar la puerta de enlace RAS configurada con GRE como puerta de enlace perimetral de Internet. Para obtener información sobre los mejores usos de la puerta de enlace RAS con túneles GRE, consulte [tunelización de GRE en Windows Server](gre-tunneling-windows-server.md).
 
-GRE es una ligera protocolo que puede encapsular una amplia variedad de protocolos de capa de red dentro de un punto virtual de túnel\-a\-vínculos de punto a través de un conjunto de redes de protocolo de Internet. La implementación de Microsoft GRE encapsula IPv4 e IPv6.
+GRE es un protocolo de túnel ligero que puede encapsular una amplia variedad de protocolos de capa de red dentro de los vínculos de punto virtual @ no__t-0to @ no__t-1point a través de una red de protocolo de Internet. La implementación de Microsoft GRE encapsula IPv4 e IPv6.
 
-Para obtener más información, consulte la sección **escenarios de implementación de puerta de enlace de RAS** en el tema [puerta de enlace RAS](https://docs.microsoft.com/windows-server/remote/remote-access/ras-gateway/ras-gateway#bkmk_deploy). 
+Para obtener más información, consulte la sección **escenarios de implementación de puerta de enlace de Ras** en el tema puerta de enlace de [ras](https://docs.microsoft.com/windows-server/remote/remote-access/ras-gateway/ras-gateway#bkmk_deploy). 
 
-En este escenario de prueba, que se muestra en la siguiente ilustración, el flujo de tráfico se mide se mueve de la organización Intranet 2 out el 1 de Intranet de la organización. Máquinas virtuales de carga de trabajo de inquilino enviar tráfico de red de Intranet 2 en 1 de la Intranet mediante el uso de la puerta de enlace RAS.
+En este escenario de prueba, que se representa en la siguiente ilustración, el flujo de tráfico que se mide pasa de la intranet de la organización 2 a la intranet 1 de la organización. Las máquinas virtuales de carga de trabajo de inquilino envían tráfico de red de la intranet 2 a la intranet 1 mediante la puerta de enlace RAS.
 
-![Información general sobre el escenario de prueba de túnel GRE de puerta de enlace de RAS](../../media/GRE-Tunnel-Perf/Gre-Infrastructure.jpg)
+![Información general del escenario de prueba de túnel GRE de puerta de enlace RAS](../../media/GRE-Tunnel-Perf/Gre-Infrastructure.jpg)
 
 ## <a name="test-environment-configuration"></a>Configuración del entorno de prueba
 
 En esta sección se proporciona información sobre el entorno de prueba y la configuración de puerta de enlace RAS.
 
-En el entorno de prueba, se implementan máquinas virtuales de puerta de enlace de RAS en Hyper\-hosts V en una conmutación por error de clúster de alta disponibilidad.
+En el entorno de prueba, las máquinas virtuales de puerta de enlace RAS se implementan en hosts de Hyper @ no__t-0V en un clúster de conmutación por error para alta disponibilidad.
 
-### <a name="hyper-v-host-configuration"></a>Hyper\-V configuración del Host
+### <a name="hyper-v-host-configuration"></a>Configuración del host de Hyper @ no__t-0V
 
-Dos Hyper\-hosts V están configurados para admitir el escenario de prueba de la siguiente manera. 
+Dos hosts de Hyper @ no__t-0V están configurados para admitir el escenario de prueba de la siguiente manera. 
 
-- Doble dos\-alojados equipos físicos están configurados con Windows Server, versión 1709
-- Los dos adaptadores de red físicos en cada uno de los dos servidores están conectados a subredes diferentes: ambos representan las subredes de Intranet de una organización. Las redes y hardware auxiliar tienen una capacidad de 10 GBps.
-- Hyper-Threading en los servidores físicos está deshabilitada. Esto proporciona el máximo rendimiento de las NIC físicas.
-- El Hyper\-rol de servidor V se instala en ambos servidores y se configura con dos externo Hyper\-V conmutadores virtuales, uno para cada adaptador de red físico.
+- Dos equipos físicos de @ no__t-0homed están configurados con Windows Server, versión 1709
+- Los dos adaptadores de red físicos de cada uno de los dos servidores están conectados a subredes diferentes, y ambos representan subredes de una intranet de la organización. Ambas redes y el hardware compatible tienen una capacidad de 10 GBps.
+- El hyperthreading en los servidores físicos está deshabilitado. Esto proporciona el máximo rendimiento de las NIC físicas.
+- El rol de servidor Hyper @ no__t-0V se instala en ambos servidores y se configura con dos conmutadores virtuales externos de Hyper @ no__t-1V, uno para cada adaptador de red físico.
 - Dado que ambos servidores están conectados a la misma intranet, los servidores pueden comunicarse entre sí.
-- El Hyper\-hosts V se configuran en un clúster de conmutación por error a través de la red de intranet. 
+- Los hosts de Hyper @ no__t-0V se configuran en un clúster de conmutación por error a través de la red de intranet. 
 
 >[!NOTE]
 >Para obtener más información, consulte [Conmutador virtual de Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v-virtual-switch/hyper-v-virtual-switch).
 
-### <a name="vm-configuration"></a>Configuración de máquina virtual
+### <a name="vm-configuration"></a>Configuración de VM
 
 Dos máquinas virtuales están configuradas para admitir el escenario de prueba de la siguiente manera.
 
-- En cada servidor de que una máquina virtual está instalada que es ejecutar Windows Server, versión 1709. Cada máquina virtual se configura con 10 núcleos y 8 GB de RAM.
-- Cada máquina virtual también se configura con dos adaptadores de red virtual. Un adaptador de red virtual está conectado al conmutador virtual 1 de la Intranet y el otro adaptador de red virtual está conectado al conmutador virtual 2 de la Intranet.
-- Cada máquina virtual tiene la puerta de enlace de RAS instalado y configurado como un GRE\-en función de servidor VPN.
-- Las máquinas virtuales de puerta de enlace se configuran en un clúster de conmutación por error. Cuando un clúster, una máquina virtual está activa y la otra máquina virtual está pasiva.
+- En cada servidor se instala una máquina virtual que ejecuta Windows Server, versión 1709. Cada máquina virtual se configura con 10 núcleos y 8 GB de RAM.
+- Cada máquina virtual también se configura con dos adaptadores de red virtuales. Un adaptador de red virtual está conectado al conmutador virtual de la intranet 1 y el otro adaptador de red virtual está conectado al conmutador virtual de la intranet 2.
+- Cada máquina virtual tiene una puerta de enlace RAS instalada y configurada como un servidor VPN GRE @ no__t-0based.
+- Las máquinas virtuales de puerta de enlace se configuran en un clúster de conmutación por error. Cuando está en clúster, una máquina virtual está activa y la otra máquina virtual es pasiva.
 
-### <a name="workload-hyper-v-hosts-and-vms"></a>Carga de trabajo Hyper\-V Hosts y máquinas virtuales
+### <a name="workload-hyper-v-hosts-and-vms"></a>Cargas de trabajo y máquinas virtuales de Hyper @ no__t-0V
 
-Para esta prueba, la carga de trabajo de dos Hyper\-hosts V están instalados en la intranet, y cada host tiene una máquina virtual instalada. Si va a duplicar esta prueba en su propio entorno de prueba, puede instalar tantos servidores de carga de trabajo y máquinas virtuales según resulte adecuado para sus fines.
+Para esta prueba, se instalan dos hosts de Hyper @ no__t-0V de carga de trabajo en la intranet y cada host tiene una máquina virtual instalada. Si va a duplicar esta prueba en su propio entorno de prueba, puede instalar tantos servidores de carga de trabajo como máquinas virtuales como sea adecuado para sus fines.
 
-- Carga de trabajo Hyper\-hosts V tienen uno instalado que es el adaptador de red físico conectado a la Intranet de la organización.
-- En Hyper\-V Virtual Switch, se crea un conmutador virtual en cada host. El conmutador es externo y está enlazado al adaptador de uno red conectado a la intranet.
+- Los hosts de la carga de trabajo Hyper @ no__t-0V tienen instalado un adaptador de red físico que está conectado a la intranet de la organización.
+- En el conmutador virtual de Hyper @ no__t-0V, se crea un conmutador virtual en cada host. El modificador es externo y está enlazado a un adaptador de red conectado a la intranet.
 - Las máquinas virtuales de carga de trabajo se configuran con 2 GB de RAM y 2 núcleos.
-- Las máquinas virtuales de carga de trabajo de cada uno tiene un adaptador de red virtual que está conectado al conmutador virtual de intranet.
+- Cada una de las máquinas virtuales de carga de trabajo tiene un adaptador de red virtual que está conectado al conmutador virtual de la intranet.
 
-### <a name="traffic-generator-tool"></a>Herramienta Generador de tráfico
+### <a name="traffic-generator-tool"></a>Herramienta del generador de tráfico
 
-La herramienta de generador de tráfico que se usa en esta prueba es la herramienta ctsTraffic. El repositorio de Git para esta herramienta se encuentra en [ https://github.com/Microsoft/ctsTraffic ](https://github.com/Microsoft/ctsTraffic).
+La herramienta de generador de tráfico que se usa en esta prueba es la herramienta ctsTraffic. El repositorio de Git de esta herramienta se encuentra en [https://github.com/Microsoft/ctsTraffic](https://github.com/Microsoft/ctsTraffic).
 
-## <a name="ras-gateway-performance"></a>Rendimiento de la puerta de enlace RAS
+## <a name="ras-gateway-performance"></a>Rendimiento de puerta de enlace RAS
 
-Las ilustraciones de esta sección describen el Administrador de tareas muestra de rendimiento de túnel GRE con varias conexiones TCP.
+En las ilustraciones de esta sección se describen las pantallas del administrador de tareas de rendimiento del túnel GRE con varias conexiones TCP.
 
-Para lograr hasta 2.0 rendimiento Gbps en múltiples\-principales de las máquinas virtuales que se configuran como puertas de enlace de RAS de GRE.
+Puede conseguir un rendimiento de hasta 2,0 Gbps en máquinas virtuales de varios no__t-0core que estén configuradas como puertas de enlace de RAS GRE.
 
-### <a name="gre-tunnel-performance-with-multiple-tcp-sessions"></a>Rendimiento de túnel GRE con varias sesiones TCP
+### <a name="gre-tunnel-performance-with-multiple-tcp-sessions"></a>Rendimiento del túnel GRE con varias sesiones TCP
 
-Con varias sesiones TCP, el uso de la CPU alcanza el 100% y el rendimiento máximo en el túnel GRE es 2.0 Gbps.
+Con varias sesiones TCP, el uso de CPU alcanza el 100% y el rendimiento máximo en el túnel GRE es de 2,0 Gbps.
 
-La siguiente ilustración muestra el uso de CPU en ambas de las máquinas virtuales de puerta de enlace de RAS. La máquina virtual activa, máquina virtual de puerta de enlace RAS 1 #, está a la izquierda, mientras que la máquina virtual pasiva, máquina virtual de puerta de enlace de RAS 2 #, está a la derecha.
+En la ilustración siguiente se muestra el uso de CPU en las dos máquinas virtuales de puerta de enlace de RAS. La máquina virtual activa, la máquina virtual de puerta de enlace RAS #1, está a la izquierda, mientras que la máquina virtual pasiva, la máquina virtual de puerta de enlace RAS #2, está a la derecha.
 
-![Uso de CPU de la máquina virtual de puerta de enlace en el Administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-01.jpg)
+![Uso de CPU de VM de puerta de enlace en el administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-01.jpg)
 
-La siguiente ilustración muestra el rendimiento de la red Ethernet en las máquinas virtuales de puerta de enlace de RAS. La máquina virtual activa, máquina virtual de puerta de enlace RAS 1 #, está a la izquierda, mientras que la máquina virtual pasiva, máquina virtual de puerta de enlace de RAS 2 #, está a la derecha.
+En la ilustración siguiente se muestra el rendimiento de la red Ethernet en las máquinas virtuales de puerta de enlace RAS. La máquina virtual activa, la máquina virtual de puerta de enlace RAS #1, está a la izquierda, mientras que la máquina virtual pasiva, la máquina virtual de puerta de enlace RAS #2, está a la derecha.
 
-![Rendimiento de red Ethernet de máquina virtual de puerta de enlace en el Administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-02.jpg)
-
-
-### <a name="gre-tunnel-performance-with-one-tcp-connection"></a>Rendimiento de túnel GRE con una conexión TCP
-
-Con la configuración de prueba de varias sesiones TCP puede cambiada a una sola sesión TCP, un solo núcleo de CPU alcanza la capacidad máxima en las máquinas virtuales de puerta de enlace de RAS.
-
-El rendimiento máximo en el túnel GRE es entre 400 y 500 Mbps.
-
-La siguiente ilustración muestra el uso de CPU en ambas de las máquinas virtuales de puerta de enlace de RAS. La máquina virtual activa, máquina virtual de puerta de enlace RAS 1 #, está a la izquierda, mientras que la máquina virtual pasiva, máquina virtual de puerta de enlace de RAS 2 #, está a la derecha.
-
-![Uso de CPU de la máquina virtual de puerta de enlace en el Administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-03.jpg)
+![Rendimiento de red Ethernet de VM de puerta de enlace en el administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-02.jpg)
 
 
-La siguiente ilustración muestra el rendimiento de la red Ethernet en las máquinas virtuales de puerta de enlace de RAS. La máquina virtual activa, máquina virtual de puerta de enlace RAS 1 #, está a la izquierda, mientras que la máquina virtual pasiva, máquina virtual de puerta de enlace de RAS 2 #, está a la derecha.
+### <a name="gre-tunnel-performance-with-one-tcp-connection"></a>Rendimiento del túnel GRE con una conexión TCP
 
-![Rendimiento de red Ethernet de máquina virtual de puerta de enlace en el Administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-04.jpg)
+Con la configuración de prueba modificada de varias sesiones TCP a una única sesión TCP, solo un núcleo de CPU alcanza la capacidad máxima en las máquinas virtuales de puerta de enlace RAS.
 
-Para obtener más información sobre el rendimiento de la puerta de enlace RAS, consulte [ajuste del rendimiento de puerta de enlace de HNV en redes de Software definen](https://docs.microsoft.com/windows-server/administration/performance-tuning/subsystem/software-defined-networking/hnv-gateway-performance).
+El rendimiento máximo del túnel GRE es de entre 400-500 Mbps.
+
+En la ilustración siguiente se muestra el uso de CPU en las dos máquinas virtuales de puerta de enlace de RAS. La máquina virtual activa, la máquina virtual de puerta de enlace RAS #1, está a la izquierda, mientras que la máquina virtual pasiva, la máquina virtual de puerta de enlace RAS #2, está a la derecha.
+
+![Uso de CPU de VM de puerta de enlace en el administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-03.jpg)
+
+
+En la ilustración siguiente se muestra el rendimiento de la red Ethernet en las máquinas virtuales de puerta de enlace RAS. La máquina virtual activa, la máquina virtual de puerta de enlace RAS #1, está a la izquierda, mientras que la máquina virtual pasiva, la máquina virtual de puerta de enlace RAS #2, está a la derecha.
+
+![Rendimiento de red Ethernet de VM de puerta de enlace en el administrador de tareas](../../media/GRE-Tunnel-Perf/Gre-Tunnel-04.jpg)
+
+Para obtener más información sobre el rendimiento de la puerta de enlace RAS, consulte [ajuste del rendimiento de puerta de enlace HNV en redes definidas por software](https://docs.microsoft.com/windows-server/administration/performance-tuning/subsystem/software-defined-networking/hnv-gateway-performance).

@@ -1,8 +1,8 @@
 ---
-title: logman update contador
-description: 'Tema de los comandos de Windows para ***- '
+title: Logman (actualizar contador)
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f6cefb171704d02580dc33a2753f84790bee630d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 8c0696b6077a919d93106cb39329c986e91883fa
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66437563"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71374354"
 ---
-# <a name="logman-update-counter"></a>logman update contador
+# <a name="logman-update-counter"></a>Logman (actualizar contador)
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Actualizar las propiedades de un contador recopilador de datos existente.  
+Actualice las propiedades de un recopilador de datos de contador existente.  
 
 ## <a name="syntax"></a>Sintaxis  
 ```  
@@ -34,37 +34,37 @@ logman update counter <[-n] <name>> [options]
 
 |                    Parámetro                     |                                                                               Descripción                                                                               |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                        /?                        |                                                                    Contextual muestra la Ayuda.                                                                     |
-|                -s <computer name>                |                                                          Ejecutar el comando en el equipo remoto especificado.                                                          |
-|                 -config <value>                  |                                                         Especifica el archivo de configuración que contiene las opciones de comando.                                                         |
+|                        /?                        |                                                                    Muestra la ayuda contextual.                                                                     |
+|                -s <computer name>                |                                                          Ejecute el comando en el equipo remoto especificado.                                                          |
+|                 -config <value>                  |                                                         Especifica el archivo de configuración que contiene opciones de comando.                                                         |
 |                   [-n] <name>                    |                                                                       Nombre del objeto de destino.                                                                        |
-| -f < bin&#124;bincirc&#124;csv&#124;tsv&#124;sql > |                                                            Especifica el formato de registro del recopilador de datos.                                                             |
-|             -[-]u <user [password]>              | Especifica el usuario para la ejecución. Escribir un \* para la contraseña genera una solicitud para la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
-|    -m <[start] [stop] [[start] [stop] [...]]>    |                                                Cambiar inicio manual o detener en lugar de un tiempo de inicio programado.                                                 |
-|                -rf <[[hh:]mm:]ss>                |                                                        Ejecute el recopilador de datos para el período de tiempo especificado.                                                         |
-|        -b < M/d/aaaa ss [AM&#124;PM] >         |                                                              Comenzar a recopilar datos a la hora especificada.                                                               |
-|        -e < M/d/aaaa ss [AM&#124;PM] >         |                                                               Finalizar la recopilación de datos a la hora especificada.                                                                |
-|                -si <[[hh:]mm:]ss>                |                                                 Especifica el intervalo de muestra para recopiladores de datos del contador de rendimiento.                                                  |
-|              -o < ruta de acceso&#124;dsn! registro >              |                                              Especifica que el archivo de registro de salida o el DSN y el registro de nombre del conjunto en una base de datos SQL.                                               |
-|                      -[-]r                       |                                                  Repita el recopilador de datos diariamente a las de inicio especificada y horas de finalización.                                                  |
-|                      -[-]a                       |                                                                     Anexar a un archivo de registro existente.                                                                     |
-|                      -[-] ow                      |                                                                     Sobrescribir un archivo de registro existente.                                                                     |
-|           -[-]v <nnnnnn&#124;mmddhhmm>           |                                                   adjuntar información de control de versiones de archivo al final del nombre del archivo de registro.                                                   |
-|                  -[-] rc <task>                   |                                                         Ejecute el comando especificado cada vez que se cierra el registro.                                                          |
-|                 -max [-] <value>                  |                                                 Tamaño de archivo de registro máximo en MB o el número máximo de registros para los registros SQL.                                                  |
-|              -[-]cnf <[[hh:]mm:]ss>              |     Cuando se especifica el tiempo, cree un nuevo archivo cuando ha transcurrido el tiempo especificado. Cuando no se especifica el tiempo, cree un nuevo archivo cuando se supera el tamaño máximo.     |
-|                        -y                        |                                                             Responda Sí a todas las preguntas sin preguntar.                                                              |
-|                  cf- <filename>                  |                       Especifica el archivo de lista de contadores de rendimiento para recopilar. El archivo debe contener un nombre de contador de rendimiento por línea.                        |
-|               -c <path [path [ ]]>               |                                                              Especifica los contadores de rendimiento para recopilar.                                                               |
-|                   -sc <value>                    |                                      Especifica el número máximo de muestras que se recopilarán con un recopilador de datos del contador de rendimiento.                                      |
+| -f < bin&#124;bincirc&#124;CSV&#124;TSV&#124;SQL > |                                                            Especifica el formato del registro del recopilador de datos.                                                             |
+|             -[-] u < usuario [contraseña] >              | Especifica el usuario que se va a ejecutar como. Al escribir un \* para la contraseña, se solicita la contraseña. La contraseña no se muestra cuando se escribe en el símbolo del sistema de contraseña. |
+|    -m < [Start] [STOP] [[Start] [STOP] [...]] >    |                                                cambie a Inicio o detención manual en lugar de a una hora de inicio o de finalización programada.                                                 |
+|                -RF < [[HH:] mm:] SS >                |                                                        Ejecute el recopilador de datos durante el período de tiempo especificado.                                                         |
+|        -b < M/d/YYYY h:mm: SS [AM&#124;PM] >         |                                                              Comienza a recopilar datos en el momento especificado.                                                               |
+|        -e < M/d/YYYY h:mm: SS [AM&#124;PM] >         |                                                               Finaliza la recopilación de datos en el momento especificado.                                                                |
+|                -Si < [[HH:] mm:] SS >                |                                                 Especifica el intervalo de ejemplo para los recopiladores de datos del contador de rendimiento.                                                  |
+|              -o < path&#124;DSN! log >              |                                              Especifica el archivo de registro de salida o el DSN y el nombre del conjunto de registros en una base de datos SQL.                                               |
+|                      -[-] r                       |                                                  Repetir el recopilador de datos diariamente en las horas de inicio y finalización especificadas.                                                  |
+|                      -[-] a                       |                                                                     anexar a un archivo de registro existente.                                                                     |
+|                      -[-] permitir                      |                                                                     Sobrescribir un archivo de registro existente.                                                                     |
+|           -[-] v < nnnnnn&#124;mmddHHMM >           |                                                   Adjunte información de versión del archivo al final del nombre del archivo de registro.                                                   |
+|                  -[-] RC <task>                   |                                                         Ejecute el comando especificado cada vez que se cierre el registro.                                                          |
+|                 -[-] máx. <value>                  |                                                 Tamaño máximo del archivo de registro en MB o número máximo de registros para los registros de SQL.                                                  |
+|              -[-] CNF < [[HH:] mm:] SS >              |     Cuando se especifica Time, cree un nuevo archivo cuando haya transcurrido el tiempo especificado. Si no se especifica Time, cree un archivo nuevo cuando se supere el tamaño máximo.     |
+|                        -y                        |                                                             Responda sí a todas las preguntas sin preguntar.                                                              |
+|                  -CF <filename>                  |                       Especifica el archivo que muestra los contadores de rendimiento que se van a recopilar. El archivo debe contener un nombre de contador de rendimiento por línea.                        |
+|               -c < ruta [path []] >               |                                                              Especifica los contadores de rendimiento que se van a recopilar.                                                               |
+|                   -SC <value>                    |                                      Especifica el número máximo de muestras que se van a recopilar con un recopilador de datos del contador de rendimiento.                                      |
 
 ## <a name="remarks"></a>Comentarios  
-Donde verá [-], un - extra niega la opción.  
-## <a name="BKMK_examples"></a>Ejemplos  
-El comando siguiente actualiza el perf_log del recopilador de datos, cambiar el intervalo de muestra para 10 y el formato de registro a CSV y agregar control de versiones para el nombre de archivo de registro en el formato de mmddhhmm.  
+Donde [-] aparece en la lista, un archivo extra niega la opción.  
+## <a name="BKMK_examples"></a>Example  
+El comando siguiente actualiza el recopilador de datos perf_log, cambiando el intervalo de ejemplo a 10 y el formato de registro a CSV y agregando el control de versiones al nombre del archivo de registro con el formato mmddHHMM.  
 ```  
 logman update perf_log -si 10 -f csv -v mmddhhmm  
 ```  
 #### <a name="additional-references"></a>Referencias adicionales  
 [logman](logman.md)  
-[logman crear contador](logman-create-counter.md)  
+[Logman Create Counter](logman-create-counter.md)  

@@ -1,8 +1,8 @@
 ---
-title: eliminación y bitsadmin caché
-description: Tema de los comandos de Windows para **bitsadmin almacenar en caché y eliminar** -elimina una entrada de caché específica.
+title: bitsadmin cache y DELETE
+description: 'Tema de comandos de Windows para **caché de bitsadmin y eliminar** : elimina una entrada de caché específica.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 63b82cbbadebf2c4e36f2c76076b329787d7b1b5
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 87c3ffd7e0c9c43e8e2eb6e5d5a1d98610a4d9ad
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59852516"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382073"
 ---
-# <a name="bitsadmin-cache-and-delete"></a>eliminación y bitsadmin caché
+# <a name="bitsadmin-cache-and-delete"></a>bitsadmin cache y DELETE
 
 
 
@@ -36,11 +36,11 @@ bitsadmin /Cache /Delete RecordID
 
 |Parámetro|Descripción|
 |---------|-----------|
-|RecordID|El GUID asociado con la entrada de caché.|
+|RecordID|GUID asociado a la entrada de caché.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-El ejemplo siguiente elimina la entrada de caché con el identificador de registro de {6511FB02-E195-40A2-B595-E8E2F8F47702}.
+En el siguiente ejemplo se elimina la entrada de caché con el RecordID de {6511FB02-E195-40A2-B595-E8E2F8F47702}.
 ```
 C:\>bitsadmin /Cache /Delete {6511FB02-E195-40A2-B595-E8E2F8F47702} 
 ```

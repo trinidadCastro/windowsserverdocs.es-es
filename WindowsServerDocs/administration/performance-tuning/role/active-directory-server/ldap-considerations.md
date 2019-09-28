@@ -1,107 +1,107 @@
 ---
-title: Consideraciones de LDAP en la optimización del rendimiento de ADDS
+title: Consideraciones de LDAP en agrega optimización del rendimiento
 description: Consideraciones de LDAP en cargas de trabajo de Active Directory
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: TimWi; ChrisRob; HerbertM; KenBrumf;  MLeary; ShawnRab
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 7ac9453159fe97dc15ecbb2ab858214664a2a197
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: f6670c8cfd718360518869f0551461c45e5aed27
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811525"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370281"
 ---
-# <a name="ldap-considerations-in-adds-performance-tuning"></a>Consideraciones de LDAP en la optimización del rendimiento de ADDS
+# <a name="ldap-considerations-in-adds-performance-tuning"></a>Consideraciones de LDAP en agrega optimización del rendimiento
 
 > [!IMPORTANT]
-> El siguiente es un resumen de las recomendaciones más importantes y consideraciones para optimizar el hardware de servidor para las cargas de trabajo de Active Directory tratados en mayor profundidad en el [planear la capacidad de los servicios de dominio de Active Directory](https://go.microsoft.com/fwlink/?LinkId=324566) artículo. Se recomienda encarecidamente no solo para revisar los lectores [planear la capacidad de los servicios de dominio de Active Directory](https://go.microsoft.com/fwlink/?LinkId=324566) para un mayor conocimiento técnico y las implicaciones de estas recomendaciones.
+> A continuación se ofrece un resumen de las recomendaciones y consideraciones clave para optimizar el hardware de servidor para Active Directory cargas de trabajo que se tratan con mayor profundidad en el artículo [planeación de la capacidad de Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) . Es muy recomendable que los lectores revisen el [planeamiento de la capacidad de Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) para obtener una mayor comprensión técnica e implicaciones de estas recomendaciones.
 
-## <a name="verify-ldap-queries"></a>Compruebe las consultas LDAP
+## <a name="verify-ldap-queries"></a>Comprobar consultas LDAP
 
-Compruebe que las consultas LDAP cumplan con las recomendaciones de consultas eficaces de creación.
+Compruebe que las consultas LDAP se ajustan a las recomendaciones para crear consultas eficaces.
 
-Hay una amplia documentación en MSDN sobre cómo escribir, estructura y analizar las consultas para su uso en Active Directory correctamente. Para obtener más información, consulte [Creating More Efficient Microsoft Active Directory-Enabled aplicaciones](https://msdn.microsoft.com/library/ms808539.aspx).
+Hay una amplia documentación sobre MSDN sobre cómo escribir, estructurar y analizar correctamente consultas para usarlas en Active Directory. Para obtener más información, vea [creación de aplicaciones más eficaces habilitadas para Microsoft Active Directory](https://msdn.microsoft.com/library/ms808539.aspx).
 
-## <a name="optimize-ldap-page-sizes"></a>Optimizar los tamaños de página LDAP
+## <a name="optimize-ldap-page-sizes"></a>Optimizar tamaños de página LDAP
 
-Cuando se devuelven resultados con varios objetos en respuesta a las solicitudes de cliente, el controlador de dominio tiene que almacenar temporalmente el conjunto de resultados en memoria. Cada vez mayor de los tamaños de página hará que el mayor uso de memoria y pueden age innecesariamente los elementos de la caché. En este caso, la configuración predeterminada es óptimo. Hay varios escenarios donde se realizaron las recomendaciones para aumentar los valores de tamaño de página. Se recomienda usar los valores predeterminados a menos que se identifica específicamente como inadecuado.
+Cuando se devuelven resultados con varios objetos en respuesta a solicitudes de cliente, el controlador de dominio tiene que almacenar temporalmente el conjunto de resultados en la memoria. Aumentar el tamaño de las páginas producirá más uso de memoria y puede reducir los elementos de la memoria caché innecesariamente. En este caso, la configuración predeterminada es óptima. Hay varios escenarios en los que se han realizado recomendaciones para aumentar la configuración del tamaño de página. Se recomienda usar los valores predeterminados a menos que se identifiquen específicamente como inadecuados.
 
-Cuando las consultas tienen muchos resultados, se puede encontrar un límite de consultas similares que se ejecutan simultáneamente.  Esto se produce como un área de memoria global, conocido como el grupo de cookies que puede reducir el servidor LDAP.  Puede que sea necesario aumentar el tamaño del grupo como se describe en [cómo LDAP Server se controlan las Cookies](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/manage/how-ldap-server-cookies-are-handled).
+Cuando las consultas tienen muchos resultados, es posible que se encuentre un límite de consultas similares que se ejecutan simultáneamente.  Esto se produce porque el servidor LDAP puede agotar un área de memoria global conocida como grupo de cookies.  Puede que sea necesario aumentar el tamaño del grupo tal y como se describe en [cómo se controlan las cookies del servidor LDAP](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/manage/how-ldap-server-cookies-are-handled).
 
-Para ajustar esta configuración, consulte [controlador de dominio de 2008 y versiones más recientes de Windows Server devuelve sólo 5000 valores en una respuesta LDAP](https://support.microsoft.com/kb/2009267).
+Para optimizar esta configuración, consulte [Windows Server 2008 y el controlador de dominio más reciente solo devuelve los valores 5000 en una respuesta LDAP](https://support.microsoft.com/kb/2009267).
 
-## <a name="determine-whether-to-add-indices"></a>Determinar si se debe agregar índices
+## <a name="determine-whether-to-add-indices"></a>Determinar si se van a agregar índices
 
-La indización de atributos es útil cuando se buscan los objetos que tienen el nombre del atributo en un filtro. La indización puede reducir el número de objetos que se debe visitar al evaluar el filtro. Sin embargo, esto reduce el rendimiento de las operaciones de escritura porque el índice debe actualizarse cuando se modifica o agrega el atributo correspondiente. También aumenta el tamaño de la base de datos de directorio, aunque a menudo, las ventajas superan el costo del almacenamiento. Registro se puede utilizar para buscar las consultas costosas e ineficaces. Una vez identificadas, considere la posibilidad de indizar algunos atributos que se usan en las consultas correspondientes para mejorar el rendimiento de la búsqueda. Para obtener más información acerca del funcionamiento de las búsquedas en Active Directory, consulte [Active Directory búsquedas funcionamiento](https://technet.microsoft.com/library/cc755809.aspx).
+Los atributos de indización son útiles al buscar objetos que tienen el nombre de atributo en un filtro. La indización puede reducir el número de objetos que se deben visitar al evaluar el filtro. Sin embargo, esto reduce el rendimiento de las operaciones de escritura porque el índice debe actualizarse cuando se modifica o se agrega el atributo correspondiente. También aumenta el tamaño de la base de datos de directorio, aunque las ventajas a menudo superan el costo del almacenamiento. El registro se puede usar para buscar consultas costosas e ineficaces. Una vez identificados, considere la posibilidad de indizar algunos atributos que se usan en las consultas correspondientes para mejorar el rendimiento de la búsqueda. Para obtener más información sobre cómo funcionan las búsquedas de Active Directory, vea [Cómo funcionan las búsquedas en Active Directory](https://technet.microsoft.com/library/cc755809.aspx).
 
-### <a name="scenarios-that-benefit-in-adding-indices"></a>Escenarios que se benefician de adición de índices
+### <a name="scenarios-that-benefit-in-adding-indices"></a>Escenarios que se benefician al agregar índices
 
--   Carga del cliente en el que solicita los datos está generando uso significativo de CPU y el comportamiento de la consulta de cliente no se puede cambiar ni optimizado. Por carga significativa, considere la posibilidad de que se muestra en una lista infractor Top 10 Server Performance Advisor o el integrada Active Directory datos conjunto de recopiladores y está usando más de un 1% de CPU.
+-   La carga de cliente al solicitar los datos está generando un uso de CPU significativo y el comportamiento de las consultas de cliente no se puede cambiar ni optimizar. Por carga significativa, tenga en cuenta que se muestra en una lista de los 10 principales infractores en el asesor de rendimiento del servidor o en el conjunto de recopiladores de datos Active Directory integrados y usa más del 1% de la CPU.
 
--   La carga del cliente es generar E/S de disco significativo en un servidor debido a un atributo no indizado y el comportamiento de la consulta de cliente no se puede cambiar ni optimizado.
+-   La carga de cliente genera una e/s de disco significativa en un servidor debido a un atributo no indexado y el comportamiento de la consulta del cliente no se puede cambiar ni optimizar.
 
--   Una consulta está tardando mucho tiempo y no se completa en un período de tiempo aceptable para el cliente debido a la falta de índices de cobertura.
+-   Una consulta está tardando mucho y no se completa en un período de tiempo aceptable para el cliente debido a la falta de índices de cobertura.
 
-- Grandes volúmenes de consultas con duraciones alta causan agotamiento de subprocesos de ATQ LDAP y el consumo. Supervisar los contadores de rendimiento siguientes:
+- Los grandes volúmenes de consultas con duraciones altas provocan el consumo y el agotamiento de los subprocesos LDAP de ATQ. Supervise los siguientes contadores de rendimiento:
 
-    - **NTDS\\latencia de solicitud** : esto está sujeto a cuánto se tarda en procesar la solicitud. Active Directory agota el tiempo de las solicitudes después de 120 segundos (valor predeterminado), sin embargo, la mayoría se debe ejecutar con más rapidez y consultas de ejecución muy prolongada debería obtener ocultas en los números general. Busque los cambios de esta línea base, en lugar de los umbrales absolutos.
+    - **NTDS @ no__t-1Request latencia** : está sujeto a cuánto tiempo tarda la solicitud en procesarse. Active Directory agota el tiempo de espera de las solicitudes después de 120 segundos (valor predeterminado), sin embargo, la mayoría debe ejecutarse mucho más rápido y las consultas de ejecución extremadamente larga deben ocultarse en los números generales. Busque los cambios en esta línea de base, en lugar de los umbrales absolutos.
 
         > [!NOTE]
-        > Los valores altos aquí también pueden ser indicadores de retrasos en "proxy" solicitudes a otros dominios y comprobaciones CRL.
+        > Los valores altos aquí también pueden ser indicadores de retrasos en las solicitudes de "proxy" a otras comprobaciones de CRL y dominios.
 
-    - **NTDS\\estimado retardo de cola** : lo ideal es que debe ser cercanos a 0 para un rendimiento óptimo ya que esto significa que las solicitudes no pasan ningún tiempo de espera para ser atendidas.
+    - **NTDS @ no__t-1Estimated de tiempo** de espera de la cola: Idealmente, debería estar cerca de 0 para un rendimiento óptimo, ya que esto significa que las solicitudes no pasan ningún tiempo en espera de servicio.
 
 Estos escenarios se pueden detectar mediante uno o varios de los métodos siguientes:
 
--   [Determinar el tiempo de una consulta con el Control de las estadísticas](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [Determinar el tiempo de consulta con el control de estadísticas](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   [Seguimiento de las búsquedas costosas e ineficaces](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [Seguimiento de búsquedas costosas e ineficaces](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   Conjunto de recopiladores de datos de diagnóstico de Active Directory en el Monitor de rendimiento ([hijo de SPA: En Win2008 y más allá de los conjuntos de recopiladores de datos de AD](http://blogs.technet.com/b/askds/archive/2010/06/08/son-of-spa-ad-data-collector-sets-in-win2008-and-beyond.aspx))
+-   Active Directory conjunto de recopiladores de datos de diagnóstico en el monitor de rendimiento ([Son de SPA: Conjuntos de recopiladores de datos de AD en Win2008 y más allá de @ no__t-0)
 
--   [Microsoft Server Performance Advisor](../../../server-performance-advisor/microsoft-server-performance-advisor.md) módulo del Asesor de actualizaciones de Active Directory
+-   [Asesor de rendimiento de servidor de Microsoft](../../../server-performance-advisor/microsoft-server-performance-advisor.md) Paquete de Active Directory Advisor
 
--   Las búsquedas mediante cualquier filtro además "(objectClass =\*)" que usan el índice de antecesores.
+-   Realiza búsquedas con cualquier filtro además de "(objectClass = \*)" que usa el índice de antecesores.
 
-### <a name="other-index-considerations"></a>Otras consideraciones de índice
+### <a name="other-index-considerations"></a>Otras consideraciones sobre los índices
 
--   Asegúrese de que crear el índice es la solución adecuada para el problema después de que se ha agotado la optimización de la consulta como una opción. Es muy importante cambiar correctamente el tamaño de hardware. Los índices se deben agregar solo cuando la solución correcta consiste en indexar el atributo y no intenta ofuscar los problemas de hardware.
+-   Asegúrese de que la creación del índice es la solución correcta para el problema después de que el ajuste de la consulta se haya agotado como una opción. Ajustar el tamaño del hardware correctamente es muy importante. Los índices solo deben agregarse si la corrección correcta es indexar el atributo y no se trata de un intento de ofuscar problemas de hardware.
 
--   Los índices de aumentar el tamaño de la base de datos en un mínimo del tamaño total del atributo que se está indizando. Una estimación de crecimiento de la base de datos, por tanto, se puede evaluar tomando el tamaño medio de los datos en el atributo y multiplicar por el número de objetos que tendrán el atributo de rellenado. Esto suele sobre un aumento de 1% de tamaño de base de datos. Para obtener más información, consulte [Data Store funcionamiento](https://technet.microsoft.com/library/cc772829.aspx).
+-   Los índices aumentan el tamaño de la base de datos en un mínimo del tamaño total del atributo que se está indizando. Por consiguiente, una estimación del crecimiento de la base de datos se puede evaluar tomando el tamaño medio de los datos en el atributo y multiplicando por el número de objetos que tendrán el atributo rellenado. Por lo general, se trata de un aumento del 1% del tamaño de la base de datos. Para obtener más información, vea [Cómo funciona el almacén de datos](https://technet.microsoft.com/library/cc772829.aspx).
 
--   Si el comportamiento de la búsqueda se realiza principalmente en el nivel de unidad de organización, considere la posibilidad de indizar para búsquedas de contenido.
+-   Si el comportamiento de búsqueda se realiza principalmente en el nivel de la unidad de la organización, considere la posibilidad de indexar búsquedas en contenedor.
 
--   Los índices de tupla son mayores que los índices normales, pero es mucho más difícil de estimar el tamaño. Usar índices normales calcula el tamaño como el límite inferior para el crecimiento, con un máximo de 20%. Para obtener más información, consulte [Data Store funcionamiento](https://technet.microsoft.com/library/cc772829.aspx).
+-   Los índices de tupla son más grandes que los índices normales, pero es mucho más difícil calcular el tamaño. Use cálculos de tamaño de índices normales como el piso para el crecimiento, con un máximo de un 20%. Para obtener más información, vea [Cómo funciona el almacén de datos](https://technet.microsoft.com/library/cc772829.aspx).
 
--   Si el comportamiento de la búsqueda se realiza principalmente en el nivel de unidad de organización, considere la posibilidad de indizar para búsquedas de contenido.
+-   Si el comportamiento de búsqueda se realiza principalmente en el nivel de la unidad de la organización, considere la posibilidad de indexar búsquedas en contenedor.
 
--   Índices de tupla son necesarios para admitir las cadenas de búsqueda medio y cadenas de búsqueda final. Los índices de la tupla no son necesarios para las cadenas de búsqueda inicial.
+-   Los índices de tupla son necesarios para admitir cadenas de búsqueda medial y cadenas de búsqueda final. Los índices de tupla no son necesarios para las cadenas de búsqueda iniciales.
 
-    -   Inicial de la cadena de búsqueda: (samAccountName = Mi PC\*)
+    -   Cadena de búsqueda inicial: (samAccountName = mi @ no__t-0)
 
-    -   Cadena de búsqueda medio - (samAccountName =\*Mi PC\*)
+    -   Cadena de búsqueda medial: (samAccountName = \*MYPC @ no__t-1)
 
-    -   Cadena de búsqueda final – (samAccountName =\*Mi PC$)
+    -   Cadena de búsqueda final: (samAccountName = \*MYPC $)
 
--   Creación de un índice generará la E/S de disco mientras se está compilando el índice. Esto se realiza en un subproceso en segundo plano con prioridad más baja y las solicitudes entrantes se priorizará sobre la generación del índice. Si se ha realizado correctamente el planeamiento de capacidad para el entorno, debe ser transparente. Sin embargo, los escenarios de escritura intensiva o en un entorno donde la carga en el almacenamiento de controlador de dominio es desconocida podría degradar la experiencia del cliente y debe realizar las horas de trabajo.
+-   Al crear un índice se generará la e/s de disco mientras se compila el índice. Esto se hace en un subproceso en segundo plano con una prioridad más baja y las solicitudes entrantes se priorizarán en la compilación del índice. Si el planeamiento de la capacidad para el entorno se ha realizado correctamente, debería ser transparente. Sin embargo, los escenarios con mucha actividad de escritura o un entorno en el que se desconoce la carga en el almacenamiento del controlador de dominio podrían degradar la experiencia del cliente y deben deshacerse fuera del horario de trabajo.
 
--   Afecta al tráfico de replicación es mínima, ya que generar los índices se produce localmente.
+-   El impacto en el tráfico de replicación es mínimo, ya que la creación de índices se produce de forma local.
 
 Para obtener más información, vea lo siguiente:
 
--   [Creación de aplicaciones habilitadas para directorio de Microsoft Active más eficientes](https://msdn.microsoft.com/library/ms808539.aspx)
+-   [Creación de aplicaciones más eficaces habilitadas para Microsoft Active Directory](https://msdn.microsoft.com/library/ms808539.aspx)
 
--   [Buscar en Active Directory Domain Services](https://msdn.microsoft.com/library/aa746427.aspx)
+-   [Búsqueda en Active Directory Domain Services](https://msdn.microsoft.com/library/aa746427.aspx)
 
 -   [Atributos indizados](https://msdn.microsoft.com/library/windows/desktop/ms677112.aspx)
 
 ## <a name="see-also"></a>Vea también
 
-- [Servidores de Active Directory de optimización del rendimiento](index.md)
-- [Consideraciones de hardware](hardware-considerations.md).
+- [Optimizar el rendimiento de servidores Active Directory](index.md)
+- [Consideraciones de hardware](hardware-considerations.md)
 - [Colocación adecuada de los controladores de dominio y consideraciones de sitio](site-definition-considerations.md)
 - [Solución de problemas de rendimiento de AD DS](troubleshoot.md) 
 - [Capacity Planning for Active Directory Domain Services](https://go.microsoft.com/fwlink/?LinkId=324566) (Planeamiento de la capacidad para Active Directory Domain Services)

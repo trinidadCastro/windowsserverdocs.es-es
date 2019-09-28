@@ -2,7 +2,7 @@
 title: Compatibilidad de aplicaciones de servidor de Microsoft y Windows Server 2019
 description: Tabla de compatibilidad de aplicaciones de servidor de Microsoft y Windows Server 2019
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: server-general
@@ -13,16 +13,16 @@ author: coreyp
 ms.author: coreyp-at-msft
 manager: jasgroce
 ms.localizationpriority: medium
-ms.openlocfilehash: 8dcaff6ab8a296790158f59035bd4a5c1a093cbd
-ms.sourcegitcommit: 3743cf691a984e1d140a04d50924a3a0a19c3e5c
+ms.openlocfilehash: 40c90b179321062949af5eea6d92f6238fb9b460
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: HT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/17/2019
-ms.locfileid: "66442372"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392000"
 ---
 # <a name="windows-server-2019-and-microsoft-server-application-compatibility"></a>Compatibilidad de aplicaciones de servidor de Microsoft y Windows Server 2019
 
->Se aplica a: Windows Server 2019
+>Se aplica a: Windows Server 2019
 
 En esta tabla se enumeran las aplicaciones de servidor de Microsoft que admiten la instalación y la funcionalidad en Windows Server 2019. Esta información es para referencia rápida y no está diseñada para reemplazar las especificaciones de productos individuales, los requisitos, los anuncios o las comunicaciones generales de cada aplicación de servidor individual. Consulta la documentación oficial de cada producto para comprender perfectamente las opciones y la compatibilidad.
 

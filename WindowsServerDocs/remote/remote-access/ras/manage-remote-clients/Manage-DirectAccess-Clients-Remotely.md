@@ -1,9 +1,9 @@
 ---
 title: Administrar clientes de DirectAccess de forma remota
-description: En este tema forma parte de la Guía de los clientes de DirectAccess de administrar remotamente en Windows Server 2016.
+description: Este tema forma parte de la guía administrar los clientes de DirectAccess de forma remota en Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-ras
@@ -12,12 +12,12 @@ ms.topic: article
 ms.assetid: 36255d80-a13e-4af7-a5c0-ab4c8f302622
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: c4ebab1cb444df9c756d66ded24e1c851023d17a
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: ecfbd6dc09f251d5197a16b166aa76e6a37b933a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281166"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71367281"
 ---
 # <a name="manage-directaccess-clients-remotely"></a>Administrar clientes de DirectAccess de forma remota
 
@@ -57,7 +57,7 @@ La supervisión de clientes remotos se basa en las conexiones. Hay dos tipos de 
   
 -   **Conexiones de tráfico de túnel de usuario**: este túnel lo establece la cuenta de usuario en el equipo, en un contexto de usuario, cuando este intenta acceder a un recurso en la red corporativa. En función de los requisitos de implementación, un usuario podría tener que proporcionar credenciales seguras (por ejemplo, mediante una tarjeta inteligente o con una contraseña de un solo uso) para acceder a los recursos de la red corporativa.  
   
-En el caso de DirectAccess, una conexión se identifica de forma única por la dirección IP del cliente remoto. Por ejemplo, si un túnel de equipo está abierto para un equipo cliente y un usuario se conecta desde ese equipo, estos sería utilizar la misma conexión. Si el usuario se desconecta y se vuelve a conectar mientras el túnel de equipo está activo, es una sola conexión.  
+En el caso de DirectAccess, una conexión se identifica de forma única por la dirección IP del cliente remoto. Por ejemplo, si un túnel de equipo está abierto para un equipo cliente y un usuario está conectado desde ese equipo, se utilizará la misma conexión. Si el usuario se desconecta y se vuelve a conectar mientras el túnel de equipo está activo, es una sola conexión.  
   
 
 

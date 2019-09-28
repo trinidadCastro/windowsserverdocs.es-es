@@ -1,8 +1,8 @@
 ---
 title: crear
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 70a8f53d9cb90fc36a76b11de2f93da71874617a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2245efb6c3bce8aecf8edf730694804ffbdc3d80
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59881276"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71378775"
 ---
 # <a name="create"></a>crear
 
 
 
-inicia el proceso de creación de la copia de instantáneas, usando la configuración actual de contexto y la opción. Requiere al menos un volumen en el conjunto de copia sombra.
+Inicia el proceso de creación de instantáneas con la configuración de contexto y opciones actual. Requiere al menos un volumen en el conjunto de instantáneas.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -34,9 +34,9 @@ create
 
 ## <a name="remarks"></a>Comentarios
 
--   Debe agregar al menos un volumen con la **agregar volumen** comando antes de poder usar el **crear** comando.
--   Puede usar el **comenzar la copia de seguridad** comando para especificar una copia de seguridad completa, en lugar de una copia de seguridad.
--   Después de ejecutar el **crear** de comandos, puede usar el **exec** comando para ejecutar una secuencia de comandos de duplicación para copia de seguridad de la instantánea.
+-   Debe agregar al menos un volumen con el comando **Add Volume** para poder usar el comando **Create** .
+-   Puede usar el comando **Begin backup** para especificar una copia de seguridad completa, en lugar de una copia de seguridad de copia.
+-   Después de ejecutar el comando **Create** , puede usar el comando **exec** para ejecutar un script de duplicación para la copia de seguridad de la instantánea.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

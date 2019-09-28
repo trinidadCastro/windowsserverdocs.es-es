@@ -1,54 +1,54 @@
 ---
 title: Opciones de selección de subred DHCP
-description: En este tema se proporciona información sobre las opciones de selección de subred DHCP para protocolo de configuración de Dynamic Host (DHCP) en Windows Server 2016.
+description: En este tema se proporciona información sobre las opciones de selección de subred DHCP para el protocolo de configuración dinámica de host (DHCP) en Windows Server 2016.
 manager: dougkim
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-dhcp
 ms.topic: get-started-article
 ms.assetid: ca19e7d1-e445-48fc-8cf5-e4c45f561607
 ms.author: pashort
 author: shortpatti
 ms.date: 08/17/2018
-ms.openlocfilehash: 034ca48ef13a6bdac63ca99ac753fc9826460922
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4718204fad49b23c84cc73b67164f34a803ddd86
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870816"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405754"
 ---
 # <a name="dhcp-subnet-selection-options"></a>Opciones de selección de subred DHCP
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Puede usar este tema para obtener información sobre las nuevas opciones de selección de subred DHCP.
+Puede usar este tema para obtener información acerca de las nuevas opciones de selección de subred DHCP.
 
-DHCP ahora admite la opción 82 \(Sub opción 5\). Puede usar estas opciones para permitir que los clientes de proxy DHCP y agentes de retransmisión solicitar una dirección IP para una subred específica y de un intervalo de direcciones IP específico y un ámbito.  Para obtener más información, consulte **opción 82 Sub opción 5**: [Selección del vínculo de RFC 3527 subopciones para la opción de información de agente de retransmisión para DHCPv4](https://tools.ietf.org/html/rfc3527).
+DHCP ahora admite la opción 82 \(sub-Option 5 @ no__t-1. Puede usar estas opciones para permitir que los clientes proxy DHCP y los agentes de retransmisión soliciten una dirección IP para una subred específica y desde un ámbito y un intervalo de direcciones IP específicos.  Para obtener más información, consulte **option 82 sub Option 5**: [RFC 3527 subopción de selección de vínculos para la opción de información del agente de retransmisión para DHCPv4](https://tools.ietf.org/html/rfc3527).
 
-Si usa un agente de retransmisión DHCP que está configurado con DHCP opción 82, Sub opción 5, el agente de retransmisión puede solicitar una concesión de dirección IP para los clientes DHCP de un intervalo de direcciones IP específico.
+Si usa un agente de retransmisión DHCP que está configurado con la opción 82 de DHCP, subopción 5, el agente de retransmisión puede solicitar una concesión de dirección IP a los clientes DHCP de un intervalo de direcciones IP específico.
 
 
-## <a name="option-82-sub-option-5-link-selection-sub-option"></a>Opción 82 subopción 5: Subopción de selección de vínculo
+## <a name="option-82-sub-option-5-link-selection-sub-option"></a>Option 82 sub Option 5: Opción de selección de vínculo
 
-Las subopciones selección del vínculo de agente de retransmisión permite que un agente de retransmisión DHCP especificar una subred IP desde la que el servidor DHCP debe asignar direcciones IP y opciones.
+La subopción de selección de vínculo del agente de retransmisión permite que un agente de retransmisión DHCP especifique una subred IP desde la que el servidor DHCP debe asignar las direcciones IP y las opciones.
 
-Normalmente, los agentes de retransmisión DHCP se basan en la dirección IP de puerta de enlace \(GIADDR\) campo para comunicarse con servidores DHCP. Sin embargo, GIADDR está limitado por sus dos funciones operativas:
+Normalmente, los agentes de retransmisión DHCP se basan en el campo dirección IP de puerta de enlace \(GIADDR @ no__t-1 para comunicarse con los servidores DHCP. Sin embargo, GIADDR está limitado por sus dos funciones operativas:
 
-1. Informar al servidor DHCP acerca de la subred en la que reside el cliente DHCP que está solicitando la concesión de dirección IP.
-2. Informar al servidor DHCP de la dirección IP se utiliza para comunicarse con el agente de retransmisión.
+1. Para informar al servidor DHCP acerca de la subred en la que reside el cliente DHCP que solicita la concesión de la dirección IP.
+2. Para informar al servidor DHCP de la dirección IP que se va a utilizar para comunicarse con el agente de retransmisión.
 
-En algunos casos, la dirección IP que usa el agente de retransmisión para comunicarse con el servidor DHCP podría ser diferente del intervalo de direcciones IP desde el que debe asignarse la dirección IP del cliente DHCP. 
+En algunos casos, la dirección IP que usa el agente de retransmisión para comunicarse con el servidor DHCP puede ser diferente del intervalo de direcciones IP desde el que se debe asignar la dirección IP del cliente DHCP. 
 
-El vínculo selección subopción de opción 82 es útil en esta situación, permitiendo que el agente de retransmisión indicar explícitamente a la subred desde la que desea que la dirección IP asignada en forma de opción de DHCP v4 82 subopción de 5.
+La opción de selección de vínculo de la opción 82 es útil en esta situación, lo que permite que el agente de retransmisión indique explícitamente la subred de la que desea que se asigne la dirección IP con la opción de DHCP V4 82 sub Option 5.
 
 > [!NOTE]
 >
-> Todas las direcciones IP de agente de retransmisión (GIADDR) deben formar parte de un intervalo de direcciones IP de ámbito DHCP activo. Cualquier GIADDR fuera de los intervalos de direcciones IP de ámbito DHCP se considera una retransmisión rogue y servidor DHCP de Windows no reconocerá las solicitudes de cliente DHCP de los agentes de retransmisión.
+> Todas las direcciones IP del agente de retransmisión (GIADDR) deben formar parte de un intervalo de direcciones IP de ámbito DHCP activo. Cualquier GIADDR fuera de los intervalos de direcciones IP del ámbito DHCP se considera una retransmisión no autorizada y el servidor DHCP de Windows no aceptará las solicitudes de cliente DHCP de esos agentes de retransmisión.
 >
-> Puede crearse un ámbito especial para los agentes de retransmisión "autorizar". Crear un ámbito con el GIADDR (o varios si el GIADDR es secuenciales direcciones IP), excluir las direcciones GIADDR de distribución y, a continuación, activar el ámbito. Esto va a autorizar a los agentes de retransmisión y evita que las direcciones GIADDR de que se va a asignar.
+> Se puede crear un ámbito especial para autorizar a los agentes de retransmisión. Cree un ámbito con el GIADDR (o varios si los GIADDR son direcciones IP secuenciales), excluya las direcciones GIADDR de la distribución y, a continuación, active el ámbito. Esto autorizará a los agentes de retransmisión y evitará que se asignen las direcciones GIADDR.
 
 
 ### <a name="use-case-scenario"></a>Escenario de caso de uso
 
-En este escenario, una red de la organización incluye un servidor DHCP y un punto de acceso inalámbrico \(AP\) para los usuarios invitados. Las direcciones IP de cliente de los invitados se asignan desde el servidor DHCP de la organización: sin embargo, debido a restricciones de directiva de firewall, el servidor DHCP no puede acceder a la red inalámbrica de invitado o los clientes inalámbricos con broadcase mensajes.
+En este escenario, una red de la organización incluye un servidor DHCP y un punto de acceso inalámbrico \(AP @ no__t-1 para los usuarios invitados. Las direcciones IP de cliente de invitados se asignan desde el servidor DHCP de la organización; sin embargo, debido a las restricciones de la Directiva de firewall, el servidor DHCP no puede tener acceso a la red inalámbrica invitada ni a los clientes inalámbricos con mensajes broadcase.
 
-Para resolver esta restricción, el punto de acceso se configura con el vínculo selección Sub opción 5 para especificar la subred desde la que desea que la dirección IP asignada para los clientes de invitado, mientras que en el GIADDR también especifica la dirección IP de la interfaz interna que conduce a la red corporativa.
+Para resolver esta restricción, el AP se configura con la opción de selección de vínculos 5 para especificar la subred de la que desea que se asigne la dirección IP a los clientes invitados, mientras que en GIADDR también se especifica la dirección IP de la interfaz interna que conduce al red corporativa.

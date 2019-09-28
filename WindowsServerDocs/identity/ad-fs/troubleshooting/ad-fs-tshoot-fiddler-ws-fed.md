@@ -1,97 +1,97 @@
 ---
-title: Solución de problemas - Fiddler - WS-Federation de AD FS
-description: Este documento muestra un seguimiento detallado de un intercambio de WS-Federation con AD FS
+title: Solución de problemas de AD FS-Fiddler-WS-Federation
+description: En este documento se muestra un seguimiento detallado de un intercambio de WS-Federation con AD FS
 author: billmath
 ms.author: billmath
 manager: mtillman
 ms.date: 01/18/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: be1c9f466ec13272d10f0fb9ca31cf326a1ec29a
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d263f48aadff7c77cba44a2328d472ebbe5dfbbf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59846906"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407210"
 ---
-# <a name="ad-fs-troubleshooting---fiddler---ws-federation"></a>Solución de problemas - Fiddler - WS-Federation de AD FS
+# <a name="ad-fs-troubleshooting---fiddler---ws-federation"></a>Solución de problemas de AD FS-Fiddler-WS-Federation
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler9.png)
 
 ## <a name="step-1-and-2"></a>Paso 1 y 2
-Este es el principio de la traza.  En este marco se ve lo siguiente: ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler1.png)
+Este es el principio de nuestro seguimiento.  En este marco se ve lo siguiente: ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler1.png)
 
-La solicitud:
+Solicite
 
-- HTTP GET a nuestros usuarios de confianza (entidad http://sql1.contoso.com/SampApp)
+- HTTP GET a nuestro usuario de confianza (http://sql1.contoso.com/SampApp)
 
-Respuesta:
+Ante
 
-- La respuesta es HTTP 302 (Redireccionamiento).  Los datos de transporte en el encabezado de respuesta muestran dónde redirigir a)https://sts.contoso.com/adfs/ls)
-- La dirección URL de redireccionamiento contiene wa = wsignin 1.0 que nos dice que nuestra aplicación de RP ha creado una solicitud de inicio de sesión de WS-Federation para nosotros y esto enviados a/ADFS/ls/punto de conexión de AD FS.  Esto se conoce como redirección de enlace.
+- La respuesta es un HTTP 302 (redirigir).  Los datos de transporte del encabezado de respuesta muestran adónde redirigirse a (https://sts.contoso.com/adfs/ls)
+- La dirección URL de redireccionamiento contiene wa = wsignin 1,0, que nos indica que nuestra aplicación RP ha creado una solicitud de inicio de sesión de WS-Federation para nosotros y lo ha enviado al punto de conexión de/ADFS/LS/del AD FS.  Esto se conoce como enlace de redirección.
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler2.png)
 
 ## <a name="step-3-and-4"></a>Paso 3 y 4
 
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler3.png)
 
-La solicitud:
+Solicite
 
-- HTTP GET para nuestro server(sts.contoso.com) de AD FS
+- HTTP GET a nuestro servidor de AD FS (STS. contoso. com)
 
-Respuesta:
+Ante
 
-- La respuesta es un símbolo del sistema para las credenciales.  Esto indica que estamos usando formularios authnetication
-- Al hacer clic en la vista Web de la respuesta puede ver las credenciales de símbolo del sistema.
+- La respuesta es un mensaje de solicitud de credenciales.  Esto indica que usamos Forms authnetication
+- Al hacer clic en la vista previa de la respuesta, puede ver la solicitud de credenciales.
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler6.png)
 
 ## <a name="step-5-and-6"></a>Paso 5 y 6
 
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler4.png)
 
-La solicitud:
+Solicite
 
 - HTTP POST con el nombre de usuario y la contraseña.  
-- Presentamos nuestras credenciales.  Podemos ver las credenciales echando un vistazo a los datos sin procesar en la solicitud
+- Presentamos nuestras credenciales.  Al examinar los datos sin procesar de la solicitud, podemos ver las credenciales
 
-Respuesta:
+Ante
 
-- La respuesta es encontrado y el MSIAuth se crea y devuelve una cookie cifrada.  Esto se utiliza para validar la aserción SAML producida por nuestros clientes.  Esto también es conocido como "cookie de autenticación" y solo estarán presente cuando AD FS es el proveedor de identidades.
+- Se encuentra la respuesta y se crea y se devuelve la cookie cifrada MSIAuth.  Se utiliza para validar la aserción de SAML generada por el cliente.  Esto también se conoce como "cookie de autenticación" y solo estará presente cuando AD FS sea el IDP.
 
 
 ## <a name="step-7-and-8"></a>Paso 7 y 8
 ![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler5.png)
 
-La solicitud:
+Solicite
 
-- Ahora que se han autenticado se realice otro método HTTP GET para el servidor de AD FS y presenta nuestro token de autenticación
+- Ahora que hemos autenticado, hacemos otro HTTP GET en el servidor de AD FS y presento el token de autenticación.
 
-Respuesta:
+Ante
 
-- La respuesta es HTTP OK lo que significa que AD FS ha autenticado al usuario según las credenciales proporcionadas
-- Además, configuramos 3 cookies al cliente
-    - MSISAuthenticated contiene un valor de marca de tiempo codificada en base64 para cuando el cliente se autenticó.
-    - El mecanismo de detección de bucle infinito de AD FS a los clientes de palabras irrelevantes que finalizados en un bucle de redirección infinito para el servidor de federación usa MSISLoopDetectionCookie. Los datos de la cookie están una marca de tiempo que está codificado en base64.
-    - MSISSignout se usa para realizar un seguimiento de los IdP y visitado todas las solicitudes por segundo para la sesión de inicio de sesión único. Esta cookie se utiliza cuando se invoca un cierre de sesión de WS-Federation. Puede ver el contenido de esta cookie con un descodificador de base64.
+- La respuesta es un HTTP correcto, lo que significa que AD FS ha autenticado al usuario en función de las credenciales proporcionadas.
+- Además, se establecen 3 cookies de nuevo en el cliente.
+    - MSISAuthenticated contiene un valor de marca de tiempo codificada en base64 para cuando se autenticó el cliente.
+    - MSISLoopDetectionCookie se usa en el mecanismo de detección de bucles infinitos AD FS para detener a los clientes que han terminado en un bucle de redirección infinito en el servidor de Federación. Los datos de la cookie son una marca de tiempo que está codificada en Base64.
+    - MSISSignout se usa para realizar un seguimiento del IdP y de todos los RPs visitados para la sesión de SSO. Esta cookie se emplea cuando se invoca un cierre de sesión de WS-Federation. Puede ver el contenido de esta cookie con un descodificador de Base64.
     
 ## <a name="step-9-and-10"></a>Paso 9 y 10
-![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler7.png) La solicitud:
+Solicitud @no__t 0:
 
-- SOLICITUD HTTP POST
+- HTTP POST
 
-Respuesta:
+Ante
 
-- La respuesta es un encontrados
+- La respuesta es una encontrada
 
 ## <a name="step-11-and-12"></a>Paso 11 y 12
-![](media/ad-fs-tshoot-fiddler-ws-fed/fiddler8.png) La solicitud:
+Solicitud @no__t 0:
 
-- GET DE HTTP
+- HTTP GET
 
-Respuesta:
+Ante
 
-- La respuesta es correcto
+- La respuesta es correcta
 
 ## <a name="next-steps"></a>Pasos siguientes
 
-- [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)
+- [Solución de problemas de AD FS](ad-fs-tshoot-overview.md)

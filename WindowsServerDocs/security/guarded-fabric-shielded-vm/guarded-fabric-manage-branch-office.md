@@ -1,17 +1,17 @@
 ---
 title: Consideraciones sobre sucursales
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
-ms.openlocfilehash: 93bf1f8993827ab737c95abad1335317d4e9b599
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5a07553e6662fd79230d566ba2049c5e8997f4d6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870443"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403573"
 ---
 # <a name="branch-office-considerations"></a>Consideraciones sobre la sucursal
 

@@ -1,8 +1,8 @@
 ---
-title: send_1 de FTP
-description: 'Tema de los comandos de Windows para ***- '
+title: send_1 FTP
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,14 +13,14 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 39423aff3c64f41c4fc0f8998484e6dcc38f822e
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bd9f658b4fbfa5f6c9fa9a58fb0c524ad53627bc
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438439"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71376002"
 ---
-# <a name="ftp-send1"></a>FTP: send_1
+# <a name="ftp-send_1"></a>FTP: send_1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
@@ -33,18 +33,18 @@ send <LocalFile> [<remoteFile>]
 
 |  Parámetro   |                    Descripción                    |
 |--------------|---------------------------------------------------|
-| <LocalFile>  |         Especifica el archivo local para copiar.         |
-| <remoteFile> | Especifica el nombre que se usará en el equipo remoto. |
+| <LocalFile>  |         Especifica el archivo local que se va a copiar.         |
+| <remoteFile> | Especifica el nombre que se va a usar en el equipo remoto. |
 
 ## <a name="remarks"></a>Comentarios  
-- El **enviar** comando es idéntico a la **colocar** comando.  
-- Si *archivoRemoto* no se especifica, el archivo tendrá el *archivoLocal* nombre.  
-  ## <a name="BKMK_Examples"></a>Ejemplos  
-  Copie el archivo local **test.txt** y asígnele el nombre **test1.txt** en el equipo remoto.  
+- El comando **send** es idéntico al comando **Put** .  
+- Si no se especifica *archivoremoto* , el archivo recibe el nombre *archivolocal* .  
+  ## <a name="BKMK_Examples"></a>Example  
+  Copie el archivo local **Test. txt** y asígnele el nombre **prueba1. txt** en el equipo remoto.  
   ```  
   send test.txt test1.txt  
   ```  
-  Copie el archivo local **program.exe** al equipo remoto.  
+  Copie el archivo local **Program. exe** en el equipo remoto.  
   ```  
   send program.exe  
   ```  

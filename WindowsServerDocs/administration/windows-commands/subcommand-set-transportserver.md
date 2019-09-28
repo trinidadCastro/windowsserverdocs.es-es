@@ -1,8 +1,8 @@
 ---
-title: Set-TransportServer subcomando
-description: 'Tema de los comandos de Windows para ***- '
+title: Subcomando set-TransportServer
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d144ed7d461cbebcd351aa4347fde20f35736c26
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f91cca044d4c2922791ccb63b0e3cec4af685f17
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59886606"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71370743"
 ---
 # <a name="subcommand-set-transportserver"></a>Subcomando: set-TransportServer
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Establece los valores de configuración para un servidor de transporte.
+Establece la configuración de un servidor de transporte.
 ## <a name="syntax"></a>Sintaxis
 ```
 wdsutil [Options] /Set-TransportServer [/Server:<Server name>]
@@ -46,12 +46,12 @@ wdsutil [Options] /Set-TransportServer [/Server:<Server name>]
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|[/Server:<Server name>]|Especifica el nombre del servidor de transporte. Esto puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si se especifica ningún nombre de servidor de transporte, se usa el servidor local.|
-|[/ObtainIpv4From:{Dhcp &#124; Range}]|Establece el origen de las direcciones IPv4 como sigue:<br /><br />-[/ iniciar: <IP address>] establece el inicio del intervalo de direcciones IP. Esto es necesario y es válido sólo si esta opción está establecida en **intervalo**.<br />-[/ End: <IP address>] establece el final del intervalo de direcciones IP. Esto es necesario y es válido sólo si esta opción está establecida en **intervalo**.<br />-[/ puerto inicial: <port>] establece el inicio del intervalo de puertos.<br />-[/ El puerto final: <port>] establece el final del intervalo de puertos.|
-|[/ObtainIpv6From:Range]|Especifica el origen de las direcciones IPv6. Esta opción solo se aplica a Windows Server 2008 R2 y el único valor admitido es **intervalo**.<br /><br />-[/ iniciar: <IP address>] establece el inicio del intervalo de direcciones IP. Esto es necesario y es válido sólo si esta opción está establecida en **intervalo**.<br />-[/ End: <IP address>] establece el final del intervalo de direcciones IP. Esto es necesario y es válido sólo si esta opción está establecida en **intervalo**.<br />-[/ puerto inicial: <port>] establece el inicio del intervalo de puertos.<br />-[/ El puerto final: <port>] establece el final del intervalo de puertos.|
-|[/Profile: {10Mbps &#124; 100Mbps &#124; 1Gbps &#124; Custom}]|Especifica el perfil de red que se usará. Esta opción solo está disponible para los servidores que ejecutan Windows Server 2008 o Windows Server 2003.|
-|[/MulticastSessionPolicy]|Configura las opciones de transferencia para transmisiones por multidifusión. Este comando solo está disponible para Windows Server 2008 R2.<br /><br />-[/ Directiva: {None &#124; desconexión automática &#124; transmisión múltiple}] determina cómo se controlan los clientes lentos. **Ninguno** significa mantener todos los clientes en una sesión de la misma velocidad. **Desconexión automática** significa que los clientes que caen por debajo de la especificada **/Threshold** están desconectados. **Transmisión múltiple** significa que los clientes se dividirá en varias sesiones según lo especificado por **/StreamCount**.<br />-[/ Umbral:<Speed in KBps>] establece la velocidad de transferencia mínimo en KBps para **/Policy:AutoDisconnect**. Los clientes que caen por debajo de esta velocidad se desconectan de transmisiones por multidifusión.<br />-[/ StreamCount: {2 &#124; 3}] [/ reserva: {Sí &#124; n}] determina el número de sesiones de **/Policy:Multistream**. **2** significa que dos sesiones (rápidas y lentas) y **3** significa tres sesiones (lento, medio, rápido).<br />-[/ Reserva: {Sí &#124; n}] determina si se desconectan los clientes tha continuará la transferencia mediante otro método (si se admite por el cliente). Si usa al cliente WDS, el equipo recurrirá a unidifusión. Wdsmcast.exe no admite un mecanismo de reserva. Esta opción también se aplica a los clientes que no admiten **transmisión múltiple**. En ese caso, el equipo se revertirá a otro método en lugar de mover a una sesión de transferencia más lenta.|
-## <a name="BKMK_examples"></a>Ejemplos
+|[/Server:<Server name>]|Especifica el nombre del servidor de transporte. Puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor de transporte, se utiliza el servidor local.|
+|[/ObtainIpv4From: {intervalo &#124; de DHCP}]|Establece el origen de las direcciones IPv4 como se indica a continuación:<br /><br />-[/Start: <IP address>] establece el inicio del intervalo de direcciones IP. Solo es obligatorio y válido si esta opción se establece en **Range**.<br />-[/End: <IP address>] establece el final del intervalo de direcciones IP. Solo es obligatorio y válido si esta opción se establece en **Range**.<br />-[/startPort: <port>] establece el inicio del intervalo de puertos.<br />-[/EndPort: <port>] establece el final del intervalo de puertos.|
+|[/ObtainIpv6From: intervalo]|Especifica el origen de las direcciones IPv6. Esta opción solo se aplica a Windows Server 2008 R2 y el único valor admitido es **intervalo**.<br /><br />-[/Start: <IP address>] establece el inicio del intervalo de direcciones IP. Solo es obligatorio y válido si esta opción se establece en **Range**.<br />-[/End: <IP address>] establece el final del intervalo de direcciones IP. Solo es obligatorio y válido si esta opción se establece en **Range**.<br />-[/startPort: <port>] establece el inicio del intervalo de puertos.<br />-[/EndPort: <port>] establece el final del intervalo de puertos.|
+|[/Profile: {10Mbps &#124; 100 &#124; Mbps &#124; 1 Gbps personalizado}]|Especifica el perfil de red que se va a usar. Esta opción solo está disponible para los servidores que ejecutan Windows Server 2008 o Windows Server 2003.|
+|[/MulticastSessionPolicy]|Configura las opciones de transferencia para las transmisiones de multidifusión. Este comando solo está disponible para Windows Server 2008 R2.<br /><br />-[/Policy: {None &#124; Disconnect &#124; Multistream}] determina cómo se administran los clientes lentos. **Ninguno** significa mantener todos los clientes en una sesión a la misma velocidad. La **desconexión automática** significa que los clientes que se colocan por debajo del **/Threshold** especificado están desconectados. **Multistream** significa que los clientes se separarán en varias sesiones, tal y como se especifica en **/StreamCount**.<br />-[/Threshold: <Speed in KBps>] establece la velocidad de transferencia mínima en KBps para **/Policy: autodisconnect**. Los clientes que se encuentran por debajo de esta tasa se desconectan de las transmisiones de multidifusión.<br />-[/StreamCount: {2 &#124; 3}] [/fallback: {Yes &#124; no}] determina el número de sesiones para **/Policy: Multistream**. **2** significa que dos sesiones (rápidas y lentas) y **3** significan tres sesiones (lentas, medias y rápidas).<br />-[/Fallback: {Yes &#124; no}] determina si los clientes que están desconectados continuarán la transferencia mediante otro método (si el cliente lo admite). Si usa el cliente de WDS, el equipo revierte a la unidifusión. Wdsmcast. exe no admite un mecanismo de reserva. Esta opción también se aplica a los clientes que no admiten **Multistream**. En ese caso, el equipo revertirá a otro método en lugar de pasar a una sesión de transferencia más lenta.|
+## <a name="BKMK_examples"></a>Example
 Para establecer el intervalo de direcciones IPv4 para el servidor, escriba:
 ```
 wdsutil /Set-TransportServer /ObtainIpv4From:Range /start:239.0.0.1 /End:239.0.0.100
@@ -62,8 +62,8 @@ wdsutil /Set-TransportServer /Server:MyWDSServer /ObtainIpv4From:Range /start:23
 ```
 #### <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[con el comando disable-TransportServer](using-the-disable-transportserver-command.md)
-[con el comando enable-TransportServer](using-the-enable-transportserver-command.md) 
- [ Mediante el comando get-TransportServer](using-the-get-transportserver-command.md)
-[subcomando: start-TransportServer](subcommand-start-transportserver.md)
-[subcomando: stop-TransportServer](subcommand-stop-transportserver.md)
+[con el comando DISABLE-TransportServer](using-the-disable-transportserver-command.md)
+[mediante el comando enable-TransportServer](using-the-enable-transportserver-command.md)
+[mediante el comando Get-TransportServer](using-the-get-transportserver-command.md)
+[: subcomando Start-TransportServer](subcommand-start-transportserver.md)
+[: Stop-TransportServer](subcommand-stop-transportserver.md)

@@ -2,7 +2,7 @@
 title: Proyectar una estación en otras estaciones
 description: Aprenda a compartir un escritorio de un sistema a otro en Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: db2b718154a7c41646ab25b16420eb0ee46a17cd
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 242214ba69fc3265c9984e218110a16242b1cff3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871578"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395142"
 ---
 # <a name="project-a-station-to-other-stations"></a>Proyectar una estación en otras estaciones
 Como usuario de Multipoint Dashboard, puede proyectar el escritorio en la estación de un solo usuario o en todas las estaciones de usuarios (no administrador). Esta característica es útil cuando quiere mostrar cómo se hace una tarea a un usuario o a un conjunto de usuarios.  

@@ -1,8 +1,8 @@
 ---
 title: clean
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: cd5eb2ec1bde4523eb6f0f919e09b9711b2654fb
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: f871ad1d13e06bf0cbb886ba64a52e7a55a9a797
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434321"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379325"
 ---
 # <a name="clean"></a>clean
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-El comando Diskpart limpio quita cualquier partición o volumen del disco que tiene el foco de formato.
+El comando de limpieza de Diskpart quita todos los formatos de partición o volumen del disco que tiene el foco.
 ## <a name="syntax"></a>Sintaxis
 ```
 clean [all]
@@ -33,16 +33,16 @@ clean [all]
 
 | Parámetro |                                                        Descripción                                                        |
 |-----------|---------------------------------------------------------------------------------------------------------------------------|
-|    all    | Especifica que cada sector del disco se establece en cero, lo que elimina completamente todos los datos contenidos en el disco. |
+|    all    | Especifica que cada sector y cada sector del disco se establezcan en cero, lo que elimina completamente todos los datos contenidos en el disco. |
 
 ## <a name="remarks"></a>Comentarios
-- En discos de arranque maestro registro (MBR), solo la particiones MBR información y sectores ocultos se sobrescriben.
-- En los discos de tabla de particiones GUID (gpt), se sobrescribe la información, incluido el MBR de protección, de particiones gpt. No hay ninguna información de sectores ocultos.
-- Debe seleccionarse un disco para que esta operación se realice correctamente. Use la **seleccione disco** comando para seleccionar un disco y cambiar el foco a ella.
-  ## <a name="BKMK_examples"></a>Ejemplos
-  Para quitar todo el formato desde el disco seleccionado, escriba:
+- En los discos de registro de arranque maestro (MBR), solo se sobrescribe la información de particiones MBR y la información de sectores ocultos.
+- En los discos de tabla de particiones GUID (GPT), se sobrescribe la información de particiones GPT, incluido el MBR de protección. No hay información de sectores ocultos.
+- Se debe seleccionar un disco para que esta operación se realice correctamente. Use el comando **Seleccionar disco** para seleccionar un disco y desplazar el foco a él.
+  ## <a name="BKMK_examples"></a>Example
+  Para quitar todo el formato del disco seleccionado, escriba:
   ```
   clean
   ```
 
-[Clear-Disk](https://technet.microsoft.com/library/hh848661.aspx)
+[Borrar disco](https://technet.microsoft.com/library/hh848661.aspx)

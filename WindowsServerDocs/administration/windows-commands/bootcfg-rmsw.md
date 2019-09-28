@@ -1,8 +1,8 @@
 ---
 title: bootcfg rmsw
-description: 'Tema de los comandos de Windows para **rmsw bootcfg** : quita operativo opciones de carga para una entrada de sistema operativo especificado.'
+description: Windows Commands topic for **bootcfg Rmsw** -quita las opciones de carga del sistema operativo para una entrada de sistema operativo especificada.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: f3d873cffbdb386b5f4f564801a4f4b815c6987a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 43629f2e13bb6269a43d592fa0907637135aea71
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66434681"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71379858"
 ---
 # <a name="bootcfg-rmsw"></a>bootcfg rmsw
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Quita las opciones de carga del sistema operativo para una entrada de sistema operativo especificado.
+quita las opciones de carga del sistema operativo para una entrada de sistema operativo especificada.
 
 ## <a name="syntax"></a>Sintaxis
 ```
@@ -34,18 +34,18 @@ bootcfg /rmsw [/s <computer> [/u <Domain>\<User> [/p <Password>]]] [/mm] [/bv] [
 
 |      Parámetro       |                                                                                                      Descripción                                                                                                       |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|    /s <computer>     |                                                   Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local.                                                   |
-| /u <Domain>\\<User>  |          Ejecuta el comando con los permisos de cuenta del usuario especificado por <User> o <Domain> \\ <User>. El valor predeterminado es los permisos de la sesión de usuario en el equipo que emite el comando actual.          |
-|    /p <Password>     |                                                                 Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.                                                                  |
-|         /mm          |           Quita la opción/maxmem y su valor de memoria máxima asociado especificado <OSEntryLineNum>. La opción/maxmem especifica la cantidad máxima de RAM que puede utilizar el sistema operativo.            |
-|         /bv          |                     Quita la opción basevideo especificado <OSEntryLineNum>. La opción basevideo dirige el sistema operativo que se usará el modo VGA estándar para el controlador de vídeo instalado.                     |
-|         /so          |                         Quita la opción/SOS especificado <OSEntryLineNum>. La opción/SOS dirige el sistema operativo para mostrar los nombres de controlador de dispositivo mientras se cargan.                          |
-|         /ng          |                         Quita la opción noguiboot especificado <OSEntryLineNum>. La opción noguiboot deshabilita la barra de progreso que aparece antes de la CTRL + ALT + SUPR inicio de sesión.                          |
-| / Id <OSEntryLineNum> | Especifica el número de línea de entrada de sistema operativo en la sección [operating systems] del archivo Boot.ini del que se quitan las opciones de carga del sistema operativo. La primera línea después de encabezado de sección de la sección [operating systems] es 1. |
+|    /s <computer>     |                                                   Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local.                                                   |
+| /u <Domain> @ no__t-1 @ no__t-2  |          Ejecuta el comando con los permisos de cuenta del usuario especificado por <User> o <Domain> @ no__t-2 @ no__t-3. El valor predeterminado son los permisos del usuario que ha iniciado la sesión actual en el equipo que emite el comando.          |
+|    /p <Password>     |                                                                 Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .                                                                  |
+|         Val          |           quita la opción/MaxMem y su valor máximo de memoria asociado del <OSEntryLineNum> especificado. La opción/MaxMem especifica la cantidad máxima de memoria RAM que puede usar el sistema operativo.            |
+|         /bv          |                     quita la opción/basevideo del @no__t especificado-0. La opción/basevideo indica al sistema operativo que use el modo VGA estándar para el controlador de vídeo instalado.                     |
+|         /so          |                         quita la opción/SOS del @no__t especificado-0. La opción/SOS indica al sistema operativo que muestre los nombres de los controladores de dispositivo mientras se cargan.                          |
+|         /NG          |                         quita la opción/noguiboot del <OSEntryLineNum> especificado. La opción/noguiboot deshabilita la barra de progreso que aparece antes del símbolo del sistema de inicio de sesión CTRL + ALT + SUPR.                          |
+| /ID <OSEntryLineNum> | Especifica el número de línea de entrada del sistema operativo en la sección [operating systems] del archivo boot. ini del que se quitan las opciones de carga del sistema operativo. La primera línea después del encabezado de la sección [operating systems] es 1. |
 |          /?          |                                                                                          Muestra la ayuda en el símbolo del sistema.                                                                                          |
 
-## <a name="BKMK_examples"></a>Ejemplos
-Los ejemplos siguientes muestran cómo puede usar el **bootcfg /rmsw**comando:
+## <a name="BKMK_examples"></a>Example
+En los siguientes ejemplos se muestra cómo se puede usar el comando **bootcfg/Rmsw**:
 ```
 bootcfg /rmsw /mm 64 /id 2 
 bootcfg /rmsw /so /id 3 

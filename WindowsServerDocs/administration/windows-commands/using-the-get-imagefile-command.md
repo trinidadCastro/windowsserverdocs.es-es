@@ -1,8 +1,8 @@
 ---
-title: Mediante el comando get-ImageFile
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando Get-ImageFile
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 6bbe5ece95d1f9821a27b96e56bc34576a0f5f33
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6c8136585e04caca02ab16c7b4ca11a825cf400d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827626"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392137"
 ---
-# <a name="using-the-get-imagefile-command"></a>Mediante el comando get-ImageFile
+# <a name="using-the-get-imagefile-command"></a>Usar el comando Get-ImageFile
 
 
 
-Recupera información sobre las imágenes contenidas en un archivo de imagen de Windows (.wim).
+Recupera información sobre las imágenes contenidas en un archivo de imagen de Windows (. wim).
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,10 +36,10 @@ WDSUTIL [Options] /Get-ImageFile /ImageFile:<wim file path> [/Detailed]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/ ImageFile:\<ruta del archivo WIM >|Especifica la ruta de acceso y el nombre completo del archivo .wim.|
-|[/ Detallada]|Devuelve todos los metadatos de imagen de cada imagen. Si no se utiliza esta opción, el comportamiento predeterminado es devolver el nombre de la imagen, descripción y nombre de archivo.|
+|/ImageFile: ruta de acceso del archivo \<WIM >|Especifica la ruta de acceso completa y el nombre de archivo del archivo. Wim.|
+|[/Detailed]|Devuelve todos los metadatos de imagen de cada imagen. Si no se usa esta opción, el comportamiento predeterminado es devolver solo el nombre de la imagen, la descripción y el nombre de archivo.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para ver información acerca de una imagen, escriba:
 ```

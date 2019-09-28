@@ -1,8 +1,8 @@
 ---
 title: break
-description: 'Tema de los comandos de Windows para **break_1** -establece o borra extendidos CTRL + C comprobación en los sistemas de MS-DOS. Si se utiliza sin parámetros, **salto** muestra la configuración actual. '
+description: 'Windows Commands topic for **break_1** : establece o borra la comprobación extendida de Ctrl + C en sistemas ms-dos. Si se usa sin parámetros, **break** muestra la configuración actual. '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d08eaa5194c8895aeb42ac58dfb68d2fc44e70bd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 73afdac29efbfd9efec88d297cf4185ca1b92d62
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59869056"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380490"
 ---
 # <a name="break"></a>break
 
 
 
-Establece o borra extendido CTRL+C en sistemas de MS-DOS. Si se utiliza sin parámetros, **salto** muestra la configuración actual.
+Establece o borra la comprobación extendida de CTRL + C en sistemas MS-DOS. Si se usa sin parámetros, **break** muestra la configuración actual.
 
 > [!NOTE]
 > Este comando ya no está en uso. Sólo está incluido para conservar la compatibilidad con archivos de MS-DOS existentes, pero no tiene ningún efecto en la línea de comandos debido a que la funcionalidad es automática.
@@ -37,7 +37,7 @@ break=[on|off]
 
 ## <a name="remarks"></a>Comentarios
 
-Si las extensiones de comando están habilitado y ejecutándose en la plataforma Windows, se inserta el **salto** comando en un archivo por lotes entra en un punto de interrupción codificado si está depurando un depurador.
+Si las extensiones de comando se habilitan y se ejecutan en la plataforma Windows, la inserción del comando **break** en un archivo por lotes entra en un punto de interrupción codificado de forma rígida si lo depura un depurador.
 
 #### <a name="additional-references"></a>Referencias adicionales
 

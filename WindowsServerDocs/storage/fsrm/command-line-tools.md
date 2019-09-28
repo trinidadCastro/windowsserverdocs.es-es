@@ -2,18 +2,18 @@
 title: Herramientas de línea de comandos del Administrador de recursos del servidor de archivos
 description: En este artículo se describen las herramientas de línea de comandos de Windows Server 2016
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 9b31c133b0ee4382b5b9aeded9b3852c7230d2d8
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 78c054c5b0c3de19d1f3acd825335eab2f140541
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59858446"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394298"
 ---
 # <a name="file-server-resource-manager-command-line-tools"></a>Herramientas de línea de comandos del Administrador de recursos del servidor de archivos
 
@@ -59,4 +59,4 @@ Para administrar recursos remotos con las herramientas de línea de comandos:
 
 ## <a name="see-also"></a>Vea también
 
--   [Administración de recursos de almacenamiento remoto](managing-remote-storage-resources.md)
+-   [Administrar recursos de almacenamiento remoto](managing-remote-storage-resources.md)

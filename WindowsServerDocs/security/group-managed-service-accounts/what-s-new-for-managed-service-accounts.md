@@ -2,7 +2,7 @@
 title: What's New for Managed Service Accounts
 description: Seguridad de Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-gmsa
@@ -13,23 +13,23 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: cac55d04a40c84ce160eb3883d6095a7db0ef3be
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: de4d64e3dbe4bc7c7cba32f066a696636632224d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872186"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403731"
 ---
-# <a name="what39s-new-for-managed-service-accounts"></a>¿Qué&#39;s nuevas cuentas de servicio administradas
+# <a name="what39s-new-for-managed-service-accounts"></a>Novedades&#39;de las cuentas de servicio administradas
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema para profesionales de TI describe los cambios en la funcionalidad de las cuentas de servicio administradas con la introducción del grupo de cuenta de servicio administrada (gMSA) en Windows Server 2012 y Windows 8.
+En este tema para profesionales de TI se describen los cambios en la funcionalidad de las cuentas de servicio administradas con la introducción de la cuenta de servicio administrada de grupo (gMSA) en Windows Server 2012 y Windows 8.
 
 La cuenta de servicio administrada se ha diseñado para proporcionar servicios y tareas como los servicios de Windows y los grupos de aplicaciones de IIS a fin de compartir sus propias cuentas de dominio, a la vez que se elimina la necesidad de que un administrador administre manualmente las contraseñas de estas cuentas. Se trata de una cuenta de dominio administrada que ofrece administración de contraseñas automática.
 
 ## <a name="versions"></a>Novedades de las cuentas de servicio administradas en Windows Server 2012 y Windows 8
-A continuación describen los cambios de funcionalidad que se aplicaron a MSA en Windows Server 2012 y Windows 8.
+A continuación se describen los cambios en la funcionalidad que se realizaron en MSA en Windows Server 2012 y Windows 8.
 
 ### <a name="group-managed-service-accounts"></a>Cuentas de servicio administradas de grupo
 Cuando una cuenta de dominio se configura para un servidor de dominio, el equipo cliente puede autenticarse y conectarse a ese servicio. Antes, solo dos tipos de cuenta ofrecían identidad sin requerir administración de contraseñas. Sin embargo, estos tipos de cuenta tienen limitaciones:
@@ -42,21 +42,21 @@ Estas cuentas no se pueden compartir entre varios sistemas. Por lo tanto, perió
 
 **¿Qué valor aporta este cambio?**
 
-La cuenta de servicio administrada por grupo soluciona este problema, ya que la contraseña de cuenta se administra mediante los controladores de dominio de Windows Server 2012 y se puede recuperar varios sistemas de Windows Server 2012. Esto minimiza la sobrecarga administrativa de una cuenta de servicio, ya que permite que Windows controle la administración de contraseñas para estas cuentas.
+La cuenta de servicio administrada de Grupo resuelve este problema porque la contraseña de la cuenta está administrada por controladores de dominio de Windows Server 2012 y puede ser recuperada por varios sistemas de Windows Server 2012. Esto minimiza la sobrecarga administrativa de una cuenta de servicio, ya que permite que Windows controle la administración de contraseñas para estas cuentas.
 
 **¿Qué funciona de manera diferente?**
 
-En los equipos que ejecutan Windows Server 2012 o Windows 8, un grupo de MSA puede crearse y administrarse mediante el Administrador de Control de servicios para que varias instancias del servicio, como se implementan a través de una granja de servidores, se puede administrar desde un servidor. Las herramientas y utilidades que se usan para administrar las cuentas de servicio administradas, tales como el Administrador de grupos de aplicaciones de IIS, se pueden utilizar con cuentas de servicio administradas por grupo. Los administradores de dominios pueden delegar la administración de servicios a los administradores de servicios, que pueden administrar todo el ciclo de vida de una cuenta de servicio administrada o una cuenta de servicio administrada por grupo. Los equipos cliente actuales podrán autenticarse con cualquier servicio sin saber con qué instancia de servicio se autentican.
+En los equipos que ejecutan Windows Server 2012 o Windows 8, se puede crear una MSA de grupo y administrarla mediante el administrador de control de servicios para que se puedan administrar varias instancias del servicio, como se implementan en una granja de servidores, desde un servidor. Las herramientas y utilidades que se usan para administrar las cuentas de servicio administradas, tales como el Administrador de grupos de aplicaciones de IIS, se pueden utilizar con cuentas de servicio administradas por grupo. Los administradores de dominios pueden delegar la administración de servicios a los administradores de servicios, que pueden administrar todo el ciclo de vida de una cuenta de servicio administrada o una cuenta de servicio administrada por grupo. Los equipos cliente actuales podrán autenticarse con cualquier servicio sin saber con qué instancia de servicio se autentican.
 
-### <a name="interoperability"></a>Funcionalidad desusada o eliminada
-Para Windows Server 2012, el valor predeterminado de los cmdlets de Windows PowerShell para administrar las cuentas de servicio administradas en grupo en lugar de las cuentas de servicio administradas de servidor.
+### <a name="interoperability"></a>Funcionalidad eliminada o desusada
+En Windows Server 2012, los cmdlets de Windows PowerShell predeterminados para administrar las cuentas de servicio administradas de grupo en lugar de las cuentas de servicio administradas del servidor.
 
 ## <a name="see-also"></a>Vea también
 
 -   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
 
--   [Introducción a servicios de dominio de Active Directory](active-directory-domain-services-overview.md)
+-   [Introducción a Active Directory Domain Services](active-directory-domain-services-overview.md)
 
--   [Cuentas de servicio administradas: Descripción, implementación, procedimientos recomendados y solución de problemas](http://blogs.technet.com/b/askds/archive/20../managed-service-accounts-understanding-implementing-best-practices-and-troubleshooting.aspx)
+-   @no__t las cuentas de servicio de 0Managed: Descripción, implementación, procedimientos recomendados y solución de problemas de @ no__t-0
 
 

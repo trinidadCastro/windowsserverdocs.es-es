@@ -1,26 +1,26 @@
 ---
 ms.assetid: 28aad3ba-f129-46f2-ba94-c3da831c9811
-title: Apéndice A - ubicaciones y prefijos de subred
+title: 'Apéndice A: ubicaciones y prefijos de subred'
 description: ''
 author: MicrosoftGuyJFlo
 ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 69f5b3ff681caa534924e5a5e0f16bb2f53419ec
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f147cf630c49dfa8e9279b723a1ab02516028bf5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59841126"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402656"
 ---
 # <a name="appendix-a-locations-and-subnet-prefixes"></a>Apéndice A: Ubicaciones y prefijos de subred
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Utilice la siguiente tabla para ayudar en el listado la dirección IP versión 6 (IPv6) de prefijos de subred al diseñar la topología de sitios para Windows Server 2008 Active Directory Domain Services (AD DS).  
+Utilice la tabla siguiente como ayuda para enumerar los prefijos de subred de IP versión 6 (IPv6) al diseñar la topología de sitio para Windows Server 2008 Active Directory Domain Services (AD DS).  
   
 |Location|Prefijo de subred de red|  
 |------------|-------------------------|  

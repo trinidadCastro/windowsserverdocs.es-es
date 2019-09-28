@@ -6,18 +6,18 @@ ms.author: joflore
 manager: mtillman
 ms.date: 11/14/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: e8adbaf07976569fdea86156e15f246aad2e4fe0
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 7c9750a4f59cd17d0495e58dbc2fd8b2d2802c89
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868242"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71369527"
 ---
 # <a name="clean-up-active-directory-domain-controller-server-metadata"></a>Limpiar metadatos de servidor del controlador de Dominio de Active Directory
 
-Se aplica a: Windows Server
+Se aplica a: Windows Server
 
 La limpieza de metadatos es un procedimiento necesario después de una eliminación forzada de Active Directory Domain Services (AD DS). La limpieza de los metadatos se realiza en un controlador de dominio del dominio del controlador de dominio que se ha quitado de manera forzada. La limpieza de metadatos quita datos de AD DS que identifica un controlador de dominio en el sistema de replicación. La limpieza de metadatos también quita las conexiones de replicación del servicio de replicación de archivos (FRS) y Sistema de archivos distribuido (DFS) e intenta transferir o asumir los roles de maestro de operaciones (también conocidos como operaciones de maestro único flexible o FSMO) que el dominio retirado contiene el controlador.
 

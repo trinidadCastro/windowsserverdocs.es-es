@@ -1,8 +1,8 @@
 ---
 title: echo
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: bfe6c936ee5606e286aab076bea08db04b8b6500
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: 343d6327d262401b4be14e472a135062456890f1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811165"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71377630"
 ---
 # <a name="echo"></a>echo
 
 
 
-Muestra mensajes o activa o desactiva la característica de presentación de comandos. Si se utiliza sin parámetros, **echo** muestra la configuración actual.
+Muestra mensajes o activa o desactiva la característica de repetición de comandos. Si se usa sin parámetros, **echo** muestra el valor de eco actual.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#examples).
 
@@ -39,57 +39,57 @@ echo [on | off]
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[en \| off]|Activa o desactiva la característica de presentación de comandos. Repetición de comandos está de manera predeterminada.|
-|\<mensaje >|Especifica el texto que se muestra en la pantalla.|
+|[on \| OFF]|Activa o desactiva la característica de repetición de comandos. El eco de comandos está activado de forma predeterminada.|
+|@no__t 0Message >|Especifica el texto que se va a mostrar en la pantalla.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   El **echo** *mensaje* comando es especialmente útil cuando **echo** está desactivado. Para mostrar un mensaje de varias líneas sin mostrar todos los comandos, puede incluir varios **echo** *mensaje* comandos después de la **echo desactivar** comando su programa por lotes.
--   Cuando **echo** está desactivada, la línea de comandos no aparece en la ventana de símbolo del sistema. Para mostrar el símbolo del sistema, escriba **eco.**
--   Si se utiliza en un archivo por lotes, **eco** y **echo desactivar** no afectan a la configuración en el símbolo del sistema.
--   Para evitar repetir un comando determinado en un archivo por lotes, inserte un signo de arroba (@) delante del comando. Para evitar repetir todos los comandos en un archivo por lotes, incluya el **echo desactivar** comando al principio del archivo.
--   Para mostrar una barra vertical ( **|** ) o de redirección ( **<** o **>** ) cuando se utiliza **eco**, utilice un símbolo de intercalación (^) inmediatamente antes del carácter de canalización o de redirección (por ejemplo, **^|** , **^>** , o **^<** ). Para mostrar un símbolo de intercalación, escriba dos símbolos de intercalación en sucesión ( **^^** ).
+-   El comando **echo** *Message* es especialmente útil cuando se desactiva el **eco** . Para mostrar un mensaje con varias líneas de longitud sin mostrar ningún comando, puede incluir varios comandos de *mensaje* de **eco** después del comando **echo off** en el programa por lotes.
+-   Cuando se desactiva el **eco** , el símbolo del sistema no aparece en la ventana del símbolo del sistema. Para mostrar el símbolo del sistema, escriba **echo.**
+-   Si se usa en un archivo por lotes, el **eco** y el **eco** no afectan a la configuración del símbolo del sistema.
+-   Para evitar que se repita un comando determinado en un archivo por lotes, inserte una arroba (@) delante del comando. Para evitar que se repitan todos los comandos en un archivo por lotes, incluya el comando **echo off** al principio del archivo.
+-   Para mostrar una canalización ( **|** ) o un carácter de redireccionamiento ( **<** o **>** ) cuando se usa el **eco**, use un símbolo de intercalación (^) inmediatamente antes del carácter de canalización o redirección (por ejemplo, **^|** , **0** o **2**). Para mostrar un símbolo de intercalación, escriba dos intercalaciones consecutivas ( **^^** ).
 
 ## <a name="examples"></a>Ejemplos
 
-Para mostrar actual **echo** , escriba:
+Para mostrar la configuración de **eco** actual, escriba:
 
 ```
 echo
 ```
 
-Para devolver una línea en blanco en la pantalla, escriba:
+Para repetir una línea en blanco en la pantalla, escriba:
 
 ```
 echo.
 ```
 
 > [!NOTE]
-> No incluya un espacio antes del período. En caso contrario, se mostrará el período en lugar de una línea en blanco.
+> No incluya un espacio antes del punto. De lo contrario, se mostrará el punto en lugar de una línea en blanco.
 
-Para evitar repetir comandos en el símbolo del sistema, escriba:
+Para evitar que se repitan los comandos en el símbolo del sistema, escriba:
 
 ```
 echo off 
 ```
 
 > [!NOTE]
-> Cuando **echo** está desactivada, la línea de comandos no aparece en la ventana de símbolo del sistema. Para volver a mostrar el símbolo del sistema, escriba **eco**.
+> Cuando se desactiva el **eco** , el símbolo del sistema no aparece en la ventana del símbolo del sistema. Para volver a mostrar el símbolo del sistema, escriba **echo**.
 
-Para evitar que todos los comandos en un archivo por lotes (incluido el **echo desactivar** comando) muestre en la pantalla, en la primera línea del tipo de archivo por lotes:
+Para evitar que todos los comandos de un archivo por lotes (incluido el comando **echo off** ) se muestren en la pantalla, en la primera línea del tipo de archivo por lotes:
 
 ```
 @echo off
 ```
 
-Puede usar el **echo** comandos como parte de un **si** instrucción. Por ejemplo, para buscar el directorio actual para cualquier archivo con la extensión de nombre de archivo .rpt y echo un mensaje si se encuentra este archivo, escriba:
+Puede usar el comando **echo** como parte de una instrucción **If** . Por ejemplo, para buscar en el directorio actual cualquier archivo con la extensión de nombre de archivo. RPT y para que se muestre un mensaje si se encuentra un archivo de este tipo, escriba:
 
 ```
 if exist *.rpt echo The report has arrived.
 ```
 
-El siguiente archivo por lotes busca en el directorio actual de archivos con la extensión de nombre de archivo .txt y muestra un mensaje que indica los resultados de la búsqueda:
+El siguiente archivo por lotes busca en el directorio actual los archivos con la extensión de nombre de archivo. txt y muestra un mensaje que indica los resultados de la búsqueda:
 
 ```
 @echo off
@@ -102,13 +102,13 @@ echo This directory contains no text files.
    )
 ```
 
-Si no hay archivos .txt se encuentran cuando se ejecuta el archivo por lotes, aparece el mensaje siguiente:
+Si no se encuentran archivos. txt al ejecutar el archivo por lotes, se muestra el siguiente mensaje:
 
 ```
 This directory contains no text files.
 ```
 
-Si los archivos .txt se encuentran cuando se ejecute el archivo por lotes muestra la siguiente salida (en este ejemplo, suponga que los archivos File1.txt y File2.txt, File3.txt existe):
+Si se encuentran archivos. txt cuando se ejecuta el archivo por lotes, se muestran los resultados siguientes (en este ejemplo, se supone que existen los archivos archivo1. txt, archivo2. txt y Archivo3. txt):
 
 ```
 This directory contains the following text files:

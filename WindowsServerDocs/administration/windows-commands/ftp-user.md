@@ -1,8 +1,8 @@
 ---
 title: usuario de FTP
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1c9406af0868421fa54fe757742cf2a120561b9c
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 63281a0ffdd646d3652eb3a442a8edd9acec9cce
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66438345"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71375871"
 ---
 # <a name="ftp-user"></a>FTP: usuario
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Especifica un usuario en el equipo remoto.   
+Especifica un usuario para el equipo remoto.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 user <UserName> [<Password>] [<Account>]  
@@ -33,12 +33,12 @@ user <UserName> [<Password>] [<Account>]
 
 |  Parámetro   |                                                                      Descripción                                                                      |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-|  <UserName>  |                                          Especifica un nombre de usuario con la que se va a iniciar sesión en el equipo remoto.                                           |
-| [<Password>] |               Especifica la contraseña de *UserName*. Si no se especifica una contraseña, pero es necesaria, **ftp** pide la contraseña.               |
-| [<Account>]  | Especifica una cuenta con la que se va a iniciar sesión en el equipo remoto. Si un *cuenta* no se especifica, pero es necesario, **ftp** solicitará la cuenta. |
+|  <UserName>  |                                          Especifica un nombre de usuario con el que iniciar sesión en el equipo remoto.                                           |
+| [<Password>] |               Especifica la contraseña del *nombre de usuario*. Si no se especifica una contraseña pero es necesaria, **FTP** solicita la contraseña.               |
+| [<Account>]  | Especifica una cuenta con la que se iniciará sesión en el equipo remoto. Si no se especifica una *cuenta* pero es necesaria, **FTP** solicita la cuenta. |
 
-## <a name="BKMK_Examples"></a>Ejemplos  
-Especifique User1 con la contraseña Password1.  
+## <a name="BKMK_Examples"></a>Example  
+Especifique user1 con la contraseña Contraseña1.  
 ```  
 user User1 Password1  
 ```  

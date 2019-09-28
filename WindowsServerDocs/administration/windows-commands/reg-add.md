@@ -1,8 +1,8 @@
 ---
-title: Agregar registro
-description: 'Tema de los comandos de Windows para ***- '
+title: REG Add
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,17 +13,17 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d46fc2df23391a1dbb782014addc68d9522d603a
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 5b478ce0c98ec77f1387d8f894364f53cf8d2142
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441914"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371765"
 ---
-# <a name="reg-add"></a>Agregar registro
+# <a name="reg-add"></a>REG Add
 
 
-Agrega una nueva subclave o una entrada al registro.
+Agrega una nueva subclave o entrada al registro.
 
 ## <a name="syntax"></a>Sintaxis
 
@@ -36,42 +36,42 @@ Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_
 
 |      Parámetro      |                                                                                                                                                                                                                                                                   Descripción                                                                                                                                                                                                                                                                   |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| \<KeyName<em>></em> | Especifica la ruta de acceso completa de la subclave o entrada va a agregar. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato \\ \\ \<nombreDeEquipo >\) como parte de la *KeyName*. Si se omite \\ \\ComputerName\ hace que la operación de forma predeterminada en el equipo local. El *KeyName* debe incluir una clave raíz válida. Son claves raíz válido para el equipo local: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU. Si el nombre de clave del registro contiene un espacio, incluya el nombre de clave entre comillas. |
-|   /v \<ValueName>   |                                                                                                                                                                                                                                Especifica el nombre de la entrada del registro para agregar a la subclave especificada.                                                                                                                                                                                                                                 |
+| \<KeyName<em>></em> | Especifica la ruta de acceso completa de la subclave o entrada que se va a agregar. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato \\ @ no__t-1 @ no__t-2ComputerName > \) como parte del nombre de *clave*. Si se omite \\ @ no__t-1ComputerName, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU. Si el nombre de la clave del registro contiene un espacio, incluya el nombre de la clave entre comillas. |
+|   /v \<ValueName >   |                                                                                                                                                                                                                                Especifica el nombre de la entrada del registro que se va a agregar bajo la subclave especificada.                                                                                                                                                                                                                                 |
 |         /ve         |                                                                                                                                                                                                                                Especifica que la entrada del registro que se agrega al registro tiene un valor null.                                                                                                                                                                                                                                |
-|     /t \<tipo >      |                                                                                                                                          Especifica el tipo de la entrada del registro. *Tipo* debe ser uno de los siguientes:</br>REG_SZ</br>REG_MULTI_SZ</br>REG_DWORD_BIG_ENDIAN</br>REG_DWORD</br>REG_BINARY</br>REG_DWORD_LITTLE_ENDIAN</br>REG_LINK</br>REG_FULL_RESOURCE_DESCRIPTOR</br>REG_EXPAND_SZ                                                                                                                                          |
-|   /s \<separador >   |                                                                                                                                                              Especifica el carácter que se usará para separar varias instancias de datos cuando se especifica el tipo de datos y debe aparecer más de una entrada. Si no se especifica, el separador predeterminado es **\0**.                                                                                                                                                              |
-|     /d \<datos >      |                                                                                                                                                                                                                                                 Especifica los datos para la nueva entrada del registro.                                                                                                                                                                                                                                                  |
+|     /t \<Type >      |                                                                                                                                          Especifica el tipo de la entrada del registro. El *tipo* debe ser uno de los siguientes:</br>REG_SZ</br>REG_MULTI_SZ</br>REG_DWORD_BIG_ENDIAN</br>REG_DWORD</br>REG_BINARY</br>REG_DWORD_LITTLE_ENDIAN</br>REG_LINK</br>REG_FULL_RESOURCE_DESCRIPTOR</br>REG_EXPAND_SZ                                                                                                                                          |
+|   /s \<Separator >   |                                                                                                                                                              Especifica el carácter que se va a utilizar para separar varias instancias de datos cuando se especifica el tipo de datos REG_MULTI_SZ y se debe mostrar más de una entrada. Si no se especifica, el separador predeterminado es **\ 0**.                                                                                                                                                              |
+|     /d \<Data >      |                                                                                                                                                                                                                                                 Especifica los datos de la nueva entrada del registro.                                                                                                                                                                                                                                                  |
 |         /f          |                                                                                                                                                                                                                                           Agrega la entrada del registro sin pedir confirmación.                                                                                                                                                                                                                                           |
-|         /?          |                                                                                                                                                                                                                                              Muestra la Ayuda de **reg agregar** en el símbolo del sistema.                                                                                                                                                                                                                                               |
+|         /?          |                                                                                                                                                                                                                                              Muestra ayuda para **reg Add** en el símbolo del sistema.                                                                                                                                                                                                                                               |
 
 ## <a name="remarks"></a>Comentarios
 
--   No se puede agregar subárboles con esta operación. Esta versión de **reg** no pide confirmación al agregar una subclave.
--   En la tabla siguiente se enumera los valores devueltos por la **reg agregar** operación.
+-   No se pueden agregar subárboles con esta operación. Esta versión de **reg** no pide confirmación al agregar una subclave.
+-   En la tabla siguiente se enumeran los valores devueltos para la operación **reg Add** .
 
 | Valor | Descripción |
 |-------|-------------|
 |   0   |   Correcto   |
 |   1   |   Error   |
 
--   Para el tipo de clave de REG_EXPAND_SZ, utilice el símbolo de intercalación ( **^** ) con **%** "en el parámetro/d.
+-   En el caso del tipo de clave REG_EXPAND_SZ, use el símbolo de intercalación ( **^** ) con **%** "dentro del parámetro/d
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
 Para agregar la clave HKLM\Software\MyCo en el equipo remoto ABC, escriba:
 ```
 REG ADD \\ABC\HKLM\Software\MyCo
 ```
-Para agregar una entrada del registro a HKLM\Software\MyCo con un valor denominado **datos** de tipo REG_BINARY y los datos de **fe340ead**, tipo:
+Para agregar una entrada del registro a HKLM\Software\MyCo con un valor denominado **Data** de tipo REG_BINARY y datos de **fe340ead**, escriba:
 ```
 REG ADD HKLM\Software\MyCo /v Data /t REG_BINARY /d fe340ead
 ```
-Para agregar una entrada del registro con varios valores a HKLM\Software\MyCo con el nombre de valor **MRU** de tipo REG_MULTI_SZ y los datos de **fax\0mail\0\0**, tipo:
+Para agregar una entrada del registro con varios valores a HKLM\Software\MyCo con un nombre de valor de **MRU** de tipo REG_MULTI_SZ y datos de **fax\0mail\0\0**, escriba:
 ```
 REG ADD HKLM\Software\MyCo /v MRU /t REG_MULTI_SZ /d fax\0mail\0\0
 ```
-Para agregar una entrada de registro expandido a HKLM\Software\MyCo con el nombre de valor **ruta** del tipo REG_EXPAND_SZ y los datos de **% systemroot %** , tipo:
+Para agregar una entrada de registro expandida a HKLM\Software\MyCo con un nombre de valor de la **ruta de acceso** de tipo REG_EXPAND_SZ y datos de **% systemroot%** , escriba:
 ```
 REG ADD HKLM\Software\MyCo /v Path /t REG_EXPAND_SZ /d ^%systemroot^%
 ```

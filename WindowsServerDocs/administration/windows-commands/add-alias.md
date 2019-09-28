@@ -1,8 +1,8 @@
 ---
 title: Agregar alias
-description: Tema de los comandos de Windows para **agregar alias** -agrega alias para el entorno de alias.
+description: 'Tema de comandos de Windows para **Agregar alias** : agrega alias al entorno de alias.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 50de932ea0153546816face61f0852a08707ea85
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2834376e497f54eadf1d9077e74f9c398202c5a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862226"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71382816"
 ---
 # <a name="add-alias"></a>Agregar alias
 
 
 
-Agrega los alias en el entorno de alias. Si se utiliza sin parámetros, **agregar alias** muestra la Ayuda en el símbolo del sistema.
+Agrega alias al entorno de alias. Si se usa sin parámetros, **Agregar alias** muestra la ayuda en el símbolo del sistema.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,21 +38,21 @@ add alias <AliasName> <AliasValue>
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<AliasName>|Especifica el nombre del alias.|
-|\<AliasValue>|Especifica el valor del alias.|
+|@no__t 0AliasName >|Especifica el nombre del alias.|
+|@no__t 0AliasValue >|Especifica el valor del alias.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Los alias se guardan en el archivo de metadatos y se cargará con la **cargar metadatos** comando.
+-   Los alias se guardan en el archivo de metadatos y se cargarán con el comando **cargar metadatos** .
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para obtener una lista de todas las sombras, incluidos sus alias, escriba:
+Para enumerar todas las sombras, incluidos sus alias, escriba:
 ```
 list shadows all
 ```
-El extracto siguiente muestra una instantánea a la que se asignó el alias predeterminado, VSS_SHADOW_x:
+En el siguiente fragmento se muestra una instantánea a la que se ha asignado el alias predeterminado, VSS_SHADOW_x:
 ```
 * Shadow Copy ID = {ff47165a-1946-4a0c-b7f4-80f46a309278}
 %VSS_SHADOW_1%
@@ -61,7 +61,7 @@ Para asignar un nuevo alias con el nombre System1 a esta instantánea, escriba:
 ```
 add alias System1 %VSS_SHADOW_1%
 ```
-Como alternativa, puede asignar el alias utilizando el identificador de instantánea:
+Como alternativa, puede asignar el alias mediante el identificador de instantánea:
 ```
 add alias System1 {ff47165a-1946-4a0c-b7f4-80f46a309278}
 ```

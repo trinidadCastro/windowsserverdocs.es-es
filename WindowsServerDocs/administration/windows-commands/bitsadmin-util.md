@@ -1,8 +1,8 @@
 ---
 title: bitsadmin util
-description: Tema de los comandos de Windows para **bitsadmin util** -lista de los **Util** modificadores
+description: Tema de comandos de Windows para **bitsadmin util** -List de los modificadores de la **util**
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: edc8c5b2d2d42a50902603c56ef7326133bb22f6
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a192df3254ac28cbbd9c8186e321b77e087e63e8
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59867016"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71380175"
 ---
 # <a name="bitsadmin-util"></a>bitsadmin util
 
@@ -38,11 +38,11 @@ bitsadmin /Util /version
 
 |Parámetro|Descripción|
 |-------|--------|
-|[Ayuda y bitsadmin util](bitsadmin-util-and-help.md)|Muestra el uso de la línea de comandos para los modificadores /Util. También puede especificar /?. **BITSAdmin 1.5 y versiones anterior**: No compatible.|
-|[GETIEPROXY y bitsadmin util](bitsadmin-util-and-getieproxy.md)|Recupera el uso de proxy para la cuenta de servicio determinado.|
-|[REPAIRSERVICE y bitsadmin util](bitsadmin-util-and-repairservice.md)|reparaciones de problemas conocidos con el servicio BITS.|
-|[SETIEPROXY y bitsadmin util](bitsadmin-util-and-setieproxy.md)|Especifica la configuración de proxy que se usará al transferir archivos mediante una cuenta de servicio.|
-|[versión y bitsadmin util](bitsadmin-util-and-version.md)|Muestra la versión del servicio BITS|
+|[bitsadmin util y help](bitsadmin-util-and-help.md)|Muestra el uso de la línea de comandos para los modificadores de/util. También puede especificar/?. **BITSAdmin 1,5 y versiones anteriores**: No compatible.|
+|[bitsadmin util y getieproxy](bitsadmin-util-and-getieproxy.md)|Recupera el uso de proxy para la cuenta de servicio especificada.|
+|[bitsadmin util y repairservice](bitsadmin-util-and-repairservice.md)|repara problemas conocidos con el servicio BITS|
+|[bitsadmin util y setieproxy](bitsadmin-util-and-setieproxy.md)|Especifica la configuración de proxy que se va a usar al transferir archivos mediante una cuenta de servicio.|
+|[bitsadmin util y version](bitsadmin-util-and-version.md)|Muestra la versión del servicio BITS|
 
 #### <a name="additional-references"></a>Referencias adicionales
 

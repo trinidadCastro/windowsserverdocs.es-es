@@ -1,7 +1,7 @@
 ---
 title: NIC convergente en una configuración de NIC en equipo (centro de trabajo)
 description: En este tema, se proporcionan instrucciones para implementar la NIC convergente en una configuración de NIC en equipo con switch Embedded Teaming (SET).
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: f01546f8-c495-4055-8492-8806eee99862
@@ -9,12 +9,12 @@ manager: dougkim
 ms.author: pashort
 author: shortpatti
 ms.date: 09/17/2018
-ms.openlocfilehash: 8229b72d69968d3690ece87d5116b215bdf78a08
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: e4c305a7c8c4c4618b0df1e1b2a646356d8f821f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869871"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356122"
 ---
 # <a name="converged-nic-in-a-teamed-nic-configuration-datacenter"></a>NIC convergente en una configuración de NIC en equipo (centro de trabajo)
 
@@ -39,7 +39,7 @@ Asegúrese de que la NIC física pueda conectarse al host de destino.  Esta prue
    _**Resultados**_
 
 
-   |    NOMBRE    |           InterfaceDescription           | ifIndex | Status |    Mac     | LinkSpeed |
+   |    Nombre    |           InterfaceDescription           | ifIndex | Estado |    Mac     | LinkSpeed |
    |------------|------------------------------------------|---------|--------|-------------------|-----------|
    | Test-40G-1 | Adaptador Ethernet ConnectX-3 Pro de Mellanox |   11    |   Arriba   | E4-1D-2D-07-43-D0 |  40 Gbps  |
 
@@ -61,7 +61,7 @@ Asegúrese de que la NIC física pueda conectarse al host de destino.  Esta prue
    | InterfaceIndex |     11      |
    | InterfaceAlias | Test-40G-1  |
    | AddressFamily  |    IPv6     |
-   |      Type      |   Unidifusión   |
+   |      Tipo      |   Unidifusión   |
    |  PrefixLength  |     24      |
 
    ---
@@ -75,7 +75,7 @@ Asegúrese de que la NIC física pueda conectarse al host de destino.  Esta prue
    _**Resultados**_
 
 
-   |    NOMBRE    |          InterfaceDescription           | ifIndex | Status |    Mac     | LinkSpeed |
+   |    Nombre    |          InterfaceDescription           | ifIndex | Estado |    Mac     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | TEST-40G-2 | Ethernet Mellanox ConnectX-3 Pro A... #2 |   13    |   Arriba   | E4-1D-2D-07-40-70 |  40 Gbps  |
 
@@ -97,7 +97,7 @@ Asegúrese de que la NIC física pueda conectarse al host de destino.  Esta prue
    | InterfaceIndex |     13      |
    | InterfaceAlias | TEST-40G-2  |
    | AddressFamily  |    IPv6     |
-   |      Type      |   Unidifusión   |
+   |      Tipo      |   Unidifusión   |
    |  PrefixLength  |     24      |
 
    ---
@@ -207,7 +207,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_   
 
 
-   |    NOMBRE    | DisplayName | DisplayValue | RegistryKeyword | Deleteinstance |
+   |    Nombre    | DisplayName | DisplayValue | RegistryKeyword | Deleteinstance |
    |------------|-------------|--------------|-----------------|---------------|
    | TEST-40G-1 |   ID. DE VLAN   |     101      |     VlanID      |     {101}     |
 
@@ -228,7 +228,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_
 
 
-   |    NOMBRE    |          InterfaceDescription           | ifIndex | Status |    Mac     | LinkSpeed |
+   |    Nombre    |          InterfaceDescription           | ifIndex | Estado |    Mac     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | Test-40G-1 | Adaptador Mellanox ConnectX-3 Pro Ethernet ADA... |   11    |   Arriba   | E4-1D-2D-07-43-D0 |  40 Gbps  |
 
@@ -244,7 +244,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_
 
 
-   |    NOMBRE    | DisplayName | DisplayValue | RegistryKeyword | Deleteinstance |
+   |    Nombre    | DisplayName | DisplayValue | RegistryKeyword | Deleteinstance |
    |------------|-------------|--------------|-----------------|---------------|
    | TEST-40G-2 |   ID. DE VLAN   |     102      |     VlanID      |     {102}     |
 
@@ -265,7 +265,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_
 
 
-   |    NOMBRE    |          InterfaceDescription           | ifIndex | Status |    Mac     | LinkSpeed |
+   |    Nombre    |          InterfaceDescription           | ifIndex | Estado |    Mac     | LinkSpeed |
    |------------|-----------------------------------------|---------|--------|-------------------|-----------|
    | Test-40G-2 | Adaptador Mellanox ConnectX-3 Pro Ethernet ADA... |   11    |   Arriba   | E4-1D-2D-07-43-D1 |  40 Gbps  |
 
@@ -344,7 +344,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
 
    | Correcto | Reinicio necesario | Código de salida |     Resultado de la característica     |
    |---------|----------------|-----------|------------------------|
-   |  True   |       Sin       |  Correcto  | {Protocolo de puente del centro de datos} |
+   |  True   |       No       |  Correcto  | {Protocolo de puente del centro de datos} |
 
    ---
 
@@ -364,9 +364,9 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
 
    |   Parámetro    |          Valor           |
    |----------------|--------------------------|
-   |      NOMBRE      |           SMB            |
+   |      Nombre      |           SMB            |
    |     Propietario      | Máquina \(Directiva de grupo\) |
-   | NetworkProfile |           Todo            |
+   | NetworkProfile |           Todos            |
    |   Precedencia   |           127            |
    |   JobObject    |          &nbsp;          |
    | NetDirectPort  |           445            |
@@ -385,9 +385,9 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
 
    |   Parámetro    |          Valor           |
    |----------------|--------------------------|
-   |      NOMBRE      |         DEFAULT          |
+   |      Nombre      |         DEFAULT          |
    |     Propietario      | Máquina \(Directiva de grupo\) |
-   | NetworkProfile |           Todo            |
+   | NetworkProfile |           Todos            |
    |   Precedencia   |           127            |
    |    Plantilla    |         Default          |
    |   JobObject    |          &nbsp;          |
@@ -405,7 +405,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_
 
 
-   | Prioridad | Enabled | PolicySet | IfIndex | IfAlias |
+   | Prioridad | Enabled | PolicySet | ifIndex | IfAlias |
    |----------|---------|-----------|---------|---------|
    |    0     |  False  |  Global   | &nbsp;  | &nbsp;  |
    |    1     |  False  |  Global   | &nbsp;  | &nbsp;  |
@@ -439,10 +439,10 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Capacidades**:_   
 
 
-   |      Parámetro      |   Hardware   |   Current    |
+   |      Parámetro      |   Hardware   |   Corrientes    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
-   |     DcbxSupport     |     None     |     None     |
+   |     DcbxSupport     |     Ninguno     |     Ninguno     |
    | NumTCs (Max/ETS/PFC) |    8/8/8     |    8/8/8     |
 
    ---
@@ -483,10 +483,10 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Capacidades**:_ 
 
 
-   |      Parámetro      |   Hardware   |   Current    |
+   |      Parámetro      |   Hardware   |   Corrientes    |
    |---------------------|--------------|--------------|
    |    MacSecBypass     | NotSupported | NotSupported |
-   |     DcbxSupport     |     None     |     None     |
+   |     DcbxSupport     |     Ninguno     |     Ninguno     |
    | NumTCs (Max/ETS/PFC) |    8/8/8     |    8/8/8     |
 
    ---
@@ -524,7 +524,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_  
 
 
-   | NOMBRE | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | IfIndex | IfAlias |
+   | Nombre | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | SMB  |    ETS    |      50      |    3     |  Global   | &nbsp;  | &nbsp;  |
 
@@ -539,7 +539,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_  
 
 
-   |   NOMBRE    | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | IfIndex | IfAlias |
+   |   Nombre    | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | ifIndex | IfAlias |
    |-----------|-----------|--------------|----------|-----------|---------|---------|
    | Predeterminada |    ETS    |      50      | 0:2, 4-7  |  Global   | &nbsp;  | &nbsp;  |
    |    SMB    |    ETS    |      50      |    3     |  Global   | &nbsp;  | &nbsp;  |
@@ -558,7 +558,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_
 
 
-   | NOMBRE | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | IfIndex | IfAlias |
+   | Nombre | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP1  |    ETS    |      10      |    1     |  Global   | &nbsp;  | &nbsp;  |
 
@@ -571,7 +571,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
    _**Resultados**_
 
 
-   | NOMBRE | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | IfIndex | IfAlias |
+   | Nombre | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | ifIndex | IfAlias |
    |------|-----------|--------------|----------|-----------|---------|---------|
    | IP2  |    ETS    |      10      |    2     |  Global   | &nbsp;  | &nbsp;  |
 
@@ -586,7 +586,7 @@ En la imagen siguiente se muestran dos hosts de Hyper-V con dos adaptadores de r
     _**Resultados**_
 
 
-    |   NOMBRE    | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | IfIndex | IfAlias |
+    |   Nombre    | Algoritmo | Ancho de banda (%) | Prioridad | PolicySet | ifIndex | IfAlias |
     |-----------|-----------|--------------|----------|-----------|---------|---------|
     | Predeterminada |    ETS    |      30      |  0, 4-7   |  Global   | &nbsp;  | &nbsp;  |
     |    SMB    |    ETS    |      50      |    3     |  Global   | &nbsp;  | &nbsp;  |
@@ -628,7 +628,7 @@ En la imagen siguiente se muestra el estado actual de los hosts de Hyper-V.
    _**Resultados**_
 
 
-   |    NOMBRE    |        InterfaceDescription        | Enabled |
+   |    Nombre    |        InterfaceDescription        | Enabled |
    |------------|------------------------------------|---------|
    | TEST-40G-1 | Adaptador VPI ConnectX-4 de Mellanox #2 |  True   |
    | TEST-40G-2 |  Adaptador VPI ConnectX-4 de Mellanox   |  True   |
@@ -730,9 +730,9 @@ En la imagen siguiente se muestra el host 1 de Hyper-V con un vSwitch.
    _**Da**_
 
 
-   |  NOMBRE   | Tipodeconmutador | Si |
+   |  Nombre   | Tipodeconmutador | Si |
    |---------|------------|--------------------------------|
-   | VMSTEST |  Externo  |        Interfaz en equipo        |
+   | VMSTEST |  External  |        Interfaz en equipo        |
 
    ---
 
@@ -761,7 +761,7 @@ En la imagen siguiente se muestra el host 1 de Hyper-V con un vSwitch.
    _**Resultados**_
 
 
-   |        NOMBRE         |        InterfaceDescription         | ifIndex | Status |    Mac     | LinkSpeed |
+   |        Nombre         |        InterfaceDescription         | ifIndex | Estado |    Mac     | LinkSpeed |
    |---------------------|-------------------------------------|---------|--------|-------------------|-----------|
    | vEthernet (VMSTEST) | Adaptador Ethernet Virtual de Hyper-V #2 |   28    |   Arriba   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
@@ -776,7 +776,7 @@ En la imagen siguiente se muestra el host 1 de Hyper-V con un vSwitch.
    _**Resultados**_
 
 
-   |  NOMBRE   | IsManagementOs | VMName  |  SwitchName  | Mac | Status | IPAddresses |
+   |  Nombre   | IsManagementOs | VMName  |  SwitchName  | Mac | Estado | IPAddresses |
    |---------|----------------|---------|--------------|------------|--------|-------------|
    | VMSTEST |      True      | VMSTEST | E41D2D074071 |    Aceptar    | &nbsp; |             |
 
@@ -885,7 +885,7 @@ Debe quitar la configuración de VLAN de acceso para evitar que el etiquetado au
    _**Resultados**_ 
 
 
-   |         NOMBRE         | IsManagementOs | VMName |      SwitchName      |  Mac  | Status | IPAddresses |
+   |         Nombre         | IsManagementOs | VMName |      SwitchName      |  Mac  | Estado | IPAddresses |
    |----------------------|----------------|--------|----------------------|--------------|--------|-------------|
    | CORP-external-switch |      True      | &nbsp; | CORP-external-switch | 001B785768AA |  Aceptar  |   &nbsp;    |
    |         GESTIÓN          |      True      | &nbsp; |       VMSTEST        | E41D2D074071 |  Aceptar  |   &nbsp;    |
@@ -901,7 +901,7 @@ Debe quitar la configuración de VLAN de acceso para evitar que el etiquetado au
    _**Resultados**_
 
 
-   |      NOMBRE       |        InterfaceDescription         | ifIndex | Status |    Mac     | LinkSpeed |
+   |      Nombre       |        InterfaceDescription         | ifIndex | Estado |    Mac     | LinkSpeed |
    |-----------------|-------------------------------------|---------|--------|-------------------|-----------|
    | vEthernet (gestión) | Adaptador Ethernet Virtual de Hyper-V #2 |   28    |   Arriba   | E4-1D-2D-07-40-71 |  80 Gbps  |
 
@@ -941,7 +941,7 @@ En la imagen siguiente se muestra el estado actual de los hosts de Hyper-V, incl
    _**Resultados**_ 
 
 
-   |         NOMBRE         | IsManagementOs |        VMName        |  SwitchName  | Mac | Status | IPAddresses |
+   |         Nombre         | IsManagementOs |        VMName        |  SwitchName  | Mac | Estado | IPAddresses |
    |----------------------|----------------|----------------------|--------------|------------|--------|-------------|
    | CORP-external-switch |      True      | CORP-external-switch | 001B785768AA |    Aceptar    | &nbsp; |             |
    |         Gestión          |      True      |       VMSTEST        | E41D2D074071 |    Aceptar    | &nbsp; |             |

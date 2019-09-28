@@ -1,8 +1,8 @@
 ---
 title: select disk
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 2da74afda7c15145327b4d64f5c0e97e4f9b10cc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6d9078242264b01ee4bc24dc590df24b1e53e548
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441446"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71371082"
 ---
 # <a name="select-disk"></a>select disk
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-selecciona el disco especificado y cambia el foco a ella.  
+selecciona el disco especificado y desplaza el foco a él.  
   
   
   
@@ -35,37 +35,37 @@ select disk={ <n> | <disk path> | system | next }
 ```  
   
 > [!NOTE]  
-> El **<disk path>** , **sistema**, y **siguiente** parámetros solo están disponibles en Windows 7 y Windows Server 2008 R2.  
+> Los parámetros **<disk path>** , **System**y **Next** solo están disponibles en Windows 7 y Windows Server 2008 R2.  
   
 ## <a name="parameters"></a>Parámetros  
   
 |  Parámetro  |                                                                                                                                                                                                            Descripción                                                                                                                                                                                                            |
 |-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|     <n>     | Especifica el número del disco que se va a recibir el foco. Puede ver los números para todos los discos en el equipo mediante el **disco lista** comando DiskPart. **Nota:** Al configurar los sistemas con varios discos, no use **seleccione disco\=0** para especificar el disco del sistema. El equipo puede volver a asignar números de disco cuando se reinicia y los diferentes equipos con la misma configuración de disco pueden tener números de disco diferente. |
-| <disk path> |                                                                                                                 Especifica la ubicación del disco para recibir el foco, por ejemplo, **PCIROOT\(0\)\#PCI\(0F02\)\#atA\(C00T00L00\)** . Para ver la ruta de acceso de ubicación de un disco, selecciónelo y, a continuación, escriba **disco detalle**.                                                                                                                  |
-|   Sistema    |                                 En equipos con BIOS, especifica que el disco 0 recibe el foco. En los equipos EFI, el disco que contiene la partición del sistema EFI \(ESP\) que se usa para el arranque actual recibe el foco. En los equipos EFI, el comando generará un error si no hay ningún ESP, si hay más de una ESP o el equipo se arranca desde el entorno de preinstalación de Windows \(Windows PE\).                                  |
-|    siguiente     |                                                                                                                                     Una vez que se ha seleccionado un disco, este comando recorre en iteración todos los discos en la lista de discos. Al ejecutar este comando, el disco en la lista siguiente recibirá el foco.                                                                                                                                      |
+|     <n>     | Especifica el número del disco en el que se va a recibir el foco. Puede ver los números de todos los discos del equipo mediante el comando **List Disk** en Diskpart. **Nota:** Al configurar sistemas con varios discos, no use **Select Disk @ no__t-10** para especificar el disco del sistema. El equipo puede reasignar los números de disco al reiniciar y los distintos equipos con la misma configuración de disco pueden tener números de disco diferentes. |
+| <disk path> |                                                                                                                 Especifica la ubicación del disco para recibir el foco, por ejemplo, **PCIROOT @ no__t-10 @ no__t-2 @ no__t-3PCI @ no__t-40F02 @ no__t-5 @ no__t-6atA @ no__t-7C00T00L00 @ no__t-8**. Para ver la ruta de acceso de ubicación de un disco, selecciónelo y, a continuación, escriba **detail Disk**.                                                                                                                  |
+|   Sistema    |                                 En los equipos BIOS, especifica que el disco 0 recibe el foco. En los equipos EFI, el disco que contiene la partición del sistema EFI \(ESP @ no__t-1 que se usa para el arranque actual recibe el foco. En los equipos EFI, el comando producirá un error si no hay ningún ESP, si hay más de un ESP, o si el equipo se arranca desde Entorno de preinstalación de Windows \(Windows PE @ no__t-1.                                  |
+|    siguiente     |                                                                                                                                     Una vez que se selecciona un disco, este comando recorre en iteración todos los discos de la lista de discos. Al ejecutar este comando, el siguiente disco de la lista recibirá el foco.                                                                                                                                      |
   
-## <a name="BKMK_examples"></a>Ejemplos  
-Para cambiar el foco en el disco 1, escriba:  
+## <a name="BKMK_examples"></a>Example  
+Para desplazar el foco al disco 1, escriba:  
   
 ```  
 select disk=1  
 ```  
   
-Para seleccionar un disco mediante el uso de su ruta de acceso de ubicación, escriba:  
+Para seleccionar un disco mediante la ruta de acceso de ubicación, escriba:  
   
 ```  
 select disk=PCIROOT(0)#PCI(0100)#atA(C00T00L01)  
 ```  
   
-Para cambiar el foco en el disco del sistema, escriba:  
+Para desplazar el foco al disco del sistema, escriba:  
   
 ```  
 select disk=system  
 ```  
   
-Para cambiar el foco en el siguiente disco en el equipo, escriba:  
+Para desplazar el foco al siguiente disco del equipo, escriba:  
   
 ```  
 select disk=next  
