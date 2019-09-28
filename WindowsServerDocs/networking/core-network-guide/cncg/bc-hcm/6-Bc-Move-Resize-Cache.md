@@ -1,62 +1,62 @@
 ---
 title: Mover y cambiar el tamaño de la caché hospedada (opcional)
-description: Esta guía proporciona instrucciones sobre cómo implementar BranchCache en modo de caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10
+description: En esta guía se proporcionan instrucciones sobre cómo implementar BranchCache en modo caché hospedada en equipos que ejecutan Windows Server 2016 y Windows 10.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.topic: article
 ms.assetid: bb0eb349-914d-4596-9140-d3aae7597d55
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: cb75e06b5da8ff95fcf763b22c5160ea200035f3
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 0b0e3b6b490dead32071d99becccd9dca937f1f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853536"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406359"
 ---
-# <a name="move-and-resize-the-hosted-cache-optional"></a>Mover y cambiar el tamaño de la memoria caché hospedada \(opcional\)
+# <a name="move-and-resize-the-hosted-cache-optional"></a>Mueva y cambie el tamaño de la caché hospedada \(Optional @ no__t-1
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Puede usar este procedimiento para mover la caché hospedada a la unidad y carpeta que prefiera y para especificar la cantidad de espacio en disco que el servidor de caché hospedada puede usar para la caché hospedada.
+Puede usar este procedimiento para trasladar la caché hospedada a la unidad y carpeta que prefiera, y para especificar la cantidad de espacio en disco que el servidor de caché hospedada puede usar para la caché hospedada.
 
-Este procedimiento es opcional. Si el valor predeterminado de ubicación de caché \(% windir %\\ServiceProfiles\\NetworkService\\AppData\\Local\\PeerDistPub\) y tamaño, que es del 5% del disco duro total espacio: son adecuadas para la implementación, no es necesario cambiarlas.
+Este procedimiento es opcional. Si la ubicación de caché predeterminada \(% WINDIR% \\ServiceProfiles @ no__t-2NetworkService @ no__t-3AppData @ no__t-4Local @ no__t-5PeerDistPub @ no__t-6 y size (que es el 5% del espacio total en el disco duro), es adecuado para su implementación, no es necesario cambiarlos.
 
 Para realizar este procedimiento debe ser miembro del grupo de administradores.
 
-### <a name="to-move-and-resize-the-hosted-cache"></a>Para mover y cambiar el tamaño de la memoria caché hospedada
+### <a name="to-move-and-resize-the-hosted-cache"></a>Para cambiar el tamaño de la caché hospedada
 
 1. Abra Windows PowerShell con privilegios de administrador.
 
-2. Escriba el siguiente comando para mover la caché hospedada a otra ubicación en el equipo local y, a continuación, presione ENTRAR.
+2. Escriba el siguiente comando para trasladar la caché hospedada a otra ubicación en el equipo local y, a continuación, presione Entrar.
 
     > [!IMPORTANT]
-    > Antes de ejecutar el siguiente comando, reemplace los valores de parámetro, como – Path y – MoveTo, con los valores adecuados para su implementación.
+    > Antes de ejecutar el siguiente comando, reemplace los valores de parámetro, como – path y – moveTo, por los valores adecuados para su implementación.
 
     ``` 
     Set-BCCache -Path C:\datacache –MoveTo D:\datacache
     ``` 
 
-3.  Escriba el siguiente comando para cambiar el tamaño hospedado almacenar en caché: específicamente la datacache \- en el equipo local. Presione ENTRAR.
+3.  Escriba el siguiente comando para cambiar el tamaño de la memoria caché hospedada, específicamente la memoria caché \- en el equipo local. Presione ENTRAR.
 
     > [!IMPORTANT]
-    > Antes de ejecutar el siguiente comando, reemplace los valores de parámetro, como \-porcentaje, con los valores adecuados para su implementación.  
+    > Antes de ejecutar el siguiente comando, reemplace los valores de parámetro, como \-Percentage, por los valores adecuados para su implementación.  
 
     ``` 
     Set-BCCache -Percentage 20
     ``` 
 
-4.  Para comprobar la configuración del servidor de caché hospedada, escriba el siguiente comando y presione ENTRAR.
+4.  Para comprobar la configuración del servidor de caché hospedada, escriba el siguiente comando y presione Entrar.
 
     ``` 
     Get-BCStatus
     ``` 
 
-    Los resultados del comando mostrarán estado de todos los aspectos de la instalación de BranchCache. Siguientes son algunas de la configuración de BranchCache y el valor correcto para cada elemento:
+    Los resultados del comando muestran el estado de todos los aspectos de la instalación de BranchCache. A continuación se muestran algunos de los valores de BranchCache y el valor correcto para cada elemento:
 
-    -   DataCache | CacheFileDirectoryPath: Muestra la ubicación de disco duro que coincida con el valor proporcionado con el parámetro – MoveTo del comando SetBCCache. Por ejemplo, si se proporciona el valor D:\\datacache, que se muestra el valor en la salida del comando.
+    -   Caché de los | CacheFileDirectoryPath: Muestra la ubicación del disco duro que coincide con el valor que proporcionó con el parámetro – moveTo del comando SetBCCache. Por ejemplo, si proporcionó el valor D: \\datacache, ese valor se muestra en el resultado del comando.
 
-    -   DataCache | MaxCacheSizeAsPercentageOfDiskVolume: Muestra el número que coincida con el valor proporcionado con el parámetro de porcentaje del comando SetBCCache. Por ejemplo, si proporciona el valor de 20, ese valor se muestra en la salida del comando.
+    -   Caché de los | MaxCacheSizeAsPercentageOfDiskVolume: Muestra el número que coincide con el valor que proporcionó con el parámetro – Percentage del comando SetBCCache. Por ejemplo, si proporcionó el valor 20, ese valor se muestra en el resultado del comando.
 
-Para continuar con esta guía, consulte [Prehash y precarga de contenido en el servidor de caché hospedada &#40;opcional&#41;](7-Bc-Prehash-Preload.md).
+Para continuar con esta guía, consulte [hash y precargar contenido en el servidor &#40;de caché&#41;hospedada opcional](7-Bc-Prehash-Preload.md).

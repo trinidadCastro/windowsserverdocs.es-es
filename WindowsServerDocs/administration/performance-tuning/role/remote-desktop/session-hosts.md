@@ -1,203 +1,203 @@
 ---
-title: Hosts de sesión de escritorio remoto de optimización del rendimiento
-description: Optimización del rendimiento directrices de Hosts de sesión de escritorio remoto
-ms.prod: windows-server-threshold
+title: Optimización del rendimiento Escritorio remoto hosts de sesión
+description: Directrices para la optimización del rendimiento para hosts de sesión de Escritorio remoto
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: HammadBu; VladmiS
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: e95671718616fc7c81977434e83a227c858fca17
-ms.sourcegitcommit: 6ef4986391607bb28593852d06cc6645e548a4b3
+ms.openlocfilehash: c50c0c981362bd96ed3bf1c603cde6bfeec289f4
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66811421"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385021"
 ---
-# <a name="performance-tuning-remote-desktop-session-hosts"></a>Hosts de sesión de escritorio remoto de optimización del rendimiento
+# <a name="performance-tuning-remote-desktop-session-hosts"></a>Optimización del rendimiento Escritorio remoto hosts de sesión
 
 
-Este tema explica cómo seleccionar hardware de Host de sesión de escritorio remoto (RD Session Host), ajustar el host y ajuste de aplicaciones.
+En este tema se describe cómo seleccionar Escritorio remoto host de sesión (host de sesión de escritorio remoto), ajustar el host y optimizar las aplicaciones.
 
 **En este tema:**
 
 -   [Seleccionar el hardware adecuado para el rendimiento](#selecting-the-proper-hardware-for-performance)
 
--   [Optimización de aplicaciones de Host de sesión de escritorio remoto](#tuning-applications-for-remote-desktop-session-host)
+-   [Optimización de aplicaciones para Escritorio remoto host de sesión](#tuning-applications-for-remote-desktop-session-host)
 
--   [Host de sesión de escritorio remoto para parámetros de ajuste](#remote-desktop-session-host-tuning-parameters)
+-   [Parámetros de ajuste del host de sesión Escritorio remoto](#remote-desktop-session-host-tuning-parameters)
 
 ## <a name="selecting-the-proper-hardware-for-performance"></a>Selección del hardware adecuado para el rendimiento
 
 
-Para una implementación de servidor Host de sesión de escritorio remoto, la elección del hardware se rige por el conjunto de aplicaciones y cómo usar los usuarios. Los factores clave que afectan al número de usuarios y su experiencia son la CPU, memoria, disco y gráficos. Esta sección contiene directrices adicionales que son específicas de los servidores Host de sesión de escritorio remoto y está relacionada principalmente con el entorno de varios usuarios de los servidores Host de sesión de escritorio remoto.
+En una implementación de servidor host de sesión de escritorio remoto, la elección del hardware se rige por el conjunto de aplicaciones y el modo en que los usuarios los usan. Los factores clave que afectan al número de usuarios y su experiencia son la CPU, la memoria, el disco y los gráficos. Esta sección contiene instrucciones adicionales que son específicas de los servidores host de sesión de escritorio remoto y están relacionadas principalmente con el entorno multiusuario de los servidores host de sesión de escritorio remoto.
 
 ### <a name="cpu-configuration"></a>Configuración de la CPU
 
-Configuración de la CPU conceptualmente se determina multiplicando la CPU necesaria para admitir una sesión por el número de sesiones que se espera que el sistema para admitir manteniendo una zona de búfer para manejar los picos temporales. Varios procesadores lógicos pueden ayudar a reducir anómalas situaciones de congestión de la CPU, que suelen deberse a unos pocos subprocesos molestias contenidas en un número similar de procesadores lógicos.
+La configuración de la CPU se determina conceptualmente multiplicando la CPU necesaria para admitir una sesión por el número de sesiones que se espera que admita el sistema, al tiempo que se mantiene una zona del búfer para controlar los picos temporales. Varios procesadores lógicos pueden ayudar a reducir situaciones anómalas de congestión de la CPU, que suelen deberse a algunos subprocesos sobreactivos contenidos en un número similar de procesadores lógicos.
 
-Por lo tanto, los procesadores lógicos más en un sistema, cuanto menor sea el margen de protección que debe compilarse a la estimación de uso de CPU, lo que resulta en un porcentaje mayor de carga activa por CPU. Un factor importante a recordar es que lo que duplica el número de CPU no no duplica la capacidad de CPU.
+Por lo tanto, cuanto mayor sea el número de procesadores lógicos de un sistema, menor será el margen de cojín que se debe integrar en el cálculo de uso de CPU, lo que da como resultado un mayor porcentaje de carga activa por CPU. Un factor importante que recordar es que la duplicación del número de CPU no redoble la capacidad de la CPU.
 
 ### <a name="memory-configuration"></a>Configuración de memoria
 
-Configuración de memoria depende de las aplicaciones que emplean los usuarios; Sin embargo, se puede calcular la cantidad necesaria de memoria mediante la fórmula siguiente: TotalMem = OSMem + SessionMem \* NS
+La configuración de la memoria depende de las aplicaciones que emplean los usuarios; sin embargo, se puede calcular la cantidad de memoria necesaria mediante la siguiente fórmula: TotalMem = OSMem + SessionMem \* NS
 
-OSMem es la cantidad de memoria que requiere el sistema operativo para ejecutar (por ejemplo, imágenes binarias del sistema, las estructuras de datos y así sucesivamente), SessionMem es cuánto requieren procesos de memoria que se ejecutan en una sesión y NS es el número de sesiones activas de destino. La cantidad de memoria necesaria para una sesión en su mayoría viene determinada por la referencia de memoria privada establecida para las aplicaciones y procesos del sistema que se ejecutan dentro de la sesión. Páginas de código o datos compartidas tienen poco efecto porque hay solo una copia en el sistema.
+OSMem es la cantidad de memoria que requiere la ejecución del sistema operativo (como imágenes binarias del sistema, estructuras de datos, etc.), SessionMem es la cantidad de procesos de memoria que se ejecutan en una sesión y NS es el número objetivo de sesiones activas. La cantidad de memoria necesaria para una sesión está determinada principalmente por el conjunto de referencia de memoria privada para las aplicaciones y los procesos del sistema que se ejecutan dentro de la sesión. El código compartido o las páginas de datos tienen poco efecto porque solo hay una copia en el sistema.
 
-Una observación interesante (suponiendo que el sistema de disco que se copia el archivo de paginación no cambia) es que cuanto mayor sea el número de sesiones activas simultáneas del sistema tiene previsto admitir, cuanto mayor sea la asignación de memoria por sesión debe ser. Si no se aumenta la cantidad de memoria asignada por sesión, el número de errores de página que las sesiones activas genera aumenta con el número de sesiones. Finalmente, estos errores saturar el subsistema de E/S. Si aumenta la cantidad de memoria asignada por sesión, disminuye la probabilidad de incurrir en errores de página, que le ayuda a reducir la velocidad total de errores de página.
+Una observación interesante (suponiendo que el sistema de disco que realiza la copia de seguridad del archivo de paginación no cambie) es que el mayor número de sesiones activas simultáneas que el sistema tiene previsto admitir, cuanto mayor sea la asignación de memoria por sesión. Si no aumenta la cantidad de memoria asignada por sesión, el número de errores de página que generan las sesiones activas aumenta con el número de sesiones. Finalmente, estos errores sobrecargan el subsistema de e/s. Al aumentar la cantidad de memoria asignada por sesión, disminuye la probabilidad de que se produzcan errores de página incurridos, lo que ayuda a reducir la tasa general de errores de página.
 
 ### <a name="disk-configuration"></a>Configuración del disco
 
-Almacenamiento de información es uno de los aspectos más alto al configurar los servidores Host de sesión de escritorio remoto y puede ser la limitación más comunes en los sistemas que se implementan en el campo.
+El almacenamiento es uno de los aspectos más desbuscados al configurar los servidores host de sesión de escritorio remoto y puede ser la limitación más común en los sistemas que se implementan en el campo.
 
-La actividad del disco que se genera en un servidor Host de sesión de escritorio remoto típico afecta a las áreas siguientes:
+La actividad de disco que se genera en un servidor host de sesión de escritorio remoto típico afecta a las siguientes áreas:
 
--   Archivos del sistema y archivos binarios de aplicación
+-   Archivos del sistema y binarios de la aplicación
 
 -   Archivos de paginación
 
 -   Perfiles de usuario y datos de usuario
 
-Idealmente, estas áreas realizar copias de seguridad por los dispositivos de almacenamiento distinta. Uso de configuraciones RAID distribuidas u otros tipos de almacenamiento de alto rendimiento aún más mejora el rendimiento. Recomendamos encarecidamente que use adaptadores de almacenamiento con almacenamiento en caché de escritura de la batería. Los controladores de almacenamiento en caché de escritura de disco ofrecen compatibilidad mejorada para las operaciones de escritura sincrónica. Dado que todos los usuarios tienen un subárbol independiente, las operaciones de escritura sincrónica son significativamente más comunes en un servidor Host de sesión de escritorio remoto. Los subárboles del registro se guardan periódicamente en el disco mediante el uso de las operaciones de escritura sincrónica. Para habilitar estas optimizaciones, desde la consola de administración de discos, abra el **propiedades** cuadro de diálogo para el disco de destino y, en el **directivas** ficha, seleccione el **Habilitar caché de escritura en el disco** y **desactivar el vaciado de búfer de memoria caché de escritura de Windows** en las casillas de verificación del dispositivo.
+Idealmente, se debe realizar una copia de seguridad de estas áreas mediante dispositivos de almacenamiento distintos. El uso de configuraciones RAID seccionadas u otros tipos de almacenamiento de alto rendimiento mejora el rendimiento. Le recomendamos encarecidamente que use adaptadores de almacenamiento con almacenamiento en caché de escritura con respaldo de batería. Los controladores con el almacenamiento en caché de escritura en disco ofrecen mayor compatibilidad con las operaciones de escritura sincrónicas. Dado que todos los usuarios tienen un subárbol independiente, las operaciones de escritura sincrónicas son mucho más comunes en un servidor host de sesión de escritorio remoto. Los subárboles del registro se guardan periódicamente en el disco mediante operaciones de escritura sincrónicas. Para habilitar estas optimizaciones, en la consola de administración de discos, abra el cuadro de diálogo **propiedades** del disco de destino y, en la pestaña **directivas** , seleccione **Habilitar caché de escritura en el disco** y **desactivar búfer de escritura en caché de Windows Desactivación de las** casillas de dispositivo.
 
 ### <a name="network-configuration"></a>Configuración de red
 
-Uso de la red para un servidor Host de sesión de escritorio remoto incluye dos categorías principales:
+El uso de red para un servidor host de sesión de escritorio remoto incluye dos categorías principales:
 
--   Uso del tráfico de conexión de Host de sesión de escritorio remoto depende casi exclusivamente de los patrones de dibujos que se muestran las aplicaciones que se ejecutan dentro de las sesiones y el tráfico de E/S redirigida dispositivos.
+-   El uso del tráfico de conexión del host de sesión de escritorio remoto lo determinan casi exclusivamente los patrones de dibujo que se muestran en las aplicaciones que se ejecutan dentro de las sesiones y el tráfico de e/s de los dispositivos redirigidos.
 
-    Por ejemplo, aplicaciones de procesamiento de texto y datos de entrada consumen ancho de banda de aproximadamente 10 a 100 kilobits por segundo, mientras que los gráficos enriquecidos y reproducción de vídeo provocar aumentos significativos en el uso de ancho de banda.
+    Por ejemplo, las aplicaciones que controlan el procesamiento de texto y la entrada de datos consumen ancho de banda de aproximadamente 10 a 100 kilobits por segundo, mientras que los gráficos y la reproducción de vídeo enriquecidos producen aumentos significativos en el uso de ancho
 
--   Conexiones de back-end, como perfiles móviles, la aplicación acceso a recursos compartidos de archivos, servidores de base de datos, servidores de correo electrónico y los servidores HTTP.
+-   Conexiones de back-end, como perfiles móviles, acceso de la aplicación a recursos compartidos de archivos, servidores de bases de datos, servidores de correo electrónico y servidores HTTP.
 
-    El volumen y el perfil de tráfico de red es específico para cada implementación.
+    El volumen y el perfil del tráfico de red son específicos de cada implementación.
 
-## <a name="tuning-applications-for-remote-desktop-session-host"></a>Optimización de aplicaciones de Host de sesión de escritorio remoto
+## <a name="tuning-applications-for-remote-desktop-session-host"></a>Optimización de aplicaciones para Escritorio remoto host de sesión
 
 
-La mayoría del uso de CPU en un servidor Host de sesión de escritorio remoto está controlado por las aplicaciones. Las aplicaciones de escritorio se optimizan normalmente hacia la capacidad de respuesta con el objetivo de minimizar el tiempo que tarda una aplicación para responder a una solicitud de usuario. Sin embargo, en un entorno de servidor, es igualmente importante minimizar la cantidad total de uso de CPU que se necesita para completar una acción para evitar afectar negativamente a otras sesiones.
+La mayor parte del uso de CPU en un servidor host de sesión de escritorio remoto está controlada por aplicaciones. Las aplicaciones de escritorio normalmente están optimizadas para la capacidad de respuesta con el objetivo de minimizar el tiempo que tarda una aplicación en responder a una solicitud de usuario. Sin embargo, en un entorno de servidor, es igualmente importante minimizar la cantidad total de uso de CPU que se necesita para completar una acción con el fin de evitar que afecte negativamente a otras sesiones.
 
-Al configurar las aplicaciones que se utilizan en un servidor Host de sesión de escritorio remoto, tenga en cuenta las siguientes sugerencias:
+Tenga en cuenta las siguientes sugerencias al configurar las aplicaciones que se van a usar en un servidor host de sesión de escritorio remoto:
 
--   Minimizar el procesamiento de bucle inactivo en segundo plano
+-   Minimizar el procesamiento de bucles inactivos en segundo plano
 
-    Ejemplos típicos son deshabilitar la comprobación de ortografía y gramática de segundo plano, datos de indexación de búsqueda, y lo guarda en segundo plano.
+    Los ejemplos típicos son deshabilitar la gramática en segundo plano y la revisión ortográfica, la indexación de datos para la búsqueda y el guardado en segundo plano.
 
--   Minimizar la frecuencia con una aplicación realiza una comprobación de estado o la actualización.
+-   Minimizar la frecuencia con la que una aplicación realiza una comprobación de estado o una actualización.
 
-    Deshabilitar este tipo de comportamientos o incrementando el intervalo entre iteraciones de sondeo y el temporizador de activación significativamente beneficia el uso de CPU porque el efecto de estas actividades se intensifica rápidamente para muchas de las sesiones activas. Ejemplos típicos son los iconos de estado de conexión y las actualizaciones de información de barra de estado.
+    La deshabilitación de estos comportamientos o el aumento del intervalo entre las iteraciones de sondeo y la activación del temporizador aumenta significativamente el uso de CPU, ya que el efecto de estas actividades se amplifica rápidamente para muchas sesiones activas. Algunos ejemplos típicos son los iconos de estado de conexión y las actualizaciones de información de la barra de estado.
 
--   Minimizar la contención de recursos entre aplicaciones reduciendo su frecuencia de sincronización.
+-   Minimice la contención de recursos entre aplicaciones reduciendo su frecuencia de sincronización.
 
-    Ejemplos de estos recursos incluyen las claves del registro y archivos de configuración. Ejemplos de características y componentes de aplicación son el indicador de estado (por ejemplo, las notificaciones del shell), la indización en segundo plano o supervisión de los cambios y sincronización sin conexión.
+    Algunos ejemplos de estos recursos son las claves del registro y los archivos de configuración. Algunos ejemplos de componentes y características de la aplicación son el indicador de estado (por ejemplo, las notificaciones de Shell), la indexación en segundo plano o la supervisión de cambios y la sincronización sin conexión.
 
--   Deshabilite los procesos innecesarios que están registrados para comenzar con un inicio de sesión o inicio de sesión de usuario.
+-   Deshabilite los procesos innecesarios que están registrados para iniciarse con el inicio de sesión de usuario o un inicio de sesión.
 
-    Estos procesos pueden contribuir significativamente el costo de uso de CPU al crear una nueva sesión de usuario, que generalmente es un proceso intensivo de CPU, y puede ser muy costosa en escenarios de mañana. Usar MsConfig.exe o MsInfo32.exe para obtener una lista de procesos que se inician en el inicio de sesión de usuario. Para obtener información más detallada, puede usar [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
+    Estos procesos pueden contribuir significativamente al costo del uso de CPU al crear una nueva sesión de usuario, que generalmente es un proceso intensivo de la CPU, y puede resultar muy caro en escenarios de la mañana. Use MsConfig. exe o MsInfo32. exe para obtener una lista de los procesos que se inician en el inicio de sesión de usuario. Para obtener información más detallada, puede usar [Autoruns para Windows](https://technet.microsoft.com/sysinternals/bb963902.aspx).
 
-Para el consumo de memoria, tenga en cuenta lo siguiente:
+En el consumo de memoria, debe tener en cuenta lo siguiente:
 
--   Compruebe que no se reubica los archivos DLL cargados por una aplicación.
+-   Compruebe que los archivos dll cargados por una aplicación no se reubican.
 
-    -   Cambia la ubicación de los archivos DLL se puede comprobar mediante la selección de vista de la DLL del proceso, tal como se muestra en la ilustración siguiente, mediante el uso de [Process Explorer](https://technet.microsoft.com/sysinternals/bb896653.aspx).
+    -   Los archivos dll reubicados se pueden comprobar seleccionando procesar DLL vista, como se muestra en la siguiente ilustración, mediante el [Explorador de procesos](https://technet.microsoft.com/sysinternals/bb896653.aspx).
 
-    -   Aquí podemos ver que y.dll. se reubicarán debido a x.dll ya está ocupado su dirección base predeterminada y no se habilitó ASLR
+    -   Aquí podemos ver que se ha reubicado y. dll porque x. dll ha ocupado su dirección base predeterminada y no se ha habilitado ASLR
 
-        ![cambia la ubicación de los archivos DLL](../../media/perftune-guide-relocated-dlls.png)
+        ![DLL reubicadas](../../media/perftune-guide-relocated-dlls.png)
 
-        Si se reubica los archivos DLL, es imposible compartir su código entre las sesiones, lo que aumenta considerablemente la superficie de una sesión. Esto es uno de los problemas más comunes de rendimiento relacionados con la memoria en un servidor Host de sesión de escritorio remoto.
+        Si se reubican los archivos dll, es imposible compartir el código entre las sesiones, lo que aumenta significativamente la superficie de una sesión. Se trata de uno de los problemas de rendimiento más comunes relacionados con la memoria en un servidor host de sesión de escritorio remoto.
 
--   Para aplicaciones de common language runtime (CLR), use el generador de imágenes nativas (Ngen.exe) para aumentar el uso compartido de la página y reducir la sobrecarga de CPU.
+-   En el caso de las aplicaciones Common Language Runtime (CLR), use el generador de imágenes nativas (Ngen. exe) para aumentar el uso compartido de páginas y reducir la sobrecarga de la CPU.
 
-    Cuando sea posible, aplicar técnicas similares para otros motores de ejecución similares.
+    Cuando sea posible, aplique técnicas similares a otros motores de ejecución similares.
 
-## <a name="remote-desktop-session-host-tuning-parameters"></a>Host de sesión de escritorio remoto para parámetros de ajuste
+## <a name="remote-desktop-session-host-tuning-parameters"></a>Parámetros de ajuste del host de sesión Escritorio remoto
 
 
 ### <a name="page-file"></a>Archivo de paginación
 
-El tamaño del archivo de página insuficiente puede provocar errores de asignación de memoria en las aplicaciones o componentes del sistema. Puede usar el contador de rendimiento de bytes de memoria asignados para controlar cuánta memoria virtual confirmada se encuentra en el sistema.
+Un tamaño de archivo de página insuficiente puede producir errores de asignación de memoria en aplicaciones o componentes del sistema. Puede usar el contador de rendimiento de bytes de memoria confirmada para supervisar la cantidad de memoria virtual confirmada que se encuentra en el sistema.
 
 ### <a name="antivirus"></a>Antivirus
 
-Instalación de software antivirus en un servidor Host de sesión de escritorio remoto en gran medida afecta al rendimiento general del sistema, especialmente el uso de CPU. Se recomienda encarecidamente que excluir de la lista de supervisión activa todas las carpetas que contienen los archivos temporales, generan especialmente las que los servicios y otros componentes del sistema.
+La instalación del software antivirus en un servidor host de sesión de escritorio remoto afecta en gran medida al rendimiento general del sistema, especialmente al uso de la CPU. Se recomienda excluir de la lista de supervisión activa todas las carpetas que contienen archivos temporales, especialmente las que generan los servicios y otros componentes del sistema.
 
 ### <a name="task-scheduler"></a>Programador de tareas
 
-Programador de tareas le permite examinar la lista de tareas que están programados para los distintos eventos. Para un servidor Host de sesión de escritorio remoto, es útil centrarse específicamente en las tareas que están configurados para ejecutarse en inactividad, en el inicio de sesión de usuario o en la sesión de conectar y desconectar. Debido a las características específicas de la implementación, muchas de estas tareas pueden ser innecesarios.
+Programador de tareas permite examinar la lista de tareas programadas para distintos eventos. En el caso de un servidor host de sesión de escritorio remoto, resulta útil centrarse específicamente en las tareas configuradas para ejecutarse en estado de inactividad, en el inicio de sesión de usuario o en la conexión y desconexión de la sesión. Debido a los detalles de la implementación, muchas de estas tareas podrían no ser necesarias.
 
-### <a name="desktop-notification-icons"></a>Iconos de notificación del escritorio
+### <a name="desktop-notification-icons"></a>Iconos de notificación de escritorio
 
-Iconos de notificación en el escritorio pueden tener mecanismos de actualización bastante costosos. Debe deshabilitar las notificaciones mediante la eliminación del componente que éstos se registra en la lista de inicio o cambiando la configuración en las aplicaciones y componentes del sistema para deshabilitarlos. Puede usar **personalizar las notificaciones de iconos** para examinar la lista de notificaciones que están disponibles en el servidor.
+Los iconos de notificación en el escritorio pueden tener mecanismos de actualización bastante caros. Debe deshabilitar las notificaciones quitando el componente que las registra de la lista de inicio o cambiando la configuración en aplicaciones y componentes del sistema para deshabilitarlos. Puede usar los **iconos de personalización de notificaciones** para examinar la lista de notificaciones que están disponibles en el servidor.
 
 ### <a name="remotefx-data-compression"></a>Compresión de datos de RemoteFX
 
-Se puede configurar la compresión de Microsoft RemoteFX mediante el uso de directiva de grupo en **configuración del equipo &gt; plantillas administrativas &gt; componentes de Windows &gt; servicios de escritorio remoto &gt; remoto Host de sesión de escritorio &gt; entorno de sesión remoto &gt; configurar la compresión de datos de RemoteFX**. Tres valores posibles son:
+Microsoft RemoteFX compresión se puede configurar mediante directiva de grupo en **configuración del equipo &gt; Plantillas administrativas &gt; componentes de Windows &gt; servicios de escritorio remoto &gt; escritorio remoto host de sesión &gt; Remote Entorno de sesión &gt; configure la compresión para los datos de RemoteFX**. Hay tres valores posibles:
 
--   **Optimizado para usar menos memoria** consume la menor cantidad de memoria por cada sesión pero tiene la razón de compresión más baja y, por tanto, el consumo de ancho de banda más alto.
+-   **Optimizado para usar menos memoria** Consume la menor cantidad de memoria por sesión, pero tiene la menor relación de compresión y, por lo tanto, el mayor consumo de ancho de banda.
 
--   **Equilibra la memoria y ancho de banda** reduce el consumo de ancho de banda al tiempo que aumenta ligeramente el consumo de memoria (aproximadamente 200 KB por sesión).
+-   **Equilibra la memoria y el ancho de banda de red** Reducción del consumo de ancho de banda al tiempo que se aumenta el consumo de memoria (aproximadamente 200 KB por sesión).
 
--   **Optimizado para utilizar menos ancho de banda de red** reduce aún más el uso de ancho de banda de red con un costo de aproximadamente 2 MB por sesión. Si desea usar esta configuración, debe evaluar el número máximo de sesiones y probar a ese nivel con esta configuración antes de colocar el servidor de producción.
+-   **Optimizado para usar menos ancho de banda de red** Reduce aún más el uso de ancho de banda de red a un costo de aproximadamente 2 MB por sesión. Si desea usar esta configuración, debe evaluar el número máximo de sesiones y realizar pruebas en ese nivel con esta configuración antes de colocar el servidor en producción.
 
-También puede elegir no usar un algoritmo de compresión de RemoteFX. Si decide no usar un algoritmo de compresión RemoteFX usará más ancho de banda de red, y solo se recomienda si usa un dispositivo de hardware que está diseñado para optimizar el tráfico de red. Incluso si decide no usar un algoritmo de compresión de RemoteFX, algunos datos de gráficos se comprimirán.
+También puede optar por no usar un algoritmo de compresión de RemoteFX. La elección de no usar un algoritmo de compresión de RemoteFX usará más ancho de banda de red y solo se recomienda si se usa un dispositivo de hardware diseñado para optimizar el tráfico de red. Aunque decida no usar un algoritmo de compresión de RemoteFX, se comprimirán algunos datos de gráficos.
 
-### <a name="device-redirection"></a>Redirección de dispositivos
+### <a name="device-redirection"></a>Redireccionamiento de dispositivos
 
-Se puede configurar la redirección de dispositivos mediante la directiva de grupo en **configuración del equipo &gt; plantillas administrativas &gt; componentes de Windows &gt; servicios de escritorio remoto &gt; escritorio remoto Host de sesión &gt; redireccionar los recursos y dispositivos** o mediante el **colección de sesiones** en Administrador del servidor de cuadro de propiedades.
+La redirección de dispositivos se puede configurar mediante directiva de grupo en **configuración del equipo &gt; Plantillas administrativas &gt; componentes de Windows &gt; servicios de escritorio remoto &gt; escritorio remoto host de sesión &gt; dispositivo y recurso Redirección** o mediante el cuadro de propiedades **colección de sesiones** en Administrador del servidor.
 
-Por lo general, redirección de dispositivos aumenta cuánto se usan conexiones de servidor de Host de sesión de escritorio remoto de ancho de banda de red porque los datos se intercambian entre los dispositivos en los equipos cliente y los procesos que se ejecutan en la sesión del servidor. La extensión del aumento es una función de la frecuencia de las operaciones realizadas por las aplicaciones que se ejecutan en el servidor frente a los dispositivos redirigidos.
+Por lo general, la redirección de dispositivos aumenta la cantidad de ancho de banda de red que usan las conexiones del servidor host de sesión de escritorio remoto porque los datos se intercambian entre los dispositivos de los equipos cliente y los procesos que se ejecutan en la sesión de servidor. La extensión del aumento es una función de la frecuencia de las operaciones realizadas por las aplicaciones que se ejecutan en el servidor en los dispositivos redirigidos.
 
-Redirección de impresoras y Plug and Play redirección de dispositivos también aumenta el uso de CPU en el inicio de sesión. Puede redirigir impresoras de dos maneras:
+La redirección de impresoras y el redireccionamiento de dispositivos Plug and Play también aumenta el uso de CPU en el inicio de sesión. Puede redirigir impresoras de dos maneras:
 
--   Búsqueda de coincidencias basado en controlador redirección de impresoras cuando un controlador de la impresora debe instalarse en el servidor. Las versiones anteriores de Windows Server usan este método.
+-   Coincidencia de la redirección basada en el controlador de impresora cuando se debe instalar un controlador para la impresora en el servidor. En las versiones anteriores de Windows Server se usaba este método.
 
--   Se introdujo en Windows Server 2008, redirección de controlador de impresora Easy Print usa un controlador de impresora común para todas las impresoras.
+-   En Windows Server 2008, la redirección de un controlador de impresora fácil de impresión utiliza un controlador de impresora común para todas las impresoras.
 
-Se recomienda el método Easy Print porque hace menos uso de CPU para la instalación de impresora en tiempo de conexión. El método de controlador coincidente provoca un mayor uso de CPU porque requiere el servicio de cola para cargar controladores diferentes. Para el uso de ancho de banda, Easy Print hace uso de ancho de banda de red ligeramente mayor, pero no lo suficientemente importante como para compensar las otras ventajas de rendimiento, facilidad de uso y la confiabilidad.
+Se recomienda el método Easy Print, ya que provoca menos uso de la CPU para la instalación de la impresora en el momento de la conexión. El método de controlador coincidente provoca un aumento del uso de la CPU porque requiere que el servicio Administrador de trabajos de impresión cargue controladores diferentes. Para el uso de ancho de banda, la impresión sencilla provoca un aumento del ancho de banda de red, pero no es lo suficientemente significativa como para desplazar las otras ventajas de rendimiento, capacidad de administración y confiabilidad.
 
-Redirección de audio hace que un flujo constante de tráfico de red. Redirección de audio también permite a los usuarios ejecutar aplicaciones multimedios que normalmente tienen elevado consumo de CPU.
+La redirección de audio provoca una transmisión estable de tráfico de red. La redirección de audio también permite a los usuarios ejecutar aplicaciones multimedia que normalmente tienen un alto consumo de CPU.
 
-### <a name="client-experience-settings"></a>Configuración de la experiencia de cliente
+### <a name="client-experience-settings"></a>Configuración de la experiencia del cliente
 
-De forma predeterminada, conexión a Escritorio remoto (RDC) elige automáticamente en función de la idoneidad de la conexión de red entre los equipos cliente y servidor de configuración de experiencia de la derecha. Se recomienda que la configuración de RDC permanecen en **detectar automáticamente la calidad de conexión**.
+De forma predeterminada, Conexión a Escritorio remoto (RDC) elige automáticamente la configuración de la experiencia adecuada en función de la idoneidad de la conexión de red entre el servidor y los equipos cliente. Se recomienda que la configuración de RDC permanezca en **detectar automáticamente la calidad**de la conexión.
 
-Para los usuarios avanzados, RDC proporciona control sobre una variedad de opciones que influyen en el rendimiento del ancho de banda de red para la conexión de servicios de escritorio remoto. Puede acceder a la siguiente configuración mediante el **experiencia** pestaña conexión a Escritorio remoto o como una configuración en el archivo RDP.
+Para los usuarios avanzados, RDC proporciona control sobre una variedad de opciones de configuración que influyen en el rendimiento del ancho de banda de red para la conexión de Servicios de Escritorio remoto. Puede tener acceso a las siguientes opciones de configuración mediante la pestaña **experiencia** en conexión a escritorio remoto o como configuración en el archivo RDP.
 
-Al conectarse a cualquier equipo, se aplican las siguientes opciones:
+La siguiente configuración se aplica al conectarse a cualquier equipo:
 
--   **Deshabilitar el papel tapiz** (Disable wallpaper: i: 0) no muestra el papel tapiz del escritorio en conexiones redirigidas. Esta configuración puede reducir significativamente el uso de ancho de banda si el papel tapiz del escritorio consta de una imagen u otro contenido con costos importantes para el dibujo.
+-   **Deshabilitar el papel tapiz** (deshabilitar el papel tapiz: i: 0) no muestra el papel tapiz del escritorio en las conexiones redirigidas. Esta configuración puede reducir significativamente el uso de ancho de banda si el papel tapiz del escritorio se compone de una imagen u otro contenido con costos significativos de dibujo.
 
--   **Caché de mapa de bits** (Bitmapcachepersistenable:i:1) cuando se habilita esta configuración, crea una caché de cliente de mapas de bits que se representan en la sesión. Proporciona una mejora considerable sobre el uso de ancho de banda y siempre debe habilitarse (a menos que haya otras consideraciones de seguridad).
+-   **Caché de mapas de bits** (Bitmapcachepersistenable: i: 1) cuando se habilita esta configuración, crea una memoria caché del lado cliente de los mapas de bits que se representan en la sesión. Proporciona una mejora significativa en el uso de ancho de banda y siempre debe estar habilitada (a menos que haya otras consideraciones de seguridad).
 
--   **Mostrar el contenido de windows mientras se arrastra** (deshabilitar arrastrar ventana completa: i: 1) cuando esta opción está deshabilitada, reduce el ancho de banda al mostrar el marco de ventana en lugar de todo el contenido cuando se arrastra la ventana.
+-   **Mostrar contenido de Windows mientras se arrastra** (deshabilitar arrastre de ventana completa: i: 1) cuando esta opción está deshabilitada, reduce el ancho de banda mostrando solo el marco de la ventana en lugar de todo el contenido cuando se arrastra la ventana.
 
--   **Animación de menús y ventanas** (Deshabilitar menú anims:i:1 y configuración i cursor de deshabilitación:: 1): Cuando estas opciones están deshabilitadas, reduce el ancho de banda deshabilitando la animación de menús (por ejemplo, la atenuación) y los cursores.
+-   **Animación de menús y ventanas** (deshabilitar el menú anims: i: 1 y deshabilitar la configuración de cursor: i: 1): Cuando esta configuración está deshabilitada, reduce el ancho de banda deshabilitando la animación en los menús (como la atenuación) y los cursores.
 
--   **Suavizado de fuentes** (permitir suavizado de fuentes: i: 0) soporte técnico de procesamiento de fuentes ClearType de controles. Al conectarse a equipos que ejecutan Windows 8 o Windows Server 2012 y versiones posteriores, habilitar o deshabilitar a esta configuración no tiene un impacto significativo en el uso de ancho de banda. Sin embargo, para los equipos que ejecutan versiones anteriores a Windows 7 y Windows 2008 R2, si habilita a esta configuración afecta al consumo de ancho de banda de red significativamente.
+-   **Suavizado de fuentes** (Permitir suavizado de fuentes: i: 0) controla la compatibilidad con la representación de fuentes ClearType. Al conectarse a equipos que ejecutan Windows 8 o Windows Server 2012 y versiones posteriores, la habilitación o deshabilitación de esta configuración no tiene un impacto significativo en el uso del ancho de banda. Sin embargo, para los equipos que ejecutan versiones anteriores a Windows 7 y Windows 2008 R2, la habilitación de esta configuración afecta significativamente al consumo de ancho de banda de red.
 
-Las siguientes opciones solo se aplican al conectarse a equipos que ejecutan Windows 7 y versiones anteriores del sistema operativo:
+La configuración siguiente solo se aplica cuando se conecta a equipos que ejecutan Windows 7 y versiones anteriores del sistema operativo:
 
--   **Composición del escritorio** esta configuración solo se admite para una sesión remota en un equipo que ejecuta Windows 7 o Windows Server 2008 R2.
+-   **Composición de escritorio** Esta configuración solo se admite para una sesión remota en un equipo que ejecute Windows 7 o Windows Server 2008 R2.
 
--   **Los estilos visuales** (deshabilitar temas: i: 1) cuando esta opción está deshabilitada, reduce el ancho de banda, ya que simplifica los dibujos de tema que usan el tema clásico.
+-   **Estilos visuales** (deshabilitar temas: i: 1) cuando esta opción está deshabilitada, reduce el ancho de banda simplificando los dibujos del tema que usan el tema clásico.
 
-Mediante el uso de la **experiencia** pestaña dentro de la conexión a Escritorio remoto, puede elegir la velocidad de conexión para influir en el rendimiento del ancho de banda de red. A continuación enumeran las opciones que están disponibles para configurar la velocidad de conexión:
+Mediante el uso de la pestaña **experiencia** en conexión a escritorio remoto, puede elegir la velocidad de conexión para influir en el rendimiento del ancho de banda de red. A continuación se enumeran las opciones disponibles para configurar la velocidad de conexión:
 
--   **Detectar automáticamente la calidad de conexión** (tipo de conexión: i:7) cuando se habilita esta configuración, conexión a Escritorio remoto elige automáticamente la configuración resultante en la experiencia de usuario óptima según la calidad de la conexión. (Se recomienda esta configuración cuando se conecta a los equipos que ejecutan Windows 8 o Windows Server 2012 y versiones posteriores).
+-   **Detectar la calidad de la conexión automáticamente** (tipo de conexión: i: 7) cuando esta opción está habilitada, conexión a escritorio remoto elige automáticamente la configuración que dará lugar a una experiencia de usuario óptima en función de la calidad de la conexión. (Se recomienda esta configuración al conectarse a equipos que ejecutan Windows 8 o Windows Server 2012 y versiones posteriores).
 
--   **Módem (56 Kbps)** (conexión tipo: i: 1) esta configuración habilita el almacenamiento en caché de mapa de bits persistente.
+-   **Módem (56 kbps)** (tipo de conexión: i: 1) esta configuración habilita el almacenamiento en caché de mapas de bits persistente.
 
--   **Baja velocidad de banda ancha (256 Kbps - 2 Mbps)** (tipo de conexión: i:2) esta configuración habilita los estilos de almacenamiento en caché y visual de mapa de bits persistente.
+-   **Banda ancha de baja velocidad (256 kbps-2 Mbps)** (tipo de conexión: i: 2) esta opción habilita el almacenamiento en caché de mapas de bits persistente y los estilos visuales.
 
--   **(2 Mbps - 16 Mbps con una latencia alta) de red de telefonía móvil o satélite** (tipo de conexión: i:3) esta configuración permite la composición del escritorio, el almacenamiento en caché de mapa de bits persistente, los estilos visuales y fondo de escritorio.
+-   **Móvil/satélite (2 Mbps-16 Mbps con latencia alta)** (tipo de conexión: i: 3) esta opción habilita la composición del escritorio, el almacenamiento en caché de mapas de bits persistente, los estilos visuales y el fondo de escritorio.
 
--   **Banda ancha de alta velocidad (2 Mbps – 10 Mbps)** (tipo de conexión: i:4) esta configuración permite la composición del escritorio, mostrar el contenido de windows mientras arrastra, animación de menús y ventanas, el almacenamiento en caché de mapa de bits persistente, los estilos visuales y fondo de escritorio.
+-   **Banda ancha de alta velocidad (2 Mbps – 10 Mbps)** (tipo de conexión: i: 4) esta opción permite la composición del escritorio, mostrar el contenido de las ventanas mientras se arrastran, la animación de menús y ventanas, el almacenamiento en caché de mapas de bits persistente, los estilos visuales y el fondo de escritorio.
 
--   **WAN (10 Mbps o superior con una latencia elevada)** (tipo de conexión: i:5) esta configuración permite la composición del escritorio, mostrar el contenido de windows mientras arrastra, animación de menús y ventanas, el almacenamiento en caché de mapa de bits persistente, los estilos visuales y fondo de escritorio.
+-   **WAN (10 Mbps o superior con latencia alta)** (tipo de conexión: i: 5) esta opción permite la composición del escritorio, mostrar el contenido de las ventanas mientras se arrastran, la animación de menús y ventanas, el almacenamiento en caché de mapas de bits persistente, los estilos visuales y el fondo de escritorio.
 
--   **LAN (10 Mbps o superior)** (tipo de conexión: i:6) esta configuración permite la composición del escritorio, mostrar el contenido de windows mientras arrastra, animación de menús y ventanas, el almacenamiento en caché de mapa de bits persistente, temas y fondo de escritorio.
+-   **LAN (10 Mbps o superior)** (tipo de conexión: i: 6) esta configuración permite la composición del escritorio, mostrar el contenido de las ventanas mientras se arrastran, la animación de menús y ventanas, el almacenamiento en caché de mapas de bits persistente, los temas y el fondo de escritorio.
 
 ### <a name="desktop-size"></a>Tamaño del escritorio
 
-Tamaño del escritorio para sesiones remotas puede controlarse mediante el uso de la ficha para mostrar en conexión a Escritorio remoto o mediante el archivo de configuración de RDP (desktopwidth:i:1152 y desktopheight:i:864). Cuanto mayor sea el tamaño del escritorio, mayor será el consumo de memoria y ancho de banda que está asociado a esa sesión. El tamaño máximo del escritorio actual es 4096 x 2048.
+El tamaño del escritorio de las sesiones remotas se puede controlar mediante la pestaña Mostrar de Conexión a Escritorio remoto o mediante el archivo de configuración de RDP (desktopwidth: i: 1152 y desktopheight: i: 864). Cuanto mayor sea el tamaño del escritorio, mayor será el consumo de ancho de banda y memoria asociado a esa sesión. El tamaño máximo actual del escritorio es 4096 x 2048.

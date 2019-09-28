@@ -1,8 +1,8 @@
 ---
-title: Mediante el comando get-servidor
-description: 'Tema de los comandos de Windows para ***- '
+title: Usar el comando Get-Server
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: da8bf0fc6e31bd8d0079933f1d7c529c4fe96f42
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: c7e0ee4529858b16cdc63ea1d6d358a190b8b1a9
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59870986"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392121"
 ---
-# <a name="using-the-get-server-command"></a>Mediante el comando get-servidor
+# <a name="using-the-get-server-command"></a>Usar el comando Get-Server
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Recupera información desde el servidor de servicios de implementación de Windows especificado.
+Recupera información del servidor de servicios de implementación de Windows especificado.
 ## <a name="syntax"></a>Sintaxis
 ```
 wdsutil [Options] /Get-Server [/Server:<Server name>] /Show:{Config | Images | All} [/detailed]
@@ -32,24 +32,22 @@ wdsutil [Options] /Get-Server [/Server:<Server name>] /Show:{Config | Images | A
 ## <a name="parameters"></a>Parámetros
 |Parámetro|Descripción|
 |-------|--------|
-|[/Server:<Server name>]|Especifica el nombre del servidor. Esto puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se usa el servidor local.|
-|/ Mostrar: {Config &#124; imágenes &#124; todas}|Especifica el tipo de información que se va a devolver.<br /><br />-   **Configuración** devuelve información de configuración.<br />-   **Imágenes** devuelve información acerca de los grupos de imágenes, las imágenes de arranque y las imágenes de instalación.<br />-   **Todos los** devuelve información de configuración y la información de la imagen.|
-|[/ detallada]|Puede usar esta opción con **/Show:Images** o **/Show:All** para indicar que se deben devolver todos los metadatos de imagen de cada imagen. Si el **/ detallada** no se usa la opción, el comportamiento predeterminado es devolver el nombre de la imagen, descripción y nombre de archivo.|
-## <a name="BKMK_examples"></a>Ejemplos
-Para ver información acerca del servidor, escriba:
+|[/Server:<Server name>]|Especifica el nombre del servidor. Puede ser el nombre NetBIOS o el nombre de dominio completo (FQDN). Si no se especifica ningún nombre de servidor, se utiliza el servidor local.|
+|/Show: {config &#124; images &#124; All}|Especifica el tipo de información que se va a devolver.<br /><br />la**configuración de -    devuelve** información de configuración.<br />-   **imágenes** devuelve información acerca de los grupos de imágenes, las imágenes de arranque y las imágenes de instalación.<br />@no__t **-0 devuelve** la información de configuración y la información de la imagen.|
+|[/detailed]|Puede usar esta opción con **/Show: images** o **/Show: ALL** para indicar que se deben devolver todos los metadatos de imagen de cada imagen. Si no se usa la opción **/Detailed** , el comportamiento predeterminado es devolver el nombre de la imagen, la descripción y el nombre de archivo.|
+## <a name="BKMK_examples"></a>Example
+Para ver información sobre el servidor, escriba:
 ```
 wdsutil /Get-Server /Show:Config
 ```
-Para ver información detallada sobre el servidor, escriba:
+Para ver información detallada acerca del servidor, escriba:
 ```
 wdsutil /verbose /Get-Server /Server:MyWDSServer /Show:All /detailed
 ```
 #### <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[mediante el comando disable-servidor](using-the-disable-server-command.md)
-[mediante el comando enable-servidor](using-the-enable-server-command.md)
-[mediante el Comando Initialize-Server](using-the-initialize-server-command.md)
-[subcomando: set-Server](subcommand-set-server.md)
-[subcomando: iniciar el servidor](subcommand-start-server.md) 
- [ Subcomando: detención del servidor](subcommand-stop-server.md)
-[la opción de servidor uninitialize](the-uninitialize-server-option.md)
+[con el comando DISABLE-Server](using-the-disable-server-command.md)
+[mediante el comando Enable-Server](using-the-enable-server-command.md)
+[mediante el comando Initialize-Server](using-the-initialize-server-command.md)
+[Subcommand: set-Server](subcommand-set-server.md)
+[ Subcomando: Start-Server](subcommand-start-server.md)1[subcomando: Stop-Server](subcommand-stop-server.md)3[The UnInitialize-Server Option](the-uninitialize-server-option.md)

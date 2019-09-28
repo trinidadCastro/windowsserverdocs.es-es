@@ -1,34 +1,34 @@
 ---
-title: Recomienda los parámetros del Plan de energía equilibrada para tiempos de respuesta rápidos
-description: Recomienda los parámetros del Plan de energía equilibrada para el tiempo de respuesta rápida
-ms.prod: windows-server-threshold
+title: Parámetros de plan de energía equilibrado recomendados para tiempos de respuesta rápidos
+description: Parámetros de plan de energía equilibrado recomendados para el tiempo de respuesta rápida
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: Qizha;TristanB
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: 134e868e1400729f754039fc8120cea0c73945bf
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 96037a577c9f2a835e9c49bf9339ed8dc6da1a6b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59878796"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383515"
 ---
-# <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>Recomienda los parámetros del Plan de energía equilibrada para las cargas de trabajo que requieren tiempos de respuesta rápidos
+# <a name="recommended-balanced-power-plan-parameters-for-workloads-requiring-quick-response-times"></a>Parámetros de plan de energía equilibrado recomendados para cargas de trabajo que requieren tiempos de respuesta rápidos
 
-El valor predeterminado **equilibrado** power plan usa **rendimiento** como la métrica de rendimiento para la optimización. Durante el estado estable, **rendimiento** no cambia con diversos usos hasta que el sistema está completamente sobrecargado (~ 100% de uso).  Como resultado, el **equilibrado** power bastante con frecuencia del procesador de minimizar y maximizar la utilización de favorece el plan de energía.
+El plan de energía predeterminado **equilibrado** utiliza el **rendimiento** como la métrica de rendimiento para la optimización. Durante el estado estable, el **rendimiento** no cambia con usos variables hasta que el sistema está totalmente sobrecargado (~ 100% de uso).  Como resultado, el plan de energía **equilibrado** favorece el consumo de energía con una reducción de la frecuencia del procesador y maximización del uso.
 
-Sin embargo **tiempo de respuesta** podría aumentar exponencialmente con mayor utilización. En la actualidad, el requisito de tiempo de respuesta rápida ha aumentado considerablemente. Aunque Microsoft recomienda los usuarios para cambiar a la **de alto rendimiento** plan de energía cuando la necesitan una respuesta rápida, algunos usuarios no desean perder la ventaja de power durante la luz para los niveles de carga Media. Por lo tanto, Microsoft proporciona el siguiente conjunto de cambios de parámetros sugeridos para las cargas de trabajo que requieren una respuesta rápida.
+Sin embargo, **el tiempo de respuesta** podría aumentar exponencialmente con aumentos de utilización. En la actualidad, el requisito del tiempo de respuesta rápida ha aumentado drásticamente. Aunque Microsoft sugirió a los usuarios a cambiar al plan de energía de **alto rendimiento** cuando necesitan un tiempo de respuesta rápido, algunos usuarios no quieren perder el beneficio de alimentación durante los niveles de carga de luz a medio. Por lo tanto, Microsoft proporciona el siguiente conjunto de cambios de parámetro sugeridos para las cargas de trabajo que requieren un tiempo de respuesta rápido.
 
 
 | Parámetro | Descripción | Valor predeterminado | Valor propuesto |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Umbral de aumento de rendimiento de procesador | Umbral de utilización anterior que es aumentar la frecuencia | 90 | 60 |
-| Umbral de disminución del rendimiento de procesador | Umbral de uso siguiente que es reducir la frecuencia | 80 | 40 |
-| Tiempo de aumento de rendimiento de procesador | Número de ventanas PPM comprobación antes de aumentar la frecuencia | 3 | 1 |
-| Directiva de aumento de rendimiento de procesador | ¿Con qué rapidez es aumentar la frecuencia | único | Ideal |
+| Umbral de aumento de rendimiento de procesador | Umbral de uso por encima del cual se aumenta la frecuencia | 90 | 60 |
+| Umbral de reducción de rendimiento de procesador | Umbral de uso por debajo del cual se va a reducir la frecuencia | 80 | 40 |
+| Tiempo de aumento del rendimiento del procesador | Número de ventanas de comprobación de PPM antes de que la frecuencia sea aumentar | 3 | 1 |
+| Directiva de aumento de rendimiento de procesador | Velocidad de aumento de la frecuencia | Sencilla | Ideal |
 
-Para establecer los valores propuestos, los usuarios pueden ejecutar los siguientes comandos en una ventana con el administrador:
+Para establecer los valores propuestos, los usuarios pueden ejecutar los siguientes comandos en una ventana con administrador:
 
 ``` syntax
 Powercfg -setacvalueindex scheme_balanced sub_processor PERFINCTHRESHOLD 60
@@ -38,35 +38,35 @@ Powercfg -setacvalueindex scheme_balanced sub_processor PERFINCPOL 0
 Powercfg -setactive scheme_balanced
 ```
 
-Este cambio se basa en el rendimiento y análisis de contrapartida de energía mediante las siguientes cargas de trabajo. Para los usuarios que deseen ajustar aún más optimización la eficiencia de energía con ciertos requisitos de SLA, consulte [consideraciones de rendimiento del Hardware de servidor](../power.md).
+Este cambio se basa en el análisis de rendimiento y de equilibrio de energía mediante las siguientes cargas de trabajo. En el caso de los usuarios que deseen ajustar aún más la eficiencia energética con determinados requisitos del SLA, consulte [consideraciones sobre el rendimiento del hardware del servidor](../power.md).
 
 >[!Note]
-> Para obtener más recomendaciones e información sobre el aprovechamiento de los planes de energía para optimizar cargas de trabajo virtualizadas, leer [configuración de Hyper-v](../../role/hyper-v-server/configuration.md)
+> Para obtener recomendaciones adicionales y obtener información sobre cómo aprovechar los planes de energía para optimizar cargas de trabajo virtualizadas, lea [configuración de Hyper-v](../../role/hyper-v-server/configuration.md) .
 
 ## <a name="specpower--java-workload"></a>SPECpower: carga de trabajo de JAVA
 
-[SPECpower\_ssj2008](http://spec.org/power_ssj2008/), más popular benchmark especificaciones estándar del sector para características de capacidad y rendimiento de servidor, se usa para comprobar el impacto de energía. Puesto que solo usa **rendimiento** como métrica de rendimiento, el valor predeterminado **equilibrado** plan de energía proporciona la mejor eficiencia de energía.
+[SPECpower @ no__t-1ssj2008](http://spec.org/power_ssj2008/), la prueba comparativa de especificación estándar del sector más popular para las características de potencia y rendimiento del servidor, se usa para comprobar el impacto en la energía. Puesto que solo usa el **rendimiento** como métrica de rendimiento, el plan de energía predeterminado **equilibrado** proporciona la mejor eficacia energética.
 
-El cambio propuesto parámetro consume energía ligeramente superior a la luz (es decir, < = 20%) niveles de carga. Pero con mayor nivel de carga, que aumenta la diferencia y empieza a consumir igual de eficaz que la **de alto rendimiento** plan de energía después el nivel de carga de un 60%. Para usar los parámetros del cambio propuesto, los usuarios debe tener en cuenta el coste de energía en medio de los niveles de carga alta durante su planeamiento de capacidad del bastidor.
+El cambio de parámetro propuesto consume una potencia ligeramente mayor a la luz (es decir, < = 20%) niveles de carga. Pero con el nivel de carga superior, la diferencia aumenta y comienza a consumir la misma potencia que el plan de energía de **alto rendimiento** después del nivel de carga del 60%. Para usar los parámetros de cambio propuestos, los usuarios deben tener en cuenta el costo de energía en niveles de carga medio y alto durante el planeamiento de la capacidad del bastidor.
 
 ## <a name="geekbench-3"></a>GeekBench 3
 
-[3 GeekBench](http://www.geekbench.com/geekbench3/) es una prueba comparativa de procesador multiplataforma que separa las puntuaciones de rendimiento de un núcleo y varios núcleo. Simula un conjunto de cargas de trabajo incluidas cargas de trabajo de entero (cifrados, compresiones, procesamiento de imágenes, etc.), cargas de trabajo de punto flotante (modelado fractal, imagen enfoque, desenfoque de la imagen, etc.) y cargas de trabajo de memoria (streaming).
+[GeekBench 3](http://www.geekbench.com/geekbench3/) es una prueba comparativa del procesador multiplataforma que separa las puntuaciones de rendimiento de núcleo único y de varios núcleos. Simula un conjunto de cargas de trabajo, incluidas las cargas de trabajo de enteros (cifrados, compresiones, procesamiento de imágenes, etc.), cargas de trabajo de punto flotante (modelado, fractal, nitidez de imagen, desenfoque de imagen, etc.) y cargas de trabajo de memoria (streaming).
 
-**Tiempo de respuesta** es una medida principal en su cálculo de la puntuación. En nuestro sistema probado, el valor predeterminado **equilibrado** plan de energía tiene 18 ~ % regresión en la regresión de un núcleo las pruebas y ~ 40% en las pruebas de varios núcleos en comparación con el **de alto rendimiento** plan de energía. El cambio propuesto quita estas regresiones.
+El **tiempo de respuesta** es una medida importante en el cálculo de la puntuación. En nuestro sistema probado, el plan de energía **equilibrado** predeterminado tiene aproximadamente 18% de regresión en las pruebas de un solo núcleo y una regresión del 40% en las pruebas de varios núcleos en comparación con el plan de energía de **alto rendimiento** . El cambio propuesto quita estas regresiones.
 
 ## <a name="diskspd"></a>DiskSpd
 
-[Diskspd](https://en.wikipedia.org/wiki/Diskspd) es una herramienta de línea de comandos para las pruebas comparativas de almacenamiento desarrollado por Microsoft. Ampliamente sirve para generar una variedad de solicitudes en los sistemas de almacenamiento para el análisis de rendimiento de almacenamiento.
+[Diskspd](https://en.wikipedia.org/wiki/Diskspd) es una herramienta de línea de comandos para la prueba comparativa de almacenamiento desarrollada por Microsoft. Se utiliza ampliamente para generar una variedad de solicitudes en los sistemas de almacenamiento para el análisis de rendimiento del almacenamiento.
 
-Configurar un clúster y se usa Diskspd para generar aleatorio y secuenciales y de lectura y de E/s de escritura a los sistemas de almacenamiento local y remoto con distintos tamaños de E/S. Nuestras pruebas muestran que el tiempo de respuesta de E/S es muy sensible a la frecuencia del procesador en los planes de energía diferente. El **equilibrado** plan de energía pudo duplicar el tiempo de respuesta de desde el **de alto rendimiento** plan de energía en ciertas cargas de trabajo. El cambio propuesto, quita la mayoría de las regresiones.
+Configuramos un [clúster de conmutación por error] y usabamos Diskspd para generar índices aleatorios y secuenciales, así como para leer y escribir en IOs en los sistemas de almacenamiento local y remoto con distintos tamaños de e/s. Nuestras pruebas muestran que el tiempo de respuesta de e/s es muy sensible a la frecuencia del procesador en diferentes planes de energía. El plan de energía **equilibrado** podría duplicar el tiempo de respuesta del plan de energía de **alto rendimiento** en determinadas cargas de trabajo. El cambio propuesto quita la mayoría de las regresiones.
 
 >[!Important]
->A partir de los procesadores Intel [Broadwell] que ejecuta Windows Server 2016, la mayoría de las decisiones de administración de energía de procesador se realiza en el procesador en lugar de nivel de sistema operativo para lograr una adaptación más rápida a los cambios de carga de trabajo. Los parámetros PPM heredados utilizados por el sistema operativo tienen un impacto mínimo en las decisiones de la frecuencia real, excepto que indica que el procesador de si debe favorecer a alimentación o rendimiento o las frecuencias mínima y máxima de límite. Por lo tanto, el cambio propuesto de parámetro PPM sólo está destinada a los sistemas de pre-Broadwell.
+>A partir de procesadores Intel [Broadwell] que ejecutan Windows Server 2016, la mayoría de las decisiones de administración de energía del procesador se realizan en el procesador en lugar de en el nivel de sistema operativo para lograr una adaptación más rápida a los cambios de carga de trabajo. Los parámetros de PPM heredados que usa el sistema operativo tienen un impacto mínimo en las decisiones de frecuencia reales, excepto en indicar al procesador si se debe favorecer la potencia o el rendimiento, o bien limitar las frecuencias mínima y máxima. Por lo tanto, el cambio propuesto del parámetro PPM solo se dirige a los sistemas Broadwell.
 
 ## <a name="see-also"></a>Vea también
-- [Consideraciones de rendimiento del Hardware de servidor](../index.md)
-- [Consideraciones sobre la alimentación de Hardware de servidor](../power.md)
-- [Energía y ajuste del rendimiento](power-performance-tuning.md)
-- [Optimización de la administración de energía del procesador](processor-power-management-tuning.md)
+- [Consideraciones de rendimiento de hardware de servidor](../index.md)
+- [Server Hardware Power Considerations](../power.md) (Consideraciones de alimentación del hardware de servidor)
+- [Power and Performance Tuning](power-performance-tuning.md) (Optimización de potencia y rendimiento)
+- [Processor Power Management Tuning](processor-power-management-tuning.md) (Optimización de la administración de energía del procesador)
 - [Clúster de conmutación por error](https://technet.microsoft.com/library/cc725923.aspx)

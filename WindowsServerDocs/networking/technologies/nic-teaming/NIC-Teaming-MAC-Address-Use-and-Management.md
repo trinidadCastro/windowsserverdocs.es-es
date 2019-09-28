@@ -1,9 +1,9 @@
 ---
 title: Administración y uso de direcciones MAC en formación de equipos NIC
-description: Al configurar un equipo NIC con el modo independiente de conmutador y hash de dirección o distribución de carga dinámica, el equipo usa que la media access control dirección (MAC) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo desde el conjunto inicial de los miembros del equipo.
+description: Al configurar un equipo NIC con el modo independiente del conmutador y la distribución de la carga dinámica o el hash de la dirección, el equipo usa la dirección Media Access Control (MAC) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo del conjunto inicial de miembros del equipo.
 manager: dougkim
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-nict
@@ -12,70 +12,70 @@ ms.topic: article
 ms.assetid: 26d105e0-afc3-44b5-bb5e-0c884a4c5d62
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: be05c4b3069d5b6928765d7211ae8f3a2dc42a13
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 3ff03dae44600ff79ed22d298ee338c570e61e36
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67283765"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405490"
 ---
 # <a name="nic-teaming-mac-address-use-and-management"></a>Administración y uso de direcciones MAC en formación de equipos NIC
 
 >Se aplica a: Windows Server 2016
 
-Al configurar un equipo NIC con el modo independiente de conmutador y hash de dirección o distribución de carga dinámica, el equipo usa que la media access control dirección (MAC) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo desde el conjunto inicial de los miembros del equipo.  Es el primer miembro del equipo para enlazar con el equipo después de crearlo o después de reinicia el equipo host. Como miembro del equipo principal puede cambiar de manera no determinista en cada inicio, NIC deshabilitar/Habilitar acción u otras actividades de reconfiguración, miembro del equipo principal podrían cambiar y la dirección MAC del equipo pueden variar.  
+Al configurar un equipo NIC con el modo independiente del conmutador y la distribución de la carga dinámica o el hash de la dirección, el equipo usa la dirección Media Access Control (MAC) del miembro del equipo NIC principal en el tráfico saliente. El miembro del equipo NIC principal es un adaptador de red seleccionado por el sistema operativo del conjunto inicial de miembros del equipo.  Es el primer miembro del equipo que se enlaza al equipo después de crearlo o después de que se reinicie el equipo host. Dado que el miembro del equipo principal podría cambiar de forma no determinista en cada arranque, acción de deshabilitación o habilitación de NIC u otras actividades de reconfiguración, el miembro del equipo principal podría cambiar y la dirección MAC del equipo podría variar.  
   
-En la mayoría de las situaciones esto no causa problemas, pero hay algunos casos donde pueden surgir problemas.  
+En la mayoría de los casos esto no causa problemas, pero hay algunos casos en los que pueden surgir problemas.  
   
-Si el miembro del equipo principal se quitará el equipo y, a continuación, se coloca en la operación puede haber un conflicto de direcciones MAC. Para resolver este conflicto, deshabilitar y, a continuación, habilitar la interfaz de equipo. El proceso de deshabilitar y habilitar la interfaz de equipo hace que la interfaz seleccionar una nueva dirección MAC de los restantes miembros del equipo, lo que evita el conflicto de dirección MAC.  
+Si el miembro principal del equipo se quita del equipo y, a continuación, se coloca en la operación, puede haber un conflicto de direcciones MAC. Para resolver este conflicto, deshabilite y, a continuación, habilite la interfaz de equipo. El proceso de deshabilitación y habilitación de la interfaz de equipo hace que la interfaz Seleccione una nueva dirección MAC del resto de miembros del equipo, con lo que se elimina el conflicto de direcciones MAC.  
   
-Puede establecer la dirección MAC del equipo NIC en una dirección MAC específica si se establece en la interfaz principal del equipo, tal como se puede hacer al configurar la dirección MAC de cualquier NIC física.  
+Puede establecer la dirección MAC del equipo NIC en una dirección MAC específica estableciéndolo en la interfaz de equipo principal, tal como se puede hacer al configurar la dirección MAC de cualquier NIC física.  
   
-## <a name="mac-address-use-on-transmitted-packets"></a>Usar dirección MAC de paquetes transmitidos  
-Al configurar un equipo NIC en modo independiente de conmutador y hash de dirección o distribución de carga dinámica, los paquetes de un único origen (por ejemplo, una sola máquina virtual) se distribuye simultáneamente en varios miembros del equipo. Para evitar que los modificadores confundirse y prevenir oscilante alarmas de MAC, la dirección MAC de origen se reemplaza con una dirección MAC diferente en los marcos que se transmiten a través de los miembros del equipo que no sea miembro del equipo principal. Por este motivo, cada miembro del equipo usa una dirección MAC diferente y conflictos de direcciones MAC se les hasta que se produce un error.  
+## <a name="mac-address-use-on-transmitted-packets"></a>Uso de direcciones MAC en los paquetes transmitidos  
+Al configurar un equipo NIC en el modo independiente del conmutador y en la distribución de la carga dinámica o el hash de la dirección, los paquetes de un solo origen (por ejemplo, una sola máquina virtual) se distribuyen simultáneamente entre varios miembros del equipo. Para evitar confundir los conmutadores y evitar las alarmas de MAC, la dirección MAC de origen se sustituye por una dirección MAC diferente en los fotogramas transmitidos en los miembros del equipo que no sean el miembro principal del equipo. Por este motivo, cada miembro del equipo utiliza una dirección MAC diferente y los conflictos de direcciones MAC se evitan a menos que se produzca un error.  
   
-Cuando se detecta un error en la NIC principal, inicie el software de formación de equipos NIC con la dirección de MAC del miembro del equipo principal en el miembro del equipo que se elige para que actúe como el miembro del equipo principal temporal (es decir, el mismo que aparecerán en el conmutador como el equipo principal me Nú).  Este cambio solo se aplica al tráfico que se va a enviar en el miembro del equipo principal con una dirección MAC del miembro principal del equipo como su dirección MAC de origen. Continúa el tráfico restante se envíe con cualquier dirección MAC habrían usado antes del error de origen.  
+Cuando se detecta un error en la NIC principal, el software de formación de equipos NIC comienza a usar la dirección MAC del miembro del equipo principal en el miembro del equipo que se elige para que actúe como el miembro del equipo principal temporal (es decir, el que ahora se mostrará al conmutador como el equipo principal mero).  Este cambio solo se aplica al tráfico que se va a enviar en el miembro del equipo principal con la dirección MAC del miembro del equipo principal como su dirección MAC de origen. Se sigue enviando otro tráfico con cualquier dirección MAC de origen que hubiera usado antes del error.  
   
-Siguientes son las listas que describen el comportamiento de sustitución de dirección MAC de la formación de equipos NIC, según cómo esté configurado el equipo:  
+A continuación se muestran las listas que describen el comportamiento de sustitución de direcciones MAC de formación de equipos NIC, en función de cómo esté configurado el equipo:  
   
-1.  **En el modo independiente de conmutador con distribución Hash de dirección**  
+1.  **En modo independiente del conmutador con distribución de hash de dirección**  
   
-    -   Se envían todos los paquetes ARP y NS en el miembro del equipo principal  
+    -   Todos los paquetes ARP y NS se envían en el miembro del equipo principal  
   
-    -   Todo el tráfico enviado en la NIC que no sea miembro del equipo principal se envían con la dirección MAC de origen modificada para que coincida con la NIC en el que se envían  
+    -   Todo el tráfico enviado en NIC distintos del miembro principal del equipo se envía con la dirección MAC de origen modificada para que coincida con la NIC en la que se envían.  
   
-    -   Se envía todo el tráfico enviado en el miembro del equipo principal con el origen de dirección MAC (que puede ser una dirección MAC de origen del equipo)  
+    -   Todo el tráfico enviado en el miembro del equipo principal se envía con la dirección MAC de origen original (que puede ser la dirección MAC de origen del equipo)  
   
-2.  **En el modo independiente de conmutador con la distribución de puerto de Hyper-V**  
+2.  **En modo independiente del conmutador con distribución de puertos de Hyper-V**  
   
-    -   Cada puerto vmSwitch es afinidad con un miembro del equipo  
+    -   Cada puerto vmSwitch se afinidad con a un miembro del equipo  
   
-    -   Todos los paquetes se envían en el miembro del equipo al que se afinidad con el puerto  
+    -   Cada paquete se envía en el miembro del equipo al que se afinidad con el puerto.  
   
-    -   No se realiza ninguna sustitución de MAC de origen  
+    -   No se ha realizado ningún reemplazo de MAC de origen  
   
-3.  **En el modo independiente de conmutador con distribución dinámica**  
+3.  **En modo independiente del conmutador con distribución dinámica**  
   
-    -   Cada puerto vmSwitch es afinidad con un miembro del equipo  
+    -   Cada puerto vmSwitch se afinidad con a un miembro del equipo  
   
-    -   Se envían todos los paquetes de ARP y NS en el miembro del equipo al que se afinidad con el puerto  
+    -   Todos los paquetes ARP/NS se envían en el miembro del equipo al que se afinidad con el puerto.  
   
-    -   Los paquetes enviados en el miembro del equipo que sea miembro del equipo con afinidad no tienen ningún origen de reemplazo de dirección MAC realiza  
+    -   Los paquetes enviados en el miembro del equipo que es el miembro del equipo afinidad con no tienen ninguna sustitución de dirección MAC de origen.  
   
-    -   Paquetes enviados a un miembro del equipo que no sea miembro del equipo con afinidad tendrá el reemplazo de dirección MAC de origen hace  
+    -   Los paquetes enviados por un miembro del equipo que no sea el miembro del equipo afinidad con tendrán el reemplazo de dirección MAC de origen.  
   
-4.  **En el modo dependientes del conmutador (todas las distribuciones)**  
+4.  **En el modo dependiente del conmutador (todas las distribuciones)**  
   
-    -   No se realiza ninguna sustitución de dirección MAC de origen  
+    -   No se realiza ningún reemplazo de dirección MAC de origen  
   
 ## <a name="related-topics"></a>Temas relacionados
-- [Formación de equipos NIC](NIC-Teaming.md): En este tema, le proporcionamos una visión general de formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. Formación de equipos NIC permite agrupar entre 1 y 32 adaptadores de red Ethernet físicos en uno o más adaptadores de red virtual basada en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.  
+- [Formación de equipos NIC](NIC-Teaming.md): En este tema se proporciona información general sobre la formación de equipos de tarjeta de interfaz de red (NIC) en Windows Server 2016. La formación de equipos NIC le permite agrupar entre uno y 32 adaptadores de red Ethernet físicos en uno o varios adaptadores de red virtuales basados en software. Estos adaptadores de red virtuales proporcionan un rendimiento rápido y tolerancia a errores en caso de que se produzca un error en el adaptador de red.  
 
-- [Configuración de formación de equipos NIC](nic-teaming-settings.md): En este tema, nos ofrecerle una visión general de las propiedades del equipo NIC como formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles sobre la configuración del adaptador en espera y la propiedad de la interfaz principal del equipo. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador de modo de espera para tolerancia a errores.
+- [Configuración de la formación de equipos NIC](nic-teaming-settings.md): En este tema se proporciona información general sobre las propiedades del equipo NIC, como la formación de equipos y los modos de equilibrio de carga. También se proporcionan detalles acerca de la configuración del adaptador en espera y la propiedad de la interfaz de equipo principal. Si tiene al menos dos adaptadores de red en un equipo NIC, no es necesario designar un adaptador en espera para la tolerancia a errores.
   
-- [Crear un nuevo equipo NIC en un equipo host o máquina virtual](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md): En este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual de Hyper-V (VM) que ejecuta Windows Server 2016.
+- [Cree un nuevo equipo NIC en un equipo host o una máquina virtual](Create-a-New-NIC-Team-on-a-Host-Computer-or-VM.md): En este tema, creará un nuevo equipo NIC en un equipo host o en una máquina virtual (VM) de Hyper-V que ejecuta Windows Server 2016.
 
-- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): En este tema, se describen formas de solucionar la formación de equipos NIC, como hardware, los valores de conmutador físico y habilitación o deshabilitación de los adaptadores de red mediante Windows PowerShell. 
+- [Solución de problemas de formación de equipos NIC](Troubleshooting-NIC-Teaming.md): En este tema se describen las formas de solucionar problemas de formación de equipos NIC, como hardware, los valores de los conmutadores físicos y la deshabilitación o habilitación de adaptadores de red con Windows PowerShell. 
   
 
 

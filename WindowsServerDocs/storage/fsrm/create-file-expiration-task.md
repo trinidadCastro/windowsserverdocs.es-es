@@ -2,18 +2,18 @@
 title: Crear una tarea de expiración de archivos
 description: En este artículo se describe el proceso de creación de una tarea de administración de archivos para los archivos que están a punto de expirar
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: b816dbe759d94980b2cc27284fd2e0ec7787d0b0
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0901c17203252414a37ccc5205a0946b8bef0d41
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446005"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394230"
 ---
 # <a name="create-a-file-expiration-task"></a>Crear una tarea de expiración de archivos
 
@@ -61,7 +61,7 @@ El nombre de directorio nuevo se basa en el nombre de la tarea de administració
 
      - Para enviar un correo electrónico a la persona cuyos archivos están a punto de expirar, selecciona la casilla de verificación **Enviar mensaje de correo electrónico al usuario cuyos archivos están a punto de expirar**.
 
-     - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, el **\[Source File Owner\]** variable inserta el nombre del usuario cuyo archivo está a punto de expirar. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
+     - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, la variable **\[Source propietario de archivo @ no__t-2** inserta el nombre del usuario cuyo archivo está a punto de expirar. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
 
      - Para adjuntar una lista de los archivos que están a punto de expirar, haz clic en **Adjuntar a la lista de correo electrónico de los archivos en los que se va a realizar la acción**y escribe o selecciona un valor para **Número máximo de archivos en la lista**.
 

@@ -2,7 +2,7 @@
 title: Cerrar sesión o desconectar sesiones de usuario
 description: Obtenga información sobre cómo cerrar sesión de un usuario manualmente
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 0e516a617341ffebadbdeb571a39f50369446f11
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: c636af35a78eab76d69c68b6f506b64dcb555f81
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871648"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395270"
 ---
 # <a name="log-off-or-disconnect-user-sessions"></a>Cerrar sesión o desconectar sesiones de usuario
 Los usuarios de Multipoint Services pueden iniciar y cerrar sesión en sus sesiones de escritorio como lo harían con cualquier sesión de Windows. Los usuarios también pueden desconectar o suspender su sesión para que no se use la estación Multipoint Services, pero su sesión permanece activa en la memoria del equipo del sistema Multipoint Services.  

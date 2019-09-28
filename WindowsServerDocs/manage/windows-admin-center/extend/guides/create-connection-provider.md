@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 06/06/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: c1f3a7f7004b573fece71cdaf2f43661c13ad496
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 9c04db3196d1e806e50af9164b3c8bcdfb19b079
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869633"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406889"
 ---
 # <a name="create-a-connection-provider-for-a-solution-extension"></a>Crear un proveedor de conexión para una extensión de solución
 
@@ -23,7 +23,7 @@ Los proveedores de conexión desempeñan un papel importante en el modo en que e
 
 De forma predeterminada, el centro de administración de Windows se distribuye con los siguientes proveedores de conexión:
 
-* Server
+* Servidor
 * Cliente de Windows
 * Clúster de conmutación por error
 * Clúster de HCI
@@ -77,7 +77,7 @@ Un punto de entrada de tipo "connnectionProvider" indica al shell del centro de 
 | -------- | ----------- |
 | entryPointType | Esta es una propiedad obligatoria. Hay tres valores válidos: "Tool", "Solution" y "connectionProvider". | 
 | name | Identifica el proveedor de conexión dentro del ámbito de una solución. Este valor debe ser único dentro de una instancia completa del centro de administración de Windows (no solo una solución). |
-| path | Representa la ruta de acceso de la dirección URL para la interfaz de usuario "agregar conexión", si se va a configurar mediante la solución. Este valor se debe asignar a una ruta configurada en el archivo app-Routing. Module. TS. Cuando el punto de entrada de la solución está configurado para usar las conexiones rootNavigationBehavior, esta ruta cargará el módulo que usa el shell para mostrar la interfaz de usuario de la conexión. Más información disponible en la sección sobre rootNavigationBehavior. |
+| ruta de acceso | Representa la ruta de acceso de la dirección URL para la interfaz de usuario "agregar conexión", si se va a configurar mediante la solución. Este valor se debe asignar a una ruta configurada en el archivo app-Routing. Module. TS. Cuando el punto de entrada de la solución está configurado para usar las conexiones rootNavigationBehavior, esta ruta cargará el módulo que usa el shell para mostrar la interfaz de usuario de la conexión. Más información disponible en la sección sobre rootNavigationBehavior. |
 | displayName | El valor especificado aquí se muestra en el lado derecho del shell, debajo de la barra negra del centro de administración de Windows cuando un usuario carga la página de conexiones de una solución. |
 | icono | Representa el icono usado en el menú desplegable soluciones para representar la solución. |
 | description | Escriba una breve descripción del punto de entrada. |
@@ -117,9 +117,9 @@ Propiedades de estado:
 
    Distintos
 
-  | Valor | DESCRIPCIÓN |
+  | Valor | Descripción |
   | ----- | ----------- |
-  | 0 | En línea |
+  | 0 | Online |
   | 1 | Advertencia |
   | 2 | Sin autorización |
   | 3 | Error |

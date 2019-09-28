@@ -1,7 +1,7 @@
 ---
 title: Inicio rápido para la implementación de tejido protegido
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: e060e052-39a0-4154-90bb-b97cc6dde68e
 manager: dongill
@@ -9,12 +9,12 @@ author: justinha
 ms.author: justinha
 ms.technology: security-guarded-fabric
 ms.date: 01/30/2019
-ms.openlocfilehash: 48ac73e79709f28816ea9eff35361bd54710c66e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8359532113e04e2247b4af34effc7f5b89d36f34
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870531"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402419"
 ---
 # <a name="quick-start-for-guarded-fabric-deployment"></a>Inicio rápido para la implementación de tejido protegido
 

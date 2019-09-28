@@ -6,14 +6,14 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 02/15/2019
-ms.openlocfilehash: 25f97e614d2c7ea8ae1799a04e7675dc1e60af00
-ms.sourcegitcommit: 286e3181ebd2cb9d7dc7fe651858a4e0d61d153f
+ms.openlocfilehash: 68b5c7b2c5bc8e93d653514b2664d96b97b07a9e
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/17/2019
-ms.locfileid: "68300731"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406844"
 ---
 # <a name="get-started-with-windows-admin-center"></a>Introducción al centro de administración de Windows
 
@@ -174,7 +174,7 @@ el **tipo** es el tipo de conexión. En el caso de las conexiones predeterminada
 
 | Tipo de conexión | Cadena de conexión |
 |------|-------------------------------|
-| Windows Server | msft. SME. Connection-Type. Server |
+| Windows Server | msft. SME. Connection-Type. Server |
 | EQUIPO Windows 10 | msft. SME. Connection-Type. Windows-Client |
 | Clúster de conmutación por error | msft. SME. Connection-Type. Cluster |
 | Clúster hiperconvergido | msft. SME. Connection-Type. hiperconvergid-Cluster |

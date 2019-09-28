@@ -1,8 +1,8 @@
 ---
-title: Descripción del cuórum de clústeres y grupos
+title: Descripción del cuórum de clúster y grupo
 description: Descripción del Cuórum del clúster y del grupo, con ejemplos específicos para ver los detalles.
 keywords: Espacios de almacenamiento directo, Cuórum, testigo, S2D, Quórum de clúster, Quórum de grupo, clúster, grupo
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: adagashe
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,14 +10,14 @@ ms.topic: article
 author: adagashe
 ms.date: 01/18/2019
 ms.localizationpriority: medium
-ms.openlocfilehash: 962a4edc1a171167a6af336d4fb32188a526f455
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 8950e9d09e3bd07dc02228c295ab223ead969ea6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70872134"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71366015"
 ---
-# <a name="understanding-cluster-and-pool-quorum"></a>Descripción del cuórum de clústeres y grupos
+# <a name="understanding-cluster-and-pool-quorum"></a>Descripción del cuórum de clúster y grupo
 
 >Se aplica a: Windows Server 2019 y Windows Server 2016
 
@@ -38,10 +38,10 @@ En la tabla siguiente se proporciona información general sobre los resultados d
 
 | Nodos de servidor | Puede sobrevivir a un error de nodo de servidor | Puede sobrevivir a un error de nodo de servidor, otro | Puede sobrevivir a dos errores simultáneos de nodo de servidor |
 |--------------|-------------------------------------|---------------------------------------------------|----------------------------------------------------|
-| 2            | 50/50                               | Sin                                                | Sin                                                 |
-| 2 + testigo  | Sí                                 | No                                                | Sin                                                 |
-| 3            | Sí                                 | 50/50                                             | Sin                                                 |
-| 3 + testigo  | Sí                                 | Sí                                               | Sin                                                 |
+| 2            | 50/50                               | No                                                | No                                                 |
+| 2 + testigo  | Sí                                 | No                                                | No                                                 |
+| 3            | Sí                                 | 50/50                                             | No                                                 |
+| 3 + testigo  | Sí                                 | Sí                                               | No                                                 |
 | 4            | Sí                                 | Sí                                               | 50/50                                              |
 | 4 testigos testigo  | Sí                                 | Sí                                               | Sí                                                |
 | 5 y versiones posteriores  | Sí                                 | Sí                                               | Sí                                                |
@@ -174,11 +174,11 @@ En la tabla siguiente se proporciona información general sobre los resultados d
 
 | Nodos de servidor | Puede sobrevivir a un error de nodo de servidor | Puede sobrevivir a un error de nodo de servidor, otro | Puede sobrevivir a dos errores simultáneos de nodo de servidor |
 |--------------|-------------------------------------|---------------------------------------------------|----------------------------------------------------|
-| 2            | Sin                                  | No                                                | Sin                                                 |
-| 2 + testigo  | Sí                                 | No                                                | Sin                                                 |
-| 3            | Sí                                 | No                                                | Sin                                                 |
-| 3 + testigo  | Sí                                 | No                                                | Sin                                                 |
-| 4            | Sí                                 | No                                                | Sin                                                 |
+| 2            | No                                  | No                                                | No                                                 |
+| 2 + testigo  | Sí                                 | No                                                | No                                                 |
+| 3            | Sí                                 | No                                                | No                                                 |
+| 3 + testigo  | Sí                                 | No                                                | No                                                 |
+| 4            | Sí                                 | No                                                | No                                                 |
 | 4 testigos testigo  | Sí                                 | Sí                                               | Sí                                                |
 | 5 y versiones posteriores  | Sí                                 | Sí                                               | Sí                                                |
 

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 3189056de8feff65d37b1846059d871c99ee9ede
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 49246d9df294b966f0ba38b1d3c1f361ce5f1d5f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869220"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407264"
 ---
 # <a name="when-to-use-an-authorization-claim-rule"></a>Cuándo usar una regla de notificación de autorización
 Puede usar esta regla en servicios de Federación de Active Directory (AD FS) \(AD FS\) cuando necesite tomar un tipo de demanda entrante y, a continuación, aplicar una acción que determinará si se permitirá o denegará el acceso a un usuario en función del valor que se especifique en la regla. Cuando usas esta regla, transformas o pasas por las notificaciones que coinciden con la lógica de la regla siguiente, según cualquiera de las opciones de que configuración de la regla:  

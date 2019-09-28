@@ -1,8 +1,8 @@
 ---
 title: Creación de SC
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 7931ddc91b91d5fce01335f4b090d0305790f65c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8ea8f1c33472b7ac95ec0282a50d902a9d7cf84d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59826506"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384375"
 ---
 # <a name="sc-create"></a>Creación de SC
 
 
 
-Crea una subclave y entradas para un servicio en el registro y en la base de datos de administrador de Control de servicio.
+Crea una subclave y entradas para un servicio en el registro y en la base de datos del administrador de control de servicios.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,28 +38,28 @@ sc [<ServerName>] create [<ServiceName>] [type= {own | share | kernel | filesys 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|\<ServerName>|Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe tener el formato de convención de nomenclatura Universal (UNC) (por ejemplo, \\ \\myserver). Para ejecutar SC.exe localmente, omita este parámetro.|
-|\<ServiceName>|Especifica el nombre del servicio devolviendo por la **getkeyname** operación.|
-|tipo = {propio \| compartir \| kernel \| filesys \| rec \| interactuar tipo = {propio \| compartir}}|Especifica el tipo de servicio. El valor predeterminado es **tipo = propio**.</br>**propio** : Especifica que el servicio se ejecuta en su propio proceso. No se comparte un archivo ejecutable con otros servicios. Esta es la configuración predeterminada.</br>**compartir** : Especifica que el servicio se ejecuta como un proceso compartido. Un archivo ejecutable comparte con otros servicios.</br>**kernel** -especifica un controlador.</br>**filesys** -especifica un controlador de sistema de archivos.</br>**Rec** -especifica un controlador reconocido el sistema de archivos (identifica los sistemas de archivos que se usa en el equipo).</br>**interactuar** : Especifica que el servicio puede interactuar con el escritorio, recibir datos de entrada a los usuarios. Servicios interactivos se deben ejecutar bajo la cuenta LocalSystem. Este tipo debe usarse junto con **tipo = propio** o **tipo = compartido**. Uso de **tipo = interactuar** por sí mismo, se generará un error de "parámetro no válido".|
-|inicio = {arranque \| sistema \| automática \| demanda \| deshabilitado}|Especifica el tipo de inicio para el servicio. El valor predeterminado es **iniciar = a petición**.</br>**arranque** -especifica un controlador de dispositivo que es cargado por el cargador de arranque.</br>**sistema** -especifica un controlador de dispositivo que se inicia durante la inicialización del núcleo.</br>**Auto** -especifica un servicio que se inicia automáticamente cada vez que se reinicie el equipo. Tenga en cuenta que el servicio se ejecuta incluso si nadie inicia sesión en el equipo.</br>**demanda** -especifica un servicio que se debe iniciar manualmente. Este es el valor predeterminado si **iniciar =** no se especifica.</br>**deshabilitado** -especifica un servicio que no se puede iniciar. Para iniciar un servicio deshabilitado, cambie el tipo de inicio a algún otro valor.|
-|error = {normal \| graves \| críticas \| omitir}|Especifica la gravedad del error si se produce un error en el servicio cuando se inicia el equipo. El valor predeterminado es **error = normal**.</br>**normal** : Especifica que se registra el error. Se muestra un cuadro de mensaje, informa al usuario que se ha podido iniciar un servicio. Inicio continuará. Esta es la configuración predeterminada.</br>**grave** : Especifica que se registra el error (si es posible). El equipo intenta reiniciar con la configuración válida conocida de la última. Esto podría resultar en el equipo se pueda reiniciar, pero puede no se puede ejecutar el servicio.</br>**crítica** : Especifica que se registra el error (si es posible). El equipo intenta reiniciar con la configuración válida conocida de la última. Si se produce un error en la configuración válida conocida último, también se produce un error en Inicio y el proceso de arranque se detiene con un error de detención.</br>**omitir** : Especifica que se registra el error y continúa el inicio. No se proporciona ninguna notificación al usuario más allá de registrar el error en el registro de eventos.|
-|binpath= \<BinaryPathName>|Especifica una ruta de acceso al archivo binario del servicio. No hay ningún valor predeterminado para **binpath =**, y se debe proporcionar esta cadena.|
-|group= \<LoadOrderGroup>|Especifica el nombre del grupo del que este servicio es un miembro. La lista de grupos se almacena en el registro en el **HKLM\System\CurrentControlSet\Control\ServiceGroupOrder** subclave. El valor predeterminado es null.|
-|etiqueta = {Sí \| no}|Especifica si un elemento TagID se va a obtenerse de la llamada de CreateService. Las etiquetas se usan únicamente para los controladores de inicio y de inicio del sistema.|
-|depend= \<dependencies>|Especifica los nombres de servicios o grupos que deben iniciarse antes de este servicio. Los nombres están separados por barras diagonales (/).|
-|obj= {\<AccountName> \| \<ObjectName>}|Especifica el nombre de una cuenta en el que se ejecutará un servicio, o especifica un nombre del objeto de controlador de Windows en el que se ejecutará el controlador.|
-|displayname= \<DisplayName>|Especifica un nombre descriptivo que se puede utilizar con programas de la interfaz de usuario para identificar el servicio.|
-|password= \<Password>|Especifica una contraseña. Esto es necesario si se usa una cuenta distinta de LocalSystem.|
+|@no__t 0ServerName >|Especifica el nombre del servidor remoto en el que se encuentra el servicio. El nombre debe usar el formato de Convención de nomenclatura universal (UNC) (por ejemplo, \\ @ no__t-1myserver). Para ejecutar SC. exe localmente, omita este parámetro.|
+|@no__t 0ServiceName >|Especifica el nombre de servicio devuelto por la operación **getkeyname** .|
+|Type = {Own \| share \| kernel \| files \| REC \| tipo de interacción = {propietario \| recurso compartido}}|Especifica el tipo de servicio. La configuración predeterminada es **Type = Own**.</br>**propietario** : especifica que el servicio se ejecuta en su propio proceso. No comparte un archivo ejecutable con otros servicios. Esta es la configuración predeterminada.</br>**share** : especifica que el servicio se ejecuta como un proceso compartido. Comparte un archivo ejecutable con otros servicios.</br>**kernel** : especifica un controlador.</br>**files** : especifica un controlador del sistema de archivos.</br>**rec** : especifica un controlador reconocido del sistema de archivos (identifica los sistemas de archivos usados en el equipo).</br>**interactuar** : especifica que el servicio puede interactuar con el escritorio y recibir la entrada de los usuarios. Los servicios interactivos deben ejecutarse con la cuenta LocalSystem. Este tipo se debe usar junto con **Type = Own** o **Type = Shared**. El uso de **Type = interactúe** por sí mismo generará un error de "parámetro no válido".|
+|Start = {boot \| System \| auto \| Demand \| Disabled}|Especifica el tipo de inicio para el servicio. La configuración predeterminada es **Start = Demand**.</br>**arranque** : especifica un controlador de dispositivo que carga el cargador de arranque.</br>**sistema** : especifica un controlador de dispositivo que se inicia durante la inicialización del kernel.</br>**auto** -especifica un servicio que se inicia automáticamente cada vez que se reinicia el equipo. Tenga en cuenta que el servicio se ejecuta incluso si no hay uno que inicie sesión en el equipo.</br>**Demand** : especifica un servicio que se debe iniciar manualmente. Este es el valor predeterminado si no se especifica **Start =** .</br>**Disabled** : especifica un servicio que no se puede iniciar. Para iniciar un servicio deshabilitado, cambie el tipo de inicio a otro valor.|
+|error = {normal \| grave \| crítico \| ignore}|Especifica la gravedad del error si se produce un error en el servicio cuando se inicia el equipo. La configuración predeterminada es **error = normal**.</br>**normal** : especifica que el error se registra. Aparece un cuadro de mensaje que informa al usuario de que se ha producido un error al iniciar un servicio. El inicio continuará. Esta es la configuración predeterminada.</br>**grave** : especifica que el error se registra (si es posible). El equipo intentará reiniciarse con la última configuración válida conocida. Esto podría dar lugar a que el equipo se reinicie, pero es posible que el servicio no se pueda ejecutar.</br>**Critical** : especifica que el error se registra (si es posible). El equipo intentará reiniciarse con la última configuración válida conocida. Si se produce un error en la última configuración válida conocida, también se produce un error de inicio y el proceso de arranque se detiene con un error de detención.</br>**omitir** : especifica que el error se ha registrado y el inicio continúa. No se proporciona ninguna notificación al usuario más allá de registrar el error en el registro de eventos.|
+|Ruta de la ruta = \<BinaryPathName >|Especifica una ruta de acceso al archivo binario del servicio. No hay ningún valor predeterminado para la **ruta de ruta =** y se debe proporcionar esta cadena.|
+|Grupo = \<LoadOrderGroup >|Especifica el nombre del grupo del que es miembro este servicio. La lista de grupos se almacena en el registro en la subclave **HKLM\System\CurrentControlSet\Control\ServiceGroupOrder** . El valor predeterminado es NULL.|
+|etiqueta = {Yes \| no}|Especifica si se va a obtener un TagID a partir de la llamada a CreateService. Las etiquetas solo se usan para los controladores de inicio de arranque y de inicio del sistema.|
+|depend = \<dependencies >|Especifica los nombres de los servicios o grupos que deben iniciarse antes de que se inicie este servicio. Los nombres se separan mediante barras diagonales (/).|
+|obj = {\<AccountName > \| \<ObjectName >}|Especifica el nombre de una cuenta en la que se ejecutará un servicio o especifica el nombre del objeto del controlador de Windows en el que se ejecutará el controlador.|
+|DisplayName = \<DisplayName >|Especifica un nombre descriptivo que pueden usar los programas de la interfaz de usuario para identificar el servicio.|
+|Password = \<Password >|Especifica una contraseña. Esto es necesario si se utiliza una cuenta que no sea LocalSystem.|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
--   Para cada opción de línea de comandos, el signo de igual forma parte de nombre de la opción.
--   Se requiere un espacio entre una opción y su valor (por ejemplo, **tipo = propio**. Si se omite el espacio de la operación dará error.
+-   Para cada opción de línea de comandos, el signo igual es parte del nombre de la opción.
+-   Se requiere un espacio entre una opción y su valor (por ejemplo, **Type = Own**. Si se omite el espacio, se producirá un error en la operación.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Los ejemplos siguientes muestran cómo puede usar el **crear sc** comando:
+En los siguientes ejemplos se muestra cómo se puede usar el comando **SC Create** :
 ```
 sc \\myserver create NewService binpath= c:\windows\system32\NewServ.exe
 sc create NewService binpath= c:\windows\system32\NewServ.exe type= share start= auto depend= "+TDI NetBIOS"

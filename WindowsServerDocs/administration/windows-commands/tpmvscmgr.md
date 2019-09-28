@@ -2,7 +2,7 @@
 title: tpmvscmgr
 description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 9b1d9b049615322bffc39b5b372ce145579b57b2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0051750f557786b0a564ec20a32089e089898cc0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70868771"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385662"
 ---
 # <a name="tpmvscmgr"></a>tpmvscmgr
 
@@ -41,7 +41,7 @@ El comando CREATE configura nuevas tarjetas inteligentes virtuales en el sistema
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/Name|Necesario. Indica el nombre de la nueva tarjeta inteligente virtual.|
+|/Name|Obligatorio. Indica el nombre de la nueva tarjeta inteligente virtual.|
 |/AdminKey|Indica la clave de administrador deseada que se puede usar para restablecer el PIN de la tarjeta si el usuario olvida el PIN.</br>**Valor predeterminado** Especifica el valor predeterminado de 010203040506070801020304050607080102030405060708.</br>**Preguntar** Solicita al usuario que escriba un valor para la clave de administrador.</br>**Aleatoriedad** Da como resultado una configuración aleatoria para la clave de administrador de una tarjeta que no se devuelve al usuario. Esto crea una tarjeta que no se puede administrar mediante las herramientas de administración de tarjetas inteligentes. Cuando se genera con RANDOM, la clave de administrador debe escribirse como caracteres hexadecimales 48.|
 |/PIN|Indica el valor del PIN del usuario deseado.</br>**Valor predeterminado** Especifica el PIN predeterminado de 12345678.</br>**Preguntar** Solicita al usuario que escriba un PIN en la línea de comandos. El PIN debe tener un mínimo de ocho caracteres y puede contener números, caracteres y caracteres especiales.|
 |/PUK|Indica el valor de clave de desbloqueo de PIN deseado (PUK). El valor PUK debe tener un mínimo de ocho caracteres y puede contener números, caracteres y caracteres especiales. Si se omite el parámetro, la tarjeta se crea sin un PUK.</br>**Valor predeterminado** Especifica el PUK predeterminado de 12345678.</br>**Preguntar** Solicita al usuario que escriba una PUK en la línea de comandos.|

@@ -7,29 +7,29 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: b14ded98c4f1a340349119bd9f5f42e3a1bf9434
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: ecbaa33d83d7b37f376a426571c0d2df89c7695d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445746"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407117"
 ---
 # <a name="deploy-security-auditing-with-central-audit-policies-demonstration-steps"></a>Implementar la auditoría de seguridad con directivas de auditoría central (pasos de demostración)
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-En este escenario, auditará el acceso a los archivos en la carpeta Finance Documents usando la directiva de finanzas que creó en [implementar una directiva de acceso Central &#40;pasos de demostración&#41;](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md). Si un usuario que no está autorizado a acceder a la carpeta intenta acceder a ella, la actividad se captura en el visor de eventos.   
+En este escenario, auditará el acceso a los archivos de la carpeta Finance Documents mediante la Directiva Finance que creó en [implementación de una &#40;Directiva de&#41;acceso central pasos de demostración](Deploy-a-Central-Access-Policy--Demonstration-Steps-.md). Si un usuario que no está autorizado a acceder a la carpeta intenta acceder a ella, la actividad se captura en el visor de eventos.   
  Para someter a prueba este escenario, se requieren los siguientes pasos.  
   
 |Tarea|Descripción|  
 |--------|---------------|  
-|[Configurar el acceso a objetos Global](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_1)|En este paso, se configura la directiva de acceso a objetos global en el controlador de dominio.|  
-|[Configuración de directiva de grupo de actualizaciones](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_2)|Inicie sesión en el servidor de archivos y aplique la actualización de la directiva de grupo.|  
-|[Compruebe que se ha aplicado la directiva de acceso a objetos global](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_3)|Visualice los eventos relevantes en el visor de eventos. Los eventos deben incluir metadatos para el país y el tipo de documento.|  
+|[Configurar el acceso a objetos global](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_1)|En este paso, se configura la directiva de acceso a objetos global en el controlador de dominio.|  
+|[Actualizar configuración de directiva de grupo](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_2)|Inicie sesión en el servidor de archivos y aplique la actualización de la directiva de grupo.|  
+|[Comprobar que se ha aplicado la Directiva de acceso a objetos global](Deploy-Security-Auditing-with-Central-Audit-Policies--Demonstration-Steps-.md#BKMK_3)|Visualice los eventos relevantes en el visor de eventos. Los eventos deben incluir metadatos para el país y el tipo de documento.|  
   
-## <a name="BKMK_1"></a>Configurar la directiva de acceso del objeto global  
+## <a name="BKMK_1"></a>Configuración de la Directiva de acceso a objetos global  
 En este paso, se configura la directiva de acceso a objetos global en el controlador de dominio.  
   
 #### <a name="to-configure-a-global-object-access-policy"></a>Para configurar una directiva de acceso a objetos global  
@@ -65,12 +65,12 @@ En este paso, se configura la directiva de acceso a objetos global en el control
   
 15. En el panel de navegación, haga clic en **Acceso a objetos**y, en el panel de resultados, haga doble clic en **Auditar manipulación de identificadores**. Haga clic en **Configurar los siguientes eventos de auditoría**, **Correcto**y **Error**, haga clic en **Aceptar**y, a continuación, cierre el GPO de acceso flexible.  
   
-## <a name="BKMK_2"></a>Actualizar la configuración de directiva de grupo  
+## <a name="BKMK_2"></a>Actualizar configuración de directiva de grupo  
 En este paso se actualiza la configuración de directiva de grupo después de haberla creado.  
   
 #### <a name="to-update-group-policy-settings"></a>Para actualizar la configuración de directiva de grupo  
   
-1. Inicie sesión en el servidor de archivos, FILE1 como Contoso\Administrador con la contraseña <strong>pass@word1</strong>.  
+1. Inicie sesión en el servidor de archivos, ARCHIVO1 como Contoso\administrador, con la contraseña <strong>pass@word1</strong>.  
   
 2. Presione la tecla Windows+R y escriba **cmd** para abrir la ventana del símbolo del sistema.  
   
@@ -79,12 +79,12 @@ En este paso se actualiza la configuración de directiva de grupo después de ha
   
 3. Escriba **gpupdate /force** y presione ENTRAR.  
   
-## <a name="BKMK_3"></a>Compruebe que se ha aplicado la directiva de acceso a objetos global  
+## <a name="BKMK_3"></a>Comprobar que se ha aplicado la Directiva de acceso a objetos global  
 Una vez aplicada la configuración de directiva de grupo, puede comprobar si la configuración de directiva de auditoría se ha aplicado correctamente.  
   
 #### <a name="to-verify-that-the-global-object-access-policy-has-been-applied"></a>Para comprobar la aplicación de la directiva de acceso a objetos global  
   
-1.  Inicie sesión en el equipo cliente, CLIENT1 como Contoso\MReid. Vaya a la carpeta HYPERLINK "file:///\\\\\\\ID_AD_FILE1\\\Finance" \\\ FILE1\Finance documentos y modifique el documento de Word 2.  
+1.  Inicie sesión en el equipo cliente, CLIENT1 como Contoso\MReid. Vaya al hipervínculo de la carpeta "file:///\\ @ no__t-1 @ no__t-2\ID_AD_FILE1 @ no__t-3\Finance" \\ \ File1\finance Documents Documents y modifique el documento 2 de Word.  
   
 2.  Inicie sesión en el servidor de archivos, FILE1 como contoso\administrador. Abra el Visor de eventos, busque **Registros de Windows**, seleccione **Seguridad** y confirme que las actividades generaron los eventos de auditoría **4656** y **4663** (aunque no haya establecido SACL de auditoría específicos en los archivos o las carpetas que creó, modificó y eliminó).  
   

@@ -1,7 +1,7 @@
 ---
 title: Planear la implementación de VPN de Always On
 description: En este tema se proporcionan instrucciones de planeación para implementar Always On VPN en Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-ras
 ms.topic: article
 ms.assetid: 3c9de3ec-4bbd-4db0-b47a-03507a315383
@@ -9,12 +9,12 @@ ms.localizationpriority: medium
 ms.author: pashort
 author: shortpatti
 ms.date: 11/05/2018
-ms.openlocfilehash: 7b194bc2eefbe28b75b66ef644c199f3416c14fb
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: f92cfdbe13633dd4c59012f566c6888fdc7fc7a1
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871371"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388160"
 ---
 # <a name="step-1-plan-the-always-on-vpn-deployment"></a>Paso 1. Planear la implementación de VPN de Always On
 

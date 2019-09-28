@@ -1,19 +1,19 @@
 ---
 title: Uso del liberador de espacio en disco en Windows Server
 description: Obtenga información acerca de cómo usar las opciones de línea de comandos para configurar la herramienta liberador de espacio en disco (cleanmgr. exe) para limpiar automáticamente determinados archivos.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: cosmosdarwin
 author: iangpgh
 ms.author: jgerend
 manager: daveba
 ms.technology: storage-spaces
 ms.date: 06/20/2019
-ms.openlocfilehash: 4bf32520dc6fa2be36d44fbd66a7efc885a8f5d7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 2de3452a3528122beb26f403fb0c73d7ff13efd7
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70867409"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402112"
 ---
 # <a name="using-disk-cleanup-on-windows-server"></a>Uso del liberador de espacio en disco en Windows Server
 
@@ -37,11 +37,11 @@ Siga estos pasos para usar el Asistente para agregar roles y características pa
 
 1. En el menú **administrar** , seleccione Agregar **roles y características**.
 
-1. En la página **antes de comenzar** , compruebe que el servidor de destino y el entorno de red estén preparados para la característica que desea instalar. Seleccione **Next** (Siguiente).
+1. En la página **antes de comenzar** , compruebe que el servidor de destino y el entorno de red estén preparados para la característica que desea instalar. Selecciona **Siguiente**.
 
-1. En la página **Seleccionar tipo de instalación** , seleccione Instalación basada en **características o en roles** para instalar todas las características de las partes en un solo servidor. Seleccione **Next** (Siguiente).
+1. En la página **Seleccionar tipo de instalación** , seleccione Instalación basada en **características o en roles** para instalar todas las características de las partes en un solo servidor. Selecciona **Siguiente**.
 
-1. En la página **Seleccionar servidor de destino**, seleccione un servidor del grupo de servidores o un VHD sin conexión. Seleccione **Next** (Siguiente).
+1. En la página **Seleccionar servidor de destino**, seleccione un servidor del grupo de servidores o un VHD sin conexión. Selecciona **Siguiente**.
 
 1. En la página **Seleccionar roles de servidor** , seleccione **siguiente**.
 
@@ -63,8 +63,8 @@ Para usar cleanmgr. exe, instale la experiencia de escritorio como se describió
 
 | Sistema operativo  | Arquitectura  | Ubicación del archivo  |
 | ----------------- | -------------- | --------------- |
-| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da\cleanmgr.exe 
-| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr.resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63\cleanmgr.exe.mui |
+| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr_31bf3856ad364e35_6.1.7600.16385_none_c9392808773cd7da\cleanmgr.exe 
+| Windows Server 2008 R2 | 64 bits | C:\Windows\winsxs\amd64_microsoft-windows-cleanmgr.resources_31bf3856ad364e35_6.1.7600.16385_en-us_b9cb6194b257cc63\cleanmgr.exe.mui |
 
 Busque cleanmgr. exe y mueva el archivo a **%SystemRoot%\System32**.
 

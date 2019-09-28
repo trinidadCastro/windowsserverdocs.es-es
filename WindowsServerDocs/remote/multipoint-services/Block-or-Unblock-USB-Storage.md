@@ -1,8 +1,8 @@
 ---
 title: Bloquear o desbloquear el almacenamiento USB
 ms.custom: na
-description: Obtenga información sobre cómo impedir que los usuarios usen almacenamientos USB en las estaciones de MultiPoint
-ms.prod: windows-server-threshold
+description: Obtenga información acerca de cómo evitar que los usuarios usen el almacenamiento USB en las estaciones multipoint.
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: 4f2d5a20ee3245834ff11294514f9c5c08385429
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 2740d68841f1250d9ba50ad6b4728098c72678a5
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59888166"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405114"
 ---
 # <a name="block-or-unblock-usb-storage"></a>Bloquear o desbloquear el almacenamiento USB
 Puede evitar que los usuarios usen almacenamientos USB en sus estaciones de usuario.  

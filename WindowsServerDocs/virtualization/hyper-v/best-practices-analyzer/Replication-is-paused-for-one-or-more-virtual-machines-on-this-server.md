@@ -1,7 +1,7 @@
 ---
-title: La replicación está en pausa para una o más máquinas virtuales en este servidor
-description: Versión en línea del texto para esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+title: La replicación se pausó para una o varias máquinas virtuales en este servidor
+description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,38 +10,38 @@ ms.topic: article
 ms.assetid: e1119a40-eda3-4058-8648-7df81cbc6c29
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 248b5fbdbfb54380e441d14cde6beaa9146ce800
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 17d50f116c6cee488367c924bfbce3791a8d879f
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59827776"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393544"
 ---
-# <a name="replication-is-paused-for-one-or-more-virtual-machines-on-this-server"></a>La replicación está en pausa para una o más máquinas virtuales en este servidor
+# <a name="replication-is-paused-for-one-or-more-virtual-machines-on-this-server"></a>La replicación se pausó para una o varias máquinas virtuales en este servidor
 
 >Se aplica a: Windows Server 2016
 
-Para obtener más información sobre análisis y los procedimientos recomendados, consulte [Run Best Practices Analyzer Scans y Manage Scan Results](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
+Para obtener más información sobre los análisis y los procedimientos recomendados, vea [ejecución de exámenes de analizador de procedimientos recomendados y administración de los resultados de los exámenes](https://go.microsoft.com/fwlink/p/?LinkID=223177).  
   
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Advertencia|  
 |**Categoría**|Operaciones|  
   
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.  
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.  
   
 ## <a name="issue"></a>Problema  
-*La replicación está en pausa para una o varias de las máquinas virtuales. Mientras la máquina virtual principal está en pausa, los cambios que se producen se agrupan y se enviarán a la máquina virtual de réplica una vez que se reanuda la replicación.*  
+*Replication está en pausa para una o varias de las máquinas virtuales. Mientras se pausa la máquina virtual principal, los cambios que se produzcan se acumularán y se enviarán a la máquina virtual de réplica una vez que se reanude la replicación.*  
   
 ## <a name="impact"></a>Impacto  
-*Mientras está en pausa la replicación, los cambios acumulados que se producen en la máquina virtual principal consumirá espacio en disco disponible en el servidor principal. Después de que se reanuda la replicación, puede haber un grandes ráfagas de tráfico de red al servidor réplica. Esto afecta a las siguientes máquinas virtuales:*  
+@no__t 0As mientras se pausa la replicación, los cambios acumulados que se produzcan en la máquina virtual principal consumirán espacio en disco disponible en el servidor principal. Después de reanudar la replicación, puede haber una gran ráfaga del tráfico de red al servidor de réplicas. Esto afecta a las siguientes máquinas virtuales: *  
   
-\<lista de máquinas virtuales >  
+\<list de máquinas virtuales >  
   
 ## <a name="resolution"></a>Resolución  
-*Confirme que se pretendía que va a pausar la replicación. Si se pausó la replicación para la conectividad de red o de espacio en disco baja dirección, reanudar la replicación en cuanto se resuelvan esos problemas.*  
+@no__t: 0Confirm que se diseñó para pausar la replicación. Si la replicación se pausó para solucionar poco espacio en disco o conectividad de red, reanude la replicación en cuanto se resuelvan esos problemas. *  
   
 
 

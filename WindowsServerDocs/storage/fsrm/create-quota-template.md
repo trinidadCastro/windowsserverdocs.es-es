@@ -2,18 +2,18 @@
 title: Crear una plantilla de cuota
 description: En este artículo se describe cómo crear una plantilla de cuota para definir un límite de espacio de almacenamiento
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 236b5cb198a13441a087ad6dbfeef9a416e07e61
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 28a64c77d09bffeccbbc94ba7648d1bc0227e945
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66445985"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394159"
 ---
 # <a name="create-a-quota-template"></a>Crear una plantilla de cuota
 
@@ -53,7 +53,7 @@ Por ejemplo, puedes configurar umbrales para enviar un mensaje de correo electr�
 > [!Important]
 > Para enviar notificaciones por correo electrónico y configurar los informes de almacenamiento con los parámetros adecuados para tu entorno de servidor, primero debes establecer las opciones generales del Administrador de recursos del servidor de archivos. Para obtener más información, consulta [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
 
-**Para configurar las notificaciones que generará el Administrador de recursos del servidor de archivos con un umbral de cuota**
+**Para configurar notificaciones que el servidor de archivos Administrador de recursos generará en un umbral de cuota**
 
 1. En el cuadro de diálogo **Crear plantilla de cuota**, en **Umbrales de notificación**, haz clic en **Agregar**. Aparece el cuadro de diálogo **Agregar umbral**.
 
@@ -67,7 +67,7 @@ Por ejemplo, puedes configurar umbrales para enviar un mensaje de correo electr�
 
    - Para notificar a los administradores que se ha alcanzado un umbral, selecciona la casilla de verificación **Enviar mensaje de correo electrónico a los siguientes administradores** y luego escribe los nombres de las cuentas administrativas que recibirán las notificaciones. Usa el formato <em>account@domain</em> y usa punto y coma para separar varias cuentas.
    - Para enviar un correo electrónico a la persona que guardó el archivo que alcanzó el umbral de cuota, selecciona la casilla de verificación **Enviar correo electrónico al usuario que ha superado el umbral**.
-   - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, el **\[Source Io Owner\]** variable inserta el nombre del usuario que guardó el archivo que alcanzó el umbral de cuota. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
+   - Para configurar el mensaje, edita la línea de asunto y el cuerpo del mensaje predeterminados que se muestran. El texto que aparece entre paréntesis inserta información variable sobre el evento de cuota que originó la notificación. Por ejemplo, la variable **\[Source IO Owner @ no__t-2** inserta el nombre del usuario que guardó el archivo que alcanzó el umbral de cuota. Para insertar variables adicionales en el texto, haz clic en **Insertar variable**.
    - Para configurar los encabezados adicionales (incluidos De, Cc, Bcc y Responder-a), haz clic en **Encabezados de correo electrónico adicionales**.
 
 4. Para registrar un evento:

@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 5cf74042c9b511abb1fbeb88224dea0c7f2c8706
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
-ms.translationtype: HT
+ms.openlocfilehash: 343e51f113f54c3965ef45d49f5d8fd64c260991
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
+ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59812056"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357512"
 ---
 # <a name="dynamic-access-control-overview"></a>Introducción al Control de acceso dinámico
 
@@ -24,7 +24,7 @@ En este tema introductorio para profesionales de TI se describe el Control de ac
   
 El control de acceso dinámico basado en el dominio permite a los administradores aplicar permisos de control de acceso y restricciones de acuerdo a reglas bien definidas que pueden contemplar la confidencialidad de los recursos, el trabajo o el rol del usuario y la configuración del dispositivo que se usa para acceder a tales recursos.  
   
-Por ejemplo, es posible que un usuario tenga permisos diferentes si tiene acceso a un recurso desde el equipo de su oficina o si usa un equipo portátil a través de una red privada virtual. También puede suceder que solo tenga acceso si el dispositivo cumple con los requisitos de seguridad que definen los administradores de la red. Cuando se usa el Control de acceso dinámico, los permisos de un usuario cambian dinámicamente sin intervención del administrador adicionales si tareas o el rol del usuario cambia (lo que conlleva cambios a los atributos de cuenta del usuario en AD DS).  
+Por ejemplo, es posible que un usuario tenga permisos diferentes si tiene acceso a un recurso desde el equipo de su oficina o si usa un equipo portátil a través de una red privada virtual. También puede suceder que solo tenga acceso si el dispositivo cumple con los requisitos de seguridad que definen los administradores de la red. Cuando se usa el Access Control dinámico, los permisos de un usuario cambian dinámicamente sin intervención adicional del administrador si cambia el trabajo o el rol del usuario (lo que da lugar a cambios en los atributos de la cuenta del usuario en AD DS).  
   
 No se admite el Control de acceso dinámico en sistemas operativos Windows anteriores a Windows Server 2012 y Windows 8. Cuando se configura el Control de acceso dinámico en entornos con versiones admitidas y no admitidas de Windows, solo las versiones admitidas implementarán los cambios.  
   
@@ -34,7 +34,7 @@ Entre las características y conceptos asociados con el Control de acceso dinám
   
 -   [Directivas de acceso central](#BKMK_Policies)  
   
--   [notificaciones](#BKMK_Claims)  
+-   [Surja](#BKMK_Claims)  
   
 -   [Expresiones](#BKMK_Expressions2)  
   
@@ -46,7 +46,7 @@ Una regla de acceso central es una expresión de reglas de autorización que pue
 Si se han definido una o más reglas de acceso central relativas a un dominio, los administradores de recursos compartidos de archivos pueden relacionar reglas específicas a recursos y requisitos empresariales concretos.  
   
 ### <a name="BKMK_Policies"></a>Directivas de acceso central  
-Las directivas de acceso central son directivas de autorización que incluyen expresiones condicionales. Por ejemplo, supongamos que una organización tiene un requisito empresarial para restringir el acceso a información personal identificable (PII) en archivos a solo el propietario del archivo y los miembros del departamento de recursos humanos (HR) que tienen permiso para ver información PII. Se trata de una directiva de toda la organización que se aplica a archivos de PII que estén en servidores de archivos de la organización. Para implementar esta directiva, una organización debe ser capaz de:  
+Las directivas de acceso central son directivas de autorización que incluyen expresiones condicionales. Por ejemplo, supongamos que una organización tiene un requisito empresarial de restringir el acceso a la información de identificación personal (PII) en los archivos solo al propietario del archivo y a los miembros del Departamento de recursos humanos (HR) que tienen permiso para ver la información de PII. Se trata de una directiva de toda la organización que se aplica a archivos de PII que estén en servidores de archivos de la organización. Para implementar esta directiva, una organización debe ser capaz de:  
   
 -   Identificar y marcar los archivos que contienen PII.  
   
@@ -56,8 +56,8 @@ Las directivas de acceso central son directivas de autorización que incluyen ex
   
 Las directivas de acceso central actúan como paraguas de seguridad que una organización aplica entre los servidores. Estas directivas son complementarias a las directivas de acceso local o a las listas de control de acceso discrecional (DACL) que se aplican a archivos y carpetas (si bien no las sustituyen).  
   
-### <a name="BKMK_Claims"></a>notificaciones  
-Una notificación es una información única sobre un usuario, un dispositivo o un recurso que publicó un controlador de dominio. El puesto del usuario, la clasificación del departamento de un archivo o el estado de mantenimiento de un equipo son algunos ejemplos válidos de una notificación. Una entidad puede conllevar más de una notificación y se puede usar cualquier combinación de notificaciones para autorizar el acceso a los recursos. Están disponibles los siguientes tipos de notificaciones en las versiones admitidas de Windows:  
+### <a name="BKMK_Claims"></a>Surja  
+Una notificación es una información única sobre un usuario, un dispositivo o un recurso que publicó un controlador de dominio. El título del usuario, la clasificación del Departamento de un archivo o el estado de mantenimiento de un equipo son ejemplos válidos de una demanda. Una entidad puede conllevar más de una notificación y se puede usar cualquier combinación de notificaciones para autorizar el acceso a los recursos. Están disponibles los siguientes tipos de notificaciones en las versiones admitidas de Windows:  
   
 -   **Notificaciones de usuario**: atributos de Active Directory relacionados con un usuario específico.  
   
@@ -92,7 +92,7 @@ Cada controlador de dominio debe tener la misma configuración de directiva de p
 ### <a name="support-in-active-directory-to-store-user-and-device-claims-resource-properties-and-central-access-policy-objects"></a>Compatibilidad en Active Directory para almacenar notificaciones de usuario y dispositivo, propiedades de recursos y objetos de directiva de acceso central.  
   
 ### <a name="support-for-using-group-policy-to-deploy-central-access-policy-objects"></a>Compatibilidad con el uso de la directiva de grupo para implementar objetos de directiva de acceso central.  
-La siguiente configuración de directiva de grupo le permite implementar objetos de directiva de acceso central a servidores de archivos en su organización: **Equipo Configuración Windows Windows\Configuración seguridad\Sistema Archivos\directiva de acceso**.  
+El siguiente valor de directiva de grupo le permite implementar objetos de directiva de acceso central en servidores de archivos de su organización: **Computer configuración Windows \ configuración de Seguridad\sistema archivos\directiva de Access**.  
   
 ### <a name="support-for-claims-based-file-authorization-and-auditing-for-file-systems-by-using-group-policy-and-global-object-access-auditing"></a>Compatibilidad con la autorización y auditoría de archivo basadas en notificaciones para sistemas de archivos usando la directiva de grupo y la Auditoría de acceso a objetos global  
 Debe habilitar la auditoría de directiva de acceso central almacenada provisionalmente para auditar la eficacia de acceso de una directiva de acceso central mediante permisos propuestos. Este valor se puede configurar para el equipo en **Configuración de directiva de auditoría avanzada** en la **Configuración de seguridad** de un objeto de directiva de grupo (GPO). Tras definir la configuración de seguridad en GPO, podrá implementarlo en los equipos de la red.  
@@ -119,16 +119,16 @@ En cuanto a los dominios que admiten notificaciones de usuario, cada controlador
   
 -   **Compatible**: si usa esta opción, supervise los controladores de dominio para asegurarse de que la cantidad de controladores de dominio que ejecutan las versiones compatibles de Windows Server sea suficiente para la cantidad de equipos cliente que necesita acceso a los recursos protegidos por el control de acceso dinámico.  
   
-Si el dominio del usuario y dominio del servidor de archivos están en bosques distintos, todos los controladores de dominio raíz del bosque del servidor de archivos deben establecerse en el Windows Server 2012 o el nivel funcional más alto.  
+Si el dominio del usuario y el dominio del servidor de archivos se encuentran en bosques diferentes, todos los controladores de dominio de la raíz del bosque del servidor de archivos deben establecerse en el nivel funcional de Windows Server 2012 o superior.  
   
 Si los clientes no reconocen el control de acceso dinámico, debe existir una relación de confianza bidireccional entre los dos bosques.  
   
-Si las notificaciones se transforman cuando abandonan el bosque, todos los controladores de dominio raíz del bosque del usuario se deben establecer en el Windows Server 2012 o el nivel funcional más alto.  
+Si las notificaciones se transforman cuando abandonan un bosque, todos los controladores de dominio de la raíz del bosque del usuario deben establecerse en el nivel funcional de Windows Server 2012 o superior.  
   
-Un servidor de archivos que ejecuta Windows Server 2012 o Windows Server 2012 R2 debe tener una configuración de directiva de grupo que especifica si es necesario obtener notificaciones de usuario para los tokens de usuario que no transportan notificaciones. Esta configuración está establecida de forma predeterminada en **Automática**, lo que hace que esta configuración de directiva de grupo se **active** si hay una directiva central que contiene notificaciones de usuario o dispositivo para dicho servidor de archivos. Si el servidor de archivos contiene ACL discrecionales que incluyen notificaciones de usuario, deberá activar esta directiva de grupo para que el servidor de archivos sepa que tiene que solicitar notificaciones en nombre de los usuarios que no proporcionen notificaciones cuando obtengan acceso al servidor. ****  
+Un servidor de archivos que ejecuta Windows Server 2012 o Windows Server 2012 R2 debe tener una configuración de directiva de grupo que especifica si es necesario obtener notificaciones de usuario para los tokens de usuario que no transportan notificaciones. Esta configuración está establecida de forma predeterminada en **Automática**, lo que hace que esta configuración de directiva de grupo se **active** si hay una directiva central que contiene notificaciones de usuario o dispositivo para dicho servidor de archivos. Si el servidor de archivos contiene ACL discrecionales que incluyen notificaciones de usuario, deberá activar esta directiva de grupo para que el servidor de archivos sepa que tiene que solicitar notificaciones en nombre de los usuarios que no proporcionen notificaciones cuando obtengan acceso al servidor.  
   
-## <a name="additional-resource"></a>Recursos adicionales  
-Para obtener información acerca de cómo implementar soluciones basadas en esta tecnología, vea [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md).  
+## <a name="additional-resource"></a>Recurso adicional  
+Para obtener información sobre la implementación de soluciones basadas en esta tecnología, vea [Dynamic Access Control: Información general del escenario @ no__t-0.  
   
 
 

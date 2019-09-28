@@ -1,7 +1,7 @@
 ---
-title: Evite el uso de puntos de control en una máquina virtual que se ejecuta una carga de trabajo de servidor en un entorno de producción
-description: Versión en línea del texto para esta regla de Best Practices Analyzer.
-ms.prod: windows-server-threshold
+title: Evitar el uso de puntos de control en una máquina virtual que ejecuta una carga de trabajo de servidor en un entorno de producción
+description: Versión en línea del texto de esta regla de Analizador de procedimientos recomendados.
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -10,32 +10,32 @@ ms.topic: article
 ms.assetid: 1be75890-d316-495a-b9b7-be75fc1aac10
 author: KBDAzure
 ms.date: 8/16/2016
-ms.openlocfilehash: 166ef839a40452cc4156144e10e9c666e7ce3472
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f2486093e31143b7493665d3d1254f7034ad1415
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59856156"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71365221"
 ---
-# <a name="avoid-using-checkpoints-on-a-virtual-machine-that-runs-a-server-workload-in-a-production-environment"></a>Evite el uso de puntos de control en una máquina virtual que se ejecuta una carga de trabajo de servidor en un entorno de producción
+# <a name="avoid-using-checkpoints-on-a-virtual-machine-that-runs-a-server-workload-in-a-production-environment"></a>Evitar el uso de puntos de control en una máquina virtual que ejecuta una carga de trabajo de servidor en un entorno de producción
 
 >Se aplica a: Windows Server 2016
 
 
   
-*Para obtener más información sobre análisis y los procedimientos recomendados, consulte* [Best Practices Analyzer](https://go.microsoft.com/fwlink/?LinkId=122786).  
+*Para obtener más información sobre los análisis y los procedimientos recomendados, consulte* [analizador de procedimientos recomendados](https://go.microsoft.com/fwlink/?LinkId=122786).  
   
 |Property|Detalles|  
 |-|-|  
 |**Sistema operativo**|Windows Server 2016|  
-|**Característica del producto**|Hyper-V|  
+|**Producto o característica**|Hyper-V|  
 |**Gravedad**|Advertencia|  
 |**Categoría**|Operaciones|  
 
-En las secciones siguientes, la cursiva indica texto de la interfaz de usuario que aparece en la herramienta Best Practices Analyzer para resolver este problema.
+En las secciones siguientes, cursiva indica el texto de la interfaz de usuario que aparece en la herramienta de Analizador de procedimientos recomendados para este problema.
 
 > [!NOTE]  
-> En Windows Server 2012 R2, las instantáneas de máquina virtual se cambió el nombre a los puntos de control de máquina virtual en el Administrador de Hyper-V para que coincida con la terminología usada en la administración de System Center Virtual Machine. Para obtener más información, consulte [Checkpoints and Snapshots Overview](https://technet.microsoft.com/library/dn818483.aspx).  
+> En Windows Server 2012 R2, se ha cambiado el nombre de las instantáneas de máquina virtual a los puntos de control de la máquina virtual en el administrador de Hyper-V para que coincida con la terminología que se usa en la administración de máquinas virtuales de System Center. Para obtener más información, consulte [Introducción a los puntos de comprobación e instantáneas](https://technet.microsoft.com/library/dn818483.aspx).  
   
 ## <a name="issue"></a>Problema  
   
@@ -43,16 +43,16 @@ En las secciones siguientes, la cursiva indica texto de la interfaz de usuario q
   
 ## <a name="impact"></a>Impacto  
   
-*Espacio disponible puede agotarse en el disco físico que almacena los archivos de puntos de control. Si esto ocurre, puede realizarse ninguna operación de disco adicional en el almacenamiento físico. Cualquier máquina virtual que se basa en el almacenamiento físico podría verse afectada.*  
+@no__t espacio 0Available puede quedarse en el disco físico que almacena los archivos de puntos de control. Si esto ocurre, no se pueden realizar más operaciones de disco en el almacenamiento físico. Cualquier máquina virtual que se base en el almacenamiento físico podría verse afectada. *  
   
-Si el espacio físico de disco expira, puede detenerse automáticamente cualquier máquina virtual en ejecución que tiene puntos de control o discos duros virtuales almacenados en el disco. Administrador de Hyper-V muestra el estado de estas máquinas virtuales como "pausado-crítico".  
+Si se agota el espacio en disco físico, cualquier máquina virtual en ejecución que tenga puntos de control o discos duros virtuales almacenados en ese disco puede pausarse automáticamente. El administrador de Hyper-V muestra el estado de estas máquinas virtuales como "en pausa-crítico".  
   
 ## <a name="resolution"></a>Resolución  
   
-*Si la máquina virtual se ejecuta una carga de trabajo de servidor en un entorno de producción, desconecte la máquina virtual y, a continuación, utilice el Administrador de Hyper-V para aplicar o eliminar los puntos de control. Para eliminar los puntos de control, debe apagar la máquina virtual para completar el proceso.*  
+*If la máquina virtual ejecuta una carga de trabajo de servidor en un entorno de producción, desconecta la máquina virtual y, a continuación, usa el administrador de Hyper-V para aplicar o eliminar los puntos de control. Para eliminar puntos de control, debe apagar la máquina virtual para completar el proceso.*  
   
 > [!NOTE]  
-> Los puntos de control de producción ahora están disponibles como una alternativa a los puntos de control estándares. Para obtener más información, consulte [elegir entre los puntos de control estándares o de producción](../manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md).  
+> Los puntos de control de producción ahora están disponibles como alternativa a los puntos de control estándar. Para obtener más información, consulte [elegir entre los puntos de control estándar o de producción](../manage/Choose-between-standard-or-production-checkpoints-in-Hyper-V.md).  
   
 
 

@@ -6,52 +6,52 @@ author: kgremban
 manager: femila
 ms.date: 07/13/2016
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: web-app-proxy
-ms.openlocfilehash: c4e4eb73b7d50c7618ad2c998ee484e660bcfef1
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 4f2827f02ec13d187cdf360637882c6c9d4b2441
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66446766"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71387972"
 ---
 # <a name="web-application-proxy-in-windows-server-2016"></a>Proxy de aplicación web en Windows Server 2016
 
 >Se aplica a: Windows Server 2016
 
-**Este contenido es relevante para la versión local del Proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido de Azure AD Application Proxy](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
+el contenido de **This es relevante para la versión local del proxy de aplicación Web. Para habilitar el acceso seguro a aplicaciones locales a través de la nube, consulte el [contenido del proxy de aplicación de Azure ad](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/).**  
   
-El contenido de esta sección describe las novedades y los cambios en el Proxy de aplicación Web para Windows Server 2016. Las nuevas características y cambios que se muestran aquí son los más probables que tengan el mayor impacto cuando trabaje con la versión preliminar.  
+El contenido de esta sección describe las novedades y los cambios en el proxy de aplicación web para Windows Server 2016. Las nuevas características y los cambios que se muestran aquí son los que probablemente tengan mayor impacto al trabajar con la versión preliminar.  
   
-## <a name="web-application-proxy-new-features-in-windows-server-2016"></a>Características nuevas de Proxy de aplicación Web en Windows Server 2016
+## <a name="web-application-proxy-new-features-in-windows-server-2016"></a>Nuevas características del proxy de aplicación web en Windows Server 2016
   
-- Autenticación previa de publicación de aplicaciones básica HTTP  
+- Autenticación previa para la publicación de aplicaciones básicas HTTP  
   
-  HTTP básico es el protocolo de autorización utilizado por muchos protocolos, incluidos ActiveSync, para conectarse a los clientes enriquecidos, incluidos los smartphones, con el buzón de Exchange. Proxy de aplicación Web tradicionalmente interactúa con AD FS mediante redirecciones, que no se admite en los clientes de ActiveSync. Esta nueva versión de Proxy de aplicación Web proporciona compatibilidad para publicar una aplicación mediante HTTP básica al habilitar la aplicación HTTP recibir una no basada en notificaciones de confianza para usuario autenticado para la aplicación al servicio de federación.  
+  HTTP Basic es el protocolo de autorización usado por muchos protocolos, incluido ActiveSync, para conectar clientes enriquecidos, incluidos smartphones, con el buzón de Exchange. El proxy de aplicación Web suele interactuar con AD FS mediante redireccionamientos que no se admiten en los clientes de ActiveSync. Esta nueva versión del proxy de aplicación web proporciona compatibilidad para publicar una aplicación mediante HTTP básico habilitando la aplicación HTTP para que reciba una relación de confianza para usuario autenticado no notificaciones para la aplicación en el Servicio de federación.  
   
-  Para obtener más información sobre la publicación básica de HTTP, consulte [publicar aplicaciones utilizando autenticación previa de AD FS](Publishing-Applications-using-AD-FS-Preauthentication.md#publish-an-application-that-uses-http-basic)  
+  Para obtener más información sobre la publicación HTTP Basic, consulte [publicación de aplicaciones con la autenticación previa de AD FS](Publishing-Applications-using-AD-FS-Preauthentication.md#publish-an-application-that-uses-http-basic) .  
   
-- Publicación de dominio comodín de aplicaciones  
+- Publicación de aplicaciones con un dominio comodín  
   
-  Para admitir escenarios como SharePoint 2013, la dirección URL externa de la aplicación ahora puede incluir un carácter comodín para que pueda publicar varias aplicaciones desde dentro de un dominio específico, por ejemplo, https://*.sp-apps.contoso.com. Esto simplificará la publicación de aplicaciones de SharePoint.  
+  Para admitir escenarios como SharePoint 2013, la dirección URL externa de la aplicación ahora puede incluir un carácter comodín que le permita publicar varias aplicaciones desde dentro de un dominio concreto, por ejemplo, https://*. SP-apps. contoso. com. Esto simplificará la publicación de aplicaciones de SharePoint.  
   
-- HTTP al redireccionamiento de HTTPS  
+- Redirección de HTTP a HTTPS  
   
-  Con el fin de asegurarse de que los usuarios pueden acceder a la aplicación, incluso si olvidó escribir la dirección URL HTTPS, el Proxy de aplicación Web ahora admite HTTP al redireccionamiento de HTTPS.  
+  Para asegurarse de que los usuarios puedan tener acceso a la aplicación, aunque no tengan que escribir HTTPS en la dirección URL, el proxy de aplicación web ahora admite la redirección de HTTP a HTTPS.  
   
 - Publicación HTTP  
   
-  Ahora es posible publicar aplicaciones HTTP utilizando autenticación previa de paso a través  
+  Ahora es posible publicar aplicaciones HTTP mediante la autenticación previa de paso a través.  
   
-- Publicación de aplicaciones de la puerta de enlace de escritorio remoto  
+- Publicación de aplicaciones de puerta de enlace de Escritorio remoto  
   
-  Para obtener más información sobre RDG en Proxy de aplicación Web, consulte [publicar aplicaciones con SharePoint, Exchange y RDG](../web-application-proxy/Publishing-Applications-with-SharePoint,-Exchange-and-RDG.md)  
+  Para más información sobre RDG en el proxy de aplicación Web, consulte [publicación de aplicaciones con SharePoint, Exchange y RDG](../web-application-proxy/Publishing-Applications-with-SharePoint,-Exchange-and-RDG.md)  
   
-- Nuevo registro de depuración para solucionar mejor el problema y el registro de servicio mejorada para la pista de auditoría completa y control de errores mejorado  
+- Nuevo registro de depuración para una mejor solución de problemas y un registro de servicio mejorado para la pista de auditoría completa y el control de errores mejorado  
   
-  Para obtener más información sobre cómo solucionar problemas, consulte [solución de problemas de Proxy de aplicación Web](https://technet.microsoft.com/library/dn770156.aspx)  
+  Para obtener más información sobre la solución de problemas, consulte [solución de problemas de proxy de aplicación web](https://technet.microsoft.com/library/dn770156.aspx)  
   
-- Mejoras de la interfaz de usuario de la consola de administrador  
+- Mejoras de la interfaz de usuario de Consola de administrador  
   
 - Propagación de la dirección IP del cliente a las aplicaciones de back-end  
   

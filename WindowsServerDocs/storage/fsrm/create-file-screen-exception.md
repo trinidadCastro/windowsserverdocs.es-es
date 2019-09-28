@@ -2,18 +2,18 @@
 title: Crear una excepción al filtro de archivos
 description: En este artículo se describe cómo crear una excepción al filtro de archivos
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 1f0e93cb2535862b9259d438de00c3b769c2282c
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 6a0fa660db6b03104b585c8ee78a4f20aafe5c88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866306"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403151"
 ---
 # <a name="create-a-file-screen-exception"></a>Crear una excepción al filtro de archivos
 
@@ -40,7 +40,7 @@ Asigna grupos de archivos para determinar qué tipos de archivos se permitirán 
 4.  Para especificar los archivos que se excluirán del filtrado de archivos:
 
     -   En **Grupos de archivos**, selecciona cada grupo de archivos que quieres excluir del filtrado de archivos. (Para seleccionar la casilla de verificación del grupo de archivos, haz doble clic en la etiqueta de grupo de archivos).
-    -   Si desea ver los tipos de archivo incluye y excluidos de un grupo de archivos, haga clic en la etiqueta de grupo de archivos y haga clic en **editar**.
+    -   Si desea ver los tipos de archivo que un grupo de archivos incluye y excluye, haga clic en la etiqueta del grupo de archivos y, a continuación, haga clic en **Editar**.
     -   Para crear un nuevo grupo de archivos, haga clic en **Crear**.
 
 5.  Haga clic en **Aceptar**.
@@ -48,6 +48,6 @@ Asigna grupos de archivos para determinar qué tipos de archivos se permitirán 
 ## <a name="see-also"></a>Vea también
 
 -   [Administración del filtrado de archivos](file-screening-management.md)
--   [Definir grupos de archivos para la selección](define-file-groups-for-screening.md)
+-   [Definir grupos de archivos para el filtrado](define-file-groups-for-screening.md)
 
 

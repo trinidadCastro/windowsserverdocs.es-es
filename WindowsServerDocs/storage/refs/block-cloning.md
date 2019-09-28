@@ -7,18 +7,18 @@ ms.author: gawatu
 manager: gawatu
 ms.date: 10/17/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage-file-systems
-ms.openlocfilehash: 54165700209320eee50fc63d98d78cbf4a92d053
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 81186624e19f9235cbdf8c7f0d44bd2927a68099
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59838116"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394023"
 ---
 # <a name="block-cloning-on-refs"></a>Bloquear la clonación en ReFS
 
->Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
+>Se aplica a: Windows Server 2019, Windows Server 2016, Windows Server (canal semianual)
 
 La clonación de bloques da la orden al sistema de archivos para que copie un intervalo de bytes del archivo en nombre de una aplicación, en el que el archivo de destino puede que sea el mismo o diferente del archivo de origen. Las operaciones de copia son, desgraciadamente, costosas ya que se desencadenan caras lecturas y escrituras en los datos físicos subyacentes. 
 
@@ -64,8 +64,8 @@ Tras de la escritura de modificación, la región B aún se comparte en ambos ar
 
 ## <a name="see-also"></a>Vea también
 
--   [Información general de reFS](refs-overview.md)
--   [Secuencias de integridad de reFS](integrity-streams.md)
--   [Información general de espacios directo de almacenamiento](../storage-spaces/storage-spaces-direct-overview.md)
+-   [Información general sobre ReFS](refs-overview.md)
+-   [Flujos de integridad de ReFS](integrity-streams.md)
+-   [Información general de Espacios de almacenamiento directo](../storage-spaces/storage-spaces-direct-overview.md)
 -   [DUPLICATE_EXTENTS_DATA](https://msdn.microsoft.com/library/windows/desktop/mt590821(v=vs.85).aspx)
 -   [FSCTL_DUPLICATE_EXTENTS_TO_FILE](https://msdn.microsoft.com/library/windows/desktop/mt590823(v=vs.85).aspx)

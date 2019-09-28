@@ -1,25 +1,25 @@
 ---
-title: Optimizar el rendimiento de HTTP 1.1/2
-description: Para HTTP 1.1/2 de recomendaciones de optimización del rendimiento
-ms.prod: windows-server-threshold
+title: Ajuste del rendimiento para HTTP 1.1/2
+description: Recomendaciones para la optimización del rendimiento de HTTP 1.1/2
+ms.prod: windows-server
 ms.technology: performance-tuning-guide
 ms.topic: article
 ms.author: IvanPash; GMonte
 author: phstee
 ms.date: 10/16/2017
-ms.openlocfilehash: bf85efa88e377966135c23a548119f19c39cceba
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: f7d7bd5145a0804b9ec86438602dfed7c75a2b02
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59866376"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384971"
 ---
-# <a name="performance-tuning-http-112"></a>HTTP 1.1/2 de optimización del rendimiento
+# <a name="performance-tuning-http-112"></a>Ajuste del rendimiento de HTTP 1.1/2
 
-HTTP/2 está pensado para mejorar el rendimiento del cliente (p. ej., página tiempo de carga en un explorador). En el servidor, puede representar un leve aumento en el costo de CPU. Mientras que el servidor ya no requiere una conexión TCP única para cada solicitud, algunos de los que el estado ahora se mantienen en el nivel de HTTP. Además, HTTP/2 tiene compresión de encabezados, que representa la carga de CPU adicional.
+HTTP/2 está diseñado para mejorar el rendimiento en el lado del cliente (por ejemplo, el tiempo de carga de la página en un explorador). En el servidor, puede representar un leve aumento en el costo de la CPU. Mientras que el servidor ya no requiere una única conexión TCP para cada solicitud, parte de ese estado se conservará ahora en la capa HTTP. Además, HTTP/2 tiene compresión de encabezado, que representa la carga de CPU adicional.
 
-Algunas situaciones requieren una reserva (restablecer la conexión HTTP/2 y en su lugar, establecer una nueva conexión para usar HTTP/1.1) de HTTP/1.1. En concreto, renegociación de TLS y autenticación HTTP (distintos de básica e implícita) requieren reserva HTTP/1.1. Aunque esto agrega sobrecarga, estas operaciones ya implican cierto retraso y por lo que no son especialmente sensibles al rendimiento.
+Algunas situaciones requieren una reserva HTTP/1.1 (restableciendo la conexión HTTP/2 y, en su lugar, el establecimiento de una conexión nueva para usar HTTP/1.1). En concreto, la renegociación de TLS y la autenticación HTTP (excepto básica e implícita) requieren la reserva HTTP/1.1. Aunque esto agrega sobrecarga, estas operaciones ya implican cierto retraso y, por tanto, no son especialmente sensibles al rendimiento.
 
 ## <a name="see-also"></a>Vea también
-- [Optimización del rendimiento de servidor de Web](index.md) 
+- [Ajuste del rendimiento del servidor Web](index.md) 
 - [Optimización del rendimiento de IIS 10.0](tuning-iis-10.md)

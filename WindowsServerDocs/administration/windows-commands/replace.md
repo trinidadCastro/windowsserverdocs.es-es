@@ -1,8 +1,8 @@
 ---
 title: replace
-description: Obtenga información sobre cómo usar el comando replace para reemplazar los archivos.
+description: Obtenga información acerca de cómo usar el comando Replace para reemplazar archivos.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 07/11/2018
-ms.openlocfilehash: 293534a2287fe0219643dacc88926018c37dbdcc
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 0e96be58106847a3ff6451cdb7792a197ec40227
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441770"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384512"
 ---
 # <a name="replace"></a>replace
 
 
 
-Reemplaza los archivos. Si se usa con el **/a** opción, **reemplazar** agrega nuevos archivos en un directorio en lugar de reemplazar los archivos existentes.
+Reemplaza los archivos. Si se usa con la opción **/a** , **reemplazar** agrega nuevos archivos a un directorio en lugar de reemplazar los archivos existentes.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -39,44 +39,44 @@ replace [<Drive1>:][<Path1>]<FileName> [<Drive2>:][<Path2>] [/p] [/r] [/s] [/w] 
 
 |Parámetro|Descripción|
 |---------|-----------|
-|[\<Drive1>:][\<Path1>]\<FileName>|Especifica la ubicación y el nombre del archivo de origen o un conjunto de archivos. *Nombre de archivo* es necesario y puede incluir caracteres comodín ( **&#42;** y **?** ).|
-|[\<Drive2>:][\<Path2>]|Especifica la ubicación del archivo de destino. No se puede especificar un nombre de archivo para reemplazar los archivos. Si no especifica una unidad o ruta de acceso, **reemplazar** usa la unidad actual y el directorio como el destino.|
-|/a|Agrega nuevos archivos al directorio de destino en lugar de reemplazar los archivos existentes. No se puede usar esta opción de línea de comandos con el **/s** o **/u** opción de línea de comandos.|
-|/p|Solicita confirmación antes de reemplazar un archivo de destino o agregar un archivo de origen.|
-|/r|Reemplaza los archivos de solo lectura y sin proteger. Si intenta reemplazar un archivo de solo lectura, pero no se especifica **/r**, un error y se detendrá la operación de reemplazo.|
-|/w|Espera que se va a insertar un disco antes de que comience la búsqueda de archivos de código fuente. Si no especifica **/w**, **reemplazar** comienza a reemplazar o agregar archivos inmediatamente después de presionar ENTRAR.|
-|/s|Busca en todos los subdirectorios del directorio de destino y reemplaza los archivos coincidentes. No puede usar **/s** con el **/a** opción de línea de comandos. El **reemplazar** comando no busca en subdirectorios que se especifican en *Path1*.|
-|/u|Reemplaza solo esos archivos en el directorio de destino que son anteriores a los del directorio de origen. No puede usar **/u** con el **/a** opción de línea de comandos.|
+|[\<Drive1 >:] [\<Path1 >] \<FileName >|Especifica la ubicación y el nombre del archivo de código fuente o del conjunto de archivos. *Filename* es obligatorio y puede incluir caracteres comodín ( **&#42;** y **?** ).|
+|[\<Drive2 >:] [\<Path2 >]|Especifica la ubicación del archivo de destino. No se puede especificar un nombre de archivo para los archivos que se reemplacen. Si no especifica una unidad o una ruta de acceso, **Replace** utiliza la unidad y el directorio actuales como destino.|
+|/a|Agrega nuevos archivos al directorio de destino en lugar de reemplazar los archivos existentes. No puede usar esta opción de línea de comandos con la opción de línea de comandos **/s** o **/u** .|
+|/p|Le pide confirmación antes de reemplazar un archivo de destino o de agregar un archivo de origen.|
+|/r|Reemplaza los archivos de solo lectura y los no protegidos. Si intenta reemplazar un archivo de solo lectura, pero no especifica **/r**, se genera un error y se detiene la operación de reemplazo.|
+|/w|Espera a que inserte un disco antes de que se inicie la búsqueda de archivos de código fuente. Si no especifica **/w**, **Replace** comienza a reemplazar o agregar archivos inmediatamente después de presionar entrar.|
+|/s|Busca todos los subdirectorios en el directorio de destino y reemplaza los archivos coincidentes. No se puede usar **/s** con la opción de línea de comandos **/a** . El comando **Replace** no busca subdirectorios que se especifican en *ruta1*.|
+|/u|Reemplaza solo los archivos del directorio de destino que sean más antiguos que los del directorio de origen. No se puede usar **/u** con la opción de línea de comandos **/a** .|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
-- Como **reemplazar** agrega o reemplaza archivos, el archivo se muestran los nombres en la pantalla. Después de **reemplazar** haya finalizado, se muestra una línea de resumen en uno de los siguientes formatos:  
+- Cuando **Replace** agrega o reemplaza archivos, los nombres de archivo se muestran en la pantalla. Una vez finalizado el **reemplazo** , se muestra una línea de resumen en uno de los siguientes formatos:  
   ```
   nnn files added
   nnn files replaced
   no file added
   no file replaced
   ```  
-- Si usas los disquetes y necesita cambiar discos durante la **reemplazar** operación, puede especificar el **/w** opción de línea de comandos para que **reemplazar** esperará para que pueda cambiar los discos.
-- No puede usar **reemplazar** para actualizar los archivos ocultos o archivos del sistema.
-- En la tabla siguiente se muestra los códigos de salida y una breve descripción de su significado:  
+- Si usa disquetes y necesita cambiar de disco durante la operación de **reemplazo** , puede especificar la opción de línea de comandos **/w** para que **Replace** espere a que cambie los discos.
+- No se puede usar **reemplazar** para actualizar archivos ocultos o archivos del sistema.
+- En la tabla siguiente se muestra cada código de salida y una breve descripción de su significado:  
   |Código de salida|Descripción|
   |---------|-----------|
-  |0|El **reemplazar** comando reemplaza o agrega los archivos correctamente.|
-  |1|El **reemplazar** comando encontró una versión incorrecta de MS-DOS.|
-  |2|El **reemplazar** comando no encontró los archivos de origen.|
-  |3|El **reemplazar** comando no encontró la ruta de acceso de origen o destino.|
-  |5|El usuario no tiene acceso a los archivos que se va a reemplazar.|
-  |8|No hay memoria de sistema insuficiente para llevar a cabo el comando.|
-  |11|El usuario ha utilizado una sintaxis incorrecta en la línea de comandos.|
+  |0|El comando **Replace** ha reemplazado o agregado los archivos correctamente.|
+  |1|El comando **Replace** encontró una versión incorrecta de ms-dos.|
+  |2|El comando **Replace** no encontró los archivos de origen.|
+  |3|El comando **Replace** no encontró la ruta de acceso de origen o de destino.|
+  |5|El usuario no tiene acceso a los archivos que desea reemplazar.|
+  |8|No hay suficiente memoria del sistema para ejecutar el comando.|
+  |11|El usuario usó la sintaxis incorrecta en la línea de comandos.|
 
 > [!NOTE]
-> Puede usar el parámetro ERRORLEVEL en el **si** línea de comandos en un programa por lotes para procesar los códigos de salida devueltos por **reemplazar**.
+> Puede usar el parámetro ERRORLEVEL en la línea de comandos **If** en un programa por lotes para procesar códigos de salida devueltos por **Replace**.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para actualizar todas las versiones de un archivo denominado teléfono.CLI (que aparecen en varios directorios en la unidad C), con la versión más reciente del archivo teléfono.CLI desde un disquete en la unidad, escriba:
+Para actualizar todas las versiones de un archivo denominado PHONES. CLI (que aparecen en varios directorios de la unidad C), con la versión más reciente del archivo PHONES. CLI de un disquete en la unidad A, escriba:
 
 `replace a:\phones.cli c:\ /s`
 

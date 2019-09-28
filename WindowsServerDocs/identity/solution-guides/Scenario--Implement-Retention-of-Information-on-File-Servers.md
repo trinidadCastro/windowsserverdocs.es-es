@@ -1,20 +1,20 @@
 ---
 ms.assetid: 81c55015-82e5-4ba1-b15e-cc7b49af28fc
-title: Escenario implementar retención de información en servidores de archivos
+title: Escenario de implementación de la retención de información en servidores de archivos
 description: ''
 author: billmath
 ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 59fd7f0a0a4d9ed8f5cec57b17be21e1aa4cd592
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: b6df28987e9e6d2fa1382b00e9403f2d112fc226
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880256"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406986"
 ---
 # <a name="scenario-implement-retention-of-information-on-file-servers"></a>Escenario: Implementar la retención de información en servidores de archivos
 
@@ -27,23 +27,23 @@ La infraestructura de clasificación de archivos y el Administrador de recursos 
   
 Encontrarás más información sobre cómo configurar la retención en [Planificar la retención de información en servidores de archivos](assetId:///edf13190-7077-455a-ac01-f534064a9e0c).  
   
-Puede encontrar pasos para clasificar archivos para retención legal y configurar un período de retención en [implementar implementar retención de información en servidores de archivos &#40;pasos de demostración&#41;](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md).  
+Puede encontrar los pasos para clasificar archivos para la retención legal y la configuración de un período de retención en implementación de la [implementación &#40;de la&#41;retención de información en servidores de archivos pasos](Deploy-Implementing-Retention-of-Information-on-File-Servers--Demonstration-Steps-.md)de la demostración.  
   
 > [!NOTE]  
-> En ese escenario solo se describe cómo clasificar manualmente un documento para retención legal. Sin embargo, es posible en Windows Server 2012 para clasificar documentos automáticamente para retención legal. Una manera de hacerlo es crear un clasificador de Windows PowerShell que compare el propietario del archivo con una lista de cuentas de usuario que están en retención legal. Si el propietario del archivo forma parte de la lista de cuentas de usuario, el archivo se clasifica para retención legal.  
+> En ese escenario solo se describe cómo clasificar manualmente un documento para retención legal. Sin embargo, en Windows Server 2012 es posible clasificar documentos automáticamente para la retención legal. Una manera de hacerlo es crear un clasificador de Windows PowerShell que compare el propietario del archivo con una lista de cuentas de usuario que están en retención legal. Si el propietario del archivo forma parte de la lista de cuentas de usuario, el archivo se clasifica para retención legal.  
   
 ## <a name="in-this-scenario"></a>En este escenario  
 Este escenario forma parte del escenario de control de acceso dinámico. Para obtener más información sobre el control de acceso dinámico, consulta:  
   
--   [Control de acceso dinámico: Información general del escenario](Dynamic-Access-Control--Scenario-Overview.md)  
+-   [Control de acceso dinámico: Información general sobre el escenario](Dynamic-Access-Control--Scenario-Overview.md)  
   
 ## <a name="BKMK_NEW"></a>Características incluidas en este escenario  
 En la tabla siguiente, se enumeran las características que forman parte de este escenario y se describe la manera en que son compatibles con él.  
   
 |Característica|Compatibilidad con este escenario|  
 |-----------|---------------------------------|  
-|[Información general del Administrador de recursos del servidor de archivos](https://technet.microsoft.com/library/hh831701.aspx)|La infraestructura de clasificación de archivos es una característica incluida en el Administrador de recursos del servidor de archivos.|  
-|[Información general de servicios de almacenamiento y de archivo](https://technet.microsoft.com/library/hh831487.aspx)|Administrador de recursos del servidor de archivos es una característica incluida en el rol de servidor Servicios de archivo.|  
+|[Información general de Administrador de recursos de servidor de archivos](https://technet.microsoft.com/library/hh831701.aspx)|La infraestructura de clasificación de archivos es una característica incluida en el Administrador de recursos del servidor de archivos.|  
+|[Introducción a los servicios de archivos y almacenamiento](https://technet.microsoft.com/library/hh831487.aspx)|Administrador de recursos del servidor de archivos es una característica incluida en el rol de servidor Servicios de archivo.|  
   
   
 

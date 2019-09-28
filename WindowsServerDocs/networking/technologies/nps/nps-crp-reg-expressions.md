@@ -2,19 +2,19 @@
 title: Usar expresiones regulares de NPS
 description: En este tema se explica el uso de expresiones regulares para la coincidencia de patrones en NPS en Windows Server. Puede usar esta sintaxis para especificar las condiciones de los atributos de directiva de red y los dominios RADIUS.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: bc22d29c-678c-462d-88b3-1c737dceca75
 ms.author: jgerend
 author: jasongerend
 msdate: 08/16/2019
-ms.openlocfilehash: 76615fcccfe06333a76f872b52d2e88182fd60e5
-ms.sourcegitcommit: e58e1646ffd75d4a89576d967b2dbbbb84764303
+ms.openlocfilehash: 94bb9b54dba046c57c6f82e6a52a71adbcf4ce75
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "69584791"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71396378"
 ---
 # <a name="use-regular-expressions-in-nps"></a>Usar expresiones regulares de NPS
 
@@ -26,7 +26,7 @@ En este tema se explica el uso de expresiones regulares para la coincidencia de 
 
 Puede utilizar la tabla siguiente como origen de referencia al crear expresiones regulares con sintaxis de coincidencia de patrones. Tenga en cuenta que los patrones de expresiones regulares suelen estar rodeados por barras diagonales (/).
 
-|  Óptico  |  Descripción  |   Ejemplo                                                                 |
+|  óptico  |  Descripción  |   Ejemplo                                                                 |
 | ----------- | ------------- | ------------------------------------------------------------------------  |
 |     `\ `     | Indica que el carácter que sigue es un carácter especial o que se debe interpretar literalmente.  | `/n/ matches the character "n" while the sequence /\n/ matches a line feed or newline character.`  |
 |     `^`     |                                                                 Coincide con el principio de la entrada o de la línea.                                                                  |                                                                 &nbsp;                                                                  |
@@ -35,28 +35,28 @@ Puede utilizar la tabla siguiente como origen de referencia al crear expresiones
 |     `+`     |                                                              Coincide con el carácter anterior una o más veces.                                                              |                                                   `/zo+/ matches "zoo" but not "z."`                                                    |
 |     `?`     |                                                              Coincide con el carácter anterior cero o una vez.                                                              |                                                 `/a?ve?/ matches the "ve" in "never."`                                                  |
 |     `.`     |                                                           Coincide con cualquier carácter individual excepto con un carácter de nueva línea.                                                           |                                                                 &nbsp;                                                                  |
-| `(pattern)` |                         Coincide con "pattern" y recuerda la coincidencia.<br />Para buscar coincidencias `(` con `)` los caracteres literales y ( `\(` paréntesis `\)`), use o.                         |                                                                 &nbsp;                                                                  |
+| `(pattern)` |                         Coincide con "pattern" y recuerda la coincidencia.<br />Para buscar coincidencias con los caracteres literales `(` y `)` (paréntesis), use `\(` o `\)`.                         |                                                                 &nbsp;                                                                  |
 |   `x | y `  |                                                                               Coincide con x o y.                                                          |
-|   `{n} `    |                                                          Coincide exactamente n veces \(n es un entero\-\)no negativo.                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
-|   `{n,}`    |                                                          Coincide al menos n veces \(n es un entero\-\)no negativo.                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
-|   `{n,m}`   |                                                Coincide como mínimo n veces \(m y n son enteros\)no\-negativos.                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
-|   `[xyz]`   |                                                       Coincide con cualquiera de los caracteres \(delimitados de un juego\)de caracteres.                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
-|  `[^xyz]`   |                                                  Coincide con cualquier carácter que no esté \(incluido en un juego\)de caracteres negativos.                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
-|    `\b`     |                                                              Coincide con un límite \(de palabra, por ejemplo\), un espacio.                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
+|   `{n} `    |                                                          Coincide exactamente n veces \(n (es un entero que no es de no__t 1negative @ no__t-2.                                                           |               `/o{2}/ does not match the "o" in "Bob," but matches the first two instances of the letter o in "foooood."`               |
+|   `{n,}`    |                                                          Coincide al menos n veces \(n (es un entero que no es de no__t 1negative @ no__t-2.                                                          | `/o{2,}/ does not match the "o" in "Bob" but matches all of the instances of the letter o in "foooood." /o{1,}/ is equivalent to /o+/.` |
+|   `{n,m}`   |                                                Coincide al menos n veces y como máximo m veces \(m y n son enteros que no son @ no__t-1negative enteros @ no__t-2.                                                |                               `/o{1,3}/ matches the first three instances of the letter o in "fooooood."`                               |
+|   `[xyz]`   |                                                       Coincide con cualquiera de los caracteres delimitados @no__t el juego de caracteres-0A @ no__t-1.                                                        |                                                  `/[abc]/ matches the "a" in "plain."`                                                  |
+|  `[^xyz]`   |                                                  Coincide con cualquier carácter que no esté incluido en \(A juego de caracteres negativos @ no__t-1.                                                  |                                                 `/[^abc]/ matches the "p" in "plain."`                                                  |
+|    `\b`     |                                                              Coincide con un límite de palabras @no__t ejemplo 0for, un espacio @ no__t-1.                                                               |                                              `/ea*r\b/ matches the "er" in "never early."`                                              |
 |    `\B`     |                                                                         Coincide con un límite que no es de palabra.                                                                          |                                             `/ea*r\B/ matches the "ear" in "never early."`                                              |
-|    `\d`     |                                                       Coincide con un carácter \(de dígito equivalente a dígitos de 0\)a 9.                                                        |                                                                 &nbsp;                                                                  |
-|    `\D`     |                                                           Coincide con un carácter \(que no es un dígito equivalente a. `[^0-9]` \)                                                           |                                                                 &nbsp;                                                                  |
+|    `\d`     |                                                       Coincide con un carácter de dígito \(equivalent con dígitos de 0 a 9 @ no__t-1.                                                        |                                                                 &nbsp;                                                                  |
+|    `\D`     |                                                           Coincide con un carácter que no es un dígito \(equivalent a `[^0-9]` @ no__t-2.                                                           |                                                                 &nbsp;                                                                  |
 |    `\f`     |                                                                        Coincide con un carácter de avance de la forma.                                                                        |                                                                 &nbsp;                                                                  |
 |    `\n`     |                                                                        Coincide con un carácter de avance de línea.                                                                        |                                                                 &nbsp;                                                                  |
 |    `\r`     |                                                                     Coincide con un carácter de retorno de carro.                                                                     |                                                                 &nbsp;                                                                  |
-|    `\s`     |                                   Coincide con cualquier carácter de espacio en blanco incluido el espacio, la \(tabulación `[ \f\n\r\t\v]`y la fuente de formularios equivalentes a \).                                   |                                                                 &nbsp;                                                                  |
-|    `\S`     |                                                  Coincide con cualquier carácter \(que no sea un espacio en blanco equivalente a. `[^ \f\n\r\t\v]` \)                                                   |                                                                 &nbsp;                                                                  |
+|    `\s`     |                                   Coincide con cualquier carácter de espacio en blanco incluido el espacio, la tabulación y la fuente de formularios \(equivalent a `[ \f\n\r\t\v]` @ no__t-2.                                   |                                                                 &nbsp;                                                                  |
+|    `\S`     |                                                  Coincide con cualquier carácter que no sea un espacio en blanco \(equivalent a `[^ \f\n\r\t\v]` @ no__t-2.                                                   |                                                                 &nbsp;                                                                  |
 |    `\t`     |                                                                           Coincide con un carácter de tabulación.                                                                           |                                                                 &nbsp;                                                                  |
 |    `\v`     |                                                                      Coincide con un carácter de tabulación vertical.                                                                       |                                                                 &nbsp;                                                                  |
-|    `\w`     |                                              Coincide con cualquier carácter de palabra, incluido \(el carácter `[A-Za-z0-9_]`de subrayado equivalente a \).                                              |                                                                 &nbsp;                                                                  |
-|    `\W`     |                                           Coincide con cualquier\-carácter que no sea de palabra \(, excepto `[^A-Za-z0-9_]`el carácter de subrayado equivalente a \).                                           |                                                                 &nbsp;                                                                  |
-|   `\num`    | Hace referencia a las \(coincidencias `?num`recordadas, donde NUM\)es un entero positivo.  Esta opción solo se puede usar en el cuadro de texto **reemplazar** al configurar la manipulación de atributos. |                                       `\1`reemplaza lo que se almacena en la primera coincidencia memorizada.                                       |
-|   `/n/ `    |                      Permite la inserción de códigos ASCII en expresiones \( `?n`regulares, donde n es un valor\)de escape octal, hexadecimal o decimal.                       |                                                                 &nbsp;                                                                  |
+|    `\w`     |                                              Coincide con cualquier carácter de palabra, incluido el subrayado \(equivalent en `[A-Za-z0-9_]` @ no__t-2.                                              |                                                                 &nbsp;                                                                  |
+|    `\W`     |                                           Coincide con cualquier carácter que no sea @ no__t-0word, excepto el subrayado \(equivalent a `[^A-Za-z0-9_]` @ no__t-3.                                           |                                                                 &nbsp;                                                                  |
+|   `\num`    | Hace referencia a las coincidencias recordadas \( @ no__t-1, donde NUM es un entero positivo @ no__t-2.  Esta opción solo se puede usar en el cuadro de texto **reemplazar** al configurar la manipulación de atributos. |                                       `\1` reemplaza lo que se almacena en la primera coincidencia memorizada.                                       |
+|   `/n/ `    |                      Permite la inserción de códigos ASCII en expresiones regulares \( @ no__t-1, donde n es un valor octal, hexadecimal o de escape decimal @ no__t-2.                       |                                                                 &nbsp;                                                                  |
 
 ## <a name="examples-for-network-policy-attributes"></a>Ejemplos de atributos de directiva de red
 
@@ -76,23 +76,23 @@ En los siguientes ejemplos se describe el uso de la sintaxis de coincidencia de 
 
 **Para quitar la parte del dominio Kerberos del atributo de nombre de usuario**
 
-En un escenario de acceso telefónico de origen en el que un proveedor \(\) de servicios Internet envía solicitudes de conexión a un NPS de la organización, el proxy RADIUS del ISP podría requerir un nombre de dominio Kerberos para enrutar la solicitud de autenticación. Sin embargo, es posible que el NPS no reconozca la parte del nombre de dominio Kerberos del nombre de usuario. Por lo tanto, el proxy RADIUS del ISP debe quitar el nombre de dominio Kerberos antes de reenviarlo al NPS de la organización.
+En un escenario de acceso telefónico de origen en el que un proveedor de servicios de Internet \(ISP @ no__t-1 enruta las solicitudes de conexión a un NPS de la organización, el proxy RADIUS del ISP podría requerir un nombre de dominio Kerberos para enrutar la solicitud de autenticación. Sin embargo, es posible que el NPS no reconozca la parte del nombre de dominio Kerberos del nombre de usuario. Por lo tanto, el proxy RADIUS del ISP debe quitar el nombre de dominio Kerberos antes de reenviarlo al NPS de la organización.
 
-- Buscar: @microsoft \.com
+- Buscar: @microsoft @ no__t-1com
 
 - Reemplazar:
 
-**Para reemplazar <em>user@example.microsoft.com</em> por _example. Microsoft. com\user_**
+**Para reemplazar <em>user@example.microsoft.com</em> por _ejemplo. Microsoft. com\user_**
 
-- Localización`(.*)@(.*)`
+- Buscar: `(.*)@(.*)`
 
-- Reemplace`$2\$1`
+- Reemplazar: `$2\$1`
 
 
 
 **Para reemplazar _dominio\usuario_ por _specific_domain\user_**
 
-- Localización`(.*)\\(.*)`
+- Buscar: `(.*)\\(.*)`
 
 - Reemplazar: *specific_domain*`\$2`
 
@@ -100,7 +100,7 @@ En un escenario de acceso telefónico de origen en el que un proveedor \(\) de s
 
 <strong>Para reemplazar el *usuario* por *user@specific_domain</strong>*
 
-- Localización`$`
+- Buscar: `$`
 
 - Reemplazar: @*specific_domain*
 
@@ -108,14 +108,14 @@ En un escenario de acceso telefónico de origen en el que un proveedor \(\) de s
 
 Puede crear reglas de enrutamiento que reenvíen mensajes RADIUS con un nombre de dominio Kerberos especificado a un conjunto de servidores RADIUS cuando NPS se usa como proxy RADIUS. La siguiente es una sintaxis recomendada para el enrutamiento de solicitudes en función del nombre de dominio Kerberos.
 
-- **Nombre NetBIOS**:`WCOAST`
-- **Patrón**:`^wcoast\\`
+- **Nombre NetBIOS**: `WCOAST`
+- **Patrón**: `^wcoast\\`
 
 En el ejemplo siguiente, wcoast.microsoft.com es un sufijo de nombre principal de usuario (UPN) único para DNS o Active Directory dominio wcoast.microsoft.com. Con el patrón proporcionado, el proxy NPS puede enrutar los mensajes según el nombre NetBIOS o el sufijo UPN del dominio.
 
-- **Nombre NetBIOS**:`WCOAST`
-- **Sufijo UPN**:`wcoast.microsoft.com`
-- **Patrón**:`^wcoast\\|@wcoast\.microsoft\.com$`
+- **Nombre NetBIOS**: `WCOAST`
+- **Sufijo UPN**: `wcoast.microsoft.com`
+- **Patrón**: `^wcoast\\|@wcoast\.microsoft\.com$`
 
 
 Para obtener más información sobre la administración de NPS, consulte [administrar el servidor de directivas de redes](nps-manage-top.md).

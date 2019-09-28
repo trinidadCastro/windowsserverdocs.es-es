@@ -2,7 +2,7 @@
 title: Suspender y dejar activa la sesión de usuario
 description: Obtenga información sobre cómo suspender a un usuario de una sesión de Multipoint sin desconectarlo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ author: lizap
 manager: dongill
 ms.author: elizapo
 ms.date: 08/04/2016
-ms.openlocfilehash: a7c94b9d1edd36efc8651e35dfabbc95239335cb
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 0ef9d98584df568438cc3c905a7c86cd58f53343
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871534"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394931"
 ---
 # <a name="suspend-and-leave-user-session-active"></a>Suspender y dejar activa la sesión de usuario
 Puede desconectar o suspender a los usuarios del sistema Multipoint Services si no desea finalizar las sesiones de los usuarios. Un usuario también puede desconectar la sesión, en lugar de ser el usuario administrativo el que la desconecte. Mientras se suspende una sesión de usuario, la sesión permanece activa en la memoria del equipo del sistema Multipoint Services hasta que el equipo se apaga o se reinicia. En ese momento, todas las sesiones suspendidas finalizan y se perderá todo el trabajo que no se haya guardado.  

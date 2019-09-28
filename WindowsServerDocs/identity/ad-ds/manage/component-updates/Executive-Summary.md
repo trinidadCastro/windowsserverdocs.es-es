@@ -7,27 +7,27 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/08/2018
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: a3eecec9d47f91bb6a9ba549abc3bf62482b2f49
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: a24c88f5469890f12f821b9f729c7d283b687f43
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59863286"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71389904"
 ---
 # <a name="executive-summary"></a>Resumen ejecutivo
 
 >Se aplica a: Windows Server 2012
 
 >[!IMPORTANT] 
->La siguiente documentación se escribió en 2013 y se proporciona únicamente con fines históricos.  Actualmente, revisamos esta documentación y está sujeta a cambios.  No pueden reflejar los procedimientos recomendados actuales.
+>La siguiente documentación se escribió en 2013 y se proporciona solo con fines históricos.  Actualmente se está revisando esta documentación y está sujeta a cambios.  Puede que no refleje las prácticas recomendadas actuales.
 
-Ninguna organización con una infraestructura tecnológica (TI) es inmune a los ataques, pero se implementan los controles, los procesos y las directivas apropiadas para proteger segmentos clave de la infraestructura informática de la organización, es posible evitar que crezca a un riesgo por mayor en el entorno informático de un evento de infracción.  
+Ninguna organización con una infraestructura de tecnología de la información (TI) es inmune a los ataques, pero si se implementan las directivas, los procesos y los controles adecuados para proteger los segmentos clave de la infraestructura informática de una organización, es posible que evitar que un evento de infracción crezca hasta un riesgo mayorista del entorno informático.  
   
-Este resumen ejecutivo está pensado para ser útiles como un documento independiente resumir el contenido del documento, que contiene las recomendaciones que le ayudarán a las organizaciones mejorar la seguridad de sus instalaciones de Active Directory. Al implementar estas recomendaciones, será capaz de identificar y priorizar las actividades de seguridad, proteger segmentos clave de la infraestructura informática de su organización y crear controles que disminuyen significativamente la probabilidad de que las organizaciones ataques contra los componentes críticos del entorno de TI.  
+Este Resumen Ejecutivo está pensado para ser útil como un documento independiente que resume el contenido del documento, que contiene recomendaciones que ayudarán a las organizaciones a mejorar la seguridad de sus instalaciones Active Directory. Mediante la implementación de estas recomendaciones, las organizaciones podrán identificar y priorizar las actividades de seguridad, proteger los segmentos clave de la infraestructura informática de su organización y crear controles que reduzcan significativamente la probabilidad de ataques exitosos contra componentes críticos del entorno de ti.  
   
-Aunque este documento describen los ataques más comunes con Active Directory y contramedidas para reducir la superficie de ataque, contiene también recomendaciones para la recuperación en caso de puesta en peligro. Es la única forma de recuperar en caso de un riesgo importante para Active Directory para estar preparado para el riesgo antes de que suceda.  
+Aunque este documento describe los ataques más comunes contra Active Directory y contramedidas para reducir la superficie expuesta a ataques, también contiene recomendaciones para la recuperación en caso de que se produzca un riesgo completo. La única forma de garantizar la recuperación en caso de que se produzca un riesgo completo de Active Directory se debe preparar para el riesgo antes de que ocurra.  
   
 Las secciones principales de este documento son:  
   
@@ -40,162 +40,162 @@ Las secciones principales de este documento son:
 -   Planeación de compromiso  
   
 ## <a name="avenues-to-compromise"></a>Vías de compromiso  
-Esta sección proporciona información sobre algunas de las vulnerabilidades con más frecuencia aprovechadas utilizadas por los atacantes para poner en peligro las infraestructuras de los clientes. Que contiene categorías generales de las vulnerabilidades y cómo se usan para inicialmente penetrar en infraestructuras de los clientes, propagar compromiso entre sistemas adicionales y detectar finalmente Active Directory y controladores de dominio para obtener una completa control de los bosques de la organización. No proporciona recomendaciones detalladas acerca de cómo tratar cada tipo de vulnerabilidad, especialmente en las áreas en que las vulnerabilidades no se usan para tener como destino directamente de Active Directory. Sin embargo, para cada tipo de vulnerabilidad, se proporcionan vínculos a información adicional que se utilizará para desarrollar contramedidas y reducir la superficie expuesta a ataques de la organización.  
+En esta sección se proporciona información sobre algunas de las vulnerabilidades de uso más frecuente utilizadas por los atacantes para poner en peligro las infraestructuras de los clientes. Contiene categorías generales de vulnerabilidades y cómo se usan para penetrar inicialmente las infraestructuras de los clientes, propagar el compromiso entre sistemas adicionales y, finalmente, dirigirse a Active Directory y controladores de dominio para obtener el completo control de los bosques de la organización. No proporciona recomendaciones detalladas sobre cómo abordar cada tipo de vulnerabilidad, especialmente en las áreas en las que las vulnerabilidades no se usan para dirigirse directamente a Active Directory. Sin embargo, para cada tipo de vulnerabilidad, se proporcionan vínculos a información adicional que se utiliza para desarrollar contramedidas y reducir la superficie expuesta a ataques de la organización.  
   
-Incluidos son los siguientes temas:  
+Se incluyen los siguientes temas:  
   
--   **Inicial infracción destinos** -inician la mayoría de las infracciones de seguridad de información con el riesgo de pequeños trozos de sistemas de infraestructura-a menudo una o dos de la organización a la vez. Estos eventos iniciales, o puntos de entrada en la red, a menudo aprovechan las vulnerabilidades que se han corregido, pero que no estaban. Las vulnerabilidades habituales son:  
+-   **Objetivos de infracción iniciales** : la mayoría de las infracciones de seguridad de la información comienzan con el riesgo de pequeñas partes de la infraestructura de una organización, a menudo uno o dos sistemas a la vez. Estos eventos iniciales, o puntos de entrada en la red, a menudo aprovechan vulnerabilidades que podrían haberse corregido, pero no. Las vulnerabilidades más comunes son las siguientes:  
   
-    -   Vacíos en las implementaciones de antivirus y antimalware.  
+    -   Brechas en las implementaciones de antivirus y antimalware  
   
-    -   Aplicación de revisiones incompleta  
+    -   Revisión incompleta  
   
-    -   Sistemas operativos y aplicaciones obsoletas  
+    -   Aplicaciones y sistemas operativos obsoletos  
   
-    -   configuración incorrecta  
+    -   Configuración incorrecta  
   
     -   Falta de prácticas de desarrollo de aplicaciones seguras  
   
--   **Cuentas atractivas para el robo de credenciales** -ataques de robo de credenciales son aquellos en los que un atacante inicialmente obtiene acceso con privilegios a un equipo en una red y, a continuación, usa las herramientas disponibles gratuitamente para extraer las credenciales de las sesiones de otros ha iniciado sesión las cuentas.   
-    En esta sección son los siguientes:  
+-   **Cuentas atractivas para el robo de credenciales** : los ataques de robo de credenciales son aquellos en los que un atacante gana inicialmente el acceso con privilegios a un equipo de una red y, a continuación, usa herramientas disponibles gratuitamente para extraer las credenciales de las sesiones de otros cuentas con sesión iniciada.   
+    En esta sección se incluyen los siguientes:  
   
-    -   **Las actividades que aumentan la probabilidad de peligro** : porque el destino de robo de credenciales es normalmente las cuentas de dominio con privilegios elevados y "person muy importante" cuentas (VIP), es importante ser consciente de los administradores de actividades que aumentan la probabilidad de éxito de un ataque de robo de credenciales. Estas actividades son:  
+    -   **Actividades que aumentan la probabilidad de riesgo** : dado que el objetivo del robo de credenciales suele ser cuentas de dominio con privilegios elevados y cuentas de "persona muy importante" (VIP), es importante que los administradores sean conscientes de las actividades. que aumentan la probabilidad de éxito de un ataque de robo de credenciales. Estas actividades son las siguientes:  
   
-        -   Iniciar sesión en equipos no protegidos con las cuentas con privilegios  
+        -   Inicio de sesión en equipos no seguros con cuentas con privilegios  
   
         -   Explorar Internet con una cuenta con privilegios elevados  
   
-        -   Configuración de las cuentas con privilegios locales con las mismas credenciales en todos los sistemas  
+        -   Configuración de cuentas con privilegios locales con las mismas credenciales en varios sistemas  
   
-        -   Overpopulation y el uso excesivo de grupos de dominio con privilegios  
+        -   Sobrellenado y uso excesivo de grupos de dominio con privilegios  
   
         -   Administración insuficiente de la seguridad de los controladores de dominio.  
   
-    -   **Propagación y elevación de privilegios** -cuentas específicas, servidores y componentes de infraestructura suelen ser los objetivos principales de ataques contra Active Directory. Estas cuentas son:  
+    -   La **elevación de privilegios y** las cuentas, los servidores y los componentes de infraestructura específicos de la propagación son normalmente los objetivos principales de los ataques contra Active Directory. Estas cuentas son:  
   
-        -   Cuentas con privilegios de forma permanente  
+        -   Cuentas con privilegios permanentes  
   
         -   Cuentas de VIP  
   
-        -   "Conexión con privilegios" cuentas de Active Directory  
+        -   Cuentas de Active Directory con privilegios adjuntos  
   
         -   Controladores de dominio  
   
-        -   Otros servicios de infraestructura que afectan a la administración de identidades, acceso y la configuración, como servidores de infraestructura de clave pública (PKI) y servidores de administración de sistemas  
+        -   Otros servicios de infraestructura que afectan a la administración de identidades, acceso y configuración, como servidores de infraestructura de clave pública (PKI) y servidores de administración de sistemas  
   
 ## <a name="reducing-the-active-directory-attack-surface"></a>Reducción de la superficie de ataque de Active Directory  
-En esta sección se centra en los controles técnicos para reducir la superficie de ataque de una instalación de Active Directory. En esta sección son los siguientes temas:  
+Esta sección se centra en los controles técnicos para reducir la superficie expuesta a ataques de una instalación de Active Directory. En esta sección se incluyen los siguientes temas:  
   
--   El **cuentas privilegiadas y grupos en Active Directory** sección describen las cuentas con privilegios más altas y grupos en Active Directory y los mecanismos que protegen las cuentas con privilegios. Dentro de Active Directory, tres grupos integrados son los grupos de privilegio más altos en el directorio (administradores de organización, Admins. del dominio y administradores), aunque un número de cuentas y grupos adicionales también debe protegerse.  
+-   En la sección **cuentas y grupos con privilegios de Active Directory** se describen las cuentas y los grupos con privilegios más altos de Active Directory y los mecanismos por los que se protegen las cuentas con privilegios. Dentro de Active Directory, tres grupos integrados son los grupos de privilegios más altos del directorio (administradores de organización, Admins. del dominio y administradores), aunque también se debe proteger un número de grupos y cuentas adicionales.  
   
--   El **implementar modelos administrativos de menor privilegio** sección se centra en la identificación de los riesgos que presenta el uso de cuentas con privilegios elevados para la administración diaria, además de proporcionar recomendaciones para reducir el riesgo.  
+-   La sección **implementación de modelos administrativos con privilegios mínimos** se centra en identificar el riesgo de que se presente el uso de cuentas con privilegios elevados para la administración diaria, además de proporcionar recomendaciones para reducir el riesgo.  
   
-No sólo se encuentran en Active Directory privilegios excesivos en entornos en peligro. Cuando una organización ha desarrollado el hábito de conceder más privilegios del que es necesario, normalmente se encuentra en toda la infraestructura:  
+Los privilegios excesivos no se encuentran solo en Active Directory en entornos en peligro. Cuando una organización ha desarrollado el hábito de conceder más privilegios de los necesarios, normalmente se encuentra en toda la infraestructura:  
   
 -   En Active Directory  
   
--   En los servidores miembro  
+-   En servidores miembro  
   
 -   En las estaciones de trabajo  
   
--   En las aplicaciones  
+-   En aplicaciones  
   
--   En los repositorios de datos  
+-   En repositorios de datos  
   
--   El **implementar Hosts administrativos seguros** sección describen los hosts administrativos seguros, que son equipos que están configurados para admitir la administración de Active Directory y de sistemas conectados. Estos hosts dedicados a las funciones administrativas y no se ejecutan software como aplicaciones de correo electrónico, exploradores web o software de productividad (como Microsoft Office).  
+-   La sección **implementación de hosts administrativos seguros** describe hosts administrativos seguros, que son equipos que están configurados para admitir la administración de Active Directory y sistemas conectados. Estos hosts están dedicados a la funcionalidad administrativa y no ejecutan software como aplicaciones de correo electrónico, exploradores Web o software de productividad (como Microsoft Office).  
   
-En esta sección son los siguientes:  
+En esta sección se incluyen los siguientes:  
   
--   **Principios para la creación de Hosts administrativos seguros** -los principios generales que tener en cuenta son:  
+-   **Principios para la creación de hosts administrativos seguros** : los principios generales que se deben tener en cuenta son los siguientes:  
   
-    -   No administrar nunca un sistema de confianza de un host de menor confianza.  
+    -   No administre nunca un sistema de confianza desde un host de menos confianza.  
   
-    -   No confíe en un único factor de autenticación al realizar actividades con privilegios.  
+    -   No se base en un único factor de autenticación al realizar actividades con privilegios.  
   
-    -   No olvide la seguridad física al diseñar e implementar los hosts administrativos seguros.  
+    -   No olvide la seguridad física al diseñar e implementar hosts administrativos seguros.  
   
--   **Protección de controladores de dominio frente a ataque** -si un usuario malintencionado obtiene acceso con privilegios a un controlador de dominio, ese usuario puede modificar, alterar y destruir la base de datos de Active Directory y por extensión, todos los sistemas y las cuentas que son administrada por Active Directory.  
+-   **Protección de los controladores de dominio contra ataques** : Si un usuario malintencionado obtiene acceso con privilegios a un controlador de dominio, dicho usuario puede modificar, dañar y destruir el Active Directory base de datos y, por extensión, todos los sistemas y cuentas que se administran por Active Directory.  
   
-En esta sección son los siguientes temas:  
+En esta sección se incluyen los siguientes temas:  
   
--   **Seguridad física de los controladores de dominio** -contiene recomendaciones para proporcionar seguridad física de los controladores de dominio en ubicaciones remotas, sucursales y centros de datos.  
+-   **Seguridad física de los controladores de dominio** : contiene recomendaciones para proporcionar seguridad física para los controladores de dominio en centros de recursos, sucursales y ubicaciones remotas.  
   
--   **Sistemas operativos de controlador de dominio** -contiene recomendaciones para proteger sistemas operativos de controlador de dominio.  
+-   **Sistemas operativos de controlador de dominio** : contiene recomendaciones para proteger los sistemas operativos de controlador de dominio.  
   
--   **Proteger la configuración de controladores de dominio** -herramientas de configuración disponible de forma gratuita y nativo y la configuración puede utilizarse para crear líneas base de configuración para los controladores de dominio que posteriormente se pueden aplicar por (objetos de directiva de grupo de seguridad GPO).  
+-   **Configuración segura de controladores de dominio** : las herramientas de configuración y las opciones de configuración disponibles de forma nativa y gratuita se pueden usar para crear líneas de base de configuración de seguridad para controladores de dominio que posteriormente se pueden aplicar a través de objetos de directiva de grupo (GPO).  
   
 ## <a name="monitoring-active-directory-for-signs-of-compromise"></a>Supervisión de Active Directory en busca de indicios de riesgo  
-Esta sección proporciona información acerca de las categorías de auditoría heredadas y las subcategorías de directiva de auditoría (que se introdujeron en Windows Vista y Windows Server 2008) y directiva de auditoría avanzada (que se introdujo en Windows Server 2008 R2). También proporciona información acerca de los eventos y objetos de supervisión pueden indicar los intentos de poner en peligro el entorno y algunas referencias adicionales que pueden usarse para construir una directiva de auditoría integral para Active Directory.  
+En esta sección se proporciona información sobre las categorías de auditoría heredadas y las subcategorías de directivas de auditoría (que se introdujeron en Windows Vista y Windows Server 2008) y la Directiva de auditoría avanzada (que se presentó en Windows Server 2008 R2). También se proporciona información sobre los eventos y objetos que se van a supervisar que pueden indicar intentos de poner en peligro el entorno y algunas referencias adicionales que se pueden usar para construir una directiva de auditoría completa para Active Directory.  
   
-En esta sección son los siguientes temas:  
+En esta sección se incluyen los siguientes temas:  
   
--   **Directiva de auditoría de Windows** : registros de eventos de seguridad de Windows tienen categorías y subcategorías que determinan los eventos de seguridad se realiza el seguimiento y registra.  
+-   **Directiva de auditoría de Windows** : los registros de eventos de seguridad de Windows tienen categorías y subcategorías que determinan los eventos de seguridad de los que se realiza un seguimiento y se registran  
   
--   **Recomendaciones de directiva de auditoría** -esta sección describe la configuración de directiva de auditoría de Windows de forma predeterminada, la configuración de directivas recomendadas por Microsoft y las recomendaciones más exigentes para las organizaciones a utilizar para auditar servidores críticos de auditoría y estaciones de trabajo.  
+-   **Recomendaciones** de la Directiva de auditoría: en esta sección se describe la configuración de directiva de auditoría predeterminada de Windows, la configuración de directiva de auditoría recomendada por Microsoft y recomendaciones más agresivas para que las organizaciones las usen para auditar servidores críticos. estaciones.  
   
 ## <a name="planning-for-compromise"></a>Planeación de compromiso  
-Esta sección contiene recomendaciones que le ayudará a las organizaciones a prepararse para un peligro antes de que suceda, implemente controles que pueden detectar un evento de riesgo antes de que se ha producido una infracción completa y ofrece instrucciones de respuesta y la recuperación para casos en los que se consigue un riesgo importante para el directorio por los atacantes. En esta sección son los siguientes temas:  
+Esta sección contiene recomendaciones que ayudarán a las organizaciones a prepararse para un riesgo antes de que se produzcan, a implementar controles que pueden detectar un evento de riesgo antes de que se produzca una infracción de la totalidad y proporcionar directrices de respuesta y recuperación para los casos en los que los atacantes obtienen un riesgo completo del directorio. En esta sección se incluyen los siguientes temas:  
   
--   **Replanteamiento el enfoque** -contiene los principios y directrices para crear entornos seguros en los que una organización puede colocar sus activos más importantes. Estas instrucciones son las siguientes:  
+-   **Replanteamiento del enfoque** : contiene principios e instrucciones para crear entornos seguros en los que una organización puede colocar sus activos más importantes. Estas instrucciones son las siguientes:  
   
-    -   Identificación de los principios para separar y proteger los activos críticos  
+    -   Identificación de los principios para separar y proteger los recursos críticos  
   
-    -   Definir un plan de migración limitada, en función del riesgo  
+    -   Definición de un plan de migración limitado y basado en riesgos  
   
-    -   Aprovechamiento de las migraciones "nonmigratory" cuando sea necesario  
+    -   Aprovechar las migraciones "no migratorias" cuando sea necesario  
   
-    -   Implementación de "destrucción creative"  
+    -   Implementación de "destrucción creativa"  
   
-    -   Aislar aplicaciones y sistemas heredados  
+    -   Aislar sistemas y aplicaciones heredados  
   
-    -   Simplificación de seguridad para los usuarios finales  
+    -   Simplificación de la seguridad para los usuarios finales  
   
--   **Mantener un entorno seguro más** -contiene recomendaciones de alto nivel diseñadas para utilizarse como directrices para usar en el desarrollo de seguridad eficaces, pero no solo administración efectiva del ciclo de vida. En esta sección son los siguientes temas:  
+-   **Mantenimiento de un entorno más seguro** : contiene recomendaciones de alto nivel diseñadas para usarse como directrices para el desarrollo no solo de seguridad efectiva, sino también para una administración de ciclo de vida efectiva. En esta sección se incluyen los siguientes temas:  
   
-    -   **Crear centrado en los negocios prácticas de seguridad para Active Directory** : para administrar el ciclo de vida de los usuarios, datos, aplicaciones y sistemas administrados por Active Directory, siga estos principios de forma eficaz.  
+    -   La **creación de prácticas de seguridad centradas en el negocio para Active Directory** administrar de forma eficaz el ciclo de vida de los usuarios, los datos, las aplicaciones y los sistemas administrados por Active Directory, siga estos principios.  
   
-        -   **Asignar una propiedad de negocio a los datos de Active Directory** -asignar la propiedad de componentes de infraestructura TI; para los datos que se agregan a Active Directory Domain Services (AD DS) para satisfacer las necesidades empresariales, por ejemplo, los nuevos empleados, las nuevas aplicaciones, y nuevos repositorios de información, una unidad de negocio designado o el usuario se debe asociar con los datos.  
+        -   **Asignar la propiedad de un negocio a Active Directory datos** : asignar la propiedad de los componentes de la infraestructura. en el caso de los datos que se agregan a Active Directory Domain Services (AD DS) para admitir la empresa, por ejemplo, nuevos empleados, nuevas aplicaciones y nuevos repositorios de información, se debe asociar a los datos una unidad de negocio o un usuario designados.  
   
-        -   **Implementar la administración del ciclo de vida de Business-Driven** -administración del ciclo de vida debe implementarse para los datos en Active Directory.  
+        -   **Implementar la administración del ciclo de vida controlado** por la empresa: la administración del ciclo de vida debe implementarse para los datos de Active Directory.  
   
-        -   **Clasificar todos los datos de Active Directory** -propietarios de negocios deben proporcionar la clasificación de datos de Active Directory. Dentro del modelo de clasificación de datos, se debe incluir la clasificación para los datos de Active Directory siguientes:  
+        -   **Clasifique todos los Active Directory datos: los** propietarios empresariales deben proporcionar una clasificación de los datos en Active Directory. Dentro del modelo de clasificación de datos, se debe incluir la clasificación de los siguientes datos de Active Directory:  
   
-            -   **Sistemas** -clasificar las poblaciones de servidor, su sistema operativo su rol, las aplicaciones que se ejecutan en ellos y la TI y los propietarios de empresas de registro.  
+            -   **Sistemas** : clasifique los rellenados de servidores, su sistema operativo, sus roles, las aplicaciones que se ejecutan en ellos y los propietarios de ti y empresariales del registro.  
   
-            -   **Aplicaciones** -clasificar las aplicaciones mediante la funcionalidad de base de usuarios y su sistema operativo.  
+            -   **Aplicaciones** : clasifique las aplicaciones por funcionalidad, base de usuarios y su sistema operativo.  
   
-            -   **Los usuarios** -deben etiquetar y supervisar las cuentas en las instalaciones de Active Directory que suelen ser objetivo de los atacantes.  
+            -   **Usuarios** : se deben etiquetar y supervisar las cuentas de las instalaciones Active Directory que tengan más probabilidades de ser destinadas a los atacantes.  
   
-## <a name="summary-of-best-practices-for-securing-active-directory-domain-services"></a>Resumen de procedimientos recomendados para proteger los servicios de dominio de Active Directory  
-En la tabla siguiente proporciona un resumen de las recomendaciones proporcionadas en este documento para proteger la instalación de AD DS. Algunas prácticas recomendadas son estratégicas por naturaleza y requieren una planeación completa y proyectos de implementación. otras son tácticas y centradas en componentes específicos de Active Directory y la infraestructura relacionada.  
+## <a name="summary-of-best-practices-for-securing-active-directory-domain-services"></a>Resumen de los procedimientos recomendados para proteger Active Directory Domain Services  
+En la tabla siguiente se proporciona un resumen de las recomendaciones proporcionadas en este documento para proteger una instalación de AD DS. Algunos procedimientos recomendados son estratégicos por naturaleza y requieren proyectos completos de planeación e implementación. otras son tácticas y centradas en componentes específicos de Active Directory e infraestructura relacionada.  
   
-Procedimientos recomendados se muestran en orden de prioridad, que lo sea., los números más bajos indican la prioridad más alta. Donde procedas, mejores prácticas se identifican como preventivas o detective por naturaleza. Todas estas recomendaciones deben ser minuciosamente probados y modificar según sea necesario para las características y los requisitos de su organización.  
+Las prácticas se muestran en orden aproximado de prioridad, es decir, los números más bajos indican una prioridad más alta. Cuando proceda, los procedimientos recomendados se identifican como preventivos o detectives por naturaleza. Todas estas recomendaciones se deben probar y modificar exhaustivamente según sea necesario para las características y los requisitos de su organización.  
   
   
-||**Procedimiento recomendado**|**Estratégica o táctica**|**Preventivas o Detective**|  
+||**Procedimiento recomendado**|**Táctica o estratégica**|**Preventivo o detective**|  
 |-|-|-|-|  
-|1|Revisión de aplicaciones.|Táctica|Preventivas|  
-|2|Revisiones en los sistemas operativos.|Táctica|Preventivas|  
-|3|Implementar y actualizar rápidamente el software antivirus y antimalware en todos los sistemas y el monitor para los intentos para quitar o deshabilitarlo.|Táctica|Ambos|  
-|4|Supervisar confidenciales objetos de Active Directory para los intentos de modificación y Windows para los eventos que puedan indicar un riesgo de intento.|Táctica|Detective|  
-|5|Proteger y supervisar las cuentas para los usuarios que tienen acceso a datos confidenciales|Táctica|Ambos|  
-|6|Impedir que se utilice en sistemas no autorizados cuentas eficaces.|Táctica|Preventivas|  
-|7|Eliminar la pertenencia permanente a grupos con muchos privilegios.|Táctica|Preventivas|  
-|8|Implementar controles para conceder la pertenencia temporal a grupos con privilegios cuando sea necesario.|Táctica|Preventivas|  
+|1|Aplicaciones de revisión.|Táctica|Preventivas|  
+|2|Sistemas operativos de revisión.|Táctica|Preventivas|  
+|3|Implemente y actualice rápidamente el software antivirus y antimalware en todos los sistemas y supervise los intentos de quitarlos o deshabilitarlos.|Táctica|Ambos|  
+|4|Supervise los objetos de Active Directory confidenciales para los intentos de modificación y las ventanas de eventos que pueden indicar que se ha intentado poner en peligro.|Táctica|Detective|  
+|5|Proteger y supervisar las cuentas de los usuarios que tienen acceso a datos confidenciales|Táctica|Ambos|  
+|6|Evitar que se utilicen cuentas eficaces en sistemas no autorizados.|Táctica|Preventivas|  
+|7|Elimine la pertenencia permanente a grupos con privilegios elevados.|Táctica|Preventivas|  
+|8|Implemente controles para conceder la pertenencia temporal a grupos con privilegios cuando sea necesario.|Táctica|Preventivas|  
 |9|Implementar hosts administrativos seguros.|Táctica|Preventivas|  
-|10|Utilice la lista blanca de la aplicación en los controladores de dominio, hosts administrativos y otros sistemas confidenciales.|Táctica|Preventivas|  
-|11|Identificar los recursos críticos y dar prioridad a su seguridad y supervisión.|Táctica|Ambos|  
-|12|Implementar controles de acceso basado en rol con privilegios mínimos para la administración del directorio, su infraestructura de soporte y los sistemas unidos a un dominio.|Estratégica|Preventivas|  
-|13|Aislar las aplicaciones y sistemas heredados.|Táctica|Preventivas|  
-|14|Retirar aplicaciones y sistemas heredados.|Estratégica|Preventivas|  
-|15|Implementar programas de ciclo de vida de desarrollo seguro para aplicaciones personalizadas.|Estratégica|Preventivas|  
-|16|Implementar la administración de configuración, revise el cumplimiento con regularidad y evaluar opciones con cada nueva versión de hardware o software.|Estratégica|Preventivas|  
-|17|Migrar los recursos críticos a bosques puro con estrictas de seguridad y requisitos de supervisión.|Estratégica|Ambos|  
+|10|Usar listas blancas de aplicaciones en controladores de dominio, hosts administrativos y otros sistemas confidenciales.|Táctica|Preventivas|  
+|11|Identifique los recursos críticos y priorice su seguridad y supervisión.|Táctica|Ambos|  
+|12|Implemente controles de acceso basados en roles con privilegios mínimos para la administración del directorio, su infraestructura auxiliar y sistemas Unidos a un dominio.|Estratégica|Preventivas|  
+|13|Aísle las aplicaciones y los sistemas heredados.|Táctica|Preventivas|  
+|14|Retirar sistemas y aplicaciones heredados.|Estratégica|Preventivas|  
+|15|Implemente programas de ciclo de vida de desarrollo seguros para aplicaciones personalizadas.|Estratégica|Preventivas|  
+|16|Implemente la administración de la configuración, revise el cumplimiento con regularidad y evalúe la configuración con cada nueva versión de hardware o software.|Estratégica|Preventivas|  
+|17|Migre recursos críticos a bosques puros con estrictos requisitos de seguridad y supervisión.|Estratégica|Ambos|  
 |18|Simplifique la seguridad para los usuarios finales.|Estratégica|Preventivas|  
-|19|Usar firewalls basados en host para el control y las comunicaciones seguras.|Táctica|Preventivas|  
-|20|Dispositivos de la revisión.|Táctica|Preventivas|  
-|21|Implementar la administración centrada en el negocio del ciclo de vida para los activos de TI.|Estratégica|N/D|  
-|22|Crear o actualizar los planes de recuperación de incidentes.|Estratégica|N/D|  
+|19|Utilice firewalls basados en host para controlar y proteger las comunicaciones.|Táctica|Preventivas|  
+|20|Dispositivos de revisión.|Táctica|Preventivas|  
+|21|Implemente la administración del ciclo de vida centrada en el negocio para los recursos de ti.|Estratégica|N/D|  
+|22|Crear o actualizar planes de recuperación de incidentes.|Estratégica|N/D|  
   
 
 

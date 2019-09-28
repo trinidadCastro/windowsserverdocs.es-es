@@ -3,7 +3,7 @@ title: Configuración de una estación conectada RDP a través de LAN en Multipo
 description: Aprenda a configurar un sistema RDP a través de LAN en Multipoint Services
 ms.custom: na
 ms.date: 07/22/2016
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,12 +13,12 @@ ms.assetid: 60e1a025-c2fb-4708-a3ff-c44c223a3224
 author: evaseydl
 manager: scottman
 ms.author: evas
-ms.openlocfilehash: 40899b277ae60169a0eca34b359172941e5391fb
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d0d63a75d3ef6e042d44df0ecf4cc08973e859a6
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70871562"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71395004"
 ---
 # <a name="set-up-an-rdp-over-lan-connected-station-in-multipoint-services"></a>Configuración de una estación conectada RDP a través de LAN en Multipoint Services
 Una estación conectada RDP a través de LAN es un cliente ligero, un escritorio tradicional o un equipo portátil que se conecta a multipoint Services en una red de área local (LAN) mediante el Protocolo de escritorio remoto (RDP). Para obtener más información sobre este y otros tipos de estación, consulte [estaciones Multipoint](MultiPoint-services-Stations.md).  

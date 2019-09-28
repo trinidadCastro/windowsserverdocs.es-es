@@ -1,8 +1,8 @@
 ---
-title: El comando del servidor de inicio
-description: 'Tema de los comandos de Windows para ***- '
+title: El comando START Server
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4580c98b3f43decf8989965abe6d2fee63eda78b
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e18ed6a7707516410e96ecf4b6bd43e668667c2d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59889106"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385102"
 ---
-# <a name="the-start-server-command"></a>El comando del servidor de inicio
+# <a name="the-start-server-command"></a>El comando START Server
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-inicia la transmisión por multidifusión, el espacio de nombres, el servidor de transporte o todos los servicios en el servidor de servicios de implementación de Windows.
+inicia la transmisión de multidifusión, el espacio de nombres, el servidor de transporte o todos los servicios en el servidor de servicios de implementación de Windows.
 ## <a name="subcommands"></a>Subcomandos
 |Subcomando|Descripción|
 |-------|--------|
-|[Subcommand: start-MulticastTransmission](subcommand-start-multicasttransmission.md)|inicia una transmisión.|
-|[Subcomando: start-Namespace](subcommand-start-namespace.md)|inicia un espacio de nombres.|
-|[Subcomando: start-Server](subcommand-start-server.md)|inicia todos los servicios en un servidor de servicios de implementación de Windows.|
-|[Subcomando: start-TransportServer](subcommand-start-transportserver.md)|inicia todos los servicios en un servidor de transporte.|
+|[Subcomando: Start-MulticastTransmission](subcommand-start-multicasttransmission.md)|inicia una transmisión.|
+|[Subcomando: Start-namespace](subcommand-start-namespace.md)|inicia un espacio de nombres.|
+|[Subcomando: Start-Server](subcommand-start-server.md)|inicia todos los servicios en un servidor de servicios de implementación de Windows.|
+|[Subcomando: Start-TransportServer](subcommand-start-transportserver.md)|inicia todos los servicios en un servidor de transporte.|

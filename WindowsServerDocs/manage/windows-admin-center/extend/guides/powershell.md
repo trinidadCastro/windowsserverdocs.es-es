@@ -7,13 +7,13 @@ author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 05/09/2019
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: c30f8a9b856db8250a16210931e6f8dd73c07aa7
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 6e99fc43d4acb7a70dfd3a8ba19dae6492c41b2b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869607"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357054"
 ---
 # <a name="using-powershell-in-your-extension"></a>Uso de PowerShell de la extensión #
 
@@ -92,7 +92,7 @@ Al proporcionar el nombre de nodo al método createSession, se crea una nueva se
 ### <a name="key-options"></a>Opciones clave ###
 Hay algunas opciones disponibles cuando se llama a la API de PowerShell. Cada vez que se crea una sesión, se puede crear con o sin una clave. 
 
-**Clave** Esto crea una sesión con clave que se puede buscar y reutilizar, incluso entre los componentes (lo que significa que Component1 puede crear una sesión con la clave "SME-ROCKs" y Component2 puede usar esa misma sesión). Si se proporciona una clave, la sesión creada debe desecharse llamando a Dispose () como se hizo en el ejemplo anterior. No se debe mantener una sesión sin que se elimine durante más de 5 minutos. 
+**Clave:** Esto crea una sesión con clave que se puede buscar y reutilizar, incluso entre los componentes (lo que significa que Component1 puede crear una sesión con la clave "SME-ROCKs" y Component2 puede usar esa misma sesión). Si se proporciona una clave, la sesión creada debe desecharse llamando a Dispose () como se hizo en el ejemplo anterior. No se debe mantener una sesión sin que se elimine durante más de 5 minutos. 
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNode}', '{!Key}');
 ```
@@ -102,7 +102,7 @@ Hay algunas opciones disponibles cuando se llama a la API de PowerShell. Cada ve
 ```ts
   const session = this.appContextService.powerShell.createSession('{!TargetNodeName}');
 ```
-o 
+o bien 
 ``` ts 
 const session = this.appContextService.powerShell.createAutomaticSession('{!TargetNodeName}');
 ```
@@ -158,7 +158,7 @@ return this.appContextService.workItem.submit('{!TargetNode}', workItem);
 
 #### <a name="workitem-options"></a>Opciones de elemento de trabajo ####
 
-| función | Explicación |
+| function | Explicación |
 | ----- | ----------- |
 | enviar () | Envía el elemento de trabajo. 
 | submitAndWait() | Enviar el elemento de trabajo y esperar a que se complete la ejecución

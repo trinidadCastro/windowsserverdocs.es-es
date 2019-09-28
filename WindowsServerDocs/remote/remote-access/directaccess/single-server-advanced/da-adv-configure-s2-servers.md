@@ -1,9 +1,9 @@
 ---
-title: Paso 2 configurar servidores de DirectAccess avanzada
-description: Este tema forma parte de la Guía de implementación de un único servidor de DirectAccess con avanzada configuración para Windows Server 2016
+title: Paso 2 configuración de servidores de DirectAccess avanzados
+description: Este tema forma parte de la guía implementar un único servidor de DirectAccess con configuración avanzada para Windows Server 2016
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-da
@@ -12,18 +12,18 @@ ms.topic: article
 ms.assetid: 35afec8e-39a4-463b-839a-3c300ab01174
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: b55e0f9a4d059da89a5d71678a6a0bb385895fd6
-ms.sourcegitcommit: afb0602767de64a76aaf9ce6a60d2f0e78efb78b
+ms.openlocfilehash: 0ba2154338871827aae03936e5e39a356a43d675
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67281804"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71388635"
 ---
-# <a name="step-2-configure-advanced-directaccess-servers"></a>Paso 2 configurar servidores de DirectAccess avanzada
+# <a name="step-2-configure-advanced-directaccess-servers"></a>Paso 2 configuración de servidores de DirectAccess avanzados
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-En este tema aprenderás a configurar las opciones de cliente y de servidor necesarias para una implementación de acceso remoto avanzado que use un único servidor de acceso remoto en un entorno donde se combinan IPv4 e IPv6. Antes de comenzar los pasos de implementación, asegúrese de que ha completado los pasos de planificación que se describen en [planear una implementación de DirectAccess avanzada](Plan-an-Advanced-DirectAccess-Deployment.md).  
+En este tema aprenderás a configurar las opciones de cliente y de servidor necesarias para una implementación de acceso remoto avanzado que use un único servidor de acceso remoto en un entorno donde se combinan IPv4 e IPv6. Antes de comenzar con los pasos de implementación, asegúrese de que ha completado los pasos de planeación que se describen en [planear una implementación de DirectAccess avanzada](Plan-an-Advanced-DirectAccess-Deployment.md).  
   
 |Tarea|Descripción|  
 |----|--------|  
@@ -34,17 +34,17 @@ En este tema aprenderás a configurar las opciones de cliente y de servidor nece
 |2.5. Configurar los servidores de infraestructura|Configura los servidores de infraestructura que se usan en la organización.|  
 |2.6. Configurar servidores de aplicaciones|Configura los servidores de aplicaciones para que requieran autenticación y cifrado.|  
 |2.7. Configuración de resumen y GPO alternativos|Consulta el resumen de configuración de acceso remoto y, si fuera necesario, modifica el GPO.|  
-|2.8. Configuración del servidor de acceso remoto con Windows PowerShell|Configurar el acceso remoto mediante Windows PowerShell.|  
+|2.8. Configuración del servidor de acceso remoto con Windows PowerShell|Configure el acceso remoto mediante Windows PowerShell.|  
   
 > [!NOTE]  
 > Este tema incluye cmdlets de Windows PowerShell de ejemplo que puede usar para automatizar algunos de los procedimientos descritos. Para más información, consulta [Uso de cmdlets](https://go.microsoft.com/fwlink/p/?linkid=230693).  
   
-## <a name="BKMK_Role"></a>2.1. Instalar el rol de acceso remoto  
+## <a name="BKMK_Role"></a>2,1. Instalar el rol de acceso remoto  
 Para implementar acceso remoto debes instalar el rol de acceso remoto en un servidor de la organización que actúe como el servidor de acceso remoto.  
   
 #### <a name="to-install-the-remote-access-role"></a>Para instalar el rol de acceso remoto  
   
-1.  En el servidor de acceso remoto, en la consola de administrador del servidor, en el **panel**, haga clic en **agregar roles y características**.  
+1.  En el servidor de acceso remoto, en la consola de Administrador del servidor, en el **Panel**, haga clic en **Agregar roles y características**.  
   
 2.  Haz clic en **Siguiente** tres veces para acceder a la pantalla **Seleccionar roles de servidor**.  
   
@@ -56,7 +56,7 @@ Para implementar acceso remoto debes instalar el rol de acceso remoto en un serv
   
 6.  En la página **Progreso de la instalación**, comprueba que la instalación se ha completado correctamente y haz clic en **Cerrar**.  
   
-![Instalación correcta de progreso](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
+![Installation progreso correcto](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)***<em>comandos equivalentes de Windows PowerShell</em>***  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
@@ -64,7 +64,7 @@ Los siguientes cmdlets de Windows PowerShell realizan la misma función que el p
 Install-WindowsFeature RemoteAccess -IncludeManagementTools  
 ```  
   
-## <a name="BKMK_Deploy"></a>2.2. Configurar el tipo de implementación  
+## <a name="BKMK_Deploy"></a>2,2. Configurar el tipo de implementación  
 Acceso remoto se puede implementar mediante la consola de administración de acceso remoto de tres maneras:  
   
 -   DirectAccess y VPN  
@@ -77,13 +77,13 @@ Esta guía usa una implementación de solo DirectAccess en los procedimientos de
   
 #### <a name="to-configure-the-deployment-type"></a>Para configurar el tipo de implementación  
   
-1.  En el servidor de acceso remoto, abre la consola de administración de acceso remoto: En el **iniciar** , escriba**RAMgmtUI.exe**, y, a continuación, presione ENTRAR. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
+1.  En el servidor de acceso remoto, abre la consola de administración de acceso remoto: En la pantalla **Inicio** , escriba**RAMgmtUI. exe**y, a continuación, presione Entrar. Si aparece el cuadro de diálogo **Control de cuentas de usuario** , confirme que la acción que se muestra es la esperada y, a continuación, haga clic en **Sí**.  
   
 2.  En el panel central de la consola de administración de acceso remoto, haz clic en **Ejecutar el Asistente para la instalación de acceso remoto**.  
   
 3.  En el cuadro de diálogo **Configurar acceso remoto**, haz clic en DirectAccess y VPN, DirectAccess solo o en VPN solo.  
   
-## <a name="BKMK_Clients"></a>2.3. Configurar los clientes de DirectAccess  
+## <a name="BKMK_Clients"></a>2,3. Configurar los clientes de DirectAccess  
 Para que un equipo cliente se aprovisione para el uso de DirectAccess, este debe pertenecer al grupo de seguridad seleccionado. Después de configurar DirectAccess, los equipos cliente del grupo de seguridad se aprovisionan para recibir el objeto de directiva de grupo (GPO) de DirectAccess. También se puede configurar el escenario de implementación, lo que permite configurar DirectAccess para el acceso de clientes y administración remota, o bien solo para administración remota.  
   
 #### <a name="to-configure-directaccess-clients"></a>Cómo configurar los clientes de DirectAccess  
@@ -123,7 +123,7 @@ Para que un equipo cliente se aprovisione para el uso de DirectAccess, este debe
   
 9. Haga clic en **Finalizar**.  
   
-## <a name="BKMK_Server"></a>2.4. Configurar el servidor de acceso remoto  
+## <a name="BKMK_Server"></a>2,4. Configurar el servidor de acceso remoto  
 Para implementar acceso remoto es necesario configurar el servidor de acceso remoto con los adaptadores de red correctos, una URL pública para el servidor de acceso remoto a la que se puedan conectar los equipos cliente (la dirección ConnectTo), un certificado IP-HTTPS con un sujeto que coincida con la dirección ConnectTo, configuración de IPv6 y autenticación de equipos cliente.  
   
 #### <a name="to-configure-the-remote-access-server"></a>Para configurar el servidor de acceso remoto  
@@ -145,14 +145,14 @@ Para implementar acceso remoto es necesario configurar el servidor de acceso rem
   
     -   Para implementaciones multisitio con autenticación en dos fases es necesario usar la autenticación de certificados de equipo. Activa la casilla **Usar certificados de equipo** para usar autenticación de certificados de equipo y después selecciona el certificado raíz IPsec.  
   
-    -   Para habilitar los equipos cliente de Windows 7 se conecten a través de DirectAccess, seleccione el **los equipos cliente de habilitar Windows 7 se conecten mediante DirectAccess** casilla de verificación.  
+    -   Para permitir que los equipos cliente de Windows 7 se conecten a través de DirectAccess, active la casilla **permitir que los equipos cliente de Windows 7 se conecten a través de DirectAccess** .  
   
         > [!NOTE]  
         > Además, también es necesario usar la autenticación de certificados de equipo en este tipo de implementación.  
   
 6.  Haga clic en **Finalizar**.  
   
-## <a name="BKMK_Infra"></a>2.5. Configurar los servidores de infraestructura  
+## <a name="BKMK_Infra"></a>2,5. Configurar los servidores de infraestructura  
 Para configurar los servidores de infraestructura en una implementación de acceso remoto es necesario configurar el servidor de ubicación de red, la configuración DNS (incluida la lista de búsqueda de sufijos DNS) y, además, los servidores de administración que acceso remoto no detecte automáticamente.  
   
 #### <a name="to-configure-the-infrastructure-servers"></a>Para configurar los servidores de infraestructura  
@@ -172,11 +172,11 @@ Para configurar los servidores de infraestructura en una implementación de acce
   
 6.  Haga clic en **Finalizar**.  
   
-## <a name="BKMK_App"></a>2.6. Configurar servidores de aplicaciones  
+## <a name="BKMK_App"></a>2,6. Configurar servidores de aplicaciones  
 La configuración de servidores de aplicaciones en las implementaciones de acceso remoto es una tarea opcional. Acceso remoto permite requerir autenticación para servidores de aplicaciones seleccionados (deberás agregarlos a un grupo de seguridad de servidores de aplicaciones). De manera predeterminada, el tráfico a los servidores de aplicaciones que requieren autenticación también se cifra; pero puedes seleccionar una opción para no cifrar el tráfico a los servidores de aplicaciones y usar solo autenticación.  
   
 > [!NOTE]  
-> Autenticación sin cifrado solo se admite en servidores de aplicaciones ejecutan Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2.  
+> La autenticación sin cifrado solo se admite en servidores de aplicaciones que ejecutan Windows Server 2012 R2, Windows Server 2012 o Windows Server 2008 R2.  
   
 #### <a name="to-configure-application-servers"></a>Para configurar servidores de aplicaciones  
   
@@ -186,11 +186,11 @@ La configuración de servidores de aplicaciones en las implementaciones de acces
   
 3.  Para restringir el acceso a los servidores del grupo de seguridad Servidor de aplicaciones, selecciona la casilla **Permitir el acceso únicamente a los servidores incluidos en los grupos de seguridad**.  
   
-4.  Para usar la autenticación sin cifrado, seleccione el **no cifrar el tráfico. Solo usar autenticación** casilla de verificación.  
+4.  Para usar la autenticación sin cifrado, seleccione el **Do no cifrar el tráfico. Casilla usar solo autenticación @ no__t-0.  
   
 5.  Haga clic en **Finalizar**.  
   
-## <a name="BKMK_GPO"></a>2.7. Configuración de resumen y GPO alternativos  
+## <a name="BKMK_GPO"></a>2,7. Configuración de resumen y GPO alternativos  
 Cuando completes la configuración de acceso remoto verás el cuadro de diálogo **Revisión de acceso remoto**. Podrás revisar todas las opciones que hayas seleccionado anteriormente, como por ejemplo:  
   
 1.  **Configuración del GPO**: Verás el nombre del GPO del servidor de DirectAccess y el nombre del GPO del cliente. Además, puedes hacer clic en el vínculo **Cambiar** junto al encabezado **Configuración del GPO** para modificar la configuración del GPO.  
@@ -203,12 +203,12 @@ Cuando completes la configuración de acceso remoto verás el cuadro de diálogo
   
 5.  **Servidores de aplicaciones**: Muestra el estado de administración remota de DirectAccess, así como el estado de la autenticación descentralizada en los servidores de aplicaciones específicos.  
   
-## <a name="BKMK_PS"></a>2.8. Configuración del servidor de acceso remoto con Windows PowerShell  
-![Windows PowerShell](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell**  
+## <a name="BKMK_PS"></a>2,8. Configuración del servidor de acceso remoto con Windows PowerShell  
+](../../../media/Step-2-Configuring-DirectAccess-Servers/PowerShellLogoSmall.gif)**comandos equivalentes de Windows PowerShell** de @no__t 0Windows PowerShell  
   
 Los siguientes cmdlets de Windows PowerShell realizan la misma función que el procedimiento anterior. Escriba cada cmdlet en una sola línea, aunque aquí pueden aparecer con saltos de línea entre varias líneas aquí debido a restricciones de formato.  
   
-Para realizar una instalación completa en una topología perimetral de acceso remoto para DirectAccess únicamente en un dominio con la raíz **corp.contoso.com** y con los parámetros siguientes: GPO de servidor: **DirectAccess Server Settings**, GPO de cliente: Configuración de cliente de DirectAccess, adaptador de red interno: **Corpnet**; adaptador de red externo: **Internet**, dirección ConnectTo: **edge1.contoso.com**y el servidor de ubicación de red: **nls.corp.contoso.com**:  
+Para realizar una instalación completa en una topología perimetral de acceso remoto para DirectAccess únicamente en un dominio con la raíz **corp.contoso.com** y con los parámetros siguientes: GPO de servidor: **DirectAccess Server Settings**, GPO de cliente: Configuración de cliente de DirectAccess, adaptador de red interno: **Corpnet**; adaptador de red externo: **Internet**, dirección connectto: **edge1.contoso.com**y servidor de ubicación de red: **NLS.Corp.contoso.com**:  
   
 ```  
 Install-RemoteAccess -Force -PassThru -ServerGpoName 'corp.contoso.com\DirectAccess Server Settings' -ClientGpoName 'corp.contoso.com\DirectAccess Client Settings' -DAInstallType 'FullInstall' -InternetInterface 'Internet' -InternalInterface 'Corpnet' -ConnectToAddress 'edge1.contoso.com' -NlsUrl 'https://nls.corp.contoso.com/'  
@@ -229,7 +229,7 @@ Add-DAClient -SecurityGroupNameList @('corp.contoso.com\DirectAccessClients')
 Remove-DAClient -SecurityGroupNameList @('corp.contoso.com\Domain Computers')  
 ```  
   
-Para habilitar el acceso remoto para todos los equipos (no solo equipos portátiles y equipos portátiles) y permiten a los clientes de acceso remoto para Windows 7:  
+Para habilitar el acceso remoto para todos los equipos (no solo portátiles y portátiles) y para habilitar el acceso remoto para los clientes de Windows 7:  
   
 ```  
 Set-DAClient -OnlyRemoteComputers 'Disabled' -Downlevel 'Enabled'  

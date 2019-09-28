@@ -1,6 +1,6 @@
 ---
 title: Tolerancia a errores y eficiencia del almacenamiento en Espacios de almacenamiento directo
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: cosmosdarwin
 ms.manager: eldenc
 ms.technology: storage-spaces
@@ -10,12 +10,12 @@ ms.date: 10/11/2017
 ms.assetid: 5e1d7ecc-e22e-467f-8142-bad6d82fc5d0
 description: Una explicación de las opciones de resistencia en Espacios de almacenamiento directo, incluida creación de reflejos y paridad.
 ms.localizationpriority: medium
-ms.openlocfilehash: 4e6a29e82a85ec9570cda827060dfe1cdf192c53
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d2220584c0021352110b27c3107d1113eb17ef59
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59849576"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71393808"
 ---
 # <a name="fault-tolerance-and-storage-efficiency-in-storage-spaces-direct"></a>Tolerancia a errores y eficiencia del almacenamiento en Espacios de almacenamiento directo
 
@@ -102,7 +102,7 @@ La eficiencia del almacenamiento de paridad acelerada por reflejos se sitúa ent
 > [!IMPORTANT]
 > Te recomendamos usar el reflejo de la mayoría de las cargas de trabajo dependientes del rendimiento. Para obtener más información sobre cómo equilibrar entre rendimiento y capacidad en función de la carga de trabajo, consulta [Planificar los volúmenes](plan-volumes.md#choosing-the-resiliency-type).
 
-## <a name="summary"></a>Resumen
+## <a name="summary"></a>Sumido
 
 En esta sección se resumen los tipos de resistencia disponibles en Espacios de almacenamiento directo, los requisitos mínimos de escala para usar cada tipo, la cantidad de errores que puede tolerar cada tipo y la eficiencia de almacenamiento correspondiente.
 
@@ -171,7 +171,7 @@ En la siguiente tabla se muestran la eficiencia del almacenamiento de paridad do
 |    15                 |    RS 6+2           |    75,0 %        |
 |    16                 |    LRC (12, 2, 1)   |    80,0 %        |
 
-## <a name="examples"></a>Ejemplos
+## <a name="examples"></a>Example
 
 A menos que tengas solo dos servidores, te recomendamos usar el reflejo triple o la paridad doble, porque ofrecen mejor tolerancia a errores. En concreto, asegúrate de que todos los datos permanezcan seguros y accesibles continuamente incluso cuando dos dominios de error (con Espacios de almacenamiento directo, esto significa dos servidores) se vean afectados por errores simultáneos.
 
@@ -180,17 +180,17 @@ A menos que tengas solo dos servidores, te recomendamos usar el reflejo triple o
 En estos seis ejemplos, se muestra lo que el reflejo triple o la paridad doble **pueden** tolerar.
 
 - **1.**    Una unidad perdida (incluye unidades de caché)
-- **2.**    Un servidor que se ha perdido
+- **2.**    Un servidor perdió
 
 ![fault-tolerance-examples-1-and-2](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-12.png)
 
-- **3.**    Un servidor y una unidad perdido
+- **3.**    Se perdió un servidor y una unidad
 - **4.**    Dos unidades perdidas en servidores diferentes
 
 ![fault-tolerance-examples-3-and-4](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-34.png)
 
-- **5.**    Más de dos unidades perdidas, siempre y cuando se ven afectados a lo sumo dos servidores
-- **6.**    Dos servidores perdidos
+- **5.**    Se pierden más de dos unidades, siempre que se vean afectadas como máximo dos servidores
+- **1,8.**    Dos servidores perdidos
 
 ![fault-tolerance-examples-5-and-6](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-56.png)
 
@@ -200,8 +200,8 @@ En estos seis ejemplos, se muestra lo que el reflejo triple o la paridad doble *
 
 A lo largo de su vida, Espacios de almacenamiento puede tolerar cualquier número de errores, ya que se restaura a resistencia completa después de cada uno de ellos, con el tiempo suficiente. Sin embargo, al menos dos dominios de error pueden verse afectados de forma segura por errores en un momento determinado. En los siguientes ejemplos se muestran lo que el reflejo triple o la paridad doble **no pueden** tolerar.
 
-- **7.** Las unidades se pierden en tres o más servidores a la vez
-- **8.** Tres o más servidores a la vez perdidos
+- **7.** Unidades perdidas en tres o más servidores a la vez
+- **203.** Se han perdido tres o más servidores a la vez
 
 ![fault-tolerance-examples-7-and-8](media/Storage-Spaces-Fault-Tolerance/Fault-Tolerance-Example-78.png)
 
@@ -214,9 +214,9 @@ Echa un vistazo a [Crear volúmenes en Espacios de almacenamiento directo](creat
 Cada uno de los siguientes vínculos se encuentra en línea en algún lugar del texto de este tema.
 
 - [Espacios de almacenamiento directo en Windows Server 2016](storage-spaces-direct-overview.md)
-- [Conocimiento de dominio de error en Windows Server 2016](../../failover-clustering/fault-domains.md)
+- [Reconocimiento de dominios de error en Windows Server 2016](../../failover-clustering/fault-domains.md)
 - [Codificación de borrado en Azure por Microsoft Research](https://www.microsoft.com/en-us/research/publication/erasure-coding-in-windows-azure-storage/)
-- [Códigos de reconstrucción local y aceleran los volúmenes de paridad](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
+- [Códigos de reconstrucción locales y aceleración de volúmenes de paridad](https://blogs.technet.microsoft.com/filecab/2016/09/06/volume-resiliency-and-efficiency-in-storage-spaces-direct/)
 - [Volúmenes en la API de administración de almacenamiento](https://blogs.technet.microsoft.com/filecab/2016/08/29/deep-dive-volumes-in-spaces-direct/)
-- [Demostración de la eficacia de almacenamiento en Microsoft Ignite 2016](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
-- [Calculadora de capacidad vista previa para el almacenamiento de espacios directo](http://aka.ms/s2dcalc)
+- [Demostración de la eficiencia del almacenamiento en Microsoft encendido 2016](https://www.youtube.com/watch?v=-LK2ViRGbWs&t=36m55s)
+- [Versión preliminar de la calculadora de capacidad para Espacios de almacenamiento directo](http://aka.ms/s2dcalc)

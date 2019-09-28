@@ -2,18 +2,18 @@
 title: Crear una propiedad de clasificación
 description: En este artículo se describen las propiedades de clasificación que se usan para asignar valores a los archivos de un volumen o carpeta especificados.
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: aa1f1a2ab4422f4bb36a737e47894b22b60160e1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d330f896c71cced8e97701af2c1008b3531e065d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59880656"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394215"
 ---
 # <a name="create-a-classification-property"></a>Crear una propiedad de clasificación
 

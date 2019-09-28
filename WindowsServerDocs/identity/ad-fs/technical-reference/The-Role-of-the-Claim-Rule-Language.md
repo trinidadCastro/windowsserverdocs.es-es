@@ -6,15 +6,15 @@ ms.author: billmath
 manager: femila
 ms.date: 07/07/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.assetid: dda9d148-d72f-4bff-aa2a-f2249fa47e4c
 ms.technology: identity-adfs
-ms.openlocfilehash: 0c2d411be7ef807198df30074ea706d7c5398617
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: ff4c43bb8dc5582716638f0a3f6e4f6a8022aece
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869358"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71407374"
 ---
 # <a name="the-role-of-the-claim-rule-language"></a>El papel del lenguaje de reglas de notificaciones
 El lenguaje de reglas de notificación de Servicios de federación de Active Directory (AD FS) (AD FS) actúa como el bloque de creación administrativo para el comportamiento de las notificaciones entrantes y salientes, mientras que el motor de notificaciones actúa como motor de procesamiento de la lógica en el lenguaje de reglas de notificación que define la regla personalizada. Para obtener más información sobre el modo en que el motor de notificaciones procesa todas las reglas, consulte [The role of the Claims Engine](The-Role-of-the-Claims-Engine.md).  
@@ -144,7 +144,7 @@ Las siguientes propiedades de notificación están disponibles para acceder a el
 
 -   Claim.ValueType  
 
--   Nombre\_\[delapropiedadClaim.Properties(estapropiedaddevuelveunacadenavacíasilapropiedad_namenoseencuentraenlacoleccióndepropiedadesdelademanda.\] )  
+-   Claim. Properties @ no__t-0property @ no__t-1name @ no__t-2 (esta propiedad devuelve una cadena vacía si no se encuentra la propiedad _name en la colección de propiedades de la demanda. ) simple  
 
 Puede usar la función RegexReplace llamar a dentro de una expresión. Esta función toma una expresión de entrada y la hace coincidir con el modelo especificado. Si el patrón coincide, el resultado de la coincidencia se reemplaza por el valor de la sustitución.  
 

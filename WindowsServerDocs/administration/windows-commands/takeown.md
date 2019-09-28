@@ -1,8 +1,8 @@
 ---
 title: takeown
-description: Obtenga información sobre cómo obtener acceso a un archivo convirtiéndose en el propietario del archivo.
+description: Obtenga información acerca de cómo obtener acceso a un archivo convirtiéndose en el propietario del archivo.
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 4b5a4874edf9fa4406d4643e686fed2b725699dd
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 08804db36357c3d1d1efa7243b338bd85d5c48e2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59854366"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383758"
 ---
 # <a name="takeown"></a>takeown
 
@@ -36,25 +36,25 @@ takeown [/s <Computer> [/u [<Domain>\]<User name> [/p [<Password>]]]] /f <File n
 
 |Parámetro|Descripción|
 |---------|-----------|
-|/s \<equipo >|Especifica el nombre o dirección IP de un equipo remoto (no utilice las barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificadas en el comando.|
-|/u [\<Domain>\]<User name>|Ejecuta la secuencia de comandos con los permisos de la cuenta de usuario especificado. El valor predeterminado es permisos del sistema.|
-|/p [\<Password>]|Especifica la contraseña de la cuenta de usuario que se especifica en el **/u** parámetro.|
-|/f \<nombre de archivo >|Especifica el nombre de archivo o directorio patrón. Puede usar el carácter comodín * al especificar el patrón. También puede usar la sintaxis *ShareName*\*FileName *.|
-|/a|Asigna la propiedad al grupo de administradores en lugar del usuario actual.|
-|/r|Realiza una operación recursiva en todos los archivos del directorio especificado y los subdirectorios.|
-|/d {Y \| N}|Suprime el mensaje de confirmación que se muestra cuando el usuario actual no tiene el permiso "Mostrar lista de carpetas" en un directorio especificado y en su lugar utiliza el valor predeterminado especificado. Los valores válidos para el **/d** opción son los siguientes:</br>-Y: Tomar posesión del directorio.</br>-N: Omitir el directorio.</br>Tenga en cuenta que debe usar esta opción junto con la **/r** opción.|
+|/s \<Computer >|Especifica el nombre o la dirección IP de un equipo remoto (no use barras diagonales inversas). El valor predeterminado es el equipo local. Este parámetro se aplica a todos los archivos y carpetas especificados en el comando.|
+|/u [\<Domain > \] @ no__t-2|Ejecuta el script con los permisos de la cuenta de usuario especificada. El valor predeterminado es permisos del sistema.|
+|/p [\<Password >]|Especifica la contraseña de la cuenta de usuario que se especifica en el parámetro **/u** .|
+|/f @no__t-nombre de 0File >|Especifica el nombre de archivo o el patrón de nombre de directorio. Puede usar el carácter comodín * al especificar el patrón. También puede usar la sintaxis *ShareName*\*FileName *.|
+|/a|Proporciona la propiedad al grupo de administradores en lugar de al usuario actual.|
+|/r|Realiza una operación recursiva en todos los archivos del directorio y los subdirectorios especificados.|
+|/d {Y \| N}|Suprime el mensaje de confirmación que se muestra cuando el usuario actual no tiene el permiso "lista de carpetas" en un directorio especificado y, en su lugar, utiliza el valor predeterminado especificado. Los valores válidos para la opción **/d** son los siguientes:</br>SÍ Tomar posesión del directorio.</br>N Omitir el directorio.</br>Tenga en cuenta que debe usar esta opción junto con la opción **/r** .|
 |/?|Muestra la ayuda en el símbolo del sistema.|
 
 ## <a name="remarks"></a>Comentarios
 
 -   Este comando se usa normalmente en archivos por lotes.
--   Si el **/a** parámetro no se especifica, la propiedad de archivo se otorga al usuario que ha iniciado sesión actualmente en el equipo.
--   ¿Patrones mixtos mediante (**?** y **&#42;**) no son compatibles con **takeown** comando.
--   Después de eliminar el bloqueo con **takeown**, es posible que deba usar el Explorador de Windows o el **cacls** comando para el Concédase permisos completos para los archivos y directorios antes de que se pueden eliminar. Para obtener más información acerca de **cacls**, consulte "Referencias adicionales" al final de este tema.
+-   Si no se especifica el parámetro **/a** , se proporciona la propiedad del archivo al usuario que ha iniciado sesión actualmente en el equipo.
+-   Modelos mixtos mediante ( **?** y **&#42;** ) no son compatibles con el comando **takeown** .
+-   Después de eliminar el bloqueo con **takeown**, es posible que tenga que usar el explorador de Windows o el comando **cacls** para obtener permisos completos para los archivos y directorios antes de poder eliminarlos. Para obtener más información acerca de **cacls**, vea "referencias adicionales" al final de este tema.
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para tomar posesión de un archivo denominado Archivo_perdido, escriba:
+Para tomar posesión de un archivo denominado Lostfile, escriba:
 ```
 takeown /f lostfile
 ```

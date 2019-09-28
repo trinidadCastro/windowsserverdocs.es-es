@@ -2,7 +2,7 @@
 title: Introducción a las cuentas de servicio administradas de grupo
 description: Seguridad de Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-gmsa
@@ -13,12 +13,12 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/12/2016
-ms.openlocfilehash: 3d07f137aa40b26b4f4fd69c050415b82608ed7e
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: 8086ce329c532e07363fd22fe424a9a1dda04250
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546365"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71386889"
 ---
 # <a name="getting-started-with-group-managed-service-accounts"></a>Introducción a las cuentas de servicio administradas de grupo
 
@@ -48,7 +48,7 @@ En esta guía se proporcionan instrucciones paso a paso e información general p
 ## <a name="BKMK_Prereqs"></a>Requisitos previos
 Consulte la sección [Requisitos de las cuentas de servicio administradas de grupo](#BKMK_gMSA_Req)de este tema.
 
-## <a name="BKMK_Intro"></a>Introducción
+## <a name="BKMK_Intro"></a>Aparición
 Cuando un equipo cliente se conecta a un servicio hospedado en una granja de servidores con equilibrio de carga de red (NLB) o algún otro método en el que todos los servidores aparezcan como un mismo servicio de cara al cliente, no se pueden usar protocolos de autenticación que admitan la autenticación mutua, como Kerberos, salvo que todas las instancias de los servicios utilicen la misma entidad de seguridad. Esto implica que todos los servicios tienen que usar las mismas contraseñas o claves para demostrar su identidad.
 
 > [!NOTE]
@@ -56,13 +56,13 @@ Cuando un equipo cliente se conecta a un servicio hospedado en una granja de ser
 
 Los servicios tienen las siguientes entidades de seguridad entre las que pueden elegir, y cada una de ellas tiene determinadas limitaciones.
 
-|Principals|Scope|Servicios admitidos|Administración de contraseñas|
+|Entidades de seguridad|Scope|Servicios admitidos|Administración de contraseñas|
 |-------|-----|-----------|------------|
 |Cuenta de equipo del sistema de Windows|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de equipo sin sistema de Windows|Dominio|Cualquier servidor unido a un dominio|None|
+|Cuenta de equipo sin sistema de Windows|Dominio|Cualquier servidor unido a un dominio|Ninguno|
 |Cuenta virtual|Local|Limitado a un servidor|El equipo administra|
 |Cuenta de servicio administrada independiente de Windows 7|Dominio|Limitado a un servidor unido a un dominio|El equipo administra|
-|Cuenta de usuario|Dominio|Cualquier servidor unido a un dominio|None|
+|Cuenta de usuario|Dominio|Cualquier servidor unido a un dominio|Ninguno|
 |Cuenta de servicio administrada de grupo|Dominio|Cualquier servidor unido a un dominio de Windows Server 2012|El controlador de dominio administra y el host recupera|
 
 No se pueden compartir entre varios sistemas las cuentas de equipo de Windows, las cuentas de servicio administradas independientes (sMSA) de Windows 7 ni las cuentas virtuales. Si configuras una cuenta para que la compartan los servicios de las granjas de servidores, tendrás que elegir una cuenta de usuario o una cuenta de equipo aparte de un sistema de Windows. En cualquiera de estos dos casos, las cuentas no tienen la funcionalidad de administrar contraseñas con un solo punto de control. Esto genera un problema: cada organización se ve obligada a crear una solución costosa para actualizar las claves del servicio en Active Directory y, luego, distribuir las claves a todas las instancias de esos servicios.
@@ -153,11 +153,11 @@ Para completar los siguientes procedimientos, el requisito mínimo es ser miembr
 
 2.  Escribe los siguientes comandos en el símbolo del sistema de Windows PowerShell y, luego, presiona ENTRAR. (El módulo de Active Directory se cargará automáticamente).
 
-    **New-ADServiceAccount [-name] <string> -DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]-SamAccountName <string> -ServicePrincipalNames < cadena [] >**
+    **New-ADServiceAccount [-name] <string>-DNSHostName <string> [-KerberosEncryptionType <ADKerberosEncryptionType>] [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]-SamAccountName <string>-ServicePrincipalNames < cadena [] >**
 
     |Parámetro|Cadena|Ejemplo|
     |-------|-----|------|
-    |NOMBRE|Nombre de la cuenta|ITFarm1|
+    |Nombre|Nombre de la cuenta|ITFarm1|
     |DNSHostName|Nombre del host DNS del servicio|ITFarm1.contoso.com|
     |KerberosEncryptionType|Todos los tipos de cifrado admitidos por los servidores host|RC4, AES128, AES256|
     |ManagedPasswordIntervalInDays|Intervalo de cambio de la contraseña en días (si no se especifica, el valor predeterminado es 30 días)|90|
@@ -185,11 +185,11 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 2.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **New-ADServiceAccount [-name] <string> -RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]**
+    **New-ADServiceAccount [-name] <string>-RestrictToOutboundAuthenticationOnly [-ManagedPasswordIntervalInDays < Nullable [Int32] >] [-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >]**
 
     |Parámetro|Cadena|Ejemplo|
     |-------|-----|------|
-    |NOMBRE|Nombre de la cuenta|ITFarm1|
+    |Nombre|Nombre de la cuenta|ITFarm1|
     |ManagedPasswordIntervalInDays|Intervalo de cambio de la contraseña en días (si no se especifica, el valor predeterminado es 30 días)|75|
     |PrincipalsAllowedToRetrieveManagedPassword|Las cuentas de equipo de los hosts miembros o el grupo de seguridad al que pertenecen los hosts miembros|ITFarmHosts|
 
@@ -247,15 +247,15 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 2.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Get-ADServiceAccount [-name] <string> -PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Set-ADServiceAccount [-name] <string> -PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
+    **Set-ADServiceAccount [-name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |Parámetro|Cadena|Ejemplo|
 |-------|-----|------|
-|NOMBRE|Nombre de la cuenta|ITFarm1|
+|Nombre|Nombre de la cuenta|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|Las cuentas de equipo de los hosts miembros o el grupo de seguridad al que pertenecen los hosts miembros|Host1, Host2, Host3|
 
 **Ejemplo**
@@ -307,15 +307,15 @@ Para completar este procedimiento, el requisito mínimo es ser miembro de **Admi
 
 2.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Get-ADServiceAccount [-name] <string> -PrincipalsAllowedToRetrieveManagedPassword**
+    **Get-ADServiceAccount [-name] <string>-PrincipalsAllowedToRetrieveManagedPassword**
 
 3.  Escribe los siguientes comandos en el símbolo del sistema del módulo de Active Directory de Windows PowerShell y, luego, presiona ENTRAR:
 
-    **Set-ADServiceAccount [-name] <string> -PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
+    **Set-ADServiceAccount [-name] <string>-PrincipalsAllowedToRetrieveManagedPassword < ADPrincipal [] >**
 
 |Parámetro|Cadena|Ejemplo|
 |-------|-----|------|
-|NOMBRE|Nombre de la cuenta|ITFarm1|
+|Nombre|Nombre de la cuenta|ITFarm1|
 |PrincipalsAllowedToRetrieveManagedPassword|Las cuentas de equipo de los hosts miembros o el grupo de seguridad al que pertenecen los hosts miembros|Host1, Host3|
 
 **Ejemplo**
@@ -357,7 +357,7 @@ Para obtener más información sobre el cmdlet Uninstall-ADServiceAccount, en el
 
 
 
-## <a name="BKMK_Links"></a>Consulte también
+## <a name="BKMK_Links"></a>Vea también
 
 -   [Introducción a las cuentas de servicio administradas de grupo](group-managed-service-accounts-overview.md)
 

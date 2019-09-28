@@ -7,14 +7,14 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 055f9baff9c20019493a54fbb92e5c53c199a5e3
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 4d227be18cd69d79f24edca96bd873afda3f2d2a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70865519"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385451"
 ---
 # <a name="the-role-of-the-claims-engine"></a>El papel del motor de notificaciones
 En su nivel más alto, el motor de notificaciones\) en servicios de Federación de Active Directory (AD FS) \(AD FS\-es un motor basado en reglas que se dedica a atender y procesar solicitudes de notificación para el servicio de Federación. El motor de notificaciones es la única entidad dentro del Servicio de federación que se encarga de ejecutar cada uno de los conjuntos de reglas en todas las relaciones de confianza federadas que ha configurado y de entregar el resultado de salida a la canalización de notificaciones.  

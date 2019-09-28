@@ -6,14 +6,14 @@ ms.topic: article
 author: jwwool
 ms.author: jeffrew
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: b222cd4b97beecd25c14b9f8f39627bf46cb7716
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: a579d0274ff4b53a72c17760a6d53ef796625d3a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869539"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71356914"
 ---
 # <a name="windows-admin-center-known-issues"></a>Problemas conocidos de Windows Admin Center
 
@@ -36,7 +36,7 @@ El problema de incompatibilidad previamente divulgado de la extensión de integr
 
 - Si el servicio Windows Update (wuauserv) está detenido y deshabilitado, se producirá un error en el instalador. [19100629]
 
-### <a name="upgrade"></a>Actualizar
+### <a name="upgrade"></a>Actualizar versión
 
 - Al actualizar el centro de administración de Windows en modo de servicio desde una versión anterior, si usa msiexec en modo silencioso, es posible que se produzca un problema en el que se elimine la regla de Firewall de entrada para el puerto del centro de administración de Windows.
   - Para volver a crear la regla, ejecute el siguiente comando desde una consola de PowerShell con \<privilegios elevados, reemplazando el puerto > por el puerto configurado para el centro de administración de Windows (el valor predeterminado es 443).
@@ -146,7 +146,7 @@ Si no está instalado, puedes [descargar e instalar WMF 5.1](https://www.microso
 
 ### <a name="files"></a>Archivos
 
-- Aún no se admite la carga o descarga de archivos grandes. (\~límite de 100 MB) [12524234]
+- Aún no se admite la carga o descarga de archivos grandes. (@no__t límite de 0100mb) [12524234]
 
 ### <a name="powershell"></a>PowerShell
 

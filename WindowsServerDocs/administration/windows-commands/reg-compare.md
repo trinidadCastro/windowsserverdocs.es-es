@@ -1,8 +1,8 @@
 ---
-title: comparación de reg
-description: 'Tema de los comandos de Windows para ***- '
+title: REG-comparar
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 83bb010af4bfbf38ce41001d6a6001d5a3996090
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: bfccc1f64b0113967a52e3ac0516d800cfea3532
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66441921"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71384720"
 ---
-# <a name="reg-compare"></a>comparación de reg
+# <a name="reg-compare"></a>REG-comparar
 
 
 
-Compara especificados subclaves del registro o entradas.
+Compara las subclaves o entradas del registro especificadas.
 
 Para obtener ejemplos de cómo utilizar este comando, consulte [Ejemplos](#BKMK_examples).
 
@@ -38,49 +38,49 @@ reg compare <KeyName1> <KeyName2> [{/v ValueName | /ve}] [{/oa | /od | /os | on}
 
 |    Parámetro    |                                                                                                                                                                                                                                                                                          Descripción                                                                                                                                                                                                                                                                                           |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|   \<KeyName1>   |                                                               Especifica la ruta de acceso completa de la primera subclave que se va a comparar. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato \\ \\ComputerName\) como parte de la *KeyName*. Si se omite \\ \\ComputerName\ hace que la operación de forma predeterminada en el equipo local. El *KeyName* debe incluir una clave raíz válida. Son claves raíz válido para el equipo local: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.                                                                |
-|   \<KeyName2>   | Especifica la ruta de acceso completa de la segunda subclave que se va a comparar. Para especificar un equipo remoto, incluya el nombre del equipo (con el formato \\ \\ComputerName\) como parte de la *KeyName*. Si se omite \\ \\ComputerName\ hace que la operación de forma predeterminada en el equipo local. Especifica el nombre del equipo en *Clave2* hace que la operación que se usará la ruta de acceso a la subclave especificada en *Clave1*. El *KeyName* debe incluir una clave raíz válida. Son claves raíz válido para el equipo local: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU. |
-| /v \<ValueName> |                                                                                                                                                                                                                                                                     Especifica el nombre del valor para comparar bajo la subclave.                                                                                                                                                                                                                                                                      |
-|       /ve       |                                                                                                                                                                                                                                                         Especifica que se deben comparar solo las entradas que tienen un nombre de valor es null.                                                                                                                                                                                                                                                         |
-|      [{/oa      |                                                                                                                                                                                                                                                                                              /od                                                                                                                                                                                                                                                                                               |
-|       /oa       |                                                                                                                                                                                                                                             Especifica que se muestran todas las diferencias y coincidencias. De forma predeterminada, se muestran solo las diferencias.                                                                                                                                                                                                                                             |
-|       /od       |                                                                                                                                                                                                                                                          Especifica que se muestran solo las diferencias. Este es el comportamiento predeterminado.                                                                                                                                                                                                                                                          |
-|       /os       |                                                                                                                                                                                                                                                    Especifica que se muestran solo las coincidencias. De forma predeterminada, se muestran solo las diferencias.                                                                                                                                                                                                                                                     |
-|       /on       |                                                                                                                                                                                                                                                       Especifica que se muestra nada. De forma predeterminada, se muestran solo las diferencias.                                                                                                                                                                                                                                                        |
-|       /s        |                                                                                                                                                                                                                                                                         Se comparan todas las subclaves y entradas de forma recursiva.                                                                                                                                                                                                                                                                          |
-|       /?        |                                                                                                                                                                                                                                                                    Muestra la Ayuda de **reg compare** en el símbolo del sistema.                                                                                                                                                                                                                                                                    |
+|   @no__t 0KeyName1 >   |                                                               Especifica la ruta de acceso completa de la primera subclave que se va a comparar. Para especificar un equipo remoto, incluya el nombre del equipo (en el formato \\ @ no__t-1ComputerName @ no__t-2 como parte del nombre de *clave*. Si se omite \\ @ no__t-1ComputerName, la operación se realiza de forma predeterminada en el equipo local. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU.                                                                |
+|   @no__t 0KeyName2 >   | Especifica la ruta de acceso completa de la segunda subclave que se va a comparar. Para especificar un equipo remoto, incluya el nombre del equipo (en el formato \\ @ no__t-1ComputerName @ no__t-2 como parte del nombre de *clave*. Si se omite \\ @ no__t-1ComputerName, la operación se realiza de forma predeterminada en el equipo local. Si solo se especifica el nombre de equipo en *KeyName2* , la operación utilizará la ruta de acceso a la subclave especificada en *KeyName1*. *KeyName* debe incluir una clave raíz válida. Las claves raíz válidas para el equipo local son: HKLM, HKCU, HKCR, HKU y HKCC. Si se especifica un equipo remoto, las claves raíz válidas son: HKLM y HKU. |
+| /v \<ValueName > |                                                                                                                                                                                                                                                                     Especifica el nombre del valor que se va a comparar en la subclave.                                                                                                                                                                                                                                                                      |
+|       /ve       |                                                                                                                                                                                                                                                         Especifica que solo se deben comparar las entradas que tengan un nombre de valor null.                                                                                                                                                                                                                                                         |
+|      [{/OA      |                                                                                                                                                                                                                                                                                              /OD                                                                                                                                                                                                                                                                                               |
+|       /OA       |                                                                                                                                                                                                                                             Especifica que se muestran todas las diferencias y coincidencias. De forma predeterminada, solo se muestran las diferencias.                                                                                                                                                                                                                                             |
+|       /OD       |                                                                                                                                                                                                                                                          Especifica que solo se muestran las diferencias. Este es el comportamiento predeterminado.                                                                                                                                                                                                                                                          |
+|       /os       |                                                                                                                                                                                                                                                    Especifica que solo se muestran las coincidencias. De forma predeterminada, solo se muestran las diferencias.                                                                                                                                                                                                                                                     |
+|       /on       |                                                                                                                                                                                                                                                       Especifica que no se muestra nada. De forma predeterminada, solo se muestran las diferencias.                                                                                                                                                                                                                                                        |
+|       /s        |                                                                                                                                                                                                                                                                         Compara todas las subclaves y entradas de forma recursiva.                                                                                                                                                                                                                                                                          |
+|       /?        |                                                                                                                                                                                                                                                                    Muestra la ayuda de **reg Compare** en el símbolo del sistema.                                                                                                                                                                                                                                                                    |
 
 ## <a name="remarks"></a>Comentarios
 
-La tabla siguiente enumeran los valores devueltos para **reg compare**.
+En la tabla siguiente se enumeran los valores devueltos para **reg Compare**.
 
 |Valor|Descripción|
 |-----|-----------|
-|0|La comparación es correcta y el resultado es idéntico.|
+|0|La comparación se realiza correctamente y el resultado es idéntico.|
 |1|Error en la comparación.|
-|2|La comparación se realizó correctamente y se han encontrado diferencias.|
+|2|La comparación se realizó correctamente y se encontraron diferencias.|
 
-En la tabla siguiente se enumera los símbolos que se muestran en los resultados.
+En la tabla siguiente se enumeran los símbolos que se muestran en los resultados.
 
 |Símbolo|Descripción|
 |------|-----------|
-|=|*Clave1* datos están iguales a *Clave2* datos.|
-|<|*Clave1* datos están menor que *Clave2* datos.|
-|>|*Clave1* datos están mayores que *Clave2* datos.|
+|=|Los datos de *KeyName1* son iguales a los datos de *KeyName2* .|
+|<|Los datos de *KeyName1* son menores que *KeyName2* .|
+|>|*KeyName1* Data es mayor que *KeyName2* Data.|
 
-## <a name="BKMK_examples"></a>Ejemplos
+## <a name="BKMK_examples"></a>Example
 
-Para comparar todos los valores bajo la clave **MyApp** con todos los valores bajo la clave **SaveMyApp**, tipo:
+Para comparar todos los valores de la clave **MyApp** con todos los valores de la clave **SaveMyApp**, escriba:
 
-REG COMPARE HKLM\Software\MiCo\MiAp HKLM\Software\MiCo\GuardaMiAp
+REG COMPARE HKLM\Software\MyCo\MyApp HKLM\Software\MyCo\SaveMyApp
 
-Para comparar el valor de la versión en la clave **MyCo** y el valor de la versión en la clave **MyCo1**, tipo:
+Para comparar el valor de la versión con la clave **MYCO** y el valor de la versión en la clave **MyCo1**, escriba:
 
-REG COMPARE HKLM\Software\MyCo HKLM\Software\MyCo1 /v Version
+REG COMPARE HKLM\Software\MyCo HKLM\Software\MyCo1/v versión
 
-Para comparar todas las subclaves y valores en HKLM\Software\MiCo en el equipo llamado ZODIAC con todas las subclaves y valores en HKLM\Software\MiCo en el equipo local, escriba:
+Para comparar todas las subclaves y valores de HKLM\Software\MyCo en el equipo denominado zodíaco con todas las subclaves y valores de HKLM\Software\MyCo en el equipo local, escriba:
 
-REG COMPARE \\\\ZODIAC\HKLM\Software\MyCo \\\\. /s
+REG COMPARE \\ @ no__t-1ZODIAC\HKLM\Software\MyCo \\ @ no__t-3. /s
 
 #### <a name="additional-references"></a>Referencias adicionales
 

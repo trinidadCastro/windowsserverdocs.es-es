@@ -2,18 +2,18 @@
 title: Configurar informes de almacenamiento
 description: En este artículo se describe cómo configurar los parámetros predeterminados de los informes de almacenamiento
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: f62109a8d3ea3e4e6386956789d276f9aa911e80
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: d3500f4ea4fc264f3cb663f17c3a50439b9cb454
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59885236"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394264"
 ---
 # <a name="configure-storage-reports"></a>Configurar informes de almacenamiento
 
@@ -42,5 +42,5 @@ Puedes configurar los parámetros predeterminados de los informes de almacenamie
 
 ## <a name="see-also"></a>Vea también
 
--   [Opciones del Administrador de recursos del servidor de archivos de configuración](setting-file-server-resource-manager-options.md)
+-   [Configurar las opciones del Administrador de recursos del servidor de archivos](setting-file-server-resource-manager-options.md)
 -   [Administración de informes de almacenamiento](storage-reports-management.md)

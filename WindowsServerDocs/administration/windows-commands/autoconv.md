@@ -1,8 +1,8 @@
 ---
 title: autoconv
-description: 'Tema de los comandos de Windows para **autoconv** : convierte archivos (Fat) de la tabla de asignación y el sistema de archivos de los volúmenes Fat32 a NTFS.'
+description: 'El tema comandos de Windows para **autoconv** : convierte volúmenes de tabla de asignación de archivos (FAT) y FAT32 en el sistema de archivos NTFS.'
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 1d135da085558f12a51c8febfd72aa805e1d12f1
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: bf36be6bcf3dd8f6c61c6ab0d8780ed77dd8903a
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59872496"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383449"
 ---
 # <a name="autoconv"></a>autoconv
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Convierte archivos (Fat) de la tabla de asignación y los volúmenes Fat32 al sistema de archivos NTFS, dejando intacto archivos y directorios existentes en el inicio después de **autochk** se ejecuta. no se puede convertir los volúmenes que se convierte en el sistema de archivos NTFS a Fat o Fat32.
+convierte los volúmenes de tabla de asignación de archivos (FAT) y FAT32 en el sistema de archivos NTFS, de forma que los archivos y directorios existentes permanecen intactos al iniciarse después de ejecutar **Autochk** . los volúmenes convertidos en el sistema de archivos NTFS no se pueden volver a convertir a FAT o FAT32.
 ## <a name="remarks"></a>Comentarios
-No se puede ejecutar **autoconv** en la línea de comandos. Esto solo se ejecutará en el inicio, si establece a través de **convert.exe**.
+No se puede ejecutar **autoconv** en la línea de comandos. Solo se ejecutará durante el inicio, si se establece mediante **Convert. exe**.
 ## <a name="additional-references"></a>Referencias adicionales
 [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)
-[autochk](autochk.md)
+[Autochk](autochk.md)
 [convertir](convert.md)
 [trabajar con sistemas de archivos](https://go.microsoft.com/fwlink/?LinkId=4509)

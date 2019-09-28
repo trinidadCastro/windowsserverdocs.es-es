@@ -2,18 +2,18 @@
 title: Conectarse a un equipo remoto
 description: En este artículo se describe cómo conectarse a un equipo remoto para administrar recursos de almacenamiento desde el Administrador de recursos del servidor de archivos
 ms.date: 7/7/2017
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: storage
 ms.topic: article
 author: JasonGerend
 manager: brianlic
 ms.author: jgerend
-ms.openlocfilehash: 93d2be926437b65ed8eb84a828ea0d7da6a51086
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 4d813933ec3073ecb3348468ca4b8f2e124c403d
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59818866"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402020"
 ---
 # <a name="connect-to-a-remote-computer"></a>Conectarse a un equipo remoto 
 
@@ -47,4 +47,4 @@ Para administrar recursos remotos con el Administrador de recursos del servidor 
 
 ## <a name="see-also"></a>Vea también
 
--   [Administración de recursos de almacenamiento remoto](managing-remote-storage-resources.md)
+-   [Administrar recursos de almacenamiento remoto](managing-remote-storage-resources.md)

@@ -7,24 +7,24 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: bf21860603b3055c2ef2c9e7b77bb106eb06e238
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: 62d7549f124b96cd7addf7e54cc5d0c1d9897098
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191624"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408126"
 ---
 # <a name="deploying-ad-fs-in-the-account-partner-organization"></a>Implementación de AD FS en la organización del asociado de cuenta
 
-Un asociado de cuenta en Active Directory Federation Services \(AD FS\) representa la organización en la relación de confianza de federación que almacena físicamente las cuentas de usuario en un almacén de atributos admitidos. Para obtener más información acerca de qué atributo se admiten los almacenes, vea [The Role of Attribute Stores](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md).  
+Un asociado de cuenta en Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 representa la organización en la relación de confianza de Federación que almacena físicamente las cuentas de usuario en un almacén de atributos compatible. Para obtener más información sobre qué almacenes de atributos se admiten, vea [el rol de almacenes de atributos](../../ad-fs/technical-reference/The-Role-of-Attribute-Stores.md).  
   
-El servidor de federación en la organización del asociado de cuenta autentica a los usuarios locales y crea tokens de seguridad que se usan por el asociado de recurso de tomar decisiones de autorización. Usuarios de confianza, como sitios Web y servicios Web pueden, a continuación, se registran en el servidor de federación con facilidad y consumen tokens emitidos para autenticación y control de acceso.  
+El servidor de Federación de la organización del asociado de cuenta autentica a los usuarios locales y crea tokens de seguridad usados por el asociado de recurso para tomar decisiones de autorización. Los usuarios de confianza como los sitios web y los servicios Web pueden registrarse fácilmente con el servidor de Federación y consumir tokens emitidos para la autenticación y el control de acceso.  
   
-En escenarios en los que es necesario proporcionar a los usuarios con acceso a varias aplicaciones federadas o servicios, cuando cada aplicación o servicio se hospeda por otra organización, puede configurar el servidor de federación del asociado de cuenta para que pueda implementar varios usuarios de confianza.  
+En escenarios en los que es necesario proporcionar a los usuarios acceso a varias aplicaciones o servicios federados, cuando cada aplicación o servicio está hospedado en una organización diferente, puede configurar el servidor de Federación del asociado de cuenta para que pueda implementar varios usuarios de confianza.  
   
-Para obtener más información acerca de cómo instalar y configurar una organización del asociado de cuenta, consulte [lista de comprobación: Configuración de la organización del asociado de cuenta](../../ad-fs/deployment/Checklist--Configuring-the-Account-Partner-Organization.md).  
+Para obtener más información sobre cómo instalar y configurar una organización de asociado de cuenta, vea [Checklist: Configuración de la organización del asociado de cuenta @ no__t-0.  
   
 ## <a name="in-this-section"></a>En esta sección  
   

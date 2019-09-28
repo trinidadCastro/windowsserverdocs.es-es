@@ -6,14 +6,14 @@ ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.date: 06/07/2019
-ms.openlocfilehash: 36c9dfcb38ef417df56206cdb18633cc877183c4
-ms.sourcegitcommit: af80963a1d16c0b836da31efd9c5caaaf6708133
+ms.openlocfilehash: 144c57bba621ee1b94a66914f8d9b6c0292f8b03
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68658899"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406871"
 ---
 # <a name="what-type-of-installation-is-right-for-you"></a>¿Qué tipo de instalación es el adecuado para ti?
 
@@ -41,31 +41,31 @@ Puede **instalar** el centro de administración de Windows en los siguientes sis
 
 Al centro de administración de Windows operativo:
 
-- **En escenario de cliente local:** Inicie la puerta de enlace del centro de administración de Windows desde el menú Inicio y conéctese a él desde un `https://localhost:6516`explorador Web del cliente mediante el acceso a.
-- **En otros escenarios:** Conéctese a la puerta de enlace del centro de administración de Windows en otro equipo desde un explorador cliente a través de su dirección URL, por ejemplo,`https://servername.contoso.com`
+- **En escenario de cliente local:** Inicie la puerta de enlace del centro de administración de Windows desde el menú Inicio y conéctese a él desde un explorador Web del cliente mediante el acceso a `https://localhost:6516`.
+- **En otros escenarios:** Conéctese a la puerta de enlace del centro de administración de Windows en otra máquina desde un explorador cliente a través de su dirección URL, por ejemplo, `https://servername.contoso.com`
 
 > [!WARNING]
 > No se admite la instalación del centro de administración de Windows en un controlador de dominio. [Obtenga más información sobre los procedimientos recomendados de seguridad de los controladores de dominio](https://docs.microsoft.com/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack). 
 
 ## <a name="installation-supported-web-browsers"></a>Instalación: Exploradores Web compatibles
 
-Microsoft Edge y Google Chrome se prueban y admiten en Windows 10. Otros exploradores Web, incluidos Internet Explorer y Firefox, no forman parte actualmente de nuestra matriz de pruebas y, por lo tanto, no se admiten *oficialmente* . Es posible que estos exploradores tengan problemas al ejecutar el centro de administración de Windows. Por ejemplo, Firefox tiene su propio almacén de certificados, por lo que debe importar `Windows Admin Center Client` el certificado en Firefox para usar el centro de administración de Windows en Windows 10. Para obtener más información, consulte [problemas conocidos específicos del explorador](../support/known-issues.md#browser-specific-issues).
+Microsoft Edge y Google Chrome se prueban y admiten en Windows 10. Otros exploradores Web, incluidos Internet Explorer y Firefox, no forman parte actualmente de nuestra matriz de pruebas y, por lo tanto, no se admiten *oficialmente* . Es posible que estos exploradores tengan problemas al ejecutar el centro de administración de Windows. Por ejemplo, Firefox tiene su propio almacén de certificados, por lo que debe importar el certificado `Windows Admin Center Client` en Firefox para usar el centro de administración de Windows en Windows 10. Para obtener más información, consulte [problemas conocidos específicos del explorador](../support/known-issues.md#browser-specific-issues).
 
 ## <a name="management-target-supported-operating-systems"></a>Destino de administración: Sistemas operativos compatibles
 
 Puede **administrar** los siguientes sistemas operativos de Windows mediante el centro de administración de Windows:
 
-| `Version` | Administrar *nodo* a través de *Administrador del servidor* | Administrar el *clúster* a través de *Administrador de clústeres de conmutación por error* | Administrar *HCI* a través *del administrador* de clústeres de HCI |
+| `Version` | Administrar *nodo* a través de *Administrador del servidor* | Administrar el *clúster* a través de *Administrador de clústeres de conmutación por error* | Administrar *HCI* a través *del administrador de clústeres de HCI* |
 | ------------------------- |--------------- | ----- | ------------------------ |
 | Windows 10, versión 1709 o posterior | Sí (a través de administración de equipos) | N/D | N/D |
 | Canal semianual de Windows Server | Sí | Sí | N/D |
 | Windows Server 2019 | Sí | Sí | Sí |
 | Windows Server 2016 | Sí | Sí | Sí, con la [última actualización acumulativa](../use/manage-hyper-converged.md#prepare-your-windows-server-2016-cluster-for-windows-admin-center) |
 | Microsoft Hyper-V Server 2016 | Sí | Sí | N/D |
-| Windows Server 2012 R2 | Sí | Sí | N/D |
+| Windows Server 2012 R2 | Sí | Sí | N/D |
 | Microsoft Hyper-V Server 2012 R2 | Sí | Sí | N/D |
 | Windows Server 2012 | Sí | Sí | N/D |
-| Windows Server 2008 R2 | Sí, funcionalidad limitada | N/D | N/D |
+| Windows Server 2008 R2 | Sí, funcionalidad limitada | N/D | N/D |
 
 > [!NOTE]
 > El centro de administración de Windows requiere características de PowerShell que no están incluidas en Windows Server 2008 R2, 2012 y 2012 R2. Si va a administrarlos con el centro de administración de Windows, tendrá que instalar Windows Management Framework (WMF) versión 5,1 o superior en esos servidores.

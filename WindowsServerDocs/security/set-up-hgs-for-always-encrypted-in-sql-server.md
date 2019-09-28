@@ -1,18 +1,18 @@
 ---
 title: Configuración del servicio de protección de host para Always Encrypted en SQL Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 11/03/2018
-ms.openlocfilehash: 74146e854f4183970d2b92bb26babbd1b31f0bc2
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 5d1396f609a425adcd87a41d3469f3aa55774851
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870351"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402252"
 ---
 # <a name="setting-up-the-host-guardian-service-for-always-encrypted-with-secure-enclaves-in-sql-server"></a>Configuración del servicio de protección de host para Always Encrypted con Secure enclaves en SQL Server 
 

@@ -7,22 +7,22 @@ ms.author: billmath
 manager: femila
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adfs
-ms.openlocfilehash: 87849e1d7a5eb8fef24a551dfc681c65a202f027
-ms.sourcegitcommit: 0b5fd4dc4148b92480db04e4dc22e139dcff8582
+ms.openlocfilehash: f4741fcc683a8a22318caa47d5cbd66352862a86
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/24/2019
-ms.locfileid: "66191538"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71408131"
 ---
 # <a name="deploying-ad-fs-in-the-resource-partner-organization"></a>Implementación de AD FS en la organización del asociado de recurso
 
-La organización del asociado de recurso en Active Directory Federation Services \(AD FS\) representa la organización cuyos servidores Web pueden estar protegidos por un recurso\-servidor de federación de lado. El servidor de federación en el asociado de recurso usa los tokens de seguridad generados por el asociado de cuenta para proporcionar notificaciones a los servidores Web que se encuentran en el asociado de recurso.  
+La organización del asociado de recurso de Servicios de federación de Active Directory (AD FS) \(AD FS @ no__t-1 representa la organización cuyos servidores Web pueden estar protegidos por un servidor de Federación de recursos @ no__t-2side. El servidor de Federación del asociado de recurso utiliza los tokens de seguridad generados por el asociado de cuenta para proporcionar notificaciones a los servidores web ubicados en el asociado de recurso.  
   
-En escenarios en los que es necesario proporcionar acceso a los servicios federados o aplicaciones a distintos usuarios: cuando algunos usuarios residen en distintas organizaciones, puede configurar el servidor de federación de recursos para que pueda implementar varios asociados de cuenta.  
+En escenarios en los que es necesario proporcionar acceso a servicios o aplicaciones federados a muchos usuarios diferentes (cuando algunos usuarios residen en organizaciones diferentes), puede configurar el servidor de Federación de recursos para que pueda implementar varios asociados de cuenta.  
   
-Para obtener más información acerca de cómo instalar y configurar una organización del asociado de recurso, consulte [lista de comprobación: Configuración de la organización del asociado de recurso](../../ad-fs/deployment/Checklist--Configuring-the-Resource-Partner-Organization.md).  
+Para obtener más información sobre cómo instalar y configurar una organización de asociado de recurso, consulte [Checklist: Configuración de la organización del asociado de recurso @ no__t-0.  
   
 ## <a name="in-this-section"></a>En esta sección  
   

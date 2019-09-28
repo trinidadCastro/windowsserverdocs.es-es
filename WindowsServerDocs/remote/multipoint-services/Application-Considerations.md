@@ -1,8 +1,8 @@
 ---
 title: Consideraciones de la aplicación
-description: Información de compatibilidad para las aplicaciones en MultiPoint Services
+description: Información de compatibilidad para aplicaciones en Multipoint Services
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: multipoint-services
 ms.reviewer: na
 ms.suite: na
@@ -13,34 +13,34 @@ author: evaseydl
 manager: scottman
 ms.author: evas
 ms.date: 08/04/2016
-ms.openlocfilehash: 400f87c09f1b2e897d67f94e9b7ac12ae0a1e799
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 21531273b1dd6d643df3f816a880a0efb3117c70
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59839836"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405131"
 ---
 # <a name="application-considerations"></a>Consideraciones de la aplicación
   
 ## <a name="application-compatibility"></a>Compatibilidad de aplicaciones
 
-Cualquier aplicación que se va a ejecutar en un sistema MultiPoint Services debe cumplir los siguientes requisitos:
+Cualquier aplicación que desee ejecutar en un sistema Multipoint Services debe cumplir los siguientes requisitos:
   
-- Debe instalar y ejecutar en Windows Server 2016 
-- Debe ser consciente de sesión para que cada usuario pueda ejecutar una instancia de la aplicación en un sistema MultiPoint.
+- Debe instalarse y ejecutarse en Windows Server 2016 
+- Debe tener en cuenta la sesión, por lo que cada usuario puede ejecutar una instancia de la aplicación en un sistema multipoint.
   
-Si la aplicación especificar este requisito, se recomienda que intente instalar la aplicación y su uso en una sesión de escritorio remoto. 
+Si la aplicación especifica este requisito, se recomienda intentar instalar la aplicación y usarla en una sesión de escritorio remoto. 
 
-## <a name="addressing-application-compatibility-problems"></a>Abordar problemas de compatibilidad de aplicaciones  
-MultiPoint Services ofrece la opción para asociar las estaciones con instancias completas de las ediciones de Windows 10 Enterprise que se ejecutan prácticamente en el mismo equipo host. Para obtener información sobre las aplicaciones críticas que no se ejecutarán varias instancias para varios usuarios, o no se instalará en un sistema operativo de 64 bits, esto puede ser una solución. Para implementar escritorios de este modo requiere el uso de la ficha de escritorios virtuales en MultiPoint Manager para:  
+## <a name="addressing-application-compatibility-problems"></a>Solucionar problemas de compatibilidad de aplicaciones  
+Multipoint Services ofrece la opción de asociar estaciones con instancias completas de las ediciones de Windows 10 Enterprise que se ejecutan prácticamente en el mismo equipo host. En el caso de las aplicaciones críticas que no van a ejecutar varias instancias para varios usuarios o que no se instalarán en un sistema operativo de 64 bits, puede tratarse de una solución. Para implementar escritorios de esta manera, es necesario usar la pestaña escritorios virtuales de Multipoint Manager para:  
   
 -   Habilitar escritorios virtuales  
 -   Crear una plantilla de escritorio  
--   Personalizar la plantilla con la aplicación de problema  
+-   Personalización de la plantilla con la aplicación problemática  
 -   Asociar estaciones con la plantilla personalizada  
 
-Cada estación se inicia desde la misma plantilla, por lo que los cambios se borran cada vez que se inicia el equipo.  
+Cada estación se inicia a partir de la misma plantilla, por lo que los cambios se borran cada vez que se inicia el equipo.  
   
 >[!NOTE] 
->Es importante comprobar los requisitos de licencia para las aplicaciones que desea ejecutar en un MultiPoint. Aunque se va a instalar aplicaciones de una copia podrían requerir las licencias por usuario.  
+>Es importante comprobar los requisitos de licencia para las aplicaciones que desea ejecutar en un multipoint. Aunque está instalando una copia de una aplicación, es posible que necesite licencias por usuario.  
   

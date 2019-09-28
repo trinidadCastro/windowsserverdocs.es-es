@@ -1,19 +1,19 @@
 ---
 title: Administrar el protocolo de puente del centro de datos (DCB)
 description: En este tema se proporcionan instrucciones sobre cómo usar los comandos de Windows PowerShell para administrar el protocolo de puente del centro de datos en Windows Server 2016.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking
 ms.topic: article
 ms.assetid: 1575cc7c-62a7-4add-8f78-e5d93effe93f
 manager: brianlic
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: fd6e8e5dd0bb4103011269473c3e1091739c775e
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: d635f96516040fcb30504f752c8194b0323c63f3
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869800"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405779"
 ---
 # <a name="manage-data-center-bridging-dcb"></a>Administrar el protocolo de puente del centro de datos (DCB)
 
@@ -109,7 +109,7 @@ Puede usar el comando **New-NetQosTrafficClass** para crear una clase de tráfic
     SMB  ETS   30   4Global
       
 
-De forma predeterminada, todos los valores p de 802.1 se asignan a una clase de tráfico predeterminada, que tiene un 100% del ancho de banda del vínculo físico. El comando **New-NetQosTrafficClass** crea una nueva clase de tráfico, a la que se asigna cualquier paquete etiquetado con el valor de prioridad 4 de 802.1 p. El algoritmo \(de selección de\) transmisión TSA es ETS y tiene un 30% del ancho de banda.
+De forma predeterminada, todos los valores p de 802.1 se asignan a una clase de tráfico predeterminada, que tiene un 100% del ancho de banda del vínculo físico. El comando **New-NetQosTrafficClass** crea una nueva clase de tráfico, a la que se asigna cualquier paquete etiquetado con el valor de prioridad 4 de 802.1 p. El algoritmo de selección de transmisión \(TSA @ no__t-1 es ETS y tiene un 30% del ancho de banda.
 
 Puede crear hasta 7 clases de tráfico nuevas. Al incluir la clase de tráfico predeterminada, puede haber como máximo 8 clases de tráfico en el sistema. Sin embargo, es posible que un adaptador de red compatible con DCB no admita tantas clases de tráfico en el hardware. Si crea más clases de tráfico de las que se pueden incluir en un adaptador de red y habilita DCB en ese adaptador de red, el controlador de minipuerto informa de un error al sistema operativo. El error se registra en el registro de eventos.
 

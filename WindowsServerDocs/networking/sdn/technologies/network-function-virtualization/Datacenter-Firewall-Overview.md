@@ -1,9 +1,9 @@
 ---
 title: Información general de Datacenter Firewall
-description: Puede utilizar este tema para obtener información acerca de Firewall de centro de datos, que es una capa de red, 5-tupla (números de puerto de protocolo, origen y destino, direcciones IP de origen y destino), un firewall con estado, multiempresa en Windows Server 2016.
+description: Puede usar este tema para obtener información sobre el Firewall de centros de seguridad, que es una capa de red, números de puerto de 5-tupla (Protocolo, número de puerto de origen y destino, direcciones IP de origen y de destino), Firewall multiinquilino con estado en Windows Server 2016.
 manager: brianlic
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: networking-sdn
@@ -12,44 +12,44 @@ ms.topic: article
 ms.assetid: 67576533-206b-428a-956c-ed8c53218d9b
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: f1de50dc61639f4985c9d28fdde6072af650f42e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 9562972f731a553dbc3e5558fcce1d5c51d539d0
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59890836"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71405887"
 ---
 # <a name="datacenter-firewall-overview"></a>Información general de Datacenter Firewall
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Datacenter Firewall es un nuevo servicio incluido con Windows Server 2016. Es una capa de red, 5-tupla (protocolo, números de puerto de origen y destino, direcciones IP de origen y destino), firewall con estado, para varios inquilinos. Cuando se implementa y se ofrecen como un servicio por el proveedor de servicios, los administradores de inquilinos pueden instalar y configurar las directivas de firewall para ayudar a proteger sus redes virtuales del tráfico no deseado que se origina en Internet y redes de intranet.  
+Firewall de centro de recursos es un nuevo servicio incluido en Windows Server 2016. Es un nivel de red, 5-tupla (Protocolo, números de puerto de origen y de destino, direcciones IP de origen y de destino), Firewall multiempresa con estado. Cuando el proveedor de servicios implementa y ofrece como servicio, los administradores de inquilinos pueden instalar y configurar directivas de Firewall para ayudar a proteger sus redes virtuales del tráfico no deseado procedente de redes de Internet e Intranet.  
   
-![Datacenter Firewall en la pila de red](../../../media/Datacenter-Firewall-Overview/MultitenantFirewallOverview2.png)  
+![Firewall de Datacenter en la pila de red](../../../media/Datacenter-Firewall-Overview/MultitenantFirewallOverview2.png)  
   
-El administrador del proveedor de servicios o el Administrador de inquilinos puede administrar las directivas de Firewall de centro de datos a través de la controladora de red y las API de northbound.  
+El administrador del proveedor de servicios o el administrador de inquilinos pueden administrar las directivas de firewall del centro de seguridad a través de la controladora de red y las API de Northbound.  
   
-El Firewall de centro de datos ofrece las siguientes ventajas para los proveedores de servicios en la nube:  
+El firewall del centro de seguridad de ofrece las siguientes ventajas para los proveedores de servicios en la nube:  
   
--   Una solución altamente escalable, administrable y disturbio firewall basada en software que se puede ofrecer a los inquilinos  
+-   Una solución de Firewall basada en software muy escalable, administrable y diagnóstico que se puede ofrecer a los inquilinos.  
   
--   Libertad para mover máquinas virtuales de inquilinos a hosts diferentes de proceso sin interrumpir las directivas de firewall de inquilino  
+-   Libertad de trasladar máquinas virtuales de inquilinos a distintos hosts de proceso sin interrumpir las directivas de Firewall de inquilino  
   
-    -   Implementado como un firewall de agente de host de puerto vSwitch  
+    -   Implementado como un firewall del agente host del puerto vSwitch  
   
-    -   Máquinas virtuales de inquilinos obtener las directivas asignadas a su servidor de seguridad de agente de host de vSwitch  
+    -   Las máquinas virtuales de inquilino obtienen las directivas asignadas a su firewall de agente de host de vSwitch  
   
-    -   Las reglas de Firewall se configuran en cada puerto vSwitch, independiente del host real que se ejecuta la máquina virtual  
+    -   Las reglas de Firewall se configuran en cada puerto vSwitch, independientemente del host real que ejecuta la máquina virtual.  
   
--   Ofrece protección para máquinas virtuales independientes del sistema operativo de invitado de inquilino del inquilino  
+-   Ofrece protección a las máquinas virtuales de inquilinos independientemente del sistema operativo invitado del inquilino.  
   
-El Firewall de centro de datos ofrece las siguientes ventajas para inquilinos:  
+El firewall del centro de seguridad de ofrece las siguientes ventajas para los inquilinos:  
   
--   Capacidad de definir las reglas de firewall para ayudar a proteger las cargas de trabajo en las redes virtuales de Internet.  
+-   Capacidad de definir reglas de Firewall para ayudar a proteger las cargas de trabajo orientadas a Internet en redes virtuales  
   
--   Capacidad de definir las reglas de firewall para ayudar a proteger el tráfico entre máquinas virtuales en la misma L2 subred virtual, así como entre máquinas virtuales en diferentes subredes virtuales L2  
+-   Capacidad de definir reglas de Firewall para ayudar a proteger el tráfico entre máquinas virtuales en la misma subred virtual de nivel 2, así como entre máquinas virtuales en subredes virtuales de nivel 2 diferentes.  
   
--   Capacidad para definir las reglas de firewall para ayudar a proteger y aislar el tráfico de red entre el inquilino local las redes y sus redes virtuales en el proveedor de servicios  
+-   Capacidad de definir reglas de Firewall para ayudar a proteger y aislar el tráfico de red entre las redes locales de inquilinos y sus redes virtuales en el proveedor de servicios.  
   
 
 

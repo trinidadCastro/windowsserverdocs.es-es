@@ -1,32 +1,32 @@
 ---
 title: Implementar BranchCache
-description: En este tema forma parte de BranchCache Deployment Guide para Windows Server 2016, que demuestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso de ancho de banda WAN de sucursales
+description: Este tema forma parte de la guía de implementación de BranchCache para Windows Server 2016, que muestra cómo implementar BranchCache en los modos de caché distribuida y hospedada para optimizar el uso del ancho de banda WAN en las sucursales.
 manager: brianlic
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: networking-bc
 ms.tgt_pltfrm: na
 ms.topic: get-started-article
 ms.assetid: 30b0a6d9-d6d5-4019-b8dc-ed5365d9921f
 ms.author: pashort
 author: shortpatti
-ms.openlocfilehash: 80184322719292c4776923e4023e783eb632c26e
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 7126be417702eab54a36765c146acff14d8a8c88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59862056"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71406476"
 ---
 # <a name="deploy-branchcache"></a>Implementar BranchCache
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016
 
-Las secciones siguientes proporcionan información sobre cómo implementar BranchCache en los modos de caché distribuida y hospedada.  
+En las secciones siguientes se proporciona información sobre cómo implementar BranchCache en los modos de caché distribuida y hospedada.  
   
 -   [Instalar y configurar servidores de contenido](Install-and-Configure-Content-Servers.md)  
   
--   [Implementar servidores de caché hospedada &#40;opcional&#41;](deploy-hosted-cache-servers.md)  
+-   [Implementar servidores &#40;de caché hospedada opcional&#41;](deploy-hosted-cache-servers.md)  
   
--   [Precargar contenido en servidores de caché hospedada y hash previos &#40;opcional&#41;](prehashing-and-preloading.md)  
+-   [Aplicar hash y precargar contenido en servidores &#40;de caché hospedada opcional&#41;](prehashing-and-preloading.md)  
   
 -   [Configurar los equipos cliente de BranchCache](Configure-BranchCache-Client-Computers.md)  
   

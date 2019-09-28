@@ -1,37 +1,37 @@
 ---
-title: Desarrollar una extensión para Windows Admin Center
-description: Desarrollar una extensión para el SDK de Windows Admin Center (proyecto Honolulu)
+title: Desarrollar una extensión para el centro de administración de Windows
+description: Desarrollar una extensión para el SDK del centro de administración de Windows (proyecto Honolulu)
 ms.technology: manage
 ms.topic: article
 author: nwashburn-ms
 ms.author: niwashbu
 ms.date: 09/19/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: 53000b6a8391667768069f24658df28f8e271357
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.prod: windows-server
+ms.openlocfilehash: 4b3d5b371a9ebec27dafa74610f8c6a87c404d82
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59829596"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71357121"
 ---
-# <a name="develop-an-extension-for-windows-admin-center"></a>Desarrollar una extensión para Windows Admin Center
+# <a name="develop-an-extension-for-windows-admin-center"></a>Desarrollar una extensión para el centro de administración de Windows
 
->Se aplica a: Windows Admin Center, vista previa de Windows Admin Center
+>Se aplica a: Windows Admin Center, versión preliminar de Windows Admin Center
 
-Windows Admin Center admite tres tipos de extensiones: extensiones de herramientas, extensiones de soluciones y complementos de la puerta de enlace. El SDK contiene contenido y los ejemplos que le guiarán en la creación de los distintos tipos de extensiones/complementos.
+El centro de administración de Windows admite tres tipos de extensiones: extensiones de herramientas, extensiones de soluciones y complementos de puerta de enlace. El SDK contiene contenido y ejemplos que le guiarán en la creación de los diferentes tipos de extensiones y complementos.
 
 > [!NOTE]
-> ¿No está familiarizado con los tipos de extensión diferente? Obtenga más información sobre la [tipos de arquitectura y la extensión de extensibilidad](understand-extensions.md).
+> ¿No está familiarizado con los distintos tipos de extensión? Obtenga más información sobre la [arquitectura de extensibilidad y los tipos de extensión](understand-extensions.md).
 
 ## <a name="development-step-by-step"></a>Desarrollo paso a paso
 
-- [Preparar](prepare-development-environment.md) el entorno de desarrollo
+- [Preparación](prepare-development-environment.md) del entorno de desarrollo
 - Crear una extensión de [herramienta](develop-tool.md)
 - Crear una extensión de [solución](develop-solution.md)
 - Crear un [complemento de puerta de enlace](develop-gateway-plugin.md)
 - Obtén más información con nuestras [guías](guides.md)
 
-## <a name="sdk-design-toolkit"></a>Kit de herramientas de diseño SDK
+## <a name="sdk-design-toolkit"></a>Kit de herramientas de diseño de SDK
 
-Visite nuestro de Windows Admin Center [Kit de herramientas de diseño SDK](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)! Esta herramienta está diseñada para ayudar a simular rápidamente las extensiones de PowerPoint a partir de plantillas, controles y estilos Windows Admin Center. ¡Vea la extensión puede aspecto en Windows Admin Center antes de comenzar a codificar!
+Consulte el kit de herramientas de [diseño del SDK](https://github.com/Microsoft/windows-admin-center-sdk/blob/master/WindowsAdminCenterDesignToolkit.zip)de Windows admin Center. Este kit de herramientas está diseñado para ayudarle a simular rápidamente extensiones en PowerPoint mediante estilos, controles y plantillas de página del centro de administración de Windows. Vea Cuál puede ser su extensión en el centro de administración de Windows antes de comenzar a codificar.

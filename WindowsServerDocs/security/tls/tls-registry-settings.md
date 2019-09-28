@@ -2,7 +2,7 @@
 title: Configuración del registro de seguridad de la capa de transporte (TLS)
 description: Seguridad de Windows Server
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: security-tls-ssl
@@ -12,12 +12,12 @@ author: justinha
 ms.author: justinha
 manager: brianlic-msft
 ms.date: 02/28/2019
-ms.openlocfilehash: 83146bd8a65b90994ed90a6dda29a4bc00a2533a
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 60202e537093bd21515043ba56f70f3895c91d42
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70870300"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403404"
 ---
 # <a name="transport-layer-security-tls-registry-settings"></a>Configuración del registro de seguridad de la capa de transporte (TLS)
 
@@ -245,8 +245,8 @@ Tabla de subclaves de SSL 2,0
 
 | Subclave | Descripción |
 |--------|-------------|
-| Cliente | Controla el uso de SSL 2,0 en el cliente SSL. |
-| Server | Controla el uso de SSL 2,0 en el servidor SSL. |
+| Remoto | Controla el uso de SSL 2,0 en el cliente SSL. |
+| Servidor | Controla el uso de SSL 2,0 en el servidor SSL. |
 
 Para deshabilitar SSL 2,0 para el cliente o el servidor, cambie el valor DWORD a 0. Si una aplicación SSPI solicita usar SSL 2,0, se le denegará. 
 
@@ -272,8 +272,8 @@ Tabla de subclaves de SSL 3,0
 
 | Subclave | Descripción |
 |--------|-------------|
-| Cliente | Controla el uso de SSL 3,0 en el cliente SSL. |
-| Server | Controla el uso de SSL 3,0 en el servidor SSL. |
+| Remoto | Controla el uso de SSL 3,0 en el cliente SSL. |
+| Servidor | Controla el uso de SSL 3,0 en el servidor SSL. |
 
 Para deshabilitar SSL 3,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar SSL 3,0, se le denegará. 
@@ -298,8 +298,8 @@ Tabla de subclave TLS 1,0
 
 | Subclave | Descripción |
 |--------|-------------|
-| Cliente | Controla el uso de TLS 1,0 en el cliente TLS. |
-| Server | Controla el uso de TLS 1,0 en el servidor TLS. |
+| Remoto | Controla el uso de TLS 1,0 en el cliente TLS. |
+| Servidor | Controla el uso de TLS 1,0 en el servidor TLS. |
 
 Para deshabilitar TLS 1,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar TLS 1,0, se le denegará. 
@@ -324,8 +324,8 @@ Tabla de subclave TLS 1,1
 
 | Subclave | Descripción |
 |--------|-------------|
-| Cliente | Controla el uso de TLS 1,1 en el cliente TLS. |
-| Server | Controla el uso de TLS 1,1 en el servidor TLS. |
+| Remoto | Controla el uso de TLS 1,1 en el cliente TLS. |
+| Servidor | Controla el uso de TLS 1,1 en el servidor TLS. |
 
 Para deshabilitar TLS 1,1 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar TLS 1,1, se le denegará. 
@@ -350,8 +350,8 @@ Tabla de subclave TLS 1,2
 
 | Subclave | Descripción |
 |--------|-------------|
-| Cliente | Controla el uso de TLS 1,2 en el cliente TLS. |
-| Server | Controla el uso de TLS 1,2 en el servidor TLS. |
+| Remoto | Controla el uso de TLS 1,2 en el cliente TLS. |
+| Servidor | Controla el uso de TLS 1,2 en el servidor TLS. |
 
 Para deshabilitar TLS 1,2 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita usar TLS 1,2, se le denegará. 
@@ -376,8 +376,8 @@ Tabla de subclave DTLS 1,0
 
 | Subclave | Descripción |
 |--------|-------------|
-| Cliente | Controla el uso de DTLS 1,0 en el cliente de DTLS. |
-| Server | Controla el uso de DTLS 1,0 en el servidor de DTLS. |
+| Remoto | Controla el uso de DTLS 1,0 en el cliente de DTLS. |
+| Servidor | Controla el uso de DTLS 1,0 en el servidor de DTLS. |
 
 Para deshabilitar DTLS 1,0 para el cliente o el servidor, cambie el valor DWORD a 0.
 Si una aplicación SSPI solicita que use DTLS 1,0, se le denegará. 
@@ -402,8 +402,8 @@ Tabla de subclave DTLS 1,2
 
 | Subclave | Descripción |
 |--------|-------------|
-| Cliente | Controla el uso de DTLS 1,2 en el cliente de DTLS. |
-| Server | Controla el uso de DTLS 1,2 en el servidor de DTLS. |
+| Remoto | Controla el uso de DTLS 1,2 en el cliente de DTLS. |
+| Servidor | Controla el uso de DTLS 1,2 en el servidor de DTLS. |
 
 
 Para deshabilitar DTLS 1,2 para el cliente o el servidor, cambie el valor DWORD a 0.

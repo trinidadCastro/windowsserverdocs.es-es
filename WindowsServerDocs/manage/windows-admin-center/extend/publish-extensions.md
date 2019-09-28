@@ -7,13 +7,13 @@ author: daniellee-msft
 ms.author: jol
 ms.date: 09/18/2018
 ms.localizationpriority: medium
-ms.prod: windows-server-threshold
-ms.openlocfilehash: d2bb97fb65e3fbf5c7809317a8565ff7051d0447
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.prod: windows-server
+ms.openlocfilehash: 24beb287aa35757e1f8057920e8fd95828baf83b
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70869699"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71385201"
 ---
 # <a name="publishing-extensions"></a>Extensiones de publicación
 
@@ -110,16 +110,16 @@ A continuación se muestra un archivo. nuspec de ejemplo y la lista de propiedad
 
 | Nombre de la propiedad | Requerido/recomendado | Descripción |
 | ---- | ---- | ---- |
-| PackageType | Obligatorio | Use "WindowsAdminCenterExtension", que es el tipo de paquete de NuGet definido para las extensiones del centro de administración de Windows. |
-| id | Obligatorio | Identificador de paquete único dentro de la fuente. Este valor debe coincidir con el valor "Name" en el archivo manifest. JSON del proyecto.  Vea [elegir un identificador de paquete único](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para obtener instrucciones. |
+| PackageType | Requerido | Use "WindowsAdminCenterExtension", que es el tipo de paquete de NuGet definido para las extensiones del centro de administración de Windows. |
+| id | Requerido | Identificador de paquete único dentro de la fuente. Este valor debe coincidir con el valor "Name" en el archivo manifest. JSON del proyecto.  Vea [elegir un identificador de paquete único](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) para obtener instrucciones. |
 | title | Se requiere para la publicación en la fuente del centro de administración de Windows | Nombre descriptivo para el paquete que se muestra en el administrador de extensiones del centro de administración de Windows. |
-| version | Obligatorio | Versión de la extensión. Se recomienda usar el [control de versiones semántico (Convención SemVer)](http://semver.org/spec/v1.0.0.html) , pero no es necesario. |
-| editores | Obligatorio | Si publica en nombre de su empresa, use el nombre de su empresa. |
-| description | Obligatorio | Proporcione una descripción de la funcionalidad de la extensión. |
+| version | Requerido | Versión de la extensión. Se recomienda usar el [control de versiones semántico (Convención SemVer)](http://semver.org/spec/v1.0.0.html) , pero no es necesario. |
+| editores | Requerido | Si publica en nombre de su empresa, use el nombre de su empresa. |
+| description | Requerido | Proporcione una descripción de la funcionalidad de la extensión. |
 | iconUrl | Recomendado al publicar en la fuente del centro de administración de Windows | Dirección URL del icono que se va a mostrar en el administrador de extensiones. |
 | projectUrl | Se requiere para la publicación en la fuente del centro de administración de Windows | Dirección URL del sitio web de la extensión. Si no tiene un sitio web independiente, utilice la dirección URL de la página web del paquete en la fuente de NuGet. |
 | licenseUrl | Se requiere para la publicación en la fuente del centro de administración de Windows | Dirección URL del contrato de licencia para el usuario final de la extensión. |
-| files | Obligatorio | Estos dos valores configuran la estructura de carpetas que el centro de administración de Windows espera para las extensiones de la interfaz de usuario y los complementos de puerta de enlace. |
+| archivos | Requerido | Estos dos valores configuran la estructura de carpetas que el centro de administración de Windows espera para las extensiones de la interfaz de usuario y los complementos de puerta de enlace. |
 
 ### <a name="3-build-the-extension-nuget-package"></a>3. Compilar el paquete NuGet de la extensión
 

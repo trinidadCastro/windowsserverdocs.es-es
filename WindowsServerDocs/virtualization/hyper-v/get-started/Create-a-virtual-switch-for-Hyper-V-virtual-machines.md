@@ -1,7 +1,7 @@
 ---
 title: Crear un conmutador virtual para máquinas virtuales de Hyper-V
 description: Proporciona instrucciones sobre cómo crear un conmutador virtual con el administrador de Hyper-V o Windows PowerShell.
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.service: na
 manager: dongill
 ms.technology: compute-hyper-v
@@ -11,12 +11,12 @@ ms.assetid: fdc8063c-47ce-4448-b445-d7ff9894dc17
 author: KBDAzure
 ms.author: kathydav
 ms.date: 10/04/2016
-ms.openlocfilehash: 3c0ba19183dd68a86d995293f663accf10e91df9
-ms.sourcegitcommit: 0467b8e69de66e3184a42440dd55cccca584ba95
+ms.openlocfilehash: f1a814060e763545411b5c4345367638a5161ac2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69546390"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392926"
 ---
 # <a name="create-a-virtual-switch-for-hyper-v-virtual-machines"></a>Crear un conmutador virtual para máquinas virtuales de Hyper-V
 
@@ -30,7 +30,7 @@ Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias car
   
 1.  Abra el administrador de Hyper-V y seleccione el nombre del equipo host de Hyper-V.  
   
-2.  Seleccione **Action** > **Virtual Switch Manager**.  
+2.  Seleccione la **acción** > **Administrador de conmutadores virtuales**.  
   
     ![Captura de pantalla que muestra la acción de la opción de menú > Administrador de conmutadores virtuales](../media/Hyper-V-Action-VSwitchManager.png)  
   
@@ -38,7 +38,7 @@ Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias car
   
     |Tipo de conexión|Descripción|  
     |-------------------|---------------|  
-    |Externo|Proporciona acceso a las máquinas virtuales a una red física para comunicarse con los servidores y los clientes de una red externa. Permite que las máquinas virtuales del mismo servidor de Hyper-V se comuniquen entre sí.|  
+    |External|Proporciona acceso a las máquinas virtuales a una red física para comunicarse con los servidores y los clientes de una red externa. Permite que las máquinas virtuales del mismo servidor de Hyper-V se comuniquen entre sí.|  
     |Interno|Permite la comunicación entre máquinas virtuales en el mismo servidor de Hyper-V y entre las máquinas virtuales y el sistema operativo del host de administración.|  
     |Private|Solo permite la comunicación entre máquinas virtuales en el mismo servidor de Hyper-V. Una red privada se aísla de todo el tráfico de red externo en el servidor de Hyper-V. Este tipo de red es útil cuando se debe crear un entorno de red aislado, como un dominio de prueba aislado.|  
   
@@ -53,7 +53,7 @@ Las redes de máquinas virtuales pueden ser un asunto complejo. Y hay varias car
     |Nombre del valor de configuración|Descripción|  
     |----------------|---------------|  
     |Permitir que el sistema operativo de administración comparta este adaptador de red|Seleccione esta opción si desea permitir que el host de Hyper-V comparta el uso del conmutador virtual y el equipo NIC o NIC con la máquina virtual. Con esta opción habilitada, el host puede usar cualquiera de las opciones que configure para el conmutador virtual, como la configuración de calidad de servicio (QoS), la configuración de seguridad u otras características del conmutador virtual de Hyper-V.|  
-    |Habilitar la virtualización de e/s de raíz única (SR-IOV)|Seleccione esta opción solo si desea permitir que el tráfico de la máquina virtual omita el conmutador de máquina virtual y vaya directamente a la NIC física. Para obtener más información, consulte virtualización de [e/s de raíz única](https://technet.microsoft.com/library/dn641211.aspx#Sec4) en la referencia complementaria del póster: Redes de Hyper-V.|  
+    |Habilitar la virtualización de e/s de raíz única (SR-IOV)|Seleccione esta opción solo si desea permitir que el tráfico de la máquina virtual omita el conmutador de máquina virtual y vaya directamente a la NIC física. Para obtener más información, consulte [virtualización de e/s de raíz única](https://technet.microsoft.com/library/dn641211.aspx#Sec4) en la referencia complementaria del póster: Redes de Hyper-V.|  
   
 7.  Si desea aislar el tráfico de red del sistema operativo del host de Hyper-V de administración o de otras máquinas virtuales que comparten el mismo conmutador virtual, seleccione **Habilitar la identificación de LAN virtual para el sistema operativo de administración**. Puede cambiar el identificador de VLAN a cualquier número o dejar el valor predeterminado. Este es el número de identificación de LAN virtual que usará el sistema operativo de administración para todas las comunicaciones de red a través de este conmutador virtual.  
   

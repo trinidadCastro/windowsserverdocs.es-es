@@ -1,44 +1,44 @@
 ---
-title: Revisar los requisitos previos HGS
+title: Revisar los requisitos previos de HGS
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.topic: article
 ms.assetid: f4b4d1a8-bf6d-4881-9150-ddeca8b48038
 manager: dongill
 author: rpsqrd
 ms.technology: security-guarded-fabric
 ms.date: 08/29/2018
-ms.openlocfilehash: 9a668a39990b79862b99c2c7d9aeaf6540fa376d
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 9024557dd42ede27144bf10aa5873b6bb12d585c
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66447376"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71403488"
 ---
-# <a name="review-prerequisites-for-the-host-guardian-service"></a>Revisar los requisitos previos para el servicio de protección de Host
+# <a name="review-prerequisites-for-the-host-guardian-service"></a>Revisar los requisitos previos para el servicio de protección de host
 
 >Se aplica a: Windows Server 2019, Windows Server (canal semianual), Windows Server 2016
 
 
-En este tema se trata los requisitos previos HGS y pasos iniciales para preparar la implementación de HGS.
+En este tema se tratan los requisitos previos de HGS y los pasos iniciales para preparar la implementación de HGS.
 
 ## <a name="prerequisites"></a>Requisitos previos 
 
--   **Hardware**: HGS se pueden ejecutar en máquinas físicas o virtuales, pero se recomiendan máquinas físicas.
+-   **Hardware**: HGS puede ejecutarse en máquinas físicas o virtuales, pero se recomiendan máquinas físicas.
 
-    Si desea ejecutar HGS como un clúster de tres nodos físico (para disponibilidad), debe tener tres servidores físicos. (Como una práctica recomendada para la agrupación en clústeres, los tres servidores deben tener hardware muy similar).
+    Si desea ejecutar HGS como un clúster físico de tres nodos (para disponibilidad), debe tener tres servidores físicos. (Como procedimiento recomendado para la agrupación en clústeres, los tres servidores deben tener hardware muy similar).
   
--   **Sistema operativo**: Atestación de clave de host requiere Windows Server 2019 Standard o Datacenter edition funciona con [v2 atestación](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies). Para la atestación basada en TPM, puede ejecutar HGS 2019 de Windows Server o Windows Server 2016, Standard o Datacenter edition.
+-   **Sistema operativo**: La atestación de clave de host requiere Windows Server 2019 Standard o Datacenter Edition que funcione con la [atestación V2](guarded-fabric-tpm-trusted-attestation-capturing-hardware.md#versioned-attestation-policies). En el caso de la atestación basada en TPM, HGS puede ejecutar Windows Server 2019 o Windows Server 2016, Standard o Datacenter Edition.
 
--   **Roles de servidor**: Servicio guardián de host y compatibles con los roles de servidor.
+-   **Roles de servidor**: Servicio de protección de host y roles de servidor de soporte.
 
--   **Permisos y privilegios de configuración para el dominio de tejido (host)** : Deberá configurar el reenvío de DNS entre el dominio de tejido (host) y el dominio HGS. 
+-   **Permisos y privilegios de configuración para el dominio de tejido (host)** : Tendrá que configurar el reenvío de DNS entre el dominio de tejido (host) y el dominio de HGS. 
     
 ## <a name="upgrading-hgs"></a>Actualización de HGS
 
-Si ya ha implementado HGS y desea actualizar su sistema operativo, siga el [actualizar orientación](guarded-fabric-upgrade-to-2019.md) para actualizar los servidores de Hyper-V y HGS para el sistema operativo más reciente.
+Si ya ha implementado HGS y quiere actualizar su sistema operativo, siga las [instrucciones de actualización](guarded-fabric-upgrade-to-2019.md) para actualizar los servidores HGS y Hyper-V al sistema operativo más reciente.
 
 ## <a name="next-step"></a>Paso siguiente
 
 > [!div class="nextstepaction"]
-> [Obtener certificados de HGS](guarded-fabric-obtain-certs.md)
+> [Obtener certificados para HGS](guarded-fabric-obtain-certs.md)

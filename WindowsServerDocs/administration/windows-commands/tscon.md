@@ -1,8 +1,8 @@
 ---
 title: tscon
-description: 'Tema de los comandos de Windows para ***- '
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,22 +13,22 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: d8cac59b2f5524df5a82e9c83424fd781f0ef7c8
-ms.sourcegitcommit: eaf071249b6eb6b1a758b38579a2d87710abfb54
+ms.openlocfilehash: 6e53ea2888b66b9e4fbf026f752acf9803270fc2
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66440931"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71392365"
 ---
 # <a name="tscon"></a>tscon
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Se conecta a otra sesión de un servidor Host de sesión de escritorio remoto (Host de sesión de rd).  
-Para obtener ejemplos de cómo usar este comando, consulte [ejemplos](#BKMK_examples).  
+Se conecta a otra sesión en un servidor host de sesión de Escritorio remoto (host de sesión de escritorio remoto).  
+Para obtener ejemplos de cómo usar este comando, vea [ejemplos](#BKMK_examples).  
 
 > [!NOTE]  
-> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para descubrir las novedades de la versión más reciente, consulte [novedades nuevos servicios de escritorio remoto en Windows Server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.  
+> En Windows Server 2008 R2, el nombre de Terminal Services se cambió a Servicios de Escritorio remoto. Para conocer las novedades de la versión más reciente, consulte [novedades de servicios de escritorio remoto en Windows server 2012](https://technet.microsoft.com/library/hh831527) en la biblioteca de TechNet de Windows Server.  
 
 ## <a name="syntax"></a>Sintaxis  
 ```  
@@ -38,33 +38,33 @@ tscon {<SessionID> | <SessionName>} [/dest:<SessionName>] [/password:<pw> | /pas
 
 |Parámetro|Descripción|  
 |-------|--------|  
-|\<SessionID>|Especifica el identificador de la sesión a la que desea conectarse. Si usa el elemento opcional **/dest:** <*SessionName*> parámetro, este es el identificador de la sesión a la que desea conectarse.|  
-|\<SessionName>|Especifica el nombre de la sesión a la que desea conectarse.|  
-|/dest:\<SessionName>|Especifica el nombre de la sesión actual. Esta sesión se desconectará al conectarse a la nueva sesión.|  
-|/password:\<pw>|Especifica la contraseña del usuario que posee la sesión a la que desea conectarse. Esta contraseña es necesaria cuando el usuario que se conecta no es propietario de la sesión.|  
-|/ Password: *|solicita la contraseña del usuario que posee la sesión a la que desea conectarse.|  
-|/v|Muestra información sobre las acciones que se va a realizar.|  
+|@no__t 0SessionID >|Especifica el identificador de la sesión a la que se desea conectar. Si usa el parámetro opcional **/dest:** <*nombresesión*>, es el identificador de la sesión a la que desea conectarse.|  
+|@no__t 0SessionName >|Especifica el nombre de la sesión a la que desea conectarse.|  
+|/dest: \<SessionName >|Especifica el nombre de la sesión actual. Esta sesión se desconectará cuando se conecte a la nueva sesión.|  
+|/Password: @no__t 0PW >|Especifica la contraseña del usuario propietario de la sesión a la que desea conectarse. Esta contraseña es necesaria cuando el usuario que se conecta no es propietario de la sesión.|  
+|/Password: *|solicita la contraseña del usuario propietario de la sesión a la que desea conectarse.|  
+|/v|Muestra información acerca de las acciones que se llevan a cabo.|  
 |/?|Muestra la ayuda en el símbolo del sistema.|  
 
 ## <a name="remarks"></a>Comentarios  
--   Debe tener permiso de acceso de Control total o permiso de acceso especial para conectarse a otra sesión de conexión.  
--   El **/dest:** <*SessionName*> parámetro le permite conectar la sesión de otro usuario a una sesión diferente.  
--   Si no especifica una contraseña en el <*contraseña*> parámetro y la sesión de destino pertenece a un usuario distinto del actual, **tscon** se produce un error.  
+-   Debe tener el permiso de acceso de control total o el permiso de acceso especial Connect para conectarse a otra sesión.  
+-   El parámetro **/dest:** <*nombresesión*> permite conectar la sesión de otro usuario a otra sesión.  
+-   Si no especifica una contraseña en el parámetro <*contraseña*> y la sesión de destino pertenece a un usuario que no es el actual, se produce un error en **tscon** .  
 -   No se puede conectar a la sesión de consola.  
 
-## <a name="BKMK_examples"></a>Ejemplos  
-- Para conectarse a la sesión 12 en el servidor Host de sesión de escritorio remoto actual y desconectar la sesión actual, escriba:  
+## <a name="BKMK_examples"></a>Example  
+- Para conectarse a la sesión 12 en el servidor host de sesión de escritorio remoto actual y desconectar la sesión actual, escriba:  
   ```  
   tscon 12  
   ```  
-- Para conectarse a la sesión 23 en el servidor Host de sesión de escritorio remoto actual, mediante el uso de la contraseña micontra y desconectar la sesión actual, escriba:  
+- Para conectarse a la sesión 23 en el servidor host de sesión de escritorio remoto actual, use la contraseña y desconecte la sesión actual, escriba:  
   ```  
   tscon 23 /password:mypass  
   ```  
-- Para conectar la sesión llamada TERM03 a la sesión TERM05 y, a continuación, desconecte la sesión TERM05, si está conectado, escriba:  
+- Para conectar la sesión denominada TERM03 a la sesión denominada TERM05 y, a continuación, desconectar la sesión TERM05, si está conectada, escriba:  
   ```  
   tscon TERM03 /v /dest:TERM05  
   ```  
   #### <a name="additional-references"></a>Referencias adicionales  
   [Clave de sintaxis de línea de comandos](command-line-syntax-key.md)  
-  [Servicios de escritorio remoto &#40;servicios de Terminal Server&#41; referencia del comando](remote-desktop-services-terminal-services-command-reference.md)  
+  [Referencia &#40;de&#41; comandos de Terminal Services de servicios de escritorio remoto](remote-desktop-services-terminal-services-command-reference.md)  

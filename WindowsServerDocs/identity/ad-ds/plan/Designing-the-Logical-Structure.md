@@ -7,56 +7,56 @@ ms.author: joflore
 manager: mtillman
 ms.date: 05/31/2017
 ms.topic: article
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.technology: identity-adds
-ms.openlocfilehash: 82184fe678c05b1d7458584de8eecd0c07ece02f
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: 8d72d7ed9617d18b42f1be10daeafbac994dad88
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59832336"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71402640"
 ---
 # <a name="designing-the-logical-structure"></a>Diseño de la estructura lógica
 
 >Se aplica a: Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Los servicios de dominio de Active Directory (AD DS) permite a las organizaciones a crear una infraestructura escalable, segura y administrable para la administración de usuarios y recursos. También permite que admita aplicaciones habilitadas para directorio.  
+Active Directory Domain Services (AD DS) permite a las organizaciones crear una infraestructura escalable, segura y administrable para la administración de usuarios y recursos. También les permite admitir aplicaciones habilitadas para el directorio.  
   
-Una estructura lógica de Active Directory bien diseñada ofrece las siguientes ventajas:  
+Una estructura lógica Active Directory bien diseñada proporciona las siguientes ventajas:  
   
--   Administración simplificada de redes basadas en Windows de Microsoft que contienen grandes cantidades de objetos  
+-   Administración simplificada de redes basadas en Microsoft Windows que contienen un gran número de objetos  
   
--   Una estructura de dominio consolidado y menores costos de administración  
+-   Una estructura de dominio consolidada y costos de administración reducidos  
   
--   La capacidad de delegar control administrativo sobre los recursos, según corresponda  
+-   La capacidad de delegar el control administrativo sobre los recursos, según corresponda.  
   
--   Menor repercusión en el ancho de banda de red  
+-   Impacto reducido en el ancho de banda de red  
   
--   Uso compartido de recursos simplificada  
+-   Uso compartido de recursos simplificado  
   
--   Rendimiento de la búsqueda óptimo  
+-   Rendimiento óptimo de la búsqueda  
   
--   Costo total de propiedad reducido  
+-   Costo total de propiedad bajo  
   
-Una estructura lógica de Active Directory bien diseñada facilita la integración eficaz de características como la directiva de grupo. bloquear el escritorio. distribución de software; y el usuario, grupo, estación de trabajo y servidor de administración en el sistema. Además, una estructura lógica cuidadosamente diseñada facilita la integración de Microsoft y las aplicaciones que no sean de Microsoft y servicios, como Microsoft Exchange Server, la infraestructura de clave pública (PKI), y basado en dominio distribuido (DFS) del sistema de archivos.  
+Una estructura lógica Active Directory bien diseñada facilita la integración eficaz de dichas características como directiva de grupo; bloqueo de escritorio; distribución de software; y la administración de usuarios, grupos, estaciones de trabajo y servidores en el sistema. Además, una estructura lógica diseñada cuidadosamente facilita la integración de aplicaciones y servicios de Microsoft y que no sean de Microsoft, como Microsoft Exchange Server, la infraestructura de clave pública (PKI) y un sistema de archivos distribuido (DFS) basado en dominio.  
   
-Al diseñar una estructura lógica de Active Directory antes de implementar AD DS, puede optimizar el proceso de implementación para sacar el máximo provecho de las características de Active Directory. Para diseñar la estructura lógica de Active Directory, el equipo de diseño primero identifica los requisitos de su organización y, según esta información, decide dónde colocar los límites del bosque y dominio. A continuación, el equipo de diseño decide cómo configurar el entorno de sistema de nombres de dominio (DNS) para satisfacer las necesidades del bosque. Por último, el equipo de diseño identifica la estructura de unidad organizativa (OU) que se requiere para delegar la administración de recursos de la organización.  
+Al diseñar una estructura lógica Active Directory antes de implementar AD DS, puede optimizar el proceso de implementación para sacar el máximo partido de las características Active Directory. Para diseñar el Active Directory estructura lógica, el equipo de diseño primero identifica los requisitos de la organización y, en función de esta información, decide dónde colocar los límites del bosque y del dominio. Después, el equipo de diseño decide cómo configurar el entorno del sistema de nombres de dominio (DNS) para satisfacer las necesidades del bosque. Por último, el equipo de diseño identifica la estructura de la unidad organizativa (OU) necesaria para delegar la administración de los recursos de la organización.  
   
 ## <a name="in-this-guide"></a>En esta guía  
   
--   [Descripción del modelo lógico de Active Directory](../../ad-ds/plan/Understanding-the-Active-Directory-Logical-Model.md)  
+-   [Descripción del modelo lógico Active Directory](../../ad-ds/plan/Understanding-the-Active-Directory-Logical-Model.md)  
   
--   [Identificar a los participantes del proyecto de implementación](../../ad-ds/plan/Identifying-the-Deployment-Project-Participants.md)  
+-   [Determinación de los participantes en el proyecto de implementación](../../ad-ds/plan/Identifying-the-Deployment-Project-Participants.md)  
   
 -   [Crear un diseño de bosque](../../ad-ds/plan/Creating-a-Forest-Design.md)  
   
--   [Crear un diseño de dominio](../../ad-ds/plan/Creating-a-Domain-Design.md)  
+-   [Crear un diseño de dominios](../../ad-ds/plan/Creating-a-Domain-Design.md)  
   
--   [Crear un diseño de la infraestructura DNS](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)  
+-   [Creación de un diseño de infraestructura de DNS](../../ad-ds/plan/Creating-a-DNS-Infrastructure-Design.md)  
   
--   [Creación de un diseño de unidad organizativa](../../ad-ds/plan/Creating-an-Organizational-Unit-Design.md)  
+-   [Creación de diseño de unidad organizativa](../../ad-ds/plan/Creating-an-Organizational-Unit-Design.md)  
   
--   [Apéndice A: Inventario DNS](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)  
+-   [Apéndice A: Inventario de DNS](../../ad-ds/plan/Appendix-A--DNS-Inventory.md)  
   
 
 

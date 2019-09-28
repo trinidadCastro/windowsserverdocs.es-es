@@ -1,6 +1,6 @@
 ---
 title: Introducción al Administrador de recursos del servidor de archivos (FSRM)
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.author: jgerend
 ms.manager: brianlic
 ms.technology: storage
@@ -8,12 +8,12 @@ ms.topic: article
 author: jasongerend
 ms.date: 5/14/2018
 description: Administrador de recursos de servidor de archivos (FSRM) es una herramienta que permite administrar y clasificar los datos en un servidor de archivos de Windows Server.
-ms.openlocfilehash: 49e7731c9f1e0f312728894e99bc88b0391738d8
-ms.sourcegitcommit: f6490192d686f0a1e0c2ebe471f98e30105c0844
+ms.openlocfilehash: 719176307afc320ad676fd1acfc07ad9d15920cf
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70866948"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71394171"
 ---
 # <a name="file-server-resource-manager-fsrm-overview"></a>Introducción al Administrador de recursos del servidor de archivos (FSRM)
 
@@ -98,7 +98,7 @@ Para evitar que el servidor de archivos Administrador de recursos cree un diario
         ```
 
         > [!NOTE] 
-        > El editor del registro puede indicarle que quitó cadenas vacías y que muestra esta advertencia que se puede pasar por alto sin ningún problema: *Los datos de tipo REG_MULTI_SZ no pueden contener cadenas vacías. El editor del registro quitará todas las cadenas vacías encontradas.*
+        > El editor del registro puede indicarle que quitó cadenas vacías y que muestra esta advertencia que se puede pasar por alto sin ningún problema: *Data de tipo REG_MULTI_SZ no puede contener cadenas vacías. El editor del registro quitará todas las cadenas vacías encontradas.*
 
 7. Inicie el servicio SRMSVC. Por ejemplo, en una sesión de PowerShell `Start-Service SrmSvc`, escriba.
 

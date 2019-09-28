@@ -1,8 +1,8 @@
 ---
-title: telnet unset
-description: 'Tema de los comandos de Windows para ***- '
+title: no establecido Telnet
+description: 'Tema de comandos de Windows para * * * *- '
 ms.custom: na
-ms.prod: windows-server-threshold
+ms.prod: windows-server
 ms.reviewer: na
 ms.suite: na
 ms.technology: manage-windows-commands
@@ -13,18 +13,18 @@ author: coreyp-at-msft
 ms.author: coreyp
 manager: dongill
 ms.date: 10/16/2017
-ms.openlocfilehash: 37c4d84d1664fdc13ea7ffec60bf981b264dba00
-ms.sourcegitcommit: 0d0b32c8986ba7db9536e0b8648d4ddf9b03e452
+ms.openlocfilehash: e6f0eb98c4168d2f664780dad42ca1aea5463d24
+ms.sourcegitcommit: 6aff3d88ff22ea141a6ea6572a5ad8dd6321f199
 ms.translationtype: MT
 ms.contentlocale: es-ES
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59853896"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71383482"
 ---
-# <a name="telnet-unset"></a>telnet: unset
+# <a name="telnet-unset"></a>Telnet: no establecido
 
 >Se aplica a: Windows Server (canal semianual), Windows Server 2016, Windows Server 2012 R2, Windows Server 2012
 
-Desactiva previamente un conjunto de opciones.   
+Desactiva las opciones establecidas anteriormente.   
 ## <a name="syntax"></a>Sintaxis  
 ```  
 u[nset] {bsasdel | crlf | delasbs | escape | localecho | logging | ntlm} [?]  
@@ -32,16 +32,16 @@ u[nset] {bsasdel | crlf | delasbs | escape | localecho | logging | ntlm} [?]
 ### <a name="parameters"></a>Parámetros  
 |Parámetro|Descripción|  
 |-------|--------|  
-|bsasdel|Envía **retroceso** como un **retroceso**.|  
-|crlf|Envía el **ENTRAR** clave como un CR. También conocido como modo de avance de línea.|  
-|delasbs|Envía **eliminar** como **eliminar**.|  
-|escape|Quita el valor de carácter de escape.|  
+|bsasdel|Envía el **retroceso** como **retroceso**.|  
+|CRLF|Envía la tecla **entrar** como CR. También se conoce como modo de avance de línea.|  
+|delasbs|Envía **Delete** como **Delete**.|  
+|Salida|quita el valor de carácter de escape.|  
 |localecho|Desactiva localecho.|  
 |logging|Desactiva el registro.|  
-|ntlm|Desactiva la autenticación NTLM.|  
+|NTLM|Desactiva la autenticación NTLM.|  
 |?|Muestra ayuda para este comando.|  
-## <a name="BKMK_Examples"></a>Ejemplos  
-Desactivar el registro.  
+## <a name="BKMK_Examples"></a>Example  
+Desactive el registro.  
 ```  
 u logging  
 ```  
